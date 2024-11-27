@@ -22,6 +22,7 @@
   id: LoadoutOuterCoatHoodieGrey
   category: Outer
   cost: 0
+  customColorTint: true
   items:
     - ClothingOuterHoodieGrey
   requirements:
@@ -42,6 +43,7 @@
   id: LoadoutOuterCoatHyenhSweater
   category: Outer
   cost: 1
+  customColorTint: true
   items:
     - ClothingOuterCoatHyenhSweater
   requirements:
@@ -52,6 +54,7 @@
   id: LoadoutOuterWinterCoatLong
   category: Outer
   cost: 1
+  customColorTint: true
   items:
     - ClothingOuterWinterCoatLong
   requirements:
@@ -114,6 +117,7 @@
   id: LoadoutOuterCoatMNKWhiteHoodie
   category: Outer
   cost: 1
+  customColorTint: true
   items:
     - ClothingOuterCoatMNKWhiteHoodie
   requirements:
