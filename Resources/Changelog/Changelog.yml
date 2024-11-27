@@ -8157,3 +8157,10 @@ Entries:
   id: 6541
   time: '2024-11-25T05:43:25.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1164
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: Fixed IPCs being unable to use the midi menu.
+  id: 6542
+  time: '2024-11-27T15:19:32.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1287
