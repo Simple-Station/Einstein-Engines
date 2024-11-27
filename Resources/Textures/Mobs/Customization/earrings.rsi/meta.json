@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from Aurorastation at commit https://github.com/Aurorastation/Aurora.3/commit/7bc5666e9e12ef31dcfdc9bd4b68831b34811bc6, stud/dangle edited from Aurora & hoop/hoop_mini/cross/gem/drop/drop_long created by Skubman (github: angelofallars)",
+  "copyright": "Taken from Aurorastation at commit https://github.com/Aurorastation/Aurora.3/commit/7bc5666e9e12ef31dcfdc9bd4b68831b34811bc6, stud/dangle edited from Aurora & hoop/hoop_mini/cross/gemstone/gemstone_big/drop/drop_long created by Skubman (github: angelofallars)",
   "size": {
     "x": 32,
     "y": 32
@@ -45,6 +45,14 @@
     },
     {
       "name": "gemstone_tone_2",
+      "directions": 4
+    },
+    {
+      "name": "gemstone_big_tone_1",
+      "directions": 4
+    },
+    {
+      "name": "gemstone_big_tone_2",
       "directions": 4
     },
     {

@@ -23,13 +23,17 @@ marking-EarringsCross = Cross Earrings
 marking-EarringsCross-cross = Cross Earrings
 
 marking-EarringsGemstone = Gemstone Earrings
-marking-EarringsGemstone-gemstone_tone_1 = Earrings
+marking-EarringsGemstone-gemstone_tone_1 = Material
 marking-EarringsGemstone-gemstone_tone_2 = Ornament
 
+marking-EarringsGemstoneBig = Big Gemstone Earrings
+marking-EarringsGemstoneBig-gemstone_big_tone_1 = Material
+marking-EarringsGemstoneBig-gemstone_big_tone_2 = Ornament
+
 marking-EarringsDrop = Drop Earrings
-marking-EarringsDrop-drop_tone_1 = Earrings
+marking-EarringsDrop-drop_tone_1 = Material
 marking-EarringsDrop-drop_tone_2 = Ornament
 
 marking-EarringsDropLong = Long Drop Earrings
-marking-EarringsDropLong-drop_long_tone_1 = Earrings
+marking-EarringsDropLong-drop_long_tone_1 = Material
 marking-EarringsDropLong-drop_long_tone_2 = Ornament

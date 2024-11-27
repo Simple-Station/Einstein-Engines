@@ -127,6 +127,22 @@
     state: gemstone_tone_2
 
 - type: marking
+  id: EarringsGemstoneBig
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Felinid, Oni, Vulpkanin, Harpy, Gingerbread]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#f3d052"
+  sprites:
+  - sprite: Mobs/Customization/earrings.rsi
+    state: gemstone_big_tone_1
+  - sprite: Mobs/Customization/earrings.rsi
+    state: gemstone_big_tone_2
+
+- type: marking
   id: EarringsDrop
   bodyPart: HeadSide
   markingCategory: HeadSide
