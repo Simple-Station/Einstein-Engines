@@ -41,10 +41,10 @@ public sealed partial class GatherableSystem : EntitySystem
         if (args.Handled || !args.Complex)
             return;
 
-        if (gatherable.Comp.ToolWhitelist?.IsValid(args.User, EntityManager) != true)
+        if (component.ToolWhitelist?.IsValid(args.User, EntityManager) != true)
             return;
 
-        Gather(gatherable.Comp, args.User);
+        Gather(args.Target, args.User, component);
         args.Handled = true;
     }
 
