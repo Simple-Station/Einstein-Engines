@@ -1,0 +1,381 @@
+
+- type: marking
+  id: FaceBindi
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#ffffff"
+  sprites:
+  - sprite: Mobs/Customization/face.rsi
+    state: bindi
+
+- type: marking
+  id: FaceFullblush
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#ffffff"
+  sprites:
+  - sprite: Mobs/Customization/face.rsi
+    state: fullblush
+
+- type: marking
+  id: FaceCheekspotRight
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#ffffff"
+  sprites:
+  - sprite: Mobs/Customization/face.rsi
+    state: cheekspot_r
+
+- type: marking
+  id: FaceCheekspotLeft
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#ffffff"
+  sprites:
+  - sprite: Mobs/Customization/face.rsi
+    state: cheekspot_l
+
+- type: marking
+  id: FaceChesireRight
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#ffffff"
+  sprites:
+  - sprite: Mobs/Customization/face.rsi
+    state: chesire_r
+
+- type: marking
+  id: FaceChesireLeft
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#ffffff"
+  sprites:
+  - sprite: Mobs/Customization/face.rsi
+    state: chesire_l
+
+- type: marking
+  id: FaceCrowRight
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#ffffff"
+  sprites:
+  - sprite: Mobs/Customization/face.rsi
+    state: crow_r
+
+- type: marking
+  id: FaceCrowLeft
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#ffffff"
+  sprites:
+  - sprite: Mobs/Customization/face.rsi
+    state: crow_l
+
+- type: marking
+  id: FaceEarRight
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#ffffff"
+  sprites:
+  - sprite: Mobs/Customization/face.rsi
+    state: ear_r
+
+- type: marking
+  id: FaceEarLeft
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#ffffff"
+  sprites:
+  - sprite: Mobs/Customization/face.rsi
+    state: ear_l
+
+- type: marking
+  id: FaceEyebrowRight
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#ffffff"
+  sprites:
+  - sprite: Mobs/Customization/face.rsi
+    state: eyebrow_r
+
+
+- type: marking
+  id: FaceEyebrowLeft
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#ffffff"
+  sprites:
+  - sprite: Mobs/Customization/face.rsi
+    state: eyebrow_l
+
+
+- type: marking
+  id: FaceEyebrows
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#ffffff"
+  sprites:
+  - sprite: Mobs/Customization/face.rsi
+    state: eyebrows
+
+- type: marking
+  id: FaceEyecornerRight
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#ffffff"
+  sprites:
+  - sprite: Mobs/Customization/face.rsi
+    state: eyecorner_r
+
+- type: marking
+  id: FaceEyecornerLeft
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#ffffff"
+  sprites:
+  - sprite: Mobs/Customization/face.rsi
+    state: eyecorner_l
+
+- type: marking
+  id: FaceEyelashRight
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#ffffff"
+  sprites:
+  - sprite: Mobs/Customization/face.rsi
+    state: eyelash_r
+
+- type: marking
+  id: FaceEyelashLeft
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#ffffff"
+  sprites:
+  - sprite: Mobs/Customization/face.rsi
+    state: eyelash_l
+
+- type: marking
+  id: FaceEyestripe
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#ffffff"
+  sprites:
+  - sprite: Mobs/Customization/face.rsi
+    state: eyestripe
+
+- type: marking
+  id: FaceLipcornerRight
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#ffffff"
+  sprites:
+  - sprite: Mobs/Customization/face.rsi
+    state: lipcorner_r
+
+- type: marking
+  id: FaceLipcornerLeft
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#ffffff"
+  sprites:
+  - sprite: Mobs/Customization/face.rsi
+    state: lipcorner_l
+
+- type: marking
+  id: FaceGlabella
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#ffffff"
+  sprites:
+  - sprite: Mobs/Customization/face.rsi
+    state: glabella
+
+- type: marking
+  id: FaceLowercheekRight
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#ffffff"
+  sprites:
+  - sprite: Mobs/Customization/face.rsi
+    state: lowercheek_r
+
+- type: marking
+  id: FaceLowercheekLeft
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#ffffff"
+  sprites:
+  - sprite: Mobs/Customization/face.rsi
+    state: lowercheek_l
+
+- type: marking
+  id: FaceNosetape
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#ffffff"
+  sprites:
+  - sprite: Mobs/Customization/face.rsi
+    state: nosetape
+
+- type: marking
+  id: FaceNosetip
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#ffffff"
+  sprites:
+  - sprite: Mobs/Customization/face.rsi
+    state: nosetip
+
+
+- type: marking
+  id: FaceNosestripe
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#ffffff"
+  sprites:
+  - sprite: Mobs/Customization/face.rsi
+    state: nosestripe
+
+- type: marking
+  id: FaceUnibrow
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#ffffff"
+  sprites:
+  - sprite: Mobs/Customization/face.rsi
+    state: unibrow
