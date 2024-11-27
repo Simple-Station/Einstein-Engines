@@ -447,6 +447,17 @@ namespace Content.Shared.Interaction
                 inRangeUnobstructed);
         }
 
+        private bool IsDeleted(EntityUid uid)
+        {
+            return TerminatingOrDeleted(uid) || EntityManager.IsQueuedForDeletion(uid);
+        }
+
+        private bool IsDeleted(EntityUid? uid)
+        {
+            //optional / null entities can pass this validation check. I.e., is-deleted returns false for null uids
+            return uid != null && IsDeleted(uid.Value);
+        }
+
         public void InteractHand(EntityUid user, EntityUid target)
         {
             if (IsDeleted(user) || IsDeleted(target))
@@ -473,6 +484,8 @@ namespace Content.Shared.Interaction
                 return;
             }
 
+            DebugTools.Assert(!IsDeleted(user) && !IsDeleted(target));
+
             // all interactions should only happen when in range / unobstructed, so no range check is needed
             var message = new InteractHandEvent(user, target);
             RaiseLocalEvent(target, message, true);
@@ -480,6 +493,8 @@ namespace Content.Shared.Interaction
             DoContactInteraction(user, target, message);
             if (message.Handled)
                 return;
+
+            DebugTools.Assert(!IsDeleted(user) && !IsDeleted(target));
 
             // Else we run Activate.
             InteractionActivate(user,
@@ -494,8 +509,13 @@ namespace Content.Shared.Interaction
         public void InteractUsingRanged(EntityUid user, EntityUid used, EntityUid? target,
             EntityCoordinates clickLocation, bool inRangeUnobstructed)
         {
-            if (RangedInteractDoBefore(user, used, target, clickLocation, inRangeUnobstructed))
+            if (IsDeleted(user) || IsDeleted(used) || IsDeleted(target))
                 return;
+
+            if (RangedInteractDoBefore(user, used, target, clickLocation, inRangeUnobstructed, checkDeletion: true))
+                return;
+
+            DebugTools.Assert(!IsDeleted(user) && !IsDeleted(used) && !IsDeleted(target));
 
             if (target != null)
             {
@@ -509,7 +529,8 @@ namespace Content.Shared.Interaction
                     return;
             }
 
-            InteractDoAfter(user, used, target, clickLocation, inRangeUnobstructed);
+            DebugTools.Assert(!IsDeleted(user) && !IsDeleted(used) && !IsDeleted(target));
+            InteractDoAfter(user, used, target, clickLocation, inRangeUnobstructed, checkDeletion: false);
         }
 
         protected bool ValidateInteractAndFace(EntityUid user, EntityCoordinates coordinates)
@@ -905,8 +926,12 @@ namespace Content.Shared.Interaction
             EntityUid used,
             EntityUid? target,
             EntityCoordinates clickLocation,
-            bool canReach)
+            bool canReach,
+            bool checkDeletion = false)
         {
+            if (checkDeletion && (IsDeleted(user) || IsDeleted(used) || IsDeleted(target)))
+                return false;
+
             var ev = new BeforeRangedInteractEvent(user, used, target, clickLocation, canReach);
             RaiseLocalEvent(used, ev);
 
@@ -928,6 +953,9 @@ namespace Content.Shared.Interaction
             bool checkCanInteract = true,
             bool checkCanUse = true)
         {
+            if ((IsDeleted(user) || IsDeleted(used) || IsDeleted(target)))
+                return;
+
             if (checkCanInteract && !_actionBlockerSystem.CanInteract(user, target))
                 return;
 
@@ -942,7 +970,7 @@ namespace Content.Shared.Interaction
             RaiseLocalEvent(target, interactUsingEvent, true);
             DoContactInteraction(user, used, interactUsingEvent);
             DoContactInteraction(user, target, interactUsingEvent);
-            DoContactInteraction(used, target, interactUsingEvent);
+
             if (interactUsingEvent.Handled)
                 return;
 
@@ -952,19 +980,26 @@ namespace Content.Shared.Interaction
         /// <summary>
         ///     Used when clicking on an entity resulted in no other interaction. Used for low-priority interactions.
         /// </summary>
-        public void InteractDoAfter(EntityUid user, EntityUid used, EntityUid? target, EntityCoordinates clickLocation, bool canReach)
+        public void InteractDoAfter(
+            EntityUid user, 
+            EntityUid used, 
+            EntityUid? target, 
+            EntityCoordinates clickLocation, 
+            bool canReach,
+            bool checkDeletion = false
+        )
         {
             if (target is {Valid: false})
                 target = null;
+
+            if (checkDeletion && (IsDeleted(user) || IsDeleted(used) || IsDeleted(target)))
+                return;
 
             var afterInteractEvent = new AfterInteractEvent(user, used, target, clickLocation, canReach);
             RaiseLocalEvent(used, afterInteractEvent);
             DoContactInteraction(user, used, afterInteractEvent);
             if (canReach)
-            {
                 DoContactInteraction(user, target, afterInteractEvent);
-                DoContactInteraction(used, target, afterInteractEvent);
-            }
 
             if (afterInteractEvent.Handled)
                 return;
@@ -977,10 +1012,7 @@ namespace Content.Shared.Interaction
 
             DoContactInteraction(user, used, afterInteractUsingEvent);
             if (canReach)
-            {
                 DoContactInteraction(user, target, afterInteractUsingEvent);
-                DoContactInteraction(used, target, afterInteractUsingEvent);
-            }
         }
 
         #region ActivateItemInWorld
@@ -1044,8 +1076,13 @@ namespace Content.Shared.Interaction
             if (!activateMsg.Handled && !userEv.Handled)
                 return false;
 
+            DebugTools.Assert(!IsDeleted(user) && !IsDeleted(used));
             DoContactInteraction(user, used, activateMsg);
+
             // Still need to call this even without checkUseDelay in case this gets relayed from Activate.
+            if (delayComponent != null)
+                _useDelay.TryResetDelay(used, component: delayComponent);
+
             if (delayComponent != null)
                 _useDelay.TryResetDelay(used, component: delayComponent);
 
@@ -1069,6 +1106,9 @@ namespace Content.Shared.Interaction
             bool checkCanInteract = true,
             bool checkUseDelay = true)
         {
+            if (IsDeleted(user) || IsDeleted(used))
+                return false;
+
             _delayQuery.TryComp(used, out var delayComponent);
             if (checkUseDelay && delayComponent != null && _useDelay.IsDelayed((used, delayComponent)))
                 return true; // if the item is on cooldown, we consider this handled.
@@ -1115,6 +1155,9 @@ namespace Content.Shared.Interaction
 
         public void DroppedInteraction(EntityUid user, EntityUid item)
         {
+            if (IsDeleted(user) || IsDeleted(item))
+                return;
+
             var dropMsg = new DroppedEvent(user);
             RaiseLocalEvent(item, dropMsg, true);
             if (dropMsg.Handled)
@@ -1255,15 +1298,20 @@ namespace Content.Shared.Interaction
             if (uidB == null || args?.Handled == false)
                 return;
 
-            // Entities may no longer exist (banana was eaten, or human was exploded)?
-            if (!Exists(uidA) || !Exists(uidB))
+            DebugTools.AssertNotEqual(uidA, uidB.Value);
+
+            if (!TryComp(uidA, out MetaDataComponent? metaA) || metaA.EntityPaused)
                 return;
 
-            if (Paused(uidA) || Paused(uidB.Value))
-                return;
+            if (!TryComp(uidB, out MetaDataComponent? metaB) || metaB.EntityPaused)
+                return ;
 
-            RaiseLocalEvent(uidA, new ContactInteractionEvent(uidB.Value));
-            RaiseLocalEvent(uidB.Value, new ContactInteractionEvent(uidA));
+            // TODO Struct event
+            var ev = new ContactInteractionEvent(uidB.Value);
+            RaiseLocalEvent(uidA, ev);
+
+            ev.Other = uidA;
+            RaiseLocalEvent(uidB.Value, ev);
         }
 
 
