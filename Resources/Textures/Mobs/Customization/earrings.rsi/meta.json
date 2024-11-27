@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from Aurorastation at commit https://github.com/Aurorastation/Aurora.3/commit/7bc5666e9e12ef31dcfdc9bd4b68831b34811bc6, stud/dangle edited from Aurora & hoop/hoop_mini/cross/gemstone/gemstone_big/drop/drop_long created by Skubman (github: angelofallars)",
+  "copyright": "Taken from Aurorastation at commit https://github.com/Aurorastation/Aurora.3/commit/7bc5666e9e12ef31dcfdc9bd4b68831b34811bc6, stud/dangle edited from Aurora & hoop/hoop_mini/cross/gemstone/gemstone_big/drop/drop_long and Felinid states created by Skubman (github: angelofallars)",
   "size": {
     "x": 32,
     "y": 32
@@ -69,6 +69,66 @@
     },
     {
       "name": "drop_long_tone_2",
+      "directions": 4
+    },
+    {
+      "name": "heavy_felinid",
+      "directions": 4
+    },
+    {
+      "name": "dangle_felinid",
+      "directions": 4
+    },
+    {
+      "name": "crescent_felinid",
+      "directions": 4
+    },
+    {
+      "name": "bangle_felinid",
+      "directions": 4
+    },
+    {
+      "name": "hoop_felinid",
+      "directions": 4
+    },
+    {
+      "name": "hoop_mini_felinid",
+      "directions": 4
+    },
+    {
+      "name": "cross_felinid",
+      "directions": 4
+    },
+    {
+      "name": "gemstone_tone_1_felinid",
+      "directions": 4
+    },
+    {
+      "name": "gemstone_tone_2_felinid",
+      "directions": 4
+    },
+    {
+      "name": "gemstone_big_tone_1_felinid",
+      "directions": 4
+    },
+    {
+      "name": "gemstone_big_tone_2_felinid",
+      "directions": 4
+    },
+    {
+      "name": "drop_tone_1_felinid",
+      "directions": 4
+    },
+    {
+      "name": "drop_tone_2_felinid",
+      "directions": 4
+    },
+    {
+      "name": "drop_long_tone_1_felinid",
+      "directions": 4
+    },
+    {
+      "name": "drop_long_tone_2_felinid",
       "directions": 4
     }
   ]

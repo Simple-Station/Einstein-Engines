@@ -2,7 +2,7 @@
   id: EarringsStud
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Felinid, Oni, Vulpkanin, Harpy, Gingerbread]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Vulpkanin, Harpy, Gingerbread]
   coloring:
     default:
       type:
@@ -16,7 +16,7 @@
   id: EarringsHeavy
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Felinid, Oni, Vulpkanin, Harpy, Gingerbread]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Vulpkanin, Harpy, Gingerbread]
   coloring:
     default:
       type:
@@ -30,7 +30,7 @@
   id: EarringsDangle
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Felinid, Oni, Vulpkanin, Harpy, Gingerbread]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Vulpkanin, Harpy, Gingerbread]
   coloring:
     default:
       type:
@@ -44,7 +44,7 @@
   id: EarringsCrescent
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Felinid, Oni, Vulpkanin, Harpy, Gingerbread]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Vulpkanin, Harpy, Gingerbread]
   coloring:
     default:
       type:
@@ -58,7 +58,7 @@
   id: EarringsBangle
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Felinid, Oni, Vulpkanin, Harpy, Gingerbread]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Vulpkanin, Harpy, Gingerbread]
   coloring:
     default:
       type:
@@ -72,7 +72,7 @@
   id: EarringsHoop
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Felinid, Oni, Vulpkanin, Harpy, Gingerbread]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Vulpkanin, Harpy, Gingerbread]
   coloring:
     default:
       type:
@@ -86,7 +86,7 @@
   id: EarringsHoopMini
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Felinid, Oni, Vulpkanin, Harpy, Gingerbread]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Vulpkanin, Harpy, Gingerbread]
   coloring:
     default:
       type:
@@ -100,7 +100,7 @@
   id: EarringsCross
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Felinid, Oni, Vulpkanin, Harpy, Gingerbread]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Vulpkanin, Harpy, Gingerbread]
   coloring:
     default:
       type:
@@ -114,7 +114,7 @@
   id: EarringsGemstone
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Felinid, Oni, Vulpkanin, Harpy, Gingerbread]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Vulpkanin, Harpy, Gingerbread]
   coloring:
     default:
       type:
@@ -130,7 +130,7 @@
   id: EarringsGemstoneBig
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Felinid, Oni, Vulpkanin, Harpy, Gingerbread]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Vulpkanin, Harpy, Gingerbread]
   coloring:
     default:
       type:
@@ -146,7 +146,7 @@
   id: EarringsDrop
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Felinid, Oni, Vulpkanin, Harpy, Gingerbread]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Vulpkanin, Harpy, Gingerbread]
   coloring:
     default:
       type:
@@ -162,7 +162,7 @@
   id: EarringsDropLong
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Felinid, Oni, Vulpkanin, Harpy, Gingerbread]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Vulpkanin, Harpy, Gingerbread]
   coloring:
     default:
       type:
@@ -173,3 +173,167 @@
     state: drop_long_tone_1
   - sprite: Mobs/Customization/earrings.rsi
     state: drop_long_tone_2
+
+# Felinid versions
+
+- type: marking
+  id: EarringsFelinidHeavy
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Felinid]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#f4f4f4"
+  sprites:
+  - sprite: Mobs/Customization/earrings.rsi
+    state: heavy_felinid
+
+- type: marking
+  id: EarringsFelinidDangle
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Felinid]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#f3d052"
+  sprites:
+  - sprite: Mobs/Customization/earrings.rsi
+    state: dangle_felinid
+
+- type: marking
+  id: EarringsFelinidCrescent
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Felinid]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#f4f4f4"
+  sprites:
+  - sprite: Mobs/Customization/earrings.rsi
+    state: crescent_felinid
+
+- type: marking
+  id: EarringsFelinidBangle
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Felinid]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#f3d052"
+  sprites:
+  - sprite: Mobs/Customization/earrings.rsi
+    state: bangle_felinid
+
+- type: marking
+  id: EarringsFelinidHoop
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Felinid]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#f3d052"
+  sprites:
+  - sprite: Mobs/Customization/earrings.rsi
+    state: hoop_felinid
+
+- type: marking
+  id: EarringsFelinidHoopMini
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Felinid]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#f3d052"
+  sprites:
+  - sprite: Mobs/Customization/earrings.rsi
+    state: hoop_mini_felinid
+
+- type: marking
+  id: EarringsFelinidCross
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Felinid]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#1e1e1e"
+  sprites:
+  - sprite: Mobs/Customization/earrings.rsi
+    state: cross_felinid
+
+- type: marking
+  id: EarringsFelinidGemstone
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Felinid]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#f3d052"
+  sprites:
+  - sprite: Mobs/Customization/earrings.rsi
+    state: gemstone_tone_1_felinid
+  - sprite: Mobs/Customization/earrings.rsi
+    state: gemstone_tone_2_felinid
+
+- type: marking
+  id: EarringsFelinidGemstoneBig
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Felinid]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#f3d052"
+  sprites:
+  - sprite: Mobs/Customization/earrings.rsi
+    state: gemstone_big_tone_1_felinid
+  - sprite: Mobs/Customization/earrings.rsi
+    state: gemstone_big_tone_2_felinid
+
+- type: marking
+  id: EarringsFelinidDrop
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Felinid]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#f3d052"
+  sprites:
+  - sprite: Mobs/Customization/earrings.rsi
+    state: drop_tone_1_felinid
+  - sprite: Mobs/Customization/earrings.rsi
+    state: drop_tone_2_felinid
+
+- type: marking
+  id: EarringsFelinidDropLong
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Felinid]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#f3d052"
+  sprites:
+  - sprite: Mobs/Customization/earrings.rsi
+    state: drop_long_tone_1_felinid
+  - sprite: Mobs/Customization/earrings.rsi
+    state: drop_long_tone_2_felinid
