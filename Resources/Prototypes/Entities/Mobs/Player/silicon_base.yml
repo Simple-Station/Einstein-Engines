@@ -202,17 +202,21 @@
     - type: SurgeryTarget
     - type: Targeting
     - type: UserInterface
-      interfaces:
-        enum.HumanoidMarkingModifierKey.Key:
-          type: HumanoidMarkingModifierBoundUserInterface
-        enum.StrippingUiKey.Key:
-          type: StrippableBoundUserInterface
-        enum.RadialSelectorUiKey.Key:
-          type: RadialSelectorMenuBUI
-        enum.ListViewSelectorUiKey.Key:
-          type: ListViewSelectorBUI
-        enum.SurgeryUIKey.Key:
-          type: SurgeryBui
+      - type: UserInterface
+        interfaces:
+          enum.HumanoidMarkingModifierKey.Key:
+            type: HumanoidMarkingModifierBoundUserInterface
+          enum.StrippingUiKey.Key:
+            type: StrippableBoundUserInterface
+          enum.InstrumentUiKey.Key:
+            type: InstrumentBoundUserInterface
+            requireInputValidation: false
+          enum.RadialSelectorUiKey.Key:
+            type: RadialSelectorMenuBUI
+          enum.ListViewSelectorUiKey.Key:
+            type: ListViewSelectorBUI
+          enum.SurgeryUIKey.Key:
+            type: SurgeryBui
     - type: Emoting
     - type: Grammar
       attributes:
