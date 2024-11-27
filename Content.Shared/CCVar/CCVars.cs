@@ -501,6 +501,18 @@ namespace Content.Shared.CCVar
          */
 
         /// <summary>
+        /// The role that will get mentioned if a new SOS ahelp comes in.
+        /// </summary>
+        public static readonly CVarDef<string> DiscordAhelpMention =
+            CVarDef.Create("discord.on_call_ping", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
+        /// <summary>
+        /// URL of the discord webhook to relay unanswered ahelp messages.
+        /// </summary>
+        public static readonly CVarDef<string> DiscordOnCallWebhook =
+            CVarDef.Create("discord.on_call_webhook", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
+        /// <summary>
         /// URL of the Discord webhook which will relay all ahelp messages.
         /// </summary>
         public static readonly CVarDef<string> DiscordAHelpWebhook =
@@ -2709,12 +2721,12 @@ namespace Content.Shared.CCVar
             CVarDef.Create("vote.autovote_enabled", false, CVar.SERVERONLY);
 
         /// Automatically starts a map vote when returning to the lobby.
-        /// Requires auto voting to be enabled.  
+        /// Requires auto voting to be enabled.
         public static readonly CVarDef<bool> MapAutoVoteEnabled =
             CVarDef.Create("vote.map_autovote_enabled", true, CVar.SERVERONLY);
 
         /// Automatically starts a gamemode vote when returning to the lobby.
-        /// Requires auto voting to be enabled.  
+        /// Requires auto voting to be enabled.
         public static readonly CVarDef<bool> PresetAutoVoteEnabled =
             CVarDef.Create("vote.preset_autovote_enabled", true, CVar.SERVERONLY);
     }
