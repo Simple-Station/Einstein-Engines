@@ -35,12 +35,6 @@
       Male: UnisexPlasmaman
       Female: UnisexPlasmaman
       Unsexed: UnisexPlasmaman
-  - type: IgniteFromGas
-    gas: Oxygen
-    fireStacks: 0.24 # 0.24 * 1.25 fire stack multiplier = 0.30
-    molesToIgnite: 0.5
-  - type: Flammable
-    fireStackIncreaseMultiplier: 1.25
   - type: Butcherable
     butcheringType: Spike
     spawned:

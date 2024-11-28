@@ -59,7 +59,7 @@ public sealed partial class SelfExtinguisherSystem : EntitySystem
 
             if (extinguisher.RequiresIgniteFromGasImmune &&
                 ((TryComp<IgniteFromGasComponent>(wearer, out var ignite) && !ignite.HasImmunity) ||
-                !_ignite.HasIgniteImmunity(wearer)) )
+                false) ) // TODO check for ignite immunity using another way
                 continue;
 
             TryExtinguish(uid, wearer, extinguisher, flammable);
