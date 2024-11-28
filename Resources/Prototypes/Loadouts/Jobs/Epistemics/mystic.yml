@@ -25,6 +25,7 @@
   category: JobsEpistemicsAAUncategorized
   cost: 0
   exclusive: true
+  customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMysticOuter
