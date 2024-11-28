@@ -313,6 +313,7 @@
   id: LoadoutSecurityDisabler
   category: JobsSecurityAUncategorized
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
@@ -326,6 +327,7 @@
   id: LoadoutSecurityMk58
   category: JobsSecurityAUncategorized
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
@@ -342,6 +344,7 @@
   id: LoadoutSecurityMk58NonLethal
   category: JobsSecurityAUncategorized
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
@@ -355,6 +358,7 @@
   id: LoadoutSecurityRevolver
   category: JobsSecurityAUncategorized
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
@@ -371,6 +375,7 @@
   id: LoadoutSecurityRevolverNonLethal
   category: JobsSecurityAUncategorized
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
@@ -384,6 +389,7 @@
   id: LoadoutSecurityRevolverDeckard
   category: JobsSecurityAUncategorized
   cost: 1
+  canBeHeirloom: true
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
@@ -400,6 +406,7 @@
   id: LoadoutSecurityRevolverDeckardNonLethal
   category: JobsSecurityAUncategorized
   cost: 1
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
@@ -413,6 +420,7 @@
   id: LoadoutSecurityPistolN1984
   category: JobsSecurityAUncategorized
   cost: 5
+  canBeHeirloom: true
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
@@ -429,6 +437,7 @@
   id: LoadoutSecurityPistolN1984NonLethal
   category: JobsSecurityAUncategorized
   cost: 5
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
@@ -442,6 +451,7 @@
   id: LoadoutSecurityPistolViper
   category: JobsSecurityAUncategorized
   cost: 2
+  canBeHeirloom: true
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
@@ -458,6 +468,7 @@
   id: LoadoutSecurityPistolViperNonLethal
   category: JobsSecurityAUncategorized
   cost: 2
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
@@ -471,6 +482,7 @@
   id: LoadoutSecurityPistolViperWood
   category: JobsSecurityAUncategorized
   cost: 2
+  canBeHeirloom: true
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
@@ -487,6 +499,7 @@
   id: LoadoutSecurityEquipmentTruncheon
   category: JobsSecurityAUncategorized
   cost: 3
+  canBeHeirloom: true
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
@@ -506,6 +519,7 @@
   id: LoadoutSecurityPistolSvalin
   category: JobsSecurityAUncategorized
   cost: 1
+  canBeHeirloom: true
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
@@ -522,6 +536,7 @@
   id: LoadoutSecurityEnergyGunMini
   category: JobsSecurityAUncategorized
   cost: 2
+  canBeHeirloom: true
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
@@ -538,6 +553,7 @@
   id: LoadoutSecurityEnergyGunPistol
   category: JobsSecurityAUncategorized
   cost: 2
+  canBeHeirloom: true
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
@@ -554,6 +570,7 @@
   id: LoadoutSecurityPistolPollock
   category: JobsSecurityAUncategorized
   cost: 1
+  canBeHeirloom: true
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
@@ -570,6 +587,7 @@
   id: LoadoutSecurityPistolPollockNonlethal
   category: JobsSecurityAUncategorized
   cost: 1
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
@@ -583,6 +601,7 @@
   id: LoadoutSecurityRevolverSnub
   category: JobsSecurityAUncategorized
   cost: 3
+  canBeHeirloom: true
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
@@ -599,6 +618,7 @@
   id: LoadoutSecurityRevolverSnubNonlethal
   category: JobsSecurityAUncategorized
   cost: 3
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
@@ -612,6 +632,7 @@
   id: LoadoutSecurityRevolverK38Master
   category: JobsSecurityAUncategorized
   cost: 1
+  canBeHeirloom: true
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
@@ -628,6 +649,7 @@
   id: LoadoutSecurityRevolverK38MasterNonlethal
   category: JobsSecurityAUncategorized
   cost: 1
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
@@ -641,6 +663,7 @@
   id: LoadoutSecurityRevolverFitz
   category: JobsSecurityAUncategorized
   cost: 2
+  canBeHeirloom: true
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
@@ -657,6 +680,7 @@
   id: LoadoutSecurityRevolverFitzNonlethal
   category: JobsSecurityAUncategorized
   cost: 2
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
@@ -670,6 +694,7 @@
   id: LoadoutSecurityRevolverPython
   category: JobsSecurityAUncategorized
   cost: 5
+  canBeHeirloom: true
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
@@ -686,6 +711,7 @@
   id: LoadoutSecurityRevolverPythonNonlethal
   category: JobsSecurityAUncategorized
   cost: 5
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons

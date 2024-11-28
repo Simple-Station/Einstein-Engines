@@ -2,6 +2,9 @@ using Content.Shared.Antag;
 using Content.Shared.Revolutionary.Components;
 using Content.Shared.StatusIcon;
 using Content.Shared.StatusIcon.Components;
+using Content.Shared.WhiteDream.BloodCult.BloodCultist;
+using Content.Shared.WhiteDream.BloodCult.Components;
+using Content.Shared.WhiteDream.BloodCult.Constructs;
 using Content.Shared.Zombies;
 using Robust.Client.Player;
 using Robust.Shared.Prototypes;
@@ -23,6 +26,10 @@ public sealed class AntagStatusIconSystem : SharedStatusIconSystem
         SubscribeLocalEvent<ZombieComponent, GetStatusIconsEvent>(GetIcon);
         SubscribeLocalEvent<HeadRevolutionaryComponent, GetStatusIconsEvent>(GetIcon);
         SubscribeLocalEvent<InitialInfectedComponent, GetStatusIconsEvent>(GetIcon);
+
+        SubscribeLocalEvent<ConstructComponent, GetStatusIconsEvent>(GetIcon);
+        SubscribeLocalEvent<BloodCultistComponent, GetStatusIconsEvent>(GetBloodCultIcon);
+        SubscribeLocalEvent<BloodCultLeaderComponent, GetStatusIconsEvent>(GetIcon);
     }
 
     /// <summary>
@@ -39,7 +46,6 @@ public sealed class AntagStatusIconSystem : SharedStatusIconSystem
             ev.StatusIcons.Add(_prototype.Index(comp.StatusIcon));
     }
 
-
     /// <summary>
     /// Adds the Rev Icon on an entity if the player is supposed to see it. This additional function is needed to deal
     /// with a special case where if someone is a head rev we only want to display the headrev icon.
@@ -50,6 +56,13 @@ public sealed class AntagStatusIconSystem : SharedStatusIconSystem
             return;
 
         GetIcon(uid, comp, ref ev);
+    }
 
+    private void GetBloodCultIcon(EntityUid uid, BloodCultistComponent comp, ref GetStatusIconsEvent ev)
+    {
+        if (HasComp<BloodCultLeaderComponent>(uid))
+            return;
+
+        GetIcon(uid, comp, ref ev);
     }
 }

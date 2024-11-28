@@ -52,6 +52,9 @@ chat-manager-rate-limit-admin-announcement = Player { $player } breached chat ra
 
 chat-manager-send-empathy-chat-wrap-message = {$source}: {$message}
 
+chat-manager-send-cult-chat-wrap-message = [bold]\[{ $channelName }\] [BubbleHeader]{ $player }[/BubbleHeader]:[/bold] [BubbleContent]{ $message }[/BubbleContent]
+chat-manager-cult-channel-name = Blood Cult
+
 ## Speech verbs for chat
 
 chat-speech-verb-suffix-exclamation = !

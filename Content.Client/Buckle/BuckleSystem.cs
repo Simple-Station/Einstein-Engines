@@ -15,9 +15,41 @@ internal sealed class BuckleSystem : SharedBuckleSystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<BuckleComponent, ComponentHandleState>(OnHandleState);
         SubscribeLocalEvent<BuckleComponent, AppearanceChangeEvent>(OnAppearanceChange);
         SubscribeLocalEvent<StrapComponent, MoveEvent>(OnStrapMoveEvent);
+        SubscribeLocalEvent<BuckleComponent, BuckledEvent>(OnBuckledEvent);
+        SubscribeLocalEvent<BuckleComponent, UnbuckledEvent>(OnUnbuckledEvent);
+    }
+
+     /// <summary>
+    /// Is the strap entity already rotated north? Lower the draw depth of the buckled entity.
+    /// </summary>
+    private void OnBuckledEvent(Entity<BuckleComponent> ent, ref BuckledEvent args)
+    {
+        if (!TryComp<SpriteComponent>(args.Strap, out var strapSprite) ||
+            !TryComp<SpriteComponent>(ent.Owner, out var buckledSprite))
+            return;
+
+        if (Transform(args.Strap.Owner).LocalRotation.GetCardinalDir() == Direction.North)
+        {
+            ent.Comp.OriginalDrawDepth ??= buckledSprite.DrawDepth;
+            buckledSprite.DrawDepth = strapSprite.DrawDepth - 1;
+        }
+    }
+
+    /// <summary>
+    /// Was the draw depth of the buckled entity lowered? Reset it upon unbuckling.
+    /// </summary>
+    private void OnUnbuckledEvent(Entity<BuckleComponent> ent, ref UnbuckledEvent args)
+    {
+        if (!TryComp<SpriteComponent>(ent.Owner, out var buckledSprite))
+            return;
+
+        if (ent.Comp.OriginalDrawDepth.HasValue)
+        {
+            buckledSprite.DrawDepth = ent.Comp.OriginalDrawDepth.Value;
+            ent.Comp.OriginalDrawDepth = null;
+        }
     }
 
     private void OnStrapMoveEvent(EntityUid uid, StrapComponent component, ref MoveEvent args)
@@ -55,21 +87,6 @@ internal sealed class BuckleSystem : SharedBuckleSystem
                 buckle.OriginalDrawDepth = null;
             }
         }
-    }
-
-    private void OnHandleState(Entity<BuckleComponent> ent, ref ComponentHandleState args)
-    {
-        if (args.Current is not BuckleState state)
-            return;
-
-        ent.Comp.DontCollide = state.DontCollide;
-        ent.Comp.BuckleTime = state.BuckleTime;
-        var strapUid = EnsureEntity<BuckleComponent>(state.BuckledTo, ent);
-
-        SetBuckledTo(ent, strapUid == null ? null : new (strapUid.Value, null));
-
-        var (uid, component) = ent;
-
     }
 
     private void OnAppearanceChange(EntityUid uid, BuckleComponent component, ref AppearanceChangeEvent args)

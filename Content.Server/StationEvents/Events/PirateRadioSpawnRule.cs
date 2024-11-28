@@ -25,7 +25,7 @@ public sealed class PirateRadioSpawnRule : StationEventSystem<PirateRadioSpawnRu
     [Dependency] private readonly GameTicker _gameTicker = default!;
     [Dependency] private readonly TransformSystem _xform = default!;
     [Dependency] private readonly ISerializationManager _serializationManager = default!;
-    [Dependency] private readonly IMapManager _mapManager = default!;
+    [Dependency] private readonly MapSystem _mapSystem = default!;
 
     protected override void Started(EntityUid uid, PirateRadioSpawnRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
     {
@@ -48,11 +48,12 @@ public sealed class PirateRadioSpawnRule : StationEventSystem<PirateRadioSpawnRu
             return;
 
         var targetStation = _random.Pick(stations);
-        if (!_mapManager.MapExists(Transform(targetStation).MapID))
-            return; /// SHUT UP HEISENTESTS. DIE.
+        var targetMapId = Transform(targetStation).MapID;
+
+        if (!_mapSystem.MapExists(targetMapId))
+            return;
 
         var randomOffset = _random.NextVector2(component.MinimumDistance, component.MaximumDistance);
-
         var outpostOptions = new MapLoadOptions
         {
             Offset = _xform.GetWorldPosition(targetStation) + randomOffset,
@@ -75,6 +76,7 @@ public sealed class PirateRadioSpawnRule : StationEventSystem<PirateRadioSpawnRu
         {
             var outpostaabb = _xform.GetWorldPosition(id);
             var k = 0;
+
             while (k < component.DebrisCount)
             {
                 var debrisRandomOffset = _random.NextVector2(component.MinimumDebrisDistance, component.MaximumDebrisDistance);
@@ -85,7 +87,16 @@ public sealed class PirateRadioSpawnRule : StationEventSystem<PirateRadioSpawnRu
                     LoadMap = false,
                 };
 
-                var salvageProto = _random.Pick(_prototypeManager.EnumeratePrototypes<SalvageMapPrototype>().ToList());
+                var salvPrototypes = _prototypeManager.EnumeratePrototypes<SalvageMapPrototype>().ToList();
+                var salvageProto = _random.Pick(salvPrototypes);
+
+                if (!_mapSystem.MapExists(GameTicker.DefaultMap))
+                    return;
+
+                // Round didn't start before running this, leading to a null-space test fail.
+                if (GameTicker.DefaultMap == MapId.Nullspace)
+                    return;
+
                 if (!_map.TryLoad(GameTicker.DefaultMap, salvageProto.MapPath.ToString(), out _, debrisOptions))
                     return;
 
