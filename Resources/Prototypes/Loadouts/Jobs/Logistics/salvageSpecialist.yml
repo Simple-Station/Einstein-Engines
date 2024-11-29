@@ -107,3 +107,16 @@
 # Shoes
 
 # Uniforms
+- type: loadout
+  id: LoadoutSalvageTechnicianUniformSuit
+  category: JobsLogisticsSalvageTechnician
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageTechnicianUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - SalvageTechnician
+  items:
+    - ClothingUniformJumpsuitSalvageSpecialist

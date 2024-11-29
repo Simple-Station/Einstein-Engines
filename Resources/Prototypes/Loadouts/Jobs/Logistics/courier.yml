@@ -24,3 +24,30 @@
 # Shoes
 
 # Uniforms
+- type: loadout
+  id: LoadoutCourierUniformSuit
+  category: JobsLogisticsCourier
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCourierUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Courier
+  items:
+    - ClothingUniformCourier
+
+- type: loadout
+  id: LoadoutCourierUniformSkirt
+  category: JobsLogisticsCourier
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCourierUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Courier
+  items:
+    - ClothingUniformSkirtCourier

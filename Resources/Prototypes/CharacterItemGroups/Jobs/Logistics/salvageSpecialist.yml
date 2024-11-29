@@ -76,7 +76,9 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutSalvageSpecialistUniforms
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutSalvageSpecialistUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutSalvageTechnicianUniformSuit

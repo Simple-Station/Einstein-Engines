@@ -59,7 +59,11 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutCourierUniforms
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutCourierUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCourierUniformSuit
+    - type: loadout
+      id: LoadoutCourierUniformSkirt
