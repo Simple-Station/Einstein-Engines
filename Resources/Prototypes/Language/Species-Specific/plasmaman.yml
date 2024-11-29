@@ -3,7 +3,7 @@
   isVisibleLanguage: true
   speech:
     fontId: PatrickHand
-    color: "#ebddcc"
+    color: "#ede4d8"
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1

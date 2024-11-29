@@ -72,13 +72,3 @@
   exclusive: true
   items:
     - ClothingUniformEnvirosuit
-
-- type: loadout
-  id: LoadoutMaskBreath
-  category: Mask
-  groups: [ LoadoutPlasmamanMask ]
-  cost: 1
-  exclusive: true
-  canBeHeirloom: true
-  items:
-    - ClothingMaskBreath

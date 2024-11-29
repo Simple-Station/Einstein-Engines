@@ -39,6 +39,7 @@ public sealed class InternalsSystem : EntitySystem
         SubscribeLocalEvent<InternalsComponent, InternalsDoAfterEvent>(OnDoAfter);
 
         SubscribeLocalEvent<InternalsComponent, StartingGearEquippedEvent>(OnStartingGear);
+        SubscribeLocalEvent<ToggleFirstBreathToolComponent, BreathToolConnectedEvent>(OnEquip);
     }
 
     private void OnStartingGear(EntityUid uid, InternalsComponent component, ref StartingGearEquippedEvent ev)
@@ -47,6 +48,25 @@ public sealed class InternalsSystem : EntitySystem
             return;
 
         ToggleInternals(uid, uid, force: false, component);
+    }
+
+    private void OnEquip(EntityUid uid, ToggleFirstBreathToolComponent component, ref BreathToolConnectedEvent ev)
+    {
+        if (!HasComp<BreathToolComponent>(ev.BreathTool) ||
+            !TryComp<InternalsComponent>(uid, out var internals))
+            return;
+
+        // Internals are already on so no more use for this component
+        if (AreInternalsWorking(internals))
+        {
+            RemComp<ToggleFirstBreathToolComponent>(uid);
+            return;
+        }
+
+        ToggleInternals(uid, uid, force: false, internals);
+
+        if (AreInternalsWorking(internals))
+            RemComp<ToggleFirstBreathToolComponent>(uid);
     }
 
     private void OnGetInteractionVerbs(
@@ -182,6 +202,9 @@ public sealed class InternalsSystem : EntitySystem
             return;
 
         _alerts.ShowAlert(ent, ent.Comp.InternalsAlert, GetSeverity(ent));
+
+        var ev = new BreathToolConnectedEvent(ent.Owner, toolEntity);
+        RaiseLocalEvent(ent.Owner, ev);
     }
 
     public void DisconnectTank(InternalsComponent? component)
@@ -270,5 +293,20 @@ public sealed class InternalsSystem : EntitySystem
         }
 
         return null;
+    }
+}
+
+/// <summary>
+///   Raised on an equipee when it has breath tools connected.
+/// </summary>
+public sealed class BreathToolConnectedEvent : EntityEventArgs
+{
+    public readonly EntityUid Equipee;
+    public readonly EntityUid BreathTool;
+
+    public BreathToolConnectedEvent(EntityUid equipee, EntityUid breathTool)
+    {
+        Equipee = equipee;
+        BreathTool = breathTool;
     }
 }

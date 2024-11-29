@@ -23,12 +23,14 @@
 - type: loadout
   id: LoadoutMaskGas
   category: Mask
-  groups: [ LoadoutMasks, LoadoutPlasmamanMask ]
   cost: 1
   exclusive: true
   canBeHeirloom: true
   items:
     - ClothingMaskGas
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMasks
 
 # Maskbands
 - type: loadout

@@ -70,6 +70,7 @@
   - type: FootPrints
   - type: ToggleStartingGear
     slot: jumpsuit
+  - type: ToggleFirstBreathTool
 
 - type: entity
   parent: BaseSpeciesDummy
