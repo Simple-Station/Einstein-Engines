@@ -69,3 +69,7 @@
 - type: font
   id: Cambria
   path: /Fonts/Cambria.ttf
+
+- type: font
+  id: PatrickHand
+  path: /Fonts/PatrickHand/PatrickHand-Regular.ttf

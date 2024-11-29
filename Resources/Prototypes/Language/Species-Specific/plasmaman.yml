@@ -2,8 +2,8 @@
   id: Calcic
   isVisibleLanguage: true
   speech:
-    fontId: Papyrus
-    color: "#bbbbbb"
+    fontId: PatrickHand
+    color: "#ebddcc"
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
