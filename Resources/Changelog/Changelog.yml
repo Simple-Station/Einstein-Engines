@@ -8164,3 +8164,38 @@ Entries:
   id: 6542
   time: '2024-11-27T15:19:32.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1287
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: >-
+        Fixed the bug with opening storage containers while there's already one
+        open.
+  id: 6543
+  time: '2024-11-29T15:26:27.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1292
+- author: Tmanzxd
+  changes:
+    - type: Fix
+      message: >-
+        Fixed a bug where applicable medication stacks would revert back to 10
+        after 1 use from full.
+  id: 6544
+  time: '2024-11-29T15:29:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1278
+- author: Skubman
+  changes:
+    - type: Fix
+      message: >-
+        Language colors and fonts will show up in text messages again, both on
+        in-person messages and on the radio.
+    - type: Tweak
+      message: >-
+        The text on chat bubbles now uses the color and font of the language
+        being spoken.
+    - type: Tweak
+      message: >-
+        The language prefix before the name on chat messages now uses the
+        language's color.
+  id: 6545
+  time: '2024-11-29T22:58:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1294
