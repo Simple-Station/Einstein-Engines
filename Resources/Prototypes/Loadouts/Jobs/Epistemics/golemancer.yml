@@ -1,5 +1,47 @@
 # Golemancer
 # Backpacks
+- type: loadout
+  id: LoadoutBackpackRobotics
+  category: JobsEpistemicsGolemancer
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackRobotics
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGolemancerBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Roboticist
+
+- type: loadout
+  id: LoadoutBackpackSatchelRobotics
+  category: JobsEpistemicsGolemancer
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackSatchelRobotics
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGolemancerBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Roboticist
+
+- type: loadout
+  id: LoadoutBackpackDuffelRobotics
+  category: Backpacks
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackDuffelRobotics
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGolemancerBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Roboticist
+
 
 # Belt
 

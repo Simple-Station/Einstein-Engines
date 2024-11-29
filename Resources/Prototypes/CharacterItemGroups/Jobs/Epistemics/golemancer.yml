@@ -1,9 +1,15 @@
 # Golemancer
-#- type: characterItemGroup
-#  id: LoadoutGolemancerBackpacks
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutGolemancerBackpacks
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutBackpackRobotics
+    - type: loadout
+      id: LoadoutBackpackSatchelRobotics
+    - type: loadout
+      id: LoadoutBackpackDuffelRobotics
+
 #- type: characterItemGroup
 #  id: LoadoutGolemancerBelt
 #  maxItems: 1
