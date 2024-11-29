@@ -5,6 +5,7 @@
   category: JobsLogisticsSalvageSpecialist
   cost: 0
   exclusive: true
+  customColorTint: true
   items:
     - ClothingBackpackSalvage
   requirements:
@@ -19,6 +20,7 @@
   category: JobsLogisticsSalvageSpecialist
   cost: 0
   exclusive: true
+  customColorTint: true
   items:
     - ClothingBackpackSatchelSalvage
   requirements:
@@ -33,6 +35,7 @@
   category: JobsLogisticsSalvageSpecialist
   cost: 0
   exclusive: true
+  customColorTint: true
   items:
     - ClothingBackpackDuffelSalvage
   requirements:
@@ -105,6 +108,7 @@
   category: JobsLogisticsSalvageSpecialist
   cost: 0
   canBeHeirloom: true
+  customColorTint: true # Go read Neuromancer
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSalvageSpecialistWeapons
@@ -119,6 +123,7 @@
   category: JobsLogisticsSalvageSpecialist
   cost: 0
   canBeHeirloom: true
+  customColorTint: true # Go read Neuromancer
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSalvageSpecialistWeapons
@@ -133,6 +138,7 @@
   category: JobsLogisticsSalvageSpecialist
   cost: 0
   canBeHeirloom: true
+  customColorTint: true # Go read Neuromancer
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSalvageSpecialistWeapons
@@ -147,6 +153,7 @@
   category: JobsLogisticsSalvageSpecialist
   cost: 0
   canBeHeirloom: true
+  customColorTint: true # Go read Neuromancer
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSalvageSpecialistWeapons
@@ -161,6 +168,7 @@
   category: JobsLogisticsSalvageSpecialist
   cost: 0
   canBeHeirloom: true
+  customColorTint: true # Go read Neuromancer
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSalvageSpecialistWeapons
@@ -175,6 +183,7 @@
   category: JobsLogisticsSalvageSpecialist
   cost: 1
   canBeHeirloom: true
+  customColorTint: true # Go read Neuromancer
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSalvageSpecialistWeapons
@@ -191,6 +200,7 @@
   category: JobsLogisticsSalvageSpecialist
   cost: 1
   canBeHeirloom: true
+  customColorTint: true # Go read Neuromancer
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSalvageSpecialistWeapons
@@ -205,6 +215,7 @@
   category: JobsLogisticsSalvageSpecialist
   cost: 2
   canBeHeirloom: true
+  customColorTint: true # Go read Neuromancer
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSalvageSpecialistWeapons
@@ -219,6 +230,7 @@
   category: JobsLogisticsSalvageSpecialist
   cost: 2
   canBeHeirloom: true
+  customColorTint: true # Go read Neuromancer
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSalvageSpecialistWeapons
