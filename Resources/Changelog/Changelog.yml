@@ -8164,3 +8164,12 @@ Entries:
   id: 6542
   time: '2024-11-27T15:19:32.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1287
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: >-
+        Fixed the bug with opening storage containers while there's already one
+        open.
+  id: 6543
+  time: '2024-11-29T15:26:27.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1292
