@@ -26,6 +26,8 @@
       id: LoadoutChaplainEquipmentCandles
     - type: loadout
       id: LoadoutChaplainEquipmentCandlesSmall
+    - type: loadout
+      id: LoadoutChaplainPillCanisterSpaceDrugs
 
 #- type: characterItemGroup
 #  id: LoadoutChaplainEyes

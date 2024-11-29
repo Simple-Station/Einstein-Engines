@@ -21,6 +21,8 @@
       id: LoadoutAcolyteEquipmentCandles
     - type: loadout
       id: LoadoutAcolyteEquipmentCandlesSmall
+    - type: loadout
+      id: LoadoutAcolytePillCanisterSpaceDrugs
 
 #- type: characterItemGroup
 #  id: LoadoutAcolyteEyes

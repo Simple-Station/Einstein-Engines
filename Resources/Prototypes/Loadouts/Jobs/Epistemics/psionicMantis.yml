@@ -32,6 +32,19 @@
   items:
     - BoxCandleSmall
 
+- type: loadout
+  id: LoadoutPsionicMantisPillCanisterSpaceDrugs
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - PillCanisterSpaceDrugs
+
 # Eyes
 
 # Gloves

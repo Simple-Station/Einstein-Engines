@@ -32,6 +32,19 @@
   items:
     - BoxCandleSmall
 
+- type: loadout
+  id: LoadoutMysticPillCanisterSpaceDrugs
+  category: JobsEpistemicsMystic
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMysticEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorResearcher
+  items:
+    - PillCanisterSpaceDrugs
+
 # Eyes
 
 # Gloves

@@ -32,6 +32,19 @@
   items:
     - BoxCandleSmall
 
+- type: loadout
+  id: LoadoutGolemancerPillCanisterSpaceDrugs
+  category: JobsEpistemicsGolemancer
+  cost: 1
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGolemancerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Roboticist
+  items:
+    - PillCanisterSpaceDrugs
+
 # Eyes
 
 # Gloves

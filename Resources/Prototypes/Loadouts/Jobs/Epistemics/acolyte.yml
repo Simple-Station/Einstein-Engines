@@ -32,6 +32,19 @@
   items:
     - BoxCandleSmall
 
+- type: loadout
+  id: LoadoutAcolytePillCanisterSpaceDrugs
+  category: JobsEpistemicsAcolyte
+  cost: 1
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAcolyteEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Scientist
+  items:
+    - PillCanisterSpaceDrugs
+
 # Eyes
 
 # Gloves

@@ -32,6 +32,19 @@
   items:
     - BoxCandleSmall
 
+- type: loadout
+  id: LoadoutNoviciatePillCanisterSpaceDrugs
+  category: JobsEpistemicsNoviciate
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNoviciateEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchAssistant
+  items:
+    - PillCanisterSpaceDrugs
+
 # Eyes
 
 # Gloves

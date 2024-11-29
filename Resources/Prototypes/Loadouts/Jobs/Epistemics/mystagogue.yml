@@ -73,6 +73,19 @@
   items:
     - BoxCandleSmall
 
+- type: loadout
+  id: LoadoutMystagoguePillCanisterSpaceDrugs
+  category: JobsEpistemicsMystagogue
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMystagogueEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchDirector
+  items:
+    - PillCanisterSpaceDrugs
+
 # Eyes
 
 # Gloves

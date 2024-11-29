@@ -22,6 +22,8 @@
       id: LoadoutGolemancerEquipmentCandles
     - type: loadout
       id: LoadoutGolemancerEquipmentCandlesSmall
+    - type: loadout
+      id: LoadoutGolemancerPillCanisterSpaceDrugs
 
 #- type: characterItemGroup
 #  id: LoadoutGolemancerEyes
