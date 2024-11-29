@@ -22,7 +22,7 @@
       group: LoadoutCourierHead
     - !type:CharacterJobRequirement
       jobs:
-        - Courier
+        - MailCarrier
   items:
     - ClothingHeadMailCarrier
 
@@ -43,7 +43,7 @@
       group: LoadoutCourierOuter
     - !type:CharacterJobRequirement
       jobs:
-        - Courier
+        - MailCarrier
   items:
     - ClothingOuterWinterCoatMail
 
@@ -60,7 +60,7 @@
       group: LoadoutCourierUniforms
     - !type:CharacterJobRequirement
       jobs:
-        - Courier
+        - MailCarrier
   items:
     - ClothingUniformCourier
 
@@ -74,7 +74,7 @@
       group: LoadoutCourierUniforms
     - !type:CharacterJobRequirement
       jobs:
-        - Courier
+        - MailCarrier
   items:
     - ClothingUniformSkirtCourier
 
@@ -88,7 +88,7 @@
       group: LoadoutCourierUniforms
     - !type:CharacterJobRequirement
       jobs:
-        - Courier
+        - MailCarrier
   items:
     - ClothingUniformMailCarrier
 
@@ -102,6 +102,6 @@
       group: LoadoutCourierUniforms
     - !type:CharacterJobRequirement
       jobs:
-        - Courier
+        - MailCarrier
   items:
     - ClothingUniformSkirtMailCarrier

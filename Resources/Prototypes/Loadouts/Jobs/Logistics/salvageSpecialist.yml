@@ -60,6 +60,125 @@
   items:
     - WeaponCrusherDagger
 
+- type: loadout
+  id: LoadoutSalvageWeaponsCombatKnife
+  category: JobsLogisticsSalvageSpecialist
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistWeapons
+    - !type:CharacterJobRequirement
+      jobs:
+        - SalvageSpecialist
+  items:
+    - CombatKnife
+
+- type: loadout
+  id: LoadoutSalvageWeaponsKitchenKnife
+  category: JobsLogisticsSalvageSpecialist
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistWeapons
+    - !type:CharacterJobRequirement
+      jobs:
+        - SalvageSpecialist
+  items:
+    - KitchenKnife
+
+- type: loadout
+  id: LoadoutSalvageWeaponsSurvivalKnife
+  category: JobsLogisticsSalvageSpecialist
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistWeapons
+    - !type:CharacterJobRequirement
+      jobs:
+        - SalvageSpecialist
+  items:
+    - SurvivalKnife
+
+- type: loadout
+  id: LoadoutSalvageWeaponsKukriKnife
+  category: JobsLogisticsSalvageSpecialist
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistWeapons
+    - !type:CharacterJobRequirement
+      jobs:
+        - SalvageSpecialist
+  items:
+    - KukriKnife
+
+- type: loadout
+  id: LoadoutSalvageWeaponsCleaver
+  category: JobsLogisticsSalvageSpecialist
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistWeapons
+    - !type:CharacterJobRequirement
+      jobs:
+        - SalvageSpecialist
+  items:
+    - ButchCleaver
+
+- type: loadout
+  id: LoadoutSalvageWeaponsThrowingKnife
+  category: JobsLogisticsSalvageSpecialist
+  cost: 1
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistWeapons
+    - !type:CharacterJobRequirement
+      jobs:
+        - SalvageSpecialist
+  items:
+    - ThrowingKnife
+    - ThrowingKnife
+    - ThrowingKnife
+
+- type: loadout
+  id: LoadoutSalvageWeaponsMachete
+  category: JobsLogisticsSalvageSpecialist
+  cost: 1
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistWeapons
+    - !type:CharacterJobRequirement
+      jobs:
+        - SalvageSpecialist
+  items:
+    - Machete
+
+- type: loadout
+  id: LoadoutSalvageWeaponsCutlass
+  category: JobsLogisticsSalvageSpecialist
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistWeapons
+    - !type:CharacterJobRequirement
+      jobs:
+        - SalvageSpecialist
+  items:
+    - Cutlass
+
+- type: loadout
+  id: LoadoutSalvageWeaponsKatana
+  category: JobsLogisticsSalvageSpecialist
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistWeapons
+    - !type:CharacterJobRequirement
+      jobs:
+        - SalvageSpecialist
+  items:
+    - Katana
+
 # Eyes
 
 # Gloves
@@ -108,15 +227,15 @@
 
 # Uniforms
 - type: loadout
-  id: LoadoutSalvageTechnicianUniformSuit
-  category: JobsLogisticsSalvageTechnician
+  id: LoadoutSalvageSpecialistUniformSuit
+  category: JobsLogisticsSalvageSpecialist
   cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutSalvageTechnicianUniforms
+      group: LoadoutSalvageSpecialistUniforms
     - !type:CharacterJobRequirement
       jobs:
-        - SalvageTechnician
+        - SalvageSpecialist
   items:
     - ClothingUniformJumpsuitSalvageSpecialist
