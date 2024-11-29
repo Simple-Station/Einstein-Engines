@@ -14,11 +14,15 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutCatalogerEquipment
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutCatalogerEquipment
+  maxItems: 3
+  items:
+    - type: loadout
+      id: LoadoutCatalogerEquipmentCandles
+    - type: loadout
+      id: LoadoutCatalogerEquipmentCandlesSmall
+
 #- type: characterItemGroup
 #  id: LoadoutCatalogerEyes
 #  maxItems: 1

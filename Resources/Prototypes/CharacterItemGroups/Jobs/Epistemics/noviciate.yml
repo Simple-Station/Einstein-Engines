@@ -14,11 +14,15 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutNoviciateEquipment
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutNoviciateEquipment
+  maxItems: 3
+  items:
+    - type: loadout
+      id: LoadoutNoviciateEquipmentCandles
+    - type: loadout
+      id: LoadoutNoviciateEquipmentCandlesSmall
+
 #- type: characterItemGroup
 #  id: LoadoutNoviciateEyes
 #  maxItems: 1

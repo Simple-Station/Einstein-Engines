@@ -14,11 +14,15 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutPsionicMantisEquipment
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutPsionicMantisEquipment
+  maxItems: 3
+  items:
+    - type: loadout
+      id: LoadoutPsionicMantisEquipmentCandles
+    - type: loadout
+      id: LoadoutPsionicMantisEquipmentCandlesSmall
+
 #- type: characterItemGroup
 #  id: LoadoutPsionicMantisEyes
 #  maxItems: 1

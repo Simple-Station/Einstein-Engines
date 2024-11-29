@@ -6,6 +6,31 @@
 # Ears
 
 # Equipment
+- type: loadout
+  id: LoadoutNoviciateEquipmentCandles
+  category: JobsEpistemicsNoviciate
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNoviciateEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchAssistant
+  items:
+    - BoxCandle
+
+- type: loadout
+  id: LoadoutNoviciateEquipmentCandlesSmall
+  category: JobsEpistemicsNoviciate
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNoviciateEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchAssistant
+  items:
+    - BoxCandleSmall
 
 # Eyes
 

@@ -13,11 +13,15 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutAcolyteEquipment
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutAcolyteEquipment
+  maxItems: 3
+  items:
+    - type: loadout
+      id: LoadoutAcolyteEquipmentCandles
+    - type: loadout
+      id: LoadoutAcolyteEquipmentCandlesSmall
+
 #- type: characterItemGroup
 #  id: LoadoutAcolyteEyes
 #  maxItems: 1

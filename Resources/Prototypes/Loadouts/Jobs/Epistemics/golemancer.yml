@@ -6,6 +6,31 @@
 # Ears
 
 # Equipment
+- type: loadout
+  id: LoadoutGolemancerEquipmentCandles
+  category: JobsEpistemicsGolemancer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGolemancerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Roboticist
+  items:
+    - BoxCandle
+
+- type: loadout
+  id: LoadoutGolemancerEquipmentCandlesSmall
+  category: JobsEpistemicsGolemancer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGolemancerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Roboticist
+  items:
+    - BoxCandleSmall
 
 # Eyes
 
@@ -32,9 +57,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutGolemancerUniforms
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Epistemics
+    - !type:CharacterJobRequirement
+      jobs:
+        - Roboticist
   items:
     - ClothingUniformJumpskirtRoboticist
 
@@ -46,8 +71,8 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutGolemancerUniforms
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Epistemics
+    - !type:CharacterJobRequirement
+      jobs:
+        - Roboticist
   items:
     - ClothingUniformJumpsuitRoboticist

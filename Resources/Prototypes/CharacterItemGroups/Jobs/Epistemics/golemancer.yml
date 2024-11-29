@@ -14,11 +14,15 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutGolemancerEquipment
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutGolemancerEquipment
+  maxItems: 3
+  items:
+    - type: loadout
+      id: LoadoutGolemancerEquipmentCandles
+    - type: loadout
+      id: LoadoutGolemancerEquipmentCandlesSmall
+
 #- type: characterItemGroup
 #  id: LoadoutGolemancerEyes
 #  maxItems: 1

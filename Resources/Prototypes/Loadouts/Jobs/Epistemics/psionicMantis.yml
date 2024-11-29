@@ -6,6 +6,31 @@
 # Ears
 
 # Equipment
+- type: loadout
+  id: LoadoutPsionicMantisEquipmentCandles
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - BoxCandle
+
+- type: loadout
+  id: LoadoutPsionicMantisEquipmentCandlesSmall
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - BoxCandleSmall
 
 # Eyes
 
@@ -22,7 +47,7 @@
 # Outer
 - type: loadout
   id: LoadoutScienceOuterWinterCoatMantis
-  category: JobsEpistemicsAAUncategorized
+  category: JobsEpistemicsPsionicMantis
   cost: 0
   exclusive: true
   requirements:

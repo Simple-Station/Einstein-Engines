@@ -6,6 +6,31 @@
 # Ears
 
 # Equipment
+- type: loadout
+  id: LoadoutMysticEquipmentCandles
+  category: JobsEpistemicsMystic
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMysticEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorResearcher
+  items:
+    - BoxCandle
+
+- type: loadout
+  id: LoadoutMysticEquipmentCandlesSmall
+  category: JobsEpistemicsMystic
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMysticEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorResearcher
+  items:
+    - BoxCandleSmall
 
 # Eyes
 

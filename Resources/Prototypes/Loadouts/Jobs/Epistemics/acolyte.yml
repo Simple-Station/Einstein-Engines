@@ -6,6 +6,31 @@
 # Ears
 
 # Equipment
+- type: loadout
+  id: LoadoutAcolyteEquipmentCandles
+  category: JobsEpistemicsAcolyte
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAcolyteEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Scientist
+  items:
+    - BoxCandle
+
+- type: loadout
+  id: LoadoutAcolyteEquipmentCandlesSmall
+  category: JobsEpistemicsAcolyte
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAcolyteEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Scientist
+  items:
+    - BoxCandleSmall
 
 # Eyes
 
