@@ -142,7 +142,6 @@ public partial class SharedBodySystem
     {
         Dirty(partEnt, partEnt.Comp);
         partEnt.Comp.Body = bodyEnt;
-        Log.Warning($"Added part for {bodyEnt.ToString()}");
 
         var ev = new BodyPartAddedEvent(slotId, partEnt);
         RaiseLocalEvent(bodyEnt, ref ev);

@@ -43,41 +43,42 @@
 - type: loadout
   id: LoadoutSpeciesEmergencyPlasmaTank
   category: Species
+  groups: [ LoadoutPlasmamanPlasmaTank ]
   cost: 0
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      species:
-        - Plasmaman
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutAirTank
   items:
     - EmergencyPlasmaTankFilled
-    # TEMPORARY
-    - ClothingMaskBreath
-    - ClothingUniformEnvirosuit
 
 - type: loadout
   id: LoadoutSpeciesExtendedEmergencyPlasmaTank
   category: Species
+  groups: [ LoadoutPlasmamanPlasmaTank ]
   cost: 1
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      species:
-        - Plasmaman
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutAirTank
   items:
     - ExtendedEmergencyPlasmaTankFilled
 
 - type: loadout
   id: LoadoutSpeciesDoubleEmergencyPlasmaTank
   category: Species
+  groups: [ LoadoutPlasmamanPlasmaTank ]
   cost: 2
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      species:
-        - Plasmaman
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutAirTank
   items:
     - DoubleEmergencyPlasmaTankFilled
+
+- type: loadout
+  id: LoadoutSpeciesUniformEnvirosuit
+  category: Species
+  groups: [ LoadoutPlasmamanEnvirosuit ]
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformEnvirosuit
+
+- type: loadout
+  id: LoadoutMaskBreath
+  category: Mask
+  groups: [ LoadoutPlasmamanMask ]
+  cost: 1
+  exclusive: true
+  canBeHeirloom: true
+  items:
+    - ClothingMaskBreath

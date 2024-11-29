@@ -1,0 +1,18 @@
+- type: characterItemGroup
+  id: LoadoutPlasmamanPlasmaTank
+  minItems: 1
+  maxItems: 1
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Plasmaman
+  items:
+    - type: loadout
+      id: LoadoutSpeciesEmergencyPlasmaTank
+      priority: 10
+    - type: loadout
+      id: LoadoutSpeciesExtendedEmergencyPlasmaTank
+      priority: 0
+    - type: loadout
+      id: LoadoutSpeciesDoubleEmergencyPlasmaTank
+      priority: 5

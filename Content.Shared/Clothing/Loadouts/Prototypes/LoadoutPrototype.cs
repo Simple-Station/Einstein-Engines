@@ -1,5 +1,6 @@
 using Content.Shared.Clothing.Loadouts.Systems;
 using Content.Shared.Customization.Systems;
+using Content.Shared.Prototypes;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.List;
@@ -16,6 +17,9 @@ public sealed partial class LoadoutPrototype : IPrototype
 
     [DataField]
     public ProtoId<LoadoutCategoryPrototype> Category = "Uncategorized";
+
+    [DataField]
+    public List<ProtoId<CharacterItemGroupPrototype>> Groups = new();
 
     [DataField(required: true)]
     public List<ProtoId<EntityPrototype>> Items = new();

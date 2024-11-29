@@ -1,0 +1,15 @@
+- type: characterItemGroup
+  id: LoadoutPlasmamanMask
+  minItems: 1
+  maxItems: 1
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Plasmaman
+  items:
+    - type: loadout
+      id: LoadoutMaskBreath
+      priority: 5
+    - type: loadout
+      id: LoadoutMaskGas
+      priority: 0
