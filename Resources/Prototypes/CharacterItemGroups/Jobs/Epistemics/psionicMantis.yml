@@ -24,6 +24,8 @@
       id: LoadoutPsionicMantisEquipmentCandlesSmall
     - type: loadout
       id: LoadoutPsionicMantisPillCanisterSpaceDrugs
+    - type: loadout
+      id: LoadoutPsionicMantisPillCanisterCryptobiolin
 
 #- type: characterItemGroup
 #  id: LoadoutPsionicMantisEyes

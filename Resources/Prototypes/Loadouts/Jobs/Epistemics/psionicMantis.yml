@@ -45,6 +45,19 @@
   items:
     - PillCanisterSpaceDrugs
 
+- type: loadout
+  id: LoadoutPsionicMantisPillCanisterCryptobiolin
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - PillCanisterCryptobiolin
+
 # Eyes
 
 # Gloves
