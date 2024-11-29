@@ -55,6 +55,8 @@
       id: LoadoutSalvageWeaponsCutlass
     - type: loadout
       id: LoadoutSalvageWeaponsKatana
+    - type: loadout
+      id: LoadoutSalvageWeaponsWakizashi
 
 #- type: characterItemGroup
 #  id: LoadoutSalvageSpecialistEyes

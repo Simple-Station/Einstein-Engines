@@ -240,6 +240,21 @@
   items:
     - Katana
 
+- type: loadout
+  id: LoadoutSalvageWeaponsWakizashi
+  category: JobsLogisticsSalvageSpecialist
+  cost: 1
+  canBeHeirloom: true
+  customColorTint: true # Go read Neuromancer
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistWeapons
+    - !type:CharacterJobRequirement
+      jobs:
+        - SalvageSpecialist
+  items:
+    - Wakizashi
+
 # Eyes
 
 # Gloves
