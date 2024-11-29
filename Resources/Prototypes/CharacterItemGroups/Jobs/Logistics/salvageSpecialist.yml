@@ -10,11 +10,17 @@
     - type: loadout
       id: LoadoutSalvageBackpackDuffel
 
-#- type: characterItemGroup
-#  id: LoadoutSalvageSpecialistBelt
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutSalvageSpecialistBelt
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutSalvageBeltMercWebbing
+    - type: loadout
+      id: LoadoutSalvageBeltSalvageWebbing
+    - type: loadout
+      id: LoadoutSalvageBeltMilitaryWebbing
+
 #- type: characterItemGroup
 #  id: LoadoutSalvageSpecialistEars
 #  maxItems: 1
@@ -76,6 +82,8 @@
   items:
     - type: loadout
       id: LoadoutCargoNeckGoliathCloak
+    - type: loadout
+      id: LoadoutSalvageNeckCloakMiner
 
 #- type: characterItemGroup
 #  id: LoadoutSalvageSpecialistMask
