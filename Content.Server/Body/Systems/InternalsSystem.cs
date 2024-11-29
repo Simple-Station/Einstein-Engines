@@ -173,7 +173,6 @@ public sealed class InternalsSystem : EntitySystem
             _atmos.DisconnectInternals(breathTool);
             DisconnectTank(ent);
         }
-        Log.Error("DisconnectBreathTool");
 
         _alerts.ShowAlert(ent, ent.Comp.InternalsAlert, GetSeverity(ent));
     }
@@ -184,7 +183,6 @@ public sealed class InternalsSystem : EntitySystem
         {
             _atmos.DisconnectInternals(tool);
         }
-        Log.Error("ConnectBreathTool");
 
         ent.Comp.BreathToolEntity = toolEntity;
         _alerts.ShowAlert(ent, ent.Comp.InternalsAlert, GetSeverity(ent));
@@ -198,8 +196,6 @@ public sealed class InternalsSystem : EntitySystem
         if (TryComp(component.GasTankEntity, out GasTankComponent? tank))
             _gasTank.DisconnectFromInternals((component.GasTankEntity.Value, tank));
 
-        Log.Error("DisconnectTank");
-
         component.GasTankEntity = null;
         _alerts.ShowAlert(component.Owner, component.InternalsAlert, GetSeverity(component));
     }
@@ -211,8 +207,6 @@ public sealed class InternalsSystem : EntitySystem
 
         if (TryComp(ent.Comp.GasTankEntity, out GasTankComponent? tank))
             _gasTank.DisconnectFromInternals((ent.Comp.GasTankEntity.Value, tank));
-
-        Log.Error("TryConnectTank");
 
         ent.Comp.GasTankEntity = tankEntity;
         _alerts.ShowAlert(ent, ent.Comp.InternalsAlert, GetSeverity(ent));
