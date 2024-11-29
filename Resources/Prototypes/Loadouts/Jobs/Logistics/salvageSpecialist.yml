@@ -73,6 +73,7 @@
   id: LoadoutSalvageBeltMilitaryWebbing
   category: JobsLogisticsSalvageSpecialist
   cost: 0
+  customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSalvageSpecialistBelt
