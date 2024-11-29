@@ -21,17 +21,14 @@ public abstract class SharedDeepfryerSystem : EntitySystem
 
     public virtual bool CanInsert(EntityUid uid, EntityUid entity)
     {
-        if (!Transform(uid).Anchored)
+        if (!Transform(uid).Anchored
+            || !TryComp(entity, out PhysicsComponent? physics))
             return false;
 
         var storable = HasComp<ItemComponent>(entity);
         if (!storable && !HasComp<BodyComponent>(entity))
             return false;
-
-        if (TryComp<PhysicsComponent>(entity, out var physics) && (physics.CanCollide) || storable)
-            return true;
-        else
-            return false;
-
+            
+        return physics.CanCollide || storable;
     }
 }
