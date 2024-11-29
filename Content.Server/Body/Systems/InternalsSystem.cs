@@ -38,15 +38,15 @@ public sealed class InternalsSystem : EntitySystem
         SubscribeLocalEvent<InternalsComponent, GetVerbsEvent<InteractionVerb>>(OnGetInteractionVerbs);
         SubscribeLocalEvent<InternalsComponent, InternalsDoAfterEvent>(OnDoAfter);
 
-        SubscribeLocalEvent<StartingGearEquippedEvent>(OnStartingGear);
+        SubscribeLocalEvent<InternalsComponent, StartingGearEquippedEvent>(OnStartingGear);
     }
 
-    private void OnStartingGear(ref StartingGearEquippedEvent ev)
+    private void OnStartingGear(EntityUid uid, InternalsComponent component, ref StartingGearEquippedEvent ev)
     {
-        if (!_internalsQuery.TryComp(ev.Entity, out var internals) || internals.BreathToolEntity == null)
+        if (component.BreathToolEntity == null)
             return;
 
-        ToggleInternals(ev.Entity, ev.Entity, force: false, internals);
+        ToggleInternals(uid, uid, force: false, component);
     }
 
     private void OnGetInteractionVerbs(
@@ -173,6 +173,7 @@ public sealed class InternalsSystem : EntitySystem
             _atmos.DisconnectInternals(breathTool);
             DisconnectTank(ent);
         }
+        Log.Error("DisconnectBreathTool");
 
         _alerts.ShowAlert(ent, ent.Comp.InternalsAlert, GetSeverity(ent));
     }
@@ -183,6 +184,7 @@ public sealed class InternalsSystem : EntitySystem
         {
             _atmos.DisconnectInternals(tool);
         }
+        Log.Error("ConnectBreathTool");
 
         ent.Comp.BreathToolEntity = toolEntity;
         _alerts.ShowAlert(ent, ent.Comp.InternalsAlert, GetSeverity(ent));
@@ -196,6 +198,8 @@ public sealed class InternalsSystem : EntitySystem
         if (TryComp(component.GasTankEntity, out GasTankComponent? tank))
             _gasTank.DisconnectFromInternals((component.GasTankEntity.Value, tank));
 
+        Log.Error("DisconnectTank");
+
         component.GasTankEntity = null;
         _alerts.ShowAlert(component.Owner, component.InternalsAlert, GetSeverity(component));
     }
@@ -207,6 +211,8 @@ public sealed class InternalsSystem : EntitySystem
 
         if (TryComp(ent.Comp.GasTankEntity, out GasTankComponent? tank))
             _gasTank.DisconnectFromInternals((ent.Comp.GasTankEntity.Value, tank));
+
+        Log.Error("TryConnectTank");
 
         ent.Comp.GasTankEntity = tankEntity;
         _alerts.ShowAlert(ent, ent.Comp.InternalsAlert, GetSeverity(ent));

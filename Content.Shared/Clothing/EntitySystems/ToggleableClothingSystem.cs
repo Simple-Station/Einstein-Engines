@@ -6,6 +6,7 @@ using Content.Shared.Interaction;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Popups;
+using Content.Shared.Roles;
 using Content.Shared.Strip;
 using Content.Shared.Verbs;
 using Robust.Shared.Containers;
@@ -49,6 +50,8 @@ public sealed class ToggleableClothingSystem : EntitySystem
         SubscribeLocalEvent<ToggleableClothingComponent, GetVerbsEvent<EquipmentVerb>>(OnGetVerbs);
         SubscribeLocalEvent<AttachedClothingComponent, GetVerbsEvent<EquipmentVerb>>(OnGetAttachedStripVerbsEvent);
         SubscribeLocalEvent<ToggleableClothingComponent, ToggleClothingDoAfterEvent>(OnDoAfterComplete);
+
+        SubscribeLocalEvent<ToggleStartingGearComponent, StartingGearEquippedEvent>(OnStartingGearEquipped);
     }
 
     private void GetRelayedVerbs(EntityUid uid, ToggleableClothingComponent component, InventoryRelayedEvent<GetVerbsEvent<EquipmentVerb>> args)
@@ -297,6 +300,13 @@ public sealed class ToggleableClothingSystem : EntitySystem
 
         if (_actionContainer.EnsureAction(uid, ref component.ActionEntity, out var action, component.Action))
             _actionsSystem.SetEntityIcon(component.ActionEntity.Value, component.ClothingUid, action);
+    }
+
+    private void OnStartingGearEquipped(EntityUid uid, ToggleStartingGearComponent component, ref StartingGearEquippedEvent ev)
+    {
+        if (_inventorySystem.TryGetSlotEntity(uid, component.Slot, out var clothing) &&
+            TryComp<ToggleableClothingComponent>(clothing, out var toggleable))
+            ToggleClothing(uid, (EntityUid) clothing, toggleable);
     }
 }
 

@@ -68,6 +68,8 @@
     - TauCetiBasic
     - Calcic
   - type: FootPrints
+  - type: ToggleStartingGear
+    slot: jumpsuit
 
 - type: entity
   parent: BaseSpeciesDummy

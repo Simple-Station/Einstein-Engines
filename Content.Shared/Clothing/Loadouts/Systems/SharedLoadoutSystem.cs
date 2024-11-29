@@ -155,6 +155,9 @@ public sealed class SharedLoadoutSystem : EntitySystem
             }
         }
 
+        var ev = new StartingGearEquippedEvent(uid);
+        RaiseLocalEvent(uid, ref ev);
+
         // Return a list of items that couldn't be equipped so the server can handle it if it wants
         // The server has more information about the inventory system than the client does and the client doesn't need to put loadouts in backpacks
         return (failedLoadouts, allLoadouts);

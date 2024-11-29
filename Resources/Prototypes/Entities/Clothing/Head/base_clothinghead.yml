@@ -203,6 +203,7 @@
     slots: [ HEAD ]
   - type: IgniteFromGasImmunity
   - type: EyeProtection
+  - type: BreathMask
   - type: GroupExamine
   - type: IngestionBlocker
   - type: Tag
