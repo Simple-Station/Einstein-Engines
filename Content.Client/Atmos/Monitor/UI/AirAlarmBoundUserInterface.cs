@@ -1,11 +1,7 @@
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Monitor;
 using Content.Shared.Atmos.Monitor.Components;
-using Robust.Client.GameObjects;
 using Robust.Client.UserInterface;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
-using Robust.Shared.Log;
 
 namespace Content.Client.Atmos.Monitor.UI;
 
@@ -84,6 +80,7 @@ public sealed class AirAlarmBoundUserInterface : BoundUserInterface
     {
         base.Dispose(disposing);
 
-        if (disposing) _window?.Dispose();
+        if (disposing)
+            _window?.Dispose();
     }
 }
