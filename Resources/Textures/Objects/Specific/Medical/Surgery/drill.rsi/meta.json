@@ -1,7 +1,7 @@
 {
 	"version": 1,
 	"license": "CC-BY-SA-3.0",
-  "copyright": "Taken from cev-eris at https://github.com/discordia-space/CEV-Eris/commit/476e374cea95ff5e8b1603c48342bf700e2cd7af",
+  "copyright": "Taken from /tg/station at https://github.com/tgstation/tgstation/commit/67d7577947b5079408dce1b7646fdd6c3df13bb5",
 	"size": {
 		"x": 32,
 		"y": 32
@@ -17,27 +17,6 @@
 		{
 			"name": "inhand-right",
 			"directions": 4
-		},
-		{
-			"name": "0",
-			"delays": [
-				[
-					0.1,
-					0.1
-				]
-			]
-		},
-		{
-			"name": "25"
-		},
-		{
-			"name": "50"
-		},
-		{
-			"name": "75"
-		},
-		{
-			"name": "100"
 		}
 	]
 }
