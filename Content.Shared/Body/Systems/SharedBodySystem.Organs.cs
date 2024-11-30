@@ -3,6 +3,7 @@ using Content.Shared.Body.Components;
 using Content.Shared.Body.Events;
 using Content.Shared.Body.Organ;
 using Content.Shared.Body.Part;
+using Content.Shared.BodyEffects;
 using Content.Shared.Damage;
 using Robust.Shared.Containers;
 
@@ -10,6 +11,18 @@ namespace Content.Shared.Body.Systems;
 
 public partial class SharedBodySystem
 {
+    private void InitializeOrgans()
+    {
+        SubscribeLocalEvent<OrganComponent, MapInitEvent>(OnMapInit);
+        SubscribeLocalEvent<OrganComponent, OrganEnableChangedEvent>(OnOrganEnableChanged);
+    }
+
+    private void OnMapInit(Entity<OrganComponent> ent, ref MapInitEvent args)
+    {
+        if (ent.Comp.OnAdd is not null || ent.Comp.OnRemove is not null)
+            EnsureComp<OrganEffectComponent>(ent);
+    }
+
     private void AddOrgan(
         Entity<OrganComponent> organEnt,
         EntityUid bodyUid,
@@ -24,6 +37,8 @@ public partial class SharedBodySystem
             organEnt.Comp.OriginalBody = organEnt.Comp.Body;
             var addedInBodyEv = new OrganAddedToBodyEvent(bodyUid, parentPartUid);
             RaiseLocalEvent(organEnt, ref addedInBodyEv);
+            var organEnabledEv = new OrganEnableChangedEvent(true);
+            RaiseLocalEvent(organEnt, ref organEnabledEv);
         }
 
         Dirty(organEnt, organEnt.Comp);
@@ -36,6 +51,9 @@ public partial class SharedBodySystem
 
         if (organEnt.Comp.Body is { Valid: true } bodyUid)
         {
+            organEnt.Comp.OriginalBody = organEnt.Comp.Body;
+            var organDisabledEv = new OrganEnableChangedEvent(false);
+            RaiseLocalEvent(organEnt, ref organDisabledEv);
             var removedInBodyEv = new OrganRemovedFromBodyEvent(bodyUid, parentPartUid);
             RaiseLocalEvent(organEnt, ref removedInBodyEv);
         }
@@ -228,5 +246,49 @@ public partial class SharedBodySystem
         organ.Used = used;
         Dirty(organId, organ);
         return true;
+    }
+
+    private void OnOrganEnableChanged(Entity<OrganComponent> organEnt, ref OrganEnableChangedEvent args)
+    {
+        if (!organEnt.Comp.CanEnable && args.Enabled)
+            return;
+
+        organEnt.Comp.Enabled = args.Enabled;
+
+        if (args.Enabled)
+            EnableOrgan(organEnt);
+        else
+            DisableOrgan(organEnt);
+
+        if (organEnt.Comp.Body is { Valid: true } bodyEnt)
+            RaiseLocalEvent(organEnt, new OrganComponentsModifyEvent(bodyEnt, args.Enabled));
+
+        Dirty(organEnt, organEnt.Comp);
+    }
+
+    private void EnableOrgan(Entity<OrganComponent> organEnt)
+    {
+        if (!TryComp(organEnt.Comp.Body, out BodyComponent? body))
+            return;
+
+        // I hate having to hardcode these checks so much.
+        if (HasComp<EyesComponent>(organEnt))
+        {
+            var ev = new OrganEnabledEvent(organEnt);
+            RaiseLocalEvent(organEnt, ref ev);
+        }
+    }
+
+    private void DisableOrgan(Entity<OrganComponent> organEnt)
+    {
+        if (!TryComp(organEnt.Comp.Body, out BodyComponent? body))
+            return;
+
+        // I hate having to hardcode these checks so much.
+        if (HasComp<EyesComponent>(organEnt))
+        {
+            var ev = new OrganDisabledEvent(organEnt);
+            RaiseLocalEvent(organEnt, ref ev);
+        }
     }
 }
