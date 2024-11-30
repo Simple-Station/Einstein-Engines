@@ -16,12 +16,18 @@
 #
 - type: characterItemGroup
   id: LoadoutChaplainEquipment
-  maxItems: 2
+  maxItems: 3
   items:
     - type: loadout
       id: LoadoutChaplainBible
     - type: loadout
       id: LoadoutChaplainStamp
+    - type: loadout
+      id: LoadoutChaplainEquipmentCandles
+    - type: loadout
+      id: LoadoutChaplainEquipmentCandlesSmall
+    - type: loadout
+      id: LoadoutChaplainPillCanisterSpaceDrugs
 
 #- type: characterItemGroup
 #  id: LoadoutChaplainEyes

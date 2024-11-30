@@ -8157,3 +8157,139 @@ Entries:
   id: 6541
   time: '2024-11-25T05:43:25.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1164
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: Fixed IPCs being unable to use the midi menu.
+  id: 6542
+  time: '2024-11-27T15:19:32.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1287
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: >-
+        Fixed the bug with opening storage containers while there's already one
+        open.
+  id: 6543
+  time: '2024-11-29T15:26:27.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1292
+- author: Tmanzxd
+  changes:
+    - type: Fix
+      message: >-
+        Fixed a bug where applicable medication stacks would revert back to 10
+        after 1 use from full.
+  id: 6544
+  time: '2024-11-29T15:29:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1278
+- author: Skubman
+  changes:
+    - type: Fix
+      message: >-
+        Language colors and fonts will show up in text messages again, both on
+        in-person messages and on the radio.
+    - type: Tweak
+      message: >-
+        The text on chat bubbles now uses the color and font of the language
+        being spoken.
+    - type: Tweak
+      message: >-
+        The language prefix before the name on chat messages now uses the
+        language's color.
+  id: 6545
+  time: '2024-11-29T22:58:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1294
+- author: gluesniffler
+  changes:
+    - type: Add
+      message: Ported Ghetto Surgery from Deltanedas!
+    - type: Add
+      message: Ported fishops organs from Deltanedas!
+    - type: Add
+      message: Added different step durations to each surgery step.
+    - type: Add
+      message: Added a T2 research for advanced surgical tools
+    - type: Add
+      message: Added a T3 research for an omnitool for surgery.
+    - type: Add
+      message: Added Surgical and Advanced Surgical modules for Mediborgs
+    - type: Add
+      message: Mediborgs can now perform surgery!
+    - type: Add
+      message: Added lobotomies as an operation. Godspeed you psychopaths.
+    - type: Add
+      message: Added cybernetic arms, legs and eyes.
+    - type: Add
+      message: >-
+        Added EMP weaknesses to all cybernetic parts (the day of reckoning will
+        come for IPCs soon)
+    - type: Add
+      message: Losing your eyes now blinds you.
+    - type: Fix
+      message: >-
+        Fixed a few species that did not inherit from BasePart's, thus taking
+        damage types they shouldn't on their limbs.
+    - type: Fix
+      message: Fixed harpy lungs not being usable in surgeries.
+    - type: Fix
+      message: >-
+        Fixed biosynthetic and other printable parts not allowing you to attach
+        body parts to them. 
+    - type: Fix
+      message: Fixed fire being able to destroy your chest.
+    - type: Fix
+      message: >-
+        Fixed entities being able to take over your body by just inserting a
+        brain or another head on top of you.
+    - type: Fix
+      message: Fixed some shitcode that didnt let rejuvenate or godmode work properly.
+    - type: Fix
+      message: >-
+        Fixed bionic arm, and cybernetic eyes traits not working properly due to
+        shitty networking.
+    - type: Tweak
+      message: >-
+        Increased tend wounds's speed by double, and bumped up the values on its
+        calculations. DEATH TO TOPICALS, LEAVE THOSE TO TIDERS.
+    - type: Tweak
+      message: >-
+        Beheading an entity now doesnt let it move, speak, and forces it to the
+        ground immediately (literally 1984!!11!!)
+    - type: Tweak
+      message: Changed sprites on most surgical tools to now use /tg/ sprites.
+    - type: Tweak
+      message: >-
+        Unbound shitmed targeting doll keybinds by default (did you know we have
+        those). 
+  id: 6546
+  time: '2024-11-30T16:06:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1271
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        All engineering roles have had their equipment loadouts significantly
+        expanded upon. Engineers can now buy construction materials with their
+        loadout points. 
+    - type: Fix
+      message: All engineering jobs now have their Suit/Skirt selection via loadouts.
+    - type: Add
+      message: >-
+        Salvage techs can now select from a variety of knife options to start
+        their spess adventures with.
+    - type: Add
+      message: >-
+        Epistemics staff now have *some* equipment selection options that they
+        share. More to come when I finish making the Potentiometer.
+  id: 6547
+  time: '2024-11-30T16:53:42.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1281
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added various articles of religious headgear to loadouts, such as Hijab,
+        Kippah, and Turban. All of these are set to allow custom colors. 
+  id: 6548
+  time: '2024-11-30T18:52:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1297

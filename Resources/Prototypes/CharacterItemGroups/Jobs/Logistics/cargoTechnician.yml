@@ -63,7 +63,11 @@
     - type: loadout
       id: LoadoutCargoShoesBootsWinterCargo
 
-#- type: characterItemGroup
-#  id: LoadoutCargoTechnicianUniforms
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutCargoTechnicianUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCargoTechnicianUniformSuit
+    - type: loadout
+      id: LoadoutCargoTechnicianUniformSkirt
