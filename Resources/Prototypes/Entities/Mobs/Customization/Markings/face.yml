@@ -7,7 +7,7 @@
     default:
       type:
         !type:SimpleColoring
-          color: "#ffffff"
+          color: "#a12222"
   sprites:
   - sprite: Mobs/Customization/face.rsi
     state: bindi
@@ -21,7 +21,7 @@
     default:
       type:
         !type:SimpleColoring
-          color: "#ffffff"
+          color: "#d39394"
   sprites:
   - sprite: Mobs/Customization/face.rsi
     state: fullblush
@@ -91,7 +91,7 @@
     default:
       type:
         !type:SimpleColoring
-          color: "#ffffff"
+          color: "#242424"
   sprites:
   - sprite: Mobs/Customization/face.rsi
     state: crow_r
@@ -105,7 +105,7 @@
     default:
       type:
         !type:SimpleColoring
-          color: "#ffffff"
+          color: "#242424"
   sprites:
   - sprite: Mobs/Customization/face.rsi
     state: crow_l
@@ -147,7 +147,7 @@
     default:
       type:
         !type:SimpleColoring
-          color: "#ffffff"
+          color: "#242424"
   sprites:
   - sprite: Mobs/Customization/face.rsi
     state: eyebrow_r
@@ -162,7 +162,7 @@
     default:
       type:
         !type:SimpleColoring
-          color: "#ffffff"
+          color: "#242424"
   sprites:
   - sprite: Mobs/Customization/face.rsi
     state: eyebrow_l
@@ -177,7 +177,7 @@
     default:
       type:
         !type:SimpleColoring
-          color: "#ffffff"
+          color: "#242424"
   sprites:
   - sprite: Mobs/Customization/face.rsi
     state: eyebrows
@@ -191,7 +191,7 @@
     default:
       type:
         !type:SimpleColoring
-          color: "#ffffff"
+          color: "#242424"
   sprites:
   - sprite: Mobs/Customization/face.rsi
     state: eyecorner_r
@@ -205,7 +205,7 @@
     default:
       type:
         !type:SimpleColoring
-          color: "#ffffff"
+          color: "#242424"
   sprites:
   - sprite: Mobs/Customization/face.rsi
     state: eyecorner_l
@@ -219,7 +219,7 @@
     default:
       type:
         !type:SimpleColoring
-          color: "#ffffff"
+          color: "#141414"
   sprites:
   - sprite: Mobs/Customization/face.rsi
     state: eyelash_r
@@ -233,7 +233,7 @@
     default:
       type:
         !type:SimpleColoring
-          color: "#ffffff"
+          color: "#141414"
   sprites:
   - sprite: Mobs/Customization/face.rsi
     state: eyelash_l
@@ -247,13 +247,13 @@
     default:
       type:
         !type:SimpleColoring
-          color: "#ffffff"
+          color: "#a1a1a1"
   sprites:
   - sprite: Mobs/Customization/face.rsi
     state: eyestripe
 
 - type: marking
-  id: FaceLipcornerRight
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin]
   bodyPart: Head
   markingCategory: Head
   speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
@@ -270,7 +270,7 @@
   id: FaceLipcornerLeft
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin]
   coloring:
     default:
       type:
@@ -284,7 +284,7 @@
   id: FaceGlabella
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin]
   coloring:
     default:
       type:
@@ -298,12 +298,12 @@
   id: FaceLowercheekRight
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin]
   coloring:
     default:
       type:
         !type:SimpleColoring
-          color: "#ffffff"
+          color: "#242424"
   sprites:
   - sprite: Mobs/Customization/face.rsi
     state: lowercheek_r
@@ -312,12 +312,12 @@
   id: FaceLowercheekLeft
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin]
   coloring:
     default:
       type:
         !type:SimpleColoring
-          color: "#ffffff"
+          color: "#242424"
   sprites:
   - sprite: Mobs/Customization/face.rsi
     state: lowercheek_l
@@ -374,7 +374,7 @@
     default:
       type:
         !type:SimpleColoring
-          color: "#ffffff"
+          color: "#242424"
   sprites:
   - sprite: Mobs/Customization/face.rsi
     state: unibrow

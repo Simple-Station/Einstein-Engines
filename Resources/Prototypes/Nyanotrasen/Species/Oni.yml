@@ -32,7 +32,7 @@
       required: true
       defaultMarkings: [ OniHornDoubleCurved ]
     HeadSide:
-      points: 2
+      points: 3
       required: true
       defaultMarkings: [ PointyEarsUpwards ]
     Snout:

@@ -57,7 +57,7 @@
       points: 1
       required: false
     HeadSide:
-      points: 2
+      points: 3
       required: true
       defaultMarkings: [ ArachnidCheliceraeDownwards ]
     Chest:

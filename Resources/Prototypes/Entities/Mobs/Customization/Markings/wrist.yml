@@ -204,7 +204,7 @@
     default:
       type:
         !type:SimpleColoring
-          color: "#262626"
+          color: "#424242"
   sprites:
   - sprite: Mobs/Customization/wrist.rsi
     state: watch_colorable_r_tone_1
@@ -220,7 +220,7 @@
     default:
       type:
         !type:SimpleColoring
-          color: "#262626"
+          color: "#424242"
   sprites:
   - sprite: Mobs/Customization/wrist.rsi
     state: watch_colorable_l_tone_1
