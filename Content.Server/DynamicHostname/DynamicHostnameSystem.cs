@@ -30,7 +30,7 @@ public sealed class DynamicHostnameSystem : EntitySystem
         Subs.CVar(_configuration, CCVars.UseDynamicHostname, OnValueChanged);
 
         OriginalHostname = _configuration.GetCVar(CVars.GameHostName);
-        UpdateHostname();
+        AttemptUpdateHostname();
     }
 
     private void OnRunLevelChanged(GameRunLevelChangedEvent ev) => AttemptUpdateHostname();
