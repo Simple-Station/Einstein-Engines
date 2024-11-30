@@ -77,3 +77,7 @@
 - type: font
   id: Chilanka
   path: /Fonts/Chilanka/Chilanka-Regular.ttf
+
+- type: font
+  id: LDFComicSans
+  path: /Fonts/LDFComicSans/LDFComicSans-Medium.ttf

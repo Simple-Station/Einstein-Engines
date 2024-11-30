@@ -2,7 +2,7 @@
   id: Calcic
   isVisibleLanguage: true
   speech:
-    fontId: Chilanka
+    fontId: LDFComicSans
     color: "#e3dac9"
   obfuscation:
     !type:SyllableObfuscation
