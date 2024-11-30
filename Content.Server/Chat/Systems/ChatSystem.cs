@@ -5,6 +5,7 @@ using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
+using Content.Server.Players.RateLimiting;
 using Content.Server.Language;
 using Content.Server.Speech.Components;
 using Content.Server.Speech.EntitySystems;
@@ -21,6 +22,7 @@ using Content.Shared.Interaction;
 using Content.Shared.Language.Systems;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Players;
+using Content.Shared.Players.RateLimiting;
 using Content.Shared.Radio;
 using Content.Shared.Speech;
 using Robust.Server.Player;
@@ -192,7 +194,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             return;
         }
 
-        if (player != null && !_chatManager.HandleRateLimit(player))
+        if (player != null && _chatManager.HandleRateLimit(player) != RateLimitStatus.Allowed)
             return;
 
         // Sus
@@ -291,7 +293,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         if (!CanSendInGame(message, shell, player))
             return;
 
-        if (player != null && !_chatManager.HandleRateLimit(player))
+        if (player != null && _chatManager.HandleRateLimit(player) != RateLimitStatus.Allowed)
             return;
 
         // It doesn't make any sense for a non-player to send in-game OOC messages, whereas non-players may be sending
@@ -880,7 +882,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         if (language.SpeechOverride.Color is { } colorOverride)
             color = Color.InterpolateBetween(color, colorOverride, colorOverride.A);
         var languageDisplay = language.IsVisibleLanguage
-            ? $"{language.ChatName} | "
+            ? Loc.GetString("chat-manager-language-prefix", ("language", language.ChatName))
             : "";
 
         return Loc.GetString(wrapId,

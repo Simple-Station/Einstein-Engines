@@ -13,11 +13,17 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutAcolyteEquipment
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutAcolyteEquipment
+  maxItems: 3
+  items:
+    - type: loadout
+      id: LoadoutAcolyteEquipmentCandles
+    - type: loadout
+      id: LoadoutAcolyteEquipmentCandlesSmall
+    - type: loadout
+      id: LoadoutAcolytePillCanisterSpaceDrugs
+
 #- type: characterItemGroup
 #  id: LoadoutAcolyteEyes
 #  maxItems: 1
@@ -58,7 +64,11 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutAcolyteUniforms
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutAcolyteUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutAcolyteUniformSuit
+    - type: loadout
+      id: LoadoutAcolyteUniformSkirt

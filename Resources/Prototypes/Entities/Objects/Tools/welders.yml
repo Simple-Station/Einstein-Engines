@@ -114,6 +114,13 @@
         Blunt: -15
         Piercing: -15
         Slash: -15
+  - type: Cautery
+    speed: 0.7
+  - type: SurgeryTool
+    startSound:
+      collection: Welder
+    endSound:
+      collection: WelderOff
 
 - type: entity
   name: industrial welding tool

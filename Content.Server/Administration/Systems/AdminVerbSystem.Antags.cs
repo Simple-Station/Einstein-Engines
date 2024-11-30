@@ -146,7 +146,7 @@ public sealed partial class AdminVerbSystem
             Icon = new SpriteSpecifier.Rsi(new("/Textures/Objects/Weapons/Melee/cult_dagger.rsi"), "icon"),
             Act = () =>
             {
-                _antag.ForceMakeAntag<BloodCultRuleComponent>(player, DefaultBloodCultRule);
+                _antag.ForceMakeAntag<BloodCultRuleComponent>(targetPlayer, DefaultBloodCultRule);
             },
             Impact = LogImpact.High,
             Message = Loc.GetString("admin-verb-make-blood-cultist"),

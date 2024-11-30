@@ -1,5 +1,46 @@
 # Mime
 # Backpacks
+- type: loadout
+  id: LoadoutBackpackMime
+  category: JobsServiceMime
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackMime
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMimeBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Mime
+
+- type: loadout
+  id: LoadoutBackpackSatchelMime
+  category: JobsServiceMime
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackSatchelMime
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMimeBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Mime
+
+- type: loadout
+  id: LoadoutBackpackDuffelMime
+  category: JobsServiceMime
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackDuffelMime
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMimeBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Mime
 
 # Belt
 

@@ -128,6 +128,292 @@
     - RCDAmmo
     - RCDAmmo
 
+- type: loadout
+  id: LoadoutChiefEngineerEquipmentSheetSteel
+  category: JobsEngineeringChiefEngineer
+  cost: 1
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - SheetSteel
+
+- type: loadout
+  id: LoadoutChiefEngineerEquipmentSheetSteel10
+  category: JobsEngineeringChiefEngineer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - SheetSteel10
+
+- type: loadout
+  id: LoadoutChiefEngineerEquipmentSheetPlasteel
+  category: JobsEngineeringChiefEngineer
+  cost: 1
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - SheetPlasteel
+
+- type: loadout
+  id: LoadoutChiefEngineerEquipmentSheetPlasteel10
+  category: JobsEngineeringChiefEngineer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - SheetPlasteel10
+
+- type: loadout
+  id: LoadoutChiefEngineerEquipmentSheetGlass
+  category: JobsEngineeringChiefEngineer
+  cost: 1
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - SheetGlass
+
+- type: loadout
+  id: LoadoutChiefEngineerEquipmentSheetGlass10
+  category: JobsEngineeringChiefEngineer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - SheetGlass10
+
+- type: loadout
+  id: LoadoutChiefEngineerEquipmentMaterialWoodPlank
+  category: JobsEngineeringChiefEngineer
+  cost: 1
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - MaterialWoodPlank
+
+- type: loadout
+  id: LoadoutChiefEngineerEquipmentMaterialWoodPlank10
+  category: JobsEngineeringChiefEngineer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - MaterialWoodPlank10
+
+- type: loadout
+  id: LoadoutChiefEngineerEquipmentSheetRGlass
+  category: JobsEngineeringChiefEngineer
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - SheetRGlass
+
+- type: loadout
+  id: LoadoutChiefEngineerEquipmentSheetRGlass10
+  category: JobsEngineeringChiefEngineer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - SheetRGlass10
+
+- type: loadout
+  id: LoadoutChiefEngineerEquipmentSheetUGlass
+  category: JobsEngineeringChiefEngineer
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - SheetUGlass
+
+- type: loadout
+  id: LoadoutChiefEngineerEquipmentSheetUGlass10
+  category: JobsEngineeringChiefEngineer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - SheetUGlass10
+
+- type: loadout
+  id: LoadoutChiefEngineerEquipmentSheetRUGlass
+  category: JobsEngineeringChiefEngineer
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - SheetRUGlass
+
+- type: loadout
+  id: LoadoutChiefEngineerEquipmentSheetRUGlass10
+  category: JobsEngineeringChiefEngineer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - SheetRUGlass10
+
+- type: loadout
+  id: LoadoutChiefEngineerEquipmentSheetPGlass
+  category: JobsEngineeringChiefEngineer
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - SheetPGlass
+
+- type: loadout
+  id: LoadoutChiefEngineerEquipmentSheetPGlass10
+  category: JobsEngineeringChiefEngineer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - SheetPGlass10
+
+- type: loadout
+  id: LoadoutChiefEngineerEquipmentSheetRPGlass
+  category: JobsEngineeringChiefEngineer
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - SheetRPGlass
+
+- type: loadout
+  id: LoadoutChiefEngineerEquipmentSheetRPGlass10
+  category: JobsEngineeringChiefEngineer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - SheetRPGlass10
+
+- type: loadout
+  id: LoadoutChiefEngineerEquipmentSheetClockworkGlass
+  category: JobsEngineeringChiefEngineer
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - SheetClockworkGlass
+
+- type: loadout
+  id: LoadoutChiefEngineerEquipmentSheetClockworkGlass10
+  category: JobsEngineeringChiefEngineer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - SheetClockworkGlass10
+
+- type: loadout
+  id: LoadoutChiefEngineerEquipmentSheetPlastic
+  category: JobsEngineeringChiefEngineer
+  cost: 1
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - SheetPlastic
+
+- type: loadout
+  id: LoadoutChiefEngineerEquipmentSheetPlastic10
+  category: JobsEngineeringChiefEngineer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - SheetPlastic10
+
 # Eyes
 
 # Gloves
