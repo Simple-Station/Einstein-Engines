@@ -24,27 +24,31 @@ public sealed class DynamicHostnameSystem : EntitySystem
     {
         base.Initialize();
 
-        // Must be set at server start to run.
-        if (!_configuration.GetCVar(CCVars.UseDynamicHostname))
-            return;
-
         SubscribeLocalEvent<GameRunLevelChangedEvent>(OnRunLevelChanged);
         SubscribeLocalEvent<RoundStartedEvent>(OnRoundStarted);
+
+        Subs.CVar(_configuration, CCVars.UseDynamicHostname, OnValueChanged);
 
         OriginalHostname = _configuration.GetCVar(CVars.GameHostName);
         UpdateHostname();
     }
 
-    private void OnRunLevelChanged(GameRunLevelChangedEvent ev)
-    {
-        var currentMapName = _mapManager.GetSelectedMap()?.MapName;
-        var currentPresetName = _gameTicker.CurrentPreset?.ModeTitle;
+    private void OnRunLevelChanged(GameRunLevelChangedEvent ev) => AttemptUpdateHostname();
+    private void OnRoundStarted(RoundStartedEvent ev) => AttemptUpdateHostname();
 
-        UpdateHostname(currentMapName, currentPresetName);
+    private void OnValueChanged(bool newValue)
+    {
+        if (!newValue)
+            _configuration.SetCVar(CVars.GameHostName, OriginalHostname);
+
+        AttemptUpdateHostname();
     }
 
-    private void OnRoundStarted(RoundStartedEvent ev)
+    private void AttemptUpdateHostname()
     {
+        if (!_configuration.GetCVar(CCVars.UseDynamicHostname))
+            return;
+
         var currentMapName = _mapManager.GetSelectedMap()?.MapName;
         var currentPresetName = _gameTicker.CurrentPreset?.ModeTitle;
 
