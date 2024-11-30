@@ -41,18 +41,10 @@
     - DoubleEmergencyNitrogenTankFilled
 
 - type: loadout
-  id: LoadoutSpeciesEmergencyPlasmaTank
-  category: Species
-  groups: [ LoadoutPlasmamanPlasmaTank ]
-  cost: 0
-  items:
-    - EmergencyPlasmaTankFilled
-
-- type: loadout
   id: LoadoutSpeciesExtendedEmergencyPlasmaTank
   category: Species
   groups: [ LoadoutPlasmamanPlasmaTank ]
-  cost: 1
+  cost: 0
   items:
     - ExtendedEmergencyPlasmaTankFilled
 

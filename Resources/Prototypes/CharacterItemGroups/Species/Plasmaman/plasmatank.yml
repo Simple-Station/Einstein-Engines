@@ -8,11 +8,8 @@
         - Plasmaman
   items:
     - type: loadout
-      id: LoadoutSpeciesEmergencyPlasmaTank
-      priority: 10
-    - type: loadout
       id: LoadoutSpeciesExtendedEmergencyPlasmaTank
-      priority: 0
+      priority: 10
     - type: loadout
       id: LoadoutSpeciesDoubleEmergencyPlasmaTank
       priority: 5
