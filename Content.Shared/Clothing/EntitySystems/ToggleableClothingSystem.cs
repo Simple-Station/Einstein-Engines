@@ -304,9 +304,12 @@ public sealed class ToggleableClothingSystem : EntitySystem
 
     private void OnStartingGearEquipped(EntityUid uid, ToggleStartingGearComponent component, ref StartingGearEquippedEvent ev)
     {
-        if (_inventorySystem.TryGetSlotEntity(uid, component.Slot, out var clothing) &&
-            TryComp<ToggleableClothingComponent>(clothing, out var toggleable))
-            ToggleClothing(uid, (EntityUid) clothing, toggleable);
+        if (!_inventorySystem.TryGetSlotEntity(uid, component.Slot, out var clothing) ||
+            !TryComp<ToggleableClothingComponent>(clothing, out var toggleable))
+            return;
+
+        ToggleClothing(uid, (EntityUid) clothing, toggleable);
+        RemComp<ToggleStartingGearComponent>(uid);
     }
 }
 
