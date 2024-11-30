@@ -11,6 +11,7 @@
   category: JobsCommandAUncategorized
   cost: 3
   exclusive: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCommandSelfDefense

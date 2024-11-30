@@ -82,6 +82,7 @@
   category: Head
   cost: 1
   exclusive: true
+  customColorTint: true
   items:
     - ClothingHeadHatFedoraWhite
   requirements:
@@ -163,6 +164,7 @@
   category: Head
   cost: 1
   exclusive: true
+  customColorTint: true
   items:
     - ClothingHeadHatCowboyWhite
   requirements:
@@ -174,6 +176,7 @@
   category: Head
   cost: 1
   exclusive: true
+  canBeHeirloom: true
   items:
     - ClothingHeadHatCowboyBountyHunter
   requirements:
@@ -185,6 +188,8 @@
   category: Head
   cost: 2
   exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
   items:
     - ClothingHeadTinfoil
   requirements:
@@ -323,6 +328,7 @@
   category: Head
   cost: 0
   exclusive: true
+  customColorTint: true
   items:
     - ClothingHeadHatMimesoft
   requirements:
@@ -334,6 +340,7 @@
   category: Head
   cost: 0
   exclusive: true
+  customColorTint: true
   items:
     - ClothingHeadHatMimesoftFlipped
   requirements:
@@ -540,6 +547,7 @@
   category: Head
   cost: 0
   exclusive: true
+  canBeHeirloom: true
   items:
     - ClothingHeadBandSkull
   requirements:
@@ -710,6 +718,7 @@
   category: Head
   cost: 1
   exclusive: true
+  customColorTint: true
   items:
     - ClothingHeadHatCowboyWhite
   requirements:
@@ -734,6 +743,42 @@
   exclusive: true
   items:
     - ClothingHeadHatCowboyRed
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadHijabColorable
+  category: Head
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingHeadHatHijabColorable
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadTurbanColorable
+  category: Head
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingHeadHatTurbanColorable
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadKippahColorable
+  category: Head
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingHeadHatKippahColorable
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutHead

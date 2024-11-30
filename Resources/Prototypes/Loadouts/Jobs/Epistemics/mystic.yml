@@ -6,6 +6,44 @@
 # Ears
 
 # Equipment
+- type: loadout
+  id: LoadoutMysticEquipmentCandles
+  category: JobsEpistemicsMystic
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMysticEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorResearcher
+  items:
+    - BoxCandle
+
+- type: loadout
+  id: LoadoutMysticEquipmentCandlesSmall
+  category: JobsEpistemicsMystic
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMysticEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorResearcher
+  items:
+    - BoxCandleSmall
+
+- type: loadout
+  id: LoadoutMysticPillCanisterSpaceDrugs
+  category: JobsEpistemicsMystic
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMysticEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorResearcher
+  items:
+    - PillCanisterSpaceDrugs
 
 # Eyes
 
@@ -25,6 +63,7 @@
   category: JobsEpistemicsAAUncategorized
   cost: 0
   exclusive: true
+  customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMysticOuter

@@ -31,6 +31,13 @@
       - Slicing
     useSound:
       path: /Audio/Items/Culinary/chop.ogg
+  - type: Scalpel
+    speed: 0.65
+  - type: SurgeryTool
+    startSound:
+      path: /Audio/Medical/Surgery/scalpel1.ogg
+    endSound:
+      path: /Audio/Medical/Surgery/scalpel2.ogg
 
 - type: entity
   name: kitchen knife
