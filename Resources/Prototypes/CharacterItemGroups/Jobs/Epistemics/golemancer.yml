@@ -1,9 +1,15 @@
 # Golemancer
-#- type: characterItemGroup
-#  id: LoadoutGolemancerBackpacks
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutGolemancerBackpacks
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutBackpackRobotics
+    - type: loadout
+      id: LoadoutBackpackSatchelRobotics
+    - type: loadout
+      id: LoadoutBackpackDuffelRobotics
+
 #- type: characterItemGroup
 #  id: LoadoutGolemancerBelt
 #  maxItems: 1
@@ -14,11 +20,17 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutGolemancerEquipment
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutGolemancerEquipment
+  maxItems: 3
+  items:
+    - type: loadout
+      id: LoadoutGolemancerEquipmentCandles
+    - type: loadout
+      id: LoadoutGolemancerEquipmentCandlesSmall
+    - type: loadout
+      id: LoadoutGolemancerPillCanisterSpaceDrugs
+
 #- type: characterItemGroup
 #  id: LoadoutGolemancerEyes
 #  maxItems: 1

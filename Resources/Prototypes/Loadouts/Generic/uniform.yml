@@ -1317,6 +1317,7 @@
   category: Uniform
   cost: 1
   exclusive: true
+  customColorTint: true
   items:
     - ClothingUniformMNKOfficeSkirt
   requirements:
@@ -1348,6 +1349,7 @@
   category: Uniform
   cost: 1
   exclusive: true
+  customColorTint: true
   items:
     - ClothingUniformMNKGymBra
   requirements:

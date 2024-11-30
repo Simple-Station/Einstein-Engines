@@ -6,6 +6,84 @@
 # Ears
 
 # Equipment
+- type: loadout
+  id: LoadoutTechnicalAssistantEquipmentBoxInflatable
+  category: JobsEngineeringTechnicalAssistant
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutTechnicalAssistantEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - TechnicalAssistant
+  items:
+    - BoxInflatable
+
+- type: loadout
+  id: LoadoutTechnicalAssistantEquipmentSheetSteel10
+  category: JobsEngineeringTechnicalAssistant
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutTechnicalAssistantEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - TechnicalAssistant
+  items:
+    - SheetSteel10
+
+- type: loadout
+  id: LoadoutTechnicalAssistantEquipmentSheetPlasteel10
+  category: JobsEngineeringTechnicalAssistant
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutTechnicalAssistantEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - TechnicalAssistant
+  items:
+    - SheetPlasteel10
+
+- type: loadout
+  id: LoadoutTechnicalAssistantEquipmentSheetGlass10
+  category: JobsEngineeringTechnicalAssistant
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutTechnicalAssistantEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - TechnicalAssistant
+  items:
+    - SheetGlass10
+
+- type: loadout
+  id: LoadoutTechnicalAssistantEquipmentMaterialWoodPlank10
+  category: JobsEngineeringTechnicalAssistant
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutTechnicalAssistantEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - TechnicalAssistant
+  items:
+    - MaterialWoodPlank10
+
+
+- type: loadout
+  id: LoadoutTechnicalAssistantEquipmentSheetPlastic10
+  category: JobsEngineeringTechnicalAssistant
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutTechnicalAssistantEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - TechnicalAssistant
+  items:
+    - SheetPlastic10
 
 # Eyes
 
@@ -24,3 +102,30 @@
 # Shoes
 
 # Uniforms
+- type: loadout
+  id: LoadoutTechnicalAssistantSuit
+  category: JobsEngineeringTechnicalAssistant
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutTechnicalAssistantUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - TechnicalAssistant
+  items:
+    - ClothingUniformJumpsuitColorYellow
+
+- type: loadout
+  id: LoadoutTechnicalAssistantSkirt
+  category: JobsEngineeringTechnicalAssistant
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutTechnicalAssistantUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - TechnicalAssistant
+  items:
+    - ClothingUniformJumpskirtColorYellow
