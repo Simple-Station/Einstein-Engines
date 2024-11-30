@@ -8264,3 +8264,23 @@ Entries:
   id: 6546
   time: '2024-11-30T16:06:56.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1271
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        All engineering roles have had their equipment loadouts significantly
+        expanded upon. Engineers can now buy construction materials with their
+        loadout points. 
+    - type: Fix
+      message: All engineering jobs now have their Suit/Skirt selection via loadouts.
+    - type: Add
+      message: >-
+        Salvage techs can now select from a variety of knife options to start
+        their spess adventures with.
+    - type: Add
+      message: >-
+        Epistemics staff now have *some* equipment selection options that they
+        share. More to come when I finish making the Potentiometer.
+  id: 6547
+  time: '2024-11-30T16:53:42.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1281
