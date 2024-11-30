@@ -322,7 +322,7 @@ namespace Content.Server.Administration.Systems
         public void Erase(ICommonSession player)
         {
             var entity = player.AttachedEntity;
-            _chat.DeleteMessagesBy(player);
+            _chat.DeleteMessagesBy(player.UserId);
 
             if (entity != null && !TerminatingOrDeleted(entity.Value))
             {
