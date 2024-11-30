@@ -2,6 +2,7 @@
   id: LoadoutOuterCoatBomberjacket
   category: Outer
   cost: 1
+  customColorTint: true
   items:
     - ClothingOuterCoatBomber
   requirements:
@@ -33,6 +34,7 @@
   id: LoadoutOuterCoatWinterCoat
   category: Outer
   cost: 1
+  customColorTint: true
   items:
     - ClothingOuterWinterCoat
   requirements:

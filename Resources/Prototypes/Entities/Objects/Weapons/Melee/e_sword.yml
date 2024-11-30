@@ -85,6 +85,17 @@
       - NoPaint
   - type: IgnitionSource
     temperature: 700
+  - type: Scalpel
+    speed: 0.75
+  - type: Cautery
+    speed: 0.2
+  - type: SurgeryTool
+    startSound:
+      path: /Audio/Weapons/ebladehum.ogg
+    endSound:
+      path: /Audio/Weapons/eblade1.ogg
+      params:
+        variation: 0.250
 
 - type: entity
   name: antique energy sword
