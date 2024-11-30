@@ -1,6 +1,7 @@
 using Content.Server.GameTicking;
 using Content.Server.Maps;
 using Content.Shared.CCVar;
+using Content.Shared.GameTicking;
 using Robust.Shared;
 using Robust.Shared.Configuration;
 
@@ -16,7 +17,7 @@ public sealed class DynamicHostnameSystem : EntitySystem
     [Dependency] private readonly GameTicker _gameTicker = default!;
     [Dependency] private readonly IGameMapManager _mapManager = default!;
 
-    private readonly DynamicHostnameData _hostnameData = new();
+    private string OriginalHostname { get; set; } = string.Empty;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -29,42 +30,31 @@ public sealed class DynamicHostnameSystem : EntitySystem
 
         SubscribeLocalEvent<GameRunLevelChangedEvent>(OnRunLevelChanged);
         SubscribeLocalEvent<RoundStartedEvent>(OnRoundStarted);
-        SubscribeLocalEvent<RoundEndedEvent>(OnRoundEnded);
 
-        _hostnameData.OriginalHostname = _configuration.GetCVar(CVars.GameHostName);
+        OriginalHostname = _configuration.GetCVar(CVars.GameHostName);
         UpdateHostname();
     }
 
     private void OnRunLevelChanged(GameRunLevelChangedEvent ev)
     {
-        _hostnameData.CurrentPresetName = _gameTicker.CurrentPreset?.ModeTitle;
-        _hostnameData.CurrentMapName = _mapManager.GetSelectedMap()?.MapName;
+        var currentMapName = _mapManager.GetSelectedMap()?.MapName;
+        var currentPresetName = _gameTicker.CurrentPreset?.ModeTitle;
 
-        UpdateHostname();
+        UpdateHostname(currentMapName, currentPresetName);
     }
 
     private void OnRoundStarted(RoundStartedEvent ev)
     {
-        _hostnameData.CurrentPresetName = _gameTicker.CurrentPreset?.ModeTitle;
-        _hostnameData.CurrentMapName = _mapManager.GetSelectedMap()?.MapName;
+        var currentMapName = _mapManager.GetSelectedMap()?.MapName;
+        var currentPresetName = _gameTicker.CurrentPreset?.ModeTitle;
 
-        UpdateHostname();
-    }
-
-    private void OnRoundEnded(RoundEndedEvent ev)
-    {
-        _hostnameData.CurrentMapName = null;
-        _hostnameData.CurrentPresetName = null;
-
-        UpdateHostname();
+        UpdateHostname(currentMapName, currentPresetName);
     }
 
     private string GetLocId()
     {
         switch (_gameTicker.RunLevel)
         {
-            case GameRunLevel.PreRoundLobby:
-                return "in-lobby";
             case GameRunLevel.InRound:
                 return "in-round";
             case GameRunLevel.PostRound:
@@ -74,26 +64,19 @@ public sealed class DynamicHostnameSystem : EntitySystem
         }
     }
 
-    private void UpdateHostname()
+    private void UpdateHostname(string? currentMapName = null, string? currentPresetName = null)
     {
         var locId = GetLocId();
         var presetName = "No preset";
 
-        if (_hostnameData.CurrentPresetName != null)
-            presetName = Loc.GetString(_hostnameData.CurrentPresetName);
+        if (currentPresetName != null)
+            presetName = Loc.GetString(currentPresetName);
 
         var hostname = Loc.GetString($"dynamic-hostname-{locId}-hostname",
-            ("originalHostName", _hostnameData.OriginalHostname),
+            ("originalHostName", OriginalHostname),
             ("preset", presetName),
-            ("mapName", _hostnameData.CurrentMapName ?? "No map"));
+            ("mapName", currentMapName ?? "No map"));
 
         _configuration.SetCVar(CVars.GameHostName, hostname);
     }
-}
-
-public sealed class DynamicHostnameData
-{
-    public string OriginalHostname { get; set; } = "";
-    public string? CurrentMapName { get; set; }
-    public string? CurrentPresetName { get; set; }
 }
