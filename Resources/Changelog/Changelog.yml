@@ -8284,3 +8284,12 @@ Entries:
   id: 6547
   time: '2024-11-30T16:53:42.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1281
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added various articles of religious headgear to loadouts, such as Hijab,
+        Kippah, and Turban. All of these are set to allow custom colors. 
+  id: 6548
+  time: '2024-11-30T18:52:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1297
