@@ -2656,13 +2656,21 @@ namespace Content.Shared.CCVar
             CVarDef.Create("vote.autovote_enabled", false, CVar.SERVERONLY);
 
         /// Automatically starts a map vote when returning to the lobby.
-        /// Requires auto voting to be enabled.  
+        /// Requires auto voting to be enabled.
         public static readonly CVarDef<bool> MapAutoVoteEnabled =
             CVarDef.Create("vote.map_autovote_enabled", true, CVar.SERVERONLY);
 
         /// Automatically starts a gamemode vote when returning to the lobby.
-        /// Requires auto voting to be enabled.  
+        /// Requires auto voting to be enabled.
         public static readonly CVarDef<bool> PresetAutoVoteEnabled =
             CVarDef.Create("vote.preset_autovote_enabled", true, CVar.SERVERONLY);
+
+        /// <summary>
+        /// Set to true to enable the dynamic hostname system.
+        /// Automatically updates the hostname to include current map and preset.
+        /// Configure what that looks like for you in Resources/Prototypes/Locale/en-US/dynamichostname/hostname.ftl
+        /// </summary>
+        public static readonly CVarDef<bool> UseDynamicHostname =
+            CVarDef.Create("game.use_dynamic_hostname", false, CVar.SERVERONLY);
     }
 }
