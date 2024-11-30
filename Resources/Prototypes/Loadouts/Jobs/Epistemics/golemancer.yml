@@ -1,11 +1,91 @@
 # Golemancer
 # Backpacks
+- type: loadout
+  id: LoadoutBackpackRobotics
+  category: JobsEpistemicsGolemancer
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackRobotics
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGolemancerBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Roboticist
+
+- type: loadout
+  id: LoadoutBackpackSatchelRobotics
+  category: JobsEpistemicsGolemancer
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackSatchelRobotics
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGolemancerBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Roboticist
+
+- type: loadout
+  id: LoadoutBackpackDuffelRobotics
+  category: Backpacks
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackDuffelRobotics
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGolemancerBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Roboticist
+
 
 # Belt
 
 # Ears
 
 # Equipment
+- type: loadout
+  id: LoadoutGolemancerEquipmentCandles
+  category: JobsEpistemicsGolemancer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGolemancerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Roboticist
+  items:
+    - BoxCandle
+
+- type: loadout
+  id: LoadoutGolemancerEquipmentCandlesSmall
+  category: JobsEpistemicsGolemancer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGolemancerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Roboticist
+  items:
+    - BoxCandleSmall
+
+- type: loadout
+  id: LoadoutGolemancerPillCanisterSpaceDrugs
+  category: JobsEpistemicsGolemancer
+  cost: 1
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGolemancerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Roboticist
+  items:
+    - PillCanisterSpaceDrugs
 
 # Eyes
 
@@ -32,9 +112,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutGolemancerUniforms
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Epistemics
+    - !type:CharacterJobRequirement
+      jobs:
+        - Roboticist
   items:
     - ClothingUniformJumpskirtRoboticist
 
@@ -46,8 +126,8 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutGolemancerUniforms
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Epistemics
+    - !type:CharacterJobRequirement
+      jobs:
+        - Roboticist
   items:
     - ClothingUniformJumpsuitRoboticist

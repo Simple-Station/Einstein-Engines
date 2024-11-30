@@ -81,6 +81,13 @@
   - type: DeleteOnTrigger
   - type: StaticPrice
     price: 0
+  - type: Scalpel
+    speed: 0.45
+  - type: SurgeryTool
+    startSound:
+      path: /Audio/Medical/Surgery/scalpel1.ogg
+    endSound:
+      path: /Audio/Medical/Surgery/scalpel2.ogg
 
 - type: entity
   parent: ShardBase

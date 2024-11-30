@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from Aurorastation at commit https://github.com/Aurorastation/Aurora.3/commit/b807d2f481400d0ea970643a2a345a4a04279605",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+        "name": "equipped-HELMET",
+        "directions": 4
+    },
+    {
+        "name": "icon"
+    }
+  ]
+}

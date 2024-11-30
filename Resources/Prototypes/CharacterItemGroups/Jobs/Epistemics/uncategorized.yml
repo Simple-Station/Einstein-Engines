@@ -1,9 +1,15 @@
 # All Epistemics
-#- type: characterItemGroup
-#  id: LoadoutEpistemicsBackpacks
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutEpistemicsBackpacks
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutBackpackScience
+    - type: loadout
+      id: LoadoutBackpackSatchelScience
+    - type: loadout
+      id: LoadoutBackpackDuffelScience
+
 #- type: characterItemGroup
 #  id: LoadoutEpistemicsBelt
 #  maxItems: 1
