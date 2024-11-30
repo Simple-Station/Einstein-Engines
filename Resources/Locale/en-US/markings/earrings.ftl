@@ -1,79 +1,111 @@
-marking-EarringsStud = Stud Earrings
-marking-EarringsStud-stud = Stud Earrings
+marking-EarringsStudLeft = Stud Earrings (Left)
+marking-EarringsStudLeft-stud_l = Stud Earrings (Left)
 
-marking-EarringsHeavy = Heavy Earrings
-marking-EarringsHeavy-heavy = Heavy Earrings
+marking-EarringsStudRight = Stud Earrings (Right)
+marking-EarringsStudRight-stud_r = Stud Earrings (Right)
 
-marking-EarringsDangle = Dangle Earrings
-marking-EarringsDangle-dangle =  Dangle Earrings
+marking-EarringsHeavyLeft = Heavy Earrings (Left)
+marking-EarringsHeavyLeft-heavy_l = Heavy Earrings (Left)
 
-marking-EarringsCrescent = Crescent Earrings
-marking-EarringsCrescent-crescent = Crescent Earrings
+marking-EarringsHeavyRight = Heavy Earrings (Right)
+marking-EarringsHeavyRight-heavy_r = Heavy Earrings (Right)
 
-marking-EarringsBangle = Bangle Earrings
-marking-EarringsBangle-bangle = Bangle Earrings
+marking-EarringsDropBasicLeft = Drop Earrings (Left)
+marking-EarringsDropBasicLeft-drop_l = Drop Earrings (Left)
 
-marking-EarringsHoop = Hoop Earrings
-marking-EarringsHoop-hoop = Hoop Earrings
+marking-EarringsDropBasicRight = Drop Earrings (Right)
+marking-EarringsDropBasicRight-drop_r = Drop Earrings (Right)
 
-marking-EarringsHoopMini = Mini Hoop Earrings
-marking-EarringsHoopMini-hoop_mini = Mini Hoop Earrings
+marking-EarringsDropColoredLeft = Colored Drop Earrings (Left)
+marking-EarringsDropColoredLeft-drop_colored_tone_1_l = Material
+marking-EarringsDropColoredLeft-drop_colored_tone_2_l = Ornament
 
-marking-EarringsCross = Cross Earrings
-marking-EarringsCross-cross = Cross Earrings
+marking-EarringsDropColoredRight = Colored Drop Earrings (Right)
+marking-EarringsDropColoredRight-drop_colored_tone_1_r = Material
+marking-EarringsDropColoredRight-drop_colored_tone_2_r = Ornament
 
-marking-EarringsGemstone = Gemstone Earrings
-marking-EarringsGemstone-gemstone_tone_1 = Material
-marking-EarringsGemstone-gemstone_tone_2 = Ornament
+marking-EarringsDropLongLeft = Long Drop Earrings (Left)
+marking-EarringsDropLongLeft-drop_long_tone_1_l = Material
+marking-EarringsDropLongLeft-drop_long_tone_2_l = Ornament
 
-marking-EarringsGemstoneBig = Big Gemstone Earrings
-marking-EarringsGemstoneBig-gemstone_big_tone_1 = Material
-marking-EarringsGemstoneBig-gemstone_big_tone_2 = Ornament
+marking-EarringsDropLongRight = Long Drop Earrings (Right)
+marking-EarringsDropLongRight-drop_long_tone_1_r = Material
+marking-EarringsDropLongRight-drop_long_tone_2_r = Ornament
 
-marking-EarringsDrop = Drop Earrings
-marking-EarringsDrop-drop_tone_1 = Material
-marking-EarringsDrop-drop_tone_2 = Ornament
+marking-EarringsCrescentLeft = Crescent Earrings (Left)
+marking-EarringsCrescentLeft-crescent_l = Crescent Earrings (Left)
 
-marking-EarringsDropLong = Long Drop Earrings
-marking-EarringsDropLong-drop_long_tone_1 = Material
-marking-EarringsDropLong-drop_long_tone_2 = Ornament
+marking-EarringsCrescentRight = Crescent Earrings (Right)
+marking-EarringsCrescentRight-crescent_r = Crescent Earrings (Right)
 
-marking-EarringsFelinidStud = Stud Earrings (Felinid)
-marking-EarringsFelinidStud-stud = Stud Earrings (Felinid)
+marking-EarringsBangleLeft = Bangle Earrings (Left)
+marking-EarringsBangleLeft-bangle_l = Bangle Earrings (Left)
 
-marking-EarringsFelinidHeavy = Heavy Earrings (Felinid)
-marking-EarringsFelinidHeavy-heavy = Heavy Earrings (Felinid)
+marking-EarringsBangleRight = Bangle Earrings (Right)
+marking-EarringsBangleRight-bangle_r = Bangle Earrings (Right)
 
-marking-EarringsFelinidDangle = Dangle Earrings (Felinid)
-marking-EarringsFelinidDangle-dangle =  Dangle Earrings (Felinid)
+marking-EarringsHoopBasicLeft = Hoop Earrings (Left)
+marking-EarringsHoopBasicLeft-hoop_l = Hoop Earrings (Left)
 
-marking-EarringsFelinidCrescent = Crescent Earrings (Felinid)
-marking-EarringsFelinidCrescent-crescent = Crescent Earrings (Felinid)
+marking-EarringsHoopBasicRight = Hoop Earrings (Right)
+marking-EarringsHoopBasicRight-hoop_r = Hoop Earrings (Right)
 
-marking-EarringsFelinidBangle = Bangle Earrings (Felinid)
-marking-EarringsFelinidBangle-bangle = Bangle Earrings (Felinid)
+marking-EarringsHoopMiniLeft = Mini Hoop Earrings (Left)
+marking-EarringsHoopMiniLeft-hoop_mini_l = Mini Hoop Earrings (Left)
 
-marking-EarringsFelinidHoop = Hoop Earrings (Felinid)
-marking-EarringsFelinidHoop-hoop = Hoop Earrings (Felinid)
+marking-EarringsHoopMiniRight = Mini Hoop Earrings (Right)
+marking-EarringsHoopMiniRight-hoop_mini_r = Mini Hoop Earrings (Right)
 
-marking-EarringsFelinidHoopMini = Mini Hoop Earrings (Felinid)
-marking-EarringsFelinidHoopMini-hoop_mini = Mini Hoop Earrings (Felinid)
+marking-EarringsCrossBasicLeft = Cross Earrings (Left)
+marking-EarringsCrossBasicLeft-cross_l = Cross Earrings (Left)
 
-marking-EarringsFelinidCross = Cross Earrings (Felinid)
-marking-EarringsFelinidCross-cross = Cross Earrings (Felinid)
+marking-EarringsCrossBasicRight = Cross Earrings (Right)
+marking-EarringsCrossBasicRight-cross_r = Cross Earrings (Right)
 
-marking-EarringsFelinidGemstone = Gemstone Earrings (Felinid)
-marking-EarringsFelinidGemstone-gemstone_tone_1 = Material
-marking-EarringsFelinidGemstone-gemstone_tone_2 = Ornament
+marking-EarringsCrossSaintPeterLeft = St. Peter Cross Earrings (Left)
+marking-EarringsCrossSaintPeterLeft-cross_saint_peter_l = St. Peter Cross Earrings (Left)
 
-marking-EarringsFelinidGemstoneBig = Big Gemstone Earrings (Felinid)
-marking-EarringsFelinidGemstoneBig-gemstone_big_tone_1 = Material
-marking-EarringsFelinidGemstoneBig-gemstone_big_tone_2 = Ornament
+marking-EarringsCrossSaintPeterRight = St. Peter Cross Earrings (Right)
+marking-EarringsCrossSaintPeterRight-cross_saint_peter_r = St. Peter Cross Earrings (Right)
 
-marking-EarringsFelinidDrop = Drop Earrings (Felinid)
-marking-EarringsFelinidDrop-drop_tone_1 = Material
-marking-EarringsFelinidDrop-drop_tone_2 = Ornament
+marking-EarringsGemstoneBasicLeft = Gemstone Earrings (Left)
+marking-EarringsGemstoneBasicLeft-gemstone_tone_1_l = Material
+marking-EarringsGemstoneBasicLeft-gemstone_tone_2_l = Ornament
 
-marking-EarringsFelinidDropLong = Long Drop Earrings (Felinid)
-marking-EarringsFelinidDropLong-drop_long_tone_1 = Material
-marking-EarringsFelinidDropLong-drop_long_tone_2 = Ornament
+marking-EarringsGemstoneBasicRight = Gemstone Earrings (Right)
+marking-EarringsGemstoneBasicRight-gemstone_tone_1_r = Material
+marking-EarringsGemstoneBasicRight-gemstone_tone_2_r = Ornament
+
+marking-EarringsGemstoneLongLeft = Long Gemstone Earrings (Left)
+marking-EarringsGemstoneLongLeft-gemstone_long_tone_1_l = Material
+marking-EarringsGemstoneLongLeft-gemstone_long_tone_2_l = Ornament
+
+marking-EarringsGemstoneLongRight = Long Gemstone Earrings (Right)
+marking-EarringsGemstoneLongRight-gemstone_long_tone_1_r = Material
+marking-EarringsGemstoneLongRight-gemstone_long_tone_2_r = Ornament
+
+marking-EarringsGemstoneDoubleLeft = Double Gemstone Earrings (Left)
+marking-EarringsGemstoneDoubleLeft-gemstone_double_tone_1_l = Material
+marking-EarringsGemstoneDoubleLeft-gemstone_double_tone_2_l = Upper Ornament
+marking-EarringsGemstoneDoubleLeft-gemstone_double_tone_3_l = Lower Ornament
+
+marking-EarringsGemstoneDoubleRight = Double Gemstone Earrings (Right)
+marking-EarringsGemstoneDoubleRight-gemstone_double_tone_1_r = Material
+marking-EarringsGemstoneDoubleRight-gemstone_double_tone_2_r = Upper Ornament
+marking-EarringsGemstoneDoubleRight-gemstone_double_tone_3_r = Lower Ornament
+
+marking-EarringsDangleBasicLeft = Dangle Earrings (Left)
+marking-EarringsDangleBasicLeft-dangle_tone_1_l = Material
+marking-EarringsDangleBasicLeft-dangle_tone_2_l = Ornament
+
+marking-EarringsDangleBasicRight = Dangle Earrings (Right)
+marking-EarringsDangleBasicRight-dangle_tone_1_r = Material
+marking-EarringsDangleBasicRight-dangle_tone_2_r = Ornament
+
+marking-EarringsDangleLongLeft = Long Dangle Earrings (Left)
+marking-EarringsDangleLongLeft-dangle_long_tone_1_l = Material
+marking-EarringsDangleLongLeft-dangle_long_tone_2_l = Ornament
+
+marking-EarringsDangleLongRight = Long Dangle Earrings (Right)
+marking-EarringsDangleLongRight-dangle_long_tone_1_r = Material
+marking-EarringsDangleLongRight-dangle_long_tone_2_r = Ornament

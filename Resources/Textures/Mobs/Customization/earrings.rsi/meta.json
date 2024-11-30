@@ -1,134 +1,202 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from Aurorastation at commit https://github.com/Aurorastation/Aurora.3/commit/7bc5666e9e12ef31dcfdc9bd4b68831b34811bc6, stud/dangle edited from Aurora & hoop/hoop_mini/cross/gemstone/gemstone_big/drop/drop_long and Felinid states created by Skubman (github: angelofallars)",
+  "copyright": "Taken from Aurorastation at commit https://github.com/Aurorastation/Aurora.3/commit/7bc5666e9e12ef31dcfdc9bd4b68831b34811bc6, Edited and expanded by Skubman (github: angelofallars)",
   "size": {
     "x": 32,
     "y": 32
   },
   "states": [
     {
-      "name": "stud",
+      "name": "bangle_l",
       "directions": 4
     },
     {
-      "name": "heavy",
+      "name": "bangle_r",
       "directions": 4
     },
     {
-      "name": "dangle",
+      "name": "crescent_l",
       "directions": 4
     },
     {
-      "name": "crescent",
+      "name": "crescent_r",
       "directions": 4
     },
     {
-      "name": "bangle",
+      "name": "cross_l",
       "directions": 4
     },
     {
-      "name": "hoop",
+      "name": "cross_r",
       "directions": 4
     },
     {
-      "name": "hoop_mini",
+      "name": "cross_saint_peter_l",
       "directions": 4
     },
     {
-      "name": "cross",
+      "name": "cross_saint_peter_r",
       "directions": 4
     },
     {
-      "name": "gemstone_tone_1",
+      "name": "dangle_tone_1_l",
       "directions": 4
     },
     {
-      "name": "gemstone_tone_2",
+      "name": "dangle_tone_2_l",
       "directions": 4
     },
     {
-      "name": "gemstone_big_tone_1",
+      "name": "dangle_tone_1_r",
       "directions": 4
     },
     {
-      "name": "gemstone_big_tone_2",
+      "name": "dangle_tone_2_r",
       "directions": 4
     },
     {
-      "name": "drop_tone_1",
+      "name": "dangle_long_tone_1_l",
       "directions": 4
     },
     {
-      "name": "drop_tone_2",
+      "name": "dangle_long_tone_2_l",
       "directions": 4
     },
     {
-      "name": "drop_long_tone_1",
+      "name": "dangle_long_tone_1_r",
       "directions": 4
     },
     {
-      "name": "drop_long_tone_2",
+      "name": "dangle_long_tone_2_r",
       "directions": 4
     },
     {
-      "name": "heavy_felinid",
+      "name": "drop_l",
       "directions": 4
     },
     {
-      "name": "dangle_felinid",
+      "name": "drop_r",
       "directions": 4
     },
     {
-      "name": "crescent_felinid",
+      "name": "drop_colored_tone_1_l",
       "directions": 4
     },
     {
-      "name": "bangle_felinid",
+      "name": "drop_colored_tone_2_l",
       "directions": 4
     },
     {
-      "name": "hoop_felinid",
+      "name": "drop_colored_tone_1_r",
       "directions": 4
     },
     {
-      "name": "hoop_mini_felinid",
+      "name": "drop_colored_tone_2_r",
       "directions": 4
     },
     {
-      "name": "cross_felinid",
+      "name": "drop_long_tone_1_l",
       "directions": 4
     },
     {
-      "name": "gemstone_tone_1_felinid",
+      "name": "drop_long_tone_2_l",
       "directions": 4
     },
     {
-      "name": "gemstone_tone_2_felinid",
+      "name": "drop_long_tone_1_r",
       "directions": 4
     },
     {
-      "name": "gemstone_big_tone_1_felinid",
+      "name": "drop_long_tone_2_r",
       "directions": 4
     },
     {
-      "name": "gemstone_big_tone_2_felinid",
+      "name": "gemstone_tone_1_l",
       "directions": 4
     },
     {
-      "name": "drop_tone_1_felinid",
+      "name": "gemstone_tone_2_l",
       "directions": 4
     },
     {
-      "name": "drop_tone_2_felinid",
+      "name": "gemstone_tone_1_r",
       "directions": 4
     },
     {
-      "name": "drop_long_tone_1_felinid",
+      "name": "gemstone_tone_2_r",
       "directions": 4
     },
     {
-      "name": "drop_long_tone_2_felinid",
+      "name": "gemstone_long_tone_1_l",
+      "directions": 4
+    },
+    {
+      "name": "gemstone_long_tone_2_l",
+      "directions": 4
+    },
+    {
+      "name": "gemstone_long_tone_1_r",
+      "directions": 4
+    },
+    {
+      "name": "gemstone_long_tone_2_r",
+      "directions": 4
+    },
+    {
+      "name": "gemstone_double_tone_1_l",
+      "directions": 4
+    },
+    {
+      "name": "gemstone_double_tone_2_l",
+      "directions": 4
+    },
+    {
+      "name": "gemstone_double_tone_3_l",
+      "directions": 4
+    },
+    {
+      "name": "gemstone_double_tone_1_r",
+      "directions": 4
+    },
+    {
+      "name": "gemstone_double_tone_2_r",
+      "directions": 4
+    },
+    {
+      "name": "gemstone_double_tone_3_r",
+      "directions": 4
+    },
+    {
+      "name": "heavy_l",
+      "directions": 4
+    },
+    {
+      "name": "heavy_r",
+      "directions": 4
+    },
+    {
+      "name": "hoop_l",
+      "directions": 4
+    },
+    {
+      "name": "hoop_r",
+      "directions": 4
+    },
+    {
+      "name": "hoop_mini_l",
+      "directions": 4
+    },
+    {
+      "name": "hoop_mini_r",
+      "directions": 4
+    },
+    {
+      "name": "stud_l",
+      "directions": 4
+    },
+    {
+      "name": "stud_r",
       "directions": 4
     }
   ]
