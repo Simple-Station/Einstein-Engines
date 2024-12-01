@@ -11,7 +11,7 @@
   name: aloe cream
   icon: { sprite: "/Textures/Objects/Specific/Hydroponics/aloe.rsi", state: cream }
   spawn: AloeCream
-  maxCount: 10
+  maxCount: 15 #Changed to 15 due to shitmed changes
   itemSize: 1
 
 - type: stack
@@ -19,7 +19,7 @@
   name: gauze
   icon: { sprite: "/Textures/Objects/Specific/Medical/medical.rsi", state: gauze }
   spawn: Gauze
-  maxCount: 10
+  maxCount: 15 #Changed to 15 due to shitmed changes
   itemSize: 1
 
 - type: stack
@@ -27,7 +27,7 @@
   name: brutepack
   icon: { sprite: "/Textures/Objects/Specific/Medical/medical.rsi", state: gauze }
   spawn: Brutepack
-  maxCount: 10
+  maxCount: 15 #Changed to 15 due to shitmed changes
   itemSize: 1
 
 - type: stack
@@ -35,7 +35,7 @@
   name: bloodpack
   icon: { sprite: "/Textures/Objects/Specific/Medical/medical.rsi", state: bloodpack }
   spawn: Bloodpack
-  maxCount: 10
+  maxCount: 15 #Changed to 15 due to shitmed changes
   itemSize: 1
 
 - type: stack
@@ -43,7 +43,7 @@
   name: medicated-suture
   icon: {sprite: "/Textures/Objects/Specific/Medical/medical.rsi", state: medicated-suture }
   spawn: MedicatedSuture
-  maxCount: 10
+  maxCount: 15 #Changed to 15 due to shitmed changes
   itemSize: 1
 
 - type: stack
@@ -51,7 +51,7 @@
   name: regenerative-mesh
   icon: {sprite: "/Textures/Objects/Specific/Medical/medical.rsi", state: regenerative-mesh}
   spawn: RegenerativeMesh
-  maxCount: 10
+  maxCount: 15 #Changed to 15 due to shitmed changes
   itemSize: 1
 
 

@@ -30,13 +30,19 @@ public sealed partial class CharacterAgeRequirement : CharacterRequirement
     [DataField(required: true)]
     public int Max;
 
-    public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
-        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
-        out FormattedMessage? reason, int depth = 0)
+    public override bool IsValid(JobPrototype job,
+        HumanoidCharacterProfile profile,
+        Dictionary<string, TimeSpan> playTimes,
+        bool whitelisted,
+        IPrototype prototype,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager,
+        out string? reason,
+        int depth = 0)
     {
-        reason = FormattedMessage.FromMarkup(Loc.GetString("character-age-requirement",
-            ("inverted", Inverted), ("min", Min), ("max", Max)));
+        reason = Loc.GetString("character-age-requirement",
+            ("inverted", Inverted), ("min", Min), ("max", Max));
         return profile.Age >= Min && profile.Age <= Max;
     }
 }
@@ -51,14 +57,20 @@ public sealed partial class CharacterGenderRequirement : CharacterRequirement
     [DataField(required: true)]
     public Gender Gender;
 
-    public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
-        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
-        out FormattedMessage? reason, int depth = 0)
+    public override bool IsValid(JobPrototype job,
+        HumanoidCharacterProfile profile,
+        Dictionary<string, TimeSpan> playTimes,
+        bool whitelisted,
+        IPrototype prototype,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager,
+        out string? reason,
+        int depth = 0)
     {
-        reason = FormattedMessage.FromMarkup(Loc.GetString("character-gender-requirement",
+        reason = Loc.GetString("character-gender-requirement",
             ("inverted", Inverted),
-            ("gender", Loc.GetString($"humanoid-profile-editor-pronouns-{Gender.ToString().ToLower()}-text"))));
+            ("gender", Loc.GetString($"humanoid-profile-editor-pronouns-{Gender.ToString().ToLower()}-text")));
         return profile.Gender == Gender;
     }
 }
@@ -73,14 +85,20 @@ public sealed partial class CharacterSexRequirement : CharacterRequirement
     [DataField(required: true)]
     public Sex Sex;
 
-    public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
-        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
-        out FormattedMessage? reason, int depth = 0)
+    public override bool IsValid(JobPrototype job,
+        HumanoidCharacterProfile profile,
+        Dictionary<string, TimeSpan> playTimes,
+        bool whitelisted,
+        IPrototype prototype,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager,
+        out string? reason,
+        int depth = 0)
     {
-        reason = FormattedMessage.FromMarkup(Loc.GetString("character-sex-requirement",
+        reason = Loc.GetString("character-sex-requirement",
             ("inverted", Inverted),
-            ("sex", Loc.GetString($"humanoid-profile-editor-sex-{Sex.ToString().ToLower()}-text"))));
+            ("sex", Loc.GetString($"humanoid-profile-editor-sex-{Sex.ToString().ToLower()}-text")));
         return profile.Sex == Sex;
     }
 }
@@ -95,16 +113,22 @@ public sealed partial class CharacterSpeciesRequirement : CharacterRequirement
     [DataField(required: true)]
     public List<ProtoId<SpeciesPrototype>> Species;
 
-    public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
-        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
-        out FormattedMessage? reason, int depth = 0)
+    public override bool IsValid(JobPrototype job,
+        HumanoidCharacterProfile profile,
+        Dictionary<string, TimeSpan> playTimes,
+        bool whitelisted,
+        IPrototype prototype,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager,
+        out string? reason,
+        int depth = 0)
     {
         const string color = "green";
-        reason = FormattedMessage.FromMarkup(Loc.GetString("character-species-requirement",
+        reason = Loc.GetString("character-species-requirement",
             ("inverted", Inverted),
             ("species", $"[color={color}]{string.Join($"[/color], [color={color}]",
-                Species.Select(s => Loc.GetString(prototypeManager.Index(s).Name)))}[/color]")));
+                Species.Select(s => Loc.GetString(prototypeManager.Index(s).Name)))}[/color]"));
 
         return Species.Contains(profile.Species);
     }
@@ -129,16 +153,22 @@ public sealed partial class CharacterHeightRequirement : CharacterRequirement
     [DataField]
     public float Max = int.MaxValue;
 
-    public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
-        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
-        out FormattedMessage? reason, int depth = 0)
+    public override bool IsValid(JobPrototype job,
+        HumanoidCharacterProfile profile,
+        Dictionary<string, TimeSpan> playTimes,
+        bool whitelisted,
+        IPrototype prototype,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager,
+        out string? reason,
+        int depth = 0)
     {
         const string color = "yellow";
         var species = prototypeManager.Index<SpeciesPrototype>(profile.Species);
 
-        reason = FormattedMessage.FromMarkup(Loc.GetString("character-height-requirement",
-            ("inverted", Inverted), ("color", color), ("min", Min), ("max", Max)));
+        reason = Loc.GetString("character-height-requirement",
+            ("inverted", Inverted), ("color", color), ("min", Min), ("max", Max));
 
         var height = profile.Height * species.AverageHeight;
         return height >= Min && height <= Max;
@@ -164,16 +194,22 @@ public sealed partial class CharacterWidthRequirement : CharacterRequirement
     [DataField]
     public float Max = int.MaxValue;
 
-    public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
-        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
-        out FormattedMessage? reason, int depth = 0)
+    public override bool IsValid(JobPrototype job,
+        HumanoidCharacterProfile profile,
+        Dictionary<string, TimeSpan> playTimes,
+        bool whitelisted,
+        IPrototype prototype,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager,
+        out string? reason,
+        int depth = 0)
     {
         const string color = "yellow";
         var species = prototypeManager.Index<SpeciesPrototype>(profile.Species);
 
-        reason = FormattedMessage.FromMarkup(Loc.GetString("character-width-requirement",
-            ("inverted", Inverted), ("color", color), ("min", Min), ("max", Max)));
+        reason = Loc.GetString("character-width-requirement",
+            ("inverted", Inverted), ("color", color), ("min", Min), ("max", Max));
 
         var width = profile.Width * species.AverageWidth;
         return width >= Min && width <= Max;
@@ -199,10 +235,16 @@ public sealed partial class CharacterWeightRequirement : CharacterRequirement
     [DataField]
     public float Max = int.MaxValue;
 
-    public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
-        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
-        out FormattedMessage? reason, int depth = 0)
+    public override bool IsValid(JobPrototype job,
+        HumanoidCharacterProfile profile,
+        Dictionary<string, TimeSpan> playTimes,
+        bool whitelisted,
+        IPrototype prototype,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager,
+        out string? reason,
+        int depth = 0)
     {
         const string color = "green";
         var species = prototypeManager.Index<SpeciesPrototype>(profile.Species);
@@ -220,8 +262,8 @@ public sealed partial class CharacterWeightRequirement : CharacterRequirement
                 * ((profile.Width + profile.Height) / 2), 2)
                 * fixture.Fixtures["fix1"].Density);
 
-        reason = FormattedMessage.FromMarkup(Loc.GetString("character-weight-requirement",
-            ("inverted", Inverted), ("color", color), ("min", Min), ("max", Max)));
+        reason = Loc.GetString("character-weight-requirement",
+            ("inverted", Inverted), ("color", color), ("min", Min), ("max", Max));
 
         return weight >= Min && weight <= Max;
     }
@@ -238,16 +280,22 @@ public sealed partial class CharacterTraitRequirement : CharacterRequirement
     [DataField(required: true)]
     public List<ProtoId<TraitPrototype>> Traits;
 
-    public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
-        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
-        out FormattedMessage? reason, int depth = 0)
+    public override bool IsValid(JobPrototype job,
+        HumanoidCharacterProfile profile,
+        Dictionary<string, TimeSpan> playTimes,
+        bool whitelisted,
+        IPrototype prototype,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager,
+        out string? reason,
+        int depth = 0)
     {
         const string color = "lightblue";
-        reason = FormattedMessage.FromMarkup(Loc.GetString("character-trait-requirement",
+        reason = Loc.GetString("character-trait-requirement",
             ("inverted", Inverted),
             ("traits", $"[color={color}]{string.Join($"[/color], [color={color}]",
-                Traits.Select(t => Loc.GetString($"trait-name-{t}")))}[/color]")));
+                Traits.Select(t => Loc.GetString($"trait-name-{t}")))}[/color]"));
 
         return Traits.Any(t => profile.TraitPreferences.Contains(t.ToString()));
     }
@@ -263,18 +311,24 @@ public sealed partial class CharacterLoadoutRequirement : CharacterRequirement
     [DataField(required: true)]
     public List<ProtoId<LoadoutPrototype>> Loadouts;
 
-    public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
-        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
-        out FormattedMessage? reason, int depth = 0)
+    public override bool IsValid(JobPrototype job,
+        HumanoidCharacterProfile profile,
+        Dictionary<string, TimeSpan> playTimes,
+        bool whitelisted,
+        IPrototype prototype,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager,
+        out string? reason,
+        int depth = 0)
     {
         const string color = "lightblue";
-        reason = FormattedMessage.FromMarkup(Loc.GetString("character-loadout-requirement",
+        reason = Loc.GetString("character-loadout-requirement",
             ("inverted", Inverted),
             ("loadouts", $"[color={color}]{string.Join($"[/color], [color={color}]",
-                Loadouts.Select(l => Loc.GetString($"loadout-name-{l}")))}[/color]")));
+                Loadouts.Select(l => Loc.GetString($"loadout-name-{l}")))}[/color]"));
 
-        return Loadouts.Any(l => profile.LoadoutPreferences.Contains(l.ToString()));
+        return Loadouts.Any(l => profile.LoadoutPreferences.Select(l => l.LoadoutName).Contains(l.ToString()));
     }
 }
 
@@ -288,10 +342,16 @@ public sealed partial class CharacterItemGroupRequirement : CharacterRequirement
     [DataField(required: true)]
     public ProtoId<CharacterItemGroupPrototype> Group;
 
-    public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
-        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
-        out FormattedMessage? reason, int depth = 0)
+    public override bool IsValid(JobPrototype job,
+        HumanoidCharacterProfile profile,
+        Dictionary<string, TimeSpan> playTimes,
+        bool whitelisted,
+        IPrototype prototype,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager,
+        out string? reason,
+        int depth = 0)
     {
         var group = prototypeManager.Index(Group);
 
@@ -303,10 +363,10 @@ public sealed partial class CharacterItemGroupRequirement : CharacterRequirement
         if (items.ToList().Contains(prototype.ID))
             count--;
 
-        reason = FormattedMessage.FromMarkup(Loc.GetString("character-item-group-requirement",
+        reason = Loc.GetString("character-item-group-requirement",
             ("inverted", Inverted),
             ("group", Loc.GetString($"character-item-group-{Group}")),
-            ("max", group.MaxItems)));
+            ("max", group.MaxItems));
 
         return count < group.MaxItems;
     }
