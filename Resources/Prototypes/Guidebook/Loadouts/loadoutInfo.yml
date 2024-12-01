@@ -4,8 +4,14 @@
   text: "/ServerInfo/Guidebook/LoadoutInfo/LoadoutInfo.xml"
   children:
     - LoadoutInfoLoadoutEyesEyepatch
+    - SecurityWeapons
 
 - type: guideEntry
   id: LoadoutInfoLoadoutEyesEyepatch
   name: guide-entry-loadout-eyes-eyepatch
   text: "/ServerInfo/Guidebook/LoadoutInfo/Eyes/LoadoutInfoLoadoutEyesEyepatch.xml"
+
+- type: guideEntry
+  id: SecurityWeapons
+  name: guide-entry-loadout-info-security-weapons
+  text: "/ServerInfo/Guidebook/LoadoutInfo/Security/SecurityWeapons.xml"
