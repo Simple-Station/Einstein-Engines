@@ -270,6 +270,11 @@
     - MagazineMagnumLeverRifleEmpty # Goobstation
     - MagazineMagnumLeverRifle # Goobstation
     - CartridgeEpinephrine # Goobstation
+    - CartridgeBicaridine # Goobstation
+    - CartridgeDermaline # Goobstation
+    - CartridgeEphedrine # Goobstation
+    - CartridgeIchor # Goobstation
+    - SecHypo # Goobstation
 
 - type: entity
   id: AutolatheHyperConvection
@@ -1005,6 +1010,9 @@
       - MagazineShotgunBeanbag
       - ShellTranquilizer
       - CartridgeEpinephrine # Goobstation
+      - CartridgeBicaridine # Goobstation
+      - CartridgeDermaline # Goobstation
+      - SecHypo # Goobstation
       - BoxBeanbag
       - CartridgePistolRubber
       - CartridgeMagnumRubber
