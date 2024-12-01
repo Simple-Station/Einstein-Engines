@@ -2,6 +2,12 @@
   id: CartridgeLightRifleSubsonic
 
 - type: Tag
+  id: CartridgeHighCaliber
+
+- type: Tag
+  id: CartridgeHighCaliberExplosive
+
+- type: Tag
   id: Clarke
 
 - type: Tag
@@ -87,6 +93,9 @@
 
 - type: Tag
   id: IndustrialMech
+
+- type: Tag
+  id: MagazineHighCaliber
 
 - type: Tag
   id: MagazineLightRifleSubsonic
