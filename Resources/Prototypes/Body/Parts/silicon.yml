@@ -41,6 +41,11 @@
   - type: BodyPart
     partType: Arm
     symmetry: Left
+    toolName: "a left arm"
+    children:
+      left hand:
+        id: "left hand"
+        type: Hand
   - type: Tag
     tags:
     - Trash
@@ -55,6 +60,11 @@
   - type: BodyPart
     partType: Arm
     symmetry: Right
+    toolName: "a right arm"
+    children:
+      right hand:
+        id: "right hand"
+        type: Hand
   - type: Tag
     tags:
     - Trash
@@ -69,6 +79,11 @@
   - type: BodyPart
     partType: Leg
     symmetry: Left
+    toolName: "a left leg"
+    children:
+      left foot:
+        id: "left foot"
+        type: Foot
   - type: Tag
     tags:
     - Trash
@@ -84,6 +99,11 @@
   - type: BodyPart
     partType: Leg
     symmetry: Right
+    toolName: "a right leg"
+    children:
+      right foot:
+        id: "right foot"
+        type: Foot
   - type: Tag
     tags:
     - Trash

@@ -28,10 +28,153 @@
       group: LoadoutStationEngineerEquipment
     - !type:CharacterJobRequirement
       jobs:
-        - SeniorEngineer
+        - StationEngineer
   items:
     - RCD
     - RCDAmmo
+
+- type: loadout
+  id: LoadoutStationEngineerEquipmentPowerDrill
+  category: JobsEngineeringStationEngineer
+  cost: 1
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutStationEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - StationEngineer
+  items:
+    - PowerDrill
+
+- type: loadout
+  id: LoadoutStationEngineerEquipmentSheetSteel
+  category: JobsEngineeringStationEngineer
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutStationEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - StationEngineer
+  items:
+    - SheetSteel
+
+- type: loadout
+  id: LoadoutStationEngineerEquipmentSheetSteel10
+  category: JobsEngineeringStationEngineer
+  cost: 1
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutStationEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - StationEngineer
+  items:
+    - SheetSteel10
+
+- type: loadout
+  id: LoadoutStationEngineerEquipmentSheetPlasteel
+  category: JobsEngineeringStationEngineer
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutStationEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - StationEngineer
+  items:
+    - SheetPlasteel
+
+- type: loadout
+  id: LoadoutStationEngineerEquipmentSheetPlasteel10
+  category: JobsEngineeringStationEngineer
+  cost: 1
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutStationEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - StationEngineer
+  items:
+    - SheetPlasteel10
+
+- type: loadout
+  id: LoadoutStationEngineerEquipmentSheetGlass
+  category: JobsEngineeringStationEngineer
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutStationEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - StationEngineer
+  items:
+    - SheetGlass
+
+- type: loadout
+  id: LoadoutStationEngineerEquipmentSheetGlass10
+  category: JobsEngineeringStationEngineer
+  cost: 1
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutStationEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - StationEngineer
+  items:
+    - SheetGlass10
+
+- type: loadout
+  id: LoadoutStationEngineerEquipmentMaterialWoodPlank
+  category: JobsEngineeringStationEngineer
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutStationEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - StationEngineer
+  items:
+    - MaterialWoodPlank
+
+- type: loadout
+  id: LoadoutStationEngineerEquipmentMaterialWoodPlank10
+  category: JobsEngineeringStationEngineer
+  cost: 1
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutStationEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - StationEngineer
+  items:
+    - MaterialWoodPlank10
+
+- type: loadout
+  id: LoadoutStationEngineerEquipmentSheetPlastic
+  category: JobsEngineeringStationEngineer
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutStationEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - StationEngineer
+  items:
+    - SheetPlastic
+
+- type: loadout
+  id: LoadoutStationEngineerEquipmentSheetPlastic10
+  category: JobsEngineeringStationEngineer
+  cost: 1
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutStationEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - StationEngineer
+  items:
+    - SheetPlastic10
 
 # Eyes
 
@@ -50,3 +193,28 @@
 # Shoes
 
 # Uniforms
+- type: loadout
+  id: LoadoutStationEngineerUniformsSuit
+  category: JobsEngineeringStationEngineer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutStationEngineerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - StationEngineer
+  items:
+    - ClothingUniformJumpsuitEngineering
+
+- type: loadout
+  id: LoadoutStationEngineerUniformsSkirt
+  category: JobsEngineeringStationEngineer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutStationEngineerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - StationEngineer
+  items:
+    - ClothingUniformJumpskirtEngineering

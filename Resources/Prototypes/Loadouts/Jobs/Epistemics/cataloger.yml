@@ -19,6 +19,45 @@
 #  items:
 #    - PsiPotentiometerHandheld
 
+- type: loadout
+  id: LoadoutCatalogerEquipmentCandles
+  category: JobsEpistemicsCataloger
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCatalogerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Librarian
+  items:
+    - BoxCandle
+
+- type: loadout
+  id: LoadoutCatalogerEquipmentCandlesSmall
+  category: JobsEpistemicsCataloger
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCatalogerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Librarian
+  items:
+    - BoxCandleSmall
+
+- type: loadout
+  id: LoadoutCatalogerPillCanisterSpaceDrugs
+  category: JobsEpistemicsCataloger
+  cost: 1
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCatalogerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Librarian
+  items:
+    - PillCanisterSpaceDrugs
+
 # Eyes
 
 # Gloves

@@ -584,6 +584,8 @@
     sprite: Clothing/OuterClothing/WinterCoats/corpo_jacket_einstein_engines.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/WinterCoats/corpo_jacket_einstein_engines.rsi
+  - type: GuideHelp
+    guides: [ EinsteinEngines ]
 
 - type: entity
   parent: ClothingOuterWinterCoat
@@ -595,6 +597,8 @@
     sprite: Clothing/OuterClothing/WinterCoats/corpo_jacket_hephestus_industries.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/WinterCoats/corpo_jacket_hephestus_industries.rsi
+  - type: GuideHelp
+    guides: [ HephaestusIndustries ]
 
 - type: entity
   parent: ClothingOuterWinterCoat
@@ -628,6 +632,8 @@
     sprite: Clothing/OuterClothing/WinterCoats/corpo_jacket_bishop_cybernetics.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/WinterCoats/corpo_jacket_bishop_cybernetics.rsi
+  - type: GuideHelp
+    guides: [ ZengHuPharmaceuticals ]
 
 - type: entity
   parent: ClothingOuterWinterCoat
@@ -672,3 +678,5 @@
     sprite: Clothing/OuterClothing/WinterCoats/corpo_jacket_zeng_hu_pharma.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/WinterCoats/corpo_jacket_zeng_hu_pharma.rsi
+  - type: GuideHelp
+    guides: [ ZengHuPharmaceuticals ]

@@ -21,7 +21,7 @@
 
 - type: characterItemGroup
   id: LoadoutSeniorEngineerEquipment
-  maxItems: 2
+  maxItems: 3
   items:
     - type: loadout
       id: LoadoutSeniorEngineerEquipmentBoxInflatable
@@ -29,6 +29,56 @@
       id: LoadoutSeniorEngineerEquipmentMedkitOxygen
     - type: loadout
       id: LoadoutSeniorEngineerEquipmentRCD
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentRCDAmmo1
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentRCDAmmo2
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentPowerDrill
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentSheetSteel
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentSheetSteel10
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentSheetPlasteel
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentSheetPlasteel10
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentSheetGlass
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentSheetGlass10
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentMaterialWoodPlank
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentMaterialWoodPlank10
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentSheetRGlass
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentSheetRGlass10
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentSheetUGlass
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentSheetUGlass10
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentSheetRUGlass
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentSheetRUGlass10
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentSheetPGlass
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentSheetPGlass10
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentSheetRPGlass
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentSheetRPGlass10
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentSheetClockworkGlass
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentSheetClockworkGlass10
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentSheetPlastic
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentSheetPlastic10
 
 #- type: characterItemGroup
 #  id: LoadoutSeniorEngineerEyes
