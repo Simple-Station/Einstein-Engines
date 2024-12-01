@@ -32,10 +32,10 @@
 - type: startingGear
   id: BlueshieldOfficerGear
   equipment:
-    back: ClothingBackpack
+    back: ClothingBackpackBlueshield
     jumpsuit: ClothingUniformJumpsuitBlueshieldOfficer
     shoes: ClothingShoesBootsCombatFilled
-    eyes: ClothingEyesGlassesMedical
+    eyes: ClothingEyesGlassesMedSec
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingBlueshieldArmourVest
     id: ERTSecurityPDA
