@@ -8329,3 +8329,18 @@ Entries:
   id: 6550
   time: '2024-12-01T10:41:50.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1299
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Arachne can now be Male instead of only being Female. They can now also
+        wear Facial Hair.
+    - type: Add
+      message: Arachne can use Arachnid chest and arm markings.
+    - type: Fix
+      message: >-
+        Arachne will now have footstep sounds instead of being quiet when
+        moving.
+  id: 6551
+  time: '2024-12-01T14:11:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1301
