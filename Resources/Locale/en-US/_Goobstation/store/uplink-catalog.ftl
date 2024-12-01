@@ -41,9 +41,6 @@ uplink-smugglers-satchel-desc = A rugged satchel that can be hidden under floor 
 
 # Weapons
 
-uplink-dualetta-kit-name = Dualetta kit
-uplink-dualetta-kit-desc = Two dualettas for a cheap price.
-
 uplink-contractor-baton-name = Contractor Baton
 uplink-contractor-baton-desc = A compact, specialised baton assigned to Syndicate contractors. Applies light electrical shocks to targets. These shocks are capable of affecting the inner circuitry of most robots as well, applying a short stun.
 
@@ -116,3 +113,13 @@ uplink-mech-teleporter-assault-desc = Contains a lightly armored Cybersun mech w
 
 uplink-hardsuit-cybersun-stealth-name = CSA-91x "Èguǐ" tacsuit
 uplink-hardsuit-cybersun-stealth-desc = A rare prototype tacsuit that features metamaterial plating which warps light around it to produce an "Invisibility cloak" effect.
+
+# Weapons
+
+uplink-weapon-burner-name = Burner Heavy Rifle Bundle
+uplink-weapon-burner-desc = A bundle containing a Burner Heavy Rifle and a couple of magazines, including some high-explosive rounds.
+
+# Ammo
+
+uplink-high-caliber-box-name = 30 round .50 Box
+uplink-high-caliber-box-desc = A box of 30 .50 caliber anti-materiel rounds.

@@ -132,6 +132,22 @@
   - UplinkWeaponry
 
 - type: listing
+  id: UplinkWeaponRifleBurner
+  name: uplink-weapon-burner-name
+  description: uplink-weapon-burner-desc
+  icon: { sprite: /Textures/_Goobstation/Objects/Weapons/Guns/Rifles/burner.rsi, state: icon }
+  productEntity: ClothingBackpackDuffelSyndicateBurner
+  cost:
+    Telecrystal: 150 # meant to be a side-grade to L6 Saw, if it ends up being better we can nerf it or up TC cost to 175-200.
+  categories:
+  - UplinkWeaponry
+  conditions:
+  - !type:StoreWhitelistCondition
+    blacklist:
+      tags:
+      - NukeOpsUplink
+
+- type: listing
   id: UplinkBowHardlight
   name: uplink-hardlight-bow-name
   description: uplink-hardlight-bow-desc
@@ -411,6 +427,19 @@
 #    Telecrystal: 40 # ammo should be a big cost for this
 #  categories:
 #  - UplinkAmmo
+
+# Ammo
+
+- type: listing
+  id: UplinkHighCaliberBox
+  name: uplink-high-caliber-box-name
+  description: uplink-high-caliber-box-desc
+  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Boxes/anti_materiel.rsi, state: base-b }
+  productEntity: MagazineBoxHighCaliber
+  cost:
+    Telecrystal: 40 # ammo should be a big cost for this
+  categories:
+  - UplinkAmmo
 
 # 弾薬
 - type: listing
