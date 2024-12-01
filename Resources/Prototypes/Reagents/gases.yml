@@ -143,6 +143,21 @@
         ratios:
           CarbonDioxide: 1.0 # TODO: evaluate gas type for plasmaman exhale
           Plasma: -1.0
+    Medicine:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Plasmaman
+        damage:
+          groups:
+            Brute: -2
+          types:
+            Heat: -0.66
+            Shock: -0.66
+            Caustic: -0.66
+            Asphyxiation: -0.66
+            Poison: -0.66
   reactiveEffects:
     Flammable:
       methods: [ Touch ]
