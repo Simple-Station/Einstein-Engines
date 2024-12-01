@@ -8306,3 +8306,26 @@ Entries:
   id: 6549
   time: '2024-12-01T03:27:05.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1298
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        80+ new markings have arrived, including earrings, makeup, bracelets,
+        and watches. Sashay over to Character Setup to personalize your
+        character like never before!
+    - type: Add
+      message: >-
+        The Arachne species can now select markings above the leg, including
+        cybernetics, makeup, tattoos, noses, earrings, heterochromia, bracelets,
+        gauze, and more!
+    - type: Tweak
+      message: >-
+        The available points for Head (Side), Left Hand, and Right Hand markings
+        have been increased for most species to support the new markings.
+    - type: Tweak
+      message: >-
+        The Nail Polish markings have been moved from the Overlay category to
+        the Left Hand and Right Hand categories.
+  id: 6550
+  time: '2024-12-01T10:41:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1299
