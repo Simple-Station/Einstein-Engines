@@ -66,6 +66,7 @@
     - map: [ "belt" ]
     - map: [ "neck" ]
     - map: [ "back" ]
+    - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
     - map: [ "enum.HumanoidVisualLayers.Hair" ]
       state: bald
       sprite: Mobs/Customization/human_hair.rsi
@@ -106,6 +107,7 @@
   - type: Tag
     tags:
     - CanPilot
+    - FootstepSound
     - DoorBumpOpener
   - type: StepTriggerImmune
   - type: Bloodstream
@@ -209,6 +211,7 @@
     - map: [ "belt" ]
     - map: [ "neck" ]
     - map: [ "back" ]
+    - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
     - map: [ "enum.HumanoidVisualLayers.Hair" ]
       state: bald
       sprite: Mobs/Customization/human_hair.rsi
