@@ -78,3 +78,15 @@ marking-FaceNosestripe-nosestripe = Nose Stripe
 
 marking-FaceUnibrow = Unibrow
 marking-FaceUnibrow-unibrow = Unibrow
+
+marking-FaceNeckSlim = Neck Cover (Slim)
+marking-FaceNeckSlim-neck_f = Neck Cover (Slim)
+
+marking-FaceNeckWide = Neck Cover (Wide)
+marking-FaceNeckWide-neck_m = Neck Cover (Wide)
+
+marking-FaceNeckSlimThick = Neck Cover (Slim Thick)
+marking-FaceNeckSlimThick-neck_thick_f = Neck Cover (Slim Thick)
+
+marking-FaceNeckWideThick = Neck Cover (Wide Thick)
+marking-FaceNeckWideThick-neck_thick_m = Neck Cover (Wide Thick)

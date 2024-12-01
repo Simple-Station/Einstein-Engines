@@ -378,3 +378,43 @@
   sprites:
   - sprite: Mobs/Customization/face.rsi
     state: unibrow
+
+- type: marking
+  id: FaceNeckSlim
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne]
+  followSkinColor: true
+  sprites:
+  - sprite: Mobs/Customization/face.rsi
+    state: neck_f
+
+- type: marking
+  id: FaceNeckWide
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne]
+  followSkinColor: true
+  sprites:
+  - sprite: Mobs/Customization/face.rsi
+    state: neck_m
+
+- type: marking
+  id: FaceNeckSlimThick
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne]
+  followSkinColor: true
+  sprites:
+  - sprite: Mobs/Customization/face.rsi
+    state: neck_thick_f
+
+- type: marking
+  id: FaceNeckWideThick
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne]
+  followSkinColor: true
+  sprites:
+  - sprite: Mobs/Customization/face.rsi
+    state: neck_thick_m
