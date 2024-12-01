@@ -109,3 +109,25 @@ marking-EarringsDangleLongLeft-dangle_long_tone_2_l = Ornament
 marking-EarringsDangleLongRight = Long Dangle Earrings (Right)
 marking-EarringsDangleLongRight-dangle_long_tone_1_r = Material
 marking-EarringsDangleLongRight-dangle_long_tone_2_r = Ornament
+
+marking-EarringsEightLeft = Eight Earrings (Left)
+marking-EarringsEightLeft-eight_l = Eight Earrings (Left)
+
+marking-EarringsEightRight = Eight Earrings (Right)
+marking-EarringsEightRight-eight_r = Eight Earrings (Right)
+
+marking-EarringsCrystalBasicLeft = Crystal Earrings (Left)
+marking-EarringsCrystalBasicLeft-crystal_tone_1_l = Material
+marking-EarringsCrystalBasicLeft-crystal_tone_2_l = Ornament
+
+marking-EarringsCrystalBasicRight = Crystal Earrings (Right)
+marking-EarringsCrystalBasicRight-crystal_tone_1_r = Material
+marking-EarringsCrystalBasicRight-crystal_tone_2_r = Ornament
+
+marking-EarringsCrystalLongLeft = Long Crystal Earrings (Left)
+marking-EarringsCrystalLongLeft-crystal_long_tone_1_l = Material
+marking-EarringsCrystalLongLeft-crystal_long_tone_2_l = Ornament
+
+marking-EarringsCrystalLongRight = Long Crystal Earrings (Right)
+marking-EarringsCrystalLongRight-crystal_long_tone_1_r = Material
+marking-EarringsCrystalLongRight-crystal_long_tone_2_r = Ornament

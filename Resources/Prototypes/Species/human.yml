@@ -53,7 +53,7 @@
     HeadTop:
       points: 1
       required: false
-    HeadTop:
+    HeadSide:
       points: 4
       required: false
     Chest:

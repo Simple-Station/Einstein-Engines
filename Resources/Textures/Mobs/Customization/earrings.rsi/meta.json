@@ -40,6 +40,38 @@
       "directions": 4
     },
     {
+      "name": "crystal_tone_1_l",
+      "directions": 4
+    },
+    {
+      "name": "crystal_tone_2_l",
+      "directions": 4
+    },
+    {
+      "name": "crystal_tone_1_r",
+      "directions": 4
+    },
+    {
+      "name": "crystal_tone_2_r",
+      "directions": 4
+    },
+    {
+      "name": "crystal_long_tone_1_l",
+      "directions": 4
+    },
+    {
+      "name": "crystal_long_tone_2_l",
+      "directions": 4
+    },
+    {
+      "name": "crystal_long_tone_1_r",
+      "directions": 4
+    },
+    {
+      "name": "crystal_long_tone_2_r",
+      "directions": 4
+    },
+    {
       "name": "dangle_tone_1_l",
       "directions": 4
     },
@@ -109,6 +141,14 @@
     },
     {
       "name": "drop_long_tone_2_r",
+      "directions": 4
+    },
+    {
+      "name": "eight_l",
+      "directions": 4
+    },
+    {
+      "name": "eight_r",
       "directions": 4
     },
     {

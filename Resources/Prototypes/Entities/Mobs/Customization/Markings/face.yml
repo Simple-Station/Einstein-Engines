@@ -21,7 +21,7 @@
     default:
       type:
         !type:SimpleColoring
-          color: "#d39394"
+          color: "#e07e7e"
   sprites:
   - sprite: Mobs/Customization/face.rsi
     state: fullblush
@@ -253,10 +253,10 @@
     state: eyestripe
 
 - type: marking
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin]
+  id: FaceLipcornerRight
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin]
   coloring:
     default:
       type:
