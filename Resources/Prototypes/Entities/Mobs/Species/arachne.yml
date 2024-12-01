@@ -22,6 +22,7 @@
       color: "#e8b59b"
       sprite: Mobs/Species/Human/parts.rsi
       state: head_m
+    - map: [ "enum.HumanoidVisualLayers.Snout" ]
     - map: [ "enum.HumanoidVisualLayers.Eyes" ]
       color: "#008800"
       sprite: Mobs/Species/eyes.rsi
@@ -69,6 +70,7 @@
       state: bald
       sprite: Mobs/Customization/human_hair.rsi
     - map: [ "mask" ]
+    - map: [ "enum.HumanoidVisualLayers.HeadSide" ] # This is not in the default order so earrings are rendered above masks
     - map: [ "head" ]
     - map: [ "pocket1" ]
     - map: [ "pocket2" ]
@@ -163,6 +165,7 @@
       color: "#e8b59b"
       sprite: Mobs/Species/Human/parts.rsi
       state: head_m
+    - map: [ "enum.HumanoidVisualLayers.Snout" ]
     - map: [ "enum.HumanoidVisualLayers.Eyes" ]
       color: "#008800"
       sprite: Mobs/Species/eyes.rsi
@@ -210,6 +213,7 @@
       state: bald
       sprite: Mobs/Customization/human_hair.rsi
     - map: [ "mask" ]
+    - map: [ "enum.HumanoidVisualLayers.HeadSide" ] # This is not in the default order so earrings are rendered above masks
     - map: [ "head" ]
     - map: [ "pocket1" ]
     - map: [ "pocket2" ]
