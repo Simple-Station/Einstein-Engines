@@ -64,6 +64,10 @@
       brain:
         - type: OhioAccent
         - type: RatvarianLanguage
+        - type: Clumsy
+          clumsyDamage: # Placeholder values to be able to initialize the component
+            types:
+              Blunt: 0
     inverse: true
 
 - type: entity
@@ -87,6 +91,10 @@
       brain:
         - type: OhioAccent
         - type: RatvarianLanguage
+        - type: Clumsy
+          clumsyDamage:
+            types:
+              Blunt: 0
 
 - type: entity
   parent: SurgeryBase
