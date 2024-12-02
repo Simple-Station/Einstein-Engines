@@ -1736,7 +1736,7 @@
     makeSentient: true
     name: ghost-role-information-monkey-name
     description: ghost-role-information-monkey-description
-    rules: ghost-role-information-syndicate-monkey-reinforcement-rules
+    rules: ghost-role-information-syndicate-reinforcement-rules
     mindRoles:
     # This is for syndicate monkeys that randomly gain sentience, thus have no summoner to team with
     - MindRoleGhostRoleSoloAntagonist

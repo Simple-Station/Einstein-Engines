@@ -152,7 +152,7 @@
   - type: GhostRole
     name: roles-antag-nuclear-operative-name
     description: roles-antag-nuclear-operative-objective
-    rules: ghost-role-information-rules-default-team-antagonist
+    rules: ghost-role-information-loneop-rules
     mindRoles:
     - MindRoleGhostRoleTeamAntagonist
 
