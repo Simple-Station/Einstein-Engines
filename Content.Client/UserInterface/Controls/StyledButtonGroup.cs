@@ -50,6 +50,12 @@ public sealed partial class StyledButtonGroup : BoxContainer
     public IEnumerable<BaseButton> VisibleButtons => Buttons.Where(c => c.Visible);
 
 
+    public StyledButtonGroup()
+    {
+        RobustXamlLoader.Load(this);
+    }
+
+
     public void AddButton(BaseButton button, bool updateStyles = true)
     {
         AddChild(button);
