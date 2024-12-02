@@ -139,11 +139,17 @@ namespace Content.Client.Lobby
                 var difference = _gameTicker.StartTime - _gameTiming.CurTime;
                 var seconds = difference.TotalSeconds;
                 if (seconds < 0)
-                    text = Loc.GetString(seconds < -5
-                        ? "lobby-state-right-now-question"
-                        : "lobby-state-right-now-confirmation");
+                {
+                    text = Loc.GetString(seconds < -5 ? "lobby-state-right-now-question" : "lobby-state-right-now-confirmation");
+                }
+                else if (difference.TotalHours >= 1)
+                {
+                    text = $"{Math.Floor(difference.TotalHours)}:{difference.Minutes:D2}:{difference.Seconds:D2}";
+                }
                 else
+                {
                     text = $"{difference.Minutes}:{difference.Seconds:D2}";
+                }
             }
 
             Lobby!.StartTime.Text = Loc.GetString("lobby-state-round-start-countdown-text", ("timeLeft", text));
