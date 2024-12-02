@@ -64,6 +64,7 @@
       brain:
         - type: OhioAccent
         - type: RatvarianLanguage
+    inverse: true
 
 - type: entity
   parent: SurgeryBase
@@ -86,7 +87,6 @@
       brain:
         - type: OhioAccent
         - type: RatvarianLanguage
-    inverse: true
 
 - type: entity
   parent: SurgeryBase

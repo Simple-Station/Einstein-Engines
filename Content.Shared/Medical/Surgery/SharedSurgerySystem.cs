@@ -213,8 +213,8 @@ public abstract partial class SharedSurgerySystem : EntitySystem
 
         var organSlotIdToOrgan = _body.GetPartOrgans(args.Part, part).ToDictionary(o => o.Item2.SlotId, o => o.Item2);
 
-        var missingOnAddPresent = false;
-        var someOnAddPresent = false;
+        var allOnAddFound = true;
+        var zeroOnAddFound = true;
 
         foreach (var (organSlotId, components) in ent.Comp.Components)
         {
@@ -223,20 +223,20 @@ public abstract partial class SharedSurgerySystem : EntitySystem
 
             if (organ.OnAdd == null)
             {
-                missingOnAddPresent = true;
+                allOnAddFound = false;
                 continue;
             }
 
             foreach (var key in components.Keys)
             {
                 if (!organ.OnAdd.ContainsKey(key))
-                    missingOnAddPresent = true;
+                    allOnAddFound = false;
                 else
-                    someOnAddPresent = true;
+                    zeroOnAddFound = false;
             }
         }
 
-        if (ent.Comp.Inverse ? missingOnAddPresent : someOnAddPresent)
+        if (ent.Comp.Inverse ? allOnAddFound : zeroOnAddFound)
             args.Cancelled = true;
     }
 
