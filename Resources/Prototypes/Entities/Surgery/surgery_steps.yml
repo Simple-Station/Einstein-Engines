@@ -532,7 +532,7 @@
   components:
   - type: SurgeryStep
     tool:
-    - type: Drill
+    - type: Scalpel
     addOrganOnAdd:
       brain:
         - type: OhioAccent
@@ -546,8 +546,8 @@
               Burn: 3
     duration: 5
   - type: Sprite
-    sprite: Objects/Specific/Medical/Surgery/drill.rsi
-    state: drill
+    sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
+    state: scalpel
   - type: SurgeryStepEmoteEffect
   - type: SurgeryDamageChangeEffect
     damage:
