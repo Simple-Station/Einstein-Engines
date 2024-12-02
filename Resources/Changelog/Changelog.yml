@@ -8344,3 +8344,10 @@ Entries:
   id: 6551
   time: '2024-12-01T14:11:51.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1301
+- author: zelezniciar
+  changes:
+    - type: Fix
+      message: Fixed Senior Engineer and Physician names not appearing correctly
+  id: 6552
+  time: '2024-12-01T23:56:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1302
