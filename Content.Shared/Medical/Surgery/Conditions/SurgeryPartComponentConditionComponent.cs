@@ -8,7 +8,7 @@ namespace Content.Shared.Medical.Surgery.Conditions;
 //   What components are necessary in the targeted body part for the surgery to be valid.
 // </summary>
 [RegisterComponent, NetworkedComponent]
-public sealed partial class SurgeryBodyPartComponentConditionComponent : Component
+public sealed partial class SurgeryPartComponentConditionComponent : Component
 {
     // <summary>
     //   The components to check for.
