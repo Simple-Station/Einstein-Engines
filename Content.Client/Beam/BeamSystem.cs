@@ -1,9 +1,14 @@
-﻿using Content.Client.Beam.Components;
+﻿#region
+
 using Content.Shared.Beam;
 using Content.Shared.Beam.Components;
 using Robust.Client.GameObjects;
 
+#endregion
+
+
 namespace Content.Client.Beam;
+
 
 public sealed class BeamSystem : SharedBeamSystem
 {

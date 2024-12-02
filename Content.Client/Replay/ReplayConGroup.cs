@@ -1,6 +1,12 @@
+#region
+
 using Robust.Client.Console;
 
+#endregion
+
+
 namespace Content.Client.Replay;
+
 
 public sealed class ReplayConGroup : IClientConGroupImplementation
 {

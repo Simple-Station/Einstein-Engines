@@ -1,16 +1,22 @@
+#region
+
 using Content.Shared.Construction;
 using Content.Shared.Construction.Components;
 using Robust.Client.GameObjects;
 using Robust.Shared.Prototypes;
 
+#endregion
+
+
 namespace Content.Client.Construction;
 
-/// <inheritdoc/>
+
+/// <inheritdoc />
 public sealed class FlatpackSystem : SharedFlatpackSystem
 {
     [Dependency] private readonly AppearanceSystem _appearance = default!;
 
-    /// <inheritdoc/>
+    /// <inheritdoc />
     public override void Initialize()
     {
         base.Initialize();
@@ -21,7 +27,8 @@ public sealed class FlatpackSystem : SharedFlatpackSystem
     private void OnAppearanceChange(Entity<FlatpackComponent> ent, ref AppearanceChangeEvent args)
     {
         var (_, comp) = ent;
-        if (!_appearance.TryGetData<string>(ent, FlatpackVisuals.Machine, out var machineBoardId) || args.Sprite == null)
+        if (!_appearance.TryGetData<string>(ent, FlatpackVisuals.Machine, out var machineBoardId) ||
+            args.Sprite == null)
             return;
 
         if (!PrototypeManager.TryIndex<EntityPrototype>(machineBoardId, out var machineBoardPrototype))

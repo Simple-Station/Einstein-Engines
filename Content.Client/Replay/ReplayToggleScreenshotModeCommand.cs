@@ -1,11 +1,17 @@
-﻿using Content.Client.UserInterface.Systems.Chat;
+﻿#region
+
+using Content.Client.UserInterface.Systems.Chat;
 using Content.Shared.Chat;
 using Robust.Client.Replays.Commands;
 using Robust.Client.Replays.UI;
 using Robust.Client.UserInterface;
 using Robust.Shared.Console;
 
+#endregion
+
+
 namespace Content.Client.Replay;
+
 
 public sealed class ReplayToggleScreenshotModeCommand : BaseReplayCommand
 {

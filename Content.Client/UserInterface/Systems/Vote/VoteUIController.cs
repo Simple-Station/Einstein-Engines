@@ -1,10 +1,16 @@
+#region
+
 using Content.Client.UserInterface.Screens;
 using Content.Client.UserInterface.Systems.Gameplay;
 using Content.Client.Voting;
 using JetBrains.Annotations;
 using Robust.Client.UserInterface.Controllers;
 
+#endregion
+
+
 namespace Content.Client.UserInterface.Systems.Vote;
+
 
 [UsedImplicitly]
 public sealed class VoteUIController : UIController
@@ -32,8 +38,5 @@ public sealed class VoteUIController : UIController
         }
     }
 
-    private void OnScreenUnload()
-    {
-        _votes.ClearPopupContainer();
-    }
+    private void OnScreenUnload() => _votes.ClearPopupContainer();
 }

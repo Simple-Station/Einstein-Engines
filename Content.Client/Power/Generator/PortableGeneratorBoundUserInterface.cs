@@ -1,22 +1,25 @@
-﻿using Content.Shared.Power.Generator;
+﻿#region
+
+using Content.Shared.Power.Generator;
 using JetBrains.Annotations;
-using Robust.Client.GameObjects;
+
+#endregion
+
 
 namespace Content.Client.Power.Generator;
+
 
 [UsedImplicitly]
 public sealed class PortableGeneratorBoundUserInterface : BoundUserInterface
 {
     private GeneratorWindow? _window;
 
-    public PortableGeneratorBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-    {
-    }
+    public PortableGeneratorBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
 
     protected override void Open()
     {
         base.Open();
-        _window = new GeneratorWindow(this, Owner);
+        _window = new(this, Owner);
 
         _window.OpenCenteredLeft();
         _window.OnClose += Close;
@@ -30,33 +33,15 @@ public sealed class PortableGeneratorBoundUserInterface : BoundUserInterface
         _window?.Update(msg);
     }
 
-    protected override void Dispose(bool disposing)
-    {
-       _window?.Dispose();
-    }
+    protected override void Dispose(bool disposing) => _window?.Dispose();
 
-    public void SetTargetPower(int target)
-    {
-        SendMessage(new PortableGeneratorSetTargetPowerMessage(target));
-    }
+    public void SetTargetPower(int target) => SendMessage(new PortableGeneratorSetTargetPowerMessage(target));
 
-    public void Start()
-    {
-        SendMessage(new PortableGeneratorStartMessage());
-    }
+    public void Start() => SendMessage(new PortableGeneratorStartMessage());
 
-    public void Stop()
-    {
-        SendMessage(new PortableGeneratorStopMessage());
-    }
+    public void Stop() => SendMessage(new PortableGeneratorStopMessage());
 
-    public void SwitchOutput()
-    {
-        SendMessage(new PortableGeneratorSwitchOutputMessage());
-    }
+    public void SwitchOutput() => SendMessage(new PortableGeneratorSwitchOutputMessage());
 
-    public void EjectFuel()
-    {
-        SendMessage(new PortableGeneratorEjectFuelMessage());
-    }
+    public void EjectFuel() => SendMessage(new PortableGeneratorEjectFuelMessage());
 }

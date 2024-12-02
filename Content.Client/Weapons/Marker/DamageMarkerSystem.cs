@@ -1,8 +1,14 @@
+#region
+
 using Content.Shared.Weapons.Marker;
 using Robust.Client.GameObjects;
 using Robust.Shared.Timing;
 
+#endregion
+
+
 namespace Content.Client.Weapons.Marker;
+
 
 public sealed class DamageMarkerSystem : SharedDamageMarkerSystem
 {
@@ -26,7 +32,8 @@ public sealed class DamageMarkerSystem : SharedDamageMarkerSystem
 
     private void OnMarkerShutdown(EntityUid uid, DamageMarkerComponent component, ComponentShutdown args)
     {
-        if (!_timing.ApplyingState || !TryComp<SpriteComponent>(uid, out var sprite) || !sprite.LayerMapTryGet(DamageMarkerKey.Key, out var weh))
+        if (!_timing.ApplyingState || !TryComp<SpriteComponent>(uid, out var sprite) ||
+            !sprite.LayerMapTryGet(DamageMarkerKey.Key, out var weh))
             return;
 
         sprite.RemoveLayer(weh);

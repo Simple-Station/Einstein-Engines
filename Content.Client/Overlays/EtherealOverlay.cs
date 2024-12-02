@@ -1,17 +1,23 @@
+#region
+
 using System.Numerics;
+using Content.Shared.Shadowkin;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
-using Content.Shared.Shadowkin;
+
+#endregion
+
 
 namespace Content.Client.Overlays;
+
 
 public sealed class EtherealOverlay : Overlay
 {
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
-    [Dependency] IEntityManager _entityManager = default!;
+    [Dependency] private readonly IEntityManager _entityManager = default!;
 
     public override bool RequestScreenTexture => true;
     public override OverlaySpace Space => OverlaySpace.WorldSpaceBelowFOV;
@@ -25,7 +31,7 @@ public sealed class EtherealOverlay : Overlay
 
     protected override bool BeforeDraw(in OverlayDrawArgs args)
     {
-        if (_player.LocalEntity is not { Valid: true } player
+        if (_player.LocalEntity is not { Valid: true, } player
             || !_entityManager.HasComponent<EtherealComponent>(player))
             return false;
 

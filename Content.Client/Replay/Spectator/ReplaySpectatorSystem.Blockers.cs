@@ -1,3 +1,5 @@
+#region
+
 using Content.Shared.Hands;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Inventory.Events;
@@ -6,7 +8,11 @@ using Content.Shared.Movement.Events;
 using Content.Shared.Movement.Pulling.Events;
 using Content.Shared.Throwing;
 
+#endregion
+
+
 namespace Content.Client.Replay.Spectator;
+
 
 public sealed partial class ReplaySpectatorSystem
 {
@@ -27,18 +33,12 @@ public sealed partial class ReplaySpectatorSystem
         SubscribeLocalEvent<ReplaySpectatorComponent, PullAttemptEvent>(OnPullAttempt);
     }
 
-    private void OnAttempt(EntityUid uid, ReplaySpectatorComponent component, CancellableEntityEventArgs args)
-    {
+    private void OnAttempt(EntityUid uid, ReplaySpectatorComponent component, CancellableEntityEventArgs args) =>
         args.Cancel();
-    }
 
-    private void OnUpdateCanMove(EntityUid uid, ReplaySpectatorComponent component, CancellableEntityEventArgs args)
-    {
+    private void OnUpdateCanMove(EntityUid uid, ReplaySpectatorComponent component, CancellableEntityEventArgs args) =>
         args.Cancel();
-    }
 
-    private void OnPullAttempt(EntityUid uid, ReplaySpectatorComponent component, PullAttemptEvent args)
-    {
+    private void OnPullAttempt(EntityUid uid, ReplaySpectatorComponent component, PullAttemptEvent args) =>
         args.Cancelled = true;
-    }
 }

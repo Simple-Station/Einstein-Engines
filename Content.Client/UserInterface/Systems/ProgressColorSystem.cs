@@ -1,10 +1,16 @@
+#region
+
 using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
 
+#endregion
+
+
 namespace Content.Client.UserInterface.Systems;
 
+
 /// <summary>
-/// This system handles getting an interpolated color based on the value of a cvar.
+///     This system handles getting an interpolated color based on the value of a cvar.
 /// </summary>
 public sealed class ProgressColorSystem : EntitySystem
 {
@@ -21,25 +27,18 @@ public sealed class ProgressColorSystem : EntitySystem
         new(13, 8, 135)
     };
 
-    /// <inheritdoc/>
-    public override void Initialize()
-    {
+    /// <inheritdoc />
+    public override void Initialize() =>
         Subs.CVar(_configuration, CCVars.AccessibilityColorblindFriendly, OnColorBlindFriendlyChanged, true);
-    }
 
-    private void OnColorBlindFriendlyChanged(bool value, in CVarChangeInfo info)
-    {
-        _colorBlindFriendly = value;
-    }
+    private void OnColorBlindFriendlyChanged(bool value, in CVarChangeInfo info) => _colorBlindFriendly = value;
 
     public Color GetProgressColor(float progress)
     {
         if (!_colorBlindFriendly)
         {
             if (progress >= 1.0f)
-            {
-                return new Color(0f, 1f, 0f);
-            }
+                return new(0f, 1f, 0f);
 
             // lerp
             var hue = 5f / 18f * progress;
@@ -50,8 +49,8 @@ public sealed class ProgressColorSystem : EntitySystem
     }
 
     /// <summary>
-    /// Interpolates between multiple colors based on a gaussian distribution.
-    /// Taken from https://stackoverflow.com/a/26103117
+    ///     Interpolates between multiple colors based on a gaussian distribution.
+    ///     Taken from https://stackoverflow.com/a/26103117
     /// </summary>
     public static Color InterpolateColorGaussian(Color[] colors, double x)
     {
@@ -61,7 +60,7 @@ public sealed class ProgressColorSystem : EntitySystem
         var mu = 0.0;
         const double sigma2 = 0.035;
 
-        foreach(var color in colors)
+        foreach (var color in colors)
         {
             var percent = Math.Exp(-(x - mu) * (x - mu) / (2.0 * sigma2)) / Math.Sqrt(2.0 * Math.PI * sigma2);
             total += (float) percent;
@@ -72,6 +71,6 @@ public sealed class ProgressColorSystem : EntitySystem
             b += color.B * percent;
         }
 
-        return new Color((float) r / total, (float) g / total, (float) b / total);
+        return new((float) r / total, (float) g / total, (float) b / total);
     }
 }

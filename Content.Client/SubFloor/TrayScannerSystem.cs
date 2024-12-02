@@ -1,13 +1,18 @@
+#region
+
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Inventory;
 using Content.Shared.SubFloor;
 using Robust.Client.Animations;
 using Robust.Client.GameObjects;
 using Robust.Client.Player;
-using Robust.Shared.Map;
 using Robust.Shared.Timing;
 
+#endregion
+
+
 namespace Content.Client.SubFloor;
+
 
 public sealed class TrayScannerSystem : SharedTrayScannerSystem
 {
@@ -53,7 +58,6 @@ public sealed class TrayScannerSystem : SharedTrayScannerSystem
         if (_inventory.TryGetContainerSlotEnumerator(player.Value, out var enumerator))
         {
             while (enumerator.MoveNext(out var slot))
-            {
                 foreach (var ent in slot.ContainedEntities)
                 {
                     if (!scannerQuery.TryGetComponent(ent, out var sneakScanner) || !sneakScanner.Enabled)
@@ -62,7 +66,6 @@ public sealed class TrayScannerSystem : SharedTrayScannerSystem
                     canSee = true;
                     range = MathF.Max(range, sneakScanner.Range);
                 }
-            }
         }
 
         foreach (var hand in _hands.EnumerateHands(player.Value))
@@ -74,24 +77,21 @@ public sealed class TrayScannerSystem : SharedTrayScannerSystem
             canSee = true;
         }
 
-        inRange = new HashSet<Entity<SubFloorHideComponent>>();
+        inRange = new();
 
         if (canSee)
         {
-            _lookup.GetEntitiesInRange(playerMap, playerPos, range, inRange, flags: Flags);
+            _lookup.GetEntitiesInRange(playerMap, playerPos, range, inRange, Flags);
 
             foreach (var (uid, comp) in inRange)
-            {
                 if (comp.IsUnderCover)
                     EnsureComp<TrayRevealedComponent>(uid);
-            }
         }
 
         var revealedQuery = AllEntityQuery<TrayRevealedComponent, SpriteComponent>();
         var subfloorQuery = GetEntityQuery<SubFloorHideComponent>();
 
         while (revealedQuery.MoveNext(out var uid, out _, out var sprite))
-        {
             // Revealing
             // Add buffer range to avoid flickers.
             if (subfloorQuery.TryGetComponent(uid, out var subfloor) &&
@@ -100,32 +100,33 @@ public sealed class TrayScannerSystem : SharedTrayScannerSystem
                 // Due to the fact client is predicting this server states will reset it constantly
                 if ((!_appearance.TryGetData(uid, SubFloorVisuals.ScannerRevealed, out bool value) || !value) &&
                     sprite.Color.A > SubfloorRevealAlpha)
-                {
                     sprite.Color = sprite.Color.WithAlpha(0f);
-                }
 
                 SetRevealed(uid, true);
 
                 if (sprite.Color.A >= SubfloorRevealAlpha || _animation.HasRunningAnimation(uid, TRayAnimationKey))
                     continue;
 
-                _animation.Play(uid, new Animation()
-                {
-                    Length = TimeSpan.FromSeconds(AnimationLength),
-                    AnimationTracks =
+                _animation.Play(
+                    uid,
+                    new()
                     {
-                        new AnimationTrackComponentProperty()
+                        Length = TimeSpan.FromSeconds(AnimationLength),
+                        AnimationTracks =
                         {
-                            ComponentType = typeof(SpriteComponent),
-                            Property = nameof(SpriteComponent.Color),
-                            KeyFrames =
+                            new AnimationTrackComponentProperty
                             {
-                                new AnimationTrackProperty.KeyFrame(sprite.Color.WithAlpha(0f), 0f),
-                                new AnimationTrackProperty.KeyFrame(sprite.Color.WithAlpha(SubfloorRevealAlpha), (float) AnimationLength)
+                                ComponentType = typeof(SpriteComponent),
+                                Property = nameof(SpriteComponent.Color),
+                                KeyFrames =
+                                {
+                                    new(sprite.Color.WithAlpha(0f), 0f),
+                                    new(sprite.Color.WithAlpha(SubfloorRevealAlpha), (float) AnimationLength)
+                                }
                             }
                         }
-                    }
-                }, TRayAnimationKey);
+                    },
+                    TRayAnimationKey);
             }
             // Hiding
             else
@@ -144,29 +145,29 @@ public sealed class TrayScannerSystem : SharedTrayScannerSystem
                 if (_animation.HasRunningAnimation(uid, TRayAnimationKey))
                     continue;
 
-                _animation.Play(uid, new Animation()
-                {
-                    Length = TimeSpan.FromSeconds(AnimationLength),
-                    AnimationTracks =
+                _animation.Play(
+                    uid,
+                    new()
                     {
-                        new AnimationTrackComponentProperty()
+                        Length = TimeSpan.FromSeconds(AnimationLength),
+                        AnimationTracks =
                         {
-                            ComponentType = typeof(SpriteComponent),
-                            Property = nameof(SpriteComponent.Color),
-                            KeyFrames =
+                            new AnimationTrackComponentProperty
                             {
-                                new AnimationTrackProperty.KeyFrame(sprite.Color, 0f),
-                                new AnimationTrackProperty.KeyFrame(sprite.Color.WithAlpha(0f), (float) AnimationLength)
+                                ComponentType = typeof(SpriteComponent),
+                                Property = nameof(SpriteComponent.Color),
+                                KeyFrames =
+                                {
+                                    new(sprite.Color, 0f),
+                                    new(sprite.Color.WithAlpha(0f), (float) AnimationLength)
+                                }
                             }
                         }
-                    }
-                }, TRayAnimationKey);
+                    },
+                    TRayAnimationKey);
             }
-        }
     }
 
-    private void SetRevealed(EntityUid uid, bool value)
-    {
+    private void SetRevealed(EntityUid uid, bool value) =>
         _appearance.SetData(uid, SubFloorVisuals.ScannerRevealed, value);
-    }
 }

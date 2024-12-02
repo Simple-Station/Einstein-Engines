@@ -1,28 +1,37 @@
+#region
+
+using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using Content.Client.Stylesheets;
 using Content.Shared.Power;
 using Robust.Client.Graphics;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Utility;
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Numerics;
+
+#endregion
+
 
 namespace Content.Client.Power;
 
+
 public sealed partial class PowerMonitoringWindow
 {
-    private SpriteSpecifier.Texture _sourceIcon = new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/PowerMonitoring/source_arrow.png"));
-    private SpriteSpecifier.Texture _loadIconPath = new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/PowerMonitoring/load_arrow.png"));
+    private readonly SpriteSpecifier.Texture _sourceIcon =
+        new(new("/Textures/Interface/PowerMonitoring/source_arrow.png"));
 
-    private bool _autoScrollActive = false;
-    private bool _autoScrollAwaitsUpdate = false;
+    private readonly SpriteSpecifier.Texture _loadIconPath =
+        new(new("/Textures/Interface/PowerMonitoring/load_arrow.png"));
 
-    private void UpdateWindowConsoleEntry
-        (BoxContainer masterContainer,
+    private bool _autoScrollActive;
+    private bool _autoScrollAwaitsUpdate;
+
+    private void UpdateWindowConsoleEntry(
+        BoxContainer masterContainer,
         int index,
         PowerMonitoringConsoleEntry entry,
         PowerMonitoringConsoleEntry[] focusSources,
-        PowerMonitoringConsoleEntry[] focusLoads)
+        PowerMonitoringConsoleEntry[] focusLoads
+    )
     {
         UpdateWindowConsoleEntry(masterContainer, index, entry);
 
@@ -47,7 +56,7 @@ public sealed partial class PowerMonitoringWindow
         if (index >= masterContainer.ChildCount)
         {
             // Add basic entry
-            windowEntry = new PowerMonitoringWindowEntry(entry);
+            windowEntry = new(entry);
             masterContainer.AddChild(windowEntry);
 
             // Selection action
@@ -60,9 +69,7 @@ public sealed partial class PowerMonitoringWindow
         }
 
         else
-        {
             windowEntry = masterContainer.GetChild(index) as PowerMonitoringWindowEntry;
-        }
 
         // If we exit here, something was added to the container that shouldn't have been added
         if (windowEntry == null)
@@ -75,7 +82,11 @@ public sealed partial class PowerMonitoringWindow
         UpdateWindowEntryButton(entry.NetEntity, windowEntry.Button, entry);
     }
 
-    public void UpdateWindowEntryButton(NetEntity netEntity, PowerMonitoringButton button, PowerMonitoringConsoleEntry entry)
+    public void UpdateWindowEntryButton(
+        NetEntity netEntity,
+        PowerMonitoringButton button,
+        PowerMonitoringConsoleEntry entry
+    )
     {
         if (!netEntity.IsValid())
             return;
@@ -92,7 +103,8 @@ public sealed partial class PowerMonitoringWindow
 
         // Update sprite
         if (entry.MetaData.Value.SpritePath != string.Empty && entry.MetaData.Value.SpriteState != string.Empty)
-            button.TextureRect.Texture = _spriteSystem.Frame0(new SpriteSpecifier.Rsi(new ResPath(entry.MetaData.Value.SpritePath), entry.MetaData.Value.SpriteState));
+            button.TextureRect.Texture = _spriteSystem.Frame0(
+                new SpriteSpecifier.Rsi(new(entry.MetaData.Value.SpritePath), entry.MetaData.Value.SpriteState));
 
         // Update name
         var name = Loc.GetString(entry.MetaData.Value.EntityName);
@@ -105,7 +117,12 @@ public sealed partial class PowerMonitoringWindow
         button.PowerValue.Text = Loc.GetString("power-monitoring-window-value", ("value", entry.PowerValue));
     }
 
-    private void UpdateEntrySourcesOrLoads(BoxContainer masterContainer, BoxContainer currentContainer, PowerMonitoringConsoleEntry[]? entries, SpriteSpecifier.Texture icon)
+    private void UpdateEntrySourcesOrLoads(
+        BoxContainer masterContainer,
+        BoxContainer currentContainer,
+        PowerMonitoringConsoleEntry[]? entries,
+        SpriteSpecifier.Texture icon
+    )
     {
         if (currentContainer == null)
             return;
@@ -118,9 +135,7 @@ public sealed partial class PowerMonitoringWindow
 
         // Remove excess children
         while (currentContainer.ChildCount > entries.Length)
-        {
             currentContainer.RemoveChild(currentContainer.GetChild(currentContainer.ChildCount - 1));
-        }
 
         // Add missing children
         while (currentContainer.ChildCount < entries.Length)
@@ -182,13 +197,11 @@ public sealed partial class PowerMonitoringWindow
         if (_focusEntity != null)
         {
             foreach (PowerMonitoringWindowEntry sibling in masterContainer.Children)
-            {
                 if (sibling.NetEntity == _focusEntity)
                 {
                     sibling.Button.RemoveStyleClass(StyleNano.StyleClassButtonColorGreen);
                     break;
                 }
-            }
         }
 
         // Center the nav map on selected entity
@@ -280,7 +293,7 @@ public sealed partial class PowerMonitoringWindow
         if (!TryGetVerticalScrollbar(scroll, out var vScrollbar))
             return;
 
-        if (!TryGetNextScrollPosition(out float? nextScrollPosition))
+        if (!TryGetNextScrollPosition(out var nextScrollPosition))
             return;
 
         vScrollbar.ValueTarget = nextScrollPosition.Value;
@@ -305,7 +318,7 @@ public sealed partial class PowerMonitoringWindow
             {
                 BackgroundColor = Color.Red,
                 BorderColor = Color.DarkRed,
-                BorderThickness = new Thickness(2),
+                BorderThickness = new(2)
             };
 
             msg.AddMarkup(Loc.GetString("power-monitoring-window-rogue-power-consumer"));
@@ -318,7 +331,7 @@ public sealed partial class PowerMonitoringWindow
             {
                 BackgroundColor = Color.Orange,
                 BorderColor = Color.DarkOrange,
-                BorderThickness = new Thickness(2),
+                BorderThickness = new(2)
             };
 
             msg.AddMarkup(Loc.GetString("power-monitoring-window-power-net-abnormalities"));
@@ -333,20 +346,22 @@ public sealed partial class PowerMonitoringWindow
         switch (group)
         {
             case PowerMonitoringConsoleGroup.Generator:
-                MasterTabContainer.CurrentTab = 0; break;
+                MasterTabContainer.CurrentTab = 0;
+                break;
             case PowerMonitoringConsoleGroup.SMES:
-                MasterTabContainer.CurrentTab = 1; break;
+                MasterTabContainer.CurrentTab = 1;
+                break;
             case PowerMonitoringConsoleGroup.Substation:
-                MasterTabContainer.CurrentTab = 2; break;
+                MasterTabContainer.CurrentTab = 2;
+                break;
             case PowerMonitoringConsoleGroup.APC:
-                MasterTabContainer.CurrentTab = 3; break;
+                MasterTabContainer.CurrentTab = 3;
+                break;
         }
     }
 
-    private PowerMonitoringConsoleGroup GetCurrentPowerMonitoringConsoleGroup()
-    {
-        return (PowerMonitoringConsoleGroup) MasterTabContainer.CurrentTab;
-    }
+    private PowerMonitoringConsoleGroup GetCurrentPowerMonitoringConsoleGroup() =>
+        (PowerMonitoringConsoleGroup) MasterTabContainer.CurrentTab;
 }
 
 public sealed class PowerMonitoringWindowEntry : PowerMonitoringWindowBaseEntry
@@ -368,30 +383,30 @@ public sealed class PowerMonitoringWindowEntry : PowerMonitoringWindowBaseEntry
         AddChild(Button);
 
         // Grid container to hold sub containers
-        MainContainer = new BoxContainer()
+        MainContainer = new()
         {
             Orientation = LayoutOrientation.Vertical,
             HorizontalExpand = true,
-            Margin = new Thickness(8, 0, 0, 0),
-            Visible = false,
+            Margin = new(8, 0, 0, 0),
+            Visible = false
         };
 
         AddChild(MainContainer);
 
         // Grid container to hold the list of sources when selected 
-        SourcesContainer = new BoxContainer()
+        SourcesContainer = new()
         {
             Orientation = LayoutOrientation.Vertical,
-            HorizontalExpand = true,
+            HorizontalExpand = true
         };
 
         MainContainer.AddChild(SourcesContainer);
 
         // Grid container to hold the list of loads when selected
-        LoadsContainer = new BoxContainer()
+        LoadsContainer = new()
         {
             Orientation = LayoutOrientation.Vertical,
-            HorizontalExpand = true,
+            HorizontalExpand = true
         };
 
         MainContainer.AddChild(LoadsContainer);
@@ -408,10 +423,10 @@ public sealed class PowerMonitoringWindowSubEntry : PowerMonitoringWindowBaseEnt
         HorizontalExpand = true;
 
         // Source/load icon
-        Icon = new TextureRect()
+        Icon = new()
         {
             VerticalAlignment = VAlignment.Center,
-            Margin = new Thickness(0, 0, 2, 0),
+            Margin = new(0, 0, 2, 0)
         };
 
         AddChild(Icon);
@@ -433,7 +448,7 @@ public abstract class PowerMonitoringWindowBaseEntry : BoxContainer
         Entry = entry;
 
         // Add selection button (properties set by derivative classes)
-        Button = new PowerMonitoringButton();
+        Button = new();
     }
 }
 
@@ -448,41 +463,41 @@ public sealed class PowerMonitoringButton : Button
     {
         HorizontalExpand = true;
         VerticalExpand = true;
-        Margin = new Thickness(0f, 1f, 0f, 1f);
+        Margin = new(0f, 1f, 0f, 1f);
 
-        MainContainer = new BoxContainer()
+        MainContainer = new()
         {
             Orientation = BoxContainer.LayoutOrientation.Horizontal,
             HorizontalExpand = true,
-            SetHeight = 32f,
+            SetHeight = 32f
         };
 
         AddChild(MainContainer);
 
-        TextureRect = new TextureRect()
+        TextureRect = new()
         {
             HorizontalAlignment = HAlignment.Center,
             VerticalAlignment = VAlignment.Center,
-            SetSize = new Vector2(32f, 32f),
-            Margin = new Thickness(0f, 0f, 5f, 0f),
+            SetSize = new(32f, 32f),
+            Margin = new(0f, 0f, 5f, 0f)
         };
 
         MainContainer.AddChild(TextureRect);
 
-        NameLocalized = new Label()
+        NameLocalized = new()
         {
             HorizontalExpand = true,
-            ClipText = true,
+            ClipText = true
         };
 
         MainContainer.AddChild(NameLocalized);
 
-        PowerValue = new Label()
+        PowerValue = new()
         {
             HorizontalAlignment = HAlignment.Right,
             SetWidth = 72f,
-            Margin = new Thickness(10, 0, 0, 0),
-            ClipText = true,
+            Margin = new(10, 0, 0, 0),
+            ClipText = true
         };
 
         MainContainer.AddChild(PowerValue);

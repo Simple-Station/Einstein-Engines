@@ -1,23 +1,26 @@
-using System.Numerics;
-using Robust.Client.UserInterface;
+#region
+
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
-using Robust.Shared.Localization;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
 
-namespace Content.Client.Psionics.UI
+#endregion
+
+
+namespace Content.Client.Psionics.UI;
+
+
+public sealed class AcceptPsionicsWindow : DefaultWindow
 {
-    public sealed class AcceptPsionicsWindow : DefaultWindow
+    public readonly Button DenyButton;
+    public readonly Button AcceptButton;
+
+    public AcceptPsionicsWindow()
     {
-        public readonly Button DenyButton;
-        public readonly Button AcceptButton;
+        Title = Loc.GetString("accept-psionics-window-title");
 
-        public AcceptPsionicsWindow()
-        {
-
-            Title = Loc.GetString("accept-psionics-window-title");
-
-            Contents.AddChild(new BoxContainer
+        Contents.AddChild(
+            new BoxContainer
             {
                 Orientation = LayoutOrientation.Vertical,
                 Children =
@@ -27,36 +30,35 @@ namespace Content.Client.Psionics.UI
                         Orientation = LayoutOrientation.Vertical,
                         Children =
                         {
-                            (new Label()
+                            new Label
                             {
                                 Text = Loc.GetString("accept-psionics-window-prompt-text-part")
-                            }),
+                            },
                             new BoxContainer
                             {
                                 Orientation = LayoutOrientation.Horizontal,
                                 Align = AlignMode.Center,
                                 Children =
                                 {
-                                    (AcceptButton = new Button
+                                    (AcceptButton = new()
                                     {
-                                        Text = Loc.GetString("accept-cloning-window-accept-button"),
+                                        Text = Loc.GetString("accept-cloning-window-accept-button")
                                     }),
 
-                                    (new Control()
+                                    new()
                                     {
-                                        MinSize = new Vector2(20, 0)
-                                    }),
+                                        MinSize = new(20, 0)
+                                    },
 
-                                    (DenyButton = new Button
+                                    (DenyButton = new()
                                     {
-                                        Text = Loc.GetString("accept-cloning-window-deny-button"),
+                                        Text = Loc.GetString("accept-cloning-window-deny-button")
                                     })
                                 }
-                            },
+                            }
                         }
-                    },
+                    }
                 }
             });
-        }
     }
 }

@@ -1,3 +1,5 @@
+#region
+
 using Content.Shared.Mobs;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
@@ -5,7 +7,11 @@ using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
+#endregion
+
+
 namespace Content.Client.UserInterface.Systems.DamageOverlays.Overlays;
+
 
 public sealed class DamageOverlay : Overlay
 {
@@ -23,25 +29,25 @@ public sealed class DamageOverlay : Overlay
     public MobState State = MobState.Alive;
 
     /// <summary>
-    /// Handles the red pulsing overlay
+    ///     Handles the red pulsing overlay
     /// </summary>
     public float BruteLevel = 0f;
 
-    private float _oldBruteLevel = 0f;
+    private float _oldBruteLevel;
 
     /// <summary>
-    /// Handles the darkening overlay.
+    ///     Handles the darkening overlay.
     /// </summary>
     public float OxygenLevel = 0f;
 
-    private float _oldOxygenLevel = 0f;
+    private float _oldOxygenLevel;
 
     /// <summary>
-    /// Handles the white overlay when crit.
+    ///     Handles the white overlay when crit.
     /// </summary>
     public float CritLevel = 0f;
 
-    private float _oldCritLevel = 0f;
+    private float _oldCritLevel;
 
     public float DeadLevel = 1f;
 
@@ -79,18 +85,14 @@ public sealed class DamageOverlay : Overlay
 
         // If they just died then lerp out the white overlay.
         if (State != MobState.Dead)
-        {
             DeadLevel = 1f;
-        }
         else if (!MathHelper.CloseTo(0f, DeadLevel, 0.001f))
         {
             var diff = -DeadLevel;
             DeadLevel += GetDiff(diff, lastFrameTime);
         }
         else
-        {
             DeadLevel = 0f;
-        }
 
         if (!MathHelper.CloseTo(_oldBruteLevel, BruteLevel, 0.001f))
         {
@@ -98,9 +100,7 @@ public sealed class DamageOverlay : Overlay
             _oldBruteLevel += GetDiff(diff, lastFrameTime);
         }
         else
-        {
             _oldBruteLevel = BruteLevel;
-        }
 
         if (!MathHelper.CloseTo(_oldOxygenLevel, OxygenLevel, 0.001f))
         {
@@ -108,9 +108,7 @@ public sealed class DamageOverlay : Overlay
             _oldOxygenLevel += GetDiff(diff, lastFrameTime);
         }
         else
-        {
             _oldOxygenLevel = OxygenLevel;
-        }
 
         if (!MathHelper.CloseTo(_oldCritLevel, CritLevel, 0.001f))
         {
@@ -118,9 +116,7 @@ public sealed class DamageOverlay : Overlay
             _oldCritLevel += GetDiff(diff, lastFrameTime);
         }
         else
-        {
             _oldCritLevel = CritLevel;
-        }
 
         /*
          * darknessAlphaOuter is the maximum alpha for anything outside of the larger circle
@@ -134,7 +130,7 @@ public sealed class DamageOverlay : Overlay
          */
 
         // Makes debugging easier don't @ me
-        float level = 0f;
+        var level = 0f;
         level = _oldBruteLevel;
 
         // TODO: Lerping
@@ -142,10 +138,10 @@ public sealed class DamageOverlay : Overlay
         {
             var pulseRate = 3f;
             var adjustedTime = time * pulseRate;
-            float outerMaxLevel = 2.0f * distance;
-            float outerMinLevel = 0.8f * distance;
-            float innerMaxLevel = 0.6f * distance;
-            float innerMinLevel = 0.2f * distance;
+            var outerMaxLevel = 2.0f * distance;
+            var outerMinLevel = 0.8f * distance;
+            var innerMaxLevel = 0.6f * distance;
+            var innerMinLevel = 0.2f * distance;
 
             var outerRadius = outerMaxLevel - level * (outerMaxLevel - outerMinLevel);
             var innerRadius = innerMaxLevel - level * (innerMaxLevel - innerMinLevel);
@@ -164,18 +160,16 @@ public sealed class DamageOverlay : Overlay
             handle.DrawRect(viewport, Color.White);
         }
         else
-        {
             _oldBruteLevel = BruteLevel;
-        }
 
         level = State != MobState.Critical ? _oldOxygenLevel : 1f;
 
         if (level > 0f)
         {
-            float outerMaxLevel = 0.6f * distance;
-            float outerMinLevel = 0.06f * distance;
-            float innerMaxLevel = 0.02f * distance;
-            float innerMinLevel = 0.02f * distance;
+            var outerMaxLevel = 0.6f * distance;
+            var outerMinLevel = 0.06f * distance;
+            var innerMaxLevel = 0.02f * distance;
+            var innerMinLevel = 0.02f * distance;
 
             var outerRadius = outerMaxLevel - level * (outerMaxLevel - outerMinLevel);
             var innerRadius = innerMaxLevel - level * (innerMaxLevel - innerMinLevel);
@@ -187,21 +181,17 @@ public sealed class DamageOverlay : Overlay
             if (_oldCritLevel > 0f)
             {
                 var adjustedTime = time * 2f;
-                critTime = MathF.Max(0, MathF.Sin(adjustedTime) + 2 * MathF.Sin(2 * adjustedTime / 4f) + MathF.Sin(adjustedTime / 4f) - 3f);
+                critTime = MathF.Max(
+                    0,
+                    MathF.Sin(adjustedTime) + 2 * MathF.Sin(2 * adjustedTime / 4f) + MathF.Sin(adjustedTime / 4f) - 3f);
 
                 if (critTime > 0f)
-                {
                     outerDarkness = 1f - critTime / 1.5f;
-                }
                 else
-                {
                     outerDarkness = 1f;
-                }
             }
             else
-            {
                 outerDarkness = MathF.Min(0.98f, 0.3f * MathF.Log(level) + 1f);
-            }
 
             _oxygenShader.SetParameter("time", 0.0f);
             _oxygenShader.SetParameter("color", new Vector3(0f, 0f, 0f));
@@ -218,10 +208,10 @@ public sealed class DamageOverlay : Overlay
 
         if (level > 0f)
         {
-            float outerMaxLevel = 2.0f * distance;
-            float outerMinLevel = 1.0f * distance;
-            float innerMaxLevel = 0.6f * distance;
-            float innerMinLevel = 0.02f * distance;
+            var outerMaxLevel = 2.0f * distance;
+            var outerMinLevel = 1.0f * distance;
+            var innerMaxLevel = 0.6f * distance;
+            var innerMinLevel = 0.02f * distance;
 
             var outerRadius = outerMaxLevel - level * (outerMaxLevel - outerMinLevel);
             var innerRadius = innerMaxLevel - level * (innerMaxLevel - innerMinLevel);

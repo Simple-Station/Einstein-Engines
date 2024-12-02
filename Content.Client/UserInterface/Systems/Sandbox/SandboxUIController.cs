@@ -1,14 +1,16 @@
-﻿using Content.Client.Administration.Managers;
+﻿#region
+
+using Content.Client.Administration.Managers;
 using Content.Client.Gameplay;
 using Content.Client.Markers;
 using Content.Client.Sandbox;
 using Content.Client.SubFloor;
 using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.DecalPlacer;
+using Content.Client.UserInterface.Systems.MenuBar.Widgets;
 using Content.Client.UserInterface.Systems.Sandbox.Windows;
 using Content.Shared.Input;
 using JetBrains.Annotations;
-using Robust.Client.Console;
 using Robust.Client.Debugging;
 using Robust.Client.Graphics;
 using Robust.Client.Input;
@@ -21,7 +23,11 @@ using Robust.Shared.Player;
 using Robust.Shared.Utility;
 using static Robust.Client.UserInterface.Controls.BaseButton;
 
+#endregion
+
+
 namespace Content.Client.UserInterface.Systems.Sandbox;
+
 
 // TODO hud refactor should part of this be in engine?
 [UsedImplicitly]
@@ -40,11 +46,13 @@ public sealed class SandboxUIController : UIController, IOnStateChanged<Gameplay
     private SandboxWindow? _window;
 
     // TODO hud refactor cache
-    private EntitySpawningUIController EntitySpawningController => UIManager.GetUIController<EntitySpawningUIController>();
+    private EntitySpawningUIController EntitySpawningController =>
+        UIManager.GetUIController<EntitySpawningUIController>();
+
     private TileSpawningUIController TileSpawningController => UIManager.GetUIController<TileSpawningUIController>();
     private DecalPlacerUIController DecalPlacerController => UIManager.GetUIController<DecalPlacerUIController>();
 
-    private MenuButton? SandboxButton => UIManager.GetActiveUIWidgetOrNull<MenuBar.Widgets.GameTopMenuBar>()?.SandboxButton;
+    private MenuButton? SandboxButton => UIManager.GetActiveUIWidgetOrNull<GameTopMenuBar>()?.SandboxButton;
 
     public void OnStateEntered(GameplayState state)
     {
@@ -53,29 +61,36 @@ public sealed class SandboxUIController : UIController, IOnStateChanged<Gameplay
 
         CheckSandboxVisibility();
 
-        _input.SetInputCommand(ContentKeyFunctions.OpenEntitySpawnWindow,
-            InputCmdHandler.FromDelegate(_ =>
-            {
-                if (!_admin.CanAdminPlace())
-                    return;
-                EntitySpawningController.ToggleWindow();
-            }));
-        _input.SetInputCommand(ContentKeyFunctions.OpenSandboxWindow,
+        _input.SetInputCommand(
+            ContentKeyFunctions.OpenEntitySpawnWindow,
+            InputCmdHandler.FromDelegate(
+                _ =>
+                {
+                    if (!_admin.CanAdminPlace())
+                        return;
+                    EntitySpawningController.ToggleWindow();
+                }));
+        _input.SetInputCommand(
+            ContentKeyFunctions.OpenSandboxWindow,
             InputCmdHandler.FromDelegate(_ => ToggleWindow()));
-        _input.SetInputCommand(ContentKeyFunctions.OpenTileSpawnWindow,
-            InputCmdHandler.FromDelegate(_ =>
-            {
-                if (!_admin.CanAdminPlace())
-                    return;
-                TileSpawningController.ToggleWindow();
-            }));
-        _input.SetInputCommand(ContentKeyFunctions.OpenDecalSpawnWindow,
-            InputCmdHandler.FromDelegate(_ =>
-            {
-                if (!_admin.CanAdminPlace())
-                    return;
-                DecalPlacerController.ToggleWindow();
-            }));
+        _input.SetInputCommand(
+            ContentKeyFunctions.OpenTileSpawnWindow,
+            InputCmdHandler.FromDelegate(
+                _ =>
+                {
+                    if (!_admin.CanAdminPlace())
+                        return;
+                    TileSpawningController.ToggleWindow();
+                }));
+        _input.SetInputCommand(
+            ContentKeyFunctions.OpenDecalSpawnWindow,
+            InputCmdHandler.FromDelegate(
+                _ =>
+                {
+                    if (!_admin.CanAdminPlace())
+                        return;
+                    DecalPlacerController.ToggleWindow();
+                }));
 
         CommandBinds.Builder
             .Bind(ContentKeyFunctions.EditorCopyObject, new PointerInputCmdHandler(Copy))
@@ -85,9 +100,7 @@ public sealed class SandboxUIController : UIController, IOnStateChanged<Gameplay
     public void UnloadButton()
     {
         if (SandboxButton == null)
-        {
             return;
-        }
 
         SandboxButton.OnPressed -= SandboxButtonPressed;
     }
@@ -95,16 +108,14 @@ public sealed class SandboxUIController : UIController, IOnStateChanged<Gameplay
     public void LoadButton()
     {
         if (SandboxButton == null)
-        {
             return;
-        }
 
         SandboxButton.OnPressed += SandboxButtonPressed;
     }
 
     private void EnsureWindow()
     {
-        if(_window is { Disposed: false })
+        if (_window is { Disposed: false, })
             return;
         _window = UIManager.CreateWindow<SandboxWindow>();
         _window.OnOpen += () => { SandboxButton!.Pressed = true; };
@@ -165,10 +176,7 @@ public sealed class SandboxUIController : UIController, IOnStateChanged<Gameplay
         system.SandboxDisabled -= CheckSandboxVisibility;
     }
 
-    private void SandboxButtonPressed(ButtonEventArgs args)
-    {
-        ToggleWindow();
-    }
+    private void SandboxButtonPressed(ButtonEventArgs args) => ToggleWindow();
 
     private void CloseAll()
     {
@@ -177,10 +185,8 @@ public sealed class SandboxUIController : UIController, IOnStateChanged<Gameplay
         TileSpawningController.CloseWindow();
     }
 
-    private bool Copy(ICommonSession? session, EntityCoordinates coords, EntityUid uid)
-    {
-        return _sandbox.Copy(session, coords, uid);
-    }
+    private bool Copy(ICommonSession? session, EntityCoordinates coords, EntityUid uid) =>
+        _sandbox.Copy(session, coords, uid);
 
     private void ToggleWindow()
     {

@@ -1,3 +1,5 @@
+#region
+
 using System.Numerics;
 using Content.Shared.Weather;
 using Robust.Client.Audio;
@@ -10,7 +12,11 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Player;
 using AudioComponent = Robust.Shared.Audio.Components.AudioComponent;
 
+#endregion
+
+
 namespace Content.Client.Weather;
+
 
 public sealed class WeatherSystem : SharedWeatherSystem
 {
@@ -83,18 +89,18 @@ public sealed class WeatherSystem : SharedWeatherSystem
                             if (Math.Abs(x) == 1 && Math.Abs(y) == 1 ||
                                 x == 0 && y == 0 ||
                                 (new Vector2(x, y) + node.GridIndices - seed.GridIndices).Length() > 3)
-                            {
                                 continue;
-                            }
 
-                            frontier.Enqueue(_mapSystem.GetTileRef(gridId, grid, new Vector2i(x, y) + node.GridIndices));
+                            frontier.Enqueue(
+                                _mapSystem.GetTileRef(gridId, grid, new Vector2i(x, y) + node.GridIndices));
                         }
                     }
 
                     continue;
                 }
 
-                nearestNode = new EntityCoordinates(entXform.GridUid.Value,
+                nearestNode = new EntityCoordinates(
+                    entXform.GridUid.Value,
                     node.GridIndices + grid.TileSizeHalfVector);
                 break;
             }
@@ -109,9 +115,7 @@ public sealed class WeatherSystem : SharedWeatherSystem
                 occlusion = _audio.GetOcclusion(entPos, delta, distance);
             }
             else
-            {
                 occlusion = 3f;
-            }
         }
 
         var alpha = GetPercent(weather, uid);
@@ -120,7 +124,13 @@ public sealed class WeatherSystem : SharedWeatherSystem
         comp.Occlusion = occlusion;
     }
 
-    protected override bool SetState(EntityUid uid, WeatherState state, WeatherComponent comp, WeatherData weather, WeatherPrototype weatherProto)
+    protected override bool SetState(
+        EntityUid uid,
+        WeatherState state,
+        WeatherComponent comp,
+        WeatherData weather,
+        WeatherPrototype weatherProto
+    )
     {
         if (!base.SetState(uid, state, comp, weather, weatherProto))
             return false;

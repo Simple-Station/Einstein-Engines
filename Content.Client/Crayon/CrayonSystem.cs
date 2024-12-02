@@ -1,15 +1,19 @@
+#region
+
 using Content.Client.Items;
 using Content.Client.Message;
 using Content.Client.Stylesheets;
 using Content.Shared.Crayon;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
-using Robust.Shared.GameObjects;
 using Robust.Shared.GameStates;
-using Robust.Shared.Localization;
 using Robust.Shared.Timing;
 
+#endregion
+
+
 namespace Content.Client.Crayon;
+
 
 public sealed class CrayonSystem : SharedCrayonSystem
 {
@@ -23,7 +27,8 @@ public sealed class CrayonSystem : SharedCrayonSystem
 
     private static void OnCrayonHandleState(EntityUid uid, CrayonComponent component, ref ComponentHandleState args)
     {
-        if (args.Current is not CrayonComponentState state) return;
+        if (args.Current is not CrayonComponentState state)
+            return;
 
         component.Color = state.Color;
         component.SelectedState = state.State;
@@ -41,7 +46,7 @@ public sealed class CrayonSystem : SharedCrayonSystem
         public StatusControl(CrayonComponent parent)
         {
             _parent = parent;
-            _label = new RichTextLabel { StyleClasses = { StyleNano.StyleClassItemStatus } };
+            _label = new() { StyleClasses = { StyleNano.StyleClassItemStatus, }, };
             AddChild(_label);
 
             parent.UIUpdateNeeded = true;
@@ -52,16 +57,16 @@ public sealed class CrayonSystem : SharedCrayonSystem
             base.FrameUpdate(args);
 
             if (!_parent.UIUpdateNeeded)
-            {
                 return;
-            }
 
             _parent.UIUpdateNeeded = false;
-            _label.SetMarkup(Robust.Shared.Localization.Loc.GetString("crayon-drawing-label",
-                ("color",_parent.Color),
-                ("state",_parent.SelectedState),
-                ("charges", _parent.Charges),
-                ("capacity",_parent.Capacity)));
+            _label.SetMarkup(
+                Robust.Shared.Localization.Loc.GetString(
+                    "crayon-drawing-label",
+                    ("color", _parent.Color),
+                    ("state", _parent.SelectedState),
+                    ("charges", _parent.Charges),
+                    ("capacity", _parent.Capacity)));
         }
     }
 }

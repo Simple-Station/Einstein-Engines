@@ -1,6 +1,12 @@
+#region
+
 using Content.Shared.Mobs;
 
+#endregion
+
+
 namespace Content.Client.DamageState;
+
 
 [RegisterComponent]
 public sealed partial class DamageStateVisualsComponent : Component
@@ -13,5 +19,5 @@ public sealed partial class DamageStateVisualsComponent : Component
 public enum DamageStateVisualLayers : byte
 {
     Base,
-    BaseUnshaded,
+    BaseUnshaded
 }

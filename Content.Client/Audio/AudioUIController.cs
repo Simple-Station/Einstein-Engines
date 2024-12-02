@@ -1,3 +1,5 @@
+#region
+
 using Content.Shared.CCVar;
 using Robust.Client.Audio;
 using Robust.Client.ResourceManagement;
@@ -5,7 +7,11 @@ using Robust.Client.UserInterface.Controllers;
 using Robust.Shared.Audio.Sources;
 using Robust.Shared.Configuration;
 
+#endregion
+
+
 namespace Content.Client.Audio;
+
 
 public sealed class AudioUIController : UIController
 {
@@ -40,14 +46,10 @@ public sealed class AudioUIController : UIController
         _interfaceGain = obj;
 
         if (_clickSource != null)
-        {
             _clickSource.Gain = ClickGain * _interfaceGain;
-        }
 
         if (_hoverSource != null)
-        {
             _hoverSource.Gain = HoverGain * _interfaceGain;
-        }
     }
 
     private void SetClickSound(string value)
@@ -68,9 +70,7 @@ public sealed class AudioUIController : UIController
             UIManager.SetClickSound(source);
         }
         else
-        {
             UIManager.SetClickSound(null);
-        }
     }
 
     private void SetHoverSound(string value)
@@ -91,8 +91,6 @@ public sealed class AudioUIController : UIController
             UIManager.SetHoverSound(hoverSource);
         }
         else
-        {
             UIManager.SetHoverSound(null);
-        }
     }
 }

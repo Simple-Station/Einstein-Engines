@@ -1,14 +1,19 @@
+#region
+
 using System.Numerics;
 using Content.Shared.Explosion.Components;
 using JetBrains.Annotations;
 using Robust.Client.Graphics;
 using Robust.Shared.Enums;
-using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
+#endregion
+
+
 namespace Content.Client.Explosion;
+
 
 [UsedImplicitly]
 public sealed class ExplosionOverlay : Overlay
@@ -19,7 +24,7 @@ public sealed class ExplosionOverlay : Overlay
 
     public override OverlaySpace Space => OverlaySpace.WorldSpaceBelowFOV;
 
-    private ShaderInstance _shader;
+    private readonly ShaderInstance _shader;
 
     public ExplosionOverlay()
     {
@@ -59,7 +64,8 @@ public sealed class ExplosionOverlay : Overlay
         ExplosionVisualsComponent visuals,
         int index,
         EntityQuery<TransformComponent> xforms,
-        ExplosionVisualsTexturesComponent textures)
+        ExplosionVisualsTexturesComponent textures
+    )
     {
         Box2 gridBounds;
         foreach (var (gridId, tiles) in visuals.Tiles)
@@ -93,14 +99,17 @@ public sealed class ExplosionOverlay : Overlay
         Dictionary<int, List<Vector2i>> tileSets,
         ExplosionVisualsComponent visuals,
         ushort tileSize,
-        ExplosionVisualsTexturesComponent textures)
+        ExplosionVisualsTexturesComponent textures
+    )
     {
         for (var j = 0; j <= index; j++)
         {
             if (!tileSets.TryGetValue(j, out var tiles))
                 continue;
 
-            var frameIndex = (int) Math.Min(visuals.Intensity[j] / textures.IntensityPerState, textures.FireFrames.Count - 1);
+            var frameIndex = (int) Math.Min(
+                visuals.Intensity[j] / textures.IntensityPerState,
+                textures.FireFrames.Count - 1);
             var frames = textures.FireFrames[frameIndex];
 
             foreach (var tile in tiles)
@@ -111,7 +120,10 @@ public sealed class ExplosionOverlay : Overlay
                     continue;
 
                 var texture = _robustRandom.Pick(frames);
-                drawHandle.DrawTextureRect(texture, Box2.CenteredAround(centre, new Vector2(tileSize, tileSize)), textures.FireColor);
+                drawHandle.DrawTextureRect(
+                    texture,
+                    Box2.CenteredAround(centre, new(tileSize, tileSize)),
+                    textures.FireColor);
             }
         }
     }

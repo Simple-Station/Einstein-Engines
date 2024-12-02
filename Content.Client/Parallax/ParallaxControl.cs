@@ -1,12 +1,17 @@
-﻿using System.Numerics;
+﻿#region
+
+using System.Numerics;
 using Content.Client.Parallax.Managers;
 using Robust.Client.Graphics;
 using Robust.Client.UserInterface;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
-using Robust.Shared.ViewVariables;
+
+#endregion
+
 
 namespace Content.Client.Parallax;
+
 
 /// <summary>
 ///     Renders the parallax background as a UI control.
@@ -23,7 +28,7 @@ public sealed class ParallaxControl : Control
     {
         IoCManager.InjectDependencies(this);
 
-        Offset = new Vector2(_random.Next(0, 1000), _random.Next(0, 1000));
+        Offset = new(_random.Next(0, 1000), _random.Next(0, 1000));
         RectClipContent = true;
         _parallaxManager.LoadParallaxByName("FastSpace");
     }
@@ -54,17 +59,14 @@ public sealed class ParallaxControl : Control
                 for (var x = -scaledOffset.X; x < ourSize.X; x += texSize.X)
                 {
                     for (var y = -scaledOffset.Y; y < ourSize.Y; y += texSize.Y)
-                    {
-                        handle.DrawTextureRect(tex, UIBox2.FromDimensions(new Vector2(x, y), texSize));
-                    }
+                        handle.DrawTextureRect(tex, UIBox2.FromDimensions(new(x, y), texSize));
                 }
             }
             else
             {
-                var origin = ((ourSize - texSize) / 2) + layer.Config.ControlHomePosition;
+                var origin = (ourSize - texSize) / 2 + layer.Config.ControlHomePosition;
                 handle.DrawTextureRect(tex, UIBox2.FromDimensions(origin, texSize));
             }
         }
     }
 }
-

@@ -1,12 +1,12 @@
+#region
+
 using System.Linq;
 using Content.Client.Gameplay;
 using Content.Shared.Audio;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
 using Content.Shared.Random;
-using Robust.Client.GameObjects;
 using Robust.Client.Player;
-using Robust.Client.ResourceManagement;
 using Robust.Client.State;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Components;
@@ -18,7 +18,11 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
+#endregion
+
+
 namespace Content.Client.Audio;
+
 
 public sealed partial class ContentAudioSystem
 {
@@ -44,14 +48,14 @@ public sealed partial class ContentAudioSystem
     private AmbientMusicPrototype? _musicProto;
 
     /// <summary>
-    /// If we find a better ambient music proto can we interrupt this one.
+    ///     If we find a better ambient music proto can we interrupt this one.
     /// </summary>
     private bool _interruptable;
 
     /// <summary>
-    /// Track what ambient sounds we've played. This is so they all get played an even
-    /// number of times.
-    /// When we get to the end of the list we'll re-shuffle
+    ///     Track what ambient sounds we've played. This is so they all get played an even
+    ///     number of times.
+    ///     When we get to the end of the list we'll re-shuffle
     /// </summary>
     private readonly Dictionary<string, List<ResPath>> _ambientSounds = new();
 
@@ -77,9 +81,7 @@ public sealed partial class ContentAudioSystem
         _volumeSlider = SharedAudioSystem.GainToVolume(obj);
 
         if (_ambientMusicStream != null && _musicProto != null)
-        {
             _audio.SetVolume(_ambientMusicStream, _musicProto.Sound.Params.Volume + _volumeSlider);
-        }
     }
 
     private void ShutdownAmbientMusic()
@@ -141,9 +143,7 @@ public sealed partial class ContentAudioSystem
 
         // Just so the same track doesn't play twice
         if (tracks.Count > 1 && tracks[^1] == lastPlayed)
-        {
             (tracks[0], tracks[^1]) = (tracks[^1], tracks[0]);
-        }
     }
 
     private void UpdateAmbientMusic()
@@ -159,15 +159,15 @@ public sealed partial class ContentAudioSystem
         bool? isDone = null;
 
         if (TryComp(_ambientMusicStream, out AudioComponent? audioComp))
-        {
             isDone = !audioComp.Playing;
-        }
 
         if (_interruptable)
         {
             var player = _player.LocalSession?.AttachedEntity;
 
-            if (player == null || _musicProto == null || !_rules.IsTrue(player.Value, _proto.Index<RulesPrototype>(_musicProto.Rules)))
+            if (player == null || _musicProto == null || !_rules.IsTrue(
+                player.Value,
+                _proto.Index<RulesPrototype>(_musicProto.Rules)))
             {
                 FadeOut(_ambientMusicStream, duration: AmbientMusicFadeTime);
                 _musicProto = null;
@@ -215,15 +215,11 @@ public sealed partial class ContentAudioSystem
         _ambientMusicStream = strim.Value.Entity;
 
         if (_musicProto.FadeIn)
-        {
             FadeIn(_ambientMusicStream, strim.Value.Component, AmbientMusicFadeTime);
-        }
 
         // Refresh the list
         if (tracks.Count == 0)
-        {
             RefreshTracks(_musicProto.Sound, tracks, track);
-        }
     }
 
     private AmbientMusicPrototype? GetAmbience()
@@ -250,12 +246,12 @@ public sealed partial class ContentAudioSystem
             return amb;
         }
 
-        _sawmill.Warning($"Unable to find fallback ambience track");
+        _sawmill.Warning("Unable to find fallback ambience track");
         return null;
     }
 
     /// <summary>
-    /// Fades out the current ambient music temporarily.
+    ///     Fades out the current ambient music temporarily.
     /// </summary>
     public void DisableAmbientMusic()
     {

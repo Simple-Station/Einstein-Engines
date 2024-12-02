@@ -1,6 +1,12 @@
+#region
+
 using Content.Shared.Hands.Components;
 
+#endregion
+
+
 namespace Content.Client.Toggleable;
+
 
 /// <summary>
 ///     Component that handles the toggling the visuals of some light emitting entity.

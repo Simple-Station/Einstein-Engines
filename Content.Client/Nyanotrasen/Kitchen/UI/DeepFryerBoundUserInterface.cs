@@ -1,5 +1,9 @@
+#region
+
 using Content.Shared.Nyanotrasen.Kitchen.UI;
-using Robust.Client.GameObjects;
+
+#endregion
+
 
 namespace Content.Client.Nyanotrasen.Kitchen.UI
 {

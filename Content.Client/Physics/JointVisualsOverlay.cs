@@ -1,22 +1,27 @@
+#region
+
 using Content.Shared.Physics;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Enums;
-using Robust.Shared.Physics;
 using Robust.Shared.Physics.Dynamics.Joints;
+
+#endregion
+
 
 namespace Content.Client.Physics;
 
+
 /// <summary>
-/// Draws a texture on top of a joint.
+///     Draws a texture on top of a joint.
 /// </summary>
 public sealed class JointVisualsOverlay : Overlay
 {
     public override OverlaySpace Space => OverlaySpace.WorldSpaceBelowFOV;
 
-    private IEntityManager _entManager;
+    private readonly IEntityManager _entManager;
 
-    private HashSet<Joint> _drawn = new();
+    private readonly HashSet<Joint> _drawn = new();
 
     public JointVisualsOverlay(IEntityManager entManager)
     {
@@ -60,7 +65,7 @@ public sealed class JointVisualsOverlay : Overlay
 
             var posA = coordsA.ToMapPos(_entManager, xformSystem);
             var posB = coordsB.ToMapPos(_entManager, xformSystem);
-            var diff = (posB - posA);
+            var diff = posB - posA;
             var length = diff.Length();
 
             var midPoint = diff / 2f + posA;

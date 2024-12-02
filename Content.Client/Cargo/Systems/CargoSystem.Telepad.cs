@@ -1,11 +1,16 @@
+#region
+
 using Content.Shared.Cargo;
 using Content.Shared.Cargo.Components;
 using JetBrains.Annotations;
 using Robust.Client.Animations;
 using Robust.Client.GameObjects;
-using Robust.Client.Graphics;
+
+#endregion
+
 
 namespace Content.Client.Cargo.Systems;
+
 
 public sealed partial class CargoSystem
 {
@@ -21,7 +26,7 @@ public sealed partial class CargoSystem
                 LayerKey = CargoTelepadLayers.Beam,
                 KeyFrames =
                 {
-                    new AnimationTrackSpriteFlick.KeyFrame(new RSI.StateId("beam"), 0f)
+                    new(new("beam"), 0f)
                 }
             }
         }
@@ -37,7 +42,7 @@ public sealed partial class CargoSystem
                 LayerKey = CargoTelepadLayers.Beam,
                 KeyFrames =
                 {
-                    new AnimationTrackSpriteFlick.KeyFrame(new RSI.StateId("idle"), 0f)
+                    new(new("idle"), 0f)
                 }
             }
         }
@@ -52,15 +57,11 @@ public sealed partial class CargoSystem
         SubscribeLocalEvent<CargoTelepadComponent, AnimationCompletedEvent>(OnCargoAnimComplete);
     }
 
-    private void OnCargoAppChange(EntityUid uid, CargoTelepadComponent component, ref AppearanceChangeEvent args)
-    {
+    private void OnCargoAppChange(EntityUid uid, CargoTelepadComponent component, ref AppearanceChangeEvent args) =>
         OnChangeData(uid, args.Sprite);
-    }
 
-    private void OnCargoAnimComplete(EntityUid uid, CargoTelepadComponent component, AnimationCompletedEvent args)
-    {
+    private void OnCargoAnimComplete(EntityUid uid, CargoTelepadComponent component, AnimationCompletedEvent args) =>
         OnChangeData(uid);
-    }
 
     private void OnChangeData(EntityUid uid, SpriteComponent? sprite = null)
     {
@@ -99,6 +100,6 @@ public sealed partial class CargoSystem
     private enum CargoTelepadLayers : byte
     {
         Base = 0,
-        Beam = 1,
+        Beam = 1
     }
 }

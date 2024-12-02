@@ -1,14 +1,16 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using Content.Shared.CCVar;
+﻿#region
+
 using Content.Shared.Players.PlayTimeTracking;
-using Content.Shared.Roles;
-using Robust.Shared.Utility;
+
+#endregion
+
 
 namespace Content.Client.Players.PlayTimeTracking;
 
+
 public sealed partial class JobRequirementsManager
 {
-    private bool _whitelisted = false;
+    private bool _whitelisted;
 
     private void RxWhitelist(MsgWhitelist message)
     {
@@ -16,8 +18,5 @@ public sealed partial class JobRequirementsManager
         _whitelisted = message.Whitelisted;
     }
 
-    public bool IsWhitelisted()
-    {
-        return _whitelisted;
-    }
+    public bool IsWhitelisted() => _whitelisted;
 }

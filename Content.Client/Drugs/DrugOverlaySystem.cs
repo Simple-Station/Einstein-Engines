@@ -1,9 +1,15 @@
+#region
+
 using Content.Shared.Drugs;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Shared.Player;
 
+#endregion
+
+
 namespace Content.Client.Drugs;
+
 
 /// <summary>
 ///     System to handle drug related overlays.
@@ -30,10 +36,8 @@ public sealed class DrugOverlaySystem : EntitySystem
         _overlay = new();
     }
 
-    private void OnPlayerAttached(EntityUid uid, SeeingRainbowsComponent component, LocalPlayerAttachedEvent args)
-    {
+    private void OnPlayerAttached(EntityUid uid, SeeingRainbowsComponent component, LocalPlayerAttachedEvent args) =>
         _overlayMan.AddOverlay(_overlay);
-    }
 
     private void OnPlayerDetached(EntityUid uid, SeeingRainbowsComponent component, LocalPlayerDetachedEvent args)
     {

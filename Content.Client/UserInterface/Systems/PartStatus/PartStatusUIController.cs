@@ -1,17 +1,22 @@
+#region
+
 using Content.Client.Gameplay;
+using Content.Client.Targeting;
 using Content.Client.UserInterface.Systems.PartStatus.Widgets;
 using Content.Shared.Targeting;
-using Content.Client.Targeting;
 using Robust.Client.GameObjects;
-using Robust.Client.UserInterface.Controllers;
-using Robust.Client.Player;
-using Robust.Shared.Utility;
 using Robust.Client.Graphics;
+using Robust.Client.UserInterface.Controllers;
+using Robust.Shared.Utility;
+
+#endregion
 
 
 namespace Content.Client.UserInterface.Systems.PartStatus;
 
-public sealed class PartStatusUIController : UIController, IOnStateEntered<GameplayState>, IOnSystemChanged<TargetingSystem>
+
+public sealed class PartStatusUIController : UIController, IOnStateEntered<GameplayState>,
+    IOnSystemChanged<TargetingSystem>
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
     [Dependency] private readonly IEntityNetworkManager _net = default!;
@@ -55,7 +60,6 @@ public sealed class PartStatusUIController : UIController, IOnStateEntered<Gamep
             if (_targetingComponent != null)
                 PartStatusControl.SetTextures(_targetingComponent.BodyStatus);
         }
-
     }
 
     public void RemovePartStatusControl()

@@ -1,8 +1,14 @@
-﻿using System.Linq;
+﻿#region
+
+using System.Linq;
 using Content.Client.UserInterface.Systems.Inventory.Controls;
 using Robust.Client.UserInterface.Controls;
 
+#endregion
+
+
 namespace Content.Client.UserInterface.Systems.Hands.Controls;
+
 
 public sealed class HandsContainer : ItemSlotUIContainer<HandButton>
 {
@@ -10,7 +16,7 @@ public sealed class HandsContainer : ItemSlotUIContainer<HandButton>
     public int ColumnLimit { get => _grid.Columns; set => _grid.Columns = value; }
     public int MaxButtonCount { get; set; } = 0;
 
-    public int MaxButtonsPerRow { get; set;  }= 6;
+    public int MaxButtonsPerRow { get; set; } = 6;
 
     /// <summary>
     ///     Indexer. This is used to reference a HandsContainer from the
@@ -20,7 +26,7 @@ public sealed class HandsContainer : ItemSlotUIContainer<HandButton>
 
     public HandsContainer()
     {
-        AddChild(_grid = new GridContainer());
+        AddChild(_grid = new());
         _grid.ExpandBackwards = true;
     }
 
@@ -34,9 +40,7 @@ public sealed class HandsContainer : ItemSlotUIContainer<HandButton>
             _grid.AddChild(newButton);
         }
         else
-        {
             _grid.AddChild(newButton);
-        }
 
         _grid.Columns = Math.Min(_grid.ChildCount, MaxButtonsPerRow);
         return base.AddButton(newButton);
@@ -80,13 +84,11 @@ public sealed class HandsContainer : ItemSlotUIContainer<HandButton>
     public IEnumerable<HandButton> GetButtons()
     {
         foreach (var child in _grid.Children)
-        {
             if (child is HandButton hand)
                 yield return hand;
-        }
     }
 
-    public bool IsFull => (MaxButtonCount != 0 && ButtonCount >= MaxButtonCount);
+    public bool IsFull => MaxButtonCount != 0 && ButtonCount >= MaxButtonCount;
 
     public int ButtonCount => _grid.ChildCount;
 }

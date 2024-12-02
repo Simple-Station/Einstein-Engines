@@ -1,3 +1,5 @@
+#region
+
 using System.Linq;
 using Content.Client.Materials;
 using Content.Client.Message;
@@ -12,7 +14,11 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
+#endregion
+
+
 namespace Content.Client.Construction.UI;
+
 
 [GenerateTypedNameReferences]
 public sealed partial class FlatpackCreatorMenu : FancyWindow
@@ -57,7 +63,7 @@ public sealed partial class FlatpackCreatorMenu : FancyWindow
     {
         base.FrameUpdate(args);
 
-        if (_machinePreview is not { } && _entityManager.Deleted(_machinePreview))
+        if (_machinePreview is null && _entityManager.Deleted(_machinePreview))
         {
             _machinePreview = null;
             MachineSprite.SetEntity(_machinePreview);
@@ -69,9 +75,7 @@ public sealed partial class FlatpackCreatorMenu : FancyWindow
 
         MachineBoardComponent? machineBoardComp = null;
         if (flatpacker.Packing)
-        {
             PackButton.Disabled = true;
-        }
         else if (_currentBoard != null)
         {
             Dictionary<string, int> cost;
@@ -142,10 +146,12 @@ public sealed partial class FlatpackCreatorMenu : FancyWindow
 
             var sheetVolume = _materialStorage.GetSheetVolume(matProto);
             var sheets = (float) -amount / sheetVolume;
-            var amountText = Loc.GetString("lathe-menu-material-amount",
+            var amountText = Loc.GetString(
+                "lathe-menu-material-amount",
                 ("amount", sheets),
                 ("unit", Loc.GetString(matProto.Unit)));
-            var text = Loc.GetString("lathe-menu-tooltip-display",
+            var text = Loc.GetString(
+                "lathe-menu-tooltip-display",
                 ("amount", amountText),
                 ("material", Loc.GetString(matProto.Name)));
 

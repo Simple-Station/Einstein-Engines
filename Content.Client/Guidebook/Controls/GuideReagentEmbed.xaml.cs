@@ -1,10 +1,11 @@
+#region
+
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Client.Chemistry.EntitySystems;
 using Content.Client.Guidebook.Richtext;
 using Content.Client.Message;
 using Content.Client.UserInterface.ControlExtensions;
-using Content.Shared.Body.Prototypes;
 using Content.Shared.Chemistry.Reaction;
 using Content.Shared.Chemistry.Reagent;
 using JetBrains.Annotations;
@@ -16,12 +17,16 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
+#endregion
+
+
 namespace Content.Client.Guidebook.Controls;
+
 
 /// <summary>
 ///     Control for embedding a reagent into a guidebook.
 /// </summary>
-[UsedImplicitly, GenerateTypedNameReferences]
+[UsedImplicitly, GenerateTypedNameReferences,]
 public sealed partial class GuideReagentEmbed : BoxContainer, IDocumentTag, ISearchableControl
 {
     [Dependency] private readonly IEntitySystemManager _systemManager = default!;
@@ -47,15 +52,9 @@ public sealed partial class GuideReagentEmbed : BoxContainer, IDocumentTag, ISea
         GenerateControl(reagent);
     }
 
-    public bool CheckMatchesSearch(string query)
-    {
-        return this.ChildrenContainText(query);
-    }
+    public bool CheckMatchesSearch(string query) => this.ChildrenContainText(query);
 
-    public void SetHiddenState(bool state, string query)
-    {
-        Visible = CheckMatchesSearch(query) ? state : !state;
-    }
+    public void SetHiddenState(bool state, string query) => Visible = CheckMatchesSearch(query) ? state : !state;
 
     public bool TryParseTag(Dictionary<string, string> args, [NotNullWhen(true)] out Control? control)
     {
@@ -93,10 +92,14 @@ public sealed partial class GuideReagentEmbed : BoxContainer, IDocumentTag, ISea
             ? Color.Black
             : Color.White;
 
-        ReagentName.SetMarkup(Loc.GetString("guidebook-reagent-name",
-            ("color", textColor), ("name", reagent.LocalizedName)));
+        ReagentName.SetMarkup(
+            Loc.GetString(
+                "guidebook-reagent-name",
+                ("color", textColor),
+                ("name", reagent.LocalizedName)));
 
         #region Recipe
+
         var reactions = _prototype.EnumeratePrototypes<ReactionPrototype>()
             .Where(p => !p.Source && p.Products.ContainsKey(reagent.ID))
             .OrderBy(p => p.Priority)
@@ -106,17 +109,16 @@ public sealed partial class GuideReagentEmbed : BoxContainer, IDocumentTag, ISea
         if (reactions.Any())
         {
             foreach (var reactionPrototype in reactions)
-            {
-                RecipesDescriptionContainer.AddChild(new GuideReagentReaction(reactionPrototype, _prototype, _systemManager));
-            }
+                RecipesDescriptionContainer.AddChild(
+                    new GuideReagentReaction(reactionPrototype, _prototype, _systemManager));
         }
         else
-        {
             RecipesContainer.Visible = false;
-        }
+
         #endregion
 
         #region Effects
+
         if (_chemistryGuideData.ReagentGuideRegistry.TryGetValue(reagent.ID, out var guideEntryRegistry) &&
             guideEntryRegistry.GuideEntries != null &&
             guideEntryRegistry.GuideEntries.Values.Any(pair => pair.EffectDescriptions.Any()))
@@ -128,11 +130,14 @@ public sealed partial class GuideReagentEmbed : BoxContainer, IDocumentTag, ISea
                     continue;
 
                 var groupLabel = new RichTextLabel();
-                groupLabel.SetMarkup(Loc.GetString("guidebook-reagent-effects-metabolism-group-rate",
-                    ("group", _prototype.Index<MetabolismGroupPrototype>(group).LocalizedName), ("rate", effect.MetabolismRate)));
+                groupLabel.SetMarkup(
+                    Loc.GetString(
+                        "guidebook-reagent-effects-metabolism-group-rate",
+                        ("group", _prototype.Index(group).LocalizedName),
+                        ("rate", effect.MetabolismRate)));
                 var descriptionLabel = new RichTextLabel
                 {
-                    Margin = new Thickness(25, 0, 10, 0)
+                    Margin = new(25, 0, 10, 0)
                 };
 
                 var descMsg = new FormattedMessage();
@@ -145,6 +150,7 @@ public sealed partial class GuideReagentEmbed : BoxContainer, IDocumentTag, ISea
                     if (i < descriptionsCount)
                         descMsg.PushNewline();
                 }
+
                 descriptionLabel.SetMessage(descMsg);
 
                 EffectsDescriptionContainer.AddChild(groupLabel);
@@ -152,9 +158,8 @@ public sealed partial class GuideReagentEmbed : BoxContainer, IDocumentTag, ISea
             }
         }
         else
-        {
             EffectsContainer.Visible = false;
-        }
+
         #endregion
 
         GenerateSources(reagent);
@@ -162,8 +167,10 @@ public sealed partial class GuideReagentEmbed : BoxContainer, IDocumentTag, ISea
         FormattedMessage description = new();
         description.AddText(reagent.LocalizedDescription);
         description.PushNewline();
-        description.AddMarkup(Loc.GetString("guidebook-reagent-physical-description",
-            ("description", reagent.LocalizedPhysicalDescription)));
+        description.AddMarkup(
+            Loc.GetString(
+                "guidebook-reagent-physical-description",
+                ("description", reagent.LocalizedPhysicalDescription)));
         ReagentDescription.SetMessage(description);
     }
 
@@ -175,37 +182,39 @@ public sealed partial class GuideReagentEmbed : BoxContainer, IDocumentTag, ISea
             SourcesContainer.Visible = false;
             return;
         }
+
         SourcesContainer.Visible = true;
 
         var orderedSources = sources
             .OrderBy(o => o.OutputCount)
             .ThenBy(o => o.IdentifierString);
         foreach (var source in orderedSources)
-        {
             if (source is ReagentEntitySourceData entitySourceData)
             {
-                SourcesDescriptionContainer.AddChild(new GuideReagentReaction(
-                    entitySourceData.SourceEntProto,
-                    entitySourceData.Solution,
-                    entitySourceData.MixingType,
-                    _prototype,
-                    _systemManager));
+                SourcesDescriptionContainer.AddChild(
+                    new GuideReagentReaction(
+                        entitySourceData.SourceEntProto,
+                        entitySourceData.Solution,
+                        entitySourceData.MixingType,
+                        _prototype,
+                        _systemManager));
             }
             else if (source is ReagentReactionSourceData reactionSourceData)
             {
-                SourcesDescriptionContainer.AddChild(new GuideReagentReaction(
-                    reactionSourceData.ReactionPrototype,
-                    _prototype,
-                    _systemManager));
+                SourcesDescriptionContainer.AddChild(
+                    new GuideReagentReaction(
+                        reactionSourceData.ReactionPrototype,
+                        _prototype,
+                        _systemManager));
             }
             else if (source is ReagentGasSourceData gasSourceData)
             {
-                SourcesDescriptionContainer.AddChild(new GuideReagentReaction(
-                    gasSourceData.GasPrototype,
-                    gasSourceData.MixingType,
-                    _prototype,
-                    _systemManager));
+                SourcesDescriptionContainer.AddChild(
+                    new GuideReagentReaction(
+                        gasSourceData.GasPrototype,
+                        gasSourceData.MixingType,
+                        _prototype,
+                        _systemManager));
             }
-        }
     }
 }

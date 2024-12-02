@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿#region
+
+using System.Linq;
 using Content.Client.Eui;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Eui;
@@ -8,7 +10,11 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using static Content.Shared.Administration.Logs.AdminLogsEuiMsg;
 
+#endregion
+
+
 namespace Content.Client.Administration.UI.Logs;
+
 
 [UsedImplicitly]
 public sealed class AdminLogsEui : BaseEui
@@ -18,7 +24,7 @@ public sealed class AdminLogsEui : BaseEui
 
     public AdminLogsEui()
     {
-        LogsWindow = new AdminLogsWindow();
+        LogsWindow = new();
         LogsWindow.OnClose += OnCloseWindow;
         LogsControl = LogsWindow.Logs;
 
@@ -38,10 +44,7 @@ public sealed class AdminLogsEui : BaseEui
 
     private bool FirstState { get; set; } = true;
 
-    private void OnRequestClosed(WindowRequestClosedEventArgs args)
-    {
-        SendMessage(new CloseEuiMessage());
-    }
+    private void OnRequestClosed(WindowRequestClosedEventArgs args) => SendMessage(new CloseEuiMessage());
 
     private void OnCloseWindow()
     {
@@ -77,20 +80,19 @@ public sealed class AdminLogsEui : BaseEui
     private void PopOut()
     {
         if (LogsWindow == null)
-        {
             return;
-        }
 
         var monitor = _clyde.EnumerateMonitors().First();
 
-        ClydeWindow = _clyde.CreateWindow(new WindowCreateParameters
-        {
-            Maximized = false,
-            Title = "Admin Logs",
-            Monitor = monitor,
-            Width = 1100,
-            Height = 400
-        });
+        ClydeWindow = _clyde.CreateWindow(
+            new()
+            {
+                Maximized = false,
+                Title = "Admin Logs",
+                Monitor = monitor,
+                Width = 1100,
+                Height = 400
+            });
 
         LogsControl.Orphan();
         LogsWindow.Dispose();
@@ -111,18 +113,14 @@ public sealed class AdminLogsEui : BaseEui
         var s = (AdminLogsEuiState) state;
 
         if (s.IsLoading)
-        {
             return;
-        }
 
         LogsControl.SetCurrentRound(s.RoundId);
         LogsControl.SetPlayers(s.Players);
         LogsControl.UpdateCount(round: s.RoundLogs);
 
         if (!FirstState)
-        {
             return;
-        }
 
         FirstState = false;
         LogsControl.SetRoundSpinBox(s.RoundId);
@@ -137,13 +135,9 @@ public sealed class AdminLogsEui : BaseEui
         {
             case NewLogs newLogs:
                 if (newLogs.Replace)
-                {
                     LogsControl.SetLogs(newLogs.Logs);
-                }
                 else
-                {
                     LogsControl.AddLogs(newLogs.Logs);
-                }
 
                 LogsControl.NextButton.Disabled = !newLogs.HasNext;
                 break;
@@ -171,9 +165,7 @@ public sealed class AdminLogsEui : BaseEui
         base.Closed();
 
         if (ClydeWindow != null)
-        {
             ClydeWindow.RequestClosed -= OnRequestClosed;
-        }
 
         LogsControl.Dispose();
         LogsWindow?.Dispose();

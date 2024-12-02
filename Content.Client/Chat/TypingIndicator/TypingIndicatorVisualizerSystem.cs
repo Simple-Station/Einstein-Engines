@@ -1,15 +1,24 @@
-﻿using Content.Shared.Chat.TypingIndicator;
+﻿#region
+
+using Content.Shared.Chat.TypingIndicator;
 using Robust.Client.GameObjects;
-using Robust.Client.Graphics;
 using Robust.Shared.Prototypes;
 
+#endregion
+
+
 namespace Content.Client.Chat.TypingIndicator;
+
 
 public sealed class TypingIndicatorVisualizerSystem : VisualizerSystem<TypingIndicatorComponent>
 {
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
-    protected override void OnAppearanceChange(EntityUid uid, TypingIndicatorComponent component, ref AppearanceChangeEvent args)
+    protected override void OnAppearanceChange(
+        EntityUid uid,
+        TypingIndicatorComponent component,
+        ref AppearanceChangeEvent args
+    )
     {
         if (args.Sprite == null)
             return;

@@ -1,10 +1,16 @@
+#region
+
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Prototypes;
 
+#endregion
+
+
 namespace Content.Client.Movement.Systems;
+
 
 public sealed class FloorOcclusionSystem : SharedFloorOcclusionSystem
 {
@@ -17,10 +23,9 @@ public sealed class FloorOcclusionSystem : SharedFloorOcclusionSystem
         SubscribeLocalEvent<FloorOcclusionComponent, AfterAutoHandleStateEvent>(OnOcclusionAuto);
     }
 
-    private void OnOcclusionAuto(EntityUid uid, FloorOcclusionComponent component, ref AfterAutoHandleStateEvent args)
-    {
+    private void
+        OnOcclusionAuto(EntityUid uid, FloorOcclusionComponent component, ref AfterAutoHandleStateEvent args) =>
         SetEnabled(uid, component, component.Enabled);
-    }
 
     private void OnOcclusionStartup(EntityUid uid, FloorOcclusionComponent component, ComponentStartup args)
     {
@@ -49,12 +54,8 @@ public sealed class FloorOcclusionSystem : SharedFloorOcclusionSystem
             return;
 
         if (enabled)
-        {
             sprite.PostShader = shader;
-        }
         else
-        {
             sprite.PostShader = null;
-        }
     }
 }

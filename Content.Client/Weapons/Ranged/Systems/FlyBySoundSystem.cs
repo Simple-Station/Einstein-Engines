@@ -1,14 +1,18 @@
+#region
+
 using Content.Shared.Projectiles;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Systems;
 using Robust.Client.Player;
-using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Physics.Events;
-using Robust.Shared.Player;
 using Robust.Shared.Random;
 
+#endregion
+
+
 namespace Content.Client.Weapons.Ranged.Systems;
+
 
 public sealed class FlyBySoundSystem : SharedFlyBySoundSystem
 {
@@ -31,15 +35,11 @@ public sealed class FlyBySoundSystem : SharedFlyBySoundSystem
             args.OtherEntity != attachedEnt ||
             TryComp<ProjectileComponent>(uid, out var projectile) &&
             projectile.Shooter == attachedEnt)
-        {
             return;
-        }
 
         if (args.OurFixtureId != FlyByFixture ||
             !_random.Prob(component.Prob))
-        {
             return;
-        }
 
         // Play attached to our entity because the projectile may immediately delete or the likes.
         _audio.PlayPredicted(component.Sound, attachedEnt.Value, attachedEnt.Value);

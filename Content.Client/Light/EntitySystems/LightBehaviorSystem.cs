@@ -1,9 +1,15 @@
+#region
+
 using System.Linq;
 using Content.Client.Light.Components;
 using Robust.Client.GameObjects;
 using Robust.Shared.Random;
 
+#endregion
+
+
 namespace Content.Client.Light.EntitySystems;
+
 
 public sealed class LightBehaviorSystem : EntitySystem
 {
@@ -17,14 +23,16 @@ public sealed class LightBehaviorSystem : EntitySystem
         SubscribeLocalEvent<LightBehaviourComponent, AnimationCompletedEvent>(OnBehaviorAnimationCompleted);
     }
 
-    private void OnBehaviorAnimationCompleted(EntityUid uid, LightBehaviourComponent component, AnimationCompletedEvent args)
+    private void OnBehaviorAnimationCompleted(
+        EntityUid uid,
+        LightBehaviourComponent component,
+        AnimationCompletedEvent args
+    )
     {
         var container = component.Animations.FirstOrDefault(x => x.FullKey == args.Key);
 
         if (container == null)
-        {
             return;
-        }
 
         if (container.LightBehaviour.IsLooped)
         {
@@ -39,17 +47,11 @@ public sealed class LightBehaviorSystem : EntitySystem
         EnsureComp<AnimationPlayerComponent>(uid);
 
         foreach (var container in component.Animations)
-        {
             container.LightBehaviour.Initialize(uid, _random, EntityManager);
-        }
 
         // we need to initialize all behaviours before starting any
         foreach (var container in component.Animations)
-        {
             if (container.LightBehaviour.Enabled)
-            {
                 component.StartLightBehaviour(container.LightBehaviour.ID);
-            }
-        }
     }
 }

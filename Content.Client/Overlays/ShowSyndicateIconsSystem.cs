@@ -1,10 +1,16 @@
-using Content.Shared.Overlays;
+#region
+
 using Content.Shared.NukeOps;
+using Content.Shared.Overlays;
 using Content.Shared.StatusIcon;
 using Content.Shared.StatusIcon.Components;
 using Robust.Shared.Prototypes;
 
+#endregion
+
+
 namespace Content.Client.Overlays;
+
 
 public sealed class ShowSyndicateIconsSystem : EquipmentHudSystem<ShowSyndicateIconsComponent>
 {
@@ -26,4 +32,3 @@ public sealed class ShowSyndicateIconsSystem : EquipmentHudSystem<ShowSyndicateI
             ev.StatusIcons.Add(iconPrototype);
     }
 }
-

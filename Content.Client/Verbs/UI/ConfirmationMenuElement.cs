@@ -1,11 +1,16 @@
-﻿using Content.Client.ContextMenu.UI;
+﻿#region
+
+using Content.Client.ContextMenu.UI;
 using Content.Shared.Verbs;
-using Robust.Shared.Maths;
 using Robust.Shared.Utility;
+
+#endregion
+
 
 namespace Content.Client.Verbs.UI;
 
-public sealed partial class ConfirmationMenuElement : ContextMenuElement
+
+public sealed class ConfirmationMenuElement : ContextMenuElement
 {
     public const string StyleClassConfirmationContextMenuButton = "confirmationContextMenuButton";
 

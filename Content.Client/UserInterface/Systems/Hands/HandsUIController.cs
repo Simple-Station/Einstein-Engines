@@ -1,3 +1,5 @@
+#region
+
 using Content.Client.Gameplay;
 using Content.Client.Hands.Systems;
 using Content.Client.UserInterface.Controls;
@@ -14,7 +16,11 @@ using Robust.Shared.Input;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
+#endregion
+
+
 namespace Content.Client.UserInterface.Systems.Hands;
+
 
 public sealed class HandsUIController : UIController, IOnStateEntered<GameplayState>, IOnSystemChanged<HandsSystem>
 {
@@ -28,7 +34,7 @@ public sealed class HandsUIController : UIController, IOnStateEntered<GameplaySt
     private readonly Dictionary<string, int> _handContainerIndices = new();
     private readonly Dictionary<string, HandButton> _handLookup = new();
     private HandsComponent? _playerHandsComponent;
-    private HandButton? _activeHand = null;
+    private HandButton? _activeHand;
 
     // We only have two item status controls (left and right hand),
     // but we may have more than two hands.
@@ -38,7 +44,7 @@ public sealed class HandsUIController : UIController, IOnStateEntered<GameplaySt
     private HandButton? _statusHandLeft;
     private HandButton? _statusHandRight;
 
-    private int _backupSuffix = 0; //this is used when autogenerating container names if they don't have names
+    private int _backupSuffix; //this is used when autogenerating container names if they don't have names
 
     private HotbarGui? HandsGui => UIManager.GetActiveUIWidgetOrNull<HotbarGui>();
 
@@ -68,38 +74,23 @@ public sealed class HandsUIController : UIController, IOnStateEntered<GameplaySt
         _handsSystem.OnPlayerHandUnblocked -= HandUnblocked;
     }
 
-    private void OnAddHand(string name, HandLocation location)
-    {
-        AddHand(name, location);
-    }
+    private void OnAddHand(string name, HandLocation location) => AddHand(name, location);
 
     private void HandPressed(GUIBoundKeyEventArgs args, SlotControl hand)
     {
         if (_playerHandsComponent == null)
-        {
             return;
-        }
 
         if (args.Function == EngineKeyFunctions.UIClick)
-        {
             _handsSystem.UIHandClick(_playerHandsComponent, hand.SlotName);
-        }
         else if (args.Function == EngineKeyFunctions.UseSecondary)
-        {
             _handsSystem.UIHandOpenContextMenu(hand.SlotName);
-        }
         else if (args.Function == ContentKeyFunctions.ActivateItemInWorld)
-        {
             _handsSystem.UIHandActivate(hand.SlotName);
-        }
         else if (args.Function == ContentKeyFunctions.AltActivateItemInWorld)
-        {
             _handsSystem.UIHandAltActivateItem(hand.SlotName);
-        }
         else if (args.Function == ContentKeyFunctions.ExamineEntity)
-        {
             _handsSystem.UIInventoryExamine(hand.SlotName);
-        }
     }
 
     private void UnloadPlayerHands()
@@ -112,9 +103,7 @@ public sealed class HandsUIController : UIController, IOnStateEntered<GameplaySt
         _playerHandsComponent = null;
 
         foreach (var container in _handsContainers)
-        {
             container.Clear();
-        }
     }
 
     private void LoadPlayerHands(HandsComponent handsComp)
@@ -149,9 +138,7 @@ public sealed class HandsUIController : UIController, IOnStateEntered<GameplaySt
     private void HandBlocked(string handName)
     {
         if (!_handLookup.TryGetValue(handName, out var hand))
-        {
             return;
-        }
 
         hand.Blocked = true;
     }
@@ -159,9 +146,7 @@ public sealed class HandsUIController : UIController, IOnStateEntered<GameplaySt
     private void HandUnblocked(string handName)
     {
         if (!_handLookup.TryGetValue(handName, out var hand))
-        {
             return;
-        }
 
         hand.Blocked = false;
     }
@@ -206,7 +191,7 @@ public sealed class HandsUIController : UIController, IOnStateEntered<GameplaySt
     private HandsContainer GetFirstAvailableContainer()
     {
         if (_handsContainers.Count == 0)
-            throw new Exception("Could not find an attached hand hud container");
+            throw new("Could not find an attached hand hud container");
         foreach (var container in _handsContainers)
         {
             if (container.IsFull)
@@ -214,7 +199,7 @@ public sealed class HandsUIController : UIController, IOnStateEntered<GameplaySt
             return container;
         }
 
-        throw new Exception("All attached hand hud containers were full!");
+        throw new("All attached hand hud containers were full!");
     }
 
     public bool TryGetHandContainer(string containerName, out HandsContainer? container)
@@ -228,10 +213,8 @@ public sealed class HandsUIController : UIController, IOnStateEntered<GameplaySt
     }
 
     //propagate hand activation to the hand system.
-    private void StorageActivate(GUIBoundKeyEventArgs args, SlotControl handControl)
-    {
+    private void StorageActivate(GUIBoundKeyEventArgs args, SlotControl handControl) =>
         _handsSystem.UIHandActivate(handControl.SlotName);
-    }
 
     private void SetActiveHand(string? handName)
     {
@@ -287,16 +270,12 @@ public sealed class HandsUIController : UIController, IOnStateEntered<GameplaySt
         button.Pressed += HandPressed;
 
         if (!_handLookup.TryAdd(handName, button))
-            throw new Exception("Tried to add hand with duplicate name to UI. Name:" + handName);
+            throw new("Tried to add hand with duplicate name to UI. Name:" + handName);
 
         if (HandsGui != null)
-        {
             HandsGui.HandContainer.AddButton(button);
-        }
         else
-        {
             GetFirstAvailableContainer().AddButton(button);
-        }
 
         // If we don't have a status for this hand type yet, set it.
         // This means we have status filled by default in most scenarios,
@@ -328,9 +307,7 @@ public sealed class HandsUIController : UIController, IOnStateEntered<GameplaySt
     public void SwapHands(HandsContainer other, HandsContainer? source = null)
     {
         if (HandsGui == null && source == null)
-        {
             throw new ArgumentException("Cannot swap hands if no source hand container exists!");
-        }
 
         source ??= HandsGui!.HandContainer;
 
@@ -338,9 +315,7 @@ public sealed class HandsUIController : UIController, IOnStateEntered<GameplaySt
         foreach (var child in source.Children)
         {
             if (child is not HandButton)
-            {
                 continue;
-            }
 
             transfer.Add(child);
         }
@@ -352,19 +327,14 @@ public sealed class HandsUIController : UIController, IOnStateEntered<GameplaySt
         }
     }
 
-    private void RemoveHand(string handName)
-    {
-        RemoveHand(handName, out _);
-    }
+    private void RemoveHand(string handName) => RemoveHand(handName, out _);
 
     private bool RemoveHand(string handName, out HandButton? handButton)
     {
         if (!_handLookup.TryGetValue(handName, out handButton))
             return false;
         if (handButton.Parent is HandsContainer handContainer)
-        {
             handContainer.RemoveButton(handButton);
-        }
 
         if (_statusHandLeft == handButton)
             _statusHandLeft = null;
@@ -383,16 +353,10 @@ public sealed class HandsUIController : UIController, IOnStateEntered<GameplaySt
         var rightVisible = false;
 
         foreach (var hand in _handLookup.Values)
-        {
             if (hand.HandLocation.GetUILocation() == HandUILocation.Left)
-            {
                 leftVisible = true;
-            }
             else
-            {
                 rightVisible = true;
-            }
-        }
 
         HandsGui?.UpdateStatusVisibility(leftVisible, rightVisible);
     }
@@ -407,9 +371,7 @@ public sealed class HandsUIController : UIController, IOnStateEntered<GameplaySt
             _backupSuffix++;
         }
         else
-        {
             name = handContainer.Indexer;
-        }
 
         _handContainerIndices.Add(name, _handsContainers.Count);
         _handsContainers.Add(handContainer);
@@ -450,12 +412,12 @@ public sealed class HandsUIController : UIController, IOnStateEntered<GameplaySt
         {
             foreach (var hand in container.GetButtons())
             {
-
                 if (!_entities.TryGetComponent(hand.Entity, out UseDelayComponent? useDelay))
                 {
                     hand.CooldownDisplay.Visible = false;
                     continue;
                 }
+
                 var delay = _useDelay.GetLastEndingDelay((hand.Entity.Value, useDelay));
 
                 hand.CooldownDisplay.Visible = true;

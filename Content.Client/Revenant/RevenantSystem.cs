@@ -1,9 +1,15 @@
+#region
+
 using Content.Client.Alerts;
 using Content.Shared.Revenant;
 using Content.Shared.Revenant.Components;
 using Robust.Client.GameObjects;
 
+#endregion
+
+
 namespace Content.Client.Revenant;
+
 
 public sealed class RevenantSystem : EntitySystem
 {
@@ -22,14 +28,11 @@ public sealed class RevenantSystem : EntitySystem
         if (args.Sprite == null)
             return;
 
-        if (_appearance.TryGetData<bool>(uid, RevenantVisuals.Harvesting, out var harvesting, args.Component) && harvesting)
-        {
+        if (_appearance.TryGetData<bool>(uid, RevenantVisuals.Harvesting, out var harvesting, args.Component) &&
+            harvesting)
             args.Sprite.LayerSetState(0, component.HarvestingState);
-        }
         else if (_appearance.TryGetData<bool>(uid, RevenantVisuals.Stunned, out var stunned, args.Component) && stunned)
-        {
             args.Sprite.LayerSetState(0, component.StunnedState);
-        }
         else if (_appearance.TryGetData<bool>(uid, RevenantVisuals.Corporeal, out var corporeal, args.Component))
         {
             if (corporeal)
@@ -46,8 +49,8 @@ public sealed class RevenantSystem : EntitySystem
 
         var sprite = args.SpriteViewEnt.Comp;
         var essence = Math.Clamp(ent.Comp.Essence.Int(), 0, 999);
-        sprite.LayerSetState(RevenantVisualLayers.Digit1, $"{(essence / 100) % 10}");
-        sprite.LayerSetState(RevenantVisualLayers.Digit2, $"{(essence / 10) % 10}");
+        sprite.LayerSetState(RevenantVisualLayers.Digit1, $"{essence / 100 % 10}");
+        sprite.LayerSetState(RevenantVisualLayers.Digit2, $"{essence / 10 % 10}");
         sprite.LayerSetState(RevenantVisualLayers.Digit3, $"{essence % 10}");
     }
 }

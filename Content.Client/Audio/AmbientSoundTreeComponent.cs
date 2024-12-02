@@ -1,11 +1,17 @@
+#region
+
 using Content.Shared.Audio;
 using Robust.Shared.ComponentTrees;
 using Robust.Shared.Physics;
 
+#endregion
+
+
 namespace Content.Client.Audio;
 
+
 /// <summary>
-/// Samples nearby <see cref="AmbientSoundComponent"/> and plays audio.
+///     Samples nearby <see cref="AmbientSoundComponent" /> and plays audio.
 /// </summary>
 [RegisterComponent]
 public sealed partial class AmbientSoundTreeComponent : Component, IComponentTreeComponent<AmbientSoundComponent>

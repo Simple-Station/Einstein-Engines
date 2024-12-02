@@ -1,9 +1,16 @@
+#region
+
 using System.Numerics;
+
+#endregion
+
 
 namespace Content.Client.Eye;
 
+
 /// <summary>
-///     Component for keeping track of client-side eye lerping. This component should only be added or removed via the <see cref="EyeLerpingSystem"/>.
+///     Component for keeping track of client-side eye lerping. This component should only be added or removed via the
+///     <see cref="EyeLerpingSystem" />.
 /// </summary>
 [RegisterComponent]
 public sealed partial class LerpingEyeComponent : Component

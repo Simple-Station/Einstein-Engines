@@ -1,3 +1,5 @@
+#region
+
 using System.Linq;
 using Content.Client.Actions;
 using Content.Shared.Input;
@@ -6,7 +8,11 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Utility;
 
+#endregion
+
+
 namespace Content.Client.UserInterface.Systems.Actions.Controls;
+
 
 [Virtual]
 public class ActionButtonContainer : GridContainer
@@ -23,10 +29,7 @@ public class ActionButtonContainer : GridContainer
         IoCManager.InjectDependencies(this);
     }
 
-    public ActionButton this[int index]
-    {
-        get => (ActionButton) GetChild(index);
-    }
+    public ActionButton this[int index] => (ActionButton) GetChild(index);
 
     private void BuildActionButtons(int count)
     {
@@ -34,9 +37,7 @@ public class ActionButtonContainer : GridContainer
 
         Children.Clear();
         for (var index = 0; index < count; index++)
-        {
             Children.Add(MakeButton(index));
-        }
 
         ActionButton MakeButton(int index)
         {
@@ -47,9 +48,7 @@ public class ActionButtonContainer : GridContainer
 
             button.KeyBind = boundKey;
             if (_input.TryGetKeyBinding(boundKey, out var binding))
-            {
                 button.Label.Text = binding.GetKeyString();
-            }
 
             return button;
         }
@@ -72,9 +71,7 @@ public class ActionButtonContainer : GridContainer
     public void ClearActionData()
     {
         foreach (var button in Children)
-        {
             ((ActionButton) button).ClearData();
-        }
     }
 
     protected override void ChildAdded(Control newChild)
@@ -114,10 +111,8 @@ public class ActionButtonContainer : GridContainer
     public IEnumerable<ActionButton> GetButtons()
     {
         foreach (var control in Children)
-        {
             if (control is ActionButton button)
                 yield return button;
-        }
     }
 
     ~ActionButtonContainer()

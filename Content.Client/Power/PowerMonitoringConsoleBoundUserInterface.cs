@@ -1,6 +1,12 @@
+#region
+
 using Content.Shared.Power;
 
+#endregion
+
+
 namespace Content.Client.Power;
+
 
 public sealed class PowerMonitoringConsoleBoundUserInterface : BoundUserInterface
 {
@@ -11,7 +17,7 @@ public sealed class PowerMonitoringConsoleBoundUserInterface : BoundUserInterfac
 
     protected override void Open()
     {
-        _menu = new PowerMonitoringWindow(this, Owner);
+        _menu = new(this, Owner);
         _menu.OpenCentered();
         _menu.OnClose += Close;
     }
@@ -26,8 +32,8 @@ public sealed class PowerMonitoringConsoleBoundUserInterface : BoundUserInterfac
             return;
 
         EntMan.TryGetComponent<TransformComponent>(Owner, out var xform);
-        _menu?.ShowEntites
-            (castState.TotalSources,
+        _menu?.ShowEntites(
+            castState.TotalSources,
             castState.TotalBatteryUsage,
             castState.TotalLoads,
             castState.AllEntries,
@@ -36,10 +42,8 @@ public sealed class PowerMonitoringConsoleBoundUserInterface : BoundUserInterfac
             xform?.Coordinates);
     }
 
-    public void SendPowerMonitoringConsoleMessage(NetEntity? netEntity, PowerMonitoringConsoleGroup group)
-    {
+    public void SendPowerMonitoringConsoleMessage(NetEntity? netEntity, PowerMonitoringConsoleGroup group) =>
         SendMessage(new PowerMonitoringConsoleMessage(netEntity, group));
-    }
 
     protected override void Dispose(bool disposing)
     {

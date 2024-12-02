@@ -1,3 +1,5 @@
+#region
+
 using System.Linq;
 using Content.Client.Audio;
 using Content.Shared.Announcements.Events;
@@ -10,7 +12,11 @@ using Robust.Shared.Audio.Sources;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Configuration;
 
+#endregion
+
+
 namespace Content.Client.Announcements.Systems;
+
 
 public sealed class AnnouncerSystem : SharedAnnouncerSystem
 {
@@ -68,7 +74,8 @@ public sealed class AnnouncerSystem : SharedAnnouncerSystem
     private void OnAnnouncementReceived(AnnouncementSendEvent ev)
     {
         if (!ev.Recipients.Contains(_player.LocalSession!.UserId)
-            || !_cache.TryGetResource<AudioResource>(GetAnnouncementPath(ev.AnnouncementId, ev.AnnouncerId),
+            || !_cache.TryGetResource<AudioResource>(
+                GetAnnouncementPath(ev.AnnouncementId, ev.AnnouncerId),
                 out var resource))
             return;
 

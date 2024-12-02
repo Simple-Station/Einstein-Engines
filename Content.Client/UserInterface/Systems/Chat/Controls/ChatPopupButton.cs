@@ -1,14 +1,20 @@
-﻿using Robust.Client.UserInterface;
+﻿#region
+
+using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Timing;
 
+#endregion
+
+
 namespace Content.Client.UserInterface.Systems.Chat.Controls;
+
 
 // NO MORE FUCKING COPY PASTING THIS SHIT
 
 /// <summary>
-/// Base class for button that toggles a popup-window.
-/// Base type of <see cref="ChannelFilterButton"/> and <see cref="ChannelSelectorButton"/>.
+///     Base class for button that toggles a popup-window.
+///     Base type of <see cref="ChannelFilterButton" /> and <see cref="ChannelSelectorButton" />.
 /// </summary>
 public abstract class ChatPopupButton<TPopup> : Button
     where TPopup : Popup, new()
@@ -50,13 +56,9 @@ public abstract class ChatPopupButton<TPopup> : Button
     private void OnButtonToggled(ButtonToggledEventArgs args)
     {
         if (args.Pressed)
-        {
             Popup.Open(GetPopupPosition());
-        }
         else
-        {
             Popup.Close();
-        }
     }
 
     private void OnPopupVisibilityChanged(Control control)

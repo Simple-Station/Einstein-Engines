@@ -1,13 +1,19 @@
-﻿using Content.Shared.MouseRotator;
+﻿#region
+
+using Content.Shared.MouseRotator;
 using Robust.Client.Graphics;
 using Robust.Client.Input;
 using Robust.Client.Player;
 using Robust.Shared.Map;
 using Robust.Shared.Timing;
 
+#endregion
+
+
 namespace Content.Client.MouseRotator;
 
-/// <inheritdoc/>
+
+/// <inheritdoc />
 public sealed class MouseRotatorSystem : SharedMouseRotatorSystem
 {
     [Dependency] private readonly IInputManager _input = default!;
@@ -46,7 +52,8 @@ public sealed class MouseRotatorSystem : SharedMouseRotatorSystem
         if (rotator.Simple4DirMode)
         {
             var eyeRot = _eye.CurrentEye.Rotation; // camera rotation
-            var angleDir = (angle + eyeRot).GetCardinalDir(); // apply GetCardinalDir in the camera frame, not in the world frame
+            var angleDir =
+                (angle + eyeRot).GetCardinalDir(); // apply GetCardinalDir in the camera frame, not in the world frame
             if (angleDir == (curRot + eyeRot).GetCardinalDir())
                 return;
 
@@ -55,10 +62,11 @@ public sealed class MouseRotatorSystem : SharedMouseRotatorSystem
                 rotation -= 2 * Math.PI;
             else if (rotation < -Math.PI)
                 rotation += 2 * Math.PI;
-            RaisePredictiveEvent(new RequestMouseRotatorRotationEvent
-            {
-                Rotation = rotation
-            });
+            RaisePredictiveEvent(
+                new RequestMouseRotatorRotationEvent
+                {
+                    Rotation = rotation
+                });
 
             return;
         }
@@ -75,9 +83,10 @@ public sealed class MouseRotatorSystem : SharedMouseRotatorSystem
                 return;
         }
 
-        RaisePredictiveEvent(new RequestMouseRotatorRotationEvent
-        {
-            Rotation = angle
-        });
+        RaisePredictiveEvent(
+            new RequestMouseRotatorRotationEvent
+            {
+                Rotation = angle
+            });
     }
 }

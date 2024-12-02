@@ -1,8 +1,9 @@
+#region
+
 using Content.Client.Administration.Managers;
 using Content.Client.Changelog;
 using Content.Client.Chat.Managers;
 using Content.Client.DiscordAuth;
-using Content.Client.JoinQueue;
 using Content.Client.Eui;
 using Content.Client.Flash;
 using Content.Client.Fullscreen;
@@ -10,6 +11,7 @@ using Content.Client.GhostKick;
 using Content.Client.Guidebook;
 using Content.Client.Input;
 using Content.Client.IoC;
+using Content.Client.JoinQueue;
 using Content.Client.Launcher;
 using Content.Client.Lobby;
 using Content.Client.MainMenu;
@@ -37,182 +39,182 @@ using Robust.Shared.ContentPack;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Replays;
 
-namespace Content.Client.Entry
+#endregion
+
+
+namespace Content.Client.Entry;
+
+
+public sealed class EntryPoint : GameClient
 {
-    public sealed class EntryPoint : GameClient
+    [Dependency] private readonly IBaseClient _baseClient = default!;
+    [Dependency] private readonly IGameController _gameController = default!;
+    [Dependency] private readonly IStateManager _stateManager = default!;
+    [Dependency] private readonly IComponentFactory _componentFactory = default!;
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private readonly IClientAdminManager _adminManager = default!;
+    [Dependency] private readonly IParallaxManager _parallaxManager = default!;
+    [Dependency] private readonly IConfigurationManager _configManager = default!;
+    [Dependency] private readonly IStylesheetManager _stylesheetManager = default!;
+    [Dependency] private readonly IScreenshotHook _screenshotHook = default!;
+    [Dependency] private readonly FullscreenHook _fullscreenHook = default!;
+    [Dependency] private readonly ChangelogManager _changelogManager = default!;
+    [Dependency] private readonly ViewportManager _viewportManager = default!;
+    [Dependency] private readonly IUserInterfaceManager _userInterfaceManager = default!;
+    [Dependency] private readonly IInputManager _inputManager = default!;
+    [Dependency] private readonly IOverlayManager _overlayManager = default!;
+    [Dependency] private readonly IChatManager _chatManager = default!;
+    [Dependency] private readonly IClientPreferencesManager _clientPreferencesManager = default!;
+    [Dependency] private readonly EuiManager _euiManager = default!;
+    [Dependency] private readonly IVoteManager _voteManager = default!;
+    [Dependency] private readonly DocumentParsingManager _documentParsingManager = default!;
+    [Dependency] private readonly GhostKickManager _ghostKick = default!;
+    [Dependency] private readonly ExtendedDisconnectInformationManager _extendedDisconnectInformation = default!;
+    [Dependency] private readonly JobRequirementsManager _jobRequirements = default!;
+    [Dependency] private readonly ContentLocalizationManager _contentLoc = default!;
+    [Dependency] private readonly ContentReplayPlaybackManager _playbackMan = default!;
+    [Dependency] private readonly IResourceManager _resourceManager = default!;
+    [Dependency] private readonly IReplayLoadManager _replayLoad = default!;
+    [Dependency] private readonly ILogManager _logManager = default!;
+    [Dependency] private readonly JoinQueueManager _joinQueue = default!;
+    [Dependency] private readonly DiscordAuthManager _discordAuth = default!;
+
+    public override void Init()
     {
-        [Dependency] private readonly IBaseClient _baseClient = default!;
-        [Dependency] private readonly IGameController _gameController = default!;
-        [Dependency] private readonly IStateManager _stateManager = default!;
-        [Dependency] private readonly IComponentFactory _componentFactory = default!;
-        [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-        [Dependency] private readonly IClientAdminManager _adminManager = default!;
-        [Dependency] private readonly IParallaxManager _parallaxManager = default!;
-        [Dependency] private readonly IConfigurationManager _configManager = default!;
-        [Dependency] private readonly IStylesheetManager _stylesheetManager = default!;
-        [Dependency] private readonly IScreenshotHook _screenshotHook = default!;
-        [Dependency] private readonly FullscreenHook _fullscreenHook = default!;
-        [Dependency] private readonly ChangelogManager _changelogManager = default!;
-        [Dependency] private readonly ViewportManager _viewportManager = default!;
-        [Dependency] private readonly IUserInterfaceManager _userInterfaceManager = default!;
-        [Dependency] private readonly IInputManager _inputManager = default!;
-        [Dependency] private readonly IOverlayManager _overlayManager = default!;
-        [Dependency] private readonly IChatManager _chatManager = default!;
-        [Dependency] private readonly IClientPreferencesManager _clientPreferencesManager = default!;
-        [Dependency] private readonly EuiManager _euiManager = default!;
-        [Dependency] private readonly IVoteManager _voteManager = default!;
-        [Dependency] private readonly DocumentParsingManager _documentParsingManager = default!;
-        [Dependency] private readonly GhostKickManager _ghostKick = default!;
-        [Dependency] private readonly ExtendedDisconnectInformationManager _extendedDisconnectInformation = default!;
-        [Dependency] private readonly JobRequirementsManager _jobRequirements = default!;
-        [Dependency] private readonly ContentLocalizationManager _contentLoc = default!;
-        [Dependency] private readonly ContentReplayPlaybackManager _playbackMan = default!;
-        [Dependency] private readonly IResourceManager _resourceManager = default!;
-        [Dependency] private readonly IReplayLoadManager _replayLoad = default!;
-        [Dependency] private readonly ILogManager _logManager = default!;
-        [Dependency] private readonly JoinQueueManager _joinQueue = default!;
-        [Dependency] private readonly DiscordAuthManager _discordAuth = default!;
+        ClientContentIoC.Register();
 
-        public override void Init()
+        foreach (var callback in TestingCallbacks)
         {
-            ClientContentIoC.Register();
-
-            foreach (var callback in TestingCallbacks)
-            {
-                var cast = (ClientModuleTestingCallbacks) callback;
-                cast.ClientBeforeIoC?.Invoke();
-            }
-
-            IoCManager.BuildGraph();
-            IoCManager.InjectDependencies(this);
-
-            _contentLoc.Initialize();
-            _componentFactory.DoAutoRegistrations();
-            _componentFactory.IgnoreMissingComponents();
-
-            // Do not add to these, they are legacy.
-            _componentFactory.RegisterClass<SharedGravityGeneratorComponent>();
-            _componentFactory.RegisterClass<SharedAmeControllerComponent>();
-            // Do not add to the above, they are legacy
-
-            _prototypeManager.RegisterIgnore("utilityQuery");
-            _prototypeManager.RegisterIgnore("utilityCurvePreset");
-            _prototypeManager.RegisterIgnore("accent");
-            _prototypeManager.RegisterIgnore("gasReaction");
-            _prototypeManager.RegisterIgnore("seed"); // Seeds prototypes are server-only.
-            _prototypeManager.RegisterIgnore("objective");
-            _prototypeManager.RegisterIgnore("holiday");
-            _prototypeManager.RegisterIgnore("aiFaction");
-            _prototypeManager.RegisterIgnore("htnCompound");
-            _prototypeManager.RegisterIgnore("htnPrimitive");
-            _prototypeManager.RegisterIgnore("gameMap");
-            _prototypeManager.RegisterIgnore("gameMapPool");
-            _prototypeManager.RegisterIgnore("npcFaction");
-            _prototypeManager.RegisterIgnore("lobbyBackground");
-            _prototypeManager.RegisterIgnore("gamePreset");
-            _prototypeManager.RegisterIgnore("noiseChannel");
-            _prototypeManager.RegisterIgnore("spaceBiome");
-            _prototypeManager.RegisterIgnore("worldgenConfig");
-            _prototypeManager.RegisterIgnore("gameRule");
-            _prototypeManager.RegisterIgnore("worldSpell");
-            _prototypeManager.RegisterIgnore("entitySpell");
-            _prototypeManager.RegisterIgnore("instantSpell");
-            _prototypeManager.RegisterIgnore("roundAnnouncement");
-            _prototypeManager.RegisterIgnore("wireLayout");
-            _prototypeManager.RegisterIgnore("alertLevels");
-            _prototypeManager.RegisterIgnore("nukeopsRole");
-            _prototypeManager.RegisterIgnore("stationGoal");
-            _prototypeManager.RegisterIgnore("ghostRoleRaffleDecider");
-
-            _componentFactory.GenerateNetIds();
-            _adminManager.Initialize();
-            _screenshotHook.Initialize();
-            _fullscreenHook.Initialize();
-            _changelogManager.Initialize();
-            _viewportManager.Initialize();
-            _ghostKick.Initialize();
-            _extendedDisconnectInformation.Initialize();
-            _jobRequirements.Initialize();
-            _playbackMan.Initialize();
-
-            //AUTOSCALING default Setup!
-            _configManager.SetCVar("interface.resolutionAutoScaleUpperCutoffX", 1080);
-            _configManager.SetCVar("interface.resolutionAutoScaleUpperCutoffY", 720);
-            _configManager.SetCVar("interface.resolutionAutoScaleLowerCutoffX", 520);
-            _configManager.SetCVar("interface.resolutionAutoScaleLowerCutoffY", 240);
-            _configManager.SetCVar("interface.resolutionAutoScaleMinimum", 0.5f);
+            var cast = (ClientModuleTestingCallbacks) callback;
+            cast.ClientBeforeIoC?.Invoke();
         }
 
-        public override void PostInit()
+        IoCManager.BuildGraph();
+        IoCManager.InjectDependencies(this);
+
+        _contentLoc.Initialize();
+        _componentFactory.DoAutoRegistrations();
+        _componentFactory.IgnoreMissingComponents();
+
+        // Do not add to these, they are legacy.
+        _componentFactory.RegisterClass<SharedGravityGeneratorComponent>();
+        _componentFactory.RegisterClass<SharedAmeControllerComponent>();
+        // Do not add to the above, they are legacy
+
+        _prototypeManager.RegisterIgnore("utilityQuery");
+        _prototypeManager.RegisterIgnore("utilityCurvePreset");
+        _prototypeManager.RegisterIgnore("accent");
+        _prototypeManager.RegisterIgnore("gasReaction");
+        _prototypeManager.RegisterIgnore("seed"); // Seeds prototypes are server-only.
+        _prototypeManager.RegisterIgnore("objective");
+        _prototypeManager.RegisterIgnore("holiday");
+        _prototypeManager.RegisterIgnore("aiFaction");
+        _prototypeManager.RegisterIgnore("htnCompound");
+        _prototypeManager.RegisterIgnore("htnPrimitive");
+        _prototypeManager.RegisterIgnore("gameMap");
+        _prototypeManager.RegisterIgnore("gameMapPool");
+        _prototypeManager.RegisterIgnore("npcFaction");
+        _prototypeManager.RegisterIgnore("lobbyBackground");
+        _prototypeManager.RegisterIgnore("gamePreset");
+        _prototypeManager.RegisterIgnore("noiseChannel");
+        _prototypeManager.RegisterIgnore("spaceBiome");
+        _prototypeManager.RegisterIgnore("worldgenConfig");
+        _prototypeManager.RegisterIgnore("gameRule");
+        _prototypeManager.RegisterIgnore("worldSpell");
+        _prototypeManager.RegisterIgnore("entitySpell");
+        _prototypeManager.RegisterIgnore("instantSpell");
+        _prototypeManager.RegisterIgnore("roundAnnouncement");
+        _prototypeManager.RegisterIgnore("wireLayout");
+        _prototypeManager.RegisterIgnore("alertLevels");
+        _prototypeManager.RegisterIgnore("nukeopsRole");
+        _prototypeManager.RegisterIgnore("stationGoal");
+        _prototypeManager.RegisterIgnore("ghostRoleRaffleDecider");
+
+        _componentFactory.GenerateNetIds();
+        _adminManager.Initialize();
+        _screenshotHook.Initialize();
+        _fullscreenHook.Initialize();
+        _changelogManager.Initialize();
+        _viewportManager.Initialize();
+        _ghostKick.Initialize();
+        _extendedDisconnectInformation.Initialize();
+        _jobRequirements.Initialize();
+        _playbackMan.Initialize();
+
+        //AUTOSCALING default Setup!
+        _configManager.SetCVar("interface.resolutionAutoScaleUpperCutoffX", 1080);
+        _configManager.SetCVar("interface.resolutionAutoScaleUpperCutoffY", 720);
+        _configManager.SetCVar("interface.resolutionAutoScaleLowerCutoffX", 520);
+        _configManager.SetCVar("interface.resolutionAutoScaleLowerCutoffY", 240);
+        _configManager.SetCVar("interface.resolutionAutoScaleMinimum", 0.5f);
+    }
+
+    public override void PostInit()
+    {
+        base.PostInit();
+
+        _stylesheetManager.Initialize();
+
+        // Setup key contexts
+        ContentContexts.SetupContexts(_inputManager.Contexts);
+
+        _parallaxManager.LoadDefaultParallax();
+
+        _overlayManager.AddOverlay(new SingularityOverlay());
+        _overlayManager.AddOverlay(new FlashOverlay());
+        _overlayManager.AddOverlay(new RadiationPulseOverlay());
+        _chatManager.Initialize();
+        _clientPreferencesManager.Initialize();
+        _euiManager.Initialize();
+        _voteManager.Initialize();
+        _userInterfaceManager.SetDefaultTheme("SS14DefaultTheme");
+        _userInterfaceManager.SetActiveTheme(_configManager.GetCVar(CVars.InterfaceTheme));
+        _documentParsingManager.Initialize();
+        _joinQueue.Initialize();
+        _discordAuth.Initialize();
+
+        _baseClient.RunLevelChanged += (_, args) =>
         {
-            base.PostInit();
-
-            _stylesheetManager.Initialize();
-
-            // Setup key contexts
-            ContentContexts.SetupContexts(_inputManager.Contexts);
-
-            _parallaxManager.LoadDefaultParallax();
-
-            _overlayManager.AddOverlay(new SingularityOverlay());
-            _overlayManager.AddOverlay(new FlashOverlay());
-            _overlayManager.AddOverlay(new RadiationPulseOverlay());
-            _chatManager.Initialize();
-            _clientPreferencesManager.Initialize();
-            _euiManager.Initialize();
-            _voteManager.Initialize();
-            _userInterfaceManager.SetDefaultTheme("SS14DefaultTheme");
-            _userInterfaceManager.SetActiveTheme(_configManager.GetCVar(CVars.InterfaceTheme));
-            _documentParsingManager.Initialize();
-            _joinQueue.Initialize();
-            _discordAuth.Initialize();
-
-            _baseClient.RunLevelChanged += (_, args) =>
+            if (args.NewLevel == ClientRunLevel.Initialize)
             {
-                if (args.NewLevel == ClientRunLevel.Initialize)
-                {
-                    SwitchToDefaultState(args.OldLevel == ClientRunLevel.Connected ||
-                                         args.OldLevel == ClientRunLevel.InGame);
-                }
-            };
+                SwitchToDefaultState(
+                    args.OldLevel == ClientRunLevel.Connected ||
+                    args.OldLevel == ClientRunLevel.InGame);
+            }
+        };
 
-            // Disable engine-default viewport since we use our own custom viewport control.
-            _userInterfaceManager.MainViewport.Visible = false;
+        // Disable engine-default viewport since we use our own custom viewport control.
+        _userInterfaceManager.MainViewport.Visible = false;
 
-            SwitchToDefaultState();
-        }
+        SwitchToDefaultState();
+    }
 
-        private void SwitchToDefaultState(bool disconnected = false)
+    private void SwitchToDefaultState(bool disconnected = false)
+    {
+        // Fire off into state dependent on launcher or not.
+
+        // Check if we're loading a replay via content bundle!
+        if (_configManager.GetCVar(CVars.LaunchContentBundle)
+            && _resourceManager.ContentFileExists(
+                ReplayConstants.ReplayZipFolder.ToRootedPath() / ReplayConstants.FileMeta))
         {
-            // Fire off into state dependent on launcher or not.
+            _logManager.GetSawmill("entry").Info("Loading content bundle replay from VFS!");
 
-            // Check if we're loading a replay via content bundle!
-            if (_configManager.GetCVar(CVars.LaunchContentBundle)
-                && _resourceManager.ContentFileExists(
-                    ReplayConstants.ReplayZipFolder.ToRootedPath() / ReplayConstants.FileMeta))
-            {
-                _logManager.GetSawmill("entry").Info("Loading content bundle replay from VFS!");
+            var reader = new ReplayFileReaderResources(
+                _resourceManager,
+                ReplayConstants.ReplayZipFolder.ToRootedPath());
 
-                var reader = new ReplayFileReaderResources(
-                    _resourceManager,
-                    ReplayConstants.ReplayZipFolder.ToRootedPath());
-
-                _replayLoad.LoadAndStartReplay(reader);
-            }
-            else if (_gameController.LaunchState.FromLauncher)
-            {
-                _stateManager.RequestStateChange<LauncherConnecting>();
-                var state = (LauncherConnecting) _stateManager.CurrentState;
-
-                if (disconnected)
-                {
-                    state.SetDisconnected();
-                }
-            }
-            else
-            {
-                _stateManager.RequestStateChange<MainScreen>();
-            }
+            _replayLoad.LoadAndStartReplay(reader);
         }
+        else if (_gameController.LaunchState.FromLauncher)
+        {
+            _stateManager.RequestStateChange<LauncherConnecting>();
+            var state = (LauncherConnecting) _stateManager.CurrentState;
+
+            if (disconnected)
+                state.SetDisconnected();
+        }
+        else
+            _stateManager.RequestStateChange<MainScreen>();
     }
 }

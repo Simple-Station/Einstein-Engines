@@ -1,11 +1,17 @@
-﻿using Content.Client.UserInterface.Controls;
+﻿#region
+
+using Content.Client.UserInterface.Controls;
 using Content.Shared.WhiteDream.BloodCult.UI;
 using JetBrains.Annotations;
 using Robust.Client.UserInterface.Controls;
 
+#endregion
+
+
 // ReSharper disable InconsistentNaming
 
 namespace Content.Client.WhiteDream.BloodCult.NameSelector;
+
 
 [UsedImplicitly]
 public sealed class NameSelectorBUI(EntityUid owner, Enum uiKey) : BoundUserInterface(owner, uiKey)

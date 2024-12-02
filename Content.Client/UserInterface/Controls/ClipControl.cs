@@ -1,12 +1,18 @@
-﻿using System.Numerics;
+﻿#region
+
+using System.Numerics;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 
+#endregion
+
+
 namespace Content.Client.UserInterface.Controls;
 
+
 /// <summary>
-/// Pretends to child controls that there's infinite space.
-/// This can be used to make something like a <see cref="RichTextLabel"/> clip instead of wrapping.
+///     Pretends to child controls that there's infinite space.
+///     This can be used to make something like a <see cref="RichTextLabel" /> clip instead of wrapping.
 /// </summary>
 public sealed class ClipControl : Control
 {
@@ -36,9 +42,9 @@ public sealed class ClipControl : Control
     protected override Vector2 MeasureOverride(Vector2 availableSize)
     {
         if (ClipHorizontal)
-            availableSize = availableSize with { X = float.PositiveInfinity };
+            availableSize = availableSize with { X = float.PositiveInfinity, };
         if (ClipVertical)
-            availableSize = availableSize with { Y = float.PositiveInfinity };
+            availableSize = availableSize with { Y = float.PositiveInfinity, };
 
         return base.MeasureOverride(availableSize);
     }
@@ -46,9 +52,7 @@ public sealed class ClipControl : Control
     protected override Vector2 ArrangeOverride(Vector2 finalSize)
     {
         foreach (var child in Children)
-        {
             child.Arrange(UIBox2.FromDimensions(Vector2.Zero, child.DesiredSize));
-        }
 
         return finalSize;
     }

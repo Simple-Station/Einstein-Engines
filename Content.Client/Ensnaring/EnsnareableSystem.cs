@@ -1,8 +1,14 @@
+#region
+
 using Content.Shared.Ensnaring;
 using Content.Shared.Ensnaring.Components;
 using Robust.Client.GameObjects;
 
+#endregion
+
+
 namespace Content.Client.Ensnaring.Visualizers;
+
 
 public sealed class EnsnareableSystem : SharedEnsnareableSystem
 {
@@ -18,7 +24,7 @@ public sealed class EnsnareableSystem : SharedEnsnareableSystem
 
     private void OnComponentInit(EntityUid uid, EnsnareableComponent component, ComponentInit args)
     {
-        if(!TryComp<SpriteComponent>(uid, out var sprite))
+        if (!TryComp<SpriteComponent>(uid, out var sprite))
             return;
 
         // TODO remove this, this should just be in yaml.
@@ -44,5 +50,5 @@ public sealed class EnsnareableSystem : SharedEnsnareableSystem
 
 public enum EnsnaredVisualLayers : byte
 {
-    Ensnared,
+    Ensnared
 }

@@ -1,10 +1,16 @@
+#region
+
 using Content.Client.UserInterface.Systems.Bwoink;
 using Content.Shared.Administration;
 using Robust.Client.UserInterface;
 using Robust.Shared.Console;
 using Robust.Shared.Network;
 
+#endregion
+
+
 namespace Content.Client.Commands;
+
 
 [AnyCommand]
 public sealed class OpenAHelpCommand : LocalizedCommands
@@ -22,10 +28,9 @@ public sealed class OpenAHelpCommand : LocalizedCommands
             shell.WriteLine(Help);
             return;
         }
+
         if (args.Length == 0)
-        {
             _userInterfaceManager.GetUIController<AHelpUIController>().Open();
-        }
         else
         {
             if (Guid.TryParse(args[0], out var guid))
@@ -34,9 +39,7 @@ public sealed class OpenAHelpCommand : LocalizedCommands
                 _userInterfaceManager.GetUIController<AHelpUIController>().Open(targetUser);
             }
             else
-            {
                 shell.WriteError(LocalizationManager.GetString($"cmd-{Command}-error"));
-            }
         }
     }
 }

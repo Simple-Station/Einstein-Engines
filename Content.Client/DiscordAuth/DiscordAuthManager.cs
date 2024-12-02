@@ -1,8 +1,14 @@
+#region
+
 using Content.Shared.DiscordAuth;
 using Robust.Client.State;
 using Robust.Shared.Network;
 
+#endregion
+
+
 namespace Content.Client.DiscordAuth;
+
 
 public sealed class DiscordAuthManager
 {

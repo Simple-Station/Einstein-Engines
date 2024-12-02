@@ -1,7 +1,13 @@
+#region
+
 using Content.Shared.Sticky.Components;
 using Robust.Client.GameObjects;
 
+#endregion
+
+
 namespace Content.Client.Sticky.Visualizers;
+
 
 public sealed class StickyVisualizerSystem : VisualizerSystem<StickyVisualizerComponent>
 {
@@ -19,7 +25,11 @@ public sealed class StickyVisualizerSystem : VisualizerSystem<StickyVisualizerCo
         component.DefaultDrawDepth = sprite.DrawDepth;
     }
 
-    protected override void OnAppearanceChange(EntityUid uid, StickyVisualizerComponent component, ref AppearanceChangeEvent args)
+    protected override void OnAppearanceChange(
+        EntityUid uid,
+        StickyVisualizerComponent component,
+        ref AppearanceChangeEvent args
+    )
     {
         if (args.Sprite == null)
             return;
@@ -29,6 +39,5 @@ public sealed class StickyVisualizerSystem : VisualizerSystem<StickyVisualizerCo
 
         var drawDepth = isStuck ? component.StuckDrawDepth : component.DefaultDrawDepth;
         args.Sprite.DrawDepth = drawDepth;
-
     }
 }

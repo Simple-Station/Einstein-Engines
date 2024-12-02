@@ -1,5 +1,5 @@
-using Content.Client.Gameplay;
-using Content.Client.Info;
+#region
+
 using Robust.Client.Input;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controllers;
@@ -7,7 +7,11 @@ using Robust.Client.UserInterface.CustomControls;
 using Robust.Shared.Input;
 using Robust.Shared.Input.Binding;
 
+#endregion
+
+
 namespace Content.Client.UserInterface.Systems.Info;
+
 
 public sealed class CloseRecentWindowUIController : UIController
 {
@@ -15,11 +19,11 @@ public sealed class CloseRecentWindowUIController : UIController
     [Dependency] private readonly IUserInterfaceManager _uiManager = default!;
 
     /// <summary>
-    /// A list of windows that have been interacted with recently.  Windows should only
-    /// be in this list once, with the most recent window at the end, and the oldest
-    /// window at the start.
+    ///     A list of windows that have been interacted with recently.  Windows should only
+    ///     be in this list once, with the most recent window at the end, and the oldest
+    ///     window at the start.
     /// </summary>
-    List<BaseWindow> recentlyInteractedWindows = new List<BaseWindow>();
+    private readonly List<BaseWindow> recentlyInteractedWindows = new();
 
     public override void Initialize()
     {
@@ -28,20 +32,22 @@ public sealed class CloseRecentWindowUIController : UIController
         _uiManager.OnKeyBindDown += OnKeyBindDown;
         _uiManager.WindowRoot.OnChildAdded += OnRootChildAdded;
 
-        _inputManager.SetInputCommand(EngineKeyFunctions.WindowCloseRecent,
+        _inputManager.SetInputCommand(
+            EngineKeyFunctions.WindowCloseRecent,
             InputCmdHandler.FromDelegate(session => CloseMostRecentWindow()));
     }
 
     /// <summary>
-    /// Closes the most recently focused window.
+    ///     Closes the most recently focused window.
     /// </summary>
     public void CloseMostRecentWindow()
     {
         // Search backwards through the recency list to find a still open window and close it
-        for (int i=recentlyInteractedWindows.Count-1; i>=0; i--)
+        for (var i = recentlyInteractedWindows.Count - 1; i >= 0; i--)
         {
             var window = recentlyInteractedWindows[i];
-            recentlyInteractedWindows.RemoveAt(i); // Should always be removed as either the reference is stale or we're closing it
+            recentlyInteractedWindows
+                .RemoveAt(i); // Should always be removed as either the reference is stale or we're closing it
             if (window.IsOpen)
             {
                 window.Close();
@@ -70,8 +76,8 @@ public sealed class CloseRecentWindowUIController : UIController
     }
 
     /// <summary>
-    /// Sets the window as the one most recently interacted with.  This function will update the
-    /// internal recentlyInteractedWindows tracking.
+    ///     Sets the window as the one most recently interacted with.  This function will update the
+    ///     internal recentlyInteractedWindows tracking.
     /// </summary>
     /// <param name="window"></param>
     private void SetMostRecentlyInteractedWindow(BaseWindow window)
@@ -79,23 +85,17 @@ public sealed class CloseRecentWindowUIController : UIController
         // Search through the list and see if already added.
         // (This search is backwards since it's fairly common that the user is clicking the same
         // window multiple times in a row, and so that saves a tiny bit of perf doing it this way)
-        for (int i=recentlyInteractedWindows.Count-1; i>=0; i--)
-        {
+        for (var i = recentlyInteractedWindows.Count - 1; i >= 0; i--)
             if (recentlyInteractedWindows[i] == window)
             {
                 // Window already in the list
-
                 // Is window the top most recent entry?
-                if (i == recentlyInteractedWindows.Count-1)
+                if (i == recentlyInteractedWindows.Count - 1)
                     return; // Then there's nothing to do, it's already in the right spot
-                else
-                {
-                    // Need to remove the old entry so it can be readded (no duplicates in list allowed)
-                    recentlyInteractedWindows.RemoveAt(i);
-                    break;
-                }
+                // Need to remove the old entry so it can be readded (no duplicates in list allowed)
+                recentlyInteractedWindows.RemoveAt(i);
+                break;
             }
-        }
 
         // Now that the list has been checked for duplicates, okay to add new window at end of tracking
         recentlyInteractedWindows.Add(window);
@@ -123,7 +123,7 @@ public sealed class CloseRecentWindowUIController : UIController
     }
 
     /// <summary>
-    /// Checks whether there are any windows that can be closed.
+    ///     Checks whether there are any windows that can be closed.
     /// </summary>
     /// <returns></returns>
     public bool HasClosableWindow()

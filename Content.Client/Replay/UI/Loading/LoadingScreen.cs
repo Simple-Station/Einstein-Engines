@@ -1,10 +1,16 @@
+#region
+
 using Robust.Client.ResourceManagement;
 using Robust.Client.State;
 using Robust.Client.UserInterface;
 using Robust.Shared.CPUJob.JobQueues;
 using Robust.Shared.Timing;
 
+#endregion
+
+
 namespace Content.Client.Replay.UI.Loading;
+
 
 [Virtual]
 public class LoadingScreen<TResult> : State
@@ -36,10 +42,7 @@ public class LoadingScreen<TResult> : State
         _userInterfaceManager.StateRoot.AddChild(_screen);
     }
 
-    protected override void Shutdown()
-    {
-        _screen.Dispose();
-    }
+    protected override void Shutdown() => _screen.Dispose();
 
     public void UpdateProgress(float value, float maxValue, string header, string subtext = "")
     {

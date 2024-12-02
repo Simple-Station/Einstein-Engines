@@ -1,8 +1,13 @@
+#region
+
 using Content.Shared.Xenoarchaeology.Equipment;
 using JetBrains.Annotations;
-using Robust.Client.GameObjects;
+
+#endregion
+
 
 namespace Content.Client.Xenoarchaeology.Ui;
+
 
 [UsedImplicitly]
 public sealed class AnalysisConsoleBoundUserInterface : BoundUserInterface
@@ -10,15 +15,13 @@ public sealed class AnalysisConsoleBoundUserInterface : BoundUserInterface
     [ViewVariables]
     private AnalysisConsoleMenu? _consoleMenu;
 
-    public AnalysisConsoleBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-    {
-    }
+    public AnalysisConsoleBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
 
     protected override void Open()
     {
         base.Open();
 
-        _consoleMenu = new AnalysisConsoleMenu();
+        _consoleMenu = new();
 
         _consoleMenu.OnClose += Close;
         _consoleMenu.OpenCentered();
@@ -73,4 +76,3 @@ public sealed class AnalysisConsoleBoundUserInterface : BoundUserInterface
         _consoleMenu?.Dispose();
     }
 }
-

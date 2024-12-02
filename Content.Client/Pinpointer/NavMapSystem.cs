@@ -1,9 +1,15 @@
+#region
+
 using Content.Shared.Pinpointer;
 using Robust.Shared.GameStates;
 
+#endregion
+
+
 namespace Content.Client.Pinpointer;
 
-public sealed partial class NavMapSystem : SharedNavMapSystem
+
+public sealed class NavMapSystem : SharedNavMapSystem
 {
     public override void Initialize()
     {
@@ -24,10 +30,8 @@ public sealed partial class NavMapSystem : SharedNavMapSystem
                 modifiedChunks = delta.ModifiedChunks;
                 beacons = delta.Beacons;
                 foreach (var index in component.Chunks.Keys)
-                {
                     if (!delta.AllChunks!.Contains(index))
                         component.Chunks.Remove(index);
-                }
 
                 break;
             }
@@ -36,10 +40,8 @@ public sealed partial class NavMapSystem : SharedNavMapSystem
                 modifiedChunks = state.Chunks;
                 beacons = state.Beacons;
                 foreach (var index in component.Chunks.Keys)
-                {
                     if (!state.Chunks.ContainsKey(index))
                         component.Chunks.Remove(index);
-                }
 
                 break;
             }
@@ -56,8 +58,6 @@ public sealed partial class NavMapSystem : SharedNavMapSystem
 
         component.Beacons.Clear();
         foreach (var (nuid, beacon) in beacons)
-        {
             component.Beacons[nuid] = beacon;
-        }
     }
 }

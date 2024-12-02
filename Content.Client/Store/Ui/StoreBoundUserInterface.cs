@@ -1,14 +1,20 @@
+#region
+
+using System.Linq;
 using Content.Shared.Store;
 using JetBrains.Annotations;
-using System.Linq;
 using Robust.Shared.Prototypes;
 
+#endregion
+
+
 namespace Content.Client.Store.Ui;
+
 
 [UsedImplicitly]
 public sealed class StoreBoundUserInterface : BoundUserInterface
 {
-    private IPrototypeManager _prototypeManager = default!;
+    private readonly IPrototypeManager _prototypeManager = default!;
 
     [ViewVariables]
     private StoreMenu? _menu;
@@ -22,13 +28,11 @@ public sealed class StoreBoundUserInterface : BoundUserInterface
     [ViewVariables]
     private HashSet<ListingData> _listings = new();
 
-    public StoreBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-    {
-    }
+    public StoreBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
 
     protected override void Open()
     {
-        _menu = new StoreMenu(_windowName);
+        _menu = new(_windowName);
 
         _menu.OpenCentered();
         _menu.OnClose += Close;
@@ -55,11 +59,12 @@ public sealed class StoreBoundUserInterface : BoundUserInterface
             UpdateListingsWithSearchFilter();
         };
 
-        _menu.OnRefundAttempt += (_) =>
+        _menu.OnRefundAttempt += _ =>
         {
             SendMessage(new StoreRequestRefundMessage());
         };
     }
+
     protected override void UpdateState(BoundUserInterfaceState state)
     {
         base.UpdateState(state);
@@ -80,9 +85,7 @@ public sealed class StoreBoundUserInterface : BoundUserInterface
             case StoreInitializeState msg:
                 _windowName = msg.Name;
                 if (_menu != null && _menu.Window != null)
-                {
                     _menu.Window.Title = msg.Name;
-                }
                 break;
         }
     }
@@ -104,9 +107,18 @@ public sealed class StoreBoundUserInterface : BoundUserInterface
         var filteredListings = new HashSet<ListingData>(_listings);
         if (!string.IsNullOrEmpty(_search))
         {
-            filteredListings.RemoveWhere(listingData => !ListingLocalisationHelpers.GetLocalisedNameOrEntityName(listingData, _prototypeManager).Trim().ToLowerInvariant().Contains(_search) &&
-                                                        !ListingLocalisationHelpers.GetLocalisedDescriptionOrEntityDescription(listingData, _prototypeManager).Trim().ToLowerInvariant().Contains(_search));
+            filteredListings.RemoveWhere(
+                listingData => !ListingLocalisationHelpers.GetLocalisedNameOrEntityName(listingData, _prototypeManager)
+                        .Trim()
+                        .ToLowerInvariant()
+                        .Contains(_search) &&
+                    !ListingLocalisationHelpers
+                        .GetLocalisedDescriptionOrEntityDescription(listingData, _prototypeManager)
+                        .Trim()
+                        .ToLowerInvariant()
+                        .Contains(_search));
         }
+
         _menu.PopulateStoreCategoryButtons(filteredListings);
         _menu.UpdateListing(filteredListings.ToList());
     }

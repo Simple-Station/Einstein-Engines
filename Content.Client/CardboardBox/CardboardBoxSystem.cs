@@ -1,4 +1,5 @@
-using System.Numerics;
+#region
+
 using Content.Shared.Body.Components;
 using Content.Shared.CardboardBox;
 using Content.Shared.CardboardBox.Components;
@@ -6,7 +7,11 @@ using Content.Shared.Examine;
 using Content.Shared.Movement.Components;
 using Robust.Client.GameObjects;
 
+#endregion
+
+
 namespace Content.Client.CardboardBox;
+
 
 public sealed class CardboardBoxSystem : SharedCardboardBoxSystem
 {
@@ -71,12 +76,12 @@ public sealed class CardboardBoxSystem : SharedCardboardBoxSystem
 
             var ent = Spawn(box.Effect, mapPos);
 
-            if (!xformQuery.TryGetComponent(ent, out var entTransform) || !TryComp<SpriteComponent>(ent, out var sprite))
+            if (!xformQuery.TryGetComponent(ent, out var entTransform) ||
+                !TryComp<SpriteComponent>(ent, out var sprite))
                 continue;
 
-            sprite.Offset = new Vector2(0, 1);
+            sprite.Offset = new(0, 1);
             _transform.SetParent(ent, entTransform, mob);
         }
-
     }
 }

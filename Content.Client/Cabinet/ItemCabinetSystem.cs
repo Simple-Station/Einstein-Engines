@@ -1,7 +1,13 @@
+#region
+
 using Content.Shared.Cabinet;
 using Robust.Client.GameObjects;
 
+#endregion
+
+
 namespace Content.Client.Cabinet;
+
 
 public sealed class ItemCabinetSystem : SharedItemCabinetSystem
 {

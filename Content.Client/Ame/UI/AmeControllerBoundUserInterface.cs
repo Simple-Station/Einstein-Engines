@@ -1,54 +1,52 @@
+#region
+
 using Content.Shared.Ame.Components;
 using JetBrains.Annotations;
 
-namespace Content.Client.Ame.UI
+#endregion
+
+
+namespace Content.Client.Ame.UI;
+
+
+[UsedImplicitly]
+public sealed class AmeControllerBoundUserInterface : BoundUserInterface
 {
-    [UsedImplicitly]
-    public sealed class AmeControllerBoundUserInterface : BoundUserInterface
+    private AmeWindow? _window;
+
+    public AmeControllerBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
+
+    protected override void Open()
     {
-        private AmeWindow? _window;
+        base.Open();
 
-        public AmeControllerBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-        {
-        }
+        _window = new(this);
+        _window.OnClose += Close;
+        _window.OpenCentered();
+    }
 
-        protected override void Open()
-        {
-            base.Open();
+    /// <summary>
+    ///     Update the ui each time new state data is sent from the server.
+    /// </summary>
+    /// <param name="state">
+    ///     Data of the <see cref="SharedReagentDispenserComponent" /> that this ui represents.
+    ///     Sent from the server.
+    /// </param>
+    protected override void UpdateState(BoundUserInterfaceState state)
+    {
+        base.UpdateState(state);
 
-            _window = new AmeWindow(this);
-            _window.OnClose += Close;
-            _window.OpenCentered();
-        }
+        var castState = (AmeControllerBoundUserInterfaceState) state;
+        _window?.UpdateState(castState); //Update window state
+    }
 
-        /// <summary>
-        /// Update the ui each time new state data is sent from the server.
-        /// </summary>
-        /// <param name="state">
-        /// Data of the <see cref="SharedReagentDispenserComponent"/> that this ui represents.
-        /// Sent from the server.
-        /// </param>
-        protected override void UpdateState(BoundUserInterfaceState state)
-        {
-            base.UpdateState(state);
+    public void ButtonPressed(UiButton button) => SendMessage(new UiButtonPressedMessage(button));
 
-            var castState = (AmeControllerBoundUserInterfaceState) state;
-            _window?.UpdateState(castState); //Update window state
-        }
+    protected override void Dispose(bool disposing)
+    {
+        base.Dispose(disposing);
 
-        public void ButtonPressed(UiButton button)
-        {
-            SendMessage(new UiButtonPressedMessage(button));
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-
-            if (disposing)
-            {
-                _window?.Dispose();
-            }
-        }
+        if (disposing)
+            _window?.Dispose();
     }
 }

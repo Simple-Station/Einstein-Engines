@@ -1,40 +1,43 @@
+#region
+
 using Content.Shared.Construction.Components;
 using JetBrains.Annotations;
 
-namespace Content.Client.Construction.UI
+#endregion
+
+
+namespace Content.Client.Construction.UI;
+
+
+[UsedImplicitly]
+public sealed class FlatpackCreatorBoundUserInterface : BoundUserInterface
 {
-    [UsedImplicitly]
-    public sealed class FlatpackCreatorBoundUserInterface : BoundUserInterface
+    [ViewVariables]
+    private FlatpackCreatorMenu? _menu;
+
+    public FlatpackCreatorBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
+
+    protected override void Open()
     {
-        [ViewVariables]
-        private FlatpackCreatorMenu? _menu;
+        base.Open();
 
-        public FlatpackCreatorBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
+        _menu = new(Owner);
+        _menu.OnClose += Close;
+
+        _menu.PackButtonPressed += () =>
         {
-        }
+            SendMessage(new FlatpackCreatorStartPackBuiMessage());
+        };
 
-        protected override void Open()
-        {
-            base.Open();
+        _menu.OpenCentered();
+    }
 
-            _menu = new FlatpackCreatorMenu(Owner);
-            _menu.OnClose += Close;
+    protected override void Dispose(bool disposing)
+    {
+        base.Dispose(disposing);
+        if (!disposing)
+            return;
 
-            _menu.PackButtonPressed += () =>
-            {
-                SendMessage(new FlatpackCreatorStartPackBuiMessage());
-            };
-
-            _menu.OpenCentered();
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-            if (!disposing)
-                return;
-
-            _menu?.Dispose();
-        }
+        _menu?.Dispose();
     }
 }

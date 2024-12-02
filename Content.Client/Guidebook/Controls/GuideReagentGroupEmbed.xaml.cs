@@ -1,3 +1,5 @@
+#region
+
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Client.Guidebook.Richtext;
@@ -9,12 +11,16 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 
+#endregion
+
+
 namespace Content.Client.Guidebook.Controls;
+
 
 /// <summary>
 ///     Control for embedding a reagent into a guidebook.
 /// </summary>
-[UsedImplicitly, GenerateTypedNameReferences]
+[UsedImplicitly, GenerateTypedNameReferences,]
 public sealed partial class GuideReagentGroupEmbed : BoxContainer, IDocumentTag
 {
     [Dependency] private readonly IPrototypeManager _prototype = default!;
@@ -29,7 +35,8 @@ public sealed partial class GuideReagentGroupEmbed : BoxContainer, IDocumentTag
     public GuideReagentGroupEmbed(string group) : this()
     {
         var prototypes = _prototype.EnumeratePrototypes<ReagentPrototype>()
-            .Where(p => p.Group.Equals(group)).OrderBy(p => p.LocalizedName);
+            .Where(p => p.Group.Equals(group))
+            .OrderBy(p => p.LocalizedName);
         foreach (var reagent in prototypes)
         {
             var embed = new GuideReagentEmbed(reagent);
@@ -47,7 +54,8 @@ public sealed partial class GuideReagentGroupEmbed : BoxContainer, IDocumentTag
         }
 
         var prototypes = _prototype.EnumeratePrototypes<ReagentPrototype>()
-            .Where(p => p.Group.Equals(group)).OrderBy(p => p.LocalizedName);
+            .Where(p => p.Group.Equals(group))
+            .OrderBy(p => p.LocalizedName);
         foreach (var reagent in prototypes)
         {
             var embed = new GuideReagentEmbed(reagent);

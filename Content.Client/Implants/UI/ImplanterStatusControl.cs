@@ -1,3 +1,5 @@
+#region
+
 using Content.Client.Message;
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Controls;
@@ -6,7 +8,11 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Timing;
 
+#endregion
+
+
 namespace Content.Client.Implants.UI;
+
 
 public sealed class ImplanterStatusControl : Control
 {
@@ -16,9 +22,9 @@ public sealed class ImplanterStatusControl : Control
     public ImplanterStatusControl(ImplanterComponent parent)
     {
         _parent = parent;
-        _label = new RichTextLabel { StyleClasses = { StyleNano.StyleClassItemStatus } };
+        _label = new() { StyleClasses = { StyleNano.StyleClassItemStatus, }, };
         _label.MaxWidth = 350;
-        AddChild(new ClipControl { Children = { _label } });
+        AddChild(new ClipControl { Children = { _label, }, });
 
         Update();
     }
@@ -47,7 +53,9 @@ public sealed class ImplanterStatusControl : Control
             ? _parent.ImplantData.Item1
             : Loc.GetString("implanter-empty-text");
 
-        _label.SetMarkup(Loc.GetString("implanter-label",
+        _label.SetMarkup(
+            Loc.GetString(
+                "implanter-label",
                 ("implantName", implantName),
                 ("modeString", modeStringLocalized)));
     }

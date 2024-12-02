@@ -1,9 +1,15 @@
-﻿using System.Numerics;
+﻿#region
+
+using System.Numerics;
 using Content.Client.UserInterface.Controls;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 
+#endregion
+
+
 namespace Content.Client.UserInterface.Systems.Inventory.Controls;
+
 
 public sealed class InventoryDisplay : LayoutContainer
 {

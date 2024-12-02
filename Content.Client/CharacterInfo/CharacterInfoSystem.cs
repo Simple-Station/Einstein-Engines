@@ -1,9 +1,15 @@
-﻿using Content.Shared.CharacterInfo;
+﻿#region
+
+using Content.Shared.CharacterInfo;
 using Content.Shared.Objectives;
 using Robust.Client.Player;
 using Robust.Client.UserInterface;
 
+#endregion
+
+
 namespace Content.Client.CharacterInfo;
+
 
 public sealed class CharacterInfoSystem : EntitySystem
 {
@@ -22,9 +28,7 @@ public sealed class CharacterInfoSystem : EntitySystem
     {
         var entity = _players.LocalEntity;
         if (entity == null)
-        {
             return;
-        }
 
         RaiseNetworkEvent(new RequestCharacterInfoEvent(GetNetEntity(entity.Value)));
     }
@@ -53,7 +57,7 @@ public sealed class CharacterInfoSystem : EntitySystem
     );
 
     /// <summary>
-    /// Event raised to get additional controls to display in the character info menu.
+    ///     Event raised to get additional controls to display in the character info menu.
     /// </summary>
     [ByRefEvent]
     public readonly record struct GetCharacterInfoControlsEvent(EntityUid Entity)

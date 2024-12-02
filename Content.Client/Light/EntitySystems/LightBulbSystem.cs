@@ -1,7 +1,13 @@
+#region
+
 using Content.Shared.Light.Components;
 using Robust.Client.GameObjects;
 
+#endregion
+
+
 namespace Content.Client.Light.Visualizers;
+
 
 public sealed class LightBulbSystem : VisualizerSystem<LightBulbComponent>
 {
@@ -29,8 +35,6 @@ public sealed class LightBulbSystem : VisualizerSystem<LightBulbComponent>
 
         // also update sprites color
         if (AppearanceSystem.TryGetData<Color>(uid, LightBulbVisuals.Color, out var color, args.Component))
-        {
             args.Sprite.Color = color;
-        }
     }
 }

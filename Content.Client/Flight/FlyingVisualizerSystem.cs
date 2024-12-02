@@ -1,17 +1,24 @@
+#region
+
 using Content.Client.Flight.Components;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Prototypes;
 
+#endregion
+
+
 namespace Content.Client.Flight;
 
+
 /// <summary>
-/// Handles offsetting an entity while flying
+///     Handles offsetting an entity while flying
 /// </summary>
 public sealed class FlyingVisualizerSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
     [Dependency] private readonly SpriteSystem _spriteSystem = default!;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -27,10 +34,8 @@ public sealed class FlyingVisualizerSystem : EntitySystem
         SetValues(comp, comp.Speed, comp.Offset, comp.Multiplier);
     }
 
-    private void OnShutdown(EntityUid uid, FlightVisualsComponent comp, ComponentShutdown args)
-    {
+    private void OnShutdown(EntityUid uid, FlightVisualsComponent comp, ComponentShutdown args) =>
         AddShader(uid, null, comp.AnimateLayer, comp.TargetLayer);
-    }
 
     private void AddShader(Entity<SpriteComponent?> entity, ShaderInstance? shader, bool animateLayer, int? layer)
     {
@@ -50,10 +55,8 @@ public sealed class FlyingVisualizerSystem : EntitySystem
     /// <summary>
     ///     This function can be used to modify the shader's values while its running.
     /// </summary>
-    private void OnBeforeShaderPost(EntityUid uid, FlightVisualsComponent comp, ref BeforePostShaderRenderEvent args)
-    {
+    private void OnBeforeShaderPost(EntityUid uid, FlightVisualsComponent comp, ref BeforePostShaderRenderEvent args) =>
         SetValues(comp, comp.Speed, comp.Offset, comp.Multiplier);
-    }
 
     private void SetValues(FlightVisualsComponent comp, float speed, float offset, float multiplier)
     {

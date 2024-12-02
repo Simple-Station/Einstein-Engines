@@ -1,9 +1,12 @@
-﻿using Content.Client.Eui;
-using Content.Shared.Cloning;
-using JetBrains.Annotations;
-using Robust.Client.Graphics;
+﻿#region
 
-namespace Content.Client.Cloning.UI
+using Content.Client.Eui;
+using JetBrains.Annotations;
+
+#endregion
+
+
+amespace Content.Client.Cloning.UI
 {
     [UsedImplicitly]
     public sealed class AcceptCloningEui : BaseEui

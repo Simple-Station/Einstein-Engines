@@ -1,9 +1,14 @@
-﻿using System.Numerics;
+﻿#region
+
 using Content.Client.Administration.Components;
 using Robust.Client.GameObjects;
 using Robust.Shared.Utility;
 
+#endregion
+
+
 namespace Content.Client.Administration.Systems;
+
 
 public sealed class KillSignSystem : EntitySystem
 {
@@ -29,20 +34,20 @@ public sealed class KillSignSystem : EntitySystem
         if (!TryComp<SpriteComponent>(uid, out var sprite))
             return;
 
-        if (sprite.LayerMapTryGet(KillSignKey.Key, out var _))
+        if (sprite.LayerMapTryGet(KillSignKey.Key, out _))
             return;
 
-        var adj = sprite.Bounds.Height / 2 + ((1.0f/32) * 6.0f);
+        var adj = sprite.Bounds.Height / 2 + 1.0f / 32 * 6.0f;
 
-        var layer = sprite.AddLayer(new SpriteSpecifier.Rsi(new ResPath("Objects/Misc/killsign.rsi"), "sign"));
+        var layer = sprite.AddLayer(new SpriteSpecifier.Rsi(new("Objects/Misc/killsign.rsi"), "sign"));
         sprite.LayerMapSet(KillSignKey.Key, layer);
 
-        sprite.LayerSetOffset(layer, new Vector2(0.0f, adj));
+        sprite.LayerSetOffset(layer, new(0.0f, adj));
         sprite.LayerSetShader(layer, "unshaded");
     }
 
     private enum KillSignKey
     {
-        Key,
+        Key
     }
 }

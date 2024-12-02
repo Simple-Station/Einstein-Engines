@@ -1,3 +1,5 @@
+#region
+
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared.DoAfter;
 using Content.Shared.Hands.Components;
@@ -5,11 +7,15 @@ using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Shared.Prototypes;
 
+#endregion
+
+
 namespace Content.Client.DoAfter;
 
+
 /// <summary>
-/// Handles events that need to happen after a certain amount of time where the event could be cancelled by factors
-/// such as moving.
+///     Handles events that need to happen after a certain amount of time where the event could be cancelled by factors
+///     such as moving.
 /// </summary>
 public sealed class DoAfterSystem : SharedDoAfterSystem
 {
@@ -54,9 +60,9 @@ public sealed class DoAfterSystem : SharedDoAfterSystem
     }
 
     /// <summary>
-    /// Try to find an active do-after being executed by the local player.
+    ///     Try to find an active do-after being executed by the local player.
     /// </summary>
-    /// <param name="entity">The entity the do after must be targeting (<see cref="DoAfterArgs.Target"/>)</param>
+    /// <param name="entity">The entity the do after must be targeting (<see cref="DoAfterArgs.Target" />)</param>
     /// <param name="doAfter">The found do-after.</param>
     /// <param name="event">The event to be raised on the found do-after when it completes.</param>
     /// <param name="progress">The progress of the found do-after, from 0 to 1.</param>
@@ -66,7 +72,8 @@ public sealed class DoAfterSystem : SharedDoAfterSystem
         EntityUid entity,
         [NotNullWhen(true)] out Shared.DoAfter.DoAfter? doAfter,
         [NotNullWhen(true)] out T? @event,
-        out float progress)
+        out float progress
+    )
         where T : DoAfterEvent
     {
         var playerEntity = _player.LocalEntity;

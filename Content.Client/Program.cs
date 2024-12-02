@@ -1,12 +1,14 @@
+#region
+
 using Robust.Client;
 
-namespace Content.Client
+#endregion
+
+
+namespace Content.Client;
+
+
+internal static class Program
 {
-    internal static class Program
-    {
-        public static void Main(string[] args)
-        {
-            ContentStart.Start(args);
-        }
-    }
+    public static void Main(string[] args) => ContentStart.Start(args);
 }

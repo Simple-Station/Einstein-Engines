@@ -1,3 +1,5 @@
+#region
+
 using System.Linq;
 using System.Numerics;
 using Content.Shared.Administration.Notes;
@@ -10,7 +12,11 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Configuration;
 
+#endregion
+
+
 namespace Content.Client.Administration.UI.Notes;
+
 
 [GenerateTypedNameReferences]
 public sealed partial class AdminNotesControl : Control
@@ -48,10 +54,7 @@ public sealed partial class AdminNotesControl : Control
     private bool CanEdit { get; set; }
     private string PlayerName { get; set; } = "<Error>";
 
-    public void SetPlayerName(string playerName)
-    {
-        PlayerName = playerName;
-    }
+    public void SetPlayerName(string playerName) => PlayerName = playerName;
 
     private void OnNewNoteButtonPressed(BaseButton.ButtonEventArgs obj)
     {
@@ -60,7 +63,14 @@ public sealed partial class AdminNotesControl : Control
         noteEdit.OpenCentered();
     }
 
-    private void OnNoteSubmitted(int id, NoteType type, string message, NoteSeverity? severity, bool secret, DateTime? expiryTime)
+    private void OnNoteSubmitted(
+        int id,
+        NoteType type,
+        string message,
+        NoteSeverity? severity,
+        bool secret,
+        DateTime? expiryTime
+    )
     {
         if (id == 0)
         {
@@ -73,13 +83,11 @@ public sealed partial class AdminNotesControl : Control
 
     private bool NoteClicked(AdminNotesLine line)
     {
-        _popup = new AdminNotesLinePopup(line.Note, PlayerName, CanDelete, CanEdit);
+        _popup = new(line.Note, PlayerName, CanDelete, CanEdit);
         _popup.OnEditPressed += (noteId, noteType) =>
         {
             if (!Inputs.TryGetValue((noteId, noteType), out var input))
-            {
                 return;
-            }
 
             var noteEdit = new NoteEdit(input.Note, PlayerName, CanCreate, CanEdit);
             noteEdit.SubmitPressed += OnNoteSubmitted;
@@ -99,9 +107,7 @@ public sealed partial class AdminNotesControl : Control
     {
         if (_popup == null ||
             !Inputs.TryGetValue((_popup.NoteId, _popup.NoteType), out var input))
-        {
             return;
-        }
 
         UpdateNoteLineAlpha(input);
     }
@@ -130,17 +136,14 @@ public sealed partial class AdminNotesControl : Control
         var timeDiff = DateTime.UtcNow - input.Note.CreatedAt;
         float alpha;
         if (_noteFreshDays == 0 || timeDiff.TotalDays <= _noteFreshDays)
-        {
             alpha = 1f;
-        }
         else if (_noteStaleDays == 0 || timeDiff.TotalDays > _noteStaleDays)
-        {
             alpha = 0f;
-        }
         else
-        {
-            alpha = (float) (1 - Math.Clamp((timeDiff.TotalDays - _noteFreshDays) / (_noteStaleDays - _noteFreshDays), 0, 1));
-        }
+            alpha = (float) (1 - Math.Clamp(
+                (timeDiff.TotalDays - _noteFreshDays) / (_noteStaleDays - _noteFreshDays),
+                0,
+                1));
 
         input.Modulate = input.Modulate.WithAlpha(alpha);
     }
@@ -156,6 +159,7 @@ public sealed partial class AdminNotesControl : Control
                 Inputs.Clear();
                 break;
             }
+
             Notes.RemoveChild(input);
             Inputs.Remove(key);
         }
@@ -169,7 +173,7 @@ public sealed partial class AdminNotesControl : Control
                 continue;
             }
 
-            input = new AdminNotesLine(_sprites, note);
+            input = new(_sprites, note);
             input.OnClicked += NoteClicked;
             input.OnMouseEntered += NoteMouseEntered;
             input.OnMouseExited += NoteMouseExited;
@@ -213,17 +217,13 @@ public sealed partial class AdminNotesControl : Control
         base.Dispose(disposing);
 
         if (!disposing)
-        {
             return;
-        }
 
         Inputs.Clear();
         NewNoteButton.OnPressed -= OnNewNoteButtonPressed;
 
         if (_popup != null)
-        {
             UserInterfaceManager.PopupRoot.RemoveChild(_popup);
-        }
 
         NoteDeleted = null;
     }

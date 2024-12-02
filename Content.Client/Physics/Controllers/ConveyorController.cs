@@ -1,6 +1,12 @@
-﻿using Content.Shared.Physics.Controllers;
+﻿#region
+
+using Content.Shared.Physics.Controllers;
+
+#endregion
+
 
 namespace Content.Client.Physics.Controllers;
+
 
 public sealed class ConveyorController : SharedConveyorController
 {

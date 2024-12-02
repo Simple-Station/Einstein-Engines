@@ -1,3 +1,5 @@
+#region
+
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.NameIdentifier;
@@ -9,7 +11,11 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Timing;
 
+#endregion
+
+
 namespace Content.Client.Silicons.Borgs;
+
 
 [GenerateTypedNameReferences]
 public sealed partial class BorgMenu : FancyWindow
@@ -79,7 +85,8 @@ public sealed partial class BorgMenu : FancyWindow
     {
         EjectBatteryButton.Disabled = !state.HasBattery;
         ChargeBar.Value = state.ChargePercent;
-        ChargeLabel.Text = Loc.GetString("borg-ui-charge-label",
+        ChargeLabel.Text = Loc.GetString(
+            "borg-ui-charge-label",
             ("charge", (int) MathF.Round(state.ChargePercent * 100)));
 
         UpdateBrainButton();
@@ -110,7 +117,8 @@ public sealed partial class BorgMenu : FancyWindow
         if (_chassis == null)
             return;
 
-        ModuleCounter.Text = Loc.GetString("borg-ui-module-counter",
+        ModuleCounter.Text = Loc.GetString(
+            "borg-ui-module-counter",
             ("actual", _chassis.ModuleCount),
             ("max", _chassis.MaxModules));
 
@@ -131,23 +139,16 @@ public sealed partial class BorgMenu : FancyWindow
         if (obj.Text.Length == 0 ||
             string.IsNullOrWhiteSpace(obj.Text) ||
             string.IsNullOrEmpty(obj.Text))
-        {
             return;
-        }
 
         if (obj.Text.Length > HumanoidCharacterProfile.MaxNameLength)
-        {
             obj.Control.Text = obj.Text.Substring(0, HumanoidCharacterProfile.MaxNameLength);
-        }
 
         _lastValidName = obj.Control.Text;
         obj.Control.Text = _lastValidName;
     }
 
-    private void OnNameEntered(LineEdit.LineEditEventArgs obj)
-    {
-        NameChanged?.Invoke(_lastValidName);
-    }
+    private void OnNameEntered(LineEdit.LineEditEventArgs obj) => NameChanged?.Invoke(_lastValidName);
 
     private void OnNameFocusExit(LineEdit.LineEditEventArgs obj)
     {
@@ -155,11 +156,8 @@ public sealed partial class BorgMenu : FancyWindow
             obj.Text.Length == 0 ||
             string.IsNullOrWhiteSpace(obj.Text) ||
             string.IsNullOrEmpty(obj.Text))
-        {
             obj.Control.Text = _lastValidName.Trim();
-        }
 
         NameChanged?.Invoke(_lastValidName);
     }
 }
-

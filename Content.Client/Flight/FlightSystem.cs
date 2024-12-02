@@ -1,18 +1,25 @@
-using Robust.Client.GameObjects;
+#region
+
+using Content.Client.Flight.Components;
 using Content.Shared.Flight;
 using Content.Shared.Flight.Events;
-using Content.Client.Flight.Components;
+using Robust.Client.GameObjects;
+
+#endregion
+
 
 namespace Content.Client.Flight;
+
+
 public sealed class FlightSystem : SharedFlightSystem
 {
     [Dependency] private readonly IEntityManager _entityManager = default!;
+
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeNetworkEvent<FlightEvent>(OnFlight);
-
     }
 
     private void OnFlight(FlightEvent args)
@@ -41,10 +48,11 @@ public sealed class FlightSystem : SharedFlightSystem
                 Multiplier = flight.ShaderMultiplier,
                 Offset = flight.ShaderOffset,
                 Speed = flight.ShaderSpeed,
-                TargetLayer = targetLayer,
+                TargetLayer = targetLayer
             };
             AddComp(uid, comp);
         }
+
         if (!args.IsFlying)
             RemComp<FlightVisualsComponent>(uid);
     }
@@ -54,7 +62,7 @@ public sealed class FlightSystem : SharedFlightSystem
         if (!Resolve(uid, ref sprite))
             return null;
 
-        int index = 0;
+        var index = 0;
         foreach (var layer in sprite.AllLayers)
         {
             // This feels like absolute shitcode, isn't there a better way to check for it?
@@ -62,6 +70,7 @@ public sealed class FlightSystem : SharedFlightSystem
                 return index;
             index++;
         }
+
         return null;
     }
 }

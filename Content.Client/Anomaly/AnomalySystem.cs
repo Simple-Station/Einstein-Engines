@@ -1,18 +1,23 @@
-﻿using System.Numerics;
+﻿#region
+
 using Content.Client.Gravity;
 using Content.Shared.Anomaly;
 using Content.Shared.Anomaly.Components;
 using Robust.Client.GameObjects;
 using Robust.Shared.Timing;
 
+#endregion
+
+
 namespace Content.Client.Anomaly;
+
 
 public sealed class AnomalySystem : SharedAnomalySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly FloatingVisualizerSystem _floating = default!;
 
-    /// <inheritdoc/>
+    /// <inheritdoc />
     public override void Initialize()
     {
         base.Initialize();
@@ -22,10 +27,8 @@ public sealed class AnomalySystem : SharedAnomalySystem
         SubscribeLocalEvent<AnomalyComponent, AnimationCompletedEvent>(OnAnimationComplete);
     }
 
-    private void OnStartup(EntityUid uid, AnomalyComponent component, ComponentStartup args)
-    {
+    private void OnStartup(EntityUid uid, AnomalyComponent component, ComponentStartup args) =>
         _floating.FloatAnimation(uid, component.FloatingOffset, component.AnimationKey, component.AnimationTime);
-    }
 
     private void OnAnimationComplete(EntityUid uid, AnomalyComponent component, AnimationCompletedEvent args)
     {
@@ -66,13 +69,11 @@ public sealed class AnomalySystem : SharedAnomalySystem
         {
             var completion = 1f - (float) ((super.EndTime - _timing.CurTime) / super.SupercriticalDuration);
             var scale = completion * (super.MaxScaleAmount - 1f) + 1f;
-            sprite.Scale = new Vector2(scale, scale);
+            sprite.Scale = new(scale, scale);
 
             var transparency = (byte) (65 * (1f - completion) + 190);
             if (transparency < sprite.Color.AByte)
-            {
                 sprite.Color = sprite.Color.WithAlpha(transparency);
-            }
         }
     }
 }

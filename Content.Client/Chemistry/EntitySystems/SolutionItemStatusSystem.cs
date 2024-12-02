@@ -1,14 +1,20 @@
-﻿using Content.Client.Chemistry.Components;
+﻿#region
+
+using Content.Client.Chemistry.Components;
 using Content.Client.Chemistry.UI;
 using Content.Client.Items;
 using Content.Shared.Chemistry.EntitySystems;
 
+#endregion
+
+
 namespace Content.Client.Chemistry.EntitySystems;
 
+
 /// <summary>
-/// Wires up item status logic for <see cref="SolutionItemStatusComponent"/>.
+///     Wires up item status logic for <see cref="SolutionItemStatusComponent" />.
 /// </summary>
-/// <seealso cref="SolutionStatusControl"/>
+/// <seealso cref="SolutionStatusControl" />
 public sealed class SolutionItemStatusSystem : EntitySystem
 {
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;

@@ -1,6 +1,12 @@
+#region
+
 using Content.Shared.SurveillanceCamera;
 
+#endregion
+
+
 namespace Content.Client.SurveillanceCamera;
+
 
 // Dummy component so that targetted events work on client for
 // appearance events.

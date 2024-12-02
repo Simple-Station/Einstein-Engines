@@ -11,12 +11,7 @@ namespace Content.Client.Administration.UI.CustomControls;
 [GenerateTypedNameReferences]
 public sealed partial class PlayerListEntry : BoxContainer
 {
-    public PlayerListEntry()
-    {
-        RobustXamlLoader.Load(this);
-    }
-
-    public event Action<PlayerInfo>? OnPinStatusChanged;
+  blic event Action<PlayerInfo>? OnPinStatusChanged;
 
     public void Setup(PlayerInfo info, Func<PlayerInfo, string, string>? overrideText)
     {

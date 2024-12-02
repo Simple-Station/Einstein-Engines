@@ -1,3 +1,5 @@
+#region
+
 using System.Linq;
 using Content.Client.Chemistry.EntitySystems;
 using Content.Client.UserInterface.ControlExtensions;
@@ -13,9 +15,13 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
+#endregion
+
+
 namespace Content.Client.Guidebook.Controls;
 
-[UsedImplicitly, GenerateTypedNameReferences]
+
+[UsedImplicitly, GenerateTypedNameReferences,]
 public sealed partial class GuideFoodSource : BoxContainer, ISearchableControl
 {
     private readonly IPrototypeManager _protoMan;
@@ -91,10 +97,16 @@ public sealed partial class GuideFoodSource : BoxContainer, ISearchableControl
         }
 
         var combinedSolids = recipe.IngredientsSolids
-            .Select(it => _protoMan.TryIndex<EntityPrototype>(it.Key, out var proto) ? FormatIngredient(proto, it.Value) : "")
+            .Select(
+                it => _protoMan.TryIndex<EntityPrototype>(it.Key, out var proto)
+                    ? FormatIngredient(proto, it.Value)
+                    : "")
             .Where(it => it.Length > 0);
         var combinedLiquids = recipe.IngredientsReagents
-            .Select(it => _protoMan.TryIndex<ReagentPrototype>(it.Key, out var proto) ? FormatIngredient(proto, it.Value) : "")
+            .Select(
+                it => _protoMan.TryIndex<ReagentPrototype>(it.Key, out var proto)
+                    ? FormatIngredient(proto, it.Value)
+                    : "")
             .Where(it => it.Length > 0);
 
         var combinedIngredients = string.Join("\n", combinedLiquids.Union(combinedSolids));
@@ -113,22 +125,27 @@ public sealed partial class GuideFoodSource : BoxContainer, ISearchableControl
         }
 
         var combinedReagents = reaction.Reactants
-            .Select(it => _protoMan.TryIndex<ReagentPrototype>(it.Key, out var proto) ? FormatIngredient(proto, it.Value.Amount) : "")
+            .Select(
+                it => _protoMan.TryIndex<ReagentPrototype>(it.Key, out var proto)
+                    ? FormatIngredient(proto, it.Value.Amount)
+                    : "")
             .Where(it => it.Length > 0);
 
-        SourceLabel.SetMessage(Loc.GetString("guidebook-food-processing-recipe", ("ingredients", string.Join("\n", combinedReagents))));
+        SourceLabel.SetMessage(
+            Loc.GetString("guidebook-food-processing-recipe", ("ingredients", string.Join("\n", combinedReagents))));
         ProcessingTexture.TexturePath = "/Textures/Interface/Misc/beakerlarge.png";
         ProcessingLabel.Text = Loc.GetString("guidebook-food-processing-reaction");
     }
 
-    private Texture GetRsiTexture(string path, string state)
-    {
-        return _sprites.Frame0(new SpriteSpecifier.Rsi(new ResPath(path), state));
-    }
+    private Texture GetRsiTexture(string path, string state) =>
+        _sprites.Frame0(new SpriteSpecifier.Rsi(new(path), state));
 
     private void GenerateOutputs(EntityPrototype result, FoodSourceData entry)
     {
-        OutputsLabel.Text = Loc.GetString("guidebook-food-output", ("name", result.Name), ("number", entry.OutputCount));
+        OutputsLabel.Text = Loc.GetString(
+            "guidebook-food-output",
+            ("name", result.Name),
+            ("number", entry.OutputCount));
         OutputsTexture.Texture = _sprites.Frame0(result);
     }
 
@@ -138,23 +155,13 @@ public sealed partial class GuideFoodSource : BoxContainer, ISearchableControl
         OutputsTexture.Texture = _sprites.Frame0(ent);
     }
 
-    private string FormatIngredient(EntityPrototype proto, FixedPoint2 amount)
-    {
-        return Loc.GetString("guidebook-food-ingredient-solid", ("name", proto.Name), ("amount", amount));
-    }
+    private string FormatIngredient(EntityPrototype proto, FixedPoint2 amount) =>
+        Loc.GetString("guidebook-food-ingredient-solid", ("name", proto.Name), ("amount", amount));
 
-    private string FormatIngredient(ReagentPrototype proto, FixedPoint2 amount)
-    {
-        return Loc.GetString("guidebook-food-ingredient-liquid", ("name", proto.LocalizedName), ("amount", amount));
-    }
+    private string FormatIngredient(ReagentPrototype proto, FixedPoint2 amount) =>
+        Loc.GetString("guidebook-food-ingredient-liquid", ("name", proto.LocalizedName), ("amount", amount));
 
-    public bool CheckMatchesSearch(string query)
-    {
-        return this.ChildrenContainText(query);
-    }
+    public bool CheckMatchesSearch(string query) => this.ChildrenContainText(query);
 
-    public void SetHiddenState(bool state, string query)
-    {
-        Visible = CheckMatchesSearch(query) ? state : !state;
-    }
+    public void SetHiddenState(bool state, string query) => Visible = CheckMatchesSearch(query) ? state : !state;
 }

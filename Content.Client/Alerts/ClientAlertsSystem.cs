@@ -1,3 +1,5 @@
+#region
+
 using System.Linq;
 using Content.Shared.Alert;
 using JetBrains.Annotations;
@@ -5,7 +7,11 @@ using Robust.Client.Player;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 
+#endregion
+
+
 namespace Content.Client.Alerts;
+
 
 [UsedImplicitly]
 public sealed class ClientAlertsSystem : AlertsSystem
@@ -27,6 +33,7 @@ public sealed class ClientAlertsSystem : AlertsSystem
 
         SubscribeLocalEvent<AlertsComponent, AfterAutoHandleStateEvent>(ClientAlertsHandleState);
     }
+
     protected override void LoadPrototypes()
     {
         base.LoadPrototypes();
@@ -47,20 +54,12 @@ public sealed class ClientAlertsSystem : AlertsSystem
         }
     }
 
-    protected override void AfterShowAlert(Entity<AlertsComponent> alerts)
-    {
-        UpdateHud(alerts);
-    }
+    protected override void AfterShowAlert(Entity<AlertsComponent> alerts) => UpdateHud(alerts);
 
-    protected override void AfterClearAlert(Entity<AlertsComponent> alerts)
-    {
-        UpdateHud(alerts);
-    }
+    protected override void AfterClearAlert(Entity<AlertsComponent> alerts) => UpdateHud(alerts);
 
-    private void ClientAlertsHandleState(Entity<AlertsComponent> alerts, ref AfterAutoHandleStateEvent args)
-    {
+    private void ClientAlertsHandleState(Entity<AlertsComponent> alerts, ref AfterAutoHandleStateEvent args) =>
         UpdateHud(alerts);
-    }
 
     private void UpdateHud(Entity<AlertsComponent> entity)
     {
@@ -86,13 +85,8 @@ public sealed class ClientAlertsSystem : AlertsSystem
         ClearAlerts?.Invoke(this, EventArgs.Empty);
     }
 
-    private void OnPlayerDetached(EntityUid uid, AlertsComponent component, LocalPlayerDetachedEvent args)
-    {
+    private void OnPlayerDetached(EntityUid uid, AlertsComponent component, LocalPlayerDetachedEvent args) =>
         ClearAlerts?.Invoke(this, EventArgs.Empty);
-    }
 
-    public void AlertClicked(ProtoId<AlertPrototype> alertType)
-    {
-        RaiseNetworkEvent(new ClickAlertEvent(alertType));
-    }
+    public void AlertClicked(ProtoId<AlertPrototype> alertType) => RaiseNetworkEvent(new ClickAlertEvent(alertType));
 }

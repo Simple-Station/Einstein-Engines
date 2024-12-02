@@ -1,15 +1,19 @@
+#region
+
 using Content.Shared.StationRecords;
 
+#endregion
+
+
 namespace Content.Client.StationRecords;
+
 
 public sealed class GeneralStationRecordConsoleBoundUserInterface : BoundUserInterface
 {
     [ViewVariables]
-    private GeneralStationRecordConsoleWindow? _window = default!;
+    private GeneralStationRecordConsoleWindow? _window;
 
-    public GeneralStationRecordConsoleBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-    {
-    }
+    public GeneralStationRecordConsoleBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
 
     protected override void Open()
     {

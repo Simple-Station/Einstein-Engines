@@ -1,8 +1,14 @@
-﻿using Content.Shared.Revenant.Components;
+﻿#region
+
+using Content.Shared.Revenant.Components;
 using Content.Shared.Revenant.EntitySystems;
 using Robust.Client.GameObjects;
 
+#endregion
+
+
 namespace Content.Client.Revenant;
+
 
 public sealed class RevenantOverloadedLightsSystem : SharedRevenantOverloadedLightsSystem
 {
@@ -23,10 +29,8 @@ public sealed class RevenantOverloadedLightsSystem : SharedRevenantOverloadedLig
         var enumerator = EntityQueryEnumerator<RevenantOverloadedLightsComponent, PointLightComponent>();
 
         while (enumerator.MoveNext(out var uid, out var comp, out var light))
-        {
             //this looks cool :HECK:
             _lights.SetEnergy(uid, 2f * Math.Abs((float) Math.Sin(0.25 * Math.PI * comp.Accumulator)), light);
-        }
     }
 
     private void OnStartup(EntityUid uid, RevenantOverloadedLightsComponent component, ComponentStartup args)
@@ -55,8 +59,5 @@ public sealed class RevenantOverloadedLightsSystem : SharedRevenantOverloadedLig
         Dirty(uid, light);
     }
 
-    protected override void OnZap(Entity<RevenantOverloadedLightsComponent> component)
-    {
-
-    }
+    protected override void OnZap(Entity<RevenantOverloadedLightsComponent> component) { }
 }

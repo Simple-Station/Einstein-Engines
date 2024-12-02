@@ -1,7 +1,11 @@
+#region
+
 using Content.Shared.Stunnable;
+
+#endregion
+
 
 namespace Content.Client.Stunnable;
 
-public sealed class StunbatonSystem : SharedStunbatonSystem
-{
-}
+
+public sealed class StunbatonSystem : SharedStunbatonSystem { }

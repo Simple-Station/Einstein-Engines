@@ -1,158 +1,157 @@
-﻿using System.Numerics;
+﻿#region
+
+using System.Numerics;
 using Content.Client.Viewport;
 using Content.Shared.CCVar;
-using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Configuration;
 
-namespace Content.Client.UserInterface.Controls
+#endregion
+
+
+namespace Content.Client.UserInterface.Controls;
+
+
+/// <summary>
+///     Wrapper for <see cref="ScalingViewport" /> that listens to configuration variables.
+///     Also does NN-snapping within tolerances.
+/// </summary>
+public sealed class MainViewport : UIWidget
 {
-    /// <summary>
-    ///     Wrapper for <see cref="ScalingViewport"/> that listens to configuration variables.
-    ///     Also does NN-snapping within tolerances.
-    /// </summary>
-    public sealed class MainViewport : UIWidget
+    [Dependency] private readonly IConfigurationManager _cfg = default!;
+    [Dependency] private readonly ViewportManager _vpManager = default!;
+
+    public ScalingViewport Viewport { get; }
+
+    public MainViewport()
     {
-        [Dependency] private readonly IConfigurationManager _cfg = default!;
-        [Dependency] private readonly ViewportManager _vpManager = default!;
+        IoCManager.InjectDependencies(this);
 
-        public ScalingViewport Viewport { get; }
-
-        public MainViewport()
+        Viewport = new()
         {
-            IoCManager.InjectDependencies(this);
+            AlwaysRender = true,
+            RenderScaleMode = ScalingViewportRenderScaleMode.CeilInt,
+            MouseFilter = MouseFilterMode.Stop
+        };
 
-            Viewport = new ScalingViewport
+        AddChild(Viewport);
+    }
+
+    protected override void EnteredTree()
+    {
+        base.EnteredTree();
+
+        _vpManager.AddViewport(this);
+    }
+
+    protected override void ExitedTree()
+    {
+        base.ExitedTree();
+
+        _vpManager.RemoveViewport(this);
+    }
+
+    public void UpdateCfg()
+    {
+        var stretch = _cfg.GetCVar(CCVars.ViewportStretch);
+        var renderScaleUp = _cfg.GetCVar(CCVars.ViewportScaleRender);
+        var fixedFactor = _cfg.GetCVar(CCVars.ViewportFixedScaleFactor);
+        var verticalFit = _cfg.GetCVar(CCVars.ViewportVerticalFit);
+
+        if (stretch)
+        {
+            var snapFactor = CalcSnappingFactor();
+            if (snapFactor == null)
             {
-                AlwaysRender = true,
-                RenderScaleMode = ScalingViewportRenderScaleMode.CeilInt,
-                MouseFilter = MouseFilterMode.Stop
-            };
+                // Did not find a snap, enable stretching.
+                Viewport.FixedStretchSize = null;
+                Viewport.StretchMode = ScalingViewportStretchMode.Bilinear;
+                Viewport.IgnoreDimension = verticalFit
+                    ? ScalingViewportIgnoreDimension.Horizontal
+                    : ScalingViewportIgnoreDimension.None;
 
-            AddChild(Viewport);
-        }
-
-        protected override void EnteredTree()
-        {
-            base.EnteredTree();
-
-            _vpManager.AddViewport(this);
-        }
-
-        protected override void ExitedTree()
-        {
-            base.ExitedTree();
-
-            _vpManager.RemoveViewport(this);
-        }
-
-        public void UpdateCfg()
-        {
-            var stretch = _cfg.GetCVar(CCVars.ViewportStretch);
-            var renderScaleUp = _cfg.GetCVar(CCVars.ViewportScaleRender);
-            var fixedFactor = _cfg.GetCVar(CCVars.ViewportFixedScaleFactor);
-            var verticalFit = _cfg.GetCVar(CCVars.ViewportVerticalFit);
-
-            if (stretch)
-            {
-                var snapFactor = CalcSnappingFactor();
-                if (snapFactor == null)
+                if (renderScaleUp)
+                    Viewport.RenderScaleMode = ScalingViewportRenderScaleMode.CeilInt;
+                else
                 {
-                    // Did not find a snap, enable stretching.
-                    Viewport.FixedStretchSize = null;
-                    Viewport.StretchMode = ScalingViewportStretchMode.Bilinear;
-                    Viewport.IgnoreDimension = verticalFit ? ScalingViewportIgnoreDimension.Horizontal : ScalingViewportIgnoreDimension.None;
-
-                    if (renderScaleUp)
-                    {
-                        Viewport.RenderScaleMode = ScalingViewportRenderScaleMode.CeilInt;
-                    }
-                    else
-                    {
-                        Viewport.RenderScaleMode = ScalingViewportRenderScaleMode.Fixed;
-                        Viewport.FixedRenderScale = 1;
-                    }
-
-                    return;
+                    Viewport.RenderScaleMode = ScalingViewportRenderScaleMode.Fixed;
+                    Viewport.FixedRenderScale = 1;
                 }
 
-                // Found snap, set fixed factor and run non-stretching code.
-                fixedFactor = snapFactor.Value;
+                return;
             }
 
-            Viewport.FixedStretchSize = Viewport.ViewportSize * fixedFactor;
-            Viewport.StretchMode = ScalingViewportStretchMode.Nearest;
-
-            if (renderScaleUp)
-            {
-                Viewport.RenderScaleMode = ScalingViewportRenderScaleMode.Fixed;
-                Viewport.FixedRenderScale = fixedFactor;
-            }
-            else
-            {
-                // Snapping but forced to render scale at scale 1 so...
-                // At least we can NN.
-                Viewport.RenderScaleMode = ScalingViewportRenderScaleMode.Fixed;
-                Viewport.FixedRenderScale = 1;
-            }
+            // Found snap, set fixed factor and run non-stretching code.
+            fixedFactor = snapFactor.Value;
         }
 
-        private int? CalcSnappingFactor()
+        Viewport.FixedStretchSize = Viewport.ViewportSize * fixedFactor;
+        Viewport.StretchMode = ScalingViewportStretchMode.Nearest;
+
+        if (renderScaleUp)
         {
-            // Margin tolerance is tolerance of "the window is too big"
-            // where we add a margin to the viewport to make it fit.
-            var cfgToleranceMargin = _cfg.GetCVar(CCVars.ViewportSnapToleranceMargin);
-            // Clip tolerance is tolerance of "the window is too small"
-            // where we are clipping the viewport to make it fit.
-            var cfgToleranceClip = _cfg.GetCVar(CCVars.ViewportSnapToleranceClip);
+            Viewport.RenderScaleMode = ScalingViewportRenderScaleMode.Fixed;
+            Viewport.FixedRenderScale = fixedFactor;
+        }
+        else
+        {
+            // Snapping but forced to render scale at scale 1 so...
+            // At least we can NN.
+            Viewport.RenderScaleMode = ScalingViewportRenderScaleMode.Fixed;
+            Viewport.FixedRenderScale = 1;
+        }
+    }
 
-            var cfgVerticalFit = _cfg.GetCVar(CCVars.ViewportVerticalFit);
+    private int? CalcSnappingFactor()
+    {
+        // Margin tolerance is tolerance of "the window is too big"
+        // where we add a margin to the viewport to make it fit.
+        var cfgToleranceMargin = _cfg.GetCVar(CCVars.ViewportSnapToleranceMargin);
+        // Clip tolerance is tolerance of "the window is too small"
+        // where we are clipping the viewport to make it fit.
+        var cfgToleranceClip = _cfg.GetCVar(CCVars.ViewportSnapToleranceClip);
 
-            // Calculate if the viewport, when rendered at an integer scale,
-            // is close enough to the control size to enable "snapping" to NN,
-            // potentially cutting a tiny bit off/leaving a margin.
-            //
-            // Idea here is that if you maximize the window at 1080p or 1440p
-            // we are close enough to an integer scale (2x and 3x resp) that we should "snap" to it.
+        var cfgVerticalFit = _cfg.GetCVar(CCVars.ViewportVerticalFit);
 
-            // Just do it iteratively.
-            // I'm sure there's a smarter approach that needs one try with math but I'm dumb.
-            for (var i = 1; i <= 10; i++)
+        // Calculate if the viewport, when rendered at an integer scale,
+        // is close enough to the control size to enable "snapping" to NN,
+        // potentially cutting a tiny bit off/leaving a margin.
+        //
+        // Idea here is that if you maximize the window at 1080p or 1440p
+        // we are close enough to an integer scale (2x and 3x resp) that we should "snap" to it.
+
+        // Just do it iteratively.
+        // I'm sure there's a smarter approach that needs one try with math but I'm dumb.
+        for (var i = 1; i <= 10; i++)
+        {
+            var toleranceMargin = i * cfgToleranceMargin;
+            var toleranceClip = i * cfgToleranceClip;
+            var scaled = (Vector2) Viewport.ViewportSize * i;
+            var (dx, dy) = PixelSize - scaled;
+
+            // The rule for which snap fits is that at LEAST one axis needs to be in the tolerance size wise.
+            // One axis MAY be larger but not smaller than tolerance.
+            // Obviously if it's too small it's bad, and if it's too big on both axis we should stretch up.
+            // Additionally, if the viewport's supposed  to be vertically fit, then the horizontal scale should just be ignored where appropriate.
+            if ((Fits(dx) || cfgVerticalFit) && Fits(dy) || !cfgVerticalFit && Fits(dx) && Larger(dy) ||
+                Larger(dx) && Fits(dy))
             {
-                var toleranceMargin = i * cfgToleranceMargin;
-                var toleranceClip = i * cfgToleranceClip;
-                var scaled = (Vector2) Viewport.ViewportSize * i;
-                var (dx, dy) = PixelSize - scaled;
-
-                // The rule for which snap fits is that at LEAST one axis needs to be in the tolerance size wise.
-                // One axis MAY be larger but not smaller than tolerance.
-                // Obviously if it's too small it's bad, and if it's too big on both axis we should stretch up.
-                // Additionally, if the viewport's supposed  to be vertically fit, then the horizontal scale should just be ignored where appropriate.
-                if ((Fits(dx) || cfgVerticalFit) && Fits(dy) || !cfgVerticalFit && Fits(dx) && Larger(dy) || Larger(dx) && Fits(dy))
-                {
-                    // Found snap that fits.
-                    return i;
-                }
-
-                bool Larger(float a)
-                {
-                    return a > toleranceMargin;
-                }
-
-                bool Fits(float a)
-                {
-                    return a <= toleranceMargin && a >= -toleranceClip;
-                }
+                // Found snap that fits.
+                return i;
             }
 
-            return null;
+            bool Larger(float a) => a > toleranceMargin;
+
+            bool Fits(float a) => a <= toleranceMargin && a >= -toleranceClip;
         }
 
-        protected override void Resized()
-        {
-            base.Resized();
+        return null;
+    }
 
-            UpdateCfg();
-        }
+    protected override void Resized()
+    {
+        base.Resized();
+
+        UpdateCfg();
     }
 }

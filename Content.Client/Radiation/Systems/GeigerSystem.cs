@@ -1,9 +1,15 @@
+#region
+
 using Content.Client.Items;
 using Content.Client.Radiation.UI;
 using Content.Shared.Radiation.Components;
 using Content.Shared.Radiation.Systems;
 
+#endregion
+
+
 namespace Content.Client.Radiation.Systems;
+
 
 public sealed class GeigerSystem : SharedGeigerSystem
 {
@@ -14,8 +20,6 @@ public sealed class GeigerSystem : SharedGeigerSystem
         Subs.ItemStatus<GeigerComponent>(ent => ent.Comp.ShowControl ? new GeigerItemControl(ent) : null);
     }
 
-    private void OnHandleState(EntityUid uid, GeigerComponent component, ref AfterAutoHandleStateEvent args)
-    {
+    private void OnHandleState(EntityUid uid, GeigerComponent component, ref AfterAutoHandleStateEvent args) =>
         component.UiUpdateNeeded = true;
-    }
 }

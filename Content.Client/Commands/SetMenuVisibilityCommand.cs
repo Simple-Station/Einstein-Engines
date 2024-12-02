@@ -1,8 +1,14 @@
+#region
+
 using Content.Client.Verbs;
 using JetBrains.Annotations;
 using Robust.Shared.Console;
 
+#endregion
+
+
 namespace Content.Client.Commands;
+
 
 [UsedImplicitly]
 internal sealed class SetMenuVisibilityCommand : LocalizedCommands
@@ -26,7 +32,6 @@ internal sealed class SetMenuVisibilityCommand : LocalizedCommands
         visibility = MenuVisibility.Default;
 
         foreach (var arg in args)
-        {
             switch (arg.ToLower())
             {
                 // ReSharper disable once StringLiteralTypo
@@ -47,7 +52,6 @@ internal sealed class SetMenuVisibilityCommand : LocalizedCommands
                     shell.WriteError(LocalizationManager.GetString($"cmd-{Command}-error", ("arg", arg)));
                     return false;
             }
-        }
 
         return true;
     }

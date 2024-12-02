@@ -1,7 +1,8 @@
 namespace Content.Client.NetworkConfigurator;
 
+
 /// <summary>
-/// This is used for...
+///     This is used for...
 /// </summary>
 [RegisterComponent]
 public sealed partial class NetworkConfiguratorActiveLinkOverlayComponent : Component

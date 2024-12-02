@@ -1,14 +1,21 @@
+#region
+
 using Content.Client.Gameplay;
+using Content.Client.Targeting;
 using Content.Client.UserInterface.Systems.Targeting.Widgets;
 using Content.Shared.Targeting;
-using Content.Client.Targeting;
 using Content.Shared.Targeting.Events;
-using Robust.Client.UserInterface.Controllers;
 using Robust.Client.Player;
+using Robust.Client.UserInterface.Controllers;
+
+#endregion
+
 
 namespace Content.Client.UserInterface.Systems.Targeting;
 
-public sealed class TargetingUIController : UIController, IOnStateEntered<GameplayState>, IOnSystemChanged<TargetingSystem>
+
+public sealed class TargetingUIController : UIController, IOnStateEntered<GameplayState>,
+    IOnSystemChanged<TargetingSystem>
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
     [Dependency] private readonly IEntityNetworkManager _net = default!;
@@ -53,7 +60,6 @@ public sealed class TargetingUIController : UIController, IOnStateEntered<Gamepl
             if (_targetingComponent != null)
                 TargetingControl.SetBodyPartsVisible(_targetingComponent.Target);
         }
-
     }
 
     public void RemoveTargetingControl()

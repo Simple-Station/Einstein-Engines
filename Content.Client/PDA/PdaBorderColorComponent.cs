@@ -1,7 +1,8 @@
 ﻿namespace Content.Client.PDA;
 
+
 /// <summary>
-/// Used for specifying the pda windows border colors
+///     Used for specifying the pda windows border colors
 /// </summary>
 [RegisterComponent]
 public sealed partial class PdaBorderColorComponent : Component

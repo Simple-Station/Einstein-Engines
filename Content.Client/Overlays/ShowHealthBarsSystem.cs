@@ -1,12 +1,18 @@
+#region
+
+using System.Linq;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Overlays;
 using Robust.Client.Graphics;
-using System.Linq;
+
+#endregion
+
 
 namespace Content.Client.Overlays;
 
+
 /// <summary>
-/// Adds a health bar overlay.
+///     Adds a health bar overlay.
 /// </summary>
 public sealed class ShowHealthBarsSystem : EquipmentHudSystem<ShowHealthBarsComponent>
 {
@@ -26,14 +32,10 @@ public sealed class ShowHealthBarsSystem : EquipmentHudSystem<ShowHealthBarsComp
         base.UpdateInternal(component);
 
         foreach (var damageContainerId in component.Components.SelectMany(x => x.DamageContainers))
-        {
             _overlay.DamageContainers.Add(damageContainerId);
-        }
 
         if (!_overlayMan.HasOverlay<EntityHealthBarOverlay>())
-        {
             _overlayMan.AddOverlay(_overlay);
-        }
     }
 
     protected override void DeactivateInternal()

@@ -1,8 +1,11 @@
-﻿using Content.Shared.Sound;
+﻿#region
+
+using Content.Shared.Sound;
+
+#endregion
+
 
 namespace Content.Client.Sound;
 
-public sealed class EmitSoundSystem : SharedEmitSoundSystem
-{
 
-}
+public sealed class EmitSoundSystem : SharedEmitSoundSystem { }

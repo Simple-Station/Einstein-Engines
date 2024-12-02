@@ -1,48 +1,53 @@
-﻿using Content.Client.Stylesheets;
+﻿#region
+
+using Content.Client.Stylesheets;
 using Robust.Client.UserInterface.Controls;
 
-namespace Content.Client.Changelog
+#endregion
+
+
+namespace Content.Client.Changelog;
+
+
+public sealed class ChangelogButton : Button
 {
-    public sealed class ChangelogButton : Button
+    [Dependency] private readonly ChangelogManager _changelogManager = default!;
+
+    public ChangelogButton()
     {
-        [Dependency] private readonly ChangelogManager _changelogManager = default!;
+        IoCManager.InjectDependencies(this);
 
-        public ChangelogButton()
+        // So that measuring before opening returns a correct height,
+        // and the window has the correct size when opened.
+        Text = " ";
+    }
+
+    protected override void EnteredTree()
+    {
+        base.EnteredTree();
+
+        _changelogManager.NewChangelogEntriesChanged += UpdateStuff;
+        UpdateStuff();
+    }
+
+    protected override void ExitedTree()
+    {
+        base.ExitedTree();
+
+        _changelogManager.NewChangelogEntriesChanged -= UpdateStuff;
+    }
+
+    private void UpdateStuff()
+    {
+        if (_changelogManager.NewChangelogEntries)
         {
-            IoCManager.InjectDependencies(this);
-
-            // So that measuring before opening returns a correct height,
-            // and the window has the correct size when opened.
-            Text = " ";
+            Text = Loc.GetString("changelog-button-new-entries");
+            StyleClasses.Add(StyleBase.ButtonDanger);
         }
-
-        protected override void EnteredTree()
+        else
         {
-            base.EnteredTree();
-
-            _changelogManager.NewChangelogEntriesChanged += UpdateStuff;
-            UpdateStuff();
-        }
-
-        protected override void ExitedTree()
-        {
-            base.ExitedTree();
-
-            _changelogManager.NewChangelogEntriesChanged -= UpdateStuff;
-        }
-
-        private void UpdateStuff()
-        {
-            if (_changelogManager.NewChangelogEntries)
-            {
-                Text = Loc.GetString("changelog-button-new-entries");
-                StyleClasses.Add(StyleBase.ButtonDanger);
-            }
-            else
-            {
-                Text = Loc.GetString("changelog-button");
-                StyleClasses.Remove(StyleBase.ButtonDanger);
-            }
+            Text = Loc.GetString("changelog-button");
+            StyleClasses.Remove(StyleBase.ButtonDanger);
         }
     }
 }

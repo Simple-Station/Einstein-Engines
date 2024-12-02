@@ -1,6 +1,12 @@
-﻿using Content.Shared.Anomaly.Effects;
+﻿#region
+
+using Content.Shared.Anomaly.Effects;
+
+#endregion
+
 
 namespace Content.Client.Anomaly.Effects;
+
 
 public sealed class GravityAnomalySystem : SharedGravityAnomalySystem
 {

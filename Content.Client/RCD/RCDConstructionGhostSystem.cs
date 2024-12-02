@@ -1,3 +1,5 @@
+#region
+
 using Content.Shared.Hands.Components;
 using Content.Shared.Interaction;
 using Content.Shared.RCD;
@@ -7,7 +9,11 @@ using Robust.Client.Placement;
 using Robust.Client.Player;
 using Robust.Shared.Enums;
 
+#endregion
+
+
 namespace Content.Client.RCD;
+
 
 public sealed class RCDConstructionGhostSystem : EntitySystem
 {
@@ -15,8 +21,8 @@ public sealed class RCDConstructionGhostSystem : EntitySystem
     [Dependency] private readonly RCDSystem _rcdSystem = default!;
     [Dependency] private readonly IPlacementManager _placementManager = default!;
 
-    private string _placementMode = typeof(AlignRCDConstruction).Name;
-    private Direction _placementDirection = default;
+    private readonly string _placementMode = typeof(AlignRCDConstruction).Name;
+    private Direction _placementDirection;
 
     public override void Update(float frameTime)
     {
@@ -28,7 +34,7 @@ public sealed class RCDConstructionGhostSystem : EntitySystem
         var placerIsRCD = HasComp<RCDComponent>(placerEntity);
 
         // Exit if erasing or the current placer is not an RCD (build mode is active)
-        if (_placementManager.Eraser || (placerEntity != null && !placerIsRCD))
+        if (_placementManager.Eraser || placerEntity != null && !placerIsRCD)
             return;
 
         // Determine if player is carrying an RCD in their active hand
@@ -52,7 +58,8 @@ public sealed class RCDConstructionGhostSystem : EntitySystem
         if (_placementDirection != _placementManager.Direction)
         {
             _placementDirection = _placementManager.Direction;
-            RaiseNetworkEvent(new RCDConstructionGhostRotationEvent(GetNetEntity(heldEntity.Value), _placementDirection));
+            RaiseNetworkEvent(
+                new RCDConstructionGhostRotationEvent(GetNetEntity(heldEntity.Value), _placementDirection));
         }
 
         // If the placer has not changed, exit
@@ -68,8 +75,8 @@ public sealed class RCDConstructionGhostSystem : EntitySystem
             PlacementOption = _placementMode,
             EntityType = rcd.CachedPrototype.Prototype,
             Range = (int) Math.Ceiling(SharedInteractionSystem.InteractionRange),
-            IsTile = (rcd.CachedPrototype.Mode == RcdMode.ConstructTile),
-            UseEditorContext = false,
+            IsTile = rcd.CachedPrototype.Mode == RcdMode.ConstructTile,
+            UseEditorContext = false
         };
 
         _placementManager.Clear();

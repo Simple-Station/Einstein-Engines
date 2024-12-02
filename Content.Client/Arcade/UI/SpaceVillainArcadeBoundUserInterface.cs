@@ -1,9 +1,12 @@
-﻿using Robust.Client.GameObjects;
-using Robust.Shared.GameObjects;
-using Robust.Shared.ViewVariables;
+﻿#region
+
 using static Content.Shared.Arcade.SharedSpaceVillainArcadeComponent;
 
+#endregion
+
+
 namespace Content.Client.Arcade.UI;
+
 
 public sealed class SpaceVillainArcadeBoundUserInterface : BoundUserInterface
 {
@@ -16,16 +19,13 @@ public sealed class SpaceVillainArcadeBoundUserInterface : BoundUserInterface
         SendAction(PlayerAction.RequestData);
     }
 
-    public void SendAction(PlayerAction action)
-    {
-        SendMessage(new SpaceVillainArcadePlayerActionMessage(action));
-    }
+    public void SendAction(PlayerAction action) => SendMessage(new SpaceVillainArcadePlayerActionMessage(action));
 
     protected override void Open()
     {
         base.Open();
 
-        _menu = new SpaceVillainArcadeMenu(this);
+        _menu = new(this);
 
         _menu.OnClose += Close;
         _menu.OpenCentered();

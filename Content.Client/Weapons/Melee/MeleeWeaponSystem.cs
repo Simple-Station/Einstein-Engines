@@ -1,6 +1,7 @@
+#region
+
 using System.Linq;
 using Content.Client.Gameplay;
-using Content.Shared.CCVar;
 using Content.Shared.CombatMode;
 using Content.Shared.Effects;
 using Content.Shared.Hands.Components;
@@ -18,7 +19,11 @@ using Robust.Shared.Input;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
 
+#endregion
+
+
 namespace Content.Client.Weapons.Melee;
+
 
 public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
 {
@@ -77,15 +82,11 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
         if (weapon.AutoAttack || useDown != BoundKeyState.Down && altDown != BoundKeyState.Down)
         {
             if (weapon.Attacking)
-            {
                 RaisePredictiveEvent(new StopAttackEvent(GetNetEntity(weaponUid)));
-            }
         }
 
         if (weapon.Attacking || weapon.NextAttack > Timing.CurTime)
-        {
             return;
-        }
 
         // TODO using targeted actions while combat mode is enabled should NOT trigger attacks.
 
@@ -95,27 +96,23 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
         // I think as long as we make secondaries their own component it's probably fine
         // as long as guncomp has an alt-use key then it shouldn't be too much of a PITA to deal with.
         if (TryComp<GunComponent>(weaponUid, out var gun) && gun.UseKey)
-        {
             return;
-        }
 
         var mousePos = _eyeManager.PixelToMap(_inputManager.MouseScreenPosition);
 
         if (mousePos.MapId == MapId.Nullspace)
-        {
             return;
-        }
 
         EntityCoordinates coordinates;
 
         if (MapManager.TryFindGridAt(mousePos, out var gridUid, out _))
-        {
             coordinates = EntityCoordinates.FromMap(gridUid, mousePos, TransformSystem, EntityManager);
-        }
         else
-        {
-            coordinates = EntityCoordinates.FromMap(MapManager.GetMapEntityId(mousePos.MapId), mousePos, TransformSystem, EntityManager);
-        }
+            coordinates = EntityCoordinates.FromMap(
+                MapManager.GetMapEntityId(mousePos.MapId),
+                mousePos,
+                TransformSystem,
+                EntityManager);
 
         // Heavy attack.
         if (altDown == BoundKeyState.Down)
@@ -126,11 +123,10 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
                 EntityUid? target = null;
 
                 if (_stateManager.CurrentState is GameplayStateBase screen)
-                {
                     target = screen.GetClickedEntity(mousePos);
-                }
 
-                EntityManager.RaisePredictiveEvent(new DisarmAttackEvent(GetNetEntity(target), GetNetCoordinates(coordinates)));
+                EntityManager.RaisePredictiveEvent(
+                    new DisarmAttackEvent(GetNetEntity(target), GetNetCoordinates(coordinates)));
                 return;
             }
 
@@ -145,22 +141,19 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
 
             if (mousePos.MapId != attackerPos.MapId ||
                 (attackerPos.Position - mousePos.Position).Length() > weapon.Range)
-            {
                 return;
-            }
 
             EntityUid? target = null;
 
             if (_stateManager.CurrentState is GameplayStateBase screen)
-            {
                 target = screen.GetClickedEntity(mousePos);
-            }
 
             // Don't light-attack if interaction will be handling this instead
             if (Interaction.CombatModeCanHandInteract(entity, target))
                 return;
 
-            RaisePredictiveEvent(new LightAttackEvent(GetNetEntity(target), GetNetEntity(weaponUid), GetNetCoordinates(coordinates)));
+            RaisePredictiveEvent(
+                new LightAttackEvent(GetNetEntity(target), GetNetEntity(weaponUid), GetNetCoordinates(coordinates)));
         }
     }
 
@@ -173,22 +166,24 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
         return Interaction.InRangeUnobstructed(user, target, targetCoordinates, targetLocalAngle, range);
     }
 
-    protected override void DoDamageEffect(List<EntityUid> targets, EntityUid? user, TransformComponent targetXform)
-    {
+    protected override void DoDamageEffect(List<EntityUid> targets, EntityUid? user, TransformComponent targetXform) =>
         // Server never sends the event to us for predictiveeevent.
         _color.RaiseEffect(Color.Red, targets, Filter.Local());
-    }
 
-    protected override bool DoDisarm(EntityUid user, DisarmAttackEvent ev, EntityUid meleeUid, MeleeWeaponComponent component, ICommonSession? session)
+    protected override bool DoDisarm(
+        EntityUid user,
+        DisarmAttackEvent ev,
+        EntityUid meleeUid,
+        MeleeWeaponComponent component,
+        ICommonSession? session
+    )
     {
         if (!base.DoDisarm(user, ev, meleeUid, component, session))
             return false;
 
         if (!TryComp<CombatModeComponent>(user, out var combatMode) ||
             combatMode.CanDisarm != true)
-        {
             return false;
-        }
 
         var target = GetEntity(ev.Target);
 
@@ -196,11 +191,14 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
         if (!HasComp<HandsComponent>(target!.Value))
         {
             // or just be able to be shoved over.
-            if (TryComp<StatusEffectsComponent>(target, out var status) && status.AllowedEffects.Contains("KnockedDown"))
+            if (TryComp<StatusEffectsComponent>(target, out var status) &&
+                status.AllowedEffects.Contains("KnockedDown"))
                 return true;
 
             if (Timing.IsFirstTimePredicted && HasComp<MobStateComponent>(target.Value))
-                PopupSystem.PopupEntity(Loc.GetString("disarm-action-disarmable", ("targetName", target.Value)), target.Value);
+                PopupSystem.PopupEntity(
+                    Loc.GetString("disarm-action-disarmable", ("targetName", target.Value)),
+                    target.Value);
 
             return false;
         }
@@ -209,17 +207,20 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
     }
 
     /// <summary>
-    /// Raises a heavy attack event with the relevant attacked entities.
-    /// This is to avoid lag effecting the client's perspective too much.
+    ///     Raises a heavy attack event with the relevant attacked entities.
+    ///     This is to avoid lag effecting the client's perspective too much.
     /// </summary>
-    private void ClientHeavyAttack(EntityUid user, EntityCoordinates coordinates, EntityUid meleeUid, MeleeWeaponComponent component)
+    private void ClientHeavyAttack(
+        EntityUid user,
+        EntityCoordinates coordinates,
+        EntityUid meleeUid,
+        MeleeWeaponComponent component
+    )
     {
         // Only run on first prediction to avoid the potential raycast entities changing.
         if (!_xformQuery.TryGetComponent(user, out var userXform) ||
             !Timing.IsFirstTimePredicted)
-        {
             return;
-        }
 
         var targetMap = coordinates.ToMap(EntityManager, TransformSystem);
 
@@ -232,8 +233,13 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
 
         // This should really be improved. GetEntitiesInArc uses pos instead of bounding boxes.
         // Server will validate it with InRangeUnobstructed.
-        var entities = GetNetEntityList(ArcRayCast(userPos, direction.ToWorldAngle(), component.Angle, distance, userXform.MapID, user).ToList());
-        RaisePredictiveEvent(new HeavyAttackEvent(GetNetEntity(meleeUid), entities.GetRange(0, Math.Min(component.MaxTargets, entities.Count)), GetNetCoordinates(coordinates)));
+        var entities = GetNetEntityList(
+            ArcRayCast(userPos, direction.ToWorldAngle(), component.Angle, distance, userXform.MapID, user).ToList());
+        RaisePredictiveEvent(
+            new HeavyAttackEvent(
+                GetNetEntity(meleeUid),
+                entities.GetRange(0, Math.Min(component.MaxTargets, entities.Count)),
+                GetNetCoordinates(coordinates)));
     }
 
     private void OnMeleeLunge(MeleeLungeEvent ev)

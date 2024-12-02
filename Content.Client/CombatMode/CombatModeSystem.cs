@@ -1,3 +1,5 @@
+#region
+
 using Content.Client.Hands.Systems;
 using Content.Client.NPC.HTN;
 using Content.Shared.CCVar;
@@ -7,7 +9,11 @@ using Robust.Client.Input;
 using Robust.Client.Player;
 using Robust.Shared.Configuration;
 
+#endregion
+
+
 namespace Content.Client.CombatMode;
+
 
 public sealed class CombatModeSystem : SharedCombatModeSystem
 {
@@ -18,7 +24,7 @@ public sealed class CombatModeSystem : SharedCombatModeSystem
     [Dependency] private readonly IEyeManager _eye = default!;
 
     /// <summary>
-    /// Raised whenever combat mode changes.
+    ///     Raised whenever combat mode changes.
     /// </summary>
     public event Action<bool>? LocalPlayerCombatModeUpdated;
 
@@ -31,10 +37,8 @@ public sealed class CombatModeSystem : SharedCombatModeSystem
         Subs.CVar(_cfg, CCVars.CombatModeIndicatorsPointShow, OnShowCombatIndicatorsChanged, true);
     }
 
-    private void OnHandleState(EntityUid uid, CombatModeComponent component, ref AfterAutoHandleStateEvent args)
-    {
+    private void OnHandleState(EntityUid uid, CombatModeComponent component, ref AfterAutoHandleStateEvent args) =>
         UpdateHud(uid);
-    }
 
     public override void Shutdown()
     {
@@ -59,17 +63,12 @@ public sealed class CombatModeSystem : SharedCombatModeSystem
         UpdateHud(entity);
     }
 
-    protected override bool IsNpc(EntityUid uid)
-    {
-        return HasComp<HTNComponent>(uid);
-    }
+    protected override bool IsNpc(EntityUid uid) => HasComp<HTNComponent>(uid);
 
     private void UpdateHud(EntityUid entity)
     {
         if (entity != _playerManager.LocalEntity || !Timing.IsFirstTimePredicted)
-        {
             return;
-        }
 
         var inCombatMode = IsInCombatMode();
         LocalPlayerCombatModeUpdated?.Invoke(inCombatMode);
@@ -79,16 +78,15 @@ public sealed class CombatModeSystem : SharedCombatModeSystem
     {
         if (isShow)
         {
-            _overlayManager.AddOverlay(new CombatModeIndicatorsOverlay(
-                _inputManager,
-                EntityManager,
-                _eye,
-                this,
-                EntityManager.System<HandsSystem>()));
+            _overlayManager.AddOverlay(
+                new CombatModeIndicatorsOverlay(
+                    _inputManager,
+                    EntityManager,
+                    _eye,
+                    this,
+                    EntityManager.System<HandsSystem>()));
         }
         else
-        {
             _overlayManager.RemoveOverlay<CombatModeIndicatorsOverlay>();
-        }
     }
 }

@@ -1,9 +1,13 @@
+#region
+
 using System.Threading;
 using System.Threading.Tasks;
 using Robust.Client.Graphics;
-using Robust.Shared.Graphics;
 
-namespace Content.Client.Parallax.Data
+#endregion
+
+
+amespace Content.Client.Parallax.Data
 {
     [ImplicitDataDefinitionForInheritors]
     public partial interface IParallaxTextureSource

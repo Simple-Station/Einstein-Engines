@@ -1,10 +1,15 @@
+#region
+
 using Content.Shared.Movement.Components;
 using Robust.Shared.Input;
 using Robust.Shared.Input.Binding;
-using Robust.Shared.Map;
 using Robust.Shared.Player;
 
+#endregion
+
+
 namespace Content.Client.Replay.Spectator;
+
 
 // Partial class handles movement logic for observers.
 public sealed partial class ReplaySpectatorSystem
@@ -12,7 +17,7 @@ public sealed partial class ReplaySpectatorSystem
     public DirectionFlag Direction;
 
     /// <summary>
-    /// Fallback speed if the observer ghost has no <see cref="MovementSpeedModifierComponent"/>.
+    ///     Fallback speed if the observer ghost has no <see cref="MovementSpeedModifierComponent" />.
     /// </summary>
     public const float DefaultSpeed = 12;
 
@@ -31,10 +36,7 @@ public sealed partial class ReplaySpectatorSystem
             .Register<ReplaySpectatorSystem>();
     }
 
-    private void ShutdownMovement()
-    {
-        CommandBinds.Unregister<ReplaySpectatorSystem>();
-    }
+    private void ShutdownMovement() => CommandBinds.Unregister<ReplaySpectatorSystem>();
 
     // Normal mover code works via physics. Replays don't do prediction/physics. You can fudge it by relying on the
     // fact that only local-player physics is currently predicted, but instead I've just added crude mover logic here.
@@ -58,7 +60,7 @@ public sealed partial class ReplaySpectatorSystem
         if (!IsClientSide(player) || !HasComp<ReplaySpectatorComponent>(player))
         {
             // Player is trying to move -> behave like the ghost-on-move component.
-            SpawnSpectatorGhost(new EntityCoordinates(player, default), true);
+            SpawnSpectatorGhost(new(player, default), true);
             return;
         }
 
@@ -113,7 +115,11 @@ public sealed partial class ReplaySpectatorSystem
             _dir = dir;
         }
 
-        public override bool HandleCmdMessage(IEntityManager entManager, ICommonSession? session, IFullInputCmdMessage message)
+        public override bool HandleCmdMessage(
+            IEntityManager entManager,
+            ICommonSession? session,
+            IFullInputCmdMessage message
+        )
         {
             if (message.State == BoundKeyState.Down)
                 _sys.Direction |= _dir;

@@ -1,6 +1,12 @@
-﻿using Robust.Shared.Console;
+﻿#region
+
+using Robust.Shared.Console;
+
+#endregion
+
 
 namespace Content.Client.Ghost.Commands;
+
 
 public sealed class ToggleGhostVisibilityCommand : IConsoleCommand
 {
@@ -15,12 +21,8 @@ public sealed class ToggleGhostVisibilityCommand : IConsoleCommand
         var ghostSystem = _entSysMan.GetEntitySystem<GhostSystem>();
 
         if (args.Length != 0 && bool.TryParse(args[0], out var visibility))
-        {
             ghostSystem.ToggleGhostVisibility(visibility);
-        }
         else
-        {
             ghostSystem.ToggleGhostVisibility();
-        }
     }
 }

@@ -1,15 +1,21 @@
+#region
+
 using Content.Shared.Silicons.Laws.Components;
 using JetBrains.Annotations;
-using Robust.Client.GameObjects;
+
+#endregion
+
 
 namespace Content.Client.Silicons.Laws.Ui;
+
 
 [UsedImplicitly]
 public sealed class SiliconLawBoundUserInterface : BoundUserInterface
 {
     [ViewVariables]
     private SiliconLawMenu? _menu;
-    private EntityUid _owner;
+
+    private readonly EntityUid _owner;
 
     public SiliconLawBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
     {

@@ -1,3 +1,5 @@
+#region
+
 using Content.Client.Message;
 using Content.Client.Stylesheets;
 using Content.Shared.Chemistry.Components;
@@ -7,7 +9,11 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Timing;
 
+#endregion
+
+
 namespace Content.Client.Chemistry.UI;
+
 
 public sealed class InjectorStatusControl : Control
 {
@@ -24,7 +30,7 @@ public sealed class InjectorStatusControl : Control
     {
         _parent = parent;
         _solutionContainers = solutionContainers;
-        _label = new RichTextLabel { StyleClasses = { StyleNano.StyleClassItemStatus } };
+        _label = new() { StyleClasses = { StyleNano.StyleClassItemStatus, }, };
         AddChild(_label);
     }
 
@@ -48,17 +54,20 @@ public sealed class InjectorStatusControl : Control
         PrevToggleState = _parent.Comp.ToggleState;
 
         // Update current volume and injector state
-        var modeStringLocalized = Loc.GetString(_parent.Comp.ToggleState switch
-        {
-            InjectorToggleMode.Draw => "injector-draw-text",
-            InjectorToggleMode.Inject => "injector-inject-text",
-            _ => "injector-invalid-injector-toggle-mode"
-        });
+        var modeStringLocalized = Loc.GetString(
+            _parent.Comp.ToggleState switch
+            {
+                InjectorToggleMode.Draw => "injector-draw-text",
+                InjectorToggleMode.Inject => "injector-inject-text",
+                _ => "injector-invalid-injector-toggle-mode"
+            });
 
-        _label.SetMarkup(Loc.GetString("injector-volume-label",
-            ("currentVolume", solution.Volume),
-            ("totalVolume", solution.MaxVolume),
-            ("modeString", modeStringLocalized),
-            ("transferVolume", _parent.Comp.TransferAmount)));
+        _label.SetMarkup(
+            Loc.GetString(
+                "injector-volume-label",
+                ("currentVolume", solution.Volume),
+                ("totalVolume", solution.MaxVolume),
+                ("modeString", modeStringLocalized),
+                ("transferVolume", _parent.Comp.TransferAmount)));
     }
 }

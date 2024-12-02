@@ -1,11 +1,15 @@
+#region
+
 using Content.Shared.Labels;
 using Content.Shared.Labels.Components;
-using Robust.Client.GameObjects;
+
+#endregion
+
 
 namespace Content.Client.Labels.UI
 {
     /// <summary>
-    /// Initializes a <see cref="HandLabelerWindow"/> and updates it when new server messages are received.
+    ///     Initializes a <see cref="HandLabelerWindow" /> and updates it when new server messages are received.
     /// </summary>
     public sealed class HandLabelerBoundUserInterface : BoundUserInterface
     {
@@ -55,9 +59,9 @@ namespace Content.Client.Labels.UI
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
-            if (!disposing) return;
+            if (!disposing)
+                return;
             _window?.Dispose();
         }
     }
-
 }

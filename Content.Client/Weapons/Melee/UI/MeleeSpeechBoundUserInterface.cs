@@ -1,25 +1,28 @@
-using Robust.Client.GameObjects;
+#region
+
 using Content.Shared.Speech.Components;
+
+#endregion
+
 
 namespace Content.Client.Weapons.Melee.UI;
 
+
 /// <summary>
-/// Initializes a <see cref="MeleeSpeechWindow"/> and updates it when new server messages are received.
+///     Initializes a <see cref="MeleeSpeechWindow" /> and updates it when new server messages are received.
 /// </summary>
 public sealed class MeleeSpeechBoundUserInterface : BoundUserInterface
 {
     [ViewVariables]
     private MeleeSpeechWindow? _window;
 
-    public MeleeSpeechBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-    {
-    }
+    public MeleeSpeechBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
 
     protected override void Open()
     {
         base.Open();
 
-        _window = new MeleeSpeechWindow();
+        _window = new();
         if (State != null)
             UpdateState(State);
 
@@ -30,13 +33,11 @@ public sealed class MeleeSpeechBoundUserInterface : BoundUserInterface
     }
 
 
-    private void OnBattlecryChanged(string newBattlecry)
-    {
+    private void OnBattlecryChanged(string newBattlecry) =>
         SendMessage(new MeleeSpeechBattlecryChangedMessage(newBattlecry));
-    }
 
     /// <summary>
-    /// Update the UI state based on server-sent info
+    ///     Update the UI state based on server-sent info
     /// </summary>
     /// <param name="state"></param>
     protected override void UpdateState(BoundUserInterfaceState state)

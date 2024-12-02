@@ -1,3 +1,5 @@
+#region
+
 using Content.Client.Message;
 using Content.Client.Stylesheets;
 using Content.Shared.Radiation.Components;
@@ -6,7 +8,11 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Timing;
 
+#endregion
+
+
 namespace Content.Client.Radiation.UI;
+
 
 public sealed class GeigerItemControl : Control
 {
@@ -16,7 +22,7 @@ public sealed class GeigerItemControl : Control
     public GeigerItemControl(GeigerComponent component)
     {
         _component = component;
-        _label = new RichTextLabel { StyleClasses = { StyleNano.StyleClassItemStatus } };
+        _label = new() { StyleClasses = { StyleNano.StyleClassItemStatus, }, };
         AddChild(_label);
 
         Update();
@@ -39,13 +45,13 @@ public sealed class GeigerItemControl : Control
             var color = SharedGeigerSystem.LevelToColor(_component.DangerLevel);
             var currentRads = _component.CurrentRadiation;
             var rads = currentRads.ToString("N1");
-            msg = Loc.GetString("geiger-item-control-status",
-                ("rads", rads), ("color", color));
+            msg = Loc.GetString(
+                "geiger-item-control-status",
+                ("rads", rads),
+                ("color", color));
         }
         else
-        {
             msg = Loc.GetString("geiger-item-control-disabled");
-        }
 
         _label.SetMarkup(msg);
         _component.UiUpdateNeeded = false;

@@ -1,10 +1,15 @@
+#region
+
 using Content.Client.UserInterface.Fragments;
 using Content.Shared.Mech;
 using Content.Shared.Mech.Components;
 using JetBrains.Annotations;
-using Robust.Client.GameObjects;
+
+#endregion
+
 
 namespace Content.Client.Mech.Ui;
+
 
 [UsedImplicitly]
 public sealed class MechBoundUserInterface : BoundUserInterface
@@ -12,9 +17,7 @@ public sealed class MechBoundUserInterface : BoundUserInterface
     [ViewVariables]
     private MechMenu? _menu;
 
-    public MechBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-    {
-    }
+    public MechBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
 
     protected override void Open()
     {
@@ -53,10 +56,8 @@ public sealed class MechBoundUserInterface : BoundUserInterface
             if (ui == null)
                 continue;
             foreach (var (attached, estate) in state.EquipmentStates)
-            {
                 if (ent == EntMan.GetEntity(attached))
                     ui.UpdateState(estate);
-            }
         }
     }
 
@@ -77,4 +78,3 @@ public sealed class MechBoundUserInterface : BoundUserInterface
         return component?.Ui;
     }
 }
-

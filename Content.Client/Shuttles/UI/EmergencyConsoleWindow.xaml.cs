@@ -1,3 +1,5 @@
+#region
+
 using Content.Client.Computer;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Shuttles.BUIStates;
@@ -8,7 +10,11 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Timing;
 
+#endregion
+
+
 namespace Content.Client.Shuttles.UI;
+
 
 [GenerateTypedNameReferences]
 public sealed partial class EmergencyConsoleWindow : FancyWindow,
@@ -39,20 +45,14 @@ public sealed partial class EmergencyConsoleWindow : FancyWindow,
         };
     }
 
-    private void OnRepealAllPressed(ComputerBoundUserInterfaceBase cb, BaseButton.ButtonEventArgs obj)
-    {
+    private void OnRepealAllPressed(ComputerBoundUserInterfaceBase cb, BaseButton.ButtonEventArgs obj) =>
         cb.SendMessage(new EmergencyShuttleRepealAllMessage());
-    }
 
-    private void OnRepealPressed(ComputerBoundUserInterfaceBase cb, BaseButton.ButtonEventArgs obj)
-    {
+    private void OnRepealPressed(ComputerBoundUserInterfaceBase cb, BaseButton.ButtonEventArgs obj) =>
         cb.SendMessage(new EmergencyShuttleRepealMessage());
-    }
 
-    private void OnAuthorizePressed(ComputerBoundUserInterfaceBase cb, BaseButton.ButtonEventArgs obj)
-    {
+    private void OnAuthorizePressed(ComputerBoundUserInterfaceBase cb, BaseButton.ButtonEventArgs obj) =>
         cb.SendMessage(new EmergencyShuttleAuthorizeMessage());
-    }
 
     public void UpdateState(EmergencyConsoleBoundUserInterfaceState scc)
     {
@@ -64,22 +64,19 @@ public sealed partial class EmergencyConsoleWindow : FancyWindow,
         AuthorizationCount.Text = Loc.GetString("emergency-shuttle-ui-remaining", ("remaining", remainingAuths));
 
         foreach (var auth in scc.Authorizations)
-        {
-            AuthorizationsContainer.AddChild(new Label
-            {
-                Text = auth,
-                FontColorOverride = Color.Lime,
-            });
-        }
+            AuthorizationsContainer.AddChild(
+                new Label
+                {
+                    Text = auth,
+                    FontColorOverride = Color.Lime
+                });
     }
 
     protected override void Draw(DrawingHandleScreen handle)
     {
         base.Draw(handle);
         if (_earlyLaunchTime == null)
-        {
             Countdown.Text = "00:10";
-        }
         else
         {
             var remaining = _earlyLaunchTime.Value - _timing.CurTime;

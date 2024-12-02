@@ -1,4 +1,6 @@
-﻿using Content.Shared.CCVar;
+﻿#region
+
+using Content.Shared.CCVar;
 using Content.Shared.Mind.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.NPC;
@@ -8,7 +10,11 @@ using Content.Shared.StatusIcon.Components;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 
+#endregion
+
+
 namespace Content.Client.SSDIndicator;
+
 
 /// <summary>
 ///     Handles displaying SSD indicator as status icon
@@ -35,8 +41,6 @@ public sealed class SSDIndicatorSystem : EntitySystem
             !HasComp<ActiveNPCComponent>(uid) &&
             TryComp<MindContainerComponent>(uid, out var mindContainer) &&
             mindContainer.ShowExamineInfo)
-        {
             args.StatusIcons.Add(_prototype.Index<StatusIconPrototype>(component.Icon));
-        }
     }
 }

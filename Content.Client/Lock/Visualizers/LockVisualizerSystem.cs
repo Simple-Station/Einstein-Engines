@@ -1,8 +1,14 @@
-using Content.Shared.Storage;
+#region
+
 using Content.Shared.Lock;
+using Content.Shared.Storage;
 using Robust.Client.GameObjects;
 
+#endregion
+
+
 namespace Content.Client.Lock.Visualizers;
+
 
 public sealed class LockVisualizerSystem : VisualizerSystem<LockVisualsComponent>
 {
@@ -19,16 +25,12 @@ public sealed class LockVisualizerSystem : VisualizerSystem<LockVisualsComponent
         var unlockedStateExist = args.Sprite.BaseRSI?.TryGetState(comp.StateUnlocked, out _);
 
         if (AppearanceSystem.TryGetData<bool>(uid, StorageVisuals.Open, out var open, args.Component))
-        {
             args.Sprite.LayerSetVisible(LockVisualLayers.Lock, !open);
-        }
         else if (!(bool) unlockedStateExist!)
             args.Sprite.LayerSetVisible(LockVisualLayers.Lock, locked);
 
         if (!open && (bool) unlockedStateExist!)
-        {
             args.Sprite.LayerSetState(LockVisualLayers.Lock, locked ? comp.StateLocked : comp.StateUnlocked);
-        }
     }
 }
 

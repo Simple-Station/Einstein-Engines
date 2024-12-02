@@ -1,3 +1,4 @@
+#region
 
 using Content.Client.Message;
 using Content.Client.UserInterface.Systems.EscapeMenu;
@@ -6,58 +7,62 @@ using Robust.Client.Console;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.XAML;
 
-namespace Content.Client.Lobby.UI
+#endregion
+
+
+namespace Content.Client.Lobby.UI;
+
+
+[GenerateTypedNameReferences]
+public sealed partial class LobbyGui : UIScreen
 {
-    [GenerateTypedNameReferences]
-    public sealed partial class LobbyGui : UIScreen
+    [Dependency] private readonly IClientConsoleHost _consoleHost = default!;
+
+    public LobbyGui()
     {
-        [Dependency] private readonly IClientConsoleHost _consoleHost = default!;
+        RobustXamlLoader.Load(this);
+        IoCManager.InjectDependencies(this);
+        SetAnchorPreset(MainContainer, LayoutPreset.Wide);
+        SetAnchorPreset(Background, LayoutPreset.Wide);
 
-        public LobbyGui()
+        LobbySong.SetMarkup(Loc.GetString("lobby-state-song-no-song-text"));
+
+        LeaveButton.OnPressed += _ => _consoleHost.ExecuteCommand("disconnect");
+        OptionsButton.OnPressed += _ => UserInterfaceManager.GetUIController<OptionsUIController>().ToggleWindow();
+    }
+
+    public void SwitchState(LobbyGuiState state)
+    {
+        DefaultState.Visible = false;
+        CharacterSetupState.Visible = false;
+
+        switch (state)
         {
-            RobustXamlLoader.Load(this);
-            IoCManager.InjectDependencies(this);
-            SetAnchorPreset(MainContainer, LayoutPreset.Wide);
-            SetAnchorPreset(Background, LayoutPreset.Wide);
+            case LobbyGuiState.Default:
+                DefaultState.Visible = true;
+                RightSide.Visible = true;
+                break;
+            case LobbyGuiState.CharacterSetup:
+                CharacterSetupState.Visible = true;
 
-            LobbySong.SetMarkup(Loc.GetString("lobby-state-song-no-song-text"));
+                var actualWidth = (float) UserInterfaceManager.RootControl.PixelWidth;
+                var setupWidth = (float) LeftSide.PixelWidth;
 
-            LeaveButton.OnPressed += _ => _consoleHost.ExecuteCommand("disconnect");
-            OptionsButton.OnPressed += _ => UserInterfaceManager.GetUIController<OptionsUIController>().ToggleWindow();
+                if (1 - setupWidth / actualWidth > 0.30)
+                    RightSide.Visible = false;
+
+                UserInterfaceManager.GetUIController<LobbyUIController>().ReloadCharacterSetup();
+
+                break;
         }
+    }
 
-        public void SwitchState(LobbyGuiState state)
-        {
-            DefaultState.Visible = false;
-            CharacterSetupState.Visible = false;
+    public enum LobbyGuiState : byte
+    {
+        /// The default state, i.e., what's seen on launch.
+        Default,
 
-            switch (state)
-            {
-                case LobbyGuiState.Default:
-                    DefaultState.Visible = true;
-                    RightSide.Visible = true;
-                    break;
-                case LobbyGuiState.CharacterSetup:
-                    CharacterSetupState.Visible = true;
-
-                    var actualWidth = (float) UserInterfaceManager.RootControl.PixelWidth;
-                    var setupWidth = (float) LeftSide.PixelWidth;
-
-                    if (1 - (setupWidth / actualWidth) > 0.30)
-                        RightSide.Visible = false;
-
-                    UserInterfaceManager.GetUIController<LobbyUIController>().ReloadCharacterSetup();
-
-                    break;
-            }
-        }
-
-        public enum LobbyGuiState : byte
-        {
-            /// The default state, i.e., what's seen on launch.
-            Default,
-            /// The character setup state.
-            CharacterSetup,
-        }
+        /// The character setup state.
+        CharacterSetup
     }
 }

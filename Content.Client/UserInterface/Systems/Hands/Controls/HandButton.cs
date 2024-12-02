@@ -1,7 +1,13 @@
-﻿using Content.Client.UserInterface.Controls;
+﻿#region
+
+using Content.Client.UserInterface.Controls;
 using Content.Shared.Hands.Components;
 
+#endregion
+
+
 namespace Content.Client.UserInterface.Systems.Hands.Controls;
+
 
 public sealed class HandButton : SlotControl
 {
@@ -15,8 +21,7 @@ public sealed class HandButton : SlotControl
         SetBackground(handLocation);
     }
 
-    private void SetBackground(HandLocation handLoc)
-    {
+    private void SetBackground(HandLocation handLoc) =>
         ButtonTexturePath = handLoc switch
         {
             HandLocation.Left => "Slots/hand_l",
@@ -24,5 +29,4 @@ public sealed class HandButton : SlotControl
             HandLocation.Right => "Slots/hand_r",
             _ => ButtonTexturePath
         };
-    }
 }

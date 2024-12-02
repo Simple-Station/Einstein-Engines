@@ -1,4 +1,5 @@
-using System.Numerics;
+#region
+
 using Content.Client.Actions;
 using Content.Client.Actions.UI;
 using Content.Client.Cooldown;
@@ -15,11 +16,15 @@ using static Robust.Client.UserInterface.Controls.BoxContainer;
 using static Robust.Client.UserInterface.Controls.TextureRect;
 using Direction = Robust.Shared.Maths.Direction;
 
+#endregion
+
+
 namespace Content.Client.UserInterface.Systems.Actions.Controls;
+
 
 public sealed class ActionButton : Control, IEntityControl
 {
-    private IEntityManager _entities;
+    private readonly IEntityManager _entities;
     private SpriteSystem? _spriteSys;
     private ActionUIController? _controller;
     private bool _beingHovered;
@@ -32,9 +37,7 @@ public sealed class ActionButton : Control, IEntityControl
         {
             _keybind = value;
             if (_keybind != null)
-            {
                 Label.Text = BoundKeyHelper.ShortKeyName(_keybind.Value);
-            }
         }
     }
 
@@ -68,55 +71,55 @@ public sealed class ActionButton : Control, IEntityControl
         _controller = controller;
 
         MouseFilter = MouseFilterMode.Pass;
-        Button = new TextureRect
+        Button = new()
         {
             Name = "Button",
-            TextureScale = new Vector2(2, 2)
+            TextureScale = new(2, 2)
         };
-        HighlightRect = new PanelContainer
+        HighlightRect = new()
         {
-            StyleClasses = {StyleNano.StyleClassHandSlotHighlight},
-            MinSize = new Vector2(32, 32),
+            StyleClasses = { StyleNano.StyleClassHandSlotHighlight, },
+            MinSize = new(32, 32),
             Visible = false
         };
-        _bigActionIcon = new TextureRect
+        _bigActionIcon = new()
         {
             HorizontalExpand = true,
             VerticalExpand = true,
             Stretch = StretchMode.Scale,
             Visible = false
         };
-        _smallActionIcon = new TextureRect
+        _smallActionIcon = new()
         {
             HorizontalAlignment = HAlignment.Right,
             VerticalAlignment = VAlignment.Bottom,
             Stretch = StretchMode.Scale,
             Visible = false
         };
-        Label = new Label
+        Label = new()
         {
             Name = "Label",
             HorizontalAlignment = HAlignment.Left,
             VerticalAlignment = VAlignment.Top,
-            Margin = new Thickness(5, 0, 0, 0)
+            Margin = new(5, 0, 0, 0)
         };
-        _bigItemSpriteView = new SpriteView
+        _bigItemSpriteView = new()
         {
             Name = "Big Sprite",
             HorizontalExpand = true,
             VerticalExpand = true,
-            Scale = new Vector2(2, 2),
-            SetSize = new Vector2(64, 64),
+            Scale = new(2, 2),
+            SetSize = new(64, 64),
             Visible = false,
-            OverrideDirection = Direction.South,
+            OverrideDirection = Direction.South
         };
-        _smallItemSpriteView = new SpriteView
+        _smallItemSpriteView = new()
         {
             Name = "Small Sprite",
             HorizontalAlignment = HAlignment.Right,
             VerticalAlignment = VAlignment.Bottom,
             Visible = false,
-            OverrideDirection = Direction.South,
+            OverrideDirection = Direction.South
         };
         // padding to the left of the small icon
         var paddingBoxItemIcon = new BoxContainer
@@ -124,21 +127,23 @@ public sealed class ActionButton : Control, IEntityControl
             Orientation = LayoutOrientation.Horizontal,
             HorizontalExpand = true,
             VerticalExpand = true,
-            MinSize = new Vector2(64, 64)
+            MinSize = new(64, 64)
         };
-        paddingBoxItemIcon.AddChild(new Control()
-        {
-            MinSize = new Vector2(32, 32),
-        });
-        paddingBoxItemIcon.AddChild(new Control
-        {
-            Children =
+        paddingBoxItemIcon.AddChild(
+            new()
             {
-                _smallActionIcon,
-                _smallItemSpriteView
-            }
-        });
-        Cooldown = new CooldownGraphic {Visible = false};
+                MinSize = new(32, 32)
+            });
+        paddingBoxItemIcon.AddChild(
+            new()
+            {
+                Children =
+                {
+                    _smallActionIcon,
+                    _smallItemSpriteView
+                }
+            });
+        Cooldown = new() { Visible = false, };
 
         AddChild(Button);
         AddChild(_bigActionIcon);
@@ -148,7 +153,7 @@ public sealed class ActionButton : Control, IEntityControl
         AddChild(Cooldown);
         AddChild(paddingBoxItemIcon);
 
-        Button.Modulate = new Color(255, 255, 255, 150);
+        Button.Modulate = new(255, 255, 255, 150);
 
         OnThemeUpdated();
 
@@ -195,23 +200,21 @@ public sealed class ActionButton : Control, IEntityControl
         var name = FormattedMessage.FromMarkupPermissive(Loc.GetString(metadata.EntityName));
         var decr = FormattedMessage.FromMarkupPermissive(Loc.GetString(metadata.EntityDescription));
 
-        if (_action is { Charges: not null })
+        if (_action is { Charges: not null, })
         {
-            var charges = FormattedMessage.FromMarkupPermissive(Loc.GetString($"Charges: {_action.Charges.Value.ToString()}/{_action.MaxCharges.ToString()}"));
+            var charges = FormattedMessage.FromMarkupPermissive(
+                Loc.GetString($"Charges: {_action.Charges.Value.ToString()}/{_action.MaxCharges.ToString()}"));
             return new ActionAlertTooltip(name, decr, charges: charges);
         }
 
         return new ActionAlertTooltip(name, decr);
     }
 
-    protected override void ControlFocusExited()
-    {
-        ActionFocusExited?.Invoke(this);
-    }
+    protected override void ControlFocusExited() => ActionFocusExited?.Invoke(this);
 
     private void UpdateItemIcon()
     {
-        if (_action is not {EntityIcon: { } entity} ||
+        if (_action is not { EntityIcon: { } entity, } ||
             !_entities.HasComponent<SpriteComponent>(entity))
         {
             _bigItemSpriteView.Visible = false;
@@ -285,7 +288,7 @@ public sealed class ActionButton : Control, IEntityControl
 
         _controller ??= UserInterfaceManager.GetUIController<ActionUIController>();
         _spriteSys ??= _entities.System<SpriteSystem>();
-        if ((_controller.SelectingTargetFor == ActionId || _action.Toggled))
+        if (_controller.SelectingTargetFor == ActionId || _action.Toggled)
         {
             if (_action.IconOn != null)
                 SetActionIcon(_spriteSys.Frame0(_action.IconOn));
@@ -305,21 +308,15 @@ public sealed class ActionButton : Control, IEntityControl
         _controller ??= UserInterfaceManager.GetUIController<ActionUIController>();
         if (_action != null ||
             _controller.IsDragging && GetPositionInParent() == Parent?.ChildCount - 1)
-        {
             Button.Texture = _buttonBackgroundTexture;
-        }
         else
-        {
             Button.Texture = null;
-        }
     }
 
     public bool TryReplaceWith(EntityUid actionId, ActionsSystem system)
     {
         if (Locked)
-        {
             return false;
-        }
 
         UpdateData(actionId, system);
         return true;
@@ -354,14 +351,10 @@ public sealed class ActionButton : Control, IEntityControl
             return;
 
         if (_action.Cooldown != null)
-        {
             Cooldown.FromTime(_action.Cooldown.Value.Start, _action.Cooldown.Value.End);
-        }
 
         if (ActionId != null && _toggled != _action.Toggled)
-        {
             _toggled = _action.Toggled;
-        }
     }
 
     protected override void MouseEntered()
@@ -382,13 +375,13 @@ public sealed class ActionButton : Control, IEntityControl
     }
 
     /// <summary>
-    /// Press this button down. If it was depressed and now set to not depressed, will
-    /// trigger the action.
+    ///     Press this button down. If it was depressed and now set to not depressed, will
+    ///     trigger the action.
     /// </summary>
     public void Depress(GUIBoundKeyEventArgs args, bool depress)
     {
         // action can still be toggled if it's allowed to stay selected
-        if (_action is not {Enabled: true})
+        if (_action is not { Enabled: true, })
             return;
 
         _depressed = depress;
@@ -409,9 +402,7 @@ public sealed class ActionButton : Control, IEntityControl
 
         // show a hover only if the action is usable or another action is being dragged on top of this
         if (_beingHovered && (_controller.IsDragging || _action!.Enabled))
-        {
             SetOnlyStylePseudoClass(ContainerButton.StylePseudoClassHover);
-        }
 
         // it's only depress-able if it's usable, so if we're depressed
         // show the depressed style
@@ -426,9 +417,10 @@ public sealed class ActionButton : Control, IEntityControl
         if (_action.Toggled || _controller.SelectingTargetFor == ActionId)
         {
             // when there's a toggle sprite, we're showing that sprite instead of highlighting this slot
-            SetOnlyStylePseudoClass(_action.IconOn != null
-                ? ContainerButton.StylePseudoClassNormal
-                : ContainerButton.StylePseudoClassPressed);
+            SetOnlyStylePseudoClass(
+                _action.IconOn != null
+                    ? ContainerButton.StylePseudoClassNormal
+                    : ContainerButton.StylePseudoClassPressed);
             return;
         }
 

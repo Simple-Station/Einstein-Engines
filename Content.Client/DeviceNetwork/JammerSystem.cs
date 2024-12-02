@@ -1,8 +1,11 @@
+#region
+
 using Content.Shared.Radio.EntitySystems;
+
+#endregion
+
 
 namespace Content.Client.DeviceNetwork;
 
-public sealed class JammerSystem : SharedJammerSystem
-{
 
-}
+public sealed class JammerSystem : SharedJammerSystem { }

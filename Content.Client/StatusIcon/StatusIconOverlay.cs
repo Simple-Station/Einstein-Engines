@@ -1,3 +1,6 @@
+#region
+
+using System.Numerics;
 using Content.Shared.StatusIcon;
 using Content.Shared.StatusIcon.Components;
 using Robust.Client.GameObjects;
@@ -5,9 +8,12 @@ using Robust.Client.Graphics;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
-using System.Numerics;
+
+#endregion
+
 
 namespace Content.Client.StatusIcon;
+
 
 public sealed class StatusIconOverlay : Overlay
 {
@@ -39,10 +45,11 @@ public sealed class StatusIconOverlay : Overlay
         var eyeRot = args.Viewport.Eye?.Rotation ?? default;
 
         var xformQuery = _entity.GetEntityQuery<TransformComponent>();
-        var scaleMatrix = Matrix3Helpers.CreateScale(new Vector2(1, 1));
+        var scaleMatrix = Matrix3Helpers.CreateScale(new(1, 1));
         var rotationMatrix = Matrix3Helpers.CreateRotation(-eyeRot);
 
-        var query = _entity.AllEntityQueryEnumerator<StatusIconComponent, SpriteComponent, TransformComponent, MetaDataComponent>();
+        var query = _entity
+            .AllEntityQueryEnumerator<StatusIconComponent, SpriteComponent, TransformComponent, MetaDataComponent>();
         while (query.MoveNext(out var uid, out var comp, out var sprite, out var xform, out var meta))
         {
             if (xform.MapID != args.MapId)
@@ -72,7 +79,6 @@ public sealed class StatusIconOverlay : Overlay
 
             foreach (var proto in icons)
             {
-
                 var curTime = _timing.RealTime;
                 var texture = _sprite.GetFrame(proto.Icon, curTime);
 
@@ -91,9 +97,9 @@ public sealed class StatusIconOverlay : Overlay
                         accOffsetL += texture.Height;
                         countL++;
                     }
+
                     yOffset = (bounds.Height + sprite.Offset.Y) / 2f - (float) accOffsetL / EyeManager.PixelsPerMeter;
                     xOffset = -(bounds.Width + sprite.Offset.X) / 2f;
-
                 }
                 else
                 {
@@ -104,9 +110,9 @@ public sealed class StatusIconOverlay : Overlay
                         accOffsetR += texture.Height;
                         countR++;
                     }
+
                     yOffset = (bounds.Height + sprite.Offset.Y) / 2f - (float) accOffsetR / EyeManager.PixelsPerMeter;
                     xOffset = (bounds.Width + sprite.Offset.X) / 2f - (float) texture.Width / EyeManager.PixelsPerMeter;
-
                 }
 
                 if (proto.IsShaded)

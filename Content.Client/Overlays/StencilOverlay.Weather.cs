@@ -1,10 +1,15 @@
+#region
+
 using System.Numerics;
 using Content.Shared.Weather;
 using Robust.Client.Graphics;
 using Robust.Shared.Map.Components;
-using Robust.Shared.Physics.Components;
+
+#endregion
+
 
 namespace Content.Client.Overlays;
+
 
 public sealed partial class StencilOverlay
 {
@@ -21,36 +26,37 @@ public sealed partial class StencilOverlay
         // Cut out the irrelevant bits via stencil
         // This is why we don't just use parallax; we might want specific tiles to get drawn over
         // particularly for planet maps or stations.
-        worldHandle.RenderInRenderTarget(_blep!, () =>
-        {
-            var xformQuery = _entManager.GetEntityQuery<TransformComponent>();
-            _grids.Clear();
-
-            // idk if this is safe to cache in a field and clear sloth help
-            _mapManager.FindGridsIntersecting(mapId, worldAABB, ref _grids);
-
-            foreach (var grid in _grids)
+        worldHandle.RenderInRenderTarget(
+            _blep!,
+            () =>
             {
-                var matrix = _transform.GetWorldMatrix(grid, xformQuery);
-                var matty =  Matrix3x2.Multiply(matrix, invMatrix);
-                worldHandle.SetTransform(matty);
+                var xformQuery = _entManager.GetEntityQuery<TransformComponent>();
+                _grids.Clear();
 
-                foreach (var tile in grid.Comp.GetTilesIntersecting(worldAABB))
+                // idk if this is safe to cache in a field and clear sloth help
+                _mapManager.FindGridsIntersecting(mapId, worldAABB, ref _grids);
+
+                foreach (var grid in _grids)
                 {
-                    // Ignored tiles for stencil
-                    if (_weather.CanWeatherAffect(grid, tile))
+                    var matrix = _transform.GetWorldMatrix(grid, xformQuery);
+                    var matty = Matrix3x2.Multiply(matrix, invMatrix);
+                    worldHandle.SetTransform(matty);
+
+                    foreach (var tile in grid.Comp.GetTilesIntersecting(worldAABB))
                     {
-                        continue;
+                        // Ignored tiles for stencil
+                        if (_weather.CanWeatherAffect(grid, tile))
+                            continue;
+
+                        var gridTile = new Box2(
+                            tile.GridIndices * grid.Comp.TileSize,
+                            (tile.GridIndices + Vector2i.One) * grid.Comp.TileSize);
+
+                        worldHandle.DrawRect(gridTile, Color.White);
                     }
-
-                    var gridTile = new Box2(tile.GridIndices * grid.Comp.TileSize,
-                        (tile.GridIndices + Vector2i.One) * grid.Comp.TileSize);
-
-                    worldHandle.DrawRect(gridTile, Color.White);
                 }
-            }
-
-        }, Color.Transparent);
+            },
+            Color.Transparent);
 
         worldHandle.SetTransform(Matrix3x2.Identity);
         worldHandle.UseShader(_protoManager.Index<ShaderPrototype>("StencilMask").Instance());
@@ -60,7 +66,14 @@ public sealed partial class StencilOverlay
 
         // Draw the rain
         worldHandle.UseShader(_protoManager.Index<ShaderPrototype>("StencilDraw").Instance());
-        _parallax.DrawParallax(worldHandle, worldAABB, sprite, curTime, position, Vector2.Zero, modulate: (weatherProto.Color ?? Color.White).WithAlpha(alpha));
+        _parallax.DrawParallax(
+            worldHandle,
+            worldAABB,
+            sprite,
+            curTime,
+            position,
+            Vector2.Zero,
+            modulate: (weatherProto.Color ?? Color.White).WithAlpha(alpha));
 
         worldHandle.SetTransform(Matrix3x2.Identity);
         worldHandle.UseShader(null);

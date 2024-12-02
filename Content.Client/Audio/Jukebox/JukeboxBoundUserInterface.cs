@@ -1,11 +1,15 @@
+#region
+
 using Content.Shared.Audio.Jukebox;
 using Robust.Client.Audio;
-using Robust.Client.Player;
 using Robust.Shared.Audio.Components;
-using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 
+#endregion
+
+
 namespace Content.Client.Audio.Jukebox;
+
 
 public sealed class JukeboxBoundUserInterface : BoundUserInterface
 {
@@ -23,20 +27,16 @@ public sealed class JukeboxBoundUserInterface : BoundUserInterface
     {
         base.Open();
 
-        _menu = new JukeboxMenu();
+        _menu = new();
         _menu.OnClose += Close;
         _menu.OpenCentered();
 
         _menu.OnPlayPressed += args =>
         {
             if (args)
-            {
                 SendMessage(new JukeboxPlayingMessage());
-            }
             else
-            {
                 SendMessage(new JukeboxPauseMessage());
-            }
         };
 
         _menu.OnStopPressed += () =>
@@ -52,7 +52,7 @@ public sealed class JukeboxBoundUserInterface : BoundUserInterface
     }
 
     /// <summary>
-    /// Reloads the attached menu if it exists.
+    ///     Reloads the attached menu if it exists.
     /// </summary>
     public void Reload()
     {
@@ -67,20 +67,12 @@ public sealed class JukeboxBoundUserInterface : BoundUserInterface
             _menu.SetSelectedSong(songProto.Name, (float) length.TotalSeconds);
         }
         else
-        {
             _menu.SetSelectedSong(string.Empty, 0f);
-        }
     }
 
-    public void PopulateMusic()
-    {
-        _menu?.Populate(_protoManager.EnumeratePrototypes<JukeboxPrototype>());
-    }
+    public void PopulateMusic() => _menu?.Populate(_protoManager.EnumeratePrototypes<JukeboxPrototype>());
 
-    public void SelectSong(ProtoId<JukeboxPrototype> songid)
-    {
-        SendMessage(new JukeboxSelectedMessage(songid));
-    }
+    public void SelectSong(ProtoId<JukeboxPrototype> songid) => SendMessage(new JukeboxSelectedMessage(songid));
 
     public void SetTime(float time)
     {
@@ -94,9 +86,7 @@ public sealed class JukeboxBoundUserInterface : BoundUserInterface
         // that's still on engine so our playback position never gets corrected.
         if (EntMan.TryGetComponent(Owner, out JukeboxComponent? jukebox) &&
             EntMan.TryGetComponent(jukebox.AudioStream, out AudioComponent? audioComp))
-        {
             audioComp.PlaybackPosition = time;
-        }
 
         SendMessage(new JukeboxSetTimeMessage(sentTime));
     }
@@ -115,4 +105,3 @@ public sealed class JukeboxBoundUserInterface : BoundUserInterface
         _menu = null;
     }
 }
-

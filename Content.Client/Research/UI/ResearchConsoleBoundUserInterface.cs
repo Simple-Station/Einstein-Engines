@@ -1,8 +1,13 @@
+#region
+
 using Content.Shared.Research.Components;
 using JetBrains.Annotations;
-using Robust.Client.GameObjects;
+
+#endregion
+
 
 namespace Content.Client.Research.UI;
+
 
 [UsedImplicitly]
 public sealed class ResearchConsoleBoundUserInterface : BoundUserInterface
@@ -10,9 +15,7 @@ public sealed class ResearchConsoleBoundUserInterface : BoundUserInterface
     [ViewVariables]
     private ResearchConsoleMenu? _consoleMenu;
 
-    public ResearchConsoleBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-    {
-    }
+    public ResearchConsoleBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
 
     protected override void Open()
     {
@@ -20,7 +23,7 @@ public sealed class ResearchConsoleBoundUserInterface : BoundUserInterface
 
         var owner = Owner;
 
-        _consoleMenu = new ResearchConsoleMenu(owner);
+        _consoleMenu = new(owner);
 
         _consoleMenu.OnTechnologyCardPressed += id =>
         {

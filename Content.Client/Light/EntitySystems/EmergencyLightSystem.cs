@@ -1,12 +1,22 @@
+#region
+
 using Content.Client.Light.Components;
 using Content.Shared.Light.Components;
 using Robust.Client.GameObjects;
 
+#endregion
+
+
 namespace Content.Client.Light.EntitySystems;
+
 
 public sealed class EmergencyLightSystem : VisualizerSystem<EmergencyLightComponent>
 {
-    protected override void OnAppearanceChange(EntityUid uid, EmergencyLightComponent comp, ref AppearanceChangeEvent args)
+    protected override void OnAppearanceChange(
+        EntityUid uid,
+        EmergencyLightComponent comp,
+        ref AppearanceChangeEvent args
+    )
     {
         if (args.Sprite == null)
             return;

@@ -1,6 +1,10 @@
-﻿using System.Text.RegularExpressions;
-using Robust.Client.GameObjects;
+﻿#region
+
+using System.Text.RegularExpressions;
 using static Content.Shared.Configurable.ConfigurationComponent;
+
+#endregion
+
 
 namespace Content.Client.Configurable.UI
 {
@@ -12,9 +16,7 @@ namespace Content.Client.Configurable.UI
         [ViewVariables]
         public Regex? Validation { get; internal set; }
 
-        public ConfigurationBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-        {
-        }
+        public ConfigurationBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
 
         protected override void Open()
         {

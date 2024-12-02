@@ -1,3 +1,5 @@
+#region
+
 using System.Text;
 using Content.Client.Resources;
 using Content.Shared.Access.Components;
@@ -5,7 +7,11 @@ using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
 using Robust.Shared.Enums;
 
+#endregion
+
+
 namespace Content.Client.Access;
+
 
 public sealed class AccessOverlay : Overlay
 {
@@ -18,7 +24,11 @@ public sealed class AccessOverlay : Overlay
 
     public override OverlaySpace Space => OverlaySpace.ScreenSpace;
 
-    public AccessOverlay(IEntityManager entityManager, IResourceCache resourceCache, SharedTransformSystem transformSystem)
+    public AccessOverlay(
+        IEntityManager entityManager,
+        IResourceCache resourceCache,
+        SharedTransformSystem transformSystem
+    )
     {
         _entityManager = entityManager;
         _transformSystem = transformSystem;
@@ -67,9 +77,7 @@ public sealed class AccessOverlay : Overlay
                 }
             }
             else
-            {
                 textBuffer.AppendLine("+Unrestricted");
-            }
 
             foreach (var key in accessReader.AccessKeys)
             {

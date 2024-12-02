@@ -1,3 +1,5 @@
+#region
+
 using System.Linq;
 using System.Numerics;
 using Content.Client.Atmos.EntitySystems;
@@ -13,6 +15,9 @@ using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using AtmosDebugOverlayData = Content.Shared.Atmos.EntitySystems.SharedAtmosDebugOverlaySystem.AtmosDebugOverlayData;
 using DebugMessage = Content.Shared.Atmos.EntitySystems.SharedAtmosDebugOverlaySystem.AtmosDebugOverlayMessage;
+
+#endregion
+
 
 namespace Content.Client.Atmos.Overlays;
 
@@ -69,18 +74,20 @@ public sealed class AtmosDebugOverlay : Overlay
         handle.SetTransform(Matrix3x2.Identity);
     }
 
-    private void DrawData(DebugMessage msg,
-        DrawingHandleWorld handle)
+    private void DrawData(
+        DebugMessage msg,
+        DrawingHandleWorld handle
+    )
     {
         foreach (var data in msg.OverlayData)
-        {
             if (data != null)
                 DrawGridTile(data.Value, handle);
-        }
     }
 
-    private void DrawGridTile(AtmosDebugOverlayData data,
-        DrawingHandleWorld handle)
+    private void DrawGridTile(
+        AtmosDebugOverlayData data,
+        DrawingHandleWorld handle
+    )
     {
         DrawFill(data, handle);
         DrawBlocked(data, handle);
@@ -102,17 +109,13 @@ public sealed class AtmosDebugOverlay : Overlay
         {
             // Red-Green-Blue interpolation
             if (interp < 0.5f)
-            {
                 res = Color.InterpolateBetween(Color.Red, Color.LimeGreen, interp * 2);
-            }
             else
-            {
                 res = Color.InterpolateBetween(Color.LimeGreen, Color.Blue, (interp - 0.5f) * 2);
-            }
         }
 
         res = res.WithAlpha(0.75f);
-        handle.DrawRect(Box2.FromDimensions(new Vector2(tile.X, tile.Y), new Vector2(1, 1)), res);
+        handle.DrawRect(Box2.FromDimensions(new(tile.X, tile.Y), new(1, 1)), res);
     }
 
     private float GetFillData(AtmosDebugOverlayData data)
@@ -125,9 +128,7 @@ public sealed class AtmosDebugOverlay : Overlay
             case AtmosDebugOverlayMode.TotalMoles:
                 var total = 0f;
                 foreach (var f in data.Moles)
-                {
                     total += f;
-                }
 
                 return total;
             case AtmosDebugOverlayMode.GasMoles:
@@ -148,16 +149,12 @@ public sealed class AtmosDebugOverlay : Overlay
 
         // -- Pressure Direction --
         if (data.PressureDirection != AtmosDirection.Invalid)
-        {
             DrawPressureDirection(handle, data.PressureDirection, tileCentre, Color.Blue);
-        }
         else if (data.LastPressureDirection != AtmosDirection.Invalid)
-        {
             DrawPressureDirection(handle, data.LastPressureDirection, tileCentre, Color.LightGray);
-        }
 
         // -- Excited Groups --
-        if (data.InExcitedGroup is {} grp)
+        if (data.InExcitedGroup is { } grp)
         {
             var basisA = tile;
             var basisB = tile + new Vector2(1.0f, 1.0f);
@@ -181,8 +178,12 @@ public sealed class AtmosDebugOverlay : Overlay
             handle.DrawCircle(tileCentre, 0.05f, Color.Black);
     }
 
-    private void CheckAndShowBlockDir(AtmosDebugOverlayData data, DrawingHandleWorld handle, AtmosDirection dir,
-        Vector2 tileCentre)
+    private void CheckAndShowBlockDir(
+        AtmosDebugOverlayData data,
+        DrawingHandleWorld handle,
+        AtmosDirection dir,
+        Vector2 tileCentre
+    )
     {
         if (!data.BlockDirection.HasFlag(dir))
             return;
@@ -200,7 +201,8 @@ public sealed class AtmosDebugOverlay : Overlay
         DrawingHandleWorld handle,
         AtmosDirection d,
         Vector2 center,
-        Color color)
+        Color color
+    )
     {
         // Account for South being 0.
         var atmosAngle = d.ToAngle() - Angle.FromDegrees(90);
@@ -218,28 +220,26 @@ public sealed class AtmosDebugOverlay : Overlay
         if (_ui.MouseGetControl(mousePos) is not IViewportControl viewport)
             return;
 
-        var coords= viewport.PixelToMap(mousePos.Position);
+        var coords = viewport.PixelToMap(mousePos.Position);
         var box = Box2.CenteredAround(coords.Position, 3 * Vector2.One);
-        GetGrids(coords.MapId, new Box2Rotated(box));
+        GetGrids(coords.MapId, new(box));
 
         foreach (var (grid, msg) in _grids)
         {
             var index = _map.WorldToTile(grid, grid, coords.Position);
             foreach (var data in msg.OverlayData)
-            {
                 if (data?.Indices == index)
                 {
                     DrawTooltip(handle, mousePos.Position, data.Value);
                     return;
                 }
-            }
         }
     }
 
     private void DrawTooltip(DrawingHandleScreen handle, Vector2 pos, AtmosDebugOverlayData data)
     {
         var lineHeight = _font.GetLineHeight(1f);
-        var offset  = new Vector2(0, lineHeight);
+        var offset = new Vector2(0, lineHeight);
 
         var moles = data.Moles == null
             ? "No Air"
@@ -263,12 +263,19 @@ public sealed class AtmosDebugOverlay : Overlay
     private void GetGrids(MapId mapId, Box2Rotated box)
     {
         _grids.Clear();
-        _mapManager.FindGridsIntersecting(mapId, box, ref _grids, (EntityUid uid, MapGridComponent grid,
-            ref List<(Entity<MapGridComponent>, DebugMessage)> state) =>
-        {
-            if (_system.TileData.TryGetValue(uid, out var data))
-                state.Add(((uid, grid), data));
-            return true;
-        });
+        _mapManager.FindGridsIntersecting(
+            mapId,
+            box,
+            ref _grids,
+            (
+                EntityUid uid,
+                MapGridComponent grid,
+                ref List<(Entity<MapGridComponent>, DebugMessage)> state
+            ) =>
+            {
+                if (_system.TileData.TryGetValue(uid, out var data))
+                    state.Add(((uid, grid), data));
+                return true;
+            });
     }
 }

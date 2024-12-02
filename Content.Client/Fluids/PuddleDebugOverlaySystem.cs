@@ -1,8 +1,13 @@
-﻿using System.Collections;
+﻿#region
+
 using Content.Shared.Fluids;
 using Robust.Client.Graphics;
 
+#endregion
+
+
 namespace Content.Client.Fluids;
+
 
 public sealed class PuddleDebugOverlaySystem : SharedPuddleDebugOverlaySystem
 {
@@ -10,6 +15,7 @@ public sealed class PuddleDebugOverlaySystem : SharedPuddleDebugOverlaySystem
 
     public readonly Dictionary<EntityUid, PuddleOverlayDebugMessage> TileData = new();
     private PuddleOverlay? _overlay;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -24,7 +30,7 @@ public sealed class PuddleDebugOverlaySystem : SharedPuddleDebugOverlaySystem
         if (_overlay != null)
             return;
 
-        _overlay = new PuddleOverlay();
+        _overlay = new();
         _overlayManager.AddOverlay(_overlay);
     }
 
@@ -38,8 +44,5 @@ public sealed class PuddleDebugOverlaySystem : SharedPuddleDebugOverlaySystem
         _overlay = null;
     }
 
-    public PuddleDebugOverlayData[] GetData(EntityUid mapGridGridEntityId)
-    {
-        return TileData[mapGridGridEntityId].OverlayData;
-    }
+    public PuddleDebugOverlayData[] GetData(EntityUid mapGridGridEntityId) => TileData[mapGridGridEntityId].OverlayData;
 }

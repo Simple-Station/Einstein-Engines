@@ -1,3 +1,5 @@
+#region
+
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Client.Guidebook.Richtext;
@@ -9,12 +11,16 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 
+#endregion
+
+
 namespace Content.Client.Guidebook.Controls;
+
 
 /// <summary>
 ///     Control for embedding all the technologies in a discipline into a guidebook.
 /// </summary>
-[UsedImplicitly, GenerateTypedNameReferences]
+[UsedImplicitly, GenerateTypedNameReferences,]
 public sealed partial class GuideTechDisciplineEmbed : BoxContainer, IDocumentTag
 {
     [Dependency] private readonly IPrototypeManager _prototype = default!;
@@ -29,7 +35,9 @@ public sealed partial class GuideTechDisciplineEmbed : BoxContainer, IDocumentTa
     public GuideTechDisciplineEmbed(string group) : this()
     {
         var prototypes = _prototype.EnumeratePrototypes<TechnologyPrototype>()
-            .Where(p => p.Discipline.Equals(group)).OrderBy(p => p.Tier).ThenBy(p => Loc.GetString(p.Name));
+            .Where(p => p.Discipline.Equals(group))
+            .OrderBy(p => p.Tier)
+            .ThenBy(p => Loc.GetString(p.Name));
         foreach (var tech in prototypes)
         {
             var embed = new GuideTechnologyEmbed(tech);
@@ -47,7 +55,9 @@ public sealed partial class GuideTechDisciplineEmbed : BoxContainer, IDocumentTa
         }
 
         var prototypes = _prototype.EnumeratePrototypes<TechnologyPrototype>()
-            .Where(p => p.Discipline.Equals(group)).OrderBy(p => p.Tier).ThenBy(p => Loc.GetString(p.Name));
+            .Where(p => p.Discipline.Equals(group))
+            .OrderBy(p => p.Tier)
+            .ThenBy(p => Loc.GetString(p.Name));
         foreach (var tech in prototypes)
         {
             var embed = new GuideTechnologyEmbed(tech);

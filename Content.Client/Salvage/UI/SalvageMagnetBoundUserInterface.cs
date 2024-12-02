@@ -1,10 +1,16 @@
+#region
+
 using System.Linq;
 using Content.Shared.Salvage;
 using Content.Shared.Salvage.Magnet;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 
+#endregion
+
+
 namespace Content.Client.Salvage.UI;
+
 
 public sealed class SalvageMagnetBoundUserInterface : BoundUserInterface
 {
@@ -20,7 +26,7 @@ public sealed class SalvageMagnetBoundUserInterface : BoundUserInterface
     protected override void Open()
     {
         base.Open();
-        _window = new OfferingWindow();
+        _window = new();
         _window.Title = Loc.GetString("salvage-magnet-window-title");
         _window.OnClose += Close;
         _window.OpenCenteredLeft();
@@ -54,10 +60,11 @@ public sealed class SalvageMagnetBoundUserInterface : BoundUserInterface
 
             option.ClaimPressed += args =>
             {
-                SendMessage(new MagnetClaimOfferEvent()
-                {
-                    Index = claimIndex
-                });
+                SendMessage(
+                    new MagnetClaimOfferEvent
+                    {
+                        Index = claimIndex
+                    });
             };
 
             switch (offer)
@@ -71,24 +78,25 @@ public sealed class SalvageMagnetBoundUserInterface : BoundUserInterface
                     {
                         var count = asteroid.MarkerLayers[resource];
 
-                        var container = new BoxContainer()
+                        var container = new BoxContainer
                         {
                             Orientation = BoxContainer.LayoutOrientation.Horizontal,
-                            HorizontalExpand = true,
+                            HorizontalExpand = true
                         };
 
-                        var resourceLabel = new Label()
+                        var resourceLabel = new Label
                         {
-                            Text = Loc.GetString("salvage-magnet-resources",
+                            Text = Loc.GetString(
+                                "salvage-magnet-resources",
                                 ("resource", resource)),
-                            HorizontalAlignment = Control.HAlignment.Left,
+                            HorizontalAlignment = Control.HAlignment.Left
                         };
 
-                        var countLabel = new Label()
+                        var countLabel = new Label
                         {
                             Text = Loc.GetString("salvage-magnet-resources-count", ("count", count)),
                             HorizontalAlignment = Control.HAlignment.Right,
-                            HorizontalExpand = true,
+                            HorizontalExpand = true
                         };
 
                         container.AddChild(resourceLabel);
@@ -99,7 +107,9 @@ public sealed class SalvageMagnetBoundUserInterface : BoundUserInterface
 
                     break;
                 case SalvageOffering salvage:
-                    option.Title = Loc.GetString($"salvage-map-size-{salvage.SalvageMap.Size}"); // DeltaV - Replace map names with sizes
+                    option.Title =
+                        Loc.GetString(
+                            $"salvage-map-size-{salvage.SalvageMap.Size}"); // DeltaV - Replace map names with sizes
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

@@ -1,12 +1,17 @@
-﻿using Content.Shared.CrewManifest;
+﻿#region
+
+using Content.Shared.CrewManifest;
+using Content.Shared.Roles;
 using Content.Shared.StatusIcon;
 using Robust.Client.GameObjects;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Prototypes;
-using System.Numerics;
-using Content.Shared.Roles;
+
+#endregion
+
 
 namespace Content.Client.CrewManifest.UI;
+
 
 public sealed class CrewManifestSection : BoxContainer
 {
@@ -14,18 +19,20 @@ public sealed class CrewManifestSection : BoxContainer
         IPrototypeManager prototypeManager,
         SpriteSystem spriteSystem,
         DepartmentPrototype section,
-        List<CrewManifestEntry> entries)
+        List<CrewManifestEntry> entries
+    )
     {
         Orientation = LayoutOrientation.Vertical;
         HorizontalExpand = true;
 
-        AddChild(new Label()
-        {
-            StyleClasses = { "LabelBig" },
-            Text = Loc.GetString($"department-{section.ID}")
-        });
+        AddChild(
+            new Label
+            {
+                StyleClasses = { "LabelBig", },
+                Text = Loc.GetString($"department-{section.ID}")
+            });
 
-        var gridContainer = new GridContainer()
+        var gridContainer = new GridContainer
         {
             HorizontalExpand = true,
             Columns = 2
@@ -35,13 +42,13 @@ public sealed class CrewManifestSection : BoxContainer
 
         foreach (var entry in entries)
         {
-            var name = new RichTextLabel()
+            var name = new RichTextLabel
             {
-                HorizontalExpand = true,
+                HorizontalExpand = true
             };
             name.SetMessage(entry.Name);
 
-            var titleContainer = new BoxContainer()
+            var titleContainer = new BoxContainer
             {
                 Orientation = LayoutOrientation.Horizontal,
                 HorizontalExpand = true
@@ -53,21 +60,19 @@ public sealed class CrewManifestSection : BoxContainer
 
             if (prototypeManager.TryIndex<StatusIconPrototype>(entry.JobIcon, out var jobIcon))
             {
-                var icon = new TextureRect()
+                var icon = new TextureRect
                 {
-                    TextureScale = new Vector2(2, 2),
+                    TextureScale = new(2, 2),
                     VerticalAlignment = VAlignment.Center,
                     Texture = spriteSystem.Frame0(jobIcon.Icon),
-                    Margin = new Thickness(0, 0, 4, 0)
+                    Margin = new(0, 0, 4, 0)
                 };
 
                 titleContainer.AddChild(icon);
                 titleContainer.AddChild(title);
             }
             else
-            {
                 titleContainer.AddChild(title);
-            }
 
             gridContainer.AddChild(name);
             gridContainer.AddChild(titleContainer);

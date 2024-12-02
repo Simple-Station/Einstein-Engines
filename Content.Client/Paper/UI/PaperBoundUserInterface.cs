@@ -1,9 +1,15 @@
+#region
+
 using JetBrains.Annotations;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Utility;
 using static Content.Shared.Paper.SharedPaperComponent;
 
+#endregion
+
+
 namespace Content.Client.Paper.UI;
+
 
 [UsedImplicitly]
 public sealed class PaperBoundUserInterface : BoundUserInterface
@@ -11,22 +17,18 @@ public sealed class PaperBoundUserInterface : BoundUserInterface
     [ViewVariables]
     private PaperWindow? _window;
 
-    public PaperBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-    {
-    }
+    public PaperBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
 
     protected override void Open()
     {
         base.Open();
 
-        _window = new PaperWindow();
+        _window = new();
         _window.OnClose += Close;
         _window.OnSaved += Input_OnTextEntered;
 
         if (EntMan.TryGetComponent<PaperVisualsComponent>(Owner, out var visuals))
-        {
             _window.InitVisuals(Owner, visuals);
-        }
 
         _window.OpenCentered();
     }
@@ -44,14 +46,15 @@ public sealed class PaperBoundUserInterface : BoundUserInterface
         if (_window != null)
         {
             _window.Input.TextRope = Rope.Leaf.Empty;
-            _window.Input.CursorPosition = new TextEdit.CursorPos(0, TextEdit.LineBreakBias.Top);
+            _window.Input.CursorPosition = new(0, TextEdit.LineBreakBias.Top);
         }
     }
 
     protected override void Dispose(bool disposing)
     {
         base.Dispose(disposing);
-        if (!disposing) return;
+        if (!disposing)
+            return;
         _window?.Dispose();
     }
 }

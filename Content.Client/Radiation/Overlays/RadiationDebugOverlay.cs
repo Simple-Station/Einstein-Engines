@@ -1,3 +1,5 @@
+#region
+
 using System.Linq;
 using System.Numerics;
 using Content.Client.Radiation.Systems;
@@ -6,7 +8,11 @@ using Robust.Client.ResourceManagement;
 using Robust.Shared.Enums;
 using Robust.Shared.Map.Components;
 
+#endregion
+
+
 namespace Content.Client.Radiation.Overlays;
+
 
 public sealed class RadiationDebugOverlay : Overlay
 {
@@ -98,7 +104,7 @@ public sealed class RadiationDebugOverlay : Overlay
                 var localPos = grid.GridTileToLocal(tile).Position + offset;
                 var worldPos = grid.LocalToWorld(localPos);
                 var screenCenter = args.ViewportControl.WorldToScreen(worldPos);
-                handle.DrawString(_font, screenCenter, value.ToString("F2"), color: Color.White);
+                handle.DrawString(_font, screenCenter, value.ToString("F2"), Color.White);
             }
         }
     }

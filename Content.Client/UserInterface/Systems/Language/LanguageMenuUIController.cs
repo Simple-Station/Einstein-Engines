@@ -1,21 +1,29 @@
-using Content.Client.Language;
+#region
+
 using Content.Client.Gameplay;
+using Content.Client.Language;
 using Content.Client.UserInterface.Controls;
+using Content.Client.UserInterface.Systems.MenuBar.Widgets;
 using Content.Shared.Input;
+using JetBrains.Annotations;
 using Robust.Client.UserInterface.Controllers;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Utility;
 using static Robust.Client.UserInterface.Controls.BaseButton;
-using JetBrains.Annotations;
+
+#endregion
+
 
 namespace Content.Client.UserInterface.Systems.Language;
 
+
 [UsedImplicitly]
-public sealed class LanguageMenuUIController : UIController, IOnStateEntered<GameplayState>, IOnStateExited<GameplayState>
+public sealed class LanguageMenuUIController : UIController, IOnStateEntered<GameplayState>,
+    IOnStateExited<GameplayState>
 {
     public LanguageMenuWindow? LanguageWindow;
-    private MenuButton? LanguageButton => UIManager.GetActiveUIWidgetOrNull<MenuBar.Widgets.GameTopMenuBar>()?.LanguageButton;
+    private MenuButton? LanguageButton => UIManager.GetActiveUIWidgetOrNull<GameTopMenuBar>()?.LanguageButton;
 
     public void OnStateEntered(GameplayState state)
     {
@@ -35,8 +43,10 @@ public sealed class LanguageMenuUIController : UIController, IOnStateEntered<Gam
                 LanguageButton.Pressed = true;
         };
 
-        CommandBinds.Builder.Bind(ContentKeyFunctions.OpenLanguageMenu,
-            InputCmdHandler.FromDelegate(_ => ToggleWindow())).Register<LanguageMenuUIController>();
+        CommandBinds.Builder.Bind(
+                ContentKeyFunctions.OpenLanguageMenu,
+                InputCmdHandler.FromDelegate(_ => ToggleWindow()))
+            .Register<LanguageMenuUIController>();
     }
 
     public void OnStateExited(GameplayState state)
@@ -66,10 +76,7 @@ public sealed class LanguageMenuUIController : UIController, IOnStateEntered<Gam
         LanguageButton.OnPressed += LanguageButtonPressed;
     }
 
-    private void LanguageButtonPressed(ButtonEventArgs args)
-    {
-        ToggleWindow();
-    }
+    private void LanguageButtonPressed(ButtonEventArgs args) => ToggleWindow();
 
     private void ToggleWindow()
     {

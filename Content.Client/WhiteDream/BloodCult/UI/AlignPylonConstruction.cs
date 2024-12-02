@@ -1,10 +1,16 @@
-﻿using System.Linq;
+﻿#region
+
+using System.Linq;
 using Content.Shared.WhiteDream.BloodCult.Components;
 using Robust.Client.Placement;
 using Robust.Client.Placement.Modes;
 using Robust.Shared.Map;
 
+#endregion
+
+
 namespace Content.Client.WhiteDream.BloodCult.UI;
+
 
 public sealed class AlignPylonConstruction : SnapgridCenter
 {
@@ -20,10 +26,8 @@ public sealed class AlignPylonConstruction : SnapgridCenter
         _lookup = _entityManager.System<EntityLookupSystem>();
     }
 
-    public override bool IsValidPosition(EntityCoordinates position)
-    {
-        return base.IsValidPosition(position) && !CheckForOtherPylons(position, PylonLookupRange);
-    }
+    public override bool IsValidPosition(EntityCoordinates position) =>
+        base.IsValidPosition(position) && !CheckForOtherPylons(position, PylonLookupRange);
 
     private bool CheckForOtherPylons(EntityCoordinates coordinates, float range)
     {

@@ -1,3 +1,5 @@
+#region
+
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Kitchen.Components;
 using JetBrains.Annotations;
@@ -6,173 +8,164 @@ using Robust.Client.Graphics;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Timing;
 
-namespace Content.Client.Kitchen.UI
+#endregion
+
+
+namespace Content.Client.Kitchen.UI;
+
+
+[UsedImplicitly]
+public sealed class MicrowaveBoundUserInterface : BoundUserInterface
 {
-    [UsedImplicitly]
-    public sealed class MicrowaveBoundUserInterface : BoundUserInterface
+    [ViewVariables]
+    private MicrowaveMenu? _menu;
+
+    [ViewVariables]
+    private readonly Dictionary<int, EntityUid> _solids = new();
+
+    [ViewVariables]
+    private readonly Dictionary<int, ReagentQuantity> _reagents = new();
+
+    [Dependency] private readonly IGameTiming _gameTiming = default!;
+
+    public MicrowaveUpdateUserInterfaceState currentState = default!;
+
+    private readonly IEntityManager _entManager;
+
+    public MicrowaveBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
     {
-        [ViewVariables]
-        private MicrowaveMenu? _menu;
+        _entManager = IoCManager.Resolve<IEntityManager>();
+    }
 
-        [ViewVariables]
-        private readonly Dictionary<int, EntityUid> _solids = new();
+    public TimeSpan GetCurrentTime() => _gameTiming.CurTime;
 
-        [ViewVariables]
-        private readonly Dictionary<int, ReagentQuantity> _reagents = new();
-        [Dependency] private readonly IGameTiming _gameTiming = default!;
-
-        public MicrowaveUpdateUserInterfaceState currentState = default!;
-
-        private IEntityManager _entManager;
-
-        public MicrowaveBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
+    protected override void Open()
+    {
+        base.Open();
+        _menu = new(this);
+        _menu.OpenCentered();
+        _menu.OnClose += Close;
+        _menu.StartButton.OnPressed += _ => SendPredictedMessage(new MicrowaveStartCookMessage());
+        _menu.EjectButton.OnPressed += _ => SendPredictedMessage(new MicrowaveEjectMessage());
+        _menu.IngredientsList.OnItemSelected += args =>
         {
-            _entManager = IoCManager.Resolve<IEntityManager>();
-        }
+            SendPredictedMessage(new MicrowaveEjectSolidIndexedMessage(EntMan.GetNetEntity(_solids[args.ItemIndex])));
+        };
 
-        public TimeSpan GetCurrentTime()
+        _menu.OnCookTimeSelected += (args, buttonIndex) =>
         {
-            return _gameTiming.CurTime;
-        }
+            var selectedCookTime = (uint) 0;
 
-        protected override void Open()
-        {
-            base.Open();
-            _menu = new MicrowaveMenu(this);
-            _menu.OpenCentered();
-            _menu.OnClose += Close;
-            _menu.StartButton.OnPressed += _ => SendPredictedMessage(new MicrowaveStartCookMessage());
-            _menu.EjectButton.OnPressed += _ => SendPredictedMessage(new MicrowaveEjectMessage());
-            _menu.IngredientsList.OnItemSelected += args =>
+            if (args.Button is MicrowaveMenu.MicrowaveCookTimeButton microwaveCookTimeButton)
             {
-                SendPredictedMessage(new MicrowaveEjectSolidIndexedMessage(EntMan.GetNetEntity(_solids[args.ItemIndex])));
-            };
+                // args.Button is a MicrowaveCookTimeButton
+                var actualButton = (MicrowaveMenu.MicrowaveCookTimeButton) args.Button;
+                selectedCookTime = actualButton.CookTime == 0 ? 0 : actualButton.CookTime;
+                // SendMessage(new MicrowaveSelectCookTimeMessage((int) selectedCookTime / 5, actualButton.CookTime));
+                SendPredictedMessage(
+                    new MicrowaveSelectCookTimeMessage((int) selectedCookTime / 5, actualButton.CookTime));
 
-            _menu.OnCookTimeSelected += (args, buttonIndex) =>
-            {
-                var selectedCookTime = (uint) 0;
-
-                if (args.Button is MicrowaveMenu.MicrowaveCookTimeButton microwaveCookTimeButton)
-                {
-                    // args.Button is a MicrowaveCookTimeButton
-                    var actualButton = (MicrowaveMenu.MicrowaveCookTimeButton) args.Button;
-                    selectedCookTime = actualButton.CookTime == 0 ? 0 : actualButton.CookTime;
-                    // SendMessage(new MicrowaveSelectCookTimeMessage((int) selectedCookTime / 5, actualButton.CookTime));
-                    SendPredictedMessage(new MicrowaveSelectCookTimeMessage((int) selectedCookTime / 5, actualButton.CookTime));
-
-                    _menu.CookTimeInfoLabel.Text = Loc.GetString("microwave-bound-user-interface-cook-time-label",
-                                                                    ("time", selectedCookTime));
-                }
-                else
-                {
-                    // args.Button is a normal button aka instant cook button
-                    SendPredictedMessage(new MicrowaveSelectCookTimeMessage((int) selectedCookTime, 0));
-
-                    _menu.CookTimeInfoLabel.Text = Loc.GetString("microwave-bound-user-interface-cook-time-label",
-                                                         ("time", Loc.GetString("microwave-menu-instant-button")));
-                }
-            };
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-
-            if (!disposing)
-            {
-                return;
-            }
-
-            _solids.Clear();
-            _menu?.Dispose();
-        }
-
-        protected override void UpdateState(BoundUserInterfaceState state)
-        {
-            base.UpdateState(state);
-            if (state is not MicrowaveUpdateUserInterfaceState cState)
-            {
-                return;
-            }
-
-
-            _menu?.ToggleBusyDisableOverlayPanel(cState.IsMicrowaveBusy || cState.ContainedSolids.Length == 0);
-            currentState = cState;
-
-            // TODO move this to a component state and ensure the net ids.
-            RefreshContentsDisplay(_entManager.GetEntityArray(cState.ContainedSolids));
-
-            if (_menu == null) return;
-
-            //Set the cook time info label
-            var cookTime = cState.ActiveButtonIndex == 0 
-                ? Loc.GetString("microwave-menu-instant-button")
-                : cState.CurrentCookTime.ToString();
-
-
-            _menu.CookTimeInfoLabel.Text = Loc.GetString("microwave-bound-user-interface-cook-time-label",
-                                                         ("time", cookTime));
-            _menu.StartButton.Disabled = cState.IsMicrowaveBusy || cState.ContainedSolids.Length == 0;
-            _menu.EjectButton.Disabled = cState.IsMicrowaveBusy || cState.ContainedSolids.Length == 0;
-
-
-            //Set the correct button active button
-            if (cState.ActiveButtonIndex == 0)
-            {
-                _menu.InstantCookButton.Pressed = true;
+                _menu.CookTimeInfoLabel.Text = Loc.GetString(
+                    "microwave-bound-user-interface-cook-time-label",
+                    ("time", selectedCookTime));
             }
             else
             {
-                var currentlySelectedTimeButton = (Button) _menu.CookTimeButtonVbox.GetChild(cState.ActiveButtonIndex - 1);
-                currentlySelectedTimeButton.Pressed = true;
-            }
+                // args.Button is a normal button aka instant cook button
+                SendPredictedMessage(new MicrowaveSelectCookTimeMessage((int) selectedCookTime, 0));
 
-            //Set the "micowave light" ui color to indicate if the microwave is busy or not
-            if (cState.IsMicrowaveBusy && cState.ContainedSolids.Length > 0)
-            {
-                _menu.IngredientsPanel.PanelOverride = new StyleBoxFlat { BackgroundColor = Color.FromHex("#947300") };
+                _menu.CookTimeInfoLabel.Text = Loc.GetString(
+                    "microwave-bound-user-interface-cook-time-label",
+                    ("time", Loc.GetString("microwave-menu-instant-button")));
             }
-            else
-            {
-                _menu.IngredientsPanel.PanelOverride = new StyleBoxFlat { BackgroundColor = Color.FromHex("#1B1B1E") };
-            }
+        };
+    }
+
+    protected override void Dispose(bool disposing)
+    {
+        base.Dispose(disposing);
+
+        if (!disposing)
+            return;
+
+        _solids.Clear();
+        _menu?.Dispose();
+    }
+
+    protected override void UpdateState(BoundUserInterfaceState state)
+    {
+        base.UpdateState(state);
+        if (state is not MicrowaveUpdateUserInterfaceState cState)
+            return;
+
+
+        _menu?.ToggleBusyDisableOverlayPanel(cState.IsMicrowaveBusy || cState.ContainedSolids.Length == 0);
+        currentState = cState;
+
+        // TODO move this to a component state and ensure the net ids.
+        RefreshContentsDisplay(_entManager.GetEntityArray(cState.ContainedSolids));
+
+        if (_menu == null)
+            return;
+
+        //Set the cook time info label
+        var cookTime = cState.ActiveButtonIndex == 0
+            ? Loc.GetString("microwave-menu-instant-button")
+            : cState.CurrentCookTime.ToString();
+
+
+        _menu.CookTimeInfoLabel.Text = Loc.GetString(
+            "microwave-bound-user-interface-cook-time-label",
+            ("time", cookTime));
+        _menu.StartButton.Disabled = cState.IsMicrowaveBusy || cState.ContainedSolids.Length == 0;
+        _menu.EjectButton.Disabled = cState.IsMicrowaveBusy || cState.ContainedSolids.Length == 0;
+
+
+        //Set the correct button active button
+        if (cState.ActiveButtonIndex == 0)
+            _menu.InstantCookButton.Pressed = true;
+        else
+        {
+            var currentlySelectedTimeButton = (Button) _menu.CookTimeButtonVbox.GetChild(cState.ActiveButtonIndex - 1);
+            currentlySelectedTimeButton.Pressed = true;
         }
 
-        private void RefreshContentsDisplay(EntityUid[] containedSolids)
+        //Set the "micowave light" ui color to indicate if the microwave is busy or not
+        if (cState.IsMicrowaveBusy && cState.ContainedSolids.Length > 0)
+            _menu.IngredientsPanel.PanelOverride = new StyleBoxFlat { BackgroundColor = Color.FromHex("#947300"), };
+        else
+            _menu.IngredientsPanel.PanelOverride = new StyleBoxFlat { BackgroundColor = Color.FromHex("#1B1B1E"), };
+    }
+
+    private void RefreshContentsDisplay(EntityUid[] containedSolids)
+    {
+        _reagents.Clear();
+
+        if (_menu == null)
+            return;
+
+        _solids.Clear();
+        _menu.IngredientsList.Clear();
+        foreach (var entity in containedSolids)
         {
-            _reagents.Clear();
+            if (EntMan.Deleted(entity))
+                return;
 
-            if (_menu == null) return;
+            // TODO just use sprite view
 
-            _solids.Clear();
-            _menu.IngredientsList.Clear();
-            foreach (var entity in containedSolids)
-            {
-                if (EntMan.Deleted(entity))
-                {
-                    return;
-                }
+            Texture? texture;
+            if (EntMan.TryGetComponent<IconComponent>(entity, out var iconComponent))
+                texture = EntMan.System<SpriteSystem>().GetIcon(iconComponent);
+            else if (EntMan.TryGetComponent<SpriteComponent>(entity, out var spriteComponent))
+                texture = spriteComponent.Icon?.Default;
+            else
+                continue;
 
-                // TODO just use sprite view
-
-                Texture? texture;
-                if (EntMan.TryGetComponent<IconComponent>(entity, out var iconComponent))
-                {
-                    texture = EntMan.System<SpriteSystem>().GetIcon(iconComponent);
-                }
-                else if (EntMan.TryGetComponent<SpriteComponent>(entity, out var spriteComponent))
-                {
-                    texture = spriteComponent.Icon?.Default;
-                }
-                else
-                {
-                    continue;
-                }
-
-                var solidItem = _menu.IngredientsList.AddItem(EntMan.GetComponent<MetaDataComponent>(entity).EntityName, texture);
-                var solidIndex = _menu.IngredientsList.IndexOf(solidItem);
-                _solids.Add(solidIndex, entity);
-            }
+            var solidItem = _menu.IngredientsList.AddItem(
+                EntMan.GetComponent<MetaDataComponent>(entity).EntityName,
+                texture);
+            var solidIndex = _menu.IngredientsList.IndexOf(solidItem);
+            _solids.Add(solidIndex, entity);
         }
     }
 }

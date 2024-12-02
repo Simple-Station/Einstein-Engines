@@ -1,11 +1,18 @@
+#region
+
 using System.Numerics;
+using Content.Shared.Shadowkin;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
-using Content.Shared.Shadowkin;
+using Vector3 = Robust.Shared.Maths.Vector3;
+
+#endregion
+
 
 namespace Content.Client.Overlays;
+
 
 /// <summary>
 ///     A simple overlay that applies a colored tint to the screen.
@@ -14,7 +21,7 @@ public sealed class ColorTintOverlay : Overlay
 {
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
-    [Dependency] IEntityManager _entityManager = default!;
+    [Dependency] private readonly IEntityManager _entityManager = default!;
 
     public override bool RequestScreenTexture => true;
     public override OverlaySpace Space => OverlaySpace.WorldSpace;
@@ -23,7 +30,8 @@ public sealed class ColorTintOverlay : Overlay
     /// <summary>
     ///     The color to tint the screen to as RGB on a scale of 0-1.
     /// </summary>
-    public Robust.Shared.Maths.Vector3? TintColor = null;
+    public Vector3? TintColor = null;
+
     /// <summary>
     ///     The percent to tint the screen by on a scale of 0-1.
     /// </summary>
@@ -37,12 +45,13 @@ public sealed class ColorTintOverlay : Overlay
 
     protected override bool BeforeDraw(in OverlayDrawArgs args)
     {
-        if (_player.LocalEntity is not { Valid: true } player
+        if (_player.LocalEntity is not { Valid: true, } player
             || !_entityManager.HasComponent<ShadowkinComponent>(player))
             return false;
 
         return base.BeforeDraw(in args);
     }
+
     protected override void Draw(in OverlayDrawArgs args)
     {
         if (ScreenTexture is null)
@@ -50,7 +59,7 @@ public sealed class ColorTintOverlay : Overlay
 
         _shader.SetParameter("SCREEN_TEXTURE", ScreenTexture);
         if (TintColor != null)
-            _shader.SetParameter("tint_color", (Robust.Shared.Maths.Vector3) TintColor);
+            _shader.SetParameter("tint_color", (Vector3) TintColor);
         if (TintAmount != null)
             _shader.SetParameter("tint_amount", (float) TintAmount);
 

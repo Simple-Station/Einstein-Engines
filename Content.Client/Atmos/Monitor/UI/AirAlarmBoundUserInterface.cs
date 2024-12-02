@@ -1,37 +1,35 @@
+#region
+
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Monitor;
 using Content.Shared.Atmos.Monitor.Components;
-using Robust.Client.GameObjects;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
-using Robust.Shared.Log;
+
+#endregion
+
 
 namespace Content.Client.Atmos.Monitor.UI;
+
 
 public sealed class AirAlarmBoundUserInterface : BoundUserInterface
 {
     private AirAlarmWindow? _window;
 
-    public AirAlarmBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-    {
-    }
+    public AirAlarmBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
 
     protected override void Open()
     {
         base.Open();
 
-        _window = new AirAlarmWindow(this);
+        _window = new(this);
 
         if (State != null)
-        {
             UpdateState(State);
-        }
 
         _window.OpenCentered();
 
         _window.OnClose += Close;
         _window.AtmosDeviceDataChanged += OnDeviceDataChanged;
-		_window.AtmosDeviceDataCopied += OnDeviceDataCopied;
+        _window.AtmosDeviceDataCopied += OnDeviceDataCopied;
         _window.AtmosAlarmThresholdChanged += OnThresholdChanged;
         _window.AirAlarmModeChanged += OnAirAlarmModeChanged;
         _window.AutoModeChanged += OnAutoModeChanged;
@@ -39,49 +37,33 @@ public sealed class AirAlarmBoundUserInterface : BoundUserInterface
         _window.AirAlarmTabChange += OnTabChanged;
     }
 
-    private void ResyncAllDevices()
-    {
-        SendMessage(new AirAlarmResyncAllDevicesMessage());
-    }
+    private void ResyncAllDevices() => SendMessage(new AirAlarmResyncAllDevicesMessage());
 
-    private void OnDeviceDataChanged(string address, IAtmosDeviceData data)
-    {
+    private void OnDeviceDataChanged(string address, IAtmosDeviceData data) =>
         SendMessage(new AirAlarmUpdateDeviceDataMessage(address, data));
-    }
 
-	private void OnDeviceDataCopied(IAtmosDeviceData data)
-    {
-        SendMessage(new AirAlarmCopyDeviceDataMessage(data));
-    }
+    private void OnDeviceDataCopied(IAtmosDeviceData data) => SendMessage(new AirAlarmCopyDeviceDataMessage(data));
 
-    private void OnAirAlarmModeChanged(AirAlarmMode mode)
-    {
-        SendMessage(new AirAlarmUpdateAlarmModeMessage(mode));
-    }
+    private void OnAirAlarmModeChanged(AirAlarmMode mode) => SendMessage(new AirAlarmUpdateAlarmModeMessage(mode));
 
-    private void OnAutoModeChanged(bool enabled)
-    {
-        SendMessage(new AirAlarmUpdateAutoModeMessage(enabled));
-    }
+    private void OnAutoModeChanged(bool enabled) => SendMessage(new AirAlarmUpdateAutoModeMessage(enabled));
 
-    private void OnThresholdChanged(string address, AtmosMonitorThresholdType type, AtmosAlarmThreshold threshold, Gas? gas = null)
-    {
+    private void OnThresholdChanged(
+        string address,
+        AtmosMonitorThresholdType type,
+        AtmosAlarmThreshold threshold,
+        Gas? gas = null
+    ) =>
         SendMessage(new AirAlarmUpdateAlarmThresholdMessage(address, type, threshold, gas));
-    }
 
-    private void OnTabChanged(AirAlarmTab tab)
-    {
-        SendMessage(new AirAlarmTabSetMessage(tab));
-    }
+    private void OnTabChanged(AirAlarmTab tab) => SendMessage(new AirAlarmTabSetMessage(tab));
 
     protected override void UpdateState(BoundUserInterfaceState state)
     {
         base.UpdateState(state);
 
         if (state is not AirAlarmUIState cast || _window == null)
-        {
             return;
-        }
 
         _window.UpdateState(cast);
     }
@@ -90,6 +72,7 @@ public sealed class AirAlarmBoundUserInterface : BoundUserInterface
     {
         base.Dispose(disposing);
 
-        if (disposing) _window?.Dispose();
+        if (disposing)
+            _window?.Dispose();
     }
 }

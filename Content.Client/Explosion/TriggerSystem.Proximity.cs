@@ -1,9 +1,15 @@
+#region
+
 using Content.Shared.Trigger;
 using Robust.Client.Animations;
 using Robust.Client.GameObjects;
 using Robust.Shared.Animations;
 
+#endregion
+
+
 namespace Content.Client.Explosion;
+
 
 public sealed partial class TriggerSystem
 {
@@ -17,25 +23,26 @@ public sealed partial class TriggerSystem
 
     private const string AnimKey = "proximity";
 
-    private static readonly Animation _flasherAnimation = new Animation
+    private static readonly Animation _flasherAnimation = new()
     {
         Length = TimeSpan.FromSeconds(0.6f),
-        AnimationTracks = {
+        AnimationTracks =
+        {
             new AnimationTrackSpriteFlick
             {
                 LayerKey = ProximityTriggerVisualLayers.Base,
-                KeyFrames = { new AnimationTrackSpriteFlick.KeyFrame("flashing", 0f)}
+                KeyFrames = { new("flashing", 0f), }
             },
-            new AnimationTrackComponentProperty()
+            new AnimationTrackComponentProperty
             {
                 ComponentType = typeof(PointLightComponent),
                 InterpolationMode = AnimationInterpolationMode.Nearest,
                 Property = nameof(PointLightComponent.AnimatedRadius),
                 KeyFrames =
                 {
-                    new AnimationTrackProperty.KeyFrame(0.1f, 0),
-                    new AnimationTrackProperty.KeyFrame(3f, 0.1f),
-                    new AnimationTrackProperty.KeyFrame(0.1f, 0.5f)
+                    new(0.1f, 0),
+                    new(3f, 0.1f),
+                    new(0.1f, 0.5f)
                 }
             }
         }
@@ -58,17 +65,19 @@ public sealed partial class TriggerSystem
         OnChangeData(uid, component, appearance);
     }
 
-    private void OnProximityInit(EntityUid uid, TriggerOnProximityComponent component, ComponentInit args)
-    {
+    private void OnProximityInit(EntityUid uid, TriggerOnProximityComponent component, ComponentInit args) =>
         EntityManager.EnsureComponent<AnimationPlayerComponent>(uid);
-    }
 
-    private void OnProxAppChange(EntityUid uid, TriggerOnProximityComponent component, ref AppearanceChangeEvent args)
-    {
+    private void
+        OnProxAppChange(EntityUid uid, TriggerOnProximityComponent component, ref AppearanceChangeEvent args) =>
         OnChangeData(uid, component, args.Component, args.Sprite);
-    }
 
-    private void OnChangeData(EntityUid uid, TriggerOnProximityComponent component, AppearanceComponent appearance, SpriteComponent? spriteComponent = null)
+    private void OnChangeData(
+        EntityUid uid,
+        TriggerOnProximityComponent component,
+        AppearanceComponent appearance,
+        SpriteComponent? spriteComponent = null
+    )
     {
         if (!Resolve(uid, ref spriteComponent))
             return;
@@ -76,7 +85,11 @@ public sealed partial class TriggerSystem
         if (!TryComp<AnimationPlayerComponent>(uid, out var player))
             return;
 
-        if (!_appearance.TryGetData<ProximityTriggerVisuals>(uid, ProximityTriggerVisualState.State, out var state, appearance))
+        if (!_appearance.TryGetData<ProximityTriggerVisuals>(
+            uid,
+            ProximityTriggerVisualState.State,
+            out var state,
+            appearance))
             return;
 
         if (!spriteComponent.LayerMapTryGet(ProximityTriggerVisualLayers.Base, out var layer))
@@ -87,12 +100,14 @@ public sealed partial class TriggerSystem
         {
             case ProximityTriggerVisuals.Inactive:
                 // Don't interrupt the flash animation
-                if (_player.HasRunningAnimation(uid, player, AnimKey)) return;
+                if (_player.HasRunningAnimation(uid, player, AnimKey))
+                    return;
                 _player.Stop(uid, player, AnimKey);
                 spriteComponent.LayerSetState(layer, "on");
                 break;
             case ProximityTriggerVisuals.Active:
-                if (_player.HasRunningAnimation(uid, player, AnimKey)) return;
+                if (_player.HasRunningAnimation(uid, player, AnimKey))
+                    return;
                 _player.Play(uid, player, _flasherAnimation, AnimKey);
                 break;
             case ProximityTriggerVisuals.Off:
@@ -105,6 +120,6 @@ public sealed partial class TriggerSystem
 
     public enum ProximityTriggerVisualLayers : byte
     {
-        Base,
+        Base
     }
 }

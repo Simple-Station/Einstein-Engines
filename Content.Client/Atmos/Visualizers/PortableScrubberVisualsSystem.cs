@@ -1,21 +1,34 @@
-using Robust.Client.GameObjects;
-using Content.Shared.Atmos.Visuals;
+#region
+
 using Content.Client.Power;
+using Content.Shared.Atmos.Visuals;
+using Robust.Client.GameObjects;
+
+#endregion
+
 
 namespace Content.Client.Atmos.Visualizers
 {
     /// <summary>
-    /// Controls client-side visuals for portable scrubbers.
+    ///     Controls client-side visuals for portable scrubbers.
     /// </summary>
     public sealed class PortableScrubberSystem : VisualizerSystem<PortableScrubberVisualsComponent>
     {
-        protected override void OnAppearanceChange(EntityUid uid, PortableScrubberVisualsComponent component, ref AppearanceChangeEvent args)
+        protected override void OnAppearanceChange(
+            EntityUid uid,
+            PortableScrubberVisualsComponent component,
+            ref AppearanceChangeEvent args
+        )
         {
             if (args.Sprite == null)
                 return;
 
             if (AppearanceSystem.TryGetData<bool>(uid, PortableScrubberVisuals.IsFull, out var isFull, args.Component)
-                && AppearanceSystem.TryGetData<bool>(uid, PortableScrubberVisuals.IsRunning, out var isRunning, args.Component))
+                && AppearanceSystem.TryGetData<bool>(
+                    uid,
+                    PortableScrubberVisuals.IsRunning,
+                    out var isRunning,
+                    args.Component))
             {
                 var runningState = isRunning ? component.RunningState : component.IdleState;
                 args.Sprite.LayerSetState(PortableScrubberVisualLayers.IsRunning, runningState);
@@ -24,13 +37,17 @@ namespace Content.Client.Atmos.Visualizers
                 args.Sprite.LayerSetState(PowerDeviceVisualLayers.Powered, fullState);
             }
 
-            if (AppearanceSystem.TryGetData<bool>(uid, PortableScrubberVisuals.IsDraining, out var isDraining, args.Component))
-            {
+            if (AppearanceSystem.TryGetData<bool>(
+                uid,
+                PortableScrubberVisuals.IsDraining,
+                out var isDraining,
+                args.Component))
                 args.Sprite.LayerSetVisible(PortableScrubberVisualLayers.IsDraining, isDraining);
-            }
         }
     }
 }
+
+
 public enum PortableScrubberVisualLayers : byte
 {
     IsRunning,

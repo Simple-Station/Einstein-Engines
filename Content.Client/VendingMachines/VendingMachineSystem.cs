@@ -1,8 +1,14 @@
+#region
+
 using Content.Shared.VendingMachines;
 using Robust.Client.Animations;
 using Robust.Client.GameObjects;
 
+#endregion
+
+
 namespace Content.Client.VendingMachines;
+
 
 public sealed class VendingMachineSystem : SharedVendingMachineSystem
 {
@@ -23,10 +29,12 @@ public sealed class VendingMachineSystem : SharedVendingMachineSystem
             return;
 
         if (!TryComp<AppearanceComponent>(uid, out var appearance) ||
-            !_appearanceSystem.TryGetData<VendingMachineVisualState>(uid, VendingMachineVisuals.VisualState, out var visualState, appearance))
-        {
+            !_appearanceSystem.TryGetData<VendingMachineVisualState>(
+                uid,
+                VendingMachineVisuals.VisualState,
+                out var visualState,
+                appearance))
             visualState = VendingMachineVisualState.Normal;
-        }
 
         UpdateAppearance(uid, visualState, component, sprite);
     }
@@ -38,14 +46,17 @@ public sealed class VendingMachineSystem : SharedVendingMachineSystem
 
         if (!args.AppearanceData.TryGetValue(VendingMachineVisuals.VisualState, out var visualStateObject) ||
             visualStateObject is not VendingMachineVisualState visualState)
-        {
             visualState = VendingMachineVisualState.Normal;
-        }
 
         UpdateAppearance(uid, visualState, component, args.Sprite);
     }
 
-    private void UpdateAppearance(EntityUid uid, VendingMachineVisualState visualState, VendingMachineComponent component, SpriteComponent sprite)
+    private void UpdateAppearance(
+        EntityUid uid,
+        VendingMachineVisualState visualState,
+        VendingMachineComponent component,
+        SpriteComponent sprite
+    )
     {
         SetLayerState(VendingMachineVisualLayers.Base, component.OffState, sprite);
 
@@ -60,13 +71,23 @@ public sealed class VendingMachineSystem : SharedVendingMachineSystem
                 if (component.LoopDenyAnimation)
                     SetLayerState(VendingMachineVisualLayers.BaseUnshaded, component.DenyState, sprite);
                 else
-                    PlayAnimation(uid, VendingMachineVisualLayers.BaseUnshaded, component.DenyState, component.DenyDelay, sprite);
+                    PlayAnimation(
+                        uid,
+                        VendingMachineVisualLayers.BaseUnshaded,
+                        component.DenyState,
+                        component.DenyDelay,
+                        sprite);
 
                 SetLayerState(VendingMachineVisualLayers.Screen, component.ScreenState, sprite);
                 break;
 
             case VendingMachineVisualState.Eject:
-                PlayAnimation(uid, VendingMachineVisualLayers.BaseUnshaded, component.EjectState, component.EjectDelay, sprite);
+                PlayAnimation(
+                    uid,
+                    VendingMachineVisualLayers.BaseUnshaded,
+                    component.EjectState,
+                    component.EjectDelay,
+                    sprite);
                 SetLayerState(VendingMachineVisualLayers.Screen, component.ScreenState, sprite);
                 break;
 
@@ -91,7 +112,13 @@ public sealed class VendingMachineSystem : SharedVendingMachineSystem
         sprite.LayerSetState(layer, state);
     }
 
-    private void PlayAnimation(EntityUid uid, VendingMachineVisualLayers layer, string? state, float animationTime, SpriteComponent sprite)
+    private void PlayAnimation(
+        EntityUid uid,
+        VendingMachineVisualLayers layer,
+        string? state,
+        float animationTime,
+        SpriteComponent sprite
+    )
     {
         if (string.IsNullOrEmpty(state))
             return;
@@ -104,24 +131,22 @@ public sealed class VendingMachineSystem : SharedVendingMachineSystem
         }
     }
 
-    private static Animation GetAnimation(VendingMachineVisualLayers layer, string state, float animationTime)
-    {
-        return new Animation
+    private static Animation GetAnimation(VendingMachineVisualLayers layer, string state, float animationTime) =>
+        new()
         {
             Length = TimeSpan.FromSeconds(animationTime),
             AnimationTracks =
+            {
+                new AnimationTrackSpriteFlick
                 {
-                    new AnimationTrackSpriteFlick
+                    LayerKey = layer,
+                    KeyFrames =
                     {
-                        LayerKey = layer,
-                        KeyFrames =
-                        {
-                            new AnimationTrackSpriteFlick.KeyFrame(state, 0f)
-                        }
+                        new(state, 0f)
                     }
                 }
+            }
         };
-    }
 
     private static void HideLayers(SpriteComponent sprite)
     {

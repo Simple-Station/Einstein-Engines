@@ -1,10 +1,15 @@
-﻿using Content.Shared.GameTicking;
-using Content.Shared.Mood;
+﻿#region
+
+using Content.Shared.GameTicking;
 using Content.Shared.Overlays;
 using Robust.Client.Graphics;
 using Robust.Shared.Player;
 
+#endregion
+
+
 namespace Content.Client.Overlays;
+
 
 public sealed class SaturationScaleSystem : EntitySystem
 {
@@ -30,20 +35,13 @@ public sealed class SaturationScaleSystem : EntitySystem
     }
 
 
-    private void RoundRestartCleanup(RoundRestartCleanupEvent ev)
-    {
-        _overlayMan.RemoveOverlay(_overlay);
-    }
+    private void RoundRestartCleanup(RoundRestartCleanupEvent ev) => _overlayMan.RemoveOverlay(_overlay);
 
-    private void OnPlayerDetached(EntityUid uid, SaturationScaleOverlayComponent component, PlayerDetachedEvent args)
-    {
+    private void OnPlayerDetached(EntityUid uid, SaturationScaleOverlayComponent component, PlayerDetachedEvent args) =>
         _overlayMan.RemoveOverlay(_overlay);
-    }
 
-    private void OnPlayerAttached(EntityUid uid, SaturationScaleOverlayComponent component, PlayerAttachedEvent args)
-    {
+    private void OnPlayerAttached(EntityUid uid, SaturationScaleOverlayComponent component, PlayerAttachedEvent args) =>
         _overlayMan.AddOverlay(_overlay);
-    }
 
     private void OnShutdown(EntityUid uid, SaturationScaleOverlayComponent component, ComponentShutdown args)
     {

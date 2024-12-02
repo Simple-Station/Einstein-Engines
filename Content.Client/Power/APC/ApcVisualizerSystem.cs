@@ -1,8 +1,13 @@
+#region
+
 using Content.Shared.APC;
-using JetBrains.Annotations;
 using Robust.Client.GameObjects;
 
+#endregion
+
+
 namespace Content.Client.Power.APC;
+
 
 public sealed class ApcVisualizerSystem : VisualizerSystem<ApcVisualsComponent>
 {
@@ -18,20 +23,27 @@ public sealed class ApcVisualizerSystem : VisualizerSystem<ApcVisualsComponent>
         var channelIndicatorOverlayStart = args.Sprite.LayerMapGet(ApcVisualLayers.Equipment);
 
         // Handle APC screen overlay:
-        if(!AppearanceSystem.TryGetData<ApcChargeState>(uid, ApcVisuals.ChargeState, out var chargeState, args.Component))
+        if (!AppearanceSystem.TryGetData<ApcChargeState>(
+            uid,
+            ApcVisuals.ChargeState,
+            out var chargeState,
+            args.Component))
             chargeState = ApcChargeState.Lack;
 
         if (chargeState >= 0 && chargeState < ApcChargeState.NumStates)
         {
-            args.Sprite.LayerSetState(ApcVisualLayers.ChargeState, $"{comp.ScreenPrefix}-{comp.ScreenSuffixes[(sbyte)chargeState]}");
+            args.Sprite.LayerSetState(
+                ApcVisualLayers.ChargeState,
+                $"{comp.ScreenPrefix}-{comp.ScreenSuffixes[(sbyte) chargeState]}");
 
             // LockState does nothing currently. The backend doesn't exist.
             if (AppearanceSystem.TryGetData<byte>(uid, ApcVisuals.LockState, out var lockStates, args.Component))
             {
-                for(var i = 0; i < comp.LockIndicators; ++i)
+                for (var i = 0; i < comp.LockIndicators; ++i)
                 {
-                    var layer = ((byte)lockIndicatorOverlayStart + i);
-                    sbyte lockState = (sbyte)((lockStates >> (i << (sbyte)ApcLockState.LogWidth)) & (sbyte)ApcLockState.All);
+                    var layer = (byte) lockIndicatorOverlayStart + i;
+                    var lockState = (sbyte) ((lockStates >> (i << (sbyte) ApcLockState.LogWidth)) &
+                        (sbyte) ApcLockState.All);
                     args.Sprite.LayerSetState(layer, $"{comp.LockPrefix}{i}-{comp.LockSuffixes[lockState]}");
                     args.Sprite.LayerSetVisible(layer, true);
                 }
@@ -40,69 +52,70 @@ public sealed class ApcVisualizerSystem : VisualizerSystem<ApcVisualsComponent>
             // ChannelState does nothing currently. The backend doesn't exist.
             if (AppearanceSystem.TryGetData<byte>(uid, ApcVisuals.ChannelState, out var channelStates, args.Component))
             {
-                for(var i = 0; i < comp.ChannelIndicators; ++i)
+                for (var i = 0; i < comp.ChannelIndicators; ++i)
                 {
-                    var layer = ((byte)channelIndicatorOverlayStart + i);
-                    sbyte channelState = (sbyte)((channelStates >> (i << (sbyte)ApcChannelState.LogWidth)) & (sbyte)ApcChannelState.All);
+                    var layer = (byte) channelIndicatorOverlayStart + i;
+                    var channelState = (sbyte) ((channelStates >> (i << (sbyte) ApcChannelState.LogWidth)) &
+                        (sbyte) ApcChannelState.All);
                     args.Sprite.LayerSetState(layer, $"{comp.ChannelPrefix}{i}-{comp.ChannelSuffixes[channelState]}");
                     args.Sprite.LayerSetVisible(layer, true);
                 }
             }
 
             if (TryComp<PointLightComponent>(uid, out var light))
-            {
-                _lights.SetColor(uid, comp.ScreenColors[(sbyte)chargeState], light);
-            }
+                _lights.SetColor(uid, comp.ScreenColors[(sbyte) chargeState], light);
         }
         else
         {
             /// Overrides all of the lock and channel indicators.
             args.Sprite.LayerSetState(ApcVisualLayers.ChargeState, comp.EmaggedScreenState);
-            for(var i = 0; i < comp.LockIndicators; ++i)
+            for (var i = 0; i < comp.LockIndicators; ++i)
             {
-                var layer = ((byte)lockIndicatorOverlayStart + i);
+                var layer = (byte) lockIndicatorOverlayStart + i;
                 args.Sprite.LayerSetVisible(layer, false);
             }
-            for(var i = 0; i < comp.ChannelIndicators; ++i)
+
+            for (var i = 0; i < comp.ChannelIndicators; ++i)
             {
-                var layer = ((byte)channelIndicatorOverlayStart + i);
+                var layer = (byte) channelIndicatorOverlayStart + i;
                 args.Sprite.LayerSetVisible(layer, false);
             }
 
             if (TryComp<PointLightComponent>(uid, out var light))
-            {
                 _lights.SetColor(uid, comp.EmaggedScreenColor, light);
-            }
         }
     }
 }
 
-enum ApcVisualLayers : byte
+internal enum ApcVisualLayers : byte
 {
     /// <summary>
-    /// The sprite layer used for the interface lock indicator light overlay.
+    ///     The sprite layer used for the interface lock indicator light overlay.
     /// </summary>
     InterfaceLock,
+
     /// <summary>
-    /// The sprite layer used for the panel lock indicator light overlay.
+    ///     The sprite layer used for the panel lock indicator light overlay.
     /// </summary>
     PanelLock,
 
     /// <summary>
-    /// The sprite layer used for the equipment channel indicator light overlay.
+    ///     The sprite layer used for the equipment channel indicator light overlay.
     /// </summary>
     Equipment,
+
     /// <summary>
-    /// The sprite layer used for the lighting channel indicator light overlay.
+    ///     The sprite layer used for the lighting channel indicator light overlay.
     /// </summary>
     Lighting,
+
     /// <summary>
-    /// The sprite layer used for the environment channel indicator light overlay.
+    ///     The sprite layer used for the environment channel indicator light overlay.
     /// </summary>
     Environment,
 
     /// <summary>
-    /// The sprite layer used for the APC screen overlay.
+    ///     The sprite layer used for the APC screen overlay.
     /// </summary>
-    ChargeState,
+    ChargeState
 }

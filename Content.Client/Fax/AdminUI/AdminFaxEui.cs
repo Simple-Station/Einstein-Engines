@@ -1,9 +1,15 @@
+#region
+
 using Content.Client.Eui;
 using Content.Shared.Eui;
 using Content.Shared.Fax;
 using JetBrains.Annotations;
 
+#endregion
+
+
 namespace Content.Client.Fax.AdminUI;
+
 
 [UsedImplicitly]
 public sealed class AdminFaxEui : BaseEui
@@ -12,22 +18,22 @@ public sealed class AdminFaxEui : BaseEui
 
     public AdminFaxEui()
     {
-        _window = new AdminFaxWindow();
+        _window = new();
         _window.OnClose += () => SendMessage(new AdminFaxEuiMsg.Close());
         _window.OnFollowFax += entity => SendMessage(new AdminFaxEuiMsg.Follow(entity));
-        _window.OnMessageSend += args => SendMessage(new AdminFaxEuiMsg.Send(args.entity, args.title,
-                    args.stampedBy, args.message, args.stampSprite, args.stampColor));
+        _window.OnMessageSend += args => SendMessage(
+            new AdminFaxEuiMsg.Send(
+                args.entity,
+                args.title,
+                args.stampedBy,
+                args.message,
+                args.stampSprite,
+                args.stampColor));
     }
 
-    public override void Opened()
-    {
-        _window.OpenCentered();
-    }
+    public override void Opened() => _window.OpenCentered();
 
-    public override void Closed()
-    {
-        _window.Close();
-    }
+    public override void Closed() => _window.Close();
 
     public override void HandleState(EuiStateBase state)
     {

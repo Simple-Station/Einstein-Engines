@@ -1,8 +1,14 @@
+#region
+
 using Content.Shared.Pinpointer;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 
+#endregion
+
+
 namespace Content.Client.Pinpointer;
+
 
 public sealed class PinpointerSystem : SharedPinpointerSystem
 {
@@ -18,7 +24,7 @@ public sealed class PinpointerSystem : SharedPinpointerSystem
         // because eye can change it rotation anytime
         // we need to update this arrow in a update loop
         var query = EntityQueryEnumerator<PinpointerComponent, SpriteComponent>();
-        while (query.MoveNext(out var _, out var pinpointer, out var sprite))
+        while (query.MoveNext(out _, out var pinpointer, out var sprite))
         {
             if (!pinpointer.HasTarget)
                 continue;

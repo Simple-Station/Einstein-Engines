@@ -1,3 +1,5 @@
+#region
+
 using Content.Client.Administration.Managers;
 using Content.Client.Launcher;
 using Content.Client.MainMenu;
@@ -26,7 +28,11 @@ using Robust.Client.Timing;
 using Robust.Client.UserInterface;
 using Robust.Shared.Serialization.Markdown.Mapping;
 
+#endregion
+
+
 namespace Content.Client.Replay;
+
 
 public sealed class ContentReplayPlaybackManager
 {
@@ -43,7 +49,7 @@ public sealed class ContentReplayPlaybackManager
     [Dependency] private readonly IBaseClient _client = default!;
 
     /// <summary>
-    /// UI state to return to when stopping a replay or loading fails.
+    ///     UI state to return to when stopping a replay or loading fails.
     /// </summary>
     public Type? DefaultState;
 
@@ -125,7 +131,7 @@ public sealed class ContentReplayPlaybackManager
                     _entMan.System<ReplaySpectatorSystem>().SetSpectatorPosition(default);
                 return true;
             case ChatMessage chat:
-                _uiMan.GetUIController<ChatUIController>().ProcessChatMessage(chat, speechBubble: !skipEffects);
+                _uiMan.GetUIController<ChatUIController>().ProcessChatMessage(chat, !skipEffects);
                 return true;
         }
 
@@ -155,10 +161,8 @@ public sealed class ContentReplayPlaybackManager
         return false;
     }
 
-    private void OnReplayPlaybackStarted(MappingDataNode metadata, List<object> objects)
-    {
+    private void OnReplayPlaybackStarted(MappingDataNode metadata, List<object> objects) =>
         _conGrp.Implementation = new ReplayConGroup();
-    }
 
     private void OnReplayPlaybackStopped()
     {

@@ -1,4 +1,6 @@
-﻿using System.Globalization;
+﻿#region
+
+using System.Globalization;
 using Content.Client.Gameplay;
 using Content.Client.Guidebook;
 using Content.Client.Info;
@@ -14,7 +16,11 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 
+#endregion
+
+
 namespace Content.Client.UserInterface.Systems.Info;
+
 
 public sealed class InfoUIController : UIController, IOnStateExited<GameplayState>
 {
@@ -38,13 +44,14 @@ public sealed class InfoUIController : UIController, IOnStateExited<GameplayStat
         _client.PlayerJoinedServer += OnJoinedServer;
         _netManager.RegisterNetMessage<ShowRulesPopupMessage>(OnShowRulesPopupMessage);
 
-        _consoleHost.RegisterCommand("fuckrules",
+        _consoleHost.RegisterCommand(
+            "fuckrules",
             "",
             "",
             (_, _, _) =>
-        {
-            OnAcceptPressed();
-        });
+            {
+                OnAcceptPressed();
+            });
     }
 
     private void OnJoinedServer(object? sender, PlayerEventArgs args)
@@ -63,10 +70,7 @@ public sealed class InfoUIController : UIController, IOnStateExited<GameplayStat
         ShowRules(time);
     }
 
-    private void OnShowRulesPopupMessage(ShowRulesPopupMessage message)
-    {
-        ShowRules(message.PopupTime);
-    }
+    private void OnShowRulesPopupMessage(ShowRulesPopupMessage message) => ShowRules(message.PopupTime);
 
     public void OnStateExited(GameplayState state)
     {
@@ -82,7 +86,7 @@ public sealed class InfoUIController : UIController, IOnStateExited<GameplayStat
         if (_rulesPopup != null)
             return;
 
-        _rulesPopup = new RulesPopup
+        _rulesPopup = new()
         {
             Timer = time
         };
@@ -93,10 +97,7 @@ public sealed class InfoUIController : UIController, IOnStateExited<GameplayStat
         LayoutContainer.SetAnchorPreset(_rulesPopup, LayoutContainer.LayoutPreset.Wide);
     }
 
-    private void OnQuitPressed()
-    {
-        _consoleHost.ExecuteCommand("quit");
-    }
+    private void OnQuitPressed() => _consoleHost.ExecuteCommand("quit");
 
     private void OnAcceptPressed()
     {

@@ -1,9 +1,12 @@
+#region
+
 using System.Linq;
 using Content.Client.CharacterInfo;
 using Content.Client.Gameplay;
 using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.Character.Controls;
 using Content.Client.UserInterface.Systems.Character.Windows;
+using Content.Client.UserInterface.Systems.MenuBar.Widgets;
 using Content.Client.UserInterface.Systems.Objectives.Controls;
 using Content.Shared.Input;
 using JetBrains.Annotations;
@@ -17,17 +20,22 @@ using Robust.Shared.Utility;
 using static Content.Client.CharacterInfo.CharacterInfoSystem;
 using static Robust.Client.UserInterface.Controls.BaseButton;
 
+#endregion
+
+
 namespace Content.Client.UserInterface.Systems.Character;
 
+
 [UsedImplicitly]
-public sealed class CharacterUIController : UIController, IOnStateEntered<GameplayState>, IOnStateExited<GameplayState>, IOnSystemChanged<CharacterInfoSystem>
+public sealed class CharacterUIController : UIController, IOnStateEntered<GameplayState>, IOnStateExited<GameplayState>,
+    IOnSystemChanged<CharacterInfoSystem>
 {
     [Dependency] private readonly IPlayerManager _player = default!;
     [UISystemDependency] private readonly CharacterInfoSystem _characterInfo = default!;
     [UISystemDependency] private readonly SpriteSystem _sprite = default!;
 
     private CharacterWindow? _window;
-    private MenuButton? CharacterButton => UIManager.GetActiveUIWidgetOrNull<MenuBar.Widgets.GameTopMenuBar>()?.CharacterButton;
+    private MenuButton? CharacterButton => UIManager.GetActiveUIWidgetOrNull<GameTopMenuBar>()?.CharacterButton;
 
     public void OnStateEntered(GameplayState state)
     {
@@ -37,11 +45,11 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
         LayoutContainer.SetAnchorPreset(_window, LayoutContainer.LayoutPreset.CenterTop);
 
 
-
         CommandBinds.Builder
-            .Bind(ContentKeyFunctions.OpenCharacterMenu,
-                 InputCmdHandler.FromDelegate(_ => ToggleWindow()))
-             .Register<CharacterUIController>();
+            .Bind(
+                ContentKeyFunctions.OpenCharacterMenu,
+                InputCmdHandler.FromDelegate(_ => ToggleWindow()))
+            .Register<CharacterUIController>();
     }
 
     public void OnStateExited(GameplayState state)
@@ -70,9 +78,7 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
     public void UnloadButton()
     {
         if (CharacterButton == null)
-        {
             return;
-        }
 
         CharacterButton.OnPressed -= CharacterButtonPressed;
     }
@@ -80,16 +86,12 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
     public void LoadButton()
     {
         if (CharacterButton == null)
-        {
             return;
-        }
 
         CharacterButton.OnPressed += CharacterButtonPressed;
 
         if (_window == null)
-        {
             return;
-        }
 
         _window.OnClose += DeactivateButton;
         _window.OnOpen += ActivateButton;
@@ -101,9 +103,7 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
     private void CharacterUpdated(CharacterData data)
     {
         if (_window == null)
-        {
             return;
-        }
 
         var (entity, job, objectives, briefing, entityName) = data;
 
@@ -121,11 +121,12 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
                 Modulate = Color.Gray
             };
 
-            objectiveControl.AddChild(new Label
-            {
-                Text = groupId,
-                Modulate = Color.LightSkyBlue
-            });
+            objectiveControl.AddChild(
+                new Label
+                {
+                    Text = groupId,
+                    Modulate = Color.LightSkyBlue
+                });
 
             foreach (var condition in conditions)
             {
@@ -158,27 +159,16 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
 
         var controls = _characterInfo.GetCharacterInfoControls(entity);
         foreach (var control in controls)
-        {
             _window.Objectives.AddChild(control);
-        }
 
         _window.RolePlaceholder.Visible = briefing == null && !controls.Any() && !objectives.Any();
     }
 
-    private void CharacterDetached(EntityUid uid)
-    {
-        CloseWindow();
-    }
+    private void CharacterDetached(EntityUid uid) => CloseWindow();
 
-    private void CharacterButtonPressed(ButtonEventArgs args)
-    {
-        ToggleWindow();
-    }
+    private void CharacterButtonPressed(ButtonEventArgs args) => ToggleWindow();
 
-    private void CloseWindow()
-    {
-        _window?.Close();
-    }
+    private void CloseWindow() => _window?.Close();
 
     private void ToggleWindow()
     {
@@ -186,14 +176,10 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
             return;
 
         if (CharacterButton != null)
-        {
             CharacterButton.SetClickPressed(!_window.IsOpen);
-        }
 
         if (_window.IsOpen)
-        {
             CloseWindow();
-        }
         else
         {
             _characterInfo.RequestCharacterInfo();

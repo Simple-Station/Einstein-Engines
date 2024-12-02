@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿#region
+
+using System.Linq;
 using System.Numerics;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Construction.Prototypes;
@@ -12,9 +14,13 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Prototypes;
 
+#endregion
+
+
 // ReSharper disable InconsistentNaming
 
 namespace Content.Client.RadialSelector;
+
 
 [UsedImplicitly]
 public sealed class RadialSelectorMenuBUI : BoundUserInterface
@@ -38,7 +44,7 @@ public sealed class RadialSelectorMenuBUI : BoundUserInterface
     public RadialSelectorMenuBUI(EntityUid owner, Enum uiKey) : base(owner, uiKey)
     {
         _spriteSystem = _entManager.System<SpriteSystem>();
-        _menu = new RadialMenu
+        _menu = new()
         {
             HorizontalExpand = true,
             VerticalExpand = true,
@@ -81,14 +87,13 @@ public sealed class RadialSelectorMenuBUI : BoundUserInterface
         var container = new RadialContainer
         {
             Name = !string.IsNullOrEmpty(parentCategory) ? parentCategory : "Main",
-            Radius = 48f + 24f * MathF.Log(entries.Count),
+            Radius = 48f + 24f * MathF.Log(entries.Count)
         };
 
         _menu.AddChild(container);
         _cachedContainers.Add(container);
 
         foreach (var entry in entries)
-        {
             if (entry.Category != null)
             {
                 var button = CreateButton(entry.Category.Name, _spriteSystem.Frame0(entry.Category.Icon));
@@ -109,7 +114,6 @@ public sealed class RadialSelectorMenuBUI : BoundUserInterface
 
                 container.AddChild(button);
             }
-        }
     }
 
     private string GetName(string proto)
@@ -153,7 +157,7 @@ public sealed class RadialSelectorMenuBUI : BoundUserInterface
         var button = new RadialMenuTextureButton
         {
             ToolTip = Loc.GetString(name),
-            StyleClasses = { "RadialMenuButton" },
+            StyleClasses = { "RadialMenuButton", },
             SetSize = ItemSize
         };
 
@@ -175,7 +179,7 @@ public sealed class RadialSelectorMenuBUI : BoundUserInterface
         var button = new RadialMenuTextureButton
         {
             ToolTip = Loc.GetString(name),
-            StyleClasses = { "RadialMenuButton" },
+            StyleClasses = { "RadialMenuButton", },
             SetSize = ItemSize
         };
 

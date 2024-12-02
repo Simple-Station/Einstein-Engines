@@ -1,4 +1,6 @@
-﻿using System.Numerics;
+﻿#region
+
+using System.Numerics;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.DeviceLinking;
 using Content.Shared.DeviceNetwork;
@@ -9,7 +11,11 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 
+#endregion
+
+
 namespace Content.Client.NetworkConfigurator;
+
 
 [GenerateTypedNameReferences]
 public sealed partial class NetworkConfiguratorLinkMenu : FancyWindow
@@ -34,9 +40,9 @@ public sealed partial class NetworkConfiguratorLinkMenu : FancyWindow
         _userInterface = userInterface;
         RobustXamlLoader.Load(this);
 
-        var footerStyleBox = new StyleBoxFlat()
+        var footerStyleBox = new StyleBoxFlat
         {
-            BorderThickness = new Thickness(0, 2, 0, 0),
+            BorderThickness = new(0, 2, 0, 0),
             BorderColor = Color.FromHex("#5A5A5A")
         };
 
@@ -46,7 +52,7 @@ public sealed partial class NetworkConfiguratorLinkMenu : FancyWindow
         ButtonClear.AddStyleClass("ButtonColorRed");
         ButtonLinkDefault.Disabled = true;
 
-        _links = new LinksRender(ButtonContainerLeft, ButtonContainerRight);
+        _links = new(ButtonContainerLeft, ButtonContainerRight);
         _links.VerticalExpand = true;
         MiddleContainer.AddChild(_links);
 
@@ -142,7 +148,9 @@ public sealed partial class NetworkConfiguratorLinkMenu : FancyWindow
 
         args.Button.Pressed = false;
 
-        var container = _selectedButton.Value.position == ButtonPosition.Left ? ButtonContainerLeft : ButtonContainerRight;
+        var container = _selectedButton.Value.position == ButtonPosition.Left
+            ? ButtonContainerLeft
+            : ButtonContainerRight;
         if (container.GetChild(_selectedButton.Value.index) is Button button)
             button.Pressed = false;
 
@@ -156,8 +164,8 @@ public sealed partial class NetworkConfiguratorLinkMenu : FancyWindow
     }
 
     /// <summary>
-    ///  Draws lines between linked ports using bezier curve calculated with polynomial coefficients
-    ///  See: https://youtu.be/jvPPXbo87ds?t=351
+    ///     Draws lines between linked ports using bezier curve calculated with polynomial coefficients
+    ///     See: https://youtu.be/jvPPXbo87ds?t=351
     /// </summary>
     private sealed class LinksRender : Control
     {
@@ -177,7 +185,8 @@ public sealed partial class NetworkConfiguratorLinkMenu : FancyWindow
         {
             foreach (var (left, right) in Links)
             {
-                if (!SourceButtons.TryGetValue(left, out var leftChild) || !SinkButtons.TryGetValue(right, out var rightChild))
+                if (!SourceButtons.TryGetValue(left, out var leftChild) ||
+                    !SinkButtons.TryGetValue(right, out var rightChild))
                     continue;
 
                 var leftOffset = _leftButtonContainer.PixelPosition.Y;
@@ -188,7 +197,7 @@ public sealed partial class NetworkConfiguratorLinkMenu : FancyWindow
 
                 if (left == right)
                 {
-                    handle.DrawLine(new Vector2(0, y1), new Vector2(PixelWidth, y2), Color.Cyan);
+                    handle.DrawLine(new(0, y1), new(PixelWidth, y2), Color.Cyan);
                     continue;
                 }
 
@@ -197,7 +206,7 @@ public sealed partial class NetworkConfiguratorLinkMenu : FancyWindow
                     new(0, y1),
                     new(30, y1),
                     new(PixelWidth - 30, y2),
-                    new(PixelWidth, y2),
+                    new(PixelWidth, y2)
                 };
 
                 //Calculate coefficients

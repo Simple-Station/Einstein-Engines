@@ -1,13 +1,15 @@
-using System.Diagnostics.CodeAnalysis;
-using System.Numerics;
+#region
+
 using Robust.Client.Graphics;
 using Robust.Client.Input;
 using Robust.Client.UserInterface.Controls;
-using Robust.Shared.Graphics;
 using Robust.Shared.Input;
-using Robust.Shared.Utility;
+
+#endregion
+
 
 namespace Content.Client.UserInterface.Controls;
+
 
 public sealed class MenuButton : ContainerButton
 {
@@ -26,7 +28,6 @@ public sealed class MenuButton : ContainerButton
     private Color HoveredColor => HasStyleClass(StyleClassRedTopButton) ? ColorRedHovered : ColorHovered;
 
     private BoundKeyFunction _function;
-    private readonly BoxContainer _root;
     private readonly TextureRect? _buttonIcon;
     private readonly Label? _buttonLabel;
 
@@ -43,29 +44,29 @@ public sealed class MenuButton : ContainerButton
         }
     }
 
-    public BoxContainer ButtonRoot => _root;
+    public BoxContainer ButtonRoot { get; }
 
     public MenuButton()
     {
         IoCManager.InjectDependencies(this);
-        _buttonIcon = new TextureRect()
+        _buttonIcon = new()
         {
-            TextureScale = new Vector2(0.5f, 0.5f),
+            TextureScale = new(0.5f, 0.5f),
             HorizontalAlignment = HAlignment.Center,
             VerticalAlignment = VAlignment.Center,
             VerticalExpand = true,
-            Margin = new Thickness(0, VertPad),
+            Margin = new(0, VertPad),
             ModulateSelfOverride = NormalColor,
             Stretch = TextureRect.StretchMode.KeepCentered
         };
-        _buttonLabel = new Label
+        _buttonLabel = new()
         {
             Text = "",
             HorizontalAlignment = HAlignment.Center,
             ModulateSelfOverride = NormalColor,
-            StyleClasses = {StyleClassLabelTopButton}
+            StyleClasses = { StyleClassLabelTopButton, }
         };
-        _root = new BoxContainer
+        ButtonRoot = new()
         {
             Orientation = BoxContainer.LayoutOrientation.Vertical,
             Children =
@@ -74,7 +75,7 @@ public sealed class MenuButton : ContainerButton
                 _buttonLabel
             }
         };
-        AddChild(_root);
+        AddChild(ButtonRoot);
         ToggleMode = true;
     }
 
@@ -93,15 +94,9 @@ public sealed class MenuButton : ContainerButton
     }
 
 
-    private void OnKeyBindingChanged(IKeyBinding obj)
-    {
-        _buttonLabel!.Text = BoundKeyHelper.ShortKeyName(_function);
-    }
+    private void OnKeyBindingChanged(IKeyBinding obj) => _buttonLabel!.Text = BoundKeyHelper.ShortKeyName(_function);
 
-    private void OnKeyBindingChanged()
-    {
-        _buttonLabel!.Text = BoundKeyHelper.ShortKeyName(_function);
-    }
+    private void OnKeyBindingChanged() => _buttonLabel!.Text = BoundKeyHelper.ShortKeyName(_function);
 
     protected override void StylePropertiesChanged()
     {
@@ -112,7 +107,8 @@ public sealed class MenuButton : ContainerButton
 
     private void UpdateChildColors()
     {
-        if (_buttonIcon == null || _buttonLabel == null) return;
+        if (_buttonIcon == null || _buttonLabel == null)
+            return;
         switch (DrawMode)
         {
             case DrawModeEnum.Normal:

@@ -1,7 +1,13 @@
+#region
+
 using Content.Client.Eui;
 using Content.Shared.Eui;
 
+#endregion
+
+
 namespace Content.Client.NPC;
+
 
 public sealed class NPCEui : BaseEui
 {
@@ -10,15 +16,12 @@ public sealed class NPCEui : BaseEui
     public override void Opened()
     {
         base.Opened();
-        _window = new NPCWindow();
+        _window = new();
         _window.OpenCentered();
         _window.OnClose += OnClosed;
     }
 
-    private void OnClosed()
-    {
-        SendMessage(new CloseEuiMessage());
-    }
+    private void OnClosed() => SendMessage(new CloseEuiMessage());
 
     public override void Closed()
     {

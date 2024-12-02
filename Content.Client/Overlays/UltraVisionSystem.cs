@@ -1,12 +1,18 @@
-using Content.Shared.Traits.Assorted.Components;
+#region
+
 using Content.Shared.CCVar;
+using Content.Shared.Traits.Assorted.Components;
 using Robust.Client.Graphics;
 using Robust.Shared.Configuration;
 using Robust.Shared.Player;
 
+#endregion
+
+
 namespace Content.Client.Overlays;
 
-public sealed partial class UltraVisionSystem : EntitySystem
+
+public sealed class UltraVisionSystem : EntitySystem
 {
     [Dependency] private readonly IOverlayManager _overlayMan = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
@@ -51,10 +57,8 @@ public sealed partial class UltraVisionSystem : EntitySystem
             _overlayMan.AddOverlay(_overlay);
     }
 
-    private void OnPlayerDetached(EntityUid uid, UltraVisionComponent component, LocalPlayerDetachedEvent args)
-    {
+    private void OnPlayerDetached(EntityUid uid, UltraVisionComponent component, LocalPlayerDetachedEvent args) =>
         _overlayMan.RemoveOverlay(_overlay);
-    }
 
     private void OnNoVisionFiltersChanged(bool enabled)
     {

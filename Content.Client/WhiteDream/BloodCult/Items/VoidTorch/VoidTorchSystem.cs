@@ -1,15 +1,23 @@
-﻿using Content.Client.Light.Components;
+﻿#region
+
+using Content.Client.Light.Components;
 using Content.Shared.WhiteDream.BloodCult;
 using Content.Shared.WhiteDream.BloodCult.Items.VoidTorch;
 using Robust.Client.GameObjects;
 
+#endregion
+
+
 namespace Content.Client.WhiteDream.BloodCult.Items.VoidTorch;
+
 
 public sealed class VoidTorchSystem : VisualizerSystem<VoidTorchComponent>
 {
-    protected override void OnAppearanceChange(EntityUid uid,
+    protected override void OnAppearanceChange(
+        EntityUid uid,
         VoidTorchComponent component,
-        ref AppearanceChangeEvent args)
+        ref AppearanceChangeEvent args
+    )
     {
         if (args.Sprite == null)
             return;

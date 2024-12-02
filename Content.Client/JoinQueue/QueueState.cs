@@ -1,3 +1,5 @@
+#region
+
 using Content.Shared.JoinQueue;
 using Robust.Client.Audio;
 using Robust.Client.Console;
@@ -5,7 +7,11 @@ using Robust.Client.State;
 using Robust.Client.UserInterface;
 using Robust.Shared.Player;
 
+#endregion
+
+
 namespace Content.Client.JoinQueue;
+
 
 public sealed class QueueState : State
 {
@@ -20,7 +26,7 @@ public sealed class QueueState : State
 
     protected override void Startup()
     {
-        _gui = new QueueGui();
+        _gui = new();
         _userInterface.StateRoot.AddChild(_gui);
 
         _gui.QuitPressed += OnQuitPressed;
@@ -35,15 +41,9 @@ public sealed class QueueState : State
     }
 
 
-    public void OnQueueUpdate(QueueUpdateMessage msg)
-    {
-        _gui?.UpdateInfo(msg.Total, msg.Position);
-    }
+    public void OnQueueUpdate(QueueUpdateMessage msg) => _gui?.UpdateInfo(msg.Total, msg.Position);
 
-    private void OnQuitPressed()
-    {
-        _console.ExecuteCommand("quit");
-    }
+    private void OnQuitPressed() => _console.ExecuteCommand("quit");
 
 
     private void Ding()

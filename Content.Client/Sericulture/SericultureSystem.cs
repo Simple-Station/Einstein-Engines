@@ -1,8 +1,14 @@
+#region
+
 using Content.Shared.Sericulture;
+
+#endregion
+
 
 namespace Content.Client.Sericulture;
 
+
 /// <summary>
-/// <inheritdoc/>
+///     <inheritdoc />
 /// </summary>
-public sealed partial class SericultureSystem : SharedSericultureSystem { }
+public sealed class SericultureSystem : SharedSericultureSystem { }

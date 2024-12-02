@@ -1,23 +1,26 @@
+#region
+
 using Content.Shared.ReverseEngineering;
 using JetBrains.Annotations;
-using Robust.Client.GameObjects;
+
+#endregion
+
 
 namespace Content.Client.Nyanotrasen.ReverseEngineering;
+
 
 [UsedImplicitly]
 public sealed class ReverseEngineeringMachineBoundUserInterface : BoundUserInterface
 {
     private ReverseEngineeringMachineMenu? _revMenu;
 
-    public ReverseEngineeringMachineBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-    {
-    }
+    public ReverseEngineeringMachineBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
 
     protected override void Open()
     {
         base.Open();
 
-        _revMenu = new ReverseEngineeringMachineMenu();
+        _revMenu = new();
 
         _revMenu.OnClose += Close;
         _revMenu.OpenCentered();
@@ -72,4 +75,3 @@ public sealed class ReverseEngineeringMachineBoundUserInterface : BoundUserInter
         _revMenu?.Dispose();
     }
 }
-

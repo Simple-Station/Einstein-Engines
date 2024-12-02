@@ -1,79 +1,83 @@
-﻿using Content.Shared.Atmos;
+﻿#region
+
+using Content.Shared.Atmos;
 using Content.Shared.Atmos.Piping.Binary.Components;
 using Content.Shared.Localizations;
 using JetBrains.Annotations;
-using Robust.Client.GameObjects;
 
-namespace Content.Client.Atmos.UI
+#endregion
+
+
+namespace Content.Client.Atmos.UI;
+
+
+/// <summary>
+///     Initializes a <see cref="GasVolumePumpWindow" /> and updates it when new server messages are received.
+/// </summary>
+[UsedImplicitly]
+public sealed class GasVolumePumpBoundUserInterface : BoundUserInterface
 {
-    /// <summary>
-    /// Initializes a <see cref="GasVolumePumpWindow"/> and updates it when new server messages are received.
-    /// </summary>
-    [UsedImplicitly]
-    public sealed class GasVolumePumpBoundUserInterface : BoundUserInterface
+    [ViewVariables]
+    private const float MaxTransferRate = Atmospherics.MaxTransferRate;
+
+    [ViewVariables]
+    private GasVolumePumpWindow? _window;
+
+    public GasVolumePumpBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
+
+    protected override void Open()
     {
-        [ViewVariables]
-        private const float MaxTransferRate = Atmospherics.MaxTransferRate;
+        base.Open();
 
-        [ViewVariables]
-        private GasVolumePumpWindow? _window;
+        _window = new();
 
-        public GasVolumePumpBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-        {
-        }
+        if (State != null)
+            UpdateState(State);
 
-        protected override void Open()
-        {
-            base.Open();
+        _window.OpenCentered();
 
-            _window = new GasVolumePumpWindow();
+        _window.OnClose += Close;
 
-            if (State != null)
-                UpdateState(State);
+        _window.ToggleStatusButtonPressed += OnToggleStatusButtonPressed;
+        _window.PumpTransferRateChanged += OnPumpTransferRatePressed;
+    }
 
-            _window.OpenCentered();
+    private void OnToggleStatusButtonPressed()
+    {
+        if (_window is null)
+            return;
+        SendMessage(new GasVolumePumpToggleStatusMessage(_window.PumpStatus));
+    }
 
-            _window.OnClose += Close;
+    private void OnPumpTransferRatePressed(string value)
+    {
+        var rate = UserInputParser.TryFloat(value, out var parsed) ? parsed : 0f;
+        if (rate > MaxTransferRate)
+            rate = MaxTransferRate;
 
-            _window.ToggleStatusButtonPressed += OnToggleStatusButtonPressed;
-            _window.PumpTransferRateChanged += OnPumpTransferRatePressed;
-        }
+        SendMessage(new GasVolumePumpChangeTransferRateMessage(rate));
+    }
 
-        private void OnToggleStatusButtonPressed()
-        {
-            if (_window is null) return;
-            SendMessage(new GasVolumePumpToggleStatusMessage(_window.PumpStatus));
-        }
+    /// <summary>
+    ///     Update the UI state based on server-sent info
+    /// </summary>
+    /// <param name="state"></param>
+    protected override void UpdateState(BoundUserInterfaceState state)
+    {
+        base.UpdateState(state);
+        if (_window == null || state is not GasVolumePumpBoundUserInterfaceState cast)
+            return;
 
-        private void OnPumpTransferRatePressed(string value)
-        {
-            var rate = UserInputParser.TryFloat(value, out var parsed) ? parsed : 0f;
-            if (rate > MaxTransferRate)
-                rate = MaxTransferRate;
+        _window.Title = cast.PumpLabel;
+        _window.SetPumpStatus(cast.Enabled);
+        _window.SetTransferRate(cast.TransferRate);
+    }
 
-            SendMessage(new GasVolumePumpChangeTransferRateMessage(rate));
-        }
-
-        /// <summary>
-        /// Update the UI state based on server-sent info
-        /// </summary>
-        /// <param name="state"></param>
-        protected override void UpdateState(BoundUserInterfaceState state)
-        {
-            base.UpdateState(state);
-            if (_window == null || state is not GasVolumePumpBoundUserInterfaceState cast)
-                return;
-
-            _window.Title = (cast.PumpLabel);
-            _window.SetPumpStatus(cast.Enabled);
-            _window.SetTransferRate(cast.TransferRate);
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-            if (!disposing) return;
-            _window?.Dispose();
-        }
+    protected override void Dispose(bool disposing)
+    {
+        base.Dispose(disposing);
+        if (!disposing)
+            return;
+        _window?.Dispose();
     }
 }

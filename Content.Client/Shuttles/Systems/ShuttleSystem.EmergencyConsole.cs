@@ -1,29 +1,36 @@
+#region
+
 using System.Numerics;
 using Content.Shared.Shuttles.Events;
 using Content.Shared.Shuttles.Systems;
 using Robust.Client.Graphics;
 using Robust.Shared.Enums;
 
+#endregion
+
+
 namespace Content.Client.Shuttles.Systems;
+
 
 public sealed partial class ShuttleSystem : SharedShuttleSystem
 {
     /// <summary>
-    /// Should we show the expected emergency shuttle position.
+    ///     Should we show the expected emergency shuttle position.
     /// </summary>
     public bool EnableShuttlePosition
     {
         get => _enableShuttlePosition;
         set
         {
-            if (_enableShuttlePosition == value) return;
+            if (_enableShuttlePosition == value)
+                return;
 
             _enableShuttlePosition = value;
             var overlayManager = IoCManager.Resolve<IOverlayManager>();
 
             if (_enableShuttlePosition)
             {
-                _overlay = new EmergencyShuttleOverlay(EntityManager);
+                _overlay = new(EntityManager);
                 overlayManager.AddOverlay(_overlay);
                 RaiseNetworkEvent(new EmergencyShuttleRequestPositionMessage());
             }
@@ -38,14 +45,12 @@ public sealed partial class ShuttleSystem : SharedShuttleSystem
     private bool _enableShuttlePosition;
     private EmergencyShuttleOverlay? _overlay;
 
-    private void InitializeEmergency()
-    {
-        SubscribeNetworkEvent<EmergencyShuttlePositionMessage>(OnShuttlePosMessage);
-    }
+    private void InitializeEmergency() => SubscribeNetworkEvent<EmergencyShuttlePositionMessage>(OnShuttlePosMessage);
 
     private void OnShuttlePosMessage(EmergencyShuttlePositionMessage ev)
     {
-        if (_overlay == null) return;
+        if (_overlay == null)
+            return;
 
         _overlay.StationUid = GetEntity(ev.StationUid);
         _overlay.Position = ev.Position;
@@ -53,11 +58,11 @@ public sealed partial class ShuttleSystem : SharedShuttleSystem
 }
 
 /// <summary>
-/// Shows the expected position of the emergency shuttle. Nothing more.
+///     Shows the expected position of the emergency shuttle. Nothing more.
 /// </summary>
 public sealed class EmergencyShuttleOverlay : Overlay
 {
-    private IEntityManager _entManager;
+    private readonly IEntityManager _entManager;
 
     public override OverlaySpace Space => OverlaySpace.WorldSpace;
 
@@ -71,7 +76,8 @@ public sealed class EmergencyShuttleOverlay : Overlay
 
     protected override void Draw(in OverlayDrawArgs args)
     {
-        if (Position == null || !_entManager.TryGetComponent<TransformComponent>(StationUid, out var xform)) return;
+        if (Position == null || !_entManager.TryGetComponent<TransformComponent>(StationUid, out var xform))
+            return;
 
         args.WorldHandle.SetTransform(xform.WorldMatrix);
         args.WorldHandle.DrawRect(Position.Value, Color.Red.WithAlpha(100));

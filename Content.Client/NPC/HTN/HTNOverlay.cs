@@ -1,9 +1,15 @@
+#region
+
 using System.Numerics;
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
 using Robust.Shared.Enums;
 
+#endregion
+
+
 namespace Content.Client.NPC.HTN;
+
 
 public sealed class HTNOverlay : Overlay
 {

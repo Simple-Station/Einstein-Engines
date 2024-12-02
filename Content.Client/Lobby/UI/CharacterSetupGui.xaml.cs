@@ -1,3 +1,5 @@
+#region
+
 using Content.Client.Info;
 using Content.Client.Info.PlaytimeStats;
 using Content.Client.Resources;
@@ -10,109 +12,113 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 
-namespace Content.Client.Lobby.UI
+#endregion
+
+
+namespace Content.Client.Lobby.UI;
+
+
+/// <summary>
+///     Holds the entire character setup GUI, from character picks to individual character editing.
+/// </summary>
+[GenerateTypedNameReferences]
+public sealed partial class CharacterSetupGui : Control
 {
-    /// <summary>
-    /// Holds the entire character setup GUI, from character picks to individual character editing.
-    /// </summary>
-    [GenerateTypedNameReferences]
-    public sealed partial class CharacterSetupGui : Control
+    private readonly IClientPreferencesManager _preferencesManager;
+    private readonly IEntityManager _entManager;
+    private readonly IPrototypeManager _protomanager;
+
+    private readonly Button _createNewCharacterButton;
+
+    public event Action<int>? SelectCharacter;
+    public event Action<int>? DeleteCharacter;
+
+    public CharacterSetupGui(
+        IEntityManager entManager,
+        IPrototypeManager protoManager,
+        IResourceCache resourceCache,
+        IClientPreferencesManager preferencesManager,
+        HumanoidProfileEditor profileEditor
+    )
     {
-        private readonly IClientPreferencesManager _preferencesManager;
-        private readonly IEntityManager _entManager;
-        private readonly IPrototypeManager _protomanager;
+        RobustXamlLoader.Load(this);
+        _preferencesManager = preferencesManager;
+        _entManager = entManager;
+        _protomanager = protoManager;
 
-        private readonly Button _createNewCharacterButton;
-
-        public event Action<int>? SelectCharacter;
-        public event Action<int>? DeleteCharacter;
-
-        public CharacterSetupGui(
-            IEntityManager entManager,
-            IPrototypeManager protoManager,
-            IResourceCache resourceCache,
-            IClientPreferencesManager preferencesManager,
-            HumanoidProfileEditor profileEditor)
+        var panelTex = resourceCache.GetTexture("/Textures/Interface/Nano/button.svg.96dpi.png");
+        var back = new StyleBoxTexture
         {
-            RobustXamlLoader.Load(this);
-            _preferencesManager = preferencesManager;
-            _entManager = entManager;
-            _protomanager = protoManager;
+            Texture = panelTex,
+            Modulate = new(37, 37, 42)
+        };
+        back.SetPatchMargin(StyleBox.Margin.All, 10);
 
-            var panelTex = resourceCache.GetTexture("/Textures/Interface/Nano/button.svg.96dpi.png");
-            var back = new StyleBoxTexture
+        BackgroundPanel.PanelOverride = back;
+
+        _createNewCharacterButton = new()
+        {
+            Text = Loc.GetString("character-setup-gui-create-new-character-button")
+        };
+
+        _createNewCharacterButton.OnPressed += args =>
+        {
+            preferencesManager.CreateCharacter(HumanoidCharacterProfile.Random());
+            ReloadCharacterPickers();
+            args.Event.Handle();
+        };
+
+        CharEditor.AddChild(profileEditor);
+        RulesButton.OnPressed += _ => new RulesAndInfoWindow().Open();
+
+        StatsButton.OnPressed += _ => new PlaytimeStatsWindow().OpenCentered();
+    }
+
+    /// <summary>
+    ///     Disposes and reloads all character picker buttons from the preferences data.
+    /// </summary>
+    public void ReloadCharacterPickers()
+    {
+        _createNewCharacterButton.Orphan();
+        Characters.DisposeAllChildren();
+
+        var numberOfFullSlots = 0;
+        var characterButtonsGroup = new ButtonGroup();
+
+        if (!_preferencesManager.ServerDataLoaded)
+            return;
+
+        _createNewCharacterButton.ToolTip =
+            Loc.GetString(
+                "character-setup-gui-create-new-character-button-tooltip",
+                ("maxCharacters", _preferencesManager.Settings!.MaxCharacterSlots));
+
+        var selectedSlot = _preferencesManager.Preferences?.SelectedCharacterIndex;
+
+        foreach (var (slot, character) in _preferencesManager.Preferences!.Characters)
+        {
+            numberOfFullSlots++;
+            var characterPickerButton = new CharacterPickerButton(
+                _entManager,
+                _protomanager,
+                characterButtonsGroup,
+                character,
+                slot == selectedSlot);
+
+            Characters.AddChild(characterPickerButton);
+
+            characterPickerButton.OnPressed += args =>
             {
-                Texture = panelTex,
-                Modulate = new Color(37, 37, 42)
+                SelectCharacter?.Invoke(slot);
             };
-            back.SetPatchMargin(StyleBox.Margin.All, 10);
 
-            BackgroundPanel.PanelOverride = back;
-
-            _createNewCharacterButton = new Button
+            characterPickerButton.OnDeletePressed += () =>
             {
-                Text = Loc.GetString("character-setup-gui-create-new-character-button"),
+                DeleteCharacter?.Invoke(slot);
             };
-
-            _createNewCharacterButton.OnPressed += args =>
-            {
-                preferencesManager.CreateCharacter(HumanoidCharacterProfile.Random());
-                ReloadCharacterPickers();
-                args.Event.Handle();
-            };
-
-            CharEditor.AddChild(profileEditor);
-            RulesButton.OnPressed += _ => new RulesAndInfoWindow().Open();
-
-            StatsButton.OnPressed += _ => new PlaytimeStatsWindow().OpenCentered();
         }
 
-        /// <summary>
-        /// Disposes and reloads all character picker buttons from the preferences data.
-        /// </summary>
-        public void ReloadCharacterPickers()
-        {
-            _createNewCharacterButton.Orphan();
-            Characters.DisposeAllChildren();
-
-            var numberOfFullSlots = 0;
-            var characterButtonsGroup = new ButtonGroup();
-
-            if (!_preferencesManager.ServerDataLoaded)
-            {
-                return;
-            }
-
-            _createNewCharacterButton.ToolTip =
-                Loc.GetString("character-setup-gui-create-new-character-button-tooltip",
-                    ("maxCharacters", _preferencesManager.Settings!.MaxCharacterSlots));
-
-            var selectedSlot = _preferencesManager.Preferences?.SelectedCharacterIndex;
-
-            foreach (var (slot, character) in _preferencesManager.Preferences!.Characters)
-            {
-                numberOfFullSlots++;
-                var characterPickerButton = new CharacterPickerButton(_entManager,
-                    _protomanager,
-                    characterButtonsGroup,
-                    character,
-                    slot == selectedSlot);
-
-                Characters.AddChild(characterPickerButton);
-
-                characterPickerButton.OnPressed += args =>
-                {
-                    SelectCharacter?.Invoke(slot);
-                };
-
-                characterPickerButton.OnDeletePressed += () =>
-                {
-                    DeleteCharacter?.Invoke(slot);
-                };
-            }
-
-            _createNewCharacterButton.Disabled = numberOfFullSlots >= _preferencesManager.Settings.MaxCharacterSlots;
-            Characters.AddChild(_createNewCharacterButton);
-        }
+        _createNewCharacterButton.Disabled = numberOfFullSlots >= _preferencesManager.Settings.MaxCharacterSlots;
+        Characters.AddChild(_createNewCharacterButton);
     }
 }

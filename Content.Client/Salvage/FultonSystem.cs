@@ -1,16 +1,19 @@
+#region
+
 using System.Numerics;
 using Content.Shared.Salvage.Fulton;
-using Robust.Shared.Spawners;
 using JetBrains.Annotations;
 using Robust.Client.Animations;
 using Robust.Client.GameObjects;
-using Robust.Client.Graphics;
-using Robust.Shared.Animations;
 using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Utility;
 using TimedDespawnComponent = Robust.Shared.Spawners.TimedDespawnComponent;
 
+#endregion
+
+
 namespace Content.Client.Salvage;
+
 
 public sealed class FultonSystem : SharedFultonSystem
 {
@@ -29,8 +32,8 @@ public sealed class FultonSystem : SharedFultonSystem
                 LayerKey = FultonVisualLayers.Base,
                 KeyFrames =
                 {
-                    new AnimationTrackSpriteFlick.KeyFrame(new RSI.StateId("fulton_expand"), 0f),
-                    new AnimationTrackSpriteFlick.KeyFrame(new RSI.StateId("fulton_balloon"), 0.4f),
+                    new(new("fulton_expand"), 0f),
+                    new(new("fulton_balloon"), 0.4f)
                 }
             }
         }
@@ -41,15 +44,15 @@ public sealed class FultonSystem : SharedFultonSystem
         Length = TimeSpan.FromSeconds(0.8f),
         AnimationTracks =
         {
-            new AnimationTrackComponentProperty()
+            new AnimationTrackComponentProperty
             {
                 ComponentType = typeof(SpriteComponent),
                 Property = nameof(SpriteComponent.Offset),
                 KeyFrames =
                 {
-                    new AnimationTrackProperty.KeyFrame(Vector2.Zero, 0f),
-                    new AnimationTrackProperty.KeyFrame(new Vector2(0f, -0.3f), 0.3f),
-                    new AnimationTrackProperty.KeyFrame(new Vector2(0f, 20f), 0.5f),
+                    new(Vector2.Zero, 0f),
+                    new(new Vector2(0f, -0.3f), 0.3f),
+                    new(new Vector2(0f, 20f), 0.5f)
                 }
             }
         }
@@ -82,7 +85,8 @@ public sealed class FultonSystem : SharedFultonSystem
         }
 
         sprite.NoRotation = true;
-        var effectLayer = sprite.AddLayer(new SpriteSpecifier.Rsi(new ResPath("Objects/Tools/fulton_balloon.rsi"), "fulton_balloon"));
+        var effectLayer = sprite.AddLayer(
+            new SpriteSpecifier.Rsi(new("Objects/Tools/fulton_balloon.rsi"), "fulton_balloon"));
         sprite.LayerSetOffset(effectLayer, EffectOffset + new Vector2(0f, 0.5f));
 
         var despawn = AddComp<TimedDespawnComponent>(animationEnt);
@@ -91,10 +95,8 @@ public sealed class FultonSystem : SharedFultonSystem
         _player.Play(animationEnt, FultonAnimation, "fulton-animation");
     }
 
-    private void OnHandleState(EntityUid uid, FultonedComponent component, ref AfterAutoHandleStateEvent args)
-    {
+    private void OnHandleState(EntityUid uid, FultonedComponent component, ref AfterAutoHandleStateEvent args) =>
         UpdateAppearance(uid, component);
-    }
 
     protected override void UpdateAppearance(EntityUid uid, FultonedComponent component)
     {
@@ -105,9 +107,7 @@ public sealed class FultonSystem : SharedFultonSystem
         var elapsed = Timing.CurTime - startTime;
 
         if (elapsed >= AnimationDuration)
-        {
             return;
-        }
 
         _player.Play(component.Effect, InitialAnimation, "fulton");
     }
@@ -115,8 +115,6 @@ public sealed class FultonSystem : SharedFultonSystem
     [UsedImplicitly]
     public enum FultonVisualLayers : byte
     {
-        Base,
+        Base
     }
-
-
 }

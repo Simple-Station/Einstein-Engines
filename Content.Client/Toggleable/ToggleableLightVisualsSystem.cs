@@ -1,3 +1,6 @@
+#region
+
+using System.Linq;
 using Content.Client.Clothing;
 using Content.Client.Items.Systems;
 using Content.Shared.Clothing;
@@ -6,9 +9,12 @@ using Content.Shared.Item;
 using Content.Shared.Toggleable;
 using Robust.Client.GameObjects;
 using Robust.Shared.Utility;
-using System.Linq;
+
+#endregion
+
 
 namespace Content.Client.Toggleable;
+
 
 public sealed class ToggleableLightVisualsSystem : VisualizerSystem<ToggleableLightVisualsComponent>
 {
@@ -18,19 +24,32 @@ public sealed class ToggleableLightVisualsSystem : VisualizerSystem<ToggleableLi
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<ToggleableLightVisualsComponent, GetInhandVisualsEvent>(OnGetHeldVisuals, after: new[] { typeof(ItemSystem) });
-        SubscribeLocalEvent<ToggleableLightVisualsComponent, GetEquipmentVisualsEvent>(OnGetEquipmentVisuals, after: new[] { typeof(ClientClothingSystem) });
+        SubscribeLocalEvent<ToggleableLightVisualsComponent, GetInhandVisualsEvent>(
+            OnGetHeldVisuals,
+            after: new[] { typeof(ItemSystem), });
+        SubscribeLocalEvent<ToggleableLightVisualsComponent, GetEquipmentVisualsEvent>(
+            OnGetEquipmentVisuals,
+            after: new[] { typeof(ClientClothingSystem), });
     }
 
-    protected override void OnAppearanceChange(EntityUid uid, ToggleableLightVisualsComponent component, ref AppearanceChangeEvent args)
+    protected override void OnAppearanceChange(
+        EntityUid uid,
+        ToggleableLightVisualsComponent component,
+        ref AppearanceChangeEvent args
+    )
     {
         if (!AppearanceSystem.TryGetData<bool>(uid, ToggleableLightVisuals.Enabled, out var enabled, args.Component))
             return;
 
-        var modulate = AppearanceSystem.TryGetData<Color>(uid, ToggleableLightVisuals.Color, out var color, args.Component);
+        var modulate = AppearanceSystem.TryGetData<Color>(
+            uid,
+            ToggleableLightVisuals.Color,
+            out var color,
+            args.Component);
 
         // Update the item's sprite
-        if (args.Sprite != null && component.SpriteLayer != null && args.Sprite.LayerMapTryGet(component.SpriteLayer, out var layer))
+        if (args.Sprite != null && component.SpriteLayer != null &&
+            args.Sprite.LayerMapTryGet(component.SpriteLayer, out var layer))
         {
             args.Sprite.LayerSetVisible(layer, enabled);
             if (modulate)
@@ -43,9 +62,7 @@ public sealed class ToggleableLightVisualsSystem : VisualizerSystem<ToggleableLi
             DebugTools.Assert(!light.NetSyncEnabled, "light visualizers require point lights without net-sync");
             _lights.SetEnabled(uid, enabled, light);
             if (enabled && modulate)
-            {
                 _lights.SetColor(uid, color, light);
-            }
         }
 
         // update clothing & in-hand visuals.
@@ -55,7 +72,11 @@ public sealed class ToggleableLightVisualsSystem : VisualizerSystem<ToggleableLi
     /// <summary>
     ///     Add the unshaded light overlays to any clothing sprites.
     /// </summary>
-    private void OnGetEquipmentVisuals(EntityUid uid, ToggleableLightVisualsComponent component, GetEquipmentVisualsEvent args)
+    private void OnGetEquipmentVisuals(
+        EntityUid uid,
+        ToggleableLightVisualsComponent component,
+        GetEquipmentVisualsEvent args
+    )
     {
         if (!TryComp(uid, out AppearanceComponent? appearance)
             || !AppearanceSystem.TryGetData<bool>(uid, ToggleableLightVisuals.Enabled, out var enabled, appearance)

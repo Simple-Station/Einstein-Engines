@@ -1,9 +1,15 @@
+#region
+
 using Content.Client.Radiation.Overlays;
 using Content.Shared.Radiation.Events;
 using Content.Shared.Radiation.Systems;
 using Robust.Client.Graphics;
 
+#endregion
+
+
 namespace Content.Client.Radiation.Systems;
+
 
 public sealed class RadiationSystem : EntitySystem
 {
@@ -39,14 +45,11 @@ public sealed class RadiationSystem : EntitySystem
             return;
 
         var str = $"Radiation update: {ev.ElapsedTimeMs}ms with. Receivers: {ev.ReceiversCount}, " +
-                  $"Sources: {ev.SourcesCount}, Rays: {ev.Rays.Count}";
+            $"Sources: {ev.SourcesCount}, Rays: {ev.Rays.Count}";
         Log.Info(str);
 
         Rays = ev.Rays;
     }
 
-    private void OnResistanceUpdate(OnRadiationOverlayResistanceUpdateEvent ev)
-    {
-        ResistanceGrids = ev.Grids;
-    }
+    private void OnResistanceUpdate(OnRadiationOverlayResistanceUpdateEvent ev) => ResistanceGrids = ev.Grids;
 }

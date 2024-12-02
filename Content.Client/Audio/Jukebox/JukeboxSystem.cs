@@ -1,7 +1,12 @@
+#region
+
 using Content.Shared.Audio.Jukebox;
 using Robust.Client.Animations;
 using Robust.Client.GameObjects;
 using Robust.Shared.Prototypes;
+
+#endregion
+
 
 namespace Content.Client.Audio.Jukebox;
 
@@ -59,10 +64,12 @@ public sealed class JukeboxSystem : SharedJukeboxSystem
             return;
 
         if (!TryComp<AppearanceComponent>(uid, out var appearance) ||
-            !_appearanceSystem.TryGetData<JukeboxVisualState>(uid, JukeboxVisuals.VisualState, out var visualState, appearance))
-        {
+            !_appearanceSystem.TryGetData<JukeboxVisualState>(
+                uid,
+                JukeboxVisuals.VisualState,
+                out var visualState,
+                appearance))
             visualState = JukeboxVisualState.On;
-        }
 
         UpdateAppearance(uid, visualState, component, sprite);
     }
@@ -74,14 +81,17 @@ public sealed class JukeboxSystem : SharedJukeboxSystem
 
         if (!args.AppearanceData.TryGetValue(JukeboxVisuals.VisualState, out var visualStateObject) ||
             visualStateObject is not JukeboxVisualState visualState)
-        {
             visualState = JukeboxVisualState.On;
-        }
 
         UpdateAppearance(uid, visualState, component, args.Sprite);
     }
 
-    private void UpdateAppearance(EntityUid uid, JukeboxVisualState visualState, JukeboxComponent component, SpriteComponent sprite)
+    private void UpdateAppearance(
+        EntityUid uid,
+        JukeboxVisualState visualState,
+        JukeboxComponent component,
+        SpriteComponent sprite
+    )
     {
         SetLayerState(JukeboxVisualLayers.Base, component.OffState, sprite);
 
@@ -101,7 +111,13 @@ public sealed class JukeboxSystem : SharedJukeboxSystem
         }
     }
 
-    private void PlayAnimation(EntityUid uid, JukeboxVisualLayers layer, string? state, float animationTime, SpriteComponent sprite)
+    private void PlayAnimation(
+        EntityUid uid,
+        JukeboxVisualLayers layer,
+        string? state,
+        float animationTime,
+        SpriteComponent sprite
+    )
     {
         if (string.IsNullOrEmpty(state))
             return;
@@ -114,24 +130,22 @@ public sealed class JukeboxSystem : SharedJukeboxSystem
         }
     }
 
-    private static Animation GetAnimation(JukeboxVisualLayers layer, string state, float animationTime)
-    {
-        return new Animation
+    private static Animation GetAnimation(JukeboxVisualLayers layer, string state, float animationTime) =>
+        new()
         {
             Length = TimeSpan.FromSeconds(animationTime),
             AnimationTracks =
+            {
+                new AnimationTrackSpriteFlick
                 {
-                    new AnimationTrackSpriteFlick
+                    LayerKey = layer,
+                    KeyFrames =
                     {
-                        LayerKey = layer,
-                        KeyFrames =
-                        {
-                            new AnimationTrackSpriteFlick.KeyFrame(state, 0f)
-                        }
+                        new(state, 0f)
                     }
                 }
+            }
         };
-    }
 
     private void SetLayerState(JukeboxVisualLayers layer, string? state, SpriteComponent sprite)
     {

@@ -1,9 +1,15 @@
+#region
+
 using Content.Client.Markers;
 using JetBrains.Annotations;
 using Robust.Client.Graphics;
 using Robust.Shared.Console;
 
+#endregion
+
+
 namespace Content.Client.Commands;
+
 
 [UsedImplicitly]
 internal sealed class MappingClientSideSetupCommand : LocalizedCommands
@@ -26,4 +32,3 @@ internal sealed class MappingClientSideSetupCommand : LocalizedCommands
         }
     }
 }
-

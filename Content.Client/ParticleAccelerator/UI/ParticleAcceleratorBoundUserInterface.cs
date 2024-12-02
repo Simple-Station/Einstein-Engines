@@ -1,52 +1,44 @@
-﻿using Content.Shared.Singularity.Components;
-using Robust.Client.GameObjects;
+﻿#region
 
-namespace Content.Client.ParticleAccelerator.UI
+using Content.Shared.Singularity.Components;
+
+#endregion
+
+
+namespace Content.Client.ParticleAccelerator.UI;
+
+
+public sealed class ParticleAcceleratorBoundUserInterface : BoundUserInterface
 {
-    public sealed class ParticleAcceleratorBoundUserInterface : BoundUserInterface
+    [ViewVariables]
+    private ParticleAcceleratorControlMenu? _menu;
+
+    public ParticleAcceleratorBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
+
+    protected override void Open()
     {
-        [ViewVariables]
-        private ParticleAcceleratorControlMenu? _menu;
+        base.Open();
 
-        public ParticleAcceleratorBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-        {
-        }
+        _menu = new(this);
+        _menu.OnClose += Close;
+        _menu.OpenCentered();
+    }
 
-        protected override void Open()
-        {
-            base.Open();
+    public void SendEnableMessage(bool enable) => SendMessage(new ParticleAcceleratorSetEnableMessage(enable));
 
-            _menu = new ParticleAcceleratorControlMenu(this);
-            _menu.OnClose += Close;
-            _menu.OpenCentered();
-        }
+    public void SendPowerStateMessage(ParticleAcceleratorPowerState state) =>
+        SendMessage(new ParticleAcceleratorSetPowerStateMessage(state));
 
-        public void SendEnableMessage(bool enable)
-        {
-            SendMessage(new ParticleAcceleratorSetEnableMessage(enable));
-        }
+    public void SendScanPartsMessage() => SendMessage(new ParticleAcceleratorRescanPartsMessage());
 
-        public void SendPowerStateMessage(ParticleAcceleratorPowerState state)
-        {
-            SendMessage(new ParticleAcceleratorSetPowerStateMessage(state));
-        }
+    protected override void UpdateState(BoundUserInterfaceState state) =>
+        _menu?.DataUpdate((ParticleAcceleratorUIState) state);
 
-        public void SendScanPartsMessage()
-        {
-            SendMessage(new ParticleAcceleratorRescanPartsMessage());
-        }
+    protected override void Dispose(bool disposing)
+    {
+        base.Dispose(disposing);
 
-        protected override void UpdateState(BoundUserInterfaceState state)
-        {
-            _menu?.DataUpdate((ParticleAcceleratorUIState) state);
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-
-            _menu?.Dispose();
-            _menu = null;
-        }
+        _menu?.Dispose();
+        _menu = null;
     }
 }

@@ -1,3 +1,5 @@
+#region
+
 using System.Numerics;
 using Content.Client.Replay.UI;
 using Content.Shared.Verbs;
@@ -6,7 +8,11 @@ using Robust.Shared.Map;
 using Robust.Shared.Player;
 using Robust.Shared.Utility;
 
+#endregion
+
+
 namespace Content.Client.Replay.Spectator;
+
 
 // This partial class has methods for spawning a spectator ghost and "possessing" entitites.
 public sealed partial class ReplaySpectatorSystem
@@ -16,13 +22,14 @@ public sealed partial class ReplaySpectatorSystem
         if (_replayPlayback.Replay == null)
             return;
 
-        ev.Verbs.Add(new AlternativeVerb
-        {
-            Priority = 100,
-            Act = () => SpectateEntity(ev.Target),
-            Text = Loc.GetString("replay-verb-spectate"),
-            Icon = new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/VerbIcons/vv.svg.192dpi.png"))
-        });
+        ev.Verbs.Add(
+            new()
+            {
+                Priority = 100,
+                Act = () => SpectateEntity(ev.Target),
+                Text = Loc.GetString("replay-verb-spectate"),
+                Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/vv.svg.192dpi.png"))
+            });
     }
 
     public void SpectateEntity(EntityUid target)
@@ -91,7 +98,7 @@ public sealed partial class ReplaySpectatorSystem
         if (args.Length == 0)
         {
             if (_player.LocalSession?.AttachedEntity is { } current)
-                SpawnSpectatorGhost(new EntityCoordinates(current, default), true);
+                SpawnSpectatorGhost(new(current, default), true);
             else
                 SpawnSpectatorGhost(default, true);
             return;
@@ -119,7 +126,10 @@ public sealed partial class ReplaySpectatorSystem
         if (args.Length != 1)
             return CompletionResult.Empty;
 
-        return CompletionResult.FromHintOptions(CompletionHelper.NetEntities(args[0],
-            EntityManager), Loc.GetString("cmd-replay-spectate-hint"));
+        return CompletionResult.FromHintOptions(
+            CompletionHelper.NetEntities(
+                args[0],
+                EntityManager),
+            Loc.GetString("cmd-replay-spectate-hint"));
     }
 }

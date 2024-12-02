@@ -1,7 +1,12 @@
+#region
+
 using Content.Shared.Extinguisher;
-using Robust.Shared.GameStates;
+
+#endregion
+
 
 namespace Content.Client.Extinguisher;
+
 
 [RegisterComponent]
 public sealed partial class FireExtinguisherComponent : SharedFireExtinguisherComponent;

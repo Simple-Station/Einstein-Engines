@@ -1,12 +1,15 @@
-using Content.Shared.Construction.Prototypes;
-using Robust.Shared.GameObjects;
-using Robust.Shared.ViewVariables;
+#region
 
-namespace Content.Client.Construction
+using Content.Shared.Construction.Prototypes;
+
+#endregion
+
+
+namespace Content.Client.Construction;
+
+
+[RegisterComponent]
+public sealed partial class ConstructionGhostComponent : Component
 {
-    [RegisterComponent]
-    public sealed partial class ConstructionGhostComponent : Component
-    {
-        [ViewVariables] public ConstructionPrototype? Prototype { get; set; }
-    }
+    [ViewVariables] public ConstructionPrototype? Prototype { get; set; }
 }

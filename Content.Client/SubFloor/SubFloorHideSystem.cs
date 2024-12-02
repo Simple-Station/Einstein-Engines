@@ -1,8 +1,14 @@
-using Content.Shared.DrawDepth;
+#region
+
 using Content.Shared.SubFloor;
 using Robust.Client.GameObjects;
+using DrawDepth = Content.Shared.DrawDepth.DrawDepth;
+
+#endregion
+
 
 namespace Content.Client.SubFloor;
+
 
 public sealed class SubFloorHideSystem : SharedSubFloorHideSystem
 {
@@ -16,7 +22,8 @@ public sealed class SubFloorHideSystem : SharedSubFloorHideSystem
         get => _showAll;
         set
         {
-            if (_showAll == value) return;
+            if (_showAll == value)
+                return;
             _showAll = value;
 
             UpdateAll();
@@ -44,10 +51,8 @@ public sealed class SubFloorHideSystem : SharedSubFloorHideSystem
 
         // set visibility & color of each layer
         foreach (var layer in args.Sprite.AllLayers)
-        {
             // pipe connection visuals are updated AFTER this, and may re-hide some layers
             layer.Visible = revealed;
-        }
 
         // Is there some layer that is always visible?
         var hasVisibleLayer = false;
@@ -68,7 +73,7 @@ public sealed class SubFloorHideSystem : SharedSubFloorHideSystem
         if (scannerRevealed)
         {
             component.OriginalDrawDepth ??= args.Sprite.DrawDepth;
-            args.Sprite.DrawDepth = (int) Shared.DrawDepth.DrawDepth.FloorObjects + 1;
+            args.Sprite.DrawDepth = (int) DrawDepth.FloorObjects + 1;
         }
         else if (component.OriginalDrawDepth.HasValue)
         {
@@ -81,8 +86,6 @@ public sealed class SubFloorHideSystem : SharedSubFloorHideSystem
     {
         var query = AllEntityQuery<SubFloorHideComponent, AppearanceComponent>();
         while (query.MoveNext(out var uid, out _, out var appearance))
-        {
             _appearance.QueueUpdate(uid, appearance);
-        }
     }
 }

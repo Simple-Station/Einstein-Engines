@@ -1,3 +1,5 @@
+#region
+
 using Content.Client.Message;
 using Content.Client.Stylesheets;
 using Content.Shared.Chemistry.Components;
@@ -7,7 +9,11 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Timing;
 
+#endregion
+
+
 namespace Content.Client.Chemistry.UI;
+
 
 public sealed class HyposprayStatusControl : Control
 {
@@ -23,7 +29,7 @@ public sealed class HyposprayStatusControl : Control
     {
         _parent = parent;
         _solutionContainers = solutionContainers;
-        _label = new RichTextLabel { StyleClasses = { StyleNano.StyleClassItemStatus } };
+        _label = new() { StyleClasses = { StyleNano.StyleClassItemStatus, }, };
         AddChild(_label);
     }
 
@@ -44,15 +50,18 @@ public sealed class HyposprayStatusControl : Control
         PrevMaxVolume = solution.MaxVolume;
         PrevOnlyAffectsMobs = _parent.Comp.OnlyAffectsMobs;
 
-        var modeStringLocalized = Loc.GetString(_parent.Comp.OnlyAffectsMobs switch
-        {
-            false => "hypospray-all-mode-text",
-            true => "hypospray-mobs-only-mode-text",
-        });
+        var modeStringLocalized = Loc.GetString(
+            _parent.Comp.OnlyAffectsMobs switch
+            {
+                false => "hypospray-all-mode-text",
+                true => "hypospray-mobs-only-mode-text"
+            });
 
-        _label.SetMarkup(Loc.GetString("hypospray-volume-label",
-            ("currentVolume", solution.Volume),
-            ("totalVolume", solution.MaxVolume),
-            ("modeString", modeStringLocalized)));
+        _label.SetMarkup(
+            Loc.GetString(
+                "hypospray-volume-label",
+                ("currentVolume", solution.Volume),
+                ("totalVolume", solution.MaxVolume),
+                ("modeString", modeStringLocalized)));
     }
 }

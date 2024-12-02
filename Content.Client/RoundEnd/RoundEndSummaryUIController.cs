@@ -1,3 +1,5 @@
+#region
+
 using Content.Client.GameTicking.Managers;
 using Content.Shared.GameTicking;
 using Content.Shared.Input;
@@ -7,7 +9,11 @@ using Robust.Client.UserInterface.Controllers;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Player;
 
+#endregion
+
+
 namespace Content.Client.RoundEnd;
+
 
 [UsedImplicitly]
 public sealed class RoundEndSummaryUIController : UIController,
@@ -23,9 +29,7 @@ public sealed class RoundEndSummaryUIController : UIController,
             return;
 
         if (_window.IsOpen)
-        {
             _window.Close();
-        }
         else
         {
             _window.OpenCenteredRight();
@@ -39,13 +43,17 @@ public sealed class RoundEndSummaryUIController : UIController,
         if (_window?.RoundId == message.RoundId)
             return;
 
-        _window = new RoundEndSummaryWindow(message.GamemodeTitle, message.RoundEndText,
-            message.RoundDuration, message.RoundId, message.AllPlayersEndInfo, EntityManager);
+        _window = new(
+            message.GamemodeTitle,
+            message.RoundEndText,
+            message.RoundDuration,
+            message.RoundId,
+            message.AllPlayersEndInfo,
+            EntityManager);
     }
 
-    public void OnSystemLoaded(ClientGameTicker system)
-    {
-        _input.SetInputCommand(ContentKeyFunctions.ToggleRoundEndSummaryWindow,
+    public void OnSystemLoaded(ClientGameTicker system) =>
+        _input.SetInputCommand(
+            ContentKeyFunctions.ToggleRoundEndSummaryWindow,
             InputCmdHandler.FromDelegate(ToggleScoreboardWindow));
-    }
 }

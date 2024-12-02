@@ -1,8 +1,14 @@
+#region
+
 using Content.Client.Eui;
 using Content.Shared.Eui;
 using Content.Shared.UserInterface;
 
+#endregion
+
+
 namespace Content.Client.UserInterface;
+
 
 public sealed class StatValuesEui : BaseEui
 {
@@ -10,7 +16,7 @@ public sealed class StatValuesEui : BaseEui
 
     public StatValuesEui()
     {
-        _window = new StatsWindow();
+        _window = new();
         _window.Title = "Melee stats";
         _window.OpenCentered();
         _window.OnClose += Closed;

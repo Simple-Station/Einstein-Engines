@@ -1,7 +1,12 @@
+#region
+
 using Robust.Client.Graphics;
-using Robust.Shared.GameStates;
+
+#endregion
+
 
 namespace Content.Client.Flight.Components;
+
 
 [RegisterComponent]
 public sealed partial class FlightVisualsComponent : Component
@@ -28,6 +33,7 @@ public sealed partial class FlightVisualsComponent : Component
     ///     Are we animating layers or the entire sprite?
     /// </summary>
     public bool AnimateLayer = false;
+
     public int? TargetLayer;
 
     [DataField]
@@ -35,6 +41,4 @@ public sealed partial class FlightVisualsComponent : Component
 
     [ViewVariables(VVAccess.ReadWrite)]
     public ShaderInstance Shader = default!;
-
-
 }

@@ -1,3 +1,5 @@
+#region
+
 using Content.Shared.ActionBlocker;
 using Content.Shared.Cuffs;
 using Content.Shared.Cuffs.Components;
@@ -5,7 +7,11 @@ using Content.Shared.Humanoid;
 using Robust.Client.GameObjects;
 using Robust.Shared.GameStates;
 
+#endregion
+
+
 namespace Content.Client.Cuffs;
+
 
 public sealed class CuffableSystem : SharedCuffableSystem
 {
@@ -47,15 +53,13 @@ public sealed class CuffableSystem : SharedCuffableSystem
             return;
         sprite.LayerSetColor(HumanoidVisualLayers.Handcuffs, cuffState.Color!.Value);
 
-        if (!Equals(component.CurrentRSI, cuffState.RSI) && cuffState.RSI != null) // we don't want to keep loading the same RSI
+        if (!Equals(component.CurrentRSI, cuffState.RSI) &&
+            cuffState.RSI != null) // we don't want to keep loading the same RSI
         {
             component.CurrentRSI = cuffState.RSI;
             sprite.LayerSetState(HumanoidVisualLayers.Handcuffs, cuffState.IconState, component.CurrentRSI);
         }
         else
-        {
             sprite.LayerSetState(HumanoidVisualLayers.Handcuffs, cuffState.IconState);
-        }
     }
 }
-

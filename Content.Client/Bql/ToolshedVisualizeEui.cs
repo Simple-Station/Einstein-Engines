@@ -1,10 +1,16 @@
-﻿using Content.Client.Eui;
+﻿#region
+
+using Content.Client.Eui;
 using Content.Shared.Bql;
 using Content.Shared.Eui;
 using JetBrains.Annotations;
 using Robust.Client.Console;
 
+#endregion
+
+
 namespace Content.Client.Bql;
+
 
 [UsedImplicitly]
 public sealed class ToolshedVisualizeEui : BaseEui
@@ -13,7 +19,7 @@ public sealed class ToolshedVisualizeEui : BaseEui
 
     public ToolshedVisualizeEui()
     {
-        _window = new ToolshedVisualizeWindow(
+        _window = new(
             IoCManager.Resolve<IClientConsoleHost>(),
             IoCManager.Resolve<ILocalizationManager>()
         );

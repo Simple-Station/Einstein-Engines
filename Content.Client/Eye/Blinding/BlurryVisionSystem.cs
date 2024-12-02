@@ -1,9 +1,15 @@
+#region
+
 using Content.Shared.Eye.Blinding.Components;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Shared.Player;
 
+#endregion
+
+
 namespace Content.Client.Eye.Blinding;
+
 
 public sealed class BlurryVisionSystem : EntitySystem
 {
@@ -24,15 +30,11 @@ public sealed class BlurryVisionSystem : EntitySystem
         _overlay = new();
     }
 
-    private void OnPlayerAttached(EntityUid uid, BlurryVisionComponent component, LocalPlayerAttachedEvent args)
-    {
+    private void OnPlayerAttached(EntityUid uid, BlurryVisionComponent component, LocalPlayerAttachedEvent args) =>
         _overlayMan.AddOverlay(_overlay);
-    }
 
-    private void OnPlayerDetached(EntityUid uid, BlurryVisionComponent component, LocalPlayerDetachedEvent args)
-    {
+    private void OnPlayerDetached(EntityUid uid, BlurryVisionComponent component, LocalPlayerDetachedEvent args) =>
         _overlayMan.RemoveOverlay(_overlay);
-    }
 
     private void OnBlurryInit(EntityUid uid, BlurryVisionComponent component, ComponentInit args)
     {
@@ -43,8 +45,6 @@ public sealed class BlurryVisionSystem : EntitySystem
     private void OnBlurryShutdown(EntityUid uid, BlurryVisionComponent component, ComponentShutdown args)
     {
         if (_player.LocalEntity == uid)
-        {
             _overlayMan.RemoveOverlay(_overlay);
-        }
     }
 }

@@ -1,3 +1,5 @@
+#region
+
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
 using Content.Shared.Overlays;
@@ -6,7 +8,11 @@ using Content.Shared.StatusIcon;
 using Content.Shared.StatusIcon.Components;
 using Robust.Shared.Prototypes;
 
+#endregion
+
+
 namespace Content.Client.Overlays;
+
 
 public sealed class ShowJobIconsSystem : EquipmentHudSystem<ShowJobIconsComponent>
 {

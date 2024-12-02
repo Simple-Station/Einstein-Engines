@@ -1,3 +1,5 @@
+#region
+
 using Content.Shared.Weapons.Misc;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
@@ -6,7 +8,11 @@ using Robust.Client.Player;
 using Robust.Shared.Map;
 using Robust.Shared.Timing;
 
+#endregion
+
+
 namespace Content.Client.Weapons.Misc;
+
 
 public sealed class TetherGunSystem : SharedTetherGunSystem
 {
@@ -41,11 +47,14 @@ public sealed class TetherGunSystem : SharedTetherGunSystem
         _overlay.RemoveOverlay<TetherGunOverlay>();
     }
 
-    protected override bool CanTether(EntityUid uid, BaseForceGunComponent component, EntityUid target, EntityUid? user)
-    {
+    protected override bool CanTether(
+        EntityUid uid,
+        BaseForceGunComponent component,
+        EntityUid target,
+        EntityUid? user
+    ) =>
         // Need powercells predicted sadly :<
-        return false;
-    }
+        false;
 
     public override void Update(float frameTime)
     {
@@ -59,9 +68,7 @@ public sealed class TetherGunSystem : SharedTetherGunSystem
         if (player == null ||
             !TryGetTetherGun(player.Value, out var gunUid, out var gun) ||
             gun.TetherEntity == null)
-        {
             return;
-        }
 
         var mousePos = _input.MouseScreenPosition;
         var mouseWorldPos = _eyeManager.PixelToMap(mousePos);
@@ -72,44 +79,36 @@ public sealed class TetherGunSystem : SharedTetherGunSystem
         EntityCoordinates coords;
 
         if (_mapManager.TryFindGridAt(mouseWorldPos, out var gridUid, out _))
-        {
             coords = EntityCoordinates.FromMap(gridUid, mouseWorldPos, TransformSystem);
-        }
         else
-        {
-            coords = EntityCoordinates.FromMap(_mapManager.GetMapEntityId(mouseWorldPos.MapId), mouseWorldPos, TransformSystem);
-        }
+            coords = EntityCoordinates.FromMap(
+                _mapManager.GetMapEntityId(mouseWorldPos.MapId),
+                mouseWorldPos,
+                TransformSystem);
 
         const float BufferDistance = 0.1f;
 
         if (TryComp<TransformComponent>(gun.TetherEntity, out var tetherXform) &&
             tetherXform.Coordinates.TryDistance(EntityManager, TransformSystem, coords, out var distance) &&
             distance < BufferDistance)
-        {
             return;
-        }
 
-        RaisePredictiveEvent(new RequestTetherMoveEvent()
-        {
-            Coordinates = GetNetCoordinates(coords)
-        });
+        RaisePredictiveEvent(
+            new RequestTetherMoveEvent
+            {
+                Coordinates = GetNetCoordinates(coords)
+            });
     }
 
     private void OnTetheredStartup(EntityUid uid, TetheredComponent component, ComponentStartup args)
     {
         if (!TryComp<SpriteComponent>(uid, out var sprite))
-        {
             return;
-        }
 
         if (TryComp<ForceGunComponent>(component.Tetherer, out var force))
-        {
             sprite.Color = force.LineColor;
-        }
         else if (TryComp<TetherGunComponent>(component.Tetherer, out var tether))
-        {
             sprite.Color = tether.LineColor;
-        }
     }
 
     private void OnTetheredShutdown(EntityUid uid, TetheredComponent component, ComponentShutdown args)

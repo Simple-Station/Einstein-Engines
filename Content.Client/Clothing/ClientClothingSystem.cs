@@ -1,3 +1,5 @@
+#region
+
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Client.Inventory;
@@ -16,34 +18,40 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations;
 using Robust.Shared.Utility;
 using static Robust.Client.GameObjects.SpriteComponent;
 
+#endregion
+
+
 namespace Content.Client.Clothing;
+
 
 public sealed class ClientClothingSystem : ClothingSystem
 {
     public const string Jumpsuit = "jumpsuit";
 
     /// <summary>
-    /// This is a shitty hotfix written by me (Paul) to save me from renaming all files.
-    /// For some context, im currently refactoring inventory. Part of that is slots not being indexed by a massive enum anymore, but by strings.
-    /// Problem here: Every rsi-state is using the old enum-names in their state. I already used the new inventoryslots ALOT. tldr: its this or another week of renaming files.
+    ///     This is a shitty hotfix written by me (Paul) to save me from renaming all files.
+    ///     For some context, im currently refactoring inventory. Part of that is slots not being indexed by a massive enum
+    ///     anymore, but by strings.
+    ///     Problem here: Every rsi-state is using the old enum-names in their state. I already used the new inventoryslots
+    ///     ALOT. tldr: its this or another week of renaming files.
     /// </summary>
     private static readonly Dictionary<string, string> TemporarySlotMap = new()
     {
-        {"head", "HELMET"},
-        {"eyes", "EYES"},
-        {"ears", "EARS"},
-        {"mask", "MASK"},
-        {"outerClothing", "OUTERCLOTHING"},
-        {Jumpsuit, "INNERCLOTHING"},
-        {"neck", "NECK"},
-        {"back", "BACKPACK"},
-        {"belt", "BELT"},
-        {"gloves", "HAND"},
-        {"shoes", "FEET"},
-        {"id", "IDCARD"},
-        {"pocket1", "POCKET1"},
-        {"pocket2", "POCKET2"},
-        {"suitstorage", "SUITSTORAGE"},
+        { "head", "HELMET" },
+        { "eyes", "EYES" },
+        { "ears", "EARS" },
+        { "mask", "MASK" },
+        { "outerClothing", "OUTERCLOTHING" },
+        { Jumpsuit, "INNERCLOTHING" },
+        { "neck", "NECK" },
+        { "back", "BACKPACK" },
+        { "belt", "BELT" },
+        { "gloves", "HAND" },
+        { "shoes", "FEET" },
+        { "id", "IDCARD" },
+        { "pocket1", "POCKET1" },
+        { "pocket2", "POCKET2" },
+        { "suitstorage", "SUITSTORAGE" }
     };
 
     [Dependency] private readonly IResourceCache _cache = default!;
@@ -123,8 +131,13 @@ public sealed class ClientClothingSystem : ClothingSystem
     /// <remarks>
     ///     Useful for lazily adding clothing sprites without modifying yaml. And for backwards compatibility.
     /// </remarks>
-    private bool TryGetDefaultVisuals(EntityUid uid, ClothingComponent clothing, string slot, string? speciesId,
-        [NotNullWhen(true)] out List<PrototypeLayerData>? layers)
+    private bool TryGetDefaultVisuals(
+        EntityUid uid,
+        ClothingComponent clothing,
+        string slot,
+        string? speciesId,
+        [NotNullWhen(true)] out List<PrototypeLayerData>? layers
+    )
     {
         layers = null;
 
@@ -142,7 +155,6 @@ public sealed class ClientClothingSystem : ClothingSystem
         TemporarySlotMap.TryGetValue(correctedSlot, out correctedSlot);
 
 
-
         var state = $"equipped-{correctedSlot}";
 
         if (clothing.EquippedPrefix != null)
@@ -153,18 +165,14 @@ public sealed class ClientClothingSystem : ClothingSystem
 
         // species specific
         if (speciesId != null && rsi.TryGetState($"{state}-{speciesId}", out _))
-        {
             state = $"{state}-{speciesId}";
-        }
         else if (!rsi.TryGetState(state, out _))
-        {
             return false;
-        }
 
         var layer = new PrototypeLayerData();
         layer.RsiPath = rsi.Path.ToString();
         layer.State = state;
-        layers = new() { layer };
+        layers = new() { layer, };
 
         return true;
     }
@@ -185,9 +193,7 @@ public sealed class ClientClothingSystem : ClothingSystem
         if (args.Slot == Jumpsuit
             && TryComp(uid, out SpriteComponent? sprite)
             && sprite.LayerMapTryGet(HumanoidVisualLayers.StencilMask, out var maskLayer))
-        {
-                sprite.LayerSetVisible(maskLayer, false);
-        }
+            sprite.LayerSetVisible(maskLayer, false);
 
         if (!TryComp(uid, out InventorySlotsComponent? inventorySlots))
             return;
@@ -198,9 +204,7 @@ public sealed class ClientClothingSystem : ClothingSystem
         // Remove old layers. We could also just set them to invisible, but as items may add arbitrary layers, this
         // may eventually bloat the player with lots of invisible layers.
         foreach (var layer in revealedLayers)
-        {
             component.RemoveLayer(layer);
-        }
         revealedLayers.Clear();
     }
 
@@ -211,9 +215,7 @@ public sealed class ClientClothingSystem : ClothingSystem
 
         var enumerator = _inventorySystem.GetSlotEnumerator((uid, component));
         while (enumerator.NextItem(out var item, out var slot))
-        {
             RenderEquipment(uid, item, slot.Name, component, sprite);
-        }
     }
 
     protected override void OnGotEquipped(EntityUid uid, ClothingComponent component, GotEquippedEvent args)
@@ -223,15 +225,19 @@ public sealed class ClientClothingSystem : ClothingSystem
         RenderEquipment(args.Equipee, uid, args.Slot, clothingComponent: component);
     }
 
-    private void RenderEquipment(EntityUid equipee, EntityUid equipment, string slot,
-        InventoryComponent? inventory = null, SpriteComponent? sprite = null, ClothingComponent? clothingComponent = null,
-        InventorySlotsComponent? inventorySlots = null)
+    private void RenderEquipment(
+        EntityUid equipee,
+        EntityUid equipment,
+        string slot,
+        InventoryComponent? inventory = null,
+        SpriteComponent? sprite = null,
+        ClothingComponent? clothingComponent = null,
+        InventorySlotsComponent? inventorySlots = null
+    )
     {
         if (!Resolve(equipee, ref inventory, ref sprite, ref inventorySlots) ||
-           !Resolve(equipment, ref clothingComponent, false))
-        {
+            !Resolve(equipment, ref clothingComponent, false))
             return;
-        }
 
         if (slot == Jumpsuit)
             SetGenderedMask(equipee, sprite, clothingComponent);
@@ -244,9 +250,7 @@ public sealed class ClientClothingSystem : ClothingSystem
         if (inventorySlots.VisualLayerKeys.TryGetValue(slot, out var revealedLayers))
         {
             foreach (var key in revealedLayers)
-            {
                 sprite.RemoveLayer(key);
-            }
             revealedLayers.Clear();
         }
         else
@@ -266,7 +270,7 @@ public sealed class ClientClothingSystem : ClothingSystem
 
         // temporary, until layer draw depths get added. Basically: a layer with the key "slot" is being used as a
         // bookmark to determine where in the list of layers we should insert the clothing layers.
-        bool slotLayerExists = sprite.LayerMapTryGet(slot, out var index);
+        var slotLayerExists = sprite.LayerMapTryGet(slot, out var index);
         var displacementData = inventory.Displacements.GetValueOrDefault(slot);
 
         // add the new layers
@@ -274,7 +278,8 @@ public sealed class ClientClothingSystem : ClothingSystem
         {
             if (!revealedLayers.Add(key))
             {
-                Log.Warning($"Duplicate key for clothing visuals: {key}. Are multiple components attempting to modify the same layer? Equipment: {ToPrettyString(equipment)}");
+                Log.Warning(
+                    $"Duplicate key for clothing visuals: {key}. Are multiple components attempting to modify the same layer? Equipment: {ToPrettyString(equipment)}");
                 continue;
             }
 
@@ -299,9 +304,7 @@ public sealed class ClientClothingSystem : ClothingSystem
                 && layerData.TexturePath == null
                 && layer.RSI == null
                 && TryComp(equipment, out SpriteComponent? clothingSprite))
-            {
                 layer.SetRsi(clothingSprite.BaseRSI);
-            }
 
             // Another "temporary" fix for clothing stencil masks.
             // Sprite layer redactor when
@@ -369,12 +372,14 @@ public sealed class ClientClothingSystem : ClothingSystem
                 break;
         }
 
-        sprite.LayerSetState(layer, mask switch
-        {
-            ClothingMask.NoMask => $"{prefix}none",
-            ClothingMask.UniformTop => $"{prefix}top",
-            _ => $"{prefix}full",
-        });
+        sprite.LayerSetState(
+            layer,
+            mask switch
+            {
+                ClothingMask.NoMask => $"{prefix}none",
+                ClothingMask.UniformTop => $"{prefix}top",
+                _ => $"{prefix}full"
+            });
         sprite.LayerSetVisible(layer, true);
     }
 }

@@ -1,12 +1,17 @@
-﻿using Content.Shared.Audio;
+﻿#region
+
+using Content.Shared.Audio;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
-using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Configuration;
 using Robust.Shared.Player;
 
+#endregion
+
+
 namespace Content.Client.Audio;
+
 
 public sealed class ClientGlobalSoundSystem : SharedGlobalSoundSystem
 {
@@ -15,11 +20,11 @@ public sealed class ClientGlobalSoundSystem : SharedGlobalSoundSystem
 
     // Admin music
     private bool _adminAudioEnabled = true;
-    private List<EntityUid?> _adminAudio = new(1);
+    private readonly List<EntityUid?> _adminAudio = new(1);
 
     // Event sounds (e.g. nuke timer)
     private bool _eventAudioEnabled = true;
-    private Dictionary<StationEventMusicType, EntityUid?> _eventAudio = new(1);
+    private readonly Dictionary<StationEventMusicType, EntityUid?> _eventAudio = new(1);
 
     public override void Initialize()
     {
@@ -35,10 +40,7 @@ public sealed class ClientGlobalSoundSystem : SharedGlobalSoundSystem
         SubscribeNetworkEvent<GameGlobalSoundEvent>(PlayGameSound);
     }
 
-    private void OnRoundRestart(RoundRestartCleanupEvent ev)
-    {
-        ClearAudio();
-    }
+    private void OnRoundRestart(RoundRestartCleanupEvent ev) => ClearAudio();
 
     public override void Shutdown()
     {
@@ -49,22 +51,19 @@ public sealed class ClientGlobalSoundSystem : SharedGlobalSoundSystem
     private void ClearAudio()
     {
         foreach (var stream in _adminAudio)
-        {
             _audio.Stop(stream);
-        }
         _adminAudio.Clear();
 
         foreach (var stream in _eventAudio.Values)
-        {
             _audio.Stop(stream);
-        }
 
         _eventAudio.Clear();
     }
 
     private void PlayAdminSound(AdminSoundEvent soundEvent)
     {
-        if(!_adminAudioEnabled) return;
+        if (!_adminAudioEnabled)
+            return;
 
         var stream = _audio.PlayGlobal(soundEvent.Filename, Filter.Local(), false, soundEvent.AudioParams);
         _adminAudio.Add(stream!.Value.Entity);
@@ -73,16 +72,15 @@ public sealed class ClientGlobalSoundSystem : SharedGlobalSoundSystem
     private void PlayStationEventMusic(StationEventMusicEvent soundEvent)
     {
         // Either the cvar is disabled or it's already playing
-        if(!_eventAudioEnabled || _eventAudio.ContainsKey(soundEvent.Type)) return;
+        if (!_eventAudioEnabled || _eventAudio.ContainsKey(soundEvent.Type))
+            return;
 
         var stream = _audio.PlayGlobal(soundEvent.Filename, Filter.Local(), false, soundEvent.AudioParams);
         _eventAudio.Add(soundEvent.Type, stream!.Value.Entity);
     }
 
-    private void PlayGameSound(GameGlobalSoundEvent soundEvent)
-    {
+    private void PlayGameSound(GameGlobalSoundEvent soundEvent) =>
         _audio.PlayGlobal(soundEvent.Filename, Filter.Local(), false, soundEvent.AudioParams);
-    }
 
     private void StopStationEventMusic(StopStationEventMusic soundEvent)
     {
@@ -96,22 +94,20 @@ public sealed class ClientGlobalSoundSystem : SharedGlobalSoundSystem
     private void ToggleAdminSound(bool enabled)
     {
         _adminAudioEnabled = enabled;
-        if (_adminAudioEnabled) return;
+        if (_adminAudioEnabled)
+            return;
         foreach (var stream in _adminAudio)
-        {
             _audio.Stop(stream);
-        }
         _adminAudio.Clear();
     }
 
     private void ToggleStationEventMusic(bool enabled)
     {
         _eventAudioEnabled = enabled;
-        if (_eventAudioEnabled) return;
+        if (_eventAudioEnabled)
+            return;
         foreach (var stream in _eventAudio)
-        {
             _audio.Stop(stream.Value);
-        }
         _eventAudio.Clear();
     }
 }

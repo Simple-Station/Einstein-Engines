@@ -1,9 +1,15 @@
+#region
+
 using Content.Shared.PowerCell;
 using Content.Shared.PowerCell.Components;
 using JetBrains.Annotations;
 using Robust.Client.GameObjects;
 
+#endregion
+
+
 namespace Content.Client.PowerCell;
+
 
 [UsedImplicitly]
 public sealed class PowerCellSystem : SharedPowerCellSystem
@@ -16,9 +22,13 @@ public sealed class PowerCellSystem : SharedPowerCellSystem
         SubscribeLocalEvent<PowerCellVisualsComponent, AppearanceChangeEvent>(OnPowerCellVisualsChange);
     }
 
-    /// <inheritdoc/>
-    public override bool HasActivatableCharge(EntityUid uid, PowerCellDrawComponent? battery = null, PowerCellSlotComponent? cell = null,
-        EntityUid? user = null)
+    /// <inheritdoc />
+    public override bool HasActivatableCharge(
+        EntityUid uid,
+        PowerCellDrawComponent? battery = null,
+        PowerCellSlotComponent? cell = null,
+        EntityUid? user = null
+    )
     {
         if (!Resolve(uid, ref battery, ref cell, false))
             return true;
@@ -26,12 +36,13 @@ public sealed class PowerCellSystem : SharedPowerCellSystem
         return battery.CanUse;
     }
 
-    /// <inheritdoc/>
+    /// <inheritdoc />
     public override bool HasDrawCharge(
         EntityUid uid,
         PowerCellDrawComponent? battery = null,
         PowerCellSlotComponent? cell = null,
-        EntityUid? user = null)
+        EntityUid? user = null
+    )
     {
         if (!Resolve(uid, ref battery, ref cell, false))
             return true;
@@ -39,7 +50,11 @@ public sealed class PowerCellSystem : SharedPowerCellSystem
         return battery.CanDraw;
     }
 
-    private void OnPowerCellVisualsChange(EntityUid uid, PowerCellVisualsComponent component, ref AppearanceChangeEvent args)
+    private void OnPowerCellVisualsChange(
+        EntityUid uid,
+        PowerCellVisualsComponent component,
+        ref AppearanceChangeEvent args
+    )
     {
         if (args.Sprite == null)
             return;
@@ -63,6 +78,6 @@ public sealed class PowerCellSystem : SharedPowerCellSystem
     private enum PowerCellVisualLayers : byte
     {
         Base,
-        Unshaded,
+        Unshaded
     }
 }

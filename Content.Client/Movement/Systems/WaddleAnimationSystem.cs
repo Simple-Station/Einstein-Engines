@@ -1,4 +1,6 @@
-﻿using System.Numerics;
+﻿#region
+
+using System.Numerics;
 using Content.Client.Buckle;
 using Content.Client.Gravity;
 using Content.Shared.ActionBlocker;
@@ -6,14 +8,17 @@ using Content.Shared.Buckle.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Events;
-using Content.Shared.StatusEffect;
 using Content.Shared.Stunnable;
 using Robust.Client.Animations;
 using Robust.Client.GameObjects;
 using Robust.Shared.Animations;
 using Robust.Shared.Timing;
 
+#endregion
+
+
 namespace Content.Client.Movement.Systems;
+
 
 public sealed class WaddleAnimationSystem : EntitySystem
 {
@@ -40,9 +45,7 @@ public sealed class WaddleAnimationSystem : EntitySystem
         // Prediction mitigation. Prediction means that MoveInputEvents are spammed repeatedly, even though you'd assume
         // they're once-only for the user actually doing something. As such do nothing if we're just repeating this FoR.
         if (!_timing.IsFirstTimePredicted)
-        {
             return;
-        }
 
         if (!args.HasDirectionalMovement && component.IsCurrentlyWaddling)
         {
@@ -86,38 +89,40 @@ public sealed class WaddleAnimationSystem : EntitySystem
             return;
 
         var tumbleIntensity = component.LastStep ? 360 - component.TumbleIntensity : component.TumbleIntensity;
-        var len = mover.Sprinting ? component.AnimationLength * component.RunAnimationLengthMultiplier : component.AnimationLength;
+        var len = mover.Sprinting
+            ? component.AnimationLength * component.RunAnimationLengthMultiplier
+            : component.AnimationLength;
 
         component.LastStep = !component.LastStep;
         component.IsCurrentlyWaddling = true;
 
-        var anim = new Animation()
+        var anim = new Animation
         {
             Length = TimeSpan.FromSeconds(len),
             AnimationTracks =
             {
-                new AnimationTrackComponentProperty()
+                new AnimationTrackComponentProperty
                 {
                     ComponentType = typeof(SpriteComponent),
                     Property = nameof(SpriteComponent.Rotation),
                     InterpolationMode = AnimationInterpolationMode.Linear,
                     KeyFrames =
                     {
-                        new AnimationTrackProperty.KeyFrame(Angle.FromDegrees(0), 0),
-                        new AnimationTrackProperty.KeyFrame(Angle.FromDegrees(tumbleIntensity), len/2),
-                        new AnimationTrackProperty.KeyFrame(Angle.FromDegrees(0), len/2),
+                        new(Angle.FromDegrees(0), 0),
+                        new(Angle.FromDegrees(tumbleIntensity), len / 2),
+                        new(Angle.FromDegrees(0), len / 2)
                     }
                 },
-                new AnimationTrackComponentProperty()
+                new AnimationTrackComponentProperty
                 {
                     ComponentType = typeof(SpriteComponent),
                     Property = nameof(SpriteComponent.Offset),
                     InterpolationMode = AnimationInterpolationMode.Linear,
                     KeyFrames =
                     {
-                        new AnimationTrackProperty.KeyFrame(new Vector2(), 0),
-                        new AnimationTrackProperty.KeyFrame(component.HopIntensity, len/2),
-                        new AnimationTrackProperty.KeyFrame(new Vector2(), len/2),
+                        new(new Vector2(), 0),
+                        new(component.HopIntensity, len / 2),
+                        new(new Vector2(), len / 2)
                     }
                 }
             }
@@ -126,10 +131,8 @@ public sealed class WaddleAnimationSystem : EntitySystem
         _animation.Play(uid, anim, component.KeyName);
     }
 
-    private void OnStoppedWalking(EntityUid uid, WaddleAnimationComponent component, StoppedWaddlingEvent args)
-    {
+    private void OnStoppedWalking(EntityUid uid, WaddleAnimationComponent component, StoppedWaddlingEvent args) =>
         StopWaddling(uid, component);
-    }
 
     private void OnAnimationCompleted(EntityUid uid, WaddleAnimationComponent component, AnimationCompletedEvent args)
     {
@@ -138,20 +141,14 @@ public sealed class WaddleAnimationSystem : EntitySystem
         RaiseLocalEvent(uid, ref started);
     }
 
-    private void OnStunned(EntityUid uid, WaddleAnimationComponent component, StunnedEvent args)
-    {
+    private void OnStunned(EntityUid uid, WaddleAnimationComponent component, StunnedEvent args) =>
         StopWaddling(uid, component);
-    }
 
-    private void OnKnockedDown(EntityUid uid, WaddleAnimationComponent component, KnockedDownEvent args)
-    {
+    private void OnKnockedDown(EntityUid uid, WaddleAnimationComponent component, KnockedDownEvent args) =>
         StopWaddling(uid, component);
-    }
 
-    private void OnBuckled(EntityUid uid, WaddleAnimationComponent component, BuckledEvent args)
-    {
+    private void OnBuckled(EntityUid uid, WaddleAnimationComponent component, BuckledEvent args) =>
         StopWaddling(uid, component);
-    }
 
     private void StopWaddling(EntityUid uid, WaddleAnimationComponent component)
     {
@@ -161,11 +158,9 @@ public sealed class WaddleAnimationSystem : EntitySystem
         _animation.Stop(uid, component.KeyName);
 
         if (!TryComp<SpriteComponent>(uid, out var sprite))
-        {
             return;
-        }
 
-        sprite.Offset = new Vector2();
+        sprite.Offset = new();
         sprite.Rotation = Angle.FromDegrees(0);
 
         component.IsCurrentlyWaddling = false;

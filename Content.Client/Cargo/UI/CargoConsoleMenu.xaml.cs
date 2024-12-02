@@ -1,3 +1,5 @@
+#region
+
 using System.Linq;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Cargo;
@@ -10,189 +12,192 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 using static Robust.Client.UserInterface.Controls.BaseButton;
 
-namespace Content.Client.Cargo.UI
+#endregion
+
+
+namespace Content.Client.Cargo.UI;
+
+
+[GenerateTypedNameReferences]
+public sealed partial class CargoConsoleMenu : FancyWindow
 {
-    [GenerateTypedNameReferences]
-    public sealed partial class CargoConsoleMenu : FancyWindow
+    private readonly IEntityManager _entityManager;
+    private readonly IPrototypeManager _protoManager;
+    private readonly SpriteSystem _spriteSystem;
+    private readonly EntityUid _owner;
+
+    public event Action<ButtonEventArgs>? OnItemSelected;
+    public event Action<ButtonEventArgs>? OnOrderApproved;
+    public event Action<ButtonEventArgs>? OnOrderCanceled;
+
+    private readonly List<string> _categoryStrings = new();
+    private string? _category;
+
+    public CargoConsoleMenu(
+        EntityUid owner,
+        IEntityManager entMan,
+        IPrototypeManager protoManager,
+        SpriteSystem spriteSystem
+    )
     {
-        private IEntityManager _entityManager;
-        private IPrototypeManager _protoManager;
-        private SpriteSystem _spriteSystem;
-        private EntityUid _owner;
+        RobustXamlLoader.Load(this);
+        _entityManager = entMan;
+        _protoManager = protoManager;
+        _spriteSystem = spriteSystem;
+        _owner = owner;
 
-        public event Action<ButtonEventArgs>? OnItemSelected;
-        public event Action<ButtonEventArgs>? OnOrderApproved;
-        public event Action<ButtonEventArgs>? OnOrderCanceled;
+        Title = Loc.GetString("cargo-console-menu-title");
 
-        private readonly List<string> _categoryStrings = new();
-        private string? _category;
+        SearchBar.OnTextChanged += OnSearchBarTextChanged;
+        Categories.OnItemSelected += OnCategoryItemSelected;
+    }
 
-        public CargoConsoleMenu(EntityUid owner, IEntityManager entMan, IPrototypeManager protoManager, SpriteSystem spriteSystem)
+    private void OnCategoryItemSelected(OptionButton.ItemSelectedEventArgs args)
+    {
+        SetCategoryText(args.Id);
+        PopulateProducts();
+    }
+
+    private void OnSearchBarTextChanged(LineEdit.LineEditEventArgs args) => PopulateProducts();
+
+    private void SetCategoryText(int id)
+    {
+        _category = id == 0 ? null : _categoryStrings[id];
+        Categories.SelectId(id);
+    }
+
+    public IEnumerable<CargoProductPrototype> ProductPrototypes
+    {
+        get
         {
-            RobustXamlLoader.Load(this);
-            _entityManager = entMan;
-            _protoManager = protoManager;
-            _spriteSystem = spriteSystem;
-            _owner = owner;
+            var allowedGroups = _entityManager.GetComponentOrNull<CargoOrderConsoleComponent>(_owner)?.AllowedGroups;
 
-            Title = Loc.GetString("cargo-console-menu-title");
-
-            SearchBar.OnTextChanged += OnSearchBarTextChanged;
-            Categories.OnItemSelected += OnCategoryItemSelected;
-        }
-
-        private void OnCategoryItemSelected(OptionButton.ItemSelectedEventArgs args)
-        {
-            SetCategoryText(args.Id);
-            PopulateProducts();
-        }
-
-        private void OnSearchBarTextChanged(LineEdit.LineEditEventArgs args)
-        {
-            PopulateProducts();
-        }
-
-        private void SetCategoryText(int id)
-        {
-            _category = id == 0 ? null : _categoryStrings[id];
-            Categories.SelectId(id);
-        }
-
-        public IEnumerable<CargoProductPrototype> ProductPrototypes
-        {
-            get
+            foreach (var cargoPrototype in _protoManager.EnumeratePrototypes<CargoProductPrototype>())
             {
-                var allowedGroups = _entityManager.GetComponentOrNull<CargoOrderConsoleComponent>(_owner)?.AllowedGroups;
+                if (!allowedGroups?.Contains(cargoPrototype.Group) ?? false)
+                    continue;
 
-                foreach (var cargoPrototype in _protoManager.EnumeratePrototypes<CargoProductPrototype>())
-                {
-                    if (!allowedGroups?.Contains(cargoPrototype.Group) ?? false)
-                        continue;
-
-                    yield return cargoPrototype;
-                }
+                yield return cargoPrototype;
             }
         }
+    }
 
-        /// <summary>
-        ///     Populates the list of products that will actually be shown, using the current filters.
-        /// </summary>
-        public void PopulateProducts()
-        {
-            Products.RemoveAllChildren();
-            var products = ProductPrototypes.ToList();
-            products.Sort((x, y) =>
+    /// <summary>
+    ///     Populates the list of products that will actually be shown, using the current filters.
+    /// </summary>
+    public void PopulateProducts()
+    {
+        Products.RemoveAllChildren();
+        var products = ProductPrototypes.ToList();
+        products.Sort(
+            (x, y) =>
                 string.Compare(x.Name, y.Name, StringComparison.CurrentCultureIgnoreCase));
 
-            var search = SearchBar.Text.Trim().ToLowerInvariant();
-            foreach (var prototype in products)
+        var search = SearchBar.Text.Trim().ToLowerInvariant();
+        foreach (var prototype in products)
+            // if no search or category
+            // else if search
+            // else if category and not search
+            if (search.Length == 0 && _category == null ||
+                search.Length != 0 && prototype.Name.ToLowerInvariant().Contains(search) ||
+                search.Length != 0 && prototype.Description.ToLowerInvariant().Contains(search) ||
+                search.Length == 0 && _category != null && Loc.GetString(prototype.Category).Equals(_category))
             {
-                // if no search or category
-                // else if search
-                // else if category and not search
-                if (search.Length == 0 && _category == null ||
-                    search.Length != 0 && prototype.Name.ToLowerInvariant().Contains(search) ||
-                    search.Length != 0 && prototype.Description.ToLowerInvariant().Contains(search) ||
-                    search.Length == 0 && _category != null && Loc.GetString(prototype.Category).Equals(_category))
+                var button = new CargoProductRow
                 {
-                    var button = new CargoProductRow
+                    Product = prototype,
+                    ProductName = { Text = prototype.Name, },
+                    MainButton = { ToolTip = prototype.Description, },
+                    PointCost =
                     {
-                        Product = prototype,
-                        ProductName = { Text = prototype.Name },
-                        MainButton = { ToolTip = prototype.Description },
-                        PointCost = { Text = Loc.GetString("cargo-console-menu-points-amount", ("amount", prototype.Cost.ToString())) },
-                        Icon = { Texture = _spriteSystem.Frame0(prototype.Icon) },
-                    };
-                    button.MainButton.OnPressed += args =>
-                    {
-                        OnItemSelected?.Invoke(args);
-                    };
-                    Products.AddChild(button);
-                }
-            }
-        }
-
-        /// <summary>
-        ///     Populates the list of products that will actually be shown, using the current filters.
-        /// </summary>
-        public void PopulateCategories()
-        {
-            _categoryStrings.Clear();
-            Categories.Clear();
-
-            foreach (var prototype in ProductPrototypes)
-            {
-                if (!_categoryStrings.Contains(Loc.GetString(prototype.Category)))
-                {
-                    _categoryStrings.Add(Loc.GetString(prototype.Category));
-                }
-            }
-
-            _categoryStrings.Sort();
-
-            // Add "All" category at the top of the list
-            _categoryStrings.Insert(0, Loc.GetString("cargo-console-menu-populate-categories-all-text"));
-
-            foreach (var str in _categoryStrings)
-            {
-                Categories.AddItem(str);
-            }
-        }
-
-        /// <summary>
-        ///     Populates the list of orders and requests.
-        /// </summary>
-        public void PopulateOrders(IEnumerable<CargoOrderData> orders)
-        {
-            Orders.DisposeAllChildren();
-            Requests.DisposeAllChildren();
-
-            foreach (var order in orders)
-            {
-                var product = _protoManager.Index<EntityPrototype>(order.ProductId);
-                var productName = product.Name;
-
-                var row = new CargoOrderRow
-                {
-                    Order = order,
-                    Icon = { Texture = _spriteSystem.Frame0(product) },
-                    ProductName =
-                    {
-                        Text = Loc.GetString(
-                            "cargo-console-menu-populate-orders-cargo-order-row-product-name-text",
-                            ("productName", productName),
-                            ("orderAmount", order.OrderQuantity),
-                            ("orderRequester", order.Requester))
+                        Text = Loc.GetString("cargo-console-menu-points-amount", ("amount", prototype.Cost.ToString()))
                     },
-                    Description = {Text = Loc.GetString("cargo-console-menu-order-reason-description",
-                                                        ("reason", order.Reason))}
+                    Icon = { Texture = _spriteSystem.Frame0(prototype.Icon), }
                 };
-                row.Cancel.OnPressed += (args) => { OnOrderCanceled?.Invoke(args); };
-                if (order.Approved)
+                button.MainButton.OnPressed += args =>
                 {
-                    row.Approve.Visible = false;
-                    row.Cancel.Visible = false;
-                    Orders.AddChild(row);
-                }
-                else
+                    OnItemSelected?.Invoke(args);
+                };
+                Products.AddChild(button);
+            }
+    }
+
+    /// <summary>
+    ///     Populates the list of products that will actually be shown, using the current filters.
+    /// </summary>
+    public void PopulateCategories()
+    {
+        _categoryStrings.Clear();
+        Categories.Clear();
+
+        foreach (var prototype in ProductPrototypes)
+            if (!_categoryStrings.Contains(Loc.GetString(prototype.Category)))
+                _categoryStrings.Add(Loc.GetString(prototype.Category));
+
+        _categoryStrings.Sort();
+
+        // Add "All" category at the top of the list
+        _categoryStrings.Insert(0, Loc.GetString("cargo-console-menu-populate-categories-all-text"));
+
+        foreach (var str in _categoryStrings)
+            Categories.AddItem(str);
+    }
+
+    /// <summary>
+    ///     Populates the list of orders and requests.
+    /// </summary>
+    public void PopulateOrders(IEnumerable<CargoOrderData> orders)
+    {
+        Orders.DisposeAllChildren();
+        Requests.DisposeAllChildren();
+
+        foreach (var order in orders)
+        {
+            var product = _protoManager.Index<EntityPrototype>(order.ProductId);
+            var productName = product.Name;
+
+            var row = new CargoOrderRow
+            {
+                Order = order,
+                Icon = { Texture = _spriteSystem.Frame0(product), },
+                ProductName =
                 {
-                    // TODO: Disable based on access.
-                    row.Approve.OnPressed += (args) => { OnOrderApproved?.Invoke(args); };
-                    Requests.AddChild(row);
+                    Text = Loc.GetString(
+                        "cargo-console-menu-populate-orders-cargo-order-row-product-name-text",
+                        ("productName", productName),
+                        ("orderAmount", order.OrderQuantity),
+                        ("orderRequester", order.Requester))
+                },
+                Description =
+                {
+                    Text = Loc.GetString(
+                        "cargo-console-menu-order-reason-description",
+                        ("reason", order.Reason))
                 }
+            };
+            row.Cancel.OnPressed += args => { OnOrderCanceled?.Invoke(args); };
+            if (order.Approved)
+            {
+                row.Approve.Visible = false;
+                row.Cancel.Visible = false;
+                Orders.AddChild(row);
+            }
+            else
+            {
+                // TODO: Disable based on access.
+                row.Approve.OnPressed += args => { OnOrderApproved?.Invoke(args); };
+                Requests.AddChild(row);
             }
         }
+    }
 
-        public void UpdateCargoCapacity(int count, int capacity)
-        {
-            // TODO: Rename + Loc.
-            ShuttleCapacityLabel.Text = $"{count}/{capacity}";
-        }
+    public void UpdateCargoCapacity(int count, int capacity) =>
+        // TODO: Rename + Loc.
+        ShuttleCapacityLabel.Text = $"{count}/{capacity}";
 
-        public void UpdateBankData(string name, int points)
-        {
-            AccountNameLabel.Text = name;
-            PointsLabel.Text = Loc.GetString("cargo-console-menu-points-amount", ("amount", points.ToString()));
-        }
+    public void UpdateBankData(string name, int points)
+    {
+        AccountNameLabel.Text = name;
+        PointsLabel.Text = Loc.GetString("cargo-console-menu-points-amount", ("amount", points.ToString()));
     }
 }

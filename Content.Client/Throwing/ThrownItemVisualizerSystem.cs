@@ -1,9 +1,15 @@
-﻿using Content.Shared.Throwing;
+﻿#region
+
+using Content.Shared.Throwing;
 using Robust.Client.Animations;
 using Robust.Client.GameObjects;
 using Robust.Shared.Animations;
 
+#endregion
+
+
 namespace Content.Client.Throwing;
+
 
 /// <summary>
 ///     Handles animating thrown items.
@@ -64,7 +70,7 @@ public sealed class ThrownItemVisualizerSystem : EntitySystem
         var lenFloat = (float) length.TotalSeconds;
 
         // TODO use like actual easings here
-        return new Animation
+        return new()
         {
             Length = length,
             AnimationTracks =
@@ -75,9 +81,9 @@ public sealed class ThrownItemVisualizerSystem : EntitySystem
                     Property = nameof(SpriteComponent.Scale),
                     KeyFrames =
                     {
-                        new AnimationTrackProperty.KeyFrame(scale, 0.0f),
-                        new AnimationTrackProperty.KeyFrame(scale * 1.4f, lenFloat * 0.25f),
-                        new AnimationTrackProperty.KeyFrame(scale, lenFloat * 0.75f)
+                        new(scale, 0.0f),
+                        new(scale * 1.4f, lenFloat * 0.25f),
+                        new(scale, lenFloat * 0.75f)
                     },
                     InterpolationMode = AnimationInterpolationMode.Linear
                 }

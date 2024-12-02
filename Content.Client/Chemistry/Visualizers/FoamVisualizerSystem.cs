@@ -1,12 +1,19 @@
-﻿using Content.Shared.Chemistry.Components;
+﻿#region
+
+using Content.Shared.Chemistry.Components;
 using Robust.Client.Animations;
 using Robust.Client.GameObjects;
 using Robust.Shared.Timing;
 
+#endregion
+
+
 namespace Content.Client.Chemistry.Visualizers;
 
+
 /// <summary>
-/// The system responsible for ensuring <see cref="FoamVisualsComponent"/> plays the animation it's meant to when the foam dissolves.
+///     The system responsible for ensuring <see cref="FoamVisualsComponent" /> plays the animation it's meant to when the
+///     foam dissolves.
 /// </summary>
 public sealed class FoamVisualizerSystem : VisualizerSystem<FoamVisualsComponent>
 {
@@ -30,25 +37,24 @@ public sealed class FoamVisualizerSystem : VisualizerSystem<FoamVisualsComponent
 
         while (query.MoveNext(out var uid, out var comp, out var smoke))
         {
-            if (_timing.CurTime < comp.StartTime + TimeSpan.FromSeconds(smoke.Duration) - TimeSpan.FromSeconds(comp.AnimationTime))
+            if (_timing.CurTime < comp.StartTime + TimeSpan.FromSeconds(smoke.Duration) -
+                TimeSpan.FromSeconds(comp.AnimationTime))
                 continue;
 
             // Despawn animation.
             if (TryComp(uid, out AnimationPlayerComponent? animPlayer)
                 && !AnimationSystem.HasRunningAnimation(uid, animPlayer, FoamVisualsComponent.AnimationKey))
-            {
                 AnimationSystem.Play(uid, animPlayer, comp.Animation, FoamVisualsComponent.AnimationKey);
-            }
         }
     }
 
     /// <summary>
-    /// Generates the animation used by foam visuals when the foam dissolves.
+    ///     Generates the animation used by foam visuals when the foam dissolves.
     /// </summary>
     private void OnComponentInit(EntityUid uid, FoamVisualsComponent comp, ComponentInit args)
     {
         comp.StartTime = _timing.CurTime;
-        comp.Animation = new Animation
+        comp.Animation = new()
         {
             Length = TimeSpan.FromSeconds(comp.AnimationTime),
             AnimationTracks =
@@ -58,7 +64,7 @@ public sealed class FoamVisualizerSystem : VisualizerSystem<FoamVisualsComponent
                     LayerKey = FoamVisualLayers.Base,
                     KeyFrames =
                     {
-                        new AnimationTrackSpriteFlick.KeyFrame(comp.AnimationState, 0f)
+                        new(comp.AnimationState, 0f)
                     }
                 }
             }

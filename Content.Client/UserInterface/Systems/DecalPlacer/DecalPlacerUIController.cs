@@ -1,4 +1,6 @@
-﻿using Content.Client.Decals.UI;
+﻿#region
+
+using Content.Client.Decals.UI;
 using Content.Client.Gameplay;
 using Content.Client.Sandbox;
 using Content.Shared.Decals;
@@ -6,11 +8,15 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controllers;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Utility;
+
+#endregion
+
 
 namespace Content.Client.UserInterface.Systems.DecalPlacer;
 
-public sealed class DecalPlacerUIController : UIController, IOnStateExited<GameplayState>, IOnSystemChanged<SandboxSystem>
+
+public sealed class DecalPlacerUIController : UIController, IOnStateExited<GameplayState>,
+    IOnSystemChanged<SandboxSystem>
 {
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
     [UISystemDependency] private readonly SandboxSystem _sandbox = default!;
@@ -22,13 +28,9 @@ public sealed class DecalPlacerUIController : UIController, IOnStateExited<Gamep
         EnsureWindow();
 
         if (_window!.IsOpen)
-        {
             _window.Close();
-        }
-        else if(_sandbox.SandboxAllowed)
-        {
+        else if (_sandbox.SandboxAllowed)
             _window.Open();
-        }
     }
 
     public void OnStateExited(GameplayState state)
@@ -68,7 +70,7 @@ public sealed class DecalPlacerUIController : UIController, IOnStateExited<Gamep
 
     private void EnsureWindow()
     {
-        if (_window is { Disposed: false })
+        if (_window is { Disposed: false, })
             return;
         _window = UIManager.CreateWindow<DecalPlacerWindow>();
         LayoutContainer.SetAnchorPreset(_window, LayoutContainer.LayoutPreset.CenterLeft);

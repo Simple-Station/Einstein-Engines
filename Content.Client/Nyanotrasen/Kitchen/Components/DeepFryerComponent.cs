@@ -1,11 +1,13 @@
-using Content.Shared.Kitchen.Components;
+#region
+
 using Content.Shared.Nyanotrasen.Kitchen.Components;
 
-namespace Content.Client.Kitchen.Components
-{
-    [RegisterComponent]
-    // Unnecessary line: [ComponentReference(typeof(SharedDeepFryerComponent))]
-    public sealed partial class DeepFryerComponent : SharedDeepFryerComponent
-    {
-    }
-}
+#endregion
+
+
+namespace Content.Client.Kitchen.Components;
+
+
+[RegisterComponent]
+// Unnecessary line: [ComponentReference(typeof(SharedDeepFryerComponent))]
+public sealed partial class DeepFryerComponent : SharedDeepFryerComponent { }

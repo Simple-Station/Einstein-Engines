@@ -1,8 +1,13 @@
+#region
+
 using Content.Shared.MachineLinking;
-using Robust.Client.GameObjects;
 using Robust.Shared.Timing;
 
+#endregion
+
+
 namespace Content.Client.MachineLinking.UI;
+
 
 public sealed class SignalTimerBoundUserInterface : BoundUserInterface
 {
@@ -11,15 +16,13 @@ public sealed class SignalTimerBoundUserInterface : BoundUserInterface
     [ViewVariables]
     private SignalTimerWindow? _window;
 
-    public SignalTimerBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-    {
-    }
+    public SignalTimerBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
 
     protected override void Open()
     {
         base.Open();
 
-        _window = new SignalTimerWindow(this);
+        _window = new(this);
 
         if (State != null)
             UpdateState(State);
@@ -31,15 +34,9 @@ public sealed class SignalTimerBoundUserInterface : BoundUserInterface
         _window.OnCurrentDelaySecondsChanged += OnDelayChanged;
     }
 
-    public void OnStartTimer()
-    {
-        SendMessage(new SignalTimerStartMessage());
-    }
+    public void OnStartTimer() => SendMessage(new SignalTimerStartMessage());
 
-    private void OnTextChanged(string newText)
-    {
-        SendMessage(new SignalTimerTextChangedMessage(newText));
-    }
+    private void OnTextChanged(string newText) => SendMessage(new SignalTimerTextChangedMessage(newText));
 
     private void OnDelayChanged(string newDelay)
     {
@@ -48,13 +45,10 @@ public sealed class SignalTimerBoundUserInterface : BoundUserInterface
         SendMessage(new SignalTimerDelayChangedMessage(_window.GetDelay()));
     }
 
-    public TimeSpan GetCurrentTime()
-    {
-        return _gameTiming.CurTime;
-    }
+    public TimeSpan GetCurrentTime() => _gameTiming.CurTime;
 
     /// <summary>
-    /// Update the UI state based on server-sent info
+    ///     Update the UI state based on server-sent info
     /// </summary>
     /// <param name="state"></param>
     protected override void UpdateState(BoundUserInterfaceState state)
@@ -76,7 +70,8 @@ public sealed class SignalTimerBoundUserInterface : BoundUserInterface
     protected override void Dispose(bool disposing)
     {
         base.Dispose(disposing);
-        if (!disposing) return;
+        if (!disposing)
+            return;
         _window?.Dispose();
     }
 }

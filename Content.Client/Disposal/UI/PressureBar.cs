@@ -1,16 +1,24 @@
-﻿using Content.Shared.Disposal;
+﻿#region
+
+using Content.Shared.Disposal;
 using Robust.Client.Graphics;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Timing;
 
+#endregion
+
+
 namespace Content.Client.Disposal.UI;
+
 
 public sealed class PressureBar : ProgressBar
 {
     public bool UpdatePressure(TimeSpan fullTime)
     {
         var currentTime = IoCManager.Resolve<IGameTiming>().CurTime;
-        var pressure = (float) Math.Min(1.0f, 1.0f - (fullTime.TotalSeconds - currentTime.TotalSeconds) * SharedDisposalUnitSystem.PressurePerSecond);
+        var pressure = (float) Math.Min(
+            1.0f,
+            1.0f - (fullTime.TotalSeconds - currentTime.TotalSeconds) * SharedDisposalUnitSystem.PressurePerSecond);
         UpdatePressureBar(pressure);
         return pressure >= 1.0f;
     }
@@ -49,6 +57,6 @@ public sealed class PressureBar : ProgressBar
 
         var foregroundStyleBoxOverride = (StyleBoxFlat) ForegroundStyleBoxOverride;
         foregroundStyleBoxOverride.BackgroundColor =
-            Color.FromHsv(new Vector4(finalHue, saturation, value, alpha));
+            Color.FromHsv(new(finalHue, saturation, value, alpha));
     }
 }

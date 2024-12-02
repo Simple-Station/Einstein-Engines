@@ -1,4 +1,6 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿#region
+
+using System.Diagnostics.CodeAnalysis;
 using Content.Client.Storage.Components;
 using Content.Shared.Destructible;
 using Content.Shared.Foldable;
@@ -10,7 +12,11 @@ using Content.Shared.Storage.EntitySystems;
 using Content.Shared.Verbs;
 using Robust.Shared.GameStates;
 
+#endregion
+
+
 namespace Content.Client.Storage.Systems;
+
 
 public sealed class EntityStorageSystem : SharedEntityStorageSystem
 {
@@ -20,7 +26,9 @@ public sealed class EntityStorageSystem : SharedEntityStorageSystem
         SubscribeLocalEvent<EntityStorageComponent, EntityUnpausedEvent>(OnEntityUnpausedEvent);
         SubscribeLocalEvent<EntityStorageComponent, ComponentInit>(OnComponentInit);
         SubscribeLocalEvent<EntityStorageComponent, ComponentStartup>(OnComponentStartup);
-        SubscribeLocalEvent<EntityStorageComponent, ActivateInWorldEvent>(OnInteract, after: new[] { typeof(LockSystem) });
+        SubscribeLocalEvent<EntityStorageComponent, ActivateInWorldEvent>(
+            OnInteract,
+            after: new[] { typeof(LockSystem), });
         SubscribeLocalEvent<EntityStorageComponent, LockToggleAttemptEvent>(OnLockToggleAttempt);
         SubscribeLocalEvent<EntityStorageComponent, DestructionEventArgs>(OnDestruction);
         SubscribeLocalEvent<EntityStorageComponent, GetVerbsEvent<InteractionVerb>>(AddToggleOpenVerb);

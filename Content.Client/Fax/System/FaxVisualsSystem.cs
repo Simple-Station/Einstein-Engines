@@ -1,12 +1,18 @@
-using Robust.Client.GameObjects;
-using Content.Shared.Fax.Components;
+#region
+
 using Content.Shared.Fax;
+using Content.Shared.Fax.Components;
 using Robust.Client.Animations;
+using Robust.Client.GameObjects;
+
+#endregion
+
 
 namespace Content.Client.Fax.System;
 
+
 /// <summary>
-/// Visualizer for the fax machine which displays the correct sprite based on the inserted entity.
+///     Visualizer for the fax machine which displays the correct sprite based on the inserted entity.
 /// </summary>
 public sealed class FaxVisualsSystem : EntitySystem
 {
@@ -25,24 +31,28 @@ public sealed class FaxVisualsSystem : EntitySystem
         if (args.Sprite == null)
             return;
 
-        if (_appearance.TryGetData(uid, FaxMachineVisuals.VisualState, out FaxMachineVisualState visuals) && visuals == FaxMachineVisualState.Inserting)
+        if (_appearance.TryGetData(uid, FaxMachineVisuals.VisualState, out FaxMachineVisualState visuals) &&
+            visuals == FaxMachineVisualState.Inserting)
         {
-            _player.Play(uid, new Animation()
-            {
-                Length = TimeSpan.FromSeconds(2.4),
-                AnimationTracks =
+            _player.Play(
+                uid,
+                new()
                 {
-                    new AnimationTrackSpriteFlick()
+                    Length = TimeSpan.FromSeconds(2.4),
+                    AnimationTracks =
                     {
-                        LayerKey = FaxMachineVisuals.VisualState,
-                        KeyFrames =
+                        new AnimationTrackSpriteFlick
                         {
-                            new AnimationTrackSpriteFlick.KeyFrame(component.InsertingState, 0f),
-                            new AnimationTrackSpriteFlick.KeyFrame("icon", 2.4f),
+                            LayerKey = FaxMachineVisuals.VisualState,
+                            KeyFrames =
+                            {
+                                new(component.InsertingState, 0f),
+                                new("icon", 2.4f)
+                            }
                         }
                     }
-                }
-            }, "faxecute");
+                },
+                "faxecute");
         }
     }
 }

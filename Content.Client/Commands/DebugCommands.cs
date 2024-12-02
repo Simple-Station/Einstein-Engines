@@ -1,3 +1,5 @@
+#region
+
 using Content.Client.Markers;
 using Content.Client.Popups;
 using Content.Client.SubFloor;
@@ -6,7 +8,11 @@ using Robust.Client.GameObjects;
 using Robust.Shared.Console;
 using DrawDepth = Content.Shared.DrawDepth.DrawDepth;
 
+#endregion
+
+
 namespace Content.Client.Commands;
+
 
 internal sealed class ShowMarkersCommand : LocalizedCommands
 {
@@ -16,10 +22,8 @@ internal sealed class ShowMarkersCommand : LocalizedCommands
 
     public override string Help => LocalizationManager.GetString($"cmd-{Command}-help", ("command", Command));
 
-    public override void Execute(IConsoleShell shell, string argStr, string[] args)
-    {
+    public override void Execute(IConsoleShell shell, string argStr, string[] args) =>
         _entitySystemManager.GetEntitySystem<MarkerSystem>().MarkersVisible ^= true;
-    }
 }
 
 internal sealed class ShowSubFloor : LocalizedCommands
@@ -30,10 +34,8 @@ internal sealed class ShowSubFloor : LocalizedCommands
 
     public override string Help => LocalizationManager.GetString($"cmd-{Command}-help", ("command", Command));
 
-    public override void Execute(IConsoleShell shell, string argStr, string[] args)
-    {
+    public override void Execute(IConsoleShell shell, string argStr, string[] args) =>
         _entitySystemManager.GetEntitySystem<SubFloorHideSystem>().ShowAll ^= true;
-    }
 }
 
 internal sealed class ShowSubFloorForever : LocalizedCommands
@@ -53,9 +55,7 @@ internal sealed class ShowSubFloorForever : LocalizedCommands
         var components = entMan.EntityQuery<SubFloorHideComponent, SpriteComponent>(true);
 
         foreach (var (_, sprite) in components)
-        {
             sprite.DrawDepth = (int) DrawDepth.Overlays;
-        }
     }
 }
 

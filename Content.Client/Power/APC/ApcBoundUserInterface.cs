@@ -1,50 +1,47 @@
-﻿using Content.Client.Power.APC.UI;
+﻿#region
+
+using Content.Client.Power.APC.UI;
 using Content.Shared.APC;
 using JetBrains.Annotations;
-using Robust.Client.GameObjects;
 
-namespace Content.Client.Power.APC
+#endregion
+
+
+namespace Content.Client.Power.APC;
+
+
+[UsedImplicitly]
+public sealed class ApcBoundUserInterface : BoundUserInterface
 {
-    [UsedImplicitly]
-    public sealed class ApcBoundUserInterface : BoundUserInterface
+    [ViewVariables]
+    private ApcMenu? _menu;
+
+    public ApcBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
+
+    protected override void Open()
     {
-        [ViewVariables]
-        private ApcMenu? _menu;
+        base.Open();
 
-        public ApcBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-        {
-        }
+        _menu = new(this);
+        _menu.OnClose += Close;
+        _menu.OpenCentered();
+    }
 
-        protected override void Open()
-        {
-            base.Open();
+    protected override void UpdateState(BoundUserInterfaceState state)
+    {
+        base.UpdateState(state);
 
-            _menu = new ApcMenu(this);
-            _menu.OnClose += Close;
-            _menu.OpenCentered();
-        }
+        var castState = (ApcBoundInterfaceState) state;
+        _menu?.UpdateState(castState);
+    }
 
-        protected override void UpdateState(BoundUserInterfaceState state)
-        {
-            base.UpdateState(state);
+    public void BreakerPressed() => SendMessage(new ApcToggleMainBreakerMessage());
 
-            var castState = (ApcBoundInterfaceState) state;
-            _menu?.UpdateState(castState);
-        }
+    protected override void Dispose(bool disposing)
+    {
+        base.Dispose(disposing);
 
-        public void BreakerPressed()
-        {
-            SendMessage(new ApcToggleMainBreakerMessage());
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-
-            if (disposing)
-            {
-                _menu?.Dispose();
-            }
-        }
+        if (disposing)
+            _menu?.Dispose();
     }
 }

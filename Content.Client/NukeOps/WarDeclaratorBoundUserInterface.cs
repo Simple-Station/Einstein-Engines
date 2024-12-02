@@ -1,11 +1,17 @@
-﻿using Content.Shared.CCVar;
+﻿#region
+
+using Content.Shared.CCVar;
 using Content.Shared.Chat;
 using Content.Shared.NukeOps;
 using JetBrains.Annotations;
 using Robust.Shared.Configuration;
 using Robust.Shared.Timing;
 
+#endregion
+
+
 namespace Content.Client.NukeOps;
+
 
 [UsedImplicitly]
 public sealed class WarDeclaratorBoundUserInterface : BoundUserInterface
@@ -17,13 +23,13 @@ public sealed class WarDeclaratorBoundUserInterface : BoundUserInterface
     [ViewVariables]
     private WarDeclaratorWindow? _window;
 
-    public WarDeclaratorBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) {}
+    public WarDeclaratorBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
 
     protected override void Open()
     {
         base.Open();
 
-        _window = new WarDeclaratorWindow(_gameTiming, _localizationManager);
+        _window = new(_gameTiming, _localizationManager);
         if (State != null)
             UpdateState(State);
 

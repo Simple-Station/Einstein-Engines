@@ -1,7 +1,13 @@
+#region
+
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 
+#endregion
+
+
 namespace Content.Client.Humanoid;
+
 
 public sealed class EyeColorPicker : Control
 {
@@ -26,7 +32,7 @@ public sealed class EyeColorPicker : Control
         };
         AddChild(vBox);
 
-        vBox.AddChild(_colorSelectors = new ColorSelectorSliders());
+        vBox.AddChild(_colorSelectors = new());
 
         _colorSelectors.OnColorChanged += ColorValueChanged;
     }

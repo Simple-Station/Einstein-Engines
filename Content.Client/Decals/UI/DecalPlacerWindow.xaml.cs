@@ -1,3 +1,5 @@
+#region
+
 using System.Linq;
 using Content.Client.Stylesheets;
 using Content.Shared.Decals;
@@ -10,7 +12,11 @@ using Robust.Client.Utility;
 using Robust.Shared.Prototypes;
 using static Robust.Client.UserInterface.Controls.BaseButton;
 
+#endregion
+
+
 namespace Content.Client.Decals.UI;
+
 
 [GenerateTypedNameReferences]
 public sealed partial class DecalPlacerWindow : DefaultWindow
@@ -43,7 +49,7 @@ public sealed partial class DecalPlacerWindow : DefaultWindow
 
         // This needs to be done in C# so we can have custom stuff passed in the constructor
         // and thus have a proper step size
-        RotationSpinBox = new FloatSpinBox(90.0f, 0)
+        RotationSpinBox = new(90.0f, 0)
         {
             HorizontalExpand = true
         };
@@ -56,7 +62,7 @@ public sealed partial class DecalPlacerWindow : DefaultWindow
         {
             if (_picker is null)
             {
-                _picker = new PaletteColorPicker();
+                _picker = new();
                 _picker.OpenToLeft();
                 _picker.PaletteList.OnItemSelected += args =>
                 {
@@ -68,13 +74,9 @@ public sealed partial class DecalPlacerWindow : DefaultWindow
             else
             {
                 if (_picker.IsOpen)
-                {
                     _picker.Close();
-                }
                 else
-                {
                     _picker.Open();
-                }
             }
         };
 
@@ -193,18 +195,17 @@ public sealed partial class DecalPlacerWindow : DefaultWindow
             _useColor = decal.DefaultCustomColor;
             _snap = decal.DefaultSnap;
         }
+
         UpdateDecalPlacementInfo();
         RefreshList();
     }
 
     public void Populate(IEnumerable<DecalPrototype> prototypes)
     {
-        _decals = new SortedDictionary<string, Texture>();
+        _decals = new();
         foreach (var decalPrototype in prototypes)
-        {
             if (decalPrototype.ShowMenu)
                 _decals.Add(decalPrototype.ID, decalPrototype.Sprite.Frame0());
-        }
 
         RefreshList();
     }

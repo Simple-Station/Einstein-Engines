@@ -1,8 +1,14 @@
+#region
+
 using Content.Shared.JoinQueue;
 using Robust.Client.State;
 using Robust.Shared.Network;
 
+#endregion
+
+
 namespace Content.Client.JoinQueue;
+
 
 public sealed class JoinQueueManager
 {
@@ -10,10 +16,7 @@ public sealed class JoinQueueManager
     [Dependency] private readonly IStateManager _state = default!;
 
 
-    public void Initialize()
-    {
-        _net.RegisterNetMessage<QueueUpdateMessage>(OnQueueUpdate);
-    }
+    public void Initialize() => _net.RegisterNetMessage<QueueUpdateMessage>(OnQueueUpdate);
 
 
     private void OnQueueUpdate(QueueUpdateMessage msg)

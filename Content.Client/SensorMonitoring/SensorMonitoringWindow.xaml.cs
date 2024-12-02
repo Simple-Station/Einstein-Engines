@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿#region
+
+using System.Linq;
 using System.Numerics;
 using Content.Client.Computer;
 using Content.Client.Stylesheets;
@@ -14,7 +16,11 @@ using Robust.Shared.Timing;
 using ConsoleUIState = Content.Shared.SensorMonitoring.SensorMonitoringConsoleBoundInterfaceState;
 using IncrementalUIState = Content.Shared.SensorMonitoring.SensorMonitoringIncrementalUpdate;
 
+#endregion
+
+
 namespace Content.Client.SensorMonitoring;
+
 
 [GenerateTypedNameReferences]
 public sealed partial class SensorMonitoringWindow : FancyWindow, IComputerWindow<ConsoleUIState>
@@ -58,9 +64,7 @@ public sealed partial class SensorMonitoringWindow : FancyWindow, IComputerWindo
                 sensor.Streams.Add(netStream.NetId, stream);
 
                 foreach (var sample in netStream.Samples)
-                {
                     stream.Samples.Enqueue(sample);
-                }
             }
         }
 
@@ -73,9 +77,7 @@ public sealed partial class SensorMonitoringWindow : FancyWindow, IComputerWindo
             return;
 
         foreach (var removed in incremental.RemovedSensors)
-        {
             _sensorData.Remove(removed);
-        }
 
         foreach (var netSensor in incremental.Sensors)
         {
@@ -90,9 +92,7 @@ public sealed partial class SensorMonitoringWindow : FancyWindow, IComputerWindo
                     continue;
 
                 foreach (var (time, value) in netStream.Samples)
-                {
-                    stream.Samples.Enqueue(new SensorSample(time + incremental.RelTime, value));
-                }
+                    stream.Samples.Enqueue(new(time + incremental.RelTime, value));
             }
         }
 
@@ -109,23 +109,24 @@ public sealed partial class SensorMonitoringWindow : FancyWindow, IComputerWindo
 
         foreach (var sensor in _sensorData.Values)
         {
-            var labelName = new Label { Text = sensor.Name, StyleClasses = { StyleBase.StyleClassLabelHeading } };
+            var labelName = new Label { Text = sensor.Name, StyleClasses = { StyleBase.StyleClassLabelHeading, }, };
             var labelAddress = new Label
             {
                 Text = sensor.Address,
-                Margin = new Thickness(4, 0),
+                Margin = new(4, 0),
                 VerticalAlignment = VAlignment.Bottom,
-                StyleClasses = { StyleNano.StyleClassLabelSecondaryColor }
+                StyleClasses = { StyleNano.StyleClassLabelSecondaryColor, }
             };
 
-            Asdf.AddChild(new BoxContainer
-            {
-                Orientation = BoxContainer.LayoutOrientation.Horizontal, Children =
+            Asdf.AddChild(
+                new BoxContainer
                 {
-                    labelName,
-                    labelAddress
-                }
-            });
+                    Orientation = BoxContainer.LayoutOrientation.Horizontal, Children =
+                    {
+                        labelName,
+                        labelAddress
+                    }
+                });
 
             foreach (var stream in sensor.Streams.Values)
             {
@@ -141,29 +142,28 @@ public sealed partial class SensorMonitoringWindow : FancyWindow, IComputerWindo
                 // TODO: Better way to do this?
                 var lastSample = stream.Samples.Last();
 
-                Asdf.AddChild(new BoxContainer
-                {
-                    Orientation = BoxContainer.LayoutOrientation.Horizontal,
-                    Children =
+                Asdf.AddChild(
+                    new BoxContainer
                     {
-                        new Label { Text = stream.Name, StyleClasses = { "monospace" }, HorizontalExpand = true },
-                        new Label { Text = FormatValue(stream.Unit, lastSample.Value) }
-                    }
-                });
+                        Orientation = BoxContainer.LayoutOrientation.Horizontal,
+                        Children =
+                        {
+                            new Label { Text = stream.Name, StyleClasses = { "monospace", }, HorizontalExpand = true, },
+                            new Label { Text = FormatValue(stream.Unit, lastSample.Value), }
+                        }
+                    });
 
-                Asdf.AddChild(new GraphView(stream.Samples, startTime, curTime, maxValue) { MinHeight = 150 });
-                Asdf.AddChild(new PanelContainer { StyleClasses = { StyleBase.ClassLowDivider } });
+                Asdf.AddChild(new GraphView(stream.Samples, startTime, curTime, maxValue) { MinHeight = 150, });
+                Asdf.AddChild(new PanelContainer { StyleClasses = { StyleBase.ClassLowDivider, }, });
             }
         }
     }
 
-    private string FormatValue(SensorUnit unit, float value)
-    {
-        return _loc.GetString(
+    private string FormatValue(SensorUnit unit, float value) =>
+        _loc.GetString(
             "sensor-monitoring-value-display",
             ("unit", unit.ToString()),
             ("value", value));
-    }
 
     private void CullOldSamples()
     {
@@ -172,12 +172,8 @@ public sealed partial class SensorMonitoringWindow : FancyWindow, IComputerWindo
         foreach (var sensor in _sensorData.Values)
         {
             foreach (var stream in sensor.Streams.Values)
-            {
                 while (stream.Samples.TryPeek(out var sample) && sample.Time < startTime)
-                {
                     stream.Samples.Dequeue();
-                }
-            }
         }
     }
 
@@ -229,8 +225,8 @@ public sealed partial class SensorMonitoringWindow : FancyWindow, IComputerWindo
             {
                 var relTime = (float) (time - _startTime).TotalSeconds;
 
-                var posY = PixelHeight - (sample / _maxY) * PixelHeight;
-                var posX = (relTime / window) * PixelWidth;
+                var posY = PixelHeight - sample / _maxY * PixelHeight;
+                var posX = relTime / window * PixelWidth;
 
                 var newPoint = new Vector2(posX, posY);
 
@@ -239,17 +235,20 @@ public sealed partial class SensorMonitoringWindow : FancyWindow, IComputerWindo
                     handle.DrawLine(lastPoint, newPoint, Color.White);
 
                     vertices[countVtx++] = lastPoint;
-                    vertices[countVtx++] = lastPoint with { Y = PixelHeight };
+                    vertices[countVtx++] = lastPoint with { Y = PixelHeight, };
                     vertices[countVtx++] = newPoint;
                     vertices[countVtx++] = newPoint;
-                    vertices[countVtx++] = lastPoint with { Y = PixelHeight };
-                    vertices[countVtx++] = newPoint with { Y = PixelHeight };
+                    vertices[countVtx++] = lastPoint with { Y = PixelHeight, };
+                    vertices[countVtx++] = newPoint with { Y = PixelHeight, };
                 }
 
                 lastPoint = newPoint;
             }
 
-            handle.DrawPrimitives(DrawPrimitiveTopology.TriangleList, vertices.AsSpan(0, countVtx), Color.White.WithAlpha(0.1f));
+            handle.DrawPrimitives(
+                DrawPrimitiveTopology.TriangleList,
+                vertices.AsSpan(0, countVtx),
+                Color.White.WithAlpha(0.1f));
         }
     }
 }
@@ -258,7 +257,5 @@ public sealed partial class SensorMonitoringWindow : FancyWindow, IComputerWindo
 public sealed class
     SensorMonitoringConsoleBoundUserInterface : ComputerBoundUserInterface<SensorMonitoringWindow, ConsoleUIState>
 {
-    public SensorMonitoringConsoleBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-    {
-    }
+    public SensorMonitoringConsoleBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
 }

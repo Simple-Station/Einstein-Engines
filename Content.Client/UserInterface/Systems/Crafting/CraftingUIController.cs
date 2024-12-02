@@ -1,23 +1,30 @@
+#region
+
 using Content.Client.Construction.UI;
 using Content.Client.Gameplay;
 using Content.Client.UserInterface.Controls;
+using Content.Client.UserInterface.Systems.MenuBar.Widgets;
 using JetBrains.Annotations;
 using Robust.Client.UserInterface.Controllers;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Utility;
 
+#endregion
+
+
 namespace Content.Client.UserInterface.Systems.Crafting;
+
 
 [UsedImplicitly]
 public sealed class CraftingUIController : UIController, IOnStateChanged<GameplayState>
 {
     private ConstructionMenuPresenter? _presenter;
-    private MenuButton? CraftingButton => UIManager.GetActiveUIWidgetOrNull<MenuBar.Widgets.GameTopMenuBar>()?.CraftingButton;
+    private MenuButton? CraftingButton => UIManager.GetActiveUIWidgetOrNull<GameTopMenuBar>()?.CraftingButton;
 
     public void OnStateEntered(GameplayState state)
     {
         DebugTools.Assert(_presenter == null);
-        _presenter = new ConstructionMenuPresenter();
+        _presenter = new();
     }
 
     public void OnStateExited(GameplayState state)
@@ -32,17 +39,13 @@ public sealed class CraftingUIController : UIController, IOnStateChanged<Gamepla
     internal void UnloadButton(ConstructionMenuPresenter? presenter = null)
     {
         if (CraftingButton == null)
-        {
             return;
-        }
 
         if (presenter == null)
         {
             presenter ??= _presenter;
             if (presenter == null)
-            {
                 return;
-            }
         }
 
         CraftingButton.Pressed = false;
@@ -52,15 +55,10 @@ public sealed class CraftingUIController : UIController, IOnStateChanged<Gamepla
     public void LoadButton()
     {
         if (CraftingButton == null)
-        {
             return;
-        }
 
         CraftingButton.OnToggled += ButtonToggled;
     }
 
-    private void ButtonToggled(BaseButton.ButtonToggledEventArgs obj)
-    {
-        _presenter?.OnHudCraftingButtonToggled(obj);
-    }
+    private void ButtonToggled(BaseButton.ButtonToggledEventArgs obj) => _presenter?.OnHudCraftingButtonToggled(obj);
 }

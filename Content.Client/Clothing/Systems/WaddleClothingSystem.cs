@@ -1,8 +1,14 @@
-﻿using Content.Shared.Clothing.Components;
-using Content.Shared.Movement.Components;
+﻿#region
+
+using Content.Shared.Clothing.Components;
 using Content.Shared.Inventory.Events;
+using Content.Shared.Movement.Components;
+
+#endregion
+
 
 namespace Content.Client.Clothing.Systems;
+
 
 public sealed class WaddleClothingSystem : EntitySystem
 {
@@ -24,8 +30,6 @@ public sealed class WaddleClothingSystem : EntitySystem
         waddleAnimComp.TumbleIntensity = comp.TumbleIntensity;
     }
 
-    private void OnGotUnequipped(EntityUid entity, WaddleWhenWornComponent comp, GotUnequippedEvent args)
-    {
+    private void OnGotUnequipped(EntityUid entity, WaddleWhenWornComponent comp, GotUnequippedEvent args) =>
         RemComp<WaddleAnimationComponent>(args.Equipee);
-    }
 }

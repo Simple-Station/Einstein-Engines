@@ -1,4 +1,6 @@
-﻿using Content.Client.Administration.Managers;
+﻿#region
+
+using Content.Client.Administration.Managers;
 using Content.Client.Administration.Systems;
 using Content.Client.Administration.UI;
 using Content.Client.Administration.UI.Tabs.ObjectsTab;
@@ -7,6 +9,7 @@ using Content.Client.Administration.UI.Tabs.PlayerTab;
 using Content.Client.Gameplay;
 using Content.Client.Lobby;
 using Content.Client.UserInterface.Controls;
+using Content.Client.UserInterface.Systems.MenuBar.Widgets;
 using Content.Client.Verbs.UI;
 using Content.Shared.Administration.Events;
 using Content.Shared.Input;
@@ -20,7 +23,11 @@ using Robust.Shared.Input;
 using Robust.Shared.Input.Binding;
 using static Robust.Client.UserInterface.Controls.BaseButton;
 
+#endregion
+
+
 namespace Content.Client.UserInterface.Systems.Admin;
+
 
 [UsedImplicitly]
 public sealed class AdminUIController : UIController,
@@ -35,7 +42,7 @@ public sealed class AdminUIController : UIController,
     [Dependency] private readonly VerbMenuUIController _verb = default!;
 
     private AdminMenuWindow? _window;
-    private MenuButton? AdminButton => UIManager.GetActiveUIWidgetOrNull<MenuBar.Widgets.GameTopMenuBar>()?.AdminButton;
+    private MenuButton? AdminButton => UIManager.GetActiveUIWidgetOrNull<GameTopMenuBar>()?.AdminButton;
     private PanicBunkerStatus? _panicBunker;
 
     public override void Initialize()
@@ -51,9 +58,7 @@ public sealed class AdminUIController : UIController,
         _window?.PanicBunkerControl.UpdateStatus(msg.Status);
 
         if (showDialog)
-        {
             UIManager.CreateWindow<PanicBunkerStatusWindow>().OpenCentered();
-        }
     }
 
     public void OnStateEntered(GameplayState state)
@@ -73,7 +78,8 @@ public sealed class AdminUIController : UIController,
         EnsureWindow();
 
         _admin.AdminStatusUpdated += AdminStatusUpdated;
-        _input.SetInputCommand(ContentKeyFunctions.OpenAdminMenu,
+        _input.SetInputCommand(
+            ContentKeyFunctions.OpenAdminMenu,
             InputCmdHandler.FromDelegate(_ => Toggle()));
     }
 
@@ -89,7 +95,7 @@ public sealed class AdminUIController : UIController,
 
     private void EnsureWindow()
     {
-        if (_window is { Disposed: false })
+        if (_window is { Disposed: false, })
             return;
 
         if (_window?.Disposed ?? false)
@@ -111,9 +117,7 @@ public sealed class AdminUIController : UIController,
     public void UnloadButton()
     {
         if (AdminButton == null)
-        {
             return;
-        }
 
         AdminButton.OnPressed -= AdminButtonPressed;
     }
@@ -121,22 +125,14 @@ public sealed class AdminUIController : UIController,
     public void LoadButton()
     {
         if (AdminButton == null)
-        {
             return;
-        }
 
         AdminButton.OnPressed += AdminButtonPressed;
     }
 
-    private void OnWindowOpen()
-    {
-        AdminButton?.SetClickPressed(true);
-    }
+    private void OnWindowOpen() => AdminButton?.SetClickPressed(true);
 
-    private void OnWindowClosed()
-    {
-        AdminButton?.SetClickPressed(false);
-    }
+    private void OnWindowClosed() => AdminButton?.SetClickPressed(false);
 
     private void OnWindowDisposed()
     {
@@ -160,26 +156,19 @@ public sealed class AdminUIController : UIController,
             AdminButton.Visible = _conGroups.CanAdminMenu();
     }
 
-    private void AdminButtonPressed(ButtonEventArgs args)
-    {
-        Toggle();
-    }
+    private void AdminButtonPressed(ButtonEventArgs args) => Toggle();
 
     private void Toggle()
     {
-        if (_window is {IsOpen: true})
-        {
+        if (_window is { IsOpen: true, })
             _window.Close();
-        }
         else if (_conGroups.CanAdminMenu())
-        {
             _window?.Open();
-        }
     }
 
     private void PlayerTabEntryKeyBindDown(GUIBoundKeyEventArgs args, ListData? data)
     {
-        if (data is not PlayerListData {Info: var info})
+        if (data is not PlayerListData { Info: var info, })
             return;
 
         if (info.NetEntity == null)

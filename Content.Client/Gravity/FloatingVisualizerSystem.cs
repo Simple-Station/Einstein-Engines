@@ -1,12 +1,18 @@
+#region
+
 using System.Numerics;
 using Content.Shared.Gravity;
-using Robust.Client.GameObjects;
 using Robust.Client.Animations;
+using Robust.Client.GameObjects;
 using Robust.Shared.Animations;
+
+#endregion
+
 
 namespace Content.Client.Gravity;
 
-/// <inheritdoc/>
+
+/// <inheritdoc />
 public sealed class FloatingVisualizerSystem : SharedFloatingVisualizerSystem
 {
     [Dependency] private readonly AnimationPlayerSystem AnimationSystem = default!;
@@ -18,8 +24,14 @@ public sealed class FloatingVisualizerSystem : SharedFloatingVisualizerSystem
         SubscribeLocalEvent<FloatingVisualsComponent, AnimationCompletedEvent>(OnAnimationCompleted);
     }
 
-    /// <inheritdoc/>
-    public override void FloatAnimation(EntityUid uid, Vector2 offset, string animationKey, float animationTime, bool stop = false)
+    /// <inheritdoc />
+    public override void FloatAnimation(
+        EntityUid uid,
+        Vector2 offset,
+        string animationKey,
+        float animationTime,
+        bool stop = false
+    )
     {
         if (stop)
         {
@@ -30,7 +42,7 @@ public sealed class FloatingVisualizerSystem : SharedFloatingVisualizerSystem
         var animation = new Animation
         {
             // We multiply by the number of extra keyframes to make time for them
-            Length = TimeSpan.FromSeconds(animationTime*2),
+            Length = TimeSpan.FromSeconds(animationTime * 2),
             AnimationTracks =
             {
                 new AnimationTrackComponentProperty
@@ -40,9 +52,9 @@ public sealed class FloatingVisualizerSystem : SharedFloatingVisualizerSystem
                     InterpolationMode = AnimationInterpolationMode.Linear,
                     KeyFrames =
                     {
-                        new AnimationTrackProperty.KeyFrame(Vector2.Zero, 0f),
-                        new AnimationTrackProperty.KeyFrame(offset, animationTime),
-                        new AnimationTrackProperty.KeyFrame(Vector2.Zero, animationTime),
+                        new(Vector2.Zero, 0f),
+                        new(offset, animationTime),
+                        new(Vector2.Zero, animationTime)
                     }
                 }
             }

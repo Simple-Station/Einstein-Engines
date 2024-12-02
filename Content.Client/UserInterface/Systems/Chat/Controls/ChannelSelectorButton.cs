@@ -1,7 +1,13 @@
-using System.Numerics;
+#region
+
 using Content.Shared.Chat;
+using Content.Shared.Radio;
+
+#endregion
+
 
 namespace Content.Client.UserInterface.Systems.Chat.Controls;
+
 
 public sealed class ChannelSelectorButton : ChatPopupButton<ChannelSelectorPopup>
 {
@@ -18,9 +24,7 @@ public sealed class ChannelSelectorButton : ChatPopupButton<ChannelSelectorPopup
         Popup.Selected += OnChannelSelected;
 
         if (Popup.FirstChannel is { } firstSelector)
-        {
             Select(firstSelector);
-        }
     }
 
     protected override UIBox2 GetPopupPosition()
@@ -28,21 +32,16 @@ public sealed class ChannelSelectorButton : ChatPopupButton<ChannelSelectorPopup
         var globalLeft = GlobalPosition.X;
         var globalBot = GlobalPosition.Y + Height;
         return UIBox2.FromDimensions(
-            new Vector2(globalLeft, globalBot),
-            new Vector2(SizeBox.Width, SelectorDropdownOffset));
+            new(globalLeft, globalBot),
+            new(SizeBox.Width, SelectorDropdownOffset));
     }
 
-    private void OnChannelSelected(ChatSelectChannel channel)
-    {
-        Select(channel);
-    }
+    private void OnChannelSelected(ChatSelectChannel channel) => Select(channel);
 
     public void Select(ChatSelectChannel channel)
     {
         if (Popup.Visible)
-        {
             Popup.Close();
-        }
 
         if (SelectedChannel == channel)
             return;
@@ -50,14 +49,11 @@ public sealed class ChannelSelectorButton : ChatPopupButton<ChannelSelectorPopup
         OnChannelSelect?.Invoke(channel);
     }
 
-    public static string ChannelSelectorName(ChatSelectChannel channel)
-    {
-        return Loc.GetString($"hud-chatbox-select-channel-{channel}");
-    }
+    public static string ChannelSelectorName(ChatSelectChannel channel) =>
+        Loc.GetString($"hud-chatbox-select-channel-{channel}");
 
-    public Color ChannelSelectColor(ChatSelectChannel channel)
-    {
-        return channel switch
+    public Color ChannelSelectColor(ChatSelectChannel channel) =>
+        channel switch
         {
             ChatSelectChannel.Radio => Color.LimeGreen,
             ChatSelectChannel.LOOC => Color.MediumTurquoise,
@@ -67,9 +63,8 @@ public sealed class ChannelSelectorButton : ChatPopupButton<ChannelSelectorPopup
             ChatSelectChannel.Telepathic => Color.PaleVioletRed, //Nyano - Summary: determines the color for the chat. 
             _ => Color.DarkGray
         };
-    }
 
-    public void UpdateChannelSelectButton(ChatSelectChannel channel, Shared.Radio.RadioChannelPrototype? radio)
+    public void UpdateChannelSelectButton(ChatSelectChannel channel, RadioChannelPrototype? radio)
     {
         Text = radio != null ? Loc.GetString(radio.Name) : ChannelSelectorName(channel);
         Modulate = radio?.Color ?? ChannelSelectColor(channel);

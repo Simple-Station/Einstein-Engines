@@ -1,9 +1,15 @@
+#region
+
 using Content.Client.Light.Components;
 using Robust.Client.Animations;
 using Robust.Client.GameObjects;
 using Robust.Shared.Animations;
 
+#endregion
+
+
 namespace Content.Client.Light.EntitySystems;
+
 
 public sealed class LightFadeSystem : EntitySystem
 {
@@ -22,20 +28,20 @@ public sealed class LightFadeSystem : EntitySystem
         if (!TryComp<PointLightComponent>(uid, out var light))
             return;
 
-        var animation = new Animation()
+        var animation = new Animation
         {
             Length = TimeSpan.FromSeconds(component.Duration),
             AnimationTracks =
             {
-                new AnimationTrackComponentProperty()
+                new AnimationTrackComponentProperty
                 {
                     Property = nameof(PointLightComponent.Energy),
                     ComponentType = typeof(PointLightComponent),
                     InterpolationMode = AnimationInterpolationMode.Cubic,
                     KeyFrames =
                     {
-                        new AnimationTrackProperty.KeyFrame(light.Energy, 0f),
-                        new AnimationTrackProperty.KeyFrame(0f, component.Duration)
+                        new(light.Energy, 0f),
+                        new(0f, component.Duration)
                     }
                 }
             }

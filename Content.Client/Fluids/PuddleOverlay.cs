@@ -1,12 +1,17 @@
+#region
+
 using System.Numerics;
 using Content.Shared.FixedPoint;
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
 using Robust.Shared.Enums;
-using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 
+#endregion
+
+
 namespace Content.Client.Fluids;
+
 
 public sealed class PuddleOverlay : Overlay
 {
@@ -110,7 +115,7 @@ public sealed class PuddleOverlay : Overlay
     private Color ColorMap(FixedPoint2 intensity)
     {
         var fraction = 1 - intensity / FixedPoint2.New(20f);
-        var result  = fraction < 0.5f
+        var result = fraction < 0.5f
             ? Color.InterpolateBetween(_mediumPuddle, _heavyPuddle, fraction.Float() * 2)
             : Color.InterpolateBetween(_lightPuddle, _mediumPuddle, (fraction.Float() - 0.5f) * 2);
         return result;

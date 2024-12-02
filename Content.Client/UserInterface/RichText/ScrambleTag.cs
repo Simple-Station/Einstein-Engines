@@ -1,13 +1,19 @@
+#region
+
 using System.Text;
 using JetBrains.Annotations;
 using Robust.Client.UserInterface.RichText;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
+#endregion
+
+
 namespace Content.Client.UserInterface.RichText;
 
+
 /// <summary>
-/// Adds a specified length of random characters that scramble at a set rate.
+///     Adds a specified length of random characters that scramble at a set rate.
 /// </summary>
 [UsedImplicitly]
 public sealed class ScrambleTag : IMarkupTag

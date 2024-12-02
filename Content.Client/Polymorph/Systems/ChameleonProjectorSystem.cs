@@ -1,9 +1,15 @@
+#region
+
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Polymorph.Components;
 using Content.Shared.Polymorph.Systems;
 using Robust.Client.GameObjects;
 
+#endregion
+
+
 namespace Content.Client.Polymorph.Systems;
+
 
 public sealed class ChameleonProjectorSystem : SharedChameleonProjectorSystem
 {

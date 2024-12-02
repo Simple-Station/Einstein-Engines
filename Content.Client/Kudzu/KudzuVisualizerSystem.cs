@@ -1,13 +1,22 @@
+#region
+
 using Content.Shared.Spreader;
 using Robust.Client.GameObjects;
 
+#endregion
+
+
 namespace Content.Client.Kudzu;
+
 
 public sealed class KudzuVisualsSystem : VisualizerSystem<KudzuVisualsComponent>
 {
-    protected override void OnAppearanceChange(EntityUid uid, KudzuVisualsComponent component, ref AppearanceChangeEvent args)
+    protected override void OnAppearanceChange(
+        EntityUid uid,
+        KudzuVisualsComponent component,
+        ref AppearanceChangeEvent args
+    )
     {
-
         if (args.Sprite == null)
             return;
         if (AppearanceSystem.TryGetData<int>(uid, KudzuVisuals.Variant, out var var, args.Component)

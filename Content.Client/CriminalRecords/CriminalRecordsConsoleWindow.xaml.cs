@@ -1,3 +1,5 @@
+#region
+
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Access.Systems;
 using Content.Shared.Administration;
@@ -12,7 +14,11 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 
+#endregion
+
+
 namespace Content.Client.CriminalRecords;
+
 
 // TODO: dedupe shitcode from general records theres a lot
 [GenerateTypedNameReferences]
@@ -35,7 +41,7 @@ public sealed partial class CriminalRecordsConsoleWindow : FancyWindow
     public Action? OnHistoryClosed;
     public Action<SecurityStatus, string>? OnDialogConfirmed;
 
-    private uint _maxLength;
+    private readonly uint _maxLength;
     private bool _isPopulating;
     private bool _access;
     private uint? _selectedKey;
@@ -45,7 +51,14 @@ public sealed partial class CriminalRecordsConsoleWindow : FancyWindow
 
     private StationRecordFilterType _currentFilterType;
 
-    public CriminalRecordsConsoleWindow(EntityUid console, uint maxLength, IPlayerManager playerManager, IPrototypeManager prototypeManager, IRobustRandom robustRandom, AccessReaderSystem accessReader)
+    public CriminalRecordsConsoleWindow(
+        EntityUid console,
+        uint maxLength,
+        IPlayerManager playerManager,
+        IPrototypeManager prototypeManager,
+        IRobustRandom robustRandom,
+        AccessReaderSystem accessReader
+    )
     {
         RobustXamlLoader.Load(this);
 
@@ -61,14 +74,10 @@ public sealed partial class CriminalRecordsConsoleWindow : FancyWindow
         OpenCentered();
 
         foreach (var item in Enum.GetValues<StationRecordFilterType>())
-        {
-            FilterType.AddItem(GetTypeFilterLocals(item), (int)item);
-        }
+            FilterType.AddItem(GetTypeFilterLocals(item), (int) item);
 
         foreach (var status in Enum.GetValues<SecurityStatus>())
-        {
             AddStatusSelect(status);
-        }
 
         OnClose += () => _reasonDialog?.Close();
 
@@ -88,7 +97,7 @@ public sealed partial class CriminalRecordsConsoleWindow : FancyWindow
 
         FilterType.OnItemSelected += eventArgs =>
         {
-            var type = (StationRecordFilterType)eventArgs.Id;
+            var type = (StationRecordFilterType) eventArgs.Id;
 
             if (_currentFilterType != type)
             {
@@ -109,7 +118,7 @@ public sealed partial class CriminalRecordsConsoleWindow : FancyWindow
 
         HistoryButton.OnPressed += _ =>
         {
-            if (_selectedRecord is {} record)
+            if (_selectedRecord is { } record)
                 OnHistoryUpdated?.Invoke(record, _access, true);
         };
     }
@@ -119,19 +128,15 @@ public sealed partial class CriminalRecordsConsoleWindow : FancyWindow
         if (state.Filter != null)
         {
             if (state.Filter.Type != _currentFilterType)
-            {
                 _currentFilterType = state.Filter.Type;
-            }
 
             if (state.Filter.Value != FilterText.Text)
-            {
                 FilterText.Text = state.Filter.Value;
-            }
         }
 
         _selectedKey = state.SelectedKey;
 
-        FilterType.SelectId((int)_currentFilterType);
+        FilterType.SelectId((int) _currentFilterType);
 
         // set up the records listing panel
         RecordListing.Clear();
@@ -147,14 +152,14 @@ public sealed partial class CriminalRecordsConsoleWindow : FancyWindow
         PersonContainer.Visible = selected;
         RecordUnselected.Visible = !selected;
 
-        _access = _player.LocalSession?.AttachedEntity is {} player
+        _access = _player.LocalSession?.AttachedEntity is { } player
             && _accessReader.IsAllowed(player, Console);
 
         // hide access-required editing parts when no access
         var editing = _access && selected;
         StatusOptionButton.Disabled = !editing;
 
-        if (state is { CriminalRecord: not null, StationRecord: not null })
+        if (state is { CriminalRecord: not null, StationRecord: not null, })
         {
             PopulateRecordContainer(state.StationRecord, state.CriminalRecord);
             OnHistoryUpdated?.Invoke(state.CriminalRecord, _access, false);
@@ -177,6 +182,7 @@ public sealed partial class CriminalRecordsConsoleWindow : FancyWindow
             item.Metadata = key;
             item.Selected = key == _selectedKey;
         }
+
         _isPopulating = false;
 
         RecordListing.SortItemsByText();
@@ -186,11 +192,13 @@ public sealed partial class CriminalRecordsConsoleWindow : FancyWindow
     {
         var na = Loc.GetString("generic-not-available-shorthand");
         PersonName.Text = stationRecord.Name;
-        PersonPrints.Text = Loc.GetString("general-station-record-console-record-fingerprint", ("fingerprint", stationRecord.Fingerprint ?? na));
+        PersonPrints.Text = Loc.GetString(
+            "general-station-record-console-record-fingerprint",
+            ("fingerprint", stationRecord.Fingerprint ?? na));
         PersonDna.Text = Loc.GetString("general-station-record-console-record-dna", ("dna", stationRecord.DNA ?? na));
 
         StatusOptionButton.SelectId((int) criminalRecord.Status);
-        if (criminalRecord.Reason is {} reason)
+        if (criminalRecord.Reason is { } reason)
         {
             var message = FormattedMessage.FromMarkup(Loc.GetString("criminal-records-console-wanted-reason"));
             message.AddText($": {reason}");
@@ -198,23 +206,19 @@ public sealed partial class CriminalRecordsConsoleWindow : FancyWindow
             WantedReason.Visible = true;
         }
         else
-        {
             WantedReason.Visible = false;
-        }
     }
 
     private void AddStatusSelect(SecurityStatus status)
     {
         var name = Loc.GetString($"criminal-records-status-{status.ToString().ToLower()}");
-        StatusOptionButton.AddItem(name, (int)status);
+        StatusOptionButton.AddItem(name, (int) status);
     }
 
     private void FilterListingOfRecords(string text = "")
     {
         if (!_isPopulating)
-        {
             OnFiltersChanged?.Invoke(_currentFilterType, text);
-        }
     }
 
     private void SetStatus(SecurityStatus status)
@@ -239,11 +243,13 @@ public sealed partial class CriminalRecordsConsoleWindow : FancyWindow
         var field = "reason";
         var title = Loc.GetString("criminal-records-status-" + status.ToString().ToLower());
         var placeholders = _proto.Index<DatasetPrototype>(ReasonPlaceholders);
-        var placeholder = Loc.GetString("criminal-records-console-reason-placeholder", ("placeholder", _random.Pick(placeholders.Values))); // just funny it doesn't actually get used
+        var placeholder = Loc.GetString(
+            "criminal-records-console-reason-placeholder",
+            ("placeholder", _random.Pick(placeholders.Values))); // just funny it doesn't actually get used
         var prompt = Loc.GetString("criminal-records-console-reason");
         var entry = new QuickDialogEntry(field, QuickDialogEntryType.LongText, prompt, placeholder);
-        var entries = new List<QuickDialogEntry>() { entry };
-        _reasonDialog = new DialogWindow(title, entries);
+        var entries = new List<QuickDialogEntry> { entry, };
+        _reasonDialog = new(title, entries);
 
         _reasonDialog.OnConfirmed += responses =>
         {
@@ -257,8 +263,6 @@ public sealed partial class CriminalRecordsConsoleWindow : FancyWindow
         _reasonDialog.OnClose += () => { _reasonDialog = null; };
     }
 
-    private string GetTypeFilterLocals(StationRecordFilterType type)
-    {
-        return Loc.GetString($"criminal-records-{type.ToString().ToLower()}-filter");
-    }
+    private string GetTypeFilterLocals(StationRecordFilterType type) =>
+        Loc.GetString($"criminal-records-{type.ToString().ToLower()}-filter");
 }

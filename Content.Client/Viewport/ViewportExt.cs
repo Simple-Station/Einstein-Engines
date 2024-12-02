@@ -1,15 +1,20 @@
-﻿using Robust.Client.UserInterface.CustomControls;
+﻿#region
 
-namespace Content.Client.Viewport
+using Robust.Client.UserInterface.CustomControls;
+
+#endregion
+
+
+namespace Content.Client.Viewport;
+
+
+public static class ViewportExt
 {
-    public static class ViewportExt
+    public static int GetRenderScale(this IViewportControl viewport)
     {
-        public static int GetRenderScale(this IViewportControl viewport)
-        {
-            if (viewport is ScalingViewport svp)
-                return svp.CurrentRenderScale;
+        if (viewport is ScalingViewport svp)
+            return svp.CurrentRenderScale;
 
-            return 1;
-        }
+        return 1;
     }
 }

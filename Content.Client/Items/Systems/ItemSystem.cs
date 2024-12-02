@@ -1,4 +1,6 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿#region
+
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Shared.Hands;
 using Content.Shared.Inventory.Events;
@@ -8,7 +10,11 @@ using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
 using Robust.Shared.Serialization.TypeSerializers.Implementations;
 
+#endregion
+
+
 namespace Content.Client.Items.Systems;
+
 
 public sealed class ItemSystem : SharedItemSystem
 {
@@ -25,20 +31,17 @@ public sealed class ItemSystem : SharedItemSystem
         SubscribeLocalEvent<SpriteComponent, GotUnequippedEvent>(OnUnequipped);
     }
 
-    private void OnUnequipped(EntityUid uid, SpriteComponent component, GotUnequippedEvent args)
-    {
+    private void OnUnequipped(EntityUid uid, SpriteComponent component, GotUnequippedEvent args) =>
         component.Visible = true;
-    }
 
-    private void OnEquipped(EntityUid uid, SpriteComponent component, GotEquippedEvent args)
-    {
+    private void OnEquipped(EntityUid uid, SpriteComponent component, GotEquippedEvent args) =>
         component.Visible = false;
-    }
 
     #region InhandVisuals
 
     /// <summary>
-    ///     When an items visual state changes, notify and entities that are holding this item that their sprite may need updating.
+    ///     When an items visual state changes, notify and entities that are holding this item that their sprite may need
+    ///     updating.
     /// </summary>
     public override void VisualsChanged(EntityUid uid)
     {
@@ -58,7 +61,7 @@ public sealed class ItemSystem : SharedItemSystem
         if (!item.InhandVisuals.TryGetValue(args.Location, out var layers))
         {
             // get defaults
-            if (!TryGetDefaultVisuals(uid, item, defaultKey,  out layers))
+            if (!TryGetDefaultVisuals(uid, item, defaultKey, out layers))
                 return;
         }
 
@@ -82,7 +85,12 @@ public sealed class ItemSystem : SharedItemSystem
     /// <remarks>
     ///     Useful for lazily adding in-hand sprites without modifying yaml. And backwards compatibility.
     /// </remarks>
-    private bool TryGetDefaultVisuals(EntityUid uid, ItemComponent item, string defaultKey, [NotNullWhen(true)] out List<PrototypeLayerData>? result)
+    private bool TryGetDefaultVisuals(
+        EntityUid uid,
+        ItemComponent item,
+        string defaultKey,
+        [NotNullWhen(true)] out List<PrototypeLayerData>? result
+    )
     {
         result = null;
 
@@ -96,20 +104,21 @@ public sealed class ItemSystem : SharedItemSystem
         if (rsi == null)
             return false;
 
-        var state = (item.HeldPrefix == null)
+        var state = item.HeldPrefix == null
             ? defaultKey
             : $"{item.HeldPrefix}-{defaultKey}";
 
-        if (!rsi.TryGetState(state, out var _))
+        if (!rsi.TryGetState(state, out _))
             return false;
 
         var layer = new PrototypeLayerData();
         layer.RsiPath = rsi.Path.ToString();
         layer.State = state;
-        layer.MapKeys = new() { state };
+        layer.MapKeys = new() { state, };
 
-        result = new() { layer };
+        result = new() { layer, };
         return true;
     }
+
     #endregion
 }

@@ -1,9 +1,14 @@
+#region
+
 using Content.Shared.Access;
 using Content.Shared.Doors.Electronics;
-using Robust.Client.GameObjects;
 using Robust.Shared.Prototypes;
 
+#endregion
+
+
 namespace Content.Client.Doors.Electronics;
+
 
 public sealed class DoorElectronicsBoundUserInterface : BoundUserInterface
 {
@@ -11,9 +16,7 @@ public sealed class DoorElectronicsBoundUserInterface : BoundUserInterface
 
     private DoorElectronicsConfigurationMenu? _window;
 
-    public DoorElectronicsBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-    {
-    }
+    public DoorElectronicsBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
 
     protected override void Open()
     {
@@ -47,7 +50,8 @@ public sealed class DoorElectronicsBoundUserInterface : BoundUserInterface
     protected override void Dispose(bool disposing)
     {
         base.Dispose(disposing);
-        if (!disposing) return;
+        if (!disposing)
+            return;
 
         _window?.Dispose();
     }

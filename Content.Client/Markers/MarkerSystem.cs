@@ -1,7 +1,12 @@
+#region
+
 using Robust.Client.GameObjects;
-using Robust.Shared.GameObjects;
+
+#endregion
+
 
 namespace Content.Client.Markers;
+
 
 public sealed class MarkerSystem : EntitySystem
 {
@@ -24,17 +29,12 @@ public sealed class MarkerSystem : EntitySystem
         SubscribeLocalEvent<MarkerComponent, ComponentStartup>(OnStartup);
     }
 
-    private void OnStartup(EntityUid uid, MarkerComponent marker, ComponentStartup args)
-    {
-        UpdateVisibility(uid);
-    }
+    private void OnStartup(EntityUid uid, MarkerComponent marker, ComponentStartup args) => UpdateVisibility(uid);
 
     private void UpdateVisibility(EntityUid uid)
     {
         if (EntityManager.TryGetComponent(uid, out SpriteComponent? sprite))
-        {
             sprite.Visible = MarkersVisible;
-        }
     }
 
     private void UpdateMarkers()
@@ -42,8 +42,6 @@ public sealed class MarkerSystem : EntitySystem
         var query = AllEntityQuery<MarkerComponent>();
 
         while (query.MoveNext(out var uid, out var comp))
-        {
             UpdateVisibility(uid);
-        }
     }
 }

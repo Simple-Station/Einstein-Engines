@@ -1,8 +1,13 @@
+#region
+
 using Content.Shared.Radio;
 using JetBrains.Annotations;
-using Robust.Client.GameObjects;
+
+#endregion
+
 
 namespace Content.Client.Radio.Ui;
+
 
 [UsedImplicitly]
 public sealed class IntercomBoundUserInterface : BoundUserInterface
@@ -10,10 +15,7 @@ public sealed class IntercomBoundUserInterface : BoundUserInterface
     [ViewVariables]
     private IntercomMenu? _menu;
 
-    public IntercomBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-    {
-
-    }
+    public IntercomBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
 
     protected override void Open()
     {

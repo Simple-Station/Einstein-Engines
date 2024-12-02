@@ -1,5 +1,6 @@
 namespace Content.Client.SurveillanceCamera;
 
+
 [RegisterComponent]
 public sealed partial class ActiveSurveillanceCameraMonitorVisualsComponent : Component
 {

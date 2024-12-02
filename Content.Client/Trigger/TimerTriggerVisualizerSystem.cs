@@ -1,11 +1,15 @@
+#region
+
 using Content.Shared.Trigger;
 using Robust.Client.Animations;
 using Robust.Client.GameObjects;
-using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
-using Robust.Shared.GameObjects;
+
+#endregion
+
 
 namespace Content.Client.Trigger;
+
 
 public sealed class TimerTriggerVisualizerSystem : VisualizerSystem<TimerTriggerVisualsComponent>
 {
@@ -19,40 +23,56 @@ public sealed class TimerTriggerVisualizerSystem : VisualizerSystem<TimerTrigger
 
     private void OnComponentInit(EntityUid uid, TimerTriggerVisualsComponent comp, ComponentInit args)
     {
-        comp.PrimingAnimation = new Animation {
+        comp.PrimingAnimation = new()
+        {
             Length = TimeSpan.MaxValue,
-            AnimationTracks = {
-                new AnimationTrackSpriteFlick() {
+            AnimationTracks =
+            {
+                new AnimationTrackSpriteFlick
+                {
                     LayerKey = TriggerVisualLayers.Base,
-                    KeyFrames = { new AnimationTrackSpriteFlick.KeyFrame(comp.PrimingSprite, 0f) }
+                    KeyFrames = { new(comp.PrimingSprite, 0f), }
                 }
-            },
+            }
         };
 
         if (comp.PrimingSound != null)
         {
             comp.PrimingAnimation.AnimationTracks.Add(
-                new AnimationTrackPlaySound() {
-                    KeyFrames = { new AnimationTrackPlaySound.KeyFrame(_audioSystem.GetSound(comp.PrimingSound), 0) }
+                new AnimationTrackPlaySound
+                {
+                    KeyFrames = { new(_audioSystem.GetSound(comp.PrimingSound), 0), }
                 }
             );
         }
     }
 
-    protected override void OnAppearanceChange(EntityUid uid, TimerTriggerVisualsComponent comp, ref AppearanceChangeEvent args)
+    protected override void OnAppearanceChange(
+        EntityUid uid,
+        TimerTriggerVisualsComponent comp,
+        ref AppearanceChangeEvent args
+    )
     {
         if (args.Sprite == null
-        ||  !TryComp<AnimationPlayerComponent>(uid, out var animPlayer))
+            || !TryComp<AnimationPlayerComponent>(uid, out var animPlayer))
             return;
 
-        if (!AppearanceSystem.TryGetData<TriggerVisualState>(uid, TriggerVisuals.VisualState, out var state, args.Component))
+        if (!AppearanceSystem.TryGetData<TriggerVisualState>(
+            uid,
+            TriggerVisuals.VisualState,
+            out var state,
+            args.Component))
             state = TriggerVisualState.Unprimed;
 
         switch (state)
         {
             case TriggerVisualState.Primed:
                 if (!AnimationSystem.HasRunningAnimation(uid, animPlayer, TimerTriggerVisualsComponent.AnimationKey))
-                    AnimationSystem.Play(uid, animPlayer, comp.PrimingAnimation, TimerTriggerVisualsComponent.AnimationKey);
+                    AnimationSystem.Play(
+                        uid,
+                        animPlayer,
+                        comp.PrimingAnimation,
+                        TimerTriggerVisualsComponent.AnimationKey);
                 break;
             case TriggerVisualState.Unprimed:
                 args.Sprite.LayerSetState(TriggerVisualLayers.Base, comp.UnprimedSprite);

@@ -1,9 +1,15 @@
-﻿using Content.Client.Implants.UI;
+﻿#region
+
+using Content.Client.Implants.UI;
 using Content.Client.Items;
 using Content.Shared.Implants;
 using Content.Shared.Implants.Components;
 
+#endregion
+
+
 namespace Content.Client.Implants;
+
 
 public sealed class ImplanterSystem : SharedImplanterSystem
 {
@@ -15,8 +21,10 @@ public sealed class ImplanterSystem : SharedImplanterSystem
         Subs.ItemStatus<ImplanterComponent>(ent => new ImplanterStatusControl(ent));
     }
 
-    private void OnHandleImplanterState(EntityUid uid, ImplanterComponent component, ref AfterAutoHandleStateEvent args)
-    {
+    private void OnHandleImplanterState(
+        EntityUid uid,
+        ImplanterComponent component,
+        ref AfterAutoHandleStateEvent args
+    ) =>
         component.UiUpdateNeeded = true;
-    }
 }

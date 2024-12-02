@@ -1,13 +1,18 @@
+#region
+
 using Content.Client.Administration.Managers;
 using Content.Shared.CCVar;
 using Robust.Client.UserInterface;
 using Robust.Shared.Configuration;
 
+#endregion
+
 
 namespace Content.Client.DebugMon;
 
+
 /// <summary>
-/// This handles preventing certain debug monitors from appearing.
+///     This handles preventing certain debug monitors from appearing.
 /// </summary>
 public sealed class DebugMonitorSystem : EntitySystem
 {

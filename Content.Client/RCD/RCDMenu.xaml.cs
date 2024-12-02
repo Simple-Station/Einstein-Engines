@@ -1,3 +1,5 @@
+#region
+
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Popups;
 using Content.Shared.RCD;
@@ -9,9 +11,12 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
-using System.Numerics;
+
+#endregion
+
 
 namespace Content.Client.RCD;
+
 
 [GenerateTypedNameReferences]
 public sealed partial class RCDMenu : RadialMenu
@@ -25,7 +30,7 @@ public sealed partial class RCDMenu : RadialMenu
 
     public event Action<ProtoId<RCDPrototype>>? SendRCDSystemMessageAction;
 
-    private EntityUid _owner;
+    private readonly EntityUid _owner;
 
     public RCDMenu(EntityUid owner, RCDMenuBoundUserInterface bui)
     {
@@ -64,28 +69,26 @@ public sealed partial class RCDMenu : RadialMenu
 
             if ((proto.Mode == RcdMode.ConstructTile || proto.Mode == RcdMode.ConstructObject) &&
                 proto.Prototype != null && _protoManager.TryIndex(proto.Prototype, out var entProto))
-            {
                 tooltip = Loc.GetString(entProto.Name);
-            }
 
             tooltip = OopsConcat(char.ToUpper(tooltip[0]).ToString(), tooltip.Remove(0, 1));
 
-            var button = new RCDMenuButton()
+            var button = new RCDMenuButton
             {
-                StyleClasses = { "RadialMenuButton" },
-                SetSize = new Vector2(64f, 64f),
+                StyleClasses = { "RadialMenuButton", },
+                SetSize = new(64f, 64f),
                 ToolTip = tooltip,
-                ProtoId = protoId,
+                ProtoId = protoId
             };
 
             if (proto.Sprite != null)
             {
-                var tex = new TextureRect()
+                var tex = new TextureRect
                 {
                     VerticalAlignment = VAlignment.Center,
                     HorizontalAlignment = HAlignment.Center,
                     Texture = _spriteSystem.Frame0(proto.Sprite),
-                    TextureScale = new Vector2(2f, 2f),
+                    TextureScale = new(2f, 2f)
                 };
 
                 button.AddChild(tex);
@@ -119,11 +122,9 @@ public sealed partial class RCDMenu : RadialMenu
         SendRCDSystemMessageAction += bui.SendRCDSystemMessage;
     }
 
-    private static string OopsConcat(string a, string b)
-    {
+    private static string OopsConcat(string a, string b) =>
         // This exists to prevent Roslyn being clever and compiling something that fails sandbox checks.
-        return a + b;
-    }
+        a + b;
 
     private void AddRCDMenuButtonOnClickActions(Control control)
     {
@@ -172,9 +173,4 @@ public sealed partial class RCDMenu : RadialMenu
 public sealed class RCDMenuButton : RadialMenuTextureButton
 {
     public ProtoId<RCDPrototype> ProtoId { get; set; }
-
-    public RCDMenuButton()
-    {
-
-    }
 }

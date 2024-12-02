@@ -1,48 +1,51 @@
+#region
+
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
+using Content.Shared.CCVar;
 using JetBrains.Annotations;
 using Nett;
-using Content.Shared.CCVar;
-using Content.Client.IoC;
 using Robust.Client.Graphics;
-using Robust.Shared.Utility;
 using Robust.Shared.Configuration;
 using Robust.Shared.ContentPack;
-using Robust.Shared.Graphics;
+using Robust.Shared.Utility;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
 
+#endregion
+
+
 namespace Content.Client.Parallax.Data;
 
-[UsedImplicitly]
-[DataDefinition]
+
+[UsedImplicitly, DataDefinition,]
 public sealed partial class GeneratedParallaxTextureSource : IParallaxTextureSource
 {
     /// <summary>
-    /// Parallax config path (the TOML file).
-    /// In client resources.
+    ///     Parallax config path (the TOML file).
+    ///     In client resources.
     /// </summary>
     [DataField("configPath")]
     public ResPath ParallaxConfigPath { get; private set; } = new("/parallax_config.toml");
 
     /// <summary>
-    /// ID for debugging, caching, and so forth.
-    /// The empty string here is reserved for the original parallax.
-    /// It is advisible to provide a roughly unique ID for any unique config contents.
+    ///     ID for debugging, caching, and so forth.
+    ///     The empty string here is reserved for the original parallax.
+    ///     It is advisible to provide a roughly unique ID for any unique config contents.
     /// </summary>
     [DataField("id")]
     public string Identifier { get; private set; } = "other";
 
     /// <summary>
-    /// Cached path.
-    /// In user directory.
+    ///     Cached path.
+    ///     In user directory.
     /// </summary>
     private ResPath ParallaxCachedImagePath => new($"/parallax_{Identifier}cache.png");
 
     /// <summary>
-    /// Old parallax config path (for checking for parallax updates).
-    /// In user directory.
+    ///     Old parallax config path (for checking for parallax updates).
+    ///     In user directory.
     /// </summary>
     private ResPath PreviousParallaxConfigPath => new($"/parallax_{Identifier}config_old");
 
@@ -88,6 +91,7 @@ public sealed partial class GeneratedParallaxTextureSource : IParallaxTextureSou
             {
                 // The show must go on.
             }
+
             return Texture.Transparent;
         }
     }
@@ -99,8 +103,10 @@ public sealed partial class GeneratedParallaxTextureSource : IParallaxTextureSou
         var sawmill = IoCManager.Resolve<ILogManager>().GetSawmill("parallax");
 
         // Generate the parallax in the thread pool.
-        using var newParallexImage = await Task.Run(() =>
-            ParallaxGenerator.GenerateParallax(config, new Size(1920, 1080), sawmill, debugImages, cancel), cancel);
+        using var newParallexImage = await Task.Run(
+            () =>
+                ParallaxGenerator.GenerateParallax(config, new(1920, 1080), sawmill, debugImages, cancel),
+            cancel);
 
         // And load it in the main thread for safety reasons.
         // But before spending time saving it, make sure to exit out early if it's not wanted.
@@ -116,7 +122,8 @@ public sealed partial class GeneratedParallaxTextureSource : IParallaxTextureSou
             for (var i = 0; i < debugImages!.Count; i++)
             {
                 var debugImage = debugImages[i];
-                await using var debugImageStream = resManager.UserData.OpenWrite(new ResPath($"/parallax_{Identifier}debug_{i}.png"));
+                await using var debugImageStream =
+                    resManager.UserData.OpenWrite(new($"/parallax_{Identifier}debug_{i}.png"));
                 await debugImage.SaveAsPngAsync(debugImageStream, cancel);
             }
         }
@@ -133,12 +140,9 @@ public sealed partial class GeneratedParallaxTextureSource : IParallaxTextureSou
     {
         var resManager = IoCManager.Resolve<IResourceManager>();
         if (!resManager.TryContentFileRead(ParallaxConfigPath, out var configStream))
-        {
             return null;
-        }
 
         using var configReader = new StreamReader(configStream, EncodingHelpers.UTF8);
         return configReader.ReadToEnd().Replace(Environment.NewLine, "\n");
     }
 }
-

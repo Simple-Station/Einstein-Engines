@@ -1,103 +1,99 @@
-using Content.Client.Disposal.Systems;
+#region
+
 using Content.Shared.Disposal;
-using Content.Shared.Disposal.Components;
 using JetBrains.Annotations;
-using Robust.Client.GameObjects;
 using Robust.Client.UserInterface.Controls;
 using static Content.Shared.Disposal.Components.SharedDisposalUnitComponent;
 
-namespace Content.Client.Disposal.UI
+#endregion
+
+
+namespace Content.Client.Disposal.UI;
+
+
+/// <summary>
+///     Initializes a <see cref="MailingUnitWindow" /> or a <see cref="DisposalUnitWindow" /> and updates it when new
+///     server messages are received.
+/// </summary>
+[UsedImplicitly]
+public sealed class DisposalUnitBoundUserInterface : BoundUserInterface
 {
-    /// <summary>
-    /// Initializes a <see cref="MailingUnitWindow"/> or a <see cref="DisposalUnitWindow"/> and updates it when new server messages are received.
-    /// </summary>
-    [UsedImplicitly]
-    public sealed class DisposalUnitBoundUserInterface : BoundUserInterface
+    // What are you doing here
+    [ViewVariables]
+    public MailingUnitWindow? MailingUnitWindow;
+
+    [ViewVariables]
+    public DisposalUnitWindow? DisposalUnitWindow;
+
+    public DisposalUnitBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
+
+    private void ButtonPressed(UiButton button) => SendMessage(new UiButtonPressedMessage(button));
+
+    // If we get client-side power stuff then we can predict the button presses but for now we won't as it stuffs
+    // the pressure lerp up.
+    private void TargetSelected(ItemList.ItemListSelectedEventArgs args)
     {
-        // What are you doing here
-        [ViewVariables]
-        public MailingUnitWindow? MailingUnitWindow;
+        var item = args.ItemList[args.ItemIndex];
+        SendMessage(new TargetSelectedMessage(item.Text));
+    }
 
-        [ViewVariables]
-        public DisposalUnitWindow? DisposalUnitWindow;
+    protected override void Open()
+    {
+        base.Open();
 
-        public DisposalUnitBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
+        if (UiKey is MailingUnitUiKey)
         {
-        }
+            MailingUnitWindow = new();
 
-        private void ButtonPressed(UiButton button)
+            MailingUnitWindow.OpenCenteredRight();
+            MailingUnitWindow.OnClose += Close;
+
+            MailingUnitWindow.Eject.OnPressed += _ => ButtonPressed(UiButton.Eject);
+            MailingUnitWindow.Engage.OnPressed += _ => ButtonPressed(UiButton.Engage);
+            MailingUnitWindow.Power.OnPressed += _ => ButtonPressed(UiButton.Power);
+
+            MailingUnitWindow.TargetListContainer.OnItemSelected += TargetSelected;
+        }
+        else if (UiKey is DisposalUnitUiKey)
         {
-            SendMessage(new UiButtonPressedMessage(button));
-            // If we get client-side power stuff then we can predict the button presses but for now we won't as it stuffs
-            // the pressure lerp up.
-        }
+            DisposalUnitWindow = new();
 
-        private void TargetSelected(ItemList.ItemListSelectedEventArgs args)
+            DisposalUnitWindow.OpenCenteredRight();
+            DisposalUnitWindow.OnClose += Close;
+
+            DisposalUnitWindow.Eject.OnPressed += _ => ButtonPressed(UiButton.Eject);
+            DisposalUnitWindow.Engage.OnPressed += _ => ButtonPressed(UiButton.Engage);
+            DisposalUnitWindow.Power.OnPressed += _ => ButtonPressed(UiButton.Power);
+        }
+    }
+
+    protected override void UpdateState(BoundUserInterfaceState state)
+    {
+        base.UpdateState(state);
+
+        if (state is not MailingUnitBoundUserInterfaceState && state is not DisposalUnitBoundUserInterfaceState)
+            return;
+
+        switch (state)
         {
-            var item = args.ItemList[args.ItemIndex];
-            SendMessage(new TargetSelectedMessage(item.Text));
+            case MailingUnitBoundUserInterfaceState mailingUnitState:
+                MailingUnitWindow?.UpdateState(mailingUnitState);
+                break;
+
+            case DisposalUnitBoundUserInterfaceState disposalUnitState:
+                DisposalUnitWindow?.UpdateState(disposalUnitState);
+                break;
         }
+    }
 
-        protected override void Open()
-        {
-            base.Open();
+    protected override void Dispose(bool disposing)
+    {
+        base.Dispose(disposing);
 
-            if (UiKey is MailingUnitUiKey)
-            {
-                MailingUnitWindow = new MailingUnitWindow();
+        if (!disposing)
+            return;
 
-                MailingUnitWindow.OpenCenteredRight();
-                MailingUnitWindow.OnClose += Close;
-
-                MailingUnitWindow.Eject.OnPressed += _ => ButtonPressed(UiButton.Eject);
-                MailingUnitWindow.Engage.OnPressed += _ => ButtonPressed(UiButton.Engage);
-                MailingUnitWindow.Power.OnPressed += _ => ButtonPressed(UiButton.Power);
-
-                MailingUnitWindow.TargetListContainer.OnItemSelected += TargetSelected;
-            }
-            else if (UiKey is DisposalUnitUiKey)
-            {
-                DisposalUnitWindow = new DisposalUnitWindow();
-
-                DisposalUnitWindow.OpenCenteredRight();
-                DisposalUnitWindow.OnClose += Close;
-
-                DisposalUnitWindow.Eject.OnPressed += _ => ButtonPressed(UiButton.Eject);
-                DisposalUnitWindow.Engage.OnPressed += _ => ButtonPressed(UiButton.Engage);
-                DisposalUnitWindow.Power.OnPressed += _ => ButtonPressed(UiButton.Power);
-            }
-        }
-
-        protected override void UpdateState(BoundUserInterfaceState state)
-        {
-            base.UpdateState(state);
-
-            if (state is not MailingUnitBoundUserInterfaceState && state is not DisposalUnitBoundUserInterfaceState)
-            {
-                return;
-            }
-
-            switch (state)
-            {
-                case MailingUnitBoundUserInterfaceState mailingUnitState:
-                    MailingUnitWindow?.UpdateState(mailingUnitState);
-                    break;
-
-                case DisposalUnitBoundUserInterfaceState disposalUnitState:
-                    DisposalUnitWindow?.UpdateState(disposalUnitState);
-                    break;
-            }
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-
-            if (!disposing)
-                return;
-
-            MailingUnitWindow?.Dispose();
-            DisposalUnitWindow?.Dispose();
-        }
+        MailingUnitWindow?.Dispose();
+        DisposalUnitWindow?.Dispose();
     }
 }

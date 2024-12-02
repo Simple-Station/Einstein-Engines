@@ -1,6 +1,12 @@
-﻿using Content.Client.UserInterface.Controls;
+﻿#region
+
+using Content.Client.UserInterface.Controls;
+
+#endregion
+
 
 namespace Content.Client.UserInterface.Systems.Inventory.Controls;
+
 
 public sealed class ItemSlotButtonContainer : ItemSlotUIContainer<SlotControl>
 {

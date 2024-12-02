@@ -1,98 +1,101 @@
+#region
+
 using Content.Shared.PDA;
 using Content.Shared.PDA.Ringer;
 using JetBrains.Annotations;
 using Robust.Shared.Timing;
 
-namespace Content.Client.PDA.Ringer
+#endregion
+
+
+namespace Content.Client.PDA.Ringer;
+
+
+[UsedImplicitly]
+public sealed class RingerBoundUserInterface : BoundUserInterface
 {
-    [UsedImplicitly]
-    public sealed class RingerBoundUserInterface : BoundUserInterface
+    [ViewVariables]
+    private RingtoneMenu? _menu;
+
+    public RingerBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
+
+    protected override void Open()
     {
-        [ViewVariables]
-        private RingtoneMenu? _menu;
+        base.Open();
+        _menu = new();
+        _menu.OpenToLeft();
+        _menu.OnClose += Close;
 
-        public RingerBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
+        _menu.TestRingerButton.OnPressed += _ =>
         {
-        }
+            SendMessage(new RingerPlayRingtoneMessage());
+        };
 
-        protected override void Open()
+        _menu.SetRingerButton.OnPressed += _ =>
         {
-            base.Open();
-            _menu = new RingtoneMenu();
-            _menu.OpenToLeft();
-            _menu.OnClose += Close;
+            if (!TryGetRingtone(out var ringtone))
+                return;
 
-            _menu.TestRingerButton.OnPressed += _ =>
-            {
-                SendMessage(new RingerPlayRingtoneMessage());
-            };
+            SendMessage(new RingerSetRingtoneMessage(ringtone));
+            _menu.SetRingerButton.Disabled = true;
 
-            _menu.SetRingerButton.OnPressed += _ =>
-            {
-                if (!TryGetRingtone(out var ringtone))
-                    return;
-
-                SendMessage(new RingerSetRingtoneMessage(ringtone));
-                _menu.SetRingerButton.Disabled = true;
-
-                Timer.Spawn(333, () =>
+            Timer.Spawn(
+                333,
+                () =>
                 {
-                    if (_menu is { Disposed: false, SetRingerButton: { Disposed: false } ringer})
+                    if (_menu is { Disposed: false, SetRingerButton: { Disposed: false, } ringer, })
                         ringer.Disabled = false;
                 });
-            };
+        };
+    }
+
+    private bool TryGetRingtone(out Note[] ringtone)
+    {
+        if (_menu == null)
+        {
+            ringtone = Array.Empty<Note>();
+            return false;
         }
 
-        private bool TryGetRingtone(out Note[] ringtone)
+        ringtone = new Note[_menu.RingerNoteInputs.Length];
+
+        for (var i = 0; i < _menu.RingerNoteInputs.Length; i++)
         {
-            if (_menu == null)
-            {
-                ringtone = Array.Empty<Note>();
+            if (!Enum.TryParse<Note>(_menu.RingerNoteInputs[i].Text.Replace("#", "sharp"), false, out var note))
                 return false;
-            }
-
-            ringtone = new Note[_menu.RingerNoteInputs.Length];
-
-            for (int i = 0; i < _menu.RingerNoteInputs.Length; i++)
-            {
-                if (!Enum.TryParse<Note>(_menu.RingerNoteInputs[i].Text.Replace("#", "sharp"), false, out var note))
-                    return false;
-                ringtone[i] = note;
-            }
-
-            return true;
+            ringtone[i] = note;
         }
 
-        protected override void UpdateState(BoundUserInterfaceState state)
+        return true;
+    }
+
+    protected override void UpdateState(BoundUserInterfaceState state)
+    {
+        base.UpdateState(state);
+
+        if (_menu == null || state is not RingerUpdateState msg)
+            return;
+
+        for (var i = 0; i < _menu.RingerNoteInputs.Length; i++)
         {
-            base.UpdateState(state);
-
-            if (_menu == null || state is not RingerUpdateState msg)
-                return;
-
-            for (int i = 0; i < _menu.RingerNoteInputs.Length; i++)
+            var note = msg.Ringtone[i].ToString();
+            if (RingtoneMenu.IsNote(note))
             {
-
-                var note = msg.Ringtone[i].ToString();
-                if (RingtoneMenu.IsNote(note))
-                {
-                    _menu.PreviousNoteInputs[i] = note.Replace("sharp", "#");
-                    _menu.RingerNoteInputs[i].Text = _menu.PreviousNoteInputs[i];
-                }
-
+                _menu.PreviousNoteInputs[i] = note.Replace("sharp", "#");
+                _menu.RingerNoteInputs[i].Text = _menu.PreviousNoteInputs[i];
             }
-
-            _menu.TestRingerButton.Disabled = msg.IsPlaying;
         }
 
+        _menu.TestRingerButton.Disabled = msg.IsPlaying;
+    }
 
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-            if (!disposing)
-                return;
 
-            _menu?.Dispose();
-        }
+    protected override void Dispose(bool disposing)
+    {
+        base.Dispose(disposing);
+        if (!disposing)
+            return;
+
+        _menu?.Dispose();
     }
 }

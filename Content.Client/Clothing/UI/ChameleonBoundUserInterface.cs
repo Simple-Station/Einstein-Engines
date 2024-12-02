@@ -1,9 +1,14 @@
-﻿using Content.Client.Clothing.Systems;
+﻿#region
+
+using Content.Client.Clothing.Systems;
 using Content.Shared.Clothing.Components;
 using JetBrains.Annotations;
-using Robust.Client.GameObjects;
+
+#endregion
+
 
 namespace Content.Client.Clothing.UI;
+
 
 [UsedImplicitly]
 public sealed class ChameleonBoundUserInterface : BoundUserInterface
@@ -22,7 +27,7 @@ public sealed class ChameleonBoundUserInterface : BoundUserInterface
     {
         base.Open();
 
-        _menu = new ChameleonMenu();
+        _menu = new();
         _menu.OnClose += Close;
         _menu.OnIdSelected += OnIdSelected;
         _menu.OpenCentered();
@@ -38,10 +43,7 @@ public sealed class ChameleonBoundUserInterface : BoundUserInterface
         _menu?.UpdateState(targets, st.SelectedId);
     }
 
-    private void OnIdSelected(string selectedId)
-    {
-        SendMessage(new ChameleonPrototypeSelectedMessage(selectedId));
-    }
+    private void OnIdSelected(string selectedId) => SendMessage(new ChameleonPrototypeSelectedMessage(selectedId));
 
     protected override void Dispose(bool disposing)
     {

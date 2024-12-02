@@ -1,3 +1,5 @@
+#region
+
 using Content.Client.Inventory;
 using Content.Shared.Cuffs.Components;
 using Content.Shared.Ensnaring.Components;
@@ -6,7 +8,11 @@ using Content.Shared.Inventory.Events;
 using Content.Shared.Strip;
 using Content.Shared.Strip.Components;
 
+#endregion
+
+
 namespace Content.Client.Strip;
+
 
 /// <summary>
 ///     This is the client-side stripping system, which just triggers UI updates on events.
@@ -25,10 +31,8 @@ public sealed class StrippableSystem : SharedStrippableSystem
         SubscribeLocalEvent<StrippableComponent, EnsnaredChangedEvent>(UpdateUi);
     }
 
-    private void OnCuffStateChange(EntityUid uid, StrippableComponent component, ref CuffedStateChangeEvent args)
-    {
+    private void OnCuffStateChange(EntityUid uid, StrippableComponent component, ref CuffedStateChangeEvent args) =>
         UpdateUi(uid, component);
-    }
 
     public void UpdateUi(EntityUid uid, StrippableComponent? component = null, EntityEventArgs? args = null)
     {
@@ -36,9 +40,7 @@ public sealed class StrippableSystem : SharedStrippableSystem
             return;
 
         foreach (var ui in uiComp.ClientOpenInterfaces.Values)
-        {
             if (ui is StrippableBoundUserInterface stripUi)
                 stripUi.DirtyMenu();
-        }
     }
 }

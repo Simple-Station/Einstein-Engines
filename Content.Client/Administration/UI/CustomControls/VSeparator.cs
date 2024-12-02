@@ -1,9 +1,13 @@
-﻿using System.Numerics;
+﻿#region
+
 using Robust.Client.Graphics;
 using Robust.Client.UserInterface.Controls;
-using Robust.Shared.Maths;
+
+#endregion
+
 
 namespace Content.Client.Administration.UI.CustomControls;
+
 
 public sealed class VSeparator : PanelContainer
 {
@@ -11,15 +15,16 @@ public sealed class VSeparator : PanelContainer
 
     public VSeparator(Color color)
     {
-        MinSize = new Vector2(2, 5);
+        MinSize = new(2, 5);
 
-        AddChild(new PanelContainer
-        {
-            PanelOverride = new StyleBoxFlat
+        AddChild(
+            new PanelContainer
             {
-                BackgroundColor = color
-            }
-        });
+                PanelOverride = new StyleBoxFlat
+                {
+                    BackgroundColor = color
+                }
+            });
     }
 
     public VSeparator() : this(SeparatorColor) { }

@@ -1,32 +1,34 @@
+#region
+
 using Content.Shared.Medical.CrewMonitoring;
 
+#endregion
+
+
 namespace Content.Client.Medical.CrewMonitoring;
+
 
 public sealed class CrewMonitoringBoundUserInterface : BoundUserInterface
 {
     [ViewVariables]
     private CrewMonitoringWindow? _menu;
 
-    public CrewMonitoringBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-    {
-    }
+    public CrewMonitoringBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
 
     protected override void Open()
     {
         EntityUid? gridUid = null;
-        string stationName = string.Empty;
+        var stationName = string.Empty;
 
         if (EntMan.TryGetComponent<TransformComponent>(Owner, out var xform))
         {
             gridUid = xform.GridUid;
 
             if (EntMan.TryGetComponent<MetaDataComponent>(gridUid, out var metaData))
-            {
                 stationName = metaData.EntityName;
-            }
         }
 
-        _menu = new CrewMonitoringWindow(stationName, gridUid);
+        _menu = new(stationName, gridUid);
 
         _menu.OpenCentered();
         _menu.OnClose += Close;

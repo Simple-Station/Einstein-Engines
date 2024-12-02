@@ -1,8 +1,14 @@
+#region
+
 using Content.Shared.HotPotato;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
+#endregion
+
+
 namespace Content.Client.HotPotato;
+
 
 public sealed class HotPotatoSystem : SharedHotPotatoSystem
 {

@@ -1,8 +1,14 @@
+#region
+
 using Content.Client.GPS.Components;
 using Content.Client.GPS.UI;
 using Content.Client.Items;
 
+#endregion
+
+
 namespace Content.Client.GPS.Systems;
+
 
 public sealed class HandheldGpsSystem : EntitySystem
 {

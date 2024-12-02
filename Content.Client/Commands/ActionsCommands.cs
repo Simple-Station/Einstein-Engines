@@ -1,3 +1,5 @@
+#region
+
 using System.IO;
 using Content.Client.Actions;
 using Content.Client.Mapping;
@@ -6,7 +8,11 @@ using Robust.Client.UserInterface;
 using Robust.Shared.Console;
 using YamlDotNet.RepresentationModel;
 
+#endregion
+
+
 namespace Content.Client.Commands;
+
 
 // Disabled until sandoxing issues are resolved. In the meantime, if you want to create an acttions preset, just disable
 // sandboxing and uncomment this code (and the SaveActionAssignments() function).
@@ -65,14 +71,14 @@ public sealed class LoadActionsCommand : LocalizedCommands
     }
 
     /// <summary>
-    /// DeltaV - Load actions from a file stream instead
+    ///     DeltaV - Load actions from a file stream instead
     /// </summary>
     private static async void LoadActs()
     {
         var fileMan = IoCManager.Resolve<IFileDialogManager>();
         var actMan = IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<ActionsSystem>();
 
-        var stream = await fileMan.OpenFile(new FileDialogFilters(new FileDialogFilters.Group("yml")));
+        var stream = await fileMan.OpenFile(new(new FileDialogFilters.Group("yml")));
         if (stream is null)
             return;
 

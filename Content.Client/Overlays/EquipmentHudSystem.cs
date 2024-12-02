@@ -1,14 +1,20 @@
+#region
+
 using Content.Shared.GameTicking;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
 using Robust.Client.Player;
 using Robust.Shared.Player;
 
+#endregion
+
+
 namespace Content.Client.Overlays;
 
+
 /// <summary>
-/// This is a base system to make it easier to enable or disabling UI elements based on whether or not the player has
-/// some component, either on their controlled entity on some worn piece of equipment.
+///     This is a base system to make it easier to enable or disabling UI elements based on whether or not the player has
+///     some component, either on their controlled entity on some worn piece of equipment.
 /// </summary>
 public abstract class EquipmentHudSystem<T> : EntitySystem where T : IComponent
 {
@@ -55,20 +61,11 @@ public abstract class EquipmentHudSystem<T> : EntitySystem where T : IComponent
 
     protected virtual void DeactivateInternal() { }
 
-    private void OnStartup(EntityUid uid, T component, ComponentStartup args)
-    {
-        RefreshOverlay(uid);
-    }
+    private void OnStartup(EntityUid uid, T component, ComponentStartup args) => RefreshOverlay(uid);
 
-    private void OnRemove(EntityUid uid, T component, ComponentRemove args)
-    {
-        RefreshOverlay(uid);
-    }
+    private void OnRemove(EntityUid uid, T component, ComponentRemove args) => RefreshOverlay(uid);
 
-    private void OnPlayerAttached(LocalPlayerAttachedEvent args)
-    {
-        RefreshOverlay(args.Entity);
-    }
+    private void OnPlayerAttached(LocalPlayerAttachedEvent args) => RefreshOverlay(args.Entity);
 
     private void OnPlayerDetached(LocalPlayerDetachedEvent args)
     {
@@ -76,25 +73,18 @@ public abstract class EquipmentHudSystem<T> : EntitySystem where T : IComponent
             Deactivate();
     }
 
-    private void OnCompEquip(EntityUid uid, T component, GotEquippedEvent args)
-    {
-        RefreshOverlay(args.Equipee);
-    }
+    private void OnCompEquip(EntityUid uid, T component, GotEquippedEvent args) => RefreshOverlay(args.Equipee);
 
-    private void OnCompUnequip(EntityUid uid, T component, GotUnequippedEvent args)
-    {
-        RefreshOverlay(args.Equipee);
-    }
+    private void OnCompUnequip(EntityUid uid, T component, GotUnequippedEvent args) => RefreshOverlay(args.Equipee);
 
-    private void OnRoundRestart(RoundRestartCleanupEvent args)
-    {
-        Deactivate();
-    }
+    private void OnRoundRestart(RoundRestartCleanupEvent args) => Deactivate();
 
-    protected virtual void OnRefreshEquipmentHud(EntityUid uid, T component, InventoryRelayedEvent<RefreshEquipmentHudEvent<T>> args)
-    {
+    protected virtual void OnRefreshEquipmentHud(
+        EntityUid uid,
+        T component,
+        InventoryRelayedEvent<RefreshEquipmentHudEvent<T>> args
+    ) =>
         OnRefreshComponentHud(uid, component, args.Args);
-    }
 
     protected virtual void OnRefreshComponentHud(EntityUid uid, T component, RefreshEquipmentHudEvent<T> args)
     {

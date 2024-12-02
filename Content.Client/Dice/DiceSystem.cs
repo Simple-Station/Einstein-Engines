@@ -1,7 +1,13 @@
+#region
+
 using Content.Shared.Dice;
 using Robust.Client.GameObjects;
 
+#endregion
+
+
 namespace Content.Client.Dice;
+
 
 public sealed class DiceSystem : SharedDiceSystem
 {

@@ -1,8 +1,14 @@
+#region
+
 using Content.Shared.Body.Organ;
 using Robust.Client.GameObjects;
 using Robust.Shared.Console;
 
+#endregion
+
+
 namespace Content.Client.Commands;
+
 
 public sealed class ShowMechanismsCommand : LocalizedCommands
 {
@@ -19,8 +25,6 @@ public sealed class ShowMechanismsCommand : LocalizedCommands
         var query = _entManager.AllEntityQueryEnumerator<OrganComponent, SpriteComponent>();
 
         while (query.MoveNext(out _, out var sprite))
-        {
             sprite.ContainerOccluded = false;
-        }
     }
 }

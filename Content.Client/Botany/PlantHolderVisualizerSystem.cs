@@ -1,8 +1,14 @@
+#region
+
 using Content.Client.Botany.Components;
 using Content.Shared.Botany;
 using Robust.Client.GameObjects;
 
+#endregion
+
+
 namespace Content.Client.Botany;
+
 
 public sealed class PlantHolderVisualizerSystem : VisualizerSystem<PlantHolderVisualsComponent>
 {
@@ -21,7 +27,11 @@ public sealed class PlantHolderVisualizerSystem : VisualizerSystem<PlantHolderVi
         sprite.LayerSetVisible(PlantHolderLayers.Plant, false);
     }
 
-    protected override void OnAppearanceChange(EntityUid uid, PlantHolderVisualsComponent component, ref AppearanceChangeEvent args)
+    protected override void OnAppearanceChange(
+        EntityUid uid,
+        PlantHolderVisualsComponent component,
+        ref AppearanceChangeEvent args
+    )
     {
         if (args.Sprite == null)
             return;
@@ -49,5 +59,5 @@ public enum PlantHolderLayers : byte
     WaterLight,
     NutritionLight,
     AlertLight,
-    HarvestLight,
+    HarvestLight
 }

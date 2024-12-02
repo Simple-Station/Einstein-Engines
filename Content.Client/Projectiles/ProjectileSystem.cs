@@ -1,12 +1,16 @@
+#region
+
 using Content.Shared.Projectiles;
-using Robust.Shared.Spawners;
 using Content.Shared.Weapons.Ranged.Systems;
 using Robust.Client.Animations;
 using Robust.Client.GameObjects;
-using Robust.Shared.GameStates;
 using TimedDespawnComponent = Robust.Shared.Spawners.TimedDespawnComponent;
 
+#endregion
+
+
 namespace Content.Client.Projectiles;
+
 
 public sealed class ProjectileSystem : SharedProjectileSystem
 {
@@ -37,17 +41,17 @@ public sealed class ProjectileSystem : SharedProjectileSystem
             if (TryComp<TimedDespawnComponent>(ent, out var despawn))
                 lifetime = despawn.Lifetime;
 
-            var anim = new Animation()
+            var anim = new Animation
             {
                 Length = TimeSpan.FromSeconds(lifetime),
                 AnimationTracks =
                 {
-                    new AnimationTrackSpriteFlick()
+                    new AnimationTrackSpriteFlick
                     {
                         LayerKey = EffectLayers.Unshaded,
                         KeyFrames =
                         {
-                            new AnimationTrackSpriteFlick.KeyFrame(state.Name, 0f),
+                            new(state.Name, 0f)
                         }
                     }
                 }

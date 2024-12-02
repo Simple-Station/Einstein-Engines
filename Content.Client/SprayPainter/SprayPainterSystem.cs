@@ -1,18 +1,23 @@
+#region
+
+using System.Linq;
 using Content.Shared.SprayPainter;
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
 using Robust.Shared.Serialization.TypeSerializers.Implementations;
 using Robust.Shared.Utility;
-using System.Linq;
-using Robust.Shared.Graphics;
+
+#endregion
+
 
 namespace Content.Client.SprayPainter;
+
 
 public sealed class SprayPainterSystem : SharedSprayPainterSystem
 {
     [Dependency] private readonly IResourceCache _resourceCache = default!;
 
-    public List<SprayPainterEntry> Entries { get; private set; } = new();
+    public List<SprayPainterEntry> Entries { get; } = new();
 
     protected override void CacheStyles()
     {
@@ -22,23 +27,26 @@ public sealed class SprayPainterSystem : SharedSprayPainterSystem
         foreach (var style in Styles)
         {
             var name = style.Name;
-            string? iconPath = Groups
-              .FindAll(x => x.StylePaths.ContainsKey(name))?
-              .MaxBy(x => x.IconPriority)?.StylePaths[name];
+            var iconPath = Groups
+                .FindAll(x => x.StylePaths.ContainsKey(name))
+                ?
+                .MaxBy(x => x.IconPriority)
+                ?.StylePaths[name];
             if (iconPath == null)
             {
-                Entries.Add(new SprayPainterEntry(name, null));
+                Entries.Add(new(name, null));
                 continue;
             }
 
-            RSIResource doorRsi = _resourceCache.GetResource<RSIResource>(SpriteSpecifierSerializer.TextureRoot / new ResPath(iconPath));
+            var doorRsi =
+                _resourceCache.GetResource<RSIResource>(SpriteSpecifierSerializer.TextureRoot / new ResPath(iconPath));
             if (!doorRsi.RSI.TryGetState("closed", out var icon))
             {
-                Entries.Add(new SprayPainterEntry(name, null));
+                Entries.Add(new(name, null));
                 continue;
             }
 
-            Entries.Add(new SprayPainterEntry(name, icon.Frame0));
+            Entries.Add(new(name, icon.Frame0));
         }
     }
 }

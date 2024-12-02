@@ -1,3 +1,5 @@
+#region
+
 using System.Linq;
 using Content.Client.Humanoid;
 using Content.Client.Inventory;
@@ -25,7 +27,11 @@ using static Content.Shared.Humanoid.SharedHumanoidAppearanceSystem;
 using CharacterSetupGui = Content.Client.Lobby.UI.CharacterSetupGui;
 using HumanoidProfileEditor = Content.Client.Lobby.UI.HumanoidProfileEditor;
 
+#endregion
+
+
 namespace Content.Client.Lobby;
+
 
 public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState>, IOnStateExited<LobbyState>
 {
@@ -51,6 +57,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
 
     /// This is the modified profile currently being edited
     private HumanoidCharacterProfile? EditedProfile => _profileEditor?.Profile;
+
     private int? EditedSlot => _profileEditor?.CharacterSlot;
 
 
@@ -95,10 +102,8 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
         ReloadCharacterSetup();
     }
 
-    private LobbyCharacterPreviewPanel? GetLobbyPreview()
-    {
-        return _stateManager.CurrentState is LobbyState lobby ? lobby.Lobby?.CharacterPreview : null;
-    }
+    private LobbyCharacterPreviewPanel? GetLobbyPreview() =>
+        _stateManager.CurrentState is LobbyState lobby ? lobby.Lobby?.CharacterPreview : null;
 
     private void OnRequirementsUpdated()
     {
@@ -194,7 +199,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
             return (_characterSetup, _profileEditor);
         }
 
-        _profileEditor = new HumanoidProfileEditor(
+        _profileEditor = new(
             _preferencesManager,
             _configurationManager,
             EntityManager,
@@ -204,7 +209,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
             _requirements,
             _markings);
 
-        _characterSetup = new CharacterSetupGui(EntityManager, _prototypeManager, _resourceCache, _preferencesManager, _profileEditor);
+        _characterSetup = new(EntityManager, _prototypeManager, _resourceCache, _preferencesManager, _profileEditor);
 
         _characterSetup.CloseButton.OnPressed += _ =>
         {
@@ -212,9 +217,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
             _profileEditor.SetProfile(null, null);
             _profileEditor.Visible = false;
             if (_stateManager.CurrentState is LobbyState lobbyGui)
-            {
                 lobbyGui.SwitchState(LobbyGui.LobbyGuiState.Default);
-            }
         };
 
         _profileEditor.Save += SaveProfile;
@@ -258,7 +261,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
             return;
 
         foreach (var slot in slots)
-            if (_inventory.TryUnequip(dummy, slot.Name, out var unequippedItem, silent: true, force: true, reparent: false))
+            if (_inventory.TryUnequip(dummy, slot.Name, out var unequippedItem, true, true, reparent: false))
                 EntityManager.DeleteEntity(unequippedItem.Value);
     }
 
@@ -275,7 +278,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
         {
             var itemType = gear.GetGear(slot.Name, profile);
 
-            if (_inventory.TryUnequip(dummy, slot.Name, out var unequippedItem, silent: true, force: true, reparent: false))
+            if (_inventory.TryUnequip(dummy, slot.Name, out var unequippedItem, true, true, reparent: false))
                 EntityManager.DeleteEntity(unequippedItem.Value);
 
             if (itemType == string.Empty)
@@ -297,9 +300,11 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
             dummyEnt = EntityManager.SpawnEntity(dummy, MapCoordinates.Nullspace);
         }
         else
+        {
             dummyEnt = EntityManager.SpawnEntity(
                 _prototypeManager.Index<SpeciesPrototype>(DefaultSpecies).DollPrototype,
                 MapCoordinates.Nullspace);
+        }
 
         _humanoid.LoadProfile(dummyEnt, humanoid);
 
@@ -309,7 +314,13 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
             if (jobClothes)
                 GiveDummyJobClothes(dummyEnt, job, humanoid);
             if (loadouts)
-                _loadouts.ApplyCharacterLoadout(dummyEnt, job, humanoid, _jobRequirements.GetRawPlayTimeTrackers(), _jobRequirements.IsWhitelisted(), out _);
+                _loadouts.ApplyCharacterLoadout(
+                    dummyEnt,
+                    job,
+                    humanoid,
+                    _jobRequirements.GetRawPlayTimeTrackers(),
+                    _jobRequirements.IsWhitelisted(),
+                    out _);
         }
 
         return dummyEnt;

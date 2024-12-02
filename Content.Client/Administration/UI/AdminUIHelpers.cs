@@ -1,9 +1,15 @@
-﻿using System.Threading;
+﻿#region
+
+using System.Threading;
 using Content.Client.Stylesheets;
 using Robust.Client.UserInterface.Controls;
 using Timer = Robust.Shared.Timing.Timer;
 
+#endregion
+
+
 namespace Content.Client.Administration.UI;
+
 
 public static class AdminUIHelpers
 {
@@ -28,9 +34,7 @@ public static class AdminUIHelpers
     public static void RemoveAllConfirms(Dictionary<Button, ConfirmationData> confirmations)
     {
         foreach (var (button, confirmation) in confirmations)
-        {
             ResetButton(button, confirmation);
-        }
 
         confirmations.Clear();
     }
@@ -40,15 +44,18 @@ public static class AdminUIHelpers
         if (RemoveConfirm(button, confirmations))
             return true;
 
-        var data = new ConfirmationData(new CancellationTokenSource(), button.Text);
+        var data = new ConfirmationData(new(), button.Text);
         confirmations[button] = data;
 
-        Timer.Spawn(TimeSpan.FromSeconds(5), () =>
-        {
-            confirmations.Remove(button);
-            button.ModulateSelfOverride = null;
-            button.Text = data.OriginalText;
-        }, data.Cancellation.Token);
+        Timer.Spawn(
+            TimeSpan.FromSeconds(5),
+            () =>
+            {
+                confirmations.Remove(button);
+                button.ModulateSelfOverride = null;
+                button.Text = data.OriginalText;
+            },
+            data.Cancellation.Token);
 
         button.ModulateSelfOverride = StyleNano.ButtonColorDangerDefault;
         button.Text = Loc.GetString("admin-player-actions-confirm");

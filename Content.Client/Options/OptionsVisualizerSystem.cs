@@ -1,19 +1,25 @@
-﻿using Content.Shared.CCVar;
+﻿#region
+
+using Content.Shared.CCVar;
 using Robust.Client.GameObjects;
 using Robust.Shared.Configuration;
 using Robust.Shared.Reflection;
 
+#endregion
+
+
 namespace Content.Client.Options;
 
+
 /// <summary>
-/// Implements <see cref="OptionsVisualizerComponent"/>.
+///     Implements <see cref="OptionsVisualizerComponent" />.
 /// </summary>
 public sealed class OptionsVisualizerSystem : EntitySystem
 {
     private static readonly (OptionVisualizerOptions, CVarDef<bool>)[] OptionVars =
     {
         (OptionVisualizerOptions.Test, CCVars.DebugOptionVisualizerTest),
-        (OptionVisualizerOptions.ReducedMotion, CCVars.ReducedMotion),
+        (OptionVisualizerOptions.ReducedMotion, CCVars.ReducedMotion)
     };
 
     [Dependency] private readonly IConfigurationManager _cfg = default!;
@@ -26,9 +32,7 @@ public sealed class OptionsVisualizerSystem : EntitySystem
         base.Initialize();
 
         foreach (var (_, cvar) in OptionVars)
-        {
             Subs.CVar(_cfg, cvar, _ => CVarChanged());
-        }
 
         UpdateActiveOptions();
 
@@ -46,19 +50,15 @@ public sealed class OptionsVisualizerSystem : EntitySystem
         _currentOptions = OptionVisualizerOptions.Default;
 
         foreach (var (value, cVar) in OptionVars)
-        {
             if (_cfg.GetCVar(cVar))
                 _currentOptions |= value;
-        }
     }
 
     private void UpdateAllComponents()
     {
         var query = EntityQueryEnumerator<OptionsVisualizerComponent, SpriteComponent>();
         while (query.MoveNext(out _, out var component, out var sprite))
-        {
             UpdateComponent(component, sprite);
-        }
     }
 
     private void OnComponentStartup(EntityUid uid, OptionsVisualizerComponent component, ComponentStartup args)
@@ -94,4 +94,3 @@ public sealed class OptionsVisualizerSystem : EntitySystem
         }
     }
 }
-

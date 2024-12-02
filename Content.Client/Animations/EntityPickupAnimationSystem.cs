@@ -1,12 +1,17 @@
-﻿using System.Numerics;
+﻿#region
+
+using System.Numerics;
 using Robust.Client.Animations;
 using Robust.Client.GameObjects;
 using Robust.Shared.Animations;
 using Robust.Shared.Map;
 using Robust.Shared.Spawners;
-using static Robust.Client.Animations.AnimationTrackProperty;
+
+#endregion
+
 
 namespace Content.Client.Animations;
+
 
 /// <summary>
 ///     System that handles animating an entity that a player has picked up.
@@ -24,10 +29,12 @@ public sealed class EntityPickupAnimationSystem : EntitySystem
         SubscribeLocalEvent<EntityPickupAnimationComponent, AnimationCompletedEvent>(OnEntityPickupAnimationCompleted);
     }
 
-    private void OnEntityPickupAnimationCompleted(EntityUid uid, EntityPickupAnimationComponent component, AnimationCompletedEvent args)
-    {
+    private void OnEntityPickupAnimationCompleted(
+        EntityUid uid,
+        EntityPickupAnimationComponent component,
+        AnimationCompletedEvent args
+    ) =>
         Del(uid);
-    }
 
     /// <summary>
     ///     Animates a clone of an entity moving from one point to another before
@@ -51,7 +58,10 @@ public sealed class EntityPickupAnimationSystem : EntitySystem
 
         if (!TryComp(uid, out SpriteComponent? sprite0))
         {
-            Log.Error("Entity ({0}) couldn't be animated for pickup since it doesn't have a {1}!", metadata.EntityName, nameof(SpriteComponent));
+            Log.Error(
+                "Entity ({0}) couldn't be animated for pickup since it doesn't have a {1}!",
+                metadata.EntityName,
+                nameof(SpriteComponent));
             return;
         }
 
@@ -65,23 +75,26 @@ public sealed class EntityPickupAnimationSystem : EntitySystem
         despawn.Lifetime = 0.25f;
         _transform.SetLocalRotationNoLerp(animatableClone, initialAngle);
 
-        _animations.Play(new Entity<AnimationPlayerComponent>(animatableClone, animations), new Animation
-        {
-            Length = TimeSpan.FromMilliseconds(125),
-            AnimationTracks =
+        _animations.Play(
+            new Entity<AnimationPlayerComponent>(animatableClone, animations),
+            new()
             {
-                new AnimationTrackComponentProperty
+                Length = TimeSpan.FromMilliseconds(125),
+                AnimationTracks =
                 {
-                    ComponentType = typeof(TransformComponent),
-                    Property = nameof(TransformComponent.LocalPosition),
-                    InterpolationMode = AnimationInterpolationMode.Linear,
-                    KeyFrames =
+                    new AnimationTrackComponentProperty
                     {
-                        new KeyFrame(initial.Position, 0),
-                        new KeyFrame(final, 0.125f)
+                        ComponentType = typeof(TransformComponent),
+                        Property = nameof(TransformComponent.LocalPosition),
+                        InterpolationMode = AnimationInterpolationMode.Linear,
+                        KeyFrames =
+                        {
+                            new(initial.Position, 0),
+                            new(final, 0.125f)
+                        }
                     }
-                },
-            }
-        }, "fancy_pickup_anim");
+                }
+            },
+            "fancy_pickup_anim");
     }
 }

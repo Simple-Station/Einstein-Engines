@@ -1,12 +1,17 @@
+#region
+
 using Content.Shared.Buckle;
 using Content.Shared.Rotation;
 using Content.Shared.Standing;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
-using Robust.Shared.Configuration;
 using Robust.Shared.Timing;
 
+#endregion
+
+
 namespace Content.Client.Standing;
+
 
 public sealed class LayingDownSystem : SharedLayingDownSystem
 {
@@ -53,7 +58,8 @@ public sealed class LayingDownSystem : SharedLayingDownSystem
             || !TryComp<RotationVisualsComponent>(uid, out var rotationVisuals))
             return;
 
-        var rotation = transform.LocalRotation + (_eyeManager.CurrentEye.Rotation - (transform.LocalRotation - transform.WorldRotation));
+        var rotation = transform.LocalRotation +
+            (_eyeManager.CurrentEye.Rotation - (transform.LocalRotation - transform.WorldRotation));
 
         if (rotation.GetDir() is Direction.SouthEast or Direction.East or Direction.NorthEast or Direction.North)
         {
@@ -73,10 +79,12 @@ public sealed class LayingDownSystem : SharedLayingDownSystem
 
         var uid = GetEntity(ev.User);
 
-        if (!TryComp<TransformComponent>(uid, out var transform) || !TryComp<RotationVisualsComponent>(uid, out var rotationVisuals))
+        if (!TryComp<TransformComponent>(uid, out var transform) ||
+            !TryComp<RotationVisualsComponent>(uid, out var rotationVisuals))
             return;
 
-        var rotation = transform.LocalRotation + (_eyeManager.CurrentEye.Rotation - (transform.LocalRotation - transform.WorldRotation));
+        var rotation = transform.LocalRotation +
+            (_eyeManager.CurrentEye.Rotation - (transform.LocalRotation - transform.WorldRotation));
 
         if (rotation.GetDir() is Direction.SouthEast or Direction.East or Direction.NorthEast or Direction.North)
         {

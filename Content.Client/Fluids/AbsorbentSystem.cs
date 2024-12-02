@@ -1,10 +1,16 @@
+#region
+
 using Content.Client.Fluids.UI;
 using Content.Client.Items;
 using Content.Shared.Fluids;
 
+#endregion
+
+
 namespace Content.Client.Fluids;
 
-/// <inheritdoc/>
+
+/// <inheritdoc />
 public sealed class AbsorbentSystem : SharedAbsorbentSystem
 {
     public override void Initialize()

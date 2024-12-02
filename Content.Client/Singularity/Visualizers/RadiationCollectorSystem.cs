@@ -1,9 +1,14 @@
-using System;
+#region
+
 using Content.Shared.Singularity.Components;
 using Robust.Client.Animations;
 using Robust.Client.GameObjects;
 
+#endregion
+
+
 namespace Content.Client.Singularity.Visualizers;
+
 
 public sealed class RadiationCollectorSystem : VisualizerSystem<RadiationCollectorComponent>
 {
@@ -16,28 +21,40 @@ public sealed class RadiationCollectorSystem : VisualizerSystem<RadiationCollect
 
     private void OnComponentInit(EntityUid uid, RadiationCollectorComponent comp, ComponentInit args)
     {
-        comp.ActivateAnimation = new Animation {
+        comp.ActivateAnimation = new()
+        {
             Length = TimeSpan.FromSeconds(0.8f),
-            AnimationTracks = {
-                new AnimationTrackSpriteFlick() {
+            AnimationTracks =
+            {
+                new AnimationTrackSpriteFlick
+                {
                     LayerKey = RadiationCollectorVisualLayers.Main,
-                    KeyFrames = {new AnimationTrackSpriteFlick.KeyFrame(comp.ActivatingState, 0f)}
-                }, // TODO: Make this play a sound when activating a radiation collector.
+                    KeyFrames = { new(comp.ActivatingState, 0f), }
+                } // TODO: Make this play a sound when activating a radiation collector.
             }
         };
 
-        comp.DeactiveAnimation = new Animation {
+        comp.DeactiveAnimation = new()
+        {
             Length = TimeSpan.FromSeconds(0.8f),
-            AnimationTracks = {
-                new AnimationTrackSpriteFlick() {
+            AnimationTracks =
+            {
+                new AnimationTrackSpriteFlick
+                {
                     LayerKey = RadiationCollectorVisualLayers.Main,
-                    KeyFrames = {new AnimationTrackSpriteFlick.KeyFrame(comp.DeactivatingState, 0f)}
-                }, // TODO: Make this play a sound when deactivating a radiation collector.
+                    KeyFrames = { new(comp.DeactivatingState, 0f), }
+                } // TODO: Make this play a sound when deactivating a radiation collector.
             }
         };
     }
 
-    private void UpdateVisuals(EntityUid uid, RadiationCollectorVisualState state, RadiationCollectorComponent comp, SpriteComponent sprite, AnimationPlayerComponent? animPlayer = null)
+    private void UpdateVisuals(
+        EntityUid uid,
+        RadiationCollectorVisualState state,
+        RadiationCollectorComponent comp,
+        SpriteComponent sprite,
+        AnimationPlayerComponent? animPlayer = null
+    )
     {
         if (state == comp.CurrentState)
             return;
@@ -46,10 +63,11 @@ public sealed class RadiationCollectorSystem : VisualizerSystem<RadiationCollect
         if (AnimationSystem.HasRunningAnimation(uid, animPlayer, RadiationCollectorComponent.AnimationKey))
             return;
 
-        var targetState = (RadiationCollectorVisualState) (state & RadiationCollectorVisualState.Active);
-        var destinationState = (RadiationCollectorVisualState) (comp.CurrentState & RadiationCollectorVisualState.Active);
-        if (targetState != destinationState) // If where we're going is not where we want to be then we must go there next.
-            targetState = (RadiationCollectorVisualState) (targetState | RadiationCollectorVisualState.Deactivating); // Convert to transition state.
+        var targetState = state & RadiationCollectorVisualState.Active;
+        var destinationState = comp.CurrentState & RadiationCollectorVisualState.Active;
+        if (targetState !=
+            destinationState) // If where we're going is not where we want to be then we must go there next.
+            targetState = targetState | RadiationCollectorVisualState.Deactivating; // Convert to transition state.
 
         comp.CurrentState = state;
 
@@ -80,23 +98,34 @@ public sealed class RadiationCollectorSystem : VisualizerSystem<RadiationCollect
         if (!TryComp<AnimationPlayerComponent>(uid, out var animPlayer))
             return; // Why doesn't AnimationCompletedEvent propagate the AnimationPlayerComponent? No idea, but it's in engine so I'm not touching it.
 
-        if (!AppearanceSystem.TryGetData<RadiationCollectorVisualState>(uid, RadiationCollectorVisuals.VisualState, out var state))
+        if (!AppearanceSystem.TryGetData<RadiationCollectorVisualState>(
+            uid,
+            RadiationCollectorVisuals.VisualState,
+            out var state))
             state = comp.CurrentState;
 
         // Convert to terminal state.
-        var targetState = (RadiationCollectorVisualState) (state & RadiationCollectorVisualState.Active);
+        var targetState = state & RadiationCollectorVisualState.Active;
 
         UpdateVisuals(uid, targetState, comp, sprite, animPlayer);
     }
 
-    protected override void OnAppearanceChange(EntityUid uid, RadiationCollectorComponent comp, ref AppearanceChangeEvent args)
+    protected override void OnAppearanceChange(
+        EntityUid uid,
+        RadiationCollectorComponent comp,
+        ref AppearanceChangeEvent args
+    )
     {
         if (args.Sprite == null)
             return;
         if (!TryComp<AnimationPlayerComponent>(uid, out var animPlayer))
             return;
 
-        if (!AppearanceSystem.TryGetData<RadiationCollectorVisualState>(uid, RadiationCollectorVisuals.VisualState, out var state, args.Component))
+        if (!AppearanceSystem.TryGetData<RadiationCollectorVisualState>(
+            uid,
+            RadiationCollectorVisuals.VisualState,
+            out var state,
+            args.Component))
             state = RadiationCollectorVisualState.Deactive;
 
         UpdateVisuals(uid, state, comp, args.Sprite, animPlayer);

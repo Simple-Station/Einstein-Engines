@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿#region
+
+using System.Linq;
 using System.Numerics;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.WhiteDream.BloodCult.Runes;
@@ -10,9 +12,13 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Prototypes;
 
+#endregion
+
+
 // ReSharper disable InconsistentNaming
 
 namespace Content.Client.WhiteDream.BloodCult.Runes.UI;
+
 
 [UsedImplicitly]
 public sealed class RuneDrawerBUI : BoundUserInterface
@@ -76,7 +82,7 @@ public sealed class RuneDrawerBUI : BoundUserInterface
             var button = new RadialMenuTextureButton
             {
                 ToolTip = Loc.GetString(proto.Name),
-                StyleClasses = { "RadialMenuButton" },
+                StyleClasses = { "RadialMenuButton", },
                 SetSize = itemSize
             };
 

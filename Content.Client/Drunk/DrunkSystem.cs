@@ -1,9 +1,15 @@
+#region
+
 using Content.Shared.Drunk;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Shared.Player;
 
+#endregion
+
+
 namespace Content.Client.Drunk;
+
 
 public sealed class DrunkSystem : SharedDrunkSystem
 {
@@ -25,10 +31,8 @@ public sealed class DrunkSystem : SharedDrunkSystem
         _overlay = new();
     }
 
-    private void OnPlayerAttached(EntityUid uid, DrunkComponent component, LocalPlayerAttachedEvent args)
-    {
+    private void OnPlayerAttached(EntityUid uid, DrunkComponent component, LocalPlayerAttachedEvent args) =>
         _overlayMan.AddOverlay(_overlay);
-    }
 
     private void OnPlayerDetached(EntityUid uid, DrunkComponent component, LocalPlayerDetachedEvent args)
     {

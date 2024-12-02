@@ -1,9 +1,14 @@
+#region
+
 using System.Numerics;
 using Content.Client.UserInterface.Systems.Chat.Widgets;
 using Robust.Client.UserInterface;
-using Robust.Client.UserInterface.Controls;
+
+#endregion
+
 
 namespace Content.Client.UserInterface.Screens;
+
 
 /// <summary>
 ///     Screens that are considered to be 'in-game'.

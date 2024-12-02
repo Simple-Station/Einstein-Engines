@@ -1,24 +1,26 @@
+#region
+
 using Content.Shared.Anomaly;
 using JetBrains.Annotations;
-using Robust.Client.GameObjects;
+
+#endregion
+
 
 namespace Content.Client.Anomaly.Ui;
+
 
 [UsedImplicitly]
 public sealed class AnomalyScannerBoundUserInterface : BoundUserInterface
 {
     private AnomalyScannerMenu? _menu;
 
-    public AnomalyScannerBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-    {
-
-    }
+    public AnomalyScannerBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
 
     protected override void Open()
     {
         base.Open();
 
-        _menu = new AnomalyScannerMenu();
+        _menu = new();
         _menu.OpenCentered();
     }
 
@@ -45,4 +47,3 @@ public sealed class AnomalyScannerBoundUserInterface : BoundUserInterface
         _menu?.Dispose();
     }
 }
-

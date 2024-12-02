@@ -1,9 +1,15 @@
+#region
+
 using Content.Client.Eui;
 using Content.Shared.CrewManifest;
 using Content.Shared.Eui;
 using JetBrains.Annotations;
 
+#endregion
+
+
 namespace Content.Client.CrewManifest;
+
 
 [UsedImplicitly]
 public sealed class CrewManifestEui : BaseEui
@@ -39,9 +45,7 @@ public sealed class CrewManifestEui : BaseEui
         base.HandleState(state);
 
         if (state is not CrewManifestEuiState cast)
-        {
             return;
-        }
 
         _window.Populate(cast.StationName, cast.Entries);
     }

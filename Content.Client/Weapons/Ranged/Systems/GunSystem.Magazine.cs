@@ -1,6 +1,12 @@
+#region
+
 using Content.Shared.Weapons.Ranged;
 
+#endregion
+
+
 namespace Content.Client.Weapons.Ranged.Systems;
+
 
 public sealed partial class GunSystem
 {
@@ -11,21 +17,23 @@ public sealed partial class GunSystem
         SubscribeLocalEvent<MagazineAmmoProviderComponent, AmmoCounterControlEvent>(OnMagazineControl);
     }
 
-    private void OnMagazineAmmoUpdate(EntityUid uid, MagazineAmmoProviderComponent component, UpdateAmmoCounterEvent args)
+    private void OnMagazineAmmoUpdate(
+        EntityUid uid,
+        MagazineAmmoProviderComponent component,
+        UpdateAmmoCounterEvent args
+    )
     {
         var ent = GetMagazineEntity(uid);
 
         if (ent == null)
         {
             if (args.Control is DefaultStatusControl control)
-            {
                 control.Update(0, 0);
-            }
 
             return;
         }
 
-        RaiseLocalEvent(ent.Value, args, false);
+        RaiseLocalEvent(ent.Value, args);
     }
 
     private void OnMagazineControl(EntityUid uid, MagazineAmmoProviderComponent component, AmmoCounterControlEvent args)
@@ -33,6 +41,6 @@ public sealed partial class GunSystem
         var ent = GetMagazineEntity(uid);
         if (ent == null)
             return;
-        RaiseLocalEvent(ent.Value, args, false);
+        RaiseLocalEvent(ent.Value, args);
     }
 }

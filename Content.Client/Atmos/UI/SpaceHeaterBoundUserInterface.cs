@@ -1,11 +1,17 @@
+#region
+
 using Content.Shared.Atmos.Piping.Portable.Components;
 using JetBrains.Annotations;
 using Robust.Client.UserInterface.Controls;
 
+#endregion
+
+
 namespace Content.Client.Atmos.UI;
 
+
 /// <summary>
-///     Initializes a <see cref="SpaceHeaterWindow"/> and updates it when new server messages are received.
+///     Initializes a <see cref="SpaceHeaterWindow" /> and updates it when new server messages are received.
 /// </summary>
 [UsedImplicitly]
 public sealed class SpaceHeaterBoundUserInterface : BoundUserInterface
@@ -13,15 +19,13 @@ public sealed class SpaceHeaterBoundUserInterface : BoundUserInterface
     [ViewVariables]
     private SpaceHeaterWindow? _window;
 
-    public SpaceHeaterBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-    {
-    }
+    public SpaceHeaterBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
 
     protected override void Open()
     {
         base.Open();
 
-        _window = new SpaceHeaterWindow();
+        _window = new();
 
         if (State != null)
             UpdateState(State);
@@ -44,21 +48,19 @@ public sealed class SpaceHeaterBoundUserInterface : BoundUserInterface
         SendMessage(new SpaceHeaterToggleMessage());
     }
 
-    private void OnTemperatureRangeChanged(float changeAmount)
-    {
+    private void OnTemperatureRangeChanged(float changeAmount) =>
         SendMessage(new SpaceHeaterChangeTemperatureMessage(changeAmount));
-    }
 
     private void OnModeChanged(OptionButton.ItemSelectedEventArgs args)
     {
         _window?.ModeSelector.SelectId(args.Id);
-        SendMessage(new SpaceHeaterChangeModeMessage((SpaceHeaterMode)args.Id));
+        SendMessage(new SpaceHeaterChangeModeMessage((SpaceHeaterMode) args.Id));
     }
 
     private void OnPowerLevelChange(RadioOptionItemSelectedEventArgs<int> args)
     {
         _window?.PowerLevelSelector.Select(args.Id);
-        SendMessage(new SpaceHeaterChangePowerLevelMessage((SpaceHeaterPowerLevel)args.Id));
+        SendMessage(new SpaceHeaterChangePowerLevelMessage((SpaceHeaterPowerLevel) args.Id));
     }
 
     /// <summary>
@@ -72,8 +74,8 @@ public sealed class SpaceHeaterBoundUserInterface : BoundUserInterface
             return;
 
         _window.SetActive(cast.Enabled);
-        _window.ModeSelector.SelectId((int)cast.Mode);
-        _window.PowerLevelSelector.Select((int)cast.PowerLevel);
+        _window.ModeSelector.SelectId((int) cast.Mode);
+        _window.PowerLevelSelector.Select((int) cast.PowerLevel);
 
         _window.MinTemp = cast.MinTemperature;
         _window.MaxTemp = cast.MaxTemperature;

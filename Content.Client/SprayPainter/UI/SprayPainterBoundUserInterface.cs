@@ -1,9 +1,14 @@
+#region
+
 using Content.Shared.SprayPainter;
 using Content.Shared.SprayPainter.Components;
-using Robust.Client.GameObjects;
 using Robust.Client.UserInterface.Controls;
 
+#endregion
+
+
 namespace Content.Client.SprayPainter.UI;
+
 
 public sealed class SprayPainterBoundUserInterface : BoundUserInterface
 {
@@ -13,9 +18,7 @@ public sealed class SprayPainterBoundUserInterface : BoundUserInterface
     [ViewVariables]
     private SprayPainterSystem? _painter;
 
-    public SprayPainterBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-    {
-    }
+    public SprayPainterBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
 
     protected override void Open()
     {
@@ -24,7 +27,7 @@ public sealed class SprayPainterBoundUserInterface : BoundUserInterface
         if (!EntMan.TryGetComponent<SprayPainterComponent>(Owner, out var comp))
             return;
 
-        _window = new SprayPainterWindow();
+        _window = new();
 
         _painter = EntMan.System<SprayPainterSystem>();
 
@@ -44,10 +47,8 @@ public sealed class SprayPainterBoundUserInterface : BoundUserInterface
         _window?.Dispose();
     }
 
-    private void OnSpritePicked(ItemList.ItemListSelectedEventArgs args)
-    {
+    private void OnSpritePicked(ItemList.ItemListSelectedEventArgs args) =>
         SendMessage(new SprayPainterSpritePickedMessage(args.ItemIndex));
-    }
 
     private void OnColorPicked(ItemList.ItemListSelectedEventArgs args)
     {

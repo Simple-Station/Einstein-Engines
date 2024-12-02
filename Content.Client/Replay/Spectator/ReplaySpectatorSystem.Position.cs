@@ -1,3 +1,5 @@
+#region
+
 using Content.Shared.Movement.Components;
 using Robust.Shared.GameStates;
 using Robust.Shared.Map;
@@ -5,26 +7,30 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 
+#endregion
+
+
 namespace Content.Client.Replay.Spectator;
+
 
 // This partial class contains functions for getting and setting the spectator's position data, so that
 // a consistent view/camera can be maintained when jumping around in time.
 public sealed partial class ReplaySpectatorSystem
 {
     /// <summary>
-    /// Simple struct containing position & rotation data for maintaining a persistent view when jumping around in time.
+    ///     Simple struct containing position & rotation data for maintaining a persistent view when jumping around in time.
     /// </summary>
     public struct SpectatorData
     {
         // TODO REPLAYS handle ghost-following.
 
         /// <summary>
-        /// The current entity being spectated.
+        ///     The current entity being spectated.
         /// </summary>
         public EntityUid Entity;
 
         /// <summary>
-        /// The player that was originally controlling <see cref="Entity"/>
+        ///     The player that was originally controlling <see cref="Entity" />
         /// </summary>
         public NetUserId Controller;
 
@@ -56,10 +62,7 @@ public sealed partial class ReplaySpectatorSystem
         return data;
     }
 
-    private void OnBeforeSetTick()
-    {
-        _spectatorData = GetSpectatorData();
-    }
+    private void OnBeforeSetTick() => _spectatorData = GetSpectatorData();
 
     private void OnAfterSetTick()
     {
@@ -78,7 +81,7 @@ public sealed partial class ReplaySpectatorSystem
         if (_player.LocalUser != DefaultUser)
             return; // Already spectating some session.
 
-        if (_player.LocalEntity is not {} uid)
+        if (_player.LocalEntity is not { } uid)
             return;
 
         var netEnt = GetNetEntity(uid);
@@ -156,7 +159,7 @@ public sealed partial class ReplaySpectatorSystem
     {
         if (_replayPlayback.TryGetRecorderEntity(out var recorder))
         {
-            coords = new EntityCoordinates(recorder.Value, default);
+            coords = new(recorder.Value, default);
             return true;
         }
 
@@ -174,7 +177,7 @@ public sealed partial class ReplaySpectatorSystem
             }
         }
 
-        coords = new EntityCoordinates(maxUid ?? default, default);
+        coords = new(maxUid ?? default, default);
         return maxUid != null;
     }
 
@@ -187,7 +190,7 @@ public sealed partial class ReplaySpectatorSystem
         if (xform.MapUid == null || Terminating(xform.MapUid.Value))
             return;
 
-        SpawnSpectatorGhost(new EntityCoordinates(xform.MapUid.Value, default), true);
+        SpawnSpectatorGhost(new(xform.MapUid.Value, default), true);
     }
 
     private void OnParentChanged(EntityUid uid, ReplaySpectatorComponent component, ref EntParentChangedMessage args)

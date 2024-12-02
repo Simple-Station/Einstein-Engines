@@ -1,13 +1,19 @@
-﻿using Content.Client.Lathe.UI;
+﻿#region
+
+using Content.Client.Lathe.UI;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.ListViewSelector;
 using JetBrains.Annotations;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Prototypes;
 
+#endregion
+
+
 // ReSharper disable InconsistentNaming
 
 namespace Content.Client.ListViewSelector;
+
 
 [UsedImplicitly]
 public sealed class ListViewSelectorBUI(EntityUid owner, Enum uiKey) : BoundUserInterface(owner, uiKey)
@@ -92,7 +98,7 @@ public sealed class ListViewSelectorBUI(EntityUid owner, Enum uiKey) : BoundUser
 
             var button = new Button
             {
-                Text = itemName,
+                Text = itemName
             };
 
             if (!string.IsNullOrEmpty(itemDesc))

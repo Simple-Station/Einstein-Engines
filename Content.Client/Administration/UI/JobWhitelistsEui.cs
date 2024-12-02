@@ -1,16 +1,22 @@
+#region
+
 using Content.Client.Eui;
 using Content.Shared.Administration;
 using Content.Shared.Eui;
 
+#endregion
+
+
 namespace Content.Client.Administration.UI;
+
 
 public sealed class JobWhitelistsEui : BaseEui
 {
-    private JobWhitelistsWindow Window;
+    private readonly JobWhitelistsWindow Window;
 
     public JobWhitelistsEui()
     {
-        Window = new JobWhitelistsWindow();
+        Window = new();
         Window.OnClose += () => SendMessage(new CloseEuiMessage());
         Window.OnSetJob += (id, whitelisted) => SendMessage(new SetJobWhitelistedMessage(id, whitelisted));
     }

@@ -1,3 +1,5 @@
+#region
+
 using Content.Shared.Rounding;
 using Content.Shared.Stacks;
 using Content.Shared.Storage.Components;
@@ -5,7 +7,11 @@ using Content.Shared.Storage.EntitySystems;
 using Robust.Client.GameObjects;
 using Robust.Shared.Containers;
 
+#endregion
+
+
 namespace Content.Client.Storage.Systems;
+
 
 public sealed class ItemCounterSystem : SharedItemCounterSystem
 {
@@ -31,34 +37,47 @@ public sealed class ItemCounterSystem : SharedItemCounterSystem
 
         if (!_appearanceSystem.TryGetData<bool>(uid, StackVisuals.Hide, out var hidden, args.Component))
             hidden = false;
-        
+
         if (comp.IsComposite)
-            ProcessCompositeSprite(uid, actual, maxCount, comp.LayerStates, hidden, sprite: args.Sprite);
+            ProcessCompositeSprite(uid, actual, maxCount, comp.LayerStates, hidden, args.Sprite);
         else
-            ProcessOpaqueSprite(uid, comp.BaseLayer, actual, maxCount, comp.LayerStates, hidden, sprite: args.Sprite);
+            ProcessOpaqueSprite(uid, comp.BaseLayer, actual, maxCount, comp.LayerStates, hidden, args.Sprite);
     }
 
-    public void ProcessOpaqueSprite(EntityUid uid, string layer, int count, int maxCount, List<string> states, bool hide = false, SpriteComponent? sprite = null)
+    public void ProcessOpaqueSprite(
+        EntityUid uid,
+        string layer,
+        int count,
+        int maxCount,
+        List<string> states,
+        bool hide = false,
+        SpriteComponent? sprite = null
+    )
     {
         if (!Resolve(uid, ref sprite)
-        ||  !sprite.LayerMapTryGet(layer, out var layerKey, logError: true))
+            || !sprite.LayerMapTryGet(layer, out var layerKey, true))
             return;
-        
+
         var activeState = ContentHelpers.RoundToEqualLevels(count, maxCount, states.Count);
         sprite.LayerSetState(layerKey, states[activeState]);
         sprite.LayerSetVisible(layerKey, !hide);
     }
 
-    public void ProcessCompositeSprite(EntityUid uid, int count, int maxCount, List<string> layers, bool hide = false, SpriteComponent? sprite = null)
+    public void ProcessCompositeSprite(
+        EntityUid uid,
+        int count,
+        int maxCount,
+        List<string> layers,
+        bool hide = false,
+        SpriteComponent? sprite = null
+    )
     {
-        if(!Resolve(uid, ref sprite))
+        if (!Resolve(uid, ref sprite))
             return;
-        
+
         var activeTill = ContentHelpers.RoundToNearestLevels(count, maxCount, layers.Count);
-        for(var i = 0; i < layers.Count; ++i)
-        {
+        for (var i = 0; i < layers.Count; ++i)
             sprite.LayerSetVisible(layers[i], !hide && i < activeTill);
-        }
     }
 
     protected override int? GetCount(ContainerModifiedMessage msg, ItemCounterComponent itemCounter)

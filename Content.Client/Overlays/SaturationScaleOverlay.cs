@@ -1,18 +1,23 @@
-﻿using System.Numerics;
+﻿#region
+
+using System.Numerics;
+using Content.Shared.Overlays;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
-using Content.Shared.Mood;
-using Content.Shared.Overlays;
+
+#endregion
+
 
 namespace Content.Client.Overlays;
+
 
 public sealed class SaturationScaleOverlay : Overlay
 {
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
-    [Dependency] IEntityManager _entityManager = default!;
+    [Dependency] private readonly IEntityManager _entityManager = default!;
 
     public override bool RequestScreenTexture => true;
     public override OverlaySpace Space => OverlaySpace.WorldSpace;
@@ -29,7 +34,7 @@ public sealed class SaturationScaleOverlay : Overlay
 
     protected override bool BeforeDraw(in OverlayDrawArgs args)
     {
-        if (_playerManager.LocalEntity is not { Valid: true } player
+        if (_playerManager.LocalEntity is not { Valid: true, } player
             || !_entityManager.HasComponent<SaturationScaleOverlayComponent>(player))
             return false;
 

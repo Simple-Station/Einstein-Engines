@@ -1,8 +1,13 @@
-﻿using Content.Shared.Administration.Logs;
+﻿#region
+
 using Content.Shared.Database;
 using Robust.Client.UserInterface.Controls;
 
+#endregion
+
+
 namespace Content.Client.Administration.UI.CustomControls;
+
 
 public sealed class AdminLogTypeButton : Button
 {

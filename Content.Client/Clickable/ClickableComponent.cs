@@ -1,5 +1,6 @@
 namespace Content.Client.Clickable;
 
+
 [RegisterComponent]
 public sealed partial class ClickableComponent : Component
 {

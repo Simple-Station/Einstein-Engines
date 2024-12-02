@@ -1,3 +1,5 @@
+#region
+
 using Content.Shared.Explosion;
 using Content.Shared.Explosion.Components;
 using Robust.Client.Graphics;
@@ -7,7 +9,11 @@ using Robust.Shared.Graphics.RSI;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 
+#endregion
+
+
 namespace Content.Client.Explosion;
+
 
 /// <summary>
 ///     This system is responsible for showing the client-side explosion effects (light source & fire-overlay). The
@@ -31,7 +37,11 @@ public sealed class ExplosionOverlaySystem : EntitySystem
         _overlayMan.AddOverlay(new ExplosionOverlay());
     }
 
-    private void OnExplosionHandleState(EntityUid uid, ExplosionVisualsComponent component, ref ComponentHandleState args)
+    private void OnExplosionHandleState(
+        EntityUid uid,
+        ExplosionVisualsComponent component,
+        ref ComponentHandleState args
+    )
     {
         if (args.Current is not ExplosionVisualsState state)
             return;
@@ -41,9 +51,7 @@ public sealed class ExplosionOverlaySystem : EntitySystem
         component.Tiles.Clear();
 
         foreach (var (nent, data) in state.Tiles)
-        {
             component.Tiles[GetEntity(nent)] = data;
-        }
 
         component.Intensity = state.Intensity;
         component.ExplosionType = state.ExplosionType;
@@ -63,9 +71,7 @@ public sealed class ExplosionOverlaySystem : EntitySystem
 
         if (!_protoMan.TryIndex(component.ExplosionType, out ExplosionPrototype? type) ||
             !TryComp(uid, out ExplosionVisualsTexturesComponent? textures))
-        {
             return;
-        }
 
         // Map may have been deleted.
         if (_mapMan.MapExists(component.Epicenter.MapId))

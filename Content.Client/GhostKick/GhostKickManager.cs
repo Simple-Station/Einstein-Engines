@@ -1,10 +1,16 @@
-﻿using Content.Shared.GhostKick;
+﻿#region
+
+using Content.Shared.GhostKick;
 using Robust.Client;
 using Robust.Shared;
 using Robust.Shared.Configuration;
 using Robust.Shared.Network;
 
+#endregion
+
+
 namespace Content.Client.GhostKick;
+
 
 public sealed class GhostKickManager
 {

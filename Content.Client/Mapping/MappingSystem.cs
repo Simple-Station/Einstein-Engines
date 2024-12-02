@@ -1,3 +1,5 @@
+#region
+
 using Content.Client.Actions;
 using Content.Shared.Actions;
 using Content.Shared.Mapping;
@@ -7,9 +9,13 @@ using Robust.Shared.Map;
 using Robust.Shared.Utility;
 using static Robust.Shared.Utility.SpriteSpecifier;
 
+#endregion
+
+
 namespace Content.Client.Mapping;
 
-public sealed partial class MappingSystem : EntitySystem
+
+public sealed class MappingSystem : EntitySystem
 {
     [Dependency] private readonly IPlacementManager _placementMan = default!;
     [Dependency] private readonly ITileDefinitionManager _tileMan = default!;
@@ -19,12 +25,12 @@ public sealed partial class MappingSystem : EntitySystem
     /// <summary>
     ///     The icon to use for space tiles.
     /// </summary>
-    private readonly SpriteSpecifier _spaceIcon = new Texture(new ("Tiles/cropped_parallax.png"));
+    private readonly SpriteSpecifier _spaceIcon = new Texture(new("Tiles/cropped_parallax.png"));
 
     /// <summary>
     ///     The icon to use for entity-eraser.
     /// </summary>
-    private readonly SpriteSpecifier _deleteIcon = new Texture(new ("Interface/VerbIcons/delete.svg.192dpi.png"));
+    private readonly SpriteSpecifier _deleteIcon = new Texture(new("Interface/VerbIcons/delete.svg.192dpi.png"));
 
     public string DefaultMappingActions = "/mapping_actions.yml";
 
@@ -36,10 +42,7 @@ public sealed partial class MappingSystem : EntitySystem
         SubscribeLocalEvent<StartPlacementActionEvent>(OnStartPlacementAction);
     }
 
-    public void LoadMappingActions()
-    {
-        _actionsSystem.LoadActionAssignments(DefaultMappingActions, false);
-    }
+    public void LoadMappingActions() => _actionsSystem.LoadActionAssignments(DefaultMappingActions, false);
 
     /// <summary>
     ///     This checks if the placement manager is currently active, and attempts to copy the placement information for
@@ -69,9 +72,7 @@ public sealed partial class MappingSystem : EntitySystem
             }
         }
         else if (_placementMan.Eraser)
-        {
             actionEvent.Eraser = true;
-        }
         else
             return;
 
@@ -87,7 +88,7 @@ public sealed partial class MappingSystem : EntitySystem
                 ? _spaceIcon
                 : new Texture(contentTileDef.Sprite!.Value);
 
-            action = new InstantActionComponent
+            action = new()
             {
                 ClientExclusive = true,
                 CheckCanInteract = false,
@@ -99,12 +100,12 @@ public sealed partial class MappingSystem : EntitySystem
         }
         else if (actionEvent.Eraser)
         {
-            action = new InstantActionComponent
+            action = new()
             {
                 ClientExclusive = true,
                 CheckCanInteract = false,
                 Event = actionEvent,
-                Icon = _deleteIcon,
+                Icon = _deleteIcon
             };
 
             name = Loc.GetString("action-name-mapping-erase");
@@ -114,18 +115,18 @@ public sealed partial class MappingSystem : EntitySystem
             if (string.IsNullOrWhiteSpace(actionEvent.EntityType))
                 return;
 
-            action = new InstantActionComponent
+            action = new()
             {
                 ClientExclusive = true,
                 CheckCanInteract = false,
                 Event = actionEvent,
-                Icon = new EntityPrototype(actionEvent.EntityType),
+                Icon = new EntityPrototype(actionEvent.EntityType)
             };
 
             name = actionEvent.EntityType;
         }
 
-        var actionId = Spawn(null);
+        var actionId = Spawn();
         AddComp<Component>(actionId, action);
         _metaData.SetEntityName(actionId, name);
 
@@ -139,13 +140,14 @@ public sealed partial class MappingSystem : EntitySystem
 
         args.Handled = true;
 
-        _placementMan.BeginPlacing(new()
-        {
-            EntityType = args.EntityType,
-            IsTile = args.TileId != null,
-            TileType = args.TileId != null ? _tileMan[args.TileId].TileId : (ushort) 0,
-            PlacementOption = args.PlacementOption,
-        });
+        _placementMan.BeginPlacing(
+            new()
+            {
+                EntityType = args.EntityType,
+                IsTile = args.TileId != null,
+                TileType = args.TileId != null ? _tileMan[args.TileId].TileId : 0,
+                PlacementOption = args.PlacementOption
+            });
 
         if (_placementMan.Eraser != args.Eraser)
             _placementMan.ToggleEraser();

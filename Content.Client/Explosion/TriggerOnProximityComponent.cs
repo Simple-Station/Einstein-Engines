@@ -1,7 +1,12 @@
-using Content.Shared.Explosion;
+#region
+
 using Content.Shared.Explosion.Components;
+
+#endregion
+
 
 namespace Content.Client.Explosion;
 
-[RegisterComponent, Access(typeof(TriggerSystem))]
-public sealed partial class TriggerOnProximityComponent : SharedTriggerOnProximityComponent {}
+
+[RegisterComponent, Access(typeof(TriggerSystem)),]
+public sealed partial class TriggerOnProximityComponent : SharedTriggerOnProximityComponent { }

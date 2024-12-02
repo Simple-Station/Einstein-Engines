@@ -1,10 +1,14 @@
-using Content.Client.Shuttles.UI;
+#region
+
 using Content.Shared.Shuttles.BUIStates;
 using JetBrains.Annotations;
-using Robust.Client.GameObjects;
 using RadarConsoleWindow = Content.Client.Shuttles.UI.RadarConsoleWindow;
 
+#endregion
+
+
 namespace Content.Client.Shuttles.BUI;
+
 
 [UsedImplicitly]
 public sealed class RadarConsoleBoundUserInterface : BoundUserInterface
@@ -12,15 +16,13 @@ public sealed class RadarConsoleBoundUserInterface : BoundUserInterface
     [ViewVariables]
     private RadarConsoleWindow? _window;
 
-    public RadarConsoleBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-    {
-    }
+    public RadarConsoleBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
 
     protected override void Open()
     {
         base.Open();
 
-        _window = new RadarConsoleWindow();
+        _window = new();
         _window.OnClose += Close;
         _window.OpenCentered();
     }
@@ -29,9 +31,7 @@ public sealed class RadarConsoleBoundUserInterface : BoundUserInterface
     {
         base.Dispose(disposing);
         if (disposing)
-        {
             _window?.Dispose();
-        }
     }
 
     protected override void UpdateState(BoundUserInterfaceState state)

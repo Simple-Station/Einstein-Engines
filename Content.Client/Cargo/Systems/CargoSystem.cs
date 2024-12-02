@@ -1,7 +1,13 @@
+#region
+
 using Content.Shared.Cargo;
 using Robust.Client.GameObjects;
 
+#endregion
+
+
 namespace Content.Client.Cargo.Systems;
+
 
 public sealed partial class CargoSystem : SharedCargoSystem
 {

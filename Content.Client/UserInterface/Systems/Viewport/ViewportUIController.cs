@@ -1,3 +1,5 @@
+#region
+
 using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.Gameplay;
 using Content.Shared.CCVar;
@@ -7,7 +9,11 @@ using Robust.Client.UserInterface.Controllers;
 using Robust.Shared.Configuration;
 using Robust.Shared.Timing;
 
+#endregion
+
+
 namespace Content.Client.UserInterface.Systems.Viewport;
+
 
 public sealed class ViewportUIController : UIController
 {
@@ -31,42 +37,33 @@ public sealed class ViewportUIController : UIController
         gameplayStateLoad.OnScreenLoad += OnScreenLoad;
     }
 
-    private void OnScreenLoad()
-    {
-        ReloadViewport();
-    }
+    private void OnScreenLoad() => ReloadViewport();
 
     private void UpdateViewportRatio()
     {
         if (Viewport == null)
-        {
             return;
-        }
 
         var min = _configurationManager.GetCVar(CCVars.ViewportMinimumWidth);
         var max = _configurationManager.GetCVar(CCVars.ViewportMaximumWidth);
         var width = _configurationManager.GetCVar(CCVars.ViewportWidth);
-        var verticalfit = _configurationManager.GetCVar(CCVars.ViewportVerticalFit) && _configurationManager.GetCVar(CCVars.ViewportStretch);
+        var verticalfit = _configurationManager.GetCVar(CCVars.ViewportVerticalFit) &&
+            _configurationManager.GetCVar(CCVars.ViewportStretch);
 
         if (verticalfit)
-        {
             width = max;
-        }
         else if (width < min || width > max)
-        {
             width = CCVars.ViewportWidth.DefaultValue;
-        }
 
-        Viewport.Viewport.ViewportSize = (EyeManager.PixelsPerMeter * width, EyeManager.PixelsPerMeter * ViewportHeight);
+        Viewport.Viewport.ViewportSize =
+            (EyeManager.PixelsPerMeter * width, EyeManager.PixelsPerMeter * ViewportHeight);
         Viewport.UpdateCfg();
     }
 
     public void ReloadViewport()
     {
         if (Viewport == null)
-        {
             return;
-        }
 
         UpdateViewportRatio();
         Viewport.Viewport.HorizontalExpand = true;
@@ -77,9 +74,7 @@ public sealed class ViewportUIController : UIController
     public override void FrameUpdate(FrameEventArgs e)
     {
         if (Viewport == null)
-        {
             return;
-        }
 
         base.FrameUpdate(e);
 
@@ -99,6 +94,7 @@ public sealed class ViewportUIController : UIController
 
         // Currently, this shouldn't happen. This likely happened because the main eye was set to null. When this
         // does happen it can create hard to troubleshoot bugs, so lets print some helpful warnings:
-        Logger.Warning($"Main viewport's eye is in nullspace (main eye is null?). Attached entity: {_entMan.ToPrettyString(ent.Value)}. Entity has eye comp: {eye != null}");
+        Logger.Warning(
+            $"Main viewport's eye is in nullspace (main eye is null?). Attached entity: {_entMan.ToPrettyString(ent.Value)}. Entity has eye comp: {eye != null}");
     }
 }

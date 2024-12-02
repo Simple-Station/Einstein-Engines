@@ -1,3 +1,5 @@
+#region
+
 using System.Numerics;
 using Content.Shared.Shuttles.Components;
 using Robust.Client.GameObjects;
@@ -7,26 +9,30 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
+#endregion
+
+
 namespace Content.Client.Shuttles;
 
+
 /// <summary>
-/// Plays a visualization whenever a shuttle is arriving from FTL.
+///     Plays a visualization whenever a shuttle is arriving from FTL.
 /// </summary>
 public sealed class FtlArrivalOverlay : Overlay
 {
     public override OverlaySpace Space => OverlaySpace.WorldSpaceBelowEntities;
 
-    private EntityLookupSystem _lookups;
-    private SharedMapSystem _maps;
-    private SharedTransformSystem _transforms;
-    private SpriteSystem _sprites;
+    private readonly EntityLookupSystem _lookups;
+    private readonly SharedMapSystem _maps;
+    private readonly SharedTransformSystem _transforms;
+    private readonly SpriteSystem _sprites;
     [Dependency] private readonly IEntityManager _entManager = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPrototypeManager _protos = default!;
 
     private readonly HashSet<Entity<FtlVisualizerComponent>> _visualizers = new();
 
-    private ShaderInstance _shader;
+    private readonly ShaderInstance _shader;
 
     public FtlArrivalOverlay()
     {
@@ -58,7 +64,7 @@ public sealed class FtlArrivalOverlay : Overlay
             if (!_entManager.TryGetComponent(grid, out MapGridComponent? mapGrid))
                 continue;
 
-            var texture = _sprites.GetFrame(comp.Sprite, TimeSpan.FromSeconds(comp.Elapsed), loop: false);
+            var texture = _sprites.GetFrame(comp.Sprite, TimeSpan.FromSeconds(comp.Elapsed), false);
             comp.Elapsed += (float) _timing.FrameTime.TotalSeconds;
 
             // Need to manually transform the viewport in terms of the visualizer entity as the grid isn't in position.

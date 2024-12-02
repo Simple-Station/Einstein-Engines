@@ -1,9 +1,15 @@
-﻿using Content.Shared.Chasm;
+﻿#region
+
+using Content.Shared.Chasm;
 using Robust.Client.Animations;
 using Robust.Client.GameObjects;
 using Robust.Shared.Animations;
 
+#endregion
+
+
 namespace Content.Client.Chasm;
+
 
 /// <summary>
 ///     Handles the falling animation for entities that fall into a chasm.
@@ -52,19 +58,19 @@ public sealed class ChasmFallingVisualsSystem : EntitySystem
     {
         var length = component.AnimationTime;
 
-        return new Animation()
+        return new()
         {
             Length = length,
             AnimationTracks =
             {
-                new AnimationTrackComponentProperty()
+                new AnimationTrackComponentProperty
                 {
                     ComponentType = typeof(SpriteComponent),
                     Property = nameof(SpriteComponent.Scale),
                     KeyFrames =
                     {
-                        new AnimationTrackProperty.KeyFrame(component.OriginalScale, 0.0f),
-                        new AnimationTrackProperty.KeyFrame(component.AnimationScale, length.Seconds),
+                        new(component.OriginalScale, 0.0f),
+                        new(component.AnimationScale, length.Seconds)
                     },
                     InterpolationMode = AnimationInterpolationMode.Cubic
                 }

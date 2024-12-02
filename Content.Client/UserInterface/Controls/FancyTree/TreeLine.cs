@@ -1,14 +1,21 @@
+#region
+
 using Robust.Client.Graphics;
 using Robust.Client.UserInterface;
 using Robust.Shared.Utility;
 
+#endregion
+
+
 namespace Content.Client.UserInterface.Controls.FancyTree;
+
 
 /// <summary>
 ///     This is a basic control that draws the lines connecting parents & children in a tree.
 /// </summary>
 /// <remarks>
-///     Ideally this would just be a draw method in <see cref="TreeItem"/>, but sadly the draw override gets called BEFORE children are drawn.
+///     Ideally this would just be a draw method in <see cref="TreeItem" />, but sadly the draw override gets called BEFORE
+///     children are drawn.
 /// </remarks>
 public sealed class TreeLine : Control
 {
@@ -54,7 +61,7 @@ public sealed class TreeLine : Control
             var item = (TreeItem) child;
             var pos = item.Button.GlobalPixelPosition - global;
             var y = pos.Y + item.Button.PixelSize.Y / 2;
-            rect = new UIBox2i((x - w1, y - w1), (x + dx, y + w2));
+            rect = new((x - w1, y - w1), (x + dx, y + w2));
             handle.DrawRect(rect, parent.Tree.LineColor);
         }
     }

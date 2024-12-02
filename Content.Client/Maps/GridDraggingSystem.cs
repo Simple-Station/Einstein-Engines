@@ -1,3 +1,5 @@
+#region
+
 using System.Numerics;
 using Content.Shared.Maps;
 using Robust.Client.GameObjects;
@@ -8,7 +10,11 @@ using Robust.Shared.Map;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Timing;
 
+#endregion
+
+
 namespace Content.Client.Maps;
+
 
 /// <inheritdoc />
 public sealed class GridDraggingSystem : SharedGridDraggingSystem
@@ -49,17 +55,19 @@ public sealed class GridDraggingSystem : SharedGridDraggingSystem
 
         if (HasComp<PhysicsComponent>(grid))
         {
-            RaiseNetworkEvent(new GridDragVelocityRequest()
-            {
-                Grid = GetNetEntity(grid),
-                LinearVelocity = Vector2.Zero
-            });
+            RaiseNetworkEvent(
+                new GridDragVelocityRequest
+                {
+                    Grid = GetNetEntity(grid),
+                    LinearVelocity = Vector2.Zero
+                });
         }
     }
 
     private void StopDragging()
     {
-        if (_dragging == null) return;
+        if (_dragging == null)
+            return;
 
         if (_lastMousePosition != null && TryComp<TransformComponent>(_dragging.Value, out var xform) &&
             TryComp<PhysicsComponent>(_dragging.Value, out var body) &&
@@ -67,11 +75,14 @@ public sealed class GridDraggingSystem : SharedGridDraggingSystem
         {
             var tickTime = _gameTiming.TickPeriod;
             var distance = _lastMousePosition.Value.Position - xform.WorldPosition;
-            RaiseNetworkEvent(new GridDragVelocityRequest()
-            {
-                Grid = GetNetEntity(_dragging.Value),
-                LinearVelocity = distance.LengthSquared() > 0f ? (distance / (float) tickTime.TotalSeconds) * 0.25f : Vector2.Zero,
-            });
+            RaiseNetworkEvent(
+                new GridDragVelocityRequest
+                {
+                    Grid = GetNetEntity(_dragging.Value),
+                    LinearVelocity = distance.LengthSquared() > 0f
+                        ? distance / (float) tickTime.TotalSeconds * 0.25f
+                        : Vector2.Zero
+                });
         }
 
         _dragging = null;
@@ -83,7 +94,8 @@ public sealed class GridDraggingSystem : SharedGridDraggingSystem
     {
         base.Update(frameTime);
 
-        if (!Enabled || !_gameTiming.IsFirstTimePredicted) return;
+        if (!Enabled || !_gameTiming.IsFirstTimePredicted)
+            return;
 
         var state = _inputSystem.CmdStates.GetState(EngineKeyFunctions.Use);
 
@@ -118,15 +130,17 @@ public sealed class GridDraggingSystem : SharedGridDraggingSystem
 
         var localToWorld = Vector2.Transform(_localPosition, xform.WorldMatrix);
 
-        if (localToWorld.EqualsApprox(mousePos.Position, 0.01f)) return;
+        if (localToWorld.EqualsApprox(mousePos.Position, 0.01f))
+            return;
 
         var requestedGridOrigin = mousePos.Position - xform.WorldRotation.RotateVec(_localPosition);
         _lastMousePosition = new MapCoordinates(requestedGridOrigin, mousePos.MapId);
 
-        RaiseNetworkEvent(new GridDragRequestPosition()
-        {
-            Grid = GetNetEntity(_dragging.Value),
-            WorldPosition = requestedGridOrigin,
-        });
+        RaiseNetworkEvent(
+            new GridDragRequestPosition
+            {
+                Grid = GetNetEntity(_dragging.Value),
+                WorldPosition = requestedGridOrigin
+            });
     }
 }

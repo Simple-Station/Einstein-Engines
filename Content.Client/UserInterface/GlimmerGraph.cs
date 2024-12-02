@@ -1,10 +1,16 @@
-﻿using System.Numerics;
+﻿#region
+
+using System.Numerics;
 using Content.Client.Resources;
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
 
+#endregion
+
+
 namespace Content.Client.UserInterface;
+
 
 public sealed class GlimmerGraph : Control
 {
@@ -26,10 +32,10 @@ public sealed class GlimmerGraph : Control
     protected override void Draw(DrawingHandleScreen handle)
     {
         base.Draw(handle);
-        var box = new UIBox2(new Vector2(XOffset, YOffset), new Vector2(XOffset + Length, YOffsetTop));
+        var box = new UIBox2(new(XOffset, YOffset), new(XOffset + Length, YOffsetTop));
         handle.DrawRect(box, Color.FromHex("#424245"));
         var texture = _resourceCache.GetTexture("/Textures/Interface/glimmerGraph.png");
-        handle.DrawTexture(texture, new Vector2(XOffset, YOffsetTop));
+        handle.DrawTexture(texture, new(XOffset, YOffsetTop));
 
         if (_glimmer.Count < 2)
             return;
@@ -44,9 +50,11 @@ public sealed class GlimmerGraph : Control
             handle.DrawLine(vector1, vector2, Color.FromHex("#A200BB"));
             handle.DrawLine(vector1 + new Vector2(0, 1), vector2 + new Vector2(0, 1), Color.FromHex("#A200BB"));
             handle.DrawLine(vector1 - new Vector2(0, 1), vector2 - new Vector2(0, 1), Color.FromHex("#A200BB"));
-            handle.DrawLine(new Vector2(XOffset + i * spacing, YOffset), new Vector2(XOffset + i * spacing, YOffsetTop), Color.FromHex("#686868"));
+            handle.DrawLine(
+                new(XOffset + i * spacing, YOffset),
+                new(XOffset + i * spacing, YOffsetTop),
+                Color.FromHex("#686868"));
             i++;
         }
     }
 }
-

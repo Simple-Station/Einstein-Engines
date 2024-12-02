@@ -1,3 +1,5 @@
+#region
+
 using Content.Client.ContextMenu.UI;
 using Content.Client.Gameplay;
 using Content.Client.Interactable.Components;
@@ -12,7 +14,11 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.CustomControls;
 using Robust.Shared.Configuration;
 
+#endregion
+
+
 namespace Content.Client.Outline;
+
 
 public sealed class InteractionOutlineSystem : EntitySystem
 {
@@ -30,7 +36,7 @@ public sealed class InteractionOutlineSystem : EntitySystem
     private bool _enabled = true;
 
     /// <summary>
-    ///     Whether to draw the outline at all. Overrides <see cref="_enabled"/>.
+    ///     Whether to draw the outline at all. Overrides <see cref="_enabled" />.
     /// </summary>
     private bool _cvarEnabled = true;
 
@@ -102,7 +108,8 @@ public sealed class InteractionOutlineSystem : EntitySystem
         // Potentially change someday? who knows.
         var currentState = _stateManager.CurrentState;
 
-        if (currentState is not GameplayStateBase screen) return;
+        if (currentState is not GameplayStateBase screen)
+            return;
 
         EntityUid? entityToClick = null;
         var renderScale = 1;
@@ -117,9 +124,7 @@ public sealed class InteractionOutlineSystem : EntitySystem
                 entityToClick = screen.GetClickedEntity(mousePosWorld, svp.Eye);
             }
             else
-            {
                 entityToClick = screen.GetClickedEntity(mousePosWorld);
-            }
         }
         else if (_uiManager.CurrentlyHovered is EntityMenuElement element)
         {
@@ -133,33 +138,25 @@ public sealed class InteractionOutlineSystem : EntitySystem
 
         var inRange = false;
         if (localSession.AttachedEntity != null && !Deleted(entityToClick))
-        {
             inRange = _interactionSystem.InRangeUnobstructed(localSession.AttachedEntity.Value, entityToClick.Value);
-        }
 
         InteractionOutlineComponent? outline;
 
         if (entityToClick == _lastHoveredEntity)
         {
             if (entityToClick != null && TryComp(entityToClick, out outline))
-            {
                 outline.UpdateInRange(entityToClick.Value, inRange, renderScale);
-            }
 
             return;
         }
 
         if (_lastHoveredEntity != null && !Deleted(_lastHoveredEntity) &&
             TryComp(_lastHoveredEntity, out outline))
-        {
             outline.OnMouseLeave(_lastHoveredEntity.Value);
-        }
 
         _lastHoveredEntity = entityToClick;
 
         if (_lastHoveredEntity != null && TryComp(_lastHoveredEntity, out outline))
-        {
             outline.OnMouseEnter(_lastHoveredEntity.Value, inRange, renderScale);
-        }
     }
 }

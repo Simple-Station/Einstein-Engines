@@ -1,6 +1,9 @@
-﻿using Content.Client.Chat.UI;
+﻿#region
+
+using Content.Client.Chat.UI;
 using Content.Client.Gameplay;
 using Content.Client.UserInterface.Controls;
+using Content.Client.UserInterface.Systems.MenuBar.Widgets;
 using Content.Shared.Chat;
 using Content.Shared.Chat.Prototypes;
 using Content.Shared.Input;
@@ -12,7 +15,11 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Prototypes;
 
+#endregion
+
+
 namespace Content.Client.UserInterface.Systems.Emotes;
+
 
 [UsedImplicitly]
 public sealed class EmotesUIController : UIController, IOnStateChanged<GameplayState>
@@ -21,21 +28,17 @@ public sealed class EmotesUIController : UIController, IOnStateChanged<GameplayS
     [Dependency] private readonly IClyde _displayManager = default!;
     [Dependency] private readonly IInputManager _inputManager = default!;
 
-    private MenuButton? EmotesButton => UIManager.GetActiveUIWidgetOrNull<MenuBar.Widgets.GameTopMenuBar>()?.EmotesButton;
+    private MenuButton? EmotesButton => UIManager.GetActiveUIWidgetOrNull<GameTopMenuBar>()?.EmotesButton;
     private EmotesMenu? _menu;
 
-    public void OnStateEntered(GameplayState state)
-    {
+    public void OnStateEntered(GameplayState state) =>
         CommandBinds.Builder
-            .Bind(ContentKeyFunctions.OpenEmotesMenu,
+            .Bind(
+                ContentKeyFunctions.OpenEmotesMenu,
                 InputCmdHandler.FromDelegate(_ => ToggleEmotesMenu(false)))
             .Register<EmotesUIController>();
-    }
 
-    public void OnStateExited(GameplayState state)
-    {
-        CommandBinds.Unregister<EmotesUIController>();
-    }
+    public void OnStateExited(GameplayState state) => CommandBinds.Unregister<EmotesUIController>();
 
     private void ToggleEmotesMenu(bool centered)
     {
@@ -51,9 +54,7 @@ public sealed class EmotesUIController : UIController, IOnStateChanged<GameplayS
                 EmotesButton.SetClickPressed(true);
 
             if (centered)
-            {
                 _menu.OpenCentered();
-            }
             else
             {
                 // Open the menu, centered on the mouse
@@ -90,10 +91,7 @@ public sealed class EmotesUIController : UIController, IOnStateChanged<GameplayS
         EmotesButton.OnPressed += ActionButtonPressed;
     }
 
-    private void ActionButtonPressed(BaseButton.ButtonEventArgs args)
-    {
-        ToggleEmotesMenu(true);
-    }
+    private void ActionButtonPressed(BaseButton.ButtonEventArgs args) => ToggleEmotesMenu(true);
 
     private void OnWindowClosed()
     {
@@ -118,8 +116,6 @@ public sealed class EmotesUIController : UIController, IOnStateChanged<GameplayS
         _menu = null;
     }
 
-    private void OnPlayEmote(ProtoId<EmotePrototype> protoId)
-    {
+    private void OnPlayEmote(ProtoId<EmotePrototype> protoId) =>
         _entityManager.RaisePredictiveEvent(new PlayEmoteMessage(protoId));
-    }
 }

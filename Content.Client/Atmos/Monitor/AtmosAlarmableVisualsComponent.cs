@@ -1,6 +1,12 @@
+#region
+
 using Content.Shared.Atmos.Monitor;
 
+#endregion
+
+
 namespace Content.Client.Atmos.Monitor;
+
 
 [RegisterComponent]
 public sealed partial class AtmosAlarmableVisualsComponent : Component

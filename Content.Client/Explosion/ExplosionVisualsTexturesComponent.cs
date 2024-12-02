@@ -1,7 +1,12 @@
+#region
+
 using Robust.Client.Graphics;
-using Robust.Shared.Graphics;
+
+#endregion
+
 
 namespace Content.Client.Explosion;
+
 
 [RegisterComponent]
 public sealed partial class ExplosionVisualsTexturesComponent : Component
@@ -12,7 +17,8 @@ public sealed partial class ExplosionVisualsTexturesComponent : Component
     public EntityUid LightEntity;
 
     /// <summary>
-    ///     How intense an explosion needs to be at a given tile in order to progress to the next fire-intensity RSI state. See also <see cref="FireFrames"/>
+    ///     How intense an explosion needs to be at a given tile in order to progress to the next fire-intensity RSI state. See
+    ///     also <see cref="FireFrames" />
     /// </summary>
     public float IntensityPerState;
 

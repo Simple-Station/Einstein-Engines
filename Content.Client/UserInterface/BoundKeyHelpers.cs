@@ -1,26 +1,28 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿#region
+
+using System.Diagnostics.CodeAnalysis;
 using Robust.Client.Input;
 using Robust.Shared.Input;
 using Robust.Shared.Utility;
 
+#endregion
+
+
 namespace Content.Client.UserInterface;
+
 
 public static class BoundKeyHelper
 {
-    public static string ShortKeyName(BoundKeyFunction keyFunction)
-    {
+    public static string ShortKeyName(BoundKeyFunction keyFunction) =>
         // need to use shortened key names so they fit in the buttons.
-        return TryGetShortKeyName(keyFunction, out var name) ? Loc.GetString(name) : " ";
-    }
+        TryGetShortKeyName(keyFunction, out var name) ? Loc.GetString(name) : " ";
 
-    public static bool IsBound(BoundKeyFunction keyFunction)
-    {
-        return TryGetShortKeyName(keyFunction, out _);
-    }
+    public static bool IsBound(BoundKeyFunction keyFunction) => TryGetShortKeyName(keyFunction, out _);
 
     private static string? DefaultShortKeyName(BoundKeyFunction keyFunction)
     {
-        var name = FormattedMessage.EscapeText(IoCManager.Resolve<IInputManager>().GetKeyFunctionButtonString(keyFunction));
+        var name = FormattedMessage.EscapeText(
+            IoCManager.Resolve<IInputManager>().GetKeyFunctionButtonString(keyFunction));
         return name.Length > 3 ? null : name;
     }
 

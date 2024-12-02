@@ -1,7 +1,13 @@
-﻿using Content.Client.Administration.Components;
+﻿#region
+
+using Content.Client.Administration.Components;
 using Robust.Client.GameObjects;
 
+#endregion
+
+
 namespace Content.Client.Administration.Systems;
+
 
 public sealed class HeadstandSystem : EntitySystem
 {
@@ -17,9 +23,7 @@ public sealed class HeadstandSystem : EntitySystem
             return;
 
         foreach (var layer in sprite.AllLayers)
-        {
             layer.Rotation += Angle.FromDegrees(180.0f);
-        }
     }
 
     private void OnHeadstandRemoved(EntityUid uid, HeadstandComponent component, ComponentShutdown args)
@@ -28,8 +32,6 @@ public sealed class HeadstandSystem : EntitySystem
             return;
 
         foreach (var layer in sprite.AllLayers)
-        {
             layer.Rotation -= Angle.FromDegrees(180.0f);
-        }
     }
 }

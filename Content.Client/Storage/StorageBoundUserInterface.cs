@@ -1,8 +1,14 @@
+#region
+
 using Content.Client.Storage.Systems;
 using Content.Shared.Storage;
 using JetBrains.Annotations;
 
+#endregion
+
+
 namespace Content.Client.Storage;
+
 
 [UsedImplicitly]
 public sealed class StorageBoundUserInterface : BoundUserInterface
@@ -35,4 +41,3 @@ public sealed class StorageBoundUserInterface : BoundUserInterface
         _storage.CloseStorageWindow(Owner);
     }
 }
-

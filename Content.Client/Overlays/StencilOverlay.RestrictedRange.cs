@@ -1,9 +1,15 @@
+#region
+
 using System.Numerics;
 using Content.Shared.Salvage;
 using Robust.Client.Graphics;
 using Robust.Shared.Utility;
 
+#endregion
+
+
 namespace Content.Client.Overlays;
+
 
 public sealed partial class StencilOverlay
 {
@@ -38,20 +44,23 @@ public sealed partial class StencilOverlay
         // Cut out the irrelevant bits via stencil
         // This is why we don't just use parallax; we might want specific tiles to get drawn over
         // particularly for planet maps or stations.
-        worldHandle.RenderInRenderTarget(_blep!, () =>
-        {
-            worldHandle.UseShader(_shader);
-            worldHandle.DrawRect(localAABB, Color.White);
-        }, Color.Transparent);
+        worldHandle.RenderInRenderTarget(
+            _blep!,
+            () =>
+            {
+                worldHandle.UseShader(_shader);
+                worldHandle.DrawRect(localAABB, Color.White);
+            },
+            Color.Transparent);
 
         worldHandle.SetTransform(Matrix3x2.Identity);
         worldHandle.UseShader(_protoManager.Index<ShaderPrototype>("StencilMask").Instance());
         worldHandle.DrawTextureRect(_blep!.Texture, worldBounds);
         var curTime = _timing.RealTime;
-        var sprite = _sprite.GetFrame(new SpriteSpecifier.Texture(new ResPath("/Textures/Parallaxes/noise.png")), curTime);
+        var sprite = _sprite.GetFrame(new SpriteSpecifier.Texture(new("/Textures/Parallaxes/noise.png")), curTime);
 
         // Draw the rain
         worldHandle.UseShader(_protoManager.Index<ShaderPrototype>("StencilDraw").Instance());
-        _parallax.DrawParallax(worldHandle, worldAABB, sprite, curTime, position, new Vector2(0.5f, 0f));
+        _parallax.DrawParallax(worldHandle, worldAABB, sprite, curTime, position, new(0.5f, 0f));
     }
 }

@@ -1,8 +1,14 @@
+#region
+
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.List;
 using Robust.Shared.Utility;
 
+#endregion
+
+
 namespace Content.Client.Guidebook;
+
 
 [Virtual]
 public class GuideEntry
@@ -10,7 +16,7 @@ public class GuideEntry
     /// <summary>
     ///     The file containing the contents of this guide.
     /// </summary>
-    [DataField("text", required: true)] public ResPath Text = default!;
+    [DataField("text", required: true)] public ResPath Text;
 
     /// <summary>
     ///     The unique id for this guide.
@@ -26,23 +32,24 @@ public class GuideEntry
     /// <summary>
     ///     The "children" of this guide for when guides are shown in a tree / table of contents.
     /// </summary>
-    [DataField("children", customTypeSerializer:typeof(PrototypeIdListSerializer<GuideEntryPrototype>))]
+    [DataField("children", customTypeSerializer: typeof(PrototypeIdListSerializer<GuideEntryPrototype>))]
     public List<string> Children = new();
 
     /// <summary>
     ///     Enable filtering of items.
     /// </summary>
-    [DataField("filterEnabled")] public bool FilterEnabled = default!;
+    [DataField("filterEnabled")] public bool FilterEnabled;
 
     /// <summary>
     ///     Priority for sorting top-level guides when shown in a tree / table of contents.
-    ///     If the guide is the child of some other guide, the order simply determined by the order of children in <see cref="Children"/>.
+    ///     If the guide is the child of some other guide, the order simply determined by the order of children in
+    ///     <see cref="Children" />.
     /// </summary>
-    [DataField("priority")] public int Priority = 0;
+    [DataField("priority")] public int Priority;
 }
 
 [Prototype("guideEntry")]
-public sealed partial class GuideEntryPrototype : GuideEntry, IPrototype
+public sealed class GuideEntryPrototype : GuideEntry, IPrototype
 {
     public string ID => Id;
 }

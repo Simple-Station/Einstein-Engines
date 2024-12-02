@@ -1,3 +1,5 @@
+#region
+
 using Content.Client.Actions;
 using Content.Client.Items;
 using Content.Client.Message;
@@ -14,7 +16,11 @@ using Robust.Shared.Console;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
+#endregion
+
+
 namespace Content.Client.NetworkConfigurator.Systems;
+
 
 public sealed class NetworkConfiguratorSystem : SharedNetworkConfiguratorSystem
 {
@@ -36,19 +42,17 @@ public sealed class NetworkConfiguratorSystem : SharedNetworkConfiguratorSystem
 
     private Control OnCollectItemStatus(Entity<NetworkConfiguratorComponent> entity)
     {
-        _inputManager.TryGetKeyBinding((ContentKeyFunctions.AltUseItemInHand), out var binding);
+        _inputManager.TryGetKeyBinding(ContentKeyFunctions.AltUseItemInHand, out var binding);
         return new StatusControl(entity, binding?.GetKeyString() ?? "");
     }
 
-    public bool ConfiguredListIsTracked(EntityUid uid, NetworkConfiguratorComponent? component = null)
-    {
-        return Resolve(uid, ref component)
-               && component.ActiveDeviceList != null
-               && HasComp<NetworkConfiguratorActiveLinkOverlayComponent>(component.ActiveDeviceList.Value);
-    }
+    public bool ConfiguredListIsTracked(EntityUid uid, NetworkConfiguratorComponent? component = null) =>
+        Resolve(uid, ref component)
+        && component.ActiveDeviceList != null
+        && HasComp<NetworkConfiguratorActiveLinkOverlayComponent>(component.ActiveDeviceList.Value);
 
     /// <summary>
-    /// Toggles a device list's (tied to this network configurator) connection visualisation on and off.
+    ///     Toggles a device list's (tied to this network configurator) connection visualisation on and off.
     /// </summary>
     public void ToggleVisualization(EntityUid uid, bool toggle, NetworkConfiguratorComponent? component = null)
     {
@@ -87,15 +91,11 @@ public sealed class NetworkConfiguratorSystem : SharedNetworkConfiguratorSystem
     public void ClearAllOverlays()
     {
         if (!_overlay.TryGetOverlay(out NetworkConfiguratorLinkOverlay? overlay))
-        {
             return;
-        }
 
         var query = EntityQueryEnumerator<NetworkConfiguratorActiveLinkOverlayComponent>();
         while (query.MoveNext(out var uid, out _))
-        {
             RemCompDeferred<NetworkConfiguratorActiveLinkOverlayComponent>(uid);
-        }
 
         _actions.RemoveAction(overlay.Action);
         _overlay.RemoveOverlay(overlay);
@@ -107,13 +107,13 @@ public sealed class NetworkConfiguratorSystem : SharedNetworkConfiguratorSystem
         private readonly NetworkConfiguratorComponent _configurator;
         private readonly string _keyBindingName;
 
-        private bool? _linkModeActive = null;
+        private bool? _linkModeActive;
 
         public StatusControl(NetworkConfiguratorComponent configurator, string keyBindingName)
         {
             _configurator = configurator;
             _keyBindingName = keyBindingName;
-            _label = new RichTextLabel { StyleClasses = { StyleNano.StyleClassItemStatus } };
+            _label = new() { StyleClasses = { StyleNano.StyleClassItemStatus, }, };
             AddChild(_label);
         }
 
@@ -126,13 +126,15 @@ public sealed class NetworkConfiguratorSystem : SharedNetworkConfiguratorSystem
 
             _linkModeActive = _configurator.LinkModeActive;
 
-            var modeLocString = _linkModeActive??false
+            var modeLocString = _linkModeActive ?? false
                 ? "network-configurator-examine-mode-link"
                 : "network-configurator-examine-mode-list";
 
-            _label.SetMarkup(Robust.Shared.Localization.Loc.GetString("network-configurator-item-status-label",
-                ("mode", Robust.Shared.Localization.Loc.GetString(modeLocString)),
-                ("keybinding", _keyBindingName)));
+            _label.SetMarkup(
+                Robust.Shared.Localization.Loc.GetString(
+                    "network-configurator-item-status-label",
+                    ("mode", Robust.Shared.Localization.Loc.GetString(modeLocString)),
+                    ("keybinding", _keyBindingName)));
         }
     }
 }
@@ -142,8 +144,7 @@ public sealed class ClearAllNetworkLinkOverlays : IConsoleCommand
     public string Command => "clearnetworklinkoverlays";
     public string Description => "Clear all network link overlays.";
     public string Help => Command;
-    public void Execute(IConsoleShell shell, string argStr, string[] args)
-    {
+
+    public void Execute(IConsoleShell shell, string argStr, string[] args) =>
         IoCManager.Resolve<IEntityManager>().System<NetworkConfiguratorSystem>().ClearAllOverlays();
-    }
 }

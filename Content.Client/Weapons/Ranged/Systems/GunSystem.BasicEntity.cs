@@ -1,6 +1,12 @@
-﻿using Content.Shared.Weapons.Ranged.Components;
+﻿#region
+
+using Content.Shared.Weapons.Ranged.Components;
+
+#endregion
+
 
 namespace Content.Client.Weapons.Ranged.Systems;
+
 
 public partial class GunSystem
 {
@@ -10,11 +16,13 @@ public partial class GunSystem
         SubscribeLocalEvent<BasicEntityAmmoProviderComponent, UpdateAmmoCounterEvent>(OnBasicEntityAmmoCount);
     }
 
-    private void OnBasicEntityAmmoCount(EntityUid uid, BasicEntityAmmoProviderComponent component, UpdateAmmoCounterEvent args)
+    private void OnBasicEntityAmmoCount(
+        EntityUid uid,
+        BasicEntityAmmoProviderComponent component,
+        UpdateAmmoCounterEvent args
+    )
     {
         if (args.Control is DefaultStatusControl control && component.Count != null && component.Capacity != null)
-        {
             control.Update(component.Count.Value, component.Capacity.Value);
-        }
     }
 }

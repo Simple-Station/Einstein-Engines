@@ -1,22 +1,28 @@
-﻿using Content.Client.Chemistry.EntitySystems;
+﻿#region
+
+using Content.Client.Chemistry.EntitySystems;
 using Content.Client.Chemistry.UI;
+
+#endregion
+
 
 namespace Content.Client.Chemistry.Components;
 
+
 /// <summary>
-/// Exposes a solution container's contents via a basic item status control.
+///     Exposes a solution container's contents via a basic item status control.
 /// </summary>
 /// <remarks>
-/// Shows the solution volume, max volume, and transfer amount.
+///     Shows the solution volume, max volume, and transfer amount.
 /// </remarks>
-/// <seealso cref="SolutionItemStatusSystem"/>
-/// <seealso cref="SolutionStatusControl"/>
+/// <seealso cref="SolutionItemStatusSystem" />
+/// <seealso cref="SolutionStatusControl" />
 [RegisterComponent]
 public sealed partial class SolutionItemStatusComponent : Component
 {
     /// <summary>
-    /// The ID of the solution that will be shown on the item status control.
+    ///     The ID of the solution that will be shown on the item status control.
     /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    [DataField, ViewVariables(VVAccess.ReadWrite),]
     public string Solution = "default";
 }

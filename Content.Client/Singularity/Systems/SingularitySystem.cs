@@ -1,15 +1,18 @@
-﻿using Content.Shared.Singularity;
+﻿#region
+
 using Content.Shared.Singularity.Components;
 using Content.Shared.Singularity.EntitySystems;
-using Robust.Client.GameObjects;
 using Robust.Shared.GameStates;
-using Robust.Shared.Utility;
+
+#endregion
+
 
 namespace Content.Client.Singularity.EntitySystems;
 
+
 /// <summary>
-/// The client-side version of <see cref="SharedSingularitySystem"/>.
-/// Primarily manages <see cref="SingularityComponent"/>s.
+///     The client-side version of <see cref="SharedSingularitySystem" />.
+///     Primarily manages <see cref="SingularityComponent" />s.
 /// </summary>
 public sealed class SingularitySystem : SharedSingularitySystem
 {
@@ -21,7 +24,7 @@ public sealed class SingularitySystem : SharedSingularitySystem
     }
 
     /// <summary>
-    /// Handles syncing singularities with their server-side versions.
+    ///     Handles syncing singularities with their server-side versions.
     /// </summary>
     /// <param name="uid">The uid of the singularity to sync.</param>
     /// <param name="comp">The state of the singularity to sync.</param>

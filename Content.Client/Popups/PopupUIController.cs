@@ -1,3 +1,5 @@
+#region
+
 using System.Numerics;
 using Content.Client.Gameplay;
 using Content.Shared.Popups;
@@ -6,10 +8,14 @@ using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controllers;
 
+#endregion
+
+
 namespace Content.Client.Popups;
 
+
 /// <summary>
-/// Handles screens-space popups. World popups are handled via PopupOverlay.
+///     Handles screens-space popups. World popups are handled via PopupOverlay.
 /// </summary>
 public sealed class PopupUIController : UIController, IOnStateEntered<GameplayState>, IOnStateExited<GameplayState>
 {
@@ -33,7 +39,7 @@ public sealed class PopupUIController : UIController, IOnStateEntered<GameplaySt
 
     public void OnStateEntered(GameplayState state)
     {
-        _popupControl = new PopupRootControl(_popup, this);
+        _popupControl = new(_popup, this);
 
         UIManager.RootControl.AddChild(_popupControl);
     }
@@ -54,7 +60,9 @@ public sealed class PopupUIController : UIController, IOnStateEntered<GameplaySt
         // Keep alpha at 1 until TotalTime passes half its lifetime, then gradually decrease to 0.
         var alpha = MathF.Min(1f, 1f - MathF.Max(0f, popup.TotalTime - lifetime / 2) * 2 / lifetime);
 
-        var updatedPosition = position - new Vector2(0f, MathF.Min(8f, 12f * (popup.TotalTime * popup.TotalTime + popup.TotalTime)));
+        var updatedPosition = position - new Vector2(
+            0f,
+            MathF.Min(8f, 12f * (popup.TotalTime * popup.TotalTime + popup.TotalTime)));
         var font = _smallFont;
         var color = Color.White.WithAlpha(alpha);
 
@@ -86,7 +94,7 @@ public sealed class PopupUIController : UIController, IOnStateEntered<GameplaySt
     }
 
     /// <summary>
-    /// Handles drawing all screen popups.
+    ///     Handles drawing all screen popups.
     /// </summary>
     private sealed class PopupRootControl : Control
     {

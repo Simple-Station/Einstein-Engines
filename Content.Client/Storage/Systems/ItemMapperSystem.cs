@@ -1,10 +1,16 @@
+#region
+
 using System.Linq;
 using Content.Shared.Storage.Components;
 using Content.Shared.Storage.EntitySystems;
 using Robust.Client.GameObjects;
 using Robust.Shared.Utility;
 
+#endregion
+
+
 namespace Content.Client.Storage.Systems;
+
 
 public sealed class ItemMapperSystem : SharedItemMapperSystem
 {
@@ -20,9 +26,7 @@ public sealed class ItemMapperSystem : SharedItemMapperSystem
     private void OnStartup(EntityUid uid, ItemMapperComponent component, ComponentStartup args)
     {
         if (TryComp<SpriteComponent>(uid, out var sprite))
-        {
             component.RSIPath ??= sprite.BaseRSI!.Path;
-        }
     }
 
     private void OnAppearance(EntityUid uid, ItemMapperComponent component, ref AppearanceChangeEvent args)
@@ -30,9 +34,7 @@ public sealed class ItemMapperSystem : SharedItemMapperSystem
         if (TryComp<SpriteComponent>(uid, out var spriteComponent))
         {
             if (component.SpriteLayers.Count == 0)
-            {
                 InitLayers((uid, component, spriteComponent, args.Component));
-            }
 
             EnableLayers((uid, component, spriteComponent, args.Component));
         }

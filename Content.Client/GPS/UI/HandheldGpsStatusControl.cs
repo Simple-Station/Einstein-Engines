@@ -1,3 +1,5 @@
+#region
+
 using Content.Client.GPS.Components;
 using Content.Client.Message;
 using Content.Client.Stylesheets;
@@ -5,7 +7,11 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Timing;
 
+#endregion
+
+
 namespace Content.Client.GPS.UI;
+
 
 public sealed class HandheldGpsStatusControl : Control
 {
@@ -18,7 +24,7 @@ public sealed class HandheldGpsStatusControl : Control
     {
         _parent = parent;
         _entMan = IoCManager.Resolve<IEntityManager>();
-        _label = new RichTextLabel { StyleClasses = { StyleNano.StyleClassItemStatus } };
+        _label = new() { StyleClasses = { StyleNano.StyleClassItemStatus, }, };
         AddChild(_label);
         UpdateGpsDetails();
     }
@@ -41,11 +47,12 @@ public sealed class HandheldGpsStatusControl : Control
         var posText = "Error";
         if (_entMan.TryGetComponent(_parent, out TransformComponent? transComp))
         {
-            var pos =  transComp.MapPosition;
+            var pos = transComp.MapPosition;
             var x = (int) pos.X;
             var y = (int) pos.Y;
             posText = $"({x}, {y})";
         }
+
         _label.SetMarkup(Loc.GetString("handheld-gps-coordinates-title", ("coordinates", posText)));
     }
 }

@@ -1,12 +1,19 @@
+#region
+
 using Content.Shared.Input;
 using Robust.Client.Graphics;
 using Robust.Client.Input;
-using Robust.Shared.Input.Binding;
 using Robust.Shared;
 using Robust.Shared.Configuration;
+using Robust.Shared.Input.Binding;
 using Robust.Shared.Player;
 
+#endregion
+
+
 namespace Content.Client.Fullscreen;
+
+
 public sealed class FullscreenHook
 {
     [Dependency] private readonly IInputManager _inputManager = default!;
@@ -16,7 +23,9 @@ public sealed class FullscreenHook
 
     public void Initialize()
     {
-        _inputManager.SetInputCommand(ContentKeyFunctions.ToggleFullscreen, InputCmdHandler.FromDelegate(ToggleFullscreen));
+        _inputManager.SetInputCommand(
+            ContentKeyFunctions.ToggleFullscreen,
+            InputCmdHandler.FromDelegate(ToggleFullscreen));
         _sawmill = _logManager.GetSawmill("fullscreen");
     }
 

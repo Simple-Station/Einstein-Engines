@@ -1,44 +1,43 @@
+#region
+
 using Content.Shared.Wires;
-using Robust.Client.GameObjects;
 
-namespace Content.Client.Wires.UI
+#endregion
+
+
+namespace Content.Client.Wires.UI;
+
+
+public sealed class WiresBoundUserInterface : BoundUserInterface
 {
-    public sealed class WiresBoundUserInterface : BoundUserInterface
+    [ViewVariables]
+    private WiresMenu? _menu;
+
+    public WiresBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
+
+    protected override void Open()
     {
-        [ViewVariables]
-        private WiresMenu? _menu;
+        base.Open();
 
-        public WiresBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-        {
-        }
+        _menu = new(this);
+        _menu.OnClose += Close;
+        _menu.OpenCenteredLeft();
+    }
 
-        protected override void Open()
-        {
-            base.Open();
+    protected override void UpdateState(BoundUserInterfaceState state)
+    {
+        base.UpdateState(state);
+        _menu?.Populate((WiresBoundUserInterfaceState) state);
+    }
 
-            _menu = new WiresMenu(this);
-            _menu.OnClose += Close;
-            _menu.OpenCenteredLeft();
-        }
+    public void PerformAction(int id, WiresAction action) => SendMessage(new WiresActionMessage(id, action));
 
-        protected override void UpdateState(BoundUserInterfaceState state)
-        {
-            base.UpdateState(state);
-            _menu?.Populate((WiresBoundUserInterfaceState) state);
-        }
+    protected override void Dispose(bool disposing)
+    {
+        base.Dispose(disposing);
+        if (!disposing)
+            return;
 
-        public void PerformAction(int id, WiresAction action)
-        {
-            SendMessage(new WiresActionMessage(id, action));
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-            if (!disposing)
-                return;
-
-            _menu?.Dispose();
-        }
+        _menu?.Dispose();
     }
 }

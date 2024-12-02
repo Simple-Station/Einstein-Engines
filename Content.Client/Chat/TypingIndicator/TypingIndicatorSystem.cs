@@ -1,10 +1,16 @@
+#region
+
 using Content.Shared.CCVar;
 using Content.Shared.Chat.TypingIndicator;
 using Robust.Client.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Timing;
 
+#endregion
+
+
 namespace Content.Client.Chat.TypingIndicator;
+
 
 // Client-side typing system tracks user input in chat box
 public sealed class TypingIndicatorSystem : SharedTypingIndicatorSystem
@@ -79,8 +85,6 @@ public sealed class TypingIndicatorSystem : SharedTypingIndicatorSystem
     {
         // hide typing indicator immediately if player don't want to show it anymore
         if (!showTyping)
-        {
             ClientUpdateTyping(false);
-        }
     }
 }

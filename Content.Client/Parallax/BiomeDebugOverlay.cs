@@ -1,3 +1,5 @@
+#region
+
 using System.Numerics;
 using System.Text;
 using Content.Shared.Parallax.Biomes;
@@ -8,7 +10,11 @@ using Robust.Shared.Enums;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 
+#endregion
+
+
 namespace Content.Client.Parallax;
+
 
 public sealed class BiomeDebugOverlay : Overlay
 {
@@ -21,10 +27,10 @@ public sealed class BiomeDebugOverlay : Overlay
     [Dependency] private readonly IResourceCache _cache = default!;
     [Dependency] private readonly ITileDefinitionManager _tileDefManager = default!;
 
-    private BiomeSystem _biomes;
-    private SharedMapSystem _maps;
+    private readonly BiomeSystem _biomes;
+    private readonly SharedMapSystem _maps;
 
-    private Font _font;
+    private readonly Font _font;
 
     public BiomeDebugOverlay()
     {
@@ -53,7 +59,8 @@ public sealed class BiomeDebugOverlay : Overlay
 
         var mapUid = _mapManager.GetMapEntityId(args.MapId);
 
-        if (!_entManager.TryGetComponent(mapUid, out BiomeComponent? biomeComp) || !_entManager.TryGetComponent(mapUid, out MapGridComponent? grid))
+        if (!_entManager.TryGetComponent(mapUid, out BiomeComponent? biomeComp) ||
+            !_entManager.TryGetComponent(mapUid, out MapGridComponent? grid))
             return;
 
         var sb = new StringBuilder();

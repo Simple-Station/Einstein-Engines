@@ -1,19 +1,24 @@
-﻿using static Content.Client.Inventory.ClientInventorySystem;
+﻿#region
 
-namespace Content.Client.UserInterface.Controls
+using static Content.Client.Inventory.ClientInventorySystem;
+
+#endregion
+
+
+namespace Content.Client.UserInterface.Controls;
+
+
+public sealed class SlotButton : SlotControl
 {
-    public sealed class SlotButton : SlotControl
-    {
-        public SlotButton() { }
+    public SlotButton() { }
 
-        public SlotButton(SlotData slotData)
-        {
-            ButtonTexturePath = slotData.TextureName;
-            FullButtonTexturePath = slotData.FullTextureName;
-            Blocked = slotData.Blocked;
-            Highlight = slotData.Highlighted;
-            StorageTexturePath = "Slots/back";
-            SlotName = slotData.SlotName;
-        }
+    public SlotButton(SlotData slotData)
+    {
+        ButtonTexturePath = slotData.TextureName;
+        FullButtonTexturePath = slotData.FullTextureName;
+        Blocked = slotData.Blocked;
+        Highlight = slotData.Highlighted;
+        StorageTexturePath = "Slots/back";
+        SlotName = slotData.SlotName;
     }
 }

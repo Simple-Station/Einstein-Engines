@@ -1,27 +1,30 @@
-﻿using Content.Shared.Station;
+﻿#region
+
+using Content.Shared.Station;
+
+#endregion
+
 
 namespace Content.Client.Station;
 
+
 /// <summary>
-/// This handles letting the client know stations are a thing. Only really used by an admin menu.
+///     This handles letting the client know stations are a thing. Only really used by an admin menu.
 /// </summary>
 public sealed class StationSystem : EntitySystem
 {
     private readonly List<(string Name, NetEntity Entity)> _stations = new();
 
     /// <summary>
-    /// All stations that currently exist.
+    ///     All stations that currently exist.
     /// </summary>
     /// <remarks>
-    /// I'd have this just invoke an entity query, but we're on the client and the client barely knows about stations.
+    ///     I'd have this just invoke an entity query, but we're on the client and the client barely knows about stations.
     /// </remarks>
     public IReadOnlyList<(string Name, NetEntity Entity)> Stations => _stations;
 
-    /// <inheritdoc/>
-    public override void Initialize()
-    {
-        SubscribeNetworkEvent<StationsUpdatedEvent>(StationsUpdated);
-    }
+    /// <inheritdoc />
+    public override void Initialize() => SubscribeNetworkEvent<StationsUpdatedEvent>(StationsUpdated);
 
     private void StationsUpdated(StationsUpdatedEvent ev)
     {

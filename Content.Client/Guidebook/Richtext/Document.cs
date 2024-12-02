@@ -1,12 +1,18 @@
+#region
+
+using System.Diagnostics.CodeAnalysis;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Utility;
-using System.Diagnostics.CodeAnalysis;
+
+#endregion
+
 
 namespace Content.Client.Guidebook.Richtext;
 
+
 /// <summary>
-/// A document, containing arbitrary text and UI elements.
+///     A document, containing arbitrary text and UI elements.
 /// </summary>
 public sealed class Document : BoxContainer, IDocumentTag
 {

@@ -1,3 +1,5 @@
+#region
+
 using Content.Client.Items;
 using Content.Shared.Hands.Components;
 using Content.Shared.IdentityManagement;
@@ -9,7 +11,11 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
+#endregion
+
+
 namespace Content.Client.UserInterface.Systems.Inventory.Controls;
+
 
 [GenerateTypedNameReferences]
 public sealed partial class ItemStatusPanel : Control
@@ -81,13 +87,10 @@ public sealed partial class ItemStatusPanel : Control
         // (the margin needs to change depending on the UI theme, so we use a fake color entry to store the value)
 
         var color = Theme.ResolveColorOrSpecified(itemName);
-        return new Thickness(color.RByte, color.GByte, color.BByte, color.AByte);
+        return new(color.RByte, color.GByte, color.BByte, color.AByte);
     }
 
-    protected override void OnThemeUpdated()
-    {
-        SetSide(_side);
-    }
+    protected override void OnThemeUpdated() => SetSide(_side);
 
     protected override void FrameUpdate(FrameEventArgs args)
     {
@@ -117,10 +120,7 @@ public sealed partial class ItemStatusPanel : Control
         }
     }
 
-    public void UpdateHighlight(bool highlight)
-    {
-        HighlightPanel.Visible = highlight;
-    }
+    public void UpdateHighlight(bool highlight) => HighlightPanel.Visible = highlight;
 
     private void UpdateItemName()
     {
@@ -140,15 +140,10 @@ public sealed partial class ItemStatusPanel : Control
             ItemNameLabel.Text = Identity.Name(virtualItem.BlockingEntity, _entityManager);
         }
         else
-        {
             ItemNameLabel.Text = Identity.Name(_entity.Value, _entityManager);
-        }
     }
 
-    private void ClearOldStatus()
-    {
-        StatusContents.RemoveAllChildren();
-    }
+    private void ClearOldStatus() => StatusContents.RemoveAllChildren();
 
     private void BuildNewEntityStatus()
     {
@@ -160,8 +155,6 @@ public sealed partial class ItemStatusPanel : Control
         _entityManager.EventBus.RaiseLocalEvent(_entity!.Value, collectMsg, true);
 
         foreach (var control in collectMsg.Controls)
-        {
             StatusContents.AddChild(control);
-        }
     }
 }

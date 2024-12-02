@@ -1,7 +1,11 @@
-﻿using Content.Shared.Explosion.EntitySystems;
+﻿#region
+
+using Content.Shared.Explosion.EntitySystems;
+
+#endregion
+
 
 namespace Content.Client.Explosion;
 
-public sealed class SmokeOnTriggerSystem : SharedSmokeOnTriggerSystem
-{
-}
+
+public sealed class SmokeOnTriggerSystem : SharedSmokeOnTriggerSystem { }

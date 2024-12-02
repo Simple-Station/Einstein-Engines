@@ -1,29 +1,40 @@
+#region
+
 using Content.Shared.Mobs;
 using Robust.Client.GameObjects;
 using DrawDepth = Content.Shared.DrawDepth.DrawDepth;
 
+#endregion
+
+
 namespace Content.Client.DamageState;
+
 
 public sealed class DamageStateVisualizerSystem : VisualizerSystem<DamageStateVisualsComponent>
 {
-    protected override void OnAppearanceChange(EntityUid uid, DamageStateVisualsComponent component, ref AppearanceChangeEvent args)
+    protected override void OnAppearanceChange(
+        EntityUid uid,
+        DamageStateVisualsComponent component,
+        ref AppearanceChangeEvent args
+    )
     {
         var sprite = args.Sprite;
 
-        if (sprite == null || !AppearanceSystem.TryGetData<MobState>(uid, MobStateVisuals.State, out var data, args.Component))
-        {
+        if (sprite == null || !AppearanceSystem.TryGetData<MobState>(
+            uid,
+            MobStateVisuals.State,
+            out var data,
+            args.Component))
             return;
-        }
 
         if (!component.States.TryGetValue(data, out var layers))
-        {
             return;
-        }
 
         // Brain no worky rn so this was just easier.
-        foreach (var key in new []{ DamageStateVisualLayers.Base, DamageStateVisualLayers.BaseUnshaded })
+        foreach (var key in new[] { DamageStateVisualLayers.Base, DamageStateVisualLayers.BaseUnshaded, })
         {
-            if (!sprite.LayerMapTryGet(key, out _)) continue;
+            if (!sprite.LayerMapTryGet(key, out _))
+                continue;
 
             sprite.LayerSetVisible(key, false);
         }
@@ -31,7 +42,8 @@ public sealed class DamageStateVisualizerSystem : VisualizerSystem<DamageStateVi
         foreach (var (key, state) in layers)
         {
             // Inheritance moment.
-            if (!sprite.LayerMapTryGet(key, out _)) continue;
+            if (!sprite.LayerMapTryGet(key, out _))
+                continue;
 
             sprite.LayerSetVisible(key, true);
             sprite.LayerSetState(key, state);

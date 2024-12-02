@@ -1,7 +1,13 @@
+#region
+
 using Content.Shared.Chemistry.Components;
 using Robust.Client.GameObjects;
 
+#endregion
+
+
 namespace Content.Client.Chemistry.EntitySystems;
+
 
 public sealed class PillSystem : EntitySystem
 {

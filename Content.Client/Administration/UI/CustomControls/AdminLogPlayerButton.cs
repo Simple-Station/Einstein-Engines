@@ -1,7 +1,12 @@
-﻿using System;
+﻿#region
+
 using Robust.Client.UserInterface.Controls;
 
+#endregion
+
+
 namespace Content.Client.Administration.UI.CustomControls;
+
 
 public sealed class AdminLogPlayerButton : Button
 {

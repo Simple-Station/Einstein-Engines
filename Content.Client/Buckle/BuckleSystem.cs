@@ -1,11 +1,16 @@
+#region
+
 using Content.Client.Rotation;
 using Content.Shared.Buckle;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Rotation;
 using Robust.Client.GameObjects;
-using Robust.Shared.GameStates;
+
+#endregion
+
 
 namespace Content.Client.Buckle;
+
 
 internal sealed class BuckleSystem : SharedBuckleSystem
 {
@@ -21,8 +26,8 @@ internal sealed class BuckleSystem : SharedBuckleSystem
         SubscribeLocalEvent<BuckleComponent, UnbuckledEvent>(OnUnbuckledEvent);
     }
 
-     /// <summary>
-    /// Is the strap entity already rotated north? Lower the draw depth of the buckled entity.
+    /// <summary>
+    ///     Is the strap entity already rotated north? Lower the draw depth of the buckled entity.
     /// </summary>
     private void OnBuckledEvent(Entity<BuckleComponent> ent, ref BuckledEvent args)
     {
@@ -38,7 +43,7 @@ internal sealed class BuckleSystem : SharedBuckleSystem
     }
 
     /// <summary>
-    /// Was the draw depth of the buckled entity lowered? Reset it upon unbuckling.
+    ///     Was the draw depth of the buckled entity lowered? Reset it upon unbuckling.
     /// </summary>
     private void OnUnbuckledEvent(Entity<BuckleComponent> ent, ref UnbuckledEvent args)
     {

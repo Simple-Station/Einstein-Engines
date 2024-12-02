@@ -1,16 +1,20 @@
+#region
+
 using System.Numerics;
 using Content.Shared.CombatMode;
-using Content.Shared.Weapons.Melee;
 using Robust.Client.Graphics;
 using Robust.Client.Input;
 using Robust.Client.Player;
 using Robust.Shared.Enums;
-using Robust.Shared.Map;
+
+#endregion
+
 
 namespace Content.Client.Weapons.Melee;
 
+
 /// <summary>
-/// Debug overlay showing the arc and range of a melee weapon.
+///     Debug overlay showing the arc and range of a melee weapon.
 /// </summary>
 public sealed class MeleeArcOverlay : Overlay
 {
@@ -23,7 +27,14 @@ public sealed class MeleeArcOverlay : Overlay
 
     public override OverlaySpace Space => OverlaySpace.WorldSpaceBelowFOV;
 
-    public MeleeArcOverlay(IEntityManager entManager, IEyeManager eyeManager, IInputManager inputManager, IPlayerManager playerManager, MeleeWeaponSystem melee, SharedCombatModeSystem combatMode)
+    public MeleeArcOverlay(
+        IEntityManager entManager,
+        IEyeManager eyeManager,
+        IInputManager inputManager,
+        IPlayerManager playerManager,
+        MeleeWeaponSystem melee,
+        SharedCombatModeSystem combatMode
+    )
     {
         _entManager = entManager;
         _eyeManager = eyeManager;
@@ -39,9 +50,7 @@ public sealed class MeleeArcOverlay : Overlay
 
         if (!_entManager.TryGetComponent<TransformComponent>(player, out var xform) ||
             !_combatMode.IsInCombatMode(player))
-        {
             return;
-        }
 
         if (!_melee.TryGetWeapon(player.Value, out _, out var weapon))
             return;
@@ -68,7 +77,13 @@ public sealed class MeleeArcOverlay : Overlay
         if (weapon.Angle.Theta == 0)
             return;
 
-        args.WorldHandle.DrawLine(playerPos.Position, playerPos.Position + new Angle(-weapon.Angle / 2).RotateVec(diff), Color.Orange);
-        args.WorldHandle.DrawLine(playerPos.Position, playerPos.Position + new Angle(weapon.Angle / 2).RotateVec(diff), Color.Orange);
+        args.WorldHandle.DrawLine(
+            playerPos.Position,
+            playerPos.Position + new Angle(-weapon.Angle / 2).RotateVec(diff),
+            Color.Orange);
+        args.WorldHandle.DrawLine(
+            playerPos.Position,
+            playerPos.Position + new Angle(weapon.Angle / 2).RotateVec(diff),
+            Color.Orange);
     }
 }

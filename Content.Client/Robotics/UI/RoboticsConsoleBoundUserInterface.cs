@@ -1,22 +1,25 @@
+#region
+
 using Content.Shared.Robotics;
-using Robust.Client.GameObjects;
+
+#endregion
+
 
 namespace Content.Client.Robotics.UI;
+
 
 public sealed class RoboticsConsoleBoundUserInterface : BoundUserInterface
 {
     [ViewVariables]
     public RoboticsConsoleWindow _window = default!;
 
-    public RoboticsConsoleBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-    {
-    }
+    public RoboticsConsoleBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
 
     protected override void Open()
     {
         base.Open();
 
-        _window = new RoboticsConsoleWindow(Owner);
+        _window = new(Owner);
         _window.OnDisablePressed += address =>
         {
             SendMessage(new RoboticsConsoleDisableMessage(address));

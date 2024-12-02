@@ -1,3 +1,5 @@
+#region
+
 using System.Numerics;
 using Content.Client.Parallax.Managers;
 using Content.Shared.CCVar;
@@ -9,7 +11,11 @@ using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
+#endregion
+
+
 namespace Content.Client.Parallax;
+
 
 public sealed class ParallaxOverlay : Overlay
 {
@@ -32,7 +38,8 @@ public sealed class ParallaxOverlay : Overlay
 
     protected override bool BeforeDraw(in OverlayDrawArgs args)
     {
-        if (args.MapId == MapId.Nullspace || _entManager.HasComponent<BiomeComponent>(_mapManager.GetMapEntityId(args.MapId)))
+        if (args.MapId == MapId.Nullspace ||
+            _entManager.HasComponent<BiomeComponent>(_mapManager.GetMapEntityId(args.MapId)))
             return false;
 
         return true;
@@ -65,7 +72,7 @@ public sealed class ParallaxOverlay : Overlay
             var tex = layer.Texture;
 
             // Size of the texture in world units.
-            var size = (tex.Size / (float) EyeManager.PixelsPerMeter) * layer.Config.Scale;
+            var size = tex.Size / (float) EyeManager.PixelsPerMeter * layer.Config.Scale;
 
             // The "home" position is the effective origin of this layer.
             // Parallax shifting is relative to the home, and shifts away from the home and towards the Eye centre.
@@ -101,18 +108,13 @@ public sealed class ParallaxOverlay : Overlay
                 for (var x = flooredBL.X; x < args.WorldAABB.Right; x += size.X)
                 {
                     for (var y = flooredBL.Y; y < args.WorldAABB.Top; y += size.Y)
-                    {
-                        worldHandle.DrawTextureRect(tex, Box2.FromDimensions(new Vector2(x, y), size));
-                    }
+                        worldHandle.DrawTextureRect(tex, Box2.FromDimensions(new(x, y), size));
                 }
             }
             else
-            {
                 worldHandle.DrawTextureRect(tex, Box2.FromDimensions(originBL, size));
-            }
         }
 
         worldHandle.UseShader(null);
     }
 }
-

@@ -1,11 +1,15 @@
+#region
+
 using System.IO;
-using System.Threading.Tasks;
 using Content.Shared.Fax;
 using JetBrains.Annotations;
-using Robust.Client.GameObjects;
 using Robust.Client.UserInterface;
 
+#endregion
+
+
 namespace Content.Client.Fax.UI;
+
 
 [UsedImplicitly]
 public sealed class FaxBoundUi : BoundUserInterface
@@ -15,17 +19,15 @@ public sealed class FaxBoundUi : BoundUserInterface
     [ViewVariables]
     private FaxWindow? _window;
 
-    private bool _dialogIsOpen = false;
+    private bool _dialogIsOpen;
 
-    public FaxBoundUi(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-    {
-    }
+    public FaxBoundUi(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
 
     protected override void Open()
     {
         base.Open();
 
-        _window = new FaxWindow();
+        _window = new();
         _window.OpenCentered();
 
         _window.OnClose += Close;
@@ -47,9 +49,7 @@ public sealed class FaxBoundUi : BoundUserInterface
         _dialogIsOpen = false;
 
         if (_window == null || _window.Disposed || file == null)
-        {
             return;
-        }
 
         using var reader = new StreamReader(file);
 
@@ -57,43 +57,28 @@ public sealed class FaxBoundUi : BoundUserInterface
         string? label = null;
         var content = await reader.ReadToEndAsync();
 
-        if (firstLine is { })
+        if (firstLine is not null)
         {
             if (firstLine.StartsWith('#'))
-            {
                 label = firstLine[1..].Trim();
-            }
             else
-            {
                 content = firstLine + "\n" + content;
-            }
         }
 
-        SendMessage(new FaxFileMessage(
-            label?[..Math.Min(label.Length, FaxFileMessageValidation.MaxLabelSize)],
-            content[..Math.Min(content.Length, FaxFileMessageValidation.MaxContentSize)],
-            _window.OfficePaper));
+        SendMessage(
+            new FaxFileMessage(
+                label?[..Math.Min(label.Length, FaxFileMessageValidation.MaxLabelSize)],
+                content[..Math.Min(content.Length, FaxFileMessageValidation.MaxContentSize)],
+                _window.OfficePaper));
     }
 
-    private void OnSendButtonPressed()
-    {
-        SendMessage(new FaxSendMessage());
-    }
+    private void OnSendButtonPressed() => SendMessage(new FaxSendMessage());
 
-    private void OnCopyButtonPressed()
-    {
-        SendMessage(new FaxCopyMessage());
-    }
+    private void OnCopyButtonPressed() => SendMessage(new FaxCopyMessage());
 
-    private void OnRefreshButtonPressed()
-    {
-        SendMessage(new FaxRefreshMessage());
-    }
+    private void OnRefreshButtonPressed() => SendMessage(new FaxRefreshMessage());
 
-    private void OnPeerSelected(string address)
-    {
-        SendMessage(new FaxDestinationMessage(address));
-    }
+    private void OnPeerSelected(string address) => SendMessage(new FaxDestinationMessage(address));
 
     protected override void UpdateState(BoundUserInterfaceState state)
     {

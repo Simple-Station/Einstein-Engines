@@ -1,11 +1,21 @@
-using Robust.Client.GameObjects;
+#region
+
 using Content.Shared.Smoking;
+using Robust.Client.GameObjects;
+
+#endregion
+
 
 namespace Content.Client.Smoking;
 
+
 public sealed class BurnStateVisualizerSystem : VisualizerSystem<BurnStateVisualsComponent>
 {
-    protected override void OnAppearanceChange(EntityUid uid, BurnStateVisualsComponent component, ref AppearanceChangeEvent args)
+    protected override void OnAppearanceChange(
+        EntityUid uid,
+        BurnStateVisualsComponent component,
+        ref AppearanceChangeEvent args
+    )
     {
         if (args.Sprite == null)
             return;
@@ -22,4 +32,3 @@ public sealed class BurnStateVisualizerSystem : VisualizerSystem<BurnStateVisual
         args.Sprite.LayerSetState(0, state);
     }
 }
-

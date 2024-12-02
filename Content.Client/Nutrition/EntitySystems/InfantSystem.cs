@@ -1,14 +1,20 @@
-﻿using Content.Shared.Nutrition.AnimalHusbandry;
+﻿#region
+
+using Content.Shared.Nutrition.AnimalHusbandry;
 using Robust.Client.GameObjects;
+
+#endregion
+
 
 namespace Content.Client.Nutrition.EntitySystems;
 
+
 /// <summary>
-/// This handles visuals for <see cref="InfantComponent"/>
+///     This handles visuals for <see cref="InfantComponent" />
 /// </summary>
 public sealed class InfantSystem : EntitySystem
 {
-    /// <inheritdoc/>
+    /// <inheritdoc />
     public override void Initialize()
     {
         SubscribeLocalEvent<InfantComponent, ComponentStartup>(OnStartup);

@@ -1,9 +1,15 @@
+#region
+
 using System.Numerics;
 using Robust.Client.Graphics;
 using Robust.Client.UserInterface.Controls;
 using Direction = Robust.Shared.Maths.Direction;
 
+#endregion
+
+
 namespace Content.Client.UserInterface.Controls;
+
 
 /// <summary>
 ///     Simple control that shows an arrow pointing in some direction.
@@ -18,8 +24,8 @@ public sealed class DirectionIcon : TextureRect
     public static string StyleClassDirectionIconUnknown = "direction-icon-unknown"; // unknown direction / error
 
     private Angle? _rotation;
-    private bool _snap;
-    float _minDistance;
+    private readonly bool _snap;
+    private readonly float _minDistance;
 
     public Angle? Rotation
     {
@@ -43,10 +49,7 @@ public sealed class DirectionIcon : TextureRect
         _minDistance = minDistance;
     }
 
-    public void UpdateDirection(Direction direction)
-    {
-        Rotation = direction.ToAngle();
-    }
+    public void UpdateDirection(Direction direction) => Rotation = direction.ToAngle();
 
     public void UpdateDirection(Vector2 direction, Angle relativeAngle)
     {

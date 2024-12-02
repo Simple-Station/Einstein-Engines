@@ -1,4 +1,5 @@
-﻿using System.Numerics;
+﻿#region
+
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Chat.Prototypes;
 using Content.Shared.Speech;
@@ -9,7 +10,11 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 
+#endregion
+
+
 namespace Content.Client.Chat.UI;
+
 
 [GenerateTypedNameReferences]
 public sealed partial class EmotesMenu : RadialMenu
@@ -50,10 +55,10 @@ public sealed partial class EmotesMenu : RadialMenu
 
             var button = new EmoteMenuButton
             {
-                StyleClasses = { "RadialMenuButton" },
-                SetSize = new Vector2(64f, 64f),
+                StyleClasses = { "RadialMenuButton", },
+                SetSize = new(64f, 64f),
                 ToolTip = Loc.GetString(emote.Name),
-                ProtoId = emote.ID,
+                ProtoId = emote.ID
             };
 
             var tex = new TextureRect
@@ -61,7 +66,7 @@ public sealed partial class EmotesMenu : RadialMenu
                 VerticalAlignment = VAlignment.Center,
                 HorizontalAlignment = HAlignment.Center,
                 Texture = _spriteSystem.Frame0(emote.Icon),
-                TextureScale = new Vector2(2f, 2f),
+                TextureScale = new(2f, 2f)
             };
 
             button.AddChild(tex);
@@ -104,7 +109,6 @@ public sealed partial class EmotesMenu : RadialMenu
         }
     }
 }
-
 
 public sealed class EmoteMenuButton : RadialMenuTextureButton
 {

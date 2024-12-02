@@ -1,9 +1,14 @@
-﻿using Content.Client.NetworkConfigurator.Systems;
+﻿#region
+
+using Content.Client.NetworkConfigurator.Systems;
 using Content.Shared.DeviceNetwork;
-using Robust.Client.GameObjects;
 using Robust.Client.UserInterface.Controls;
 
+#endregion
+
+
 namespace Content.Client.NetworkConfigurator;
+
 
 public sealed class NetworkConfiguratorBoundUserInterface : BoundUserInterface
 {
@@ -23,10 +28,8 @@ public sealed class NetworkConfiguratorBoundUserInterface : BoundUserInterface
         _netConfig = EntMan.System<NetworkConfiguratorSystem>();
     }
 
-    public void OnRemoveButtonPressed(string address)
-    {
+    public void OnRemoveButtonPressed(string address) =>
         SendMessage(new NetworkConfiguratorRemoveDeviceMessage(address));
-    }
 
     protected override void Open()
     {
@@ -35,13 +38,13 @@ public sealed class NetworkConfiguratorBoundUserInterface : BoundUserInterface
         switch (UiKey)
         {
             case NetworkConfiguratorUiKey.List:
-                _listMenu = new NetworkConfiguratorListMenu(this);
+                _listMenu = new(this);
                 _listMenu.OnClose += Close;
                 _listMenu.ClearButton.OnPressed += _ => OnClearButtonPressed();
                 _listMenu.OpenCenteredRight();
                 break;
             case NetworkConfiguratorUiKey.Configure:
-                _configurationMenu = new NetworkConfiguratorConfigurationMenu();
+                _configurationMenu = new();
                 _configurationMenu.OnClose += Close;
                 _configurationMenu.Set.OnPressed += _ => OnConfigButtonPressed(NetworkConfiguratorButtonKey.Set);
                 _configurationMenu.Add.OnPressed += _ => OnConfigButtonPressed(NetworkConfiguratorButtonKey.Add);
@@ -53,17 +56,15 @@ public sealed class NetworkConfiguratorBoundUserInterface : BoundUserInterface
                 _configurationMenu.OpenCentered();
                 break;
             case NetworkConfiguratorUiKey.Link:
-                _linkMenu = new NetworkConfiguratorLinkMenu(this);
+                _linkMenu = new(this);
                 _linkMenu.OnClose += Close;
                 _linkMenu.OpenCentered();
                 break;
         }
     }
 
-    private void OnShowPressed(BaseButton.ButtonEventArgs args)
-    {
+    private void OnShowPressed(BaseButton.ButtonEventArgs args) =>
         _netConfig.ToggleVisualization(Owner, args.Button.Pressed);
-    }
 
     protected override void UpdateState(BoundUserInterfaceState state)
     {
@@ -86,20 +87,16 @@ public sealed class NetworkConfiguratorBoundUserInterface : BoundUserInterface
     protected override void Dispose(bool disposing)
     {
         base.Dispose(disposing);
-        if (!disposing) return;
+        if (!disposing)
+            return;
 
         _linkMenu?.Dispose();
         _listMenu?.Dispose();
         _configurationMenu?.Dispose();
     }
 
-    private void OnClearButtonPressed()
-    {
-        SendMessage(new NetworkConfiguratorClearDevicesMessage());
-    }
+    private void OnClearButtonPressed() => SendMessage(new NetworkConfiguratorClearDevicesMessage());
 
-    private void OnConfigButtonPressed(NetworkConfiguratorButtonKey buttonKey)
-    {
+    private void OnConfigButtonPressed(NetworkConfiguratorButtonKey buttonKey) =>
         SendMessage(new NetworkConfiguratorButtonPressedMessage(buttonKey));
-    }
 }

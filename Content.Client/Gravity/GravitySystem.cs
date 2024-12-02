@@ -1,11 +1,18 @@
+#region
+
 using Content.Shared.Gravity;
 using Robust.Client.GameObjects;
 
+#endregion
+
+
 namespace Content.Client.Gravity;
+
 
 public sealed partial class GravitySystem : SharedGravitySystem
 {
     [Dependency] private readonly AppearanceSystem _appearanceSystem = default!;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -14,14 +21,18 @@ public sealed partial class GravitySystem : SharedGravitySystem
     }
 
     /// <summary>
-    /// Ensures that the visible state of gravity generators are synced with their sprites.
+    ///     Ensures that the visible state of gravity generators are synced with their sprites.
     /// </summary>
     private void OnAppearanceChange(EntityUid uid, SharedGravityGeneratorComponent comp, ref AppearanceChangeEvent args)
     {
         if (args.Sprite == null)
             return;
 
-        if (_appearanceSystem.TryGetData<GravityGeneratorStatus>(uid, GravityGeneratorVisuals.State, out var state, args.Component))
+        if (_appearanceSystem.TryGetData<GravityGeneratorStatus>(
+            uid,
+            GravityGeneratorVisuals.State,
+            out var state,
+            args.Component))
         {
             if (comp.SpriteMap.TryGetValue(state, out var spriteState))
             {

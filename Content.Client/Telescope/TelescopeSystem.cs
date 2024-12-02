@@ -1,8 +1,10 @@
+#region
+
 using System.Numerics;
 using Content.Client.Viewport;
 using Content.Shared.CCVar;
-using Content.Shared.Telescope;
 using Content.Shared.Input;
+using Content.Shared.Telescope;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Client.Input;
@@ -13,7 +15,11 @@ using Robust.Shared.Input;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Timing;
 
+#endregion
+
+
 namespace Content.Client.Telescope;
+
 
 public sealed class TelescopeSystem : SharedTelescopeSystem
 {
@@ -33,7 +39,8 @@ public sealed class TelescopeSystem : SharedTelescopeSystem
     {
         base.Initialize();
 
-        _cfg.OnValueChanged(CCVars.HoldLookUp,
+        _cfg.OnValueChanged(
+            CCVars.HoldLookUp,
             val =>
             {
                 var input = val ? null : InputCmdHandler.FromDelegate(_ => _toggled = !_toggled);
@@ -111,18 +118,17 @@ public sealed class TelescopeSystem : SharedTelescopeSystem
         if (len > minLength)
         {
             diff -= diff * minLength / len;
-            offset = new Vector2(diff.X / divisor, -diff.Y / divisor);
+            offset = new(diff.X / divisor, -diff.Y / divisor);
             offset = new Angle(-eye.Rotation.Theta).RotateVec(offset);
         }
 
         RaiseEvent(offset);
     }
 
-    private void RaiseEvent(Vector2 offset)
-    {
-        RaisePredictiveEvent(new EyeOffsetChangedEvent
-        {
-            Offset = offset
-        });
-    }
+    private void RaiseEvent(Vector2 offset) =>
+        RaisePredictiveEvent(
+            new EyeOffsetChangedEvent
+            {
+                Offset = offset
+            });
 }

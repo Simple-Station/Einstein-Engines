@@ -1,3 +1,5 @@
+#region
+
 using Content.Shared.Input;
 using Content.Shared.Targeting;
 using Content.Shared.Targeting.Events;
@@ -5,7 +7,12 @@ using Robust.Client.Player;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Player;
 
+#endregion
+
+
 namespace Content.Client.Targeting;
+
+
 public sealed class TargetingSystem : SharedTargetingSystem
 {
     [Dependency] private readonly IPlayerManager _playerManager = default!;
@@ -16,6 +23,7 @@ public sealed class TargetingSystem : SharedTargetingSystem
     public event Action<TargetingComponent>? PartStatusStartup;
     public event Action<TargetingComponent>? PartStatusUpdate;
     public event Action? PartStatusShutdown;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -26,27 +34,37 @@ public sealed class TargetingSystem : SharedTargetingSystem
         SubscribeNetworkEvent<TargetIntegrityChangeEvent>(OnTargetIntegrityChange);
 
         CommandBinds.Builder
-        .Bind(ContentKeyFunctions.TargetHead,
-            InputCmdHandler.FromDelegate((session) => HandleTargetChange(session, TargetBodyPart.Head)))
-        .Bind(ContentKeyFunctions.TargetTorso,
-            InputCmdHandler.FromDelegate((session) => HandleTargetChange(session, TargetBodyPart.Torso)))
-        .Bind(ContentKeyFunctions.TargetLeftArm,
-            InputCmdHandler.FromDelegate((session) => HandleTargetChange(session, TargetBodyPart.LeftArm)))
-        .Bind(ContentKeyFunctions.TargetLeftHand,
-            InputCmdHandler.FromDelegate((session) => HandleTargetChange(session, TargetBodyPart.LeftHand)))
-        .Bind(ContentKeyFunctions.TargetRightArm,
-            InputCmdHandler.FromDelegate((session) => HandleTargetChange(session, TargetBodyPart.RightArm)))
-        .Bind(ContentKeyFunctions.TargetRightHand,
-            InputCmdHandler.FromDelegate((session) => HandleTargetChange(session, TargetBodyPart.RightHand)))
-        .Bind(ContentKeyFunctions.TargetLeftLeg,
-            InputCmdHandler.FromDelegate((session) => HandleTargetChange(session, TargetBodyPart.LeftLeg)))
-        .Bind(ContentKeyFunctions.TargetLeftFoot,
-            InputCmdHandler.FromDelegate((session) => HandleTargetChange(session, TargetBodyPart.LeftFoot)))
-        .Bind(ContentKeyFunctions.TargetRightLeg,
-            InputCmdHandler.FromDelegate((session) => HandleTargetChange(session, TargetBodyPart.RightLeg)))
-        .Bind(ContentKeyFunctions.TargetRightFoot,
-            InputCmdHandler.FromDelegate((session) => HandleTargetChange(session, TargetBodyPart.RightFoot)))
-        .Register<SharedTargetingSystem>();
+            .Bind(
+                ContentKeyFunctions.TargetHead,
+                InputCmdHandler.FromDelegate(session => HandleTargetChange(session, TargetBodyPart.Head)))
+            .Bind(
+                ContentKeyFunctions.TargetTorso,
+                InputCmdHandler.FromDelegate(session => HandleTargetChange(session, TargetBodyPart.Torso)))
+            .Bind(
+                ContentKeyFunctions.TargetLeftArm,
+                InputCmdHandler.FromDelegate(session => HandleTargetChange(session, TargetBodyPart.LeftArm)))
+            .Bind(
+                ContentKeyFunctions.TargetLeftHand,
+                InputCmdHandler.FromDelegate(session => HandleTargetChange(session, TargetBodyPart.LeftHand)))
+            .Bind(
+                ContentKeyFunctions.TargetRightArm,
+                InputCmdHandler.FromDelegate(session => HandleTargetChange(session, TargetBodyPart.RightArm)))
+            .Bind(
+                ContentKeyFunctions.TargetRightHand,
+                InputCmdHandler.FromDelegate(session => HandleTargetChange(session, TargetBodyPart.RightHand)))
+            .Bind(
+                ContentKeyFunctions.TargetLeftLeg,
+                InputCmdHandler.FromDelegate(session => HandleTargetChange(session, TargetBodyPart.LeftLeg)))
+            .Bind(
+                ContentKeyFunctions.TargetLeftFoot,
+                InputCmdHandler.FromDelegate(session => HandleTargetChange(session, TargetBodyPart.LeftFoot)))
+            .Bind(
+                ContentKeyFunctions.TargetRightLeg,
+                InputCmdHandler.FromDelegate(session => HandleTargetChange(session, TargetBodyPart.RightLeg)))
+            .Bind(
+                ContentKeyFunctions.TargetRightFoot,
+                InputCmdHandler.FromDelegate(session => HandleTargetChange(session, TargetBodyPart.RightFoot)))
+            .Register<SharedTargetingSystem>();
     }
 
     private void HandlePlayerAttached(EntityUid uid, TargetingComponent component, LocalPlayerAttachedEvent args)

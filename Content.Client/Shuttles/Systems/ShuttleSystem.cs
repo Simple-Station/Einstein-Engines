@@ -1,6 +1,12 @@
+#region
+
 using Robust.Client.Graphics;
 
+#endregion
+
+
 namespace Content.Client.Shuttles.Systems;
+
 
 public sealed partial class ShuttleSystem
 {

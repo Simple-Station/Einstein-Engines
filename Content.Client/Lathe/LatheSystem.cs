@@ -1,10 +1,16 @@
-using Robust.Client.GameObjects;
+#region
+
+using Content.Client.Power;
 using Content.Shared.Lathe;
 using Content.Shared.Power;
-using Content.Client.Power;
 using Content.Shared.Research.Prototypes;
+using Robust.Client.GameObjects;
+
+#endregion
+
 
 namespace Content.Client.Lathe;
+
 
 public sealed class LatheSystem : SharedLatheSystem
 {
@@ -24,9 +30,7 @@ public sealed class LatheSystem : SharedLatheSystem
 
         if (_appearance.TryGetData<bool>(uid, PowerDeviceVisuals.Powered, out var powered, args.Component) &&
             args.Sprite.LayerMapTryGet(PowerDeviceVisualLayers.Powered, out var powerLayer))
-        {
             args.Sprite.LayerSetVisible(powerLayer, powered);
-        }
 
         // Lathe specific stuff
         if (_appearance.TryGetData<bool>(uid, LatheVisuals.IsRunning, out var isRunning, args.Component) &&
@@ -40,14 +44,11 @@ public sealed class LatheSystem : SharedLatheSystem
         }
     }
 
-    ///<remarks>
-    /// Whether or not a recipe is available is not really visible to the client,
-    /// so it just defaults to true.
-    ///</remarks>
-    protected override bool HasRecipe(EntityUid uid, LatheRecipePrototype recipe, LatheComponent component)
-    {
-        return true;
-    }
+    /// <remarks>
+    ///     Whether or not a recipe is available is not really visible to the client,
+    ///     so it just defaults to true.
+    /// </remarks>
+    protected override bool HasRecipe(EntityUid uid, LatheRecipePrototype recipe, LatheComponent component) => true;
 }
 
 public enum LatheVisualLayers : byte

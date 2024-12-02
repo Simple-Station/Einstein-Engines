@@ -1,6 +1,9 @@
-using System;
-using Content.Shared;
+#region
+
 using Content.Shared.Module;
+
+#endregion
+
 
 namespace Content.Client.IoC
 {

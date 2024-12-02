@@ -1,10 +1,16 @@
+#region
+
 using Content.Shared.Alert;
 using Robust.Client.GameObjects;
 
+#endregion
+
+
 namespace Content.Client.Alerts;
 
+
 /// <summary>
-/// Event raised on an entity with alerts in order to allow it to update visuals for the alert sprite entity.
+///     Event raised on an entity with alerts in order to allow it to update visuals for the alert sprite entity.
 /// </summary>
 [ByRefEvent]
 public record struct UpdateAlertSpriteEvent

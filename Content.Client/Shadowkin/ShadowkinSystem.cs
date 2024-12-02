@@ -1,15 +1,21 @@
-using Content.Shared.Shadowkin;
+#region
+
+using Content.Client.Overlays;
+using Content.Shared.Abilities.Psionics;
 using Content.Shared.CCVar;
+using Content.Shared.Humanoid;
+using Content.Shared.Shadowkin;
 using Robust.Client.Graphics;
 using Robust.Shared.Configuration;
 using Robust.Shared.Player;
-using Content.Shared.Humanoid;
-using Content.Shared.Abilities.Psionics;
-using Content.Client.Overlays;
+
+#endregion
+
 
 namespace Content.Client.Shadowkin;
 
-public sealed partial class ShadowkinSystem : EntitySystem
+
+public sealed class ShadowkinSystem : EntitySystem
 {
     [Dependency] private readonly IOverlayManager _overlayMan = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
@@ -52,14 +58,12 @@ public sealed partial class ShadowkinSystem : EntitySystem
     {
         if (_cfg.GetCVar(CCVars.NoVisionFilters))
             return;
-            
+
         _overlayMan.AddOverlay(_overlay);
     }
 
-    private void OnPlayerDetached(EntityUid uid, ShadowkinComponent component, LocalPlayerDetachedEvent args)
-    {
+    private void OnPlayerDetached(EntityUid uid, ShadowkinComponent component, LocalPlayerDetachedEvent args) =>
         _overlayMan.RemoveOverlay(_overlay);
-    }
 
     private void OnNoVisionFiltersChanged(bool enabled)
     {
@@ -92,7 +96,7 @@ public sealed partial class ShadowkinSystem : EntitySystem
         {
             var min = 0.45f;
             var max = 0.75f;
-            tintIntensity = Math.Clamp(min + (magic.Mana / magic.MaxMana) * 0.333f, min, max);
+            tintIntensity = Math.Clamp(min + magic.Mana / magic.MaxMana * 0.333f, min, max);
         }
 
         UpdateShader(new Vector3(humanoid.EyeColor.R, humanoid.EyeColor.G, humanoid.EyeColor.B), tintIntensity);

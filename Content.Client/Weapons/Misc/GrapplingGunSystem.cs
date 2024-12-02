@@ -1,4 +1,5 @@
-using System.Net;
+#region
+
 using Content.Client.Hands.Systems;
 using Content.Shared.CombatMode;
 using Content.Shared.Weapons.Misc;
@@ -9,7 +10,11 @@ using Robust.Shared.Input;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Dynamics.Joints;
 
+#endregion
+
+
 namespace Content.Client.Weapons.Misc;
+
 
 public sealed class GrapplingGunSystem : SharedGrapplingGunSystem
 {
@@ -35,9 +40,7 @@ public sealed class GrapplingGunSystem : SharedGrapplingGunSystem
         if (!TryComp<JointComponent>(handUid, out var jointComp) ||
             !jointComp.GetJoints.TryGetValue(GrapplingJoint, out var joint) ||
             joint is not DistanceJoint distance)
-        {
             return;
-        }
 
         if (distance.MaxLength <= distance.MinLength)
             return;
@@ -46,9 +49,7 @@ public sealed class GrapplingGunSystem : SharedGrapplingGunSystem
 
         if (!TryComp<CombatModeComponent>(local, out var combatMode) ||
             !combatMode.IsInCombatMode)
-        {
             reelKey = false;
-        }
 
         if (grappling.Reeling == reelKey)
             return;

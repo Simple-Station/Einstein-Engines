@@ -1,9 +1,15 @@
+#region
+
 using Content.Shared.BarSign;
 using Content.Shared.Power;
 using Robust.Client.GameObjects;
 using Robust.Shared.Prototypes;
 
+#endregion
+
+
 namespace Content.Client.BarSign;
+
 
 public sealed class BarSignSystem : VisualizerSystem<BarSignComponent>
 {
@@ -15,17 +21,26 @@ public sealed class BarSignSystem : VisualizerSystem<BarSignComponent>
         SubscribeLocalEvent<BarSignComponent, AfterAutoHandleStateEvent>(OnAfterAutoHandleState);
     }
 
-    private void OnAfterAutoHandleState(EntityUid uid, BarSignComponent component, ref AfterAutoHandleStateEvent args)
-    {
+    private void OnAfterAutoHandleState(
+        EntityUid uid,
+        BarSignComponent component,
+        ref AfterAutoHandleStateEvent args
+    ) =>
         UpdateAppearance(uid, component);
-    }
 
-    protected override void OnAppearanceChange(EntityUid uid, BarSignComponent component, ref AppearanceChangeEvent args)
-    {
+    protected override void OnAppearanceChange(
+        EntityUid uid,
+        BarSignComponent component,
+        ref AppearanceChangeEvent args
+    ) =>
         UpdateAppearance(uid, component, args.Component, args.Sprite);
-    }
 
-    private void UpdateAppearance(EntityUid id, BarSignComponent sign, AppearanceComponent? appearance = null, SpriteComponent? sprite = null)
+    private void UpdateAppearance(
+        EntityUid id,
+        BarSignComponent sign,
+        AppearanceComponent? appearance = null,
+        SpriteComponent? sprite = null
+    )
     {
         if (!Resolve(id, ref appearance, ref sprite))
             return;
@@ -34,7 +49,7 @@ public sealed class BarSignSystem : VisualizerSystem<BarSignComponent>
 
         if (powered
             && sign.Current != null
-            && _prototypeManager.TryIndex(sign.Current, out BarSignPrototype? proto))
+            && _prototypeManager.TryIndex(sign.Current, out var proto))
         {
             sprite.LayerSetState(0, proto.Icon);
             sprite.LayerSetShader(0, "unshaded");

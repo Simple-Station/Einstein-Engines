@@ -1,3 +1,5 @@
+#region
+
 using System.Linq;
 using Content.Client.Guidebook.Components;
 using Content.Client.Light;
@@ -9,17 +11,21 @@ using Content.Shared.Tag;
 using Content.Shared.Verbs;
 using Robust.Client.GameObjects;
 using Robust.Client.Player;
-using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
+#endregion
+
+
 namespace Content.Client.Guidebook;
 
+
 /// <summary>
-///     This system handles the help-verb and interactions with various client-side entities that are embedded into guidebooks.
+///     This system handles the help-verb and interactions with various client-side entities that are embedded into
+///     guidebooks.
 /// </summary>
 public sealed class GuidebookSystem : EntitySystem
 {
@@ -36,22 +42,23 @@ public sealed class GuidebookSystem : EntitySystem
 
     private EntityUid _defaultUser;
 
-    /// <inheritdoc/>
+    /// <inheritdoc />
     public override void Initialize()
     {
         SubscribeLocalEvent<GuideHelpComponent, GetVerbsEvent<ExamineVerb>>(OnGetVerbs);
         SubscribeLocalEvent<GuideHelpComponent, ActivateInWorldEvent>(OnInteract);
 
         SubscribeLocalEvent<GuidebookControlsTestComponent, InteractHandEvent>(OnGuidebookControlsTestInteractHand);
-        SubscribeLocalEvent<GuidebookControlsTestComponent, ActivateInWorldEvent>(OnGuidebookControlsTestActivateInWorld);
+        SubscribeLocalEvent<GuidebookControlsTestComponent, ActivateInWorldEvent>(
+            OnGuidebookControlsTestActivateInWorld);
         SubscribeLocalEvent<GuidebookControlsTestComponent, GetVerbsEvent<AlternativeVerb>>(
             OnGuidebookControlsTestGetAlternateVerbs);
     }
 
     /// <summary>
-    /// Gets a user entity to use for verbs and examinations. If the player has no attached entity, this will use a
-    /// dummy client-side entity so that users can still use the guidebook when not attached to anything (e.g., in the
-    /// lobby)
+    ///     Gets a user entity to use for verbs and examinations. If the player has no attached entity, this will use a
+    ///     dummy client-side entity so that users can still use the guidebook when not attached to anything (e.g., in the
+    ///     lobby)
     /// </summary>
     public EntityUid GetGuidebookUser()
     {
@@ -70,20 +77,23 @@ public sealed class GuidebookSystem : EntitySystem
         if (component.Guides.Count == 0 || _tags.HasTag(uid, GuideEmbedTag))
             return;
 
-        args.Verbs.Add(new()
-        {
-            Text = Loc.GetString("guide-help-verb"),
-            Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/information.svg.192dpi.png")),
-            Act = () => OnGuidebookOpen?.Invoke(component.Guides, null, null, component.IncludeChildren, component.Guides[0]),
-            ClientExclusive = true,
-            CloseMenu = true
-        });
+        args.Verbs.Add(
+            new()
+            {
+                Text = Loc.GetString("guide-help-verb"),
+                Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/information.svg.192dpi.png")),
+                Act = () => OnGuidebookOpen?.Invoke(
+                    component.Guides,
+                    null,
+                    null,
+                    component.IncludeChildren,
+                    component.Guides[0]),
+                ClientExclusive = true,
+                CloseMenu = true
+            });
     }
 
-    public void OpenHelp(List<string> guides)
-    {
-        OnGuidebookOpen?.Invoke(guides, null, null, true, guides[0]);
-    }
+    public void OpenHelp(List<string> guides) => OnGuidebookOpen?.Invoke(guides, null, null, true, guides[0]);
 
     private void OnInteract(EntityUid uid, GuideHelpComponent component, ActivateInWorldEvent args)
     {
@@ -97,48 +107,58 @@ public sealed class GuidebookSystem : EntitySystem
         args.Handled = true;
     }
 
-    private void OnGuidebookControlsTestGetAlternateVerbs(EntityUid uid, GuidebookControlsTestComponent component, GetVerbsEvent<AlternativeVerb> args)
+    private void OnGuidebookControlsTestGetAlternateVerbs(
+        EntityUid uid,
+        GuidebookControlsTestComponent component,
+        GetVerbsEvent<AlternativeVerb> args
+    )
     {
-        args.Verbs.Add(new AlternativeVerb()
-        {
-            Act = () =>
+        args.Verbs.Add(
+            new()
             {
-                if (Transform(uid).LocalRotation != Angle.Zero)
-                    Transform(uid).LocalRotation -= Angle.FromDegrees(90);
-            },
-            Text = Loc.GetString("guidebook-monkey-unspin"),
-            Priority = -9999,
-        });
-
-        args.Verbs.Add(new AlternativeVerb()
-        {
-            Act = () =>
-            {
-                EnsureComp<PointLightComponent>(uid); // RGB demands this.
-                _pointLightSystem.SetEnabled(uid, false);
-                var rgb = EnsureComp<RgbLightControllerComponent>(uid);
-
-                var sprite = EnsureComp<SpriteComponent>(uid);
-                var layers = new List<int>();
-
-                for (var i = 0; i < sprite.AllLayers.Count(); i++)
+                Act = () =>
                 {
-                    layers.Add(i);
-                }
+                    if (Transform(uid).LocalRotation != Angle.Zero)
+                        Transform(uid).LocalRotation -= Angle.FromDegrees(90);
+                },
+                Text = Loc.GetString("guidebook-monkey-unspin"),
+                Priority = -9999
+            });
 
-                _rgbLightControllerSystem.SetLayers(uid, layers, rgb);
-            },
-            Text = Loc.GetString("guidebook-monkey-disco"),
-            Priority = -9998,
-        });
+        args.Verbs.Add(
+            new()
+            {
+                Act = () =>
+                {
+                    EnsureComp<PointLightComponent>(uid); // RGB demands this.
+                    _pointLightSystem.SetEnabled(uid, false);
+                    var rgb = EnsureComp<RgbLightControllerComponent>(uid);
+
+                    var sprite = EnsureComp<SpriteComponent>(uid);
+                    var layers = new List<int>();
+
+                    for (var i = 0; i < sprite.AllLayers.Count(); i++)
+                        layers.Add(i);
+
+                    _rgbLightControllerSystem.SetLayers(uid, layers, rgb);
+                },
+                Text = Loc.GetString("guidebook-monkey-disco"),
+                Priority = -9998
+            });
     }
 
-    private void OnGuidebookControlsTestActivateInWorld(EntityUid uid, GuidebookControlsTestComponent component, ActivateInWorldEvent args)
-    {
+    private void OnGuidebookControlsTestActivateInWorld(
+        EntityUid uid,
+        GuidebookControlsTestComponent component,
+        ActivateInWorldEvent args
+    ) =>
         Transform(uid).LocalRotation += Angle.FromDegrees(90);
-    }
 
-    private void OnGuidebookControlsTestInteractHand(EntityUid uid, GuidebookControlsTestComponent component, InteractHandEvent args)
+    private void OnGuidebookControlsTestInteractHand(
+        EntityUid uid,
+        GuidebookControlsTestComponent component,
+        InteractHandEvent args
+    )
     {
         if (!TryComp<SpeechComponent>(uid, out var speech) || speech.SpeechSounds is null)
             return;
@@ -155,7 +175,7 @@ public sealed class GuidebookSystem : EntitySystem
     public void FakeClientAltActivateInWorld(EntityUid activated)
     {
         // Get list of alt-interact verbs
-        var verbs = _verbSystem.GetLocalVerbs(activated, GetGuidebookUser(), typeof(AlternativeVerb), force: true);
+        var verbs = _verbSystem.GetLocalVerbs(activated, GetGuidebookUser(), typeof(AlternativeVerb), true);
 
         if (!verbs.Any())
             return;

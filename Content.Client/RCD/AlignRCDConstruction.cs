@@ -1,4 +1,5 @@
-using System.Numerics;
+#region
+
 using Content.Client.Gameplay;
 using Content.Shared.Hands.Components;
 using Content.Shared.Interaction;
@@ -10,7 +11,11 @@ using Robust.Client.State;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 
+#endregion
+
+
 namespace Content.Client.RCD;
+
 
 public sealed class AlignRCDConstruction : PlacementMode
 {
@@ -25,10 +30,10 @@ public sealed class AlignRCDConstruction : PlacementMode
     private const float SearchBoxSize = 2f;
     private const float PlaceColorBaseAlpha = 0.5f;
 
-    private EntityCoordinates _unalignedMouseCoords = default;
+    private EntityCoordinates _unalignedMouseCoords;
 
     /// <summary>
-    /// This placement mode is not on the engine because it is content specific (i.e., for the RCD)
+    ///     This placement mode is not on the engine because it is content specific (i.e., for the RCD)
     /// </summary>
     public AlignRCDConstruction(PlacementManager pMan) : base(pMan)
     {
@@ -57,13 +62,19 @@ public sealed class AlignRCDConstruction : PlacementMode
 
         if (pManager.CurrentPermission!.IsTile)
         {
-            MouseCoords = new EntityCoordinates(MouseCoords.EntityId, new Vector2(CurrentTile.X + tileSize / 2,
-                CurrentTile.Y + tileSize / 2));
+            MouseCoords = new(
+                MouseCoords.EntityId,
+                new(
+                    CurrentTile.X + tileSize / 2,
+                    CurrentTile.Y + tileSize / 2));
         }
         else
         {
-            MouseCoords = new EntityCoordinates(MouseCoords.EntityId, new Vector2(CurrentTile.X + tileSize / 2 + pManager.PlacementOffset.X,
-                CurrentTile.Y + tileSize / 2 + pManager.PlacementOffset.Y));
+            MouseCoords = new(
+                MouseCoords.EntityId,
+                new(
+                    CurrentTile.X + tileSize / 2 + pManager.PlacementOffset.X,
+                    CurrentTile.Y + tileSize / 2 + pManager.PlacementOffset.Y));
         }
     }
 
@@ -75,17 +86,19 @@ public sealed class AlignRCDConstruction : PlacementMode
         if (!_entityManager.TryGetComponent<TransformComponent>(player, out var xform))
             return false;
 
-        if (!xform.Coordinates.InRange(_entityManager, _transformSystem, position, SharedInteractionSystem.InteractionRange))
+        if (!xform.Coordinates.InRange(
+            _entityManager,
+            _transformSystem,
+            position,
+            SharedInteractionSystem.InteractionRange))
         {
             InvalidPlaceColor = InvalidPlaceColor.WithAlpha(0);
             return false;
         }
 
         // Otherwise restore the alpha value
-        else
-        {
-            InvalidPlaceColor = InvalidPlaceColor.WithAlpha(PlaceColorBaseAlpha);
-        }
+
+        InvalidPlaceColor = InvalidPlaceColor.WithAlpha(PlaceColorBaseAlpha);
 
         // Determine if player is carrying an RCD in their active hand
         if (!_entityManager.TryGetComponent<HandsComponent>(player, out var hands))

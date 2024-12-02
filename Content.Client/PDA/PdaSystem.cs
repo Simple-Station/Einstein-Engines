@@ -1,8 +1,14 @@
-using Content.Shared.PDA;
+#region
+
 using Content.Shared.Light;
+using Content.Shared.PDA;
 using Robust.Client.GameObjects;
 
+#endregion
+
+
 namespace Content.Client.PDA;
+
 
 public sealed class PdaSystem : SharedPdaSystem
 {
@@ -18,7 +24,11 @@ public sealed class PdaSystem : SharedPdaSystem
         if (args.Sprite == null)
             return;
 
-        if (Appearance.TryGetData<bool>(uid, UnpoweredFlashlightVisuals.LightOn, out var isFlashlightOn, args.Component))
+        if (Appearance.TryGetData<bool>(
+            uid,
+            UnpoweredFlashlightVisuals.LightOn,
+            out var isFlashlightOn,
+            args.Component))
             args.Sprite.LayerSetVisible(PdaVisualLayers.Flashlight, isFlashlightOn);
 
         if (Appearance.TryGetData<bool>(uid, PdaVisuals.IdCardInserted, out var isCardInserted, args.Component))

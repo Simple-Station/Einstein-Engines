@@ -1,7 +1,13 @@
+#region
+
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 
+#endregion
+
+
 namespace Content.Client.Humanoid;
+
 
 // Marking BUI.
 // Do not use this in any non-privileged instance. This just replaces an entire marking set
@@ -12,9 +18,7 @@ public sealed class HumanoidMarkingModifierBoundUserInterface : BoundUserInterfa
     [ViewVariables]
     private HumanoidMarkingModifierWindow? _window;
 
-    public HumanoidMarkingModifierBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-    {
-    }
+    public HumanoidMarkingModifierBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
 
     protected override void Open()
     {
@@ -36,27 +40,16 @@ public sealed class HumanoidMarkingModifierBoundUserInterface : BoundUserInterfa
         base.UpdateState(state);
 
         if (_window == null || state is not HumanoidMarkingModifierState cast)
-        {
             return;
-        }
 
         _window.SetState(cast.MarkingSet, cast.Species, cast.Sex, cast.SkinColor, cast.CustomBaseLayers);
     }
 
-    private void SendMarkingSet(MarkingSet set)
-    {
-        SendMessage(new HumanoidMarkingModifierMarkingSetMessage(set, true));
-    }
+    private void SendMarkingSet(MarkingSet set) => SendMessage(new HumanoidMarkingModifierMarkingSetMessage(set, true));
 
-    private void SendMarkingSetNoResend(MarkingSet set)
-    {
+    private void SendMarkingSetNoResend(MarkingSet set) =>
         SendMessage(new HumanoidMarkingModifierMarkingSetMessage(set, false));
-    }
 
-    private void SendBaseLayer(HumanoidVisualLayers layer, CustomBaseLayerInfo? info)
-    {
+    private void SendBaseLayer(HumanoidVisualLayers layer, CustomBaseLayerInfo? info) =>
         SendMessage(new HumanoidMarkingModifierBaseLayersSetMessage(layer, info, true));
-    }
 }
-
-

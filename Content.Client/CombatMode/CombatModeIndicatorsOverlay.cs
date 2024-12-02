@@ -1,22 +1,26 @@
+#region
+
 using System.Numerics;
 using Content.Client.Hands.Systems;
 using Content.Shared.Weapons.Ranged.Components;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Client.Input;
-using Robust.Client.Serialization;
 using Robust.Client.UserInterface;
 using Robust.Shared.Enums;
-using Robust.Shared.Graphics;
 using Robust.Shared.Utility;
+
+#endregion
+
 
 namespace Content.Client.CombatMode;
 
+
 /// <summary>
-///   This shows something like crosshairs for the combat mode next to the mouse cursor.
-///   For weapons with the gun class, a crosshair of one type is displayed,
-///   while for all other types of weapons and items in hand, as well as for an empty hand,
-///   a crosshair of a different type is displayed. These crosshairs simply show the state of combat mode (on|off).
+///     This shows something like crosshairs for the combat mode next to the mouse cursor.
+///     For weapons with the gun class, a crosshair of one type is displayed,
+///     while for all other types of weapons and items in hand, as well as for an empty hand,
+///     a crosshair of a different type is displayed. These crosshairs simply show the state of combat mode (on|off).
 /// </summary>
 public sealed class CombatModeIndicatorsOverlay : Overlay
 {
@@ -34,10 +38,15 @@ public sealed class CombatModeIndicatorsOverlay : Overlay
 
     public Color MainColor = Color.White.WithAlpha(0.3f);
     public Color StrokeColor = Color.Black.WithAlpha(0.5f);
-    public float Scale = 0.6f;  // 1 is a little big
+    public float Scale = 0.6f; // 1 is a little big
 
-    public CombatModeIndicatorsOverlay(IInputManager input, IEntityManager entMan,
-            IEyeManager eye, CombatModeSystem combatSys, HandsSystem hands)
+    public CombatModeIndicatorsOverlay(
+        IInputManager input,
+        IEntityManager entMan,
+        IEyeManager eye,
+        CombatModeSystem combatSys,
+        HandsSystem hands
+    )
     {
         _inputManager = input;
         _entMan = entMan;
@@ -46,12 +55,18 @@ public sealed class CombatModeIndicatorsOverlay : Overlay
         _hands = hands;
 
         var spriteSys = _entMan.EntitySysManager.GetEntitySystem<SpriteSystem>();
-        _gunSight = spriteSys.Frame0(new SpriteSpecifier.Rsi(new ResPath("/Textures/Interface/Misc/crosshair_pointers.rsi"),
-            "gun_sight"));
-        _gunBoltSight = spriteSys.Frame0(new SpriteSpecifier.Rsi(new ResPath("/Textures/Interface/Misc/crosshair_pointers.rsi"),
-            "gun_bolt_sight"));
-        _meleeSight = spriteSys.Frame0(new SpriteSpecifier.Rsi(new ResPath("/Textures/Interface/Misc/crosshair_pointers.rsi"),
-             "melee_sight"));
+        _gunSight = spriteSys.Frame0(
+            new SpriteSpecifier.Rsi(
+                new("/Textures/Interface/Misc/crosshair_pointers.rsi"),
+                "gun_sight"));
+        _gunBoltSight = spriteSys.Frame0(
+            new SpriteSpecifier.Rsi(
+                new("/Textures/Interface/Misc/crosshair_pointers.rsi"),
+                "gun_bolt_sight"));
+        _meleeSight = spriteSys.Frame0(
+            new SpriteSpecifier.Rsi(
+                new("/Textures/Interface/Misc/crosshair_pointers.rsi"),
+                "melee_sight"));
     }
 
     protected override bool BeforeDraw(in OverlayDrawArgs args)
@@ -80,7 +95,7 @@ public sealed class CombatModeIndicatorsOverlay : Overlay
         var uiScale = (args.ViewportControl as Control)?.UIScale ?? 1f;
         var limitedScale = uiScale > 1.25f ? 1.25f : uiScale;
 
-        var sight = isHandGunItem ? (isGunBolted ? _gunSight : _gunBoltSight) : _meleeSight;
+        var sight = isHandGunItem ? isGunBolted ? _gunSight : _gunBoltSight : _meleeSight;
         DrawSight(sight, args.ScreenHandle, mousePos, limitedScale * Scale);
     }
 
@@ -89,9 +104,13 @@ public sealed class CombatModeIndicatorsOverlay : Overlay
         var sightSize = sight.Size * scale;
         var expandedSize = sightSize + new Vector2(7f, 7f);
 
-        screen.DrawTextureRect(sight,
-            UIBox2.FromDimensions(centerPos - sightSize * 0.5f, sightSize), StrokeColor);
-        screen.DrawTextureRect(sight,
-            UIBox2.FromDimensions(centerPos - expandedSize * 0.5f, expandedSize), MainColor);
+        screen.DrawTextureRect(
+            sight,
+            UIBox2.FromDimensions(centerPos - sightSize * 0.5f, sightSize),
+            StrokeColor);
+        screen.DrawTextureRect(
+            sight,
+            UIBox2.FromDimensions(centerPos - expandedSize * 0.5f, expandedSize),
+            MainColor);
     }
 }

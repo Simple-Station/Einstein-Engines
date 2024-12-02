@@ -1,18 +1,21 @@
+#region
+
 using Content.Shared.Anomaly;
 using Content.Shared.Gravity;
 using JetBrains.Annotations;
-using Robust.Client.GameObjects;
+
+#endregion
+
 
 namespace Content.Client.Anomaly.Ui;
+
 
 [UsedImplicitly]
 public sealed class AnomalyGeneratorBoundUserInterface : BoundUserInterface
 {
     private AnomalyGeneratorWindow? _window;
 
-    public AnomalyGeneratorBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-    {
-    }
+    public AnomalyGeneratorBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
 
     protected override void Open()
     {
@@ -41,14 +44,11 @@ public sealed class AnomalyGeneratorBoundUserInterface : BoundUserInterface
     protected override void Dispose(bool disposing)
     {
         base.Dispose(disposing);
-        if (!disposing) return;
+        if (!disposing)
+            return;
 
         _window?.Dispose();
     }
 
-    public void SetPowerSwitch(bool on)
-    {
-        SendMessage(new SharedGravityGeneratorComponent.SwitchGeneratorMessage(on));
-    }
+    public void SetPowerSwitch(bool on) => SendMessage(new SharedGravityGeneratorComponent.SwitchGeneratorMessage(on));
 }
-

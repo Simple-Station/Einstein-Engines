@@ -1,4 +1,6 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿#region
+
+using System.Diagnostics.CodeAnalysis;
 using JetBrains.Annotations;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
@@ -6,7 +8,11 @@ using Robust.Client.UserInterface.RichText;
 using Robust.Shared.Input;
 using Robust.Shared.Utility;
 
+#endregion
+
+
 namespace Content.Client.Guidebook.RichText;
+
 
 [UsedImplicitly]
 public sealed class TextLinkTag : IMarkupTag
@@ -15,7 +21,7 @@ public sealed class TextLinkTag : IMarkupTag
 
     public Control? Control;
 
-    /// <inheritdoc/>
+    /// <inheritdoc />
     public bool TryGetControl(MarkupNode node, [NotNullWhen(true)] out Control? control)
     {
         if (!node.Value.TryGetString(out var text)
@@ -60,7 +66,8 @@ public sealed class TextLinkTag : IMarkupTag
             handler.HandleClick(link);
             return;
         }
-        Logger.Warning($"Warning! No valid ILinkClickHandler found.");
+
+        Logger.Warning("Warning! No valid ILinkClickHandler found.");
     }
 }
 

@@ -1,3 +1,5 @@
+#region
+
 using Content.Client.NetworkConfigurator.Systems;
 using Content.Shared.DeviceNetwork.Components;
 using Robust.Client.Graphics;
@@ -5,7 +7,11 @@ using Robust.Shared.Enums;
 using Robust.Shared.Map;
 using Robust.Shared.Random;
 
+#endregion
+
+
 namespace Content.Client.NetworkConfigurator;
+
 
 public sealed class NetworkConfiguratorLinkOverlay : Overlay
 {
@@ -30,7 +36,8 @@ public sealed class NetworkConfiguratorLinkOverlay : Overlay
         var query = _entityManager.EntityQueryEnumerator<NetworkConfiguratorActiveLinkOverlayComponent>();
         while (query.MoveNext(out var uid, out _))
         {
-            if (_entityManager.Deleted(uid) || !_entityManager.TryGetComponent(uid, out DeviceListComponent? deviceList))
+            if (_entityManager.Deleted(uid) ||
+                !_entityManager.TryGetComponent(uid, out DeviceListComponent? deviceList))
             {
                 _entityManager.RemoveComponentDeferred<NetworkConfiguratorActiveLinkOverlayComponent>(uid);
                 continue;
@@ -38,7 +45,7 @@ public sealed class NetworkConfiguratorLinkOverlay : Overlay
 
             if (!Colors.TryGetValue(uid, out var color))
             {
-                color = new Color(
+                color = new(
                     _random.Next(0, 255),
                     _random.Next(0, 255),
                     _random.Next(0, 255));
@@ -56,15 +63,11 @@ public sealed class NetworkConfiguratorLinkOverlay : Overlay
             foreach (var device in _deviceListSystem.GetAllDevices(uid, deviceList))
             {
                 if (_entityManager.Deleted(device))
-                {
                     continue;
-                }
 
                 var linkTransform = _entityManager.GetComponent<TransformComponent>(device);
                 if (linkTransform.MapID == MapId.Nullspace)
-                {
                     continue;
-                }
 
                 args.WorldHandle.DrawLine(sourceTransform.WorldPosition, linkTransform.WorldPosition, Colors[uid]);
             }

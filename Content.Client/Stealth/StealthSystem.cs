@@ -1,3 +1,5 @@
+#region
+
 using Content.Client.Interactable.Components;
 using Content.Shared.Stealth;
 using Content.Shared.Stealth.Components;
@@ -5,7 +7,11 @@ using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Prototypes;
 
+#endregion
+
+
 namespace Content.Client.Stealth;
+
 
 public sealed class StealthSystem : SharedStealthSystem
 {
@@ -32,7 +38,12 @@ public sealed class StealthSystem : SharedStealthSystem
         SetShader(uid, value, component);
     }
 
-    private void SetShader(EntityUid uid, bool enabled, StealthComponent? component = null, SpriteComponent? sprite = null)
+    private void SetShader(
+        EntityUid uid,
+        bool enabled,
+        StealthComponent? component = null,
+        SpriteComponent? sprite = null
+    )
     {
         if (!Resolve(uid, ref component, ref sprite, false))
             return;
@@ -56,10 +67,8 @@ public sealed class StealthSystem : SharedStealthSystem
         }
     }
 
-    private void OnStartup(EntityUid uid, StealthComponent component, ComponentStartup args)
-    {
+    private void OnStartup(EntityUid uid, StealthComponent component, ComponentStartup args) =>
         SetShader(uid, component.Enabled, component);
-    }
 
     private void OnShutdown(EntityUid uid, StealthComponent component, ComponentShutdown args)
     {
@@ -90,7 +99,6 @@ public sealed class StealthSystem : SharedStealthSystem
         _shader.SetParameter("visibility", visibility);
 
         visibility = MathF.Max(0, visibility);
-        args.Sprite.Color = new Color(visibility, visibility, 1, 1);
+        args.Sprite.Color = new(visibility, visibility, 1);
     }
 }
-

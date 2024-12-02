@@ -1,13 +1,18 @@
+#region
+
 using Content.Shared.Rotation;
 using Robust.Client.Animations;
 using Robust.Client.GameObjects;
 using Robust.Shared.Animations;
 
+#endregion
+
+
 namespace Content.Client.Rotation;
+
 
 public sealed class RotationVisualizerSystem : SharedRotationVisualsSystem
 {
-
     [Dependency] private readonly AppearanceSystem _appearance = default!;
     [Dependency] private readonly AnimationPlayerSystem _animation = default!;
 
@@ -43,17 +48,13 @@ public sealed class RotationVisualizerSystem : SharedRotationVisualsSystem
     public void AnimateSpriteRotation(EntityUid uid, SpriteComponent spriteComp, Angle rotation, float animationTime)
     {
         if (spriteComp.Rotation.Equals(rotation))
-        {
             return;
-        }
 
         var animationComp = EnsureComp<AnimationPlayerComponent>(uid);
         const string animationKey = "rotate";
         // Stop the current rotate animation and then start a new one
         if (_animation.HasRunningAnimation(animationComp, animationKey))
-        {
             _animation.Stop(animationComp, animationKey);
-        }
 
         var animation = new Animation
         {
@@ -67,8 +68,8 @@ public sealed class RotationVisualizerSystem : SharedRotationVisualsSystem
                     InterpolationMode = AnimationInterpolationMode.Linear,
                     KeyFrames =
                     {
-                        new AnimationTrackProperty.KeyFrame(spriteComp.Rotation, 0),
-                        new AnimationTrackProperty.KeyFrame(rotation, animationTime)
+                        new(spriteComp.Rotation, 0),
+                        new(rotation, animationTime)
                     }
                 }
             }

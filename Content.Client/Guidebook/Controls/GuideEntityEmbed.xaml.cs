@@ -1,3 +1,5 @@
+#region
+
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
@@ -17,7 +19,11 @@ using Robust.Shared.Input;
 using Robust.Shared.Map;
 using Robust.Shared.Utility;
 
+#endregion
+
+
 namespace Content.Client.Guidebook.Controls;
+
 
 /// <summary>
 ///     Control for embedding an entity into a guidebook/document. This is effectively a sprite-view that supports
@@ -36,9 +42,10 @@ public sealed partial class GuideEntityEmbed : BoxContainer, IDocumentTag
 
     public bool Interactive;
 
-    public Entity<SpriteComponent>? Sprite => View.Entity == null || View.Sprite == null
-        ? null
-        : (View.Entity.Value, View.Sprite);
+    public Entity<SpriteComponent>? Sprite =>
+        View.Entity == null || View.Sprite == null
+            ? null
+            : (View.Entity.Value, View.Sprite);
 
     public Vector2 Scale
     {
@@ -80,7 +87,8 @@ public sealed partial class GuideEntityEmbed : BoxContainer, IDocumentTag
         // do examination?
         if (args.Function == ContentKeyFunctions.ExamineEntity)
         {
-            _examineSystem.DoExamine(entity.Value,
+            _examineSystem.DoExamine(
+                entity.Value,
                 userOverride: _guidebookSystem.GetGuidebookUser());
             args.Handle();
             return;
@@ -156,29 +164,21 @@ public sealed partial class GuideEntityEmbed : BoxContainer, IDocumentTag
         if (args.TryGetValue("Scale", out var scaleStr))
         {
             var scale = float.Parse(scaleStr, CultureInfo.InvariantCulture);
-            Scale = new Vector2(scale, scale);
+            Scale = new(scale, scale);
         }
         else
-        {
-            Scale = new Vector2(2, 2);
-        }
+            Scale = new(2, 2);
 
         if (args.TryGetValue("Interactive", out var interactive))
             Interactive = bool.Parse(interactive);
 
         if (args.TryGetValue("Rotation", out var rotation))
-        {
             View.OverrideDirection = Angle.FromDegrees(double.Parse(rotation)).GetDir();
-        }
 
         if (args.TryGetValue("Margin", out var margin))
-        {
             Margin = ParseThickness(margin);
-        }
         else
-        {
-            Margin = new Thickness(4, 8);
-        }
+            Margin = new(4, 8);
 
         // By default, we will map-initialize guidebook entities.
         if (!args.TryGetValue("Init", out var mapInit) || !bool.Parse(mapInit))
@@ -195,12 +195,12 @@ public sealed partial class GuideEntityEmbed : BoxContainer, IDocumentTag
 
         var split = value.Split(" ", StringSplitOptions.RemoveEmptyEntries).Select(x => Parse.Float(x)).ToArray();
         if (split.Length == 1)
-            return new Thickness(split[0]);
+            return new(split[0]);
         if (split.Length == 2)
-            return new Thickness(split[0], split[1]);
+            return new(split[0], split[1]);
         if (split.Length == 4)
-            return new Thickness(split[0], split[1], split[2], split[3]);
+            return new(split[0], split[1], split[2], split[3]);
 
-        throw new Exception("Invalid Thickness format!");
+        throw new("Invalid Thickness format!");
     }
 }

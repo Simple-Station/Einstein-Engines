@@ -1,12 +1,18 @@
-﻿using Content.Shared.Mobs;
+﻿#region
+
+using Content.Shared.Mobs;
 using Content.Shared.Silicons.Borgs;
 using Content.Shared.Silicons.Borgs.Components;
 using Robust.Client.GameObjects;
 using Robust.Shared.Containers;
 
+#endregion
+
+
 namespace Content.Client.Silicons.Borgs;
 
-/// <inheritdoc/>
+
+/// <inheritdoc />
 public sealed class BorgSystem : SharedBorgSystem
 {
     [Dependency] private readonly AppearanceSystem _appearance = default!;
@@ -26,7 +32,11 @@ public sealed class BorgSystem : SharedBorgSystem
         UpdateBorgAppearance(uid, component, args.Component, args.Sprite);
     }
 
-    protected override void OnInserted(EntityUid uid, BorgChassisComponent component, EntInsertedIntoContainerMessage args)
+    protected override void OnInserted(
+        EntityUid uid,
+        BorgChassisComponent component,
+        EntInsertedIntoContainerMessage args
+    )
     {
         if (!component.Initialized)
             return;
@@ -35,7 +45,11 @@ public sealed class BorgSystem : SharedBorgSystem
         UpdateBorgAppearance(uid, component);
     }
 
-    protected override void OnRemoved(EntityUid uid, BorgChassisComponent component, EntRemovedFromContainerMessage args)
+    protected override void OnRemoved(
+        EntityUid uid,
+        BorgChassisComponent component,
+        EntRemovedFromContainerMessage args
+    )
     {
         if (!component.Initialized)
             return;
@@ -44,10 +58,12 @@ public sealed class BorgSystem : SharedBorgSystem
         UpdateBorgAppearance(uid, component);
     }
 
-    private void UpdateBorgAppearance(EntityUid uid,
+    private void UpdateBorgAppearance(
+        EntityUid uid,
         BorgChassisComponent? component = null,
         AppearanceComponent? appearance = null,
-        SpriteComponent? sprite = null)
+        SpriteComponent? sprite = null
+    )
     {
         if (!Resolve(uid, ref component, ref appearance, ref sprite))
             return;
@@ -81,9 +97,7 @@ public sealed class BorgSystem : SharedBorgSystem
 
         sprite.LayerSetVisible(MMIVisualLayers.Brain, brain);
         if (!brain)
-        {
             sprite.LayerSetState(MMIVisualLayers.Base, component.NoBrainState);
-        }
         else
         {
             var state = hasMind

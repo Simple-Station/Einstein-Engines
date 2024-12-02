@@ -1,6 +1,5 @@
-using Robust.Shared.Utility;
-
 namespace Content.Client.SurveillanceCamera;
+
 
 public sealed class SurveillanceCameraMonitorSystem : EntitySystem
 {
@@ -27,8 +26,5 @@ public sealed class SurveillanceCameraMonitorSystem : EntitySystem
         comp.OnFinish = onFinish;
     }
 
-    public void RemoveTimer(EntityUid uid)
-    {
-        RemCompDeferred<ActiveSurveillanceCameraMonitorVisualsComponent>(uid);
-    }
+    public void RemoveTimer(EntityUid uid) => RemCompDeferred<ActiveSurveillanceCameraMonitorVisualsComponent>(uid);
 }

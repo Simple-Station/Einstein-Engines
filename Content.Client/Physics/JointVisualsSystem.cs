@@ -1,6 +1,12 @@
+#region
+
 using Robust.Client.Graphics;
 
+#endregion
+
+
 namespace Content.Client.Physics;
+
 
 public sealed class JointVisualsSystem : EntitySystem
 {

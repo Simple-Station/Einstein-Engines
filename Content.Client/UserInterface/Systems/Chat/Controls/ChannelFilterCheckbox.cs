@@ -1,7 +1,13 @@
-﻿using Content.Shared.Chat;
+﻿#region
+
+using Content.Shared.Chat;
 using Robust.Client.UserInterface.Controls;
 
+#endregion
+
+
 namespace Content.Client.UserInterface.Systems.Chat.Controls;
+
 
 public sealed class ChannelFilterCheckbox : CheckBox
 {
@@ -26,8 +32,5 @@ public sealed class ChannelFilterCheckbox : CheckBox
         Text = name;
     }
 
-    public void UpdateUnreadCount(int? unread)
-    {
-        UpdateText(unread);
-    }
+    public void UpdateUnreadCount(int? unread) => UpdateText(unread);
 }

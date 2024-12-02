@@ -1,12 +1,17 @@
+#region
+
 using Robust.Client.UserInterface;
 
-namespace Content.Client.Stylesheets
-{
-    public interface IStylesheetManager
-    {
-        Stylesheet SheetNano { get; }
-        Stylesheet SheetSpace { get; }
+#endregion
 
-        void Initialize();
-    }
+
+namespace Content.Client.Stylesheets;
+
+
+public interface IStylesheetManager
+{
+    Stylesheet SheetNano { get; }
+    Stylesheet SheetSpace { get; }
+
+    void Initialize();
 }

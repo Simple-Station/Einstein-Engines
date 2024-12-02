@@ -1,11 +1,21 @@
+#region
+
 using Content.Shared.Power;
 using Robust.Client.GameObjects;
 
+#endregion
+
+
 namespace Content.Client.PowerCell;
+
 
 public sealed class PowerChargerVisualizerSystem : VisualizerSystem<PowerChargerVisualsComponent>
 {
-    protected override void OnAppearanceChange(EntityUid uid, PowerChargerVisualsComponent comp, ref AppearanceChangeEvent args)
+    protected override void OnAppearanceChange(
+        EntityUid uid,
+        PowerChargerVisualsComponent comp,
+        ref AppearanceChangeEvent args
+    )
     {
         if (args.Sprite == null)
             return;
@@ -17,13 +27,11 @@ public sealed class PowerChargerVisualizerSystem : VisualizerSystem<PowerCharger
             args.Sprite.LayerSetState(PowerChargerVisualLayers.Base, comp.OccupiedState);
         }
         else
-        {
             args.Sprite.LayerSetState(PowerChargerVisualLayers.Base, comp.EmptyState);
-        }
 
         // Update lighting
         if (AppearanceSystem.TryGetData<CellChargerStatus>(uid, CellVisual.Light, out var status, args.Component)
-        &&  comp.LightStates.TryGetValue(status, out var lightState))
+            && comp.LightStates.TryGetValue(status, out var lightState))
         {
             args.Sprite.LayerSetState(PowerChargerVisualLayers.Light, lightState);
             args.Sprite.LayerSetVisible(PowerChargerVisualLayers.Light, true);
@@ -34,8 +42,8 @@ public sealed class PowerChargerVisualizerSystem : VisualizerSystem<PowerCharger
     }
 }
 
-enum PowerChargerVisualLayers : byte
+internal enum PowerChargerVisualLayers : byte
 {
     Base,
-    Light,
+    Light
 }

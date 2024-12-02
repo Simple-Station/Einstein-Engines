@@ -1,13 +1,17 @@
+#region
+
 using Content.Client.Items;
 using Content.Client.Light.Components;
 using Content.Shared.Light;
 using Content.Shared.Light.Components;
 using Content.Shared.Toggleable;
-using Robust.Client.Animations;
 using Robust.Client.GameObjects;
-using Robust.Shared.Animations;
+
+#endregion
+
 
 namespace Content.Client.Light;
+
 
 public sealed class HandheldLightSystem : SharedHandheldLightSystem
 {
@@ -24,32 +28,26 @@ public sealed class HandheldLightSystem : SharedHandheldLightSystem
     private void OnAppearanceChange(EntityUid uid, HandheldLightComponent? component, ref AppearanceChangeEvent args)
     {
         if (!Resolve(uid, ref component))
-        {
             return;
-        }
 
         if (!_appearance.TryGetData<bool>(uid, ToggleableLightVisuals.Enabled, out var enabled, args.Component))
-        {
             return;
-        }
 
-        if (!_appearance.TryGetData<HandheldLightPowerStates>(uid, HandheldLightVisuals.Power, out var state, args.Component))
-        {
+        if (!_appearance.TryGetData<HandheldLightPowerStates>(
+            uid,
+            HandheldLightVisuals.Power,
+            out var state,
+            args.Component))
             return;
-        }
 
         if (TryComp<LightBehaviourComponent>(uid, out var lightBehaviour))
         {
             // Reset any running behaviour to reset the animated properties back to the original value, to avoid conflicts between resets
             if (lightBehaviour.HasRunningBehaviours())
-            {
                 lightBehaviour.StopLightBehaviour(resetToOriginalSettings: true);
-            }
 
             if (!enabled)
-            {
                 return;
-            }
 
             switch (state)
             {

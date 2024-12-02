@@ -1,3 +1,5 @@
+#region
+
 using Content.Shared.Drunk;
 using Content.Shared.StatusEffect;
 using Robust.Client.Graphics;
@@ -6,7 +8,11 @@ using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
+#endregion
+
+
 namespace Content.Client.Drunk;
+
 
 public sealed class DrunkOverlay : Overlay
 {
@@ -20,12 +26,12 @@ public sealed class DrunkOverlay : Overlay
     public override bool RequestScreenTexture => true;
     private readonly ShaderInstance _drunkShader;
 
-    public float CurrentBoozePower = 0.0f;
+    public float CurrentBoozePower;
 
     private const float VisualThreshold = 10.0f;
     private const float PowerDivisor = 250.0f;
 
-    private float _visualScale = 0;
+    private float _visualScale;
 
     public DrunkOverlay()
     {
@@ -35,7 +41,6 @@ public sealed class DrunkOverlay : Overlay
 
     protected override void FrameUpdate(FrameEventArgs args)
     {
-
         var playerEntity = _playerManager.LocalEntity;
 
         if (playerEntity == null)
@@ -53,7 +58,7 @@ public sealed class DrunkOverlay : Overlay
         var timeLeft = (float) (time.Value.Item2 - curTime).TotalSeconds;
 
 
-        CurrentBoozePower += 8f * (0.5f*timeLeft - CurrentBoozePower) * args.DeltaSeconds / (timeLeft+1);
+        CurrentBoozePower += 8f * (0.5f * timeLeft - CurrentBoozePower) * args.DeltaSeconds / (timeLeft + 1);
     }
 
     protected override bool BeforeDraw(in OverlayDrawArgs args)
@@ -90,12 +95,8 @@ public sealed class DrunkOverlay : Overlay
     {
         // Clamp booze power when it's low, to prevent really jittery effects
         if (boozePower < 50f)
-        {
             return 0;
-        }
-        else
-        {
-            return Math.Clamp((boozePower - VisualThreshold) / PowerDivisor, 0.0f, 1.0f);
-        }
+
+        return Math.Clamp((boozePower - VisualThreshold) / PowerDivisor, 0.0f, 1.0f);
     }
 }

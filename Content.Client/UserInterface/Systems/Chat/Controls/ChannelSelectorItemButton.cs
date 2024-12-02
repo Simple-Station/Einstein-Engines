@@ -1,8 +1,14 @@
+#region
+
 using Content.Client.Stylesheets;
 using Content.Shared.Chat;
 using Robust.Client.UserInterface.Controls;
 
+#endregion
+
+
 namespace Content.Client.UserInterface.Systems.Chat.Controls;
+
 
 public sealed class ChannelSelectorItemButton : Button
 {

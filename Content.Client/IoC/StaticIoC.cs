@@ -1,11 +1,14 @@
-using Robust.Client.ResourceManagement;
-using Robust.Shared.ContentPack;
-using Robust.Shared.IoC;
+#region
 
-namespace Content.Client.IoC
+using Robust.Client.ResourceManagement;
+
+#endregion
+
+
+namespace Content.Client.IoC;
+
+
+public static class StaticIoC
 {
-    public static class StaticIoC
-    {
-        public static IResourceCache ResC => IoCManager.Resolve<IResourceCache>();
-    }
+    public static IResourceCache ResC => IoCManager.Resolve<IResourceCache>();
 }

@@ -1,9 +1,13 @@
+#region
+
 using Content.Client.Eui;
-using Content.Shared.Administration;
 using Content.Shared.Eui;
 using JetBrains.Annotations;
 
-namespace Content.Client.Administration.UI.SetOutfit
+#endregion
+
+
+amespace Content.Client.Administration.UI.SetOutfit
 {
     [UsedImplicitly]
     public sealed class SetOutfitEui : BaseEui

@@ -1,3 +1,5 @@
+#region
+
 using System.Linq;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Bed.Cryostorage;
@@ -7,7 +9,11 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Collections;
 using Robust.Shared.Utility;
 
+#endregion
+
+
 namespace Content.Client.Bed.Cryostorage;
+
 
 [GenerateTypedNameReferences]
 public sealed partial class CryostorageMenu : FancyWindow

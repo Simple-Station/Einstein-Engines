@@ -1,22 +1,23 @@
-using System;
-using Robust.Client;
-using Robust.Client.UserInterface;
-using Robust.Shared.IoC;
-using Robust.Shared.Log;
+#region
+
 using Robust.Shared.Network;
+
+#endregion
+
 
 namespace Content.Client.Launcher;
 
+
 /// <summary>
-/// So apparently the way that disconnect information is shipped around is really indirect.
-/// But honestly, given that content might have additional flags (i.e. hide disconnect button for bans)?
-/// This is responsible for collecting any extended disconnect information.
+///     So apparently the way that disconnect information is shipped around is really indirect.
+///     But honestly, given that content might have additional flags (i.e. hide disconnect button for bans)?
+///     This is responsible for collecting any extended disconnect information.
 /// </summary>
 public sealed class ExtendedDisconnectInformationManager
 {
     [Dependency] private readonly IClientNetManager _clientNetManager = default!;
 
-    private NetDisconnectedArgs? _lastNetDisconnectedArgs = null;
+    private NetDisconnectedArgs? _lastNetDisconnectedArgs;
 
     public NetDisconnectedArgs? LastNetDisconnectedArgs
     {
@@ -32,14 +33,7 @@ public sealed class ExtendedDisconnectInformationManager
     // This may fire at an arbitrary time before or after whatever code that needs it.
     public event Action<NetDisconnectedArgs?>? LastNetDisconnectedArgsChanged;
 
-    public void Initialize()
-    {
-        _clientNetManager.Disconnect += OnNetDisconnect;
-    }
+    public void Initialize() => _clientNetManager.Disconnect += OnNetDisconnect;
 
-    private void OnNetDisconnect(object? sender, NetDisconnectedArgs args)
-    {
-        LastNetDisconnectedArgs = args;
-    }
+    private void OnNetDisconnect(object? sender, NetDisconnectedArgs args) => LastNetDisconnectedArgs = args;
 }
-

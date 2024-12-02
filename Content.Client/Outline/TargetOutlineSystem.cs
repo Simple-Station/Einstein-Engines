@@ -1,3 +1,5 @@
+#region
+
 using System.Numerics;
 using Content.Shared.Interaction;
 using Content.Shared.Whitelist;
@@ -8,7 +10,11 @@ using Robust.Client.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
+#endregion
+
+
 namespace Content.Client.Outline;
+
 
 /// <summary>
 ///     System used to indicate whether an entity is a valid target based on some criteria.
@@ -23,17 +29,17 @@ public sealed class TargetOutlineSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly SharedInteractionSystem _interactionSystem = default!;
 
-    private bool _enabled = false;
+    private bool _enabled;
 
     /// <summary>
     ///     Whitelist that the target must satisfy.
     /// </summary>
-    public EntityWhitelist? Whitelist = null;
+    public EntityWhitelist? Whitelist;
 
     /// <summary>
     ///     Predicate the target must satisfy.
     /// </summary>
-    public Func<EntityUid, bool>? Predicate = null;
+    public Func<EntityUid, bool>? Predicate;
 
     /// <summary>
     ///     Event to raise as targets to check whether they are valid.
@@ -41,7 +47,7 @@ public sealed class TargetOutlineSystem : EntitySystem
     /// <remarks>
     ///     This event will be uncanceled and re-used.
     /// </remarks>
-    public CancellableEntityEventArgs? ValidationEvent = null;
+    public CancellableEntityEventArgs? ValidationEvent;
 
     /// <summary>
     ///     Minimum range for a target to be valid.
@@ -91,7 +97,13 @@ public sealed class TargetOutlineSystem : EntitySystem
         RemoveHighlights();
     }
 
-    public void Enable(float range, bool checkObstructions, Func<EntityUid, bool>? predicate, EntityWhitelist? whitelist, CancellableEntityEventArgs? validationEvent)
+    public void Enable(
+        float range,
+        bool checkObstructions,
+        Func<EntityUid, bool>? predicate,
+        EntityWhitelist? whitelist,
+        CancellableEntityEventArgs? validationEvent
+    )
     {
         Range = range;
         CheckObstruction = checkObstructions;
@@ -114,7 +126,7 @@ public sealed class TargetOutlineSystem : EntitySystem
 
     private void HighlightTargets()
     {
-        if (_playerManager.LocalEntity is not { Valid: true } player)
+        if (_playerManager.LocalEntity is not { Valid: true, } player)
             return;
 
         // remove current highlights
@@ -124,7 +136,10 @@ public sealed class TargetOutlineSystem : EntitySystem
         // TODO: Duplicated in SpriteSystem and DragDropSystem. Should probably be cached somewhere for a frame?
         var mousePos = _eyeManager.PixelToMap(_inputManager.MouseScreenPosition).Position;
         var bounds = new Box2(mousePos - LookupVector, mousePos + LookupVector);
-        var pvsEntities = _lookup.GetEntitiesIntersecting(_eyeManager.CurrentMap, bounds, LookupFlags.Approximate | LookupFlags.Static);
+        var pvsEntities = _lookup.GetEntitiesIntersecting(
+            _eyeManager.CurrentMap,
+            bounds,
+            LookupFlags.Approximate | LookupFlags.Static);
         var spriteQuery = GetEntityQuery<SpriteComponent>();
 
         foreach (var entity in pvsEntities)
@@ -143,14 +158,15 @@ public sealed class TargetOutlineSystem : EntitySystem
             if (valid && ValidationEvent != null)
             {
                 ValidationEvent.Uncancel();
-                RaiseLocalEvent(entity, (object) ValidationEvent, broadcast: false);
+                RaiseLocalEvent(entity, (object) ValidationEvent, false);
                 valid = !ValidationEvent.Cancelled;
             }
 
             if (!valid)
             {
                 // was this previously valid?
-                if (_highlightedSprites.Remove(sprite) && (sprite.PostShader == _shaderTargetValid || sprite.PostShader == _shaderTargetInvalid))
+                if (_highlightedSprites.Remove(sprite) && (sprite.PostShader == _shaderTargetValid ||
+                    sprite.PostShader == _shaderTargetInvalid))
                 {
                     sprite.PostShader = null;
                     sprite.RenderOrder = 0;

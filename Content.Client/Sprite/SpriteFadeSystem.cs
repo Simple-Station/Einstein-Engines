@@ -1,10 +1,16 @@
+#region
+
 using Content.Client.Gameplay;
 using Content.Shared.Sprite;
 using Robust.Client.GameObjects;
 using Robust.Client.Player;
 using Robust.Client.State;
 
+#endregion
+
+
 namespace Content.Client.Sprite;
+
 
 public sealed class SpriteFadeSystem : EntitySystem
 {
@@ -29,7 +35,8 @@ public sealed class SpriteFadeSystem : EntitySystem
 
     private void OnFadingShutdown(EntityUid uid, FadingSpriteComponent component, ComponentShutdown args)
     {
-        if (MetaData(uid).EntityLifeStage >= EntityLifeStage.Terminating || !TryComp<SpriteComponent>(uid, out var sprite))
+        if (MetaData(uid).EntityLifeStage >= EntityLifeStage.Terminating ||
+            !TryComp<SpriteComponent>(uid, out var sprite))
             return;
 
         sprite.Color = sprite.Color.WithAlpha(component.OriginalAlpha);
@@ -57,9 +64,7 @@ public sealed class SpriteFadeSystem : EntitySystem
                     !fadeQuery.HasComponent(ent) ||
                     !spriteQuery.TryGetComponent(ent, out var sprite) ||
                     sprite.DrawDepth < playerSprite.DrawDepth)
-                {
                     continue;
-                }
 
                 if (!TryComp<FadingSpriteComponent>(ent, out var fading))
                 {
@@ -71,9 +76,7 @@ public sealed class SpriteFadeSystem : EntitySystem
                 var newColor = Math.Max(sprite.Color.A - change, TargetAlpha);
 
                 if (!sprite.Color.A.Equals(newColor))
-                {
                     sprite.Color = sprite.Color.WithAlpha(newColor);
-                }
             }
         }
 
@@ -89,13 +92,9 @@ public sealed class SpriteFadeSystem : EntitySystem
             var newColor = Math.Min(sprite.Color.A + change, comp.OriginalAlpha);
 
             if (!newColor.Equals(sprite.Color.A))
-            {
                 sprite.Color = sprite.Color.WithAlpha(newColor);
-            }
             else
-            {
                 RemCompDeferred<FadingSpriteComponent>(uid);
-            }
         }
 
         _comps.Clear();

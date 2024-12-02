@@ -1,3 +1,5 @@
+#region
+
 using System.Numerics;
 using Content.Client.Parallax.Data;
 using Content.Client.Parallax.Managers;
@@ -6,7 +8,11 @@ using Robust.Client.Graphics;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 
+#endregion
+
+
 namespace Content.Client.Parallax;
+
 
 public sealed class ParallaxSystem : SharedParallaxSystem
 {
@@ -51,28 +57,19 @@ public sealed class ParallaxSystem : SharedParallaxSystem
     private void OnAfterAutoHandleState(EntityUid uid, ParallaxComponent component, ref AfterAutoHandleStateEvent args)
     {
         if (!_parallax.IsLoaded(component.Parallax))
-        {
             _parallax.LoadParallaxByName(component.Parallax);
-        }
     }
 
-    public ParallaxLayerPrepared[] GetParallaxLayers(MapId mapId)
-    {
-        return _parallax.GetParallaxLayers(GetParallax(_map.GetMapEntityId(mapId)));
-    }
+    public ParallaxLayerPrepared[] GetParallaxLayers(MapId mapId) =>
+        _parallax.GetParallaxLayers(GetParallax(_map.GetMapEntityId(mapId)));
 
-    public string GetParallax(MapId mapId)
-    {
-        return GetParallax(_map.GetMapEntityId(mapId));
-    }
+    public string GetParallax(MapId mapId) => GetParallax(_map.GetMapEntityId(mapId));
 
-    public string GetParallax(EntityUid mapUid)
-    {
-        return TryComp<ParallaxComponent>(mapUid, out var parallax) ? parallax.Parallax : Fallback;
-    }
+    public string GetParallax(EntityUid mapUid) =>
+        TryComp<ParallaxComponent>(mapUid, out var parallax) ? parallax.Parallax : Fallback;
 
     /// <summary>
-    /// Draws a texture as parallax in the specified world handle.
+    ///     Draws a texture as parallax in the specified world handle.
     /// </summary>
     /// <param name="worldHandle"></param>
     /// <param name="worldAABB">WorldAABB to use</param>
@@ -92,7 +89,8 @@ public sealed class ParallaxSystem : SharedParallaxSystem
         Vector2 scrolling,
         float scale = 1f,
         float slowness = 0f,
-        Color? modulate = null)
+        Color? modulate = null
+    )
     {
         // Size of the texture in world units.
         var size = sprite.Size / (float) EyeManager.PixelsPerMeter * scale;
@@ -117,7 +115,7 @@ public sealed class ParallaxSystem : SharedParallaxSystem
         {
             for (var y = flooredBL.Y; y < worldAABB.Top; y += size.Y)
             {
-                var box = Box2.FromDimensions(new Vector2(x, y), size);
+                var box = Box2.FromDimensions(new(x, y), size);
                 worldHandle.DrawTextureRect(sprite, box, modulate);
             }
         }

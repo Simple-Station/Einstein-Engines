@@ -1,5 +1,6 @@
 namespace Content.Client.NPC.HTN;
 
+
 [RegisterComponent]
 public sealed partial class HTNComponent : NPCComponent
 {

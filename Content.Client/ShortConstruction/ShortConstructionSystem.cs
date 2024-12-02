@@ -1,14 +1,19 @@
-﻿using Content.Client.Construction;
-// using Content.Client.WhiteDream.BloodCult.UI;
+﻿#region
+
+using Content.Client.Construction;
 using Content.Shared.Construction.Prototypes;
 using Content.Shared.RadialSelector;
 using Content.Shared.ShortConstruction;
 using Robust.Client.Placement;
-using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
+// using Content.Client.WhiteDream.BloodCult.UI;
+
+#endregion
+
 
 namespace Content.Client.ShortConstruction;
+
 
 public sealed class ShortConstructionSystem : EntitySystem
 {
@@ -39,7 +44,8 @@ public sealed class ShortConstructionSystem : EntitySystem
 
         var hijack = new ConstructionPlacementHijack(_construction, prototype);
 
-        _placement.BeginPlacing(new PlacementInformation
+        _placement.BeginPlacing(
+            new()
             {
                 IsTile = false,
                 PlacementOption = prototype.PlacementMode

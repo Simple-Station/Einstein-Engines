@@ -1,8 +1,13 @@
-using System.Numerics;
+#region
+
 using Content.Shared.IconSmoothing;
 using Robust.Client.GameObjects;
 
+#endregion
+
+
 namespace Content.Client.IconSmoothing;
+
 
 public sealed partial class IconSmoothSystem
 {
@@ -19,10 +24,10 @@ public sealed partial class IconSmoothSystem
         if (!TryComp<SpriteComponent>(uid, out var sprite))
             return;
 
-        sprite.LayerSetOffset(EdgeLayer.South, new Vector2(0, -1f));
-        sprite.LayerSetOffset(EdgeLayer.East, new Vector2(1f, 0f));
-        sprite.LayerSetOffset(EdgeLayer.North, new Vector2(0, 1f));
-        sprite.LayerSetOffset(EdgeLayer.West, new Vector2(-1f, 0f));
+        sprite.LayerSetOffset(EdgeLayer.South, new(0, -1f));
+        sprite.LayerSetOffset(EdgeLayer.East, new(1f, 0f));
+        sprite.LayerSetOffset(EdgeLayer.North, new(0, 1f));
+        sprite.LayerSetOffset(EdgeLayer.West, new(-1f, 0f));
 
         sprite.LayerSetVisible(EdgeLayer.South, false);
         sprite.LayerSetVisible(EdgeLayer.East, false);
@@ -41,7 +46,12 @@ public sealed partial class IconSmoothSystem
         sprite.LayerMapRemove(EdgeLayer.West);
     }
 
-    private void CalculateEdge(EntityUid uid, DirectionFlag directions, SpriteComponent? sprite = null, SmoothEdgeComponent? component = null)
+    private void CalculateEdge(
+        EntityUid uid,
+        DirectionFlag directions,
+        SpriteComponent? sprite = null,
+        SmoothEdgeComponent? component = null
+    )
     {
         if (!Resolve(uid, ref sprite, ref component, false))
             return;

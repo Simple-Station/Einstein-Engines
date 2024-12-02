@@ -1,3 +1,5 @@
+#region
+
 using Content.Client.Chat.Managers;
 using Content.Client.Message;
 using Content.Shared.Chat;
@@ -10,7 +12,11 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 
+#endregion
+
+
 namespace Content.Client.Silicons.Laws.Ui;
+
 
 [GenerateTypedNameReferences]
 public sealed partial class LawDisplay : Control
@@ -39,9 +45,9 @@ public sealed partial class LawDisplay : Control
         {
             Text = Loc.GetString("hud-chatbox-select-channel-Local"),
             Modulate = Color.DarkGray,
-            StyleClasses = { "chatSelectorOptionButton" },
+            StyleClasses = { "chatSelectorOptionButton", },
             MinHeight = 35,
-            MinWidth = 75,
+            MinWidth = 75
         };
 
         localButton.OnPressed += _ =>
@@ -63,9 +69,9 @@ public sealed partial class LawDisplay : Control
             {
                 Text = Loc.GetString(radioChannelProto.Name),
                 Modulate = radioChannelProto.Color,
-                StyleClasses = { "chatSelectorOptionButton" },
+                StyleClasses = { "chatSelectorOptionButton", },
                 MinHeight = 35,
-                MinWidth = 75,
+                MinWidth = 75
             };
 
             radioChannelButton.OnPressed += _ =>
@@ -73,9 +79,15 @@ public sealed partial class LawDisplay : Control
                 switch (radioChannel)
                 {
                     case SharedChatSystem.CommonChannel:
-                        _chatManager.SendMessage($"{SharedChatSystem.RadioCommonPrefix} {lawIdentifier}: {lawDescription}", ChatSelectChannel.Radio); break;
+                        _chatManager.SendMessage(
+                            $"{SharedChatSystem.RadioCommonPrefix} {lawIdentifier}: {lawDescription}",
+                            ChatSelectChannel.Radio);
+                        break;
                     default:
-                        _chatManager.SendMessage($"{SharedChatSystem.RadioChannelPrefix}{radioChannelProto.KeyCode} {lawIdentifier}: {lawDescription}", ChatSelectChannel.Radio); break;
+                        _chatManager.SendMessage(
+                            $"{SharedChatSystem.RadioChannelPrefix}{radioChannelProto.KeyCode} {lawIdentifier}: {lawDescription}",
+                            ChatSelectChannel.Radio);
+                        break;
                 }
             };
 

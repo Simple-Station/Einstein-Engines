@@ -1,3 +1,5 @@
+#region
+
 using System.Numerics;
 using Content.Shared.Examine;
 using Robust.Client.Graphics;
@@ -9,10 +11,14 @@ using Robust.Shared.Enums;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 
+#endregion
+
+
 namespace Content.Client.Popups;
 
+
 /// <summary>
-/// Draws popup text, either in world or on screen.
+///     Draws popup text, either in world or on screen.
 /// </summary>
 public sealed class PopupOverlay : Overlay
 {
@@ -37,7 +43,8 @@ public sealed class PopupOverlay : Overlay
         PopupUIController controller,
         ExamineSystemShared examine,
         SharedTransformSystem transform,
-        PopupSystem popup)
+        PopupSystem popup
+    )
     {
         _configManager = configManager;
         _entManager = entManager;
@@ -87,8 +94,12 @@ public sealed class PopupOverlay : Overlay
             var distance = (mapPos.Position - args.WorldBounds.Center).Length();
 
             // Should handle fade here too wyci.
-            if (!args.WorldBounds.Contains(mapPos.Position) || !_examine.InRangeUnOccluded(viewPos, mapPos, distance,
-                    e => e == popup.InitialPos.EntityId || e == ourEntity, entMan: _entManager))
+            if (!args.WorldBounds.Contains(mapPos.Position) || !_examine.InRangeUnOccluded(
+                viewPos,
+                mapPos,
+                distance,
+                e => e == popup.InitialPos.EntityId || e == ourEntity,
+                entMan: _entManager))
                 continue;
 
             var pos = Vector2.Transform(mapPos.Position, matrix);

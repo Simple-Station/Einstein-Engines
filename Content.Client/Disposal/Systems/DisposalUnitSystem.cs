@@ -1,18 +1,22 @@
+#region
+
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Disposal;
 using Content.Shared.Disposal.Components;
 using Content.Shared.DragDrop;
 using Content.Shared.Emag.Systems;
-using Robust.Client.GameObjects;
 using Robust.Client.Animations;
-using Robust.Client.Graphics;
-using Robust.Shared.Audio;
+using Robust.Client.GameObjects;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.GameStates;
 using Robust.Shared.Physics.Events;
 using static Content.Shared.Disposal.Components.SharedDisposalUnitComponent;
 
+#endregion
+
+
 namespace Content.Client.Disposal.Systems;
+
 
 public sealed class DisposalUnitSystem : SharedDisposalUnitSystem
 {
@@ -54,10 +58,7 @@ public sealed class DisposalUnitSystem : SharedDisposalUnitSystem
         component.RecentlyEjected.AddRange(EnsureEntityList<DisposalUnitComponent>(state.RecentlyEjected, uid));
     }
 
-    public override bool HasDisposals(EntityUid? uid)
-    {
-        return HasComp<DisposalUnitComponent>(uid);
-    }
+    public override bool HasDisposals(EntityUid? uid) => HasComp<DisposalUnitComponent>(uid);
 
     public override bool ResolveDisposals(EntityUid uid, [NotNullWhen(true)] ref SharedDisposalUnitComponent? component)
     {
@@ -69,10 +70,12 @@ public sealed class DisposalUnitSystem : SharedDisposalUnitSystem
         return component != null;
     }
 
-    public override void DoInsertDisposalUnit(EntityUid uid, EntityUid toInsert, EntityUid user, SharedDisposalUnitComponent? disposal = null)
-    {
-        return;
-    }
+    public override void DoInsertDisposalUnit(
+        EntityUid uid,
+        EntityUid toInsert,
+        EntityUid user,
+        SharedDisposalUnitComponent? disposal = null
+    ) { }
 
     private void OnComponentInit(EntityUid uid, SharedDisposalUnitComponent sharedDisposalUnit, ComponentInit args)
     {
@@ -91,20 +94,27 @@ public sealed class DisposalUnitSystem : SharedDisposalUnitSystem
     }
 
     /// <summary>
-    /// Update visuals and tick animation
+    ///     Update visuals and tick animation
     /// </summary>
-    private void UpdateState(EntityUid uid, SharedDisposalUnitComponent unit, SpriteComponent sprite, AppearanceComponent appearance)
+    private void UpdateState(
+        EntityUid uid,
+        SharedDisposalUnitComponent unit,
+        SpriteComponent sprite,
+        AppearanceComponent appearance
+    )
     {
         if (!_appearanceSystem.TryGetData<VisualState>(uid, Visuals.VisualState, out var state, appearance))
             return;
 
         sprite.LayerSetVisible(DisposalUnitVisualLayers.Unanchored, state == VisualState.UnAnchored);
         sprite.LayerSetVisible(DisposalUnitVisualLayers.Base, state == VisualState.Anchored);
-        sprite.LayerSetVisible(DisposalUnitVisualLayers.OverlayFlush, state is VisualState.OverlayFlushing or VisualState.OverlayCharging);
+        sprite.LayerSetVisible(
+            DisposalUnitVisualLayers.OverlayFlush,
+            state is VisualState.OverlayFlushing or VisualState.OverlayCharging);
 
         var chargingState = sprite.LayerMapTryGet(DisposalUnitVisualLayers.BaseCharging, out var chargingLayer)
             ? sprite.LayerGetState(chargingLayer)
-            : new RSI.StateId(DefaultChargeState);
+            : new(DefaultChargeState);
 
         // This is a transient state so not too worried about replaying in range.
         if (state == VisualState.OverlayFlushing)
@@ -113,7 +123,7 @@ public sealed class DisposalUnitSystem : SharedDisposalUnitSystem
             {
                 var flushState = sprite.LayerMapTryGet(DisposalUnitVisualLayers.OverlayFlush, out var flushLayer)
                     ? sprite.LayerGetState(flushLayer)
-                    : new RSI.StateId(DefaultFlushState);
+                    : new(DefaultFlushState);
 
                 // Setup the flush animation to play
                 var anim = new Animation
@@ -127,13 +137,13 @@ public sealed class DisposalUnitSystem : SharedDisposalUnitSystem
                             KeyFrames =
                             {
                                 // Play the flush animation
-                                new AnimationTrackSpriteFlick.KeyFrame(flushState, 0),
+                                new(flushState, 0),
                                 // Return to base state (though, depending on how the unit is
                                 // configured we might get an appearance change event telling
                                 // us to go to charging state)
-                                new AnimationTrackSpriteFlick.KeyFrame(chargingState, (float) unit.FlushDelay.TotalSeconds)
+                                new(chargingState, (float) unit.FlushDelay.TotalSeconds)
                             }
-                        },
+                        }
                     }
                 };
 
@@ -144,7 +154,7 @@ public sealed class DisposalUnitSystem : SharedDisposalUnitSystem
                         {
                             KeyFrames =
                             {
-                                new AnimationTrackPlaySound.KeyFrame(_audioSystem.GetSound(unit.FlushSound), 0)
+                                new(_audioSystem.GetSound(unit.FlushSound), 0)
                             }
                         });
                 }
@@ -153,7 +163,7 @@ public sealed class DisposalUnitSystem : SharedDisposalUnitSystem
             }
         }
         else if (state == VisualState.OverlayCharging)
-            sprite.LayerSetState(DisposalUnitVisualLayers.OverlayFlush, new RSI.StateId("disposal-charging"));
+            sprite.LayerSetState(DisposalUnitVisualLayers.OverlayFlush, new("disposal-charging"));
         else
             _animationSystem.Stop(uid, AnimationKey);
 
@@ -165,12 +175,15 @@ public sealed class DisposalUnitSystem : SharedDisposalUnitSystem
         if (!_appearanceSystem.TryGetData<LightStates>(uid, Visuals.Light, out var lightState, appearance))
             lightState = LightStates.Off;
 
-        sprite.LayerSetVisible(DisposalUnitVisualLayers.OverlayCharging,
-                (lightState & LightStates.Charging) != 0);
-        sprite.LayerSetVisible(DisposalUnitVisualLayers.OverlayReady,
-                (lightState & LightStates.Ready) != 0);
-        sprite.LayerSetVisible(DisposalUnitVisualLayers.OverlayFull,
-                (lightState & LightStates.Full) != 0);
+        sprite.LayerSetVisible(
+            DisposalUnitVisualLayers.OverlayCharging,
+            (lightState & LightStates.Charging) != 0);
+        sprite.LayerSetVisible(
+            DisposalUnitVisualLayers.OverlayReady,
+            (lightState & LightStates.Ready) != 0);
+        sprite.LayerSetVisible(
+            DisposalUnitVisualLayers.OverlayFull,
+            (lightState & LightStates.Full) != 0);
     }
 }
 

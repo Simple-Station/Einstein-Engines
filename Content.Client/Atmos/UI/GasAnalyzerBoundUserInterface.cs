@@ -1,50 +1,52 @@
-﻿using Robust.Client.GameObjects;
+﻿#region
+
 using static Content.Shared.Atmos.Components.GasAnalyzerComponent;
 
-namespace Content.Client.Atmos.UI
+#endregion
+
+
+namespace Content.Client.Atmos.UI;
+
+
+public sealed class GasAnalyzerBoundUserInterface : BoundUserInterface
 {
-    public sealed class GasAnalyzerBoundUserInterface : BoundUserInterface
+    [ViewVariables]
+    private GasAnalyzerWindow? _window;
+
+    public GasAnalyzerBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
+
+    protected override void Open()
     {
-        [ViewVariables]
-        private GasAnalyzerWindow? _window;
+        base.Open();
 
-        public GasAnalyzerBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-        {
-        }
+        _window = new();
+        _window.OnClose += OnClose;
+        _window.OpenCenteredLeft();
+    }
 
-        protected override void Open()
-        {
-            base.Open();
+    protected override void ReceiveMessage(BoundUserInterfaceMessage message)
+    {
+        if (_window == null)
+            return;
+        if (message is not GasAnalyzerUserMessage cast)
+            return;
+        _window.Populate(cast);
+    }
 
-            _window = new GasAnalyzerWindow();
-            _window.OnClose += OnClose;
-            _window.OpenCenteredLeft();
-        }
+    /// <summary>
+    ///     Closes UI and tells the server to disable the analyzer
+    /// </summary>
+    private void OnClose()
+    {
+        SendMessage(new GasAnalyzerDisableMessage());
+        Close();
+    }
 
-        protected override void ReceiveMessage(BoundUserInterfaceMessage message)
-        {
-            if (_window == null)
-                return;
-            if (message is not GasAnalyzerUserMessage cast)
-                return;
-            _window.Populate(cast);
-        }
+    protected override void Dispose(bool disposing)
+    {
+        base.Dispose(disposing);
 
-        /// <summary>
-        /// Closes UI and tells the server to disable the analyzer
-        /// </summary>
-        private void OnClose()
-        {
-            SendMessage(new GasAnalyzerDisableMessage());
-            Close();
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-
-            if (disposing)
-                _window?.Dispose();
-        }
+        if (disposing)
+            _window?.Dispose();
     }
 }

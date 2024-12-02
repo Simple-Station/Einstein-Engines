@@ -1,3 +1,5 @@
+#region
+
 using System.Linq;
 using System.Numerics;
 using Content.Client.Animations;
@@ -8,7 +10,11 @@ using Robust.Shared.Collections;
 using Robust.Shared.Map;
 using Robust.Shared.Timing;
 
+#endregion
+
+
 namespace Content.Client.Storage.Systems;
+
 
 public sealed class StorageSystem : SharedStorageSystem
 {
@@ -41,9 +47,7 @@ public sealed class StorageSystem : SharedStorageSystem
         if (_openStorages.Contains(entity))
         {
             if (_openStorages.LastOrDefault() == entity)
-            {
                 CloseStorageWindow((entity, entity.Comp));
-            }
             else
             {
                 var storages = new ValueList<Entity<StorageComponent>>(_openStorages);
@@ -58,6 +62,7 @@ public sealed class StorageSystem : SharedStorageSystem
                     _openStorages.Remove(entity);
                 }
             }
+
             return;
         }
 
@@ -118,14 +123,17 @@ public sealed class StorageSystem : SharedStorageSystem
         bui.Close();
     }
 
-    private void OnShutdown(Entity<StorageComponent> ent, ref ComponentShutdown args)
-    {
+    private void OnShutdown(Entity<StorageComponent> ent, ref ComponentShutdown args) =>
         CloseStorageWindow((ent, ent.Comp));
-    }
 
     /// <inheritdoc />
-    public override void PlayPickupAnimation(EntityUid uid, EntityCoordinates initialCoordinates, EntityCoordinates finalCoordinates,
-        Angle initialRotation, EntityUid? user = null)
+    public override void PlayPickupAnimation(
+        EntityUid uid,
+        EntityCoordinates initialCoordinates,
+        EntityCoordinates finalCoordinates,
+        Angle initialRotation,
+        EntityUid? user = null
+    )
     {
         if (!_timing.IsFirstTimePredicted)
             return;
@@ -133,21 +141,26 @@ public sealed class StorageSystem : SharedStorageSystem
         PickupAnimation(uid, initialCoordinates, finalCoordinates, initialRotation);
     }
 
-    private void HandlePickupAnimation(PickupAnimationEvent msg)
-    {
-        PickupAnimation(GetEntity(msg.ItemUid), GetCoordinates(msg.InitialPosition), GetCoordinates(msg.FinalPosition), msg.InitialAngle);
-    }
+    private void HandlePickupAnimation(PickupAnimationEvent msg) =>
+        PickupAnimation(
+            GetEntity(msg.ItemUid),
+            GetCoordinates(msg.InitialPosition),
+            GetCoordinates(msg.FinalPosition),
+            msg.InitialAngle);
 
-    public void PickupAnimation(EntityUid item, EntityCoordinates initialCoords, EntityCoordinates finalCoords, Angle initialAngle)
+    public void PickupAnimation(
+        EntityUid item,
+        EntityCoordinates initialCoords,
+        EntityCoordinates finalCoords,
+        Angle initialAngle
+    )
     {
         if (!_timing.IsFirstTimePredicted)
             return;
 
         if (finalCoords.InRange(EntityManager, TransformSystem, initialCoords, 0.1f) ||
             !Exists(initialCoords.EntityId) || !Exists(finalCoords.EntityId))
-        {
             return;
-        }
 
         var finalMapPos = finalCoords.ToMapPos(EntityManager, TransformSystem);
         var finalPos = Vector2.Transform(finalMapPos, TransformSystem.GetInvWorldMatrix(initialCoords.EntityId));
@@ -156,7 +169,7 @@ public sealed class StorageSystem : SharedStorageSystem
     }
 
     /// <summary>
-    /// Animate the newly stored entities in <paramref name="msg"/> flying towards this storage's position
+    ///     Animate the newly stored entities in <paramref name="msg" /> flying towards this storage's position
     /// </summary>
     /// <param name="msg"></param>
     public void HandleAnimatingInsertingEntities(AnimateInsertingEntitiesEvent msg)
@@ -169,9 +182,11 @@ public sealed class StorageSystem : SharedStorageSystem
 
             var initialPosition = msg.EntityPositions[i];
             if (Exists(entity) && transformComp != null)
-            {
-                _entityPickupAnimation.AnimateEntityPickup(entity, GetCoordinates(initialPosition), transformComp.LocalPosition, msg.EntityAngles[i]);
-            }
+                _entityPickupAnimation.AnimateEntityPickup(
+                    entity,
+                    GetCoordinates(initialPosition),
+                    transformComp.LocalPosition,
+                    msg.EntityAngles[i]);
         }
     }
 }

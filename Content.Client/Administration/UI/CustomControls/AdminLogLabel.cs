@@ -1,8 +1,14 @@
-﻿using Content.Shared.Administration.Logs;
+﻿#region
+
+using Content.Shared.Administration.Logs;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 
+#endregion
+
+
 namespace Content.Client.Administration.UI.CustomControls;
+
 
 public sealed class AdminLogLabel : RichTextLabel
 {
@@ -19,10 +25,7 @@ public sealed class AdminLogLabel : RichTextLabel
 
     public HSeparator Separator { get; }
 
-    private void VisibilityChanged(Control control)
-    {
-        Separator.Visible = Visible;
-    }
+    private void VisibilityChanged(Control control) => Separator.Visible = Visible;
 
     protected override void Dispose(bool disposing)
     {

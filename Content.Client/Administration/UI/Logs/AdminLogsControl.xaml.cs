@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿#region
+
+using System.Linq;
 using System.Runtime.InteropServices;
 using Content.Client.Administration.UI.CustomControls;
 using Content.Shared.Administration.Logs;
@@ -10,18 +12,24 @@ using Robust.Client.UserInterface.XAML;
 using static Robust.Client.UserInterface.Controls.BaseButton;
 using static Robust.Client.UserInterface.Controls.LineEdit;
 
+#endregion
+
+
 namespace Content.Client.Administration.UI.Logs;
+
 
 [GenerateTypedNameReferences]
 public sealed partial class AdminLogsControl : Control
 {
     private readonly Comparer<AdminLogTypeButton> _adminLogTypeButtonComparer =
-        Comparer<AdminLogTypeButton>.Create((a, b) =>
-            string.Compare(a.Type.ToString(), b.Type.ToString(), StringComparison.Ordinal));
+        Comparer<AdminLogTypeButton>.Create(
+            (a, b) =>
+                string.Compare(a.Type.ToString(), b.Type.ToString(), StringComparison.Ordinal));
 
     private readonly Comparer<AdminLogPlayerButton> _adminLogPlayerButtonComparer =
-        Comparer<AdminLogPlayerButton>.Create((a, b) =>
-            string.Compare(a.Text, b.Text, StringComparison.Ordinal));
+        Comparer<AdminLogPlayerButton>.Create(
+            (a, b) =>
+                string.Compare(a.Text, b.Text, StringComparison.Ordinal));
 
     public AdminLogsControl()
     {
@@ -76,35 +84,17 @@ public sealed partial class AdminLogsControl : Control
         UpdateResetButton();
     }
 
-    private void RoundSpinBoxChanged(ValueChangedEventArgs args)
-    {
-        UpdateResetButton();
-    }
+    private void RoundSpinBoxChanged(ValueChangedEventArgs args) => UpdateResetButton();
 
-    private void UpdateResetButton()
-    {
-        ResetRoundButton.Disabled = RoundSpinBox.Value == CurrentRound;
-    }
+    private void UpdateResetButton() => ResetRoundButton.Disabled = RoundSpinBox.Value == CurrentRound;
 
-    private void ResetRoundPressed(ButtonEventArgs args)
-    {
-        RoundSpinBox.Value = CurrentRound;
-    }
+    private void ResetRoundPressed(ButtonEventArgs args) => RoundSpinBox.Value = CurrentRound;
 
-    private void TypeSearchChanged(LineEditEventArgs args)
-    {
-        UpdateTypes();
-    }
+    private void TypeSearchChanged(LineEditEventArgs args) => UpdateTypes();
 
-    private void PlayerSearchChanged(LineEditEventArgs args)
-    {
-        UpdatePlayers();
-    }
+    private void PlayerSearchChanged(LineEditEventArgs args) => UpdatePlayers();
 
-    private void LogSearchChanged(LineEditEventArgs args)
-    {
-        UpdateLogs();
-    }
+    private void LogSearchChanged(LineEditEventArgs args) => UpdateLogs();
 
     private void SelectAllTypes(ButtonEventArgs args)
     {
@@ -113,9 +103,7 @@ public sealed partial class AdminLogsControl : Control
         foreach (var control in TypesContainer.Children)
         {
             if (control is not AdminLogTypeButton type)
-            {
                 continue;
-            }
 
             type.Pressed = true;
             SelectedTypes.Add(type.Type);
@@ -131,9 +119,7 @@ public sealed partial class AdminLogsControl : Control
         foreach (var control in TypesContainer.Children)
         {
             if (control is not AdminLogTypeButton type)
-            {
                 continue;
-            }
 
             type.Pressed = false;
             type.Visible = ShouldShowType(type);
@@ -156,9 +142,7 @@ public sealed partial class AdminLogsControl : Control
         foreach (var control in PlayersContainer.Children)
         {
             if (control is not AdminLogPlayerButton player)
-            {
                 continue;
-            }
 
             player.Pressed = true;
             SelectedPlayers.Add(player.Id);
@@ -174,9 +158,7 @@ public sealed partial class AdminLogsControl : Control
         foreach (var control in PlayersContainer.Children)
         {
             if (control is not AdminLogPlayerButton player)
-            {
                 continue;
-            }
 
             player.Pressed = false;
         }
@@ -191,9 +173,7 @@ public sealed partial class AdminLogsControl : Control
         foreach (var control in TypesContainer.Children)
         {
             if (control is not AdminLogTypeButton type)
-            {
                 continue;
-            }
 
             if (selectedTypes.Contains(type.Type) ^ invert)
             {
@@ -215,9 +195,7 @@ public sealed partial class AdminLogsControl : Control
         foreach (var control in TypesContainer.Children)
         {
             if (control is not AdminLogTypeButton type)
-            {
                 continue;
-            }
 
             type.Visible = ShouldShowType(type);
         }
@@ -228,9 +206,7 @@ public sealed partial class AdminLogsControl : Control
         foreach (var control in PlayersContainer.Children)
         {
             if (control is not AdminLogPlayerButton player)
-            {
                 continue;
-            }
 
             player.Visible = ShouldShowPlayer(player);
         }
@@ -243,31 +219,23 @@ public sealed partial class AdminLogsControl : Control
         foreach (var child in LogsContainer.Children)
         {
             if (child is not AdminLogLabel log)
-            {
                 continue;
-            }
 
             child.Visible = ShouldShowLog(log);
             if (child.Visible)
-            {
                 ShownLogs++;
-            }
         }
 
         UpdateCount();
     }
 
-    private bool ShouldShowType(AdminLogTypeButton button)
-    {
-        return button.Text != null &&
-               button.Text.Contains(TypeSearch.Text, StringComparison.OrdinalIgnoreCase);
-    }
+    private bool ShouldShowType(AdminLogTypeButton button) =>
+        button.Text != null &&
+        button.Text.Contains(TypeSearch.Text, StringComparison.OrdinalIgnoreCase);
 
-    private bool ShouldShowPlayer(AdminLogPlayerButton button)
-    {
-        return button.Text != null &&
-               button.Text.Contains(PlayerSearch.Text, StringComparison.OrdinalIgnoreCase);
-    }
+    private bool ShouldShowPlayer(AdminLogPlayerButton button) =>
+        button.Text != null &&
+        button.Text.Contains(PlayerSearch.Text, StringComparison.OrdinalIgnoreCase);
 
     private bool LogMatchesPlayerFilter(AdminLogLabel label)
     {
@@ -302,13 +270,9 @@ public sealed partial class AdminLogsControl : Control
     {
         var button = (AdminLogTypeButton) args.Button;
         if (button.Pressed)
-        {
             SelectedTypes.Add(button.Type);
-        }
         else
-        {
             SelectedTypes.Remove(button.Type);
-        }
 
         UpdateLogs();
     }
@@ -317,13 +281,9 @@ public sealed partial class AdminLogsControl : Control
     {
         var button = (AdminLogPlayerButton) args.Button;
         if (button.Pressed)
-        {
             SelectedPlayers.Add(button.Id);
-        }
         else
-        {
             SelectedPlayers.Remove(button.Id);
-        }
 
         UpdateLogs();
     }
@@ -332,13 +292,9 @@ public sealed partial class AdminLogsControl : Control
     {
         var button = (AdminLogImpactButton) args.Button;
         if (button.Pressed)
-        {
             SelectedImpacts.Add(button.Impact);
-        }
         else
-        {
             SelectedImpacts.Remove(button.Impact);
-        }
 
         UpdateLogs();
     }
@@ -370,9 +326,7 @@ public sealed partial class AdminLogsControl : Control
         }
 
         for (var i = 0; i < impacts.Length - 1; i++)
-        {
             LogImpactContainer.GetChild(i).StyleClasses.Add("ButtonSquare");
-        }
 
         LogImpactContainer.GetChild(LogImpactContainer.ChildCount - 1).StyleClasses.Add("OpenLeft");
     }
@@ -386,9 +340,7 @@ public sealed partial class AdminLogsControl : Control
         {
             if (control is not AdminLogTypeButton type ||
                 !newTypes.Remove(type.Type))
-            {
                 continue;
-            }
 
             buttons.Add(type);
         }
@@ -410,9 +362,7 @@ public sealed partial class AdminLogsControl : Control
         TypesContainer.RemoveAllChildren();
 
         foreach (var type in buttons)
-        {
             TypesContainer.AddChild(type);
-        }
 
         UpdateLogs();
     }
@@ -455,9 +405,7 @@ public sealed partial class AdminLogsControl : Control
         PlayersContainer.RemoveAllChildren();
 
         foreach (var player in buttons)
-        {
             PlayersContainer.AddChild(player);
-        }
 
         UpdateLogs();
     }
@@ -474,9 +422,7 @@ public sealed partial class AdminLogsControl : Control
 
             TotalLogs++;
             if (label.Visible)
-            {
                 ShownLogs++;
-            }
 
             LogsContainer.AddChild(label);
             LogsContainer.AddChild(separator);
@@ -495,23 +441,19 @@ public sealed partial class AdminLogsControl : Control
     public void UpdateCount(int? shown = null, int? total = null, int? round = null)
     {
         if (shown != null)
-        {
             ShownLogs = shown.Value;
-        }
 
         if (total != null)
-        {
             TotalLogs = total.Value;
-        }
 
         if (round != null)
-        {
             RoundLogs = round.Value;
-        }
 
         Count.Text = Loc.GetString(
             "admin-logs-count",
-            ("showing", ShownLogs), ("total", TotalLogs), ("round", RoundLogs)
+            ("showing", ShownLogs),
+            ("total", TotalLogs),
+            ("round", RoundLogs)
         );
     }
 

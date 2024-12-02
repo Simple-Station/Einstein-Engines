@@ -1,9 +1,15 @@
-﻿using System.Numerics;
+﻿#region
+
+using System.Numerics;
 using Content.Client.Resources;
 using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface.Controls;
 
+#endregion
+
+
 namespace Content.Client.UserInterface.Systems.Chat.Controls;
+
 
 public sealed class ChannelFilterButton : ChatPopupButton<ChannelFilterPopup>
 {
@@ -22,12 +28,12 @@ public sealed class ChannelFilterButton : ChatPopupButton<ChannelFilterPopup>
             .GetTexture("/Textures/Interface/Nano/filter.svg.96dpi.png");
 
         AddChild(
-            (_textureRect = new TextureRect
+            _textureRect = new()
             {
                 Texture = filterTexture,
                 HorizontalAlignment = HAlignment.Center,
                 VerticalAlignment = VAlignment.Center
-            })
+            }
         );
 
         _chatUIController.FilterableChannelsChanged += Popup.SetChannels;
@@ -41,12 +47,13 @@ public sealed class ChannelFilterButton : ChatPopupButton<ChannelFilterPopup>
         var (minX, minY) = Popup.MinSize;
         return UIBox2.FromDimensions(
             globalPos - new Vector2(FilterDropdownOffset, 0),
-            new Vector2(Math.Max(minX, Popup.MinWidth), minY));
+            new(Math.Max(minX, Popup.MinWidth), minY));
     }
 
     private void UpdateChildColors()
     {
-        if (_textureRect == null) return;
+        if (_textureRect == null)
+            return;
         switch (DrawMode)
         {
             case DrawModeEnum.Normal:

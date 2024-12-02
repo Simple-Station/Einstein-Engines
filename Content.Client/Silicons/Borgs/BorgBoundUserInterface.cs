@@ -1,8 +1,13 @@
+#region
+
 using Content.Shared.Silicons.Borgs;
 using JetBrains.Annotations;
-using Robust.Client.GameObjects;
+
+#endregion
+
 
 namespace Content.Client.Silicons.Borgs;
+
 
 [UsedImplicitly]
 public sealed class BorgBoundUserInterface : BoundUserInterface
@@ -10,9 +15,7 @@ public sealed class BorgBoundUserInterface : BoundUserInterface
     [ViewVariables]
     private BorgMenu? _menu;
 
-    public BorgBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-    {
-    }
+    public BorgBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
 
     protected override void Open()
     {
@@ -20,7 +23,7 @@ public sealed class BorgBoundUserInterface : BoundUserInterface
 
         var owner = Owner;
 
-        _menu = new BorgMenu(owner);
+        _menu = new(owner);
 
         _menu.BrainButtonPressed += () =>
         {

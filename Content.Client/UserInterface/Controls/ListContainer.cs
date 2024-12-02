@@ -1,3 +1,5 @@
+#region
+
 using System.Linq;
 using System.Numerics;
 using JetBrains.Annotations;
@@ -5,8 +7,13 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Input;
 using Robust.Shared.Map;
+using Range = Robust.Client.UserInterface.Controls.Range;
+
+#endregion
+
 
 namespace Content.Client.UserInterface.Controls;
+
 
 [Virtual]
 public class ListContainer : Control
@@ -21,24 +28,25 @@ public class ListContainer : Control
         get => _buttonGroup != null;
         set => _buttonGroup = value ? new ButtonGroup() : null;
     }
+
     public bool Toggle { get; set; }
 
     /// <summary>
-    /// Called when creating a button on the UI.
-    /// The provided <see cref="ListContainerButton"/> is the generated button that Controls should be parented to.
+    ///     Called when creating a button on the UI.
+    ///     The provided <see cref="ListContainerButton" /> is the generated button that Controls should be parented to.
     /// </summary>
     public Action<ListData, ListContainerButton>? GenerateItem;
 
-    /// <inheritdoc cref="BaseButton.OnPressed"/>
+    /// <inheritdoc cref="BaseButton.OnPressed" />
     public Action<BaseButton.ButtonEventArgs, ListData>? ItemPressed;
 
     /// <summary>
-    /// Invoked when a KeyBind is pressed on a ListContainerButton.
+    ///     Invoked when a KeyBind is pressed on a ListContainerButton.
     /// </summary>
     public Action<GUIBoundKeyEventArgs, ListData>? ItemKeyBindDown;
 
     /// <summary>
-    /// Invoked when the selected item does not exist in the new data when PopulateList is called.
+    ///     Invoked when the selected item does not exist in the new data when PopulateList is called.
     /// </summary>
     public Action? NoItemSelected;
 
@@ -51,11 +59,11 @@ public class ListContainer : Control
 
     private List<ListData> _data = new();
     private ListData? _selected;
-    private float _itemHeight = 0;
-    private float _totalHeight = 0;
-    private int _topIndex = 0;
-    private int _bottomIndex = 0;
-    private bool _updateChildren = false;
+    private float _itemHeight;
+    private float _totalHeight;
+    private int _topIndex;
+    private int _bottomIndex;
+    private bool _updateChildren;
     private bool _suppressScrollValueChanged;
     private ButtonGroup? _buttonGroup;
 
@@ -66,9 +74,7 @@ public class ListContainer : Control
         get
         {
             if (TryGetStyleProperty(StylePropertySeparation, out int separation))
-            {
                 return separation;
-            }
 
             return SeparationOverride ?? DefaultSeparation;
         }
@@ -81,7 +87,7 @@ public class ListContainer : Control
         RectClipContent = true;
         MouseFilter = MouseFilterMode.Pass;
 
-        _vScrollBar = new VScrollBar
+        _vScrollBar = new()
         {
             HorizontalExpand = false,
             HorizontalAlignment = HAlignment.Right
@@ -92,7 +98,7 @@ public class ListContainer : Control
 
     public virtual void PopulateList(IReadOnlyList<ListData> data)
     {
-        if ((_itemHeight == 0 || _data is {Count: 0}) && data.Count > 0)
+        if ((_itemHeight == 0 || _data is { Count: 0, }) && data.Count > 0)
         {
             ListContainerButton control = new(data[0], 0);
             GenerateItem?.Invoke(data[0], control);
@@ -103,9 +109,7 @@ public class ListContainer : Control
 
         // Ensure buttons are re-generated.
         foreach (var button in _buttons.Values)
-        {
             button.Dispose();
-        }
         _buttons.Clear();
 
         _data = data.ToList();
@@ -134,16 +138,24 @@ public class ListContainer : Control
         if (_buttons.TryGetValue(data, out var button) && Toggle)
             button.Pressed = true;
         _selected = data;
-        button ??= new ListContainerButton(data, _data.IndexOf(data));
-        OnItemPressed(new BaseButton.ButtonEventArgs(button,
-            new GUIBoundKeyEventArgs(EngineKeyFunctions.UIClick, BoundKeyState.Up,
-                new ScreenCoordinates(0, 0, WindowId.Main), true, Vector2.Zero, Vector2.Zero)));
+        button ??= new(data, _data.IndexOf(data));
+        OnItemPressed(
+            new(
+                button,
+                new(
+                    EngineKeyFunctions.UIClick,
+                    BoundKeyState.Up,
+                    new(0, 0, WindowId.Main),
+                    true,
+                    Vector2.Zero,
+                    Vector2.Zero)));
     }
 
     /*
      * Need to implement selecting the first item in code.
      * Need to implement updating one entry without having to repopulate
      */
+
     #endregion
 
     private void OnItemPressed(BaseButton.ButtonEventArgs args)
@@ -154,25 +166,22 @@ public class ListContainer : Control
         ItemPressed?.Invoke(args, button.Data);
     }
 
-    private void OnItemKeyBindDown(ListContainerButton button, GUIBoundKeyEventArgs args)
-    {
+    private void OnItemKeyBindDown(ListContainerButton button, GUIBoundKeyEventArgs args) =>
         ItemKeyBindDown?.Invoke(args, button.Data);
-    }
 
     [Pure]
     private Vector2 GetScrollValue()
     {
         var v = _vScrollBar.Value;
         if (!_vScrollBar.Visible)
-        {
             v = 0;
-        }
-        return new Vector2(0, v);
+        return new(0, v);
     }
 
     protected override Vector2 ArrangeOverride(Vector2 finalSize)
     {
         #region Scroll
+
         var cHeight = _totalHeight;
         var vBarSize = _vScrollBar.DesiredSize.X;
         var (finalWidth, finalHeight) = finalSize;
@@ -200,12 +209,12 @@ public class ListContainer : Control
         }
 
         if (_vScrollBar.Visible)
-        {
             _vScrollBar.Arrange(UIBox2.FromDimensions(Vector2.Zero, finalSize));
-        }
+
         #endregion
 
         #region Rebuild Children
+
         /*
          * Example:
          *
@@ -278,7 +287,7 @@ public class ListContainer : Control
                         toRemove.Remove(data);
                     else
                     {
-                        button = new ListContainerButton(data, i);
+                        button = new(data, i);
                         button.OnPressed += OnItemPressed;
                         button.OnKeyBindDown += args => OnItemKeyBindDown(button, args);
                         button.ToggleMode = Toggle;
@@ -290,6 +299,7 @@ public class ListContainer : Control
                         if (Toggle && data == _selected)
                             button.Pressed = true;
                     }
+
                     AddChild(button);
                     button.Measure(finalSize);
                 }
@@ -303,11 +313,13 @@ public class ListContainer : Control
 
             _vScrollBar.SetPositionLast();
         }
+
         #endregion
 
         #region Layout Children
+
         // Use pixel position
-        var pixelWidth = (int)(finalWidth * UIScale);
+        var pixelWidth = (int) (finalWidth * UIScale);
         var pixelSeparation = (int) (ActualSeparation * UIScale);
 
         var pixelOffset = (int) -((scroll.Y - _topIndex * (_itemHeight + ActualSeparation)) * UIScale);
@@ -326,6 +338,7 @@ public class ListContainer : Control
 
             pixelOffset += pixelSize;
         }
+
         #endregion
 
         return finalSize;
@@ -352,15 +365,13 @@ public class ListContainer : Control
 
         _totalHeight = _itemHeight * _data.Count + ActualSeparation * (_data.Count - 1);
 
-        return new Vector2(childSize.X, 0);
+        return new(childSize.X, 0);
     }
 
-    private void ScrollValueChanged(Robust.Client.UserInterface.Controls.Range _)
+    private void ScrollValueChanged(Range _)
     {
         if (_suppressScrollValueChanged)
-        {
             return;
-        }
 
         InvalidateArrange();
     }
@@ -398,7 +409,9 @@ public sealed class ListContainerButton : ContainerButton, IEntityControl
 }
 
 #region Data
+
 public abstract record ListData;
 
 public record EntityListData(EntityUid Uid) : ListData;
+
 #endregion

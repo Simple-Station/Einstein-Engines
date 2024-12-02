@@ -1,142 +1,136 @@
-using System;
+#region
+
 using Robust.Client;
+using Robust.Client.State;
 using Robust.Client.UserInterface;
 using Robust.Shared.Configuration;
-using Robust.Shared.IoC;
-using Robust.Shared.Log;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
-namespace Content.Client.Launcher
+#endregion
+
+
+namespace Content.Client.Launcher;
+
+
+public sealed class LauncherConnecting : State
 {
-    public sealed class LauncherConnecting : Robust.Client.State.State
+    [Dependency] private readonly IUserInterfaceManager _userInterfaceManager = default!;
+    [Dependency] private readonly IClientNetManager _clientNetManager = default!;
+    [Dependency] private readonly IGameController _gameController = default!;
+    [Dependency] private readonly IBaseClient _baseClient = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private readonly IConfigurationManager _cfg = default!;
+
+    private LauncherConnectingGui? _control;
+
+    private Page _currentPage;
+    private string? _connectFailReason;
+
+    public string? Address => _gameController.LaunchState.Ss14Address ?? _gameController.LaunchState.ConnectAddress;
+
+    public string? ConnectFailReason
     {
-        [Dependency] private readonly IUserInterfaceManager _userInterfaceManager = default!;
-        [Dependency] private readonly IClientNetManager _clientNetManager = default!;
-        [Dependency] private readonly IGameController _gameController = default!;
-        [Dependency] private readonly IBaseClient _baseClient = default!;
-        [Dependency] private readonly IRobustRandom _random = default!;
-        [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-        [Dependency] private readonly IConfigurationManager _cfg = default!;
-
-        private LauncherConnectingGui? _control;
-
-        private Page _currentPage;
-        private string? _connectFailReason;
-
-        public string? Address => _gameController.LaunchState.Ss14Address ?? _gameController.LaunchState.ConnectAddress;
-
-        public string? ConnectFailReason
+        get => _connectFailReason;
+        private set
         {
-            get => _connectFailReason;
-            private set
-            {
-                _connectFailReason = value;
-                ConnectFailReasonChanged?.Invoke(value);
-            }
+            _connectFailReason = value;
+            ConnectFailReasonChanged?.Invoke(value);
+        }
+    }
+
+    public string? LastDisconnectReason => _baseClient.LastDisconnectReason;
+
+    public Page CurrentPage
+    {
+        get => _currentPage;
+        private set
+        {
+            _currentPage = value;
+            PageChanged?.Invoke(value);
+        }
+    }
+
+    public ClientConnectionState ConnectionState => _clientNetManager.ClientConnectState;
+
+    public event Action<Page>? PageChanged;
+    public event Action<string?>? ConnectFailReasonChanged;
+    public event Action<ClientConnectionState>? ConnectionStateChanged;
+
+    protected override void Startup()
+    {
+        _control = new(this, _random, _prototypeManager, _cfg);
+
+        _userInterfaceManager.StateRoot.AddChild(_control);
+
+        _clientNetManager.ConnectFailed += OnConnectFailed;
+        _clientNetManager.ClientConnectStateChanged += OnConnectStateChanged;
+
+        CurrentPage = Page.Connecting;
+    }
+
+    protected override void Shutdown()
+    {
+        _control?.Dispose();
+
+        _clientNetManager.ConnectFailed -= OnConnectFailed;
+        _clientNetManager.ClientConnectStateChanged -= OnConnectStateChanged;
+    }
+
+    private void OnConnectFailed(object? _, NetConnectFailArgs args)
+    {
+        if (args.RedialFlag)
+        {
+            // We've just *attempted* to connect and we've been told we need to redial, so do it.
+            // Result deliberately discarded.
+            Redial();
         }
 
-        public string? LastDisconnectReason => _baseClient.LastDisconnectReason;
+        ConnectFailReason = args.Reason;
+        CurrentPage = Page.ConnectFailed;
+    }
 
-        public Page CurrentPage
+    private void OnConnectStateChanged(ClientConnectionState state) => ConnectionStateChanged?.Invoke(state);
+
+    public void RetryConnect()
+    {
+        if (_gameController.LaunchState.ConnectEndpoint != null)
         {
-            get => _currentPage;
-            private set
-            {
-                _currentPage = value;
-                PageChanged?.Invoke(value);
-            }
-        }
-
-        public ClientConnectionState ConnectionState => _clientNetManager.ClientConnectState;
-
-        public event Action<Page>? PageChanged;
-        public event Action<string?>? ConnectFailReasonChanged;
-        public event Action<ClientConnectionState>? ConnectionStateChanged;
-
-        protected override void Startup()
-        {
-            _control = new LauncherConnectingGui(this, _random, _prototypeManager, _cfg);
-
-            _userInterfaceManager.StateRoot.AddChild(_control);
-
-            _clientNetManager.ConnectFailed += OnConnectFailed;
-            _clientNetManager.ClientConnectStateChanged += OnConnectStateChanged;
-
+            _baseClient.ConnectToServer(_gameController.LaunchState.ConnectEndpoint);
             CurrentPage = Page.Connecting;
         }
+    }
 
-        protected override void Shutdown()
+    public bool Redial()
+    {
+        try
         {
-            _control?.Dispose();
-
-            _clientNetManager.ConnectFailed -= OnConnectFailed;
-            _clientNetManager.ClientConnectStateChanged -= OnConnectStateChanged;
-        }
-
-        private void OnConnectFailed(object? _, NetConnectFailArgs args)
-        {
-            if (args.RedialFlag)
+            if (_gameController.LaunchState.Ss14Address != null)
             {
-                // We've just *attempted* to connect and we've been told we need to redial, so do it.
-                // Result deliberately discarded.
-                Redial();
+                _gameController.Redial(_gameController.LaunchState.Ss14Address);
+                return true;
             }
-            ConnectFailReason = args.Reason;
-            CurrentPage = Page.ConnectFailed;
+
+            Logger.InfoS("launcher-ui", "Redial not possible, no Ss14Address");
+        }
+        catch (Exception ex)
+        {
+            Logger.ErrorS("launcher-ui", $"Redial exception: {ex}");
         }
 
-        private void OnConnectStateChanged(ClientConnectionState state)
-        {
-            ConnectionStateChanged?.Invoke(state);
-        }
+        return false;
+    }
 
-        public void RetryConnect()
-        {
-            if (_gameController.LaunchState.ConnectEndpoint != null)
-            {
-                _baseClient.ConnectToServer(_gameController.LaunchState.ConnectEndpoint);
-                CurrentPage = Page.Connecting;
-            }
-        }
+    public void Exit() => _gameController.Shutdown("Exit button pressed");
 
-        public bool Redial()
-        {
-            try
-            {
-                if (_gameController.LaunchState.Ss14Address != null)
-                {
-                    _gameController.Redial(_gameController.LaunchState.Ss14Address);
-                    return true;
-                }
-                else
-                {
-                    Logger.InfoS("launcher-ui", $"Redial not possible, no Ss14Address");
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.ErrorS("launcher-ui", $"Redial exception: {ex}");
-            }
-            return false;
-        }
+    public void SetDisconnected() => CurrentPage = Page.Disconnected;
 
-        public void Exit()
-        {
-            _gameController.Shutdown("Exit button pressed");
-        }
-
-        public void SetDisconnected()
-        {
-            CurrentPage = Page.Disconnected;
-        }
-
-        public enum Page : byte
-        {
-            Connecting,
-            ConnectFailed,
-            Disconnected,
-        }
+    public enum Page : byte
+    {
+        Connecting,
+        ConnectFailed,
+        Disconnected
     }
 }

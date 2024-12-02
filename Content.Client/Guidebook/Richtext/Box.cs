@@ -1,8 +1,14 @@
+#region
+
 using System.Diagnostics.CodeAnalysis;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 
+#endregion
+
+
 namespace Content.Client.Guidebook.Richtext;
+
 
 public sealed class Box : BoxContainer, IDocumentTag
 {

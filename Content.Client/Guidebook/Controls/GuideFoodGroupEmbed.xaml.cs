@@ -1,3 +1,5 @@
+#region
+
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Client.Guidebook.Richtext;
@@ -9,9 +11,13 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 
+#endregion
+
+
 namespace Content.Client.Guidebook.Controls;
 
-[UsedImplicitly, GenerateTypedNameReferences]
+
+[UsedImplicitly, GenerateTypedNameReferences,]
 public sealed partial class GuideFoodGroupEmbed : BoxContainer, IDocumentTag
 {
     [Dependency] private readonly IEntitySystemManager _sysMan = default!;

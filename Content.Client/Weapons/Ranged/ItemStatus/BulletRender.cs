@@ -1,10 +1,16 @@
+#region
+
 using System.Numerics;
 using Content.Client.Resources;
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
 
+#endregion
+
+
 namespace Content.Client.Weapons.Ranged.ItemStatus;
+
 
 public abstract class BaseBulletRenderer : Control
 {
@@ -46,14 +52,14 @@ public abstract class BaseBulletRenderer : Control
         var height = _params.ItemHeight * rows + (_params.VerticalSeparation * rows - 1);
         var width = RowWidth(countPerRow);
 
-        return new Vector2(width, height);
+        return new(width, height);
     }
 
     protected override void Draw(DrawingHandleScreen handle)
     {
         // Scale rendering in this control by UIScale.
         var currentTransform = handle.GetTransform();
-        handle.SetTransform(Matrix3Helpers.CreateScale(new Vector2(UIScale)) * currentTransform);
+        handle.SetTransform(Matrix3Helpers.CreateScale(new(UIScale)) * currentTransform);
 
         var countPerRow = CountPerRow(Size.X);
 
@@ -79,7 +85,8 @@ public abstract class BaseBulletRenderer : Control
             // 3. MinCountPerRow is actually smaller than the count per row (avoid degenerate cases).
             // 4. There's enough bullets that at least one will end up on the next row.
             var nextRowCount = Capacity - bulletsDone - thisRowCount;
-            if (nextRowCount < _params.MinCountPerRow && row != Rows - 1 && _params.MinCountPerRow < countPerRow && nextRowCount > 0)
+            if (nextRowCount < _params.MinCountPerRow && row != Rows - 1 && _params.MinCountPerRow < countPerRow &&
+                nextRowCount > 0)
                 thisRowCount -= _params.MinCountPerRow - nextRowCount;
 
             // Account for row width to right-align.
@@ -108,15 +115,10 @@ public abstract class BaseBulletRenderer : Control
 
     protected abstract void DrawItem(DrawingHandleScreen handle, Vector2 renderPos, bool spent, bool altColor);
 
-    private int CountPerRow(float width)
-    {
-        return (int) ((width - _params.ItemWidth + _params.ItemSeparation) / _params.ItemSeparation);
-    }
+    private int CountPerRow(float width) =>
+        (int) ((width - _params.ItemWidth + _params.ItemSeparation) / _params.ItemSeparation);
 
-    private int RowWidth(int count)
-    {
-        return (count - 1) * _params.ItemSeparation + _params.ItemWidth;
-    }
+    private int RowWidth(int count) => (count - 1) * _params.ItemSeparation + _params.ItemWidth;
 
     protected struct LayoutParameters
     {
@@ -126,21 +128,21 @@ public abstract class BaseBulletRenderer : Control
         public int VerticalSeparation;
 
         /// <summary>
-        /// Try to ensure there's at least this many bullets on one row.
+        ///     Try to ensure there's at least this many bullets on one row.
         /// </summary>
         /// <remarks>
-        /// For example, if there are two rows and the second row has only two bullets,
-        /// we "steal" some bullets from the row below it to make it look nicer.
+        ///     For example, if there are two rows and the second row has only two bullets,
+        ///     we "steal" some bullets from the row below it to make it look nicer.
         /// </remarks>
         public int MinCountPerRow;
     }
 }
 
 /// <summary>
-/// Renders one or more rows of bullets for item status.
+///     Renders one or more rows of bullets for item status.
 /// </summary>
 /// <remarks>
-/// This is a custom control to allow complex responsive layout logic.
+///     This is a custom control to allow complex responsive layout logic.
 /// </remarks>
 public sealed class BulletRender : BaseBulletRenderer
 {
@@ -149,7 +151,7 @@ public sealed class BulletRender : BaseBulletRenderer
     public const int BulletHeight = 12;
     public const int VerticalSeparation = 2;
 
-    private static readonly LayoutParameters LayoutNormal = new LayoutParameters
+    private static readonly LayoutParameters LayoutNormal = new()
     {
         ItemHeight = BulletHeight,
         ItemSeparation = 3,
@@ -158,7 +160,7 @@ public sealed class BulletRender : BaseBulletRenderer
         MinCountPerRow = MinCountPerRow
     };
 
-    private static readonly LayoutParameters LayoutTiny = new LayoutParameters
+    private static readonly LayoutParameters LayoutTiny = new()
     {
         ItemHeight = BulletHeight,
         ItemSeparation = 2,
@@ -234,7 +236,7 @@ public sealed class BatteryBulletRenderer : BaseBulletRenderer
 
     public BatteryBulletRenderer()
     {
-        Parameters = new LayoutParameters
+        Parameters = new()
         {
             ItemWidth = SizeH,
             ItemHeight = SizeV,
@@ -247,6 +249,6 @@ public sealed class BatteryBulletRenderer : BaseBulletRenderer
     protected override void DrawItem(DrawingHandleScreen handle, Vector2 renderPos, bool spent, bool altColor)
     {
         var color = spent ? ItemColorGone : ItemColor;
-        handle.DrawRect(UIBox2.FromDimensions(renderPos, new Vector2(SizeH, SizeV)), color);
+        handle.DrawRect(UIBox2.FromDimensions(renderPos, new(SizeH, SizeV)), color);
     }
 }

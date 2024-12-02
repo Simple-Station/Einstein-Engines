@@ -1,11 +1,17 @@
-﻿using System.Linq;
+﻿#region
+
+using System.Linq;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Clothing.EntitySystems;
 using Content.Shared.Inventory;
 using Robust.Client.GameObjects;
 using Robust.Shared.Prototypes;
 
+#endregion
+
+
 namespace Content.Client.Clothing.Systems;
+
 
 // All valid items for chameleon are calculated on client startup and stored in dictionary.
 public sealed class ChameleonClothingSystem : SharedChameleonClothingSystem
@@ -19,6 +25,7 @@ public sealed class ChameleonClothingSystem : SharedChameleonClothingSystem
         SlotFlags.PREVENTEQUIP,
         SlotFlags.NONE
     };
+
     private static readonly SlotFlags[] Slots = Enum.GetValues<SlotFlags>().Except(IgnoredSlots).ToArray();
 
     private readonly Dictionary<SlotFlags, List<string>> _data = new();
@@ -38,19 +45,15 @@ public sealed class ChameleonClothingSystem : SharedChameleonClothingSystem
             PrepareAllVariants();
     }
 
-    private void HandleState(EntityUid uid, ChameleonClothingComponent component, ref AfterAutoHandleStateEvent args)
-    {
+    private void HandleState(EntityUid uid, ChameleonClothingComponent component, ref AfterAutoHandleStateEvent args) =>
         UpdateVisuals(uid, component);
-    }
 
     protected override void UpdateSprite(EntityUid uid, EntityPrototype proto)
     {
         base.UpdateSprite(uid, proto);
         if (TryComp(uid, out SpriteComponent? sprite)
             && proto.TryGetComponent(out SpriteComponent? otherSprite, _factory))
-        {
             sprite.CopyFrom(otherSprite);
-        }
     }
 
     /// <summary>
@@ -60,12 +63,9 @@ public sealed class ChameleonClothingSystem : SharedChameleonClothingSystem
     {
         var set = new HashSet<string>();
         foreach (var availableSlot in _data.Keys)
-        {
             if (slot.HasFlag(availableSlot))
-            {
                 set.UnionWith(_data[availableSlot]);
-            }
-        }
+
         return set;
     }
 
@@ -90,9 +90,7 @@ public sealed class ChameleonClothingSystem : SharedChameleonClothingSystem
                     continue;
 
                 if (!_data.ContainsKey(slot))
-                {
-                    _data.Add(slot, new List<string>());
-                }
+                    _data.Add(slot, new());
                 _data[slot].Add(proto.ID);
             }
         }

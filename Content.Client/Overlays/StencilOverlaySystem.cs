@@ -1,9 +1,15 @@
+#region
+
 using Content.Client.Parallax;
 using Content.Client.Weather;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 
+#endregion
+
+
 namespace Content.Client.Overlays;
+
 
 public sealed class StencilOverlaySystem : EntitySystem
 {

@@ -1,19 +1,19 @@
+#region
+
 using Content.Client.Chemistry.EntitySystems;
 using Robust.Shared.Prototypes;
 
+#endregion
+
+
 namespace Content.Client.Nutrition.EntitySystems;
+
 
 public sealed class FoodGuideDataSystem : SharedFoodGuideDataSystem
 {
-    public override void Initialize()
-    {
-        SubscribeNetworkEvent<FoodGuideRegistryChangedEvent>(OnReceiveRegistryUpdate);
-    }
+    public override void Initialize() => SubscribeNetworkEvent<FoodGuideRegistryChangedEvent>(OnReceiveRegistryUpdate);
 
-    private void OnReceiveRegistryUpdate(FoodGuideRegistryChangedEvent message)
-    {
-        Registry = message.Changeset;
-    }
+    private void OnReceiveRegistryUpdate(FoodGuideRegistryChangedEvent message) => Registry = message.Changeset;
 
     public bool TryGetData(EntProtoId result, out FoodGuideEntry entry)
     {

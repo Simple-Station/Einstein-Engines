@@ -1,13 +1,18 @@
+#region
+
 using Content.Shared.FixedPoint;
 
+#endregion
+
+
 namespace Content.Client.Damage;
+
 
 [RegisterComponent]
 public sealed partial class DamageVisualsComponent : Component
 {
     /// <summary>
     ///     Damage thresholds between damage state changes.
-    ///
     ///     If there are any negative thresholds, or there is
     ///     less than one threshold, the visualizer is marked
     ///     as invalid.
@@ -30,10 +35,8 @@ public sealed partial class DamageVisualsComponent : Component
     ///     If a target layer map key is invalid
     ///     (in essence, undefined), then the target
     ///     layer is removed from the list for efficiency.
-    ///
     ///     If no layers are valid, then the visualizer
     ///     is marked as invalid.
-    ///
     ///     If this is not defined, however, the visualizer
     ///     instead adds an overlay to the sprite.
     /// </summary>
@@ -50,12 +53,11 @@ public sealed partial class DamageVisualsComponent : Component
     /// <summary>
     ///     The actual sprites for every damage group
     ///     that the entity should display visually.
-    ///
     ///     This is keyed by a damage group identifier
     ///     (for example, Brute), and has a value
     ///     of a DamageVisualizerSprite (see below)
     /// </summary>
-    [DataField("damageOverlayGroups")] public  Dictionary<string, DamageVisualizerSprite>? DamageOverlayGroups;
+    [DataField("damageOverlayGroups")] public Dictionary<string, DamageVisualizerSprite>? DamageOverlayGroups;
 
     /// <summary>
     ///     Sets if you want sprites to overlay the
@@ -63,12 +65,11 @@ public sealed partial class DamageVisualsComponent : Component
     ///     rather have each target layer's state
     ///     replaced by a different state
     ///     within its RSI.
-    ///
     ///     This cannot be set to false if:
     ///     - There are no target layers
     ///     - There is no damage group
     /// </summary>
-    [DataField("overlay")] public  bool Overlay = true;
+    [DataField("overlay")] public bool Overlay = true;
 
     /// <summary>
     ///     A single damage group to target.
@@ -84,7 +85,7 @@ public sealed partial class DamageVisualsComponent : Component
     ///     what kind of damage combination
     ///     you would want, on which threshold.
     /// </remarks>
-    [DataField("damageGroup")] public  string? DamageGroup;
+    [DataField("damageGroup")] public string? DamageGroup;
 
     /// <summary>
     ///     Set this if you want incoming damage to be
@@ -106,14 +107,15 @@ public sealed partial class DamageVisualsComponent : Component
     ///     This will only work if you have damageOverlay
     ///     defined - otherwise, it will not work.
     /// </remarks>
-    [DataField("trackAllDamage")] public  bool TrackAllDamage;
+    [DataField("trackAllDamage")] public bool TrackAllDamage;
+
     /// <summary>
     ///     This is the overlay sprite used, if _trackAllDamage is
     ///     enabled. Supports no complex per-group layering,
     ///     just an actually simple damage overlay. See
     ///     DamageVisualizerSprite for more information.
     /// </summary>
-    [DataField("damageOverlay")] public  DamageVisualizerSprite? DamageOverlay;
+    [DataField("damageOverlay")] public DamageVisualizerSprite? DamageOverlay;
 
     public readonly List<Enum> TargetLayerMapKeys = new();
     public bool Disabled = false;
@@ -137,25 +139,23 @@ public sealed partial class DamageVisualizerSprite
     /// <remarks>
     ///     States in here will require one of four
     ///     forms:
-    ///
     ///     If tracking damage groups:
     ///     - {base_state}_{group}_{threshold} if targeting
-    ///       a static layer on a sprite (either as an
-    ///       overlay or as a state change)
+    ///     a static layer on a sprite (either as an
+    ///     overlay or as a state change)
     ///     - DamageOverlay_{group}_{threshold} if not
-    ///       targeting a layer on a sprite.
-    ///
+    ///     targeting a layer on a sprite.
     ///     If not tracking damage groups:
     ///     - {base_state}_{threshold} if it is targeting
-    ///       a layer
+    ///     a layer
     ///     - DamageOverlay_{threshold} if not targeting
-    ///       a layer.
+    ///     a layer.
     /// </remarks>
-    [DataField("sprite", required: true)] public  string Sprite = default!;
+    [DataField("sprite", required: true)] public string Sprite = default!;
 
     /// <summary>
     ///     The color of this sprite overlay.
     ///     Supports only hexadecimal format.
     /// </summary>
-    [DataField("color")] public  string? Color;
+    [DataField("color")] public string? Color;
 }

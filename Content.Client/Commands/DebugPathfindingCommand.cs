@@ -1,10 +1,16 @@
+#region
+
+using System.Linq;
 using Content.Client.NPC;
 using Content.Shared.NPC;
 using JetBrains.Annotations;
 using Robust.Shared.Console;
-using System.Linq;
+
+#endregion
+
 
 namespace Content.Client.Commands;
+
 
 [UsedImplicitly]
 public sealed class DebugPathfindingCommand : LocalizedCommands
@@ -34,16 +40,18 @@ public sealed class DebugPathfindingCommand : LocalizedCommands
             }
 
             system.Modes ^= mode;
-            shell.WriteLine(LocalizationManager.GetString($"cmd-{Command}-notify", ("arg", arg), ("newMode", (system.Modes & mode) != 0x0)));
+            shell.WriteLine(
+                LocalizationManager.GetString(
+                    $"cmd-{Command}-notify",
+                    ("arg", arg),
+                    ("newMode", (system.Modes & mode) != 0x0)));
         }
     }
 
     public override CompletionResult GetCompletion(IConsoleShell shell, string[] args)
     {
         if (args.Length > 1)
-        {
             return CompletionResult.Empty;
-        }
 
         var values = Enum.GetValues<PathfindingDebugMode>().ToList();
         var options = new List<CompletionOption>();
@@ -53,7 +61,7 @@ public sealed class DebugPathfindingCommand : LocalizedCommands
             if (val == PathfindingDebugMode.None)
                 continue;
 
-            options.Add(new CompletionOption(val.ToString()));
+            options.Add(new(val.ToString()));
         }
 
         return CompletionResult.FromOptions(options);

@@ -1,10 +1,16 @@
-using JetBrains.Annotations;
-using Content.Shared.MassMedia.Systems;
+#region
+
 using Content.Shared.MassMedia.Components;
+using Content.Shared.MassMedia.Systems;
+using JetBrains.Annotations;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
+#endregion
+
+
 namespace Content.Client.MassMedia.Ui;
+
 
 [UsedImplicitly]
 public sealed class NewsWriterBoundUserInterface : BoundUserInterface
@@ -14,14 +20,11 @@ public sealed class NewsWriterBoundUserInterface : BoundUserInterface
     [ViewVariables]
     private NewsWriterMenu? _menu;
 
-    public NewsWriterBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-    {
-
-    }
+    public NewsWriterBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
 
     protected override void Open()
     {
-        _menu = new NewsWriterMenu(_gameTiming);
+        _menu = new(_gameTiming);
 
         _menu.OpenCentered();
         _menu.OnClose += Close;

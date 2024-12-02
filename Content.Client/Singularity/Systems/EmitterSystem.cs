@@ -1,18 +1,22 @@
-﻿using Content.Shared.Singularity.Components;
+﻿#region
+
+using Content.Shared.Singularity.Components;
 using Content.Shared.Singularity.EntitySystems;
 using Robust.Client.GameObjects;
 
+#endregion
+
+
 namespace Content.Client.Singularity.Systems;
+
 
 public sealed class EmitterSystem : SharedEmitterSystem
 {
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
 
-    /// <inheritdoc/>
-    public override void Initialize()
-    {
+    /// <inheritdoc />
+    public override void Initialize() =>
         SubscribeLocalEvent<EmitterComponent, AppearanceChangeEvent>(OnAppearanceChange);
-    }
 
     private void OnAppearanceChange(EntityUid uid, EmitterComponent component, ref AppearanceChangeEvent args)
     {

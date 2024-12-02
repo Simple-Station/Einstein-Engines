@@ -1,6 +1,12 @@
-﻿using Content.Client.Eui;
+﻿#region
+
+using Content.Client.Eui;
+
+#endregion
+
 
 namespace Content.Client.Revolutionary.UI;
+
 
 public sealed class DeconvertedEui : BaseEui
 {
@@ -8,13 +14,10 @@ public sealed class DeconvertedEui : BaseEui
 
     public DeconvertedEui()
     {
-        _menu = new DeconvertedMenu();
+        _menu = new();
     }
 
-    public override void Opened()
-    {
-        _menu.OpenCentered();
-    }
+    public override void Opened() => _menu.OpenCentered();
 
     public override void Closed()
     {

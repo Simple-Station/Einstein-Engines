@@ -1,13 +1,17 @@
+#region
+
 using Content.Client.SubFloor;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;
 using Content.Shared.Atmos.Piping;
 using JetBrains.Annotations;
 using Robust.Client.GameObjects;
-using Robust.Client.ResourceManagement;
-using Robust.Shared.Serialization.TypeSerializers.Implementations;
+
+#endregion
+
 
 namespace Content.Client.Atmos.EntitySystems;
+
 
 [UsedImplicitly]
 public sealed class AtmosPipeAppearanceSystem : EntitySystem
@@ -19,7 +23,9 @@ public sealed class AtmosPipeAppearanceSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<PipeAppearanceComponent, ComponentInit>(OnInit);
-        SubscribeLocalEvent<PipeAppearanceComponent, AppearanceChangeEvent>(OnAppearanceChanged, after: new[] { typeof(SubFloorHideSystem) });
+        SubscribeLocalEvent<PipeAppearanceComponent, AppearanceChangeEvent>(
+            OnAppearanceChanged,
+            after: new[] { typeof(SubFloorHideSystem), });
     }
 
     private void OnInit(EntityUid uid, PipeAppearanceComponent component, ComponentInit args)
@@ -61,7 +67,11 @@ public sealed class AtmosPipeAppearanceSystem : EntitySystem
             return;
         }
 
-        if (!_appearance.TryGetData<PipeDirection>(uid, PipeVisuals.VisualState, out var worldConnectedDirections, args.Component))
+        if (!_appearance.TryGetData<PipeDirection>(
+            uid,
+            PipeVisuals.VisualState,
+            out var worldConnectedDirections,
+            args.Component))
         {
             HideAllPipeConnection(args.Sprite);
             return;
@@ -84,28 +94,27 @@ public sealed class AtmosPipeAppearanceSystem : EntitySystem
 
             layer.Visible &= visible;
 
-            if (!visible) continue;
+            if (!visible)
+                continue;
 
             layer.Color = color;
         }
     }
 
-    private SpriteComponent.DirectionOffset ToOffset(PipeConnectionLayer layer)
-    {
-        return layer switch
+    private SpriteComponent.DirectionOffset ToOffset(PipeConnectionLayer layer) =>
+        layer switch
         {
             PipeConnectionLayer.NorthConnection => SpriteComponent.DirectionOffset.Flip,
             PipeConnectionLayer.EastConnection => SpriteComponent.DirectionOffset.CounterClockwise,
             PipeConnectionLayer.WestConnection => SpriteComponent.DirectionOffset.Clockwise,
-            _ => SpriteComponent.DirectionOffset.None,
+            _ => SpriteComponent.DirectionOffset.None
         };
-    }
 
     private enum PipeConnectionLayer : byte
     {
         NorthConnection = PipeDirection.North,
         SouthConnection = PipeDirection.South,
         EastConnection = PipeDirection.East,
-        WestConnection = PipeDirection.West,
+        WestConnection = PipeDirection.West
     }
 }

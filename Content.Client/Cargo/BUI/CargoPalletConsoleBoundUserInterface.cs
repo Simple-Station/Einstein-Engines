@@ -1,24 +1,27 @@
+#region
+
 using Content.Client.Cargo.UI;
 using Content.Shared.Cargo.BUI;
 using Content.Shared.Cargo.Events;
-using Robust.Client.GameObjects;
+
+#endregion
+
 
 namespace Content.Client.Cargo.BUI;
+
 
 public sealed class CargoPalletConsoleBoundUserInterface : BoundUserInterface
 {
     [ViewVariables]
     private CargoPalletMenu? _menu;
 
-    public CargoPalletConsoleBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-    {
-    }
+    public CargoPalletConsoleBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
 
     protected override void Open()
     {
         base.Open();
 
-        _menu = new CargoPalletMenu();
+        _menu = new();
         _menu.AppraiseRequested += OnAppraisal;
         _menu.SellRequested += OnSell;
         _menu.OnClose += Close;
@@ -30,20 +33,12 @@ public sealed class CargoPalletConsoleBoundUserInterface : BoundUserInterface
     {
         base.Dispose(disposing);
         if (disposing)
-        {
             _menu?.Dispose();
-        }
     }
 
-    private void OnAppraisal()
-    {
-        SendMessage(new CargoPalletAppraiseMessage());
-    }
+    private void OnAppraisal() => SendMessage(new CargoPalletAppraiseMessage());
 
-    private void OnSell()
-    {
-        SendMessage(new CargoPalletSellMessage());
-    }
+    private void OnSell() => SendMessage(new CargoPalletSellMessage());
 
     protected override void UpdateState(BoundUserInterfaceState state)
     {

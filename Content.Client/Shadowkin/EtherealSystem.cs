@@ -1,11 +1,17 @@
+#region
+
+using Content.Client.Overlays;
 using Content.Shared.Shadowkin;
 using Robust.Client.Graphics;
 using Robust.Shared.Player;
-using Content.Client.Overlays;
+
+#endregion
+
 
 namespace Content.Client.Shadowkin;
 
-public sealed partial class EtherealSystem : EntitySystem
+
+public sealed class EtherealSystem : EntitySystem
 {
     [Dependency] private readonly IOverlayManager _overlayMan = default!;
     [Dependency] private readonly ISharedPlayerManager _playerMan = default!;
@@ -40,13 +46,9 @@ public sealed partial class EtherealSystem : EntitySystem
         _overlayMan.RemoveOverlay(_overlay);
     }
 
-    private void OnPlayerAttached(EntityUid uid, EtherealComponent component, LocalPlayerAttachedEvent args)
-    {
+    private void OnPlayerAttached(EntityUid uid, EtherealComponent component, LocalPlayerAttachedEvent args) =>
         _overlayMan.AddOverlay(_overlay);
-    }
 
-    private void OnPlayerDetached(EntityUid uid, EtherealComponent component, LocalPlayerDetachedEvent args)
-    {
+    private void OnPlayerDetached(EntityUid uid, EtherealComponent component, LocalPlayerDetachedEvent args) =>
         _overlayMan.RemoveOverlay(_overlay);
-    }
 }

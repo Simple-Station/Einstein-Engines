@@ -1,5 +1,6 @@
+#region
+
 using System.Linq;
-using System.Numerics;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
@@ -14,7 +15,11 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
+#endregion
+
+
 namespace Content.Client.Research.UI;
+
 
 [GenerateTypedNameReferences]
 public sealed partial class ResearchConsoleMenu : FancyWindow
@@ -47,7 +52,7 @@ public sealed partial class ResearchConsoleMenu : FancyWindow
         _entity.TryGetComponent(entity, out _technologyDatabase);
     }
 
-    public void  UpdatePanels(ResearchConsoleBoundInterfaceState state)
+    public void UpdatePanels(ResearchConsoleBoundInterfaceState state)
     {
         TechnologyCardsContainer.Children.Clear();
 
@@ -58,31 +63,41 @@ public sealed partial class ResearchConsoleMenu : FancyWindow
             return;
 
         // i can't figure out the spacing so here you go
-        TechnologyCardsContainer.AddChild(new Control
-        {
-            MinHeight = 10
-        });
+        TechnologyCardsContainer.AddChild(
+            new()
+            {
+                MinHeight = 10
+            });
 
         var hasAccess = _player.LocalEntity is not { } local ||
-                        !_entity.TryGetComponent<AccessReaderComponent>(Entity, out var access) ||
-                        _accessReader.IsAllowed(local, Entity, access);
+            !_entity.TryGetComponent<AccessReaderComponent>(Entity, out var access) ||
+            _accessReader.IsAllowed(local, Entity, access);
         foreach (var techId in _technologyDatabase.CurrentTechnologyCards)
         {
             var tech = _prototype.Index<TechnologyPrototype>(techId);
-            var cardControl = new TechnologyCardControl(tech, _prototype, _sprite, _research.GetTechnologyDescription(tech, includeTier: false), state.Points, hasAccess);
+            var cardControl = new TechnologyCardControl(
+                tech,
+                _prototype,
+                _sprite,
+                _research.GetTechnologyDescription(tech, includeTier: false),
+                state.Points,
+                hasAccess);
             cardControl.OnPressed += () => OnTechnologyCardPressed?.Invoke(techId);
             TechnologyCardsContainer.AddChild(cardControl);
         }
 
-        var unlockedTech = _technologyDatabase.UnlockedTechnologies.Select(x => _prototype.Index<TechnologyPrototype>(x));
+        var unlockedTech =
+            _technologyDatabase.UnlockedTechnologies.Select(x => _prototype.Index<TechnologyPrototype>(x));
         SyncTechnologyList(UnlockedCardsContainer, unlockedTech);
     }
 
     public void UpdateInformationPanel(ResearchConsoleBoundInterfaceState state)
     {
         var amountMsg = new FormattedMessage();
-        amountMsg.AddMarkup(Loc.GetString("research-console-menu-research-points-text",
-            ("points", state.Points)));
+        amountMsg.AddMarkup(
+            Loc.GetString(
+                "research-console-menu-research-points-text",
+                ("points", state.Points)));
         ResearchAmountLabel.SetMessage(amountMsg);
 
         if (_technologyDatabase == null)
@@ -98,8 +113,11 @@ public sealed partial class ResearchConsoleMenu : FancyWindow
         }
 
         var msg = new FormattedMessage();
-        msg.AddMarkup(Loc.GetString("research-console-menu-main-discipline",
-            ("name", disciplineText), ("color", disciplineColor)));
+        msg.AddMarkup(
+            Loc.GetString(
+                "research-console-menu-main-discipline",
+                ("name", disciplineText),
+                ("color", disciplineColor)));
         MainDisciplineLabel.SetMessage(msg);
 
         TierDisplayContainer.Children.Clear();
@@ -115,7 +133,7 @@ public sealed partial class ResearchConsoleMenu : FancyWindow
             // i'm building the small-ass control here to spare me some mild annoyance in making a new file
             var texture = new TextureRect
             {
-                TextureScale = new Vector2( 2, 2 ),
+                TextureScale = new(2, 2),
                 VerticalAlignment = VAlignment.Center
             };
             var label = new RichTextLabel();
@@ -128,7 +146,7 @@ public sealed partial class ResearchConsoleMenu : FancyWindow
                 {
                     texture,
                     label,
-                    new Control
+                    new()
                     {
                         MinWidth = 10
                     }
@@ -149,19 +167,18 @@ public sealed partial class ResearchConsoleMenu : FancyWindow
         // For the cards which already exist, build a map from technology prototype to the UI card
         var currentTechControls = new Dictionary<TechnologyPrototype, Control>();
         foreach (var child in container.Children)
-        {
             if (child is MiniTechnologyCardControl)
-            {
                 currentTechControls.Add((child as MiniTechnologyCardControl)!.Technology, child);
-            }
-        }
 
         foreach (var tech in technologies)
-        {
             if (!currentTechControls.ContainsKey(tech))
             {
                 // Create a card for any technology which doesn't already have one.
-                var mini = new MiniTechnologyCardControl(tech, _prototype, _sprite, _research.GetTechnologyDescription(tech));
+                var mini = new MiniTechnologyCardControl(
+                    tech,
+                    _prototype,
+                    _sprite,
+                    _research.GetTechnologyDescription(tech));
                 container.AddChild(mini);
             }
             else
@@ -169,14 +186,10 @@ public sealed partial class ResearchConsoleMenu : FancyWindow
                 // The tech already exists in the UI; remove it from the set, so we won't revisit it below
                 currentTechControls.Remove(tech);
             }
-        }
 
         // Now, any items left in the dictionary are technologies which were previously
         // available, but now are not. Remove them.
         foreach (var (tech, techControl) in currentTechControls)
-        {
             container.Children.Remove(techControl);
-        }
     }
 }
-

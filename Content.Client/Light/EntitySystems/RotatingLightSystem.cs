@@ -1,10 +1,16 @@
+#region
+
 using Content.Shared.Light;
 using Content.Shared.Light.Components;
 using Robust.Client.Animations;
 using Robust.Client.GameObjects;
 using Robust.Shared.Animations;
 
+#endregion
+
+
 namespace Content.Client.Light.EntitySystems;
+
 
 public sealed class RotatingLightSystem : SharedRotatingLightSystem
 {
@@ -13,7 +19,7 @@ public sealed class RotatingLightSystem : SharedRotatingLightSystem
     private Animation GetAnimation(float speed)
     {
         var third = 120f / speed;
-        return new Animation()
+        return new()
         {
             Length = TimeSpan.FromSeconds(360f / speed),
             AnimationTracks =
@@ -25,10 +31,10 @@ public sealed class RotatingLightSystem : SharedRotatingLightSystem
                     Property = nameof(PointLightComponent.Rotation),
                     KeyFrames =
                     {
-                        new AnimationTrackProperty.KeyFrame(Angle.Zero, 0),
-                        new AnimationTrackProperty.KeyFrame(Angle.FromDegrees(120), third),
-                        new AnimationTrackProperty.KeyFrame(Angle.FromDegrees(240), third),
-                        new AnimationTrackProperty.KeyFrame(Angle.FromDegrees(360), third)
+                        new(Angle.Zero, 0),
+                        new(Angle.FromDegrees(120), third),
+                        new(Angle.FromDegrees(240), third),
+                        new(Angle.FromDegrees(360), third)
                     }
                 }
             }
@@ -58,31 +64,27 @@ public sealed class RotatingLightSystem : SharedRotatingLightSystem
             return;
 
         if (comp.Enabled)
-        {
             PlayAnimation(uid, comp, player);
-        }
         else
-        {
             _animations.Stop(uid, player, AnimKey);
-        }
     }
 
-    private void OnAnimationComplete(EntityUid uid, RotatingLightComponent comp, AnimationCompletedEvent args)
-    {
+    private void OnAnimationComplete(EntityUid uid, RotatingLightComponent comp, AnimationCompletedEvent args) =>
         PlayAnimation(uid, comp);
-    }
 
     /// <summary>
-    /// Play the light rotation animation.
+    ///     Play the light rotation animation.
     /// </summary>
-    public void PlayAnimation(EntityUid uid, RotatingLightComponent? comp = null, AnimationPlayerComponent? player = null)
+    public void PlayAnimation(
+        EntityUid uid,
+        RotatingLightComponent? comp = null,
+        AnimationPlayerComponent? player = null
+    )
     {
         if (!Resolve(uid, ref comp, ref player) || !comp.Enabled)
             return;
 
         if (!_animations.HasRunningAnimation(uid, player, AnimKey))
-        {
             _animations.Play(uid, player, GetAnimation(comp.Speed), AnimKey);
-        }
     }
 }

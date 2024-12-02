@@ -1,6 +1,12 @@
+#region
+
 using Content.Shared.Shuttles.Components;
+
+#endregion
+
 
 namespace Content.Client.Shuttles;
 
+
 [RegisterComponent]
-public sealed partial class ShuttleConsoleComponent : SharedShuttleConsoleComponent {}
+public sealed partial class ShuttleConsoleComponent : SharedShuttleConsoleComponent { }

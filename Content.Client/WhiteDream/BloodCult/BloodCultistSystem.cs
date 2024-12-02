@@ -1,4 +1,5 @@
-﻿using System.Numerics;
+﻿#region
+
 using Content.Shared.Antag;
 using Content.Shared.Ghost;
 using Content.Shared.StatusIcon.Components;
@@ -10,7 +11,11 @@ using Robust.Client.GameObjects;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 
+#endregion
+
+
 namespace Content.Client.WhiteDream.BloodCult;
+
 
 public sealed class BloodCultistSystem : EntitySystem
 {
@@ -38,7 +43,7 @@ public sealed class BloodCultistSystem : EntitySystem
         var layer = sprite.AddLayer(new SpriteSpecifier.Rsi(component.RsiPath, randomState));
 
         sprite.LayerMapSet(PentagramKey.Key, layer);
-        sprite.LayerSetOffset(layer, new Vector2(0.0f, adj));
+        sprite.LayerSetOffset(layer, new(0.0f, adj));
     }
 
     private void OnPentagramRemoved(EntityUid uid, PentagramComponent component, ComponentShutdown args)
@@ -50,7 +55,7 @@ public sealed class BloodCultistSystem : EntitySystem
     }
 
     /// <summary>
-    /// Determine whether a client should display the cult icon.
+    ///     Determine whether a client should display the cult icon.
     /// </summary>
     private void OnCanShowCultIcon<T>(EntityUid uid, T comp, ref CanDisplayStatusIconsEvent args)
         where T : IAntagStatusIconComponent
@@ -60,7 +65,7 @@ public sealed class BloodCultistSystem : EntitySystem
     }
 
     /// <summary>
-    /// The criteria that determine whether a client should see Cult/Cult leader icons.
+    ///     The criteria that determine whether a client should see Cult/Cult leader icons.
     /// </summary>
     private bool CanDisplayIcon(EntityUid? uid, bool visibleToGhost)
     {

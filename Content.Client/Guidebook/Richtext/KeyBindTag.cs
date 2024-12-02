@@ -1,9 +1,15 @@
+#region
+
 using JetBrains.Annotations;
 using Robust.Client.Input;
 using Robust.Client.UserInterface.RichText;
 using Robust.Shared.Utility;
 
+#endregion
+
+
 namespace Content.Client.Guidebook.Richtext;
+
 
 [UsedImplicitly]
 public sealed class KeyBindTag : IMarkupTag

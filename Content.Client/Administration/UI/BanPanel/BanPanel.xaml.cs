@@ -1,3 +1,5 @@
+#region
+
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -17,12 +19,18 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
+#endregion
+
+
 namespace Content.Client.Administration.UI.BanPanel;
+
 
 [GenerateTypedNameReferences]
 public sealed partial class BanPanel : DefaultWindow
 {
-    public event Action<string?, (IPAddress, int)?, bool, byte[]?, bool, uint, string, NoteSeverity, string[]?, bool>? BanSubmitted;
+    public event Action<string?, (IPAddress, int)?, bool, byte[]?, bool, uint, string, NoteSeverity, string[]?, bool>?
+        BanSubmitted;
+
     public event Action<string>? PlayerChanged;
     private string? PlayerUsername { get; set; }
     private (IPAddress, int)? IpAddress { get; set; }
@@ -30,7 +38,9 @@ public sealed partial class BanPanel : DefaultWindow
     private double TimeEntered { get; set; }
     private uint Multiplier { get; set; }
     private bool HasBanFlag { get; set; }
+
     private TimeSpan? ButtonResetOn { get; set; }
+
     // This is less efficient than just holding a reference to the root control and enumerating children, but you
     // have to know how the controls are nested, which makes the code more complicated.
     private readonly List<CheckBox> _roleCheckboxes = new();
@@ -43,6 +53,7 @@ public sealed partial class BanPanel : DefaultWindow
     private enum TabNumbers
     {
         BasicInfo,
+
         //Text,
         Players,
         Roles
@@ -146,11 +157,12 @@ public sealed partial class BanPanel : DefaultWindow
 
         var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
         foreach (var proto in prototypeManager.EnumeratePrototypes<DepartmentPrototype>())
-        {
             CreateRoleGroup(proto.ID, proto.Roles, proto.Color);
-        }
 
-        CreateRoleGroup("Antagonist", prototypeManager.EnumeratePrototypes<AntagPrototype>().Select(p => p.ID), Color.Red);
+        CreateRoleGroup(
+            "Antagonist",
+            prototypeManager.EnumeratePrototypes<AntagPrototype>().Select(p => p.ID),
+            Color.Red);
     }
 
     private void CreateRoleGroup(string roleName, IEnumerable<string> roleList, Color color)
@@ -161,7 +173,7 @@ public sealed partial class BanPanel : DefaultWindow
             HorizontalExpand = true,
             VerticalExpand = true,
             Orientation = BoxContainer.LayoutOrientation.Vertical,
-            Margin = new Thickness(4)
+            Margin = new(4)
         };
         var departmentCheckbox = new CheckBox
         {
@@ -180,36 +192,32 @@ public sealed partial class BanPanel : DefaultWindow
         departmentCheckbox.OnToggled += args =>
         {
             foreach (var child in innerContainer.Children)
-            {
                 if (child is CheckBox c)
-                {
                     c.Pressed = args.Pressed;
-                }
-            }
 
             if (args.Pressed)
             {
-                if (!Enum.TryParse(_cfg.GetCVar(CCVars.DepartmentBanDefaultSeverity), true, out NoteSeverity newSeverity))
+                if (!Enum.TryParse(
+                    _cfg.GetCVar(CCVars.DepartmentBanDefaultSeverity),
+                    true,
+                    out NoteSeverity newSeverity))
                 {
                     _banpanelSawmill
                         .Warning("Departmental role ban severity could not be parsed from config!");
                     return;
                 }
+
                 SeverityOption.SelectId((int) newSeverity);
             }
             else
             {
                 foreach (var childContainer in RolesContainer.Children)
-                {
                     if (childContainer is Container)
                     {
                         foreach (var child in childContainer.Children)
-                        {
-                            if (child is CheckBox { Pressed: true })
+                            if (child is CheckBox { Pressed: true, })
                                 return;
-                        }
                     }
-                }
 
                 if (!Enum.TryParse(_cfg.GetCVar(CCVars.RoleBanDefaultSeverity), true, out NoteSeverity newSeverity))
                 {
@@ -217,21 +225,21 @@ public sealed partial class BanPanel : DefaultWindow
                         .Warning("Role ban severity could not be parsed from config!");
                     return;
                 }
+
                 SeverityOption.SelectId((int) newSeverity);
             }
         };
         outerContainer.AddChild(innerContainer);
         foreach (var role in roleList)
-        {
             AddRoleCheckbox(role, innerContainer, departmentCheckbox);
-        }
-        RolesContainer.AddChild(new PanelContainer
-        {
-            PanelOverride = new StyleBoxFlat
+        RolesContainer.AddChild(
+            new PanelContainer
             {
-                BackgroundColor = color
-            }
-        });
+                PanelOverride = new StyleBoxFlat
+                {
+                    BackgroundColor = color
+                }
+            });
         RolesContainer.AddChild(outerContainer);
         RolesContainer.AddChild(new HSeparator());
     }
@@ -245,7 +253,9 @@ public sealed partial class BanPanel : DefaultWindow
         };
         roleCheckbox.OnToggled += args =>
         {
-            if (args is { Pressed: true, Button.Parent: { } } && args.Button.Parent.Children.Where(e => e is CheckBox).All(e => ((CheckBox) e).Pressed))
+            if (args is { Pressed: true, Button.Parent: not null, } && args.Button.Parent.Children
+                .Where(e => e is CheckBox)
+                .All(e => ((CheckBox) e).Pressed))
                 header.Pressed = args.Pressed;
             else
                 header.Pressed = false;
@@ -270,6 +280,7 @@ public sealed partial class BanPanel : DefaultWindow
             UpdateSubmitEnabled();
             return;
         }
+
         PlayerNameLine.ModulateSelfOverride = null;
         ErrorLevel &= ~ErrorLevelEnum.PlayerName;
         UpdateSubmitEnabled();
@@ -284,7 +295,7 @@ public sealed partial class BanPanel : DefaultWindow
         Minutes = 1 << 0,
         PlayerName = 1 << 1,
         IpAddress = 1 << 2,
-        Hwid = 1 << 3,
+        Hwid = 1 << 3
     }
 
     private ErrorLevelEnum ErrorLevel { get; set; }
@@ -343,6 +354,7 @@ public sealed partial class BanPanel : DefaultWindow
             UpdateSubmitEnabled();
             return;
         }
+
         var ip = IpLine.Text;
         var hid = "0";
         if (ip.Contains('/'))
@@ -352,7 +364,8 @@ public sealed partial class BanPanel : DefaultWindow
             hid = split[1];
         }
 
-        if (!IPAddress.TryParse(ip, out var parsedIp) || !byte.TryParse(hid, out var hidInt) || hidInt > 128 || hidInt > 32 && parsedIp.AddressFamily == AddressFamily.InterNetwork)
+        if (!IPAddress.TryParse(ip, out var parsedIp) || !byte.TryParse(hid, out var hidInt) || hidInt > 128 ||
+            hidInt > 32 && parsedIp.AddressFamily == AddressFamily.InterNetwork)
         {
             ErrorLevel |= ErrorLevelEnum.IpAddress;
             IpLine.ModulateSelfOverride = Color.Red;
@@ -373,7 +386,8 @@ public sealed partial class BanPanel : DefaultWindow
         var hwidString = HwidLine.Text;
         var length = 3 * (hwidString.Length / 4) - hwidString.TakeLast(2).Count(c => c == '=');
         Hwid = new byte[length];
-        if (HwidCheckbox.Pressed && !(string.IsNullOrEmpty(hwidString) && LastConnCheckbox.Pressed) && !Convert.TryFromBase64String(hwidString, Hwid, out _))
+        if (HwidCheckbox.Pressed && !(string.IsNullOrEmpty(hwidString) && LastConnCheckbox.Pressed) &&
+            !Convert.TryFromBase64String(hwidString, Hwid, out _))
         {
             ErrorLevel |= ErrorLevelEnum.Hwid;
             HwidLine.ModulateSelfOverride = Color.Red;
@@ -390,6 +404,7 @@ public sealed partial class BanPanel : DefaultWindow
             Hwid = null;
             return;
         }
+
         Hwid = Convert.FromHexString(hwidString);
     }
 
@@ -397,10 +412,10 @@ public sealed partial class BanPanel : DefaultWindow
     {
         TypeOption.ModulateSelfOverride = null;
         Tabs.SetTabVisible((int) TabNumbers.Roles, TypeOption.SelectedId == (int) Types.Role);
-            NoteSeverity? newSeverity = null;
-            switch (TypeOption.SelectedId)
-            {
-                case (int)Types.Server:
+        NoteSeverity? newSeverity = null;
+        switch (TypeOption.SelectedId)
+        {
+            case (int) Types.Server:
                 if (Enum.TryParse(_cfg.GetCVar(CCVars.ServerBanDefaultSeverity), true, out NoteSeverity serverSeverity))
                     newSeverity = serverSeverity;
                 else
@@ -410,28 +425,24 @@ public sealed partial class BanPanel : DefaultWindow
                 }
 
                 break;
-                case (int) Types.Role:
+            case (int) Types.Role:
 
-                    if (Enum.TryParse(_cfg.GetCVar(CCVars.RoleBanDefaultSeverity), true, out NoteSeverity roleSeverity))
-                    {
-                        newSeverity = roleSeverity;
-                    }
-                    else
-                    {
-                        _banpanelSawmill
-                            .Warning("Role ban severity could not be parsed from config!");
-                    }
-                    break;
-            }
+                if (Enum.TryParse(_cfg.GetCVar(CCVars.RoleBanDefaultSeverity), true, out NoteSeverity roleSeverity))
+                    newSeverity = roleSeverity;
+                else
+                {
+                    _banpanelSawmill
+                        .Warning("Role ban severity could not be parsed from config!");
+                }
 
-            if (newSeverity != null)
-                SeverityOption.SelectId((int) newSeverity.Value);
+                break;
+        }
+
+        if (newSeverity != null)
+            SeverityOption.SelectId((int) newSeverity.Value);
     }
 
-    private void UpdateSubmitEnabled()
-    {
-        SubmitButton.Disabled = ErrorLevel != ErrorLevelEnum.None;
-    }
+    private void UpdateSubmitEnabled() => SubmitButton.Disabled = ErrorLevel != ErrorLevelEnum.None;
 
     private void OnPlayerNameChanged()
     {
@@ -470,7 +481,8 @@ public sealed partial class BanPanel : DefaultWindow
             if (_roleCheckboxes.Count == 0)
                 throw new DebugAssertException("RoleCheckboxes was empty");
 
-            rolesList.AddRange(_roleCheckboxes.Where(c => c is { Pressed: true, Text: { } }).Select(c => c.Text!));
+            rolesList.AddRange(
+                _roleCheckboxes.Where(c => c is { Pressed: true, Text: not null, }).Select(c => c.Text!));
 
             if (rolesList.Count == 0)
             {
@@ -512,7 +524,17 @@ public sealed partial class BanPanel : DefaultWindow
         var useLastHwid = HwidCheckbox.Pressed && LastConnCheckbox.Pressed && Hwid is null;
         var severity = (NoteSeverity) SeverityOption.SelectedId;
         var erase = EraseCheckbox.Pressed;
-        BanSubmitted?.Invoke(player, IpAddress, useLastIp, Hwid, useLastHwid, (uint) (TimeEntered * Multiplier), reason, severity, roles, erase);
+        BanSubmitted?.Invoke(
+            player,
+            IpAddress,
+            useLastIp,
+            Hwid,
+            useLastHwid,
+            (uint) (TimeEntered * Multiplier),
+            reason,
+            severity,
+            roles,
+            erase);
     }
 
     protected override void FrameUpdate(FrameEventArgs args)

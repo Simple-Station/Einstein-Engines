@@ -1,9 +1,15 @@
+#region
+
 using Content.Shared.Mail;
 using Content.Shared.StatusIcon;
 using Robust.Client.GameObjects;
 using Robust.Shared.Prototypes;
 
+#endregion
+
+
 namespace Content.Client.Mail;
+
 
 /// <summary>
 ///     Display a cool stamp on the parcel based on the job of the recipient.
@@ -42,7 +48,9 @@ public sealed class MailJobVisualizerSystem : VisualizerSystem<MailComponent>
 
         if (!_prototypeManager.TryIndex<StatusIconPrototype>(job, out var icon))
         {
-            args.Sprite.LayerSetTexture(MailVisualLayers.JobStamp, _spriteSystem.Frame0(_prototypeManager.Index("JobIconUnknown")));
+            args.Sprite.LayerSetTexture(
+                MailVisualLayers.JobStamp,
+                _spriteSystem.Frame0(_prototypeManager.Index("JobIconUnknown")));
             return;
         }
 

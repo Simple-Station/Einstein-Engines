@@ -1,23 +1,26 @@
+#region
+
 using Content.Shared.Gateway;
 using JetBrains.Annotations;
-using Robust.Client.GameObjects;
+
+#endregion
+
 
 namespace Content.Client.Gateway.UI;
+
 
 [UsedImplicitly]
 public sealed class GatewayBoundUserInterface : BoundUserInterface
 {
     private GatewayWindow? _window;
 
-    public GatewayBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-    {
-    }
+    public GatewayBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
 
     protected override void Open()
     {
         base.Open();
 
-        _window = new GatewayWindow(EntMan.GetNetEntity(Owner));
+        _window = new(EntMan.GetNetEntity(Owner));
 
         _window.OpenPortal += destination =>
         {

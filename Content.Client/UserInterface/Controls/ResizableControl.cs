@@ -1,9 +1,15 @@
+#region
+
 using System.Numerics;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Input;
 
+#endregion
+
+
 namespace Content.Client.UserInterface.Controls;
+
 
 public class ResizableControl : Control
 {
@@ -11,7 +17,9 @@ public class ResizableControl : Control
     public DragMode AllowedResizeDirection { get; set; } = DragMode.Any;
     public Vector2 DragOffsetTopLeft;
     public Vector2 DragOffsetBottomRight;
+
     public bool Resizable { get; set; } = true;
+
     //TODO: Un-hardcode this
     public const int DragMarginSize = 7;
 
@@ -73,7 +81,7 @@ public class ResizableControl : Control
                 DragMode.Left or DragMode.Right => CursorShape.HResize,
                 (DragMode.Bottom | DragMode.Left) or (DragMode.Top | DragMode.Right) => CursorShape.Crosshair,
                 (DragMode.Bottom | DragMode.Right) or (DragMode.Top | DragMode.Left) => CursorShape.Crosshair,
-                _ => cursor,
+                _ => cursor
             };
 
             DefaultCursorShape = cursor;
@@ -146,6 +154,6 @@ public class ResizableControl : Control
         Right = 1 << 4,
         Horizontal = Left | Right,
 
-        Any = Vertical | Horizontal,
+        Any = Vertical | Horizontal
     }
 }

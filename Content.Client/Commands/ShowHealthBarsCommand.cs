@@ -1,9 +1,15 @@
+#region
+
+using System.Linq;
 using Content.Shared.Overlays;
 using Robust.Client.Player;
 using Robust.Shared.Console;
-using System.Linq;
+
+#endregion
+
 
 namespace Content.Client.Commands;
+
 
 public sealed class ShowHealthBarsCommand : LocalizedCommands
 {
@@ -40,15 +46,12 @@ public sealed class ShowHealthBarsCommand : LocalizedCommands
 
             _entityManager.AddComponent(playerEntity.Value, showHealthBarsComponent, true);
 
-            shell.WriteLine(LocalizationManager.GetString($"cmd-{Command}-notify-enabled", ("args", string.Join(", ", args))));
+            shell.WriteLine(
+                LocalizationManager.GetString($"cmd-{Command}-notify-enabled", ("args", string.Join(", ", args))));
             return;
         }
-        else
-        {
-            _entityManager.RemoveComponentDeferred<ShowHealthBarsComponent>(playerEntity.Value);
-            shell.WriteLine(LocalizationManager.GetString($"cmd-{Command}-notify-disabled"));
-        }
 
-        return;
+        _entityManager.RemoveComponentDeferred<ShowHealthBarsComponent>(playerEntity.Value);
+        shell.WriteLine(LocalizationManager.GetString($"cmd-{Command}-notify-disabled"));
     }
 }

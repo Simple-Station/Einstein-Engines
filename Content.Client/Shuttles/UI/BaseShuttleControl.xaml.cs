@@ -1,3 +1,5 @@
+#region
+
 using System.Numerics;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Shuttles.Components;
@@ -12,13 +14,16 @@ using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Vector2 = System.Numerics.Vector2;
 
+#endregion
+
+
 namespace Content.Client.Shuttles.UI;
 
+
 /// <summary>
-/// Provides common functionality for radar-like displays on shuttle consoles.
+///     Provides common functionality for radar-like displays on shuttle consoles.
 /// </summary>
-[GenerateTypedNameReferences]
-[Virtual]
+[GenerateTypedNameReferences, Virtual,]
 public partial class BaseShuttleControl : MapGridControl
 {
     [Dependency] private readonly IParallelManager _parallel = default!;
@@ -38,21 +43,21 @@ public partial class BaseShuttleControl : MapGridControl
 
     private Vector2[] _allVertices = Array.Empty<Vector2>();
 
-    private (DirectionFlag, Vector2i)[] _neighborDirections;
+    private readonly (DirectionFlag, Vector2i)[] _neighborDirections;
 
-    public BaseShuttleControl() : this(32f, 32f, 32f)
-    {
-    }
+    public BaseShuttleControl() : this(32f, 32f, 32f) { }
 
     public BaseShuttleControl(float minRange, float maxRange, float range) : base(minRange, maxRange, range)
     {
         RobustXamlLoader.Load(this);
         Maps = EntManager.System<SharedMapSystem>();
-        Font = new VectorFont(IoCManager.Resolve<IResourceCache>().GetResource<FontResource>("/Fonts/NotoSans/NotoSans-Regular.ttf"), 12);
+        Font = new VectorFont(
+            IoCManager.Resolve<IResourceCache>().GetResource<FontResource>("/Fonts/NotoSans/NotoSans-Regular.ttf"),
+            12);
 
-        _drawJob = new GridDrawJob()
+        _drawJob = new()
         {
-            ScaledVertices = _allVertices,
+            ScaledVertices = _allVertices
         };
 
         _neighborDirections = new (DirectionFlag, Vector2i)[4];
@@ -70,7 +75,8 @@ public partial class BaseShuttleControl : MapGridControl
         var coordsDimensions = handle.GetDimensions(Font, text, 1f);
         const float coordsMargins = 5f;
 
-        handle.DrawString(Font,
+        handle.DrawString(
+            Font,
             new Vector2(coordsMargins, PixelHeight) - new Vector2(0f, coordsDimensions.Y + coordsMargins),
             text,
             Color.FromSrgb(IFFComponent.SelfColor));
@@ -101,14 +107,19 @@ public partial class BaseShuttleControl : MapGridControl
             var textDimensions = handle.GetDimensions(Font, text, UIScale);
 
             handle.DrawCircle(origin, scaledRadius, color, false);
-            handle.DrawString(Font, ScalePosition(new Vector2(0f, -radius)) - new Vector2(0f, textDimensions.Y), text, UIScale, color);
+            handle.DrawString(
+                Font,
+                ScalePosition(new(0f, -radius)) - new Vector2(0f, textDimensions.Y),
+                text,
+                UIScale,
+                color);
         }
 
         const int gridLinesRadial = 8;
 
         for (var i = 0; i < gridLinesRadial; i++)
         {
-            Angle angle = (Math.PI / gridLinesRadial) * i;
+            Angle angle = Math.PI / gridLinesRadial * i;
             // TODO: Handle distance properly.
             var aExtent = angle.ToVec() * ScaledMinimapRadius * 1.42f;
             var lineColor = Color.MediumSpringGreen.WithAlpha(0.02f);
@@ -116,7 +127,13 @@ public partial class BaseShuttleControl : MapGridControl
         }
     }
 
-    protected void DrawGrid(DrawingHandleScreen handle, Matrix3x2 matrix, Entity<MapGridComponent> grid, Color color, float alpha = 0.01f)
+    protected void DrawGrid(
+        DrawingHandleScreen handle,
+        Matrix3x2 matrix,
+        Entity<MapGridComponent> grid,
+        Color color,
+        float alpha = 0.01f
+    )
     {
         var rator = Maps.GetAllTilesEnumerator(grid.Owner, grid.Comp);
         var minimapScale = MinimapScale;
@@ -219,7 +236,7 @@ public partial class BaseShuttleControl : MapGridControl
                     var neighborFound = false;
                     var neighborIndex = 0;
                     Vector2 neighborStart;
-                    Vector2 neighborEnd = Vector2.Zero;
+                    var neighborEnd = Vector2.Zero;
 
                     // Does our end correspond with another start?
                     for (var j = i + 1; j < _edges.Count; j++)
@@ -278,10 +295,16 @@ public partial class BaseShuttleControl : MapGridControl
             var start = (int) (i * BatchSize);
             var end = (int) Math.Min(triCount, start + BatchSize);
             var count = end - start;
-            handle.DrawPrimitives(DrawPrimitiveTopology.TriangleList, new Span<Vector2>(_allVertices, start, count), color.WithAlpha(alpha));
+            handle.DrawPrimitives(
+                DrawPrimitiveTopology.TriangleList,
+                new Span<Vector2>(_allVertices, start, count),
+                color.WithAlpha(alpha));
         }
 
-        handle.DrawPrimitives(DrawPrimitiveTopology.LineList, new Span<Vector2>(_allVertices, gridData.EdgeIndex, edgeCount), color);
+        handle.DrawPrimitives(
+            DrawPrimitiveTopology.LineList,
+            new Span<Vector2>(_allVertices, gridData.EdgeIndex, edgeCount),
+            color);
     }
 
     private record struct GridDrawJob : IParallelRobustJob
@@ -299,7 +322,7 @@ public partial class BaseShuttleControl : MapGridControl
         {
             var vert = Vertices[index];
             var adjustedVert = Vector2.Transform(vert, Matrix);
-            adjustedVert = adjustedVert with { Y = -adjustedVert.Y };
+            adjustedVert = adjustedVert with { Y = -adjustedVert.Y, };
 
             var scaledVert = ScalePosition(adjustedVert, MinimapScale, MidPoint);
             ScaledVertices[index] = scaledVert;
@@ -316,7 +339,7 @@ public sealed class GridDrawData
     public List<Vector2> Vertices = new();
 
     /// <summary>
-    /// Vertices index from when edges start.
+    ///     Vertices index from when edges start.
     /// </summary>
     public int EdgeIndex;
 

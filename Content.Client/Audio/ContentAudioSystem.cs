@@ -1,8 +1,14 @@
+#region
+
 using Content.Shared.Audio;
 using Content.Shared.GameTicking;
 using AudioComponent = Robust.Shared.Audio.Components.AudioComponent;
 
+#endregion
+
+
 namespace Content.Client.Audio;
+
 
 public sealed partial class ContentAudioSystem : SharedContentAudioSystem
 {
@@ -57,14 +63,10 @@ public sealed partial class ContentAudioSystem : SharedContentAudioSystem
         SilenceAudio();
 
         if (oldMusicGain != null)
-        {
             Audio.SetGain(lobbyMusic, oldMusicGain.Value, lobbyMusicComp);
-        }
 
         if (oldAudioGain != null)
-        {
             Audio.SetGain(restartAudio, oldAudioGain.Value, restartComp);
-        }
         PlayRestartSound(ev);
     }
 
@@ -137,9 +139,7 @@ public sealed partial class ContentAudioSystem : SharedContentAudioSystem
         }
 
         foreach (var stream in _fadeToRemove)
-        {
             _fadingOut.Remove(stream);
-        }
 
         _fadeToRemove.Clear();
 
@@ -157,22 +157,18 @@ public sealed partial class ContentAudioSystem : SharedContentAudioSystem
             _audio.SetVolume(stream, volume, component);
 
             if (component.Volume.Equals(target))
-            {
                 _fadeToRemove.Add(stream);
-            }
         }
 
         foreach (var stream in _fadeToRemove)
-        {
             _fadingIn.Remove(stream);
-        }
     }
 
     #endregion
 }
 
 /// <summary>
-/// Raised whenever ambient music tries to play.
+///     Raised whenever ambient music tries to play.
 /// </summary>
 [ByRefEvent]
 public record struct PlayAmbientMusicEvent(bool Cancelled = false);

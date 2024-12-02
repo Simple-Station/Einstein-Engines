@@ -1,4 +1,6 @@
-﻿using Content.Client.Chemistry.Components;
+﻿#region
+
+using Content.Client.Chemistry.Components;
 using Content.Client.Chemistry.EntitySystems;
 using Content.Client.Items.UI;
 using Content.Client.Message;
@@ -8,12 +10,16 @@ using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.FixedPoint;
 using Robust.Client.UserInterface.Controls;
 
+#endregion
+
+
 namespace Content.Client.Chemistry.UI;
 
+
 /// <summary>
-/// Displays basic solution information for <see cref="SolutionItemStatusComponent"/>.
+///     Displays basic solution information for <see cref="SolutionItemStatusComponent" />.
 /// </summary>
-/// <seealso cref="SolutionItemStatusSystem"/>
+/// <seealso cref="SolutionItemStatusSystem" />
 public sealed class SolutionStatusControl : PollingItemStatusControl<SolutionStatusControl.Data>
 {
     private readonly Entity<SolutionItemStatusComponent> _parent;
@@ -24,12 +30,13 @@ public sealed class SolutionStatusControl : PollingItemStatusControl<SolutionSta
     public SolutionStatusControl(
         Entity<SolutionItemStatusComponent> parent,
         IEntityManager entityManager,
-        SharedSolutionContainerSystem solutionContainers)
+        SharedSolutionContainerSystem solutionContainers
+    )
     {
         _parent = parent;
         _entityManager = entityManager;
         _solutionContainers = solutionContainers;
-        _label = new RichTextLabel { StyleClasses = { StyleNano.StyleClassItemStatus } };
+        _label = new() { StyleClasses = { StyleNano.StyleClassItemStatus, }, };
         AddChild(_label);
     }
 
@@ -42,12 +49,13 @@ public sealed class SolutionStatusControl : PollingItemStatusControl<SolutionSta
         if (_entityManager.TryGetComponent(_parent.Owner, out SolutionTransferComponent? transfer))
             transferAmount = transfer.TransferAmount;
 
-        return new Data(solution.Volume, solution.MaxVolume, transferAmount);
+        return new(solution.Volume, solution.MaxVolume, transferAmount);
     }
 
     protected override void Update(in Data data)
     {
-        var markup = Loc.GetString("solution-status-volume",
+        var markup = Loc.GetString(
+            "solution-status-volume",
             ("currentVolume", data.Volume),
             ("maxVolume", data.MaxVolume));
         if (data.TransferVolume is { } transferVolume)

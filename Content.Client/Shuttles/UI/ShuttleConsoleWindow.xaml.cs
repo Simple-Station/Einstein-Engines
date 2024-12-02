@@ -1,3 +1,5 @@
+#region
+
 using System.Numerics;
 using Content.Client.Computer;
 using Content.Client.UserInterface.Controls;
@@ -7,7 +9,11 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Map;
 
+#endregion
+
+
 namespace Content.Client.Shuttles.UI;
+
 
 [GenerateTypedNameReferences]
 public sealed partial class ShuttleConsoleWindow : FancyWindow,
@@ -67,9 +73,7 @@ public sealed partial class ShuttleConsoleWindow : FancyWindow,
     private void ClearModes(ShuttleConsoleMode mode)
     {
         if (mode != ShuttleConsoleMode.Nav)
-        {
             NavContainer.Visible = false;
-        }
 
         if (mode != ShuttleConsoleMode.Map)
         {
@@ -78,25 +82,14 @@ public sealed partial class ShuttleConsoleWindow : FancyWindow,
         }
 
         if (mode != ShuttleConsoleMode.Dock)
-        {
             DockContainer.Visible = false;
-        }
     }
 
-    private void NavPressed(BaseButton.ButtonEventArgs obj)
-    {
-        SwitchMode(ShuttleConsoleMode.Nav);
-    }
+    private void NavPressed(BaseButton.ButtonEventArgs obj) => SwitchMode(ShuttleConsoleMode.Nav);
 
-    private void MapPressed(BaseButton.ButtonEventArgs obj)
-    {
-        SwitchMode(ShuttleConsoleMode.Map);
-    }
+    private void MapPressed(BaseButton.ButtonEventArgs obj) => SwitchMode(ShuttleConsoleMode.Map);
 
-    private void DockPressed(BaseButton.ButtonEventArgs obj)
-    {
-        SwitchMode(ShuttleConsoleMode.Dock);
-    }
+    private void DockPressed(BaseButton.ButtonEventArgs obj) => SwitchMode(ShuttleConsoleMode.Dock);
 
     private void SetupMode(ShuttleConsoleMode mode)
     {
@@ -131,7 +124,7 @@ public sealed partial class ShuttleConsoleWindow : FancyWindow,
     {
         Nav,
         Map,
-        Dock,
+        Dock
     }
 
     public void UpdateState(EntityUid owner, ShuttleBoundUserInterfaceState cState)

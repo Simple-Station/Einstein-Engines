@@ -1,19 +1,22 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿#region
+
+using System.Diagnostics.CodeAnalysis;
 using Content.Shared.CCVar;
-using Content.Shared.Customization.Systems;
-using Content.Shared.Players.JobWhitelist;
 using Content.Shared.Players;
+using Content.Shared.Players.JobWhitelist;
 using Content.Shared.Players.PlayTimeTracking;
 using Content.Shared.Roles;
 using Robust.Client;
-using Robust.Client.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Network;
-using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
+#endregion
+
+
 namespace Content.Client.Players.PlayTimeTracking;
+
 
 public sealed partial class JobRequirementsManager : ISharedPlaytimeManager
 {
@@ -68,9 +71,7 @@ public sealed partial class JobRequirementsManager : ISharedPlaytimeManager
 
         // NOTE: do not assign _roles = message.Trackers due to implicit data sharing in integration tests.
         foreach (var (tracker, time) in message.Trackers)
-        {
             _roles[tracker] = time;
-        }
 
         /*var sawmill = Logger.GetSawmill("play_time");
         foreach (var (tracker, time) in _roles)
@@ -102,10 +103,8 @@ public sealed partial class JobRequirementsManager : ISharedPlaytimeManager
         return true;
     }
 
-    public TimeSpan FetchOverallPlaytime()
-    {
-        return _roles.TryGetValue("Overall", out var overallPlaytime) ? overallPlaytime : TimeSpan.Zero;
-    }
+    public TimeSpan FetchOverallPlaytime() =>
+        _roles.TryGetValue("Overall", out var overallPlaytime) ? overallPlaytime : TimeSpan.Zero;
 
     public Dictionary<string, TimeSpan> FetchPlaytimeByRoles()
     {
@@ -127,8 +126,5 @@ public sealed partial class JobRequirementsManager : ISharedPlaytimeManager
         return dict;
     }
 
-    public Dictionary<string, TimeSpan> GetRawPlayTimeTrackers()
-    {
-        return _roles;
-    }
+    public Dictionary<string, TimeSpan> GetRawPlayTimeTrackers() => _roles;
 }

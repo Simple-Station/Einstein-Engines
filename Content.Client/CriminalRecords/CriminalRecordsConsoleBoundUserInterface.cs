@@ -1,13 +1,18 @@
+#region
+
 using Content.Shared.Access.Systems;
 using Content.Shared.CriminalRecords;
 using Content.Shared.CriminalRecords.Components;
-using Content.Shared.Security;
 using Content.Shared.StationRecords;
 using Robust.Client.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
+#endregion
+
+
 namespace Content.Client.CriminalRecords;
+
 
 public sealed class CriminalRecordsConsoleBoundUserInterface : BoundUserInterface
 {
@@ -51,7 +56,7 @@ public sealed class CriminalRecordsConsoleBoundUserInterface : BoundUserInterfac
     }
 
     /// <summary>
-    /// Updates or opens a new history window.
+    ///     Updates or opens a new history window.
     /// </summary>
     private void UpdateHistory(CriminalRecord record, bool access, bool open)
     {

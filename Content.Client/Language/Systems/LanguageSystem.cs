@@ -1,3 +1,5 @@
+#region
+
 using Content.Shared.Language;
 using Content.Shared.Language.Components;
 using Content.Shared.Language.Events;
@@ -6,7 +8,11 @@ using Robust.Client.Player;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
+#endregion
+
+
 namespace Content.Client.Language.Systems;
+
 
 public sealed class LanguageSystem : SharedLanguageSystem
 {
@@ -40,10 +46,8 @@ public sealed class LanguageSystem : SharedLanguageSystem
     ///     Returns the LanguageSpeakerComponent of the local player entity.
     ///     Will return null if the player does not have an entity, or if the client has not yet received the component state.
     /// </summary>
-    public LanguageSpeakerComponent? GetLocalSpeaker()
-    {
-        return CompOrNull<LanguageSpeakerComponent>(_playerManager.LocalEntity);
-    }
+    public LanguageSpeakerComponent? GetLocalSpeaker() =>
+        CompOrNull<LanguageSpeakerComponent>(_playerManager.LocalEntity);
 
     public void RequestSetLanguage(ProtoId<LanguagePrototype> language)
     {
@@ -55,7 +59,7 @@ public sealed class LanguageSystem : SharedLanguageSystem
 
     private void NotifyUpdate(EntityUid localPlayer)
     {
-        RaiseLocalEvent(localPlayer, new LanguagesUpdateEvent(), broadcast: true);
+        RaiseLocalEvent(localPlayer, new LanguagesUpdateEvent(), true);
         OnLanguagesChanged?.Invoke();
     }
 }

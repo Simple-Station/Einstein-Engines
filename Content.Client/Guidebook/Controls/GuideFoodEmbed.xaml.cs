@@ -1,3 +1,5 @@
+#region
+
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Client.Chemistry.EntitySystems;
@@ -15,12 +17,16 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
+#endregion
+
+
 namespace Content.Client.Guidebook.Controls;
+
 
 /// <summary>
 ///     Control for embedding a food recipe into a guidebook.
 /// </summary>
-[UsedImplicitly, GenerateTypedNameReferences]
+[UsedImplicitly, GenerateTypedNameReferences,]
 public sealed partial class GuideFoodEmbed : BoxContainer, IDocumentTag, ISearchableControl
 {
     [Dependency] private readonly IEntitySystemManager _systemManager = default!;
@@ -43,16 +49,11 @@ public sealed partial class GuideFoodEmbed : BoxContainer, IDocumentTag, ISearch
         GenerateControl(entry);
     }
 
-    public bool CheckMatchesSearch(string query)
-    {
-        return FoodName.GetMessage()?.Contains(query, StringComparison.InvariantCultureIgnoreCase) == true
-               || FoodDescription.GetMessage()?.Contains(query, StringComparison.InvariantCultureIgnoreCase) == true;
-    }
+    public bool CheckMatchesSearch(string query) =>
+        FoodName.GetMessage()?.Contains(query, StringComparison.InvariantCultureIgnoreCase) == true
+        || FoodDescription.GetMessage()?.Contains(query, StringComparison.InvariantCultureIgnoreCase) == true;
 
-    public void SetHiddenState(bool state, string query)
-    {
-        Visible = CheckMatchesSearch(query) ? state : !state;
-    }
+    public void SetHiddenState(bool state, string query) => Visible = CheckMatchesSearch(query) ? state : !state;
 
     public bool TryParseTag(Dictionary<string, string> args, [NotNullWhen(true)] out Control? control)
     {
@@ -85,7 +86,10 @@ public sealed partial class GuideFoodEmbed : BoxContainer, IDocumentTag, ISearch
         }
 
         var composition = data.Composition
-            .Select(it => _prototype.TryIndex<ReagentPrototype>(it.Reagent.Prototype, out var reagent) ? (reagent, it.Quantity) : (null, 0))
+            .Select(
+                it => _prototype.TryIndex<ReagentPrototype>(it.Reagent.Prototype, out var reagent)
+                    ? (reagent, it.Quantity)
+                    : (null, 0))
             .Where(it => it.reagent is not null)
             .Cast<(ReagentPrototype, FixedPoint2)>()
             .ToList();
@@ -129,7 +133,11 @@ public sealed partial class GuideFoodEmbed : BoxContainer, IDocumentTag, ISearch
         FoodDescription.SetMessage(description);
     }
 
-    private void CalculateColors(List<(ReagentPrototype, FixedPoint2)> composition, out Color text, out Color background)
+    private void CalculateColors(
+        List<(ReagentPrototype, FixedPoint2)> composition,
+        out Color text,
+        out Color background
+    )
     {
         // Background color is calculated as the weighted average of the colors of the composition.
         // Text color is determined based on background luminosity.
@@ -155,7 +163,7 @@ public sealed partial class GuideFoodEmbed : BoxContainer, IDocumentTag, ISearch
         // Copied from GuideReagentEmbed which was probably copied from stackoverflow. This is the formula for color luminosity.
         var lum = 0.2126f * r + 0.7152f * g + 0.0722f;
 
-        background = new Color(r, g, b);
+        background = new(r, g, b);
         text = lum > 0.5f ? Color.Black : Color.White;
     }
 }

@@ -1,3 +1,5 @@
+#region
+
 using Content.Client.Eui;
 using Content.Shared.Administration;
 using Content.Shared.Eui;
@@ -5,7 +7,11 @@ using JetBrains.Annotations;
 using Robust.Client.Graphics;
 using Robust.Shared.Map;
 
+#endregion
+
+
 namespace Content.Client.Administration.UI.SpawnExplosion;
+
 
 [UsedImplicitly]
 public sealed class SpawnExplosionEui : BaseEui
@@ -19,7 +25,7 @@ public sealed class SpawnExplosionEui : BaseEui
     public SpawnExplosionEui()
     {
         IoCManager.InjectDependencies(this);
-        _window = new SpawnExplosionWindow(this);
+        _window = new(this);
         _window.OnClose += SendClosedMessage;
     }
 
@@ -37,10 +43,7 @@ public sealed class SpawnExplosionEui : BaseEui
         ClearOverlay();
     }
 
-    public void SendClosedMessage()
-    {
-        SendMessage(new CloseEuiMessage());
-    }
+    public void SendClosedMessage() => SendMessage(new CloseEuiMessage());
 
     public void ClearOverlay()
     {
@@ -49,9 +52,20 @@ public sealed class SpawnExplosionEui : BaseEui
         _debugOverlay = null;
     }
 
-    public void RequestPreviewData(MapCoordinates epicenter, string typeId, float totalIntensity, float intensitySlope, float maxIntensity)
+    public void RequestPreviewData(
+        MapCoordinates epicenter,
+        string typeId,
+        float totalIntensity,
+        float intensitySlope,
+        float maxIntensity
+    )
     {
-        var msg = new SpawnExplosionEuiMsg.PreviewRequest(epicenter, typeId, totalIntensity, intensitySlope, maxIntensity);
+        var msg = new SpawnExplosionEuiMsg.PreviewRequest(
+            epicenter,
+            typeId,
+            totalIntensity,
+            intensitySlope,
+            maxIntensity);
         SendMessage(msg);
     }
 
@@ -74,9 +88,7 @@ public sealed class SpawnExplosionEui : BaseEui
         _debugOverlay.Tiles.Clear();
 
         foreach (var (nent, det) in data.Explosion.Tiles)
-        {
             tiles[_entManager.GetEntity(nent)] = det;
-        }
 
         _debugOverlay.Tiles = tiles;
         _debugOverlay.SpaceTiles = data.Explosion.SpaceTiles;

@@ -1,6 +1,12 @@
+#region
+
 using System.Numerics;
 
+#endregion
+
+
 namespace Content.Client.Paper;
+
 
 [RegisterComponent]
 public sealed partial class PaperVisualsComponent : Component
@@ -16,7 +22,7 @@ public sealed partial class PaperVisualsComponent : Component
     ///     the PatchMargin in a <code>StyleBoxTexture</code>
     /// </summary>
     [DataField("backgroundPatchMargin")]
-    public Box2 BackgroundPatchMargin = default;
+    public Box2 BackgroundPatchMargin;
 
     /// <summary>
     ///     Modulate the background image by this color. Can be used to add colorful
@@ -29,7 +35,7 @@ public sealed partial class PaperVisualsComponent : Component
     ///     Should the background image tile, or be streched? Sets <code>StyleBoxTexture.StrechMode</code>
     /// </summary>
     [DataField("backgroundImageTile")]
-    public bool BackgroundImageTile = false;
+    public bool BackgroundImageTile;
 
     /// <summary>
     ///     An additional scale to apply to the background image
@@ -53,7 +59,7 @@ public sealed partial class PaperVisualsComponent : Component
     ///     Any additional margin to add around the header
     /// </summary>
     [DataField("headerMargin")]
-    public Box2 HeaderMargin = default;
+    public Box2 HeaderMargin;
 
     /// <summary>
     ///     Path to an image to use as the background to the "content" of the paper
@@ -74,7 +80,7 @@ public sealed partial class PaperVisualsComponent : Component
     ///     An additional margin around the content (including header)
     /// </summary>
     [DataField("contentMargin")]
-    public Box2 ContentMargin = default;
+    public Box2 ContentMargin;
 
     /// <summary>
     ///     The number of lines that the content image represents. The
@@ -88,7 +94,7 @@ public sealed partial class PaperVisualsComponent : Component
     ///     Modulate the style's font by this color
     /// </summary>
     [DataField("fontAccentColor")]
-    public Color FontAccentColor = new Color(223, 223, 213);
+    public Color FontAccentColor = new(223, 223, 213);
 
     /// <summary>
     ///     This can enforce that your paper has a limited area to write in.
@@ -97,5 +103,5 @@ public sealed partial class PaperVisualsComponent : Component
     ///     This will be scaled according to UI scale.
     /// </summary>
     [DataField("maxWritableArea")]
-    public Vector2? MaxWritableArea = null;
+    public Vector2? MaxWritableArea;
 }

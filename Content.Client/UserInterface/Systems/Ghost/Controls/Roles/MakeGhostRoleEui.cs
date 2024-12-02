@@ -1,4 +1,6 @@
-﻿using Content.Client.Eui;
+﻿#region
+
+using Content.Client.Eui;
 using Content.Server.Ghost.Roles.Raffles;
 using Content.Shared.Eui;
 using Content.Shared.Ghost.Roles;
@@ -7,7 +9,11 @@ using Robust.Client.Console;
 using Robust.Client.Player;
 using Robust.Shared.Utility;
 
+#endregion
+
+
 namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles;
+
 
 [UsedImplicitly]
 public sealed class MakeGhostRoleEui : BaseEui
@@ -20,7 +26,7 @@ public sealed class MakeGhostRoleEui : BaseEui
 
     public MakeGhostRoleEui()
     {
-        _window = new MakeGhostRoleWindow();
+        _window = new();
 
         _window.OnClose += OnClose;
         _window.OnMake += OnMake;
@@ -29,9 +35,7 @@ public sealed class MakeGhostRoleEui : BaseEui
     public override void HandleState(EuiStateBase state)
     {
         if (state is not MakeGhostRoleEuiState uiState)
-        {
             return;
-        }
 
         _window.SetEntity(_entManager, uiState.Entity);
     }
@@ -42,13 +46,18 @@ public sealed class MakeGhostRoleEui : BaseEui
         _window.OpenCentered();
     }
 
-    private void OnMake(NetEntity entity, string name, string description, string rules, bool makeSentient, GhostRoleRaffleSettings? raffleSettings)
+    private void OnMake(
+        NetEntity entity,
+        string name,
+        string description,
+        string rules,
+        bool makeSentient,
+        GhostRoleRaffleSettings? raffleSettings
+    )
     {
         var session = _playerManager.LocalSession;
         if (session == null)
-        {
             return;
-        }
 
         var command = raffleSettings is not null ? "makeghostroleraffled" : "makeghostrole";
 
@@ -61,8 +70,8 @@ public sealed class MakeGhostRoleEui : BaseEui
         if (raffleSettings is not null)
         {
             makeGhostRoleCommand += $"{raffleSettings.InitialDuration} " +
-                                    $"{raffleSettings.JoinExtendsDurationBy} " +
-                                    $"{raffleSettings.MaxDuration} ";
+                $"{raffleSettings.JoinExtendsDurationBy} " +
+                $"{raffleSettings.MaxDuration} ";
         }
 
         makeGhostRoleCommand += $"\"{CommandParsing.Escape(rules)}\"";
@@ -80,7 +89,7 @@ public sealed class MakeGhostRoleEui : BaseEui
 
     private void OnClose()
     {
-        base.Closed();
+        Closed();
         SendMessage(new CloseEuiMessage());
     }
 }

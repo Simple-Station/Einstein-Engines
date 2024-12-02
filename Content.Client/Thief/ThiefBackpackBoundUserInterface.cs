@@ -1,8 +1,13 @@
+#region
+
 using Content.Shared.Thief;
 using JetBrains.Annotations;
-using Robust.Client.GameObjects;
+
+#endregion
+
 
 namespace Content.Client.Thief;
+
 
 [UsedImplicitly]
 public sealed class ThiefBackpackBoundUserInterface : BoundUserInterface
@@ -15,7 +20,7 @@ public sealed class ThiefBackpackBoundUserInterface : BoundUserInterface
     {
         base.Open();
 
-        _window = new ThiefBackpackMenu(this);
+        _window = new(this);
         _window.OnClose += Close;
         _window.OpenCentered();
     }
@@ -42,13 +47,7 @@ public sealed class ThiefBackpackBoundUserInterface : BoundUserInterface
         _window?.UpdateState(current);
     }
 
-    public void SendChangeSelected(int setNumber)
-    {
-        SendMessage(new ThiefBackpackChangeSetMessage(setNumber));
-    }
+    public void SendChangeSelected(int setNumber) => SendMessage(new ThiefBackpackChangeSetMessage(setNumber));
 
-    public void SendApprove()
-    {
-        SendMessage(new ThiefBackpackApproveMessage());
-    }
+    public void SendApprove() => SendMessage(new ThiefBackpackApproveMessage());
 }

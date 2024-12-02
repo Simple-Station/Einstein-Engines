@@ -1,8 +1,14 @@
+#region
+
 using Content.Shared.Instruments;
 using Robust.Client.Audio.Midi;
 using Robust.Shared.Audio.Midi;
 
+#endregion
+
+
 namespace Content.Client.Instruments;
+
 
 [RegisterComponent]
 public sealed partial class InstrumentComponent : SharedInstrumentComponent

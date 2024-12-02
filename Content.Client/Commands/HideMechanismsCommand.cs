@@ -1,9 +1,15 @@
+#region
+
 using Content.Shared.Body.Organ;
 using Robust.Client.GameObjects;
 using Robust.Shared.Console;
 using Robust.Shared.Containers;
 
+#endregion
+
+
 namespace Content.Client.Commands;
+
 
 public sealed class HideMechanismsCommand : LocalizedCommands
 {
@@ -11,7 +17,10 @@ public sealed class HideMechanismsCommand : LocalizedCommands
 
     public override string Command => "hidemechanisms";
 
-    public override string Description => LocalizationManager.GetString($"cmd-{Command}-desc", ("showMechanismsCommand", ShowMechanismsCommand.CommandName));
+    public override string Description =>
+        LocalizationManager.GetString(
+            $"cmd-{Command}-desc",
+            ("showMechanismsCommand", ShowMechanismsCommand.CommandName));
 
     public override string Help => LocalizationManager.GetString($"cmd-{Command}-help", ("command", Command));
 
@@ -23,9 +32,7 @@ public sealed class HideMechanismsCommand : LocalizedCommands
         while (query.MoveNext(out var uid, out _))
         {
             if (!_entityManager.TryGetComponent(uid, out SpriteComponent? sprite))
-            {
                 continue;
-            }
 
             sprite.ContainerOccluded = false;
 

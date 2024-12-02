@@ -1,8 +1,13 @@
+#region
+
 using Content.Shared.VoiceMask;
-using Robust.Client.GameObjects;
 using Robust.Shared.Prototypes;
 
+#endregion
+
+
 namespace Content.Client.VoiceMask;
+
 
 public sealed class VoiceMaskBoundUserInterface : BoundUserInterface
 {
@@ -11,9 +16,7 @@ public sealed class VoiceMaskBoundUserInterface : BoundUserInterface
     [ViewVariables]
     private VoiceMaskNameChangeWindow? _window;
 
-    public VoiceMaskBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-    {
-    }
+    public VoiceMaskBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
 
     protected override void Open()
     {
@@ -27,17 +30,12 @@ public sealed class VoiceMaskBoundUserInterface : BoundUserInterface
         _window.OnClose += Close;
     }
 
-    private void OnNameSelected(string name)
-    {
-        SendMessage(new VoiceMaskChangeNameMessage(name));
-    }
+    private void OnNameSelected(string name) => SendMessage(new VoiceMaskChangeNameMessage(name));
 
     protected override void UpdateState(BoundUserInterfaceState state)
     {
         if (state is not VoiceMaskBuiState cast || _window == null)
-        {
             return;
-        }
 
         _window.UpdateState(cast.Name, cast.Verb);
     }

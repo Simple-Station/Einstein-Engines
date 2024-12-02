@@ -1,9 +1,15 @@
-using Content.Shared.Nutrition.EntitySystems;
+#region
+
 using Content.Shared.Nutrition.Components;
+using Content.Shared.Nutrition.EntitySystems;
 using Content.Shared.Overlays;
 using Content.Shared.StatusIcon.Components;
 
+#endregion
+
+
 namespace Content.Client.Overlays;
+
 
 public sealed class ShowHungerIconsSystem : EquipmentHudSystem<ShowHungerIconsComponent>
 {

@@ -1,21 +1,28 @@
-﻿using Content.Shared.Body.Systems;
+﻿#region
+
 using Content.Shared.Body.Part;
+using Content.Shared.Body.Systems;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Robust.Client.GameObjects;
 using Robust.Shared.Utility;
-using Content.Shared.Body.Components;
+
+#endregion
+
 
 namespace Content.Client.Body.Systems;
+
 
 public sealed class BodySystem : SharedBodySystem
 {
     [Dependency] private readonly MarkingManager _markingManager = default!;
 
-    private void ApplyMarkingToPart(MarkingPrototype markingPrototype,
+    private void ApplyMarkingToPart(
+        MarkingPrototype markingPrototype,
         IReadOnlyList<Color>? colors,
         bool visible,
-        SpriteComponent sprite)
+        SpriteComponent sprite
+    )
     {
         for (var j = 0; j < markingPrototype.Sprites.Count; j++)
         {
@@ -65,8 +72,9 @@ public sealed class BodySystem : SharedBodySystem
             }
     }
 
-    protected override void RemoveBodyMarkings(EntityUid target, BodyPartAppearanceComponent partAppearance, HumanoidAppearanceComponent bodyAppearance)
-    {
-        return;
-    }
+    protected override void RemoveBodyMarkings(
+        EntityUid target,
+        BodyPartAppearanceComponent partAppearance,
+        HumanoidAppearanceComponent bodyAppearance
+    ) { }
 }

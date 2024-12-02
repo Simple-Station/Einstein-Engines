@@ -1,3 +1,5 @@
+#region
+
 using Content.Shared.Movement.Systems;
 using Content.Shared.Verbs;
 using Robust.Client.GameObjects;
@@ -9,16 +11,20 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Serialization.Markdown.Mapping;
 
+#endregion
+
+
 namespace Content.Client.Replay.Spectator;
 
+
 /// <summary>
-/// This system handles spawning replay observer ghosts and maintaining their positions when traveling through time.
-/// It also blocks most normal interactions, just in case.
+///     This system handles spawning replay observer ghosts and maintaining their positions when traveling through time.
+///     It also blocks most normal interactions, just in case.
 /// </summary>
 /// <remarks>
-/// E.g., if an observer is on a grid, and then jumps forward or backward in time to a point where the grid does not
-/// exist, where should the observer go? This attempts to maintain their position and eye rotation or just re-spawns
-/// them as needed.
+///     E.g., if an observer is on a grid, and then jumps forward or backward in time to a point where the grid does not
+///     exist, where should the observer go? This attempts to maintain their position and eye rotation or just re-spawns
+///     them as needed.
 /// </remarks>
 public sealed partial class ReplaySpectatorSystem : EntitySystem
 {
@@ -34,7 +40,7 @@ public sealed partial class ReplaySpectatorSystem : EntitySystem
     public const string SpectateCmd = "replay_spectate";
 
     /// <summary>
-    /// User Id that corresponds to the local user in a single-player game.
+    ///     User Id that corresponds to the local user in a single-player game.
     /// </summary>
     public static readonly NetUserId DefaultUser = default;
 
@@ -69,7 +75,8 @@ public sealed partial class ReplaySpectatorSystem : EntitySystem
     private void OnPlaybackStarted(MappingDataNode yamlMappingNode, List<object> objects)
     {
         InitializeMovement();
-        _conHost.RegisterCommand(SpectateCmd,
+        _conHost.RegisterCommand(
+            SpectateCmd,
             Loc.GetString("cmd-replay-spectate-desc"),
             Loc.GetString("cmd-replay-spectate-help"),
             SpectateCommand,

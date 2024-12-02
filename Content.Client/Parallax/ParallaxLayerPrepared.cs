@@ -1,23 +1,26 @@
-using System;
-using Robust.Client.Graphics;
+#region
+
 using Content.Client.Parallax.Data;
-using Robust.Shared.Graphics;
+using Robust.Client.Graphics;
+
+#endregion
+
 
 namespace Content.Client.Parallax;
 
+
 /// <summary>
-/// A 'prepared' (i.e. texture loaded and ready to use) parallax layer.
+///     A 'prepared' (i.e. texture loaded and ready to use) parallax layer.
 /// </summary>
 public struct ParallaxLayerPrepared
 {
     /// <summary>
-    /// The loaded texture for this layer.
+    ///     The loaded texture for this layer.
     /// </summary>
     public Texture Texture { get; set; }
 
     /// <summary>
-    /// The configuration for this layer.
+    ///     The configuration for this layer.
     /// </summary>
     public ParallaxLayerConfig Config { get; set; }
 }
-

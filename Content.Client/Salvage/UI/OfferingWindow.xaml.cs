@@ -1,3 +1,5 @@
+#region
+
 using Content.Client.Computer;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Shuttles.BUIStates;
@@ -6,10 +8,14 @@ using Robust.Client.Graphics;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Timing;
 
+#endregion
+
+
 namespace Content.Client.Salvage.UI;
 
+
 /// <summary>
-/// Generic window for offering multiple selections with a timer.
+///     Generic window for offering multiple selections with a timer.
 /// </summary>
 [GenerateTypedNameReferences]
 public sealed partial class OfferingWindow : FancyWindow,
@@ -22,17 +28,17 @@ public sealed partial class OfferingWindow : FancyWindow,
     private TimeSpan? _progression;
 
     /// <summary>
-    /// Time between NextOffers
+    ///     Time between NextOffers
     /// </summary>
     public TimeSpan Cooldown;
 
     /// <summary>
-    /// Time between Progressions
+    ///     Time between Progressions
     /// </summary>
     public TimeSpan ProgressionCooldown;
 
     /// <summary>
-    /// Secondary timer used for tracking active progress.
+    ///     Secondary timer used for tracking active progress.
     /// </summary>
     public TimeSpan? Progression
     {
@@ -45,13 +51,9 @@ public sealed partial class OfferingWindow : FancyWindow,
             _progression = value;
 
             if (value == null)
-            {
                 ProgressionBox.Visible = false;
-            }
             else
-            {
                 ProgressionBox.Visible = true;
-            }
         }
     }
 
@@ -63,15 +65,9 @@ public sealed partial class OfferingWindow : FancyWindow,
         ProgressionBar.ForegroundStyleBoxOverride = new StyleBoxFlat(Color.FromHex("#C74EBD"));
     }
 
-    public void AddOption(OfferingWindowOption option)
-    {
-        Container.AddChild(option);
-    }
+    public void AddOption(OfferingWindowOption option) => Container.AddChild(option);
 
-    public void ClearOptions()
-    {
-        Container.DisposeAllChildren();
-    }
+    public void ClearOptions() => Container.DisposeAllChildren();
 
     protected override void FrameUpdate(FrameEventArgs args)
     {

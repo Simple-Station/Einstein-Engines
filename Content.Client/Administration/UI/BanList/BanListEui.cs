@@ -1,4 +1,5 @@
-﻿using System.Numerics;
+﻿#region
+
 using Content.Client.Administration.UI.BanList.Bans;
 using Content.Client.Administration.UI.BanList.RoleBans;
 using Content.Client.Eui;
@@ -7,7 +8,11 @@ using Content.Shared.Eui;
 using JetBrains.Annotations;
 using Robust.Client.UserInterface;
 
+#endregion
+
+
 namespace Content.Client.Administration.UI.BanList;
+
 
 [UsedImplicitly]
 public sealed class BanListEui : BaseEui
@@ -18,7 +23,7 @@ public sealed class BanListEui : BaseEui
 
     public BanListEui()
     {
-        BanWindow = new BanListWindow();
+        BanWindow = new();
         BanWindow.OnClose += OnClosed;
 
         BanControl = BanWindow.BanList;
@@ -63,15 +68,9 @@ public sealed class BanListEui : BaseEui
         RoleBanControl.SetRoleBans(s.RoleBans);
     }
 
-    public override void Opened()
-    {
-        BanWindow.OpenCentered();
-    }
+    public override void Opened() => BanWindow.OpenCentered();
 
-    private static string FormatDate(DateTimeOffset date)
-    {
-        return date.ToString("MM/dd/yyyy h:mm tt");
-    }
+    private static string FormatDate(DateTimeOffset date) => date.ToString("MM/dd/yyyy h:mm tt");
 
     public static void SetData<T>(IBanListLine<T> line, SharedServerBan ban) where T : SharedServerBan
     {
@@ -109,9 +108,9 @@ public sealed class BanListEui : BaseEui
             ? string.Empty
             : Loc.GetString("ban-list-guid", ("guid", ban.UserId.Value.ToString()));
 
-        _popup = new BanListIdsPopup(id, ip, hwid, guid);
+        _popup = new(id, ip, hwid, guid);
 
-        var box = UIBox2.FromDimensions(_ui.MousePositionScaled.Position, new Vector2(1, 1));
+        var box = UIBox2.FromDimensions(_ui.MousePositionScaled.Position, new(1, 1));
         _popup.Open(box);
     }
 }

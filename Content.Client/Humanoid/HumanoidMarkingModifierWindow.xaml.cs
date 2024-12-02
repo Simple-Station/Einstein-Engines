@@ -1,3 +1,5 @@
+#region
+
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
@@ -7,7 +9,11 @@ using Robust.Client.UserInterface.CustomControls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 
+#endregion
+
+
 namespace Content.Client.Humanoid;
+
 
 // hack for a panel that modifies an entity's markings on demand
 
@@ -56,9 +62,10 @@ public sealed partial class HumanoidMarkingModifierWindow : DefaultWindow
             return;
         }
 
-        string? state = _protoMan.HasIndex<HumanoidSpeciesSpriteLayer>(modifier.Text) ? modifier.Text : null;
+        var state = _protoMan.HasIndex<HumanoidSpeciesSpriteLayer>(modifier.Text) ? modifier.Text : null;
         OnLayerInfoModified?.Invoke(layer, new CustomBaseLayerInfo(state, modifier.Color));
     }
+
     public void SetState(
         MarkingSet markings,
         string species,
@@ -80,19 +87,17 @@ public sealed partial class HumanoidMarkingModifierWindow : DefaultWindow
 
         var eyesColor = Color.White;
         if (info.TryGetValue(HumanoidVisualLayers.Eyes, out var eyes) && eyes.Color != null)
-        {
             eyesColor = eyes.Color.Value;
-        }
 
         MarkingPickerWidget.SetData(markings, species, sex, skinColor, eyesColor);
     }
 
     private sealed class HumanoidBaseLayerModifier : BoxContainer
     {
-        private CheckBox _enable;
-        private LineEdit _lineEdit;
-        private ColorSelectorSliders _colorSliders;
-        private BoxContainer _infoBox;
+        private readonly CheckBox _enable;
+        private readonly LineEdit _lineEdit;
+        private readonly ColorSelectorSliders _colorSliders;
+        private readonly BoxContainer _infoBox;
 
         public bool Enabled => _enable.Pressed;
         public string Text => _lineEdit.Text;
@@ -111,19 +116,20 @@ public sealed partial class HumanoidMarkingModifierWindow : DefaultWindow
             };
             AddChild(labelBox);
 
-            labelBox.AddChild(new Label
-            {
-                HorizontalExpand = true,
-                Text = layer.ToString()
-            });
-            _enable = new CheckBox
+            labelBox.AddChild(
+                new Label
+                {
+                    HorizontalExpand = true,
+                    Text = layer.ToString()
+                });
+            _enable = new()
             {
                 Text = "Enable",
                 HorizontalAlignment = HAlignment.Right
             };
 
             labelBox.AddChild(_enable);
-            _infoBox = new BoxContainer
+            _infoBox = new()
             {
                 Orientation = LayoutOrientation.Vertical,
                 Visible = false
@@ -135,10 +141,10 @@ public sealed partial class HumanoidMarkingModifierWindow : DefaultWindow
             };
 
             var lineEditBox = new BoxContainer();
-            lineEditBox.AddChild(new Label { Text = "Prototype id: "});
+            lineEditBox.AddChild(new Label { Text = "Prototype id: ", });
 
             // TODO: This line edit should really be an options / dropdown selector, not text.
-            _lineEdit = new() { MinWidth = 200 };
+            _lineEdit = new() { MinWidth = 200, };
             _lineEdit.OnTextEntered += args => OnStateChanged!();
             lineEditBox.AddChild(_lineEdit);
             _infoBox.AddChild(lineEditBox);

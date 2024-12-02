@@ -1,14 +1,24 @@
-﻿using Content.Client.Storage.Components;
+﻿#region
+
+using Content.Client.Storage.Components;
 using Content.Shared.Rounding;
 using Content.Shared.Storage;
 using Robust.Client.GameObjects;
 
+#endregion
+
+
 namespace Content.Client.Storage.Systems;
 
-/// <inheritdoc cref="StorageContainerVisualsComponent"/>
+
+/// <inheritdoc cref="StorageContainerVisualsComponent" />
 public sealed class StorageContainerVisualsSystem : VisualizerSystem<StorageContainerVisualsComponent>
 {
-    protected override void OnAppearanceChange(EntityUid uid, StorageContainerVisualsComponent component, ref AppearanceChangeEvent args)
+    protected override void OnAppearanceChange(
+        EntityUid uid,
+        StorageContainerVisualsComponent component,
+        ref AppearanceChangeEvent args
+    )
     {
         if (args.Sprite == null)
             return;
@@ -24,7 +34,8 @@ public sealed class StorageContainerVisualsSystem : VisualizerSystem<StorageCont
         if (!args.Sprite.LayerMapTryGet(component.FillLayer, out var fillLayer))
             return;
 
-        var closestFillSprite = Math.Min(ContentHelpers.RoundToNearestLevels(fraction, 1, component.MaxFillLevels + 1),
+        var closestFillSprite = Math.Min(
+            ContentHelpers.RoundToNearestLevels(fraction, 1, component.MaxFillLevels + 1),
             component.MaxFillLevels);
 
         if (closestFillSprite > 0)
@@ -37,8 +48,6 @@ public sealed class StorageContainerVisualsSystem : VisualizerSystem<StorageCont
             args.Sprite.LayerSetState(fillLayer, stateName);
         }
         else
-        {
             args.Sprite.LayerSetVisible(fillLayer, false);
-        }
     }
 }

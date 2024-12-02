@@ -1,13 +1,19 @@
+#region
+
 using Content.Shared.CCVar;
 using Content.Shared.StatusIcon;
 using Content.Shared.StatusIcon.Components;
 using Robust.Client.Graphics;
 using Robust.Shared.Configuration;
 
+#endregion
+
+
 namespace Content.Client.StatusIcon;
 
+
 /// <summary>
-/// This handles rendering gathering and rendering icons on entities.
+///     This handles rendering gathering and rendering icons on entities.
 /// </summary>
 public sealed class StatusIconSystem : SharedStatusIconSystem
 {
@@ -17,7 +23,7 @@ public sealed class StatusIconSystem : SharedStatusIconSystem
     private bool _globalEnabled;
     private bool _localEnabled;
 
-    /// <inheritdoc/>
+    /// <inheritdoc />
     public override void Initialize()
     {
         Subs.CVar(_configuration, CCVars.LocalStatusIconsEnabled, OnLocalStatusIconChanged, true);
@@ -60,4 +66,3 @@ public sealed class StatusIconSystem : SharedStatusIconSystem
         return ev.StatusIcons;
     }
 }
-

@@ -1,15 +1,21 @@
+#region
+
 using Content.Shared.CrewManifest;
 using Content.Shared.Roles;
 using Robust.Shared.Prototypes;
 
+#endregion
+
+
 namespace Content.Client.CrewManifest;
+
 
 public sealed class CrewManifestSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
-    private Dictionary<string, Dictionary<string, int>> _jobDepartmentLookup = new();
-    private HashSet<string> _departments = new();
+    private readonly Dictionary<string, Dictionary<string, int>> _jobDepartmentLookup = new();
+    private readonly HashSet<string> _departments = new();
 
     public IReadOnlySet<string> Departments => _departments;
 
@@ -25,10 +31,8 @@ public sealed class CrewManifestSystem : EntitySystem
     ///     Requests a crew manifest from the server.
     /// </summary>
     /// <param name="netEntity">EntityUid of the entity we're requesting the crew manifest from.</param>
-    public void RequestCrewManifest(NetEntity netEntity)
-    {
+    public void RequestCrewManifest(NetEntity netEntity) =>
         RaiseNetworkEvent(new RequestCrewManifestMessage(netEntity));
-    }
 
     private void OnPrototypesReload(PrototypesReloadedEventArgs args)
     {
@@ -60,14 +64,10 @@ public sealed class CrewManifestSystem : EntitySystem
     public int GetDepartmentOrder(string department, string jobPrototype)
     {
         if (!Departments.Contains(department))
-        {
             return -1;
-        }
 
         if (!_jobDepartmentLookup.TryGetValue(jobPrototype, out var departments))
-        {
             return -1;
-        }
 
         return departments.TryGetValue(department, out var order)
             ? order

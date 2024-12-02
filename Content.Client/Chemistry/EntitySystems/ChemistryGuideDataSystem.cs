@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿#region
+
+using System.Linq;
 using Content.Client.Chemistry.Containers.EntitySystems;
 using Content.Shared.Atmos.Prototypes;
 using Content.Shared.Body.Part;
@@ -11,25 +13,32 @@ using Content.Shared.Kitchen.Components;
 using Content.Shared.Prototypes;
 using Robust.Shared.Prototypes;
 
+#endregion
+
+
 namespace Content.Client.Chemistry.EntitySystems;
 
-/// <inheritdoc/>
+
+/// <inheritdoc />
 public sealed class ChemistryGuideDataSystem : SharedChemistryGuideDataSystem
 {
     [Dependency] private readonly SolutionContainerSystem _solutionContainer = default!;
 
     [ValidatePrototypeId<MixingCategoryPrototype>]
     private const string DefaultMixingCategory = "DummyMix";
+
     [ValidatePrototypeId<MixingCategoryPrototype>]
     private const string DefaultGrindCategory = "DummyGrind";
+
     [ValidatePrototypeId<MixingCategoryPrototype>]
     private const string DefaultJuiceCategory = "DummyJuice";
+
     [ValidatePrototypeId<MixingCategoryPrototype>]
     private const string DefaultCondenseCategory = "DummyCondense";
 
     private readonly Dictionary<string, List<ReagentSourceData>> _reagentSources = new();
 
-    /// <inheritdoc/>
+    /// <inheritdoc />
     public override void Initialize()
     {
         base.Initialize();
@@ -43,14 +52,10 @@ public sealed class ChemistryGuideDataSystem : SharedChemistryGuideDataSystem
     {
         var data = message.Changeset;
         foreach (var remove in data.Removed)
-        {
             Registry.Remove(remove);
-        }
 
         foreach (var (key, val) in data.GuideEntries)
-        {
             Registry[key] = val;
-        }
     }
 
     private void OnPrototypesReloaded(PrototypesReloadedEventArgs? ev)
@@ -58,9 +63,7 @@ public sealed class ChemistryGuideDataSystem : SharedChemistryGuideDataSystem
         // this doesn't check what prototypes are being reloaded because, to be frank, we use a lot of them.
         _reagentSources.Clear();
         foreach (var reagent in PrototypeManager.EnumeratePrototypes<ReagentPrototype>())
-        {
             _reagentSources.Add(reagent.ID, new());
-        }
 
         foreach (var reaction in PrototypeManager.EnumeratePrototypes<ReactionPrototype>())
         {
@@ -68,12 +71,10 @@ public sealed class ChemistryGuideDataSystem : SharedChemistryGuideDataSystem
                 continue;
 
             var data = new ReagentReactionSourceData(
-                reaction.MixingCategories ?? new () { DefaultMixingCategory },
+                reaction.MixingCategories ?? new() { DefaultMixingCategory, },
                 reaction);
             foreach (var product in reaction.Products.Keys)
-            {
                 _reagentSources[product].Add(data);
-            }
         }
 
         foreach (var gas in PrototypeManager.EnumeratePrototypes<GasPrototype>())
@@ -82,7 +83,7 @@ public sealed class ChemistryGuideDataSystem : SharedChemistryGuideDataSystem
                 continue;
 
             var data = new ReagentGasSourceData(
-                new () { DefaultCondenseCategory },
+                new() { DefaultCondenseCategory, },
                 gas);
             _reagentSources[gas.Reagent].Add(data);
         }
@@ -108,13 +109,11 @@ public sealed class ChemistryGuideDataSystem : SharedChemistryGuideDataSystem
             if (extractableComponent.JuiceSolution is { } juiceSolution)
             {
                 var data = new ReagentEntitySourceData(
-                    new() { DefaultJuiceCategory },
+                    new() { DefaultJuiceCategory, },
                     entProto,
                     juiceSolution);
                 foreach (var (id, _) in juiceSolution.Contents)
-                {
                     _reagentSources[id.Prototype].Add(data);
-                }
 
                 usedNames.Add(entProto.Name);
             }
@@ -125,41 +124,37 @@ public sealed class ChemistryGuideDataSystem : SharedChemistryGuideDataSystem
                 _solutionContainer.TryGetSolution(manager, grindableSolutionId, out var grindableSolution))
             {
                 var data = new ReagentEntitySourceData(
-                    new() { DefaultGrindCategory },
+                    new() { DefaultGrindCategory, },
                     entProto,
                     grindableSolution);
                 foreach (var (id, _) in grindableSolution.Contents)
-                {
                     _reagentSources[id.Prototype].Add(data);
-                }
                 usedNames.Add(entProto.Name);
             }
         }
     }
 
-    public List<ReagentSourceData> GetReagentSources(string id)
-    {
-        return _reagentSources.GetValueOrDefault(id) ?? new List<ReagentSourceData>();
-    }
+    public List<ReagentSourceData> GetReagentSources(string id) =>
+        _reagentSources.GetValueOrDefault(id) ?? new List<ReagentSourceData>();
 }
 
 /// <summary>
-/// A generic class meant to hold information about a reagent source.
+///     A generic class meant to hold information about a reagent source.
 /// </summary>
 public abstract class ReagentSourceData
 {
     /// <summary>
-    /// The mixing type that applies to this source.
+    ///     The mixing type that applies to this source.
     /// </summary>
     public readonly IReadOnlyList<ProtoId<MixingCategoryPrototype>> MixingType;
 
     /// <summary>
-    /// The number of distinct outputs. Used for primary ordering.
+    ///     The number of distinct outputs. Used for primary ordering.
     /// </summary>
     public abstract int OutputCount { get; }
 
     /// <summary>
-    /// A text string corresponding to this source. Typically a name. Used for secondary ordering.
+    ///     A text string corresponding to this source. Typically a name. Used for secondary ordering.
     /// </summary>
     public abstract string IdentifierString { get; }
 
@@ -170,7 +165,7 @@ public abstract class ReagentSourceData
 }
 
 /// <summary>
-/// Used to store a reagent source that's an entity with a corresponding solution.
+///     Used to store a reagent source that's an entity with a corresponding solution.
 /// </summary>
 public sealed class ReagentEntitySourceData : ReagentSourceData
 {
@@ -182,7 +177,11 @@ public sealed class ReagentEntitySourceData : ReagentSourceData
 
     public override string IdentifierString => SourceEntProto.Name;
 
-    public ReagentEntitySourceData(List<ProtoId<MixingCategoryPrototype>> mixingType, EntityPrototype sourceEntProto, Solution solution)
+    public ReagentEntitySourceData(
+        List<ProtoId<MixingCategoryPrototype>> mixingType,
+        EntityPrototype sourceEntProto,
+        Solution solution
+    )
         : base(mixingType)
     {
         SourceEntProto = sourceEntProto;
@@ -191,17 +190,21 @@ public sealed class ReagentEntitySourceData : ReagentSourceData
 }
 
 /// <summary>
-/// Used to store a reagent source that comes from a reaction between multiple reagents.
+///     Used to store a reagent source that comes from a reaction between multiple reagents.
 /// </summary>
 public sealed class ReagentReactionSourceData : ReagentSourceData
 {
     public readonly ReactionPrototype ReactionPrototype;
 
-    public override int OutputCount => ReactionPrototype.Products.Count + ReactionPrototype.Reactants.Count(r => r.Value.Catalyst);
+    public override int OutputCount =>
+        ReactionPrototype.Products.Count + ReactionPrototype.Reactants.Count(r => r.Value.Catalyst);
 
     public override string IdentifierString => ReactionPrototype.ID;
 
-    public ReagentReactionSourceData(List<ProtoId<MixingCategoryPrototype>> mixingType, ReactionPrototype reactionPrototype)
+    public ReagentReactionSourceData(
+        List<ProtoId<MixingCategoryPrototype>> mixingType,
+        ReactionPrototype reactionPrototype
+    )
         : base(mixingType)
     {
         ReactionPrototype = reactionPrototype;
@@ -209,7 +212,7 @@ public sealed class ReagentReactionSourceData : ReagentSourceData
 }
 
 /// <summary>
-/// Used to store a reagent source that comes from gas condensation.
+///     Used to store a reagent source that comes from gas condensation.
 /// </summary>
 public sealed class ReagentGasSourceData : ReagentSourceData
 {
@@ -225,4 +228,3 @@ public sealed class ReagentGasSourceData : ReagentSourceData
         GasPrototype = gasPrototype;
     }
 }
-

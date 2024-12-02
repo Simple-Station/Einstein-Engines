@@ -1,9 +1,15 @@
+#region
+
 using System.Numerics;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
 using Robust.Client.Player;
 
+#endregion
+
+
 namespace Content.Client.Movement.Systems;
+
 
 public sealed class ContentEyeSystem : SharedContentEyeSystem
 {
@@ -14,11 +20,12 @@ public sealed class ContentEyeSystem : SharedContentEyeSystem
         if (!Resolve(uid, ref content, false))
             return;
 
-        RaisePredictiveEvent(new RequestTargetZoomEvent()
-        {
-            TargetZoom = zoom,
-            IgnoreLimit = ignoreLimit,
-        });
+        RaisePredictiveEvent(
+            new RequestTargetZoomEvent
+            {
+                TargetZoom = zoom,
+                IgnoreLimit = ignoreLimit
+            });
     }
 
     public void RequestToggleFov()
@@ -40,8 +47,6 @@ public sealed class ContentEyeSystem : SharedContentEyeSystem
     }
 
 
-    public void RequestEye(bool drawFov, bool drawLight)
-    {
+    public void RequestEye(bool drawFov, bool drawLight) =>
         RaisePredictiveEvent(new RequestEyeEvent(drawFov, drawLight));
-    }
 }

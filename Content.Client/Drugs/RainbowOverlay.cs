@@ -1,3 +1,5 @@
+#region
+
 using Content.Shared.Drugs;
 using Content.Shared.StatusEffect;
 using Robust.Client.Graphics;
@@ -6,7 +8,11 @@ using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
+#endregion
+
+
 namespace Content.Client.Drugs;
+
 
 public sealed class RainbowOverlay : Overlay
 {
@@ -19,8 +25,8 @@ public sealed class RainbowOverlay : Overlay
     public override bool RequestScreenTexture => true;
     private readonly ShaderInstance _rainbowShader;
 
-    public float Intoxication = 0.0f;
-    public float TimeTicker = 0.0f;
+    public float Intoxication;
+    public float TimeTicker;
 
     private const float VisualThreshold = 10.0f;
     private const float PowerDivisor = 250.0f;
@@ -53,13 +59,9 @@ public sealed class RainbowOverlay : Overlay
         TimeTicker += args.DeltaSeconds;
 
         if (timeLeft - TimeTicker > timeLeft / 16f)
-        {
             Intoxication += (timeLeft - Intoxication) * args.DeltaSeconds / 16f;
-        }
         else
-        {
-            Intoxication -= Intoxication/(timeLeft - TimeTicker) * args.DeltaSeconds;
-        }
+            Intoxication -= Intoxication / (timeLeft - TimeTicker) * args.DeltaSeconds;
     }
 
     protected override bool BeforeDraw(in OverlayDrawArgs args)

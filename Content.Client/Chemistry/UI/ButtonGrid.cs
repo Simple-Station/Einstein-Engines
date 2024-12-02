@@ -1,8 +1,12 @@
-using System;
-using Robust.Client.Graphics;
+#region
+
 using Robust.Client.UserInterface.Controls;
 
+#endregion
+
+
 namespace Content.Client.Chemistry.UI;
+
 
 /// <summary>
 ///     Creates a grid of buttons given a comma-seperated list of Text
@@ -29,7 +33,7 @@ public sealed class ButtonGrid : GridContainer
     private string? _selected;
 
     /// <summary>
-    ///     Which button is currently selected. Only matters when <see cref="RadioGroup"/> is true.
+    ///     Which button is currently selected. Only matters when <see cref="RadioGroup" /> is true.
     /// </summary>
     public string? Selected
     {
@@ -44,7 +48,7 @@ public sealed class ButtonGrid : GridContainer
     public Action<string>? OnButtonPressed;
 
     /// <summary>
-    ///     <see cref="GridContainer.Columns"/>
+    ///     <see cref="GridContainer.Columns" />
     /// </summary>
     public new int Columns
     {
@@ -57,7 +61,7 @@ public sealed class ButtonGrid : GridContainer
     }
 
     /// <summary>
-    ///     <see cref="GridContainer.Rows"/>
+    ///     <see cref="GridContainer.Rows" />
     /// </summary>
     public new int Rows
     {
@@ -74,7 +78,7 @@ public sealed class ButtonGrid : GridContainer
         if (ButtonList == "")
             return;
 
-        this.Children.Clear();
+        Children.Clear();
         var i = 0;
         var list = ButtonList.Split(",");
 
@@ -111,7 +115,7 @@ public sealed class ButtonGrid : GridContainer
             else
                 btn.AddStyleClass("OpenBoth");
 
-            this.Children.Add(btn);
+            Children.Add(btn);
 
             i++;
         }

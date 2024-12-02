@@ -1,7 +1,13 @@
+#region
+
 using Content.Shared.Pinpointer;
 using JetBrains.Annotations;
 
+#endregion
+
+
 namespace Content.Client.Pinpointer.UI;
+
 
 [UsedImplicitly]
 public sealed class NavMapBeaconBoundUserInterface : BoundUserInterface
@@ -9,14 +15,12 @@ public sealed class NavMapBeaconBoundUserInterface : BoundUserInterface
     [ViewVariables]
     private NavMapBeaconWindow? _window;
 
-    public NavMapBeaconBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-    {
-    }
+    public NavMapBeaconBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
 
     protected override void Open()
     {
         base.Open();
-        _window = new NavMapBeaconWindow(Owner);
+        _window = new(Owner);
         _window.OpenCentered();
         _window.OnClose += Close;
 

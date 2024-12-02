@@ -1,3 +1,5 @@
+#region
+
 using System.Numerics;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
@@ -8,7 +10,11 @@ using Robust.Client.Player;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 
+#endregion
+
+
 namespace Content.Client.Eye;
+
 
 public sealed class EyeLerpingSystem : EntitySystem
 {
@@ -19,7 +25,7 @@ public sealed class EyeLerpingSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
 
     // Convenience variable for for VV.
-    [ViewVariables, UsedImplicitly]
+    [ViewVariables, UsedImplicitly,]
     private IEnumerable<LerpingEyeComponent> ActiveEyes => EntityQuery<LerpingEyeComponent>();
 
     public override void Initialize()
@@ -45,10 +51,8 @@ public sealed class EyeLerpingSystem : EntitySystem
             AddEye(uid, component, true);
     }
 
-    private void OnEyeShutdown(EntityUid uid, EyeComponent component, ComponentShutdown args)
-    {
+    private void OnEyeShutdown(EntityUid uid, EyeComponent component, ComponentShutdown args) =>
         RemCompDeferred<LerpingEyeComponent>(uid);
-    }
 
     // TODO replace this with some way of automatically getting and including any eyes that are associated with a viewport / render able thingy.
     public void AddEye(EntityUid uid, EyeComponent? component = null, bool automatic = false)
@@ -90,10 +94,7 @@ public sealed class EyeLerpingSystem : EntitySystem
             component.LastRotation = GetRotation(uid, args.Transform);
     }
 
-    private void OnAttached(ref EyeAttachedEvent ev)
-    {
-        AddEye(ev.Entity, ev.Component, true);
-    }
+    private void OnAttached(ref EyeAttachedEvent ev) => AddEye(ev.Entity, ev.Component, true);
 
     private void OnDetached(EntityUid uid, LerpingEyeComponent component, LocalPlayerDetachedEvent args)
     {
@@ -121,7 +122,12 @@ public sealed class EyeLerpingSystem : EntitySystem
         }
     }
 
-    private Vector2 UpdateZoom(EntityUid uid, float frameTime, EyeComponent? eye = null, ContentEyeComponent? content = null)
+    private Vector2 UpdateZoom(
+        EntityUid uid,
+        float frameTime,
+        EyeComponent? eye = null,
+        ContentEyeComponent? content = null
+    )
     {
         if (!Resolve(uid, ref content, ref eye, false))
             return Vector2.One;
@@ -129,9 +135,7 @@ public sealed class EyeLerpingSystem : EntitySystem
         var diff = content.TargetZoom - eye.Zoom;
 
         if (diff.LengthSquared() < 0.00001f)
-        {
             return content.TargetZoom;
-        }
 
         var change = diff * Math.Min(8f * frameTime, 1);
 
@@ -139,7 +143,7 @@ public sealed class EyeLerpingSystem : EntitySystem
     }
 
     /// <summary>
-    /// Does the eye need to lerp or is its rotation matched.
+    ///     Does the eye need to lerp or is its rotation matched.
     /// </summary>
     private bool NeedsLerp(InputMoverComponent? mover)
     {
@@ -159,9 +163,7 @@ public sealed class EyeLerpingSystem : EntitySystem
 
         // If we can move then tie our eye to our inputs (these also get lerped so it should be fine).
         if (Resolve(uid, ref mover, false))
-        {
             return -_mover.GetParentGridAngle(mover);
-        }
 
         // if not tied to a mover then lock it to map / grid
         var relative = xform.GridUid ?? xform.MapUid;
@@ -183,13 +185,9 @@ public sealed class EyeLerpingSystem : EntitySystem
             var zoomDiff = Vector2.Lerp(lerpInfo.LastZoom, lerpInfo.TargetZoom, tickFraction);
 
             if ((zoomDiff - lerpInfo.TargetZoom).Length() < lerpMinimum)
-            {
                 _eye.SetZoom(entity, lerpInfo.TargetZoom, eye);
-            }
             else
-            {
                 _eye.SetZoom(entity, zoomDiff, eye);
-            }
 
             // Handle Rotation
             TryComp<InputMoverComponent>(entity, out var mover);

@@ -1,8 +1,14 @@
-﻿using Content.Shared.Power;
+﻿#region
+
+using Content.Shared.Power;
 using Content.Shared.SMES;
 using Robust.Client.GameObjects;
 
+#endregion
+
+
 namespace Content.Client.Power.SMES;
+
 
 public sealed class SmesVisualizerSystem : VisualizerSystem<SmesComponent>
 {
@@ -11,10 +17,9 @@ public sealed class SmesVisualizerSystem : VisualizerSystem<SmesComponent>
         if (args.Sprite == null)
             return;
 
-        if (!AppearanceSystem.TryGetData<int>(uid, SmesVisuals.LastChargeLevel, out var level, args.Component) || level == 0)
-        {
+        if (!AppearanceSystem.TryGetData<int>(uid, SmesVisuals.LastChargeLevel, out var level, args.Component) ||
+            level == 0)
             args.Sprite.LayerSetVisible(SmesVisualLayers.Charge, false);
-        }
         else
         {
             args.Sprite.LayerSetVisible(SmesVisualLayers.Charge, true);
@@ -42,9 +47,9 @@ public sealed class SmesVisualizerSystem : VisualizerSystem<SmesComponent>
     }
 }
 
-enum SmesVisualLayers : byte
+internal enum SmesVisualLayers : byte
 {
     Input,
     Charge,
-    Output,
+    Output
 }

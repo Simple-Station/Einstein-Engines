@@ -1,7 +1,13 @@
+#region
+
 using System.Numerics;
 using Robust.Client.UserInterface.Controls;
 
+#endregion
+
+
 namespace Content.Client.UserInterface.Controls;
+
 
 /// <summary>
 ///     A split container that performs an action when the split resizing is finished.
@@ -19,9 +25,7 @@ public sealed class RecordedSplitContainer : SplitContainer
             SplitFraction = (float) DesiredSplitCenter.Value;
 
             if (!Size.Equals(Vector2.Zero))
-            {
                 DesiredSplitCenter = null;
-            }
         }
 
         return base.ArrangeOverride(finalSize);

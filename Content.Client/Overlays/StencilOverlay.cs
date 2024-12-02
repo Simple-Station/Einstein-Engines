@@ -1,3 +1,5 @@
+#region
+
 using System.Numerics;
 using Content.Client.Parallax;
 using Content.Client.Weather;
@@ -10,10 +12,14 @@ using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
+#endregion
+
+
 namespace Content.Client.Overlays;
 
+
 /// <summary>
-/// Simple re-useable overlay with stencilled texture.
+///     Simple re-useable overlay with stencilled texture.
 /// </summary>
 public sealed partial class StencilOverlay : Overlay
 {
@@ -33,7 +39,12 @@ public sealed partial class StencilOverlay : Overlay
 
     private readonly ShaderInstance _shader;
 
-    public StencilOverlay(ParallaxSystem parallax, SharedTransformSystem transform, SpriteSystem sprite, WeatherSystem weather)
+    public StencilOverlay(
+        ParallaxSystem parallax,
+        SharedTransformSystem transform,
+        SpriteSystem sprite,
+        WeatherSystem weather
+    )
     {
         ZIndex = ParallaxSystem.ParallaxZIndex + 1;
         _parallax = parallax;
@@ -52,7 +63,10 @@ public sealed partial class StencilOverlay : Overlay
         if (_blep?.Texture.Size != args.Viewport.Size)
         {
             _blep?.Dispose();
-            _blep = _clyde.CreateRenderTarget(args.Viewport.Size, new RenderTargetFormatParameters(RenderTargetColorFormat.Rgba8Srgb), name: "weather-stencil");
+            _blep = _clyde.CreateRenderTarget(
+                args.Viewport.Size,
+                new(RenderTargetColorFormat.Rgba8Srgb),
+                name: "weather-stencil");
         }
 
         if (_entManager.TryGetComponent<WeatherComponent>(mapUid, out var comp))
@@ -68,9 +82,7 @@ public sealed partial class StencilOverlay : Overlay
         }
 
         if (_entManager.TryGetComponent<RestrictedRangeComponent>(mapUid, out var restrictedRangeComponent))
-        {
             DrawRestrictedRange(args, restrictedRangeComponent, invMatrix);
-        }
 
         args.WorldHandle.UseShader(null);
         args.WorldHandle.SetTransform(Matrix3x2.Identity);

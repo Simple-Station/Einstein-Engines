@@ -1,14 +1,23 @@
-﻿using Content.Shared.DeltaV.Biscuit;
+﻿#region
+
+using Content.Shared.DeltaV.Biscuit;
 using Robust.Client.GameObjects;
 
+#endregion
+
+
 namespace Content.Client.DeltaV.Biscuit;
+
 
 public sealed class BiscuitSystem : VisualizerSystem<BiscuitVisualsComponent>
 {
     [Dependency] private readonly AppearanceSystem _appearance = default!;
 
-    protected override void OnAppearanceChange(EntityUid uid, BiscuitVisualsComponent component,
-        ref AppearanceChangeEvent args)
+    protected override void OnAppearanceChange(
+        EntityUid uid,
+        BiscuitVisualsComponent component,
+        ref AppearanceChangeEvent args
+    )
     {
         if (args.Sprite == null)
             return;

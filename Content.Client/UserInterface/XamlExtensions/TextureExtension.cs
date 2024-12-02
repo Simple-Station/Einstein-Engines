@@ -1,6 +1,11 @@
-﻿using Content.Client.Resources;
+﻿#region
+
+using Content.Client.Resources;
 using JetBrains.Annotations;
 using Robust.Client.ResourceManagement;
+
+#endregion
+
 
 namespace Content.Client.UserInterface.XamlExtensions;
 
@@ -17,8 +22,5 @@ public sealed class TexExtension
         Path = path;
     }
 
-    public object ProvideValue()
-    {
-        return _resourceCache.GetTexture(Path);
-    }
+    public object ProvideValue() => _resourceCache.GetTexture(Path);
 }

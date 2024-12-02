@@ -1,5 +1,6 @@
+#region
+
 using System.Linq;
-using System.Numerics;
 using Content.Client.Gameplay;
 using Content.Client.Hands.Systems;
 using Content.Client.Inventory;
@@ -24,7 +25,11 @@ using Robust.Shared.Map;
 using Robust.Shared.Utility;
 using static Content.Client.Inventory.ClientInventorySystem;
 
+#endregion
+
+
 namespace Content.Client.UserInterface.Systems.Inventory;
+
 
 public sealed class InventoryUIController : UIController, IOnStateEntered<GameplayState>, IOnStateExited<GameplayState>,
     IOnSystemChanged<ClientInventorySystem>, IOnSystemChanged<HandsSystem>
@@ -83,9 +88,7 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
         }
 
         if (_inventoryHotbar != null)
-        {
             _inventoryHotbar.Visible = false;
-        }
 
         CommandBinds.Unregister<ClientInventorySystem>();
     }
@@ -100,17 +103,13 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
         return button;
     }
 
-    public void RegisterInventoryBarContainer(ItemSlotButtonContainer inventoryHotbar)
-    {
+    public void RegisterInventoryBarContainer(ItemSlotButtonContainer inventoryHotbar) =>
         _inventoryHotbar = inventoryHotbar;
-    }
 
     public void RegisterInventoryButton(SlotButton? button)
     {
         if (_inventoryButton != null)
-        {
             _inventoryButton.Pressed -= InventoryButtonPressed;
-        }
 
         if (button != null)
         {
@@ -134,9 +133,11 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
             _inventoryHotbar?.ClearButtons();
             return;
         }
+
         foreach (var (_, data) in clientInv.SlotData)
         {
-            if (!data.ShowInWindow || data.SlotDef.Disabled || !_slotGroups.TryGetValue(data.SlotGroup, out var container))
+            if (!data.ShowInWindow || data.SlotDef.Disabled ||
+                !_slotGroups.TryGetValue(data.SlotGroup, out var container))
                 continue;
 
             if (!container.TryGetButton(data.SlotName, out var button))
@@ -161,10 +162,8 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
             return;
 
         foreach (var child in new List<Control>(_inventoryHotbar.Children))
-        {
             if (child is not SlotControl)
                 _inventoryHotbar.RemoveChild(child);
-        }
 
         var maxWidth = clothing.Max(p => p.Value.ButtonOffset.X) + 1;
         var maxIndex = clothing.Select(p => GetIndex(p.Value.ButtonOffset)).Max();
@@ -182,19 +181,17 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
             }
             else
             {
-                _inventoryHotbar.AddChild(new Control
-                {
-                    MinSize = new Vector2(64, 64)
-                });
+                _inventoryHotbar.AddChild(
+                    new()
+                    {
+                        MinSize = new(64, 64)
+                    });
             }
         }
 
         return;
 
-        int GetIndex(Vector2i position)
-        {
-            return position.Y * maxWidth + position.X;
-        }
+        int GetIndex(Vector2i position) => position.Y * maxWidth + position.X;
     }
 
     private void UpdateStrippingWindow(InventorySlotsComponent? clientInv)
@@ -244,7 +241,6 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
         UpdateInventoryHotbar(_playerInventory);
         var shouldBeVisible = !_inventoryHotbar.Visible;
         _inventoryHotbar.Visible = shouldBeVisible;
-
     }
 
     // Neuron Activation
@@ -279,38 +275,24 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
         }
 
         if (_playerInventory == null || _playerUid == null)
-        {
             return;
-        }
 
         if (args.Function == ContentKeyFunctions.ExamineEntity)
-        {
             _inventorySystem.UIInventoryExamine(slot, _playerUid.Value);
-        }
         else if (args.Function == EngineKeyFunctions.UseSecondary)
-        {
             _inventorySystem.UIInventoryOpenContextMenu(slot, _playerUid.Value);
-        }
         else if (args.Function == ContentKeyFunctions.ActivateItemInWorld)
-        {
             _inventorySystem.UIInventoryActivateItem(slot, _playerUid.Value);
-        }
         else if (args.Function == ContentKeyFunctions.AltActivateItemInWorld)
-        {
             _inventorySystem.UIInventoryAltActivateItem(slot, _playerUid.Value);
-        }
         else
-        {
             return;
-        }
 
         args.Handle();
     }
 
-    private void StoragePressed(GUIBoundKeyEventArgs args, SlotControl control)
-    {
+    private void StoragePressed(GUIBoundKeyEventArgs args, SlotControl control) =>
         _inventorySystem.UIInventoryStorageActivate(control.SlotName);
-    }
 
     private void SlotButtonHovered(GUIMouseHoverEventArgs args, SlotControl control)
     {
@@ -337,12 +319,10 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
         var hoverEntity = _entities.SpawnEntity("hoverentity", MapCoordinates.Nullspace);
         var hoverSprite = _entities.GetComponent<SpriteComponent>(hoverEntity);
         var fits = _inventorySystem.CanEquip(player.Value, held, control.SlotName, out _, slotDef) &&
-                   _container.CanInsert(held, container);
+            _container.CanInsert(held, container);
 
         if (!fits && _entities.TryGetComponent<StorageComponent>(container.ContainedEntity, out var storage))
-        {
             fits = _entities.System<StorageSystem>().CanInsert(container.ContainedEntity.Value, held, out _, storage);
-        }
         else if (!fits && _entities.TryGetComponent<ItemSlotsComponent>(container.ContainedEntity, out var itemSlots))
         {
             var itemSlotsSys = _entities.System<ItemSlotsSystem>();
@@ -359,7 +339,7 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
         }
 
         hoverSprite.CopyFrom(sprite);
-        hoverSprite.Color = fits ? new Color(0, 255, 0, 127) : new Color(255, 0, 0, 127);
+        hoverSprite.Color = fits ? new(0, 255, 0, 127) : new Color(255, 0, 0, 127);
 
         control.HoverSpriteView.SetEntity(hoverEntity);
     }
@@ -381,10 +361,7 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
         slotGroup.RemoveButton(data.SlotName);
     }
 
-    public void ReloadSlots()
-    {
-        _inventorySystem.ReloadInventory();
-    }
+    public void ReloadSlots() => _inventorySystem.ReloadInventory();
 
     private void LoadSlots(EntityUid clientUid, InventorySlotsComponent clientInv)
     {
@@ -392,9 +369,7 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
         _playerUid = clientUid;
         _playerInventory = clientInv;
         foreach (var slotData in clientInv.SlotData.Values)
-        {
             AddSlot(slotData);
-        }
 
         UpdateInventoryHotbar(_playerInventory);
     }
@@ -404,9 +379,7 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
         _playerUid = null;
         _playerInventory = null;
         foreach (var slotGroup in _slotGroups.Values)
-        {
             slotGroup.ClearButtons();
-        }
     }
 
     private void SpriteUpdated(SlotSpriteUpdate update)
@@ -443,10 +416,7 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
         return false;
     }
 
-    public void RemoveSlotGroup(string slotGroupName)
-    {
-        _slotGroups.Remove(slotGroupName);
-    }
+    public void RemoveSlotGroup(string slotGroupName) => _slotGroups.Remove(slotGroupName);
 
     // Monkey Sees Action
     // Neuron Activation

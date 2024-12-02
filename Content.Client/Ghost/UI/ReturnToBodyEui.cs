@@ -1,9 +1,15 @@
-﻿using Content.Client.Eui;
+﻿#region
+
+using Content.Client.Eui;
 using Content.Shared.Ghost;
 using JetBrains.Annotations;
 using Robust.Client.Graphics;
 
+#endregion
+
+
 namespace Content.Client.Ghost.UI;
+
 
 [UsedImplicitly]
 public sealed class ReturnToBodyEui : BaseEui
@@ -12,7 +18,7 @@ public sealed class ReturnToBodyEui : BaseEui
 
     public ReturnToBodyEui()
     {
-        _menu = new ReturnToBodyMenu();
+        _menu = new();
 
         _menu.DenyButton.OnPressed += _ =>
         {
@@ -40,5 +46,4 @@ public sealed class ReturnToBodyEui : BaseEui
         SendMessage(new ReturnToBodyMessage(false));
         _menu.Close();
     }
-
 }

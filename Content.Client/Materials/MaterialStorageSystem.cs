@@ -1,7 +1,13 @@
-﻿using Content.Shared.Materials;
+﻿#region
+
+using Content.Shared.Materials;
 using Robust.Client.GameObjects;
 
+#endregion
+
+
 namespace Content.Client.Materials;
+
 
 public sealed class MaterialStorageSystem : SharedMaterialStorageSystem
 {
@@ -35,17 +41,17 @@ public sealed class MaterialStorageSystem : SharedMaterialStorageSystem
                 args.Sprite.LayerSetColor(layer, insertingComp.MaterialColor.Value);
         }
         else
-        {
             args.Sprite.LayerSetVisible(layer, false);
-        }
     }
 
-    public override bool TryInsertMaterialEntity(EntityUid user,
+    public override bool TryInsertMaterialEntity(
+        EntityUid user,
         EntityUid toInsert,
         EntityUid receiver,
         MaterialStorageComponent? storage = null,
         MaterialComponent? material = null,
-        PhysicalCompositionComponent? composition = null)
+        PhysicalCompositionComponent? composition = null
+    )
     {
         if (!base.TryInsertMaterialEntity(user, toInsert, receiver, storage, material, composition))
             return false;

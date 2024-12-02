@@ -1,9 +1,15 @@
+#region
+
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
 using Robust.Shared.Console;
 
+#endregion
+
+
 namespace Content.Client.Commands;
+
 
 [AnyCommand]
 public sealed class ToggleOutlineCommand : LocalizedCommands
@@ -20,6 +26,7 @@ public sealed class ToggleOutlineCommand : LocalizedCommands
         var old = _configurationManager.GetCVar(cvar);
 
         _configurationManager.SetCVar(cvar, !old);
-        shell.WriteLine(LocalizationManager.GetString($"cmd-{Command}-notify", ("state", _configurationManager.GetCVar(cvar))));
+        shell.WriteLine(
+            LocalizationManager.GetString($"cmd-{Command}-notify", ("state", _configurationManager.GetCVar(cvar))));
     }
 }

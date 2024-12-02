@@ -1,13 +1,12 @@
-﻿using Content.Shared.Pointing.Components;
-using Robust.Client.GameObjects;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
-using DrawDepth = Content.Shared.DrawDepth.DrawDepth;
+﻿#region
 
-namespace Content.Client.Pointing.Components
-{
-    [RegisterComponent]
-    public sealed partial class RoguePointingArrowComponent : SharedRoguePointingArrowComponent
-    {
-    }
-}
+using Content.Shared.Pointing.Components;
+
+#endregion
+
+
+namespace Content.Client.Pointing.Components;
+
+
+[RegisterComponent]
+public sealed partial class RoguePointingArrowComponent : SharedRoguePointingArrowComponent { }

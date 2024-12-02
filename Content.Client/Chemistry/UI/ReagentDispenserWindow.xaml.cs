@@ -1,3 +1,5 @@
+#region
+
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Chemistry;
@@ -8,141 +10,147 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
 
-namespace Content.Client.Chemistry.UI
+#endregion
+
+
+namespace Content.Client.Chemistry.UI;
+
+
+/// <summary>
+///     Client-side UI used to control a <see cref="ReagentDispenserComponent" />.
+/// </summary>
+[GenerateTypedNameReferences]
+public sealed partial class ReagentDispenserWindow : FancyWindow
 {
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private readonly IEntityManager _entityManager = default!;
+    public event Action<string>? OnDispenseReagentButtonPressed;
+    public event Action<string>? OnEjectJugButtonPressed;
+
     /// <summary>
-    /// Client-side UI used to control a <see cref="ReagentDispenserComponent"/>.
+    ///     Create and initialize the dispenser UI client-side. Creates the basic layout,
+    ///     actual data isn't filled in until the server sends data about the dispenser.
     /// </summary>
-    [GenerateTypedNameReferences]
-    public sealed partial class ReagentDispenserWindow : FancyWindow
+    public ReagentDispenserWindow()
     {
-        [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-        [Dependency] private readonly IEntityManager _entityManager = default!;
-        public event Action<string>? OnDispenseReagentButtonPressed;
-        public event Action<string>? OnEjectJugButtonPressed;
+        RobustXamlLoader.Load(this);
+        IoCManager.InjectDependencies(this);
+    }
 
-        /// <summary>
-        /// Create and initialize the dispenser UI client-side. Creates the basic layout,
-        /// actual data isn't filled in until the server sends data about the dispenser.
-        /// </summary>
-        public ReagentDispenserWindow()
+    /// <summary>
+    ///     Update the button grid of reagents which can be dispensed.
+    /// </summary>
+    /// <param name="inventory">Reagents which can be dispensed by this dispenser</param>
+    public void UpdateReagentsList(List<ReagentInventoryItem> inventory)
+    {
+        if (ReagentList == null)
+            return;
+
+        ReagentList.Children.Clear();
+        //Sort inventory by reagentLabel
+        inventory.Sort((x, y) => x.ReagentLabel.CompareTo(y.ReagentLabel));
+
+        foreach (var item in inventory)
         {
-            RobustXamlLoader.Load(this);
-            IoCManager.InjectDependencies(this);
+            var card = new ReagentCardControl(item);
+            card.OnPressed += OnDispenseReagentButtonPressed;
+            card.OnEjectButtonPressed += OnEjectJugButtonPressed;
+            ReagentList.Children.Add(card);
+        }
+    }
+
+    /// <summary>
+    ///     Update the UI state when new state data is received from the server.
+    /// </summary>
+    /// <param name="state">State data sent by the server.</param>
+    public void UpdateState(BoundUserInterfaceState state)
+    {
+        var castState = (ReagentDispenserBoundUserInterfaceState) state;
+        UpdateContainerInfo(castState);
+        UpdateReagentsList(castState.Inventory);
+
+        _entityManager.TryGetEntity(castState.OutputContainerEntity, out var outputContainerEnt);
+        View.SetEntity(outputContainerEnt);
+
+        // Disable the Clear & Eject button if no beaker
+        ClearButton.Disabled = castState.OutputContainer is null;
+        EjectButton.Disabled = castState.OutputContainer is null;
+
+        AmountGrid.Selected = ((int) castState.SelectedDispenseAmount).ToString();
+    }
+
+    /// <summary>
+    ///     Update the fill state and list of reagents held by the current reagent container, if applicable.
+    ///     <para>Also highlights a reagent if it's dispense button is being mouse hovered.</para>
+    /// </summary>
+    /// <param name="state">State data for the dispenser.</param>
+    /// or null if no button is being hovered.
+    /// </param>
+    public void UpdateContainerInfo(ReagentDispenserBoundUserInterfaceState state)
+    {
+        ContainerInfo.Children.Clear();
+
+        if (state.OutputContainer is null)
+        {
+            ContainerInfoName.Text = "";
+            ContainerInfoFill.Text = "";
+            ContainerInfo.Children.Add(
+                new Label { Text = Loc.GetString("reagent-dispenser-window-no-container-loaded-text"), });
+            return;
         }
 
-        /// <summary>
-        /// Update the button grid of reagents which can be dispensed.
-        /// </summary>
-        /// <param name="inventory">Reagents which can be dispensed by this dispenser</param>
-        public void UpdateReagentsList(List<ReagentInventoryItem> inventory)
+        // Set Name of the container and its fill status (Ex: 44/100u)
+        ContainerInfoName.Text = state.OutputContainer.DisplayName;
+        ContainerInfoFill.Text = state.OutputContainer.CurrentVolume + "/" + state.OutputContainer.MaxVolume;
+
+        foreach (var (reagent, quantity) in state.OutputContainer.Reagents!)
         {
-            if (ReagentList == null)
-                return;
+            // Try get to the prototype for the given reagent. This gives us its name.
+            var localizedName = _prototypeManager.TryIndex(reagent.Prototype, out ReagentPrototype? p)
+                ? p.LocalizedName
+                : Loc.GetString("reagent-dispenser-window-reagent-name-not-found-text");
 
-            ReagentList.Children.Clear();
-            //Sort inventory by reagentLabel
-            inventory.Sort((x, y) => x.ReagentLabel.CompareTo(y.ReagentLabel));
-
-            foreach (var item in inventory)
+            var nameLabel = new Label { Text = $"{localizedName}: ", };
+            var quantityLabel = new Label
             {
-                var card = new ReagentCardControl(item);
-                card.OnPressed += OnDispenseReagentButtonPressed;
-                card.OnEjectButtonPressed += OnEjectJugButtonPressed;
-                ReagentList.Children.Add(card);
-            }
-        }
+                Text = Loc.GetString("reagent-dispenser-window-quantity-label-text", ("quantity", quantity)),
+                StyleClasses = { StyleNano.StyleClassLabelSecondaryColor, }
+            };
 
-        /// <summary>
-        /// Update the UI state when new state data is received from the server.
-        /// </summary>
-        /// <param name="state">State data sent by the server.</param>
-        public void UpdateState(BoundUserInterfaceState state)
-        {
-            var castState = (ReagentDispenserBoundUserInterfaceState) state;
-            UpdateContainerInfo(castState);
-            UpdateReagentsList(castState.Inventory);
-
-            _entityManager.TryGetEntity(castState.OutputContainerEntity, out var outputContainerEnt);
-            View.SetEntity(outputContainerEnt);
-
-            // Disable the Clear & Eject button if no beaker
-            ClearButton.Disabled = castState.OutputContainer is null;
-            EjectButton.Disabled = castState.OutputContainer is null;
-
-            AmountGrid.Selected = ((int)castState.SelectedDispenseAmount).ToString();
-        }
-
-        /// <summary>
-        /// Update the fill state and list of reagents held by the current reagent container, if applicable.
-        /// <para>Also highlights a reagent if it's dispense button is being mouse hovered.</para>
-        /// </summary>
-        /// <param name="state">State data for the dispenser.</param>
-        /// or null if no button is being hovered.</param>
-        public void UpdateContainerInfo(ReagentDispenserBoundUserInterfaceState state)
-        {
-            ContainerInfo.Children.Clear();
-
-            if (state.OutputContainer is null)
-            {
-                ContainerInfoName.Text = "";
-                ContainerInfoFill.Text = "";
-                ContainerInfo.Children.Add(new Label { Text = Loc.GetString("reagent-dispenser-window-no-container-loaded-text") });
-                return;
-            }
-
-            // Set Name of the container and its fill status (Ex: 44/100u)
-            ContainerInfoName.Text = state.OutputContainer.DisplayName;
-            ContainerInfoFill.Text = state.OutputContainer.CurrentVolume + "/" + state.OutputContainer.MaxVolume;
-
-            foreach (var (reagent, quantity) in state.OutputContainer.Reagents!)
-            {
-                // Try get to the prototype for the given reagent. This gives us its name.
-                var localizedName = _prototypeManager.TryIndex(reagent.Prototype, out ReagentPrototype? p)
-                    ? p.LocalizedName
-                    : Loc.GetString("reagent-dispenser-window-reagent-name-not-found-text");
-
-                var nameLabel = new Label { Text = $"{localizedName}: " };
-                var quantityLabel = new Label
-                {
-                    Text = Loc.GetString("reagent-dispenser-window-quantity-label-text", ("quantity", quantity)),
-                    StyleClasses = { StyleNano.StyleClassLabelSecondaryColor },
-                };
-
-                ContainerInfo.Children.Add(new BoxContainer
+            ContainerInfo.Children.Add(
+                new BoxContainer
                 {
                     Orientation = LayoutOrientation.Horizontal,
                     Children =
                     {
                         nameLabel,
-                        quantityLabel,
+                        quantityLabel
                     }
                 });
-            }
         }
     }
+}
 
-    public sealed class DispenseReagentButton : Button
+public sealed class DispenseReagentButton : Button
+{
+    public string ReagentId { get; }
+
+    public DispenseReagentButton(string reagentId, string text, string amount)
     {
-        public string ReagentId { get; }
-
-        public DispenseReagentButton(string reagentId, string text, string amount)
-        {
-            AddStyleClass("OpenRight");
-            ReagentId = reagentId;
-            Text = text + " " + amount;
-        }
+        AddStyleClass("OpenRight");
+        ReagentId = reagentId;
+        Text = text + " " + amount;
     }
+}
 
-    public sealed class EjectJugButton : Button
+public sealed class EjectJugButton : Button
+{
+    public string ReagentId { get; }
+
+    public EjectJugButton(string reagentId)
     {
-        public string ReagentId { get; }
-
-        public EjectJugButton(string reagentId)
-        {
-            AddStyleClass("OpenLeft");
-            ReagentId = reagentId;
-            Text = "⏏";
-        }
+        AddStyleClass("OpenLeft");
+        ReagentId = reagentId;
+        Text = "⏏";
     }
 }

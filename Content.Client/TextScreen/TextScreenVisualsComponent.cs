@@ -1,7 +1,13 @@
+#region
+
 using System.Numerics;
 using Robust.Client.Graphics;
 
+#endregion
+
+
 namespace Content.Client.TextScreen;
+
 
 [RegisterComponent]
 public sealed partial class TextScreenVisualsComponent : Component
@@ -17,19 +23,19 @@ public sealed partial class TextScreenVisualsComponent : Component
     /// <remarks>
     ///     15,151,251 is the old ss13 color, from tg
     /// </remarks>
-    [DataField("color"), ViewVariables(VVAccess.ReadWrite)]
-    public Color Color = new Color(15, 151, 251);
+    [DataField("color"), ViewVariables(VVAccess.ReadWrite),]
+    public Color Color = new(15, 151, 251);
 
     /// <summary>
     ///     Offset for centering the text.
     /// </summary>
-    [DataField("textOffset"), ViewVariables(VVAccess.ReadWrite)]
+    [DataField("textOffset"), ViewVariables(VVAccess.ReadWrite),]
     public Vector2 TextOffset = Vector2.Zero;
 
     /// <summary>
-    ///    Offset for centering the timer.
+    ///     Offset for centering the timer.
     /// </summary>
-    [DataField("timerOffset"), ViewVariables(VVAccess.ReadWrite)]
+    [DataField("timerOffset"), ViewVariables(VVAccess.ReadWrite),]
     public Vector2 TimerOffset = Vector2.Zero;
 
     /// <summary>
@@ -53,7 +59,7 @@ public sealed partial class TextScreenVisualsComponent : Component
     /// <summary>
     ///     Text the screen should show when it finishes a timer.
     /// </summary>
-    [DataField("text"), ViewVariables(VVAccess.ReadWrite)]
+    [DataField("text"), ViewVariables(VVAccess.ReadWrite),]
     public string?[] Text = new string?[2];
 
     /// <summary>
@@ -69,8 +75,10 @@ public sealed partial class TextScreenVisualsComponent : Component
 
     [DataField("hourFormat")]
     public string HourFormat = "D2";
+
     [DataField("minuteFormat")]
     public string MinuteFormat = "D2";
+
     [DataField("secondFormat")]
     public string SecondFormat = "D2";
 }

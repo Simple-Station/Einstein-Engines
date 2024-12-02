@@ -1,3 +1,5 @@
+#region
+
 using Content.Shared.CCVar;
 using Content.Shared.OfferItem;
 using Robust.Client.Graphics;
@@ -5,7 +7,11 @@ using Robust.Client.Input;
 using Robust.Client.Player;
 using Robust.Shared.Configuration;
 
+#endregion
+
+
 namespace Content.Client.OfferItem;
+
 
 public sealed class OfferItemSystem : SharedOfferItemSystem
 {
@@ -15,10 +21,9 @@ public sealed class OfferItemSystem : SharedOfferItemSystem
     [Dependency] private readonly IInputManager _inputManager = default!;
     [Dependency] private readonly IEyeManager _eye = default!;
 
-    public override void Initialize()
-    {
+    public override void Initialize() =>
         Subs.CVar(_cfg, CCVars.OfferModeIndicatorsPointShow, OnShowOfferIndicatorsChanged, true);
-    }
+
     public override void Shutdown()
     {
         _overlayManager.RemoveOverlay<OfferItemIndicatorsOverlay>();
@@ -35,15 +40,17 @@ public sealed class OfferItemSystem : SharedOfferItemSystem
 
         return IsInOfferMode(entity.Value);
     }
+
     private void OnShowOfferIndicatorsChanged(bool isShow)
     {
         if (isShow)
         {
-            _overlayManager.AddOverlay(new OfferItemIndicatorsOverlay(
-                _inputManager,
-                EntityManager,
-                _eye,
-                this));
+            _overlayManager.AddOverlay(
+                new OfferItemIndicatorsOverlay(
+                    _inputManager,
+                    EntityManager,
+                    _eye,
+                    this));
         }
         else
             _overlayManager.RemoveOverlay<OfferItemIndicatorsOverlay>();

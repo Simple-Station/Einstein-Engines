@@ -1,9 +1,15 @@
-using Content.Client.Remote.UI;
+#region
+
 using Content.Client.Items;
-using Content.Shared.Remotes.EntitySystems;
+using Content.Client.Remote.UI;
 using Content.Shared.Remotes.Components;
+using Content.Shared.Remotes.EntitySystems;
+
+#endregion
+
 
 namespace Content.Client.Remotes.EntitySystems;
+
 
 public sealed class DoorRemoteSystem : SharedDoorRemoteSystem
 {

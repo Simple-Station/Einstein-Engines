@@ -1,17 +1,23 @@
+#region
+
 using System.Numerics;
+using Content.Shared.Traits.Assorted.Components;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
-using Content.Shared.Traits.Assorted.Components;
+
+#endregion
+
 
 namespace Content.Client.Overlays;
 
-public sealed partial class UltraVisionOverlay : Overlay
+
+public sealed class UltraVisionOverlay : Overlay
 {
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
-    [Dependency] IEntityManager _entityManager = default!;
+    [Dependency] private readonly IEntityManager _entityManager = default!;
 
 
     public override bool RequestScreenTexture => true;
@@ -26,7 +32,7 @@ public sealed partial class UltraVisionOverlay : Overlay
 
     protected override bool BeforeDraw(in OverlayDrawArgs args)
     {
-        if (_playerManager.LocalEntity is not { Valid: true } player
+        if (_playerManager.LocalEntity is not { Valid: true, } player
             || !_entityManager.HasComponent<UltraVisionComponent>(player))
             return false;
 

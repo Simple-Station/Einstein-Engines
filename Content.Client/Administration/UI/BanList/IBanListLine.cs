@@ -1,7 +1,13 @@
-﻿using Content.Shared.Administration.BanList;
+﻿#region
+
+using Content.Shared.Administration.BanList;
 using Robust.Client.UserInterface.Controls;
 
+#endregion
+
+
 namespace Content.Client.Administration.UI.BanList;
+
 
 public interface IBanListLine<T> where T : SharedServerBan
 {

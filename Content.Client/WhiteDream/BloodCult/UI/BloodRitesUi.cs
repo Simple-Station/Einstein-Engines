@@ -1,4 +1,6 @@
-﻿using System.Numerics;
+﻿#region
+
+using System.Numerics;
 using Content.Client.Popups;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.FixedPoint;
@@ -11,7 +13,11 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Prototypes;
 
+#endregion
+
+
 namespace Content.Client.WhiteDream.BloodCult.UI;
+
 
 [UsedImplicitly]
 public sealed class BloodRitesUi : BoundUserInterface
@@ -37,7 +43,7 @@ public sealed class BloodRitesUi : BoundUserInterface
     protected override void Open()
     {
         base.Open();
-        _menu = new RadialMenu
+        _menu = new()
         {
             HorizontalExpand = true,
             VerticalExpand = true,
@@ -75,7 +81,7 @@ public sealed class BloodRitesUi : BoundUserInterface
         var container = new RadialContainer
         {
             Name = "Blood Rites",
-            Radius = 64f + 32f * MathF.Log(crafts.Count),
+            Radius = 64f + 32f * MathF.Log(crafts.Count)
         };
 
         _menu.AddChild(container);
@@ -101,7 +107,7 @@ public sealed class BloodRitesUi : BoundUserInterface
         var button = new RadialMenuTextureButton
         {
             ToolTip = Loc.GetString(name),
-            StyleClasses = { "RadialMenuButton" },
+            StyleClasses = { "RadialMenuButton", },
             SetSize = _itemSize
         };
 

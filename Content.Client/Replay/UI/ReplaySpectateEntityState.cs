@@ -1,13 +1,19 @@
+#region
+
 using Content.Client.Gameplay;
 using Content.Client.UserInterface.Systems.Chat;
 using Content.Client.UserInterface.Systems.MenuBar.Widgets;
 using Robust.Client.Replays.UI;
 using static Robust.Client.UserInterface.Controls.LayoutContainer;
 
+#endregion
+
+
 namespace Content.Client.Replay.UI;
 
+
 /// <summary>
-/// Gameplay state when observing/spectating an entity during a replay.
+///     Gameplay state when observing/spectating an entity during a replay.
 /// </summary>
 [Virtual]
 public class ReplaySpectateEntityState : GameplayState
@@ -28,9 +34,7 @@ public class ReplaySpectateEntityState : GameplayState
         replayWidget.Visible = !_replayManager.IsScreenshotMode;
 
         foreach (var chatbox in UserInterfaceManager.GetUIController<ChatUIController>().Chats)
-        {
             chatbox.ChatInput.Visible = _replayManager.IsScreenshotMode;
-        }
     }
 
     protected override void Shutdown()
@@ -43,9 +47,7 @@ public class ReplaySpectateEntityState : GameplayState
         }
 
         foreach (var chatbox in UserInterfaceManager.GetUIController<ChatUIController>().Chats)
-        {
             chatbox.ChatInput.Visible = true;
-        }
 
         base.Shutdown();
     }

@@ -1,6 +1,12 @@
+#region
+
 using System.Numerics;
 
+#endregion
+
+
 namespace Content.Client.NPC;
+
 
 [RegisterComponent]
 public sealed partial class NPCSteeringComponent : Component

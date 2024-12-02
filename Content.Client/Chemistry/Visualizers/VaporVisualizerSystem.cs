@@ -1,11 +1,17 @@
-﻿using Content.Shared.Vapor;
+﻿#region
+
+using Content.Shared.Vapor;
 using Robust.Client.Animations;
 using Robust.Client.GameObjects;
 
+#endregion
+
+
 namespace Content.Client.Chemistry.Visualizers;
 
+
 /// <summary>
-/// Handles vapor playing the 'being sprayed' animation if necessary.
+///     Handles vapor playing the 'being sprayed' animation if necessary.
 /// </summary>
 public sealed class VaporVisualizerSystem : VisualizerSystem<VaporVisualsComponent>
 {
@@ -16,21 +22,21 @@ public sealed class VaporVisualizerSystem : VisualizerSystem<VaporVisualsCompone
     }
 
     /// <summary>
-    /// Constructs the 'being sprayed' animation for the vapor entity.
+    ///     Constructs the 'being sprayed' animation for the vapor entity.
     /// </summary>
     private void OnComponentInit(EntityUid uid, VaporVisualsComponent comp, ComponentInit args)
     {
-        comp.VaporFlick = new Animation()
+        comp.VaporFlick = new()
         {
             Length = TimeSpan.FromSeconds(comp.AnimationTime),
             AnimationTracks =
             {
-                new AnimationTrackSpriteFlick()
+                new AnimationTrackSpriteFlick
                 {
                     LayerKey = VaporVisualLayers.Base,
                     KeyFrames =
                     {
-                        new AnimationTrackSpriteFlick.KeyFrame(comp.AnimationState, 0f)
+                        new(comp.AnimationState, 0f)
                     }
                 }
             }
@@ -40,20 +46,21 @@ public sealed class VaporVisualizerSystem : VisualizerSystem<VaporVisualsCompone
             state &&
             TryComp<AnimationPlayerComponent>(uid, out var animPlayer) &&
             !AnimationSystem.HasRunningAnimation(uid, animPlayer, VaporVisualsComponent.AnimationKey))
-        {
             AnimationSystem.Play(uid, animPlayer, comp.VaporFlick, VaporVisualsComponent.AnimationKey);
-        }
     }
 
     /// <summary>
-    /// Ensures that the vapor entity plays its 'being sprayed' animation if necessary.
+    ///     Ensures that the vapor entity plays its 'being sprayed' animation if necessary.
     /// </summary>
-    protected override void OnAppearanceChange(EntityUid uid, VaporVisualsComponent comp, ref AppearanceChangeEvent args)
+    protected override void OnAppearanceChange(
+        EntityUid uid,
+        VaporVisualsComponent comp,
+        ref AppearanceChangeEvent args
+    )
     {
-        if (AppearanceSystem.TryGetData<Color>(uid, VaporVisuals.Color, out var color, args.Component) && args.Sprite != null)
-        {
+        if (AppearanceSystem.TryGetData<Color>(uid, VaporVisuals.Color, out var color, args.Component) &&
+            args.Sprite != null)
             args.Sprite.Color = color;
-        }
     }
 }
 

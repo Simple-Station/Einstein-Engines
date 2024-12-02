@@ -1,9 +1,12 @@
-using Content.Client.Eui;
-using Content.Shared.Psionics;
-using JetBrains.Annotations;
-using Robust.Client.Graphics;
+#region
 
-namespace Content.Client.Psionics.UI
+using Content.Client.Eui;
+using JetBrains.Annotations;
+
+#endregion
+
+
+amespace Content.Client.Psionics.UI
 {
     [UsedImplicitly]
     public sealed class AcceptPsionicsEui : BaseEui
