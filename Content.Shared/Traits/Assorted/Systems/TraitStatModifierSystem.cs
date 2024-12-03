@@ -2,6 +2,7 @@ using Content.Shared.Contests;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Traits.Assorted.Components;
+using Content.Shared.Damage.Events;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Damage.Components;
 
@@ -17,8 +18,10 @@ public sealed partial class TraitStatModifierSystem : EntitySystem
         SubscribeLocalEvent<CritModifierComponent, ComponentStartup>(OnCritStartup);
         SubscribeLocalEvent<DeadModifierComponent, ComponentStartup>(OnDeadStartup);
         SubscribeLocalEvent<StaminaCritModifierComponent, ComponentStartup>(OnStaminaCritStartup);
-        SubscribeLocalEvent<AdrenalineComponent, GetMeleeDamageEvent>(OnAdrenalineGetDamage);
-        SubscribeLocalEvent<PainToleranceComponent, GetMeleeDamageEvent>(OnPainToleranceGetDamage);
+        SubscribeLocalEvent<AdrenalineComponent, GetMeleeDamageEvent>(OnAdrenalineGetMeleeDamage);
+        SubscribeLocalEvent<AdrenalineComponent, GetThrowingDamageEvent>(OnAdrenalineGetThrowingDamage);
+        SubscribeLocalEvent<PainToleranceComponent, GetMeleeDamageEvent>(OnPainToleranceGetMeleeDamage);
+        SubscribeLocalEvent<PainToleranceComponent, GetThrowingDamageEvent>(OnPainToleranceGetThrowingDamage);
     }
 
     private void OnCritStartup(EntityUid uid, CritModifierComponent component, ComponentStartup args)
@@ -49,15 +52,35 @@ public sealed partial class TraitStatModifierSystem : EntitySystem
         stamina.CritThreshold += component.CritThresholdModifier;
     }
 
-    private void OnAdrenalineGetDamage(EntityUid uid, AdrenalineComponent component, ref GetMeleeDamageEvent args)
+    private void OnAdrenalineGetMeleeDamage(EntityUid uid, AdrenalineComponent component, ref GetMeleeDamageEvent args)
     {
-        var modifier = _contests.HealthContest(uid, component.BypassClamp, component.RangeModifier);
-        args.Damage *= component.Inverse ? 1 / modifier : modifier;
+        args.Damage *= GetAdrenalineMultiplier(uid, component);
     }
 
-    private void OnPainToleranceGetDamage(EntityUid uid, PainToleranceComponent component, ref GetMeleeDamageEvent args)
+    private void OnAdrenalineGetThrowingDamage(EntityUid uid, AdrenalineComponent component, ref GetThrowingDamageEvent args)
+    {
+        args.Damage *= GetAdrenalineMultiplier(uid, component);
+    }
+
+    private float GetAdrenalineMultiplier(EntityUid uid, AdrenalineComponent component)
+    {
+        var modifier = _contests.HealthContest(uid, component.BypassClamp, component.RangeModifier);
+        return component.Inverse ? 1 / modifier : modifier;
+    }
+
+    private void OnPainToleranceGetMeleeDamage(EntityUid uid, PainToleranceComponent component, ref GetMeleeDamageEvent args)
+    {
+        args.Damage *= GetPainToleranceMultiplier(uid, component);
+    }
+
+    private void OnPainToleranceGetThrowingDamage(EntityUid uid, PainToleranceComponent component, ref GetThrowingDamageEvent args)
+    {
+        args.Damage *= GetPainToleranceMultiplier(uid, component);
+    }
+
+    private float GetPainToleranceMultiplier(EntityUid uid, PainToleranceComponent component)
     {
         var modifier = _contests.StaminaContest(uid, component.BypassClamp, component.RangeModifier);
-        args.Damage *= component.Inverse ? 1 / modifier : modifier;
+        return component.Inverse ? 1 / modifier : modifier;
     }
 }

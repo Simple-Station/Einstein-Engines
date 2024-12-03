@@ -145,10 +145,16 @@ namespace Content.Shared.Damage
                 return damage;
             }
 
-            var before = new BeforeDamageChangedEvent(damage, origin, targetPart, canSever ?? true, canEvade ?? false, partMultiplier ?? 1.00f);
+            var before = new BeforeDamageChangedEvent(damage, origin, targetPart);
             RaiseLocalEvent(uid.Value, ref before);
 
-            if (before.Cancelled || before.Evaded)
+            if (before.Cancelled)
+                return null;
+
+            var partDamage = new TryChangePartDamageEvent(damage, origin, targetPart, canSever ?? true, canEvade ?? false, partMultiplier ?? 1.00f);
+            RaiseLocalEvent(uid.Value, ref partDamage);
+
+            if (partDamage.Evaded || partDamage.Cancelled)
                 return null;
 
             // Apply resistances
@@ -162,6 +168,13 @@ namespace Content.Shared.Damage
                     // TODO: We need to add a check to see if the given armor covers the targeted part (if any) to modify or not.
                     damage = DamageSpecifier.ApplyModifierSet(damage, modifierSet);
                 }
+
+                // From Solidus: If you are reading this, I owe you a more comprehensive refactor of this entire system.
+                if (damageable.DamageModifierSets.Count > 0)
+                    foreach (var enumerableModifierSet in damageable.DamageModifierSets)
+                        if (_prototypeManager.TryIndex<DamageModifierSetPrototype>(enumerableModifierSet, out var enumerableModifier))
+                            damage = DamageSpecifier.ApplyModifierSet(damage, enumerableModifier);
+
                 var ev = new DamageModifyEvent(damage, origin, targetPart);
                 RaiseLocalEvent(uid.Value, ev);
                 damage = ev.Damage;
@@ -221,6 +234,17 @@ namespace Content.Shared.Damage
             // Setting damage does not count as 'dealing' damage, even if it is set to a larger value, so we pass an
             // empty damage delta.
             DamageChanged(uid, component, new DamageSpecifier());
+
+            // Shitmed Start
+            if (HasComp<TargetingComponent>(uid))
+                foreach (var (part, _) in _body.GetBodyChildren(uid))
+                {
+                    if (!TryComp(part, out DamageableComponent? damageComp))
+                        continue;
+
+                    SetAllDamage(part, damageComp, newValue);
+                }
+            // Shitmed End
         }
 
         public void SetDamageModifierSetId(EntityUid uid, string damageModifierSetId, DamageableComponent? comp = null)
@@ -264,11 +288,6 @@ namespace Content.Shared.Damage
             TryComp<MobThresholdsComponent>(uid, out var thresholds);
             _mobThreshold.SetAllowRevives(uid, true, thresholds); // do this so that the state changes when we set the damage
             SetAllDamage(uid, component, 0);
-            // Shitmed Start
-            if (HasComp<TargetingComponent>(uid))
-                foreach (var part in _body.GetBodyChildren(uid))
-                    RaiseLocalEvent(part.Id, new RejuvenateEvent());
-            // Shitmed End
             _mobThreshold.SetAllowRevives(uid, false, thresholds);
         }
 
@@ -299,6 +318,16 @@ namespace Content.Shared.Damage
     /// </summary>
     [ByRefEvent]
     public record struct BeforeDamageChangedEvent(
+        DamageSpecifier Damage,
+        EntityUid? Origin = null,
+        TargetBodyPart? TargetPart = null,
+        bool Cancelled = false);
+
+    /// <summary>
+    ///     Raised on parts before damage is done so we can cancel the damage if they evade.
+    /// </summary>
+    [ByRefEvent]
+    public record struct TryChangePartDamageEvent(
         DamageSpecifier Damage,
         EntityUid? Origin = null,
         TargetBodyPart? TargetPart = null,

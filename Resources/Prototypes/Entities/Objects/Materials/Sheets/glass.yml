@@ -236,6 +236,18 @@
         canReact: false
 
 - type: entity
+  parent: SheetRGlass
+  id: SheetRGlass10
+  name: reinforced glass
+  suffix: Single
+  components:
+  - type: Sprite
+    state: rglass
+  - type: Stack
+    stackType: ReinforcedGlass
+    count: 10
+
+- type: entity
   parent: SheetGlassBase
   id: SheetPGlass
   name: plasma glass
@@ -326,6 +338,18 @@
 
 - type: entity
   parent: SheetPGlass
+  id: SheetPGlass10
+  name: plasma glass
+  suffix: 10
+  components:
+  - type: Sprite
+    state: pglass
+  - type: Stack
+    stackType: PlasmaGlass
+    count: 10
+
+- type: entity
+  parent: SheetPGlass
   id: SheetRPGlass
   name: reinforced plasma glass
   description: A reinforced sheet of translucent plasma.
@@ -391,6 +415,18 @@
   - type: Stack
     stackType: ReinforcedPlasmaGlass
     count: 1
+
+- type: entity
+  parent: SheetRPGlass
+  id: SheetRPGlass10
+  name: reinforced plasma glass
+  suffix: Single
+  components:
+  - type: Sprite
+    state: rpglass
+  - type: Stack
+    stackType: ReinforcedPlasmaGlass
+    count: 10
 
 - type: entity
   parent: SheetGlassBase
@@ -483,6 +519,18 @@
 
 - type: entity
   parent: SheetUGlass
+  id: SheetUGlass10
+  name: uranium glass
+  suffix: 10
+  components:
+  - type: Sprite
+    state: uglass
+  - type: Stack
+    stackType: UraniumGlass
+    count: 10
+
+- type: entity
+  parent: SheetUGlass
   id: SheetRUGlass
   name: reinforced uranium glass
   description: A reinforced sheet of uranium.
@@ -547,6 +595,18 @@
   - type: Stack
     stackType: ReinforcedUraniumGlass
     count: 1
+
+- type: entity
+  parent: SheetRUGlass
+  id: SheetRUGlass10
+  name: reinforced uranium glass
+  suffix: 10
+  components:
+  - type: Sprite
+    state: ruglass
+  - type: Stack
+    stackType: ReinforcedUraniumGlass
+    count: 10
 
 - type: entity
   parent: SheetGlassBase
@@ -624,3 +684,15 @@
   - type: Stack
     stackType: ClockworkGlass
     count: 1
+
+- type: entity
+  parent: SheetClockworkGlass
+  id: SheetClockworkGlass10
+  name: clockwork glass
+  suffix: 10
+  components:
+  - type: Sprite
+    state: cglass
+  - type: Stack
+    stackType: ClockworkGlass
+    count: 10

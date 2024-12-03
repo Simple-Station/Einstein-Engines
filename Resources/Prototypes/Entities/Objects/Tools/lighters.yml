@@ -78,6 +78,7 @@
     damage:
       types:
         Blunt: 0
+  - type: DamageOtherOnHit
   - type: Welder
     fuelConsumption: 0.01
     fuelLitCost: 0.1
@@ -87,6 +88,13 @@
     netsync: false
     radius: 1.1 #smallest possible
     color: orange
+  - type: Cautery
+    speed: 0.45
+  - type: SurgeryTool
+    startSound:
+      collection: lighterOnSounds
+    endSound:
+      collection: lighterOffSounds
 
 - type: entity
   name: cheap lighter

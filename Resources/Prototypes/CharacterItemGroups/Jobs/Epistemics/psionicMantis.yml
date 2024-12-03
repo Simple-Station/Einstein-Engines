@@ -14,11 +14,19 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutPsionicMantisEquipment
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutPsionicMantisEquipment
+  maxItems: 3
+  items:
+    - type: loadout
+      id: LoadoutPsionicMantisEquipmentCandles
+    - type: loadout
+      id: LoadoutPsionicMantisEquipmentCandlesSmall
+    - type: loadout
+      id: LoadoutPsionicMantisPillCanisterSpaceDrugs
+    - type: loadout
+      id: LoadoutPsionicMantisPillCanisterCryptobiolin
+
 #- type: characterItemGroup
 #  id: LoadoutPsionicMantisEyes
 #  maxItems: 1
@@ -61,7 +69,11 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutPsionicMantisUniforms
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutPsionicMantisUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutPsionicMantisUniformSuit
+    - type: loadout
+      id: LoadoutPsionicMantisUniformSkirt

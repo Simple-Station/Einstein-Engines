@@ -372,7 +372,7 @@ public partial class SharedBodySystem
 
         if (part.Body is { } bodyEnt)
         {
-            if (IsPartRoot(bodyEnt, partId, part: part))
+            if (IsPartRoot(bodyEnt, partId, part: part) || !part.CanSever)
                 return gibs;
 
             ChangeSlotState((partId, part), true);
@@ -403,6 +403,26 @@ public partial class SharedBodySystem
         }
         _audioSystem.PlayPredicted(gibSoundOverride, Transform(partId).Coordinates, null);
         return gibs;
+    }
+
+    public virtual bool BurnPart(EntityUid partId,
+        BodyPartComponent? part = null)
+    {
+        if (!Resolve(partId, ref part, logMissing: false))
+            return false;
+
+        if (part.Body is { } bodyEnt)
+        {
+            if (IsPartRoot(bodyEnt, partId, part: part))
+                return false;
+
+            ChangeSlotState((partId, part), true);
+            RemovePartChildren((partId, part), bodyEnt);
+            QueueDel(partId);
+            return true;
+        }
+
+        return false;
     }
 
     private void OnProfileLoadFinished(EntityUid uid, BodyComponent component, ProfileLoadFinishedEvent args)

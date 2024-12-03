@@ -1,5 +1,46 @@
 # Uniforms
 # Backpacks
+- type: loadout
+  id: LoadoutBackpackScience
+  category: JobsEpistemicsAAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackScience
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEpistemicsBackpacks
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
+
+- type: loadout
+  id: LoadoutBackpackSatchelScience
+  category: JobsEpistemicsAAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackSatchelScience
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEpistemicsBackpacks
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
+
+- type: loadout
+  id: LoadoutBackpackDuffelScience
+  category: JobsEpistemicsAAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackDuffelScience
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEpistemicsBackpacks
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
 
 # Belt
 
@@ -175,6 +216,7 @@
   category: JobsEpistemicsAAUncategorized
   cost: 0
   exclusive: true
+  customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutEpistemicsOuter
@@ -189,6 +231,7 @@
   category: JobsEpistemicsAAUncategorized
   cost: 0
   exclusive: true
+  customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutEpistemicsOuter
@@ -231,6 +274,7 @@
   category: JobsEpistemicsAAUncategorized
   cost: 0
   exclusive: true
+  customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutEpistemicsOuter

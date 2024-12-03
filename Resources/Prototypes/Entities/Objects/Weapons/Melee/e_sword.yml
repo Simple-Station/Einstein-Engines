@@ -38,6 +38,8 @@
             Slash: 8
             Heat: 10
             Structural: 20
+  - type: ItemToggleEmbeddableProjectile
+    activatedEmbedOnThrow: true
   - type: Sprite
     sprite: Objects/Weapons/Melee/e_sword.rsi
     layers:
@@ -53,6 +55,12 @@
     damage:
       types:
         Blunt: 4.5
+  - type: DamageOtherOnHit
+    staminaCost: 5
+  - type: EmbeddableProjectile
+    embedOnThrow: false
+  - type: ThrowingAngle
+    angle: 225
   - type: Item
     size: Small
     sprite: DeltaV/Objects/Weapons/Melee/e_sword.rsi # Delta-V
@@ -85,6 +93,17 @@
       - NoPaint
   - type: IgnitionSource
     temperature: 700
+  - type: Scalpel
+    speed: 0.75
+  - type: Cautery
+    speed: 0.2
+  - type: SurgeryTool
+    startSound:
+      path: /Audio/Weapons/ebladehum.ogg
+    endSound:
+      path: /Audio/Weapons/eblade1.ogg
+      params:
+        variation: 0.250
 
 - type: entity
   name: antique energy sword
@@ -134,6 +153,11 @@
         volume: -6
   - type: ItemToggleDisarmMalus
     activatedDisarmMalus: 0.4
+  - type: ItemToggleEmbeddableProjectile
+    activatedOffset: 0.0,0.0
+    activatedRemovalTime: 3
+  - type: ItemToggleThrowingAngle
+    activatedAngle: 135
   - type: Sprite
     sprite: Objects/Weapons/Melee/e_dagger.rsi
     layers:
@@ -150,6 +174,17 @@
     damage:
       types:
         Blunt: 1
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Piercing: 3
+    staminaCost: 3.5
+  - type: EmbeddableProjectile
+    offset: 0.3,0.0
+    removalTime: 0.0
+    embedOnThrow: true
+  - type: ThrowingAngle
+    angle: 315
   - type: Item
     size: Tiny
     sprite: Objects/Weapons/Melee/e_dagger.rsi

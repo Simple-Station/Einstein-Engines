@@ -78,6 +78,7 @@
         Blunt: 6 #i mean... i GUESS you could use it like that
     soundHit:
       collection: MetalThud
+  - type: DamageOtherOnHit
   - type: RefillableSolution
     solution: Welder
   - type: SolutionContainerManager
@@ -114,6 +115,13 @@
         Blunt: -15
         Piercing: -15
         Slash: -15
+  - type: Cautery
+    speed: 0.7
+  - type: SurgeryTool
+    startSound:
+      collection: Welder
+    endSound:
+      collection: WelderOff
 
 - type: entity
   name: industrial welding tool

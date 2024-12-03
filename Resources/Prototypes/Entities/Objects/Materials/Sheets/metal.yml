@@ -295,6 +295,8 @@
   - type: ShortConstruction
     entries:
     - prototype: SecureWindoor
+  - type: TwistedConstructionTarget
+    replacementProto: RunedMetal1
 
 - type: entity
   parent: SheetPlasteel

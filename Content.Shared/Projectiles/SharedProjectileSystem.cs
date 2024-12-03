@@ -138,7 +138,8 @@ public abstract partial class SharedProjectileSystem : EntitySystem
 
     private void OnEmbedThrowDoHit(EntityUid uid, EmbeddableProjectileComponent component, ThrowDoHitEvent args)
     {
-        if (!component.EmbedOnThrow)
+        if (!component.EmbedOnThrow ||
+            HasComp<ThrownItemImmuneComponent>(args.Target))
             return;
 
         Embed(uid, args.Target, null, component);

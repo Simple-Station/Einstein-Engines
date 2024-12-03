@@ -6,6 +6,57 @@
 # Ears
 
 # Equipment
+- type: loadout
+  id: LoadoutPsionicMantisEquipmentCandles
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - BoxCandle
+
+- type: loadout
+  id: LoadoutPsionicMantisEquipmentCandlesSmall
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - BoxCandleSmall
+
+- type: loadout
+  id: LoadoutPsionicMantisPillCanisterSpaceDrugs
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - PillCanisterSpaceDrugs
+
+- type: loadout
+  id: LoadoutPsionicMantisPillCanisterCryptobiolin
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - PillCanisterCryptobiolin
 
 # Eyes
 
@@ -22,7 +73,7 @@
 # Outer
 - type: loadout
   id: LoadoutScienceOuterWinterCoatMantis
-  category: JobsEpistemicsAAUncategorized
+  category: JobsEpistemicsPsionicMantis
   cost: 0
   exclusive: true
   requirements:
@@ -38,3 +89,30 @@
 # Shoes
 
 # Uniforms
+- type: loadout
+  id: LoadoutPsionicMantisUniformSuit
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingUniformJumpsuitMantis
+
+- type: loadout
+  id: LoadoutPsionicMantisUniformSkirt
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingUniformSkirtMantis
