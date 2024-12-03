@@ -131,8 +131,7 @@ public abstract partial class SharedSurgerySystem
                     continue;
                 var (organId, organ) = organValue;
 
-                if (organ.OnAdd == null)
-                    organ.OnAdd = new ComponentRegistry();
+                organ.OnAdd ??= new();
 
                 foreach (var (key, compToAdd) in compsToAdd)
                     organ.OnAdd[key] = compToAdd;
@@ -148,12 +147,10 @@ public abstract partial class SharedSurgerySystem
 
             foreach (var (organSlotId, compsToRemove) in ent.Comp.RemoveOrganOnAdd)
             {
-                if (!organSlotIdToOrgan.TryGetValue(organSlotId, out var organValue))
+                if (!organSlotIdToOrgan.TryGetValue(organSlotId, out var organValue) ||
+                    organValue.Item2.OnAdd == null)
                     continue;
                 var (organId, organ) = organValue;
-
-                if (organ.OnAdd == null)
-                    continue;
 
                 // Need to raise this event first before removing the component entries so
                 // OrganEffectSystem still knows which components on the body to remove
@@ -229,25 +226,15 @@ public abstract partial class SharedSurgerySystem
         if (ent.Comp.AddOrganOnAdd != null)
         {
             var organSlotIdToOrgan = _body.GetPartOrgans(args.Part).ToDictionary(o => o.Item2.SlotId, o => o.Item2);
-
             foreach (var (organSlotId, compsToAdd) in ent.Comp.AddOrganOnAdd)
             {
                 if (!organSlotIdToOrgan.TryGetValue(organSlotId, out var organ))
                     continue;
 
-                if (organ.OnAdd == null)
+                if (organ.OnAdd == null || compsToAdd.Keys.Any(key => !organ.OnAdd.ContainsKey(key)))
                 {
                     args.Cancelled = true;
                     return;
-                }
-
-                foreach (var key in compsToAdd.Keys)
-                {
-                    if (!organ.OnAdd.ContainsKey(key))
-                    {
-                        args.Cancelled = true;
-                        return;
-                    }
                 }
             }
         }
@@ -255,22 +242,15 @@ public abstract partial class SharedSurgerySystem
         if (ent.Comp.RemoveOrganOnAdd != null)
         {
             var organSlotIdToOrgan = _body.GetPartOrgans(args.Part).ToDictionary(o => o.Item2.SlotId, o => o.Item2);
-
             foreach (var (organSlotId, compsToRemove) in ent.Comp.RemoveOrganOnAdd)
             {
-                if (!organSlotIdToOrgan.TryGetValue(organSlotId, out var organ))
+                if (!organSlotIdToOrgan.TryGetValue(organSlotId, out var organ) || organ.OnAdd == null)
                     continue;
 
-                if (organ.OnAdd == null)
-                    continue;
-
-                foreach (var key in compsToRemove.Keys)
+                if (compsToRemove.Keys.Any(key => organ.OnAdd.ContainsKey(key)))
                 {
-                    if (organ.OnAdd.ContainsKey(key))
-                    {
-                        args.Cancelled = true;
-                        return;
-                    }
+                    args.Cancelled = true;
+                    return;
                 }
             }
         }
