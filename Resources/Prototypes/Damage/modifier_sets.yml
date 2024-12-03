@@ -376,8 +376,8 @@
   id: Plasmaman
   coefficients:
     Blunt: 1.5
-    Slash: 0.8
-    Piercing: 0.7
+    Slash: 0.85
+    Piercing: 0.75
     Cold: 0
     Heat: 1.5
     Radiation: 0
