@@ -158,6 +158,14 @@
             Caustic: -0.66
             Asphyxiation: -0.66
             Poison: -0.66
+      - !type:ChemAddMoodlet
+        conditions:
+        - !type:OrganType
+          type: Plasmaman
+        - !type:ReagentThreshold
+          reagent: Plasma
+          min: 1
+        moodPrototype: PlasmamanIngestPlasma
   reactiveEffects:
     Flammable:
       methods: [ Touch ]

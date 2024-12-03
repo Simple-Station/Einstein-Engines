@@ -1,4 +1,4 @@
-﻿- type: moodEffect
+- type: moodEffect
   id: BeingHugged
   moodChange: 3
   timeout: 120
@@ -52,3 +52,13 @@
   moodChange: 5
   timeout: 60 # A bit of time before they realize it's gone
   moodletOnEnd: HeirloomLost
+
+- type: moodEffect
+  id: PlasmamanIngestMilk
+  moodChange: 6
+  timeout: 60
+
+- type: moodEffect
+  id: PlasmamanIngestPlasma
+  moodChange: 12
+  timeout: 60
