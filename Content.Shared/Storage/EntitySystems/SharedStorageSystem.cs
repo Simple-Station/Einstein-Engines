@@ -374,13 +374,9 @@ public abstract class SharedStorageSystem : EntitySystem
 
         // Toggle
         if (_ui.IsUiOpen(uid, StorageComponent.StorageUiKey.Key, args.User))
-        {
             _ui.CloseUi(uid, StorageComponent.StorageUiKey.Key, args.User);
-        }
         else
-        {
             OpenStorageUI(uid, args.User, storageComp);
-        }
 
         args.Handled = true;
     }

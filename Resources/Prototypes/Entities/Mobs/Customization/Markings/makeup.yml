@@ -2,7 +2,7 @@
   id: MakeupLips
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy] # Delta V - Felinid, Oni, Harpy
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Arachne] # Delta V - Felinid, Oni, Harpy
   coloring:
     default:
       type:
@@ -16,7 +16,7 @@
   id: MakeupBlush
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, Reptilian, SlimePerson, Felinid, Oni, Vulpkanin, Harpy] # Delta V - Felinid, Oni, Vulpkanin, Harpy
+  speciesRestriction: [Dwarf, Human, Reptilian, SlimePerson, Felinid, Oni, Vulpkanin, Harpy, Arachne] # Delta V - Felinid, Oni, Vulpkanin, Harpy
   coloring:
     default:
       type:
@@ -29,8 +29,8 @@
 - type: marking
   id: MakeupNailPolishRight
   bodyPart: RHand
-  markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Felinid, Oni, Vulpkanin] # Delta V - Felinid, Oni, Vulpkanin
+  markingCategory: RightHand
+  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Felinid, Oni, Vulpkanin, Arachne] # Delta V - Felinid, Oni, Vulpkanin
   coloring:
     default:
       type:
@@ -43,8 +43,8 @@
 - type: marking
   id: MakeupNailPolishLeft
   bodyPart: LHand
-  markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Felinid, Oni, Vulpkanin] # Delta V - Felinid, Oni, Vulpkanin
+  markingCategory: LeftHand
+  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Felinid, Oni, Vulpkanin, Arachne] # Delta V - Felinid, Oni, Vulpkanin
   coloring:
     default:
       type:

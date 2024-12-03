@@ -73,6 +73,7 @@
   id: LoadoutItemLighter
   category: Items
   cost: 1
+  customColorTint: true
   items:
     - Lighter
   requirements:
@@ -83,6 +84,7 @@
   id: LoadoutItemLighterCheap
   category: Items
   cost: 0
+  customColorTint: true
   items:
     - CheapLighter
   requirements:
@@ -93,6 +95,7 @@
   id: LoadoutItemLighterFlippo
   category: Items
   cost: 2
+  customColorTint: true
   items:
     - FlippoLighter
   requirements:
@@ -340,6 +343,7 @@
   id: LoadoutItemsEmergencyCrowbar
   category: Items
   cost: 3
+  canBeHeirloom: true
   items:
     - CrowbarRed
 
@@ -680,6 +684,7 @@
   id: LoadoutItemPAI
   category: Items
   cost: 3
+  canBeHeirloom: true
   items:
     - PersonalAI
 
@@ -741,6 +746,8 @@
   id: LoadoutItemDrinkShinyFlask
   category: Items
   cost: 1
+  customColorTint: true
+  canBeHeirloom: true
   items:
     - DrinkShinyFlask
 
@@ -748,6 +755,7 @@
   id: LoadoutItemDrinkLithiumFlask
   category: Items
   cost: 1
+  customColorTint: true
   items:
     - DrinkLithiumFlask
 
@@ -755,5 +763,6 @@
   id: LoadoutItemDrinkVacuumFlask
   category: Items
   cost: 1
+  customColorTint: true
   items:
     - DrinkVacuumFlask

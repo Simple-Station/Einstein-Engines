@@ -332,6 +332,13 @@
   - type: PhysicalComposition
     materialComposition:
       Steel: 25
+  - type: Tending
+    speed: 0.55
+  - type: SurgeryTool
+    startSound:
+      path: /Audio/Medical/Surgery/retractor1.ogg
+    endSound:
+      path: /Audio/Medical/Surgery/hemostat1.ogg
 
 - type: entity
   parent: Pen
