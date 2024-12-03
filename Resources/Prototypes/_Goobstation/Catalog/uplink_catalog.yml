@@ -138,6 +138,11 @@
     Telecrystal: 100 # don't kill me piras
   categories:
   - UplinkWeaponry
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
 
 # Wearables
 
