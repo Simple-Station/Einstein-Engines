@@ -1043,9 +1043,9 @@
     walkModifier: 0.9
     sprintModifier: 0.9
   - type: HeldSpeedModifier
-  #- type: Construction # DeltaV - Prevent clowns from making the hardsuit
-  #   graph: ClownHardsuit
-  #   node: clownHardsuit
+  - type: Construction
+    graph: ClownHardsuit
+    node: clownHardsuit
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitClown
 
@@ -1060,9 +1060,9 @@
     sprite: Clothing/OuterClothing/Hardsuits/mime.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/mime.rsi
-#  - type: Construction # DeltaV - Nuh uh
-#    graph: MimeHardsuit
-#    node: mimeHardsuit
+  - type: Construction
+    graph: MimeHardsuit
+    node: mimeHardsuit
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitMime
 
