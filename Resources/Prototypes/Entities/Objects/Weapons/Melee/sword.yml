@@ -26,6 +26,7 @@
   - type: DamageOtherOnHit
     staminaCost: 5
   - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
   - type: ThrowingAngle
     angle: 225
   - type: Reflect
@@ -75,6 +76,7 @@
   - type: DamageOtherOnHit
     staminaCost: 10
   - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
   - type: ThrowingAngle
     angle: 225
   - type: Item
@@ -147,6 +149,7 @@
   - type: DamageOtherOnHit
     staminaCost: 5
   - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
   - type: ThrowingAngle
     angle: 225
   - type: Item
@@ -184,6 +187,7 @@
   - type: DamageOtherOnHit
     staminaCost: 18
   - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
   - type: ThrowingAngle
     angle: 225
   - type: Item
@@ -224,6 +228,7 @@
   - type: DamageOtherOnHit
     staminaCost: 5
   - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
   - type: ThrowingAngle
     angle: 225
   - type: Item

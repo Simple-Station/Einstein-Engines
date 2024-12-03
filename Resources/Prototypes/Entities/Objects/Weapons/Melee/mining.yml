@@ -99,6 +99,7 @@
   - type: DamageOtherOnHit
     staminaCost: 5
   - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
   - type: ThrowingAngle
     angle: 225
   - type: Tag
@@ -122,6 +123,7 @@
         Brute: -21
   - type: MeleeWeapon
   - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
   - type: ThrowingAngle
     angle: 225
   - type: Tag

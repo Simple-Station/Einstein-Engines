@@ -16,8 +16,21 @@ public sealed class EmbedPassiveDamageSystem : EntitySystem
     {
         base.Initialize();
 
+        SubscribeLocalEvent<EmbedPassiveDamageComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<EmbedPassiveDamageComponent, EmbedEvent>(OnEmbed);
         SubscribeLocalEvent<EmbedPassiveDamageComponent, RemoveEmbedEvent>(OnRemoveEmbed);
+    }
+
+    /// <summary>
+    ///   Inherit stats from DamageOtherOnHit.
+    /// </summary>
+    private void OnStartup(EntityUid uid, EmbedPassiveDamageComponent component, ComponentStartup args)
+    {
+        if (!TryComp<DamageOtherOnHitComponent>(uid, out var damage))
+            return;
+
+        if (component.Damage.Empty && damage.Damage is {} thrownDamage)
+            component.Damage = thrownDamage * component.DamageMultiplier;
     }
 
     private void OnEmbed(EntityUid uid, EmbedPassiveDamageComponent component, EmbedEvent args)

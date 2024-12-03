@@ -63,6 +63,7 @@
     staminaCost: 2.5
   - type: EmbeddableProjectile
     removalTime: 0.5
+    autoRemoveDuration: 10
   - type: ThrowingAngle
     angle: 180
 

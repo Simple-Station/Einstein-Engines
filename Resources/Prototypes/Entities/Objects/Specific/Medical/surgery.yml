@@ -110,6 +110,7 @@
         Piercing: 11
     staminaCost: 8
   - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
   - type: ThrowingAngle
     angle: 90
   - type: StaticPrice
@@ -156,6 +157,7 @@
   - type: DamageOtherOnHit
     staminaCost: 5
   - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
   - type: ThrowingAngle
     angle: 90
   - type: SurgeryTool
@@ -353,6 +355,7 @@
       path: /Audio/Weapons/bladeslice.ogg
   - type: DamageOtherOnHit
   - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
   - type: ThrowingAngle
     angle: 90
   - type: SurgeryTool
@@ -427,6 +430,7 @@
   - type: DamageOtherOnHit
     staminaCost: 10
   - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
   - type: ThrowingAngle
     angle: 0
   - type: BoneSaw

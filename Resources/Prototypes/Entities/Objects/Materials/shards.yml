@@ -43,15 +43,10 @@
         mask:
         - ItemMask
   - type: DamageOtherOnHit
-    damage:
-      types:
-        Slash: 2
+    autoRemoveDuration: 30
   - type: EmbeddableProjectile
     sound: /Audio/Weapons/bladeslice.ogg
   - type: EmbedPassiveDamage
-    damage:
-      types:
-        Slash: 0.1
   - type: Tag
     tags:
     - Trash
@@ -172,6 +167,10 @@
     damage:
       types:
         Slash: 5.5
+  - type: EmbedPassiveDamage
+    damage:
+      types:
+        Slash: 0.15
   - type: WelderRefinable
     refineResult:
     - id: SheetGlass1

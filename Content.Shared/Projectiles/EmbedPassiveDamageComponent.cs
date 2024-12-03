@@ -26,9 +26,17 @@ public sealed partial class EmbedPassiveDamageComponent : Component
 
     /// <summary>
     ///   Damage per interval dealt to the entity every interval.
+    ///   If this is set manually, DamageMultiplier will be ignored.
     /// </summary>
-    [DataField(required: true), ViewVariables(VVAccess.ReadWrite)]
-    public DamageSpecifier Damage;
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public DamageSpecifier Damage = new();
+
+    /// <summary>
+    ///   Multiplier to be applied to the damage of DamageOtherOnHit to
+    ///   calculate the damage per second.
+    /// </summary>
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public float DamageMultiplier = 0.03f;
 
     /// <summary>
     /// The maximum HP the damage will be given to. If 0, disabled.

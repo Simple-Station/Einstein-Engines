@@ -94,6 +94,7 @@
     staminaCost: 7
   - type: EmbeddableProjectile
     sound: /Audio/Weapons/star_hit.ogg
+  - type: EmbedPassiveDamage
   - type: ThrowingAngle
     angle: 315
   - type: Item
@@ -132,6 +133,7 @@
     staminaCost: 6.5
   - type: EmbeddableProjectile
     sound: /Audio/Weapons/star_hit.ogg
+  - type: EmbedPassiveDamage
   - type: ThrowingAngle
     angle: 45
   - type: Item

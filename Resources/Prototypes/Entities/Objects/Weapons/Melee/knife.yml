@@ -27,6 +27,7 @@
     staminaCost: 5
   - type: EmbeddableProjectile
     sound: /Audio/Weapons/star_hit.ogg
+  - type: EmbedPassiveDamage
   - type: Sprite
   - type: Item
     size: Small
@@ -180,6 +181,7 @@
   - type: DamageOtherOnHit
     staminaCost: 5
   - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
   - type: Sprite
     sprite: Clothing/Head/Hats/greyflatcap.rsi
   - type: Clothing

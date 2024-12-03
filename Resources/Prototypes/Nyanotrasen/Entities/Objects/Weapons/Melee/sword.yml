@@ -24,6 +24,7 @@
   - type: DamageOtherOnHit
     staminaCost: 5
   - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
   - type: Item
     size: Normal
     sprite: Nyanotrasen/Objects/Weapons/Melee/wakizashi.rsi

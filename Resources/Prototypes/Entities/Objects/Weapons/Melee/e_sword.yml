@@ -59,6 +59,7 @@
     staminaCost: 5
   - type: EmbeddableProjectile
     embedOnThrow: false
+  - type: EmbedPassiveDamage
   - type: ThrowingAngle
     angle: 225
   - type: Item
@@ -156,6 +157,7 @@
   - type: ItemToggleEmbeddableProjectile
     activatedOffset: 0.0,0.0
     activatedRemovalTime: 3
+  # TODO: add ItemToggleEmbedPassiveDamage
   - type: ItemToggleThrowingAngle
     activatedAngle: 135
   - type: Sprite

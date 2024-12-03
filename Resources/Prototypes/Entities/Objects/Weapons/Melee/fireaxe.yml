@@ -28,6 +28,7 @@
       collection: MetalThud
   - type: DamageOtherOnHit
   - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:
