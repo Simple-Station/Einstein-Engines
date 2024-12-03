@@ -181,7 +181,7 @@
   physicalDesc: reagent-physical-desc-fizzy
   flavor: medicine
   color: "#0091ff"
-  worksOnTheDead: true # Floof 
+  worksOnTheDead: true
   plantMetabolism:
   - !type:PlantAdjustToxins
     amount: -5
@@ -199,12 +199,9 @@
           damage:
           # todo scale with temp like SS13
             groups:
-              Airloss: -10 # Floof: -6<-10
-              # Brute: -4 # Floof
-              # Burn: -6 # Floof
-              # Toxin: -4 # Floof
-        - !type:ModifyBloodLevel # Floof
-          amount: 5 # Floof
+              Airloss: -10
+        - !type:ModifyBloodLevel
+          amount: 5
 
 - type: reagent
   id: Doxarubixadone
@@ -214,7 +211,7 @@
   physicalDesc: reagent-physical-desc-bubbling
   flavor: medicine
   color: "#32cd32"
-  worksOnTheDead: true # Floof
+  worksOnTheDead: true
   metabolisms:
     Medicine:
       effects:
@@ -224,9 +221,9 @@
             max: 213.0
           damage:
             types:
-             Cellular: -4 # Floof: -2<-4
-            groups: # Floof
-                Brute: 1 # Floof
+             Cellular: -4
+            groups:
+                Brute: 1
 
 - type: reagent
   id: Dermaline
@@ -498,12 +495,12 @@
       - !type:AdjustTemperature
         conditions:
         - !type:Temperature
-          max: 288.15 # Floof
+          max: 288.15
         amount: 100000 # thermal energy, not temperature!
       - !type:AdjustTemperature
         conditions:
         - !type:Temperature
-          min: 298.15 # Floof
+          min: 298.15
         amount: -10000
       - !type:PopupMessage
         type: Local
@@ -1201,7 +1198,7 @@
           types:
             Heat: -3.0
             Shock: -3.0
-            Cold: -3.0 # Floof 
+            Cold: -3.0
             Caustic: -1.0
 
 - type: reagent
