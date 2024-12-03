@@ -8392,3 +8392,10 @@ Entries:
   id: 6554
   time: '2024-12-03T23:31:22.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1306
+- author: Erisfiregamer1
+  changes:
+    - type: Add
+      message: You can now shove people into deep fryers by drag-dropping them onto it.
+  id: 6555
+  time: '2024-12-03T23:33:01.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1279
