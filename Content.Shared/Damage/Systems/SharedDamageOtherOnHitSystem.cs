@@ -139,6 +139,8 @@ namespace Content.Shared.Damage.Systems
                 if (component.DeactivatedSoundNoDamage != null)
                     component.SoundNoDamage = component.DeactivatedSoundNoDamage;
             }
+
+            RaiseLocalEvent(uid, new ThrowingDamageToggledEvent(uid, args.Activated));
         }
 
         private void OnThrown(EntityUid uid, DamageOtherOnHitComponent component, ThrownEvent args)

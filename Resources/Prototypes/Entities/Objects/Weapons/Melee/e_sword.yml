@@ -157,7 +157,6 @@
   - type: ItemToggleEmbeddableProjectile
     activatedOffset: 0.0,0.0
     activatedRemovalTime: 3
-  # TODO: add ItemToggleEmbedPassiveDamage
   - type: ItemToggleThrowingAngle
     activatedAngle: 135
   - type: Sprite
@@ -185,6 +184,10 @@
     offset: 0.3,0.0
     removalTime: 0.0
     embedOnThrow: true
+  - type: EmbedPassiveDamage
+    damage:
+      types:
+        Blunt: 0
   - type: ThrowingAngle
     angle: 315
   - type: Item

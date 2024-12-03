@@ -46,4 +46,9 @@ public sealed partial class EmbedPassiveDamageComponent : Component
 
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), ViewVariables(VVAccess.ReadWrite)]
     public TimeSpan NextDamage = TimeSpan.Zero;
+
+    /// <summary>
+    ///     Damage done by this item when deactivated.
+    /// </summary>
+    public DamageSpecifier? DeactivatedDamage = null;
 }

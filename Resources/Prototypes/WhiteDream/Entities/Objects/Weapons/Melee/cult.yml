@@ -17,7 +17,7 @@
         Piercing: 15
   - type: DamageOtherOnHit
     staminaCost: 5
-  - type: EmbeddableProjectille
+  - type: EmbeddableProjectile
   - type: EmbedPassiveDamage
   - type: ThrowingAngle
     angle: 225
@@ -64,7 +64,7 @@
       path: /Audio/Weapons/bladeslice.ogg
   - type: DamageOtherOnHit
     staminaCost: 8
-  - type: EmbeddableProjectille
+  - type: EmbeddableProjectile
   - type: EmbedPassiveDamage
   - type: ThrowingAngle
     angle: 225

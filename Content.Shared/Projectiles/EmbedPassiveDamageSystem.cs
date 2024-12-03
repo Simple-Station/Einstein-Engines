@@ -1,5 +1,6 @@
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Events;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Mobs.Components;
 using Content.Shared.FixedPoint;
@@ -19,6 +20,7 @@ public sealed class EmbedPassiveDamageSystem : EntitySystem
         SubscribeLocalEvent<EmbedPassiveDamageComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<EmbedPassiveDamageComponent, EmbedEvent>(OnEmbed);
         SubscribeLocalEvent<EmbedPassiveDamageComponent, RemoveEmbedEvent>(OnRemoveEmbed);
+        SubscribeLocalEvent<EmbedPassiveDamageComponent, ThrowingDamageToggledEvent>(OnThrowingDamageToggled);
     }
 
     /// <summary>
@@ -35,7 +37,9 @@ public sealed class EmbedPassiveDamageSystem : EntitySystem
 
     private void OnEmbed(EntityUid uid, EmbedPassiveDamageComponent component, EmbedEvent args)
     {
-        if (!HasComp<MobStateComponent>(args.Embedded) || !TryComp<DamageableComponent>(args.Embedded, out var damageable))
+        if (!HasComp<MobStateComponent>(args.Embedded) ||
+            !TryComp<DamageableComponent>(args.Embedded, out var damageable) ||
+            component.Damage.Empty || component.Damage.GetTotal == 0)
             return;
 
         component.Embedded = args.Embedded;
@@ -48,6 +52,23 @@ public sealed class EmbedPassiveDamageSystem : EntitySystem
         component.Embedded = null;
         component.EmbeddedDamageable = null;
         component.NextDamage = TimeSpan.Zero;
+    }
+
+    /// <summary>
+    ///   Used to update the EmbedPassiveDamageComponent component on item toggle.
+    /// </summary>
+    private void OnThrowingDamageToggled(EntityUid uid, EmbedPassiveDamageComponent component, ThrowingDamageToggledEvent args)
+    {
+        if (!TryComp<DamageOtherOnHitComponent>(uid, out var damage))
+            return;
+
+        if (args.Activated && damage.Damage is {} thrownDamage)
+        {
+            component.DeactivatedDamage ??= component.Damage;
+            component.Damage = thrownDamage * component.DamageMultiplier;
+        }
+        else if (component.DeactivatedDamage is {} deactivatedDamage)
+            component.Damage = component.DeactivatedDamage;
     }
 
     public override void Update(float frameTime)
