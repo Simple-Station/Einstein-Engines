@@ -186,6 +186,7 @@
     angle: 225
   - type: Item
     sprite: Objects/Weapons/Melee/kukri_knife.rsi
+    storedSprite: null
 
 - type: entity
   parent: ClothingHeadHatGreyFlatcap
