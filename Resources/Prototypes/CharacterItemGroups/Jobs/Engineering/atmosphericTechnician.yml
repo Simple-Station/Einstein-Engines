@@ -33,6 +33,29 @@
       id: LoadoutAtmosphericTechnicianEquipmentMedkitOxygen
     - type: loadout
       id: LoadoutAtmosphericTechnicianEquipmentRCD
+    - type: loadout
+      id: LoadoutAtmosphericTechnicianEquipmentPowerDrill
+    - type: loadout
+      id: LoadoutAtmosphericTechnicianEquipmentSheetSteel
+    - type: loadout
+      id: LoadoutAtmosphericTechnicianEquipmentSheetSteel10
+    - type: loadout
+      id: LoadoutAtmosphericTechnicianEquipmentSheetPlasteel
+    - type: loadout
+      id: LoadoutAtmosphericTechnicianEquipmentSheetPlasteel10
+    - type: loadout
+      id: LoadoutAtmosphericTechnicianEquipmentSheetGlass
+    - type: loadout
+      id: LoadoutAtmosphericTechnicianEquipmentSheetGlass10
+    - type: loadout
+      id: LoadoutAtmosphericTechnicianEquipmentMaterialWoodPlank
+    - type: loadout
+      id: LoadoutAtmosphericTechnicianEquipmentMaterialWoodPlank10
+    - type: loadout
+      id: LoadoutAtmosphericTechnicianEquipmentSheetPlastic
+    - type: loadout
+      id: LoadoutAtmosphericTechnicianEquipmentSheetPlastic10
+
 
 #- type: characterItemGroup
 #  id: LoadoutAtmosphericTechnicianEyes

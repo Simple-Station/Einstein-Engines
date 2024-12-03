@@ -7,7 +7,7 @@
   abstract: true
   components:
   - type: Damageable
-    damageContainer: Biological
+    damageContainer: OrganicPart
   - type: BodyPart
   - type: ContainerContainer
     containers:

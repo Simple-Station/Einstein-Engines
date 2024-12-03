@@ -1,8 +1,5 @@
-using Content.Shared.Clothing.Loadouts.Systems;
 using Content.Shared.Customization.Systems;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.List;
 
 namespace Content.Shared.Clothing.Loadouts.Prototypes;
 
@@ -45,4 +42,7 @@ public sealed partial class LoadoutPrototype : IPrototype
 
     [DataField]
     public List<CharacterRequirement> Requirements = new();
+
+    [DataField]
+    public string GuideEntry { get; } = "";
 }

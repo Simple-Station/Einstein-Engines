@@ -34,6 +34,45 @@
   items:
     - RubberStampChaplain
 
+- type: loadout
+  id: LoadoutChaplainEquipmentCandles
+  category: JobsEpistemicsChaplain
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChaplainEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chaplain
+  items:
+    - BoxCandle
+
+- type: loadout
+  id: LoadoutChaplainEquipmentCandlesSmall
+  category: JobsEpistemicsChaplain
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChaplainEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chaplain
+  items:
+    - BoxCandleSmall
+
+- type: loadout
+  id: LoadoutChaplainPillCanisterSpaceDrugs
+  category: JobsEpistemicsChaplain
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChaplainEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chaplain
+  items:
+    - PillCanisterSpaceDrugs
+
 # Eyes
 
 # Gloves
