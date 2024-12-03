@@ -8351,3 +8351,12 @@ Entries:
   id: 6552
   time: '2024-12-01T23:56:50.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1302
+- author: Skubman
+  changes:
+    - type: Tweak
+      message: >-
+        Cultist constructs and soul shards now speak Tau-Ceti Basic and
+        Eldritch.
+  id: 6553
+  time: '2024-12-02T16:47:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1303
