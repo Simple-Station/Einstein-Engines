@@ -379,6 +379,7 @@ character-item-group-LoadoutSalvageSpecialistMask = Salvage Specialist Masks
 character-item-group-LoadoutSalvageSpecialistOuter = Salvage Specialist Outerwear
 character-item-group-LoadoutSalvageSpecialistShoes = Salvage Specialist Shoes
 character-item-group-LoadoutSalvageSpecialistUniforms = Salvage Specialist Uniforms
+character-item-group-LoadoutSalvageSpecialistWeapons = Salvage Specialist Weapons
 
 # Medical
 character-item-group-LoadoutMedicalBackpacks = Medical Backpacks

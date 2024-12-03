@@ -3,6 +3,7 @@ using Content.Server.Weapons.Ranged.Systems;
 using Content.Shared.Tools.Components;
 using Content.Shared.Damage.Events;
 using Content.Shared.Nyanotrasen.Abilities.Oni;
+using Content.Shared.Weapons.Melee;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Weapons.Ranged.Components;
 using Robust.Shared.Containers;
@@ -19,8 +20,7 @@ namespace Content.Server.Abilities.Oni
             base.Initialize();
             SubscribeLocalEvent<OniComponent, EntInsertedIntoContainerMessage>(OnEntInserted);
             SubscribeLocalEvent<OniComponent, EntRemovedFromContainerMessage>(OnEntRemoved);
-            SubscribeLocalEvent<OniComponent, MeleeHitEvent>(OnOniMeleeHit);
-            SubscribeLocalEvent<HeldByOniComponent, MeleeHitEvent>(OnHeldMeleeHit);
+            SubscribeLocalEvent<MeleeWeaponComponent, GetMeleeDamageEvent>(OnGetMeleeDamage);
             SubscribeLocalEvent<HeldByOniComponent, TakeStaminaDamageEvent>(OnStamHit);
         }
 
@@ -55,17 +55,12 @@ namespace Content.Server.Abilities.Oni
             RemComp<HeldByOniComponent>(args.Entity);
         }
 
-        private void OnOniMeleeHit(EntityUid uid, OniComponent component, MeleeHitEvent args)
+        private void OnGetMeleeDamage(EntityUid uid, MeleeWeaponComponent component, ref GetMeleeDamageEvent args)
         {
-            args.ModifiersList.Add(component.MeleeModifiers);
-        }
-
-        private void OnHeldMeleeHit(EntityUid uid, HeldByOniComponent component, MeleeHitEvent args)
-        {
-            if (!TryComp<OniComponent>(component.Holder, out var oni))
+            if (!TryComp<OniComponent>(args.User, out var oni))
                 return;
 
-            args.ModifiersList.Add(oni.MeleeModifiers);
+            args.Modifiers.Add(oni.MeleeModifiers);
         }
 
         private void OnStamHit(EntityUid uid, HeldByOniComponent component, TakeStaminaDamageEvent args)

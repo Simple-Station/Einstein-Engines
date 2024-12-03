@@ -364,7 +364,7 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
                     return false;
                 break;
             case HeavyAttackEvent:
-                fireRateSwingModifier *= weapon.HeavyRateModifier;
+                fireRateSwingModifier = weapon.HeavyRateModifier;
                 break;
             default:
                 if (!Blocker.CanAttack(user, weapon: (weaponUid, weapon)))
@@ -373,7 +373,7 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
         }
 
         // Windup time checked elsewhere.
-        var fireRate = TimeSpan.FromSeconds(1f / GetAttackRate(weaponUid, user, weapon) * fireRateSwingModifier);
+        var fireRate = TimeSpan.FromSeconds(GetAttackRate(weaponUid, user, weapon) * fireRateSwingModifier);
         var swings = 0;
 
         // TODO: If we get autoattacks then probably need a shotcounter like guns so we can do timing properly.
@@ -389,7 +389,12 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
         Dirty(weaponUid, weapon);
 
         // Do this AFTER attack so it doesn't spam every tick
-        var ev = new AttemptMeleeEvent();
+        // White Dream: Added PlayerUid
+        var ev = new AttemptMeleeEvent
+        {
+            PlayerUid = user
+        };
+
         RaiseLocalEvent(weaponUid, ref ev);
 
         if (ev.Cancelled)

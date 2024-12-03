@@ -65,6 +65,19 @@
       Steel: 100
   - type: StaticPrice
     price: 30
+  - type: Retractor
+    speed: 0.35
+  - type: Hemostat
+    speed: 0.6
+  - type: SurgeryTool
+    startSound:
+      path: /Audio/Items/wirecutter.ogg
+      params:
+        variation: 0.125
+    endSound:
+      path: /Audio/Items/wirecutter.ogg
+      params:
+        variation: 0.125
 
 - type: entity
   name: screwdriver
@@ -132,6 +145,15 @@
       Steel: 100
   - type: StaticPrice
     price: 30
+  - type: Retractor
+    speed: 0.45
+  - type: Tending
+    speed: 0.65
+  - type: SurgeryTool
+    startSound:
+      collection: Screwdriver
+    endSound:
+      path: /Audio/Medical/Surgery/retractor2.ogg
 
 - type: entity
   name: wrench
@@ -247,6 +269,10 @@
   - type: StaticPrice
     price: 22
   - type: Prying
+  - type: Tweezers
+    speed: 0.55
+  - type: SurgeryTool
+    startSound: /Audio/Items/crowbar.ogg
 
 - type: entity
   parent: Crowbar

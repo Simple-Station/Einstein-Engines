@@ -14,11 +14,17 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutNoviciateEquipment
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutNoviciateEquipment
+  maxItems: 3
+  items:
+    - type: loadout
+      id: LoadoutNoviciateEquipmentCandles
+    - type: loadout
+      id: LoadoutNoviciateEquipmentCandlesSmall
+    - type: loadout
+      id: LoadoutNoviciatePillCanisterSpaceDrugs
+
 #- type: characterItemGroup
 #  id: LoadoutNoviciateEyes
 #  maxItems: 1
@@ -59,7 +65,11 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutNoviciateUniforms
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutNoviciateUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutNoviciateUniformSuit
+    - type: loadout
+      id: LoadoutNoviciateUniformSkirt

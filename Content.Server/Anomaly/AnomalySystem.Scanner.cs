@@ -87,17 +87,24 @@ public sealed partial class AnomalySystem
 
     private void OnScannerAfterInteract(EntityUid uid, AnomalyScannerComponent component, AfterInteractEvent args)
     {
-        if (args.Target is not { } target)
-            return;
-        if (!HasComp<AnomalyComponent>(target))
-            return;
-        if (!args.CanReach)
+        if (args.Target is not { } target || !args.CanReach)
             return;
 
-        _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager, args.User, component.ScanDoAfterDuration, new ScannerDoAfterEvent(), uid, target: target, used: uid)
+        // If interacting with an anomaly, start a scan do-after
+        if (HasComp<AnomalyComponent>(target))
+            _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager, args.User, component.ScanDoAfterDuration, new ScannerDoAfterEvent(), uid, target: target, used: uid)
+            {
+                DistanceThreshold = 2f
+            });
+
+        // If interacting with another scanner, copy the anomaly data
+        if (component.ScannedAnomaly is not { Valid: true }
+            && TryComp<AnomalyScannerComponent>(args.Target, out var otherScanner)
+            && otherScanner.ScannedAnomaly is {} otherAnomaly)
         {
-            DistanceThreshold = 2f
-        });
+            UpdateScannerWithNewAnomaly(uid, otherAnomaly, component);
+            Popup.PopupEntity(Loc.GetString("anomaly-scanner-scan-copied"), uid);
+        }
     }
 
     private void OnDoAfter(EntityUid uid, AnomalyScannerComponent component, DoAfterEvent args)

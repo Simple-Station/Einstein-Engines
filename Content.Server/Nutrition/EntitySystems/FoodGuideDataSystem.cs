@@ -116,7 +116,7 @@ public sealed class FoodGuideDataSystem : SharedFoodGuideDataSystem
 
             // We filter out food without whitelisted reagents because well when people look for food they usually expect FOOD and not insulated gloves.
             // And we get insulated and other gloves because they have ButcherableComponent and they are also moth food
-            if (!composition.Any(it => ReagentWhitelist.Contains(it.Reagent.Prototype)))
+            if (!composition.Any(it => ReagentWhitelist.Contains<ProtoId<ReagentPrototype>>(it.Reagent.Prototype)))
                 continue;
 
             // We also limit the number of sources to 10 because it's a huge performance strain to render 500 raw meat recipes.

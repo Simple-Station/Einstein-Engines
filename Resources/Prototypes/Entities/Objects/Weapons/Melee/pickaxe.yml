@@ -21,7 +21,7 @@
     damage:
       types:
         Blunt: 6
-        Pierce: 3
+        Piercing: 3
     bluntStaminaDamageFactor: 2.0
     heavyDamageBaseModifier: 1.75
     maxTargets: 5

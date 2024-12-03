@@ -47,6 +47,44 @@
 # Ears
 
 # Equipment
+- type: loadout
+  id: LoadoutMystagogueEquipmentCandles
+  category: JobsEpistemicsMystagogue
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMystagogueEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchDirector
+  items:
+    - BoxCandle
+
+- type: loadout
+  id: LoadoutMystagogueEquipmentCandlesSmall
+  category: JobsEpistemicsMystagogue
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMystagogueEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchDirector
+  items:
+    - BoxCandleSmall
+
+- type: loadout
+  id: LoadoutMystagoguePillCanisterSpaceDrugs
+  category: JobsEpistemicsMystagogue
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMystagogueEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchDirector
+  items:
+    - PillCanisterSpaceDrugs
 
 # Eyes
 
