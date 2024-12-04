@@ -1,13 +1,14 @@
 using Content.Shared.Body.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
+using Content.Shared.Medical.Surgery;
 using Content.Shared.Medical.Surgery.Tools;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Body.Organ;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
-[Access(typeof(SharedBodySystem))]
+[Access(typeof(SharedBodySystem), typeof(SharedSurgerySystem))]
 public sealed partial class OrganComponent : Component, ISurgeryToolComponent
 {
     /// <summary>
@@ -50,7 +51,7 @@ public sealed partial class OrganComponent : Component, ISurgeryToolComponent
     public ComponentRegistry? OnAdd;
 
     /// <summary>
-    ///     When removed, the organ will ensure these components on the entity, and add them on removal.
+    ///     When removed, the organ will ensure these components on the entity, and delete them on insertion.
     /// </summary>
     [DataField]
     public ComponentRegistry? OnRemove;
