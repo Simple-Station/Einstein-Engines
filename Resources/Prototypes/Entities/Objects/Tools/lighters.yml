@@ -16,6 +16,7 @@
     activatedDamage:
         types:
             Heat: 1
+  - type: ItemToggleDamageOtherOnHit
   - type: ItemToggleSize
     activatedSize: Small
   - type: ItemToggleHot
@@ -160,6 +161,7 @@
     activatedDamage:
         types:
             Heat: 1
+  - type: ItemToggleDamageOtherOnHit
   - type: ItemToggleSize
     activatedSize: Small
   - type: ItemToggleHot

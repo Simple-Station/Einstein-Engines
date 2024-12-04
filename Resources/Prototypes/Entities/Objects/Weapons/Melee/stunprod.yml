@@ -26,6 +26,7 @@
     activatedDamage:
       types:
         Shock: 5
+  - type: ItemToggleDamageOtherOnHit
   - type: Stunbaton
     energyPerUse: 120
   - type: MeleeWeapon

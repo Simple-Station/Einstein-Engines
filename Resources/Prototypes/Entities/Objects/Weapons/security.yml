@@ -29,6 +29,7 @@
     activatedDamage:
       types:
         Blunt: 0
+  - type: ItemToggleDamageOtherOnHit
   - type: MeleeWeapon
     wideAnimationRotation: -135
     damage:

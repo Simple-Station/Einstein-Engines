@@ -38,8 +38,10 @@ namespace Content.Shared.Damage.Systems
         {
             SubscribeLocalEvent<DamageOtherOnHitComponent, ComponentStartup>(OnStartup);
             SubscribeLocalEvent<DamageOtherOnHitComponent, ThrowDoHitEvent>(OnDoHit);
-            SubscribeLocalEvent<DamageOtherOnHitComponent, ItemToggledEvent>(OnItemToggle);
             SubscribeLocalEvent<DamageOtherOnHitComponent, ThrownEvent>(OnThrown);
+
+            SubscribeLocalEvent<ItemToggleDamageOtherOnHitComponent, ComponentStartup>(OnItemToggleStartup);
+            SubscribeLocalEvent<DamageOtherOnHitComponent, ItemToggledEvent>(OnItemToggle);
         }
 
         /// <summary>
@@ -63,6 +65,24 @@ namespace Content.Shared.Damage.Systems
             }
         }
 
+        /// <summary>
+        ///   Inherit stats from ItemToggleMeleeWeaponComponent.
+        /// </summary>
+        private void OnItemToggleStartup(EntityUid uid, ItemToggleDamageOtherOnHitComponent component, ComponentStartup args)
+        {
+            if (!TryComp<ItemToggleMeleeWeaponComponent>(uid, out var itemToggleMelee) ||
+                !TryComp<DamageOtherOnHitComponent>(uid, out var damage))
+                return;
+
+            if (component.ActivatedDamage == null && itemToggleMelee.ActivatedDamage is {} activatedDamage)
+                component.ActivatedDamage = activatedDamage * damage.MeleeDamageMultiplier;
+            if (component.ActivatedSoundHit == null)
+                component.ActivatedSoundHit = itemToggleMelee.ActivatedSoundOnHit;
+            if (component.ActivatedSoundNoDamage == null && itemToggleMelee.ActivatedSoundOnHitNoDamage is {} activatedSoundOnHitNoDamage)
+                component.ActivatedSoundNoDamage = activatedSoundOnHitNoDamage;
+
+            RaiseLocalEvent(uid, new ItemToggleDamageOtherOnHitStartup((uid, component)));
+        }
 
         private void OnDoHit(EntityUid uid, DamageOtherOnHitComponent component, ThrowDoHitEvent args)
         {
@@ -114,38 +134,45 @@ namespace Content.Shared.Damage.Systems
         /// </summary>
         private void OnItemToggle(EntityUid uid, DamageOtherOnHitComponent component, ItemToggledEvent args)
         {
-            if (!TryComp<ItemToggleMeleeWeaponComponent>(uid, out var itemToggleMelee))
+            if (!TryComp<ItemToggleDamageOtherOnHitComponent>(uid, out var itemToggle))
                 return;
 
             if (args.Activated)
             {
-                if (itemToggleMelee.ActivatedDamage is {} activatedDamage)
+                if (itemToggle.ActivatedDamage is {} activatedDamage)
                 {
-                    component.DeactivatedDamage ??= component.Damage;
+                    itemToggle.DeactivatedDamage ??= component.Damage;
                     component.Damage = activatedDamage * component.MeleeDamageMultiplier;
                 }
 
-                component.DeactivatedSoundHit = component.SoundHit;
-                component.SoundHit = itemToggleMelee.ActivatedSoundOnHit;
-
-                if (itemToggleMelee.ActivatedSoundOnHitNoDamage != null)
+                if (itemToggle.ActivatedStaminaCost is {} activatedStaminaCost)
                 {
-                    component.DeactivatedSoundNoDamage ??= component.SoundNoDamage;
-                    component.SoundNoDamage = itemToggleMelee.ActivatedSoundOnHitNoDamage;
+                    itemToggle.DeactivatedStaminaCost ??= component.StaminaCost;
+                    component.StaminaCost = activatedStaminaCost;
+                }
+
+                itemToggle.DeactivatedSoundHit ??= component.SoundHit;
+                component.SoundHit = itemToggle.ActivatedSoundHit;
+
+                if (itemToggle.ActivatedSoundNoDamage is {} activatedSoundNoDamage)
+                {
+                    itemToggle.DeactivatedSoundNoDamage ??= component.SoundNoDamage;
+                    component.SoundNoDamage = activatedSoundNoDamage;
                 }
             }
             else
             {
-                if (component.DeactivatedDamage is {} deactivatedDamage)
+                if (itemToggle.DeactivatedDamage is {} deactivatedDamage)
                     component.Damage = deactivatedDamage;
 
-                component.SoundHit = component.DeactivatedSoundHit;
+                if (itemToggle.DeactivatedStaminaCost is {} deactivatedStaminaCost)
+                    component.StaminaCost = deactivatedStaminaCost;
 
-                if (component.DeactivatedSoundNoDamage != null)
-                    component.SoundNoDamage = component.DeactivatedSoundNoDamage;
+                component.SoundHit = itemToggle.DeactivatedSoundHit;
+
+                if (itemToggle.DeactivatedSoundNoDamage is {} deactivatedSoundNoDamage)
+                    component.SoundNoDamage = deactivatedSoundNoDamage;
             }
-
-            RaiseLocalEvent(uid, new ThrowingDamageToggledEvent(uid, args.Activated));
         }
 
         private void OnThrown(EntityUid uid, DamageOtherOnHitComponent component, ThrownEvent args)

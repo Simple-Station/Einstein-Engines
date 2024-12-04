@@ -1,6 +1,7 @@
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Events;
+using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Mobs.Components;
 using Content.Shared.FixedPoint;
@@ -18,9 +19,10 @@ public sealed class EmbedPassiveDamageSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<EmbedPassiveDamageComponent, ComponentStartup>(OnStartup);
+        SubscribeLocalEvent<ItemToggleEmbedPassiveDamageComponent, ItemToggleDamageOtherOnHitStartup>(OnItemToggleStartup);
         SubscribeLocalEvent<EmbedPassiveDamageComponent, EmbedEvent>(OnEmbed);
         SubscribeLocalEvent<EmbedPassiveDamageComponent, RemoveEmbedEvent>(OnRemoveEmbed);
-        SubscribeLocalEvent<EmbedPassiveDamageComponent, ThrowingDamageToggledEvent>(OnThrowingDamageToggled);
+        SubscribeLocalEvent<EmbedPassiveDamageComponent, ItemToggledEvent>(OnItemToggle);
     }
 
     /// <summary>
@@ -33,6 +35,18 @@ public sealed class EmbedPassiveDamageSystem : EntitySystem
 
         if (component.Damage.Empty)
             component.Damage = damage.Damage * component.ThrowingDamageMultiplier;
+    }
+
+    /// <summary>
+    ///   Inherit stats from ItemToggleDamageOtherOnHit.
+    /// </summary>
+    private void OnItemToggleStartup(EntityUid uid, ItemToggleEmbedPassiveDamageComponent component, ItemToggleDamageOtherOnHitStartup args)
+    {
+        if (!TryComp<EmbedPassiveDamageComponent>(uid, out var embedPassiveDamage))
+            return;
+
+        if (component.ActivatedDamage == null && args.Weapon.Comp.ActivatedDamage is {} activatedDamage)
+            component.ActivatedDamage = activatedDamage * embedPassiveDamage.ThrowingDamageMultiplier;
     }
 
     private void OnEmbed(EntityUid uid, EmbedPassiveDamageComponent component, EmbedEvent args)
@@ -57,18 +71,18 @@ public sealed class EmbedPassiveDamageSystem : EntitySystem
     /// <summary>
     ///   Used to update the EmbedPassiveDamageComponent component on item toggle.
     /// </summary>
-    private void OnThrowingDamageToggled(EntityUid uid, EmbedPassiveDamageComponent component, ThrowingDamageToggledEvent args)
+    private void OnItemToggle(EntityUid uid, EmbedPassiveDamageComponent component, ItemToggledEvent args)
     {
-        if (!TryComp<DamageOtherOnHitComponent>(uid, out var damage))
+        if (!TryComp<ItemToggleEmbedPassiveDamageComponent>(uid, out var itemTogglePassiveDamage))
             return;
 
-        if (args.Activated && damage.Damage is {} throwingDamage)
+        if (args.Activated && itemTogglePassiveDamage.ActivatedDamage is {} activatedDamage)
         {
-            component.DeactivatedDamage ??= component.Damage;
-            component.Damage = throwingDamage * component.ThrowingDamageMultiplier;
+            itemTogglePassiveDamage.DeactivatedDamage ??= component.Damage;
+            component.Damage = activatedDamage;
         }
-        else if (component.DeactivatedDamage is {} deactivatedDamage)
-            component.Damage = component.DeactivatedDamage;
+        else if (itemTogglePassiveDamage.DeactivatedDamage is {} deactivatedDamage)
+            component.Damage = deactivatedDamage;
     }
 
     public override void Update(float frameTime)

@@ -56,6 +56,11 @@
     activatedDamage:
         types:
             Heat: 7
+  - type: ItemToggleDamageOtherOnHit
+    activatedDamage:
+      types:
+        Heat: 4
+        Blunt: 3
   - type: ItemToggleSize
     activatedSize: Large
   - type: ItemToggleHot

@@ -38,6 +38,9 @@
             Slash: 8
             Heat: 10
             Structural: 20
+  - type: ItemToggleDamageOtherOnHit
+    activatedStaminaCost: 6
+  - type: ItemToggleEmbedPassiveDamage
   - type: ItemToggleEmbeddableProjectile
     activatedEmbedOnThrow: true
   - type: Sprite
@@ -56,7 +59,6 @@
       types:
         Blunt: 4.5
   - type: DamageOtherOnHit
-    staminaCost: 5
   - type: EmbeddableProjectile
     embedOnThrow: false
   - type: EmbedPassiveDamage
