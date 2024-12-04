@@ -8406,3 +8406,10 @@ Entries:
   id: 6556
   time: '2024-12-04T00:11:13.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1189
+- author: Ichaie
+  changes:
+    - type: Add
+      message: added a new map called "Europa" to rotation
+  id: 6557
+  time: '2024-12-04T00:12:59.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1152
