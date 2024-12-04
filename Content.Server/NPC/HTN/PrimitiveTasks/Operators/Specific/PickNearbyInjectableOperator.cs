@@ -8,6 +8,8 @@ using Content.Shared.Interaction;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Silicons.Bots;
 using Content.Shared.Emag.Components;
+using Content.Shared.Silicon.Components;
+
 
 namespace Content.Server.NPC.HTN.PrimitiveTasks.Operators.Specific;
 
@@ -64,7 +66,7 @@ public sealed partial class PickNearbyInjectableOperator : HTNOperator
                 damageQuery.TryGetComponent(entity, out var damage) &&
                 !recentlyInjected.HasComponent(entity))
             {
-                if (_entMan.HasComponent<SiliconComponent>(entity))
+                if (_entManager.HasComponent<SiliconComponent>(entity))
                     continue;
 
                 // no treating dead bodies
