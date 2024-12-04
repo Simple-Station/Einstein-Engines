@@ -973,7 +973,7 @@ namespace Content.Shared.Interaction
             bool checkCanInteract = true,
             bool checkCanUse = true)
         {
-            if ((IsDeleted(user) || IsDeleted(used) || IsDeleted(target)))
+            if (IsDeleted(user) || IsDeleted(used) || IsDeleted(target))
                 return;
 
             if (checkCanInteract && !_actionBlockerSystem.CanInteract(user, target))
