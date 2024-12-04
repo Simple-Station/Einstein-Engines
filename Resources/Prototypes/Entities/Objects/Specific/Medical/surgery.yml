@@ -35,7 +35,7 @@
       path: /Audio/Effects/lightburn.ogg
   - type: DamageOtherOnHit
   - type: ThrowingAngle
-    angle: 90
+    angle: 45
   - type: SurgeryTool
     startSound:
       path: /Audio/Medical/Surgery/cautery1.ogg
@@ -272,15 +272,21 @@
     range: 1.4
     damage:
       types:
-        Blunt: 4.5
+        Slash: 2.5
+        Blunt: 2.0
     heavyRateModifier: 0.8
     heavyDamageBaseModifier: 1.25
     heavyStaminaCost: 4
     maxTargets: 1
     angle: 20
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
   - type: DamageOtherOnHit
+    staminaCost: 5
   - type: ThrowingAngle
-    angle: 90
+    angle: 315
+  - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
   - type: SurgeryTool
     startSound:
       path: /Audio/Medical/Surgery/retractor1.ogg
@@ -316,6 +322,8 @@
       types:
         Slash: 6.5
         Heat: 1
+  - type: ThrowingAngle
+    angle: 270
   - type: Hemostat
     speed: 1.5
   - type: Retractor
@@ -354,10 +362,11 @@
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: DamageOtherOnHit
+    staminaCost: 5
   - type: EmbeddableProjectile
   - type: EmbedPassiveDamage
   - type: ThrowingAngle
-    angle: 90
+    angle: 35
   - type: SurgeryTool
     startSound:
       path: /Audio/Medical/Surgery/retractor1.ogg
@@ -501,7 +510,7 @@
     damage:
       types:
         Slash: 10
-    staminaCost: 13
+    staminaCost: 14
   - type: ThrowingAngle
     angle: 90
   - type: Tool
@@ -543,8 +552,8 @@
   - type: DamageOtherOnHit
     damage:
       types:
-        Slash: 10
-    staminaCost: 13
+        Slash: 12
+    staminaCost: 14
   - type: ThrowingAngle
     angle: 90
   - type: Tool
