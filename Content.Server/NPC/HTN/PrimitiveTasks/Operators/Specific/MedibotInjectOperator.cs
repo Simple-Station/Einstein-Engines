@@ -52,10 +52,12 @@ public sealed partial class MedibotInjectOperator : HTNOperator
 
         if (!blackboard.TryGetValue<EntityUid>(TargetKey, out var target, _entMan) || _entMan.Deleted(target))
             return HTNOperatorStatus.Failed;
+        
+        if (_entMan.HasComponent<SiliconComponent>(target))
+            return HTNOperatorStatus.Failed;
 
         if (!_entMan.TryGetComponent<MedibotComponent>(owner, out var botComp))
             return HTNOperatorStatus.Failed;
-
 
         if (!_entMan.TryGetComponent<DamageableComponent>(target, out var damage))
             return HTNOperatorStatus.Failed;
