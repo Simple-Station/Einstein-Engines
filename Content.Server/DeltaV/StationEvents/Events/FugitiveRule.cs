@@ -12,6 +12,7 @@ using Content.Shared.Inventory;
 using Content.Shared.Paper;
 using Content.Shared.Popups;
 using Content.Shared.Random.Helpers;
+using Content.Shared.Silicons.StationAi;
 using Content.Shared.Storage.EntitySystems;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Utility;
@@ -47,7 +48,7 @@ public sealed class FugitiveRule : StationEventSystem<FugitiveRuleComponent>
         var consoles = new List<TransformComponent>();
         while (query.MoveNext(out var console, out var xform, out _))
         {
-            if (StationSystem.GetOwningStation(console, xform) != comp.Station || HasComp<GhostComponent>(console))
+            if (StationSystem.GetOwningStation(console, xform) != comp.Station || HasComp<GhostComponent>(console) || HasComp<StationAiHeldComponent>(console))
                 continue;
 
             consoles.Add(xform);
