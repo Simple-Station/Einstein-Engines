@@ -8399,3 +8399,10 @@ Entries:
   id: 6555
   time: '2024-12-03T23:33:01.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1279
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Added the EMP Flashlight to Syndicate Uplinks.
+  id: 6556
+  time: '2024-12-04T00:11:13.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1189
