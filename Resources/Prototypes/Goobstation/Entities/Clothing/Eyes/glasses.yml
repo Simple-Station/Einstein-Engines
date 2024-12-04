@@ -1,0 +1,23 @@
+- type: entity
+  parent: ClothingEyesBase
+  id: ClothingEyesGlassesMedical
+  name: medglasses
+  description: Sunglasses with a medical hud
+  components:
+  - type: Sprite
+    sprite: Goobstation/Clothing/Eyes/Glasses/medglasses.rsi
+  - type: Clothing
+    sprite: Goobstation/Clothing/Eyes/Glasses/medglasses.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - HudMedical
+  - type: IdentityBlocker
+    coverage: EYES
+  - type: ShowHealthBars
+    damageContainers:
+    - Biological
+  - type: ShowHealthIcons
+    damageContainers:
+    - Biological
+    
