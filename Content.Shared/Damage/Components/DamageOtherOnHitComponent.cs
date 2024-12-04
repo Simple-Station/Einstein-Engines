@@ -7,31 +7,50 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Damage.Components
 {
+    /// <summary>
+    ///   Deals damage when thrown.
+    /// </summary>
     [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
     public sealed partial class DamageOtherOnHitComponent : Component
     {
         [DataField, AutoNetworkedField]
         public bool IgnoreResistances = false;
 
+        /// <summary>
+        ///   The damage that a throw deals.
+        /// </summary>
         [DataField, AutoNetworkedField]
-        public DamageSpecifier? Damage = null;
+        public DamageSpecifier Damage = new();
 
+        /// <summary>
+        ///   The stamina cost of throwing this entity.
+        /// </summary>
         [DataField, AutoNetworkedField]
         public float StaminaCost = 3.5f;
 
+        /// <summary>
+        ///   The maximum amount of hits per throw before landing on the floor.
+        /// </summary>
         [DataField, AutoNetworkedField]
         public int MaxHitQuantity = 1;
 
+        /// <summary>
+        ///   The tracked amount of hits in a single throw.
+        /// </summary>
         [DataField, AutoNetworkedField]
         public int HitQuantity = 0;
 
         /// <summary>
-        ///   If true, inherits the weapon damage, and sound effects from MeleeWeaponComponent,
-        ///   if the respective fields are null.
+        ///   The multiplier to apply to the entity's light attack damage to calculate the throwing damage.
+        ///   Only used if this component has a MeleeWeaponComponent and Damage is not set on the prototype.
         /// </summary>
         [DataField, AutoNetworkedField]
-        public bool InheritMeleeStats = true;
+        public float MeleeDamageMultiplier = 1f;
 
+        /// <summary>
+        ///   The sound to play when this entity hits on a throw.
+        ///   If null, attempts to retrieve the SoundHit from MeleeWeaponComponent.
+        /// </summary>
         [DataField, AutoNetworkedField]
         public SoundSpecifier? SoundHit;
 
@@ -64,6 +83,7 @@ namespace Content.Shared.Damage.Components
 
         /// <summary>
         ///   Plays if no damage is done to the target entity.
+        ///   If null, attempts to retrieve the SoundNoDamage from MeleeWeaponComponent.
         /// </summary>
         [DataField, AutoNetworkedField]
         public SoundSpecifier SoundNoDamage { get; set; } = new SoundCollectionSpecifier("WeakHit");

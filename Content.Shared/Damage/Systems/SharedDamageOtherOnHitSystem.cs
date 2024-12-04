@@ -47,15 +47,20 @@ namespace Content.Shared.Damage.Systems
         /// </summary>
         private void OnStartup(EntityUid uid, DamageOtherOnHitComponent component, ComponentStartup args)
         {
-            if (!component.InheritMeleeStats || !TryComp<MeleeWeaponComponent>(uid, out var melee))
+            if (!TryComp<MeleeWeaponComponent>(uid, out var melee))
                 return;
 
-            if (component.Damage == null)
-                component.Damage = melee.Damage;
+            if (component.Damage.Empty)
+                component.Damage = melee.Damage * component.MeleeDamageMultiplier;
             if (component.SoundHit == null)
                 component.SoundHit = melee.SoundHit;
             if (component.SoundNoDamage == null)
-                component.SoundNoDamage = melee.SoundNoDamage;
+            {
+                if (melee.SoundNoDamage != null)
+                    component.SoundNoDamage = melee.SoundNoDamage;
+                else
+                    component.SoundNoDamage = new SoundCollectionSpecifier("WeakHit");
+            }
         }
 
 
@@ -109,15 +114,15 @@ namespace Content.Shared.Damage.Systems
         /// </summary>
         private void OnItemToggle(EntityUid uid, DamageOtherOnHitComponent component, ItemToggledEvent args)
         {
-            if (!component.InheritMeleeStats || !TryComp<ItemToggleMeleeWeaponComponent>(uid, out var itemToggleMelee))
+            if (!TryComp<ItemToggleMeleeWeaponComponent>(uid, out var itemToggleMelee))
                 return;
 
             if (args.Activated)
             {
-                if (itemToggleMelee.ActivatedDamage != null)
+                if (itemToggleMelee.ActivatedDamage is {} activatedDamage)
                 {
                     component.DeactivatedDamage ??= component.Damage;
-                    component.Damage = itemToggleMelee.ActivatedDamage;
+                    component.Damage = activatedDamage * component.MeleeDamageMultiplier;
                 }
 
                 component.DeactivatedSoundHit = component.SoundHit;
@@ -131,8 +136,8 @@ namespace Content.Shared.Damage.Systems
             }
             else
             {
-                if (component.DeactivatedDamage != null)
-                    component.Damage = component.DeactivatedDamage;
+                if (component.DeactivatedDamage is {} deactivatedDamage)
+                    component.Damage = deactivatedDamage;
 
                 component.SoundHit = component.DeactivatedSoundHit;
 
@@ -156,7 +161,7 @@ namespace Content.Shared.Damage.Systems
             if (!Resolve(uid, ref component, false))
                 return new DamageSpecifier();
 
-            var ev = new GetThrowingDamageEvent(uid, new (component.Damage ?? new DamageSpecifier()), new(), user);
+            var ev = new GetThrowingDamageEvent(uid, component.Damage, new(), user);
             RaiseLocalEvent(uid, ref ev);
 
             if (component.ContestArgs is not null && user is EntityUid userUid)

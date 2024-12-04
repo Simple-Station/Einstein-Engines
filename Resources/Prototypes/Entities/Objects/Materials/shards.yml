@@ -43,9 +43,9 @@
         mask:
         - ItemMask
   - type: DamageOtherOnHit
-    autoRemoveDuration: 30
   - type: EmbeddableProjectile
     sound: /Audio/Weapons/bladeslice.ogg
+    autoRemoveDuration: 30
   - type: EmbedPassiveDamage
   - type: Tag
     tags:

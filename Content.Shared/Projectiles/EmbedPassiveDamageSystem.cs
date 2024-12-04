@@ -31,15 +31,15 @@ public sealed class EmbedPassiveDamageSystem : EntitySystem
         if (!TryComp<DamageOtherOnHitComponent>(uid, out var damage))
             return;
 
-        if (component.Damage.Empty && damage.Damage is {} thrownDamage)
-            component.Damage = thrownDamage * component.DamageMultiplier;
+        if (component.Damage.Empty)
+            component.Damage = damage.Damage * component.ThrowingDamageMultiplier;
     }
 
     private void OnEmbed(EntityUid uid, EmbedPassiveDamageComponent component, EmbedEvent args)
     {
         if (!HasComp<MobStateComponent>(args.Embedded) ||
             !TryComp<DamageableComponent>(args.Embedded, out var damageable) ||
-            component.Damage.Empty || component.Damage.GetTotal == 0)
+            component.Damage.Empty || component.Damage.GetTotal() == 0)
             return;
 
         component.Embedded = args.Embedded;
@@ -62,10 +62,10 @@ public sealed class EmbedPassiveDamageSystem : EntitySystem
         if (!TryComp<DamageOtherOnHitComponent>(uid, out var damage))
             return;
 
-        if (args.Activated && damage.Damage is {} thrownDamage)
+        if (args.Activated && damage.Damage is {} throwingDamage)
         {
             component.DeactivatedDamage ??= component.Damage;
-            component.Damage = thrownDamage * component.DamageMultiplier;
+            component.Damage = throwingDamage * component.ThrowingDamageMultiplier;
         }
         else if (component.DeactivatedDamage is {} deactivatedDamage)
             component.Damage = component.DeactivatedDamage;

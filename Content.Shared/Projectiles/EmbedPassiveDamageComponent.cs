@@ -36,10 +36,10 @@ public sealed partial class EmbedPassiveDamageComponent : Component
     ///   calculate the damage per second.
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public float DamageMultiplier = 0.03f;
+    public float ThrowingDamageMultiplier = 0.03f;
 
     /// <summary>
-    /// The maximum HP the damage will be given to. If 0, disabled.
+    /// The maximum HP the damage will be given to. If 0, the cap is disabled.
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public FixedPoint2 DamageCap = 250;
