@@ -1,6 +1,6 @@
 # Translator that doesn't need power to work
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: TranslatorUnpowered
   parent: BaseItem
   name: translator
@@ -32,7 +32,7 @@
 
 # Base translator that uses a power cell. Starts with an empty slot.
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: TranslatorPoweredBase
   parent: [ TranslatorUnpowered, PowerCellSlotMediumItem ]
   components:
@@ -45,14 +45,14 @@
 
 # Normal translator with medium power cell in it
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: Translator
   parent: [ PowerCellSlotMediumItem, TranslatorPoweredBase ]
   suffix: Powered
 
 # Normal translator with a high power cell and special appearance
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: TranslatorForeigner
   parent: [ PowerCellSlotHighItem, TranslatorPoweredBase ]
   name: foreigner's translator

@@ -12,7 +12,7 @@
   - type: Sprite
     sprite: Mobs/Species/Reptilian/parts.rsi
   - type: Damageable
-    damageContainer: Biological
+    damageContainer: OrganicPart # Shitmed
   - type: BodyPart
   - type: ContainerContainer
     containers:
@@ -36,7 +36,7 @@
   id: HandsAnimal
   name: animal hands
   parent: PartAnimal
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     layers:
@@ -50,7 +50,7 @@
   id: LegsAnimal
   name: animal legs
   parent: PartAnimal
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     layers:
@@ -64,7 +64,7 @@
   id: FeetAnimal
   name: animal feet
   parent: PartAnimal
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     layers:
@@ -77,7 +77,7 @@
   id: TorsoAnimal
   name: animal torso
   parent: PartAnimal
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     layers:
@@ -94,3 +94,51 @@
       - ReagentId: Blood
         Quantity: 20
 
+# Monkey head for borging/transplanting pun pun
+- type: entity
+  parent: [PartAnimal, BaseHead]
+  id: HeadAnimal
+  name: animal head
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: head_m
+
+- type: entity
+  abstract: true
+  parent: PartAnimal
+  id: BaseCarpPart
+  components:
+  - type: Sprite
+    sprite: Mobs/Aliens/Carps/carp_parts.rsi
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: BaseCarpPart
+  id: TailCarp
+  name: carp tail
+  description: Unique glands in this tail let space carp fly in a vacuum.
+  components:
+  - type: Sprite
+    layers:
+    - state: tail
+  - type: BodyPart
+    partType: Tail
+  - type: MovementBodyPart
+    walkSpeed: 2.5
+    sprintSpeed: 3.5
+  # TODO: Make it actually needed. Legs are hardcoded to be the only parts that matter for movement.
+  # TODO: space flight stuff
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: BaseCarpPart
+  id: TorsoCarp
+  name: carp torso
+  components:
+  - type: Sprite
+    layers:
+    - state: torso
+  - type: BodyPart
+    partType: Torso

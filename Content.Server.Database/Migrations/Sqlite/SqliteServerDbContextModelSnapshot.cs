@@ -618,6 +618,22 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("INTEGER")
                         .HasColumnName("loadout_id");
 
+                    b.Property<string>("CustomColorTint")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("custom_color_tint");
+
+                    b.Property<string>("CustomDescription")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("custom_description");
+
+                    b.Property<bool?>("CustomHeirloom")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("custom_heirloom");
+
+                    b.Property<string>("CustomName")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("custom_name");
+
                     b.Property<string>("LoadoutName")
                         .IsRequired()
                         .HasColumnType("TEXT")
@@ -675,10 +691,6 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Property<DateTime>("FirstSeenTime")
                         .HasColumnType("TEXT")
                         .HasColumnName("first_seen_time");
-
-                    b.Property<DateTime?>("LastReadRules")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("last_read_rules");
 
                     b.Property<string>("LastSeenAddress")
                         .IsRequired()

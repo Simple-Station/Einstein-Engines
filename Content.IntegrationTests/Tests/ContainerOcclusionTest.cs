@@ -43,11 +43,11 @@ namespace Content.IntegrationTests.Tests
 
             EntityUid dummy = default;
             var mapManager = server.ResolveDependency<IMapManager>();
-            var mapId = mapManager.CreateMap();
+            var map = await pair.CreateTestMap();
 
             await server.WaitPost(() =>
             {
-                var pos = new MapCoordinates(Vector2.Zero, mapId);
+                var pos = new MapCoordinates(Vector2.Zero, map.MapId);
                 var entStorage = serverEntManager.EntitySysManager.GetEntitySystem<EntityStorageSystem>();
                 var container = serverEntManager.SpawnEntity("ContainerOcclusionA", pos);
                 dummy = serverEntManager.SpawnEntity("ContainerOcclusionDummy", pos);
@@ -85,11 +85,12 @@ namespace Content.IntegrationTests.Tests
 
             EntityUid dummy = default;
             var mapManager = server.ResolveDependency<IMapManager>();
-            var mapId = mapManager.CreateMap();
+
+            var map = await pair.CreateTestMap();
 
             await server.WaitPost(() =>
             {
-                var pos = new MapCoordinates(Vector2.Zero, mapId);
+                var pos = new MapCoordinates(Vector2.Zero, map.MapId);
                 var entStorage = serverEntManager.EntitySysManager.GetEntitySystem<EntityStorageSystem>();
                 var container = serverEntManager.SpawnEntity("ContainerOcclusionB", pos);
                 dummy = serverEntManager.SpawnEntity("ContainerOcclusionDummy", pos);
@@ -99,10 +100,12 @@ namespace Content.IntegrationTests.Tests
 
             await pair.RunTicksSync(5);
 
-            var clientEnt = clientEntManager.GetEntity(serverEntManager.GetNetEntity(dummy));
+            EntityUid clientEnt = default!;
 
             await client.WaitAssertion(() =>
             {
+                clientEnt = clientEntManager.GetEntity(serverEntManager.GetNetEntity(dummy));
+
                 var sprite = clientEntManager.GetComponent<SpriteComponent>(clientEnt);
                 var light = clientEntManager.GetComponent<PointLightComponent>(clientEnt);
                 Assert.Multiple(() =>
@@ -127,11 +130,12 @@ namespace Content.IntegrationTests.Tests
 
             EntityUid dummy = default;
             var mapManager = server.ResolveDependency<IMapManager>();
-            var mapId = mapManager.CreateMap();
+
+            var map = await pair.CreateTestMap();
 
             await server.WaitPost(() =>
             {
-                var pos = new MapCoordinates(Vector2.Zero, mapId);
+                var pos = new MapCoordinates(Vector2.Zero, map.MapId);
                 var entStorage = serverEntManager.EntitySysManager.GetEntitySystem<EntityStorageSystem>();
                 var containerA = serverEntManager.SpawnEntity("ContainerOcclusionA", pos);
                 var containerB = serverEntManager.SpawnEntity("ContainerOcclusionB", pos);

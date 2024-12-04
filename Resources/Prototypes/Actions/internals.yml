@@ -2,7 +2,7 @@
   id: ActionToggleInternals
   name: Toggle Internals
   description: Breathe from the equipped gas tank. Also requires equipped breath mask.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     icon:

@@ -3,10 +3,15 @@ trait-description-Blindness = You are legally blind, and can't see clearly past 
 trait-examined-Blindness = [color=lightblue]{CAPITALIZE(POSS-ADJ($target))} eyes are glassy and unfocused. It doesn't seem like {SUBJECT($target)} can see you well, if at all.[/color]
 
 trait-name-Narcolepsy = Narcolepsy
-trait-description-Narcolepsy = You fall asleep randomly
+trait-description-Narcolepsy = 
+    Due to a neurological disorder, controlling your sleep-wake cycles is difficult for you.
+    As a result, you may repeatedly fall asleep for short periods of time throughout the day.
 
 trait-name-Pacifist = Pacifist
-trait-description-Pacifist = You cannot attack or hurt any living beings.
+trait-description-Pacifist =
+    Either due to moral principles, or as a result of body modification,
+    you cannot bring yourself to harm or to risk harming any other living being,
+    regardless of what threat they may pose.
 
 trait-name-SelfAware = Self-Aware
 trait-description-SelfAware =
@@ -15,11 +20,16 @@ trait-description-SelfAware =
     and can gauge if you have toxin or airloss damage.
 
 trait-name-LightweightDrunk = Lightweight Drunk
-trait-description-LightweightDrunk = Alcohol has a stronger effect on you
+trait-description-LightweightDrunk =
+    Your body exhibits a significantly heightened susceptibility to alcohol intoxication.
+    As a result, alcohol has a more significant effect on your cognitive functions.
+    Note: This pertrains solely to the [color=blue]visual effects[/color] of intoxication, and does not affect the alchohol poisoning threshold.
 
 trait-name-HeavyweightDrunk = Alcohol Tolerance
 trait-description-HeavyweightDrunk =
-    Alcohol is afraid of you.
+    Your body has developed an exceptionally high level of alcohol tolerance, leaving the very beverages you consume intimidated.
+    As a result, the effects of alcohol on your cognitive functions are considerably less noticeable.
+    Note: This pertrains solely to the [color=blue]visual effects[/color] of intoxication, and does not affect the alchohol poisoning threshold.
 
 trait-name-LiquorLifeline = Liquor Lifeline
 trait-description-LiquorLifeline =
@@ -28,7 +38,10 @@ trait-description-LiquorLifeline =
     You also gain the benefits of [color=lightblue]Alcohol Tolerance[/color].
 
 trait-name-Muted = Muted
-trait-description-Muted = You can't speak
+trait-description-Muted =
+    Either due to to an abnormality in your body development, or due to some body augmentation, you are unable to utilize spoken language.
+    Consequently, you may encounter difficulties in communicating with others or using radio communication.
+    To compensate for this limitation, you have been taught the Galactic Sign Language.
 
 trait-name-BloodDeficiency = Blood Deficiency
 trait-description-BloodDeficiency =
@@ -41,22 +54,34 @@ trait-description-Hemophilia =
     You bleed twice as long, and you have easy bruising, taking 10% more Blunt damage.
 
 trait-name-Paracusia = Paracusia
-trait-description-Paracusia = You hear sounds that aren't really there
+trait-description-Paracusia =
+    The challenges of deep space life have led you to experience chronic and frequent auditory hallucinations,
+    causing you to perceive sounds that are not really there.
 
 trait-name-PirateAccent = Pirate Accent
-trait-description-PirateAccent = You can't stop speaking like a pirate!
+trait-description-PirateAccent =
+    Your interactions with space pirates or a fascination with their culture
+    have influenced your speech, causing you to communicate in a manner characteristic of pirates.
 
 trait-name-Accentless = Accentless
-trait-description-Accentless = You don't have the accent that your species would usually have
+trait-description-Accentless =
+    You may have developed in isolation or separation from other repsentatives of your species,
+    which resulted in you not having the typical accent that your species peers may possess.
 
 trait-name-FrontalLisp = Frontal Lisp
-trait-description-FrontalLisp = You thpeak with a lithp
+trait-description-FrontalLisp =
+    An abnormality in the development of your speech has caused you to pronounce the "s" and "z" sounds similarly to "th".
+    In other words, you thpeak with a lithp.
 
 trait-name-Stutter = Stutter
-trait-description-Stutter = You t-t-talk with a bit of a s-s-stutter...
+trait-description-Stutter =
+    Either due to a speech disorder, or due to anxiety or stress, you often find yourself stuttering while trying to speak.
+
+trait-name-Southern = Southern Drawl
+trait-description-Southern = You have a different way of speakin'.
 
 trait-name-Snoring = Snoring
-trait-description-Snoring = You will snore while sleeping.
+trait-description-Snoring = You tend to snore loudly while sleeping.
 
 trait-name-CPRTraining = CPR Training
 trait-description-CPRTraining = At some point in your life, you have received training in how to perform CPR.
@@ -66,13 +91,14 @@ trait-name-Nearsighted = Nearsighted
 trait-description-Nearsighted = Your eyes are not what they once were, you have difficulty seeing things far away without corrective glasses.
 
 trait-name-NormalVisionHarpy = Trichromat Modification
-trait-description-NormalVisionHarpy = Your eyes have been modified by means of advanced medicine to see in the standard colors of Red, Green, and Blue.
-
-trait-name-Southern = Southern Drawl
-trait-description-Southern = You have a different way of speakin'.
+trait-description-NormalVisionHarpy = 
+    Your eyes have been modified by means of advanced medicine to see in the standard colors of Red, Green, and Blue.
+    You do not have the usual vision anomaly that your species may possess.
 
 trait-name-NormalVision = Trichromat Modification
-trait-description-NormalVision = Your eyes have been modified by means of advanced medicine to see in the standard colors of Red, Green, and Blue.
+trait-description-NormalVision =
+    Your eyes have been modified by means of advanced medicine to see in the standard colors of Red, Green, and Blue.
+    You do not have the usual vision anomaly that your species may possess.
 
 trait-name-Thieving = Thieving
 trait-description-Thieving =
@@ -201,7 +227,7 @@ trait-description-SnailPaced =
 
 trait-name-LightStep = Light Step
 trait-description-LightStep =
-    You move with a gentle step, making your footsteps quieter.
+    You move with a gentle step, which makes your footsteps quieter.
 
 trait-name-Swashbuckler = Swashbuckler
 trait-description-Swashbuckler =
@@ -321,7 +347,7 @@ trait-description-AddictionNicotine =
 trait-name-AnimalFriend = Animal Friend
 trait-description-AnimalFriend =
     You have a way with animals. You will never be attacked by animals, unless you attack them first.
-    
+
 trait-name-Liar = Pathological liar
 trait-description-Liar = You can hardly bring yourself to tell the truth. Sometimes you lie anyway.
 
@@ -383,8 +409,13 @@ trait-description-DermalArmor =
 trait-name-CyberEyes = Cyber-Eyes Basic System
 trait-description-CyberEyes =
     One or more of your eyes have been replaced with a highly modular mechanical ocular implant.
-    Their most basic functionality is to provide amelioration for weaknesses of the wearer's natural eyes,
-    but additionally these implants provide protection from bright flashes of light.
+    Their most basic functionality is to provide amelioration for weaknesses of the wearer's natural eyes.
+    The functionality of these implants can be extended by a variety of commercially available modules.
+
+trait-name-FlareShielding = Cyber-Eyes Flare Shielding
+trait-description-FlareShielding =
+    Your cybereyes have been fitted with a photochromic lense that automatically darkens in response to intense stimuli.
+    This provides substantial protection from bright flashes of light, such as those from welding arcs.
 
 trait-name-CyberEyesSecurity = Cyber-Eyes SecHud
 trait-description-CyberEyesSecurity =

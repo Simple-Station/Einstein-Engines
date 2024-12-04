@@ -1,0 +1,73 @@
+# Cargo Technician
+#- type: characterItemGroup
+#  id: LoadoutCargoTechnicianBackpacks
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutCargoTechnicianBelt
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutCargoTechnicianEars
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutCargoTechnicianEquipment
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutCargoTechnicianEyes
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutCargoTechnicianGloves
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutCargoTechnicianHead
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutCargoTechnicianId
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutCargoTechnicianNeck
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutCargoTechnicianMask
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutCargoTechnicianOuter
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCargoOuterWinterCargo
+
+- type: characterItemGroup
+  id: LoadoutCargoTechnicianShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCargoShoesBootsWinterCargo
+
+- type: characterItemGroup
+  id: LoadoutCargoTechnicianUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCargoTechnicianUniformSuit
+    - type: loadout
+      id: LoadoutCargoTechnicianUniformSkirt

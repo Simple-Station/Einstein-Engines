@@ -85,6 +85,9 @@
   id: WeaponRevolverDeckardSecurity
   description: A rare, custom-built revolver. Use when there is no time for Voight-Kampff test. Uses .45 magnum ammo.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
+  components:
+  - type: GuideHelp
+    guides: [ SecurityWeapons ]
 
 - type: entity
   name: Deckard
@@ -99,6 +102,8 @@
         - CartridgeMagnum
         - SpeedLoaderMagnum
     proto: CartridgeMagnumRubber
+  - type: GuideHelp
+    guides: [ SecurityWeapons ]
 
 - type: entity
   name: Inspector
@@ -121,6 +126,9 @@
   id: WeaponRevolverInspectorSecurity
   description: A detective's best friend. Uses .45 magnum ammo.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
+  components:
+  - type: GuideHelp
+    guides: [ SecurityWeapons ]
 
 - type: entity
   name: Inspector
@@ -135,6 +143,8 @@
         - CartridgeMagnum
         - SpeedLoaderMagnum
     proto: CartridgeMagnumRubber
+  - type: GuideHelp
+    guides: [ SecurityWeapons ]
 
 - type: entity
   name: Mateba
@@ -178,6 +188,9 @@
   id: WeaponRevolverPythonSecurity
   description: An iconic large-framed revolver of ancient Sol' design. It is commonly manufactured by many companies all over the colonies. Uses .45 magnum ammo.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
+  components:
+  - type: GuideHelp
+    guides: [ SecurityWeapons ]
 
 - type: entity
   name: Python
@@ -197,6 +210,8 @@
       path: /Audio/Weapons/Guns/MagOut/revolver_magout.ogg
     soundInsert:
       path: /Audio/Weapons/Guns/MagIn/revolver_magin.ogg
+  - type: GuideHelp
+    guides: [ SecurityWeapons ]
 
 - type: entity
   name: Python

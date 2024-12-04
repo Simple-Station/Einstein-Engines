@@ -1,5 +1,6 @@
 using Content.Shared.Damage;
 using Content.Shared.Movement.Systems;
+using Content.Shared.Body.Part;
 using Content.Shared.Standing;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
@@ -28,7 +29,7 @@ public abstract partial class SharedBodySystem : EntitySystem
     /// </summary>
     public const string OrganSlotContainerIdPrefix = "body_organ_slot_";
 
-    [Dependency] private   readonly IGameTiming _timing = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] protected readonly IPrototypeManager Prototypes = default!;
     [Dependency] protected readonly DamageableSystem Damageable = default!;
     [Dependency] protected readonly MovementSpeedModifierSystem Movement = default!;
@@ -42,6 +43,10 @@ public abstract partial class SharedBodySystem : EntitySystem
 
         InitializeBody();
         InitializeParts();
+        InitializeOrgans();
+        // To try and mitigate the server load due to integrity checks, we set up a Job Queue.
+        InitializeIntegrityQueue();
+        InitializePartAppearances();
     }
 
     /// <summary>

@@ -1,0 +1,88 @@
+# Cataloger
+#- type: characterItemGroup
+#  id: LoadoutCatalogerBackpacks
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutCatalogerBelt
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutCatalogerEars
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutCatalogerEquipment
+  maxItems: 3
+  items:
+    - type: loadout
+      id: LoadoutCatalogerEquipmentCandles
+    - type: loadout
+      id: LoadoutCatalogerEquipmentCandlesSmall
+    - type: loadout
+      id: LoadoutCatalogerPillCanisterSpaceDrugs
+
+#- type: characterItemGroup
+#  id: LoadoutCatalogerEyes
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutCatalogerGloves
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutCatalogerHead
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutCatalogerId
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutCatalogerNeck
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutCatalogerMask
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutCatalogerOuter
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutCatalogerShoes
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutCatalogerUniforms
+  items:
+    - type: loadout
+      id: LoadoutScienceJumpsuitLibrarianNt
+    - type: loadout
+      id: LoadoutScienceJumpsuitLibrarianIdris
+    - type: loadout
+      id: LoadoutScienceJumpsuitLibrarianOrion
+    - type: loadout
+      id: LoadoutScienceJumpsuitLibrarianHeph
+    - type: loadout
+      id: LoadoutScienceJumpsuitLibrarianPMCG
+    - type: loadout
+      id: LoadoutScienceJumpsuitLibrarianZav
+    - type: loadout
+      id: LoadoutScienceJumpsuitLibrarianZeng
+    - type: loadout
+      id: LoadoutScienceJumpsuitLibrarian
+    - type: loadout
+      id: LoadoutScienceJumpskirtLibrarian
