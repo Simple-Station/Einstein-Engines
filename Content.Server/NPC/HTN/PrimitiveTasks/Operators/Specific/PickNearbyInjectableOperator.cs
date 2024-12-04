@@ -64,6 +64,9 @@ public sealed partial class PickNearbyInjectableOperator : HTNOperator
                 damageQuery.TryGetComponent(entity, out var damage) &&
                 !recentlyInjected.HasComponent(entity))
             {
+                if (_entMan.HasComponent<SiliconComponent>(entity))
+                    continue;
+
                 // no treating dead bodies
                 if (!_medibot.TryGetTreatment(medibot, state.CurrentState, out var treatment))
                     continue;
