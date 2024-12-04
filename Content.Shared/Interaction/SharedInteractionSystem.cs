@@ -1083,10 +1083,6 @@ namespace Content.Shared.Interaction
             if (checkAccess && !IsAccessible(user, used))
                 return false;
 
-            // Does the user have hands?
-            if (!_handsQuery.HasComp(user))
-                return false;
-
             complexInteractions ??= SupportsComplexInteractions(user);
             var activateMsg = new ActivateInWorldEvent(user, used, complexInteractions.Value);
             RaiseLocalEvent(used, activateMsg, true);
