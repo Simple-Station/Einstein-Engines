@@ -82,3 +82,19 @@
   components:
   - type: Label
     currentLabel: gas-pipe-sensor-teg-cold-loop
+  
+  - type: entity
+  parent: GasPipeSensor
+  id: GasPipeSensorSMInput
+  suffix: Supermatter Input
+  components:
+  - type: Label
+    currentLabel: gas-pipe-sensor-sm-input
+
+  - type: entity
+  parent: GasPipeSensor
+  id: GasPipeSensorSMOutput
+  suffix: Supermatter Output
+  components:
+  - type: Label
+    currentLabel: gas-pipe-sensor-sm-output
