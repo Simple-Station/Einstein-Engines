@@ -1001,10 +1001,10 @@ namespace Content.Shared.Interaction
         ///     Used when clicking on an entity resulted in no other interaction. Used for low-priority interactions.
         /// </summary>
         public void InteractDoAfter(
-            EntityUid user, 
-            EntityUid used, 
-            EntityUid? target, 
-            EntityCoordinates clickLocation, 
+            EntityUid user,
+            EntityUid used,
+            EntityUid? target,
+            EntityCoordinates clickLocation,
             bool canReach,
             bool checkDeletion = false
         )
@@ -1100,9 +1100,6 @@ namespace Content.Shared.Interaction
             DoContactInteraction(user, used, activateMsg);
 
             // Still need to call this even without checkUseDelay in case this gets relayed from Activate.
-            if (delayComponent != null)
-                _useDelay.TryResetDelay(used, component: delayComponent);
-
             if (delayComponent != null)
                 _useDelay.TryResetDelay(used, component: delayComponent);
 
