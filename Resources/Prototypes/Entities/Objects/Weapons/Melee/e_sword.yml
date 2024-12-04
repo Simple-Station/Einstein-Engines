@@ -43,6 +43,9 @@
   - type: ItemToggleEmbedPassiveDamage
   - type: ItemToggleEmbeddableProjectile
     activatedEmbedOnThrow: true
+  - type: ItemToggleThrowingAngle
+    activatedAngle: 225
+    deleteOnDeactivate: true
   - type: Sprite
     sprite: Objects/Weapons/Melee/e_sword.rsi
     layers:
@@ -62,8 +65,6 @@
   - type: EmbeddableProjectile
     embedOnThrow: false
   - type: EmbedPassiveDamage
-  - type: ThrowingAngle
-    angle: 225
   - type: Item
     size: Small
     sprite: DeltaV/Objects/Weapons/Melee/e_sword.rsi # Delta-V
@@ -161,6 +162,7 @@
     activatedRemovalTime: 3
   - type: ItemToggleThrowingAngle
     activatedAngle: 135
+    deleteOnDeactivate: false
   - type: Sprite
     sprite: Objects/Weapons/Melee/e_dagger.rsi
     layers:

@@ -279,25 +279,44 @@ public abstract class SharedItemToggleSystem : EntitySystem
     /// </summary>
     private void UpdateThrowingAngle(EntityUid uid, ItemToggleThrowingAngleComponent component, ItemToggledEvent args)
     {
+        if (component.DeleteOnDeactivate)
+        {
+            if (args.Activated)
+            {
+                var newThrowingAngle = new ThrowingAngleComponent();
+
+                if (component.ActivatedAngle is {} activatedAngle)
+                    newThrowingAngle.Angle = activatedAngle;
+
+                if (component.ActivatedAngularVelocity is {} activatedAngularVelocity)
+                    newThrowingAngle.AngularVelocity = activatedAngularVelocity;
+
+                AddComp(uid, newThrowingAngle);
+            }
+            else
+                RemCompDeferred<ThrowingAngleComponent>(uid);
+            return;
+        }
+
         if (!TryComp<ThrowingAngleComponent>(uid, out var throwingAngle))
             return;
 
         if (args.Activated)
         {
             component.DeactivatedAngle ??= throwingAngle.Angle;
-            if (component.ActivatedAngle is Angle activatedAngle)
+            if (component.ActivatedAngle is {} activatedAngle)
                 throwingAngle.Angle = activatedAngle;
 
             component.DeactivatedAngularVelocity ??= throwingAngle.AngularVelocity;
-            if (component.ActivatedAngularVelocity is bool activatedAngularVelocity)
+            if (component.ActivatedAngularVelocity is {} activatedAngularVelocity)
                 throwingAngle.AngularVelocity = activatedAngularVelocity;
         }
         else
         {
-            if (component.DeactivatedAngle is Angle deactivatedAngle)
+            if (component.DeactivatedAngle is {} deactivatedAngle)
                 throwingAngle.Angle = deactivatedAngle;
 
-            if (component.DeactivatedAngularVelocity is bool deactivatedAngularVelocity)
+            if (component.DeactivatedAngularVelocity is {} deactivatedAngularVelocity)
                 throwingAngle.AngularVelocity = deactivatedAngularVelocity;
         }
     }

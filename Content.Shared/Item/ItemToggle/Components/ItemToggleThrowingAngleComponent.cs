@@ -31,4 +31,11 @@ public sealed partial class ItemToggleThrowingAngleComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public Angle? DeactivatedAngle = null;
+
+    /// <summary>
+    ///   When this is true, adds the ThrowingAngle component on activation
+    ///   and deletes it on deactivation.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool DeleteOnDeactivate = false;
 }

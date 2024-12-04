@@ -42,11 +42,12 @@ public sealed class EmbedPassiveDamageSystem : EntitySystem
     /// </summary>
     private void OnItemToggleStartup(EntityUid uid, ItemToggleEmbedPassiveDamageComponent component, ItemToggleDamageOtherOnHitStartup args)
     {
-        if (!TryComp<EmbedPassiveDamageComponent>(uid, out var embedPassiveDamage))
+        if (!TryComp<EmbedPassiveDamageComponent>(uid, out var embedPassiveDamage) ||
+            component.ActivatedDamage != null ||
+            !(args.Weapon.Comp.ActivatedDamage is {} activatedDamage))
             return;
 
-        if (component.ActivatedDamage == null && args.Weapon.Comp.ActivatedDamage is {} activatedDamage)
-            component.ActivatedDamage = activatedDamage * embedPassiveDamage.ThrowingDamageMultiplier;
+        component.ActivatedDamage = activatedDamage * embedPassiveDamage.ThrowingDamageMultiplier;
     }
 
     private void OnEmbed(EntityUid uid, EmbedPassiveDamageComponent component, EmbedEvent args)
