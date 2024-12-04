@@ -361,7 +361,7 @@
     sprite: Clothing/Hands/Gloves/northstar.rsi
   - type: MeleeWeapon
     autoAttack: true
-    attackRate: 4
+    attackRate: 0.25
     heavyStaminaCost: 2
     heavyDamageBaseModifier: 1.05
     maxTargets: 1
