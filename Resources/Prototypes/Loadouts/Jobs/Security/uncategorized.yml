@@ -314,6 +314,7 @@
   category: JobsSecurityAUncategorized
   cost: 0
   canBeHeirloom: true
+  guideEntry: SecurityWeapons
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
@@ -328,6 +329,7 @@
   category: JobsSecurityAUncategorized
   cost: 0
   canBeHeirloom: true
+  guideEntry: SecurityWeapons
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
@@ -345,6 +347,7 @@
   category: JobsSecurityAUncategorized
   cost: 0
   canBeHeirloom: true
+  guideEntry: SecurityWeapons
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
@@ -359,6 +362,7 @@
   category: JobsSecurityAUncategorized
   cost: 0
   canBeHeirloom: true
+  guideEntry: SecurityWeapons
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
@@ -376,6 +380,7 @@
   category: JobsSecurityAUncategorized
   cost: 0
   canBeHeirloom: true
+  guideEntry: SecurityWeapons
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
@@ -390,6 +395,7 @@
   category: JobsSecurityAUncategorized
   cost: 1
   canBeHeirloom: true
+  guideEntry: SecurityWeapons
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
@@ -407,6 +413,7 @@
   category: JobsSecurityAUncategorized
   cost: 1
   canBeHeirloom: true
+  guideEntry: SecurityWeapons
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
@@ -421,6 +428,7 @@
   category: JobsSecurityAUncategorized
   cost: 5
   canBeHeirloom: true
+  guideEntry: SecurityWeapons
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
@@ -438,6 +446,7 @@
   category: JobsSecurityAUncategorized
   cost: 5
   canBeHeirloom: true
+  guideEntry: SecurityWeapons
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
@@ -452,6 +461,7 @@
   category: JobsSecurityAUncategorized
   cost: 2
   canBeHeirloom: true
+  guideEntry: SecurityWeapons
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
@@ -469,6 +479,7 @@
   category: JobsSecurityAUncategorized
   cost: 2
   canBeHeirloom: true
+  guideEntry: SecurityWeapons
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
@@ -483,6 +494,7 @@
   category: JobsSecurityAUncategorized
   cost: 2
   canBeHeirloom: true
+  guideEntry: SecurityWeapons
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
@@ -500,6 +512,7 @@
   category: JobsSecurityAUncategorized
   cost: 3
   canBeHeirloom: true
+  guideEntry: SecurityWeapons
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
@@ -520,6 +533,7 @@
   category: JobsSecurityAUncategorized
   cost: 1
   canBeHeirloom: true
+  guideEntry: SecurityWeapons
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
@@ -537,6 +551,7 @@
   category: JobsSecurityAUncategorized
   cost: 2
   canBeHeirloom: true
+  guideEntry: SecurityWeapons
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
@@ -554,6 +569,7 @@
   category: JobsSecurityAUncategorized
   cost: 2
   canBeHeirloom: true
+  guideEntry: SecurityWeapons
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
@@ -571,6 +587,7 @@
   category: JobsSecurityAUncategorized
   cost: 1
   canBeHeirloom: true
+  guideEntry: SecurityWeapons
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
@@ -588,6 +605,7 @@
   category: JobsSecurityAUncategorized
   cost: 1
   canBeHeirloom: true
+  guideEntry: SecurityWeapons
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
@@ -602,6 +620,7 @@
   category: JobsSecurityAUncategorized
   cost: 3
   canBeHeirloom: true
+  guideEntry: SecurityWeapons
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
@@ -619,6 +638,7 @@
   category: JobsSecurityAUncategorized
   cost: 3
   canBeHeirloom: true
+  guideEntry: SecurityWeapons
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
@@ -633,6 +653,7 @@
   category: JobsSecurityAUncategorized
   cost: 1
   canBeHeirloom: true
+  guideEntry: SecurityWeapons
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
@@ -650,6 +671,7 @@
   category: JobsSecurityAUncategorized
   cost: 1
   canBeHeirloom: true
+  guideEntry: SecurityWeapons
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
@@ -664,6 +686,7 @@
   category: JobsSecurityAUncategorized
   cost: 2
   canBeHeirloom: true
+  guideEntry: SecurityWeapons
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
@@ -681,6 +704,7 @@
   category: JobsSecurityAUncategorized
   cost: 2
   canBeHeirloom: true
+  guideEntry: SecurityWeapons
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
@@ -695,6 +719,7 @@
   category: JobsSecurityAUncategorized
   cost: 5
   canBeHeirloom: true
+  guideEntry: SecurityWeapons
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
@@ -712,6 +737,7 @@
   category: JobsSecurityAUncategorized
   cost: 5
   canBeHeirloom: true
+  guideEntry: SecurityWeapons
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
