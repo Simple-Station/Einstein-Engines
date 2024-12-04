@@ -8360,3 +8360,56 @@ Entries:
   id: 6553
   time: '2024-12-02T16:47:10.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1303
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        The lobotomy procedure makes the target clumsy like the clown. This
+        makes them bonk when climbing tables and makes guns they're shooting
+        blow up on their face.
+    - type: Tweak
+      message: The lobotomy step now requires a scalpel instead of a drill.
+    - type: Fix
+      message: >-
+        Enabled the "Mend brain tissue" surgical procedure on a lobotomized
+        target. 
+    - type: Fix
+      message: >-
+        The lobotomized effect is now stored in the brain instead of the body.
+        The same brain stays lobotomized throughout brain transplants, and
+        transferring a normal brain to a body where a lobotomy occurred no
+        longer applies the lobotomized effect.
+    - type: Fix
+      message: >-
+        The lobotomy procedure now shows the proper popup during the
+        lobotomization step.
+    - type: Fix
+      message: Removed the ability to perform lobotomies on bodies without a brain.
+    - type: Fix
+      message: >-
+        The "Remove organ" surgery step on the UI now properly shows the
+        retractor sprite instead of the hemostat.
+  id: 6554
+  time: '2024-12-03T23:31:22.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1306
+- author: Erisfiregamer1
+  changes:
+    - type: Add
+      message: You can now shove people into deep fryers by drag-dropping them onto it.
+  id: 6555
+  time: '2024-12-03T23:33:01.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1279
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Added the EMP Flashlight to Syndicate Uplinks.
+  id: 6556
+  time: '2024-12-04T00:11:13.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1189
+- author: Ichaie
+  changes:
+    - type: Add
+      message: added a new map called "Europa" to rotation
+  id: 6557
+  time: '2024-12-04T00:12:59.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1152
