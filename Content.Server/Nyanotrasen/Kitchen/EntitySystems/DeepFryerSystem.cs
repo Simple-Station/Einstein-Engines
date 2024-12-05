@@ -27,6 +27,7 @@ using Content.Shared.Damage.Prototypes;
 using Content.Shared.Database;
 using Content.Shared.Destructible;
 using Content.Shared.DoAfter;
+using Content.Shared.DragDrop;
 using Content.Shared.Examine;
 using Content.Shared.FixedPoint;
 using Content.Shared.Hands.Components;
@@ -51,6 +52,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Robust.Shared.Physics.Components;
 
 namespace Content.Server.Nyanotrasen.Kitchen.EntitySystems;
 
@@ -105,6 +107,8 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
         SubscribeLocalEvent<DeepFryerComponent, SolutionChangedEvent>(OnSolutionChange);
         SubscribeLocalEvent<DeepFryerComponent, ContainerRelayMovementEntityEvent>(OnRelayMovement);
         SubscribeLocalEvent<DeepFryerComponent, InteractUsingEvent>(OnInteractUsing);
+        SubscribeLocalEvent<DeepFryerComponent, CanDropTargetEvent>(OnCanDragDropOn);
+        SubscribeLocalEvent<DeepFryerComponent, DragDropTargetEvent>(OnDragDropOn);
 
         SubscribeLocalEvent<DeepFryerComponent, BeforeActivatableUIOpenEvent>(OnBeforeActivatableUIOpen);
         SubscribeLocalEvent<DeepFryerComponent, DeepFryerRemoveItemMessage>(OnRemoveItem);
@@ -156,6 +160,12 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
         }
 
         return oilVolume;
+    }
+
+    private void OnDragDropOn(EntityUid uid, DeepFryerComponent component, ref DragDropTargetEvent args)
+    {
+        _containerSystem.Insert(args.Dragged, component.Storage);
+        args.Handled = true;
     }
 
     /// <summary>
@@ -332,12 +342,12 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
 
         MakeCrispy(item);
 
-        var itemComponent = Comp<ItemComponent>(item);
+        var oilToUse = 0;
 
-        // Determine how much solution to spend on this item.
-        var solutionQuantity = FixedPoint2.Min(
-            component.Solution.Volume,
-            itemComponent.Size.Id switch
+        if (HasComp<ItemComponent>(item)) {
+            var itemComponent = Comp<ItemComponent>(item);
+
+            oilToUse = (int) (itemComponent.Size.Id switch
             {
                 "Tiny" => 1,
                 "Small" => 5,
@@ -347,6 +357,15 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
                 "Ginormous" => 50,
                 _ => 10
             } * component.SolutionSizeCoefficient);
+        } else {
+            oilToUse = (int) (TryComp<PhysicsComponent>(item, out var physicsComponent) ? physicsComponent.Mass : 10);
+        }
+
+        // Determine how much solution to spend on this item.
+        var solutionQuantity = FixedPoint2.Min(
+            component.Solution.Volume,
+            oilToUse
+        );
 
         if (component.Whitelist != null && component.Whitelist.IsValid(item, EntityManager) ||
             beingEvent.TurnIntoFood)
