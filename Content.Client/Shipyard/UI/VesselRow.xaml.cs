@@ -5,7 +5,7 @@ using Robust.Client.UserInterface.CustomControls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Utility;
 
-namespace Content.Client.DeltaV.Shipyard.UI;
+namespace Content.Client.Shipyard.UI;
 
 [GenerateTypedNameReferences]
 public sealed partial class VesselRow : PanelContainer

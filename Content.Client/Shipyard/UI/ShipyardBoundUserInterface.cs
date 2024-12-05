@@ -1,11 +1,10 @@
 using Content.Shared.Access.Systems;
 using Content.Shared.Shipyard;
 using Content.Shared.Whitelist;
-using Robust.Client.GameObjects;
 using Robust.Client.Player;
 using Robust.Shared.Prototypes;
 
-namespace Content.Client.DeltaV.Shipyard.UI;
+namespace Content.Client.Shipyard.UI;
 
 public sealed class ShipyardConsoleBoundUserInterface : BoundUserInterface
 {
