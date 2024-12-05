@@ -8424,3 +8424,16 @@ Entries:
   id: 6558
   time: '2024-12-05T00:13:35.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1313
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: You can pick up mobs again with left click.
+    - type: Fix
+      message: No more mob jug spill, including you revenants.
+    - type: Fix
+      message: Set the Gloves of the North Star to the proper attack speed.
+    - type: Fix
+      message: Medibots will no longer try to heal borgs.
+  id: 6559
+  time: '2024-12-05T07:39:32.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1311
