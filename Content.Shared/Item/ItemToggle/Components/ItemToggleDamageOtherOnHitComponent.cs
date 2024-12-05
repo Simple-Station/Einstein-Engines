@@ -7,7 +7,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared.Item.ItemToggle.Components;
 
 /// <summary>
-///   Deals damage when thrown.
+///   Handles changes to DamageOtherOnHitComponent when the item is toggled.
 /// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class ItemToggleDamageOtherOnHitComponent : Component

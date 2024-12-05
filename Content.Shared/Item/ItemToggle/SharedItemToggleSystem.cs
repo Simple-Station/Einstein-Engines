@@ -332,33 +332,33 @@ public abstract class SharedItemToggleSystem : EntitySystem
         if (args.Activated)
         {
             component.DeactivatedRemovalTime ??= embeddable.RemovalTime;
-            if (component.ActivatedRemovalTime is float activatedRemovalTime)
+            if (component.ActivatedRemovalTime is {} activatedRemovalTime)
                 embeddable.RemovalTime = activatedRemovalTime;
 
             component.DeactivatedOffset ??= embeddable.Offset;
-            if (component.ActivatedOffset is Vector2 activatedOffset)
+            if (component.ActivatedOffset is {} activatedOffset)
                 embeddable.Offset = activatedOffset;
 
             component.DeactivatedEmbedOnThrow ??= embeddable.EmbedOnThrow;
-            if (component.ActivatedEmbedOnThrow is bool activatedEmbedOnThrow)
+            if (component.ActivatedEmbedOnThrow is {} activatedEmbedOnThrow)
                 embeddable.EmbedOnThrow = activatedEmbedOnThrow;
 
             component.DeactivatedSound ??= embeddable.Sound;
-            if (component.ActivatedSound is SoundSpecifier activatedSound)
+            if (component.ActivatedSound is {} activatedSound)
                 embeddable.Sound = activatedSound;
         }
         else
         {
-            if (component.DeactivatedRemovalTime is float deactivatedRemovalTime)
+            if (component.DeactivatedRemovalTime is {} deactivatedRemovalTime)
                 embeddable.RemovalTime = deactivatedRemovalTime;
 
-            if (component.DeactivatedOffset is Vector2 deactivatedOffset)
+            if (component.DeactivatedOffset is {} deactivatedOffset)
                 embeddable.Offset = deactivatedOffset;
 
-            if (component.DeactivatedEmbedOnThrow is bool deactivatedEmbedOnThrow)
+            if (component.DeactivatedEmbedOnThrow is {} deactivatedEmbedOnThrow)
                 embeddable.EmbedOnThrow = deactivatedEmbedOnThrow;
 
-            if (component.DeactivatedSound is SoundSpecifier deactivatedSound)
+            if (component.DeactivatedSound is {} deactivatedSound)
                 embeddable.Sound = deactivatedSound;
         }
     }

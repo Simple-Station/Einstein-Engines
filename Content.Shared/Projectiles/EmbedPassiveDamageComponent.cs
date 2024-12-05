@@ -1,6 +1,8 @@
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.FixedPoint;
+using Content.Shared.Mobs.Components;
+using Content.Shared.Targeting;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 using Robust.Shared.GameStates;
 
@@ -25,6 +27,18 @@ public sealed partial class EmbedPassiveDamageComponent : Component
     public DamageableComponent? EmbeddedDamageable = null;
 
     /// <summary>
+    ///   The MobState component to check if the target is still alive.
+    /// </summary>
+    [ViewVariables(VVAccess.ReadOnly)]
+    public MobStateComponent? EmbeddedMobState = null;
+
+    /// <summary>
+    ///   The body part to apply damage to.
+    /// </summary>
+    [ViewVariables(VVAccess.ReadOnly)]
+    public TargetBodyPart? EmbeddedBodyPart = null;
+
+    /// <summary>
     ///   Damage per interval dealt to the entity every interval.
     ///   If this is set manually, DamageMultiplier will be ignored.
     /// </summary>
@@ -36,13 +50,7 @@ public sealed partial class EmbedPassiveDamageComponent : Component
     ///   calculate the damage per second.
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public float ThrowingDamageMultiplier = 0.03f;
-
-    /// <summary>
-    /// The maximum HP the damage will be given to. If 0, the cap is disabled.
-    /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public FixedPoint2 DamageCap = 250;
+    public float ThrowingDamageMultiplier = 0.05f;
 
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), ViewVariables(VVAccess.ReadWrite)]
     public TimeSpan NextDamage = TimeSpan.Zero;

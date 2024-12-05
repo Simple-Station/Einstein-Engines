@@ -2,6 +2,7 @@ using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Events;
 using Content.Shared.Item.ItemToggle.Components;
+using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Mobs.Components;
 using Content.Shared.FixedPoint;
@@ -52,13 +53,15 @@ public sealed class EmbedPassiveDamageSystem : EntitySystem
 
     private void OnEmbed(EntityUid uid, EmbedPassiveDamageComponent component, EmbedEvent args)
     {
-        if (!HasComp<MobStateComponent>(args.Embedded) ||
-            !TryComp<DamageableComponent>(args.Embedded, out var damageable) ||
-            component.Damage.Empty || component.Damage.GetTotal() == 0)
+        if (component.Damage.Empty || component.Damage.GetTotal() == 0 ||
+            !TryComp<MobStateComponent>(args.Embedded, out var mobState) ||
+            !TryComp<DamageableComponent>(args.Embedded, out var damageable))
             return;
 
         component.Embedded = args.Embedded;
         component.EmbeddedDamageable = damageable;
+        component.EmbeddedMobState = mobState;
+        component.EmbeddedBodyPart = args.BodyPart;
         component.NextDamage = _timing.CurTime + TimeSpan.FromSeconds(1f);
     }
 
@@ -66,6 +69,8 @@ public sealed class EmbedPassiveDamageSystem : EntitySystem
     {
         component.Embedded = null;
         component.EmbeddedDamageable = null;
+        component.EmbeddedMobState = null;
+        component.EmbeddedBodyPart = null;
         component.NextDamage = TimeSpan.Zero;
     }
 
@@ -97,12 +102,13 @@ public sealed class EmbedPassiveDamageSystem : EntitySystem
             if (comp.Embedded is null ||
                 comp.EmbeddedDamageable is null ||
                 comp.NextDamage > curTime || // Make sure they're up for a damage tick
-                comp.DamageCap != 0 && comp.EmbeddedDamageable.TotalDamage >= comp.DamageCap)
+                comp.EmbeddedMobState is null ||
+                comp.EmbeddedMobState.CurrentState == MobState.Dead) // Don't damage dead mobs, they've already gone through too much
                 continue;
 
             comp.NextDamage = curTime + TimeSpan.FromSeconds(1f);
 
-            _damageable.TryChangeDamage(comp.Embedded, comp.Damage, false, false, comp.EmbeddedDamageable);
+            _damageable.TryChangeDamage(comp.Embedded, comp.Damage, false, false, comp.EmbeddedDamageable, targetPart: comp.EmbeddedBodyPart);
         }
     }
 }

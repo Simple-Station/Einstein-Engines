@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Shared.Body.Systems;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
@@ -6,6 +7,7 @@ using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Popups;
+using Content.Shared.Targeting;
 using Content.Shared.Throwing;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
@@ -32,6 +34,7 @@ public abstract partial class SharedProjectileSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly SharedBodySystem _body = default!;
 
     public override void Initialize()
     {
@@ -100,6 +103,7 @@ public abstract partial class SharedProjectileSystem : EntitySystem
     {
         component.AutoRemoveTime = null;
         component.Target = null;
+        component.TargetBodyPart = null;
 
         if (_netManager.IsClient)
             return;
@@ -142,7 +146,7 @@ public abstract partial class SharedProjectileSystem : EntitySystem
             HasComp<ThrownItemImmuneComponent>(args.Target))
             return;
 
-        Embed(uid, args.Target, null, component);
+        Embed(uid, args.Target, null, component, args.TargetPart);
     }
 
     private void OnEmbedProjectileHit(EntityUid uid, EmbeddableProjectileComponent component, ref ProjectileHitEvent args)
@@ -157,7 +161,7 @@ public abstract partial class SharedProjectileSystem : EntitySystem
         }
     }
 
-    private void Embed(EntityUid uid, EntityUid target, EntityUid? user, EmbeddableProjectileComponent component)
+    private void Embed(EntityUid uid, EntityUid target, EntityUid? user, EmbeddableProjectileComponent component, TargetBodyPart? targetPart = null)
     {
         TryComp<PhysicsComponent>(uid, out var physics);
         _physics.SetLinearVelocity(uid, Vector2.Zero, body: physics);
@@ -172,7 +176,9 @@ public abstract partial class SharedProjectileSystem : EntitySystem
         }
 
         _audio.PlayPredicted(component.Sound, uid, null);
-        var ev = new EmbedEvent(user, target);
+
+        component.TargetBodyPart = targetPart;
+        var ev = new EmbedEvent(user, target, targetPart);
         RaiseLocalEvent(uid, ref ev);
 
         if (component.AutoRemoveDuration != 0)
