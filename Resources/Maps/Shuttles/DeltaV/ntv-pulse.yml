@@ -320,10 +320,6 @@ entities:
       parent: 1
     - type: DeviceLinkSink
       invokeCounter: 1
-    - type: DeviceLinkSource
-      linkedPorts:
-        537:
-        - DoorStatus: InputA
   - uid: 14
     components:
     - type: Transform
@@ -331,10 +327,6 @@ entities:
       parent: 1
     - type: DeviceLinkSink
       invokeCounter: 1
-    - type: DeviceLinkSource
-      linkedPorts:
-        538:
-        - DoorStatus: InputA
   - uid: 15
     components:
     - type: Transform
@@ -342,10 +334,6 @@ entities:
       parent: 1
     - type: DeviceLinkSink
       invokeCounter: 1
-    - type: DeviceLinkSource
-      linkedPorts:
-        537:
-        - DoorStatus: InputB
   - uid: 16
     components:
     - type: Transform
