@@ -341,10 +341,6 @@ entities:
       parent: 1
     - type: DeviceLinkSink
       invokeCounter: 1
-    - type: DeviceLinkSource
-      linkedPorts:
-        538:
-        - DoorStatus: InputB
 - proto: AirlockExternalGlassShuttleLocked
   entities:
   - uid: 17
