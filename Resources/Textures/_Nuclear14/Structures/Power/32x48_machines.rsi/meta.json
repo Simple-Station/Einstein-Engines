@@ -1,0 +1,92 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-SA-3.0",
+  "copyright": "Taken from MS13 at commit https://github.com/Mojave-Sun/mojave-sun-13/commit/d09e0f9f7c5abc9f3e78299c925de540843586b2, rackempty, rackparts, rackdestroyed and destroyed substations modified by Peptide90 from rack",
+  "size": {
+    "x": 32,
+    "y": 64
+  },
+  "states": [
+    {
+      "name": "generator"
+    },
+    {
+      "name": "generator_damaged"
+    },
+    {
+      "name": "generator_destroyed"
+    },
+    {
+      "name": "generator_rust"
+    },
+    {
+      "name": "generator_rust_damaged"
+    },
+    {
+      "name": "generator_rust_destroyed"
+    },
+    {
+      "name": "substation"
+    },
+    {
+      "name": "substation_destroyed"
+    },
+    {
+      "name": "substation_rust"
+    },
+    {
+      "name": "substation_rust_destroyed"
+    },
+    {
+      "name": "recorder"
+    },
+    {
+      "name": "recorder_on",
+      "delays": [
+        [
+          0.15,
+          0.15,
+          0.15,
+          0.15
+        ]
+      ]
+    },
+    {
+      "name": "rack"
+    },
+    {
+      "name": "rack_on",
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "rackempty"
+    },
+    {
+      "name": "rackparts"
+    },
+    {
+      "name": "rackdestroyed"
+    },
+    {
+      "name": "serverrack"
+    },
+    {
+      "name": "serverrack_on",
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    }
+  ]
+}

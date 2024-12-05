@@ -1,0 +1,194 @@
+- type: entity
+  id: N14JunkPileBase
+  abstract: true
+  components:
+  - type: Storage #temporary until we can implement the gatherable
+    grid:
+    - 0,0,5,5
+  - type: UserInterface
+    interfaces:
+    - key: enum.StorageUiKey.Key
+      type: StorageBoundUserInterface
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Decoration/crafting_junk.rsi
+    snapCardinals: true
+    netsync: false
+    noRot: true
+    scale: 0.8, 0.8
+    drawdepth: Items
+  - type: Damageable
+    damageModifierSet: Wood
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Transform
+    anchored: false
+  - type: Physics
+    bodyType: Static
+  - type: InteractionOutline
+  - type: Clickable
+  - type: Tag
+    tags:
+    - JunkPile
+# No fixture on this base, inherit from further down for fixture
+
+# TODO: Add a loot box mechanic where using the pile does a doAfter then spits out useful items from a loot table.
+# TODO: Replace all the individual piles with a single randomised sprite entity.
+# Decorative Piles
+- type: entity
+  parent: N14JunkPileBase
+  id: N14JunkPile1
+  name: junk pile
+  description: Could be something useful in here.
+  components:
+  - type: Sprite
+    state: Junk_1
+
+- type: entity
+  parent: N14JunkPile1
+  id: N14JunkPile2
+  components:
+  - type: Sprite
+    state: Junk_2
+
+- type: entity
+  parent: N14JunkPile1
+  id: N14JunkPile3
+  components:
+  - type: Sprite
+    state: Junk_3
+
+- type: entity
+  parent: N14JunkPile1
+  id: N14JunkPile4
+  components:
+  - type: Sprite
+    state: Junk_4
+
+- type: entity
+  parent: N14JunkPile1
+  id: N14JunkPile5
+  components:
+  - type: Sprite
+    state: Junk_5
+
+- type: entity
+  parent: N14JunkPile1
+  id: N14JunkPile6
+  components:
+  - type: Sprite
+    state: Junk_6
+
+- type: entity
+  parent: N14JunkPile1
+  id: N14JunkPile7
+  components:
+  - type: Sprite
+    state: Junk_7
+
+- type: entity
+  parent: N14JunkPile1
+  id: N14JunkPile8
+  components:
+  - type: Sprite
+    state: Junk_8
+
+- type: entity
+  parent: N14JunkPile1
+  id: N14JunkPile9
+  components:
+  - type: Sprite
+    state: Junk_9
+
+- type: entity
+  parent: N14JunkPile1
+  id: N14JunkPile10
+  components:
+  - type: Sprite
+    state: Junk_10
+
+- type: entity
+  parent: N14JunkPile1
+  id: N14JunkPile11
+  components:
+  - type: Sprite
+    state: Junk_11
+
+- type: entity
+  parent: N14JunkPile1
+  id: N14JunkPile12
+  components:
+  - type: Sprite
+    state: Junk_12
+
+# Loot Piles
+# Currently the refilling mechanic does NOT work
+#TODO: Fix the refilling until the doAfter gets made | change names from Refilling to Loot
+- type: entity
+  parent: [ N14JunkPile1, N14BaseSmallLockerStorageFill ]
+  id: N14JunkPile1Refilling1
+  suffix: Loot,Random
+
+- type: entity
+  parent: [ N14JunkPile2, N14BaseSmallLockerStorageFill ]
+  id: N14JunkPile1Refilling2
+  suffix: Loot,Random
+
+- type: entity
+  parent: [ N14JunkPile3, N14BaseSmallLockerStorageFill ]
+  id: N14JunkPile1Refilling3
+  suffix: Loot,Random
+
+- type: entity
+  parent: [ N14JunkPile4, N14BaseSmallLockerStorageFill ]
+  id: N14JunkPile1Refilling4
+  suffix: Loot,Random
+
+- type: entity
+  parent: [ N14JunkPile5, N14BaseSmallLockerStorageFill ]
+  id: N14JunkPile1Refilling5
+  suffix: Loot,Random
+
+- type: entity
+  parent: [ N14JunkPile6, N14BaseSmallLockerStorageFill ]
+  id: N14JunkPile1Refilling6
+  suffix: Loot,Random
+
+- type: entity
+  parent: [ N14JunkPile7, N14BaseSmallLockerStorageFill ]
+  id: N14JunkPile1Refilling7
+  suffix: Loot,Random
+
+- type: entity
+  parent: [ N14JunkPile8, N14BaseSmallLockerStorageFill ]
+  id: N14JunkPile1Refilling8
+  suffix: Loot,Random
+
+- type: entity
+  parent: [ N14JunkPile9, N14BaseSmallLockerStorageFill ]
+  id: N14JunkPile1Refilling9
+  suffix: Loot,Random
+
+- type: entity
+  parent: [ N14JunkPile10, N14BaseSmallLockerStorageFill ]
+  id: N14JunkPile1Refilling10
+  suffix: Loot,Random
+
+- type: entity
+  parent: [ N14JunkPile11, N14BaseSmallLockerStorageFill ]
+  id: N14JunkPile1Refilling11
+  suffix: Loot,Random
+
+- type: entity
+  parent: [ N14JunkPile12, N14BaseSmallLockerStorageFill ]
+  id: N14JunkPile1Refilling12
+  suffix: Loot,Random

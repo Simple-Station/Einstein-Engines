@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-SA-3.0",
+  "copyright": "Taken from Fallout 13 at commit https://github.com/BartNixon/Fallout13/commit/bea37599de26c12870ab952ad8d9c58fc76cd7a0",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "normal",
+      "delays": [
+        [
+          5,
+          0.1,
+          0.2,
+          0.1,
+          0.5,
+          5,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          5,
+          2
+        ]
+      ]
+    },
+        {
+      "name": "normal-unshaded",
+      "delays": [
+        [
+          5,
+          0.1,
+          0.2,
+          0.1,
+          0.5,
+          5,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          5,
+          2
+        ]
+      ]
+    },
+    {
+      "name": "panel"
+    },
+    {
+      "name": "off"
+    },
+    {
+      "name": "broken"
+    },
+    {
+      "name": "deny-unshaded",
+      "delays": [
+        [
+          0.2,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    }
+  ]
+}

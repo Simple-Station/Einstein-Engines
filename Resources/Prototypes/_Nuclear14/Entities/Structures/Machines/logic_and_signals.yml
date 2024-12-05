@@ -1,0 +1,85 @@
+- type: entity
+  id: N14SignalButton # because indestructible, use the SS14 one for destructible
+  name: signal button
+  description: It's a button for activating something.
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wallmount
+  components:
+  - type: WallMount
+    arc: 360
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Physics
+    canCollide: false
+  - type: Sprite
+    drawdepth: SmallObjects
+    sprite: Structures/Wallmounts/switch.rsi
+    state: dead
+  - type: UseDelay
+    delay: 0.5 # prevent light-toggling auto-clickers.
+  - type: SignalSwitch
+    onPort: Pressed
+    offPort: Pressed
+    statusPort: Pressed
+  - type: Rotatable
+  - type: Fixtures
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+  - type: WirelessNetworkConnection
+    range: 25
+  - type: DeviceLinkSource
+    ports:
+      - Pressed
+
+- type: entity
+  parent: [ N14SignalButton, N14ComputerTerminalWallControls ] # See Terminals.yml
+  id: N14ControlTerminalButton
+  suffix: button
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Machines/Terminals/terminal_classic.rsi
+    state: computer
+    drawdepth: Overdoors
+  - type: WirelessNetworkConnection
+    range: 15
+
+- type: entity
+  parent: N14ControlTerminalButton
+  id: N14ControlTerminalVault
+  suffix: vault door
+  components:
+  - type: AutoLinkTransmitter
+    channel: Vaultdoor
+    
+# Vault Door Controller
+- type: entity
+  parent: N14SignalButton
+  id: N14DoorVaultControls
+  name: Vault Door Controls
+  description: A handy control panel for opening the vault door.
+  components:
+  - type: AutoLinkTransmitter
+    channel: Vaultdoor
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Machines/vaultdoor_controls.rsi
+    layers:
+    - state: on
+    - state: overlay_off
+      map: ["enum.LockVisualLayers.Lock"]
+      shader: unshaded
+    offset: 0, 0
+    
+- type: entity
+  parent: N14DoorVaultControls
+  id: N14DoorVaultControlsLocked
+  suffix: overseer locked
+  components:
+  - type: AutoLinkTransmitter
+    channel: Vaultdoor
+  - type: Appearance
+  - type: Lock
+  - type: LockVisuals
+  - type: AccessReader
+    access: [["VaultOverseer"]]

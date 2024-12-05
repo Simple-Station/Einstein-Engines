@@ -1,0 +1,46 @@
+{
+    "version": 1,
+    "size": {
+        "x": 32,
+        "y": 64
+    },
+    "license": "CC-BY-NC-SA-3.0",
+    "copyright": "Taken from MS13 and modified for SS14 by Kill_Me_I_Noobs",
+    "states": [
+        {
+            "name": "full"
+        },
+        {
+            "name": "tallrustvault0",
+            "directions": 4
+        },
+        {
+            "name": "tallrustvault1",
+            "directions": 4
+        },
+        {
+            "name": "tallrustvault2",
+            "directions": 4
+        },
+        {
+            "name": "tallrustvault3",
+            "directions": 4
+        },
+        {
+            "name": "tallrustvault4",
+            "directions": 4
+        },
+        {
+            "name": "tallrustvault5",
+            "directions": 4
+        },
+        {
+            "name": "tallrustvault6",
+            "directions": 4
+        },
+        {
+            "name": "tallrustvault7",
+            "directions": 4
+        }
+    ]
+}

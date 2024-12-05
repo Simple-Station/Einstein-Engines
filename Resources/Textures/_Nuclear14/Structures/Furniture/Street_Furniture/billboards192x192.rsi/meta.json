@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "license": "Custom",
+  "copyright": "Copyright Bethesda Softworks, see attributions.yml for credits",
+  "size": {
+    "x": 192,
+    "y": 192
+  },
+  "states": [
+    {
+      "name": "redrocket1-worn"
+    },
+    {
+      "name": "base"
+    },
+    {
+      "name": "massfusion1"
+    },
+    {
+      "name": "massfusion1-worn"
+    },
+    {
+      "name": "nukacola1"
+    },
+    {
+      "name": "nukacola1-worn"
+    },
+    {
+      "name": "redrocket1"
+    },
+    {
+      "name": "horizonairlines"
+    },
+    {
+      "name": "horizonairlines-worn"
+    },
+    {
+      "name": "schoelt"
+    }
+  ]
+}

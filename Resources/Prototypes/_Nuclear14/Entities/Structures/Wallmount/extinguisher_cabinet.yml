@@ -1,0 +1,67 @@
+﻿- type: entity
+  parent: ExtinguisherCabinet
+  id: N14FireExtinguisherCabinet
+  name: extinguisher cabinet
+  description: A small wall mounted cabinet designed to hold a fire extinguisher.
+  components:
+    - type: Sprite
+      sprite: _Nuclear14/Structures/Wallmounts/fireextinguisher.rsi
+      layers:
+      - state: frame
+      - state: extinguisher
+        map: ["enum.ItemCabinetVisualLayers.ContainsItem"]
+        visible: true
+      - state: closed
+        map: ["enum.ItemCabinetVisualLayers.Door"]
+      drawdepth: Overdoors
+    - type: ItemCabinet
+      cabinetSlot:
+        ejectOnInteract: true
+        whitelist:
+          components:
+          - FireExtinguisher
+      doorSound:
+        path: /Audio/Machines/machine_switch.ogg
+      openState: open
+      closedState: closed
+
+- type: entity
+  id: N14FireExtinguisherCabinetOpen
+  parent: N14FireExtinguisherCabinet
+  suffix: Open
+  components:
+  - type: ItemCabinet
+    opened: true
+    doorSound:
+      path: /Audio/Machines/machine_switch.ogg
+    openState: open
+    closedState: closed
+
+- type: entity
+  id: N14FireExtinguisherCabinetFilled
+  parent: N14FireExtinguisherCabinet
+  suffix: Filled
+  components:
+  - type: ItemCabinet
+    cabinetSlot:
+      ejectOnInteract: true
+      startingItem: FireExtinguisher
+      whitelist:
+        components:
+        - FireExtinguisher
+    doorSound:
+      path: /Audio/Machines/machine_switch.ogg
+    openState: open
+    closedState: closed
+
+- type: entity
+  id: N14FireExtinguisherCabinetFilledOpen
+  parent: N14FireExtinguisherCabinetFilled
+  suffix: Filled, Open
+  components:
+  - type: ItemCabinet
+    opened: true
+    doorSound:
+      path: /Audio/Machines/machine_switch.ogg
+    openState: open
+    closedState: closed

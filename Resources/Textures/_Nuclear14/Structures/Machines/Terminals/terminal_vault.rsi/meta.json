@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-SA-3.0",
+  "copyright": "Taken from Mojave Sun 13 at commit https://github.com/Mojave-Sun/mojave-sun-13/commit/237789979a56a09589e299cf362a090ae8273805",
+  "size": {
+    "x": 32,
+    "y": 48
+  },
+  "states": [
+    {
+      "name": "computer",
+      "directions": 4
+    },
+    {
+      "name": "screens",
+      "directions": 4,
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.5
+        ],
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.5
+        ],
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.5
+        ],
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.5
+        ]
+      ]
+    }
+  ]
+}

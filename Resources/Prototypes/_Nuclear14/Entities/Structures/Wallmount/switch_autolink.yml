@@ -1,0 +1,36 @@
+- type: entity
+  id: N14ControlTerminalButtonExt1
+  parent: N14ControlTerminalButton
+  name: door terminal
+  suffix: Autolink, Ext1
+  components:
+    - type: AutoLinkTransmitter
+      channel: Ext1
+
+- type: entity
+  id: N14ControlTerminalButtonExt2
+  parent: N14ControlTerminalButton
+  name: door terminal
+  suffix: Autolink, Ext2
+  components:
+    - type: AutoLinkTransmitter
+      channel: Ext2
+
+- type: entity
+  id: N14ControlTerminalButtonExt3
+  parent: N14ControlTerminalButton
+  name: door terminal
+  suffix: Autolink, Ext3
+  components:
+    - type: AutoLinkTransmitter
+      channel: Ext3
+
+- type: entity
+  id: N14ControlTerminalButtonBos
+  parent: N14ControlTerminalButton
+  name: brotherhood door terminal
+  suffix: Autolink, BoS
+  components:
+    - type: AutoLinkTransmitter
+      channel: BoS
+

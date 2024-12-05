@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-SA-3.0",
+  "copyright": "Original sprite from MS13 see substation in 32x48_machines.rsi, modified by Peptide90 to create SMES like layers.",
+  "size": {
+    "x": 32,
+    "y": 64
+  },
+  "states": [
+    {
+      "name": "smes"
+    },
+    {
+      "name": "smes-oc1"
+    },
+    {
+      "name": "smes-oc2"
+    },
+    {
+      "name": "smes-og1"
+    },
+    {
+      "name": "smes-og2"
+    },
+    {
+      "name": "smes-og3"
+    },
+    {
+      "name": "smes-og4"
+    },
+    {
+      "name": "smes-og5"
+    },
+    {
+      "name": "smes-op0"
+    },
+    {
+      "name": "smes-op1"
+    },
+    {
+      "name": "smes-op2"
+    },
+    {
+      "name": "smes-oc0"
+    }
+  ]
+}

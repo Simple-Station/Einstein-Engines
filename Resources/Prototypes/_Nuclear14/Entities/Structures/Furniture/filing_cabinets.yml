@@ -1,0 +1,51 @@
+- type: entity
+  name: filing cabinet
+  parent: BaseStructureDynamic
+  id: N14filingCabinet
+  suffix: Empty
+  description: "Remember: only you can prevent corporate espionage!"
+  components:
+  - type: Storage
+    grid:
+    - 0,0,3,8
+    maxItemSize: Huge
+  - type: Sprite
+    netsync: false
+    sprite: Structures/Storage/cabinets.rsi
+    state: filingcabinet
+    noRot: true
+    layers:
+    - state: filingcabinet
+    - state: filingcabinet-open
+      map: ["openLayer"]
+  - type: UserInterface
+    interfaces:
+    - key: enum.StorageUiKey.Key
+      type: StorageBoundUserInterface
+  - type: Transform
+    noRot: true
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+            bounds: "-0.18,-0.48,0.18,0.48"
+        density: 200
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: InteractionOutline
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+
+- type: entity
+  parent: [ N14filingCabinet, N14BaseSmallLockerTimedStorageFill ]
+  id: N14FilingCabinetRefilling
+  suffix: Refilling,Random
+
+- type: entity
+  parent: [ N14filingCabinet, N14BaseSmallLockerStorageFill ]
+  id: N14LootFilingCabinet
+  suffix: Loot,Random

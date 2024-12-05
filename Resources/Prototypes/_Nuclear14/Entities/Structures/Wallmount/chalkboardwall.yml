@@ -1,0 +1,157 @@
+- type: entity
+  parent: BaseSign
+  id: N14ChalkboardWall
+  name: Chalkboard
+  description: A dusty chalkboard
+  components:
+  - type: WallMount
+    arc: 360
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Wallmounts/chalkboardwall.rsi
+    drawdepth: Overdoors
+    snapCardinals: true
+    netsync: false
+    state: board_clean
+    scale: 0.9, 0.9
+  - type: Damageable
+    damageModifierSet: Wood
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: Tag
+    tags:
+    - Wooden
+    
+- type: entity
+  parent: N14ChalkboardWall
+  id: N14ChalkboardWall1
+  suffix: gecko
+  components:
+  - type: Sprite
+    state: board_mess1
+    
+- type: entity
+  parent: N14ChalkboardWall
+  id: N14ChalkboardWall2
+  suffix: raders
+  components:
+  - type: Sprite
+    state: board_mess2
+    
+- type: entity
+  parent: N14ChalkboardWall
+  id: N14ChalkboardWall3
+  suffix: poop haha
+  components:
+  - type: Sprite
+    state: board_mess3
+    
+- type: entity
+  parent: N14ChalkboardWall
+  id: N14ChalkboardWall4
+  suffix: bandits
+  components:
+  - type: Sprite
+    state: board_mess4
+    
+- type: entity
+  parent: N14ChalkboardWall
+  id: N14ChalkboardWall5
+  suffix: heart
+  components:
+  - type: Sprite
+    state: board_mess5
+    
+- type: entity
+  parent: N14ChalkboardWall
+  id: N14ChalkboardWall6
+  suffix: interstate
+  components:
+  - type: Sprite
+    state: board_mess6
+    
+- type: entity
+  parent: N14ChalkboardWall
+  id: N14ChalkboardWall7
+  suffix: guns
+  components:
+  - type: Sprite
+    state: board_text1
+    
+- type: entity
+  parent: N14ChalkboardWall
+  id: N14ChalkboardWall8
+  suffix: booze
+  components:
+  - type: Sprite
+    state: board_text2
+    
+- type: entity
+  parent: N14ChalkboardWall
+  id: N14ChalkboardWall9
+  suffix: grub
+  components:
+  - type: Sprite
+    state: board_text3
+    
+- type: entity
+  parent: N14ChalkboardWall
+  id: N14ChalkboardWall10
+  suffix: food
+  components:
+  - type: Sprite
+    state: board_text4
+    
+- type: entity
+  parent: N14ChalkboardWall
+  id: N14ChalkboardWall11
+  suffix: shop
+  components:
+  - type: Sprite
+    state: board_text5
+    
+- type: entity
+  parent: N14ChalkboardWall
+  id: N14ChalkboardWall12
+  suffix: trade
+  components:
+  - type: Sprite
+    state: board_text6
+    
+- type: entity
+  parent: N14ChalkboardWall
+  id: N14ChalkboardWall13
+  suffix: chems
+  components:
+  - type: Sprite
+    state: board_text7
+    
+- type: entity
+  parent: N14ChalkboardWall
+  id: N14ChalkboardWall14
+  suffix: junk scrap
+  components:
+  - type: Sprite
+    state: board_text8
+    
+- type: entity
+  parent: N14ChalkboardWall
+  id: N14ChalkboardWall15
+  suffix: meds
+  components:
+  - type: Sprite
+    state: board_text9

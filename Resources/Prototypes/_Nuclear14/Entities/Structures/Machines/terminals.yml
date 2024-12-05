@@ -1,0 +1,500 @@
+# Base - scroll down for other bases
+- type: entity
+  id: N14ComputerTerminalBase
+  parent: BaseStructure
+  name: terminal frame
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.10,-0.10,0.10,0.10"
+        density: 500
+        mask:
+          - TabletopMachineMask
+  - type: InteractionOutline
+  - type: Rotatable
+  - type: Anchorable
+  - type: Construction
+    graph: TerminalNew
+    node: missingWires
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+      - !type:ChangeConstructionNodeBehavior
+        node: Broken
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: Sprite
+    drawdepth: SmallObjects
+    sprite: _Nuclear14/Structures/Machines/Terminals/terminal_new.rsi
+    state: frame
+
+- type: entity
+  id: N14ComputerTerminalBasePowered
+  parent: N14ComputerTerminalBase
+  abstract: true
+  components:
+  - type: ApcPowerReceiver
+    powerLoad: 100
+  - type: ExtensionCableReceiver
+  - type: ActivatableUIRequiresPower
+  - type: LitOnPowered
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    enabled: false
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+    offset: "0, 0.4" # shine from the top, not bottom of the computer
+    castShadows: false
+  - type: EmitSoundOnUIOpen
+    sound:
+      collection: Keyboard
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ComputerVisuals.Powered:
+        computerLayerScreen:
+          True: { visible: true, shader: unshaded }
+          False: { visible: false }
+#        computerLayerKeys:
+#          True: { visible: true, shader: unshaded }
+#          False: { visible: true, shader: shaded }
+  - type: Sprite
+    drawdepth: SmallObjects
+    sprite: _Nuclear14/Structures/Machines/Terminals/terminal_new.rsi
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+#    - map: ["computerLayerKeyboard"]
+#      state: generic_keyboard
+    - map: ["computerLayerScreen"]
+      state: screens
+#    - map: ["computerLayerKeys"]
+#      state: generic_keys
+
+# Terminals in Use
+# New
+- type: entity
+  parent: N14ComputerTerminalBasePowered
+  id: N14ComputerTerminalNew
+  suffix: new
+  name: terminal
+  description: A computer terminal. This one looks new.
+  components:
+  - type: Sprite
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerScreen"]
+      state: screens
+  - type: Construction
+    graph: TerminalNew
+    node: Terminal
+
+- type: entity
+  parent: N14ComputerTerminalBase
+  id: N14ComputerTerminalNewBroken
+  suffix: new
+  name: broken terminal
+  description: A computer terminal. This one looks broken.
+  components:
+  - type: Sprite
+    state: broken
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          N14ScrapGold1:
+           min: 1
+           max: 3
+          N14ScrapElectronic1:
+           min: 2
+           max: 5
+          N14Scrap1:
+           min: 3
+           max: 6
+  - type: Construction
+    graph: TerminalNew
+    node: Broken
+
+- type: entity
+  parent: N14ComputerTerminalBase
+  id: N14ComputerTerminalNewWired
+  components:
+  - type: Construction
+    graph: TerminalNew
+    node: Frame
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Machines/Terminals/terminal_new.rsi
+    state: wired
+
+# Normal
+- type: entity
+  parent: N14ComputerTerminalBasePowered
+  id: N14ComputerTerminal
+  name: terminal
+  description: A computer terminal. Looks aged.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Machines/Terminals/terminal.rsi
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerScreen"]
+      state: screens
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          N14ScrapGold1:
+           min: 1
+           max: 3
+          N14ScrapElectronic1:
+           min: 2
+           max: 5
+          N14Scrap1:
+           min: 3
+           max: 6
+  - type: Construction
+    graph: Terminal
+    node: Terminal
+
+- type: entity
+  parent: N14ComputerTerminalBase
+  id: N14ComputerTerminalBroken
+  name: broken terminal
+  description: An old computer terminal. This one looks broken.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Machines/Terminals/terminal.rsi
+    state: broken
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          N14ScrapGold1:
+           min: 1
+           max: 3
+          N14ScrapElectronic1:
+           min: 2
+           max: 5
+          N14Scrap1:
+           min: 3
+           max: 6
+  - type: Construction
+    graph: Terminal
+    node: Broken
+
+- type: entity
+  parent: N14ComputerTerminalBase
+  id: N14ComputerTerminalFrame
+  components:
+  - type: Construction
+    graph: Terminal
+    node: missingWires
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Machines/Terminals/terminal.rsi
+    state: frame
+
+- type: entity
+  parent: N14ComputerTerminalFrame
+  id: N14ComputerTerminalWired
+  components:
+  - type: Construction
+    graph: Terminal
+    node: Frame
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Machines/Terminals/terminal.rsi
+    state: wired
+
+# Rusted
+- type: entity
+  parent: N14ComputerTerminalBasePowered
+  id: N14ComputerTerminalRusted
+  suffix: rusted
+  name: terminal
+  description: A computer terminal. Looks rusty.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Machines/Terminals/terminal_rusted.rsi
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerScreen"]
+      state: screens
+
+- type: entity
+  parent: N14ComputerTerminalBase
+  id: N14ComputerTerminalRustedBroken
+  suffix: rusted
+  name: broken terminal
+  description: An old computer terminal. This one looks rusty and broken.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Machines/Terminals/terminal_rusted.rsi
+    state: broken
+
+# Handmade
+- type: entity
+  parent: N14ComputerTerminalBasePowered
+  id: N14ComputerTerminalHandmade
+  suffix: handmade
+  name: terminal
+  description: A computer terminal. Looks handmade.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Machines/Terminals/terminal_handmade.rsi
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerScreen"]
+      state: screens
+
+# Rigged Terminals
+- type: entity
+  parent: N14ComputerTerminalBasePowered
+  id: N14ComputerTerminalRigged
+  suffix: rigged
+  name: terminal
+  description: A computer terminal. Looks old.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Machines/Terminals/terminal.rsi
+    layers:
+    - map: ["computerLayerBody"]
+      state: rigged
+    - map: ["computerLayerScreen"]
+      state: screens
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:TriggerBehavior
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 5
+    intensitySlope: 3
+    totalIntensity: 30 # about a ~1 tile radius
+    canCreateVacuum: false
+  - type: TriggerOnActivate
+    delay: 3.5
+    beepSound:
+      path: "/Audio/Effects/beep1.ogg"
+      params:
+        volume: 5
+    initialBeepDelay: 0
+    beepInterval: 1 # 2 beeps total (at 0 and 2)
+    examinable: false
+  - type: Construction
+    graph: Terminal
+    node: Rigged
+
+- type: entity
+  parent: N14ComputerTerminalRigged
+  id: N14ComputerTerminalRustedRigged
+  suffix: rigged, rusted
+  name: terminal
+  description: A computer terminal. Looks rusty.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Machines/Terminals/terminal_rusted.rsi
+    layers:
+    - map: ["computerLayerBody"]
+      state: rigged
+    - map: ["computerLayerScreen"]
+      state: screens
+
+## Wall Mounted
+# Base
+- type: entity
+  parent: N14ComputerTerminalBase
+  id: N14ComputerTerminalWallBase
+  abstract: true
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Physics
+    bodyType: Static
+  - type: InteractionOutline
+  - type: Rotatable
+  - type: Construction
+    graph: TerminalNew
+    node: missingWires
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+      - !type:ChangeConstructionNodeBehavior
+        node: Broken
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: WallMount
+  - type: Sprite
+    offset: 0, 1
+    drawdepth: Overdoors
+
+# Wall Terminal
+# N14TODO: Needs a way to use it to use the off state.
+- type: entity
+  parent: [ N14ComputerTerminalWallBase, N14ComputerTerminalBasePowered ]
+  id: N14ComputerTerminalWall
+  name: wall terminal
+  description: A computer terminal. Looks old.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Machines/Terminals/terminal_wall.rsi
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerScreen"]
+      state: screens
+
+- type: entity
+  parent: N14ComputerTerminalWallBase
+  id: N14ComputerTerminalWallBroken
+  name: broken wall terminal
+  description: A wall mounted computer terminal. This one looks broken.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Machines/Terminals/terminal_wall.rsi
+    state: broken
+
+# New
+- type: entity
+  parent: [ N14ComputerTerminalWallBase, N14ComputerTerminalBasePowered ]
+  id: N14ComputerTerminalWallNew
+  suffix: new
+  name: wall terminal
+  description: A wall mounted computer terminal. Looks new.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Machines/Terminals/terminal_wall_new.rsi
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerScreen"]
+      state: screens
+
+- type: entity
+  parent: N14ComputerTerminalWallBase
+  id: N14ComputerTerminalWallNewBroken
+  suffix: new
+  name: broken wall terminal
+  description: A wall mounted computer terminal This one looks broken.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Machines/Terminals/terminal_wall_new.rsi
+    state: broken
+
+# Rusted
+- type: entity
+  parent: [ N14ComputerTerminalWallBase, N14ComputerTerminalBasePowered ]
+  id: N14ComputerTerminalWallRusted
+  suffix: rusted
+  name: wall terminal
+  description: A wall mounted computer terminal. Looks new.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Machines/Terminals/terminal_wall_rusted.rsi
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerScreen"]
+      state: screens
+
+- type: entity
+  parent: N14ComputerTerminalWallBase
+  id: N14ComputerTerminalWallRustedBroken
+  suffix: rusted
+  name: broken wall terminal
+  description: A wall mounted computer terminal This one looks broken.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Machines/Terminals/terminal_wall_rusted.rsi
+    state: broken
+
+# Security
+- type: entity
+  parent: [ N14ComputerTerminalWallBase, N14ComputerTerminalBasePowered ]
+  id: N14ComputerTerminalWallDisplays
+  name: display terminal
+  description: A wall mounted computer terminal. Lots of displays.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Machines/Terminals/terminal_security.rsi
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerScreen"]
+      state: screens
+
+# Classic
+- type: entity
+  parent: [ N14ComputerTerminalWallBase, N14ComputerTerminalBasePowered ]
+  id: N14ComputerTerminalWallControls
+  name: control terminal
+  description: A wall mounted computer terminal.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Machines/Terminals/terminal_classic.rsi
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerScreen"]
+      state: screens

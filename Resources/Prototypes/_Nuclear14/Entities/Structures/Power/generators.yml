@@ -1,0 +1,467 @@
+# TODO: Generators need to make use of their other states, require fuel where necessary and be able to be turned off.
+
+- type: entity
+  abstract: true
+  id: N14BaseGenerator
+  description: A high efficiency thermoelectric generator.
+  name: generator
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: AmbientOnPowered
+  - type: AmbientSound
+    range: 5
+    sound:
+      path: /Audio/Ambience/Objects/engine_hum.ogg # TODO: change to fusion core generator noise
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.5,0.4,0.3"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Transform
+    anchored: true
+    noRot: true
+  - type: Sprite
+    sprite: Structures/Power/power.rsi
+    state: generator
+    snapCardinals: true
+  - type: NodeContainer
+    examinable: true
+    nodes:
+      output:
+        !type:CableDeviceNode
+        nodeGroupID: HVPower
+  - type: PowerMonitoringDevice
+    group: Generator
+    loadNode: output
+    sprite: Structures/Power/power.rsi
+    state: generator
+  - type: PowerSupplier
+    supplyRate: 5000
+    supplyRampRate: 250
+    supplyRampTolerance: 250
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: StructuralMetallic
+  - type: PacifismDangerousAttack
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:ExplodeBehavior
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 100
+    intensitySlope: 2
+    totalIntensity: 200
+  - type: Electrified
+    onHandInteract: false
+    onInteractUsing: false
+    onBump: false
+    requirePower: true
+    highVoltageNode: output
+
+- type: entity
+  parent: N14BaseGenerator
+  id: N14BaseGeneratorPortable
+  abstract: true
+  description: A generator that uses expendable fusion cores.
+  name: generator
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+            bounds: "-0.8,-0.6,0.8,0.5"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: PointLight
+    radius: 1
+    energy: 4.5
+    softness: 0.5
+    color: "#B4FCF0"
+  - type: Anchorable
+  - type: Pullable
+
+- type: entity
+  parent: N14BaseGeneratorPortable
+  id: N14GeneratorFusioncore
+  description: A generator that uses expendable fusion cores.
+  name: fusion core generator
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+            bounds: "-0.2,-0.2,1.2,0.5"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Power/fusion_generator.rsi
+    offset: 0.5, 0
+    layers:
+    - state: fusion_generator
+    - state: fusion_generator_buttons # TODO: Tie to visualiser for lit and core status?
+      shader: unshaded
+    - state: fusion_generator_core
+      shader: unshaded
+
+- type: entity
+  parent: N14BaseGeneratorPortable
+  id: N14GeneratorFusionMini
+  description: A generator that uses heavy water for fusion power.
+  name: mini fusion generator
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+            bounds: "-0.5,-0.5,0.5,0.8"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Power/32x48_machines.rsi
+    layers:
+    - state: generator
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:ExplodeBehavior
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          N14MachineFrameTallDestroyed:
+            min: 1
+            max: 1
+      - !type:SpawnGasBehavior
+        gasMixture:
+          volume: 1000
+          moles:
+            - 0 # oxygen
+            - 0 # nitrogen
+            - 340.5701689 # carbon dioxide
+          temperature: 373.15
+
+- type: entity
+  parent: N14GeneratorFusionMini
+  id: N14GeneratorFusionEnclave
+  description: A generator that uses heavy water for fusion power.
+  name: enclave fusion generator
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+            bounds: "-0.5,-0.5,0.5,0.8"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Power/enclave.rsi
+    drawdepth: Overdoors
+    offset: 0, 0.5
+    layers:
+    - state: generator_enclave_off
+    - state: generator_enclave_on
+      shader: unshaded
+  - type: PowerSupplier
+    supplyRate: 1000
+    supplyRampRate: 250
+    supplyRampTolerance: 250
+
+- type: entity
+  parent: N14GeneratorFusionMini
+  id: N14GeneratorFusionMiniRusted
+  description: A generator that uses heavy water for fusion power. This ones rusted.
+  name: mini fusion generator
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Power/32x48_machines.rsi
+    layers:
+    - state: generator_rust
+
+- type: entity
+  parent: N14GeneratorFusioncore
+  id: N14GeneratorPrewar
+  description: A dirty old generator that uses fuel to run.
+  name: pre-war generator
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Power/generator.rsi
+    layers:
+    - state: generator_off
+    - state: generator_on
+    offset: 0.5, 0
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+            bounds: "-0.3,-0.2,1,0.4"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+
+- type: entity
+  parent: N14GeneratorPrewar
+  id: N14GeneratorPrewarUranium
+  description: A dirty old generator that uses raw uranium to run.
+  name: pre-war uranium generator
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Power/generator.rsi
+    layers:
+    - state: generator_off
+    - state: generator_uranium
+
+- type: entity
+  parent: N14BaseGenerator
+  id: N14GeneratorVaultTecReactor
+  description: A fusion reactor built by vault-tec.
+  name: vault-tec reactor
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+            bounds: "-0.8,-1,0.8,1.5"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: AmbientSound
+    range: 5
+    sound:
+      path: /Audio/Ambience/Objects/engine_hum.ogg # TODO: change to fusion core generator noise
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Power/vault-tec_reactor.rsi
+    layers:
+    - state: reactor
+  - type: PowerSupplier
+    supplyRate: 10000
+    supplyRampRate: 500
+    supplyRampTolerance: 500
+  - type: PointLight
+    radius: 3
+    energy: 4.5
+    softness: 0.5
+    color: "#B4FCF0"
+
+- type: entity
+  parent: N14GeneratorVaultTecReactor
+  id: N14GeneratorReactorFloor
+  description: An old reactor built into the floor.
+  name: pre-war reactor
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Power/reactor_floor.rsi
+    layers:
+    - state: reactoroff
+    - state: norm0
+  - type: PointLight
+    radius: 3
+    energy: 4.5
+    softness: 0.5
+    color: "#B4FCF0"
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 20000 # ~15 tile radius.
+    intensitySlope: 5
+    maxIntensity: 50
+
+- type: entity
+  parent: BaseStructure
+  id: N14GeneratorReactorFloorDestroyed
+  description: An old reactor built into the floor. This ones suffered a meltdown.
+  name: pre-war reactor
+  suffix: destroyed
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+            bounds: "-0.7,0,0.7,0.7"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Power/reactor_floor.rsi
+    layers:
+    - state: broken
+  - type: RadiationSource
+    intensity: 10
+    slope: 0.8
+  - type: PointLight
+    radius: 3
+    energy: 4.5
+    softness: 0.5
+    color: "#f05e1b"
+
+- type: entity
+  name: gas powered generator
+  description: |-
+    A small generator capable of powering individual rooms.
+    Runs off welding fuel and is rated for up to 8 kW.
+    Beware exhaust fumes.
+  parent: PortableGeneratorBase
+  id: N14PortableGeneratorWeldingFuel
+  suffix: Welding Fuel, 8 kW
+  components:
+    - type: AmbientSound
+      range: 4
+      volume: -8
+
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.30,-0.30,0.30,0.30"
+          density: 80
+          mask:
+            - MachineMask
+          layer:
+            - MachineLayer
+
+    - type: Sprite
+      sprite: _Nuclear14/Structures/Power/power.rsi
+      layers:
+      - state: diesel-off
+        map: [ "enum.GeneratorVisualLayers.Body" ]
+    - type: GenericVisualizer
+      visuals:
+        enum.GeneratorVisuals.Running:
+          enum.GeneratorVisualLayers.Body:
+            True: { state: diesel-on }
+            False: { state: diesel-off }
+
+    - type: Machine
+      board: N14PortableGeneratorWeldingFuelMachineParts
+
+    - type: FuelGenerator
+      targetPower: 5000
+      minTargetPower: 1000
+      optimalPower: 8000
+      maxTargetPower: 8000
+      # 15 minutes at full tank.
+      optimalBurnRate: 0.11111111
+      fuelEfficiencyConstant: 0.3
+    - type: ChemicalFuelGeneratorAdapter
+      solution: tank
+      reagents:
+        WeldingFuel: 1
+    - type: SolutionContainerManager
+      solutions:
+        tank:
+          maxVol: 250 #A bucket of welding fuel.
+    - type: RefillableSolution
+      solution: tank
+    - type: PortableGenerator
+      # Unreliable bugger
+      startChance: 0.5
+    - type: NodeContainer
+      examinable: true
+      nodes:
+        output:
+          !type:CableDeviceNode
+          nodeGroupID: Apc
+    - type: PowerMonitoringDevice
+      group: Generator
+      loadNode: output
+      sprite: _Nuclear14/Structures/Power/power.rsi
+      state: diesel-off
+    - type: PowerSupplier
+      voltage: Apc
+      supplyRampTolerance: 2000
+    - type: GeneratorExhaustGas
+      gasType: CarbonDioxide
+      moleRatio: 0.5
+    - type: Explosive
+      explosionType: Default
+      tileBreakScale: 0
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 200
+          behaviors:
+            - !type:DoActsBehavior
+              acts: [ "Destruction" ]
+        - trigger:
+            !type:DamageTrigger
+            damage: 100
+          behaviors:
+            - !type:SpillBehavior
+              solution: tank
+            - !type:PlaySoundBehavior
+              sound:
+                collection: MetalBreak
+            - !type:ChangeConstructionNodeBehavior
+              node: machineFrame
+            - !type:DoActsBehavior
+              acts: ["Destruction"]
+        - trigger:
+            !type:DamageTypeTrigger
+            damageType: Piercing
+            damage: 75
+          behaviors:
+            - !type:SolutionExplosionBehavior
+              solution: tank

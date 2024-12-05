@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-SA-3.0",
+  "copyright": "By INFRARED_BARON for MS13",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "grill",
+      "directions": 4
+    },
+    {
+      "name": "propane",
+      "directions": 4
+    },
+    {
+      "name": "propane_wide",
+      "directions": 4
+    }
+  ]
+}

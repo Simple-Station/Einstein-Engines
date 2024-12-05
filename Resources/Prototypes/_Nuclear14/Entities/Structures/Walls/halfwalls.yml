@@ -1,0 +1,296 @@
+- type: entity
+  abstract: true
+  parent: BaseStructure
+  id: N14HalfWallBase
+  name: basewall
+  description: A nice half wall for a window or boundary.
+  suffix: half
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: RangedDamageSound
+    soundGroups:
+      Brute:
+        collection:
+          MetalBulletImpact
+    soundTypes:
+      Heat:
+        collection:
+          MetalLaserImpact
+  - type: Tag
+    tags:
+    - Wall
+  - type: Sprite
+    drawdepth: Walls
+  - type: Icon
+    state: full
+  - type: PlacementReplacement
+    key: windows
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: FlimsyMetallic
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
+        density: 1000
+  - type: RadiationBlocker
+    resistance: 2
+  - type: BlockWeather
+  - type: Climbable
+    range: 0.05
+
+- type: entity
+  parent: N14HalfWallBase
+  id: N14WallBrickHalf
+  name: brick wall
+  suffix: half
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Walls/ms13/half/brick.rsi
+  - type: Icon
+    sprite: _Nuclear14/Structures/Walls/ms13/half/brick.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: FlimsyMetallic
+  - type: IconSmooth
+    key: windows
+    base: brick
+    
+- type: entity
+  parent: N14HalfWallBase
+  id: N14WallBunkerHalf
+  name: bunker wall
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Walls/ms13/half/bunker.rsi
+  - type: Icon
+    sprite: _Nuclear14/Structures/Walls/ms13/half/bunker.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: StrongMetallic
+  - type: IconSmooth
+    key: windows
+    base: bunker
+    
+- type: entity
+  parent: N14HalfWallBase
+  id: N14WallConcreteHalf
+  name: concrete wall
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Walls/ms13/half/concrete.rsi
+  - type: Icon
+    sprite: _Nuclear14/Structures/Walls/ms13/half/concrete.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: IconSmooth
+    key: windows
+    base: concrete
+    
+- type: entity
+  parent: N14HalfWallBase
+  id: N14WallDungeonHalf
+  name: dungeon wall
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Walls/ms13/half/dungeon.rsi
+  - type: Icon
+    sprite: _Nuclear14/Structures/Walls/ms13/half/dungeon.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: StrongMetallic
+  - type: IconSmooth
+    key: windows
+    base: dungeon
+    
+- type: entity
+  parent: N14HalfWallBase
+  id: N14WallMetalHalf
+  name: metal wall
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Walls/ms13/half/metal.rsi
+  - type: Icon
+    sprite: _Nuclear14/Structures/Walls/ms13/half/metal.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: IconSmooth
+    key: windows
+    base: metal
+    
+- type: entity
+  parent: N14HalfWallBase
+  id: N14WallPrisonHalf
+  name: prison wall
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Walls/ms13/half/prison.rsi
+  - type: Icon
+    sprite: _Nuclear14/Structures/Walls/ms13/half/prison.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: IconSmooth
+    key: windows
+    base: prison
+    
+- type: entity
+  parent: N14HalfWallBase
+  id: N14WallMetalReinforcedHalf
+  name: reinforced metal wall
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Walls/ms13/half/rmetal.rsi
+  - type: Icon
+    sprite: _Nuclear14/Structures/Walls/ms13/half/rmetal.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: StrongMetallic
+  - type: IconSmooth
+    key: windows
+    base: rmetal
+
+    
+- type: entity
+  parent: N14HalfWallBase
+  id: N14WallRockHalf
+  name: rock wall
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Walls/ms13/half/rock.rsi
+  - type: Icon
+    sprite: _Nuclear14/Structures/Walls/ms13/half/rock.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: FlimsyMetallic
+  - type: IconSmooth
+    key: windows
+    base: rock
+    
+- type: entity
+  parent: N14HalfWallBase
+  id: N14WallMetalReinforcedRustHalf
+  name: rust reinforced metal wall
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Walls/ms13/half/rrmetal.rsi
+  - type: Icon
+    sprite: _Nuclear14/Structures/Walls/ms13/half/rrmetal.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: StrongMetallic
+  - type: IconSmooth
+    key: windows
+    base: rrmetal
+    
+- type: entity
+  parent: N14HalfWallBase
+  id: N14WallMetalRustHalf
+  name: rust metal wall
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Walls/ms13/half/rustmetal.rsi
+  - type: Icon
+    sprite: _Nuclear14/Structures/Walls/ms13/half/rustmetal.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: IconSmooth
+    key: windows
+    base: rustmetal
+    
+- type: entity
+  parent: N14HalfWallBase
+  id: N14WallScrapHalf
+  name: scrap wall
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Walls/ms13/half/scrap.rsi
+  - type: Icon
+    sprite: _Nuclear14/Structures/Walls/ms13/half/scrap.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: IconSmooth
+    key: windows
+    base: scrap
+    
+- type: entity
+  parent: N14HalfWallBase
+  id: N14WallSewerHalf
+  name: sewer wall
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Walls/ms13/half/sewer.rsi
+  - type: Icon
+    sprite: _Nuclear14/Structures/Walls/ms13/half/sewer.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: IconSmooth
+    key: windows
+    base: sewer
+    
+- type: entity
+  parent: N14HalfWallBase
+  id: N14WallSidingHalf
+  name: siding wall
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Walls/ms13/half/siding.rsi
+  - type: Icon
+    sprite: _Nuclear14/Structures/Walls/ms13/half/siding.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: IconSmooth
+    key: windows
+    base: siding
+    
+- type: entity
+  parent: N14HalfWallBase
+  id: N14WallVaultHalf
+  name: vault wall
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Walls/ms13/half/vault.rsi
+  - type: Icon
+    sprite: _Nuclear14/Structures/Walls/ms13/half/vault.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: StrongMetallic
+  - type: IconSmooth
+    key: windows
+    base: vault
+    
+- type: entity
+  parent: N14HalfWallBase
+  id: N14WallWoodHalf
+  name: wood wall
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Walls/ms13/half/wood.rsi
+  - type: Icon
+    sprite: _Nuclear14/Structures/Walls/ms13/half/wood.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: IconSmooth
+    key: windows
+    base: wood
+  - type: Construction
+    graph: N14HalfWall
+    node: Wood

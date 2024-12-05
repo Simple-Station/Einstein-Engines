@@ -1,0 +1,98 @@
+{
+  "version": 1,
+  "license": "Custom",
+  "copyright": "Copyright Bethesda Softworks, see attributions.yml for credits",
+  "size": {
+    "x": 64,
+    "y": 64
+  },
+  "states": [
+    {
+      "name": "safety2"
+    },
+    {
+      "name": "safety3"
+    },
+    {
+      "name": "safety4"
+    },
+    {
+      "name": "safety5"
+    },
+    {
+      "name": "safety6"
+    },
+    {
+      "name": "safety7"
+    },
+    {
+      "name": "safety8"
+    },
+    {
+      "name": "safety9"
+    },
+    {
+      "name": "safety10"
+    },
+    {
+      "name": "safety11"
+    },
+    {
+      "name": "safety12"
+    },
+    {
+      "name": "caution1"
+    },
+    {
+      "name": "caution2"
+    },
+    {
+      "name": "caution3"
+    },
+    {
+      "name": "danger1"
+    },
+    {
+      "name": "danger2"
+    },
+    {
+      "name": "danger3"
+    },
+    {
+      "name": "danger4"
+    },
+    {
+      "name": "grognak1"
+    },
+    {
+      "name": "jet1"
+    },
+    {
+      "name": "nukacola1"
+    },
+    {
+      "name": "nukacola2"
+    },
+    {
+      "name": "safety1"
+    },
+    {
+      "name": "abraxo"
+    },
+    {
+      "name": "barstow_strong_express"
+    },
+    {
+      "name": "boscom"
+    },
+    {
+      "name": "gnn"
+    },
+    {
+      "name": "massfusion"
+    },
+    {
+      "name": "redrocket"
+    }
+  ]
+}

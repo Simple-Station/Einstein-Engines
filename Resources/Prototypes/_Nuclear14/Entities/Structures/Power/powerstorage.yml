@@ -1,0 +1,108 @@
+# Base
+- type: entity
+  abstract: true
+  id: N14PowerStorageBase
+  parent: BaseSMES
+  name: energy storage unit
+  description: A high-capacity energy storage unit.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Power/powerstorage.rsi
+    drawdepth: Overdoors
+    offset: 0, 0.5
+    snapCardinals: true
+    layers:
+      - state: smes
+      - map: ["enum.SmesVisualLayers.Charge"]
+        state: "smes-og1" # -og0 does not exist
+        shader: unshaded
+        visible: false
+      - map: ["enum.SmesVisualLayers.Input"]
+        state: "smes-oc0"
+        shader: unshaded
+      - map: ["enum.SmesVisualLayers.Output"]
+        state: "smes-op1"
+        shader: unshaded
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: StrongMetallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:ExplodeBehavior
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          N14MachineFrameTallDestroyed:
+            min: 1
+            max: 1
+      - !type:SpawnGasBehavior
+        gasMixture:
+          volume: 1000
+          moles:
+            - 0 # oxygen
+            - 0 # nitrogen
+            - 340.5701689 # carbon dioxide
+          temperature: 373.15
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 100
+    intensitySlope: 2
+    totalIntensity: 200
+
+# Storage in use:
+
+- type: entity
+  parent: N14PowerStorageBase
+  id: N14PowerStorageBasic
+  suffix: Basic, 8MW
+  components:
+  - type: Battery
+    maxCharge: 8000000
+    startingCharge: 8000000
+
+- type: entity
+  parent: N14PowerStorageBasic
+  id: N14PowerStorageBasicEmpty
+  suffix: Empty
+  components:
+  - type: Battery
+    startingCharge: 0
+
+# Enclave
+- type: entity
+  parent: N14PowerStorageBase
+  id: N14PowerStorageEnclaveBasic
+  suffix: Basic, 8MW
+  components:
+  - type: Battery
+    maxCharge: 8000000
+    startingCharge: 8000000
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Power/enclave.rsi
+    snapCardinals: true
+    layers:
+      - state: smes
+      - map: ["enum.SmesVisualLayers.Charge"]
+        state: "smes-og1" # -og0 does not exist
+        shader: unshaded
+        visible: false
+      - map: ["enum.SmesVisualLayers.Input"]
+        state: "smes-oc0"
+        shader: unshaded
+      - map: ["enum.SmesVisualLayers.Output"]
+        state: "smes-op1"
+        shader: unshaded

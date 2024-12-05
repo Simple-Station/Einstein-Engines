@@ -1,0 +1,387 @@
+# Frames
+- type: entity
+  id: N14MachineFrameTall
+  name: tall machine frame
+  description: A metal frame for housing machinery and electronics
+  suffix: Frame
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Power/32x48_machines.rsi
+    state: rackempty
+    offset: 0, 1
+    drawdepth: Overdoors
+  - type: Transform
+    anchored: true
+    noRot: true
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,0.5,0.45,1.5"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:ChangeConstructionNodeBehavior
+        node: destroyedMachineFrame
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: Construction
+    graph: N14TallMachineFrame
+    node: missingWires
+
+- type: entity
+  parent: N14MachineFrameTall
+  id: N14MachineFrameTallDestroyed
+  name: destroyed machine
+  description: A destroyed frame that used to hold machinery and electronics
+  components:
+    - type: Sprite
+      sprite: _Nuclear14/Structures/Power/32x48_machines.rsi
+      state: rackdestroyed
+      offset: 0, 1
+    - type: Destructible
+      thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 100
+        behaviors:
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            SheetSteel1:
+              min: 1
+              max: 3
+            N14ScrapGold1:
+              min: 2
+              max: 5
+            N14ScrapElectronic1:
+              min: 3
+              max: 6
+            N14Scrap1:
+              min: 4
+              max: 7
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+    - type: Construction
+      graph: N14TallMachineFrame
+      node: destroyedMachineFrame
+
+- type: entity
+  parent: N14MachineFrameTall
+  id: N14MachineFrameTallWired
+  description: A metal frame for housing machinery and electronics
+  suffix: Wired
+  components:
+    - type: Sprite
+      sprite: _Nuclear14/Structures/Power/32x48_machines.rsi
+      state: rackparts
+      offset: 0, 1
+    - type: Construction
+      graph: N14TallMachineFrame
+      node: machineFrame
+
+# Machine Base
+- type: entity
+  abstract: true
+  parent: BaseStructure
+  id: N14BaseMachine
+  components: # Not Anchorable due to sprite offset needs
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+  - type: Transform
+    noRot: true
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,0.5,0.45,1.5"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:ChangeConstructionNodeBehavior
+        node: destroyedMachineFrame
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+  - type: Sprite
+    offset: 0, 1
+    drawdepth: Overdoors
+
+- type: entity
+  parent: N14BaseMachine
+  id: N14BaseMachinePowered
+  name: server rack
+  description: An old server rack filled with electronics.
+  abstract: true
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,0.5,0.45,1.5"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Power/32x48_machines.rsi
+    snapCardinals: true
+    offset: 0, 1
+    layers:
+    - state: serverrack
+    - state: serverrack_on
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerDeviceVisuals.Powered:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: { visible: true }
+          False: { visible: false }
+  - type: Appearance
+
+- type: entity
+  parent: N14BaseMachinePowered
+  id: N14MachineRackElectronics
+  name: electronics rack
+  description: An old rack filled with electronics.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Power/32x48_machines.rsi
+    snapCardinals: true
+    offset: 0, 1
+    layers:
+    - state: rack
+    - state: rack_on
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+  - type: Construction
+    graph: N14TallMachineFrame
+    node: ElectronicsRack
+
+- type: entity
+  parent: N14BaseMachinePowered
+  id: N14MachineRackServer
+  name: server rack
+  description: An old server rack filled with electronics.
+  components:
+  - type: Construction
+    graph: N14TallMachineFrame
+    node: ServerRack
+
+- type: entity
+  parent: N14BaseMachinePowered
+  id: N14MachineRackRecorder
+  name: electrical recorder
+  description: An old rack with a fault recorder in.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Power/32x48_machines.rsi
+    snapCardinals: true
+    offset: 0, 1
+    layers:
+    - state: recorder
+    - state: recorder_on
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+  - type: Construction
+    graph: N14TallMachineFrame
+    node: RecorderRack
+
+- type: entity
+  parent: N14BaseMachine
+  id: N14MachineComputerMainframe # Probably a computer, move it there?
+  name: mainframe
+  description: Probably the biggest computer you've ever seen.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Machines/mainframe.rsi
+    snapCardinals: true
+    layers:
+    - state: mainframe
+    - state: mainframe_on
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1.1,-0.5,1.2,1"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+
+- type: entity
+  parent: N14BaseMachine
+  id: N14MachineModularMachinebox
+  name: machine box
+  description: An old box forming part of a machine.
+  placement:
+    mode: AlignWall
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Machines/ms13_modular.rsi
+    snapCardinals: false
+    # offset: 0, 1
+    state: box
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          N14ScrapElectronic1:
+           min: 2
+           max: 5
+          N14Scrap1:
+           min: 3
+           max: 6
+          N14ScrapCopper1:
+           min: 2
+           max: 4
+  - type: Transform
+    noRot: false
+    anchored: false
+
+- type: entity
+  parent: N14MachineModularMachinebox
+  id: N14MachineModularMachineDials
+  name: machine dials
+  description: An old box with dials forming part of a machine.
+  components:
+  - type: Sprite
+    state: dials
+
+- type: entity
+  parent: N14MachineModularMachineDials
+  id: N14MachineModularMachineDialsTall
+  suffix: tall
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Machines/ms13_modulartall.rsi
+
+- type: entity
+  parent: N14MachineModularMachineDialsTall
+  id: N14MachineModularMachineConsoleTall
+  name: machine console
+  description: An old console from a machine.
+  components:
+  - type: Sprite
+    state: console
+
+- type: entity
+  parent: N14MachineModularMachineDialsTall
+  id: N14MachineModularMachineScreenTall
+  name: machine screen
+  description: An old screen for a machine.
+  components:
+  - type: Sprite
+    state: screen
+
+# Panels in use
+## Base
+- type: entity
+  parent: N14MachineRackRecorder
+  id: N14MachineRackCameraRouterBase
+  name: camera router
+  description: An old rack with camera recording equipment in.
+  abstract: true
+  components:
+    - type: DeviceNetwork
+      deviceNetId: Wired
+      receiveFrequencyId: SurveillanceCamera
+      transmitFrequencyId: SurveillanceCamera
+    - type: WiredNetworkConnection
+    - type: DeviceNetworkRequiresPower
+    - type: UserInterface
+      interfaces:
+        - key: enum.SurveillanceCameraSetupUiKey.Router
+          type: SurveillanceCameraSetupBoundUi
+
+## Cameras
+### See devicenet_frequencies.yml for definitions
+- type: entity
+  parent: N14MachineRackCameraRouterBase
+  id: N14MachineRackCameraRouterBrotherhoodWashington
+  suffix: BOS Washington
+  components:
+    - type: SurveillanceCameraRouter
+      subnetFrequency: SurveillanceCameraBrotherhoodWashington
+
+- type: entity
+  parent: N14MachineRackCameraRouterBase
+  id: N14MachineRackCameraRouterBrotherhoodMidwest
+  suffix: BOS Midwest
+  components:
+    - type: SurveillanceCameraRouter
+      subnetFrequency: SurveillanceCameraBrotherhoodMidwest
+
+- type: entity
+  parent: N14MachineRackCameraRouterBase
+  id: N14MachineRackCameraRouterNCR
+  suffix: NCR
+  components:
+    - type: SurveillanceCameraRouter
+      subnetFrequency: SurveillanceCameraNCR
+
+- type: entity
+  parent: N14MachineRackCameraRouterBase
+  id: N14MachineRackCameraRouterTown
+  suffix: Town
+  components:
+    - type: SurveillanceCameraRouter
+      subnetFrequency: SurveillanceCameraTown
+
+- type: entity
+  parent: N14MachineRackCameraRouterBase
+  id: N14MachineRackCameraRouterVault
+  suffix: Vault
+  components:
+    - type: SurveillanceCameraRouter
+      subnetFrequency: SurveillanceCameraVault

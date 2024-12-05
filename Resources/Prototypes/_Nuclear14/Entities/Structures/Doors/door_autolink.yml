@@ -1,0 +1,68 @@
+- type: entity
+  id: BlastDoorBos
+  parent: BlastDoor
+  suffix: Autolink, BoS
+  components:
+    - type: AccessReader
+      access: [["BoSMidwest"]]
+    - type: AutoLinkReceiver
+      channel: BoS
+
+- type: entity
+  id: BlastDoorBosOpen
+  parent: BlastDoor
+  suffix: Autolink, BoS, Open
+  components:
+    - type: AccessReader
+      access: [["BoSMidwest"]]
+    - type: AutoLinkReceiver
+      channel: BoS
+
+- type: entity
+  id: ShuttersNormalExt1
+  parent: BlastDoor
+  suffix: Autolink, Ext1
+  components:
+    - type: AutoLinkReceiver
+      channel: Ext1
+
+- type: entity
+  id: ShuttersNormalOpenExt1
+  parent: BlastDoor
+  suffix: Autolink, Ext1, Open
+  components:
+    - type: AutoLinkReceiver
+      channel: Ext1
+
+- type: entity
+  id: ShuttersNormalExt2
+  parent: BlastDoor
+  suffix: Autolink, Ext2
+  components:
+    - type: AutoLinkReceiver
+      channel: Ext2
+
+- type: entity
+  id: ShuttersNormalOpenExt2
+  parent: BlastDoor
+  suffix: Autolink, Ext2, Open
+  components:
+    - type: AutoLinkReceiver
+      channel: Ext2
+
+- type: entity
+  id: ShuttersNormalExt3
+  parent: BlastDoor
+  suffix: Autolink, Ext3
+  components:
+    - type: AutoLinkReceiver
+      channel: Ext3
+
+- type: entity
+  id: ShuttersNormalOpenExt3
+  parent: BlastDoor
+  suffix: Autolink, Ext3, Open
+  components:
+    - type: AutoLinkReceiver
+      channel: Ext3
+

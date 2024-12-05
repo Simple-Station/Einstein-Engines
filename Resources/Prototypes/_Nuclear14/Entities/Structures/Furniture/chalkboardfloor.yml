@@ -1,0 +1,184 @@
+- type: entity
+  parent: BaseStructure
+  id: N14ChalkboardFloor
+  name: Chalkboard
+  description: A dusty chalkboard
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Furniture/chalkboardfloor.rsi
+    snapCardinals: true
+    netsync: false
+    state: board_clean
+  - type: Damageable
+    damageModifierSet: Wood
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: Tag
+    tags:
+    - Wooden
+  - type: Transform
+    anchored: true
+    noRot: true
+  - type: Physics
+    bodyType: Static
+  - type: Anchorable
+  - type: Pullable
+          
+- type: entity
+  parent: N14ChalkboardFloor
+  id: N14ChalkboardFloor1
+  suffix: suck
+  components:
+  - type: Sprite
+    state: board_mess1
+    
+- type: entity
+  parent: N14ChalkboardFloor
+  id: N14ChalkboardFloor2
+  suffix: vault-tec
+  components:
+  - type: Sprite
+    state: board_mess2
+    
+- type: entity
+  parent: N14ChalkboardFloor
+  id: N14ChalkboardFloor3
+  components:
+  - type: Sprite
+    state: board_mess3
+    
+- type: entity
+  parent: N14ChalkboardFloor
+  id: N14ChalkboardFloor4
+  components:
+  - type: Sprite
+    state: board_mess4
+    
+- type: entity
+  parent: N14ChalkboardFloor
+  id: N14ChalkboardFloor5
+  components:
+  - type: Sprite
+    state: board_mess5
+    
+- type: entity
+  parent: N14ChalkboardFloor
+  id: N14ChalkboardFloor6
+  suffix: welcome hell
+  components:
+  - type: Sprite
+    state: board_mess6
+    
+- type: entity
+  parent: N14ChalkboardFloor
+  id: N14ChalkboardFloor7
+  suffix: dorf
+  components:
+  - type: Sprite
+    state: board_mess7
+    
+- type: entity
+  parent: N14ChalkboardFloor
+  id: N14ChalkboardFloor8
+  suffix: love
+  components:
+  - type: Sprite
+    state: board_mess8
+    
+- type: entity
+  parent: N14ChalkboardFloor
+  id: N14ChalkboardFloor9
+  suffix: peace
+  components:
+  - type: Sprite
+    state: board_mess9
+    
+- type: entity
+  parent: N14ChalkboardFloor
+  id: N14ChalkboardFloor10
+  components:
+  - type: Sprite
+    state: board_text1
+    
+- type: entity
+  parent: N14ChalkboardFloor
+  id: N14ChalkboardFloor11
+  components:
+  - type: Sprite
+    state: board_text2
+    
+- type: entity
+  parent: N14ChalkboardFloor
+  id: N14ChalkboardFloor12
+  components:
+  - type: Sprite
+    state: board_text3
+    
+- type: entity
+  parent: N14ChalkboardFloor
+  id: N14ChalkboardFloor13
+  components:
+  - type: Sprite
+    state: board_text4
+    
+- type: entity
+  parent: N14ChalkboardFloor
+  id: N14ChalkboardFloor14
+  components:
+  - type: Sprite
+    state: board_text5
+    
+- type: entity
+  parent: N14ChalkboardFloor
+  id: N14ChalkboardFloor15
+  suffix: radiation
+  components:
+  - type: Sprite
+    state: board_text6
+    
+- type: entity
+  parent: N14ChalkboardFloor
+  id: N14ChalkboardFloor16
+  suffix: fallout
+  components:
+  - type: Sprite
+    state: board_text7
+    
+- type: entity
+  parent: N14ChalkboardFloor
+  id: N14ChalkboardFloor17
+  suffix: vault
+  components:
+  - type: Sprite
+    state: board_text8
+    
+- type: entity
+  parent: N14ChalkboardFloor
+  id: N14ChalkboardFloor18
+  suffix: lambda
+  components:
+  - type: Sprite
+    state: board_text9
+    
+- type: entity
+  parent: N14ChalkboardFloor
+  id: N14ChalkboardFloor19
+  suffix: wet
+  components:
+  - type: Sprite
+    state: board_wet

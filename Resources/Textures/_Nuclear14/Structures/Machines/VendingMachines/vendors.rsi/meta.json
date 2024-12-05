@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-SA-3.0",
+  "copyright": "Taken from mojave-sun-13 at https://github.com/Mojave-Sun/mojave-sun-13/blob/0456ead4036c3a76865d415875c96676a26ff7fc/mojave/icons/structure/vending.dmi",
+  "size": {
+    "x": 32,
+    "y": 48
+  },
+  "states": [
+    {
+      "name": "nuka_old",
+      "directions": 4
+    },
+    {
+      "name": "nuka_new",
+      "directions": 4
+    },
+    {
+      "name": "sarsaparilla",
+      "directions": 4
+    },
+    {
+      "name": "cigarette",
+      "directions": 4
+    }
+  ]
+}

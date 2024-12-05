@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "license": "CC0-1.0",
+  "copyright": "original sprites by Mithrandalf for N14",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "metal"
+    },
+    {
+      "name": "b_metal"
+    },
+    {
+      "name": "metal_damaged"
+    },
+    {
+      "name": "b_metal_damaged"
+    },
+    {
+      "name": "rope"
+    },
+    {
+      "name": "b_rope"
+    },
+    {
+      "name": "b_rope_damaged"
+    },
+    {
+      "name": "b_paint_1"
+    },
+    {
+      "name": "b_paint_2"
+    },
+    {
+      "name": "b_paint_3"
+    },
+    {
+      "name": "b_rust"
+    },
+    {
+      "name": "paint_1"
+    },
+    {
+      "name": "paint_2"
+    },
+    {
+      "name": "paint_3"
+    },
+    {
+      "name": "rust"
+    }
+  ]
+}

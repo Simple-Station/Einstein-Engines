@@ -1,0 +1,132 @@
+# These windows are now the standard window in use compatible with our slanted walls.
+
+# In order to make them, use the half wall entity as the frame then place the glass atop it.
+  
+- type: entity
+  parent: N14WindowSmoothBaseAirtight
+  id: N14WindowSlanted
+  description: A window for seeing into places. 
+  name: window
+  components:
+  - type: DamageVisuals
+    thresholds: [4, 8, 12]
+    damageDivisor: 2
+    trackAllDamage: true
+    damageOverlay:
+      sprite: _Nuclear14/Structures/Windows/slanted/cracks.rsi
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Windows/slanted/slantedwindow.rsi
+    drawdepth: WallTops
+  - type: Icon
+    sprite: _Nuclear14/Structures/Windows/slanted/slantedwindow.rsi
+    state: full
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150 #excess damage (nuke?). avoid computational cost of spawning entities.
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          ShardGlass:
+            min: 1
+            max: 2
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          N14WindowSlantedBroken:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+  - type: Construction
+    graph: N14WindowPane
+    node: N14WindowSlanted
+    
+- type: entity
+  id: N14WindowSlantedBroken
+  name: broken glass
+  description: Broken remains of a window.
+  noSpawn: true
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Windows/slanted/slantedbroken.rsi
+    drawdepth: WallTops
+  - type: CollisionWake # not sure this is needed
+    enabled: false
+  - type: Slippery
+    slipSound:
+      path: /Audio/Effects/fence_rattle1.ogg
+    launchForwardsMultiplier: 0
+    paralyzeTime: 0
+  - type: Sharp # not sure this is needed
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Slash: 2
+  - type: StepTrigger
+    intersectRatio: 0.2
+    requiredTriggeredSpeed: 0
+  - type: TriggerOnStepTrigger
+  - type: DamageUserOnTrigger
+    damage:
+      types:
+        Piercing: 5
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.5
+    sprintSpeedModifier: 0.5
+  - type: Transform
+    anchored: true
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      slips:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.49,0.49,-0.25"
+        hard: false
+        layer:
+        - LowImpassable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 20
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Glass
+  - type: Icon
+    sprite: _Nuclear14/Structures/Windows/slanted/slantedbroken.rsi
+    state: full
+  - type: IconSmooth
+    key: windows
+    base: window

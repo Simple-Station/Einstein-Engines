@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-SA-3.0",
+  "copyright": "Created by INFRARED_BARON for MS13",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "off"
+    },
+    {
+      "name": "on"
+    },
+    {
+      "name": "overlay_on"
+    },
+    {
+      "name": "overlay_off"
+    },
+    {
+      "name": "toggle_on",
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.6
+        ]
+      ]
+    },
+    {
+      "name": "toggle_off",
+      "delays": [
+        [
+          0.1,
+          0.15,
+          0.1,
+          0.1,
+          0.1,
+          0.6
+        ]
+      ]
+    }
+  ]
+}

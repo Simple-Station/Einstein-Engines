@@ -1,0 +1,46 @@
+{
+    "version": 1,
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "license": "CC-BY-NC-SA-3.0",
+    "copyright": "Taken from big-iron at commit https://github.com/Foundation-19/Big-Iron/commit/cf17a5654d3cbb85cb9cd9c96f1c40b14076c208, modified by Peptide90",
+    "states": [
+        {
+            "name": "full"
+        },
+        {
+            "name": "ruin0",
+            "directions": 4
+        },
+        {
+            "name": "ruin1",
+            "directions": 4
+        },
+        {
+            "name": "ruin2",
+            "directions": 4
+        },
+        {
+            "name": "ruin3",
+            "directions": 4
+        },
+        {
+            "name": "ruin4",
+            "directions": 4
+        },
+        {
+            "name": "ruin5",
+            "directions": 4
+        },
+        {
+            "name": "ruin6",
+            "directions": 4
+        },
+        {
+            "name": "ruin7",
+            "directions": 4
+        }
+    ]
+}

@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-SA-3.0",
+  "copyright": "https://github.com/JustLoveBeingAnOwl/Interstate-80-owlTaken at /commit/a6f9e0a6649e89f0aa731f363e07f541654ecb3d",
+  "size": {
+    "x": 64,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "board_clean"
+    },
+    {
+      "name": "board_text1"
+    },
+    {
+      "name": "board_text2"
+    },
+    {
+      "name": "board_text3"
+    },
+    {
+      "name": "board_text4"
+    },
+    {
+      "name": "board_mess6"
+    },
+    {
+      "name": "board_text5"
+    },
+    {
+      "name": "board_mess2"
+    },
+    {
+      "name": "board_mess3"
+    },
+    {
+      "name": "board_mess4"
+    },
+    {
+      "name": "board_mess5"
+    },
+    {
+      "name": "board_text6"
+    },
+    {
+      "name": "board_text7"
+    },
+    {
+      "name": "board_text8"
+    },
+    {
+      "name": "board_mess1"
+    },
+    {
+      "name": "board_text9"
+    }
+  ]
+}

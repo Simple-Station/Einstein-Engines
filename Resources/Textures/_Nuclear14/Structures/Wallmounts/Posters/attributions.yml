@@ -1,0 +1,23 @@
+#adverts64x64.rsi
+# Anything without a license is an Asset being used as part of a fan project, and thus has no forward licensing and should be considered NC.
+- files: ["nukacola1.png", "nukacola2.png"]
+  copyright: "Taken from DeviantArt and property of Bethesda Softworks"
+  source: "https://www.deviantart.com/"
+  license: "Custom"
+
+- files: ["grognak1.png", "jet1.png"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Drawn by markuzr based on Fallout by Bethesda Softworks"
+  source: "https://www.deviantart.com/markuzr"
+  license: "Custom"
+  
+- files: ["caution1.png", "caution2.png", "caution3.png", "danger1.png", "danger2.png", "danger3.png", "danger4.png", "safety1.png", "safety2.png", "safety3.png", "safety4.png", "safety5.png", "safety6.png", "safety7.png", "safety8.png", "safety9.png", "safety10.png", "safety11.png", "safety12.png"]
+  copyright: "Ripped by Plank-69 from Fallout games originally by Bethesda Softworks"
+  source: "https://www.deviantart.com/plank-69" 
+  license: "Custom"
+  
+#adverts128x64.rsi and billboards192x192.rsi
+- files: ["nukacola1.png", "nukacola1-worn.png", "redrocket1.png", "redrocket1-worn.png", "massfusion1.png", "massfusion-worn.png"]
+  copyright: "Ripped by Plank-69 from Fallout games originally by Bethesda Softworks, worn sprites edited by Peptide90"
+  source: "https://www.deviantart.com/plank-69" 
+  license: "Custom"

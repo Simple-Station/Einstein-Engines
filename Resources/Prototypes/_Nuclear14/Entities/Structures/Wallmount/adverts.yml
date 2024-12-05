@@ -1,0 +1,193 @@
+- type: entity
+  parent: BaseSign
+  id: N14SignBase # for non directional signs otherwise remove snapCardinals: true
+  abstract: true
+  components:
+  - type: WallMount
+    arc: 360
+  - type: Sprite
+    drawdepth: Overdoors
+    sprite: _Nuclear14/Structures/Wallmounts/adverts.rsi
+    snapCardinals: true # one direction
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+# Pristine Adverts
+- type: entity
+  parent: N14SignBase
+  id: N14SignNukaColaGirl
+  name: Nuka Cola advert
+  description: "A near pristine pre-war advert for Nuka Cola."
+  components:
+  - type: Sprite
+    state: nukagirl
+    scale: 0.5, 0.5
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          N14SignNukaColaGirlDamaged:
+            min: 1
+            max: 1
+        offset: 0
+
+- type: entity
+  parent: N14SignBase
+  id: N14SignVaultTec
+  name: Vault-Tec advert
+  description: "A near pristine pre-war advert for Vault-Tec."
+  components:
+  - type: Sprite
+    state: vaulttec
+    scale: 0.5, 0.5
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          N14SignVaultTecDamaged:
+            min: 1
+            max: 1
+        offset: 0
+
+- type: entity
+  parent: N14SignBase
+  id: N14SignMrHandy
+  name: Mr Handy advert
+  description: "A near pristine pre-war advert for a Mr. Handy service robot."
+  components:
+  - type: Sprite
+    state: mrhandy
+    scale: 0.5, 0.5
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          N14SignMrHandyDamaged:
+            min: 1
+            max: 1
+        offset: 0
+
+# Worn Adverts
+- type: entity
+  parent: N14SignNukaColaGirl
+  id: N14SignNukaColaGirlWorn
+  suffix: worn
+  name: Nuka Cola advert
+  description: "A pre-war advert for Nuka Cola."
+  components:
+  - type: Sprite
+    state: nukagirl-worn
+    scale: 0.5, 0.5
+
+- type: entity
+  parent: N14SignVaultTec
+  id: N14SignVaultTecWorn
+  suffix: worn
+  name: Vault-Tec advert
+  description: "A pre-war advert for Vault-Tec."
+  components:
+  - type: Sprite
+    state: vaulttec-worn
+    scale: 0.5, 0.5
+
+- type: entity
+  parent: N14SignVaultTec
+  id: N14SignVaultTecWorn2
+  suffix: worn
+  name: Vault-Tec advert
+  description: "A pre-war advert for Vault-Tec."
+  components:
+  - type: Sprite
+    state: vaulttec-worn2
+    scale: 0.5, 0.5
+
+- type: entity
+  parent: N14SignMrHandy
+  id: N14SignMrHandyWorn
+  suffix: worn
+  name: Mr. Handy advert
+  description: "A pre-war advert for Mr. Handy."
+  components:
+  - type: Sprite
+    state: mrhandy-worn
+    scale: 0.5, 0.5
+
+- type: entity
+  parent: N14SignMrHandy
+  id: N14SignMrHandyWorn2
+  suffix: worn
+  name: Mr. Handy advert
+  description: "A pre-war advert for Mr. Handy."
+  components:
+  - type: Sprite
+    state: mrhandy-worn2
+    scale: 0.5, 0.5
+
+# Damaged Adverts
+- type: entity
+  parent: N14SignBase
+  id: N14SignNukaColaGirlDamaged
+  suffix: damaged
+  name: Nuka Cola advert
+  description: "A destroyed pre-war advert for Nuka Cola."
+  components:
+  - type: Sprite
+    state: nukagirl-damaged
+    scale: 0.5, 0.5
+
+- type: entity
+  parent: N14SignBase
+  id: N14SignMrHandyDamaged
+  suffix: damaged
+  name: Mr. Handy advert
+  description: "A destroyed pre-war advert for Mr. Handy."
+  components:
+  - type: Sprite
+    state: mrhandy-damaged
+    scale: 0.5, 0.5
+
+- type: entity
+  parent: N14SignBase
+  id: N14SignMrHandyDamaged2
+  suffix: damaged
+  name: Mr. Handy advert
+  description: "A destroyed pre-war advert for Mr. Handy."
+  components:
+  - type: Sprite
+    state: mrhandy-damaged2
+    scale: 0.5, 0.5
+
+- type: entity
+  parent: N14SignBase
+  id: N14SignVaultTecDamaged
+  suffix: damaged
+  name: Vault-Tec advert
+  description: "A destroyed pre-war advert for Vault-Tec."
+  components:
+  - type: Sprite
+    state: vaulttec-damaged
+    scale: 0.5, 0.5

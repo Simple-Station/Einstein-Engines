@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-SA-3.0",
+  "copyright": "Taken from mojave-sun-13 at https://github.com/Mojave-Sun/mojave-sun-13/blob/ffffc5d65838bab3ed3137d9aea561f319e76a93/mojave/icons/structure/turrets.dmi",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "turret",
+      "directions": 8
+    },
+    {
+      "name": "turret_broken",
+      "directions": 8
+    },
+    {
+      "name": "turret_off",
+      "directions": 8
+    },
+    {
+      "name": "turret_lethal",
+      "directions": 8
+    },
+    {
+      "name": "turret_stand",
+      "directions": 8
+    },
+    {
+      "name": "turret_stand_broken",
+      "directions": 8
+    },
+    {
+      "name": "turret_stand_lethal",
+      "directions": 8
+    },
+    {
+      "name": "turret_stand_off",
+      "directions": 8
+    }
+  ]
+}

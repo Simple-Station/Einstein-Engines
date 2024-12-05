@@ -1,0 +1,170 @@
+- type: entity
+  parent: BaseStructure
+  id: N14RadioTower
+  name: radio tower
+  description: An old prewar radio tower, due to its simple design, it still works..
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Misc/radio.rsi
+    state: radiotower
+    drawdepth: OverMobs
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1.0,-2.0,1.0,-1.0"
+        density: 60
+        mask:
+        - MachineMask
+        layer:
+        - LowImpassable
+
+- type: entity # radio station microphone
+  parent: BaseStructure
+  id: RadioDJMicrophone
+  name: radio microphone
+  description: An decent quality professional microphone for use in DJ booths.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Misc/radiostation/microphones.rsi
+    drawdepth: OverMobs
+    offset: 0,0.5
+    layers:
+      - state: base
+      - state: on
+        map: ["enum.PowerDeviceVisualLayers.Powered"]
+        shader: unshaded
+      - state: off
+        map: [ "disabled"]
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerDeviceVisuals.Powered:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: {visible: true}
+          False: {visible: false}
+  - type: ApcPowerReceiver
+  - type: Electrified
+    enabled: false
+    usesApcPower: true
+  - type: ExtensionCableReceiver
+  - type: RadioMicrophone
+    powerRequired: true
+    broadcastChannel: PBS
+    toggleOnInteract: true
+    frequency: 1667
+    listenRange: 2
+  - type: Clickable
+  - type: InteractionOutline
+  - type: WiresVisuals
+  - type: Transform
+    noRot: false
+    anchored: true
+  - type: ActiveRadio
+    channels:
+    - PBS
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+            radius: 0.20
+        density: 1000
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+
+- type: entity # Prototype for radio receivers
+  name: table radio
+  description: A simple tabletop radio
+  parent: BaseStructure
+  id: N14RadioTable
+  components:
+  - type: Sprite #states aren't quite working, will need to address, would like to have it toggle state when you turn on and off the radio
+    sprite: _Nuclear14/Structures/Misc/radiostation/tableradio.rsi
+    offset: 0,0.25
+    drawdepth: SmallObjects
+    layers:
+      - sprite: _Nuclear14/Structures/Misc/radiostation/tableradio.rsi
+        state: base
+        map: [ "base" ]
+      - state: on
+        map: [ "enabled" ]
+        shader: unshaded
+      - state: off
+        map: [ "disabled" ]
+  - type: RadioSpeaker
+    channels:
+    - PBS
+    enabled: true
+    toggleOnInteract: true
+    IsSpeaker: true
+  - type: Tag
+    tags:
+    - Radio
+  - type: Speech
+    speechVerb: Robotic
+  - type: ActiveRadio
+    channels:
+    - PBS
+  - type: RadioMicrophone
+    broadcastChannel: PBS
+    toggleOnInteract: false
+    frequency: 1667
+    listenRange: 0
+
+- type: entity # Prototype for radio receivers
+  name: standing microphone
+  description: A microphone stand and microphone
+  parent: BaseStructure
+  id: N14MicrophoneStand
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Misc/radiostation/standmicrophones.rsi
+    state: base
+  - type: RadioMicrophone
+    broadcastChannel: PBS
+    toggleOnInteract: true
+    frequency: 1667
+    listenRange: 2
+  - type: ActiveRadio
+    channels:
+    - PBS
+    listenRange: 2
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,0.5,0,-0.5"
+        layer:
+        - LowImpassable
+
+- type: entity
+  parent: PoweredSmallLight
+  id: N14LightRadioOnAirSign
+  name: on air sign
+  description: This reminds you that you are on air.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Misc/radiostation/radioonair.rsi
+    state: off
+    offset: 0,-0.25
+    layers:
+    - state: off
+      map: ["enum.PoweredLightLayers.Base"]
+    - state: on
+      map: ["enum.PoweredLightLayers.Glow"]
+      shader: unshaded
+  - type: WallMount
+  - type: PointLight
+    radius: 1
+    energy: 0.6
+    softness: 0.4
+    color: "#ff0000"
+  - type: PoweredLightVisuals
+    spriteStateMap:
+      off: off
+      on: on

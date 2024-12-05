@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-SA-3.0",
+  "copyright": "Modified by Gary-McGaryson for Nuclear14, original artwork by Bethesda Softworks LLC",
+  "size": {
+    "x": 64,
+    "y": 64
+  },
+  "states": [
+    {
+      "name": "vault-tec08"
+    },
+    {
+      "name": "vault-tec07"
+    },
+    {
+      "name": "vault-tec06"
+    },
+    {
+      "name": "vault-tec05"
+    },
+    {
+      "name": "vault-tec04"
+    },
+    {
+      "name": "vault-tec03"
+    },
+    {
+      "name": "vault-tec02"
+    },
+    {
+      "name": "vault-tec01"
+    },
+    {
+      "name": "vault-tec10"
+    },
+    {
+      "name": "vault-tec09"
+    }
+  ]
+}

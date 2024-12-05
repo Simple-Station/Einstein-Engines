@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-SA-3.0",
+  "copyright": "Sprites by INFRARED_BARON for MS13",
+  "size": {
+    "x": 32,
+    "y": 48
+  },
+  "states": [
+    {
+      "name": "screen",
+      "directions": 4
+    },
+    {
+      "name": "dials",
+      "directions": 4
+    },
+    {
+      "name": "console",
+      "directions": 4
+    }
+  ]
+}

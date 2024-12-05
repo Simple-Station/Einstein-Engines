@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-SA-3.0",
+  "copyright": "Made by @SeanieSprites for Nuclear14. Discord ID: 373904551402668050",
+  "size": {
+    "x": 32,
+    "y": 48
+  },
+  "states": [
+    {
+      "name": "vimmachine",
+	  "directions": 4
+    }
+  ]
+}
