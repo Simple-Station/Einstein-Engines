@@ -63,6 +63,8 @@ public sealed class EmbedPassiveDamageSystem : EntitySystem
         component.EmbeddedMobState = mobState;
         component.EmbeddedBodyPart = args.BodyPart;
         component.NextDamage = _timing.CurTime + TimeSpan.FromSeconds(1f);
+
+        Dirty(uid, component);
     }
 
     private void OnRemoveEmbed(EntityUid uid, EmbedPassiveDamageComponent component, RemoveEmbedEvent args)

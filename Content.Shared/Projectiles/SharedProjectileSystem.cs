@@ -3,6 +3,8 @@ using Content.Shared.Body.Systems;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
+using Content.Shared.Examine;
+using Content.Shared.IdentityManagement;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.Mobs.Components;
@@ -46,6 +48,7 @@ public abstract partial class SharedProjectileSystem : EntitySystem
         SubscribeLocalEvent<EmbeddableProjectileComponent, ActivateInWorldEvent>(OnEmbedActivate);
         SubscribeLocalEvent<EmbeddableProjectileComponent, RemoveEmbeddedProjectileEvent>(OnEmbedRemove);
         SubscribeLocalEvent<EmbeddableProjectileComponent, AttemptPacifiedThrowEvent>(OnAttemptPacifiedThrow);
+        SubscribeLocalEvent<EmbeddableProjectileComponent, ExaminedEvent>(OnExamined);
     }
 
     // TODO: rename Embedded to Target in every context
@@ -185,6 +188,8 @@ public abstract partial class SharedProjectileSystem : EntitySystem
             component.AutoRemoveTime = _timing.CurTime + TimeSpan.FromSeconds(component.AutoRemoveDuration);
 
         component.Target = target;
+
+        Dirty(uid, component);
     }
 
     private void PreventCollision(EntityUid uid, ProjectileComponent component, ref PreventCollideEvent args)
@@ -210,6 +215,25 @@ public abstract partial class SharedProjectileSystem : EntitySystem
     private void OnAttemptPacifiedThrow(Entity<EmbeddableProjectileComponent> ent, ref AttemptPacifiedThrowEvent args)
     {
         args.Cancel("pacified-cannot-throw-embed");
+    }
+
+    private void OnExamined(EntityUid uid, EmbeddableProjectileComponent component, ExaminedEvent args)
+    {
+        if (!(component.Target is {} target))
+            return;
+
+        var targetIdentity = Identity.Entity(target, EntityManager);
+
+        var loc = component.TargetBodyPart == null
+            ? Loc.GetString("throwing-examine-embedded",
+            ("embedded", uid),
+            ("target", targetIdentity))
+            : Loc.GetString("throwing-examine-embedded-part",
+            ("embedded", uid),
+            ("target", targetIdentity),
+            ("targetPart", Loc.GetString($"body-part-{component.TargetBodyPart.ToString()}")));
+
+        args.PushMarkup(loc);
     }
 
     [Serializable, NetSerializable]
