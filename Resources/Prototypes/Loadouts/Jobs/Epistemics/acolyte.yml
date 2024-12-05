@@ -6,6 +6,44 @@
 # Ears
 
 # Equipment
+- type: loadout
+  id: LoadoutAcolyteEquipmentCandles
+  category: JobsEpistemicsAcolyte
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAcolyteEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Scientist
+  items:
+    - BoxCandle
+
+- type: loadout
+  id: LoadoutAcolyteEquipmentCandlesSmall
+  category: JobsEpistemicsAcolyte
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAcolyteEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Scientist
+  items:
+    - BoxCandleSmall
+
+- type: loadout
+  id: LoadoutAcolytePillCanisterSpaceDrugs
+  category: JobsEpistemicsAcolyte
+  cost: 1
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAcolyteEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Scientist
+  items:
+    - PillCanisterSpaceDrugs
 
 # Eyes
 
@@ -24,3 +62,30 @@
 # Shoes
 
 # Uniforms
+- type: loadout
+  id: LoadoutAcolyteUniformSuit
+  category: JobsEpistemicsAcolyte
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAcolyteUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Scientist
+  items:
+    - ClothingUniformJumpsuitScientist
+
+- type: loadout
+  id: LoadoutAcolyteUniformSkirt
+  category: JobsEpistemicsAcolyte
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAcolyteUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Scientist
+  items:
+    - ClothingUniformJumpskirtScientist

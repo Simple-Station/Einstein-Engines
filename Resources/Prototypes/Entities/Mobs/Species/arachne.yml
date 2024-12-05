@@ -22,6 +22,7 @@
       color: "#e8b59b"
       sprite: Mobs/Species/Human/parts.rsi
       state: head_m
+    - map: [ "enum.HumanoidVisualLayers.Snout" ]
     - map: [ "enum.HumanoidVisualLayers.Eyes" ]
       color: "#008800"
       sprite: Mobs/Species/eyes.rsi
@@ -65,10 +66,12 @@
     - map: [ "belt" ]
     - map: [ "neck" ]
     - map: [ "back" ]
+    - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
     - map: [ "enum.HumanoidVisualLayers.Hair" ]
       state: bald
       sprite: Mobs/Customization/human_hair.rsi
     - map: [ "mask" ]
+    - map: [ "enum.HumanoidVisualLayers.HeadSide" ] # This is not in the default order so earrings are rendered above masks
     - map: [ "head" ]
     - map: [ "pocket1" ]
     - map: [ "pocket2" ]
@@ -104,6 +107,7 @@
   - type: Tag
     tags:
     - CanPilot
+    - FootstepSound
     - DoorBumpOpener
   - type: StepTriggerImmune
   - type: Bloodstream
@@ -163,6 +167,7 @@
       color: "#e8b59b"
       sprite: Mobs/Species/Human/parts.rsi
       state: head_m
+    - map: [ "enum.HumanoidVisualLayers.Snout" ]
     - map: [ "enum.HumanoidVisualLayers.Eyes" ]
       color: "#008800"
       sprite: Mobs/Species/eyes.rsi
@@ -206,10 +211,12 @@
     - map: [ "belt" ]
     - map: [ "neck" ]
     - map: [ "back" ]
+    - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
     - map: [ "enum.HumanoidVisualLayers.Hair" ]
       state: bald
       sprite: Mobs/Customization/human_hair.rsi
     - map: [ "mask" ]
+    - map: [ "enum.HumanoidVisualLayers.HeadSide" ] # This is not in the default order so earrings are rendered above masks
     - map: [ "head" ]
     - map: [ "pocket1" ]
     - map: [ "pocket2" ]
