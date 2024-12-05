@@ -2439,44 +2439,6 @@ entities:
     - type: Transform
       pos: -4.5,10.5
       parent: 1
-- proto: LogicGateOr
-  entities:
-  - uid: 537
-    components:
-    - type: Transform
-      anchored: True
-      rot: 1.5707963267948966 rad
-      pos: -1.5,10.5
-      parent: 1
-    - type: DeviceLinkSink
-      invokeCounter: 2
-    - type: DeviceLinkSource
-      linkedPorts:
-        14:
-        - Output: DoorBolt
-        16:
-        - Output: DoorBolt
-    - type: Physics
-      canCollide: False
-      bodyType: Static
-  - uid: 538
-    components:
-    - type: Transform
-      anchored: True
-      rot: -1.5707963267948966 rad
-      pos: -2.5,10.5
-      parent: 1
-    - type: DeviceLinkSink
-      invokeCounter: 2
-    - type: DeviceLinkSource
-      linkedPorts:
-        13:
-        - Output: DoorBolt
-        15:
-        - Output: DoorBolt
-    - type: Physics
-      canCollide: False
-      bodyType: Static
 - proto: MedkitFilled
   entities:
   - uid: 336
@@ -2944,7 +2906,7 @@ entities:
     - type: Transform
       pos: 3.5,-7.5
       parent: 1
-- proto: SodaDispenser
+- proto: soda_dispenser
   entities:
   - uid: 418
     components:
