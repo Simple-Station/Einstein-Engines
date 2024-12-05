@@ -5,9 +5,7 @@ using Content.Server.Station.Systems;
 using Content.Shared.Shipyard;
 using Content.Shared.Shipyard.Prototypes;
 using Content.Shared.Whitelist;
-using Robust.Server.GameObjects;
 using Robust.Shared.Random;
-using System.Diagnostics.CodeAnalysis;
 
 namespace Content.Server.Shipyard;
 
