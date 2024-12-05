@@ -8413,3 +8413,34 @@ Entries:
   id: 6557
   time: '2024-12-04T00:12:59.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1152
+- author: zelezniciar
+  changes:
+    - type: Tweak
+      message: >-
+        Atmospheric Alerts Computer now displays colored zones corresponding to
+        air alarm status on the station map
+    - type: Fix
+      message: Atmospheric Alerts Computer board is printable in a circuit imprinter
+  id: 6558
+  time: '2024-12-05T00:13:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1313
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: You can pick up mobs again with left click.
+    - type: Fix
+      message: No more mob jug spill, including you revenants.
+    - type: Fix
+      message: Set the Gloves of the North Star to the proper attack speed.
+    - type: Fix
+      message: Medibots will no longer try to heal borgs.
+  id: 6559
+  time: '2024-12-05T07:39:32.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1311
+- author: DmitriTheDemon
+  changes:
+    - type: Tweak
+      message: The ChemMaster is now sorted.
+  id: 6560
+  time: '2024-12-05T09:11:27.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1310
