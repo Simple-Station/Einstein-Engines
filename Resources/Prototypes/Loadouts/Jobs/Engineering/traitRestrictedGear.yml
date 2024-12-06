@@ -180,6 +180,7 @@
   id: LoadoutEngineeringRestrictedGearBeltUtilityAtmos
   category: JobsEngineeringAtmosphericTechnician
   cost: 5
+  exclusive: true
   requirements:
     - !type:CharacterTraitRequirement
       traits:
@@ -212,6 +213,7 @@
   id: LoadoutEngineeringRestrictedGearBeltUtilityEngineering
   category: JobsEngineeringStationEngineer
   cost: 4
+  exclusive: true
   requirements:
     - !type:CharacterTraitRequirement
       traits:

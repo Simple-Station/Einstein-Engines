@@ -23,6 +23,7 @@
   id: LoadoutSecurityRestrictedGearBeltHolster
   category: JobsSecurityAUncategorized
   cost: 2
+  exclusive: true
   requirements:
     - !type:CharacterTraitRequirement
       traits:

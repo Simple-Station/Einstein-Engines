@@ -5,6 +5,7 @@
   id: LoadoutCargoRestrictedGearBeltMercWebbing
   category: JobsLogisticsSalvageSpecialist
   cost: 5
+  exclusive: true
   requirements:
     - !type:CharacterTraitRequirement
       traits:
@@ -23,6 +24,7 @@
   id: LoadoutCargoRestrictedGearBeltSalvageWebbing
   category: JobsLogisticsSalvageSpecialist
   cost: 5
+  exclusive: true
   requirements:
     - !type:CharacterTraitRequirement
       traits:
@@ -41,6 +43,7 @@
   id: LoadoutCargoRestrictedGearBeltMilitaryWebbing
   category: JobsLogisticsSalvageSpecialist
   cost: 5
+  exclusive: true
   customColorTint: true
   requirements:
     - !type:CharacterTraitRequirement
