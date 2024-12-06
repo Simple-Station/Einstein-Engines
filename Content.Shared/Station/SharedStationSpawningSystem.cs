@@ -37,6 +37,24 @@ public abstract class SharedStationSpawningSystem : EntitySystem
     }
 
     /// <summary>
+    /// Applies the role's name as applicable to the entity.
+    /// </summary>
+    public void EquipRoleName(EntityUid entity, RoleLoadout loadout, RoleLoadoutPrototype roleProto)
+    {
+        string? name = null;
+
+        if (string.IsNullOrEmpty(name) && PrototypeManager.TryIndex(roleProto.NameDataset, out var nameData))
+        {
+            name = Loc.GetString(_random.Pick(nameData.Values));
+        }
+
+        if (!string.IsNullOrEmpty(name))
+        {
+            _metadata.SetEntityName(entity, name);
+        }
+    }
+
+    /// <summary>
     /// <see cref="EquipStartingGear(Robust.Shared.GameObjects.EntityUid,System.Nullable{Robust.Shared.Prototypes.ProtoId{Content.Shared.Roles.StartingGearPrototype}},bool)"/>
     /// </summary>
     public void EquipStartingGear(EntityUid entity, ProtoId<StartingGearPrototype>? startingGear, bool raiseEvent = true)
