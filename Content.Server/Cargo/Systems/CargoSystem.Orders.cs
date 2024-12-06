@@ -82,9 +82,11 @@ namespace Content.Server.Cargo.Systems
             {
                 _timer -= Delay;
 
-                foreach (var account in EntityQuery<StationBankAccountComponent>())
+                var stationQuery = EntityQueryEnumerator<StationBankAccountComponent>();
+                while (stationQuery.MoveNext(out var uid, out var bank))
                 {
-                    account.Balance += account.IncreasePerSecond * Delay;
+                    var balanceToAdd = bank.IncreasePerSecond * Delay;
+                    UpdateBankAccount(uid, bank, balanceToAdd);
                 }
 
                 var query = EntityQueryEnumerator<CargoOrderConsoleComponent>();
@@ -207,7 +209,7 @@ namespace Content.Server.Cargo.Systems
                 $"{ToPrettyString(player):user} approved order [orderId:{order.OrderId}, quantity:{order.OrderQuantity}, product:{order.ProductId}, requester:{order.Requester}, reason:{order.Reason}] with balance at {bank.Balance}");
 
             orderDatabase.Orders.Remove(order);
-            DeductFunds(bank, cost);
+            UpdateBankAccount(station.Value, bank, -cost);
             UpdateOrders(station.Value);
         }
 
@@ -517,11 +519,6 @@ namespace Content.Server.Cargo.Systems
 
             return true;
 
-        }
-
-        private void DeductFunds(StationBankAccountComponent component, int amount)
-        {
-            component.Balance = Math.Max(0, component.Balance - amount);
         }
 
         #region Station
