@@ -95,7 +95,6 @@ public abstract partial class SharedProjectileSystem : EntitySystem
 
     private void OnEmbedRemove(EntityUid uid, EmbeddableProjectileComponent component, RemoveEmbeddedProjectileEvent args)
     {
-        // Whacky prediction issues.
         if (args.Cancelled)
             return;
 
@@ -108,11 +107,12 @@ public abstract partial class SharedProjectileSystem : EntitySystem
         component.Target = null;
         component.TargetBodyPart = null;
 
-        if (_netManager.IsClient)
-            return;
-
         var ev = new RemoveEmbedEvent(remover);
         RaiseLocalEvent(uid, ref ev);
+
+        // Whacky prediction issues.
+        if (_netManager.IsClient)
+            return;
 
         if (component.DeleteOnRemove)
         {

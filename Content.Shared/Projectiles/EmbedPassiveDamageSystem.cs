@@ -74,6 +74,8 @@ public sealed class EmbedPassiveDamageSystem : EntitySystem
         component.EmbeddedMobState = null;
         component.EmbeddedBodyPart = null;
         component.NextDamage = TimeSpan.Zero;
+
+        Dirty(uid, component);
     }
 
     /// <summary>

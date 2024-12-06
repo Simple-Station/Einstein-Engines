@@ -17,7 +17,7 @@ public sealed partial class EmbedPassiveDamageComponent : Component
     /// <summary>
     ///   The entity this embeddable is attached to.
     /// </summary>
-    [ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
+    [ViewVariables(VVAccess.ReadWrite)]
     public EntityUid? Embedded = null;
 
     /// <summary>
@@ -42,7 +42,7 @@ public sealed partial class EmbedPassiveDamageComponent : Component
     ///   Damage per interval dealt to the entity every interval.
     ///   If this is set manually, DamageMultiplier will be ignored.
     /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    [DataField, ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
     public DamageSpecifier Damage = new();
 
     /// <summary>
