@@ -8451,3 +8451,10 @@ Entries:
   id: 6561
   time: '2024-12-06T03:13:08.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1314
+- author: zelezniciar
+  changes:
+    - type: Add
+      message: 'TEG components now be ordered from Logistics and assembled on station. '
+  id: 6562
+  time: '2024-12-06T15:42:27.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1316
