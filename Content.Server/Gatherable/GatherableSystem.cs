@@ -56,9 +56,7 @@ public sealed partial class GatherableSystem : EntitySystem
             return;
 
         if (TryComp<SoundOnGatherComponent>(gatheredUid, out var soundComp))
-        {
             _audio.PlayPvs(soundComp.Sound, Transform(gatheredUid).Coordinates);
-        }
 
         // Complete the gathering process
         _destructible.DestroyEntity(gatheredUid);
