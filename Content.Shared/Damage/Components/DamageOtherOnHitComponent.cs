@@ -67,21 +67,6 @@ public sealed partial class DamageOtherOnHitComponent : Component
     };
 
     /// <summary>
-    ///     Damage done by this item when deactivated.
-    /// </summary>
-    public DamageSpecifier? DeactivatedDamage = null;
-
-    /// <summary>
-    ///     The noise this item makes when hitting something with it off.
-    /// </summary>
-    public SoundSpecifier? DeactivatedSoundHit;
-
-    /// <summary>
-    ///     The noise this item makes when hitting something with it off and it does no damage.
-    /// </summary>
-    public SoundSpecifier? DeactivatedSoundNoDamage;
-
-    /// <summary>
     ///   Plays if no damage is done to the target entity.
     ///   If null, attempts to retrieve the SoundNoDamage from MeleeWeaponComponent.
     /// </summary>
