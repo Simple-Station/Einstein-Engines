@@ -28,7 +28,7 @@
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
-      - !type:CharacterDepartmentRequirement
+    - !type:CharacterDepartmentRequirement
       inverted: true
       departments:
         - Engineering
