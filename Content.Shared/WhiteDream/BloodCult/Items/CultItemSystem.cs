@@ -4,6 +4,7 @@ using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Popups;
+using Content.Shared.Projectiles;
 using Content.Shared.Stunnable;
 using Content.Shared.Throwing;
 using Content.Shared.Weapons.Melee.Events;
@@ -28,7 +29,9 @@ public sealed class CultItemSystem : EntitySystem
 
     private void OnActivate(Entity<CultItemComponent> item, ref ActivateInWorldEvent args)
     {
-        if (CanUse(args.User))
+        if (CanUse(args.User) ||
+            // Allow non-cultists to remove embedded cultist weapons and getting knocked down afterwards on pickup
+            (TryComp<EmbeddableProjectileComponent>(item.Owner, out var embeddable) && embeddable.Target != null))
             return;
 
         args.Handled = true;
