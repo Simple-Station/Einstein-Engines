@@ -11198,7 +11198,7 @@ entities:
   - uid: 7719
     components:
     - type: Transform
-      pos: -14.5,46.5
+      pos: -24.5,49.5
       parent: 1
   - uid: 7720
     components:
@@ -13023,17 +13023,7 @@ entities:
   - uid: 8167
     components:
     - type: Transform
-      pos: -22.5,37.5
-      parent: 1
-  - uid: 8168
-    components:
-    - type: Transform
-      pos: -23.5,37.5
-      parent: 1
-  - uid: 8169
-    components:
-    - type: Transform
-      pos: -24.5,37.5
+      pos: -24.5,50.5
       parent: 1
   - uid: 8171
     components:
@@ -13204,11 +13194,6 @@ entities:
     components:
     - type: Transform
       pos: -26.5,37.5
-      parent: 1
-  - uid: 8205
-    components:
-    - type: Transform
-      pos: -25.5,37.5
       parent: 1
   - uid: 8206
     components:
@@ -65779,7 +65764,7 @@ entities:
       pos: -11.5,11.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -25439.174
+      secondsUntilStateChange: -26341.395
       state: Opening
     - type: Occluder
       enabled: True
