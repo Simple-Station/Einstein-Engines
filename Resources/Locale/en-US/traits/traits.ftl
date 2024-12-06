@@ -438,3 +438,9 @@ trait-description-CyberEyesOmni =
 
 trait-name-ShadowkinBlackeye = Blackeye
 trait-description-ShadowkinBlackeye = You lose your special Shadowkin powers, in return for some points.
+
+trait-name-RestrictedGear = Restricted Gear
+trait-description-RestrictedGear = 
+    Either through personal ownership or stealing, you have access to equipment that isn't particularly standard issue.
+    Note that starting with an item [color=red]doesn't certify its legality[/color]. Conceal it or justify it.
+    (You equip other jobs' items in the loadouts menu) 

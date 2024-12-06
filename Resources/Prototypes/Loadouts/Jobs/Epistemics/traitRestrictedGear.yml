@@ -1,0 +1,39 @@
+### All Epistemiologists
+## Eyes
+# Hud
+- type: loadout
+  id: LoadoutScienceRestrictedGearEyesHudDiagnostic
+  category: JobsEpistemicsAAUncategorized
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEpistemicsEyes
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Epistemics
+  items:
+    - ClothingEyesHudDiagnostic
+
+# Eyepatch
+- type: loadout
+  id: LoadoutScienceRestrictedGearEyesEyepatchHudDiag
+  category: JobsEpistemicsAAUncategorized
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEpistemicsEyes
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Epistemics
+  items:
+    - ClothingEyesEyepatchHudDiag

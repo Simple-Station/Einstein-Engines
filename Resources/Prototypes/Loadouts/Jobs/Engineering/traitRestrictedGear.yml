@@ -1,0 +1,129 @@
+### All Engineers
+## Mesons
+- type: loadout
+  id: LoadoutEngineeringRestrictedGearEyesMeson
+  category: JobsEngineeringAAUncategorized
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEyesEngineering
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Engineering
+  items:
+    - ClothingEyesGlassesMeson
+
+## Power Drill
+- type: loadout
+  id: LoadoutEngineeringRestrictedGearPowerDrill
+  category: JobsEngineeringAAUncategorized
+  cost: 3
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Engineering
+  items:
+    - PowerDrill
+
+## Insulated Gloves Variations
+# Yellow
+- type: loadout
+  id: LoadoutEngineeringRestrictedGearGlovesInsulated
+  category: JobsEngineeringAAUncategorized
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEngineeringGloves
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Engineering
+  items:
+    - ClothingHandsGlovesColorYellow
+
+# Black
+- type: loadout
+  id: LoadoutEngineeringRestrictedGearGlovesCombat
+  category: JobsEngineeringAAUncategorized
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEngineeringGloves
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Engineering
+  items:
+    - ClothingHandsGlovesCombat
+
+# Merc
+- type: loadout
+  id: LoadoutEngineeringRestrictedGearGlovesMerc
+  category: JobsEngineeringAAUncategorized
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEngineeringGloves
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Engineering
+  items:
+    - ClothingHandsMercGlovesCombat
+
+
+### Atmos
+## Utility belt
+- type: loadout
+  id: LoadoutEngineeringRestrictedGearBeltUtilityAtmos
+  category: JobsEngineeringAtmosphericTechnician
+  cost: 5
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - AtmosphericTechnician
+  items:
+    - ClothingBeltUtilityAtmos
+
+
+### SE
+## Utility belt
+- type: loadout
+  id: LoadoutEngineeringRestrictedGearBeltUtilityEngineering
+  category: JobsEngineeringStationEngineer
+  cost: 4
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationEngineer
+  items:
+    - ClothingBeltUtilityEngineering
