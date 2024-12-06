@@ -14,4 +14,5 @@ damage-value = - [color=red]{$amount}[/color] units of [color=yellow]{$type}[/co
 
 damage-stamina-cost = A [color=cyan]{$type}[/color] costs [color=orange]{$cost}[/color] [color=yellow]Stamina[/color].
 
-damage-examine-embeddable = It can [color=cyan]embed[/color] on a target with a throw.
+damage-examine-embeddable-harmful = It [color=cyan]embeds[/color] when thrown, doing damage over time.
+damage-examine-embeddable = It [color=cyan]embeds[/color] when thrown.

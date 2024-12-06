@@ -82,8 +82,15 @@ public sealed class ProjectileSystem : SharedProjectileSystem
     }
 
     private void OnDamageExamine(EntityUid uid, EmbeddableProjectileComponent component, ref DamageExamineEvent args)
-        {
-            var staminaCostMarkup = FormattedMessage.FromMarkupOrThrow(Loc.GetString("damage-examine-embeddable"));
-            args.Message.AddMessage(staminaCostMarkup);
-        }
+    {
+        if (!args.Message.IsEmpty)
+            args.Message.PushNewline();
+
+        var loc = HasComp<EmbedPassiveDamageComponent>(uid)
+            ? "damage-examine-embeddable-harmful"
+            : "damage-examine-embeddable";
+
+        var staminaCostMarkup = FormattedMessage.FromMarkupOrThrow(Loc.GetString(loc));
+        args.Message.AddMessage(staminaCostMarkup);
+    }
 }
