@@ -33,7 +33,7 @@
     soundHit:
       path: "/Audio/Weapons/smash.ogg"
   - type: DamageOtherOnHit
-    lightAttackMultiplier: 1.33
+    meleeDamageMultiplier: 1.33
     staminaCost: 12.5
   - type: Tag
     tags:

@@ -28,7 +28,6 @@
     damage:
       types:
         Blunt: 2
-    staminaCost: 6
     soundHit:
       path: "/Audio/Weapons/click.ogg"
   - type: DamageOtherOnHit
