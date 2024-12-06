@@ -20,3 +20,22 @@ public struct BeforeThrowEvent
 
     public bool Cancelled = false;
 }
+
+[ByRefEvent]
+public struct BeforeGettingThrownEvent
+{
+    public BeforeGettingThrownEvent(EntityUid itemUid, Vector2 direction, float throwStrength,  EntityUid playerUid)
+    {
+        ItemUid = itemUid;
+        Direction = direction;
+        ThrowStrength = throwStrength;
+        PlayerUid = playerUid;
+    }
+
+    public EntityUid ItemUid { get; set; }
+    public Vector2 Direction { get; }
+    public float ThrowStrength { get; set;}
+    public EntityUid PlayerUid { get; }
+
+    public bool Cancelled = false;
+}
