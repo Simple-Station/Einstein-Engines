@@ -36,18 +36,18 @@ namespace Content.Shared.Damage.Systems
 
         public override void Initialize()
         {
-            SubscribeLocalEvent<DamageOtherOnHitComponent, ComponentStartup>(OnStartup);
+            SubscribeLocalEvent<DamageOtherOnHitComponent, MapInitEvent>(OnMapInit);
             SubscribeLocalEvent<DamageOtherOnHitComponent, ThrowDoHitEvent>(OnDoHit);
             SubscribeLocalEvent<DamageOtherOnHitComponent, ThrownEvent>(OnThrown);
 
-            SubscribeLocalEvent<ItemToggleDamageOtherOnHitComponent, ComponentStartup>(OnItemToggleStartup);
+            SubscribeLocalEvent<ItemToggleDamageOtherOnHitComponent, MapInitEvent>(OnItemToggleMapInit);
             SubscribeLocalEvent<DamageOtherOnHitComponent, ItemToggledEvent>(OnItemToggle);
         }
 
         /// <summary>
         ///   Inherit stats from MeleeWeapon.
         /// </summary>
-        private void OnStartup(EntityUid uid, DamageOtherOnHitComponent component, ComponentStartup args)
+        private void OnMapInit(EntityUid uid, DamageOtherOnHitComponent component, MapInitEvent args)
         {
             if (!TryComp<MeleeWeaponComponent>(uid, out var melee))
                 return;
@@ -63,12 +63,14 @@ namespace Content.Shared.Damage.Systems
                 else
                     component.SoundNoDamage = new SoundCollectionSpecifier("WeakHit");
             }
+
+            RaiseLocalEvent(uid, new DamageOtherOnHitStartupEvent((uid, component)));
         }
 
         /// <summary>
         ///   Inherit stats from ItemToggleMeleeWeaponComponent.
         /// </summary>
-        private void OnItemToggleStartup(EntityUid uid, ItemToggleDamageOtherOnHitComponent component, ComponentStartup args)
+        private void OnItemToggleMapInit(EntityUid uid, ItemToggleDamageOtherOnHitComponent component, MapInitEvent args)
         {
             if (!TryComp<ItemToggleMeleeWeaponComponent>(uid, out var itemToggleMelee) ||
                 !TryComp<DamageOtherOnHitComponent>(uid, out var damage))
@@ -81,7 +83,7 @@ namespace Content.Shared.Damage.Systems
             if (component.ActivatedSoundNoDamage == null && itemToggleMelee.ActivatedSoundOnHitNoDamage is {} activatedSoundOnHitNoDamage)
                 component.ActivatedSoundNoDamage = activatedSoundOnHitNoDamage;
 
-            RaiseLocalEvent(uid, new ItemToggleDamageOtherOnHitStartup((uid, component)));
+            RaiseLocalEvent(uid, new ItemToggleDamageOtherOnHitStartupEvent((uid, component)));
         }
 
         private void OnDoHit(EntityUid uid, DamageOtherOnHitComponent component, ThrowDoHitEvent args)

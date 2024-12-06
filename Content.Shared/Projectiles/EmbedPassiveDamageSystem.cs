@@ -19,8 +19,8 @@ public sealed class EmbedPassiveDamageSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<EmbedPassiveDamageComponent, ComponentStartup>(OnStartup);
-        SubscribeLocalEvent<ItemToggleEmbedPassiveDamageComponent, ItemToggleDamageOtherOnHitStartup>(OnItemToggleStartup);
+        SubscribeLocalEvent<EmbedPassiveDamageComponent, DamageOtherOnHitStartupEvent>(OnDamageOtherOnHitStartup);
+        SubscribeLocalEvent<ItemToggleEmbedPassiveDamageComponent, ItemToggleDamageOtherOnHitStartupEvent>(OnItemToggleStartup);
         SubscribeLocalEvent<EmbedPassiveDamageComponent, EmbedEvent>(OnEmbed);
         SubscribeLocalEvent<EmbedPassiveDamageComponent, RemoveEmbedEvent>(OnRemoveEmbed);
         SubscribeLocalEvent<EmbedPassiveDamageComponent, ItemToggledEvent>(OnItemToggle);
@@ -29,19 +29,16 @@ public sealed class EmbedPassiveDamageSystem : EntitySystem
     /// <summary>
     ///   Inherit stats from DamageOtherOnHit.
     /// </summary>
-    private void OnStartup(EntityUid uid, EmbedPassiveDamageComponent component, ComponentStartup args)
+    private void OnDamageOtherOnHitStartup(EntityUid uid, EmbedPassiveDamageComponent component, DamageOtherOnHitStartupEvent args)
     {
-        if (!TryComp<DamageOtherOnHitComponent>(uid, out var damage))
-            return;
-
         if (component.Damage.Empty)
-            component.Damage = damage.Damage * component.ThrowingDamageMultiplier;
+            component.Damage = args.Weapon.Comp.Damage * component.ThrowingDamageMultiplier;
     }
 
     /// <summary>
     ///   Inherit stats from ItemToggleDamageOtherOnHit.
     /// </summary>
-    private void OnItemToggleStartup(EntityUid uid, ItemToggleEmbedPassiveDamageComponent component, ItemToggleDamageOtherOnHitStartup args)
+    private void OnItemToggleStartup(EntityUid uid, ItemToggleEmbedPassiveDamageComponent component, ItemToggleDamageOtherOnHitStartupEvent args)
     {
         if (!TryComp<EmbedPassiveDamageComponent>(uid, out var embedPassiveDamage) ||
             component.ActivatedDamage != null ||
