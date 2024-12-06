@@ -25016,6 +25016,21 @@ entities:
     - type: Transform
       pos: -12.5,-22.5
       parent: 1
+  - uid: 16614
+    components:
+    - type: Transform
+      pos: 2.5,11.5
+      parent: 1
+  - uid: 16615
+    components:
+    - type: Transform
+      pos: 2.5,10.5
+      parent: 1
+  - uid: 16616
+    components:
+    - type: Transform
+      pos: 2.5,9.5
+      parent: 1
 - proto: CableHVStack
   entities:
   - uid: 3161
@@ -65766,7 +65781,7 @@ entities:
       pos: -11.5,11.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -25357.395
+      secondsUntilStateChange: -25385.783
       state: Opening
     - type: Occluder
       enabled: True
