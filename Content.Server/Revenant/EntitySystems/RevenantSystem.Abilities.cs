@@ -45,7 +45,7 @@ public sealed partial class RevenantSystem
 
     private void InitializeAbilities()
     {
-        SubscribeLocalEvent<RevenantComponent, InteractNoHandEvent>(OnInteract);
+        SubscribeLocalEvent<RevenantComponent, UserActivateInWorldEvent>(OnInteract);
         SubscribeLocalEvent<RevenantComponent, SoulEvent>(OnSoulSearch);
         SubscribeLocalEvent<RevenantComponent, HarvestEvent>(OnHarvest);
 
@@ -55,11 +55,14 @@ public sealed partial class RevenantSystem
         SubscribeLocalEvent<RevenantComponent, RevenantMalfunctionActionEvent>(OnMalfunctionAction);
     }
 
-    private void OnInteract(EntityUid uid, RevenantComponent component, InteractNoHandEvent args)
+    private void OnInteract(EntityUid uid, RevenantComponent component, UserActivateInWorldEvent args)
     {
-        if (args.Target == args.User || args.Target == null)
+        if (args.Handled)
             return;
-        var target = args.Target.Value;
+
+        if (args.Target == args.User)
+            return;
+        var target = args.Target;
 
         if (HasComp<PoweredLightComponent>(target))
         {
@@ -80,6 +83,8 @@ public sealed partial class RevenantSystem
         {
             BeginHarvestDoAfter(uid, target, component, essence);
         }
+
+        args.Handled = true;
     }
 
     private void BeginSoulSearchDoAfter(EntityUid uid, EntityUid target, RevenantComponent revenant)

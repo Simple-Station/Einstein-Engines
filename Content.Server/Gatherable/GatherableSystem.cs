@@ -40,13 +40,13 @@ public sealed partial class GatherableSystem : EntitySystem
 
     private void OnActivate(Entity<GatherableComponent> gatherable, ref ActivateInWorldEvent args)
     {
-        if (gatherable.Comp.ToolWhitelist?.IsValid(args.User, EntityManager) != true)
+        if (args.Handled || !args.Complex)
             return;
 
         if (_whitelistSystem.IsWhitelistFailOrNull(gatherable.Comp.ToolWhitelist, args.User))
             return;
 
-        Gather(gatherable, args.User);
+        Gather(args.Target, args.User, gatherable.Comp);
         args.Handled = true;
     }
 
@@ -56,9 +56,7 @@ public sealed partial class GatherableSystem : EntitySystem
             return;
 
         if (TryComp<SoundOnGatherComponent>(gatheredUid, out var soundComp))
-        {
             _audio.PlayPvs(soundComp.Sound, Transform(gatheredUid).Coordinates);
-        }
 
         // Complete the gathering process
         _destructible.DestroyEntity(gatheredUid);
@@ -67,7 +65,7 @@ public sealed partial class GatherableSystem : EntitySystem
         if (component.Loot == null)
             return;
 
-        var pos = Transform(gatheredUid).MapPosition;
+        var pos = _transform.GetMapCoordinates(gatheredUid);
 
         foreach (var (tag, table) in component.Loot)
         {
