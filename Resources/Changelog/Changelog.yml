@@ -8467,3 +8467,10 @@ Entries:
   id: 6563
   time: '2024-12-06T16:12:44.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1319
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Server rules work again.
+  id: 6564
+  time: '2024-12-06T20:30:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1321
