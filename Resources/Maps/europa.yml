@@ -37767,7 +37767,7 @@ entities:
     components:
     - type: Transform
       rot: 3.141592653589793 rad
-      pos: 7.5,44.5
+      pos: 8.5,44.5
       parent: 1
   - uid: 5023
     components:
@@ -37839,14 +37839,6 @@ entities:
     - type: Transform
       pos: -8.5,56.5
       parent: 1
-- proto: ComputerMedicalRecords
-  entities:
-  - uid: 3420
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 8.5,44.5
-      parent: 1
 - proto: ComputerPowerMonitoring
   entities:
   - uid: 905
@@ -37884,6 +37876,12 @@ entities:
     components:
     - type: Transform
       pos: 16.5,55.5
+      parent: 1
+  - uid: 3420
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 7.5,44.5
       parent: 1
   - uid: 15707
     components:
@@ -65781,7 +65779,7 @@ entities:
       pos: -11.5,11.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -25385.783
+      secondsUntilStateChange: -25439.174
       state: Opening
     - type: Occluder
       enabled: True
