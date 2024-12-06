@@ -19,9 +19,9 @@
     - ClothingEyesGlassesMeson
 
 ## Tools
-# Wirecutters
+# Wirecutter
 - type: loadout
-  id: LoadoutEngineeringRestrictedGearEquipmentWirecutters
+  id: LoadoutEngineeringRestrictedGearEquipmentWirecutter
   category: JobsEngineeringAAUncategorized
   cost: 1
   requirements:
