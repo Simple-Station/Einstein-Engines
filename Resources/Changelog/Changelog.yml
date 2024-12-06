@@ -8458,3 +8458,12 @@ Entries:
   id: 6562
   time: '2024-12-06T15:42:27.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1316
+- author: rbertoche
+  changes:
+    - type: Fix
+      message: >-
+        Several small fixes to Europa map, namely to cargo dock, SM and atmos
+        piping and wires, adds autolathe to cargo and crew monitor to med
+  id: 6563
+  time: '2024-12-06T16:12:44.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1319
