@@ -8305,6 +8305,11 @@ entities:
     - type: Transform
       pos: -16.5,-41.5
       parent: 1
+  - uid: 16599
+    components:
+    - type: Transform
+      pos: -26.5,33.5
+      parent: 1
 - proto: BagpipeInstrument
   entities:
   - uid: 2240
@@ -65719,7 +65724,7 @@ entities:
       pos: -11.5,11.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -24786.057
+      secondsUntilStateChange: -25113.777
       state: Opening
     - type: Occluder
       enabled: True
