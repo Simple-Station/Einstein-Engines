@@ -182,4 +182,5 @@
       - id: TegCirculatorPartFlatpack
       - id: TegCenterPartFlatpack
       - id: GasAnalyzer
-      - id: SheetSteel30
+      - id: SheetSteel
+        amount: 1
