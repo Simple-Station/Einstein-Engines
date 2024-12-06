@@ -83,6 +83,9 @@ public sealed class ProjectileSystem : SharedProjectileSystem
 
     private void OnDamageExamine(EntityUid uid, EmbeddableProjectileComponent component, ref DamageExamineEvent args)
     {
+        if (!component.EmbedOnThrow)
+            return;
+
         if (!args.Message.IsEmpty)
             args.Message.PushNewline();
 
