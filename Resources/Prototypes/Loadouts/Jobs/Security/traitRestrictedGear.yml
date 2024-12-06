@@ -1,23 +1,4 @@
 ### All Security
-## Sunglasses
-- type: loadout
-  id: LoadoutSecurityRestrictedGearEyesGlassesSunglasses
-  category: JobsSecurityAUncategorized
-  cost: 3
-  exclusive: true
-  requirements:
-    - !type:CharacterTraitRequirement
-      traits:
-        - RestrictedGear
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityEyes
-    - !type:CharacterDepartmentRequirement
-      inverted: true
-      departments:
-        - Security
-  items:
-    - ClothingEyesGlassesSunglasses
-
 ## Holster
 - type: loadout
   id: LoadoutSecurityRestrictedGearBeltHolster
