@@ -64,6 +64,7 @@
   - type: EmbeddableProjectile
     removalTime: 0.5
     autoRemoveDuration: 10
+  - type: EmbedPassiveDamage
   - type: ThrowingAngle
     angle: 180
 

@@ -16,6 +16,16 @@
     activatedDamage:
         types:
             Heat: 1
+    activatedSoundOnHit:
+      path: /Audio/Weapons/Guns/Hits/energy_meat1.ogg
+      params:
+        variation: 0.250
+        volume: -15
+    activatedSoundOnHitNoDamage:
+      path: /Audio/Weapons/Guns/Hits/energy_meat1.ogg
+      params:
+        variation: 0.250
+        volume: -17
   - type: ItemToggleDamageOtherOnHit
   - type: ItemToggleSize
     activatedSize: Small
@@ -161,6 +171,16 @@
     activatedDamage:
         types:
             Heat: 1
+    activatedSoundOnHit:
+      path: /Audio/Weapons/Guns/Hits/energy_meat1.ogg
+      params:
+        variation: 0.250
+        volume: -15
+    activatedSoundOnHitNoDamage:
+      path: /Audio/Weapons/Guns/Hits/energy_meat1.ogg
+      params:
+        variation: 0.250
+        volume: -17
   - type: ItemToggleDamageOtherOnHit
   - type: ItemToggleSize
     activatedSize: Small
@@ -210,6 +230,7 @@
     damage:
       types:
         Blunt: 1 # does a little bit of damage on hit when off
+  - type: DamageOtherOnHit
   - type: PointLight
     enabled: false
     netsync: false
