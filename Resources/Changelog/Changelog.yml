@@ -8474,3 +8474,10 @@ Entries:
   id: 6564
   time: '2024-12-06T20:30:45.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1321
+- author: fenndragon
+  changes:
+    - type: Tweak
+      message: Moved the uplink deception category into utility.
+  id: 6565
+  time: '2024-12-07T13:31:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1309
