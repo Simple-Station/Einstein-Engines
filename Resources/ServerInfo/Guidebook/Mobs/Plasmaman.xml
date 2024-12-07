@@ -1,0 +1,29 @@
+<Document>
+  # Plasmamen
+
+  <Box>
+    <GuideEntityEmbed Entity="MobPlasmaman" Caption="Plasmaman"/>
+  </Box>
+
+  They take 15% less Slash and 25% less Piercing damage,
+  but take 50% more Blunt and 50% more Heat damage.
+
+  They are immune to Radiation and Cold Damage.
+
+  They don't have blood and cannot bleed out.
+
+  They don't experience hunger or thirst.
+
+  They come with an envirosuit helmet that provides a flashlight and welding protection.
+
+  Due to being skeletons, they can consume Milk to gain a positive moodlet and slowly heal Brute, Heat, Shock, and Caustic damage.
+
+  They can consume Plasma to gain a bigger positive moodlet and heal every damage type faster than Milk, except Cellular.
+
+  They can only breathe plasma, and oxygen is highly toxic when inhaled.
+
+  Being exposed to oxygen sets them on fire, forcing them to wear envirosuits, EVA suits or hardsuits.
+
+  They cannot eat, drink, or consume pills without taking off their envirosuit helmet.
+
+</Document>
