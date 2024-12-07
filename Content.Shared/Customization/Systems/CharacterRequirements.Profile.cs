@@ -1,5 +1,3 @@
-#region
-
 using System.Linq;
 using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Humanoid;
@@ -14,9 +12,6 @@ using Robust.Shared.Enums;
 using Robust.Shared.Physics;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
-
-#endregion
-
 
 namespace Content.Shared.Customization.Systems;
 
