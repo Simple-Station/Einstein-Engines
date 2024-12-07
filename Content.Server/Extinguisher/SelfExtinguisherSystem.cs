@@ -24,7 +24,15 @@ public sealed partial class SelfExtinguisherSystem : EntitySystem
     {
         base.Initialize();
 
+        SubscribeLocalEvent<SelfExtinguisherComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<SelfExtinguisherComponent, ExaminedEvent>(OnExamined);
+    }
+
+    private void OnMapInit(EntityUid uid, SelfExtinguisherComponent component, MapInitEvent args)
+    {
+        // Start out with this envirosuit filled out by default
+        if (component.Charges == -1)
+            component.Charges = component.MaxCharges;
     }
 
     private void OnExamined(EntityUid uid, SelfExtinguisherComponent component, ExaminedEvent args)

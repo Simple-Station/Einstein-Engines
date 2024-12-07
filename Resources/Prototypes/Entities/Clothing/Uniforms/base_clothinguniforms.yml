@@ -173,8 +173,7 @@
       toggleable-clothing: !type:ContainerSlot {}
   - type: SelfExtinguisher
     maxCharges: 5
-    charges: 5
-    cooldown: 8
+    cooldown: 100
     requiresIgniteFromGasImmune: true
     sound:
       path: /Audio/Effects/extinguish.ogg
