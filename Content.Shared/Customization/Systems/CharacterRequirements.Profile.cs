@@ -1,3 +1,5 @@
+#region
+
 using System.Linq;
 using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Humanoid;
@@ -12,7 +14,9 @@ using Robust.Shared.Enums;
 using Robust.Shared.Physics;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
-using Robust.Shared.Utility;
+
+#endregion
+
 
 namespace Content.Shared.Customization.Systems;
 
@@ -20,8 +24,7 @@ namespace Content.Shared.Customization.Systems;
 /// <summary>
 ///     Requires the profile to be within an age range
 /// </summary>
-[UsedImplicitly]
-[Serializable, NetSerializable]
+[UsedImplicitly, Serializable, NetSerializable,]
 public sealed partial class CharacterAgeRequirement : CharacterRequirement
 {
     [DataField(required: true)]
@@ -30,7 +33,8 @@ public sealed partial class CharacterAgeRequirement : CharacterRequirement
     [DataField(required: true)]
     public int Max;
 
-    public override bool IsValid(JobPrototype job,
+    public override bool IsValid(
+        JobPrototype job,
         HumanoidCharacterProfile profile,
         Dictionary<string, TimeSpan> playTimes,
         bool whitelisted,
@@ -39,10 +43,14 @@ public sealed partial class CharacterAgeRequirement : CharacterRequirement
         IPrototypeManager prototypeManager,
         IConfigurationManager configManager,
         out string? reason,
-        int depth = 0)
+        int depth = 0
+    )
     {
-        reason = Loc.GetString("character-age-requirement",
-            ("inverted", Inverted), ("min", Min), ("max", Max));
+        reason = Loc.GetString(
+            "character-age-requirement",
+            ("inverted", Inverted),
+            ("min", Min),
+            ("max", Max));
         return profile.Age >= Min && profile.Age <= Max;
     }
 }
@@ -50,14 +58,14 @@ public sealed partial class CharacterAgeRequirement : CharacterRequirement
 /// <summary>
 ///     Requires the profile to be a certain gender
 /// </summary>
-[UsedImplicitly]
-[Serializable, NetSerializable]
+[UsedImplicitly, Serializable, NetSerializable,]
 public sealed partial class CharacterGenderRequirement : CharacterRequirement
 {
     [DataField(required: true)]
     public Gender Gender;
 
-    public override bool IsValid(JobPrototype job,
+    public override bool IsValid(
+        JobPrototype job,
         HumanoidCharacterProfile profile,
         Dictionary<string, TimeSpan> playTimes,
         bool whitelisted,
@@ -66,9 +74,11 @@ public sealed partial class CharacterGenderRequirement : CharacterRequirement
         IPrototypeManager prototypeManager,
         IConfigurationManager configManager,
         out string? reason,
-        int depth = 0)
+        int depth = 0
+    )
     {
-        reason = Loc.GetString("character-gender-requirement",
+        reason = Loc.GetString(
+            "character-gender-requirement",
             ("inverted", Inverted),
             ("gender", Loc.GetString($"humanoid-profile-editor-pronouns-{Gender.ToString().ToLower()}-text")));
         return profile.Gender == Gender;
@@ -78,14 +88,14 @@ public sealed partial class CharacterGenderRequirement : CharacterRequirement
 /// <summary>
 ///     Requires the profile to be a certain sex
 /// </summary>
-[UsedImplicitly]
-[Serializable, NetSerializable]
+[UsedImplicitly, Serializable, NetSerializable,]
 public sealed partial class CharacterSexRequirement : CharacterRequirement
 {
     [DataField(required: true)]
     public Sex Sex;
 
-    public override bool IsValid(JobPrototype job,
+    public override bool IsValid(
+        JobPrototype job,
         HumanoidCharacterProfile profile,
         Dictionary<string, TimeSpan> playTimes,
         bool whitelisted,
@@ -94,9 +104,11 @@ public sealed partial class CharacterSexRequirement : CharacterRequirement
         IPrototypeManager prototypeManager,
         IConfigurationManager configManager,
         out string? reason,
-        int depth = 0)
+        int depth = 0
+    )
     {
-        reason = Loc.GetString("character-sex-requirement",
+        reason = Loc.GetString(
+            "character-sex-requirement",
             ("inverted", Inverted),
             ("sex", Loc.GetString($"humanoid-profile-editor-sex-{Sex.ToString().ToLower()}-text")));
         return profile.Sex == Sex;
@@ -106,14 +118,14 @@ public sealed partial class CharacterSexRequirement : CharacterRequirement
 /// <summary>
 ///     Requires the profile to be a certain species
 /// </summary>
-[UsedImplicitly]
-[Serializable, NetSerializable]
+[UsedImplicitly, Serializable, NetSerializable,]
 public sealed partial class CharacterSpeciesRequirement : CharacterRequirement
 {
     [DataField(required: true)]
     public List<ProtoId<SpeciesPrototype>> Species;
 
-    public override bool IsValid(JobPrototype job,
+    public override bool IsValid(
+        JobPrototype job,
         HumanoidCharacterProfile profile,
         Dictionary<string, TimeSpan> playTimes,
         bool whitelisted,
@@ -122,10 +134,12 @@ public sealed partial class CharacterSpeciesRequirement : CharacterRequirement
         IPrototypeManager prototypeManager,
         IConfigurationManager configManager,
         out string? reason,
-        int depth = 0)
+        int depth = 0
+    )
     {
         const string color = "green";
-        reason = Loc.GetString("character-species-requirement",
+        reason = Loc.GetString(
+            "character-species-requirement",
             ("inverted", Inverted),
             ("species", $"[color={color}]{string.Join($"[/color], [color={color}]",
                 Species.Select(s => Loc.GetString(prototypeManager.Index(s).Name)))}[/color]"));
@@ -135,10 +149,9 @@ public sealed partial class CharacterSpeciesRequirement : CharacterRequirement
 }
 
 /// <summary>
-///    Requires the profile to be within a certain height range
+///     Requires the profile to be within a certain height range
 /// </summary>
-[UsedImplicitly]
-[Serializable, NetSerializable]
+[UsedImplicitly, Serializable, NetSerializable,]
 public sealed partial class CharacterHeightRequirement : CharacterRequirement
 {
     /// <summary>
@@ -153,7 +166,8 @@ public sealed partial class CharacterHeightRequirement : CharacterRequirement
     [DataField]
     public float Max = int.MaxValue;
 
-    public override bool IsValid(JobPrototype job,
+    public override bool IsValid(
+        JobPrototype job,
         HumanoidCharacterProfile profile,
         Dictionary<string, TimeSpan> playTimes,
         bool whitelisted,
@@ -162,13 +176,18 @@ public sealed partial class CharacterHeightRequirement : CharacterRequirement
         IPrototypeManager prototypeManager,
         IConfigurationManager configManager,
         out string? reason,
-        int depth = 0)
+        int depth = 0
+    )
     {
         const string color = "yellow";
         var species = prototypeManager.Index<SpeciesPrototype>(profile.Species);
 
-        reason = Loc.GetString("character-height-requirement",
-            ("inverted", Inverted), ("color", color), ("min", Min), ("max", Max));
+        reason = Loc.GetString(
+            "character-height-requirement",
+            ("inverted", Inverted),
+            ("color", color),
+            ("min", Min),
+            ("max", Max));
 
         var height = profile.Height * species.AverageHeight;
         return height >= Min && height <= Max;
@@ -178,8 +197,7 @@ public sealed partial class CharacterHeightRequirement : CharacterRequirement
 /// <summary>
 ///     Requires the profile to be within a certain width range
 /// </summary>
-[UsedImplicitly]
-[Serializable, NetSerializable]
+[UsedImplicitly, Serializable, NetSerializable,]
 public sealed partial class CharacterWidthRequirement : CharacterRequirement
 {
     /// <summary>
@@ -194,7 +212,8 @@ public sealed partial class CharacterWidthRequirement : CharacterRequirement
     [DataField]
     public float Max = int.MaxValue;
 
-    public override bool IsValid(JobPrototype job,
+    public override bool IsValid(
+        JobPrototype job,
         HumanoidCharacterProfile profile,
         Dictionary<string, TimeSpan> playTimes,
         bool whitelisted,
@@ -203,13 +222,18 @@ public sealed partial class CharacterWidthRequirement : CharacterRequirement
         IPrototypeManager prototypeManager,
         IConfigurationManager configManager,
         out string? reason,
-        int depth = 0)
+        int depth = 0
+    )
     {
         const string color = "yellow";
         var species = prototypeManager.Index<SpeciesPrototype>(profile.Species);
 
-        reason = Loc.GetString("character-width-requirement",
-            ("inverted", Inverted), ("color", color), ("min", Min), ("max", Max));
+        reason = Loc.GetString(
+            "character-width-requirement",
+            ("inverted", Inverted),
+            ("color", color),
+            ("min", Min),
+            ("max", Max));
 
         var width = profile.Width * species.AverageWidth;
         return width >= Min && width <= Max;
@@ -219,8 +243,7 @@ public sealed partial class CharacterWidthRequirement : CharacterRequirement
 /// <summary>
 ///     Requires the profile to be within a certain weight range
 /// </summary>
-[UsedImplicitly]
-[Serializable, NetSerializable]
+[UsedImplicitly, Serializable, NetSerializable,]
 public sealed partial class CharacterWeightRequirement : CharacterRequirement
 {
     /// <summary>
@@ -235,7 +258,8 @@ public sealed partial class CharacterWeightRequirement : CharacterRequirement
     [DataField]
     public float Max = int.MaxValue;
 
-    public override bool IsValid(JobPrototype job,
+    public override bool IsValid(
+        JobPrototype job,
         HumanoidCharacterProfile profile,
         Dictionary<string, TimeSpan> playTimes,
         bool whitelisted,
@@ -244,7 +268,8 @@ public sealed partial class CharacterWeightRequirement : CharacterRequirement
         IPrototypeManager prototypeManager,
         IConfigurationManager configManager,
         out string? reason,
-        int depth = 0)
+        int depth = 0
+    )
     {
         const string color = "green";
         var species = prototypeManager.Index<SpeciesPrototype>(profile.Species);
@@ -259,28 +284,32 @@ public sealed partial class CharacterWeightRequirement : CharacterRequirement
         var weight = MathF.Round(
             MathF.PI * MathF.Pow(
                 fixture.Fixtures["fix1"].Shape.Radius
-                * ((profile.Width + profile.Height) / 2), 2)
-                * fixture.Fixtures["fix1"].Density);
+                * ((profile.Width + profile.Height) / 2),
+                2)
+            * fixture.Fixtures["fix1"].Density);
 
-        reason = Loc.GetString("character-weight-requirement",
-            ("inverted", Inverted), ("color", color), ("min", Min), ("max", Max));
+        reason = Loc.GetString(
+            "character-weight-requirement",
+            ("inverted", Inverted),
+            ("color", color),
+            ("min", Min),
+            ("max", Max));
 
         return weight >= Min && weight <= Max;
     }
 }
 
-
 /// <summary>
 ///     Requires the profile to have one of the specified traits
 /// </summary>
-[UsedImplicitly]
-[Serializable, NetSerializable]
+[UsedImplicitly, Serializable, NetSerializable,]
 public sealed partial class CharacterTraitRequirement : CharacterRequirement
 {
     [DataField(required: true)]
     public List<ProtoId<TraitPrototype>> Traits;
 
-    public override bool IsValid(JobPrototype job,
+    public override bool IsValid(
+        JobPrototype job,
         HumanoidCharacterProfile profile,
         Dictionary<string, TimeSpan> playTimes,
         bool whitelisted,
@@ -289,10 +318,12 @@ public sealed partial class CharacterTraitRequirement : CharacterRequirement
         IPrototypeManager prototypeManager,
         IConfigurationManager configManager,
         out string? reason,
-        int depth = 0)
+        int depth = 0
+    )
     {
         const string color = "lightblue";
-        reason = Loc.GetString("character-trait-requirement",
+        reason = Loc.GetString(
+            "character-trait-requirement",
             ("inverted", Inverted),
             ("traits", $"[color={color}]{string.Join($"[/color], [color={color}]",
                 Traits.Select(t => Loc.GetString($"trait-name-{t}")))}[/color]"));
@@ -304,14 +335,14 @@ public sealed partial class CharacterTraitRequirement : CharacterRequirement
 /// <summary>
 ///     Requires the profile to have one of the specified loadouts
 /// </summary>
-[UsedImplicitly]
-[Serializable, NetSerializable]
+[UsedImplicitly, Serializable, NetSerializable,]
 public sealed partial class CharacterLoadoutRequirement : CharacterRequirement
 {
     [DataField(required: true)]
     public List<ProtoId<LoadoutPrototype>> Loadouts;
 
-    public override bool IsValid(JobPrototype job,
+    public override bool IsValid(
+        JobPrototype job,
         HumanoidCharacterProfile profile,
         Dictionary<string, TimeSpan> playTimes,
         bool whitelisted,
@@ -320,10 +351,12 @@ public sealed partial class CharacterLoadoutRequirement : CharacterRequirement
         IPrototypeManager prototypeManager,
         IConfigurationManager configManager,
         out string? reason,
-        int depth = 0)
+        int depth = 0
+    )
     {
         const string color = "lightblue";
-        reason = Loc.GetString("character-loadout-requirement",
+        reason = Loc.GetString(
+            "character-loadout-requirement",
             ("inverted", Inverted),
             ("loadouts", $"[color={color}]{string.Join($"[/color], [color={color}]",
                 Loadouts.Select(l => Loc.GetString($"loadout-name-{l}")))}[/color]"));
@@ -335,14 +368,14 @@ public sealed partial class CharacterLoadoutRequirement : CharacterRequirement
 /// <summary>
 ///     Requires the profile to not have any more than X of the specified traits, loadouts, etc, in a group
 /// </summary>
-[UsedImplicitly]
-[Serializable, NetSerializable]
+[UsedImplicitly, Serializable, NetSerializable,]
 public sealed partial class CharacterItemGroupRequirement : CharacterRequirement
 {
     [DataField(required: true)]
     public ProtoId<CharacterItemGroupPrototype> Group;
 
-    public override bool IsValid(JobPrototype job,
+    public override bool IsValid(
+        JobPrototype job,
         HumanoidCharacterProfile profile,
         Dictionary<string, TimeSpan> playTimes,
         bool whitelisted,
@@ -351,23 +384,73 @@ public sealed partial class CharacterItemGroupRequirement : CharacterRequirement
         IPrototypeManager prototypeManager,
         IConfigurationManager configManager,
         out string? reason,
-        int depth = 0)
+        int depth = 0
+    )
     {
         var group = prototypeManager.Index(Group);
 
         // Get the count of items in the group that are in the profile
-        var items = group.Items.Select(item => item.TryGetValue(profile, prototypeManager, out _) ? item.ID : null).Where(id => id != null).ToList();
+        var items = group.Items.Select(item => item.TryGetValue(profile, prototypeManager, out _) ? item.ID : null)
+            .Where(id => id != null)
+            .ToList();
         var count = items.Count;
 
         // If prototype is selected, remove one from the count
         if (items.ToList().Contains(prototype.ID))
             count--;
 
-        reason = Loc.GetString("character-item-group-requirement",
+        reason = Loc.GetString(
+            "character-item-group-requirement",
             ("inverted", Inverted),
             ("group", Loc.GetString($"character-item-group-{Group}")),
             ("max", group.MaxItems));
 
         return count < group.MaxItems;
+    }
+}
+
+/// <summary>
+///     Requires the profile to have one of the specified loadouts
+/// </summary>
+[UsedImplicitly, Serializable, NetSerializable,]
+public sealed partial class CVarRequirement : CharacterRequirement
+{
+    [DataField("cvar", required: true)]
+    public string CVar;
+
+    [DataField("requireValue", required: true)]
+    public string RequiredValue;
+
+    public override bool IsValid(
+        JobPrototype job,
+        HumanoidCharacterProfile profile,
+        Dictionary<string, TimeSpan> playTimes,
+        bool whitelisted,
+        IPrototype prototype,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager,
+        out string? reason,
+        int depth = 0
+    )
+    {
+        if (!configManager.IsCVarRegistered(CVar))
+        {
+            reason = null;
+            return true;
+        }
+
+        const string color = "lightblue";
+        var cvar = configManager.GetCVar(CVar);
+        var isValid = cvar.ToString()! == RequiredValue;
+
+        reason = Loc.GetString(
+            "character-cvar-requirement",
+            ("inverted", Inverted),
+            ("color", color),
+            ("cvar", CVar),
+            ("value", RequiredValue));
+
+        return isValid;
     }
 }
