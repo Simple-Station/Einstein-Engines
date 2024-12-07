@@ -437,7 +437,6 @@ public sealed partial class CVarRequirement : CharacterRequirement
 
         const string color = "lightblue";
         var cvar = configManager.GetCVar(CVar);
-        var isValid = cvar.ToString()! == RequiredValue;
 
         reason = Loc.GetString(
             "character-cvar-requirement",
@@ -446,6 +445,6 @@ public sealed partial class CVarRequirement : CharacterRequirement
             ("cvar", CVar),
             ("value", RequiredValue));
 
-        return isValid;
+        return cvar.ToString()! == RequiredValue;
     }
 }
