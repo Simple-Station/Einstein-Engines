@@ -197,7 +197,7 @@ namespace Content.Server.Atmos.EntitySystems
                 if (gas[(int) ignite.Gas] > ignite.MolesToIgnite)
                 {
                     _flammable.AdjustFireStacks(uid, ignite.FireStacks, flammable);
-                    _flammable.Ignite(uid, uid, flammable);
+                    _flammable.Ignite(uid, uid, flammable, ignoreFireProtection: true);
                 }
             }
         }
