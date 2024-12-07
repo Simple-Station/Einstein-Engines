@@ -46,7 +46,7 @@
       damage:
         types:
           Blunt: 16
-      staminaCost: 27
+      staminaCost: 22.5
       soundHit:
         path: /Audio/Weapons/smash.ogg
 
