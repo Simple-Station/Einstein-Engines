@@ -1,0 +1,26 @@
+﻿- type: entity
+  parent: FlashlightLantern
+  id: FlashlightEmp
+  name: flashlight
+  description: It lights the way to freedom.
+  suffix: EMP
+  components:
+    - type: ItemSlots
+      slots:
+        cell_slot:
+          name: power-cell-clot-component-spot-name-default
+          startingItem: PowerCellHigh
+    - type: MeleeWeapon
+      wideAnimationRotation: -135
+      damage:
+        types:
+          Blunt: 12
+      angle: 60
+      animation: WeaponArcThrust
+    - type: EmpOnHit
+      range: 0.1
+      energyConsumption: 100000
+      disableDuration: 100
+    - type: LimitedCharges
+    - type: AutoRecharge
+      rechargeDuration: 60
