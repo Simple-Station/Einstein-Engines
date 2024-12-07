@@ -130,6 +130,9 @@
       0: Alive
       100: Dead
   - type: Construct
+    actions:
+    - ActionForceWallCult
+    - ActionGauntletEcho
   - type: MeleeWeapon
     hidden: true
     angle: 30
@@ -164,6 +167,11 @@
     - state: glow_artificer_cult
       map: [ "enum.ConstructVisualsState.Glow" ]
   - type: Construct
+    actions:
+    - ActionSummonCultFloor
+    - ActionLesserConstruction
+    - ActionSummonCultDoor
+    - ActionSummonSoulStone
   - type: MovementIgnoreGravity
   - type: MeleeWeapon
     hidden: true
@@ -201,6 +209,9 @@
       0: Alive
       65: Dead
   - type: Construct
+    actions:
+    - ActionPhaseShift
+  - type: MovementIgnoreGravity
   - type: MovementSpeedModifier
     baseWalkSpeed: 4
     baseSprintSpeed: 4
@@ -222,6 +233,9 @@
         enum.ConstructVisualsState.Glow:
           True: { visible: false }
           False: { visible: true }
+  - type: StatusEffects
+    allowed:
+    - PhaseShifted
 
 - type: entity
   id: ConstructHarvester
@@ -310,6 +324,9 @@
       map: [ "enum.ConstructVisualsState.Sprite" ]
     - state: glow_artificer_holy
       map: [ "enum.ConstructVisualsState.Glow" ]
+  - type: Construct
+    actions:
+    - ActionSummonSoulStoneHoly
   - type: GenericVisualizer
     visuals:
       enum.ConstructVisualsState.Transforming:
