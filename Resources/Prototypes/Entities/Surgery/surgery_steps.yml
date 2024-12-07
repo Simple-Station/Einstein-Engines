@@ -421,8 +421,8 @@
     - type: Tweezers
     duration: 8
   - type: Sprite
-    sprite: Objects/Specific/Medical/Surgery/hemostat.rsi
-    state: hemostat
+    sprite: Objects/Specific/Medical/Surgery/retractor.rsi
+    state: retractor
   - type: SurgeryRemoveOrganStep
   - type: SurgeryStepEmoteEffect
 
@@ -532,15 +532,22 @@
   components:
   - type: SurgeryStep
     tool:
-    - type: Drill
-    bodyAdd:
-    - type: OhioAccent
-    - type: RatvarianLanguage
-    - type: SlurredAccent
+    - type: Scalpel
+    addOrganOnAdd:
+      brain:
+        - type: OhioAccent
+        - type: RatvarianLanguage
+        - type: Clumsy
+          clumsyDamage:
+            types:
+              Blunt: 5
+              Piercing: 4
+            groups:
+              Burn: 3
     duration: 5
   - type: Sprite
-    sprite: Objects/Specific/Medical/Surgery/drill.rsi
-    state: drill
+    sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
+    state: scalpel
   - type: SurgeryStepEmoteEffect
   - type: SurgeryDamageChangeEffect
     damage:
@@ -556,14 +563,18 @@
   - type: SurgeryStep
     tool:
     - type: Hemostat
-    duration: 5
-    bodyRemove:
-    - type: OhioAccent
-    - type: RatvarianLanguage
-    - type: SlurredAccent
+    duration: 4
+    removeOrganOnAdd:
+      brain:
+        - type: OhioAccent
+        - type: RatvarianLanguage
+        - type: Clumsy
+          clumsyDamage:
+            types:
+              Blunt: 0
   - type: Sprite
-    sprite: Objects/Specific/Medical/Surgery/drill.rsi
-    state: drill
+    sprite: Objects/Specific/Medical/Surgery/hemostat.rsi
+    state: hemostat
   - type: SurgeryStepEmoteEffect
 
 # The lengths I go to just for a joke... I HATE HARDCODING AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
