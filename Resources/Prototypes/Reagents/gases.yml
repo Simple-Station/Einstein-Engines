@@ -164,7 +164,7 @@
           type: Plasmaman
         - !type:ReagentThreshold
           reagent: Plasma
-          min: 1
+          min: 5
         moodPrototype: PlasmamanIngestPlasma
   reactiveEffects:
     Flammable:

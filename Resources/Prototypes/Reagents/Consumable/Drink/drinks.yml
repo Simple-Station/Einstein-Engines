@@ -261,7 +261,7 @@
           type: Plasmaman
         - !type:ReagentThreshold
           reagent: Milk
-          min: 1
+          min: 4
         moodPrototype: PlasmamanIngestMilk
 
 - type: reagent

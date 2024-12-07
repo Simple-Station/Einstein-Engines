@@ -55,10 +55,10 @@
 
 - type: moodEffect
   id: PlasmamanIngestMilk
-  moodChange: 6
+  moodChange: 7
   timeout: 60
 
 - type: moodEffect
   id: PlasmamanIngestPlasma
-  moodChange: 12
+  moodChange: 14
   timeout: 60
