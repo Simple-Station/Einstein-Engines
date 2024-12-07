@@ -109,6 +109,7 @@
     - type: DoorBolt
     - type: AccessReader
       access: [ [ "Engineering" ] ]
+    - type: NavMapDoor
 
 - type: entity
   id: Firelock
