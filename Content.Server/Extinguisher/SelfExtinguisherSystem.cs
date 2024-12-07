@@ -50,7 +50,7 @@ public sealed partial class SelfExtinguisherSystem : EntitySystem
         _flammable.Extinguish(wearer, flammable);
         _popup.PopupEntity(Loc.GetString("self-extinguisher-extinguish", ("item", uid)), wearer, wearer);
         component.Charges -= 1;
-        component.NextExtinguish += curTime + component.Cooldown;
+        component.NextExtinguish = curTime + component.Cooldown;
 
         _audio.PlayPvs(component.Sound, uid, component.Sound.Params.WithVariation(0.125f));
     }
