@@ -1,13 +1,21 @@
 # Musician
+# Backpacks
+
+# Belt
+
+# Ears
+
+# Equipment
 # Musician Instruments
 # Brass Instruments
 - type: loadout
   id: LoadoutItemTrumpetInstrumentMusician
   category: JobsServiceMusician
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -18,9 +26,10 @@
   id: LoadoutItemTromboneInstrumentMusician
   category: JobsServiceMusician
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -31,9 +40,11 @@
   id: LoadoutItemFrenchHornInstrumentMusician
   category: JobsServiceMusician
   cost: 0
+  customColorTint: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -44,9 +55,11 @@
   id: LoadoutItemEuphoniumInstrumentMusician
   category: JobsServiceMusician
   cost: 0
+  customColorTint: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -58,9 +71,10 @@
   id: LoadoutItemSeashellInstrumentMusician
   category: JobsServiceMusician
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -71,9 +85,10 @@
   id: LoadoutItemBirdToyInstrumentMusician
   category: JobsServiceMusician
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -86,9 +101,10 @@
   id: LoadoutItemGlockenspielInstrumentMusician
   category: JobsServiceMusician
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -99,9 +115,10 @@
   id: LoadoutItemMusicBoxInstrumentMusician
   category: JobsServiceMusician
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -112,9 +129,10 @@
   id: LoadoutItemXylophoneInstrumentMusician
   category: JobsServiceMusician
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -125,9 +143,10 @@
   id: LoadoutItemMicrophoneInstrumentMusician
   category: JobsServiceMusician
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -138,9 +157,10 @@
   id: LoadoutItemSynthesizerInstrumentMusician
   category: JobsServiceMusician
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -151,9 +171,10 @@
   id: LoadoutItemKalimbaInstrumentMusician
   category: JobsServiceMusician
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -164,9 +185,10 @@
   id: LoadoutItemWoodblockInstrumentMusician
   category: JobsServiceMusician
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -178,9 +200,10 @@
   id: LoadoutItemElectricGuitarInstrumentMusician
   category: JobsServiceMusician
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -191,9 +214,10 @@
   id: LoadoutItemBassGuitarInstrumentMusician
   category: JobsServiceMusician
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -204,9 +228,10 @@
   id: LoadoutItemRockGuitarInstrumentMusician
   category: JobsServiceMusician
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -217,9 +242,10 @@
   id: LoadoutItemAcousticGuitarInstrumentMusician
   category: JobsServiceMusician
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -230,9 +256,10 @@
   id: LoadoutItemBanjoInstrumentMusician
   category: JobsServiceMusician
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -243,9 +270,10 @@
   id: LoadoutItemViolinInstrumentMusician
   category: JobsServiceMusician
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -256,9 +284,10 @@
   id: LoadoutItemViolaInstrumentMusician
   category: JobsServiceMusician
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -269,9 +298,10 @@
   id: LoadoutItemCelloInstrumentMusician
   category: JobsServiceMusician
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -283,9 +313,10 @@
   id: LoadoutItemPianoInstrumentMusician
   category: JobsServiceMusician
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -296,9 +327,10 @@
   id: LoadoutItemUprightPianoInstrumentMusician
   category: JobsServiceMusician
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -309,9 +341,10 @@
   id: LoadoutItemVibraphoneInstrumentMusician
   category: JobsServiceMusician
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -322,9 +355,10 @@
   id: LoadoutItemMarimbaInstrumentMusician
   category: JobsServiceMusician
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -335,9 +369,10 @@
   id: LoadoutItemChurchOrganInstrumentMusician
   category: JobsServiceMusician
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -348,9 +383,10 @@
   id: LoadoutItemTubaInstrumentMusician
   category: JobsServiceMusician
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -361,9 +397,10 @@
   id: LoadoutItemHarpInstrumentMusician
   category: JobsServiceMusician
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -374,9 +411,10 @@
   id: LoadoutItemTimpaniInstrumentMusician
   category: JobsServiceMusician
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -387,9 +425,10 @@
   id: LoadoutItemTaikoInstrumentMusician
   category: JobsServiceMusician
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -400,9 +439,10 @@
   id: LoadoutItemContrabassInstrumentMusician
   category: JobsServiceMusician
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -413,9 +453,10 @@
   id: LoadoutItemMinimoogInstrumentMusician
   category: JobsServiceMusician
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -426,9 +467,10 @@
   id: LoadoutItemTomDrumsInstrumentMusician
   category: JobsServiceMusician
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -440,9 +482,10 @@
   id: LoadoutItemSaxophoneInstrumentMusician
   category: JobsServiceMusician
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -453,9 +496,10 @@
   id: LoadoutItemAccordionInstrumentMusician
   category: JobsServiceMusician
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -466,9 +510,10 @@
   id: LoadoutItemHarmonicaInstrumentMusician
   category: JobsServiceMusician
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -479,9 +524,10 @@
   id: LoadoutItemClarinetInstrumentMusician
   category: JobsServiceMusician
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -492,9 +538,11 @@
   id: LoadoutItemFluteInstrumentMusician
   category: JobsServiceMusician
   cost: 0
+  customColorTint: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -505,9 +553,11 @@
   id: LoadoutItemRecorderInstrumentMusician
   category: JobsServiceMusician
   cost: 0
+  customColorTint: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -518,9 +568,10 @@
   id: LoadoutItemPanFluteInstrumentMusician
   category: JobsServiceMusician
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -531,9 +582,11 @@
   id: LoadoutItemOcarinaInstrumentMusician
   category: JobsServiceMusician
   cost: 0
+  customColorTint: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
@@ -544,11 +597,30 @@
   id: LoadoutItemBagpipeInstrumentMusician
   category: JobsServiceMusician
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMusicianInstruments
+      group: LoadoutMusicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Musician
   items:
     - BagpipeInstrument
+
+# Eyes
+
+# Gloves
+
+# Head
+
+# Id
+
+# Neck
+
+# Mask
+
+# Outer
+
+# Shoes
+
+# Uniforms

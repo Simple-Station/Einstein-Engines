@@ -1,0 +1,75 @@
+# Senior Physician
+#- type: characterItemGroup
+#  id: LoadoutSeniorPhysicianBackpacks
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutSeniorPhysicianBelt
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutSeniorPhysicianBeltMedical
+    - type: loadout
+      id: LoadoutSeniorPhysicianBeltMedicalAdvancedFilled
+
+#- type: characterItemGroup
+#  id: LoadoutSeniorPhysicianEars
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutSeniorPhysicianEquipment
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutSeniorPhysicianEyes
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutSeniorPhysicianGloves
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutSeniorPhysicianHead
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutMedicalHeadBeretSeniorPhysician
+
+#- type: characterItemGroup
+#  id: LoadoutSeniorPhysicianId
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutSeniorPhysicianNeck
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutSeniorPhysicianMask
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutSeniorPhysicianOuter
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutSeniorPhysicianShoes
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutSeniorPhysicianUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutMedicalUniformJumpskirtSenior
+    - type: loadout
+      id: LoadoutMedicalUniformJumpsuitSenior

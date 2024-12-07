@@ -1,12 +1,12 @@
 - type: entity
   id: BaseGameRule
   abstract: true
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: GameRule
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseGameRule
   id: SubGamemodesRule
   components:
@@ -18,7 +18,7 @@
 - type: entity
   id: DeathMatch31
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: DeathMatchRule
     rewardSpawns:
@@ -48,7 +48,7 @@
 - type: entity
   id: InactivityTimeRestart
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InactivityRule
     inactivityMaxTime: 600
@@ -57,7 +57,7 @@
 - type: entity
   id: MaxTimeRestart
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: MaxTimeRestartRule
     roundMaxTime: 300
@@ -66,7 +66,7 @@
 - type: entity
   id: Nukeops
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: GameRule
     minPlayers: 35
@@ -136,7 +136,7 @@
 - type: entity
   id: Traitor
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: GameRule
     minPlayers: 5
@@ -157,7 +157,7 @@
 - type: entity
   id: Revolutionary
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: GameRule
     minPlayers: 15
@@ -182,21 +182,21 @@
 - type: entity
   id: Sandbox
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: SandboxRule
 
 - type: entity
   id: Secret
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: SecretRule
 
 - type: entity
   id: Zombie
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: GameRule
     minPlayers: 20
@@ -229,21 +229,21 @@
 - type: entity
   id: BasicStationEventScheduler
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: BasicStationEventScheduler
 
 - type: entity
   id: RampingStationEventScheduler
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: RampingStationEventScheduler
 
 - type: entity
   id: HellshiftStationEventScheduler
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: RampingStationEventScheduler
     chaosModifier: 4 # By default, one event each 30-10 seconds after two hours. Changing CVars will cause this to deviate.
@@ -253,7 +253,7 @@
 - type: entity
   id: IrregularStationEventScheduler
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: OscillatingStationEventScheduler
     minChaos: 0.8
@@ -266,7 +266,7 @@
 - type: entity
   id: IrregularExtendedStationEventScheduler
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: OscillatingStationEventScheduler
     minChaos: 0.8
@@ -281,7 +281,7 @@
 - type: entity
   id: BasicRoundstartVariation
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: RoundstartStationVariationRule
     rules:

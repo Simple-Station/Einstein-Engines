@@ -7792,3 +7792,685 @@ Entries:
   id: 6507
   time: '2024-11-07T04:50:46.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1183
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Familiars can now be Dispelled.
+    - type: Tweak
+      message: Nerfed Remilia to have 30 HP.
+    - type: Tweak
+      message: Nerfed Base Familiar to have 50 HP.
+  id: 6508
+  time: '2024-11-08T15:17:12.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1184
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: 'Languages are now shown in chat alongside character names. '
+  id: 6509
+  time: '2024-11-08T16:14:09.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1165
+- author: Ichaie
+  changes:
+    - type: Fix
+      message: minor fixes on the maps Rad and Gax, fix te uranium crarte to filled
+  id: 6510
+  time: '2024-11-08T18:54:13.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1178
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: 'Traits can now add Implants directly. '
+  id: 6511
+  time: '2024-11-08T18:58:04.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1182
+- author: VMSolidus
+  changes:
+    - type: Remove
+      message: >-
+        Shadowkin have been temporarily disabled pending significant reworks and
+        balance updates. 
+  id: 6512
+  time: '2024-11-08T19:33:53.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1187
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added Bloodstains, Body Dragging Marks, and Bloody Footprints to the
+        game. Characters that walk through puddles of blood will now leave
+        behind bloody footprints. Dragging a corpse leaves a trail of blood
+        wherever the corpse was moved.
+  id: 6513
+  time: '2024-11-09T02:05:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1190
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed AddTrait and ReplaceTrait functions giving players an unmodified,
+        completely default component. 
+  id: 6514
+  time: '2024-11-10T15:22:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1195
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Butlertron is no longer as wide as a barn.
+  id: 6515
+  time: '2024-11-13T23:08:38.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1192
+- author: Ichaie
+  changes:
+    - type: Tweak
+      message: 'The Hive (map): add an SM engine to the eng, replacing the singularity.'
+  id: 6516
+  time: '2024-11-13T23:12:41.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1201
+- author: DocNITE
+  changes:
+    - type: Add
+      message: Return  'Monument' and 'Atomic Amnesia MMX' as a lobby music.
+  id: 6517
+  time: '2024-11-13T23:17:11.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1204
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Syndicate Listening Posts can no longer spawn on a planet surface. This
+        isn't for balance reasons, I would love for planetside listening posts.
+        This is actually to address a server crashing bug whereby listening
+        posts on planets cause 7 billion entities to spawn.
+  id: 6518
+  time: '2024-11-13T23:27:00.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1188
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: Added the automatic voting system.
+  id: 6519
+  time: '2024-11-14T02:05:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1213
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: >-
+        Added languages to certain entities that lacked them, including MMIs and
+        positronic brains.
+    - type: Add
+      message: >-
+        Polymorphing into another entity now preserves your languages and
+        grammar.
+  id: 6520
+  time: '2024-11-14T20:03:33.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1223
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Add
+      message: Added spray-painting back
+  id: 6521
+  time: '2024-11-15T14:08:04.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1222
+- author: zelezniciar
+  changes:
+    - type: Fix
+      message: Fixed pengiun cold resistance
+  id: 6522
+  time: '2024-11-16T22:41:37.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1229
+- author: Mocho
+  changes:
+    - type: Add
+      message: A week has passed. Surgery is here.
+  id: 6523
+  time: '2024-11-17T00:32:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1159
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: Fixed stamina system
+  id: 6524
+  time: '2024-11-18T02:17:27.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1245
+- author: DocNITE
+  changes:
+    - type: Add
+      message: Added Day/Night time cycle for admins and mapers.
+  id: 6525
+  time: '2024-11-18T02:20:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1234
+- author: gluesniffler
+  changes:
+    - type: Add
+      message: You can now perform surgery as a monke. Rejoice.
+    - type: Add
+      message: >-
+        You can perform surgery on a lot of animals now, I missed a lot of them
+        so just ask if you want any particular critter to get it.
+    - type: Tweak
+      message: Entities now perish after 60 seconds of losing their heart and/or brain.
+    - type: Fix
+      message: Entities properly take asphyxiation damage after losing their brain.
+    - type: Fix
+      message: Torsos being gibbable, which would break surgery or just about anything.
+    - type: Fix
+      message: >-
+        Items not being removed from their respective slots if the parts were
+        gibbed rather than dropped.
+    - type: Fix
+      message: Animal organs not being usable properly in surgeries
+    - type: Fix
+      message: Cyborg limbs are now usable as pseudo-peg arm/legs.
+  id: 6526
+  time: '2024-11-18T04:03:05.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1240
+- author: Skubman
+  changes:
+    - type: Fix
+      message: >-
+        Examining yourself with the Self-Aware trait will no longer crash your
+        game client.
+  id: 6527
+  time: '2024-11-18T04:29:14.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1247
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Surgery step descriptions (like making an incision, removing/attaching
+        limbs and organs) are now shown as popups to everyone in range upon the
+        start of the step. This makes it clear which surgical procedure is being
+        done and to which body part. No more stealthy brain-stealing in front of
+        everyone!
+  id: 6528
+  time: '2024-11-18T15:15:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1241
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        The stamina cost of an object's power attack can now be revealed by
+        examining its damage values. 
+    - type: Tweak
+      message: >-
+        Power attacks can't be done if your stamina is too low, so you can't
+        accidentally stamcrit yourself with power attacks anymore.
+    - type: Tweak
+      message: Power attacks now cost stamina even without hitting anything.
+    - type: Tweak
+      message: >-
+        Prevent power attacks from showing a blue visual effect on the character
+        who attacked due to stamina damage.
+  id: 6529
+  time: '2024-11-18T15:19:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1238
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Glimmer Wisps now completely obliterate their victim's Personhood,
+        inflicting the Mindbroken condition on them.
+  id: 6530
+  time: '2024-11-18T22:07:31.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1248
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Reorganized Loadouts so that all Jobs now have their own job specific
+        tabs. The code for them has been thoroughly reorganized too, such that
+        figuring out which jobs are missing crap is way easier to do.
+    - type: Add
+      message: >-
+        Captain's Personal Weapon loadout category. Currently only contains a
+        choice between the antique laser pistol, or a pulse pistol. Whichever
+        choice is made will be used as a target for a traitor objective.
+  id: 6531
+  time: '2024-11-18T22:08:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1230
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Power Attacks now correctly apply a penalty on swing speed, and are no
+        longer faster than left clicking.
+  id: 6532
+  time: '2024-11-20T03:47:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1252
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: >-
+        Tweaked the descriptions of most Wizden traits to be more vivid and
+        descriptive.
+  id: 6533
+  time: '2024-11-22T01:01:33.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1260
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Five new functions for the Trait System, AddArmor, PushDescription,
+        ModifyMobThresholds, AddSolutionContainer,  and ModifyStamina.
+    - type: Tweak
+      message: >-
+        CyberEyes Basic System has been split, now Flash Protection is a
+        separate module. 
+    - type: Add
+      message: >-
+        Dermal Armor no longer replaces your original species damage
+        resistances. It now stacks multiplicatively with your original
+        resistances. 
+    - type: Tweak
+      message: Dermal Armor can now be taken by any species, not just Humans.
+    - type: Add
+      message: >-
+        Dermal Armor, and Bionic Arms can now be revealed by a close
+        examination. Shift click on someone within touching distance will reveal
+        if they have these "Obvious" cyberware.
+  id: 6534
+  time: '2024-11-22T01:01:46.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1253
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        You can now touch one anomaly scanner with another to copy the anomaly
+        scan data from it.
+  id: 6535
+  time: '2024-11-22T01:02:13.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1250
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: >-
+        Fixed chair visuals drawing depth wrongly if you sat in a north-facing
+        chair.
+    - type: Fix
+      message: Fixed buckling doing several buckles each time you did one.
+    - type: Fix
+      message: Fixed the magic mirror.
+    - type: Fix
+      message: Fixed beds re-positioning you every few seconds.
+    - type: Fix
+      message: Fixed E not opening containers that are in another container.
+    - type: Fix
+      message: Fixed disposal systems not flushing or ejecting properly.
+  id: 6536
+  time: '2024-11-22T01:03:22.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1256
+- author: Skubman
+  changes:
+    - type: Fix
+      message: >-
+        Piercing damage can now dismember body parts, just like Blunt and Slash
+        damage.
+  id: 6537
+  time: '2024-11-22T20:08:11.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1267
+- author: Tmanzxd
+  changes:
+    - type: Tweak
+      message: Increased applicable medication heal values.
+    - type: Tweak
+      message: Increased stack size of applicable medications.
+    - type: Tweak
+      message: Slightly increased dylovene, burn, and brute chemicals heal values.
+    - type: Tweak
+      message: Decreased Medical item application time from 3s to 2s
+  id: 6538
+  time: '2024-11-22T20:09:21.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1259
+- author: Remuchi
+  changes:
+    - type: Add
+      message: Added Blood Cult Gamemode.
+  id: 6539
+  time: '2024-11-22T21:54:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1001
+- author: Skubman
+  changes:
+    - type: Tweak
+      message: >-
+        As an Oni, examining the damage values of weapons now takes into account
+        the melee damage bonus from your species or trait.
+  id: 6540
+  time: '2024-11-24T18:44:48.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1268
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Add
+      message: >-
+        Players can set custom names, descriptions, and color tints for their
+        loadout items
+    - type: Add
+      message: Certain loadouts may have Guidebook pages shown in the editor
+    - type: Add
+      message: >-
+        Players can pick a list of loadout items to have one randomly be their
+        family heirloom for a mood bonus or deficit if they are carrying it
+    - type: Fix
+      message: Loadouts have almost as little lag as possible (hopefully none)
+    - type: Fix
+      message: Everything properly updates your character editor's live preview
+  id: 6541
+  time: '2024-11-25T05:43:25.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1164
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: Fixed IPCs being unable to use the midi menu.
+  id: 6542
+  time: '2024-11-27T15:19:32.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1287
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: >-
+        Fixed the bug with opening storage containers while there's already one
+        open.
+  id: 6543
+  time: '2024-11-29T15:26:27.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1292
+- author: Tmanzxd
+  changes:
+    - type: Fix
+      message: >-
+        Fixed a bug where applicable medication stacks would revert back to 10
+        after 1 use from full.
+  id: 6544
+  time: '2024-11-29T15:29:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1278
+- author: Skubman
+  changes:
+    - type: Fix
+      message: >-
+        Language colors and fonts will show up in text messages again, both on
+        in-person messages and on the radio.
+    - type: Tweak
+      message: >-
+        The text on chat bubbles now uses the color and font of the language
+        being spoken.
+    - type: Tweak
+      message: >-
+        The language prefix before the name on chat messages now uses the
+        language's color.
+  id: 6545
+  time: '2024-11-29T22:58:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1294
+- author: gluesniffler
+  changes:
+    - type: Add
+      message: Ported Ghetto Surgery from Deltanedas!
+    - type: Add
+      message: Ported fishops organs from Deltanedas!
+    - type: Add
+      message: Added different step durations to each surgery step.
+    - type: Add
+      message: Added a T2 research for advanced surgical tools
+    - type: Add
+      message: Added a T3 research for an omnitool for surgery.
+    - type: Add
+      message: Added Surgical and Advanced Surgical modules for Mediborgs
+    - type: Add
+      message: Mediborgs can now perform surgery!
+    - type: Add
+      message: Added lobotomies as an operation. Godspeed you psychopaths.
+    - type: Add
+      message: Added cybernetic arms, legs and eyes.
+    - type: Add
+      message: >-
+        Added EMP weaknesses to all cybernetic parts (the day of reckoning will
+        come for IPCs soon)
+    - type: Add
+      message: Losing your eyes now blinds you.
+    - type: Fix
+      message: >-
+        Fixed a few species that did not inherit from BasePart's, thus taking
+        damage types they shouldn't on their limbs.
+    - type: Fix
+      message: Fixed harpy lungs not being usable in surgeries.
+    - type: Fix
+      message: >-
+        Fixed biosynthetic and other printable parts not allowing you to attach
+        body parts to them. 
+    - type: Fix
+      message: Fixed fire being able to destroy your chest.
+    - type: Fix
+      message: >-
+        Fixed entities being able to take over your body by just inserting a
+        brain or another head on top of you.
+    - type: Fix
+      message: Fixed some shitcode that didnt let rejuvenate or godmode work properly.
+    - type: Fix
+      message: >-
+        Fixed bionic arm, and cybernetic eyes traits not working properly due to
+        shitty networking.
+    - type: Tweak
+      message: >-
+        Increased tend wounds's speed by double, and bumped up the values on its
+        calculations. DEATH TO TOPICALS, LEAVE THOSE TO TIDERS.
+    - type: Tweak
+      message: >-
+        Beheading an entity now doesnt let it move, speak, and forces it to the
+        ground immediately (literally 1984!!11!!)
+    - type: Tweak
+      message: Changed sprites on most surgical tools to now use /tg/ sprites.
+    - type: Tweak
+      message: >-
+        Unbound shitmed targeting doll keybinds by default (did you know we have
+        those). 
+  id: 6546
+  time: '2024-11-30T16:06:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1271
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        All engineering roles have had their equipment loadouts significantly
+        expanded upon. Engineers can now buy construction materials with their
+        loadout points. 
+    - type: Fix
+      message: All engineering jobs now have their Suit/Skirt selection via loadouts.
+    - type: Add
+      message: >-
+        Salvage techs can now select from a variety of knife options to start
+        their spess adventures with.
+    - type: Add
+      message: >-
+        Epistemics staff now have *some* equipment selection options that they
+        share. More to come when I finish making the Potentiometer.
+  id: 6547
+  time: '2024-11-30T16:53:42.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1281
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added various articles of religious headgear to loadouts, such as Hijab,
+        Kippah, and Turban. All of these are set to allow custom colors. 
+  id: 6548
+  time: '2024-11-30T18:52:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1297
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Added a guidebook entry on Security Duty Weapons
+    - type: Add
+      message: >-
+        Added guidebook entries on various Corporations in lore, such as
+        Einstein Engines, Hephaestus Heavy Industries, etc.
+    - type: Add
+      message: Loadouts can now link to a specific guidebook entry via prototype ID.
+  id: 6549
+  time: '2024-12-01T03:27:05.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1298
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        80+ new markings have arrived, including earrings, makeup, bracelets,
+        and watches. Sashay over to Character Setup to personalize your
+        character like never before!
+    - type: Add
+      message: >-
+        The Arachne species can now select markings above the leg, including
+        cybernetics, makeup, tattoos, noses, earrings, heterochromia, bracelets,
+        gauze, and more!
+    - type: Tweak
+      message: >-
+        The available points for Head (Side), Left Hand, and Right Hand markings
+        have been increased for most species to support the new markings.
+    - type: Tweak
+      message: >-
+        The Nail Polish markings have been moved from the Overlay category to
+        the Left Hand and Right Hand categories.
+  id: 6550
+  time: '2024-12-01T10:41:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1299
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Arachne can now be Male instead of only being Female. They can now also
+        wear Facial Hair.
+    - type: Add
+      message: Arachne can use Arachnid chest and arm markings.
+    - type: Fix
+      message: >-
+        Arachne will now have footstep sounds instead of being quiet when
+        moving.
+  id: 6551
+  time: '2024-12-01T14:11:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1301
+- author: zelezniciar
+  changes:
+    - type: Fix
+      message: Fixed Senior Engineer and Physician names not appearing correctly
+  id: 6552
+  time: '2024-12-01T23:56:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1302
+- author: Skubman
+  changes:
+    - type: Tweak
+      message: >-
+        Cultist constructs and soul shards now speak Tau-Ceti Basic and
+        Eldritch.
+  id: 6553
+  time: '2024-12-02T16:47:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1303
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        The lobotomy procedure makes the target clumsy like the clown. This
+        makes them bonk when climbing tables and makes guns they're shooting
+        blow up on their face.
+    - type: Tweak
+      message: The lobotomy step now requires a scalpel instead of a drill.
+    - type: Fix
+      message: >-
+        Enabled the "Mend brain tissue" surgical procedure on a lobotomized
+        target. 
+    - type: Fix
+      message: >-
+        The lobotomized effect is now stored in the brain instead of the body.
+        The same brain stays lobotomized throughout brain transplants, and
+        transferring a normal brain to a body where a lobotomy occurred no
+        longer applies the lobotomized effect.
+    - type: Fix
+      message: >-
+        The lobotomy procedure now shows the proper popup during the
+        lobotomization step.
+    - type: Fix
+      message: Removed the ability to perform lobotomies on bodies without a brain.
+    - type: Fix
+      message: >-
+        The "Remove organ" surgery step on the UI now properly shows the
+        retractor sprite instead of the hemostat.
+  id: 6554
+  time: '2024-12-03T23:31:22.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1306
+- author: Erisfiregamer1
+  changes:
+    - type: Add
+      message: You can now shove people into deep fryers by drag-dropping them onto it.
+  id: 6555
+  time: '2024-12-03T23:33:01.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1279
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Added the EMP Flashlight to Syndicate Uplinks.
+  id: 6556
+  time: '2024-12-04T00:11:13.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1189
+- author: Ichaie
+  changes:
+    - type: Add
+      message: added a new map called "Europa" to rotation
+  id: 6557
+  time: '2024-12-04T00:12:59.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1152
+- author: zelezniciar
+  changes:
+    - type: Tweak
+      message: >-
+        Atmospheric Alerts Computer now displays colored zones corresponding to
+        air alarm status on the station map
+    - type: Fix
+      message: Atmospheric Alerts Computer board is printable in a circuit imprinter
+  id: 6558
+  time: '2024-12-05T00:13:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1313
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: You can pick up mobs again with left click.
+    - type: Fix
+      message: No more mob jug spill, including you revenants.
+    - type: Fix
+      message: Set the Gloves of the North Star to the proper attack speed.
+    - type: Fix
+      message: Medibots will no longer try to heal borgs.
+  id: 6559
+  time: '2024-12-05T07:39:32.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1311
+- author: DmitriTheDemon
+  changes:
+    - type: Tweak
+      message: The ChemMaster is now sorted.
+  id: 6560
+  time: '2024-12-05T09:11:27.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1310
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Added Shipyards.
+  id: 6561
+  time: '2024-12-06T03:13:08.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1314
+- author: zelezniciar
+  changes:
+    - type: Add
+      message: 'TEG components now be ordered from Logistics and assembled on station. '
+  id: 6562
+  time: '2024-12-06T15:42:27.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1316
+- author: rbertoche
+  changes:
+    - type: Fix
+      message: >-
+        Several small fixes to Europa map, namely to cargo dock, SM and atmos
+        piping and wires, adds autolathe to cargo and crew monitor to med
+  id: 6563
+  time: '2024-12-06T16:12:44.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1319
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Server rules work again.
+  id: 6564
+  time: '2024-12-06T20:30:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1321

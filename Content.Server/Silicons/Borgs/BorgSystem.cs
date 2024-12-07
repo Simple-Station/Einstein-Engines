@@ -23,6 +23,7 @@ using Content.Shared.Roles;
 using Content.Shared.Silicons.Borgs;
 using Content.Shared.Silicons.Borgs.Components;
 using Content.Shared.Throwing;
+using Content.Shared.Whitelist;
 using Content.Shared.Wires;
 using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
@@ -54,6 +55,8 @@ public sealed partial class BorgSystem : SharedBorgSystem
     [Dependency] private readonly ThrowingSystem _throwing = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
+    [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
+
 
     [ValidatePrototypeId<JobPrototype>]
     public const string BorgJobId = "Borg";
@@ -84,7 +87,7 @@ public sealed partial class BorgSystem : SharedBorgSystem
 
     private void OnMapInit(EntityUid uid, BorgChassisComponent component, MapInitEvent args)
     {
-        UpdateBatteryAlert(uid);
+        UpdateBatteryAlert((uid, component));
         _movementSpeedModifier.RefreshMovementSpeedModifiers(uid);
     }
 
@@ -106,9 +109,8 @@ public sealed partial class BorgSystem : SharedBorgSystem
             return;
         }
 
-        if (component.BrainEntity == null &&
-            brain != null &&
-            component.BrainWhitelist?.IsValid(used) != false)
+        if (component.BrainEntity == null && brain != null &&
+            _whitelistSystem.IsWhitelistPassOrNull(component.BrainWhitelist, used))
         {
             if (_mind.TryGetMind(used, out _, out var mind) && mind.Session != null)
             {
@@ -183,7 +185,7 @@ public sealed partial class BorgSystem : SharedBorgSystem
 
     private void OnPowerCellChanged(EntityUid uid, BorgChassisComponent component, PowerCellChangedEvent args)
     {
-        UpdateBatteryAlert(uid);
+        UpdateBatteryAlert((uid, component));
 
         if (!TryComp<PowerCellDrawComponent>(uid, out var draw))
             return;
@@ -256,12 +258,12 @@ public sealed partial class BorgSystem : SharedBorgSystem
         args.Cancel();
     }
 
-    private void UpdateBatteryAlert(EntityUid uid, PowerCellSlotComponent? slotComponent = null)
+    private void UpdateBatteryAlert(Entity<BorgChassisComponent> ent, PowerCellSlotComponent? slotComponent = null)
     {
-        if (!_powerCell.TryGetBatteryFromSlot(uid, out var battery, slotComponent))
+        if (!_powerCell.TryGetBatteryFromSlot(ent, out var battery, slotComponent))
         {
-            _alerts.ClearAlert(uid, AlertType.BorgBattery);
-            _alerts.ShowAlert(uid, AlertType.BorgBatteryNone);
+            _alerts.ClearAlert(ent, ent.Comp.BatteryAlert);
+            _alerts.ShowAlert(ent, ent.Comp.NoBatteryAlert);
             return;
         }
 
@@ -269,13 +271,13 @@ public sealed partial class BorgSystem : SharedBorgSystem
 
         // we make sure 0 only shows if they have absolutely no battery.
         // also account for floating point imprecision
-        if (chargePercent == 0 && _powerCell.HasDrawCharge(uid, cell: slotComponent))
+        if (chargePercent == 0 && _powerCell.HasDrawCharge(ent, cell: slotComponent))
         {
             chargePercent = 1;
         }
 
-        _alerts.ClearAlert(uid, AlertType.BorgBatteryNone);
-        _alerts.ShowAlert(uid, AlertType.BorgBattery, chargePercent);
+        _alerts.ClearAlert(ent, ent.Comp.NoBatteryAlert);
+        _alerts.ShowAlert(ent, ent.Comp.BatteryAlert, chargePercent);
     }
 
     /// <summary>
@@ -288,7 +290,7 @@ public sealed partial class BorgSystem : SharedBorgSystem
 
         component.Activated = true;
         InstallAllModules(uid, component);
-        Dirty(component);
+        Dirty(uid, component);
         _movementSpeedModifier.RefreshMovementSpeedModifiers(uid);
     }
 
@@ -302,7 +304,7 @@ public sealed partial class BorgSystem : SharedBorgSystem
 
         component.Activated = false;
         DisableAllModules(uid, component);
-        Dirty(component);
+        Dirty(uid, component);
         _movementSpeedModifier.RefreshMovementSpeedModifiers(uid);
     }
 

@@ -1,6 +1,6 @@
 # Base Nyano Mail
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseMail
   id: MailSecurityDonuts
   suffix: donuts
@@ -10,7 +10,7 @@
     - id: FoodBoxDonut
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseMail
   id: MailSecurityFlashlight
   suffix: seclite
@@ -20,7 +20,7 @@
     - id: FlashlightSeclite
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseMail
   id: MailSecurityNonlethalsKit
   suffix: nonlethalskit
@@ -45,7 +45,7 @@
 # Will we ever readd hyperlinks books? Who knows!
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseMail
   id: MailWardenCrowdControl
   suffix: crowdcontrol
@@ -55,7 +55,7 @@
     - id: BoxBeanbag
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseMail
   id: MailDetectiveForensicSupplement # Deltav - Detective is in charge of investigating crimes.
   suffix: detectivesupplement # Deltav - Detective is in charge of investigating crimes.
@@ -67,7 +67,7 @@
 # Frontier Mail
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseMailLarge
   id: MailSecurityNFMusket
   suffix: musket
@@ -83,7 +83,7 @@
 # Delta Mail
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseMail
   id: MailSecurityDVSpaceLaw
   suffix: spacelaw, extended

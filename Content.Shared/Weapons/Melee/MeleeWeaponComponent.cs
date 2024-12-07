@@ -48,16 +48,16 @@ public sealed partial class MeleeWeaponComponent : Component
      */
 
     /// <summary>
-    /// How many times we can attack per second.
+    /// How many seconds between attacks must you wait in order to swing.
     /// </summary>
     [DataField, AutoNetworkedField]
     public float AttackRate = 1f;
 
     /// <summary>
-    ///     When power attacking, the swing speed (in attacks per second) is multiplied by this amount
+    ///     When power attacking, the required cooldown between swings is multiplied by this amount.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float HeavyRateModifier = 0.8f;
+    public float HeavyRateModifier = 1.2f;
     /// <summary>
     /// Are we currently holding down the mouse for an attack.
     /// Used so we can't just hold the mouse button and attack constantly.
@@ -87,6 +87,12 @@ public sealed partial class MeleeWeaponComponent : Component
     [DataField, AutoNetworkedField]
     public FixedPoint2 ClickDamageModifier = FixedPoint2.New(1);
 
+    /// <summary>
+    ///     Part damage is multiplied by this amount for single-target attacks
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float ClickPartDamageMultiplier = 1.00f;
+
     // TODO: Temporarily 1.5 until interactionoutline is adjusted to use melee, then probably drop to 1.2
     /// <summary>
     /// Nearest edge range to hit an entity.
@@ -105,6 +111,12 @@ public sealed partial class MeleeWeaponComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public float HeavyDamageBaseModifier = 1.2f;
+
+    /// <summary>
+    ///     Part damage is multiplied by this amount for heavy swings
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float HeavyPartDamageMultiplier = 0.5f;
 
     /// <summary>
     /// Total width of the angle for wide attacks.

@@ -1,0 +1,105 @@
+# Mystic
+# Backpacks
+
+# Belt
+
+# Ears
+
+# Equipment
+- type: loadout
+  id: LoadoutMysticEquipmentCandles
+  category: JobsEpistemicsMystic
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMysticEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorResearcher
+  items:
+    - BoxCandle
+
+- type: loadout
+  id: LoadoutMysticEquipmentCandlesSmall
+  category: JobsEpistemicsMystic
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMysticEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorResearcher
+  items:
+    - BoxCandleSmall
+
+- type: loadout
+  id: LoadoutMysticPillCanisterSpaceDrugs
+  category: JobsEpistemicsMystic
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMysticEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorResearcher
+  items:
+    - PillCanisterSpaceDrugs
+
+# Eyes
+
+# Gloves
+
+# Head
+
+# Id
+
+# Neck
+
+# Mask
+
+# Outer
+- type: loadout
+  id: LoadoutScienceOuterLabcoatSeniorResearcher
+  category: JobsEpistemicsAAUncategorized
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMysticOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorResearcher
+  items:
+    - ClothingOuterCoatLabSeniorResearcher
+
+# Shoes
+
+# Uniforms
+- type: loadout
+  id: LoadoutScienceUniformJumpskirtSenior
+  category: JobsEpistemicsMystic
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMysticUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorResearcher
+  items:
+    - ClothingUniformJumpskirtSeniorResearcher
+
+- type: loadout
+  id: LoadoutScienceUniformJumpsuitSenior
+  category: JobsEpistemicsMystic
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMysticUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorResearcher
+  items:
+    - ClothingUniformJumpsuitSeniorResearcher

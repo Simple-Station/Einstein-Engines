@@ -166,16 +166,22 @@ public sealed class RadioSystem : EntitySystem
         var languageColor = channel.Color;
         if (language.SpeechOverride.Color is { } colorOverride)
             languageColor = Color.InterpolateBetween(languageColor, colorOverride, colorOverride.A);
+        var languageDisplay = language.IsVisibleLanguage
+            ? Loc.GetString("chat-manager-language-prefix", ("language", language.ChatName))
+            : "";
+        var messageColor = language.IsVisibleLanguage ? languageColor : channel.Color;
 
         return Loc.GetString(speech.Bold ? "chat-radio-message-wrap-bold" : "chat-radio-message-wrap",
             ("color", channel.Color),
             ("languageColor", languageColor),
+            ("messageColor", messageColor),
             ("fontType", language.SpeechOverride.FontId ?? speech.FontId),
             ("fontSize", language.SpeechOverride.FontSize ?? speech.FontSize),
             ("verb", Loc.GetString(_random.Pick(speech.SpeechVerbStrings))),
             ("channel", $"\\[{channel.LocalizedName}\\]"),
             ("name", name),
-            ("message", message));
+            ("message", message),
+            ("language", languageDisplay));
     }
 
     /// <inheritdoc cref="TelecomServerComponent"/>

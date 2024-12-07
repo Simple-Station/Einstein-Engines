@@ -1,0 +1,332 @@
+# Salvage Specialist
+# Backpacks
+- type: loadout
+  id: LoadoutSalvageBackpackBackpack
+  category: JobsLogisticsSalvageSpecialist
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingBackpackSalvage
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - SalvageSpecialist
+
+- type: loadout
+  id: LoadoutSalvageBackpackSatchel
+  category: JobsLogisticsSalvageSpecialist
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingBackpackSatchelSalvage
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - SalvageSpecialist
+
+- type: loadout
+  id: LoadoutSalvageBackpackDuffel
+  category: JobsLogisticsSalvageSpecialist
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingBackpackDuffelSalvage
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - SalvageSpecialist
+
+# Belt
+- type: loadout
+  id: LoadoutSalvageBeltMercWebbing
+  category: JobsLogisticsSalvageSpecialist
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - SalvageSpecialist
+  items:
+    - ClothingBeltMercWebbing
+
+- type: loadout
+  id: LoadoutSalvageBeltSalvageWebbing
+  category: JobsLogisticsSalvageSpecialist
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - SalvageSpecialist
+  items:
+    - ClothingBeltSalvageWebbing
+
+- type: loadout
+  id: LoadoutSalvageBeltMilitaryWebbing
+  category: JobsLogisticsSalvageSpecialist
+  cost: 0
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - SalvageSpecialist
+  items:
+    - ClothingBeltMilitaryWebbing
+
+# Ears
+
+# Equipment
+- type: loadout
+  id: LoadoutCargoWeaponsCrusherDagger
+  category: JobsLogisticsSalvageSpecialist
+  cost: 2
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistWeapons
+    - !type:CharacterJobRequirement
+      jobs:
+        - SalvageSpecialist
+  items:
+    - WeaponCrusherDagger
+
+- type: loadout
+  id: LoadoutSalvageWeaponsCombatKnife
+  category: JobsLogisticsSalvageSpecialist
+  cost: 0
+  canBeHeirloom: true
+  customColorTint: true # Go read Neuromancer
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistWeapons
+    - !type:CharacterJobRequirement
+      jobs:
+        - SalvageSpecialist
+  items:
+    - CombatKnife
+
+- type: loadout
+  id: LoadoutSalvageWeaponsKitchenKnife
+  category: JobsLogisticsSalvageSpecialist
+  cost: 0
+  canBeHeirloom: true
+  customColorTint: true # Go read Neuromancer
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistWeapons
+    - !type:CharacterJobRequirement
+      jobs:
+        - SalvageSpecialist
+  items:
+    - KitchenKnife
+
+- type: loadout
+  id: LoadoutSalvageWeaponsSurvivalKnife
+  category: JobsLogisticsSalvageSpecialist
+  cost: 0
+  canBeHeirloom: true
+  customColorTint: true # Go read Neuromancer
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistWeapons
+    - !type:CharacterJobRequirement
+      jobs:
+        - SalvageSpecialist
+  items:
+    - SurvivalKnife
+
+- type: loadout
+  id: LoadoutSalvageWeaponsKukriKnife
+  category: JobsLogisticsSalvageSpecialist
+  cost: 0
+  canBeHeirloom: true
+  customColorTint: true # Go read Neuromancer
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistWeapons
+    - !type:CharacterJobRequirement
+      jobs:
+        - SalvageSpecialist
+  items:
+    - KukriKnife
+
+- type: loadout
+  id: LoadoutSalvageWeaponsCleaver
+  category: JobsLogisticsSalvageSpecialist
+  cost: 0
+  canBeHeirloom: true
+  customColorTint: true # Go read Neuromancer
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistWeapons
+    - !type:CharacterJobRequirement
+      jobs:
+        - SalvageSpecialist
+  items:
+    - ButchCleaver
+
+- type: loadout
+  id: LoadoutSalvageWeaponsThrowingKnife
+  category: JobsLogisticsSalvageSpecialist
+  cost: 1
+  canBeHeirloom: true
+  customColorTint: true # Go read Neuromancer
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistWeapons
+    - !type:CharacterJobRequirement
+      jobs:
+        - SalvageSpecialist
+  items:
+    - ThrowingKnife
+    - ThrowingKnife
+    - ThrowingKnife
+
+- type: loadout
+  id: LoadoutSalvageWeaponsMachete
+  category: JobsLogisticsSalvageSpecialist
+  cost: 1
+  canBeHeirloom: true
+  customColorTint: true # Go read Neuromancer
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistWeapons
+    - !type:CharacterJobRequirement
+      jobs:
+        - SalvageSpecialist
+  items:
+    - Machete
+
+- type: loadout
+  id: LoadoutSalvageWeaponsCutlass
+  category: JobsLogisticsSalvageSpecialist
+  cost: 2
+  canBeHeirloom: true
+  customColorTint: true # Go read Neuromancer
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistWeapons
+    - !type:CharacterJobRequirement
+      jobs:
+        - SalvageSpecialist
+  items:
+    - Cutlass
+
+- type: loadout
+  id: LoadoutSalvageWeaponsKatana
+  category: JobsLogisticsSalvageSpecialist
+  cost: 2
+  canBeHeirloom: true
+  customColorTint: true # Go read Neuromancer
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistWeapons
+    - !type:CharacterJobRequirement
+      jobs:
+        - SalvageSpecialist
+  items:
+    - Katana
+
+- type: loadout
+  id: LoadoutSalvageWeaponsWakizashi
+  category: JobsLogisticsSalvageSpecialist
+  cost: 1
+  canBeHeirloom: true
+  customColorTint: true # Go read Neuromancer
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistWeapons
+    - !type:CharacterJobRequirement
+      jobs:
+        - SalvageSpecialist
+  items:
+    - Wakizashi
+
+# Eyes
+
+# Gloves
+
+# Head
+
+# Id
+
+# Neck
+- type: loadout
+  id: LoadoutCargoNeckGoliathCloak
+  category: JobsLogisticsSalvageSpecialist
+  cost: 0
+  exclusive: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistNeck
+    - !type:CharacterJobRequirement
+      jobs:
+        - SalvageSpecialist
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobSalvageSpecialist
+      min: 36000 # 10 hours
+  items:
+    - ClothingNeckCloakGoliathCloak
+
+- type: loadout
+  id: LoadoutSalvageNeckCloakMiner
+  category: JobsLogisticsSalvageSpecialist
+  cost: 0
+  exclusive: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistNeck
+    - !type:CharacterJobRequirement
+      jobs:
+        - SalvageSpecialist
+  items:
+    - ClothingNeckCloakMiner
+
+# Mask
+
+# Outer
+- type: loadout
+  id: LoadoutCargoOuterWinterMiner
+  category: JobsLogisticsSalvageSpecialist
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - SalvageSpecialist
+  items:
+    - ClothingOuterWinterMiner
+
+# Shoes
+
+# Uniforms
+- type: loadout
+  id: LoadoutSalvageSpecialistUniformSuit
+  category: JobsLogisticsSalvageSpecialist
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - SalvageSpecialist
+  items:
+    - ClothingUniformJumpsuitSalvageSpecialist

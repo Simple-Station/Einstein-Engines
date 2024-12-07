@@ -106,6 +106,8 @@
   - type: OfferItem
   - type: LayingDown
   - type: Carriable
+  - type: StatusIcon
+    bounds: -0.5,-0.5,0.5,0.5
   - type: StepTriggerImmune
     whitelist:
       types:
@@ -128,7 +130,7 @@
   name: Urist McPositronic
   parent: MobHumanDummy
   id: MobIPCDummy
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: A dummy IPC meant to be used in character setup.
   components:
   - type: HumanoidAppearance

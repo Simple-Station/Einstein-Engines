@@ -131,7 +131,7 @@
 - type: entity
   id: CrateMaterialUranium
   name: uranium crate
-  parent: CrateGenericSteel
+  parent: CrateUranium
   components:
   - type: StorageFill
     contents:
@@ -150,7 +150,7 @@
 
 - type: entity
   id: CrateMaterialSilver
-  name: gold crate
+  name: silver crate
   parent: CrateGenericSteel
   components:
   - type: StorageFill

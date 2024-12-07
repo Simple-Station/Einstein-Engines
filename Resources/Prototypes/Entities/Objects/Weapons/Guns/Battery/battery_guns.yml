@@ -32,6 +32,11 @@
   - type: Appearance
   - type: StaticPrice
     price: 500
+  - type: Cautery
+    speed: 0.9
+  - type: SurgeryTool
+    endSound:
+      path: /Audio/Weapons/Guns/Gunshots/laser.ogg
 
 - type: entity
   id: BaseWeaponPowerCell
@@ -68,6 +73,11 @@
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot
+  - type: Cautery
+    speed: 0.9
+  - type: SurgeryTool
+    endSound:
+      path: /Audio/Weapons/Guns/Gunshots/laser.ogg
 
 - type: entity
   id: BaseWeaponBatterySmall
@@ -276,6 +286,15 @@
   components:
   - type: StealTarget
     stealGroup: HoSAntiqueWeapon
+
+- type: entity
+  name: captain's pulse pistol
+  parent: WeaponPulsePistol
+  id: WeaponPulsePistolCaptain
+  description: A rare and exotic handgun gifted to the station's Captain. Its ivory grip has been engraved with the words, "Glory to the Company, Glory to Mother Sol. Phoron will make us all rich."
+  components:
+  - type: StealTarget
+    stealGroup: WeaponCaptain
 
 - type: entity
   name: pulse carbine
@@ -595,7 +614,7 @@
   - type: StaticPrice
     price: 750
   - type: StealTarget
-    stealGroup: WeaponAntiqueLaser
+    stealGroup: WeaponCaptain
 
 - type: entity
   name: advanced laser pistol

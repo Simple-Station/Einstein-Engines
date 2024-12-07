@@ -24,7 +24,7 @@ public sealed class StandingStateSystem : EntitySystem
     [Dependency] private readonly ClimbSystem _climb = default!;
 
     // If StandingCollisionLayer value is ever changed to more than one layer, the logic needs to be edited.
-    private const int StandingCollisionLayer = (int)CollisionGroup.MidImpassable;
+    private const int StandingCollisionLayer = (int) CollisionGroup.MidImpassable;
 
     public bool IsDown(EntityUid uid, StandingStateComponent? standingState = null)
     {
@@ -57,7 +57,7 @@ public sealed class StandingStateSystem : EntitySystem
         if (dropHeldItems && hands != null)
             RaiseLocalEvent(uid, new DropHandItemsEvent(), false);
 
-        if (TryComp(uid, out BuckleComponent? buckle) && buckle.Buckled && !_buckle.TryUnbuckle(uid, uid, buckleComp: buckle))
+        if (TryComp(uid, out BuckleComponent? buckle) && buckle.Buckled)
             return false;
 
         var msg = new DownAttemptEvent();
@@ -67,7 +67,7 @@ public sealed class StandingStateSystem : EntitySystem
             return false;
 
         standingState.CurrentState = StandingState.Lying;
-        Dirty(standingState);
+        Dirty(uid, standingState);
         RaiseLocalEvent(uid, new DownedEvent(), false);
 
         // Seemed like the best place to put it
