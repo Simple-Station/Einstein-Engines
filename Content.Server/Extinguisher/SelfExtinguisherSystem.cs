@@ -1,3 +1,4 @@
+using Content.Shared.Examine;
 using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Popups;
@@ -22,6 +23,13 @@ public sealed partial class SelfExtinguisherSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
+
+        SubscribeLocalEvent<SelfExtinguisherComponent, ExaminedEvent>(OnExamined);
+    }
+
+    private void OnExamined(EntityUid uid, SelfExtinguisherComponent component, ExaminedEvent args)
+    {
+        args.PushMarkup(Loc.GetString("self-extinguisher-examine-charges", ("charges", component.Charges)));
     }
 
     private void TryExtinguish(EntityUid uid, EntityUid wearer, SelfExtinguisherComponent component, FlammableComponent flammable)
