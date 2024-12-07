@@ -63,9 +63,7 @@ namespace Content.Server.Flash
             if (!args.IsHit ||
                 !args.HitEntities.Any() ||
                 !UseFlash(uid, comp))
-            {
                 return;
-            }
 
             args.Handled = true;
             foreach (var e in args.HitEntities)

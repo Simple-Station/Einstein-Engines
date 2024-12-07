@@ -90,7 +90,6 @@ public sealed class ProjectileSystem : SharedProjectileSystem
             args.Message.PushNewline();
 
         var isHarmful = TryComp<EmbedPassiveDamageComponent>(uid, out var passiveDamage) && passiveDamage.Damage.Any();
-
         var loc = isHarmful
             ? "damage-examine-embeddable-harmful"
             : "damage-examine-embeddable";

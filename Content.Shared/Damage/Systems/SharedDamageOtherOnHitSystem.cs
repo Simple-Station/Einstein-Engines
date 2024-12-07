@@ -105,9 +105,7 @@ namespace Content.Shared.Damage.Systems
             }
 
             if (modifiedDamage is { Empty: false })
-            {
                 _color.RaiseEffect(Color.Red, new List<EntityUid>() { args.Target }, Filter.Pvs(args.Target, entityManager: EntityManager));
-            }
 
             if (TryComp<PhysicsComponent>(uid, out var body) && body.LinearVelocity.LengthSquared() > 0f)
             {
