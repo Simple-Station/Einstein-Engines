@@ -1,3 +1,13 @@
+using Content.Shared.Customization.Systems;
+using Content.Shared.Preferences;
+using Content.Shared.Roles;
+using JetBrains.Annotations;
+using Robust.Shared.Configuration;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization;
+
+namespace Content.Shared.Customization.Systems;
+
 /// <summary>
 ///     Requires the profile to have one of the specified loadouts
 /// </summary>
@@ -5,10 +15,10 @@
 public sealed partial class CVarRequirement : CharacterRequirement
 {
     [DataField("cvar", required: true)]
-    public string CVar;
+    public required string CVar;
 
     [DataField("requiredValue", required: true)]
-    public string RequiredValue;
+    public required string RequiredValue;
 
     public override bool IsValid(
         JobPrototype job,
