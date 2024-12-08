@@ -19,7 +19,7 @@ namespace Content.Shared.Customization.Systems;
 /// <summary>
 ///     Requires the profile to be within an age range
 /// </summary>
-[UsedImplicitly, Serializable, NetSerializable,]
+[UsedImplicitly, Serializable, NetSerializable]
 public sealed partial class CharacterAgeRequirement : CharacterRequirement
 {
     [DataField(required: true)]
@@ -53,7 +53,7 @@ public sealed partial class CharacterAgeRequirement : CharacterRequirement
 /// <summary>
 ///     Requires the profile to be a certain gender
 /// </summary>
-[UsedImplicitly, Serializable, NetSerializable,]
+[UsedImplicitly, Serializable, NetSerializable]
 public sealed partial class CharacterGenderRequirement : CharacterRequirement
 {
     [DataField(required: true)]
@@ -83,7 +83,7 @@ public sealed partial class CharacterGenderRequirement : CharacterRequirement
 /// <summary>
 ///     Requires the profile to be a certain sex
 /// </summary>
-[UsedImplicitly, Serializable, NetSerializable,]
+[UsedImplicitly, Serializable, NetSerializable]
 public sealed partial class CharacterSexRequirement : CharacterRequirement
 {
     [DataField(required: true)]
@@ -113,7 +113,7 @@ public sealed partial class CharacterSexRequirement : CharacterRequirement
 /// <summary>
 ///     Requires the profile to be a certain species
 /// </summary>
-[UsedImplicitly, Serializable, NetSerializable,]
+[UsedImplicitly, Serializable, NetSerializable]
 public sealed partial class CharacterSpeciesRequirement : CharacterRequirement
 {
     [DataField(required: true)]
@@ -146,7 +146,7 @@ public sealed partial class CharacterSpeciesRequirement : CharacterRequirement
 /// <summary>
 ///     Requires the profile to be within a certain height range
 /// </summary>
-[UsedImplicitly, Serializable, NetSerializable,]
+[UsedImplicitly, Serializable, NetSerializable]
 public sealed partial class CharacterHeightRequirement : CharacterRequirement
 {
     /// <summary>
@@ -192,7 +192,7 @@ public sealed partial class CharacterHeightRequirement : CharacterRequirement
 /// <summary>
 ///     Requires the profile to be within a certain width range
 /// </summary>
-[UsedImplicitly, Serializable, NetSerializable,]
+[UsedImplicitly, Serializable, NetSerializable]
 public sealed partial class CharacterWidthRequirement : CharacterRequirement
 {
     /// <summary>
@@ -238,7 +238,7 @@ public sealed partial class CharacterWidthRequirement : CharacterRequirement
 /// <summary>
 ///     Requires the profile to be within a certain weight range
 /// </summary>
-[UsedImplicitly, Serializable, NetSerializable,]
+[UsedImplicitly, Serializable, NetSerializable]
 public sealed partial class CharacterWeightRequirement : CharacterRequirement
 {
     /// <summary>
@@ -297,7 +297,7 @@ public sealed partial class CharacterWeightRequirement : CharacterRequirement
 /// <summary>
 ///     Requires the profile to have one of the specified traits
 /// </summary>
-[UsedImplicitly, Serializable, NetSerializable,]
+[UsedImplicitly, Serializable, NetSerializable]
 public sealed partial class CharacterTraitRequirement : CharacterRequirement
 {
     [DataField(required: true)]
@@ -330,7 +330,7 @@ public sealed partial class CharacterTraitRequirement : CharacterRequirement
 /// <summary>
 ///     Requires the profile to have one of the specified loadouts
 /// </summary>
-[UsedImplicitly, Serializable, NetSerializable,]
+[UsedImplicitly, Serializable, NetSerializable]
 public sealed partial class CharacterLoadoutRequirement : CharacterRequirement
 {
     [DataField(required: true)]
@@ -363,7 +363,7 @@ public sealed partial class CharacterLoadoutRequirement : CharacterRequirement
 /// <summary>
 ///     Requires the profile to not have any more than X of the specified traits, loadouts, etc, in a group
 /// </summary>
-[UsedImplicitly, Serializable, NetSerializable,]
+[UsedImplicitly, Serializable, NetSerializable]
 public sealed partial class CharacterItemGroupRequirement : CharacterRequirement
 {
     [DataField(required: true)]
