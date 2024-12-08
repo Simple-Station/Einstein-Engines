@@ -42,7 +42,7 @@
       amount: 4
   - type: Temperature
     heatDamageThreshold: 313    # 40    celsius
-    coldDamageThreshold: 195    # -78.5 celsius
+    # coldDamageThreshold: 195    # -78.5 celsius # Just set this to default cause it wont make a difference
     currentTemperature: 270.15  # -3    celsius
     specificHeat: 46
     coldDamage:
