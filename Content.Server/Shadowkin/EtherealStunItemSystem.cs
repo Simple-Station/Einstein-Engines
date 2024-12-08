@@ -21,7 +21,8 @@ public sealed class EtherealStunItemSystem : EntitySystem
     {
         foreach (var ent in _lookup.GetEntitiesInRange(uid, component.Radius))
         {
-            if (!TryComp<EtherealComponent>(ent, out var ethereal))
+            if (!TryComp<EtherealComponent>(ent, out var ethereal)
+                || !ethereal.CanBeStunned)
                 continue;
 
             RemComp(ent, ethereal);
