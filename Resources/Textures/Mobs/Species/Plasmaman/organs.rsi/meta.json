@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "TODO stomach/tongue from tg, liver/lungs/kidneys/heart/brain from paradise",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "stomach"
+    },
+    {
+      "name": "tongue"
+    },
+    {
+      "name": "liver"
+    },
+    {
+      "name": "lungs"
+    },
+    {
+      "name": "kidneys"
+    },
+    {
+      "name": "heart-off"
+    },
+    {
+      "name": "heart-on",
+      "delays": [
+        [
+          0.6,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "brain",
+      "delays": [
+        [
+          3,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    }
+  ]
+}

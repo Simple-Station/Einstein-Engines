@@ -1,4 +1,5 @@
 using Content.Shared.Customization.Systems;
+using Content.Shared.Prototypes;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Clothing.Loadouts.Prototypes;
@@ -13,6 +14,9 @@ public sealed partial class LoadoutPrototype : IPrototype
 
     [DataField]
     public ProtoId<LoadoutCategoryPrototype> Category = "Uncategorized";
+
+    [DataField]
+    public List<ProtoId<CharacterItemGroupPrototype>> Groups = new();
 
     [DataField(required: true)]
     public List<ProtoId<EntityPrototype>> Items = new();
