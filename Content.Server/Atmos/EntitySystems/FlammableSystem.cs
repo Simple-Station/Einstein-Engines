@@ -386,7 +386,7 @@ namespace Content.Server.Atmos.EntitySystems
             uid.SpawnTimer(2000, () =>
             {
                 flammable.Resisting = false;
-                flammable.FireStacks -= 1f;
+                flammable.FireStacks -= flammable.FirestackFade * 10f;
                 UpdateAppearance(uid, flammable);
             });
         }

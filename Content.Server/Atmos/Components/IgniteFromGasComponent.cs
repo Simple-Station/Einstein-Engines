@@ -12,8 +12,8 @@ public sealed partial class IgniteFromGasComponent : Component
     /// <summary>
     ///   What type of gas triggers ignition.
     /// </summary>
-    [DataField]
-    public Gas Gas = Gas.Plasma;
+    [DataField(required: true)]
+    public Gas Gas;
 
     /// <summary>
     ///   The total calculated fire stacks to apply every second without immunity.
@@ -27,7 +27,7 @@ public sealed partial class IgniteFromGasComponent : Component
     ///   The base amount of fire stacks to apply every second without immunity.
     /// </summary>
     [DataField]
-    public float BaseFireStacks = 0.10f;
+    public float BaseFireStacks = 0.13f;
 
     /// <summary>
     ///   The body parts that are vulnerable to ignition when exposed, and their fire stack values.

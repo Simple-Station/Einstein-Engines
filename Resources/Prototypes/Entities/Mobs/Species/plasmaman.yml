@@ -53,6 +53,8 @@
         Heat: 3
   - type: ThermalRegulator
     normalBodyTemperature: 270.15
+  - type: Flammable
+    firestackFade: -0.05
   - type: HumanoidAppearance
     species: Plasmaman
     hideLayersOnEquip:
