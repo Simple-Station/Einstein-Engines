@@ -59,6 +59,14 @@
         Piercing: 5
   - type: Tweezers # Forks are better than spoons
     speed: 0.35
+  - type: DamageOtherOnHit
+    staminaCost: 2.5
+  - type: EmbeddableProjectile
+    removalTime: 0.5
+    autoRemoveDuration: 10
+  - type: EmbedPassiveDamage
+  - type: ThrowingAngle
+    angle: 180
 
 - type: entity
   parent: UtensilBasePlastic
@@ -96,6 +104,9 @@
     damage:
       types:
         Blunt: 1
+  - type: DamageOtherOnHit
+  - type: ThrowingAngle
+    angle: 180
   - type: Shovel
     speedModifier: 0.1 # you can try
 
@@ -154,5 +165,8 @@
     damage:
       types:
         Blunt: 2
+  - type: DamageOtherOnHit
+  - type: ThrowingAngle
+    angle: 180
   - type: Shovel
     speedModifier: 0.05 # nah
