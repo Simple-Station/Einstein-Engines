@@ -26,6 +26,11 @@
     angle: 100
     soundHit:
       collection: MetalThud
+  - type: DamageOtherOnHit
+    staminaCost: 9
+  - type: EmbeddableProjectile
+  - type: ThrowingAngle
+    angle: 225
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:

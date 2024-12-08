@@ -88,6 +88,10 @@
     - Elyran
     - RobotTalk
     - Sign # It's intentional that they don't "Speak" sign language.
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 3
 
 - type: entity
   parent: PersonalAI
