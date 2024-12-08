@@ -41,6 +41,12 @@
     maxTargets: 4
     soundHit:
       path: "/Audio/Items/wirecutter.ogg"
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 4
+    soundHit:
+      collection: MetalThud
   - type: Tool
     qualities:
       - Cutting
@@ -118,6 +124,14 @@
     angle: 20
     soundHit:
       path: "/Audio/Weapons/bladeslice.ogg"
+  - type: DamageOtherOnHit
+    staminaCost: 5
+  - type: ThrowingAngle
+    angle: 270
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/star_hit.ogg
+    removalTime: 1
+  - type: EmbedPassiveDamage
   - type: Tool
     qualities:
       - Screwing
@@ -187,6 +201,7 @@
     angle: 100
     soundHit:
       collection: MetalThud
+  - type: DamageOtherOnHit
   - type: Tool
     qualities:
       - Anchoring
@@ -241,6 +256,8 @@
     heavyStaminaCost: 5
     soundHit:
       collection: MetalThud
+  - type: DamageOtherOnHit
+    staminaCost: 6
   - type: Tool
     qualities:
       - Prying
@@ -303,6 +320,7 @@
     heavyDamageBaseModifier: 1.2
     maxTargets: 1
     angle: 20
+  - type: DamageOtherOnHit
   - type: Item
     size: Small
   - type: Clothing
@@ -449,6 +467,13 @@
     angle: 20
     soundHit:
       path: "/Audio/Items/drill_hit.ogg"
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 8
+    staminaCost: 7.5
+    soundHit:
+      collection: MetalThud
   - type: ReverseEngineering # Nyano
     difficulty: 2
     recipes:
@@ -672,6 +697,10 @@
     angle: 100
     soundHit:
       collection: MetalThud
+  - type: DamageOtherOnHit
+    staminaCost: 8.5
+  - type: ThrowingAngle
+    angle: 45
   - type: Item
     size: Normal
     sprite: Objects/Tools/shovel.rsi
@@ -720,6 +749,7 @@
     angle: 20
     soundHit:
       collection: MetalThud
+  - type: DamageOtherOnHit
   - type: Tool
     qualities:
     - Rolling
