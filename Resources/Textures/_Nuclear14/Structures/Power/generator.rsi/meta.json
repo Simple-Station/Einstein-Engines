@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-SA-3.0",
+  "copyright": "https://github.com/JustLoveBeingAnOwl/Interstate-80-owlTaken at /commit/a6f9e0a6649e89f0aa731f363e07f541654ecb3d",
+  "size": {
+    "x": 64,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "generator_off"
+    },
+    {
+      "name": "generator_alert",
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "generator_on",
+      "delays": [
+        [
+          0.02,
+          0.02,
+          0.02,
+          0.02
+        ]
+      ]
+    },
+    {
+      "name": "generator_cycle",
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "generator_uranium",
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    }
+  ]
+}

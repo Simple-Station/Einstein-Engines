@@ -1,0 +1,80 @@
+# Yellow Handrail
+# Bounding boxes are funky and rotate funny if changed. Update them if you have the patience.
+- type: entity
+  parent: Railing
+  id: RailingYellow
+  name: yellow railing
+  description: Basic railing meant to protect idiots like you from falling.
+  components:
+  - type: Sprite
+    netsync: false
+    drawdepth: WallTops
+    sprite: _Nuclear14/Structures/Walls/nc14/railingyellow.rsi
+    state: side
+  - type: Icon
+    sprite: _Nuclear14/Structures/Walls/nc14/railingyellow.rsi
+    state: side
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+            bounds: "-0.5,0.20,0.5,0.0"
+        density: 100
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
+
+- type: entity
+  parent: RailingCorner
+  id: RailingYellowCorner
+  name: yellow railing
+  description: Basic railing meant to protect idiots like you from falling.
+  components:
+  - type: Sprite
+    netsync: false
+    drawdepth: WallTops
+    sprite: _Nuclear14/Structures/Walls/nc14/railingyellow.rsi
+    state: corner
+  - type: Icon
+    sprite: _Nuclear14/Structures/Walls/nc14/railingyellow.rsi
+    state: corner
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+            bounds: "-0.5,0.0,0.0,0.5"
+        density: 100
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
+
+
+- type: entity
+  parent: Railing
+  id: RailingYellowEnd
+  name: yellow railing
+  description: Basic railing meant to protect idiots like you from falling.
+  components:
+  - type: Sprite
+    netsync: false
+    drawdepth: WallTops
+    sprite: _Nuclear14/Structures/Walls/nc14/railingyellow.rsi
+    state: end
+  - type: Icon
+    sprite: _Nuclear14/Structures/Walls/nc14/railingyellow.rsi
+    state: end
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+            bounds: "-0.15,0.0,0.15,0.5"
+        density: 100
+        mask:
+        - TableMask
+        layer:
+        - TableLayer

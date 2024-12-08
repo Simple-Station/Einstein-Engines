@@ -1,0 +1,46 @@
+{
+    "version": 1,
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "license": "CC-BY-NC-SA-3.0",
+    "copyright": "Taken from MS13 and modified by Peptide90 for Nuclear14",
+    "states": [
+        {
+            "name": "full"
+        },
+        {
+            "name": "slanteddungeonalt0",
+            "directions": 4
+        },
+        {
+            "name": "slanteddungeonalt1",
+            "directions": 4
+        },
+        {
+            "name": "slanteddungeonalt2",
+            "directions": 4
+        },
+        {
+            "name": "slanteddungeonalt3",
+            "directions": 4
+        },
+        {
+            "name": "slanteddungeonalt4",
+            "directions": 4
+        },
+        {
+            "name": "slanteddungeonalt5",
+            "directions": 4
+        },
+        {
+            "name": "slanteddungeonalt6",
+            "directions": 4
+        },
+        {
+            "name": "slanteddungeonalt7",
+            "directions": 4
+        }
+    ]
+}

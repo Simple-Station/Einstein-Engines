@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "license": "CC0-1.0",
+  "copyright": "original sprites by Mithrandalf for N14",
+  "size": {
+    "x": 62,
+    "y": 106
+  },
+  "states": [
+    {
+      "name": "reactor"
+    }
+  ]
+}

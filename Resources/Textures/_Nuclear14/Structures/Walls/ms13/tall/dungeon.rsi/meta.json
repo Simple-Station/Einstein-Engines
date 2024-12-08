@@ -1,0 +1,46 @@
+{
+    "version": 1,
+    "size": {
+        "x": 32,
+        "y": 64
+    },
+    "license": "CC-BY-NC-SA-3.0",
+    "copyright": "Taken from MS13 and modified for SS14 by Kill_Me_I_Noobs",
+    "states": [
+        {
+            "name": "full"
+        },
+        {
+            "name": "talldungeon0",
+            "directions": 4
+        },
+        {
+            "name": "talldungeon1",
+            "directions": 4
+        },
+        {
+            "name": "talldungeon2",
+            "directions": 4
+        },
+        {
+            "name": "talldungeon3",
+            "directions": 4
+        },
+        {
+            "name": "talldungeon4",
+            "directions": 4
+        },
+        {
+            "name": "talldungeon5",
+            "directions": 4
+        },
+        {
+            "name": "talldungeon6",
+            "directions": 4
+        },
+        {
+            "name": "talldungeon7",
+            "directions": 4
+        }
+    ]
+}

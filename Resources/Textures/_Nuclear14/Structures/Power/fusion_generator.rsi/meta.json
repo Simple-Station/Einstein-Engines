@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "license": "CC0-1.0",
+  "copyright": "original sprites by Mithrandalf for N14",
+  "size": {
+    "x": 64,
+    "y": 48
+  },
+  "states": [
+    {
+      "name": "fusion_generator"
+    },
+    {
+      "name": "fusion_generator_buttons"
+    },
+    {
+      "name": "fusion_generator_core"
+    }
+  ]
+}

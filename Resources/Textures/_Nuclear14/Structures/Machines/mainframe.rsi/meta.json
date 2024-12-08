@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-SA-3.0",
+  "copyright": "Taken from MS13 at commit https://github.com/Mojave-Sun/mojave-sun-13/commit/d8cffba06df60b1655ab20aed287935b6a44c4cc",
+  "size": {
+    "x": 96,
+    "y": 64
+  },
+  "states": [
+    {
+      "name": "mainframe"
+    },
+    {
+      "name": "mainframe_on",
+      "delays": [
+        [
+          0.15,
+          0.15,
+          0.15
+        ]
+      ]
+    }
+  ]
+}

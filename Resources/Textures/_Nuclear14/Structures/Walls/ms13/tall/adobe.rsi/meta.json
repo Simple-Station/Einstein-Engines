@@ -1,0 +1,46 @@
+{
+    "version": 1,
+    "size": {
+        "x": 32,
+        "y": 64
+    },
+    "license": "CC-BY-NC-SA-3.0",
+    "copyright": "Taken from MS13 and modified for SS14 by Kill_Me_I_Noobs",
+    "states": [
+        {
+            "name": "full"
+        },
+        {
+            "name": "talladobe0",
+            "directions": 4
+        },
+        {
+            "name": "talladobe1",
+            "directions": 4
+        },
+        {
+            "name": "talladobe2",
+            "directions": 4
+        },
+        {
+            "name": "talladobe3",
+            "directions": 4
+        },
+        {
+            "name": "talladobe4",
+            "directions": 4
+        },
+        {
+            "name": "talladobe5",
+            "directions": 4
+        },
+        {
+            "name": "talladobe6",
+            "directions": 4
+        },
+        {
+            "name": "talladobe7",
+            "directions": 4
+        }
+    ]
+}

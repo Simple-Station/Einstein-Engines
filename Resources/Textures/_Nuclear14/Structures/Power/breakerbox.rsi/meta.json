@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-SA-3.0",
+  "copyright": "Made by Peptide90 for Nuclear14",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "display-charging",
+      "delays": [
+        [
+          0.1,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "frame"
+    },
+    {
+      "name": "channel1-auto_off"
+    },
+    {
+      "name": "channel1-auto_on"
+    },
+    {
+      "name": "lock0-unlocked"
+    },
+    {
+      "name": "lock1-unlocked"
+    },
+    {
+      "name": "panel"
+    },
+    {
+      "name": "base"
+    },
+    {
+      "name": "display-lack",
+      "delays": [
+        [
+          1,
+          2
+        ]
+      ]
+    },
+    {
+      "name": "display-full"
+    }
+  ]
+}

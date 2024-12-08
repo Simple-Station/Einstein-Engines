@@ -1,0 +1,448 @@
+- type: entity
+  parent: BaseStructure
+  id: N14WreckCoupe
+  name: wrecked coupe
+  description: a wrecked pre-war car.
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1.2,-0.3,1.1,0.4"
+        density: 60
+        mask:
+        - MachineMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+        - BulletImpassable
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel1:
+            min: 1
+            max: 5
+          N14ScrapSteel1:
+            min: 3
+            max: 10
+          N14ScrapLead1:
+            min: 1
+            max: 4
+      - !type:EmptyAllContainersBehaviour
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Misc/wrecks.rsi
+    layers:
+    - state: coupe-1
+      map: [ "body" ]
+    - state: coupe-bumper
+    - state: coupe-part-1-1
+      map: [ "trunk" ]
+    - state: coupe-part-2-1
+      map: [ "door" ]
+    - state: coupe-part-3-1
+      map: [ "hood" ]
+    - state: coupe-tires-1
+      map: [ "tires" ]
+  - type: RandomSprite
+    available:
+      - body:
+          coupe-1: ""
+        trunk:
+          coupe-part-1-1: ""
+          missing: ""
+        door:
+          coupe-part-2-1: ""
+          missing: ""
+        hood:
+          coupe-part-3-1: ""
+          missing: ""
+        tires:
+          coupe-tires-1: ""
+          coupe-tires-2: ""
+          coupe-tires-3: ""
+          missing: ""
+      - body:
+          coupe-2: ""
+        trunk:
+          coupe-part-1-2: ""
+          missing: ""
+        door:
+          coupe-part-2-2: ""
+          missing: ""
+        hood:
+          coupe-part-3-2: ""
+          missing: ""
+        tires:
+          coupe-tires-1: ""
+          coupe-tires-2: ""
+          coupe-tires-3: ""
+          missing: ""
+      - body:
+          coupe-3: ""
+        trunk:
+          coupe-part-1-3: ""
+          missing: ""
+        door:
+          coupe-part-2-3: ""
+          missing: ""
+        hood:
+          coupe-part-3-3: ""
+          missing: ""
+        tires:
+          coupe-tires-1: ""
+          coupe-tires-2: ""
+          coupe-tires-3: ""
+          missing: ""
+      - body:
+          coupe-4: ""
+        trunk:
+          coupe-part-1-4: ""
+          missing: ""
+        door:
+          coupe-part-2-4: ""
+          missing: ""
+        hood:
+          coupe-part-3-4: ""
+          missing: ""
+        tires:
+          coupe-tires-1: ""
+          coupe-tires-2: ""
+          coupe-tires-3: ""
+          missing: ""
+      - body:
+          coupe-5: ""
+        trunk:
+          coupe-part-1-5: ""
+          missing: ""
+        door:
+          coupe-part-2-5: ""
+          missing: ""
+        hood:
+          coupe-part-3-5: ""
+          missing: ""
+        tires:
+          coupe-tires-1: ""
+          coupe-tires-2: ""
+          coupe-tires-3: ""
+          missing: ""
+
+- type: entity
+  parent: N14WreckCoupe
+  id: N14WreckMusclecar
+  name: wrecked muscle car
+  description: a wrecked pre-war car.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Misc/wrecks.rsi
+    layers:
+    - state: muscle-1
+      map: [ "body" ]
+    - state: muscle-bumper
+    - state: muscle-part-1-1
+      map: [ "trunk" ]
+    - state: muscle-part-2-1
+      map: [ "door" ]
+    - state: coupe-part-3-1
+      map: [ "hood" ]
+    - state: muscle-tires-1
+      map: [ "tires" ]
+  - type: RandomSprite
+    available:
+      - body:
+          muscle-1: ""
+        trunk:
+          muscle-part-1-1: ""
+          missing: ""
+        door:
+          muscle-part-2-1: ""
+          missing: ""
+        hood:
+          coupe-part-3-1: ""
+          missing: ""
+        tires:
+          muscle-tires-1: ""
+          muscle-tires-2: ""
+          muscle-tires-3: ""
+          missing: ""
+      - body:
+          muscle-2: ""
+        trunk:
+          muscle-part-1-2: ""
+          missing: ""
+        door:
+          muscle-part-2-2: ""
+          missing: ""
+        hood:
+          coupe-part-3-2: ""
+          missing: ""
+        tires:
+          muscle-tires-1: ""
+          muscle-tires-2: ""
+          muscle-tires-3: ""
+          missing: ""
+      - body:
+          muscle-3: ""
+        trunk:
+          muscle-part-1-3: ""
+          missing: ""
+        door:
+          muscle-part-2-3: ""
+          missing: ""
+        hood:
+          coupe-part-3-3: ""
+          missing: ""
+        tires:
+          muscle-tires-1: ""
+          muscle-tires-2: ""
+          muscle-tires-3: ""
+          missing: ""
+      - body:
+          muscle-4: ""
+        trunk:
+          muscle-part-1-4: ""
+          missing: ""
+        door:
+          muscle-part-2-4: ""
+          missing: ""
+        hood:
+          coupe-part-3-4: ""
+          missing: ""
+        tires:
+          muscle-tires-1: ""
+          muscle-tires-2: ""
+          muscle-tires-3: ""
+          missing: ""
+      - body:
+          muscle-5: ""
+        trunk:
+          muscle-part-1-5: ""
+          missing: ""
+        door:
+          muscle-part-2-5: ""
+          missing: ""
+        hood:
+          coupe-part-3-5: ""
+          missing: ""
+        tires:
+          muscle-tires-1: ""
+          muscle-tires-2: ""
+          muscle-tires-3: ""
+          missing: ""
+
+- type: entity
+  parent: N14WreckCoupe
+  id: N14WreckSportscar
+  name: wrecked sports car
+  description: a wrecked pre-war car.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Misc/wrecks.rsi
+    layers:
+    - state: sport-1
+      map: [ "body" ]
+    - state: sport-bumper
+    - state: sport-part-1-1
+      map: [ "trunk" ]
+    - state: sport-part-2-1
+      map: [ "door" ]
+    - state: sport-part-3-1
+      map: [ "hood" ]
+    - state: sport-tires-1
+      map: [ "tires" ]
+  - type: RandomSprite
+    available:
+      - body:
+          sport-1: ""
+        trunk:
+          sport-part-1-1: ""
+          missing: ""
+        door:
+          sport-part-2-1: ""
+          missing: ""
+        hood:
+          sport-part-3-1: ""
+          missing: ""
+        tires:
+          sport-tires-1: ""
+          sport-tires-2: ""
+          sport-tires-3: ""
+          missing: ""
+      - body:
+          sport-2: ""
+        trunk:
+          sport-part-1-2: ""
+          missing: ""
+        door:
+          sport-part-2-2: ""
+          missing: ""
+        hood:
+          sport-part-3-2: ""
+          missing: ""
+        tires:
+          sport-tires-1: ""
+          sport-tires-2: ""
+          sport-tires-3: ""
+          missing: ""
+      - body:
+          sport-3: ""
+        trunk:
+          sport-part-1-3: ""
+          missing: ""
+        door:
+          sport-part-2-3: ""
+          missing: ""
+        hood:
+          sport-part-3-3: ""
+          missing: ""
+        tires:
+          sport-tires-1: ""
+          sport-tires-2: ""
+          sport-tires-3: ""
+          missing: ""
+      - body:
+          sport-4: ""
+        trunk:
+          sport-part-1-4: ""
+          missing: ""
+        door:
+          sport-part-2-4: ""
+          missing: ""
+        hood:
+          sport-part-3-4: ""
+          missing: ""
+        tires:
+          sport-tires-1: ""
+          sport-tires-2: ""
+          sport-tires-3: ""
+          missing: ""
+      - body:
+          sport-5: ""
+        trunk:
+          sport-part-1-5: ""
+          missing: ""
+        door:
+          sport-part-2-5: ""
+          missing: ""
+        hood:
+          sport-part-3-5: ""
+          missing: ""
+        tires:
+          sport-tires-1: ""
+          sport-tires-2: ""
+          sport-tires-3: ""
+          missing: ""
+
+- type: entity
+  parent: N14WreckCoupe
+  id: N14WreckVan
+  name: wrecked van
+  description: a wrecked pre-war van.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Misc/wrecks.rsi
+    layers:
+    - state: van-1
+      map: [ "body" ]
+    - state: van-bumper
+    - state: van-part-1-1
+      map: [ "trunk" ]
+    - state: van-part-2-1
+      map: [ "door" ]
+    - state: van-tires-1
+      map: [ "tires" ]
+  - type: RandomSprite
+    available:
+      - body:
+          van-1: ""
+        trunk:
+          van-part-1-1: ""
+          missing: ""
+        door:
+          van-part-2-1: ""
+          missing: ""
+        tires:
+          van-tires-1: ""
+          van-tires-2: ""
+          van-tires-3: ""
+          missing: ""
+      - body:
+          van-2: ""
+        trunk:
+          van-part-1-2: ""
+          missing: ""
+        door:
+          van-part-2-2: ""
+          missing: ""
+        tires:
+          van-tires-1: ""
+          van-tires-2: ""
+          van-tires-3: ""
+          missing: ""
+      - body:
+          van-3: ""
+        trunk:
+          van-part-1-3: ""
+          missing: ""
+        door:
+          van-part-2-3: ""
+          missing: ""
+        tires:
+          van-tires-1: ""
+          van-tires-2: ""
+          van-tires-3: ""
+          missing: ""
+      - body:
+          van-4: ""
+        trunk:
+          van-part-1-4: ""
+          missing: ""
+        door:
+          van-part-2-4: ""
+          missing: ""
+        tires:
+          van-tires-1: ""
+          van-tires-2: ""
+          van-tires-3: ""
+          missing: ""
+      - body:
+          van-5: ""
+        trunk:
+          van-part-1-5: ""
+          missing: ""
+        door:
+          van-part-2-5: ""
+          missing: ""
+        tires:
+          van-tires-1: ""
+          van-tires-2: ""
+          van-tires-3: ""
+          missing: ""
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1.4,-0.7,1.5,0.4"
+        density: 60
+        mask:
+        - MachineMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+        - BulletImpassable
+  - type: Occluder
+    boundingBox: "-1,-0.7,1.5,0.4"

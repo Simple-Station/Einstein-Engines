@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-SA-3.0",
+  "copyright": "Taken from Nukapop-13.",
+  "size": {
+    "x": 32,
+    "y": 64
+  },
+  "states": [
+    {
+      "name": "emptyflag"
+    },
+    {
+      "name": "ncrflag"
+    },
+    {
+      "name": "legionflag"
+    },
+    {
+      "name": "oasisflag"
+    },
+    {
+      "name": "bosflag"
+    },
+    {
+      "name": "followersflag"
+    },
+    {
+      "name": "enclaveflag"
+    },
+    {
+      "name": "gunnerflag"
+    },
+    {
+      "name": "locustflag"
+    },
+    {
+      "name": "hvhflag"
+    },
+    {
+      "name": "vtccflag"
+    },
+    {
+      "name": "cornflag"
+    },
+    {
+      "name": "cornflag2"
+    },
+    {
+      "name": "khanflag"
+    },
+    {
+      "name": "cotc"
+    }
+  ]
+}

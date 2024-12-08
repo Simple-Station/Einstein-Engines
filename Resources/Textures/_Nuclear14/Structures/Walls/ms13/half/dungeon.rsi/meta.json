@@ -1,0 +1,46 @@
+{
+    "version": 1,
+    "license": "CC-BY-NC-SA-3.0",
+    "copyright": "Taken from https://github.com/Mojave-Sun/mojave-sun-13/commits/a7769f6ea36ce0a273f3d8dcac1f9ca94e345110 and modified.",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "dungeon0",
+            "directions": 4
+        },
+        {
+            "name": "dungeon1",
+            "directions": 4
+        },
+        {
+            "name": "dungeon2",
+            "directions": 4
+        },
+        {
+            "name": "dungeon3",
+            "directions": 4
+        },
+        {
+            "name": "dungeon4",
+            "directions": 4
+        },
+        {
+            "name": "dungeon5",
+            "directions": 4
+        },
+        {
+            "name": "dungeon6",
+            "directions": 4
+        },
+        {
+            "name": "dungeon7",
+            "directions": 4
+        },
+        {
+            "name": "full"
+        }
+    ]
+}

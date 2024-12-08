@@ -1,0 +1,96 @@
+﻿- type: entity
+  id: N14WallmountFireHydrant
+  name: fire hydrant
+  description: A wall mounted hydrant for putting out large fires.
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: WallMount
+      arc: 360
+    - type: Transform
+      anchored: true
+    - type: Clickable
+    - type: InteractionOutline
+    - type: Sprite
+      sprite: _Nuclear14/Structures/Wallmounts/hydrant.rsi
+      snapCardinals: true
+      drawdepth: Overdoors
+      layers:
+      - state: frame
+      - state: closed
+        map: ["enum.ItemCabinetVisualLayers.Door"]
+      - state: closed # N14:TODO: Add this state
+        map: ["enum.ItemCabinetVisualLayers.ContainsItem"]
+        visible: true
+    - type: ItemCabinet
+      cabinetSlot:
+        ejectOnInteract: true
+      doorSound:
+        path: /Audio/Machines/machine_switch.ogg
+      openState: open
+      closedState: closed
+    - type: Appearance
+    - type: ItemSlots
+    - type: ContainerContainer
+      containers:
+        ItemCabinet: !type:ContainerSlot
+    - type: Damageable
+      damageContainer: Inorganic
+      damageModifierSet: Metallic
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 80
+          behaviors:
+            - !type:DoActsBehavior
+              acts: [ "Destruction" ]
+        - trigger:
+            !type:DamageTrigger
+            damage: 40
+          behaviors:
+            - !type:EmptyAllContainersBehaviour
+            - !type:DoActsBehavior
+              acts: [ "Destruction" ]
+            - !type:PlaySoundBehavior
+              sound:
+                collection: MetalBreak
+
+- type: entity
+  id: N14WallmountFireHydrantOpen
+  parent: N14WallmountFireHydrant
+  suffix: Open
+  components:
+  - type: ItemCabinet
+    opened: true
+    doorSound:
+      path: /Audio/Machines/machine_switch.ogg
+    openState: open
+    closedState: closed
+    
+- type: entity
+  parent: N14WallmountFireHydrant
+  id: N14WallmountFireHydrantOld
+  components:
+    - type: Sprite
+      sprite: _Nuclear14/Structures/Wallmounts/hydrantold.rsi
+      snapCardinals: true
+      layers:
+      - state: frame
+      - state: closed
+        map: ["enum.ItemCabinetVisualLayers.Door"]
+      - state: closed # N14:TODO: Add this state
+        map: ["enum.ItemCabinetVisualLayers.ContainsItem"]
+        visible: true
+
+- type: entity
+  parent: N14WallmountFireHydrantOld
+  id: N14WallmountFireHydrantOldOpen
+  suffix: Open
+  components:
+  - type: ItemCabinet
+    opened: true
+    doorSound:
+      path: /Audio/Machines/machine_switch.ogg
+    openState: open
+    closedState: closed

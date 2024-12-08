@@ -1,0 +1,26 @@
+- type: entity
+  parent: HospitalCurtains
+  id: N14JunkCurtain
+  name: curtains
+  suffix: closed
+  description: No privacy guaranteed.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Doors/Curtains/junkcurtain.rsi
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+      
+- type: entity
+  parent: N14JunkCurtain
+  id: N14JunkCurtainOpen
+  name: curtains
+  suffix: open
+  description: No privacy guaranteed.
+  components:
+  - type: Door
+    state: open
+  - type: Occluder
+    enabled: false
+  - type: Physics
+    canCollide: false

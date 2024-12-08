@@ -1,0 +1,23 @@
+- type: entity
+  parent: BaseStructure
+  id: N14NukeSilo
+  name:  Nuclear Missile Silo
+  description: "a prewar missile silo. wonder whats inside"
+  components:
+  - type: Sprite
+    scale: 2,2
+    drawdepth: FloorObjects
+    noRot: true
+    sprite: _Nuclear14/Structures/Misc/nukesilo.rsi
+    state: silo
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+            radius: 3.5
+        density: 1000
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer

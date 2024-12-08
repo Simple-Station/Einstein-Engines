@@ -1,0 +1,360 @@
+#MARK: Base
+- type: entity
+  id: N14VendingMachineStorageBase # This is for vending machines that are storage and not actual vending machines.
+  parent: BaseMachinePowered
+  name: vending machine
+  description: Just add capitalism!
+  abstract: true
+  components:
+  - type: AmbientOnPowered
+  - type: AmbientSound
+    volume: -9
+    range: 3
+    enabled: false
+    sound:
+      path: /Audio/Ambience/Objects/vending_machine_hum.ogg
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/empty.rsi
+    snapCardinals: false
+  - type: Physics
+    bodyType: Static
+  - type: Transform
+    noRot: true
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.45,0.25,0.45"
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+        density: 1000
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Breakage"]
+      - !type:EjectVendorItems
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel1:
+            min: 1
+            max: 1
+          N14ScrapElectronic1:
+           min: 1
+           max: 3
+          N14Scrap1:
+           min: 2
+           max: 4
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalGlassBreak
+  - type: Repairable
+    doAfterDelay: 8
+  - type: Anchorable
+  - type: TypingIndicator
+    proto: robot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Vending
+  - type: DoAfter
+  - type: Electrified
+    enabled: false
+    usesApcPower: true
+  - type: PointLight
+    radius: 2.5
+    energy: 1
+    color: "#b34747"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+  - type: LitOnPowered
+  - type: ApcPowerReceiver
+    powerLoad: 200
+  - type: Actions
+  - type: StaticPrice
+    price: 100
+  - type: Appearance
+  - type: LanguageKnowledge
+    speaks:
+    - GalacticCommon
+    - RobotTalk
+    understands:
+    - GalacticCommon
+    - RobotTalk
+
+#MARK: Nuka Vending
+- type: entity
+  parent: VendingMachine
+  id: N14VendingMachineNukaCola
+  name: Nuka-Cola machine
+  description: A Pre-War vending machine that dispenses Nuka-Cola Corporation branded beverages.
+  suffix: vendor, normal
+  components:
+  - type: VendingMachine
+    pack: NukaInventory
+    dispenseOnHitChance: 0.25
+    dispenseOnHitThreshold: 2
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+    denyState: deny-unshaded
+    ejectDelay: 1.9
+    initialStockQuality: 0.05
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Machines/VendingMachines/nukacola.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: WiresVisuals
+  - type: PointLight
+    radius: 2.5
+    energy: 1
+    color: "#b34747"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+
+#MARK: Nuka Vending+
+- type: entity
+  parent: N14VendingMachineNukaCola
+  id: N14VendingMachineNukaColaGenerous
+  name: Nuka-Cola machine
+  description: A Pre-War vending machine that dispenses Nuka-Cola Corporation branded beverages.
+  suffix: vendor, generous
+  components:
+  - type: VendingMachine
+    pack: NukaInventory
+    dispenseOnHitChance: 0.25
+    dispenseOnHitThreshold: 2
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+    denyState: deny-unshaded
+    ejectDelay: 1.9
+    initialStockQuality: 0.30
+
+#MARK: Nuka Irradiated
+- type: entity
+  parent: N14VendingMachineNukaCola
+  id: N14VendingMachineNukaColaIrradiated
+  name: Nuka-Cola machine
+  suffix: vendor, irradiated
+  description: A Pre-War vending machine that dispenses Nuka-Cola Corporation branded beverages.
+  components:
+  - type: VendingMachine
+    pack: NukaRadInventory
+    # Needs a run down variant of the sprite
+
+#MARK: Nuka Storage
+- type: entity
+  parent: N14VendingMachineStorageBase
+  id: N14VendingMachineNukaColaNew
+  suffix: storage, empty
+  name: Nuka-Cola machine
+  description: A Pre-War vending machine that dispenses Nuka-Cola Corporation branded beverages.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Machines/VendingMachines/nukacola.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "normal-unshaded"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: WiresVisuals
+  - type: Storage
+    grid:
+    - 0,0,3,3
+    maxItemSize: Small
+  - type: UserInterface
+    interfaces:
+    - key: enum.StorageUiKey.Key
+      type: StorageBoundUserInterface
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+  - type: Transform
+    anchored: true
+
+#MARK: Nuka Filled
+- type: entity
+  parent: N14VendingMachineNukaColaNew
+  id: N14VendingMachineNukaColaNewFilled
+  suffix: storage, random
+  components:
+  - type: StorageFill
+    contents:
+      - id: N14DrinkNukaColaEmpty
+        prob: 0.3
+      - id: N14DrinkNukaColaBroken
+        prob: 0.3
+      - id: N14DrinkNukaCola
+        prob: 0.3
+      - id: N14DrinkNukaCola
+        prob: 0.3
+      - id: N14DrinkNukaCola
+        prob: 0.2
+      - id: N14DrinkNukaColaCherry
+        prob: 0.1
+      - id: N14DrinkNukaColaGrape
+        prob: 0.1
+      - id: N14DrinkNukaColaOrange
+        prob: 0.1
+      - id: N14DrinkNukaColaYellow
+        prob: 0.05
+      - id: N14DrinkNukaColaQuantum
+        prob: 0.05
+      - id: N14DrinkNukaColaQuartz
+        prob: 0.05
+      - id: N14DrinkNukaColaVictory
+        prob: 0.05
+      - id: N14DrinkNukaColaWild
+        prob: 0.05
+
+#MARK: Vim Storage
+- type: entity
+  parent: N14VendingMachineStorageBase
+  id: N14VendingMachineVim
+  suffix: storage, empty
+  name: Vim machine
+  description: A Pre-War vending machine that dispenses Vim branded beverages.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Machines/VendingMachines/vim.rsi
+    layers:
+    - state: vimmachine
+  - type: Storage
+    grid:
+    - 0,0,3,3
+    maxItemSize: Small
+  - type: UserInterface
+    interfaces:
+    - key: enum.StorageUiKey.Key
+      type: StorageBoundUserInterface
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+  - type: Transform
+    anchored: true
+    noRot: false
+
+#MARK: Vim Filled
+- type: entity
+  parent: N14VendingMachineVim
+  id: N14VendingMachineVimFilled
+  suffix: storage, random
+  components:
+  - type: StorageFill
+    contents:
+      - id: N14DrinkNukaColaEmpty
+        prob: 0.3
+      - id: N14DrinkNukaColaBroken
+        prob: 0.3
+      - id: N14DrinkVim
+        prob: 0.3
+      - id: N14DrinkVimCaptainsBlend
+        prob: 0.2
+      - id: N14DrinkVimRefresh
+        prob: 0.2
+      - id: N14DrinkVimQuartz
+        prob: 0.1
+      - id: N14DrinkVim
+        prob: 0.1
+      - id: N14DrinkVimCaptainsBlend
+        prob: 0.1
+      - id: N14DrinkNukaColaYellow
+        prob: 0.05
+      - id: N14DrinkVimRefresh
+        prob: 0.05
+      - id: N14DrinkVimQuartz
+        prob: 0.05
+
+
+#MARK: Cig vendors
+- type: entity
+  parent: BaseStructure
+  id: N14VendingMachineCigarette
+  suffix: storage, empty
+  name: cigarette vendor
+  description: A Pre-War vending machine that dispenses cigarettes.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Machines/VendingMachines/vendors.rsi
+    layers:
+    - state: cigarette
+  - type: Storage
+    grid:
+    - 0,0,3,3
+    maxItemSize: Normal
+  - type: UserInterface
+    interfaces:
+    - key: enum.StorageUiKey.Key
+      type: StorageBoundUserInterface
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+  - type: Transform
+    anchored: true
+
+#MARK: Cig Filled
+- type: entity
+  parent: N14VendingMachineCigarette
+  id: N14VendingMachineCigaretteFilled
+  suffix: storage, random
+  components:
+  - type: StorageFill
+    contents:
+      - id: N14CigarettePackWinston
+        prob: 0.3
+      - id: N14CigarettePackMarlboro
+        prob: 0.3
+      - id: N14CigarettePackKool
+        prob: 0.3
+      - id: N14CigarettePackSalem
+        prob: 0.3
+      - id: N14CigarettePackWinston
+        prob: 0.2
+      - id: N14CigarettePackMarlboro
+        prob: 0.2
+      - id: N14CigarettePackKool
+        prob: 0.2
+      - id: N14CigarettePackSalem
+        prob: 0.2
+
+#MARK: Cig Republic
+- type: entity
+  parent: N14VendingMachineCigarette
+  id: N14VendingMachineCigaretteFilledRepublic
+  suffix: storage, republics
+  name: Republics cig vendor
+  description: A pre-war cigarette vendor that's been filled with Republic cigarette packs.
+  components:
+  - type: StorageFill
+    contents:
+      - id: N14CigarettePackRepublics
+        prob: 0.5
+      - id: N14CigarettePackRepublics
+        prob: 0.5
+      - id: N14CigarettePackRepublics
+        prob: 0.5
+      - id: N14CigarettePackRepublics
+        prob: 0.3

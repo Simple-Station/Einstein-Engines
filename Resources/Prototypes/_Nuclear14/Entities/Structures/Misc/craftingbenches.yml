@@ -1,0 +1,616 @@
+- type: entity
+  parent: BaseStructure
+  id: N14WorkbenchBase
+  description: A workbench with metal working tools for crafting.
+  name: workbench
+  abstract: true
+  components:
+  - type: InteractionOutline
+  - type: Appearance
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+            bounds: "-0.1,-0.1,1,0.3"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Misc/workbenches.rsi
+    state: workbench
+    offset: 0.5, 0
+  - type: Lathe
+  - type: MaterialStorage
+  - type: ActivatableUI
+    key: enum.LatheUiKey.Key
+  - type: UserInterface
+    interfaces:
+    - key: enum.LatheUiKey.Key
+      type: LatheBoundUserInterface
+  - type: ExtensionCableReceiver
+  - type: ApcPowerReceiver
+    needsPower: false
+
+- type: entity
+  parent: N14WorkbenchBase
+  id: N14WorkbenchWeaponbench
+  description: A workbench with weapon working tools for crafting.
+  name: weapon workbench
+  components:
+  - type: Sprite
+    state: weaponbench
+  - type: MaterialStorage
+    whitelist:
+      tags:
+        - Sheet
+        - RawMaterial
+        - Ingot
+        - Scrap
+  - type: Lathe
+    idleState: icon
+    runningState: icon # change this
+    staticRecipes: # Guns or melee weapons related only.
+      # Guns
+      - BowImprovised
+      # Melee
+      - N14ScrapMachete
+      - N14WastelandSpear
+      - N14WastelandTribalJavelin
+      - N14BrassKnife
+      - N14TrainingSword
+      - N14LongSword
+
+- type: entity
+  parent: N14WorkbenchBase
+  id: N14WorkbenchAmmobench
+  description: A workbench with ammo working tools for crafting.
+  name: ammo workbench
+  components:
+  - type: Construction
+    graph: N14WorkbenchAmmobench
+    node: WorkbenchAmmobench
+  - type: Sprite
+    state: ammobench
+  - type: MaterialStorage
+    whitelist:
+      tags:
+        - Sheet
+        - RawMaterial
+        - Ingot
+  - type: Lathe
+    idleState: icon
+    runningState: icon # change this
+    staticRecipes: # Ammo related only.
+      - Magazine556Rifle
+      - LongMagazine556Rifle
+      - LMGMagazine556Rifle
+      - MagazineBox556
+      - N14MagazineMinigun5mm
+      - Magazine762Rifle
+      - MagazineBox762
+      - SpeedLoader9
+      - N14MagazinePistol9mm
+      - N14MagazineSMG9mm
+      - MagazineBox9mm
+      - SpeedLoader10
+      - N14MagazinePistol10mm
+      - N14MagazineSMG10mm
+      - MagazineBox10mm
+      - N14MagazinePistol12mm
+      - N14MagazineSMG12mm
+      - N14TopMagazineSMG12mm
+      - MagazineBox12
+      - N14ShellShotgun12
+      - N14MagazineShotgun12
+      - MagazineBox12gauge
+      - N14ShellShotgun20
+      - N14MagazineShotgun20
+      - MagazineBox20gauge
+      - N14MagazinePistol22lr
+      - MagazineBox22
+      - SpeedLoader44
+      - MagazineBox44
+      - N14MagazinePistol45
+      - Magazine45SubMachineGun
+      - MagazineBox45
+      - Magazine308Rifle
+      - ClipMagazine308Rifle
+      - MagazineBox308
+      - SpeedLoader45-70
+      - SpeedLoader45-70Tube
+      - MagazineBox45-70
+      - N14Magazine50AMR
+      - MagazineBox50
+
+- type: entity
+  parent: N14WorkbenchBase
+  id: N14WorkbenchAmmobenchFrame
+  description: A workbench with ammo working tools for crafting. This one is still being built!
+  name: ammo workbench frame
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Misc/workbenches.rsi
+    layers:
+    - state: ammobenchframe0
+      map: [ "enum.ConstructionVisuals.Layer" ]
+    offset: 0.5, 0
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ConstructionVisuals.Key:
+        enum.ConstructionVisuals.Layer:
+          WorkbenchAmmobenchFrame: { state: ammobenchframe0 }
+          WorkbenchAmmobenchAluminum: { state: ammobenchframe1 }
+          WorkbenchAmmobenchSteel: { state: ammobenchframe2 }
+          WorkbenchAmmobenchScrews: { state: ammobenchframe3 }
+          WorkbenchAmmobenchUnwrenched: { state: ammobenchframe4 }
+          WorkbenchAmmobenchUnscrewed: { state: ammobenchframe5 }
+  - type: Construction
+    graph: N14WorkbenchAmmobench
+    node: WorkbenchAmmobenchFrame
+    defaultTarget: WorkbenchAmmobench
+
+- type: entity
+  parent: N14WorkbenchBase
+  id: N14WorkbenchArmorbench
+  description: A workbench with armor working tools for crafting.
+  name: armor workbench
+  components:
+  - type: Sprite
+    state: armorbench
+  - type: MaterialStorage
+    whitelist:
+      tags:
+        - Sheet
+        - RawMaterial
+        - Ingot
+        - RawLeather # move it to the tanning machine
+  - type: Lathe
+    idleState: icon
+    runningState: icon # change this
+    staticRecipes:
+      # Armor
+      - N14ClothingOuterCoatLeatherDuster
+      - N14ClothingOuterCoatWinterArmored
+      - N14ClothingOuterLeatherArmor
+      - N14ClothingOuterChitinArmor
+      - N14ClothingOuterPainspike
+      - N14ClothingOuterTribalArmorHeavy
+      - N14ClothingOuterInsectArmor
+      - N14ClothingOuterMetalArmor
+      # Shield's
+      - N14InsectShield
+      - MakeshiftShield
+      - WoodenBuckler
+      # Other
+      - N14MaterialLeather
+      - ClothingBeltQuiver # In misc.yml
+      - ClothingBeltQuiverSpear
+
+- type: entity
+  parent: N14WorkbenchBase
+  id: N14WorkbenchTinkerbench
+  description: A workbench with tinkering tools for crafting.
+  name: tinker workbench
+  components:
+  - type: Sprite
+    state: tinkerbench
+  - type: PointLight
+    color: "#fffbeb"
+    energy: 2
+    offset: 0.5, 0
+    radius: 1.5
+  - type: Lathe
+    idleState: icon
+    runningState: icon # change this
+    staticRecipes:
+      #Tools
+      - N14Multitool
+      - N14NetworkConfigurator
+      - N14PowerDrill
+      - N14HandheldGPSBasic
+      - N14TRayScanner
+      - N14GasAnalyzer
+      - N14RPED
+      - N14MiningDrill
+      - N14HandheldRadio
+      #Misc
+      - N14FlashlightLantern
+      - N14GlowstickRed
+
+- type: entity
+  parent: BaseStructure
+  id: N14WorkbenchChemistryset
+  description: A chemistry set for crafting drugs and compounds
+  name: chemical set
+  components:
+  - type: Construction
+    graph: N14WorkbenchChemistryset
+    node: WorkbenchChemistryset
+  - type: InteractionOutline
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Misc/workbenches.rsi
+    state: chemicalset
+    drawdepth: SmallObjects
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.10,-0.10,0.10,0.10"
+        density: 500
+        mask:
+          - TabletopMachineMask
+  - type: ItemSlots
+    slots:
+      beakerSlot:
+        whitelist:
+          components:
+          - FitsInDispenser
+      outputSlot:
+        whitelistFailPopup: chem-master-component-cannot-put-entity-message
+        whitelist:
+          tags:
+          - Bottle
+          - PillCanister
+  - type: SolutionContainerManager
+    solutions:
+      buffer: {}
+  - type: DumpableSolution
+    solution: buffer
+    unlimited: true
+  - type: ActivatableUI
+    key: enum.ChemMasterUiKey.Key
+  - type: UserInterface
+    interfaces:
+    - key: enum.ChemMasterUiKey.Key
+      type: ChemMasterBoundUserInterface
+  - type: ChemMaster
+    pillDosageLimit: 20
+
+- type: entity
+  parent: BaseStructure
+  id: N14WorkbenchChemistrysetFrame
+  description: A chemistry set for crafting drugs and compounds. This one is still being built!
+  name: chemical set frame
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Misc/workbenches.rsi
+    layers:
+    - state: chemicalsetframe0
+      map: [ "enum.ConstructionVisuals.Layer" ]
+    drawdepth: SmallObjects
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ConstructionVisuals.Key:
+        enum.ConstructionVisuals.Layer:
+          WorkbenchChemistrysetFrame: { state: chemicalsetframe0 }
+          WorkbenchChemistrysetSteel: { state: chemicalsetframe1 }
+          WorkbenchChemistrysetGears: { state: chemicalsetframe2 }
+          WorkbenchChemistrysetScrews: { state: chemicalsetframe3 }
+          WorkbenchChemistrysetUnwelded: { state: chemicalsetframe4 }
+          WorkbenchChemistrysetUnscrewed: { state: chemicalsetframe5 }
+  - type: Construction
+    graph: N14WorkbenchChemistryset
+    node: WorkbenchChemistrysetFrame
+    defaultTarget: WorkbenchChemistryset
+
+- type: entity
+  parent: N14WorkbenchBase
+  id: N14WorkbenchMetal
+  description: A workbench with metal working tools for crafting.
+  name: workbench
+  components:
+  - type: Construction
+    graph: N14WorkbenchMetal
+    node: WorkbenchMetal
+  - type: MaterialStorage
+    whitelist:
+      tags:
+        - Sheet
+        - RawMaterial
+        - Ingot
+  - type: Lathe
+    idleState: icon
+    runningState: icon # change this
+    staticRecipes:
+      # Tools
+      - N14Wirecutter
+      - N14Screwdriver
+      - N14Welder
+      - N14Wrench
+      - N14CableStack
+      - N14CableMVStack
+      - N14CableHVStack
+      - N14Crowbar
+      - N14Pickaxe
+      - N14Shovel
+      - N14SprayPainter
+      - N14ClothingEyesGlassesWelding
+      - N14HydroponicsToolHoe
+      - N14HydroponicsToolHatchet
+      - HydroponicsToolSpade
+      - N14HydroponicsToolScythe
+      - N14HydroponicsToolClippers
+      - N14HandLabeler
+      # Kitchen
+      - N14ButchersCleaver
+      - N14KitchenKnife
+      - N14DrinkMug
+      - N14DrinkMugMetal
+      - N14DrinkGlass
+      - N14DrinkShotGlass
+      - N14DrinkGlassCoupeShaped
+      - N14FoodPlate
+      - N14FoodPlateSmall
+      - N14FoodPlatePlastic
+      - N14FoodPlateSmallPlastic
+      - FoodBowlBig
+      - N14FoodPlateTin
+      - N14FoodKebabSkewer
+      - N14JunkCookpot
+      - N14JunkCoffeepot
+      - PlantBag
+      # Janitorial
+      - N14Mop
+      - N14MopBucket
+      - N14Bucket
+      - N14WetFloorSign
+      - N14SprayBottle
+      - N14TrashBag
+      - N14LightReplacer
+      - N14Mousetrap
+      - N14Plunger
+      - N14WeaponSprayNozzle
+      - N14ClothingBackpackWaterTank
+      # Chemistry
+      - N14Beaker
+      - N14LargeBeaker
+      - N14Dropper
+      - N14Syringe
+      - N14SyringeInjectable
+      - N14PillCanister
+      - N14ChemistryEmptyBottle01
+      - N14PillCanisterRadX
+      - N14PillCanisterMentats
+      - N14PillCanisterBuffout
+      - N14PillCanisterCateye
+      - N14PillCanisterFixer
+      - N14JetInhaler
+      - N14TurboInhaler
+      - N14HydraInhaler
+      - N14ChemicalSyringeAntidoteEmpty
+      - N14PsychoSyringe
+      - N14RadAwayPhialEmpty
+      # Misc
+      - N14LightTube
+      - N14LedLightTube
+      - N14SodiumLightTube
+      - N14ExteriorLightTube
+      - N14LightBulb
+      - N14LedLightBulb
+      - N14Flare
+      - N14Matchbox
+      # Ammo
+      - ArrowRegular
+      # Machine Parts
+      - N14PortableGeneratorWeldingFuelMachineParts
+
+- type: entity
+  parent: N14WorkbenchBase
+  id: N14WorkbenchMetalFrame
+  description: A workbench with metal working tools for crafting. This one is still being built!
+  name: workbench frame
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Misc/workbenches.rsi
+    layers:
+    - state: workbenchframe0
+      map: [ "enum.ConstructionVisuals.Layer" ]
+    offset: 0.5, 0
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ConstructionVisuals.Key:
+        enum.ConstructionVisuals.Layer:
+          WorkbenchMetalFrame: { state: workbenchframe0 }
+          WorkbenchMetalAluminum: { state: workbenchframe1 }
+          WorkbenchMetalScrews: { state: workbenchframe2 }
+          WorkbenchMetalUnwrenched: { state: workbenchframe3 }
+          WorkbenchMetalUnscrewed: { state: workbenchframe4 }
+  - type: Construction
+    graph: N14WorkbenchMetal
+    node: WorkbenchMetalFrame
+    defaultTarget: WorkbenchMetal
+
+- type: entity
+  parent: N14WorkbenchBase
+  id: N14WorkbenchForge
+  description: A forge made from pieces of scrap. Looks hot.
+  name: forge
+  components:
+  - type: Construction
+    graph: N14WorkbenchForge
+    node: WorkbenchForge
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Misc/forgeworkbench.rsi
+    state: forge
+  - type: PointLight
+    offset: "-0.13, 0"
+    color: "#f05e1b"
+    radius: 3
+    energy: 3
+  - type: MaterialStorage
+    whitelist:
+      tags:
+        - Sheet
+        - RawMaterial
+        - Ingot
+        - Ore
+        - Scrap
+  - type: Lathe
+    idleState: icon
+    runningState: icon # change this
+    staticRecipes:
+      # Ores
+      - N14IngotSilver
+      - N14IngotSilverCharcoal
+      - N14IngotIron
+      - N14IngotIronCharcoal
+      - N14IngotGold
+      - N14IngotGoldCharcoal
+      - N14IngotCopper
+      - N14IngotCopperCharcoal
+      - N14SheetSteel
+      - N14SheetSteelCharcoal
+      - N14SheetPlastic
+      - N14SheetGlass
+      - N14IngotLead
+      - SulfurPowder
+      # Scrap
+      - SheetPlasticScrap
+      - N14IngotBrassScrap
+      - N14IngotCopperScrap
+      - N14IngotGoldScrap
+      - N14IngotSteelScrap
+      - N14N14IngotLeadScrap
+      # Other
+      - Charcoal
+
+- type: entity
+  parent: N14WorkbenchBase
+  id: N14WorkbenchForgeFrame
+  description: A forge made from pieces of scrap. Looks hot. This one is still being built!
+  name: forge frame
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Misc/forgeworkbench.rsi
+    layers:
+    - state: forgeframe0
+      map: [ "enum.ConstructionVisuals.Layer" ]
+    offset: 0.5, 0
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ConstructionVisuals.Key:
+        enum.ConstructionVisuals.Layer:
+          WorkbenchForgeFrame: { state: forgeframe0 }
+          WorkbenchForgeCookpot: { state: forgeframe1 }
+          WorkbenchForgeCookpotUnwelded: { state: forgeframe2 }
+          WorkbenchForgeCharcoal: { state: forgeframe3 }
+          WorkbenchForgeUnwrenched: { state: forgeframe4 }
+          WorkbenchForgeUnwelded: { state: forge }
+  - type: Construction
+    graph: N14WorkbenchForge
+    node: WorkbenchForgeFrame
+    defaultTarget: WorkbenchForge
+
+# ID Printer
+- type: entity
+  parent: BaseLathe
+  id: N14WorkbenchIDPrinter
+  description: An ID printer.
+  name: ID Printer
+  abstract: true # Base off of this per faction.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Machines/circuit_imprinter.rsi
+    snapCardinals: true
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: MaterialStorage
+    whitelist:
+      tags:
+        - Sheet
+        - RawMaterial
+  - type: Lathe
+    producingSound: /Audio/Machines/circuitprinter.ogg
+    idleState: icon
+    runningState: building
+
+- type: entity
+  parent: N14WorkbenchIDPrinter
+  id: N14WorkbenchIDPrinterTownspeople
+  description: An ID printer for printing town passports
+  suffix: townspeople
+  components:
+  - type: Lathe
+    staticRecipes:
+    - PassportTownsfolk
+    - PassportTownsfolkShopkeeper
+    - PassportTownsfolkMechanic
+    - PassportTownsfolkDoctor
+    - PassportTownsfolkDeputy
+    - PassportTownsfolkSheriff
+    - PassportTownsfolkMayor
+
+- type: entity
+  parent: N14WorkbenchIDPrinter
+  id: N14WorkbenchIDPrinterBrotherhoodMidwest
+  description: An ID printer for printing Midwest Brotherhood holotags.
+  suffix: Midwest BOS
+  components:
+  - type: Lathe
+    staticRecipes:
+    - HolotagMidwestScribe
+    - HolotagMidwestSquire
+    - HolotagMidwestKnight
+    - HolotagMidwestPaladin
+
+- type: entity
+  parent: N14WorkbenchIDPrinter
+  id: N14WorkbenchIDPrinterBrotherhoodWashington
+  description: An ID printer for printing Washington Brotherhood holotags.
+  suffix: Washington BOS
+  components:
+  - type: Lathe
+    staticRecipes:
+    - HolotagWashingtonScribe
+    - HolotagWashingtonInitiate
+    - HolotagWashingtonKnight
+    - HolotagWashingtonPaladin
+
+- type: entity
+  parent: N14WorkbenchIDPrinter
+  id: N14WorkbenchIDPrinterCaravan
+  description: An ID printer for printing caravan IDs.
+  suffix: Caravan
+  components:
+  - type: Lathe
+    staticRecipes:
+    - PassportCaravan
+    - PassportCaravanTrader
+
+- type: entity
+  parent: N14WorkbenchIDPrinter
+  id: N14WorkbenchIDPrinterNCR
+  description: An ID printer for printing NCR IDs.
+  suffix: NCR
+  components:
+  - type: Lathe
+    staticRecipes:
+    - DogtagNCR
+    - DogtagNCRNCO
+
+- type: entity
+  parent: N14WorkbenchIDPrinter
+  id: N14WorkbenchIDPrinterVault
+  description: An ID printer for printing Vault IDs.
+  suffix: Vault
+  components:
+  - type: Lathe
+    staticRecipes:
+    - IDVault
+    - IDVaultEngineer
+    - IDVaultSecurity
+    - IDVaultDoctor

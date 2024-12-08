@@ -1,0 +1,46 @@
+{
+    "version": 1,
+    "license": "CC-BY-NC-SA-3.0",
+    "copyright": "Made by Kill_Me_I_Noobs for testing",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "full"
+        },
+        {
+            "name": "shit0",
+            "directions": 4
+        },
+        {
+            "name": "shit1",
+            "directions": 4
+        },
+        {
+            "name": "shit2",
+            "directions": 4
+        },
+        {
+            "name": "shit3",
+            "directions": 4
+        },
+        {
+            "name": "shit4",
+            "directions": 4
+        },
+        {
+            "name": "shit5",
+            "directions": 4
+        },
+        {
+            "name": "shit6",
+            "directions": 4
+        },
+        {
+            "name": "shit7",
+            "directions": 4
+        }
+    ]
+}

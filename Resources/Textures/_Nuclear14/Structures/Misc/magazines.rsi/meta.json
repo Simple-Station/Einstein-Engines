@@ -1,0 +1,80 @@
+{
+    "version": 1,
+    "size": {
+      "x": 32,
+      "y": 32
+    },
+    "copyright": "created by aleksh",
+    "license": "CC-BY-SA-3.0",
+    "states": [
+        {
+        "name": "magazine_awesome"
+        },
+        {
+        "name": "magazine_awesome_dirty"
+        },
+        {
+        "name": "magazine_base"
+        },
+        {
+        "name": "magazine_covert"
+        },
+        {
+        "name": "magazine_covert_dirty"
+        },
+        {
+        "name": "magazine_grognak"
+        },
+        {
+        "name": "magazine_grognak_dirty"
+         },
+	        {
+        "name": "magazine_guns"
+      },
+	        {
+        "name": "magazine_guns_dirty"
+      },
+	        {
+        "name": "magazine_junktown"
+      },
+	        {
+        "name": "magazine_junktown_dirty"
+      },
+	        {
+        "name": "magazine_live"
+      },
+	        {
+        "name": "magazine_massachusetts"
+      },
+	        {
+        "name": "magazine_massachusetts_dirty"
+      },
+	        {
+        "name": "magazine_scav"
+      },
+	        {
+        "name": "magazine_scav_dirty"
+      },
+	  	        {
+        "name": "magazine_tesla"
+      },
+	  	        {
+        "name": "magazine_tesla_dirty"
+      },
+	  	        {
+        "name": "magazine_tumblers"
+      },
+	  	        {
+        "name": "magazine_tumblers_dirty"
+      },
+	  	        {
+        "name": "magazine_unstoppable"
+      },
+	  	        {
+        "name": "magazine_unstoppable_dirty"
+      },
+	    {
+        "name": "magazine_wasteland"
+      }
+    ]
+  }

@@ -1,0 +1,198 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-SA-3.0",
+  "copyright": "Taken from Nukapop13 at https://github.com/SeeminglyTypicalUsername/Nukapop13/commit/704aa5e9e3b86d6e1dbf64a29ba976f7ef53a4ab",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "smes"
+    },
+    {
+      "name": "smes-og1"
+    },
+    {
+      "name": "smes-og2"
+    },
+    {
+      "name": "smes-og3"
+    },
+    {
+      "name": "smes-og4"
+    },
+    {
+      "name": "smes-og5"
+    },
+    {
+      "name": "smes-op0"
+    },
+    {
+      "name": "smes-op1"
+    },
+    {
+      "name": "smes-oc1",
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.2,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "smes-oc0",
+      "delays": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "smes-o"
+    },
+    {
+      "name": "cell"
+    },
+    {
+      "name": "hcell"
+    },
+    {
+      "name": "h\u002Bcell"
+    },
+    {
+      "name": "scell"
+    },
+    {
+      "name": "hpcell"
+    },
+    {
+      "name": "icell"
+    },
+    {
+      "name": "bscell",
+      "delays": [
+        [
+          0.01,
+          0.01
+        ]
+      ]
+    },
+    {
+      "name": "cell-o2_anim",
+      "delays": [
+        [
+          0.05,
+          0.05,
+          0.05,
+          0.05,
+          0.05,
+          0.05,
+          0.05,
+          0.05,
+          0.05,
+          0.05,
+          0.05
+        ]
+      ]
+    },
+    {
+      "name": "mounted"
+    },
+    {
+      "name": "mounted_destroyed"
+    },
+    {
+      "name": "mounted_open"
+    },
+    {
+      "name": "mounted_cut"
+    },
+    {
+      "name": "mounted_broken"
+    },
+    {
+      "name": "mounted_vertical"
+    },
+    {
+      "name": "mounted_vertical_destroyed"
+    },
+    {
+      "name": "mounted_vertical_open"
+    },
+    {
+      "name": "mounted_vertical_cut"
+    },
+    {
+      "name": "mounted_vertical_broken"
+    },
+    {
+      "name": "core0"
+    },
+    {
+      "name": "core",
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "ano100"
+    },
+    {
+      "name": "ano101"
+    },
+    {
+      "name": "ano60"
+    },
+    {
+      "name": "ano61",
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "diesel-off"
+    },
+    {
+      "name": "diesel-on",
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    }
+  ]
+}

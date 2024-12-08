@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-SA-3.0",
+  "copyright": "By PatoGrone for N14. Modified / Layers by Peptide90",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "keyboard",
+	  "directions": 4
+    },
+    {
+      "name": "keys",
+	  "directions": 4
+    },
+    {
+      "name": "screens",
+	  "directions": 4,
+      "delays": [
+        [
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "computer",
+	  "directions": 4
+    }
+  ]
+}

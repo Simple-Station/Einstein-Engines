@@ -1,0 +1,518 @@
+- type: entity
+  parent: BaseSign
+  id: N14PosterBase # For 64x64 posters
+  name: Poster
+  abstract: true
+  components:
+  - type: WallMount
+    arc: 360
+  - type: Sprite
+    drawdepth: Overdoors
+    sprite: _Nuclear14/Structures/Wallmounts/Posters/vault-tec.rsi
+    scale: 0.45, 0.45
+    snapCardinals: true
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 5
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/poster_broken.ogg
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          PosterBroken:
+            min: 1
+            max: 1
+        offset: 0
+  - type: Transform
+    anchored: true
+    noRot: true
+
+# NCR Propaganda+
+- type: entity
+  parent: N14SignNotice
+  id: N14PosterWanted
+  name: wanted poster
+  description: A wanted poster for some waster.
+  components:
+  - type: Sprite
+    state: wanted_poster
+
+# NCR Propaganda+
+- type: entity
+  parent: N14SignNotice
+  id: N14PosterWantedGoose
+  name: goose wanted poster
+  description: A wanted poster for some raider who apparently beat a raider to death with his bare hands..!
+  components:
+  - type: Sprite
+    state: wanted_poster_goose
+
+- type: entity
+  parent: N14SignNotice
+  id: N14PosterFallout
+  name: fallout poster
+  description: A poster depicting nuclear fallout.
+  components:
+  - type: Sprite
+    state: poster_fallout
+
+- type: entity
+  parent: N14SignNotice
+  id: N14PosterWecan
+  name: we can poster
+  description: we can!
+  components:
+  - type: Sprite
+    state: poster_wecan
+
+- type: entity
+  parent: N14SignNotice
+  id: N14PosterNCR1
+  name: NCR poster
+  suffix: wrench
+  description: NCR propaganda of some sort.
+  components:
+  - type: Sprite
+    state: ncr_sign
+
+- type: entity
+  parent: N14PosterNCR1
+  id: N14PosterNCR2
+  suffix: enlist
+  components:
+  - type: Sprite
+    state: ncr_enlist
+
+- type: entity
+  parent: N14PosterNCR1
+  id: N14PosterNCR3
+  suffix: looselip
+  components:
+  - type: Sprite
+    state: ncr_looselip
+
+- type: entity
+  parent: N14PosterNCR1
+  id: N14PosterNCR4
+  suffix: you
+  components:
+  - type: Sprite
+    state: ncr_you
+
+- type: entity
+  parent: N14PosterNCR1
+  id: N14PosterNCR5
+  suffix: espionage
+  components:
+  - type: Sprite
+    state: ncr_espionage
+
+- type: entity
+  parent: N14PosterNCR1
+  id: N14PosterNCR6
+  suffix: bombs
+  components:
+  - type: Sprite
+    state: ncr_bombs
+
+# Pristine Posters
+- type: entity
+  parent: N14PosterBase
+  id: N14PosterVaultTec01
+  name: Vault-Tec poster
+  description: "A near pristine poster advertising Vault-Tec."
+  components:
+  - type: Sprite
+    state: vault-tec01
+
+- type: entity
+  parent: N14PosterBase
+  id: N14PosterVaultTec02
+  name: Vault-Tec poster
+  description: "A near pristine poster advertising Vault-Tec."
+  components:
+  - type: Sprite
+    state: vault-tec02
+
+- type: entity
+  parent: N14PosterBase
+  id: N14PosterVaultTec05
+  name: Vault-Tec poster
+  description: "A near pristine poster advertising Vault-Tec."
+  components:
+  - type: Sprite
+    state: vault-tec05
+
+- type: entity
+  parent: N14PosterBase
+  id: N14PosterVaultTec06
+  name: Vault-Tec poster
+  description: "A near pristine poster promoting science."
+  components:
+  - type: Sprite
+    state: vault-tec06
+
+- type: entity
+  parent: N14PosterBase
+  id: N14PosterVaultTec07
+  name: Vault-Tec poster
+  description: "A near pristine poster advertising Vaults."
+  components:
+  - type: Sprite
+    state: vault-tec07
+
+- type: entity
+  parent: N14PosterBase
+  id: N14PosterVaultTec10
+  name: Vault-Tec poster
+  description: "A near pristine poster promoting workplace safety."
+  components:
+  - type: Sprite
+    state: vault-tec10
+
+- type: entity
+  parent: N14PosterBase
+  id: N14PosterSafety1
+  name: safety poster
+  description: "A poster promoting workplace safety. Wear a hardhat!"
+  components:
+  - type: Sprite
+    state: safety1
+    sprite: _Nuclear14/Structures/Wallmounts/Posters/adverts64x64.rsi
+    scale: 0.45, 0.45
+
+- type: entity
+  parent: N14PosterSafety1
+  id: N14PosterSafety2
+  name: safety poster
+  description: "A poster promoting workplace safety. Wear a respirator!"
+  components:
+  - type: Sprite
+    state: safety2
+
+- type: entity
+  parent: N14PosterSafety1
+  id: N14PosterSafety3
+  name: safety poster
+  description: "A poster promoting workplace safety. Protect yourself!"
+  components:
+  - type: Sprite
+    state: safety3
+
+- type: entity
+  parent: N14PosterSafety1
+  id: N14PosterSafety4
+  name: safety poster
+  description: "A poster promoting workplace safety. Protection Matters!"
+  components:
+  - type: Sprite
+    state: safety4
+
+- type: entity
+  parent: N14PosterSafety1
+  id: N14PosterSafety5
+  name: safety poster
+  description: "A poster promoting workplace safety. Protect your hands!"
+  components:
+  - type: Sprite
+    state: safety5
+
+- type: entity
+  parent: N14PosterSafety1
+  id: N14PosterSafety6
+  name: safety poster
+  description: "A poster promoting workplace safety. Eye protection!"
+  components:
+  - type: Sprite
+    state: safety6
+
+- type: entity
+  parent: N14PosterSafety1
+  id: N14PosterSafety7
+  name: safety poster
+  description: "A poster promoting workplace safety. Wear ear protection!"
+  components:
+  - type: Sprite
+    state: safety7
+
+- type: entity
+  parent: N14PosterSafety1
+  id: N14PosterSafety8
+  name: safety poster
+  description: "A poster promoting workplace safety. Better safe than sorry!"
+  components:
+  - type: Sprite
+    state: safety8
+
+- type: entity
+  parent: N14PosterSafety1
+  id: N14PosterSafety9
+  name: safety poster
+  description: "A poster promoting workplace safety. Moving parts can pack a pinch!"
+  components:
+  - type: Sprite
+    state: safety9
+
+- type: entity
+  parent: N14PosterSafety1
+  id: N14PosterSafety10
+  name: safety poster
+  description: "A poster promoting workplace safety. Radiation must not be feared but it must command your respect."
+  components:
+  - type: Sprite
+    state: safety10
+
+- type: entity
+  parent: N14PosterSafety1
+  id: N14PosterSafety11
+  name: safety poster
+  description: "A poster promoting workplace safety. Forgotten meters measure no radiation."
+  components:
+  - type: Sprite
+    state: safety11
+
+- type: entity
+  parent: N14PosterSafety1
+  id: N14PosterSafety12
+  name: safety poster
+  description: "A  mandatory safety equipment notice."
+  components:
+  - type: Sprite
+    state: safety12
+
+- type: entity
+  parent: N14PosterSafety1
+  id: N14PosterCautionSign1
+  name: caution sign
+  description: "Caution. Robot operating area. Do not enter. Authorised personnel only."
+  components:
+  - type: Sprite
+    state: caution1
+
+- type: entity
+  parent: N14PosterSafety1
+  id: N14PosterCautionSign2
+  name: caution sign
+  description: "Caution. This machine has no brain. Use your own."
+  components:
+  - type: Sprite
+    state: caution2
+
+- type: entity
+  parent: N14PosterSafety1
+  id: N14PosterCautionSign3
+  name: caution sign
+  description: "Caution. Robotics units can move at any time."
+  components:
+  - type: Sprite
+    state: caution3
+
+- type: entity
+  parent: N14PosterSafety1
+  id: N14PosterDangerSign1
+  name: danger sign
+  description: "Danger. Electrical hazard."
+  components:
+  - type: Sprite
+    state: danger1
+
+- type: entity
+  parent: N14PosterSafety1
+  id: N14PosterDangerSign2
+  name: danger sign
+  description: "Danger. Radioactive material."
+  components:
+  - type: Sprite
+    state: danger2
+
+- type: entity
+  parent: N14PosterSafety1
+  id: N14PosterDangerSign3
+  name: danger sign
+  description: "Danger. Highly flammable."
+  components:
+  - type: Sprite
+    state: danger3
+
+- type: entity
+  parent: N14PosterSafety1
+  id: N14PosterDangerSign4
+  name: danger sign
+  description: "Danger. No smoking. No matches. No open flames."
+  components:
+  - type: Sprite
+    state: danger4
+
+- type: entity
+  parent: N14PosterSafety1
+  id: N14PosterAdvertJet
+  name: advert poster
+  description: "A poster advertising the drug Jet."
+  components:
+  - type: Sprite
+    state: jet1
+
+- type: entity
+  parent: N14PosterSafety1
+  id: N14PosterAdvertGrognak1
+  name: advert poster
+  description: "A poster advertising Grognak the barbarian comics."
+  components:
+  - type: Sprite
+    state: grognak1
+
+- type: entity
+  parent: N14PosterSafety1
+  id: N14PosterAdvertNukaCola1
+  name: advert poster
+  description: "A poster advertising Nuka Cola."
+  components:
+  - type: Sprite
+    state: nukacola1
+
+- type: entity
+  parent: N14PosterSafety1
+  id: N14PosterAdvertNukaCola2
+  name: advert poster
+  description: "A poster advertising Nuka Cola."
+  components:
+  - type: Sprite
+    state: nukacola2
+
+# Worn posters
+- type: entity
+  parent: N14PosterBase
+  id: N14PosterVaultTec03
+  name: Vault-Tec poster
+  description: "A poster advertising Vault-Tec."
+  components:
+  - type: Sprite
+    state: vault-tec03
+
+- type: entity
+  parent: N14PosterBase
+  id: N14PosterVaultTec04
+  name: Vault-Tec poster
+  description: "A Vault-Tec poster promoting hard work."
+  components:
+  - type: Sprite
+    state: vault-tec04
+
+- type: entity
+  parent: N14PosterBase
+  id: N14PosterVaultTec08
+  name: Vault-Tec poster
+  description: "A worn Vault-Tec poster advertising Vaults."
+  components:
+  - type: Sprite
+    state: vault-tec08
+
+- type: entity
+  parent: N14PosterBase
+  id: N14PosterVaultTec09
+  name: Vault-Tec poster
+  description: "A worn Vault-Tec poster. You can't make it out."
+  components:
+  - type: Sprite
+    state: vault-tec09
+
+- type: entity
+  parent: N14PosterBase
+  id: N14PosterAbraxo
+  name: abraxo poster
+  description: "A worn poster for Abraxo cleaner."
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Wallmounts/Posters/adverts64x64.rsi
+    state: abraxo
+
+- type: entity
+  parent: N14PosterAbraxo
+  id: N14PosterBoscom
+  name: boscom poster
+  description: "A worn poster for boston communications."
+  components:
+  - type: Sprite
+    state: boscom
+
+- type: entity
+  parent: N14PosterAbraxo
+  id: N14PosterGNN
+  name: GNN poster
+  description: "A worn poster for galaxy news radio."
+  components:
+  - type: Sprite
+    state: gnn
+
+# Wide Posters (128x64)
+- type: entity
+  parent: N14PosterBase
+  id: N14PosterWideNukacola1
+  description: "A wide advert promoting Nuka Cola."
+  components:
+  - type: Sprite
+    state: nukacola1
+    sprite: _Nuclear14/Structures/Wallmounts/Posters/adverts128x64.rsi
+    scale: 0.5, 0.5
+
+- type: entity
+  parent: N14PosterWideNukacola1
+  id: N14PosterWideMassfusion1
+  description: "A wide advert promoting the Mass Fusion company. Power. People. Perfect. Mass Fusion."
+  components:
+  - type: Sprite
+    state: massfusion1
+
+- type: entity
+  parent: N14PosterWideNukacola1
+  id: N14PosterWideRedrocket1
+  description: "A wide advert promoting the Red Rocket fuel company. Gasoline. Diesel. Fusion."
+  components:
+  - type: Sprite
+    state: redrocket1
+
+- type: entity
+  parent: N14PosterWideNukacola1
+  id: N14PosterWideNukaDark
+  description: "A wide advert promoting Nuka Cola Dark"
+  components:
+  - type: Sprite
+    state: nukadark
+
+- type: entity
+  parent: N14PosterWideNukacola1
+  id: N14PosterWideVim
+  description: "A wide advert promoting Vim"
+  components:
+  - type: Sprite
+    state: vim
+    scale: 0.4, 0.4
+
+- type: entity
+  parent: N14PosterWideVim
+  id: N14PosterWideVimCaptainsblend
+  description: "A wide advert promoting Vim Captains Blend"
+  components:
+  - type: Sprite
+    state: vim_captainsblend
+
+- type: entity
+  parent: N14PosterWideVim
+  id: N14PosterWideVimQuartz
+  description: "A wide advert promoting Vim Quartz"
+  components:
+  - type: Sprite
+    state: vim_quartz
+
+- type: entity
+  parent: N14PosterWideVim
+  id: N14PosterWideVimRefresh
+  description: "A wide advert promoting Vim Refresh"
+  components:
+  - type: Sprite
+    state: vim_refresh

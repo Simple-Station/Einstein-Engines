@@ -1,0 +1,147 @@
+# Wartable / Tactical Map
+- type: entity
+  parent: N14BaseMachinePowered
+  id: N14BrotherhoodTacticalmap # wartable
+  name: Tactical Map
+  description: A tactical map often used by the Brotherhood for planning missions.
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+            radius: 0.65
+        density: 1000
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Machines/wartable.rsi
+    snapCardinals: true
+    offset: 0, -0.2
+    layers:
+    - state: wartable_off
+    - state: wartable_on
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerDeviceVisuals.Powered:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: { visible: true }
+          False: { visible: false }
+  - type: Appearance
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          N14BrotherhoodTacticalmapBroken:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+- type: entity
+  parent: N14BrotherhoodTacticalmap
+  id: N14BrotherhoodTacticalmapBroken
+  name: Tactical Map
+  description: A broken tactical map often used by the Brotherhood for planning missions.
+  suffix: broken
+  components:
+  - type: Sprite
+    layers:
+    - state: wartable_broken
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel1:
+            min: 1
+            max: 3
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+# Water Treatment Works
+- type: entity
+  parent: BaseStructure
+  id: N14MachineWaterTreatmentBroken
+  name: water treatment works
+  description: A broken all in one water treatment machine.
+  suffix: broken
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Machines/water_treatment.rsi
+    layers:
+    - state: watertreatment_broken
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 250
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel1:
+            min: 1
+            max: 3
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.8,-0.5,0.8,0.4"
+        density: 10000
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+
+- type: entity
+  parent: N14MachineWaterTreatmentBroken
+  id: N14MachineWaterTreatment
+  name: water treatment works
+  description: An all in one water treatment machine.
+  suffix: ""
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Machines/water_treatment.rsi
+    layers:
+    - state: watertreatment
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          N14MachineWaterTreatmentBroken:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: SolutionContainerManager
+    solutions:
+      well:
+        reagents:
+        - ReagentId: Water
+          Quantity: 500
+  - type: DrainableSolution
+    solution: well
+  - type: ReagentTank
+  - type: SolutionRegeneration
+    solution: well
+    generated:
+      reagents:
+      - ReagentId: Water
+        Quantity: 1
