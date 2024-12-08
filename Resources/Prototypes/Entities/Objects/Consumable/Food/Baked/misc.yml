@@ -67,13 +67,17 @@
     - Fruit
 
 - type: entity
-  name: honey bun #TODO honey
+  name: honey bun
   parent: FoodBakedBase
   id: FoodBakedBunHoney
   description: A sticky pastry bun glazed with honey.
   components:
   - type: Sprite
     state: bun-honey
+  - type: FlavorProfile
+    flavors:
+      - honey
+      - bread
 
 - type: entity
   name: hotcross bun
@@ -609,3 +613,94 @@
             Quantity: 1
           - ReagentId: Vitamin
             Quantity: 1
+
+# Honey made
+
+- type: entity
+  name: pear muffin
+  parent: FoodBakedBase
+  id: FoodBakedMuffinPear
+  description: I won't tell if you just try to pick out the chocolate.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - chocolate
+      - muffin
+      - pear
+  - type: Sprite
+    sprite: Objects/Consumable/Food/Baked/bread.rsi
+    state: pearmuffin
+    scale: .75, .75
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 6
+        - ReagentId: Vitamin
+          Quantity: 4
+        - ReagentId: Theobromine
+          Quantity: 1
+  - type: Tag
+    tags:
+    - Fruit
+
+- type: entity
+  name: apple strudel bite
+  parent: FoodBakedBase
+  id: FoodBakedAppleStrudelBite
+  description: Just put a little icing on top and enjoy!
+  components:
+  - type: FlavorProfile
+    flavors:
+      - honey
+      - butter
+      - bread
+  - type: Sprite
+    sprite: Objects/Consumable/Food/Baked/bread.rsi
+    layers:
+      - state: apple_strudel_1
+        map: [ "Variant" ]
+  - type: RandomSprite
+    available:
+      - Variant:
+          apple_strudel_1: ""
+          apple_strudel_2: ""
+          apple_strudel_3: ""
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 6
+        - ReagentId: Honey
+          Quantity: 2
+  - type: Tag
+    tags:
+    - Fruit
+
+- type: entity
+  name: croissant
+  parent: FoodBakedBase
+  id: FoodBakedCroissant
+  description: Buttery, flaky goodness.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - bread
+      - butter
+  - type: Sprite
+    state: croissant
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 7
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 3
+        - ReagentId: Butter
+          Quantity: 2
+        - ReagentId: Vitamin
+          Quantity: 1
