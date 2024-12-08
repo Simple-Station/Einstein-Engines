@@ -15,10 +15,10 @@ namespace Content.Shared.Customization.Systems;
 public sealed partial class CVarRequirement : CharacterRequirement
 {
     [DataField("cvar", required: true)]
-    public required string CVar;
+    public string CVar;
 
     [DataField("requiredValue", required: true)]
-    public required string RequiredValue;
+    public string RequiredValue;
 
     public override bool IsValid(
         JobPrototype job,
