@@ -2,6 +2,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server.Administration.Logs;
 using Content.Server.Atmos.Components;
+using Content.Server.Bed.Components;
 using Content.Shared.Alert;
 using Content.Shared.Atmos;
 using Content.Shared.Body.Components;
@@ -146,17 +147,18 @@ namespace Content.Server.Atmos.EntitySystems
             var exposedBodyParts = new Dictionary<(BodyPartType, BodyPartSymmetry), float>(ignite.IgnitableBodyParts);
 
             // This is O(n^2) but I don't think it matters
+            // TODO: use TargetBodyPart instead of a tuple for these
             foreach (var (slot, protectedBodyParts) in ImmunitySlots.Select(s => (s.Key, s.Value)))
             {
-                if (_inventory.TryGetSlotEntity(uid, slot, out var equipment, inv, contMan) &&
-                    HasComp<IgniteFromGasImmunityComponent>(equipment))
+                if (!_inventory.TryGetSlotEntity(uid, slot, out var equipment, inv, contMan) ||
+                    !HasComp<IgniteFromGasImmunityComponent>(equipment))
+                    continue;
+
+                foreach (var protectedBodyPart in protectedBodyParts)
                 {
-                    foreach (var protectedBodyPart in protectedBodyParts)
-                    {
-                        exposedBodyParts.Remove((protectedBodyPart, BodyPartSymmetry.Left));
-                        exposedBodyParts.Remove((protectedBodyPart, BodyPartSymmetry.Right));
-                        exposedBodyParts.Remove((protectedBodyPart, BodyPartSymmetry.None));
-                    }
+                    exposedBodyParts.Remove((protectedBodyPart, BodyPartSymmetry.Left));
+                    exposedBodyParts.Remove((protectedBodyPart, BodyPartSymmetry.Right));
+                    exposedBodyParts.Remove((protectedBodyPart, BodyPartSymmetry.None));
                 }
             }
 
@@ -186,19 +188,16 @@ namespace Content.Server.Atmos.EntitySystems
             var enumerator = EntityQueryEnumerator<IgniteFromGasComponent, FlammableComponent>();
             while (enumerator.MoveNext(out var uid, out var ignite, out var flammable))
             {
-                if (ignite.HasImmunity)
+                if (ignite.HasImmunity || HasComp<InStasisComponent>(uid))
                     continue;
 
                 var gas = _atmos.GetContainingMixture(uid, excite: true);
 
-                if (gas is null)
+                if (gas is null || gas[(int) ignite.Gas] < ignite.MolesToIgnite)
                     continue;
 
-                if (gas[(int) ignite.Gas] > ignite.MolesToIgnite)
-                {
-                    _flammable.AdjustFireStacks(uid, ignite.FireStacks, flammable);
-                    _flammable.Ignite(uid, uid, flammable, ignoreFireProtection: true);
-                }
+                _flammable.AdjustFireStacks(uid, ignite.FireStacks, flammable);
+                _flammable.Ignite(uid, uid, flammable, ignoreFireProtection: true);
             }
         }
     }
