@@ -2802,5 +2802,18 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<bool> UseDynamicHostname =
             CVarDef.Create("game.use_dynamic_hostname", false, CVar.SERVERONLY);
+
+        /// <summary>
+        /// Whether the RestrictedGear trait can be used on the server.
+        /// </summary>
+        public static readonly CVarDef<bool> RestrictedGearEnabled =
+            CVarDef.Create("trait.restrictedgear_enabled", true, CVar.SERVERONLY);
+
+        /// <summary>
+        /// Whether the RestrictedGear trait can allow guns for any job.
+        /// </summary>
+
+        public static readonly CVarDef<bool> RestrictedGearAllowsFirearms =
+            CVarDef.Create("trait.restrictedgear_allowsfirearms", true, CVar.SERVERONLY);
     }
 }
