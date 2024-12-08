@@ -249,6 +249,10 @@
   - type: BatterySelfRecharger
     autoRecharge: true
     autoRechargeRate: 2 #recharge of 2 makes total drain 1w / s so max charge is 1:1 with time. Time to fully charge should be 2.5 minutes. Having recharge gives light an extended flicker period which gives you some warning to return to light area.
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.90
 
 - type: entity
   abstract: true

@@ -177,3 +177,7 @@
     requiresIgniteFromGasImmune: true
     sound:
       path: /Audio/Effects/extinguish.ogg
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.85

@@ -1,6 +1,6 @@
 - type: entity
-  parent: ClothingHandsGlovesSyntheticBase
-  id: ClothingHandsEnvirogloves
+  parent: ClothingHandsGlovesEnviroglovesBase
+  id: ClothingHandsGlovesEnvirogloves
   name: plasma envirogloves
   description: Covers up those scandalous boney hands.
   components:
@@ -23,3 +23,7 @@
         color: "#913b00"
   - type: Fiber
     fiberColor: fibers-orange
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.95
