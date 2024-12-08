@@ -1,5 +1,6 @@
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
@@ -11,6 +12,15 @@ namespace Content.Server.Extinguisher;
 [RegisterComponent]
 public partial class SelfExtinguisherComponent : Component
 {
+    /// <summary>
+    ///     Action used to self-extinguish.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public EntProtoId Action = "ActionSelfExtinguish";
+
+    [DataField, AutoNetworkedField]
+    public EntityUid? ActionEntity;
+
     /// <summary>
     ///   The number of charges left.
     /// </summary>

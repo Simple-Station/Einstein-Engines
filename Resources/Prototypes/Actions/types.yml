@@ -198,6 +198,17 @@
     event: !type:ToggleClothingEvent
 
 - type: entity
+  id: ActionSelfExtinguish
+  name: Self-Extinguish
+  description: Puts out the fire in you.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: BigItem
+    useDelay: 1
+    event: !type:SelfExtinguishEvent
+
+- type: entity
   id: ActionCombatModeToggle
   name: "[color=red]Combat Mode[/color]"
   description: Enter combat mode
