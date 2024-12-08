@@ -1,6 +1,7 @@
 - type: dataset
   id: names_plasmaman
   values:
+  # Periodic table elements
   - Actinium
   - Aluminium
   - Americium
@@ -119,3 +120,165 @@
   - Yttrium
   - Zinc
   - Zirconium
+  # Periodic table groups
+  - Metalloid
+  - Alkali
+  - Alkaline
+  - Triel
+  - Tetrel
+  - Chalcogen
+  - Pnictogen
+  - Halogen
+  - Noble
+  # Periodic table series
+  - Lanthanide
+  - Actinide
+  # Polyatomic cations
+  - Ammonium
+  - Hydronium
+  - Nitronium
+  - Pyrylium
+  # Anions
+  - Hydride
+  - Oxide
+  - Fluoride
+  - Sulfide
+  - Selenide
+  - Telluride
+  - Chloride
+  - Nitride
+  - Phospide
+  - Arsenide
+  - Bromide
+  - Iodide
+  - Azide
+  - Bisulfide
+  - Hydroxide
+  - Acetylide
+  - Ethoxide
+  - Cyanide
+  - Amide
+  - Phenoxide
+  - Peroxide
+  - Superoxide
+  - Acetylide
+  # Oxoanions
+  - Sulfate
+  - Sulfite
+  - Phosphate
+  - Phospite
+  - Arsenate
+  - Arsenite
+  - Nitrate
+  - Nitrite
+  - Thiosulfate
+  - Perchlorate
+  - Iodate
+  - Chlorate
+  - Bromate
+  - Perbromate
+  - Chlorite
+  - Hypochlorite
+  - Hypobromite
+  - Carbonate
+  - Chromate
+  - Bicarbonate
+  - Dichromate
+  - Persulfate
+  - Pyrosulfite
+  - Pyrosulfate
+  - Pyrophosphite
+  - Pyrophosphate
+  - Pyroarsenate
+  - Dicarbonate
+  - Pyrocarbonate
+  - Pyroselenite
+  - Ethanolate
+  - Benzoate
+  - Citrate
+  - Manganate
+  - Zincate
+  - Aluminate
+  - Tungstate
+  - Orthosilicate
+  - Metasilicate
+  - Silicate
+  - Cyanate
+  - Thiocyanate
+  - Permanganate
+  - Sulfonate
+  - Isocyanate
+  - Carbamate
+  # Anions from organic acids
+  - Acetate
+  - Formate
+  - Oxalate
+  - Propionate
+  - Butyrate
+  - Malate
+  # Isotopes
+  - Protium
+  - Deuterium
+  - Tritium
+  - Uranium-235
+  - Uranium-238
+  - Radon-222
+  - Thorium-232
+  # Compounds
+  - Ammonia
+  - Methane
+  - Glucose
+  - Ethanol
+  - Formaldehyde
+  - Acetylene
+  - Toluene
+  # SS14 chemicals
+  - Bananium
+  - Fresium
+  - Carpetium
+  - Razorium
+  - Artifexium
+  - Barozine
+  - Frezon
+  - Phlogiston
+  - Licoxide
+  - Lipolicide
+  - Tazinide
+  - Lotophagoi
+  - Vestine
+  - Thermite
+  - Saxoite
+  - Sigynate
+  - Nocturine
+  - Impedrezene
+  - Ephedrine
+  # SS14 medicine
+  - Bicaridine
+  - Kelotane
+  - Dylovene
+  - Dexalin
+  - Tricordrazine
+  - Synaptizine
+  - Pyrazine
+  - Omnizine
+  - Cognizine
+  - Aloxadone
+  - Arithrazine
+  - Bruizine
+  - Dermaline
+  - Hyronalin
+  - Stellibinin
+  - Insuzine
+  - Inaprovaline
+  - Cryoxadone
+  - Ambuzol
+  - Leporazine
+  - Lipozine
+  - Mannitol
+  - Oculine
+  - Psicodine
+  - Phalanximine
+  - Puncturase
+  - Opporozidone
+  - Phalanximine
+  - Polypyrilium
