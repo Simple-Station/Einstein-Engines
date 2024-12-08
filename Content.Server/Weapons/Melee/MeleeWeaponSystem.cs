@@ -65,7 +65,7 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
         if (component.HeavyStaminaCost != 0)
         {
             var staminaCostMarkup = FormattedMessage.FromMarkupOrThrow(
-                Loc.GetString("damage-melee-heavy-stamina-cost",
+                Loc.GetString("damage-stamina-cost",
                 ("type", Loc.GetString("damage-melee-heavy")), ("cost", component.HeavyStaminaCost)));
             args.Message.PushNewline();
             args.Message.AddMessage(staminaCostMarkup);

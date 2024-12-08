@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   name: flashlight
   parent: BaseItem
   id: FlashlightLantern
@@ -62,6 +62,8 @@
         Blunt: 6
     soundHit:
       collection: MetalThud
+  - type: DamageOtherOnHit
+    staminaCost: 3.5
   - type: Item
     sprite: Objects/Tools/flashlight.rsi
     storedRotation: -90

@@ -8451,3 +8451,81 @@ Entries:
   id: 6561
   time: '2024-12-06T03:13:08.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1314
+- author: zelezniciar
+  changes:
+    - type: Add
+      message: 'TEG components now be ordered from Logistics and assembled on station. '
+  id: 6562
+  time: '2024-12-06T15:42:27.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1316
+- author: rbertoche
+  changes:
+    - type: Fix
+      message: >-
+        Several small fixes to Europa map, namely to cargo dock, SM and atmos
+        piping and wires, adds autolathe to cargo and crew monitor to med
+  id: 6563
+  time: '2024-12-06T16:12:44.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1319
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Server rules work again.
+  id: 6564
+  time: '2024-12-06T20:30:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1321
+- author: fenndragon
+  changes:
+    - type: Tweak
+      message: Moved the uplink deception category into utility.
+  id: 6565
+  time: '2024-12-07T13:31:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1309
+- author: Remuchi
+  changes:
+    - type: Add
+      message: >-
+        Reintroduced 3 traitors objectives: steal Ian's meat, Die Glorious Death
+        and Hijack Evacuation Shuttle
+  id: 6566
+  time: '2024-12-07T14:46:48.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1323
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        The Throwing Update is here. You can throw most melee weapons at the
+        cost of stamina to deal damage from afar.
+    - type: Add
+      message: >-
+        Dozens of throwable weapons, mainly sharp weapons will now embed on
+        throw and deal damage every second until they're manually removed or
+        naturally fall off after some time.
+    - type: Add
+      message: >-
+        Examining the damage values of an item now shows its throwing damage,
+        throwing stamina cost, whether or not it embeds on a throw, and if the
+        embed deals damage over time. 
+    - type: Add
+      message: Examining an embedded item now shows what body part it's embedded in.
+    - type: Tweak
+      message: >-
+        The traits High Adrenaline, Adrenal Dysfunction, Masochism and Low Pain
+        Tolerance now affect throwing attacks just like melee attacks.
+    - type: Tweak
+      message: >-
+        The default time to remove embedded items has been increased from 3 to 5
+        seconds, and both the remover and the target with the embedded item need
+        to stand still during the removal.
+    - type: Tweak
+      message: >-
+        The time to pry up a floor tile with a crowbar and other tools has been
+        decreased from 1 second to 0.5 seconds. The throwing damage of floor
+        tiles has been increased. Go figure.
+    - type: Fix
+      message: >-
+        Attempting to throw a Blood Cultist item without being a cultist will
+        stun you and drop the item you're holding properly.
+  id: 6567
+  time: '2024-12-08T03:30:08.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1307
