@@ -40,11 +40,11 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: 90
-    attackRate: 0.8
+    attackRate: 1.25
     damage:
       types:
         Piercing: 7
-    heavyRateModifier: 0.9
+    heavyRateModifier: 1.1
     heavyRangeModifier: 1.25
     heavyDamageBaseModifier: 1.2
     maxTargets: 1
@@ -78,7 +78,7 @@
     damage:
       types:
         Slash: 7
-    heavyRateModifier: 0.8
+    heavyRateModifier: 1.25
     heavyRangeModifier: 1.25
     heavyDamageBaseModifier: 1.5
     heavyStaminaCost: 5
@@ -109,7 +109,7 @@
   - type: MeleeWeapon
     wideAnimationRotation: 135
     swingLeft: true
-    attackRate: 1.25
+    attackRate: .8
     range: 1.4
     damage:
       types:
@@ -142,7 +142,7 @@
       types:
         Blunt: 6
         Slash: 2 # I guess you can stab it into them?
-    heavyRateModifier: 0.8
+    heavyRateModifier: 1.25
     heavyRangeModifier: 1.25
     heavyDamageBaseModifier: 1.2
     heavyStaminaCost: 5
