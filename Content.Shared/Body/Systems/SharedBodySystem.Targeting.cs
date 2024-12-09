@@ -264,7 +264,7 @@ public partial class SharedBodySystem
 
     public TargetBodyPart? GetRandomBodyPart(EntityUid uid, TargetingComponent? target = null)
     {
-        if (!Resolve(uid, ref target))
+        if (!Resolve(uid, ref target, false))
             return null;
 
         var totalWeight = target.TargetOdds.Values.Sum();

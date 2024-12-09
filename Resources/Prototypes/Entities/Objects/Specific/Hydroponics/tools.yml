@@ -23,6 +23,10 @@
     heavyDamageBaseModifier: 1.2
     maxTargets: 5
     angle: 100
+  - type: DamageOtherOnHit
+    staminaCost: 5
+  - type: ThrowingAngle
+    angle: 135
   - type: Item
     sprite: Objects/Tools/Hydroponics/hoe.rsi
 
@@ -49,6 +53,8 @@
     heavyDamageBaseModifier: 1.2
     maxTargets: 1
     angle: 20
+  - type: DamageOtherOnHit
+    staminaCost: 5
   - type: Item
     sprite: Objects/Tools/Hydroponics/clippers.rsi
     storedRotation: -90
@@ -84,6 +90,13 @@
     heavyStaminaCost: 5
     maxTargets: 1
     angle: 120
+  - type: DamageOtherOnHit
+    staminaCost: 7
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/star_hit.ogg
+  - type: EmbedPassiveDamage
+  - type: ThrowingAngle
+    angle: 315
   - type: Item
     size: Normal
   - type: Clothing
@@ -116,6 +129,12 @@
         Slash: 10
     heavyDamageBaseModifier: 1.2
     heavyStaminaCost: 5
+  - type: DamageOtherOnHit
+    meleeDamageMultiplier: 1.5
+    staminaCost: 6.5
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/star_hit.ogg
+  - type: EmbedPassiveDamage
   - type: Item
     sprite: Objects/Tools/Hydroponics/hatchet.rsi
   - type: BoneSaw
@@ -149,6 +168,10 @@
     angle: 80
     soundHit:
       collection: MetalThud
+  - type: DamageOtherOnHit
+    staminaCost: 5
+  - type: ThrowingAngle
+    angle: 45
   - type: Item
     sprite: Objects/Tools/Hydroponics/spade.rsi
   - type: Shovel

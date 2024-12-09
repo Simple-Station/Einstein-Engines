@@ -23,6 +23,11 @@
     angle: 40
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: DamageOtherOnHit
+    staminaCost: 5
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/star_hit.ogg
+  - type: EmbedPassiveDamage
   - type: Sprite
   - type: Item
     size: Small
@@ -52,6 +57,8 @@
   - type: Sprite
     sprite: Objects/Weapons/Melee/kitchen_knife.rsi
     state: icon
+  - type: ThrowingAngle
+    angle: 225
   - type: Item
     sprite: Objects/Weapons/Melee/kitchen_knife.rsi
   - type: GuideHelp
@@ -78,6 +85,10 @@
       types:
         Slash: 8
         Blunt: 1
+  - type: DamageOtherOnHit
+    staminaCost: 7.5
+  - type: ThrowingAngle
+    angle: 245
   - type: Item
     size: Normal
     sprite: Objects/Weapons/Melee/cleaver.rsi
@@ -104,12 +115,8 @@
     damage:
       types:
         Slash: 9
-  - type: EmbeddableProjectile
-    sound: /Audio/Weapons/star_hit.ogg
-  - type: DamageOtherOnHit
-    damage:
-      types:
-        Slash: 9
+  - type: ThrowingAngle
+    angle: 225
   - type: Item
     sprite: Objects/Weapons/Melee/combat_knife.rsi
   - type: DisarmMalus
@@ -130,6 +137,8 @@
     damage:
       types:
         Slash: 8
+  - type: ThrowingAngle
+    angle: 225
   - type: Item
     sprite: Objects/Weapons/Melee/survival_knife.rsi
 
@@ -148,6 +157,8 @@
     damage:
       types:
         Slash: 10
+  - type: ThrowingAngle
+    angle: 225
   - type: Item
     sprite: Objects/Weapons/Melee/kukri_knife.rsi
 
@@ -168,9 +179,9 @@
       types:
         Slash: 5
   - type: DamageOtherOnHit
-    damage:
-      types:
-        Slash: 10
+    staminaCost: 5
+  - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
   - type: Sprite
     sprite: Clothing/Head/Hats/greyflatcap.rsi
   - type: Clothing
@@ -212,6 +223,8 @@
     damage:
       types:
         Slash: 5.5
+  - type: ThrowingAngle
+    angle: 200
   - type: Item
     sprite: Objects/Weapons/Melee/shiv.rsi
   - type: DisarmMalus
@@ -291,8 +304,6 @@
     damage:
       types:
         Slash: 5
-  - type: EmbeddableProjectile
-    sound: /Audio/Weapons/star_hit.ogg
   - type: DamageOtherOnHit
     ignoreResistances: true
     damage:

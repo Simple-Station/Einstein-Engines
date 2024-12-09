@@ -26,6 +26,8 @@
     heavyDamageBaseModifier: 1.75
     maxTargets: 5
     angle: 80
+  - type: DamageOtherOnHit
+    staminaCost: 5
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:
@@ -72,6 +74,10 @@
     heavyRangeModifier: 2
     heavyDamageBaseModifier: 1
     angle: 20
+  - type: DamageOtherOnHit
+    staminaCost: 8
+  - type: ThrowingAngle
+    angle: 270
 
   - type: ReverseEngineering # Nyano
     difficulty: 2
