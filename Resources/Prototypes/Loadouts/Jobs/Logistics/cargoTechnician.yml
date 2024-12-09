@@ -50,3 +50,30 @@
     - ClothingShoesBootsWinterCargo
 
 # Uniforms
+- type: loadout
+  id: LoadoutCargoTechnicianUniformSuit
+  category: JobsLogisticsCargoTechnician
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCargoTechnicianUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - CargoTechnician
+  items:
+    - ClothingUniformJumpsuitCargo
+
+- type: loadout
+  id: LoadoutCargoTechnicianUniformSkirt
+  category: JobsLogisticsCargoTechnician
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCargoTechnicianUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - CargoTechnician
+  items:
+    - ClothingUniformJumpskirtCargo

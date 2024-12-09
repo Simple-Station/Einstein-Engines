@@ -454,7 +454,7 @@ namespace Content.Server.Administration.Managers
                     Flags = flags
                 };
 
-                if (dbData.Title != null)
+                if (dbData.Title != null  && _cfg.GetCVar(CCVars.AdminUseCustomNamesAdminRank))
                 {
                     data.Title = dbData.Title;
                 }

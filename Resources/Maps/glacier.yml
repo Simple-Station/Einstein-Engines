@@ -52959,6 +52959,14 @@ entities:
       - BorgModuleClowning
       - BorgModuleDiagnosis
       - BorgModuleDefibrillator
+      - BorgModuleJetpack
+      - BorgModulePka
+      - BorgModuleAdvancedSurgery
+      - JawsOfLifeLeftArm
+      - JawsOfLifeRightArm
+      - SpeedLeftLeg
+      - SpeedRightLeg
+      - BasicCyberneticEyes
       - BorgModuleAdvancedTreatment
       - RipleyHarness
       - RipleyLArm
