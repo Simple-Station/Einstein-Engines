@@ -251,7 +251,7 @@ public sealed class BloodRitesSystem : EntitySystem
         foreach (var puddle in lookup)
         {
             if (!TryComp(puddle, out SolutionContainerManagerComponent? solutionContainer))
-                return;
+                continue;
             ConsumeBloodFromSolution((puddle, solutionContainer), rites);
         }
 
