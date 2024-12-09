@@ -141,7 +141,7 @@ character-whitelist-requirement = You must{$inverted ->
     *[other]{""}
 } be whitelisted
 
-## Cvar
+## CVar
 
 character-cvar-requirement = 
     The server must{$inverted ->
