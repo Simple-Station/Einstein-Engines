@@ -31,7 +31,7 @@
     - Trash
   - type: MeleeWeapon
     wideAnimationRotation: 180
-    attackRate: .6
+    attackRate: .6666
     damage:
       types:
         Blunt: 0
