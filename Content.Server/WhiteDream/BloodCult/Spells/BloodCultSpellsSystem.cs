@@ -196,7 +196,7 @@ public sealed class BloodCultSpellsSystem : EntitySystem
             return;
 
         var shuckles = Spawn(ev.ShacklesProto);
-        if (!_cuffable.TryAddNewCuffs(ev.Performer, ev.Target, shuckles))
+        if (!_cuffable.TryAddNewCuffs(ev.Target, ev.Performer, shuckles))
             return;
 
         _stun.TryKnockdown(ev.Target, ev.KnockdownDuration, true);
