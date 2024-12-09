@@ -43,7 +43,7 @@
         type: MechBoundUserInterface
   - type: MeleeWeapon
     hidden: true
-    attackRate: 1.3
+    attackRate: 1.3333
     damage:
       types:
         Blunt: 25 #thwack
