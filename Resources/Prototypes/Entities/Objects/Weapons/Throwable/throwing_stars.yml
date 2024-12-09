@@ -36,6 +36,7 @@
       types:
         Slash: 8
         Piercing: 10
+  - type: EmbedPassiveDamage
   - type: StaminaDamageOnCollide
     damage: 45
   - type: StaminaDamageOnEmbed

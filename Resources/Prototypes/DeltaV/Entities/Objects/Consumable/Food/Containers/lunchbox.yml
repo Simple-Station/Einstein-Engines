@@ -27,9 +27,14 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 2
+        Blunt: 5.5
+    heavyRateModifier: 1.25
+    heavyStaminaCost: 5
+    angle: 80.5
     soundHit:
       path: "/Audio/Weapons/click.ogg"
+  - type: DamageOtherOnHit
+    staminaCost: 6
   - type: StaticPrice
     price: 10
 

@@ -21,6 +21,8 @@
     heavyDamageBaseModifier: 2
     heavyStaminaCost: 5
     maxTargets: 8
+  - type: DamageOtherOnHit
+    staminaCost: 5
   - type: Tag
     tags:
     - Briefcase

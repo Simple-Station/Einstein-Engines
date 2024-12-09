@@ -172,6 +172,9 @@
   id: WeaponEnergyGunMiniSecurity
   description: A light version of the Energy gun with a smaller capacity.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
+  components:
+  - type: GuideHelp
+    guides: [ SecurityWeapons ]
 
 - type: entity
   name: PDW-9 Energy Pistol
@@ -236,6 +239,9 @@
   id: WeaponEnergyGunPistolSecurity
   description: A military grade sidearm, used by many militia forces throughout the local sector.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
+  components:
+  - type: GuideHelp
+    guides: [ SecurityWeapons ]
 
 - type: entity
   name: IK-60 laser carbine

@@ -4,6 +4,7 @@ using Content.Shared.Bed.Sleep;
 using Content.Shared.Body.Part;
 using Content.Shared.Body.Organ;
 using Content.Shared.Body.Events;
+using Content.Shared.BodyEffects;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Damage;
@@ -70,7 +71,7 @@ public abstract partial class SharedSurgerySystem
         {
             foreach (var reg in ent.Comp.Tool.Values)
             {
-                if (!AnyHaveComp(args.Tools, reg.Component, out var tool))
+                if (!AnyHaveComp(args.Tools, reg.Component, out var tool, out _))
                     return;
 
                 if (_net.IsServer &&
@@ -93,6 +94,17 @@ public abstract partial class SharedSurgerySystem
             }
         }
 
+        if (ent.Comp.BodyAdd != null)
+        {
+            foreach (var reg in ent.Comp.BodyAdd.Values)
+            {
+                var compType = reg.Component.GetType();
+                if (HasComp(args.Body, compType))
+                    continue;
+                AddComp(args.Body, _compFactory.GetComponent(compType));
+            }
+        }
+
         if (ent.Comp.Remove != null)
         {
             foreach (var reg in ent.Comp.Remove.Values)
@@ -106,6 +118,45 @@ public abstract partial class SharedSurgerySystem
             foreach (var reg in ent.Comp.BodyRemove.Values)
             {
                 RemComp(args.Body, reg.Component.GetType());
+            }
+        }
+
+        if (ent.Comp.AddOrganOnAdd != null)
+        {
+            var organSlotIdToOrgan = _body.GetPartOrgans(args.Part).ToDictionary(o => o.Item2.SlotId, o => o);
+
+            foreach (var (organSlotId, compsToAdd) in ent.Comp.AddOrganOnAdd)
+            {
+                if (!organSlotIdToOrgan.TryGetValue(organSlotId, out var organValue))
+                    continue;
+                var (organId, organ) = organValue;
+
+                organ.OnAdd ??= new();
+
+                foreach (var (key, compToAdd) in compsToAdd)
+                    organ.OnAdd[key] = compToAdd;
+
+                EnsureComp<OrganEffectComponent>(organId);
+                RaiseLocalEvent(organId, new OrganComponentsModifyEvent(args.Body, true));
+            }
+        }
+
+        if (ent.Comp.RemoveOrganOnAdd != null)
+        {
+            var organSlotIdToOrgan = _body.GetPartOrgans(args.Part).ToDictionary(o => o.Item2.SlotId, o => o);
+
+            foreach (var (organSlotId, compsToRemove) in ent.Comp.RemoveOrganOnAdd)
+            {
+                if (!organSlotIdToOrgan.TryGetValue(organSlotId, out var organValue) ||
+                    organValue.Item2.OnAdd == null)
+                    continue;
+                var (organId, organ) = organValue;
+
+                // Need to raise this event first before removing the component entries so
+                // OrganEffectSystem still knows which components on the body to remove
+                RaiseLocalEvent(organId, new OrganComponentsModifyEvent(args.Body, false));
+                foreach (var key in compsToRemove.Keys)
+                    organ.OnAdd.Remove(key);
             }
         }
 
@@ -148,11 +199,55 @@ public abstract partial class SharedSurgerySystem
             }
         }
 
+        if (ent.Comp.BodyAdd != null)
+        {
+            foreach (var reg in ent.Comp.BodyAdd.Values)
+            {
+                if (!HasComp(args.Body, reg.Component.GetType()))
+                {
+                    args.Cancelled = true;
+                    return;
+                }
+            }
+        }
+
         if (ent.Comp.BodyRemove != null)
         {
             foreach (var reg in ent.Comp.BodyRemove.Values)
             {
                 if (HasComp(args.Body, reg.Component.GetType()))
+                {
+                    args.Cancelled = true;
+                    return;
+                }
+            }
+        }
+
+        if (ent.Comp.AddOrganOnAdd != null)
+        {
+            var organSlotIdToOrgan = _body.GetPartOrgans(args.Part).ToDictionary(o => o.Item2.SlotId, o => o.Item2);
+            foreach (var (organSlotId, compsToAdd) in ent.Comp.AddOrganOnAdd)
+            {
+                if (!organSlotIdToOrgan.TryGetValue(organSlotId, out var organ))
+                    continue;
+
+                if (organ.OnAdd == null || compsToAdd.Keys.Any(key => !organ.OnAdd.ContainsKey(key)))
+                {
+                    args.Cancelled = true;
+                    return;
+                }
+            }
+        }
+
+        if (ent.Comp.RemoveOrganOnAdd != null)
+        {
+            var organSlotIdToOrgan = _body.GetPartOrgans(args.Part).ToDictionary(o => o.Item2.SlotId, o => o.Item2);
+            foreach (var (organSlotId, compsToRemove) in ent.Comp.RemoveOrganOnAdd)
+            {
+                if (!organSlotIdToOrgan.TryGetValue(organSlotId, out var organ) || organ.OnAdd == null)
+                    continue;
+
+                if (compsToRemove.Keys.Any(key => organ.OnAdd.ContainsKey(key)))
                 {
                     args.Cancelled = true;
                     return;
@@ -193,21 +288,21 @@ public abstract partial class SharedSurgerySystem
 
         if (ent.Comp.Tool != null)
         {
-            args.ValidTools ??= new HashSet<EntityUid>();
+            args.ValidTools ??= new Dictionary<EntityUid, float>();
 
             foreach (var reg in ent.Comp.Tool.Values)
             {
-                if (!AnyHaveComp(args.Tools, reg.Component, out var withComp))
+                if (!AnyHaveComp(args.Tools, reg.Component, out var tool, out var speed))
                 {
                     args.Invalid = StepInvalidReason.MissingTool;
 
-                    if (reg.Component is ISurgeryToolComponent tool)
-                        args.Popup = $"You need {tool.ToolName} to perform this step!";
+                    if (reg.Component is ISurgeryToolComponent required)
+                        args.Popup = $"You need {required.ToolName} to perform this step!";
 
                     return;
                 }
 
-                args.ValidTools.Add(withComp);
+                args.ValidTools[tool] = speed;
             }
         }
     }
@@ -250,11 +345,10 @@ public abstract partial class SharedSurgerySystem
             bonus *= 0.2;
 
         var adjustedDamage = new DamageSpecifier(ent.Comp.Damage);
-        var bonusPerType = bonus / group.Length;
 
         foreach (var type in group)
         {
-            adjustedDamage.DamageDict[type] -= bonusPerType;
+            adjustedDamage.DamageDict[type] -= bonus;
         }
 
         var ev = new SurgeryStepDamageEvent(args.User, args.Body, args.Part, args.Surgery, adjustedDamage, 0.5f);
@@ -597,28 +691,41 @@ public abstract partial class SharedSurgerySystem
         if (!CanPerformStep(user, body, part, step, true, out _, out _, out var validTools))
             return;
 
-        if (_net.IsServer && validTools?.Count > 0)
+        // make the doafter longer for ghetto tools, or shorter for advanced ones
+        var speed = 1f;
+        var usedEv = new SurgeryToolUsedEvent(user, body);
+        // We need to check for nullability because of surgeries that dont require a tool, like Cavity Implants
+        if (validTools?.Count > 0)
         {
-            foreach (var tool in validTools)
+            foreach (var (tool, toolSpeed) in validTools)
             {
-                if (TryComp(tool, out SurgeryToolComponent? toolComp) &&
-                    toolComp.EndSound != null)
+                RaiseLocalEvent(tool, ref usedEv);
+                if (usedEv.Cancelled)
+                    return;
+
+                speed *= toolSpeed;
+            }
+
+            if (_net.IsServer)
+            {
+                foreach (var tool in validTools.Keys)
                 {
-                    _audio.PlayEntity(toolComp.StartSound, user, tool);
+                    if (TryComp(tool, out SurgeryToolComponent? toolComp) &&
+                        toolComp.EndSound != null)
+                    {
+                        _audio.PlayEntity(toolComp.StartSound, user, tool);
+                    }
                 }
             }
         }
+
 
         if (TryComp(body, out TransformComponent? xform))
             _rotateToFace.TryFaceCoordinates(user, _transform.GetMapCoordinates(body, xform).Position);
 
         var ev = new SurgeryDoAfterEvent(args.Surgery, args.Step);
-        // TODO: Make this serialized on a per surgery step basis, and also add penalties based on ghetto tools.
-        var duration = 2f;
-        if (TryComp(user, out SurgerySpeedModifierComponent? surgerySpeedMod)
-            && surgerySpeedMod is not null)
-            duration = duration / surgerySpeedMod.SpeedModifier;
-
+        // TODO: Serialize each surgery with a custom duration.
+        var duration = GetSurgeryDuration(step, user, body, speed);
         var doAfter = new DoAfterArgs(EntityManager, user, TimeSpan.FromSeconds(duration), ev, body, part)
         {
             BreakOnUserMove = true,
@@ -644,6 +751,19 @@ public abstract partial class SharedSurgerySystem
 
             _popup.PopupEntity(locResult, user);
         }
+    }
+
+    private float GetSurgeryDuration(EntityUid surgeryStep, EntityUid user, EntityUid target, float toolSpeed)
+    {
+        if (!TryComp(surgeryStep, out SurgeryStepComponent? stepComp))
+            return 2f; // Shouldnt really happen but just a failsafe.
+
+        var speed = toolSpeed;
+
+        if (TryComp(user, out SurgerySpeedModifierComponent? surgerySpeedMod))
+            speed *= surgerySpeedMod.SpeedModifier;
+
+        return stepComp.Duration / speed;
     }
 
     private (Entity<SurgeryComponent> Surgery, int Step)? GetNextStep(EntityUid body, EntityUid part, Entity<SurgeryComponent?> surgery, List<EntityUid> requirements)
@@ -705,7 +825,7 @@ public abstract partial class SharedSurgerySystem
 
     public bool CanPerformStep(EntityUid user, EntityUid body, EntityUid part,
         EntityUid step, bool doPopup, out string? popup, out StepInvalidReason reason,
-        out HashSet<EntityUid>? validTools)
+        out Dictionary<EntityUid, float>? validTools)
     {
         var type = BodyPartType.Other;
         if (TryComp(part, out BodyPartComponent? partComp))
@@ -759,18 +879,20 @@ public abstract partial class SharedSurgerySystem
         return !ev.Cancelled;
     }
 
-    private bool AnyHaveComp(List<EntityUid> tools, IComponent component, out EntityUid withComp)
+    private bool AnyHaveComp(List<EntityUid> tools, IComponent component, out EntityUid withComp, out float speed)
     {
         foreach (var tool in tools)
         {
-            if (HasComp(tool, component.GetType()))
+            if (EntityManager.TryGetComponent(tool, component.GetType(), out var found) && found is ISurgeryToolComponent toolComp)
             {
                 withComp = tool;
+                speed = toolComp.Speed;
                 return true;
             }
         }
 
-        withComp = default;
+        withComp = EntityUid.Invalid;
+        speed = 1f;
         return false;
     }
 }

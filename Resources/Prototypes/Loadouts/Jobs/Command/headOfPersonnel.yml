@@ -47,6 +47,7 @@
   category: JobsCommandHeadOfPersonnel
   cost: 0
   exclusive: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutHeadOfPersonnelBackpacks
@@ -61,6 +62,7 @@
   category: JobsCommandHeadOfPersonnel
   cost: 0
   exclusive: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutHeadOfPersonnelBackpacks
@@ -105,6 +107,7 @@
   id: LoadoutHeadOfPersonnelBookIanDossier
   category: JobsCommandHeadOfPersonnel
   cost: 0
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutHeadOfPersonnelTrinkets
@@ -136,6 +139,7 @@
   category: JobsCommandHeadOfPersonnel
   cost: 0
   exclusive: true
+  customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutHeadOfPersonnelGloves

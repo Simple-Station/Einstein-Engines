@@ -7,6 +7,11 @@
   components:
   - type: Item
     size: Tiny
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 1
+    staminaCost: 1
 
 - type: entity
   parent: ClothingNeckPinBase
@@ -151,7 +156,7 @@
     clothingVisuals:
       neck:
       - state: trans-equipped
- 
+
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckAutismPin

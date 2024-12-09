@@ -8,6 +8,8 @@ using System.Text.Json;
 using Content.Shared.Database;
 using Microsoft.EntityFrameworkCore;
 using NpgsqlTypes;
+using Robust.Shared.Serialization.Manager.Attributes;
+
 
 namespace Content.Server.Database
 {
@@ -404,13 +406,20 @@ namespace Content.Server.Database
         public string TraitName { get; set; } = null!;
     }
 
-    public class Loadout
+    [Serializable]
+    public partial class Loadout : Shared.Clothing.Loadouts.Systems.Loadout
     {
         public int Id { get; set; }
         public Profile Profile { get; set; } = null!;
         public int ProfileId { get; set; }
 
-        public string LoadoutName { get; set; } = null!;
+        public Loadout(
+            string loadoutName,
+            string? customName = null,
+            string? customDescription = null,
+            string? customColorTint = null,
+            bool? customHeirloom = null
+        ) : base(loadoutName, customName, customDescription, customColorTint, customHeirloom) { }
     }
 
     public enum DbPreferenceUnavailableMode

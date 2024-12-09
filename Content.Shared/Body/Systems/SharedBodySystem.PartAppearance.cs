@@ -20,8 +20,8 @@ public partial class SharedBodySystem
 
         SubscribeLocalEvent<BodyPartAppearanceComponent, ComponentStartup>(OnPartAppearanceStartup);
         SubscribeLocalEvent<BodyPartAppearanceComponent, AfterAutoHandleStateEvent>(HandleState);
-        SubscribeLocalEvent<BodyComponent, BodyPartAttachedEvent>(OnPartAttachedToBody);
-        SubscribeLocalEvent<BodyComponent, BodyPartDroppedEvent>(OnPartDroppedFromBody);
+        SubscribeLocalEvent<BodyComponent, BodyPartAddedEvent>(OnPartAttachedToBody);
+        SubscribeLocalEvent<BodyComponent, BodyPartRemovedEvent>(OnPartDroppedFromBody);
     }
 
     private void OnPartAppearanceStartup(EntityUid uid, BodyPartAppearanceComponent component, ComponentStartup args)
@@ -130,7 +130,7 @@ public partial class SharedBodySystem
     private void HandleState(EntityUid uid, BodyPartAppearanceComponent component, ref AfterAutoHandleStateEvent args) =>
         ApplyPartMarkings(uid, component);
 
-    private void OnPartAttachedToBody(EntityUid uid, BodyComponent component, ref BodyPartAttachedEvent args)
+    private void OnPartAttachedToBody(EntityUid uid, BodyComponent component, ref BodyPartAddedEvent args)
     {
         if (!TryComp(args.Part, out BodyPartAppearanceComponent? partAppearance)
             || !TryComp(uid, out HumanoidAppearanceComponent? bodyAppearance))
@@ -142,7 +142,7 @@ public partial class SharedBodySystem
         UpdateAppearance(uid, partAppearance);
     }
 
-    private void OnPartDroppedFromBody(EntityUid uid, BodyComponent component, ref BodyPartDroppedEvent args)
+    private void OnPartDroppedFromBody(EntityUid uid, BodyComponent component, ref BodyPartRemovedEvent args)
     {
         if (TerminatingOrDeleted(uid)
             || TerminatingOrDeleted(args.Part)
