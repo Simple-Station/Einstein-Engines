@@ -1303,6 +1303,7 @@
     - MedicalPatchBasic  #Goobstation - MedicalPatch
     - MedicalPatchRapid #Goobstation - MedicalPatch
     - MedicalPatchLarge #Goobstation - MedicalPatch
+    - MedicalPatchTherapeutic #Goobstation - MedicalPatch
     dynamicRecipes:
     - ChemicalPayload
     - CryostasisBeaker
