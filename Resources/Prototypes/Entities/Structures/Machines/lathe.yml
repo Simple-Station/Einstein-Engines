@@ -244,7 +244,6 @@
     - SpeedLoaderMagnumEmpty
     - GrenadeFlashBang # Goobstation
     - BolaEnergy # Goobstation
-    - CartridgeEpinephrine # Goobstation
     # .35 Caseless Pistol
     - MagazinePistolCaselessRiflePractice # EE
     - MagazinePistolCaselessRifle # EE
@@ -265,6 +264,13 @@
     - MagazineMagnum # Goobstation
     - MagazineMagnumLeverRifleEmpty # Goobstation
     - MagazineMagnumLeverRifle # Goobstation
+    - CartridgeEpinephrine # Goobstation
+    - CartridgeBicaridine # Goobstation
+    - CartridgeDermaline # Goobstation
+    - CartridgeEphedrine # Goobstation
+    - CartridgePuncturase # Goobstation
+    - SecHypo # Goobstation
+    - ParamedHypo # Goobstation - ParamedHypo
 
 - type: entity
   id: AutolatheHyperConvection
@@ -1270,6 +1276,10 @@
     - ClothingEyesGlassesChemical
     - BoneGel # Shitmed Change
     - AACTablet # DeltaV
+    - CartridgeEpinephrine # Goobstation - ParamedHypo
+    - CartridgeBicaridine # Goobstation - ParamedHypo
+    - CartridgeDermaline # Goobstation - ParamedHypo
+    - ParamedHypo # Goobstation - ParamedHypo
     dynamicRecipes:
     - ChemicalPayload
     - CryostasisBeaker

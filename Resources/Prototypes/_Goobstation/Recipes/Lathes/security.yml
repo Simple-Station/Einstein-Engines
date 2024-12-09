@@ -19,7 +19,54 @@
   id: MagazineMagnumLeverRifle
   result: MagazineMagnumLeverRifle
   materials:
-    Steel: 185
+    Steel: 100
+    Glass: 300
+
+- type: latheRecipe
+  id: CartridgeBicaridine
+  result: CartridgeBicaridine
+  completetime: 1
+  materials:
+    Steel: 100
+    Glass: 300
+
+- type: latheRecipe
+  id: CartridgeDermaline
+  result: CartridgeDermaline
+  completetime: 1
+  materials:
+    Steel: 100
+    Glass: 300
+
+- type: latheRecipe
+  id: CartridgeEphedrine
+  result: CartridgeEphedrine
+  completetime: 1
+  materials:
+    Steel: 200
+    Glass: 500
+    Plasma: 200
+    Gold: 200
+
+- type: latheRecipe
+  id: CartridgePuncturase
+  result: CartridgePuncturase
+  completetime: 1
+  materials:
+    Steel: 200
+    Glass: 500
+    Plasma: 500
+    Gold: 200
+
+- type: latheRecipe
+  id: SecHypo
+  result: SecHypo
+  completetime: 3
+  materials:
+    Steel: 1500
+    Plastic: 800
+    Glass: 1200
+    Gold: 500
 
 # Mech Weapons
 - type: latheRecipe
