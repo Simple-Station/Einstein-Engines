@@ -509,7 +509,7 @@
   cost:
     Telecrystal: 3
   categories:
-  - UplinkDeception
+  - UplinkUtility
 
 - type: listing
   id: UplinkStealthBox
@@ -519,7 +519,7 @@
   cost:
     Telecrystal: 5
   categories:
-  - UplinkDeception
+  - UplinkUtility
 
 - type: listing
   id: UplinkChameleonProjector
@@ -529,7 +529,7 @@
   cost:
     Telecrystal: 7
   categories:
-  - UplinkDeception
+  - UplinkUtility
 
 - type: listing
   id: UplinkCyberpen
@@ -539,7 +539,7 @@
   cost:
     Telecrystal: 1
   categories:
-  - UplinkDeception
+  - UplinkUtility
 
 - type: listing
   id: UplinkDecoyDisk
@@ -549,7 +549,7 @@
   cost:
     Telecrystal: 1
   categories:
-  - UplinkDeception
+  - UplinkUtility
 
 - type: listing
   id: UplinkUltrabrightLantern
@@ -559,7 +559,7 @@
   cost:
     Telecrystal: 2
   categories:
-  - UplinkDeception
+  - UplinkUtility
 
 - type: listing
   id: UplinkBribe
@@ -569,7 +569,7 @@
   cost:
     Telecrystal: 4
   categories:
-    - UplinkDeception
+    - UplinkUtility
 
 # - type: listing
 #   id: UplinkGigacancerScanner
@@ -579,7 +579,7 @@
 #   cost:
 #     Telecrystal: 5
 #   categories:
-#   - UplinkDeception
+#   - UplinkUtility
 
 - type: listing
   id: UplinkHolster
@@ -974,7 +974,7 @@
   cost:
     Telecrystal: 4
   categories:
-  - UplinkDeception
+  - UplinkUtility
 
 # Disruption
 
@@ -1417,6 +1417,16 @@
   categories:
     - UplinkUtility
 
+- type: listing
+  id: UplinkEmpFlashlight
+  name: uplink-emp-flashlight-name
+  description: uplink-emp-flashlight-desc
+  productEntity: FlashlightEmp
+  cost:
+    Telecrystal: 3
+  categories:
+    - UplinkUtility
+
 # Armor
 
 - type: listing
@@ -1778,3 +1788,4 @@
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1
+    

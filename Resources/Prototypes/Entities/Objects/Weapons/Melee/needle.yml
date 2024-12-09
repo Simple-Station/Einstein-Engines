@@ -12,6 +12,11 @@
     damage:
       types:
         Piercing: 1
+  - type: DamageOtherOnHit
+  - type: EmbeddableProjectile
+    removalTime: 0
+  - type: ThrowingAngle
+    angle: 225
   - type: Item
     size: Tiny
   - type: BalloonPopper

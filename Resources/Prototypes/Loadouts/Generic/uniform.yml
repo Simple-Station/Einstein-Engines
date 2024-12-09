@@ -3,6 +3,8 @@
   category: Uniform
   cost: 1
   exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutUniformsCivilian
@@ -242,6 +244,7 @@
   category: Uniform
   cost: 0
   exclusive: true
+  customColorTint: true
   items:
     - ClothingUniformJumpsuitColorWhite
   requirements:
@@ -262,6 +265,7 @@
   category: Uniform
   cost: 0
   exclusive: true
+  customColorTint: true
   items:
     - ClothingUniformJumpskirtColorWhite
   requirements:
@@ -998,6 +1002,7 @@
   category: Uniform
   cost: 1
   exclusive: true
+  canBeHeirloom: true
   items:
     - ClothingUniformKendoHakama
   requirements:
@@ -1013,6 +1018,8 @@
   category: Uniform
   cost: 1
   exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
   items:
     - ClothingUniformMartialGi
   requirements:
@@ -1030,6 +1037,8 @@
   category: Uniform
   cost: 1
   exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
   items:
     - ClothingUniformJumpsuitKimono
   requirements:
@@ -1046,6 +1055,7 @@
   category: Uniform
   cost: 1
   exclusive: true
+  canBeHeirloom: true
   items:
     - ClothingKimonoBlue
   requirements:
@@ -1062,6 +1072,7 @@
   category: Uniform
   cost: 1
   exclusive: true
+  canBeHeirloom: true
   items:
     - ClothingKimonoPink
   requirements:
@@ -1078,6 +1089,7 @@
   category: Uniform
   cost: 1
   exclusive: true
+  canBeHeirloom: true
   items:
     - ClothingKimonoPurple
   requirements:
@@ -1094,6 +1106,7 @@
   category: Uniform
   cost: 1
   exclusive: true
+  canBeHeirloom: true
   items:
     - ClothingKimonoSky
   requirements:
@@ -1110,6 +1123,7 @@
   category: Uniform
   cost: 1
   exclusive: true
+  canBeHeirloom: true
   items:
     - ClothingKimonoGreen
   requirements:
@@ -1127,6 +1141,7 @@
   category: Uniform
   cost: 1
   exclusive: true
+  canBeHeirloom: true
   items:
     - ClothingUniformSchoolGakuranBlack
   requirements:
@@ -1302,6 +1317,7 @@
   category: Uniform
   cost: 1
   exclusive: true
+  customColorTint: true
   items:
     - ClothingUniformMNKOfficeSkirt
   requirements:
@@ -1317,6 +1333,7 @@
   category: Uniform
   cost: 1
   exclusive: true
+  customColorTint: true
   items:
     - ClothingUniformMNKUnderGarment
   requirements:
@@ -1332,6 +1349,7 @@
   category: Uniform
   cost: 1
   exclusive: true
+  customColorTint: true
   items:
     - ClothingUniformMNKGymBra
   requirements:
@@ -1499,6 +1517,7 @@
   category: Uniform
   cost: 1
   exclusive: true
+  customColorTint: true
   items:
     - ClothingUniformJumpsuitSuitWhite
   requirements:
@@ -1515,6 +1534,7 @@
   category: Uniform
   cost: 1
   exclusive: true
+  customColorTint: true
   items:
     - ClothingUniformJumpsuitSuitWhiteAlt
   requirements:
@@ -1530,6 +1550,7 @@
   category: Uniform
   cost: 1
   exclusive: true
+  customColorTint: true
   items:
     - ClothingUniformJumpsuitSuitWhiteMob
   requirements:

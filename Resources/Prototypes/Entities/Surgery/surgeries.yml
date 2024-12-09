@@ -45,6 +45,59 @@
 
 - type: entity
   parent: SurgeryBase
+  id: SurgeryLobotomize
+  name: Lobotomize
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepLobotomize
+    - SurgeryStepCloseIncision
+  - type: SurgeryPartCondition
+    part: Head
+  - type: SurgeryOrganCondition
+    organ:
+    - type: Brain
+  - type: SurgeryOrganOnAddCondition
+    components:
+      brain:
+        - type: OhioAccent
+        - type: RatvarianLanguage
+        - type: Clumsy
+          clumsyDamage: # Placeholder values to be able to initialize the component
+            types:
+              Blunt: 0
+    inverse: true
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryMendBrainTissue
+  name: Mend brain tissue
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepMendBrainTissue
+    - SurgeryStepCloseIncision
+  - type: SurgeryPartCondition
+    part: Head
+  - type: SurgeryOrganCondition
+    organ:
+    - type: Brain
+  - type: SurgeryOrganOnAddCondition
+    components:
+      brain:
+        - type: OhioAccent
+        - type: RatvarianLanguage
+        - type: Clumsy
+          clumsyDamage:
+            types:
+              Blunt: 0
+
+- type: entity
+  parent: SurgeryBase
   id: SurgeryRemovePart
   name: Remove Part
   categories: [ HideSpawnMenu ]
@@ -281,6 +334,24 @@
   - type: SurgeryPartRemovedCondition
     connection: feet
     part: Foot
+    symmetry: None
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryAttachTail
+  name: Attach Tail
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepInsertFeature
+    - SurgeryStepSealWounds
+  - type: SurgeryPartCondition
+    part: Torso
+  - type: SurgeryPartRemovedCondition
+    connection: tail
+    part: Tail
     symmetry: None
 
 #- type: entity

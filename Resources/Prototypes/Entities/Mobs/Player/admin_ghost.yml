@@ -25,6 +25,7 @@
     canInteract: true
   - type: GhostHearing
   - type: Hands
+  - type: ComplexInteraction
   - type: Puller
     pushAcceleration: 1000000 # Will still be capped in max speed
     maxPushRange: 20
@@ -99,6 +100,7 @@
   - type: Loadout
     prototypes: [ MobAghostGear ]
   - type: SupermatterImmune
+  - type: BypassInteractionChecks
 
 - type: entity
   id: ActionAGhostShowSolar

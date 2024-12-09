@@ -199,6 +199,7 @@
     - type: CreamPied
     - type: Stripping
     - type: Strippable
+    - type: ComplexInteraction
     - type: SurgeryTarget
     - type: Targeting
     - type: UserInterface
@@ -207,6 +208,9 @@
           type: HumanoidMarkingModifierBoundUserInterface
         enum.StrippingUiKey.Key:
           type: StrippableBoundUserInterface
+        enum.InstrumentUiKey.Key:
+          type: InstrumentBoundUserInterface
+          requireInputValidation: false
         enum.RadialSelectorUiKey.Key:
           type: RadialSelectorMenuBUI
         enum.ListViewSelectorUiKey.Key:

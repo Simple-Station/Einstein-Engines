@@ -144,24 +144,24 @@ trait-description-GlassJaw =
 trait-name-HighAdrenaline = High Adrenaline
 trait-description-HighAdrenaline =
     Whether by natural causes, genetic or bionic augmentation, you have a more potent adrenal gland.
-    When injured, your melee attacks deal up to 10% more damage, in addition to the natural bonuses from adrenaline.
-    The standard adrenaline bonuses to melee damage are up to a 20% increase.
+    When injured, your melee/throwing attacks deal up to 10% more damage, in addition to the natural bonuses from adrenaline.
+    The standard adrenaline bonuses to melee/throwing damage are up to a 20% increase.
 
 trait-name-AdrenalDysfunction = Adrenal Dysfunction
 trait-description-AdrenalDysfunction =
     Your adrenal gland is completely nonfunctional, or potentially missing outright.
-    Your melee attacks do not benefit from Adrenaline when injured.
-    The standard adrenaline bonuses to melee damage are up to a 20% increase.
+    Your melee/throwing attacks do not benefit from Adrenaline when injured.
+    The standard adrenaline bonuses to melee/throwing damage are up to a 20% increase.
 
 trait-name-Masochism = Masochism
 trait-description-Masochism =
     Deriving enjoyment from your own pain, you are not as inhibited by it as others.
-    You ignore the first 10% of stamina damage penalties to your melee attacks.
+    You ignore the first 10% of stamina damage penalties to your melee/throwing attacks.
 
 trait-name-LowPainTolerance = Low Pain Tolerance
 trait-description-LowPainTolerance =
     Your tolerance for pain is far below average, and its effects are more inhibiting.
-    Your melee damage is penalized by up to an additional 15% when taking stamina damage.
+    Your melee/throwing damage is penalized by up to an additional 15% when taking stamina damage.
 
 trait-name-MartialArtist = Martial Artist
 trait-description-MartialArtist =

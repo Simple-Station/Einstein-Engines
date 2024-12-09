@@ -14,11 +14,17 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutMysticEquipment
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutMysticEquipment
+  maxItems: 3
+  items:
+    - type: loadout
+      id: LoadoutMysticEquipmentCandles
+    - type: loadout
+      id: LoadoutMysticEquipmentCandlesSmall
+    - type: loadout
+      id: LoadoutMysticPillCanisterSpaceDrugs
+
 #- type: characterItemGroup
 #  id: LoadoutMysticEyes
 #  maxItems: 1
