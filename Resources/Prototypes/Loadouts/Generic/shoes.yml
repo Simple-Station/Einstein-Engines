@@ -81,6 +81,7 @@
   category: Shoes
   cost: 0
   exclusive: true
+  customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes
@@ -159,6 +160,7 @@
   category: Shoes
   cost: 1
   exclusive: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes
@@ -170,6 +172,7 @@
   category: Shoes
   cost: 1
   exclusive: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes
@@ -181,6 +184,8 @@
   category: Shoes
   cost: 1
   exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes
@@ -192,6 +197,8 @@
   category: Shoes
   cost: 1
   exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes
@@ -215,6 +222,7 @@
   category: Shoes
   cost: 1
   exclusive: true
+  canBeHeirloom: true
   items:
     - ClothingShoeSlippersDuck
   requirements:
@@ -240,6 +248,7 @@
   category: Shoes
   cost: 0
   exclusive: true
+  customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes
@@ -285,6 +294,7 @@
   category: Shoes
   cost: 0
   exclusive: true
+  customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes

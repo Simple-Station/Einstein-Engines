@@ -2,6 +2,7 @@
   id: LoadoutOuterCoatBomberjacket
   category: Outer
   cost: 1
+  customColorTint: true
   items:
     - ClothingOuterCoatBomber
   requirements:
@@ -22,6 +23,7 @@
   id: LoadoutOuterCoatHoodieGrey
   category: Outer
   cost: 0
+  customColorTint: true
   items:
     - ClothingOuterHoodieGrey
   requirements:
@@ -32,6 +34,7 @@
   id: LoadoutOuterCoatWinterCoat
   category: Outer
   cost: 1
+  customColorTint: true
   items:
     - ClothingOuterWinterCoat
   requirements:
@@ -42,6 +45,7 @@
   id: LoadoutOuterCoatHyenhSweater
   category: Outer
   cost: 1
+  customColorTint: true
   items:
     - ClothingOuterCoatHyenhSweater
   requirements:
@@ -52,6 +56,7 @@
   id: LoadoutOuterWinterCoatLong
   category: Outer
   cost: 1
+  customColorTint: true
   items:
     - ClothingOuterWinterCoatLong
   requirements:
@@ -114,6 +119,7 @@
   id: LoadoutOuterCoatMNKWhiteHoodie
   category: Outer
   cost: 1
+  customColorTint: true
   items:
     - ClothingOuterCoatMNKWhiteHoodie
   requirements:
@@ -145,6 +151,7 @@
   id: LoadoutOuterCorporateJacket
   category: Outer
   cost: 0
+  guideEntry: NanoTrasen
   items:
     - ClothingOuterCorporateJacket
   requirements:
@@ -165,6 +172,7 @@
   id: LoadoutOuterEeCorporateJacket
   category: Outer
   cost: 0
+  guideEntry: EinsteinEngines
   items:
     - ClothingOuterEeCorporateJacket
   requirements:
@@ -175,6 +183,7 @@
   id: LoadoutOuterHiCorporateJacket
   category: Outer
   cost: 0
+  guideEntry: HephaestusIndustries
   items:
     - ClothingOuterHiCorporateJacket
   requirements:
@@ -245,6 +254,7 @@
   id: LoadoutOuterZhCorporateJacket
   category: Outer
   cost: 0
+  guideEntry: ZengHuPharmaceuticals
   items:
     - ClothingOuterZhCorporateJacket
   requirements:

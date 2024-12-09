@@ -12,6 +12,13 @@
   - type: Item
     sprite: Objects/Tools/emag.rsi
     storedRotation: -90
+  - type: DamageOtherOnHit # An emag has sharp edges
+    damage:
+      types:
+        Slash: 5
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/star_hit.ogg
+  - type: EmbedPassiveDamage
 
 - type: entity
   parent: EmagUnlimited

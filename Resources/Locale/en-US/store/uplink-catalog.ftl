@@ -26,6 +26,9 @@ uplink-fire-axe-flaming-desc = A classic-style weapon infused with advanced atmo
 uplink-gloves-north-star-name = Gloves of the North Star
 uplink-gloves-north-star-desc = A pair of gloves that reduce your punching cooldown drastically, allowing you to beat people to death in a flurry of punches.
 
+uplink-emp-flashlight-name = Emp Flashlight
+uplink-emp-flashlight-desc = A rechargeable device disguised as a flashlight designed to disrupt electronic systems. Useful for disrupting communications, security's energy weapons, and APCs when you're in a tight spot.
+
 # Explosives
 uplink-explosive-grenade-name = Explosive Grenade
 uplink-explosive-grenade-desc = A simplistic grenade with a three-and-a-half-second long fuse that is geared towards injuring personnel. Causes minimal hull damage.

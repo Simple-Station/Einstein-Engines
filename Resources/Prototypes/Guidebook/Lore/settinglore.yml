@@ -1,0 +1,66 @@
+- type: guideEntry
+  id: SettingLore
+  name: guide-entry-setting-lore
+  text: "/ServerInfo/Guidebook/Lore/SettingLore.xml"
+  children:
+    - Corporations
+
+- type: guideEntry
+  id: Corporations
+  name: guide-entry-corporations
+  text: "/ServerInfo/Guidebook/Lore/Corporations/Corporations.xml"
+  children:
+    - IdrisIncorporated
+    - EinsteinEngines
+    - StellarCorporateConglomerate
+    - NanoTrasen
+    - OrionExpress
+    - ZengHuPharmaceuticals
+    - HephaestusIndustries
+    - ZavodskoiInterstellar
+    - PrivateMilitaryContractingGroup
+
+- type: guideEntry
+  id: IdrisIncorporated
+  name: guide-entry-idris-incorporated
+  text: "/ServerInfo/Guidebook/Lore/Corporations/IdrisIncorporated.xml"
+
+- type: guideEntry
+  id: EinsteinEngines
+  name: guide-entry-einstein-engines
+  text: "/ServerInfo/Guidebook/Lore/Corporations/EinsteinEngines.xml"
+
+- type: guideEntry
+  id: StellarCorporateConglomerate
+  name: guide-entry-stellar-corporate-conglomerate
+  text: "/ServerInfo/Guidebook/Lore/Corporations/StellarCorporateConglomerate.xml"
+
+- type: guideEntry
+  id: NanoTrasen
+  name: guide-entry-nanotrasen
+  text: "/ServerInfo/Guidebook/Lore/Corporations/NanoTrasen.xml"
+
+- type: guideEntry
+  id: OrionExpress
+  name: guide-entry-orion-express
+  text: "/ServerInfo/Guidebook/Lore/Corporations/OrionExpress.xml"
+
+- type: guideEntry
+  id: ZengHuPharmaceuticals
+  name: guide-entry-zeng-hu-pharmaceuticals
+  text: "/ServerInfo/Guidebook/Lore/Corporations/ZengHuPharmaceuticals.xml"
+
+- type: guideEntry
+  id: HephaestusIndustries
+  name: guide-entry-hephaestus-industries
+  text: "/ServerInfo/Guidebook/Lore/Corporations/HephaestusIndustries.xml"
+
+- type: guideEntry
+  id: ZavodskoiInterstellar
+  name: guide-entry-zavodskoi-interstellar
+  text: "/ServerInfo/Guidebook/Lore/Corporations/ZavodskoiInterstellar.xml"
+
+- type: guideEntry
+  id: PrivateMilitaryContractingGroup
+  name: guide-entry-private-military-contracting-group
+  text: "/ServerInfo/Guidebook/Lore/Corporations/PrivateMilitaryContractingGroup.xml"

@@ -1285,6 +1285,7 @@
       visible: false
   - type: Carriable
   - type: Hands
+  - type: ComplexInteraction
   - type: GenericVisualizer
     visuals:
       enum.CreamPiedVisuals.Creamed:
@@ -1755,10 +1756,6 @@
   - type: FelinidFood # Nyanotrasen - Felinid, ability to eat mice, see Content.Server/Nyanotrasen/Abilities/Felinid/FelinidSystem.cs
   - type: BadFood
   - type: NonSpreaderZombie
-  - type: PreventSpiller
-  - type: RandomBark
-    barkMultiplier: 0.3
-    barkType: mouse
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
     normalState: Mouse_burning

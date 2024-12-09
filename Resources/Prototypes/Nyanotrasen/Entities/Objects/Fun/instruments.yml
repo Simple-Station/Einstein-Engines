@@ -48,6 +48,7 @@
     damage:
       types:
         Blunt: 7
+  - type: DamageOtherOnHit
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:
