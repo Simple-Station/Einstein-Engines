@@ -1673,7 +1673,7 @@
     sprite: Objects/Weapons/Melee/cutlass.rsi
     state: foam_icon
   - type: MeleeWeapon
-    attackRate: .6
+    attackRate: .6666
     range: 2.0
     angle: 0
     animation: WeaponArcThrust
