@@ -9,7 +9,7 @@ using Robust.Shared.Serialization;
 namespace Content.Shared.Customization.Systems;
 
 /// <summary>
-///     Requires the profile to have one of the specified loadouts
+///     Requires the server to have a specific CVar value. 
 /// </summary>
 [UsedImplicitly, Serializable, NetSerializable,]
 public sealed partial class CVarRequirement : CharacterRequirement
