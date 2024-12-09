@@ -13,7 +13,7 @@
     sprite: Objects/Tools/Toolboxes/toolbox_red.rsi
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.5
+    attackRate: .6
     damage:
       types:
         Blunt: 20
