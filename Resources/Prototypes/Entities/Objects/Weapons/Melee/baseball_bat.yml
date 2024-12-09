@@ -28,6 +28,8 @@
       types:
         Blunt: 4
         Structural: 10
+  - type: DamageOtherOnHit
+    staminaCost: 10
   - type: Item
     size: Normal
   - type: Tool

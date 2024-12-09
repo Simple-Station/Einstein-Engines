@@ -12,9 +12,10 @@
   - type: DamageOtherOnHit
     damage:
       types:
-        Blunt: 2
-  - type: EmbeddableProjectile
-    sound: /Audio/Weapons/star_hit.ogg
+        Blunt: 5.5
+    staminaCost: 5
+    soundHit:
+      collection: MetalThud
   - type: Stack
     count: 1
   - type: Tag
@@ -67,9 +68,9 @@
   - type: DamageOtherOnHit
     damage:
       types:
-        Blunt: 5 #Metal floor tiles deal more damage than standard
-  - type: EmbeddableProjectile
-    sound: /Audio/Weapons/block_metal1.ogg
+        Blunt: 9.5 #Metal floor tiles deal more damage than standard
+    staminaCost: 6
+    soundHit: /Audio/Weapons/block_metal1.ogg
 
 - type: entity
   name: steel dark checker tile
