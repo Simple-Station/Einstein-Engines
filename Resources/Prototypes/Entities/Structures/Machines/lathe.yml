@@ -273,8 +273,9 @@
     - CartridgeBicaridine # Goobstation
     - CartridgeDermaline # Goobstation
     - CartridgeEphedrine # Goobstation
-    - CartridgeIchor # Goobstation
+    - CartridgePuncturase # Goobstation
     - SecHypo # Goobstation
+    - ParamedHypo # Goobstation - ParamedHypo
 
 - type: entity
   id: AutolatheHyperConvection
@@ -1322,6 +1323,10 @@
     - AACTablet # DeltaV
     - VehicleWheelchairFolded # Goobstation - Vehicles
     - SyringeCase # Morphine
+    - CartridgeEpinephrine # Goobstation - ParamedHypo
+    - CartridgeBicaridine # Goobstation - ParamedHypo
+    - CartridgeDermaline # Goobstation - ParamedHypo
+    - ParamedHypo # Goobstation - ParamedHypo
     dynamicRecipes:
     - ChemicalPayload
     - CryostasisBeaker

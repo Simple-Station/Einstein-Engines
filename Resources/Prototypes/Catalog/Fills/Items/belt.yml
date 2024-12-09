@@ -134,6 +134,8 @@
       - id: EmergencyMedipen
       - id: BruteAutoInjector
       - id: BurnAutoInjector
+      - id: ParamedHypo #Goobstation - ParamedHypo
+      - id: Tourniquet #Goobstation - ParamedHypo
 
 - type: entity
   id: ClothingBeltPlantFilled
