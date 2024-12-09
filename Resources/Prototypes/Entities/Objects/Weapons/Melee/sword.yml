@@ -10,14 +10,14 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.25
+    attackRate: .8
     range: 1.75
     soundHit:
       path: /Audio/SimpleStation14/Weapons/Melee/rapierhit.ogg
     damage:
       types:
         Slash: 15
-    heavyRateModifier: 0.8
+    heavyRateModifier: 1.25
     heavyRangeModifier: 1
     heavyDamageBaseModifier: 1
     heavyStaminaCost: 5
@@ -55,13 +55,13 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.5
+    attackRate: .6
     soundHit:
       path: /Audio/SimpleStation14/Weapons/Melee/rapierhit.ogg
     damage:
       types:
         Slash: 12
-    heavyRateModifier: 0.5
+    heavyRateModifier: 2
     heavyRangeModifier: 2.75 #Superior Japanese folded steel
     heavyDamageBaseModifier: 1.25
     heavyStaminaCost: 15
@@ -121,11 +121,11 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 0.8
+    attackRate: 1.25
     damage:
       types:
         Slash: 15
-    heavyRateModifier: 0.8
+    heavyRateModifier: 1.25
     heavyRangeModifier: 1.25
     heavyDamageBaseModifier: 1.2
     heavyStaminaCost: 7.5
@@ -149,14 +149,14 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 0.65
+    attackRate: 1.53
     range: 1.85
     damage:
       types:
         Slash: 19
         Blunt: 1
     bluntStaminaDamageFactor: 25.0
-    heavyRateModifier: 0.5
+    heavyRateModifier: 2
     heavyRangeModifier: 1
     heavyDamageBaseModifier: 1
     heavyStaminaCost: 15
@@ -187,11 +187,11 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.25
+    attackRate: .8
     damage:
       types:
         Slash: 12
-    heavyRateModifier: 0.8
+    heavyRateModifier: 1.25
     heavyRangeModifier: 1.2
     heavyDamageBaseModifier: 1.2
     heavyStaminaCost: 7.5
@@ -216,7 +216,7 @@
       state: icon
     - type: MeleeWeapon
       wideAnimationRotation: -135
-      attackRate: 10
+      attackRate: .1
       damage:
         types:
           Structural: 150
