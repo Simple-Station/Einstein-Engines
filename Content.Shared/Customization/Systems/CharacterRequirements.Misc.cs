@@ -17,7 +17,7 @@ public sealed partial class CVarRequirement : CharacterRequirement
     [DataField("cvar", required: true)]
     public string CVar;
 
-    [DataField("requiredValue", required: true)]
+    [DataField(required: true)]
     public string RequiredValue;
 
     public override bool IsValid(
