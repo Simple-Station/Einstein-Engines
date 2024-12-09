@@ -90,7 +90,7 @@
     - 0,0,1,0
     - 1,1,1,1
   - type: MeleeWeapon
-    attackRate: 0.75
+    attackRate: 1.3
     range: 1.4
     damage:
       types:
@@ -130,12 +130,12 @@
   - type: MeleeWeapon
     wideAnimationRotation: 90
     swingLeft: true
-    attackRate: 1.25
+    attackRate: .8
     range: 1.4
     damage:
       types:
         Slash: 7.5
-    heavyRateModifier: 0.8
+    heavyRateModifier: 1.25
     heavyDamageBaseModifier: 1.25
     heavyStaminaCost: 5
     maxTargets: 1
@@ -362,13 +362,13 @@
       - Sawing
     speed: 1.0
   - type: MeleeWeapon
-    attackRate: 0.75
+    attackRate: 1.3
     range: 1.35
     damage:
       types:
         Blunt: 2.5
         Slash: 6.5
-    heavyRateModifier: 0.8
+    heavyRateModifier: 1.25
     heavyDamageBaseModifier: 1.0
     heavyStaminaCost: 20
     maxTargets: 8
@@ -388,13 +388,13 @@
   - type: Item
     heldPrefix: improv
   - type: MeleeWeapon
-    attackRate: 0.85
+    attackRate: 1.17
     damage:
       types:
         Blunt: 3
         Slash: 7
     bluntStaminaDamageFactor: 3
-    heavyRateModifier: 0.8
+    heavyRateModifier: 1.25
     heavyDamageBaseModifier: 1.0
     heavyStaminaCost: 20
     maxTargets: 8
@@ -421,14 +421,14 @@
     sprite: Objects/Specific/Medical/Surgery/circular-saw.rsi
     storedRotation: 90
   - type: MeleeWeapon
-    attackRate: 1.15
+    attackRate: .86
     range: 1.5
     bluntStaminaDamageFactor: 3.0
     damage:
       types:
         Blunt: 4.5
         Slash: 5.5
-    heavyRateModifier: 0.5
+    heavyRateModifier: 2
     heavyDamageBaseModifier: 1
     heavyStaminaCost: 10
     maxTargets: 8
@@ -457,14 +457,14 @@
     heldPrefix: advanced
     storedRotation: 90
   - type: MeleeWeapon
-    attackRate: 1.15
+    attackRate: .86
     range: 1.5
     bluntStaminaDamageFactor: 5.0
     damage:
       types:
         Blunt: 4.5
         Slash: 7.5
-    heavyRateModifier: 0.5
+    heavyRateModifier: 2
     heavyDamageBaseModifier: 1
     heavyStaminaCost: 10
     maxTargets: 8
