@@ -43,6 +43,13 @@
   - type: GuideHelp
     guides:
     - Medical Doctor
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 6.5
+    staminaCost: 8
+    soundHit:
+      path: /Audio/Weapons/smash.ogg
 
 - type: entity
   id: PortafibEmpty
