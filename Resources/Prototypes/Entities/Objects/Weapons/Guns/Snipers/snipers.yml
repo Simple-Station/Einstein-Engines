@@ -74,18 +74,19 @@
       path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
     fireOnDropChance: 1
   - type: MeleeWeapon
+    range: 1.75
     damage:
       types:
-        Slash: 6
-        Piercing: 2
+        Piercing: 5
+        Slash: 3
     wideAnimationRotation: -135
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Slash: 2
-        Piercing: 1
+        Piercing: 2
+        Slash: 1
   - type: EmbeddableProjectile
     removalTime: 3
   - type: EmbedPassiveDamage
@@ -149,18 +150,19 @@
     capacity: 1
     proto: CartridgeAntiMateriel
   - type: MeleeWeapon
+    range: 1.75
     damage:
       types:
-        Slash: 6
-        Piercing: 2
+        Piercing: 5
+        Slash: 3
     wideAnimationRotation: -135
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Slash: 2
-        Piercing: 1
+        Piercing: 2
+        Slash: 1
   - type: EmbeddableProjectile
     removalTime: 3
   - type: EmbedPassiveDamage
