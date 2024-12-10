@@ -118,11 +118,10 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
 
         _audio.PlayPvs(args.EndDrawingSound, args.User, AudioParams.Default.WithMaxDistance(2f));
         var runeEnt = SpawnRune(args.User, runeSelector.Prototype);
-        if (TryComp(runeEnt, out CultRuneBaseComponent? rune) && rune.TriggerRendingMarkers)
-        {
-           if (!_cultRule.TryConsumeNearestMarker(ent))
-               return;
-        }
+        if (TryComp(runeEnt, out CultRuneBaseComponent? rune) 
+            && rune.TriggerRendingMarkers
+            && !_cultRule.TryConsumeNearestMarker(ent))
+            return;
 
         var ev = new AfterRunePlaced(args.User);
         RaiseLocalEvent(runeEnt, ev);
