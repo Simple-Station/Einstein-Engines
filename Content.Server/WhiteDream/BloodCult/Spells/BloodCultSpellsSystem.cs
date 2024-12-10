@@ -63,8 +63,7 @@ public sealed class BloodCultSpellsSystem : EntitySystem
 
     private void OnSpellStartup(Entity<BaseCultSpellComponent> action, ref ComponentStartup args)
     {
-        _actions.TryGetActionData(action, out var actionData);
-        if (actionData is { UseDelay: not null })
+        if (_actions.TryGetActionData(action, out var actionData, false) && actionData is { UseDelay: not null })
             _actions.StartUseDelay(action);
     }
 
