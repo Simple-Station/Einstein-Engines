@@ -36,6 +36,8 @@ public abstract class SharedPhaseShiftSystem : EntitySystem
 
     protected virtual void OnComponentStartup(Entity<PhaseShiftedComponent> ent, ref ComponentStartup args)
     {
+        var pos = _transform.GetMapCoordinates(ent);
+        Spawn(ent.Comp.PhaseInEffect, pos);
         _audio.PlayPvs(ent.Comp.PhaseInSound, Transform(ent).Coordinates);
 
         if (TryComp<FixturesComponent>(ent, out var fixtures) && fixtures.FixtureCount >= 1)
@@ -73,7 +75,8 @@ public abstract class SharedPhaseShiftSystem : EntitySystem
 
     protected virtual void OnComponentShutdown(Entity<PhaseShiftedComponent> ent, ref ComponentShutdown args)
     {
-        Spawn(ent.Comp.PhaseInEffect, Transform(ent).Coordinates);
+        Spawn(ent.Comp.PhaseOutEffect, _transform.GetMapCoordinates(ent));
+        _audio.PlayPvs(ent.Comp.PhaseOutSound, ent);
 
         if (TryComp<FixturesComponent>(ent, out var fixtures) && fixtures.FixtureCount >= 1)
         {
@@ -88,8 +91,5 @@ public abstract class SharedPhaseShiftSystem : EntitySystem
 
         ent.Comp.MovementSpeedBuff = 1;
         _movement.RefreshMovementSpeedModifiers(ent);
-
-        Spawn(ent.Comp.PhaseOutEffect, _transform.GetMapCoordinates(ent));
-        _audio.PlayPvs(ent.Comp.PhaseOutSound, ent);
     }
 }
