@@ -23,6 +23,7 @@
       - NewsReaderCartridge
       - CrimeAssistCartridge
       - SecWatchCartridge
+      - NanoChatCartridge
   - type: Pda
     id: BrigmedicIDCard
     state: pda-corpsman
