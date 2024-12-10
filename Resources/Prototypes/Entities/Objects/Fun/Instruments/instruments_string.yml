@@ -27,6 +27,8 @@
     heavyDamageBaseModifier: 1.2
     heavyStaminaCost: 7.5
     angle: 75
+  - type: DamageOtherOnHit
+    staminaCost: 8
   - type: Item
     size: Normal
     sprite: Objects/Fun/Instruments/eguitar.rsi
@@ -65,10 +67,12 @@
         Blunt: 6
         Shock: 1
     bluntStaminaDamageFactor: 1.5
-    heavyRateModifier: 0.75
+    heavyRateModifier: 1.3333
     heavyDamageBaseModifier: 1.2
     heavyStaminaCost: 7.5
     angle: 75
+  - type: DamageOtherOnHit
+    staminaCost: 8
   - type: Item
     size: Normal
     sprite: Objects/Fun/Instruments/bassguitar.rsi
@@ -101,7 +105,7 @@
     soundHit:
       path: /Audio/Nyanotrasen/Weapons/electricguitarhit.ogg
     range: 1.85
-    attackRate: 1.25
+    attackRate: .8
     wideAnimationRotation: 45
     damage:
       types:
@@ -112,6 +116,8 @@
     heavyDamageBaseModifier: 1.2
     heavyStaminaCost: 10
     angle: 160
+  - type: DamageOtherOnHit
+    staminaCost: 8
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:
@@ -179,6 +185,10 @@
     damage:
       types:
         Blunt: 20
+  - type: DamageOnLand
+    damage:
+      types:
+        Blunt: 20
   - type: MeleeWeapon
     range: 1.5
     wideAnimationRotation: 45
@@ -190,6 +200,8 @@
     heavyDamageBaseModifier: 1.2
     heavyStaminaCost: 10
     angle: 75
+  - type: DamageOtherOnHit
+    staminaCost: 7
   - type: IncreaseDamageOnWield
     damage:
       types:
@@ -236,6 +248,8 @@
     heavyDamageBaseModifier: 1.2
     heavyStaminaCost: 7.5
     angle: 75
+  - type: DamageOtherOnHit
+    staminaCost: 8
 
 - type: entity
   parent: BaseHandheldInstrument

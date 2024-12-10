@@ -108,6 +108,10 @@
   - type: LanguageKnowledge
     speaks: [TauCetiBasic, RobotTalk]
     understands: [TauCetiBasic, RobotTalk]
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 4
 
 - type: entity
   parent: BasePDA
@@ -504,7 +508,7 @@
   parent: BasePDA
   id: CaptainPDA
   name: captain PDA
-  description: Surprisingly no different from your PDA.
+  description: Surprisingly no different from your PDA... Wait, it's a fair bit heavy to hold.
   components:
   - type: Pda
     id: CaptainIDCard
@@ -519,6 +523,13 @@
     borderColor: "#7C5D00"
   - type: Icon
     state: pda-captain
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 8
+    staminaCost: 5
+    soundHit:
+      collection: MetalThud
 
 - type: entity
   parent: BasePDA

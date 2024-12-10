@@ -37,7 +37,7 @@
   - type: Item
     sprite: Objects/Tools/Cowtools/moodriver.rsi
   - type: MeleeWeapon
-    attackRate: 1.5
+    attackRate: .6666
     damage:
       types:
         Blunt: 0.1 #poke poke poke
@@ -60,7 +60,7 @@
   - type: Item
     sprite: Objects/Tools/Cowtools/wronch.rsi
   - type: MeleeWeapon
-    attackRate: 1.5
+    attackRate: .6666
     damage:
       types:
         Blunt: 0.1
