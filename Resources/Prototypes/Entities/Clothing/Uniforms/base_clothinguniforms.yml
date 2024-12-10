@@ -152,3 +152,32 @@
     - state: icon_flipped
       map: ["foldedLayer"]
       visible: true
+
+- type: entity
+  abstract: true
+  parent: ClothingUniformBase
+  id: ClothingUniformEnvirosuitBase
+  components:
+  - type: IgniteFromGasImmunity
+  - type: Item
+    size: Huge
+  - type: Clothing
+    equipDelay: 1
+    unequipDelay: 0.75
+  - type: ToggleableClothing
+    requiredSlot:
+    - innerclothing
+    slot: head
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}
+  - type: SelfExtinguisher
+    maxCharges: 5
+    cooldown: 100
+    requiresIgniteFromGasImmune: true
+    sound:
+      path: /Audio/Effects/extinguish.ogg
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.85

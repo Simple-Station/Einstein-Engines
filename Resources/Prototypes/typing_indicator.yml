@@ -53,3 +53,11 @@
   id: oni
   typingState: oni0
   offset: 0, 0.0625
+
+- type: typingIndicator
+  id: plasmaman
+  typingState: plasmaman0
+
+- type: typingIndicator
+  id: skeleton
+  typingState: skeleton0
