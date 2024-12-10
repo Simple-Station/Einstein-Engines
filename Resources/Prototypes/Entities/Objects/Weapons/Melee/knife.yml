@@ -12,12 +12,12 @@
       - Knife
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.25
+    attackRate: .8
     range: 1.5
     damage:
       types:
         Slash: 8
-    heavyRateModifier: 0.8
+    heavyRateModifier: 1.25
     heavyDamageBaseModifier: 1.2
     maxTargets: 3
     angle: 40
@@ -111,7 +111,7 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.5
+    attackRate: .6666
     damage:
       types:
         Slash: 9
@@ -133,7 +133,7 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.25
+    attackRate: .8
     damage:
       types:
         Slash: 8
@@ -174,7 +174,7 @@
     node: icon
   - type: MeleeWeapon
     wideAnimationRotation: 90
-    attackRate: 1.2
+    attackRate: .83
     damage:
       types:
         Slash: 5
@@ -218,7 +218,7 @@
     sprite: Objects/Weapons/Melee/shiv.rsi
     state: icon
   - type: MeleeWeapon
-    attackRate: 1.75
+    attackRate: .57
     range: 1.4
     damage:
       types:
@@ -300,7 +300,7 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 2
+    attackRate: .5
     damage:
       types:
         Slash: 5
