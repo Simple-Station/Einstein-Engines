@@ -1,0 +1,363 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-SA-3.0",
+  "copyright": "Taken from mojave-sun-13 at https://github.com/Mojave-Sun/mojave-sun-13/blob/c935466d94a1450d41b2b2a8a904b46d0f7dceab/mojave/icons/structure/wrecks.dmi",
+  "size": {
+    "x": 101,
+    "y": 56
+  },
+  "states": [
+    {
+      "name": "helper",
+      "directions": 4
+    },
+    {
+      "name": "missing",
+      "directions": 4
+    },
+    {
+      "name": "coupe-1",
+      "directions": 4
+    },
+    {
+      "name": "coupe-2",
+      "directions": 4
+    },
+    {
+      "name": "coupe-3",
+      "directions": 4
+    },
+    {
+      "name": "coupe-4",
+      "directions": 4
+    },
+    {
+      "name": "coupe-5",
+      "directions": 4
+    },
+    {
+      "name": "muscle-1",
+      "directions": 4
+    },
+    {
+      "name": "muscle-2",
+      "directions": 4
+    },
+    {
+      "name": "muscle-3",
+      "directions": 4
+    },
+    {
+      "name": "muscle-4",
+      "directions": 4
+    },
+    {
+      "name": "muscle-5",
+      "directions": 4
+    },
+    {
+      "name": "sport-1",
+      "directions": 4
+    },
+    {
+      "name": "sport-2",
+      "directions": 4
+    },
+    {
+      "name": "sport-3",
+      "directions": 4
+    },
+    {
+      "name": "sport-4",
+      "directions": 4
+    },
+    {
+      "name": "sport-5",
+      "directions": 4
+    },
+    {
+      "name": "van-1",
+      "directions": 4
+    },
+    {
+      "name": "van-2",
+      "directions": 4
+    },
+    {
+      "name": "van-3",
+      "directions": 4
+    },
+    {
+      "name": "van-4",
+      "directions": 4
+    },
+    {
+      "name": "van-5",
+      "directions": 4
+    },
+    {
+      "name": "coupe-tires-1",
+      "directions": 4
+    },
+    {
+      "name": "coupe-tires-2",
+      "directions": 4
+    },
+    {
+      "name": "coupe-tires-3",
+      "directions": 4
+    },
+    {
+      "name": "muscle-tires-1",
+      "directions": 4
+    },
+    {
+      "name": "muscle-tires-2",
+      "directions": 4
+    },
+    {
+      "name": "muscle-tires-3",
+      "directions": 4
+    },
+    {
+      "name": "sport-tires-1",
+      "directions": 4
+    },
+    {
+      "name": "sport-tires-2",
+      "directions": 4
+    },
+    {
+      "name": "sport-tires-3",
+      "directions": 4
+    },
+    {
+      "name": "van-tires-1",
+      "directions": 4
+    },
+    {
+      "name": "van-tires-2",
+      "directions": 4
+    },
+    {
+      "name": "van-tires-3",
+      "directions": 4
+    },
+    {
+      "name": "coupe-part-1-1",
+      "directions": 4
+    },
+    {
+      "name": "coupe-part-1-2",
+      "directions": 4
+    },
+    {
+      "name": "coupe-part-1-3",
+      "directions": 4
+    },
+    {
+      "name": "coupe-part-1-4",
+      "directions": 4
+    },
+    {
+      "name": "coupe-part-1-5",
+      "directions": 4
+    },
+    {
+      "name": "coupe-part-2-1",
+      "directions": 4
+    },
+    {
+      "name": "coupe-part-2-2",
+      "directions": 4
+    },
+    {
+      "name": "coupe-part-2-3",
+      "directions": 4
+    },
+    {
+      "name": "coupe-part-2-4",
+      "directions": 4
+    },
+    {
+      "name": "coupe-part-2-5",
+      "directions": 4
+    },
+    {
+      "name": "coupe-part-3-1",
+      "directions": 4
+    },
+    {
+      "name": "coupe-part-3-2",
+      "directions": 4
+    },
+    {
+      "name": "coupe-part-3-3",
+      "directions": 4
+    },
+    {
+      "name": "coupe-part-3-4",
+      "directions": 4
+    },
+    {
+      "name": "coupe-part-3-5",
+      "directions": 4
+    },
+    {
+      "name": "muscle-part-1-1",
+      "directions": 4
+    },
+    {
+      "name": "muscle-part-1-2",
+      "directions": 4
+    },
+    {
+      "name": "muscle-part-1-3",
+      "directions": 4
+    },
+    {
+      "name": "muscle-part-1-4",
+      "directions": 4
+    },
+    {
+      "name": "muscle-part-1-5",
+      "directions": 4
+    },
+    {
+      "name": "muscle-part-2-1",
+      "directions": 4
+    },
+    {
+      "name": "muscle-part-2-2",
+      "directions": 4
+    },
+    {
+      "name": "muscle-part-2-3",
+      "directions": 4
+    },
+    {
+      "name": "muscle-part-2-4",
+      "directions": 4
+    },
+    {
+      "name": "muscle-part-2-5",
+      "directions": 4
+    },
+    {
+      "name": "sport-part-1-1",
+      "directions": 4
+    },
+    {
+      "name": "sport-part-1-2",
+      "directions": 4
+    },
+    {
+      "name": "sport-part-1-3",
+      "directions": 4
+    },
+    {
+      "name": "sport-part-1-4",
+      "directions": 4
+    },
+    {
+      "name": "sport-part-1-5",
+      "directions": 4
+    },
+    {
+      "name": "sport-part-2-1",
+      "directions": 4
+    },
+    {
+      "name": "sport-part-2-2",
+      "directions": 4
+    },
+    {
+      "name": "sport-part-2-3",
+      "directions": 4
+    },
+    {
+      "name": "sport-part-2-4",
+      "directions": 4
+    },
+    {
+      "name": "sport-part-2-5",
+      "directions": 4
+    },
+    {
+      "name": "sport-part-3-1",
+      "directions": 4
+    },
+    {
+      "name": "sport-part-3-2",
+      "directions": 4
+    },
+    {
+      "name": "sport-part-3-3",
+      "directions": 4
+    },
+    {
+      "name": "sport-part-3-4",
+      "directions": 4
+    },
+    {
+      "name": "sport-part-3-5",
+      "directions": 4
+    },
+    {
+      "name": "van-part-1-1",
+      "directions": 4
+    },
+    {
+      "name": "van-part-1-2",
+      "directions": 4
+    },
+    {
+      "name": "van-part-1-3",
+      "directions": 4
+    },
+    {
+      "name": "van-part-1-4",
+      "directions": 4
+    },
+    {
+      "name": "van-part-1-5",
+      "directions": 4
+    },
+    {
+      "name": "van-part-2-1",
+      "directions": 4
+    },
+    {
+      "name": "van-part-2-2",
+      "directions": 4
+    },
+    {
+      "name": "van-part-2-3",
+      "directions": 4
+    },
+    {
+      "name": "van-part-2-4",
+      "directions": 4
+    },
+    {
+      "name": "van-part-2-5",
+      "directions": 4
+    },
+    {
+      "name": "coupe-bumper",
+      "directions": 4
+    },
+    {
+      "name": "muscle-bumper",
+      "directions": 4
+    },
+    {
+      "name": "sport-bumper",
+      "directions": 4
+    },
+    {
+      "name": "van-bumper",
+      "directions": 4
+    }
+  ]
+}

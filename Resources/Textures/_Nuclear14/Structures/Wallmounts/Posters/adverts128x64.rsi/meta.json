@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "license": "Custom",
+  "copyright": "Copyright Bethesda Softworks, see attributions.yml for credits",
+  "size": {
+    "x": 128,
+    "y": 64
+  },
+  "states": [
+    {
+      "name": "redrocket1"
+    },
+    {
+      "name": "massfusion1"
+    },
+    {
+      "name": "nukacola1"
+    },
+    {
+      "name": "amelia_espresso"
+    },
+    {
+      "name": "beantown_brewery"
+    },
+    {
+      "name": "fizzys"
+    },
+    {
+      "name": "flyhorizonskyways"
+    },
+    {
+      "name": "hubris_comics"
+    },
+    {
+      "name": "mamadolces"
+    },
+    {
+      "name": "nukadark"
+    },
+    {
+      "name": "schoelt"
+    },
+    {
+      "name": "sullivans"
+    },
+    {
+      "name": "thejerk_shakes"
+    },
+    {
+      "name": "wicked_shipping"
+    },
+    {
+      "name": "vim_refresh"
+    },
+    {
+      "name": "vim"
+    },
+    {
+      "name": "vim_captainsblend"
+    },
+    {
+      "name": "vim_quartz"
+    }
+  ]
+}

@@ -1,0 +1,283 @@
+# Compost box
+- type: entity
+  parent: BaseStructure
+  id: N14CompostBox
+  name: compost box
+  description: Insert animal dung in here to produce compost.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: InteractionOutline
+  - type: Damageable # We need to make N14BaseStructureWood etc to reparent in bulk for destruction.
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: ReactionMixer
+    reactionTypes:
+    - Composting
+    # mixMessage: "compost-mixing-success"
+  - type: SolutionContainerMixer
+    mixDuration: 5
+    mixingSound:
+      path: /Audio/Machines/buzz_loop.ogg
+      params:
+        volume: -5
+  - type: Sprite
+    sprite: _Nuclear14/Objects/Specific/Hydroponics/equipment.rsi
+    snapCardinals: true
+    netsync: false
+    state: compostbin
+  - type: ApcPowerReceiver
+    powerLoad: 0
+    needsPower: false
+  - type: ItemSlots
+    slots:
+      mixer:
+        whitelist:
+          tags:
+            - ComposterCompatible
+  - type: ContainerContainer
+    containers:
+      mixer: !type:ContainerSlot
+
+            
+# Seed Extractor
+- type: entity
+  id: N14SeedExtractor
+  name: seed extractor
+  parent: BaseStructure
+  description: Extracts seeds from produce.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Objects/Specific/Hydroponics/equipment.rsi
+    snapCardinals: true
+    netsync: false
+    state: seedextractor
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.4,0.25,0.4"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: SeedExtractor
+  - type: ApcPowerReceiver
+    powerLoad: 0 
+    needsPower: false
+  - type: Construction
+    graph: N14SeedExtractor
+    node: seedextractor
+
+- type: entity
+  id: N14SeedExtractorFrame
+  name: seed extractor frame
+  parent: BaseStructure
+  description: Extracts seeds from produce. This one isn't finished building
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Objects/Specific/Hydroponics/equipment.rsi
+    layers:
+    - state: seedextractor0
+      map: [ "enum.ConstructionVisuals.Layer" ]
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ConstructionVisuals.Key:
+        enum.ConstructionVisuals.Layer:
+          seedextractorhalf: { state: seedextractor0 }
+          seedextractorpot: { state: seedextractor1 }
+          seedextractorreinforced: { state: seedextractor2 }
+          seedextractorunscrewed: { state: seedextractor3 }
+  - type: Construction
+    graph: N14SeedExtractor
+    node: seedextractorhalf
+
+# Soils and Planters
+- type: entity
+  id: N14Soil
+  name: soil
+  description: Looks good for planting things in.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.1"
+        density: 190
+        hard: false
+        mask:
+        - FullTileMask
+        layer:
+        - FullTileMask
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: Sprite
+    sprite: Structures/Hydroponics/misc.rsi
+    state: soil
+    noRot: true
+  - type: PlantHolder
+    drawWarnings: false
+  - type: SolutionContainerManager
+    solutions:
+      soil:
+        maxVol: 200
+  - type: RefillableSolution
+    solution: soil
+    maxRefill: 50
+  - type: Transform
+    anchored: true
+  - type: Reactive
+    reactions:
+    - reagents: [Water]
+      methods: [Touch, Ingestion, Injection]
+      effects:
+      - !type:AddToSolutionReaction
+        solution: soil
+  - type: Appearance
+  - type: PlantHolderVisuals
+  - type: Construction
+    graph: N14Soil
+    node: Soil
+
+
+- type: entity
+  parent: BaseStructure
+  id: N14HydroponicsPlanterEmpty
+  name: planter
+  description: A wooden planter for growing things. Just needs soil.
+  components:
+  - type: Sprite
+    layers:
+      - sprite: _Nuclear14/Structures/Hydroponics/planterbox.rsi
+        state: empty
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.1"
+        density: 190
+        hard: true
+        mask:
+        - MachineMask
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 0
+            max: 1
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: Construction
+    graph: N14Planter
+    node: box
+
+
+- type: entity
+  parent: N14Soil
+  id: N14HydroponicsPlanter
+  name: planter
+  description: A wooden planter with soil for growing things in.
+  components:
+  - type: Sprite
+    layers:
+      - sprite: _Nuclear14/Structures/Hydroponics/planterbox.rsi
+        state: icon
+      - sprite: _Nuclear14/Structures/Hydroponics/planterbox.rsi
+        state: redflag
+        map: [ "health_alert" ]
+        visible: false
+      - sprite: _Nuclear14/Structures/Hydroponics/planterbox.rsi
+        state: blueflag
+        map: [ "water_alert" ]
+        visible: false
+      - sprite: _Nuclear14/Structures/Hydroponics/planterbox.rsi
+        state: yellowflag
+        map: [ "nutri_alert" ]
+        visible: false
+      - sprite: _Nuclear14/Structures/Hydroponics/planterbox.rsi
+        state: redflag
+        map: [ "undefined_alert" ]
+        visible: false
+      - sprite: _Nuclear14/Structures/Hydroponics/planterbox.rsi
+        state: greenflag
+        map: [ "harvest_alert" ]
+        visible: false
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.PlantHolderVisuals.HealthLight:
+        health_alert:
+          True: { visible: true }
+          False: { visible: false }
+      enum.PlantHolderVisuals.WaterLight:
+        water_alert:
+          True: { visible: true }
+          False: { visible: false }
+      enum.PlantHolderVisuals.NutritionLight:
+        nutri_alert:
+          True: { visible: true }
+          False: { visible: false }
+      enum.PlantHolderVisuals.AlertLight:
+        undefined_alert:
+          True: { visible: true }
+          False: { visible: false }
+      enum.PlantHolderVisuals.HarvestLight:
+        harvest_alert:
+          True: { visible: true }
+          False: { visible: false }
+  - type: PlantHolder
+    drawWarnings: true
+  - type: AmbientSound
+    volume: -9
+    range: 5
+    sound:
+      path: /Audio/Ambience/Objects/flowing_water_open.ogg
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 0
+            max: 1
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: Construction
+    graph: N14Planter
+    node: Planter

@@ -1,0 +1,113 @@
+- type: entity
+  id: N14CookingStove
+  parent: KitchenElectricGrill
+  name: stove
+  description: A pre-war stove for cooking things.
+  components:
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+            bounds: "-0.3,-0.2,0.3,0.5"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Sprite
+    netsync: false
+    sprite: _Nuclear14/Structures/Decoration/crafting_junk.rsi
+    drawdepth: Objects
+    noRot: true
+    layers:
+    - state: stove
+    - map: ["enum.EntityHeaterVisuals.Setting"]
+      shader: unshaded
+      visible: false
+  - type: Rotatable
+  - type: Transform
+    noRot: false
+  - type: GenericVisualizer
+    visuals:
+      enum.EntityHeaterVisuals.Setting:
+        enum.EntityHeaterVisuals.Setting:
+          Off: { visible: false }
+          Low: { visible: true, state: stove_on }
+          Medium: { visible: true, state: stove_on }
+          High: { visible: true, state: stove_on }
+          
+- type: entity
+  id: N14CookingStoveWide
+  parent: N14CookingStove
+  suffix: wide
+  components:
+  - type: Sprite
+    layers:
+    - state: stove_wide
+    - map: ["enum.EntityHeaterVisuals.Setting"]
+      shader: unshaded
+      visible: false
+  - type: GenericVisualizer
+    visuals:
+      enum.EntityHeaterVisuals.Setting:
+        enum.EntityHeaterVisuals.Setting:
+          Off: { visible: false }
+          Low: { visible: true, state: stove_on }
+          Medium: { visible: true, state: stove_on }
+          High: { visible: true, state: stove_on }
+
+
+- type: entity
+  parent: N14CookingStove
+  id: N14KitchenGrill
+  name: propane grill
+  description: A microwave? No, a real man cooks steaks on a grill!
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Machines/grill.rsi
+    layers:
+    - state: propane # need to get this to require fuel not power
+    - map: ["enum.EntityHeaterVisuals.Setting"]
+      shader: unshaded
+      visible: false
+  - type: ApcPowerReceiver
+    powerLoad: 0 
+    needsPower: false
+  - type: EntityHeater
+  - type: ItemPlacer
+    maxEntities: 4 # big grill, many steaks
+    whitelist:
+      components:
+      - Temperature
+  - type: PlaceableSurface
+  - type: GenericVisualizer
+    visuals:
+      enum.EntityHeaterVisuals.Setting:
+        enum.EntityHeaterVisuals.Setting:
+          Off: { visible: false }
+          Low: { visible: true, state: propane }
+          Medium: { visible: true, state: propane }
+          High: { visible: true, state: propane }
+          
+- type: entity
+  parent: N14KitchenGrill
+  id: N14KitchenGrillWide
+  suffix: wide
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Machines/grill.rsi
+    layers:
+    - state: propane_wide # need to get this to require fuel not power
+    - map: ["enum.EntityHeaterVisuals.Setting"]
+      shader: unshaded
+      visible: false
+  - type: GenericVisualizer
+    visuals:
+      enum.EntityHeaterVisuals.Setting:
+        enum.EntityHeaterVisuals.Setting:
+          Off: { visible: false }
+          Low: { visible: true, state: propane_wide }
+          Medium: { visible: true, state: propane_wide }
+          High: { visible: true, state: propane_wide }

@@ -1,0 +1,99 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-SA-3.0",
+  "copyright": "Modified from MS13 by Kill_Me_I_Noobs and Peptide90 for Nuclear14",
+  "size": {
+    "x": 32,
+    "y": 64
+  },
+  "states": [
+    {
+      "name": "metal",
+	  "directions": 4
+    },
+    {
+      "name": "reinfmetal",
+	  "directions": 4
+    },
+    {
+      "name": "scrap",
+	  "directions": 4
+    },
+    {
+      "name": "scrapblue",
+	  "directions": 4
+    },
+    {
+      "name": "scrapred",
+	  "directions": 4
+    },
+    {
+      "name": "scrapwhite",
+	  "directions": 4
+    },
+    {
+      "name": "siding",
+	  "directions": 4
+    },
+    {
+      "name": "sidingblue",
+	  "directions": 4
+    },
+    {
+      "name": "sidinggreen",
+	  "directions": 4
+    },
+    {
+      "name": "sidingred",
+	  "directions": 4
+    },
+    {
+      "name": "vault",
+	  "directions": 4
+    },
+    {
+      "name": "wood",
+	  "directions": 4
+    },
+    {
+      "name": "woodalt",
+	  "directions": 4
+    },
+    {
+      "name": "brick",
+	  "directions": 4
+    },
+    {
+      "name": "brickalt",
+	  "directions": 4
+    },
+    {
+      "name": "brickgray",
+	  "directions": 4
+    },
+    {
+      "name": "concrete",
+	  "directions": 4
+    },
+    {
+      "name": "concretealt",
+	  "directions": 4
+    },
+    {
+      "name": "dungeon",
+	  "directions": 4
+    },
+    {
+      "name": "dungeonalt",
+	  "directions": 4
+    },
+    {
+      "name": "window",
+	  "directions": 4
+    },
+    {
+      "name": "broken",
+	  "directions": 4
+    }
+  ]
+}

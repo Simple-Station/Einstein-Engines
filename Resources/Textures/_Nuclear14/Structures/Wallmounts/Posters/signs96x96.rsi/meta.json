@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "license": "Custom",
+  "copyright": "Copyright Bethesda Softworks, see attributions.yml for credits",
+  "size": {
+    "x": 96,
+    "y": 96
+  },
+  "states": [
+    {
+      "name": "groceries"
+    }
+  ]
+}

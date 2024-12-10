@@ -1,0 +1,140 @@
+# Metal
+- type: entity
+  parent: BaseStructure
+  id: N14StoreDeliCounter
+  name: deli counter
+  description: A metal counter for showing off food.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Furniture/Store_Furniture/delistand.rsi
+    netsync: false
+    noRot: true
+    offset: 0, 0.25
+    layers:
+      - state: deli_stand
+      - map: ["enum.StorageFillLayers.Fill"]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.05,0.45,0.45"
+        density: 60
+        mask:
+        - MachineMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+  - type: Damageable
+    damageModifierSet: Metallic
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel1:
+            min: 1
+            max: 3
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+# storage + visualiser stuff
+  - type: Storage
+    grid:
+    - 0,0,5,1
+    maxItemSize: Normal
+    # whitelist:
+      # tags:
+        # - Food
+  - type: UserInterface
+    interfaces:
+    - key: enum.StorageUiKey.Key
+      type: StorageBoundUserInterface
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+  - type: Appearance
+  - type: StorageFillVisualizer
+    maxFillLevels: 5
+    fillBaseName: food
+
+# Wood
+- type: entity
+  parent: BaseStructure
+  id: N14StoreFruitstand
+  suffix: empty
+  name: fruit stand
+  description: A box for displaying produce.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Furniture/Store_Furniture/fruitstand.rsi
+    snapCardinals: true
+    netsync: false
+    state: fruitstand_empty
+  - type: Damageable
+    damageModifierSet: Wood
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: Tag
+    tags:
+    - Wooden
+  - type: Transform
+    anchored: true
+    noRot: true
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.05,0.45,0.55"
+        density: 60
+        mask:
+        - MachineMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+
+# N14TODO: Probably change these to a storage visualiser with a whitelist of some sort?
+- type: entity
+  parent: N14StoreFruitstand
+  id: N14StoreFruitstand1
+  suffix: brown
+  name: fruit stand
+  description: A box for displaying produce. This one has stuff in it.
+  components:
+  - type: Sprite
+    state: fruitstand-1
+
+- type: entity
+  parent: N14StoreFruitstand1
+  id: N14StoreFruitstand2
+  suffix: green
+  components:
+  - type: Sprite
+    state: fruitstand-2
+
+- type: entity
+  parent: N14StoreFruitstand1
+  id: N14StoreFruitstand3
+  suffix: yellow
+  components:
+  - type: Sprite
+    state: fruitstand-3

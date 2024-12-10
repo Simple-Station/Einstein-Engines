@@ -1,0 +1,46 @@
+{
+    "version": 1,
+    "license": "CC-BY-NC-SA-3.0",
+    "copyright": "Taken from https://github.com/Mojave-Sun/mojave-sun-13/commits/a7769f6ea36ce0a273f3d8dcac1f9ca94e345110 and modified.",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "full"
+        },
+        {
+            "name": "rmetal0",
+            "directions": 4
+        },
+        {
+            "name": "rmetal1",
+            "directions": 4
+        },
+        {
+            "name": "rmetal2",
+            "directions": 4
+        },
+        {
+            "name": "rmetal3",
+            "directions": 4
+        },
+        {
+            "name": "rmetal4",
+            "directions": 4
+        },
+        {
+            "name": "rmetal5",
+            "directions": 4
+        },
+        {
+            "name": "rmetal6",
+            "directions": 4
+        },
+        {
+            "name": "rmetal7",
+            "directions": 4
+        }
+    ]
+}

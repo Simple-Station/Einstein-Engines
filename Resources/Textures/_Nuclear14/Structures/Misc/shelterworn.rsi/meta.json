@@ -1,0 +1,53 @@
+{
+    "version": 1,
+    "license": "CC-BY-NC-SA-3.0",
+    "copyright": "Made by luckass for Nuclear14",
+    "size": {
+      "x": 64,
+      "y": 96
+    },
+    "states": [
+      {
+        "name": "opening",
+        "delays": [
+          [
+            0.2,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.3
+          ]
+        ]
+      },
+      {
+        "name": "closing",
+        "delays": [
+          [
+            0.3,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1
+          ]
+        ]
+      },
+      {
+        "name": "shelterwornclosedempty"
+      },
+      {
+        "name": "shelterwornclosedoccupied"
+      },
+      {
+        "name": "shelterwornopen"
+      }
+    ]
+  }
