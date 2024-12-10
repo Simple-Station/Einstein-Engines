@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   name: Experimental L6 SAW
   parent: BaseItem
   id: WeaponLightMachineGunL6Borg
@@ -38,4 +38,20 @@
 #    - type: DynamicPrice
 #      price: 500
     - type: Appearance
-
+    - type: MeleeWeapon
+      attackRate: 1.5
+      damage:
+        types:
+          Blunt: 9
+      swapKeys: true
+      disableHeavy: true
+      animation: WeaponArcThrust
+      wideAnimationRotation: 180
+      soundHit:
+        collection: MetalThud
+    - type: IncreaseDamageOnWield
+      damage:
+        types:
+          Blunt: 4
+    - type: DamageOtherOnHit
+      staminaCost: 10

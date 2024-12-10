@@ -43,6 +43,23 @@
         ents: []
   - type: StaticPrice
     price: 500
+  - type: MeleeWeapon
+    attackRate: 1.5
+    damage:
+      types:
+        Blunt: 9
+    swapKeys: true
+    disableHeavy: true
+    animation: WeaponArcThrust
+    wideAnimationRotation: 180
+    soundHit:
+      collection: MetalThud
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 2
+  - type: DamageOtherOnHit
+    staminaCost: 10
 
 - type: entity
   name: Bulldog
@@ -102,6 +119,21 @@
   - type: Appearance
   - type: StaticPrice
     price: 500
+  - type: MeleeWeapon
+    attackRate: 1.5
+    damage:
+      types:
+        Blunt: 9
+    swapKeys: true
+    disableHeavy: true
+    soundHit:
+      collection: MetalThud
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 2
+  - type: DamageOtherOnHit
+    staminaCost: 10
 
 - type: entity
   name: antique Bulldog

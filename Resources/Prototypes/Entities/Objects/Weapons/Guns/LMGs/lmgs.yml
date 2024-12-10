@@ -62,6 +62,23 @@
     price: 500
   - type: UseDelay
     delay: 1
+  - type: MeleeWeapon
+    attackRate: 1.5
+    damage:
+      types:
+        Blunt: 9
+    swapKeys: true
+    disableHeavy: true
+    animation: WeaponArcThrust
+    wideAnimationRotation: 180
+    soundHit:
+      collection: MetalThud
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 4
+  - type: DamageOtherOnHit
+    staminaCost: 10
 
 - type: entity
   name: L6 SAW

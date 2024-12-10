@@ -39,6 +39,23 @@
         ents: []
   - type: StaticPrice
     price: 500
+  - type: MeleeWeapon
+    attackRate: 1.3333
+    damage:
+      types:
+        Blunt: 7.5
+    swapKeys: true
+    disableHeavy: true
+    wideAnimationRotation: 135
+    animation: WeaponArcThrust
+    soundHit:
+      collection: MetalThud
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 2
+  - type: DamageOtherOnHit
+    staminaCost: 7
 
 - type: entity
   name: Kardashev-Mosin
@@ -56,6 +73,24 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
     fireOnDropChance: 1
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 6
+        Piercing: 2
+    wideAnimationRotation: -135
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Slash: 2
+        Piercing: 1
+  - type: EmbeddableProjectile
+    removalTime: 3
+  - type: EmbedPassiveDamage
+  - type: ThrowingAngle
+    angle: 225
 
 - type: entity
   name: Kardashev-Mosin
@@ -114,15 +149,23 @@
     capacity: 1
     proto: CartridgeAntiMateriel
   - type: MeleeWeapon
-    wideAnimationRotation: -135
     damage:
       types:
-        Piercing: 15 #you fucking stab em
-        Bloodloss: 2 #no way to apply bleed, triangular bayonet wounds are hard to fix(source:that one copypasta)
-    angle: 0
-    animation: WeaponArcThrust
+        Slash: 6
+        Piercing: 2
+    wideAnimationRotation: -135
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Slash: 2
+        Piercing: 1
+  - type: EmbeddableProjectile
+    removalTime: 3
+  - type: EmbedPassiveDamage
+  - type: ThrowingAngle
+    angle: 225
 
 - type: entity
   name: flintlock pistol
@@ -152,4 +195,3 @@
     proto: CartridgeAntiMateriel
   - type: StaticPrice
     price: 0
-

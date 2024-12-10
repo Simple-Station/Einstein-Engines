@@ -51,6 +51,23 @@
       gun_chamber: !type:ContainerSlot
   - type: StaticPrice
     price: 500
+  - type: MeleeWeapon
+    attackRate: 1.33
+    damage:
+      types:
+        Blunt: 8.0
+    swapKeys: true
+    disableHeavy: true
+    animation: WeaponArcThrust
+    wideAnimationRotation: 180
+    soundHit:
+      collection: MetalThud
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 2
+  - type: DamageOtherOnHit
+    staminaCost: 8
 
 - type: entity
   name: AKMS
