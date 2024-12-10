@@ -3,13 +3,7 @@
   name: chat-emote-name-flip
   chatMessages: ["chat-emote-msg-flip"]
   chatTriggers:
-  - flip
-  - flips
-  - flips.
-  - flips!
   - does a flip
-  - does a flip.
-  - does a flip!
   event: !type:AnimationFlipEmoteEvent
 
 - type: emote
@@ -17,10 +11,7 @@
   name: chat-emote-name-spin
   chatMessages: ["chat-emote-msg-spin"]
   chatTriggers:
-  - spin
   - spins
-  - spins.
-  - spins!
   event: !type:AnimationSpinEmoteEvent
 
 - type: emote
@@ -28,8 +19,5 @@
   name: chat-emote-name-jump
   chatMessages: ["chat-emote-msg-jump"]
   chatTriggers:
-  - jump
   - jumps
-  - jumps.
-  - jumps!
   event: !type:AnimationJumpEmoteEvent
