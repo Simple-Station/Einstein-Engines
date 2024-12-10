@@ -6,6 +6,7 @@
   components:
   - type: EmbeddableProjectile
     offset: 0.15,0.15
+  - type: EmbedPassiveDamage
   - type: ThrowingAngle
     angle: 225
   - type: Tag
@@ -40,7 +41,7 @@
       types:
         Piercing: 7
         Slash: 1
-    heavyRateModifier: 0.75
+    heavyRateModifier: 1.3
     heavyRangeModifier: 1.25
     heavyDamageBaseModifier: 1.0
     heavyStaminaCost: 5
