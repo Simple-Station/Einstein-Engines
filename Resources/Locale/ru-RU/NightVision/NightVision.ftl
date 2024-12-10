@@ -1,0 +1,15 @@
+ent-ActionBaseToggleNightVision = Переключить ПНВ
+    .desc = Включате и выключает ПНВ.
+ent-ActionToggleNightVision = { ent-ActionBaseToggleNightVision }
+    .desc = { ent-ActionBaseToggleNightVision }
+ent-ClothingEyesNVG = ПНВ
+    .desc = Теперь ты можешь видеть в темноте! Имеет этикетку "BL CORP technology".
+toggle-nightvision-verb-get-data-text = Переключить прибор ночного видения
+ent-ClothingEyesMesonNVG = мезонный ПНВ
+    .desc = { ent-ClothingEyesNVG.desc }
+ent-ClothingEyesMedNVG = медицинский ПНВ
+    .desc = { ent-ClothingEyesNVG.desc }
+ent-ClothingEyesSecNVG = охранный ПНВ
+    .desc = { ent-ClothingEyesNVG.desc }
+ent-ClothingEyesDiagnosticNVG = диагностирующий ПНВ
+    .desc = { ent-ClothingEyesNVG.desc }
