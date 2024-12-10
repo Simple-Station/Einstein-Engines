@@ -838,3 +838,137 @@
     damage:
       groups:
         Brute: 1
+
+# Honey made
+
+- type: entity
+  name: honey challah
+  parent: FoodBreadBase
+  id: FoodBreadChallah
+  description: Twisted bread sprinkled with poppy seeds.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - bread
+      - honey
+  - type: Sprite
+    sprite: Objects/Consumable/Food/Baked/bread.rsi
+    state: challah
+  - type: SliceableFood
+    slice: FoodBreadChallahSlice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 31
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 12
+        - ReagentId: Vitamin
+          Quantity: 8
+
+- type: entity
+  name: challah slice
+  parent: FoodBreadSliceBase
+  id: FoodBreadChallahSlice
+  description: A slice of poppy and honey, oh my!
+  components:
+  - type: FlavorProfile
+    flavors:
+      - bread
+      - honey
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 6.2
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2.4
+        - ReagentId: Vitamin
+          Quantity: 1.6
+  - type: Sprite
+    sprite: Objects/Consumable/Food/Baked/bread.rsi
+    state: challahslice
+
+- type: entity
+  name: avocado toast
+  parent: FoodBreadSliceBase
+  id: FoodMealAvocadoToast
+  description: It was this or home ownership.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - avocado
+      - bread
+  - type: Sprite
+    sprite: Objects/Consumable/Food/Baked/bread.rsi
+    state: avocadotoast
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 25
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 9
+        - ReagentId: Vitamin
+          Quantity: 5
+
+- type: entity
+  name: cotton bread
+  parent: FoodBreadBase
+  id: FoodBreadCotton
+  description: Bread, but for moff.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - cotton
+    - bread
+  - type: Food
+    requiresSpecialDigestion: true
+  - type: Sprite
+    layers:
+    - state: cotton
+  - type: SliceableFood
+    slice: FoodBreadCottonSlice
+  - type: Tag
+    tags:
+    - ClothMade
+    - Bread
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 26
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Fiber
+          Quantity: 10
+
+- type: entity
+  name: cotton bread slice
+  parent: FoodBreadSliceBase
+  id: FoodBreadCottonSlice
+  description: A slice of (maybe) delicious cotton bread.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - cotton
+    - bread
+  - type: Food
+    requiresSpecialDigestion: true
+  - type: Sprite
+    layers:
+    - state: cotton-slice
+  - type: Tag
+    tags:
+    - ClothMade
+    - Bread
+    - Slice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 8
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
+        - ReagentId: Fiber
+          Quantity: 2

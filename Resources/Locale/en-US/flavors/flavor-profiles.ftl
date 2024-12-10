@@ -50,6 +50,7 @@ flavor-base-horrible = horrible
 # lmao
 flavor-base-terrible = terrible
 flavor-base-mindful = mindful
+flavor-base-earthy = earthy
 
 # Complex flavors. Put a flavor here when you want something that's more
 # specific.
@@ -76,10 +77,12 @@ flavor-complex-protein = like protein
 flavor-complex-food = like food
 
 ## Basic foodstuffs (ingredients, generic flavors)
+flavor-complex-avocado = like avocado
 flavor-complex-bun = like bun
 flavor-complex-bread = like bread
 flavor-complex-batter = like batter
 flavor-complex-butter = like butter
+flavor-complex-cucumber = crisp and refreshing
 flavor-complex-egg = like egg
 flavor-complex-raw-egg = like raw egg
 flavor-complex-bacon = like bacon
@@ -112,7 +115,7 @@ flavor-complex-corn = like corn
 flavor-complex-banana = like bananas
 flavor-complex-apple = like apples
 flavor-complex-cotton = like cottons
-flavor-complex-bungo = like bungo
+flavor-complex-bungo = like tropical sweetness
 flavor-complex-raisins = like dried grapes
 flavor-complex-orange = like oranges
 flavor-complex-watermelon = like watermelon
@@ -123,6 +126,10 @@ flavor-complex-meatballs = like meatballs
 flavor-complex-nettles = like nettles
 flavor-complex-jungle = like jungle
 flavor-complex-vegetables = like vegetables
+flavor-complex-cherry = like cherries
+flavor-complex-blue-pumpkin = like a mouthful of pool water
+flavor-complex-honeycomb = like waxy honey
+flavor-complex-pear = like pears
 # use it when there multiple types of veggies
 
 ## Complex foodstuffs (cooked foods, joke flavors, etc)
