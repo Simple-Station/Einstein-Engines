@@ -94,7 +94,10 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
         // it's kinda tricky.
         // I think as long as we make secondaries their own component it's probably fine
         // as long as guncomp has an alt-use key then it shouldn't be too much of a PITA to deal with.
-        if (TryComp<GunComponent>(weaponUid, out var gun) && gun.UseKey)
+        if (TryComp<GunComponent>(weaponUid, out var gun) &&
+            (gun.UseKey
+            ? useDown == BoundKeyState.Down
+            : altDown == BoundKeyState.Down))
         {
             return;
         }
@@ -118,7 +121,10 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
         }
 
         // Heavy attack.
-        if (altDown == BoundKeyState.Down)
+        if (!weapon.DisableHeavy &&
+            (!weapon.SwapKeys
+            ? altDown == BoundKeyState.Down
+            : useDown == BoundKeyState.Down))
         {
             // If it's an unarmed attack then do a disarm
             if (weapon.AltDisarm && weaponUid == entity)
@@ -139,7 +145,9 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
         }
 
         // Light attack
-        if (useDown == BoundKeyState.Down)
+        if (!weapon.SwapKeys
+            ? (useDown == BoundKeyState.Down)
+            : (altDown == BoundKeyState.Down))
         {
             var attackerPos = Transform(entity).MapPosition;
 

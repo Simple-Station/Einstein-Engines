@@ -41,6 +41,19 @@ public sealed partial class MeleeWeaponComponent : Component
     [DataField]
     public bool ResetOnHandSelected = true;
 
+    /// <summary>
+    ///   If true, swaps the keybinds for light attacks and heavy attacks.
+    /// </summary>
+    [DataField]
+    public bool SwapKeys = false;
+
+    /// <summary>
+    ///   If true, disables heavy attacks for this weapon, and prevents the heavy damage values appearing
+    ///   when the damage values are examined.
+    /// </summary>
+    [DataField]
+    public bool DisableHeavy = false;
+
     /*
      * Melee combat works based around 2 types of attacks:
      * 1. Click attacks with left-click. This attacks whatever is under your mnouse
