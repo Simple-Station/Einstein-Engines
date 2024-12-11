@@ -81,7 +81,7 @@
 
 - type: entity
   parent: SignNotice
-  id: SignDanger
+  id: SignDanger2
   name: danger sign
   description: Danger.
   components:
