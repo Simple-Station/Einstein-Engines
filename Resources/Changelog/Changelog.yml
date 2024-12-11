@@ -8557,3 +8557,16 @@ Entries:
   id: 6571
   time: '2024-12-11T22:52:53.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1318
+- author: Skubman
+  changes:
+    - type: Fix
+      message: >-
+        Fixed an issue where players could not craft clown hardsuits and mime
+        hardsuits on the crafting menu.
+    - type: Fix
+      message: >-
+        Fixed an issue where clowns did not have their signature silly snore
+        sound when sleeping.
+  id: 6572
+  time: '2024-12-11T23:12:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1324
