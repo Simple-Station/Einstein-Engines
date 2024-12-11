@@ -1,5 +1,5 @@
 - type: entity
-  id: Torch
+  id: Torch2
   name: torch
   suffix: floor
   description: A flaming torch for lighting an area.
@@ -60,7 +60,7 @@
     power: 16
 
 - type: entity
-  parent: Torch
+  parent: Torch2
   id: TorchWall
   suffix: wall
   components:
