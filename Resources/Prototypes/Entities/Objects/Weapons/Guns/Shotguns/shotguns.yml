@@ -58,7 +58,7 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 3
+        Blunt: 2.5
   - type: DamageOtherOnHit
     staminaCost: 9.5
 
@@ -135,7 +135,7 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 3
+        Blunt: 2.5
   - type: DamageOtherOnHit
     staminaCost: 9.5
 
