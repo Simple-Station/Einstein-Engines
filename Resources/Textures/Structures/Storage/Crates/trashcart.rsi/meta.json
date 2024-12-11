@@ -1,20 +1,17 @@
 {
   "version": 1,
-  "license": "CC-BY-SA-3.0",
-  "copyright": "Modified from https://github.com/tgstation/tgstation/commit/571e401e19514e8b0216e2efbbc95302007bfe9c by potato1234x (Github) for SS14",
+  "license": "CC-BY-NC-SA-3.0",
+  "copyright": "Taken from Nukapop13, states modified / created by Peptide90 for SS14",
   "size": {
     "x": 32,
     "y": 32
   },
   "states": [
     {
-      "name": "icon"
-    },
-    {
       "name": "base"
     },
     {
-      "name": "closed"
+      "name": "icon"
     },
     {
       "name": "open"
@@ -23,17 +20,7 @@
       "name": "welded"
     },
     {
-      "name": "sparking",
-      "delays": [
-        [
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1
-        ]
-      ]
+      "name": "closed"
     }
   ]
 }
