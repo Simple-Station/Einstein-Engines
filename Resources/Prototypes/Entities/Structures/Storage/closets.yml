@@ -162,14 +162,6 @@
 
 - type: entity
   parent: ClosetBaseW
-  id: ClosetEnclave
-  suffix: enclave roller
-  components:
-  - type: Sprite
-    sprite: Structures/Storage/Closets/closetenclave.rsi
-
-- type: entity
-  parent: ClosetBaseW
   id: ClosetGeneric
   suffix: generic roller
   components:
