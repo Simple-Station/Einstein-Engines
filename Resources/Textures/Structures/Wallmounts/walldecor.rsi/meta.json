@@ -8,42 +8,6 @@
   },
   "states": [
     {
-      "name": "flag_us"
-    },
-    {
-      "name": "flag_china"
-    },
-    {
-      "name": "flag_cali"
-    },
-    {
-      "name": "flag_arizona"
-    },
-    {
-      "name": "flag_enclave"
-    },
-    {
-      "name": "flag_ncr"
-    },
-    {
-      "name": "flag_legion"
-    },
-    {
-      "name": "flag_rangers"
-    },
-    {
-      "name": "flag_westbos"
-    },
-    {
-      "name": "flag_eastbos"
-    },
-    {
-      "name": "flag_colorado"
-    },
-    {
-      "name": "flag_denver"
-    },
-    {
       "name": "clock",
       "directions": 4
     },
@@ -72,33 +36,6 @@
     {
       "name": "wallscreen",
       "directions": 4
-    },
-    {
-      "name": "ncr_sign"
-    },
-    {
-      "name": "ncr_enlist"
-    },
-    {
-      "name": "ncr_wrench"
-    },
-    {
-      "name": "ncr_looselip"
-    },
-    {
-      "name": "ncr_you"
-    },
-    {
-      "name": "ncr_espionage"
-    },
-    {
-      "name": "ncr_bombs"
-    },
-    {
-      "name": "poster_fallout"
-    },
-    {
-      "name": "poster_wecan"
     },
 	{
 	  "name": "wanted_poster_goose"
