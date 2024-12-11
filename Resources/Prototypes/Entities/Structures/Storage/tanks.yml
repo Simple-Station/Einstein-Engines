@@ -66,7 +66,7 @@
   suffix: Empty
   components:
   - type: Sprite
-    sprite: Structures/Storage/tanks.rsi
+    sprite: Structures/Storage/tanksx64.rsi
     layers:
       - state: chemical_container
       # - state: chemical_container
@@ -121,7 +121,7 @@
   suffix: Empty
   components:
   - type: Sprite
-    sprite: Structures/Storage/tanks.rsi
+    sprite: Structures/Storage/tanksx64.rsi
     layers:
       - state: largetank_chemical
   - type: Fixtures
@@ -154,7 +154,7 @@
   suffix: Empty
   components:
   - type: Sprite
-    sprite: Structures/Storage/tanks.rsi
+    sprite: Structures/Storage/tanksx64.rsi
     layers:
       - state: largetank_chemical_huge
   - type: Fixtures
@@ -180,48 +180,3 @@
         reagents:
         - ReagentId: WeldingFuel
           Quantity: 2000
-
-- type: entity
-  parent: StorageTankBase
-  id: StorageTankVat
-  suffix: Empty
-  components:
-  - type: Sprite
-    sprite: Structures/Furniture/np13_misc.rsi
-    layers:
-      - state: vat
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.5,0.5,0.5,-0.5"
-        density: 155
-        mask:
-        - MachineMask
-        layer:
-        - WallLayer
-
-- type: entity
-  parent: StorageTankVat
-  id: StorageTankVatFullFuel
-  suffix: Full, fuel
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      tank:
-        reagents:
-        - ReagentId: WeldingFuel
-          Quantity: 1500
-
-- type: entity
-  parent: StorageTankVat
-  id: StorageTankVatFullWater
-  suffix: Full, water
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      tank:
-        reagents:
-        - ReagentId: Water
-          Quantity: 1500
