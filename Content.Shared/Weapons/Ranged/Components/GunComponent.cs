@@ -209,10 +209,10 @@ public sealed partial class GunComponent : Component
     public TimeSpan NextFire = TimeSpan.Zero;
 
     /// <summary>
-    ///   After dealing a melee attack with this gun, the minimum cooldown before the gun can shoot again.
+    ///   After dealing a melee attack with this gun, the minimum cooldown in seconds before the gun can shoot again.
     /// </summary>
-    [DataField(customTypeSerializer:typeof(TimeOffsetSerializer))]
-    public TimeSpan MeleeCooldown = TimeSpan.FromSeconds(0.528f);
+    [DataField]
+    public float MeleeCooldown = 0.528f;
 
     /// <summary>
     /// What firemodes can be selected.

@@ -119,9 +119,11 @@ public abstract partial class SharedGunSystem : EntitySystem
         if (component.NextFire < curTime)
             component.NextFire = curTime;
 
-        component.NextFire += component.MeleeCooldown;
+        var meleeCooldown = TimeSpan.FromSeconds(component.MeleeCooldown);
+
+        component.NextFire += meleeCooldown;
         while (component.NextFire <= curTime)
-            component.NextFire += component.MeleeCooldown;
+            component.NextFire += meleeCooldown;
 
         Dirty(uid, component);
     }
