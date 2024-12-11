@@ -66,6 +66,11 @@
   - type: ContainerContainer
     containers:
       torso_slot: !type:ContainerSlot {}
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 11
+    staminaCost: 12
 
 - type: entity
   id: BaseHead
@@ -82,6 +87,11 @@
   - type: Tag
     tags:
       - Head
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 5
+    staminaCost: 5
 
 - type: entity
   id: BaseLeftArm
@@ -93,6 +103,11 @@
     partType: Arm
     symmetry: Left
     toolName: "a left arm"
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 7
+    staminaCost: 7
 
 - type: entity
   id: BaseRightArm
@@ -104,6 +119,11 @@
     partType: Arm
     symmetry: Right
     toolName: "a right arm"
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 7
+    staminaCost: 7
 
 - type: entity
   id: BaseLeftHand
@@ -115,6 +135,10 @@
     partType: Hand
     symmetry: Left
     toolName: "a left hand"
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 3
 
 - type: entity
   id: BaseRightHand
@@ -126,6 +150,10 @@
     partType: Hand
     symmetry: Right
     toolName: "a right hand"
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 3
 
 - type: entity
   id: BaseLeftLeg
@@ -138,6 +166,11 @@
     symmetry: Left
     toolName: "a left leg"
   - type: MovementBodyPart
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 8
+    staminaCost: 9
 
 - type: entity
   id: BaseRightLeg
@@ -150,6 +183,11 @@
     symmetry: Right
     toolName: "a right leg"
   - type: MovementBodyPart
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 8
+    staminaCost: 9
 
 - type: entity
   id: BaseLeftFoot
@@ -161,6 +199,10 @@
     partType: Foot
     symmetry: Left
     toolName: "a left foot"
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 4
 
 - type: entity
   id: BaseRightFoot
@@ -172,5 +214,9 @@
     partType: Foot
     symmetry: Right
     toolName: "a right foot"
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 4
 
  # Shitmed Change End

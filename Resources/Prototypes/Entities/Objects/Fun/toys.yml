@@ -35,6 +35,7 @@
     damage:
       types:
         Blunt: 0
+  - type: DamageOtherOnHit
   - type: PhysicalComposition
     materialComposition:
       Cloth: 100
@@ -629,7 +630,7 @@
     sprite: Objects/Fun/ducky.rsi
     state: icon
   - type: MeleeWeapon
-    attackRate: 1.5
+    attackRate: .6666
     range: 1.5
     damage:
       types:
@@ -1386,7 +1387,7 @@
     sprite: Objects/Fun/toys.rsi
     state: foamblade
   - type: MeleeWeapon
-    attackRate: 1.5
+    attackRate: .6666
     angle: 0
     animation: WeaponArcThrust
     wideAnimationRotation: 90
@@ -1672,7 +1673,7 @@
     sprite: Objects/Weapons/Melee/cutlass.rsi
     state: foam_icon
   - type: MeleeWeapon
-    attackRate: 1.5
+    attackRate: .6666
     range: 2.0
     angle: 0
     animation: WeaponArcThrust
@@ -1942,7 +1943,7 @@
       damage: 0.8
     - type: MeleeWeapon
       wideAnimationRotation: -135
-      attackRate: 10
+      attackRate: .1
       damage:
         types:
           Blunt: 0

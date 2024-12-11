@@ -43,7 +43,7 @@
         type: MechBoundUserInterface
   - type: MeleeWeapon
     hidden: true
-    attackRate: 0.75
+    attackRate: 1.3333
     damage:
       types:
         Blunt: 25 #thwack
@@ -204,7 +204,7 @@
       - Hamster
   - type: MeleeWeapon
     hidden: true
-    attackRate: 0.8
+    attackRate: 1.25
     damage:
       types:
         Blunt: 10 #thwack
@@ -267,7 +267,7 @@
       - VimPilot
   - type: MeleeWeapon
     hidden: true
-    attackRate: 0.8
+    attackRate: 1.25
     damage:
       types:
         Blunt: 10 #thwack

@@ -64,9 +64,6 @@ ClothingHeadHoodMystic: ClothingHeadHoodMysta
 # 2023-11-07
 VendingMachineMailDrobe: VendingMachineCourierDrobe
 
-#Delta V temporary changes. Remove When items are added. # TODO: EE remove when Rebased
-ComputerShipyard: ComputerBroken
-ShipyardComputerCircuitboard: null
 SpawnMobGolemCult: null
 ShogiBoard: CheckerBoard
 

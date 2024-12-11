@@ -6,12 +6,12 @@
   components:
   - type: Sharp
   - type: MeleeWeapon
-    attackRate: 1.4
+    attackRate: .71
     range: 1.4
     damage:
       types:
         Slash: 4
-    heavyRateModifier: 0.8
+    heavyRateModifier: 1.25
     heavyRangeModifier: 0.8
     heavyDamageBaseModifier: 1.5
     heavyStaminaCost: 5
@@ -25,7 +25,7 @@
   - type: DamageOtherOnHit
     damage:
       types:
-        Slash: 2
+        Slash: 4
   - type: Tag
     tags:
     - Trash
