@@ -46,7 +46,7 @@
     swapKeys: true
     disableHeavy: true
     animation: WeaponArcThrust
-    wideAnimationRotation: 90
+    wideAnimationRotation: 180
     soundHit:
       collection: MetalThud
   - type: IncreaseDamageOnWield
@@ -552,7 +552,7 @@
       types:
         Blunt: 6.5
     bluntStaminaDamageFactor: 2.5
-    wideAnimationRotation: 90
+    wideAnimationRotation: 180
 
 - type: entity
   name: practice disabler

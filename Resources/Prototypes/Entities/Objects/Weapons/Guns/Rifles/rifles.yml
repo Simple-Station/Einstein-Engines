@@ -60,7 +60,7 @@
     swapKeys: true
     disableHeavy: true
     animation: WeaponArcThrust
-    wideAnimationRotation: 90
+    wideAnimationRotation: 180
     soundHit:
       collection: MetalThud
   - type: IncreaseDamageOnWield
