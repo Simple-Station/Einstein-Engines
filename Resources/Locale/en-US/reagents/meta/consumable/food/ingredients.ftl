@@ -36,3 +36,6 @@ reagent-desc-oil = Used by chefs to cook.
 
 reagent-name-capsaicin-oil = Capsaicin Oil
 reagent-desc-capsaicin-oil = Capsaicin Oil is the ingredient found in different types of hot peppers.
+
+reagent-name-oil-vegetable = vegetable oil
+reagent-desc-oil-vegetable = It's made from vegetables, that means it's healthy, right?

@@ -2,6 +2,7 @@
 # Nouns
 seeds-noun-seeds = seeds
 seeds-noun-spores = spores
+seeds-noun-jar = jar
 
 # Seeds
 seeds-wheat-name = wheat
@@ -116,3 +117,30 @@ seeds-cotton-name = cotton
 seeds-cotton-display-name = cotton plant
 seeds-pyrotton-name = pyrotton
 seeds-pyrotton-display-name = pyrotton plant
+
+seeds-bees-name = bees
+seeds-bees-display-name = honeycomb
+
+seeds-blue-pumpkin-name = blue pumpkin
+seeds-blue-pumpkin-display-name = blue pumpkins
+
+seeds-teaplant-name = tea plant
+seeds-teaplant-display-name = tea plants
+
+seeds-cherry-name = cherry
+seeds-cherry-display-name = cherry tree
+
+seeds-papercane-name = papercane
+seeds-papercane-display-name = papercanes
+
+seeds-goldenapple-name = golden apple
+seeds-goldenapple-display-name = golden apple tree
+
+seeds-glasstle-name = glasstle
+seeds-glasstle-display-name = glasstle
+
+seeds-avocado-name = avocado
+seeds-avocado-display-name = avocado plants
+
+seeds-cucumber-name = cucumber
+seeds-cucumber-display-name = cucumber plants
