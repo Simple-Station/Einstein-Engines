@@ -9,7 +9,6 @@
     drawdepth: Overdoors
     sprite: Structures/Wallmounts/signs_32x32.rsi
     state: bar
-    snapCardinals: true # one direction
   - type: Destructible
     thresholds:
     - trigger:

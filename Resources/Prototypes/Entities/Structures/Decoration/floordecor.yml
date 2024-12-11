@@ -6,7 +6,6 @@
   components:
   - type: Sprite
     sprite: Structures/Decoration/cave_decor.rsi
-    snapCardinals: true
     netsync: false
     noRot: true
     drawdepth: FloorObjects

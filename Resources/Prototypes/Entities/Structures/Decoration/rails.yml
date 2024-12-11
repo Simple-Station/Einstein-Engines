@@ -7,7 +7,6 @@
   - type: Sprite
     sprite: Structures/Decoration/rails64.rsi
     state: rails
-    snapCardinals: false
     netsync: false
     drawdepth: FloorObjects
   - type: Damageable
