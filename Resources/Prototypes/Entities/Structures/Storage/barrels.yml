@@ -2,13 +2,13 @@
 # Base
 - type: entity
   parent: BaseStructureDynamic
-  id: N14BaseBarrel
+  id: BaseBarrel
   name: barrel
   description: This barrel looks like it could contain something.
   noSpawn: true
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Storage/barrels.rsi
+    sprite: Structures/Storage/barrels.rsi
     state: blue-closed
     netsync: false
     noRot: true
@@ -57,8 +57,8 @@
 
 # Base Open
 - type: entity
-  parent: N14BaseBarrel
-  id: N14BaseBarrelOpen
+  parent: BaseBarrel
+  id: BaseBarrelOpen
   suffix: open
   noSpawn: true
   components:
@@ -72,46 +72,46 @@
 
 # Closed
 - type: entity
-  parent: N14BaseBarrel
-  id: N14BlackBarrel
+  parent: BaseBarrel
+  id: BlackBarrel
   name: black barrel
   description: A worn out black barrel. The label is torn off.
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Storage/barrels.rsi
+    sprite: Structures/Storage/barrels.rsi
     state: black-closed
 
 - type: entity
-  parent: N14BaseBarrel
-  id: N14BlueBarrel
+  parent: BaseBarrel
+  id: BlueBarrel
   name: blue barrel
   description: A blue barrel with a warning sign of. Maybe it contains water?
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Storage/barrels.rsi
+    sprite: Structures/Storage/barrels.rsi
     state: blue-closed
 
 - type: entity
-  parent: N14BaseBarrel
-  id: N14RedBarrel
+  parent: BaseBarrel
+  id: RedBarrel
   name: red barrel
   description: A red barrel with an explosive warning sign on. Better be careful.
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Storage/barrels.rsi
+    sprite: Structures/Storage/barrels.rsi
     state: red-closed
   - type: Explosive
     explosionType: Default
     totalIntensity: 120 # ~ 5 tile radius
 
 - type: entity
-  parent: N14BaseBarrel
-  id: N14YellowBarrel
+  parent: BaseBarrel
+  id: YellowBarrel
   name: yellow barrel
   description: A yellow barrel with a radiation warning sign on. Better be careful.
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Storage/barrels.rsi
+    sprite: Structures/Storage/barrels.rsi
     state: yellow-closed
   - type: RadiationSource
     intensity: 2
@@ -119,47 +119,47 @@
 
 # Open
 - type: entity
-  parent: N14BaseBarrelOpen
-  id: N14BlackBarrelOpen
+  parent: BaseBarrelOpen
+  id: BlackBarrelOpen
   suffix: open
   name: black barrel
   description: A worn out black barrel. The label is torn off. The lid is off and you can see inside.
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Storage/barrels.rsi
+    sprite: Structures/Storage/barrels.rsi
     state: black-open
 
 - type: entity
-  parent: N14BaseBarrelOpen
-  id: N14BlueBarrelOpen
+  parent: BaseBarrelOpen
+  id: BlueBarrelOpen
   suffix: open
   name: blue barrel
   description: A blue barrel with a warning sign of. The lid is off and you can see inside.
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Storage/barrels.rsi
+    sprite: Structures/Storage/barrels.rsi
     state: blue-open
 
 - type: entity
-  parent: N14BaseBarrelOpen
-  id: N14RedBarrelOpen
+  parent: BaseBarrelOpen
+  id: RedBarrelOpen
   suffix: open
   name: red barrel
   description: A red barrel with an explosive warning sign on. The lid is off and you can see inside.
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Storage/barrels.rsi
+    sprite: Structures/Storage/barrels.rsi
     state: red-open
 
 - type: entity
-  parent: N14BaseBarrelOpen
-  id: N14YellowBarrelOpen
+  parent: BaseBarrelOpen
+  id: YellowBarrelOpen
   suffix: open
   name: yellow barrel
   description: A yellow barrel with a radiation warning sign on. The lid is off and you can see inside but it still makes you twitch.
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Storage/barrels.rsi
+    sprite: Structures/Storage/barrels.rsi
     state: yellow-open
   - type: RadiationSource
     intensity: 1
@@ -167,24 +167,24 @@
 
 # Full barrels
 - type: entity
-  parent: N14BlackBarrelOpen
-  id: N14BlackBarrelFull
+  parent: BlackBarrelOpen
+  id: BlackBarrelFull
   suffix: full
   description: A worn out black barrel. This one looks full of some dark liquid.
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Storage/barrels.rsi
+    sprite: Structures/Storage/barrels.rsi
     state: black-full
     # TODO - fill with some sort of waste product? Maybe just dirty water.
 
 - type: entity
-  parent: N14RedBarrelOpen
-  id: N14RedBarrelFull
+  parent: RedBarrelOpen
+  id: RedBarrelFull
   suffix: full
   description: A red barrel with an explosive warning sign on. It has a golden liquid inside.
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Storage/barrels.rsi
+    sprite: Structures/Storage/barrels.rsi
     state: red-full
   - type: SolutionContainerManager
     solutions:
@@ -203,13 +203,13 @@
     totalIntensity: 120 # ~ 5 tile radius
 
 - type: entity
-  parent: N14YellowBarrelOpen
-  id: N14YellowBarrelFull
+  parent: YellowBarrelOpen
+  id: YellowBarrelFull
   suffix: full
   description: A yellow barrel with a radiation warning sign on. You can see the glowing goo bubble.
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Storage/barrels.rsi
+    sprite: Structures/Storage/barrels.rsi
     state: yellow-full
   - type: RadiationSource
     intensity: 3
@@ -238,12 +238,12 @@
 # Burning Barrels
 - type: entity
   parent: BaseStructureDynamic
-  id: N14BurningBarrel
+  id: BurningBarrel
   name: burnt barrel
   description: This barrel looks like it once contained a fire.
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Storage/burningbarrel.rsi
+    sprite: Structures/Storage/burningbarrel.rsi
     state: burnbarrel
     netsync: false
     noRot: true
@@ -261,13 +261,13 @@
         - LowImpassable
 
 - type: entity
-  parent: N14BurningBarrel
-  id: N14BurningBarrelLit
+  parent: BurningBarrel
+  id: BurningBarrelLit
   name: burning barrel
   description: This barrel is smoldering. Toasty
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Storage/burningbarrel.rsi
+    sprite: Structures/Storage/burningbarrel.rsi
     state: burnbarrel_lit
     netsync: false
   - type: PointLight

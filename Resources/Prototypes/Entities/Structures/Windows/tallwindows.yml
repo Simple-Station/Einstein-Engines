@@ -5,16 +5,16 @@
 ## Tall windows
 - type: entity
   parent: BaseStructure
-  id: N14WindowTallBase
+  id: WindowTallBase
   name: window frame
   abstract: true
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Windows/tallwallwindows.rsi
+    sprite: Structures/Windows/tallwallwindows.rsi
     noRot: true
     drawdepth: Walls
   - type: Icon
-    sprite: _Nuclear14/Structures/Windows/tallwallwindows.rsi
+    sprite: Structures/Windows/tallwallwindows.rsi
   - type: Destructible
     thresholds:
     - trigger:
@@ -46,11 +46,11 @@
         - TableMask
         layer:
         - TableLayer
-  
+
 - type: entity
-  parent: N14WindowBase
-  id: N14WindowTall
-  description: A window for seeing into places. 
+  parent: WindowBase
+  id: WindowTall
+  description: A window for seeing into places.
   name: window
   noSpawn: true
   components:
@@ -67,7 +67,7 @@
     damageOverlay:
       sprite: Structures/Windows/cracks.rsi
   - type: Sprite
-    sprite: _Nuclear14/Structures/Windows/tallwallwindows.rsi
+    sprite: Structures/Windows/tallwallwindows.rsi
     state: window
     drawdepth: WallTops
   - type: Destructible
@@ -92,14 +92,14 @@
             max: 2
       - !type:SpawnEntitiesBehavior
         spawn:
-          N14WindowTallBroken:
+          WindowTallBroken:
             min: 1
             max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-    
+
 - type: entity
-  id: N14WindowTallBroken
+  id: WindowTallBroken
   name: broken glass
   description: Broken remains of a window.
   noSpawn: true
@@ -107,7 +107,7 @@
     mode: SnapgridCenter
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Windows/tallwallwindows.rsi
+    sprite: Structures/Windows/tallwallwindows.rsi
     state: broken
     drawdepth: WallTops
   - type: CollisionWake # not sure this is needed
@@ -162,10 +162,10 @@
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Glass
-  
+
 - type: entity
-  parent: N14WindowTallBase
-  id: N14WindowBrickTall
+  parent: WindowTallBase
+  id: WindowBrickTall
   noSpawn: true
   suffix: brick
   components:
@@ -173,10 +173,10 @@
     state: brick
   - type: Icon
     state: brick
-    
+
 - type: entity
-  parent: N14WindowTallBase
-  id: N14WindowBrickTallAlt
+  parent: WindowTallBase
+  id: WindowBrickTallAlt
   noSpawn: true
   suffix: brick alt
   components:
@@ -206,10 +206,10 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-    
+
 - type: entity
-  parent: N14WindowTallBase
-  id: N14WindowBrickGrayTall
+  parent: WindowTallBase
+  id: WindowBrickGrayTall
   noSpawn: true
   suffix:  brick gray
   components:
@@ -241,8 +241,8 @@
         acts: [ "Destruction" ]
 
 - type: entity
-  parent: N14WindowTallBase
-  id: N14WindowConcreteTall
+  parent: WindowTallBase
+  id: WindowConcreteTall
   noSpawn: true
   suffix: concrete
   components:
@@ -272,10 +272,10 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-    
+
 - type: entity
-  parent: N14WindowTallBase
-  id: N14WindowConcreteTallAlt
+  parent: WindowTallBase
+  id: WindowConcreteTallAlt
   noSpawn: true
   suffix: concrete alt
   components:
@@ -305,10 +305,10 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-    
+
 - type: entity
-  parent: N14WindowTallBase
-  id: N14WindowDungeonTall
+  parent: WindowTallBase
+  id: WindowDungeonTall
   noSpawn: true
   suffix: dungeon
   components:
@@ -338,10 +338,10 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-    
+
 - type: entity
-  parent: N14WindowTallBase
-  id: N14WindowDungeonTallAlt
+  parent: WindowTallBase
+  id: WindowDungeonTallAlt
   noSpawn: true
   suffix: dungeon alt
   components:
@@ -371,10 +371,10 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-    
+
 - type: entity
-  parent: N14WindowTallBase
-  id: N14WindowMetalTall
+  parent: WindowTallBase
+  id: WindowMetalTall
   noSpawn: true
   suffix: metal
   components:
@@ -404,10 +404,10 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-    
+
 - type: entity
-  parent: N14WindowTallBase
-  id: N14WindowMetalReinforcedTall
+  parent: WindowTallBase
+  id: WindowMetalReinforcedTall
   noSpawn: true
   suffix: metal reinforced
   components:
@@ -437,10 +437,10 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-    
+
 - type: entity
-  parent: N14WindowTallBase
-  id: N14WindowScrapTall
+  parent: WindowTallBase
+  id: WindowScrapTall
   noSpawn: true
   suffix: scrap
   components:
@@ -472,8 +472,8 @@
         acts: [ "Destruction" ]
 
 - type: entity
-  parent: N14WindowTallBase
-  id: N14WindowScrapBlueTall
+  parent: WindowTallBase
+  id: WindowScrapBlueTall
   noSpawn: true
   suffix: scrap blue
   components:
@@ -503,10 +503,10 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-    
+
 - type: entity
-  parent: N14WindowTallBase
-  id: N14WindowScrapRedTall
+  parent: WindowTallBase
+  id: WindowScrapRedTall
   noSpawn: true
   suffix: scrap red
   components:
@@ -536,10 +536,10 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-    
+
 - type: entity
-  parent: N14WindowTallBase
-  id: N14WindowScrapWhiteTall
+  parent: WindowTallBase
+  id: WindowScrapWhiteTall
   noSpawn: true
   suffix: scrap white
   components:
@@ -569,10 +569,10 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-    
+
 - type: entity
-  parent: N14WindowTallBase
-  id: N14WindowSidingTall
+  parent: WindowTallBase
+  id: WindowSidingTall
   noSpawn: true
   suffix: siding
   components:
@@ -602,10 +602,10 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-    
+
 - type: entity
-  parent: N14WindowTallBase
-  id: N14WindowSidingBlueTall
+  parent: WindowTallBase
+  id: WindowSidingBlueTall
   noSpawn: true
   suffix: siding blue
   components:
@@ -635,10 +635,10 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-    
+
 - type: entity
-  parent: N14WindowTallBase
-  id: N14WindowSidingGreenTall
+  parent: WindowTallBase
+  id: WindowSidingGreenTall
   noSpawn: true
   suffix: siding green
   components:
@@ -670,8 +670,8 @@
         acts: [ "Destruction" ]
 
 - type: entity
-  parent: N14WindowTallBase
-  id: N14WindowSidingRedTall
+  parent: WindowTallBase
+  id: WindowSidingRedTall
   noSpawn: true
   suffix: siding red
   components:
@@ -701,10 +701,10 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-    
+
 - type: entity
-  parent: N14WindowTallBase
-  id: N14WindowVaultTall
+  parent: WindowTallBase
+  id: WindowVaultTall
   noSpawn: true
   suffix: vault
   components:
@@ -734,10 +734,10 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-    
+
 - type: entity
-  parent: N14WindowTallBase
-  id: N14WindowWoodTall
+  parent: WindowTallBase
+  id: WindowWoodTall
   noSpawn: true
   suffix: wood
   components:
@@ -767,10 +767,10 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-    
+
 - type: entity
-  parent: N14WindowTallBase
-  id: N14WindowWoodTallAlt
+  parent: WindowTallBase
+  id: WindowWoodTallAlt
   noSpawn: true
   suffix: wood alt
   components:

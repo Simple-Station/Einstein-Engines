@@ -5,7 +5,7 @@
 # Vents
 - type: entity
   parent: BaseSign
-  id: N14WallmountVent
+  id: WallmountVent
   name: vent
   description: An airvent. Could be a good stash.
   components:
@@ -14,7 +14,7 @@
   - type: Sprite
     drawdepth: Overdoors
     snapCardinals: true
-    sprite: _Nuclear14/Structures/Storage/storage.rsi
+    sprite: Structures/Storage/storage.rsi
     state: vent
   - type: SecretStash
     secretPartName: secret-stash-part-vent
@@ -22,24 +22,24 @@
   - type: ContainerContainer
     containers:
       stash: !type:ContainerSlot {}
-  - type: PottedPlantHide # N14TODO: This needs changed to be generic stash hide?
-      
+  - type: PottedPlantHide # TODO: This needs changed to be generic stash hide?
+
 - type: entity
-  parent: N14WallmountVent
-  id: N14WallmountVentDamaged
+  parent: WallmountVent
+  id: WallmountVentDamaged
   suffix: damaged
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Storage/storage.rsi
+    sprite: Structures/Storage/storage.rsi
     state: vent-damaged
-    
+
 - type: entity
-  parent: N14WallmountVent
-  id: N14WallmountVentOpen
+  parent: WallmountVent
+  id: WallmountVentOpen
   suffix: open
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Storage/storage.rsi
+    sprite: Structures/Storage/storage.rsi
     state: vent-open
 
 

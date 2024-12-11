@@ -1,5 +1,5 @@
 ﻿- type: entity
-  id: N14WallmountFireHydrant
+  id: WallmountFireHydrant
   name: fire hydrant
   description: A wall mounted hydrant for putting out large fires.
   placement:
@@ -12,14 +12,14 @@
     - type: Clickable
     - type: InteractionOutline
     - type: Sprite
-      sprite: _Nuclear14/Structures/Wallmounts/hydrant.rsi
+      sprite: Structures/Wallmounts/hydrant.rsi
       snapCardinals: true
       drawdepth: Overdoors
       layers:
       - state: frame
       - state: closed
         map: ["enum.ItemCabinetVisualLayers.Door"]
-      - state: closed # N14:TODO: Add this state
+      - state: closed # :TODO: Add this state
         map: ["enum.ItemCabinetVisualLayers.ContainsItem"]
         visible: true
     - type: ItemCabinet
@@ -57,8 +57,8 @@
                 collection: MetalBreak
 
 - type: entity
-  id: N14WallmountFireHydrantOpen
-  parent: N14WallmountFireHydrant
+  id: WallmountFireHydrantOpen
+  parent: WallmountFireHydrant
   suffix: Open
   components:
   - type: ItemCabinet
@@ -67,25 +67,25 @@
       path: /Audio/Machines/machine_switch.ogg
     openState: open
     closedState: closed
-    
+
 - type: entity
-  parent: N14WallmountFireHydrant
-  id: N14WallmountFireHydrantOld
+  parent: WallmountFireHydrant
+  id: WallmountFireHydrantOld
   components:
     - type: Sprite
-      sprite: _Nuclear14/Structures/Wallmounts/hydrantold.rsi
+      sprite: Structures/Wallmounts/hydrantold.rsi
       snapCardinals: true
       layers:
       - state: frame
       - state: closed
         map: ["enum.ItemCabinetVisualLayers.Door"]
-      - state: closed # N14:TODO: Add this state
+      - state: closed # :TODO: Add this state
         map: ["enum.ItemCabinetVisualLayers.ContainsItem"]
         visible: true
 
 - type: entity
-  parent: N14WallmountFireHydrantOld
-  id: N14WallmountFireHydrantOldOpen
+  parent: WallmountFireHydrantOld
+  id: WallmountFireHydrantOldOpen
   suffix: Open
   components:
   - type: ItemCabinet

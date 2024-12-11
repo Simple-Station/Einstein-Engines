@@ -1,12 +1,12 @@
 - type: entity
-  parent: N14BaseComputer
-  id: N14ComputerVDU
+  parent: BaseComputer
+  id: ComputerVDU
   name: VDU
   description: A wall mounted video display unit.
   components:
   - type: Sprite
     drawdepth: Overdoors
-    sprite: _Nuclear14/Structures/Wallmounts/vdu.rsi
+    sprite: Structures/Wallmounts/vdu.rsi
     layers:
       - map: ["computerLayerBody"]
         state: VDU
@@ -50,5 +50,5 @@
         acts: [ "Destruction" ]
   - type: Transform
     anchored: true
-    
+
 # See terminals for more wall mounted versions

@@ -1,6 +1,6 @@
 - type: entity
   parent: BaseSign
-  id: N14PosterBase # For 64x64 posters
+  id: PosterBase # For 64x64 posters
   name: Poster
   abstract: true
   components:
@@ -8,7 +8,7 @@
     arc: 360
   - type: Sprite
     drawdepth: Overdoors
-    sprite: _Nuclear14/Structures/Wallmounts/Posters/vault-tec.rsi
+    sprite: Structures/Wallmounts/Posters/vault-tec.rsi
     scale: 0.45, 0.45
     snapCardinals: true
   - type: Destructible
@@ -34,8 +34,8 @@
 
 # NCR Propaganda+
 - type: entity
-  parent: N14SignNotice
-  id: N14PosterWanted
+  parent: SignNotice
+  id: PosterWanted
   name: wanted poster
   description: A wanted poster for some waster.
   components:
@@ -44,8 +44,8 @@
 
 # NCR Propaganda+
 - type: entity
-  parent: N14SignNotice
-  id: N14PosterWantedGoose
+  parent: SignNotice
+  id: PosterWantedGoose
   name: goose wanted poster
   description: A wanted poster for some raider who apparently beat a raider to death with his bare hands..!
   components:
@@ -53,8 +53,8 @@
     state: wanted_poster_goose
 
 - type: entity
-  parent: N14SignNotice
-  id: N14PosterFallout
+  parent: SignNotice
+  id: PosterFallout
   name: fallout poster
   description: A poster depicting nuclear fallout.
   components:
@@ -62,8 +62,8 @@
     state: poster_fallout
 
 - type: entity
-  parent: N14SignNotice
-  id: N14PosterWecan
+  parent: SignNotice
+  id: PosterWecan
   name: we can poster
   description: we can!
   components:
@@ -71,8 +71,8 @@
     state: poster_wecan
 
 - type: entity
-  parent: N14SignNotice
-  id: N14PosterNCR1
+  parent: SignNotice
+  id: PosterNCR1
   name: NCR poster
   suffix: wrench
   description: NCR propaganda of some sort.
@@ -81,40 +81,40 @@
     state: ncr_sign
 
 - type: entity
-  parent: N14PosterNCR1
-  id: N14PosterNCR2
+  parent: PosterNCR1
+  id: PosterNCR2
   suffix: enlist
   components:
   - type: Sprite
     state: ncr_enlist
 
 - type: entity
-  parent: N14PosterNCR1
-  id: N14PosterNCR3
+  parent: PosterNCR1
+  id: PosterNCR3
   suffix: looselip
   components:
   - type: Sprite
     state: ncr_looselip
 
 - type: entity
-  parent: N14PosterNCR1
-  id: N14PosterNCR4
+  parent: PosterNCR1
+  id: PosterNCR4
   suffix: you
   components:
   - type: Sprite
     state: ncr_you
 
 - type: entity
-  parent: N14PosterNCR1
-  id: N14PosterNCR5
+  parent: PosterNCR1
+  id: PosterNCR5
   suffix: espionage
   components:
   - type: Sprite
     state: ncr_espionage
 
 - type: entity
-  parent: N14PosterNCR1
-  id: N14PosterNCR6
+  parent: PosterNCR1
+  id: PosterNCR6
   suffix: bombs
   components:
   - type: Sprite
@@ -122,8 +122,8 @@
 
 # Pristine Posters
 - type: entity
-  parent: N14PosterBase
-  id: N14PosterVaultTec01
+  parent: PosterBase
+  id: PosterVaultTec01
   name: Vault-Tec poster
   description: "A near pristine poster advertising Vault-Tec."
   components:
@@ -131,8 +131,8 @@
     state: vault-tec01
 
 - type: entity
-  parent: N14PosterBase
-  id: N14PosterVaultTec02
+  parent: PosterBase
+  id: PosterVaultTec02
   name: Vault-Tec poster
   description: "A near pristine poster advertising Vault-Tec."
   components:
@@ -140,8 +140,8 @@
     state: vault-tec02
 
 - type: entity
-  parent: N14PosterBase
-  id: N14PosterVaultTec05
+  parent: PosterBase
+  id: PosterVaultTec05
   name: Vault-Tec poster
   description: "A near pristine poster advertising Vault-Tec."
   components:
@@ -149,8 +149,8 @@
     state: vault-tec05
 
 - type: entity
-  parent: N14PosterBase
-  id: N14PosterVaultTec06
+  parent: PosterBase
+  id: PosterVaultTec06
   name: Vault-Tec poster
   description: "A near pristine poster promoting science."
   components:
@@ -158,8 +158,8 @@
     state: vault-tec06
 
 - type: entity
-  parent: N14PosterBase
-  id: N14PosterVaultTec07
+  parent: PosterBase
+  id: PosterVaultTec07
   name: Vault-Tec poster
   description: "A near pristine poster advertising Vaults."
   components:
@@ -167,8 +167,8 @@
     state: vault-tec07
 
 - type: entity
-  parent: N14PosterBase
-  id: N14PosterVaultTec10
+  parent: PosterBase
+  id: PosterVaultTec10
   name: Vault-Tec poster
   description: "A near pristine poster promoting workplace safety."
   components:
@@ -176,19 +176,19 @@
     state: vault-tec10
 
 - type: entity
-  parent: N14PosterBase
-  id: N14PosterSafety1
+  parent: PosterBase
+  id: PosterSafety1
   name: safety poster
   description: "A poster promoting workplace safety. Wear a hardhat!"
   components:
   - type: Sprite
     state: safety1
-    sprite: _Nuclear14/Structures/Wallmounts/Posters/adverts64x64.rsi
+    sprite: Structures/Wallmounts/Posters/adverts64x64.rsi
     scale: 0.45, 0.45
 
 - type: entity
-  parent: N14PosterSafety1
-  id: N14PosterSafety2
+  parent: PosterSafety1
+  id: PosterSafety2
   name: safety poster
   description: "A poster promoting workplace safety. Wear a respirator!"
   components:
@@ -196,8 +196,8 @@
     state: safety2
 
 - type: entity
-  parent: N14PosterSafety1
-  id: N14PosterSafety3
+  parent: PosterSafety1
+  id: PosterSafety3
   name: safety poster
   description: "A poster promoting workplace safety. Protect yourself!"
   components:
@@ -205,8 +205,8 @@
     state: safety3
 
 - type: entity
-  parent: N14PosterSafety1
-  id: N14PosterSafety4
+  parent: PosterSafety1
+  id: PosterSafety4
   name: safety poster
   description: "A poster promoting workplace safety. Protection Matters!"
   components:
@@ -214,8 +214,8 @@
     state: safety4
 
 - type: entity
-  parent: N14PosterSafety1
-  id: N14PosterSafety5
+  parent: PosterSafety1
+  id: PosterSafety5
   name: safety poster
   description: "A poster promoting workplace safety. Protect your hands!"
   components:
@@ -223,8 +223,8 @@
     state: safety5
 
 - type: entity
-  parent: N14PosterSafety1
-  id: N14PosterSafety6
+  parent: PosterSafety1
+  id: PosterSafety6
   name: safety poster
   description: "A poster promoting workplace safety. Eye protection!"
   components:
@@ -232,8 +232,8 @@
     state: safety6
 
 - type: entity
-  parent: N14PosterSafety1
-  id: N14PosterSafety7
+  parent: PosterSafety1
+  id: PosterSafety7
   name: safety poster
   description: "A poster promoting workplace safety. Wear ear protection!"
   components:
@@ -241,8 +241,8 @@
     state: safety7
 
 - type: entity
-  parent: N14PosterSafety1
-  id: N14PosterSafety8
+  parent: PosterSafety1
+  id: PosterSafety8
   name: safety poster
   description: "A poster promoting workplace safety. Better safe than sorry!"
   components:
@@ -250,8 +250,8 @@
     state: safety8
 
 - type: entity
-  parent: N14PosterSafety1
-  id: N14PosterSafety9
+  parent: PosterSafety1
+  id: PosterSafety9
   name: safety poster
   description: "A poster promoting workplace safety. Moving parts can pack a pinch!"
   components:
@@ -259,8 +259,8 @@
     state: safety9
 
 - type: entity
-  parent: N14PosterSafety1
-  id: N14PosterSafety10
+  parent: PosterSafety1
+  id: PosterSafety10
   name: safety poster
   description: "A poster promoting workplace safety. Radiation must not be feared but it must command your respect."
   components:
@@ -268,8 +268,8 @@
     state: safety10
 
 - type: entity
-  parent: N14PosterSafety1
-  id: N14PosterSafety11
+  parent: PosterSafety1
+  id: PosterSafety11
   name: safety poster
   description: "A poster promoting workplace safety. Forgotten meters measure no radiation."
   components:
@@ -277,8 +277,8 @@
     state: safety11
 
 - type: entity
-  parent: N14PosterSafety1
-  id: N14PosterSafety12
+  parent: PosterSafety1
+  id: PosterSafety12
   name: safety poster
   description: "A  mandatory safety equipment notice."
   components:
@@ -286,8 +286,8 @@
     state: safety12
 
 - type: entity
-  parent: N14PosterSafety1
-  id: N14PosterCautionSign1
+  parent: PosterSafety1
+  id: PosterCautionSign1
   name: caution sign
   description: "Caution. Robot operating area. Do not enter. Authorised personnel only."
   components:
@@ -295,8 +295,8 @@
     state: caution1
 
 - type: entity
-  parent: N14PosterSafety1
-  id: N14PosterCautionSign2
+  parent: PosterSafety1
+  id: PosterCautionSign2
   name: caution sign
   description: "Caution. This machine has no brain. Use your own."
   components:
@@ -304,8 +304,8 @@
     state: caution2
 
 - type: entity
-  parent: N14PosterSafety1
-  id: N14PosterCautionSign3
+  parent: PosterSafety1
+  id: PosterCautionSign3
   name: caution sign
   description: "Caution. Robotics units can move at any time."
   components:
@@ -313,8 +313,8 @@
     state: caution3
 
 - type: entity
-  parent: N14PosterSafety1
-  id: N14PosterDangerSign1
+  parent: PosterSafety1
+  id: PosterDangerSign1
   name: danger sign
   description: "Danger. Electrical hazard."
   components:
@@ -322,8 +322,8 @@
     state: danger1
 
 - type: entity
-  parent: N14PosterSafety1
-  id: N14PosterDangerSign2
+  parent: PosterSafety1
+  id: PosterDangerSign2
   name: danger sign
   description: "Danger. Radioactive material."
   components:
@@ -331,8 +331,8 @@
     state: danger2
 
 - type: entity
-  parent: N14PosterSafety1
-  id: N14PosterDangerSign3
+  parent: PosterSafety1
+  id: PosterDangerSign3
   name: danger sign
   description: "Danger. Highly flammable."
   components:
@@ -340,8 +340,8 @@
     state: danger3
 
 - type: entity
-  parent: N14PosterSafety1
-  id: N14PosterDangerSign4
+  parent: PosterSafety1
+  id: PosterDangerSign4
   name: danger sign
   description: "Danger. No smoking. No matches. No open flames."
   components:
@@ -349,8 +349,8 @@
     state: danger4
 
 - type: entity
-  parent: N14PosterSafety1
-  id: N14PosterAdvertJet
+  parent: PosterSafety1
+  id: PosterAdvertJet
   name: advert poster
   description: "A poster advertising the drug Jet."
   components:
@@ -358,8 +358,8 @@
     state: jet1
 
 - type: entity
-  parent: N14PosterSafety1
-  id: N14PosterAdvertGrognak1
+  parent: PosterSafety1
+  id: PosterAdvertGrognak1
   name: advert poster
   description: "A poster advertising Grognak the barbarian comics."
   components:
@@ -367,8 +367,8 @@
     state: grognak1
 
 - type: entity
-  parent: N14PosterSafety1
-  id: N14PosterAdvertNukaCola1
+  parent: PosterSafety1
+  id: PosterAdvertNukaCola1
   name: advert poster
   description: "A poster advertising Nuka Cola."
   components:
@@ -376,8 +376,8 @@
     state: nukacola1
 
 - type: entity
-  parent: N14PosterSafety1
-  id: N14PosterAdvertNukaCola2
+  parent: PosterSafety1
+  id: PosterAdvertNukaCola2
   name: advert poster
   description: "A poster advertising Nuka Cola."
   components:
@@ -386,8 +386,8 @@
 
 # Worn posters
 - type: entity
-  parent: N14PosterBase
-  id: N14PosterVaultTec03
+  parent: PosterBase
+  id: PosterVaultTec03
   name: Vault-Tec poster
   description: "A poster advertising Vault-Tec."
   components:
@@ -395,8 +395,8 @@
     state: vault-tec03
 
 - type: entity
-  parent: N14PosterBase
-  id: N14PosterVaultTec04
+  parent: PosterBase
+  id: PosterVaultTec04
   name: Vault-Tec poster
   description: "A Vault-Tec poster promoting hard work."
   components:
@@ -404,8 +404,8 @@
     state: vault-tec04
 
 - type: entity
-  parent: N14PosterBase
-  id: N14PosterVaultTec08
+  parent: PosterBase
+  id: PosterVaultTec08
   name: Vault-Tec poster
   description: "A worn Vault-Tec poster advertising Vaults."
   components:
@@ -413,8 +413,8 @@
     state: vault-tec08
 
 - type: entity
-  parent: N14PosterBase
-  id: N14PosterVaultTec09
+  parent: PosterBase
+  id: PosterVaultTec09
   name: Vault-Tec poster
   description: "A worn Vault-Tec poster. You can't make it out."
   components:
@@ -422,18 +422,18 @@
     state: vault-tec09
 
 - type: entity
-  parent: N14PosterBase
-  id: N14PosterAbraxo
+  parent: PosterBase
+  id: PosterAbraxo
   name: abraxo poster
   description: "A worn poster for Abraxo cleaner."
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Wallmounts/Posters/adverts64x64.rsi
+    sprite: Structures/Wallmounts/Posters/adverts64x64.rsi
     state: abraxo
 
 - type: entity
-  parent: N14PosterAbraxo
-  id: N14PosterBoscom
+  parent: PosterAbraxo
+  id: PosterBoscom
   name: boscom poster
   description: "A worn poster for boston communications."
   components:
@@ -441,8 +441,8 @@
     state: boscom
 
 - type: entity
-  parent: N14PosterAbraxo
-  id: N14PosterGNN
+  parent: PosterAbraxo
+  id: PosterGNN
   name: GNN poster
   description: "A worn poster for galaxy news radio."
   components:
@@ -451,42 +451,42 @@
 
 # Wide Posters (128x64)
 - type: entity
-  parent: N14PosterBase
-  id: N14PosterWideNukacola1
+  parent: PosterBase
+  id: PosterWideNukacola1
   description: "A wide advert promoting Nuka Cola."
   components:
   - type: Sprite
     state: nukacola1
-    sprite: _Nuclear14/Structures/Wallmounts/Posters/adverts128x64.rsi
+    sprite: Structures/Wallmounts/Posters/adverts128x64.rsi
     scale: 0.5, 0.5
 
 - type: entity
-  parent: N14PosterWideNukacola1
-  id: N14PosterWideMassfusion1
+  parent: PosterWideNukacola1
+  id: PosterWideMassfusion1
   description: "A wide advert promoting the Mass Fusion company. Power. People. Perfect. Mass Fusion."
   components:
   - type: Sprite
     state: massfusion1
 
 - type: entity
-  parent: N14PosterWideNukacola1
-  id: N14PosterWideRedrocket1
+  parent: PosterWideNukacola1
+  id: PosterWideRedrocket1
   description: "A wide advert promoting the Red Rocket fuel company. Gasoline. Diesel. Fusion."
   components:
   - type: Sprite
     state: redrocket1
 
 - type: entity
-  parent: N14PosterWideNukacola1
-  id: N14PosterWideNukaDark
+  parent: PosterWideNukacola1
+  id: PosterWideNukaDark
   description: "A wide advert promoting Nuka Cola Dark"
   components:
   - type: Sprite
     state: nukadark
 
 - type: entity
-  parent: N14PosterWideNukacola1
-  id: N14PosterWideVim
+  parent: PosterWideNukacola1
+  id: PosterWideVim
   description: "A wide advert promoting Vim"
   components:
   - type: Sprite
@@ -494,24 +494,24 @@
     scale: 0.4, 0.4
 
 - type: entity
-  parent: N14PosterWideVim
-  id: N14PosterWideVimCaptainsblend
+  parent: PosterWideVim
+  id: PosterWideVimCaptainsblend
   description: "A wide advert promoting Vim Captains Blend"
   components:
   - type: Sprite
     state: vim_captainsblend
 
 - type: entity
-  parent: N14PosterWideVim
-  id: N14PosterWideVimQuartz
+  parent: PosterWideVim
+  id: PosterWideVimQuartz
   description: "A wide advert promoting Vim Quartz"
   components:
   - type: Sprite
     state: vim_quartz
 
 - type: entity
-  parent: N14PosterWideVim
-  id: N14PosterWideVimRefresh
+  parent: PosterWideVim
+  id: PosterWideVimRefresh
   description: "A wide advert promoting Vim Refresh"
   components:
   - type: Sprite

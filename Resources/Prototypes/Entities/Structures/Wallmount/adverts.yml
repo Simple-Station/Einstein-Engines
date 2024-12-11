@@ -1,13 +1,13 @@
 - type: entity
   parent: BaseSign
-  id: N14SignBase # for non directional signs otherwise remove snapCardinals: true
+  id: SignBase # for non directional signs otherwise remove snapCardinals: true
   abstract: true
   components:
   - type: WallMount
     arc: 360
   - type: Sprite
     drawdepth: Overdoors
-    sprite: _Nuclear14/Structures/Wallmounts/adverts.rsi
+    sprite: Structures/Wallmounts/adverts.rsi
     snapCardinals: true # one direction
   - type: Destructible
     thresholds:
@@ -20,8 +20,8 @@
 
 # Pristine Adverts
 - type: entity
-  parent: N14SignBase
-  id: N14SignNukaColaGirl
+  parent: SignBase
+  id: SignNukaColaGirl
   name: Nuka Cola advert
   description: "A near pristine pre-war advert for Nuka Cola."
   components:
@@ -38,14 +38,14 @@
         acts: [ "Destruction" ]
       - !type:SpawnEntitiesBehavior
         spawn:
-          N14SignNukaColaGirlDamaged:
+          SignNukaColaGirlDamaged:
             min: 1
             max: 1
         offset: 0
 
 - type: entity
-  parent: N14SignBase
-  id: N14SignVaultTec
+  parent: SignBase
+  id: SignVaultTec
   name: Vault-Tec advert
   description: "A near pristine pre-war advert for Vault-Tec."
   components:
@@ -62,14 +62,14 @@
         acts: [ "Destruction" ]
       - !type:SpawnEntitiesBehavior
         spawn:
-          N14SignVaultTecDamaged:
+          SignVaultTecDamaged:
             min: 1
             max: 1
         offset: 0
 
 - type: entity
-  parent: N14SignBase
-  id: N14SignMrHandy
+  parent: SignBase
+  id: SignMrHandy
   name: Mr Handy advert
   description: "A near pristine pre-war advert for a Mr. Handy service robot."
   components:
@@ -86,15 +86,15 @@
         acts: [ "Destruction" ]
       - !type:SpawnEntitiesBehavior
         spawn:
-          N14SignMrHandyDamaged:
+          SignMrHandyDamaged:
             min: 1
             max: 1
         offset: 0
 
 # Worn Adverts
 - type: entity
-  parent: N14SignNukaColaGirl
-  id: N14SignNukaColaGirlWorn
+  parent: SignNukaColaGirl
+  id: SignNukaColaGirlWorn
   suffix: worn
   name: Nuka Cola advert
   description: "A pre-war advert for Nuka Cola."
@@ -104,8 +104,8 @@
     scale: 0.5, 0.5
 
 - type: entity
-  parent: N14SignVaultTec
-  id: N14SignVaultTecWorn
+  parent: SignVaultTec
+  id: SignVaultTecWorn
   suffix: worn
   name: Vault-Tec advert
   description: "A pre-war advert for Vault-Tec."
@@ -115,8 +115,8 @@
     scale: 0.5, 0.5
 
 - type: entity
-  parent: N14SignVaultTec
-  id: N14SignVaultTecWorn2
+  parent: SignVaultTec
+  id: SignVaultTecWorn2
   suffix: worn
   name: Vault-Tec advert
   description: "A pre-war advert for Vault-Tec."
@@ -126,8 +126,8 @@
     scale: 0.5, 0.5
 
 - type: entity
-  parent: N14SignMrHandy
-  id: N14SignMrHandyWorn
+  parent: SignMrHandy
+  id: SignMrHandyWorn
   suffix: worn
   name: Mr. Handy advert
   description: "A pre-war advert for Mr. Handy."
@@ -137,8 +137,8 @@
     scale: 0.5, 0.5
 
 - type: entity
-  parent: N14SignMrHandy
-  id: N14SignMrHandyWorn2
+  parent: SignMrHandy
+  id: SignMrHandyWorn2
   suffix: worn
   name: Mr. Handy advert
   description: "A pre-war advert for Mr. Handy."
@@ -149,8 +149,8 @@
 
 # Damaged Adverts
 - type: entity
-  parent: N14SignBase
-  id: N14SignNukaColaGirlDamaged
+  parent: SignBase
+  id: SignNukaColaGirlDamaged
   suffix: damaged
   name: Nuka Cola advert
   description: "A destroyed pre-war advert for Nuka Cola."
@@ -160,8 +160,8 @@
     scale: 0.5, 0.5
 
 - type: entity
-  parent: N14SignBase
-  id: N14SignMrHandyDamaged
+  parent: SignBase
+  id: SignMrHandyDamaged
   suffix: damaged
   name: Mr. Handy advert
   description: "A destroyed pre-war advert for Mr. Handy."
@@ -171,8 +171,8 @@
     scale: 0.5, 0.5
 
 - type: entity
-  parent: N14SignBase
-  id: N14SignMrHandyDamaged2
+  parent: SignBase
+  id: SignMrHandyDamaged2
   suffix: damaged
   name: Mr. Handy advert
   description: "A destroyed pre-war advert for Mr. Handy."
@@ -182,8 +182,8 @@
     scale: 0.5, 0.5
 
 - type: entity
-  parent: N14SignBase
-  id: N14SignVaultTecDamaged
+  parent: SignBase
+  id: SignVaultTecDamaged
   suffix: damaged
   name: Vault-Tec advert
   description: "A destroyed pre-war advert for Vault-Tec."

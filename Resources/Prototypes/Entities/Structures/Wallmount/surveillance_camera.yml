@@ -1,6 +1,6 @@
 - type: entity
   parent: SurveillanceCameraBase
-  id: N14SurveillanceCameraBrotherhoodWashington
+  id: SurveillanceCameraBrotherhoodWashington
   name: camera
   suffix: BrotherhoodWashington
   components:

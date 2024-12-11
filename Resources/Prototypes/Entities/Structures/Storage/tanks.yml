@@ -1,8 +1,8 @@
-﻿# N14:TODO: Add the destroyed versions of these as a destruction spawn.
+﻿# :TODO: Add the destroyed versions of these as a destruction spawn.
 
 - type: entity
   parent: BaseStructure
-  id: N14StorageTankBase
+  id: StorageTankBase
   name: storage tank
   description: A liquids storage tank.
   abstract: true
@@ -59,14 +59,14 @@
 
 # In use
 - type: entity
-  id: N14StorageTankWide
-  parent: N14StorageTankBase
+  id: StorageTankWide
+  parent: StorageTankBase
   name: fuel tank
   description: A fuel tank. It's used to store high amounts of fuel.
   suffix: Empty
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Storage/tanks.rsi
+    sprite: Structures/Storage/tanks.rsi
     layers:
       - state: chemical_container
       # - state: chemical_container
@@ -103,8 +103,8 @@
         - WallLayer
 
 - type: entity
-  parent: N14StorageTankWide
-  id: N14StorageTankWideFullFuel
+  parent: StorageTankWide
+  id: StorageTankWideFullFuel
   suffix: Full
   components:
   - type: SolutionContainerManager
@@ -113,15 +113,15 @@
         reagents:
         - ReagentId: WeldingFuel
           Quantity: 2000
-          
-          
+
+
 - type: entity
-  parent: N14StorageTankWide
-  id: N14StorageTank
+  parent: StorageTankWide
+  id: StorageTank
   suffix: Empty
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Storage/tanks.rsi
+    sprite: Structures/Storage/tanks.rsi
     layers:
       - state: largetank_chemical
   - type: Fixtures
@@ -135,10 +135,10 @@
         - MachineMask
         layer:
         - WallLayer
-      
+
 - type: entity
-  id: N14StorageTankFullFuel
-  parent: N14StorageTank
+  id: StorageTankFullFuel
+  parent: StorageTank
   suffix: Full
   components:
   - type: SolutionContainerManager
@@ -147,14 +147,14 @@
         reagents:
         - ReagentId: WeldingFuel
           Quantity: 1500
-          
+
 - type: entity
-  id: N14StorageTankHuge
-  parent: N14StorageTankWide
+  id: StorageTankHuge
+  parent: StorageTankWide
   suffix: Empty
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Storage/tanks.rsi
+    sprite: Structures/Storage/tanks.rsi
     layers:
       - state: largetank_chemical_huge
   - type: Fixtures
@@ -168,10 +168,10 @@
         - MachineMask
         layer:
         - WallLayer
-      
+
 - type: entity
-  id: N14StorageTankHugeFullFuel
-  parent: N14StorageTankHuge
+  id: StorageTankHugeFullFuel
+  parent: StorageTankHuge
   suffix: Full
   components:
   - type: SolutionContainerManager
@@ -180,14 +180,14 @@
         reagents:
         - ReagentId: WeldingFuel
           Quantity: 2000
-          
+
 - type: entity
-  parent: N14StorageTankBase
-  id: N14StorageTankVat
+  parent: StorageTankBase
+  id: StorageTankVat
   suffix: Empty
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Furniture/np13_misc.rsi
+    sprite: Structures/Furniture/np13_misc.rsi
     layers:
       - state: vat
   - type: Fixtures
@@ -201,10 +201,10 @@
         - MachineMask
         layer:
         - WallLayer
-      
+
 - type: entity
-  parent: N14StorageTankVat
-  id: N14StorageTankVatFullFuel
+  parent: StorageTankVat
+  id: StorageTankVatFullFuel
   suffix: Full, fuel
   components:
   - type: SolutionContainerManager
@@ -213,10 +213,10 @@
         reagents:
         - ReagentId: WeldingFuel
           Quantity: 1500
-          
+
 - type: entity
-  parent: N14StorageTankVat
-  id: N14StorageTankVatFullWater
+  parent: StorageTankVat
+  id: StorageTankVatFullWater
   suffix: Full, water
   components:
   - type: SolutionContainerManager

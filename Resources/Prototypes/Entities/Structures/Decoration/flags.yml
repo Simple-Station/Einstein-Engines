@@ -1,6 +1,6 @@
 # See Objects/Decoration/flags.yml for flag items. See wallmounts folder for wall flags.
 - type: entity
-  id: N14DecorationFlagBearerEmpty
+  id: DecorationFlagBearerEmpty
   name: flag bearer
   description: A post for hanging flags.
   placement:
@@ -37,8 +37,8 @@
 
 # Flammable flags
 - type: entity
-  parent: N14DecorationFlagBearerEmpty
-  id: N14DecorationFlagFlammable
+  parent: DecorationFlagBearerEmpty
+  id: DecorationFlagFlammable
   noSpawn: true
   components:
   - type: Reactive
@@ -79,6 +79,6 @@
         acts: [ "Destruction" ]
       - !type:SpawnEntitiesBehavior
         spawn:
-          N14DecorationFlagBearerEmpty:
+          DecorationFlagBearerEmpty:
             min: 1
             max: 1

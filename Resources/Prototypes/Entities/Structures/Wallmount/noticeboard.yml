@@ -1,5 +1,5 @@
 - type: entity
-  id: N14NoticeBoard
+  id: NoticeBoard
   name: notice board
   description: Something important to post?
   placement:
@@ -7,7 +7,7 @@
   components:
   - type: WallMount
   - type: Sprite
-    sprite: _Nuclear14/Structures/Wallmounts/noticeboard.rsi
+    sprite: Structures/Wallmounts/noticeboard.rsi
     layers:
       - state: noticeboard
       - state: notice-0

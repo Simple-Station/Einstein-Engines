@@ -1,12 +1,12 @@
 # Washing Machines
 - type: entity
   parent: ClosetBase
-  id: N14FurnitureWashingmachine
+  id: FurnitureWashingmachine
   name: washing machine
   description: wishy washy.
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Storage/Furniture/washingmachine.rsi
+    sprite: Structures/Storage/Furniture/washingmachine.rsi
     layers:
     - state: generic
       map: ["enum.StorageVisualLayers.Base"]
@@ -21,42 +21,42 @@
     noRot: false
 
 - type: entity
-  parent: N14FurnitureWashingmachine
-  id: N14FurnitureWashingmachineIndustrial
+  parent: FurnitureWashingmachine
+  id: FurnitureWashingmachineIndustrial
   suffix: Industrial
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Storage/Furniture/washingmachine_industrial.rsi
+    sprite: Structures/Storage/Furniture/washingmachine_industrial.rsi
 
 # Safes
 - type: entity
-  parent: N14ClosetBaseW
-  id: N14ClosetSafe
+  parent: ClosetBaseW
+  id: ClosetSafe
   name: safe
   description: Might be filled with valuables.
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Storage/Furniture/safe.rsi
+    sprite: Structures/Storage/Furniture/safe.rsi
 
 - type: entity
-  parent: [ N14ClosetSafe, N14BaseMilitaryStorageFill ]
-  id: N14LootClosetSafe
+  parent: [ ClosetSafe, BaseMilitaryStorageFill ]
+  id: LootClosetSafe
   suffix: Loot, Random Military
 
 - type: entity
-  parent: [ N14ClosetSafe, N14StorageFillCurrencyFill ]
-  id: N14LootClosetSafeCurrency
+  parent: [ ClosetSafe, StorageFillCurrencyFill ]
+  id: LootClosetSafeCurrency
   suffix: Loot, Currency one stack random
 
 - type: entity
-  parent: [ N14ClosetSafe, N14StorageFillSafePrewarFill ]
-  id: N14LootClosetSafePrewar
+  parent: [ ClosetSafe, StorageFillSafePrewarFill ]
+  id: LootClosetSafePrewar
   suffix: Loot, safe pre-war
 
 - type: entity
-  parent: N14ClosetSafe
-  id: N14ClosetSafeSpinner
+  parent: ClosetSafe
+  id: ClosetSafeSpinner
   suffix: spinner
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Storage/Furniture/safespinner.rsi
+    sprite: Structures/Storage/Furniture/safespinner.rsi

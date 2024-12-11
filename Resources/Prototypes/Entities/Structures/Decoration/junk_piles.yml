@@ -1,5 +1,5 @@
 - type: entity
-  id: N14JunkPileBase
+  id: JunkPileBase
   abstract: true
   components:
   - type: Storage #temporary until we can implement the gatherable
@@ -10,7 +10,7 @@
     - key: enum.StorageUiKey.Key
       type: StorageBoundUserInterface
   - type: Sprite
-    sprite: _Nuclear14/Structures/Decoration/crafting_junk.rsi
+    sprite: Structures/Decoration/crafting_junk.rsi
     snapCardinals: true
     netsync: false
     noRot: true
@@ -45,8 +45,8 @@
 # TODO: Replace all the individual piles with a single randomised sprite entity.
 # Decorative Piles
 - type: entity
-  parent: N14JunkPileBase
-  id: N14JunkPile1
+  parent: JunkPileBase
+  id: JunkPile1
   name: junk pile
   description: Could be something useful in here.
   components:
@@ -54,78 +54,78 @@
     state: Junk_1
 
 - type: entity
-  parent: N14JunkPile1
-  id: N14JunkPile2
+  parent: JunkPile1
+  id: JunkPile2
   components:
   - type: Sprite
     state: Junk_2
 
 - type: entity
-  parent: N14JunkPile1
-  id: N14JunkPile3
+  parent: JunkPile1
+  id: JunkPile3
   components:
   - type: Sprite
     state: Junk_3
 
 - type: entity
-  parent: N14JunkPile1
-  id: N14JunkPile4
+  parent: JunkPile1
+  id: JunkPile4
   components:
   - type: Sprite
     state: Junk_4
 
 - type: entity
-  parent: N14JunkPile1
-  id: N14JunkPile5
+  parent: JunkPile1
+  id: JunkPile5
   components:
   - type: Sprite
     state: Junk_5
 
 - type: entity
-  parent: N14JunkPile1
-  id: N14JunkPile6
+  parent: JunkPile1
+  id: JunkPile6
   components:
   - type: Sprite
     state: Junk_6
 
 - type: entity
-  parent: N14JunkPile1
-  id: N14JunkPile7
+  parent: JunkPile1
+  id: JunkPile7
   components:
   - type: Sprite
     state: Junk_7
 
 - type: entity
-  parent: N14JunkPile1
-  id: N14JunkPile8
+  parent: JunkPile1
+  id: JunkPile8
   components:
   - type: Sprite
     state: Junk_8
 
 - type: entity
-  parent: N14JunkPile1
-  id: N14JunkPile9
+  parent: JunkPile1
+  id: JunkPile9
   components:
   - type: Sprite
     state: Junk_9
 
 - type: entity
-  parent: N14JunkPile1
-  id: N14JunkPile10
+  parent: JunkPile1
+  id: JunkPile10
   components:
   - type: Sprite
     state: Junk_10
 
 - type: entity
-  parent: N14JunkPile1
-  id: N14JunkPile11
+  parent: JunkPile1
+  id: JunkPile11
   components:
   - type: Sprite
     state: Junk_11
 
 - type: entity
-  parent: N14JunkPile1
-  id: N14JunkPile12
+  parent: JunkPile1
+  id: JunkPile12
   components:
   - type: Sprite
     state: Junk_12
@@ -134,61 +134,61 @@
 # Currently the refilling mechanic does NOT work
 #TODO: Fix the refilling until the doAfter gets made | change names from Refilling to Loot
 - type: entity
-  parent: [ N14JunkPile1, N14BaseSmallLockerStorageFill ]
-  id: N14JunkPile1Refilling1
+  parent: [ JunkPile1, BaseSmallLockerStorageFill ]
+  id: JunkPile1Refilling1
   suffix: Loot,Random
 
 - type: entity
-  parent: [ N14JunkPile2, N14BaseSmallLockerStorageFill ]
-  id: N14JunkPile1Refilling2
+  parent: [ JunkPile2, BaseSmallLockerStorageFill ]
+  id: JunkPile1Refilling2
   suffix: Loot,Random
 
 - type: entity
-  parent: [ N14JunkPile3, N14BaseSmallLockerStorageFill ]
-  id: N14JunkPile1Refilling3
+  parent: [ JunkPile3, BaseSmallLockerStorageFill ]
+  id: JunkPile1Refilling3
   suffix: Loot,Random
 
 - type: entity
-  parent: [ N14JunkPile4, N14BaseSmallLockerStorageFill ]
-  id: N14JunkPile1Refilling4
+  parent: [ JunkPile4, BaseSmallLockerStorageFill ]
+  id: JunkPile1Refilling4
   suffix: Loot,Random
 
 - type: entity
-  parent: [ N14JunkPile5, N14BaseSmallLockerStorageFill ]
-  id: N14JunkPile1Refilling5
+  parent: [ JunkPile5, BaseSmallLockerStorageFill ]
+  id: JunkPile1Refilling5
   suffix: Loot,Random
 
 - type: entity
-  parent: [ N14JunkPile6, N14BaseSmallLockerStorageFill ]
-  id: N14JunkPile1Refilling6
+  parent: [ JunkPile6, BaseSmallLockerStorageFill ]
+  id: JunkPile1Refilling6
   suffix: Loot,Random
 
 - type: entity
-  parent: [ N14JunkPile7, N14BaseSmallLockerStorageFill ]
-  id: N14JunkPile1Refilling7
+  parent: [ JunkPile7, BaseSmallLockerStorageFill ]
+  id: JunkPile1Refilling7
   suffix: Loot,Random
 
 - type: entity
-  parent: [ N14JunkPile8, N14BaseSmallLockerStorageFill ]
-  id: N14JunkPile1Refilling8
+  parent: [ JunkPile8, BaseSmallLockerStorageFill ]
+  id: JunkPile1Refilling8
   suffix: Loot,Random
 
 - type: entity
-  parent: [ N14JunkPile9, N14BaseSmallLockerStorageFill ]
-  id: N14JunkPile1Refilling9
+  parent: [ JunkPile9, BaseSmallLockerStorageFill ]
+  id: JunkPile1Refilling9
   suffix: Loot,Random
 
 - type: entity
-  parent: [ N14JunkPile10, N14BaseSmallLockerStorageFill ]
-  id: N14JunkPile1Refilling10
+  parent: [ JunkPile10, BaseSmallLockerStorageFill ]
+  id: JunkPile1Refilling10
   suffix: Loot,Random
 
 - type: entity
-  parent: [ N14JunkPile11, N14BaseSmallLockerStorageFill ]
-  id: N14JunkPile1Refilling11
+  parent: [ JunkPile11, BaseSmallLockerStorageFill ]
+  id: JunkPile1Refilling11
   suffix: Loot,Random
 
 - type: entity
-  parent: [ N14JunkPile12, N14BaseSmallLockerStorageFill ]
-  id: N14JunkPile1Refilling12
+  parent: [ JunkPile12, BaseSmallLockerStorageFill ]
+  id: JunkPile1Refilling12
   suffix: Loot,Random

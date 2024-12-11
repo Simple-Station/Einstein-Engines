@@ -1,11 +1,11 @@
 - type: entity
-  id: N14Rails
+  id: Rails
   name: railway
   placement:
     mode: SnapgridCenter
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Decoration/rails64.rsi
+    sprite: Structures/Decoration/rails64.rsi
     state: rails
     snapCardinals: false
     netsync: false
@@ -29,66 +29,66 @@
   - type: Physics
     bodyType: Static
   - type: Clickable
-  
+
 - type: entity
-  parent: N14Rails
-  id: N14RailsJunctionRightTop
+  parent: Rails
+  id: RailsJunctionRightTop
   suffix: junction right top
   components:
   - type: Sprite
     state: junction-right-top
 
 - type: entity
-  parent: N14Rails
-  id: N14RailsJunctionLeftTop
+  parent: Rails
+  id: RailsJunctionLeftTop
   suffix: junction left top
   components:
   - type: Sprite
     state: junction-left-top
-    
+
 - type: entity
-  parent: N14Rails
-  id: N14RailsJunctionRightBottom
+  parent: Rails
+  id: RailsJunctionRightBottom
   suffix: junction right bottom
   components:
   - type: Sprite
     state: junction-right-bottom
-    
+
 - type: entity
-  parent: N14Rails
-  id: N14RailsJunctionLeftBottom
+  parent: Rails
+  id: RailsJunctionLeftBottom
   suffix: junction left bottom
   components:
   - type: Sprite
     state: junction-left-bottom
-    
+
 - type: entity
-  parent: N14Rails
-  id: N14RailsTurnWS
+  parent: Rails
+  id: RailsTurnWS
   suffix: turn west-south
   components:
   - type: Sprite
     state: turn-WS
-    
+
 - type: entity
-  parent: N14Rails
-  id: N14RailsTurnNW
+  parent: Rails
+  id: RailsTurnNW
   suffix: turn north-west
   components:
   - type: Sprite
     state: turn-NW
-    
+
 - type: entity
-  parent: N14Rails
-  id: N14RailsTurnNE
+  parent: Rails
+  id: RailsTurnNE
   suffix: turn north-east
   components:
   - type: Sprite
     state: turn-NE
-    
+
 - type: entity
-  parent: N14Rails
-  id: N14RailsTurnSE
+  parent: Rails
+  id: RailsTurnSE
   suffix: turn south-east
   components:
   - type: Sprite

@@ -1,5 +1,5 @@
 - type: entity
-  id: N14BarricadeWindow
+  id: BarricadeWindow
   parent: BaseStructure
   name: barricade
   description: A makeshift barricade.
@@ -8,10 +8,10 @@
     - type: Sprite
       netsync: false
       drawdepth: Overdoors
-      sprite: _Nuclear14/Structures/Furniture/barricades.rsi
+      sprite: Structures/Furniture/barricades.rsi
       state: boarded
     - type: Icon
-      sprite: _Nuclear14/Structures/Furniture/barricades.rsi
+      sprite: Structures/Furniture/barricades.rsi
       state: boarded
     - type: Damageable
       damageContainer: Inorganic
@@ -34,22 +34,22 @@
           behaviors:
             - !type:DoActsBehavior
               acts: ["Destruction"]
-              
+
 - type: entity
-  parent: N14BarricadeWindow
-  id: N14BarricadeDoor
+  parent: BarricadeWindow
+  id: BarricadeDoor
   name: locked door
   description: A locked door. Might have to break it down.
   components:
     - type: Sprite
-      sprite: _Nuclear14/Structures/Furniture/barricades.rsi
+      sprite: Structures/Furniture/barricades.rsi
       state: locked
     - type: Icon
-      sprite: _Nuclear14/Structures/Furniture/barricades.rsi
+      sprite: Structures/Furniture/barricades.rsi
       state: locked
 
 - type: entity
-  id: N14WindowBars
+  id: WindowBars
   parent: BaseStructure
   name: window bars
   description: Sturdy looking bars blocking access.
@@ -60,10 +60,10 @@
           path:
             "/Audio/Weapons/grille_hit.ogg"
     - type: Sprite
-      sprite: _Nuclear14/Structures/Windows/windowbars.rsi
+      sprite: Structures/Windows/windowbars.rsi
       state: icon
     - type: Icon
-      sprite: _Nuclear14/Structures/Windows/windowbars.rsi
+      sprite: Structures/Windows/windowbars.rsi
       state: icon
     - type: Damageable
       damageContainer: Inorganic
@@ -94,16 +94,16 @@
         low:
           !type:CableDeviceNode
           nodeGroupID: Apc
-              
+
 - type: entity
-  id: N14WindowBars2
-  parent: N14WindowBars
+  id: WindowBars2
+  parent: WindowBars
   components:
     - type: Sprite
       netsync: false
       drawdepth: Overdoors
-      sprite: _Nuclear14/Structures/Furniture/barricades.rsi
+      sprite: Structures/Furniture/barricades.rsi
       state: bars
     - type: Icon
-      sprite: _Nuclear14/Structures/Furniture/barricades.rsi
+      sprite: Structures/Furniture/barricades.rsi
       state: bars

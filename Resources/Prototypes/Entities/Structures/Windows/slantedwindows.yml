@@ -1,11 +1,11 @@
 # These windows are now the standard window in use compatible with our slanted walls.
 
 # In order to make them, use the half wall entity as the frame then place the glass atop it.
-  
+
 - type: entity
-  parent: N14WindowSmoothBaseAirtight
-  id: N14WindowSlanted
-  description: A window for seeing into places. 
+  parent: WindowSmoothBaseAirtight
+  id: WindowSlanted
+  description: A window for seeing into places.
   name: window
   components:
   - type: DamageVisuals
@@ -13,12 +13,12 @@
     damageDivisor: 2
     trackAllDamage: true
     damageOverlay:
-      sprite: _Nuclear14/Structures/Windows/slanted/cracks.rsi
+      sprite: Structures/Windows/slanted/cracks.rsi
   - type: Sprite
-    sprite: _Nuclear14/Structures/Windows/slanted/slantedwindow.rsi
+    sprite: Structures/Windows/slanted/slantedwindow.rsi
     drawdepth: WallTops
   - type: Icon
-    sprite: _Nuclear14/Structures/Windows/slanted/slantedwindow.rsi
+    sprite: Structures/Windows/slanted/slantedwindow.rsi
     state: full
   - type: Destructible
     thresholds:
@@ -42,7 +42,7 @@
             max: 2
       - !type:SpawnEntitiesBehavior
         spawn:
-          N14WindowSlantedBroken:
+          WindowSlantedBroken:
             min: 1
             max: 1
       - !type:DoActsBehavior
@@ -58,11 +58,11 @@
         layer:
         - WallLayer
   - type: Construction
-    graph: N14WindowPane
-    node: N14WindowSlanted
-    
+    graph: WindowPane
+    node: WindowSlanted
+
 - type: entity
-  id: N14WindowSlantedBroken
+  id: WindowSlantedBroken
   name: broken glass
   description: Broken remains of a window.
   noSpawn: true
@@ -70,7 +70,7 @@
     mode: SnapgridCenter
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Windows/slanted/slantedbroken.rsi
+    sprite: Structures/Windows/slanted/slantedbroken.rsi
     drawdepth: WallTops
   - type: CollisionWake # not sure this is needed
     enabled: false
@@ -125,7 +125,7 @@
     damageContainer: Inorganic
     damageModifierSet: Glass
   - type: Icon
-    sprite: _Nuclear14/Structures/Windows/slanted/slantedbroken.rsi
+    sprite: Structures/Windows/slanted/slantedbroken.rsi
     state: full
   - type: IconSmooth
     key: windows

@@ -3,18 +3,18 @@
 
 # 32x32
 - type: entity
-  parent: N14SignBase
-  id: N14SignBar
+  parent: SignBase
+  id: SignBar
   name: bar sign
   description: Bar! Get drunk here.
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Wallmounts/signs_32x32.rsi
+    sprite: Structures/Wallmounts/signs_32x32.rsi
     state: bar
 
 - type: entity
-  parent: N14SignBar
-  id: N14SignClinic
+  parent: SignBar
+  id: SignClinic
   name: clinic sign
   description: A clinic sign. Hopefully they have meds.
   components:
@@ -26,8 +26,8 @@
     color: '#00ff00'
 
 - type: entity
-  parent: N14SignBar
-  id: N14SignOpen1
+  parent: SignBar
+  id: SignOpen1
   name: open sign
   description: Open for business. Maybe.
   components:
@@ -39,74 +39,74 @@
     color: '#ff0000'
 
 - type: entity
-  parent: N14SignOpen1
-  id: N14SignOpen2
+  parent: SignOpen1
+  id: SignOpen2
   components:
   - type: Sprite
     state: open_bar
-    
+
 - type: entity
-  parent: N14SignOpen1
-  id: N14SignOpenOn1
+  parent: SignOpen1
+  id: SignOpenOn1
   components:
   - type: Sprite
     state: open_on
 
 - type: entity
-  parent: N14SignOpen1
-  id: N14SignOpenOn2
+  parent: SignOpen1
+  id: SignOpenOn2
   components:
   - type: Sprite
     state: open_bar_on
 
 - type: entity
-  parent: N14SignBase
-  id: N14SignForRent
+  parent: SignBase
+  id: SignForRent
   name: for rent sign
   description: A sign advertising a place for rent.
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Wallmounts/signs_32x32.rsi
+    sprite: Structures/Wallmounts/signs_32x32.rsi
     state: rent
 
 - type: entity
-  parent: N14SignBase
-  id: N14SignNotice
+  parent: SignBase
+  id: SignNotice
   name: notice sign
   description: NOTICE!
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Wallmounts/walldecor.rsi
+    sprite: Structures/Wallmounts/walldecor.rsi
     state: notice_sign
 
 - type: entity
-  parent: N14SignNotice
-  id: N14SignDanger
+  parent: SignNotice
+  id: SignDanger
   name: danger sign
   description: Danger.
   components:
   - type: Sprite
     state: danger_sign
-    
+
 - type: entity
-  parent: N14SignNotice
-  id: N14WallDecorExitsign
+  parent: SignNotice
+  id: WallDecorExitsign
   name: exit sign
   description: A sign that says EXIT. I wonder what it means.
   components:
   - type: Sprite
     state: exit
     noRot: true
-    
+
 # 64x32
 - type: entity
-  parent: N14SignBar
-  id: N14SignBazaarOn
+  parent: SignBar
+  id: SignBazaarOn
   name: bazaar sign
   description: A sign for a bazaar. How bizarre.
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Wallmounts/signs_64x32.rsi
+    sprite: Structures/Wallmounts/signs_64x32.rsi
     state: bazaar_on
   - type: PointLight
     radius: 2
@@ -114,8 +114,8 @@
     color: '#ff8000'
 
 - type: entity
-  parent: N14SignBazaarOn
-  id: N14SignHotel
+  parent: SignBazaarOn
+  id: SignHotel
   name: hotel sign
   description: A sign for a hotel. Get a room!
   components:
@@ -123,8 +123,8 @@
     state: hotel
 
 - type: entity
-  parent: N14SignBazaarOn
-  id: N14SignPrivateProperty
+  parent: SignBazaarOn
+  id: SignPrivateProperty
   name: private property sign
   description: A private property sign.
   components:
@@ -132,8 +132,8 @@
     state: private
 
 - type: entity
-  parent: N14SignBazaarOn
-  id: N14SignOpenBig
+  parent: SignBazaarOn
+  id: SignOpenBig
   name: open sign
   description: We are open sign. I hope so.
   components:
@@ -145,8 +145,8 @@
     color: '#ff0000'
 
 - type: entity
-  parent: N14SignBazaarOn
-  id: N14SignWorkersOnly
+  parent: SignBazaarOn
+  id: SignWorkersOnly
   name: workers only sign
   description: No tresspassing!
   components:
@@ -156,135 +156,135 @@
 # 64x64
 # Scale these by 0.5, 0.5
 - type: entity
-  parent: N14SignBase
-  id: N14SignBarstowStrongExpress
+  parent: SignBase
+  id: SignBarstowStrongExpress
   name: Barstow Strong Express sign
   description: A sign for Barstow Strong Express.
   components:
   - type: Sprite
     scale: 0.5, 0.5
-    sprite: _Nuclear14/Structures/Wallmounts/Posters/adverts64x64.rsi
+    sprite: Structures/Wallmounts/Posters/adverts64x64.rsi
     state: barstow_strong_express
-    
+
 - type: entity
-  parent: N14SignBarstowStrongExpress
-  id: N14SignMassFusion
+  parent: SignBarstowStrongExpress
+  id: SignMassFusion
   name: Mass Fusion sign
   description: A sign for Mass Fusion.
   components:
   - type: Sprite
     state: massfusion
-    
+
 - type: entity
-  parent: N14SignBarstowStrongExpress
-  id: N14SignRedRocket
+  parent: SignBarstowStrongExpress
+  id: SignRedRocket
   name: Red Rocket sign
   description: A sign for Red Rocket. Diesel and Fusion.
   components:
   - type: Sprite
     state: redrocket
-    
+
 # 96x96
 # Scale these by 0.75, 0.75
 - type: entity
-  parent: N14SignBase
-  id: N14SignGroceries
+  parent: SignBase
+  id: SignGroceries
   name: Groceries sign
   description: A sign for Cornucopia Fresh Groceries.
   components:
   - type: Sprite
     scale: 0.3, 0.3
-    sprite: _Nuclear14/Structures/Wallmounts/Posters/signs96x96.rsi
+    sprite: Structures/Wallmounts/Posters/signs96x96.rsi
     state: groceries
-    
+
 # 128x64
 # Scale these by 0.5, 0.5
 - type: entity
-  parent: N14SignBase
-  id: N14SignAmeliaEspresso
+  parent: SignBase
+  id: SignAmeliaEspresso
   name: Amelia Espresso sign
   description: A sign for a coffee place.
   components:
   - type: Sprite
     scale: 0.5, 0.5
-    sprite: _Nuclear14/Structures/Wallmounts/Posters/adverts128x64.rsi
+    sprite: Structures/Wallmounts/Posters/adverts128x64.rsi
     state: amelia_espresso
-    
+
 - type: entity
-  parent: N14SignAmeliaEspresso
-  id: N14SignBeantownBrewery
+  parent: SignAmeliaEspresso
+  id: SignBeantownBrewery
   name: Beantown Brewery sign
   description: A sign for Beantown Brewery.
   components:
   - type: Sprite
     state: beantown_brewery
-    
+
 - type: entity
-  parent: N14SignAmeliaEspresso
-  id: N14SignFizzys
+  parent: SignAmeliaEspresso
+  id: SignFizzys
   name: Fizzy's sign
   description: A sign for Fizzys fountain drinks.
   components:
   - type: Sprite
     state: fizzys
-    
+
 - type: entity
-  parent: N14SignAmeliaEspresso
-  id: N14SignFlyHorizon
+  parent: SignAmeliaEspresso
+  id: SignFlyHorizon
   name: Fly Horizon Skyways sign
   description: An advert for Fly Horizon Skyways.
   components:
   - type: Sprite
     state: flyhorizonskyways
-    
+
 - type: entity
-  parent: N14SignAmeliaEspresso
-  id: N14SignHubrisComics
+  parent: SignAmeliaEspresso
+  id: SignHubrisComics
   name: Hubris Comics sign
   description: A sign for Hubris Comics.
   components:
   - type: Sprite
     state: hubris_comics
-    
+
 - type: entity
-  parent: N14SignAmeliaEspresso
-  id: N14SignMamaDolces
+  parent: SignAmeliaEspresso
+  id: SignMamaDolces
   name: Mama Dolce's sign
   description: A sign for Mama Dolce's food processing plant.
   components:
   - type: Sprite
     state: mamadolces
-    
+
 - type: entity
-  parent: N14SignAmeliaEspresso
-  id: N14SignSchoelt
+  parent: SignAmeliaEspresso
+  id: SignSchoelt
   name: Schoelt sign
   description: A sign for Schoelt's propane fuels.
   components:
   - type: Sprite
     state: schoelt
-    
+
 - type: entity
-  parent: N14SignAmeliaEspresso
-  id: N14SignSullivans
+  parent: SignAmeliaEspresso
+  id: SignSullivans
   name: Sullivan's sign
   description: A sign for Sullivan's Irish bar.
   components:
   - type: Sprite
     state: sullivans
-    
+
 - type: entity
-  parent: N14SignAmeliaEspresso
-  id: N14SignTheJerkShakes
+  parent: SignAmeliaEspresso
+  id: SignTheJerkShakes
   name: The Jerk sign
   description: A sign for The Jerk fountain drinks and shakes.
   components:
   - type: Sprite
     state: thejerk_shakes
-    
+
 - type: entity
-  parent: N14SignAmeliaEspresso
-  id: N14SignWickedShipping
+  parent: SignAmeliaEspresso
+  id: SignWickedShipping
   name: Whicked Shipping sign
   description: A sign for Whicked Shipping Co.
   components:
