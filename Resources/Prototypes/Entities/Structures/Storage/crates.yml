@@ -89,7 +89,7 @@
 
 - type: entity
   parent: CrateGeneric
-  id: CrateFreezer
+  id: CrateFreezer2
   name: freezer
   description: A freezer for keeping things cool.
   components:
