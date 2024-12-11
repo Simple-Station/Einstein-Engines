@@ -153,6 +153,19 @@
     magState: mag
     steps: 5
     zeroVisible: true
+  - type: MeleeWeapon
+    attackRate: 1.2
+    damage:
+      types:
+        Blunt: 7.5
+    swapKeys: true
+    disableHeavy: true
+    animation: WeaponArcThrust
+    wideAnimationRotation: 135
+    soundHit:
+      collection: MetalThud
+  - type: DamageOtherOnHit
+    staminaCost: 5
 
 - type: entity
   name: retro laser blaster
@@ -698,6 +711,15 @@
   - type: Appearance
   - type: StaticPrice
     price: 63
+  - type: MeleeWeapon
+    attackRate: 1.2
+    damage:
+      types:
+        Blunt: 8
+    bluntStaminaDamageFactor: 1.0
+    wideAnimationRotation: 135
+  - type: DamageOtherOnHit
+    staminaCost: 5.5
 
 - type: entity
   name: C.H.I.M.P. handcannon
