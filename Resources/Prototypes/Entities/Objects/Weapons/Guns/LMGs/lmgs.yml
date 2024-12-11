@@ -63,11 +63,11 @@
   - type: UseDelay
     delay: 1
   - type: MeleeWeapon
-    attackRate: 1.5
+    attackRate: 1.4
     damage:
       types:
         Blunt: 11
-    bluntStaminaDamageFactor: 1.33
+    bluntStaminaDamageFactor: 1.3333
     swapKeys: true
     disableHeavy: true
     animation: WeaponArcThrust

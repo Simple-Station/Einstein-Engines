@@ -47,8 +47,8 @@
     attackRate: 1.4
     damage:
       types:
-        Blunt: 11.5
-    bluntStaminaDamageFactor: 1.33
+        Blunt: 11
+    bluntStaminaDamageFactor: 1.3333
     swapKeys: true
     disableHeavy: true
     animation: WeaponArcThrust
@@ -124,8 +124,8 @@
     attackRate: 1.4
     damage:
       types:
-        Blunt: 11.5
-    bluntStaminaDamageFactor: 1.33
+        Blunt: 11
+    bluntStaminaDamageFactor: 1.3333
     swapKeys: true
     disableHeavy: true
     animation: WeaponArcThrust
@@ -257,9 +257,10 @@
     node: shotgunsawn
     deconstructionTarget: null
   - type: MeleeWeapon
+    attackRate: 1.2
     damage:
       types:
-        Blunt: 7
+        Blunt: 7.5
   - type: DamageOtherOnHit
     staminaCost: 6
 
@@ -305,7 +306,7 @@
     attackRate: 1.2
     damage:
       types:
-        Blunt: 7
+        Blunt: 7.5
     wideAnimationRotation: 135
   - type: DamageOtherOnHit
     staminaCost: 5
