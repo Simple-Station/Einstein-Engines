@@ -4,7 +4,7 @@
 # 32x32
 - type: entity
   parent: SignBase
-  id: SignBar
+  id: SignBar2
   name: bar sign
   description: Bar! Get drunk here.
   components:
@@ -13,7 +13,7 @@
     state: bar
 
 - type: entity
-  parent: SignBar
+  parent: SignBar2
   id: SignClinic
   name: clinic sign
   description: A clinic sign. Hopefully they have meds.
@@ -26,7 +26,7 @@
     color: '#00ff00'
 
 - type: entity
-  parent: SignBar
+  parent: SignBar2
   id: SignOpen1
   name: open sign
   description: Open for business. Maybe.
@@ -100,7 +100,7 @@
 
 # 64x32
 - type: entity
-  parent: SignBar
+  parent: SignBar2
   id: SignBazaarOn
   name: bazaar sign
   description: A sign for a bazaar. How bizarre.

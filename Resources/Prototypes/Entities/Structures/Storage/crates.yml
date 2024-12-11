@@ -38,7 +38,7 @@
 
 - type: entity
   parent: CrateGenericSteel
-  id: CrateMedical
+  id: CrateMedical2
   name: medical crate
   description: A metal crate for storing medical equipment.
   components:

@@ -117,7 +117,7 @@
 
 - type: entity
   parent: StorageTankWide
-  id: StorageTank
+  id: StorageTank2
   suffix: Empty
   components:
   - type: Sprite
@@ -138,7 +138,7 @@
 
 - type: entity
   id: StorageTankFullFuel
-  parent: StorageTank
+  parent: StorageTank2
   suffix: Full
   components:
   - type: SolutionContainerManager
