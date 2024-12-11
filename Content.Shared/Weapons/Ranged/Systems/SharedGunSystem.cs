@@ -114,14 +114,15 @@ public abstract partial class SharedGunSystem : EntitySystem
 
     private void OnGunMelee(EntityUid uid, GunComponent component, MeleeHitEvent args)
     {
-        if (!TryComp<MeleeWeaponComponent>(uid, out var melee))
-            return;
+        var curTime = Timing.CurTime;
 
-        if (melee.NextAttack > component.NextFire)
-        {
-            component.NextFire = melee.NextAttack;
-            Dirty(uid, component);
-        }
+        if (component.NextFire < curTime)
+            component.NextFire = curTime;
+
+        while (component.NextFire <= curTime)
+            component.NextFire += component.MeleeCooldown;
+
+        Dirty(uid, component);
     }
 
     private void OnShootRequest(RequestShootEvent msg, EntitySessionEventArgs args)
