@@ -179,8 +179,8 @@
     maxItemSize: Huge
   - type: UserInterface
     interfaces:
-    - key: enum.StorageUiKey.Key
-      type: StorageBoundUserInterface
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
   - type: ContainerContainer
     containers:
       storagebase: !type:Container
@@ -209,22 +209,6 @@
   components:
   - type: Sprite
     state: plain_crate-1 # TODO: Make this random between states -1, -2 and -3
-
-- type: entity
-  parent: CrateBreakBase
-  id: CrateBreakSarsaparilla
-  name: sunset sarsaparilla crate
-  components:
-  - type: Sprite
-    state: sarsaparilla_crate
-
-- type: entity
-  parent: CrateBreakSarsaparilla
-  id: CrateBreakSarsaparillaDamaged
-  suffix: damaged
-  components:
-  - type: Sprite
-    state: sarsaparilla_crate-1
 
 - type: entity
   parent: CrateBreakBase
