@@ -47,7 +47,7 @@
     attackRate: 1.4
     damage:
       types:
-        Blunt: 11
+        Blunt: 10
     bluntStaminaDamageFactor: 1.3333
     swapKeys: true
     disableHeavy: true
@@ -124,7 +124,7 @@
     attackRate: 1.4
     damage:
       types:
-        Blunt: 11
+        Blunt: 10
     bluntStaminaDamageFactor: 1.3333
     swapKeys: true
     disableHeavy: true
@@ -202,6 +202,11 @@
   - type: BallisticAmmoProvider
   - type: Wieldable
   - type: GunRequiresWield
+  - type: MeleeWeapon
+    attackRate: 1.4
+    damage:
+      types:
+        Blunt: 9
 
 - type: entity
   parent: WeaponShotgunEnforcer
