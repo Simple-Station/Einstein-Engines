@@ -1,0 +1,19 @@
+- type: entity
+  parent: BaseSign
+  id: SignBase # for non directional signs otherwise remove snapCardinals: true
+  abstract: true
+  components:
+  - type: WallMount
+    arc: 360
+  - type: Sprite
+    drawdepth: Overdoors
+    sprite: Structures/Wallmounts/signs_32x32.rsi
+    state: bar
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
