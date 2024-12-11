@@ -20,7 +20,7 @@
   - type: SpaceGarbage
   - type: MeleeWeapon
     wideAnimationRotation: -22.5
-    attackRate: 1.5
+    attackRate: .6666
     damage:
       types:
         Slash: 3.5

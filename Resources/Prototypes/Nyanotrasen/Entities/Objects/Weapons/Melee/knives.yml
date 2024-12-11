@@ -5,7 +5,7 @@
   description: A special knife designed for killing psychics.
   components:
   - type: MeleeWeapon
-    attackRate: 1.5
+    attackRate: .6666
     damage:
       types:
         Slash: 10
