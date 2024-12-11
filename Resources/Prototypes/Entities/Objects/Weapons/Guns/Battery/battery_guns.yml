@@ -41,11 +41,12 @@
     attackRate: 1.3333
     damage:
       types:
-        Blunt: 7.5
+        Blunt: 8.0
+    bluntStaminaDamageFactor: 1.25
     swapKeys: true
     disableHeavy: true
     animation: WeaponArcThrust
-    wideAnimationRotation: 180
+    wideAnimationRotation: 90
     soundHit:
       collection: MetalThud
   - type: IncreaseDamageOnWield
@@ -294,6 +295,15 @@
   - type: Battery
     maxCharge: 2000
     startingCharge: 2000
+  - type: MeleeWeapon
+    attackRate: 1.2
+    damage:
+      types:
+        Blunt: 7
+    bluntStaminaDamageFactor: 1.0
+    wideAnimationRotation: 135
+  - type: DamageOtherOnHit
+    staminaCost: 5
 
 - type: entity
   name: antique pulse pistol
