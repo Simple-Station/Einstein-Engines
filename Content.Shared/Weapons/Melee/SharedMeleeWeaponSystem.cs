@@ -149,14 +149,11 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
 
     private void OnLightAttack(LightAttackEvent msg, EntitySessionEventArgs args)
     {
-        if (args.SenderSession.AttachedEntity is not {} user)
+        if (args.SenderSession.AttachedEntity is not {} user ||
+            !TryGetWeapon(user, out var weaponUid, out var weapon) ||
+            weaponUid != GetEntity(msg.Weapon) ||
+            weapon.DisableClick)
             return;
-
-        if (!TryGetWeapon(user, out var weaponUid, out var weapon) ||
-            weaponUid != GetEntity(msg.Weapon))
-        {
-            return;
-        }
 
         AttemptAttack(user, weaponUid, weapon, msg, args.SenderSession);
     }

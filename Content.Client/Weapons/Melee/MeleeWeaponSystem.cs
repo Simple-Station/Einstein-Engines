@@ -143,7 +143,8 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
         }
 
         // Light attack
-        if (!weapon.SwapKeys ? useDown : altDown)
+        if (!weapon.DisableClick &&
+            (!weapon.SwapKeys ? useDown : altDown))
         {
             var attackerPos = Transform(entity).MapPosition;
 
