@@ -8613,3 +8613,17 @@ Entries:
   id: 6573
   time: '2024-12-11T23:19:30.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1276
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Pistol-whipping has been added. You can press right click with a gun to
+        perform a Light Attack. Most guns will deal Blunt damage, apart from the
+        Kardashev-Mosin dealing Piercing/Slash damage with its bayonet. Weaving
+        bullets and melee attacks correctly will give you the upper hand in
+        combat.
+    - type: Add
+      message: Guns can now be thrown to deal the same damage as their melee damage.
+  id: 6574
+  time: '2024-12-11T23:26:33.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1335
