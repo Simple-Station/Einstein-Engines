@@ -44,7 +44,7 @@
   - type: StaticPrice
     price: 500
   - type: MeleeWeapon
-    attackRate: 1.5
+    attackRate: 1.4
     damage:
       types:
         Blunt: 11.5
@@ -121,7 +121,7 @@
   - type: StaticPrice
     price: 500
   - type: MeleeWeapon
-    attackRate: 1.5
+    attackRate: 1.4
     damage:
       types:
         Blunt: 11.5
