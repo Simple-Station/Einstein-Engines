@@ -3,7 +3,7 @@
 # Metal Closets
 - type: entity
   parent: ClosetBase
-  id: ClosetBase
+  id: ClosetBase2
   abstract: true
   components:
   - type: Sprite
@@ -23,7 +23,7 @@
     delay: 3600
 
 - type: entity
-  parent: ClosetBase
+  parent: ClosetBase2
   id: ClosetBaseW
   name: closet
   description: A basic closet for storing things.
@@ -127,7 +127,7 @@
 # Wooden Closets
 
 - type: entity
-  parent: ClosetBase
+  parent: ClosetBase2
   id: ClosetCabinetWood
   name: cabinet
   description: An old pre-war wooden cabinet.
