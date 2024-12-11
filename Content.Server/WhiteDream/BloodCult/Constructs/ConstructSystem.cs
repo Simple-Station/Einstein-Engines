@@ -15,7 +15,7 @@ public sealed class ConstructSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<ConstructComponent, ComponentStartup>(OnComponentStartup);
+        SubscribeLocalEvent<ConstructComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<ConstructComponent, ComponentShutdown>(OnComponentShutdown);
     }
 
@@ -39,30 +39,28 @@ public sealed class ConstructSystem : EntitySystem
         }
     }
 
-    private void OnComponentStartup(Entity<ConstructComponent> ent, ref ComponentStartup args)
+    private void OnMapInit(Entity<ConstructComponent> construct, ref MapInitEvent args)
     {
-        foreach (var actionId in ent.Comp.Actions)
+        foreach (var actionId in construct.Comp.Actions)
         {
-            var action = _actions.AddAction(ent, actionId);
-            ent.Comp.ActionEntities.Add(action);
+            var action = _actions.AddAction(construct, actionId);
+            construct.Comp.ActionEntities.Add(action);
         }
 
-        _appearanceSystem.SetData(ent, ConstructVisualsState.Transforming, true);
-        ent.Comp.Transforming = true;
+        _appearanceSystem.SetData(construct, ConstructVisualsState.Transforming, true);
+        construct.Comp.Transforming = true;
         var cultistRule = EntityManager.EntityQueryEnumerator<BloodCultRuleComponent>();
         while (cultistRule.MoveNext(out _, out var rule))
-            rule.Constructs.Add(ent);
+            rule.Constructs.Add(construct);
     }
 
-    private void OnComponentShutdown(Entity<ConstructComponent> ent, ref ComponentShutdown args)
+    private void OnComponentShutdown(Entity<ConstructComponent> construct, ref ComponentShutdown args)
     {
-        foreach (var actionEntity in ent.Comp.ActionEntities)
-        {
+        foreach (var actionEntity in construct.Comp.ActionEntities)
             _actions.RemoveAction(actionEntity);
-        }
 
         var cultistRule = EntityManager.EntityQueryEnumerator<BloodCultRuleComponent>();
         while (cultistRule.MoveNext(out _, out var rule))
-            rule.Constructs.Remove(ent);
+            rule.Constructs.Remove(construct);
     }
 }

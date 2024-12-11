@@ -83,10 +83,6 @@
     proto: guardian
   - type: Puller
     needsHands: false
-  - type: ActionsContainer
-  - type: ContainerContainer
-    containers:
-      actions: !type:Container
   - type: Visibility
   - type: ContentEye
   - type: Actions
