@@ -56,7 +56,7 @@
       types:
         Blunt: 2.5
   - type: DamageOtherOnHit
-    staminaCost: 7.5
+    staminaCost: 7
 
 - type: entity
   name: Kardashev-Mosin

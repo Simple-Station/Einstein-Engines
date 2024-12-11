@@ -175,7 +175,7 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 9
+        Blunt: 8.5
 
 - type: entity
   name: double-barreled shotgun
