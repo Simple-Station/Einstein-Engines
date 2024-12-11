@@ -176,6 +176,8 @@
     damage:
       types:
         Blunt: 8.5
+  - type: DamageOtherOnHit
+    staminaCost: 7.5
 
 - type: entity
   name: double-barreled shotgun
@@ -207,6 +209,8 @@
     damage:
       types:
         Blunt: 9
+  - type: DamageOtherOnHit
+    staminaCost: 8.0
 
 - type: entity
   parent: WeaponShotgunEnforcer
