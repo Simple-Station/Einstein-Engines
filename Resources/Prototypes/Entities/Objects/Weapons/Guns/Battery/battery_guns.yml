@@ -503,6 +503,12 @@
     - type: GuideHelp
       guides:
       - Security
+    - type: MeleeWeapon
+      damage:
+        types:
+          Blunt: 5.0
+      bluntStaminaDamageFactor: 2.5
+      wideAnimationRotation: 135
 
 - type: entity
   name: disabler SMG
@@ -541,6 +547,12 @@
     zeroVisible: true
   - type: StaticPrice
     price: 260
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 6.5
+    bluntStaminaDamageFactor: 2.5
+    wideAnimationRotation: 135
 
 - type: entity
   name: practice disabler
