@@ -27,14 +27,14 @@ public sealed class SoulShardSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<SoulShardComponent, ComponentStartup>(OnComponentStartup);
+        SubscribeLocalEvent<SoulShardComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<SoulShardComponent, InteractUsingEvent>(OnInteractUsing);
         SubscribeLocalEvent<SoulShardComponent, ActivateInWorldEvent>(OnActivate);
         SubscribeLocalEvent<SoulShardComponent, MindAddedMessage>(OnShardMindAdded);
         SubscribeLocalEvent<SoulShardComponent, MindRemovedMessage>(OnShardMindRemoved);
     }
 
-    private void OnComponentStartup(Entity<SoulShardComponent> shard, ref ComponentStartup args)
+    private void OnMapInit(Entity<SoulShardComponent> shard, ref MapInitEvent args)
     {
         if (!shard.Comp.IsBlessed)
             return;
