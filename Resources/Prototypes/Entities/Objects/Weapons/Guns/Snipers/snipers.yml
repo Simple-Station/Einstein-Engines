@@ -86,7 +86,7 @@
     damage:
       types:
         Piercing: 3.5
-        Slash: 2.5
+        Slash: 2
   - type: DamageOtherOnHit
     damage:
       types:
@@ -167,7 +167,7 @@
     damage:
       types:
         Piercing: 3.5
-        Slash: 2.5
+        Slash: 2
   - type: DamageOtherOnHit
     damage:
       types:
