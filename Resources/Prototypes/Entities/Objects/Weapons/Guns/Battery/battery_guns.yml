@@ -552,7 +552,7 @@
       types:
         Blunt: 6.5
     bluntStaminaDamageFactor: 2.5
-    wideAnimationRotation: 135
+    wideAnimationRotation: 90
 
 - type: entity
   name: practice disabler
