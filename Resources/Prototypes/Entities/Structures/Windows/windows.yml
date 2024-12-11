@@ -115,10 +115,6 @@
 
 ## Smooth Windows
 - type: entity
-  id: Window
-  parent: WindowSmoothBaseAirtight
-
-- type: entity
   parent: WindowSmoothBase
   id: WindowBroken
   components:
