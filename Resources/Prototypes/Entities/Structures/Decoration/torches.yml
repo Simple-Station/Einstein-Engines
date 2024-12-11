@@ -12,6 +12,7 @@
   - type: InteractionOutline
   - type: Physics
     bodyType: Static
+    canCollide: false
   - type: Sprite
     netsync: false
     noRot: true
