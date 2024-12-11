@@ -266,6 +266,10 @@
     fireCost: 62.5
   - type: StaticPrice
     price: 300
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 4
 
 - type: entity
   name: pulse pistol
@@ -578,6 +582,10 @@
     - type: ProjectileBatteryAmmoProvider
       proto: BulletDisablerPractice
       fireCost: 100
+    - type: MeleeWeapon
+      damage:
+        types:
+          Blunt: 3
 
 - type: entity
   name: taser
