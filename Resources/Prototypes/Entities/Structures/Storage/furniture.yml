@@ -19,6 +19,8 @@
   - type: Transform
     anchored: true
     noRot: false
+  - type: Physics
+    bodyType: Static
 
 - type: entity
   parent: FurnitureWashingmachine
