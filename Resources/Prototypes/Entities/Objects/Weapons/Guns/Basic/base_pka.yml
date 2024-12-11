@@ -49,10 +49,10 @@
   - type: UseDelay
     delay: 1
   - type: MeleeWeapon
-    attackRate: 1.33
+    attackRate: 1.3333
     damage:
       types:
-        Blunt: 8.0
+        Blunt: 9.0
     swapKeys: true
     disableHeavy: true
     animation: WeaponArcThrust
@@ -62,6 +62,6 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 2
+        Blunt: 2.5
   - type: DamageOtherOnHit
     staminaCost: 8

@@ -52,10 +52,10 @@
   - type: StaticPrice
     price: 500
   - type: MeleeWeapon
-    attackRate: 1.33
+    attackRate: 1.3333
     damage:
       types:
-        Blunt: 8.0
+        Blunt: 9.0
     bluntStaminaDamageFactor: 1.25
     swapKeys: true
     disableHeavy: true
@@ -66,9 +66,9 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 2
+        Blunt: 3
   - type: DamageOtherOnHit
-    staminaCost: 8
+    staminaCost: 7.5
 
 - type: entity
   name: AKMS

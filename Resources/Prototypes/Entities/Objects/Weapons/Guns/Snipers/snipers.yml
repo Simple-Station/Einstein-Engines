@@ -43,7 +43,7 @@
     attackRate: 1.3333
     damage:
       types:
-        Blunt: 7.5
+        Blunt: 8.5
     swapKeys: true
     disableHeavy: true
     wideAnimationRotation: 135
@@ -55,7 +55,7 @@
       types:
         Blunt: 2
   - type: DamageOtherOnHit
-    staminaCost: 7
+    staminaCost: 7.5
 
 - type: entity
   name: Kardashev-Mosin

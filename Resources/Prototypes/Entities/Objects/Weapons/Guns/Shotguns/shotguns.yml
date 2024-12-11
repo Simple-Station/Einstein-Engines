@@ -47,7 +47,7 @@
     attackRate: 1.5
     damage:
       types:
-        Blunt: 9
+        Blunt: 11.5
     bluntStaminaDamageFactor: 1.33
     swapKeys: true
     disableHeavy: true
@@ -58,9 +58,9 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 2
+        Blunt: 3
   - type: DamageOtherOnHit
-    staminaCost: 10
+    staminaCost: 9.5
 
 - type: entity
   name: Bulldog
@@ -124,7 +124,7 @@
     attackRate: 1.5
     damage:
       types:
-        Blunt: 9
+        Blunt: 11.5
     bluntStaminaDamageFactor: 1.33
     swapKeys: true
     disableHeavy: true
@@ -135,9 +135,9 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 2
+        Blunt: 3
   - type: DamageOtherOnHit
-    staminaCost: 10
+    staminaCost: 9.5
 
 - type: entity
   name: antique Bulldog
@@ -172,6 +172,10 @@
     graph: ShotgunSawn
     node: start
     deconstructionTarget: null
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 9
 
 - type: entity
   name: double-barreled shotgun
@@ -252,6 +256,12 @@
     graph: ShotgunSawn
     node: shotgunsawn
     deconstructionTarget: null
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 7
+  - type: DamageOtherOnHit
+    staminaCost: 6
 
 - type: entity
   name: sawn-off shogun
@@ -291,6 +301,14 @@
     deconstructionTarget: null
   - type: StaticPrice
     price: 0
+  - type: MeleeWeapon
+    attackRate: 1.2
+    damage:
+      types:
+        Blunt: 7
+    wideAnimationRotation: 135
+  - type: DamageOtherOnHit
+    staminaCost: 5
 
 - type: entity
   name: blunderbuss
