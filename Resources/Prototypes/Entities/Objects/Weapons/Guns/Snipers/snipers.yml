@@ -43,7 +43,7 @@
     attackRate: 1.3333
     damage:
       types:
-        Blunt: 8.5
+        Blunt: 8.0
     bluntStaminaDamageFactor: 1.25
     swapKeys: true
     disableHeavy: true
@@ -54,7 +54,7 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 2
+        Blunt: 2.5
   - type: DamageOtherOnHit
     staminaCost: 7.5
 
