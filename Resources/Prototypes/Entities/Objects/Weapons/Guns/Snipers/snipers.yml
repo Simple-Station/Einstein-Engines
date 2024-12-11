@@ -78,20 +78,20 @@
     damage:
       types:
         Piercing: 5
-        Slash: 4.5
+        Slash: 3.5
     wideAnimationRotation: -135
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Piercing: 3.5
+        Piercing: 4
         Slash: 2
   - type: DamageOtherOnHit
     damage:
       types:
         Piercing: 8
-        Slash: 4
+        Slash: 3
   - type: EmbeddableProjectile
     removalTime: 3.5
   - type: EmbedPassiveDamage
@@ -159,20 +159,20 @@
     damage:
       types:
         Piercing: 5
-        Slash: 4.5
+        Slash: 3.5
     wideAnimationRotation: -135
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Piercing: 3.5
+        Piercing: 4
         Slash: 2
   - type: DamageOtherOnHit
     damage:
       types:
         Piercing: 8
-        Slash: 4
+        Slash: 3
   - type: EmbeddableProjectile
     removalTime: 3.5
   - type: EmbedPassiveDamage
