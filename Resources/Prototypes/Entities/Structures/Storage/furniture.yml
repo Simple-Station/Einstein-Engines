@@ -39,21 +39,6 @@
     sprite: Structures/Storage/Furniture/safe.rsi
 
 - type: entity
-  parent: [ ClosetSafe, BaseMilitaryStorageFill ]
-  id: LootClosetSafe
-  suffix: Loot, Random Military
-
-- type: entity
-  parent: [ ClosetSafe, StorageFillCurrencyFill ]
-  id: LootClosetSafeCurrency
-  suffix: Loot, Currency one stack random
-
-- type: entity
-  parent: [ ClosetSafe, StorageFillSafePrewarFill ]
-  id: LootClosetSafePrewar
-  suffix: Loot, safe pre-war
-
-- type: entity
   parent: ClosetSafe
   id: ClosetSafeSpinner
   suffix: spinner

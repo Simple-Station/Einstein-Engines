@@ -61,7 +61,7 @@
 
 - type: entity
   parent: Torch
-  id: N14TorchWall
+  id: TorchWall
   suffix: wall
   components:
   - type: Sprite
