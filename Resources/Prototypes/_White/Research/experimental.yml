@@ -11,6 +11,9 @@
   cost: 10000
   recipeUnlocks:
   - ClothingEyesNightVisionGoggles
+  - ClothingEyesNightVisionSecurityGoggles
+  - ClothingEyesNightVisionMedicalGoggles
+  - ClothingEyesNightVisionDiagnosticGoggles
 
 - type: technology
   id: ThermalVisionTech

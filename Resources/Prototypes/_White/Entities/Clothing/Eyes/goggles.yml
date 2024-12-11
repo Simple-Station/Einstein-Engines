@@ -4,7 +4,7 @@
   parent: ClothingEyesBase
   id: ClothingEyesNightVisionGoggles
   name: night vision goggles
-  description: Now you can see in the dark!
+  description: An advanced heads-up display which provides id data and vision in complete darkness.
   components:
   - type: Sprite
     sprite: _White/Clothing/Eyes/Goggles/nightvision.rsi
@@ -13,6 +13,36 @@
   - type: ClothingGrantComponent
     component:
     - type: NightVision
+
+- type: entity
+  parent: [ClothingEyesNightVisionGoggles, ShowSecurityIcons]
+  id: ClothingEyesNightVisionSecurityGoggles
+  name: night vision security goggles
+  components:
+  - type: Sprite
+    sprite: _White/Clothing/Eyes/Goggles/security_nightvision.rsi
+  - type: Clothing
+    sprite: _White/Clothing/Eyes/Goggles/security_nightvision.rsi
+
+- type: entity
+  parent: [ClothingEyesNightVisionGoggles, ClothingEyesHudMedical]
+  id: ClothingEyesNightVisionMedicalGoggles
+  name: night vision medical goggles
+  components:
+  - type: Sprite
+    sprite: _White/Clothing/Eyes/Goggles/medical_nightvision.rsi
+  - type: Clothing
+    sprite: _White/Clothing/Eyes/Goggles/medical_nightvision.rsi
+
+- type: entity
+  parent: [ClothingEyesNightVisionGoggles, ClothingEyesHudDiagnostic]
+  id: ClothingEyesNightVisionDiagnosticGoggles
+  name: night vision diagnostic goggles
+  components:
+  - type: Sprite
+    sprite: _White/Clothing/Eyes/Goggles/diagnostic_nightvision.rsi
+  - type: Clothing
+    sprite: _White/Clothing/Eyes/Goggles/diagnostic_nightvision.rsi
 
 - type: entity
   parent: ClothingEyesNightVisionGoggles
@@ -40,7 +70,7 @@
   parent: ClothingEyesBase
   id: ClothingEyesThermalVisionGoggles
   name: thermal vision goggles
-  description: Now you can see everyone!
+  description: Thermals in the shape of glasses.
   components:
   - type: Sprite
     sprite: _White/Clothing/Eyes/Goggles/thermal.rsi
@@ -49,6 +79,17 @@
   - type: ClothingGrantComponent
     component:
     - type: ThermalVision
+
+- type: entity
+  parent: ClothingEyesThermalVisionGoggles
+  id: ClothingEyesThermalVisionMonocle
+  name: thermonocle
+  description: Never before has seeing through walls felt so gentlepersonly.
+  components:
+  - type: Sprite
+    sprite: _White/Clothing/Eyes/Goggles/monocle_thermal.rsi
+  - type: Clothing
+    sprite: _White/Clothing/Eyes/Goggles/monocle_thermal.rsi
 
 - type: entity
   parent: ClothingEyesThermalVisionGoggles
