@@ -39,3 +39,28 @@
       group: LoadoutAirTank
   items:
     - DoubleEmergencyNitrogenTankFilled
+
+- type: loadout
+  id: LoadoutSpeciesExtendedEmergencyPlasmaTank
+  category: Species
+  groups: [ LoadoutPlasmamanPlasmaTank ]
+  cost: 0
+  items:
+    - ExtendedEmergencyPlasmaTankFilled
+
+- type: loadout
+  id: LoadoutSpeciesDoubleEmergencyPlasmaTank
+  category: Species
+  groups: [ LoadoutPlasmamanPlasmaTank ]
+  cost: 2
+  items:
+    - DoubleEmergencyPlasmaTankFilled
+
+- type: loadout
+  id: LoadoutSpeciesUniformEnvirosuit
+  category: Species
+  groups: [ LoadoutPlasmamanEnvirosuit ]
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformEnvirosuit

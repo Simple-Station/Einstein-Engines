@@ -1,0 +1,15 @@
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuit
+  name: plasma envirosuit
+  description: A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment. Despite being airtight, it's not spaceworthy.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/plain.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/plain.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadEnvirohelm
