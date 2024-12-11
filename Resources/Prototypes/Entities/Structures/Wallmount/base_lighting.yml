@@ -29,9 +29,6 @@
     sprite: Structures/Wallmounts/lightbulbcaged.rsi
     state: empty
     offset: 0, 1
-  - type: Construction
-    graph: Lightbulb
-    node: bulbLight
   - type: WallMount
 
 - type: entity

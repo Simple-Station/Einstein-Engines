@@ -5,7 +5,7 @@
   id: BaseBarrel
   name: barrel
   description: This barrel looks like it could contain something.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: Structures/Storage/barrels.rsi
@@ -60,7 +60,7 @@
   parent: BaseBarrel
   id: BaseBarrelOpen
   suffix: open
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: SolutionContainerManager
     solutions:

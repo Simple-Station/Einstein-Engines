@@ -89,7 +89,7 @@
   - type: Sprite
     sprite: Structures/Storage/Closets/fridgedirty.rsi
   - type: ExplosionResistance
-    resistance: 0.90
+    damageCoefficient: 0.90
   - type: AntiRottingContainer
 
 - type: entity
@@ -101,7 +101,7 @@
   - type: Sprite
     sprite: Structures/Storage/Closets/fridgewidedirty.rsi
   - type: ExplosionResistance
-    resistance: 0.90
+    damageCoefficient: 0.90
   - type: AntiRottingContainer
 
 - type: entity
@@ -149,9 +149,6 @@
       - !type:SpawnEntitiesBehavior
         spawn:
           MaterialWoodPlank:
-            min: 0
-            max: 1
-          ScrapBrass1:
             min: 0
             max: 1
       - !type:DoActsBehavior

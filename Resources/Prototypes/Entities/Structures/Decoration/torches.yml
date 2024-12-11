@@ -70,6 +70,3 @@
   - type: FireVisuals
     sprite: Structures/Decoration/torches.rsi
     normalState: wall_torch_lit
-  - type: Construction
-    graph: WallTorch
-    node: WallTorch
