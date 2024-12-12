@@ -592,12 +592,28 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
         {
             button.ClearData();
             if (_container?.TryGetButtonIndex(button, out position) ?? false)
-                CurrentPage[position] = actionId;
+                CurrentPage[position] = null;
         }
         else if (button.TryReplaceWith(actionId.Value, _actionsSystem) &&
             _container != null &&
             _container.TryGetButtonIndex(button, out position))
-            CurrentPage[position] = actionId;
+            if (position >= 0 && position < CurrentPage.Size)
+                CurrentPage[position] = actionId;
+            else
+            {
+                if (_pages.Count <= _currentPageIndex)
+                    return;
+                // Add the button to the next page if there's no space on the current one
+                var nextPage = _pages[_currentPageIndex + 1];
+                int i;
+                for (i = 0; i < nextPage.Size; i++)
+                    if (nextPage[i] == null)
+                    {
+                        nextPage[i] = actionId;
+                        break;
+                    }
+                ChangePage(_currentPageIndex + 1); //TODO: Make this a client config?
+            }
     }
 
     private void DragAction()
@@ -1029,18 +1045,18 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
     //TODO: Serialize this shit
     private sealed class ActionPage(int size)
     {
-        private readonly EntityUid?[] _data = new EntityUid?[size];
+        public readonly EntityUid?[] Data = new EntityUid?[size];
 
         public EntityUid? this[int index]
         {
-            get => _data[index];
-            set => _data[index] = value;
+            get => Data[index];
+            set => Data[index] = value;
         }
 
-        public static implicit operator EntityUid?[](ActionPage p) => p._data.ToArray();
+        public static implicit operator EntityUid?[](ActionPage p) => p.Data.ToArray();
 
-        public void Clear() => Array.Fill(_data, null);
+        public void Clear() => Array.Fill(Data, null);
 
-        public int Size => _data.Length;
+        public int Size => Data.Length;
     }
 }
