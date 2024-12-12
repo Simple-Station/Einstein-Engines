@@ -45,6 +45,8 @@
     icon:
       sprite: Objects/Weapons/Guns/Pistols/viper.rsi
       state: icon
+  - type: TeachLessonCondition
+  - type: CodeCondition
   - type: ObjectiveBlacklistRequirement
     blacklist:
       components:
