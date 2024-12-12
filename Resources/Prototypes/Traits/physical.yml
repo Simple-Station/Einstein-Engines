@@ -675,8 +675,9 @@
   category: Physical
   points: -10
   requirements:
-  - !type:CharacterCvarRequirement
+  - !type:CVarRequirement
       cvar: trait.restrictedgear_enabled
+      requiredValue: true
   - !type:CharacterJobRequirement
       inverted: true
       jobs:
