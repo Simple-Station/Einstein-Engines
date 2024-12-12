@@ -51,7 +51,7 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 0.75
+    attackRate: 1.3333
     range: 1.65
     damage:
       types:
@@ -113,13 +113,13 @@
     wideAnimationRotation: -135
     damage:
       types:
-        Piercing: 36
+        Piercing: 26
     angle: 0
     animation: WeaponArcThrust
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
     range: 2
-    attackRate: 0.7
+    attackRate: 1.42
   - type: DamageOtherOnHit
     damage:
       types:
@@ -139,7 +139,7 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Piercing: 8
+        Piercing: 10
   - type: UseDelay
   - type: DisarmMalus
   - type: CultItem
@@ -160,7 +160,6 @@
         Blunt: 0
     heavyStaminaCost: 0
     maxTargets: 1
-  - type: Unremoveable
   - type: BloodRitesAura
   - type: UserInterface
     interfaces:

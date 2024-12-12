@@ -81,13 +81,8 @@
   - type: Speech
   - type: TypingIndicator
     proto: guardian
-  - type: Pullable
   - type: Puller
     needsHands: false
-  - type: ActionsContainer
-  - type: ContainerContainer
-    containers:
-      actions: !type:Container
   - type: Visibility
   - type: ContentEye
   - type: Actions
@@ -130,6 +125,9 @@
       0: Alive
       100: Dead
   - type: Construct
+    actions:
+    - ActionForceWallCult
+    - ActionGauntletEcho
   - type: MeleeWeapon
     hidden: true
     angle: 30
@@ -164,6 +162,11 @@
     - state: glow_artificer_cult
       map: [ "enum.ConstructVisualsState.Glow" ]
   - type: Construct
+    actions:
+    - ActionSummonCultFloor
+    - ActionLesserConstruction
+    - ActionSummonCultDoor
+    - ActionSummonSoulStone
   - type: MovementIgnoreGravity
   - type: MeleeWeapon
     hidden: true
@@ -183,6 +186,7 @@
         enum.ConstructVisualsState.Glow:
           True: { visible: false }
           False: { visible: true }
+  - type: Pullable
 
 - type: entity
   parent: ConstructBase
@@ -201,6 +205,9 @@
       0: Alive
       65: Dead
   - type: Construct
+    actions:
+    - ActionPhaseShift
+  - type: MovementIgnoreGravity
   - type: MovementSpeedModifier
     baseWalkSpeed: 4
     baseSprintSpeed: 4
@@ -222,6 +229,10 @@
         enum.ConstructVisualsState.Glow:
           True: { visible: false }
           False: { visible: true }
+  - type: StatusEffects
+    allowed:
+    - PhaseShifted
+  - type: Pullable
 
 - type: entity
   id: ConstructHarvester
@@ -310,6 +321,9 @@
       map: [ "enum.ConstructVisualsState.Sprite" ]
     - state: glow_artificer_holy
       map: [ "enum.ConstructVisualsState.Glow" ]
+  - type: Construct
+    actions:
+    - ActionSummonSoulStoneHoly
   - type: GenericVisualizer
     visuals:
       enum.ConstructVisualsState.Transforming:

@@ -8529,3 +8529,101 @@ Entries:
   id: 6567
   time: '2024-12-08T03:30:08.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1307
+- author: dge21
+  changes:
+    - type: Fix
+      message: 'Fixed melee weapons. '
+  id: 6568
+  time: '2024-12-10T00:43:13.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1330
+- author: stellar-novas
+  changes:
+    - type: Tweak
+      message: Flashes are bright again!
+  id: 6569
+  time: '2024-12-10T19:13:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1331
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Added a large number of mapping assets from Nuclear14
+  id: 6570
+  time: '2024-12-11T22:45:57.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1315
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: Spin, flip, and jump emotes have been added.
+  id: 6571
+  time: '2024-12-11T22:52:53.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1318
+- author: Skubman
+  changes:
+    - type: Fix
+      message: >-
+        Fixed an issue where players could not craft clown hardsuits and mime
+        hardsuits on the crafting menu.
+    - type: Fix
+      message: >-
+        Fixed an issue where clowns did not have their signature silly snore
+        sound when sleeping.
+  id: 6572
+  time: '2024-12-11T23:12:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1324
+- author: Remuchi
+  changes:
+    - type: Add
+      message: In-game guide book to kickstart your sinister activities.
+    - type: Add
+      message: Constructs now have abilities.
+    - type: Add
+      message: >-
+        Rending rune and apocalypse rune now should only be placed in the
+        specific spots on maps. Needs to be mapped.
+    - type: Add
+      message: Veil Shifter now displays how much charges it has when examining.
+    - type: Add
+      message: >-
+        Cult runes now have descriptions. Also stating how much invokers
+        required for each rune.
+    - type: Add
+      message: Blood rites can now be dropped&deleted.
+    - type: Add
+      message: Blood rites now suck... blood in 0.5 tiles radius.
+    - type: Remove
+      message: Non-cultists can no longer examine runes.
+    - type: Fix
+      message: >-
+        Fixed Cult Objective Target selection. You can (and should) sacrifice
+        your own people now.
+    - type: Fix
+      message: Non cultists can no longer use veil shifter.
+    - type: Fix
+      message: Teleport spell is no more a cheap rip-off and now actually teleports.
+    - type: Fix
+      message: Timed Factories can't no more produce infinite number of entities.
+    - type: Fix
+      message: Offering rune should now properly convert someone.
+    - type: Fix
+      message: >-
+        Sacrificing body with mind now properly transfers their mind to soul
+        shard.
+    - type: Fix
+      message: Shadow Shackles now cuffs the target instead of the caster (lmao).
+  id: 6573
+  time: '2024-12-11T23:19:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1276
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Pistol-whipping has been added. You can press right click with a gun to
+        perform a Light Attack. Most guns will deal Blunt damage, apart from the
+        Kardashev-Mosin dealing Piercing/Slash damage with its bayonet. Weaving
+        bullets and melee attacks correctly will give you the upper hand in
+        combat.
+    - type: Add
+      message: Guns can now be thrown to deal the same damage as their melee damage.
+  id: 6574
+  time: '2024-12-11T23:26:33.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1335

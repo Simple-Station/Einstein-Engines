@@ -31,7 +31,7 @@
     - Trash
   - type: MeleeWeapon
     wideAnimationRotation: 180
-    attackRate: 1.5
+    attackRate: .6666
     damage:
       types:
         Blunt: 0
@@ -53,7 +53,7 @@
     - Fork
   - type: MeleeWeapon
     wideAnimationRotation: 180
-    attackRate: 1.5
+    attackRate: .6666
     damage:
       types:
         Piercing: 5
@@ -100,7 +100,7 @@
     - Spoon
   - type: MeleeWeapon
     wideAnimationRotation: 180
-    attackRate: 1.5
+    attackRate: .6666
     damage:
       types:
         Blunt: 1
@@ -161,7 +161,7 @@
     - Spoon
   - type: MeleeWeapon
     wideAnimationRotation: 180
-    attackRate: 2
+    attackRate: .5
     damage:
       types:
         Blunt: 2

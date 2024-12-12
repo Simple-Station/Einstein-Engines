@@ -10,7 +10,7 @@
   - type: Item
     size: Huge
   - type: MeleeWeapon
-    attackRate: 0.75
+    attackRate: 1.3333
     range: 1.70
     damage:
       types:

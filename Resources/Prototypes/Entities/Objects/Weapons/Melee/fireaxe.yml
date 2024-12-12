@@ -14,7 +14,7 @@
   - type: MeleeWeapon
     wideAnimationRotation: 135
     swingLeft: true
-    attackRate: 0.75
+    attackRate: 1.3333
     damage:
       types:
         # axes are kinda like sharp hammers, you know?
