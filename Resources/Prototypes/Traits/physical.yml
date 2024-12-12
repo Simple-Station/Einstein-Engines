@@ -669,3 +669,17 @@
           - Biological
           - Inorganic
           - Silicon
+
+- type: trait
+  id: RestrictedGear
+  category: Physical
+  points: -10
+  requirements:
+  - !type:CVarRequirement
+      cvar: trait.restrictedgear_enabled
+      requiredValue: true
+  - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Smuggling for prisoners = immediate jailbreak.
+  
