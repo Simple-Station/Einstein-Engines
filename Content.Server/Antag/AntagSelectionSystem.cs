@@ -264,7 +264,8 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
 
             if (!getEntEv.Handled)
             {
-                throw new InvalidOperationException($"Attempted to make {session} antagonist in gamerule {ToPrettyString(ent)} but there was no valid entity for player.");
+                Log.Error($"Attempted to make {session} antagonist in gamerule {ToPrettyString(ent)} but there was no valid entity for player.");
+                return;
             }
 
             antagEnt = getEntEv.Entity;
