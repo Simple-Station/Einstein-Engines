@@ -1,5 +1,6 @@
 - type: reaction
   id: BlessHolyWater
+  sound: /Audio/Effects/holy.ogg
   impact: Low
   requiredMixerCategories:
   - Holy

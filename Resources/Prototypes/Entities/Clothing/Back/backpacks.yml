@@ -23,8 +23,8 @@
         ents: []
   - type: UserInterface
     interfaces:
-    - key: enum.StorageUiKey.Key
-      type: StorageBoundUserInterface
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
   # to prevent bag open/honk spam
   - type: UseDelay
     delay: 0.5
@@ -55,6 +55,16 @@
   - type: Storage
     storageOpenSound:
       collection: IanBark
+
+- type: entity
+  parent: ClothingBackpackIan
+  id: ClothingBackpackIanFilled
+  name: Ian's backpack
+  description: Sometimes he wears it.
+  components:
+  - type: StorageFill
+    contents:
+      - id: Flash
 
 - type: entity
   parent: ClothingBackpack

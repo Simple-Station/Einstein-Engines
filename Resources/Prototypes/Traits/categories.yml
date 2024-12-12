@@ -19,7 +19,24 @@
 - type: traitCategory
   id: Speech
   root: true
+  subCategories:
+    - TraitsSpeechUncategorized
+    - TraitsSpeechAccents
+    - TraitsSpeechLanguages
+
+- type: traitCategory
+  id: TraitsSpeechUncategorized
+
+- type: traitCategory
+  id: TraitsSpeechAccents
+
+- type: traitCategory
+  id: TraitsSpeechLanguages
 
 - type: traitCategory
   id: Visual
+  root: true
+
+- type: traitCategory
+  id: Language
   root: true

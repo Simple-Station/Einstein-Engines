@@ -1,24 +1,24 @@
-# - type: construction # DeltaV - Prevent clowns from making the hardsuit
-#   name: clown hardsuit
-#   id: ClownHardsuit
-#   graph: ClownHardsuit
-#   startNode: start
-#   targetNode: clownHardsuit
-#   category: construction-category-clothing
-#   description: A modified hardsuit fit for a clown.
-#   icon: { sprite: Clothing/OuterClothing/Hardsuits/clown.rsi, state: icon }
-#   objectType: Item
+- type: construction
+  name: clown vacsuit
+  id: ClownHardsuit
+  graph: ClownHardsuit
+  startNode: start
+  targetNode: clownHardsuit
+  category: construction-category-clothing
+  description: A modified vacsuit fit for a clown.
+  icon: { sprite: Clothing/OuterClothing/Hardsuits/clown.rsi, state: icon }
+  objectType: Item
 
-#- type: construction # DeltaV - No mimes either
-#  name: mime hardsuit
-#  id: MimeHardsuit
-#  graph: MimeHardsuit
-#  startNode: start
-#  targetNode: mimeHardsuit
-#  category: construction-category-clothing
-#  description: A modified hardsuit fit for a mime.
-#  icon: { sprite: Clothing/OuterClothing/Hardsuits/mime.rsi, state: icon }
-#  objectType: Item
+- type: construction
+  name: mime vacsuit
+  id: MimeHardsuit
+  graph: MimeHardsuit
+  startNode: start
+  targetNode: mimeHardsuit
+  category: construction-category-clothing
+  description: A modified vacsuit fit for a mime.
+  icon: { sprite: Clothing/OuterClothing/Hardsuits/mime.rsi, state: icon }
+  objectType: Item
 
 - type: construction
   name: bone armor
@@ -106,4 +106,15 @@
   category: construction-category-clothing
   description: A roll of treated canvas used for wrapping claws or paws.
   icon: { sprite: Clothing/Shoes/Misc/clothWrap.rsi, state: icon }
+  objectType: Item
+
+- type: construction
+  name: quiver
+  id: ClothingBeltQuiver
+  graph: Quiver
+  startNode: start
+  targetNode: Quiver
+  category: construction-category-clothing
+  description: Can hold up to 15 arrows, and fits snug around your waist.
+  icon: { sprite: Clothing/Belt/quiver.rsi, state: icon }
   objectType: Item

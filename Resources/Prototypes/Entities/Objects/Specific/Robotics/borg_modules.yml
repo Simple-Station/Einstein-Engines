@@ -32,7 +32,7 @@
   id: ActionBorgSwapModule
   name: Swap Module
   description: Select this module, enabling you to use the tools it provides.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     itemIconStyle: BigItem
@@ -346,6 +346,7 @@
     - HoloprojectorBorg
     - SprayBottleSpaceCleaner
     - Dropper
+    - TrashBag
 
 # medical modules
 - type: entity
@@ -379,6 +380,41 @@
     - Bloodpack10Lingering
     - Syringe
     - Dropper
+
+- type: entity
+  id: BorgModuleSurgery
+  parent: [ BaseBorgModuleMedical, BaseProviderBorgModule ]
+  name: surgery cyborg module
+  components:
+  - type: Sprite
+    layers:
+    - state: medical
+    - state: icon-surgery
+  - type: ItemBorgModule
+    items:
+    - Scalpel
+    - Drill
+    - Hemostat
+    - Retractor
+    - Cautery
+    - SawElectric
+    - BoneGel
+
+- type: entity
+  id: BorgModuleAdvancedSurgery
+  parent: [ BaseBorgModuleMedical, BaseProviderBorgModule ]
+  name: advanced surgery cyborg module
+  components:
+  - type: Sprite
+    layers:
+    - state: medical
+    - state: icon-advanced-surgery
+  - type: ItemBorgModule
+    items:
+    - EnergyScalpel
+    - EnergyCautery
+    - AdvancedRetractor
+    - BoneGel
 
 - type: entity
   id: BorgModuleDefibrillator
@@ -579,5 +615,19 @@
       - state: icon-syndicate
     - type: ItemBorgModule
       items:
-      - WeaponLightMachineGunL6C
-      - PinpointerSyndicateNuclear
+        - WeaponLightMachineGunL6C
+        - PinpointerSyndicateNuclear
+
+- type: entity
+  id: BorgModuleMartyr
+  parent: [ BaseBorgModule, BaseProviderBorgModule ]
+  name: martyr cyborg module
+  description: "A module that comes with an explosive you probably don't want to handle yourself."
+  components:
+    - type: Sprite
+      layers:
+        - state: syndicateborgbomb
+        - state: icon-bomb
+    - type: ItemBorgModule
+      items:
+        - SelfDestructSeq

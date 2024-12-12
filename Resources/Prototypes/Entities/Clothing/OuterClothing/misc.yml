@@ -57,6 +57,39 @@
     sprite: Clothing/OuterClothing/Misc/chef.rsi
 
 - type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterJacketChefNt
+  name: nanotrasen chef jacket
+  description: An apron-jacket used by a high class Nanotrasen Corporation chef.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Misc/chef_nt.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Misc/chef_nt.rsi
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterJacketChefIdris
+  name: idris chef jacket
+  description: An apron-jacket used by a high class Idris Incorporated chef.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Misc/chef_idris.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Misc/chef_idris.rsi
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterJacketChefOrion
+  name: orion chef jacket
+  description: An apron-jacket used by a high class Orion Expresschef.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Misc/chef_orion.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Misc/chef_orion.rsi
+
+- type: entity
   parent: ClothingOuterBase
   id: ClothingOuterHoodieBlack
   name: black hoodie
@@ -166,9 +199,16 @@
   - type: Clothing
     sprite: Clothing/OuterClothing/Misc/santa.rsi
 
+- type: entity
+  abstract: true
+  parent: ClothingOuterBase
+  id: ClothingOuterWizardBase
+  components:
+  - type: WizardClothes
+
 # Is this wizard wearing a fanny pack???
 - type: entity
-  parent: ClothingOuterEVASuitBase # DeltaV - Make real wizard clothes space proof
+  parent: ClothingOuterWizardBase
   id: ClothingOuterWizardViolet
   name: violet wizard robes
   description: A bizarre gem-encrusted violet robe that radiates magical energies.
@@ -179,7 +219,7 @@
     sprite: Clothing/OuterClothing/Misc/violetwizard.rsi
 
 - type: entity
-  parent: ClothingOuterEVASuitBase # DeltaV - Make real wizard clothes space proof
+  parent: ClothingOuterWizardBase
   id: ClothingOuterWizard
   name: wizard robes
   description: A bizarre gem-encrusted blue robe that radiates magical energies.
@@ -190,7 +230,7 @@
     sprite: Clothing/OuterClothing/Misc/wizard.rsi
 
 - type: entity
-  parent: ClothingOuterEVASuitBase # DeltaV - Make real wizard clothes space proof
+  parent: ClothingOuterWizardBase
   id: ClothingOuterWizardRed
   name: red wizard robes
   description: Strange-looking, red, hat-wear that most certainly belongs to a real magic user.
@@ -388,3 +428,20 @@
     sprite: Clothing/OuterClothing/Misc/unathirobe.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Misc/unathirobe.rsi
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterShadowkinRestraints
+  name: shadowkin restraints
+  description: One of the first creations after finding Shadowkin, these were used to contain the Shadowkin during research so they didn't teleport away.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Misc/shadowkinrestraints.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Misc/shadowkinrestraints.rsi
+    equipDelay: 0.5
+    unequipDelay: 10
+  - type: ShadowkinCuff
+  - type: GuideHelp
+    guides:
+    - Shadowkin

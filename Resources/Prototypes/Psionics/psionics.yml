@@ -52,7 +52,7 @@
   name: Pyrokinesis
   description: pyrokinesis-power-description
   actions:
-  - ActionPyrokinesis
+    - ActionPyrokinesis
   components:
     - type: PyrokinesisPower
   initializationFeedback: pyrokinesis-power-initialization-feedback
@@ -64,7 +64,7 @@
   name: Metapsionic Pulse
   description: metapsionic-power-description
   actions:
-  - ActionMetapsionic
+    - ActionMetapsionic
   components:
     - type: MetapsionicPower
   initializationFeedback: metapsionic-power-initialization-feedback
@@ -77,7 +77,7 @@
   name: Psionic Regeneration
   description: psionic-regeneration-power-description
   actions:
-  - ActionPsionicRegeneration
+    - ActionPsionicRegeneration
   components:
     - type: PsionicRegenerationPower
   initializationFeedback: psionic-regeneration-power-initialization-feedback
@@ -90,7 +90,7 @@
   name: Telegnosis
   description: telegnosis-power-description
   actions:
-  - ActionTelegnosis
+    - ActionTelegnosis
   components:
     - type: TelegnosisPower
   initializationFeedback: telegnosis-power-initialization-feedback
@@ -103,7 +103,7 @@
   name: Psionic Invisibility
   description: psionic-invisibility-power-description
   actions:
-  - ActionDispel
+    - ActionDispel
   components:
     - type: PsionicInvisibilityPower
   initializationFeedback: psionic-invisibility-power-initialization-feedback
@@ -119,6 +119,7 @@
     - type: UniversalLanguageSpeaker
   initializationFeedback: xenoglossy-power-initialization-feedback
   metapsionicFeedback: psionic-language-power-feedback # Reuse for telepathy, clairaudience, etc
+  powerSlotCost: 0
 
 - type: psionicPower
   id: PsychognomyPower #i.e. reverse physiognomy
@@ -128,6 +129,7 @@
     - type: Psychognomist
   initializationFeedback: psychognomy-power-initialization-feedback
   metapsionicFeedback: psionic-language-power-feedback
+  powerSlotCost: 0
 
 - type: psionicPower
   id: TelepathyPower
@@ -137,3 +139,137 @@
     - type: Telepathy
   initializationFeedback: telepathy-power-initialization-feedback
   metapsionicFeedback: psionic-language-power-feedback # Reuse for telepathy, clairaudience, etc
+  powerSlotCost: 0
+
+- type: psionicPower
+  id: HealingWordPower
+  name: HealingWord
+  description: healing-word-power-description
+  actions:
+    - ActionHealingWord
+  initializationFeedback: healing-word-power-initialization-feedback
+  metapsionicFeedback: healing-word-power-feedback
+  amplificationModifier: 0.5
+  dampeningModifier: 0.5
+
+- type: psionicPower
+  id: RevivifyPower
+  name: Revivify
+  description: revivify-power-description
+  actions:
+    - ActionRevivify
+  initializationFeedback: revivify-power-initialization-feedback
+  metapsionicFeedback: revivify-power-feedback
+  amplificationModifier: 2.5 # An extremely rare and dangerous power
+  powerSlotCost: 2
+
+- type: psionicPower
+  id: LowAmplification
+  name: LowAmplification
+  description: low-amplification-power-description
+  amplificationModifier: -0.25
+  powerSlotCost: 0
+
+- type: psionicPower
+  id: HighAmplification
+  name: HighAmplification
+  description: high-amplification-power-description
+  amplificationModifier: 0.25
+  powerSlotCost: 0
+
+- type: psionicPower
+  id: PowerOverwhelming
+  name: PowerOverwhelming
+  description: power-overwhelming-power-description
+  metapsionicFeedback: power-overwhelming-power-feedback
+  amplificationModifier: 2
+  powerSlotCost: 2
+
+- type: psionicPower
+  id: LowDampening
+  name: LowDampening
+  description: low-dampening-power-description
+  dampeningModifier: -0.25
+  powerSlotCost: 0
+
+- type: psionicPower
+  id: HighDampening
+  name: HighDampening
+  description: high-dampening-power-description
+  dampeningModifier: 0.25
+  powerSlotCost: 0
+
+- type: psionicPower
+  id: ShadeskipPower
+  name: Shadeskip
+  description: shadeskip-power-description
+  actions:
+    - ActionShadeskip
+  initializationFeedback: shadeskip-power-initialization-feedback
+  metapsionicFeedback: shadeskip-power-metapsionic-feedback
+  amplificationModifier: 1
+
+- type: psionicPower
+  id: TelekineticPulsePower
+  name: Telekinetic Pulse
+  description: telekinetic-pulse-power-description
+  actions:
+    - ActionTelekineticPulse
+  initializationFeedback: telekinetic-pulse-power-initialization-feedback
+  metapsionicFeedback: telekinetic-pulse-power-metapsionic-feedback
+  amplificationModifier: 1
+
+- type: psionicPower
+  id: ShadowkinPowers
+  name: Shadowkin Powers
+  description: shadowkin-powers-description
+  actions:
+    - ActionShadowkinShadeskip
+    - ActionDarkSwap
+  powerSlotCost: 1
+
+- type: psionicPower
+  id: EtherealVisionPower
+  name: Ethereal Vision
+  description: ethereal-vision-powers-description
+  components:
+    - type: ShowEthereal
+  powerSlotCost: 0
+
+- type: psionicPower
+  id: DarkSwapPower
+  name: DarkSwap
+  description: darkswap-power-description
+  actions:
+    - ActionDarkSwap
+  powerSlotCost: 1
+
+- type: psionicPower
+  id: PyrokineticFlare
+  name: Pyrokinetic Flare
+  description: pyrokinetic-flare-power-description
+  actions:
+    - ActionPyrokineticFlare
+  powerSlotCost: 1
+  initializationFeedback: pyrokinetic-flare-power-initialization-feedback
+  metapsionicFeedback: pyrokinetic-flare-power-metapsionic-feedback
+  amplificationModifier: 0.25
+
+- type: psionicPower
+  id: SummonImpPower
+  name: Summon Imp
+  description: summon-imp-power-description
+  actions:
+    - ActionSummonImp
+  powerSlotCost: 1
+  initializationFeedback: summon-imp-power-initialization-feedback
+  amplificationModifier: 0.5
+  dampeningModifier: 0.5
+
+- type: psionicPower
+  id: SummonRemiliaPower
+  name: Summon Remilia
+  description: summon-imp-power-description
+  actions:
+    - ActionSummonRemilia
+  powerSlotCost: 0

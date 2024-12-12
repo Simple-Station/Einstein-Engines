@@ -9,7 +9,7 @@ uplink-pistol-cobra-name = Cobra
 uplink-pistol-cobra-desc = A rugged, robust operator handgun with inbuilt silencer. Uses pistol magazines (.25 caseless).
 
 uplink-rifle-mosin-name = Surplus Rifle
-uplink-rifle-mosin-desc = A bolt action service rifle that has seen many wars. Not modern by any standard, hand loaded, and terrible recoil, but it is cheap.
+uplink-rifle-mosin-desc = A bolt action service rifle that has seen many wars. Not modern by any standard, hand loaded, and terrible recoil, but it is cheap. The attached bayonet allows it to be used as an improvised spear.
 
 uplink-esword-name = Energy Sword
 uplink-esword-desc = A very dangerous energy sword that can reflect shots. Can be stored in pockets when turned off. Makes a lot of noise when used or turned on.
@@ -25,6 +25,9 @@ uplink-fire-axe-flaming-desc = A classic-style weapon infused with advanced atmo
 
 uplink-gloves-north-star-name = Gloves of the North Star
 uplink-gloves-north-star-desc = A pair of gloves that reduce your punching cooldown drastically, allowing you to beat people to death in a flurry of punches.
+
+uplink-emp-flashlight-name = Emp Flashlight
+uplink-emp-flashlight-desc = A rechargeable device disguised as a flashlight designed to disrupt electronic systems. Useful for disrupting communications, security's energy weapons, and APCs when you're in a tight spot.
 
 # Explosives
 uplink-explosive-grenade-name = Explosive Grenade
@@ -121,8 +124,8 @@ uplink-agent-id-card-desc = A modified ID card that can copy accesses from other
 uplink-black-jetpack-name = Black Jetpack
 uplink-black-jetpack-desc = A black jetpack. It allows you to fly around in space. Refills not included, use your fuel wisely.
 
-uplink-reinforcement-radio-monkey-name = Monkey Reinforcement Teleporter
-uplink-reinforcement-radio-monkey-desc =  Call in a trained monkey to assist you. Comes with a single syndicate cigarette.
+uplink-reinforcement-radio-ancestor-name = Genetic Ancestor Reinforcement Teleporter
+uplink-reinforcement-radio-ancestor-desc =  Call in a trained ancestor of your choosing to assist you. Comes with a single syndicate cigarette.
 
 uplink-reinforcement-radio-name = Reinforcement Teleporter
 uplink-reinforcement-radio-desc =  Radio in a reinforcement agent of extremely questionable quality. No off button, buy this if you're ready to party. They have a pistol with no reserve ammo, and a knife. That's it.
@@ -156,6 +159,9 @@ uplink-radio-jammer-desc = This device will disrupt any nearby outgoing radio co
 
 uplink-syndicate-weapon-module-name = Weapon Cyborg Module
 uplink-syndicate-weapon-module-desc = This module will give a cyborg advanced laser and machete
+
+uplink-syndicate-martyr-module-name = Martyr Cyborg Module
+uplink-syndicate-martyr-module-desc = Turn your emagged borg friend into a walking bomb with just this module. Make sure they're loyal to your cause, results may vary.
 
 uplink-singularity-beacon-name = Singularity Beacon
 uplink-singularity-beacon-desc = A device that attracts singularities. Has to be anchored and powered. Causes singularities to grow when consumed.
@@ -282,10 +288,15 @@ uplink-proximity-mine-name = Proximity Mine
 uplink-proximity-mine-desc = A mine disguised as a wet floor sign.
 
 uplink-disposable-turret-name = Disposable Ballistic Turret
-uplink-disposable-turret-desc = Looks and functions like a normal electrical toolbox. Upon hitting the toolbox it will transform into a ballistic turret, theoretically shooting at anyone except members of the syndicate. Can be turned back into a toolbox using a screwdriver and repaired using a wrench.
+uplink-disposable-turret-desc =
+    Looks and functions like a normal electrical toolbox. Upon hitting the toolbox it will transform into a ballistic turret, theoretically shooting at anyone except members of the syndicate.
+    Can be turned back into a toolbox using a screwdriver and repaired using a wrench. IF YOU DO NOT HAVE AN AGENT ID IN YOUR ID SLOT, OR SYNDICATE PDA, IT WILL FIRE UPON YOU.
 
 uplink-cluster-banana-peel-name = Cluster Banana
 uplink-cluster-banana-peel-desc = Splits into 6 explosive banana peels after being thrown, the peels detonate automatically after 20 seconds if nobody slips on them.
+
+uplink-cane-blade-name = Cane Blade
+uplink-cane-blade-desc = A cane that has a hidden blade that can be unsheathed.
 
 # Armor
 uplink-chameleon-name = Chameleon Kit
@@ -366,6 +377,9 @@ uplink-slipocalypse-clustersoap-desc = Scatters arounds small pieces of syndicat
 
 uplink-mobcat-microbomb-name = SyndiCat
 uplink-mobcat-microbomb-desc = A hand cat equipped with a microbomb implant. Explodes when seriously injured. Can bite painfully
+
+uplink-chameleon-projector-name = Chameleon Projector
+uplink-chameleon-projector-desc = Disappear in plain sight by creating a hologram of an item around you. Do not use this to play the game "Object Search".
 
 # Pointless
 uplink-revolver-cap-gun-name = Cap Gun

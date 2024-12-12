@@ -7,6 +7,7 @@
     - category: Health
     - category: Mood
     - category: Stamina
+    - alertType: ShadowkinPower
     - alertType: SuitPower
     - category: Internals
     - alertType: Fire
@@ -26,10 +27,11 @@
     - alertType: Magboots
     - alertType: Pacified
     - alertType: Offer
+    - alertType: Deflecting
 
 - type: entity
   id: AlertSpriteView
-  categories: [ hideSpawnMenu ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     layers:
@@ -190,6 +192,7 @@
 - type: alert
   id: HumanHealth
   category: Health
+  onClick: !type:CheckHealth { }
   icons:
   - sprite: /Textures/Interface/Alerts/human_alive.rsi
     state: health0
@@ -608,3 +611,11 @@
       state: mood_happiness_bad
   name: alerts-mood-dead-name
   description: alerts-mood-dead-desc
+
+- type: alert
+  id: Deflecting
+  icons:
+  - sprite: /Textures/Interface/Alerts/deflecting.rsi
+    state: deflecting0
+  name: alerts-deflecting-name
+  description: alerts-deflecting-desc

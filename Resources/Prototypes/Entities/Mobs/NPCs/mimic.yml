@@ -1,3 +1,4 @@
+# TODO: Pending a rewrite of Mob Replacement System, this entire list should just be moved into a ComponentRegistry on the event.
 - type: entity
   name: Mimic
   id: MobMimic
@@ -16,7 +17,6 @@
   - type: NpcFactionMember
     factions:
     - SimpleHostile
-  - type: Hands
   - type: Sprite
     drawdepth: Mobs
     sprite: Structures/Machines/VendingMachines/cola.rsi
@@ -43,4 +43,3 @@
     damage:
       types:
         Blunt: 20
-  - type: PsionicInsulation

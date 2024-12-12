@@ -10,20 +10,16 @@ using Content.Shared.Popups;
 using Content.Shared.Silicon.Systems;
 using Content.Shared.Movement.Systems;
 using Content.Server.Body.Components;
-using Content.Server.Power.EntitySystems;
 using Robust.Shared.Containers;
 using Content.Shared.Mind.Components;
 using System.Diagnostics.CodeAnalysis;
 using Content.Server.PowerCell;
 using Robust.Shared.Timing;
 using Robust.Shared.Configuration;
-using Robust.Shared.Audio.Systems;
 using Robust.Shared.Utility;
 using Content.Shared.CCVar;
 using Content.Shared.PowerCell.Components;
-using Content.Shared.Mind;
 using Content.Shared.Alert;
-using Content.Server.Silicon.Death;
 
 namespace Content.Server.Silicon.Charge;
 
@@ -34,7 +30,6 @@ public sealed class SiliconChargeSystem : EntitySystem
     [Dependency] private readonly FlammableSystem _flammable = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _moveMod = default!;
-    [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IConfigurationManager _config = default!;
     [Dependency] private readonly PowerCellSystem _powerCell = default!;
@@ -49,15 +44,13 @@ public sealed class SiliconChargeSystem : EntitySystem
     public bool TryGetSiliconBattery(EntityUid silicon, [NotNullWhen(true)] out BatteryComponent? batteryComp)
     {
         batteryComp = null;
-        if (!TryComp(silicon, out SiliconComponent? siliconComp))
+        if (!HasComp<SiliconComponent>(silicon))
             return false;
-
 
         // try get a battery directly on the inserted entity
         if (TryComp(silicon, out batteryComp)
             || _powerCell.TryGetBatteryFromSlot(silicon, out batteryComp))
             return true;
-
 
         //DebugTools.Assert("SiliconComponent does not contain Battery");
         return false;
@@ -65,10 +58,8 @@ public sealed class SiliconChargeSystem : EntitySystem
 
     private void OnSiliconStartup(EntityUid uid, SiliconComponent component, ComponentStartup args)
     {
-        if (!TryComp(uid, out PowerCellSlotComponent? batterySlot))
+        if (!HasComp<PowerCellSlotComponent>(uid))
             return;
-
-        var container = _container.GetContainer(uid, batterySlot.CellSlotId);
 
         if (component.EntityType.GetType() != typeof(SiliconType))
             DebugTools.Assert("SiliconComponent.EntityType is not a SiliconType enum.");
@@ -82,7 +73,8 @@ public sealed class SiliconChargeSystem : EntitySystem
         var query = EntityQueryEnumerator<SiliconComponent>();
         while (query.MoveNext(out var silicon, out var siliconComp))
         {
-            if (!siliconComp.BatteryPowered)
+            if (_mobState.IsDead(silicon)
+                || !siliconComp.BatteryPowered)
                 continue;
 
             // Check if the Silicon is an NPC, and if so, follow the delay as specified in the CVAR.
@@ -99,27 +91,18 @@ public sealed class SiliconChargeSystem : EntitySystem
             if (!TryGetSiliconBattery(silicon, out var batteryComp))
             {
                 UpdateChargeState(silicon, 0, siliconComp);
-                if (_alerts.IsShowingAlert(silicon, AlertType.BorgBattery))
+                if (_alerts.IsShowingAlert(silicon, siliconComp.BatteryAlert))
                 {
-                    _alerts.ClearAlert(silicon, AlertType.BorgBattery);
-                    _alerts.ShowAlert(silicon, AlertType.BorgBatteryNone);
+                    _alerts.ClearAlert(silicon, siliconComp.BatteryAlert);
+                    _alerts.ShowAlert(silicon, siliconComp.NoBatteryAlert);
                 }
                 continue;
             }
 
-            // If the silicon is dead, skip it.
-            if (_mobState.IsDead(silicon))
+            // If the silicon ghosted or is SSD while still being powered, skip it.
+            if (TryComp<MindContainerComponent>(silicon, out var mindContComp)
+                && !mindContComp.HasMind)
                 continue;
-
-            // If the silicon ghosted or is SSD while still being powered, skip it. - DeltaV
-            if (EntityManager.TryGetComponent<MindContainerComponent>(silicon, out var mindContComp)
-                && EntityManager.TryGetComponent<SiliconDownOnDeadComponent>(silicon, out var siliconDeathComp))
-            {
-                if ((mindContComp.HasMind == false || CompOrNull<MindComponent>(mindContComp.Mind)?.Session == null) && !siliconDeathComp.Dead)
-                {
-                    continue;
-                }
-            }
 
             var drainRate = siliconComp.DrainPerSecond;
 
@@ -131,7 +114,7 @@ public sealed class SiliconChargeSystem : EntitySystem
             // Maybe use something similar to refreshmovespeedmodifiers, where it's stored in the component.
             // Maybe it doesn't matter, and stuff should just use static drain?
             if (!siliconComp.EntityType.Equals(SiliconType.Npc)) // Don't bother checking heat if it's an NPC. It's a waste of time, and it'd be delayed due to the update time.
-                drainRateFinalAddi += SiliconHeatEffects(silicon, frameTime) - 1; // This will need to be changed at some point if we allow external batteries, since the heat of the Silicon might not be applicable.
+                drainRateFinalAddi += SiliconHeatEffects(silicon, siliconComp, frameTime) - 1; // This will need to be changed at some point if we allow external batteries, since the heat of the Silicon might not be applicable.
 
             // Ensures that the drain rate is at least 10% of normal,
             // and would allow at least 4 minutes of life with a max charge, to prevent cheese.
@@ -159,20 +142,18 @@ public sealed class SiliconChargeSystem : EntitySystem
         _moveMod.RefreshMovementSpeedModifiers(uid);
 
         // If the battery was replaced and the no battery indicator is showing, replace the indicator
-        if (_alerts.IsShowingAlert(uid, AlertType.BorgBatteryNone) && chargePercent != 0)
+        if (_alerts.IsShowingAlert(uid, component.NoBatteryAlert) && chargePercent != 0)
         {
-            _alerts.ClearAlert(uid, AlertType.BorgBatteryNone);
-            _alerts.ShowAlert(uid, AlertType.BorgBattery, chargePercent);
+            _alerts.ClearAlert(uid, component.NoBatteryAlert);
+            _alerts.ShowAlert(uid, component.BatteryAlert, chargePercent);
         }
     }
 
-    private float SiliconHeatEffects(EntityUid silicon, float frameTime)
+    private float SiliconHeatEffects(EntityUid silicon, SiliconComponent siliconComp, float frameTime)
     {
-        if (!EntityManager.TryGetComponent<TemperatureComponent>(silicon, out var temperComp) 
-            || !EntityManager.TryGetComponent<ThermalRegulatorComponent>(silicon, out var thermalComp))
+        if (!TryComp<TemperatureComponent>(silicon, out var temperComp)
+            || !TryComp<ThermalRegulatorComponent>(silicon, out var thermalComp))
             return 0;
-
-        var siliconComp = EntityManager.GetComponent<SiliconComponent>(silicon);
 
         // If the Silicon is hot, drain the battery faster, if it's cold, drain it slower, capped.
         var upperThresh = thermalComp.NormalBodyTemperature + thermalComp.ThermalRegulationTemperatureThreshold;
@@ -198,12 +179,11 @@ public sealed class SiliconChargeSystem : EntitySystem
                 return hotTempMulti;
 
             _popup.PopupEntity(Loc.GetString("silicon-overheating"), silicon, silicon, PopupType.MediumCaution);
-            if (_random.Prob(Math.Clamp(temperComp.CurrentTemperature / (upperThresh * 5), 0.001f, 0.9f)))
-            {
-                //MaximumFireStacks and MinimumFireStacks doesn't exists on EE
-                _flammable.AdjustFireStacks(silicon, Math.Clamp(siliconComp.FireStackMultiplier,  -10, 10), flamComp);
-                _flammable.Ignite(silicon, silicon, flamComp);
-            }
+            if (!_random.Prob(Math.Clamp(temperComp.CurrentTemperature / (upperThresh * 5), 0.001f, 0.9f)))
+                return hotTempMulti;
+
+            _flammable.AdjustFireStacks(silicon, Math.Clamp(siliconComp.FireStackMultiplier, -10, 10), flamComp);
+            _flammable.Ignite(silicon, silicon, flamComp);
             return hotTempMulti;
         }
 

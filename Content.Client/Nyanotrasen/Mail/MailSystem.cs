@@ -28,13 +28,14 @@ public sealed class MailJobVisualizerSystem : VisualizerSystem<MailComponent>
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly SpriteSystem _stateManager = default!;
     [Dependency] private readonly SpriteSystem _spriteSystem = default!;
+    [Dependency] private readonly SharedAppearanceSystem _appearanceSystem = default!;
 
     protected override void OnAppearanceChange(EntityUid uid, MailComponent component, ref AppearanceChangeEvent args)
     {
         if (args.Sprite == null)
             return;
 
-        args.Component.TryGetData(MailVisuals.JobIcon, out string job);
+        _appearanceSystem.TryGetData(uid, MailVisuals.JobIcon, out string job);
 
         if (string.IsNullOrEmpty(job))
             job = "JobIconUnknown";

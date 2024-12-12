@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from BlueMoon at https://github.com/BlueMoon-Labs/MOLOT-BlueMoon-Station/blob/master/modular_bluemoon/krashly/icons/obj/chairs.dmi",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "barberchair",
+      "directions": 4
+    }
+  ]
+}

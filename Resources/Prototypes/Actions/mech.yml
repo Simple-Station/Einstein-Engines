@@ -2,7 +2,7 @@
   id: ActionMechCycleEquipment
   name: Cycle
   description: Cycles currently selected equipment
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     itemIconStyle: NoItem
@@ -16,7 +16,7 @@
   id: ActionMechOpenUI
   name: Control Panel
   description: Opens the control panel for the mech
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     itemIconStyle: NoItem
@@ -30,7 +30,7 @@
   id: ActionMechEject
   name: Eject
   description: Ejects the pilot from the mech
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     itemIconStyle: NoItem

@@ -4,10 +4,16 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared.Language;
 
 [Prototype("language")]
-public sealed class LanguagePrototype : IPrototype
+public sealed partial class LanguagePrototype : IPrototype
 {
     [IdDataField]
-    public string ID { get; private set;  } = default!;
+    public string ID { get; private set; } = default!;
+
+    /// <summary>
+    ///     Whether this language will display its name in chat behind a player's name.
+    /// </summary>
+    [DataField]
+    public bool IsVisibleLanguage { get; set; }
 
     /// <summary>
     ///     Obfuscation method used by this language. By default, uses <see cref="ObfuscationMethod.Default"/>
@@ -26,6 +32,11 @@ public sealed class LanguagePrototype : IPrototype
     ///     The in-world name of this language, localized.
     /// </summary>
     public string Name => Loc.GetString($"language-{ID}-name");
+
+    /// <summary>
+    ///     The in-world chat abbreviation of this language, localized.
+    /// </summary>
+    public string ChatName => Loc.GetString($"chat-language-{ID}-name");
 
     /// <summary>
     ///     The in-world description of this language, localized.
@@ -52,6 +63,14 @@ public sealed partial class SpeechOverrideInfo
 
     [DataField]
     public bool AllowRadio = true;
+
+    /// <summary>
+    ///     If true, the message will be relayed to the Empathy Chat and
+    ///     anyone with that language will also hear Empathy Chat. (Unless user has ShadowkinBlackeyeComponent)
+    ///     This is mostly only use for "Marish" but... fuckit modularity :p
+    /// </summary>
+    [DataField]
+    public bool EmpathySpeech = false;
 
     /// <summary>
     ///     If false, the entity can use this language even when it's unable to speak (i.e. muffled or muted),

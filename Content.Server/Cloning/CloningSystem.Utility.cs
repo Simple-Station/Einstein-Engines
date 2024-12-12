@@ -21,9 +21,9 @@ using Content.Shared.SSDIndicator;
 using Content.Shared.Damage.ForceSay;
 using Content.Shared.Chat;
 using Content.Server.Body.Components;
+using Content.Server.Language;
 using Content.Shared.Abilities.Psionics;
 using Content.Shared.Language.Components;
-using Content.Shared.Language;
 using Content.Shared.Nutrition.Components;
 using Robust.Shared.Enums;
 
@@ -68,9 +68,10 @@ public sealed partial class CloningSystem
 
         if (ev.Cancelled && ev.CloningFailMessage is not null)
         {
-            _chatSystem.TrySendInGameICMessage(uid,
-                Loc.GetString(ev.CloningFailMessage),
-                InGameICChatType.Speak, false);
+            if (clonePod.ConnectedConsole is not null)
+                _chatSystem.TrySendInGameICMessage(clonePod.ConnectedConsole.Value,
+                    Loc.GetString(ev.CloningFailMessage),
+                    InGameICChatType.Speak, false);
             return false;
         }
 
@@ -252,7 +253,7 @@ public sealed partial class CloningSystem
                 ? physics.Mass
                 : 71));
 
-        bloodSolution.AddReagent("blood", 0.8f
+        bloodSolution.AddReagent("Blood", 0.8f
             * ((blood is not null)
                 ? blood.BloodMaxVolume
                 : 300));

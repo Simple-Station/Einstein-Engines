@@ -1,6 +1,8 @@
 using Content.Server.Body.Systems;
 using Content.Server.Chemistry.EntitySystems;
+using Content.Server.Traits;
 using Content.Server.Traits.Assorted;
+using Content.Shared.Alert;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Damage;
@@ -82,6 +84,14 @@ namespace Content.Server.Body.Components
         /// </summary>
         [DataField]
         public FixedPoint2 BloodRefreshAmount = 1.0f;
+
+        /// <summary>
+        ///     How much hunger/thirst is used to regenerate one unit of blood. Set to zero to disable.
+        ///     The actual thirst/hunger rate will scale with <see cref="BloodRefreshAmount"/>.
+        /// </summary>
+        /// <remarks>Those will have no effect if the entity has no hunger/thirst components.</remarks>
+        [DataField]
+        public float BloodRegenerationHunger = 1f, BloodRegenerationThirst = 1f;
 
         /// <summary>
         ///     How much blood needs to be in the temporary solution in order to create a puddle?
@@ -173,17 +183,7 @@ namespace Content.Server.Body.Components
         [ViewVariables(VVAccess.ReadWrite)]
         public TimeSpan StatusTime;
 
-        /// <summary>
-        ///     If this is true, the entity will not passively regenerate blood,
-        ///     and instead will slowly lose blood.
-        /// </summary>
         [DataField]
-        public bool HasBloodDeficiency = false;
-
-        /// <summary>
-        ///     How much percentage of max blood volume should be removed with blood deficiency in each update interval?
-        /// </summary>
-        [DataField]
-        public float BloodDeficiencyLossPercentage;
+        public ProtoId<AlertPrototype> BleedingAlert = "Bleed";
     }
 }

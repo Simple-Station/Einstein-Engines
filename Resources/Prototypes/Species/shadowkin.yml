@@ -1,0 +1,179 @@
+- type: species
+  id: Shadowkin
+  name: species-name-shadowkin
+  roundStart: false
+  prototype: MobShadowkin
+  sprites: MobShadowkinSprites
+  defaultSkinTone: "#FFFFFF"
+  markingLimits: MobShadowkinMarkingLimits
+  dollPrototype: MobShadowkinDummy
+  skinColoration: Hues
+  naming: First
+  maleFirstNames: names_shadowkin
+  femaleFirstNames: names_shadowkin
+  minAge: 18
+  maxAge: 300
+  youngAge: 20
+  oldAge: 250
+  sexes:
+    - Male
+    - Female
+    - Unsexed
+  minHeight: 0.65
+  defaultHeight: 0.85
+  maxHeight: 1.15
+  minWidth: 0.6
+  defaultWidth: 0.85
+  maxWidth: 1.2
+
+- type: speciesBaseSprites
+  id: MobShadowkinSprites
+  sprites:
+    Head: MobShadowkinHead
+    Snout: MobShadowkinAnyMarkingFollowSkin
+    HeadTop: MobShadowkinAnyMarkingFollowSkin
+    HeadSide: MobShadowkinAnyMarkingFollowSkin
+    Tail: MobShadowkinAnyMarkingFollowSkin
+    Chest: MobShadowkinTorso
+    Eyes: MobShadowkinEyes
+    LArm: MobShadowkinLArm
+    RArm: MobShadowkinRArm
+    LHand: MobShadowkinLHand
+    RHand: MobShadowkinRHand
+    LLeg: MobShadowkinLLeg
+    RLeg: MobShadowkinRLeg
+    LFoot: MobShadowkinLFoot
+    RFoot: MobShadowkinRFoot
+
+- type: markingPoints
+  id: MobShadowkinMarkingLimits
+  points:
+    Tail:
+      points: 1
+      required: true
+      defaultMarkings: [TailShadowkin]
+    HeadTop:
+      points: 1
+      required: true
+      defaultMarkings: [EarsShadowkin]
+    Chest:
+      points: 1
+      required: false
+    RightLeg:
+      points: 2
+      required: false
+    RightFoot:
+      points: 2
+      required: false
+    LeftLeg:
+      points: 2
+      required: false
+    LeftFoot:
+      points: 2
+      required: false
+    RightArm:
+      points: 2
+      required: false
+    RightHand:
+      points: 2
+      required: false
+    LeftArm:
+      points: 2
+      required: false
+    LeftHand:
+      points: 2
+      required: false
+
+- type: humanoidBaseSprite
+  id: MobShadowkinAnyMarkingFollowSkin
+  markingsMatchSkin: true
+
+- type: humanoidBaseSprite
+  id: MobShadowkinHead
+  baseSprite:
+    sprite: Mobs/Species/Shadowkin/parts.rsi
+    state: head_m
+
+- type: humanoidBaseSprite
+  id: MobShadowkinHeadMale
+  baseSprite:
+    sprite: Mobs/Species/Shadowkin/parts.rsi
+    state: head_m
+
+- type: humanoidBaseSprite
+  id: MobShadowkinHeadFemale
+  baseSprite:
+    sprite: Mobs/Species/Shadowkin/parts.rsi
+    state: head_f
+
+- type: humanoidBaseSprite
+  id: MobShadowkinTorso
+  baseSprite:
+    sprite: Mobs/Species/Shadowkin/parts.rsi
+    state: torso_m
+
+- type: humanoidBaseSprite
+  id: MobShadowkinTorsoMale
+  baseSprite:
+    sprite: Mobs/Species/Shadowkin/parts.rsi
+    state: torso_m
+
+- type: humanoidBaseSprite
+  id: MobShadowkinTorsoFemale
+  baseSprite:
+    sprite: Mobs/Species/Shadowkin/parts.rsi
+    state: torso_f
+
+- type: humanoidBaseSprite
+  id: MobShadowkinLLeg
+  baseSprite:
+    sprite: Mobs/Species/Shadowkin/parts.rsi
+    state: l_leg
+
+- type: humanoidBaseSprite
+  id: MobShadowkinLHand
+  baseSprite:
+    sprite: Mobs/Species/Shadowkin/parts.rsi
+    state: l_hand
+
+- type: humanoidBaseSprite
+  id: MobShadowkinEyes
+  baseSprite:
+    sprite: Mobs/Species/Shadowkin/parts.rsi
+    state: eyes
+
+- type: humanoidBaseSprite
+  id: MobShadowkinLArm
+  baseSprite:
+    sprite: Mobs/Species/Shadowkin/parts.rsi
+    state: l_arm
+
+- type: humanoidBaseSprite
+  id: MobShadowkinLFoot
+  baseSprite:
+    sprite: Mobs/Species/Shadowkin/parts.rsi
+    state: l_foot
+
+- type: humanoidBaseSprite
+  id: MobShadowkinRLeg
+  baseSprite:
+    sprite: Mobs/Species/Shadowkin/parts.rsi
+    state: r_leg
+
+- type: humanoidBaseSprite
+  id: MobShadowkinRHand
+  baseSprite:
+    sprite: Mobs/Species/Shadowkin/parts.rsi
+    state: r_hand
+
+- type: humanoidBaseSprite
+  id: MobShadowkinRArm
+  baseSprite:
+    sprite: Mobs/Species/Shadowkin/parts.rsi
+    state: r_arm
+
+- type: humanoidBaseSprite
+  id: MobShadowkinRFoot
+  baseSprite:
+    sprite: Mobs/Species/Shadowkin/parts.rsi
+    state: r_foot

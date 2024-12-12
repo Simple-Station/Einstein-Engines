@@ -14,11 +14,13 @@
     bluntStaminaDamageFactor: 2.0
     heavyRateModifier: 0.5
     heavyDamageBaseModifier: 1.75
-    heavyStaminaCost: 25
-    maxTargets: 2
+    heavyStaminaCost: 15
     angle: 120
     soundHit:
       collection: ExplosionSmall
+  - type: DamageOtherOnHit
+    soundHit:
+      collection: MetalThud # A throw won't knock them back so it's just a normal thud
   - type: MeleeRequiresWield # You can't hit a home run with one hand, jimbo.
   - type: MeleeThrowOnHit
     speed: 30

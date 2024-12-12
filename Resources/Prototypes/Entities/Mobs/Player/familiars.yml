@@ -1,6 +1,75 @@
 - type: entity
+  parent:
+  - BaseMob
+  - MobCombat
+  - MobDamageable
+  id: BaseMobPsionicFamiliar
+  abstract: true
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: bat
+      sprite: Mobs/Animals/bat.rsi
+  - type: GhostRole
+    makeSentient: true
+    allowMovement: true
+    allowSpeech: true
+    name: ghost-role-information-familiar-name
+    description: ghost-role-information-familiar-description
+    rules: ghost-role-information-familiar-rules
+    raffle:
+      settings: default
+  - type: GhostTakeoverAvailable
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      50: Dead
+  - type: Damageable
+    damageContainer: CorporealSpirit
+    damageModifierSet: CorporealSpirit
+  - type: MindContainer
+    showExamineInfo: false
+  - type: NpcFactionMember
+    factions:
+    - PsionicInterloper
+  - type: Alerts
+  - type: Familiar
+  - type: Psionic
+    removable: false
+    psychognomicDescriptors:
+      - p-descriptor-bound
+      - p-descriptor-cyclic
+  - type: InnatePsionicPowers
+    powersToAdd:
+      - TelepathyPower
+  - type: HTN
+    rootTask:
+      task: MeleePsionicFamiliarCompound
+    blackboard:
+      IdleRange: !type:Single
+        3.5
+      FollowCloseRange: !type:Single
+        2.0
+      FollowRange: !type:Single
+        3.0
+  - type: NPCRetaliation
+    attackMemoryLength: 10
+    retaliateFriendlies: true
+  - type: PsionicFamiliar
+  - type: Dispellable
+  - type: DamageOnDispel
+    damage:
+      types:
+        Heat: 100
+
+- type: entity
   name: Remilia
-  parent: MobBat
+  parent: BaseMobPsionicFamiliar
   id: MobBatRemilia
   description: The chaplain's familiar. Likes fruit.
   components:
@@ -23,25 +92,47 @@
   - type: Access
     tags:
     - Chapel
-  - type: Damageable # Nyanotrasen - Corporeal Spirit allows Holy water to do damage
-    damageContainer: CorporealSpirit
-    damageModifierSet: CorporealSpirit
-  - type: MindContainer
-    showExamineInfo: true
-  - type: NpcFactionMember
-    factions:
-    - PetsNT
-    - PsionicInterloper #Nyano - Summary: makes a part of the psionic faction.
-  - type: Alerts
-  - type: Familiar
-  - type: Psionic
-    removable: false
-    psychognomicDescriptors:
-      - p-descriptor-bound
-      - p-descriptor-cyclic
   - type: InnatePsionicPowers
     powersToAdd:
       - TelepathyPower
+      - XenoglossyPower
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 3
+    baseSprintSpeed : 6
+  - type: Speech
+    speechSounds: Squeak
+    speechVerb: SmallMob
+    allowedEmotes: ['Squeak']
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.25
+        density: 0.8
+        mask:
+        - FlyingMobMask
+        layer:
+        - FlyingMobLayer
+  - type: InteractionPopup
+    successChance: 0.2
+    interactSuccessString: petting-success-soft-floofy
+    interactFailureString: petting-failure-bat
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/Animals/fox_squeak.ogg
+  - type: MeleeWeapon
+    soundHit:
+        path: /Audio/Effects/bite.ogg
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Piercing: 5
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      30: Dead
 
 - type: entity
   name: Cerberus
@@ -56,6 +147,8 @@
     name: ghost-role-information-cerberus-name
     description: ghost-role-information-cerberus-description
     rules: ghost-role-information-cerberus-rules
+    raffle:
+      settings: default
   - type: GhostTakeoverAvailable
   - type: MeleeWeapon
     altDisarm: false
@@ -72,7 +165,7 @@
   - type: NpcFactionMember
     factions:
     - Syndicate
-    - PsionicInterloper #Nyano - Summary: makes part of the psionoic faction.
+    - PsionicInterloper
   - type: InteractionPopup
     successChance: 0.5
     interactSuccessString: petting-success-corrupted-corgi
@@ -97,7 +190,7 @@
     showExamineInfo: true
   - type: Familiar
   - type: Dispellable
-  - type: Psionic #Nyano - Summary: makes psionic on creation.
+  - type: Psionic
     removable: false
   - type: InnatePsionicPowers
     powersToAdd:
@@ -107,3 +200,47 @@
       Male: Cerberus
       Female: Cerberus
       Unsexed: Cerberus
+
+- type: entity
+  name: imp familiar
+  parent: BaseMobPsionicFamiliar
+  id: MobPsionicFamiliarImp
+  description: A living mote of flame summoned from Gehenna.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: imp
+      sprite: Mobs/Demons/imp.rsi
+  - type: InnatePsionicPowers
+    powersToAdd:
+      - TelepathyPower
+      - PyrokineticFlare
+      - XenoglossyPower
+  - type: MeleeWeapon
+    damage:
+      types:
+        Heat: 9
+    soundHit:
+      path: /Audio/Weapons/Guns/Hits/energy_meat1.ogg
+      params:
+        variation: 0.250
+        volume: -10
+  - type: PointLight
+    radius: 2
+    energy: 30
+    color: "#ff4500"
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 13
+        mask:
+        - Opaque
+        layer:
+        - MobLayer
+  - type: RandomMetadata
+    nameSegments: [names_golem]

@@ -116,3 +116,21 @@
   icon: { sprite: Objects/Materials/ore.rsi, state: coal }
   color: "#404040"
   price: 0
+
+- type: material
+  id: Bluespace
+  stackEntity: MaterialBluespace1
+  name: materials-bluespace
+  unit: materials-unit-piece
+  icon: { sprite: Objects/Materials/materials.rsi, state: bluespace }
+  color: "#53a9ff"
+  price: 7.5
+
+- type: material
+  id: Normality
+  stackEntity: MaterialNormality1
+  name: materials-normality
+  unit: materials-unit-piece
+  icon: { sprite: Objects/Materials/materials.rsi, state: normality }
+  color: "#53a9ff"
+  price: 7.5

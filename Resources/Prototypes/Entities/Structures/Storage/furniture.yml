@@ -1,0 +1,49 @@
+# Washing Machines
+- type: entity
+  parent: ClosetBase
+  id: FurnitureWashingmachine
+  name: washing machine
+  description: wishy washy.
+  components:
+  - type: Sprite
+    sprite: Structures/Storage/Furniture/washingmachine.rsi
+    layers:
+    - state: generic
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: generic_door
+      map: ["enum.StorageVisualLayers.Door"]
+  - type: EntityStorageVisuals
+    stateBaseClosed: generic
+    stateDoorOpen: generic_open
+    stateDoorClosed: generic_door
+  - type: Transform
+    anchored: true
+    noRot: false
+  - type: Physics
+    bodyType: Static
+
+- type: entity
+  parent: FurnitureWashingmachine
+  id: FurnitureWashingmachineIndustrial
+  suffix: Industrial
+  components:
+  - type: Sprite
+    sprite: Structures/Storage/Furniture/washingmachine_industrial.rsi
+
+# Safes
+- type: entity
+  parent: ClosetBaseW
+  id: ClosetSafe
+  name: safe
+  description: Might be filled with valuables.
+  components:
+  - type: Sprite
+    sprite: Structures/Storage/Furniture/safe.rsi
+
+- type: entity
+  parent: ClosetSafe
+  id: ClosetSafeSpinner
+  suffix: spinner
+  components:
+  - type: Sprite
+    sprite: Structures/Storage/Furniture/safespinner.rsi

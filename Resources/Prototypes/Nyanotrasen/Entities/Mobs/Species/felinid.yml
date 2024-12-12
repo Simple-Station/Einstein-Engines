@@ -67,12 +67,10 @@
   - type: NoShoesSilentFootsteps
   - type: LanguageKnowledge
     speaks:
-    - GalacticCommon
-    - SolCommon
+    - TauCetiBasic
     - Nekomimetic
     understands:
-    - GalacticCommon
-    - SolCommon
+    - TauCetiBasic
     - Nekomimetic
   - type: Thieving
     ignoreStripHidden: true
@@ -80,13 +78,19 @@
     stripTimeReduction: 0
     stripTimeMultiplier: 0.667
   - type: StepTriggerImmune
+    whitelist:
+      types:
+        - Shard
+        - Landmine
+        - Mousetrap
+        - SlipEntity
 
 - type: entity
   save: false
   name: Urist McHands
   parent: MobHumanDummy
   id: MobFelinidDummy
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: A dummy felinid meant to be used in character setup.
   components:
   - type: HumanoidAppearance

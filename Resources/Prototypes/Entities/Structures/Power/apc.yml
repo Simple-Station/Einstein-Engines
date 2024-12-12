@@ -1,5 +1,5 @@
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: BaseAPC
   name: APC
   description: A control terminal for the area's electrical systems.
@@ -81,8 +81,8 @@
   - type: ExtensionCableProvider
   - type: UserInterface
     interfaces:
-    - key: enum.ApcUiKey.Key
-      type: ApcBoundUserInterface
+      enum.ApcUiKey.Key:
+        type: ApcBoundUserInterface
   - type: ActivatableUI
     inHandsOnly: false
     singleUser: true
@@ -143,7 +143,7 @@
 
 # APC under construction
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: APCFrame
   name: APC frame
   description: A control terminal for the area's electrical systems, lacking the electronics.

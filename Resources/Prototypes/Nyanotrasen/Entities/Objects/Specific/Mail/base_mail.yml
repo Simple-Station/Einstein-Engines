@@ -5,11 +5,13 @@
   name: mail-item-name-unaddressed
   components:
   - type: Item
-    size: Normal
+#    size: Normal # Frontier
+    storedRotation: -90
   - type: Mail
   - type: AccessReader
   - type: Sprite
-    sprite: Nyanotrasen/Objects/Specific/Mail/mail.rsi
+    scale: 0.7, 0.7 # Frontier
+    sprite: Objects/Specific/Mail/mail.rsi
     layers:
     - state: icon
       map: ["enum.MailVisualLayers.Icon"]
@@ -18,8 +20,8 @@
       map: ["enum.MailVisualLayers.FragileStamp"]
       visible: false
     - map: ["enum.MailVisualLayers.JobStamp"]
-      scale: 0.5, 0.5
-      offset: 0.275, 0.2
+      scale: 0.8, 0.8 # Frontier 0.5<0.8
+      offset: 0.225, 0.165 # Frontier (0.275, 0.2)<(0.225, 0.165)
     - state: locked
       map: ["enum.MailVisualLayers.Lock"]
     - state: priority
@@ -77,7 +79,6 @@
     - trigger:
         !type:DamageTrigger
         damage: 5
-        triggersOnce: true
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Breakage" ]
@@ -92,11 +93,25 @@
     damage:
       types:
         Blunt: 10
+  - type: CargoSellBlacklist # Frontier
+  - type: Food # Frontier - Moth food
+    requiresSpecialDigestion: true
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 1
+        reagents:
+        - ReagentId: Nothing
+          Quantity: 1
+  - type: LanguageSpeaker
+  - type: LanguageKnowledge
+    speaks: [TauCetiBasic] # So that them foreigners can't understand what the broken mail is saying
+    understands: []
 
 # This empty parcel is allowed to exist and evade the tests for the admin
 # mailto command.
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseMail
   id: MailAdminFun
   suffix: adminfun

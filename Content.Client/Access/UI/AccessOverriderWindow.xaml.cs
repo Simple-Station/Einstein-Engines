@@ -32,7 +32,7 @@ namespace Content.Client.Access.UI
             {
                 if (!prototypeManager.TryIndex(access, out var accessLevel))
                 {
-                    logMill.Error($"Unable to find accesslevel for {access}");
+                    logMill.Error($"Unable to find access level for {access}");
                     continue;
                 }
 
@@ -66,11 +66,11 @@ namespace Content.Client.Access.UI
 
             if (state.MissingPrivilegesList != null && state.MissingPrivilegesList.Any())
             {
-                List<string> missingPrivileges = new List<string>();
+                var missingPrivileges = new List<string>();
 
                 foreach (string tag in state.MissingPrivilegesList)
                 {
-                    string privilege = Loc.GetString(_prototypeManager.Index<AccessLevelPrototype>(tag)?.Name ?? "generic-unknown");
+                    var privilege = Loc.GetString(_prototypeManager.Index<AccessLevelPrototype>(tag)?.Name ?? "generic-unknown");
                     missingPrivileges.Add(privilege);
                 }
 
@@ -83,20 +83,20 @@ namespace Content.Client.Access.UI
             foreach (var (accessName, button) in _accessButtons)
             {
                 button.Disabled = !interfaceEnabled;
-                if (interfaceEnabled)
-                {
-                    button.Pressed = state.TargetAccessReaderIdAccessList?.Contains(accessName) ?? false;
-                    button.Disabled = (!state.AllowedModifyAccessList?.Contains(accessName)) ?? true;
-                }
+                if (!interfaceEnabled)
+                    return;
+
+                button.Pressed = state.TargetAccessReaderIdAccessList?.Contains<ProtoId<AccessLevelPrototype>>(accessName) ?? false;
+                button.Disabled = (!state.AllowedModifyAccessList?.Contains<ProtoId<AccessLevelPrototype>>(accessName)) ?? true;
             }
         }
 
-        private void SubmitData()
-        {
+        private void SubmitData() =>
             _owner.SubmitData(
-
                 // Iterate over the buttons dictionary, filter by `Pressed`, only get key from the key/value pair
-                _accessButtons.Where(x => x.Value.Pressed).Select(x => new ProtoId<AccessLevelPrototype>(x.Key)).ToList());
-        }
+                _accessButtons.Where(x => x.Value.Pressed)
+                    .Select(x => new ProtoId<AccessLevelPrototype>(x.Key))
+                    .ToList()
+                );
     }
 }

@@ -23,6 +23,33 @@
     ammoSlots: [ null, null, null, null, null, null ]
 
 - type: entity
+  name: snubbed .45
+  parent: WeaponRevolverSnub
+  id: WeaponRevolverSnubSecurity
+  description: An old and reliable revolver, modified to be more easily concealed. Uses .45 magnum ammo.
+               The serial number on the handguard marks this gun as belonging to an NT Security Officer.
+  components:
+  - type: GuideHelp
+    guides: [ SecurityWeapons ]
+
+- type: entity
+  name: snubbed .45
+  parent: WeaponRevolverSnubSecurity
+  id: WeaponRevolverSnubNonlethalSecurity
+  components:
+  - type: RevolverAmmoProvider
+    whitelist:
+      tags:
+        - CartridgeMagnum
+        - SpeedLoaderMagnum
+    proto: CartridgeMagnumRubber
+    capacity: 6
+    chambers: [ True, True, True, True, True, True ]
+    ammoSlots: [ null, null, null, null, null, null ]
+  - type: GuideHelp
+    guides: [ SecurityWeapons ]
+
+- type: entity
   name: k-38 masterpiece
   parent: BaseWeaponRevolver
   id: WeaponRevolverK38Master
@@ -42,10 +69,37 @@
       tags:
         - CartridgeSpecial
         - SpeedLoaderSpecial
+    proto: CartridgeSpecial
+    capacity: 6
+    chambers: [ True, True, True, True, True, True ]
+    ammoSlots: [ null, null, null, null, null, null ]
+
+- type: entity
+  name: k-38 masterpiece
+  parent: WeaponRevolverK38Master
+  id: WeaponRevolverK38MasterSecurity
+  description: A classic, if not outdated, law enforcement firearm. Uses .38 special ammo.
+               The serial number on the handguard marks this gun as belonging to an NT Security Officer.
+  components:
+  - type: GuideHelp
+    guides: [ SecurityWeapons ]
+
+- type: entity
+  name: k-38 masterpiece
+  parent: WeaponRevolverK38MasterSecurity
+  id: WeaponRevolverK38MasterNonlethalSecurity
+  components:
+  - type: RevolverAmmoProvider
+    whitelist:
+      tags:
+        - CartridgeSpecial
+        - SpeedLoaderSpecial
     proto: CartridgeSpecialRubber
     capacity: 6
     chambers: [ True, True, True, True, True, True ]
     ammoSlots: [ null, null, null, null, null, null ]
+  - type: GuideHelp
+    guides: [ SecurityWeapons ]
 
 - type: entity
   name: fitz special
@@ -67,10 +121,37 @@
       tags:
         - CartridgeSpecial
         - SpeedLoaderSpecial
+    proto: CartridgeSpecial
+    capacity: 6
+    chambers: [ True, True, True, True, True, True ]
+    ammoSlots: [ null, null, null, null, null, null ]
+
+- type: entity
+  name: fitz special
+  parent: WeaponRevolverFitz
+  id: WeaponRevolverFitzSecurity
+  description: A compact and concealable self defence snub revolver. Uses .38 special ammo.
+               The serial number on the handguard marks this gun as belonging to an NT Security Officer.
+  components:
+  - type: GuideHelp
+    guides: [ SecurityWeapons ]
+
+- type: entity
+  name: fitz special
+  parent: WeaponRevolverFitzSecurity
+  id: WeaponRevolverFitzNonlethalSecurity
+  components:
+  - type: RevolverAmmoProvider
+    whitelist:
+      tags:
+        - CartridgeSpecial
+        - SpeedLoaderSpecial
     proto: CartridgeSpecialRubber
     capacity: 6
     chambers: [ True, True, True, True, True, True ]
     ammoSlots: [ null, null, null, null, null, null ]
+  - type: GuideHelp
+    guides: [ SecurityWeapons ]
 
 - type: entity
   name: lucky 37

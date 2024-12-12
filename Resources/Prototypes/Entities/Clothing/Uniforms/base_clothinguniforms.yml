@@ -9,6 +9,12 @@
     slots: [innerclothing]
     equipSound:
       path: /Audio/Items/jumpsuit_equip.ogg
+  - type: EmitSoundOnPickup # Not sure why this wasn't set to the base; as all clothes should have clothing sounds.
+    sound: /Audio/SimpleStation14/Items/Handling/cloth_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/SimpleStation14/Items/Handling/cloth_drop.ogg
+  - type: EmitSoundOnLand
+    sound: /Audio/SimpleStation14/Items/Handling/cloth_drop.ogg
   - type: Butcherable
     butcheringType: Knife
     spawned:
@@ -36,7 +42,7 @@
   - type: Clothing
     slots: [innerclothing]
     femaleMask: UniformTop
-  - type: Tag #DeltaV, needed for species with nonhuman legs/can only wear skirts
+  - type: Tag # Needed for species with nonhuman legs/can only wear skirts
     tags:
     - Skirt
     - ClothMade
@@ -53,12 +59,6 @@
   - type: WirelessNetworkConnection
     range: 1200
   - type: StationLimitedNetwork
-  - type: EmitSoundOnPickup
-    sound: /Audio/SimpleStation14/Items/Handling/cloth_pickup.ogg
-  - type: EmitSoundOnDrop
-    sound: /Audio/SimpleStation14/Items/Handling/cloth_drop.ogg
-  - type: EmitSoundOnLand
-    sound: /Audio/SimpleStation14/Items/Handling/cloth_drop.ogg
 
 - type: entity
   abstract: true
@@ -68,7 +68,87 @@
   - type: Clothing
     slots: [innerclothing]
     femaleMask: UniformTop
-  - type: Tag #DeltaV, needed for species with nonhuman legs/can only wear skirts
+  - type: Tag # Needed for species with nonhuman legs/can only wear skirts
+              # And for moths to be able to eat this.
     tags:
     - Skirt
-    - ClothMade # Delta-V - allows moths to eat this
+    - ClothMade
+
+- type: entity # For clothes that need suit sensors.
+  parent: [UnsensoredClothingUniformBase, BaseFoldable]
+  id: ClothingUniformBaseUnsensoredFlippable
+  abstract: true
+  components:
+  - type: Appearance
+  - type: Foldable
+    canFoldInsideContainer: true
+    unfoldVerbText: fold-unrollsleeves-verb
+    foldVerbText: fold-rollsleeves-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: flipped
+    foldedHeldPrefix: flipped
+  - type: Sprite
+    layers:
+    - state: icon
+      map: [ "unfoldedLayer" ]
+    - state: icon_flipped
+      map: ["foldedLayer"]
+      visible: false
+
+- type: entity # For clothes that need suit sensors.
+  parent: ClothingHeadHeadHatBaseFlippable
+  id: ClothingUniformBaseUnsensoredFlipped
+  suffix: flipped
+  abstract: true
+  components:
+  - type: Foldable
+    folded: true
+  - type: Clothing
+    equippedPrefix: flipped
+  - type: Item
+    heldPrefix: flipped
+  - type: Sprite
+    layers:
+    - state: icon
+      map: [ "unfoldedLayer" ]
+      visible: false
+    - state: icon_flipped
+      map: ["foldedLayer"]
+      visible: true
+
+- type: entity # For clothes that don't need suit sensors.
+  parent: ClothingUniformBaseUnsensoredFlippable
+  id: ClothingUniformBaseFlippable
+  abstract: true
+  components:
+  - type: SuitSensor
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    transmitFrequencyId: SuitSensor
+  - type: WirelessNetworkConnection
+    range: 1200
+  - type: StationLimitedNetwork
+
+- type: entity # For clothes that don't need suit sensors.
+  parent: ClothingUniformBaseFlippable
+  id: ClothingUniformBaseFlipped
+  suffix: flipped
+  abstract: true
+  components: # I *think* I can just disregard the components;
+              # and inherit from ClothingUniformBaseFlippable
+              # and ClothingUniformBaseUnsensoredFlipped but I don't want to
+              # test that right now.
+  - type: Foldable
+    folded: true
+  - type: Clothing
+    equippedPrefix: flipped
+  - type: Item
+    heldPrefix: flipped
+  - type: Sprite
+    layers:
+    - state: icon
+      map: [ "unfoldedLayer" ]
+      visible: false
+    - state: icon_flipped
+      map: ["foldedLayer"]
+      visible: true

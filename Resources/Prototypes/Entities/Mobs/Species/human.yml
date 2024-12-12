@@ -16,15 +16,21 @@
     spawned:
     - id: FoodMeatHuman
       amount: 5
+  - type: HumanoidAppearance
+    species: Human
+    hideLayersOnEquip:
+    - Hair
+    - Snout
   - type: LanguageKnowledge
     speaks:
-    - GalacticCommon
+    - TauCetiBasic
     - SolCommon
     understands:
-    - GalacticCommon
+    - TauCetiBasic
     - SolCommon
+  - type: FootPrints
 
 - type: entity
   parent: BaseSpeciesDummy
   id: MobHumanDummy
-  noSpawn: true
+  categories: [ HideSpawnMenu ]

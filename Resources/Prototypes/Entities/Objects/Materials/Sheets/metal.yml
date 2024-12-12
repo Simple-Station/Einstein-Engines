@@ -15,6 +15,7 @@
     tags:
     - Sheet
     - Metal
+    - NoPaint
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Metallic
@@ -71,17 +72,82 @@
           Quantity: 1
   - type: UserInterface
     interfaces:
-    - key: enum.ShortConstructionUiKey.Key
-      type: ShortConstructionMenuBUI
+      enum.RadialSelectorUiKey.Key:
+        type: RadialSelectorMenuBUI
   - type: ActivatableUI
-    key: enum.ShortConstructionUiKey.Key
+    key: enum.RadialSelectorUiKey.Key
+    inHandsOnly: true
+    requireActiveHand: false
   - type: ShortConstruction
-    prototypes:
-    - Girder
-    - MetalRod
-    - TileSteel
-    - TileWhite
-    - TileDark
+    entries:
+    - prototype: Girder
+    - prototype: MetalRod
+    - category:
+        name: Tiles
+        icon:
+          sprite: Objects/Tiles/tile.rsi
+          state: steel
+        entries:
+        - prototype: TileSteel
+        - prototype: TileWhite
+        - prototype: TileDark
+    - category:
+        name: Electronics
+        icon:
+          sprite: Structures/Machines/computers.rsi
+          state: computer-datatheory
+        entries:
+        - prototype: MachineFrame
+        - prototype: Computer
+        - prototype: Windoor
+        - prototype: LightTubeFixture
+        - prototype: APC
+        - prototype: AirAlarmFixture
+        - prototype: AirSensor
+        - prototype: FireAlarm
+    - category:
+        name: Atmospherics
+        icon:
+          sprite: Structures/Piping/Atmospherics/vent.rsi
+          state: vent_out
+        entries:
+        - prototype: GasPort
+        - prototype: GasOutletInjector
+        - prototype: GasVentScrubber
+        - prototype: GasPassiveVent
+        - prototype: GasVentPump
+        - prototype: GasMixer
+        - prototype: GasFilter
+        - prototype: GasVolumePump
+        - prototype: GasPressurePump
+        - prototype: GasValve
+    - category:
+        name: Piping
+        icon:
+          sprite: Structures/Piping/Atmospherics/pipe.rsi
+          state: pipeFourway
+        entries:
+        - prototype: HeatExchanger
+        - prototype: GasPipeBend
+        - prototype: GasPipeFourway
+        - prototype: GasPipeHalf
+        - prototype: GasPipeStraight
+        - prototype: GasPipeTJunction
+    - category:
+        name: Disposals
+        icon:
+          sprite: Structures/Piping/disposal.rsi
+          state: disposal
+        entries:
+        - prototype: DisposalPipe
+        - prototype: DisposalBend
+        - prototype: DisposalJunction
+        - prototype: DisposalYJunction
+        - prototype: DisposalRouter
+        - prototype: DisposalTagger
+        - prototype: DisposalTrunk
+        - prototype: DisposalUnit
+    - prototype: CrateGenericSteel
 
 - type: entity
   parent: SheetSteel
@@ -218,6 +284,19 @@
         - ReagentId: Carbon
           Quantity: 1
         canReact: false
+  - type: UserInterface
+    interfaces:
+      enum.RadialSelectorUiKey.Key:
+        type: RadialSelectorMenuBUI
+  - type: ActivatableUI
+    key: enum.RadialSelectorUiKey.Key
+    inHandsOnly: true
+    requireActiveHand: false
+  - type: ShortConstruction
+    entries:
+    - prototype: SecureWindoor
+  - type: TwistedConstructionTarget
+    replacementProto: RunedMetal1
 
 - type: entity
   parent: SheetPlasteel

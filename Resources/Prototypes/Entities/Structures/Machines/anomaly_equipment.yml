@@ -27,8 +27,8 @@
   - type: ActivatableUIRequiresPower
   - type: UserInterface
     interfaces:
-    - key: enum.ResearchClientUiKey.Key
-      type: ResearchClientBoundUserInterface
+      enum.ResearchClientUiKey.Key:
+        type: ResearchClientBoundUserInterface
   - type: Machine
     board: AnomalyVesselCircuitboard
   - type: PointLight
@@ -176,8 +176,8 @@
       SetParticleZeta: AnomalousParticleZeta
       SetParticleSigma: AnomalousParticleSigma
     fireBurstSize: 1
-    fireBurstDelayMin: 2
-    fireBurstDelayMax: 6
+    baseFireBurstDelayMin: 2
+    baseFireBurstDelayMax: 6
   - type: ApcPowerReceiver
     powerLoad: 100
   - type: GuideHelp
@@ -298,8 +298,8 @@
   - type: ActivatableUIRequiresPower
   - type: UserInterface
     interfaces:
-      - key: enum.AnomalyGeneratorUiKey.Key
-        type: AnomalyGeneratorBoundUserInterface
+        enum.AnomalyGeneratorUiKey.Key:
+          type: AnomalyGeneratorBoundUserInterface
   - type: Appearance
   - type: ActiveRadio
     channels:

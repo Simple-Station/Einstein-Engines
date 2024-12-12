@@ -76,6 +76,9 @@
       ignoreWhitelist:
         components:
             - IgnoreSpiderWeb
+    - type: Tag
+      tags:
+        - ArachneWeb
 
 - type: entity
   id: SpiderWebClown
@@ -111,6 +114,9 @@
       paralyzeTime: 2
       launchForwardsMultiplier: 1.5
     - type: StepTrigger
+      triggerGroups:
+        types:
+        - SlipTile
       intersectRatio: 0.2
     - type: Physics
     - type: Fixtures

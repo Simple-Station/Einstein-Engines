@@ -52,6 +52,7 @@ ui-options-fancy-speech = Show names in speech bubbles
 ui-options-fancy-name-background = Add background to speech bubble names
 ui-options-enable-color-name = Add colors to character names
 ui-options-colorblind-friendly = Colorblind friendly mode
+ui-options-no-filters = Disable species vision filters
 ui-options-reduced-motion = Reduce motion of visual effects
 ui-options-chat-window-opacity = Chat window opacity
 ui-options-chat-window-opacity-percent = { TOSTRING($opacity, "P0") }
@@ -87,6 +88,10 @@ ui-options-vp-integer-scaling-tooltip = If this option is enabled, the viewport 
                                         at specific resolutions. While this results in crisp textures, it also often
                                         means that black bars appear at the top/bottom of the screen or that part
                                         of the viewport is not visible.
+ui-options-vp-vertical-fit = Vertical viewport fitting
+ui-options-vp-vertical-fit-tooltip = When enabled, the main viewport will ignore the horizontal axis entirely when
+                                     fitting to your screen. If your screen is smaller than the viewport, then this
+                                     will cause the viewport to be cut off on the horizontal axis.
 ui-options-vp-low-res = Low-resolution viewport
 ui-options-parallax-low-quality = Low-quality Parallax (background)
 ui-options-fps-counter = Show FPS counter
@@ -106,6 +111,7 @@ ui-options-header-camera = Camera
 ui-options-header-interaction-basic = Basic Interaction
 ui-options-header-interaction-adv = Advanced Interaction
 ui-options-header-ui = User Interface
+ui-options-header-targeting = Targeting
 ui-options-header-misc = Miscellaneous
 ui-options-header-hotbar = Hotbar
 ui-options-header-shuttle = Shuttle
@@ -146,6 +152,7 @@ ui-options-function-rotate-stored-item = Rotate stored item
 ui-options-function-offer-item = Offer something
 ui-options-function-save-item-location = Save item location
 ui-options-function-toggle-standing = Toggle standing
+ui-options-function-toggle-crawling-under = Toggle crawling under furniture
 ui-options-static-storage-ui = Lock storage window to hotbar
 
 ui-options-function-smart-equip-backpack = Smart-equip to backpack
@@ -157,6 +164,13 @@ ui-options-function-try-pull-object = Pull object
 ui-options-function-move-pulled-object = Move pulled object
 ui-options-function-release-pulled-object = Release pulled object
 ui-options-function-point = Point at location
+
+ui-options-function-target-head = Target head
+ui-options-function-target-torso = Target torso
+ui-options-function-target-left-arm = Target left arm
+ui-options-function-target-right-arm = Target right arm
+ui-options-function-target-left-leg = Target left leg
+ui-options-function-target-right-leg = Target right leg
 
 ui-options-function-focus-chat-input-window = Focus chat
 ui-options-function-focus-local-chat-window = Focus chat (IC)
@@ -176,6 +190,7 @@ ui-options-function-open-crafting-menu = Open crafting menu
 ui-options-function-open-inventory-menu = Open inventory
 ui-options-function-open-a-help = Open admin help
 ui-options-function-open-abilities-menu = Open action menu
+ui-options-function-toggle-round-end-summary-window = Toggle round end summary window
 ui-options-function-open-entity-spawn-window = Open entity spawn menu
 ui-options-function-open-sandbox-window = Open sandbox menu
 ui-options-function-open-tile-spawn-window = Open tile spawn menu
@@ -199,7 +214,6 @@ ui-options-function-editor-rotate-object = Rotate
 ui-options-function-editor-flip-object = Flip
 ui-options-function-editor-copy-object = Copy
 
-ui-options-function-open-abilities-menu = Open action menu
 ui-options-function-show-debug-console = Open Console
 ui-options-function-show-debug-monitors = Show Debug Monitors
 ui-options-function-inspect-entity = Inspect Entity
@@ -269,3 +283,8 @@ ui-options-net-pvs-leave-tooltip = This limits the rate at which the client will
 ## Toggle window console command
 cmd-options-desc = Opens options menu, optionally with a specific tab selected.
 cmd-options-help = Usage: options [tab]
+
+## Combat Options
+ui-options-function-look-up = Look up/Take aim
+ui-options-function-auto-get-up = Automatically get up after falling
+ui-options-function-hold-look-up = Hold down the key to aim

@@ -1,5 +1,5 @@
 using Content.Server.Traits.Assorted;
-using Content.Server.Standing;
+using Content.Shared.Standing;
 
 namespace Content.Shared.Traits.Assorted.Systems;
 
@@ -16,7 +16,7 @@ public sealed class LayingDownModifierSystem : EntitySystem
         if (!TryComp<LayingDownComponent>(uid, out var layingDown))
             return;
 
-        layingDown.Cooldown *= component.LayingDownCooldownMultiplier;
-        layingDown.DownedSpeedMultiplier *= component.DownedSpeedMultiplierMultiplier;
+        layingDown.StandingUpTime *= component.LayingDownCooldownMultiplier;
+        layingDown.LyingSpeedModifier *= component.DownedSpeedMultiplierMultiplier;
     }
 }

@@ -12,6 +12,7 @@
   - type: Tag
     tags:
     - Sheet
+    - NoPaint
   - type: Damageable
     damageContainer: Inorganic
   - type: Destructible
@@ -110,6 +111,20 @@
   - type: Tag
     tags:
     - Sheet
+    - NoPaint
+  - type: UserInterface
+    interfaces:
+      enum.RadialSelectorUiKey.Key:
+        type: RadialSelectorMenuBUI
+  - type: ActivatableUI
+    key: enum.RadialSelectorUiKey.Key
+    inHandsOnly: true
+    requireActiveHand: false
+  - type: ShortConstruction
+    entries:
+    - prototype: SheetPGlass
+    - prototype: SheetRPGlass
+    - prototype: SheetRPGlass1
 
 - type: entity
   parent: SheetPlasma
@@ -132,6 +147,7 @@
     tags:
     - Plastic
     - Sheet
+    - NoPaint
   - type: Material
   - type: PhysicalComposition
     materialComposition:
@@ -162,6 +178,17 @@
         - ReagentId: Phosphorus
           Quantity: 5
         canReact: false
+  - type: UserInterface
+    interfaces:
+      enum.RadialSelectorUiKey.Key:
+        type: RadialSelectorMenuBUI
+  - type: ActivatableUI
+    key: enum.RadialSelectorUiKey.Key
+    inHandsOnly: true
+    requireActiveHand: false
+  - type: ShortConstruction
+    entries:
+    - prototype: CratePlastic
 
 - type: entity
   parent: SheetPlastic
@@ -224,6 +251,19 @@
         - ReagentId: Radium
           Quantity: 2
         canReact: false
+  - type: UserInterface
+    interfaces:
+      enum.RadialSelectorUiKey.Key:
+        type: RadialSelectorMenuBUI
+  - type: ActivatableUI
+    key: enum.RadialSelectorUiKey.Key
+    inHandsOnly: true
+    requireActiveHand: false
+  - type: ShortConstruction
+    entries:
+    - prototype: SheetUGlass
+    - prototype: SheetRUGlass
+    - prototype: SheetRUGlass1
 
 - type: entity
   parent: SheetUranium

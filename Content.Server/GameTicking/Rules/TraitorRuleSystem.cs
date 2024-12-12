@@ -5,8 +5,11 @@ using Content.Server.NPC.Systems;
 using Content.Server.Objectives;
 using Content.Server.PDA.Ringer;
 using Content.Server.Roles;
+using Content.Server.Traitor.Components;
 using Content.Server.Traitor.Uplink;
+using Content.Shared.GameTicking.Components;
 using Content.Shared.Mind;
+using Content.Shared.Mood;
 using Content.Shared.Objectives.Components;
 using Content.Shared.PDA;
 using Content.Shared.Roles;
@@ -15,9 +18,6 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using System.Linq;
 using System.Text;
-using Content.Shared.Mood;
-using Content.Server.GameTicking.Components;
-using Content.Server.Traitor.Components;
 
 namespace Content.Server.GameTicking.Rules;
 
@@ -76,6 +76,7 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
             return false;
 
         var briefing = Loc.GetString("traitor-role-codewords-short", ("codewords", string.Join(", ", component.Codewords)));
+        var issuer = _random.Pick(_prototypeManager.Index(component.ObjectiveIssuers).Values);
 
         if (TryComp<AutoTraitorComponent>(traitor, out var autoTraitorComponent))
         {
@@ -105,7 +106,7 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
                 Loc.GetString("traitor-role-uplink-code-short", ("code", string.Join("-", code).Replace("sharp", "#"))));
         }
 
-        _antag.SendBriefing(traitor, GenerateBriefing(component.Codewords, code), null, component.GreetSoundNotification);
+        _antag.SendBriefing(traitor, GenerateBriefing(component.Codewords, code, issuer), null, component.GreetSoundNotification);
 
         component.TraitorMinds.Add(mindId);
 
@@ -115,9 +116,9 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
             Briefing = briefing
         }, mind, true);
 
-        // Change the faction
-        _npcFaction.RemoveFaction(traitor, component.NanoTrasenFaction, false);
-        _npcFaction.AddFaction(traitor, component.SyndicateFaction);
+        // Don't Change the faction, this was stupid.
+        //_npcFaction.RemoveFaction(traitor, component.NanoTrasenFaction, false);
+        //_npcFaction.AddFaction(traitor, component.SyndicateFaction);
 
         RaiseLocalEvent(traitor, new MoodEffectEvent("TraitorFocused"));
 
@@ -152,10 +153,10 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
         args.Text += "\n" + Loc.GetString("traitor-round-end-codewords", ("codewords", string.Join(", ", comp.Codewords)));
     }
 
-    private string GenerateBriefing(string[] codewords, Note[]? uplinkCode)
+    private string GenerateBriefing(string[] codewords, Note[]? uplinkCode, string? objectiveIssuer = null)
     {
         var sb = new StringBuilder();
-        sb.AppendLine(Loc.GetString("traitor-role-greeting"));
+        sb.AppendLine(Loc.GetString("traitor-role-greeting", ("corporation", objectiveIssuer ?? Loc.GetString("objective-issuer-unknown"))));
         sb.AppendLine(Loc.GetString("traitor-role-codewords-short", ("codewords", string.Join(", ", codewords))));
         if (uplinkCode != null)
             sb.AppendLine(Loc.GetString("traitor-role-uplink-code-short", ("code", string.Join("-", uplinkCode).Replace("sharp", "#"))));

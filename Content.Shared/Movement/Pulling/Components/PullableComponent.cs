@@ -1,4 +1,6 @@
+using Content.Shared.Alert;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Movement.Pulling.Components;
 
@@ -36,4 +38,13 @@ public sealed partial class PullableComponent : Component
     [Access(typeof(Systems.PullingSystem), Other = AccessPermissions.ReadExecute)]
     [AutoNetworkedField, DataField]
     public bool PrevFixedRotation;
+
+    /// <summary>
+    ///     Whether the entity is currently being actively pushed by the puller.
+    ///     If true, the entity will be able to enter disposals upon colliding with them, and the like.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool BeingActivelyPushed = false;
+    [DataField]
+    public ProtoId<AlertPrototype> PulledAlert = "Pulled";
 }

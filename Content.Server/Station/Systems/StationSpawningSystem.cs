@@ -47,7 +47,7 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
     [Dependency] private readonly SharedAccessSystem _accessSystem = default!;
     [Dependency] private readonly IdentitySystem _identity = default!;
     [Dependency] private readonly MetaDataSystem _metaSystem = default!;
-
+    [Dependency] private readonly InternalEncryptionKeySpawner _internalEncryption = default!;
     [Dependency] private readonly ArrivalsSystem _arrivalsSystem = default!;
     [Dependency] private readonly ContainerSpawnPointSystem _containerSpawnPointSystem = default!;
 
@@ -58,6 +58,7 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
     /// <inheritdoc/>
     public override void Initialize()
     {
+        base.Initialize();
         Subs.CVar(_configurationManager, CCVars.ICRandomCharacters, e => _randomizeCharacters = e, true);
 
         _spawnerCallbacks = new Dictionary<SpawnPriorityPreference, Action<PlayerSpawningEvent>>()
@@ -173,11 +174,14 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
         if (prototype?.StartingGear != null)
         {
             var startingGear = _prototypeManager.Index<StartingGearPrototype>(prototype.StartingGear);
-            EquipStartingGear(entity.Value, startingGear);
+            EquipStartingGear(entity.Value, startingGear, raiseEvent: false);
             if (profile != null)
                 EquipIdCard(entity.Value, profile.Name, prototype, station);
-                InternalEncryptionKeySpawner.TryInsertEncryptionKey(entity.Value, startingGear, EntityManager, profile); // Parkstation - IPC
+            _internalEncryption.TryInsertEncryptionKey(entity.Value, startingGear, EntityManager);
         }
+
+        var gearEquippedEv = new StartingGearEquippedEvent(entity.Value);
+        RaiseLocalEvent(entity.Value, ref gearEquippedEv, true);
 
         if (profile != null)
         {

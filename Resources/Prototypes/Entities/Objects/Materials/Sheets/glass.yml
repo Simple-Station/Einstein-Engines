@@ -15,6 +15,7 @@
   - type: Tag
     tags:
     - Sheet
+    - NoPaint
   - type: Material
   - type: Damageable
     damageContainer: Inorganic
@@ -93,13 +94,20 @@
           Quantity: 10
   - type: UserInterface
     interfaces:
-    - key: enum.ShortConstructionUiKey.Key
-      type: ShortConstructionMenuBUI
+      enum.RadialSelectorUiKey.Key:
+        type: RadialSelectorMenuBUI
   - type: ActivatableUI
-    key: enum.ShortConstructionUiKey.Key
+    key: enum.RadialSelectorUiKey.Key
+    inHandsOnly: true
+    requireActiveHand: false
   - type: ShortConstruction
-    prototypes:
-    - Window
+    entries:
+    - prototype: Window
+    - prototype: WindowDirectional
+    - prototype: WindowDiagonal
+    - prototype: SheetRGlass
+    - prototype: SheetPGlass
+    - prototype: SheetUGlass
 
 - type: entity
   parent: SheetGlass
@@ -188,13 +196,19 @@
         acts: [ "Destruction" ]
   - type: UserInterface
     interfaces:
-    - key: enum.ShortConstructionUiKey.Key
-      type: ShortConstructionMenuBUI
+      enum.RadialSelectorUiKey.Key:
+        type: RadialSelectorMenuBUI
   - type: ActivatableUI
-    key: enum.ShortConstructionUiKey.Key
+    key: enum.RadialSelectorUiKey.Key
+    inHandsOnly: true
+    requireActiveHand: false
   - type: ShortConstruction
-    prototypes:
-    - ReinforcedWindow
+    entries:
+    - prototype: SheetRPGlass1
+    - prototype: SheetRUGlass1
+    - prototype: ReinforcedWindow
+    - prototype: ReinforcedWindowDiagonal
+    - prototype: WindowReinforcedDirectional
 
 - type: entity
   parent: SheetRGlass
@@ -220,6 +234,18 @@
         - ReagentId: Carbon
           Quantity: 0.5
         canReact: false
+
+- type: entity
+  parent: SheetRGlass
+  id: SheetRGlass10
+  name: reinforced glass
+  suffix: Single
+  components:
+  - type: Sprite
+    state: rglass
+  - type: Stack
+    stackType: ReinforcedGlass
+    count: 10
 
 - type: entity
   parent: SheetGlassBase
@@ -272,6 +298,20 @@
             max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: UserInterface
+    interfaces:
+      enum.RadialSelectorUiKey.Key:
+        type: RadialSelectorMenuBUI
+  - type: ActivatableUI
+    key: enum.RadialSelectorUiKey.Key
+    inHandsOnly: true
+    requireActiveHand: false
+  - type: ShortConstruction
+    entries:
+    - prototype: SheetRPGlass0
+    - prototype: PlasmaWindow
+    - prototype: PlasmaWindowDiagonal
+    - prototype: PlasmaWindowDirectional
 
 - type: entity
   parent: SheetPGlass
@@ -295,6 +335,18 @@
         - ReagentId: Plasma
           Quantity: 10
         canReact: false
+
+- type: entity
+  parent: SheetPGlass
+  id: SheetPGlass10
+  name: plasma glass
+  suffix: 10
+  components:
+  - type: Sprite
+    state: pglass
+  - type: Stack
+    stackType: PlasmaGlass
+    count: 10
 
 - type: entity
   parent: SheetPGlass
@@ -338,6 +390,19 @@
         - ReagentId: Carbon
           Quantity: 0.5
         canReact: false
+  - type: UserInterface
+    interfaces:
+      enum.RadialSelectorUiKey.Key:
+        type: RadialSelectorMenuBUI
+  - type: ActivatableUI
+    key: enum.RadialSelectorUiKey.Key
+    inHandsOnly: true
+    requireActiveHand: false
+  - type: ShortConstruction
+    entries:
+    - prototype: ReinforcedPlasmaWindow
+    - prototype: ReinforcedPlasmaWindowDiagonal
+    - prototype: PlasmaReinforcedWindowDirectional
 
 - type: entity
   parent: SheetRPGlass
@@ -350,6 +415,18 @@
   - type: Stack
     stackType: ReinforcedPlasmaGlass
     count: 1
+
+- type: entity
+  parent: SheetRPGlass
+  id: SheetRPGlass10
+  name: reinforced plasma glass
+  suffix: Single
+  components:
+  - type: Sprite
+    state: rpglass
+  - type: Stack
+    stackType: ReinforcedPlasmaGlass
+    count: 10
 
 - type: entity
   parent: SheetGlassBase
@@ -413,6 +490,20 @@
         - ReagentId: Uranium
           Quantity: 10
         canReact: false
+  - type: UserInterface
+    interfaces:
+      enum.RadialSelectorUiKey.Key:
+        type: RadialSelectorMenuBUI
+  - type: ActivatableUI
+    key: enum.RadialSelectorUiKey.Key
+    inHandsOnly: true
+    requireActiveHand: false
+  - type: ShortConstruction
+    entries:
+    - prototype: SheetRUGlass0
+    - prototype: UraniumWindow
+    - prototype: UraniumWindowDiagonal
+    - prototype: UraniumWindowDirectional
 
 - type: entity
   parent: SheetUGlass
@@ -425,6 +516,18 @@
   - type: Stack
     stackType: UraniumGlass
     count: 1
+
+- type: entity
+  parent: SheetUGlass
+  id: SheetUGlass10
+  name: uranium glass
+  suffix: 10
+  components:
+  - type: Sprite
+    state: uglass
+  - type: Stack
+    stackType: UraniumGlass
+    count: 10
 
 - type: entity
   parent: SheetUGlass
@@ -467,6 +570,19 @@
         - ReagentId: Carbon
           Quantity: 0.5
         canReact: false
+  - type: UserInterface
+    interfaces:
+      enum.RadialSelectorUiKey.Key:
+        type: RadialSelectorMenuBUI
+  - type: ActivatableUI
+    key: enum.RadialSelectorUiKey.Key
+    inHandsOnly: true
+    requireActiveHand: false
+  - type: ShortConstruction
+    entries:
+    - prototype: ReinforcedUraniumWindow
+    - prototype: ReinforcedUraniumWindowDiagonal
+    - prototype: UraniumReinforcedWindowDirectional
 
 - type: entity
   parent: SheetRUGlass
@@ -479,6 +595,18 @@
   - type: Stack
     stackType: ReinforcedUraniumGlass
     count: 1
+
+- type: entity
+  parent: SheetRUGlass
+  id: SheetRUGlass10
+  name: reinforced uranium glass
+  suffix: 10
+  components:
+  - type: Sprite
+    state: ruglass
+  - type: Stack
+    stackType: ReinforcedUraniumGlass
+    count: 10
 
 - type: entity
   parent: SheetGlassBase
@@ -556,3 +684,15 @@
   - type: Stack
     stackType: ClockworkGlass
     count: 1
+
+- type: entity
+  parent: SheetClockworkGlass
+  id: SheetClockworkGlass10
+  name: clockwork glass
+  suffix: 10
+  components:
+  - type: Sprite
+    state: cglass
+  - type: Stack
+    stackType: ClockworkGlass
+    count: 10

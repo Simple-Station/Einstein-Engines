@@ -119,9 +119,12 @@
         mask:
         - ItemMask
   - type: StepTrigger
+    triggerGroups:
+      types:
+      - Shard
     intersectRatio: 0.2
   - type: TriggerOnStepTrigger
-  - type: ShoesRequiredStepTrigger
+  - type: ClothingRequiredStepTrigger
   - type: Slippery
     slipSound:
       path: /Audio/Effects/glass_step.ogg

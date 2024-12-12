@@ -51,17 +51,27 @@
     accent: dwarf
   - type: Speech
     speechSounds: Bass
+  - type: HumanoidAppearance
+    species: Human
+    hideLayersOnEquip:
+    - Hair
+    - Snout
   - type: LanguageKnowledge
     speaks:
-    - GalacticCommon
+    - TauCetiBasic
     - SolCommon
     understands:
-    - GalacticCommon
+    - TauCetiBasic
     - SolCommon
   - type: LightweightDrunk
     boozeStrengthMultiplier: 0.5
+  - type: Stamina
+    critThreshold: 115
+  - type: FootPrints
+    leftBarePrint: "footprint-left-bare-dwarf"
+    rightBarePrint: "footprint-right-bare-dwarf"
 
 - type: entity
   parent: BaseSpeciesDummy
   id: MobDwarfDummy
-  noSpawn: true
+  categories: [ HideSpawnMenu ]

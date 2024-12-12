@@ -8,7 +8,9 @@ using Content.Shared.Language.Components;
 using Content.Shared.Language.Systems;
 using Content.Shared.PowerCell;
 using Content.Shared.Language.Components.Translators;
+using Content.Shared.Language.Events;
 using Robust.Shared.Containers;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
 namespace Content.Server.Language;
@@ -85,8 +87,8 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
         // If that is not the case, then OnProxyDetermineLanguages will remove this translator from HoldsTranslatorComponent.Translators.
         Timer.Spawn(0, () =>
         {
-            if (Exists(args.OldParent) && TryComp<LanguageSpeakerComponent>(args.OldParent, out var speaker))
-                _language.UpdateEntityLanguages(args.OldParent.Value, speaker);
+            if (Exists(args.OldParent) && HasComp<LanguageSpeakerComponent>(args.OldParent))
+                _language.UpdateEntityLanguages(args.OldParent.Value);
         });
     }
 
@@ -108,11 +110,11 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
         {
             // The first new spoken language added by this translator, or null
             var firstNewLanguage = translatorComp.SpokenLanguages.FirstOrDefault(it => !languageComp.SpokenLanguages.Contains(it));
-            _language.UpdateEntityLanguages(holder, languageComp);
+            _language.UpdateEntityLanguages(holder);
 
             // Update the current language of the entity if necessary
             if (isEnabled && translatorComp.SetLanguageOnInteract && firstNewLanguage is {})
-                _language.SetLanguage(holder, firstNewLanguage, languageComp);
+                _language.SetLanguage((holder, languageComp), firstNewLanguage);
         }
 
         OnAppearanceChange(translator, translatorComp);
@@ -131,8 +133,8 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
         _powerCell.SetPowerCellDrawEnabled(translator, false);
         OnAppearanceChange(translator, component);
 
-        if (_containers.TryGetContainingContainer(translator, out var holderCont) && TryComp<LanguageSpeakerComponent>(holderCont.Owner, out var languageComp))
-            _language.UpdateEntityLanguages(holderCont.Owner, languageComp);
+        if (_containers.TryGetContainingContainer(translator, out var holderCont) && HasComp<LanguageSpeakerComponent>(holderCont.Owner))
+            _language.UpdateEntityLanguages(holderCont.Owner);
     }
 
     private void CopyLanguages(BaseTranslatorComponent from, DetermineEntityLanguagesEvent to, LanguageKnowledgeComponent knowledge)
@@ -152,7 +154,7 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
     /// <summary>
     ///     Checks whether any OR all required languages are provided. Used for utility purposes.
     /// </summary>
-    public static bool CheckLanguagesMatch(ICollection<string> required, ICollection<string> provided, bool requireAll)
+    public static bool CheckLanguagesMatch(ICollection<ProtoId<LanguagePrototype>> required, ICollection<ProtoId<LanguagePrototype>> provided, bool requireAll)
     {
         if (required.Count == 0)
             return true;

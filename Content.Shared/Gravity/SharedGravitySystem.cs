@@ -8,6 +8,7 @@ using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
+using Content.Shared.Flight;
 
 namespace Content.Shared.Gravity
 {
@@ -17,12 +18,18 @@ namespace Content.Shared.Gravity
         [Dependency] private readonly AlertsSystem _alerts = default!;
         [Dependency] private readonly InventorySystem _inventory = default!;
 
+        [ValidatePrototypeId<AlertPrototype>]
+        public const string WeightlessAlert = "Weightless";
+
         public bool IsWeightless(EntityUid uid, PhysicsComponent? body = null, TransformComponent? xform = null)
         {
             Resolve(uid, ref body, false);
 
             if ((body?.BodyType & (BodyType.Static | BodyType.Kinematic)) != 0)
                 return false;
+
+            if (TryComp<FlightComponent>(uid, out var flying) && flying.On)
+                return true;
 
             if (TryComp<MovementIgnoreGravityComponent>(uid, out var ignoreGravityComponent))
                 return ignoreGravityComponent.Weightless;
@@ -93,11 +100,11 @@ namespace Content.Shared.Gravity
 
                 if (!ev.HasGravity)
                 {
-                    _alerts.ShowAlert(uid, AlertType.Weightless);
+                    _alerts.ShowAlert(uid, WeightlessAlert);
                 }
                 else
                 {
-                    _alerts.ClearAlert(uid, AlertType.Weightless);
+                    _alerts.ClearAlert(uid, WeightlessAlert);
                 }
             }
         }
@@ -106,11 +113,11 @@ namespace Content.Shared.Gravity
         {
             if (IsWeightless(ev.Euid))
             {
-                _alerts.ShowAlert(ev.Euid, AlertType.Weightless);
+                _alerts.ShowAlert(ev.Euid, WeightlessAlert);
             }
             else
             {
-                _alerts.ClearAlert(ev.Euid, AlertType.Weightless);
+                _alerts.ClearAlert(ev.Euid, WeightlessAlert);
             }
         }
 
@@ -118,11 +125,11 @@ namespace Content.Shared.Gravity
         {
             if (IsWeightless(uid))
             {
-                _alerts.ShowAlert(uid, AlertType.Weightless);
+                _alerts.ShowAlert(uid, WeightlessAlert);
             }
             else
             {
-                _alerts.ClearAlert(uid, AlertType.Weightless);
+                _alerts.ClearAlert(uid, WeightlessAlert);
             }
         }
 

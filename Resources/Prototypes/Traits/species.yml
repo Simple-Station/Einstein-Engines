@@ -2,13 +2,15 @@
   id: Swashbuckler
   category: Physical
   points: -2
-  components:
-  - type: OniDamageModifier
-    modifiers:
-      coefficients:
-        Blunt: 1.2
-        Slash: 1.35
-        Piercing: 1.2
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+      - type: OniDamageModifier
+        modifiers:
+          coefficients:
+            Blunt: 1.2
+            Slash: 1.35
+            Piercing: 1.2
   requirements:
     - !type:CharacterSpeciesRequirement
       species:
@@ -23,13 +25,15 @@
   id: Spearmaster
   category: Physical
   points: -2
-  components:
-  - type: OniDamageModifier
-    modifiers:
-      coefficients:
-        Blunt: 1.2
-        Slash: 1.2
-        Piercing: 1.35
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+      - type: OniDamageModifier
+        modifiers:
+          coefficients:
+            Blunt: 1.2
+            Slash: 1.2
+            Piercing: 1.35
   requirements:
     - !type:CharacterSpeciesRequirement
       species:
@@ -44,13 +48,15 @@
   id: WeaponsGeneralist
   category: Physical
   points: -2
-  components:
-  - type: OniDamageModifier
-    modifiers:
-      coefficients:
-        Blunt: 1.25
-        Slash: 1.25
-        Piercing: 1.25
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+      - type: OniDamageModifier
+        modifiers:
+          coefficients:
+            Blunt: 1.25
+            Slash: 1.25
+            Piercing: 1.25
   requirements:
     - !type:CharacterSpeciesRequirement
       species:
@@ -60,3 +66,17 @@
       traits:
         - Swashbuckler
         - Spearmaster
+
+- type: trait
+  id: ShadowkinBlackeye
+  category: Mental
+  points: 4
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: Shadowkin
+          blackeyeSpawn: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Shadowkin

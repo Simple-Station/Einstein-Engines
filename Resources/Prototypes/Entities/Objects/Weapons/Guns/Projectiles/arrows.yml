@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: BaseItem
   id: BaseArrow
   abstract: true
@@ -28,6 +28,7 @@
   - type: EmbeddableProjectile
     sound: /Audio/Weapons/star_hit.ogg
     embedOnThrow: false
+  - type: EmbedPassiveDamage
   - type: ThrowingAngle
     angle: 0
   - type: Ammo
@@ -35,7 +36,6 @@
   - type: Tag
     tags:
     - Arrow
-    - CannonRestrict
   - type: Projectile
     deleteOnCollide: false
     onlyCollideWhenShot: true

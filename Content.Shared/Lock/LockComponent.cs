@@ -14,88 +14,81 @@ namespace Content.Shared.Lock;
 public sealed partial class LockComponent : Component
 {
     /// <summary>
-    /// Whether or not the lock is locked.
+    ///     Whether or not the lock is locked.
     /// </summary>
-    [DataField("locked"), ViewVariables(VVAccess.ReadWrite)]
-    [AutoNetworkedField]
-    public bool Locked  = true;
+    [DataField, AutoNetworkedField]
+    public bool Locked = true;
 
     /// <summary>
-    /// Whether or not the lock is toggled by simply clicking.
+    ///     Whether or not the lock is toggled by simply clicking.
     /// </summary>
-    [DataField("lockOnClick"), ViewVariables(VVAccess.ReadWrite)]
-    [AutoNetworkedField]
+    [DataField, AutoNetworkedField]
     public bool LockOnClick;
 
     /// <summary>
-    /// Whether or not the lock is unlocked by simply clicking.
+    ///     Whether or not the lock is unlocked by simply clicking.
     /// </summary>
-    [DataField("unlockOnClick"), ViewVariables(VVAccess.ReadWrite)]
-    [AutoNetworkedField]
+    [DataField, AutoNetworkedField]
     public bool UnlockOnClick = true;
 
-
     /// <summary>
-    /// The sound played when unlocked.
+    ///     The sound played when unlocked.
     /// </summary>
-    [DataField("unlockingSound"), ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public SoundSpecifier UnlockSound = new SoundPathSpecifier("/Audio/Machines/door_lock_off.ogg")
     {
         Params = AudioParams.Default.WithVolume(-5f),
     };
 
     /// <summary>
-    /// The sound played when locked.
+    ///     The sound played when locked.
     /// </summary>
-    [DataField("lockingSound"), ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public SoundSpecifier LockSound = new SoundPathSpecifier("/Audio/Machines/door_lock_on.ogg")
     {
         Params = AudioParams.Default.WithVolume(-5f)
     };
 
     /// <summary>
-    /// Whether or not an emag disables it.
+    ///     Whether or not an emag disables it.
     /// </summary>
-    [DataField("breakOnEmag")]
-    [AutoNetworkedField]
+    [DataField, AutoNetworkedField]
     public bool BreakOnEmag = true;
 
     /// <summary>
-    /// Amount of do-after time needed to lock the entity.
+    ///     Amount of do-after time needed to lock the entity.
     /// </summary>
     /// <remarks>
-    /// If set to zero, no do-after will be used.
+    ///     If set to zero, no do-after will be used.
     /// </remarks>
-    [DataField]
-    [AutoNetworkedField]
+    [DataField, AutoNetworkedField]
     public TimeSpan LockTime;
 
     /// <summary>
-    /// Amount of do-after time needed to unlock the entity.
+    ///     Amount of do-after time needed to unlock the entity.
     /// </summary>
     /// <remarks>
-    /// If set to zero, no do-after will be used.
+    ///     If set to zero, no do-after will be used.
     /// </remarks>
-    [DataField]
-    [AutoNetworkedField]
+    [DataField, AutoNetworkedField]
     public TimeSpan UnlockTime;
 }
 
 /// <summary>
-/// Event raised on the lock when a toggle is attempted.
-/// Can be cancelled to prevent it.
+///     Event raised on the lock when a toggle is attempted.
+///     Can be cancelled to prevent it.
 /// </summary>
 [ByRefEvent]
 public record struct LockToggleAttemptEvent(EntityUid User, bool Silent = false, bool Cancelled = false);
 
 /// <summary>
-/// Event raised on a lock after it has been toggled.
+///     Event raised on a lock after it has been toggled.
 /// </summary>
 [ByRefEvent]
 public readonly record struct LockToggledEvent(bool Locked);
 
 /// <summary>
-/// Used to lock a lockable entity that has a lock time configured.
+///     Used to lock a lockable entity that has a lock time configured.
 /// </summary>
 /// <seealso cref="LockComponent"/>
 /// <seealso cref="LockSystem"/>
@@ -109,7 +102,7 @@ public sealed partial class LockDoAfter : DoAfterEvent
 }
 
 /// <summary>
-/// Used to unlock a lockable entity that has an unlock time configured.
+///     Used to unlock a lockable entity that has an unlock time configured.
 /// </summary>
 /// <seealso cref="LockComponent"/>
 /// <seealso cref="LockSystem"/>

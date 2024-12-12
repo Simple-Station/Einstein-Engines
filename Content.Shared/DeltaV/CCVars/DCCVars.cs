@@ -17,8 +17,8 @@ public sealed class DCCVars
         CVarDef.Create("game.round_end_pacifist", false, CVar.SERVERONLY);
 
     /// <summary>
-    /// Disables all vision filters for species like Vulpkanin or Harpies. There are good reasons someone might want to disable these.
+    /// Whether the Shipyard is enabled.
     /// </summary>
-    public static readonly CVarDef<bool> NoVisionFilters =
-        CVarDef.Create("accessibility.no_vision_filters", false, CVar.CLIENTONLY | CVar.ARCHIVE);
+    public static readonly CVarDef<bool> Shipyard =
+        CVarDef.Create("shuttle.shipyard", true, CVar.SERVERONLY);
 }

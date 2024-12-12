@@ -141,8 +141,8 @@
     - TemporaryBlindness
     - Pacified
     - StaminaModifier
-    - PsionicsDisabled #Nyano - Summary: PCs can have psionics disabled.
-    - PsionicallyInsulated #Nyano - Summary: PCs can be made insulated from psionic powers.
+    - PsionicsDisabled
+    - PsionicallyInsulated
   - type: Reflect
     enabled: false
     reflectProb: 0
@@ -152,6 +152,7 @@
   - type: Identity
   - type: IdExaminable
   - type: Hands
+  - type: ComplexInteraction
   - type: Internals
   - type: Inventory
   - type: InventorySlots
@@ -191,12 +192,19 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
-      - key: enum.VoiceMaskUIKey.Key
-        type: VoiceMaskBoundUserInterface
-      - key: enum.HumanoidMarkingModifierKey.Key
+      enum.HumanoidMarkingModifierKey.Key:
         type: HumanoidMarkingModifierBoundUserInterface
-      - key: enum.StrippingUiKey.Key
+      enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
+      enum.InstrumentUiKey.Key:
+        type: InstrumentBoundUserInterface
+        requireInputValidation: false
+      enum.RadialSelectorUiKey.Key:
+        type: RadialSelectorMenuBUI
+      enum.ListViewSelectorUiKey.Key:
+        type: ListViewSelectorBUI
+      enum.SurgeryUIKey.Key:
+        type: SurgeryBui
   - type: Puller
   - type: Speech
     speechSounds: Alto
@@ -218,14 +226,16 @@
   - type: CanEscapeInventory # Carrying system from nyanotrasen.
   - type: LanguageKnowledge # This is here so even if species doesn't have a defined language, they at least speak GC
     speaks:
-    - GalacticCommon
+    - TauCetiBasic
     understands:
-    - GalacticCommon
+    - TauCetiBasic
   - type: Tag
     tags:
     - CanPilot
     - FootstepSound
     - DoorBumpOpener
+  - type: Targeting
+  - type: SurgeryTarget
 
 - type: entity
   save: false
@@ -270,6 +280,8 @@
     - Muted
     - Pacified
     - StaminaModifier
+    - PsionicsDisabled
+    - PsionicallyInsulated
   - type: Blindable
   # Other
   - type: Temperature
@@ -318,6 +330,7 @@
   abstract: true
   components:
   - type: Hands
+  - type: ComplexInteraction
   - type: Inventory
   - type: InventorySlots
   - type: ContainerContainer
@@ -381,5 +394,5 @@
     requiredLegs: 2
   - type: UserInterface
     interfaces:
-      - key: enum.HumanoidMarkingModifierKey.Key # sure, this can go here too
+      enum.HumanoidMarkingModifierKey.Key: # sure, this can go here too
         type: HumanoidMarkingModifierBoundUserInterface

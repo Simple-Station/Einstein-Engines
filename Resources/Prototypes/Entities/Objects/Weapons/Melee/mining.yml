@@ -43,8 +43,8 @@
     capacity: 1
     count: 1
   - type: MeleeWeapon
-    attackRate: 0.75
-    range: 1.75
+    attackRate: 0.85
+    range: 1.65
     wideAnimationRotation: -135
     damage:
       types:
@@ -53,10 +53,12 @@
     bluntStaminaDamageFactor: 2.0
     heavyRateModifier: 0.75
     heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 10
+    heavyStaminaCost: 7.5
     angle: 120
     soundHit:
       collection: MetalThud
+  - type: DamageOtherOnHit
+    staminaCost: 8
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:
@@ -92,9 +94,14 @@
         Slash: 9
     heavyRateModifier: 0.9
     heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 5
     maxTargets: 2
     angle: 20
+  - type: DamageOtherOnHit
+    staminaCost: 5
+  - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
+  - type: ThrowingAngle
+    angle: 225
   - type: Tag
     tags:
     - Knife
@@ -115,6 +122,10 @@
       groups:
         Brute: -21
   - type: MeleeWeapon
+  - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
+  - type: ThrowingAngle
+    angle: 225
   - type: Tag
     tags:
       - Pickaxe

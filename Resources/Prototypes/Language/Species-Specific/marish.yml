@@ -1,0 +1,21 @@
+# Spoken by shadowkins.
+- type: language
+  id: Marish
+  isVisibleLanguage: true
+  speech:
+    color: "#be3cc5"
+    fontId: Lymphatic
+    empathySpeech: true
+    speechVerbOverrides:
+    - chat-speech-verb-marish
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1 # Replacements are really short
+    maxSyllables: 2
+    replacement:
+    - mar
+    - mwrrr
+    - maaAr
+    - aarrr
+    - wrurrl
+    - mmar

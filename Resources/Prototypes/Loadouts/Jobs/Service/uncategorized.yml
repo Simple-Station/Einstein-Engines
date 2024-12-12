@@ -1,0 +1,72 @@
+# Uncategorized
+# Backpacks
+
+# Belt
+
+# Ears
+
+# Equipment
+# For the most part we dont want people to take this item, so its used as an example of all the things
+# you can do with requirements. Point someone to this thing if they ask "how tf do loadout requirements work?"
+- type: loadout
+  id: LoadoutServiceClownCowToolboxFilled
+  category: JobsServiceAUncategorized
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutServiceEquipment
+    - !type:CharacterLogicXorRequirement
+      requirements:
+        - !type:CharacterLogicAndRequirement
+          requirements:
+            - !type:CharacterSexRequirement
+              sex: Male
+            - !type:CharacterSpeciesRequirement
+              species:
+                - Felinid
+            - !type:CharacterHeightRequirement
+              min: 110
+              max: 122
+            - !type:CharacterGenderRequirement
+              gender: Female
+            - !type:CharacterTraitRequirement
+              traits:
+                - HeavyweightDrunk
+        - !type:CharacterLogicAndRequirement
+          requirements:
+            - !type:CharacterSpeciesRequirement
+              species:
+                - Harpy
+            - !type:CharacterHeightRequirement
+              min: 170
+            - !type:CharacterWeightRequirement
+              min: 20
+            - !type:CharacterSexRequirement
+              sex: Male
+            - !type:CharacterJobRequirement
+              inverted: true # This is the equivalent of !(condition)
+              jobs:
+                - Clown
+        - !type:CharacterJobRequirement
+          jobs:
+            - Clown
+  items:
+    - CowToolboxFilled
+
+# Eyes
+
+# Gloves
+
+# Head
+
+# Id
+
+# Neck
+
+# Mask
+
+# Outer
+
+# Shoes
+
+# Uniforms

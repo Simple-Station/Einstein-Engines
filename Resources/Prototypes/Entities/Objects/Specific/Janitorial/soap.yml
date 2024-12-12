@@ -24,6 +24,9 @@
     paralyzeTime: 2
     launchForwardsMultiplier: 1.5
   - type: StepTrigger
+    triggerGroups:
+      types:
+      - SlipEntity
     intersectRatio: 0.2
   - type: CollisionWake
     enabled: false
@@ -62,6 +65,7 @@
     solution: soap
   - type: DeleteOnSolutionEmpty
     solution: soap
+  - type: PaintRemover
   - type: FlavorProfile
     flavors:
       - clean
@@ -146,7 +150,7 @@
 - type: entity
   name: soaplet
   id: SoapletSyndie
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: Soap
   description: A tiny piece of syndicate soap.
   components:
@@ -157,6 +161,9 @@
     paralyzeTime: 5
     launchForwardsMultiplier: 2.5
   - type: StepTrigger
+    triggerGroups:
+      types:
+      - SlipEntity
     intersectRatio: 0.04
   - type: Item
     heldPrefix: syndie
@@ -198,6 +205,9 @@
   - type: Slippery
     paralyzeTime: 2
   - type: StepTrigger
+    triggerGroups:
+      types:
+      - SlipEntity
   - type: Item
     heldPrefix: gibs
   - type: FlavorProfile

@@ -15,9 +15,9 @@
         Blunt: 7.5
         Structural: 5
     bluntStaminaDamageFactor: 2.0
-    heavyRateModifier: 0.5
+    heavyRateModifier: 2
     heavyDamageBaseModifier: 1.75
-    heavyStaminaCost: 15
+    heavyStaminaCost: 10
     maxTargets: 2
     angle: 120
     soundHit:
@@ -28,6 +28,8 @@
       types:
         Blunt: 4
         Structural: 10
+  - type: DamageOtherOnHit
+    staminaCost: 10
   - type: Item
     size: Normal
   - type: Tool
@@ -43,6 +45,9 @@
     node: bat
   - type: UseDelay
     delay: 1
+  - type: PhysicalComposition
+    materialComposition:
+      Wood: 250
   - type: Tag
     tags:
     - BaseballBat

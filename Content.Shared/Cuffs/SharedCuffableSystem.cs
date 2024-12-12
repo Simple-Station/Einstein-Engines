@@ -7,6 +7,7 @@ using Content.Shared.Buckle.Components;
 using Content.Shared.Contests;
 using Content.Shared.Cuffs.Components;
 using Content.Shared.Database;
+using Content.Shared.Flight;
 using Content.Shared.DoAfter;
 using Content.Shared.Hands;
 using Content.Shared.Hands.Components;
@@ -74,6 +75,7 @@ namespace Content.Shared.Cuffs
             SubscribeLocalEvent<CuffableComponent, IsUnequippingAttemptEvent>(OnUnequipAttempt);
             SubscribeLocalEvent<CuffableComponent, BeingPulledAttemptEvent>(OnBeingPulledAttempt);
             SubscribeLocalEvent<CuffableComponent, BuckleAttemptEvent>(OnBuckleAttemptEvent);
+            SubscribeLocalEvent<CuffableComponent, UnbuckleAttemptEvent>(OnUnbuckleAttemptEvent);
             SubscribeLocalEvent<CuffableComponent, GetVerbsEvent<Verb>>(AddUncuffVerb);
             SubscribeLocalEvent<CuffableComponent, UnCuffDoAfterEvent>(OnCuffableDoAfter);
             SubscribeLocalEvent<CuffableComponent, PullStartedMessage>(OnPull);
@@ -176,12 +178,13 @@ namespace Content.Shared.Cuffs
 
             if (component.CanStillInteract)
             {
-                _alerts.ClearAlert(uid, AlertType.Handcuffed);
+                _alerts.ClearAlert(uid, component.CuffedAlert);
                 RaiseLocalEvent(uid, new MoodRemoveEffectEvent("Handcuffed"));
             }
+
             else
             {
-                _alerts.ShowAlert(uid, AlertType.Handcuffed);
+                _alerts.ShowAlert(uid, component.CuffedAlert);
                 RaiseLocalEvent(uid, new MoodEffectEvent("Handcuffed"));
             }
 
@@ -198,21 +201,33 @@ namespace Content.Shared.Cuffs
                 args.Cancel();
         }
 
-        private void OnBuckleAttemptEvent(EntityUid uid, CuffableComponent component, ref BuckleAttemptEvent args)
+        private void OnBuckleAttempt(Entity<CuffableComponent> ent, EntityUid? user, ref bool cancelled, bool buckling, bool popup)
         {
-            // if someone else is doing it, let it pass.
-            if (args.UserEntity != uid)
+            if (cancelled || user != ent.Owner)
                 return;
 
-            if (!TryComp<HandsComponent>(uid, out var hands) || component.CuffedHandCount != hands.Count)
+            if (!TryComp<HandsComponent>(ent, out var hands) || ent.Comp.CuffedHandCount != hands.Count)
                 return;
 
-            args.Cancelled = true;
-            var message = args.Buckling
+            cancelled = true;
+            if (!popup)
+                return;
+
+            var message = buckling
                 ? Loc.GetString("handcuff-component-cuff-interrupt-buckled-message")
                 : Loc.GetString("handcuff-component-cuff-interrupt-unbuckled-message");
 
-            _popup.PopupClient(message, uid, args.UserEntity);
+            _popup.PopupClient(message, ent, user);
+        }
+
+        private void OnBuckleAttemptEvent(Entity<CuffableComponent> ent, ref BuckleAttemptEvent args)
+        {
+            OnBuckleAttempt(ent, args.User, ref args.Cancelled, true, args.Popup);
+        }
+
+        private void OnUnbuckleAttemptEvent(Entity<CuffableComponent> ent, ref UnbuckleAttemptEvent args)
+        {
+            OnBuckleAttempt(ent, args.User, ref args.Cancelled, false, args.Popup);
         }
 
         private void OnPull(EntityUid uid, CuffableComponent component, PullMessage args)
@@ -479,6 +494,13 @@ namespace Content.Shared.Cuffs
                 return true;
             }
 
+            if (TryComp<FlightComponent>(target, out var flight) && flight.On)
+            {
+                _popup.PopupClient(Loc.GetString("handcuff-component-target-flying-error",
+                    ("targetName", Identity.Name(target, EntityManager, user))), user, user);
+                return true;
+            }
+
             var cuffTime = handcuffComponent.CuffTime;
 
             if (HasComp<StunnedComponent>(target))
@@ -644,8 +666,11 @@ namespace Content.Shared.Cuffs
                 if (cuff.BreakOnRemove)
                 {
                     QueueDel(cuffsToRemove);
-                    var trash = Spawn(cuff.BrokenPrototype, Transform(cuffsToRemove).Coordinates);
-                    _hands.PickupOrDrop(user, trash);
+                    if (cuff.BrokenPrototype.HasValue)
+                    {
+                        var trash = Spawn(cuff.BrokenPrototype, Transform(cuffsToRemove).Coordinates);
+                        _hands.PickupOrDrop(user, trash);
+                    }
                 }
                 else
                 {

@@ -1,0 +1,287 @@
+- type: entity
+  id: ReagentSlimeIchor
+  parent: ReagentSlime
+  suffix: Ichor
+  components:
+  - type: Bloodstream
+    bloodReagent: Ichor
+  - type: PointLight
+    color: "#f4692e"
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Aliens/elemental.rsi
+    layers:
+      - map: [ "enum.DamageStateVisualLayers.Base" ]
+        state: alive
+        color: "#f4692e"
+
+- type: entity
+  id: ReagentSlimeBleach
+  parent: ReagentSlime
+  suffix: Bleach
+  components:
+  - type: Bloodstream
+    bloodReagent: Bleach
+  - type: PointLight
+    color: "#a1000b"
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Aliens/elemental.rsi
+    layers:
+      - map: [ "enum.DamageStateVisualLayers.Base" ]
+        state: alive
+        color: "#a1000b"
+
+- type: entity
+  id: ReagentSlimeSoap
+  parent: ReagentSlime
+  suffix: Soap
+  components:
+  - type: Bloodstream
+    bloodReagent: SoapReagent
+  - type: PointLight
+    color: "#c8dfc9"
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Aliens/elemental.rsi
+    layers:
+      - map: [ "enum.DamageStateVisualLayers.Base" ]
+        state: alive
+        color: "#c8dfc9"
+
+- type: entity
+  id: ReagentSlimeSpacelube
+  parent: ReagentSlime
+  suffix: Spacelube
+  components:
+  - type: Bloodstream
+    bloodReagent: SpaceLube
+  - type: PointLight
+    color: "#77b58e"
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Aliens/elemental.rsi
+    layers:
+      - map: [ "enum.DamageStateVisualLayers.Base" ]
+        state: alive
+        color: "#77b58e"
+
+- type: entity
+  id: ReagentSlimeBuzzachloricbees
+  parent: ReagentSlime
+  suffix: Buzzachloricbees
+  components:
+  - type: Bloodstream
+    bloodReagent: BuzzochloricBees
+  - type: PointLight
+    color: "#FFD35D"
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Aliens/elemental.rsi
+    layers:
+      - map: [ "enum.DamageStateVisualLayers.Base" ]
+        state: alive
+        color: "#FFD35D"
+
+- type: entity
+  id: ReagentSlimeWehjuice
+  parent: ReagentSlime
+  suffix: Wehjuice
+  components:
+  - type: Bloodstream
+    bloodReagent: JuiceThatMakesYouWeh
+  - type: PointLight
+    color: "#59b23a"
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Aliens/elemental.rsi
+    layers:
+      - map: [ "enum.DamageStateVisualLayers.Base" ]
+        state: alive
+        color: "#59b23a"
+
+- type: entity
+  id: ReagentCognizine
+  parent: ReagentSlime
+  suffix: Cognizine
+  components:
+  - type: Bloodstream
+    bloodReagent: Cognizine
+  - type: PointLight
+    color: "#b50ee8"
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Aliens/elemental.rsi
+    layers:
+      - map: [ "enum.DamageStateVisualLayers.Base" ]
+        state: alive
+        color: "#b50ee8"
+
+- type: entity
+  id: ReagentSlimeNecrosol
+  parent: ReagentSlime
+  suffix: Necrosol
+  components:
+  - type: Bloodstream
+    bloodReagent: Necrosol
+  - type: PointLight
+    color: "#86a5bd"
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Aliens/elemental.rsi
+    layers:
+      - map: [ "enum.DamageStateVisualLayers.Base" ]
+        state: alive
+        color: "#86a5bd"
+
+- type: entity
+  id: ReagentSlimeSpaceDrugs
+  parent: ReagentSlime
+  suffix: SpaceDrugs
+  components:
+  - type: Bloodstream
+    bloodReagent: SpaceDrugs
+  - type: PointLight
+    color: "#63806e"
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Aliens/elemental.rsi
+    layers:
+      - map: [ "enum.DamageStateVisualLayers.Base" ]
+        state: alive
+        color: "#63806e"
+
+- type: entity
+  id: ReagentSlimeUnstableMutagen
+  parent: ReagentSlime
+  suffix: UnstableMutagen
+  components:
+  - type: Bloodstream
+    bloodReagent: UnstableMutagen
+  - type: PointLight
+    color: "#00ff5f"
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Aliens/elemental.rsi
+    layers:
+      - map: [ "enum.DamageStateVisualLayers.Base" ]
+        state: alive
+        color: "#00ff5f"
+
+- type: entity
+  id: ReagentSlimeLead
+  parent: ReagentSlime
+  suffix: Lead
+  components:
+  - type: Bloodstream
+    bloodReagent: Lead
+  - type: PointLight
+    color: "#5C6274"
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Aliens/elemental.rsi
+    layers:
+      - map: [ "enum.DamageStateVisualLayers.Base" ]
+        state: alive
+        color: "#5C6274"
+
+- type: entity
+  id: ReagentSlimechlorinetriflouride
+  parent: ReagentSlime
+  suffix: chlorinetriflouride
+  components:
+  - type: Bloodstream
+    bloodReagent: ChlorineTrifluoride
+  - type: PointLight
+    color: "#FFC8C8"
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Aliens/elemental.rsi
+    layers:
+      - map: [ "enum.DamageStateVisualLayers.Base" ]
+        state: alive
+        color: "#FFC8C8"
+
+- type: entity
+  id: ReagentSlimePotassium
+  parent: ReagentSlime
+  suffix: Potassium
+  components:
+  - type: Bloodstream
+    bloodReagent: Potassium
+  - type: PointLight
+    color: "#c6c8cc"
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Aliens/elemental.rsi
+    layers:
+      - map: [ "enum.DamageStateVisualLayers.Base" ]
+        state: alive
+        color: "#c6c8cc"
+
+- type: entity
+  id: reagentslimeVents
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    startAnnouncement: true
+    earliestStart: 20
+    reoccurrenceDelay: 12
+    minimumPlayers: 30
+    weight: 6 # Really weak compared to other critters
+    duration: 60
+  - type: VentCrittersRule
+    entries:
+    - id: ReagentSlimeBeer
+      prob: 0.003
+    - id: ReagentSlimePax
+      prob: 0.001
+    - id: ReagentSlimeNocturine
+      prob: 0.001
+    - id: ReagentSlimeTHC
+      prob: 0.002
+    - id: ReagentSlimeBicaridine
+      prob: 0.002
+    - id: ReagentSlimeToxin
+      prob: 0.002
+    - id: ReagentSlimeNapalm
+      prob: 0.002
+    - id: ReagentSlimeOmnizine
+      prob: 0.003
+    - id: ReagentSlimeMuteToxin
+      prob: 0.002
+    - id: ReagentSlimeNorepinephricAcid
+      prob: 0.002
+    - id: ReagentSlimeEphedrine
+      prob: 0.002
+    - id: ReagentSlimeRobustHarvest
+      prob: 0.003
+    - id: ReagentSlimeIchor
+      prob: 0.002
+    - id: ReagentSlimeBleach
+      prob: 0.002
+    - id: ReagentSlimeSoap
+      prob: 0.002
+    - id: ReagentSlimeSpacelube
+      prob: 0.002
+    - id: ReagentSlimeBuzzachloricbees
+      prob: 0.002
+    - id: ReagentSlimeWehjuice
+      prob: 0.003
+    - id: ReagentCognizine
+      prob: 0.003
+    - id: ReagentSlimeNecrosol
+      prob: 0.002
+    - id: ReagentSlimeSpaceDrugs
+      prob: 0.003
+    - id: ReagentSlimeUnstableMutagen
+      prob: 0.001
+    - id: ReagentSlimeLead
+      prob: 0.001
+    - id: ReagentSlimechlorinetriflouride
+      prob: 0.002
+    - id: ReagentSlimePotassium
+      prob: 0.002
+    - id: ReagentSlimeLotophagoiOil
+      prob: 0.001

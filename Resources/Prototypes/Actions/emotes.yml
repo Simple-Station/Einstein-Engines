@@ -1,0 +1,23 @@
+- type: emote
+  id: Flip
+  name: chat-emote-name-flip
+  chatMessages: ["chat-emote-msg-flip"]
+  chatTriggers:
+  - does a flip
+  event: !type:AnimationFlipEmoteEvent
+
+- type: emote
+  id: Spin
+  name: chat-emote-name-spin
+  chatMessages: ["chat-emote-msg-spin"]
+  chatTriggers:
+  - spins
+  event: !type:AnimationSpinEmoteEvent
+
+- type: emote
+  id: Jump
+  name: chat-emote-name-jump
+  chatMessages: ["chat-emote-msg-jump"]
+  chatTriggers:
+  - jumps
+  event: !type:AnimationJumpEmoteEvent

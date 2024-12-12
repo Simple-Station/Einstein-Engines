@@ -16,10 +16,9 @@
   - type: ActivatableUIRequiresPowerCell
   - type: ActivatableUI
     key: enum.CrewMonitoringUIKey.Key
-    closeOnHandDeselect: false
   - type: UserInterface
     interfaces:
-      - key: enum.CrewMonitoringUIKey.Key
+      enum.CrewMonitoringUIKey.Key:
         type: CrewMonitoringBoundUserInterface
   - type: CrewMonitoringConsole
   - type: DeviceNetwork
@@ -39,6 +38,10 @@
     - HighRiskItem
   - type: StealTarget
     stealGroup: HandheldCrewMonitor
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 5
 
 - type: entity
   id: HandheldCrewMonitorEmpty
@@ -48,7 +51,7 @@
   - type: ItemSlots
     slots:
       cell_slot:
-        name: power-cell-slot-component-slot-name-default 
+        name: power-cell-slot-component-slot-name-default
 
 - type: entity
   id: SpyCrewMonitor
@@ -74,7 +77,7 @@
   - type: ItemSlots
     slots:
       cell_slot:
-        name: power-cell-slot-component-slot-name-default 
+        name: power-cell-slot-component-slot-name-default
 
 - type: entity
   id: SyndiCrewMonitor
@@ -98,5 +101,4 @@
   - type: ItemSlots
     slots:
       cell_slot:
-        name: power-cell-slot-component-slot-name-default 
-  
+        name: power-cell-slot-component-slot-name-default

@@ -9,8 +9,10 @@
       - state: lung-l
       - state: lung-r
   - type: Lung
+  - type: Organ
+    slotId: lungs
   - type: Metabolizer
-    updateFrequency: 2.0
+    updateInterval: 2.0
     removeEmpty: true
     solutionOnBody: false
     solution: "Lung"

@@ -40,16 +40,18 @@
     proto: oni
   - type: LanguageKnowledge
     speaks:
-    - GalacticCommon
+    - TauCetiBasic
     - Nekomimetic
     understands:
-    - GalacticCommon
+    - TauCetiBasic
     - Nekomimetic
+  - type: PotentiaModifier
+    potentiaMultiplier: 0.5
 
 - type: entity
   save: false
   name: Urist McOni
   parent: MobHumanDummy
   id: MobOniDummy
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: A dummy oni meant to be used in character setup.

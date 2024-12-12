@@ -250,7 +250,7 @@ public sealed class ExecutionSystem : EntitySystem
         if (!TryComp<MeleeWeaponComponent>(weapon, out var melee) && melee!.Damage.GetTotal() > 0.0f)
             return;
 
-        _damageableSystem.TryChangeDamage(victim, melee.Damage * DamageModifier, true);
+        _damageableSystem.TryChangeDamage(victim, melee.Damage * DamageModifier, true, origin: attacker);
         _audioSystem.PlayEntity(melee.SoundHit, Filter.Pvs(weapon), weapon, true, AudioParams.Default);
 
         if (attacker == victim)
@@ -281,7 +281,7 @@ public sealed class ExecutionSystem : EntitySystem
         var prevention = new ShotAttemptedEvent
         {
             User = attacker,
-            Used = weapon
+            Used = new Entity<GunComponent>(uid, component)
         };
 
         RaiseLocalEvent(weapon, ref prevention);
@@ -374,7 +374,7 @@ public sealed class ExecutionSystem : EntitySystem
         }
 
         // Gun successfully fired, deal damage
-        _damageableSystem.TryChangeDamage(victim, damage * DamageModifier, true);
+        _damageableSystem.TryChangeDamage(victim, damage * DamageModifier, true, origin: attacker);
         _audioSystem.PlayEntity(component.SoundGunshot, Filter.Pvs(weapon), weapon, false, AudioParams.Default);
 
         // Popups

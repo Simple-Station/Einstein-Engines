@@ -60,10 +60,10 @@
   - type: ActivatableUIRequiresPower
   - type: UserInterface
     interfaces:
-    - key: enum.VendingMachineUiKey.Key
-      type: VendingMachineBoundUserInterface
-    - key: enum.WiresUiKey.Key
-      type: WiresBoundUserInterface
+      enum.VendingMachineUiKey.Key:
+        type: VendingMachineBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
   - type: WiresPanel
   - type: Wires
     boardName: wires-board-name-vendingmachine
@@ -86,6 +86,7 @@
   - type: Electrified
     enabled: false
     usesApcPower: true
+  - type: EtherealLight
   - type: PointLight
     enabled: false
     castShadows: false
@@ -105,10 +106,10 @@
   - type: WiresVisuals
   - type: LanguageKnowledge
     speaks:
-    - GalacticCommon
+    - TauCetiBasic
     - RobotTalk
     understands:
-    - GalacticCommon
+    - TauCetiBasic
     - RobotTalk
   - type: VendingMachine
     soundVend: /Audio/SimpleStation14/Machines/machine_vend.ogg
@@ -1905,7 +1906,7 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: AccessReader
-    access: [["Service"]]
+    access: [["Library"]]
 
 - type: entity
   parent: VendingMachine

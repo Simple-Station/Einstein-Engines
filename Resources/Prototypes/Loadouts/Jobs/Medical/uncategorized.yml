@@ -1,0 +1,522 @@
+# Uncategorized
+# Backpacks
+- type: loadout
+  id: LoadoutBackpackMedical
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackMedical
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalBackpacks
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+
+- type: loadout
+  id: LoadoutBackpackVirology
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackVirology
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalBackpacks
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+
+- type: loadout
+  id: LoadoutBackpackGenetics
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackGenetics
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalBackpacks
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+
+- type: loadout
+  id: LoadoutBackpackSatchelMedical
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackSatchelMedical
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalBackpacks
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+
+- type: loadout
+  id: LoadoutBackpackSatchelVirology
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackSatchelVirology
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalBackpacks
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+
+- type: loadout
+  id: LoadoutBackpackSatchelGenetics
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackSatchelGenetics
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalBackpacks
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+
+- type: loadout
+  id: LoadoutBackpackDuffelMedical
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackDuffelMedical
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalBackpacks
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+
+- type: loadout
+  id: LoadoutBackpackDuffelVirology
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackDuffelVirology
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalBackpacks
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+
+- type: loadout
+  id: LoadoutBackpackDuffelGenetics
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackDuffelGenetics
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalBackpacks
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+
+- type: loadout
+  id: LoadoutBackpackMedicalDuffelSurgeryFilled
+  category: JobsMedicalAUncategorized
+  cost: 3
+  exclusive: true
+  items:
+    - ClothingBackpackDuffelSurgeryFilled
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalBackpacks
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+
+# Belt
+
+# Ears
+
+# Equipment
+
+# Eyes
+- type: loadout
+  id: LoadoutMedicalEyesHudMedical
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalEyes
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+  items:
+    - ClothingEyesHudMedical
+
+- type: loadout
+  id: LoadoutMedicalEyesEyepatchHudMedical
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalEyes
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+  items:
+    - ClothingEyesEyepatchHudMedical
+
+- type: loadout
+  id: LoadoutMedicalEyesHudMedicalPrescription
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalEyes
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+    - !type:CharacterTraitRequirement
+      traits:
+        - Nearsighted
+  items:
+    - ClothingEyesPrescriptionMedHud
+
+# Gloves
+- type: loadout
+  id: LoadoutMedicalGlovesNitrile
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalGloves
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+  items:
+    - ClothingHandsGlovesNitrile
+
+- type: loadout
+  id: LoadoutMedicalGlovesLatex
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalGloves
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+  items:
+    - ClothingHandsGlovesLatex
+
+# Head
+- type: loadout
+  id: LoadoutMedicalHeadSurgcapBlue
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalHead
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+  items:
+    - ClothingHeadHatSurgcapBlue
+
+- type: loadout
+  id: LoadoutMedicalHeadSurgcapPurple
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalHead
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+  items:
+    - ClothingHeadHatSurgcapPurple
+
+- type: loadout
+  id: LoadoutMedicalHeadSurgcapGreen
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalHead
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+  items:
+    - ClothingHeadHatSurgcapGreen
+
+- type: loadout
+  id: LoadoutMedicalHeadSurgcapCyan
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalHead
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+  items:
+    - ClothingHeadHatSurgcapCyan
+
+- type: loadout
+  id: LoadoutMedicalHeadSurgcapBlack
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalHead
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+  items:
+    - ClothingHeadHatSurgcapBlack
+
+- type: loadout
+  id: LoadoutMedicalHeadSurgcapPink
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalHead
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+  items:
+    - ClothingHeadHatSurgcapPink
+
+- type: loadout
+  id: LoadoutMedicalHeadSurgcapWhite
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalHead
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+  items:
+    - ClothingHeadHatSurgcapWhite
+
+- type: loadout
+  id: LoadoutMedicalHeadSurgcapCybersun
+  category: JobsMedicalAUncategorized
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Chemist
+        - Paramedic
+  items:
+    - ClothingHeadHatSurgcapCybersun
+
+# Id
+
+# Neck
+- type: loadout
+  id: LoadoutMedicalNeckStethoscope
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalNeck
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+  items:
+    - ClothingNeckStethoscope
+
+- type: loadout
+  id: LoadoutMedicalBedsheetMedical
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalNeck
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+  items:
+    - BedsheetMedical
+
+# Mask
+
+# Outer
+- type: loadout
+  id: LoadoutMedicalOuterLabcoat
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Chemist
+  items:
+    - ClothingOuterCoatLab
+
+- type: loadout
+  id: LoadoutMedicalOuterCybersunWindbreaker
+  category: JobsMedicalAUncategorized
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Chemist
+        - Paramedic
+  items:
+    - ClothingOuterCoatCybersunWindbreaker
+
+# Shoes
+
+# Uniforms
+- type: loadout
+  id: LoadoutMedicalUniformScrubsBlue
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalUniforms
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+  items:
+    - UniformScrubsColorBlue
+
+- type: loadout
+  id: LoadoutMedicalUniformScrubsGreen
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalUniforms
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+  items:
+    - UniformScrubsColorGreen
+
+- type: loadout
+  id: LoadoutMedicalUniformScrubsPurple
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalUniforms
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+  items:
+    - UniformScrubsColorPurple
+
+- type: loadout
+  id: LoadoutMedicalUniformScrubsCyan
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalUniforms
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+  items:
+    - UniformScrubsColorCyan
+
+- type: loadout
+  id: LoadoutMedicalUniformScrubsBlack
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalUniforms
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+  items:
+    - UniformScrubsColorBlack
+
+- type: loadout
+  id: LoadoutMedicalUniformScrubsPink
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalUniforms
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+  items:
+    - UniformScrubsColorPink
+
+- type: loadout
+  id: LoadoutMedicalUniformScrubsCybersun
+  category: JobsMedicalAUncategorized
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Chemist
+        - Paramedic
+  items:
+    - UniformScrubsColorCybersun
+
+- type: loadout
+  id: LoadoutMedicalUniformScrubsWhite
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalUniforms
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+  items:
+    - UniformScrubsColorWhite

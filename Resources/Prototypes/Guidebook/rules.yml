@@ -1,0 +1,32 @@
+﻿- type: guideEntry # Default for forks and stuff. Should not be listed anywhere if the server is using a custom ruleset.
+  id: DefaultRuleset
+  name: guide-entry-rules
+  text: "/ServerInfo/Guidebook/ServerRules/DefaultRuleset.xml"
+
+- type: guideEntry
+  id: SpaceLaw
+  name: guide-entry-rules-space-law
+  priority: 60
+  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/SpaceLaw.xml"
+  children:
+  - SpaceLawControlledSubstances
+  - SpaceLawRestrictedGear
+  - SpaceLawRestrictedWeapons
+
+- type: guideEntry
+  id: SpaceLawControlledSubstances
+  name: guide-entry-rules-sl-controlled-substances
+  priority: 20
+  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/SLControlledSubstances.xml"
+
+- type: guideEntry
+  id: SpaceLawRestrictedGear
+  name: guide-entry-rules-sl-restricted-gear
+  priority: 30
+  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/SLRestrictedGear.xml"
+
+- type: guideEntry
+  id: SpaceLawRestrictedWeapons
+  name: guide-entry-rules-sl-restricted-weapons
+  priority: 40
+  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/SLRestrictedWeapons.xml"

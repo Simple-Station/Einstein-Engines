@@ -1,13 +1,13 @@
 using Content.Server.Popups;
 using Content.Shared.Silicon.EmitBuzzWhileDamaged;
 using Content.Shared.Audio;
-using Content.Shared.Body.Components;
 using Content.Shared.Damage;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Content.Shared.Mobs.Components;
 
 namespace Content.Server.Silicon.EmitBuzzOnCrit;
 
@@ -27,34 +27,29 @@ public sealed class EmitBuzzWhileDamagedSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        var query = EntityQueryEnumerator<EmitBuzzWhileDamagedComponent, BodyComponent>();
+        var query = EntityQueryEnumerator<EmitBuzzWhileDamagedComponent, MobStateComponent, MobThresholdsComponent, DamageableComponent>();
 
-        while (query.MoveNext(out var uid, out var emitBuzzOnCritComponent, out var body))
+        while (query.MoveNext(out var uid, out var emitBuzzOnCritComponent, out var mobStateComponent, out var thresholdsComponent, out var damageableComponent))
         {
-
-            if (_mobState.IsDead(uid)
-                || !_mobThreshold.TryGetThresholdForState(uid, MobState.Critical, out var threshold) 
-                || !TryComp(uid, out DamageableComponent? damageableComponent)
-                || damageableComponent.TotalDamage < (threshold/2))
+            if (_mobState.IsDead(uid, mobStateComponent)
+                || !_mobThreshold.TryGetThresholdForState(uid, MobState.Critical, out var threshold, thresholdsComponent)
+                || damageableComponent.TotalDamage < threshold / 2)
                 continue;
 
-
+            // Check update time
             emitBuzzOnCritComponent.AccumulatedFrametime += frameTime;
-
             if (emitBuzzOnCritComponent.AccumulatedFrametime < emitBuzzOnCritComponent.CycleDelay)
                 continue;
             emitBuzzOnCritComponent.AccumulatedFrametime -= emitBuzzOnCritComponent.CycleDelay;
 
+            if (_gameTiming.CurTime <= emitBuzzOnCritComponent.LastBuzzPopupTime + emitBuzzOnCritComponent.BuzzPopupCooldown)
+                continue;
 
-            // start buzzing
-            if (_gameTiming.CurTime >= emitBuzzOnCritComponent.LastBuzzPopupTime + emitBuzzOnCritComponent.BuzzPopupCooldown)
-            {
-                emitBuzzOnCritComponent.LastBuzzPopupTime = _gameTiming.CurTime;
-                _popupSystem.PopupEntity(Loc.GetString("silicon-behavior-buzz"), uid);
-                Spawn("EffectSparks", Transform(uid).Coordinates);
-                _audio.PlayPvs(emitBuzzOnCritComponent.Sound, uid, AudioHelpers.WithVariation(0.05f, _robustRandom));
-            }
+            // Start buzzing
+            emitBuzzOnCritComponent.LastBuzzPopupTime = _gameTiming.CurTime;
+            _popupSystem.PopupEntity(Loc.GetString("silicon-behavior-buzz"), uid);
+            Spawn("EffectSparks", Transform(uid).Coordinates);
+            _audio.PlayPvs(emitBuzzOnCritComponent.Sound, uid, AudioHelpers.WithVariation(0.05f, _robustRandom));
         }
     }
-
 }

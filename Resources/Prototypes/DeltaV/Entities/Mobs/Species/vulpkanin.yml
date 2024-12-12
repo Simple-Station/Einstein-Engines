@@ -106,10 +106,10 @@
   - type: Wagging
   - type: LanguageKnowledge
     speaks:
-    - GalacticCommon
+    - TauCetiBasic
     - Canilunzt
     understands:
-    - GalacticCommon
+    - TauCetiBasic
     - Canilunzt
   - type: ConsumeDelayModifier
     foodDelayMultiplier: 0.5
@@ -122,7 +122,7 @@
   name: Vulpkanin Dummy
   parent: MobHumanDummy
   id: MobVulpkaninDummy
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: A dummy vulpkanin meant to be used in character setup.
   components:
   - type: HumanoidAppearance

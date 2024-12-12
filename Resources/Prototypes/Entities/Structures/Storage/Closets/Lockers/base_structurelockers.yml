@@ -45,10 +45,15 @@
             min: 1
             max: 2
   - type: Construction
-    graph: ClosetSteel
+    graph: ClosetSteelSecure
     node: done
     containers:
     - entity_storage
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 10
+    staminaCost: 35
 
 - type: entity
   id: LockerBaseSecure
@@ -66,8 +71,3 @@
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
-  - type: Construction
-    graph: ClosetSteelSecure
-    node: done
-    containers:
-    - entity_storage

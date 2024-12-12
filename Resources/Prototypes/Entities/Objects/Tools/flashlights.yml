@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   name: flashlight
   parent: BaseItem
   id: FlashlightLantern
@@ -55,16 +55,19 @@
         visible: false
         map: [ "light" ]
   - type: MeleeWeapon
-    attackRate: 0.8
+    attackRate: 1.25
     bluntStaminaDamageFactor: 1.5
     damage:
       types:
         Blunt: 6
     soundHit:
       collection: MetalThud
+  - type: DamageOtherOnHit
+    staminaCost: 3.5
   - type: Item
     sprite: Objects/Tools/flashlight.rsi
     storedRotation: -90
+  - type: EtherealLight
   - type: PointLight
     enabled: false
     mask: /Textures/Effects/LightMasks/cone.png
@@ -116,13 +119,12 @@
         map: [ "light" ]
   - type: MeleeWeapon
     wideAnimationRotation: 90
-    attackRate: 0.8
+    attackRate: 1.25
     damage:
       types:
         Blunt: 6.5
-    bluntStaminaDamageFactor: 1.5
+    bluntStaminaDamageFactor: 2
     heavyRateModifier: 0.9
-    heavyStaminaCost: 5
     maxTargets: 1
     angle: 20
     soundHit:

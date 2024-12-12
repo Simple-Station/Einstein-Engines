@@ -1,9 +1,5 @@
 # TODO: Kill ore veins
 # Split it into 2 components, 1 for "spawn XYZ on destruction" and 1 for "randomly select one of these for spawn on destruction"
-# You could even just use an entityspawncollection instead.
-- type: ore
-  id: SpaceShrooms
-  oreEntity: FoodSpaceshroom
 
 # High yields
 - type: ore
@@ -84,6 +80,18 @@
   minOreYield: 2
   maxOreYield: 4
 
+- type: ore
+  id: OreBluespace
+  oreEntity: BluespaceOre1
+  minOreYield: 1
+  maxOreYield: 1
+
+- type: ore
+  id: OreNormality
+  oreEntity: NormalityOre1
+  minOreYield: 1
+  maxOreYield: 1
+
 - type: weightedRandomOre
   id: RandomOreDistributionStandard
   weights:
@@ -96,6 +104,8 @@
     OreUranium: 1
     OreBananium: 0.5
     OreArtifactFragment: 0.5
+    OreBluespace: 0.5
+    OreNormality: 0.3
 
 - type: weightedRandomOre
   id: OreCrab
