@@ -652,7 +652,7 @@ namespace Content.Client.Lobby.UI
             UpdateHairPickers();
             UpdateCMarkingsHair();
             UpdateCMarkingsFacialHair();
-            UpdateHeightWidthSliders(); // breaks here
+            UpdateHeightWidthSliders();
             UpdateWeight();
             UpdateCharacterRequired();
 
@@ -1351,18 +1351,18 @@ namespace Content.Client.Lobby.UI
 
         private void UpdateHeightWidthSliders()
         {
-            var species = _species.Find(x => x.ID == Profile?.Species) ?? _species.First();
-
             if (Profile is null)
                 return;
+            
+            var species = _species.Find(x => x.ID == Profile?.Species) ?? _species.First();
 
             HeightSlider.MinValue = species.MinHeight;
             HeightSlider.MaxValue = species.MaxHeight;
-            HeightSlider.Value = (float) Profile?.Height!;
+            HeightSlider.Value = Profile?.Height ?? species.DefaultHeight;
 
             WidthSlider.MinValue = species.MinWidth;
             WidthSlider.MaxValue = species.MaxWidth;
-            WidthSlider.Value = (float) Profile?.Width!;
+            WidthSlider.Value = Profile?.Width ?? species.DefaultWidth;
 
             var height = MathF.Round(species.AverageHeight * HeightSlider.Value);
             HeightLabel.Text = Loc.GetString("humanoid-profile-editor-height-label", ("height", (int) height));
