@@ -47,13 +47,6 @@
   - type: RequireProjectileTarget
     active: False
   - type: AnimatedEmotes
-
-- type: entity
-  save: false
-  id: MobPolymorphable
-  abstract: true
-  components:
-  - type: Polymorphable
   - type: OwnInteractionVerbs
     allowedVerbs: [] # TODO: define something here, or don't.
 
