@@ -108,7 +108,7 @@ namespace Content.Client.MainMenu
             TryConnect(args.Text);
         }
 
-        private void TryConnect(string address, string? commandToRun = null)
+        private void TryConnect(string address)
         {
             var inputName = _mainMenuControl.UsernameBox.Text.Trim();
             if (!UsernameHelpers.IsNameValid(inputName, out var reason))
