@@ -1,30 +1,33 @@
 - type: entity
   id: StorePresetUplink
-  storeName: Uplink
-  categories:
-  - UplinkWeapons
-  - UplinkAmmo
-  - UplinkExplosives
-  - UplinkMisc
-  - UplinkBundles
-  - UplinkTools
-  - UplinkUtility
-  - UplinkImplants
-  - UplinkJob
-  - UplinkArmor
-  - UplinkPointless
-  - UplinkSales
-  currencyWhitelist:
-  - Telecrystal
-  balance:
-    Telecrystal: 0
-  sales:
-    enabled: true
-    minMultiplier: 0.2
-    maxMultiplier: 0.8
-    minItems: 3
-    maxItems: 8
-    salesCategory: UplinkSales
+  abstract: true
+  components:
+  - type: Store
+    storeName: Uplink
+    categories:
+    - UplinkWeapons
+    - UplinkAmmo
+    - UplinkExplosives
+    - UplinkMisc
+    - UplinkBundles
+    - UplinkTools
+    - UplinkUtility
+    - UplinkImplants
+    - UplinkJob
+    - UplinkArmor
+    - UplinkPointless
+    - UplinkSales
+    currencyWhitelist:
+    - Telecrystal
+    balance:
+      Telecrystal: 0
+    sales:
+      enabled: true
+      minMultiplier: 0.2
+      maxMultiplier: 0.8
+      minItems: 3
+      maxItems: 8
+      salesCategory: UplinkSales
 
 - type: entity
   id: StorePresetSpellbook
