@@ -47,7 +47,7 @@ namespace Content.Client.Access.UI
             var i = 0;
             var icons = _prototypeManager.EnumeratePrototypes<JobIconPrototype>().Where(icon => icon.AllowSelection).ToList();
             icons.Sort((x, y) => string.Compare(x.LocalizedJobName, y.LocalizedJobName, StringComparison.CurrentCulture));
-            foreach (var jobIcon in icons)
+            foreach (var jobIconId in icons)
             {
                 if (!_prototypeManager.TryIndex<JobIconPrototype>(jobIconId, out var jobIcon))
                     continue;
