@@ -8656,3 +8656,12 @@ Entries:
   id: 6577
   time: '2024-12-15T19:12:33.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1343
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added a variety of Pointy Ears markings for Harpy and Arachne
+        characters. 
+  id: 6578
+  time: '2024-12-15T19:13:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1348
