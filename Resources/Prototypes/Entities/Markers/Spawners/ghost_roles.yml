@@ -130,9 +130,11 @@
       state: alive
 
 - type: entity
-  noSpawn: true
-  parent: BaseAntagSpawner
+  parent: MarkerBase
   id: SpawnPointGhostSpaceNinja
+  categories: [ HideSpawnMenu ]
+  name: ghost role spawn point
+  suffix: space ninja
   components:
   - type: GhostRole
     name: ghost-role-information-space-ninja-name
