@@ -8665,3 +8665,14 @@ Entries:
   id: 6578
   time: '2024-12-15T19:13:50.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1348
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Ported Cosmatic Drift's version of the Arrivals Terminal. Terminal now
+        includes every version of department clothing and material lockers that
+        players could ever need, allowing them to try on their chosen job
+        equipment and drip before departing for the station.
+  id: 6579
+  time: '2024-12-15T19:26:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1340
