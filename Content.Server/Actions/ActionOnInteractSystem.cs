@@ -111,8 +111,6 @@ public sealed class ActionOnInteractSystem : EntitySystem
             var (entActId, entAct) = _random.Pick(entWorldOptions);
             if (entAct.Event != null)
             {
-                entAct.Event.Performer = args.User;
-                entAct.Event.Action = entActId;
                 entAct.Event.Entity = args.Target;
                 entAct.Event.Coords = args.ClickLocation;
             }

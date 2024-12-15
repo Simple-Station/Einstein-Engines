@@ -84,7 +84,7 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
         {
             // Calculate the amount of currency on the uplink.
             var startingBalance = component.StartingBalance;
-            if (_jobs.MindTryGetJob(mindId, out _, out var prototype))
+            if (_jobs.MindTryGetJob(mindId, out _, out var job))
             {
                 if (startingBalance < job.AntagAdvantage) // Can't use Math functions on FixedPoint2
                     startingBalance = 0;

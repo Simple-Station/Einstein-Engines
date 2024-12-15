@@ -207,9 +207,9 @@ namespace Content.Client.Inventory
 
             // If this is a full pocket, obscure the real entity
             // this does not work for modified clients because they are still sent the real entity
-            if (entity != null 
+            if (entity != null
                 && _strippable.IsStripHidden(slotDef, _player.LocalEntity)
-                && !(EntMan.TryGetComponent<ThievingComponent>(_playerManager.LocalEntity, out var thiefComponent) 
+                && !(EntMan.TryGetComponent<ThievingComponent>(PlayerManager.LocalEntity, out var thiefComponent)
                 && thiefComponent.IgnoreStripHidden))
                 entity = _virtualHiddenEntity;
 
