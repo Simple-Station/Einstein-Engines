@@ -17,12 +17,19 @@ public sealed class StationMapBoundUserInterface : BoundUserInterface
         EntityUid? gridUid = null;
 
         if (EntMan.TryGetComponent<TransformComponent>(Owner, out var xform))
-        {
             gridUid = xform.GridUid;
-        }
 
         _window = this.CreateWindow<StationMapWindow>();
         _window.Title = EntMan.GetComponent<MetaDataComponent>(Owner).EntityName;
-        _window.Set(gridUid, Owner);
+
+        string stationName = string.Empty;
+
+        if(EntMan.TryGetComponent<MetaDataComponent>(gridUid, out var gridMetaData))
+            stationName = gridMetaData.EntityName;
+        
+        if (EntMan.TryGetComponent<StationMapComponent>(Owner, out var comp) && comp.ShowLocation)
+            _window.Set(stationName, gridUid, Owner);
+        else
+            _window.Set(stationName, gridUid, null);
     }
 }
