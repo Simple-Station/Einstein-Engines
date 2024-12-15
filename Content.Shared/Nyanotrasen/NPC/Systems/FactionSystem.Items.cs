@@ -1,12 +1,14 @@
-using Content.Server.NPC.Components;
-using Content.Server.Store.Systems;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Inventory.Events;
+using Content.Shared.NPC.Components;
 
-namespace Content.Server.NPC.Systems;
+
+namespace Content.Shared.Nyanotrasen.NPC.Systems;
 
 public partial class NpcFactionSystem
 {
+
+
     public void InitializeItems()
     {
         SubscribeLocalEvent<NpcFactionMemberComponent, StoreBuyFinishedEvent>(OnStoreBuyFinished);
