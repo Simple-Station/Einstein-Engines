@@ -22,7 +22,6 @@ using Content.Shared.Popups;
 using Content.Shared.Stacks;
 using Content.Shared.Storage.Components;
 using Content.Shared.Timing;
-using Content.Shared.Storage.Events;
 using Content.Shared.Verbs;
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
@@ -41,23 +40,23 @@ namespace Content.Shared.Storage.EntitySystems;
 
 public abstract class SharedStorageSystem : EntitySystem
 {
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
+    [Dependency] private   readonly IPrototypeManager _prototype = default!;
     [Dependency] protected readonly IRobustRandom Random = default!;
     [Dependency] protected readonly ActionBlockerSystem ActionBlocker = default!;
-    [Dependency] private readonly EntityLookupSystem _entityLookupSystem = default!;
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+    [Dependency] private   readonly EntityLookupSystem _entityLookupSystem = default!;
+    [Dependency] private   readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] protected readonly SharedAudioSystem Audio = default!;
-    [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
-    [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
+    [Dependency] private   readonly SharedContainerSystem _containerSystem = default!;
+    [Dependency] private   readonly SharedDoAfterSystem _doAfterSystem = default!;
     [Dependency] protected readonly SharedEntityStorageSystem EntityStorage = default!;
-    [Dependency] private readonly SharedInteractionSystem _interactionSystem = default!;
-    [Dependency] private readonly InventorySystem _inventory = default!;
+    [Dependency] private   readonly SharedInteractionSystem _interactionSystem = default!;
+    [Dependency] private   readonly InventorySystem _inventory = default!;
     [Dependency] protected readonly SharedItemSystem ItemSystem = default!;
-    [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
-    [Dependency] private readonly SharedHandsSystem _sharedHandsSystem = default!;
-    [Dependency] private readonly SharedStackSystem _stack = default!;
+    [Dependency] private   readonly SharedPopupSystem _popupSystem = default!;
+    [Dependency] private   readonly SharedHandsSystem _sharedHandsSystem = default!;
+    [Dependency] private   readonly SharedStackSystem _stack = default!;
     [Dependency] protected readonly SharedTransformSystem TransformSystem = default!;
-    [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
+    [Dependency] private   readonly SharedUserInterfaceSystem _ui = default!;
     [Dependency] protected readonly UseDelaySystem UseDelay = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLog = default!;
@@ -129,6 +128,7 @@ public abstract class SharedStorageSystem : EntitySystem
         SubscribeAllEvent<StorageInteractWithItemEvent>(OnInteractWithItem);
         SubscribeAllEvent<StorageSetItemLocationEvent>(OnSetItemLocation);
         SubscribeAllEvent<StorageInsertItemIntoLocationEvent>(OnInsertItemIntoLocation);
+        SubscribeAllEvent<StorageRemoveItemEvent>(OnRemoveItem);
         SubscribeAllEvent<StorageSaveItemLocationEvent>(OnSaveItemLocation);
 
         SubscribeLocalEvent<StorageComponent, GotReclaimedEvent>(OnReclaimed);
@@ -363,12 +363,10 @@ public abstract class SharedStorageSystem : EntitySystem
         if (args.Handled || !CanInteract(args.User, (uid, storageComp), storageComp.ClickInsert, false))
             return;
 
-        var attemptEv = new StorageInteractUsingAttemptEvent();
-        RaiseLocalEvent(uid, ref attemptEv);
-        if (attemptEv.Cancelled)
+        if (HasComp<PlaceableSurfaceComponent>(uid))
             return;
 
-        PlayerInsertHeldEntity((uid, storageComp), args.User);
+        PlayerInsertHeldEntity(uid, args.User, storageComp);
         // Always handle it, even if insertion fails.
         // We don't want to trigger any AfterInteract logic here.
         // Example issue would be placing wires if item doesn't fit in backpack.
@@ -404,13 +402,7 @@ public abstract class SharedStorageSystem : EntitySystem
         if (args.Handled)
             return;
 
-        var uiOpen = _ui.IsUiOpen(uid, StorageComponent.StorageUiKey.Key, args.Performer);
-
-        if (uiOpen)
-            _ui.CloseUi(uid, StorageComponent.StorageUiKey.Key, args.Performer);
-        else
-            OpenStorageUI(uid, args.Performer, storageComp, false);
-
+        OpenStorageUI(uid, args.Performer, storageComp, false);
         args.Handled = true;
     }
 
@@ -452,13 +444,13 @@ public abstract class SharedStorageSystem : EntitySystem
             }
 
             //If there's only one then let's be generous
-            if (_entList.Count >= 1)
+            if (_entList.Count > 1)
             {
                 var doAfterArgs = new DoAfterArgs(EntityManager, args.User, delay, new AreaPickupDoAfterEvent(GetNetEntityList(_entList)), uid, target: uid)
                 {
                     BreakOnDamage = true,
                     BreakOnMove = true,
-                    NeedHand = true,
+                    NeedHand = true
                 };
 
                 _doAfterSystem.TryStartDoAfter(doAfterArgs);
@@ -546,7 +538,7 @@ public abstract class SharedStorageSystem : EntitySystem
 
             var angle = targetXform.LocalRotation;
 
-            if (PlayerInsertEntityInWorld((uid, component), args.Args.User, entity, playSound: false))
+            if (PlayerInsertEntityInWorld((uid, component), args.Args.User, entity))
             {
                 successfullyInserted.Add(entity);
                 successfullyInsertedPositions.Add(position);
@@ -996,47 +988,46 @@ public abstract class SharedStorageSystem : EntitySystem
     /// <summary>
     ///     Inserts an entity into storage from the player's active hand
     /// </summary>
-    /// <param name="ent">The storage entity and component to insert into.</param>
-    /// <param name="player">The player and hands component to insert the held entity from.</param>
-    /// <returns>True if inserted, otherwise false.</returns>
-    public bool PlayerInsertHeldEntity(Entity<StorageComponent?> ent, Entity<HandsComponent?> player)
+    /// <param name="uid"></param>
+    /// <param name="player">The player to insert an entity from</param>
+    /// <param name="storageComp"></param>
+    /// <returns>true if inserted, false otherwise</returns>
+    public bool PlayerInsertHeldEntity(EntityUid uid, EntityUid player, StorageComponent? storageComp = null)
     {
-        if (!Resolve(ent.Owner, ref ent.Comp)
-            || !Resolve(player.Owner, ref player.Comp)
-            || player.Comp.ActiveHandEntity == null)
+        if (!Resolve(uid, ref storageComp) || !TryComp(player, out HandsComponent? hands) || hands.ActiveHandEntity == null)
             return false;
 
-        var toInsert = player.Comp.ActiveHandEntity;
+        var toInsert = hands.ActiveHandEntity;
 
-        if (!CanInsert(ent, toInsert.Value, out var reason, ent.Comp))
+        if (!CanInsert(uid, toInsert.Value, out var reason, storageComp))
         {
-            _popupSystem.PopupClient(Loc.GetString(reason ?? "comp-storage-cant-insert"), ent, player);
+            _popupSystem.PopupClient(Loc.GetString(reason ?? "comp-storage-cant-insert"), uid, player);
             return false;
         }
 
-        if (!_sharedHandsSystem.CanDrop(player, toInsert.Value, player.Comp))
+        if (!_sharedHandsSystem.CanDrop(player, toInsert.Value, hands))
         {
-            _popupSystem.PopupClient(Loc.GetString("comp-storage-cant-drop", ("entity", toInsert.Value)), ent, player);
+            _popupSystem.PopupClient(Loc.GetString("comp-storage-cant-drop", ("entity", toInsert.Value)), uid, player);
             return false;
         }
 
-        return PlayerInsertEntityInWorld((ent, ent.Comp), player, toInsert.Value);
+        return PlayerInsertEntityInWorld((uid, storageComp), player, toInsert.Value);
     }
 
     /// <summary>
     ///     Inserts an Entity (<paramref name="toInsert"/>) in the world into storage, informing <paramref name="player"/> if it fails.
-    ///     <paramref name="toInsert"/> is *NOT* held, see <see cref="PlayerInsertHeldEntity(Entity{StorageComponent?},Entity{HandsComponent?})"/>.
+    ///     <paramref name="toInsert"/> is *NOT* held, see <see cref="PlayerInsertHeldEntity(EntityUid,EntityUid,StorageComponent)"/>.
     /// </summary>
     /// <param name="uid"></param>
     /// <param name="player">The player to insert an entity with</param>
     /// <param name="toInsert"></param>
     /// <returns>true if inserted, false otherwise</returns>
-    public bool PlayerInsertEntityInWorld(Entity<StorageComponent?> uid, EntityUid player, EntityUid toInsert, bool playSound = true)
+    public bool PlayerInsertEntityInWorld(Entity<StorageComponent?> uid, EntityUid player, EntityUid toInsert)
     {
         if (!Resolve(uid, ref uid.Comp) || !_interactionSystem.InRangeUnobstructed(player, uid.Owner))
             return false;
 
-        if (!Insert(uid, toInsert, out _, user: player, uid.Comp, playSound: playSound))
+        if (!Insert(uid, toInsert, out _, user: player, uid.Comp))
         {
             _popupSystem.PopupClient(Loc.GetString("comp-storage-cant-insert"), uid, player);
             return false;
@@ -1394,7 +1385,7 @@ public abstract class SharedStorageSystem : EntitySystem
         if (session is not { } playerSession)
             return;
 
-        if (playerSession.AttachedEntity is not { Valid: true } playerEnt || !Exists(playerEnt))
+        if (playerSession.AttachedEntity is not {Valid: true} playerEnt || !Exists(playerEnt))
             return;
 
         if (!_inventory.TryGetSlotEntity(playerEnt, slot, out var storageEnt))
