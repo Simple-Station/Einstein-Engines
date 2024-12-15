@@ -9,6 +9,7 @@ using Robust.Shared.Enums;
 using System.Numerics;
 using Content.Shared.StatusIcon.Components;
 using Content.Client.UserInterface.Systems;
+using Content.Shared.StatusIcon;
 using Robust.Shared.Prototypes;
 using static Robust.Shared.Maths.Color;
 

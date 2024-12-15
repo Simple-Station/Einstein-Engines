@@ -19,7 +19,6 @@ public sealed partial class LatheMenu : DefaultWindow
 {
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly IResourceCache _resources = default!;
 
     private readonly SpriteSystem _spriteSystem;
     private readonly LatheSystem _lathe;
@@ -79,9 +78,6 @@ public sealed partial class LatheMenu : DefaultWindow
     /// </summary>
     public void PopulateRecipes()
     {
-        if (!_entityManager.TryGetComponent<LatheComponent>(_owner, out var component))
-            return;
-
         var recipesToShow = new List<LatheRecipePrototype>();
         foreach (var recipe in Recipes)
         {
@@ -212,7 +208,8 @@ public sealed partial class LatheMenu : DefaultWindow
     /// <param name="queue"></param>
     public void PopulateQueueList(List<LatheRecipePrototype> queue)
     {
-        QueueList.Clear();
+        QueueList.DisposeAllChildren();
+
         var idx = 1;
         foreach (var recipe in queue)
         {
