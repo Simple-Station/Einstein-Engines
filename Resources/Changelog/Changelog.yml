@@ -8627,3 +8627,21 @@ Entries:
   id: 6574
   time: '2024-12-11T23:26:33.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1335
+- author: Kyoth25f
+  changes:
+    - type: Fix
+      message: Hydraulic clamps now drop entities correctly
+  id: 6575
+  time: '2024-12-14T04:22:17.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1344
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: >-
+        Fixed the bug where switching characters made your width/height change
+        to incorrect values.
+    - type: Fix
+      message: Fixed the salvage magnet opening ten times.
+  id: 6576
+  time: '2024-12-14T18:09:00.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1347
