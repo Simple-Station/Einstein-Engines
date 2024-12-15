@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Shared.Nyanotrasen.Abilities.Oni;
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Weapons.Ranged.Systems;
 using Robust.Shared.Audio;

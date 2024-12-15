@@ -513,7 +513,7 @@ public abstract class SharedMagicSystem : EntitySystem
         if (args is not ISpeakSpell speak || string.IsNullOrWhiteSpace(speak.Speech))
             return;
 
-        var ev = new SpeakSpellEvent(args.Performer, speak.Speech);
+        var ev = new SpeakSpellEvent(args.Performer, speak.Speech, speak.ChatType);
         RaiseLocalEvent(ref ev);
     }
 }
