@@ -46,6 +46,8 @@ using Timer = Robust.Shared.Timing.Timer;
 using Content.Server.Power.Components;
 using Content.Shared.Drunk;
 using Content.Shared.Nutrition.EntitySystems;
+using Content.Shared.Power;
+
 
 namespace Content.Server.Cloning;
 

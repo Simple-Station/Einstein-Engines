@@ -5,14 +5,11 @@ using Content.Server.NPC.Systems;
 using Content.Server.Objectives;
 using Content.Server.PDA.Ringer;
 using Content.Server.Roles;
-using Content.Server.Traitor.Components;
 using Content.Server.Traitor.Uplink;
-using Content.Shared.Database;
 using Content.Shared.FixedPoint;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Mind;
 using Content.Shared.Mood;
-using Content.Shared.Objectives.Components;
 using Content.Shared.PDA;
 using Content.Shared.Roles;
 using Content.Shared.Roles.Jobs;
@@ -87,12 +84,12 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
         {
             // Calculate the amount of currency on the uplink.
             var startingBalance = component.StartingBalance;
-            if (_jobs.MindTryGetJob(mindId, out var prototype))
+            if (_jobs.MindTryGetJob(mindId, out var prototype, out var job))
             {
-                if (startingBalance < prototype.AntagAdvantage) // Can't use Math functions on FixedPoint2
+                if (startingBalance < job.AntagAdvantage) // Can't use Math functions on FixedPoint2
                     startingBalance = 0;
                 else
-                    startingBalance = startingBalance - prototype.AntagAdvantage;
+                    startingBalance = startingBalance - job.AntagAdvantage;
             }
 
             // Choose and generate an Uplink, and return the uplink code if applicable
