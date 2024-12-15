@@ -58,7 +58,6 @@ job-name-visitor = Visitor
 job-name-geneticist = Geneticist
 job-name-no-id = No ID
 job-name-prisoner = Prisoner
-job-name-roboticist = Roboticist
 job-name-syndicate = Syndicate
 job-name-unknown = Unknown
 job-name-virologist = Virologist
