@@ -174,9 +174,12 @@ public sealed class DefibrillatorSystem : EntitySystem
         if (targetEvent.Cancelled || !CanZap(uid, target, user, component, true))
             return;
 
-        if (!TryComp<MobStateComponent>(target, out var mob) ||
-            !TryComp<MobThresholdsComponent>(target, out var thresholds))
+        if (!TryComp<MobStateComponent>(target, out var mobState) ||
+            !TryComp<MobThresholdsComponent>(target, out var mobThresholds))
             return;
+
+        mob = mobState;
+        thresholds = mobThresholds;
 
         _audio.PlayPvs(component.ZapSound, uid);
         _electrocution.TryDoElectrocution(target, null, component.ZapDamage, component.WritheDuration, true, ignoreInsulation: true);
