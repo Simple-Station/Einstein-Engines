@@ -94,7 +94,7 @@ namespace Content.Server.Access.Systems
                 return;
             }
 
-            if (!_prototypeManager.TryIndex<StatusIconPrototype>(args.JobIconId, out var jobIcon))
+            if (!_prototypeManager.TryIndex(args.JobIconId, out var jobIcon))
             {
                 return;
             }

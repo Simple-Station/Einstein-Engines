@@ -10,6 +10,7 @@ using Content.Shared.DeltaV.CCVars;
 using Content.Shared.Explosion.Components;
 using Content.Shared.FixedPoint;
 using Content.Shared.Flash.Components;
+using Content.Shared.Store.Components;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 

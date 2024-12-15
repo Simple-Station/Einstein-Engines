@@ -22,7 +22,9 @@ using Robust.Shared.Map;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 using System.Linq;
-using Content.Server.GameTicking.Components;
+using Content.Server.NPC.Components;
+using Content.Server.NPC.Systems;
+using Content.Shared.GameTicking.Components;
 using Content.Shared.Store.Components;
 
 namespace Content.Server.GameTicking.Rules;
