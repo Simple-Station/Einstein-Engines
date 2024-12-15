@@ -402,7 +402,7 @@
         prototype: Nukeops
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseTraitorRule
   id: SleeperAgentsRule
   components:
