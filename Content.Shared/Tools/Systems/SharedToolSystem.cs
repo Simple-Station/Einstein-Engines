@@ -234,6 +234,9 @@ public abstract partial class SharedToolSystem : EntitySystem
         return !beforeAttempt.Cancelled;
     }
 
+    public void SetSpeedModifier(Entity<ToolComponent> ent, float value) =>
+        ent.Comp.SpeedModifier = value;
+
     #region DoAfterEvents
 
     [Serializable, NetSerializable]
@@ -282,9 +285,7 @@ public abstract partial class SharedToolSystem : EntitySystem
         [DataField(required:true)]
         public NetCoordinates Coordinates;
 
-        private LatticeCuttingCompleteEvent()
-        {
-        }
+        private LatticeCuttingCompleteEvent() { }
 
         public LatticeCuttingCompleteEvent(NetCoordinates coordinates)
         {

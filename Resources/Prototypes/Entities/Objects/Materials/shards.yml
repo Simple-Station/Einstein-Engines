@@ -172,6 +172,9 @@
       types:
         Slash: 5.5
   - type: ToolRefinable
+    refineResult:
+      - id: SheetGlass1
+      - id: SheetPlasma1
   - type: EmbedPassiveDamage
     damage:
       types:

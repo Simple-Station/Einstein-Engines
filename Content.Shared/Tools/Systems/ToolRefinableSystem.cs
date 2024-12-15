@@ -1,13 +1,9 @@
-using Content.Server.Construction.Components;
-using Content.Server.Stack;
 using Content.Shared.Construction;
 using Content.Shared.Interaction;
-using Content.Shared.Stacks;
 using Content.Shared.Storage;
 using Content.Shared.Tools.Components;
 using Robust.Shared.Network;
 using Robust.Shared.Random;
-using SharedToolSystem = Content.Shared.Tools.Systems.SharedToolSystem;
 
 namespace Content.Shared.Tools.Systems;
 
@@ -16,7 +12,6 @@ public sealed class ToolRefinableSystem : EntitySystem
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedToolSystem _toolSystem = default!;
-    [Dependency] private readonly StackSystem _stackSystem = default!;
 
     public override void Initialize()
     {
@@ -30,7 +25,14 @@ public sealed class ToolRefinableSystem : EntitySystem
         if (args.Handled)
             return;
 
-        args.Handled = _toolSystem.UseTool(args.Used, args.User, uid, component.RefineTime, component.QualityNeeded, new WelderRefineDoAfterEvent(), fuel: component.RefineFuel);
+        args.Handled = _toolSystem.UseTool(
+            args.Used,
+            args.User,
+            uid,
+            component.RefineTime,
+            component.QualityNeeded,
+            new WelderRefineDoAfterEvent(),
+            fuel: component.RefineFuel);
     }
 
     private void OnDoAfter(EntityUid uid, ToolRefinableComponent component, WelderRefineDoAfterEvent args)

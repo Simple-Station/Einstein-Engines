@@ -13,8 +13,8 @@ namespace Content.Shared.Tools.Components;
 [RegisterComponent, NetworkedComponent, Access(typeof(ToolRefinableSystem))]
 public sealed partial class ToolRefinableComponent : Component
 {
-    [DataField]
-    public HashSet<EntitySpawnEntry>? RefineResult;
+    [DataField(required: true)]
+    public HashSet<EntitySpawnEntry> RefineResult;
 
     [DataField]
     public float RefineTime = 2f;
