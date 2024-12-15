@@ -8645,3 +8645,14 @@ Entries:
   id: 6576
   time: '2024-12-14T18:09:00.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1347
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Dispel, Metapsionic Pulse, Xenoglossy, and Psychognomy can all be
+        purchased during character creation using trait points.
+    - type: Tweak
+      message: Blindness now grants 10 trait points instead of 6.
+  id: 6577
+  time: '2024-12-15T19:12:33.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1343
