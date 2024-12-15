@@ -92,7 +92,6 @@ public sealed class PenLightSystem : EntitySystem
         {
             BlockDuplicate = true,
             BreakOnMove = true,
-            ,
             BreakOnHandChange = true,
             NeedHand = true
         });

@@ -83,7 +83,6 @@ public sealed class PaintSystem : SharedPaintSystem
                 used: uid)
             {
                 BreakOnMove = true,
-                ,
                 NeedHand = true,
                 BreakOnHandChange = true,
             });
