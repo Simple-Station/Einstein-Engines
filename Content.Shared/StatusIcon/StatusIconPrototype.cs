@@ -30,11 +30,6 @@ public partial class StatusIconData : IComparable<StatusIconData>
     [DataField("locationPreference")]
     public StatusIconLocationPreference LocationPreference = StatusIconLocationPreference.None;
 
-    public int CompareTo(StatusIconData? other)
-    {
-        return Priority.CompareTo(other?.Priority ?? int.MaxValue);
-    }
-
     /// <summary>
     /// The layer the icon is displayed on. Mod is drawn above Base. Base | Mod
     /// </summary>

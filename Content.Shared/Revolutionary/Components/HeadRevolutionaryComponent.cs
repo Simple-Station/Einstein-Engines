@@ -9,7 +9,7 @@ namespace Content.Shared.Revolutionary.Components;
 /// Component used for marking a Head Rev for conversion and winning/losing.
 /// </summary>
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedRevolutionarySystem))]
-public sealed partial class HeadRevolutionaryComponent : Component, IAntagStatusIconComponent
+public sealed partial class HeadRevolutionaryComponent : Component
 {
     /// <summary>
     /// The status icon corresponding to the head revolutionary.
