@@ -8645,3 +8645,34 @@ Entries:
   id: 6576
   time: '2024-12-14T18:09:00.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1347
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Dispel, Metapsionic Pulse, Xenoglossy, and Psychognomy can all be
+        purchased during character creation using trait points.
+    - type: Tweak
+      message: Blindness now grants 10 trait points instead of 6.
+  id: 6577
+  time: '2024-12-15T19:12:33.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1343
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added a variety of Pointy Ears markings for Harpy and Arachne
+        characters. 
+  id: 6578
+  time: '2024-12-15T19:13:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1348
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Ported Cosmatic Drift's version of the Arrivals Terminal. Terminal now
+        includes every version of department clothing and material lockers that
+        players could ever need, allowing them to try on their chosen job
+        equipment and drip before departing for the station.
+  id: 6579
+  time: '2024-12-15T19:26:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1340
