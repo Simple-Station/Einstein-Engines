@@ -144,7 +144,6 @@
     - PsionicsDisabled
     - PsionicallyInsulated
   - type: Reflect
-    enabled: false
     reflectProb: 0
   - type: Body
     prototype: Human
