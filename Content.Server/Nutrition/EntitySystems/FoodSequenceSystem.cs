@@ -133,8 +133,6 @@ public sealed class FoodSequenceSystem : SharedFoodSequenceSystem
             return;
 
         foreach (var trash in elementFood.Trash)
-        {
             startFood.Trash.Add(trash);
-        }
     }
 }
