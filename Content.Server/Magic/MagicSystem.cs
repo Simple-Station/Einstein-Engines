@@ -1,6 +1,6 @@
 using Content.Server.Chat.Systems;
+using Content.Shared.Chat;
 using Content.Shared.Magic;
-using Content.Shared.Magic.Components;
 using Content.Shared.Magic.Events;
 
 namespace Content.Server.Magic;

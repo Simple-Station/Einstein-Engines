@@ -1,4 +1,3 @@
-using Content.Shared.Damage.Events;
 using Content.Server.Administration.Logs;
 using Content.Server.Effects;
 using Content.Server.Weapons.Ranged.Systems;
@@ -8,7 +7,6 @@ using Content.Shared.Database;
 using Content.Shared.Projectiles;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Player;
-using Robust.Shared.Utility;
 
 namespace Content.Server.Projectiles;
 
@@ -24,21 +22,16 @@ public sealed class ProjectileSystem : SharedProjectileSystem
     {
         base.Initialize();
         SubscribeLocalEvent<ProjectileComponent, StartCollideEvent>(OnStartCollide);
-        SubscribeLocalEvent<EmbeddableProjectileComponent, DamageExamineEvent>(OnDamageExamine);
     }
 
     private void OnStartCollide(EntityUid uid, ProjectileComponent component, ref StartCollideEvent args)
     {
         // This is so entities that shouldn't get a collision are ignored.
         if (args.OurFixtureId != ProjectileFixture || !args.OtherFixture.Hard
-                                                   || component.DamagedEntity || component is
-                                                       { Weapon: null, OnlyCollideWhenShot: true })
-        {
+            || component.DamagedEntity || component is { Weapon: null, OnlyCollideWhenShot: true })
             return;
-        }
 
         var target = args.OtherEntity;
-
         // it's here so this check is only done once before possible hit
         var attemptEv = new ProjectileReflectAttemptEvent(uid, component, false);
         RaiseLocalEvent(target, ref attemptEv);
@@ -47,22 +40,6 @@ public sealed class ProjectileSystem : SharedProjectileSystem
             SetShooter(uid, component, target);
             return;
         }
-
-        if (TryHandleProjectile(target, (uid, component)))
-        {
-            var direction = args.OurBody.LinearVelocity.Normalized();
-            _sharedCameraRecoil.KickCamera(target, direction);
-        }
-    }
-
-    /// <summary>
-    /// Tries to handle a projectile interacting with the target.
-    /// </summary>
-    /// <returns>True if the target isn't deleted.</returns>
-    public bool TryHandleProjectile(EntityUid target, Entity<ProjectileComponent> projectile)
-    {
-        var uid = projectile.Owner;
-        var component = projectile.Comp;
 
         var ev = new ProjectileHitEvent(component.Damage, target, component.Shooter);
         RaiseLocalEvent(uid, ref ev);
@@ -73,7 +50,7 @@ public sealed class ProjectileSystem : SharedProjectileSystem
 
         if (modifiedDamage is not null && EntityManager.EntityExists(component.Shooter))
         {
-            if (modifiedDamage.Any() && !deleted)
+            if (modifiedDamage.AnyPositive() && !deleted)
             {
                 _color.RaiseEffect(Color.Red, new List<EntityUid> { target }, Filter.Pvs(target, entityManager: EntityManager));
             }
@@ -86,36 +63,19 @@ public sealed class ProjectileSystem : SharedProjectileSystem
         if (!deleted)
         {
             _guns.PlayImpactSound(target, modifiedDamage, component.SoundHit, component.ForceSound);
+
+            if (!args.OurBody.LinearVelocity.IsLengthZero())
+                _sharedCameraRecoil.KickCamera(target, args.OurBody.LinearVelocity.Normalized());
         }
 
         component.DamagedEntity = true;
 
-        var afterProjectileHitEvent = new AfterProjectileHitEvent(component.Damage, target);
-        RaiseLocalEvent(uid, ref afterProjectileHitEvent);
-
         if (component.DeleteOnCollide)
             QueueDel(uid);
 
-        if (component.ImpactEffect != null && TryComp<TransformComponent>(uid, out var xform))
+        if (component.ImpactEffect != null && TryComp(uid, out TransformComponent? xform))
         {
             RaiseNetworkEvent(new ImpactEffectEvent(component.ImpactEffect, GetNetCoordinates(xform.Coordinates)), Filter.Pvs(xform.Coordinates, entityMan: EntityManager));
         }
-    }
-
-    private void OnDamageExamine(EntityUid uid, EmbeddableProjectileComponent component, ref DamageExamineEvent args)
-    {
-        if (!component.EmbedOnThrow)
-            return;
-
-        if (!args.Message.IsEmpty)
-            args.Message.PushNewline();
-
-        var isHarmful = TryComp<EmbedPassiveDamageComponent>(uid, out var passiveDamage) && passiveDamage.Damage.Any();
-        var loc = isHarmful
-            ? "damage-examine-embeddable-harmful"
-            : "damage-examine-embeddable";
-
-        var staminaCostMarkup = FormattedMessage.FromMarkupOrThrow(Loc.GetString(loc));
-        args.Message.AddMessage(staminaCostMarkup);
     }
 }
