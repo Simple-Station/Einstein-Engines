@@ -979,7 +979,7 @@ namespace Content.Shared.Interaction
             bool checkCanUse = true)
         {
             if (IsDeleted(user) || IsDeleted(used) || IsDeleted(target))
-                return;
+                return false;
 
             if (checkCanInteract && !_actionBlockerSystem.CanInteract(user, target))
                 return false;
@@ -1019,10 +1019,16 @@ namespace Content.Shared.Interaction
         /// <param name="used"><inheritdoc cref="InteractUsing"/></param>
         /// <param name="target"><inheritdoc cref="InteractUsing"/></param>
         /// <param name="clickLocation"><inheritdoc cref="InteractUsing"/></param>
-        /// <param name="canReach">Whether the <paramref name="user"/> is in range of the <paramref name="target"/>.
-        ///     </param>
+        /// <param name="canReach">Whether the <paramref name="user"/> is in range of the <paramref name="target"/>.</param>
+        /// <param name="checkDeletion">Whether we should check if any entities were deleted.</param>
         /// <returns>True if the interaction was handled. Otherwise, false.</returns>
-        public bool InteractDoAfter(EntityUid user, EntityUid used, EntityUid? target, EntityCoordinates clickLocation, bool canReach)
+        public bool InteractDoAfter(
+            EntityUid user,
+            EntityUid used,
+            EntityUid? target,
+            EntityCoordinates clickLocation,
+            bool canReach,
+            bool checkDeletion = false)
         {
             if (target is { Valid: false })
                 target = null;
@@ -1051,7 +1057,7 @@ namespace Content.Shared.Interaction
             if (canReach)
                 DoContactInteraction(user, target, afterInteractUsingEvent);
             // Contact interactions are currently only used for forensics, so we don't raise used -> target
-            
+
             if (afterInteractUsingEvent.Handled)
                 return true;
             return false;

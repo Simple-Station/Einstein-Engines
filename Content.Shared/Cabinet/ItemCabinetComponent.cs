@@ -1,4 +1,5 @@
 using Content.Shared.Containers.ItemSlots;
+using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared.Cabinet;

@@ -102,7 +102,7 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
         var isEnabled = !translatorComp.Enabled && hasPower;
 
         translatorComp.Enabled = isEnabled;
-        _powerCell.SetPowerCellDrawEnabled(translator, isEnabled);
+        _powerCell.SetDrawEnabled(translator, isEnabled);
 
         if (_containers.TryGetContainingContainer(translator, out var holderCont)
             && holderCont.Owner is var holder
@@ -130,7 +130,7 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
     private void OnPowerCellSlotEmpty(EntityUid translator, HandheldTranslatorComponent component, PowerCellSlotEmptyEvent args)
     {
         component.Enabled = false;
-        _powerCell.SetPowerCellDrawEnabled(translator, false);
+        _powerCell.SetDrawEnabled(translator, false);
         OnAppearanceChange(translator, component);
 
         if (_containers.TryGetContainingContainer(translator, out var holderCont) && HasComp<LanguageSpeakerComponent>(holderCont.Owner))

@@ -42,6 +42,7 @@ using Content.Shared.Nyanotrasen.Kitchen;
 using Content.Shared.Nyanotrasen.Kitchen.Components;
 using Content.Shared.Nyanotrasen.Kitchen.UI;
 using Content.Shared.Popups;
+using Content.Shared.Power;
 using Content.Shared.Throwing;
 using Content.Shared.UserInterface;
 using Content.Shared.Whitelist;
@@ -644,8 +645,7 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
         var doAfterArgs = new DoAfterArgs(EntityManager, user, delay, ev, uid, uid, heldItem)
         {
             BreakOnDamage = true,
-            BreakOnTargetMove = true,
-            BreakOnUserMove = true,
+            BreakOnMove = true,
             MovementThreshold = 0.25f,
             NeedHand = true
         };
