@@ -135,8 +135,7 @@ namespace Content.Server.Cocoon
 
             var args = new DoAfterArgs(EntityManager, uid, delay, new CocoonDoAfterEvent(), uid, target: target)
             {
-                BreakOnUserMove = true,
-                BreakOnTargetMove = true,
+                BreakOnMove = true
             };
 
             _doAfter.TryStartDoAfter(args);
@@ -151,8 +150,7 @@ namespace Content.Server.Cocoon
 
             var args = new DoAfterArgs(EntityManager, uid, delay, new UnCocoonDoAfterEvent(), uid, target: target)
             {
-                BreakOnUserMove = true,
-                BreakOnTargetMove = true,
+                BreakOnMove = true
             };
 
             _doAfter.TryStartDoAfter(args);

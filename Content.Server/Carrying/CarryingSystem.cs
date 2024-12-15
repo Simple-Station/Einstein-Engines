@@ -250,8 +250,7 @@ namespace Content.Server.Carrying
             var ev = new CarryDoAfterEvent();
             var args = new DoAfterArgs(EntityManager, carrier, length, ev, carried, target: carried)
             {
-                BreakOnTargetMove = true,
-                BreakOnUserMove = true,
+                BreakOnMove = true,
                 NeedHand = true
             };
 

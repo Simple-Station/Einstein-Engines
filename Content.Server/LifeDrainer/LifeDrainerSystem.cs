@@ -122,8 +122,8 @@ public sealed class LifeDrainerSystem : EntitySystem
         var ev = new LifeDrainDoAfterEvent();
         var args = new DoAfterArgs(EntityManager, uid, comp.Delay, ev, target: target, eventTarget: uid)
         {
-            BreakOnTargetMove = true,
-            BreakOnUserMove = true,
+            ,
+            BreakOnMove = true,
             MovementThreshold = 2f,
             NeedHand = false
         };

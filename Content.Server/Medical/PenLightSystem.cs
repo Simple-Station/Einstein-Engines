@@ -91,8 +91,8 @@ public sealed class PenLightSystem : EntitySystem
             uid, target, uid)
         {
             BlockDuplicate = true,
-            BreakOnUserMove = true,
-            BreakOnTargetMove = true,
+            BreakOnMove = true,
+            ,
             BreakOnHandChange = true,
             NeedHand = true
         });
