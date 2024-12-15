@@ -2,9 +2,6 @@ using Content.Shared.Inventory;
 
 namespace Content.Shared.Medical;
 
-[ByRefEvent]
-public readonly record struct TargetDefibrillatedEvent(EntityUid User, Entity<DefibrillatorComponent> Defibrillator);
-
 public abstract class BeforeDefibrillatorZapsEvent : CancellableEntityEventArgs, IInventoryRelayEvent
 {
     public SlotFlags TargetSlots { get; } = SlotFlags.WITHOUT_POCKET;
