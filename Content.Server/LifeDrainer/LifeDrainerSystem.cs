@@ -1,6 +1,5 @@
 using Content.Server.Abilities.Psionics;
 using Content.Server.Carrying;
-using Content.Server.NPC.Systems;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
@@ -14,6 +13,8 @@ using Content.Shared.Whitelist;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Utility;
+using Content.Shared.NPC.Systems;
+
 
 namespace Content.Server.LifeDrainer;
 

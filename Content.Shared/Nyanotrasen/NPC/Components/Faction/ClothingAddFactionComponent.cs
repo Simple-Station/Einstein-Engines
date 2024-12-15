@@ -1,7 +1,8 @@
+using Content.Shared.NPC.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 
-namespace Content.Shared.Nyanotrasen.NPC.Systems.Components.Faction
+namespace Content.Shared.Nyanotrasen.NPC.Components.Faction
 {
     [RegisterComponent]
     /// <summary>

@@ -8,7 +8,7 @@ namespace Content.Shared.NPC.Systems;
 
 /// <summary>
 ///     Outlines faction relationships with each other.
-///     part of psionics rework was making this a partial class. Should've already been handled upstream, based on the linter. 
+///     part of psionics rework was making this a partial class. Should've already been handled upstream, based on the linter.
 /// </summary>
 public sealed partial class NpcFactionSystem : EntitySystem
 {
@@ -87,6 +87,28 @@ public sealed partial class NpcFactionSystem : EntitySystem
         ent.Comp ??= EnsureComp<NpcFactionMemberComponent>(ent);
         if (!ent.Comp.Factions.Add(faction))
             return;
+
+        if (dirty)
+            RefreshFactions((ent, ent.Comp));
+    }
+
+    /// <summary>
+    /// Adds this entity to the particular factions.
+    /// </summary>
+    public void AddFactions(Entity<NpcFactionMemberComponent?> ent, HashSet<ProtoId<NpcFactionPrototype>> factions, bool dirty = true)
+    {
+        ent.Comp ??= EnsureComp<NpcFactionMemberComponent>(ent);
+
+        foreach (var faction in factions)
+        {
+            if (!_proto.HasIndex(faction))
+            {
+                Log.Error($"Unable to find faction {faction}");
+                continue;
+            }
+
+            ent.Comp.Factions.Add(faction);
+        }
 
         if (dirty)
             RefreshFactions((ent, ent.Comp));

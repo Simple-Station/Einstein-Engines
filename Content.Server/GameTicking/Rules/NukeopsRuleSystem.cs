@@ -79,7 +79,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
         var eligibleQuery = EntityQueryEnumerator<StationEventEligibleComponent, NpcFactionMemberComponent>();
         while (eligibleQuery.MoveNext(out var eligibleUid, out var eligibleComp, out var member))
         {
-            if (!_npcFaction.IsFactionHostile(component.Faction, eligibleUid, member))
+            if (!_npcFaction.IsFactionHostile(component.Faction, (eligibleUid, member)))
                 continue;
 
             eligible.Add((eligibleUid, eligibleComp, member));

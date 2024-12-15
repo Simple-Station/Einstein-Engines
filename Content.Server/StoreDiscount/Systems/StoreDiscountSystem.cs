@@ -32,7 +32,7 @@ public sealed class StoreDiscountSystem : EntitySystem
     /// <summary> Decrements discounted item count, removes discount modifier and category, if counter reaches zero. </summary>
     private void OnBuyFinished(ref StoreBuyFinishedEvent ev)
     {
-        var (storeId, purchasedItem) = ev;
+        var (_, storeId, purchasedItem) = ev;
         if (!TryComp<StoreDiscountComponent>(storeId, out var discountsComponent))
         {
             return;

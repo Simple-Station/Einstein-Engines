@@ -19,6 +19,9 @@ using Robust.Shared.Prototypes;
 using Content.Shared.Mobs;
 using Content.Shared.Damage;
 using Content.Shared.Interaction.Events;
+using Content.Shared.NPC.Components;
+using Content.Shared.NPC.Systems;
+
 
 namespace Content.Server.Psionics;
 
@@ -309,7 +312,7 @@ public sealed class PsionicsSystem : EntitySystem
             if (!TryComp<NPCRetaliationComponent>(familiar, out var retaliationComponent))
                 continue;
 
-            _retaliationSystem.TryRetaliate(familiar, target, retaliationComponent);
+            _retaliationSystem.TryRetaliate((familiar, retaliationComponent), target);
         }
     }
 }

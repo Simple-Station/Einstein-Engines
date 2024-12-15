@@ -1,13 +1,13 @@
 using Content.Shared.Clothing.Components;
 using Content.Shared.Inventory.Events;
 using Content.Shared.NPC.Components;
+using Content.Shared.Nyanotrasen.NPC.Components.Faction;
+using Content.Shared.Store;
 
+namespace Content.Shared.NPC.Systems;
 
-namespace Content.Shared.Nyanotrasen.NPC.Systems;
-
-public partial class NpcFactionSystem
+public sealed partial class NpcFactionSystem
 {
-
 
     public void InitializeItems()
     {
@@ -23,11 +23,10 @@ public partial class NpcFactionSystem
     /// </summary>
     // TODO: check if this is the right uid?? we might be cooked.
     private void OnStoreBuyFinished(
-        EntityUid uid,
-        NpcFactionMemberComponent component,
+        Entity<NpcFactionMemberComponent> entity,
         ref StoreBuyFinishedEvent args
     ) =>
-        component.ExceptionalFriendlies.Add(uid);
+        entity.Comp.ExceptionalFriendlies.Add(args.Buyer);
 
     private void OnClothingEquipped(EntityUid uid, ClothingAddFactionComponent component, GotEquippedEvent args)
     {

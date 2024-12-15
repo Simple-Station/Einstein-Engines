@@ -265,13 +265,15 @@ public sealed partial class StoreSystem
         listing.PurchaseAmount++; //track how many times something has been purchased
         _audio.PlayEntity(component.BuySuccessSound, msg.Actor, uid); //cha-ching!
 
+        // Nyano code needs to know when a buy finished. Probably a better way?
         var buyFinished = new StoreBuyFinishedEvent
         {
+            Buyer = buyer,
             PurchasedItem = listing,
             StoreUid = uid
         };
-        RaiseLocalEvent(ref buyFinished);
 
+        RaiseLocalEvent(ref buyFinished);
         UpdateUserInterface(buyer, uid, component);
     }
 
@@ -387,14 +389,3 @@ public sealed partial class StoreSystem
         component.RefundAllowed = false;
     }
 }
-
-/// <summary>
-/// Event of successfully finishing purchase in store (<see cref="StoreSystem"/>.
-/// </summary>
-/// <param name="StoreUid">EntityUid on which store is placed.</param>
-/// <param name="PurchasedItem">ListingItem that was purchased.</param>
-[ByRefEvent]
-public readonly record struct StoreBuyFinishedEvent(
-    EntityUid StoreUid,
-    ListingDataWithCostModifiers PurchasedItem
-);

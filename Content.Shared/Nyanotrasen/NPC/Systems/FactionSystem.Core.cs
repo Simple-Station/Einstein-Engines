@@ -1,9 +1,9 @@
 using Content.Shared.NPC.Components;
 
 
-namespace Content.Shared.Nyanotrasen.NPC.Systems;
+namespace Content.Shared.NPC.Systems;
 
-public partial class NpcFactionSystem : EntitySystem
+public sealed partial class NpcFactionSystem
 {
     public void InitializeCore()
     {
