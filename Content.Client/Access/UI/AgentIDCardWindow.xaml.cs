@@ -39,7 +39,7 @@ namespace Content.Client.Access.UI
             JobLineEdit.OnFocusExit += e => OnJobChanged?.Invoke(e.Text);
         }
 
-        public void SetAllowedIcons(HashSet<ProtoId<StatusIconPrototype>> icons, string currentJobIconId)
+        public void SetAllowedIcons(string currentJobIconId)
         {
             IconGrid.DisposeAllChildren();
 
@@ -47,11 +47,8 @@ namespace Content.Client.Access.UI
             var i = 0;
             var icons = _prototypeManager.EnumeratePrototypes<JobIconPrototype>().Where(icon => icon.AllowSelection).ToList();
             icons.Sort((x, y) => string.Compare(x.LocalizedJobName, y.LocalizedJobName, StringComparison.CurrentCulture));
-            foreach (var jobIconId in icons)
+            foreach (var jobIcon in icons)
             {
-                if (!_prototypeManager.TryIndex(jobIconId, out var jobIcon))
-                    continue;
-
                 String styleBase = StyleBase.ButtonOpenBoth;
                 var modulo = i % JobIconColumnCount;
                 if (modulo == 0)
@@ -79,7 +76,7 @@ namespace Content.Client.Access.UI
                 };
 
                 jobIconButton.AddChild(jobIconTexture);
-                jobIconButton.OnPressed += _ => _bui.OnJobIconChanged(jobIconId);
+                jobIconButton.OnPressed += _ => OnJobIconChanged?.Invoke(jobIcon.ID);
                 IconGrid.AddChild(jobIconButton);
 
                 i++;
