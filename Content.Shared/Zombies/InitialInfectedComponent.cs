@@ -6,11 +6,8 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared.Zombies;
 
 [RegisterComponent, NetworkedComponent]
-public sealed partial class InitialInfectedComponent : Component, IAntagStatusIconComponent
+public sealed partial class InitialInfectedComponent : Component
 {
-    [DataField("initialInfectedStatusIcon")]
-    public ProtoId<StatusIconPrototype> StatusIcon { get; set; } = "InitialInfectedFaction";
-
     [DataField]
     public ProtoId<FactionIconPrototype> StatusIcon = "InitialInfectedFaction";
 }
