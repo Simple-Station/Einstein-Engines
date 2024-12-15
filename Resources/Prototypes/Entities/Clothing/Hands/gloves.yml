@@ -233,7 +233,6 @@
   - type: FingerprintMask
   - type: Thieving
     stripTimeReduction: 1
-    stealthy: true
   - type: ToggleClothing
     action: ActionToggleNinjaGloves
   - type: NinjaGloves
