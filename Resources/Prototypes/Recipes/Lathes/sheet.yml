@@ -32,12 +32,22 @@
   materials:
     RawQuartz: 3000
 
+# This version is for the autolathe
 - type: latheRecipe
   id: SheetRGlass
   result: SheetRGlass1
   applyMaterialDiscount: false
   miningPoints: 1
   completetime: 0.025 # 0.75 per 30
+  materials:
+    Glass: 100
+    Steel: 50
+
+# This version is for the ore processor
+- type: latheRecipe
+  id: SheetRGlassRaw
+  result: SheetRGlass1
+  completetime: 0
   materials:
     RawQuartz: 100
     RawIron: 50
