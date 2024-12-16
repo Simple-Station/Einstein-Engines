@@ -323,8 +323,6 @@
     - extradimensionalOrange
     - lemon
     - lime
-  mutationPrototypes:
-    - extradimensionalOrange
   harvestRepeat: Repeat
   lifespan: 55
   maturation: 6

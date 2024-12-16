@@ -94,19 +94,6 @@
   categories:
     - UplinkWeaponry
 
-- type: listing
-  id: UplinkThrowingKnivesKit
-  name: uplink-knives-kit-name
-  description: uplink-knives-kit-desc
-  icon: { sprite: /Textures/Objects/Storage/boxicons.rsi, state: throwing_knives }
-  productEntity: ThrowingKnivesKit
-  discountCategory: rareDiscounts
-  discountDownTo:
-    Telecrystal: 3
-  cost:
-    Telecrystal: 6
-  categories:
-    - UplinkWeaponry
 
 - type: listing
   id: UplinkGlovesNorthStar
@@ -784,17 +771,6 @@
   - UplinkDeception
 
 - type: listing
-  id: UplinkMobCatMicrobomb
-  name: uplink-mobcat-microbomb-name
-  description: uplink-mobcat-microbomb-desc
-  icon: { sprite: /Textures/Mobs/Pets/cat.rsi, state: syndicat }
-  productEntity: MobCatSyndy
-  cost:
-    Telecrystal: 1
-  categories:
-  - UplinkDeception
-
-- type: listing
   id: UplinkCyberpen
   name: uplink-cyberpen-name
   description: uplink-cyberpen-desc
@@ -1408,7 +1384,6 @@
     Telecrystal: 2
   categories:
   - UplinkWearables
-  - UplinkWearables
 
 - type: listing
   id: UplinkgClothingThievingGloves
@@ -1420,9 +1395,7 @@
     Telecrystal: 2
   cost:
     Telecrystal: 4
-    Telecrystal: 4
   categories:
-  - UplinkWearables
   - UplinkWearables
 
 - type: listing

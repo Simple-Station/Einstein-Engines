@@ -716,13 +716,6 @@
   - type: Tag
     tags:
     - Fruit
-  - type: FoodSequenceElement
-    entries:
-      burger:
-        name: food-sequence-burger-content-pineapple
-        sprite:
-          sprite: Objects/Specific/Hydroponics/pineapple.rsi
-          state: produce
 
 - type: entity
   name: potato

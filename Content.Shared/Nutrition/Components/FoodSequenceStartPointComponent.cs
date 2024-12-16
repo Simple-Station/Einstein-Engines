@@ -34,15 +34,6 @@ public sealed partial class FoodSequenceStartPointComponent : Component
     public bool Finished;
 
     /// <summary>
-    /// list of sprite states to be displayed on this object.
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public List<FoodSequenceElementEntry> FoodLayers = new();
-
-    public HashSet<string> RevealedLayers = new();
-
-
-    /// <summary>
     /// solution where reagents will be added from newly added ingredients
     /// </summary>
     [DataField]
@@ -54,13 +45,13 @@ public sealed partial class FoodSequenceStartPointComponent : Component
     /// LocId with a name generation pattern.
     /// </summary>
     [DataField]
-    public Vector2 StartPosition = Vector2.Zero;
+    public LocId? NameGeneration;
 
     /// <summary>
     /// the part of the name generation used in the pattern
     /// </summary>
     [DataField]
-    public Vector2 Offset = Vector2.Zero;
+    public LocId? NamePrefix;
 
     /// <summary>
     /// content in the form of all added ingredients will be separated by these symbols

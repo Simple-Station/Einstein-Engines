@@ -1902,26 +1902,6 @@
     FoodDoughTortillaFlat: 1 # one third of a standard bread dough recipe
 
 - type: microwaveMealRecipe
-  id: RecipeTacoBeef
-  name: beef taco recipe
-  result: FoodTacoBeef
-  time: 10
-  solids:
-    FoodTacoShell: 1
-    FoodMeatCutlet: 1
-    FoodCheeseSlice: 1
-
-- type: microwaveMealRecipe
-  id: RecipeTacoChicken
-  name: chicken taco recipe
-  result: FoodTacoChicken
-  time: 10
-  solids:
-    FoodTacoShell: 1
-    FoodMeatChickenCutlet: 1
-    FoodCheeseSlice: 1
-
-- type: microwaveMealRecipe
   id: RecipeTacoFish
   name: fish taco recipe
   result: FoodTacoFish

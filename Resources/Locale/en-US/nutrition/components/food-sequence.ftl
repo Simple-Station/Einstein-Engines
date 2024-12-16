@@ -12,7 +12,6 @@ food-sequence-burger-content-penguin = peng
 food-sequence-burger-content-chiken = chiken
 food-sequence-burger-content-duck = duck
 food-sequence-burger-content-corgi = corgi
-food-sequence-burger-content-crab = crabs
 food-sequence-burger-content-goliath = goli
 food-sequence-burger-content-dragon = dragon
 food-sequence-burger-content-rat = rat
