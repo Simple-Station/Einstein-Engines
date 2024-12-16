@@ -1,5 +1,4 @@
 using System.Numerics;
-using System.Numerics;
 using System.Text;
 using Content.Server.Nutrition.Components;
 using Content.Shared.Chemistry.EntitySystems;
@@ -121,12 +120,6 @@ public sealed class FoodSequenceSystem : SharedFoodSequenceSystem
             return false;
         if (!_proto.TryIndex(elementProto, out var elementIndexed))
             return false;
-
-        if (TryComp<FoodComponent>(element, out var elementFood) && elementFood.RequireDead)
-        {
-            if (_mobState.IsAlive(element))
-                return false;
-        }
 
         //if we run out of space, we can still put in one last, final finishing element.
         if (start.Comp.FoodLayers.Count >= start.Comp.MaxLayers && !elementIndexed.Final || start.Comp.Finished)

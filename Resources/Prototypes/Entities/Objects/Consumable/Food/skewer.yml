@@ -63,15 +63,14 @@
 
 - type: entity
   name: double rat kebab
-  parent: FoodMeatKebab
+  parent: FoodKebabSkewer
   id: FoodMeatRatdoubleKebab
   description: A double serving of not so delicious rat meat, on a stick.
   components:
   - type: Sprite
     layers:
       - state: skewer
-      - state: skewer-rat1
-      - state: skewer-rat2
+      - state: skewer-rat
   - type: SolutionContainerManager
     solutions:
       food:
@@ -83,7 +82,7 @@
 
 - type: entity
   name: fiesta kebab
-  parent: FoodSkewerBase
+  parent: FoodKebabSkewer
   id: FoodMeatFiestaKebab
   description: Always a cruise ship party somewhere in the world, right?
   components:
@@ -97,15 +96,14 @@
 
 - type: entity
   name: snake kebab
-  parent: FoodSkewerBase
+  parent: FoodKebabSkewer
   id: FoodMeatSnakeKebab
   description: Snake meat on a stick. It's a little tough.
   components:
   - type: Sprite
     layers:
       - state: skewer
-      - state: skewer-snake1
-      - state: skewer-snake2
+      - state: skewer-snake
   - type: SolutionContainerManager
     solutions:
       food:
