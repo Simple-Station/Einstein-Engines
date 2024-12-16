@@ -160,7 +160,7 @@
     - id: DrinkWaterBottleFull
 
 - type: entity
-  parent: BoxSurvivalNitrogen
+  parent: BoxSurvival
   id: BoxMimeNitrogen
   suffix: Emergency N2
   components:
