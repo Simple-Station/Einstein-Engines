@@ -1812,6 +1812,25 @@
       - SurplusBundle
 
 - type: listing
+  id: UplinkCombatBakery
+  name: uplink-combat-bakery-name
+  description: uplink-combat-bakery-desc
+  icon: { sprite:  Objects/Consumable/Food/Baked/bread.rsi, state: baguette}
+  productEntity: CombatBakeryKit
+  discountCategory: usualDiscounts
+  discountDownTo:
+    Telecrystal: 2
+  cost:
+    Telecrystal: 6
+  categories:
+  - UplinkJob
+  conditions:
+  - !type:BuyerJobCondition
+    whitelist:
+    - Chef
+    - Mime
+
+- type: listing
   id: UplinkEmpFlashlight
   name: uplink-emp-flashlight-name
   description: uplink-emp-flashlight-desc

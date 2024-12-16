@@ -748,3 +748,22 @@
   - type: SolutionContainerVisuals
     maxFillLevels: 2
     fillBaseName: packet-solid-
+
+- type: entity
+  name: raw croissant
+  parent: FoodBakingBase
+  id: FoodCroissantRaw
+  description: Buttery, flaky goodness waiting to happen.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - dough
+  - type: Sprite
+    state: croissant-raw
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 4
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 3
