@@ -10,7 +10,7 @@ namespace Content.Server.Abilities.Psionics
         public EntityUid OriginalEntity = default!;
         [DataField("mindSwapReturnActionId",
         customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
-        public string? MindSwapReturnActionId = "ActionMindSwapReturn";
+        public string? MindSwapReturnActionId = "ActionPsionicMindSwapReturn";
 
         [DataField("mindSwapReturnActionEntity")]
         public EntityUid? MindSwapReturnActionEntity;
