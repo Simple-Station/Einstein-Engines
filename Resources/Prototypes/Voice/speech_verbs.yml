@@ -71,6 +71,14 @@
   - chat-speech-verb-insect-2
 
 - type: speechVerb
+  id: Slugcat
+  name: chat-speech-verb-name-slugcat
+  speechVerbStrings:
+  - chat-speech-verb-slugcat-1
+  - chat-speech-verb-slugcat-2
+  - chat-speech-verb-slugcat-3
+
+- type: speechVerb
   id: Skeleton
   name: chat-speech-verb-name-skeleton
   speechVerbStrings:

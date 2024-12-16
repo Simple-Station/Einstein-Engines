@@ -1,0 +1,97 @@
+- type: entity
+  save: false
+  name: Urist McWawa
+  parent: BaseMobSpeciesOrganic
+  id: BaseMobSlugcat
+  abstract: true
+  components:
+  - type: Sprite
+    drawdepth: SmallMobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      sprite: Mobs/Species/Slugcat
+      state: slugcat
+    - map: [ "enum.HumanoidVisualLayers.Handcuffs" ]
+      color: "#ffffff"
+      sprite: Objects/Misc/handcuffs.rsi
+      state: body-overlay-2
+      visible: false
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      50: Critical
+      100: Dead
+  - type: HumanoidAppearance
+    species: Slugcat
+  - type: Hunger
+  - type: Puller
+    needsHands: false
+  - type: Thirst
+  - type: Carriable # Carrying system from nyanotrasen.
+  - type: Icon
+    sprite: Mobs/Species/Slugcat
+    state: slugcat
+  - type: Body
+    prototype: Reptilian
+    requiredLegs: 2
+  - type: Butcherable
+    butcheringType: Spike
+    spawned:
+    - id: FoodMeatLizard
+      amount: 5
+  - type: Inventory
+    speciesId: monkey
+    templateId: scug
+  - type: LizardAccent
+  - type: Speech
+    speechSounds: Slugcat
+    speechVerb: Slugcat
+  - type: Vocal
+    sounds:
+      Male: MaleReptilian
+      Female: FemaleReptilian
+      Unsexed: MaleReptilian
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Scale
+  - type: MeleeWeapon
+    soundHit:
+      collection: AlienClaw
+    angle: 30
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 5
+  - type: Temperature
+    heatDamageThreshold: 400
+    coldDamageThreshold: 285
+    currentTemperature: 310.15
+    specificHeat: 42
+    coldDamage:
+      types:
+        Cold : 0.1 #per second, scales with temperature & other constants
+    heatDamage:
+      types:
+        Heat : 1.5 #per second, scales with temperature & other constants
+  - type: LanguageKnowledge
+    speaks:
+    - Wawa
+    understands:
+    - Wawa
+  - type: FootPrints
+    leftBarePrint: "footprint-left-bare-lizard"
+    rightBarePrint: "footprint-right-bare-lizard"
+
+- type: entity
+  parent: BaseSpeciesDummy
+  id: MobSlugcatDummy
+  categories: [ HideSpawnMenu ]
+  description: A dummy slugcat meant to be used in character setup.
+  components:
+  - type: HumanoidAppearance
+    species: Slugcat
+  - type: Inventory
+    speciesId: monkey
+    templateId: nullification
+
+#WAWA
