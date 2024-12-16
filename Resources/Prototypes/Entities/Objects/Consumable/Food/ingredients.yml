@@ -493,13 +493,6 @@
   - type: SliceableFood
     count: 3
     slice: FoodCheeseSlice
-  - type: FoodSequenceElement
-    entries:
-      burger:
-        name: food-sequence-burger-content-cheese
-        sprite:
-          sprite: Objects/Consumable/Food/ingredients.rsi
-          state: cheesewheel
 
 - type: entity
   name: cheese wedge
