@@ -1241,8 +1241,9 @@
       state: service
     - type: MachineBoard
       prototype: SyndicateMicrowave
-      stackRequirements:
+      requirements:
         Capacitor: 1
+      materialRequirements:
         Glass: 2
         Cable: 2
 

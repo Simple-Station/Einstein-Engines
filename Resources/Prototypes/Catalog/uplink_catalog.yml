@@ -557,7 +557,7 @@
   id: UplinkHypopen
   name: uplink-hypopen-name
   description: uplink-hypopen-desc
-  icon: { sprite: /Textures/Objects/Misc/pens.rsi, state: pen }
+  icon: { sprite: /Textures/Objects/Misc/bureaucracy.rsi, state: pen }
   productEntity: HypopenBox
   discountCategory: rareDiscounts
   discountDownTo:
@@ -1341,7 +1341,7 @@
   cost:
     Telecrystal: 4
   categories:
-  - UplinkBundles
+  - UplinkWearables
 
 - type: listing
   id: UplinkVoiceMask
@@ -1354,7 +1354,7 @@
   cost:
     Telecrystal: 6
   categories:
-  - UplinkBundles
+  - UplinkWearables
 
 # Disruption
 
@@ -1474,7 +1474,7 @@
   cost:
     Telecrystal: 2
   categories:
-  - UplinkBundles
+  - UplinkWearables
   conditions:
   - !type:StoreWhitelistCondition
     blacklist:

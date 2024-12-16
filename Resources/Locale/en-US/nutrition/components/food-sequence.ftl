@@ -67,6 +67,7 @@ food-sequence-content-glasstle = glasstle
 food-sequence-content-gatfruit = gatfruit
 food-sequence-content-koibean = koibean
 food-sequence-content-watermelon = watermelon
+food-sequence-content-holymelon = holymelon
 food-sequence-content-cannabis = cannabis
 food-sequence-content-rainbow-cannabis = rainbow cannabis
 food-sequence-content-tobacco = tobacco

@@ -2061,7 +2061,7 @@
           Quantity: 10
         - ReagentId: Vitamin
           Quantity: 5
-        - ReagentId: Holywater
+        - ReagentId: HolyWater
           Quantity: 10
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/holymelon.rsi
@@ -2126,7 +2126,7 @@
           Quantity: 2
         - ReagentId: Vitamin
           Quantity: 1
-        - ReagentId: Holywater
+        - ReagentId: HolyWater
           Quantity: 2
   - type: Extractable
     juiceSolution:
