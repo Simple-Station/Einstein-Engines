@@ -1,22 +1,53 @@
 - type: entity
-  id: AnomalySpawn
+  id: BaseStationEvent
   parent: BaseGameRule
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GameRule
+    delay:
+      min:  10
+      max:  20
+
+- type: entity
+  id: BaseStationEventShortDelay
+  parent: BaseGameRule
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GameRule
+    delay:
+      min:  10
+      max:  20
+
+- type: entity
+  id: BaseStationEventLongDelay
+  parent: BaseGameRule
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GameRule
+    delay:
+      min:  40
+      max:  60
+
+- type: entity
+  id: AnomalySpawn
+  parent: BaseStationEventLongDelay
   categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     weight: 8
-    startDelay: 30
     duration: 35
   - type: AnomalySpawnRule
 
 - type: entity
   id: BluespaceArtifact
-  parent: BaseGameRule
+  parent: BaseStationEventLongDelay
   categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     weight: 8
-    startDelay: 30
     duration: 35
   - type: BluespaceArtifactRule
 
@@ -250,12 +281,11 @@
 
 - type: entity
   id: SnailMigrationLowPop
-  parent: BaseStationEventShortDelay
+  parent: BaseGameRule
   components:
   - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    startAnnouncement: true
+    startDelay: 10
     weight: 6
     duration: 50
   - type: VentCrittersRule
