@@ -3,7 +3,7 @@ trait-description-Blindness = You are legally blind, and can't see clearly past 
 trait-examined-Blindness = [color=lightblue]{CAPITALIZE(POSS-ADJ($target))} eyes are glassy and unfocused. It doesn't seem like {SUBJECT($target)} can see you well, if at all.[/color]
 
 trait-name-Narcolepsy = Narcolepsy
-trait-description-Narcolepsy = 
+trait-description-Narcolepsy =
     Due to a neurological disorder, controlling your sleep-wake cycles is difficult for you.
     As a result, you may repeatedly fall asleep for short periods of time throughout the day.
 
@@ -91,7 +91,7 @@ trait-name-Nearsighted = Nearsighted
 trait-description-Nearsighted = Your eyes are not what they once were, you have difficulty seeing things far away without corrective glasses.
 
 trait-name-NormalVisionHarpy = Trichromat Modification
-trait-description-NormalVisionHarpy = 
+trait-description-NormalVisionHarpy =
     Your eyes have been modified by means of advanced medicine to see in the standard colors of Red, Green, and Blue.
     You do not have the usual vision anomaly that your species may possess.
 
@@ -438,3 +438,42 @@ trait-description-CyberEyesOmni =
 
 trait-name-ShadowkinBlackeye = Blackeye
 trait-description-ShadowkinBlackeye = You lose your special Shadowkin powers, in return for some points.
+
+trait-name-DispelPower = Normality Projection
+trait-description-DispelPower =
+    Your Mentalic abilities include the power to enforce normality upon Noospheric phenomena.
+    This power, commonly known as "Dispel", allows the user to destroy otherworldly entities with their mind,
+    or to immediately end psychic effects.
+
+trait-name-MetapsionicPower = Metapsion
+trait-description-MetapsionicPower =
+    You are able to intuitively sense the activation of psionic abilities, as well as send out a 'scanning' pulse
+    to detect whether or not psions are nearby. This ability has a wide area of effect, and cannot precisely
+    scan individual entities. Still, it is better than being blind.
+
+trait-name-XenoglossyPower = Xenoglossy
+trait-description-XenoglossyPower =
+    An advanced form of Telepathy, Xenoglossy is the ability to speak using emotional and metaphysical concepts,
+    rather than words, to impart meaning directly into the minds of a listener. When speaking using Xenoglossy, a psion can be
+    universally understood by any entity, who will hear the words as if spoken in one's own native tongue. Additionally,
+    Xenoglossy grants the ability to divine the underlying emotional meaning from the minds of other speakers,
+    allowing its user to understand any spoken language as if it was the user's own native tongue.
+
+trait-name-PsychognomyPower = Psychognomist
+trait-description-PsychognomyPower =
+    A special talent derived from Telepathy, Psychognomy is the ability to read the underlying imprint of telepathic messages.
+    A Psychognomist can glean additional information from their telepathy, seeing vague outlines of what the source of a message
+    might be. This information is not precise, and is largely only useful for narrowing down who the source of a message might be.
+
+trait-name-Redshirt = Redshirt
+trait-description-Redshirt =
+    They said this air would be breathable.
+    Get in, get out again, and no one gets hurt.
+    Something is pulling me up the hill.
+    I look down in my red shirt.
+    I look down in my red shirt.
+
+trait-name-BrittleBoneDisease = Osteogenesis Imperfecta
+trait-description-BrittleBoneDisease =
+    Also known as "brittle bone disease", people with this genetic disorder have bones that are easily broken,
+    often simply by moving. This trait reduces your threshold for critical injury by 50 points.
