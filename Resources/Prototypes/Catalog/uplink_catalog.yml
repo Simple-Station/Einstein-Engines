@@ -1332,7 +1332,6 @@
       blacklist:
         tags:
           - NukeOpsUplink
-  saleBlacklist: true
 
 - type: listing
   id: UplinkDeathRattle
@@ -1512,7 +1511,6 @@
     blacklist:
       components:
       - SurplusBundle
-  saleBlacklist: true
 
 - type: listing
   id: UplinkHardsuitSyndieElite
@@ -1560,7 +1558,6 @@
     blacklist:
       components:
       - SurplusBundle
-  saleBlacklist: true
 
 # Tools
 
