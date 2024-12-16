@@ -42,15 +42,14 @@
   - type: Inventory
     speciesId: monkey
     templateId: scug
-  - type: LizardAccent
   - type: Speech
     speechSounds: Slugcat
     speechVerb: Slugcat
   - type: Vocal
     sounds:
-      Male: MaleReptilian
-      Female: FemaleReptilian
-      Unsexed: MaleReptilian
+      Male: Slugcat
+      Female: Slugcat
+      Unsexed: Slugcat
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Scale
@@ -62,17 +61,6 @@
     damage:
       types:
         Slash: 5
-  - type: Temperature
-    heatDamageThreshold: 400
-    coldDamageThreshold: 285
-    currentTemperature: 310.15
-    specificHeat: 42
-    coldDamage:
-      types:
-        Cold : 0.1 #per second, scales with temperature & other constants
-    heatDamage:
-      types:
-        Heat : 1.5 #per second, scales with temperature & other constants
   - type: LanguageKnowledge
     speaks:
     - Wawa

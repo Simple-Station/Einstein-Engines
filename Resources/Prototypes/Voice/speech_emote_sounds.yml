@@ -90,6 +90,20 @@
       collection: Weh
 
 - type: emoteSounds
+  id: Slugcat
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      path: /Audio/Voice/Slugcat/slugcat_scream.ogg
+    Honk:
+      collection: BikeHorn
+    Whistle:
+      collection: Whistles
+#    Crying:
+#      collection: MaleCry
+
+- type: emoteSounds
   id: FemaleReptilian
   params:
     variation: 0.125

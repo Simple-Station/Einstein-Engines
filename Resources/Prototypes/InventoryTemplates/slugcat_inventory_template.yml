@@ -5,7 +5,7 @@
       slotTexture: uniform
       slotFlags: INNERCLOTHING
       stripTime: 6
-      uiWindowPos: 0,1
+      uiWindowPos: 1,1
       strippingWindowPos: 0,2
       displayName: Jumpsuit
     - name: neck
