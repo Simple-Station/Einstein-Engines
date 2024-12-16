@@ -54,12 +54,22 @@
     - Heat
 
 - type: damageContainer
-  id: HalfSpirit
+  id: ManifestedSpirit
   supportedGroups:
-    - Burn
-    - Brute
-    - Airloss
-    - Immaterial
+  - Metaphysical
+  - Brute
   supportedTypes:
-    - Poison
+  - Heat
+  - Shock
+  - Caustic
+
+- type: damageContainer
+  id: BiologicalMetaphysical
+  supportedGroups:
+  - Brute
+  - Burn
+  - Toxin
+  - Airloss
+  - Genetic
+  - Metaphysical
 

@@ -76,7 +76,7 @@
       coefficients:
         Piercing: 2.25
   - type: Damageable
-    damageContainer: HalfSpirit
+    damageContainer: BiologicalMetaphysical
     damageModifierSet: HalfSpirit
   - type: StatusEffects
     allowed:

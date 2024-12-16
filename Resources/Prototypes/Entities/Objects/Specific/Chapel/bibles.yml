@@ -18,6 +18,13 @@
     damageOnUntrainedUse: ## What a non-chaplain takes when attempting to heal someone
       groups:
         Burn: 10
+  - type: MeleeWeapon
+    soundHit:
+      collection: Punch
+    damage:
+      types:
+        Holy: 20
+        Blunt: 1
   - type: Prayable
     bibleUserOnly: true
   - type: ReactionMixer
@@ -40,11 +47,6 @@
     interfaces:
       enum.StorageUiKey.Key:
         type: StorageBoundUserInterface
-  - type: MeleeWeapon # Nyanotrasen - Bibles do Holy damage
-    damage:
-      types:
-        Blunt: 4
-        Holy: 20
     heavyRateModifier: 1.25
     heavyDamageBaseModifier: 1
     heavyStaminaCost: 4

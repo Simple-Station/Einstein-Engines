@@ -30,8 +30,8 @@
       0: Alive
       50: Dead
   - type: Damageable
-    damageContainer: CorporealSpirit
-    damageModifierSet: CorporealSpirit
+    damageContainer: BiologicalMetaphysical
+    damageModifierSet: HalfSpirit
   - type: MindContainer
     showExamineInfo: false
   - type: NpcFactionMember
@@ -218,6 +218,8 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: imp
       sprite: Mobs/Demons/imp.rsi
+  - type: Damageable
+    damageContainer: ManifestedSpirit
   - type: InnatePsionicPowers
     powersToAdd:
     - TelepathyPower
