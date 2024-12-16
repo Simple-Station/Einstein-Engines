@@ -1,6 +1,7 @@
 using Content.Shared.Abilities.Psionics;
 using Content.Shared.Actions;
 using Content.Shared.Popups;
+using Content.Shared.Chat;
 using Content.Shared.Psionics.Glimmer;
 using Content.Shared.Random;
 using Content.Shared.Random.Helpers;
@@ -12,7 +13,12 @@ using Content.Shared.Psionics;
 using System.Linq;
 using Robust.Server.Player;
 using Content.Server.Chat.Managers;
-
+using Robust.Shared.Configuration;
+using Content.Shared.CCVar;
+using Content.Server.NPC.Systems;
+using Content.Server.NPC.HTN;
+using Content.Server.Ghost;
+using Content.Server.Mind;
 namespace Content.Server.Abilities.Psionics
 {
     public sealed class PsionicAbilitiesSystem : EntitySystem
@@ -29,6 +35,10 @@ namespace Content.Server.Abilities.Psionics
         [Dependency] private readonly IPlayerManager _playerManager = default!;
         [Dependency] private readonly IChatManager _chatManager = default!;
         [Dependency] private readonly PsionicFamiliarSystem _psionicFamiliar = default!;
+        [Dependency] private readonly IConfigurationManager _config = default!;
+        [Dependency] private readonly NpcFactionSystem _npcFaction = default!;
+        [Dependency] private readonly GhostSystem _ghost = default!;
+        [Dependency] private readonly MindSystem _mind = default!;
 
         private ProtoId<WeightedRandomPrototype> _pool = "RandomPsionicPowerPool";
         private const string GenericInitializationMessage = "generic-power-initialization-feedback";
@@ -178,7 +188,39 @@ namespace Content.Server.Abilities.Psionics
         /// </summary>
         public void MindBreak(EntityUid uid)
         {
+            if (!HasComp<PsionicComponent>(uid))
+                return;
+
             RemoveAllPsionicPowers(uid, true);
+            if (_config.GetCVar(CCVars.ScarierMindbreaking))
+                ScarierMindbreak(uid);
+        }
+
+        /// <summary>
+        ///     An even more advanced form of Mindbreaking. Turn the victim into an NPC.
+        ///     For the people who somehow didn't intuit from the absolutely horrifying text that mindbreaking people is very fucking bad.
+        /// </summary>
+        public void ScarierMindbreak(EntityUid uid)
+        {
+            if (!_playerManager.TryGetSessionByEntity(uid, out var session) || session is null)
+                return;
+
+            var feedbackMessage = $"[font size=24][color=#ff0000]{"Your characters personhood has been obliterated. If you wish to continue playing, consider respawning as a new character."}[/color][/font]";
+            _chatManager.ChatMessageToOne(
+                ChatChannel.Emotes,
+                feedbackMessage,
+                feedbackMessage,
+                EntityUid.Invalid,
+                false,
+                session.Channel);
+
+            if (!_mind.TryGetMind(session, out var mindId, out var mind))
+                return;
+
+            _ghost.SpawnGhost((mindId, mind), Transform(uid).Coordinates, false);
+            _npcFaction.AddFaction(uid, "SimpleNeutral");
+            var htn = EnsureComp<HTNComponent>(uid);
+            htn.RootTask = new HTNCompoundTask() { Task = "IdleCompound" };
         }
 
         /// <summary>
