@@ -302,11 +302,6 @@ public sealed class TemperatureSystem : EntitySystem
         args.Args.TemperatureDelta *= ev.Coefficient;
     }
 
-    private void ChangeTemperatureOnCollide(Entity<ChangeTemperatureOnCollideComponent> ent, ref ProjectileHitEvent args)
-    {
-        _temperature.ChangeHeat(args.Target, ent.Comp.Heat, ent.Comp.IgnoreHeatResistance);// adjust the temperature
-    }
-
     private void OnParentChange(EntityUid uid, TemperatureComponent component,
         ref EntParentChangedMessage args)
     {
