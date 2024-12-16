@@ -464,3 +464,16 @@ trait-description-PsychognomyPower =
     A special talent derived from Telepathy, Psychognomy is the ability to read the underlying imprint of telepathic messages.
     A Psychognomist can glean additional information from their telepathy, seeing vague outlines of what the source of a message
     might be. This information is not precise, and is largely only useful for narrowing down who the source of a message might be.
+
+trait-name-Redshirt = Redshirt
+trait-description-Redshirt =
+    They said this air would be breathable.
+    Get in, get out again, and no one gets hurt.
+    Something is pulling me up the hill.
+    I look down in my red shirt.
+    I look down in my red shirt.
+
+trait-name-BrittleBoneDisease = Osteogenesis Imperfecta
+trait-description-BrittleBoneDisease =
+    Also known as "brittle bone disease", people with this genetic disorder have bones that are easily broken,
+    often simply by moving. This trait reduces your threshold for critical injury by 50 points.
