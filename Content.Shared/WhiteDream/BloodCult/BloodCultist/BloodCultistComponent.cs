@@ -19,7 +19,7 @@ public sealed partial class BloodCultistComponent : Component
     public int MaximumAllowedEmpowers = 4;
 
     [DataField]
-    public ProtoId<StatusIconPrototype> StatusIcon { get; set; } = "BloodCultMember";
+    public ProtoId<FactionIconPrototype> StatusIcon { get; set; } = "BloodCultMember";
 
     [DataField]
     public bool IconVisibleToGhost { get; set; } = true;

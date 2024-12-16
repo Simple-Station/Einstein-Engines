@@ -159,7 +159,7 @@ namespace Content.Server.Roboisseur.Roboisseur
             "FoodBurgerHuman",
             "FoodNoodlesBoiled",
             "FoodMothOatStew",
-            "FoodMeatLizardtailKebab",
+            "FoodKebabSkewer",
             "FoodSoupTomato",
             "FoodDonkpocketBerryWarm",
             "FoodBreadButteredToast",
