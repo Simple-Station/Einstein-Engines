@@ -489,22 +489,18 @@ entities:
     - type: Transform
       pos: 0.5,-0.5
       parent: 1
-- proto: FloraTree01
+- proto: FloraTree
   entities:
   - uid: 79
     components:
     - type: Transform
       pos: -5.007074,-2.168077
       parent: 1
-- proto: FloraTree03
-  entities:
   - uid: 78
     components:
     - type: Transform
       pos: 6.711676,0.019423127
       parent: 1
-- proto: FloraTree06
-  entities:
   - uid: 80
     components:
     - type: Transform

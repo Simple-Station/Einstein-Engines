@@ -3119,22 +3119,18 @@ entities:
       parent: 1
     - type: Fixtures
       fixtures: {}
-- proto: FloraTree02
+- proto: FloraTree
   entities:
   - uid: 864
     components:
     - type: Transform
       pos: 10.259072,-3.4377544
       parent: 1
-- proto: FloraTree03
-  entities:
   - uid: 863
     components:
     - type: Transform
       pos: -1.8645909,-3.5941133
       parent: 1
-- proto: FloraTree06
-  entities:
   - uid: 862
     components:
     - type: Transform
