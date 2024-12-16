@@ -741,7 +741,7 @@
   cost:
     Telecrystal: 3
   categories:
-  - UplinkUtility
+  - UplinkDeception
 
 - type: listing
   id: UplinkStealthBox
@@ -754,7 +754,7 @@
   cost:
     Telecrystal: 5
   categories:
-  - UplinkUtility
+  - UplinkDeception
 
 - type: listing
   id: UplinkChameleonProjector
@@ -802,7 +802,7 @@
   cost:
     Telecrystal: 1
   categories:
-  - UplinkUtility
+  - UplinkDeception
 
 - type: listing
   id: UplinkDecoyDisk
@@ -812,7 +812,7 @@
   cost:
     Telecrystal: 1
   categories:
-  - UplinkUtility
+  - UplinkDeception
 
 - type: listing
   id: UplinkUltrabrightLantern
@@ -825,7 +825,7 @@
   cost:
     Telecrystal: 2
   categories:
-  - UplinkUtility
+  - UplinkDeception
 
 - type: listing
   id: UplinkBribe
@@ -838,7 +838,7 @@
   cost:
     Telecrystal: 4
   categories:
-    - UplinkUtility
+    - UplinkDeception
 
 # - type: listing
 #   id: UplinkGigacancerScanner
@@ -1077,7 +1077,7 @@
   cost:
     Telecrystal: 16
   categories:
-  - UplinkUtility
+  - UplinkAllies
   conditions:
     - !type:StoreWhitelistCondition
       blacklist:
@@ -1093,7 +1093,7 @@
   cost:
     Telecrystal: 16
   categories:
-  - UplinkUtility
+  - UplinkAllies
   conditions:
     - !type:StoreWhitelistCondition
       whitelist:
@@ -1109,7 +1109,7 @@
   cost:
     Telecrystal: 65
   categories:
-    - UplinkUtility
+    - UplinkAllies
   conditions:
     - !type:StoreWhitelistCondition
       whitelist:
@@ -1128,7 +1128,7 @@
   cost:
     Telecrystal: 8
   categories:
-  - UplinkUtility
+  - UplinkAllies
   conditions:
     - !type:StoreWhitelistCondition
       blacklist:
@@ -1147,7 +1147,7 @@
   cost:
     Telecrystal: 6
   categories:
-  - UplinkUtility
+  - UplinkAllies
   conditions:
     - !type:StoreWhitelistCondition
       whitelist:
@@ -1165,7 +1165,7 @@
   cost:
     Telecrystal: 2
   categories:
-  - UplinkUtility
+  - UplinkAllies
 
 - type: listing
   id: UplinkMobCatMicrobomb
@@ -1179,7 +1179,7 @@
   cost:
     Telecrystal: 6
   categories:
-  - UplinkUtility
+  - UplinkAllies
 
 # Implants
 
@@ -1849,7 +1849,7 @@
   cost:
     Telecrystal: 3
   categories:
-    - UplinkUtility
+    - UplinkAllies
 
 # Armor
 
@@ -1861,4 +1861,4 @@
   cost:
     Telecrystal: 1
   categories:
-    - UplinkArmor
+    - UplinkWearables
