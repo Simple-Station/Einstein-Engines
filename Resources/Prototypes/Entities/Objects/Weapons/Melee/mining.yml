@@ -85,7 +85,6 @@
       types:
         Structural: 30
 
-
 - type: entity
   abstract: true
   parent: BaseItem
