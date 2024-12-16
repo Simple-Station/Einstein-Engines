@@ -673,7 +673,7 @@
 - type: trait
   id: Redshirt
   category: Physical
-  points: -8
+  points: 8
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -693,7 +693,7 @@
 - type: trait
   id: BrittleBoneDisease
   category: Physical
-  points: -10
+  points: 10
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
