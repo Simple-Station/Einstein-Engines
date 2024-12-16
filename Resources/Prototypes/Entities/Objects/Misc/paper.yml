@@ -354,6 +354,7 @@
   id: PenEmbeddable
   abstract: true
   components:
+  - type: LandAtCursor
   - type: DamageOtherOnHit
     damage:
       types:

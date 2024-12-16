@@ -89,10 +89,10 @@
   - type: Sprite
     layers:
       - state: skewer
-      - state: skewer-pepper4
-      - state: skewer-corn2
-      - state: skewer-mushroom2
-      - state: skewer-tomato1
+      - state: skewer-pepper
+      - state: skewer-corn
+      - state: skewer-mushroom
+      - state: skewer-tomato
 
 - type: entity
   name: snake kebab
