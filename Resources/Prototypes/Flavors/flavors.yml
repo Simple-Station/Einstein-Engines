@@ -1330,6 +1330,11 @@
   description: flavor-complex-compressed-meat
 
 - type: flavor
+  id: zombiecocktail
+  flavorType: Complex
+  description: flavor-complex-zombiecocktail
+
+- type: flavor
   id: plasma
   flavorType: Complex
   description: flavor-complex-plasma
