@@ -8676,3 +8676,14 @@ Entries:
   id: 6579
   time: '2024-12-15T19:26:16.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1340
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added a server option for "Scarier Mindbreaking". Mindbreaking now
+        irreversibly converts a player character into a non-sentient NPC.
+    - type: Fix
+      message: Mindbreaking now only works on Psychics.
+  id: 6580
+  time: '2024-12-16T15:22:36.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1249
