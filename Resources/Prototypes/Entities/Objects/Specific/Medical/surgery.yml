@@ -559,7 +559,7 @@
   - type: Tool
     qualities:
       - Sawing
-    speed: 2.0
+    speedModifier: 2.0
   - type: BoneSaw
     speed: 1.5
 
