@@ -421,7 +421,7 @@
   - type: Tool
     qualities:
       - Sawing
-    speed: 1.0
+    speedModifier: 1.0
   - type: MeleeWeapon
     attackRate: 1.3333
     range: 1.35

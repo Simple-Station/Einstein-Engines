@@ -179,9 +179,6 @@
     damage:
       types:
         Slash: 0.15
-    refineResult:
-    - id: SheetGlass1
-    - id: SheetPlasma1
   - type: DamageUserOnTrigger
     damage:
       types:

@@ -617,10 +617,6 @@
       materialRequirements:
         Steel: 1
         Cable: 2
-    - type: ReverseEngineering # Delta
-      difficulty: 3
-      recipes:
-        - CrewMonitoringServerMachineCircuitboard
 
 - type: entity
   id: CryoPodMachineCircuitboard
@@ -1641,10 +1637,6 @@
       materialRequirements:
         Steel: 5
         Cable: 1
-    - type: ReverseEngineering # Nyano
-      difficulty: 2
-      recipes:
-      - TraversalDistorterMachineCircuitboard
 
 - type: entity
   id: MedicalBiofabMachineBoard

@@ -637,7 +637,7 @@
     state: ramen
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: FoodPacketTrash
   id: FoodPacketChowMeinTrash
   name: empty chow mein box

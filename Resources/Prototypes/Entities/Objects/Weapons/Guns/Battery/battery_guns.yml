@@ -21,7 +21,6 @@
     fireOnDropChance: 0.15
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser.ogg
-    doRecoil: false
   - type: Battery
     maxCharge: 1000
     startingCharge: 1000
@@ -72,7 +71,6 @@
     - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser.ogg
-    doRecoil: false
   - type: MagazineAmmoProvider
   - type: ItemSlots
     slots:
