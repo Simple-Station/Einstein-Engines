@@ -123,7 +123,6 @@
   - type: DamageOtherOnHit
     damage:
       types:
-        Slash: 10
         Slash: 9
   - type: ThrowingAngle
     angle: 225

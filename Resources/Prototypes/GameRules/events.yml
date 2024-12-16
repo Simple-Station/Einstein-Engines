@@ -302,9 +302,7 @@
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    startAnnouncement: true
     earliestStart: 15
     weight: 6
     duration: 50
