@@ -583,7 +583,6 @@
   sprites:
   - sprite: Objects/Specific/Hydroponics/extradimensional_orange.rsi
     state: produce
-  scale: 0.5,0.5
   tags:
     - Fruit
 
@@ -593,7 +592,6 @@
   sprites:
   - sprite: Objects/Specific/Hydroponics/extradimensional_orange.rsi
     state: produce
-  scale: 0.5,0.5
   tags:
     - Fruit
 
