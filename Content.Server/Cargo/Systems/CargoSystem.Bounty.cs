@@ -306,10 +306,10 @@ public sealed partial class CargoSystem
     /// <returns>true if <paramref name="entity"/> is a valid item for the bounty entry, otherwise false</returns>
     public bool IsValidBountyEntry(EntityUid entity, CargoBountyItemEntry entry)
     {
-        if (!_whitelistSys.IsValid(entry.Whitelist, entity))
+        if (!_whitelistSys.IsWhitelistPass(entry.Whitelist, entity))
             return false;
 
-        if (entry.Blacklist != null && _whitelistSys.IsValid(entry.Blacklist, entity))
+        if (entry.Blacklist != null && _whitelistSys.IsBlacklistPass(entry.Blacklist, entity))
             return false;
 
         return true;
