@@ -229,6 +229,9 @@ namespace Content.Server.Hands.Systems
             if (direction == Vector2.Zero)
                 return true;
 
+            if (itemEv.Cancelled)
+                return true;
+
             var length = direction.Length();
             var distance = Math.Clamp(length, minDistance, hands.ThrowRange);
             direction *= distance / length;
@@ -237,6 +240,12 @@ namespace Content.Server.Hands.Systems
 
             // Let other systems change the thrown entity (useful for virtual items)
             // or the throw strength.
+            var ev = new BeforeGettingThrownEvent(throwEnt, direction, throwSpeed, player);
+            RaiseLocalEvent(player, ref itemEv);
+
+            if (itemEv.Cancelled)
+                return true;
+
             var ev = new BeforeThrowEvent(throwEnt, direction, throwSpeed, player);
             RaiseLocalEvent(player, ref ev);
 
