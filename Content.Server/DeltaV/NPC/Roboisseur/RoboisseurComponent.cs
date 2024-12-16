@@ -167,7 +167,6 @@ namespace Content.Server.Roboisseur.Roboisseur
             "LeavesTobaccoDried",
             "FoodSoupEyeball",
             "FoodMothKachumbariSalad",
-            "FoodMeatHumanKebab",
             "FoodMeatRatdoubleKebab",
             "FoodBurgerCorgi",
             "FoodBreadPlain",
