@@ -8697,3 +8697,12 @@ Entries:
   id: 6581
   time: '2024-12-16T15:50:54.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1352
+- author: BlueHNT
+  changes:
+    - type: Add
+      message: Added slowdown mitigation to jackboots
+    - type: Add
+      message: Added fake jackboots for style outside of sec
+  id: 6582
+  time: '2024-12-16T17:55:06.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1342
