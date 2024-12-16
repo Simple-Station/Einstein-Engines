@@ -669,3 +669,43 @@
           - Biological
           - Inorganic
           - Silicon
+
+- type: trait
+  id: Redshirt
+  category: Physical
+  points: 8
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: DeadModifier
+          deadThresholdModifier: -100
+
+- type: trait
+  id: BrittleBoneDisease
+  category: Physical
+  points: 10
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: CritModifier
+          critThresholdModifier: -50
