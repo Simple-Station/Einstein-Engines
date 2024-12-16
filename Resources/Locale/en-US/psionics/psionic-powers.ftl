@@ -219,3 +219,4 @@ anomaly-flora-feedback = Musical notes drift around you, playfully beckoning, th
 anomaly-liquid-feedback = A realm of twisting currents. Its placidity is a lie. The eyes within stare hungrilly
 anomaly-shadow-feedback = At the end of time, when all suns have set forever, there amidst the void stands a monument to past sins.
 anomaly-tech-feedback = A symphony of circuits, humming with unheard melodies. Within its core, a thousand futures flicker and fade, a digital oracle whispers prophecies of chrome.
+anomaly-santa-feedback = A cascade of shimmering starlight, the scent of cinnamon and pine hangs heavy in the air. Joyful laughter echoes from within, promising gifts and forgotten dreams.
