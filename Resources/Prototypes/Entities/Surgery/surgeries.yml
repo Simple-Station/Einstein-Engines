@@ -93,11 +93,11 @@
         - type: RatvarianLanguage
         - type: Clumsy
           gunShootFailDamage:
-          types:
-            Blunt: 5
-            Piercing: 4
-          groups:
-            Burn: 3
+            types:
+              Blunt: 5
+              Piercing: 4
+            groups:
+              Burn: 3
 
 - type: entity
   parent: SurgeryBase

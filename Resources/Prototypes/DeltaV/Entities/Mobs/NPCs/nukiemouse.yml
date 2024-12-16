@@ -159,7 +159,7 @@
     - Syndicate
   # make the player a traitor once its taken
   - type: AutoTraitor
-    preset: TraitorReinforcement
+    profile: TraitorReinforcement
   - type: InteractionPopup
     successChance: 0.6
     interactSuccessString: petting-success-nukie-mouse

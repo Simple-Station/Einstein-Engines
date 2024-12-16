@@ -177,7 +177,7 @@
     factions:
     - PetsNT
   - type: Tool
-    speed: 3
+    speedModifier: 3
     qualities:
       - Prying
   - type: Sprite
