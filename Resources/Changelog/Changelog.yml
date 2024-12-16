@@ -8687,3 +8687,13 @@ Entries:
   id: 6580
   time: '2024-12-16T15:22:36.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1249
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added Redshirt and Brittle Bone Disease traits. These give extremely
+        large negative modifiers to your healthbar, but also grant a large
+        amount of trait points to work with.
+  id: 6581
+  time: '2024-12-16T15:50:54.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1352
