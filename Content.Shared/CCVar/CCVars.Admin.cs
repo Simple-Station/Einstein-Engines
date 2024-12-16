@@ -150,15 +150,6 @@ public sealed partial class CCVars
         CVarDef.Create("admin.bypass_max_players", true, CVar.SERVERONLY);
 
     /// <summary>
-    ///     Determine if custom rank names are used.
-    ///     If it is false, it'd use the actual rank name regardless of the individual's title.
-    /// </summary>
-    /// <seealso cref="AhelpAdminPrefix"/>
-    /// <seealso cref="AhelpAdminPrefixWebhook"/>
-    public static readonly CVarDef<bool> AdminUseCustomNamesAdminRank =
-        CVarDef.Create("admin.use_custom_names_admin_rank", true, CVar.SERVERONLY);
-
-    /// <summary>
     ///     Determines whether admins count towards the total playercount when determining whether the server is over <see cref="SoftMaxPlayers"/>
     ///     Ideally this should be used in conjuction with <see cref="AdminBypassPlayers"/>.
     ///     This also applies to playercount limits in whitelist conditions
@@ -166,6 +157,15 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<bool> AdminsCountForMaxPlayers =
         CVarDef.Create("admin.admins_count_for_max_players", false, CVar.SERVERONLY);
+
+    /// <summary>
+    ///     Determine if custom rank names are used.
+    ///     If it is false, it'd use the actual rank name regardless of the individual's title.
+    /// </summary>
+    /// <seealso cref="AhelpAdminPrefix"/>
+    /// <seealso cref="AhelpAdminPrefixWebhook"/>
+    public static readonly CVarDef<bool> AdminUseCustomNamesAdminRank =
+        CVarDef.Create("admin.use_custom_names_admin_rank", true, CVar.SERVERONLY);
 
     public static readonly CVarDef<bool> BanHardwareIds =
         CVarDef.Create("ban.hardware_ids", true, CVar.SERVERONLY);
