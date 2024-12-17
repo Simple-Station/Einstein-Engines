@@ -683,6 +683,7 @@
       jobs:
         - Prisoner # Smuggling for prisoners = immediate jailbreak.
   
+- type: trait
   id: Redshirt
   category: Physical
   points: 8
