@@ -76,9 +76,9 @@ public sealed class LightningSystem : SharedLightningSystem
         //To Do: This is still pretty bad for perf but better than before and at least it doesn't re-allocate
         // several hashsets every time
         var mapCoords = _transform.GetMapCoordinates(user);
-        var targets = _lookup.GetComponentsInRange<LightningTargetComponent>(mapCoords, range).ToList();
+        var targets = _lookup.GetEntitiesInRange<LightningTargetComponent>(mapCoords, range).ToList();
         _random.Shuffle(targets);
-        targets.Sort((x, y) => y.Priority.CompareTo(x.Priority));
+        targets.Sort((x, y) => y.Comp.Priority.CompareTo(x.Comp.Priority));
 
         int shotCount = 0;
         int count = -1;
@@ -91,13 +91,13 @@ public sealed class LightningSystem : SharedLightningSystem
             var curTarget = targets[count];
 
             // Chance to ignore target
-            if (!_random.Prob(curTarget.HitProbability))
+            if (!_random.Prob(curTarget.Comp.HitProbability))
                 continue;
 
             ShootLightning(user, targets[count].Owner, lightningPrototype, triggerLightningEvents);
 
-            if (arcDepth - targets[count].LightningResistance > 0)
-                ShootRandomLightnings(targets[count].Owner, range, 1, lightningPrototype, arcDepth - targets[count].LightningResistance, triggerLightningEvents);
+            if (arcDepth - targets[count].Comp.LightningResistance > 0)
+                ShootRandomLightnings(targets[count].Owner, range, 1, lightningPrototype, arcDepth - targets[count].Comp.LightningResistance, triggerLightningEvents);
 
             shotCount++;
         }
