@@ -10,6 +10,16 @@ public sealed class SharedSuicideSystem : EntitySystem
 {
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private readonly ILogManager _logManager = default!;
+
+    private ISawmill _sawmill = default!;
+
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        _sawmill = _logManager.GetSawmill("sharedsuicidesystem");
+    }
 
     /// <summary>
     /// Applies lethal damage spread out across the damage types given.
@@ -35,6 +45,7 @@ public sealed class SharedSuicideSystem : EntitySystem
         // Split the total amount of damage needed to kill the target by every damage type in the DamageSpecifier
         foreach (var (key, value) in appliedDamageSpecifier.DamageDict)
         {
+            _sawmill.Info($"{key}: {(double) value}");
             appliedDamageSpecifier.DamageDict[key] = Math.Ceiling((double) (value * lethalAmountOfDamage / totalDamage));
         }
 
