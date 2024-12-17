@@ -122,7 +122,7 @@
       path: /Audio/Weapons/Guns/Hits/snap.ogg
   - type: StaminaDamageOnCollide
     damage: 22 # 5 hits to stun sounds reasonable
-  - type: Tags
+  - type: Tag
     tags:
     - BulletRubber
 
