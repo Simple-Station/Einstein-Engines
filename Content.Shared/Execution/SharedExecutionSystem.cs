@@ -123,13 +123,6 @@ public sealed class SharedExecutionSystem : EntitySystem
         if (victim != attacker && _actionBlocker.CanInteract(victim, null))
             return false;
 
-        // If the gun has rubber bullets chambered, we can't execute them.
-        if (TryComp<GunComponent>(weapon, out _)
-            && _itemSlots.TryGetSlot(weapon, "gun_chamber", out var itemSlot)
-            && itemSlot.Item != null
-            && _tag.HasTag(itemSlot.Item!.Value, "BulletRubber"))
-            return false;
-
         // All checks passed
         return true;
     }
@@ -137,9 +130,7 @@ public sealed class SharedExecutionSystem : EntitySystem
     private void OnGetMeleeDamage(Entity<ExecutionComponent> entity, ref GetMeleeDamageEvent args)
     {
         if (!TryComp<MeleeWeaponComponent>(entity, out var melee) || !entity.Comp.Executing)
-        {
             return;
-        }
 
         var bonus = melee.Damage * entity.Comp.DamageMultiplier - melee.Damage;
         args.Damage += bonus;
@@ -229,9 +220,7 @@ public sealed class SharedExecutionSystem : EntitySystem
             RaiseLocalEvent(victim, suicideGhostEvent);
         }
         else
-        {
             _melee.AttemptLightAttack(attacker, weapon, meleeWeaponComp, victim);
-        }
 
         _combat.SetInCombatMode(attacker, prev);
         entity.Comp.Executing = false;
