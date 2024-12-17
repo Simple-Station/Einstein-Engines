@@ -75,7 +75,7 @@ public sealed class LightningSystem : SharedLightningSystem
         //To Do: Remove Hardcode LightningTargetComponent (this should be a parameter of the SharedLightningComponent)
         //To Do: This is still pretty bad for perf but better than before and at least it doesn't re-allocate
         // several hashsets every time
-        var mapCoords = _transform.GetMapCoordinates(user)
+        var mapCoords = _transform.GetMapCoordinates(user);
         var targets = _lookup.GetComponentsInRange<LightningTargetComponent>(mapCoords, range).ToList();
         _random.Shuffle(targets);
         targets.Sort((x, y) => y.Priority.CompareTo(x.Priority));
