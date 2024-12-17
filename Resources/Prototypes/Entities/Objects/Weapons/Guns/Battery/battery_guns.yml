@@ -898,7 +898,7 @@
     tags:
     - HighRiskItem
   - type: StealTarget
-    stealGroup: WeaponEnergyShotgun
+    stealGroup: HoSAntiqueWeapon
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Battery
     maxCharge: 1200
