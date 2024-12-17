@@ -1,6 +1,7 @@
 using Content.Shared.ActionBlocker;
 using Content.Shared.Chat;
 using Content.Shared.CombatMode;
+using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Damage;
 using Content.Shared.Database;
 using Content.Shared.DoAfter;
@@ -12,6 +13,8 @@ using Content.Shared.Weapons.Melee;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Mind;
+using Content.Shared.Tag;
+using Content.Shared.Weapons.Ranged.Components;
 using Robust.Shared.Player;
 using Robust.Shared.Audio.Systems;
 
@@ -33,6 +36,8 @@ public sealed class SharedExecutionSystem : EntitySystem
     [Dependency] private readonly SharedMeleeWeaponSystem _melee = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly TagSystem _tag = default!;
+    [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -54,7 +59,7 @@ public sealed class SharedExecutionSystem : EntitySystem
         var weapon = args.Using.Value;
         var victim = args.Target;
 
-        if (!CanBeExecuted(victim, attacker))
+        if (!CanBeExecuted(victim, attacker, weapon))
             return;
 
         UtilityVerb verb = new()
@@ -70,7 +75,7 @@ public sealed class SharedExecutionSystem : EntitySystem
 
     private void TryStartExecutionDoAfter(EntityUid weapon, EntityUid victim, EntityUid attacker, ExecutionComponent comp)
     {
-        if (!CanBeExecuted(victim, attacker))
+        if (!CanBeExecuted(victim, attacker, weapon))
             return;
 
         if (attacker == victim)
@@ -96,7 +101,7 @@ public sealed class SharedExecutionSystem : EntitySystem
 
     }
 
-    public bool CanBeExecuted(EntityUid victim, EntityUid attacker)
+    public bool CanBeExecuted(EntityUid victim, EntityUid attacker, EntityUid weapon)
     {
         // No point executing someone if they can't take damage
         if (!HasComp<DamageableComponent>(victim))
@@ -116,6 +121,13 @@ public sealed class SharedExecutionSystem : EntitySystem
 
         // The victim must be incapacitated to be executed
         if (victim != attacker && _actionBlocker.CanInteract(victim, null))
+            return false;
+
+        // If the gun has rubber bullets chambered, we can't execute them.
+        if (TryComp<GunComponent>(weapon, out _)
+            && _itemSlots.TryGetSlot(weapon, "gun_chamber", out var itemSlot)
+            && itemSlot.Item != null
+            && _tag.HasTag(itemSlot.Item!.Value, "BulletRubber"))
             return false;
 
         // All checks passed
@@ -197,7 +209,7 @@ public sealed class SharedExecutionSystem : EntitySystem
         var victim = args.Target.Value;
         var weapon = args.Used.Value;
 
-        if (!_execution.CanBeExecuted(victim, attacker))
+        if (!_execution.CanBeExecuted(victim, attacker, weapon))
             return;
 
         // This is needed so the melee system does not stop it.
