@@ -297,9 +297,7 @@ public abstract partial class SharedGunSystem : EntitySystem
                     throw new ArgumentOutOfRangeException($"No implemented shooting behavior for {gun.SelectedMode}!");
             }
         } else
-        {
             shots = Math.Min(shots, gun.ShotsPerBurstModified - gun.ShotCounter);
-        }
 
         var attemptEv = new AttemptShootEvent(user, null);
         RaiseLocalEvent(gunUid, ref attemptEv);
@@ -307,9 +305,8 @@ public abstract partial class SharedGunSystem : EntitySystem
         if (attemptEv.Cancelled)
         {
             if (attemptEv.Message != null)
-            {
                 PopupSystem.PopupClient(attemptEv.Message, gunUid, user);
-            }
+
             gun.BurstActivated = false;
             gun.BurstShotsCount = 0;
             gun.NextFire = TimeSpan.FromSeconds(Math.Max(lastFire.TotalSeconds + SafetyNextFire, gun.NextFire.TotalSeconds));
@@ -378,7 +375,15 @@ public abstract partial class SharedGunSystem : EntitySystem
         }
 
         // Shoot confirmed - sounds also played here in case it's invalid (e.g. cartridge already spent).
-        Shoot(gunUid, gun, ev.Ammo, fromCoordinates, toCoordinates.Value, out var userImpulse, user, throwItems: attemptEv.ThrowItems);
+        Shoot(
+            gunUid,
+            gun,
+            ev.Ammo,
+            fromCoordinates,
+            toCoordinates.Value,
+            out var userImpulse,
+            user,
+            throwItems: attemptEv.ThrowItems);
         var shotEv = new GunShotEvent(user, ev.Ammo);
         RaiseLocalEvent(gunUid, ref shotEv);
 
