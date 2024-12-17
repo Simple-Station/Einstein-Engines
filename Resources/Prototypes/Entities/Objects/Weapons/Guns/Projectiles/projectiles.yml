@@ -122,6 +122,9 @@
       path: /Audio/Weapons/Guns/Hits/snap.ogg
   - type: StaminaDamageOnCollide
     damage: 22 # 5 hits to stun sounds reasonable
+  - type: Tags
+    tags:
+    - BulletRubber
 
 - type: entity
   id: BaseBulletIncendiary

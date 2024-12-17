@@ -254,6 +254,9 @@
   id: BulletFoam
 
 - type: Tag
+  id: BulletRubber
+
+- type: Tag
   id: Burnt
 
 - type: Tag
