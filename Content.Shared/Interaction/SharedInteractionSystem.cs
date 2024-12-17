@@ -778,7 +778,7 @@ namespace Content.Shared.Interaction
             // No fixtures, e.g. wallmounts.
             else
             {
-                originPos = _transform.GetMapCoordinates(origin);
+                originPos = _transform.GetMapCoordinates(origin, xform: origin.Comp);
                 var otherParent = Transform(other).ParentUid;
                 targetRot = otherParent.IsValid() ? Transform(otherParent).LocalRotation + otherAngle : otherAngle;
             }
