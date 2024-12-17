@@ -1,6 +1,5 @@
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
-using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Server.Inventory;
 using Content.Server.Nutrition.Components;
 using Content.Shared.Nutrition.Components;
@@ -33,8 +32,9 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Utility;
 using System.Linq;
 using Content.Shared.CCVar;
+using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.Whitelist;
 using Robust.Shared.Configuration;
-using Robust.Server.GameObjects;
 
 namespace Content.Server.Nutrition.EntitySystems;
 
@@ -55,13 +55,13 @@ public sealed class FoodSystem : EntitySystem
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly SharedInteractionSystem _interaction = default!;
-    [Dependency] private readonly SolutionContainerSystem _solutionContainer = default!;
-    [Dependency] private readonly TransformSystem _transform = default!;
+    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
     [Dependency] private readonly StackSystem _stack = default!;
     [Dependency] private readonly StomachSystem _stomach = default!;
     [Dependency] private readonly UtensilSystem _utensil = default!;
     [Dependency] private readonly IConfigurationManager _config = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
 
     public const float MaxFeedDistance = 1.0f;
 
@@ -71,7 +71,7 @@ public sealed class FoodSystem : EntitySystem
 
         // TODO add InteractNoHandEvent for entities like mice.
         // run after openable for wrapped/peelable foods
-        SubscribeLocalEvent<FoodComponent, UseInHandEvent>(OnUseFoodInHand, after: new[] { typeof(OpenableSystem), typeof(ServerInventorySystem) });
+        SubscribeLocalEvent<FoodComponent, UseInHandEvent>(OnUseFoodInHand, after: [ typeof(OpenableSystem), typeof(ServerInventorySystem), ]);
         SubscribeLocalEvent<FoodComponent, AfterInteractEvent>(OnFeedFood);
         SubscribeLocalEvent<FoodComponent, GetVerbsEvent<AlternativeVerb>>(AddEatVerb);
         SubscribeLocalEvent<FoodComponent, ConsumeDoAfterEvent>(OnDoAfter);
@@ -168,23 +168,26 @@ public sealed class FoodSystem : EntitySystem
         if (forceFeed)
         {
             var userName = Identity.Entity(user, EntityManager);
-            _popup.PopupEntity(Loc.GetString("food-system-force-feed", ("user", userName)),
-                user, target);
+            _popup.PopupEntity(
+                Loc.GetString("food-system-force-feed", ("user", userName)),
+                user,
+                target);
 
             // logging
-            _adminLogger.Add(LogType.ForceFeed, LogImpact.Medium, $"{ToPrettyString(user):user} is forcing {ToPrettyString(target):target} to eat {ToPrettyString(food):food} {SolutionContainerSystem.ToPrettyString(foodSolution)}");
+            _adminLogger.Add(LogType.ForceFeed, LogImpact.Medium, $"{ToPrettyString(user):user} is forcing {ToPrettyString(target):target} to eat {ToPrettyString(food):food} {SharedSolutionContainerSystem.ToPrettyString(foodSolution)}");
         }
         else
         {
             // log voluntary eating
-            _adminLogger.Add(LogType.Ingestion, LogImpact.Low, $"{ToPrettyString(target):target} is eating {ToPrettyString(food):food} {SolutionContainerSystem.ToPrettyString(foodSolution)}");
+            _adminLogger.Add(LogType.Ingestion, LogImpact.Low, $"{ToPrettyString(target):target} is eating {ToPrettyString(food):food} {SharedSolutionContainerSystem.ToPrettyString(foodSolution)}");
         }
 
         var foodDelay = foodComp.Delay;
         if (TryComp<ConsumeDelayModifierComponent>(target, out var delayModifier))
             foodDelay *= delayModifier.FoodDelayMultiplier;
 
-        var doAfterArgs = new DoAfterArgs(EntityManager,
+        var doAfterArgs = new DoAfterArgs(
+            EntityManager,
             user,
             forceFeed ? foodComp.ForceFeedDelay : foodDelay,
             new ConsumeDoAfterEvent(foodComp.Solution, flavors),
@@ -198,7 +201,7 @@ public sealed class FoodSystem : EntitySystem
             DistanceThreshold = MaxFeedDistance,
             // Mice and the like can eat without hands.
             // TODO maybe set this based on some CanEatWithoutHands event or component?
-            NeedHand = forceFeed,
+            NeedHand = forceFeed
         };
 
         _doAfter.TryStartDoAfter(doAfterArgs);
@@ -421,8 +424,9 @@ public sealed class FoodSystem : EntitySystem
             if (comp.SpecialDigestible == null)
                 continue;
             // Check if the food is in the whitelist
-            if (comp.SpecialDigestible.IsValid(food, EntityManager))
+            if (_whitelist.IsWhitelistPass(comp.SpecialDigestible, food))
                 return true;
+
             // They can only eat whitelist food and the food isn't in the whitelist. It's not edible.
             return false;
         }
@@ -510,10 +514,11 @@ public sealed class FoodSystem : EntitySystem
     public bool IsMouthBlocked(EntityUid uid, EntityUid? popupUid = null)
     {
         var attempt = new IngestionAttemptEvent();
-        RaiseLocalEvent(uid, attempt, false);
+        RaiseLocalEvent(uid, attempt);
         if (attempt.Cancelled && attempt.Blocker != null && popupUid != null)
         {
-            _popup.PopupEntity(Loc.GetString("food-system-remove-mask", ("entity", attempt.Blocker.Value)),
+            _popup.PopupEntity(
+                Loc.GetString("food-system-remove-mask", ("entity", attempt.Blocker.Value)),
                 uid, popupUid.Value);
         }
 
