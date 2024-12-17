@@ -330,6 +330,9 @@
         - !type:OrganType
           type: Slime
           shouldHave: false
+        - !type:BloodReagentThreshold # /tg/ gases
+          reagent: NitrosylPlasmide
+          max: 0.1
         type: Local
         visualType: Medium
         messages: [ "effect-sleepy" ]
@@ -342,6 +345,9 @@
         - !type:OrganType
           type: Slime
           shouldHave: false
+        - !type:BloodReagentThreshold # /tg/ gases
+          reagent: NitrosylPlasmide
+          max: 0.1
         walkSpeedModifier: 0.65
         sprintSpeedModifier: 0.65
       - !type:GenericStatusEffect
@@ -352,6 +358,9 @@
         - !type:OrganType
           type: Slime
           shouldHave: false
+        - !type:BloodReagentThreshold # /tg/ gases
+          reagent: NitrosylPlasmide
+          max: 0.1
         key: ForcedSleep
         component: ForcedSleeping
         time: 200 # This reeks, but I guess it works LMAO
@@ -425,6 +434,7 @@
           reagent: Frezon
           min: 1
 
+ #/tg/ gases
 - type: reagent
   id: BZ
   name: reagent-name-bz
@@ -458,8 +468,8 @@
         ignoreResistances: true
         damage:
           types:
-            Asphyxiation: 5
-            Poison: 1.5
+            Asphyxiation: 10
+            Poison: 2.5
       - !type:GenericStatusEffect
         conditions:
         - !type:ReagentThreshold
@@ -471,7 +481,7 @@
         key: SeeingRainbows
         component: SeeingRainbows
         type: Add
-        time: 30
+        time: 10
         refresh: false
       - !type:Emote
         conditions:
@@ -503,6 +513,9 @@
         - !type:OrganType
           type: Slime
           shouldHave: true
+        - !type:BloodReagentThreshold
+          reagent: NitrosylPlasmide
+          max: 0.1
         type: Local
         visualType: Medium
         messages: [ "effect-sleepy" ]
@@ -515,6 +528,9 @@
         - !type:OrganType
           type: Slime
           shouldHave: true
+        - !type:BloodReagentThreshold
+          reagent: NitrosylPlasmide
+          max: 0.1
         walkSpeedModifier: 0.65
         sprintSpeedModifier: 0.65
       - !type:GenericStatusEffect
@@ -525,6 +541,9 @@
         - !type:OrganType
           type: Slime
           shouldHave: true
+        - !type:BloodReagentThreshold
+          reagent: NitrosylPlasmide
+          max: 0.1
         key: ForcedSleep
         component: ForcedSleeping
         time: 10
@@ -544,7 +563,6 @@
         conditions:
         - !type:ReagentThreshold
           reagent: Healium
-          min: 1
           max: 15
         scaleByQuantity: true
         ignoreResistances: true
@@ -569,38 +587,21 @@
         - !type:ReagentThreshold
           reagent: Healium
           min: 4
+        - !type:BloodReagentThreshold
+          reagent: NitrosylPlasmide
+          max: 0.1
         type: Local
         visualType: Medium
         messages: [ "effect-sleepy" ]
-        probability: 0.1
+        probability: 0.01
       - !type:GenericStatusEffect
         conditions:
         - !type:ReagentThreshold
           reagent: Healium
           min: 8
-        key: ForcedSleep
-        component: ForcedSleeping
-        time: 3
-        type: Add
-      - !type:Drunk
-        boozePower: 150
-        conditions:
-        - !type:ReagentThreshold
-          reagent: Healium
-          min: 4
-    Medicine:
-      effects:
-      - !type:HealthChange
-        damage:
-          groups:
-            Burn: -0.1
-            Toxin: -0.1
-            Brute: -0.1
-      - !type:GenericStatusEffect
-        conditions:
-        - !type:ReagentThreshold
-          reagent: Healium
-          min: 6
+        - !type:BloodReagentThreshold
+          reagent: NitrosylPlasmide
+          max: 0.01
         key: ForcedSleep
         component: ForcedSleeping
         time: 3
@@ -610,8 +611,7 @@
         conditions:
         - !type:ReagentThreshold
           reagent: Healium
-          min: 3
-        # needs to be made into hypothium to work well as a chem, use as a gas otherwise
+          min: 4
 
 - type: reagent
   id: Nitrium
@@ -619,7 +619,7 @@
   desc: reagent-desc-nitrium
   physicalDesc: reagent-physical-desc-gaseous
   flavor: sour
-  color: "#8b0000"
+  color: "#b76f0e"
   metabolisms:
     Gas:
       effects:
@@ -627,58 +627,29 @@
         conditions:
         - !type:ReagentThreshold
           reagent: Nitrium
-          min: 4
+          min: 3
         walkSpeedModifier: 1.25
         sprintSpeedModifier: 1.25
+      - !type:AddReagentToBlood
+        conditions:
+        - !type:ReagentThreshold
+          reagent: Nitrium
+          min: 6
+        reagent: NitrosylPlasmide
+        amount: 2.5
       - !type:GenericStatusEffect
         conditions:
         - !type:ReagentThreshold
           reagent: Nitrium
-          min: 15
+          min: 8
         key: Stutter
         component: StutteringAccent
-        time: 10
-      - !type:Jitter
-        conditions:
-        - !type:ReagentThreshold
-          reagent: Nitrium
-          min: 10
-        time: 10
-      - !type:ResetNarcolepsy
-        conditions:
-        - !type:ReagentThreshold
-          reagent: Nitrium
-          min: 15
-      - !type:GenericStatusEffect
-        conditions:
-        - !type:ReagentThreshold
-          reagent: Nitrium
-          min: 10
-        key: Drowsiness
-        time: 10
-        type: Remove
-      - !type:GenericStatusEffect
-        conditions:
-        - !type:ReagentThreshold
-          reagent: Nitrium
-          min: 15
-        key: ForcedSleep
-        type: Remove
-        time: 3
-      - !type:GenericStatusEffect
-        conditions:
-        - !type:ReagentThreshold
-          reagent: Nitrium
-          min: 15
-        key: Adrenaline
-        component: IgnoreSlowOnDamage
-        type: Add
-        time: 3
+        time: 8
       - !type:HealthChange
         conditions:
         - !type:ReagentThreshold
           reagent: Nitrium
-          min: 18
+          min: 10
         ignoreResistances: true
         damage:
           types:
