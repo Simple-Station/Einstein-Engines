@@ -8676,3 +8676,33 @@ Entries:
   id: 6579
   time: '2024-12-15T19:26:16.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1340
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added a server option for "Scarier Mindbreaking". Mindbreaking now
+        irreversibly converts a player character into a non-sentient NPC.
+    - type: Fix
+      message: Mindbreaking now only works on Psychics.
+  id: 6580
+  time: '2024-12-16T15:22:36.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1249
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added Redshirt and Brittle Bone Disease traits. These give extremely
+        large negative modifiers to your healthbar, but also grant a large
+        amount of trait points to work with.
+  id: 6581
+  time: '2024-12-16T15:50:54.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1352
+- author: BlueHNT
+  changes:
+    - type: Add
+      message: Added slowdown mitigation to jackboots
+    - type: Add
+      message: Added fake jackboots for style outside of sec
+  id: 6582
+  time: '2024-12-16T17:55:06.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1342
