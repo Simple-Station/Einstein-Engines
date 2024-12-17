@@ -1,7 +1,7 @@
 - type: trait
   id: Blindness
   category: Visual
-  points: 6
+  points: 10
   requirements:
     - !type:CharacterJobRequirement
       inverted: true

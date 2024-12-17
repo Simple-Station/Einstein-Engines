@@ -55,7 +55,7 @@
         visible: false
         map: [ "light" ]
   - type: MeleeWeapon
-    attackRate: 0.8
+    attackRate: 1.25
     bluntStaminaDamageFactor: 1.5
     damage:
       types:
@@ -119,7 +119,7 @@
         map: [ "light" ]
   - type: MeleeWeapon
     wideAnimationRotation: 90
-    attackRate: 0.8
+    attackRate: 1.25
     damage:
       types:
         Blunt: 6.5

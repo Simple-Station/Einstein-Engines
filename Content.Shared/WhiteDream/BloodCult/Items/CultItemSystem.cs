@@ -2,6 +2,7 @@
 using Content.Shared.Ghost;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
+using Content.Shared.Interaction.Events;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Popups;
 using Content.Shared.Projectiles;
@@ -23,6 +24,7 @@ public sealed class CultItemSystem : EntitySystem
     public override void Initialize()
     {
         SubscribeLocalEvent<CultItemComponent, ActivateInWorldEvent>(OnActivate);
+        SubscribeLocalEvent<CultItemComponent, UseInHandEvent>(OnUseInHand);
         SubscribeLocalEvent<CultItemComponent, BeforeGettingThrownEvent>(OnBeforeGettingThrown);
         SubscribeLocalEvent<CultItemComponent, BeingEquippedAttemptEvent>(OnEquipAttempt);
         SubscribeLocalEvent<CultItemComponent, AttemptMeleeEvent>(OnMeleeAttempt);
@@ -30,6 +32,15 @@ public sealed class CultItemSystem : EntitySystem
     }
 
     private void OnActivate(Entity<CultItemComponent> item, ref ActivateInWorldEvent args)
+    {
+        if (CanUse(args.User))
+            return;
+
+        args.Handled = true;
+        KnockdownAndDropItem(item, args.User, Loc.GetString("cult-item-component-generic"));
+    }
+
+    private void OnUseInHand(Entity<CultItemComponent> item, ref UseInHandEvent args)
     {
         if (CanUse(args.User) ||
             // Allow non-cultists to remove embedded cultist weapons and getting knocked down afterwards on pickup
