@@ -262,7 +262,7 @@ public abstract partial class InventorySystem
             return false;
         }
 
-        if (!CanAccess(actor, target, itemUid))
+        if (!onSpawn && !CanAccess(actor, target, itemUid)) // Don't check for reachability on spawn to equip loadout items in cryostorage
         {
             reason = "interaction-system-user-interaction-cannot-reach";
             return false;

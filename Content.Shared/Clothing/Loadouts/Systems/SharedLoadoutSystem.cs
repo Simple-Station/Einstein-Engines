@@ -94,8 +94,6 @@ public sealed class SharedLoadoutSystem : EntitySystem
 
         foreach (var (loadout, loadoutProto) in preferencesAndPrototypes)
         {
-            var slot = "";
-
             // Spawn the loadout items
             var spawned = EntityManager.SpawnEntities(
                 _sharedTransformSystem.GetMapCoordinates(uid),
@@ -104,6 +102,8 @@ public sealed class SharedLoadoutSystem : EntitySystem
             var i = 0; // If someone wants to add multi-item support to the editor
             foreach (var item in spawned)
             {
+                var slots = new List<String>();
+
                 allLoadouts.Add((item, loadout, i));
                 if (loadout.CustomHeirloom == true)
                     heirlooms.Add((item, loadout));
@@ -113,14 +113,13 @@ public sealed class SharedLoadoutSystem : EntitySystem
                     && _characterRequirements.CanEntityWearItem(uid, item)
                     && _inventory.TryGetSlots(uid, out var slotDefinitions))
                 {
-                    var deleted = false;
                     foreach (var curSlot in slotDefinitions)
                     {
-                        // If the loadout can't equip here or we've already deleted an item from this slot, skip it
-                        if (!clothingComp.Slots.HasFlag(curSlot.SlotFlags) || deleted)
+                        // If the loadout can't equip here, skip it
+                        if (!clothingComp.Slots.HasFlag(curSlot.SlotFlags))
                             continue;
 
-                        slot = curSlot.Name;
+                        slots.Add(curSlot.Name);
 
                         // If the loadout is exclusive delete the equipped item
                         if (loadoutProto.Exclusive)
@@ -130,7 +129,7 @@ public sealed class SharedLoadoutSystem : EntitySystem
                                 continue;
 
                             EntityManager.DeleteEntity(slotItem.Value);
-                            deleted = true;
+                            break;
                         }
                     }
                 }
@@ -148,7 +147,17 @@ public sealed class SharedLoadoutSystem : EntitySystem
 
 
                 // Equip the loadout
-                if (!_inventory.TryEquip(uid, item, slot, true, !string.IsNullOrEmpty(slot), true))
+                var equipped = false;
+                foreach (var slot in slots)
+                {
+                    if (_inventory.TryEquip(uid, item, slot, true, !string.IsNullOrEmpty(slot), true))
+                    {
+                        equipped = true;
+                        break;
+                    }
+                }
+
+                if (!equipped)
                     failedLoadouts.Add(item);
 
                 i++;
