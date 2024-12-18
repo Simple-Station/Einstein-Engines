@@ -258,7 +258,7 @@ public sealed partial class StaminaSystem : EntitySystem
     }
 
     public void TakeStaminaDamage(EntityUid uid, float value, StaminaComponent? component = null,
-        EntityUid? source = null, EntityUid? with = null, bool visual = true, SoundSpecifier? sound = null, bool? allowsSlowdown = true)
+        EntityUid? source = null, EntityUid? with = null, bool visual = true, SoundSpecifier? sound = null, bool? allowsSlowdown = true, bool causesDecayCooldown = true)
     {
         if (!Resolve(uid, ref component, false)
             || value == 0)
@@ -276,13 +276,24 @@ public sealed partial class StaminaSystem : EntitySystem
         var oldDamage = component.StaminaDamage;
         component.StaminaDamage = MathF.Max(0f, component.StaminaDamage + value);
 
-        // Reset the decay cooldown upon taking damage.
         if (oldDamage < component.StaminaDamage)
         {
-            var nextUpdate = _timing.CurTime + TimeSpan.FromSeconds(component.Cooldown);
+            // Reset the decay cooldown upon taking damage.
+            if (causesDecayCooldown)
+            {
+                var nextUpdate = _timing.CurTime + TimeSpan.FromSeconds(component.Cooldown);
 
-            if (component.NextUpdate < nextUpdate)
-                component.NextUpdate = nextUpdate;
+                if (component.NextUpdate < nextUpdate)
+                    component.NextUpdate = nextUpdate;
+            }
+            // Begin the decay immediately upon taking damage, or don't interrupt the ongoing decay.
+            else
+            {
+                var nextUpdate = _timing.CurTime + TimeSpan.FromSeconds(1f);
+
+                if (nextUpdate - component.NextUpdate > TimeSpan.FromSeconds(1f))
+                    component.NextUpdate = nextUpdate;
+            }
         }
         if (allowsSlowdown == true)
             _movementSpeed.RefreshMovementSpeedModifiers(uid);
