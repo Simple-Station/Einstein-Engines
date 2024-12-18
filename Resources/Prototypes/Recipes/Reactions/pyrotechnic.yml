@@ -73,3 +73,16 @@
     Ethanol: 5
     Hydrogen: 3
     Sulfur: 2
+
+- type: reaction
+  id: HotOilVegetableAndWater
+  impact: Medium
+  minTemp: 373.15
+  reactants:
+    OilVegetable:
+      amount: 1
+    Water:
+      amount: 1
+  effects:
+  - !type:CreateGas
+    gas: WaterVapor
