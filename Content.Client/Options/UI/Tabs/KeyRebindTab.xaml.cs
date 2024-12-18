@@ -271,9 +271,9 @@ namespace Content.Client.Options.UI.Tabs
 
             AddHeader("ui-options-header-hotbar");
             foreach (var boundKey in ContentKeyFunctions.GetHotbarBoundKeys())
-            {
                 AddButton(boundKey);
-            }
+            foreach (var boundKey in ContentKeyFunctions.GetLoadoutBoundKeys())
+                AddButton(boundKey);
 
             AddHeader("ui-options-header-shuttle");
             AddButton(ContentKeyFunctions.ShuttleStrafeUp);
