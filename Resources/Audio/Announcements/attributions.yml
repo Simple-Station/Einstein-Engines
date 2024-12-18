@@ -3,6 +3,11 @@
   copyright: "tgstation"
   source: "https://github.com/tgstation/tgstation/blob/b77fa8c2a2490b43bf9174271ebfad72c4782d98/sound/ai/default/ionstorm.ogg"
 
+- files: ["outbreak5.ogg"]  # Goobstation - Blob
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from tgstation"
+  source: "https://github.com/tgstation/tgstation/blob/40d89d11ea4a5cb81d61dc1018b46f4e7d32c62a/sound/ai/default/outbreak7.ogg"
+
 - files: ["war.ogg"]
   license: "CC-BY-SA-3.0"
   copyright: "Paradise, volume and pitch changed, merged with redalert.ogg"
