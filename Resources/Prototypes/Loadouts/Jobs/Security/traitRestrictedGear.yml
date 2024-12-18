@@ -1,0 +1,681 @@
+### All Security
+## Holster
+- type: loadout
+  id: LoadoutSecurityRestrictedGearBeltHolster
+  category: JobsSecurityAUncategorized
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+  items:
+    - ClothingBeltHolster
+
+## Outer
+- type: loadout
+  id: LoadoutSecurityRestrictedGearOuterArmorPlateCarrier
+  category: JobsSecurityAUncategorized
+  cost: 7
+  exclusive: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityOuter
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+  items:
+    - ClothingOuterArmorPlateCarrier
+
+- type: loadout
+  id: LoadoutSecurityRestrictedGearOuterArmorDuraVest
+  category: JobsSecurityAUncategorized
+  cost: 7
+  exclusive: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityOuter
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+  items:
+    - ClothingOuterArmorDuraVest
+
+- type: loadout
+  id: LoadoutSecurityRestrictedGearOuterArmorBasic
+  category: JobsSecurityAUncategorized
+  cost: 7
+  exclusive: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityOuter
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+  items:
+    - ClothingOuterArmorBasic
+
+- type: loadout
+  id: LoadoutSecurityRestrictedGearOuterArmorSlim
+  category: JobsSecurityAUncategorized
+  cost: 7
+  exclusive: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityOuter
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+  items:
+    - ClothingOuterArmorBasicSlim
+
+
+## Equipment
+# Flash
+- type: loadout
+  id: LoadoutSecurityRestrictedGearFlash
+  category: JobsSecurityAUncategorized
+  cost: 2
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 3600 # 1 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityEquipment
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+  items:
+    - Flash
+
+# .35 Magazine
+- type: loadout
+  id: LoadoutSecurityRestrictedGearMagazinePistol
+  category: JobsSecurityAUncategorized
+  cost: 2
+  requirements:
+    - !type:CVarRequirement
+      cvar: trait.restrictedgear_allowsfirearms
+      requiredValue: true
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 3600 # 1 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityEquipment
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+  items:
+    - MagazinePistol
+
+# .35 Magazine Rubber
+- type: loadout
+  id: LoadoutSecurityRestrictedGearMagazinePistolRubber
+  category: JobsSecurityAUncategorized
+  cost: 2
+  requirements:
+    - !type:CVarRequirement
+      cvar: trait.restrictedgear_allowsfirearms
+      requiredValue: true
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 3600 # 1 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityEquipment
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+  items:
+    - MagazinePistolRubber
+
+# .45 Speedloader
+- type: loadout
+  id: LoadoutSecurityRestrictedGearSpeedLoaderMagnum
+  category: JobsSecurityAUncategorized
+  cost: 4
+  exclusive: true
+  requirements:
+    - !type:CVarRequirement
+      cvar: trait.restrictedgear_allowsfirearms
+      requiredValue: true
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 3600 # 1 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityEquipment
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+  items:
+    - SpeedLoaderMagnum
+
+# .45 Speedloader Rubber
+- type: loadout
+  id: LoadoutSecurityRestrictedGearSpeedLoaderMagnumRubber
+  category: JobsSecurityAUncategorized
+  cost: 4
+  exclusive: true
+  requirements:
+    - !type:CVarRequirement
+      cvar: trait.restrictedgear_allowsfirearms
+      requiredValue: true
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 3600 # 1 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityEquipment
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+  items:
+    - SpeedLoaderMagnumRubber
+
+# .45 Magazine
+- type: loadout
+  id: LoadoutSecurityRestrictedGearMagazineMagnum
+  category: JobsSecurityAUncategorized
+  cost: 4
+  exclusive: true
+  requirements:
+    - !type:CVarRequirement
+      cvar: trait.restrictedgear_allowsfirearms
+      requiredValue: true
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 3600 # 1 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityEquipment
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+  items:
+    - MagazineMagnum
+
+# .45 Magazine Rubber
+- type: loadout
+  id: LoadoutSecurityRestrictedGearMagazineMagnumRubber
+  category: JobsSecurityAUncategorized
+  cost: 4
+  exclusive: true
+  requirements:
+    - !type:CVarRequirement
+      cvar: trait.restrictedgear_allowsfirearms
+      requiredValue: true
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 3600 # 1 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityEquipment
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+  items:
+    - MagazineMagnumRubber
+
+## Weapon
+# the truncheon is not a gun,
+# ignores the 'allowsfirearms' cvar in case an oni wants to specialise into blunt
+# (like how swashbucklers can take salvager's blades)
+- type: loadout
+  id: LoadoutSecurityRestrictedGearEquipmentTruncheon
+  category: JobsSecurityAUncategorized
+  cost: 4
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 3600 # 1 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityWeapons
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Oni
+  items:
+    - Truncheon
+
+## Guns
+# Disabler
+- type: loadout
+  id: LoadoutSecurityRestrictedGearDisabler
+  category: JobsSecurityAUncategorized
+  cost: 4
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CVarRequirement
+      cvar: trait.restrictedgear_allowsfirearms
+      requiredValue: true
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 3600 # 1 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityWeapons
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+  items:
+    - WeaponDisabler
+
+# MK58
+- type: loadout
+  id: LoadoutSecurityRestrictedGearMk58
+  category: JobsSecurityAUncategorized
+  cost: 4
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CVarRequirement
+      cvar: trait.restrictedgear_allowsfirearms
+      requiredValue: true
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 3600 # 1 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityWeapons
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+  items:
+    - WeaponPistolMk58
+
+# Inspector
+- type: loadout
+  id: LoadoutSecurityRestrictedGearRevolver
+  category: JobsSecurityAUncategorized
+  cost: 4
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CVarRequirement
+      cvar: trait.restrictedgear_allowsfirearms
+      requiredValue: true
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 3600 # 1 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityWeapons
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+  items:
+    - WeaponRevolverInspector
+
+# Deckard
+- type: loadout
+  id: LoadoutSecurityRestrictedGearRevolverDeckard
+  category: JobsSecurityAUncategorized
+  cost: 5
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CVarRequirement
+      cvar: trait.restrictedgear_allowsfirearms
+      requiredValue: true
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 3600 # 1 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityWeapons
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+  items:
+    - WeaponRevolverDeckard
+
+# N1984
+- type: loadout
+  id: LoadoutSecurityRestrictedGearPistolN1984
+  category: JobsSecurityAUncategorized
+  cost: 6
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CVarRequirement
+      cvar: trait.restrictedgear_allowsfirearms
+      requiredValue: true
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 3600 # 1 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityWeapons
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+  items:
+    - WeaponPistolN1984
+
+# Viper
+- type: loadout
+  id: LoadoutSecurityRestrictedGearPistolViper
+  category: JobsSecurityAUncategorized
+  cost: 4
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CVarRequirement
+      cvar: trait.restrictedgear_allowsfirearms
+      requiredValue: true
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 3600 # 1 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityWeapons
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+  items:
+    - WeaponPistolViper
+
+# Viper Wood
+- type: loadout
+  id: LoadoutSecurityRestrictedGearPistolViperWood
+  category: JobsSecurityAUncategorized
+  cost: 4
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CVarRequirement
+      cvar: trait.restrictedgear_allowsfirearms
+      requiredValue: true
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 108000 # 30 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityWeapons
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+  items:
+    - WeaponPistolViperWood
+
+# Svalin
+- type: loadout
+  id: LoadoutSecurityRestrictedGearPistolSvalin
+  category: JobsSecurityAUncategorized
+  cost: 5
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CVarRequirement
+      cvar: trait.restrictedgear_allowsfirearms
+      requiredValue: true
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 3600 # 1 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityWeapons
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+  items:
+    - WeaponLaserSvalinn
+
+# Miniature Energy Gun
+- type: loadout
+  id: LoadoutSecurityRestrictedGearEnergyGunMini
+  category: JobsSecurityAUncategorized
+  cost: 4
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CVarRequirement
+      cvar: trait.restrictedgear_allowsfirearms
+      requiredValue: true
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 3600 # 1 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityWeapons
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+  items:
+    - WeaponEnergyGunMini
+
+# Energy Pistol
+- type: loadout
+  id: LoadoutSecurityRestrictedGearEnergyGunPistol
+  category: JobsSecurityAUncategorized
+  cost: 5
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CVarRequirement
+      cvar: trait.restrictedgear_allowsfirearms
+      requiredValue: true
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 3600 # 1 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityWeapons
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+  items:
+    - WeaponEnergyGunPistol
+
+# Pollock
+- type: loadout
+  id: LoadoutSecurityRestrictedGearPistolPollock
+  category: JobsSecurityAUncategorized
+  cost: 5
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CVarRequirement
+      cvar: trait.restrictedgear_allowsfirearms
+      requiredValue: true
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 3600 # 1 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityWeapons
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+  items:
+    - WeaponPistolPollock
+
+# Snub-nose
+- type: loadout
+  id: LoadoutSecurityRestrictedGearRevolverSnub
+  category: JobsSecurityAUncategorized
+  cost: 6
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CVarRequirement
+      cvar: trait.restrictedgear_allowsfirearms
+      requiredValue: true
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 3600 # 1 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityWeapons
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+  items:
+    - WeaponRevolverSnub
+
+# K38
+- type: loadout
+  id: LoadoutSecurityRestrictedGearRevolverK38Master
+  category: JobsSecurityAUncategorized
+  cost: 5
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CVarRequirement
+      cvar: trait.restrictedgear_allowsfirearms
+      requiredValue: true
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 3600 # 1 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityWeapons
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+  items:
+    - WeaponRevolverK38Master
+
+# Fitz
+- type: loadout
+  id: LoadoutSecurityRestrictedGearRevolverFitz
+  category: JobsSecurityAUncategorized
+  cost: 7
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CVarRequirement
+      cvar: trait.restrictedgear_allowsfirearms
+      requiredValue: true
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 3600 # 1 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityWeapons
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+  items:
+    - WeaponRevolverFitz
+
+# Python
+- type: loadout
+  id: LoadoutSecurityRestrictedGearRevolverPython
+  category: JobsSecurityAUncategorized
+  cost: 9
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CVarRequirement
+      cvar: trait.restrictedgear_allowsfirearms
+      requiredValue: true
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 3600 # 1 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityWeapons
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+  items:
+    - WeaponRevolverPython
