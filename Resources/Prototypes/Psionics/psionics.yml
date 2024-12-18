@@ -224,9 +224,8 @@
   name: Shadowkin Powers
   description: shadowkin-powers-description
   actions:
-    - ActionShadowkinShadeskip
     - ActionDarkSwap
-  powerSlotCost: 1
+  powerSlotCost: 0
 
 - type: psionicPower
   id: EtherealVisionPower
@@ -243,6 +242,7 @@
   actions:
     - ActionDarkSwap
   powerSlotCost: 1
+  initializationFeedback: darkswap-power-initialization-feedback
 
 - type: psionicPower
   id: PyrokineticFlare
