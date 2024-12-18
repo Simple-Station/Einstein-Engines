@@ -3,6 +3,7 @@ chat-language-Bubblish-name = Bubblish
 chat-language-RootSpeak-name = Rootspeak
 chat-language-Nekomimetic-name = Neko
 chat-language-Draconic-name = Sinta'Unathi
+chat-language-Wawa-name = Wawanese
 chat-language-Azaziba-name = Sinta'Azaziba
 chat-language-SolCommon-name = Sol Common
 chat-language-TauCetiBasic-name = Basic
