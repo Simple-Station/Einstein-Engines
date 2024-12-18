@@ -95,7 +95,7 @@
   id: CratePlasmamanLifeSupport
   parent: CrateInternals
   name: plasmaman life support crate
-  description: Contains four breath masks, four envirosuits, four envirosuit helmets and eight dual-canister plasma tanks.
+  description: Contains four breath masks, four envirosuits, four envirosuit helmets and eight plasma internals tanks.
   components:
   - type: StorageFill
     contents:

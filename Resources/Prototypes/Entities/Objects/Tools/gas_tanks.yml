@@ -230,8 +230,8 @@
 - type: entity
   parent: DoubleEmergencyOxygenTank
   id: DoubleEmergencyPlasmaTank
-  name: double emergency plasma tank
-  description: A high-grade dual-tank emergency life support container. It holds a decent amount of plasma for its small size.
+  name: plasma internals tank
+  description: A tank of plasma designed to be internals for Plasmamen.
   components:
   - type: Sprite
     sprite: Objects/Tanks/plasmaman.rsi
