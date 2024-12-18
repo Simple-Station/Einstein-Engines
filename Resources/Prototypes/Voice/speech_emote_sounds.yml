@@ -34,6 +34,8 @@
       collection: Whistles
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
     Gasp:
       collection: MaleGasp
     DefaultDeathgasp:
@@ -74,6 +76,8 @@
       collection: Whistles
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
     Gasp:
       collection: FemaleGasp
     DefaultDeathgasp:
@@ -96,6 +100,8 @@
       collection: MaleCry
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
     Sneeze:
       collection: MaleSneezes
     Cough:
@@ -136,6 +142,8 @@
       collection: FemaleCry
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
     Sneeze:
       collection: FemaleSneezes
     Cough:
@@ -196,6 +204,8 @@
       collection: Whistles
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
     Gasp:
       collection: MaleGasp
     DefaultDeathgasp:
@@ -238,6 +248,8 @@
       collection: Whistles
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
     Gasp:
       collection: FemaleGasp
     DefaultDeathgasp:
@@ -270,6 +282,8 @@
       collection: Whistles
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
     Hiss:
       collection: FelinidHisses
     Meow:
@@ -316,6 +330,8 @@
       collection: Whistles
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
     Hiss:
       collection: FelinidHisses
     Meow:
@@ -370,6 +386,8 @@
       collection: Whistles
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
     Gasp:
       collection: FemaleGasp
     DefaultDeathgasp:
@@ -388,6 +406,8 @@
       collection: BikeHorn
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
     Sneeze:
       collection: MaleSneezes
     Cough:
@@ -432,6 +452,8 @@
       path: /Audio/Animals/snake_hiss.ogg
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
     Sneeze:
       collection: MaleSneezes
     Cough:
@@ -497,6 +519,8 @@
       collection: Whistles
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
     Gasp:
       collection: MaleGasp
     DefaultDeathgasp:
@@ -538,6 +562,8 @@
       collection: Whistles
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
     Gasp:
       collection: FemaleGasp
     DefaultDeathgasp:
@@ -560,6 +586,8 @@
       path: /Audio/Voice/Moth/moth_squeak.ogg
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
     Sneeze:
       collection: MaleSneezes
     Cough:
@@ -764,8 +792,8 @@
     Salute:
       path: /Audio/Voice/Diona/diona_salute.ogg
       params:
-       volume: -5
-       
+        volume: -5
+
 - type: emoteSounds
   id: ReptilianBodyEmotes
   sounds:
