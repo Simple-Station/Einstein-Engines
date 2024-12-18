@@ -40,6 +40,8 @@
     spawned:
     - id: SheetPlasma1
       amount: 4
+  - type: Inventory
+    templateId: plasmaman
   - type: Temperature
     heatDamageThreshold: 313    # 40    celsius
     # coldDamageThreshold: 195    # -78.5 celsius # Just set this to default cause it wont make a difference
@@ -78,3 +80,10 @@
   parent: BaseSpeciesDummy
   id: MobPlasmamanDummy
   categories: [ HideSpawnMenu ]
+  components:
+  - type: HumanoidAppearance
+    species: Plasmaman
+  - type: Inventory
+    templateId: plasmaman
+  - type: ToggleStartingGear # TODO make toggling sound quiet in lobby
+    slot: jumpsuit

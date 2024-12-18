@@ -142,6 +142,7 @@
     - WhitelistChameleon
     - HidesHarpyWings #DeltaV: Used by harpies to help render their hardsuit sprites
     - FullBodyOuter
+    - PlasmamanSafe
   - type: Clothing
     equipDelay: 2.5 # Hardsuits are heavy and take a while to put on/off.
     unequipDelay: 2.5
@@ -181,6 +182,7 @@
   - type: Tag
     tags:
     - HidesHarpyWings #DeltaV: Used by harpies to help render their hardsuit sprites
+    - PlasmamanSafe
   - type: Clothing
     equipDelay: 1.25 # Softsuits are easier to put on and off
     unequipDelay: 1

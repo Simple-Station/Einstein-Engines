@@ -225,11 +225,11 @@ public abstract partial class InventorySystem
 
     public bool CanEquip(EntityUid uid, EntityUid itemUid, string slot, [NotNullWhen(false)] out string? reason,
         SlotDefinition? slotDefinition = null, InventoryComponent? inventory = null,
-        ClothingComponent? clothing = null, ItemComponent? item = null) =>
-        CanEquip(uid, uid, itemUid, slot, out reason, slotDefinition, inventory, clothing, item);
+        ClothingComponent? clothing = null, ItemComponent? item = null, bool onSpawn = false) =>
+        CanEquip(uid, uid, itemUid, slot, out reason, slotDefinition, inventory, clothing, item, onSpawn);
 
     public bool CanEquip(EntityUid actor, EntityUid target, EntityUid itemUid, string slot, [NotNullWhen(false)] out string? reason, SlotDefinition? slotDefinition = null,
-        InventoryComponent? inventory = null, ClothingComponent? clothing = null, ItemComponent? item = null)
+        InventoryComponent? inventory = null, ClothingComponent? clothing = null, ItemComponent? item = null, bool onSpawn = false)
     {
         reason = "inventory-component-can-equip-cannot";
         if (!Resolve(target, ref inventory, false))
@@ -279,6 +279,11 @@ public abstract partial class InventorySystem
             reason = "inventory-component-can-equip-does-not-fit";
             return false;
         }
+
+        if (onSpawn &&
+            ((slotDefinition.SpawnWhitelist != null && !slotDefinition.SpawnWhitelist.IsValid(itemUid)) ||
+            (slotDefinition.SpawnBlacklist != null && slotDefinition.SpawnBlacklist.IsValid(itemUid))))
+            return false;
 
         var attemptEvent = new IsEquippingAttemptEvent(actor, target, itemUid, slotDefinition);
         RaiseLocalEvent(target, attemptEvent, true);

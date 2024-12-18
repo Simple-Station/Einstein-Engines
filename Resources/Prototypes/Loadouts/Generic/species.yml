@@ -58,7 +58,7 @@
 
 - type: loadout
   id: LoadoutSpeciesUniformEnvirosuit
-  category: Species
+  category: Uniform
   groups: [ LoadoutPlasmamanEnvirosuit ]
   cost: 0
   exclusive: true

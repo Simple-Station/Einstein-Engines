@@ -181,3 +181,6 @@
     modifiers:
       coefficients:
         Caustic: 0.85
+  - type: Tag
+    tags:
+    - PlasmamanSafe

@@ -136,6 +136,7 @@
     tags:
     - WhitelistChameleon
     - HelmetEVA
+    - PlasmamanSafe
   - type: IdentityBlocker
   - type: HideLayerClothing
     slots:
@@ -180,6 +181,7 @@
   - type: Tag
     tags:
     - WhitelistChameleon
+    - PlasmamanSafe
   - type: IdentityBlocker
   - type: HideLayerClothing
     slots:
@@ -209,6 +211,7 @@
   - type: Tag
     tags:
     - WhitelistChameleon
+    - PlasmamanSafe
   - type: HideLayerClothing
     slots:
     - Hair
