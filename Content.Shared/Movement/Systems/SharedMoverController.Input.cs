@@ -92,10 +92,13 @@ namespace Content.Shared.Movement.Systems
 
             // Relay the fact we had any movement event.
             // TODO: Ideally we'd do these in a tick instead of out of sim.
-            var moveEvent = new MoveInputEvent(component.Owner, component, component.HeldMoveButtons);
-            component.HeldMoveButtons = buttons;
-            RaiseLocalEvent(component.Owner, ref moveEvent);
-            Dirty(component.Owner, component);
+            var moveEvent = new MoveInputEvent(entity, entity.Comp.HeldMoveButtons);
+            entity.Comp.HeldMoveButtons = buttons;
+            RaiseLocalEvent(entity, ref moveEvent);
+            Dirty(entity, entity.Comp);
+
+            var ev = new SpriteMoveEvent(entity.Comp.HeldMoveButtons != MoveButtons.None);
+            RaiseLocalEvent(entity, ref ev);
         }
 
         private void OnMoverHandleState(EntityUid uid, InputMoverComponent component, ComponentHandleState args)
@@ -117,9 +120,12 @@ namespace Content.Shared.Movement.Systems
 
             if (component.HeldMoveButtons != state.HeldMoveButtons)
             {
-                var moveEvent = new MoveInputEvent(uid, component, component.HeldMoveButtons);
-                component.HeldMoveButtons = state.HeldMoveButtons;
-                RaiseLocalEvent(uid, ref moveEvent);
+                var moveEvent = new MoveInputEvent(entity, entity.Comp.HeldMoveButtons);
+                entity.Comp.HeldMoveButtons = state.HeldMoveButtons;
+                RaiseLocalEvent(entity.Owner, ref moveEvent);
+
+                var ev = new SpriteMoveEvent(entity.Comp.HeldMoveButtons != MoveButtons.None);
+                RaiseLocalEvent(entity, ref ev);
             }
         }
 
