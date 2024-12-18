@@ -8706,3 +8706,10 @@ Entries:
   id: 6582
   time: '2024-12-16T17:55:06.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1342
+- author: SiN Mapping Team
+  changes:
+    - type: Add
+      message: Saltern has been fully reworked!
+  id: 6583
+  time: '2024-12-18T01:32:32.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1357
