@@ -166,7 +166,8 @@ public sealed partial class CCVars
         CVarDef.Create("game.panic_bunker.disable_with_admins", false, CVar.SERVERONLY);
 
     /// <summary>
-    /// Whether or not the panic bunker will enable when no admins are online.
+    ///     Whether or not the panic bunker will enable when no admins are online.
+    ///     This counts everyone with the 'Admin' AdminFlag.
     /// </summary>
     public static readonly CVarDef<bool> PanicBunkerEnableWithoutAdmins =
         CVarDef.Create("game.panic_bunker.enable_without_admins", false, CVar.SERVERONLY);
