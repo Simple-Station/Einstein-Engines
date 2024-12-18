@@ -155,7 +155,7 @@
 
 - type: entity
   abstract: true
-  parent: ClothingUniformBase
+  parent: [ClothingUniformBase, AllowSuitStorageClothing] # suit storage is a temporary stopgap before we get more clever tank storage ways
   id: ClothingUniformEnvirosuitBase
   components:
   - type: IgniteFromGasImmunity

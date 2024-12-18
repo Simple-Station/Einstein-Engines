@@ -92,6 +92,23 @@
         amount: 4
 
 - type: entity
+  id: CratePlasmamanLifeSupport
+  parent: CrateInternals
+  name: plasmaman life support crate
+  description: Contains four breath masks, four envirosuits, four envirosuit helmets and eight dual-canister plasma tanks.
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingMaskBreath
+        amount: 4
+      - id: ClothingUniformEnvirosuit
+        amount: 4
+      - id: ClothingHeadEnvirohelm
+        amount: 4
+      - id: DoubleEmergencyPlasmaTankFilled
+        amount: 8
+
+- type: entity
   id: CrateEmergencyRadiation
   parent: CrateRadiation
   name: radiation protection crate

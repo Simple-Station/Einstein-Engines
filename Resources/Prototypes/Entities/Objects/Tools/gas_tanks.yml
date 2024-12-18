@@ -234,11 +234,11 @@
   description: A high-grade dual-tank emergency life support container. It holds a decent amount of plasma for its small size.
   components:
   - type: Sprite
-    sprite: Objects/Tanks/emergency_double_red.rsi
+    sprite: Objects/Tanks/plasmaman.rsi
   - type: Item
-    sprite: Objects/Tanks/emergency_double_red.rsi
+    sprite: Objects/Tanks/plasmaman.rsi
   - type: Clothing
-    sprite: Objects/Tanks/emergency_double_red.rsi
+    sprite: Objects/Tanks/plasmaman.rsi
 
 - type: entity
   parent: EmergencyOxygenTank
