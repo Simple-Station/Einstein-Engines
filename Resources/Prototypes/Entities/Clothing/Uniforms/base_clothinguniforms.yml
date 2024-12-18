@@ -164,13 +164,6 @@
   - type: Clothing
     equipDelay: 1
     unequipDelay: 0.75
-  - type: ToggleableClothing
-    requiredSlot:
-    - innerclothing
-    slot: head
-  - type: ContainerContainer
-    containers:
-      toggleable-clothing: !type:ContainerSlot {}
   - type: SelfExtinguisher
     maxCharges: 5
     cooldown: 100

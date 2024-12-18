@@ -1,0 +1,12 @@
+- type: characterItemGroup
+  id: LoadoutPlasmamanEnvirohelm
+  minItems: 1
+  maxItems: 1
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Plasmaman
+  items:
+    - type: loadout
+      id: LoadoutSpeciesHeadEnvirohelm
+      priority: 0

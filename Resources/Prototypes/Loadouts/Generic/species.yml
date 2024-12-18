@@ -64,3 +64,12 @@
   exclusive: true
   items:
     - ClothingUniformEnvirosuit
+
+- type: loadout
+  id: LoadoutSpeciesHeadEnvirohelm
+  category: Head
+  groups: [ LoadoutPlasmamanEnvirohelm ]
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadEnvirohelm
