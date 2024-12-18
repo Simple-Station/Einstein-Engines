@@ -197,7 +197,6 @@
   - type: IgniteFromGasImmunity
   - type: EyeProtection
   - type: BreathMask
-  - type: GroupExamine
   - type: PressureProtection # Same as EVA helmet
     highPressureMultiplier: 0.6
     lowPressureMultiplier: 1000

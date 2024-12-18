@@ -65,3 +65,15 @@
   exclusive: true
   items:
     - ClothingHeadEnvirohelm
+
+- type: loadout
+  id: LoadoutSpeciesHandsGlovesEnvirogloves
+  category: Hands
+  groups: [ LoadoutPlasmamanEnvirogloves ]
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHandsGlovesEnvirogloves
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGloves

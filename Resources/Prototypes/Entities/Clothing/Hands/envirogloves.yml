@@ -4,8 +4,11 @@
   name: plasma envirogloves
   description: Covers up those scandalous boney hands.
   components:
-  - type: Sprite # TODO fix error sprite on worn sprite related to this
-    sprite: Clothing/Hands/Gloves/Envirogloves/plasma.rsi
+  - type: Sprite
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    layers:
+    - state: icon
+      color: "#913b00"
   - type: Item
     sprite: Clothing/Hands/Gloves/Color/color.rsi
     inhandVisuals:
@@ -23,7 +26,3 @@
         color: "#913b00"
   - type: Fiber
     fiberColor: fibers-orange
-  - type: Armor
-    modifiers:
-      coefficients:
-        Caustic: 0.95
