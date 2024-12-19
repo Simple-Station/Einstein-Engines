@@ -19,6 +19,14 @@ public sealed partial class CharacterItemGroupPrototype : IPrototype
     [DataField]
     public int MaxItems = 1;
 
+    /// The minimum amount of items required from this group.
+    [DataField]
+    public int MinItems = 0;
+
+    /// The character requirements applied to all items in this group.
+    [DataField]
+    public List<CharacterRequirement> Requirements = new();
+
     /// An arbitrary list of traits, loadouts, etc
     [DataField]
     public List<CharacterItemGroupItem> Items = new();
@@ -32,6 +40,12 @@ public sealed partial class CharacterItemGroupItem
 
     [DataField("id", required: true)]
     public string ID;
+
+    /// The priority for this item to be selected as the default item.
+    /// The higher priority items will always be selected first over
+    /// lower-priority items.
+    [DataField]
+    public int Priority = 0;
 
     /// Tries to get Value from whatever Type maps to on a character profile
     //TODO: Make a test for this
