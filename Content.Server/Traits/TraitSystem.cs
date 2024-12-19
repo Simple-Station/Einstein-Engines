@@ -46,6 +46,7 @@ public sealed class TraitSystem : EntitySystem
     private void OnPlayerSpawnComplete(PlayerSpawnCompleteEvent args)
     {
         var pointsTotal = _configuration.GetCVar(CCVars.GameTraitsDefaultPoints);
+        var traitSelections = _configuration.GetCVar(CCVars.GameTraitsMax);
 
         foreach (var traitId in args.Profile.TraitPreferences)
         {
@@ -65,11 +66,12 @@ public sealed class TraitSystem : EntitySystem
 
             // To check for cheaters. :FaridaBirb.png:
             pointsTotal += traitPrototype.Points;
+            --traitSelections;
 
             AddTrait(args.Mob, traitPrototype);
         }
 
-        if (pointsTotal < 0)
+        if (pointsTotal < 0 || traitSelections < 0)
             PunishCheater(args.Mob);
     }
 
