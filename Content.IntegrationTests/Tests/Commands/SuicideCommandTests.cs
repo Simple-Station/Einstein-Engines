@@ -301,7 +301,7 @@ public sealed class SuicideCommandTests
     [Test]
     public async Task TestSuicideByHeldItemSpreadDamage()
     {
-        await using var pair = await PoolManager.GetServerClient(new PoolSettings
+        await using var pair = await PoolManager.GetServerClient(new()
         {
             Connected = true,
             Dirty = true,
