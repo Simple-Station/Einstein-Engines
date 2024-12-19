@@ -8,7 +8,281 @@
     sprite: Clothing/Uniforms/Envirosuits/plain.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Envirosuits/plain.rsi
-  - type: Tag
-    tags:
-    - WhitelistChameleon
-    - PlasmamanSafe
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitAtmos
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/atmos.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/atmos.rsi
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitCargo
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/cargo.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/cargo.rsi
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitCaptain
+  name: captain's envirosuit
+  description: It's a blue envirosuit with some gold markings denoting the rank of "Captain".
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/captain.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/captain.rsi
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitChiefEngineer
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/ce.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/ce.rsi
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitChaplain
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/chaplain.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/chaplain.rsi
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitChef
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/chef.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/chef.rsi
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitChemist
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/chemist.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/chemist.rsi
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitClown
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/clown.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/clown.rsi
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitCMO
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/cmo.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/cmo.rsi
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitEngineering
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/engineering.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/engineering.rsi
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitHoP
+  name: head of personnel's envirosuit
+  description: It's an envirosuit worn by someone who works in the position of "Head of Personnel".
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/hop.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/hop.rsi
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitHoS
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/hos.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/hos.rsi
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitHydroponics
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/hydroponics.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/hydroponics.rsi
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitJanitor
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/janitor.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/janitor.rsi
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitMedicalDoctor
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/medical.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/medical.rsi
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitMime
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/mime.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/mime.rsi
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitParamedic
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/paramedic.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/paramedic.rsi
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitPrisoner
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/prisoner.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/prisoner.rsi
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitResearchDirector
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/rd.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/rd.rsi
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitRoboticist
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/roboticist.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/roboticist.rsi
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitSalvage
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/salvage.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/salvage.rsi
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitScientist
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/scientist.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/scientist.rsi
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitSec
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/security.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/security.rsi
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitVirology
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/virology.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/virology.rsi
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitWarden
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/warden.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/warden.rsi
+
+# TODO deal with adding commander, official and intern, using their equivalent ss14 CC jumpsuit names
+# TODO add enviroslacks

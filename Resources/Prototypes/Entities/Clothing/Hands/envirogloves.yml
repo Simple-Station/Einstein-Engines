@@ -26,3 +26,383 @@
         color: "#913b00"
   - type: Fiber
     fiberColor: fibers-orange
+
+- type: entity
+  parent: ClothingHandsGlovesEnviroglovesBase
+  id: ClothingHandsGlovesEnviroglovesBlack
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    layers:
+    - state: icon
+      color: "#2f2e31"
+  - type: Item
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#2f2e31"
+      right:
+      - state: inhand-right
+        color: "#2f2e31"
+  - type: Clothing
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    clothingVisuals:
+      gloves:
+      - state: equipped-HAND
+        color: "#2f2e31"
+  - type: Fiber
+    fiberColor: fibers-black
+
+- type: entity
+  parent: ClothingHandsGlovesEnviroglovesBase
+  id: ClothingHandsGlovesEnviroglovesWhite
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    layers:
+    - state: icon
+      color: "#ffffff"
+  - type: Item
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ffffff"
+      right:
+      - state: inhand-right
+        color: "#ffffff"
+  - type: Clothing
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    clothingVisuals:
+      gloves:
+      - state: equipped-HAND
+        color: "#ffffff"
+  - type: Fiber
+    fiberColor: fibers-white
+
+- type: entity
+  parent: ClothingHandsGlovesEnviroglovesBase
+  id: ClothingHandsGlovesEnviroglovesRoboticist
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    layers:
+    - state: icon
+      color: "#932500"
+  - type: Item
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#932500"
+      right:
+      - state: inhand-right
+        color: "#932500"
+  - type: Clothing
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    clothingVisuals:
+      gloves:
+      - state: equipped-HAND
+        color: "#932500"
+  - type: Fiber
+    fiberColor: fibers-orange
+
+- type: entity
+  parent: ClothingHandsGlovesEnviroglovesBase
+  id: ClothingHandsGlovesEnviroglovesJanitor
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    layers:
+    - state: icon
+      color: "#883391"
+  - type: Item
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#883391"
+      right:
+      - state: inhand-right
+        color: "#883391"
+  - type: Clothing
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    clothingVisuals:
+      gloves:
+      - state: equipped-HAND
+        color: "#883391"
+  - type: Fiber
+    fiberColor: fibers-purple
+
+- type: entity
+  parent: ClothingHandsGlovesEnviroglovesBase
+  id: ClothingHandsGlovesEnviroglovesCargo
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    layers:
+    - state: icon
+      color: "#bb9042"
+  - type: Item
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#bb9042"
+      right:
+      - state: inhand-right
+        color: "#bb9042"
+  - type: Clothing
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    clothingVisuals:
+      gloves:
+      - state: equipped-HAND
+        color: "#bb9042"
+  - type: Fiber
+    fiberColor: fibers-orange
+
+- type: entity
+  parent: ClothingHandsGlovesEnviroglovesBase
+  id: ClothingHandsGlovesEnviroglovesEngineer
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    layers:
+    - state: icon
+      color: "#d75600"
+  - type: Item
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#d75600"
+      right:
+      - state: inhand-right
+        color: "#d75600"
+  - type: Clothing
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    clothingVisuals:
+      gloves:
+      - state: equipped-HAND
+        color: "#d75600"
+  - type: Fiber
+    fiberColor: fibers-orange
+
+- type: entity
+  parent: ClothingHandsGlovesEnviroglovesBase
+  id: ClothingHandsGlovesEnviroglovesAtmos
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    layers:
+    - state: icon
+      color: "#00a5ff"
+  - type: Item
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#00a5ff"
+      right:
+      - state: inhand-right
+        color: "#00a5ff"
+  - type: Clothing
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    clothingVisuals:
+      gloves:
+      - state: equipped-HAND
+        color: "#00a5ff"
+  - type: Fiber
+    fiberColor: fibers-blue
+
+- type: entity
+  parent: ClothingHandsGlovesEnviroglovesBase
+  id: ClothingHandsGlovesEnviroglovesSalvage
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    layers:
+    - state: icon
+      color: "#47453d"
+  - type: Item
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#47453d"
+      right:
+      - state: inhand-right
+        color: "#47453d"
+  - type: Clothing
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    clothingVisuals:
+      gloves:
+      - state: equipped-HAND
+        color: "#47453d"
+  - type: Fiber
+    fiberColor: fibers-olive
+
+- type: entity
+  parent: ClothingHandsGlovesEnviroglovesBase
+  id: ClothingHandsGlovesEnviroglovesLeather
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    layers:
+    - state: icon
+      color: "#3164ff"
+  - type: Item
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#3164ff"
+      right:
+      - state: inhand-right
+        color: "#3164ff"
+  - type: Clothing
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    clothingVisuals:
+      gloves:
+      - state: equipped-HAND
+        color: "#3164ff"
+  - type: GloveHeatResistance
+    heatResistance: 1400
+  - type: Fiber
+    fiberMaterial: fibers-leather
+    fiberColor: fibers-blue
+
+- type: entity
+  parent: ClothingHandsGlovesEnviroglovesBase
+  id: ClothingHandsGlovesEnviroglovesClown
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    layers:
+    - state: icon
+      color: "#ff0000"
+  - type: Item
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ff0000"
+      right:
+      - state: inhand-right
+        color: "#ff0000"
+  - type: Clothing
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    clothingVisuals:
+      gloves:
+      - state: equipped-HAND
+        color: "#ff0000"
+  - type: Fiber
+    fiberColor: fibers-red
+
+- type: entity
+  parent: ClothingHandsGlovesEnviroglovesBase
+  id: ClothingHandsGlovesEnviroglovesHoP # TODO add HoP envirogloves sprite
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    layers:
+    - state: icon
+      color: "#0000ff"
+  - type: Item
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#0000ff"
+      right:
+      - state: inhand-right
+        color: "#0000ff"
+  - type: Clothing
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    clothingVisuals:
+      gloves:
+      - state: equipped-HAND
+        color: "#0000ff"
+  - type: Fiber
+    fiberColor: fibers-blue
+
+- type: entity
+  parent: ClothingHandsGlovesEnviroglovesBase
+  id: ClothingHandsGlovesEnviroglovesChiefEngineer
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    layers:
+    - state: icon
+      color: "#45ff00"
+  - type: Item
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#45ff00"
+      right:
+      - state: inhand-right
+        color: "#45ff00"
+  - type: Clothing
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    clothingVisuals:
+      gloves:
+      - state: equipped-HAND
+        color: "#45ff00"
+  - type: Fiber
+    fiberColor: fibers-green
+
+- type: entity
+  parent: ClothingHandsGlovesEnviroglovesBase
+  id: ClothingHandsGlovesEnviroglovesResearchDirector
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    layers:
+    - state: icon
+      color: "#64008a"
+  - type: Item
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#64008a"
+      right:
+      - state: inhand-right
+        color: "#64008a"
+  - type: Clothing
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    clothingVisuals:
+      gloves:
+      - state: equipped-HAND
+        color: "#64008a"
+  - type: Fiber
+    fiberColor: fibers-purple

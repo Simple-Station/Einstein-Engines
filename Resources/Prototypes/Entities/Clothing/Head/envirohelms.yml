@@ -8,3 +8,289 @@
     sprite: Clothing/Head/Envirohelms/plain.rsi
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/plain.rsi
+
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelmAtmos
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Envirohelms/atmos.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Envirohelms/atmos.rsi
+
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelmCargo
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Envirohelms/cargo.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Envirohelms/cargo.rsi
+
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelmCaptain
+  name: captain's envirosuit helmet
+  description: A special containment helmet designed for the Captain.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Envirohelms/captain.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Envirohelms/captain.rsi
+
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelmChiefEngineer
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Envirohelms/ce.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Envirohelms/ce.rsi
+
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelmChaplain
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Envirohelms/chaplain.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Envirohelms/chaplain.rsi
+
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelmDetective
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Envirohelms/white.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Envirohelms/white.rsi
+
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelmWhite
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Envirohelms/white.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Envirohelms/white.rsi
+
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelmChemist
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Envirohelms/chemist.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Envirohelms/chemist.rsi
+
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelmClown
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Envirohelms/clown.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Envirohelms/clown.rsi
+
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelmCMO
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Envirohelms/cmo.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Envirohelms/cmo.rsi
+
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelmEngineering
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Envirohelms/engineering.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Envirohelms/engineering.rsi
+
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelmHoP
+  name: head of personnel's envirosuit helmet
+  description: A special containment helmet designed for the Head of Personnel.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Envirohelms/hop.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Envirohelms/hop.rsi
+
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelmHoS
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Envirohelms/hos.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Envirohelms/hos.rsi
+
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelmHydroponics
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Envirohelms/hydroponics.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Envirohelms/hydroponics.rsi
+
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelmJanitor
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Envirohelms/janitor.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Envirohelms/janitor.rsi
+
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelmMedicalDoctor
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Envirohelms/medical.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Envirohelms/medical.rsi
+
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelmMime
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Envirohelms/mime.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Envirohelms/mime.rsi
+
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelmParamedic
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Envirohelms/paramedic.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Envirohelms/paramedic.rsi
+
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelmPrisoner
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Envirohelms/prisoner.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Envirohelms/prisoner.rsi
+
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelmResearchDirector
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Envirohelms/rd.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Envirohelms/rd.rsi
+
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelmRoboticist
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Envirohelms/roboticist.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Envirohelms/roboticist.rsi
+
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelmSalvage
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Envirohelms/salvage.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Envirohelms/salvage.rsi
+
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelmScientist
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Envirohelms/scientist.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Envirohelms/scientist.rsi
+
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelmSec
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Envirohelms/security.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Envirohelms/security.rsi
+
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelmVirology
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Envirohelms/virology.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Envirohelms/virology.rsi
+
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelmWarden
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Envirohelms/warden.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Envirohelms/warden.rsi

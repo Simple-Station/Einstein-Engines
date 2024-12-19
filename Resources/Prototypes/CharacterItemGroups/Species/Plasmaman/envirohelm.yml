@@ -10,3 +10,10 @@
     - type: loadout
       id: LoadoutSpeciesHeadEnvirohelm
       priority: 0
+    - type: loadout
+      id: LoadoutSpeciesHeadEnvirohelmCaptain
+      priority: 10
+    - type: loadout
+      id: LoadoutSpeciesHeadEnvirohelmHoP
+      priority: 10
+    # TODO add the rest of the envirohelms

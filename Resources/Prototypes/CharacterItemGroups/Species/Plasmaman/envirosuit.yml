@@ -10,3 +10,10 @@
     - type: loadout
       id: LoadoutSpeciesUniformEnvirosuit
       priority: 0
+    - type: loadout
+      id: LoadoutSpeciesUniformEnvirosuitCaptain
+      priority: 10
+    - type: loadout
+      id: LoadoutSpeciesUniformEnvirosuitHoP
+      priority: 10
+    # TODO add the rest of the envirosuits

@@ -48,6 +48,8 @@
   items:
     - DoubleEmergencyPlasmaTankFilled
 
+# Envirosuit
+
 - type: loadout
   id: LoadoutSpeciesUniformEnvirosuit
   category: Uniform
@@ -56,6 +58,40 @@
   exclusive: true
   items:
     - ClothingUniformEnvirosuit
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+        - Command
+
+- type: loadout
+  id: LoadoutSpeciesUniformEnvirosuitCaptain
+  category: Uniform
+  groups: [ LoadoutPlasmamanEnvirosuit ]
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformEnvirosuitCaptain
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+
+- type: loadout
+  id: LoadoutSpeciesUniformEnvirosuitHoP
+  category: Uniform
+  groups: [ LoadoutPlasmamanEnvirosuit ]
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformEnvirosuitHoP
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfPersonnel
+
+# Envirohelm
 
 - type: loadout
   id: LoadoutSpeciesHeadEnvirohelm
@@ -65,6 +101,38 @@
   exclusive: true
   items:
     - ClothingHeadEnvirohelm
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+        - Command
+
+- type: loadout
+  id: LoadoutSpeciesHeadEnvirohelmCaptain
+  category: Head
+  groups: [ LoadoutPlasmamanEnvirohelm ]
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadEnvirohelmCaptain
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+
+- type: loadout
+  id: LoadoutSpeciesHeadEnvirohelmHoP
+  category: Head
+  groups: [ LoadoutPlasmamanEnvirohelm ]
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadEnvirohelmHoP
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfPersonnel
 
 - type: loadout
   id: LoadoutSpeciesHandsGlovesEnvirogloves
@@ -77,3 +145,5 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutGloves
+
+# TODO add the rest of the envirosuits, envirohelms, envirogloves
