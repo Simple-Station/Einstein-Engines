@@ -240,10 +240,11 @@ public sealed class WieldableSystem : EntitySystem
                     continue;
                 }
 
-            foreach (var existingVirtual in virtuals)
-                QueueDel(existingVirtual);
+                foreach (var existingVirtual in virtuals)
+                    QueueDel(existingVirtual);
 
-            return false;
+                return false;
+            }
         }
 
         if (TryComp(used, out UseDelayComponent? useDelay)
