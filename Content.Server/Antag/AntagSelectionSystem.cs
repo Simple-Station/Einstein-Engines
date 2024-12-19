@@ -18,6 +18,7 @@ using Content.Shared.GameTicking.Components;
 using Content.Shared.Ghost;
 using Content.Shared.Humanoid;
 using Content.Shared.Players;
+using Content.Shared.Whitelist;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
 using Robust.Server.Player;
@@ -41,6 +42,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
     [Dependency] private readonly RoleSystem _role = default!;
     [Dependency] private readonly StationSpawningSystem _stationSpawning = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
+    [Dependency] private readonly EntityWhitelistSystem _entityWhitelist = default!;
 
     // arbitrary random number to give late joining some mild interest.
     public const float LateJoinRandomChance = 0.5f;
@@ -405,17 +407,9 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         if (!def.AllowNonHumans && !HasComp<HumanoidAppearanceComponent>(entity))
             return false;
 
-        if (def.Whitelist != null)
-        {
-            if (!def.Whitelist.IsValid(entity.Value))
-                return false;
-        }
-
-        if (def.Blacklist != null)
-        {
-            if (def.Blacklist.IsValid(entity.Value))
-                return false;
-        }
+        if (_entityWhitelist.IsWhitelistFail(def.Whitelist, entity.Value)
+            || _entityWhitelist.IsBlacklistPass(def.Blacklist, entity.Value))
+            return false;
 
         return true;
     }
