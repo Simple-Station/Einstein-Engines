@@ -1,0 +1,445 @@
+### All Medical
+
+## Surgery
+## Note - Would it be more intuitive to move Surgery related items to Medical Doctor?
+## Also, individual surgical tools are also made available as it mightn't always viable to equip the surgical duffel bag
+## Getting the surgical duffel is cheaper than getting all the tools individually
+## However, Scalpel + Hemostat + Retractors + Cautery is only 4 points
+
+# Surgical Duffel
+- type: loadout
+  id: LoadoutMedicalRestrictedGearDuffelSurgeryFilled
+  category: JobsMedicalAUncategorized
+  cost: 5
+  items:
+    - ClothingBackpackDuffelSurgeryFilled
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Medical
+
+# Cautery
+- type: loadout
+  id: LoadoutMedicalRestrictedGearEquipmentCautery
+  category: JobsMedicalAUncategorized
+  cost: 1
+  items:
+    - Cautery
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Medical
+
+# Drill
+- type: loadout
+  id: LoadoutMedicalRestrictedGearEquipmentDrill
+  category: JobsMedicalAUncategorized
+  cost: 1
+  items:
+    - Drill
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Medical
+
+# Scalpel
+- type: loadout
+  id: LoadoutMedicalRestrictedGearEquipmentScalpel
+  category: JobsMedicalAUncategorized
+  cost: 1
+  items:
+    - Scalpel
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Medical
+
+# Retractor
+- type: loadout
+  id: LoadoutMedicalRestrictedGearEquipmentRetractor
+  category: JobsMedicalAUncategorized
+  cost: 1
+  items:
+    - Retractor
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Medical
+
+# Hemostat
+- type: loadout
+  id: LoadoutMedicalRestrictedGearEquipmentHemostat
+  category: JobsMedicalAUncategorized
+  cost: 1
+  items:
+    - Hemostat
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Medical
+
+# Bonesetter
+- type: loadout
+  id: LoadoutMedicalRestrictedGearEquipmentBonesetter
+  category: JobsMedicalAUncategorized
+  cost: 1
+  items:
+    - Bonesetter
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Medical
+
+# Bonegel
+- type: loadout
+  id: LoadoutMedicalRestrictedGearEquipmentBoneGel
+  category: JobsMedicalAUncategorized
+  cost: 1
+  items:
+    - BoneGel
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Medical
+
+# Metal Saw
+- type: loadout
+  id: LoadoutMedicalRestrictedGearEquipmentSaw
+  category: JobsMedicalAUncategorized
+  cost: 1
+  items:
+    - Saw
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Medical
+
+
+## Eyes
+# Medhud
+- type: loadout
+  id: LoadoutMedicalRestrictedGearEyesHudMedical
+  category: JobsMedicalAUncategorized
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalEyes
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Medical
+  items:
+    - ClothingEyesHudMedical
+
+# Eyepatch Medhud
+- type: loadout
+  id: LoadoutMedicalRestrictedGearEyepatchHudMedical
+  category: JobsMedicalAUncategorized
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalEyes
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Medical
+  items:
+    - ClothingEyesEyepatchHudMedical
+
+# Medhud Prescription
+- type: loadout
+  id: LoadoutMedicalRestrictedGearHudMedicalPrescription
+  category: JobsMedicalAUncategorized
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+        - Nearsighted
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalEyes
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Medical
+  items:
+    - ClothingEyesPrescriptionMedHud
+
+## Gloves
+# Nitrile
+- type: loadout
+  id: LoadoutMedicalRestrictedGearGlovesNitrile
+  category: JobsMedicalAUncategorized
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalGloves
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Medical
+  items:
+    - ClothingHandsGlovesNitrile
+
+# Latex
+- type: loadout
+  id: LoadoutMedicalRestrictedGearGlovesLatex
+  category: JobsMedicalAUncategorized
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalGloves
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Medical
+  items:
+    - ClothingHandsGlovesLatex
+
+## Stethoscope
+- type: loadout
+  id: LoadoutMedicalRestrictedGearNeckStethoscope
+  category: JobsMedicalAUncategorized
+  cost: 1
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Medical
+  items:
+    - ClothingNeckStethoscope
+
+
+### Chemist
+## Drugs
+# Kelotane
+- type: loadout
+  id: LoadoutMedicalRestrictedGearPillCanisterKelotane
+  category: JobsMedicalChemist
+  cost: 2
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChemistEquipment
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Chemist
+  items:
+    - PillCanisterKelotane
+
+# Tricordrazine
+- type: loadout
+  id: LoadoutMedicalRestrictedGearPillCanisterTricordrazine
+  category: JobsMedicalChemist
+  cost: 1
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChemistEquipment
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Chemist
+  items:
+    - PillCanisterTricordrazine
+
+# Hyronalin
+- type: loadout
+  id: LoadoutMedicalRestrictedGearPillCanisterHyronalin
+  category: JobsMedicalChemist
+  cost: 2
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChemistEquipment
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Chemist
+  items:
+    - PillCanisterHyronalin
+
+# Bicaridine
+- type: loadout
+  id: LoadoutMedicalRestrictedGearPillCanisterBicaridine
+  category: JobsMedicalChemist
+  cost: 2
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChemistEquipment
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Chemist
+  items:
+    - PillCanisterBicaridine
+
+# Dermaline
+- type: loadout
+  id: LoadoutMedicalRestrictedGearPillCanisterDermaline
+  category: JobsMedicalChemist
+  cost: 2
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChemistEquipment
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Chemist
+  items:
+    - PillCanisterDermaline
+
+# Dylovene
+- type: loadout
+  id: LoadoutMedicalRestrictedGearPillCanisterDylovene
+  category: JobsMedicalChemist
+  cost: 2
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChemistEquipment
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Chemist
+  items:
+    - PillCanisterDylovene
+
+# Dexalin
+- type: loadout
+  id: LoadoutMedicalRestrictedGearPillCanisterDexalin
+  category: JobsMedicalChemist
+  cost: 1
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChemistEquipment
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Chemist
+  items:
+    - PillCanisterDexalin
+
+# LSD
+- type: loadout
+  id: LoadoutMedicalRestrictedGearPillCanisterSpaceDrugs
+  category: JobsMedicalChemist
+  cost: 1
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChemistEquipment
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Chemist
+  items:
+    - PillCanisterSpaceDrugs
+
+## Chemical Analysis Goggles
+- type: loadout
+  id: LoadoutMedicalRestrictedGearEyesGlassesChemical
+  category: JobsMedicalChemist
+  cost: 4
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+         - Chemist
+  items:
+    - ClothingEyesGlassesChemical
+
+### Medical Doctor
+- type: loadout
+  id: LoadoutMedicalRestrictedGearBeltMedicalFilled
+  category: JobsMedicalMedicalDoctor
+  cost: 4
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - MedicalDoctor
+  items:
+    - ClothingBeltMedicalFilled
