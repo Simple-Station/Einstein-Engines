@@ -464,10 +464,12 @@ public sealed class PowerMonitoringButton : Button
     public BoxContainer MainContainer;
     public TextureRect TextureRect;
     public Label NameLocalized;
-    public Label PowerValue;
+
     public ProgressBar BatteryLevel;
     public PanelContainer BackgroundPanel;
     public Label BatteryPercentage;
+
+    public Label PowerValue;
 
     public PowerMonitoringButton()
     {
