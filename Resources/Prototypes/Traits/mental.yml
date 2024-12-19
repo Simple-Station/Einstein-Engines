@@ -23,11 +23,19 @@
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Shadowkin
+        - !type:CharacterTraitRequirement
+          inverted: true
+          traits:
+            - ShadowkinBlackeye
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
         - Oni
-        - Shadowkin
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -63,11 +71,19 @@
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Shadowkin
+        - !type:CharacterTraitRequirement
+          inverted: true
+          traits:
+            - ShadowkinBlackeye
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
         - Oni
-        - Shadowkin
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -106,9 +122,12 @@
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
-          inverted: true
           species:
             - Shadowkin
+        - !type:CharacterTraitRequirement
+          inverted: true
+          traits:
+            - ShadowkinBlackeye
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -147,9 +166,12 @@
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
-          inverted: true
           species:
             - Shadowkin
+        - !type:CharacterTraitRequirement
+          inverted: true
+          traits:
+            - ShadowkinBlackeye
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -188,9 +210,12 @@
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
-          inverted: true
           species:
             - Shadowkin
+        - !type:CharacterTraitRequirement
+          inverted: true
+          traits:
+            - ShadowkinBlackeye
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -229,9 +254,12 @@
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
-          inverted: true
           species:
             - Shadowkin
+        - !type:CharacterTraitRequirement
+          inverted: true
+          traits:
+            - ShadowkinBlackeye
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -269,9 +297,12 @@
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
-          inverted: true
           species:
             - Shadowkin
+        - !type:CharacterTraitRequirement
+          inverted: true
+          traits:
+            - ShadowkinBlackeye
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
