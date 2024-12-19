@@ -25,10 +25,9 @@
   name: syndicate agent
   suffix: Human, Traitor
   components:
-    # make the player a traitor once its taken
-    - type: AutoTraitor
-      giveUplink: false
-      giveObjectives: false
+  # make the player a traitor once its taken
+  - type: AutoTraitor
+    profile: TraitorReinforcement
 
 - type: entity
   parent: MobHumanSyndicateAgentBase
@@ -69,28 +68,3 @@
       - Syndicate
     - type: Psionic
       powerRollMultiplier: 7
-
-# Space Ninja
-- type: entity
-  categories: [ HideSpawnMenu ]
-  name: Space Ninja
-  parent: MobHuman
-  id: MobHumanSpaceNinja
-  components:
-  - type: RandomHumanoidAppearance
-    randomizeName: false
-  - type: Loadout
-    prototypes: [SpaceNinjaGear]
-  - type: NpcFactionMember
-    factions:
-    - Syndicate
-  - type: SpaceNinja
-  - type: GenericAntag
-    rule: Ninja
-  - type: AutoImplant
-    implants:
-    - DeathAcidifierImplant
-  - type: RandomMetadata
-    nameSegments:
-    - names_ninja_title
-    - names_ninja

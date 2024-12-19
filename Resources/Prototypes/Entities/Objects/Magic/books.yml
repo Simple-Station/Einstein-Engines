@@ -52,7 +52,6 @@
     - type: Store
       refundAllowed: true
       ownerOnly: true # get your own tome!
-      preset: StorePresetSpellbook
       balance:
         WizCoin: 10 # prices are balanced around this 10 point maximum and how strong the spells are
 
@@ -66,7 +65,6 @@
     - type: Store
       refundAllowed: false
       ownerOnly: true # get your own tome!
-      preset: StorePresetSpellbook
       balance:
         WizCoin: 10 # prices are balanced around this 10 point maximum and how strong the spells are
 

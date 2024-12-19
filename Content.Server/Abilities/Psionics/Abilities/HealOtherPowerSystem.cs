@@ -88,8 +88,7 @@ public sealed class RevivifyPowerSystem : EntitySystem
         ev.DoRevive = args.DoRevive;
         var doAfterArgs = new DoAfterArgs(EntityManager, uid, args.UseDelay, ev, uid, target: args.Target)
         {
-            BreakOnUserMove = args.BreakOnUserMove,
-            BreakOnTargetMove = args.BreakOnTargetMove,
+            BreakOnMove = args.BreakOnMove,
             Hidden = _glimmer.Glimmer > args.GlimmerDoAfterVisibilityThreshold * args.ModifiedDampening,
         };
 

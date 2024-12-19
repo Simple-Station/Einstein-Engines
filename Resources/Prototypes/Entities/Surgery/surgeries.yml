@@ -65,7 +65,7 @@
         - type: OhioAccent
         - type: RatvarianLanguage
         - type: Clumsy
-          clumsyDamage: # Placeholder values to be able to initialize the component
+          gunShootFailDamage: # Placeholder values to be able to initialize the component
             types:
               Blunt: 0
     inverse: true
@@ -92,9 +92,12 @@
         - type: OhioAccent
         - type: RatvarianLanguage
         - type: Clumsy
-          clumsyDamage:
+          gunShootFailDamage:
             types:
-              Blunt: 0
+              Blunt: 5
+              Piercing: 4
+            groups:
+              Burn: 3
 
 - type: entity
   parent: SurgeryBase

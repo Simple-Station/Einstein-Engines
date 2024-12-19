@@ -46,6 +46,8 @@ using Timer = Robust.Shared.Timing.Timer;
 using Content.Server.Power.Components;
 using Content.Shared.Drunk;
 using Content.Shared.Nutrition.EntitySystems;
+using Content.Shared.Power;
+
 
 namespace Content.Server.Cloning;
 
@@ -214,7 +216,6 @@ public sealed partial class CloningSystem : EntitySystem
             return true;
 
         var mob = FetchAndSpawnMob(uid, clonePod, pref, speciesPrototype, humanoid, bodyToClone, geneticDamage);
-
         var ev = new CloningEvent(bodyToClone, mob);
         RaiseLocalEvent(bodyToClone, ref ev);
 

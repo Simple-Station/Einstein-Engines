@@ -18,11 +18,6 @@ public static class ListingLocalisationHelpers
         else if (listingData.ProductEntity != null)
             name = prototypeManager.Index(listingData.ProductEntity.Value).Name;
 
-        if (listingData.DiscountValue > 0)
-            name += " " + Loc.GetString("store-sales-amount", ("amount", listingData.DiscountValue));
-        else if (listingData.OldCost.Count > 0)
-            name += " " + Loc.GetString("store-sales-over");
-
         return name;
     }
 

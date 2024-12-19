@@ -1,6 +1,7 @@
 ﻿using Content.Shared.Actions;
 using Content.Shared.Chat;
 
+
 namespace Content.Shared.Magic.Events;
 
 // TODO: Can probably just be an entity or something
@@ -8,8 +9,6 @@ public sealed partial class TeleportSpellEvent : WorldTargetActionEvent, ISpeakS
 {
     [DataField]
     public string? Speech { get; private set; }
-
-    public InGameICChatType ChatType { get; } = InGameICChatType.Speak;
 
     // TODO: Move to magic component
     // TODO: Maybe not since sound specifier is a thing
@@ -19,4 +18,6 @@ public sealed partial class TeleportSpellEvent : WorldTargetActionEvent, ISpeakS
     /// </summary>
     [DataField]
     public float BlinkVolume = 5f;
+
+    public InGameICChatType ChatType { get; } = InGameICChatType.Speak;
 }

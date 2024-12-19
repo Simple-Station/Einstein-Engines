@@ -119,8 +119,7 @@ public sealed class SacrificialAltarSystem : SharedSacrificialAltarSystem
         var args = new DoAfterArgs(EntityManager, user, ent.Comp.SacrificeTime, ev, target: target, eventTarget: ent)
         {
             BreakOnDamage = true,
-            BreakOnUserMove = true,
-            BreakOnTargetMove = true,
+            BreakOnMove = true,
             BreakOnWeightlessMove = true,
             NeedHand = true
         };

@@ -10,7 +10,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared.WhiteDream.BloodCult.BloodCultist;
 
 [RegisterComponent, NetworkedComponent]
-public sealed partial class BloodCultistComponent : Component, IAntagStatusIconComponent
+public sealed partial class BloodCultistComponent : Component
 {
     [DataField]
     public float HolyConvertTime = 15f;
@@ -19,7 +19,7 @@ public sealed partial class BloodCultistComponent : Component, IAntagStatusIconC
     public int MaximumAllowedEmpowers = 4;
 
     [DataField]
-    public ProtoId<StatusIconPrototype> StatusIcon { get; set; } = "BloodCultMember";
+    public ProtoId<FactionIconPrototype> StatusIcon { get; set; } = "BloodCultMember";
 
     [DataField]
     public bool IconVisibleToGhost { get; set; } = true;

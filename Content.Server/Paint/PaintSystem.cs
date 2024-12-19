@@ -82,8 +82,7 @@ public sealed class PaintSystem : SharedPaintSystem
                 target: target,
                 used: uid)
             {
-                BreakOnUserMove = true,
-                BreakOnTargetMove = true,
+                BreakOnMove = true,
                 NeedHand = true,
                 BreakOnHandChange = true,
             });
