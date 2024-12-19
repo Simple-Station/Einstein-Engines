@@ -1,0 +1,130 @@
+# TODO: Add descriptions (many)
+# TODO BODY: Part damage
+- type: entity
+  id: PartPlasmaman
+  parent: [BaseItem, BasePart]
+  name: "plasmaman body part"
+  abstract: true
+  components:
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Plasma
+        Quantity: 3
+  - type: IgniteFromGasPart
+    gas: Oxygen
+
+- type: entity
+  id: TorsoPlasmaman
+  name: "plasmaman torso"
+  parent: [PartPlasmaman, BaseTorso]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Plasmaman/parts.rsi
+    state: "torso_m"
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Plasma
+        Quantity: 6
+  - type: IgniteFromGasPart
+    fireStacks: 0.06
+
+- type: entity
+  id: HeadPlasmaman
+  name: "plasmaman head"
+  parent: [PartPlasmaman, BaseHead]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Plasmaman/parts.rsi
+    state: "head_m"
+  - type: IgniteFromGasPart
+    fireStacks: 0.02
+
+- type: entity
+  id: LeftArmPlasmaman
+  name: "left plasmaman arm"
+  parent: [PartPlasmaman, BaseLeftArm]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Plasmaman/parts.rsi
+    state: "l_arm"
+  - type: IgniteFromGasPart
+    fireStacks: 0.02
+
+- type: entity
+  id: RightArmPlasmaman
+  name: "right plasmaman arm"
+  parent: [PartPlasmaman, BaseRightArm]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Plasmaman/parts.rsi
+    state: "r_arm"
+  - type: IgniteFromGasPart
+    fireStacks: 0.02
+
+- type: entity
+  id: LeftHandPlasmaman
+  name: "left plasmaman hand"
+  parent: [PartPlasmaman, BaseLeftHand]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Plasmaman/parts.rsi
+    state: "l_hand"
+  - type: IgniteFromGasPart
+    fireStacks: 0.01
+
+- type: entity
+  id: RightHandPlasmaman
+  name: "right plasmaman hand"
+  parent: [PartPlasmaman, BaseRightHand]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Plasmaman/parts.rsi
+    state: "r_hand"
+  - type: IgniteFromGasPart
+    fireStacks: 0.01
+
+- type: entity
+  id: LeftLegPlasmaman
+  name: "left plasmaman leg"
+  parent: [PartPlasmaman, BaseLeftLeg]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Plasmaman/parts.rsi
+    state: "l_leg"
+  - type: IgniteFromGasPart
+    fireStacks: 0.02
+
+- type: entity
+  id: RightLegPlasmaman
+  name: "right plasmaman leg"
+  parent: [PartPlasmaman, BaseRightLeg]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Plasmaman/parts.rsi
+    state: "r_leg"
+  - type: IgniteFromGasPart
+    fireStacks: 0.02
+
+- type: entity
+  id: LeftFootPlasmaman
+  name: "left plasmaman foot"
+  parent: [PartPlasmaman, BaseLeftFoot]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Plasmaman/parts.rsi
+    state: "l_foot"
+  - type: IgniteFromGasPart
+    fireStacks: 0.01
+
+- type: entity
+  id: RightFootPlasmaman
+  name: "right plasmaman foot"
+  parent: [PartPlasmaman, BaseRightFoot]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Plasmaman/parts.rsi
+    state: "r_foot"
+  - type: IgniteFromGasPart
+    fireStacks: 0.01
