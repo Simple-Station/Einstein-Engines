@@ -10,6 +10,9 @@
     layers: []
   - type: Metabolizer
     metabolizerTypes: [ Plasmaman ]
+    groups:
+    - id: Gas
+      rateModifier: 25.0
   - type: Lung
     alert: LowPlasma
   - type: Butcherable

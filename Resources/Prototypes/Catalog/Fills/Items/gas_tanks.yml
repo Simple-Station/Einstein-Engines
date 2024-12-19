@@ -69,7 +69,7 @@
   suffix: Filled
   components:
   - type: GasTank
-    outputPressure: 21.3
+    outputPressure: 5.325
     air:
       # 4 minutes
       volume: 0.66
@@ -115,7 +115,7 @@
   suffix: Filled
   components:
   - type: GasTank
-    outputPressure: 21.3
+    outputPressure: 5.325
     air:
       # 9 minutes
       volume: 1.5
@@ -161,7 +161,7 @@
   suffix: Filled
   components:
   - type: GasTank
-    outputPressure: 21.3
+    outputPressure: 5.325
     air:
       # 15 minutes
       volume: 1.5
