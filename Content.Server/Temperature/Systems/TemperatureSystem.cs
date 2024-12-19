@@ -126,7 +126,7 @@ public sealed class TemperatureSystem : EntitySystem
     public void ChangeHeat(EntityUid uid, float heatAmount, bool ignoreHeatResistance = false,
         TemperatureComponent? temperature = null)
     {
-        if (!Resolve(uid, ref temperature))
+        if (!Resolve(uid, ref temperature, false))
             return;
 
         if (!ignoreHeatResistance)

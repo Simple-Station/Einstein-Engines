@@ -51,7 +51,7 @@ public abstract partial class SharedDeadStartupButtonSystem : EntitySystem
         var args = new DoAfterArgs(EntityManager, user, comp.DoAfterInterval, new OnDoAfterButtonPressedEvent(), target, target:target)
         {
             BreakOnDamage = true,
-            BreakOnUserMove = true,
+            BreakOnMove = true,
         };
         _doAfterSystem.TryStartDoAfter(args);
     }

@@ -421,7 +421,7 @@
   - type: Tool
     qualities:
       - Sawing
-    speed: 1.0
+    speedModifier: 1.0
   - type: MeleeWeapon
     attackRate: 1.3333
     range: 1.35
@@ -475,7 +475,7 @@
   - type: Tool
     qualities:
       - Sawing
-    speed: 0.5
+    speedModifier: 0.5
   - type: BoneSaw
     speed: 0.5
 
@@ -516,7 +516,7 @@
   - type: Tool
     qualities:
       - Sawing
-    speed: 1.5
+    speedModifier: 1.5
   - type: SurgeryTool
     startSound:
       path: /Audio/Medical/Surgery/saw.ogg
@@ -559,7 +559,7 @@
   - type: Tool
     qualities:
       - Sawing
-    speed: 2.0
+    speedModifier: 2.0
   - type: BoneSaw
     speed: 1.5
 

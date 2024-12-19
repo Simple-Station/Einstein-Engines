@@ -21,6 +21,7 @@ research-technology-super-powercells = Super Powercells
 research-technology-bluespace-storage = Bluespace Storage
 research-technology-portable-fission = Portable Fission
 research-technology-space-scanning = Space Scanning
+research-technology-excavation = Mass Excavation
 
 research-technology-salvage-weapons = Salvage Weapons
 research-technology-draconic-munitions = Draconic Munitions
@@ -45,7 +46,6 @@ research-technology-magnets-tech = Localized Magnetism
 research-technology-advanced-parts = Advanced Parts
 research-technology-advanced-bluespace = Advanced Bluespace Research
 research-technology-anomaly-harnessing = Anomaly Core Harnessing
-research-technology-grappling = Grappling
 research-technology-abnormal-artifact-manipulation = Artifact Recycling
 research-technology-gravity-manipulation = Gravity Manipulation
 research-technology-quantum-leaping = Quantum Leaping

@@ -25,6 +25,8 @@ materials-meat = meat
 materials-web = silk
 materials-bones = bone
 materials-coal = coal
+materials-diamond = diamond
+materials-gunpowder = gunpowder
 materials-bluespace = bluespace
 materials-normality = normality
 

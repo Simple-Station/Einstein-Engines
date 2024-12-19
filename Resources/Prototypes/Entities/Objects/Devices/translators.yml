@@ -36,6 +36,7 @@
   id: TranslatorPoweredBase
   parent: [ TranslatorUnpowered, PowerCellSlotMediumItem ]
   components:
+  - type: ItemToggle
   - type: PowerCellDraw
     drawRate: 1
   - type: ItemSlots

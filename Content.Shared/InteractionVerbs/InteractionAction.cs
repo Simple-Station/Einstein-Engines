@@ -1,3 +1,4 @@
+using Content.Shared.Whitelist;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization;
@@ -55,5 +56,6 @@ public abstract partial class InteractionAction
         [Dependency] public readonly IRobustRandom Random = default!;
         [Dependency] public readonly IGameTiming Timing = default!;
         [Dependency] public readonly ISerializationManager Serialization = default!;
+        [Dependency] public readonly EntityWhitelistSystem WhitelistSystem = default!;
     }
 }

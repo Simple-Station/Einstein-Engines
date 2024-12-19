@@ -226,8 +226,7 @@ public sealed partial class ClimbSystem : VirtualController
             target: climbable,
             used: entityToMove)
         {
-            BreakOnTargetMove = true,
-            BreakOnUserMove = true,
+            BreakOnMove = true,
             BreakOnDamage = true,
             DuplicateCondition = DuplicateConditions.SameTool | DuplicateConditions.SameTarget
         };
@@ -252,6 +251,18 @@ public sealed partial class ClimbSystem : VirtualController
             return;
 
         if (!Resolve(climbable, ref comp, false))
+            return;
+
+        var selfEvent = new SelfBeforeClimbEvent(uid, user, (climbable, comp));
+        RaiseLocalEvent(uid, selfEvent);
+
+        if (selfEvent.Cancelled)
+            return;
+
+        var targetEvent = new TargetBeforeClimbEvent(uid, user, (climbable, comp));
+        RaiseLocalEvent(climbable, targetEvent);
+
+        if (targetEvent.Cancelled)
             return;
 
         if (!ReplaceFixtures(uid, climbing, fixtures))

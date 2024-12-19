@@ -57,7 +57,7 @@ public sealed class BlindHealingSystem : SharedBlindHealingSystem
             new DoAfterArgs(EntityManager, user, delay, new HealingDoAfterEvent(), uid, target: target, used: uid)
             {
                 NeedHand = true,
-                BreakOnUserMove = true,
+                BreakOnMove = true,
                 BreakOnWeightlessMove = false,
             };
 

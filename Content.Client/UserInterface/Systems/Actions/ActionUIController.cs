@@ -121,7 +121,7 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
             var boundKey = hotbarKeys[i];
             builder = builder.Bind(boundKey, new PointerInputCmdHandler((in PointerInputCmdArgs args) =>
             {
-                if (args.State != BoundKeyState.Up)
+                if (args.State != BoundKeyState.Down)
                     return false;
 
                 TriggerAction(boundId);
@@ -184,10 +184,13 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
         switch (action)
         {
             case WorldTargetActionComponent mapTarget:
-                    return TryTargetWorld(args, actionId, mapTarget, user, comp) || !mapTarget.InteractOnMiss;
+                return TryTargetWorld(args, actionId, mapTarget, user, comp) || !mapTarget.InteractOnMiss;
 
             case EntityTargetActionComponent entTarget:
-                    return TryTargetEntity(args, actionId, entTarget, user, comp) || !entTarget.InteractOnMiss;
+                return TryTargetEntity(args, actionId, entTarget, user, comp) || !entTarget.InteractOnMiss;
+
+            case EntityWorldTargetActionComponent entMapTarget:
+                return TryTargetEntityWorld(args, actionId, entMapTarget, user, comp) || !entMapTarget.InteractOnMiss;
 
             default:
                 Logger.Error($"Unknown targeting action: {actionId.GetType()}");
@@ -216,8 +219,6 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
             if (action.Event != null)
             {
                 action.Event.Target = coords;
-                action.Event.Performer = user;
-                action.Event.Action = actionId;
             }
 
             _actionsSystem.PerformAction(user, actionComp, actionId, action, action.Event, _timing.CurTime);
@@ -251,8 +252,6 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
             if (action.Event != null)
             {
                 action.Event.Target = entity;
-                action.Event.Performer = user;
-                action.Event.Action = actionId;
             }
 
             _actionsSystem.PerformAction(user, actionComp, actionId, action, action.Event, _timing.CurTime);
@@ -266,12 +265,49 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
         return true;
     }
 
+    private bool TryTargetEntityWorld(in PointerInputCmdArgs args,
+        EntityUid actionId,
+        EntityWorldTargetActionComponent action,
+        EntityUid user,
+        ActionsComponent actionComp)
+    {
+        if (_actionsSystem == null)
+            return false;
+
+        var entity = args.EntityUid;
+        var coords = args.Coordinates;
+
+        if (!_actionsSystem.ValidateEntityWorldTarget(user, entity, coords, (actionId, action)))
+        {
+            if (action.DeselectOnMiss)
+                StopTargeting();
+
+            return false;
+        }
+
+        if (action.ClientExclusive)
+        {
+            if (action.Event != null)
+            {
+                action.Event.Entity = entity;
+                action.Event.Coords = coords;
+            }
+
+            _actionsSystem.PerformAction(user, actionComp, actionId, action, action.Event, _timing.CurTime);
+        }
+        else
+            EntityManager.RaisePredictiveEvent(new RequestPerformActionEvent(EntityManager.GetNetEntity(actionId), EntityManager.GetNetEntity(args.EntityUid), EntityManager.GetNetCoordinates(coords)));
+
+        if (!action.Repeat)
+            StopTargeting();
+
+        return true;
+    }
+
     public void UnloadButton()
     {
         if (ActionButton == null)
-        {
             return;
-        }
 
         ActionButton.OnPressed -= ActionButtonPressed;
     }
@@ -279,9 +315,7 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
     public void LoadButton()
     {
         if (ActionButton == null)
-        {
             return;
-        }
 
         ActionButton.OnPressed += ActionButtonPressed;
     }
@@ -317,9 +351,7 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
         if (_actionsSystem == null ||
             !_actions.TryGetValue(index, out var actionId) ||
             !_actionsSystem.TryGetActionData(actionId, out var baseAction))
-        {
             return;
-        }
 
         if (baseAction is BaseTargetActionComponent action)
             ToggleTargeting(actionId.Value, action);
@@ -331,9 +363,7 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
     {
         if (_actionsSystem == null ||
             !_actionsSystem.TryGetActionData(actionId, out var action))
-        {
             return;
-        }
 
         // if the action is toggled when we add it, start targeting
         if (action is BaseTargetActionComponent targetAction && action.Toggled)
@@ -359,10 +389,6 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
     private void OnActionsUpdated()
     {
         QueueWindowUpdate();
-
-        // TODO ACTIONS allow buttons to persist across state applications
-        // Then we don't have to interrupt drags any time the buttons get rebuilt.
-        _menuDragHelper.EndDrag();
 
         if (_actionsSystem != null)
             _container?.SetActionData(_actionsSystem, _actions.ToArray());
@@ -440,7 +466,7 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
                 existing.Add(button);
         }
 
-        int i = 0;
+        var i = 0;
         foreach (var action in actions)
         {
             if (i < existing.Count)
@@ -682,17 +708,11 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
         {
             if (EntityManager.TryGetComponent(action.EntityIcon, out SpriteComponent? sprite)
                 && sprite.Icon?.GetFrame(RsiDirection.South, 0) is {} frame)
-            {
                 _dragShadow.Texture = frame;
-            }
             else if (action.Icon != null)
-            {
                 _dragShadow.Texture = _spriteSystem.Frame0(action.Icon);
-            }
             else
-            {
                 _dragShadow.Texture = null;
-            }
         }
 
         LayoutContainer.SetPosition(_dragShadow, UIManager.MousePositionScaled.Position - new Vector2(32, 32));
@@ -717,9 +737,7 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
         _actionsSystem?.UnlinkAllActions();
 
         if (ActionsBar == null)
-        {
             return;
-        }
 
         if (_window != null)
         {
@@ -736,7 +754,7 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
 
     private void LoadGui()
     {
-        DebugTools.Assert(_window == null);
+        UnloadGui();
         _window = UIManager.CreateWindow<ActionsWindow>();
         LayoutContainer.SetAnchorPreset(_window, LayoutContainer.LayoutPreset.CenterTop);
 
@@ -747,9 +765,7 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
         _window.FilterButton.OnItemSelected += OnFilterSelected;
 
         if (ActionsBar == null)
-        {
             return;
-        }
 
         RegisterActionContainer(ActionsBar.ActionsContainer);
 
@@ -781,17 +797,13 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
 
         _actions.Clear();
         foreach (var assign in assignments)
-        {
             _actions.Add(assign.ActionId);
-        }
 
         _container?.SetActionData(_actionsSystem, _actions.ToArray());
     }
 
-    public void RemoveActionContainer()
-    {
+    public void RemoveActionContainer() =>
         _container = null;
-    }
 
     public void OnSystemLoaded(ActionsSystem system)
     {
