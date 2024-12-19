@@ -107,6 +107,15 @@
     path: /Audio/Voice/Talk/lizard_exclaim.ogg
 
 - type: speechSounds
+  id: Slugcat
+  saySound:
+    path: /Audio/Voice/Talk/wawa_statement.wav
+  askSound:
+    path: /Audio/Voice/Talk/wawa_question.wav
+  exclaimSound:
+    path: /Audio/Voice/Talk/wawa_exclaim.wav
+
+- type: speechSounds
   id: Slime
   saySound:
     path: /Audio/Voice/Talk/slime.ogg

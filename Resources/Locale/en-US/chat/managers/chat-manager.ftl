@@ -112,6 +112,11 @@ chat-speech-verb-reptilian-1 = hisses
 chat-speech-verb-reptilian-2 = snorts
 chat-speech-verb-reptilian-3 = huffs
 
+chat-speech-verb-name-slugcat = Slugcat
+chat-speech-verb-slugcat-1 = meows
+chat-speech-verb-slugcat-2 = squeaks
+chat-speech-verb-slugcat-3 = wawas
+
 chat-speech-verb-name-skeleton = Skeleton
 chat-speech-verb-skeleton-1 = rattles
 chat-speech-verb-skeleton-2 = clacks

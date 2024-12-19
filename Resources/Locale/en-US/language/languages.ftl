@@ -14,6 +14,10 @@ language-Draconic-name = Sinta'Unathi
 language-Draconic-description =
     The common language of Moghes - composed of sibilant hisses and rattles. Spoken natively by Unathi.
 
+language-Wawa-name = Wawanese
+language-Wawa-description =
+    The language the Slugcats natively speak, a close dialect of Sinta'Unathi. Spoken natively by, well...
+
 language-Azaziba-name = Sinta'Azaziba
 language-Azaziba-description =
     A language of Moghes consisting of a combination of spoken word and gesticulation.
