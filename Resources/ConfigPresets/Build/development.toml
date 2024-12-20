@@ -27,3 +27,13 @@ preload_grids = false
 
 [admin]
 see_own_notes = true
+
+[glimmer]
+enabled = false
+
+[psionics]
+rolls_enabled = false
+
+[heightadjust]
+modifies_hitbox = false
+modifies_bloodstream = false

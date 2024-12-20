@@ -4,3 +4,13 @@ enabled = false
 
 [shuttle]
 auto_call_time = 0
+
+[glimmer]
+enabled = false
+
+[psionics]
+rolls_enabled = false
+
+[heightadjust]
+modifies_hitbox = false
+modifies_bloodstream = false
