@@ -1637,7 +1637,7 @@ namespace Content.Shared.CCVar
         /// Whether the arrivals terminal should be on a planet map.
         /// </summary>
         public static readonly CVarDef<bool> ArrivalsPlanet =
-            CVarDef.Create("shuttle.arrivals_planet", true, CVar.SERVERONLY);
+            CVarDef.Create("shuttle.arrivals_planet", false, CVar.SERVERONLY);
 
         /// <summary>
         /// Whether the arrivals shuttle is enabled.
