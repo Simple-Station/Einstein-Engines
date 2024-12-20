@@ -1,0 +1,69 @@
+[admin]
+see_own_notes   = true
+deadmin_on_join = true
+
+[discord]
+rich_main_icon_id = "einstein-engines"
+
+[events]
+ramping_average_end_time = 180.0
+ramping_average_chaos    = 4.5
+
+[game]
+hostname           = "[EN][LRP] Ronstation"
+desc               = "A low-roleplay server using Einstein Engines as base."
+soft_max_players   = 60
+lobbyenabled       = true
+lobbyduration      = 240
+station_goals      = false
+
+[hub]
+tags = "lang:en-US,region:am_n_e,rp:med"
+hub_urls = "https://web.networkgamez.com/, https://hub.singularity14.co.uk/" # For official Space Wizards Federation hub: https://hub.spacestation14.com/.
+
+[ic]
+flavor_text = true
+
+[infolinks]
+discord    = "https://discord.gg/X4QEXxUrsJ"
+github     = "https://github.com/Merrokitsune/ronstation"
+website    = "http://ronstation.wikidot.com/"
+bug_report = "https://github.com/Merrokitsune/ronstation/issues/new/choose"
+
+[net]
+max_connections = 1024
+tickrate = 30
+
+[netres]
+limit = 10.0
+
+[build]
+#! PLEASE set this for your fork
+fork_id = "Ronstation"
+
+[server]
+rules_file   = "DefaultRuleset"
+
+[ooc]
+enable_during_round = true
+
+[vote]
+restart_required_ratio = 0.7
+preset_enabled = true
+map_enabled = true
+
+#[worldgen]
+#enabled = true
+
+[glimmer]
+enabled = false
+
+[psionics]
+rolls_enabled = false
+
+[heightadjust]
+modifies_hitbox = false
+modifies_bloodstream = false
+
+[config]
+presets = "RonStation"
