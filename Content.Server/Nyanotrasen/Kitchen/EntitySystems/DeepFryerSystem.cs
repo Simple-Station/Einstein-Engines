@@ -28,6 +28,7 @@ using Content.Shared.Database;
 using Content.Shared.Destructible;
 using Content.Shared.DoAfter;
 using Content.Shared.DragDrop;
+using Content.Shared.EntityEffects;
 using Content.Shared.Examine;
 using Content.Shared.FixedPoint;
 using Content.Shared.Hands.Components;
@@ -399,12 +400,12 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
         {
             //JJ Comment - not sure this works. Need to check if Reagent.ToString is correct.
             _prototypeManager.TryIndex<ReagentPrototype>(reagent.Reagent.ToString(), out var proto);
-            var effectsArgs = new ReagentEffectArgs(uid,
+            var effectsArgs = new EntityEffectReagentArgs(uid,
+                EntityManager,
                 null,
                 component.Solution,
-                proto!,
                 reagent.Quantity,
-                EntityManager,
+                proto!,
                 null,
                 1f);
             foreach (var effect in component.UnsafeOilVolumeEffects)
