@@ -61,12 +61,13 @@
       group: LoadoutGloves
 
 - type: loadout
-  id: LoadoutHandsGlovesFingerless
+  id: LoadoutHandsGlovesFingerlessWhite
   category: Hands
   cost: 0
   exclusive: true
+  customColorTint: true
   items:
-    - ClothingHandsGlovesFingerless
+    - ClothingHandsGlovesFingerlessWhite
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutGloves
