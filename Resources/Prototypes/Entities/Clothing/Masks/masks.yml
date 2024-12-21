@@ -564,6 +564,16 @@
 
 - type: entity
   parent: ClothingMaskNeckGaiter
+  id: ClothingMaskNeckGaiterWhite
+  name: neck gaiter
+  components:
+  - type: Sprite
+    sprite: Clothing/Mask/neckgaiterwhite.rsi
+  - type: Clothing
+    sprite: Clothing/Mask/neckgaiterwhite.rsi
+
+- type: entity
+  parent: ClothingMaskNeckGaiter
   id: ClothingMaskNeckGaiterRed
   name: red neck gaiter
   components:

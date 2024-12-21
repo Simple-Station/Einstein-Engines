@@ -26,6 +26,17 @@
     - WhitelistChameleon
 
 - type: entity
+  parent: ClothingHeadHatBeret
+  id: ClothingHeadHatBeretWhite
+  name: beret
+  description: A beret, an artists favorite headwear.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beretwhite.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beretwhite.rsi
+
+- type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatBeretFrench
   name: French beret
