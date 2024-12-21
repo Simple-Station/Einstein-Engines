@@ -72,7 +72,7 @@ namespace Content.Server.StationEvents
         private EventManagerSystem? _stationEvent;
 
         [CommandImplementation("lsprob")]
-        public IEnumerable<(string, float)> LsProb()
+        public IEnumerable<(string, float)> LsProb(EntityPrototype eventScheduler)
         {
             _stationEvent ??= GetSys<EventManagerSystem>();
             var events = _stationEvent.AllEvents();
@@ -86,7 +86,7 @@ namespace Content.Server.StationEvents
         }
 
         [CommandImplementation("lsprobtime")]
-        public IEnumerable<(string, float)> LsProbTime([CommandArgument] float time)
+        public IEnumerable<(string, float)> LsProbTime(EntityPrototype eventScheduler, float time)
         {
             _stationEvent ??= GetSys<EventManagerSystem>();
             var events = _stationEvent.AllEvents().Where(pair => pair.Value.EarliestStart <= time).ToList();
@@ -100,7 +100,7 @@ namespace Content.Server.StationEvents
         }
 
         [CommandImplementation("prob")]
-        public float Prob([CommandArgument] string eventId)
+        public float Prob(EntityPrototype eventScheduler, string eventId)
         {
             _stationEvent ??= GetSys<EventManagerSystem>();
             var events = _stationEvent.AllEvents();
