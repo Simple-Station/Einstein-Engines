@@ -1,15 +1,15 @@
-using Content.Shared.Chemistry.Reagent;
+using Content.Shared.EntityEffects;
 using Content.Shared.Mood;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server.Chemistry.ReagentEffects;
+namespace Content.Server.EntityEffects.Effects;
 
 /// <summary>
 ///     Adds a moodlet to an entity.
 /// </summary>
 [UsedImplicitly]
-public sealed partial class ChemAddMoodlet : ReagentEffect
+public sealed partial class ChemAddMoodlet : EntityEffect
 {
     protected override string? ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
     {
@@ -25,10 +25,13 @@ public sealed partial class ChemAddMoodlet : ReagentEffect
     [DataField(required: true)]
     public ProtoId<MoodEffectPrototype> MoodPrototype = default!;
 
-    public override void Effect(ReagentEffectArgs args)
+    public override void Effect(EntityEffectBaseArgs args)
     {
+        if (args is not EntityEffectReagentArgs _)
+            return;
+
         var entityManager = IoCManager.Resolve<EntityManager>();
         var ev = new MoodEffectEvent(MoodPrototype);
-        entityManager.EventBus.RaiseLocalEvent(args.SolutionEntity, ev);
+        entityManager.EventBus.RaiseLocalEvent(args.TargetEntity, ev);
     }
 }

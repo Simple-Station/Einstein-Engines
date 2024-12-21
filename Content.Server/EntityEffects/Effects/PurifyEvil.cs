@@ -1,5 +1,5 @@
 ﻿using System.Threading;
-using Content.Shared.Chemistry.Reagent;
+using Content.Shared.EntityEffects;
 using Content.Shared.Jittering;
 using Content.Shared.WhiteDream.BloodCult.BloodCultist;
 using JetBrains.Annotations;
@@ -8,7 +8,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Server.Chemistry.ReagentEffects;
 
 [UsedImplicitly]
-public sealed partial class PurifyEvil : ReagentEffect
+public sealed partial class PurifyEvil : EntityEffect
 {
     [DataField]
     public float Amplitude = 10.0f;
@@ -24,15 +24,16 @@ public sealed partial class PurifyEvil : ReagentEffect
         return Loc.GetString("reagent-effect-guidebook-purify-evil");
     }
 
-    public override void Effect(ReagentEffectArgs args)
+    public override void Effect(EntityEffectBaseArgs args)
     {
+        if (args is not EntityEffectReagentArgs e)
+            return;
+
         var entityManager = args.EntityManager;
-        var uid = args.SolutionEntity;
+        var uid = args.TargetEntity;
         if (!entityManager.TryGetComponent(uid, out BloodCultistComponent? bloodCultist) ||
             bloodCultist.DeconvertToken is not null)
-        {
             return;
-        }
 
         entityManager.System<SharedJitteringSystem>().DoJitter(uid, Time, true, Amplitude, Frequency);
 
