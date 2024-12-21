@@ -20,9 +20,9 @@
       - Window
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/window.rsi
+    sprite: _Ronstation/Structures/Windows/window.rsi
   - type: Icon
-    sprite: Structures/Windows/window.rsi
+    sprite: _Ronstation/Structures/Windows/window.rsi
     state: full
   - type: Physics
     bodyType: Static
@@ -72,7 +72,7 @@
         acts: [ "Destruction" ]
   - type: Airtight
   - type: IconSmooth
-    key: walls
+    key: windows
     base: window
   - type: Construction
     graph: Window
@@ -121,10 +121,10 @@
         collection: GlassSmack
   - type: Sprite
     drawdepth: Mobs
-    sprite: Structures/Windows/directional.rsi
+    sprite: _Ronstation/Structures/Windows/directional.rsi
     state: window
   - type: Icon
-    sprite: Structures/Windows/directional.rsi
+    sprite: _Ronstation/Structures/Windows/directional.rsi
     state: window
   - type: Physics
   - type: Fixtures
@@ -212,10 +212,10 @@
     - Window
   components:
   - type: Sprite
-    sprite: Structures/Windows/directional.rsi
+    sprite: _Ronstation/Structures/Windows/directional.rsi
     state: frosted_window
   - type: Icon
-    sprite: Structures/Windows/directional.rsi
+    sprite: _Ronstation/Structures/Windows/directional.rsi
     state: frosted_window
 
 - type: entity
@@ -229,14 +229,14 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/window_diagonal.rsi
+    sprite: _Ronstation/Structures/Windows/window_diagonal.rsi
     state: state0
   - type: IconSmooth
     mode: Diagonal
     key: walls
     base: state
   - type: Icon
-    sprite: Structures/Windows/window_diagonal.rsi
+    sprite: _Ronstation/Structures/Windows/window_diagonal.rsi
     state: state0
   - type: Fixtures
     fixtures:

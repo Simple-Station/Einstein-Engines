@@ -20,7 +20,7 @@
         mask:
         - TableMask
   - type: Sprite
-    sprite: Structures/Furniture/chairs.rsi
+    sprite: _Ronstation/Structures/Furniture/chairs.rsi
     noRot: true
   - type: Strap
     position: Stand

@@ -280,13 +280,13 @@
 - type: entity
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtBrigmedic
-  name: corpsman jumpskirt # DeltaV - renamed brigmedic to corpsman
+  name: brigmedic jumpskirt # Ronstation - renamed corpsman to brigmedic
   description: This uniform is issued to qualified personnel who have been trained. No one cares that the training took half a day.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpskirt/brigmedic.rsi # DeltaV - resprite
+    sprite: Clothing/Uniforms/Jumpskirt/brigmedic.rsi # Ronstation - resprite
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpskirt/brigmedic.rsi # DeltaV - resprite
+    sprite: Clothing/Uniforms/Jumpskirt/brigmedic.rsi # Ronstation - resprite
 
 - type: entity
   parent: ClothingUniformBase
@@ -331,7 +331,7 @@
 - type: entity
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtQM
-  name: logistics officer's jumpskirt # DeltaV - Logistics Department replacing Cargo
+  name: quartermaster's jumpskirt # Ronstation - Cargo Department replacing Logistics
   description: 'What can brown do for you?'
   components:
   - type: Sprite
@@ -342,7 +342,7 @@
 - type: entity
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtQMTurtleneck
-  name: logistics officer's turtleneck # DeltaV - Logistics Department replacing Cargo
+  name: quartermaster's turtleneck # Ronstation - Cargo Department replacing Logistics
   description: A sharp turtleneck made for the hardy work environment of supply.
   components:
     - type: Sprite
@@ -353,8 +353,8 @@
 - type: entity
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtResearchDirector
-  name: mystagogue's turtleneck # DeltaV - Epistemics Department replacing Science
-  description: It's a turtleneck worn by those with the know-how to achieve the position of Mystagogue. Its fabric provides minor protection from biological contaminants. # DeltaV - Epistemics Department replacing Science
+  name: research director's turtleneck # Ronstation - Science Department replacing Epistemics
+  description: It's a turtleneck worn by those with the know-how to achieve the position of Research Director. Its fabric provides minor protection from biological contaminants. # Ronstation - Science Department replacing Epistemics
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpskirt/rnd.rsi

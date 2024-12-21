@@ -518,9 +518,9 @@
   name: reinforced wall
   components:
   - type: Sprite
-    sprite: Structures/Walls/solid.rsi
+    sprite: _Ronstation/Structures/Walls/solid.rsi
   - type: Icon
-    sprite: Structures/Walls/solid.rsi
+    sprite: _Ronstation/Structures/Walls/solid.rsi
     state: rgeneric
   - type: Construction
     graph: Girder
@@ -581,9 +581,9 @@
   suffix: rusted
   components:
   - type: Sprite
-    sprite: Structures/Walls/solid_rust.rsi
+    sprite: _Ronstation/Structures/Walls/solid_rust.rsi
   - type: Icon
-    sprite: Structures/Walls/solid_rust.rsi
+    sprite: _Ronstation/Structures/Walls/solid_rust.rsi
     state: rgeneric
   - type: Construction
     graph: Girder
@@ -604,14 +604,14 @@
   components:
   - type: Sprite
     drawdepth: Walls
-    sprite: Structures/Walls/reinforced_diagonal.rsi
+    sprite: _Ronstation/Structures/Walls/reinforced_diagonal.rsi
     state: state0
   - type: IconSmooth
     mode: Diagonal
     key: walls
     base: state
   - type: Icon
-    sprite: Structures/Walls/reinforced_diagonal.rsi
+    sprite: _Ronstation/Structures/Walls/reinforced_diagonal.rsi
     state: state0
 
 # Riveting

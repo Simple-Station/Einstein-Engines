@@ -266,7 +266,7 @@
 - type: entity
   parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitBrigmedic
-  name: corpsman hardsuit # DeltaV - rename brigmedic to corpsman
+  name: brigmedic hardsuit # Ronstation - rename corpsman to brigmedic
   description: Special hardsuit of the guardian angel of the brig. It is the medical version of the security hardsuit. # I will fix the rest of this entry later when I resprite sec suits
   components:
   - type: Sprite

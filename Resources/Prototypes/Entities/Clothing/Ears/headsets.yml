@@ -38,8 +38,8 @@
 - type: entity
   parent: ClothingHeadset
   id: ClothingHeadsetCargo
-  name: logistics headset # DeltaV - Logistics Department replacing Cargo
-  description: A headset used by supply employees.
+  name: cargo headset # Ronstation - Cargo Department replacing Logistics
+  description: A headset used by cargo employees.
   components:
   - type: ContainerFill
     containers:
@@ -65,8 +65,8 @@
 - type: entity
   parent: ClothingHeadsetCargo
   id: ClothingHeadsetQM
-  name: logistics officer's headset # DeltaV - Logistics Department replacing Cargo
-  description: A headset used by the logistics officer. # DeltaV - Logistics Department replacing Cargo
+  name: quartermaster's headset # Ronstation - Cargo Department replacing Logistics
+  description: A headset used by the quartermaster. # Ronstation - Cargo Department replacing Logistics
   components:
   - type: ContainerFill
     containers:
@@ -167,8 +167,8 @@
 - type: entity
   parent: ClothingHeadset
   id: ClothingHeadsetScience
-  name: epistemics headset # DeltaV - Epistemics Department replacing Science
-  description: A sciency headset. Like usual. # DeltaV - Epistemics Department replacing Science
+  name: science headset # Ronstation - Science Department replacing Epistemics
+  description: A sciency headset. Like usual. # Ronstation - Science Department replacing Epistemics
   components:
   - type: ContainerFill
     containers:
@@ -215,7 +215,7 @@
 - type: entity
   parent: ClothingHeadsetScience
   id: ClothingHeadsetRD
-  name: mysta headset # DeltaV - Epistemics Department replacing Science
+  name: research director headset # Ronstation - Science Department replacing Epistemics
   description: Lamarr used to love chewing on this...
   components:
   - type: ContainerFill
@@ -244,7 +244,7 @@
 - type: entity
   parent: ClothingHeadset
   id: ClothingHeadsetBrigmedic
-  name: corpsman headset # DeltaV - rename brigmedic to corpsman
+  name: brigmedic headset # Ronstation - rename corpsman to brigmedic
   description: A headset that helps to hear the death cries.
   components:
   - type: ContainerFill

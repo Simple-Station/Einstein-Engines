@@ -13,7 +13,7 @@
 - type: entity
   parent: ClothingHeadsetAlt
   id: ClothingHeadsetAltCargo
-  name: logistics officer's over-ear headset # DeltaV - Logistics Department replacing Cargo
+  name: quartermaster's over-ear headset # Ronstation - Cargo Department replacing Logistics
   components:
   - type: ContainerFill
     containers:
@@ -118,7 +118,7 @@
 - type: entity
   parent: ClothingHeadsetAlt
   id: ClothingHeadsetAltScience
-  name: mystagogue's over-ear headset # DeltaV - Epistemics Department replacing Science
+  name: research director's over-ear headset # Ronstation - Science Department replacing Epistemics
   components:
   - type: ContainerFill
     containers:

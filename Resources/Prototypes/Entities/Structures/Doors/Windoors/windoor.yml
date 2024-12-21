@@ -64,7 +64,7 @@
 - type: entity
   parent: Windoor
   id: WindoorCargoLocked
-  suffix: Logistics, Locked # DeltaV - Logistics Department replacing Cargo
+  suffix: Cargo, Locked # Ronstation - Cargo Department replacing Logistics
   components:
   - type: ContainerFill
     containers:
@@ -201,7 +201,7 @@
 - type: entity
   parent: WindoorSecure
   id: WindoorSecureCargoLocked
-  suffix: Logistics, Locked # DeltaV - Logistics Department replacing Cargo
+  suffix: Cargo, Locked # Ronstation - Cargo Department replacing Logistics
   components:
   - type: ContainerFill
     containers:
@@ -399,7 +399,7 @@
 - type: entity
   parent: WindoorSecure
   id: WindoorSecureScienceLocked
-  suffix: Epistemics, Locked # DeltaV - Epistemics Department replacing Science
+  suffix: Science, Locked # Ronstation - Science department replacing Epistemics.
   components:
   - type: ContainerFill
     containers:

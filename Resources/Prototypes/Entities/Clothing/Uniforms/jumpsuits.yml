@@ -614,13 +614,13 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitBrigmedic
-  name: corpsman jumpsuit # DeltaV - rename brigmedic to corpsman
+  name: brigmedic jumpsuit # Ronstation - rename corpsman to brigmedic
   description: This uniform is issued to qualified personnel who have been trained. No one cares that the training took half a day.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/brigmedic.rsi # DeltaV - resprite
+    sprite: Clothing/Uniforms/Jumpsuit/brigmedic.rsi # Ronstation - resprite
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/brigmedic.rsi # DeltaV - resprite
+    sprite: Clothing/Uniforms/Jumpsuit/brigmedic.rsi # Ronstation - resprite
 
 - type: entity
   parent: ClothingUniformBase
@@ -686,9 +686,9 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitQMFormal
-  # DeltaV - Logistics Department - Replace Quartermaster with Logistics Officer
-  name: logistics officer's formal suit
-  description: Inspired by the logistics officers of military's past, the perfect outfit for supplying a formal occasion.
+  # Ronstation - Cargo Department - Replace Logistics Officer with Quartermaster
+  name: Quartermaster's formal suit
+  description: The perfect outfit for supplying a formal occasion.
   # End of modified code
   components:
     - type: Sprite
@@ -699,8 +699,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitResearchDirector
-  name: mystagogue's turtleneck # DeltaV - Epistemics Department replacing Science
-  description: It's a turtleneck worn by those with the know-how to achieve the position of Mystagogue. Its fabric provides minor protection from biological contaminants. # DeltaV - Epistemics Department replacing Science
+  name: research director's turtleneck # Ronstation - Science Department replacing Epistemics
+  description: It's a turtleneck worn by those with the know-how to achieve the position of Research Director. Its fabric provides minor protection from biological contaminants. # Ronstation - Science Department replacing Epistemics
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/rnd.rsi

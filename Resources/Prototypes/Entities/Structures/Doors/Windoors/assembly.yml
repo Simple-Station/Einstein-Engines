@@ -6,7 +6,7 @@
   components:
   - type: InteractionOutline
   - type: Sprite
-    sprite: Structures/Doors/Windoors/windoor.rsi
+    sprite: _Ronstation/Structures/Doors/Windoors/windoor.rsi
     layers:
     - state: assembly
   - type: Physics
@@ -56,7 +56,7 @@
   parent: WindoorAssembly
   components:
   - type: Sprite
-    sprite: Structures/Doors/Windoors/windoor.rsi
+    sprite: _Ronstation/Structures/Doors/Windoors/windoor.rsi
     layers:
     - state: secure_underlay
     - state: assembly
@@ -112,7 +112,7 @@
   parent: WindoorAssembly
   components:
   - type: Sprite
-    sprite: Structures/Doors/Windoors/plasma.rsi
+    sprite: _Ronstation/Structures/Doors/Windoors/plasma.rsi
     layers:
     - state: assembly
   - type: Destructible
@@ -142,7 +142,7 @@
   parent: WindoorAssembly
   components:
   - type: Sprite
-    sprite: Structures/Doors/Windoors/plasma.rsi
+    sprite: _Ronstation/Structures/Doors/Windoors/plasma.rsi
     layers:
     - state: secure_underlay
     - state: assembly
@@ -174,7 +174,7 @@
   parent: WindoorAssembly
   components:
   - type: Sprite
-    sprite: Structures/Doors/Windoors/uranium.rsi
+    sprite: _Ronstation/Structures/Doors/Windoors/uranium.rsi
     layers:
     - state: assembly
   - type: Destructible
@@ -204,7 +204,7 @@
   parent: WindoorAssembly
   components:
   - type: Sprite
-    sprite: Structures/Doors/Windoors/uranium.rsi
+    sprite: _Ronstation/Structures/Doors/Windoors/uranium.rsi
     layers:
     - state: secure_underlay
     - state: assembly

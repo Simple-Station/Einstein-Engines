@@ -95,7 +95,7 @@
 - type: entity
   parent: ClothingOuterWinterCoatToggleable
   id: ClothingOuterWinterCargo
-  name: logistics winter coat # DeltaV - Logistics Department replacing Cargo
+  name: cargo winter coat # Ronstation - Cargo Department replacing Logistics
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/WinterCoats/coatcargo.rsi
@@ -360,7 +360,7 @@
 - type: entity
   parent: ClothingOuterWinterCoatToggleable
   id: ClothingOuterWinterQM
-  name: logistics officer's winter coat # DeltaV - Logistics Department replacing Cargo
+  name: Quartermaster's winter coat # Ronstation - Cargo Department replacing Logistics
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/WinterCoats/coatqm.rsi
@@ -405,7 +405,7 @@
 - type: entity
   parent: ClothingOuterWinterCoatToggleable
   id: ClothingOuterWinterSci
-  name: epistemics winter coat # DeltaV - Epistemics Department replacing Science
+  name: science winter coat # Ronstation - Science Department replacing Epistemics
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/WinterCoats/coatsci.rsi
