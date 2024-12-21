@@ -162,13 +162,13 @@ namespace Content.Shared.Movement.Systems
 
             args.State = new InputMoverComponentState()
             {
-                CanMove = component.CanMove,
-                RelativeEntity = GetNetEntity(component.RelativeEntity),
-                LerpTarget = component.LerpTarget,
-                HeldMoveButtons = component.HeldMoveButtons,
-                RelativeRotation = component.RelativeRotation,
-                TargetRelativeRotation = component.TargetRelativeRotation,
-                DefaultSprinting = component.DefaultSprinting
+                CanMove = entity.Comp.CanMove,
+                RelativeEntity = GetNetEntity(entity.Comp.RelativeEntity),
+                LerpTarget = entity.Comp.LerpTarget,
+                HeldMoveButtons = entity.Comp.HeldMoveButtons,
+                RelativeRotation = entity.Comp.RelativeRotation,
+                TargetRelativeRotation = entity.Comp.TargetRelativeRotation,
+                DefaultSprinting = entity.Comp.DefaultSprinting
             };
         }
 
@@ -372,9 +372,9 @@ namespace Content.Shared.Movement.Systems
             if (!xform.ParentUid.IsValid())
                 return;
 
-            component.RelativeEntity = xform.GridUid ?? xform.MapUid;
-            component.TargetRelativeRotation = Angle.Zero;
-            WalkingAlert(uid, component);
+            entity.Comp.RelativeEntity = xform.GridUid ?? xform.MapUid;
+            entity.Comp.TargetRelativeRotation = Angle.Zero;
+            WalkingAlert(entity);
         }
 
         private void HandleRunChange(EntityUid uid, ushort subTick, bool walking)
@@ -386,8 +386,8 @@ namespace Content.Shared.Movement.Systems
                 // if we swap to relay then stop our existing input if we ever change back.
                 if (moverComp != null)
                 {
-                    SetMoveInput(moverComp, MoveButtons.None);
-                    WalkingAlert(uid, moverComp);
+                    SetMoveInput((uid, moverComp), MoveButtons.None);
+                    WalkingAlert((uid, moverComp));
                 }
 
                 HandleRunChange(relayMover.RelayEntity, subTick, walking);
@@ -504,11 +504,11 @@ namespace Content.Shared.Movement.Systems
         }
 
 
-        public void SetSprinting(EntityUid entity, InputMoverComponent component, ushort subTick, bool walking)
+        public void SetSprinting(Entity<InputMoverComponent> entity, ushort subTick, bool walking)
         {
             // Logger.Info($"[{_gameTiming.CurTick}/{subTick}] Sprint: {enabled}");
-            SetMoveInput(entity, component, subTick, walking, MoveButtons.Walk);
-            WalkingAlert(entity, component);
+            SetMoveInput(entity, subTick, walking, MoveButtons.Walk);
+            WalkingAlert(entity);
         }
 
         /// <summary>
