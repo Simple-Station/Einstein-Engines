@@ -6,27 +6,11 @@
     - type: loadout
       id: LoadoutHeadTophat
     - type: loadout
-      id: LoadoutHeadFedoraBlack
-    - type: loadout
-      id: LoadoutHeadFedoraBrown
-    - type: loadout
-      id: LoadoutHeadFedoraGrey
-    - type: loadout
-      id: LoadoutHeadFedoraChoc
-    - type: loadout
       id: LoadoutHeadFedoraWhite
     - type: loadout
       id: LoadoutHeadFlatBlack
     - type: loadout
       id: LoadoutHeadFlatBrown
-    - type: loadout
-      id: LoadoutHeadHatCowboyBrown
-    - type: loadout
-      id: LoadoutHeadHatCowboyBlack
-    - type: loadout
-      id: LoadoutHeadHatCowboyGrey
-    - type: loadout
-      id: LoadoutHeadHatCowboyRed
     - type: loadout
       id: LoadoutHeadHatCowboyWhite
     - type: loadout
@@ -38,41 +22,13 @@
     - type: loadout
       id: LoadoutHeadPoppy
     - type: loadout
-      id: LoadoutHeadHatBluesoft
-    - type: loadout
-      id: LoadoutHeadHatBluesoftFlipped
-    - type: loadout
       id: LoadoutHeadHatCorpsoft
     - type: loadout
       id: LoadoutHeadHatCorpsoftFlipped
     - type: loadout
-      id: LoadoutHeadHatGreensoft
-    - type: loadout
-      id: LoadoutHeadHatGreensoftFlipped
-    - type: loadout
-      id: LoadoutHeadHatGreysoft
-    - type: loadout
-      id: LoadoutHeadHatGreysoftFlipped
-    - type: loadout
       id: LoadoutHeadHatMimesoft
     - type: loadout
       id: LoadoutHeadHatMimesoftFlipped
-    - type: loadout
-      id: LoadoutHeadHatOrangesoft
-    - type: loadout
-      id: LoadoutHeadHatOrangesoftFlipped
-    - type: loadout
-      id: LoadoutHeadHatPurplesoft
-    - type: loadout
-      id: LoadoutHeadHatPurplesoftFlipped
-    - type: loadout
-      id: LoadoutHeadHatRedsoft
-    - type: loadout
-      id: LoadoutHeadHatRedsoftFlipped
-    - type: loadout
-      id: LoadoutHeadHatYellowsoft
-    - type: loadout
-      id: LoadoutHeadHatYellowsoftFlipped
     - type: loadout
       id: LoadoutHeadBandBlack
     - type: loadout
@@ -107,16 +63,6 @@
       id: LoadoutHeadBeret
     - type: loadout
       id: LoadoutHeadBeretFrench
-    - type: loadout
-      id: LoadoutHeadCowboyBrown
-    - type: loadout
-      id: LoadoutHeadCowboyBlack
-    - type: loadout
-      id: LoadoutHeadCowboyWhite
-    - type: loadout
-      id: LoadoutHeadCowboyGrey
-    - type: loadout
-      id: LoadoutHeadCowboyRed
     - type: loadout
       id: LoadoutHeadHijabColorable
     - type: loadout

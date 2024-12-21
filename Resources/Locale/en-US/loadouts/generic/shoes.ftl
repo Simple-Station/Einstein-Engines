@@ -8,3 +8,9 @@ loadout-description-LoadoutShoesRed = Embrace the spirit of exploration with the
 loadout-description-LoadoutShoesWhite = Elevate your style with these pristine white shoes, a symbol of innovation and progress.
 loadout-description-LoadoutShoesYellow = Light up the space station with these radiant yellow shoes, bringing a burst of energy to your every step.
 loadout-description-LoadoutShoesSlippersDuck = Quack up your downtime with these adorable duck slippers that waddle the line between comfort and quirkiness.
+
+loadout-name-LoadoutShoesWhite = shoes (colorable)
+loadout-name-LoadoutShoesBootsCowboyWhite = cowboy boots (colorable)
+loadout-name-LoadoutShoesBootsCowboyFancy = fancy cowboy boots (colorable)
+loadout-name-LoadoutShoesMiscWhite = misc shoes (colorable)
+loadout-name-LoadoutShoesClothWrap = cloth foot wraps (colorable)
