@@ -8713,3 +8713,10 @@ Entries:
   id: 6583
   time: '2024-12-18T01:32:32.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1357
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Fixed the Saltern bridge being a hard vacuum at roundstart.
+  id: 6584
+  time: '2024-12-19T22:52:32.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1359
