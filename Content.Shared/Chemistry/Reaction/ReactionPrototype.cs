@@ -1,6 +1,5 @@
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Database;
-using Content.Shared.EntityEffects;
 using Content.Shared.FixedPoint;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
@@ -60,7 +59,7 @@ namespace Content.Shared.Chemistry.Reaction
         /// <summary>
         /// Effects to be triggered when the reaction occurs.
         /// </summary>
-        [DataField("effects", serverOnly: true)] public List<EntityEffect> Effects = new();
+        [DataField("effects", serverOnly: true)] public List<ReagentEffect> Effects = new();
 
         /// <summary>
         /// How dangerous is this effect? Stuff like bicaridine should be low, while things like methamphetamine

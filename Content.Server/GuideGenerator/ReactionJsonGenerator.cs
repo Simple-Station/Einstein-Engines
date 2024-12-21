@@ -2,7 +2,7 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 using Content.Shared.Chemistry.Reaction;
-using Content.Shared.EntityEffects;
+using Content.Shared.Chemistry.Reagent;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.GuideGenerator;
@@ -24,7 +24,7 @@ public sealed class ReactionJsonGenerator
             WriteIndented = true,
             Converters =
             {
-                new UniversalJsonConverter<EntityEffect>(),
+                new UniversalJsonConverter<ReagentEffect>(),
             }
         };
 
