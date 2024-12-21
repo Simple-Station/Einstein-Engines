@@ -8720,3 +8720,16 @@ Entries:
   id: 6584
   time: '2024-12-19T22:52:32.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1359
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added labels to all generic colorable items in loadouts, so that players
+        can see which items have custom colors as customization options.
+    - type: Remove
+      message: >-
+        Removed all 'specific color' variants of colorable items from Loadouts,
+        such as "Blue Jumpsuit" when a colorable jumpsuit exists. 
+  id: 6585
+  time: '2024-12-21T18:02:28.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1364
