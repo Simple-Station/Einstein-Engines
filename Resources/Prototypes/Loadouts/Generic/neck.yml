@@ -148,18 +148,6 @@
 
 # Ties
 - type: loadout
-  id: LoadoutNeckTieRed
-  category: Neck
-  cost: 0
-  exclusive: true
-  canBeHeirloom: true
-  items:
-    - ClothingNeckTieRed
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutNeck
-
-- type: loadout
   id: LoadoutNeckTieWhite
   category: Neck
   cost: 0
@@ -168,42 +156,6 @@
   canBeHeirloom: true
   items:
     - ClothingNeckTieWhite
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutNeck
-
-- type: loadout
-  id: LoadoutNeckTieBlack
-  category: Neck
-  cost: 0
-  exclusive: true
-  canBeHeirloom: true
-  items:
-    - ClothingNeckTieBlack
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutNeck
-
-- type: loadout
-  id: LoadoutNeckTieBlue
-  category: Neck
-  cost: 0
-  exclusive: true
-  canBeHeirloom: true
-  items:
-    - ClothingNeckTieBlue
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutNeck
-
-- type: loadout
-  id: LoadoutNeckTieGreen
-  category: Neck
-  cost: 0
-  exclusive: true
-  canBeHeirloom: true
-  items:
-    - ClothingNeckTieGreen
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutNeck
@@ -310,60 +262,6 @@
 
 # Bedsheets
 - type: loadout
-  id: LoadoutNeckBedsheetBlack
-  category: Neck
-  cost: 1
-  exclusive: true
-  items:
-    - BedsheetBlack
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutNeck
-    - !type:CharacterDepartmentRequirement
-       departments:
-         - Civilian
-    - !type:CharacterDepartmentRequirement
-       inverted: true
-       departments:
-         - Command
-
-- type: loadout
-  id: LoadoutNeckBedsheetBlue
-  category: Neck
-  cost: 1
-  exclusive: true
-  items:
-    - BedsheetBlue
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutNeck
-    - !type:CharacterDepartmentRequirement
-       departments:
-         - Civilian
-    - !type:CharacterDepartmentRequirement
-       inverted: true
-       departments:
-         - Command
-
-- type: loadout
-  id: LoadoutNeckBedsheetBrown
-  category: Neck
-  cost: 1
-  exclusive: true
-  items:
-    - BedsheetBrown
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutNeck
-    - !type:CharacterDepartmentRequirement
-       departments:
-         - Civilian
-    - !type:CharacterDepartmentRequirement
-       inverted: true
-       departments:
-         - Command
-
-- type: loadout
   id: LoadoutNeckBedsheetCosmos
   category: Neck
   cost: 2
@@ -381,80 +279,6 @@
        inverted: true
        departments:
          - Command
-
-- type: loadout
-  id: LoadoutNeckBedsheetGreen
-  category: Neck
-  cost: 1
-  exclusive: true
-  items:
-    - BedsheetGreen
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutNeck
-    - !type:CharacterDepartmentRequirement
-       departments:
-         - Civilian
-    - !type:CharacterDepartmentRequirement
-       inverted: true
-       departments:
-         - Command
-
-- type: loadout
-  id: LoadoutNeckBedsheetGrey
-  category: Neck
-  cost: 1
-  exclusive: true
-  items:
-    - BedsheetGrey
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutNeck
-    - !type:CharacterDepartmentRequirement
-       departments:
-         - Civilian
-    - !type:CharacterDepartmentRequirement
-       inverted: true
-       departments:
-         - Command
-
-- type: loadout
-  id: LoadoutNeckBedsheetOrange
-  category: Neck
-  cost: 1
-  exclusive: true
-  items:
-    - BedsheetOrange
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutNeck
-    - !type:CharacterDepartmentRequirement
-       departments:
-         - Civilian
-         - Logistics
-    - !type:CharacterJobRequirement
-       inverted: true
-       jobs:
-         - HeadOfPersonnel # Need to blacklist HoP and not command so other heads can wear this bedsheet
-
-- type: loadout
-  id: LoadoutNeckBedsheetPurple
-  category: Neck
-  cost: 1
-  exclusive: true
-  items:
-    - BedsheetPurple
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutNeck
-    - !type:CharacterDepartmentRequirement
-       departments:
-         - Civilian
-         - Epistemics
-    - !type:CharacterJobRequirement
-       inverted: true
-       jobs:
-         - HeadOfPersonnel # Need to blacklist HoP and not command so other heads can wear this bedsheet
 
 - type: loadout
   id: LoadoutNeckBedsheetRainbow
@@ -475,25 +299,6 @@
          - Command
 
 - type: loadout
-  id: LoadoutNeckBedsheetRed
-  category: Neck
-  cost: 1
-  exclusive: true
-  items:
-    - BedsheetRed
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutNeck
-    - !type:CharacterDepartmentRequirement
-       departments:
-         - Civilian
-         - Security
-    - !type:CharacterJobRequirement
-       inverted: true
-       jobs:
-         - HeadOfPersonnel # Need to blacklist HoP and not command so other heads can wear this bedsheet
-
-- type: loadout
   id: LoadoutNeckBedsheetWhite
   category: Neck
   cost: 1
@@ -511,25 +316,6 @@
        inverted: true
        departments:
          - Command
-
-- type: loadout
-  id: LoadoutNeckBedsheetYellow
-  category: Neck
-  cost: 1
-  exclusive: true
-  items:
-    - BedsheetYellow
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutNeck
-    - !type:CharacterDepartmentRequirement
-       departments:
-         - Civilian
-         - Engineering
-    - !type:CharacterJobRequirement
-       inverted: true
-       jobs:
-         - HeadOfPersonnel # Need to blacklist HoP and not command so other heads can wear this bedsheet
 
 - type: loadout
   id: LoadoutNeckBedsheetNT
