@@ -300,6 +300,18 @@ namespace Content.Server.Database
 
         #endregion
 
+        #region Job Whitelists
+
+        Task AddJobWhitelist(Guid player, ProtoId<JobPrototype> job);
+
+
+        Task<List<string>> GetJobWhitelists(Guid player, CancellationToken cancel = default);
+        Task<bool> IsJobWhitelisted(Guid player, ProtoId<JobPrototype> job);
+
+        Task<bool> RemoveJobWhitelist(Guid player, ProtoId<JobPrototype> job);
+
+        #endregion
+
         #region DB Notifications
 
         void SubscribeToNotifications(Action<DatabaseNotification> handler);

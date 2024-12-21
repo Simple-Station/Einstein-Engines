@@ -1,5 +1,6 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
+using Content.Server.Players.PlayTimeTracking;
 using Content.Server.Preferences.Managers;
 using Robust.Server.Player;
 using Robust.Shared.Network;
@@ -23,6 +24,9 @@ public sealed class UserDbDataManager : IPostInjectInit
     [Dependency] private readonly PlayTimeTrackingManager _playTimeTracking = default!;
 
     private readonly Dictionary<NetUserId, UserData> _users = new();
+    private readonly List<OnLoadPlayer> _onLoadPlayer = [];
+    private readonly List<OnFinishLoad> _onFinishLoad = [];
+    private readonly List<OnPlayerDisconnect> _onPlayerDisconnect = [];
 
     private ISawmill _sawmill = default!;
 
