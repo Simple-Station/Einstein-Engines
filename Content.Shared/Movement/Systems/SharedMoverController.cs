@@ -139,14 +139,9 @@ namespace Content.Shared.Movement.Systems
                 }
             }
 
-            // Update relative movement
-            if (mover.LerpTarget < Timing.CurTime)
-            {
-                if (TryUpdateRelative(mover, xform))
-                {
-                    Dirty(uid, mover);
-                }
-            }
+        // Update relative movement
+        if (mover.LerpTarget < Timing.CurTime)
+            TryUpdateRelative((uid, mover), xform);
 
             LerpRotation(uid, mover, frameTime);
 
