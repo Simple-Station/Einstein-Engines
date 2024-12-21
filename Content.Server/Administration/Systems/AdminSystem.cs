@@ -78,7 +78,7 @@ namespace Content.Server.Administration.Systems
             Subs.CVar(_config, CCVars.PanicBunkerCountDeadminnedAdmins, OnPanicBunkerCountDeadminnedAdminsChanged, true);
             Subs.CVar(_config, CCVars.PanicBunkerShowReason, OnShowReasonChanged, true);
             Subs.CVar(_config, CCVars.PanicBunkerMinAccountAge, OnPanicBunkerMinAccountAgeChanged, true);
-            Subs.CVar(_config, CCVars.PanicBunkerMinOverallMinutes, OnPanicBunkerMinOverallMinutesChanged, true);
+            Subs.CVar(_config, CCVars.PanicBunkerMinOverallHours, OnPanicBunkerMinOverallHoursChanged, true);
 
             /*
              * TODO: Remove baby jail code once a more mature gateway process is established. This code is only being issued as a stopgap to help with potential tiding in the immediate future.

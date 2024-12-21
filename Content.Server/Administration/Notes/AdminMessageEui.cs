@@ -14,9 +14,11 @@ public sealed class AdminMessageEui : BaseEui
 {
     [Dependency] private readonly IAdminNotesManager _notesMan = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
-    private readonly float _closeWait;
-    private AdminMessageRecord? _message;
-    private DateTime _startTime;
+    [Dependency] private readonly IGameTiming _gameTiming = default!;
+
+    private readonly TimeSpan _closeWait;
+    private readonly TimeSpan _endTime;
+    private readonly AdminMessageRecord[] _messages;
 
     public AdminMessageEui(AdminMessageRecord[] messages)
     {
@@ -26,7 +28,7 @@ public sealed class AdminMessageEui : BaseEui
         _messages = messages;
     }
 
-    public void SetMessage(AdminMessageRecord message)
+    public override void Opened()
     {
         StateDirty();
     }
@@ -35,9 +37,10 @@ public sealed class AdminMessageEui : BaseEui
     {
         return new AdminMessageEuiState(
             _closeWait,
-            _message.Message,
-            _message.CreatedBy?.LastSeenUserName ?? "[System]",
-            _message.CreatedAt.UtcDateTime
+            _messages.Select(x => new AdminMessageEuiState.Message(
+                x.Message,
+                x.CreatedBy?.LastSeenUserName ?? Loc.GetString("admin-notes-fallback-admin-name"),
+                x.CreatedAt.UtcDateTime)).ToArray()
         );
     }
 

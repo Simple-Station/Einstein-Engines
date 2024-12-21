@@ -42,10 +42,9 @@ public sealed class RoleBanListCommand : IConsoleCommand
         }
 
         var targetUid = located.UserId;
-        var targetHWid = located.LastHWId;
         var targetAddress = located.LastAddress;
 
-            var bans = await _dbManager.GetServerRoleBansAsync(data.LastAddress, data.UserId, data.LastLegacyHWId, data.LastModernHWIds, includeUnbanned);
+            var bans = await dbMan.GetServerRoleBansAsync(targetAddress, targetUid, located.LastLegacyHWId, located.LastModernHWIds, includeUnbanned);
 
         if (bans.Count == 0)
         {

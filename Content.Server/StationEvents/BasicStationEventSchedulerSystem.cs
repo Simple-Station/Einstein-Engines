@@ -9,6 +9,7 @@ using Content.Shared.CCVar;
 using Content.Shared.GameTicking.Components;
 using JetBrains.Annotations;
 using Robust.Shared.Configuration;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Toolshed;
 using Robust.Shared.Utility;
