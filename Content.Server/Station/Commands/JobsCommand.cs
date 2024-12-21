@@ -75,15 +75,15 @@ public sealed class JobsCommand : ToolshedCommand
         => @ref.Select(x => Set(x, by));
 
     [CommandImplementation("amount")]
-    public uint Amount([PipedArgument] JobSlotRef @ref)
+    public int Amount([PipedArgument] JobSlotRef @ref)
     {
         _jobs ??= GetSys<StationJobsSystem>();
         _jobs.TryGetJobSlot(@ref.Station, @ref.Job, out var slots);
-        return slots.HasValue ? slots.Value : 0;
+        return slots ?? 0;
     }
 
     [CommandImplementation("amount")]
-    public IEnumerable<uint> Amount([PipedArgument] IEnumerable<JobSlotRef> @ref)
+    public IEnumerable<int> Amount([PipedArgument] IEnumerable<JobSlotRef> @ref)
         => @ref.Select(Amount);
 }
 
