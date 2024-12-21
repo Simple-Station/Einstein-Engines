@@ -8733,3 +8733,12 @@ Entries:
   id: 6585
   time: '2024-12-21T18:02:28.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1364
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added colorable variants of fingerless gloves, headbands, berets,
+        hairflowers, cloth masks, and the neck gaiter.
+  id: 6586
+  time: '2024-12-21T19:25:13.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1365
