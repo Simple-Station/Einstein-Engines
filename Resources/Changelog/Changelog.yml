@@ -8742,3 +8742,18 @@ Entries:
   id: 6586
   time: '2024-12-21T19:25:13.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1365
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Loadouts can now apply modular functions to items upon spawning in.
+    - type: Add
+      message: >-
+        A new LoadoutMakeFollower function, which lets you buy NPC followers in
+        loadouts.
+    - type: Add
+      message: >-
+        added Pet Mice, Cockroach, Mothroach, and Hamster to Loadouts. All of
+        which use the new LoadoutMakeFollower function.
+  id: 6587
+  time: '2024-12-22T10:26:41.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1366
