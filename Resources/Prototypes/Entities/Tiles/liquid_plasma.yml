@@ -16,8 +16,6 @@
     triggerGroups:
       types:
       - Lava
-  - type: Lava
-    fireStacks: 0.75
   - type: TileEntityEffect
     effects:
     - !type:FlammableReaction
