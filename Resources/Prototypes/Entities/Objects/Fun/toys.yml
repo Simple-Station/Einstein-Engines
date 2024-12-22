@@ -1990,20 +1990,20 @@
     damage: 0.8
   - type: EmitSoundOnActivate
     sound:
-      path: /Audio\DeltaV\Voice\Harpy\caw1.ogg
+      path: /Audio/DeltaV/Voice/Harpy/caw1.ogg
       params:
         variation: 0.05
   - type: EmitSoundOnUse
     sound:
-      path: /Audio\DeltaV\Voice\Harpy\caw1.ogg
+      path: /Audio/DeltaV/Voice/Harpy/caw1.ogg
   - type: EmitSoundOnCollide
     sound:
-      path: /Audio\DeltaV\Voice\Harpy\caw1.ogg
+      path: /Audio/DeltaV/Voice/Harpy/caw1.ogg
       params:
         variation: 0.05
   - type: EmitSoundOnLand
     sound: 
-      path: /Audio\DeltaV\Voice\Harpy\caw1.ogg
+      path: /Audio/DeltaV/Voice/Harpy/caw1.ogg
       params:
         variation: 0.05
   - type: UseDelay
@@ -2015,14 +2015,14 @@
       types:
         Blunt: 0
     soundHit:
-      path: /Audio\DeltaV\Voice\Harpy\caw1.ogg
+      path: /Audio/DeltaV/Voice/Harpy/caw1.ogg
       params:
         variation: 0.05
     soundSwing:
-      path: /Audio\DeltaV\Voice\Harpy\caw1.ogg
+      path: /Audio/DeltaV/Voice/Harpy/caw1.ogg
       params:
         variation: 0.05
     soundNoDamage:
-      path: /Audio\DeltaV\Voice\Harpy\caw1.ogg
+      path: /Audio/DeltaV/Voice/Harpy/caw1.ogg
       params:
         variation: 0.05
