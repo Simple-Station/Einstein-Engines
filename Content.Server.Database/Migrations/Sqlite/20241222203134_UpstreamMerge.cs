@@ -10,8 +10,7 @@ namespace Content.Server.Database.Migrations.Sqlite
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "ProfileLoadout");
+            migrationBuilder.Sql("DROP TABLE IF EXISTS ProileLoadouts;");
 
             migrationBuilder.RenameColumn(
                 name: "hwid_type",
