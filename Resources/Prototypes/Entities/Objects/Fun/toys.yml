@@ -1981,7 +1981,7 @@
   parent: BasePlushie
   id: Plushieharpy
   name: harpy plushie
-  description: smells like vanilla and an electrical fire.
+  description: A soft plushie of a harpy! A small tag on it guarantees that all feathers are ethically sourced.
   components:
   - type: Sprite
     sprite: Objects/Fun/toys.rsi
