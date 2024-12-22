@@ -214,7 +214,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         //
         if (def.PickPlayer)
         {
-            // Tries up to maxRetries times to assign antags.
+            // Tries multiple times to assign antags.
             // When any number of assignments fails, next iteration
             // gets new items to replace those.
             // Already selected or failed sessions are avoided.
