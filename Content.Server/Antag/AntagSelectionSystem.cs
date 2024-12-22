@@ -261,6 +261,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         {
             MakeAntag(ent, null, def);
         }
+        ///// End of Einstein Engines changes /////
     }
 
     /// <summary>
@@ -307,6 +308,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
 
             if (!getEntEv.Handled)
             {
+                ///// Einstein Engines change /////
                 Log.Error($"Attempted to make {session} antagonist in gamerule {ToPrettyString(ent)} but there was no valid entity for player.");
                 return;
             }
