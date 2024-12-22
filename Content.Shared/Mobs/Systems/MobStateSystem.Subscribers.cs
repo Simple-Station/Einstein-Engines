@@ -30,7 +30,7 @@ public partial class MobStateSystem
     private void SubscribeEvents()
     {
         SubscribeLocalEvent<MobStateComponent, BeforeGettingStrippedEvent>(OnGettingStripped);
-        SubscribeLocalEvent<MobStateComponent, ChangeDirectionAttemptEvent>(CheckAct);
+        SubscribeLocalEvent<MobStateComponent, ChangeDirectionAttemptEvent>(OnDirectionAttempt);
         SubscribeLocalEvent<MobStateComponent, UseAttemptEvent>(CheckAct);
         SubscribeLocalEvent<MobStateComponent, AttackAttemptEvent>(CheckAct);
         SubscribeLocalEvent<MobStateComponent, ConsciousAttemptEvent>(CheckAct);
@@ -42,7 +42,7 @@ public partial class MobStateSystem
         SubscribeLocalEvent<MobStateComponent, DropAttemptEvent>(CheckAct);
         SubscribeLocalEvent<MobStateComponent, PickupAttemptEvent>(CheckAct);
         SubscribeLocalEvent<MobStateComponent, StartPullAttemptEvent>(CheckAct);
-        SubscribeLocalEvent<MobStateComponent, UpdateCanMoveEvent>(CheckAct);
+        SubscribeLocalEvent<MobStateComponent, UpdateCanMoveEvent>(OnMoveAttempt);
         SubscribeLocalEvent<MobStateComponent, StandAttemptEvent>(CheckAct);
         SubscribeLocalEvent<MobStateComponent, PointAttemptEvent>(CheckAct);
         SubscribeLocalEvent<MobStateComponent, TryingToSleepEvent>(OnSleepAttempt);
@@ -51,6 +51,23 @@ public partial class MobStateSystem
 
         SubscribeLocalEvent<MobStateComponent, UnbuckleAttemptEvent>(OnUnbuckleAttempt);
     }
+
+    private void OnDirectionAttempt(Entity<MobStateComponent> ent, ref ChangeDirectionAttemptEvent args)
+    {
+        if (ent.Comp.CurrentState is MobState.Critical && _configurationManager.GetCVar(CCVars.AllowMovementWhileCrit))
+            return;
+
+        CheckAct(ent.Owner, ent.Comp, args);
+    }
+
+    private void OnMoveAttempt(Entity<MobStateComponent> ent, ref UpdateCanMoveEvent args)
+    {
+        if (ent.Comp.CurrentState is MobState.Critical && _configurationManager.GetCVar(CCVars.AllowMovementWhileCrit))
+            return;
+
+        CheckAct(ent.Owner, ent.Comp, args);
+    }
+
 
     private void OnUnbuckleAttempt(Entity<MobStateComponent> ent, ref UnbuckleAttemptEvent args)
     {
