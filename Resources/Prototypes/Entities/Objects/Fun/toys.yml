@@ -1979,7 +1979,7 @@
 
 - type: entity
   parent: BasePlushie
-  id: Plushieharpy
+  id: PlushieHarpy
   name: harpy plushie
   description: A soft plushie of a harpy! A small tag on it guarantees that all feathers are ethically sourced.
   components:
