@@ -17,6 +17,7 @@ character-item-group-LoadoutInstrumentsAny = Musical Instruments (Non-Musician)
 character-item-group-LoadoutSmokes = Smokeables
 character-item-group-LoadoutBoxKits = Survival Kits
 character-item-group-LoadoutWritables = Writing Tools
+character-item-group-LoadoutPets = Pets
 
 # Job Specific Template
 character-item-group-LoadoutJOBBackpacks = JOB Backpacks
