@@ -1,0 +1,87 @@
+- type: entity
+  save: false
+  name: Urist McWawa
+  parent: BaseMobSpeciesOrganic
+  id: BaseMobSlugcat
+  abstract: true
+  components:
+  - type: Sprite
+    drawdepth: SmallMobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      sprite: Mobs/Species/Slugcat
+      state: slugcat
+    - map: [ "enum.HumanoidVisualLayers.Handcuffs" ]
+      color: "#ffffff"
+      sprite: Objects/Misc/handcuffs.rsi
+      state: body-overlay-2
+      visible: false
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      50: Critical
+      100: Dead
+  - type: HumanoidAppearance
+    species: Slugcat
+  - type: Hunger
+  - type: Puller
+    needsHands: false
+  - type: Thirst
+  - type: Carriable # Carrying system from nyanotrasen.
+  - type: Icon
+    sprite: Mobs/Species/Slugcat
+    state: slugcat
+  - type: Body
+    prototype: Reptilian
+    requiredLegs: 2
+  - type: Butcherable
+    butcheringType: Spike
+    spawned:
+    - id: FoodMeatLizard
+      amount: 5
+  - type: Inventory
+    speciesId: monkey
+    templateId: scug
+  - type: Speech
+    speechSounds: Slugcat
+    speechVerb: Slugcat
+  - type: Vocal
+    sounds:
+      Male: Slugcat
+      Female: Slugcat
+      Unsexed: Slugcat
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Scale
+  - type: MeleeWeapon
+    soundHit:
+      collection: AlienClaw
+    angle: 30
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 5
+  - type: LanguageKnowledge
+    speaks:
+    - Wawa
+    understands:
+    - Wawa
+    - TauCetiBasic
+    - SolCommon
+  - type: FootPrints
+    leftBarePrint: "footprint-left-bare-lizard"
+    rightBarePrint: "footprint-right-bare-lizard"
+
+- type: entity
+  parent: BaseSpeciesDummy
+  id: MobSlugcatDummy
+  categories: [ HideSpawnMenu ]
+  description: A dummy slugcat meant to be used in character setup.
+  components:
+  - type: HumanoidAppearance
+    species: Slugcat
+  - type: Inventory
+    speciesId: monkey
+    templateId: nullification
+
+#WAWA

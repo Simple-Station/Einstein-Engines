@@ -1,0 +1,15 @@
+# Spoken by Unathi.
+- type: language
+  id: Wawa
+  isVisibleLanguage: true
+  speech:
+    color: "#FFFFFF"
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 2
+    maxSyllables: 4
+    replacement:
+    - wa
+    - wawawa
+    - wawa
+    - wa wawa
