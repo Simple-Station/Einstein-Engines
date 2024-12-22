@@ -32,13 +32,15 @@ namespace Content.Server.Abilities.Psionics
                     return;
                 }
 
-                if (_psionics.OnAttemptPowerUse(args.Performer, "DarkSwap", args.ManaCost / 2, args.CheckInsulation))
+                if (_psionics.OnAttemptPowerUse(args.Performer, "DarkSwap"))
                 {
+                    SpawnAtPosition("ShadowkinShadow", Transform(args.Performer).Coordinates);
+                    SpawnAtPosition("EffectFlashShadowkinDarkSwapOff", Transform(args.Performer).Coordinates);
                     RemComp(args.Performer, ethereal);
                     args.Handled = true;
                 }
             }
-            else if (_psionics.OnAttemptPowerUse(args.Performer, "DarkSwap", args.ManaCost, args.CheckInsulation))
+            else if (_psionics.OnAttemptPowerUse(args.Performer, "DarkSwap", args.ManaCost))
             {
                 var newethereal = EnsureComp<EtherealComponent>(args.Performer);
                 newethereal.Darken = true;
@@ -50,7 +52,7 @@ namespace Content.Server.Abilities.Psionics
             }
 
             if (args.Handled)
-                _psionics.LogPowerUsed(args.Performer, "DarkSwap", 0, 0);
+                _psionics.LogPowerUsed(args.Performer, "DarkSwap");
         }
     }
 }
