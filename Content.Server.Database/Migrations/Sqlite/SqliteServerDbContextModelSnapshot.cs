@@ -483,19 +483,6 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.ToTable("assigned_user_id", (string)null);
                 });
 
-            modelBuilder.Entity("Content.Server.Database.Blacklist",
-                b =>
-                {
-                    b.Property<Guid>("UserId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT")
-                        .HasColumnName("user_id");
-
-                    b.HasKey("UserId")
-                        .HasName("PK_blacklist");
-
-                    b.ToTable("blacklist", (string) null);
-                });
             modelBuilder.Entity("Content.Server.Database.BanTemplate", b =>
                 {
                     b.Property<int>("Id")
@@ -1567,7 +1554,7 @@ namespace Content.Server.Database.Migrations.Sqlite
                                 .ValueGeneratedOnAdd()
                                 .HasColumnType("INTEGER")
                                 .HasDefaultValue(0)
-                                .HasColumnName("hwid_type");
+                                .HasColumnName("hwid__type");
 
                             b1.HasKey("ConnectionLogId");
 
@@ -1595,6 +1582,18 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Navigation("Profile");
                 });
 
+            modelBuilder.Entity("Content.Server.Database.Loadout", b =>
+                {
+                    b.HasOne("Content.Server.Database.Profile", "Profile")
+                        .WithMany("Loadouts")
+                        .HasForeignKey("ProfileId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_loadout_profile_profile_id");
+
+                    b.Navigation("Profile");
+                });
+
             modelBuilder.Entity("Content.Server.Database.Player", b =>
                 {
                     b.OwnsOne("Content.Server.Database.TypedHwid", "LastSeenHWId", b1 =>
@@ -1612,7 +1611,7 @@ namespace Content.Server.Database.Migrations.Sqlite
                                 .ValueGeneratedOnAdd()
                                 .HasColumnType("INTEGER")
                                 .HasDefaultValue(0)
-                                .HasColumnName("last_seen_hwid_type");
+                                .HasColumnName("last_seen_hwid__type");
 
                             b1.HasKey("PlayerId");
 
@@ -1624,30 +1623,6 @@ namespace Content.Server.Database.Migrations.Sqlite
                         });
 
                     b.Navigation("LastSeenHWId");
-                });
-
-            modelBuilder.Entity("Content.Server.Database.Profile", b =>
-                {
-                    b.HasOne("Content.Server.Database.Preference", "Preference")
-                        .WithMany("Profiles")
-                        .HasForeignKey("PreferenceId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("FK_profile_preference_preference_id");
-
-                    b.Navigation("Preference");
-                });
-
-            modelBuilder.Entity("Content.Server.Database.ProfileLoadout", b =>
-                {
-                    b.HasOne("Content.Server.Database.Profile", "Profile")
-                        .WithMany("Loadouts")
-                        .HasForeignKey("ProfileId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("FK_loadout_profile_profile_id");
-
-                    b.Navigation("Profile");
                 });
 
             modelBuilder.Entity("Content.Server.Database.Profile", b =>
@@ -1723,7 +1698,7 @@ namespace Content.Server.Database.Migrations.Sqlite
                                 .ValueGeneratedOnAdd()
                                 .HasColumnType("INTEGER")
                                 .HasDefaultValue(0)
-                                .HasColumnName("hwid_type");
+                                .HasColumnName("hwid__type");
 
                             b1.HasKey("ServerBanId");
 
@@ -1800,7 +1775,7 @@ namespace Content.Server.Database.Migrations.Sqlite
                                 .ValueGeneratedOnAdd()
                                 .HasColumnType("INTEGER")
                                 .HasDefaultValue(0)
-                                .HasColumnName("hwid_type");
+                                .HasColumnName("hwid__type");
 
                             b1.HasKey("ServerRoleBanId");
 
