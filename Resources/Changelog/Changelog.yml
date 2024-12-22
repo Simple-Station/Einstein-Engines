@@ -8780,3 +8780,10 @@ Entries:
   id: 6590
   time: '2024-12-22T19:56:21.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1341
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: Fixed jittering displacing your character when shaken.
+  id: 6591
+  time: '2024-12-22T19:57:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1334
