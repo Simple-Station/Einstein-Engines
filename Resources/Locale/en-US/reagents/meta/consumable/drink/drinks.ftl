@@ -96,3 +96,18 @@ reagent-desc-white-gilgamesh = A sickening mixture of milk and beer. Makes you f
 
 reagent-name-mopwata = mopwata
 reagent-desc-mopwata = Dirty, stagnant mop water.
+
+reagent-name-honey = honey
+reagent-desc-honey = Thick, golden and sticky, the original sweetener.
+
+reagent-name-honey-iced-tea = honey iced tea
+reagent-desc-honey-iced-tea = Tea with a splash of honey.
+
+reagent-name-tea-powder = tea powder
+reagent-desc-tea-powder = Finely ground tea leaves, used for making tea.
+
+reagent-name-bees-knees = bee's knees
+reagent-desc-bees-knees = BEEEEEEEEEEEEEEES!!! Has a stingy smell.
+
+reagent-name-cucumber-water = cucumber water
+reagent-desc-cucumber-water = The fanciest of waters.

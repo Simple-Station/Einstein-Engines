@@ -1098,3 +1098,33 @@
   id: paintthinner
   flavorType: Complex
   description: flavor-complex-paint-thinner
+
+- type: flavor
+  id: honeycomb
+  flavorType: Complex
+  description: flavor-complex-honeycomb
+
+- type: flavor
+  id: pear
+  flavorType: Complex
+  description: flavor-complex-pear
+
+- type: flavor
+  id: bluepumpkin
+  flavorType: Complex
+  description: flavor-complex-blue-pumpkin
+
+- type: flavor
+  id: cherry
+  flavorType: Complex
+  description: flavor-complex-cherry
+
+- type: flavor
+  id: avocado
+  flavorType: Complex
+  description: flavor-complex-avocado
+
+- type: flavor
+  id: cucumber
+  flavorType: Complex
+  description: flavor-complex-cucumber

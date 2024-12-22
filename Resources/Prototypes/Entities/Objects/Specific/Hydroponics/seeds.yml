@@ -592,3 +592,150 @@
       seedId: pyrotton
     - type: Sprite
       sprite: Objects/Specific/Hydroponics/pyrotton.rsi
+
+- type: entity
+  parent: SeedBase
+  name: jar of bees
+  description: Starter kit for a new apiarist.
+  id: BeeSeeds
+  components:
+    - type: Seed
+      seedId: bees
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/bees.rsi
+    - type: Damageable
+      damageContainer: Inorganic
+      damageModifierSet: Glass
+    # "it's a jar of bees, it should break into bees"
+    - type: Destructible
+      thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 3
+        behaviors:
+        - !type:PlaySoundBehavior
+          sound:
+            collection: GlassBreak
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            MobAngryBeeTimed:
+              min: 1
+              max: 1
+          transferForensics: true
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - type: DamageOnLand
+      ignoreResistances: true
+      damage:
+        types:
+          Blunt: 3
+    - type: DamageOtherOnHit
+      damage:
+        types:
+          Blunt: 3
+
+- type: entity
+  parent: SeedBase
+  name: packet of tea plant seeds
+  id: TeaPlantSeeds
+  components:
+    - type: Seed
+      seedId: teaPlant
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/tea_plant.rsi
+
+- type: entity
+  parent: SeedBase
+  name: packet of blue pumpkin seeds
+  id: BluePumpkinSeeds
+  components:
+    - type: Seed
+      seedId: bluePumpkin
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/blue_pumpkin.rsi
+
+- type: entity
+  parent: SeedBase
+  name: packet of cherry seeds
+  id: CherrySeeds
+  components:
+    - type: Seed
+      seedId: cherry
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/cherry.rsi
+
+- type: entity
+  parent: SeedBase
+  name: packet of papercane seeds
+  id: PapercaneSeeds
+  components:
+    - type: Seed
+      seedId: papercane
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/papercane.rsi
+
+- type: entity
+  parent: SeedBase
+  name: packet of golden apple seeds
+  id: GoldenAppleSeeds
+  components:
+    - type: Seed
+      seedId: goldenApple
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/golden_apple.rsi
+
+- type: entity
+  parent: SeedBase
+  name: packet of glasstle seeds
+  description: "Scars of gloomy nights."
+  id: GlasstleSeeds
+  components:
+    - type: Seed
+      seedId: glasstle
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/glasstle.rsi
+
+- type: entity
+  parent: SeedBase
+  name: packet of avocado seeds
+  description: These seeds are the pits.
+  id: AvocadoSeeds
+  components:
+    - type: Seed
+      seedId: avocado
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/avocado.rsi
+
+- type: entity
+  parent: SeedBase
+  name: packet of cucumber seeds
+  description: Can you grow water?
+  id: CucumberSeeds
+  components:
+    - type: Seed
+      seedId: cucumber
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/cucumber.rsi
+
+- type: entity
+  parent: SeedBase
+  name: packet of money tree seeds
+  description: "these seeds seem like a miracle, but expert farmers get rich from the kitchen"
+  id: MoneytreeSeeds
+  components:
+    - type: Seed
+      seedId: moneytree
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/moneytree.rsi
+#Description Is Sneaky KitchenFarms Tribute, LLKF, CentCom Owes Us a Million! =)
+
+- type: entity
+  parent: SeedBase
+  name: packet of pear seeds
+  description: "they are peary good for you."
+  id: PearSeeds
+  components:
+    - type: Seed
+      seedId: pear
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/pear.rsi

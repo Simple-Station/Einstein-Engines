@@ -1745,6 +1745,11 @@
     sprite: Objects/Specific/Hydroponics/bungo.rsi
   - type: Produce
     seedId: bungo
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceBungo
+        Quantity: 10
   - type: Tag
     tags:
     - Fruit
@@ -1913,3 +1918,488 @@
     - CottonBoll
   - type: Extractable
     grindableSolutionName: food
+
+#Honey
+
+- type: entity
+  name: honeycomb
+  parent: FoodProduceBase
+  id: FoodHoneyComb
+  description: Crispy container of honey.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - honeycomb
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Honey
+          Quantity: 5
+        - ReagentId: Vitamin
+          Quantity: 5
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/bees.rsi
+    state: produce
+  - type: Extractable
+    grindableSolutionName: food
+    juiceSolution:
+      reagents:
+      - ReagentId: Honey
+        Quantity: 5
+  - type: Tag
+    tags:
+      - Vegetable
+
+- type: entity
+  name: blue pumpkin
+  parent: FoodProduceBase
+  id: FoodBluePumpkin
+  description: A large, blue... berry. Seriously.
+  components:
+  - type: Item
+    size: Small
+  - type: FlavorProfile
+    flavors:
+      - bluepumpkin
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 25
+        reagents:
+        - ReagentId: Ammonia
+          Quantity: 10
+        - ReagentId: Chlorine
+          Quantity: 5
+        - ReagentId: Vitamin
+          Quantity: 10
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceBluePumpkin
+        Quantity: 10
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/blue_pumpkin.rsi
+  - type: Produce
+    seedId: bluePumpkin
+  - type: Damageable
+    damageContainer: Biological
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 16
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: desecration
+      - !type:SpillBehavior
+        solution: food
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Tag
+    tags:
+    - Fruit
+
+- type: entity
+  name: cherry
+  parent: FoodProduceBase
+  id: FoodCherry
+  description: Juicy red cherry with a pit inside.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - cherry
+  - type: Food
+    trash: TrashCherryPit
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 8
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 3
+        - ReagentId: Vitamin
+          Quantity: 3
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/cherry.rsi
+  - type: Produce
+    seedId: cherry
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceCherry
+        Quantity: 5
+  - type: Tag
+    tags:
+    - Fruit
+
+- type: entity
+  name: cherry pit
+  parent: FoodInjectableBase
+  id: TrashCherryPit
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/cherry.rsi
+    state: pit
+  - type: Item
+    sprite: Objects/Specific/Hydroponics/cherry.rsi
+    heldPrefix: pit
+  - type: Tag
+    tags:
+    - Recyclable
+    - Trash
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 1
+        reagents:
+        - ReagentId: Toxin
+          Quantity: 1
+  - type: Extractable
+    grindableSolutionName: food
+  - type: Seed
+    seedId: cherry
+  - type: SpaceGarbage
+  - type: BadFood
+
+- type: entity
+  name: papercane roll
+  description: Why do we even need to grow paper?
+  id: Papercane
+  parent: ProduceBase
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/papercane.rsi
+  - type: SolutionContainerManager
+  - type: Produce
+    seedId: papercane
+  - type: Log
+    spawnedPrototype: SheetPaper1
+    spawnCount: 2
+
+- type: entity
+  name: golden apple
+  parent: FoodProduceBase
+  id: FoodGoldenApple
+  description: It should be shaped like a cube, shouldn't it?
+  components:
+  - type: FlavorProfile
+    flavors:
+      - apple
+      - metallic
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Vitamin
+          Quantity: 4
+        - ReagentId: DoctorsDelight
+          Quantity: 13
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/golden_apple.rsi
+  - type: Produce
+    seedId: goldenApple
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceApple
+        Quantity: 10
+      - ReagentId: Gold
+        Quantity: 10
+  - type: Tag
+    tags:
+    - Fruit
+
+- type: entity
+  name: glasstle
+  parent: FoodProduceBase
+  id: FoodGlasstle
+  description: A fragile crystal plant with lot of spiky thorns.
+  components:
+  - type: Item
+    size: Small
+    sprite: Objects/Specific/Hydroponics/glasstle.rsi
+    heldPrefix: produce
+  - type: FlavorProfile
+    flavors:
+      - sharp
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Razorium
+          Quantity: 15
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/glasstle.rsi
+  - type: Produce
+    seedId: glasstle
+  - type: Extractable
+    grindableSolutionName: food
+  - type: Damageable
+    damageContainer: Inorganic
+  # - type: ToolRefinable
+  #   refineResult:
+  #   - id: SheetGlass1
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+          params:
+            volume: -4
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          ShardGlass:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: DamageOnHit
+    damage:
+      types:
+        Blunt: 10
+  - type: MeleeWeapon
+    wideAnimationRotation: 60
+    damage:
+      types:
+        Slash: 15
+    soundHit:
+        path: /Audio/Weapons/bladeslice.ogg
+  - type: Tag
+    tags:
+    - Galaxythistle
+
+- type: entity
+  name: avocado
+  parent: FoodProduceBase
+  id: FoodAvocado
+  description: Like delicious buttery grass.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - avocado
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 16
+        reagents:
+        - ReagentId: Nutriment #place holder
+          Quantity: 10
+        - ReagentId: Vitamin
+          Quantity: 6
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/avocado.rsi
+  - type: Produce
+    seedId: avocado
+  - type: SliceableFood
+    count: 2
+    slice: FoodAvocadoSlice
+  - type: Extractable
+    grindableSolutionName: food
+    juiceSolution:
+      reagents:
+      - ReagentId: OilVegetable
+        Quantity: 5
+  - type: Tag
+    tags:
+      - Fruit
+
+- type: entity
+  name: avocado slice
+  parent: ProduceSliceBase
+  id: FoodAvocadoSlice
+  description: Like delicious, fun-sized buttery grass.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - avocado
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Vitamin
+          Quantity: 3
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/avocado.rsi
+  - type: Extractable
+    grindableSolutionName: food
+    juiceSolution:
+      reagents:
+      - ReagentId: OilVegetable
+        Quantity: 2.5
+  - type: Tag
+    tags:
+      - Fruit
+      - Slice
+
+- type: entity
+  name: cucumber
+  parent: FoodProduceBase
+  id: FoodCucumber
+  description: Like fresh crispy water.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - cucumber
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Nutriment #place holder
+          Quantity: 6
+        - ReagentId: Vitamin
+          Quantity: 4
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/cucumber.rsi
+  - type: Produce
+    seedId: cucumber
+  - type: SliceableFood
+    count: 4
+    slice: FoodCucumberSlice
+  - type: Extractable
+    grindableSolutionName: food
+    juiceSolution:
+      reagents:
+      - ReagentId: CucumberWater
+        Quantity: 10
+  - type: Tag
+    tags:
+      - Vegetable
+
+- type: entity
+  name: cucumber slice
+  parent: ProduceSliceBase
+  id: FoodCucumberSlice
+  description: Like fresh crispy water, but smaller.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - cucumber
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 1.5
+        - ReagentId: Vitamin
+          Quantity: 1
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/cucumber.rsi
+  - type: Extractable
+    grindableSolutionName: food
+    juiceSolution:
+      reagents:
+      - ReagentId: CucumberWater
+        Quantity: 2.5
+  - type: Tag
+    tags:
+      - Vegetable
+      - Slice
+
+- type: entity
+  name: pickle
+  parent: FoodProduceBase
+  id: FoodPickle
+  description: Like tangy crispy water.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - salty
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Nutriment #place holder
+          Quantity: 6
+        - ReagentId: Vitamin
+          Quantity: 4
+        - ReagentId: Saline
+          Quantity: 10
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/cucumber.rsi
+    state: pickle
+  - type: SliceableFood
+    count: 4
+    slice: FoodPickleSlice
+  - type: Extractable
+    grindableSolutionName: food
+    juiceSolution:
+      reagents:
+      - ReagentId: Saline
+        Quantity: 10
+  - type: Tag
+    tags:
+      - Vegetable
+
+- type: entity
+  name: pickle slice
+  parent: ProduceSliceBase
+  id: FoodPickleSlice
+  description: Like tangy crispy water, but smaller.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - salty
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 1.5
+        - ReagentId: Vitamin
+          Quantity: 1
+        - ReagentId: Saline
+          Quantity: 2.5
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/cucumber.rsi
+    state: pickleslice
+  - type: Extractable
+    grindableSolutionName: food
+    juiceSolution:
+      reagents:
+      - ReagentId: Saline
+        Quantity: 2.5
+  - type: Tag
+    tags:
+      - Vegetable
+      - Slice
+
+- type: entity
+  name: pear
+  parent: FoodProduceBase
+  id: FoodPear
+  description: it's peary good.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - pear
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Vitamin
+          Quantity: 5
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/pear.rsi
+  - type: Produce
+    seedId: pear
