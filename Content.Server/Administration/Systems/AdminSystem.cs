@@ -88,7 +88,7 @@ namespace Content.Server.Administration.Systems
             Subs.CVar(_config, CCVars.BabyJailEnabled, OnBabyJailChanged, true);
             Subs.CVar(_config, CCVars.BabyJailShowReason, OnBabyJailShowReasonChanged, true);
             Subs.CVar(_config, CCVars.BabyJailMaxAccountAge, OnBabyJailMaxAccountAgeChanged, true);
-            Subs.CVar(_config, CCVars.BabyJailMaxOverallMinutes, OnBabyJailMaxOverallMinutesChanged, true);
+            Subs.CVar(_config, CCVars.BabyJailMaxOverallHours, OnBabyJailMaxOverallHoursChanged, true);
             Subs.CVar(_config, CCVars.PanicBunkerMinOverallHours, OnPanicBunkerMinOverallHoursChanged, true);
 
             SubscribeLocalEvent<IdentityChangedEvent>(OnIdentityChanged);
@@ -303,15 +303,15 @@ namespace Content.Server.Administration.Systems
             SendBabyJailStatusAll();
         }
 
-        private void OnPanicBunkerMinAccountAgeChanged(int minutes)
+        private void OnPanicBunkerMinAccountAgeChanged(int hours)
         {
-            PanicBunker.MinAccountAgeHours = minutes / 60;
+            PanicBunker.MinAccountAgeHours = hours;
             SendPanicBunkerStatusAll();
         }
 
-        private void OnBabyJailMaxAccountAgeChanged(int minutes)
+        private void OnBabyJailMaxAccountAgeChanged(int hours)
         {
-            BabyJail.MaxAccountAgeMinutes = minutes;
+            BabyJail.MaxOverallHours = hours;
             SendBabyJailStatusAll();
         }
 
@@ -321,9 +321,9 @@ namespace Content.Server.Administration.Systems
             SendPanicBunkerStatusAll();
         }
 
-        private void OnBabyJailMaxOverallMinutesChanged(int minutes)
+        private void OnBabyJailMaxOverallHoursChanged(int hours)
         {
-            BabyJail.MaxOverallMinutes = minutes;
+            BabyJail.MaxAccountAgeHours = hours;
             SendBabyJailStatusAll();
         }
 

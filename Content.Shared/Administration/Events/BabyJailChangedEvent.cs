@@ -11,8 +11,8 @@ public sealed class BabyJailStatus
 {
     public bool Enabled;
     public bool ShowReason;
-    public int MaxAccountAgeMinutes;
-    public int MaxOverallMinutes;
+    public int MaxAccountAgeHours;
+    public int MaxOverallHours;
 }
 
 [Serializable, NetSerializable]

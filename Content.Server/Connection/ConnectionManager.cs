@@ -28,6 +28,8 @@ namespace Content.Server.Connection
         void Initialize();
         void PostInit();
 
+        Task<bool> HasPrivilegedJoin(NetUserId userId);
+
         /// <summary>
         /// Temporarily allow a user to bypass regular connection requirements.
         /// </summary>
@@ -449,6 +451,15 @@ namespace Content.Server.Connection
             {
                 _connectedWhitelistedPlayers.Remove(e.Channel.UserId);
             }
+        }
+
+        public async Task<bool> HasPrivilegedJoin(NetUserId userId)
+        {
+            var isAdmin = await _db.GetAdminDataForAsync(userId) != null;
+            var wasInGame = EntitySystem.TryGet<GameTicker>(out var ticker) &&
+                ticker.PlayerGameStatuses.TryGetValue(userId, out var status) &&
+                status == PlayerGameStatus.JoinedGame;
+            return isAdmin || wasInGame;
         }
     }
 }
