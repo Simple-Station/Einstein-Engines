@@ -309,19 +309,16 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         {
             var getEntEv = new AntagSelectEntityEvent(session, ent);
             RaiseLocalEvent(ent, ref getEntEv, true);
-
-            if (!getEntEv.Handled)
-            {
-                ///// Einstein Engines change /////
-                Log.Error($"Attempted to make {session} antagonist in gamerule {ToPrettyString(ent)} but there was no valid entity for player.");
-                return;
-            }
-
             antagEnt = getEntEv.Entity;
         }
 
         if (antagEnt is not { } player)
+        {
+            Log.Error($"Attempted to make {session} antagonist in gamerule {ToPrettyString(ent)} but there was no valid entity for player.");
+            if (session != null)
+                ent.Comp.SelectedSessions.Remove(session);
             return;
+        }
 
         var getPosEv = new AntagSelectLocationEvent(session, ent);
         RaiseLocalEvent(ent, ref getPosEv, true);
@@ -332,11 +329,15 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
             _transform.SetMapCoordinates((player, playerXform), pos);
         }
 
+        // If we want to just do a ghost role spawner, set up data here and then return early.
+        // This could probably be an event in the future if we want to be more refined about it.
         if (isSpawner)
         {
             if (!TryComp<GhostRoleAntagSpawnerComponent>(player, out var spawnerComp))
             {
-                Log.Error("Antag spawner with GhostRoleAntagSpawnerComponent.");
+                Log.Error($"Antag spawner {player} does not have a GhostRoleAntagSpawnerComponent.");
+                if (session != null)
+                    ent.Comp.SelectedSessions.Remove(session);
                 return;
             }
 
