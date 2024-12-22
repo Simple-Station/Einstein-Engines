@@ -36,7 +36,6 @@ public sealed class AirlockVirusRule : StationEventSystem<AirlockVirusRuleCompon
         }
 
         var query = EntityManager.EntityQueryEnumerator<AirlockVirusTargetComponent>();
-        List<EntityUid> airlocks = new();
         while (query.MoveNext(out var airlockUid, out var _))
         {
             var parent = Transform(airlockUid).GridUid;
@@ -44,11 +43,9 @@ public sealed class AirlockVirusRule : StationEventSystem<AirlockVirusRuleCompon
                 || !stationGrids.Contains(parent!.Value))
                 continue;
 
-            airlocks.Add(airlockUid);
-        }
-        foreach (var target in airlocks)
             Timer.Spawn(TimeSpan.FromSeconds(_random.NextDouble(component.MinimumTimeToEmag, component.MaximumTimeToEmag)), () =>
-                _emag.DoEmagEffect(uid, target));
+                _emag.DoEmagEffect(uid, airlockUid));
+        }
 
         _announcer.SendAnnouncement(
             _announcer.GetAnnouncementId(args.RuleId),
