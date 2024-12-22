@@ -8764,3 +8764,12 @@ Entries:
   id: 6588
   time: '2024-12-22T19:24:58.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1369
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Implemented Anti-cheat for Traits. Attempting to join a round with an
+        illegal traits list will result in hilarious consequences.
+  id: 6589
+  time: '2024-12-22T19:55:22.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1358
