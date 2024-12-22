@@ -13,8 +13,9 @@
     blacklist:
       tags:
         - Catwalk
-  - type: Lava
-    fireStacks: 0.75
+    triggerGroups:
+      types:
+        - Lava
   - type: TileEntityEffect
     effects:
     - !type:FlammableReaction
