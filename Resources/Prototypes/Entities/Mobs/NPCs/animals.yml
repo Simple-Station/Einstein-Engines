@@ -405,6 +405,21 @@
     understands: [Hissing]
 
 - type: entity
+  parent: MobCockroach
+  id: MobCockroachPet
+  components:
+  - type: HTN
+    rootTask:
+      task: FollowCompound
+    blackboard:
+      IdleRange: !type:Single
+        1.5
+      FollowCloseRange: !type:Single
+        1.0
+      FollowRange: !type:Single
+        2.0
+
+- type: entity
   name: glockroach
   parent: MobCockroach
   suffix: Admeme
@@ -574,6 +589,21 @@
     interfaces:
       enum.SurgeryUIKey.Key:
         type: SurgeryBui
+
+- type: entity
+  parent: MobMothroach
+  id: MobMothroachPet
+  components:
+  - type: HTN
+    rootTask:
+      task: FollowCompound
+    blackboard:
+      IdleRange: !type:Single
+        1.5
+      FollowCloseRange: !type:Single
+        1.0
+      FollowRange: !type:Single
+        2.0
 
 # Note that the mallard duck is actually a male drake mallard, with the brown duck being the female variant of the same species, however ss14 lacks sex specific textures
 # The white duck is more akin to a pekin or call duck.
@@ -1768,6 +1798,21 @@
     interfaces:
       enum.SurgeryUIKey.Key:
         type: SurgeryBui
+
+- type: entity
+  parent: MobMouse
+  id: MobMousePet
+  components:
+  - type: HTN
+    rootTask:
+      task: FollowCompound
+    blackboard:
+      IdleRange: !type:Single
+        1.5
+      FollowCloseRange: !type:Single
+        1.0
+      FollowRange: !type:Single
+        2.0
 
 - type: entity
   parent: MobMouse
@@ -3417,6 +3462,21 @@
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
     normalState: Mouse_burning
+
+- type: entity
+  parent: MobHamster
+  id: MobHamsterPet
+  components:
+  - type: HTN
+    rootTask:
+      task: FollowCompound
+    blackboard:
+      IdleRange: !type:Single
+        1.5
+      FollowCloseRange: !type:Single
+        1.0
+      FollowRange: !type:Single
+        2.0
 
 - type: entity
   name: pig
