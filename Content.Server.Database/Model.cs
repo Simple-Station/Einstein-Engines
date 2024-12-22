@@ -45,7 +45,6 @@ namespace Content.Server.Database
         public DbSet<AdminNote> AdminNotes { get; set; } = null!;
         public DbSet<AdminWatchlist> AdminWatchlists { get; set; } = null!;
         public DbSet<AdminMessage> AdminMessages { get; set; } = null!;
-        public DbSet<BanTemplate> BanTemplate { get; set; } = null!;
         public DbSet<RoleWhitelist> RoleWhitelists { get; set; } = null!;
         public DbSet<BanTemplate> BanTemplate { get; set; } = null!;
 

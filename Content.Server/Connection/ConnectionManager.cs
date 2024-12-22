@@ -1,12 +1,8 @@
 using System.Collections.Immutable;
 using System.Linq;
-using System.Text.Json.Nodes;
 using System.Threading.Tasks;
-using Content.Server.Connection.Whitelist;
-using Content.Server.Connection.Whitelist.Conditions;
 using System.Runtime.InteropServices;
-using System.Text.Json.Nodes;
-using System.Threading.Tasks;
+using Content.Server.Chat.Managers;
 using Content.Server.Database;
 using Content.Server.GameTicking;
 using Content.Server.Preferences.Managers;
@@ -15,6 +11,7 @@ using Content.Shared.GameTicking;
 using Content.Shared.Players.PlayTimeTracking;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
+using Robust.Shared.Enums;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Player;
@@ -30,8 +27,6 @@ namespace Content.Server.Connection
     {
         void Initialize();
         void PostInit();
-
-        Task<bool> HasPrivilegedJoin(NetUserId userId);
 
         /// <summary>
         /// Temporarily allow a user to bypass regular connection requirements.
@@ -51,7 +46,6 @@ namespace Content.Server.Connection
     /// </summary>
     public sealed partial class ConnectionManager : IConnectionManager
     {
-        [Dependency] private readonly IServerDbManager _dbManager = default!;
         [Dependency] private readonly IPlayerManager _plyMgr = default!;
         [Dependency] private readonly IServerNetManager _netMgr = default!;
         [Dependency] private readonly IServerDbManager _db = default!;
@@ -61,10 +55,11 @@ namespace Content.Server.Connection
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         [Dependency] private readonly IGameTiming _gameTiming = default!;
         [Dependency] private readonly ILogManager _logManager = default!;
+        [Dependency] private readonly IChatManager _chatManager = default!;
 
         private ISawmill _sawmill = default!;
         private readonly Dictionary<NetUserId, TimeSpan> _temporaryBypasses = [];
-        private ISawmill _sawmill = default!;
+
 
         private List<NetUserId> _connectedWhitelistedPlayers = new(); // DeltaV - Soft whitelist improvements
 
@@ -76,6 +71,7 @@ namespace Content.Server.Connection
             _netMgr.Connected += OnConnected; // DeltaV - Soft whitelist improvements
             _netMgr.Disconnect += OnDisconnected; // DeltaV - Soft whitelist improvements
             _netMgr.AssignUserIdCallback = AssignUserIdCallback;
+            _plyMgr.PlayerStatusChanged += PlayerStatusChanged;
             // Approval-based IP bans disabled because they don't play well with Happy Eyeballs.
             // _netMgr.HandleApprovalCallback = HandleApproval;
         }
@@ -130,7 +126,11 @@ namespace Content.Server.Connection
                 if (banHits is { Count: > 0 })
                     await _db.AddServerBanHitsAsync(id, banHits);
 
-                e.Deny(msg);
+                var properties = new Dictionary<string, object>();
+                if (reason == ConnectionDenyReason.Full)
+                    properties["delay"] = _cfg.GetCVar(CCVars.GameServerFullReconnectDelay);
+
+                e.Deny(new NetDenyReason(msg, properties));
             }
             else
             {
@@ -143,6 +143,46 @@ namespace Content.Server.Connection
             }
         }
 
+        private async void PlayerStatusChanged(object? sender, SessionStatusEventArgs args)
+        {
+            if (args.NewStatus == SessionStatus.Connected)
+            {
+                AdminAlertIfSharedConnection(args.Session);
+            }
+        }
+
+        private void AdminAlertIfSharedConnection(ICommonSession newSession)
+        {
+            var playerThreshold = _cfg.GetCVar(CCVars.AdminAlertMinPlayersSharingConnection);
+            if (playerThreshold < 0)
+                return;
+
+            var addr = newSession.Channel.RemoteEndPoint.Address;
+
+            var otherConnectionsFromAddress = _plyMgr.Sessions.Where(session =>
+                    session.Status is SessionStatus.Connected or SessionStatus.InGame
+                    && session.Channel.RemoteEndPoint.Address.Equals(addr)
+                    && session.UserId != newSession.UserId)
+                .ToList();
+
+            var otherConnectionCount = otherConnectionsFromAddress.Count;
+            if (otherConnectionCount + 1 < playerThreshold) // Add one for the total, not just others, using the address
+                return;
+
+            var username = newSession.Name;
+            var otherUsernames = string.Join(", ",
+                otherConnectionsFromAddress.Select(session => session.Name));
+
+            _chatManager.SendAdminAlert(Loc.GetString("admin-alert-shared-connection",
+                ("player", username),
+                ("otherCount", otherConnectionCount),
+                ("otherList", otherUsernames)));
+        }
+
+        /*
+         * TODO: Jesus H Christ what is this utter mess of a function
+         * TODO: Break this apart into is constituent steps.
+         */
         private async Task<(ConnectionDenyReason, string, List<ServerBanDef>? bansHit)?> ShouldDeny(
             NetConnectingArgs e)
         {
@@ -173,17 +213,17 @@ namespace Content.Server.Connection
                 return null;
             }
 
-            var adminData = await _dbManager.GetAdminDataForAsync(e.UserId);
+            var adminData = await _db.GetAdminDataForAsync(e.UserId);
 
             if (_cfg.GetCVar(CCVars.PanicBunkerEnabled) && adminData == null)
             {
                 var showReason = _cfg.GetCVar(CCVars.PanicBunkerShowReason);
                 var customReason = _cfg.GetCVar(CCVars.PanicBunkerCustomReason);
 
-                var minMinutesAge = _cfg.GetCVar(CCVars.PanicBunkerMinAccountAge);
-                var record = await _dbManager.GetPlayerRecordByUserId(userId);
+                var minHoursAge = _cfg.GetCVar(CCVars.PanicBunkerMinAccountAge);
+                var record = await _db.GetPlayerRecordByUserId(userId);
                 var validAccountAge = record != null &&
-                                      record.FirstSeenTime.CompareTo(DateTimeOffset.Now - TimeSpan.FromMinutes(minMinutesAge)) <= 0;
+                                      record.FirstSeenTime.CompareTo(DateTimeOffset.UtcNow - TimeSpan.FromHours(minHoursAge)) <= 0;
                 var bypassAllowed = _cfg.GetCVar(CCVars.BypassBunkerWhitelist) && await _db.GetWhitelistStatusAsync(userId);
 
                 // Use the custom reason if it exists & they don't have the minimum account age
@@ -196,7 +236,7 @@ namespace Content.Server.Connection
                 {
                     return (ConnectionDenyReason.Panic,
                         Loc.GetString("panic-bunker-account-denied-reason",
-                            ("reason", Loc.GetString("panic-bunker-account-reason-account", ("minutes", minMinutesAge)))), null);
+                            ("reason", Loc.GetString("panic-bunker-account-reason-account", ("hours", minHoursAge)))), null);
                 }
 
                 var minOverallHours = _cfg.GetCVar(CCVars.PanicBunkerMinOverallHours);
@@ -235,40 +275,55 @@ namespace Content.Server.Connection
                             status == PlayerGameStatus.JoinedGame;
             var adminBypass = _cfg.GetCVar(CCVars.AdminBypassMaxPlayers) && adminData != null;
             if ((_plyMgr.PlayerCount >= _cfg.GetCVar(CCVars.SoftMaxPlayers) && !adminBypass) && !wasInGame)
-                return (ConnectionDenyReason.Full, Loc.GetString("soft-player-cap-full"), null);
-
-            // Checks for whitelist IF it's enabled AND the user isn't an admin. Admins are always allowed.
-            if (false)
             {
-                var min = _cfg.GetCVar(CCVars.WhitelistMinPlayers);
-                var max = _cfg.GetCVar(CCVars.WhitelistMaxPlayers);
-                var playerCountValid = _plyMgr.PlayerCount >= min && _plyMgr.PlayerCount < max;
+                return (ConnectionDenyReason.Full, Loc.GetString("soft-player-cap-full"), null);
+            }
 
-                if (playerCountValid && await _db.GetWhitelistStatusAsync(userId) == false
-                                     && adminData is null)
+            // DeltaV - Replace existing softwhitelist implementation
+            if (false)//if (_cfg.GetCVar(CCVars.WhitelistEnabled) && adminData is null)
+            {
+                if (_whitelists is null)
                 {
-                    var msg = Loc.GetString(_cfg.GetCVar(CCVars.WhitelistReason));
-                    // was the whitelist playercount changed?
-                    if (min > 0 || max < int.MaxValue)
-                        msg += "\n" + Loc.GetString("whitelist-playercount-invalid", ("min", min), ("max", max));
-                    return (ConnectionDenyReason.Whitelist, msg, null);
+                    _sawmill.Error("Whitelist enabled but no whitelists loaded.");
+                    // Misconfigured, deny everyone.
+                    return (ConnectionDenyReason.Whitelist, Loc.GetString("whitelist-misconfigured"), null);
+                }
+
+                foreach (var whitelist in _whitelists)
+                {
+                    if (!IsValid(whitelist, _plyMgr.PlayerCount))
+                    {
+                        // Not valid for current player count.
+                        continue;
+                    }
+
+                    var whitelistStatus = await IsWhitelisted(whitelist, e.UserData, _sawmill);
+                    if (!whitelistStatus.isWhitelisted)
+                    {
+                        // Not whitelisted.
+                        return (ConnectionDenyReason.Whitelist, Loc.GetString("whitelist-fail-prefix", ("msg", whitelistStatus.denyMessage!)), null);
+                    }
+
+                    // Whitelisted, don't check any more.
+                    break;
                 }
             }
 
             // DeltaV - Soft whitelist improvements
+            // TODO: replace this with a whitelist config prototype with a connected whitelisted players condition
             if (_cfg.GetCVar(CCVars.WhitelistEnabled))
             {
                 var connectedPlayers = _plyMgr.PlayerCount;
                 var connectedWhitelist = _connectedWhitelistedPlayers.Count;
 
-                var slots = _cfg.GetCVar(CCVars.WhitelistMinPlayers);
+                var slots = 25;
 
                 var noSlotsOpen = slots > 0 && slots < connectedPlayers - connectedWhitelist;
 
                 if (noSlotsOpen && await _db.GetWhitelistStatusAsync(userId) == false
                                      && adminData is null)
                 {
-                    var msg = Loc.GetString(_cfg.GetCVar(CCVars.WhitelistReason));
+                    var msg = Loc.GetString("whitelist-not-whitelisted-peri");
 
                     if (slots > 0)
                         msg += "\n" + Loc.GetString("whitelist-playercount-invalid", ("min", slots), ("max", _cfg.GetCVar(CCVars.SoftMaxPlayers)));
@@ -289,17 +344,17 @@ namespace Content.Server.Connection
             // Initial cvar retrieval
             var showReason = _cfg.GetCVar(CCVars.BabyJailShowReason);
             var reason = _cfg.GetCVar(CCVars.BabyJailCustomReason);
-            var maxAccountAgeMinutes = _cfg.GetCVar(CCVars.BabyJailMaxAccountAge);
-            var maxPlaytimeMinutes = _cfg.GetCVar(CCVars.BabyJailMaxOverallMinutes);
+            var maxAccountAgeHours = _cfg.GetCVar(CCVars.BabyJailMaxAccountAge);
+            var maxPlaytimeHours = _cfg.GetCVar(CCVars.BabyJailMaxOverallHours);
 
             // Wait some time to lookup data
-            var record = await _dbManager.GetPlayerRecordByUserId(userId);
+            var record = await _db.GetPlayerRecordByUserId(userId);
 
             // No player record = new account or the DB is having a skill issue
             if (record == null)
                 return (false, "");
 
-            var isAccountAgeInvalid = record.FirstSeenTime.CompareTo(DateTimeOffset.Now - TimeSpan.FromMinutes(maxAccountAgeMinutes)) <= 0;
+            var isAccountAgeInvalid = record.FirstSeenTime.CompareTo(DateTimeOffset.UtcNow - TimeSpan.FromHours(maxAccountAgeHours)) <= 0;
 
             if (isAccountAgeInvalid)
             {
@@ -314,13 +369,13 @@ namespace Content.Server.Connection
                         ("reason",
                             Loc.GetString(
                                 "baby-jail-account-reason-account",
-                                ("minutes", maxAccountAgeMinutes))));
+                                ("hours", maxAccountAgeHours))));
 
                 return (true, locAccountReason);
             }
 
             var overallTime = ( await _db.GetPlayTimes(e.UserId)).Find(p => p.Tracker == PlayTimeTrackingShared.TrackerOverall);
-            var isTotalPlaytimeInvalid = overallTime != null && overallTime.TimeSpent.TotalMinutes >= maxPlaytimeMinutes;
+            var isTotalPlaytimeInvalid = overallTime != null && overallTime.TimeSpent.TotalHours >= maxAccountAgeHours;
 
             if (isTotalPlaytimeInvalid)
             {
@@ -335,7 +390,7 @@ namespace Content.Server.Connection
                         ("reason",
                             Loc.GetString(
                                 "baby-jail-account-reason-overall",
-                                ("minutes", maxPlaytimeMinutes))));
+                                ("hours", maxPlaytimeHours))));
 
                 return (true, locPlaytimeReason);
             }
@@ -393,15 +448,6 @@ namespace Content.Server.Connection
             {
                 _connectedWhitelistedPlayers.Remove(e.Channel.UserId);
             }
-        }
-
-        public async Task<bool> HasPrivilegedJoin(NetUserId userId)
-        {
-            var isAdmin = await _dbManager.GetAdminDataForAsync(userId) != null;
-            var wasInGame = EntitySystem.TryGet<GameTicker>(out var ticker) &&
-                            ticker.PlayerGameStatuses.TryGetValue(userId, out var status) &&
-                            status == PlayerGameStatus.JoinedGame;
-            return isAdmin || wasInGame;
         }
     }
 }
