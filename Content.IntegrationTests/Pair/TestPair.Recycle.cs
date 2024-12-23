@@ -200,16 +200,7 @@ public sealed partial class TestPair : IAsyncDisposable
         Assert.That(sPlayer.Sessions.Count(), Is.EqualTo(1));
         var session = sPlayer.Sessions.Single();
         Assert.That(cPlayer.LocalSession?.UserId, Is.EqualTo(session.UserId));
-
-        if (!ticker.PlayerGameStatuses.ContainsKey(session.UserId))
-        {
-            var debugMsg = "Contains:";
-
-            foreach (var (id, playerStatus) in ticker.PlayerGameStatuses)
-                debugMsg += $"\n{id}";
-
-            Assert.Fail(debugMsg);
-        }
+        Assert.That(sPlayer.Sessions.Count, Is.EqualTo(ticker.PlayerGameStatuses.Count));
 
         if (ticker.DummyTicker)
             return;
