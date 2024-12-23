@@ -22,6 +22,10 @@
         - !type:CharacterTraitRequirement
           traits:
             - ShadowkinBlackeye
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: Pacified
 
 - type: startingGear
   id: PrisonerGear
