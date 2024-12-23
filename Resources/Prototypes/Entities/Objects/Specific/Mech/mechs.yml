@@ -42,6 +42,7 @@
       enum.MechUiKey.Key:
         type: MechBoundUserInterface
   - type: MeleeWeapon
+    canWideSwing: false
     hidden: true
     attackRate: 1.3333
     damage:
