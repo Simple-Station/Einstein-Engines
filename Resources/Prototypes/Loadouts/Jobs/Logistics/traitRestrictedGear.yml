@@ -1,0 +1,271 @@
+### Salvage Specialist
+## Belts
+# Merc webbing
+- type: loadout
+  id: LoadoutCargoRestrictedGearBeltMercWebbing
+  category: JobsLogisticsSalvageSpecialist
+  cost: 5
+  exclusive: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistBelt
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - SalvageSpecialist
+  items:
+    - ClothingBeltMercWebbing
+
+# Salvage rig
+- type: loadout
+  id: LoadoutCargoRestrictedGearBeltSalvageWebbing
+  category: JobsLogisticsSalvageSpecialist
+  cost: 5
+  exclusive: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistBelt
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - SalvageSpecialist
+  items:
+    - ClothingBeltSalvageWebbing
+
+# Chest rig
+- type: loadout
+  id: LoadoutCargoRestrictedGearBeltMilitaryWebbing
+  category: JobsLogisticsSalvageSpecialist
+  cost: 5
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistBelt
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - SalvageSpecialist
+  items:
+    - ClothingBeltMilitaryWebbing
+
+
+## Weapons
+- type: loadout
+  id: LoadoutCargoRestrictedGearWeaponsCrusherDagger
+  category: JobsLogisticsSalvageSpecialist
+  cost: 5
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistWeapons
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - SalvageSpecialist
+  items:
+    - WeaponCrusherDagger
+
+- type: loadout
+  id: LoadoutCargoRestrictedGearWeaponsCombatKnife
+  category: JobsLogisticsSalvageSpecialist
+  cost: 4
+  canBeHeirloom: true
+  customColorTint: true # Go read Neuromancer
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistWeapons
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - SalvageSpecialist
+  items:
+    - CombatKnife
+
+- type: loadout
+  id: LoadoutCargoRestrictedGearWeaponsKitchenKnife
+  category: JobsLogisticsSalvageSpecialist
+  cost: 4
+  canBeHeirloom: true
+  customColorTint: true # Go read Neuromancer
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistWeapons
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - SalvageSpecialist
+  items:
+    - KitchenKnife
+
+- type: loadout
+  id: LoadoutCargoRestrictedGearWeaponsSurvivalKnife
+  category: JobsLogisticsSalvageSpecialist
+  cost: 4
+  canBeHeirloom: true
+  customColorTint: true # Go read Neuromancer
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistWeapons
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - SalvageSpecialist
+  items:
+    - SurvivalKnife
+
+- type: loadout
+  id: LoadoutCargoRestrictedGearWeaponsKukriKnife
+  category: JobsLogisticsSalvageSpecialist
+  cost: 4
+  canBeHeirloom: true
+  customColorTint: true # Go read Neuromancer
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistWeapons
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - SalvageSpecialist
+  items:
+    - KukriKnife
+
+- type: loadout
+  id: LoadoutCargoRestrictedGearWeaponsCleaver
+  category: JobsLogisticsSalvageSpecialist
+  cost: 5
+  canBeHeirloom: true
+  customColorTint: true # Go read Neuromancer
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistWeapons
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - SalvageSpecialist
+  items:
+    - ButchCleaver
+
+- type: loadout
+  id: LoadoutCargoRestrictedGearWeaponsThrowingKnife
+  category: JobsLogisticsSalvageSpecialist
+  cost: 3
+  canBeHeirloom: true
+  customColorTint: true # Go read Neuromancer
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistWeapons
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - SalvageSpecialist
+  items:
+    - ThrowingKnife
+    - ThrowingKnife
+    - ThrowingKnife
+
+- type: loadout
+  id: LoadoutCargoRestrictedGearWeaponsMachete
+  category: JobsLogisticsSalvageSpecialist
+  cost: 4
+  canBeHeirloom: true
+  customColorTint: true # Go read Neuromancer
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistWeapons
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - SalvageSpecialist
+  items:
+    - Machete
+
+- type: loadout
+  id: LoadoutCargoRestrictedGearWeaponsCutlass
+  category: JobsLogisticsSalvageSpecialist
+  cost: 5
+  canBeHeirloom: true
+  customColorTint: true # Go read Neuromancer
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistWeapons
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - SalvageSpecialist
+  items:
+    - Cutlass
+
+- type: loadout
+  id: LoadoutCargoRestrictedGearWeaponsKatana
+  category: JobsLogisticsSalvageSpecialist
+  cost: 5
+  canBeHeirloom: true
+  customColorTint: true # Go read Neuromancer
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistWeapons
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - SalvageSpecialist
+  items:
+    - Katana
+
+- type: loadout
+  id: LoadoutCargoRestrictedGearWeaponsWakizashi
+  category: JobsLogisticsSalvageSpecialist
+  cost: 4
+  canBeHeirloom: true
+  customColorTint: true # Go read Neuromancer
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistWeapons
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - SalvageSpecialist
+  items:
+    - Wakizashi

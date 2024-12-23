@@ -1,0 +1,90 @@
+### Bartender
+## Equipment
+- type: loadout
+  id: LoadoutServiceRestrictedGearBartenderBoxBeanbags
+  category: JobsServiceBartender
+  cost: 4
+  exclusive: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderAmmo
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Bartender
+  items:
+    - BoxBeanbag
+
+- type: loadout
+  id: LoadoutServiceRestrictedGearBoxLightRifleRubber
+  category: JobsServiceBartender
+  cost: 4
+  exclusive: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderAmmo
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Bartender
+  items:
+    - MagazineBoxLightRifleRubber
+
+- type: loadout
+  id: LoadoutServiceRestrictedGearBartenderShotgunDoubleBarreledRubber
+  category: JobsServiceBartender
+  cost: 6
+  exclusive: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderWeapon
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Bartender
+  items:
+    - WeaponShotgunDoubleBarreledRubber
+
+- type: loadout
+  id: LoadoutServiceRestrictedGearBartenderShotgunDoubleBarreledSawed
+  category: JobsServiceBartender
+  cost: 7
+  exclusive: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderWeapon
+  items:
+    - WeaponShotgunSawn
+
+- type: loadout
+  id: LoadoutServiceRestrictedGearBartenderMosinRubber
+  category: JobsServiceBartender
+  cost: 6
+  exclusive: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderWeapon
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Bartender
+  items:
+    - WeaponSniperMosinRubber

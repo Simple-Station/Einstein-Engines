@@ -439,6 +439,12 @@ trait-description-CyberEyesOmni =
 trait-name-ShadowkinBlackeye = Blackeye
 trait-description-ShadowkinBlackeye = You lose your special Shadowkin powers, in return for some points.
 
+trait-name-RestrictedGear = Restricted Gear
+trait-description-RestrictedGear = 
+    Either through personal ownership or theft, you have access to equipment that isn't particularly standard issue.
+    Note that starting with an item [color=red]doesn't certify its legality[/color]. Conceal it or justify it.
+    (You equip other jobs' items in the loadouts menu) 
+    
 trait-name-DispelPower = Normality Projection
 trait-description-DispelPower =
     Your Mentalic abilities include the power to enforce normality upon Noospheric phenomena.
