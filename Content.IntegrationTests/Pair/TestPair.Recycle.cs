@@ -200,8 +200,14 @@ public sealed partial class TestPair : IAsyncDisposable
         Assert.That(cPlayer.LocalSession?.UserId, Is.EqualTo(session.UserId));
 
         if (!ticker.PlayerGameStatuses.ContainsKey(session.UserId))
-            Assert.Fail($"{session.UserId} was not found.\n\n" +
-                $"{string.Join(", ", ticker.PlayerGameStatuses.Keys.Select(s => s.ToString()))}");
+        {
+            var debugMsg = "Contains:";
+
+            foreach (var (id, playerStatus) in ticker.PlayerGameStatuses)
+                debugMsg += $"\n{id}";
+
+            Assert.Fail(debugMsg);
+        }
 
         if (ticker.DummyTicker)
             return;
