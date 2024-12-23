@@ -3,6 +3,7 @@
   category: Mask
   cost: 0
   exclusive: true
+  customColorTint: true
   items:
     - ClothingMaskSterile
   requirements:
@@ -34,83 +35,13 @@
 
 # Maskbands
 - type: loadout
-  id: LoadoutMaskBandBlack
+  id: LoadoutMaskBandWhite
   category: Mask
   cost: 0
   exclusive: true
+  customColorTint: true
   items:
-    - ClothingMaskBandBlack
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutMasks
-
-- type: loadout
-  id: LoadoutMaskBandBlue
-  category: Mask
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingMaskBandBlue
-  requirements:
-    - !type:CharacterDepartmentRequirement
-       inverted: true
-       departments:
-         - Security
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutMasks
-
-- type: loadout
-  id: LoadoutMaskBandGold
-  category: Mask
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingMaskBandGold
-  requirements:
-    - !type:CharacterDepartmentRequirement
-       inverted: true
-       departments:
-         - Security
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutMasks
-
-- type: loadout
-  id: LoadoutMaskBandGreen
-  category: Mask
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingMaskBandGreen
-  requirements:
-    - !type:CharacterDepartmentRequirement
-       inverted: true
-       departments:
-         - Security
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutMasks
-
-- type: loadout
-  id: LoadoutMaskBandGrey
-  category: Mask
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingMaskBandGrey
-  requirements:
-    - !type:CharacterDepartmentRequirement
-       inverted: true
-       departments:
-         - Security
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutMasks
-
-- type: loadout
-  id: LoadoutMaskBandRed
-  category: Mask
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingMaskBandRed
+    - ClothingMaskBandWhite
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMasks
@@ -127,55 +58,15 @@
     - !type:CharacterItemGroupRequirement
       group: LoadoutMasks
 
-- type: loadout
-  id: LoadoutMaskBandMerc
-  category: Mask
-  cost: 1
-  exclusive: true
-  items:
-    - ClothingMaskBandMerc
-  requirements:
-    - !type:CharacterDepartmentRequirement
-       inverted: true
-       departments:
-         - Security
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutMasks
-
-- type: loadout
-  id: LoadoutMaskBandBrown
-  category: Mask
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingMaskBandBrown
-  requirements:
-    - !type:CharacterDepartmentRequirement
-       inverted: true
-       departments:
-         - Security
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutMasks
-
 # Gaiters
 - type: loadout
-  id: LoadoutMaskNeckGaiter
+  id: LoadoutMaskNeckGaiterWhite
   category: Mask
   cost: 1
   exclusive: true
+  customColorTint: true
   items:
-    - ClothingMaskNeckGaiter
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutMasks
-
-- type: loadout
-  id: LoadoutMaskNeckGaiterRed
-  category: Mask
-  cost: 1
-  exclusive: true
-  items:
-    - ClothingMaskNeckGaiterRed
+    - ClothingMaskNeckGaiterWhite
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMasks

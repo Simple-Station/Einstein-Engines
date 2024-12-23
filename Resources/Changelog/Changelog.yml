@@ -8713,3 +8713,77 @@ Entries:
   id: 6583
   time: '2024-12-18T01:32:32.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1357
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Fixed the Saltern bridge being a hard vacuum at roundstart.
+  id: 6584
+  time: '2024-12-19T22:52:32.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1359
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added labels to all generic colorable items in loadouts, so that players
+        can see which items have custom colors as customization options.
+    - type: Remove
+      message: >-
+        Removed all 'specific color' variants of colorable items from Loadouts,
+        such as "Blue Jumpsuit" when a colorable jumpsuit exists. 
+  id: 6585
+  time: '2024-12-21T18:02:28.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1364
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added colorable variants of fingerless gloves, headbands, berets,
+        hairflowers, cloth masks, and the neck gaiter.
+  id: 6586
+  time: '2024-12-21T19:25:13.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1365
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Loadouts can now apply modular functions to items upon spawning in.
+    - type: Add
+      message: >-
+        A new LoadoutMakeFollower function, which lets you buy NPC followers in
+        loadouts.
+    - type: Add
+      message: >-
+        added Pet Mice, Cockroach, Mothroach, and Hamster to Loadouts. All of
+        which use the new LoadoutMakeFollower function.
+  id: 6587
+  time: '2024-12-22T10:26:41.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1366
+- author: juniwoofs
+  changes:
+    - type: Add
+      message: two new cuddly friends to the station! (harpy and morty plush)
+  id: 6588
+  time: '2024-12-22T19:24:58.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1369
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Implemented Anti-cheat for Traits. Attempting to join a round with an
+        illegal traits list will result in hilarious consequences.
+  id: 6589
+  time: '2024-12-22T19:55:22.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1358
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Prisoners now spawn with a Pacifier Implant.
+  id: 6590
+  time: '2024-12-22T19:56:21.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1341
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: Fixed jittering displacing your character when shaken.
+  id: 6591
+  time: '2024-12-22T19:57:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1334

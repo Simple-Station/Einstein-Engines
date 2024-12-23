@@ -381,6 +381,13 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<int> GameTraitsDefaultPoints =
             CVarDef.Create("game.traits_default_points", 10, CVar.REPLICATED);
 
+        /// <summary>
+        ///     Whether the game will SMITE people who used cheat engine to spawn with all of the traits.
+        ///     Illegal trait totals will still be logged even if this is disabled.
+        ///     If you are intending to decrease the trait points availability, or modify the costs of traits, consider temporarily disabling this.
+        /// </summary>
+        public static readonly CVarDef<bool> TraitsPunishCheaters =
+            CVarDef.Create("game.traits_punish_cheaters", true, CVar.REPLICATED);
 
         /// <summary>
         ///     Whether to allow characters to select loadout items.

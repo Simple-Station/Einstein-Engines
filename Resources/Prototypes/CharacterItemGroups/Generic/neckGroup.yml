@@ -26,15 +26,7 @@
     - type: loadout
       id: LoadoutNeckScarfStripedZebra
     - type: loadout
-      id: LoadoutNeckTieRed
-    - type: loadout
       id: LoadoutNeckTieWhite
-    - type: loadout
-      id: LoadoutNeckTieBlack
-    - type: loadout
-      id: LoadoutNeckTieBlue
-    - type: loadout
-      id: LoadoutNeckTieGreen
     - type: loadout
       id: LoadoutItemsPrideLGBTPin
     - type: loadout
@@ -54,28 +46,10 @@
     - type: loadout
       id: LoadoutItemsPrideTransPin
     - type: loadout
-      id: LoadoutNeckBedsheetBlack
-    - type: loadout
-      id: LoadoutNeckBedsheetBlue
-    - type: loadout
-      id: LoadoutNeckBedsheetBrown
-    - type: loadout
       id: LoadoutNeckBedsheetCosmos
-    - type: loadout
-      id: LoadoutNeckBedsheetGreen
-    - type: loadout
-      id: LoadoutNeckBedsheetGrey
-    - type: loadout
-      id: LoadoutNeckBedsheetOrange
-    - type: loadout
-      id: LoadoutNeckBedsheetPurple
     - type: loadout
       id: LoadoutNeckBedsheetRainbow
     - type: loadout
-      id: LoadoutNeckBedsheetRed
-    - type: loadout
       id: LoadoutNeckBedsheetWhite
-    - type: loadout
-      id: LoadoutNeckBedsheetYellow
     - type: loadout
       id: LoadoutNeckBedsheetNT
