@@ -400,13 +400,11 @@
     weight: 5
     duration: 30
   - type: VentCrittersRule
-    entries:
-    - id: MobAdultSlimesBlueAngry
-      prob: 0.02
-    - id: MobAdultSlimesGreenAngry
-      prob: 0.02
-    - id: MobAdultSlimesYellowAngry
-      prob: 0.02
+    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+      children:
+      - id: MobAdultSlimesBlueAngry
+      - id: MobAdultSlimesGreenAngry
+      - id: MobAdultSlimesYellowAngry
 
 - type: entity
   id: SpiderSpawn
@@ -421,9 +419,8 @@
     weight: 5
     duration: 30
   - type: VentCrittersRule
-    entries:
-    - id: MobGiantSpiderAngry
-      prob: 0.05
+    table: # DeltaV: EntityTable instead of spawn entries
+      id: MobGiantSpiderAngry
 
 - type: entity
   id: SpiderClownSpawn
@@ -439,9 +436,8 @@
     duration: 30
   - type: VentCrittersRule
     playerRatio: 35 # DeltaV: Clown spiders are very robust
-    entries:
-    - id: MobClownSpider
-      prob: 0.05
+    table: # DeltaV: EntityTable instead of spawn entries
+      id: MobClownSpider
 
 - type: entity
   id: ZombieOutbreak
