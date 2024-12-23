@@ -6,10 +6,10 @@
   - type: StationEvent
     startAnnouncement: true
     earliestStart: 20
-    reoccurrenceDelay: 12
-    minimumPlayers: 15
+    reoccurrenceDelay: 24
+    minimumPlayers: 20
     weight: 6 # Really weak compared to other critters
-    duration: 60
+    duration: 30
   - type: VentCrittersRule
     entries:
     - id: MobXeno
@@ -61,7 +61,7 @@
     earliestStart: 15
     minimumPlayers: 1
     weight: 4
-    duration: 60
+    duration: 30
   - type: VentCrittersRule
     entries:
     - id: MobMothroach
