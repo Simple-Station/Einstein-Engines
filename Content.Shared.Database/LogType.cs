@@ -105,5 +105,11 @@ public enum LogType
     /// <remarks>
     /// This is a default value used by <c>PlayerRateLimitManager</c>, though users can use different log types.
     /// </remarks>
-    RateLimited = 91
+    RateLimited = 91,
+    InteractUsing = 92,
+
+    /// <summary>
+    /// Storage & entity-storage related interactions
+    /// </summary>
+    Storage = 93,
 }

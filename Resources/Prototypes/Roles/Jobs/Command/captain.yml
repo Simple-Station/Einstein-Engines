@@ -27,7 +27,7 @@
     - !type:CharacterWhitelistRequirement
   weight: 20
   startingGear: CaptainGear
-  icon: "JobIconCaptain"
+  icon: JobIconCaptain
   requireAdminNotify: true
   joinNotifyCrew: true
   supervisors: job-supervisors-centcom

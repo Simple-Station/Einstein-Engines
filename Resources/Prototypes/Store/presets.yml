@@ -1,37 +1,38 @@
-- type: storePreset
+- type: entity
   id: StorePresetUplink
-  storeName: Uplink
-  categories:
-  - UplinkWeapons
-  - UplinkAmmo
-  - UplinkExplosives
-  - UplinkMisc
-  - UplinkBundles
-  - UplinkTools
-  - UplinkUtility
-  - UplinkImplants
-  - UplinkJob
-  - UplinkArmor
-  - UplinkPointless
-  - UplinkSales
-  currencyWhitelist:
-  - Telecrystal
-  sales:
-    enabled: true
-    minMultiplier: 0.2
-    maxMultiplier: 0.8
-    minItems: 3
-    maxItems: 8
-    salesCategory: UplinkSales
+  abstract: true
+  components:
+  - type: Store
+    name: store-preset-name-uplink
+    categories:
+    - UplinkWeaponry
+    - UplinkAmmo
+    - UplinkExplosives
+    - UplinkWearables
+    - UplinkChemicals
+    - UplinkDeception
+    - UplinkDisruption
+    - UplinkImplants
+    - UplinkJob
+    - UplinkAllies
+    - UplinkPointless
+    - UplinkSales
+    currencyWhitelist:
+    - Telecrystal
+    balance:
+      Telecrystal: 0
 
-- type: storePreset
+- type: entity
   id: StorePresetSpellbook
-  storeName: Spellbook
-  categories:
-  - SpellbookOffensive    #Fireball, Rod Form
-  - SpellbookDefensive    #Magic Missile, Wall of Force
-  - SpellbookUtility      #Body Swap, Lich, Teleport, Knock, Polymorph
-  - SpellbookEquipment    #Battlemage Robes, Staff of Locker
-  - SpellbookEvents       #Summon Weapons, Summon Ghosts
-  currencyWhitelist:
+  abstract: true
+  components:
+  - type: Store
+    name: store-preset-name-spellbook
+    categories:
+    - SpellbookOffensive    #Fireball, Rod Form
+    - SpellbookDefensive    #Magic Missile, Wall of Force
+    - SpellbookUtility      #Body Swap, Lich, Teleport, Knock, Polymorph
+    - SpellbookEquipment    #Battlemage Robes, Staff of Locker
+    - SpellbookEvents       #Summon Weapons, Summon Ghosts
+    currencyWhitelist:
     - WizCoin

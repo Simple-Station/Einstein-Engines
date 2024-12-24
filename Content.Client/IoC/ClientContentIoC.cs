@@ -53,8 +53,8 @@ namespace Content.Client.IoC
             collection.Register<DocumentParsingManager>();
             collection.Register<ContentReplayPlaybackManager>();
             collection.Register<ISharedPlaytimeManager, JobRequirementsManager>();
-            IoCManager.Register<JoinQueueManager>();
-            IoCManager.Register<DiscordAuthManager>();
+            collection.Register<JoinQueueManager>();
+            collection.Register<DiscordAuthManager>();
             collection.Register<PlayerRateLimitManager>();
             collection.Register<SharedPlayerRateLimitManager, PlayerRateLimitManager>();
         }

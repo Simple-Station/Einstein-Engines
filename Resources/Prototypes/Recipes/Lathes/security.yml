@@ -725,6 +725,15 @@
     Uranium: 240
 
 - type: latheRecipe
+  id: WeaponFlareGunSecurity
+  result: WeaponFlareGunSecurity
+  category: Weapons
+  completetime: 6
+  materials:
+    Plastic: 100
+    Steel: 400
+
+- type: latheRecipe
   id: WeaponDisabler
   result: WeaponDisabler
   category: Weapons

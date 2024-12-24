@@ -5,15 +5,14 @@ using Content.Server.Atmos.Piping.Unary.Components;
 using Content.Server.DeviceNetwork;
 using Content.Server.DeviceNetwork.Components;
 using Content.Server.DeviceNetwork.Systems;
-using Content.Server.NodeContainer;
 using Content.Server.NodeContainer.EntitySystems;
 using Content.Server.NodeContainer.Nodes;
 using Content.Server.Power.Components;
+using Content.Server.Power.EntitySystems;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Piping.Unary.Components;
 using JetBrains.Annotations;
 using Robust.Server.GameObjects;
-using Content.Server.Power.EntitySystems;
 using Content.Shared.UserInterface;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Database;
@@ -143,7 +142,7 @@ namespace Content.Server.Atmos.Piping.Unary.EntitySystems
 
         private void OnToggleMessage(EntityUid uid, GasThermoMachineComponent thermoMachine, GasThermomachineToggleMessage args)
         {
-            var powerState = _power.TryTogglePower(uid);
+            var powerState = _power.IsPowered(uid);
             _adminLogger.Add(LogType.AtmosPowerChanged, $"{ToPrettyString(args.Actor)} turned {(powerState ? "On" : "Off")} {ToPrettyString(uid)}");
             DirtyUI(uid, thermoMachine);
         }

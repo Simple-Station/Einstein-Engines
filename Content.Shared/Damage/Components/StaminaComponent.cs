@@ -46,7 +46,7 @@ public sealed partial class StaminaComponent : Component
     /// DrainRate how much it changes per tick, and ModifiesSpeed if it should slow down the user.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public Dictionary<EntityUid, (float DrainRate, bool ModifiesSpeed)> ActiveDrains = new();
+    public Dictionary<NetEntity, (float DrainRate, bool ModifiesSpeed)> ActiveDrains = new();
 
     /// <summary>
     /// How long will this mob be stunned for?

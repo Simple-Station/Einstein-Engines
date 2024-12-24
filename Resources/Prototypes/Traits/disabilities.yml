@@ -270,7 +270,7 @@
     - !type:TraitAddComponent
       components:
         - type: Clumsy
-          clumsyDamage:
+          gunShootFailDamage:
             types:
               Blunt: 5
               Piercing: 4

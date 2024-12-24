@@ -10,6 +10,7 @@ using Content.Shared.DeltaV.CCVars;
 using Content.Shared.Explosion.Components;
 using Content.Shared.FixedPoint;
 using Content.Shared.Flash.Components;
+using Content.Shared.Store.Components;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 
@@ -64,7 +65,8 @@ public sealed class PacifiedRoundEnd : EntitySystem
         var uplinkQuery = EntityQueryEnumerator<StoreComponent>();
         while (uplinkQuery.MoveNext(out var uid, out var store))
         {
-            store.Listings.Clear();
+            store.FullListingsCatalog.Clear();
+            store.LastAvailableListings.Clear();
         }
     }
 }

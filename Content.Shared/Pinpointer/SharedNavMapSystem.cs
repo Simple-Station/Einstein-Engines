@@ -25,7 +25,7 @@ public abstract class SharedNavMapSystem : EntitySystem
     [Robust.Shared.IoC.Dependency] private readonly TagSystem _tagSystem = default!;
     [Robust.Shared.IoC.Dependency] private readonly INetManager _net = default!;
 
-    private readonly string[] _wallTags = ["Wall", "Window"];
+    private static readonly ProtoId<TagPrototype>[] WallTags = {"Wall", "Window"};
     private EntityQuery<NavMapDoorComponent> _doorQuery;
 
     public override void Initialize()
@@ -59,7 +59,7 @@ public abstract class SharedNavMapSystem : EntitySystem
         if (_doorQuery.HasComp(uid))
             return NavMapChunkType.Airlock;
 
-        if (_tagSystem.HasAnyTag(uid, _wallTags))
+        if (_tagSystem.HasAnyTag(uid, WallTags))
             return NavMapChunkType.Wall;
 
         return NavMapChunkType.Invalid;

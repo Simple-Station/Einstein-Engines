@@ -34,6 +34,9 @@
     solution: food
   - type: TrashOnSolutionEmpty
     solution: food
+  - type: Tag
+    tags:
+      - Ingredient
 
 - type: entity
   abstract: true
@@ -272,6 +275,9 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 15
+  - type: Tag
+    tags:
+      - Ingredient
 
 - type: entity
   name: dough
@@ -302,6 +308,9 @@
       - dough
   - type: Sprite
     state: dough-slice
+  - type: Tag
+    tags:
+    - Slice
 
 - type: entity
   name: cornmeal dough
@@ -331,6 +340,9 @@
       - dough
   - type: Sprite
     state: cornmealdough-slice
+  - type: Tag
+    tags:
+    - Slice
 
 - type: entity
   name: tortilla dough
@@ -363,6 +375,9 @@
   - type: Construction
     graph: Tortilla
     node: start
+  - type: Tag
+    tags:
+    - Slice
 
 - type: entity
   name: flattened tortilla dough
@@ -418,6 +433,9 @@
   - type: Construction
     graph: Pizza
     node: flat
+  - type: SliceableFood
+    count: 3
+    slice: FoodCroissantRaw
 
 - type: entity
   name: pizza bread
@@ -448,6 +466,58 @@
   components:
   - type: Sprite
     state: butter
+  - type: Slippery
+  - type: StepTrigger
+    intersectRatio: 0.2
+  - type: CollisionWake
+    enabled: false
+  - type: Physics
+    bodyType: Dynamic
+  - type: Fixtures
+    fixtures:
+      slips:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.3,-0.2,0.3,0.2"
+        layer:
+        - SlipLayer
+        hard: false
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.3,-0.2,0.3,0.2"
+        density: 10
+        mask:
+        - ItemMask
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 18
+        reagents:
+        - ReagentId: Butter
+          Quantity: 15
+  - type: SliceableFood
+    count: 3
+    slice: FoodButterSlice
+
+- type: entity
+  name: butter slice
+  parent: FoodBakingBase
+  id: FoodButterSlice
+  description: A pat of delicious, golden, fatty goodness.
+  components:
+  - type: Sprite
+    state: butter-slice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 6
+        reagents:
+        - ReagentId: Butter
+          Quantity: 5
+  - type: Tag
+    tags:
+    - Slice
 
 - type: entity
   name: stick of cannabis butter
@@ -503,6 +573,13 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 5
+  - type: Tag
+    tags:
+    - Slice
+  - type: FoodSequenceElement
+    entries:
+      Taco: CheeseTaco
+      Burger: CheeseBurger
 
 - type: entity
   name: chèvre log
@@ -550,6 +627,9 @@
           Quantity: 1
         - ReagentId: Vitamin
           Quantity: 0.2
+  - type: Tag
+    tags:
+    - Slice
 
 - type: entity
   name: tofu
@@ -595,6 +675,9 @@
           Quantity: 3
         - ReagentId: Nutriment
           Quantity: 2
+  - type: Tag
+    tags:
+    - Slice
 
 - type: entity
   name: burned mess
@@ -648,6 +731,9 @@
       reagents:
       - ReagentId: CocoaPowder
         Quantity: 2
+  - type: Tag
+    tags:
+      - Ingredient
 
 - type: entity
   parent: BaseFoodCondimentPacket
@@ -668,3 +754,22 @@
   - type: SolutionContainerVisuals
     maxFillLevels: 2
     fillBaseName: packet-solid-
+
+- type: entity
+  name: raw croissant
+  parent: FoodBakingBase
+  id: FoodCroissantRaw
+  description: Buttery, flaky goodness waiting to happen.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - dough
+  - type: Sprite
+    state: croissant-raw
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 4
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 3

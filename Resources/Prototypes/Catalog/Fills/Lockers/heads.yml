@@ -283,7 +283,6 @@
       - id: JetpackSecurityFilled
       - id: BoxEncryptionKeySecurity
       - id: HoloprojectorSecurity
-      - id: BookSecretDocuments
       - id: BoxPDASecurity # Delta-V
       - id: HoSIDCard # Delta-V
       - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
@@ -311,7 +310,6 @@
       - id: SecurityTechFabCircuitboard
       - id: BoxEncryptionKeySecurity
       - id: HoloprojectorSecurity
-      - id: BookSecretDocuments
       - id: BoxPDASecurity # Delta-V
       - id: HoSIDCard # Delta-V
       - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!

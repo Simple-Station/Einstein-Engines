@@ -56,7 +56,7 @@ public sealed class EscapeInventorySystem : EntitySystem
         if (!args.HasDirectionalMovement)
             return;
 
-        if (!_containerSystem.TryGetContainingContainer(uid, out var container) || !_actionBlockerSystem.CanInteract(uid, container.Owner))
+        if (!_containerSystem.TryGetContainingContainer((uid, null, null), out var container) || !_actionBlockerSystem.CanInteract(uid, container.Owner))
             return;
 
         // Make sure there's nothing stopped the removal (like being glued)
@@ -86,8 +86,7 @@ public sealed class EscapeInventorySystem : EntitySystem
 
         var doAfterEventArgs = new DoAfterArgs(EntityManager, user, component.BaseResistTime * multiplier, new EscapeInventoryEvent(), user, target: container)
         {
-            BreakOnTargetMove = false,
-            BreakOnUserMove = true,
+            BreakOnMove = true,
             BreakOnDamage = true,
             NeedHand = false
         };

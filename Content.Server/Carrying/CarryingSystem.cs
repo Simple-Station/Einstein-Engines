@@ -139,7 +139,7 @@ namespace Content.Server.Carrying
 
             args.ItemUid = virtItem.BlockingEntity;
 
-            args.ThrowStrength *= _contests.MassContest(uid, virtItem.BlockingEntity, false, 2f)
+            args.ThrowSpeed *= _contests.MassContest(uid, virtItem.BlockingEntity, false, 2f)
                             * _contests.StaminaContest(uid, virtItem.BlockingEntity);
         }
 
@@ -250,8 +250,7 @@ namespace Content.Server.Carrying
             var ev = new CarryDoAfterEvent();
             var args = new DoAfterArgs(EntityManager, carrier, length, ev, carried, target: carried)
             {
-                BreakOnTargetMove = true,
-                BreakOnUserMove = true,
+                BreakOnMove = true,
                 NeedHand = true
             };
 

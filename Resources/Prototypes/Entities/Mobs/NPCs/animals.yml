@@ -1397,7 +1397,7 @@
     description: ghost-role-information-monkey-description
   - type: GhostTakeoverAvailable
   - type: Clumsy
-    clumsyDamage:
+    gunShootFailDamage:
       types:
         Blunt: 5
         Piercing: 4
@@ -1448,8 +1448,7 @@
   components:
     # make the player a traitor once its taken
   - type: AutoTraitor
-    giveUplink: false
-    giveObjectives: false
+    profile: TraitorReinforcement
 
 - type: entity
   id: MobMonkeySyndicateAgentNukeops # Reinforcement exclusive to nukeops uplink
@@ -1581,7 +1580,7 @@
   description: Cousins to the sentient race of lizard people, kobolds blend in with their natural habitat and are as nasty as monkeys; ready to pull out your hair and stab you to death.
   components:
   - type: Clumsy
-    clumsyDamage:
+    gunShootFailDamage:
       types:
         Blunt: 2
         Piercing: 7
@@ -1613,8 +1612,7 @@
   components:
     # make the player a traitor once its taken
   - type: AutoTraitor
-    giveUplink: false
-    giveObjectives: false
+    profile: TraitorReinforcement
 
 - type: entity
   id: MobKoboldSyndicateAgentNukeops # Reinforcement exclusive to nukeops uplink
@@ -1756,6 +1754,7 @@
     tags:
     - Trash
     - VimPilot
+    - ChefPilot
     - Mouse
     - Meat
   - type: Respirator
@@ -1798,6 +1797,11 @@
     interfaces:
       enum.SurgeryUIKey.Key:
         type: SurgeryBui
+  - type: FoodSequenceElement
+    entries:
+      Taco: RatTaco
+      Burger: RatBurger
+      Skewer: RatSkewer
 
 - type: entity
   parent: MobMouse
@@ -1866,6 +1870,9 @@
         Base: dead-1
       Dead:
         Base: splat-1
+  - type: Item
+    size: Tiny
+    heldPrefix: 1
 
 - type: entity
   parent: MobMouse
@@ -1892,6 +1899,44 @@
         Base: dead-2
       Dead:
         Base: splat-2
+  - type: Item
+    size: Tiny
+    heldPrefix: 2
+
+- type: entity
+  name: cancer mouse
+  description: Toxic. Squeak!
+  parent: MobMouse
+  id: MobMouseCancer
+  components:
+  - type: Sprite
+    color: LightGreen
+  - type: PointLight
+    color: LightGreen
+    radius: 5
+    energy: 5
+    netsync: false
+  - type: RadiationSource
+    intensity: 0.3
+  - type: Bloodstream
+    bloodReagent: UnstableMutagen
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 3
+        - ReagentId: Uranium
+          Quantity: 10
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatRat
+      amount: 1
+    - id: SheetUranium1
+      amount: 1
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Zombie
 
 - type: entity
   name: lizard #Weh
@@ -2413,7 +2458,7 @@
     - DoorBumpOpener
     - FootstepSound
   - type: Tool # Open door from xeno.yml.
-    speed: 1.5
+    speedModifier: 1.5
     qualities:
       - Prying
     useSound:
@@ -3419,6 +3464,7 @@
   - type: Tag
     tags:
     - VimPilot
+    - ChefPilot
     - Trash
     - Hamster
     - Meat
