@@ -89,6 +89,6 @@
     solution: ammo
   - type: SolutionInjectOnProjectileHit
     transferAmount: 9
-    blockSlots: NONE #shouldn't be blocked by a mask
+    solution: ammo
   - type: InjectableSolution
     solution: ammo
