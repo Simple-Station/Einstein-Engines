@@ -54,7 +54,7 @@
     sprite: Objects/Storage/boxes.rsi
     state: box_security
   product: CrateSecuritySupplies
-  cost: 500
+  cost: 1000
   category: cargoproduct-category-name-security
   group: market
 
