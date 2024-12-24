@@ -54,7 +54,6 @@
 ## ERT Leader
 
 - type: entity
-  parent: EventHumanoidMindShielded
   id: RandomHumanoidSpawnerERTLeader
   name: ERT leader
   suffix: ERTRole, Basic
