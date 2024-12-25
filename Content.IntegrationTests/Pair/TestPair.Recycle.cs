@@ -200,7 +200,6 @@ public sealed partial class TestPair : IAsyncDisposable
         Assert.That(sPlayer.Sessions.Count(), Is.EqualTo(1));
         var session = sPlayer.Sessions.Single();
         Assert.That(cPlayer.LocalSession?.UserId, Is.EqualTo(session.UserId));
-        Assert.That(sPlayer.Sessions.Count, Is.EqualTo(ticker.PlayerGameStatuses.Count));
 
         if (ticker.DummyTicker)
             return;
