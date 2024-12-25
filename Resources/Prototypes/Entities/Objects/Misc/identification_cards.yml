@@ -1094,3 +1094,17 @@
   - type: PresetIdCard
     job: SeniorOfficer
 
+- type: entity
+  parent: IDCardStandard
+  id: AdminAssistantIDCard
+  name: administrative assistant ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: silver
+    - sprite: DeltaV/Objects/Misc/id_cards.rsi
+      state: idadminassistant
+  - type: Item
+    heldPrefix: silver
+  - type: PresetIdCard
+    job: AdministrativeAssistant
