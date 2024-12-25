@@ -37,7 +37,7 @@ public sealed partial class StartingGearPrototype : IPrototype, IInheritingProto
 
     /// <inheritdoc/>
     [ParentDataField(typeof(AbstractPrototypeIdArraySerializer<StartingGearPrototype>))]
-    public string[]? Parents { get; private set; }`
+    public string[]? Parents { get; private set; }
 
     /// <inheritdoc/>
     [AbstractDataField]
