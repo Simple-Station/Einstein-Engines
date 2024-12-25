@@ -334,7 +334,7 @@ public sealed partial class StaminaSystem : EntitySystem
             return;
 
         // If theres no source, we assume its the target that caused the drain.
-        var actualSource = GetNetEntity(source) ?? GetNetEntity(target);
+        var actualSource = source ?? target;
 
         if (enabled)
         {
@@ -368,11 +368,11 @@ public sealed partial class StaminaSystem : EntitySystem
             if (comp.ActiveDrains.Count > 0)
                 foreach (var (source, (drainRate, modifiesSpeed)) in comp.ActiveDrains)
                     TakeStaminaDamage(uid,
-                        drainRate * frameTime,
-                        comp,
-                        source: GetEntity(source),
-                        visual: false,
-                        allowsSlowdown: modifiesSpeed);
+                    drainRate * frameTime,
+                    comp,
+                    source: source,
+                    visual: false,
+                    allowsSlowdown: modifiesSpeed);
             // Shouldn't need to consider paused time as we're only iterating non-paused stamina components.
             var nextUpdate = comp.NextUpdate;
 
