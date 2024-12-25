@@ -67,13 +67,16 @@ public sealed class UserDbDataManager : IPostInjectInit
         // As such, this task must NOT throw a non-cancellation error!
         try
         {
-            await Task.WhenAll(
-                _prefs.LoadData(session, cancel),
-                _playTimeTracking.LoadData(session, cancel));
+            var tasks = new List<Task>();
+            foreach (var action in _onLoadPlayer)
+                tasks.Add(action(session, cancel));
 
+            await Task.WhenAll(tasks);
             cancel.ThrowIfCancellationRequested();
-            _prefs.SanitizeData(session);
 
+            foreach (var action in _onFinishLoad)
+                action(session);
+            _prefs.SanitizeData(session);
             _sawmill.Verbose($"Load complete for user {session}");
         }
         catch (OperationCanceledException)

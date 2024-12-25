@@ -54,7 +54,7 @@ namespace Content.Server.Preferences.Managers
 
             if (!_cachedPlayerPrefs.TryGetValue(userId, out var prefsData) || !prefsData.PrefsLoaded)
             {
-                Logger.WarningS("prefs", $"User {userId} tried to modify preferences before they loaded.");
+                _sawmill.Error($"User {userId} tried to modify preferences before they loaded.");
                 return;
             }
 
@@ -231,6 +231,7 @@ namespace Content.Server.Preferences.Managers
             var data = _cachedPlayerPrefs[session.UserId];
             DebugTools.Assert(data.Prefs != null);
             data.Prefs = SanitizePreferences(session, data.Prefs, _dependencies);
+            _sawmill.Debug("here");
         }
 
         public void OnClientDisconnected(ICommonSession session)
