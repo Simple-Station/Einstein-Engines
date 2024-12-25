@@ -76,6 +76,7 @@
       - NotekeeperCartridge
       - NewsReaderCartridge
       - CrimeAssistCartridge
+      - NanoChatCartridge
 
 - type: entity
   parent: BasePDA
@@ -115,6 +116,7 @@
       - NotekeeperCartridge
       - NewsReaderCartridge
       - CrimeAssistCartridge
+      - NanoChatCartridge # DeltaV
 
 - type: entity
   parent: BasePDA
@@ -154,6 +156,7 @@
       - NotekeeperCartridge
       - NewsReaderCartridge
       - CrimeAssistCartridge
+      - NanoChatCartridge
 
 - type: entity
   parent: SyndiPDA
