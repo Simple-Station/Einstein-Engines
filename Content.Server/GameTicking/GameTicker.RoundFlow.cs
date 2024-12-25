@@ -578,7 +578,7 @@ namespace Content.Server.GameTicking
 
             DisallowLateJoin = false;
             _playerGameStatuses.Clear();
-            _sawmill.Error($"Resetting cleanup with {_playerManager.Sessions.Length} players");
+            
             foreach (var session in _playerManager.Sessions)
                 _playerGameStatuses[session.UserId] = LobbyEnabled ? PlayerGameStatus.NotReadyToPlay : PlayerGameStatus.ReadyToPlay;
         }
