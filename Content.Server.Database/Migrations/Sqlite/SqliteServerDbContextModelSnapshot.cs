@@ -1554,7 +1554,7 @@ namespace Content.Server.Database.Migrations.Sqlite
                                 .ValueGeneratedOnAdd()
                                 .HasColumnType("INTEGER")
                                 .HasDefaultValue(0)
-                                .HasColumnName("hwid__type");
+                                .HasColumnName("hwid_type");
 
                             b1.HasKey("ConnectionLogId");
 
@@ -1611,7 +1611,7 @@ namespace Content.Server.Database.Migrations.Sqlite
                                 .ValueGeneratedOnAdd()
                                 .HasColumnType("INTEGER")
                                 .HasDefaultValue(0)
-                                .HasColumnName("last_seen_hwid__type");
+                                .HasColumnName("last_seen_hwid_type");
 
                             b1.HasKey("PlayerId");
 
@@ -1698,7 +1698,7 @@ namespace Content.Server.Database.Migrations.Sqlite
                                 .ValueGeneratedOnAdd()
                                 .HasColumnType("INTEGER")
                                 .HasDefaultValue(0)
-                                .HasColumnName("hwid__type");
+                                .HasColumnName("hwid_type");
 
                             b1.HasKey("ServerBanId");
 
@@ -1775,7 +1775,7 @@ namespace Content.Server.Database.Migrations.Sqlite
                                 .ValueGeneratedOnAdd()
                                 .HasColumnType("INTEGER")
                                 .HasDefaultValue(0)
-                                .HasColumnName("hwid__type");
+                                .HasColumnName("hwid_type");
 
                             b1.HasKey("ServerRoleBanId");
 

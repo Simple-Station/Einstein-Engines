@@ -580,18 +580,13 @@ namespace Content.Server.GameTicking
             _playerGameStatuses.Clear();
             _sawmill.Error($"Resetting cleanup with {_playerManager.Sessions.Length} players");
             foreach (var session in _playerManager.Sessions)
-            {
                 _playerGameStatuses[session.UserId] = LobbyEnabled ? PlayerGameStatus.NotReadyToPlay : PlayerGameStatus.ReadyToPlay;
-            }
         }
 
         public bool DelayStart(TimeSpan time)
         {
             if (_runLevel != GameRunLevel.PreRoundLobby)
-            {
                 return false;
-            }
-
             _roundStartTime += time;
 
             RaiseNetworkEvent(new TickerLobbyCountdownEvent(_roundStartTime, Paused));
