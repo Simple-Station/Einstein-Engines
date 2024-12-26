@@ -655,8 +655,12 @@
   components:
   - type: Sprite
     layers:
-    - state: gold
-    - state: ert_commander
+    - state: centcom
+    - state: departmenthead
+      color: "#1B67A5"
+    - state: subdepartment
+      color: "#1B67A5"
+    - state: captain
   - type: PresetIdCard
     job: ERTLeader
   - type: Item
@@ -669,8 +673,12 @@
   components:
   - type: Sprite
     layers:
-    - state: gold
-    - state: ert_chaplain # we have the sprite for the id but dont have chaplain ERT equipment for now.
+    - state: centcom
+    - state: departmenthead
+      color: "#1B67A5"
+    - state: subdepartment
+      color: "#1B67A5"
+    - state: chaplain
   - type: PresetIdCard
     job: ERTChaplain
   - type: Item
@@ -683,8 +691,12 @@
   components:
   - type: Sprite
     layers:
-    - state: gold
-    - state: ert_engineer
+    - state: centcom
+    - state: departmenthead
+      color: "#1B67A5"
+    - state: subdepartment
+      color: "#F39F27"
+    - state: stationengineer
   - type: PresetIdCard
     job: ERTEngineer
 
@@ -695,8 +707,12 @@
   components:
   - type: Sprite
     layers:
-    - state: gold
-    - state: ert_janitor
+    - state: centcom
+    - state: departmenthead
+      color: "#1B67A5"
+    - state: subdepartment
+      color: "#58C800"
+    - state: janitor
   - type: PresetIdCard
     job: ERTJanitor
 
@@ -707,8 +723,12 @@
   components:
   - type: Sprite
     layers:
-    - state: gold
-    - state: ert_medic
+    - state: centcom
+    - state: departmenthead
+      color: "#1B67A5"
+    - state: subdepartment
+      color: "#5B97BC"
+    - state: medicaldoctor
   - type: PresetIdCard
     job: ERTMedical
 
@@ -719,8 +739,12 @@
   components:
   - type: Sprite
     layers:
-    - state: gold
-    - state: ert_security
+    - state: centcom
+    - state: departmenthead
+      color: "#1B67A5"
+    - state: subdepartment
+      color: "#1B67A5"
+    - state: cc
   - type: PresetIdCard
     job: ERTSecurity
 
