@@ -444,7 +444,6 @@
       - CrewManifestCartridge
       - NotekeeperCartridge
       - NewsReaderCartridge
-      - AstroNavCartridge
       - NanoChatCartridge # DeltaV
 
 - type: entity
@@ -973,10 +972,8 @@
       - CrewManifestCartridge
       - NotekeeperCartridge
       - NewsReaderCartridge
-      - MedTekCartridge
       - SecWatchCartridge # DeltaV: SecWatch replaces WantedList
       - LogProbeCartridge
-      - AstroNavCartridge
       - NanoChatCartridge # DeltaV
 
 - type: entity
@@ -999,8 +996,6 @@
       - NewsReaderCartridge
       - LogProbeCartridge
       - SecWatchCartridge # DeltaV: SecWatch replaces WantedList
-      - MedTekCartridge
-      - AstroNavCartridge
       - StockTradingCartridge # Delta-V
       - NanoChatCartridge # DeltaV
 
@@ -1119,10 +1114,8 @@
       - CrewManifestCartridge
       - NotekeeperCartridge
       - NewsReaderCartridge
-      - MedTekCartridge
       - SecWatchCartridge # DeltaV: SecWatch replaces WantedList
       - LogProbeCartridge
-      - AstroNavCartridge
       - NanoChatCartridge # DeltaV
 
 - type: entity
@@ -1320,7 +1313,6 @@
     - NewsReaderCartridge
     - CrimeAssistCartridge # DeltaV
     - SecWatchCartridge # DeltaV: SecWatch replaces WantedList
-    - MedTekCartridge
     - NanoChatCartridge # DeltaV
 
 - type: entity
