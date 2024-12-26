@@ -12,6 +12,7 @@ using Content.Server.Station.Components;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
 using Content.Shared.CCVar;
+using Content.Shared.Customization.Systems;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.PDA;
@@ -50,6 +51,7 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
     [Dependency] private readonly InternalEncryptionKeySpawner _internalEncryption = default!;
     [Dependency] private readonly ArrivalsSystem _arrivalsSystem = default!;
     [Dependency] private readonly ContainerSpawnPointSystem _containerSpawnPointSystem = default!;
+    [Dependency] private readonly CharacterRequirementsSystem _characterRequirements = default!;
 
     private bool _randomizeCharacters;
 
@@ -174,6 +176,37 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
         if (prototype?.StartingGear != null)
         {
             var startingGear = _prototypeManager.Index<StartingGearPrototype>(prototype.StartingGear);
+
+            if (profile != null && prototype.ConditionalStartingGear != null)
+            {
+                foreach (var conditionalStartingGear in prototype.ConditionalStartingGear)
+                {
+                    if (!_prototypeManager.TryIndex<StartingGearPrototype>(conditionalStartingGear.Id, out var conditionalGear) ||
+                        !_characterRequirements.CheckRequirementsValid(
+                            conditionalStartingGear.Requirements, prototype, profile, new Dictionary<string, TimeSpan>(), false, conditionalGear,
+                            EntityManager, _prototypeManager, _configurationManager,
+                            out _))
+                        continue;
+
+                    foreach (var (slot, entProtoId) in conditionalGear.Equipment)
+                        startingGear.Equipment[slot] = entProtoId;
+
+                    if (conditionalGear.InnerClothingSkirt != null)
+                        startingGear.InnerClothingSkirt = conditionalGear.InnerClothingSkirt;
+
+                    if (conditionalGear.Satchel != null)
+                        startingGear.Satchel = conditionalGear.Satchel;
+
+                    if (conditionalGear.Duffelbag != null)
+                        startingGear.Duffelbag = conditionalGear.Duffelbag;
+
+                    startingGear.Inhand.AddRange(conditionalGear.Inhand);
+
+                    foreach (var (slot, entProtoIds) in conditionalGear.Storage)
+                        startingGear.Storage[slot].AddRange(entProtoIds);
+                }
+            }
+
             EquipStartingGear(entity.Value, startingGear, raiseEvent: false);
             if (profile != null)
                 EquipIdCard(entity.Value, profile.Name, prototype, station);

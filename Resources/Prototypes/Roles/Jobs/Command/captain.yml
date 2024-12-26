@@ -27,6 +27,11 @@
     - !type:CharacterWhitelistRequirement
   weight: 20
   startingGear: CaptainGear
+  conditionalStartingGear:
+    - id: CaptainPlasmamanGear
+      requirements:
+      - !type:CharacterSpeciesRequirement
+        species: [ Plasmaman ]
   icon: "JobIconCaptain"
   requireAdminNotify: true
   joinNotifyCrew: true
@@ -52,3 +57,9 @@
   innerClothingSkirt: ClothingUniformJumpskirtCaptain
   satchel: ClothingBackpackSatchelCaptainFilled
   duffelbag: ClothingBackpackDuffelCaptainFilled
+
+- type: startingGear
+  id: CaptainPlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitCaptain
+    head: ClothingHeadEnvirohelmCaptain

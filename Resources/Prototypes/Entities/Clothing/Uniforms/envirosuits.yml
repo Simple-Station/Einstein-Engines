@@ -121,6 +121,17 @@
 
 - type: entity
   parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitEnviroslacks
+  name: enviroslacks
+  description: The pet project of a posh plasmaman.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/enviroslacks.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/enviroslacks.rsi
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
   id: ClothingUniformEnvirosuitHoP
   name: head of personnel's envirosuit
   description: It's an envirosuit worn by someone who works in the position of "Head of Personnel".

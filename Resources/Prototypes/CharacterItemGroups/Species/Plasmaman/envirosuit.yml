@@ -1,6 +1,6 @@
 - type: characterItemGroup
   id: LoadoutPlasmamanEnvirosuit
-  minItems: 1
+  minItems: 0
   maxItems: 1
   requirements:
     - !type:CharacterSpeciesRequirement
