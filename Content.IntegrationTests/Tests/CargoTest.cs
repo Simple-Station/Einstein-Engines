@@ -132,7 +132,7 @@ public sealed class CargoTest
                 }
                 catch (Exception e)
                 {
-                    Assert.Fail(proto);
+                    Assert.Fail($"Prototype {proto} failed to spawn! Is your configuration invalid?");
                     return;
                 }
 
