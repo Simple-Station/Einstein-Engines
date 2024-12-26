@@ -1003,7 +1003,6 @@
       - AstroNavCartridge
       - StockTradingCartridge # Delta-V
       - NanoChatCartridge # DeltaV
-      - StockTradingCartridge # DeltaV - StockTrading
 
 - type: entity
   parent: CentcomPDA
