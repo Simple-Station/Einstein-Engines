@@ -126,16 +126,7 @@ public sealed class StockMarketSystem : EntitySystem
             }
 
             // Play confirmation sound if the transaction was successful
-            if (success)
-            {
-                _audio.PlayEntity(
-                    stockMarket.ConfirmSound,
-                    Filter.Empty().AddInRange(_transform.GetMapCoordinates(loader, xform), 0.05f),
-                    loader,
-                    true,
-                    AudioParams.Default.WithMaxDistance(0.05f)
-                );
-            }
+            _audio.PlayEntity(success ? stockMarket.ConfirmSound : stockMarket.DenySound, loader, args.Actor);
         }
         finally
         {
