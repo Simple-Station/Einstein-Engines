@@ -642,121 +642,87 @@
   - type: Sprite
     layers:
     - state: centcom
-    - state: departmenthead
-      color: "#1B67A5"
-    - state: subdepartment
-      color: "#1B67A5"
-    - state: cc
+    - state: idcentcom
   - type: Item
     heldPrefix: blue
-  - type: IdCard
-    jobTitle: Central Commander
-    jobIcon: JobIconNanotrasen
-  - type: Access
-    groups:
-    - AllAccess
-    tags:
-    - CentralCommand
+  - type: PresetIdCard
+    job: CentralCommandOfficial
 
 - type: entity
-  parent: CentcomIDCard
+  parent: IDCardStandard
   id: ERTLeaderIDCard
   name: ERT leader ID card
   components:
   - type: Sprite
     layers:
-    - state: centcom
-    - state: departmenthead
-      color: "#1B67A5"
-    - state: subdepartment
-      color: "#1B67A5"
-    - state: captain
-  - type: IdCard
-    jobTitle: ERT Company Commander
+    - state: gold
+    - state: ert_commander
+  - type: PresetIdCard
+    job: ERTLeader
   - type: Item
     heldPrefix: gold
 
 - type: entity
-  parent: ERTLeaderIDCard
+  parent: IDCardStandard
   id: ERTChaplainIDCard
   name: ERT chaplain ID card
   components:
   - type: Sprite
     layers:
-    - state: centcom
-    - state: departmenthead
-      color: "#1B67A5"
-    - state: subdepartment
-      color: "#C96DBF"
-    - state: chaplain
-  - type: IdCard
-    jobTitle: ERT Soul Officer
+    - state: gold
+    - state: ert_chaplain # we have the sprite for the id but dont have chaplain ERT equipment for now.
+  - type: PresetIdCard
+    job: ERTChaplain
   - type: Item
     heldPrefix: blue
 
 - type: entity
-  parent: ERTChaplainIDCard
+  parent: IDCardStandard
   id: ERTEngineerIDCard
   name: ERT engineer ID card
   components:
   - type: Sprite
     layers:
-    - state: centcom
-    - state: departmenthead
-      color: "#1B67A5"
-    - state: subdepartment
-      color: "#F39F27"
-    - state: stationengineer
-  - type: IdCard
-    jobTitle: ERT Field Engineer
+    - state: gold
+    - state: ert_engineer
+  - type: PresetIdCard
+    job: ERTEngineer
 
 - type: entity
-  parent: ERTChaplainIDCard
+  parent: IDCardStandard
   id: ERTJanitorIDCard
   name: ERT janitor ID card
   components:
   - type: Sprite
     layers:
-    - state: centcom
-    - state: departmenthead
-      color: "#1B67A5"
-    - state: subdepartment
-      color: "#58C800"
-    - state: janitor
-  - type: IdCard
-    jobTitle: ERT Custodian
+    - state: gold
+    - state: ert_janitor
+  - type: PresetIdCard
+    job: ERTJanitor
 
 - type: entity
-  parent: ERTChaplainIDCard
+  parent: IDCardStandard
   id: ERTMedicIDCard
   name: ERT medic ID card
   components:
   - type: Sprite
     layers:
-    - state: centcom
-    - state: departmenthead
-      color: "#1B67A5"
-    - state: subdepartment
-      color: "#5B97BC"
-    - state: medicaldoctor
-  - type: IdCard
-    jobTitle: ERT Medical Doctor
+    - state: gold
+    - state: ert_medic
+  - type: PresetIdCard
+    job: ERTMedical
 
 - type: entity
-  parent: ERTChaplainIDCard
+  parent: IDCardStandard
   id: ERTSecurityIDCard
   name: ERT security ID card
   components:
   - type: Sprite
     layers:
-    - state: centcom
-    - state: departmenthead
-      color: "#1B67A5"
-    - state: subdepartment
-      color: "#CB0000"
-    - state: securityofficer
-  - type: IdCard
-    jobTitle: ERT Field Officer
+    - state: gold
+    - state: ert_security
+  - type: PresetIdCard
+    job: ERTSecurity
 
 - type: entity
   parent: IDCardStandard
@@ -774,8 +740,8 @@
     - state: cc
   - type: Item
     heldPrefix: blue
-  - type: IdCard
-    jobTitle: Central Commander
+  - type: PresetIdCard
+    job: CentralCommandOfficial
   - type: Access
     tags:
     - Maintenance
@@ -1019,8 +985,8 @@
     - state: cc
   - type: Item
     heldPrefix: blue
-  - type: IdCard
-    jobTitle: Centcom Quarantine Officer
+  - type: PresetIdCard
+    jobTitle: CBURN
 
 - type: entity
   parent: IDCardStandard
