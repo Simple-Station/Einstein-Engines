@@ -8787,3 +8787,13 @@ Entries:
   id: 6591
   time: '2024-12-22T19:57:10.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1334
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added server config options for basic "Soft-Crit". When enabled,
+        characters who are critically injured can still slowly crawl, but are
+        otherwise still helpless and dying.
+  id: 6592
+  time: '2024-12-26T03:50:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1370
