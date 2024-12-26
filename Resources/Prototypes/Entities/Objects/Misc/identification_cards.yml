@@ -1009,7 +1009,7 @@
   - type: Item
     heldPrefix: blue
   - type: PresetIdCard
-    jobTitle: CBURN
+    job: CBURN
 
 - type: entity
   parent: IDCardStandard
