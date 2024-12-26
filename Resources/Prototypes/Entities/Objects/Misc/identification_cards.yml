@@ -801,7 +801,7 @@
   - type: Item
     heldPrefix: blue
   - type: PresetIdCard
-    jobTitle: DeathSquad
+    job: DeathSquad
 
 - type: entity
   name: passenger ID card
