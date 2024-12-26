@@ -777,8 +777,8 @@
     - state: death
   - type: Item
     heldPrefix: blue
-  - type: IdCard
-    jobTitle: Centcom Agent
+  - type: PresetIdCard
+    jobTitle: DeathSquad
 
 - type: entity
   name: passenger ID card
