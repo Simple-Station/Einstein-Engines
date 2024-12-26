@@ -12,19 +12,3 @@
   - AllAccess
   access:
   - CentralCommand
-
-- type: startingGear
-  id: DeathSquadGear
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitDeathSquad
-    back: ClothingBackpackDeathSquadFilled
-    mask: ClothingMaskGasDeathSquad
-    eyes: ClothingEyesHudSecurity
-    ears: ClothingHeadsetAltCentCom
-    gloves: ClothingHandsGlovesCombat
-    outerClothing: ClothingOuterHardsuitDeathsquad
-    shoes: ClothingShoesBootsMagAdv
-    id: DeathsquadPDA
-    pocket1: EnergySword
-    pocket2: EnergyShield
-    belt: ClothingBeltMilitaryWebbingMedFilled
