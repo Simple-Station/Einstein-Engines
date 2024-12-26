@@ -641,8 +641,7 @@
   components:
   - type: Sprite
     layers:
-    - state: centcom
-    - state: idcentcom
+    - state: pda-centcom
   - type: Item
     heldPrefix: blue
   - type: PresetIdCard
@@ -655,8 +654,7 @@
   components:
   - type: Sprite
     layers:
-    - state: gold
-    - state: ert_commander
+    - state: pda-ert
   - type: PresetIdCard
     job: ERTLeader
   - type: Item
@@ -669,8 +667,7 @@
   components:
   - type: Sprite
     layers:
-    - state: gold
-    - state: ert_chaplain # we have the sprite for the id but dont have chaplain ERT equipment for now.
+    - state: pda-ert
   - type: PresetIdCard
     job: ERTChaplain
   - type: Item
@@ -683,8 +680,7 @@
   components:
   - type: Sprite
     layers:
-    - state: gold
-    - state: ert_engineer
+    - state: pda-ert
   - type: PresetIdCard
     job: ERTEngineer
 
@@ -695,8 +691,7 @@
   components:
   - type: Sprite
     layers:
-    - state: gold
-    - state: ert_janitor
+    - state: pda-ert
   - type: PresetIdCard
     job: ERTJanitor
 
@@ -707,8 +702,7 @@
   components:
   - type: Sprite
     layers:
-    - state: gold
-    - state: ert_medic
+    - state: pda-ert
   - type: PresetIdCard
     job: ERTMedical
 
@@ -719,8 +713,7 @@
   components:
   - type: Sprite
     layers:
-    - state: gold
-    - state: ert_security
+    - state: pda-ert
   - type: PresetIdCard
     job: ERTSecurity
 
@@ -732,7 +725,7 @@
   components:
   - type: Sprite
     layers:
-    - state: centcom
+    - state: pda-ert
     - state: departmenthead
       color: "#1B67A5"
     - state: subdepartment
@@ -774,7 +767,7 @@
       color: "#CB0000"
     - state: subdepartment
       color: "#CB0000"
-    - state: death
+    - state: pda-centcom
   - type: Item
     heldPrefix: blue
   - type: PresetIdCard
