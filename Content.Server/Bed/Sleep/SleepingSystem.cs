@@ -230,7 +230,7 @@ namespace Content.Server.Bed.Sleep
         }
 
         /// <summary>
-        /// Try to wake up.
+        /// Try to wake up. Wait, is this in the actual game?
         /// </summary>
         public bool TryWaking(EntityUid uid, SleepingComponent? component = null, bool force = false, EntityUid? user = null)
         {

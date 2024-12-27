@@ -19,8 +19,9 @@ namespace Content.Server.Dragon
         /// <summary>
         /// When any rift is destroyed how long is the dragon weakened for
         /// </summary>
+        /// Being weakened sucks, so I made it shorter.
         [ViewVariables(VVAccess.ReadWrite), DataField("weakenedDuration")]
-        public float WeakenedDuration = 120f;
+        public float WeakenedDuration = 80f;
 
         /// <summary>
         /// Has a rift been destroyed and the dragon in a temporary weakened state?

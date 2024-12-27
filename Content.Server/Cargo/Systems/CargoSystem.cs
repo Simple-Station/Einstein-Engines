@@ -87,6 +87,7 @@ public sealed partial class CargoSystem : SharedCargoSystem
     }
 
     [PublicAPI]
+    //The cargo buff is... not here.
     public void UpdateBankAccount(EntityUid uid, StationBankAccountComponent component, int balanceAdded)
     {
         component.Balance += balanceAdded;

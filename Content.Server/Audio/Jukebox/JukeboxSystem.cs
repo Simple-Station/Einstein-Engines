@@ -118,7 +118,7 @@ public sealed class JukeboxSystem : SharedJukeboxSystem
             if (comp.Selecting)
             {
                 comp.SelectAccumulator += frameTime;
-                if (comp.SelectAccumulator >= 0.5f)
+                if (comp.SelectAccumulator >= 0.4f)
                 {
                     comp.SelectAccumulator = 0f;
                     comp.Selecting = false;

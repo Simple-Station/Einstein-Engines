@@ -5,7 +5,7 @@
   startNode: start
   targetNode: torch
   category: construction-category-tools
-  description: A torch fashioned from some wood.
+  description: A torch fashioned from some wood. Helpful for colonists trying to find the way back home.
   icon: { sprite: Objects/Misc/torch.rsi, state: icon }
   objectType: Item
 

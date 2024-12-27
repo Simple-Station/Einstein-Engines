@@ -68,17 +68,17 @@ public sealed partial class SpaceVillainGame
 
         PlayerChar = new()
         {
-            HpMax = 30,
+            HpMax = 45,
             Hp = 30,
-            MpMax = 10,
+            MpMax = 15,
             Mp = 10
         };
 
         VillainChar = new()
         {
-            HpMax = 45,
+            HpMax = 50,
             Hp = 45,
-            MpMax = 20,
+            MpMax = 25,
             Mp = 20
         };
     }
@@ -109,8 +109,8 @@ public sealed partial class SpaceVillainGame
                 _turtleTracker -= _turtleTracker > 0 ? 1 : 0;
                 break;
             case PlayerAction.Heal:
-                var pointAmount = _random.Next(1, 3);
-                var healAmount = _random.Next(6, 8);
+                var pointAmount = _random.Next(1, 4);
+                var healAmount = _random.Next(6, 12);
                 _latestPlayerActionMessage = Loc.GetString(
                     "space-villain-game-player-heal-message",
                     ("magicPointAmount", pointAmount),
@@ -123,12 +123,12 @@ public sealed partial class SpaceVillainGame
                 _turtleTracker++;
                 break;
             case PlayerAction.Recharge:
-                var chargeAmount = _random.Next(4, 7);
+                var chargeAmount = _random.Next(5, 15);
                 _latestPlayerActionMessage = Loc.GetString(
                     "space-villain-game-player-recharge-message",
                     ("regainedPoints", chargeAmount)
                 );
-                _audioSystem.PlayPvs(arcade.PlayerChargeSound, uid, AudioParams.Default.WithVolume(-4f));
+                _audioSystem.PlayPvs(arcade.PlayerChargeSound, uid, AudioParams.Default.WithVolume(-2f));
                 PlayerChar.Mp += chargeAmount;
                 _turtleTracker -= _turtleTracker > 0 ? 1 : 0;
                 break;

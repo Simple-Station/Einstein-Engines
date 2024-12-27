@@ -33,7 +33,7 @@ public sealed class EmitBuzzWhileDamagedSystem : EntitySystem
         {
             if (_mobState.IsDead(uid, mobStateComponent)
                 || !_mobThreshold.TryGetThresholdForState(uid, MobState.Critical, out var threshold, thresholdsComponent)
-                || damageableComponent.TotalDamage < threshold / 2)
+                || damageableComponent.TotalDamage < threshold / 1.9)
                 continue;
 
             // Check update time
@@ -49,7 +49,7 @@ public sealed class EmitBuzzWhileDamagedSystem : EntitySystem
             emitBuzzOnCritComponent.LastBuzzPopupTime = _gameTiming.CurTime;
             _popupSystem.PopupEntity(Loc.GetString("silicon-behavior-buzz"), uid);
             Spawn("EffectSparks", Transform(uid).Coordinates);
-            _audio.PlayPvs(emitBuzzOnCritComponent.Sound, uid, AudioHelpers.WithVariation(0.05f, _robustRandom));
+            _audio.PlayPvs(emitBuzzOnCritComponent.Sound, uid, AudioHelpers.WithVariation(0.04f, _robustRandom));
         }
     }
 }

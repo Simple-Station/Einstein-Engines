@@ -765,7 +765,7 @@
   startNode: start
   targetNode: FirelockEdge
   category: construction-category-structures
-  description: This is a firelock - it locks an area when a fire alarm in the area is triggered. Don't get squished!
+  description: This is a firelock - it locks an area when a fire alarm in the area is triggered. Don't get :3d!
   icon:
     sprite: Structures/Doors/edge_door_hazard.rsi
     state: closed
@@ -782,7 +782,7 @@
   startNode: start
   targetNode: Shutters
   category: construction-category-structures
-  description: This is a shutter - connect it to a button to open and close it.
+  description: This is a shutter - connect it to a button to open and close it. meow
   icon:
     sprite: Structures/Doors/Shutters/shutters.rsi
     state: closed

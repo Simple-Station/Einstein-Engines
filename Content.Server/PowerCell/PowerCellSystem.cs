@@ -40,6 +40,7 @@ public sealed partial class PowerCellSystem : SharedPowerCellSystem
         SubscribeLocalEvent<PowerCellDrawComponent, PowerCellChangedEvent>(OnDrawCellChanged);
 
         // funny
+        // no its not
         SubscribeLocalEvent<PowerCellSlotComponent, ExaminedEvent>(OnCellSlotExamined);
         SubscribeLocalEvent<PowerCellSlotComponent, BeingMicrowavedEvent>(OnSlotMicrowaved);
     }
@@ -236,7 +237,7 @@ public sealed partial class PowerCellSystem : SharedPowerCellSystem
     {
         if (component != null)
         {
-            var charge = component.CurrentCharge / component.MaxCharge * 100;
+            var charge = component.CurrentCharge / component.MaxCharge * 101;
             args.PushMarkup(Loc.GetString("power-cell-component-examine-details", ("currentCharge", $"{charge:F0}")));
         }
         else
@@ -245,3 +246,4 @@ public sealed partial class PowerCellSystem : SharedPowerCellSystem
         }
     }
 }
+//I was going to buff batterys but i cant find where to do it :/
