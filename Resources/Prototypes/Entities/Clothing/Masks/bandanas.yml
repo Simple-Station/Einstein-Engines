@@ -32,6 +32,17 @@
 
 - type: entity
   parent: ClothingMaskBandanaBase
+  id: ClothingMaskBandWhite
+  name: bandana
+  description: A bandana to make you look cool.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Bandanas/white.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Bandanas/white.rsi
+
+- type: entity
+  parent: ClothingMaskBandanaBase
   id: ClothingMaskBandBlack
   name: black bandana
   description: A black bandana to make you look cool.

@@ -13,7 +13,6 @@ using Content.Shared.Roles;
 using Content.Shared.Storage;
 using Content.Shared.Storage.EntitySystems;
 using Content.Shared.Traits.Assorted.Components;
-using Content.Shared.Whitelist;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -33,6 +32,7 @@ public sealed class LoadoutSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
     [Dependency] private readonly ISerializationManager _serialization = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly IComponentFactory _componentFactory = default!;
 
 
     public override void Initialize()
@@ -103,6 +103,9 @@ public sealed class LoadoutSystem : EntitySystem
                 comp.Owner = loadout.Item1;
                 EntityManager.AddComponent(loadout.Item1, comp);
             }
+
+            foreach (var function in loadoutProto.Functions)
+                function.OnPlayerSpawn(uid, loadout.Item1, _componentFactory, EntityManager, _serialization);
         }
 
 

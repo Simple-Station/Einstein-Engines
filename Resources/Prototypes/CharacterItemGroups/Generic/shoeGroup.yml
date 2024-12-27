@@ -2,23 +2,7 @@
   id: LoadoutShoes
   items:
     - type: loadout
-      id: LoadoutShoesBlack
-    - type: loadout
-      id: LoadoutShoesBlue
-    - type: loadout
-      id: LoadoutShoesBrown
-    - type: loadout
-      id: LoadoutShoesGreen
-    - type: loadout
-      id: LoadoutShoesOrange
-    - type: loadout
-      id: LoadoutShoesPurple
-    - type: loadout
-      id: LoadoutShoesRed
-    - type: loadout
       id: LoadoutShoesWhite
-    - type: loadout
-      id: LoadoutShoesYellow
     - type: loadout
       id: LoadoutShoesGeta
     - type: loadout
@@ -29,10 +13,6 @@
       id: LoadoutShoesBootsLaceup
     - type: loadout
       id: LoadoutShoesBootsWinter
-    - type: loadout
-      id: LoadoutShoesBootsCowboyBrown
-    - type: loadout
-      id: LoadoutShoesBootsCowboyBlack
     - type: loadout
       id: LoadoutShoesBootsCowboyWhite
     - type: loadout

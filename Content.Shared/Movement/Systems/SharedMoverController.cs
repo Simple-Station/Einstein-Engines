@@ -125,9 +125,10 @@ namespace Content.Shared.Movement.Systems
             var canMove = mover.CanMove;
             if (RelayTargetQuery.TryGetComponent(uid, out var relayTarget))
             {
-                if (_mobState.IsIncapacitated(relayTarget.Source) ||
-                    TryComp<SleepingComponent>(relayTarget.Source, out _) ||
-                    !MoverQuery.TryGetComponent(relayTarget.Source, out var relayedMover))
+                if (_mobState.IsDead(relayTarget.Source)
+                    || TryComp<SleepingComponent>(relayTarget.Source, out _)
+                    || !MoverQuery.TryGetComponent(relayTarget.Source, out var relayedMover)
+                    || _mobState.IsCritical(relayTarget.Source) && !_configManager.GetCVar(CCVars.AllowMovementWhileCrit))
                 {
                     canMove = false;
                 }
