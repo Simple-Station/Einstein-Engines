@@ -36,13 +36,13 @@ namespace Content.Server.Animals.Components
         ///     The amount of reagent to be generated on update.
         /// </summary>
         [DataField, ViewVariables(VVAccess.ReadOnly)]
-        public FixedPoint2 QuantityPerUpdate = 25;
+        public FixedPoint2 QuantityPerUpdate = 100;
 
         /// <summary>
         ///     The amount of nutrient consumed on update.
         /// </summary>
         [DataField, ViewVariables(VVAccess.ReadWrite)]
-        public float HungerUsage = 10f;
+        public float HungerUsage = 4f;
 
         /// <summary>
         ///     How long to wait before producing.

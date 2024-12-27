@@ -40,6 +40,10 @@ alert-level-epsilon-announcement = The Epsilon alert level is now in effect. Con
 alert-level-epsilon-instructions = Crewmembers are advised to make their way to an accessible location for efficient termination.
 
 alert-level-test = Test
-alert-level-test-announcement = Err, what the hell? How did you fucking find this? Welp, your fucked.
-alert-level-test-instructions = your fucked, you know that?
+alert-level-test-announcement = Err, what the hell? How did you fucking find this? This isnt supposed to happen! I'm not happy! Perpare to die!!!!!
+alert-level-test-instructions = you're fucked, you know that?
+
+alert-level-varso = Varso
+alert-level-varso-announcement = Warning, your station is about to become a new front for the war with Varso. Security is to arm and command may choose to arm crew members. Prepare for an all out assault on the station. Arrest anyone suspicious. Glory to NT.
+alert-leve-varso-instructions = Prepare for battle.
 

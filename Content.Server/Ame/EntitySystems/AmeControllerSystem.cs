@@ -170,7 +170,7 @@ public sealed class AmeControllerSystem : EntitySystem
                                                             coreCount,
                                                             currentPowerSupply,
                                                             targetedPowerSupply);
-
+        //TODO: make this more fucking readable
         return new AmeControllerBoundUserInterfaceState(powered,
                                                         IsMasterController(uid),
                                                         controller.Injecting,
@@ -279,9 +279,9 @@ public sealed class AmeControllerSystem : EntitySystem
         {
             if (_gameTiming.CurTime > controller.EffectCooldown)
             {
-                _chatManager.SendAdminAlert(user.Value, $"increased AME over safe limit to {controller.InjectionAmount}");
+                _chatManager.SendAdminAlert(user.Value, $"increased AME over safe limit to {controller.InjectionAmount} smite this bozo");
                 _audioSystem.PlayGlobal("/Audio/Misc/adminlarm.ogg",
-                    Filter.Empty().AddPlayers(_adminManager.ActiveAdmins), false, AudioParams.Default.WithVolume(-8f));
+                    Filter.Empty().AddPlayers(_adminManager.ActiveAdmins), false, AudioParams.Default.WithVolume(-3f));
                 controller.EffectCooldown = _gameTiming.CurTime + controller.CooldownDuration;
             }
         }

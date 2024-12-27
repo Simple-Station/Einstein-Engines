@@ -23,7 +23,7 @@ public partial class DelayedDeathSystem : EntitySystem
 
             if (component.DeathTimer >= component.DeathTime && !_mobState.IsDead(ent))
             {
-                var damage = new DamageSpecifier(_prototypes.Index<DamageTypePrototype>("Bloodloss"), 150);
+                var damage = new DamageSpecifier(_prototypes.Index<DamageTypePrototype>("Bloodloss"), 155);
                 _damageable.TryChangeDamage(ent, damage, partMultiplier: 0f);
             }
         }

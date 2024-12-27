@@ -33,14 +33,14 @@ public sealed partial class DragonSystem : EntitySystem
     /// <summary>
     /// Minimum distance between 2 rifts allowed.
     /// </summary>
-    private const int RiftRange = 15;
+    private const int RiftRange = 10;
 
     /// <summary>
     /// Radius of tiles
     /// </summary>
-    private const int RiftTileRadius = 2;
+    private const int RiftTileRadius = 3;
 
-    private const int RiftsAllowed = 3;
+    private const int RiftsAllowed = 5;
 
     public override void Initialize()
     {

@@ -22,7 +22,7 @@ public sealed class ArmorSystem : SharedArmorSystem
         foreach (var modifier in component.Modifiers.Coefficients)
         {
             var damageType = _protoManager.Index<DamageTypePrototype>(modifier.Key);
-            args.Price += component.PriceMultiplier * damageType.ArmorPriceCoefficient * 100 * (1 - modifier.Value);
+            args.Price += component.PriceMultiplier * damageType.ArmorPriceCoefficient * 100 * (1.2 - modifier.Value);
         }
 
         foreach (var modifier in component.Modifiers.FlatReduction)

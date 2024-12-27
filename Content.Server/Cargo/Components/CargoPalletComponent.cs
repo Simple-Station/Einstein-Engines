@@ -3,7 +3,7 @@ using Content.Shared.Actions;
 using Robust.Shared.Serialization.TypeSerializers.Implementations;
 
 /// <summary>
-/// Any entities intersecting when a shuttle is recalled will be sold.
+/// Any entities intersecting when a shuttle is recalled will be sold. (What?)
 /// </summary>
 
 [Flags]

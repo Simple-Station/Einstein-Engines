@@ -78,4 +78,14 @@
       emergencyLightColor: Black
       forceEnableEmergencyLights: true
       shuttleTime: 1
+    varso:
+      announcement: alert-level-varso-announcement
+      selectable: false
+      sound: /Audio/Announcements/war.ogg
+      disableSelection: true
+      color: Red
+      emergencyLightColor: DarkRed
+      forceEnableEmergencyLights: true
+      shuttleTime: 1500
+    
 

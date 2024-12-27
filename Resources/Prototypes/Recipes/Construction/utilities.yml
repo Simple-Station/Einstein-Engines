@@ -6,7 +6,7 @@
   startNode: start
   targetNode: camera
   category: construction-category-utilities
-  description: "Surveillance camera. It's watching. Soon."
+  description: "Litrally 1984."
   icon:
     sprite: Structures/Wallmounts/camera.rsi
     state: camera
@@ -35,7 +35,7 @@
   startNode: start
   targetNode: station_map
   category: construction-category-structures
-  description: A station map.
+  description: Helps clueless people find places.
   icon:
     sprite: Structures/Machines/station_map.rsi
     state: station_map0
@@ -54,7 +54,7 @@
   startNode: start
   targetNode: apc
   category: construction-category-utilities
-  description: "Area Power Controller (APC). Controls power. In an area."
+  description: "Area Power Controller (APC). Controls power. In an area. (Dont overload it, it hurts its feelings)"
   icon:
     sprite: Structures/Power/apc.rsi
     state: base
@@ -69,7 +69,7 @@
   startNode: start
   targetNode: solarpanel
   category: construction-category-utilities
-  description: "Can be turned into a solar panel or solar tracker."
+  description: "Can be turned into a solar panel or solar tracker. The owner has no idea how trackers work."
   icon:
     sprite: Structures/Power/Generation/solar_panel.rsi
     state: solar_assembly
@@ -117,7 +117,7 @@
   startNode: start
   targetNode: generator
   category: construction-category-utilities
-  description: "A wallmount generator for compact spaces. Make sure to place cable underneath before building the wall."
+  description: "A wallmount generator for compact spaces. Make sure to place cable underneath before building the wall :P."
   icon:
     sprite: Structures/Power/Generation/wallmount_generator.rsi
     state: panel
