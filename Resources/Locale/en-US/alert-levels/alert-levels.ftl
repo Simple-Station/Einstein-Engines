@@ -38,3 +38,8 @@ alert-level-delta-instructions = Crewmembers are advised to listen to heads of s
 alert-level-epsilon = Epsilon
 alert-level-epsilon-announcement = The Epsilon alert level is now in effect. Consider all contracts terminated.
 alert-level-epsilon-instructions = Crewmembers are advised to make their way to an accessible location for efficient termination.
+
+alert-level-test = Test
+alert-level-test-announcement = Err, what the hell? How did you fucking find this? Welp, your fucked.
+alert-level-test-instructions = your fucked, you know that?
+

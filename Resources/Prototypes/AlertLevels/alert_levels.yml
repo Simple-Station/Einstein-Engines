@@ -69,3 +69,13 @@
       emergencyLightColor: DarkViolet
       forceEnableEmergencyLights: true
       shuttleTime: 1200
+    test:
+      announcement: alert-level-test-announcement
+      selectable: false
+      sound: /Audio/Announcements/war.ogg
+      disableSelection: true
+      color: Black
+      emergencyLightColor: Black
+      forceEnableEmergencyLights: true
+      shuttleTime: 1
+
