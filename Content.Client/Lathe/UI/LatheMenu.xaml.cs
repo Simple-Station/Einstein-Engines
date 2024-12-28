@@ -115,16 +115,6 @@ public sealed partial class LatheMenu : DefaultWindow
         MiningPointsLabel.Text = Loc.GetString("lathe-menu-mining-points", ("points", points));
     }
 
-    protected override void Opened()
-    {
-        base.Opened();
-
-        if (_entityManager.TryGetComponent<LatheComponent>(Entity, out var latheComp))
-        {
-            AmountLineEdit.SetText(latheComp.DefaultProductionAmount.ToString());
-        }
-    }
-
     /// <summary>
     /// DeltaV: Update mining points UI whenever it changes.
     /// </summary>
