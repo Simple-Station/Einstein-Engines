@@ -1165,7 +1165,8 @@
       - NotekeeperCartridge
       - NewsReaderCartridge
       - MedTekCartridge
-      - WantedListCartridge
+      - CrimeAssistCartridge
+      - SecWatchCartridge
 
 - type: entity
   parent: ERTLeaderPDA
