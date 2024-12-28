@@ -1609,9 +1609,10 @@
   components:
   - type: MachineBoard
     prototype: StationAnchor
-    stackRequirements:
+    requirements:
       Capacitor: 4
       MatterBin: 3
+    materialRequirements:
       Steel: 10
       Glass: 5
       CableHV: 8
