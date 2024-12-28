@@ -33,8 +33,6 @@
     cost: 750
   - id: WeaponProtoKineticAccelerator
     cost: 750
-  - id: AdvancedMineralScanner
-    cost: 800
   # TODO: resonator for 800
   - id: Fulton
     cost: 1000

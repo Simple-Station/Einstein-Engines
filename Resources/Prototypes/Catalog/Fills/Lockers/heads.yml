@@ -166,46 +166,30 @@
   suffix: Filled, Hardsuit
   parent: LockerChiefMedicalOfficer
   components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage: !type:AllSelector
-        children:
-        - !type:NestedSelector
-          tableId: LockerFillChiefEngineerNoHardsuit
-        - !type:NestedSelector
-          tableId: FillChiefEngineerHardsuit
+  - type: StorageFill
+    contents:
+      - id: MedkitFilled
+      - id: ClothingHandsGlovesNitrile
+      - id: ClothingEyesHudMedical
+      - id: ClothingHeadsetAltMedical
+      - id: ClothingBackpackDuffelSurgeryFilled
+      - id: ClothingMaskSterile
+      - id: ClothingHeadHatBeretCmo
+      - id: ClothingOuterHardsuitMedical
+      - id: Hypospray
+      - id: HandheldCrewMonitor
+      - id: DoorRemoteMedical
+      - id: RubberStampCMO
+      - id: RubberStampPsychologist # DeltaV
+      - id: MedicalTechFabCircuitboard
+      - id: MedicalBiofabMachineBoard
+      - id: BoxEncryptionKeyMedical
+      - id: BoxPDAMedical # Delta-V
+      - id: ClothingBeltMilitaryWebbingCMO # DeltaV - add webbing for CMO. ON THIS STATION, IT'S DRIP OR [die], CAPTAIN!
+      - id: CMOIDCard # Delta-V
+      - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
+        prob: 0.3
 
-# No hardsuit table
-- type: entityTable
-  id: LockerFillChiefMedicalOfficerNoHardsuit
-  table: !type:AllSelector
-    children:
-    - id: BoxEncryptionKeyMedical
-    - id: ClothingBackpackDuffelSurgeryFilled
-    - id: ClothingCloakCmo
-    - id: ClothingEyesHudMedical
-    - id: ClothingHandsGlovesNitrile
-    - id: ClothingHeadHatBeretCmo
-    - id: ClothingHeadsetAltMedical
-    - id: ClothingMaskSterile
-    - id: DoorRemoteMedical
-    - id: HandheldCrewMonitor
-    - id: Hypospray
-    - id: MedicalTechFabCircuitboard
-    - id: MedkitFilled
-    - id: MedTekCartridge
-    - id: RubberStampCMO
-
-# Hardsuit table, used for suit storage as well
-- type: entityTable
-  id: FillChiefMedicalOfficerHardsuit
-  table: !type:AllSelector
-    children:
-    - id: ClothingMaskBreathMedical
-    - id: ClothingOuterHardsuitMedical
-    - id: OxygenTankFilled
-
-# No hardsuit locker
 - type: entity
   id: LockerChiefMedicalOfficerFilled
   suffix: Filled
@@ -228,6 +212,7 @@
       - id: BoxPDAMedical # Delta-V
       - id: ClothingBeltMilitaryWebbingCMO # DeltaV - add webbing for CMO. ON THIS STATION, IT'S DRIP OR [die], CAPTAIN!
       - id: CMOIDCard # Delta-V
+      - id: MedTekCartridge # Delta-v
       - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
 

@@ -201,3 +201,9 @@
   - type: Icon
     sprite: DeltaV/Objects/Devices/pda.rsi
     state: pda-admin-assistant
+  - type: CartridgeLoader
+    preinstalled:
+      - CrewManifestCartridge
+      - NotekeeperCartridge
+      - NewsReaderCartridge
+      - NanoChatCartridge

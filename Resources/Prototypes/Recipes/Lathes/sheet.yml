@@ -2,7 +2,6 @@
   id: SheetSteel
   result: SheetSteel1
   applyMaterialDiscount: false
-  completetime: 2
   miningPoints: 1
   completetime: 0
   materials:
@@ -21,7 +20,6 @@
   id: SheetGlass1
   result: SheetGlass1
   applyMaterialDiscount: false
-  completetime: 2
   miningPoints: 1
   completetime: 0
   materials:
@@ -38,7 +36,6 @@
   id: SheetRGlass
   result: SheetRGlass1
   applyMaterialDiscount: false
-  completetime: 2
   miningPoints: 1
   completetime: 0
   materials:

@@ -50,19 +50,10 @@
       "name": "cart-lib"
     },
     {
-      "name": "cart-log"
-    },
-    {
       "name": "cart-m"
     },
     {
-      "name": "cart-med"
-    },
-    {
       "name": "cart-mi"
-    },
-    {
-      "name": "cart-nav"
     },
     {
       "name": "cart-q"
@@ -72,9 +63,6 @@
     },
     {
       "name": "cart-s"
-    },
-    {
-      "name": "cart-sec"
     },
     {
       "name": "cart-tear"
@@ -87,6 +75,12 @@
     },
     {
       "name": "cart-log"
+    },
+    {
+      "name": "cart-nav"
+    },
+    {
+      "name": "cart-med"
     }
   ]
 }

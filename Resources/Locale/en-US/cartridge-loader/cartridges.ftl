@@ -20,6 +20,11 @@ log-probe-label-time = Time
 log-probe-label-accessor = Accessed by
 log-probe-label-number = #
 
+glimmer-monitor-program-name = Glimmer Monitor
+glimmer-monitor-current-glimmer = Current Glimmer: {$glimmer}Ψ
+glimmer-monitor-interval = Interval
+glimmer-monitor-sync = Sync
+
 astro-nav-program-name = AstroNav
 
 med-tek-program-name = MedTek
