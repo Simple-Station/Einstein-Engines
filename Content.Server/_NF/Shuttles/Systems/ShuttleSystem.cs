@@ -3,8 +3,8 @@
 // See AGPLv3.txt for details.
 using Content.Server._NF.Station.Components;
 using Content.Server.Shuttles.Components;
+using Content.Server.Station.Components;
 using Content.Shared._NF.Shuttles.Events;
-using Content.Shared.Shipyard.Components;
 using Robust.Shared.Physics.Components;
 
 namespace Content.Server.Shuttles.Systems;
@@ -25,9 +25,7 @@ public sealed partial class ShuttleSystem
             !transform.GridUid.HasValue ||
             !EntityManager.TryGetComponent(transform.GridUid, out PhysicsComponent? physicsComponent) ||
             !EntityManager.TryGetComponent(transform.GridUid, out ShuttleComponent? shuttleComponent))
-        {
             return;
-        }
 
         if (args.Mode == InertiaDampeningMode.Query)
         {
@@ -35,11 +33,10 @@ public sealed partial class ShuttleSystem
             return;
         }
 
-        if (!EntityManager.HasComponent<ShuttleDeedComponent>(transform.GridUid) ||
-            EntityManager.HasComponent<StationDampeningComponent>(_station.GetOwningStation(transform.GridUid)))
-        {
+        if (!EntityManager.HasComponent<ShuttleComponent>(transform.GridUid) ||
+            EntityManager.TryGetComponent<StationDataComponent>(_station.GetOwningStation(transform.GridUid), out var stationData)
+            && stationData.StationConfig != null)
             return;
-        }
 
         var linearDampeningStrength = args.Mode switch
         {
@@ -67,9 +64,12 @@ public sealed partial class ShuttleSystem
         if (!EntityManager.TryGetComponent<TransformComponent>(entity, out var xform))
             return InertiaDampeningMode.Dampen;
 
+        var owningStation = _station.GetOwningStation(xform.GridUid);
+
         // Not a shuttle, shouldn't be togglable
-        if (!EntityManager.HasComponent<ShuttleDeedComponent>(xform.GridUid) ||
-            EntityManager.HasComponent<StationDampeningComponent>(_station.GetOwningStation(xform.GridUid)))
+        if (!EntityManager.HasComponent<ShuttleComponent>(xform.GridUid) ||
+            EntityManager.TryGetComponent<StationDataComponent>(owningStation, out var stationData)
+            && stationData.StationConfig != null)
             return InertiaDampeningMode.Station;
 
         if (!EntityManager.TryGetComponent(xform.GridUid, out PhysicsComponent? physicsComponent))
@@ -77,10 +77,11 @@ public sealed partial class ShuttleSystem
 
         if (physicsComponent.LinearDamping >= AnchorDampeningStrength)
             return InertiaDampeningMode.Anchor;
-        else if (physicsComponent.LinearDamping <= SpaceFrictionStrength)
+
+        if (physicsComponent.LinearDamping <= SpaceFrictionStrength)
             return InertiaDampeningMode.Off;
-        else
-            return InertiaDampeningMode.Dampen;
+
+        return InertiaDampeningMode.Dampen;
     }
 
 }
