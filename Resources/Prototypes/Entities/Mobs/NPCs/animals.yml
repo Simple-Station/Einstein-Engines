@@ -401,10 +401,11 @@
     - trigger:
         !type:DamageTypeTrigger
         damageType: Blunt
-        damage: 10
+        damage: 100
       behaviors:
       - !type:GibBehavior
         gibContents: Skip
+        recursive: false
   - type: NonSpreaderZombie
   - type: LanguageKnowledge
     speaks: [Hissing]
