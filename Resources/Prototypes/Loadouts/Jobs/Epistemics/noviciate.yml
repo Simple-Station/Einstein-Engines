@@ -1,0 +1,91 @@
+# Noviciate
+# Backpacks
+
+# Belt
+
+# Ears
+
+# Equipment
+- type: loadout
+  id: LoadoutNoviciateEquipmentCandles
+  category: JobsEpistemicsNoviciate
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNoviciateEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchAssistant
+  items:
+    - BoxCandle
+
+- type: loadout
+  id: LoadoutNoviciateEquipmentCandlesSmall
+  category: JobsEpistemicsNoviciate
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNoviciateEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchAssistant
+  items:
+    - BoxCandleSmall
+
+- type: loadout
+  id: LoadoutNoviciatePillCanisterSpaceDrugs
+  category: JobsEpistemicsNoviciate
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNoviciateEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchAssistant
+  items:
+    - PillCanisterSpaceDrugs
+
+# Eyes
+
+# Gloves
+
+# Head
+
+# Id
+
+# Neck
+
+# Mask
+
+# Outer
+
+# Shoes
+
+# Uniforms
+- type: loadout
+  id: LoadoutNoviciateUniformSuit
+  category: JobsEpistemicsNoviciate
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNoviciateUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchAssistant
+  items:
+    - ClothingUniformJumpsuitColorWhite
+
+- type: loadout
+  id: LoadoutNoviciateUniformSkirt
+  category: JobsEpistemicsNoviciate
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNoviciateUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchAssistant
+  items:
+    - ClothingUniformJumpskirtColorWhite

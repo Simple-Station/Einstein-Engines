@@ -22,6 +22,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
+using Robust.Shared.Utility;
 using System.Linq;
 using System.Numerics;
 using Content.Shared.Chat;
@@ -52,14 +53,26 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
             return;
 
         var damageSpec = GetDamage(uid, args.User, component);
-
         if (damageSpec.Empty)
             return;
 
-        _damageExamine.AddDamageExamine(args.Message, damageSpec, Loc.GetString("damage-melee"));
+        if (!component.DisableClick)
+            _damageExamine.AddDamageExamine(args.Message, damageSpec, Loc.GetString("damage-melee"));
 
-        if (damageSpec * component.HeavyDamageBaseModifier != damageSpec)
-            _damageExamine.AddDamageExamine(args.Message, damageSpec * component.HeavyDamageBaseModifier, Loc.GetString("damage-melee-heavy"));
+        if (!component.DisableHeavy)
+        {
+            if (damageSpec * component.HeavyDamageBaseModifier != damageSpec)
+                _damageExamine.AddDamageExamine(args.Message, damageSpec * component.HeavyDamageBaseModifier, Loc.GetString("damage-melee-heavy"));
+
+            if (component.HeavyStaminaCost != 0)
+            {
+                var staminaCostMarkup = FormattedMessage.FromMarkupOrThrow(
+                    Loc.GetString("damage-stamina-cost",
+                    ("type", Loc.GetString("damage-melee-heavy")), ("cost", component.HeavyStaminaCost)));
+                args.Message.PushNewline();
+                args.Message.AddMessage(staminaCostMarkup);
+            }
+        }
     }
 
     protected override bool ArcRaySuccessful(EntityUid targetUid, Vector2 position, Angle angle, Angle arcWidth, float range, MapId mapId,

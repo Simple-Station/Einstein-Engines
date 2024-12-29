@@ -1,0 +1,458 @@
+# Senior Engineer
+# Backpacks
+
+# Belt
+- type: loadout
+  id: LoadoutSeniorEngineerBeltUtility
+  category: JobsEngineeringSeniorEngineer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - ClothingBeltUtility
+
+- type: loadout
+  id: LoadoutSeniorEngineerBeltUtilityEngineering
+  category: JobsEngineeringSeniorEngineer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - ClothingBeltUtilityEngineering
+
+- type: loadout
+  id: LoadoutSeniorEngineerBeltUtilityAtmos
+  category: JobsEngineeringSeniorEngineer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - ClothingBeltUtilityAtmos
+
+# Ears
+
+# Equipment
+- type: loadout
+  id: LoadoutSeniorEngineerEquipmentBoxInflatable
+  category: JobsEngineeringSeniorEngineer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - BoxInflatable
+
+- type: loadout
+  id: LoadoutSeniorEngineerEquipmentMedkitOxygen
+  category: JobsEngineeringSeniorEngineer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - MedkitOxygenFilled
+
+- type: loadout
+  id: LoadoutSeniorEngineerEquipmentRCD
+  category: JobsEngineeringSeniorEngineer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - RCD
+    - RCDAmmo
+
+- type: loadout
+  id: LoadoutSeniorEngineerEquipmentRCDAmmo1
+  category: JobsEngineeringSeniorEngineer
+  cost: 1
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - RCDAmmo
+
+- type: loadout
+  id: LoadoutSeniorEngineerEquipmentRCDAmmo2
+  category: JobsEngineeringSeniorEngineer
+  cost: 1
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - RCDAmmo
+
+- type: loadout
+  id: LoadoutSeniorEngineerEquipmentPowerDrill
+  category: JobsEngineeringSeniorEngineer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - PowerDrill
+
+- type: loadout
+  id: LoadoutSeniorEngineerEquipmentSheetSteel
+  category: JobsEngineeringSeniorEngineer
+  cost: 1
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - SheetSteel
+
+- type: loadout
+  id: LoadoutSeniorEngineerEquipmentSheetSteel10
+  category: JobsEngineeringSeniorEngineer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - SheetSteel10
+
+- type: loadout
+  id: LoadoutSeniorEngineerEquipmentSheetPlasteel
+  category: JobsEngineeringSeniorEngineer
+  cost: 1
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - SheetPlasteel
+
+- type: loadout
+  id: LoadoutSeniorEngineerEquipmentSheetPlasteel10
+  category: JobsEngineeringSeniorEngineer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - SheetPlasteel10
+
+- type: loadout
+  id: LoadoutSeniorEngineerEquipmentSheetGlass
+  category: JobsEngineeringSeniorEngineer
+  cost: 1
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - SheetGlass
+
+- type: loadout
+  id: LoadoutSeniorEngineerEquipmentSheetGlass10
+  category: JobsEngineeringSeniorEngineer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - SheetGlass10
+
+- type: loadout
+  id: LoadoutSeniorEngineerEquipmentMaterialWoodPlank
+  category: JobsEngineeringSeniorEngineer
+  cost: 1
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - MaterialWoodPlank
+
+- type: loadout
+  id: LoadoutSeniorEngineerEquipmentMaterialWoodPlank10
+  category: JobsEngineeringSeniorEngineer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - MaterialWoodPlank10
+
+- type: loadout
+  id: LoadoutSeniorEngineerEquipmentSheetRGlass
+  category: JobsEngineeringSeniorEngineer
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - SheetRGlass
+
+- type: loadout
+  id: LoadoutSeniorEngineerEquipmentSheetRGlass10
+  category: JobsEngineeringSeniorEngineer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - SheetRGlass10
+
+- type: loadout
+  id: LoadoutSeniorEngineerEquipmentSheetUGlass
+  category: JobsEngineeringSeniorEngineer
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - SheetUGlass
+
+- type: loadout
+  id: LoadoutSeniorEngineerEquipmentSheetUGlass10
+  category: JobsEngineeringSeniorEngineer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - SheetUGlass10
+
+- type: loadout
+  id: LoadoutSeniorEngineerEquipmentSheetRUGlass
+  category: JobsEngineeringSeniorEngineer
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - SheetRUGlass
+
+- type: loadout
+  id: LoadoutSeniorEngineerEquipmentSheetRUGlass10
+  category: JobsEngineeringSeniorEngineer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - SheetRUGlass10
+
+- type: loadout
+  id: LoadoutSeniorEngineerEquipmentSheetPGlass
+  category: JobsEngineeringSeniorEngineer
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - SheetPGlass
+
+- type: loadout
+  id: LoadoutSeniorEngineerEquipmentSheetPGlass10
+  category: JobsEngineeringSeniorEngineer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - SheetPGlass10
+
+- type: loadout
+  id: LoadoutSeniorEngineerEquipmentSheetRPGlass
+  category: JobsEngineeringSeniorEngineer
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - SheetRPGlass
+
+- type: loadout
+  id: LoadoutSeniorEngineerEquipmentSheetRPGlass10
+  category: JobsEngineeringSeniorEngineer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - SheetRPGlass10
+
+- type: loadout
+  id: LoadoutSeniorEngineerEquipmentSheetClockworkGlass
+  category: JobsEngineeringSeniorEngineer
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - SheetClockworkGlass
+
+- type: loadout
+  id: LoadoutSeniorEngineerEquipmentSheetClockworkGlass10
+  category: JobsEngineeringSeniorEngineer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - SheetClockworkGlass10
+
+- type: loadout
+  id: LoadoutSeniorEngineerEquipmentSheetPlastic
+  category: JobsEngineeringSeniorEngineer
+  cost: 1
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - SheetPlastic
+
+- type: loadout
+  id: LoadoutSeniorEngineerEquipmentSheetPlastic10
+  category: JobsEngineeringSeniorEngineer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - SheetPlastic10
+
+# Eyes
+
+# Gloves
+
+# Head
+
+# Id
+
+# Mask
+
+# Neck
+
+# Outer
+
+# Shoes
+
+# Uniforms
+- type: loadout
+  id: LoadoutEngineeringUniformJumpskirtSenior
+  category: JobsEngineeringSeniorEngineer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - ClothingUniformJumpskirtSeniorEngineer
+
+- type: loadout
+  id: LoadoutEngineeringUniformJumpsuitSenior
+  category: JobsEngineeringSeniorEngineer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - ClothingUniformJumpsuitSeniorEngineer

@@ -9,6 +9,8 @@ using Content.Shared.Interaction.Events;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
 using Robust.Shared.Utility;
+using Content.Shared.Whitelist;
+using Robust.Shared.Containers;
 
 namespace Content.Shared.UserInterface;
 
@@ -16,6 +18,7 @@ public sealed partial class ActivatableUISystem : EntitySystem
 {
     [Dependency] private readonly ISharedAdminManager _adminManager = default!;
     [Dependency] private readonly ActionBlockerSystem _blockerSystem = default!;
+    [Dependency] private readonly EntityWhitelistSystem _entityWhitelist = default!;
     [Dependency] private readonly SharedUserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
@@ -96,7 +99,8 @@ public sealed partial class ActivatableUISystem : EntitySystem
         if (!args.CanAccess)
             return false;
 
-        if (!component.RequiredItems?.IsValid(args.Using ?? default, EntityManager) ?? false)
+        if (component.RequiredItems is not null && !_entityWhitelist.IsValid(component.RequiredItems, args.Using ?? default) ||
+            component.UserWhitelist is not null && !_entityWhitelist.IsValid(component.UserWhitelist, args.User))
             return false;
 
         if (component.RequireHands)
@@ -133,7 +137,7 @@ public sealed partial class ActivatableUISystem : EntitySystem
 
     private void OnActivate(EntityUid uid, ActivatableUIComponent component, ActivateInWorldEvent args)
     {
-        if (args.Handled)
+        if (args.Handled || !args.Complex)
             return;
 
         if (component.VerbOnly)
@@ -153,10 +157,8 @@ public sealed partial class ActivatableUISystem : EntitySystem
         if (component.VerbOnly)
             return;
 
-        if (component.RequiredItems == null)
-            return;
-
-        if (!component.RequiredItems.IsValid(args.Used, EntityManager))
+        if (component.RequiredItems is null || !_entityWhitelist.IsValid(component.RequiredItems, args.Used) ||
+            component.UserWhitelist is not null && !_entityWhitelist.IsValid(component.UserWhitelist, args.User))
             return;
 
         args.Handled = InteractUI(args.User, uid, component);

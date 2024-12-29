@@ -35,6 +35,7 @@
     damage:
       types:
         Blunt: 0
+  - type: DamageOtherOnHit
   - type: PhysicalComposition
     materialComposition:
       Cloth: 100
@@ -629,7 +630,7 @@
     sprite: Objects/Fun/ducky.rsi
     state: icon
   - type: MeleeWeapon
-    attackRate: 1.5
+    attackRate: .6666
     range: 1.5
     damage:
       types:
@@ -1386,7 +1387,7 @@
     sprite: Objects/Fun/toys.rsi
     state: foamblade
   - type: MeleeWeapon
-    attackRate: 1.5
+    attackRate: .6666
     angle: 0
     animation: WeaponArcThrust
     wideAnimationRotation: 90
@@ -1672,7 +1673,7 @@
     sprite: Objects/Weapons/Melee/cutlass.rsi
     state: foam_icon
   - type: MeleeWeapon
-    attackRate: 1.5
+    attackRate: .6666
     range: 2.0
     angle: 0
     animation: WeaponArcThrust
@@ -1942,7 +1943,7 @@
       damage: 0.8
     - type: MeleeWeapon
       wideAnimationRotation: -135
-      attackRate: 10
+      attackRate: .1
       damage:
         types:
           Blunt: 0
@@ -1965,3 +1966,63 @@
     - type: Sprite
       sprite: Objects/Fun/toys.rsi
       state: shadowkin
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieMort
+  name: morty plushie
+  description: A plushie of the lovely Morty. It's a resilient, yet sensitive type of plush.
+  components:
+    - type: Sprite
+      sprite: Objects/Fun/toys.rsi
+      state: mortplush
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieHarpy
+  name: harpy plushie
+  description: A soft plushie of a harpy! A small tag on it guarantees that all feathers are ethically sourced.
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/toys.rsi
+    state: harpyplushie
+  - type: StaminaDamageOnHit
+    damage: 0.8
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/DeltaV/Voice/Harpy/caw1.ogg
+      params:
+        variation: 0.05
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/DeltaV/Voice/Harpy/caw1.ogg
+  - type: EmitSoundOnCollide
+    sound:
+      path: /Audio/DeltaV/Voice/Harpy/caw1.ogg
+      params:
+        variation: 0.05
+  - type: EmitSoundOnLand
+    sound: 
+      path: /Audio/DeltaV/Voice/Harpy/caw1.ogg
+      params:
+        variation: 0.05
+  - type: UseDelay
+    delay: 0.8
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 0.5
+    damage:
+      types:
+        Blunt: 0
+    soundHit:
+      path: /Audio/DeltaV/Voice/Harpy/caw1.ogg
+      params:
+        variation: 0.05
+    soundSwing:
+      path: /Audio/DeltaV/Voice/Harpy/caw1.ogg
+      params:
+        variation: 0.05
+    soundNoDamage:
+      path: /Audio/DeltaV/Voice/Harpy/caw1.ogg
+      params:
+        variation: 0.05

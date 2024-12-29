@@ -18,14 +18,19 @@ chat-manager-no-radio-key = No radio key specified!
 chat-manager-no-such-channel = There is no channel with key '{$key}'!
 chat-manager-whisper-headset-on-message = You can't whisper on the radio!
 
+chat-manager-language-prefix = ({ $language }){" "}
+
 chat-manager-server-wrap-message = [bold]{$message}[/bold]
 chat-manager-sender-announcement-wrap-message = [font size=14][bold]{$sender} Announcement:[/font][font size=12]
                                                 {$message}[/bold][/font]
-chat-manager-entity-say-wrap-message = [BubbleHeader][bold][Name]{ $language }{ $entityName }[/Name][/bold][/BubbleHeader] { $verb }, [font={ $fontType } size={ $fontSize } ]"[BubbleContent]{ $message }[/BubbleContent]"[/font]
-chat-manager-entity-say-bold-wrap-message = [BubbleHeader][bold][Name]{ $language }{ $entityName }[/Name][/bold][/BubbleHeader] { $verb }, [font={ $fontType } size={ $fontSize }]"[BubbleContent][bold]{ $message }[/bold][/BubbleContent]"[/font]
 
-chat-manager-entity-whisper-wrap-message = [font size=11][italic][BubbleHeader][Name]{ $language }{ $entityName }[/Name][/BubbleHeader] whispers,"[BubbleContent]{ $message }[/BubbleContent]"[/italic][/font]
-chat-manager-entity-whisper-unknown-wrap-message = [font size=11][italic][BubbleHeader]Someone[/BubbleHeader] whispers, "[BubbleContent][font="{$fontType}"][color={$color}]{$message}[/color][/font][/BubbleContent]"[/italic][/font]
+# For the message in double quotes, the font/color/bold/italic elements are repeated twice, outside the double quotes and inside.
+# The outside elements are for formatting the double quotes, and the inside elements are for formatting the text in speech bubbles ([BubbleContent]).
+chat-manager-entity-say-wrap-message = [BubbleHeader][Name][font size=11][color={$color}][bold]{$language}[/bold][/color][/font][bold]{$entityName}[/bold][/Name][/BubbleHeader] {$verb}, [font="{$fontType}" size={$fontSize} ][color={$color}]"[BubbleContent][font="{$fontType}" size={$fontSize}][color={$color}]{$message}[/color][/font][/BubbleContent]"[/color][/font]
+chat-manager-entity-say-bold-wrap-message = [BubbleHeader][Name][font size=11][color={$color}][bold]{$language}[/bold][/color][/font][bold]{$entityName}[/bold][/Name][/BubbleHeader] {$verb}, [font="{$fontType}" size={$fontSize} ][color={$color}][bold]"[BubbleContent][font="{$fontType}" size={$fontSize}][color={$color}][bold]{$message}[/bold][/color][/font][/BubbleContent]"[/bold][/color][/font]
+
+chat-manager-entity-whisper-wrap-message = [BubbleHeader][Name][font size=10][color={$color}][bold]{$language}[/bold][/color][/font][font size=11][italic]{$entityName}[/Name][/BubbleHeader] whispers, [font="{$fontType}"][color={$color}][italic]"[BubbleContent][font="{$fontType}"][color={$color}][italic]{$message}[/italic][/color][/font][/BubbleContent]"[/italic][/color][/font][/italic][/font]
+chat-manager-entity-whisper-unknown-wrap-message = [BubbleHeader][font size=10][color={$color}][bold]{$language}[/bold][/color][/font][font size=11][italic]Someone[/BubbleHeader] whispers, [font="{$fontType}"][color={$color}][italic]"[BubbleContent][font="{$fontType}"][color={$color}][italic]{$message}[/italic][/color][/font][/BubbleContent]"[/italic][/color][/font][/italic][/font]
 
 # THE() is not used here because the entity and its name can technically be disconnected if a nameOverride is passed...
 chat-manager-entity-me-wrap-message = [italic]{ PROPER($entity) ->
@@ -51,6 +56,9 @@ chat-manager-rate-limited = You are sending messages too quickly!
 chat-manager-rate-limit-admin-announcement = Player { $player } breached chat rate limits. Watch them if this is a regular occurence.
 
 chat-manager-send-empathy-chat-wrap-message = {$source}: {$message}
+
+chat-manager-send-cult-chat-wrap-message = [bold]\[{ $channelName }\] [BubbleHeader]{ $player }[/BubbleHeader]:[/bold] [BubbleContent]{ $message }[/BubbleContent]
+chat-manager-cult-channel-name = Blood Cult
 
 ## Speech verbs for chat
 

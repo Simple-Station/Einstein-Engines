@@ -1,0 +1,59 @@
+- type: characterItemGroup
+  id: LoadoutHead
+  items:
+    - type: loadout
+      id: LoadoutHeadBeaverHat
+    - type: loadout
+      id: LoadoutHeadTophat
+    - type: loadout
+      id: LoadoutHeadFedoraWhite
+    - type: loadout
+      id: LoadoutHeadFlatBlack
+    - type: loadout
+      id: LoadoutHeadFlatBrown
+    - type: loadout
+      id: LoadoutHeadHatCowboyWhite
+    - type: loadout
+      id: LoadoutHeadHatCowboyBountyHunter
+    - type: loadout
+      id: LoadoutHeadTinfoil
+    - type: loadout
+      id: LoadoutHeadBellhop
+    - type: loadout
+      id: LoadoutHeadPoppy
+    - type: loadout
+      id: LoadoutHeadPoppyWhite
+    - type: loadout
+      id: LoadoutHeadHatCorpsoft
+    - type: loadout
+      id: LoadoutHeadHatCorpsoftFlipped
+    - type: loadout
+      id: LoadoutHeadHatMimesoft
+    - type: loadout
+      id: LoadoutHeadHatMimesoftFlipped
+    - type: loadout
+      id: LoadoutHeadBandWhite
+    - type: loadout
+      id: LoadoutHeadBandSkull
+    - type: loadout
+      id: LoadoutHeadBandBrown
+    - type: loadout
+      id: LoadoutHeadFishCap
+    - type: loadout
+      id: LoadoutHeadRastaHat
+    - type: loadout
+      id: LoadoutHeadFez
+    - type: loadout
+      id: LoadoutHeadBowlerHat
+    - type: loadout
+      id: LoadoutHeadGreyFlatcap
+    - type: loadout
+      id: LoadoutHeadBrownFlatcap
+    - type: loadout
+      id: LoadoutHeadBeretWhite
+    - type: loadout
+      id: LoadoutHeadHijabColorable
+    - type: loadout
+      id: LoadoutHeadTurbanColorable
+    - type: loadout
+      id: LoadoutHeadKippahColorable

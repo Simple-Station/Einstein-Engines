@@ -1,0 +1,77 @@
+# Medical Doctor
+#- type: characterItemGroup
+#  id: LoadoutMedicalDoctorBackpacks
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutMedicalDoctorBelt
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutMedicalDoctorBeltMedical
+    - type: loadout
+      id: LoadoutMedicalDoctorBeltMedicalFilled
+    - type: loadout
+      id: LoadoutMedicalDoctorBeltMedicalAdvancedFilled
+
+#- type: characterItemGroup
+#  id: LoadoutMedicalDoctorEars
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMedicalDoctorEquipment
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMedicalDoctorEyes
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMedicalDoctorGloves
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutMedicalDoctorHead
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutMedicalHeadNurse
+
+#- type: characterItemGroup
+#  id: LoadoutMedicalDoctorId
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMedicalDoctorNeck
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMedicalDoctorMask
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMedicalDoctorOuter
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMedicalDoctorShoes
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutMedicalDoctorUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutMedicalDoctorJumpsuit
+    - type: loadout
+      id: LoadoutMedicalDoctorJumpskirt

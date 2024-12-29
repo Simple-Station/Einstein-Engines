@@ -55,6 +55,9 @@ mood-effect-CultFocused = Dark Gods, grant me strength!
 
 mood-effect-TraitSanguine = I have nothing to worry about. I'm sure everything will turn out well in the end!
 
+mood-effect-HeirloomSecure = My heirloom is safe, and with it the memories of the ones before me.
+mood-effect-HeirloomLost = I can't seem to find my heirloom, how will the past be safe now?
+
 # Addictions
 mood-effect-LotoTranscendence =
     I CAN SEE ALL THAT IS, ALL THAT WILL EVER BE, AND ALL THAT EVER WAS. ALL OF CREATION HAS OPENED TO MY MIND!
@@ -68,6 +71,8 @@ mood-effect-NicotineBenefit =
 mood-effect-NicotineWithdrawal =
     I could really go for a smoke right now.
 
+# Surgery
+mood-effect-SurgeryPain = The surgery hurts.
 # Drugs
 mood-effect-EthanolBenefit =
     I feel so relaxed from drinking.

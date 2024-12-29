@@ -1,0 +1,371 @@
+# Head Of Security
+# Backpacks
+
+# Belt
+
+# Ears
+
+# Equipment
+# Head of Security Weapon Selection
+# Most of these mirror the unique weapons that were previously map-specific items placed in the HoS Office.
+# Or are weapons that fit a similar theme of "Rare weapons not normally seen by Security"
+- type: loadout
+  id: LoadoutCommandHoSPulsePistol
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - WeaponPulsePistolHoS
+
+- type: loadout
+  id: LoadoutCommandHoSWt550
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - WeaponSubMachineGunWt550HoS
+
+- type: loadout
+  id: LoadoutCommandHoSKatanaSheath
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingBeltKatanaSheathFilledHoS
+
+- type: loadout
+  id: LoadoutCommandHoSC20r
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - WeaponSubMachineGunC20rHoS
+
+- type: loadout
+  id: LoadoutCommandHoSBulldog
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - WeaponShotgunBulldogHoS
+
+- type: loadout
+  id: LoadoutCommandHoSEnergySword
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - EnergySwordHoS
+
+- type: loadout
+  id: LoadoutCommandHoSEnergyGun
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - WeaponEnergyGunMultiphase
+
+# Eyes
+
+# Gloves
+
+# Head
+- type: loadout
+  id: LoadoutCommandHOSHatBeret
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingHeadHatBeretHoS
+
+- type: loadout
+  id: LoadoutCommandHOSHatHoshat
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingHeadHatHoshat
+
+# Id
+- type: loadout
+  id: LoadoutHeadOfSecurityNTPDA
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobHeadOfSecurity
+      min: 36000 # 10 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityId
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - HoSNTPDA
+
+# Neck
+- type: loadout
+  id: LoadoutCommandHOSNeckMantle
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityNeck
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingNeckMantleHOS
+
+- type: loadout
+  id: LoadoutCommandHOSNeckCloak
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityNeck
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingNeckCloakHos
+
+# Mask
+
+# Outer
+- type: loadout
+  id: LoadoutCommandHOSOuterWinter
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingOuterWinterHoS
+
+- type: loadout
+  id: LoadoutCommandHOSOuterTrench
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingOuterCoatHoSTrench
+
+# Shoes
+- type: loadout
+  id: LoadoutCommandHOSShoesBootsWinter
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityShoes
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingShoesBootsWinterHeadOfSecurity
+
+# Uniforms
+- type: loadout
+  id: LoadoutUniformJumpskirtHoSBlue
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingUniformJumpskirtHoSBlue
+
+- type: loadout
+  id: LoadoutUniformJumpskirtHoSGrey
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingUniformJumpskirtHoSGrey
+
+- type: loadout
+  id: LoadoutCommandHOSJumpsuitAlt
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingUniformJumpsuitHoSAlt
+
+- type: loadout
+  id: LoadoutCommandHOSJumpsuitBlue
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingUniformJumpsuitHoSBlue
+
+- type: loadout
+  id: LoadoutCommandHOSJumpsuitGrey
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingUniformJumpsuitHoSGrey
+
+- type: loadout
+  id: LoadoutCommandHOSJumpsuitParade
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingUniformJumpsuitHoSParadeMale
+
+- type: loadout
+  id: LoadoutCommandHOSJumpsuitFormal
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingUniformJumpsuitHosFormal
+
+- type: loadout
+  id: LoadoutCommandHOSJumpskirtAlt
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingUniformJumpskirtHoSAlt
+
+- type: loadout
+  id: LoadoutCommandHOSJumpskirtParade
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingUniformJumpskirtHoSParadeMale
+
+- type: loadout
+  id: LoadoutCommandHOSJumpskirtFormal
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingUniformJumpskirtHosFormal

@@ -55,7 +55,7 @@ public sealed class ShadowkinSystem : EntitySystem
 
         component.OldEyeColor = humanoid.EyeColor;
         humanoid.EyeColor = component.BlackEyeColor;
-        Dirty(humanoid);
+        Dirty(uid, humanoid);
     }
 
     private void OnExamined(EntityUid uid, ShadowkinComponent component, ExaminedEvent args)
@@ -89,10 +89,10 @@ public sealed class ShadowkinSystem : EntitySystem
         if (TryComp<PsionicComponent>(uid, out var magic))
         {
             var severity = (short) ContentHelpers.RoundToLevels(magic.Mana, magic.MaxMana, 8);
-            _alerts.ShowAlert(uid, AlertType.ShadowkinPower, severity);
+            _alerts.ShowAlert(uid, component.ShadowkinPowerAlert, severity);
         }
         else
-            _alerts.ClearAlert(uid, AlertType.ShadowkinPower);
+            _alerts.ClearAlert(uid, component.ShadowkinPowerAlert);
     }
 
     private void OnAttemptPowerUse(EntityUid uid, ShadowkinComponent component, OnAttemptPowerUseEvent args)
@@ -115,7 +115,7 @@ public sealed class ShadowkinSystem : EntitySystem
         if (magic.Mana <= component.BlackEyeMana)
             ApplyBlackEye(uid);
 
-        Dirty(magic); // Update Shadowkin Overlay.
+        Dirty(uid, magic); // Update Shadowkin Overlay.
         UpdateShadowkinAlert(uid, component);
     }
 
@@ -141,7 +141,7 @@ public sealed class ShadowkinSystem : EntitySystem
         {
             component.OldEyeColor = humanoid.EyeColor;
             humanoid.EyeColor = component.BlackEyeColor;
-            Dirty(humanoid);
+            Dirty(uid, humanoid);
         }
 
         if (component.BlackeyeSpawn)
@@ -162,7 +162,7 @@ public sealed class ShadowkinSystem : EntitySystem
         if (TryComp<HumanoidAppearanceComponent>(uid, out var humanoid))
         {
             humanoid.EyeColor = component.OldEyeColor;
-            Dirty(humanoid);
+            Dirty(uid, humanoid);
         }
 
         EnsureComp<PsionicComponent>(uid, out var magic);

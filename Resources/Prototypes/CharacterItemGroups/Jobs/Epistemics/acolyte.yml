@@ -1,0 +1,74 @@
+#- type: characterItemGroup
+#  id: LoadoutAcolyteBackpacks
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutAcolyteBelt
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutAcolyteEars
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutAcolyteEquipment
+  maxItems: 3
+  items:
+    - type: loadout
+      id: LoadoutAcolyteEquipmentCandles
+    - type: loadout
+      id: LoadoutAcolyteEquipmentCandlesSmall
+    - type: loadout
+      id: LoadoutAcolytePillCanisterSpaceDrugs
+
+#- type: characterItemGroup
+#  id: LoadoutAcolyteEyes
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutAcolyteGloves
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutAcolyteHead
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutAcolyteId
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutAcolyteNeck
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutAcolyteMask
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutAcolyteOuter
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutAcolyteShoes
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutAcolyteUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutAcolyteUniformSuit
+    - type: loadout
+      id: LoadoutAcolyteUniformSkirt

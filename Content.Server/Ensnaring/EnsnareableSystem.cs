@@ -45,7 +45,7 @@ public sealed partial class EnsnareableSystem : SharedEnsnareableSystem
         }
 
         component.IsEnsnared = component.Container.ContainedEntities.Count > 0;
-        Dirty(component);
+        Dirty(uid, component);
         ensnaring.Ensnared = null;
 
         if (ensnaring.DestroyOnRemove)

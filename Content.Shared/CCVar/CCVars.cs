@@ -21,16 +21,10 @@ namespace Content.Shared.CCVar
             CVarDef.Create("server.id", "unknown_server_id", CVar.REPLICATED | CVar.SERVER);
 
         /// <summary>
-        ///     Name of the rules txt file in the "Resources/Server Info" dir. Include the extension.
+        ///     Guide Entry Prototype ID to be displayed as the server rules.
         /// </summary>
         public static readonly CVarDef<string> RulesFile =
-            CVarDef.Create("server.rules_file", "Rules.txt", CVar.REPLICATED | CVar.SERVER);
-
-        /// <summary>
-        ///     A loc string for what should be displayed as the title on the Rules window.
-        /// </summary>
-        public static readonly CVarDef<string> RulesHeader =
-            CVarDef.Create("server.rules_header", "ui-rules-header", CVar.REPLICATED | CVar.SERVER);
+            CVarDef.Create("server.rules_file", "DefaultRuleset", CVar.REPLICATED | CVar.SERVER);
 
         /*
          * Ambience
@@ -387,6 +381,13 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<int> GameTraitsDefaultPoints =
             CVarDef.Create("game.traits_default_points", 10, CVar.REPLICATED);
 
+        /// <summary>
+        ///     Whether the game will SMITE people who used cheat engine to spawn with all of the traits.
+        ///     Illegal trait totals will still be logged even if this is disabled.
+        ///     If you are intending to decrease the trait points availability, or modify the costs of traits, consider temporarily disabling this.
+        /// </summary>
+        public static readonly CVarDef<bool> TraitsPunishCheaters =
+            CVarDef.Create("game.traits_punish_cheaters", true, CVar.REPLICATED);
 
         /// <summary>
         ///     Whether to allow characters to select loadout items.
@@ -505,6 +506,18 @@ namespace Content.Shared.CCVar
         /*
          * Discord
          */
+
+        /// <summary>
+        /// The role that will get mentioned if a new SOS ahelp comes in.
+        /// </summary>
+        public static readonly CVarDef<string> DiscordAhelpMention =
+            CVarDef.Create("discord.on_call_ping", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
+        /// <summary>
+        /// URL of the discord webhook to relay unanswered ahelp messages.
+        /// </summary>
+        public static readonly CVarDef<string> DiscordOnCallWebhook =
+            CVarDef.Create("discord.on_call_webhook", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
 
         /// <summary>
         /// URL of the Discord webhook which will relay all ahelp messages.
@@ -955,6 +968,99 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<float> AdminAfkTime =
             CVarDef.Create("admin.afk_time", 600f, CVar.SERVERONLY);
+
+        /// <summary>
+        /// If true, admins are able to connect even if
+        /// <see cref="SoftMaxPlayers"/> would otherwise block regular players.
+        /// </summary>
+        public static readonly CVarDef<bool> AdminBypassMaxPlayers =
+            CVarDef.Create("admin.bypass_max_players", true, CVar.SERVERONLY);
+
+        /// <summary>
+        /// Determine if custom rank names are used.
+        /// If it is false, it'd use the actual rank name regardless of the individual's title.
+        /// </summary>
+        /// <seealso cref="AhelpAdminPrefix"/>
+        /// <seealso cref="AhelpAdminPrefixWebhook"/>
+        public static readonly CVarDef<bool> AdminUseCustomNamesAdminRank =
+            CVarDef.Create("admin.use_custom_names_admin_rank", true, CVar.SERVERONLY);
+
+        /*
+         * AHELP
+         */
+
+        /// <summary>
+        /// Ahelp rate limit values are accounted in periods of this size (seconds).
+        /// After the period has passed, the count resets.
+        /// </summary>
+        /// <seealso cref="AhelpRateLimitCount"/>
+        public static readonly CVarDef<float> AhelpRateLimitPeriod =
+            CVarDef.Create("ahelp.rate_limit_period", 2f, CVar.SERVERONLY);
+
+        /// <summary>
+        /// How many ahelp messages are allowed in a single rate limit period.
+        /// </summary>
+        /// <seealso cref="AhelpRateLimitPeriod"/>
+        public static readonly CVarDef<int> AhelpRateLimitCount =
+            CVarDef.Create("ahelp.rate_limit_count", 10, CVar.SERVERONLY);
+
+        /// <summary>
+        /// Should the administrator's position be displayed in ahelp.
+        /// If it is is false, only the admin's ckey will be displayed in the ahelp.
+        /// </summary>
+        /// <seealso cref="AdminUseCustomNamesAdminRank"/>
+        /// <seealso cref="AhelpAdminPrefixWebhook"/>
+        public static readonly CVarDef<bool> AhelpAdminPrefix =
+            CVarDef.Create("ahelp.admin_prefix", true, CVar.SERVERONLY);
+
+        /// <summary>
+        /// Should the administrator's position be displayed in the webhook.
+        /// If it is is false, only the admin's ckey will be displayed in webhook.
+        /// </summary>
+        /// <seealso cref="AdminUseCustomNamesAdminRank"/>
+        /// <seealso cref="AhelpAdminPrefix"/>
+        public static readonly CVarDef<bool> AhelpAdminPrefixWebhook =
+            CVarDef.Create("ahelp.admin_prefix_webhook", true, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     If an admin replies to users from discord, should it use their discord role color? (if applicable)
+        ///     Overrides DiscordReplyColor and AdminBwoinkColor.
+        /// </summary>
+        public static readonly CVarDef<bool> UseDiscordRoleColor =
+            CVarDef.Create("admin.use_discord_role_color", false, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     If an admin replies to users from discord, should it use their discord role color? (if applicable)
+        ///     Overrides DiscordReplyColor and AdminBwoinkColor.
+        /// </summary>
+        public static readonly CVarDef<bool> UseDiscordRoleName =
+            CVarDef.Create("admin.use_discord_role_name", false, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     The text before an admin's name when replying from discord to indicate they're speaking from discord.
+        /// </summary>
+        public static readonly CVarDef<string> DiscordReplyPrefix =
+            CVarDef.Create("admin.discord_reply_prefix", "(DC) ", CVar.SERVERONLY);
+
+        /// <summary>
+        ///     The color of the names of admins. This is the fallback color for admins.
+        /// </summary>
+        public static readonly CVarDef<string> AdminBwoinkColor =
+            CVarDef.Create("admin.admin_bwoink_color", "red", CVar.SERVERONLY);
+
+        /// <summary>
+        ///     The color of the names of admins who reply from discord. Leave empty to disable.
+        ///     Overrides AdminBwoinkColor.
+        /// </summary>
+        public static readonly CVarDef<string> DiscordReplyColor =
+            CVarDef.Create("admin.discord_reply_color", string.Empty, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Use the admin's Admin OOC color in bwoinks.
+        ///     If either the ooc color or this is not set, uses the admin.admin_bwoink_color value.
+        /// </summary>
+        public static readonly CVarDef<bool> UseAdminOOCColorInBwoinks =
+            CVarDef.Create("admin.bwoink_use_admin_ooc_color", false, CVar.SERVERONLY);
 
         /*
          * Explosions
@@ -1890,8 +1996,8 @@ namespace Content.Shared.CCVar
         /// After the period has passed, the count resets.
         /// </summary>
         /// <seealso cref="ChatRateLimitCount"/>
-        public static readonly CVarDef<int> ChatRateLimitPeriod =
-            CVarDef.Create("chat.rate_limit_period", 2, CVar.SERVERONLY);
+        public static readonly CVarDef<float> ChatRateLimitPeriod =
+            CVarDef.Create("chat.rate_limit_period", 2f, CVar.SERVERONLY);
 
         /// <summary>
         /// How many chat messages are allowed in a single rate limit period.
@@ -1901,19 +2007,12 @@ namespace Content.Shared.CCVar
         /// <see cref="ChatRateLimitCount"/> divided by <see cref="ChatRateLimitCount"/>.
         /// </remarks>
         /// <seealso cref="ChatRateLimitPeriod"/>
-        /// <seealso cref="ChatRateLimitAnnounceAdmins"/>
         public static readonly CVarDef<int> ChatRateLimitCount =
             CVarDef.Create("chat.rate_limit_count", 10, CVar.SERVERONLY);
 
         /// <summary>
-        /// If true, announce when a player breached chat rate limit to game administrators.
-        /// </summary>
-        /// <seealso cref="ChatRateLimitAnnounceAdminsDelay"/>
-        public static readonly CVarDef<bool> ChatRateLimitAnnounceAdmins =
-            CVarDef.Create("chat.rate_limit_announce_admins", true, CVar.SERVERONLY);
-
-        /// <summary>
-        /// Minimum delay (in seconds) between announcements from <see cref="ChatRateLimitAnnounceAdmins"/>.
+        /// Minimum delay (in seconds) between notifying admins about chat message rate limit violations.
+        /// A negative value disables admin announcements.
         /// </summary>
         public static readonly CVarDef<int> ChatRateLimitAnnounceAdminsDelay =
             CVarDef.Create("chat.rate_limit_announce_admins_delay", 15, CVar.SERVERONLY);
@@ -2071,7 +2170,13 @@ namespace Content.Shared.CCVar
         ///     Don't show rules to localhost/loopback interface.
         /// </summary>
         public static readonly CVarDef<bool> RulesExemptLocal =
-            CVarDef.Create("rules.exempt_local", true, CVar.SERVERONLY);
+            CVarDef.Create("rules.exempt_local", true, CVar.CLIENT);
+
+        /// <summary>
+        /// The next time the rules will popup for this client, expressed in minutes
+        /// </summary>
+        public static readonly CVarDef<string> RulesNextPopupTime =
+            CVarDef.Create("rules.next_popup_time", "Jan 1, 1997", CVar.CLIENTONLY | CVar.ARCHIVE);
 
 
         /*
@@ -2120,6 +2225,34 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<bool> DefaultWalk =
             CVarDef.Create("control.default_walk", true, CVar.CLIENT | CVar.REPLICATED | CVar.ARCHIVE);
+
+        /*
+         * Interactions
+         */
+
+        // The rationale behind the default limit is simply that I can easily get to 7 interactions per second by just
+        // trying to spam toggle a light switch or lever (though the UseDelay component limits the actual effect of the
+        // interaction).  I don't want to accidentally spam admins with alerts just because somebody is spamming a
+        // key manually, nor do we want to alert them just because the player is having network issues and the server
+        // receives multiple interactions at once. But we also want to try catch people with modified clients that spam
+        // many interactions on the same tick. Hence, a very short period, with a relatively high count.
+
+        /// <summary>
+        /// Maximum number of interactions that a player can perform within <see cref="InteractionRateLimitCount"/> seconds
+        /// </summary>
+        public static readonly CVarDef<int> InteractionRateLimitCount =
+            CVarDef.Create("interaction.rate_limit_count", 5, CVar.SERVER | CVar.REPLICATED);
+
+        /// <seealso cref="InteractionRateLimitCount"/>
+        public static readonly CVarDef<float> InteractionRateLimitPeriod =
+            CVarDef.Create("interaction.rate_limit_period", 0.5f, CVar.SERVER | CVar.REPLICATED);
+
+        /// <summary>
+        /// Minimum delay (in seconds) between notifying admins about interaction rate limit violations. A negative
+        /// value disables admin announcements.
+        /// </summary>
+        public static readonly CVarDef<int> InteractionRateLimitAnnounceAdminsDelay =
+            CVarDef.Create("interaction.rate_limit_announce_admins_delay", 120, CVar.SERVERONLY);
 
         /*
          * STORAGE
@@ -2567,7 +2700,11 @@ namespace Content.Shared.CCVar
         #region Mood System
 
         public static readonly CVarDef<bool> MoodEnabled =
+        #if RELEASE
             CVarDef.Create("mood.enabled", true, CVar.SERVER);
+        #else
+            CVarDef.Create("mood.enabled", false, CVar.SERVER);
+        #endif
 
         public static readonly CVarDef<bool> MoodIncreasesSpeed =
             CVarDef.Create("mood.increases_speed", true, CVar.SERVER);
@@ -2635,10 +2772,76 @@ namespace Content.Shared.CCVar
 
         #endregion
 
+        #region Surgery
+
+        public static readonly CVarDef<bool> CanOperateOnSelf =
+            CVarDef.Create("surgery.can_operate_on_self", false, CVar.SERVERONLY);
+
+        #endregion
         /// <summary>
         /// Set to true to disable parallel processing in the pow3r solver.
         /// </summary>
         public static readonly CVarDef<bool> DebugPow3rDisableParallel =
             CVarDef.Create("debug.pow3r_disable_parallel", true, CVar.SERVERONLY);
+
+        /*
+        * AUTOVOTE SYSTEM
+        */
+
+        /// Enables the automatic voting system.
+        public static readonly CVarDef<bool> AutoVoteEnabled =
+            CVarDef.Create("vote.autovote_enabled", false, CVar.SERVERONLY);
+
+        /// Automatically starts a map vote when returning to the lobby.
+        /// Requires auto voting to be enabled.
+        public static readonly CVarDef<bool> MapAutoVoteEnabled =
+            CVarDef.Create("vote.map_autovote_enabled", true, CVar.SERVERONLY);
+
+        /// Automatically starts a gamemode vote when returning to the lobby.
+        /// Requires auto voting to be enabled.
+        public static readonly CVarDef<bool> PresetAutoVoteEnabled =
+            CVarDef.Create("vote.preset_autovote_enabled", true, CVar.SERVERONLY);
+
+        #region Psionics
+
+        /// <summary>
+        ///     When mindbroken, permanently eject the player from their own body, and turn their character into an NPC.
+        ///     Congratulations, now they *actually* aren't a person anymore.
+        ///     For people who complained that it wasn't obvious enough from the text that Mindbreaking is a form of Murder.
+        /// </summary>
+        public static readonly CVarDef<bool> ScarierMindbreaking =
+            CVarDef.Create("psionics.scarier_mindbreaking", false, CVar.SERVERONLY);
+        #endregion
+
+        /// <summary>
+        /// Set to true to enable the dynamic hostname system.
+        /// Automatically updates the hostname to include current map and preset.
+        /// Configure what that looks like for you in Resources/Prototypes/Locale/en-US/dynamichostname/hostname.ftl
+        /// </summary>
+        public static readonly CVarDef<bool> UseDynamicHostname =
+            CVarDef.Create("game.use_dynamic_hostname", false, CVar.SERVERONLY);
+
+        #region SoftCrit
+
+        /// <summary>
+        ///     Used for basic Soft-Crit implementation. Entities are allowed to crawl when in crit, as this CVar intercepts the mover controller check for incapacitation,
+        ///     and prevents it from stopping movement if this CVar is set to true and the user is Crit but Not Dead. This is only for movement,
+        ///     you still can't stand up while crit, and you're still more or less helpless.
+        /// </summary>
+        public static readonly CVarDef<bool> AllowMovementWhileCrit =
+            CVarDef.Create("mobstate.allow_movement_while_crit", true, CVar.REPLICATED);
+
+        public static readonly CVarDef<bool> AllowTalkingWhileCrit =
+            CVarDef.Create("mobstate.allow_talking_while_crit", true, CVar.REPLICATED);
+
+        /// <summary>
+        ///     Currently does nothing because I would have to figure out WHERE I would even put this check, and the mover controller is fairly complicated.
+        ///     The goal is to make it so that attempting to move while in 'soft crit' can potentially cause further injury, causing you to die faster. Ideally there would be special
+        ///     actions that can be performed in soft crit, such as applying pressure to your own injuries to slow down the bleedout, or other varieties of "Will To Live".
+        /// </summary>
+        public static readonly CVarDef<bool> DamageWhileCritMove =
+            CVarDef.Create("mobstate.damage_while_crit_move", false, CVar.REPLICATED);
+
+        #endregion
     }
 }

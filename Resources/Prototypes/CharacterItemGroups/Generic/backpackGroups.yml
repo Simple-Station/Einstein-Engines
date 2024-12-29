@@ -1,0 +1,13 @@
+- type: characterItemGroup
+  id: LoadoutBackpacks
+  items:
+    - type: loadout
+      id: LoadoutBackpack
+    - type: loadout
+      id: LoadoutBackpackDuffel
+    - type: loadout
+      id: LoadoutBackpackSatchel
+    - type: loadout
+      id: LoadoutItemBackpackSatchelLeather
+    - type: loadout
+      id: LoadoutBackpackMerc

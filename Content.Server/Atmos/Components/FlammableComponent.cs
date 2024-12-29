@@ -1,5 +1,7 @@
+using Content.Shared.Alert;
 using Content.Shared.Damage;
 using Robust.Shared.Physics.Collision.Shapes;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.Atmos.Components
 {
@@ -83,5 +85,7 @@ namespace Content.Server.Atmos.Components
         /// </summary>
         [DataField]
         public float FireStackIncreaseMultiplier = 1f;
+        [DataField]
+        public ProtoId<AlertPrototype> FireAlert = "Fire";
     }
 }

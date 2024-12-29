@@ -2,7 +2,6 @@ using System.Linq;
 using Content.Server.Antag.Components;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
-using Content.Server.GameTicking.Components;
 using Content.Server.GameTicking.Rules;
 using Content.Server.Ghost.Roles;
 using Content.Server.Ghost.Roles.Components;
@@ -14,6 +13,7 @@ using Content.Server.Shuttles.Components;
 using Content.Server.Station.Systems;
 using Content.Shared.Antag;
 using Content.Shared.GameTicking;
+using Content.Shared.GameTicking.Components;
 using Content.Shared.Ghost;
 using Content.Shared.Humanoid;
 using Content.Shared.Players;
@@ -174,7 +174,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
             return;
 
         var players = _playerManager.Sessions
-            .Where(x => GameTicker.PlayerGameStatuses[x.UserId] == PlayerGameStatus.JoinedGame)
+            .Where(x => GameTicker.PlayerGameStatuses.TryGetValue(x.UserId, out var status) && status == PlayerGameStatus.JoinedGame)
             .ToList();
 
         ChooseAntags((uid, component), players);
