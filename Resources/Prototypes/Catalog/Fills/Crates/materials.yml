@@ -150,7 +150,7 @@
 
 - type: entity
   id: CrateMaterialSilver
-  name: gold crate
+  name: silver crate
   parent: CrateGenericSteel
   components:
   - type: StorageFill

@@ -1,0 +1,45 @@
+# For wallmount things that don't fit in any other file.
+
+# Safes
+
+# Vents
+- type: entity
+  parent: BaseSign
+  id: WallmountVent
+  name: vent
+  description: An airvent. Could be a good stash.
+  components:
+  - type: WallMount
+    arc: 360
+  - type: Sprite
+    drawdepth: Overdoors
+    sprite: Structures/Storage/storage.rsi
+    state: vent
+  - type: SecretStash
+    secretPartName: secret-stash-part-vent
+    maxItemSize: Normal
+  - type: ContainerContainer
+    containers:
+      stash: !type:ContainerSlot {}
+  - type: PottedPlantHide # TODO: This needs changed to be generic stash hide?
+
+- type: entity
+  parent: WallmountVent
+  id: WallmountVentDamaged
+  suffix: damaged
+  components:
+  - type: Sprite
+    sprite: Structures/Storage/storage.rsi
+    state: vent-damaged
+
+- type: entity
+  parent: WallmountVent
+  id: WallmountVentOpen
+  suffix: open
+  components:
+  - type: Sprite
+    sprite: Structures/Storage/storage.rsi
+    state: vent-open
+
+
+# First Aid

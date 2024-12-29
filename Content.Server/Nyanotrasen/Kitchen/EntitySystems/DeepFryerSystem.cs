@@ -27,6 +27,7 @@ using Content.Shared.Damage.Prototypes;
 using Content.Shared.Database;
 using Content.Shared.Destructible;
 using Content.Shared.DoAfter;
+using Content.Shared.DragDrop;
 using Content.Shared.Examine;
 using Content.Shared.FixedPoint;
 using Content.Shared.Hands.Components;
@@ -43,6 +44,7 @@ using Content.Shared.Nyanotrasen.Kitchen.UI;
 using Content.Shared.Popups;
 using Content.Shared.Throwing;
 using Content.Shared.UserInterface;
+using Content.Shared.Whitelist;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
@@ -51,6 +53,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Robust.Shared.Physics.Components;
 
 namespace Content.Server.Nyanotrasen.Kitchen.EntitySystems;
 
@@ -76,6 +79,7 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly AmbientSoundSystem _ambientSoundSystem = default!;
     [Dependency] private readonly MetaDataSystem _metaDataSystem = default!;
+    [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
 
     private static readonly string CookingDamageType = "Heat";
     private static readonly float CookingDamageAmount = 10.0f;
@@ -105,6 +109,8 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
         SubscribeLocalEvent<DeepFryerComponent, SolutionChangedEvent>(OnSolutionChange);
         SubscribeLocalEvent<DeepFryerComponent, ContainerRelayMovementEntityEvent>(OnRelayMovement);
         SubscribeLocalEvent<DeepFryerComponent, InteractUsingEvent>(OnInteractUsing);
+        SubscribeLocalEvent<DeepFryerComponent, CanDropTargetEvent>(OnCanDragDropOn);
+        SubscribeLocalEvent<DeepFryerComponent, DragDropTargetEvent>(OnDragDropOn);
 
         SubscribeLocalEvent<DeepFryerComponent, BeforeActivatableUIOpenEvent>(OnBeforeActivatableUIOpen);
         SubscribeLocalEvent<DeepFryerComponent, DeepFryerRemoveItemMessage>(OnRemoveItem);
@@ -156,6 +162,12 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
         }
 
         return oilVolume;
+    }
+
+    private void OnDragDropOn(EntityUid uid, DeepFryerComponent component, ref DragDropTargetEvent args)
+    {
+        _containerSystem.Insert(args.Dragged, component.Storage);
+        args.Handled = true;
     }
 
     /// <summary>
@@ -306,7 +318,7 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
         // just in case the attempt is relevant to any system in the future.
         //
         // The blacklist overrides all.
-        if (component.Blacklist != null && component.Blacklist.IsValid(item, EntityManager))
+        if (component.Blacklist != null && _whitelistSystem.IsWhitelistPass(component.Blacklist, item))
         {
             _popupSystem.PopupEntity(
                 Loc.GetString("deep-fryer-blacklist-item-failed",
@@ -332,12 +344,12 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
 
         MakeCrispy(item);
 
-        var itemComponent = Comp<ItemComponent>(item);
+        var oilToUse = 0;
 
-        // Determine how much solution to spend on this item.
-        var solutionQuantity = FixedPoint2.Min(
-            component.Solution.Volume,
-            itemComponent.Size.Id switch
+        if (HasComp<ItemComponent>(item)) {
+            var itemComponent = Comp<ItemComponent>(item);
+
+            oilToUse = (int) (itemComponent.Size.Id switch
             {
                 "Tiny" => 1,
                 "Small" => 5,
@@ -347,8 +359,17 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
                 "Ginormous" => 50,
                 _ => 10
             } * component.SolutionSizeCoefficient);
+        } else {
+            oilToUse = (int) (TryComp<PhysicsComponent>(item, out var physicsComponent) ? physicsComponent.Mass : 10);
+        }
 
-        if (component.Whitelist != null && component.Whitelist.IsValid(item, EntityManager) ||
+        // Determine how much solution to spend on this item.
+        var solutionQuantity = FixedPoint2.Min(
+            component.Solution.Volume,
+            oilToUse
+        );
+
+        if (component.Whitelist != null && _whitelistSystem.IsWhitelistPass(component.Whitelist, item) ||
             beingEvent.TurnIntoFood)
             MakeEdible(uid, component, item, solutionQuantity);
         else

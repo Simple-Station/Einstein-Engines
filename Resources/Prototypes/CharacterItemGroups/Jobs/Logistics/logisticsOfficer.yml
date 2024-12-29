@@ -1,0 +1,77 @@
+# Logistics Officer
+#- type: characterItemGroup
+#  id: LoadoutLogisticsOfficerBackpacks
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutLogisticsOfficerBelt
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutLogisticsOfficerEars
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutLogisticsOfficerEquipment
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutLogisticsOfficerEyes
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutLogisticsOfficerGloves
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutLogisticsOfficerHead
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCommandQMHeadSoft
+
+- type: characterItemGroup
+  id: LoadoutLogisticsOfficerId
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutLogisticsOfficerNTPDA
+
+- type: characterItemGroup
+  id: LoadoutLogisticsOfficerNeck
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCommandQMNeckCloak
+
+#- type: characterItemGroup
+#  id: LoadoutLogisticsOfficerMask
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutLogisticsOfficerOuter
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutLogisticsOfficerShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCommandQMShoesBootsWinter
+
+- type: characterItemGroup
+  id: LoadoutLogisticsOfficerUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCommandQMUniformTurtleneck
+    - type: loadout
+      id: LoadoutCommandQMUniformTurtleneckSkirt

@@ -1,0 +1,73 @@
+- type: loadout
+  id: LoadoutHandsColorWhite
+  category: Hands
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
+  items:
+    - ClothingHandsGlovesColorWhite
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGloves
+
+- type: loadout
+  id: LoadoutHandsColorYellowBudget
+  category: Hands
+  cost: 3
+  exclusive: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Passenger
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGloves
+  items:
+    - ClothingHandsGlovesColorYellowBudget
+
+- type: loadout
+  id: LoadoutHandsGlovesLeather
+  category: Hands
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHandsGlovesLeather
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGloves
+
+- type: loadout
+  id: LoadoutHandsGlovesPowerglove
+  category: Hands
+  cost: 1
+  exclusive: true
+  canBeHeirloom: true
+  items:
+    - ClothingHandsGlovesPowerglove
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGloves
+
+- type: loadout
+  id: LoadoutHandsGlovesRobohands
+  category: Hands
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHandsGlovesRobohands
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGloves
+
+- type: loadout
+  id: LoadoutHandsGlovesFingerlessWhite
+  category: Hands
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingHandsGlovesFingerlessWhite
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGloves

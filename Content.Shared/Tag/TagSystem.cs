@@ -79,7 +79,7 @@ public sealed class TagSystem : EntitySystem
     /// </exception>
     public bool AddTag(EntityUid entity, string id)
     {
-        return AddTag(EnsureComp<TagComponent>(entity), id);
+        return AddTag(entity, EnsureComp<TagComponent>(entity), id);
     }
 
     /// <summary>
@@ -95,7 +95,7 @@ public sealed class TagSystem : EntitySystem
     /// </exception>
     public bool AddTags(EntityUid entity, params string[] ids)
     {
-        return AddTags(EnsureComp<TagComponent>(entity), ids);
+        return AddTags(entity, EnsureComp<TagComponent>(entity), ids);
     }
 
     /// <summary>
@@ -111,7 +111,7 @@ public sealed class TagSystem : EntitySystem
     /// </exception>
     public bool AddTags(EntityUid entity, IEnumerable<string> ids)
     {
-        return AddTags(EnsureComp<TagComponent>(entity), ids);
+        return AddTags(entity, EnsureComp<TagComponent>(entity), ids);
     }
 
     /// <summary>
@@ -128,8 +128,8 @@ public sealed class TagSystem : EntitySystem
     /// </exception>
     public bool TryAddTag(EntityUid entity, string id)
     {
-        return _tagQuery.TryComp(entity, out var component) &&
-               AddTag(component, id);
+        return TryComp<TagComponent>(entity, out var component) &&
+               AddTag(entity, component, id);
     }
 
     /// <summary>
@@ -146,8 +146,8 @@ public sealed class TagSystem : EntitySystem
     /// </exception>
     public bool TryAddTags(EntityUid entity, params string[] ids)
     {
-        return _tagQuery.TryComp(entity, out var component) &&
-               AddTags(component, ids);
+        return TryComp<TagComponent>(entity, out var component) &&
+               AddTags(entity, component, ids);
     }
 
     /// <summary>
@@ -164,8 +164,8 @@ public sealed class TagSystem : EntitySystem
     /// </exception>
     public bool TryAddTags(EntityUid entity, IEnumerable<string> ids)
     {
-        return _tagQuery.TryComp(entity, out var component) &&
-               AddTags(component, ids);
+        return TryComp<TagComponent>(entity, out var component) &&
+               AddTags(entity, component, ids);
     }
 
     /// <summary>
@@ -333,8 +333,8 @@ public sealed class TagSystem : EntitySystem
     /// </exception>
     public bool RemoveTag(EntityUid entity, string id)
     {
-        return _tagQuery.TryComp(entity, out var component) &&
-               RemoveTag(component, id);
+        return TryComp<TagComponent>(entity, out var component) &&
+               RemoveTag(entity, component, id);
     }
 
     /// <summary>
@@ -350,8 +350,8 @@ public sealed class TagSystem : EntitySystem
     /// </returns>
     public bool RemoveTags(EntityUid entity, params string[] ids)
     {
-        return _tagQuery.TryComp(entity, out var component) &&
-               RemoveTags(component, ids);
+        return TryComp<TagComponent>(entity, out var component) &&
+               RemoveTags(entity, component, ids);
     }
 
     /// <summary>
@@ -367,8 +367,8 @@ public sealed class TagSystem : EntitySystem
     /// </exception>
     public bool RemoveTags(EntityUid entity, IEnumerable<string> ids)
     {
-        return _tagQuery.TryComp(entity, out var component) &&
-               RemoveTags(component, ids);
+        return TryComp<TagComponent>(entity, out var component) &&
+               RemoveTags(entity, component, ids);
     }
 
     /// <summary>
@@ -379,14 +379,14 @@ public sealed class TagSystem : EntitySystem
     /// <exception cref="UnknownPrototypeException">
     ///     Thrown if no <see cref="TagPrototype"/> exists with the given id.
     /// </exception>
-    public bool AddTag(TagComponent component, string id)
+    public bool AddTag(EntityUid uid, TagComponent component, string id)
     {
         AssertValidTag(id);
         var added = component.Tags.Add(id);
 
         if (added)
         {
-            Dirty(component);
+            Dirty(uid, component);
             return true;
         }
 
@@ -401,9 +401,9 @@ public sealed class TagSystem : EntitySystem
     /// <exception cref="UnknownPrototypeException">
     ///     Thrown if one of the ids represents an unregistered <see cref="TagPrototype"/>.
     /// </exception>
-    public bool AddTags(TagComponent component, params string[] ids)
+    public bool AddTags(EntityUid uid, TagComponent component, params string[] ids)
     {
-        return AddTags(component, ids.AsEnumerable());
+        return AddTags(uid, component, ids.AsEnumerable());
     }
 
     /// <summary>
@@ -414,7 +414,7 @@ public sealed class TagSystem : EntitySystem
     /// <exception cref="UnknownPrototypeException">
     ///     Thrown if one of the ids represents an unregistered <see cref="TagPrototype"/>.
     /// </exception>
-    public bool AddTags(TagComponent component, IEnumerable<string> ids)
+    public bool AddTags(EntityUid uid, TagComponent component, IEnumerable<string> ids)
     {
         var count = component.Tags.Count;
 
@@ -426,7 +426,7 @@ public sealed class TagSystem : EntitySystem
 
         if (component.Tags.Count > count)
         {
-            Dirty(component);
+            Dirty(uid, component);
             return true;
         }
 
@@ -642,13 +642,13 @@ public sealed class TagSystem : EntitySystem
     /// <exception cref="UnknownPrototypeException">
     ///     Thrown if no <see cref="TagPrototype"/> exists with the given id.
     /// </exception>
-    public bool RemoveTag(TagComponent component, string id)
+    public bool RemoveTag(EntityUid uid, TagComponent component, string id)
     {
         AssertValidTag(id);
 
         if (component.Tags.Remove(id))
         {
-            Dirty(component);
+            Dirty(uid, component);
             return true;
         }
 
@@ -665,9 +665,9 @@ public sealed class TagSystem : EntitySystem
     /// <exception cref="UnknownPrototypeException">
     ///     Thrown if one of the ids represents an unregistered <see cref="TagPrototype"/>.
     /// </exception>
-    public bool RemoveTags(TagComponent component, params string[] ids)
+    public bool RemoveTags(EntityUid uid, TagComponent component, params string[] ids)
     {
-        return RemoveTags(component, ids.AsEnumerable());
+        return RemoveTags(uid, component, ids.AsEnumerable());
     }
 
     /// <summary>
@@ -678,7 +678,7 @@ public sealed class TagSystem : EntitySystem
     /// <exception cref="UnknownPrototypeException">
     ///     Thrown if one of the ids represents an unregistered <see cref="TagPrototype"/>.
     /// </exception>
-    public bool RemoveTags(TagComponent component, IEnumerable<string> ids)
+    public bool RemoveTags(EntityUid uid, TagComponent component, IEnumerable<string> ids)
     {
         var count = component.Tags.Count;
 
@@ -690,7 +690,7 @@ public sealed class TagSystem : EntitySystem
 
         if (component.Tags.Count < count)
         {
-            Dirty(component);
+            Dirty(uid, component);
             return true;
         }
 

@@ -84,9 +84,7 @@ public partial class ChatSystem
         bool ignoreActionBlocker = false
         )
     {
-        if (!(emote.Whitelist?.IsValid(source, EntityManager) ?? true))
-            return;
-        if (emote.Blacklist?.IsValid(source, EntityManager) ?? false)
+        if (_whitelistSystem.IsWhitelistFailOrNull(emote.Whitelist, source) || _whitelistSystem.IsBlacklistPass(emote.Blacklist, source))
             return;
 
         if (!emote.Available &&
@@ -178,7 +176,7 @@ public partial class ChatSystem
     private void InvokeEmoteEvent(EntityUid uid, EmotePrototype proto)
     {
         var ev = new EmoteEvent(proto);
-        RaiseLocalEvent(uid, ref ev);
+        RaiseLocalEvent(uid, ref ev, true); // goob edit
     }
 }
 

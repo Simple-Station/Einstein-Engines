@@ -10,7 +10,7 @@
   - type: Item
     size: Normal
   - type: MeleeWeapon
-    attackRate: 0.75
+    attackRate: 1.3333
     range: 1.75
     damage:
       types:
@@ -21,6 +21,8 @@
 #  - type: MeleeStaminaCost
 #    swing: 10
 #    wieldCoefficient: 0.35 #if wielded you will only consume 3.5 stam its a weapon after all
+  - type: DamageOtherOnHit
+    staminaCost: 10
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:
@@ -42,7 +44,7 @@
     sprite: Nyanotrasen/Objects/Weapons/Melee/shinai.rsi
     state: icon
   - type: MeleeWeapon
-    attackRate: 1.25
+    attackRate: .8
     range: 1.75
     bluntStaminaDamageFactor: 2.0
     damage:
@@ -52,10 +54,10 @@
       collection: WoodDestroy
 #  - type: MeleeStaminaCost
 #    swing: 5
+  - type: DamageOtherOnHit
   - type: StaminaDamageOnHit
     damage: 10
   - type: Item
     size: Normal
     sprite: Nyanotrasen/Objects/Weapons/Melee/shinai.rsi
   - type: DisarmMalus
-

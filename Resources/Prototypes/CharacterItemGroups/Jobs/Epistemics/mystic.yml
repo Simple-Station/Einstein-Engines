@@ -1,0 +1,77 @@
+# Mystic
+#- type: characterItemGroup
+#  id: LoadoutMysticBackpacks
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMysticBelt
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMysticEars
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutMysticEquipment
+  maxItems: 3
+  items:
+    - type: loadout
+      id: LoadoutMysticEquipmentCandles
+    - type: loadout
+      id: LoadoutMysticEquipmentCandlesSmall
+    - type: loadout
+      id: LoadoutMysticPillCanisterSpaceDrugs
+
+#- type: characterItemGroup
+#  id: LoadoutMysticEyes
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMysticGloves
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMysticHead
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMysticId
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMysticNeck
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMysticMask
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutMysticOuter
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutScienceOuterLabcoatSeniorResearcher
+
+#- type: characterItemGroup
+#  id: LoadoutMysticShoes
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutMysticUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutScienceUniformJumpskirtSenior
+    - type: loadout
+      id: LoadoutScienceUniformJumpsuitSenior

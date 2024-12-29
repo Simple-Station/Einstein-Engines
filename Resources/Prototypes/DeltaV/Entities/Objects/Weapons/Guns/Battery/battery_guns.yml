@@ -165,6 +165,15 @@
           Disabler: { state: mode-disabler }
           Lethal: { state: mode-lethal }
           Special: { state: mode-stun } # Unused
+  - type: MeleeWeapon
+    attackRate: 1.2
+    damage:
+      types:
+        Blunt: 7.5
+    bluntStaminaDamageFactor: 1.0
+    wideAnimationRotation: 135
+  - type: DamageOtherOnHit
+    staminaCost: 5
 
 - type: entity
   name: miniature energy gun
@@ -172,6 +181,9 @@
   id: WeaponEnergyGunMiniSecurity
   description: A light version of the Energy gun with a smaller capacity.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
+  components:
+  - type: GuideHelp
+    guides: [ SecurityWeapons ]
 
 - type: entity
   name: PDW-9 Energy Pistol
@@ -229,6 +241,15 @@
     - Sidearm
   - type: StaticPrice
     price: 750
+  - type: MeleeWeapon
+    attackRate: 1.2
+    damage:
+      types:
+        Blunt: 7.5
+    bluntStaminaDamageFactor: 1.0
+    wideAnimationRotation: 135
+  - type: DamageOtherOnHit
+    staminaCost: 5
 
 - type: entity
   name: PDW-9 Energy Pistol
@@ -236,6 +257,9 @@
   id: WeaponEnergyGunPistolSecurity
   description: A military grade sidearm, used by many militia forces throughout the local sector.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
+  components:
+  - type: GuideHelp
+    guides: [ SecurityWeapons ]
 
 - type: entity
   name: IK-60 laser carbine

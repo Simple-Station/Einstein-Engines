@@ -10,19 +10,25 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.25
+    attackRate: .8
     range: 1.75
     soundHit:
       path: /Audio/SimpleStation14/Weapons/Melee/rapierhit.ogg
     damage:
       types:
         Slash: 15
-    heavyRateModifier: 0.8
+    heavyRateModifier: 1.25
     heavyRangeModifier: 1
     heavyDamageBaseModifier: 1
     heavyStaminaCost: 5
     maxTargets: 7
     angle: 80
+  - type: DamageOtherOnHit
+    staminaCost: 5
+  - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
+  - type: ThrowingAngle
+    angle: 225
   - type: Reflect
     enabled: true
     # Design intent: a robust captain or tot can sacrifice movement to make the most of this weapon, but they have to
@@ -55,18 +61,24 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.5
+    attackRate: .6666
     soundHit:
       path: /Audio/SimpleStation14/Weapons/Melee/rapierhit.ogg
     damage:
       types:
         Slash: 12
-    heavyRateModifier: 0.5
+    heavyRateModifier: 2
     heavyRangeModifier: 2.75 #Superior Japanese folded steel
     heavyDamageBaseModifier: 1.25
     heavyStaminaCost: 15
     maxTargets: 1
     angle: 20
+  - type: DamageOtherOnHit
+    staminaCost: 10
+  - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
+  - type: ThrowingAngle
+    angle: 225
   - type: Item
     size: Normal
     sprite: DeltaV/Objects/Weapons/Melee/katana.rsi #DeltaV
@@ -86,6 +98,8 @@
     damage:
       types:
         Slash: 25
+  - type: ThrowingAngle
+    angle: 300
   - type: Item
     size: Normal
     sprite: Objects/Weapons/Melee/energykatana.rsi
@@ -121,17 +135,23 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 0.8
+    attackRate: 1.25
     damage:
       types:
         Slash: 15
-    heavyRateModifier: 0.8
+    heavyRateModifier: 1.25
     heavyRangeModifier: 1.25
     heavyDamageBaseModifier: 1.2
     heavyStaminaCost: 7.5
     angle: 80
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
+  - type: DamageOtherOnHit
+    staminaCost: 5
+  - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
+  - type: ThrowingAngle
+    angle: 225
   - type: Item
     size: Normal
     sprite: Objects/Weapons/Melee/machete.rsi
@@ -149,14 +169,14 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 0.65
+    attackRate: 1.53
     range: 1.85
     damage:
       types:
         Slash: 19
         Blunt: 1
     bluntStaminaDamageFactor: 25.0
-    heavyRateModifier: 0.5
+    heavyRateModifier: 2
     heavyRangeModifier: 1
     heavyDamageBaseModifier: 1
     heavyStaminaCost: 15
@@ -164,6 +184,12 @@
     angle: 200
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
+  - type: DamageOtherOnHit
+    staminaCost: 18
+  - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
+  - type: ThrowingAngle
+    angle: 225
   - type: Item
     size: Normal
   - type: Clothing
@@ -187,11 +213,11 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.25
+    attackRate: .8
     damage:
       types:
         Slash: 12
-    heavyRateModifier: 0.8
+    heavyRateModifier: 1.25
     heavyRangeModifier: 1.2
     heavyDamageBaseModifier: 1.2
     heavyStaminaCost: 7.5
@@ -199,6 +225,12 @@
     angle: 40
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
+  - type: DamageOtherOnHit
+    staminaCost: 5
+  - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
+  - type: ThrowingAngle
+    angle: 225
   - type: Item
     size: Normal
     sprite: Objects/Weapons/Melee/cutlass.rsi
@@ -216,7 +248,7 @@
       state: icon
     - type: MeleeWeapon
       wideAnimationRotation: -135
-      attackRate: 10
+      attackRate: .1
       damage:
         types:
           Structural: 150
@@ -227,6 +259,7 @@
           Radiation: 10
       soundHit:
         path: /Audio/Effects/explosion_small1.ogg
+    - type: DamageOtherOnHit
     - type: Reflect
       enabled: true
       reflectProb: 0.5 # In robust hands, deflects as well as an e-sword

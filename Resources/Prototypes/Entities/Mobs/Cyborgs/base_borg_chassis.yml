@@ -84,6 +84,7 @@
   - type: Hands
     showInHands: false
     disableExplosionRecursion: true
+  - type: ComplexInteraction
   - type: IntrinsicRadioReceiver
   - type: IntrinsicRadioTransmitter
     channels:
@@ -228,6 +229,8 @@
     - TauCetiBasic
     - RobotTalk
   - type: PsionicInsulation
+  - type: TwistedConstructionTarget
+    replacementProto: ConstructShell
 
 - type: entity
   abstract: true

@@ -32,6 +32,29 @@
   - type: Appearance
   - type: StaticPrice
     price: 500
+  - type: Cautery
+    speed: 0.9
+  - type: SurgeryTool
+    endSound:
+      path: /Audio/Weapons/Guns/Gunshots/laser.ogg
+  - type: MeleeWeapon
+    attackRate: 1.3333
+    damage:
+      types:
+        Blunt: 8.5
+    bluntStaminaDamageFactor: 1.25
+    swapKeys: true
+    disableHeavy: true
+    animation: WeaponArcThrust
+    wideAnimationRotation: 180
+    soundHit:
+      collection: MetalThud
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 2.5
+  - type: DamageOtherOnHit
+    staminaCost: 7
 
 - type: entity
   id: BaseWeaponPowerCell
@@ -68,6 +91,29 @@
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot
+  - type: Cautery
+    speed: 0.9
+  - type: SurgeryTool
+    endSound:
+      path: /Audio/Weapons/Guns/Gunshots/laser.ogg
+  - type: MeleeWeapon
+    attackRate: 1.3333
+    damage:
+      types:
+        Blunt: 9.0
+    bluntStaminaDamageFactor: 1.25
+    swapKeys: true
+    disableHeavy: true
+    animation: WeaponArcThrust
+    wideAnimationRotation: 180
+    soundHit:
+      collection: MetalThud
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 2.5
+  - type: DamageOtherOnHit
+    staminaCost: 7
 
 - type: entity
   id: BaseWeaponBatterySmall
@@ -88,6 +134,15 @@
     slots:
     - Belt
     - suitStorage
+  - type: MeleeWeapon
+    attackRate: 1.2
+    damage:
+      types:
+        Blunt: 7.5
+    bluntStaminaDamageFactor: 1.0
+    wideAnimationRotation: 135
+  - type: DamageOtherOnHit
+    staminaCost: 5
 
 - type: entity
   id: BaseWeaponPowerCellSmall
@@ -104,6 +159,15 @@
     quickEquip: false
     slots:
     - Belt
+  - type: MeleeWeapon
+    attackRate: 1.2
+    damage:
+      types:
+        Blunt: 7.5
+    bluntStaminaDamageFactor: 1.0
+    wideAnimationRotation: 135
+  - type: DamageOtherOnHit
+    staminaCost: 5
 
 - type: entity
   name: svalinn laser pistol
@@ -238,6 +302,10 @@
     fireCost: 62.5
   - type: StaticPrice
     price: 300
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 4
 
 - type: entity
   name: pulse pistol
@@ -276,6 +344,15 @@
   components:
   - type: StealTarget
     stealGroup: HoSAntiqueWeapon
+
+- type: entity
+  name: captain's pulse pistol
+  parent: WeaponPulsePistol
+  id: WeaponPulsePistolCaptain
+  description: A rare and exotic handgun gifted to the station's Captain. Its ivory grip has been engraved with the words, "Glory to the Company, Glory to Mother Sol. Phoron will make us all rich."
+  components:
+  - type: StealTarget
+    stealGroup: WeaponCaptain
 
 - type: entity
   name: pulse carbine
@@ -358,6 +435,14 @@
   - type: HitscanBatteryAmmoProvider
     proto: RedHeavyLaser
     fireCost: 100
+  - type: MeleeWeapon
+    attackRate: 1.4
+    damage:
+      types:
+        Blunt: 10
+    bluntStaminaDamageFactor: 1.3333
+  - type: DamageOtherOnHit
+    staminaCost: 9.5
 
 - type: entity
   name: portable particle decelerator
@@ -389,6 +474,22 @@
     - type: Battery
       maxCharge: 10000
       startingCharge: 10000
+    - type: MeleeWeapon
+      attackRate: 1.6
+      damage: # This is super expensive, low attack rate, slows down the user and high stam cost so it can be high
+        types:
+          Blunt: 34
+          Structural: 10
+      swapKeys: false
+      disableHeavy: false
+      disableClick: true
+      bluntStaminaDamageFactor: 1.5
+      heavyRateModifier: 1.0
+      heavyDamageBaseModifier: 1.0
+      heavyStaminaCost: 21
+      wideAnimationRotation: 270
+    - type: DamageOtherOnHit
+      staminaCost: 48
 
 - type: entity
   name: x-ray cannon
@@ -457,6 +558,12 @@
     - type: GuideHelp
       guides:
       - Security
+    - type: MeleeWeapon
+      damage:
+        types:
+          Blunt: 5.0
+      bluntStaminaDamageFactor: 2.5
+      wideAnimationRotation: 135
 
 - type: entity
   name: disabler SMG
@@ -495,6 +602,12 @@
     zeroVisible: true
   - type: StaticPrice
     price: 260
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 6.5
+    bluntStaminaDamageFactor: 2.5
+    wideAnimationRotation: 180
 
 - type: entity
   name: practice disabler
@@ -520,6 +633,11 @@
     - type: ProjectileBatteryAmmoProvider
       proto: BulletDisablerPractice
       fireCost: 100
+    - type: MeleeWeapon
+      damage:
+        types:
+          Blunt: 3
+      bluntStaminaDamageFactor: 1.0
 
 - type: entity
   name: taser
@@ -595,7 +713,16 @@
   - type: StaticPrice
     price: 750
   - type: StealTarget
-    stealGroup: WeaponAntiqueLaser
+    stealGroup: WeaponCaptain
+  - type: MeleeWeapon
+    attackRate: 1.3333
+    damage:
+      types:
+        Blunt: 9
+    bluntStaminaDamageFactor: 1.25
+    wideAnimationRotation: 135
+  - type: DamageOtherOnHit
+    staminaCost: 5
 
 - type: entity
   name: advanced laser pistol
@@ -631,6 +758,12 @@
   - type: Appearance
   - type: StaticPrice
     price: 63
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 8
+  - type: DamageOtherOnHit
+    staminaCost: 6
 
 - type: entity
   name: C.H.I.M.P. handcannon

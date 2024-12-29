@@ -3,7 +3,16 @@
   id: Health
 
 - type: moodCategory
+  id: Heirloom
+
+- type: moodCategory
   id: Hunger
+
+- type: moodCategory
+  id: LotophagoiAddiction
+
+- type: moodCategory
+  id: NicotineAddiction
 
 - type: moodCategory
   id: Thirst

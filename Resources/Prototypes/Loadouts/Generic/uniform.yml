@@ -1,0 +1,1047 @@
+- type: loadout
+  id: LoadoutUniformAncientJumpsuit
+  category: Uniform
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterJobRequirement
+      jobs:
+        - Passenger
+  items:
+    - ClothingUniformJumpsuitAncient
+
+# Colored jumpsuits
+# Someone please alphabetically order these...
+- type: loadout
+  id: LoadoutUniformJumpsuitColorWhite
+  category: Uniform
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingUniformJumpsuitColorWhite
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Civilian
+        - Medical
+        - Epistemics
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+
+- type: loadout
+  id: LoadoutUniformJumpskirtColorWhite
+  category: Uniform
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingUniformJumpskirtColorWhite
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Civilian
+        - Medical
+        - Epistemics
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+
+- type: loadout
+  id: LoadoutUniformJumpsuitFlannel
+  category: Uniform
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitFlannel
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+
+- type: loadout
+  id: LoadoutUniformJumpskirtCasualBlue
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformJumpskirtCasualBlue
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+        - Command
+
+- type: loadout
+  id: LoadoutUniformJumpsuitCasualPurple
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitCasualPurple
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+        - Command
+
+- type: loadout
+  id: LoadoutUniformJumpskirtCasualPurple
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformJumpskirtCasualPurple
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+        - Command
+
+- type: loadout
+  id: LoadoutUniformJumpsuitCasualRed
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitCasualRed
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+
+- type: loadout
+  id: LoadoutUniformJumpskirtCasualRed
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformJumpskirtCasualRed
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+
+- type: loadout
+  id: LoadoutUniformJumpsuitTshirtJeans
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitTshirtJeans
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+        - Command
+
+- type: loadout
+  id: LoadoutUniformJumpsuitTshirtJeansGray
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitTshirtJeansGray
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+
+- type: loadout
+  id: LoadoutUniformJumpsuitTshirtJeansPeach
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitTshirtJeansPeach
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+
+- type: loadout
+  id: LoadoutUniformJumpsuitJeansGreen
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitJeansGreen
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+        - Command
+
+- type: loadout
+  id: LoadoutUniformJumpsuitJeansRed
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitJeansRed
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+
+- type: loadout
+  id: LoadoutUniformJumpsuitJeansBrown
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitJeansBrown
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+        - Command
+
+- type: loadout
+  id: LoadoutUniformJumpsuitLostTourist
+  category: Uniform
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitLostTourist
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+        - Command
+
+# Hawaiian shirts
+- type: loadout
+  id: LoadoutUniformJumpsuitHawaiBlack
+  category: Uniform
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitHawaiBlack
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+        - Command
+
+- type: loadout
+  id: LoadoutUniformJumpsuitHawaiBlue
+  category: Uniform
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitHawaiBlue
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+        - Command
+
+- type: loadout
+  id: LoadoutUniformJumpsuitHawaiRed
+  category: Uniform
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitHawaiRed
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+
+- type: loadout
+  id: LoadoutUniformJumpsuitHawaiYellow
+  category: Uniform
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitHawaiYellow
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+        - Command
+
+# AutoDrobe clothes
+- type: loadout
+  id: LoadoutUniformDressRed
+  category: Uniform
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingUniformDressRed
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+
+- type: loadout
+  id: LoadoutUniformJumpsuitSober
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitSober
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+
+- type: loadout
+  id: LoadoutUniformSkirtTurtle
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformSkirtTurtle
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+
+- type: loadout
+  id: LoadoutUniformGeisha
+  category: Uniform
+  cost: 1
+  exclusive: true
+  items:
+    - UniformGeisha
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+
+- type: loadout
+  id: LoadoutUniformCostumeArcDress
+  category: Uniform
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingCostumeArcDress
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+        - Command
+
+- type: loadout
+  id: LoadoutUniformCostumeMioSkirt
+  category: Uniform
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingCostumeMioSkirt
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+        - Command
+
+- type: loadout
+  id: LoadoutUniformCostumeNaota
+  category: Uniform
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingCostumeNaota
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+        - Command
+
+- type: loadout
+  id: LoadoutUniformJumpsuitLoungewear
+  category: Uniform
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitLoungewear
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+
+# Bartender clothes
+- type: loadout
+  id: LoadoutUniformJumpsuitBartender
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitBartender
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+        - Command
+
+- type: loadout
+  id: LoadoutUniformJumpskirtBartender
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformJumpskirtBartender
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+        - Command
+
+# Kendo
+- type: loadout
+  id: LoadoutUniformKendoHakama
+  category: Uniform
+  cost: 1
+  exclusive: true
+  canBeHeirloom: true
+  items:
+    - ClothingUniformKendoHakama
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+
+- type: loadout
+  id: LoadoutUniformMartialGi
+  category: Uniform
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
+  items:
+    - ClothingUniformMartialGi
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+        - Command
+
+# Kimono
+- type: loadout
+  id: LoadoutClothingJumpsuitKimono
+  category: Uniform
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
+  items:
+    - ClothingUniformJumpsuitKimono
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+        - Command
+
+- type: loadout
+  id: LoadoutClothingKimonoBlue
+  category: Uniform
+  cost: 1
+  exclusive: true
+  canBeHeirloom: true
+  items:
+    - ClothingKimonoBlue
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+        - Command
+
+- type: loadout
+  id: LoadoutClothingKimonoPink
+  category: Uniform
+  cost: 1
+  exclusive: true
+  canBeHeirloom: true
+  items:
+    - ClothingKimonoPink
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+        - Command
+
+- type: loadout
+  id: LoadoutClothingKimonoPurple
+  category: Uniform
+  cost: 1
+  exclusive: true
+  canBeHeirloom: true
+  items:
+    - ClothingKimonoPurple
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+        - Command
+
+- type: loadout
+  id: LoadoutClothingKimonoSky
+  category: Uniform
+  cost: 1
+  exclusive: true
+  canBeHeirloom: true
+  items:
+    - ClothingKimonoSky
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+        - Command
+
+- type: loadout
+  id: LoadoutClothingKimonoGreen
+  category: Uniform
+  cost: 1
+  exclusive: true
+  canBeHeirloom: true
+  items:
+    - ClothingKimonoGreen
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+        - Command
+
+# Gakuran
+- type: loadout
+  id: LoadoutUniformSchoolGakuranBlack
+  category: Uniform
+  cost: 1
+  exclusive: true
+  canBeHeirloom: true
+  items:
+    - ClothingUniformSchoolGakuranBlack
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+
+# Schoolgirl uniform
+- type: loadout
+  id: LoadoutUniformSchoolgirlBlack
+  category: Uniform
+  cost: 1
+  exclusive: true
+  items:
+    - UniformSchoolgirlBlack
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+
+- type: loadout
+  id: LoadoutUniformSchoolgirlBlue
+  category: Uniform
+  cost: 1
+  exclusive: true
+  items:
+    - UniformSchoolgirlBlue
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+        - Command
+
+- type: loadout
+  id: LoadoutUniformSchoolgirlCyan
+  category: Uniform
+  cost: 1
+  exclusive: true
+  items:
+    - UniformSchoolgirlCyan
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+        - Command
+
+- type: loadout
+  id: LoadoutUniformSchoolgirlGreen
+  category: Uniform
+  cost: 1
+  exclusive: true
+  items:
+    - UniformSchoolgirlGreen
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+        - Command
+
+- type: loadout
+  id: LoadoutUniformSchoolgirlOrange
+  category: Uniform
+  cost: 1
+  exclusive: true
+  items:
+    - UniformSchoolgirlOrange
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+        - Command
+
+- type: loadout
+  id: LoadoutUniformSchoolgirlPink
+  category: Uniform
+  cost: 1
+  exclusive: true
+  items:
+    - UniformSchoolgirlPink
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+        - Command
+
+- type: loadout
+  id: LoadoutUniformSchoolgirlPurple
+  category: Uniform
+  cost: 1
+  exclusive: true
+  items:
+    - UniformSchoolgirlPurple
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+        - Command
+
+- type: loadout
+  id: LoadoutUniformSchoolgirlRed
+  category: Uniform
+  cost: 1
+  exclusive: true
+  items:
+    - UniformSchoolgirlRed
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+
+- type: loadout
+  id: LoadoutUniformSchoolgirlDusk
+  category: Uniform
+  cost: 1
+  exclusive: true
+  items:
+    - UniformSchoolgirlDusk
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+        - Command
+
+- type: loadout
+  id: LoadoutUniformSchoolgirlBlazerTan
+  category: Uniform
+  cost: 1
+  exclusive: true
+  items:
+    - UniformSchoolgirlBlazerTan
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+        - Command
+
+# MNK Uniforms
+- type: loadout
+  id: LoadoutClothingMNKOfficeSkirt
+  category: Uniform
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingUniformMNKOfficeSkirt
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+
+- type: loadout
+  id: LoadoutClothingMNKUnderGarment
+  category: Uniform
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingUniformMNKUnderGarment
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+
+- type: loadout
+  id: LoadoutClothingMNKGymBra
+  category: Uniform
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingUniformMNKGymBra
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+
+- type: loadout
+  id: LoadoutClothingMNKDressBlack
+  category: Uniform
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingUniformMNKDressBlack
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+
+- type: loadout
+  id: LoadoutClothingMNKBlackOveralls
+  category: Uniform
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingUniformMNKBlackOveralls
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+
+- type: loadout
+  id: LoadoutClothingMNKBlackShoulder
+  category: Uniform
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingUniformMNKBlackShoulder
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+
+- type: loadout
+  id: LoadoutClothingMNKTracksuitBlack
+  category: Uniform
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingUniformMNKTracksuitBlack
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+
+# Suits
+- type: loadout
+  id: LoadoutClothingJumpsuitSuitBlack
+  category: Uniform
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitSuitBlack
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+
+- type: loadout
+  id: LoadoutClothingJumpsuitSuitBlackAlt
+  category: Uniform
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitSuitBlackAlt
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+
+- type: loadout
+  id: LoadoutClothingJumpsuitSuitBlackMob
+  category: Uniform
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitSuitBlackMob
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+
+- type: loadout
+  id: LoadoutClothingJumpsuitSuitBrown
+  category: Uniform
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitSuitBrown
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+        - Security
+
+- type: loadout
+  id: LoadoutClothingJumpsuitSuitBrownAlt
+  category: Uniform
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitSuitBrownAlt
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+
+- type: loadout
+  id: LoadoutClothingJumpsuitSuitBrownMob
+  category: Uniform
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitSuitBrownMob
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+
+- type: loadout
+  id: LoadoutClothingJumpsuitSuitWhite
+  category: Uniform
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingUniformJumpsuitSuitWhite
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+        - Security
+
+- type: loadout
+  id: LoadoutClothingJumpsuitSuitWhiteAlt
+  category: Uniform
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingUniformJumpsuitSuitWhiteAlt
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+
+- type: loadout
+  id: LoadoutClothingJumpsuitSuitWhiteMob
+  category: Uniform
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingUniformJumpsuitSuitWhiteMob
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
