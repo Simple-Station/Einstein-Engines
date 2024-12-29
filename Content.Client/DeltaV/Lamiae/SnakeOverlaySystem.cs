@@ -1,13 +1,7 @@
-/*
-* This file is licensed under AGPLv3
-* Copyright (c) 2024 Rane
-* See AGPLv3.txt for details.
-*/
-
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
 
-namespace Content.Client.DeltaV.Lamiae;
+namespace Content.Client.Lamiae;
 
 /// <summary>
 /// This system turns on our always-on overlay. I have no opinion on this design pattern or the existence of this file.

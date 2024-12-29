@@ -1,9 +1,3 @@
-/*
-* This file is licensed under AGPLv3
-* Copyright (c) 2024 Rane
-* See AGPLv3.txt for details.
-*/
-
 using Content.Shared.SegmentedEntity;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
@@ -15,7 +9,7 @@ using System.Numerics;
 using System.Linq;
 
 
-namespace Content.Client.DeltaV.Lamiae;
+namespace Content.Client.Lamiae;
 
 /// <summary>
 /// This draws lamia segments directly from polygons instead of sprites. This is a very novel approach as of the time this is being written (August 2024) but it wouldn't surprise me

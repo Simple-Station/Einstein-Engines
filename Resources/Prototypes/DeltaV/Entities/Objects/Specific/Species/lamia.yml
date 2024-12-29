@@ -5,7 +5,7 @@
 - type: entity
   id: LamiaInitialSegment
   save: false
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Damageable
   - type: StandingState
@@ -39,7 +39,7 @@
   save: false
   parent: LamiaInitialSegment
   name: lamia segment
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: A tail segment, hopefully attached to a lamia.
   components:
   - type: Sprite
