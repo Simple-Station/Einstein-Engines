@@ -8797,3 +8797,10 @@ Entries:
   id: 6592
   time: '2024-12-26T03:50:10.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1370
+- author: SiN Mapping Team
+  changes:
+    - type: Add
+      message: Another big update for Saltern
+  id: 6593
+  time: '2024-12-29T01:51:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1372
