@@ -27,7 +27,7 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
     public Color EyeColor { get; private set; }
 
     [DataField]
-    public Color SkinColor { get; private set; }
+    public Color SkinColor { get;  set; } // WD EDIT
 
     [DataField]
     public List<Marking> Markings { get; private set; } = new();

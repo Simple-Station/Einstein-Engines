@@ -4,6 +4,7 @@
   roundStart: true
   prototype: MobIPC
   sprites: MobIPCSprites
+  defaultSkinTone: "#aaa9ad" # WD EDIT
   markingLimits: MobIPCMarkingLimits
   dollPrototype: MobIPCDummy
   skinColoration: Hues
