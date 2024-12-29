@@ -154,6 +154,7 @@
   parent: CrateBaseSecure
   id: CrateBaseSecureReinforced
   suffix: Secure, Reinforced
+  components:
   - type: Destructible
     thresholds:
     - trigger:
