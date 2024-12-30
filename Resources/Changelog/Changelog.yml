@@ -8831,3 +8831,13 @@ Entries:
   id: 6596
   time: '2024-12-30T02:24:41.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1333
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Tweaked arrivals to reduce the playable area, and some concessions have
+        been made to prevent access to admeme items that were on display. These
+        changes are pending a later update where we port Arrivals Job Spawns. 
+  id: 6597
+  time: '2024-12-30T21:15:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1371
