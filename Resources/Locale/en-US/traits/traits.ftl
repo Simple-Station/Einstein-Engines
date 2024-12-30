@@ -406,33 +406,33 @@ trait-description-DermalArmor =
     Your skin has been replaced with a flexible, yet sturdy, hard-polymer shell wrapped in a layer of synthetic flesh.
     This augmentation provides an innate 10% resistance to physical damage.
 
-trait-name-CyberEyes = Cyber-Eyes Basic System
+trait-name-CyberEyes = Upgradable Cyber-Eyes
 trait-description-CyberEyes =
     One or more of your eyes have been replaced with a highly modular mechanical ocular implant.
     Their most basic functionality is to provide amelioration for weaknesses of the wearer's natural eyes.
     The functionality of these implants can be extended by a variety of commercially available modules.
 
-trait-name-FlareShielding = Cyber-Eyes Flare Shielding
+trait-name-FlareShielding = Cyber-Eyes: Eye Damage Resistance
 trait-description-FlareShielding =
     Your cybereyes have been fitted with a photochromic lense that automatically darkens in response to intense stimuli.
-    This provides substantial protection from bright flashes of light, such as those from welding arcs.
+    This provides immunity from most bright flashes of light, such as those from welding arcs.
 
-trait-name-CyberEyesSecurity = Cyber-Eyes SecHud
+trait-name-CyberEyesSecurity = Cyber-Eyes: SecHud Module
 trait-description-CyberEyesSecurity =
     Your Cyber-Eyes have been upgraded to include a built-in Security Hud. Note that this augmentation is considered Contraband
     for anyone not under the employ of station Security personel, and may be disabled by your employer before dispatch to the station.
 
-trait-name-CyberEyesMedical = Cyber-Eyes MedHud
+trait-name-CyberEyesMedical = Cyber-Eyes: MedHud Module
 trait-description-CyberEyesMedical =
     Your Cyber-Eyes have been upgraded to include a built-in Medical Hud, allowing you to track the relative health condition of biological organisms.
 
-trait-name-CyberEyesDiagnostic = Cyber-Eyes DiagHud
+trait-name-CyberEyesDiagnostic = Cyber-Eyes: Diagnostics Module
 trait-description-CyberEyesDiagnostic =
     Your Cyber-Eyes have been upgraded to include a built-in Diagnostic Hud, allowing you to track the condition of synthetic entities.
 
-trait-name-CyberEyesOmni = Cyber-Eyes HudSuite
+trait-name-CyberEyesOmni = Cyber-Eyes: Premium Suite Module
 trait-description-CyberEyesOmni =
-    This expensive implant provides the combined benefits of a SecHud, MedHud, and a DiagHud.
+    This expensive implant provides the combined benefits of a SecHud, MedHud, and a Diagnostics Module.
     Note that this augmentation is considered Contraband for anyone not under the employ of station Security personel,
     and may be disabled by your employer before dispatch to the station.
 
