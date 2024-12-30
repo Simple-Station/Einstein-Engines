@@ -8804,3 +8804,10 @@ Entries:
   id: 6593
   time: '2024-12-29T01:51:30.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1372
+- author: sleepyyapril
+  changes:
+    - type: Remove
+      message: '*Temporarily* removed Europa from map pool, pending some refurbishing.'
+  id: 6594
+  time: '2024-12-30T00:46:05.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1380
