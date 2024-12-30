@@ -297,7 +297,7 @@
     access: [["Hydroponics"]]
 
 - type: entity
-  parent: CrateBaseSecure
+  parent: CrateBaseSecureReinforced
   id: CrateWeaponSecure
   name: secure weapon crate
   components:
@@ -309,8 +309,8 @@
     access: [["Armory"]]
 
 - type: entity
-  parent: CrateBaseSecure
-  suffix: Armory, Secure
+  parent: CrateBaseSecureReinforced
+  suffix: Armory, Secure, Reinforced
   id: CrateContrabandStorageSecure
   name: contraband storage crate
   description: An armory access locked crate for storing contraband confiscated from suspects or prisoners.
