@@ -518,7 +518,7 @@
     minimumPlayers: 15
     reoccurrenceDelay: 30
     startAnnouncement: false
-  - type: AlertLevelInterceptionRule
+# - type: AlertLevelInterceptionRule - Disable setting to blue with sleeper agents
   - type: AntagSelection
     definitions:
     - prefRoles: [ TraitorSleeper ]
