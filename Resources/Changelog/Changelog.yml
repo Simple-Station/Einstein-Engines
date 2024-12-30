@@ -8811,3 +8811,23 @@ Entries:
   id: 6594
   time: '2024-12-30T00:46:05.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1380
+- author: FoxxoTrystan
+  changes:
+    - type: Tweak
+      message: Shadowkins has returned and has been reworked.
+    - type: Add
+      message: DarkSwap is now in the Psionic Power Pool.
+    - type: Tweak
+      message: Psionics can now see their mana pools.
+  id: 6595
+  time: '2024-12-30T02:10:53.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1200
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Tweak
+      message: >-
+        Added back support for the action bar to have "loadouts" or quick
+        layouts of actions (man, how many things are called loadouts?)
+  id: 6596
+  time: '2024-12-30T02:24:41.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1333

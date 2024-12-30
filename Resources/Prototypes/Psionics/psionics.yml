@@ -495,6 +495,9 @@
       amplificationModifier: 1
     - !type:AddPsionicPsychognomicDescriptors
       psychognomicDescriptor: tenebrous
+    - !type:PsionicAddAvailablePowers
+      powerPrototype: DarkSwapPower
+      weight: 0.1
   removalFunctions:
     - !type:RemovePsionicActions
     - !type:RemovePsionicStatSources
@@ -502,6 +505,8 @@
       assayFeedback: shadeskip-power-metapsionic-feedback
     - !type:RemovePsionicPsychognomicDescriptors
       psychognomicDescriptor: tenebrous
+    - !type:PsionicRemoveAvailablePowers
+      powerPrototype: DarkSwapPower
 
 - type: psionicPower
   id: TelekineticPulsePower
@@ -533,15 +538,6 @@
       psychognomicDescriptor: kinetic
 
 # - type: psionicPower
-#   id: ShadowkinPowers
-#   name: Shadowkin Powers
-#   description: shadowkin-powers-description
-#   actions:
-#     - ActionShadowkinShadeskip
-#     - ActionDarkSwap
-#   powerSlotCost: 1
-
-# - type: psionicPower
 #   id: EtherealVisionPower
 #   name: Ethereal Vision
 #   description: ethereal-vision-powers-description
@@ -549,13 +545,30 @@
 #     - type: ShowEthereal
 #   powerSlotCost: 0
 
-# - type: psionicPower
-#   id: DarkSwapPower
-#   name: DarkSwap
-#   description: darkswap-power-description
-#   actions:
-#     - ActionDarkSwap
-#   powerSlotCost: 1
+- type: psionicPower
+  id: DarkSwapPower
+  name: DarkSwap
+  powerCategories:
+    - Anomalist
+    - Shadow
+    - Dangerous
+  initializeFunctions:
+    - !type:AddPsionicActions
+      actions:
+        - ActionDarkSwap
+    - !type:PsionicFeedbackPopup
+    - !type:PsionicFeedbackSelfChat
+      feedbackMessage: darkswap-power-initialization-feedback
+    - !type:PsionicModifyGlimmer
+      glimmerModifier: 10
+    - !type:AddPsionicPsychognomicDescriptors
+      psychognomicDescriptor: tenebrous
+  removalFunctions:
+    - !type:RemovePsionicActions
+    - !type:RemovePsionicStatSources
+    - !type:RemovePsionicPsychognomicDescriptors
+      psychognomicDescriptor: tenebrous
+  powerSlotCost: 2
 
 - type: psionicPower
   id: PyrokineticFlare
