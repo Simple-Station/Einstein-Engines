@@ -8841,3 +8841,22 @@ Entries:
   id: 6597
   time: '2024-12-30T21:15:16.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1371
+- author: BlueHNT
+  changes:
+    - type: Add
+      message: Added swat suit
+    - type: Add
+      message: Added swat crate
+    - type: Add
+      message: Added new crate category for secure reinforced crates
+    - type: Tweak
+      message: Tweaked security supplies and crates
+    - type: Tweak
+      message: >-
+        Tweaked the price of Cybersun's tacsuits because apparently they weren't
+        charging enough to properly scam salvage techs.
+    - type: Tweak
+      message: Tweaked `StructuralMetallicStrong` structural protection from 10 to 80
+  id: 6598
+  time: '2024-12-30T21:23:22.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1377
