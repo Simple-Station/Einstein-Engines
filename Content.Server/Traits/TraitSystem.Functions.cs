@@ -388,6 +388,9 @@ public sealed partial class TraitModifyMobThresholds : TraitFunction
 [UsedImplicitly]
 public sealed partial class TraitModifyMobState : TraitFunction
 {
+    // Three-State Booleans my beloved.
+    // :faridabirb.png:
+
     [DataField, AlwaysPushInheritance]
     public bool? AllowMovementWhileCrit;
 
