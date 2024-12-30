@@ -8867,3 +8867,12 @@ Entries:
   id: 6599
   time: '2024-12-30T21:28:28.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1384
+- author: stellar-novas
+  changes:
+    - type: Fix
+      message: >-
+        Fixed mindbreaker and soulbreaker cartridges not injecting their
+        solutions.
+  id: 6600
+  time: '2024-12-30T23:01:48.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1378
