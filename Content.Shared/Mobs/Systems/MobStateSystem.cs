@@ -78,7 +78,7 @@ public partial class MobStateSystem : EntitySystem
     }
 
     /// <summary>
-    ///  Check if a Mob is Critical or Dead
+    ///  Check if a Mob is Critical or Dead or SoftCrit
     /// </summary>
     /// <param name="target">Target Entity</param>
     /// <param name="component">The MobState component owned by the target</param>
