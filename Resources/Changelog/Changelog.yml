@@ -8860,3 +8860,10 @@ Entries:
   id: 6598
   time: '2024-12-30T21:23:22.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1377
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: NERFED WISPS, A LOT.
+  id: 6599
+  time: '2024-12-30T21:28:28.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1384
