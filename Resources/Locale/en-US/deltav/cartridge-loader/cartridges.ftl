@@ -171,6 +171,7 @@ nano-chat-no-chats = No active chats
 nano-chat-select-chat = Select a chat to begin
 nano-chat-message-placeholder = Type a message...
 nano-chat-send = Send
+nano-chat-edit = Edit
 nano-chat-delete = Delete
 nano-chat-loading = Loading...
 nano-chat-message-too-long = Message too long ({$current}/{$max} characters)
@@ -182,6 +183,7 @@ nano-chat-delivery-failed = Failed to deliver
 
 # Create chat popup
 nano-chat-new-title = Add a new chat
+nano-chat-edit-title = Edit a contact
 nano-chat-number-label = Number
 nano-chat-name-label = Name
 nano-chat-job-label = Job title

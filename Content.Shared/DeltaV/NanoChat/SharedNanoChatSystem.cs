@@ -3,6 +3,7 @@ using Content.Shared.Examine;
 using Content.Shared.PDA;
 using Robust.Shared.Timing;
 
+
 namespace Content.Shared.DeltaV.NanoChat;
 
 /// <summary>
@@ -11,7 +12,6 @@ namespace Content.Shared.DeltaV.NanoChat;
 public abstract class SharedNanoChatSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
 
     public override void Initialize()
     {
@@ -139,10 +139,6 @@ public abstract class SharedNanoChatSystem : EntitySystem
     public uint? GetCurrentChat(Entity<NanoChatCardComponent?> card)
     {
         if (!Resolve(card, ref card.Comp))
-            return null;
-
-        // If the UI is not open, no one is technically selected.
-        if (!_ui.IsUiOpen(card.Owner, PdaUiKey.Key))
             return null;
 
         return card.Comp.CurrentChat;
