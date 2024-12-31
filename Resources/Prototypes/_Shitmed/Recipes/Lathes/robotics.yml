@@ -1,7 +1,8 @@
 - type: latheRecipe
   abstract: true
-  parent: BaseRoboticsRecipe
   id: BaseIPCLimbRecipe
+  category: Robotics
+  completetime: 2
   materials:
     Steel: 250
     Plastic: 100
@@ -9,17 +10,18 @@
 
 - type: latheRecipe
   abstract: true
-  parent: BaseRoboticsRecipe
   id: BaseIPCOrganRecipe
+  category: Robotics
+  completetime: 2
   materials:
     Steel: 250
     Plasma: 100
     Plastic: 100
 
 - type: latheRecipe
-  parent: BaseRoboticsRecipe
   id: TorsoIPC
   result: TorsoIPC
+  category: Robotics
   completetime: 3
   materials:
     Steel: 3000
