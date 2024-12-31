@@ -22,7 +22,7 @@
     Slash: 10
     Piercing: 10
     Heat: 10
-    Structural: 10
+    Structural: 80
 
 - type: damageModifierSet
   id: StructuralMetallic
