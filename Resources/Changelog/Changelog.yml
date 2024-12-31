@@ -8876,3 +8876,10 @@ Entries:
   id: 6600
   time: '2024-12-30T23:01:48.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1378
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Ported several metric tons of mapping assets from Nuclear14
+  id: 6601
+  time: '2024-12-31T16:28:11.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1385
