@@ -1,0 +1,10 @@
+- type: entity
+  parent: [ClothingOuterArmorCaptainCarapace, ClothingOuterStorageBase]
+  id: ClothingOuterCoatCapTrench
+  name: captain's armored trenchcoat
+  description: A greatcoat enhanced with a special alloy for some extra protection and style for those with a commanding presence, outfitted with emblems and decor befitting its wearer. Issued only to the station's finest.
+  components:
+  - type: Sprite
+    sprite: TheDen/Clothing/OuterClothing/Coats/cap_trenchcoat.rsi
+  - type: Clothing
+    sprite: TheDen/Clothing/OuterClothing/Coats/cap_trenchcoat.rsi
