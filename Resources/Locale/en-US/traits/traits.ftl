@@ -436,9 +436,6 @@ trait-description-CyberEyesOmni =
     Note that this augmentation is considered Contraband for anyone not under the employ of station Security personel,
     and may be disabled by your employer before dispatch to the station.
 
-trait-name-ShadowkinBlackeye = Blackeye
-trait-description-ShadowkinBlackeye = You lose your special Shadowkin powers, in return for some points.
-
 trait-name-DispelPower = Normality Projection
 trait-description-DispelPower =
     Your Mentalic abilities include the power to enforce normality upon Noospheric phenomena.
