@@ -41,13 +41,14 @@
   group: market
 
 # Security
+# Can't abuse em if you only got 1, good luck spamming frezon
 - type: cargoProduct
   id: SecurityShanlinTacsuit
   icon:
     sprite: Nyanotrasen/Clothing/OuterClothing/ReverseEngineering/syndicate.rsi
     state: icon
   product: CrateSecurityShanlinTacsuit
-  cost: 17500
+  cost: 75000
   category: cargoproduct-category-name-hardsuits
   group: market
 
@@ -57,7 +58,7 @@
     sprite: Nyanotrasen/Clothing/OuterClothing/ReverseEngineering/juggernaut.rsi
     state: icon
   product: CrateSecurityGuanYuTacsuit
-  cost: 30000
+  cost: 125000
   category: cargoproduct-category-name-hardsuits
   group: market
 

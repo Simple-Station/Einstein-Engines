@@ -116,3 +116,7 @@ alerts-offer-desc = Someone offers you an item.
 
 alerts-deflecting-name = Deflecting
 alerts-deflecting-desc = You have a chance to deflect incoming projectiles. Standing still or moving slowly will increase this chance.
+
+alerts-mana-name = Mana Level
+alerts-mana-desc = How much mana is available to spend on your powers.
+mana-alert = [font size=12][color=purple]Mana: {$mana}/{$manaMax}[/color][/font]

@@ -149,3 +149,23 @@
     - Energy
     reflectProb: 0.2
     spread: 90
+
+- type: entity
+  parent: CrateBaseSecure
+  id: CrateBaseSecureReinforced
+  suffix: Secure, Reinforced
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallicStrong
