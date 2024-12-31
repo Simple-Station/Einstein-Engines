@@ -32,59 +32,114 @@
 # Generic
 
 - type: latheRecipe
-  parent: BaseIPCLimbRecipe
   id: LeftArmIPC
   result: LeftArmIPC
+  category: Robotics
+  completetime: 2
+  materials:
+    Steel: 250
+    Plastic: 100
+    Glass: 250
 
 - type: latheRecipe
-  parent: BaseIPCLimbRecipe
   id: RightArmIPC
   result: RightArmIPC
+  category: Robotics
+  completetime: 2
+  materials:
+    Steel: 250
+    Plastic: 100
+    Glass: 250
 
 - type: latheRecipe
-  parent: BaseIPCLimbRecipe
   id: LeftHandIPC
   result: LeftHandIPC
+  category: Robotics
+  completetime: 2
+  materials:
+    Steel: 250
+    Plastic: 100
+    Glass: 250
 
 - type: latheRecipe
-  parent: BaseIPCLimbRecipe
   id: RightHandIPC
   result: RightHandIPC
+  category: Robotics
+  completetime: 2
+  materials:
+    Steel: 250
+    Plastic: 100
+    Glass: 250
 
 - type: latheRecipe
-  parent: BaseIPCLimbRecipe
   id: LeftLegIPC
   result: LeftLegIPC
+  category: Robotics
+  completetime: 2
+  materials:
+    Steel: 250
+    Plastic: 100
+    Glass: 250
 
 - type: latheRecipe
-  parent: BaseIPCLimbRecipe
   id: RightLegIPC
   result: RightLegIPC
+  category: Robotics
+  completetime: 2
+  materials:
+    Steel: 250
+    Plastic: 100
+    Glass: 250
 
 - type: latheRecipe
-  parent: BaseIPCLimbRecipe
   id: LeftFootIPC
   result: LeftFootIPC
+  category: Robotics
+  completetime: 2
+  materials:
+    Steel: 250
+    Plastic: 100
+    Glass: 250
 
 - type: latheRecipe
-  parent: BaseIPCLimbRecipe
   id: RightFootIPC
   result: RightFootIPC
+  category: Robotics
+  completetime: 2
+  materials:
+    Steel: 250
+    Plastic: 100
+    Glass: 250
 
 - type: latheRecipe
-  parent: BaseIPCLimbRecipe
   id: HeadIPC
   result: HeadIPC
+  category: Robotics
+  completetime: 2
+  materials:
+    Steel: 250
+    Plastic: 100
+    Glass: 250
 
 - type: latheRecipe
-  parent: BaseIPCOrganRecipe
   id: OrganIPCEyes
   result: OrganIPCEyes
+  category: Robotics
+  completetime: 2
+  materials:
+    Steel: 250
+    Plastic: 100
+    Glass: 250
 
 - type: latheRecipe
-  parent: BaseIPCOrganRecipe
   id: OrganIPCPump
   result: OrganIPCPump
+  category: Robotics
+  completetime: 2
+  materials:
+    Steel: 250
+    Plastic: 100
+    Glass: 250
 
 - type: latheRecipe
   id: BorgModuleSurgery

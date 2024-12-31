@@ -6,14 +6,15 @@
   components:
   - type: MachineBoard
     prototype: Autodoc
-    stackRequirements:
-      Cable: 3
+    requirements:
       Manipulator: 4
+    materialRequirements:
+      Cable: 3
       Steel: 10
     tagRequirements:
       BorgArm:
-        amount: 3
-        defaultPrototype: LeftArmBorg
+        Amount: 3
+        DefaultPrototype: LeftArmBorg
 
 - type: entity
   parent: AutodocCircuitboard
@@ -31,7 +32,7 @@
   components:
   - type: MachineBoard
     prototype: OperatingTable
-    stackRequirements:
+    materialRequirements:
       Cable: 3
       Silver: 2
       Steel: 4
@@ -42,10 +43,10 @@
   name: medical biofab machine board
   description: A machine printed circuit board for a medical biofab.
   components:
-    - type: Sprite
-      state: medical
-    - type: MachineBoard
-      prototype: MedicalBiofabricator
-      requirements:
-        MatterBin: 2
-        Manipulator: 2
+  - type: Sprite
+    state: medical
+  - type: MachineBoard
+    prototype: MedicalBiofabricator
+    requirements:
+      MatterBin: 2
+      Manipulator: 2
