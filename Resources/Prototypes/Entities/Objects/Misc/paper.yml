@@ -332,13 +332,14 @@
   - type: PhysicalComposition
     materialComposition:
       Steel: 25
+  # Shitmed Change
   - type: Tending
     speed: 0.55
   - type: SurgeryTool
     startSound:
-      path: /Audio/Medical/Surgery/retractor1.ogg
+      path: /Audio/_Shitmed/Medical/Surgery/retractor1.ogg
     endSound:
-      path: /Audio/Medical/Surgery/hemostat1.ogg
+      path: /Audio/_Shitmed/Medical/Surgery/hemostat1.ogg
   - type: EmbeddableProjectile
     offset: 0.3,0.0
     removalTime: 0.0

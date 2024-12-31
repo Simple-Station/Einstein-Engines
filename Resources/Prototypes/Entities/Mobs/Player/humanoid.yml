@@ -37,6 +37,8 @@
   randomizeName: false
   speciesBlacklist:
     - Shadowkin
+    - Monkey # Shitmed Change
+    - Kobold # Shitmed Change
   components:
     - type: GhostRole
       name: ghost-role-information-Death-Squad-name
@@ -73,6 +75,8 @@
   randomizeName: false
   speciesBlacklist:
     - Shadowkin
+    - Monkey # Shitmed Change
+    - Kobold # Shitmed Change
   components:
     - type: GhostRole
       name: ghost-role-information-ert-leader-name
@@ -484,6 +488,8 @@
   id: CBURNAgent
   speciesBlacklist:
     - Shadowkin
+    - Monkey # Shitmed Change
+    - Kobold # Shitmed Change
   components:
     - type: MindShield
     - type: Loadout
@@ -514,6 +520,8 @@
   id: CentcomOfficial
   speciesBlacklist:
     - Shadowkin
+    - Monkey # Shitmed Change
+    - Kobold # Shitmed Change
   components:
     - type: MindShield
     - type: GhostRole
@@ -543,6 +551,8 @@
   id: SyndicateAgent
   speciesBlacklist:
     - Shadowkin
+    - Monkey # Shitmed Change
+    - Kobold # Shitmed Change
   components:
     - type: Loadout
       prototypes: [SyndicateOperativeGearExtremelyBasic]
@@ -561,6 +571,8 @@
   id: NukeOp
   speciesBlacklist:
     - Shadowkin
+    - Monkey # Shitmed Change
+    - Kobold # Shitmed Change
   components:
     - type: NukeOperative
     - type: Psionic
@@ -585,6 +597,8 @@
   id: Cluwne
   speciesBlacklist:
     - Shadowkin
+    - Monkey # Shitmed Change
+    - Kobold # Shitmed Change
   randomizeName: false
   components:
     - type: GhostRole

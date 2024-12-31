@@ -8876,3 +8876,21 @@ Entries:
   id: 6600
   time: '2024-12-30T23:01:48.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1378
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Ported several metric tons of mapping assets from Nuclear14
+  id: 6601
+  time: '2024-12-31T16:28:11.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1385
+- author: Mocho
+  changes:
+    - type: Add
+      message: >-
+        Added some fun organs and other thingies, check out the Goob PRs if you
+        want more details.
+    - type: Fix
+      message: Fixed tons of issues with shitmed. Too many for the changelog in fact.
+  id: 6602
+  time: '2024-12-31T20:42:24.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1387

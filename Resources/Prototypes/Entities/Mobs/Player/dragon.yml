@@ -6,6 +6,8 @@
   description: A flying leviathan, loosely related to space carps.
   abstract: true
   components:
+  - type: Body # Shitmed
+    prototype: SpaceDragon
   - type: Bloodstream
     bloodMaxVolume: 650
   - type: GhostRole
@@ -145,9 +147,8 @@
   components:
   - type: Dragon
     spawnRiftAction: ActionSpawnRift
-  - type: ActionGun
-    action: ActionDragonsBreath
-    gunProto: DragonsBreathGun
+  - type: GenericAntag
+    rule: Dragon
   - type: GuideHelp
     guides:
     - MinorAntagonists
