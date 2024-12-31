@@ -36,7 +36,7 @@ public sealed partial class HealthAnalyzerComponent : Component
     public EntityUid? ScannedEntity;
 
     /// <summary>
-    /// The body part that is currently being scanned.
+    /// Shitmed Change: The body part that is currently being scanned.
     /// </summary>
     [DataField]
     public EntityUid? CurrentBodyPart;

@@ -6,7 +6,7 @@ using Content.Shared.Input;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Body.Components;
-using Content.Shared.Body.Organ;
+using Content.Shared._Shitmed.Body.Organ;
 using Content.Shared.Standing;
 using Content.Shared.Popups;
 using Content.Shared.Stunnable;
@@ -146,7 +146,7 @@ public abstract class SharedLayingDownSystem : EntitySystem
             || !_mobState.IsAlive(uid)
             || TerminatingOrDeleted(uid)
             || !TryComp<BodyComponent>(uid, out var body)
-            || body.LegEntities.Count == 0
+            || body.LegEntities.Count < body.RequiredLegs
             || HasComp<DebrainedComponent>(uid))
             return false;
 
