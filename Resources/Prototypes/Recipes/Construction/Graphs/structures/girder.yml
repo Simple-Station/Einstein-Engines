@@ -62,6 +62,17 @@
               amount: 2
               doAfter: 2
 
+        - to: bcWall
+          completed:
+            - !type:SnapToGrid
+              southRotation: true
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: BasaltOreStack
+              amount: 4
+              doAfter: 2
+
         - to: uraniumWall
           completed:
             - !type:SnapToGrid
@@ -184,6 +195,18 @@
             - tool: Welding
               doAfter: 10
 
+    - node: wall
+      entity: WallSolid
+      edges:
+        - to: girder
+          completed:
+            - !type:GivePrototype
+              prototype: SheetSteel1
+              amount: 2
+          steps:
+            - tool: Welding
+              doAfter: 10
+
     - node: woodWall
       entity: WallWood
       edges:
@@ -192,6 +215,18 @@
             - !type:GivePrototype
               prototype: MaterialWoodPlank1
               amount: 2
+          steps:
+            - tool: Prying
+              doAfter: 10
+
+    - node: bcWall
+      entity: WallBasaltCobblebrick
+      edges:
+        - to: girder
+          completed:
+            - !type:GivePrototype
+              prototype: BasaltOreStack
+              amount: 4
           steps:
             - tool: Prying
               doAfter: 10

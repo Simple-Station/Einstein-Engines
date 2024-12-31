@@ -1,0 +1,7 @@
+- type: stack
+  id: BasaltOreStack
+  name: basalt rock
+  icon: { sprite: _DS14/Objects/Materials/rock.rsi, state: sheet_3 }
+  spawn: BasaltOre1
+  maxCount: 30
+  itemSize: 3

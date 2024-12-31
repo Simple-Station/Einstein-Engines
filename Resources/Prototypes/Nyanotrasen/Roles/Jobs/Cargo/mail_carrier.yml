@@ -10,6 +10,7 @@
   - Cargo
   - Maintenance
   - Mail
+  setPreference: false
 
 - type: startingGear
   id: MailCarrierGear

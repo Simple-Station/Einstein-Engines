@@ -1,0 +1,98 @@
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsBaron
+  suffix: Baron, Locked
+  noSpawn: true
+  components:
+  - type: AccessReader
+    access: [["Baron"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsCaptainGuard
+  suffix: CaptainGuard, Locked
+  noSpawn: true
+  components:
+  - type: AccessReader
+    access: [["CaptainGuard"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsKeep
+  suffix: Keep, Locked
+  noSpawn: true
+  components:
+  - type: AccessReader
+    access: [["Keep"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsNanoTrasenAccess1
+  suffix: NanoTrasenAccess1, Locked
+  noSpawn: true
+  components:
+  - type: AccessReader
+    access: [["NanoTrasenAccess1"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsNanoTrasenAccess2
+  suffix: NanoTrasenAccess2, Locked
+  noSpawn: true
+  components:
+  - type: AccessReader
+    access: [["NanoTrasenAccess2"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsNanoTrasenAccess3
+  suffix: NanoTrasenAccess3, Locked
+  noSpawn: true
+  components:
+  - type: AccessReader
+    access: [["NanoTrasenAccess3"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsSettler
+  suffix: settler, Locked
+  noSpawn: true
+  components:
+  - type: AccessReader
+    access: [["Settler"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsBlockA
+  suffix: settlerA, Locked
+  noSpawn: true
+  components:
+  - type: AccessReader
+    access: [["SettlerBlockA"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsBlockB
+  suffix: settlerB, Locked
+  noSpawn: true
+  components:
+  - type: AccessReader
+    access: [["SettlerBlockB"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsBlockC
+  suffix: settlerC, Locked
+  noSpawn: true
+  components:
+  - type: AccessReader
+    access: [["SettlerBlockC"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsBlockD
+  suffix: settlerD, Locked
+  noSpawn: true
+  components:
+  - type: AccessReader
+    access: [["SettlerBlockD"]]

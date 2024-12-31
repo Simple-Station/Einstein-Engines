@@ -1,0 +1,24 @@
+- type: accessLevel
+  id: SettlerBlockA
+  name: id-card-access-level-settlera
+
+- type: accessLevel
+  id: SettlerBlockB
+  name: id-card-access-level-settlerb
+
+- type: accessLevel
+  id: SettlerBlockC
+  name: id-card-access-level-settlerc
+
+- type: accessLevel
+  id: SettlerBlockD
+  name: id-card-access-level-settlerd
+
+- type: accessGroup
+  id: Settlers
+  tags:
+  - Farmer
+  - Physcian
+  - Salvager
+  - Tavernkeeper
+  - Technician

@@ -1,0 +1,177 @@
+- type: tile
+  id: DarkPlanetfloor
+  name: DarkPlanetfloor
+  sprite: /Textures/Tiles/Planet/basalt.png
+  baseTurf: space
+  isSubfloor: true
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: true
+  indestructible: true
+
+- type: tile
+  id: LatticeP
+  name: DarkLatticePlanet
+  sprite: /Textures/_DS14/Tiles/plattice.png
+  baseTurf: DarkPlanetfloor
+  isSubfloor: true
+  deconstructTools: [ Cutting ]
+  weather: true
+  footstepSounds:
+    collection: FootstepPlating
+  friction: 0.3
+  itemDrop: PartRodMetal1
+  heatCapacity: 10000
+
+- type: tile
+  id: PlatingP
+  name: DarkPlanetPlating
+  sprite: /Textures/_DS14/Tiles/plating.png
+  baseTurf: LatticeP
+  isSubfloor: true
+  deconstructTools: [ Axing ]
+  footstepSounds:
+    collection: FootstepFloor
+  friction: 0.3
+  heatCapacity: 10000
+
+- type: tile
+  id: DarkBasaltRoad
+  name: Dark basalt road
+  sprite: /Textures/_DS14/Tiles/basaltroad.png
+  baseTurf: DarkPlanetfloor
+  isSubfloor: true
+  deconstructTools: [ Prying ]
+  weather: true
+  footstepSounds:
+    collection: FootstepPlating
+  friction: 0.3
+  itemDrop: BasaltOre1
+  heatCapacity: 10000
+
+- type: tile
+  id: DarkBasaltTile
+  name: Dark basalt tile
+  sprite: /Textures/_DS14/Tiles/basalttile.png
+  baseTurf: DarkPlanetfloor
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  weather: true
+  footstepSounds:
+    collection: FootstepPlating
+  friction: 0.3
+  itemDrop: BasaltOre1
+  heatCapacity: 10000
+
+- type: tile
+  id: DarkDiagonalBasaltTile
+  name: Dark diagonal basalt tile
+  sprite: /Textures/_DS14/Tiles/basalttile_diagonal.png
+  baseTurf: DarkPlanetfloor
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  weather: true
+  footstepSounds:
+    collection: FootstepPlating
+  friction: 0.3
+  itemDrop: BasaltOre1
+  heatCapacity: 10000
+
+- type: tile
+  id: DarkConcreteFloor
+  name: Dark Concrete Floor
+  sprite: /Textures/_DS14/Tiles/basalthardfloor.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: DarkPlanetfloor
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  weather: false
+  footstepSounds:
+    collection: FootstepPlating
+  friction: 0.3
+  itemDrop: BasaltOre1
+  heatCapacity: 10000
+
+- type: tile
+  id: DarkConcreteFloorMono
+  name: Dark Concrete Floor Mono
+  sprite: /Textures/_DS14/Tiles/basalthardfloor_mono.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: DarkPlanetfloor
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  weather: false
+  footstepSounds:
+    collection: FootstepPlating
+  friction: 0.3
+  itemDrop: BasaltOre1
+  heatCapacity: 10000
+
+- type: tile
+  id: DarkPlanetSoil
+  name: dark-soil
+  sprite: /Textures/_DS14/Tiles/dirt/grass.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 1
+  edgeSprites:
+    SouthEast: /Textures/_DS14/Tiles/dirt/single_edge.png
+    NorthEast: /Textures/_DS14/Tiles/dirt/single_edge.png
+    NorthWest: /Textures/_DS14/Tiles/dirt/single_edge.png
+    SouthWest: /Textures/_DS14/Tiles/dirt/single_edge.png
+    South: /Textures/_DS14/Tiles/dirt/double_edge.png
+    East: /Textures/_DS14//Tiles/dirt/double_edge.png
+    North: /Textures/_DS14/Tiles/dirt/double_edge.png
+    West: /Textures/_DS14/Tiles/dirt/double_edge.png
+  baseTurf: DarkPlanetfloor
+  isSubfloor: true
+  footstepSounds:
+    collection: Planetfloor
+  itemDrop: FloorTileItemGrass
+  heatCapacity: 10000
+  weather: true
+  indestructible: true
+
+- type: tile
+  id: DarkPlanetAsh
+  name: dark-ash
+  sprite: /Textures/_DS14/Tiles/ash/grass.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 1
+  edgeSprites:
+    SouthEast: /Textures/_DS14/Tiles/ash/single_edge.png
+    NorthEast: /Textures/_DS14/Tiles/ash/single_edge.png
+    NorthWest: /Textures/_DS14/Tiles/ash/single_edge.png
+    SouthWest: /Textures/_DS14/Tiles/ash/single_edge.png
+    South: /Textures/_DS14/Tiles/ash/double_edge.png
+    East: /Textures/_DS14//Tiles/ash/double_edge.png
+    North: /Textures/_DS14/Tiles/ash/double_edge.png
+    West: /Textures/_DS14/Tiles/ash/double_edge.png
+  baseTurf: DarkPlanetfloor
+  isSubfloor: true
+  footstepSounds:
+    collection: FootstepSnow
+  itemDrop: FloorTileItemGrass
+  heatCapacity: 10000
+  weather: true
+  indestructible: true

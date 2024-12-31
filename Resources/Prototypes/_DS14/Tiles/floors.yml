@@ -1,0 +1,498 @@
+- type: tile
+  id: FloorSteelDEV
+  name: tiles-steel-floor-DEV
+  sprite: /Textures/_DS14/Tiles/dev.png
+  baseTurf: PlatingP
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  itemDrop: FloorTileItemSteelDEV
+  heatCapacity: 10000
+  tileRipResistance: 4500
+
+- type: tile
+  id: Darktile3
+  name: darktile3
+  sprite: /Textures/_DS14/Tiles/steel.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: PlatingP
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  itemDrop: TileFloorOne
+  heatCapacity: 10000
+  tileRipResistance: 4500
+
+- type: tile
+  id: DarkTile2
+  name: darktile2
+  sprite: /Textures/_DS14/Tiles/steel_mono.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: PlatingP
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  itemDrop: TileFloorTwo
+  heatCapacity: 10000
+  tileRipResistance: 4500
+
+- type: tile
+  id: DarkTile1
+  name: darktile1
+  sprite: /Textures/_DS14/Tiles/shuttlegrey.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: PlatingP
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  itemDrop: TileFloorTwo
+  heatCapacity: 10000
+  tileRipResistance: 4500
+
+- type: tile
+  id: DarkCheckeredFloor
+  name: Dark checker darktile
+  sprite: /Textures/_DS14/Tiles/checker_dark.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: PlatingP
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: CheckeredFloor
+  heatCapacity: 10000
+  tileRipResistance: 4500
+
+- type: tile
+  id: DarkWoodenFloor
+  name: Dark wood floor
+  sprite: /Textures/_DS14/Tiles/wood.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: PlatingP
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  itemDrop: CheckeredFloor
+  heatCapacity: 10000
+  tileRipResistance: 4500
+
+- type: tile
+  id: DarkWoodenFloor2
+  name: Dark wood floor
+  sprite: /Textures/_DS14/Tiles/wood2.png
+  baseTurf: PlatingP
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  itemDrop: CheckeredFloor
+  heatCapacity: 10000
+  tileRipResistance: 4500
+
+- type: tile
+  id: Darktile4
+  name: darktile4
+  sprite: /Textures/_DS14/Tiles/tilefloora.png
+  baseTurf: PlatingP
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: CheckeredFloor
+  heatCapacity: 10000
+  tileRipResistance: 4500
+
+- type: tile
+  id: Darktile5
+  name: darktile5
+  sprite: /Textures/_DS14/Tiles/steel_hex.png
+  baseTurf: PlatingP
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepHull
+  itemDrop: CheckeredFloor
+  heatCapacity: 10000
+  tileRipResistance: 4500
+
+- type: tile
+  id: Darktile6
+  name: darktile6
+  sprite: /Textures/_DS14/Tiles/tilefloorb.png
+  baseTurf: PlatingP
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: CheckeredFloor
+  heatCapacity: 10000
+  tileRipResistance: 4500
+
+- type: tile
+  id: Darktile7
+  name: darktile7
+  sprite: /Textures/_DS14/Tiles/tilefloorc.png
+  baseTurf: PlatingP
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: CheckeredFloor
+  heatCapacity: 10000
+  tileRipResistance: 4500
+
+- type: tile
+  id: Darktile8
+  name: Darktile8
+  sprite: /Textures/_DS14/Tiles/grating.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: PlatingP
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepHull
+  itemDrop: CheckeredFloor
+  heatCapacity: 10000
+  tileRipResistance: 4500
+
+- type: tile
+  id: Darktile9
+  name: Darktile9
+  sprite: /Textures/_DS14/Tiles/mono_grating.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: PlatingP
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  itemDrop: CheckeredFloor
+  heatCapacity: 10000
+  tileRipResistance: 4500
+
+- type: tile
+  id: Darktile11f
+  name: Darktile11f
+  sprite: /Textures/_DS14/Tiles/tilec2.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: PlatingP
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  itemDrop: CheckeredFloor
+  heatCapacity: 10000
+  tileRipResistance: 4500
+
+- type: tile
+  id: Darktile11b
+  name: Darktile11b
+  sprite: /Textures/_DS14/Tiles/tilec1.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: PlatingP
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  itemDrop: CheckeredFloor
+  heatCapacity: 10000
+  tileRipResistance: 4500
+
+
+- type: tile
+  id: Darktile11a
+  name: Darktile11a
+  sprite: /Textures/_DS14/Tiles/tilec4.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: PlatingP
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  itemDrop: CheckeredFloor
+  heatCapacity: 10000
+  tileRipResistance: 4500
+
+
+- type: tile
+  id: Darktile11c
+  name: Darktile11c
+  sprite: /Textures/_DS14/Tiles/tilec3.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: PlatingP
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  itemDrop: CheckeredFloor
+  heatCapacity: 10000
+
+- type: tile
+  id: Darktile11d
+  name: Darktile11d
+  sprite: /Textures/_DS14/Tiles/tilec5.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: PlatingP
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  itemDrop: CheckeredFloor
+  heatCapacity: 10000
+
+- type: tile
+  id: DarkSmallTile1
+  name: DarkSmallTile1
+  sprite: /Textures/_DS14/Tiles/smalltile.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: PlatingP
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  itemDrop: CheckeredFloor
+  heatCapacity: 10000
+
+- type: tile
+  id: DarkSmallTile2
+  name: DarkSmallTile2
+  sprite: /Textures/_DS14/Tiles/smalltile2.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: PlatingP
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  itemDrop: CheckeredFloor
+  heatCapacity: 10000
+
+- type: tile
+  id: DarkSmallTile3
+  name: DarkSmallTile3
+  sprite: /Textures/_DS14/Tiles/smalltile3.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: PlatingP
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  itemDrop: CheckeredFloor
+  heatCapacity: 10000
+
+- type: tile
+  id: DarkSmallTile4
+  name: DarkSmallTile4
+  sprite: /Textures/_DS14/Tiles/smalltile4.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: PlatingP
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  itemDrop: CheckeredFloor
+  heatCapacity: 10000
+
+- type: tile
+  id: Darktile15
+  name: darktile15
+  sprite: /Textures/_DS14/Tiles/basalt_herringbone.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: PlatingP
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  itemDrop: TileFloorOne
+  heatCapacity: 10000
+  tileRipResistance: 4500
+
+- type: tile
+  id: Darktile16
+  name: darktile16
+  sprite: /Textures/_DS14/Tiles/basalt_pavement.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: PlatingP
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  itemDrop: TileFloorOne
+  heatCapacity: 10000
+  tileRipResistance: 4500
+
+- type: tile
+  id: Darktile17
+  name: darktile17
+  sprite: /Textures/_DS14/Tiles/basalt_pavement_vertical.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: PlatingP
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  itemDrop: TileFloorOne
+  heatCapacity: 10000
+  tileRipResistance: 4500
+
+- type: tile
+  id: Darktile18
+  name: darktile18
+  sprite: /Textures/_DS14/Tiles/lino.png
+  baseTurf: PlatingP
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  itemDrop: TileFloorOne
+  heatCapacity: 10000
+  tileRipResistance: 4500
+
+- type: tile
+  id: Darktile19
+  name: darktile19
+  sprite: /Textures/_DS14/Tiles/mining_floor.png
+  baseTurf: PlatingP
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  itemDrop: TileFloorOne
+  heatCapacity: 10000
+  tileRipResistance: 4500
+
+- type: tile
+  id: Darktile20
+  name: darktile20
+  sprite: /Textures/_DS14/Tiles/mono_maint.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: PlatingP
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  itemDrop: TileFloorOne
+  heatCapacity: 10000
+  tileRipResistance: 4500
+
+- type: tile
+  id: Darktile20b
+  name: darktile20b
+  sprite: /Textures/_DS14/Tiles/grating_maint.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: PlatingP
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  itemDrop: TileFloorOne
+  heatCapacity: 10000
+  tileRipResistance: 4500

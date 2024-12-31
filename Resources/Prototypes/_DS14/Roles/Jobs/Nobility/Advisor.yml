@@ -1,0 +1,28 @@
+- type: job
+  id: Advisor
+  name: job-name-advisor
+  description: job-description-advisor
+  playTimeTracker: JobAdvisor
+  startingGear: AdvisorGear
+  icon: "JobIconWarden"
+  supervisors: job-supervisors-king
+  access:
+  - Keep
+  - SettlerBlockA
+  - SettlerBlockB
+  - SettlerBlockC
+  - SettlerBlockD
+  - Cargo
+  - Hydroponics
+
+- type: startingGear
+  id: AdvisorGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorGrey
+    back: ClothingBackpackFilled
+    shoes: ClothingShoesColorBlack
+    id: PassengerPDA
+    ears: ClothingHeadsetGrey
+  innerClothingSkirt: ClothingUniformJumpskirtColorGrey
+  satchel: ClothingBackpackSatchelFilled
+  duffelbag: ClothingBackpackDuffelFilled

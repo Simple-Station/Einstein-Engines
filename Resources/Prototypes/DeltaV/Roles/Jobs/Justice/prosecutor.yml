@@ -3,6 +3,7 @@
   name: job-name-prosecutor
   description: job-description-prosecutor
   playTimeTracker: JobProsecutor
+  setPreference: false
   requirements:
     - !type:CharacterOverallTimeRequirement
       min: 36000 # 10 hrs

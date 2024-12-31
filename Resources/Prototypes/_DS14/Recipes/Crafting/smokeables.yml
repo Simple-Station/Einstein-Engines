@@ -1,0 +1,23 @@
+- type: construction
+  name: cigarette
+  id: smokeableDrayhadCigarette
+  graph: smokeableDrayhadCigarette
+  startNode: start
+  targetNode: cigarette
+  category: construction-category-misc
+  description: "A roll of tobacco and nicotine."
+  icon: { sprite: Objects/Consumable/Smokeables/Cigarettes/cigarette.rsi, state: unlit-icon }
+  objectType: Item
+
+- type: construction
+  name: ground drayhad
+  id: smokeableGroundDrayhad
+  graph: smokeableGroundDrayhad
+  startNode: start
+  targetNode: ground
+  category: construction-category-misc
+  description: "Ground drayhad, ready to take you on a trip."
+  icon: { sprite: Objects/Misc/reagent_fillings.rsi, state: powderpile }
+#    color: darkgreen
+  objectType: Item
+  

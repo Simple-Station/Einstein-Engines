@@ -1,0 +1,128 @@
+- type: entity
+  name: gold grub
+  parent: SimpleMobBase
+  id: MobGoldGrub
+  description: Rare grubs which defecate gold.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
+      state: goldgrub
+      sprite: _DS14/Mobs/goldgrub.rsi
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: goldgrub
+    noMovementLayers:
+      movement:
+        state: goldgrub
+  - type: Carriable
+    freeHandsRequired: 1
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 8
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - Chicken
+    - VimPilot
+  - type: Appearance
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: goldgrub
+      Critical:
+        Base: dead
+      Dead:
+        Base: dead
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatXeno
+      amount: 1
+  - type: InteractionPopup
+    successChance: 0.8
+    interactSuccessString: petting-success-bird
+    interactFailureString: petting-failure-generic
+    interactSuccessSpawn: EffectHearts
+  - type: Bloodstream
+    bloodMaxVolume: 100
+  - type: EggLayer
+    eggSpawn:
+    - id: GoldOre1
+  - type: LanguageKnowledge
+    speaks:
+    - Xeno
+    understands:
+    - Xeno
+    - TauCetiBasic
+  - type: SentienceTarget
+    flavorKind: station-event-random-sentience-flavor-organic
+  - type: NpcFactionMember
+    factions:
+    - Passive
+  - type: RandomBark
+    barkType: hissing
+
+- type: entity
+  name: grub
+  parent: SimpleMobBase
+  id: MobGrub
+  description: A grub which eats rocks.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: grub
+      sprite: _DS14/Mobs/grub.rsi
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - Grub
+  - type: Reproductive
+    partnerWhitelist:
+      tags:
+      - Grub
+    offspring:
+    - id: MobGrub
+  - type: ReproductivePartner
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.40
+        density: 400
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: grub
+      Dead:
+        Base: dead
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatXeno
+      amount: 5
+  - type: Perishable
+    molsPerSecondPerUnitMass: 0.0015
+  - type: NpcFactionMember
+    factions:
+    - Passive
+  - type: Body
+    prototype: AnimalRuminant
+  - type: RandomBark
+    barkType: hissing

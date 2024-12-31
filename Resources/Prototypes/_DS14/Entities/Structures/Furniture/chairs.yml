@@ -1,0 +1,9 @@
+- type: entity
+  name: throne
+  id: Throne
+  parent: ChairBase
+  description: The seat of power.
+  components:
+  - type: Sprite
+    sprite: _DS14/Structures/Furniture/throne.rsi
+    state: throne

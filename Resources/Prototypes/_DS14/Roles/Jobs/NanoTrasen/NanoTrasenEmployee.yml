@@ -1,0 +1,26 @@
+- type: job
+  id: NanoTrasenEmployee
+  name: job-name-NanoTrasenEmployee
+  description: job-description-NanoTrasenEmployee
+  playTimeTracker: JobNanoTrasenEmployee
+  startingGear: NanoTrasenEmployeeGear
+  icon: "JobIconNanotrasen"
+  joinNotifyCrew: true
+  supervisors: job-supervisors-centcom
+  access:
+  - AllAccess
+  setPreference: true
+
+- type: startingGear
+  id: NanoTrasenEmployeeGear
+  equipment:
+    head: ClothingHeadHatCargosoft
+    jumpsuit: ClothingUniformJumpsuitCargo
+    back: ClothingBackpackCargoFilled
+    shoes: ClothingShoesColorBlack
+    id: CargoPDA
+    ears: ClothingHeadsetCargo
+    pocket1: AppraisalTool
+  innerClothingSkirt: ClothingUniformJumpskirtCargo
+  satchel: ClothingBackpackSatchelCargoFilled
+  duffelbag: ClothingBackpackDuffelCargoFilled

@@ -14,6 +14,7 @@
   - !type:GiveItemOnHolidaySpecial
     holiday: GarbageDay
     prototype: WeaponRevolverInspector
+  setPreference: false
 
 - type: startingGear
   id: JanitorGear

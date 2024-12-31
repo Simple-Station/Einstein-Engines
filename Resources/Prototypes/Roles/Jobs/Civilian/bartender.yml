@@ -17,6 +17,7 @@
   extendedAccess:
   - Kitchen
   - Hydroponics
+  setPreference: false
 
 - type: startingGear
   id: BartenderGear

@@ -1,0 +1,22 @@
+- type: job
+  id: Salvager
+  name: job-name-salvager
+  description: job-description-salvager
+  playTimeTracker: JobSalvager
+  startingGear: SalvageSpecialistGear
+  icon: "JobIconShaftMiner"
+  supervisors: job-supervisors-baron
+  access:
+  - Salvage
+
+- type: startingGear
+  id: SalvagerDGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorGrey
+    back: ClothingBackpackFilled
+    shoes: ClothingShoesColorBlack
+    id: PassengerPDA
+    ears: ClothingHeadsetGrey
+  innerClothingSkirt: ClothingUniformJumpskirtColorGrey
+  satchel: ClothingBackpackSatchelFilled
+  duffelbag: ClothingBackpackDuffelFilled

@@ -1,0 +1,19 @@
+- type: accessLevel
+  id: Baron
+  name: id-card-access-level-baron
+
+- type: accessLevel
+  id: CaptainGuard
+  name: id-card-access-level-captainguard
+
+- type: accessLevel
+  id: Keep
+  name: id-card-access-level-keep
+
+- type: accessGroup
+  id: nobility
+  tags:
+  - Advisor
+  - Baron
+  - Guard
+  - HeadGuard

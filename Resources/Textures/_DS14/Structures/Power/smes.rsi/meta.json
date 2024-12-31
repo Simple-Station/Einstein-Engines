@@ -1,0 +1,87 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from Paradise at https://github.com/McRamon/Paradise/blob/b727162ed9dead12de42be5c5b04872934a474e1/icons/obj/power.dmi",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "smes"
+    },
+    {
+      "name": "static"
+    },
+    {
+      "name": "smes-og1",
+      "delays": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "smes-og2"
+    },
+    {
+      "name": "smes-og3"
+    },
+    {
+      "name": "smes-og4"
+    },
+    {
+      "name": "smes-og5"
+    },
+    {
+      "name": "smes-op0"
+    },
+    {
+      "name": "smes-op1"
+    },
+    {
+      "name": "smes-op2"
+    },
+    {
+      "name": "smes-oc1",
+      "delays": [
+        [
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
+       "name": "smes-oc2",
+        "delays": [
+        [
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
+      "name": "smes-oc0",
+      "delays": [
+        [
+          0.5,
+          0.3
+        ]
+      ]
+    },
+    {
+      "name": "smes-open",
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    }
+  ]
+}

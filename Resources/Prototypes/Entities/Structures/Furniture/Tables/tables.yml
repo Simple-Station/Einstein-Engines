@@ -117,9 +117,9 @@
   description: Pieces of metal that make the frame of a table.
   components:
   - type: Sprite
-    sprite: Structures/Furniture/Tables/frame.rsi
+    sprite: _DS14/Structures/Furniture/Tables/frame.rsi
   - type: Icon
-    sprite: Structures/Furniture/Tables/frame.rsi
+    sprite: _DS14/Structures/Furniture/Tables/frame.rsi
     state: full
   - type: Damageable
     damageContainer: Inorganic
@@ -162,9 +162,9 @@
   description: A square piece of metal standing on four metal legs.
   components:
   - type: Sprite
-    sprite: Structures/Furniture/Tables/generic.rsi
+    sprite: _DS14/Structures/Furniture/Tables/generic.rsi
   - type: Icon
-    sprite: Structures/Furniture/Tables/generic.rsi
+    sprite: _DS14/Structures/Furniture/Tables/generic.rsi
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Metallic
@@ -203,9 +203,9 @@
   description: A square piece of metal standing on four metal legs. Extra robust.
   components:
   - type: Sprite
-    sprite: Structures/Furniture/Tables/reinforced.rsi
+    sprite: _DS14/Structures/Furniture/Tables/reinforced.rsi
   - type: Icon
-    sprite: Structures/Furniture/Tables/reinforced.rsi
+    sprite: _DS14/Structures/Furniture/Tables/reinforced.rsi
   - type: Destructible
     thresholds:
     - trigger:
@@ -451,9 +451,9 @@
   description: Do not apply fire to this. Rumour says it burns easily.
   components:
   - type: Sprite
-    sprite: Structures/Furniture/Tables/wood.rsi
+    sprite: _DS14/Structures/Furniture/Tables/wood.rsi
   - type: Icon
-    sprite: Structures/Furniture/Tables/wood.rsi
+    sprite: _DS14/Structures/Furniture/Tables/wood.rsi
   - type: Damageable
     damageModifierSet: Wood
   - type: Destructible
@@ -777,9 +777,9 @@
   description: Do not apply fire to this. Rumour says it burns easily.
   components:
   - type: Sprite
-    sprite: Structures/Furniture/Tables/counterwood.rsi
+    sprite: _DS14/Structures/Furniture/Tables/counterwood.rsi
   - type: Icon
-    sprite: Structures/Furniture/Tables/counterwood.rsi
+    sprite: _DS14/Structures/Furniture/Tables/counterwood.rsi
     state: full
   - type: Damageable
     damageContainer: Inorganic

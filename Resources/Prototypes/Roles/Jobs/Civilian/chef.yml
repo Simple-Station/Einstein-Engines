@@ -3,6 +3,7 @@
   name: job-name-chef
   description: job-description-chef
   playTimeTracker: JobChef
+  setPreference: false
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Civilian

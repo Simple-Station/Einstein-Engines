@@ -1,0 +1,124 @@
+- type: entity
+  name: steel tile dev
+  parent: FloorTileItemBase
+  id: FloorTileItemSteelDEV
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - PlatingP
+      - FloorSteelDEV
+  - type: Stack
+    stackType: FloorTileSteel
+  - type: Construction
+    graph: TileSteel
+    node: steeltile
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 5 #Metal floor tiles deal more damage than standard
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/block_metal1.ogg
+
+- type: entity
+  name: tiled floor
+  parent: FloorTileItemBase
+  id: TileFloorOne
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - PlatingP
+      - TileFloorOne
+  - type: Stack
+    stackType: TileFloorOne
+  - type: Construction
+    graph: TileSteel
+    node: steeltile
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 5 #Metal floor tiles deal more damage than standard
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/block_metal1.ogg
+
+- type: entity
+  name: tile floor
+  parent: FloorTileItemBase
+  id: TileFloorTwo
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - PlatingP
+      - TileFloorTwo
+  - type: Stack
+    stackType: TileFloorTwo
+  - type: Construction
+    graph: TileSteel
+    node: steeltile
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 5 #Metal floor tiles deal more damage than standard
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/block_metal1.ogg
+
+- type: entity
+  name: checkered floor
+  parent: FloorTileItemBase
+  id: CheckeredFloor
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - PlatingP
+      - CheckeredFloor
+  - type: Stack
+    stackType: CheckeredFloor
+  - type: Construction
+    graph: TileSteel
+    node: steeltile
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 5 #Metal floor tiles deal more damage than standard
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/block_metal1.ogg
+
+- type: entity
+  name: basalt road
+  parent: FloorTileItemBase
+  id: BasaltRoad
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - PlatingP
+      - BasaltRoad
+  - type: Stack
+    stackType: BasaltRoad
+  - type: Construction
+    graph: TileSteel
+    node: steeltile
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 5 #Metal floor tiles deal more damage than standard
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/block_metal1.ogg

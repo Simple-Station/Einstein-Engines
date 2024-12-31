@@ -1,0 +1,20 @@
+- type: entity
+  parent: OreBase
+  id: BasaltOre
+  name: basalt ore
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: BasaltOreStack
+  - type: Sprite
+    sprite: /Textures/_DS14/Objects/Materials/rock.rsi
+    state: sheet_3
+  - type: Material
+
+- type: entity
+  id: BasaltOre1
+  parent: BasaltOre
+  suffix: Single
+  components:
+    - type: Stack
+      count: 1

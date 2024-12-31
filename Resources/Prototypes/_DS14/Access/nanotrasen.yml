@@ -1,0 +1,18 @@
+- type: accessLevel
+  id: NanoTrasenAccess1
+  name: id-card-access-level-access1
+
+- type: accessLevel
+  id: NanoTrasenAccess2
+  name: id-card-access-level-access2
+
+- type: accessLevel
+  id: NanoTrasenAccess3
+  name: id-card-access-level-access3
+
+- type: accessGroup
+  id: nanotrasenstaff
+  tags:
+  - Blueshield
+  - NanoTrasenEmployee
+  - NanoTrasenOffical

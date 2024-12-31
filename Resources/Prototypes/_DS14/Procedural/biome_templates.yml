@@ -1,0 +1,138 @@
+- type: biomeTemplate
+  id: DSLava
+  layers:
+    - !type:BiomeEntityLayer
+      threshold: 0.9
+      noise:
+        frequency: 1
+        seed: 2
+      allowedTiles:
+        - DarkPlanetfloor
+      entities:
+        - BasaltOne
+        - BasaltTwo
+        - BasaltThree
+        - BasaltFour
+        - BasaltFive
+    - !type:BiomeDecalLayer
+      allowedTiles:
+        - DarkPlanetfloor
+      threshold: 0.9
+      divisions: 1
+      noise:
+        seed: 1
+        frequency: 1
+      decals:
+        - Basalt1
+        - Basalt2
+        - Basalt3
+        - Basalt4
+        - Basalt5
+        - Basalt6
+        - Basalt7
+        - Basalt8
+        - Basalt9
+    - !type:BiomeEntityLayer
+      threshold: 0.95
+      noise:
+        seed: 0
+        noiseType: OpenSimplex2
+        frequency: 1
+      allowedTiles:
+        - DarkPlanetfloor
+      entities:
+        - FloraRockSolid01
+        - FloraRockSolid02
+        - FloraRockSolid03
+    - !type:BiomeEntityLayer
+      threshold: 0.2
+      noise:
+        seed: 100
+        frequency: 0.02
+        fractalType: FBm
+        octaves: 5
+        lacunarity: 2
+        gain: 0.4
+      allowedTiles:
+        - DarkPlanetfloor
+      entities:
+        - FloorLavaEntity
+    # Rock formations
+    - !type:BiomeEntityLayer
+      allowedTiles:
+        - DarkPlanetfloor
+      threshold: -0.30
+      noise:
+        seed: 0
+        noiseType: Cellular
+        frequency: 0.05
+        lacunarity: 2
+        fractalType: FBm
+        octaves: 5
+        cellularDistanceFunction: Euclidean
+        cellularReturnType: Distance2
+      entities:
+        - WallRockBasalt
+    - !type:BiomeDummyLayer
+      id: Loot
+    # Fill basalt
+    - !type:BiomeTileLayer
+      threshold: -1
+      tile: DarkPlanetfloor
+    # HighOre
+    - !type:BiomeEntityLayer
+      threshold: 0.75
+      noise:
+        seed: 10
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        frequency: 0.06
+        lacunarity: 3
+        gain: 0.3
+      allowedTiles:
+        - DarkPlanetfloor
+      entities:
+        - WallRockBasaltPlasma
+        - WallRockBasaltGold
+        - WallRockBasaltSilver
+    # LowOre
+    - !type:BiomeEntityLayer
+      threshold: 0.55
+      noise:
+        seed: 12
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        frequency: 0.08
+        lacunarity: 2
+        gain: 0.6
+      allowedTiles:
+        - DarkPlanetfloor
+      entities:
+        - WallRockBasaltTin
+        - WallRockBasaltCoal
+        - WallRockBasaltQuartz
+    # ArtifactOre
+    - !type:BiomeEntityLayer
+      threshold: 0.9
+      noise:
+        seed: 13
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        frequency: 0.002
+        lacunarity: 12
+        gain: 0.1
+      allowedTiles:
+        - DarkPlanetfloor
+      entities:
+        - WallRockBasaltArtifactFragment
+    # MonsterSpawns
+    - !type:BiomeEntityLayer
+      threshold: 0.99
+      noise:
+        seed: 14
+        noiseType: OpenSimplex2
+        frequency: 1
+      allowedTiles:
+        - DarkPlanetfloor
+      entities:
+        - RandomLavalandMobSpawner

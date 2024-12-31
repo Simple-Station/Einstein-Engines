@@ -3,6 +3,7 @@
   name: job-name-ce
   description: job-description-ce
   playTimeTracker: JobChiefEngineer
+  setPreference: false
   requirements:
     - !type:CharacterPlaytimeRequirement
       tracker: JobAtmosphericTechnician
@@ -43,7 +44,9 @@
     back: ClothingBackpackChiefEngineerFilled
     shoes: ClothingShoesColorBrown
     id: CEPDA
+    eyes: ClothingEyesGlassesMeson
     ears: ClothingHeadsetCE
+    belt: ClothingBeltUtilityEngineering
   innerClothingSkirt: ClothingUniformJumpskirtChiefEngineer
   satchel: ClothingBackpackSatchelChiefEngineerFilled
   duffelbag: ClothingBackpackDuffelChiefEngineerFilled

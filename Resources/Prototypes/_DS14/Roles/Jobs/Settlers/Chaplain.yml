@@ -1,0 +1,10 @@
+- type: job
+  id: DARKSTARChaplin
+  name: job-name-chaplain
+  description: job-description-chaplain
+  playTimeTracker: JobDARKSTARChaplain
+  startingGear: ChaplainGear
+  icon: "JobIconChaplain"
+  supervisors: job-supervisors-baron
+  access:
+  - Chapel

@@ -18,6 +18,7 @@
   - Salvage
   - Maintenance
   - External
+  setPreference: false
 
 - type: startingGear
   id: SalvageSpecialistGear

@@ -1,0 +1,29 @@
+- type: entity
+  id: BasaltHard
+  parent: BaseStructure
+  name: petrified basalt
+  suffix: un-mineable
+  description: you would need a industrial machine to mine through this.
+  components:
+  - type: Sprite
+    sprite: _DS14/Structures/Walls/mountain.rsi
+    state: full
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: StrongMetallic
+  - type: Occluder
+  - type: Airtight
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        density: 100
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+  - type: IconSmooth
+    key: walls
+    base: rock_

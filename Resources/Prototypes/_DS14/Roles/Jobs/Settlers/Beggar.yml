@@ -1,0 +1,22 @@
+- type: job
+  id: Beggar
+  name: job-name-beggar
+  description: job-description-beggar
+  playTimeTracker: Beggar
+  startingGear: BeggarGear
+  icon: "JobIconPassenger"
+  supervisors: job-supervisors-baron
+  access:
+  - Maintenance
+
+- type: startingGear
+  id: BeggarGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorGrey
+    back: ClothingBackpackFilled
+    shoes: ClothingShoesColorBlack
+    id: PassengerPDA
+    ears: ClothingHeadsetGrey
+  innerClothingSkirt: ClothingUniformJumpskirtColorGrey
+  satchel: ClothingBackpackSatchelFilled
+  duffelbag: ClothingBackpackDuffelFilled

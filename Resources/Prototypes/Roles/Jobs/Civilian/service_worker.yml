@@ -18,6 +18,7 @@
   - Hydroponics
   - Bar # DeltaV - moved to extended access
   - Kitchen # DeltaV - moved to extended access
+  setPreference: false
 
 - type: startingGear
   id: ServiceWorkerGear

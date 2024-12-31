@@ -1,0 +1,36 @@
+- type: job
+  id: Baron
+  name: job-name-baron
+  description: job-description-baron
+  playTimeTracker: JobBaron
+  startingGear: BaronGear
+  icon: "JobIconHeadOfSecurity"
+  supervisors: job-supervisors-king
+  access:
+  - Maintenance
+  - Keep
+  - Baron
+  - CaptainGuard
+  - Armory
+  - SettlerBlockA
+  - SettlerBlockB
+  - SettlerBlockC
+  - SettlerBlockD
+  - Cargo
+  - Chapel
+  - Hydroponics
+  - Janitor
+  - Medical
+  - Salvage
+  - Bar
+
+- type: startingGear
+  id: BaronGear
+  equipment:
+    jumpsuit: UniformNoble1
+    back: ClothingBackpackCaptainFilled
+    shoes: ClothingShoesBootsLaceup
+    id: CaptainPDA
+    ears: ClothingHeadsetAltCommand
+  satchel: ClothingBackpackSatchelCaptainFilled
+  duffelbag: ClothingBackpackDuffelCaptainFilled

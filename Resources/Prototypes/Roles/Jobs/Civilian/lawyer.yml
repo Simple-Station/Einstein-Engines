@@ -17,6 +17,7 @@
   - Service
   - Lawyer
   - Maintenance
+  setPreference: false
 
 - type: startingGear
   id: LawyerGear

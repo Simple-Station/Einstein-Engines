@@ -3,27 +3,22 @@
   name: job-name-mantis
   description: job-description-mantis
   playTimeTracker: JobForensicMantis
+  setPreference: false
   requirements:
     - !type:CharacterOverallTimeRequirement
       min: 18000
     - !type:DepartmentTimeRequirement
       department: Epistemics # DeltaV - Epistemics Department replacing Science
       min: 3600
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterSpeciesRequirement
-          inverted: true
-          species:
-            - IPC
-        - !type:CharacterTraitRequirement
-          traits:
-            - AnomalousPositronics
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterSpeciesRequirement
-          inverted: true
-          species:
-            - Shadowkin
+    # - !type:CharacterLogicOrRequirement
+      # requirements:
+        # - !type:CharacterSpeciesRequirement
+          # inverted: true
+          # species:
+            # - IPC
+        # - !type:CharacterTraitRequirement
+          # traits:
+            # - AnomalousPositronics
   startingGear: ForensicMantisGear
   icon: "JobIconForensicMantis"
   supervisors: job-supervisors-rd
@@ -38,7 +33,6 @@
   - !type:AddComponentSpecial
     components:
     - type: Psionic
-      powerSlots: 2
   - !type:AddComponentSpecial
     components:
     - type: InnatePsionicPowers

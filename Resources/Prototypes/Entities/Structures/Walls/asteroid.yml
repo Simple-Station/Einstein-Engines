@@ -418,10 +418,6 @@
     - type: Transform
       noRot: true
     - type: SoundOnGather
-    - type: Gatherable
-      whitelist:
-        tags:
-          - Pickaxe
     - type: Damageable
       damageContainer: Inorganic
       damageModifierSet: Metallic
@@ -429,7 +425,7 @@
       thresholds:
         - trigger:
             !type:DamageTrigger
-            damage: 150
+            damage: 50
           behaviors:
             - !type:DoActsBehavior
               acts: ["Destruction"]
@@ -729,6 +725,9 @@
     - type: Icon
       sprite: Structures/Walls/rock.rsi
       state: rock_wall
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreBasalt
     - type: Sprite
       sprite: Structures/Walls/rock.rsi
       layers:

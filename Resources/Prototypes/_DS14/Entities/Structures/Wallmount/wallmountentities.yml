@@ -1,0 +1,38 @@
+- type: entity
+  parent: PosterBase
+  id: RoyalBanner
+  name: royal banner
+  description: the family crest of the kingdom.
+  components:
+  - type: Sprite
+    state: royalbanner
+    sprite: _DS14/Structures/Wallmounts/royalbanner.rsi
+
+- type: entity
+  id: DARKWindowBars
+  parent: BaseStructure
+  name: window bars
+  description: Bars used to protect windows.
+  components:
+    - type: MeleeSound
+      soundGroups:
+        Brute:
+          path:
+            "/Audio/Weapons/grille_hit.ogg"
+    - type: Sprite
+      sprite: _DS14/Entities/Structures/Wallmount/windowbars.rsi
+      state: icon
+    - type: Icon
+      sprite: _DS14/Entities/Structures/Wallmount/windowbars.rsi
+      state: icon
+    - type: Damageable
+      damageContainer: Inorganic
+      damageModifierSet: Metallic
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 200
+          behaviors:
+            - !type:DoActsBehavior
+              acts: ["Destruction"]

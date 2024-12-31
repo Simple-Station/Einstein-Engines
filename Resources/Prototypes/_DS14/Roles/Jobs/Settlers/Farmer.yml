@@ -1,0 +1,22 @@
+- type: job
+  id: Farmer
+  name: job-name-farmer
+  description: job-description-farmer
+  playTimeTracker: Farmer
+  startingGear: FarmerGear
+  icon: "JobIconBotanist"
+  supervisors: job-supervisors-baron
+  access:
+  - Hydroponics
+
+- type: startingGear
+  id: FarmerGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorGrey
+    back: ClothingBackpackFilled
+    shoes: ClothingShoesColorBlack
+    id: PassengerPDA
+    ears: ClothingHeadsetGrey
+  innerClothingSkirt: ClothingUniformJumpskirtColorGrey
+  satchel: ClothingBackpackSatchelFilled
+  duffelbag: ClothingBackpackDuffelFilled

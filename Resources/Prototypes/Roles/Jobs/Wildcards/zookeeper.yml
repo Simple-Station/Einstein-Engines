@@ -13,6 +13,7 @@
   - Service
   - Maintenance
   - Zookeeper # DeltaV - Add Zookeeper access
+  setPreference: false
 
 - type: startingGear
   id: ZookeeperGear

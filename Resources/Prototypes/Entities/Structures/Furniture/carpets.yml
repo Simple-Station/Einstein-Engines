@@ -41,9 +41,9 @@
   suffix: Red
   components:
   - type: Sprite
-    sprite: Structures/Furniture/Carpets/red_carpet.rsi
+    sprite: _DS14/Structures/Furniture/Carpets/red_carpet.rsi
   - type: Icon
-    sprite: Structures/Furniture/Carpets/red_carpet.rsi
+    sprite: _DS14/Structures/Furniture/Carpets/red_carpet.rsi
   - type: Destructible
     thresholds:
       - trigger:

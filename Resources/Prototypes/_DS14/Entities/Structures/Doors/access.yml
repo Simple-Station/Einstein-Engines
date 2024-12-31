@@ -1,0 +1,89 @@
+- type: entity
+  parent: DARKGuardAirlock
+  id: AirlockBaronLocked
+  suffix: Baron, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsBaron ]
+
+- type: entity
+  parent: DARKGuardAirlock
+  id: AirlockKeepLocked
+  suffix: Keep, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsKeep ]
+
+- type: entity
+  parent: DARKGuardAirlock
+  id: AirlockCaptainGuardLocked
+  suffix: CaptainGuard, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsCaptainGuard ]
+
+- type: entity
+  parent: DARKcivilianairlock
+  id: AirlockSettlerLocked
+  suffix: Settler, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSettler ]
+
+- type: entity
+  parent: DARKcivilianairlock
+  id: DARLAirlockMaintChapelLocked
+  suffix: Chapel, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsChapel ]
+
+- type: entity
+  parent: DARKAirlockYellow
+  id: DARKAirlockMaintLocked
+  suffix: Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMaintenance ]
+
+- type: entity
+  parent: DARKmultipart
+  id: DARLAirlockBlockALocked
+  suffix: BlockA, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsBlockA ]
+
+- type: entity
+  parent: DARKmultipart
+  id: DARLAirlockBlockBLocked
+  suffix: BlockB, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsBlockB ]
+
+- type: entity
+  parent: DARKmultipart
+  id: DARLAirlockBlockCLocked
+  suffix: BlockC, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsBlockC ]
+
+- type: entity
+  parent: DARKmultipart
+  id: DARLAirlockBlockDLocked
+  suffix: BlockD, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsBlockD ]

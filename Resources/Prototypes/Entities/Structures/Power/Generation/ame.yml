@@ -1,7 +1,7 @@
 - type: entity
   id: AmeController
-  name: AME controller
-  description: It's a controller for the antimatter engine.
+  name: PMG controller
+  description: an archaic power generator.
   placement:
     mode: SnapgridCenter
   components:
@@ -9,7 +9,7 @@
   - type: InteractionOutline
   - type: Sprite
     snapCardinals: true
-    sprite: Structures/Power/Generation/ame.rsi
+    sprite: _DS14/Structures/Power/Generation/ame.rsi
     state: control
     layers:
     - state: control
@@ -89,7 +89,7 @@
   - type: PowerMonitoringDevice
     group: Generator
     loadNode: input
-    sprite: Structures/Power/Generation/ame.rsi
+    sprite: _DS14/Structures/Power/Generation/ame.rsi
     state: static
   - type: PowerSupplier
     supplyRate: 0
@@ -120,8 +120,8 @@
 
 - type: entity
   id: AmeShielding
-  name: AME shielding
-  description: Keeps the antimatter in and the matter out.
+  name: PMG shielding
+  description: Keeps the plasma in and the matter out.
   placement:
     mode: SnapgridCenter
   components:
@@ -129,7 +129,7 @@
   - type: InteractionOutline
   - type: Sprite
     drawdepth: Walls
-    sprite: Structures/Power/Generation/ame.rsi
+    sprite: _DS14/Structures/Power/Generation/ame.rsi
     state: shield_0
     layers:
     - state: shield_0

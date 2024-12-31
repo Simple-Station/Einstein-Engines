@@ -1,0 +1,7 @@
+- type: radioChannel
+  id: Guard
+  name: guard
+  keycode: 'g'
+  frequency: 1389
+  color: "#e8b3b3"
+  longRange: true

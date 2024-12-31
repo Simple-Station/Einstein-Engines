@@ -17,6 +17,7 @@
   - !type:GiveItemOnHolidaySpecial
     holiday: MikuDay
     prototype: BoxPerformer
+  setPreference: false
 
 - type: startingGear
   id: MusicianGear

@@ -1,0 +1,158 @@
+# NobilityandGuard
+- type: entity
+  parent: ClothingUniformBase
+  id: UniformBaronGuard
+  name: guard uniform
+  description: Uniform worn by the Baron's guard.
+  components:
+  - type: Sprite
+    sprite: _DS14/Clothing/Uniform/guard.rsi
+  - type: Clothing
+    sprite: _DS14/Clothing/Uniform/guard.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: UniformBaronMilitaCaptain
+  name: fancy guard uniform
+  description: The leading uniform to organize the Baron's guard.
+  components:
+  - type: Sprite
+    sprite: _DS14/Clothing/Uniform/captainguard.rsi
+  - type: Clothing
+    sprite: _DS14/Clothing/Uniform/captainguard.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: UniformNoble1
+  name: noble clothing
+  description: clothing worn by nobles.
+  components:
+  - type: Sprite
+    sprite: _DS14/Clothing/Uniform/noble1.rsi
+  - type: Clothing
+    sprite: _DS14/Clothing/Uniform/noble1.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: UniformNoble2
+  name: noble clothing
+  description: clothing worn by nobles.
+  components:
+  - type: Sprite
+    sprite: _DS14/Clothing/Uniform/noble2.rsi
+  - type: Clothing
+    sprite: _DS14/Clothing/Uniform/noble2.rsi
+
+# NanoTrasen
+- type: entity
+  parent: ClothingUniformBase
+  id: UniformNanoOffical
+  name: offical nanotrasen uniform
+  description: uniform typically worn by NanoTrasen paperpushers.
+  components:
+  - type: Sprite
+    sprite: _DS14/Clothing/Uniform/nanooffical.rsi
+  - type: Clothing
+    sprite: _DS14/Clothing/Uniform/nanooffical.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: UniformNanoEmployee
+  name: nanotrasen jumpsuit
+  description: uniform typically worn by NanoTrasen employees.
+  components:
+  - type: Sprite
+    sprite: _DS14/Clothing/Uniform/nanoemployee.rsi
+  - type: Clothing
+    sprite: _DS14/Clothing/Uniform/nanoemployee.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: UniformNanoBlueshield
+  name: nanotrasen blueshield uniform
+  description: uniform typically worn by NanoTrasen's bodyguards.
+  components:
+  - type: Sprite
+    sprite: _DS14/Clothing/Uniform/nanoblueshield.rsi
+  - type: Clothing
+    sprite: _DS14/Clothing/Uniform/nanoblueshield.rsi
+
+# Settlers
+- type: entity
+  parent: ClothingUniformBase
+  id: UniformSettlerJumpsuitBlue
+  name: settlers jumpsuit
+  description: A worn down jumpsuit commonly worn by settlers.
+  components:
+  - type: Sprite
+    sprite: _DS14/Clothing/Uniform/settlersjumpsuita.rsi
+  - type: Clothing
+    sprite: _DS14/Clothing/Uniform/settlersjumpsuita.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: UniformSettlerJumpsuitBrown
+  name: settlers jumpsuit
+  description: A worn down jumpsuit commonly worn by settlers.
+  components:
+  - type: Sprite
+    sprite: _DS14/Clothing/Uniform/settlersjumpsuitb.rsi
+  - type: Clothing
+    sprite: _DS14/Clothing/Uniform/settlersjumpsuitb.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: UniformSettlerJumpsuitGreen
+  name: settlers jumpsuit
+  description: A worn down jumpsuit commonly worn by settlers.
+  components:
+  - type: Sprite
+    sprite: _DS14/Clothing/Uniform/settlersjumpsuitc.rsi
+  - type: Clothing
+    sprite: _DS14/Clothing/Uniform/settlersjumpsuitc.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: UniformSettlerJumpsuitTank
+  name: settlers tanktop
+  description: Its not very cool out here.
+  components:
+  - type: Sprite
+    sprite: _DS14/Clothing/Uniform/tanktop.rsi
+  - type: Clothing
+    sprite: _DS14/Clothing/Uniform/tanktop.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: UniformSettlerJumpsuitProfeshBlue
+  name: settlers professional shirt
+  description: A much more formal attire.
+  components:
+  - type: Sprite
+    sprite: _DS14/Clothing/Uniform/settlerprofesha.rsi
+  - type: Clothing
+    sprite: _DS14/Clothing/Uniform/settlerprofesha.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: UniformSettlerJumpsuitProfeshBrown
+  name: settlers professional shirt
+  description: A much more formal attire.
+  components:
+  - type: Sprite
+    sprite: _DS14/Clothing/Uniform/settlerprofeshb.rsi
+  - type: Clothing
+    sprite: _DS14/Clothing/Uniform/settlerprofeshb.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: UniformBeggar
+  name: beggers rags
+  description: These rags smell awful.
+  components:
+  - type: Sprite
+    sprite: _DS14/Clothing/Uniform/beggar.rsi
+  - type: Clothing
+    sprite: _DS14/Clothing/Uniform/beggar.rsi
+
+

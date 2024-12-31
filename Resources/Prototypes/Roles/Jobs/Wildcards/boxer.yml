@@ -22,6 +22,7 @@
           Blunt: 1.5
           Slash: 1.5
           Piercing: 1.5
+  setPreference: false
 
 - type: startingGear
   id: BoxerGear

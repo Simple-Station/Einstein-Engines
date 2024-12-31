@@ -1,0 +1,34 @@
+- type: job
+  id: Guard
+  name: job-name-guardds
+  description: job-description-guardds
+  playTimeTracker: JobGuard
+  startingGear: GuardGear
+  icon: "JobIconSecurityOfficer"
+  supervisors: job-supervisors-king
+  access:
+  - Maintenance
+  - Keep
+  - SettlerBlockA
+  - SettlerBlockB
+  - SettlerBlockC
+  - SettlerBlockD
+  - Cargo
+  - Chapel
+  - Hydroponics
+  - Janitor
+  - Medical
+  - Salvage
+  - Bar
+
+- type: startingGear
+  id: GuardGear
+  equipment:
+    jumpsuit: UniformBaronGuard
+    back: ClothingBackpackFilled
+    shoes: ClothingShoesColorBlack
+    id: PassengerPDA
+    ears: ClothingHeadsetGrey
+  innerClothingSkirt: ClothingUniformJumpskirtColorGrey
+  satchel: ClothingBackpackSatchelFilled
+  duffelbag: ClothingBackpackDuffelFilled

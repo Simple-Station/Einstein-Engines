@@ -1,0 +1,25 @@
+- type: job
+  id: BlueShield
+  name: job-name-BlueShield
+  description: job-description-BlueShield
+  playTimeTracker: JobBlueShield
+  startingGear: BlueshieldGear
+  icon: "JobIconNanotrasen"
+  joinNotifyCrew: true
+  supervisors: job-supervisors-centcom
+  access:
+  - AllAccess
+
+- type: startingGear
+  id: BlueshieldGear
+  equipment:
+    head: ClothingHeadHatCargosoft
+    jumpsuit: ClothingUniformJumpsuitCargo
+    back: ClothingBackpackCargoFilled
+    shoes: ClothingShoesColorBlack
+    id: CargoPDA
+    ears: ClothingHeadsetCargo
+    pocket1: AppraisalTool
+  innerClothingSkirt: ClothingUniformJumpskirtCargo
+  satchel: ClothingBackpackSatchelCargoFilled
+  duffelbag: ClothingBackpackDuffelCargoFilled

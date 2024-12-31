@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "license": "CC0-1.0",
+  "copyright": "Created by Enon00 (github) for Dark Star 14",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "sheet-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "sheet-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "sheet"
+    },
+    {
+      "name": "sheet_2"
+    },
+    {
+      "name": "sheet_3"
+    }
+  ]
+}

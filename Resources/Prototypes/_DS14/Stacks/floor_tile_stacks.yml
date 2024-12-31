@@ -1,0 +1,35 @@
+﻿- type: stack
+  id: FloorTileSteelDEV
+  name: steel tile
+  spawn: FloorTileItemSteelDEV
+  maxCount: 30
+  itemSize: 5
+
+- type: stack
+  id: TileFloorOne
+  name: tiled floor
+  spawn: TileFloorOne
+  maxCount: 30
+  itemSize: 5
+
+- type: stack
+  id: TileFloorTwo
+  name: tile floor
+  spawn: TileFloorTwo
+  maxCount: 30
+  itemSize: 5
+
+- type: stack
+  id: CheckeredFloor
+  name: checkered floor
+  spawn: CheckeredFloor
+  maxCount: 30
+  itemSize: 5
+
+- type: stack
+  id: BasaltRoad
+  name: basalt road
+
+  spawn: BasaltRoad
+  maxCount: 30
+  itemSize: 5

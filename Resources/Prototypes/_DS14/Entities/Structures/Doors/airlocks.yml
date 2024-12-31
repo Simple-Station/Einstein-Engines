@@ -1,0 +1,188 @@
+- type: entity
+  parent: Airlock
+  id: DARKcivilianairlock
+  name: electronic door
+  components:
+  - type: Sprite
+    sprite: _DS14/Structures/Doors/Airlocks/Standard/maint.rsi
+
+- type: entity
+  parent: Airlock
+  id: DARKTESTairlock
+  name: Electronic Door
+  components:
+  - type: Sprite
+    sprite: _DS14/Structures/Doors/Airlocks/Standard/airlockblack.rsi
+
+- type: entity
+  parent: Airlock
+  id: DARKTESTairlock3
+  name: Electronic Door
+  components:
+  - type: Sprite
+    sprite: _DS14/Structures/Doors/Airlocks/Standard/airlockblue.rsi
+
+- type: entity
+  parent: Airlock
+  id: DARKTESTairlock2
+  name: Electronic Door
+  components:
+  - type: Sprite
+    sprite: _DS14/Structures/Doors/Airlocks/Standard/airlockbrown.rsi
+
+- type: entity
+  parent: Airlock
+  id: DARKmultipart
+  name: Electronic Multipart Door
+  components:
+  - type: Sprite
+    sprite: _DS14/Structures/Doors/Airlocks/Standard/civil.rsi
+
+- type: entity
+  parent: Airlock
+  id: DARKSecureAirlock
+  name: secure airlock
+  components:
+  - type: Sprite
+    sprite: _DS14/Structures/Doors/Airlocks/Standard/secure.rsi
+
+- type: entity
+  parent: Airlock
+  id: DARKGuardAirlock
+  name: Guard Airlock
+  components:
+  - type: Sprite
+    sprite: _DS14/Structures/Doors/Airlocks/Standard/guard.rsi
+
+- type: entity
+  parent: Airlock
+  id: DARKAirlockYellow
+  name: Airlock
+  components:
+  - type: Sprite
+    sprite: _DS14/Structures/Doors/Airlocks/Standard/basicyellow.rsi
+
+- type: entity
+  parent: Airlock
+  id: DARKAirlockGreen
+  name: Airlock
+  components:
+  - type: Sprite
+    sprite: _DS14/Structures/Doors/Airlocks/Standard/basicgreen.rsi
+
+- type: entity
+  id: ShutterPortcullis
+  parent: BaseStructure
+  name: portcullis
+  abstract: true
+  description: Keeps things in, keeps things out.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _DS14/Structures/Doors/Airlocks/Standard/portcullis.rsi
+    drawdepth: BlastDoors
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: AnimationPlayer
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1.5,-0.45,1.5,0.45" 
+        density: 100
+        mask:
+        - FullTileMask
+        layer:
+        - AirlockLayer
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronics ]
+  - type: ContainerContainer
+    containers:
+      board: !type:Container
+  - type: NavMapDoor
+  - type: Door
+    openDrawDepth: BlastDoors
+    closedDrawDepth: BlastDoors
+    bumpOpen: false
+    clickOpen: false
+    closeTimeOne: 0.2
+    closeTimeTwo: 1.2
+    openTimeOne: 1.2
+    openTimeTwo: 0.2
+    openingAnimationTime: 1.4
+    closingAnimationTime: 1.4
+    crushDamage:
+      types:
+        Blunt: 300 # getting shutters closed on you probably doesn't hurt that much
+    openSound:
+      path: /Audio/Machines/blastdoor.ogg
+    closeSound:
+      path: /Audio/Machines/blastdoor.ogg
+  - type: Appearance
+  - type: UserInterface
+    interfaces:
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
+  - type: Airtight
+  - type: RadiationBlocker
+    resistance: 1
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StrongMetallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 5000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: DoorSignalControl
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: BasicDevice
+  - type: WirelessNetworkConnection
+    range: 0
+  - type: DeviceLinkSink
+    ports:
+      - Open
+      - Close
+      - Toggle
+  - type: DeviceLinkSource
+    ports:
+    - DoorStatus
+    lastSignals:
+      DoorStatus: false
+  - type: BlockWeather
+  - type: InteractionVerbs
+    allowedVerbs:
+    - KnockOn
+
+- type: entity
+  id: ShutterPortcullisNormal
+  parent: ShutterPortcullis
+  components:
+  - type: Occluder
+    boundingBox: "-1.5,-0.45,1.5,0.45" 
+    enabled: true
+
+- type: entity
+  id: ShutterPortcullisNormalOpen
+  parent: ShutterPortcullisNormal
+  suffix: Open
+  components:
+  - type: Door
+    state: Open
+  - type: Physics
+    canCollide: false
+  - type: Occluder
+    enabled: false
+  - type: Airtight
+    airBlocked: false
+  - type: RadiationBlocker
+    enabled: false

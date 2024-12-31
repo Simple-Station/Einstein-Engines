@@ -13,6 +13,7 @@
   extendedAccess:
   - Kitchen
   - Bar
+  setPreference: false
 
 - type: startingGear
   id: BotanistGear

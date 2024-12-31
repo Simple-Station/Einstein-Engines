@@ -4,6 +4,7 @@
   description: job-description-clerk
   playTimeTracker: JobClerk
   antagAdvantage: 2
+  setPreference: false
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security

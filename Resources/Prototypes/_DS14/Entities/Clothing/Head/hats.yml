@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadCrown
+  name: Baron's Crown
+  description: The sign of royalty.
+  components:
+  - type: Sprite
+    sprite: _DS14/Clothing/Head/crown.rsi
+  - type: Clothing
+    sprite: _DS14/Clothing/Head/crown.rsi

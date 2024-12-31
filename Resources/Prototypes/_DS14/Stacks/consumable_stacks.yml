@@ -1,0 +1,15 @@
+﻿- type: stack
+  id: StackProduceDrayhad
+  name: drayhad produce
+  icon: { sprite: /Textures/_DS14/Objects/Specific/Hydroponics/drayhad.rsi, state: produce }
+  spawn: ProduceDrayhad
+  maxCount: 5
+  itemSize: 5
+
+- type: stack
+  id: StackGroundDrayhad
+  name: ground drayhad
+  icon: { sprite: Objects/Misc/reagent_fillings.rsi, state: powderpile }
+  spawn: GroundDrayhad
+  maxCount: 5
+  itemSize: 5

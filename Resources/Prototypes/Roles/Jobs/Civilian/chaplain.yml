@@ -3,52 +3,45 @@
   name: job-name-chaplain
   description: job-description-chaplain
   playTimeTracker: JobChaplain
+  setPreference: false
   requirements:
     - !type:CharacterDepartmentTimeRequirement
-      department: Epistemics # Chaplain is now one of the station's "Crew-Aligned Wizards"
-      min: 14400 # 4 hours
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterSpeciesRequirement
-          inverted: true
-          species:
-            - IPC
-        - !type:CharacterTraitRequirement
-          traits:
-            - AnomalousPositronics
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterSpeciesRequirement
-          inverted: true
-          species:
-            - Shadowkin
+      department: Epistemics # DeltaV - Epistemics Department replacing Science
+      min: 14400 #DeltaV 4 hours
+    # - !type:CharacterLogicOrRequirement
+      # requirements:
+        # - !type:CharacterSpeciesRequirement
+          # inverted: true
+          # species:
+            # - IPC
+        # - !type:CharacterTraitRequirement
+          # traits:
+            # - AnomalousPositronics
   startingGear: ChaplainGear
   icon: "JobIconChaplain"
   supervisors: job-supervisors-rd
   access:
   - Chapel
-  - Research
+  - Research # DeltaV - Move Chaplain into Epistemics
   - Maintenance
   special:
   - !type:AddComponentSpecial
     components:
-    - type: BibleUser
-    - type: Psionic
-      powerRollMultiplier: 3
-    - type: InnatePsionicPowers
-      powersToAdd:
-        - TelepathyPower
-        - HealingWordPower
-        - SummonRemiliaPower
+    - type: BibleUser #Lets them heal with bibles
+    # - type: Psionic
+      # powerRollMultiplier: 3
+    # - type: InnatePsionicPowers
+      # powersToAdd:
+        # - TelepathyPower
 
 - type: startingGear
   id: ChaplainGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitChaplain
-    back: ClothingBackpack
+    back: ClothingBackpackChaplainFilled
     shoes: ClothingShoesColorBlack
     id: ChaplainPDA
-    ears: ClothingHeadsetScience
+    ears: ClothingHeadsetScience # DeltaV - Move Chaplain into Epistemics
   innerClothingSkirt: ClothingUniformJumpskirtChaplain
   satchel: ClothingBackpackSatchelChaplainFilled
   duffelbag: ClothingBackpackDuffelChaplainFilled

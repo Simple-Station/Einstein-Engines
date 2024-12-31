@@ -1,0 +1,22 @@
+- type: job
+  id: Physician
+  name: job-name-physician
+  description: job-description-physician
+  playTimeTracker: Physician
+  startingGear: PhysicianGear
+  icon: "JobIconMedicalDoctor"
+  supervisors: job-supervisors-baron
+  access:
+  - Medical
+
+- type: startingGear
+  id: PhysicianGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorGrey
+    back: ClothingBackpackFilled
+    shoes: ClothingShoesColorBlack
+    id: PassengerPDA
+    ears: ClothingHeadsetGrey
+  innerClothingSkirt: ClothingUniformJumpskirtColorGrey
+  satchel: ClothingBackpackSatchelFilled
+  duffelbag: ClothingBackpackDuffelFilled

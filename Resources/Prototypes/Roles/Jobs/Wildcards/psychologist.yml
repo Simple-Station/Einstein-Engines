@@ -18,6 +18,7 @@
   - Psychologist # DeltaV - Add Psychologist access
   extendedAccess:
   - Chemistry
+  setPreference: false
 
 - type: startingGear
   id: PsychologistGear

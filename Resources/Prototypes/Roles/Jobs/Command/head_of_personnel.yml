@@ -4,6 +4,7 @@
   description: job-description-hop
   playTimeTracker: JobHeadOfPersonnel
   antagAdvantage: 6 # DeltaV - Reduced TC: Head of Staff
+  setPreference: false
   requirements:
     - !type:CharacterPlaytimeRequirement
       tracker: JobChef
@@ -73,8 +74,11 @@
     jumpsuit: ClothingUniformJumpsuitHoP
     back: ClothingBackpackHOPFilled
     shoes: ClothingShoesLeather # DeltaV - HoP needs something better than plebe shoes.
+    head: ClothingHeadHatHopcap
     id: HoPPDA
+    gloves: ClothingHandsGlovesHop
     ears: ClothingHeadsetHoP # DeltaV - HoP is now a service role, replaces their all channels headset.
+    belt: BoxFolderClipboard
   innerClothingSkirt: ClothingUniformJumpskirtHoP
   satchel: ClothingBackpackSatchelHOPFilled
   duffelbag: ClothingBackpackDuffelHOPFilled

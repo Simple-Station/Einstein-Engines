@@ -1,0 +1,35 @@
+- type: job
+  id: GuardCaptain
+  name: job-name-guardcaptain
+  description: job-description-guardcaptain
+  playTimeTracker: JobGuardCaptain
+  startingGear: GuardCaptainGear
+  icon: "JobIconSeniorOfficer"
+  supervisors: job-supervisors-king
+  access:
+  - Maintenance
+  - Keep
+  - SettlerBlockA
+  - SettlerBlockB
+  - SettlerBlockC
+  - SettlerBlockD
+  - Cargo
+  - Chapel
+  - Hydroponics
+  - Janitor
+  - Medical
+  - Salvage
+  - Bar
+  - Armory
+
+- type: startingGear
+  id: GuardCaptainGear
+  equipment:
+    jumpsuit: UniformBaronMilitaCaptain
+    back: ClothingBackpackFilled
+    shoes: ClothingShoesColorBlack
+    id: PassengerPDA
+    ears: ClothingHeadsetGrey
+  innerClothingSkirt: ClothingUniformJumpskirtColorGrey
+  satchel: ClothingBackpackSatchelFilled
+  duffelbag: ClothingBackpackDuffelFilled

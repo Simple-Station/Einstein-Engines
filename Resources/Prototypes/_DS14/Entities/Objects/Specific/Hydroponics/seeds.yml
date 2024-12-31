@@ -1,0 +1,49 @@
+- type: entity
+  parent: SeedBase
+  name: packet of hilroute seeds
+  id: HilrouteSeeds
+  components:
+    - type: Seed
+      seedId: hilroute
+    - type: Sprite
+      sprite: /Textures/_DS14/Objects/Specific/Hydroponics/hilroute.rsi
+
+- type: entity
+  parent: SeedBase
+  name: packet of ager seeds
+  id: AgerSeeds
+  components:
+    - type: Seed
+      seedId: ager
+    - type: Sprite
+      sprite: /Textures/_DS14/Objects/Specific/Hydroponics/ager.rsi
+
+- type: entity
+  parent: SeedBase
+  name: packet of ashwheave seeds
+  id: AshwheaveSeeds
+  components:
+    - type: Seed
+      seedId: ashweave
+    - type: Sprite
+      sprite: /Textures/_DS14/Objects/Specific/Hydroponics/ashwheave.rsi
+
+- type: entity
+  parent: SeedBase
+  name: packet of drayhad seeds
+  id: DrayhadSeeds
+  components:
+    - type: Seed
+      seedId: drayhad
+    - type: Sprite
+      sprite: /Textures/_DS14/Objects/Specific/Hydroponics/drayhad.rsi
+
+- type: entity
+  parent: SeedBase
+  name: packet of either seeds
+  id: EitherSeeds
+  components:
+    - type: Seed
+      seedId: either
+    - type: Sprite
+      sprite: /Textures/_DS14/Objects/Specific/Hydroponics/either.rsi

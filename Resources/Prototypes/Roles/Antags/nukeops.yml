@@ -2,7 +2,7 @@
   id: Nukeops
   name: roles-antag-nuclear-operative-name
   antagonist: true
-  setPreference: true
+  setPreference: false
   objective: roles-antag-nuclear-operative-objective
   requirements:
   - !type:CharacterOverallTimeRequirement
@@ -15,20 +15,20 @@
   id: NukeopsMedic
   name: roles-antag-nuclear-operative-agent-name
   antagonist: true
-  setPreference: true
+  setPreference: false
   objective: roles-antag-nuclear-operative-agent-objective
   requirements:
   - !type:CharacterOverallTimeRequirement
-    min: 108000 #  30 hours
-  - !type:CharacterDepartmentTimeRequirement
+    min: 108000 # DeltaV - 30 hours
+  - !type:CharacterDepartmentTimeRequirement # DeltaV - Medical dept time requirement
     department: Medical
-    min: 36000 # 10 hours
+    min: 36000 # DeltaV - 10 hours
 
 - type: antag
   id: NukeopsCommander
   name: roles-antag-nuclear-operative-commander-name
   antagonist: true
-  setPreference: true
+  setPreference: false
   objective: roles-antag-nuclear-operative-commander-objective
   requirements:
   - !type:CharacterOverallTimeRequirement

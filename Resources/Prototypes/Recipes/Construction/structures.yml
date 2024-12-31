@@ -125,6 +125,24 @@
     - !type:TileNotBlocked
 
 - type: construction
+  name: basalt wall
+  id: WallBasaltCobblebrick
+  graph: Girder
+  startNode: start
+  targetNode: bcWall
+  category: construction-category-structures
+  description: Keeps the air in and the greytide out.
+  icon:
+    sprite: Structures/Walls/cobblebrick_basalt.rsi
+    state: full
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
   name: uranium wall
   id: UraniumWall
   graph: Girder

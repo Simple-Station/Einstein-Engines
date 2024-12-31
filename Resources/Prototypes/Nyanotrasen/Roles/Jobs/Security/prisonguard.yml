@@ -14,7 +14,7 @@
   canBeAntag: false
   icon: "JobIconPrisonGuard"
   supervisors: job-supervisors-warden
-  setPreference: true
+  setPreference: false
 #  whitelistRequired: true
   access:
   - Security

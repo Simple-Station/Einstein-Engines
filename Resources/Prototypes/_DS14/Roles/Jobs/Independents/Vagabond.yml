@@ -1,0 +1,24 @@
+- type: job
+  id: Vagabond
+  name: job-name-vagabond
+  description: job-description-vagabond
+  playTimeTracker: JobVagabond
+  startingGear: AtmosphericTechnicianGear
+  icon: "JobIconUnknown"
+  supervisors: job-supervisors-ce
+  access:
+  - Maintenance
+  - Engineering
+  - External
+  - Atmospherics
+
+- type: startingGear
+  id: VagabondGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitAtmos
+    back: ClothingBackpackAtmospherics
+    shoes: ClothingShoesColorWhite
+    ears: ClothingHeadsetEngineering
+  innerClothingSkirt: ClothingUniformJumpskirtAtmos
+  satchel: ClothingBackpackSatchelEngineeringFilled
+  duffelbag: ClothingBackpackDuffelEngineeringFilled

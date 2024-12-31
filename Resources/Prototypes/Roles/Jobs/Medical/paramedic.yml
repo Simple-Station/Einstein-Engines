@@ -23,24 +23,23 @@
   - Paramedic # DeltaV - Add Paramedic access
   extendedAccess:
   - Chemistry
+  setPreference: false
   special:
   - !type:AddComponentSpecial
     components:
     - type: CPRTraining
-    - type: SurgerySpeedModifier
-      SpeedModifier: 1.75
 
 - type: startingGear
   id: ParamedicGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitParamedic
-    back: ClothingBackpackParamedicFilledDV
+    back: ClothingBackpackParamedicFilledDV # DeltaV - Give Paramedics useful tools on spawn, see Resources/Prototypes/DeltaV/Catalog/Fills/Backpacks/StargerGear/backpack.yml
     shoes: ClothingShoesColorBlue
     id: ParamedicPDA
     ears: ClothingHeadsetMedical
     belt: ClothingBeltMedicalEMTFilled
-    pocket1: HandheldGPSBasic
-    pocket2: HandheldCrewMonitor
+    pocket1: HandheldGPSBasic # DeltaV - Give Paramedics useful tools on spawn
+    pocket2: HandheldCrewMonitor # DeltaV - Give Paramedics useful tools on spawn
   innerClothingSkirt: ClothingUniformJumpskirtParamedic
-  satchel: ClothingBackpackSatchelParamedicFilledDV
-  duffelbag: ClothingBackpackDuffelParamedicFilledDV
+  satchel: ClothingBackpackSatchelParamedicFilledDV # DeltaV - Give Paramedics useful tools on spawn, see Resources/Prototypes/DeltaV/Catalog/Fills/Backpacks/StargerGear/satchel.yml
+  duffelbag: ClothingBackpackDuffelParamedicFilledDV # DeltaV - Give Paramedics useful tools on spawn, see Resources/Prototypes/DeltaV/Catalog/Fills/Backpacks/StargerGear/duffelbag.yml

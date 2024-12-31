@@ -1,0 +1,230 @@
+- type: entity
+  name: hilroute berries
+  parent: FoodProduceBase
+  id: FoodHilrouteBerries
+  description: Apprently Hilroute berries can clean toxic buildup.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - berry
+      - medicine
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Dylovene
+          Quantity: 9
+        - ReagentId: Omnizine
+          Quantity: 1
+  - type: Sprite
+    sprite: /Textures/_DS14/Objects/Specific/Hydroponics/hilroute.rsi
+    state: healberries
+  - type: Produce
+    seedId: berries
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Dylovene
+        Quantity: 20
+  - type: Tag
+    tags:
+    - Fruit
+
+- type: entity
+  name: hilroute leaves
+  parent: FoodProduceBase
+  id: FoodHealoxygenRoot
+  description: This root is known for healing lungs but is outlawed due to its use in narcotics.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sour
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Inaprovaline
+          Quantity: 8
+        - ReagentId: SpaceDrugs
+          Quantity: 2
+  - type: Sprite
+    sprite: /Textures/_DS14/Objects/Specific/Hydroponics/hilroute.rsi
+    state: healroots
+  - type: Produce
+    seedId: berries
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Inaprovaline
+        Quantity: 20
+  - type: Tag
+    tags:
+    - Fruit
+
+- type: entity
+  name: ager caps
+  parent: FoodProduceBase
+  id: FoodAgerCaps
+  description: Mushrooms commonly used in the production of ale.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - mushroom
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Ale
+          Quantity: 2
+        - ReagentId: Nutriment
+          Quantity: 13
+  - type: Sprite
+    sprite: /Textures/_DS14/Objects/Specific/Hydroponics/ager.rsi
+    state: produce
+  - type: Produce
+    seedId: berries
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Ale
+        Quantity: 15
+  - type: Tag
+    tags:
+    - Vegetable
+
+- type: entity
+  name: ashwheave produce
+  description: Mushrooms which are inedible and rough
+  id: ProduceAshwheave
+  parent: ProduceBase
+  components:
+  - type: Sprite
+    sprite: /Textures/_DS14/Objects/Specific/Hydroponics/ashwheave.rsi
+  - type: SolutionContainerManager
+  - type: Produce
+    seedId: ashwheave
+  - type: Log
+    spawnedPrototype: MaterialDurathread1
+    spawnCount: 1
+
+- type: entity
+  name: drayhad produce
+  parent: ProduceBase
+  id: ProduceDrayhad
+  description: "Dry them out to make some smokes."
+  components:
+  - type: Sprite
+    sprite: /Textures/_DS14/Objects/Specific/Hydroponics/drayhad.rsi
+  - type: Produce
+    seedId: drayhad
+  - type: Stack
+    stackType: StackProduceDrayhad
+    count: 1
+  - type: Food
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: THC
+          Quantity: 15
+
+- type: entity
+  name: ground drayhad
+  parent: BaseItem
+  id: GroundDrayhad
+  description: "Ground drayhad, ready to take you on a trip."
+  components:
+  - type: Stack
+    stackType: StackGroundDrayhad
+    count: 1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: THC
+          Quantity: 12
+        - ReagentId: Happiness
+          Quantity: 3
+  - type: Sprite
+    sprite: Objects/Misc/reagent_fillings.rsi
+    state: powderpile
+    color: darkgreen
+  - type: Construction
+    graph: smokeableGroundDrayhad
+    node: ground
+  - type: Tag
+    tags:
+      - Smokable
+  - type: Item
+    size: Tiny
+
+- type: entity
+  name: either fruit
+  parent: FoodProduceBase
+  id: FoodEither
+  description: A variant of the bungo fruit.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - bungo
+  - type: Food
+    trash: FoodEitherPit
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 25
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Enzyme
+          Quantity: 5
+        - ReagentId: Bicaridine
+          Quantity: 10
+  - type: Sprite
+    sprite: /Textures/_DS14/Objects/Specific/Hydroponics/either.rsi
+  - type: Produce
+    seedId: either
+  - type: Tag
+    tags:
+    - Fruit
+
+- type: entity
+  name: either pit
+  parent: FoodInjectableBase
+  id: FoodEitherPit
+  components:
+  - type: Sprite
+    sprite: /Textures/_DS14/Objects/Specific/Hydroponics/either.rsi
+    state: pit
+  - type: Tag
+    tags:
+    - Recyclable
+    - Trash
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 38
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 3
+        - ReagentId: Bungotoxin
+          Quantity: 10
+        - ReagentId: Dermaline
+          Quantity: 10
+        - ReagentId: SpaceDrugs
+          Quantity: 20
+        - ReagentId: Desoxyephedrine
+          Quantity: 5
+  - type: Extractable
+    grindableSolutionName: food
+  - type: Seed
+    seedId: either
+  - type: SpaceGarbage
+  - type: BadFood

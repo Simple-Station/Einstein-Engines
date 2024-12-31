@@ -1,0 +1,28 @@
+- type: constructionGraph
+  id: smokeableDrayhadCigarette
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: cigarette
+          steps:
+            - material: PaperRolling
+            - material: CigaretteFilter
+            - material: StackGroundDrayhad
+              doAfter: 2
+    - node: cigarette
+      entity: Cigarette
+
+- type: constructionGraph
+  id: smokeableGroundDrayhad
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: ground
+          steps:
+            - material: StackProduceDrayhad
+              amount: 2
+              doAfter: 5
+    - node: ground
+      entity: GroundDrayhad

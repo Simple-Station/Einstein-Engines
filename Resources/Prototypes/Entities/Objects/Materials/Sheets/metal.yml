@@ -60,6 +60,7 @@
   - type: FloorTile
     outputs:
     - Plating
+    - PlatingP
   - type: Extractable
     grindableSolutionName: steel
   - type: SolutionContainerManager

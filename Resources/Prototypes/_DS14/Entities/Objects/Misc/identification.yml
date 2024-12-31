@@ -1,0 +1,92 @@
+- type: entity
+  parent: IDCardStandard
+  id: BaronIDCard
+  name: baron ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: gold
+    - state: departmenthead
+      color: "#ab1830"
+    - state: subdepartment
+      color: "#a51b1b"
+    - state: captain
+  - type: Item
+    heldPrefix: gold
+  - type: PresetIdCard
+    job: Baron
+
+- type: entity
+  parent: IDCardStandard
+  id: DSGuardIDCard
+  name: guard ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: department
+      color: "#a51b1b"
+    - state: subdepartment
+      color: "#a51b1b"
+    - state: securityofficer
+  - type: PresetIdCard
+    job: Guard
+
+- type: entity
+  parent: IDCardStandard
+  id: CaptainofGuardIDCard
+  name: captain of guard ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: department
+      color: "#a51b1b"
+    - state: subdepartment
+      color: "#a51b1b"
+    - state: securityofficer
+  - type: PresetIdCard
+    job: GuardCaptain
+
+- type: entity
+  parent: IDCardStandard
+  id: AdvisorIDCard
+  name: advisor ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: department
+      color: "#a51b1b"
+    - state: subdepartment
+      color: "#a51b1b"
+    - state: securityofficer
+  - type: PresetIdCard
+    job: Advisor
+
+- type: entity
+  parent: IDCardStandard
+  id: NTllIDCard
+  name: low level access ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: department
+      color: "#1B67A5"
+    - state: subdepartment
+      color: "#1B67A5"
+  - type: PresetIdCard
+    job: NanoTrasenEmployee
+
+- type: entity
+  parent: IDCardStandard
+  id: DARKBAaccessCard
+  name: block A access card
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/id_cards.rsi
+  - type: Access
+    tags:
+    - SettlerBlockA
+

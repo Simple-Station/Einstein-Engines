@@ -53,6 +53,7 @@
   - type: FloorTile
     outputs:
     - Lattice
+    - LatticeP
     - FloorReinforced
   - type: StaticPrice
     price: 0

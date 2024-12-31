@@ -1,0 +1,131 @@
+- type: entity
+  id: WilHilroute
+  name: wild hilroute
+  description: Wild-Hilroute, the miracle plant of survivalists.
+  components:
+    - type: Clickable
+    - type: Sprite
+      sprite: /Textures/_DS14/Objects/Specific/Hydroponics/hilroute.rsi
+      state: harvest
+    - type: Physics
+      bodyType: Static
+    - type: Damageable
+      damageContainer: Inorganic
+      damageModifierSet: Wood
+    - type: MeleeSound
+      soundGroups:
+        Brute:
+          path: /Audio/Effects/plant_rustle.ogg
+          params:
+            variation: 0.05
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 5
+          behaviors:
+            - !type:PlaySoundBehavior
+              sound:
+                path: /Audio/Effects/plant_rustle.ogg
+                params:
+                  volume: 5
+                  variation: 0.05
+            - !type:DoActsBehavior
+              acts: [ "Destruction" ]
+            - !type:SpawnEntitiesBehavior
+              spawn:
+                FoodHilrouteBerries:
+                  min: 0
+                  max: 1
+                FoodHealrootBerries:
+                  min: 0
+                  max: 1
+                HilrouteSeeds:
+                  min: 0
+                  max: 1
+
+- type: entity
+  id: WilAgerCaps
+  name: wild ager caps
+  description: Wild mushrooms, you could eat it?
+  components:
+    - type: Clickable
+    - type: Sprite
+      sprite: /Textures/_DS14/Objects/Specific/Hydroponics/ager.rsi
+      state: harvest
+    - type: Physics
+      bodyType: Static
+    - type: Damageable
+      damageContainer: Inorganic
+      damageModifierSet: Wood
+    - type: MeleeSound
+      soundGroups:
+        Brute:
+          path: /Audio/Effects/plant_rustle.ogg
+          params:
+            variation: 0.05
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 5
+          behaviors:
+            - !type:PlaySoundBehavior
+              sound:
+                path: /Audio/Effects/plant_rustle.ogg
+                params:
+                  volume: 5
+                  variation: 0.05
+            - !type:DoActsBehavior
+              acts: [ "Destruction" ]
+            - !type:SpawnEntitiesBehavior
+              spawn:
+                FoodAgerCaps:
+                  min: 1
+                  max: 1
+                AgerSeeds:
+                  min: 0
+                  max: 1
+
+- type: entity
+  id: WilDrayhad
+  name: wild drayhad
+  description: Wild dryhad, with the proper tools you could smoke it.
+  components:
+    - type: Clickable
+    - type: Sprite
+      sprite: /Textures/_DS14/Objects/Specific/Hydroponics/drayhad.rsi
+      state: harvest
+    - type: Physics
+      bodyType: Static
+    - type: Damageable
+      damageContainer: Inorganic
+      damageModifierSet: Wood
+    - type: MeleeSound
+      soundGroups:
+        Brute:
+          path: /Audio/Effects/plant_rustle.ogg
+          params:
+            variation: 0.05
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 5
+          behaviors:
+            - !type:PlaySoundBehavior
+              sound:
+                path: /Audio/Effects/plant_rustle.ogg
+                params:
+                  volume: 5
+                  variation: 0.05
+            - !type:DoActsBehavior
+              acts: [ "Destruction" ]
+            - !type:SpawnEntitiesBehavior
+              spawn:
+                ProduceDrayhad:
+                  min: 1
+                  max: 4
+                DrayhadSeeds:
+                  min: 0
+                  max: 1

@@ -6,6 +6,7 @@
   description: job-description-cmo
   playTimeTracker: JobChiefMedicalOfficer
   antagAdvantage: 6 # DeltaV - Reduced TC: Head of Staff
+  setPreference: false
   requirements:
     - !type:CharacterPlaytimeRequirement
       tracker: JobChemist
@@ -18,15 +19,6 @@
       min: 43200 # DeltaV - 12 hours
     - !type:CharacterOverallTimeRequirement
       min: 72000 # DeltaV - 20 hours
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterSpeciesRequirement
-          inverted: true
-          species:
-            - Shadowkin
-        - !type:CharacterTraitRequirement
-          traits:
-            - ShadowkinBlackeye
   weight: 10
   startingGear: CMOGear
   icon: "JobIconChiefMedicalOfficer"
@@ -52,8 +44,6 @@
   - !type:AddComponentSpecial
     components:
     - type: CPRTraining
-    - type: SurgerySpeedModifier
-      SpeedModifier: 2.5
 
 - type: startingGear
   id: CMOGear
@@ -63,6 +53,7 @@
     shoes: ClothingShoesColorBrown
     id: CMOPDA
     ears: ClothingHeadsetCMO
+    belt: ClothingBeltMedicalFilled
   innerClothingSkirt: ClothingUniformJumpskirtCMO
   satchel: ClothingBackpackSatchelCMOFilled
   duffelbag: ClothingBackpackDuffelCMOFilled

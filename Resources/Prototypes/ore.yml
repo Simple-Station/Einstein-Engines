@@ -7,6 +7,12 @@
 
 # High yields
 - type: ore
+  id: OreBasalt
+  oreEntity: BasaltOre1
+  minOreYield: 1
+  maxOreYield: 5
+
+- type: ore
   id: OreSteel
   oreEntity: SteelOre1
   minOreYield: 1

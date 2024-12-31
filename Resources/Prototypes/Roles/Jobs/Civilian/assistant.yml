@@ -8,6 +8,7 @@
   supervisors: job-supervisors-everyone
   access:
   - Maintenance
+  setPreference: false
 
 - type: startingGear
   id: PassengerGear

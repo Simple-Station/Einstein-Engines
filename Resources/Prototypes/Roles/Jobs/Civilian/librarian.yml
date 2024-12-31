@@ -7,37 +7,23 @@
     - !type:CharacterDepartmentTimeRequirement
       department: Epistemics
       min: 14400
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterSpeciesRequirement
-          inverted: true
-          species:
-            - IPC
-        - !type:CharacterTraitRequirement
-          traits:
-            - AnomalousPositronics
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterSpeciesRequirement
-          inverted: true
-          species:
-            - Shadowkin
+    # - !type:CharacterLogicOrRequirement
+      # requirements:
+        # - !type:CharacterSpeciesRequirement
+          # inverted: true
+          # species:
+            # - IPC
+        # - !type:CharacterTraitRequirement
+          # traits:
+            # - AnomalousPositronics
   startingGear: LibrarianGear
   icon: "JobIconLibrarian"
-  supervisors: job-supervisors-rd
+  supervisors: job-supervisors-hop
   access:
-  - Research
+  - Service
   - Maintenance
-  - Library
-  special:
-  - !type:AddComponentSpecial
-    components:
-    - type: Psionic
-    - type: InnatePsionicPowers
-      powersToAdd:
-        - XenoglossyPower
-        - TelepathyPower
-
+  - Library # DeltaV - Add Library access
+  setPreference: false
 
 - type: startingGear
   id: LibrarianGear
@@ -45,7 +31,6 @@
     jumpsuit: ClothingUniformJumpsuitLibrarian
     back: ClothingBackpackLibrarianFilled
     shoes: ClothingShoesBootsLaceup
-    outerClothing: ClothingOuterCoatRnd
     id: LibrarianPDA
     ears: ClothingHeadsetScience
     pocket1: d10Dice

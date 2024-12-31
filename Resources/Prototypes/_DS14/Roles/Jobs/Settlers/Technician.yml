@@ -1,0 +1,24 @@
+- type: job
+  id: Technician
+  name: job-name-technician
+  description: job-description-technician
+  playTimeTracker: JobTechnician
+  startingGear: TechnicianGear
+  icon: "JobIconStationEngineer"
+  supervisors: job-supervisors-baron
+  access:
+  - Maintenance
+  - Janitor
+  - Cargo
+
+- type: startingGear
+  id: TechnicianGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorGrey
+    back: ClothingBackpackFilled
+    shoes: ClothingShoesColorBlack
+    id: PassengerPDA
+    ears: ClothingHeadsetGrey
+  innerClothingSkirt: ClothingUniformJumpskirtColorGrey
+  satchel: ClothingBackpackSatchelFilled
+  duffelbag: ClothingBackpackDuffelFilled

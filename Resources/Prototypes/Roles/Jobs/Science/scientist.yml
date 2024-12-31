@@ -13,6 +13,7 @@
   access:
   - Research
   - Maintenance
+  setPreference: false
 
 - type: startingGear
   id: ScientistGear

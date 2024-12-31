@@ -1,0 +1,1 @@
+role-timer-race-ban = You are prohibited from playing not as human in this role. The Wasteland does not permit such combinations.

@@ -7,7 +7,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 19
+        Piercing: 35
 
 - type: entity
   id: BulletCaselessRiflePractice

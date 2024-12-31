@@ -1,0 +1,43 @@
+- type: entity
+  parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing]
+  id: ClothingOuterArmorMilitia
+  name: militia armour
+  description: A suit of semi-flexible polycarbonate body armor with heavy padding to protect against melee attacks. Perfect for fighting delinquents around the keep.
+  components:
+  - type: Sprite
+    sprite: _DS14/Clothing/OuterClothing/Armor/militia.rsi
+  - type: Clothing
+    sprite: _DS14/Clothing/OuterClothing/Armor/militia.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.7
+        Heat: 0.2
+        Caustic: 0.2
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: GroupExamine
+
+- type: entity
+  parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing]
+  id: ClothingOuterArmorHMilitia
+  name: head militia armour
+  description: A suit of semi-flexible polycarbonate body armor with heavy padding to protect against melee attacks. Perfect for fighting delinquents around the keep.
+  components:
+  - type: Sprite
+    sprite: _DS14/Clothing/OuterClothing/Armor/headmilitia.rsi
+  - type: Clothing
+    sprite: _DS14/Clothing/OuterClothing/Armor/headmilitia.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.7
+        Heat: 0.2
+        Caustic: 0.2
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: GroupExamine
