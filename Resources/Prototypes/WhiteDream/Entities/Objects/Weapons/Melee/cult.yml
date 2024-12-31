@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   name: ritual dagger
   parent: BaseKnife
   id: RitualDagger
@@ -15,6 +15,12 @@
     damage:
       types:
         Piercing: 15
+  - type: DamageOtherOnHit
+    staminaCost: 5
+  - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
+  - type: ThrowingAngle
+    angle: 225
   - type: Clothing
     sprite: Objects/Weapons/Melee/cult_dagger.rsi
     slots:
@@ -45,7 +51,7 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 0.75
+    attackRate: 1.3333
     range: 1.65
     damage:
       types:
@@ -56,6 +62,12 @@
     angle: 90
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: DamageOtherOnHit
+    staminaCost: 8
+  - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
+  - type: ThrowingAngle
+    angle: 225
   - type: Item
     size: Normal
   - type: Clothing
@@ -79,6 +91,7 @@
     state: icon
   - type: EmbeddableProjectile
     offset: 0.15,0.15
+  - type: EmbedPassiveDamage
   - type: ThrowingAngle
     angle: 225
   - type: Fixtures
@@ -100,17 +113,18 @@
     wideAnimationRotation: -135
     damage:
       types:
-        Piercing: 36
+        Piercing: 26
     angle: 0
     animation: WeaponArcThrust
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
     range: 2
-    attackRate: 0.7
+    attackRate: 1.42
   - type: DamageOtherOnHit
     damage:
       types:
         Piercing: 40
+    staminaCost: 18
   - type: Item
     sprite: WhiteDream/BloodCult/Entities/Items/Weapons/cult_spear.rsi
     storedRotation: 44
@@ -125,7 +139,7 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Piercing: 8
+        Piercing: 10
   - type: UseDelay
   - type: DisarmMalus
   - type: CultItem
@@ -146,7 +160,6 @@
         Blunt: 0
     heavyStaminaCost: 0
     maxTargets: 1
-  - type: Unremoveable
   - type: BloodRitesAura
   - type: UserInterface
     interfaces:

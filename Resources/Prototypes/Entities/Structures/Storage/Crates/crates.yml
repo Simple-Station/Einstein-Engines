@@ -12,6 +12,11 @@
     - Energy
     reflectProb: 0.2
     spread: 90
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 16
+    staminaCost: 45
 
 - type: entity
   parent: CrateBaseWeldable
@@ -29,6 +34,11 @@
     - entity_storage
   - type: StaticPrice
     price: 80
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 10
+    staminaCost: 30
 
 - type: entity
   parent: CratePlastic
@@ -140,7 +150,7 @@
       map: ["enum.StorageVisualLayers.Door"]
     - state: paper
       sprite: Structures/Storage/Crates/labels.rsi
-      map: ["enum.PaperLabelVisuals.Layer"]  
+      map: ["enum.PaperLabelVisuals.Layer"]
   - type: Construction
     graph: WebStructures
     node: crate
@@ -287,7 +297,7 @@
     access: [["Hydroponics"]]
 
 - type: entity
-  parent: CrateBaseSecure
+  parent: CrateBaseSecureReinforced
   id: CrateWeaponSecure
   name: secure weapon crate
   components:
@@ -299,8 +309,8 @@
     access: [["Armory"]]
 
 - type: entity
-  parent: CrateBaseSecure
-  suffix: Armory, Secure
+  parent: CrateBaseSecureReinforced
+  suffix: Armory, Secure, Reinforced
   id: CrateContrabandStorageSecure
   name: contraband storage crate
   description: An armory access locked crate for storing contraband confiscated from suspects or prisoners.
@@ -338,7 +348,7 @@
     - state: paper
       sprite: Structures/Storage/Crates/labels.rsi
       offset: "-0.25,0.625"
-      map: ["enum.PaperLabelVisuals.Layer"]  
+      map: ["enum.PaperLabelVisuals.Layer"]
   - type: Icon
     sprite: Structures/Storage/Crates/livestock.rsi
     state: base
@@ -393,7 +403,7 @@
     - state: paper
       sprite: Structures/Storage/Crates/labels.rsi
       offset: "0.0,0.125"
-      map: ["enum.PaperLabelVisuals.Layer"]   
+      map: ["enum.PaperLabelVisuals.Layer"]
   - type: Icon
     sprite: Structures/Storage/Crates/cage.rsi
   - type: Destructible
@@ -495,7 +505,7 @@
     - state: closed
       map: ["enum.StorageVisualLayers.Door"]
     - state: paper
-      map: ["enum.PaperLabelVisuals.Layer"] 
+      map: ["enum.PaperLabelVisuals.Layer"]
   - type: Icon
     sprite: Structures/Storage/Crates/coffin.rsi
     state: base
@@ -537,7 +547,7 @@
     - state: paper
       sprite: Structures/Storage/Crates/labels.rsi
       offset: "-0.28125,0.625"
-      map: ["enum.PaperLabelVisuals.Layer"] 
+      map: ["enum.PaperLabelVisuals.Layer"]
   - type: Icon
     sprite: Structures/Storage/Crates/wooden_grave.rsi
     state: base
@@ -585,7 +595,7 @@
     - state: paper
       sprite: Structures/Storage/Crates/labels.rsi
       offset: "-0.3125,0.5625"
-      map: ["enum.PaperLabelVisuals.Layer"] 
+      map: ["enum.PaperLabelVisuals.Layer"]
   - type: Icon
     sprite: Structures/Storage/Crates/stone_grave.rsi
     state: base

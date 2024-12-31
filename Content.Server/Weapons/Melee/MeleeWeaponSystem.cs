@@ -53,22 +53,25 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
             return;
 
         var damageSpec = GetDamage(uid, args.User, component);
-
         if (damageSpec.Empty)
             return;
 
-        _damageExamine.AddDamageExamine(args.Message, damageSpec, Loc.GetString("damage-melee"));
+        if (!component.DisableClick)
+            _damageExamine.AddDamageExamine(args.Message, damageSpec, Loc.GetString("damage-melee"));
 
-        if (damageSpec * component.HeavyDamageBaseModifier != damageSpec)
-            _damageExamine.AddDamageExamine(args.Message, damageSpec * component.HeavyDamageBaseModifier, Loc.GetString("damage-melee-heavy"));
-
-        if (component.HeavyStaminaCost != 0)
+        if (!component.DisableHeavy)
         {
-            var staminaCostMarkup = FormattedMessage.FromMarkupOrThrow(
-                Loc.GetString("damage-melee-heavy-stamina-cost",
-                ("type", Loc.GetString("damage-melee-heavy")), ("cost", component.HeavyStaminaCost)));
-            args.Message.PushNewline();
-            args.Message.AddMessage(staminaCostMarkup);
+            if (damageSpec * component.HeavyDamageBaseModifier != damageSpec)
+                _damageExamine.AddDamageExamine(args.Message, damageSpec * component.HeavyDamageBaseModifier, Loc.GetString("damage-melee-heavy"));
+
+            if (component.HeavyStaminaCost != 0)
+            {
+                var staminaCostMarkup = FormattedMessage.FromMarkupOrThrow(
+                    Loc.GetString("damage-stamina-cost",
+                    ("type", Loc.GetString("damage-melee-heavy")), ("cost", component.HeavyStaminaCost)));
+                args.Message.PushNewline();
+                args.Message.AddMessage(staminaCostMarkup);
+            }
         }
     }
 

@@ -151,6 +151,13 @@
     coefficient: 0.75 # 25%
   - type: ClothingRequiredStepTriggerImmune
     slots: WITHOUT_POCKET
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 19
+    staminaCost: 44
+    soundHit:
+      collection: MetalThud
 
 - type: entity
   abstract: true

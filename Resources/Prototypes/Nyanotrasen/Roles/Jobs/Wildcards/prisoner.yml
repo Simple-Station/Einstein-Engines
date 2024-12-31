@@ -13,7 +13,6 @@
     - !type:DepartmentTimeRequirement
       department: Security
       min: 21600
-  setPreference: false
 
 - type: startingGear
   id: PrisonerGear

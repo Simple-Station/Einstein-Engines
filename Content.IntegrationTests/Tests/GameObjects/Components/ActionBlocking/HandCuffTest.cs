@@ -22,6 +22,7 @@ namespace Content.IntegrationTests.Tests.GameObjects.Components.ActionBlocking
   components:
   - type: Cuffable
   - type: Hands
+  - type: ComplexInteraction
   - type: Body
     prototype: Human
 
