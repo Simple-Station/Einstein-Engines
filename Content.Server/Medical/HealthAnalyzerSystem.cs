@@ -36,9 +36,10 @@ public sealed class HealthAnalyzerSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly SharedBodySystem _bodySystem = default!; // Shitmed Change
-    [Dependency] private readonly SolutionContainerSystem _solutionContainerSystem = default!;
+    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly TransformSystem _transformSystem = default!;
+    [Dependency] private readonly ItemToggleSystem _toggle = default!;
 
     public override void Initialize()
     {
@@ -175,7 +176,7 @@ public sealed class HealthAnalyzerSystem : EntitySystem
         //Link the health analyzer to the scanned entity
         healthAnalyzer.Comp.ScannedEntity = target;
         healthAnalyzer.Comp.CurrentBodyPart = part; // Shitmed Change
-        _cell.SetPowerCellDrawEnabled(healthAnalyzer, true);
+        _cell.SetDrawEnabled(healthAnalyzer.Owner, true);
 
         UpdateScannedUser(healthAnalyzer, target, true, part); // Shitmed Change
     }
@@ -190,7 +191,7 @@ public sealed class HealthAnalyzerSystem : EntitySystem
         //Unlink the analyzer
         healthAnalyzer.Comp.ScannedEntity = null;
         healthAnalyzer.Comp.CurrentBodyPart = null; // Shitmed Change
-        _cell.SetPowerCellDrawEnabled(target, false);
+        _cell.SetDrawEnabled(healthAnalyzer.Owner, false);
 
         UpdateScannedUser(healthAnalyzer, target, false);
     }
