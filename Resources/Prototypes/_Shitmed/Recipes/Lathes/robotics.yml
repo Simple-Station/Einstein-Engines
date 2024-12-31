@@ -52,12 +52,12 @@
   result: RightHandIPC
 
 - type: latheRecipe
-  parent: BaseBorgLimbRecipe
+  parent: BaseIPCLimbRecipe
   id: LeftLegIPC
   result: LeftLegIPC
 
 - type: latheRecipe
-  parent: BaseBorgLimbRecipe
+  parent: BaseIPCLimbRecipe
   id: RightLegIPC
   result: RightLegIPC
 
