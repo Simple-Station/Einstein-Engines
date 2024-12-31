@@ -7,7 +7,7 @@ using Content.Server.Popups;
 using Content.Shared.Alert;
 using Content.Shared.Atmos;
 using Content.Shared.Body.Components;
-using Content.Shared.Body.Organ;
+using Content.Shared._Shitmed.Body.Organ; // Shitmed Change
 using Content.Shared.Damage;
 using Content.Shared.Database;
 using Content.Shared.Mobs.Systems;

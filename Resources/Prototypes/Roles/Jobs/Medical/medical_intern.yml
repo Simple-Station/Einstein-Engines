@@ -20,7 +20,7 @@
     components:
     - type: CPRTraining
     - type: SurgerySpeedModifier
-      SpeedModifier: 1.5
+      speedModifier: 1.5
 
 - type: startingGear
   id: MedicalInternGear

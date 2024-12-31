@@ -36,6 +36,7 @@
       - Slicing
     useSound:
       path: /Audio/Items/Culinary/chop.ogg
+  # Shitmed Change
   - type: Scalpel
     speed: 0.65
   - type: SurgeryTool
@@ -95,6 +96,11 @@
   - type: GuideHelp
     guides:
     - Chef
+  # Shitmed Change
+  - type: Scalpel
+    speed: 0.3
+  - type: BoneSaw 
+    speed: 0.5
 
 - type: entity
   name: combat knife
