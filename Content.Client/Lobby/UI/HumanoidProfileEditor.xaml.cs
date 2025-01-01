@@ -1393,7 +1393,7 @@ namespace Content.Client.Lobby.UI
 
             if (updateType == SliderUpdate.Height || updateType == SliderUpdate.Both)
                 if (ratio < 1 / sizeRatio || ratio > sizeRatio)
-                    widthValue = heightValue * (ratio < 1 / sizeRatio ? (1 / sizeRatio) : sizeRatio);
+                    widthValue = heightValue / (ratio < 1 / sizeRatio ? (1 / sizeRatio) : sizeRatio);
 
             if (updateType == SliderUpdate.Width || updateType == SliderUpdate.Both)
                 if (ratio < 1 / sizeRatio || ratio > sizeRatio)
