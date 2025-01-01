@@ -388,7 +388,7 @@
   - type: Tool
     qualities:
       - Sawing
-    speed: 0.5
+    speedModifier: 0.5
   - type: BoneSaw # Shitmed
     speed: 0.5
 
@@ -474,7 +474,7 @@
   - type: Tool
     qualities:
       - Sawing
-    speed: 2.0
+    speedModifier: 2.0
   - type: BoneSaw # Shitmed
     speed: 2
 
