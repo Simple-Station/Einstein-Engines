@@ -89,6 +89,11 @@ namespace Content.Shared.Abilities.Psionics
         public string MindbreakingFeedback = "mindbreaking-feedback";
 
         /// <summary>
+        /// </summary>
+        [DataField]
+        public string HardMindbreakingFeedback = "hard-mindbreaking-feedback";
+
+        /// <summary>
         ///     How much should the odds of obtaining a Psionic Power be multiplied when rolling for one.
         /// </summary>
         [DataField]

@@ -206,19 +206,20 @@ public sealed class PsionicAbilitiesSystem : EntitySystem
         RaiseLocalEvent(uid, ref ev);
 
         if (_config.GetCVar(CCVars.ScarierMindbreaking))
-            ScarierMindbreak(uid);
+            ScarierMindbreak(uid, psionic);
     }
 
     /// <summary>
     ///     An even more advanced form of Mindbreaking. Turn the victim into an NPC.
     ///     For the people who somehow didn't intuit from the absolutely horrifying text that mindbreaking people is very fucking bad.
     /// </summary>
-    public void ScarierMindbreak(EntityUid uid)
+    public void ScarierMindbreak(EntityUid uid, PsionicComponent component)
     {
         if (!_playerManager.TryGetSessionByEntity(uid, out var session) || session is null)
             return;
 
-        var feedbackMessage = $"[font size=24][color=#ff0000]{"Your characters personhood has been obliterated. If you wish to continue playing, consider respawning as a new character."}[/color][/font]";
+        var popup = Loc.GetString(component.HardMindbreakingFeedback);
+        var feedbackMessage = $"[font size=24][color=#ff0000]{popup}[/color][/font]";
         _chatManager.ChatMessageToOne(
             ChatChannel.Emotes,
             feedbackMessage,
