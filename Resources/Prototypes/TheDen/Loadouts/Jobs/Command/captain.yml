@@ -12,3 +12,17 @@
         - Captain
   items:
     - ClothingOuterCoatCapTrench
+
+# Mask
+- type: loadout
+  id: LoadoutCommandCapMaskGasCombat
+  category: JobsCommandCaptain
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainMask
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingMaskGasCaptainCombat
