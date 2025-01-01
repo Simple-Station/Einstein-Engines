@@ -1,4 +1,4 @@
-using Content.Shared.Targeting;
+using Content.Shared._Shitmed.Targeting;
 
 namespace Content.Shared.Projectiles;
 

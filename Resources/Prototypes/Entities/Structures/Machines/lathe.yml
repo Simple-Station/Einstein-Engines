@@ -285,9 +285,6 @@
       - CryostasisBeaker
       - SyringeCryostasis
       - Syringe
-      - EnergyScalpel
-      - EnergyCautery
-      - AdvancedRetractor
       - Implanter
       - PillCanister
       - ChemistryEmptyBottle01
@@ -364,6 +361,10 @@
       - MofficTranslator
       - RCDAmmo #DeltaV
       - RCD #EE
+      # Shitmed Change
+      - EnergyScalpel
+      - EnergyCautery
+      - AdvancedRetractor
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - BoxBeanbag
@@ -549,6 +550,8 @@
       - MetempsychoticMachineCircuitboard
       - SalvageExpeditionsComputerCircuitboard
       - JukeboxCircuitBoard
+      - AutodocCircuitboard # Shitmed Change
+      - OperatingTableCircuitboard # Shitmed Change
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - ShuttleGunDusterCircuitboard
@@ -817,7 +820,6 @@
       - WeaponLaserCarbinePractice
       - Zipties
       - ShockCollar
-      - ShadowkinRestraints
       # DeltaV - .38 special ammo - Add various .38 special ammo to security techfab
       - MagazineBoxSpecial
       - MagazineBoxSpecialPractice
@@ -1025,13 +1027,13 @@
       - MedkitRadiation
       - MedkitCombat
       - Scalpel
-      - BoneGel
       - Retractor
       - Cautery
       - Drill
       - Saw
       - Hemostat
       - ClothingEyesGlassesChemical
+      - BoneGel # Shitmed Change
     dynamicRecipes:
       - ChemicalPayload
       - CryostasisBeaker
@@ -1040,6 +1042,7 @@
       - ClothingEyesHudMedical # Nyano
       - ChemicalPayload # Nyano
       - SyringeCryostasis
+      # Shitmed Change
       - EnergyScalpel
       - EnergyCautery
       - AdvancedRetractor
@@ -1525,7 +1528,7 @@
   description: Produces organs and other organic matter that can be surgically grafted onto patients with biomass.
   components:
   - type: Sprite
-    sprite: Structures/Machines/limbgrower.rsi
+    sprite: _Shitmed/Structures/Machines/limbgrower.rsi
     snapCardinals: true
     layers:
     - state: limbgrower_idleoff

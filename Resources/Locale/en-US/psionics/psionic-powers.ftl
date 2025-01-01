@@ -167,13 +167,11 @@ psionic-roll-failed = For a moment, my consciousness expands, yet I feel that it
 entity-anomaly-no-grid = There is nowhere for me to conjure beings.
 power-overwhelming-power-feedback = {CAPITALIZE($entity)} wields a vast connection to the noösphere
 
-# Shadowkin ShadeSkip
-action-description-shadowkin-shadeskip = Aaramrra!
-
 # DarkSwap
 action-name-darkswap = DarkSwap
 action-description-darkswap = Mmra Mamm!
-
+darkswap-power-initialization-feedback =
+    For a short moment, I find myself able to break the realms. Phasing in the shadows and the dark, ready to travel to the darkest of places...
 ethereal-pickup-fail = My hand sizzles as it passes through...
 
 # Psionic Familiar System
