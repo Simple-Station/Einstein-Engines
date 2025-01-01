@@ -8925,3 +8925,12 @@ Entries:
   id: 6604
   time: '2025-01-01T21:59:50.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1383
+- author: sapphirescript
+  changes:
+    - type: Fix
+      message: >-
+        The width slider in the profile editor view now moves correctly
+        regarding the height slider.
+  id: 6605
+  time: '2025-01-01T22:51:04.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1391
