@@ -160,6 +160,7 @@ summon-remilia-power-description = { action-description-summon-remilia }
 
 # Psionic System Messages
 mindbreaking-feedback = The light of life vanishes from {CAPITALIZE($entity)}'s eyes, leaving behind a husk pretending at sapience
+hard-mindbreaking-feedback = Your character's personhood has been obliterated. If you wish to continue playing, consider respawning as a new character.
 examine-mindbroken-message =
     Eyes unblinking, staring deep into the horizon. {CAPITALIZE($entity)} is a sack of meat pretending it has a soul.
     There is nothing behind its gaze, no evidence there can be found of the divine light of creation.

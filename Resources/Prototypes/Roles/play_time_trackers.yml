@@ -168,3 +168,9 @@
 
 - type: playTimeTracker
   id: JobZookeeper
+
+- type: playTimeTracker
+  id: JobDeathSquad
+
+- type: playTimeTracker
+  id: JobCBURN

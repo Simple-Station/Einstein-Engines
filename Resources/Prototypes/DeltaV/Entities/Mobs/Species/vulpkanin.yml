@@ -116,6 +116,12 @@
     drinkDelayMultiplier: 0.5
   - type: Flammable
     fireStackIncreaseMultiplier: 1.25
+  - type: Tag
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - VulpEmotes
 
 - type: entity
   save: false

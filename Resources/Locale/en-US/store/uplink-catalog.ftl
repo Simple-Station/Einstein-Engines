@@ -317,6 +317,9 @@ uplink-clothing-shoes-boots-mag-syndie-desc = A pair of boots that prevent slipp
 uplink-eva-syndie-name = Syndicate EVA Bundle
 uplink-eva-syndie-desc = A simple EVA suit that offers no protection other than what's needed to survive in space.
 
+uplink-hardsuit-carp-name = Carp Hardsuit
+uplink-hardsuit-carp-desc = Looks like an ordinary carp suit, except fully spaceproof and tricks space carp into thinking you are one of them.
+
 uplink-hardsuit-syndie-name = Syndicate Hardsuit
 uplink-hardsuit-syndie-desc = The Syndicate's well known armored blood red hardsuit, capable of space walks and bullet resistant.
 
@@ -438,3 +441,6 @@ uplink-backpack-syndicate-desc = Lightweight explosion-proof а backpack for hol
 
 uplink-home-run-bat-name = Home Run Bat
 uplink-home-run-bat-desc = Rigged bat pre-coated in blood for Syndicate tee-ball practice. Launch your foes!
+
+uplink-combat-bakery-name = Combat Bakery Kit
+uplink-combat-bakery-desc = A kit of clandestine baked weapons. Contains a baguette sword, a pair of throwing croissants, and a syndicate microwave board for making more. Once the job is done, eat the evidence.

@@ -237,17 +237,17 @@ namespace Content.Server.Hands.Systems
             var distance = Math.Clamp(length, minDistance, hands.ThrowRange);
             direction *= distance / length;
 
-            var throwStrength = hands.ThrowForceMultiplier;
+            var throwSpeed = hands.BaseThrowspeed;
 
             // Let other systems change the thrown entity (useful for virtual items)
             // or the throw strength.
-            var itemEv = new BeforeGettingThrownEvent(throwEnt, direction, throwStrength, player);
-            RaiseLocalEvent(throwEnt, ref itemEv);
+            var itemEv = new BeforeGettingThrownEvent(throwEnt, direction, throwSpeed, player);
+            RaiseLocalEvent(player, ref itemEv);
 
             if (itemEv.Cancelled)
                 return true;
 
-            var ev = new BeforeThrowEvent(throwEnt, direction, throwStrength, player);
+            var ev = new BeforeThrowEvent(throwEnt, direction, throwSpeed, player);
             RaiseLocalEvent(player, ref ev);
 
             if (ev.Cancelled)
@@ -257,7 +257,7 @@ namespace Content.Server.Hands.Systems
             if (IsHolding(player, throwEnt, out _, hands) && !TryDrop(player, throwEnt, handsComp: hands))
                 return false;
 
-            _throwingSystem.TryThrow(ev.ItemUid, ev.Direction, ev.ThrowStrength, ev.PlayerUid);
+            _throwingSystem.TryThrow(ev.ItemUid, ev.Direction, ev.ThrowSpeed, ev.PlayerUid, compensateFriction: !HasComp<LandAtCursorComponent>(ev.ItemUid));
 
             return true;
         }

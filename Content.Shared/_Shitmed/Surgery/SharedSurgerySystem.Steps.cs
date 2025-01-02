@@ -744,8 +744,7 @@ public abstract partial class SharedSurgerySystem
 
         var doAfter = new DoAfterArgs(EntityManager, user, TimeSpan.FromSeconds(duration), ev, body, part)
         {
-            BreakOnUserMove = true,
-            BreakOnTargetMove = true,
+            BreakOnMove = true,
             CancelDuplicate = true,
             DuplicateCondition = DuplicateConditions.SameEvent,
             NeedHand = true,

@@ -24,7 +24,6 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.Players;
 using Content.Shared.Players.RateLimiting;
 using Content.Shared.Radio;
-using Content.Shared.Speech;
 using Content.Shared.Whitelist;
 using Robust.Server.Player;
 using Robust.Shared.Audio;
@@ -424,7 +423,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         }
         else
         {
-            var nameEv = new TransformSpeakerSpeechEvent(source, Name(source));
+            var nameEv = new TransformSpeakerNameEvent(source, Name(source));
             RaiseLocalEvent(source, nameEv);
             name = nameEv.VoiceName ?? Name(source);
             // Check for a speech verb override
@@ -496,9 +495,9 @@ public sealed partial class ChatSystem : SharedChatSystem
         }
         else
         {
-            var nameEv = new TransformSpeakerSpeechEvent(source, Name(source));
+            var nameEv = new TransformSpeakerNameEvent(source, Name(source));
             RaiseLocalEvent(source, nameEv);
-            name = nameEv.VoiceName ?? Name(source);
+            name = nameEv.VoiceName;
         }
         name = FormattedMessage.EscapeText(name);
 
