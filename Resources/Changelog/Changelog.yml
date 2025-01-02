@@ -8934,3 +8934,84 @@ Entries:
   id: 6605
   time: '2025-01-01T22:51:04.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1391
+- author: sapphirescript
+  changes:
+    - type: Fix
+      message: Fixed radial menus overlapping where there's many icons.
+  id: 6606
+  time: '2025-01-02T00:16:49.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1393
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added new admin commands AddRandomPsionicPower, RemovePsionicPower, and
+        RemoveAllPsionicPowers.
+  id: 6607
+  time: '2025-01-02T02:22:32.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1394
+- author: sapphirescript
+  changes:
+    - type: Add
+      message: Borgs can now use IPC emote
+    - type: Add
+      message: All species missing sounds for vocal emotes have generic sounds
+    - type: Tweak
+      message: Emote Icons resprited in the style of twemoji
+    - type: Fix
+      message: '*flips *spins *jumps emotes now work'
+    - type: Fix
+      message: Emote wheel now shows the right emotes for your species
+  id: 6608
+  time: '2025-01-02T03:27:48.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1395
+- author: sapphirescript
+  changes:
+    - type: Tweak
+      message: You can no longer cocoon yourself as a spider.
+  id: 6609
+  time: '2025-01-02T04:57:27.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1396
+- author: sapphirescript
+  changes:
+    - type: Fix
+      message: Supermatter's guide has a name now
+  id: 6610
+  time: '2025-01-02T14:48:11.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1398
+- author: sapphirescript
+  changes:
+    - type: Fix
+      message: The 'kα Deficiency' trait has a description now
+  id: 6611
+  time: '2025-01-02T14:49:06.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1402
+- author: Remuchi
+  changes:
+    - type: Add
+      message: CPR now automatically repeats itself.
+    - type: Add
+      message: >-
+        CPR no longer requires you to take the mask off. You can now simply
+        lower it instead.
+    - type: Fix
+      message: Fixed CPR repeating popups x100 times.
+  id: 6612
+  time: '2025-01-02T17:01:54.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1405
+- author: sapphirescript
+  changes:
+    - type: Add
+      message: Face markings are now in their own category
+    - type: Fix
+      message: IPC screens no longer show up above hair
+  id: 6613
+  time: '2025-01-02T17:35:34.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1400
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: 'Added the GR4YT1D3 Virus event. '
+  id: 6614
+  time: '2025-01-02T17:36:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1293

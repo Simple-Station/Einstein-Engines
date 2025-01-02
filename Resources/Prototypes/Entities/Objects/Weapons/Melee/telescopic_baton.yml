@@ -20,8 +20,10 @@
       path: /Audio/Weapons/telescopicoff.ogg
       params:
         volume: -2
-  - type: ItemToggleDisarmMalus
-    activatedDisarmMalus: 0.6
+  - type: ComponentToggler
+    components:
+    - type: DisarmMalus
+      malus: 0.6
   - type: ItemToggleMeleeWeapon
     activatedDamage:
       types:

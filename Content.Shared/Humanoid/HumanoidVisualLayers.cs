@@ -6,6 +6,7 @@ namespace Content.Shared.Humanoid
     [Serializable, NetSerializable]
     public enum HumanoidVisualLayers : byte
     {
+        Face,
         Tail,
         Hair,
         FacialHair,

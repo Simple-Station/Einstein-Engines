@@ -1,7 +1,7 @@
 using Content.Server.Botany.Components;
 using Content.Server.Botany.Systems;
 using Content.Shared.Atmos;
-using Content.Shared.Chemistry.Reagent;
+using Content.Shared.EntityEffects;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
@@ -70,7 +70,7 @@ public partial struct SeedChemQuantity
     /// When chemicals are added to produce, the potency of the seed is divided with this value. Final chemical amount is the result plus the `Min` value.
     /// Example: PotencyDivisor of 20 with seed potency of 55 results in 2.75, 55/20 = 2.75. If minimum is 1 then final result will be 3.75 of that chemical, 55/20+1 = 3.75.
     /// </summary>
-    [DataField] public int PotencyDivisor;
+    [DataField("PotencyDivisor")] public int PotencyDivisor;
 
     /// <summary>
     /// Inherent chemical is one that is NOT result of mutation or crossbreeding. These chemicals are removed if species mutation is executed.
@@ -80,7 +80,7 @@ public partial struct SeedChemQuantity
 
 // TODO reduce the number of friends to a reasonable level. Requires ECS-ing things like plant holder component.
 [Virtual, DataDefinition]
-[Access(typeof(BotanySystem), typeof(PlantHolderSystem), typeof(SeedExtractorSystem), typeof(PlantHolderComponent), typeof(ReagentEffect), typeof(MutationSystem))]
+[Access(typeof(BotanySystem), typeof(PlantHolderSystem), typeof(SeedExtractorSystem), typeof(PlantHolderComponent), typeof(EntityEffect), typeof(MutationSystem))]
 public partial class SeedData
 {
     #region Tracking

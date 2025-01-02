@@ -17,6 +17,17 @@
   satchel: ClothingBackpackSatchelFilled
   duffelbag: ClothingBackpackDuffelFilled
 
+# Syndicate Operative Outfit - Civilian
+- type: startingGear
+  id: SyndicateOperativeGearCivilian
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSyndieFormal
+    back: ClothingBackpackDuffelSyndicate
+    shoes: ClothingShoesBootsCombat
+    gloves: ClothingHandsGlovesColorBlack
+    id: SyndiPDA
+    ears: ClothingHeadsetAltSyndicate
+
 #Space Ninja Outfit
 - type: startingGear
   id: SpaceNinjaGear
@@ -57,51 +68,6 @@
     pocket2: EnergyShield
     belt: ClothingBeltMilitaryWebbingMedFilled
   innerClothingSkirt: ClothingUniformJumpskirtColorBlack
-
-# Syndicate Operative Outfit - Monkey
-- type: startingGear
-  id: SyndicateOperativeGearMonkey
-  equipment:
-    head: ClothingHeadHatOutlawHat
-    jumpsuit: ClothingUniformJumpsuitOperative
-    mask: CigaretteSyndicate
-  innerClothingSkirt: ClothingUniformJumpsuitOperative
-
-# Syndicate Operative Outfit - Barratry
-- type: startingGear
-  id: SyndicateOperativeGearExtremelyBasic
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitOperative
-    back: ClothingBackpackDuffelSyndicateOperative
-    shoes: ClothingShoesBootsCombatFilled
-    gloves: ClothingHandsGlovesColorBlack
-  innerClothingSkirt: ClothingUniformJumpsuitOperative
-  satchel: ClothingBackpackDuffelSyndicateOperative
-  duffelbag: ClothingBackpackDuffelSyndicateOperative
-
-# Syndicate Operative Outfit - Civilian
-- type: startingGear
-  id: SyndicateOperativeGearCivilian
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitSyndieFormal
-    back: ClothingBackpackDuffelSyndicate
-    shoes: ClothingShoesBootsCombat
-    gloves: ClothingHandsGlovesColorBlack
-
-#Syndicate Operative Outfit - Basic
-- type: startingGear
-  id: SyndicateOperativeGearBasic
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitOperative
-    back: ClothingBackpackDuffelSyndicateOperative
-    ears: ClothingHeadsetAltSyndicate
-    gloves: ClothingHandsGlovesCombat
-    shoes: ClothingShoesBootsCombatFilled
-    pocket1: BaseUplinkRadio40TC
-    id: SyndiPDA
-  innerClothingSkirt: ClothingUniformJumpsuitOperative
-  satchel: ClothingBackpackDuffelSyndicateOperative
-  duffelbag: ClothingBackpackDuffelSyndicateOperative
 
 #Syndicate Operative Outfit - Full Kit
 - type: startingGear

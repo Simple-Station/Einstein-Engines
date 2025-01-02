@@ -462,7 +462,7 @@ public sealed class NukeSystem : EntitySystem
             Color.Red,
             stationUid ?? uid,
             null,
-            ("time", (int) component.RemainingTime), ("position", FormattedMessage.RemoveMarkupPermissive(_navMap.GetNearestBeaconString((uid, nukeXform))))
+            ("time", (int) component.RemainingTime), ("location", FormattedMessage.RemoveMarkupPermissive(_navMap.GetNearestBeaconString((uid, nukeXform))))
         );
 
         _sound.PlayGlobalOnStation(uid, _audio.GetSound(component.ArmSound));
@@ -591,8 +591,7 @@ public sealed class NukeSystem : EntitySystem
         var doAfter = new DoAfterArgs(EntityManager, user, nuke.DisarmDoafterLength, new NukeDisarmDoAfterEvent(), uid, target: uid)
         {
             BreakOnDamage = true,
-            BreakOnTargetMove = true,
-            BreakOnUserMove = true,
+            BreakOnMove = true,
             NeedHand = true
         };
 

@@ -1,10 +1,29 @@
 - type: entity
-  name: captain's sabre
+  name: Sword
   parent: BaseItem
+  id: BaseSword
+  description: A sharp sword.
+  abstract: true
+  components:
+  - type: Sharp
+  - type: Execution
+    doAfterDuration: 4.0
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+  - type: Sprite
+    state: icon
+  - type: Item
+    size: Normal
+  - type: Utensil
+    types:
+      - Knife
+
+- type: entity
+  name: captain's sabre
+  parent: BaseSword
   id: CaptainSabre
   description: A ceremonial weapon belonging to the captain of the station.
   components:
-  - type: Sharp
   - type: Sprite
     sprite: Objects/Weapons/Melee/captain_sabre.rsi
     state: icon
@@ -30,13 +49,7 @@
   - type: ThrowingAngle
     angle: 225
   - type: Reflect
-    enabled: true
-    # Design intent: a robust captain or tot can sacrifice movement to make the most of this weapon, but they have to
-    # really restrict themselves to walking speed or less.
-    reflectProb: 0.5
-    velocityBeforeNotMaxProb: 1.0
-    velocityBeforeMinProb: 3.0
-    minReflectProb: 0.1
+    reflectProb: .1
     spread: 90
   - type: Item
     size: Normal
@@ -44,15 +57,13 @@
   - type: Tag
     tags:
     - CaptainSabre
-  - type: DisarmMalus
 
 - type: entity
   name: katana
-  parent: BaseItem
+  parent: BaseSword
   id: Katana
   description: Ancient craftwork made with not so ancient plasteel.
   components:
-  - type: Sharp
   - type: Tag
     tags:
     - Katana
@@ -122,11 +133,10 @@
 
 - type: entity
   name: machete
-  parent: BaseItem
+  parent: BaseSword
   id: Machete
   description: A large, vicious looking blade.
   components:
-  - type: Sharp
   - type: Tag
     tags:
     - Machete
@@ -155,15 +165,13 @@
   - type: Item
     size: Normal
     sprite: Objects/Weapons/Melee/machete.rsi
-  - type: DisarmMalus
 
 - type: entity
   name: claymore
-  parent: BaseItem
+  parent: BaseSword
   id: Claymore
   description: An ancient war blade.
   components:
-  - type: Sharp
   - type: Sprite
     sprite: Objects/Weapons/Melee/claymore.rsi
     state: icon
@@ -196,15 +204,13 @@
     sprite: Objects/Weapons/Melee/claymore.rsi
     slots:
     - back
-  - type: DisarmMalus
 
 - type: entity
   name: cutlass
-  parent: BaseItem
+  parent: BaseSword
   id: Cutlass
   description: A wickedly curved blade, often seen in the hands of space pirates.
   components:
-  - type: Sharp
   - type: Tag
     tags:
     - Machete
@@ -234,15 +240,13 @@
   - type: Item
     size: Normal
     sprite: Objects/Weapons/Melee/cutlass.rsi
-  - type: DisarmMalus
 
 - type: entity
   name: The Throngler
-  parent: BaseItem
+  parent: BaseSword
   id: Throngler
   description: Why would someone make this?
   components:
-    - type: Sharp
     - type: Sprite
       sprite: Objects/Weapons/Melee/Throngler2.rsi
       state: icon
@@ -261,13 +265,8 @@
         path: /Audio/Effects/explosion_small1.ogg
     - type: DamageOtherOnHit
     - type: Reflect
-      enabled: true
-      reflectProb: 0.5 # In robust hands, deflects as well as an e-sword
-      velocityBeforeNotMaxProb: 1.0
-      velocityBeforeMinProb: 3.0
-      minReflectProb: 0.1
+      reflectProb: .25
       spread: 90
     - type: Item
       size: Ginormous
       sprite: Objects/Weapons/Melee/Throngler-in-hand.rsi
-    - type: DisarmMalus

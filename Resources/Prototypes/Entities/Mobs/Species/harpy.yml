@@ -38,6 +38,7 @@
       - map: [ "belt" ]
       - map: [ "neck" ]
       - map: [ "back" ]
+      - map: [ "enum.HumanoidVisualLayers.Face" ]
       - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
       - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
       - map: [ "enum.HumanoidVisualLayers.Tail" ]
@@ -110,6 +111,7 @@
     - CanPilot
     - FootstepSound
     - DoorBumpOpener
+    - HarpyEmotes
   - type: LanguageKnowledge
     speaks:
     - TauCetiBasic
@@ -165,6 +167,7 @@
       - map: [ "belt" ]
       - map: [ "neck" ]
       - map: [ "back" ]
+      - map: [ "enum.HumanoidVisualLayers.Face" ]
       - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
       - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
       - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
