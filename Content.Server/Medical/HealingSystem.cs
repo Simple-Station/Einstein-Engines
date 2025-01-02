@@ -1,7 +1,6 @@
 using Content.Server.Administration.Logs;
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
-using Content.Shared.Body.Part;
 using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Server.Medical.Components;
 using Content.Server.Popups;
@@ -10,8 +9,6 @@ using Content.Shared.Audio;
 using Content.Shared.Damage;
 using Content.Shared.Database;
 using Content.Shared.DoAfter;
-using Content.Shared.Targeting;
-using Content.Shared.Body.Components;
 using Content.Shared.FixedPoint;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
@@ -19,11 +16,13 @@ using Content.Shared.Medical;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
-using Content.Shared.Targeting;
 using Content.Shared.Stacks;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Random;
-using System.Linq;
+
+// Shitmed Change
+using Content.Shared.Body.Systems;
+using Content.Shared._Shitmed.Targeting;
 
 namespace Content.Server.Medical;
 
@@ -32,8 +31,7 @@ public sealed class HealingSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
-
-    [Dependency] private readonly BodySystem _bodySystem = default!;
+    [Dependency] private readonly SharedTargetingSystem _targetingSystem = default!; // Shitmed Change
     [Dependency] private readonly BloodstreamSystem _bloodstreamSystem = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
@@ -42,6 +40,7 @@ public sealed class HealingSystem : EntitySystem
     [Dependency] private readonly MobThresholdSystem _mobThresholdSystem = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
     [Dependency] private readonly SolutionContainerSystem _solutionContainerSystem = default!;
+    [Dependency] private readonly SharedBodySystem _bodySystem = default!; // Shitmed Change
 
     public override void Initialize()
     {
@@ -86,7 +85,7 @@ public sealed class HealingSystem : EntitySystem
         if (healing.ModifyBloodLevel != 0)
             _bloodstreamSystem.TryModifyBloodLevel(entity.Owner, healing.ModifyBloodLevel);
 
-        var healed = _damageable.TryChangeDamage(entity.Owner, healing.Damage, true, origin: args.User, canSever: false);
+        var healed = _damageable.TryChangeDamage(entity.Owner, healing.Damage, true, origin: args.User, canSever: false); // Shitmed Change
 
         if (healed == null && healing.BloodlossModifier != 0)
             return;
@@ -121,7 +120,7 @@ public sealed class HealingSystem : EntitySystem
         _audio.PlayPvs(healing.HealingEndSound, entity.Owner, AudioHelpers.WithVariation(0.125f, _random).WithVolume(-5f));
 
         // Logic to determine whether or not to repeat the healing action
-        args.Repeat = HasDamage(entity.Comp, healing) && !dontRepeat || IsPartDamaged(args.User, entity);
+        args.Repeat = HasDamage(entity.Comp, healing) && !dontRepeat || IsPartDamaged(args.User, entity); // Shitmed Change
         if (!args.Repeat && !dontRepeat)
             _popupSystem.PopupEntity(Loc.GetString("medical-item-finished-using", ("item", args.Used)), entity.Owner, args.User);
         args.Handled = true;
@@ -142,6 +141,7 @@ public sealed class HealingSystem : EntitySystem
         return false;
     }
 
+    // Shitmed Change Start
     private bool IsPartDamaged(EntityUid user, EntityUid target)
     {
         if (!TryComp(user, out TargetingComponent? targeting))
@@ -155,6 +155,8 @@ public sealed class HealingSystem : EntitySystem
 
         return false;
     }
+
+    // Shitmed Change End
 
     private void OnHealingUse(Entity<HealingComponent> entity, ref UseInHandEvent args)
     {
@@ -194,7 +196,7 @@ public sealed class HealingSystem : EntitySystem
 
         var anythingToDo =
             HasDamage(targetDamage, component) ||
-            IsPartDamaged(user, target) ||
+            IsPartDamaged(user, target) || // Shitmed Change
             component.ModifyBloodLevel > 0 // Special case if healing item can restore lost blood...
                 && TryComp<BloodstreamComponent>(target, out var bloodstream)
                 && _solutionContainerSystem.ResolveSolution(target, bloodstream.BloodSolutionName, ref bloodstream.BloodSolution, out var bloodSolution)
@@ -219,11 +221,11 @@ public sealed class HealingSystem : EntitySystem
             new DoAfterArgs(EntityManager, user, delay, new HealingDoAfterEvent(), target, target: target, used: uid)
             {
                 //Raise the event on the target if it's not self, otherwise raise it on self.
-                BreakOnUserMove = true,
-                BreakOnTargetMove = true,
+                BreakOnMove = true,
                 // Didn't break on damage as they may be trying to prevent it and
                 // not being able to heal your own ticking damage would be frustrating.
                 NeedHand = true,
+                BreakOnWeightlessMove = false,
             };
 
         _doAfter.TryStartDoAfter(doAfterEventArgs);

@@ -1,28 +1,27 @@
 using Content.Server.Body.Components;
 using Content.Server.Ghost.Components;
 using Content.Shared.Body.Components;
-using Content.Shared.Body.Systems;
-using Content.Shared.Body.Systems;
 using Content.Shared.Body.Events;
-using Content.Shared.Body.Organ;
-using Content.Server.DelayedDeath;
-using Content.Server.DelayedDeath;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Content.Shared.Pointing;
+
+// Shitmed Change
+using Content.Shared._Shitmed.Body.Organ;
+using Content.Shared.Body.Systems;
 
 namespace Content.Server.Body.Systems
 {
     public sealed class BrainSystem : EntitySystem
     {
         [Dependency] private readonly SharedMindSystem _mindSystem = default!;
-        [Dependency] private readonly SharedBodySystem _bodySystem = default!;
-
+        [Dependency] private readonly SharedBodySystem _bodySystem = default!; // Shitmed Change
         public override void Initialize()
         {
             base.Initialize();
 
             SubscribeLocalEvent<BrainComponent, OrganAddedToBodyEvent>(HandleAddition);
+        // Shitmed Change Start
             SubscribeLocalEvent<BrainComponent, OrganRemovedFromBodyEvent>(HandleRemoval);
             SubscribeLocalEvent<BrainComponent, PointAttemptEvent>(OnPointAttempt);
         }
@@ -33,9 +32,9 @@ namespace Content.Server.Body.Systems
                 return;
 
             brain.Active = false;
-            // Prevents revival, should kill the user within a given timespan too.
             if (!CheckOtherBrains(args.OldBody))
             {
+                // Prevents revival, should kill the user within a given timespan too.
                 EnsureComp<DebrainedComponent>(args.OldBody);
                 HandleMind(uid, args.OldBody);
             }
@@ -52,6 +51,7 @@ namespace Content.Server.Body.Systems
                 HandleMind(args.Body, uid, brain);
             }
         }
+
 
         private void HandleMind(EntityUid newEntity, EntityUid oldEntity, BrainComponent? brain = null)
         {
@@ -71,11 +71,6 @@ namespace Content.Server.Body.Systems
             _mindSystem.TransferTo(mindId, newEntity, mind: mind);
             if (brain != null)
                 brain.Active = true;
-        }
-
-        private void OnPointAttempt(Entity<BrainComponent> ent, ref PointAttemptEvent args)
-        {
-            args.Cancel();
         }
 
         private bool CheckOtherBrains(EntityUid entity)
@@ -99,6 +94,12 @@ namespace Content.Server.Body.Systems
             }
 
             return hasOtherBrains;
+        }
+
+        // Shitmed Change End
+        private void OnPointAttempt(Entity<BrainComponent> ent, ref PointAttemptEvent args)
+        {
+            args.Cancel();
         }
     }
 }

@@ -368,5 +368,4 @@
       state: gauntlet_echo
     event: !type:ProjectileSpellEvent
       prototype: ProjectileGauntlet
-      projectileSpeed: 5
   - type: BaseCultSpell
