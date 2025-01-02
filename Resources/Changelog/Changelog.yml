@@ -9036,3 +9036,12 @@ Entries:
   id: 6617
   time: '2025-01-02T21:12:42.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1404
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Lots of refactoring of the Mob State Systerm in preparation for
+        implementing a much more detailed Soft Critical state.
+  id: 6618
+  time: '2025-01-02T23:12:28.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1382
