@@ -87,7 +87,7 @@ namespace Content.Shared.VendingMachines
         /// </summary>
         [DataField("soundVend")]
         // Grabbed from: https://github.com/discordia-space/CEV-Eris/blob/f702afa271136d093ddeb415423240a2ceb212f0/sound/machines/vending_drop.ogg
-        public SoundSpecifier SoundVend = new SoundPathSpecifier("/Audio/Machines/machine_vend.ogg")
+        public SoundSpecifier SoundVend = new SoundPathSpecifier("/Audio/SimpleStation14/Machines/machine_vend.ogg")
         {
             Params = new AudioParams
             {

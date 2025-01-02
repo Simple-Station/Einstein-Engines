@@ -12,3 +12,7 @@ species-name-skeleton = Skeleton
 species-name-vox = Vox
 species-name-ipc = IPC
 species-name-shadowkin = Shadowkin
+
+## Misc species things
+
+snail-hurt-by-salt-popup = The salty solution burns like acid!
