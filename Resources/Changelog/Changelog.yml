@@ -8979,3 +8979,10 @@ Entries:
   id: 6610
   time: '2025-01-02T14:48:11.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1398
+- author: sapphirescript
+  changes:
+    - type: Fix
+      message: The 'kα Deficiency' trait has a description now
+  id: 6611
+  time: '2025-01-02T14:49:06.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1402
