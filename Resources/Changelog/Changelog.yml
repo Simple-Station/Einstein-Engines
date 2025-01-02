@@ -8972,3 +8972,10 @@ Entries:
   id: 6609
   time: '2025-01-02T04:57:27.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1396
+- author: sapphirescript
+  changes:
+    - type: Fix
+      message: Supermatter's guide has a name now
+  id: 6610
+  time: '2025-01-02T14:48:11.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1398
