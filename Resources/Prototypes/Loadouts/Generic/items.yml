@@ -762,10 +762,16 @@
 - type: loadout
   id: LoadoutItemDrinkVacuumFlask
   category: Items
-  cost: 1
+  cost: 0
   customColorTint: true
   items:
     - DrinkVacuumFlask
+
+- type: loadout
+  id: LoadoutItemCaneBlind
+  category: Items
+  items:
+    - WhiteCane
 
 # Pets
 - type: loadout
