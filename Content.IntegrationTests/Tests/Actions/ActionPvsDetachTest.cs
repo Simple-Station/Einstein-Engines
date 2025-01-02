@@ -32,14 +32,16 @@ public sealed class ActionPvsDetachTest
         // PVS-detach action entities
         // We do this by just giving them the ghost layer
         var visSys = server.System<VisibilitySystem>();
-        server.Post(() =>
+
+        await server.WaitPost(() =>
         {
             var enumerator = server.Transform(ent).ChildEnumerator;
             while (enumerator.MoveNext(out var child))
             {
-                visSys.AddLayer(child, (int) VisibilityFlags.Ghost);
+                visSys.AddLayer(child, (int)VisibilityFlags.Ghost);
             }
         });
+
         await pair.RunTicksSync(5);
 
         // Client's actions have left been detached / are out of view, but action comp state has not changed
@@ -47,7 +49,7 @@ public sealed class ActionPvsDetachTest
         Assert.That(cSys.GetActions(cEnt).Count(), Is.EqualTo(initActions));
 
         // Re-enter PVS view
-        server.Post(() =>
+        await server.WaitPost(() =>
         {
             var enumerator = server.Transform(ent).ChildEnumerator;
             while (enumerator.MoveNext(out var child))
