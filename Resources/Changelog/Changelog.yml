@@ -8934,3 +8934,10 @@ Entries:
   id: 6605
   time: '2025-01-01T22:51:04.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1391
+- author: sapphirescript
+  changes:
+    - type: Fix
+      message: Fixed radial menus overlapping where there's many icons.
+  id: 6606
+  time: '2025-01-02T00:16:49.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1393
