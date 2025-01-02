@@ -762,7 +762,7 @@
 - type: loadout
   id: LoadoutItemDrinkVacuumFlask
   category: Items
-  cost: 0
+  cost: 1
   customColorTint: true
   items:
     - DrinkVacuumFlask
@@ -770,6 +770,7 @@
 - type: loadout
   id: LoadoutItemCaneBlind
   category: Items
+  cost: 0 # It shouldnt cost points to be able to function.
   items:
     - WhiteCane
 
