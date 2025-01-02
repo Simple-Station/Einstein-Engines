@@ -1,5 +1,5 @@
 using Content.Shared.Damage;
-using Content.Shared.Targeting;
+using Content.Shared._Shitmed.Targeting;
 
 
 // Damages the entity by a set amount when it hits someone.

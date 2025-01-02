@@ -44,7 +44,7 @@ public sealed class InternalsSystem : EntitySystem
 
     private void OnStartingGear(EntityUid uid, InternalsComponent component, ref StartingGearEquippedEvent args)
     {
-        if (component.BreathToolEntity == null)
+        if (component.BreathTools.Count == 0)
             return;
 
         if (component.GasTankEntity != null)

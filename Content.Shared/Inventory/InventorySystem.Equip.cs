@@ -279,8 +279,8 @@ public abstract partial class InventorySystem
         }
 
         if (onSpawn &&
-            ((slotDefinition.SpawnWhitelist != null && !slotDefinition.SpawnWhitelist.IsValid(itemUid)) ||
-            (slotDefinition.SpawnBlacklist != null && slotDefinition.SpawnBlacklist.IsValid(itemUid))))
+            (_whitelistSystem.IsWhitelistFail(slotDefinition.SpawnWhitelist, itemUid) ||
+            _whitelistSystem.IsBlacklistPass(slotDefinition.SpawnBlacklist, itemUid)))
             return false;
 
         var attemptEvent = new IsEquippingAttemptEvent(actor, target, itemUid, slotDefinition);
