@@ -8965,3 +8965,10 @@ Entries:
   id: 6608
   time: '2025-01-02T03:27:48.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1395
+- author: sapphirescript
+  changes:
+    - type: Tweak
+      message: You can no longer cocoon yourself as a spider.
+  id: 6609
+  time: '2025-01-02T04:57:27.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1396
