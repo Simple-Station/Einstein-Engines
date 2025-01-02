@@ -18,6 +18,11 @@
     - !type:CharacterWhitelistRequirement # whitelist requirement because I don't want any dingus judges
   weight: 20
   startingGear: CJGear
+  conditionalStartingGear:
+    - id: LawyerPlasmamanGear
+      requirements:
+      - !type:CharacterSpeciesRequirement
+        species: [ Plasmaman ]
   icon: "JobIconChiefJustice"
   requireAdminNotify: true
   supervisors: job-supervisors-captain

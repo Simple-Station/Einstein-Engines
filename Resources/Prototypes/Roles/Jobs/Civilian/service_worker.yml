@@ -1,4 +1,4 @@
-﻿- type: job
+- type: job
   id: ServiceWorker
   name: job-name-serviceworker
   description: job-description-serviceworker
@@ -7,6 +7,11 @@
     - !type:CharacterOverallTimeRequirement
       min: 7200 # DeltaV - 2 hours
   startingGear: ServiceWorkerGear
+  conditionalStartingGear: # TODO: service worker plasmaman gear
+    - id: PassengerPlasmamanGear
+      requirements:
+      - !type:CharacterSpeciesRequirement
+        species: [ Plasmaman ]
   icon: "JobIconServiceWorker"
   supervisors: job-supervisors-service
   canBeAntag: true # DeltaV - Can be antagonist

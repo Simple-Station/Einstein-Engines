@@ -1,4 +1,4 @@
-﻿- type: job
+- type: job
   id: ResearchAssistant
   name: job-name-research-assistant
   description: job-description-research-assistant
@@ -9,6 +9,11 @@
     #   time: 54000 #15 hrs
     #   inverted: true # stop playing intern if you're good at science!
   startingGear: ResearchAssistantGear
+  conditionalStartingGear: # TODO: research assistant plasmaman gear
+    - id: ScientistPlasmamanGear
+      requirements:
+      - !type:CharacterSpeciesRequirement
+        species: [ Plasmaman ]
   icon: "JobIconResearchAssistant"
   supervisors: job-supervisors-science
   canBeAntag: true # DeltaV - Can be antagonist

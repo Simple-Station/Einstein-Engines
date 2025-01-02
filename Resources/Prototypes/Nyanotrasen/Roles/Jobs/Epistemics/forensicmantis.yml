@@ -19,6 +19,11 @@
           traits:
             - AnomalousPositronics
   startingGear: ForensicMantisGear
+  conditionalStartingGear: # TODO: forensic mantis plasmaman gear
+    - id: ScientistPlasmamanGear
+      requirements:
+      - !type:CharacterSpeciesRequirement
+        species: [ Plasmaman ]
   icon: "JobIconForensicMantis"
   supervisors: job-supervisors-rd
   antagAdvantage: 5 # DeltaV - From 4 to 5
