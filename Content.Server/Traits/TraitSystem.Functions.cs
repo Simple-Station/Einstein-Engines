@@ -397,6 +397,9 @@ public sealed partial class TraitModifyMobThresholds : TraitFunction
     public int CritThresholdModifier;
 
     [DataField, AlwaysPushInheritance]
+    public int SoftCritThresholdModifier;
+
+    [DataField, AlwaysPushInheritance]
     public int DeadThresholdModifier;
 
     public override void OnPlayerSpawn(EntityUid uid,
@@ -415,12 +418,107 @@ public sealed partial class TraitModifyMobThresholds : TraitFunction
                 thresholdSystem.SetMobStateThreshold(uid, critThreshold + CritThresholdModifier, MobState.Critical);
         }
 
+        if (SoftCritThresholdModifier != 0)
+        {
+            var softCritThreshold = thresholdSystem.GetThresholdForState(uid, MobState.SoftCritical, threshold);
+            if (softCritThreshold != 0)
+                thresholdSystem.SetMobStateThreshold(uid, softCritThreshold + SoftCritThresholdModifier, MobState.SoftCritical);
+        }
+
         if (DeadThresholdModifier != 0)
         {
             var deadThreshold = thresholdSystem.GetThresholdForState(uid, MobState.Dead, threshold);
             if (deadThreshold != 0)
                 thresholdSystem.SetMobStateThreshold(uid, deadThreshold + DeadThresholdModifier, MobState.Dead);
         }
+    }
+}
+
+[UsedImplicitly]
+public sealed partial class TraitModifyMobState : TraitFunction
+{
+    // Three-State Booleans my beloved.
+    // :faridabirb.png:
+
+    [DataField, AlwaysPushInheritance]
+    public bool? AllowMovementWhileCrit;
+
+    [DataField, AlwaysPushInheritance]
+    public bool? AllowMovementWhileSoftCrit;
+
+    [DataField, AlwaysPushInheritance]
+    public bool? AllowMovementWhileDead;
+
+    [DataField, AlwaysPushInheritance]
+    public bool? AllowTalkingWhileCrit;
+
+    [DataField, AlwaysPushInheritance]
+    public bool? AllowTalkingWhileSoftCrit;
+
+    [DataField, AlwaysPushInheritance]
+    public bool? AllowTalkingWhileDead;
+
+    [DataField, AlwaysPushInheritance]
+    public bool? DownWhenCrit;
+
+    [DataField, AlwaysPushInheritance]
+    public bool? DownWhenSoftCrit;
+
+    [DataField, AlwaysPushInheritance]
+    public bool? DownWhenDead;
+
+    [DataField, AlwaysPushInheritance]
+    public bool? AllowHandInteractWhileCrit;
+
+    [DataField, AlwaysPushInheritance]
+    public bool? AllowHandInteractWhileSoftCrit;
+
+    [DataField, AlwaysPushInheritance]
+    public bool? AllowHandInteractWhileDead;
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        if (!entityManager.TryGetComponent<MobStateComponent>(uid, out var mobStateComponent))
+            return;
+
+        if (AllowMovementWhileCrit is not null)
+            mobStateComponent.AllowMovementWhileCrit = AllowMovementWhileCrit.Value;
+
+        if (AllowMovementWhileSoftCrit is not null)
+            mobStateComponent.AllowHandInteractWhileSoftCrit = AllowMovementWhileSoftCrit.Value;
+
+        if (AllowMovementWhileDead is not null)
+            mobStateComponent.AllowMovementWhileDead = AllowMovementWhileDead.Value;
+
+        if (AllowTalkingWhileCrit is not null)
+            mobStateComponent.AllowTalkingWhileCrit = AllowTalkingWhileCrit.Value;
+
+        if (AllowTalkingWhileSoftCrit is not null)
+            mobStateComponent.AllowTalkingWhileSoftCrit = AllowTalkingWhileSoftCrit.Value;
+
+        if (AllowTalkingWhileDead is not null)
+            mobStateComponent.AllowTalkingWhileDead = AllowTalkingWhileDead.Value;
+
+        if (DownWhenCrit is not null)
+            mobStateComponent.DownWhenCrit = DownWhenCrit.Value;
+
+        if (DownWhenSoftCrit is not null)
+            mobStateComponent.DownWhenSoftCrit = DownWhenSoftCrit.Value;
+
+        if (DownWhenDead is not null)
+            mobStateComponent.DownWhenDead = DownWhenDead.Value;
+
+        if (AllowHandInteractWhileCrit is not null)
+            mobStateComponent.AllowHandInteractWhileCrit = AllowHandInteractWhileCrit.Value;
+
+        if (AllowHandInteractWhileSoftCrit is not null)
+            mobStateComponent.AllowHandInteractWhileSoftCrit = AllowHandInteractWhileSoftCrit.Value;
+
+        if (AllowHandInteractWhileDead is not null)
+            mobStateComponent.AllowHandInteractWhileDead = AllowHandInteractWhileDead.Value;
     }
 }
 
