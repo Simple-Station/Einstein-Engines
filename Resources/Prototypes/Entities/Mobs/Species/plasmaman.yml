@@ -72,7 +72,6 @@
     - TauCetiBasic
     - Calcic
   - type: FootPrints
-  - type: ToggleFirstBreathTool
 
 - type: entity
   parent: BaseSpeciesDummy
