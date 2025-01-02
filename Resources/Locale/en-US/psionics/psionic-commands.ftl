@@ -12,7 +12,7 @@ command-addpsionicpower-help = Argument 1 must be an EntityUid, and argument 2 m
 addpsionicpower-args-one-error = Argument 1 must be an EntityUid
 addpsionicpower-args-two-error = Argument 2 must match the PrototypeId of a PsionicPower
 
-command-addrandompsionicpower-description = Initialize an entity as Psionic with a a random PowerPrototype that is available for that entity to roll.
+command-addrandompsionicpower-description = Initialize an entity as Psionic with a random PowerPrototype that is available for that entity to roll.
 command-addrandompsionicpower-help = Argument 1 must be an EntityUid.
 addrandompsionicpower-args-one-error = Argument 1 must be an EntityUid
 
