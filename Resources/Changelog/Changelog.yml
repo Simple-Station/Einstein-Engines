@@ -8941,3 +8941,12 @@ Entries:
   id: 6606
   time: '2025-01-02T00:16:49.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1393
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added new admin commands AddRandomPsionicPower, RemovePsionicPower, and
+        RemoveAllPsionicPowers.
+  id: 6607
+  time: '2025-01-02T02:22:32.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1394
