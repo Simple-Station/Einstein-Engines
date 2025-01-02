@@ -105,18 +105,27 @@ public sealed class RemovePsionicPowerCommand : IConsoleCommand
 
         if (!EntityUid.TryParse(args[0], out var uid))
         {
-            shell.WriteError(Loc.GetString("addpsionicpower-args-one-error"));
+            shell.WriteError(Loc.GetString("removepsionicpower-args-one-error"));
             return;
         }
 
         if (!protoMan.TryIndex<PsionicPowerPrototype>(args[1], out var powerProto))
         {
-            shell.WriteError(Loc.GetString("addpsionicpower-args-two-error"));
+            shell.WriteError(Loc.GetString("removepsionicpower-args-two-error"));
             return;
         }
 
         if (!entMan.TryGetComponent<PsionicComponent>(uid, out var psionicComponent))
+        {
+            shell.WriteError(Loc.GetString("removepsionicpower-not-psionic-error"));
             return;
+        }
+
+        if (!psionicComponent.ActivePowers.Contains(powerProto))
+        {
+            shell.WriteError(Loc.GetString("removepsionicpower-not-contains-error"));
+            return;
+        }
 
         psionicPowers.RemovePsionicPower(uid, psionicComponent, powerProto, true);
     }
@@ -135,7 +144,13 @@ public sealed class RemoveAllPsionicPowersCommand : IConsoleCommand
 
         if (!EntityUid.TryParse(args[0], out var uid))
         {
-            shell.WriteError(Loc.GetString("addpsionicpower-args-one-error"));
+            shell.WriteError(Loc.GetString("removeallpsionicpowers-args-one-error"));
+            return;
+        }
+
+        if (!entMan.HasComponent<PsionicComponent>(uid))
+        {
+            shell.WriteError(Loc.GetString("removeallpsionicpowers-not-psionic-error"));
             return;
         }
 
