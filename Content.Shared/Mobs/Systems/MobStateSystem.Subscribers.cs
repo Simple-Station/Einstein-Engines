@@ -31,20 +31,20 @@ public partial class MobStateSystem
     {
         SubscribeLocalEvent<MobStateComponent, BeforeGettingStrippedEvent>(OnGettingStripped);
         SubscribeLocalEvent<MobStateComponent, ChangeDirectionAttemptEvent>(OnDirectionAttempt);
-        SubscribeLocalEvent<MobStateComponent, UseAttemptEvent>(CheckAct);
-        SubscribeLocalEvent<MobStateComponent, AttackAttemptEvent>(CheckAct);
-        SubscribeLocalEvent<MobStateComponent, ConsciousAttemptEvent>(CheckConcious);
-        SubscribeLocalEvent<MobStateComponent, ThrowAttemptEvent>(CheckAct);
+        SubscribeLocalEvent<MobStateComponent, UseAttemptEvent>(CheckActFactory(c => c.CanUse()));
+        SubscribeLocalEvent<MobStateComponent, AttackAttemptEvent>(CheckActFactory(c => c.CanAttack()));
+        SubscribeLocalEvent<MobStateComponent, ConsciousAttemptEvent>(CheckActFactory(c => c.ConsciousAttemptAllowed()));
+        SubscribeLocalEvent<MobStateComponent, ThrowAttemptEvent>(CheckActFactory(c => c.CanThrow()));
         SubscribeLocalEvent<MobStateComponent, SpeakAttemptEvent>(OnSpeakAttempt);
         SubscribeLocalEvent<MobStateComponent, IsEquippingAttemptEvent>(OnEquipAttempt);
-        SubscribeLocalEvent<MobStateComponent, EmoteAttemptEvent>(CheckAct);
+        SubscribeLocalEvent<MobStateComponent, EmoteAttemptEvent>(CheckActFactory(c => c.CanEmote()));
         SubscribeLocalEvent<MobStateComponent, IsUnequippingAttemptEvent>(OnUnequipAttempt);
-        SubscribeLocalEvent<MobStateComponent, DropAttemptEvent>(CheckAct);
-        SubscribeLocalEvent<MobStateComponent, PickupAttemptEvent>(CheckAct);
-        SubscribeLocalEvent<MobStateComponent, StartPullAttemptEvent>(CheckAct);
+        SubscribeLocalEvent<MobStateComponent, DropAttemptEvent>(CheckActFactory(c => c.CanPickUp()));
+        SubscribeLocalEvent<MobStateComponent, PickupAttemptEvent>(CheckActFactory(c => c.CanPickUp()));
+        SubscribeLocalEvent<MobStateComponent, StartPullAttemptEvent>(CheckActFactory(c => c.CanPull()));
         SubscribeLocalEvent<MobStateComponent, UpdateCanMoveEvent>(OnMoveAttempt);
-        SubscribeLocalEvent<MobStateComponent, StandAttemptEvent>(CheckAct);
-        SubscribeLocalEvent<MobStateComponent, PointAttemptEvent>(CheckAct);
+        SubscribeLocalEvent<MobStateComponent, StandAttemptEvent>(CheckActFactory(c => c.IsDowned()));
+        SubscribeLocalEvent<MobStateComponent, PointAttemptEvent>(CheckActFactory(c => c.CanPoint()));
         SubscribeLocalEvent<MobStateComponent, TryingToSleepEvent>(OnSleepAttempt);
         SubscribeLocalEvent<MobStateComponent, CombatModeShouldHandInteractEvent>(OnCombatModeShouldHandInteract);
         SubscribeLocalEvent<MobStateComponent, AttemptPacifiedAttackEvent>(OnAttemptPacifiedAttack);
@@ -54,8 +54,10 @@ public partial class MobStateSystem
 
     private void OnDirectionAttempt(Entity<MobStateComponent> ent, ref ChangeDirectionAttemptEvent args)
     {
-        if (ent.Comp.CurrentState is MobState.Critical && _configurationManager.GetCVar(CCVars.AllowMovementWhileCrit) ||
-            ent.Comp.CurrentState is MobState.SoftCritical && _configurationManager.GetCVar(CCVars.AllowMovementWhileSoftCrit))
+        if (ent.Comp.CurrentState is MobState.Alive ||
+			ent.Comp.CurrentState is MobState.Critical && ent.Comp.AllowMovementWhileCrit && _configurationManager.GetCVar(CCVars.AllowMovementWhileCrit)  ||
+            ent.Comp.CurrentState is MobState.SoftCritical && ent.Comp.AllowMovementWhileSoftCrit && _configurationManager.GetCVar(CCVars.AllowMovementWhileSoftCrit) || // todo: consistency: why check cvars for crit/softcrit states but not for dead state?
+			ent.Comp.CurrentState is MobState.Dead && ent.Comp.AllowMovementWhileDead)
             return;
 
         args.Cancel();
@@ -63,8 +65,7 @@ public partial class MobStateSystem
 
     private void OnMoveAttempt(Entity<MobStateComponent> ent, ref UpdateCanMoveEvent args)
     {
-        if (ent.Comp.CurrentState is MobState.Critical && _configurationManager.GetCVar(CCVars.AllowMovementWhileCrit) ||
-            ent.Comp.CurrentState is MobState.SoftCritical && _configurationManager.GetCVar(CCVars.AllowMovementWhileSoftCrit))
+        if (ent.Comp.CanMove())
             return;
 
         args.Cancel();
@@ -97,15 +98,9 @@ public partial class MobStateSystem
             case MobState.Alive:
                 //unused
                 break;
+
             case MobState.SoftCritical:
-                // guess what?
-                break;
             case MobState.Critical:
-                if (component.CurrentState is not MobState.Alive)
-                    break;
-                _standing.Stand(target);
-                break;
-            case MobState.SoftCritical:
                 if (component.CurrentState is not MobState.Alive)
                     break;
                 _standing.Stand(target);
@@ -117,7 +112,6 @@ public partial class MobStateSystem
 
                 if (!_standing.IsDown(target) && TryComp<PhysicsComponent>(target, out var physics))
                     _physics.SetCanCollide(target, true, body: physics);
-
                 break;
             case MobState.Invalid:
                 //unused
@@ -142,13 +136,12 @@ public partial class MobStateSystem
                 _appearance.SetData(target, MobStateVisuals.State, MobState.Alive);
                 break;
             case MobState.SoftCritical:
-            case MobState.Critical:
-                if (component.DownWhenCrit)
+                if (component.DownWhenSoftCrit)
                     _standing.Down(target);
                 _appearance.SetData(target, MobStateVisuals.State, MobState.Critical);
                 break;
-            case MobState.SoftCritical:
-                if (component.DownWhenSoftCrit)
+            case MobState.Critical:
+                if (component.DownWhenCrit)
                     _standing.Down(target);
                 _appearance.SetData(target, MobStateVisuals.State, MobState.Critical);
                 break;
@@ -182,13 +175,7 @@ public partial class MobStateSystem
 
     private void OnGettingStripped(EntityUid target, MobStateComponent component, BeforeGettingStrippedEvent args)
     {
-        // Incapacitated or dead targets get stripped two or three times as fast. Makes stripping corpses less tedious.
-        if (IsDead(target, component))
-            args.Multiplier /= 3;
-        else if (IsHardCritical(target, component))
-            args.Multiplier /= 2;
-        //else if (IsSoftCritical(target, component))
-        //    args.Multiplier /= 1.5;
+        args.Multiplier *= component.GetStrippingTimeMultiplier();
     }
 
     private void OnSpeakAttempt(EntityUid uid, MobStateComponent component, SpeakAttemptEvent args)
@@ -199,37 +186,46 @@ public partial class MobStateSystem
             return;
         }
 
-        if (component.CurrentState is MobState.Critical && _configurationManager.GetCVar(CCVars.AllowTalkingWhileCrit) ||
-            component.CurrentState is MobState.SoftCritical && _configurationManager.GetCVar(CCVars.AllowTalkingWhileSoftCrit))
+        if (component.CanTalk())
             return;
 
         args.Cancel();
     }
 
-    private void CheckAct(EntityUid target, MobStateComponent component, CancellableEntityEventArgs args)
+    /// <summary>
+    /// anti-boilerplate
+    /// </summary>
+    private ComponentEventHandler<MobStateComponent, CancellableEntityEventArgs> CheckActFactory(Func<MobStateComponent, bool> predicate)
     {
-        switch (component.CurrentState)
+        return (EntityUid uid, MobStateComponent component, CancellableEntityEventArgs args) =>
         {
-            case MobState.Dead:
-            case MobState.SoftCritical:
-            case MobState.Critical:
+            if (!predicate(component))
                 args.Cancel();
-                break;
-        }
+        };
     }
 
-    private void OnEquipAttempt(EntityUid target, MobStateComponent component, IsEquippingAttemptEvent args)
+    //private void CheckAct(EntityUid target, MobStateComponent component, CancellableEntityEventArgs args)
+    //{
+    //    if (!CanHandInteract(target, component))
+    //        args.Cancel();
+    //}
+
+    private void OnEquipAttempt(EntityUid uid, MobStateComponent component, IsEquippingAttemptEvent args)
     {
         // is this a self-equip, or are they being stripped?
-        if (args.Equipee == target)
-            CheckAct(target, component, args);
+        if (uid == args.Equipee)
+            if (uid == args.EquipTarget && !component.CanEquipSelf() ||
+                uid != args.EquipTarget && !component.CanEquipOther())
+                args.Cancel();
     }
 
-    private void OnUnequipAttempt(EntityUid target, MobStateComponent component, IsUnequippingAttemptEvent args)
+    private void OnUnequipAttempt(EntityUid uid, MobStateComponent component, IsUnequippingAttemptEvent args)
     {
         // is this a self-equip, or are they being stripped?
-        if (args.Unequipee == target)
-            CheckAct(target, component, args);
+        if (uid == args.Unequipee)
+            if (uid == args.UnEquipTarget && !component.CanUnequipSelf() ||
+                uid != args.UnEquipTarget && !component.CanUnequipOther())
+                args.Cancel();
     }
 
     private void OnCombatModeShouldHandInteract(EntityUid uid, MobStateComponent component, ref CombatModeShouldHandInteractEvent args)

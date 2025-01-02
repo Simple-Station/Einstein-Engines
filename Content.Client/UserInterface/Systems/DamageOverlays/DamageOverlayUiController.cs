@@ -89,6 +89,7 @@ public sealed class DamageOverlayUiController : UIController
 
         var critThreshold = foundThreshold.Value;
         _overlay.State = mobState.CurrentState;
+        _overlay.OxygenLevelOverride = mobState.GetOxyDamageOverlay();
 
         switch (mobState.CurrentState)
         {

@@ -117,6 +117,85 @@ public partial class MobStateSystem : EntitySystem
         return component.CurrentState is MobState.Invalid;
     }
 
+
+    public bool CanMove(EntityUid target, MobStateComponent? component = null)
+    {
+        if (!Resolve(target, ref component, false))
+            return false;
+        return component.CanMove();
+    }
+
+    public bool CanSpeak(EntityUid target, MobStateComponent? component = null)
+    {
+        if (!Resolve(target, ref component, false))
+            return false;
+        return component.CanTalk();
+    }
+
+    public bool CanEmote(EntityUid target, MobStateComponent? component = null)
+    {
+        if (!Resolve(target, ref component, false))
+            return false;
+        return component.CanEmote();
+    }
+
+    public bool CanThrow(EntityUid target, MobStateComponent? component = null)
+    {
+        if (!Resolve(target, ref component, false))
+            return false;
+        return component.CanThrow();
+    }
+
+    public bool CanPickUp(EntityUid target, MobStateComponent? component = null)
+    {
+        if (!Resolve(target, ref component, false))
+            return false;
+        return component.CanPickUp();
+    }
+
+    public bool CanPull(EntityUid target, MobStateComponent? component = null)
+    {
+        if (!Resolve(target, ref component, false))
+            return false;
+        return component.CanPull();
+    }
+
+    public bool CanAttack(EntityUid target, MobStateComponent? component = null)
+    {
+        if (!Resolve(target, ref component, false))
+            return false;
+        return component.CanAttack();
+    }
+
+    public bool CanUse(EntityUid target, MobStateComponent? component = null)
+    {
+        if (!Resolve(target, ref component, false))
+            return false;
+        return component.CanUse();
+    }
+
+    public bool CanPoint(EntityUid target, MobStateComponent? component = null)
+    {
+        if (!Resolve(target, ref component, false))
+            return false;
+        return component.CanPoint();
+    }
+
+    public bool ConsciousAttemptAllowed(EntityUid target, MobStateComponent? component = null)
+    {
+        if (!Resolve(target, ref component, false))
+            return false;
+        return component.ConsciousAttemptAllowed();
+    }
+
+
+    //public bool CanHandInteract(EntityUid target, MobStateComponent? component = null)
+    //{
+    //    if (!Resolve(target, ref component, false))
+    //        return false;
+    //    return false; //component.();
+    //}
+
     #endregion
 
     #region Private Implementation

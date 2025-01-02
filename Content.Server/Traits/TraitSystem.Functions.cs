@@ -19,6 +19,7 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Mobs;
 using Content.Shared.Damage.Components;
+using Content.Server.Administration.Commands;
 using Content.Shared.NPC.Systems;
 
 namespace Content.Server.Traits;
@@ -396,6 +397,9 @@ public sealed partial class TraitAddSolutionContainer : TraitFunction
 public sealed partial class TraitModifyMobThresholds : TraitFunction
 {
     [DataField, AlwaysPushInheritance]
+    public int CritThresholdModifier;
+
+    [DataField, AlwaysPushInheritance]
     public int SoftCritThresholdModifier;
 
     [DataField, AlwaysPushInheritance]
@@ -452,85 +456,20 @@ public sealed partial class TraitModifyMobState : TraitFunction
     // Three-State Booleans my beloved.
     // :faridabirb.png:
 
-    [DataField, AlwaysPushInheritance]
-    public bool? AllowMovementWhileCrit;
-
-    [DataField, AlwaysPushInheritance]
-    public bool? AllowMovementWhileSoftCrit;
-
-    [DataField, AlwaysPushInheritance]
-    public bool? AllowMovementWhileDead;
-
-    [DataField, AlwaysPushInheritance]
-    public bool? AllowTalkingWhileCrit;
-
-    [DataField, AlwaysPushInheritance]
-    public bool? AllowTalkingWhileSoftCrit;
-
-    [DataField, AlwaysPushInheritance]
-    public bool? AllowTalkingWhileDead;
-
-    [DataField, AlwaysPushInheritance]
-    public bool? DownWhenCrit;
-
-    [DataField, AlwaysPushInheritance]
-    public bool? DownWhenSoftCrit;
-
-    [DataField, AlwaysPushInheritance]
-    public bool? DownWhenDead;
-
-    [DataField, AlwaysPushInheritance]
-    public bool? AllowHandInteractWhileCrit;
-
-    [DataField, AlwaysPushInheritance]
-    public bool? AllowHandInteractWhileSoftCrit;
-
-    [DataField, AlwaysPushInheritance]
-    public bool? AllowHandInteractWhileDead;
+    [IncludeDataField(), AlwaysPushInheritance]
+    public MobStateParametersOverride Params;
 
     public override void OnPlayerSpawn(EntityUid uid,
         IComponentFactory factory,
         IEntityManager entityManager,
         ISerializationManager serializationManager)
     {
-        if (!entityManager.TryGetComponent<MobStateComponent>(uid, out var mobStateComponent))
+        if (!entityManager.TryGetComponent<MobStateComponent>(uid, out var comp))
             return;
 
-        if (AllowMovementWhileCrit is not null)
-            mobStateComponent.AllowMovementWhileCrit = AllowMovementWhileCrit.Value;
+        // Fuck.
 
-        if (AllowMovementWhileSoftCrit is not null)
-            mobStateComponent.AllowHandInteractWhileSoftCrit = AllowMovementWhileSoftCrit.Value;
-
-        if (AllowMovementWhileDead is not null)
-            mobStateComponent.AllowMovementWhileDead = AllowMovementWhileDead.Value;
-
-        if (AllowTalkingWhileCrit is not null)
-            mobStateComponent.AllowTalkingWhileCrit = AllowTalkingWhileCrit.Value;
-
-        if (AllowTalkingWhileSoftCrit is not null)
-            mobStateComponent.AllowTalkingWhileSoftCrit = AllowTalkingWhileSoftCrit.Value;
-
-        if (AllowTalkingWhileDead is not null)
-            mobStateComponent.AllowTalkingWhileDead = AllowTalkingWhileDead.Value;
-
-        if (DownWhenCrit is not null)
-            mobStateComponent.DownWhenCrit = DownWhenCrit.Value;
-
-        if (DownWhenSoftCrit is not null)
-            mobStateComponent.DownWhenSoftCrit = DownWhenSoftCrit.Value;
-
-        if (DownWhenDead is not null)
-            mobStateComponent.DownWhenDead = DownWhenDead.Value;
-
-        if (AllowHandInteractWhileCrit is not null)
-            mobStateComponent.AllowHandInteractWhileCrit = AllowHandInteractWhileCrit.Value;
-
-        if (AllowHandInteractWhileSoftCrit is not null)
-            mobStateComponent.AllowHandInteractWhileSoftCrit = AllowHandInteractWhileSoftCrit.Value;
-
-        if (AllowHandInteractWhileDead is not null)
-            mobStateComponent.AllowHandInteractWhileDead = AllowHandInteractWhileDead.Value;
+        comp.Dirty() // why is this deprecated? it's much better than manually resolving entitymanager with ioc
     }
 }
 

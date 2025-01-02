@@ -7,10 +7,7 @@ namespace Content.Shared.Mobs;
 
 /// <summary>
 ///     Defines what state an <see cref="Robust.Shared.GameObjects.EntityUid"/> is in.
-///
 ///     Ordered from most alive to least alive.
-///     To enumerate them in this way see
-///     <see cref="MobStateHelpers.AliveToDead"/>.
 /// </summary>
 [Serializable, NetSerializable]
 public enum MobState : byte
