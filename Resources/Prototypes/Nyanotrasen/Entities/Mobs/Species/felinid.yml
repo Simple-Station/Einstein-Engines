@@ -84,6 +84,12 @@
         - Landmine
         - Mousetrap
         - SlipEntity
+  - type: Tag
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - FelinidEmotes
 
 - type: entity
   save: false
