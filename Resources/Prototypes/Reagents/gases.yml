@@ -133,6 +133,7 @@
         clear: True
         time: 5
       - !type:Oxygenate
+        factor: 4
         conditions:
         - !type:OrganType
           type: Plasmaman
