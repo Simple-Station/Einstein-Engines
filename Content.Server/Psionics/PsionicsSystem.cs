@@ -23,6 +23,8 @@ using Content.Shared.Damage;
 using Content.Shared.Interaction.Events;
 using Timer = Robust.Shared.Timing.Timer;
 using Content.Shared.Alert;
+using Content.Shared.NPC.Components;
+using Content.Shared.NPC.Systems;
 using Content.Shared.Rounding;
 
 namespace Content.Server.Psionics;

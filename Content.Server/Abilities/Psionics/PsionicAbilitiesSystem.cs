@@ -8,19 +8,13 @@ using Content.Shared.Chat;
 using Content.Shared.Psionics;
 using Content.Shared.Random.Helpers;
 using Content.Shared.StatusEffect;
-using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Player;
-using Content.Server.Chat.Managers;
-using Robust.Shared.Configuration;
 using Content.Shared.CCVar;
-using Content.Server.NPC.Systems;
-using Content.Server.NPC.HTN;
-using Content.Server.Ghost;
-using Content.Server.Mind;
+using Content.Shared.NPC.Systems;
 
 namespace Content.Server.Abilities.Psionics;
 
