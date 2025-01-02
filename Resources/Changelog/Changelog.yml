@@ -9015,3 +9015,10 @@ Entries:
   id: 6614
   time: '2025-01-02T17:36:50.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1293
+- author: sapphirescript
+  changes:
+    - type: Tweak
+      message: The splash screen logo now fits inside the default window
+  id: 6615
+  time: '2025-01-02T21:08:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1403
