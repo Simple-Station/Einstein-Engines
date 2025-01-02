@@ -257,6 +257,8 @@ ghost-role-information-syndicate-kobold-reinforcement-name = Syndicate Kobold Ag
 ghost-role-information-syndicate-kobold-reinforcement-description = Someone needs reinforcements. You, a trained kobold, will help them.
 ghost-role-information-syndicate-kobold-reinforcement-rules = Normal syndicate antagonist rules apply. Work with whoever called you in, and don't harm them.
 
+ghost-role-information-Shiva-name = Shiva
+ghost-role-information-Shiva-description = The first defender of the station.
 ghost-role-information-artifact-name = Sentient Artifact
 ghost-role-information-artifact-description =
       Enact your eldritch whims.
