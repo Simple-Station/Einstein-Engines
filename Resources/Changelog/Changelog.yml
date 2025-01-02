@@ -8894,3 +8894,10 @@ Entries:
   id: 6602
   time: '2024-12-31T20:42:24.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1387
+- author: Mocho
+  changes:
+    - type: Fix
+      message: Fixed heights/widths being broken due to the shitmed patch.
+  id: 6603
+  time: '2025-01-01T03:33:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1390
