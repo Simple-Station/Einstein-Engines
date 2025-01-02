@@ -169,6 +169,8 @@
   name: cargo shuttle console board
   description: A computer printed circuit board for a cargo shuttle console.
   components:
+  - type: Sprite
+    state: cpu_supply
   - type: ComputerBoard
     prototype: ComputerShuttleCargo
   - type: StealTarget
@@ -180,6 +182,8 @@
   name: surveillance camera monitor board
   description: A computer printed circuit board for a surveillance camera monitor.
   components:
+  - type: Sprite
+    state: cpu_security
   - type: ComputerBoard
     prototype: ComputerSurveillanceCameraMonitor
   - type: Tag
@@ -192,6 +196,8 @@
   name: surveillance wireless camera monitor board
   description: A computer printed circuit board for a surveillance wireless camera monitor.
   components:
+  - type: Sprite
+    state: cpu_security
   - type: ComputerBoard
     prototype: ComputerSurveillanceWirelessCameraMonitor
 
@@ -258,6 +264,8 @@
   name: crew monitoring computer board
   description: A computer printed circuit board for a crew monitoring console.
   components:
+  - type: Sprite
+    state: cpu_medical
   - type: ComputerBoard
     prototype: ComputerCrewMonitoring
   - type: ReverseEngineering
@@ -310,6 +318,8 @@
   name: syndicate communications computer board
   description: A computer printed circuit board for a syndicate communications console.
   components:
+  - type: Sprite
+    state: cpu_syndicate
   - type: ComputerBoard
     prototype: SyndicateComputerComms
 
@@ -318,6 +328,8 @@
   id: RadarConsoleCircuitboard
   name: radar console computer board
   components:
+  - type: Sprite
+    state: cpu_supply
   - type: ComputerBoard
     prototype: ComputerRadar
   - type: ReverseEngineering
@@ -375,6 +387,8 @@
   name: shuttle console board
   description: A computer printed circuit board for a shuttle console.
   components:
+  - type: Sprite
+    state: cpu_supply
   - type: ComputerBoard
     prototype: ComputerShuttle
   - type: ReverseEngineering
@@ -388,6 +402,8 @@
   name: syndicate shuttle console board
   description: A computer printed circuit board for a syndicate shuttle console.
   components:
+  - type: Sprite
+    state: cpu_syndicate
   - type: ComputerBoard
     prototype: ComputerShuttleSyndie
 
@@ -423,6 +439,8 @@
   name: syndicate IFF console board
   description: Allows you to control the IFF and stealth characteristics of this vessel.
   components:
+  - type: Sprite
+    state: cpu_syndicate
   - type: ComputerBoard
     prototype: ComputerIFFSyndicate
 
