@@ -9008,3 +9008,10 @@ Entries:
   id: 6613
   time: '2025-01-02T17:35:34.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1400
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: 'Added the GR4YT1D3 Virus event. '
+  id: 6614
+  time: '2025-01-02T17:36:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1293
