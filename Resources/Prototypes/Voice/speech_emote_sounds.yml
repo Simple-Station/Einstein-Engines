@@ -145,6 +145,8 @@
 
 - type: emoteSounds
   id: MaleSlime
+  params:
+    variation: 0.125
   sounds:
     Squish:
       collection: Squishes
@@ -178,11 +180,11 @@
       collection: Whistles
     Weh:
       collection: Weh
-  params:
-    variation: 0.125
 
 - type: emoteSounds
   id: FemaleSlime
+  params:
+    variation: 0.125
   sounds:
     Squish:
       collection: Squishes
@@ -216,8 +218,6 @@
       collection: Whistles
     Weh:
       collection: Weh
-  params:
-    variation: 0.125
 
 - type: emoteSounds
   id: MaleShadowkin
@@ -305,16 +305,44 @@
 
 - type: emoteSounds
   id: UnisexVox
+  params:
+    variation: 0.125
   sounds:
     Scream:
       path: /Audio/Voice/Vox/shriek1.ogg
     Laugh:
       path: /Audio/Voice/Vox/vox_laugh.ogg
-  params:
-    variation: 0.125
+    Sneeze:
+      collection: MaleSneezes
+    Cough:
+      collection: MaleCoughs
+    CatMeow:
+      collection: CatMeows
+    CatHisses:
+      collection: CatHisses
+    MonkeyScreeches:
+      collection: MonkeyScreeches
+    RobotBeep:
+      collection: RobotBeeps
+    Yawn:
+      collection: MaleYawn
+    Snore:
+      collection: Snores
+    Honk:
+      collection: BikeHorn
+    Sigh:
+      collection: MaleSigh
+    Crying:
+      collection: MaleCry
+    Whistle:
+      collection: Whistles
+    Weh:
+      collection: Weh
 
 - type: emoteSounds
   id: UnisexDiona
+  params:
+    variation: 0.125
   sounds:
     Scream:
       path: /Audio/Voice/Diona/diona_scream.ogg
@@ -324,8 +352,6 @@
       collection: BikeHorn
     Weh:
       collection: Weh
-  params:
-    variation: 0.125
     Sneeze:
       collection: MaleSneezes
     Cough:
@@ -391,6 +417,9 @@
 
 - type: emoteSounds
   id: UnisexDwarf
+  params:
+    variation: 0.125
+    pitch: 0.75
   sounds:
     Scream:
       collection: MaleScreams
@@ -422,12 +451,12 @@
       collection: Whistles
     Weh:
       collection: Weh
-  params:
-    variation: 0.125
-    pitch: 0.75
 
 - type: emoteSounds
   id: FemaleDwarf
+  params:
+    variation: 0.125
+    pitch: 0.75
   sounds:
     Scream:
       collection: FemaleScreams
@@ -459,9 +488,6 @@
       collection: Whistles
     Weh:
       collection: Weh
-  params:
-    variation: 0.125
-    pitch: 0.75
 
 - type: emoteSounds
   id: UnisexMoth
