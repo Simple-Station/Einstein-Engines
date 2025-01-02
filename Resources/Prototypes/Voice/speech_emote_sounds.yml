@@ -422,7 +422,7 @@
     Crying:
       collection: MaleCry
     Whistle:
-      collection: whistles
+      collection: Whistles
 
 - type: emoteSounds
   id: UnisexSilicon
