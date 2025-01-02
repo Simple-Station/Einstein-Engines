@@ -27,8 +27,11 @@
       "directions": 4
     },
     {
-      "name": "inhand-right",
-      "directions": 4
+        "name": "inhand-right",
+        "directions": 4
+    },
+    {
+        "name": "segment"
     }
   ]
 }
