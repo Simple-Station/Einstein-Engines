@@ -11,6 +11,7 @@ guide-entry-access-configurator = Access Configurator
 guide-entry-power = Power
 guide-entry-portable-generator = Portable Generators
 guide-entry-ame = Antimatter Engine (AME)
+guide-entry-sm = Supermatter Engine (SM)
 guide-entry-singularity = Singularity / Tesla
 guide-entry-teg = Thermo-electric Generator (TEG)
 guide-entry-rtg = RTG
