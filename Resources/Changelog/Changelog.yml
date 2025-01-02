@@ -8901,3 +8901,36 @@ Entries:
   id: 6603
   time: '2025-01-01T03:33:47.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1390
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Psionic Refactor V3 is here! No new powers are added in this update, but
+        the options for creating new powers has been SIGNIFICANTLY EXPANDED.
+    - type: Add
+      message: >-
+        Xenoglossy and Psychognomy now can only be rolled if you first have the
+        Telepathy power.
+    - type: Add
+      message: >-
+        Breath of Life can now only be rolled if you first have the Healing Word
+        power
+    - type: Add
+      message: Pyrokinesis and Summon Imp now require the Pyroknetic Flare power
+    - type: Add
+      message: >-
+        All new Psychognomy descriptors for many pre-existing powers. Have fun
+        being unintentionally screamed at telepathically by someone with the
+        POWER OVERWHELMING trait.
+  id: 6604
+  time: '2025-01-01T21:59:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1383
+- author: sapphirescript
+  changes:
+    - type: Fix
+      message: >-
+        The width slider in the profile editor view now moves correctly
+        regarding the height slider.
+  id: 6605
+  time: '2025-01-01T22:51:04.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1391
