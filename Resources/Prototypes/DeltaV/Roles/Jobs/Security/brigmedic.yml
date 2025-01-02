@@ -30,7 +30,7 @@
     components:
     - type: CPRTraining
     - type: SurgerySpeedModifier
-      SpeedModifier: 2.0
+      speedModifier: 2.0
 
 - type: startingGear
   id: CorpsmanGear # see Prototypes/Roles/Jobs/Fun/misc_startinggear.yml for "BrigmedicGear"

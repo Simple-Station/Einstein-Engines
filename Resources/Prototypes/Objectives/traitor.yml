@@ -222,23 +222,6 @@
     stealGroup: HandTeleporter
     verifyMapExistence: true
 
-## hos
-
-- type: entity
-  categories: [HideSpawnMenu]
-  parent: BaseTraitorStealObjective
-  id: SecretDocumentsStealObjective
-  components:
-  - type: Objective
-    # hos has a gun ce does not, higher difficulty than most
-    difficulty: 3
-  - type: NotJobRequirement
-    job: HeadOfSecurity
-  - type: StealCondition
-    stealGroup: BookSecretDocuments
-    verifyMapExistence: true
-    owner: job-name-hos
-
 ## ce
 
 - type: entity

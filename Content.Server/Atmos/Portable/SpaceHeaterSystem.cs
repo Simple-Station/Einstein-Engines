@@ -6,6 +6,7 @@ using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Shared.Atmos.Piping.Portable.Components;
 using Content.Shared.Atmos.Visuals;
+using Content.Shared.Power;
 using Content.Shared.UserInterface;
 using Robust.Server.GameObjects;
 
@@ -98,7 +99,7 @@ public sealed class SpaceHeaterSystem : EntitySystem
         if (!Resolve(uid, ref powerReceiver))
             return;
 
-        _power.TryTogglePower(uid);
+        _power.TogglePower(uid);
 
         UpdateAppearance(uid);
         DirtyUI(uid, spaceHeater);

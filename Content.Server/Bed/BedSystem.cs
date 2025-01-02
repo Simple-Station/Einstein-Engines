@@ -13,6 +13,7 @@ using Content.Shared.Damage;
 using Content.Shared.Emag.Components;
 using Content.Shared.Emag.Systems;
 using Content.Shared.Mobs.Systems;
+using Content.Shared.Power;
 using Robust.Shared.Timing;
 using Content.Shared.Silicon.Components; // I shouldn't have to modify this.
 using Robust.Shared.Utility;

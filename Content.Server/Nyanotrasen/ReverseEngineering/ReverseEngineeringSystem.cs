@@ -7,6 +7,9 @@ using Content.Server.UserInterface;
 using Content.Server.Power.Components;
 using Content.Server.Construction;
 using Content.Server.Popups;
+using Content.Shared.Power;
+using Content.Shared.Research.Prototypes;
+using Content.Shared.Research.TechnologyDisk.Components;
 using Content.Shared.UserInterface;
 using Robust.Shared.Containers;
 using Robust.Shared.Random;
@@ -14,6 +17,7 @@ using Robust.Shared.Utility;
 using Robust.Shared.Timing;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.ReverseEngineering;
 
@@ -324,7 +328,7 @@ public sealed class ReverseEngineeringSystem : EntitySystem
         UpdateUserInterface(uid, component);
     }
 
-    private void CreateDisk(EntityUid uid, string diskPrototype, List<string>? recipes)
+    private void CreateDisk(EntityUid uid, string diskPrototype, List<ProtoId<LatheRecipePrototype>>? recipes)
     {
         var disk = Spawn(diskPrototype, Transform(uid).Coordinates);
 

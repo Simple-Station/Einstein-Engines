@@ -1,7 +1,7 @@
 ﻿using Content.Shared.Database;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Body.Organ;
-
+using Content.Shared._Shitmed.Body.Organ; // Shitmed Change
 namespace Content.Shared.Mobs.Systems;
 
 public partial class MobStateSystem

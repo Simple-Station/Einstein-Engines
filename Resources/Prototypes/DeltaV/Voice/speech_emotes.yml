@@ -2,6 +2,13 @@
   id: HarpyRing
   name: chat-emote-name-harpyring
   category: Vocal
+  icon: Interface/Emotes/ring.png
+  whitelist:
+    tags:
+    - HarpyEmotes
+  blacklist:
+    components:
+    - BorgChassis
   chatMessages: [ rings ]
   chatTriggers:
     - rings
@@ -10,6 +17,13 @@
   id: HarpyPew
   name: chat-emote-name-harpypew
   category: Vocal
+  icon: Interface/Emotes/pew.png
+  whitelist:
+    tags:
+    - HarpyEmotes
+  blacklist:
+    components:
+    - BorgChassis
   chatMessages: [ pews ]
   chatTriggers:
     - pews
@@ -19,6 +33,13 @@
   id: HarpyBang
   name: chat-emote-name-harpybang
   category: Vocal
+  icon: Interface/Emotes/bang.png
+  whitelist:
+    tags:
+    - HarpyEmotes
+  blacklist:
+    components:
+    - BorgChassis
   chatMessages: [ bangs ]
   chatTriggers:
     - bangs
@@ -26,6 +47,13 @@
 - type: emote
   id: HarpyRev
   name: chat-emote-name-harpyrev
+  icon: Interface/Emotes/rev.png
+  whitelist:
+    tags:
+    - HarpyEmotes
+  blacklist:
+    components:
+    - BorgChassis
   category: Vocal
   chatMessages: [ revs ]
   chatTriggers:
@@ -35,6 +63,13 @@
   id: HarpyCaw
   name: chat-emote-name-harpycaw
   category: Vocal
+  icon: Interface/Emotes/caw.png
+  whitelist:
+    tags:
+    - HarpyEmotes
+  blacklist:
+    components:
+    - BorgChassis
   chatMessages: [ caws ]
   chatTriggers:
     - caws
@@ -44,6 +79,14 @@
   id: Bark
   name: chat-emote-name-vulpbark
   category: Vocal
+  icon: Interface/Emotes/bark.png
+  whitelist:
+    tags:
+    - VulpEmotes
+    - HarpyEmotes
+  blacklist:
+    components:
+    - BorgChassis
   chatMessages: [ barks ]
   chatTriggers:
     - barks
@@ -52,6 +95,14 @@
   id: Snarl
   name: chat-emote-name-vulpsnarl
   category: Vocal
+  icon: Interface/Emotes/snarl.png
+  whitelist:
+    tags:
+    - VulpEmotes
+    - HarpyEmotes
+  blacklist:
+    components:
+    - BorgChassis
   chatMessages: [ snarls ]
   chatTriggers:
     - snarls
@@ -60,6 +111,14 @@
   id: Whine
   name: chat-emote-name-vulpwhine
   category: Vocal
+  icon: Interface/Emotes/whine.png
+  whitelist:
+    tags:
+    - VulpEmotes
+    - HarpyEmotes
+  blacklist:
+    components:
+    - BorgChassis
   chatMessages: [ whines ]
   chatTriggers:
     - whines
@@ -68,6 +127,14 @@
   id: Howl
   name: chat-emote-name-vulphowl
   category: Vocal
+  icon: Interface/Emotes/howl.png
+  whitelist:
+    tags:
+    - VulpEmotes
+    - HarpyEmotes
+  blacklist:
+    components:
+    - BorgChassis
   chatMessages: [ howls ]
   chatTriggers:
     - howls

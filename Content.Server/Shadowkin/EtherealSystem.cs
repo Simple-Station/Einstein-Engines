@@ -7,12 +7,13 @@ using Content.Shared.Movement.Components;
 using Content.Shared.Stealth;
 using Content.Shared.Stealth.Components;
 using Content.Server.Body.Components;
-using Content.Server.NPC.Components;
-using Content.Server.NPC.Systems;
 using System.Linq;
 using Content.Shared.Abilities.Psionics;
 using Robust.Shared.Random;
 using Content.Server.Light.Components;
+using Content.Shared.NPC.Components;
+using Content.Shared.NPC.Systems;
+
 
 namespace Content.Server.Shadowkin;
 
@@ -78,9 +79,6 @@ public sealed class EtherealSystem : SharedEtherealSystem
         RemComp<PressureImmunityComponent>(uid);
         RemComp<RespiratorImmuneComponent>(uid);
         RemComp<MovementIgnoreGravityComponent>(uid);
-
-        SpawnAtPosition("ShadowkinShadow", Transform(uid).Coordinates);
-        SpawnAtPosition("EffectFlashShadowkinDarkSwapOff", Transform(uid).Coordinates);
 
         foreach (var light in component.DarkenedLights.ToArray())
         {
@@ -181,7 +179,7 @@ public sealed class EtherealSystem : SharedEtherealSystem
 
                 if (etherealLight.AttachedEntity == uid
                     && _random.Prob(0.03f))
-                        etherealLight.AttachedEntity = EntityUid.Invalid;
+                    etherealLight.AttachedEntity = EntityUid.Invalid;
 
                 if (!etherealLight.OldRadiusEdited)
                 {

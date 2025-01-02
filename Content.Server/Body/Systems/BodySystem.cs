@@ -1,22 +1,22 @@
-using System.Linq;
 using Content.Server.Body.Components;
 using Content.Server.GameTicking;
 using Content.Server.Humanoid;
+using Content.Shared._Shitmed.Body.Part;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Part;
 using Content.Shared.Body.Systems;
-using Content.Shared.Damage;
-using Content.Shared.Gibbing.Events;
 using Content.Shared.Humanoid;
 using Content.Shared.Mind;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Events;
 using Content.Shared.Movement.Systems;
 using Robust.Shared.Audio;
-using Robust.Shared.Audio.Systems;
-using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using System.Numerics;
+
+// Shitmed Change
+using System.Linq;
+using Content.Shared.Gibbing.Events;
 
 namespace Content.Server.Body.Systems;
 
@@ -25,7 +25,7 @@ public sealed class BodySystem : SharedBodySystem
     [Dependency] private readonly GameTicker _ticker = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly HumanoidAppearanceSystem _humanoidSystem = default!;
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+    [Dependency] private readonly SharedAppearanceSystem _appearance = default!; // Shitmed Change
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly SharedMindSystem _mindSystem = default!;
 
@@ -76,8 +76,9 @@ public sealed class BodySystem : SharedBodySystem
             var layer = partEnt.Comp.ToHumanoidLayers();
             if (layer != null)
             {
+                var layers = HumanoidVisualLayersExtension.Sublayers(layer.Value); // Shitmed Change
                 _humanoidSystem.SetLayersVisibility(
-                    bodyEnt, new[] { layer.Value }, visible: true, permanent: true, humanoid);
+                    bodyEnt, new[] { layer.Value }, visible: true, permanent: true, humanoid); // Shitmed Change
             }
         }
     }
@@ -98,10 +99,9 @@ public sealed class BodySystem : SharedBodySystem
             return;
 
         var layers = HumanoidVisualLayersExtension.Sublayers(layer.Value);
-
         _humanoidSystem.SetLayersVisibility(
             bodyEnt, layers, visible: false, permanent: true, humanoid);
-        _appearance.SetData(bodyEnt, layer, true);
+        _appearance.SetData(bodyEnt, layer, true); // Shitmed Change
     }
 
     public override HashSet<EntityUid> GibBody(
@@ -113,6 +113,7 @@ public sealed class BodySystem : SharedBodySystem
         float splatModifier = 1,
         Angle splatCone = default,
         SoundSpecifier? gibSoundOverride = null,
+        // Shitmed Change
         GibType gib = GibType.Gib,
         GibContentsOption contents = GibContentsOption.Drop)
     {
@@ -129,7 +130,7 @@ public sealed class BodySystem : SharedBodySystem
 
         var gibs = base.GibBody(bodyId, gibOrgans, body, launchGibs: launchGibs,
             splatDirection: splatDirection, splatModifier: splatModifier, splatCone: splatCone,
-            gib: gib, contents: contents);
+            gib: gib, contents: contents); // Shitmed Change
 
         var ev = new BeingGibbedEvent(gibs);
         RaiseLocalEvent(bodyId, ref ev);
@@ -139,6 +140,7 @@ public sealed class BodySystem : SharedBodySystem
         return gibs;
     }
 
+    // Shitmed Change Start
     public override HashSet<EntityUid> GibPart(
         EntityUid partId,
         BodyPartComponent? part = null,
@@ -191,4 +193,6 @@ public sealed class BodySystem : SharedBodySystem
 
         Dirty(target, bodyAppearance);
     }
+
+    // Shitmed Change End
 }

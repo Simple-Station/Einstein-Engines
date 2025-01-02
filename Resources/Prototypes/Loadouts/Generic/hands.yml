@@ -1,103 +1,4 @@
 - type: loadout
-  id: LoadoutHandsColorPurple
-  category: Hands
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingHandsGlovesColorPurple
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutGloves
-
-- type: loadout
-  id: LoadoutHandsColorRed
-  category: Hands
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingHandsGlovesColorRed
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutGloves
-
-- type: loadout
-  id: LoadoutHandsColorBlack
-  category: Hands
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingHandsGlovesColorBlack
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutGloves
-
-- type: loadout
-  id: LoadoutHandsColorBlue
-  category: Hands
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingHandsGlovesColorBlue
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutGloves
-
-- type: loadout
-  id: LoadoutHandsColorBrown
-  category: Hands
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingHandsGlovesColorBrown
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutGloves
-
-- type: loadout
-  id: LoadoutHandsColorGray
-  category: Hands
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingHandsGlovesColorGray
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutGloves
-
-- type: loadout
-  id: LoadoutHandsColorGreen
-  category: Hands
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingHandsGlovesColorGreen
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutGloves
-
-- type: loadout
-  id: LoadoutHandsColorLightBrown
-  category: Hands
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingHandsGlovesColorLightBrown
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutGloves
-
-- type: loadout
-  id: LoadoutHandsColorOrange
-  category: Hands
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingHandsGlovesColorOrange
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutGloves
-
-- type: loadout
   id: LoadoutHandsColorWhite
   category: Hands
   cost: 0
@@ -160,12 +61,13 @@
       group: LoadoutGloves
 
 - type: loadout
-  id: LoadoutHandsGlovesFingerless
+  id: LoadoutHandsGlovesFingerlessWhite
   category: Hands
   cost: 0
   exclusive: true
+  customColorTint: true
   items:
-    - ClothingHandsGlovesFingerless
+    - ClothingHandsGlovesFingerlessWhite
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutGloves
