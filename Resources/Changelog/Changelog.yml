@@ -8999,3 +8999,12 @@ Entries:
   id: 6612
   time: '2025-01-02T17:01:54.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1405
+- author: sapphirescript
+  changes:
+    - type: Add
+      message: Face markings are now in their own category
+    - type: Fix
+      message: IPC screens no longer show up above hair
+  id: 6613
+  time: '2025-01-02T17:35:34.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1400
