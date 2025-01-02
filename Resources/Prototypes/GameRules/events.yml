@@ -585,3 +585,15 @@
       maxOccurrences: 1 # this event has diminishing returns on interesting-ness, so we cap it
       weight: 5
     - type: MobReplacementRule
+
+- type: entity
+  id: AirlockVirusRule
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: StationEvent
+      earliestStart: 15
+      minimumPlayers: 5
+      maxOccurrences: 1
+      weight: 3
+    - type: AirlockVirusRule
