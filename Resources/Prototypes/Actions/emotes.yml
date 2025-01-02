@@ -8,11 +8,6 @@
   chatTriggers:
   - flip
   - flips
-  - flips.
-  - flips!
-  - does a flip
-  - does a flip.
-  - does a flip!
   event: !type:AnimationFlipEmoteEvent
 
 - type: emote
@@ -25,8 +20,6 @@
   chatTriggers:
   - spin
   - spins
-  - spins.
-  - spins!
   event: !type:AnimationSpinEmoteEvent
 
 - type: emote
@@ -39,6 +32,4 @@
   chatTriggers:
   - jump
   - jumps
-  - jumps.
-  - jumps!
   event: !type:AnimationJumpEmoteEvent
