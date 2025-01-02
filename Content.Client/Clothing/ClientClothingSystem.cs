@@ -130,8 +130,8 @@ public sealed class ClientClothingSystem : ClothingSystem
 
         RSI? rsi = null;
 
-        if (clothing.RsiPath != null)
-            rsi = _cache.GetResource<RSIResource>(SpriteSpecifierSerializer.TextureRoot / clothing.RsiPath).RSI;
+        if (clothing.Sprite != null)
+            rsi = _cache.GetResource<RSIResource>(SpriteSpecifierSerializer.TextureRoot / clothing.Sprite).RSI;
         else if (TryComp(uid, out SpriteComponent? sprite))
             rsi = sprite.BaseRSI;
 

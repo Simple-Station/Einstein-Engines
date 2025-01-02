@@ -137,6 +137,9 @@ public sealed partial class TraitAddPsionics : TraitFunction
     [DataField, AlwaysPushInheritance]
     public List<ProtoId<PsionicPowerPrototype>> PsionicPowers { get; private set; } = new();
 
+    [DataField, AlwaysPushInheritance]
+    public bool PlayFeedback;
+
     public override void OnPlayerSpawn(EntityUid uid,
         IComponentFactory factory,
         IEntityManager entityManager,
@@ -147,7 +150,34 @@ public sealed partial class TraitAddPsionics : TraitFunction
 
         foreach (var powerProto in PsionicPowers)
             if (prototype.TryIndex(powerProto, out var psionicPower))
-                psionic.InitializePsionicPower(uid, psionicPower, false);
+                psionic.InitializePsionicPower(uid, psionicPower, PlayFeedback);
+    }
+}
+
+/// <summary>
+///     This isn't actually used for any traits, surprise, other systems can use these functions!
+///     This is used by Items of Power to remove a psionic power when unequipped.
+/// </summary>
+[UsedImplicitly]
+public sealed partial class TraitRemovePsionics : TraitFunction
+{
+    [DataField, AlwaysPushInheritance]
+    public List<ProtoId<PsionicPowerPrototype>> PsionicPowers { get; private set; } = new();
+
+    [DataField, AlwaysPushInheritance]
+    public bool Forced = true;
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        var prototype = IoCManager.Resolve<IPrototypeManager>();
+        var psionic = entityManager.System<PsionicAbilitiesSystem>();
+
+        foreach (var powerProto in PsionicPowers)
+            if (prototype.TryIndex(powerProto, out var psionicPower))
+                psionic.RemovePsionicPower(uid, psionicPower, Forced);
     }
 }
 
@@ -313,6 +343,25 @@ public sealed partial class TraitAddArmor : TraitFunction
         entityManager.EnsureComponent<DamageableComponent>(uid, out var damageableComponent);
         foreach (var modifierSet in DamageModifierSets)
             damageableComponent.DamageModifierSets.Add(modifierSet);
+    }
+}
+
+[UsedImplicitly]
+public sealed partial class TraitRemoveArmor : TraitFunction
+{
+    [DataField, AlwaysPushInheritance]
+    public List<string> DamageModifierSets { get; private set; } = new();
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        if (!entityManager.TryGetComponent<DamageableComponent>(uid, out var damageableComponent))
+            return;
+
+        foreach (var modifierSet in DamageModifierSets)
+            damageableComponent.DamageModifierSets.Remove(modifierSet);
     }
 }
 

@@ -9015,3 +9015,24 @@ Entries:
   id: 6614
   time: '2025-01-02T17:36:50.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1293
+- author: sapphirescript
+  changes:
+    - type: Tweak
+      message: The splash screen logo now fits inside the default window
+  id: 6615
+  time: '2025-01-02T21:08:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1403
+- author: Remuchi
+  changes:
+    - type: Fix
+      message: Loadouts should now properly be applied when spawning in cryopods.
+  id: 6616
+  time: '2025-01-02T21:11:12.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1406
+- author: sapphirescript
+  changes:
+    - type: Fix
+      message: Fix Shiva's name and description displaying improperly in ghost roles
+  id: 6617
+  time: '2025-01-02T21:12:42.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1404
