@@ -7,6 +7,11 @@
     - !type:CharacterOverallTimeRequirement
       min: 7200 #DeltaV 2 hours
   startingGear: ReporterGear
+  conditionalStartingGear:
+    - id: PassengerPlasmamanGear
+      requirements:
+      - !type:CharacterSpeciesRequirement
+        species: [ Plasmaman ]
   icon: "JobIconReporter"
   supervisors: job-supervisors-hop
   access:

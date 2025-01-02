@@ -1,4 +1,4 @@
-﻿- type: job
+- type: job
   id: MedicalIntern
   name: job-name-intern
   description: job-description-intern
@@ -9,6 +9,11 @@
     #   time: 54000 # 15 hrs
     #   inverted: true # stop playing intern if you're good at med!
   startingGear: MedicalInternGear
+  conditionalStartingGear: # TODO: medical intern plasmaman gear
+    - id: DoctorPlasmamanGear
+      requirements:
+      - !type:CharacterSpeciesRequirement
+        species: [ Plasmaman ]
   icon: "JobIconMedicalIntern"
   supervisors: job-supervisors-medicine
   canBeAntag: true # DeltaV - Can be antagonist

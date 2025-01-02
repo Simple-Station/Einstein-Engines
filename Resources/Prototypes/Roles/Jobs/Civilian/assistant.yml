@@ -28,6 +28,8 @@
 
 - type: startingGear
   id: PassengerPlasmamanGear
+  parent: BasePlasmamanGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuit
     head: ClothingHeadEnvirohelm
+    gloves: ClothingHandsGlovesEnvirogloves

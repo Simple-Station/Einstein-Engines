@@ -4,6 +4,11 @@
   description: job-description-prisoner
   playTimeTracker: JobPrisoner
   startingGear: PrisonerGear
+  conditionalStartingGear:
+    - id: PrisonerPlasmamanGear
+      requirements:
+      - !type:CharacterSpeciesRequirement
+        species: [ Plasmaman ]
   alwaysUseSpawner: true
   canBeAntag: false
 #  whitelistRequired: true
@@ -26,3 +31,11 @@
     id: PrisonerPDA
     ears: ClothingHeadsetPrison #deltaV
   innerClothingSkirt: ClothingUniformJumpsuitPrisoner
+
+- type: startingGear
+  id: PrisonerPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitPrisoner
+    head: ClothingHeadEnvirohelmPrisoner
+    gloves: ClothingHandsGlovesEnviroglovesBlack

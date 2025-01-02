@@ -9,6 +9,11 @@
       department: Engineering
       min: 36000 # DeltaV - 10 hours
   startingGear: AtmosphericTechnicianGear
+  conditionalStartingGear:
+    - id: AtmosphericTechnicianPlasmamanGear
+      requirements:
+      - !type:CharacterSpeciesRequirement
+        species: [ Plasmaman ]
   icon: "JobIconAtmosphericTechnician"
   supervisors: job-supervisors-ce
   access:
@@ -28,3 +33,11 @@
   innerClothingSkirt: ClothingUniformJumpskirtAtmos
   satchel: ClothingBackpackSatchelEngineeringFilled
   duffelbag: ClothingBackpackDuffelEngineeringFilled
+
+- type: startingGear
+  id: AtmosphericTechnicianPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitAtmos
+    head: ClothingHeadEnvirohelmAtmos
+    gloves: ClothingHandsGlovesEnviroglovesAtmos

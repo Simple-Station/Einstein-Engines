@@ -176,6 +176,17 @@
 
 - type: entity
   parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelmLibrarian
+  name: TODO
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Envirohelms/librarian.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Envirohelms/librarian.rsi
+
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
   id: ClothingHeadEnvirohelmMedicalDoctor
   name: TODO
   description: TODO

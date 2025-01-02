@@ -14,6 +14,11 @@
     # - !type:OverallPlaytimeRequirement # DeltaV - No playtime requirement
     #   time: 54000 # 15 hrs
   startingGear: ParamedicGear
+  conditionalStartingGear:
+    - id: ParamedicPlasmamanGear
+      requirements:
+      - !type:CharacterSpeciesRequirement
+        species: [ Plasmaman ]
   icon: "JobIconParamedic"
   supervisors: job-supervisors-cmo
   access:
@@ -44,3 +49,11 @@
   innerClothingSkirt: ClothingUniformJumpskirtParamedic
   satchel: ClothingBackpackSatchelParamedicFilledDV
   duffelbag: ClothingBackpackDuffelParamedicFilledDV
+
+- type: startingGear
+  id: ParamedicPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitParamedic
+    head: ClothingHeadEnvirohelmParamedic
+    gloves: ClothingHandsGlovesEnviroglovesNitrile

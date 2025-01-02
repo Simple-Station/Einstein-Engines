@@ -9,6 +9,11 @@
       department: Engineering
       min: 14400 #4 hrs
   startingGear: StationEngineerGear
+  conditionalStartingGear:
+    - id: StationEngineerPlasmamanGear
+      requirements:
+      - !type:CharacterSpeciesRequirement
+        species: [ Plasmaman ]
   icon: "JobIconStationEngineer"
   supervisors: job-supervisors-ce
   access:
@@ -31,3 +36,11 @@
   innerClothingSkirt: ClothingUniformJumpskirtEngineering
   satchel: ClothingBackpackSatchelEngineeringFilled
   duffelbag: ClothingBackpackDuffelEngineeringFilled
+
+- type: startingGear
+  id: StationEngineerPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitEngineering
+    head: ClothingHeadEnvirohelmEngineering
+    gloves: ClothingHandsGlovesEnviroglovesEngineering

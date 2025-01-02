@@ -8,6 +8,11 @@
       department: Civilian
       min: 3600 #DeltaV 1 hour
   startingGear: ChefGear
+  conditionalStartingGear:
+    - id: ChefPlasmamanGear
+      requirements:
+      - !type:CharacterSpeciesRequirement
+        species: [ Plasmaman ]
   icon: "JobIconChef"
   supervisors: job-supervisors-hop
   access:
@@ -37,3 +42,11 @@
   innerClothingSkirt: ClothingUniformJumpskirtChef
   satchel: ClothingBackpackSatchelFilled
   duffelbag: ClothingBackpackDuffelFilled
+
+- type: startingGear
+  id: ChefPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitChef
+    head: ClothingHeadEnvirohelmWhite
+    gloves: ClothingHandsGlovesEnviroglovesWhite

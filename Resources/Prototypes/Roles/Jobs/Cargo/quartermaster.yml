@@ -21,6 +21,11 @@
       min: 144000 #40 hrs
   weight: 10
   startingGear: QuartermasterGear
+  conditionalStartingGear: # Quartermasters have the same gear as cargo techs. Ouch.
+    - id: CargoTechPlasmamanGear
+      requirements:
+      - !type:CharacterSpeciesRequirement
+        species: [ Plasmaman ]
   icon: "JobIconQuarterMaster"
   supervisors: job-supervisors-captain
   canBeAntag: false

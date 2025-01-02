@@ -4,6 +4,11 @@
   description: job-description-gladiator
   playTimeTracker: JobGladiator
   startingGear: NyanoGladiatorGear
+  conditionalStartingGear: # TODO: gladiator plasmaman gear
+    - id: PassengerPlasmamanGear
+      requirements:
+      - !type:CharacterSpeciesRequirement
+        species: [ Plasmaman ]
   alwaysUseSpawner: true
   canBeAntag: false
   icon: "JobIconGladiator"
