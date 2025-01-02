@@ -124,6 +124,12 @@
         - MobMask
         layer:
         - MobLayer
+  - type: Tag
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - SiliconEmotes
 
 - type: entity
   save: false
