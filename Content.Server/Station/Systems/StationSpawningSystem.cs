@@ -188,9 +188,6 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
                             out _))
                         continue;
 
-                    foreach (var (slot, entProtoId) in conditionalGear.Equipment)
-                        startingGear.Equipment[slot] = entProtoId;
-
                     if (conditionalGear.InnerClothingSkirt != null)
                         startingGear.InnerClothingSkirt = conditionalGear.InnerClothingSkirt;
 
@@ -199,6 +196,27 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
 
                     if (conditionalGear.Duffelbag != null)
                         startingGear.Duffelbag = conditionalGear.Duffelbag;
+
+                    foreach (var (slot, entProtoId) in conditionalGear.Equipment)
+                    {
+                        // Don't remove items in pockets, instead put them in the backpack or hands
+                        if (slot == "pocket1" && startingGear.Equipment.TryGetValue("pocket1", out var pocket1) ||
+                            slot == "pocket2" && startingGear.Equipment.TryGetValue("pocket2", out var pocket2))
+                        {
+                            var pocketProtoId = slot == "pocket1" ? pocket1 : pocket2;
+
+                            if (!string.IsNullOrEmpty(startingGear.GetGear("back", null)))
+                            {
+                                if (!startingGear.Storage.ContainsKey("back"))
+                                    startingGear.Storage["back"] = new();
+                                startingGear.Storage["back"].Add(pocketProtoId);
+                            }
+                            else
+                                startingGear.Inhand.Add(pocketProtoId);
+                        }
+
+                        startingGear.Equipment[slot] = entProtoId;
+                    }
 
                     startingGear.Inhand.AddRange(conditionalGear.Inhand);
 
