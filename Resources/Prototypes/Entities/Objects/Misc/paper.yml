@@ -355,6 +355,7 @@
   id: PenEmbeddable
   abstract: true
   components:
+  - type: LandAtCursor
   - type: DamageOtherOnHit
     damage:
       types:
@@ -735,6 +736,7 @@
           tags:
           - Write
   - type: CargoOrderConsole
+  - type: BankClient
   - type: ActivatableUI
     verbText: qm-clipboard-computer-verb-text
     key: enum.CargoConsoleUiKey.Orders

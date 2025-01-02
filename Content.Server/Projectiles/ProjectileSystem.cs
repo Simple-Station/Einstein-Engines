@@ -1,4 +1,3 @@
-using Content.Shared.Damage.Events;
 using Content.Server.Administration.Logs;
 using Content.Server.Effects;
 using Content.Server.Weapons.Ranged.Systems;
@@ -8,7 +7,6 @@ using Content.Shared.Database;
 using Content.Shared.Projectiles;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Player;
-using Robust.Shared.Utility;
 
 namespace Content.Server.Projectiles;
 
@@ -24,14 +22,13 @@ public sealed class ProjectileSystem : SharedProjectileSystem
     {
         base.Initialize();
         SubscribeLocalEvent<ProjectileComponent, StartCollideEvent>(OnStartCollide);
-        SubscribeLocalEvent<EmbeddableProjectileComponent, DamageExamineEvent>(OnDamageExamine);
     }
 
     private void OnStartCollide(EntityUid uid, ProjectileComponent component, ref StartCollideEvent args)
     {
         // This is so entities that shouldn't get a collision are ignored.
         if (args.OurFixtureId != ProjectileFixture || !args.OtherFixture.Hard
-            || component.DamagedEntity || component is { Weapon: null, OnlyCollideWhenShot: true })
+            || component.DamagedEntity || component is { Weapon: null, OnlyCollideWhenShot: true, })
             return;
 
         var target = args.OtherEntity;
@@ -48,18 +45,16 @@ public sealed class ProjectileSystem : SharedProjectileSystem
         RaiseLocalEvent(uid, ref ev);
 
         var otherName = ToPrettyString(target);
-        var direction = args.OurBody.LinearVelocity.Normalized();
         var modifiedDamage = _damageableSystem.TryChangeDamage(target, ev.Damage, component.IgnoreResistances, origin: component.Shooter);
         var deleted = Deleted(target);
 
         if (modifiedDamage is not null && EntityManager.EntityExists(component.Shooter))
         {
-            if (modifiedDamage.Any() && !deleted)
-            {
-                _color.RaiseEffect(Color.Red, new List<EntityUid> { target }, Filter.Pvs(target, entityManager: EntityManager));
-            }
+            if (modifiedDamage.AnyPositive() && !deleted)
+                _color.RaiseEffect(Color.Red, [ target, ], Filter.Pvs(target, entityManager: EntityManager));
 
-            _adminLogger.Add(LogType.BulletHit,
+            _adminLogger.Add(
+                LogType.BulletHit,
                 HasComp<ActorComponent>(target) ? LogImpact.Extreme : LogImpact.High,
                 $"Projectile {ToPrettyString(uid):projectile} shot by {ToPrettyString(component.Shooter!.Value):user} hit {otherName:target} and dealt {modifiedDamage.GetTotal():damage} damage");
         }
@@ -67,7 +62,9 @@ public sealed class ProjectileSystem : SharedProjectileSystem
         if (!deleted)
         {
             _guns.PlayImpactSound(target, modifiedDamage, component.SoundHit, component.ForceSound);
-            _sharedCameraRecoil.KickCamera(target, direction);
+
+            if (!args.OurBody.LinearVelocity.IsLengthZero())
+                _sharedCameraRecoil.KickCamera(target, args.OurBody.LinearVelocity.Normalized());
         }
 
         component.DamagedEntity = true;
@@ -75,26 +72,7 @@ public sealed class ProjectileSystem : SharedProjectileSystem
         if (component.DeleteOnCollide)
             QueueDel(uid);
 
-        if (component.ImpactEffect != null && TryComp<TransformComponent>(uid, out var xform))
-        {
+        if (component.ImpactEffect != null && TryComp(uid, out TransformComponent? xform))
             RaiseNetworkEvent(new ImpactEffectEvent(component.ImpactEffect, GetNetCoordinates(xform.Coordinates)), Filter.Pvs(xform.Coordinates, entityMan: EntityManager));
-        }
-    }
-
-    private void OnDamageExamine(EntityUid uid, EmbeddableProjectileComponent component, ref DamageExamineEvent args)
-    {
-        if (!component.EmbedOnThrow)
-            return;
-
-        if (!args.Message.IsEmpty)
-            args.Message.PushNewline();
-
-        var isHarmful = TryComp<EmbedPassiveDamageComponent>(uid, out var passiveDamage) && passiveDamage.Damage.Any();
-        var loc = isHarmful
-            ? "damage-examine-embeddable-harmful"
-            : "damage-examine-embeddable";
-
-        var staminaCostMarkup = FormattedMessage.FromMarkupOrThrow(Loc.GetString(loc));
-        args.Message.AddMessage(staminaCostMarkup);
     }
 }

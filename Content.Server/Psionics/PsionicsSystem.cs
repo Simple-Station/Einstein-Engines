@@ -23,6 +23,8 @@ using Content.Shared.Damage;
 using Content.Shared.Interaction.Events;
 using Timer = Robust.Shared.Timing.Timer;
 using Content.Shared.Alert;
+using Content.Shared.NPC.Components;
+using Content.Shared.NPC.Systems;
 using Content.Shared.Rounding;
 
 namespace Content.Server.Psionics;
@@ -367,7 +369,7 @@ public sealed class PsionicsSystem : EntitySystem
             if (!TryComp<NPCRetaliationComponent>(familiar, out var retaliationComponent))
                 continue;
 
-            _retaliationSystem.TryRetaliate(familiar, target, retaliationComponent);
+            _retaliationSystem.TryRetaliate((familiar, retaliationComponent), target);
         }
     }
 }

@@ -9,6 +9,8 @@ using Content.Shared.Cargo.Components;
 using Content.Shared.Cargo.Events;
 using Content.Shared.Cargo.Prototypes;
 using Content.Shared.Database;
+using Content.Shared.Emag.Components;
+using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
@@ -38,6 +40,7 @@ namespace Content.Server.Cargo.Systems
             SubscribeLocalEvent<CargoOrderConsoleComponent, BoundUIOpenedEvent>(OnOrderUIOpened);
             SubscribeLocalEvent<CargoOrderConsoleComponent, ComponentInit>(OnInit);
             SubscribeLocalEvent<CargoOrderConsoleComponent, InteractUsingEvent>(OnInteractUsing);
+            SubscribeLocalEvent<CargoOrderConsoleComponent, BankBalanceUpdatedEvent>(OnOrderBalanceUpdated);
             Reset();
         }
 
@@ -193,15 +196,20 @@ namespace Content.Server.Cargo.Systems
             order.SetApproverData(idCard.Comp?.FullName, idCard.Comp?.JobTitle);
             _audio.PlayPvs(component.ConfirmSound, uid);
 
-            var approverName = idCard.Comp?.FullName ?? Loc.GetString("access-reader-unknown-id");
-            var approverJob = idCard.Comp?.JobTitle ?? Loc.GetString("access-reader-unknown-id");
-            var message = Loc.GetString("cargo-console-unlock-approved-order-broadcast",
-                ("productName", Loc.GetString(order.ProductName)),
-                ("orderAmount", order.OrderQuantity),
-                ("approverName", approverName),
-                ("approverJob", approverJob),
-                ("cost", cost));
-            _radio.SendRadioMessage(uid, message, component.AnnouncementChannel, uid, escapeMarkup: false);
+            if (!HasComp<EmaggedComponent>(uid))
+            {
+                var tryGetIdentityShortInfoEvent = new TryGetIdentityShortInfoEvent(uid, player);
+                RaiseLocalEvent(tryGetIdentityShortInfoEvent);
+                order.SetApproverData(tryGetIdentityShortInfoEvent.Title);
+
+                var message = Loc.GetString("cargo-console-unlock-approved-order-broadcast",
+                    ("productName", Loc.GetString(order.ProductName)),
+                    ("orderAmount", order.OrderQuantity),
+                    ("approver", order.Approver ?? string.Empty),
+                    ("cost", cost));
+                _radio.SendRadioMessage(uid, message, component.AnnouncementChannel, uid, escapeMarkup: false);
+            }
+
             ConsolePopup(args.Actor, Loc.GetString("cargo-console-trade-station", ("destination", MetaData(ev.FulfillmentEntity.Value).EntityName)));
 
             // Log order approval
@@ -316,6 +324,15 @@ namespace Content.Server.Cargo.Systems
         }
 
         #endregion
+
+
+        private void OnOrderBalanceUpdated(Entity<CargoOrderConsoleComponent> ent, ref BankBalanceUpdatedEvent args)
+        {
+            if (!_uiSystem.IsUiOpen(ent.Owner, CargoConsoleUiKey.Orders))
+                return;
+
+            UpdateOrderState(ent, args.Station);
+        }
 
         private void UpdateOrderState(EntityUid consoleUid, EntityUid? station)
         {

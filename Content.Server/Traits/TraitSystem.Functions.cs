@@ -9,7 +9,6 @@ using Content.Server.Abilities.Psionics;
 using Content.Shared.Psionics;
 using Content.Server.Language;
 using Content.Shared.Mood;
-using Content.Server.NPC.Systems;
 using Content.Shared.Traits.Assorted.Components;
 using Content.Shared.Damage;
 using Content.Shared.Chemistry.Components;
@@ -18,6 +17,7 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Mobs;
 using Content.Shared.Damage.Components;
+using Content.Shared.NPC.Systems;
 
 namespace Content.Server.Traits;
 

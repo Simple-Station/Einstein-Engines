@@ -208,15 +208,6 @@
     Gold: 50
 
 - type: latheRecipe
-  id: MiningDrill
-  result: MiningDrill
-  category: Tools
-  completetime: 3
-  materials:
-    Steel: 500
-    Plastic: 100
-
-- type: latheRecipe
   id: WelderExperimental
   result: WelderExperimental
   category: Tools

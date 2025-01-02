@@ -1,11 +1,11 @@
-using Content.Shared.DeltaV.Harpy;
 using Content.Shared.Preferences;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
 
 namespace Content.Shared.Roles;
 
 [Prototype("startingGear")]
-public sealed partial class StartingGearPrototype : IPrototype
+public sealed partial class StartingGearPrototype : IPrototype, IInheritingPrototype
 {
     [DataField]
     public Dictionary<string, EntProtoId> Equipment = new();
@@ -34,6 +34,14 @@ public sealed partial class StartingGearPrototype : IPrototype
     [ViewVariables]
     [IdDataField]
     public string ID { get; private set; } = string.Empty;
+
+    /// <inheritdoc/>
+    [ParentDataField(typeof(AbstractPrototypeIdArraySerializer<StartingGearPrototype>))]
+    public string[]? Parents { get; private set; }
+
+    /// <inheritdoc/>
+    [AbstractDataField]
+    public bool Abstract { get; }
 
     public string GetGear(string slot, HumanoidCharacterProfile? profile)
     {

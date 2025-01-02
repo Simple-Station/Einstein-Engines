@@ -141,11 +141,10 @@
     - TemporaryBlindness
     - Pacified
     - StaminaModifier
+    - RadiationProtection
+    - Drowsiness
     - PsionicsDisabled
     - PsionicallyInsulated
-  - type: Reflect
-    enabled: false
-    reflectProb: 0
   - type: Body
     prototype: Human
     requiredLegs: 2
@@ -282,6 +281,8 @@
     - StaminaModifier
     - PsionicsDisabled
     - PsionicallyInsulated
+    - RadiationProtection
+    - Drowsiness
   - type: Blindable
   # Other
   - type: Temperature
