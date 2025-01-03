@@ -92,7 +92,7 @@ namespace Content.Server.StationEvents
         ///     to even exist) so I think it's fine.
         /// </remarks>
         [CommandImplementation("simulate")]
-        public IEnumerable<(string, float)> Simulate([CommandArgument] int rounds, [CommandArgument] int playerCount, [CommandArgument] float roundEndMean, [CommandArgument] float roundEndStdDev)
+        public IEnumerable<(string, float)> Simulate(EntityPrototype eventScheduler, int rounds, int playerCount, float roundEndMean, float roundEndStdDev)
         {
             _stationEvent ??= GetSys<EventManagerSystem>();
             _basicScheduler ??= GetSys<BasicStationEventSchedulerSystem>();

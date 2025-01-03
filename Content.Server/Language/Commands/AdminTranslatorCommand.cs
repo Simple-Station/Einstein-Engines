@@ -26,12 +26,11 @@ public sealed class AdminTranslatorCommand : ToolshedCommand
     public EntityUid AddLanguage(
         [CommandInvocationContext] IInvocationContext ctx,
         [PipedArgument] EntityUid input,
-        [CommandArgument] ValueRef<string, Prototype<LanguagePrototype>> @ref,
+        [CommandArgument] ProtoId<LanguagePrototype> language,
         [CommandArgument] bool addSpeak = true,
         [CommandArgument] bool addUnderstand = true
     )
     {
-        var language = @ref.Evaluate(ctx)!;
         // noob trap - needs a universallanguagespeakercomponent
         if (language == SharedLanguageSystem.UniversalPrototype)
             throw new ArgumentException(Loc.GetString("command-language-error-this-will-not-work"));
@@ -53,12 +52,11 @@ public sealed class AdminTranslatorCommand : ToolshedCommand
     public EntityUid RemoveLanguage(
         [CommandInvocationContext] IInvocationContext ctx,
         [PipedArgument] EntityUid input,
-        [CommandArgument] ValueRef<string, Prototype<LanguagePrototype>> @ref,
+        [CommandArgument] ProtoId<LanguagePrototype> language,
         [CommandArgument] bool removeSpeak = true,
         [CommandArgument] bool removeUnderstand = true
     )
     {
-        var language = @ref.Evaluate(ctx)!;
         if (!TryGetTranslatorComp(input, out var translator))
             throw new ArgumentException(Loc.GetString("command-language-error-not-a-translator", ("entity", input)));
 
@@ -76,9 +74,8 @@ public sealed class AdminTranslatorCommand : ToolshedCommand
     public EntityUid AddRequiredLanguage(
         [CommandInvocationContext] IInvocationContext ctx,
         [PipedArgument] EntityUid input,
-        [CommandArgument] ValueRef<string, Prototype<LanguagePrototype>> @ref)
+        [CommandArgument] ProtoId<LanguagePrototype> language)
     {
-        var language = @ref.Evaluate(ctx)!;
         if (!TryGetTranslatorComp(input, out var translator))
             throw new ArgumentException(Loc.GetString("command-language-error-not-a-translator", ("entity", input)));
 
@@ -95,9 +92,8 @@ public sealed class AdminTranslatorCommand : ToolshedCommand
     public EntityUid RemoveRequiredLanguage(
         [CommandInvocationContext] IInvocationContext ctx,
         [PipedArgument] EntityUid input,
-        [CommandArgument] ValueRef<string, Prototype<LanguagePrototype>> @ref)
+        [CommandArgument] ProtoId<LanguagePrototype> language)
     {
-        var language = @ref.Evaluate(ctx)!;
         if (!TryGetTranslatorComp(input, out var translator))
             throw new ArgumentException(Loc.GetString("command-language-error-not-a-translator", ("entity", input)));
 

@@ -3,6 +3,7 @@ using Content.Server.Administration;
 using Content.Server.Station.Systems;
 using Content.Shared.Administration;
 using Content.Shared.Roles;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Toolshed;
 using Robust.Shared.Toolshed.Syntax;
 using Robust.Shared.Toolshed.TypeParsers;
@@ -26,28 +27,24 @@ public sealed class JobsCommand : ToolshedCommand
     }
 
     [CommandImplementation("jobs")]
-    public IEnumerable<JobSlotRef> Jobs([PipedArgument] IEnumerable<EntityUid> stations)
-        => stations.SelectMany(Jobs);
+    public IEnumerable<JobSlotRef> Jobs([PipedArgument] IEnumerable<EntityUid> stations) => stations.SelectMany(Jobs);
 
     [CommandImplementation("job")]
-    public JobSlotRef Job([PipedArgument] EntityUid station, Prototype<JobPrototype> job)
+    public JobSlotRef Job([PipedArgument] EntityUid station, ProtoId<JobPrototype> job)
     {
         _jobs ??= GetSys<StationJobsSystem>();
 
-        return new JobSlotRef(job.Value.ID, station, _jobs, EntityManager);
+        return new JobSlotRef(job, station, _jobs, EntityManager);
     }
 
     [CommandImplementation("job")]
-    public IEnumerable<JobSlotRef> Job([PipedArgument] IEnumerable<EntityUid> stations, Prototype<JobPrototype> job)
-        => stations.Select(x => Job(x, job));
+    public IEnumerable<JobSlotRef> Job([PipedArgument] IEnumerable<EntityUid> stations, ProtoId<JobPrototype> job) => stations.Select(x => Job(x, job));
 
     [CommandImplementation("isinfinite")]
-    public bool IsInfinite([PipedArgument] JobSlotRef job, [CommandInverted] bool inverted)
-        => job.Infinite() ^ inverted;
+    public bool IsInfinite([PipedArgument] JobSlotRef job, [CommandInverted] bool inverted) => job.Infinite() ^ inverted;
 
     [CommandImplementation("isinfinite")]
-    public IEnumerable<bool> IsInfinite([PipedArgument] IEnumerable<JobSlotRef> jobs, [CommandInverted] bool inverted)
-        => jobs.Select(x => IsInfinite(x, inverted));
+    public IEnumerable<bool> IsInfinite([PipedArgument] IEnumerable<JobSlotRef> jobs, [CommandInverted] bool inverted) => jobs.Select(x => IsInfinite(x, inverted));
 
     [CommandImplementation("adjust")]
     public JobSlotRef Adjust([PipedArgument] JobSlotRef @ref, int by)
@@ -58,8 +55,7 @@ public sealed class JobsCommand : ToolshedCommand
     }
 
     [CommandImplementation("adjust")]
-    public IEnumerable<JobSlotRef> Adjust([PipedArgument] IEnumerable<JobSlotRef> @ref, int by)
-        => @ref.Select(x => Adjust(x, by));
+    public IEnumerable<JobSlotRef> Adjust([PipedArgument] IEnumerable<JobSlotRef> @ref, int by) => @ref.Select(x => Adjust(x, by));
 
 
     [CommandImplementation("set")]
@@ -71,20 +67,18 @@ public sealed class JobsCommand : ToolshedCommand
     }
 
     [CommandImplementation("set")]
-    public IEnumerable<JobSlotRef> Set([PipedArgument] IEnumerable<JobSlotRef> @ref, int by)
-        => @ref.Select(x => Set(x, by));
+    public IEnumerable<JobSlotRef> Set([PipedArgument] IEnumerable<JobSlotRef> @ref, int by) => @ref.Select(x => Set(x, by));
 
     [CommandImplementation("amount")]
     public uint Amount([PipedArgument] JobSlotRef @ref)
     {
         _jobs ??= GetSys<StationJobsSystem>();
         _jobs.TryGetJobSlot(@ref.Station, @ref.Job, out var slots);
-        return slots.HasValue ? slots.Value : 0;
+        return slots ?? 0;
     }
 
     [CommandImplementation("amount")]
-    public IEnumerable<uint> Amount([PipedArgument] IEnumerable<JobSlotRef> @ref)
-        => @ref.Select(Amount);
+    public IEnumerable<uint> Amount([PipedArgument] IEnumerable<JobSlotRef> @ref) => @ref.Select(Amount);
 }
 
 // Used for Toolshed queries.
