@@ -103,7 +103,7 @@ public abstract partial class SharedProjectileSystem : EntitySystem
         RemoveEmbed(uid, component, args.User);
     }
 
-    private void RemoveEmbed(EntityUid uid, EmbeddableProjectileComponent component, EntityUid? remover = null)
+    public void RemoveEmbed(EntityUid uid, EmbeddableProjectileComponent component, EntityUid? remover = null)
     {
         component.AutoRemoveTime = null;
         component.Target = null;
