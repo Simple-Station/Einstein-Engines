@@ -206,6 +206,17 @@
       group: LoadoutNeck
 
 - type: loadout
+  id: LoadoutItemsPrideGayPin
+  category: Neck
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingNeckGayPin
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+
+- type: loadout
   id: LoadoutItemsPrideIntersexPin
   category: Neck
   cost: 0

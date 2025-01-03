@@ -247,6 +247,8 @@
         - !type:EntSelector
           id: ClothingNeckIntersexPin
         - !type:EntSelector
+          id: ClothingNeckGayPin
+        - !type:EntSelector
           id: ClothingNeckLesbianPin
         - !type:EntSelector
           id: ClothingNeckNonBinaryPin
