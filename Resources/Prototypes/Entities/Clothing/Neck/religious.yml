@@ -1,0 +1,87 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCrucifixColor
+  name: crucifix
+  description: A small cross on a piece of string. Commonly associated with the Christian faith, it is a main symbol of this religion.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Crucifixes/color.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Crucifixes/color.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCrucifixColorSaintPeter
+  name: Saint Peter crucifix
+  description: A small cross on a piece of string. Being inverted and thus upside down marks it as the cross of Saint Peter.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Crucifixes/color-inverted.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Crucifixes/color-inverted.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCrucifixGold
+  name: gold crucifix
+  description: A small, gold cross on a piece of string. Commonly associated with the Christian faith, it is a main symbol of this religion.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Crucifixes/gold.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Crucifixes/gold.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCrucifixGoldSaintPeter
+  name: gold Saint Peter crucifix
+  description: A small, gold cross on a piece of string. Being inverted and thus upside down marks it as the cross of Saint Peter.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Crucifixes/gold-inverted.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Crucifixes/gold-inverted.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCrucifixSilver
+  name: silver crucifix
+  description: A small, silver cross on a piece of string. Commonly associated with the Christian faith, it is a main symbol of this religion.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Crucifixes/silver.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Crucifixes/silver.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCrucifixSilverSaintPeter
+  name: silver Saint Peter crucifix
+  description: A small, silver cross on a piece of string. Being inverted and thus upside down marks it as the cross of Saint Peter.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Crucifixes/silver-inverted.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Crucifixes/silver-inverted.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckScapular
+  name: scapular
+  description: As Christian garment that serves to remind the wearer of their commitment to live a Christian life.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Misc/scapular.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Misc/scapular.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckTallit
+  name: tallit
+  description: A fringed garment worn as a prayer shawl by Jewish people.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Misc/tallit.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Misc/tallit.rsi
