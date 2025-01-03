@@ -1,0 +1,568 @@
+<Document>
+  # Space Law: Crime Listing
+  Crime codes are colored by linked crime groups, which are collections of non-stackable crimes. Suffixes are also included in the Quick Crime Guide to identify linked crimes. Highest applies.
+
+  ## Quick Crime Guide
+  <Table Columns="7">
+    <ColorBox>
+      <Box>
+        Code
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#4caf50">
+      <Box>
+        M-XX - Modifier
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        §0-XX - Infraction
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        §1-XX - Minor
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        §2-XX - Moderate
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        §3-XX - Major
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        §4-XX - Capital
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        1
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#4caf50">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Clear Danger
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#ffebee">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Disorderly Conduct (V)
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#ffebee">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Assault (V)
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#ffebee">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Aggravated Assault (V)
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#ffebee">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Murder (V)
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#ffebee">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Prime/Mass Murder (V)
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        2
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#4caf50">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Elevated Sentencing
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#607d8b">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Pick-pocketing (T)
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#607d8b">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Theft (T)
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#607d8b">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Larceny (T)
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#607d8b">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Grand Larceny (T)
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        3
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#4caf50">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Self Defense
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#ff9100">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Superficial Vandalism (S)
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#ff9100">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Minor Vandalism (S)
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#ff9100">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Vandalism, Major (S)
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#ff9100">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Sabotage (S)
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#ff9100">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Grand Sabotage (S)
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        4
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#4caf50">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Non Compos Mentis
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Vigilantism
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#d500f9">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Conspiracy (C)
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#d500f9">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        High Conspiracy (C)
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#d500f9">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Espionage (C)
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        5
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#4caf50">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Griseo Maris
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Drug Possession
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Illegal Distribution
+      </Box>
+    </ColorBox>
+    <ColorBox Color="ff0000">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Hostile Agent (A)
+      </Box>
+    </ColorBox>
+    <ColorBox Color="ff0000">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Hostile Activity (A)
+      </Box>
+    </ColorBox>
+    <ColorBox Color="ff0000">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Enemy of the Corporation (A)
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        6
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#4caf50">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Resisting Arrest
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Disruptive Communications
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Disturbing the Peace
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#ff9100">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Possession, Contraband Equipmment (P)
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#ff9100">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Possession, Dangerous Contraband (P)
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#ff9100">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Possession, Corporate Secrets (P)
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        7
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#4caf50">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Escaped Prisoner
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#134975">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Rioting (R)
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#134975">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Inciting a Riot (R)
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#134975">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Subversion of the Chain of Command (R)
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        8
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#4caf50">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Attempted Crime
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#00e676">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Creating a Hazard (N)
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#00e676">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Negligence (N)
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#00e676">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        High Negligence (N)
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#ffebee">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Manslaughter (V)(N)
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#ffebee">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Biological Terror (V)(N)
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        9
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#4caf50">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#607d8b">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Trespass (T)
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#607d8b">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Trespass, Inherently Dangerous Areas (T)
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#607d8b">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Trespass, High Security Areas (T)
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        10
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#4caf50">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#607d8b">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Breaking and Entering (T)
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#607d8b">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Breaking and Entering, Inherently Dangerous Areas (T)
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#607d8b">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Breaking and Entering, High Security Areas (T)
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        11
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#4caf50">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Discriminatory Language
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Insubordination
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#00e676">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Dereliction (N)
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        12
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#4caf50">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#99c2eb">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Fraud (F)
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#99c2eb">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Corporate Fraud (F)
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        13
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#4caf50">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Identity Theft
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        14
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#4caf50">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Kidnapping
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        15
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#4caf50">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Unreported Psionics
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Mindguard Act
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Mindbreaking
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        
+      </Box>
+    </ColorBox>
+  </Table>
+</Document>

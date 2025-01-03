@@ -12,6 +12,7 @@
   - SpaceLawControlledSubstances
   - SpaceLawRestrictedGear
   - SpaceLawRestrictedWeapons
+  - SpaceLawCrimeList
 
 - type: guideEntry
   id: SpaceLawControlledSubstances
@@ -30,3 +31,9 @@
   name: guide-entry-rules-sl-restricted-weapons
   priority: 40
   text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/SLRestrictedWeapons.xml"
+
+- type: guideEntry
+  id: SpaceLawCrimeList
+  name: guide-entry-rules-sl-crime-list
+  priority: 50
+  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/SLCrimeList.xml"
