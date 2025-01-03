@@ -97,10 +97,12 @@ marking-VulpHeadSlash = Vulpkanin Slash
 marking-VulpTail-vulp = Vulpkanin tail (base)
 marking-VulpTail-vulp-fade = Vulpkanin tail (fade)
 marking-VulpTail = Vulpkanin
+marking-VulpTailAnimated = Vulpkanin (animated)
 
 marking-VulpTailTip-vulp = Vulpkanin tail (base)
 marking-VulpTailTip-vulp-tip = Vulpkanin tail (tip)
 marking-VulpTailTip = Vulpkanin (tip)
+marking-VulpTailTipAnimated = Vulpkanin (tip) (animated)
 
 marking-VulpTailAlt-vulp_alt = Vulpkanin tail (base)
 marking-VulpTailAlt-vulp_alt-fade = Vulpkanin tail (fade)
@@ -117,16 +119,20 @@ marking-VulpTailLong = Vulpkanin Long
 marking-VulpTailFox-fox = Fox tail (base)
 marking-VulpTailFox-fox-fade = Fox tail (fade)
 marking-VulpTailFox = Vulpkanin Fox
+marking-VulpTailFoxAnimated = Vulpkanin Fox (animated)
 
 marking-VulpTailFoxTip-fox = Fox tail (base)
 marking-VulpTailFoxTip-fox-tip = Fox tail (fade)
 marking-VulpTailFoxTip = Vulpkanin Fox (tip)
+marking-VulpTailFoxTipAnimated = Vulpkanin Fox (tip) (animated)
 
 marking-VulpTailBushy-bushfluff = Bush tail
 marking-VulpTailBushy = Vulpkanin Bush
+marking-VulpTailBushyAnimated = Vulpkanin Bush (animated)
 
 marking-VulpTailCoyote-coyote = Coyote tail
 marking-VulpTailCoyote = Vulpkanin Coyote
+marking-VulpTailCoyoteAnimated = Vulpkanin Coyote (animated)
 
 marking-VulpTailHusky-husky-inner = Husky tail (inner)
 marking-VulpTailHusky-husky-outer = Husky tail (outer)
@@ -153,10 +159,11 @@ marking-VulpTailFluffy = Vulpkanin Fluffy
 
 marking-VulpTailCorgi-corgi = Crogi tail
 marking-VulpTailCorgi = Vulpkanin Corgi
+marking-VulpTailCorgiAnimated = Vulpkanin Corgi (animated)
 
 marking-VulpTailDalmatian-dalmatian = Dalmatian tail
 marking-VulpTailDalmatian = Vulpkanin Dalmatian
-
+marking-VulpTailDalmatianAnimated = Vulpkanin Dalmatian (animated)
 
 marking-VulpBellyCrest-belly_crest = Belly
 marking-VulpBellyCrest = Vulpkanin Belly Crest
