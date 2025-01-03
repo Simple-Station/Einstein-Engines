@@ -2,21 +2,16 @@ using System.Linq;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Customization.Systems;
-using Content.Shared.GameTicking;
 using Content.Shared.Inventory;
 using Content.Shared.Paint;
 using Content.Shared.Preferences;
 using Content.Shared.Prototypes;
 using Content.Shared.Roles;
 using Content.Shared.Station;
-using Content.Shared.Traits.Assorted.Components;
 using Robust.Shared.Configuration;
-using Robust.Shared.Log;
-using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization;
-
 
 namespace Content.Shared.Clothing.Loadouts.Systems;
 
@@ -29,8 +24,6 @@ public sealed class SharedLoadoutSystem : EntitySystem
     [Dependency] private readonly IConfigurationManager _configuration = default!;
     [Dependency] private readonly CharacterRequirementsSystem _characterRequirements = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-    [Dependency] private readonly INetManager _net = default!;
-
     [Dependency] private readonly SharedTransformSystem _sharedTransformSystem = default!;
 
     private List<CharacterItemGroupPrototype> _groupProtosWithMinItems = new();
@@ -54,7 +47,6 @@ public sealed class SharedLoadoutSystem : EntitySystem
         var proto = _prototype.Index(_random.Pick(component.StartingGear));
         _station.EquipStartingGear(uid, proto);
     }
-
 
     public (List<EntityUid>, List<(EntityUid, LoadoutPreference, int)>) ApplyCharacterLoadout(
         EntityUid uid,
@@ -110,7 +102,7 @@ public sealed class SharedLoadoutSystem : EntitySystem
 
                 // Equip it
                 if (EntityManager.TryGetComponent<ClothingComponent>(item, out var clothingComp)
-                    && _characterRequirements.CanEntityWearItem(uid, item)
+                    && _characterRequirements.CanEntityWearItem(uid, item, true)
                     && _inventory.TryGetSlots(uid, out var slotDefinitions))
                 {
                     foreach (var curSlot in slotDefinitions)
@@ -144,7 +136,6 @@ public sealed class SharedLoadoutSystem : EntitySystem
                     _appearance.TryGetData(item, PaintVisuals.Painted, out bool data);
                     _appearance.SetData(item, PaintVisuals.Painted, !data);
                 }
-
 
                 // Equip the loadout
                 var equipped = false;
@@ -355,7 +346,6 @@ public sealed class SharedLoadoutSystem : EntitySystem
     }
 }
 
-
 [Serializable, NetSerializable, ImplicitDataDefinitionForInheritors]
 public abstract partial class Loadout
 {
@@ -392,5 +382,5 @@ public sealed partial class LoadoutPreference : Loadout
         string? customDescription = null,
         string? customColorTint = null,
         bool? customHeirloom = null
-        ) : base(loadoutName, customName, customDescription, customColorTint, customHeirloom) { }
+    ) : base(loadoutName, customName, customDescription, customColorTint, customHeirloom) { }
 }

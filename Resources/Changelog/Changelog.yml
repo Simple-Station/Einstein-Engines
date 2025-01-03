@@ -8965,3 +8965,90 @@ Entries:
   id: 6608
   time: '2025-01-02T03:27:48.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1395
+- author: sapphirescript
+  changes:
+    - type: Tweak
+      message: You can no longer cocoon yourself as a spider.
+  id: 6609
+  time: '2025-01-02T04:57:27.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1396
+- author: sapphirescript
+  changes:
+    - type: Fix
+      message: Supermatter's guide has a name now
+  id: 6610
+  time: '2025-01-02T14:48:11.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1398
+- author: sapphirescript
+  changes:
+    - type: Fix
+      message: The 'kα Deficiency' trait has a description now
+  id: 6611
+  time: '2025-01-02T14:49:06.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1402
+- author: Remuchi
+  changes:
+    - type: Add
+      message: CPR now automatically repeats itself.
+    - type: Add
+      message: >-
+        CPR no longer requires you to take the mask off. You can now simply
+        lower it instead.
+    - type: Fix
+      message: Fixed CPR repeating popups x100 times.
+  id: 6612
+  time: '2025-01-02T17:01:54.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1405
+- author: sapphirescript
+  changes:
+    - type: Add
+      message: Face markings are now in their own category
+    - type: Fix
+      message: IPC screens no longer show up above hair
+  id: 6613
+  time: '2025-01-02T17:35:34.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1400
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: 'Added the GR4YT1D3 Virus event. '
+  id: 6614
+  time: '2025-01-02T17:36:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1293
+- author: sapphirescript
+  changes:
+    - type: Tweak
+      message: The splash screen logo now fits inside the default window
+  id: 6615
+  time: '2025-01-02T21:08:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1403
+- author: Remuchi
+  changes:
+    - type: Fix
+      message: Loadouts should now properly be applied when spawning in cryopods.
+  id: 6616
+  time: '2025-01-02T21:11:12.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1406
+- author: sapphirescript
+  changes:
+    - type: Fix
+      message: Fix Shiva's name and description displaying improperly in ghost roles
+  id: 6617
+  time: '2025-01-02T21:12:42.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1404
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Lots of refactoring of the Mob State Systerm in preparation for
+        implementing a much more detailed Soft Critical state.
+  id: 6618
+  time: '2025-01-02T23:12:28.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1382
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: Fixed magboots being toggled crashing the server.
+  id: 6619
+  time: '2025-01-03T04:32:00.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1413

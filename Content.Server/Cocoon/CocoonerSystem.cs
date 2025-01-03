@@ -54,7 +54,7 @@ namespace Content.Server.Cocoon
 
         private void AddCocoonVerb(EntityUid uid, CocoonerComponent component, GetVerbsEvent<InnateVerb> args)
         {
-            if (!args.CanAccess || !args.CanInteract || !HasComp<MobStateComponent>(args.Target))
+            if (!args.CanAccess || !args.CanInteract || !HasComp<MobStateComponent>(args.Target) || args.Target == args.User)
                 return;
 
             InnateVerb verb = new()
