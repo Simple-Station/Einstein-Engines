@@ -20,6 +20,17 @@
         Heat: 0.80
   - type: ExplosionResistance
     damageCoefficient: 0.90
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 9.6 # Assuming a level 3 bulletproof vest weighs 2.4kg
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
 
 #Alternate / slim basic armor vest
 - type: entity
