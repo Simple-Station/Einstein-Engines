@@ -68,7 +68,7 @@
   parent: ClothingNeckBase
   id: ClothingNeckScapular
   name: scapular
-  description: As Christian garment that serves to remind the wearers of their commitment to live a Christian life.
+  description: As Christian garment that serves to remind the wearer of their commitment to live a Christian life.
   components:
   - type: Sprite
     sprite: Clothing/Neck/Misc/scapular.rsi
@@ -79,7 +79,7 @@
   parent: ClothingNeckBase
   id: ClothingNeckTallit
   name: tallit
-  description: A fringed garment worn as a prayer shawl by religious Jews.
+  description: A fringed garment worn as a prayer shawl by Jewish people.
   components:
   - type: Sprite
     sprite: Clothing/Neck/Misc/tallit.rsi
