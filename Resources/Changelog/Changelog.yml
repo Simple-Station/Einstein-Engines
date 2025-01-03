@@ -9045,3 +9045,10 @@ Entries:
   id: 6618
   time: '2025-01-02T23:12:28.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1382
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: Fixed magboots being toggled crashing the server.
+  id: 6619
+  time: '2025-01-03T04:32:00.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1413
