@@ -271,6 +271,98 @@
     - !type:CharacterItemGroupRequirement
       group: LoadoutNeck
 
+# Religious
+- type: loadout
+  id: LoadoutNeckCrucifixColor
+  category: Neck
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingNeckCrucifixColor
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutNeckCrucifixColorSaintPeter
+  category: Neck
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingNeckCrucifixColorSaintPeter
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutNeckCrucifixGold
+  category: Neck
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingNeckCrucifixGold
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutNeckCrucifixGoldSaintPeter
+  category: Neck
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingNeckCrucifixGoldSaintPeter
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutNeckCrucifixSilver
+  category: Neck
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingNeckCrucifixSilver
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutNeckCrucifixSilverSaintPeter
+  category: Neck
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingNeckCrucifixSilverSaintPeter
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutNeckScapular
+  category: Neck
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingNeckScapular
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutNeckTallit
+  category: Neck
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingNeckTallit
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+
 # Bedsheets
 - type: loadout
   id: LoadoutNeckBedsheetCosmos
