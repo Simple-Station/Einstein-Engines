@@ -69,3 +69,31 @@
       id: LoadoutOuterCoatInspector
     - type: loadout
       id: LoadoutOuterCoatOvercoat
+    - type: loadout
+      id: LoadoutOuterBomberAerostatic
+    - type: loadout
+      id: LoadoutOuterBomberPunkRed
+    - type: loadout
+      id: LoadingOuterCoatJacketLeather
+    - type: loadout
+      id: LoadoutOuterJacketBiker
+    - type: loadout
+      id: LoadoutOuterJacketJamrock
+    - type: loadout
+      id: LoadoutOuterJacketLettermanBlue
+    - type: loadout
+      id: LoadoutOuterJacketLettermanBrown
+    - type: loadout
+      id: LoadoutOuterJacketLettermanMagenta
+    - type: loadout
+      id: LoadoutOuterJacketLettermanRed
+    - type: loadout
+      id: LoadoutOuterCoatAcidRaincoat
+    - type: loadout
+      id: LoadoutOuterCoatAcidRaincoatBlue
+    - type: loadout
+      id: LoadoutOuterCoatAcidRaincoatGreen
+    - type: loadout
+      id: LoadoutOuterCoatAcidRaincoatMagenta
+    - type: loadout
+      id: LoadoutOuterCoatAcidRaincoatYellow

@@ -351,3 +351,153 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterBomberAerostatic
+  category: Outer
+  cost: 0
+  items:
+    - ClothingOuterCoatBomberAerostatic
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterBomberPunkRed
+  category: Outer
+  cost: 0
+  items:
+    - ClothingOuterCoatBomberPunkRed
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterJacketLeather
+  category: Outer
+  cost: 0
+  items:
+    - ClothingOuterCoatJacketLeather
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterJacketBiker
+  category: Outer
+  cost: 0
+  items:
+    - ClothingOuterCoatJacketBiker
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterJacketJamrock
+  category: Outer
+  cost: 0
+  items:
+    - ClothingOuterCoatJacketJamrock
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterJacketLettermanBlue
+  category: Outer
+  cost: 0
+  items:
+    - ClothingOuterCoatJacketLettermanBlue
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterJacketLettermanBrown
+  category: Outer
+  cost: 0
+  items:
+    - ClothingOuterCoatJacketLettermanBrown
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterJacketLettermanMagenta
+  category: Outer
+  cost: 0
+  items:
+    - ClothingOuterCoatJacketLettermanMagenta
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterJacketLettermanRed
+  category: Outer
+  cost: 0
+  items:
+    - ClothingOuterCoatJacketLettermanRed
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterBomberPinkSleeves
+  category: Outer
+  cost: 0
+  items:
+    - ClothingOuterCoatBomberPinkSleeves
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterCoatAcidRaincoat
+  category: Outer
+  cost: 0
+  items:
+    - ClothingOuterCoatAcidRaincoat
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterCoatAcidRaincoatBlue
+  category: Outer
+  cost: 0
+  items:
+    - ClothingOuterCoatAcidRaincoatBlue
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterCoatAcidRaincoatGreen
+  category: Outer
+  cost: 0
+  items:
+    - ClothingOuterCoatAcidRaincoatGreen
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterCoatAcidRaincoatMagenta
+  category: Outer
+  cost: 0
+  items:
+    - ClothingOuterCoatAcidRaincoatMagenta
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterCoatAcidRaincoatYellow
+  category: Outer
+  cost: 0
+  items:
+    - ClothingOuterCoatAcidRaincoatYellow
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
