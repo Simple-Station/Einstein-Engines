@@ -128,9 +128,6 @@ public partial class ChatBox : UIWidget
         {
             var data = _chatStackList[i];
             AddLine(data.WrappedMessage, data.ColorOverride, data.RepeatCount);
-        }
-        for (int i = index; i >= 0; i--) 
-        {
             Contents.RemoveEntry(Index.FromEnd(index + 2));
         }
     }
