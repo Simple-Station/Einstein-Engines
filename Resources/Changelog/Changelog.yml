@@ -9122,3 +9122,17 @@ Entries:
   id: 6625
   time: '2025-01-04T15:51:12.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1414
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Vacsuits now weigh 68kg instead of 5kg. This matters for Space Wind
+        being a lot less likely to throw them at people.
+    - type: Tweak
+      message: >-
+        Hardsuits and Tacsuits now weigh 100kg instead of 5kg. Also for space
+        wind. They deal 30 damage on throw collision, so it's pretty important
+        that space wind needs a lot of oomph to throw them across the room.
+  id: 6626
+  time: '2025-01-04T16:03:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1411
