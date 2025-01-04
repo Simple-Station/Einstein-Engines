@@ -47,6 +47,7 @@ public sealed partial class ClimbSystem : VirtualController
 
     private EntityQuery<FixturesComponent> _fixturesQuery;
     private EntityQuery<TransformComponent> _xformQuery;
+    private EntityQuery<ClimbableComponent> _climbableQuery;
 
     public override void Initialize()
     {

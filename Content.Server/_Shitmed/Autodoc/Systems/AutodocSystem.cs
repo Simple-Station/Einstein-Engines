@@ -6,7 +6,8 @@ using Content.Shared.DoAfter;
 using Content.Server.Power.EntitySystems;
 using Content.Shared._Shitmed.Autodoc.Components;
 using Content.Shared._Shitmed.Autodoc.Systems;
-using Content.Server.Bed.Sleep;
+using Content.Shared.Bed.Sleep;
+
 
 namespace Content.Server._Shitmed.Autodoc.Systems;
 
@@ -15,7 +16,7 @@ public sealed class AutodocSystem : SharedAutodocSystem
     [Dependency] private readonly InternalsSystem _internals = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly PowerReceiverSystem _power = default!;
-    [Dependency] private readonly SleepingSystem _sleepingSystem = default!; // Sleeping isnt shared yet.
+    [Dependency] private readonly SleepingSystem _sleepingSystem = default!;
 
     public override void Update(float frameTime)
     {
