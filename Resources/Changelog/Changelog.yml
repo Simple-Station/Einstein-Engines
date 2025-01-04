@@ -9061,3 +9061,14 @@ Entries:
   id: 6620
   time: '2025-01-04T11:02:24.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1420
+- author: angelofallars
+  changes:
+    - type: Add
+      message: >-
+        Added religious neckwear to loadouts, such as Crucifix (with a colorable
+        option), Scapular and Tallit.
+    - type: Tweak
+      message: Added the gay male pride pin to loadouts and the Pride-O-Mat.
+  id: 6621
+  time: '2025-01-04T15:23:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1416
