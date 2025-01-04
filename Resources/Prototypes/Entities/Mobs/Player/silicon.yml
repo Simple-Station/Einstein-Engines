@@ -2,7 +2,7 @@
 - type: entity
   id: AiHeld
   description: Components added / removed from an entity that gets inserted into an AI core.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: IntrinsicRadioReceiver
   - type: IntrinsicRadioTransmitter
@@ -286,7 +286,7 @@
   id: StationAiHolo
   name: Hologram
   description: A projection of the AI.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   suffix: DO NOT MAP
   components:
   - type: Eye
