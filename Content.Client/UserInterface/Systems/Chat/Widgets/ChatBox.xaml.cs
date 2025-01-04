@@ -98,7 +98,7 @@ public partial class ChatBox : UIWidget
             return;
         }
 
-        int index = _chatStackList.FindIndex(data => data.WrappedMessage == msg.WrappedMessage && !data.IgnoresChatStack);
+        int index = _chatStackList.FindIndex(data => data.WrappedMessage == msg.WrappedMessage && !data.IgnoresChatstack);
 
         if (index == -1) // this also handles chatstack being disabled, since FindIndex won't find anything in an empty array
         {
@@ -287,7 +287,7 @@ public partial class ChatBox : UIWidget
         {
             WrappedMessage = wrappedMessage;
             ColorOverride = colorOverride;
-            IgnoresChatstack = IgnoresChatstack;    
+            IgnoresChatstack = ignoresChatstack;
         }
     }
 }
