@@ -51,7 +51,7 @@
   components:
   - type: BallisticAmmoProvider
     capacity: 200
-    proto: CartridgeRiflePractice
+    proto: CartridgeRifleRubber
   - type: Sprite
     layers:
     - state: base-b

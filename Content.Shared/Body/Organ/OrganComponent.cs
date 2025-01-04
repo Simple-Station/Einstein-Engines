@@ -1,15 +1,14 @@
 using Content.Shared.Body.Systems;
-using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
-using Content.Shared.Medical.Surgery;
-using Content.Shared.Medical.Surgery.Tools;
-using Robust.Shared.Prototypes;
+using Robust.Shared.Prototypes; // Shitmed Change
+using Content.Shared._Shitmed.Medical.Surgery; // Shitmed Change
+using Content.Shared._Shitmed.Medical.Surgery.Tools; // Shitmed Change
 
 namespace Content.Shared.Body.Organ;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
-[Access(typeof(SharedBodySystem), typeof(SharedSurgerySystem))]
-public sealed partial class OrganComponent : Component, ISurgeryToolComponent
+[Access(typeof(SharedBodySystem), typeof(SharedSurgerySystem))] // Shitmed Change
+public sealed partial class OrganComponent : Component, ISurgeryToolComponent // Shitmed Change
 {
     /// <summary>
     /// Relevant body this organ is attached to.
@@ -18,15 +17,16 @@ public sealed partial class OrganComponent : Component, ISurgeryToolComponent
     public EntityUid? Body;
 
     /// <summary>
-    ///     Relevant body this organ originally belonged to.
-    ///     ///     FOR WHATEVER FUCKING REASON AUTONETWORKING THIS CRASHES GIBTEST AAAAAAAAAAAAAAA
+    ///     Shitmed Change:Relevant body this organ originally belonged to.
+    ///     FOR WHATEVER FUCKING REASON AUTONETWORKING THIS CRASHES GIBTEST AAAAAAAAAAAAAAA
     /// </summary>
     [DataField]
     public EntityUid? OriginalBody;
 
+    // Shitmed Change Start
     /// <summary>
-    /// Shitcodey solution to not being able to know what name corresponds to each organ's slot ID
-    /// without referencing the prototype or hardcoding.
+    ///     Shitmed Change: Shitcodey solution to not being able to know what name corresponds to each organ's slot ID
+    ///     without referencing the prototype or hardcoding.
     /// </summary>
 
     [DataField, AlwaysPushInheritance]
@@ -39,10 +39,11 @@ public sealed partial class OrganComponent : Component, ISurgeryToolComponent
     public float Speed { get; set; } = 1f;
 
     /// <summary>
-    ///  If true, the organ will not heal an entity when transplanted into them.
+    ///     Shitmed Change: If true, the organ will not heal an entity when transplanted into them.
     /// </summary>
     [DataField, AutoNetworkedField]
     public bool? Used { get; set; }
+
 
     /// <summary>
     ///     When attached, the organ will ensure these components on the entity, and delete them on removal.
@@ -67,4 +68,5 @@ public sealed partial class OrganComponent : Component, ISurgeryToolComponent
     /// </summary>
     [DataField]
     public bool CanEnable = true;
+    // Shitmed Change End
 }

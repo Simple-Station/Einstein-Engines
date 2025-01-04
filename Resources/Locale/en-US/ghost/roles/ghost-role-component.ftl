@@ -10,6 +10,15 @@ ghost-role-information-mouse-description = A hungry and mischievous mouse.
 ghost-role-information-mothroach-name = Mothroach
 ghost-role-information-mothroach-description = A cute but mischievous mothroach.
 
+ghost-role-information-snail-name = Snail
+ghost-role-information-snail-description = A little snail who doesn't mind a bit of space. Just stay on grid!
+
+ghost-role-information-snailspeed-name = Snail
+ghost-role-information-snailspeed-description = A little snail with snailborn thrusters.
+
+ghost-role-information-snoth-name = Snoth
+ghost-role-information-snoth-description = A little snoth who doesn't mind a bit of space. Just stay on grid!
+
 ghost-role-information-giant-spider-name = Giant spider
 ghost-role-information-giant-spider-description = This station's inhabitants look mighty tasty, and your sticky web is perfect to catch them!
 
@@ -247,6 +256,9 @@ ghost-role-information-syndie-disaster-victim-rules = Normal station crew rules 
 ghost-role-information-syndicate-kobold-reinforcement-name = Syndicate Kobold Agent
 ghost-role-information-syndicate-kobold-reinforcement-description = Someone needs reinforcements. You, a trained kobold, will help them.
 ghost-role-information-syndicate-kobold-reinforcement-rules = Normal syndicate antagonist rules apply. Work with whoever called you in, and don't harm them.
+
+ghost-role-information-shiva-name = Shiva
+ghost-role-information-shiva-description = The first defender of the station.
 
 ghost-role-information-artifact-name = Sentient Artifact
 ghost-role-information-artifact-description =

@@ -767,6 +767,13 @@
   items:
     - DrinkVacuumFlask
 
+- type: loadout
+  id: LoadoutItemCaneBlind
+  category: Items
+  cost: 0 # It shouldnt cost points to be able to function.
+  items:
+    - WhiteCane
+
 # Pets
 - type: loadout
   id: LoadoutItemPetMouse

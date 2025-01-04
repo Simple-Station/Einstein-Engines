@@ -6,13 +6,6 @@
   - type: Sprite
     sprite: Mobs/Species/Human/organs.rsi
   - type: Organ
-
-- type: entity
-  id: BaseHumanOrgan
-  parent: BaseHumanOrganUnGibbable
-  abstract: true
-  components:
-  - type: Gibbable
   - type: Food
   - type: Extractable
     grindableSolutionName: organ
@@ -34,6 +27,14 @@
     tags:
       - Meat
 
+
+- type: entity
+  id: BaseHumanOrgan
+  parent: BaseHumanOrganUnGibbable
+  abstract: true
+  components:
+  - type: Gibbable
+
 - type: entity
   id: OrganHumanBrain
   parent: BaseHumanOrganUnGibbable
@@ -43,7 +44,7 @@
   - type: Sprite
     state: brain
   - type: Organ
-    slotId: brain
+    slotId: brain # Shitmed Change
   - type: Input
     context: "ghost"
   - type: Brain
@@ -68,16 +69,20 @@
   - type: FlavorProfile
     flavors:
       - people
-
+  - type: FoodSequenceElement
+    entries:
+      Burger: Brain
+      Taco: Brain
+  
 - type: entity
   id: OrganHumanEyes
   parent: BaseHumanOrgan
   name: eyes
   description: "I see you!"
   components:
-  - type: Organ
-    slotId: eyes
-  - type: Eyes
+  - type: Organ # Shitmed Change
+    slotId: eyes # Shitmed Change
+  - type: Eyes # Shitmed Change
   - type: Sprite
     layers:
       - state: eyeball-l
@@ -111,7 +116,7 @@
   components:
   - type: Sprite
     state: ears
-  - type: Ears
+  - type: Ears # Shitmed Change
 
 - type: entity
   id: OrganHumanLungs
@@ -119,13 +124,13 @@
   name: lungs
   description: "Filters oxygen from an atmosphere, which is then sent into the bloodstream to be used as an electron carrier."
   components:
+  - type: Organ # Shitmed Change
+    slotId: lungs # Shitmed Change
   - type: Sprite
     layers:
       - state: lung-l
       - state: lung-r
   - type: Lung
-  - type: Organ
-    slotId: lungs
   - type: Metabolizer
     removeEmpty: true
     solutionOnBody: false
@@ -155,9 +160,9 @@
   name: heart
   description: "I feel bad for the heartless bastard who lost this."
   components:
-  - type: Heart
-  - type: Organ
-    slotId: heart
+  - type: Heart # Shitmed Change
+  - type: Organ # Shitmed Change
+    slotId: heart # Shitmed Change
   - type: Sprite
     state: heart-on
   # The heart 'metabolizes' medicines and poisons that aren't filtered out by other organs.
@@ -177,6 +182,8 @@
   name: stomach
   description: "Gross. This is hard to stomach."
   components:
+  - type: Organ # Shitmed Change
+    slotId: stomach # Shitmed Change
   - type: Sprite
     state: stomach
   - type: SolutionContainerManager
@@ -189,8 +196,6 @@
         - ReagentId: UncookedAnimalProteins
           Quantity: 5
   - type: Stomach
-  - type: Organ
-    slotId: stomach
   # The stomach metabolizes stuff like foods and drinks.
   # TODO: Have it work off of the ent's solution container, and move this
   # to intestines instead.
@@ -208,9 +213,9 @@
   name: liver
   description: "Pairing suggestion: chianti and fava beans."
   components:
-  - type: Liver
-  - type: Organ
-    slotId: liver
+  - type: Liver # Shitmed Change
+  - type: Organ # Shitmed Change
+    slotId: liver # Shitmed Change
   - type: Sprite
     state: liver
   - type: Metabolizer # The liver metabolizes certain chemicals only, like alcohol.
@@ -226,6 +231,8 @@
   name: kidneys
   description: "Filters toxins from the bloodstream."
   components:
+  - type: Organ # Shitmed
+    slotId: kidneys
   - type: Sprite
     layers:
       - state: kidney-l

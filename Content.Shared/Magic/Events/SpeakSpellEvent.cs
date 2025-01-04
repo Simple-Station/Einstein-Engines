@@ -1,4 +1,4 @@
-﻿using Content.Shared.Chat;
+using Content.Shared.Chat;
 
 namespace Content.Shared.Magic.Events;
 

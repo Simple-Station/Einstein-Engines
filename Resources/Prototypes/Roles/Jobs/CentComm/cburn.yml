@@ -1,0 +1,14 @@
+- type: job
+  id: CBURN
+  name: job-name-cburn
+  description: job-description-cburn
+  playTimeTracker: JobCBURN
+  setPreference: false
+  startingGear: CBURNGear
+  icon: "JobIconNanotrasen"
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand

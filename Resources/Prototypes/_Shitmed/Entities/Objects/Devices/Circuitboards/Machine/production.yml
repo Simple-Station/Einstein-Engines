@@ -1,0 +1,53 @@
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: AutodocCircuitboard
+  name: autodoc machine board
+  description: A machine printed circuit board for an autodoc.
+  components:
+  - type: MachineBoard
+    prototype: Autodoc
+    requirements:
+      Manipulator: 4
+    materialRequirements:
+      Cable: 3
+      Steel: 10
+    tagRequirements:
+      BorgArm:
+        Amount: 3
+        ExamineName: "Borg Arm"
+        DefaultPrototype: LeftArmBorg
+
+- type: entity
+  parent: AutodocCircuitboard
+  id: AutodocSyndieCircuitboard
+  suffix: Syndie
+  components:
+  - type: MachineBoard
+    prototype: AutodocSyndie
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: OperatingTableCircuitboard
+  name: operating table machine board
+  description: A machine printed circuit board for an operating table.
+  components:
+  - type: MachineBoard
+    prototype: OperatingTable
+    materialRequirements:
+      Cable: 3
+      Silver: 2
+      Steel: 4
+
+- type: entity
+  id: MedicalBiofabMachineBoard
+  parent: BaseMachineCircuitboard
+  name: medical biofab machine board
+  description: A machine printed circuit board for a medical biofab.
+  components:
+  - type: Sprite
+    state: medical
+  - type: MachineBoard
+    prototype: MedicalBiofabricator
+    requirements:
+      MatterBin: 2
+      Manipulator: 2
