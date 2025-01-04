@@ -26,6 +26,17 @@
   - type: Tag
     tags:
       - WhitelistChameleon
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 22
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
 
 - type: entity
   abstract: true
@@ -159,6 +170,17 @@
     staminaCost: 44
     soundHit:
       collection: MetalThud
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 400 # According to Google, a NASA Eva Suit weighs 68kg. Since Hardsuits are "Armored", I'm setting it to 100kg
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
 
 - type: entity
   abstract: true
@@ -186,6 +208,17 @@
     unequipDelay: 1
   - type: ClothingRequiredStepTriggerImmune
     slots: WITHOUT_POCKET
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 272 # According to Google, a NASA Eva Suit weighs 68kg. Thus, my reference.
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
 
 - type: entity
   parent: ClothingOuterBase
