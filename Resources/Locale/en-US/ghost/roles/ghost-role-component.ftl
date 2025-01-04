@@ -140,7 +140,11 @@ ghost-role-information-holoclown-name = Holoclown
 ghost-role-information-holoclown-description = Listen to your owner. Utilize your pockets and hand to help your owner.
 
 ghost-role-information-ifrit-name = Ifrit
-ghost-role-information-ifrit-description = Listen to your owner. Don't tank damage. Punch people hard.
+ghost-role-information-ifrit-description = The mystagogue's servant.
+ghost-role-information-ifrit-rules = A fire spirit originating from Gehenna, you have been summoned by the mystagogue. Follow them around and don't cause any trouble unless they tell you to.
+
+ghost-role-information-ifrit-wizard-name = Ifrit (Wizard Summon)
+ghost-role-information-ifrit-wizard-description = Listen to your owner. Don't tank damage. Punch people hard.
 
 ghost-role-information-space-dragon-name = Space dragon
 ghost-role-information-space-dragon-description = Call in 3 carp rifts and take over this quadrant! You have only 5 minutes in between each rift before you will disappear.
@@ -256,6 +260,9 @@ ghost-role-information-syndie-disaster-victim-rules = Normal station crew rules 
 ghost-role-information-syndicate-kobold-reinforcement-name = Syndicate Kobold Agent
 ghost-role-information-syndicate-kobold-reinforcement-description = Someone needs reinforcements. You, a trained kobold, will help them.
 ghost-role-information-syndicate-kobold-reinforcement-rules = Normal syndicate antagonist rules apply. Work with whoever called you in, and don't harm them.
+
+ghost-role-information-shiva-name = Shiva
+ghost-role-information-shiva-description = The first defender of the station.
 
 ghost-role-information-artifact-name = Sentient Artifact
 ghost-role-information-artifact-description =
