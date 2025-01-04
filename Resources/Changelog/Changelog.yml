@@ -9052,3 +9052,12 @@ Entries:
   id: 6619
   time: '2025-01-03T04:32:00.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1413
+- author: sapphirescript
+  changes:
+    - type: Fix
+      message: Fixed a ton of languages missing chat names.
+    - type: Fix
+      message: Fixed a ton of markings missing names.
+  id: 6620
+  time: '2025-01-04T11:02:24.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1420
