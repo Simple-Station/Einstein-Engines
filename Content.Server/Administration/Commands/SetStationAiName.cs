@@ -9,13 +9,12 @@ namespace Content.Server.Administration.Commands;
 
 
 [AdminCommand(AdminFlags.Admin)]
-public sealed class GetStationAiNameCommand : IConsoleCommand
+public sealed class SetStationAiNameCommand : IConsoleCommand
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly StationSpawningSystem _spawning = default!;
 
-    private ProtoId<JobPrototype> _stationAIJob = "StationAi";
+    private readonly ProtoId<JobPrototype> _stationAiJob = "StationAi";
 
     public string Command => "setstationainame";
     public string Description => Loc.GetString("set-station-ai-name-command-description");
@@ -43,7 +42,7 @@ public sealed class GetStationAiNameCommand : IConsoleCommand
             return;
         }
 
-        var hasStationAi = _prototypeManager.TryIndex(_stationAIJob, out var job);
+        var hasStationAi = _prototypeManager.TryIndex(_stationAiJob, out var job);
 
         if (!hasStationAi)
         {
@@ -51,7 +50,8 @@ public sealed class GetStationAiNameCommand : IConsoleCommand
             return;
         }
 
-        _spawning.EquipJobName(target.Value, job!);
+        var spawningSystem = _entManager.System<StationSpawningSystem>();
+        spawningSystem.EquipJobName(target.Value, job!);
         shell.WriteLine(Loc.GetString("shell-command-success"));
     }
 }
