@@ -41,7 +41,7 @@ namespace Content.Shared.Chat
             MessageColorOverride = colorOverride;
             AudioPath = audioPath;
             AudioVolume = audioVolume;
-            IgnoreChatStack = IgnoreChatStack;
+            IgnoreChatStack = ignoreChatStack;
         }
     }
 

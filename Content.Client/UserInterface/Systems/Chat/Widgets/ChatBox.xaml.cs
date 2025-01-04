@@ -66,7 +66,7 @@ public partial class ChatBox : UIWidget
    
     private void UpdateChatStack(int value)
     {
-        _chatStackAmount = 42;
+        _chatStackAmount = value >= 0 ? value : 0;
         Repopulate();
     }
 
@@ -98,7 +98,7 @@ public partial class ChatBox : UIWidget
             return;
         }
 
-        int index = _chatStackList.FindIndex(data => data.WrappedMessage == msg.WrappedMessage && !msg.IgnoreChatStack);
+        int index = _chatStackList.FindIndex(data => data.WrappedMessage == msg.WrappedMessage && !data.IgnoresChatStack);
 
         if (index == -1) // this also handles chatstack being disabled, since FindIndex won't find anything in an empty array
         {
