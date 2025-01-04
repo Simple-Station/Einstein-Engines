@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Shared.Dataset;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Inventory;
@@ -18,9 +19,10 @@ public abstract class SharedStationSpawningSystem : EntitySystem
     [Dependency] protected readonly IPrototypeManager PrototypeManager = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] protected readonly InventorySystem InventorySystem = default!;
-    [Dependency] private   readonly SharedHandsSystem _handsSystem = default!;
-    [Dependency] private   readonly SharedStorageSystem _storage = default!;
-    [Dependency] private   readonly SharedTransformSystem _xformSystem = default!;
+    [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
+    [Dependency] private readonly SharedStorageSystem _storage = default!;
+    [Dependency] private readonly SharedTransformSystem _xformSystem = default!;
+    [Dependency] private readonly MetaDataSystem _metadata = default!;
 
     private EntityQuery<HandsComponent> _handsQuery;
     private EntityQuery<InventoryComponent> _inventoryQuery;
@@ -39,11 +41,13 @@ public abstract class SharedStationSpawningSystem : EntitySystem
     /// <summary>
     /// Applies the role's name as applicable to the entity.
     /// </summary>
-    public void EquipRoleName(EntityUid entity, RoleLoadout loadout, RoleLoadoutPrototype roleProto)
+    public void EquipJobName(EntityUid entity, JobPrototype job)
     {
         string? name = null;
 
-        if (string.IsNullOrEmpty(name) && PrototypeManager.TryIndex(roleProto.NameDataset, out var nameData))
+        if (string.IsNullOrEmpty(name)
+            && job.NameDataset.HasValue
+            && PrototypeManager.TryIndex(job.NameDataset.Value, out var nameData))
         {
             name = Loc.GetString(_random.Pick(nameData.Values));
         }

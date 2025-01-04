@@ -12,6 +12,7 @@
   icon: JobIconStationAi
   supervisors: job-supervisors-rd
   jobEntity: StationAiBrain
+  nameDataset: NamesAI
 
 - type: job
   id: Borg
