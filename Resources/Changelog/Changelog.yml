@@ -9083,3 +9083,26 @@ Entries:
   id: 6622
   time: '2025-01-04T15:47:57.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/11
+- author: Spatison
+  changes:
+    - type: Add
+      message: Constructs now turn into the ectoplasm on their death.
+    - type: Tweak
+      message: >-
+        Blood cult stun and shadow shackles are now auras similar to blood
+        rites.
+    - type: Fix
+      message: Cult constructs now understand eldritch language and can speak it.
+    - type: Fix
+      message: Cult constructs are now healed by pylon.
+    - type: Fix
+      message: Cult constructs now has cult cult icon.
+    - type: Fix
+      message: 'All cult auras can no longer be stored, transferred or dropped. '
+    - type: Fix
+      message: Blood spear now detaches itself on recall action.
+    - type: Fix
+      message: Shadow shackles should now properly work.
+  id: 6623
+  time: '2025-01-04T15:48:53.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1397
