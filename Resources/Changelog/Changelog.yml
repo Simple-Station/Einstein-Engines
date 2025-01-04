@@ -9136,3 +9136,10 @@ Entries:
   id: 6626
   time: '2025-01-04T16:03:43.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1411
+- author: RedFoxIV
+  changes:
+    - type: Add
+      message: Chatstack. Look for it in Options under "General - Accessibility".
+  id: 6627
+  time: '2025-01-04T16:52:20.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1422
