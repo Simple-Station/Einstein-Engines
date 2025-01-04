@@ -172,7 +172,7 @@
         - !type:ReagentThreshold
           min: 15
       - !type:Drunk
-      
+
 - type: reagent
   id: Cryoxadone
   name: reagent-name-cryoxadone
@@ -240,7 +240,7 @@
         damage:
           types:
             Heat: -2
-            Shock: -2 
+            Shock: -2
             Cold: -2 # Was 1.5, Buffed due to limb damage changes
       - !type:HealthChange
         conditions:
@@ -1395,3 +1395,4 @@
   plantMetabolism: #Heals plants a little with the holy power within it.
   - !type:PlantAdjustHealth
     amount: 0.1
+
