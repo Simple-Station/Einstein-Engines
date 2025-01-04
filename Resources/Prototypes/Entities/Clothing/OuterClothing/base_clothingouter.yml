@@ -140,6 +140,7 @@
     - Hardsuit
     - WhitelistChameleon
     - HidesHarpyWings #DeltaV: Used by harpies to help render their hardsuit sprites
+    - AllowLamiaHardsuit
     - FullBodyOuter
   - type: Clothing
     equipDelay: 2.5 # Hardsuits are heavy and take a while to put on/off.
@@ -178,6 +179,7 @@
     size: Huge
   - type: Tag
     tags:
+    - AllowLamiaHardsuit #DeltaV: Used by Lamia to render snek hardsuits
     - HidesHarpyWings #DeltaV: Used by harpies to help render their hardsuit sprites
   - type: Clothing
     equipDelay: 1.25 # Softsuits are easier to put on and off
