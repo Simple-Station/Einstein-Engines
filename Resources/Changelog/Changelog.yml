@@ -9143,3 +9143,12 @@ Entries:
   id: 6627
   time: '2025-01-04T16:52:20.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1422
+- author: Mike32oz
+  changes:
+    - type: Fix
+      message: Warden has a shotgun in the locker.
+    - type: Remove
+      message: AI, AI/cyborgs upload, and laws cards.
+  id: 6628
+  time: '2025-01-04T16:59:01.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1417
