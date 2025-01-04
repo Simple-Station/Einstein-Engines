@@ -216,6 +216,11 @@
       types:
         Bloodloss: -1
   - type: PortalExempt
+  - type: FootPrints
+    leftBarePrint: "dragging-1"
+    rightBarePrint: "dragging-1"
+    shoesPrint: "dragging-1"
+    suitPrint: "dragging-1"
 
 - type: entity
   save: false
