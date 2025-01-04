@@ -1,4 +1,4 @@
-﻿<tabs:MiscTab xmlns="https://spacestation14.io"
+<tabs:MiscTab xmlns="https://spacestation14.io"
                   xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
                   xmlns:tabs="clr-namespace:Content.Client.Options.UI.Tabs"
                   xmlns:xNamespace="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -26,6 +26,11 @@
                 <CheckBox Name="EnableColorNameCheckBox" Text="{Loc 'ui-options-enable-color-name'}" />
                 <CheckBox Name="ColorblindFriendlyCheckBox" Text="{Loc 'ui-options-colorblind-friendly'}" />
                 <CheckBox Name="DisableFiltersCheckBox" Text="{Loc 'ui-options-no-filters'}" />
+                <BoxContainer Orientation="Horizontal">
+                    <Label Text="{Loc 'ui-options-chatstack'}" />
+                    <Control MinSize="4 0" />
+                    <OptionButton Name="ChatStackOption" />
+                </BoxContainer>
                 <BoxContainer Orientation="Horizontal">
                     <Label Text="{Loc 'ui-options-chat-window-opacity'}" Margin="8 0" />
                     <Slider Name="ChatWindowOpacitySlider"
