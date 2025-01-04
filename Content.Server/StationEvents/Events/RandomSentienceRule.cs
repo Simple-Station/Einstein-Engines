@@ -19,21 +19,21 @@ public sealed class RandomSentienceRule : StationEventSystem<RandomSentienceRule
     [Dependency] private readonly IRobustRandom _random = default!;
     protected override void Started(EntityUid uid, RandomSentienceRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
     {
-        if (!TryGetRandomStation(out var station))
+        if (!TryGetRandomStation(out var randomStation))
             return;
 
         var targetList = new List<Entity<SentienceTargetComponent>>();
         var query = EntityQueryEnumerator<SentienceTargetComponent, TransformComponent>();
         while (query.MoveNext(out var targetUid, out var target, out var xform))
         {
-            if (StationSystem.GetOwningStation(targetUid, xform) != station)
+            if (StationSystem.GetOwningStation(targetUid, xform) != randomStation)
                 continue;
 
             targetList.Add((targetUid, target));
         }
 
         var toMakeSentient = _random.Next(component.MinSentiences, component.MaxSentiences);
-
+        var stationsToNotify = new List<EntityUid>();
         var groups = new HashSet<string>();
 
         for (var i = 0; i < toMakeSentient && targetList.Count > 0; i++)
@@ -74,10 +74,10 @@ public sealed class RandomSentienceRule : StationEventSystem<RandomSentienceRule
 
         foreach (var target in targetList)
         {
-            var station = StationSystem.GetOwningStation(target);
-            if(station == null)
+            var targetStation = StationSystem.GetOwningStation(target);
+            if(targetStation == null)
                 continue;
-            stationsToNotify.Add((EntityUid) station);
+            stationsToNotify.Add((EntityUid) targetStation);
         }
         foreach (var station in stationsToNotify)
         {
@@ -87,7 +87,8 @@ public sealed class RandomSentienceRule : StationEventSystem<RandomSentienceRule
                 "station-event-random-sentience-announcement",
                 null,
                 Color.Gold,
-                null, null,
+                null,
+                null,
                 ("kind1", kind1), ("kind2", kind2), ("kind3", kind3), ("amount", groupList.Count),
                     ("data", _random.Pick(_prototype.Index<LocalizedDatasetPrototype>("RandomSentienceEventData"))),
                     ("strength", _random.Pick(_prototype.Index<LocalizedDatasetPrototype>("RandomSentienceEventStrength")))
