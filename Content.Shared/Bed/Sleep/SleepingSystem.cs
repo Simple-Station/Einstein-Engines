@@ -33,8 +33,8 @@ public sealed partial class SleepingSystem : EntitySystem
     [Dependency] private readonly SharedEmitSoundSystem _emitSound = default!;
     [Dependency] private readonly StatusEffectsSystem _statusEffectsSystem = default!;
 
-    public static readonly ProtoId<EntityPrototype> SleepActionId = "ActionSleep";
-    public static readonly ProtoId<EntityPrototype> WakeActionId = "ActionWake";
+    public static readonly EntProtoId SleepActionId = "ActionSleep";
+    public static readonly EntProtoId WakeActionId = "ActionWake";
 
     public override void Initialize()
     {
@@ -114,6 +114,8 @@ public sealed partial class SleepingSystem : EntitySystem
 
     private void OnMapInit(Entity<SleepingComponent> ent, ref MapInitEvent args)
     {
+        ent.Comp.SleepingSince = _gameTiming.CurTime;
+
         var ev = new SleepStateChangedEvent(true);
         RaiseLocalEvent(ent, ref ev);
         _blindableSystem.UpdateIsBlind(ent.Owner);
@@ -153,7 +155,7 @@ public sealed partial class SleepingSystem : EntitySystem
 
     private void OnConsciousAttempt(Entity<SleepingComponent> ent, ref ConsciousAttemptEvent args)
     {
-        args.Cancel();
+        args.Cancelled = true;
     }
 
     private void OnExamined(Entity<SleepingComponent> ent, ref ExaminedEvent args)
@@ -202,7 +204,8 @@ public sealed partial class SleepingSystem : EntitySystem
         if (!args.DamageIncreased || args.DamageDelta == null)
             return;
 
-        if (args.DamageDelta.GetTotal() >= ent.Comp.WakeThreshold)
+        if (args.DamageDelta.GetTotal() >= ent.Comp.WakeThreshold
+            && !HasComp<ForcedSleepingComponent>(ent))
             TryWaking((ent, ent.Comp));
     }
 
@@ -232,7 +235,10 @@ public sealed partial class SleepingSystem : EntitySystem
         RemComp<SleepingComponent>(ent);
         _actionsSystem.RemoveAction(ent, ent.Comp.WakeAction);
 
-        var ev = new SleepStateChangedEvent(false);
+        var ev = new SleepStateChangedEvent(false)
+        {
+            TimeSlept = _gameTiming.CurTime - ent.Comp.SleepingSince
+        };
         RaiseLocalEvent(ent, ref ev);
 
         _blindableSystem.UpdateIsBlind(ent.Owner);
@@ -311,4 +317,17 @@ public sealed partial class WakeActionEvent : InstantActionEvent;
 /// Raised on an entity when they fall asleep or wake up.
 /// </summary>
 [ByRefEvent]
-public record struct SleepStateChangedEvent(bool FellAsleep);
+public record struct SleepStateChangedEvent
+{
+    public bool FellAsleep = false;
+
+    /// <summary>
+    ///     The amount of time this entity slept for. Null if <see cref="FellAsleep"/> is true.
+    /// </summary>
+    public TimeSpan? TimeSlept;
+
+    public SleepStateChangedEvent(bool fellAsleep)
+    {
+        FellAsleep = fellAsleep;
+    }
+}
