@@ -9115,3 +9115,10 @@ Entries:
   id: 6624
   time: '2025-01-04T15:49:49.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1418
+- author: sapphirescript
+  changes:
+    - type: Fix
+      message: Ifrit name and description now show up properly in ghost roles
+  id: 6625
+  time: '2025-01-04T15:51:12.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1414
