@@ -9220,3 +9220,12 @@ Entries:
   id: 6632
   time: '2025-01-05T18:24:29.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1431
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Footprints are now cleaned in a small radius around the mouse cursor
+        when mopping them.
+  id: 6633
+  time: '2025-01-05T18:27:12.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1439
