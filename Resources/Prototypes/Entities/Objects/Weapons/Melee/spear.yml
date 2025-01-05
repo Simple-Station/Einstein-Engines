@@ -55,6 +55,7 @@
     damage:
       types:
         Piercing: 10
+    staminaCost: 6
   - type: Item
     size: Ginormous
   - type: Clothing
