@@ -13,6 +13,12 @@ namespace Content.Server.Database.Migrations.Sqlite
         {
             migrationBuilder.Sql("DROP TABLE IF EXISTS ProileLoadouts;");
 
+            migrationBuilder.AddColumn<DateTime>(
+                name: "last_read_rules",
+                table: "player",
+                type: "TEXT",
+                nullable: true);
+
             migrationBuilder.CreateTable(
                 name: "ban_template",
                 columns: table => new
@@ -82,6 +88,10 @@ namespace Content.Server.Database.Migrations.Sqlite
             migrationBuilder.DropForeignKey(
                 name: "FK_loadout_profile_profile_id",
                 table: "loadout");
+
+            migrationBuilder.DropColumn(
+                name: "last_read_rules",
+                table: "player");
 
             migrationBuilder.DropTable(
                 name: "ban_template");
