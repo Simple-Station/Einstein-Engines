@@ -46,12 +46,13 @@
 - type: trait
   id: ForeignerLight
   category: TraitsSpeechLanguages
-  points: 2
+  points: -2
   requirements:
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
         - Foreigner
+        - Muted
   functions:
     - !type:TraitAddComponent
       components:
@@ -62,12 +63,13 @@
 - type: trait
   id: Foreigner
   category: TraitsSpeechLanguages
-  points: 4
+  points: -4
   requirements: # TODO: Add a requirement to know at least 1 non-gc language
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
         - ForeignerLight
+        - Muted
   functions:
     - !type:TraitAddComponent
       components:
