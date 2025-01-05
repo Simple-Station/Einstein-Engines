@@ -166,16 +166,16 @@ trait-description-LowPainTolerance =
 trait-name-Steadfast = Steadfast
 trait-description-Steadfast =
     When others would buckle from the weight of your injuries, you still march forward unrelentingly.
-    For most species [color=gray](excluding IPC/Shadowkin)[/color], this is the effect:
-    - [color=yellow]30%[/color] movement slow at [color=red]60[/color] damage ➔ [color=yellow]21%[/color] movement slow at [color=red]70[/color] damage
-    - [color=yellow]50%[/color] movement slow at [color=red]80[/color] damage ➔ [color=yellow]35%[/color] movement slow at [color=red]90[/color] damage
+    For most species [color=gray](excluding IPC/Shadowkin)[/color], this trait modifies:
+    - [color=yellow]25%[/color] movement slow at [color=red]60[/color] damage ➔ [color=yellow]17%[/color] movement slow at [color=red]70[/color] damage
+    - [color=yellow]45%[/color] movement slow at [color=red]80[/color] damage ➔ [color=yellow]30%[/color] movement slow at [color=red]90[/color] damage
 
 trait-name-Feeble = Feeble
 trait-description-Feeble =
-    Your body responds poorly to injuries, making them hinder your movements more severely.
-    For most species [color=gray](excluding IPC/Shadowkin)[/color], this is the effect:
-    - [color=yellow]30%[/color] movement slow at [color=red]60[/color] damage ➔ [color=yellow]35%[/color] movement slow at [color=red]45[/color] damage
-    - [color=yellow]50%[/color] movement slow at [color=red]80[/color] damage ➔ [color=yellow]58%[/color] movement slow at [color=red]65[/color] damage
+    Your body responds poorly to injuries, making damage affect your movement more severely.
+    For most species [color=gray](excluding IPC/Shadowkin)[/color], this trait modifies:
+    - [color=yellow]25%[/color] movement slow at [color=red]60[/color] damage ➔ [color=yellow]30%[/color] movement slow at [color=red]45[/color] damage
+    - [color=yellow]45%[/color] movement slow at [color=red]80[/color] damage ➔ [color=yellow]54%[/color] movement slow at [color=red]65[/color] damage
 
 trait-name-MartialArtist = Martial Artist
 trait-description-MartialArtist =

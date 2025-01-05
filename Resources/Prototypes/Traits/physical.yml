@@ -254,7 +254,7 @@
   functions:
     - !type:TraitModifySlowOnDamage
       damageThresholdsModifier: 10
-      speedModifierMultiplier: 0.7
+      speedModifierMultiplier: 0.68
 
 - type: trait
   id: Feeble
@@ -277,7 +277,7 @@
   functions:
     - !type:TraitModifySlowOnDamage
       damageThresholdsModifier: -15
-      speedModifierMultiplier: 1.17
+      speedModifierMultiplier: 1.2
 
 - type: trait
   id: MartialArtist
