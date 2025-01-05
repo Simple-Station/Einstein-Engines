@@ -221,7 +221,17 @@
     - RiotShield
     - SpeedLoaderMagnum
     - SpeedLoaderMagnumEmpty
-
+    - MagazinePistolCaselessRifle # Goobstation
+    - MagazineBoxCaselessRifle # Goobstation
+    - MagazineLightRifleBoxEmpty # Goobstation
+    - MagazineLightRifleBox # Goobstation
+    - MagazineHighCaliberEmpty # Goobstation
+    - MagazineHighCaliber # Goobstation
+    - MagazineBoxHighCaliber # Goobstation
+    - MagazineMagnumEmpty # Goobstation
+    - MagazineMagnum # Goobstation
+    - MagazineMagnumLeverRifleEmpty # Goobstation
+    - MagazineMagnumLeverRifle # Goobstation
 - type: entity
   id: AutolatheHyperConvection
   parent: [Autolathe, BaseHyperlathe]
@@ -846,6 +856,10 @@
       - SpeedLoaderRifleHeavyEmpty
       - WeaponRifleNovaliteC1
       - WeaponRifleGestio
+      - MagazineMagnumEmpty # Goobstation
+      - MagazineMagnum # Goobstation
+      - MagazineMagnumLeverRifle # Goobstation
+      - MagazineMagnumLeverRifleEmpty # Goobstation
     dynamicRecipes:
       - BolaEnergy
       - BoxBeanbag

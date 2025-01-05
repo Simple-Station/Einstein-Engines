@@ -18,3 +18,29 @@
         Heat: 0.70
   - type: ExplosionResistance
     damageCoefficient: 0.8
+
+- type: entity
+  parent: ClothingBlueshieldArmourVest
+  id: ClothingBlueshieldArmoredJacket
+  name: blueshield's armored jacket
+  description: A jacket with sewn-in reinforcement layers.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/OuterClothing/Armor/blueshield_jacket.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/OuterClothing/Armor/blueshield_jacket.rsi
+  - type: Item
+    size: Normal
+
+- type: entity
+  parent: ClothingBlueshieldArmourVest
+  id: ClothingBlueshieldArmoredCowboyJacket
+  name: blueshield's armored cowboy jacket
+  description: A jacket to protect important people in wild areas.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/OuterClothing/Armor/blueshield_cowboy_jacket.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/OuterClothing/Armor/blueshield_cowboy_jacket.rsi
+  - type: Item
+    size: Normal
