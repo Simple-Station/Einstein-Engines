@@ -1,4 +1,5 @@
 using Content.Shared.Camera;
+using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Events;
@@ -31,13 +32,13 @@ namespace Content.Server.Damage.Systems
         {
             base.Initialize();
 
-            SubscribeLocalEvent<StaminaComponent, BeforeThrowEvent>(OnBeforeThrow);
+            SubscribeLocalEvent<StaminaComponent, BeforeThrowEvent>(OnBeforeThrow, after: [typeof(PacificationSystem)]);
             SubscribeLocalEvent<DamageOtherOnHitComponent, DamageExamineEvent>(OnDamageExamine, after: [typeof(MeleeWeaponSystem)]);
         }
 
         private void OnBeforeThrow(EntityUid uid, StaminaComponent component, ref BeforeThrowEvent args)
         {
-            if (!TryComp<DamageOtherOnHitComponent>(args.ItemUid, out var damage))
+            if (args.Cancelled || !TryComp<DamageOtherOnHitComponent>(args.ItemUid, out var damage))
                 return;
 
             if (component.CritThreshold - component.StaminaDamage <= damage.StaminaCost)
