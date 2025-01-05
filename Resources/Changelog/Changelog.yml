@@ -9313,3 +9313,10 @@ Entries:
   id: 6640
   time: '2025-01-05T19:45:36.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1388
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Fixed the Syndicate Listening Post not correctly spawning.
+  id: 6641
+  time: '2025-01-05T19:45:57.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1438
