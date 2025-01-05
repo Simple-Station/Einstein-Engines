@@ -9052,3 +9052,103 @@ Entries:
   id: 6619
   time: '2025-01-03T04:32:00.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1413
+- author: sapphirescript
+  changes:
+    - type: Fix
+      message: Fixed a ton of languages missing chat names.
+    - type: Fix
+      message: Fixed a ton of markings missing names.
+  id: 6620
+  time: '2025-01-04T11:02:24.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1420
+- author: angelofallars
+  changes:
+    - type: Add
+      message: >-
+        Added religious neckwear to loadouts, such as Crucifix (with a colorable
+        option), Scapular and Tallit.
+    - type: Tweak
+      message: Added the gay male pride pin to loadouts and the Pride-O-Mat.
+  id: 6621
+  time: '2025-01-04T15:23:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1416
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Lamia have been added to the game as a new playable species! They are
+        currently extremely buggy, and so are by default disabled as a
+        roundstart species. To enable them for (Buggy) playtesting, go to
+        /Species/lamia.yml, and set roundstart to true.
+  id: 6622
+  time: '2025-01-04T15:47:57.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/11
+- author: Spatison
+  changes:
+    - type: Add
+      message: Constructs now turn into the ectoplasm on their death.
+    - type: Tweak
+      message: >-
+        Blood cult stun and shadow shackles are now auras similar to blood
+        rites.
+    - type: Fix
+      message: Cult constructs now understand eldritch language and can speak it.
+    - type: Fix
+      message: Cult constructs are now healed by pylon.
+    - type: Fix
+      message: Cult constructs now has cult cult icon.
+    - type: Fix
+      message: 'All cult auras can no longer be stored, transferred or dropped. '
+    - type: Fix
+      message: Blood spear now detaches itself on recall action.
+    - type: Fix
+      message: Shadow shackles should now properly work.
+  id: 6623
+  time: '2025-01-04T15:48:53.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1397
+- author: sapphirescript
+  changes:
+    - type: Tweak
+      message: >-
+        You can no longer simultaneously equip Red Shirt and Brittle Bones
+        Disease and their positive counterparts, Will To Live and Tenacity.
+  id: 6624
+  time: '2025-01-04T15:49:49.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1418
+- author: sapphirescript
+  changes:
+    - type: Fix
+      message: Ifrit name and description now show up properly in ghost roles
+  id: 6625
+  time: '2025-01-04T15:51:12.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1414
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Vacsuits now weigh 68kg instead of 5kg. This matters for Space Wind
+        being a lot less likely to throw them at people.
+    - type: Tweak
+      message: >-
+        Hardsuits and Tacsuits now weigh 100kg instead of 5kg. Also for space
+        wind. They deal 30 damage on throw collision, so it's pretty important
+        that space wind needs a lot of oomph to throw them across the room.
+  id: 6626
+  time: '2025-01-04T16:03:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1411
+- author: RedFoxIV
+  changes:
+    - type: Add
+      message: Chatstack. Look for it in Options under "General - Accessibility".
+  id: 6627
+  time: '2025-01-04T16:52:20.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1422
+- author: Mike32oz
+  changes:
+    - type: Fix
+      message: Warden has a shotgun in the locker.
+    - type: Remove
+      message: AI, AI/cyborgs upload, and laws cards.
+  id: 6628
+  time: '2025-01-04T16:59:01.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1417
