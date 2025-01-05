@@ -225,7 +225,7 @@ trait-description-BadKnees =
     Whether due to injury, age, or wear and tear, your knees aren't particularly strong or flexible.
     You climb structures like tables [color=yellow]50%[/color] slower.
     Slipping leaves you stunned for [color=yellow]40%[/color] longer. { -slippery-example }
-    Difficult terrain slows you down [color=yellow]30%[/color] more. { -terrain-example }
+    Difficult terrain slows you down [color=yellow]35%[/color] more. { -terrain-example }
 
 trait-name-Sluggish = Sluggish
 trait-description-Sluggish =
