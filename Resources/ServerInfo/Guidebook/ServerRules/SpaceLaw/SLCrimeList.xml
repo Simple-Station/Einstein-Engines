@@ -250,17 +250,17 @@
         08
       </Box>
     </ColorBox>
-    <ColorBox Color="#00e676">
+    <ColorBox Color="#007d40">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Creating a Hazard (N)
       </Box>
     </ColorBox>
-    <ColorBox Color="#00e676">
+    <ColorBox Color="#007d40">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Negligence (N)
       </Box>
     </ColorBox>
-    <ColorBox Color="#00e676">
+    <ColorBox Color="#007d40">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         High Negligence (N)
       </Box>
@@ -355,7 +355,7 @@
         Insubordination
       </Box>
     </ColorBox>
-    <ColorBox Color="#00e676">
+    <ColorBox Color="#007d40">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Dereliction (N)
       </Box>
