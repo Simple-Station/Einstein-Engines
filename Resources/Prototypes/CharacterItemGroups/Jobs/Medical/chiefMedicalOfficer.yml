@@ -46,6 +46,8 @@
   items:
     - type: loadout
       id: LoadoutChiefMedicalOfficerNTPDA
+    - type: loadout
+      id: LoadoutClothingHeadMirror
 
 - type: characterItemGroup
   id: LoadoutChiefMedicalOfficerNeck
