@@ -37,9 +37,6 @@
 - type: markingPoints
   id: MobVulpkaninMarkingLimits
   points:
-    Face:
-      points: 1
-      required: false
     Hair:
       points: 1
       required: false
