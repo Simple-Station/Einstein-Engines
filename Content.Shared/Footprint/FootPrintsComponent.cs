@@ -1,4 +1,6 @@
 using System.Numerics;
+using Content.Shared.Chemistry.Components;
+using Content.Shared.FixedPoint;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
@@ -7,23 +9,17 @@ namespace Content.Shared.FootPrint;
 [RegisterComponent]
 public sealed partial class FootPrintsComponent : Component
 {
-    [ViewVariables(VVAccess.ReadOnly), DataField]
+    [DataField]
     public ResPath RsiPath = new("/Textures/Effects/footprints.rsi");
 
-    // all of those are set as a layer
-    [ViewVariables(VVAccess.ReadOnly), DataField]
-    public string LeftBarePrint = "footprint-left-bare-human";
+    [DataField]
+    public string
+        LeftBarePrint = "footprint-left-bare-human",
+        RightBarePrint = "footprint-right-bare-human",
+        ShoesPrint = "footprint-shoes",
+        SuitPrint = "footprint-suit";
 
-    [ViewVariables(VVAccess.ReadOnly), DataField]
-    public string RightBarePrint = "footprint-right-bare-human";
-
-    [ViewVariables(VVAccess.ReadOnly), DataField]
-    public string ShoesPrint = "footprint-shoes";
-
-    [ViewVariables(VVAccess.ReadOnly), DataField]
-    public string SuitPrint = "footprint-suit";
-
-    [ViewVariables(VVAccess.ReadOnly), DataField]
+    [DataField]
     public string[] DraggingPrint =
     [
         "dragging-1",
@@ -32,13 +28,9 @@ public sealed partial class FootPrintsComponent : Component
         "dragging-4",
         "dragging-5",
     ];
-    // yea, those
 
-    [ViewVariables(VVAccess.ReadOnly), DataField]
+    [DataField]
     public EntProtoId<FootPrintComponent> StepProtoId = "Footstep";
-
-    [ViewVariables(VVAccess.ReadOnly), DataField]
-    public Color PrintsColor = Color.FromHex("#00000000");
 
     /// <summary>
     ///     The size scaling factor for footprint steps. Must be positive.
@@ -53,20 +45,8 @@ public sealed partial class FootPrintsComponent : Component
     public float DragSize = 0.5f;
 
     /// <summary>
-    ///     The amount of color to transfer from the source (e.g., puddle) to the footprint.
+    ///     Horizontal offset of the created footprints relative to the center.
     /// </summary>
-    [DataField]
-    public float ColorQuantity;
-
-    /// <summary>
-    ///     The factor by which the alpha channel is reduced in subsequent footprints.
-    /// </summary>
-    [DataField]
-    public float ColorReduceAlpha = 0.1f;
-
-    [DataField]
-    public string? ReagentToTransfer;
-
     [DataField]
     public Vector2 OffsetPrint = new(0.1f, 0f);
 
@@ -78,11 +58,20 @@ public sealed partial class FootPrintsComponent : Component
     /// <summary>
     ///     The position of the last footprint in world coordinates.
     /// </summary>
-    public Vector2 StepPos = Vector2.Zero;
+    public Vector2 LastStepPos = Vector2.Zero;
+
+    [DataField]
+    public HashSet<string> DNAs = new();
 
     /// <summary>
-    ///     Controls how quickly the footprint color transitions between steps.
-    ///     Value between 0 and 1, where higher values mean faster color changes.
+    ///     Reagent volume used for footprints.
     /// </summary>
-    public float ColorInterpolationFactor = 0.2f;
+    [DataField]
+    public Solution ContainedSolution = new(3) { CanReact = true, MaxVolume = 5f, };
+
+    /// <summary>
+    ///     Amount of reagents used per footprint.
+    /// </summary>
+    [DataField]
+    public FixedPoint2 FootprintVolume = 1f;
 }
