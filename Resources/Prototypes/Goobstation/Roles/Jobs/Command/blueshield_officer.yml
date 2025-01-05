@@ -37,9 +37,9 @@
     shoes: ClothingShoesBootsCombatFilled
     eyes: ClothingEyesGlassesMedSec
     gloves: ClothingHandsGlovesCombat
-    outerClothing: ClothingBlueshieldArmourVest
-    id: ERTSecurityPDA
-    ears: ClothingHeadsetAltCommand
-    belt: ClothingBeltSecurityFilled
-    pocket1: WeaponPistolMk58
-    pocket2: DeathAcidifierImplanter
+    #outerClothing: ClothingBlueshieldArmourVest
+    id: BlueshieldPDA
+    #ears: ClothingHeadsetAltCommand
+    #belt: ClothingBeltSecurityFilled
+    #pocket1: WeaponPistolMk58
+    #pocket2: DeathAcidifierImplanter
