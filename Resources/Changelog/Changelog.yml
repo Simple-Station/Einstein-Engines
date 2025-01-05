@@ -9152,3 +9152,10 @@ Entries:
   id: 6628
   time: '2025-01-04T16:59:01.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1417
+- author: CerberusWolfie
+  changes:
+    - type: Add
+      message: Added <Table> and <ColorBox> identifiers. Go wild in SOP!
+  id: 6629
+  time: '2025-01-05T16:01:33.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1427
