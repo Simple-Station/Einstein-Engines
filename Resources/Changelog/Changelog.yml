@@ -9293,3 +9293,16 @@ Entries:
   id: 6638
   time: '2025-01-05T19:21:08.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1437
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: 'Mimes can no longer take the Muted or Foreigner traits. '
+    - type: Tweak
+      message: >-
+        "Rare" languages like Sinta'Azaziba, Valyrian Standard, now cost points
+        instead of giving points.
+    - type: Tweak
+      message: Sign Language now costs points.
+  id: 6639
+  time: '2025-01-05T19:45:18.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1441
