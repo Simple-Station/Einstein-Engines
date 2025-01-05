@@ -1,87 +1,73 @@
 <Document>
   # Space Law: Crime Listing
-  Crime codes are colored by linked crime groups, which are collections of non-stackable crimes. Suffixes are also included in the Quick Crime Guide to identify linked crimes. Highest applies.
+  Crime codes are grouped by color to represent linked crime categories. Crimes within the same group cannot be stacked. 
+  Suffixes are provided in the Quick Crime Guide to identify these links, with only the highest penalty being applied.  
 
   ## Quick Crime Guide
-  <Table Columns="7">
+  <Table Columns="6">
     <ColorBox>
-      <Box>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch">
         Code
       </Box>
     </ColorBox>
-    <ColorBox Color="#4caf50">
-      <Box>
-        M-XX - Modifier
-      </Box>
-    </ColorBox>
     <ColorBox>
-      <Box>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch">
         §0-XX - Infraction
       </Box>
     </ColorBox>
     <ColorBox>
-      <Box>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch">
         §1-XX - Minor
       </Box>
     </ColorBox>
     <ColorBox>
-      <Box>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch">
         §2-XX - Moderate
       </Box>
     </ColorBox>
     <ColorBox>
-      <Box>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch">
         §3-XX - Major
       </Box>
     </ColorBox>
     <ColorBox>
-      <Box>
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch">
         §4-XX - Capital
       </Box>
     </ColorBox>
     <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        1
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+        01
       </Box>
     </ColorBox>
-    <ColorBox Color="#4caf50">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Clear Danger
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#ffebee">
+    <ColorBox Color="#cb0000">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Disorderly Conduct (V)
       </Box>
     </ColorBox>
-    <ColorBox Color="#ffebee">
+    <ColorBox Color="#cb0000">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Assault (V)
       </Box>
     </ColorBox>
-    <ColorBox Color="#ffebee">
+    <ColorBox Color="#cb0000">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Aggravated Assault (V)
       </Box>
     </ColorBox>
-    <ColorBox Color="#ffebee">
+    <ColorBox Color="#cb0000">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Murder (V)
       </Box>
     </ColorBox>
-    <ColorBox Color="#ffebee">
+    <ColorBox Color="#cb0000">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Prime/Mass Murder (V)
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        2
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#4caf50">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Elevated Sentencing
+        02
       </Box>
     </ColorBox>
     <ColorBox>
@@ -111,12 +97,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        3
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#4caf50">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Self Defense
+        03
       </Box>
     </ColorBox>
     <ColorBox Color="#ff9100">
@@ -146,12 +127,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        4
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#4caf50">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Non Compos Mentis
+        04
       </Box>
     </ColorBox>
     <ColorBox>
@@ -181,12 +157,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        5
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#4caf50">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Griseo Maris
+        05
       </Box>
     </ColorBox>
     <ColorBox>
@@ -199,29 +170,24 @@
         Illegal Distribution
       </Box>
     </ColorBox>
-    <ColorBox Color="#ff0000">
+    <ColorBox Color="#960000">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Hostile Agent (A)
       </Box>
     </ColorBox>
-    <ColorBox Color="#ff0000">
+    <ColorBox Color="#960000">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Hostile Activity (A)
       </Box>
     </ColorBox>
-    <ColorBox Color="#ff0000">
+    <ColorBox Color="#960000">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Enemy of the Corporation (A)
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        6
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#4caf50">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Resisting Arrest
+        06
       </Box>
     </ColorBox>
     <ColorBox>
@@ -251,12 +217,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        7
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#4caf50">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Escaped Prisoner
+        07
       </Box>
     </ColorBox>
     <ColorBox>
@@ -286,12 +247,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        8
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#4caf50">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Attempted Crime
+        08
       </Box>
     </ColorBox>
     <ColorBox Color="#00e676">
@@ -309,24 +265,19 @@
         High Negligence (N)
       </Box>
     </ColorBox>
-    <ColorBox Color="#ffebee">
+    <ColorBox Color="#cb0000">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Manslaughter (V)(N)
       </Box>
     </ColorBox>
-    <ColorBox Color="#ffebee">
+    <ColorBox Color="#cb0000">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Biological Terror (V)(N)
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        9
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#4caf50">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        
+        09
       </Box>
     </ColorBox>
     <ColorBox>
@@ -359,11 +310,6 @@
         10
       </Box>
     </ColorBox>
-    <ColorBox Color="#4caf50">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        
-      </Box>
-    </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         
@@ -392,11 +338,6 @@
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         11
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#4caf50">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        
       </Box>
     </ColorBox>
     <ColorBox>
@@ -429,11 +370,6 @@
         12
       </Box>
     </ColorBox>
-    <ColorBox Color="#4caf50">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        
-      </Box>
-    </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         
@@ -462,11 +398,6 @@
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         13
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#4caf50">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        
       </Box>
     </ColorBox>
     <ColorBox>
@@ -499,11 +430,6 @@
         14
       </Box>
     </ColorBox>
-    <ColorBox Color="#4caf50">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        
-      </Box>
-    </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         
@@ -532,11 +458,6 @@
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         15
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#4caf50">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        
       </Box>
     </ColorBox>
     <ColorBox>
