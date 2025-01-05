@@ -10,13 +10,14 @@
   maleFirstNames: names_cyno_male
   femaleFirstNames: names_cyno_female
   lastNames: names_cyno_last
-  sexes:
-  - Female
 
 - type: markingPoints
   id: MobLamiaMarkingLimits
   points:
     Hair:
+      points: 1
+      required: false
+    FacialHair:
       points: 1
       required: false
     Tail:
@@ -30,6 +31,7 @@
   sprites:
     Head: MobHumanHead
     Hair: MobHumanoidAnyMarking
+    FacialHair: MobHumanoidAnyMarking
     Chest: MobHumanTorso
     Eyes: MobHumanoidEyes
     LArm: MobHumanLArm

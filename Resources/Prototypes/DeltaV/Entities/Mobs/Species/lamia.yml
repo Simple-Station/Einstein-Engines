@@ -106,6 +106,7 @@
       - map: [ "belt2" ]
       - map: [ "neck" ]
       - map: [ "back" ]
+      - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
       - map: [ "enum.HumanoidVisualLayers.Hair" ]
         state: bald
         sprite: Mobs/Customization/human_hair.rsi
@@ -273,6 +274,7 @@
       - map: [ "belt" ]
       - map: [ "neck" ]
       - map: [ "back" ]
+      - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
       - map: [ "enum.HumanoidVisualLayers.Hair" ]
         state: bald
         sprite: Mobs/Customization/human_hair.rsi
