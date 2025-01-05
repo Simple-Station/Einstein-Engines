@@ -5,8 +5,7 @@
   prototype: MobMonkey
   sprites: MobMonkeySprites
   dollPrototype: MobMonkeyDummy
-  skinColoration: Hues
-  defaultSkinTone: "#ffffff"
+  skinColoration: HumanToned
   markingLimits: MobMonkeyMarkingLimits
 
 - type: speciesBaseSprites
