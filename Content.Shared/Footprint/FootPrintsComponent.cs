@@ -60,7 +60,6 @@ public sealed partial class FootPrintsComponent : Component
     /// </summary>
     public Vector2 LastStepPos = Vector2.Zero;
 
-    // Floof
     [DataField]
     public HashSet<string> DNAs = new();
 

@@ -16,11 +16,10 @@ public sealed partial class AbsorbentSystem
     {
         var footprintQuery = GetEntityQuery<FootPrintComponent>();
         var targetCoords = Transform(target).Coordinates;
-        var entities = _lookup.GetEntitiesInRange(targetCoords, target.Comp.FootprintCleaningRange, LookupFlags.Uncontained);
+        var entities = _lookup.GetEntitiesInRange<FootPrintComponent>(targetCoords, target.Comp.FootprintCleaningRange, LookupFlags.Uncontained);
 
         // Take up to [MaxCleanedFootprints] footprints closest to the target
         var cleaned = entities.AsEnumerable()
-            .Where(footprintQuery.HasComp)
             .Select(uid => (uid, dst: Transform(uid).Coordinates.TryDistance(EntityManager, _transform, targetCoords, out var dst) ? dst : 0f))
             .Where(ent => ent.dst > 0f)
             .OrderBy(ent => ent.dst)
