@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Content.Server.Database.Migrations.Postgres
+namespace Content.Server.Database.Migrations.Sqlite
 {
     /// <inheritdoc />
     public partial class UpstreamMerge : Migration
@@ -16,34 +16,53 @@ namespace Content.Server.Database.Migrations.Postgres
             migrationBuilder.AddColumn<DateTime>(
                 name: "last_read_rules",
                 table: "player",
-                type: "timestamp with time zone",
+                type: "TEXT",
                 nullable: true);
+
+            migrationBuilder.CreateTable(
+                name: "ban_template",
+                columns: table => new
+                {
+                    ban_template_id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    title = table.Column<string>(type: "TEXT", nullable: false),
+                    length = table.Column<TimeSpan>(type: "TEXT", nullable: false),
+                    reason = table.Column<string>(type: "TEXT", nullable: false),
+                    exempt_flags = table.Column<int>(type: "INTEGER", nullable: false),
+                    severity = table.Column<int>(type: "INTEGER", nullable: false),
+                    auto_delete = table.Column<bool>(type: "INTEGER", nullable: false),
+                    hidden = table.Column<bool>(type: "INTEGER", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ban_template", x => x.ban_template_id);
+                });
 
             migrationBuilder.AddColumn<int>(
                 name: "hwid_type",
                 table: "server_role_ban",
-                type: "integer",
+                type: "INTEGER",
                 nullable: true,
                 defaultValue: 0);
 
             migrationBuilder.AddColumn<int>(
                 name: "hwid_type",
                 table: "server_ban",
-                type: "integer",
+                type: "INTEGER",
                 nullable: true,
                 defaultValue: 0);
 
             migrationBuilder.AddColumn<int>(
                 name: "last_seen_hwid_type",
                 table: "player",
-                type: "integer",
+                type: "INTEGER",
                 nullable: true,
                 defaultValue: 0);
 
             migrationBuilder.AddColumn<int>(
                 name: "hwid_type",
                 table: "connection_log",
-                type: "integer",
+                type: "INTEGER",
                 nullable: true,
                 defaultValue: 0);
 
@@ -58,7 +77,7 @@ namespace Content.Server.Database.Migrations.Postgres
             migrationBuilder.AddColumn<float>(
                 name: "trust",
                 table: "connection_log",
-                type: "real",
+                type: "REAL",
                 nullable: false,
                 defaultValue: 0f);
         }
@@ -73,6 +92,9 @@ namespace Content.Server.Database.Migrations.Postgres
             migrationBuilder.DropColumn(
                 name: "last_read_rules",
                 table: "player");
+
+            migrationBuilder.DropTable(
+                name: "ban_template");
 
             migrationBuilder.DropColumn(
                 name: "hwid_type",
@@ -94,7 +116,7 @@ namespace Content.Server.Database.Migrations.Postgres
                 name: "ProfileLoadout",
                 columns: table => new
                 {
-                    ProfileId = table.Column<int>(type: "integer", nullable: true)
+                    ProfileId = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
                 {
