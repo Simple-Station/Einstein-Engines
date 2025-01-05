@@ -58,7 +58,7 @@
           - !type:GibBehavior { }
   - type: SlowOnDamage
     speedModifierThresholds:
-      60: 0.7
+      60: 0.75
       90: 0.5
       120: 0.3
   - type: SiliconDownOnDead
