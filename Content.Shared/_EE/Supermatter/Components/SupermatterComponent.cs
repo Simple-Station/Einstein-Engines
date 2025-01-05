@@ -395,6 +395,9 @@ public sealed partial class SupermatterComponent : Component
         { Gas.Frezon,        0f },
         { Gas.Ammonia,       0f },
         { Gas.NitrousOxide,  0f },
+        {Gas.BZ,             0f }, // Assmos - /tg/ gases
+        {Gas.Healium,        0f }, // Assmos - /tg/ gases
+        {Gas.Pluoxium,       0f } // Assmos - /tg/ gases
     };
 
     /// <summary>
@@ -412,6 +415,9 @@ public sealed partial class SupermatterComponent : Component
         { Gas.Frezon,        (3f,   -10f,  -1f) },
         { Gas.Ammonia,       (0f,   .5f,   1f)  },
         { Gas.NitrousOxide,  (0f,   -5f,   -1f) },
+        {Gas.BZ,             (0f,   5f,    1f)  }, // Assmos - /tg/ gases
+        {Gas.Healium,        (2.4f, 4f,    1f)  }, // Assmos - /tg/ gases
+        {Gas.Pluoxium,       (0f,   -2.5f, -1f) }, // Assmos - /tg/ gases
     };
 
     #endregion
