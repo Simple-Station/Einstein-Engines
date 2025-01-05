@@ -183,9 +183,9 @@
     - !type:TraitAddComponent
       components:
         - type: TraitSpeedModifier
-          sprintModifier: 0.84
-          walkModifier: 0.84
-          requiredTriggeredSpeedModifier: 0.84
+          sprintModifier: 0.85
+          walkModifier: 0.85
+          requiredTriggeredSpeedModifier: 0.85
 
 - type: trait
   id: SnailPaced
@@ -205,9 +205,9 @@
     - !type:TraitAddComponent
       components:
         - type: TraitSpeedModifier
-          sprintModifier: 0.68
-          walkModifier: 0.68
-          requiredTriggeredSpeedModifier: 0.68 # Still slip against normal slips with the new sprint speed
+          sprintModifier: 0.7
+          walkModifier: 0.7
+          requiredTriggeredSpeedModifier: 0.7 # Still slip against normal slips with the new sprint speed
 
 - type: trait
   id: BloodDeficiency

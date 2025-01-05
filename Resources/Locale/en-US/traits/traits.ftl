@@ -230,12 +230,12 @@ trait-description-BadKnees =
 trait-name-Sluggish = Sluggish
 trait-description-Sluggish =
     You navigate the world slower than others, perhaps due to a medical condition, inactivity, or age.
-    Your movement speed is decreased by [color=yellow]16%[/color].
+    Your movement speed is decreased by [color=yellow]15%[/color].
 
 trait-name-SnailPaced = Snail-Paced
 trait-description-SnailPaced =
     You walk at a snail's pace, perhaps due to a medical condition, mobility impairment, or age.
-    Your movement speed is decreased by [color=yellow]32%[/color].
+    Your movement speed is decreased by [color=yellow]30%[/color].
 
 trait-name-LightStep = Light Step
 trait-description-LightStep =
