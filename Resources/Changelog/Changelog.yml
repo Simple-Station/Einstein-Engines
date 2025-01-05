@@ -9229,3 +9229,12 @@ Entries:
   id: 6633
   time: '2025-01-05T18:27:12.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1439
+- author: Skubman
+  changes:
+    - type: Fix
+      message: >-
+        Pacified characters (Pacifist trait and thieves) can no longer throw
+        items that deal throwing damage.
+  id: 6634
+  time: '2025-01-05T18:30:15.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1433
