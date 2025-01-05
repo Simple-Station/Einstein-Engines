@@ -224,20 +224,32 @@ trait-description-Voracious =
     Nothing gets between you and your food.
     Your endless consumption of food and drinks is twice as fast.
 
+-terrain-example = [color=gray](e.g. spider web, slime puddle, kudzu, space glue)[/color]
+-slippery-example = [color=gray](e.g. banana peel, water puddle, soap, space lube)[/color]
+
 trait-name-ParkourTraining = Parkour Training
 trait-description-ParkourTraining =
     Whether as a hobby, lifestyle, or professional training, you are trained in the discipline of parkour.
-    You're faster with climbing, crawling, lying down, and getting up.
+    You climb structures like tables [color=yellow]50%[/color] faster.
+    Slipping leaves you stunned for [color=yellow]30%[/color] shorter. { -slippery-example }
+    You gain a [color=yellow]50%[/color] resistance to slows from difficult terrain. { -terrain-example }
+
+trait-name-BadKnees = Bad Knees
+trait-description-BadKnees =
+    Whether due to injury, age, or wear and tear, your knees aren't particularly strong or flexible.
+    You climb structures like tables [color=yellow]50%[/color] slower.
+    Slipping leaves you stunned for [color=yellow]40%[/color] longer. { -slippery-example }
+    Difficult terrain slows you down [color=yellow]35%[/color] more. { -terrain-example }
 
 trait-name-Sluggish = Sluggish
 trait-description-Sluggish =
     You navigate the world slower than others, perhaps due to a medical condition, inactivity, or age.
-    You move slower, and it takes longer for you to climb, lie down and get up.
+    Your movement speed is decreased by [color=yellow]16%[/color].
 
 trait-name-SnailPaced = Snail-Paced
 trait-description-SnailPaced =
     You walk at a snail's pace, perhaps due to a medical condition, mobility impairment, or age.
-    You move substantially slower, and it takes far longer for you to climb, lie down and get up.
+    Your movement speed is decreased by [color=yellow]32%[/color].
 
 trait-name-LightStep = Light Step
 trait-description-LightStep =
