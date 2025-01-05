@@ -9286,3 +9286,10 @@ Entries:
   id: 6637
   time: '2025-01-05T18:37:43.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1425
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: 'Confiscated Pun Pun''s blackface. '
+  id: 6638
+  time: '2025-01-05T19:21:08.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1437
