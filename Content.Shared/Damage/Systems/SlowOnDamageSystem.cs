@@ -61,12 +61,8 @@ namespace Content.Shared.Damage
 
         private void OnModifySpeed(Entity<ClothingSlowOnDamageModifierComponent> ent, ref InventoryRelayedEvent<ModifySlowOnDamageSpeedEvent> args)
         {
-            var dif = 1 - args.Args.Speed;
-            if (dif <= 0)
-                return;
-
             // reduces the slowness modifier by the given coefficient
-            args.Args.Speed += dif * ent.Comp.Modifier;
+            args.Args.Speed = 1 - (1 - args.Args.Speed) * ent.Comp.Modifier;
         }
 
         private void OnExamined(Entity<ClothingSlowOnDamageModifierComponent> ent, ref ExaminedEvent args)

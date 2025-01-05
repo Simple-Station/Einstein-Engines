@@ -163,6 +163,20 @@ trait-description-LowPainTolerance =
     Your tolerance for pain is far below average, and its effects are more inhibiting.
     Your melee/throwing damage is penalized by up to an additional 15% when taking stamina damage.
 
+trait-name-Steadfast = Steadfast
+trait-description-Steadfast =
+    When others would buckle from the weight of your injuries, you still march forward unrelentingly.
+    For most species [color=gray](excluding IPC/Shadowkin)[/color], this is the effect:
+    - [color=yellow]30%[/color] movement slow at [color=red]60[/color] damage ➔ [color=yellow]21%[/color] movement slow at [color=red]70[/color] damage
+    - [color=yellow]50%[/color] movement slow at [color=red]80[/color] damage ➔ [color=yellow]35%[/color] movement slow at [color=red]90[/color] damage
+
+trait-name-Feeble = Feeble
+trait-description-Feeble =
+    Your body responds poorly to injuries, making them hinder your movements more severely.
+    For most species [color=gray](excluding IPC/Shadowkin)[/color], this is the effect:
+    - [color=yellow]30%[/color] movement slow at [color=red]60[/color] damage ➔ [color=yellow]35%[/color] movement slow at [color=red]45[/color] damage
+    - [color=yellow]50%[/color] movement slow at [color=red]80[/color] damage ➔ [color=yellow]58%[/color] movement slow at [color=red]65[/color] damage
+
 trait-name-MartialArtist = Martial Artist
 trait-description-MartialArtist =
     You have received formal training in unarmed combat, whether with Fists, Feet, or Claws.
