@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -12,6 +13,40 @@ namespace Content.Server.Database.Migrations.Postgres
         {
             migrationBuilder.Sql("DROP TABLE IF EXISTS ProileLoadouts;");
 
+            migrationBuilder.AddColumn<DateTime>(
+                name: "last_read_rules",
+                table: "player",
+                type: "timestamp with time zone",
+                nullable: true);
+
+            migrationBuilder.AddColumn<int>(
+                name: "hwid_type",
+                table: "server_role_ban",
+                type: "integer",
+                nullable: true,
+                defaultValue: 0);
+
+            migrationBuilder.AddColumn<int>(
+                name: "hwid_type",
+                table: "server_ban",
+                type: "integer",
+                nullable: true,
+                defaultValue: 0);
+
+            migrationBuilder.AddColumn<int>(
+                name: "last_seen_hwid_type",
+                table: "player",
+                type: "integer",
+                nullable: true,
+                defaultValue: 0);
+
+            migrationBuilder.AddColumn<int>(
+                name: "hwid_type",
+                table: "connection_log",
+                type: "integer",
+                nullable: true,
+                defaultValue: 0);
+
             migrationBuilder.AddForeignKey(
                 name: "FK_loadout_profile_profile_id",
                 table: "loadout",
@@ -19,6 +54,13 @@ namespace Content.Server.Database.Migrations.Postgres
                 principalTable: "profile",
                 principalColumn: "profile_id",
                 onDelete: ReferentialAction.Cascade);
+
+            migrationBuilder.AddColumn<float>(
+                name: "trust",
+                table: "connection_log",
+                type: "real",
+                nullable: false,
+                defaultValue: 0f);
         }
 
         /// <inheritdoc />
@@ -27,6 +69,26 @@ namespace Content.Server.Database.Migrations.Postgres
             migrationBuilder.DropForeignKey(
                 name: "FK_loadout_profile_profile_id",
                 table: "loadout");
+
+            migrationBuilder.DropColumn(
+                name: "last_read_rules",
+                table: "player");
+
+            migrationBuilder.DropColumn(
+                name: "hwid_type",
+                table: "server_role_ban");
+
+            migrationBuilder.DropColumn(
+                name: "hwid_type",
+                table: "server_ban");
+
+            migrationBuilder.DropColumn(
+                name: "last_seen_hwid_type",
+                table: "player");
+
+            migrationBuilder.DropColumn(
+                name: "hwid_type",
+                table: "connection_log");
 
             migrationBuilder.CreateTable(
                 name: "ProfileLoadout",
@@ -43,6 +105,10 @@ namespace Content.Server.Database.Migrations.Postgres
                         principalColumn: "profile_id",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.DropColumn(
+                name: "trust",
+                table: "connection_log");
         }
     }
 }

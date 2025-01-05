@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -10,39 +11,96 @@ namespace Content.Server.Database.Migrations.Sqlite
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.Sql("DROP TABLE IF EXISTS ProileLoadouts;");
+            migrationBuilder.AddColumn<DateTime>(
+                name: "last_read_rules",
+                table: "player",
+                type: "TEXT",
+                nullable: true);
 
-            migrationBuilder.AddForeignKey(
-                name: "FK_loadout_profile_profile_id",
-                table: "loadout",
-                column: "profile_id",
-                principalTable: "profile",
-                principalColumn: "profile_id",
-                onDelete: ReferentialAction.Cascade);
+            migrationBuilder.CreateTable(
+                name: "ban_template",
+                columns: table => new
+                {
+                    ban_template_id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    title = table.Column<string>(type: "TEXT", nullable: false),
+                    length = table.Column<TimeSpan>(type: "TEXT", nullable: false),
+                    reason = table.Column<string>(type: "TEXT", nullable: false),
+                    exempt_flags = table.Column<int>(type: "INTEGER", nullable: false),
+                    severity = table.Column<int>(type: "INTEGER", nullable: false),
+                    auto_delete = table.Column<bool>(type: "INTEGER", nullable: false),
+                    hidden = table.Column<bool>(type: "INTEGER", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ban_template", x => x.ban_template_id);
+                });
+
+            migrationBuilder.AddColumn<int>(
+                name: "hwid_type",
+                table: "server_role_ban",
+                type: "INTEGER",
+                nullable: true,
+                defaultValue: 0);
+
+            migrationBuilder.AddColumn<int>(
+                name: "hwid_type",
+                table: "server_ban",
+                type: "INTEGER",
+                nullable: true,
+                defaultValue: 0);
+
+            migrationBuilder.AddColumn<int>(
+                name: "last_seen_hwid_type",
+                table: "player",
+                type: "INTEGER",
+                nullable: true,
+                defaultValue: 0);
+
+            migrationBuilder.AddColumn<int>(
+                name: "hwid_type",
+                table: "connection_log",
+                type: "INTEGER",
+                nullable: true,
+                defaultValue: 0);
+
+            migrationBuilder.AddColumn<float>(
+                name: "trust",
+                table: "connection_log",
+                type: "REAL",
+                nullable: false,
+                defaultValue: 0f);
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_loadout_profile_profile_id",
-                table: "loadout");
+            migrationBuilder.DropColumn(
+                name: "last_read_rules",
+                table: "player");
 
-            migrationBuilder.CreateTable(
-                name: "ProfileLoadout",
-                columns: table => new
-                {
-                    ProfileId = table.Column<int>(type: "INTEGER", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.ForeignKey(
-                        name: "FK_loadout_profile_profile_id",
-                        column: x => x.ProfileId,
-                        principalTable: "profile",
-                        principalColumn: "profile_id",
-                        onDelete: ReferentialAction.Cascade);
-                });
+            migrationBuilder.DropTable(
+                name: "ban_template");
+
+            migrationBuilder.DropColumn(
+                name: "hwid_type",
+                table: "server_role_ban");
+
+            migrationBuilder.DropColumn(
+                name: "hwid_type",
+                table: "server_ban");
+
+            migrationBuilder.DropColumn(
+                name: "last_seen_hwid_type",
+                table: "player");
+
+            migrationBuilder.DropColumn(
+                name: "hwid_type",
+                table: "connection_log");
+
+            migrationBuilder.DropColumn(
+                name: "trust",
+                table: "connection_log");
         }
     }
 }
