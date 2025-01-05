@@ -45,7 +45,7 @@
   - type: DamageOnLand
     damage:
       types:
-        Blunt: 5
+        Blunt: 2
 
 - type: entity
   name: steel tile

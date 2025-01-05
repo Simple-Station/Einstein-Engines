@@ -12,6 +12,7 @@ using Content.Shared.Projectiles;
 using Content.Shared.Popups;
 using Content.Shared.Throwing;
 using Content.Shared.Weapons.Melee;
+using Content.Server.Weapons.Melee;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Physics.Components;
@@ -32,7 +33,7 @@ namespace Content.Server.Damage.Systems
             base.Initialize();
 
             SubscribeLocalEvent<StaminaComponent, BeforeThrowEvent>(OnBeforeThrow, after: [typeof(PacificationSystem)]);
-            SubscribeLocalEvent<DamageOtherOnHitComponent, DamageExamineEvent>(OnDamageExamine);
+            SubscribeLocalEvent<DamageOtherOnHitComponent, DamageExamineEvent>(OnDamageExamine, after: [typeof(MeleeWeaponSystem)]);
         }
 
         private void OnBeforeThrow(EntityUid uid, StaminaComponent component, ref BeforeThrowEvent args)

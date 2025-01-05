@@ -51,19 +51,19 @@ namespace Content.Shared.Damage.Systems
         /// </summary>
         private void OnMapInit(EntityUid uid, DamageOtherOnHitComponent component, MapInitEvent args)
         {
-            if (!TryComp<MeleeWeaponComponent>(uid, out var melee))
-                return;
-
-            if (component.Damage.Empty)
-                component.Damage = melee.Damage * component.MeleeDamageMultiplier;
-            if (component.SoundHit == null)
-                component.SoundHit = melee.SoundHit;
-            if (component.SoundNoDamage == null)
+            if (TryComp<MeleeWeaponComponent>(uid, out var melee))
             {
-                if (melee.SoundNoDamage != null)
-                    component.SoundNoDamage = melee.SoundNoDamage;
-                else
-                    component.SoundNoDamage = new SoundCollectionSpecifier("WeakHit");
+                if (component.Damage.Empty)
+                    component.Damage = melee.Damage * component.MeleeDamageMultiplier;
+                if (component.SoundHit == null)
+                    component.SoundHit = melee.SoundHit;
+                if (component.SoundNoDamage == null)
+                {
+                    if (melee.SoundNoDamage != null)
+                        component.SoundNoDamage = melee.SoundNoDamage;
+                    else
+                        component.SoundNoDamage = new SoundCollectionSpecifier("WeakHit");
+                }
             }
 
             RaiseLocalEvent(uid, new DamageOtherOnHitStartupEvent((uid, component)));

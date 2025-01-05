@@ -55,6 +55,7 @@
     damage:
       types:
         Piercing: 10
+    staminaCost: 6
   - type: Item
     size: Ginormous
   - type: Clothing
@@ -112,10 +113,6 @@
             max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: DamageOnLand
-    damage:
-      types:
-        Blunt: 5
   - type: UseDelay
   - type: Appearance
   - type: SolutionContainerVisuals
