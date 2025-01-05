@@ -101,7 +101,7 @@ public sealed class EmbedPassiveDamageSystem : EntitySystem
     {
         // Allow healing projectiles, forbid any that do damage
         if (comp.Damage.AnyPositive())
-            args.Cancel("pacified-cannot-throw-embed");
+            args.Cancel("pacified-cannot-throw");
     }
 
     public override void Update(float frameTime)
