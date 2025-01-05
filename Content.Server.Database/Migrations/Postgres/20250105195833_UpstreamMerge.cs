@@ -14,12 +14,6 @@ namespace Content.Server.Database.Migrations.Postgres
         {
             migrationBuilder.Sql("DROP TABLE IF EXISTS ProileLoadouts;");
 
-            migrationBuilder.AddColumn<DateTime>(
-                name: "last_read_rules",
-                table: "player",
-                type: "timestamp with time zone",
-                nullable: true);
-
             migrationBuilder.CreateTable(
                 name: "ban_template",
                 columns: table => new
@@ -90,10 +84,6 @@ namespace Content.Server.Database.Migrations.Postgres
             migrationBuilder.DropForeignKey(
                 name: "FK_loadout_profile_profile_id",
                 table: "loadout");
-
-            migrationBuilder.DropColumn(
-                name: "last_read_rules",
-                table: "player");
 
             migrationBuilder.DropTable(
                 name: "ban_template");
