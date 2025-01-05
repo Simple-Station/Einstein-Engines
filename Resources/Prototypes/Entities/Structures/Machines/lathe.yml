@@ -800,6 +800,7 @@
       - MagazineBoxPistolPractice
       - MagazineBoxRifle
       - MagazineBoxRiflePractice
+      - MagazineBoxLightRifle
       - MagazineLightRifle
       - MagazineLightRifleEmpty
       - MagazinePistol
@@ -834,6 +835,16 @@
       - MagazineBoxSpecialPractice
       - SpeedLoaderSpecial
       - MagazinePistolSpecial
+      - HandheldGPSBasic
+      - HandheldStationMap
+      - MagazineNovaliteC1Empty
+      - MagazineNovaliteC1
+      - MagazineLightRifleLowCapacityEmpty
+      - MagazineLightRifleLowCapacity
+      - SpeedLoaderRifleHeavy
+      - SpeedLoaderRifleHeavyEmpty
+      - WeaponRifleNovaliteC1
+      - WeaponRifleGestio
     dynamicRecipes:
       - BolaEnergy
       - BoxBeanbag
