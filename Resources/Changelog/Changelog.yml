@@ -9152,3 +9152,137 @@ Entries:
   id: 6628
   time: '2025-01-04T16:59:01.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1417
+- author: CerberusWolfie
+  changes:
+    - type: Add
+      message: Added <Table> and <ColorBox> identifiers. Go wild in SOP!
+  id: 6629
+  time: '2025-01-05T16:01:33.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1427
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Lamiae can now be male, no longer being a female-only species. They can
+        now wear facial hair as well.
+    - type: Add
+      message: >-
+        The Lamia species can now select markings above the leg, including
+        cybernetics, makeup, tattoos, noses, earrings, heterochromia, bracelets,
+        reptilian horns and frills, pointy ears, and more!
+    - type: Fix
+      message: Added text for the Lamia tail marking.
+  id: 6630
+  time: '2025-01-05T18:09:37.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1440
+- author: Skubman
+  changes:
+    - type: Fix
+      message: >-
+        Fixed embeddable damage over time not showing when examining an item's
+        damage values.
+    - type: Fix
+      message: 'Fixed the emag not dealing passive damage when embedded on a target. '
+    - type: Tweak
+      message: >-
+        Examining an item's damage values now shows values in a sorted order.
+        From top to bottom: gun damage, melee damage, throwing damage, embedded
+        damage.
+    - type: Tweak
+      message: >-
+        Spears now have a 6 stamina cost when thrown, and they no longer break
+        when thrown enough times.
+    - type: Tweak
+      message: Floor tiles now break when thrown 10 times instead of 4 times.
+    - type: Tweak
+      message: >-
+        Closets, lockers and crates now play the proper sound effect when thrown
+        (by Space Wind).
+  id: 6631
+  time: '2025-01-05T18:10:29.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1434
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Added two new traits: Steadfast and Feeble that decrease or increase the
+        effect of slows from injuries.
+    - type: Tweak
+      message: >-
+        Injury slows for most species has been slightly increased, but this can
+        be mitigated with the Steadfast trait.
+    - type: Tweak
+      message: >-
+        The jackboots' injury slow resistance has been decreased from 50% to
+        20%.
+    - type: Tweak
+      message: Combat boots now add resistance to injury slows like jackboots.
+  id: 6632
+  time: '2025-01-05T18:24:29.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1431
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Footprints are now cleaned in a small radius around the mouse cursor
+        when mopping them.
+  id: 6633
+  time: '2025-01-05T18:27:12.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1439
+- author: Skubman
+  changes:
+    - type: Fix
+      message: >-
+        Pacified characters (Pacifist trait and thieves) can no longer throw
+        items that deal throwing damage.
+  id: 6634
+  time: '2025-01-05T18:30:15.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1433
+- author: Skubman
+  changes:
+    - type: Tweak
+      message: >-
+        The Parkour Training trait has been reworked. It no longer makes you lie
+        down or get up faster, but grants you 30% shorter slip stuns and 50%
+        resistance against slows in difficult terrain.
+    - type: Tweak
+      message: >-
+        The Sluggish and Snail-Paced traits now only reduce your movement speed
+        with no other effects. The speed reductions have been slightly increased
+        from 15% to 16% for Sluggish, and 30% to 32% for Snail-Paced.
+    - type: Add
+      message: >-
+        Added a new 3-point negative trait called Bad Knees. It is the opposite
+        of Parkour Training and it makes you climb tables slower, stunned for
+        longer against slip stuns, and move more slowly in difficult terrain. 
+    - type: Tweak
+      message: Snail-Paced no longer prevents you from slipping when running.
+  id: 6635
+  time: '2025-01-05T18:31:21.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1432
+- author: Skubman
+  changes:
+    - type: Fix
+      message: >-
+        The Face marking category now has unlimited markings for all species
+        apart from IPCs.
+    - type: Fix
+      message: >-
+        Moth People can now apply Moth makeup markings again in the Face
+        category.
+    - type: Tweak
+      message: >-
+        Unathi now have 3 'Head (Side)' marking points available, so they can
+        use frills and both left and right-side earrings.  
+  id: 6636
+  time: '2025-01-05T18:35:46.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1435
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Lamia now make drag marks when moving through puddles instead of regular
+        footprints.
+  id: 6637
+  time: '2025-01-05T18:37:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1425
