@@ -48,7 +48,7 @@ public sealed class FootPrintsSystem : EntitySystem
     private void OnMove(EntityUid uid, FootPrintsComponent component, ref MoveEvent args)
     {
         if (component.ContainedSolution.Volume <= 0
-            || TryComp<PhysicsComponent>(uid, out var physics) && physics.BodyStatus != BodyStatus.OnGround // Floof: do not create footprints if the entity is flying
+            || TryComp<PhysicsComponent>(uid, out var physics) && physics.BodyStatus != BodyStatus.OnGround
             || args.Entity.Comp1.GridUid is not {} gridUid)
             return;
 

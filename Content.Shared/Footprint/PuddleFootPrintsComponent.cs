@@ -3,7 +3,6 @@ using Content.Shared.FixedPoint;
 
 namespace Content.Shared.FootPrint;
 
-// Floof: this system has been effectively rewriteen. DO NOT MERGE UPSTREAM CHANGES.
 [RegisterComponent]
 public sealed partial class PuddleFootPrintsComponent : Component
 {
