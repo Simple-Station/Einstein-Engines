@@ -162,8 +162,8 @@
         - type: SlippableModifier
           paralyzeTimeMultiplier: 1.4
         - type: SpeedModifiedByContactModifier
-          walkModifierEffectiveness: 1.4
-          sprintModifierEffectiveness: 1.4
+          walkModifierEffectiveness: 1.3
+          sprintModifierEffectiveness: 1.3
 
 - type: trait
   id: Sluggish
