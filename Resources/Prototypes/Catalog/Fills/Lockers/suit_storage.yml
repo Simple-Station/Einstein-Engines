@@ -228,7 +228,7 @@
         - id: OxygenTankFilled
         - id: ClothingOuterHardsuitCap
         - id: ClothingMaskGasCaptain
-        - id: ClothingMaskGasCaptainCombat #TheDen
+        - id: ClothingMaskGasCaptainCombat
   - type: AccessReader
     access: [["Captain"]]
 

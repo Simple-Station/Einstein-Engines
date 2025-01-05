@@ -213,8 +213,8 @@
   items:
     - ClothingUniformJumpskirtCMO
 
-- type: loadout 
-  id: LoadoutChiefMedicalOfficerTurtleskirt # The Den // LETS HOPE IT STICKS THIS TIME
+- type: loadout
+  id: LoadoutChiefMedicalOfficerTurtleskirt
   category: JobsMedicalChiefMedicalOfficer
   cost: 0
   requirements:
@@ -227,7 +227,7 @@
     - ClothingUniformJumpskirtCMOTurtle
 
 - type: loadout
-  id: LoadoutChiefMedicalOfficerTurtlesuit # The Den
+  id: LoadoutChiefMedicalOfficerTurtlesuit
   category: JobsMedicalChiefMedicalOfficer
   cost: 0
   requirements:
