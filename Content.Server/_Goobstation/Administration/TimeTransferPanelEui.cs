@@ -34,7 +34,7 @@ public sealed class TimeTransferPanelEui : BaseEui
 
     public override TimeTransferPanelEuiState GetNewState()
     {
-        var hasFlag = _adminMan.HasAdminFlag(Player, AdminFlags.Moderator);
+        var hasFlag = _adminMan.HasAdminFlag(Player, AdminFlags.Admin);
 
         return new TimeTransferPanelEuiState(hasFlag);
     }
@@ -51,7 +51,7 @@ public sealed class TimeTransferPanelEui : BaseEui
 
     public async void TransferTime(string playerId, List<TimeTransferData> timeData, bool overwrite)
     {
-        if (!_adminMan.HasAdminFlag(Player, AdminFlags.Moderator))
+        if (!_adminMan.HasAdminFlag(Player, AdminFlags.Admin))
         {
             _sawmill.Warning($"{Player.Name} ({Player.UserId} tried to add roles time without moderator flag)");
             return;
