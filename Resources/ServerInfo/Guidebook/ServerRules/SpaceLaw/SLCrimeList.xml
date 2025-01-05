@@ -199,17 +199,17 @@
         Illegal Distribution
       </Box>
     </ColorBox>
-    <ColorBox Color="ff0000">
+    <ColorBox Color="#ff0000">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Hostile Agent (A)
       </Box>
     </ColorBox>
-    <ColorBox Color="ff0000">
+    <ColorBox Color="#ff0000">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Hostile Activity (A)
       </Box>
     </ColorBox>
-    <ColorBox Color="ff0000">
+    <ColorBox Color="#ff0000">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Enemy of the Corporation (A)
       </Box>
@@ -1936,4 +1936,5 @@
         Don't immediately lynch the virologist, but an investigation might be a good idea.
       </Box>
     </ColorBox>
+  </Table>
 </Document>
