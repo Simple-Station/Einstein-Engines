@@ -1,12 +1,15 @@
 using Content.Server.Administration.Logs;
+using Content.Server.Damage.Systems;
 using Content.Server.Effects;
 using Content.Server.Weapons.Ranged.Systems;
 using Content.Shared.Camera;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Events;
 using Content.Shared.Database;
 using Content.Shared.Projectiles;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Player;
+using Robust.Shared.Utility;
 
 namespace Content.Server.Projectiles;
 
@@ -22,6 +25,7 @@ public sealed class ProjectileSystem : SharedProjectileSystem
     {
         base.Initialize();
         SubscribeLocalEvent<ProjectileComponent, StartCollideEvent>(OnStartCollide);
+        SubscribeLocalEvent<EmbeddableProjectileComponent, DamageExamineEvent>(OnDamageExamine, after: [typeof(DamageOtherOnHitSystem)]);
     }
 
     private void OnStartCollide(EntityUid uid, ProjectileComponent component, ref StartCollideEvent args)
@@ -74,5 +78,22 @@ public sealed class ProjectileSystem : SharedProjectileSystem
 
         if (component.ImpactEffect != null && TryComp(uid, out TransformComponent? xform))
             RaiseNetworkEvent(new ImpactEffectEvent(component.ImpactEffect, GetNetCoordinates(xform.Coordinates)), Filter.Pvs(xform.Coordinates, entityMan: EntityManager));
+    }
+
+    private void OnDamageExamine(EntityUid uid, EmbeddableProjectileComponent component, ref DamageExamineEvent args)
+    {
+        if (!component.EmbedOnThrow)
+            return;
+
+        if (!args.Message.IsEmpty)
+            args.Message.PushNewline();
+
+        var isHarmful = TryComp<EmbedPassiveDamageComponent>(uid, out var passiveDamage) && passiveDamage.Damage.AnyPositive();
+        var loc = isHarmful
+            ? "damage-examine-embeddable-harmful"
+            : "damage-examine-embeddable";
+
+        var staminaCostMarkup = FormattedMessage.FromMarkupOrThrow(Loc.GetString(loc));
+        args.Message.AddMessage(staminaCostMarkup);
     }
 }

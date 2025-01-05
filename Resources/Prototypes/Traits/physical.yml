@@ -236,6 +236,52 @@
           rangeModifier: 0.6
 
 - type: trait
+  id: Steadfast
+  category: Physical
+  points: -4
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Felinid
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Feeble
+  functions:
+    - !type:TraitModifySlowOnDamage
+      damageThresholdsModifier: 10
+      speedModifierMultiplier: 0.68
+
+- type: trait
+  id: Feeble
+  category: Physical
+  points: 3
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Felinid
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Steadfast
+  functions:
+    - !type:TraitModifySlowOnDamage
+      damageThresholdsModifier: -15
+      speedModifierMultiplier: 1.2
+
+- type: trait
   id: MartialArtist
   category: Physical
   points: -3
