@@ -9260,3 +9260,20 @@ Entries:
   id: 6635
   time: '2025-01-05T18:31:21.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1432
+- author: Skubman
+  changes:
+    - type: Fix
+      message: >-
+        The Face marking category now has unlimited markings for all species
+        apart from IPCs.
+    - type: Fix
+      message: >-
+        Moth People can now apply Moth makeup markings again in the Face
+        category.
+    - type: Tweak
+      message: >-
+        Unathi now have 3 'Head (Side)' marking points available, so they can
+        use frills and both left and right-side earrings.  
+  id: 6636
+  time: '2025-01-05T18:35:46.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1435
