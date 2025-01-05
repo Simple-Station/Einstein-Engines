@@ -1,3 +1,4 @@
+using Content.Shared.FixedPoint;
 using Content.Shared.Traits;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
@@ -11,6 +12,7 @@ using Content.Server.Language;
 using Content.Shared.Mood;
 using Content.Shared.Traits.Assorted.Components;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Mobs.Components;
@@ -545,5 +547,41 @@ public sealed partial class TraitModifyStamina : TraitFunction
         staminaComponent.CritThreshold += StaminaModifier;
         staminaComponent.Decay += DecayModifier;
         staminaComponent.Cooldown += CooldownModifier;
+    }
+}
+
+/// <summary>
+///     Used for traits that modify SlowOnDamageComponent.
+/// </summary>
+[UsedImplicitly]
+public sealed partial class TraitModifySlowOnDamage : TraitFunction
+{
+    // <summary>
+    //     A flat modifier to add to all damage threshold keys.
+    // </summary>
+    [DataField, AlwaysPushInheritance]
+    public float DamageThresholdsModifier;
+
+    // <summary>
+    //     A multiplier applied to all speed modifier values.
+    //     The higher the multiplier, the stronger the slowdown.
+    // </summary>
+    [DataField, AlwaysPushInheritance]
+    public float SpeedModifierMultiplier = 1f;
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        if (!entityManager.TryGetComponent<SlowOnDamageComponent>(uid, out var slowOnDamage))
+            return;
+
+        var newSpeedModifierThresholds = new Dictionary<FixedPoint2, float>();
+
+        foreach (var (damageThreshold, speedModifier) in slowOnDamage.SpeedModifierThresholds)
+            newSpeedModifierThresholds[damageThreshold + DamageThresholdsModifier] = 1 - (1 - speedModifier) * SpeedModifierMultiplier;
+
+        slowOnDamage.SpeedModifierThresholds = newSpeedModifierThresholds;
     }
 }
