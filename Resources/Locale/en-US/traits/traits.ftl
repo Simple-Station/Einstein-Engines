@@ -366,7 +366,7 @@ trait-description-HighPotential =
     Your connection to the noösphere is greater than average, making it easier to obtain new psionic powers.
 
 trait-name-LowAmplification = kα Deficiency
-trait-description-LowAmplifiction =
+trait-description-LowAmplification =
     Your psionic abilities are noticeably weaker than ones used by other psions.
 
 trait-name-HighAmplification = kα Abundance

@@ -41,6 +41,7 @@
     - map: [ "id" ]
     - map: [ "neck" ]
     - map: [ "back" ]
+    - map: [ "enum.HumanoidVisualLayers.Face" ]
     - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
     - map: [ "enum.HumanoidVisualLayers.Hair" ]
     - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
@@ -141,6 +142,7 @@
     - TemporaryBlindness
     - Pacified
     - StaminaModifier
+    - Flashed
     - RadiationProtection
     - Drowsiness
     - PsionicsDisabled
@@ -378,6 +380,7 @@
     - map: [ "id" ]
     - map: [ "neck" ]
     - map: [ "back" ]
+    - map: [ "enum.HumanoidVisualLayers.Face" ]
     - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
     - map: [ "enum.HumanoidVisualLayers.Hair" ]
     - map: [ "enum.HumanoidVisualLayers.HeadSide" ]

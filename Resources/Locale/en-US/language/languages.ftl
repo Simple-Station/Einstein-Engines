@@ -70,6 +70,8 @@ language-ValyrianStandard-description =
     It is rarely spoken outside of the worlds of its native speakers, and has in modern times been supplanted by the 'Conlangs of the Sol Alliance.
     Its speakers are those who wish to uphold the traditions and beliefs of ancient peoples from before the colonial era.
 
+# Animal Languages
+
 language-Cat-name = Cat
 language-Cat-description = Meow
 
@@ -83,7 +85,7 @@ language-Xeno-name = Xeno
 language-Xeno-description = Sssss!
 
 language-Monkey-name = Monkey
-language-Monkey-description = oooook!
+language-Monkey-description = Oooook!
 
 language-Mouse-name = Mouse
 language-Mouse-description = Squeeek!
@@ -119,3 +121,6 @@ language-Eldritch-name = Eldritch
 language-Eldritch-description =
     A language that is considered to be long forgotten - now the only speakers of this profaned tongue of screeches and
     mumbles are the followers of an ancient God of Blood.
+
+language-Penguin-name = Penguin
+language-Penguin-description = Bwaap!

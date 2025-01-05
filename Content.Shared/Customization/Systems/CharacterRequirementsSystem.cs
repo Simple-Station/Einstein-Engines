@@ -88,10 +88,10 @@ public sealed class CharacterRequirementsSystem : EntitySystem
     ///     Returns true if the given dummy can equip the given item.
     ///     Does not care if items are already in equippable slots, and ignores pockets.
     /// </summary>
-    public bool CanEntityWearItem(EntityUid dummy, EntityUid clothing)
+    public bool CanEntityWearItem(EntityUid dummy, EntityUid clothing, bool bypassAccessCheck = false)
     {
         return _inventory.TryGetSlots(dummy, out var slots)
             && slots.Where(slot => !slot.SlotFlags.HasFlag(SlotFlags.POCKET))
-                .Any(slot => _inventory.CanEquip(dummy, clothing, slot.Name, out _));
+                .Any(slot => _inventory.CanEquip(dummy, clothing, slot.Name, out _, bypassAccessCheck: bypassAccessCheck));
     }
 }
