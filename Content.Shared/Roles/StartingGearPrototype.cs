@@ -51,6 +51,7 @@ public sealed partial class StartingGearPrototype : IPrototype, IInheritingProto
             {
                 case "jumpsuit" when profile.Clothing == ClothingPreference.Jumpskirt && !string.IsNullOrEmpty(InnerClothingSkirt):
                 case "jumpsuit" when profile.Species == "Harpy" && !string.IsNullOrEmpty(InnerClothingSkirt):
+                case "jumpsuit" when profile.Species == "Lamia" && !string.IsNullOrEmpty(InnerClothingSkirt):
                     return InnerClothingSkirt;
                 case "back" when profile.Backpack == BackpackPreference.Satchel && !string.IsNullOrEmpty(Satchel):
                     return Satchel;

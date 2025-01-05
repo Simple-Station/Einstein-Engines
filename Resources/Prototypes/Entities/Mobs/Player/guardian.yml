@@ -149,8 +149,8 @@
       allowMovement: true
       allowSpeech: true
       makeSentient: true
-      name: ghost-role-information-ifrit-name
-      description: ghost-role-information-ifrit-description
+      name: ghost-role-information-ifrit-wizard-name
+      description: ghost-role-information-ifrit-wizard-description
       raffle:
         settings: default
     - type: GhostTakeoverAvailable

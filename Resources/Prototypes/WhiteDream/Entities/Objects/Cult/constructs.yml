@@ -107,6 +107,8 @@
     understands:
     - TauCetiBasic
     - Eldritch
+  - type: LanguageSpeaker
+  - type: StatusIcon
 
 - type: entity
   id: ConstructJuggernaut
