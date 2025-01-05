@@ -8,5 +8,5 @@ if ($name -eq "")
     exit
 }
 
-dotnet ef migrations remove --context SqliteServerDbContext -o Migrations/Sqlite $name
-dotnet ef migrations remove --context PostgresServerDbContext -o Migrations/Postgres $name
+dotnet ef migrations remove --context SqliteServerDbContext $name
+dotnet ef migrations remove --context PostgresServerDbContext $name

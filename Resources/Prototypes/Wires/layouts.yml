@@ -149,3 +149,11 @@
     - !type:DelayWireAction
     - !type:ProceedWireAction
     - !type:BoomWireAction
+
+# TODO: AI
+- type: wireLayout
+  id: ShopVendor
+  wires:
+# - !type:AiInteractWireAction
+  - !type:PowerWireAction
+  - !type:AccessWireAction

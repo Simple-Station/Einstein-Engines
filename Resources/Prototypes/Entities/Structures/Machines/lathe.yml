@@ -16,7 +16,7 @@
         mask:
         - MachineMask
         layer:
-          - MachineLayer
+          - MachineLayer  
   - type: Lathe
   - type: MaterialStorage
   - type: Destructible
@@ -270,6 +270,7 @@
     dynamicRecipes:
       - PowerDrill
       - MiningDrill
+      - MiningDrillDiamond
       - AnomalyScanner
       - AnomalyLocator
       - AnomalyLocatorWide
@@ -285,9 +286,6 @@
       - CryostasisBeaker
       - SyringeCryostasis
       - Syringe
-      - EnergyScalpel
-      - EnergyCautery
-      - AdvancedRetractor
       - Implanter
       - PillCanister
       - ChemistryEmptyBottle01
@@ -321,6 +319,7 @@
       - SynthesizerInstrument
       - RPED
       - ClothingShoesBootsMagSci
+      - ClothingShoesBootsMoon
       - ClothingShoesBootsSpeed
       - NodeScanner
       - HolofanProjector
@@ -364,6 +363,10 @@
       - MofficTranslator
       - RCDAmmo #DeltaV
       - RCD #EE
+      # Shitmed Change
+      - EnergyScalpel
+      - EnergyCautery
+      - AdvancedRetractor
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - BoxBeanbag
@@ -466,6 +469,7 @@
     - SodaDispenserMachineCircuitboard
     - DeepFryerMachineCircuitboard #Nyano - Summary: adds deep fryer circuit board
     - SpaceHeaterMachineCircuitBoard
+    - StationAnchorCircuitboard
     dynamicRecipes:
       - ThermomachineFreezerMachineCircuitBoard
       - HellfireFreezerMachineCircuitBoard
@@ -549,6 +553,8 @@
       - MetempsychoticMachineCircuitboard
       - SalvageExpeditionsComputerCircuitboard
       - JukeboxCircuitBoard
+      - AutodocCircuitboard # Shitmed Change
+      - OperatingTableCircuitboard # Shitmed Change
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - ShuttleGunDusterCircuitboard
@@ -814,6 +820,7 @@
       - TargetHuman
       - TargetSyndicate
       - WeaponDisablerPractice
+      - WeaponFlareGunSecurity
       - WeaponLaserCarbinePractice
       - Zipties
       - ShockCollar
@@ -1024,13 +1031,13 @@
       - MedkitRadiation
       - MedkitCombat
       - Scalpel
-      - BoneGel
       - Retractor
       - Cautery
       - Drill
       - Saw
       - Hemostat
       - ClothingEyesGlassesChemical
+      - BoneGel # Shitmed Change
     dynamicRecipes:
       - ChemicalPayload
       - CryostasisBeaker
@@ -1039,6 +1046,7 @@
       - ClothingEyesHudMedical # Nyano
       - ChemicalPayload # Nyano
       - SyringeCryostasis
+      # Shitmed Change
       - EnergyScalpel
       - EnergyCautery
       - AdvancedRetractor
@@ -1300,22 +1308,27 @@
     - type: Lathe
       idleState: icon
       runningState: building
+      defaultProductionAmount: 10
       staticRecipes:
         - BluespaceCrystal
         - NormalityCrystal
-        - SheetSteel30
-        - SheetGlass30
-        - SheetRGlass30
-        - SheetPlasma30
-        - SheetPGlass30
-        - SheetRPGlass30
-        - SheetUranium30
-        - IngotGold30
-        - IngotSilver30
-        - MaterialBananium10
+        - SheetSteel
+        - SheetGlass1
+        - SheetRGlass
+        - SheetPlasma1
+        - SheetPGlass1
+        - SheetRPGlass1
+        - SheetUranium1
+        - IngotGold1
+        - IngotSilver1
+        - MaterialBananium1
     - type: MaterialStorageMagnetPickup # Delta V - Summary: Adds magnet pull from Frontier
       magnetEnabled: True
       range: 0.30 # Delta V - End Magnet Pull
+    - type: MiningPoints # DeltaV - Source of mining points for miners
+      transferSound:
+        path: /Audio/Effects/Cargo/ping.ogg
+    - type: MiningPointsLathe # DeltaV
 
 - type: entity
   parent: OreProcessor
@@ -1333,19 +1346,20 @@
     staticRecipes:
       - BluespaceCrystal
       - NormalityCrystal
-      - SheetSteel30
-      - SheetGlass30
-      - SheetRGlass30
-      - SheetPlasma30
-      - SheetPGlass30
-      - SheetRPGlass30
-      - SheetPlasteel30
-      - SheetUranium30
-      - SheetUGlass30
-      - SheetRUGlass30
-      - IngotGold30
-      - IngotSilver30
-      - MaterialBananium10
+      - SheetSteel
+      - SheetGlass1
+      - SheetRGlass
+      - SheetPlasma1
+      - SheetPGlass1
+      - SheetRPGlass1
+      - SheetPlasteel1
+      - SheetUranium1
+      - SheetUGlass1
+      - SheetRUGlass1
+      - IngotGold1
+      - IngotSilver1
+      - MaterialBananium1
+      - MaterialDiamond
 
 - type: entity
   parent: BaseLathe
@@ -1524,7 +1538,7 @@
   description: Produces organs and other organic matter that can be surgically grafted onto patients with biomass.
   components:
   - type: Sprite
-    sprite: Structures/Machines/limbgrower.rsi
+    sprite: _Shitmed/Structures/Machines/limbgrower.rsi
     snapCardinals: true
     layers:
     - state: limbgrower_idleoff

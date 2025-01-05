@@ -70,3 +70,11 @@
       Heat: 5
   - type: Ensnaring
     destroyOnRemove: true
+    freeTime: 2.0
+    breakoutTime: 3.5 #all bola should generally be fast to remove
+    walkSpeed: 0.7 #makeshift bola shouldn't slow too much
+    sprintSpeed: 0.7
+    staminaDamage: 55 # Sudden weight increase sapping stamina
+    canThrowTrigger: true
+    canMoveBreakout: true
+  - type: LandAtCursor

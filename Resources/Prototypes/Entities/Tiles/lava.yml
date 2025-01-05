@@ -16,8 +16,12 @@
     triggerGroups:
       types:
         - Lava
-  - type: Lava
-    fireStacks: 0.75
+  - type: TileEntityEffect
+    effects:
+    - !type:FlammableReaction
+      multiplier: 3.75
+      multiplierOnExisting: 0.75
+    - !type:Ignite
   - type: Transform
     anchored: true
   - type: SyncSprite

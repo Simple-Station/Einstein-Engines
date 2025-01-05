@@ -49,9 +49,9 @@ namespace Content.Server.Forensics
 
             var doAfterEventArgs = new DoAfterArgs(EntityManager, user, component.SniffDelay, new ScentTrackerDoAfterEvent(), user, target: target)
             {
-                BreakOnUserMove = true,
+                BreakOnMove = true,
                 BreakOnDamage = true,
-                BreakOnTargetMove = true
+                
             };
 
             _popupSystem.PopupEntity(Loc.GetString("start-tracking-scent", ("user", Identity.Name(user, EntityManager)), ("target", Identity.Name(target, EntityManager))), user);

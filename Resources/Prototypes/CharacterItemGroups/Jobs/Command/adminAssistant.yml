@@ -1,0 +1,17 @@
+- type: characterItemGroup
+  id: LoadoutAdminAssistantUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutAdminAssistantUniformJumpsuit
+    - type: loadout
+      id: LoadoutAdminAssistantUniformJumpskirt
+
+- type: characterItemGroup
+  id: LoadoutAdminAssistantGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutHeadOfPersonnelGlovesHoP
+    - type: loadout
+      id: LoadoutHeadOfPersonnelGlovesInspection

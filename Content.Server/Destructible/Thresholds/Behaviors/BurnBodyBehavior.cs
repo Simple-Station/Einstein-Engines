@@ -1,5 +1,4 @@
-﻿using Content.Shared.Body.Components;
-using Content.Shared.Body.Part;
+﻿using Content.Shared.Body.Part; // Shitmed Change
 using Content.Shared.Inventory;
 using Content.Shared.Popups;
 using JetBrains.Annotations;
@@ -18,7 +17,6 @@ public sealed partial class BurnBodyBehavior : IThresholdBehavior
         var inventorySystem = system.EntityManager.System<InventorySystem>();
         var sharedPopupSystem = system.EntityManager.System<SharedPopupSystem>();
 
-
         if (system.EntityManager.TryGetComponent<InventoryComponent>(bodyId, out var comp))
         {
             foreach (var item in inventorySystem.GetHandOrInventoryEntities(bodyId))
@@ -27,6 +25,7 @@ public sealed partial class BurnBodyBehavior : IThresholdBehavior
             }
         }
 
+        // Shitmed Change Start
         if (system.EntityManager.TryGetComponent<BodyPartComponent>(bodyId, out var bodyPart))
         {
             if (bodyPart.CanSever
@@ -34,6 +33,7 @@ public sealed partial class BurnBodyBehavior : IThresholdBehavior
                 sharedPopupSystem.PopupCoordinates(Loc.GetString("bodyburn-text-others", ("name", bodyId)), transformSystem.GetMoverCoordinates(bodyId), PopupType.LargeCaution);
         }
         else
+        // Shitmed Change End
         {
             sharedPopupSystem.PopupCoordinates(Loc.GetString("bodyburn-text-others", ("name", bodyId)), transformSystem.GetMoverCoordinates(bodyId), PopupType.LargeCaution);
             system.EntityManager.QueueDeleteEntity(bodyId);
