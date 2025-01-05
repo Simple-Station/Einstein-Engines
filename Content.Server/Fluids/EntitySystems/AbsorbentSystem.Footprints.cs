@@ -2,7 +2,6 @@ using System.Linq;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Fluids;
 using Content.Shared.FootPrint;
-using Content.Shared.Timing;
 
 namespace Content.Server.Fluids.EntitySystems;
 
@@ -13,11 +12,11 @@ public sealed partial class AbsorbentSystem
     /// <summary>
     ///     Tries to clean a number of footprints in a range determined by the component. Returns the number of cleaned footprints.
     /// </summary>
-    private int TryCleanNearbyFootprints(EntityUid user, EntityUid used, EntityUid target, AbsorbentComponent component,  Entity<SolutionComponent> absorbentSoln)
+    private int TryCleanNearbyFootprints(EntityUid user, EntityUid used, Entity<AbsorbentComponent> target,  Entity<SolutionComponent> absorbentSoln)
     {
         var footprintQuery = GetEntityQuery<FootPrintComponent>();
         var targetCoords = Transform(target).Coordinates;
-        var entities = _lookup.GetEntitiesInRange(targetCoords, component.FootprintCleaningRange, LookupFlags.Uncontained);
+        var entities = _lookup.GetEntitiesInRange(targetCoords, target.Comp.FootprintCleaningRange, LookupFlags.Uncontained);
 
         // Take up to [MaxCleanedFootprints] footprints closest to the target
         var cleaned = entities.AsEnumerable()
@@ -31,10 +30,10 @@ public sealed partial class AbsorbentSystem
         var processed = 0;
         foreach (var (uid, footprintComp) in cleaned)
         {
-            if (TryPuddleInteract(user, used, uid, component, useDelay: null, absorbentSoln))
+            if (TryPuddleInteract(user, used, uid, target.Comp, useDelay: null, absorbentSoln))
                 processed++;
 
-            if (processed >= component.MaxCleanedFootprints)
+            if (processed >= target.Comp.MaxCleanedFootprints)
                 break;
         }
 

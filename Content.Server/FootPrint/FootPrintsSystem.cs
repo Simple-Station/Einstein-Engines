@@ -17,7 +17,6 @@ namespace Content.Server.FootPrint;
 public sealed class FootPrintsSystem : EntitySystem
 {
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly IMapManager _map = default!;
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
 
     [Dependency] private readonly InventorySystem _inventory = default!;
