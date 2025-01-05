@@ -9159,3 +9159,19 @@ Entries:
   id: 6629
   time: '2025-01-05T16:01:33.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1427
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Lamiae can now be male, no longer being a female-only species. They can
+        now wear facial hair as well.
+    - type: Add
+      message: >-
+        The Lamia species can now select markings above the leg, including
+        cybernetics, makeup, tattoos, noses, earrings, heterochromia, bracelets,
+        reptilian horns and frills, pointy ears, and more!
+    - type: Fix
+      message: Added text for the Lamia tail marking.
+  id: 6630
+  time: '2025-01-05T18:09:37.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1440
