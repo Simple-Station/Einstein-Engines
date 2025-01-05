@@ -96,7 +96,7 @@
   - type: Clothing
     sprite: Clothing/Shoes/Boots/mercboots.rsi
   - type: ClothingSlowOnDamageModifier
-    modifier: 0.7
+    modifier: 0.6
 
 - type: entity
   parent: ClothingShoesBaseButcherable
