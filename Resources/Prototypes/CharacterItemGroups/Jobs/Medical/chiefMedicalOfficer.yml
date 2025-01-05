@@ -91,3 +91,7 @@
       id: LoadoutChiefMedicalOfficerJumpsuit
     - type: loadout
       id: LoadoutChiefMedicalOfficerJumpskirt
+    - type: loadout
+      id: LoadoutChiefMedicalOfficerTurtleskirt # The Den
+    - type: loadout
+      id: LoadoutChiefMedicalOfficerTurtlesuit # The Den

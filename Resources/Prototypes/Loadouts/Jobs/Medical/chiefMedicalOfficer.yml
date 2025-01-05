@@ -212,3 +212,29 @@
         - ChiefMedicalOfficer
   items:
     - ClothingUniformJumpskirtCMO
+
+- type: loadout 
+  id: LoadoutChiefMedicalOfficerTurtleskirt # The Den // LETS HOPE IT STICKS THIS TIME
+  category: JobsMedicalChiefMedicalOfficer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefMedicalOfficerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefMedicalOfficer
+  items:
+    - ClothingUniformJumpskirtCMOTurtle
+
+- type: loadout
+  id: LoadoutChiefMedicalOfficerTurtlesuit # The Den
+  category: JobsMedicalChiefMedicalOfficer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefMedicalOfficerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefMedicalOfficer
+  items:
+    - ClothingUniformJumpsuitCMOTurtle
