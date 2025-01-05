@@ -9277,3 +9277,12 @@ Entries:
   id: 6636
   time: '2025-01-05T18:35:46.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1435
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Lamia now make drag marks when moving through puddles instead of regular
+        footprints.
+  id: 6637
+  time: '2025-01-05T18:37:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1425
