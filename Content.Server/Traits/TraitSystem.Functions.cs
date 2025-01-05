@@ -580,9 +580,7 @@ public sealed partial class TraitModifySlowOnDamage : TraitFunction
         var newSpeedModifierThresholds = new Dictionary<FixedPoint2, float>();
 
         foreach (var (damageThreshold, speedModifier) in slowOnDamage.SpeedModifierThresholds)
-        {
             newSpeedModifierThresholds[damageThreshold + DamageThresholdsModifier] = 1 - (1 - speedModifier) * SpeedModifierMultiplier;
-        }
 
         slowOnDamage.SpeedModifierThresholds = newSpeedModifierThresholds;
     }
