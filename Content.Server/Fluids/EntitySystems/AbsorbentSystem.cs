@@ -18,7 +18,7 @@ using Robust.Shared.Utility;
 namespace Content.Server.Fluids.EntitySystems;
 
 /// <inheritdoc/>
-public sealed class AbsorbentSystem : SharedAbsorbentSystem
+public sealed partial class AbsorbentSystem : SharedAbsorbentSystem
 {
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
@@ -119,6 +119,8 @@ public sealed class AbsorbentSystem : SharedAbsorbentSystem
             if (!TryRefillableInteract(user, used, target, component, useDelay, absorberSoln.Value))
                 return;
         }
+
+        TryCleanNearbyFootprints(user, used, target, component, absorberSoln.Value);
     }
 
     /// <summary>
