@@ -38,25 +38,6 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
 
         SubscribeLocalEvent<NanoChatCartridgeComponent, CartridgeUiReadyEvent>(OnUiReady);
         SubscribeLocalEvent<NanoChatCartridgeComponent, CartridgeMessageEvent>(OnMessage);
-
-        Subs.BuiEvents<PdaComponent>(PdaUiKey.Key, subs =>
-        {
-            subs.Event<BoundUIClosedEvent>(OnPdaClosed);
-        });
-    }
-
-    // Reset current chat when PDA closes.
-    private void OnPdaClosed(EntityUid uid, PdaComponent component, BoundUIClosedEvent args)
-    {
-        var exists = GetCardEntity(uid, out var cardEntity);
-
-        if (!exists)
-            return;
-
-        _nanoChat.SetCurrentChat(
-            (cardEntity.Owner, (NanoChatCardComponent?) cardEntity.Comp),
-            null
-        );
     }
 
     public override void Update(float frameTime)
@@ -401,7 +382,7 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
             return;
 
         _nanoChat.AddMessage((recipient, recipient.Comp), senderNumber.Value, message with { DeliveryFailed = false });
-        HandleUnreadNotification(recipient, message);
+        HandleUnreadNotification(recipient, message, (uint) senderNumber);
 
         var msgEv = new NanoChatMessageReceivedEvent(recipient);
         RaiseLocalEvent(ref msgEv);
@@ -411,42 +392,36 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
     /// <summary>
     ///     Handles unread message notifications and updates unread status.
     /// </summary>
-    private void HandleUnreadNotification(Entity<NanoChatCardComponent> recipient, NanoChatMessage message)
+    private void HandleUnreadNotification(Entity<NanoChatCardComponent> recipient,
+        NanoChatMessage message,
+        uint senderNumber)
     {
         // Get sender name from contacts or fall back to number
         var recipients = _nanoChat.GetRecipients((recipient, recipient.Comp));
-        var senderName = recipients.TryGetValue(message.SenderId, out var existingRecipient)
-            ? existingRecipient.Name
+        var senderName = recipients.TryGetValue(message.SenderId, out var senderRecipient)
+            ? senderRecipient.Name
             : $"#{message.SenderId:D4}";
-
-        var shouldUnread = true;
-
-        if (!recipient.Comp.Recipients[message.SenderId].HasUnread && !recipient.Comp.NotificationsMuted)
-        {
-            var pdaQuery = EntityQueryEnumerator<PdaComponent>();
-            while (pdaQuery.MoveNext(out var pdaUid, out var pdaComp))
-            {
-                if (pdaComp.ContainedId != recipient)
-                    continue;
-
-                if (_ui.IsUiOpen((pdaUid, null), PdaUiKey.Key) && recipient.Comp.CurrentChat == message.SenderId)
-                {
-                    shouldUnread = false;
-                    break;
-                }
-
-                _cartridge.SendNotification(pdaUid,
-                    Loc.GetString("nano-chat-new-message-title", ("sender", senderName)),
-                    Loc.GetString("nano-chat-new-message-body", ("message", TruncateMessage(message.Content))));
-                break;
-            }
-        }
+        var hasSelectedCurrentChat = _nanoChat.GetCurrentChat((recipient, recipient.Comp)) == senderNumber;
 
         // Update unread status
-        _nanoChat.SetRecipient(
-            (recipient, recipient.Comp),
-            message.SenderId,
-            existingRecipient with { HasUnread = shouldUnread });
+        if (!hasSelectedCurrentChat)
+            _nanoChat.SetRecipient((recipient, recipient.Comp),
+                message.SenderId,
+                senderRecipient with { HasUnread = true });
+
+        if (recipient.Comp.NotificationsMuted ||
+            recipient.Comp.PdaUid is not {} pdaUid ||
+            !TryComp<CartridgeLoaderComponent>(pdaUid, out var loader) ||
+            // Don't notify if the recipient has the NanoChat program open with this chat selected.
+            (hasSelectedCurrentChat &&
+                _ui.IsUiOpen(pdaUid, PdaUiKey.Key) &&
+                HasComp<NanoChatCartridgeComponent>(loader.ActiveProgram)))
+            return;
+
+        _cartridge.SendNotification(pdaUid,
+            Loc.GetString("nano-chat-new-message-title", ("sender", senderName)),
+            Loc.GetString("nano-chat-new-message-body", ("message", TruncateMessage(message.Content))),
+            loader);
     }
 
     /// <summary>
