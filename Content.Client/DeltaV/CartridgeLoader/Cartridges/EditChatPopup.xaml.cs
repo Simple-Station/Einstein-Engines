@@ -12,6 +12,12 @@ public sealed partial class EditChatPopup : DefaultWindow
     private const int MaxInputLength = 16;
     private const int MaxNumberLength = 4;
 
+    // Used to see if the user input is different from the original data
+    // to check if the user can submit
+    private string OriginalNumber = "";
+    private string OriginalName = "";
+    private string OriginalJob = "";
+
     public event Action<uint, string, string?>? OnContactEdited;
 
     public EditChatPopup()
@@ -39,6 +45,7 @@ public sealed partial class EditChatPopup : DefaultWindow
         {
             if (args.Text.Length > MaxInputLength)
                 JobInput.Text = args.Text[..MaxInputLength];
+            ValidateInputs();
         };
 
         NumberInput.OnTextChanged += args =>
@@ -59,7 +66,11 @@ public sealed partial class EditChatPopup : DefaultWindow
     {
         var isValid = !string.IsNullOrWhiteSpace(NumberInput.Text) &&
             !string.IsNullOrWhiteSpace(NameInput.Text) &&
-            uint.TryParse(NumberInput.Text, out _);
+            uint.TryParse(NumberInput.Text, out _) &&
+            // Only valid if there are any changes
+            (NumberInput.Text != OriginalNumber ||
+            NameInput.Text != OriginalName ||
+            JobInput.Text != OriginalJob);
 
         ConfirmButton.Disabled = !isValid;
     }
@@ -83,7 +94,21 @@ public sealed partial class EditChatPopup : DefaultWindow
         ValidateInputs();
     }
 
-    public void SetNumberInput(string newNumber) => NumberInput.Text = newNumber;
-    public void SetNameInput(string newName) => NameInput.Text = newName;
-    public void SetJobInput(string newJob) => JobInput.Text = newJob;
+    public void SetNumberInput(string newNumber)
+    {
+        NumberInput.Text = newNumber;
+        OriginalNumber = newNumber;
+    }
+
+    public void SetNameInput(string newName)
+    {
+        NameInput.Text = newName;
+        OriginalName = newName;
+    }
+
+    public void SetJobInput(string newJob)
+    {
+        JobInput.Text = newJob;
+        OriginalJob = newJob;
+    }
 }
