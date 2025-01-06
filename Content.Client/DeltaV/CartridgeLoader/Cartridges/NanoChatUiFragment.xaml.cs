@@ -50,8 +50,7 @@ public sealed partial class NanoChatUiFragment : BoxContainer
 
         _editChatPopup.OnContactEdited += (number, name, job) =>
         {
-            DeleteCurrentChat();
-            ActionSendUiMessage?.Invoke(NanoChatUiMessageType.NewChat, number, name, job);
+            ActionSendUiMessage?.Invoke(NanoChatUiMessageType.EditChat, number, name, job);
         };
 
         NewChatButton.OnPressed += _ =>

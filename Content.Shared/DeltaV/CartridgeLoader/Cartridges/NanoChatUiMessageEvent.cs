@@ -50,6 +50,7 @@ public enum NanoChatUiMessageType : byte
 {
     NewChat,
     SelectChat,
+    EditChat,
     CloseChat,
     SendMessage,
     DeleteChat,

@@ -89,6 +89,9 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
             case NanoChatUiMessageType.SelectChat:
                 HandleSelectChat(card, msg);
                 break;
+            case NanoChatUiMessageType.EditChat:
+                HandleEditChat(card, msg);
+                break;
             case NanoChatUiMessageType.CloseChat:
                 HandleCloseChat(card);
                 break;
@@ -170,6 +173,26 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
                 msg.RecipientNumber.Value,
                 recipient with { HasUnread = false });
         }
+    }
+
+    /// <summary>
+    ///     Handles editing the current chat conversation.
+    /// </summary>
+    private void HandleEditChat(Entity<NanoChatCardComponent> card, NanoChatUiMessageEvent msg)
+    {
+        if (msg.RecipientNumber == null || msg.Content == null || msg.RecipientNumber == card.Comp.Number ||
+            _nanoChat.GetRecipient((card, card.Comp), msg.RecipientNumber.Value) is not {} recipient)
+            return;
+
+        // Update recipient
+        recipient.Name = msg.Content;
+        recipient.JobTitle = msg.RecipientJob;
+
+        _nanoChat.SetRecipient((card, card.Comp), msg.RecipientNumber.Value, recipient);
+
+        var recipientEv = new NanoChatRecipientUpdatedEvent(card);
+        RaiseLocalEvent(ref recipientEv);
+        UpdateUIForCard(card);
     }
 
     /// <summary>
