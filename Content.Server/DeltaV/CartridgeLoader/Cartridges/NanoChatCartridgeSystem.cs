@@ -466,7 +466,11 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
             return;
 
         _cartridge.SendNotification(pdaUid,
-            Loc.GetString("nano-chat-new-message-title", ("sender", senderName)),
+            !String.IsNullOrEmpty(senderRecipient.JobTitle)
+                ? Loc.GetString("nano-chat-new-message-title-job",
+                    ("sender", senderName), ("jobTitle", senderRecipient.JobTitle))
+                : Loc.GetString("nano-chat-new-message-title",
+                    ("sender", senderName)),
             Loc.GetString("nano-chat-new-message-body", ("message", TruncateMessage(message.Content))),
             loader);
     }
