@@ -86,6 +86,27 @@
             - CartridgeLightRifle
 
 - type: entity
+  parent: WeaponRifleGestio
+  id: WeaponRifleGestioEmpty
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineLightRifle
+      gun_chamber:
+        name: Chamber
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeLightRifle
+
+- type: entity
   parent: BaseWeaponRifle
   id: WeaponRifleNovaliteC1
   name: Novalite C1
@@ -161,6 +182,27 @@
             - CartridgeRifle
 
 - type: entity
+  parent: WeaponRifleNovaliteC1
+  id: WeaponRifleNovaliteC1Empty
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineNovaliteC1
+      gun_chamber:
+        name: Chamber
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeRifle
+
+- type: entity
   id: WeaponRifleSVT
   name: SVT-40
   parent: BaseWeaponRifle
@@ -216,3 +258,24 @@
     magState: mag
     steps: 1
     zeroVisible: true
+
+- type: entity
+  parent: WeaponRifleSVT
+  id: WeaponRifleSVTEmpty
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineLightRifle
+      gun_chamber:
+        name: Chamber
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeLightRifle
