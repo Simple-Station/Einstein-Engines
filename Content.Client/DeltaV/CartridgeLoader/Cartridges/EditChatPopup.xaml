@@ -42,8 +42,8 @@
                         Text="{Loc nano-chat-cancel}"
                         StyleClasses="OpenRight"
                         MinSize="80 0" />
-                <Button Name="CreateButton"
-                        Text="{Loc nano-chat-create}"
+                <Button Name="ConfirmButton"
+                        Text="{Loc nano-chat-confirm}"
                         StyleClasses="OpenLeft"
                         MinSize="80 0"
                         Disabled="True" />

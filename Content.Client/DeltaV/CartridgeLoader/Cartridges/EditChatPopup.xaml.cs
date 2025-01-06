@@ -23,7 +23,7 @@ public sealed partial class EditChatPopup : DefaultWindow
 
         // Button handlers
         CancelButton.OnPressed += _ => Close();
-        CreateButton.OnPressed += _ => EditChat();
+        ConfirmButton.OnPressed += _ => EditChat();
 
         // Input validation
         NameInput.OnTextChanged += _ => ValidateInputs();
@@ -61,7 +61,7 @@ public sealed partial class EditChatPopup : DefaultWindow
             !string.IsNullOrWhiteSpace(NameInput.Text) &&
             uint.TryParse(NumberInput.Text, out _);
 
-        CreateButton.Disabled = !isValid;
+        ConfirmButton.Disabled = !isValid;
     }
 
     private void EditChat()
