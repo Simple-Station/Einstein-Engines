@@ -11,8 +11,6 @@ namespace Content.Server.Database.Migrations.Sqlite
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.Sql("ALTER TABLE \"player\" ADD COLUMN IF NOT EXISTS \"last_read_rules\" TEXT;");
-
             migrationBuilder.CreateTable(
                 name: "ban_template",
                 columns: table => new
