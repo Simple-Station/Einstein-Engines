@@ -29,10 +29,10 @@ public sealed partial class AbsorbentSystem
         var processed = 0;
         foreach (var (uid, footprintComp) in cleaned)
         {
-            if (TryPuddleInteract(user, used, uid, target.Comp, useDelay: null, absorbentSoln))
+            if (TryPuddleInteract(user, used.Owner, uid, used.Comp, useDelay: null, absorbentSoln))
                 processed++;
 
-            if (processed >= target.Comp.MaxCleanedFootprints)
+            if (processed >= used.Comp.MaxCleanedFootprints)
                 break;
         }
 
