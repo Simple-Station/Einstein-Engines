@@ -145,6 +145,7 @@
   description: greenshift-description
   rules:
   - SpaceTrafficControlFriendlyEventScheduler
+  - BasicRoundstartVariation
   - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
