@@ -83,6 +83,7 @@
       jobs:
         - Borg
         - MedicalBorg
+        - Mime
   functions:
     - !type:TraitAddComponent
       components:

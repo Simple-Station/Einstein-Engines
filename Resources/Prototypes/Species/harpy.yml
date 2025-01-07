@@ -4,6 +4,7 @@
   roundStart: true
   prototype: MobHarpy
   sprites: MobHarpySprites
+  defaultSkinTone: "#c0967f"
   markingLimits: MobHarpyMarkingLimits
   dollPrototype: MobHarpyDummy
   skinColoration: HumanToned
