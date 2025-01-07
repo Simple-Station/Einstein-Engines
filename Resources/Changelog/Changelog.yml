@@ -9367,3 +9367,12 @@ Entries:
   id: 6644
   time: '2025-01-07T04:08:32.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1446
+- author: Spatison
+  changes:
+    - type: Fix
+      message: Humanoid color in the spawn panel is now correct.
+    - type: Fix
+      message: IPCs can no longer spawn invisible.
+  id: 6645
+  time: '2025-01-07T17:02:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1454
