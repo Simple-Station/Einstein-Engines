@@ -13,11 +13,7 @@ namespace Content.Server.Database.Migrations.Postgres
         {
             migrationBuilder.Sql("DROP TABLE IF EXISTS ProileLoadouts;");
 
-            migrationBuilder.AddColumn<DateTime>(
-                name: "last_read_rules",
-                table: "player",
-                type: "timestamp with time zone",
-                nullable: true);
+            migrationBuilder.Sql("ALTER TABLE \"player\" ADD IF NOT EXISTS \"last_read_rules\" TIMESTAMP WITH TIME ZONE NULL;");
 
             migrationBuilder.AddColumn<int>(
                 name: "hwid_type",
