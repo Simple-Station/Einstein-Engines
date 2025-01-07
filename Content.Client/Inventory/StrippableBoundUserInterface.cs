@@ -6,6 +6,8 @@ using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.Hands.Controls;
 using Content.Client.Verbs.UI;
+using Content.Shared._EstacaoPirata.Cards.Card;
+using Content.Shared._EstacaoPirata.Cards.Hand;
 using Content.Shared.Cuffs;
 using Content.Shared.Cuffs.Components;
 using Content.Shared.Ensnaring.Components;
@@ -173,8 +175,10 @@ namespace Content.Client.Inventory
                 if (EntMan.TryGetComponent<CuffableComponent>(Owner, out var cuff) && _cuffable.GetAllCuffs(cuff).Contains(virt.BlockingEntity))
                     button.BlockedRect.MouseFilter = MouseFilterMode.Ignore;
             }
-
-            UpdateEntityIcon(button, hand.HeldEntity);
+            //Goobstation: Cards are always hidden. NO CHEATING FOR U.
+            var isCard = EntMan.HasComponent<CardComponent>(hand.HeldEntity) ||
+                         EntMan.HasComponent<CardHandComponent>(hand.HeldEntity);
+            UpdateEntityIcon(button, isCard ? _virtualHiddenEntity : hand.HeldEntity);
             _strippingMenu!.HandsContainer.AddChild(button);
         }
 
@@ -212,6 +216,18 @@ namespace Content.Client.Inventory
                 && !(EntMan.TryGetComponent<ThievingComponent>(PlayerManager.LocalEntity, out var thiefComponent)
                 && thiefComponent.IgnoreStripHidden))
                 entity = _virtualHiddenEntity;
+
+            // DRAFT TODO: How should this interact with characters with the theif trait?
+            //             Should they be able to peek at the cards or not?
+            //             Because if Player A has a hand unflipped on their hand, Player B
+            //             With said trait can see the literal uncensored card sprites.
+            var isCard = EntMan.HasComponent<CardComponent>(entity) ||
+                         EntMan.HasComponent<CardHandComponent>(entity);
+            if (entity != null && isCard)
+            {
+                entity = _virtualHiddenEntity;
+            }
+
 
             var button = new SlotButton(new SlotData(slotDef, container));
             button.Pressed += SlotPressed;
