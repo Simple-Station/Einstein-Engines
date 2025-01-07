@@ -5,6 +5,7 @@
   prototype: MobLamia
   dollPrototype: MobLamiaDummy
   sprites: MobLamiaSprites
+  defaultSkinTone: "#c0967f"
   markingLimits: MobLamiaMarkingLimits
   skinColoration: HumanToned
   maleFirstNames: names_cyno_male
