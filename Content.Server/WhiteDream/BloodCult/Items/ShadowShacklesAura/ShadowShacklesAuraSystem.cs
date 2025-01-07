@@ -34,7 +34,7 @@ public sealed class ShadowShacklesAuraSystem : EntitySystem
 
         var target = args.HitEntities.First();
         if (uid == target
-            || !HasComp<StunnedComponent>(target)
+            || HasComp<StunnedComponent>(target)
             || HasComp<BloodCultistComponent>(target))
             return;
 
