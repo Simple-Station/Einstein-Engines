@@ -1,21 +1,26 @@
 - type: vendingMachineInventory
   id: PietyVendInventory
   startingInventory:
-    ClothingUniformJumpsuitChaplain: 2
-    ClothingUniformJumpskirtChaplain: 2
-    ClothingUniformJumpsuitMonasticRobeDark: 1
-    ClothingUniformJumpsuitMonasticRobeLight: 1
+    ClothingUniformJumpsuitChaplain: 3
+    ClothingUniformJumpskirtChaplain: 3
+    ClothingUniformJumpsuitMonasticRobeDark: 3
+    ClothingUniformJumpsuitMonasticRobeLight: 3
+    ClothingOuterHoodieChaplain: 3
+    ClothingOuterHoodieBlack: 3
+    ClothingHeadHatHoodNunHood: 3
+    ClothingOuterNunRobe: 3
+    ClothingHeadHatFez: 3
+    ClothingHeadHatPlaguedoctor: 3
+    ClothingHeadHatWitch: 3
+    ClothingHeadHatWitch1: 3
+    ClothingOuterPlagueSuit: 3
+    ClothingMaskPlague: 3
+    ClothingNeckScarfChaplainStole: 3
+    ClothingHeadsetService: 4
+    RubberStampChaplain: 3
+    Bible: 3
+    ClothingNeckCrucifix: 3
     ClothingNeckStoleChaplain: 1
-    ClothingOuterHoodieChaplain: 1
-    ClothingOuterHoodieBlack: 1
-    ClothingHeadHatHoodNunHood: 1
-    ClothingOuterNunRobe: 1
-    ClothingHeadHatFez: 1
-    ClothingHeadHatPlaguedoctor: 1
-    ClothingHeadHatWitch: 1
-    ClothingHeadHatWitch1: 1
-    ClothingOuterPlagueSuit: 1
-    ClothingMaskPlague: 1
     #ClothingHeadsetService: 2 # Delta-V - Chaplain is no longer service dept
     BoxCandle: 2
     BoxCandleSmall: 2
