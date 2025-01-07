@@ -422,7 +422,7 @@ namespace Content.Shared.CCVar
         ///     How many traits a character can have at most.
         /// </summary>
         public static readonly CVarDef<int> GameTraitsMax =
-            CVarDef.Create("game.traits_max", 10, CVar.REPLICATED);
+            CVarDef.Create("game.traits_max", 14, CVar.REPLICATED);
 
         /// <summary>
         ///     How many points a character should start with.
