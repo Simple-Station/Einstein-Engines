@@ -5,6 +5,7 @@
     - MobAtmosStandard
     - MobFlammable
     - BaseMobSpecies
+    - MobRespirator
   id: MobShadowkinBase
   name: Urist McShadow
   abstract: true
