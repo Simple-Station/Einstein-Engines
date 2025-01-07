@@ -4,7 +4,7 @@
   roundStart: true
   prototype: MobFelinid
   sprites: MobHumanSprites
-  defaultSkinTone: "#c0967f" # WD EDIT
+  defaultSkinTone: "#c0967f"
   markingLimits: MobFelinidMarkingLimits
   dollPrototype: MobFelinidDummy
   skinColoration: HumanToned
