@@ -44,8 +44,6 @@
     lowPressureMultiplier: 1000
   - type: TemperatureProtection
     coefficient: 0.001
-  - type: FireProtection
-    reduction: 1
   - type: ExplosionResistance
     damageCoefficient: 0.5
   - type: Armor
@@ -100,10 +98,6 @@
     coefficient: 0.75 # 25%
   - type: GuideHelp
     guides: [ HephaestusIndustries ]
-  - type: TemperatureProtection
-    coefficient: 0.001
-  - type: FireProtection
-    reduction: 0.8
 
 #Spationaut Hardsuit
 - type: entity
@@ -403,10 +397,6 @@
     coefficient: 0.65 # 35%
   - type: GuideHelp
     guides: [ HephaestusIndustries ]
-  - type: TemperatureProtection
-    coefficient: 0.001
-  - type: FireProtection
-    reduction: 1
 
 #Chief Medical Officer's Hardsuit
 - type: entity
@@ -632,7 +622,7 @@
   - type: ExplosionResistance
     damageCoefficient: 0.2
   - type: FireProtection
-    reduction: 1 # perfect protection like atmos firesuit for pyro tf2 ops
+    reduction: 0.8 # perfect protection like atmos firesuit for pyro tf2 ops
   - type: Armor
     modifiers:
       coefficients:
