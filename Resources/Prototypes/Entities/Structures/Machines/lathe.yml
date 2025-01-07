@@ -16,7 +16,7 @@
         mask:
         - MachineMask
         layer:
-        - MachineLayer
+          - MachineLayer
   - type: Lathe
   - type: MaterialStorage
   - type: Destructible
@@ -957,52 +957,56 @@
   name: ammo techfab
   description: Prints the bare minimum of bullets that any budget military or armory could need. Nothing fancy.
   components:
-  - type: Sprite
-    sprite: Structures/Machines/techfab.rsi
-    layers:
-    - state: icon
-      map: ["enum.LatheVisualLayers.IsRunning"]
-    - state: ammo
-    - state: unlit
-      shader: unshaded
-      map: ["enum.PowerDeviceVisualLayers.Powered"]
-    - state: inserting
-      map: ["enum.MaterialStorageVisualLayers.Inserting"]
-    - state: panel
-      map: ["enum.WiresVisualLayers.MaintenancePanel"]
-  - type: Machine
-    board: AmmoTechFabCircuitboard
-  - type: Lathe
-    idleState: icon
-    runningState: icon
-    staticRecipes:
-    - BoxLethalshot
-    - BoxShotgunFlare
-    - BoxShotgunSlug
-    - MagazineBoxLightRifle
-    - MagazineBoxMagnum
-    - MagazineBoxPistol
-    - MagazineBoxRifle
-    - MagazineLightRifle
-    - MagazineLightRifleEmpty
-    - MagazinePistol
-    - MagazinePistolEmpty
-    - MagazineRifle
-    - MagazineRifleEmpty
-    - MagazineShotgun
-    - MagazineShotgunEmpty
-    - MagazineShotgunSlug
-    - ShellTranquilizer
-    - SpeedLoaderMagnum
-    - SpeedLoaderMagnumEmpty
-    - CartridgeSpecial
-    - MagazineBoxSpecial
-  - type: MaterialStorage
-    whitelist:
-      tags:
-      - Sheet
-      - RawMaterial
-      - Ingot
+    - type: Sprite
+      sprite: Structures/Machines/techfab.rsi
+      layers:
+        - state: icon
+          map: ["enum.LatheVisualLayers.IsRunning"]
+        - state: ammo
+        - state: unlit
+          shader: unshaded
+          map: ["enum.PowerDeviceVisualLayers.Powered"]
+        - state: inserting
+          map: ["enum.MaterialStorageVisualLayers.Inserting"]
+        - state: panel
+          map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - type: Machine
+      board: AmmoTechFabCircuitboard
+    - type: Lathe
+      idleState: icon
+      runningState: icon
+      staticRecipes:
+        - BoxLethalshot
+        - BoxShotgunFlare
+        - BoxShotgunSlug
+        - MagazineBoxLightRifle
+        - MagazineBoxMagnum
+        - MagazineBoxPistol
+        - MagazineBoxRifle
+        - MagazineLightRifle
+        - MagazineLightRifleEmpty
+        - MagazinePistol
+        - MagazinePistolEmpty
+        - MagazineRifle
+        - MagazineRifleEmpty
+        - MagazineNovaliteC1
+        - MagazineNovaliteC1Empty
+        - MagazineShotgun
+        - MagazineShotgunEmpty
+        - MagazineShotgunSlug
+        - ShellTranquilizer
+        - SpeedLoaderMagnum
+        - SpeedLoaderMagnumEmpty
+        - SpeedLoaderRifleHeavy
+        - SpeedLoaderRifleHeavyEmpty
+        - CartridgeSpecial
+        - MagazineBoxSpecial
+    - type: MaterialStorage
+      whitelist:
+        tags:
+          - Sheet
+          - RawMaterial
+          - Ingot
 
 - type: entity
   id: MedicalTechFab
