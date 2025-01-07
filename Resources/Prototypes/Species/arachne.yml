@@ -48,6 +48,7 @@
   id: MobArachneSprites
   sprites:
     Head: MobHumanHead
+    Face: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking

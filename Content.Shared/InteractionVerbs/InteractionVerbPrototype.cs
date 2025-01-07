@@ -108,13 +108,12 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
     ///     The user, target, needHand, event, and other required parameters are set up automatically when the do-after is created.
     /// </summary>
     [DataField]
-    public DoAfterArgs DoAfter = new DoAfterArgs()
+    public DoAfterArgs DoAfter = new()
     {
         User = EntityUid.Invalid,
         NetUser = NetEntity.Invalid,
         BreakOnDamage = true,
-        BreakOnTargetMove = true,
-        BreakOnUserMove = true,
+        BreakOnMove = true,
         BreakOnWeightlessMove = true,
         RequireCanInteract = false,
         // Never used, but must be present because the field is non-nullable and will error during serialization if not set.

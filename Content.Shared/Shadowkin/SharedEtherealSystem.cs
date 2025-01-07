@@ -14,6 +14,10 @@ using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
 using Content.Shared.Abilities.Psionics;
 using Content.Shared.Tag;
+using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Systems;
+using Content.Shared.Standing;
+
 
 namespace Content.Shared.Shadowkin;
 
@@ -24,6 +28,8 @@ public abstract class SharedEtherealSystem : EntitySystem
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly TagSystem _tag = default!;
+    [Dependency] private readonly StaminaSystem _stamina = default!;
+    [Dependency] private readonly StandingStateSystem _standingState = default!;
 
     public override void Initialize()
     {
@@ -38,10 +44,18 @@ public abstract class SharedEtherealSystem : EntitySystem
         SubscribeLocalEvent<EtherealComponent, ShotAttemptedEvent>(OnShootAttempt);
         SubscribeLocalEvent<EtherealComponent, OnMindbreakEvent>(OnMindbreak);
         SubscribeLocalEvent<EtherealComponent, MobStateChangedEvent>(OnMobStateChanged);
+        SubscribeLocalEvent<EtherealComponent, OnManaUpdateEvent>(OnManaUpdate);
     }
 
     public virtual void OnStartup(EntityUid uid, EtherealComponent component, MapInitEvent args)
     {
+        if (TryComp<PsionicComponent>(uid, out var magic)
+            && component.DrainMana)
+        {
+            component.OldManaGain = magic.ManaGain;
+            magic.ManaGain = -1;
+        }
+
         if (!TryComp<FixturesComponent>(uid, out var fixtures))
             return;
 
@@ -67,6 +81,10 @@ public abstract class SharedEtherealSystem : EntitySystem
 
     public virtual void OnShutdown(EntityUid uid, EtherealComponent component, ComponentShutdown args)
     {
+        if (TryComp<PsionicComponent>(uid, out var magic)
+            && component.DrainMana)
+            magic.ManaGain = component.OldManaGain;
+
         if (!TryComp<FixturesComponent>(uid, out var fixtures))
             return;
 
@@ -75,12 +93,31 @@ public abstract class SharedEtherealSystem : EntitySystem
         _physics.SetCollisionMask(uid, fixture.Key, fixture.Value, component.OldMobMask, fixtures);
         _physics.SetCollisionLayer(uid, fixture.Key, fixture.Value, component.OldMobLayer, fixtures);
 
-        if (component.HasDoorBumpTag)
-            _tag.AddTag(uid, "DoorBumpOpener");
+        if (_cfg.GetCVar(CCVars.EtherealPassThrough))
+            if (component.HasDoorBumpTag)
+                _tag.AddTag(uid, "DoorBumpOpener");
+    }
+
+    private void OnManaUpdate(EntityUid uid, EtherealComponent component, ref OnManaUpdateEvent args)
+    {
+        if (!TryComp<PsionicComponent>(uid, out var magic))
+            return;
+
+        if (magic.Mana <= 0)
+        {
+            if (TryComp<StaminaComponent>(uid, out var stamina))
+                _stamina.TakeStaminaDamage(uid, stamina.CritThreshold, stamina, uid);
+
+            SpawnAtPosition("ShadowkinShadow", Transform(uid).Coordinates);
+            SpawnAtPosition("EffectFlashShadowkinDarkSwapOff", Transform(uid).Coordinates);
+            RemComp(uid, component);
+        }
     }
 
     private void OnMindbreak(EntityUid uid, EtherealComponent component, ref OnMindbreakEvent args)
     {
+        SpawnAtPosition("ShadowkinShadow", Transform(uid).Coordinates);
+        SpawnAtPosition("EffectFlashShadowkinDarkSwapOff", Transform(uid).Coordinates);
         RemComp(uid, component);
     }
 
@@ -88,7 +125,11 @@ public abstract class SharedEtherealSystem : EntitySystem
     {
         if (args.NewMobState == MobState.Critical
             || args.NewMobState == MobState.Dead)
+        {
+            SpawnAtPosition("ShadowkinShadow", Transform(uid).Coordinates);
+            SpawnAtPosition("EffectFlashShadowkinDarkSwapOff", Transform(uid).Coordinates);
             RemComp(uid, component);
+        }
     }
 
     private void OnShootAttempt(Entity<EtherealComponent> ent, ref ShotAttemptedEvent args)

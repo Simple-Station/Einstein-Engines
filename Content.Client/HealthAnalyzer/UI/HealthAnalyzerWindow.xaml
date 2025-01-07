@@ -2,7 +2,7 @@
     xmlns="https://spacestation14.io"
     xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
     MaxHeight="525"
-    MinWidth="350">
+    MinWidth="350"> <!-- Shitmed Change -->
     <ScrollContainer
         Margin="5 5 5 5"
         ReturnMeasure="True"
@@ -14,14 +14,17 @@
             <Label
                 Name="NoPatientDataText"
                 Text="{Loc health-analyzer-window-no-patient-data-text}"/>
+            <!-- Shitmed Change Start -->
             <Button Name="ReturnButton"
                     Text="{Loc 'health-analyzer-window-return-button-text'}"
                     Margin="0 0 0 10"
                     HorizontalExpand="False"/>
+            <!-- Shitmed Change End -->
             <BoxContainer
                 Name="PatientDataContainer"
                 Margin="0 0 0 5"
                 Orientation="Vertical">
+                <!-- Shitmed Change Start -->
                 <BoxContainer Orientation="Horizontal"
                               Margin="0 0 0 5">
                     <PanelContainer>
@@ -222,6 +225,7 @@
             </BoxContainer>
 
             <PanelContainer StyleClasses="LowDivider"/>
+            <!-- Shitmed Change End -->
 
             <BoxContainer
                 Name="GroupsContainer"

@@ -149,8 +149,8 @@
       allowMovement: true
       allowSpeech: true
       makeSentient: true
-      name: ghost-role-information-ifrit-name
-      description: ghost-role-information-ifrit-description
+      name: ghost-role-information-ifrit-wizard-name
+      description: ghost-role-information-ifrit-wizard-description
       raffle:
         settings: default
     - type: GhostTakeoverAvailable
@@ -230,7 +230,7 @@
     - type: Hands
     - type: ComplexInteraction
     - type: Clumsy
-      clumsyDamage:
+      gunShootFailDamage:
         types:
           Blunt: 5
           Piercing: 4

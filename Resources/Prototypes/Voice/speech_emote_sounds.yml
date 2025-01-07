@@ -88,6 +88,24 @@
       collection: MaleCry
     Weh:
       collection: Weh
+    Sneeze:
+      collection: MaleSneezes
+    Cough:
+      collection: MaleCoughs
+    CatMeow:
+      collection: CatMeows
+    CatHisses:
+      collection: CatHisses
+    MonkeyScreeches:
+      collection: MonkeyScreeches
+    RobotBeep:
+      collection: RobotBeeps
+    Yawn:
+      collection: MaleYawn
+    Snore:
+      collection: Snores
+    Sigh:
+      collection: MaleSigh
 
 - type: emoteSounds
   id: FemaleReptilian
@@ -106,9 +124,29 @@
       collection: FemaleCry
     Weh:
       collection: Weh
+    Sneeze:
+      collection: FemaleSneezes
+    Cough:
+      collection: FemaleCoughs
+    CatMeow:
+      collection: CatMeows
+    CatHisses:
+      collection: CatHisses
+    MonkeyScreeches:
+      collection: MonkeyScreeches
+    RobotBeep:
+      collection: RobotBeeps
+    Yawn:
+      collection: FemaleYawn
+    Snore:
+      collection: Snores
+    Sigh:
+      collection: FemaleSigh
 
 - type: emoteSounds
   id: MaleSlime
+  params:
+    variation: 0.125
   sounds:
     Squish:
       collection: Squishes
@@ -142,11 +180,11 @@
       collection: Whistles
     Weh:
       collection: Weh
-  params:
-    variation: 0.125
 
 - type: emoteSounds
   id: FemaleSlime
+  params:
+    variation: 0.125
   sounds:
     Squish:
       collection: Squishes
@@ -180,8 +218,6 @@
       collection: Whistles
     Weh:
       collection: Weh
-  params:
-    variation: 0.125
 
 - type: emoteSounds
   id: MaleShadowkin
@@ -269,17 +305,44 @@
 
 - type: emoteSounds
   id: UnisexVox
+  params:
+    variation: 0.125
   sounds:
     Scream:
       path: /Audio/Voice/Vox/shriek1.ogg
     Laugh:
       path: /Audio/Voice/Vox/vox_laugh.ogg
-  params:
-    variation: 0.125
-    # We need vox sounds for the other emotes
+    Sneeze:
+      collection: MaleSneezes
+    Cough:
+      collection: MaleCoughs
+    CatMeow:
+      collection: CatMeows
+    CatHisses:
+      collection: CatHisses
+    MonkeyScreeches:
+      collection: MonkeyScreeches
+    RobotBeep:
+      collection: RobotBeeps
+    Yawn:
+      collection: MaleYawn
+    Snore:
+      collection: Snores
+    Honk:
+      collection: BikeHorn
+    Sigh:
+      collection: MaleSigh
+    Crying:
+      collection: MaleCry
+    Whistle:
+      collection: Whistles
+    Weh:
+      collection: Weh
 
 - type: emoteSounds
   id: UnisexDiona
+  params:
+    variation: 0.125
   sounds:
     Scream:
       path: /Audio/Voice/Diona/diona_scream.ogg
@@ -289,8 +352,28 @@
       collection: BikeHorn
     Weh:
       collection: Weh
-  params:
-    variation: 0.125
+    Sneeze:
+      collection: MaleSneezes
+    Cough:
+      collection: MaleCoughs
+    CatMeow:
+      collection: CatMeows
+    CatHisses:
+      collection: CatHisses
+    MonkeyScreeches:
+      collection: MonkeyScreeches
+    RobotBeep:
+      collection: RobotBeeps
+    Yawn:
+      collection: MaleYawn
+    Snore:
+      collection: Snores
+    Sigh:
+      collection: MaleSigh
+    Crying:
+      collection: MaleCry
+    Whistle:
+      collection: Whistles
 
 - type: emoteSounds
   id: UnisexArachnid
@@ -307,9 +390,36 @@
       path: /Audio/Voice/Arachnid/arachnid_click.ogg
     Weh:
       collection: Weh
+    Sneeze:
+      collection: MaleSneezes
+    Cough:
+      collection: MaleCoughs
+    CatMeow:
+      collection: CatMeows
+    CatHisses:
+      collection: CatHisses
+    MonkeyScreeches:
+      collection: MonkeyScreeches
+    RobotBeep:
+      collection: RobotBeeps
+    Yawn:
+      collection: MaleYawn
+    Snore:
+      collection: Snores
+    Honk:
+      collection: BikeHorn
+    Sigh:
+      collection: MaleSigh
+    Crying:
+      collection: MaleCry
+    Whistle:
+      collection: Whistles
 
 - type: emoteSounds
   id: UnisexDwarf
+  params:
+    variation: 0.125
+    pitch: 0.75
   sounds:
     Scream:
       collection: MaleScreams
@@ -341,12 +451,12 @@
       collection: Whistles
     Weh:
       collection: Weh
-  params:
-    variation: 0.125
-    pitch: 0.75
 
 - type: emoteSounds
   id: FemaleDwarf
+  params:
+    variation: 0.125
+    pitch: 0.75
   sounds:
     Scream:
       collection: FemaleScreams
@@ -378,9 +488,6 @@
       collection: Whistles
     Weh:
       collection: Weh
-  params:
-    variation: 0.125
-    pitch: 0.75
 
 - type: emoteSounds
   id: UnisexMoth
@@ -399,14 +506,128 @@
       path: /Audio/Voice/Moth/moth_squeak.ogg
     Weh:
       collection: Weh
+    Sneeze:
+      collection: MaleSneezes
+    Cough:
+      collection: MaleCoughs
+    CatMeow:
+      collection: CatMeows
+    CatHisses:
+      collection: CatHisses
+    MonkeyScreeches:
+      collection: MonkeyScreeches
+    RobotBeep:
+      collection: RobotBeeps
+    Yawn:
+      collection: MaleYawn
+    Snore:
+      collection: Snores
+    Honk:
+      collection: BikeHorn
+    Sigh:
+      collection: MaleSigh
+    Crying:
+      collection: MaleCry
+    Whistle:
+      collection: Whistles
+
+- type: emoteSounds
+  id: UnisexIPC
+  params:
+    variation: 0
+  sounds:
+    Scream:
+      path: /Audio/Voice/IPC/robot-scream.ogg
+      params:
+        variation: 0.125
+    Laugh:
+      path: /Audio/Voice/IPC/robot-laugh_3.ogg
+      params:
+        variation: 0.125
+    Sigh:
+      path: /Audio/Voice/Talk/pai.ogg
+      params:
+        variation: 0.125
+    Crying:
+      path: /Audio/Voice/IPC/cry_robot_1.ogg
+      params:
+        variation: 0.125
+    Whistle:
+      path: /Audio/Voice/IPC/pai_whistle.ogg
+      params:
+        variation: 0.125
+    CatMeow:
+      collection: CatMeows
+      params:
+        variation: 0.125
+    CatHisses:
+      collection: CatHisses
+      params:
+        variation: 0.125
+    MonkeyScreeches:
+      collection: MonkeyScreeches
+      params:
+        variation: 0.125
+    RobotBeep: # disease
+      path: /Audio/Effects/tesla_consume.ogg
+      params:
+        variation: 0.125
+    Beep:      # normal
+      path: /Audio/Voice/IPC/beep_2000.ogg
+    Boop:
+      path: /Audio/Voice/IPC/beep_500.ogg
+    Buzz:
+      path: /Audio/Machines/buzz-sigh.ogg
+    Honk:
+      path: /Audio/Items/bikehorn.ogg
+      params:
+        variation: 0.125
+    Chime:
+      path: /Audio/Effects/Cargo/ping.ogg
+    Buzz-Two:
+      path: /Audio/Machines/buzz-two.ogg
+    Ping:
+      path: /Audio/Effects/beep1.ogg
+      params: # to prevent it from being definitively read by players as "OH SHIT A GRENADE"
+        variation: 0.125
+    Whirr:
+      collection: IPCWhirrs
+      params:
+        variation: 0
 
 - type: emoteSounds
   id: UnisexSilicon
   params:
     variation: 0.05
   sounds:
+    Scream:
+      path: /Audio/Voice/IPC/robot-scream.ogg
+      params:
+        variation: 0.125
+    Laugh:
+      path: /Audio/Voice/IPC/robot-laugh_3.ogg
+      params:
+        variation: 0.125
+    Sigh:
+      path: /Audio/Voice/Talk/pai.ogg
+      params:
+        variation: 0.125
+    Crying:
+      path: /Audio/Voice/IPC/cry_robot_1.ogg
+      params:
+        variation: 0.125
+    Whistle:
+      path: /Audio/Voice/IPC/pai_whistle.ogg
+      params:
+        variation: 0.125
     Beep:
-      path: /Audio/Machines/twobeep.ogg
+      path: /Audio/Voice/IPC/beep_2000.ogg
+    Boop:
+      path: /Audio/Voice/IPC/beep_500.ogg
+    Whirr:
+      collection: IPCWhirrs
+      params:
+        variation: 0
     Chime:
       path: /Audio/Machines/chime.ogg
     Buzz:
@@ -425,8 +646,30 @@
   sounds:
     Laugh:
       path: /Audio/Voice/Silicon/syndieborg_laugh.ogg
+    Scream:
+      path: /Audio/Voice/IPC/robot-scream.ogg
+      params:
+        variation: 0.125
+    Sigh:
+      path: /Audio/Voice/Talk/pai.ogg
+      params:
+        variation: 0.125
+    Crying:
+      path: /Audio/Voice/IPC/cry_robot_1.ogg
+      params:
+        variation: 0.125
+    Whistle:
+      path: /Audio/Voice/IPC/pai_whistle.ogg
+      params:
+        variation: 0.125
     Beep:
-      path: /Audio/Machines/twobeep.ogg
+      path: /Audio/Voice/IPC/beep_2000.ogg
+    Boop:
+      path: /Audio/Voice/IPC/beep_500.ogg
+    Whirr:
+      collection: IPCWhirrs
+      params:
+        variation: 0
     Chime:
       path: /Audio/Machines/chime.ogg
     Buzz:
@@ -527,67 +770,3 @@
     path: /Audio/Animals/parrot_raught.ogg
     params:
       variation: 0.125
-
-- type: emoteSounds
-  id: UnisexIPC
-  params:
-    variation: 0
-  sounds:
-    Scream:
-      path: /Audio/Voice/IPC/robot-scream.ogg
-      params:
-        variation: 0.125
-    Laugh:
-      path: /Audio/Voice/IPC/robot-laugh_3.ogg
-      params:
-        variation: 0.125
-    Sigh:
-      path: /Audio/Voice/Talk/pai.ogg
-      params:
-        variation: 0.125
-    Crying:
-      path: /Audio/Voice/IPC/cry_robot_1.ogg
-      params:
-        variation: 0.125
-    Whistle:
-      path: /Audio/Voice/IPC/pai_whistle.ogg
-      params:
-        variation: 0.125
-    CatMeow:
-      collection: CatMeows
-      params:
-        variation: 0.125
-    CatHisses:
-      collection: CatHisses
-      params:
-        variation: 0.125
-    MonkeyScreeches:
-      collection: MonkeyScreeches
-      params:
-        variation: 0.125
-    RobotBeep: # disease
-      path: /Audio/Effects/tesla_consume.ogg
-      params:
-        variation: 0.125
-    Beep:      # normal
-      path: /Audio/Voice/IPC/beep_2000.ogg
-    Boop:
-      path: /Audio/Voice/IPC/beep_500.ogg
-    Buzz:
-      path: /Audio/Machines/buzz-sigh.ogg
-    Honk:
-      path: /Audio/Items/bikehorn.ogg
-      params:
-        variation: 0.125
-    Chime:
-      path: /Audio/Effects/Cargo/ping.ogg
-    Buzz-Two:
-      path: /Audio/Machines/buzz-two.ogg
-    Ping:
-      path: /Audio/Effects/beep1.ogg
-      params: # to prevent it from being definitively read by players as "OH SHIT A GRENADE"
-        variation: 0.125
-    Whirr:
-      collection: IPCWhirrs
-      params:
-        variation: 0
