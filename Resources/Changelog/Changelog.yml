@@ -9360,3 +9360,10 @@ Entries:
   id: 6643
   time: '2025-01-07T01:21:34.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1449
+- author: Skubman
+  changes:
+    - type: Tweak
+      message: The maximum trait limit has increased from 10 traits to 14 traits.
+  id: 6644
+  time: '2025-01-07T04:08:32.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1446
