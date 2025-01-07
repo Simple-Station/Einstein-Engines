@@ -66,10 +66,11 @@ public sealed class AssayPowerSystem : EntitySystem
 
         if (target == user)
         {
-            var userAmp = MathF.Round(userPsionic.CurrentAmplification, 2);
-            var userDamp = MathF.Round(userPsionic.CurrentDampening, 2);
-            var userPotentia = MathF.Round(userPsionic.Potentia, 2);
-            var userFeedback = $"[font size={args.FontSize}][color={args.FontColor}]{Loc.GetString("assay-body", ("entity", target), ("amplification", userAmp), ("dampening", userDamp), ("potentia", userPotentia))}[/color][/font]";
+            var userAmp = MathF.Round(userPsionic.CurrentAmplification, 2).ToString("#.##");
+            var userDamp = MathF.Round(userPsionic.CurrentDampening, 2).ToString("#.##");
+            var userPotentia = MathF.Round(userPsionic.Potentia, 2).ToString("#.##");
+            var assayBody = Loc.GetString("assay-body", ("entity", target), ("amplification", userAmp), ("dampening", userDamp), ("potentia", userPotentia));
+            var userFeedback = $"[font size={args.FontSize}][color={args.FontColor}]{assayBody}[/color][/font]";
             SendDescToChat(userFeedback, session);
 
             var assaySelf = Loc.GetString("assay-self", ("entity", target));
@@ -90,15 +91,16 @@ public sealed class AssayPowerSystem : EntitySystem
             return;
         }
 
-        var targetAmp = MathF.Round(targetPsionic.CurrentAmplification, 2);
-        var targetDamp = MathF.Round(targetPsionic.CurrentDampening, 2);
-        var targetPotentia = MathF.Round(targetPsionic.Potentia, 2);
+        var targetAmp = MathF.Round(targetPsionic.CurrentAmplification, 2).ToString("#.##");
+        var targetDamp = MathF.Round(targetPsionic.CurrentDampening, 2).ToString("#.##");
+        var targetPotentia = MathF.Round(targetPsionic.Potentia, 2).ToString("#.##");
         var message = $"[font size={args.FontSize}][color={args.FontColor}]{Loc.GetString("assay-body", ("entity", target), ("amplification", targetAmp), ("dampening", targetDamp), ("potentia", targetPotentia))}[/color][/font]";
         SendDescToChat(message, session);
 
         foreach (var feedback in targetPsionic.AssayFeedback)
         {
-            var feedbackMessage = $"[font size={args.FontSize}][color={args.FontColor}]{Loc.GetString(feedback, ("entity", target))}[/color][/font]";
+            var locale = Loc.GetString(feedback, ("entity", target));
+            var feedbackMessage = $"[font size={args.FontSize}][color={args.FontColor}]{locale}[/color][/font]";
             SendDescToChat(feedbackMessage, session);
         }
     }

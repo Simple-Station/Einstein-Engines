@@ -187,11 +187,7 @@ ghost-role-information-familiar-rules =
 assay-begin = The air around {CAPITALIZE($entity)} begins to shimmer faintly
 assay-self = I AM.
 no-powers = {CAPITALIZE($entity)} will never awaken from the dream in this life
-assay-body =
-    MY WILL CAST UPON {CAPITALIZE($entity)} DIVINES THESE
-    Amplification: {$amplification}
-    Dampening: {$dampening}
-    Potentia: {$potentia}
+assay-body = "My will cast upon {CAPITALIZE($entity)} divines these. Amplification: {$amplification} Dampening: {$dampening} Potentia: {$potentia}"
 assay-power-initialization-feedback =
     I descend into the dreamlight once more, there I drink more fully of the cup of knowledge. The touch of the noosphere upon others becomes known to me,
     I can cast my will upon them, divining the inner nature of others.

@@ -13,10 +13,10 @@ public sealed partial class AssayPowerActionEvent : EntityTargetActionEvent
     public string PopupTarget = "assay-begin";
 
     [DataField]
-    public int FontSize = 10;
+    public int FontSize = 12;
 
     [DataField]
-    public Color FontColor = Color.White;
+    public string FontColor = "#8A00C2";
 
     [DataField]
     public int MinGlimmer = 3;

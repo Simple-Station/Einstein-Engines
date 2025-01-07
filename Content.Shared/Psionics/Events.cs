@@ -76,16 +76,16 @@ public sealed partial class AssayDoAfterEvent : DoAfterEvent
     public TimeSpan StartedAt;
 
     [DataField]
-    public int FontSize = 10;
+    public int FontSize = 12;
 
     [DataField]
-    public Color FontColor = Color.White;
+    public string FontColor = "#8A00C2";
 
     private AssayDoAfterEvent()
     {
     }
 
-    public AssayDoAfterEvent(TimeSpan startedAt, int fontSize, Color fontColor)
+    public AssayDoAfterEvent(TimeSpan startedAt, int fontSize, string fontColor)
     {
         StartedAt = startedAt;
         FontSize = fontSize;
