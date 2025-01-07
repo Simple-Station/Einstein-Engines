@@ -12,7 +12,7 @@ public sealed partial class AbsorbentSystem
     /// <summary>
     ///     Tries to clean a number of footprints in a range determined by the component. Returns the number of cleaned footprints.
     /// </summary>
-    private int TryCleanNearbyFootprints(EntityUid user, EntityUid used, Entity<AbsorbentComponent> target,  Entity<SolutionComponent> absorbentSoln)
+    private int TryCleanNearbyFootprints(EntityUid user, EntityUid target, Entity<AbsorbentComponent> used,  Entity<SolutionComponent> absorbentSoln)
     {
         var footprintQuery = GetEntityQuery<FootPrintComponent>();
         var targetCoords = Transform(target).Coordinates;
