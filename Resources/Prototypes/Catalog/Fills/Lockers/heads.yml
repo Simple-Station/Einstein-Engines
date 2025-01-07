@@ -275,7 +275,7 @@
       - id: ClothingHeadsetAltSecurity
       - id: ClothingEyesGlassesSunglasses
       - id: ClothingShoesBootsJack
-      - id: CigarGoldCase
+      - id: CigarRobustCase
         prob: 0.50
       - id: DoorRemoteSecurity
       - id: RubberStampHos
