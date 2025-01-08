@@ -171,7 +171,7 @@
   id: NightVisionTech
   name: research-technology-night-vision
   icon:
-    sprite: _White/Clothing/Eyes/Goggles/nightvision.rsi
+    sprite: Clothing/Eyes/Goggles/nightvision.rsi
     state: icon
   discipline: Experimental
   tier: 2
@@ -186,7 +186,7 @@
   id: ThermalVisionTech
   name: research-technology-thermal-vision
   icon:
-    sprite: _White/Clothing/Eyes/Goggles/thermal.rsi
+    sprite: Clothing/Eyes/Goggles/thermal.rsi
     state: icon
   discipline: Experimental
   tier: 2

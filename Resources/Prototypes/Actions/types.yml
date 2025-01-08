@@ -424,7 +424,7 @@
   id: ToggleThermalVision
   name: Switch Thermal vision
   description: Switches Thermal vision.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     itemIconStyle: BigAction
