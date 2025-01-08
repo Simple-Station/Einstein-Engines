@@ -18,6 +18,8 @@
   items:
     - ClothingBackpackSatchelLeather
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacks
     - !type:CharacterJobRequirement
        inverted: true
        jobs:
@@ -46,6 +48,8 @@
   items:
     - ClothingBackpackSatchelPurse
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacks
     - !type:CharacterJobRequirement
        inverted: true
        jobs:
