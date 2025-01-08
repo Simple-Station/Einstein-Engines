@@ -18,8 +18,6 @@ public sealed partial class NanoChatUiFragment : BoxContainer
 {
     [Dependency] private readonly IGameTiming _timing = default!;
 
-    private const int MaxMessageLength = 256;
-
     private readonly NewChatPopup _newChatPopup;
     private readonly EditChatPopup _editChatPopup;
     private uint? _currentChat;
@@ -50,8 +48,7 @@ public sealed partial class NanoChatUiFragment : BoxContainer
 
         _editChatPopup.OnContactEdited += (number, name, job) =>
         {
-            DeleteCurrentChat();
-            ActionSendUiMessage?.Invoke(NanoChatUiMessageType.NewChat, number, name, job);
+            ActionSendUiMessage?.Invoke(NanoChatUiMessageType.EditChat, number, name, job);
         };
 
         NewChatButton.OnPressed += _ =>
@@ -71,18 +68,18 @@ public sealed partial class NanoChatUiFragment : BoxContainer
         {
             var length = args.Text.Length;
             var isValid = !string.IsNullOrWhiteSpace(args.Text) &&
-                          length <= MaxMessageLength &&
+                          length <= NanoChatMessage.MaxContentLength &&
                           (_currentChat != null || _pendingChat != null);
 
             SendButton.Disabled = !isValid;
 
             // Show character count when over limit
-            CharacterCount.Visible = length > MaxMessageLength;
-            if (length > MaxMessageLength)
+            CharacterCount.Visible = length > NanoChatMessage.MaxContentLength;
+            if (length > NanoChatMessage.MaxContentLength)
             {
                 CharacterCount.Text = Loc.GetString("nano-chat-message-too-long",
                     ("current", length),
-                    ("max", MaxMessageLength));
+                    ("max", NanoChatMessage.MaxContentLength));
                 CharacterCount.StyleClasses.Add("LabelDanger");
             }
         };
@@ -100,6 +97,12 @@ public sealed partial class NanoChatUiFragment : BoxContainer
             return;
 
         var messageContent = MessageInput.Text;
+        if (!string.IsNullOrWhiteSpace(messageContent))
+        {
+            messageContent = messageContent.Trim();
+            if (messageContent.Length > NanoChatMessage.MaxContentLength)
+                messageContent = messageContent[..NanoChatMessage.MaxContentLength];
+        }
 
         // Add predicted message
         var predictedMessage = new NanoChatMessage(
