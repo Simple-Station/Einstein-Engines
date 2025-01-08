@@ -83,6 +83,7 @@
       jobs:
         - Borg
         - MedicalBorg
+        - Mime
   functions:
     - !type:TraitAddComponent
       components:
@@ -142,6 +143,30 @@
         - type: Snoring
 
 - type: trait
+  id: BadKnees
+  category: Physical
+  points: 3
+  requirements:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - ParkourTraining
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: ClimbDelayModifier
+          climbDelayMultiplier: 1.5
+        - type: SlippableModifier
+          paralyzeTimeMultiplier: 1.4
+        - type: SpeedModifiedByContactModifier
+          walkModifierEffectiveness: 1.35
+          sprintModifierEffectiveness: 1.35
+
+- type: trait
   id: Sluggish
   category: Physical
   points: 3
@@ -159,12 +184,9 @@
     - !type:TraitAddComponent
       components:
         - type: TraitSpeedModifier
-          sprintModifier: 0.85
-          walkModifier: 0.85
-        - type: ClimbDelayModifier
-          climbDelayMultiplier: 1.35
-        - type: LayingDownModifier
-          layingDownCooldownMultiplier: 1.2
+          sprintModifier: 0.84
+          walkModifier: 0.84
+          requiredTriggeredSpeedModifier: 0.84
 
 - type: trait
   id: SnailPaced
@@ -184,12 +206,9 @@
     - !type:TraitAddComponent
       components:
         - type: TraitSpeedModifier
-          sprintModifier: 0.7
-          walkModifier: 0.7
-        - type: ClimbDelayModifier
-          climbDelayMultiplier: 1.66
-        - type: LayingDownModifier
-          layingDownCooldownMultiplier: 1.6
+          sprintModifier: 0.68
+          walkModifier: 0.68
+          requiredTriggeredSpeedModifier: 0.68 # Still slip against normal slips with the new sprint speed
 
 - type: trait
   id: BloodDeficiency

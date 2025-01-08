@@ -6,6 +6,7 @@
   dollPrototype: MobOniDummy
   markingLimits: MobOniMarkingLimits
   sprites: MobHumanSprites
+  defaultSkinTone: "#ab5150"
   skinColoration: Hues
   maleFirstNames: names_oni_male
   femaleFirstNames: names_oni_female
@@ -21,9 +22,6 @@
 - type: markingPoints
   id: MobOniMarkingLimits
   points:
-    Face:
-      points: 1
-      required: false
     Hair:
       points: 1
       required: false

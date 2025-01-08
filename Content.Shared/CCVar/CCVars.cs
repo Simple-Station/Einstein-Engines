@@ -422,7 +422,7 @@ namespace Content.Shared.CCVar
         ///     How many traits a character can have at most.
         /// </summary>
         public static readonly CVarDef<int> GameTraitsMax =
-            CVarDef.Create("game.traits_max", 10, CVar.REPLICATED);
+            CVarDef.Create("game.traits_max", 14, CVar.REPLICATED);
 
         /// <summary>
         ///     How many points a character should start with.
@@ -2090,6 +2090,9 @@ namespace Content.Shared.CCVar
 
         public static readonly CVarDef<bool> ChatFancyNameBackground =
             CVarDef.Create("chat.fancy_name_background", false, CVar.CLIENTONLY | CVar.ARCHIVE, "Toggles displaying a background under the speaking character's name.");
+
+        public static readonly CVarDef<int> ChatStackLastLines =
+            CVarDef.Create("chat.chatstack_last_lines", 1, CVar.CLIENTONLY | CVar.ARCHIVE, "How far into the chat history to look when looking for similiar messages to coalesce them.");
 
         /// <summary>
         /// A message broadcast to each player that joins the lobby.

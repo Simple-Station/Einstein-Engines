@@ -102,6 +102,16 @@ public sealed class SpeedModifierContactsSystem : EntitySystem
             walkSpeed /= entries;
             sprintSpeed /= entries;
 
+            if (TryComp<SpeedModifiedByContactModifierComponent>(uid, out var modifier))
+            {
+                walkSpeed = Math.Max(Math.Min(modifier.MinWalkMultiplier, walkSpeed),
+                    // Similar to the formula for movement slow resist in Deadlock
+                    1 - (1 - walkSpeed) * modifier.WalkModifierEffectiveness);
+
+                sprintSpeed = Math.Max(Math.Min(modifier.MinSprintMultiplier, sprintSpeed),
+                    1 - (1 - sprintSpeed) * modifier.SprintModifierEffectiveness);
+            }
+
             args.ModifySpeed(walkSpeed, sprintSpeed);
         }
 

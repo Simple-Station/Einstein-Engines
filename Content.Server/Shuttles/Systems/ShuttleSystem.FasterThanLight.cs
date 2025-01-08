@@ -11,6 +11,7 @@ using Content.Shared.Database;
 using Content.Shared.Ghost;
 using Content.Shared.Maps;
 using Content.Shared.Parallax;
+using Content.Shared.SegmentedEntity;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Shuttles.Systems;
 using Content.Shared.StatusEffect;
@@ -643,7 +644,9 @@ public sealed partial class ShuttleSystem
         var childEnumerator = xform.ChildEnumerator;
         while (childEnumerator.MoveNext(out var child))
         {
-            if (!_buckleQuery.TryGetComponent(child, out var buckle) || buckle.Buckled)
+            if (!_buckleQuery.TryGetComponent(child, out var buckle) || buckle.Buckled
+            || HasComp<SegmentedEntityComponent>(child)
+            || HasComp<SegmentedEntitySegmentComponent>(child))
                 continue;
 
             toKnock.Add(child);
