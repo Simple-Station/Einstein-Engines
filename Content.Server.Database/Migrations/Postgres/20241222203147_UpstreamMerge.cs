@@ -13,6 +13,12 @@ namespace Content.Server.Database.Migrations.Postgres
         {
             migrationBuilder.Sql("DROP TABLE IF EXISTS ProileLoadouts;");
 
+            migrationBuilder.AddColumn<DateTime>(
+                name: "last_read_rules",
+                table: "player",
+                type: "timestamp with time zone",
+                nullable: true);
+
             migrationBuilder.AddColumn<int>(
                 name: "hwid_type",
                 table: "server_role_ban",
