@@ -217,10 +217,7 @@ namespace Content.Client.Inventory
                 && thiefComponent.IgnoreStripHidden))
                 entity = _virtualHiddenEntity;
 
-            // DRAFT TODO: How should this interact with characters with the theif trait?
-            //             Should they be able to peek at the cards or not?
-            //             Because if Player A has a hand unflipped on their hand, Player B
-            //             With said trait can see the literal uncensored card sprites.
+            // We don't want anyone, thief trait or otherwise, from seeing the cards.
             var isCard = EntMan.HasComponent<CardComponent>(entity) ||
                          EntMan.HasComponent<CardHandComponent>(entity);
             if (entity != null && isCard)
