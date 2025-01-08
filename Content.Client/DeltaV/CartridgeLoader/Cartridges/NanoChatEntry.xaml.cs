@@ -8,7 +8,7 @@ namespace Content.Client.DeltaV.CartridgeLoader.Cartridges;
 [GenerateTypedNameReferences]
 public sealed partial class NanoChatEntry : BoxContainer
 {
-    private const int MaxNameLength = 16;
+    private const int MaxNameLength = 14;
     private const int MaxJobLength = 20;
 
     public event Action<uint>? OnPressed;
@@ -46,5 +46,5 @@ public sealed partial class NanoChatEntry : BoxContainer
     private static string Truncate(string text, int maxLength) =>
         text.Length <= maxLength
             ? text
-            : text[..(maxLength - 4)] + "...";
+            : text[..(maxLength - 3)] + "...";
 }
