@@ -9459,3 +9459,10 @@ Entries:
   id: 6651
   time: '2025-01-08T07:07:16.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1459
+- author: Lumminal
+  changes:
+    - type: Fix
+      message: Fixed Shadow Shackles spell not activating.
+  id: 6652
+  time: '2025-01-08T07:09:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1456
