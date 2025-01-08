@@ -1,12 +1,12 @@
 - type: entity
   id: BaseGameRule
   abstract: true
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: GameRule
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseGameRule
   id: SubGamemodesRule
   components:
@@ -18,7 +18,7 @@
 - type: entity
   id: DeathMatch31
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: DeathMatchRule
     rewardSpawns:
@@ -48,7 +48,7 @@
 - type: entity
   id: InactivityTimeRestart
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InactivityRule
     inactivityMaxTime: 600
@@ -57,24 +57,32 @@
 - type: entity
   id: MaxTimeRestart
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: MaxTimeRestartRule
     roundMaxTime: 300
     roundEndDelay: 10
 
 - type: entity
-  id: Nukeops
+  abstract: true
   parent: BaseGameRule
-  noSpawn: true
+  id: BaseNukeopsRule
   components:
-  - type: GameRule
-    minPlayers: 35
   - type: RandomMetadata #this generates the random operation name cuz it's cool.
     nameSegments:
     - operationPrefix
     - operationSuffix
   - type: NukeopsRule
+  - type: AntagSelection
+  - type: AntagLoadProfileRule
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: BaseNukeopsRule
+  id: Nukeops
+  components:
+  - type: GameRule
+    minPlayers: 20
   - type: LoadMapRule
     gameMap: NukieOutpost
   - type: AntagSelection
@@ -134,30 +142,56 @@
         prototype: Nukeops
 
 - type: entity
-  id: Traitor
+  abstract: true
   parent: BaseGameRule
-  noSpawn: true
+  id: BaseTraitorRule
+  components:
+  - type: TraitorRule
+  # TODO: codewords in yml
+  # TODO: uplink in yml
+  - type: AntagRandomObjectives
+    sets:
+    - groups: TraitorObjectiveGroups
+    maxDifficulty: 5
+  - type: AntagSelection
+    agentName: traitor-round-end-agent-name
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: BaseTraitorRule
+  id: Traitor
   components:
   - type: GameRule
     minPlayers: 5
     delay:
       min: 240
       max: 420
-  - type: TraitorRule
   - type: AntagSelection
     definitions:
     - prefRoles: [ Traitor ]
       max: 8
       playerRatio: 10
+      blacklist:
+        components:
+        - AntagImmune
       lateJoinAdditional: true
       mindComponents:
       - type: TraitorRole
         prototype: Traitor
 
 - type: entity
+  id: TraitorReinforcement
+  parent: Traitor
+  components:
+  - type: TraitorRule
+    giveUplink: false
+    giveCodewords: false # It would actually give them a different set of codewords than the regular traitors, anyway
+    giveBriefing: false
+
+- type: entity
   id: Revolutionary
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: GameRule
     minPlayers: 15
@@ -182,21 +216,21 @@
 - type: entity
   id: Sandbox
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: SandboxRule
 
 - type: entity
   id: Secret
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: SecretRule
 
 - type: entity
   id: Zombie
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: GameRule
     minPlayers: 20
@@ -212,7 +246,7 @@
       blacklist:
         components:
         - ZombieImmune
-        - InitialInfectedExempt
+        - AntagImmune
       briefing:
         text: zombie-patientzero-role-greeting
         color: Plum
@@ -229,21 +263,21 @@
 - type: entity
   id: BasicStationEventScheduler
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: BasicStationEventScheduler
 
 - type: entity
   id: RampingStationEventScheduler
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: RampingStationEventScheduler
 
 - type: entity
   id: HellshiftStationEventScheduler
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: RampingStationEventScheduler
     chaosModifier: 4 # By default, one event each 30-10 seconds after two hours. Changing CVars will cause this to deviate.
@@ -253,7 +287,7 @@
 - type: entity
   id: IrregularStationEventScheduler
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: OscillatingStationEventScheduler
     minChaos: 0.8
@@ -266,7 +300,7 @@
 - type: entity
   id: IrregularExtendedStationEventScheduler
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: OscillatingStationEventScheduler
     minChaos: 0.8
@@ -281,7 +315,7 @@
 - type: entity
   id: BasicRoundstartVariation
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: RoundstartStationVariationRule
     rules:

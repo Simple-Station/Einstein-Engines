@@ -1,0 +1,130 @@
+#- type: characterItemGroup
+#  id: LoadoutSeniorEngineerBackpacks
+#  maxItems: 1
+#  items:
+
+- type: characterItemGroup
+  id: LoadoutSeniorEngineerBelt
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutSeniorEngineerBeltUtility
+    - type: loadout
+      id: LoadoutSeniorEngineerBeltUtilityEngineering
+    - type: loadout
+      id: LoadoutSeniorEngineerBeltUtilityAtmos
+
+#- type: characterItemGroup
+#  id: LoadoutSeniorEngineerEars
+#  maxItems: 1
+#  items:
+
+- type: characterItemGroup
+  id: LoadoutSeniorEngineerEquipment
+  maxItems: 3
+  items:
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentBoxInflatable
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentMedkitOxygen
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentRCD
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentRCDAmmo1
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentRCDAmmo2
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentPowerDrill
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentSheetSteel
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentSheetSteel10
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentSheetPlasteel
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentSheetPlasteel10
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentSheetGlass
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentSheetGlass10
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentMaterialWoodPlank
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentMaterialWoodPlank10
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentSheetRGlass
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentSheetRGlass10
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentSheetUGlass
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentSheetUGlass10
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentSheetRUGlass
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentSheetRUGlass10
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentSheetPGlass
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentSheetPGlass10
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentSheetRPGlass
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentSheetRPGlass10
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentSheetClockworkGlass
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentSheetClockworkGlass10
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentSheetPlastic
+    - type: loadout
+      id: LoadoutSeniorEngineerEquipmentSheetPlastic10
+
+#- type: characterItemGroup
+#  id: LoadoutSeniorEngineerEyes
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutSeniorEngineerGloves
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutSeniorEngineerHead
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutSeniorEngineerId
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutSeniorEngineerNeck
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutSeniorEngineerMask
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutSeniorEngineerOuter
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutSeniorEngineerShoes
+#  maxItems: 1
+#  items:
+
+- type: characterItemGroup
+  id: LoadoutSeniorEngineerUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutEngineeringUniformJumpskirtSenior
+    - type: loadout
+      id: LoadoutEngineeringUniformJumpsuitSenior

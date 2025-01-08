@@ -4,8 +4,8 @@ using Content.Shared.ActionBlocker;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Hands.Components;
 using Content.Shared.Interaction;
+using Content.Shared.Inventory;
 using Content.Shared.Inventory.VirtualItem;
-using Content.Shared.Item;
 using Content.Shared.Storage.EntitySystems;
 using Robust.Shared.Containers;
 using Robust.Shared.Input.Binding;
@@ -18,6 +18,7 @@ public abstract partial class SharedHandsSystem
     [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
     [Dependency] protected readonly SharedContainerSystem ContainerSystem = default!;
     [Dependency] private readonly SharedInteractionSystem _interactionSystem = default!;
+    [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly SharedStorageSystem _storage = default!;
     [Dependency] protected readonly SharedTransformSystem TransformSystem = default!;
     [Dependency] private readonly SharedVirtualItemSystem _virtualSystem = default!;
@@ -53,7 +54,7 @@ public abstract partial class SharedHandsSystem
 
         var newHand = new Hand(handName, handLocation, container);
         handsComp.Hands.Add(handName, newHand);
-        handsComp.SortedHands.Add(handName);
+        AddToSortedHands(handsComp, handName, handLocation); // Shitmed Change
 
         if (handsComp.ActiveHand == null)
             SetActiveHand(uid, newHand, handsComp);
@@ -158,6 +159,19 @@ public abstract partial class SharedHandsSystem
 
         item = hand.HeldEntity;
         return item != null;
+    }
+
+    /// <summary>
+    /// Gets active hand item if relevant otherwise gets the entity itself.
+    /// </summary>
+    public EntityUid GetActiveItemOrSelf(Entity<HandsComponent?> entity)
+    {
+        if (!TryGetActiveItem(entity, out var item))
+        {
+            return entity.Owner;
+        }
+
+        return item.Value;
     }
 
     public Hand? GetActiveHand(Entity<HandsComponent?> entity)
@@ -298,5 +312,37 @@ public abstract partial class SharedHandsSystem
             return false;
 
         return hands.Hands.TryGetValue(handId, out hand);
+    }
+
+    public int CountFreeableHands(Entity<HandsComponent> hands)
+    {
+        var freeable = 0;
+        foreach (var hand in hands.Comp.Hands.Values)
+        {
+            if (hand.IsEmpty || CanDropHeld(hands, hand))
+                freeable++;
+        }
+
+        return freeable;
+    }
+
+    /// <summary>
+    /// Shitmed Change: This function checks when adding a hand for symmetries to determine where to add it in the sorted hands array.
+    /// </summary>
+    /// <param name="handsComp">The hands component that we're modifying.</param>
+    /// <param name="handName">The name of the hand we're adding.</param>
+    /// <param name="handLocation">The location/symmetry of the hand we're adding.</param>
+    public virtual void AddToSortedHands(HandsComponent handsComp, string handName, HandLocation handLocation)
+    {
+        var index = handLocation == HandLocation.Right
+            ? 0
+            : handLocation == HandLocation.Left
+                ? handsComp.SortedHands.Count
+                : handsComp.SortedHands.FindIndex(name => handsComp.Hands[name].Location == HandLocation.Right);
+
+        if (index == -1)
+            index = handsComp.SortedHands.Count;
+
+        handsComp.SortedHands.Insert(index, handName);
     }
 }

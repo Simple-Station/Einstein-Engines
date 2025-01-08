@@ -206,7 +206,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingHandsBase
+  parent: [ClothingHandsBase, BaseToggleClothing]
   id: ClothingHandsGlovesSpaceNinja
   name: space ninja gloves
   description: These black nano-enhanced gloves insulate from electricity and provide fire resistance.
@@ -233,7 +233,31 @@
   - type: FingerprintMask
   - type: Thieving
     stripTimeReduction: 1
+  - type: ToggleClothing
+    action: ActionToggleNinjaGloves
   - type: NinjaGloves
+    abilities:
+    - components:
+      - type: BatteryDrainer
+      - type: StunProvider
+        noPowerPopup: ninja-no-power
+        whitelist:
+          components:
+          - Stamina
+      - type: EmagProvider
+        whitelist:
+          components:
+          - Airlock
+    - objective: StealResearchObjective
+      components:
+      - type: ResearchStealer
+    - objective: TerrorObjective
+      components:
+      - type: CommsHacker
+        threats: NinjaThreats
+    - objective: MassArrestObjective
+      components:
+      - type: CriminalRecordsHacker
 
 - type: entity
   parent: ClothingHandsGlovesColorBlack
@@ -301,6 +325,20 @@
     fiberColor: fibers-black
 
 - type: entity
+  parent: ClothingHandsButcherable
+  id: ClothingHandsGlovesFingerlessWhite
+  name: fingerless gloves
+  description: Plain gloves without fingertips.
+  components:
+  - type: Sprite
+    sprite: Clothing/Hands/Gloves/fingerlesswhite.rsi
+  - type: Clothing
+    sprite: Clothing/Hands/Gloves/fingerlesswhite.rsi
+  - type: Fiber
+    fiberMaterial: fibers-synthetic
+    fiberColor: fibers-dyed
+
+- type: entity
   parent: ClothingHandsBase
   id: ClothingHandsGlovesFingerlessInsulated
   name: fingerless insulated gloves
@@ -361,7 +399,7 @@
     sprite: Clothing/Hands/Gloves/northstar.rsi
   - type: MeleeWeapon
     autoAttack: true
-    attackRate: 4
+    attackRate: 0.25
     heavyStaminaCost: 2
     heavyDamageBaseModifier: 1.05
     maxTargets: 1

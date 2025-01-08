@@ -19,6 +19,21 @@
     containers:
       ballistic-ammo: !type:Container
         ents: []
+  - type: MeleeWeapon
+    attackRate: 1.5
+    damage:
+      types:
+        Blunt: 14
+    bluntStaminaDamageFactor: 1.5
+    swapKeys: true
+    disableHeavy: true
+    animation: WeaponArcThrust
+    wideAnimationRotation: 180
+    soundHit:
+      collection: MetalThud
+  - type: DamageOtherOnHit
+    staminaCost: 14
+  - type: Execution
 
 - type: entity
   name: china lake
@@ -166,6 +181,8 @@
     - type: TetherGun
       frequency: 5
       dampingRatio: 4
+    - type: ItemToggle
+      onUse: false
     - type: PowerCellDraw
     - type: Sprite
       sprite: Objects/Weapons/Guns/Launchers/tether_gun.rsi
@@ -211,6 +228,8 @@
         path: /Audio/Weapons/soup.ogg
         params:
           volume: 2
+    - type: ItemToggle
+      onUse: false
     - type: PowerCellDraw
     - type: Sprite
       sprite: Objects/Weapons/Guns/Launchers/force_gun.rsi

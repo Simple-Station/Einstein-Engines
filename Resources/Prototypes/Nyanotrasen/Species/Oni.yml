@@ -6,6 +6,7 @@
   dollPrototype: MobOniDummy
   markingLimits: MobOniMarkingLimits
   sprites: MobHumanSprites
+  defaultSkinTone: "#ab5150"
   skinColoration: Hues
   maleFirstNames: names_oni_male
   femaleFirstNames: names_oni_female
@@ -32,8 +33,8 @@
       required: true
       defaultMarkings: [ OniHornDoubleCurved ]
     HeadSide:
-      points: 1
-      required: false
+      points: 3
+      required: true
       defaultMarkings: [ PointyEarsUpwards ]
     Snout:
       points: 2
@@ -57,11 +58,11 @@
       points: 2
       required: false
     RightHand:
-      points: 2
+      points: 3
       required: false
     LeftArm:
       points: 2
       required: false
     LeftHand:
-      points: 2
+      points: 3
       required: false

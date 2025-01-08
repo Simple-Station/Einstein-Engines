@@ -15,6 +15,7 @@
     tags:
     - Sheet
     - Metal
+    - NoPaint
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Metallic
@@ -71,10 +72,12 @@
           Quantity: 1
   - type: UserInterface
     interfaces:
-      enum.ShortConstructionUiKey.Key:
-        type: ShortConstructionMenuBUI
+      enum.RadialSelectorUiKey.Key:
+        type: RadialSelectorMenuBUI
   - type: ActivatableUI
-    key: enum.ShortConstructionUiKey.Key
+    key: enum.RadialSelectorUiKey.Key
+    inHandsOnly: true
+    requireActiveHand: false
   - type: ShortConstruction
     entries:
     - prototype: Girder
@@ -283,13 +286,17 @@
         canReact: false
   - type: UserInterface
     interfaces:
-      enum.ShortConstructionUiKey.Key:
-        type: ShortConstructionMenuBUI
+      enum.RadialSelectorUiKey.Key:
+        type: RadialSelectorMenuBUI
   - type: ActivatableUI
-    key: enum.ShortConstructionUiKey.Key
+    key: enum.RadialSelectorUiKey.Key
+    inHandsOnly: true
+    requireActiveHand: false
   - type: ShortConstruction
     entries:
     - prototype: SecureWindoor
+  - type: TwistedConstructionTarget
+    replacementProto: RunedMetal1
 
 - type: entity
   parent: SheetPlasteel

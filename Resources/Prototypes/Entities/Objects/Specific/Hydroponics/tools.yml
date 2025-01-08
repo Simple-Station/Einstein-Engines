@@ -23,6 +23,10 @@
     heavyDamageBaseModifier: 1.2
     maxTargets: 5
     angle: 100
+  - type: DamageOtherOnHit
+    staminaCost: 5
+  - type: ThrowingAngle
+    angle: 135
   - type: Item
     sprite: Objects/Tools/Hydroponics/hoe.rsi
 
@@ -40,18 +44,30 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: 90
-    attackRate: 0.8
+    attackRate: 1.25
     damage:
       types:
-        Pierce: 7
-    heavyRateModifier: 0.9
+        Piercing: 7
+    heavyRateModifier: 1.1
     heavyRangeModifier: 1.25
     heavyDamageBaseModifier: 1.2
     maxTargets: 1
     angle: 20
+  - type: DamageOtherOnHit
+    staminaCost: 5
   - type: Item
     sprite: Objects/Tools/Hydroponics/clippers.rsi
     storedRotation: -90
+  # Shitmed Change
+  - type: Retractor # Same as wirecutters
+    speed: 0.35
+  - type: Hemostat
+    speed: 0.6
+  - type: SurgeryTool
+    startSound:
+      path: /Audio/_Shitmed/Medical/Surgery/retractor1.ogg
+    endSound:
+      path: /Audio/_Shitmed/Medical/Surgery/retractor2.ogg
 
 - type: entity
   name: scythe
@@ -69,12 +85,19 @@
     damage:
       types:
         Slash: 7
-    heavyRateModifier: 0.8
+    heavyRateModifier: 1.25
     heavyRangeModifier: 1.25
     heavyDamageBaseModifier: 1.5
     heavyStaminaCost: 5
     maxTargets: 1
     angle: 120
+  - type: DamageOtherOnHit
+    staminaCost: 7
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/star_hit.ogg
+  - type: EmbedPassiveDamage
+  - type: ThrowingAngle
+    angle: 315
   - type: Item
     size: Normal
   - type: Clothing
@@ -100,15 +123,27 @@
   - type: MeleeWeapon
     wideAnimationRotation: 135
     swingLeft: true
-    attackRate: 1.25
+    attackRate: .8
     range: 1.4
     damage:
       types:
         Slash: 10
     heavyDamageBaseModifier: 1.2
     heavyStaminaCost: 5
+  - type: DamageOtherOnHit
+    meleeDamageMultiplier: 1.5
+    staminaCost: 6.5
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/star_hit.ogg
+  - type: EmbedPassiveDamage
   - type: Item
     sprite: Objects/Tools/Hydroponics/hatchet.rsi
+  # Shitmed Change
+  - type: BoneSaw
+    speed: 0.35
+  - type: SurgeryTool
+    startSound:
+      path: /Audio/_Shitmed/Medical/Surgery/saw.ogg
 
 - type: entity
   name: spade
@@ -128,13 +163,17 @@
       types:
         Blunt: 6
         Slash: 2 # I guess you can stab it into them?
-    heavyRateModifier: 0.8
+    heavyRateModifier: 1.25
     heavyRangeModifier: 1.25
     heavyDamageBaseModifier: 1.2
     heavyStaminaCost: 5
     angle: 80
     soundHit:
       collection: MetalThud
+  - type: DamageOtherOnHit
+    staminaCost: 5
+  - type: ThrowingAngle
+    angle: 45
   - type: Item
     sprite: Objects/Tools/Hydroponics/spade.rsi
   - type: Shovel

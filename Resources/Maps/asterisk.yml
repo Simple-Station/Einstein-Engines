@@ -63,7 +63,29 @@ entities:
     - type: Broadphase
     - type: OccluderTree
     - type: Parallax
-      parallax: AngleStation
+      parallax: Snow
+    - type: MapAtmosphere
+      space: False
+      mixture:
+        volume: 2500
+        immutable: True
+        temperature: 213.15
+        moles:
+        - 21.824879
+        - 82.10312
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+    - type: Gravity
+      enabled: true
+      inherent: true
     - type: LoadedMap
   - uid: 2
     components:
@@ -71,6 +93,9 @@ entities:
     - type: Transform
       pos: -0.5104167,-0.4739367
       parent: 1
+    - type: PassiveDampening
+      linearDampening: 1
+      angularDampening: 1
     - type: MapGrid
       chunks:
         0,0:

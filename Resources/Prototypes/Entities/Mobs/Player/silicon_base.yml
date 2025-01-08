@@ -79,7 +79,7 @@
         - trigger: !type:DamageTrigger
             damage: 500
           behaviors:
-            - !type:GibBehavior {}
+            - !type:GibBehavior { }
     - type: Icon
       sprite: Mobs/Species/IPC/parts.rsi
       state: full
@@ -125,6 +125,7 @@
         - map: ["belt"]
         - map: ["neck"]
         - map: ["back"]
+        - map: [ "enum.HumanoidVisualLayers.Face" ]
         - map: ["enum.HumanoidVisualLayers.FacialHair"]
         - map: ["enum.HumanoidVisualLayers.Hair"]
         - map: ["enum.HumanoidVisualLayers.HeadSide"]
@@ -199,14 +200,24 @@
     - type: CreamPied
     - type: Stripping
     - type: Strippable
+    - type: ComplexInteraction
+    - type: SurgeryTarget
+    - type: Targeting
     - type: UserInterface
       interfaces:
-        enum.VoiceMaskUIKey.Key:
-          type: VoiceMaskBoundUserInterface
         enum.HumanoidMarkingModifierKey.Key:
           type: HumanoidMarkingModifierBoundUserInterface
         enum.StrippingUiKey.Key:
           type: StrippableBoundUserInterface
+        enum.InstrumentUiKey.Key:
+          type: InstrumentBoundUserInterface
+          requireInputValidation: false
+        enum.RadialSelectorUiKey.Key:
+          type: RadialSelectorMenuBUI
+        enum.ListViewSelectorUiKey.Key:
+          type: ListViewSelectorBUI
+        enum.SurgeryUIKey.Key:
+          type: SurgeryBui
     - type: Emoting
     - type: Grammar
       attributes:

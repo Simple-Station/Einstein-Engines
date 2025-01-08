@@ -68,7 +68,7 @@ public sealed partial class NavMapSystem : SharedNavMapSystem
     private void OnStationInit(StationGridAddedEvent ev)
     {
         var comp = EnsureComp<NavMapComponent>(ev.GridId);
-        RefreshGrid(comp, Comp<MapGridComponent>(ev.GridId));
+        RefreshGrid(ev.GridId, comp, Comp<MapGridComponent>(ev.GridId));
     }
 
     #region: Grid change event handling
@@ -81,10 +81,10 @@ public sealed partial class NavMapSystem : SharedNavMapSystem
         foreach (var grid in args.NewGrids)
         {
             var newComp = EnsureComp<MapGridComponent>(grid);
-            RefreshGrid(comp, newComp);
+            RefreshGrid(args.Grid, comp, newComp);
         }
 
-        RefreshGrid(comp, _gridQuery.GetComponent(args.Grid));
+        RefreshGrid(args.Grid, comp, _gridQuery.GetComponent(args.Grid));
     }
 
     private NavMapChunk EnsureChunk(NavMapComponent component, Vector2i origin)
@@ -231,14 +231,14 @@ public sealed partial class NavMapSystem : SharedNavMapSystem
 
     #region: Grid functions
 
-    private void RefreshGrid(NavMapComponent component, MapGridComponent mapGrid)
+    private void RefreshGrid(EntityUid uid, NavMapComponent component, MapGridComponent mapGrid)
     {
         // Clear stale data
         component.Chunks.Clear();
         component.Beacons.Clear();
 
         // Loop over all tiles
-        var tileRefs = _mapSystem.GetAllTiles(mapGrid.Owner, mapGrid);
+        var tileRefs = _mapSystem.GetAllTiles(uid, mapGrid);
 
         foreach (var tileRef in tileRefs)
         {
@@ -247,10 +247,10 @@ public sealed partial class NavMapSystem : SharedNavMapSystem
 
             var chunk = EnsureChunk(component, chunkOrigin);
             chunk.LastUpdate = _gameTiming.CurTick;
-            RefreshTileEntityContents(mapGrid.Owner, component, mapGrid, chunkOrigin, tile, setFloor: true);
+            RefreshTileEntityContents(uid, component, mapGrid, chunkOrigin, tile, setFloor: true);
         }
 
-        Dirty(mapGrid.Owner, component);
+        Dirty(uid, component);
     }
 
     private (int NewVal, NavMapChunk Chunk) RefreshTileEntityContents(EntityUid uid,

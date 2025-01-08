@@ -1,4 +1,5 @@
 using System.Linq;
+using System.Numerics;
 using Content.Server.Administration;
 using Content.Server.DeviceNetwork.Components;
 using Content.Server.DeviceNetwork.Systems;
@@ -18,6 +19,7 @@ using Content.Shared.DeviceNetwork;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Movement.Components;
 using Content.Shared.Parallax.Biomes;
+using Content.Shared.Roles;
 using Content.Shared.Salvage;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Tiles;
@@ -277,7 +279,7 @@ public sealed class ArrivalsSystem : EntitySystem
         foreach (var (ent, xform) in toDump)
         {
             var rotation = xform.LocalRotation;
-            _transform.SetCoordinates(ent, new EntityCoordinates(args.FromMapUid!.Value, args.FTLFrom.Transform(xform.LocalPosition)));
+            _transform.SetCoordinates(ent, new EntityCoordinates(args.FromMapUid!.Value, Vector2.Transform(xform.LocalPosition, args.FTLFrom)));
             _transform.SetWorldRotation(ent, args.FromRotation + rotation);
         }
     }
@@ -310,6 +312,12 @@ public sealed class ArrivalsSystem : EntitySystem
         // Only works on latejoin even if enabled.
         if (!Enabled || _ticker.RunLevel != GameRunLevel.InRound)
             return;
+
+        if (ev.Job is not null
+            && ev.Job.Prototype is not null
+            && _protoManager.Index<JobPrototype>(ev.Job.Prototype.Value.Id).AlwaysUseSpawner)
+            return;
+
 
         if (!HasComp<StationArrivalsComponent>(ev.Station))
             return;
@@ -481,11 +489,6 @@ public sealed class ArrivalsSystem : EntitySystem
         {
             var template = _random.Pick(_arrivalsBiomeOptions);
             _biomes.EnsurePlanet(mapUid, _protoManager.Index(template));
-            var restricted = new RestrictedRangeComponent
-            {
-                Range = 32f
-            };
-            AddComp(mapUid, restricted);
         }
 
         _mapManager.DoMapInitialize(mapId);

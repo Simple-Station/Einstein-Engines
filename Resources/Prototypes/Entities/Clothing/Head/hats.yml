@@ -26,6 +26,17 @@
     - WhitelistChameleon
 
 - type: entity
+  parent: ClothingHeadHatBeret
+  id: ClothingHeadHatBeretWhite
+  name: beret
+  description: A beret, an artists favorite headwear.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beretwhite.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beretwhite.rsi
+
+- type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatBeretFrench
   name: French beret
@@ -252,6 +263,10 @@
   - type: ContainerContainer
     containers:
       storagebase: !type:Container
+  - type: PilotedClothing
+    pilotWhitelist:
+      tags:
+        - ChefPilot
   - type: Tag
     tags:
     - ClothMade
@@ -817,6 +832,21 @@
     modifiers:
       coefficients:
         Blunt: 0.95
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatHolyWatermelon
+  name: watermelon halo
+  description: Holy moly.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/holyhatmelon.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/holyhatmelon.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.95
 
 - type: entity
   parent: ClothingHeadBase

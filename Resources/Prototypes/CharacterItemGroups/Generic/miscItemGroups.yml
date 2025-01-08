@@ -1,0 +1,136 @@
+- type: characterItemGroup
+  id: LoadoutSmokes
+  items:
+    - type: loadout
+      id: LoadoutItemCig
+    - type: loadout
+      id: LoadoutItemCigsGreen
+    - type: loadout
+      id: LoadoutItemCigsRed
+    - type: loadout
+      id: LoadoutItemCigsBlue
+    - type: loadout
+      id: LoadoutItemCigsBlack
+    - type: loadout
+      id: LoadoutItemCigsMixed
+    - type: loadout
+      id: LoadoutItemCigsSyndicate
+    - type: loadout
+      id: LoadoutItemSmokingPipeFilledTobacco
+    - type: loadout
+      id: LoadoutItemBlunt
+    - type: loadout
+      id: LoadoutItemJoint
+
+- type: characterItemGroup
+  id: LoadoutLighters
+  items:
+    - type: loadout
+      id: LoadoutItemLighter
+    - type: loadout
+      id: LoadoutItemLighterCheap
+    - type: loadout
+      id: LoadoutItemLighterFlippo
+
+- type: characterItemGroup
+  id: LoadoutInstrumentsAny
+  maxItems: 2
+  items:
+    - type: loadout
+      id: LoadoutItemMicrophoneInstrument
+    - type: loadout
+      id: LoadoutItemKalimbaInstrument
+    - type: loadout
+      id: LoadoutItemTrumpetInstrument
+    - type: loadout
+      id: LoadoutItemElectricGuitar
+    - type: loadout
+      id: LoadoutItemBassGuitar
+    - type: loadout
+      id: LoadoutItemRockGuitar
+    - type: loadout
+      id: LoadoutItemAcousticGuitar
+    - type: loadout
+      id: LoadoutItemViolin
+    - type: loadout
+      id: LoadoutItemHarmonica
+    - type: loadout
+      id: LoadoutItemAccordion
+    - type: loadout
+      id: LoadoutItemFlute
+    - type: loadout
+      id: LoadoutItemOcarina
+
+- type: characterItemGroup
+  id: LoadoutAirTank
+  items:
+    - type: loadout
+      id: LoadoutItemsEmergencyOxygenTank
+    - type: loadout
+      id: LoadoutItemsExtendedEmergencyOxygenTank
+    - type: loadout
+      id: LoadoutItemsDoubleEmergencyOxygenTank
+    - type: loadout
+      id: LoadoutSpeciesEmergencyNitrogenTank
+    - type: loadout
+      id: LoadoutSpeciesExtendedEmergencyNitrogenTank
+    - type: loadout
+      id: LoadoutSpeciesDoubleEmergencyNitrogenTank
+
+- type: characterItemGroup
+  id: LoadoutBoxKits
+  items:
+    - type: loadout
+      id: LoadoutItemBoxSurvival
+    - type: loadout
+      id: LoadoutItemBoxSurvivalEngineering
+    - type: loadout
+      id: LoadoutItemBoxSurvivalSecurity
+    - type: loadout
+      id: LoadoutItemBoxSurvivalBrigmedic
+    - type: loadout
+      id: LoadoutItemBoxSurvivalMedical
+    - type: loadout
+      id: LoadoutItemBoxHug
+    - type: loadout
+      id: LoadoutMedkitFilled
+    - type: loadout
+      id: LoadoutMedkitBruteFilled
+    - type: loadout
+      id: LoadoutMedkitBurnFilled
+    - type: loadout
+      id: LoadoutMedkitToxinFilled
+    - type: loadout
+      id: LoadoutMedkitOxygenFilled
+    - type: loadout
+      id: LoadoutMedkitRadiationFilled
+    - type: loadout
+      id: LoadoutMedkitAdvancedFilled
+    - type: loadout
+      id: LoadoutMedkitCombatFilled
+
+- type: characterItemGroup
+  id: LoadoutWritables
+  maxItems: 2
+  items:
+    - type: loadout
+      id: LoadoutItemPapers
+    - type: loadout
+      id: LoadoutItemBoxFolderGrey
+    - type: loadout
+      id: LoadoutBookRandom
+    - type: loadout
+      id: LoadoutPen
+
+- type: characterItemGroup
+  id: LoadoutPets
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutItemPetMouse
+    - type: loadout
+      id: LoadoutItemPetHamster
+    - type: loadout
+      id: LoadoutItemPetMothroach
+    - type: loadout
+      id: LoadoutItemPetCockroach

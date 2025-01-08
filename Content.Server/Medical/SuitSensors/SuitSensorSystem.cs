@@ -1,3 +1,4 @@
+using System.Numerics;
 using Content.Server.Access.Systems;
 using Content.Server.DeviceNetwork;
 using Content.Server.DeviceNetwork.Components;
@@ -325,10 +326,9 @@ public sealed class SuitSensorSystem : EntitySystem
         {
             if (card.Comp.FullName != null)
                 userName = card.Comp.FullName;
-            if (card.Comp.JobTitle != null)
-                userJob = card.Comp.JobTitle;
-            if (card.Comp.JobIcon != null)
-                userJobIcon = card.Comp.JobIcon;
+            if (card.Comp.LocalizedJobTitle != null)
+                userJob = card.Comp.LocalizedJobTitle;
+            userJobIcon = card.Comp.JobIcon;
 
             foreach (var department in card.Comp.JobDepartments)
                 userJobDepartments.Add(Loc.GetString(department));
@@ -371,8 +371,8 @@ public sealed class SuitSensorSystem : EntitySystem
                 if (transform.GridUid != null)
                 {
                     coordinates = new EntityCoordinates(transform.GridUid.Value,
-                        _transform.GetInvWorldMatrix(xformQuery.GetComponent(transform.GridUid.Value), xformQuery)
-                        .Transform(_transform.GetWorldPosition(transform, xformQuery)));
+                        Vector2.Transform(_transform.GetWorldPosition(transform, xformQuery),
+                            _transform.GetInvWorldMatrix(xformQuery.GetComponent(transform.GridUid.Value), xformQuery)));
                 }
                 else if (transform.MapUid != null)
                 {

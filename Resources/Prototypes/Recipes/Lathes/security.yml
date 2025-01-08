@@ -13,6 +13,14 @@
     Plastic: 200
 
 - type: latheRecipe
+  id: BolaEnergy
+  result: BolaEnergy
+  completetime: 2
+  materials:
+    Plastic: 200
+    Plasma: 150
+
+- type: latheRecipe
   id: Stunbaton
   result: Stunbaton
   category: Weapons
@@ -717,6 +725,15 @@
     Uranium: 240
 
 - type: latheRecipe
+  id: WeaponFlareGunSecurity
+  result: WeaponFlareGunSecurity
+  category: Weapons
+  completetime: 6
+  materials:
+    Plastic: 100
+    Steel: 400
+
+- type: latheRecipe
   id: WeaponDisabler
   result: WeaponDisabler
   category: Weapons
@@ -758,9 +775,10 @@
   result: GrenadeBlast
   completetime: 3
   materials:
-     Steel: 450
-     Plastic: 300
-     Gold: 150
+     Steel: 150
+     Plastic: 100
+     Gold: 50
+
 - type: latheRecipe
   id: GrenadeFlash
   result: GrenadeFlash

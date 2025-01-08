@@ -36,12 +36,13 @@
   components:
   - type: StorageFill
     contents:
-# Currently do not function as 'true' mesons, so they're useless for salvagers.
-#      - id: ClothingEyesGlassesMeson
+      - id: ClothingEyesGlassesGarMeson
       - id: ClothingBeltUtilityFilled
       - id: SurvivalKnife
       - id: HandheldGPSBasic
       - id: RadioHandheld
+      - id: FlashlightSeclite
+      - id: Pickaxe
       - id: SeismicCharge
         amount: 2
       - id: ClothingShoesBootsWinterMiner #Delta V: Add departmental winter boots

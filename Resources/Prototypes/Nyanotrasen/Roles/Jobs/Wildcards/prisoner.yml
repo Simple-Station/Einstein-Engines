@@ -13,6 +13,10 @@
     - !type:DepartmentTimeRequirement
       department: Security
       min: 21600
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: Pacified
 
 - type: startingGear
   id: PrisonerGear

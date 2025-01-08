@@ -2,7 +2,7 @@
   id: TattooHiveChest
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Felinid, Oni] # Delta V - Felinid, Oni
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Shadowkin, Arachne, Lamia] # Delta V - Felinid, Oni
   coloring:
     default:
       type:
@@ -16,7 +16,7 @@
   id: TattooNightlingChest
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Felinid, Oni] # Delta V - Felinid, Oni
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Shadowkin, Arachne, Lamia] # Delta V - Felinid, Oni
   coloring:
     default:
       type:
@@ -30,7 +30,7 @@
   id: TattooSilverburghLeftLeg
   bodyPart: LLeg
   markingCategory: LeftLeg
-  speciesRestriction: [Human, Dwarf, Felinid, Oni] # Delta V - Felinid, Oni
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Shadowkin] # Delta V - Felinid, Oni
   coloring:
     default:
       type:
@@ -44,7 +44,7 @@
   id: TattooSilverburghRightLeg
   bodyPart: RLeg
   markingCategory: RightLeg
-  speciesRestriction: [Human, Dwarf, Felinid, Oni] # Delta V - Felinid, Oni
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Shadowkin] # Delta V - Felinid, Oni
   coloring:
     default:
       type:
@@ -58,7 +58,7 @@
   id: TattooCampbellLeftArm
   bodyPart: LArm
   markingCategory: LeftArm
-  speciesRestriction: [Human, Dwarf, Felinid, Oni] # Delta V - Felinid, Oni
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Shadowkin, Arachne, Lamia] # Delta V - Felinid, Oni
   coloring:
     default:
       type:
@@ -72,7 +72,7 @@
   id: TattooCampbellRightArm
   bodyPart: RArm
   markingCategory: RightArm
-  speciesRestriction: [Human, Dwarf, Felinid, Oni] # Delta V - Felinid, Oni
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Shadowkin, Arachne, Lamia] # Delta V - Felinid, Oni
   coloring:
     default:
       type:
@@ -86,7 +86,7 @@
   id: TattooCampbellLeftLeg
   bodyPart: LLeg
   markingCategory: LeftLeg
-  speciesRestriction: [Human, Dwarf, Felinid, Oni] # Delta V - Felinid, Oni
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Shadowkin] # Delta V - Felinid, Oni
   coloring:
     default:
       type:
@@ -100,7 +100,7 @@
   id: TattooCampbellRightLeg
   bodyPart: RLeg
   markingCategory: RightLeg
-  speciesRestriction: [Human, Dwarf, Felinid, Oni] # Delta V - Felinid, Oni
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Shadowkin] # Delta V - Felinid, Oni
   coloring:
     default:
       type:
@@ -114,7 +114,7 @@
   id: TattooEyeRight
   bodyPart: Eyes
   markingCategory: Head
-  speciesRestriction: [Human, SlimePerson, Reptilian, Dwarf, Felinid, Oni, Harpy] # Delta V - Felinid, Oni, Harpy
+  speciesRestriction: [Human, SlimePerson, Reptilian, Dwarf, Felinid, Oni, Harpy, Lamia] # Delta V - Felinid, Oni, Harpy
   coloring:
     default:
       type:
@@ -128,7 +128,7 @@
   id: TattooEyeLeft
   bodyPart: Eyes
   markingCategory: Head
-  speciesRestriction: [Human, SlimePerson, Reptilian, Dwarf, Felinid, Oni, Harpy] # Delta V - Felinid, Oni, Harpy
+  speciesRestriction: [Human, SlimePerson, Reptilian, Dwarf, Felinid, Oni, Harpy, Lamia] # Delta V - Felinid, Oni, Harpy
   coloring:
     default:
       type:
@@ -137,3 +137,31 @@
   sprites:
   - sprite: Mobs/Customization/tattoos.rsi
     state: tattoo_eye_l
+
+- type: marking
+  id: TattooEyeArachneRight
+  bodyPart: Eyes
+  markingCategory: Head
+  speciesRestriction: [Arachne]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+          negative: true
+  sprites:
+  - sprite: Mobs/Customization/tattoos.rsi
+    state: tattoo_eye_arachne_r
+
+- type: marking
+  id: TattooEyeArachneLeft
+  bodyPart: Eyes
+  markingCategory: Head
+  speciesRestriction: [Arachne]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+          negative: true
+  sprites:
+  - sprite: Mobs/Customization/tattoos.rsi
+    state: tattoo_eye_arachne_l

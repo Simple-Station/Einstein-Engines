@@ -20,6 +20,19 @@
     sprite: Clothing/Shoes/Boots/jackboots.rsi
   - type: Clothing
     sprite: Clothing/Shoes/Boots/jackboots.rsi
+  - type: ClothingSlowOnDamageModifier
+    modifier: 0.8
+
+- type: entity
+  parent: ClothingShoesMilitaryBase
+  id: ClothingShoesBootsJackFake
+  name: jackboots
+  description: Civilian-grade replica of Nanotrasen Security combat boots. Looks the part but lacks the performance—ideal for the heated situations.
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Boots/jackboots.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Boots/jackboots.rsi
 
 - type: entity
   parent: ClothingShoesBaseButcherable
@@ -54,6 +67,8 @@
     sprite: Clothing/Shoes/Boots/combatboots.rsi
   - type: Clothing
     sprite: Clothing/Shoes/Boots/combatboots.rsi
+  - type: ClothingSlowOnDamageModifier
+    modifier: 0.8
 
 - type: entity
   parent: ClothingShoesMilitaryBase
@@ -80,6 +95,8 @@
     sprite: Clothing/Shoes/Boots/mercboots.rsi
   - type: Clothing
     sprite: Clothing/Shoes/Boots/mercboots.rsi
+  - type: ClothingSlowOnDamageModifier
+    modifier: 0.6
 
 - type: entity
   parent: ClothingShoesBaseButcherable

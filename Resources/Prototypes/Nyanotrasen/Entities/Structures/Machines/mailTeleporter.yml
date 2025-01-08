@@ -46,7 +46,7 @@
         acts: ["Destruction"]
   - type: ApcPowerReceiver
     powerLoad: 1000 # TODO if we keep this make it spike power draw when teleporting
-    powerDisabled: true
+    powerDisabled: false
   - type: ExtensionCableReceiver
   - type: Appearance
   - type: GenericVisualizer

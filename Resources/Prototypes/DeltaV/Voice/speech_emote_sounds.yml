@@ -6,6 +6,8 @@
   sounds:
     Scream:
       collection: HarpyScreams
+    Yawn:
+      collection: MaleYawn
     Laugh:
       collection: HarpyLaugh
     Sneeze:
@@ -38,8 +40,20 @@
       collection: HarpyBangs
     Beep:
       collection: HarpyBeeps
+    Boop:
+      path: /Audio/Voice/IPC/beep_500.ogg
     HarpyRev:
       collection: HarpyRevs
+    Chime:
+      path: /Audio/Machines/chime.ogg
+    Buzz:
+      path: /Audio/Machines/buzz-sigh.ogg
+    Buzz-Two:
+      path: /Audio/Machines/buzz-two.ogg
+    Ping:
+      path: /Audio/Effects/Cargo/ping.ogg
+    Whirr:
+      collection: IPCWhirrs
     Click:
       collection: HarpyClicks
     Chitter:
@@ -60,6 +74,10 @@
       collection: VulpkaninHowls
     Weh:
       collection: Weh
+    Mars:
+      collection: Mars
+    Wurble:
+      collection: Wurble
 
 - type: emoteSounds
   id: MaleVulpkanin

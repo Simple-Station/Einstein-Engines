@@ -759,6 +759,7 @@
     - map: ["computerLayerKeys"]
       state: tech_key
   - type: CargoOrderConsole
+  - type: BankClient
   - type: ActiveRadio
     channels:
     - Supply
@@ -775,7 +776,7 @@
     energy: 1.6
     color: "#b89f25"
   - type: AccessReader
-    access: [["Orders"]] # DeltaV - see Resources/Prototypes/DeltaV/Access/cargo.yml
+    access: [["Cargo"]]
   - type: DeviceNetwork
     deviceNetId: Wireless
     receiveFrequencyId: BasicDevice

@@ -58,6 +58,11 @@
   path: "/Textures/Shaders/drunk.swsl"
 
 - type: shader
+  id: Drowsiness
+  kind: source
+  path: "/Textures/Shaders/radial_blur.swsl"
+
+- type: shader
   id: Texture
   kind: source
   path: "/Textures/Shaders/texture.swsl"
@@ -111,3 +116,15 @@
   id: Flap
   kind: source
   path: "/Textures/Shaders/flap.swsl"
+
+  # Shadowkin shaders
+
+- type: shader
+  id: ColorTint
+  kind: source
+  path: "/Textures/Shaders/color_tint.swsl"
+
+- type: shader
+  id: Ethereal
+  kind: source
+  path: "/Textures/Shaders/ethereal.swsl"

@@ -31,9 +31,11 @@
       inverted: true
       traits:
         - LowPotential
-  components:
-    - type: PotentiaModifier
-      potentiaMultiplier: 1.25
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: PotentiaModifier
+          potentiaMultiplier: 1.25
 
 - type: trait
   id: LowPotential
@@ -68,9 +70,11 @@
       inverted: true
       traits:
         - HighPotential
-  components:
-    - type: PotentiaModifier
-      potentiaMultiplier: 0.75
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: PotentiaModifier
+          potentiaMultiplier: 0.75
 
 - type: trait
   id: LowAmplification
@@ -97,13 +101,19 @@
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Shadowkin
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
         - HighAmplification
         - PowerOverwhelming
-  psionicPowers:
-    - LowAmplification
+  functions:
+    - !type:TraitAddPsionics
+      psionicPowers:
+        - LowAmplification
 
 - type: trait
   id: HighAmplification
@@ -135,8 +145,10 @@
       traits:
         - LowAmplification
         - PowerOverwhelming
-  psionicPowers:
-    - LowAmplification
+  functions:
+    - !type:TraitAddPsionics
+      psionicPowers:
+        - HighAmplification
 
 - type: trait
   id: PowerOverwhelming
@@ -168,8 +180,10 @@
       traits:
         - LowAmplification
         - HighAmplification
-  psionicPowers:
-    - PowerOverwhelming
+  functions:
+    - !type:TraitAddPsionics
+      psionicPowers:
+        - PowerOverwhelming
 
 - type: trait
   id: LowDampening
@@ -200,8 +214,10 @@
       inverted: true
       traits:
         - HighDampening
-  psionicPowers:
-    - LowDampening
+  functions:
+    - !type:TraitAddPsionics
+      psionicPowers:
+        - LowDampening
 
 - type: trait
   id: HighDampening
@@ -232,5 +248,138 @@
       inverted: true
       traits:
         - LowDampening
-  psionicPowers:
-    - HighDampening
+  functions:
+    - !type:TraitAddPsionics
+      psionicPowers:
+        - HighDampening
+
+- type: trait
+  id: DispelPower
+  category: Mental
+  points: -6
+  requirements:
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterTraitRequirement
+          traits:
+            - LatentPsychic
+        - !type:CharacterJobRequirement
+          jobs:
+            - Chaplain
+            - Librarian
+            - ForensicMantis
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ResearchDirector
+  functions:
+    - !type:TraitAddPsionics
+      psionicPowers:
+        - DispelPower
+
+- type: trait
+  id: MetapsionicPower
+  category: Mental
+  points: -4
+  requirements:
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterTraitRequirement
+          traits:
+            - LatentPsychic
+        - !type:CharacterJobRequirement
+          jobs:
+            - Chaplain
+            - Librarian
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ResearchDirector
+        - ForensicMantis
+  functions:
+    - !type:TraitAddPsionics
+      psionicPowers:
+        - MetapsionicPower
+
+- type: trait
+  id: XenoglossyPower
+  category: Mental
+  points: -10
+  requirements:
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterTraitRequirement
+          traits:
+            - LatentPsychic
+            - NaturalTelepath
+        - !type:CharacterJobRequirement
+          jobs:
+            - Chaplain
+            - ResearchDirector
+            - ForensicMantis
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Librarian
+  functions:
+    - !type:TraitAddPsionics
+      psionicPowers:
+        - XenoglossyPower
+
+- type: trait
+  id: PsychognomyPower
+  category: Mental
+  points: -3
+  requirements:
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterTraitRequirement
+          traits:
+            - LatentPsychic
+            - NaturalTelepath
+        - !type:CharacterJobRequirement
+          jobs:
+            - Chaplain
+            - ResearchDirector
+            - ForensicMantis
+            - Librarian
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
+  functions:
+    - !type:TraitAddPsionics
+      psionicPowers:
+        - PsychognomyPower

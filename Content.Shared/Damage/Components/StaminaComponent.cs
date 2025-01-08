@@ -1,4 +1,6 @@
+using Content.Shared.Alert;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Shared.Damage.Components;
@@ -70,4 +72,7 @@ public sealed partial class StaminaComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public float SlowdownMultiplier = 0.75f;
+
+    [DataField]
+    public ProtoId<AlertPrototype> StaminaAlert = "Stamina";
 }

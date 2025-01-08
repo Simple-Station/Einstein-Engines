@@ -43,7 +43,7 @@
         type: MechBoundUserInterface
   - type: MeleeWeapon
     hidden: true
-    attackRate: 0.75
+    attackRate: 1.3333
     damage:
       types:
         Blunt: 25 #thwack
@@ -72,7 +72,7 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.45
-        density: 1000
+        density: 21390 # 15 Tonnes
         mask:
         - MobMask
         layer:
@@ -204,7 +204,7 @@
       - Hamster
   - type: MeleeWeapon
     hidden: true
-    attackRate: 0.8
+    attackRate: 1.25
     damage:
       types:
         Blunt: 10 #thwack
@@ -267,7 +267,7 @@
       - VimPilot
   - type: MeleeWeapon
     hidden: true
-    attackRate: 0.8
+    attackRate: 1.25
     damage:
       types:
         Blunt: 10 #thwack

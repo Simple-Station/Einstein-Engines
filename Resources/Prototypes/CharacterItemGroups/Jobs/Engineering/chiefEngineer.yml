@@ -1,0 +1,142 @@
+- type: characterItemGroup
+  id: LoadoutChiefEngineerBackpack
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutEngineeringChiefEngineerBackpackBackpack
+    - type: loadout
+      id: LoadoutEngineeringChiefEngineerBackpackSatchel
+    - type: loadout
+      id: LoadoutEngineeringChiefEngineerBackpackDuffel
+
+- type: characterItemGroup
+  id: LoadoutChiefEngineerBelt
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutChiefEngineerBelt
+    - type: loadout
+      id: LoadoutChiefEngineerBeltFilled
+
+#- type: characterItemGroup
+#  id: LoadoutChiefEngineerEars
+#  maxItems: 1
+#  items:
+
+- type: characterItemGroup
+  id: LoadoutChiefEngineerEquipment
+  maxItems: 3
+  items:
+    - type: loadout
+      id: LoadoutChiefEngineerEquipmentBoxInflatable
+    - type: loadout
+      id: LoadoutChiefEngineerEquipmentMedkitOxygen
+    - type: loadout
+      id: LoadoutChiefEngineerEquipmentRCD
+    - type: loadout
+      id: LoadoutChiefEngineerEquipmentRCDAmmoSpare
+    - type: loadout
+      id: LoadoutChiefEngineerEquipmentSheetSteel
+    - type: loadout
+      id: LoadoutChiefEngineerEquipmentSheetSteel10
+    - type: loadout
+      id: LoadoutChiefEngineerEquipmentSheetPlasteel
+    - type: loadout
+      id: LoadoutChiefEngineerEquipmentSheetPlasteel10
+    - type: loadout
+      id: LoadoutChiefEngineerEquipmentSheetGlass
+    - type: loadout
+      id: LoadoutChiefEngineerEquipmentSheetGlass10
+    - type: loadout
+      id: LoadoutChiefEngineerEquipmentMaterialWoodPlank
+    - type: loadout
+      id: LoadoutChiefEngineerEquipmentMaterialWoodPlank10
+    - type: loadout
+      id: LoadoutChiefEngineerEquipmentSheetRGlass
+    - type: loadout
+      id: LoadoutChiefEngineerEquipmentSheetRGlass10
+    - type: loadout
+      id: LoadoutChiefEngineerEquipmentSheetUGlass
+    - type: loadout
+      id: LoadoutChiefEngineerEquipmentSheetUGlass10
+    - type: loadout
+      id: LoadoutChiefEngineerEquipmentSheetRUGlass
+    - type: loadout
+      id: LoadoutChiefEngineerEquipmentSheetRUGlass10
+    - type: loadout
+      id: LoadoutChiefEngineerEquipmentSheetPGlass
+    - type: loadout
+      id: LoadoutChiefEngineerEquipmentSheetPGlass10
+    - type: loadout
+      id: LoadoutChiefEngineerEquipmentSheetRPGlass
+    - type: loadout
+      id: LoadoutChiefEngineerEquipmentSheetRPGlass10
+    - type: loadout
+      id: LoadoutChiefEngineerEquipmentSheetClockworkGlass
+    - type: loadout
+      id: LoadoutChiefEngineerEquipmentSheetClockworkGlass10
+    - type: loadout
+      id: LoadoutChiefEngineerEquipmentSheetPlastic
+    - type: loadout
+      id: LoadoutChiefEngineerEquipmentSheetPlastic10
+
+#- type: characterItemGroup
+#  id: LoadoutChiefEngineerEyes
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutChiefEngineerGloves
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutChiefEngineerHead
+#  maxItems: 1
+#  items:
+
+- type: characterItemGroup
+  id: LoadoutChiefEngineerId
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutChiefEngineerNTPDA
+
+- type: characterItemGroup
+  id: LoadoutChiefEngineerNeck
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutEngineeringChiefEngineerNeckMantle
+    - type: loadout
+      id: LoadoutEngineeringChiefEngineerNeckCloak
+    - type: loadout
+      id: LoadoutEngineeringChiefEngineerNeckEngineerMedal
+
+#- type: characterItemGroup
+#  id: LoadoutChiefEngineerMask
+#  maxItems: 1
+#  items:
+
+- type: characterItemGroup
+  id: LoadoutChiefEngineerOuter
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCommandCEOuterWinter
+
+- type: characterItemGroup
+  id: LoadoutChiefEngineerShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutChiefEngineerShoesBootsWinter
+
+- type: characterItemGroup
+  id: LoadoutChiefEngineerUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutChiefEngineerUniformSuit
+    - type: loadout
+      id: LoadoutEngineeringChiefEngineerUniformSkirt

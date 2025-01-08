@@ -310,55 +310,6 @@
       #Have it break into brass when clock cult is in
 
 - type: entity
-  name: mirror shield
-  parent: BaseShield
-  id: MirrorShield
-  description: Glows an eerie red. You hear the Geometer whispering...
-  components:
-    - type: Sprite
-      state: mirror-icon
-    - type: Item
-      heldPrefix: mirror
-    - type: Reflect
-      reflectProb: 0.95
-      innate: true
-      reflects:
-        - Energy
-    - type: Blocking #Mirror shield reflects heat/laser, but is relatively weak to everything else.
-      passiveBlockModifier:
-        coefficients:
-          Blunt: 1.2
-          Slash: 1.2
-          Piercing: 1.2
-          Heat: .7
-      activeBlockModifier:
-        coefficients:
-          Blunt: 1.2
-          Slash: 1.2
-          Piercing: 1.2
-          Heat: .6
-        flatReductions:
-          Heat: 1
-      blockSound: !type:SoundPathSpecifier
-        path: /Audio/Effects/glass_step.ogg
-    - type: Destructible
-      thresholds:
-        - trigger:
-            !type:DamageTrigger
-            damage: 40
-          behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
-            - !type:PlaySoundBehavior
-              sound:
-                collection: GlassBreak
-            - !type:SpawnEntitiesBehavior
-              spawn:
-                SheetGlass:
-                  min: 5
-                  max: 5
-
-- type: entity
   name: energy shield
   parent: BaseItem
   id: EnergyShield
@@ -374,8 +325,10 @@
         path: /Audio/Weapons/ebladehum.ogg
     - type: ItemToggleSize
       activatedSize: Huge
-    - type: ItemToggleDisarmMalus
-      activatedDisarmMalus: 0.6
+    - type: ComponentToggler
+      components:
+      - type: DisarmMalus
+        malus: 0.6
     - type: Sprite
       sprite: Objects/Weapons/Melee/e_shield.rsi
       layers:
@@ -407,7 +360,6 @@
       energy: 2
       color: blue
     - type: Reflect
-      enabled: false
       reflectProb: 0.95
       innate: true
       reflects:
@@ -485,8 +437,10 @@
         path: /Audio/Weapons/telescopicoff.ogg
         params:
           volume: -5
-    - type: ItemToggleDisarmMalus
-      activatedDisarmMalus: 0.6
+    - type: ComponentToggler
+      components:
+      - type: DisarmMalus
+        malus: 0.6
     - type: ItemToggleSize
       activatedSize: Huge
     - type: Sprite

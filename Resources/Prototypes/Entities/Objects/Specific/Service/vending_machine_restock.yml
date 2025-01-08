@@ -20,6 +20,11 @@
       path: /Audio/Weapons/genhit2.ogg
     soundSwing:
       path: /Audio/Weapons/punchmiss.ogg
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 11
+    staminaCost: 15
   - type: Item
     size: Normal
   - type: Damageable
@@ -360,6 +365,7 @@
     - state: refill_sec
 
 - type: entity
+  abstract: true # DeltaV: Salvage vendor doesn't have stock anymore
   parent: BaseVendingMachineRestock
   id: VendingMachineRestockSalvageEquipment
   name: Salvage Vendor restock box

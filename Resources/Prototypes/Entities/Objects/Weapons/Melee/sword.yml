@@ -1,36 +1,55 @@
 - type: entity
-  name: captain's sabre
+  name: Sword
   parent: BaseItem
+  id: BaseSword
+  description: A sharp sword.
+  abstract: true
+  components:
+  - type: Sharp
+  - type: Execution
+    doAfterDuration: 4.0
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+  - type: Sprite
+    state: icon
+  - type: Item
+    size: Normal
+  - type: Utensil
+    types:
+      - Knife
+
+- type: entity
+  name: captain's sabre
+  parent: BaseSword
   id: CaptainSabre
   description: A ceremonial weapon belonging to the captain of the station.
   components:
-  - type: Sharp
   - type: Sprite
     sprite: Objects/Weapons/Melee/captain_sabre.rsi
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.25
+    attackRate: .8
     range: 1.75
     soundHit:
       path: /Audio/SimpleStation14/Weapons/Melee/rapierhit.ogg
     damage:
       types:
         Slash: 15
-    heavyRateModifier: 0.8
+    heavyRateModifier: 1.25
     heavyRangeModifier: 1
     heavyDamageBaseModifier: 1
     heavyStaminaCost: 5
     maxTargets: 7
     angle: 80
+  - type: DamageOtherOnHit
+    staminaCost: 5
+  - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
+  - type: ThrowingAngle
+    angle: 225
   - type: Reflect
-    enabled: true
-    # Design intent: a robust captain or tot can sacrifice movement to make the most of this weapon, but they have to
-    # really restrict themselves to walking speed or less.
-    reflectProb: 0.5
-    velocityBeforeNotMaxProb: 1.0
-    velocityBeforeMinProb: 3.0
-    minReflectProb: 0.1
+    reflectProb: .1
     spread: 90
   - type: Item
     size: Normal
@@ -38,15 +57,13 @@
   - type: Tag
     tags:
     - CaptainSabre
-  - type: DisarmMalus
 
 - type: entity
   name: katana
-  parent: BaseItem
+  parent: BaseSword
   id: Katana
   description: Ancient craftwork made with not so ancient plasteel.
   components:
-  - type: Sharp
   - type: Tag
     tags:
     - Katana
@@ -55,18 +72,24 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.5
+    attackRate: .6666
     soundHit:
       path: /Audio/SimpleStation14/Weapons/Melee/rapierhit.ogg
     damage:
       types:
         Slash: 12
-    heavyRateModifier: 0.5
+    heavyRateModifier: 2
     heavyRangeModifier: 2.75 #Superior Japanese folded steel
     heavyDamageBaseModifier: 1.25
     heavyStaminaCost: 15
     maxTargets: 1
     angle: 20
+  - type: DamageOtherOnHit
+    staminaCost: 10
+  - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
+  - type: ThrowingAngle
+    angle: 225
   - type: Item
     size: Normal
     sprite: DeltaV/Objects/Weapons/Melee/katana.rsi #DeltaV
@@ -86,6 +109,8 @@
     damage:
       types:
         Slash: 25
+  - type: ThrowingAngle
+    angle: 300
   - type: Item
     size: Normal
     sprite: Objects/Weapons/Melee/energykatana.rsi
@@ -108,11 +133,10 @@
 
 - type: entity
   name: machete
-  parent: BaseItem
+  parent: BaseSword
   id: Machete
   description: A large, vicious looking blade.
   components:
-  - type: Sharp
   - type: Tag
     tags:
     - Machete
@@ -121,42 +145,46 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 0.8
+    attackRate: 1.25
     damage:
       types:
         Slash: 15
-    heavyRateModifier: 0.8
+    heavyRateModifier: 1.25
     heavyRangeModifier: 1.25
     heavyDamageBaseModifier: 1.2
     heavyStaminaCost: 7.5
     angle: 80
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
+  - type: DamageOtherOnHit
+    staminaCost: 5
+  - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
+  - type: ThrowingAngle
+    angle: 225
   - type: Item
     size: Normal
     sprite: Objects/Weapons/Melee/machete.rsi
-  - type: DisarmMalus
 
 - type: entity
   name: claymore
-  parent: BaseItem
+  parent: BaseSword
   id: Claymore
   description: An ancient war blade.
   components:
-  - type: Sharp
   - type: Sprite
     sprite: Objects/Weapons/Melee/claymore.rsi
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 0.65
+    attackRate: 1.53
     range: 1.85
     damage:
       types:
         Slash: 19
         Blunt: 1
     bluntStaminaDamageFactor: 25.0
-    heavyRateModifier: 0.5
+    heavyRateModifier: 2
     heavyRangeModifier: 1
     heavyDamageBaseModifier: 1
     heavyStaminaCost: 15
@@ -164,21 +192,25 @@
     angle: 200
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
+  - type: DamageOtherOnHit
+    staminaCost: 18
+  - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
+  - type: ThrowingAngle
+    angle: 225
   - type: Item
     size: Normal
   - type: Clothing
     sprite: Objects/Weapons/Melee/claymore.rsi
     slots:
     - back
-  - type: DisarmMalus
 
 - type: entity
   name: cutlass
-  parent: BaseItem
+  parent: BaseSword
   id: Cutlass
   description: A wickedly curved blade, often seen in the hands of space pirates.
   components:
-  - type: Sharp
   - type: Tag
     tags:
     - Machete
@@ -187,11 +219,11 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.25
+    attackRate: .8
     damage:
       types:
         Slash: 12
-    heavyRateModifier: 0.8
+    heavyRateModifier: 1.25
     heavyRangeModifier: 1.2
     heavyDamageBaseModifier: 1.2
     heavyStaminaCost: 7.5
@@ -199,24 +231,28 @@
     angle: 40
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
+  - type: DamageOtherOnHit
+    staminaCost: 5
+  - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
+  - type: ThrowingAngle
+    angle: 225
   - type: Item
     size: Normal
     sprite: Objects/Weapons/Melee/cutlass.rsi
-  - type: DisarmMalus
 
 - type: entity
   name: The Throngler
-  parent: BaseItem
+  parent: BaseSword
   id: Throngler
   description: Why would someone make this?
   components:
-    - type: Sharp
     - type: Sprite
       sprite: Objects/Weapons/Melee/Throngler2.rsi
       state: icon
     - type: MeleeWeapon
       wideAnimationRotation: -135
-      attackRate: 10
+      attackRate: .1
       damage:
         types:
           Structural: 150
@@ -227,14 +263,10 @@
           Radiation: 10
       soundHit:
         path: /Audio/Effects/explosion_small1.ogg
+    - type: DamageOtherOnHit
     - type: Reflect
-      enabled: true
-      reflectProb: 0.5 # In robust hands, deflects as well as an e-sword
-      velocityBeforeNotMaxProb: 1.0
-      velocityBeforeMinProb: 3.0
-      minReflectProb: 0.1
+      reflectProb: .25
       spread: 90
     - type: Item
       size: Ginormous
       sprite: Objects/Weapons/Melee/Throngler-in-hand.rsi
-    - type: DisarmMalus

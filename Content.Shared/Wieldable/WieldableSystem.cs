@@ -1,7 +1,9 @@
+using System.Linq;
 using Content.Shared.Examine;
 using Content.Shared.Hands;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
+using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Inventory.VirtualItem;
 using Content.Shared.Item;
@@ -16,7 +18,8 @@ using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Weapons.Ranged.Systems;
 using Content.Shared.Wieldable.Components;
 using Robust.Shared.Audio.Systems;
-using Robust.Shared.Player;
+using Robust.Shared.Network;
+using Robust.Shared.Timing;
 
 namespace Content.Shared.Wieldable;
 
@@ -30,6 +33,8 @@ public sealed class WieldableSystem : EntitySystem
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly UseDelaySystem _delay = default!;
     [Dependency] private readonly SharedGunSystem _gun = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly INetManager _netManager = default!;
 
     public override void Initialize()
     {
@@ -40,9 +45,11 @@ public sealed class WieldableSystem : EntitySystem
         SubscribeLocalEvent<WieldableComponent, GotUnequippedHandEvent>(OnItemLeaveHand);
         SubscribeLocalEvent<WieldableComponent, VirtualItemDeletedEvent>(OnVirtualItemDeleted);
         SubscribeLocalEvent<WieldableComponent, GetVerbsEvent<InteractionVerb>>(AddToggleWieldVerb);
+        SubscribeLocalEvent<WieldableComponent, HandDeselectedEvent>(OnDeselectWieldable);
 
         SubscribeLocalEvent<MeleeRequiresWieldComponent, AttemptMeleeEvent>(OnMeleeAttempt);
-        SubscribeLocalEvent<GunRequiresWieldComponent, AttemptShootEvent>(OnShootAttempt);
+        SubscribeLocalEvent<GunRequiresWieldComponent, ExaminedEvent>(OnExamineRequires);
+        SubscribeLocalEvent<GunRequiresWieldComponent, ShotAttemptedEvent>(OnShootAttempt);
         SubscribeLocalEvent<GunWieldBonusComponent, ItemWieldedEvent>(OnGunWielded);
         SubscribeLocalEvent<GunWieldBonusComponent, ItemUnwieldedEvent>(OnGunUnwielded);
         SubscribeLocalEvent<GunWieldBonusComponent, GunRefreshModifiersEvent>(OnGunRefreshModifiers);
@@ -61,16 +68,21 @@ public sealed class WieldableSystem : EntitySystem
         }
     }
 
-    private void OnShootAttempt(EntityUid uid, GunRequiresWieldComponent component, ref AttemptShootEvent args)
+    private void OnShootAttempt(EntityUid uid, GunRequiresWieldComponent component, ref ShotAttemptedEvent args)
     {
         if (TryComp<WieldableComponent>(uid, out var wieldable) &&
             !wieldable.Wielded)
         {
-            args.Cancelled = true;
+            args.Cancel();
 
-            if (!HasComp<MeleeWeaponComponent>(uid) && !HasComp<MeleeRequiresWieldComponent>(uid))
+            var time = _timing.CurTime;
+            if (time > component.LastPopup + component.PopupCooldown &&
+                !HasComp<MeleeWeaponComponent>(uid) &&
+                !HasComp<MeleeRequiresWieldComponent>(uid))
             {
-                args.Message = Loc.GetString("wieldable-component-requires", ("item", uid));
+                component.LastPopup = time;
+                var message = Loc.GetString("wieldable-component-requires", ("item", uid));
+                _popupSystem.PopupClient(message, args.Used, args.User);
             }
         }
     }
@@ -85,6 +97,15 @@ public sealed class WieldableSystem : EntitySystem
         _gun.RefreshModifiers(uid);
     }
 
+    private void OnDeselectWieldable(EntityUid uid, WieldableComponent component, HandDeselectedEvent args)
+    {
+        if (!component.Wielded ||
+            _handsSystem.EnumerateHands(args.User).Count() > 2)
+            return;
+
+        TryUnwield(uid, component, args.User);
+    }
+
     private void OnGunRefreshModifiers(Entity<GunWieldBonusComponent> bonus, ref GunRefreshModifiersEvent args)
     {
         if (TryComp(bonus, out WieldableComponent? wield) &&
@@ -97,8 +118,17 @@ public sealed class WieldableSystem : EntitySystem
         }
     }
 
+    private void OnExamineRequires(Entity<GunRequiresWieldComponent> entity, ref ExaminedEvent args)
+    {
+        if(entity.Comp.WieldRequiresExamineMessage != null)
+            args.PushText(Loc.GetString(entity.Comp.WieldRequiresExamineMessage));
+    }
+
     private void OnExamine(EntityUid uid, GunWieldBonusComponent component, ref ExaminedEvent args)
     {
+        if (HasComp<GunRequiresWieldComponent>(uid))
+            return;
+
         if (component.WieldBonusExamineMessage != null)
             args.PushText(Loc.GetString(component.WieldBonusExamineMessage));
     }
@@ -155,7 +185,7 @@ public sealed class WieldableSystem : EntitySystem
             return false;
         }
 
-        if (hands.CountFreeHands() < component.FreeHandsRequired)
+        if (_handsSystem.CountFreeableHands((user, hands)) < component.FreeHandsRequired)
         {
             if (!quiet)
             {
@@ -196,9 +226,25 @@ public sealed class WieldableSystem : EntitySystem
         if (component.WieldSound != null)
             _audioSystem.PlayPredicted(component.WieldSound, used, user);
 
-        for (var i = 0; i < component.FreeHandsRequired; i++)
+        //This section handles spawning the virtual item(s) to occupy the required additional hand(s).
+        //Since the client can't currently predict entity spawning, only do this if this is running serverside.
+        //Remove this check if TrySpawnVirtualItem in SharedVirtualItemSystem is allowed to complete clientside.
+        if (_netManager.IsServer)
         {
-            _virtualItemSystem.TrySpawnVirtualItemInHand(used, user);
+            var virtuals = new List<EntityUid>();
+            for (var i = 0; i < component.FreeHandsRequired; i++)
+            {
+                if (_virtualItemSystem.TrySpawnVirtualItemInHand(used, user, out var virtualItem, true))
+                {
+                    virtuals.Add(virtualItem.Value);
+                    continue;
+                }
+
+                foreach (var existingVirtual in virtuals)
+                    QueueDel(existingVirtual);
+
+                return false;
+            }
         }
 
         if (TryComp(used, out UseDelayComponent? useDelay)
@@ -206,7 +252,7 @@ public sealed class WieldableSystem : EntitySystem
             return false;
 
         var selfMessage = Loc.GetString("wieldable-component-successful-wield", ("item", used));
-        var othersMessage = Loc.GetString("wieldable-component-successful-wield-other", ("user", user), ("item", used));
+        var othersMessage = Loc.GetString("wieldable-component-successful-wield-other", ("user", Identity.Entity(user, EntityManager)), ("item", used));
         _popupSystem.PopupPredicted(selfMessage, othersMessage, user, user);
 
         var targEv = new ItemWieldedEvent();
@@ -251,7 +297,7 @@ public sealed class WieldableSystem : EntitySystem
                 _audioSystem.PlayPredicted(component.UnwieldSound, uid, args.User);
 
             var selfMessage = Loc.GetString("wieldable-component-failed-wield", ("item", uid));
-            var othersMessage = Loc.GetString("wieldable-component-failed-wield-other", ("user", args.User.Value), ("item", uid));
+            var othersMessage = Loc.GetString("wieldable-component-failed-wield-other", ("user", Identity.Entity(args.User.Value, EntityManager)), ("item", uid));
             _popupSystem.PopupPredicted(selfMessage, othersMessage, args.User.Value, args.User.Value);
         }
 

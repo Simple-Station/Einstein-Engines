@@ -5,6 +5,8 @@ using Content.Server.NPC.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Player;
 using Robust.Server.GameObjects;
+using Content.Shared.NPC.Systems;
+
 
 namespace Content.Server.Psionics
 {
@@ -78,8 +80,8 @@ namespace Content.Server.Psionics
         {
             var visibility = EntityManager.EnsureComponent<VisibilityComponent>(uid);
 
-            _visibilitySystem.AddLayer(uid, visibility, (int) VisibilityFlags.PsionicInvisibility, false);
-            _visibilitySystem.RemoveLayer(uid, visibility, (int) VisibilityFlags.Normal, false);
+            _visibilitySystem.AddLayer((uid, visibility), (int) VisibilityFlags.PsionicInvisibility, false);
+            _visibilitySystem.RemoveLayer((uid, visibility), (int) VisibilityFlags.Normal, false);
             _visibilitySystem.RefreshVisibility(uid, visibility);
         }
 
@@ -88,8 +90,8 @@ namespace Content.Server.Psionics
         {
             if (TryComp<VisibilityComponent>(uid, out var visibility))
             {
-                _visibilitySystem.RemoveLayer(uid, visibility, (int) VisibilityFlags.PsionicInvisibility, false);
-                _visibilitySystem.AddLayer(uid, visibility, (int) VisibilityFlags.Normal, false);
+                _visibilitySystem.RemoveLayer((uid, visibility), (int) VisibilityFlags.PsionicInvisibility, false);
+                _visibilitySystem.AddLayer((uid, visibility), (int) VisibilityFlags.Normal, false);
                 _visibilitySystem.RefreshVisibility(uid, visibility);
             }
         }

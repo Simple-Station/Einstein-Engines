@@ -35,6 +35,8 @@
 
 - type: npcFaction
   id: SimpleHostile
+  friendly:
+  - AnimalFriend
   hostile:
   - NanoTrasen
   - Syndicate
@@ -42,6 +44,7 @@
   - PetsNT
   - Zombie
   - Revolutionary
+  - GeometerOfBlood
 
 - type: npcFaction
   id: SimpleNeutral
@@ -86,6 +89,8 @@
 
 - type: npcFaction
   id: Pibble
+  friendly:
+  - AnimalFriend
   hostile:
   - Cat
   - Birb
@@ -99,3 +104,6 @@
 
 - type: npcFaction
   id: Birb
+
+- type: npcFaction
+  id: AnimalFriend

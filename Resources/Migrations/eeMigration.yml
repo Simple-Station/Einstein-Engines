@@ -1,7 +1,122 @@
+# 2023-09-29
+PosterContrabandSMSyndie: PosterContrabandSafetyMothSyndie
+PosterLegitSMPoisoning: PosterLegitSafetyMothPoisoning
+PosterLegitSMBoH: PosterLegitSafetyMothBoH
+PosterLegitSMHardhats: PosterLegitSafetyMothHardhat
+PosterLegitSMFires: PosterLegitSafetyMothFires
+PosterLegitSMPiping: PosterLegitSafetyMothPiping
+PosterLegitSMMeth: PosterLegitSafetyMothMeth
+PosterLegitSMEpi: PosterLegitSafetyMothEpi
+PosterLegitSMPills: PosterLegitSafetyMothPills
+PosterLegitSMAnomalies: PosterLegitSafetyMothDelam
+PosterLegitSMGlimmer: PosterLegitSafetyMothGlimmer
+EngineeringTechFab: Autolathe
+EngineeringTechFabCircuitboard: AutolatheMachineCircuitboard
+ScienceTechFab: Protolathe
+ScienceTechFabCircuitboard: ProtolatheMachineCircuitboard
+ServiceTechFab: Autolathe
+ServiceTechFabCircuitboard: AutolatheMachineCircuitboard
+
+# 2023-10-05
+FoodMothTomatoSauce: null
+LockerEpistemicsFilled: LockerScienceFilled
+LockerMystagogueFilled: LockerResearchDirectorFilled
+LockerEpistemics: LockerScientist
+LockerMystagogue: LockerResearchDirector
+HyperlinkBookAlerts: BookRandom
+HyperlinkBookAtmos: BookAtmosDistro
+HyperlinkBookBartending: BookBartendersManual
+HyperlinkBookBotany: BookLeafLoversSecret
+HyperlinkBookChemistry: BookChemicalCompendium
+HyperlinkBookCooking: BookHowToCookForFortySpaceman
+HyperlinkBookGlimmer: BookScientistsGuidebook
+HyperlinkBookHacking: BookEngineersHandbook
+HyperlinkBookMedical: BookMedicalReferenceBook
+HyperlinkBookPower: BookEngineersHandbook
+HyperlinkBookProcedure: BookRandom
+HyperlinkBookShuttle: BookRandom
+HyperlinkBookSpaceLaw: BookSecurity
+HyperlinkBookSupernanny: BookHowToSurvive
+SpawnPointCataloguer: SpawnPointLibrarian
+SpawnPointCyborg: SpawnPointBorg
+SpawnPointMedicalCyborg: null
+SpawnPointEpistemologist: SpawnPointScientist
+SpawnPointMystagogue: SpawnPointResearchDirector
+SpawnPointSalvageTechnician: SpawnPointSalvageSpecialist
+SpawnPointValet: SpawnPointServiceWorker
+VendingMachineEpiDrobe: VendingMachineSciDrobe
+PlushieMoffRandom: PlushieMothRandom
+PlushieMoffbar: PlushieMothBartender
+PlushieMoffsician: PlushieMothMusician
+PlushieMoff: PlushieMoth
+ArachneWeb: SpiderWeb
+PowerCellBluespace: PowerCellHigh
+CrateMedicalDefib: CrateMedical
+WeaponShotgunEnforcerNonLethal: WeaponShotgunEnforcerRubber
+
+# 2023-10-06
+FoodMealTaco: FoodMealSoftTaco
+FoodTinBeansOpen: FoodTinBeans
+FoodBreadMoldy: FoodBreadMoldySlice
+FoodMeatPatty: FoodMeatMeatball
+ClothingHeadHoodMystic: ClothingHeadHoodMysta
+
+# 2023-11-07
+VendingMachineMailDrobe: VendingMachineCourierDrobe
+
+SpawnMobGolemCult: null
+ShogiBoard: CheckerBoard
+
+# 2023-11-21
+AirlockBrigLocked: AirlockSecurityLawyerLocked
+AirlockBrigGlassLocked: AirlockSecurityLawyerGlassLocked
+WindoorSecureBrigLocked: WindoorSecureSecurityLawyerLocked
+
+#Delta V Optional: Remove "#" for specific maps.
+#AsteroidRock: AsteroidAltRock
+#AsteroidRockMining: AsteroidAltRockMining   # These two rocks change between the two variants of
+                                             # Wizden Rocks, they're the same rock but with two different textures
+                                             # both are ugly, but you may have a preference.
+
+# 2023-12-16
+PlushieLizardMirrored: PlushieLizard
+
+# 2024-1-22
+#Use these lights because they are better
+PoweredlightExterior: PoweredLightBlueInterior
+ExteriorLightTube: BlueLightTube
+
+# 2024-01-26
+SalvagePartsSpawnerSubSpace: SalvagePartsSpawnerMid
+
+# 2024-02-08
+SpawnVehicleAntagVehicle: null
+
+# 2024-02-26
+SpaceTickSpawnerNPC: SpaceTickSpawner
+
+# 2024-03-07
+LockableButtonBrig: LockableButtonSecurity
+SignDirectionalICU: SignDirectionalIcu
+
+# 2024-03-08
+ClothingBackpackSatchelBrigmedicDeltaVFilled: ClothingBackpackSatchelBrigmedicFilled
+ClothingBackpackDuffelBrigmedicDeltaVFilled: ClothingBackpackDuffelBrigmedicFilled
+ClothingBackpackBrigmedicDeltaVFilled: ClothingBackpackBrigmedicFilled
+
 # 2024-06-08
 CrateFunPlushie: CrateFunToyBox
 CrateFunLizardPlushieBulk: CrateFunToyBox
 
+# 2024-08-22 - Frontier Mail - Add more to these when they come up as mapped. Part of the Frontier Mail port, blame Tortuga.
+MailPAI: MailNFPAI
+
 # 2024-08-27
 Oracle: OracleSpawner
 SophicScribe: SophicScribeSpawner
+
+# 2024-11-16
+GlassBoxLaser: null #Captain's Laser was moved to Loadouts.
+
+# 2024-12-22
+VendingMachineRestockSalvageEquipment: null

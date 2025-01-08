@@ -1,17 +1,25 @@
 using Content.Server.Administration.Logs;
-using Content.Server.Atmos;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Body.Components;
+using Content.Server.Chat.Systems;
 using Content.Server.Chemistry.Containers.EntitySystems;
+using Content.Server.EntityEffects.EffectConditions;
+using Content.Server.EntityEffects.Effects;
 using Content.Server.Popups;
 using Content.Shared.Alert;
 using Content.Shared.Atmos;
 using Content.Shared.Body.Components;
+using Content.Shared._Shitmed.Body.Organ;
+using Content.Shared.Body.Prototypes;
+using Content.Shared.Chemistry.Components;
+using Content.Shared.Chemistry.Reagent; // Shitmed Change
 using Content.Shared.Damage;
 using Content.Shared.Database;
+using Content.Shared.EntityEffects;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Mood;
 using JetBrains.Annotations;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
 namespace Content.Server.Body.Systems;
@@ -28,7 +36,11 @@ public sealed class RespiratorSystem : EntitySystem
     [Dependency] private readonly LungSystem _lungSystem = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
+    [Dependency] private readonly IPrototypeManager _protoMan = default!;
     [Dependency] private readonly SolutionContainerSystem _solutionContainerSystem = default!;
+    [Dependency] private readonly ChatSystem _chat = default!;
+
+    private static readonly ProtoId<MetabolismGroupPrototype> GasId = new("Gas");
 
     public override void Initialize()
     {
@@ -66,9 +78,12 @@ public sealed class RespiratorSystem : EntitySystem
             if (_mobState.IsDead(uid))
                 continue;
 
+            if (HasComp<RespiratorImmuneComponent>(uid))
+                continue;
+
             UpdateSaturation(uid, -(float) respirator.UpdateInterval.TotalSeconds, respirator);
 
-            if (!_mobState.IsIncapacitated(uid)) // cannot breathe in crit.
+            if (!_mobState.IsIncapacitated(uid) && !HasComp<DebrainedComponent>(uid)) // Shitmed: cannot breathe in crit or when no brain.
             {
                 switch (respirator.Status)
                 {
@@ -110,7 +125,7 @@ public sealed class RespiratorSystem : EntitySystem
 
         // Inhale gas
         var ev = new InhaleLocationEvent();
-        RaiseLocalEvent(uid, ref ev, broadcast: false);
+        RaiseLocalEvent(uid, ref ev);
 
         ev.Gas ??= _atmosSys.GetContainingMixture(uid, excite: true);
 
@@ -165,6 +180,112 @@ public sealed class RespiratorSystem : EntitySystem
         _atmosSys.Merge(ev.Gas, outGas);
     }
 
+    /// <summary>
+    /// Check whether or not an entity can metabolize inhaled air without suffocating or taking damage (i.e., no toxic
+    /// gasses).
+    /// </summary>
+    public bool CanMetabolizeInhaledAir(Entity<RespiratorComponent?> ent)
+    {
+        if (!Resolve(ent, ref ent.Comp))
+            return false;
+
+        var ev = new InhaleLocationEvent();
+        RaiseLocalEvent(ent, ref ev);
+
+        var gas = ev.Gas ?? _atmosSys.GetContainingMixture(ent.Owner);
+        if (gas == null)
+            return false;
+
+        return CanMetabolizeGas(ent, gas);
+    }
+
+    /// <summary>
+    /// Check whether or not an entity can metabolize the given gas mixture without suffocating or taking damage
+    /// (i.e., no toxic gasses).
+    /// </summary>
+    public bool CanMetabolizeGas(Entity<RespiratorComponent?> ent, GasMixture gas)
+    {
+        if (!Resolve(ent, ref ent.Comp))
+            return false;
+
+        var organs = _bodySystem.GetBodyOrganComponents<LungComponent>(ent);
+        if (organs.Count == 0)
+            return false;
+
+        gas = new GasMixture(gas);
+        var lungRatio = 1.0f / organs.Count;
+        gas.Multiply(MathF.Min(lungRatio * gas.Volume/Atmospherics.BreathVolume, lungRatio));
+        var solution = _lungSystem.GasToReagent(gas);
+
+        float saturation = 0;
+        foreach (var organ in organs)
+        {
+            saturation += GetSaturation(solution, organ.Comp.Owner, out var toxic);
+            if (toxic)
+                return false;
+        }
+
+        return saturation > ent.Comp.UpdateInterval.TotalSeconds;
+    }
+
+    /// <summary>
+    /// Get the amount of saturation that would be generated if the lung were to metabolize the given solution.
+    /// </summary>
+    /// <remarks>
+    /// This assumes the metabolism rate is unbounded, which generally should be the case for lungs, otherwise we get
+    /// back to the old pulmonary edema bug.
+    /// </remarks>
+    /// <param name="solution">The reagents to metabolize</param>
+    /// <param name="lung">The entity doing the metabolizing</param>
+    /// <param name="toxic">Whether or not any of the reagents would deal damage to the entity</param>
+    private float GetSaturation(Solution solution, Entity<MetabolizerComponent?> lung, out bool toxic)
+    {
+        toxic = false;
+        if (!Resolve(lung, ref lung.Comp))
+            return 0;
+
+        if (lung.Comp.MetabolismGroups == null)
+            return 0;
+
+        float saturation = 0;
+        foreach (var (id, quantity) in solution.Contents)
+        {
+            var reagent = _protoMan.Index<ReagentPrototype>(id.Prototype);
+            if (reagent.Metabolisms == null)
+                continue;
+
+            if (!reagent.Metabolisms.TryGetValue(GasId, out var entry))
+                continue;
+
+            foreach (var effect in entry.Effects)
+            {
+                if (effect is HealthChange health)
+                    toxic |= CanMetabolize(health) && health.Damage.AnyPositive();
+                else if (effect is Oxygenate oxy && CanMetabolize(oxy))
+                    saturation += oxy.Factor * quantity.Float();
+            }
+        }
+
+        // TODO generalize condition checks
+        // this is pretty janky, but I just want to bodge a method that checks if an entity can breathe a gas mixture
+        // Applying actual reaction effects require a full ReagentEffectArgs struct.
+        bool CanMetabolize(EntityEffect effect)
+        {
+            if (effect.Conditions == null)
+                return true;
+
+            foreach (var cond in effect.Conditions)
+            {
+                if (cond is OrganType organ && !organ.Condition(lung, EntityManager))
+                    return false;
+            }
+
+            return true;
+        }
+
+        return saturation;
+    }
+
     private void TakeSuffocationDamage(Entity<RespiratorComponent> ent)
     {
         if (ent.Comp.SuffocationCycles == 2)
@@ -181,7 +302,7 @@ public sealed class RespiratorSystem : EntitySystem
             RaiseLocalEvent(ent, new MoodEffectEvent("Suffocating"));
         }
 
-        _damageableSys.TryChangeDamage(ent, ent.Comp.Damage, interruptsDoAfters: false);
+        _damageableSys.TryChangeDamage(ent, HasComp<DebrainedComponent>(ent) ? ent.Comp.Damage * 4.5f : ent.Comp.Damage, interruptsDoAfters: false);
     }
 
     private void StopSuffocation(Entity<RespiratorComponent> ent)
@@ -214,6 +335,9 @@ public sealed class RespiratorSystem : EntitySystem
         Entity<RespiratorComponent> ent,
         ref ApplyMetabolicMultiplierEvent args)
     {
+        // TODO REFACTOR THIS
+        // This will slowly drift over time due to floating point errors.
+        // Instead, raise an event with the base rates and allow modifiers to get applied to it.
         if (args.Apply)
         {
             ent.Comp.UpdateInterval *= args.Multiplier;

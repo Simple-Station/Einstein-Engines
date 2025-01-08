@@ -1,0 +1,79 @@
+# Cargo technician
+# Backpacks
+
+# Belt
+
+# Ears
+
+# Equipment
+
+# Eyes
+
+# Gloves
+
+# Head
+
+# Id
+
+# Neck
+
+# Mask
+
+# Outer
+- type: loadout
+  id: LoadoutCargoOuterWinterCargo
+  category: JobsLogisticsAUncategorized
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCargoTechnicianOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - CargoTechnician
+  items:
+    - ClothingOuterWinterCargo
+
+# Shoes
+- type: loadout
+  id: LoadoutCargoShoesBootsWinterCargo
+  category: JobsLogisticsAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCargoTechnicianShoes
+    - !type:CharacterJobRequirement
+      jobs:
+        - CargoTechnician
+  items:
+    - ClothingShoesBootsWinterCargo
+
+# Uniforms
+- type: loadout
+  id: LoadoutCargoTechnicianUniformSuit
+  category: JobsLogisticsCargoTechnician
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCargoTechnicianUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - CargoTechnician
+  items:
+    - ClothingUniformJumpsuitCargo
+
+- type: loadout
+  id: LoadoutCargoTechnicianUniformSkirt
+  category: JobsLogisticsCargoTechnician
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCargoTechnicianUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - CargoTechnician
+  items:
+    - ClothingUniformJumpskirtCargo

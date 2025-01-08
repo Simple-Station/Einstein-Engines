@@ -1,0 +1,525 @@
+# Captain
+# Backpacks
+- type: loadout
+  id: LoadoutBackpackCaptain
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackCaptain
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+
+- type: loadout
+  id: LoadoutBackpackSatchelCaptain
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackSatchelCaptain
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+
+- type: loadout
+  id: LoadoutBackpackDuffelCaptain
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackDuffelCaptain
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+
+- type: loadout
+  id: LoadoutBackpackCaptainFilled
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackCaptainFilled
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+
+- type: loadout
+  id: LoadoutBackpackSatchelCaptainFilled
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackSatchelCaptainFilled
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+
+- type: loadout
+  id: LoadoutBackpackDuffelCaptainFilled
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackDuffelCaptainFilled
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+
+# Belt
+- type: loadout
+  id: LoadoutCaptainSwordSheath
+  category: JobsCommandCaptain
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingBeltSheathFilled
+
+# Ears
+
+# Equipment
+- type: loadout
+  id: LoadoutCaptainDrinkFlask
+  category: JobsCommandCaptain
+  cost: 0
+  canBeHeirloom: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainTrinkets
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - DrinkFlask
+
+- type: loadout
+  id: LoadoutCaptainMedalCase
+  category: JobsCommandCaptain
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainTrinkets
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - MedalCase
+
+- type: loadout
+  id: LoadoutCaptainSpaceCash1000
+  category: JobsCommandCaptain
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainTrinkets
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - SpaceCash1000
+
+- type: loadout
+  id: LoadoutCaptainCigarCase
+  category: JobsCommandCaptain
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainTrinkets
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - CigarGoldCase
+
+- type: loadout
+  id: LoadoutCaptainAntiqueLaserPistol
+  category: JobsCommandCaptain
+  cost: 0
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - WeaponAntiqueLaser
+
+- type: loadout
+  id: LoadoutCaptainPulsePistol
+  category: JobsCommandCaptain
+  cost: 0
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - WeaponPulsePistolCaptain
+
+# Eyes
+- type: loadout
+  id: LoadoutCaptainEyesSunglasses
+  category: JobsCommandCaptain
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainEyes
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingEyesGlassesSunglasses
+
+# Gloves
+- type: loadout
+  id: LoadoutCaptainGlovesCapGloves
+  category: JobsCommandCaptain
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainGloves
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingHandsGlovesCaptain
+
+- type: loadout
+  id: LoadoutCaptainGlovesInspection
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainGloves
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingHandsGlovesInspection
+
+# Head
+- type: loadout
+  id: LoadoutCommandCapHat
+  category: JobsCommandCaptain
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingHeadHatCaptain
+
+- type: loadout
+  id: LoadoutCommandCapHatCapcap
+  category: JobsCommandCaptain
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingHeadHatCapcap
+
+- type: loadout
+  id: LoadoutCommandCapHatBeret
+  category: JobsCommandCaptain
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingHeadHatBeretCap
+
+# Id
+- type: loadout
+  id: LoadoutCaptainNTPDA
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobCaptain
+      min: 36000 # 10 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainId
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - CaptainNTPDA
+
+# Neck
+- type: loadout
+  id: LoadoutCommandCapNeckMantle
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainNeck
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingNeckMantleCap
+
+- type: loadout
+  id: LoadoutCommandCapNeckCloak
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainNeck
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingNeckCloakCap
+
+- type: loadout
+  id: LoadoutCommandCapNeckCloakFormal
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainNeck
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingNeckCloakCapFormal
+
+- type: loadout
+  id: LoadoutCaptainNeckGoldMedal
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainNeck
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingNeckGoldmedal
+
+# Mask
+- type: loadout
+  id: LoadoutCommandCapMaskGas
+  category: JobsCommandCaptain
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainMask
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingMaskGasCaptain
+
+- type: loadout
+  id: LoadoutCommandCapMaskGasCombat
+  category: JobsCommandCaptain
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainMask
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingMaskGasCaptainCombat
+
+# Outer
+- type: loadout
+  id: LoadoutCommandCapOuterWinter
+  category: JobsCommandCaptain
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingOuterWinterCap
+
+- type: loadout
+  id: LoadoutCaptainOuterCarapace
+  category: JobsCommandCaptain
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingOuterArmorCaptainCarapace
+
+- type: loadout
+  id: LoadoutCaptainOuterTrench
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingOuterCoatCapTrench
+
+# Shoes
+- type: loadout
+  id: LoadoutCaptainShoesLaceup
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainShoes
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingShoesBootsLaceup
+
+- type: loadout
+  id: LoadoutCaptainShoesLeather
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainShoes
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingShoesLeather
+
+- type: loadout
+  id: LoadoutCaptainShoesWinter
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainShoes
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingShoesBootsWinterCap
+
+- type: loadout
+  id: LoadoutCaptainShoesCombat
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainShoes
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingShoesBootsCombatFilled
+
+# Uniforms
+- type: loadout
+  id: LoadoutCommandCapJumpsuit
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingUniformJumpsuitCaptain
+
+- type: loadout
+  id: LoadoutCommandCapJumpskirt
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingUniformJumpskirtCaptain
+
+- type: loadout
+  id: LoadoutCommandCapJumpsuitFormal
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingUniformJumpsuitCapFormal
+
+- type: loadout
+  id: LoadoutCommandCapJumpskirtFormal
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingUniformJumpskirtCapFormalDress

@@ -44,7 +44,7 @@ public sealed class RevivifyPowerSystem : EntitySystem
 
     private void OnPowerUsed(EntityUid uid, PsionicComponent component, PsionicHealOtherPowerActionEvent args)
     {
-        if (component.DoAfter is not null)
+        if (!_psionics.OnAttemptPowerUse(args.Performer, args.PowerName))
             return;
 
         args.ModifiedAmplification = _psionics.ModifiedAmplification(uid, component);
@@ -88,8 +88,7 @@ public sealed class RevivifyPowerSystem : EntitySystem
         ev.DoRevive = args.DoRevive;
         var doAfterArgs = new DoAfterArgs(EntityManager, uid, args.UseDelay, ev, uid, target: args.Target)
         {
-            BreakOnUserMove = args.BreakOnUserMove,
-            BreakOnTargetMove = args.BreakOnTargetMove,
+            BreakOnMove = args.BreakOnMove,
             Hidden = _glimmer.Glimmer > args.GlimmerDoAfterVisibilityThreshold * args.ModifiedDampening,
         };
 

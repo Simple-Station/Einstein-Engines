@@ -1,0 +1,87 @@
+- type: loadout
+  id: LoadoutEyesEyepatch
+  category: Eyes
+  cost: 0
+  canBeHeirloom: true
+  items:
+    - ClothingEyesEyepatch
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEyes
+
+- type: loadout
+  id: LoadoutEyesGlasses
+  category: Eyes
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingEyesGlasses
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEyes
+
+- type: loadout
+  id: LoadoutEyesGlassesJamjar
+  category: Eyes
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingEyesGlassesJamjar
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEyes
+
+- type: loadout
+  id: LoadoutEyesGlassesJensen
+  category: Eyes
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingEyesGlassesJensen
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEyes
+
+- type: loadout
+  id: LoadoutEyesBlindfold
+  category: Eyes
+  cost: 0
+  items:
+    - ClothingEyesBlindfold
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEyes
+
+- type: loadout
+  id: LoadoutItemCheapSunglasses
+  category: Eyes
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingEyesGlassesCheapSunglasses
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEyes
+
+- type: loadout
+  id: LoadoutItemSunglasses
+  category: Eyes
+  cost: 3
+  exclusive: true
+  items:
+    - ClothingEyesGlassesSunglasses
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEyes
+
+- type: loadout
+  id: LoadoutItemBlindfoldFake
+  category: Eyes
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingEyesBlindfoldFake
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEyes

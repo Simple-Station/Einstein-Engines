@@ -34,7 +34,7 @@ public abstract partial class SharedPuddleSystem
 
     private void AddSpillVerb(Entity<SpillableComponent> entity, ref GetVerbsEvent<Verb> args)
     {
-        if (!args.CanAccess || !args.CanInteract)
+        if (!args.CanAccess || !args.CanInteract || args.Hands == null)
             return;
 
         if (!_solutionContainerSystem.TryGetSolution(args.Target, entity.Comp.SolutionName, out var soln, out var solution))
@@ -45,10 +45,6 @@ public abstract partial class SharedPuddleSystem
 
         if (solution.Volume == FixedPoint2.Zero)
             return;
-
-        if (HasComp<PreventSpillerComponent>(args.User))
-            return;
-
 
         Verb verb = new()
         {
@@ -79,7 +75,7 @@ public abstract partial class SharedPuddleSystem
                 _doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, user, entity.Comp.SpillDelay ?? 0, new SpillDoAfterEvent(), entity.Owner, target: entity.Owner)
                 {
                     BreakOnDamage = true,
-                    BreakOnUserMove = true,
+                    BreakOnMove = true,
                     NeedHand = true,
                 });
             };

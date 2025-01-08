@@ -648,9 +648,8 @@
     makeSentient: true
     allowSpeech: true
     allowMovement: true
-    name: ghost-role-information-Shiva-name
-    description: ghost-role-information-Shiva-description
-    rules: ghost-role-information-Shiva-rules
+    name: ghost-role-information-shiva-name
+    description: ghost-role-information-shiva-description
   - type: GhostTakeoverAvailable # DeltaV
   - type: InteractionPopup
     successChance: 0.5 # spider is mean
@@ -825,13 +824,6 @@
   id: MobMonkeyPunpun
   description: A prominent representative of monkeys with unlimited access to alcohol.
   components:
-  - type: GhostRole
-    prob: 1
-    makeSentient: true
-    allowSpeech: true
-    allowMovement: true
-    name: ghost-role-information-punpun-name
-    description: ghost-role-information-punpun-description
   - type: GhostTakeoverAvailable
   - type: Butcherable
     butcheringType: Spike
@@ -859,6 +851,7 @@
     - TauCetiBasic
     - Monkey
     - Kobold
+  - type: Punpun
 
 - type: entity
   name: Tropico

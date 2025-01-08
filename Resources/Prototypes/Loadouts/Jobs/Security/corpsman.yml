@@ -1,0 +1,133 @@
+# Corpsman
+# Backpacks
+- type: loadout
+  id: LoadoutCorpsmanBackpackBackpack
+  category: JobsSecurityCorpsman
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackBrigmedicFilled
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCorpsmanBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+
+- type: loadout
+  id: LoadoutCorpsmanBackpackSatchel
+  category: JobsSecurityCorpsman
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackSatchelBrigmedicFilled
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCorpsmanBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+
+- type: loadout
+  id: LoadoutCorpsmanBackpackDuffel
+  category: JobsSecurityCorpsman
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackDuffelBrigmedicFilled
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCorpsmanBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+
+# Belt
+- type: loadout
+  id: LoadoutClothingBeltCorpsmanWebbing
+  category: JobsSecurityCorpsman
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCorpsmanBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - ClothingBeltCorpsmanWebbingFilled
+
+# Ears
+
+# Equipment
+
+# Eyes
+
+# Gloves
+- type: loadout
+  id: LoadoutClothingHandsGlovesNitrile
+  category: JobsSecurityCorpsman
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCorpsmanGloves
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - ClothingHandsGlovesNitrile
+
+# Head
+- type: loadout
+  id: LoadoutClothingHeadHatBeretBrigmedic
+  category: JobsSecurityCorpsman
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCorpsmanHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - ClothingHeadHatBeretBrigmedic
+
+- type: loadout
+  id: LoadoutClothingHeadHatBeretCorpsman
+  category: JobsSecurityCorpsman
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCorpsmanHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - ClothingHeadHatBeretCorpsman
+
+# Id
+
+# Neck
+- type: loadout
+  id: LoadoutBedsheetBrigmedic
+  category: JobsSecurityCorpsman
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCorpsmanNeck
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - BedsheetBrigmedic
+
+# Mask
+
+# Outer
+
+# Shoes
+
+# Uniforms

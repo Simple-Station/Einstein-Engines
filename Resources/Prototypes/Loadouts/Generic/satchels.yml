@@ -1,0 +1,38 @@
+- type: loadout
+  id: LoadoutBackpackSatchel
+  category: Backpacks
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingBackpackSatchel
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacks
+
+- type: loadout
+  id: LoadoutItemBackpackSatchelLeather
+  category: Backpacks
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingBackpackSatchelLeather
+  requirements:
+    - !type:CharacterJobRequirement
+       inverted: true
+       jobs:
+         - Prisoner
+
+- type: loadout
+  id: LoadoutBackpackSatchelHydroponics
+  category: Backpacks
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackSatchelHydroponics
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacks
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Civilian

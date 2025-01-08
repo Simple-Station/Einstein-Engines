@@ -258,6 +258,8 @@
     - ActionFabricateGumball
   - type: SiliconLawProvider
     laws: Medical
+  - type: SurgeryTarget # Shitmed
+  - type: Sanitized # Shitmed
 
 - type: entity
   id: BorgChassisService

@@ -9,6 +9,7 @@ using Content.Shared.StatusEffect;
 using Content.Shared.Weapons.Melee;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Weapons.Ranged.Components;
+using Content.Shared.Wieldable.Components;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Client.Input;
@@ -71,10 +72,22 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
             return;
         }
 
-        var useDown = _inputSystem.CmdStates.GetState(EngineKeyFunctions.Use);
-        var altDown = _inputSystem.CmdStates.GetState(EngineKeyFunctions.UseSecondary);
+        var useDown = _inputSystem.CmdStates.GetState(EngineKeyFunctions.Use) == BoundKeyState.Down;
+        var altDown = _inputSystem.CmdStates.GetState(EngineKeyFunctions.UseSecondary) == BoundKeyState.Down;
 
-        if (weapon.AutoAttack || useDown != BoundKeyState.Down && altDown != BoundKeyState.Down)
+        // Disregard inputs to the shoot binding
+        if (TryComp<GunComponent>(weaponUid, out var gun) &&
+            // Except if can't shoot due to being unwielded
+            (!HasComp<GunRequiresWieldComponent>(weaponUid) ||
+            (TryComp<WieldableComponent>(weaponUid, out var wieldable) && wieldable.Wielded)))
+        {
+            if (gun.UseKey)
+                useDown = false;
+            else
+                altDown = false;
+        }
+
+        if (weapon.AutoAttack || !useDown && !altDown)
         {
             if (weapon.Attacking)
             {
@@ -82,22 +95,12 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
             }
         }
 
-        if (weapon.Attacking || weapon.NextAttack > Timing.CurTime)
+        if (weapon.Attacking || weapon.NextAttack > Timing.CurTime || (!useDown && !altDown))
         {
             return;
         }
 
         // TODO using targeted actions while combat mode is enabled should NOT trigger attacks.
-
-        // TODO: Need to make alt-fire melee its own component I guess?
-        // Melee and guns share a lot in the middle but share virtually nothing at the start and end so
-        // it's kinda tricky.
-        // I think as long as we make secondaries their own component it's probably fine
-        // as long as guncomp has an alt-use key then it shouldn't be too much of a PITA to deal with.
-        if (TryComp<GunComponent>(weaponUid, out var gun) && gun.UseKey)
-        {
-            return;
-        }
 
         var mousePos = _eyeManager.PixelToMap(_inputManager.MouseScreenPosition);
 
@@ -118,7 +121,8 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
         }
 
         // Heavy attack.
-        if (altDown == BoundKeyState.Down)
+        if (!weapon.DisableHeavy &&
+            (!weapon.SwapKeys ? altDown : useDown))
         {
             // If it's an unarmed attack then do a disarm
             if (weapon.AltDisarm && weaponUid == entity)
@@ -139,9 +143,10 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
         }
 
         // Light attack
-        if (useDown == BoundKeyState.Down)
+        if (!weapon.DisableClick &&
+            (!weapon.SwapKeys ? useDown : altDown))
         {
-            var attackerPos = Transform(entity).MapPosition;
+            var attackerPos = TransformSystem.GetMapCoordinates(entity);
 
             if (mousePos.MapId != attackerPos.MapId ||
                 (attackerPos.Position - mousePos.Position).Length() > weapon.Range)

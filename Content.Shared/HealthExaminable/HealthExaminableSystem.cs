@@ -30,30 +30,33 @@ public sealed class HealthExaminableSystem : EntitySystem
 
         var detailsRange = _examineSystem.IsInDetailsRange(args.User, uid);
 
-        var verb = new ExamineVerb()
+        var verb = new ExamineVerb
         {
             Act = () =>
             {
-                FormattedMessage markup;
-                if (uid == args.User
-                    && TryComp<SelfAwareComponent>(uid, out var selfAware))
-                    markup = CreateMarkupSelfAware(uid, selfAware, component, damage);
-                else
-                    markup = CreateMarkup(uid, component, damage);
-
+                var markup = GetMarkup(args.User, (uid, component), damage);
                 _examineSystem.SendExamineTooltip(args.User, uid, markup, false, false);
             },
             Text = Loc.GetString("health-examinable-verb-text"),
             Category = VerbCategory.Examine,
             Disabled = !detailsRange,
             Message = detailsRange ? null : Loc.GetString("health-examinable-verb-disabled"),
-            Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/rejuvenate.svg.192dpi.png"))
+            Icon = new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/VerbIcons/rejuvenate.svg.192dpi.png"))
         };
 
         args.Verbs.Add(verb);
     }
 
-    public FormattedMessage CreateMarkup(EntityUid uid, HealthExaminableComponent component, DamageableComponent damage)
+    public FormattedMessage GetMarkup(EntityUid examiner,
+        Entity<HealthExaminableComponent> examinable,
+        DamageableComponent damageable)
+    {
+        return examiner == examinable.Owner && TryComp<SelfAwareComponent>(examinable, out var selfAware)
+            ? CreateMarkupSelfAware(examinable, selfAware, examinable.Comp, damageable)
+            : CreateMarkup(examinable, examinable.Comp, damageable);
+    }
+
+    private FormattedMessage CreateMarkup(EntityUid uid, HealthExaminableComponent component, DamageableComponent damage)
     {
         var msg = new FormattedMessage();
 

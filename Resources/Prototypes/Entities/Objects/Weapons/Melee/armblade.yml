@@ -5,12 +5,14 @@
   description: A grotesque blade made out of bone and flesh that cleaves through people as a hot knife through butter.
   components:
   - type: Sharp
+  - type: Execution
+    doAfterDuration: 4.0
   - type: Sprite
     sprite: Objects/Weapons/Melee/armblade.rsi
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: 90
-    attackRate: 0.75
+    attackRate: 1.3333
     damage:
       types:
         Slash: 25
@@ -21,4 +23,12 @@
   - type: Tool
     qualities:
       - Prying
+  # Shitmed Change
   - type: Prying
+  - type: Scalpel
+    speed: 0.3
+  - type: BoneSaw
+    speed: 0.75
+  - type: SurgeryTool
+    startSound:
+      path: /Audio/Medical/Surgery/saw.ogg

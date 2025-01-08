@@ -28,8 +28,9 @@
     understands:
     - TauCetiBasic
     - SolCommon
+  - type: FootPrints
 
 - type: entity
   parent: BaseSpeciesDummy
   id: MobHumanDummy
-  noSpawn: true
+  categories: [ HideSpawnMenu ]

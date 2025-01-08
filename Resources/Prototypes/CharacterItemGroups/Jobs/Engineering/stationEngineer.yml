@@ -1,0 +1,94 @@
+#- type: characterItemGroup
+#  id: LoadoutStationEngineerBackpacks
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutStationEngineerBelt
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutStationEngineerEars
+#  maxItems: 1
+#  items:
+
+- type: characterItemGroup
+  id: LoadoutStationEngineerEquipment
+  maxItems: 3
+  items:
+    - type: loadout
+      id: LoadoutStationEngineerEquipmentBoxInflatable
+    - type: loadout
+      id: LoadoutStationEngineerEquipmentRCD
+    - type: loadout
+      id: LoadoutStationEngineerEquipmentPowerDrill
+    - type: loadout
+      id: LoadoutStationEngineerEquipmentSheetSteel
+    - type: loadout
+      id: LoadoutStationEngineerEquipmentSheetSteel10
+    - type: loadout
+      id: LoadoutStationEngineerEquipmentSheetPlasteel
+    - type: loadout
+      id: LoadoutStationEngineerEquipmentSheetPlasteel10
+    - type: loadout
+      id: LoadoutStationEngineerEquipmentSheetGlass
+    - type: loadout
+      id: LoadoutStationEngineerEquipmentSheetGlass10
+    - type: loadout
+      id: LoadoutStationEngineerEquipmentMaterialWoodPlank
+    - type: loadout
+      id: LoadoutStationEngineerEquipmentMaterialWoodPlank10
+    - type: loadout
+      id: LoadoutStationEngineerEquipmentSheetPlastic
+    - type: loadout
+      id: LoadoutStationEngineerEquipmentSheetPlastic10
+
+#- type: characterItemGroup
+#  id: LoadoutStationEngineerEyes
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutStationEngineerGloves
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutStationEngineerHead
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutStationEngineerId
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutStationEngineerNeck
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutStationEngineerMask
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutStationEngineerOuter
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutStationEngineerShoes
+#  maxItems: 1
+#  items:
+
+- type: characterItemGroup
+  id: LoadoutStationEngineerUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutStationEngineerUniformsSuit
+    - type: loadout
+      id: LoadoutStationEngineerUniformsSkirt

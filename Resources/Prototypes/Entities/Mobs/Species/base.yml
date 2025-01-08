@@ -41,6 +41,7 @@
     - map: [ "id" ]
     - map: [ "neck" ]
     - map: [ "back" ]
+    - map: [ "enum.HumanoidVisualLayers.Face" ]
     - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
     - map: [ "enum.HumanoidVisualLayers.Hair" ]
     - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
@@ -89,8 +90,8 @@
     species: Human
   - type: SlowOnDamage
     speedModifierThresholds:
-      60: 0.8 # DV - Was 0.7
-      80: 0.6 # DV - Was 0.5
+      60: 0.75
+      80: 0.55
   - type: Fixtures
     fixtures: # TODO: This needs a second fixture just for mob collisions.
       fix1:
@@ -141,17 +142,18 @@
     - TemporaryBlindness
     - Pacified
     - StaminaModifier
-    - PsionicsDisabled #Nyano - Summary: PCs can have psionics disabled.
-    - PsionicallyInsulated #Nyano - Summary: PCs can be made insulated from psionic powers.
-  - type: Reflect
-    enabled: false
-    reflectProb: 0
+    - Flashed
+    - RadiationProtection
+    - Drowsiness
+    - PsionicsDisabled
+    - PsionicallyInsulated
   - type: Body
     prototype: Human
     requiredLegs: 2
   - type: Identity
   - type: IdExaminable
   - type: Hands
+  - type: ComplexInteraction
   - type: Internals
   - type: Inventory
   - type: InventorySlots
@@ -191,8 +193,6 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
-      enum.VoiceMaskUIKey.Key:
-        type: VoiceMaskBoundUserInterface
       enum.HumanoidMarkingModifierKey.Key:
         type: HumanoidMarkingModifierBoundUserInterface
       enum.StrippingUiKey.Key:
@@ -200,6 +200,12 @@
       enum.InstrumentUiKey.Key:
         type: InstrumentBoundUserInterface
         requireInputValidation: false
+      enum.RadialSelectorUiKey.Key:
+        type: RadialSelectorMenuBUI
+      enum.ListViewSelectorUiKey.Key:
+        type: ListViewSelectorBUI
+      enum.SurgeryUIKey.Key:
+        type: SurgeryBui
   - type: Puller
   - type: Speech
     speechSounds: Alto
@@ -229,6 +235,8 @@
     - CanPilot
     - FootstepSound
     - DoorBumpOpener
+  - type: Targeting
+  - type: SurgeryTarget
 
 - type: entity
   save: false
@@ -273,6 +281,10 @@
     - Muted
     - Pacified
     - StaminaModifier
+    - PsionicsDisabled
+    - PsionicallyInsulated
+    - RadiationProtection
+    - Drowsiness
   - type: Blindable
   # Other
   - type: Temperature
@@ -321,6 +333,7 @@
   abstract: true
   components:
   - type: Hands
+  - type: ComplexInteraction
   - type: Inventory
   - type: InventorySlots
   - type: ContainerContainer
@@ -367,6 +380,7 @@
     - map: [ "id" ]
     - map: [ "neck" ]
     - map: [ "back" ]
+    - map: [ "enum.HumanoidVisualLayers.Face" ]
     - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
     - map: [ "enum.HumanoidVisualLayers.Hair" ]
     - map: [ "enum.HumanoidVisualLayers.HeadSide" ]

@@ -1,0 +1,99 @@
+- type: characterItemGroup
+  id: LoadoutOuter
+  items:
+    - type: loadout
+      id: LoadoutOuterCoatBomberjacket
+    - type: loadout
+      id: LoadoutOuterCoatHoodieBlack
+    - type: loadout
+      id: LoadoutOuterCoatHoodieGrey
+    - type: loadout
+      id: LoadoutOuterCoatWinterCoat
+    - type: loadout
+      id: LoadoutOuterCoatHyenhSweater
+    - type: loadout
+      id: LoadoutOuterWinterCoatLong
+    - type: loadout
+      id: LoadoutOuterWinterCoatPlaid
+    - type: loadout
+      id: LoadoutOuterVestValet
+    - type: loadout
+      id: LoadoutOuterVest
+    - type: loadout
+      id: LoadoutOuterCoatLettermanBlue
+    - type: loadout
+      id: LoadoutOuterCoatLettermanRed
+    - type: loadout
+      id: LoadoutOuterCoatMNKWhiteHoodie
+    - type: loadout
+      id: LoadoutOuterCoatMNKBlackTopCoat
+    - type: loadout
+      id: LoadoutOuterCoatMNKBlackJacket
+    - type: loadout
+      id: LoadoutOuterCorporateJacket
+    - type: loadout
+      id: LoadoutOuterCsCorporateJacket
+    - type: loadout
+      id: LoadoutOuterEeCorporateJacket
+    - type: loadout
+      id: LoadoutOuterHiCorporateJacket
+    - type: loadout
+      id: LoadoutOuterHmCorporateJacket
+    - type: loadout
+      id: LoadoutOuterIdCorporateJacket
+    - type: loadout
+      id: LoadoutOuterBcCorporateJacket
+    - type: loadout
+      id: LoadoutOuterDdCorporateJacket
+    - type: loadout
+      id: LoadoutOuterFaCorporateJacket
+    - type: loadout
+      id: LoadoutOuterGeCorporateJacket
+    - type: loadout
+      id: LoadoutOuterZhCorporateJacket
+    - type: loadout
+      id: LoadoutOuterDenimJacket
+    - type: loadout
+      id: LoadoutOuterFlannelRed
+    - type: loadout
+      id: LoadoutOuterFlannelGreen
+    - type: loadout
+      id: LoadoutOuterFlannelBlue
+    - type: loadout
+      id: LoadoutOuterCoatTrench
+    - type: loadout
+      id: LoadoutOuterCoatJensen
+    - type: loadout
+      id: LoadoutOuterCoatGentle
+    - type: loadout
+      id: LoadoutOuterCoatInspector
+    - type: loadout
+      id: LoadoutOuterCoatOvercoat
+    - type: loadout
+      id: LoadoutOuterBomberAerostatic
+    - type: loadout
+      id: LoadoutOuterBomberPunkRed
+    - type: loadout
+      id: LoadingOuterCoatJacketLeather
+    - type: loadout
+      id: LoadoutOuterJacketBiker
+    - type: loadout
+      id: LoadoutOuterJacketJamrock
+    - type: loadout
+      id: LoadoutOuterJacketLettermanBlue
+    - type: loadout
+      id: LoadoutOuterJacketLettermanBrown
+    - type: loadout
+      id: LoadoutOuterJacketLettermanMagenta
+    - type: loadout
+      id: LoadoutOuterJacketLettermanRed
+    - type: loadout
+      id: LoadoutOuterCoatAcidRaincoat
+    - type: loadout
+      id: LoadoutOuterCoatAcidRaincoatBlue
+    - type: loadout
+      id: LoadoutOuterCoatAcidRaincoatGreen
+    - type: loadout
+      id: LoadoutOuterCoatAcidRaincoatMagenta
+    - type: loadout
+      id: LoadoutOuterCoatAcidRaincoatYellow

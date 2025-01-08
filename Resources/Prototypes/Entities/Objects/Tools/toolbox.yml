@@ -21,7 +21,7 @@
   - type: Item
     size: Ginormous
   - type: MeleeWeapon
-    attackRate: 0.9
+    attackRate: 1.1
     range: 1.75
     damage:
       types:
@@ -32,6 +32,9 @@
     angle: 80.5
     soundHit:
       path: "/Audio/Weapons/smash.ogg"
+  - type: DamageOtherOnHit
+    meleeDamageMultiplier: 1.33
+    staminaCost: 12.5
   - type: Tag
     tags:
     - Toolbox
@@ -141,6 +144,10 @@
     damage:
       types:
         Blunt: 11.5
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 15
 
 - type: entity
   name: golden toolbox
@@ -157,6 +164,10 @@
     damage:
       types:
         Blunt: 12
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 16
 
 - type: entity
   id: ToolboxThief

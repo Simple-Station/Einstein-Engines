@@ -20,8 +20,6 @@
         Burn: 10
   - type: Prayable
     bibleUserOnly: true
-  - type: Summonable
-    specialItem: SpawnPointGhostRemilia
   - type: ReactionMixer
     mixMessage: "bible-mixing-success"
     reactionTypes:
@@ -47,7 +45,7 @@
       types:
         Blunt: 4
         Holy: 20
-    heavyRateModifier: 0.8
+    heavyRateModifier: 1.25
     heavyDamageBaseModifier: 1
     heavyStaminaCost: 5
     maxTargets: 4
@@ -95,7 +93,7 @@
   id: ActionBibleSummon
   name: Summon familiar
   description: Summon a familiar that will aid you and gain humanlike intelligence once inhabited by a soul.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     icon: { sprite: Clothing/Head/Hats/witch.rsi, state: icon }

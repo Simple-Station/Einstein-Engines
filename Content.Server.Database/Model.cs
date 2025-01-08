@@ -1,13 +1,17 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Net;
 using System.Text.Json;
 using Content.Shared.Database;
 using Microsoft.EntityFrameworkCore;
 using NpgsqlTypes;
+using Robust.Shared.Serialization.Manager.Attributes;
+
 
 namespace Content.Server.Database
 {
@@ -28,6 +32,7 @@ namespace Content.Server.Database
         public DbSet<AdminLog> AdminLog { get; set; } = null!;
         public DbSet<AdminLogPlayer> AdminLogPlayer { get; set; } = null!;
         public DbSet<Whitelist> Whitelist { get; set; } = null!;
+        public DbSet<Blacklist> Blacklist { get; set; } = null!;
         public DbSet<ServerBan> Ban { get; set; } = default!;
         public DbSet<ServerUnban> Unban { get; set; } = default!;
         public DbSet<ServerBanExemption> BanExemption { get; set; } = default!;
@@ -40,6 +45,7 @@ namespace Content.Server.Database
         public DbSet<AdminNote> AdminNotes { get; set; } = null!;
         public DbSet<AdminWatchlist> AdminWatchlists { get; set; } = null!;
         public DbSet<AdminMessage> AdminMessages { get; set; } = null!;
+        public DbSet<RoleWhitelist> RoleWhitelists { get; set; } = null!;
         public DbSet<BanTemplate> BanTemplate { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -49,19 +55,19 @@ namespace Content.Server.Database
                 .IsUnique();
 
             modelBuilder.Entity<Profile>()
-                .HasIndex(p => new {p.Slot, PrefsId = p.PreferenceId})
+                .HasIndex(p => new { p.Slot, PrefsId = p.PreferenceId })
                 .IsUnique();
 
             modelBuilder.Entity<Antag>()
-                .HasIndex(p => new {HumanoidProfileId = p.ProfileId, p.AntagName})
+                .HasIndex(p => new { HumanoidProfileId = p.ProfileId, p.AntagName })
                 .IsUnique();
 
             modelBuilder.Entity<Trait>()
-                .HasIndex(p => new {HumanoidProfileId = p.ProfileId, p.TraitName})
+                .HasIndex(p => new { HumanoidProfileId = p.ProfileId, p.TraitName })
                 .IsUnique();
 
             modelBuilder.Entity<Loadout>()
-                .HasIndex(p => new {HumanoidProfileId = p.ProfileId, p.LoadoutName})
+                .HasIndex(p => new { HumanoidProfileId = p.ProfileId, p.LoadoutName })
                 .IsUnique();
 
             modelBuilder.Entity<Job>()
@@ -91,15 +97,15 @@ namespace Content.Server.Database
                 .OnDelete(DeleteBehavior.SetNull);
 
             modelBuilder.Entity<AdminFlag>()
-                .HasIndex(f => new {f.Flag, f.AdminId})
+                .HasIndex(f => new { f.Flag, f.AdminId })
                 .IsUnique();
 
             modelBuilder.Entity<AdminRankFlag>()
-                .HasIndex(f => new {f.Flag, f.AdminRankId})
+                .HasIndex(f => new { f.Flag, f.AdminRankId })
                 .IsUnique();
 
             modelBuilder.Entity<AdminLog>()
-                .HasKey(log => new {log.RoundId, log.Id});
+                .HasKey(log => new { log.RoundId, log.Id });
 
             modelBuilder.Entity<AdminLog>()
                 .Property(log => log.Id);
@@ -124,7 +130,7 @@ namespace Content.Server.Database
                 .HasIndex(round => round.StartDate);
 
             modelBuilder.Entity<AdminLogPlayer>()
-                .HasKey(logPlayer => new {logPlayer.RoundId, logPlayer.LogId, logPlayer.PlayerUserId});
+                .HasKey(logPlayer => new { logPlayer.RoundId, logPlayer.LogId, logPlayer.PlayerUserId });
 
             modelBuilder.Entity<ServerBan>()
                 .HasIndex(p => p.PlayerUserId);
@@ -172,6 +178,9 @@ namespace Content.Server.Database
 
             modelBuilder.Entity<ConnectionLog>()
                 .HasIndex(p => p.UserId);
+
+            modelBuilder.Entity<ConnectionLog>()
+                .HasIndex(p => p.Time);
 
             modelBuilder.Entity<ConnectionLog>()
                 .Property(p => p.ServerId)
@@ -301,6 +310,54 @@ namespace Content.Server.Database
                 .HasForeignKey(ban => ban.LastEditedById)
                 .HasPrincipalKey(author => author.UserId)
                 .OnDelete(DeleteBehavior.SetNull);
+
+            modelBuilder.Entity<RoleWhitelist>()
+                .HasOne(w => w.Player)
+                .WithMany(p => p.JobWhitelists)
+                .HasForeignKey(w => w.PlayerUserId)
+                .HasPrincipalKey(p => p.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            // Changes for modern HWID integration
+            modelBuilder.Entity<Player>()
+                .OwnsOne(p => p.LastSeenHWId)
+                .Property(p => p.Hwid)
+                .HasColumnName("last_seen_hwid");
+
+            modelBuilder.Entity<Player>()
+                .OwnsOne(p => p.LastSeenHWId)
+                .Property(p => p.Type)
+                .HasDefaultValue(HwidType.Legacy);
+
+            modelBuilder.Entity<ServerBan>()
+                .OwnsOne(p => p.HWId)
+                .Property(p => p.Hwid)
+                .HasColumnName("hwid");
+
+            modelBuilder.Entity<ServerBan>()
+                .OwnsOne(p => p.HWId)
+                .Property(p => p.Type)
+                .HasDefaultValue(HwidType.Legacy);
+
+            modelBuilder.Entity<ServerRoleBan>()
+                .OwnsOne(p => p.HWId)
+                .Property(p => p.Hwid)
+                .HasColumnName("hwid");
+
+            modelBuilder.Entity<ServerRoleBan>()
+                .OwnsOne(p => p.HWId)
+                .Property(p => p.Type)
+                .HasDefaultValue(HwidType.Legacy);
+
+            modelBuilder.Entity<ConnectionLog>()
+                .OwnsOne(p => p.HWId)
+                .Property(p => p.Hwid)
+                .HasColumnName("hwid");
+
+            modelBuilder.Entity<ConnectionLog>()
+                .OwnsOne(p => p.HWId)
+                .Property(p => p.Type)
+                .HasDefaultValue(HwidType.Legacy);
         }
 
         public virtual IQueryable<AdminLog> SearchLogs(IQueryable<AdminLog> query, string searchText)
@@ -396,13 +453,20 @@ namespace Content.Server.Database
         public string TraitName { get; set; } = null!;
     }
 
-    public class Loadout
+    [Serializable]
+    public partial class Loadout : Shared.Clothing.Loadouts.Systems.Loadout
     {
         public int Id { get; set; }
         public Profile Profile { get; set; } = null!;
         public int ProfileId { get; set; }
 
-        public string LoadoutName { get; set; } = null!;
+        public Loadout(
+            string loadoutName,
+            string? customName = null,
+            string? customDescription = null,
+            string? customColorTint = null,
+            bool? customHeirloom = null
+        ) : base(loadoutName, customName, customDescription, customColorTint, customHeirloom) { }
     }
 
     public enum DbPreferenceUnavailableMode
@@ -433,7 +497,7 @@ namespace Content.Server.Database
         public string LastSeenUserName { get; set; } = null!;
         public DateTime LastSeenTime { get; set; }
         public IPAddress LastSeenAddress { get; set; } = null!;
-        public byte[]? LastSeenHWId { get; set; }
+        public TypedHwid? LastSeenHWId { get; set; }
 
         // Data that changes with each round
         public List<Round> Rounds { get; set; } = null!;
@@ -457,10 +521,20 @@ namespace Content.Server.Database
         public List<ServerBan> AdminServerBansLastEdited { get; set; } = null!;
         public List<ServerRoleBan> AdminServerRoleBansCreated { get; set; } = null!;
         public List<ServerRoleBan> AdminServerRoleBansLastEdited { get; set; } = null!;
+        public List<RoleWhitelist> JobWhitelists { get; set; } = null!;
     }
 
     [Table("whitelist")]
     public class Whitelist
+    {
+        [Required, Key] public Guid UserId { get; set; }
+    }
+
+    /// <summary>
+    /// List of users who are on the "blacklist". This is a list that may be used by Whitelist implementations to deny access to certain users.
+    /// </summary>
+    [Table("blacklist")]
+    public class Blacklist
     {
         [Required, Key] public Guid UserId { get; set; }
     }
@@ -572,7 +646,7 @@ namespace Content.Server.Database
         int Id { get; set; }
         Guid? PlayerUserId { get; set; }
         NpgsqlInet? Address { get; set; }
-        byte[]? HWId { get; set; }
+        TypedHwid? HWId { get; set; }
         DateTime BanTime { get; set; }
         DateTime? ExpirationTime { get; set; }
         string Reason { get; set; }
@@ -597,7 +671,7 @@ namespace Content.Server.Database
     public enum ServerBanExemptFlags
     {
         // @formatter:off
-        None       = 0,
+        None = 0,
 
         /// <summary>
         /// Ban is a datacenter range, connections usually imply usage of a VPN service.
@@ -611,6 +685,19 @@ namespace Content.Server.Database
         /// Intended use is for users with shared connections. This should not be used as an alternative to <see cref="Datacenter"/>.
         /// </remarks>
         IP = 1 << 1,
+
+        /// <summary>
+        /// Ban is an IP range that is only applied for first time joins.
+        /// </summary>
+        /// <remarks>
+        /// Intended for use with residential IP ranges that are often used maliciously.
+        /// </remarks>
+        BlacklistedRange = 1 << 2,
+
+        /// <summary>
+        /// Represents having all possible exemption flags.
+        /// </summary>
+        All = int.MaxValue,
         // @formatter:on
     }
 
@@ -644,7 +731,7 @@ namespace Content.Server.Database
         /// <summary>
         /// Hardware ID of the banned player.
         /// </summary>
-        public byte[]? HWId { get; set; }
+        public TypedHwid? HWId { get; set; }
 
         /// <summary>
         /// The time when the ban was applied by an administrator.
@@ -782,7 +869,7 @@ namespace Content.Server.Database
         public DateTime Time { get; set; }
 
         public IPAddress Address { get; set; } = null!;
-        public byte[]? HWId { get; set; }
+        public TypedHwid? HWId { get; set; }
 
         public ConnectionDenyReason? Denied { get; set; }
 
@@ -799,6 +886,8 @@ namespace Content.Server.Database
 
         public List<ServerBanHit> BanHits { get; set; } = null!;
         public Server Server { get; set; } = null!;
+
+        public float Trust { get; set; }
     }
 
     public enum ConnectionDenyReason : byte
@@ -807,6 +896,13 @@ namespace Content.Server.Database
         Whitelist = 1,
         Full = 2,
         Panic = 3,
+        /*
+         * TODO: Remove baby jail code once a more mature gateway process is established. This code is only being issued as a stopgap to help with potential tiding in the immediate future.
+         * 
+         * If baby jail is removed, please reserve this value for as long as can reasonably be done to prevent causing ambiguity in connection denial reasons.
+         * Reservation by commenting out the value is likely sufficient for this purpose, but may impact projects which depend on SS14 like SS14.Admin.
+         */
+        BabyJail = 4,
     }
 
     public class ServerBanHit
@@ -829,7 +925,7 @@ namespace Content.Server.Database
         public Guid? PlayerUserId { get; set; }
         [Required] public TimeSpan PlaytimeAtNote { get; set; }
         public NpgsqlInet? Address { get; set; }
-        public byte[]? HWId { get; set; }
+        public TypedHwid? HWId { get; set; }
 
         public DateTime BanTime { get; set; }
 
@@ -1027,6 +1123,17 @@ namespace Content.Server.Database
         public bool Dismissed { get; set; }
     }
 
+    [PrimaryKey(nameof(PlayerUserId), nameof(RoleId))]
+    public class RoleWhitelist
+    {
+        [Required, ForeignKey("Player")]
+        public Guid PlayerUserId { get; set; }
+        public Player Player { get; set; } = default!;
+
+        [Required]
+        public string RoleId { get; set; } = default!;
+    }
+
     /// <summary>
     /// Defines a template that admins can use to quickly fill out ban information.
     /// </summary>
@@ -1078,5 +1185,38 @@ namespace Content.Server.Database
         /// </summary>
         /// <seealso cref="ServerBan.Hidden"/>
         public bool Hidden { get; set; }
+    }
+
+    /// <summary>
+    /// A hardware ID value together with its <see cref="HwidType"/>.
+    /// </summary>
+    /// <seealso cref="ImmutableTypedHwid"/>
+    [Owned]
+    public sealed class TypedHwid
+    {
+        public byte[] Hwid { get; set; } = default!;
+        public HwidType Type { get; set; }
+
+        [return: NotNullIfNotNull(nameof(immutable))]
+        public static implicit operator TypedHwid?(ImmutableTypedHwid? immutable)
+        {
+            if (immutable == null)
+                return null;
+
+            return new TypedHwid
+            {
+                Hwid = immutable.Hwid.ToArray(),
+                Type = immutable.Type,
+            };
+        }
+
+        [return: NotNullIfNotNull(nameof(hwid))]
+        public static implicit operator ImmutableTypedHwid?(TypedHwid? hwid)
+        {
+            if (hwid == null)
+                return null;
+
+            return new ImmutableTypedHwid(hwid.Hwid.ToImmutableArray(), hwid.Type);
+        }
     }
 }

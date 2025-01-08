@@ -31,7 +31,7 @@
     - state: cutters-cutty-thingy
   - type: MeleeWeapon
     wideAnimationRotation: -90
-    attackRate: 0.9
+    attackRate: 1.1
     range: 1.6
     damage:
       types:
@@ -41,6 +41,12 @@
     maxTargets: 4
     soundHit:
       path: "/Audio/Items/wirecutter.ogg"
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 4
+    soundHit:
+      collection: MetalThud
   - type: Tool
     qualities:
       - Cutting
@@ -59,6 +65,20 @@
       Steel: 100
   - type: StaticPrice
     price: 30
+  # Shitmed Change
+  - type: Retractor
+    speed: 0.35
+  - type: Hemostat
+    speed: 0.6
+  - type: SurgeryTool
+    startSound:
+      path: /Audio/Items/wirecutter.ogg
+      params:
+        variation: 0.125
+    endSound:
+      path: /Audio/Items/wirecutter.ogg
+      params:
+        variation: 0.125
 
 - type: entity
   name: screwdriver
@@ -95,7 +115,7 @@
     storedRotation: -90
   - type: MeleeWeapon
     wideAnimationRotation: -90
-    attackRate: 1.35
+    attackRate: .74
     damage:
       types:
         Piercing: 6
@@ -105,6 +125,14 @@
     angle: 20
     soundHit:
       path: "/Audio/Weapons/bladeslice.ogg"
+  - type: DamageOtherOnHit
+    staminaCost: 5
+  - type: ThrowingAngle
+    angle: 270
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/star_hit.ogg
+    removalTime: 1
+  - type: EmbedPassiveDamage
   - type: Tool
     qualities:
       - Screwing
@@ -119,6 +147,16 @@
       Steel: 100
   - type: StaticPrice
     price: 30
+  # Shitmed Change
+  - type: Retractor
+    speed: 0.45
+  - type: Tending
+    speed: 0.65
+  - type: SurgeryTool
+    startSound:
+      collection: Screwdriver
+    endSound:
+      path: /Audio/Medical/Surgery/retractor2.ogg
 
 - type: entity
   name: wrench
@@ -154,7 +192,7 @@
       state: storage
   - type: MeleeWeapon
     wideAnimationRotation: 135
-    attackRate: 0.9
+    attackRate: 1.1
     range: 1.6
     damage:
       types:
@@ -165,6 +203,7 @@
     angle: 100
     soundHit:
       collection: MetalThud
+  - type: DamageOtherOnHit
   - type: Tool
     qualities:
       - Anchoring
@@ -211,7 +250,7 @@
       state: storage
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.25
+    attackRate: .8
     damage:
       types:
         Blunt: 6
@@ -219,6 +258,8 @@
     heavyStaminaCost: 5
     soundHit:
       collection: MetalThud
+  - type: DamageOtherOnHit
+    staminaCost: 6
   - type: Tool
     qualities:
       - Prying
@@ -231,6 +272,11 @@
   - type: StaticPrice
     price: 22
   - type: Prying
+  # Shitmed Change
+  - type: Tweezers
+    speed: 0.55
+  - type: SurgeryTool
+    startSound: /Audio/Items/crowbar.ogg
 
 - type: entity
   parent: Crowbar
@@ -269,7 +315,7 @@
     - state: green-unlit
       shader: unshaded
   - type: MeleeWeapon
-    attackRate: 0.75
+    attackRate: 1.3333
     damage:
       types:
         Shock: 2
@@ -277,6 +323,7 @@
     heavyDamageBaseModifier: 1.2
     maxTargets: 1
     angle: 20
+  - type: DamageOtherOnHit
   - type: Item
     size: Small
   - type: Clothing
@@ -381,7 +428,7 @@
   - type: Tool
     qualities:
       - Screwing
-    speed: 1.5
+    speedModifier: 1.5
     useSound: /Audio/Items/drill_use.ogg
   - type: MultipleTool
     statusShowBehavior: true
@@ -412,7 +459,7 @@
     price: 100
   - type: MeleeWeapon
     wideAnimationRotation: -90
-    attackRate: 0.9
+    attackRate: 1.1
     range: 1.4
     damage:
       types:
@@ -423,6 +470,13 @@
     angle: 20
     soundHit:
       path: "/Audio/Items/drill_hit.ogg"
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 8
+    staminaCost: 7.5
+    soundHit:
+      collection: MetalThud
   - type: ReverseEngineering # Nyano
     difficulty: 2
     recipes:
@@ -577,7 +631,7 @@
   - type: Tool
     qualities:
       - Screwing
-    speed: 1.2 # Kept for future adjustments. Currently 1.2x for balance
+    speedModifier: 1.2 # Kept for future adjustments. Currently 1.2x for balance
     useSound: /Audio/Items/drill_use.ogg
   - type: ToolTileCompatible
   - type: MultipleTool
@@ -634,7 +688,7 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: 45
-    attackRate: 0.8
+    attackRate: 1.25
     range: 1.75
     damage:
       types:
@@ -646,6 +700,10 @@
     angle: 100
     soundHit:
       collection: MetalThud
+  - type: DamageOtherOnHit
+    staminaCost: 8.5
+  - type: ThrowingAngle
+    angle: 45
   - type: Item
     size: Normal
     sprite: Objects/Tools/shovel.rsi
@@ -683,7 +741,7 @@
     - Belt
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 0.9
+    attackRate: 1.1
     damage:
       types:
         Blunt: 7
@@ -694,6 +752,7 @@
     angle: 20
     soundHit:
       collection: MetalThud
+  - type: DamageOtherOnHit
   - type: Tool
     qualities:
     - Rolling

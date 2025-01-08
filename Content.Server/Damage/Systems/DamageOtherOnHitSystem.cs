@@ -1,65 +1,68 @@
-using Content.Server.Administration.Logs;
-using Content.Server.Damage.Components;
-using Content.Server.Weapons.Ranged.Systems;
 using Content.Shared.Camera;
+using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Events;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
 using Content.Shared.Effects;
+using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.Mobs.Components;
+using Content.Shared.Projectiles;
+using Content.Shared.Popups;
 using Content.Shared.Throwing;
+using Content.Shared.Weapons.Melee;
+using Content.Server.Weapons.Melee;
+using Robust.Server.GameObjects;
+using Robust.Shared.Audio;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.Server.Damage.Systems
 {
-    public sealed class DamageOtherOnHitSystem : EntitySystem
+    public sealed class DamageOtherOnHitSystem : SharedDamageOtherOnHitSystem
     {
-        [Dependency] private readonly IAdminLogManager _adminLogger = default!;
-        [Dependency] private readonly GunSystem _guns = default!;
-        [Dependency] private readonly DamageableSystem _damageable = default!;
         [Dependency] private readonly DamageExamineSystem _damageExamine = default!;
-        [Dependency] private readonly SharedCameraRecoilSystem _sharedCameraRecoil = default!;
-        [Dependency] private readonly SharedColorFlashEffectSystem _color = default!;
-        [Dependency] private readonly ThrownItemSystem _thrownItem = default!;
+        [Dependency] private readonly SharedPopupSystem _popup = default!;
+        [Dependency] private readonly StaminaSystem _stamina = default!;
 
         public override void Initialize()
         {
-            SubscribeLocalEvent<DamageOtherOnHitComponent, ThrowDoHitEvent>(OnDoHit);
-            SubscribeLocalEvent<DamageOtherOnHitComponent, DamageExamineEvent>(OnDamageExamine);
+            base.Initialize();
+
+            SubscribeLocalEvent<StaminaComponent, BeforeThrowEvent>(OnBeforeThrow, after: [typeof(PacificationSystem)]);
+            SubscribeLocalEvent<DamageOtherOnHitComponent, DamageExamineEvent>(OnDamageExamine, after: [typeof(MeleeWeaponSystem)]);
         }
 
-        private void OnDoHit(EntityUid uid, DamageOtherOnHitComponent component, ThrowDoHitEvent args)
+        private void OnBeforeThrow(EntityUid uid, StaminaComponent component, ref BeforeThrowEvent args)
         {
-            var dmg = _damageable.TryChangeDamage(args.Target, component.Damage, component.IgnoreResistances, origin: args.Component.Thrower);
+            if (args.Cancelled || !TryComp<DamageOtherOnHitComponent>(args.ItemUid, out var damage))
+                return;
 
-            // Log damage only for mobs. Useful for when people throw spears at each other, but also avoids log-spam when explosions send glass shards flying.
-            if (dmg != null && HasComp<MobStateComponent>(args.Target))
-                _adminLogger.Add(LogType.ThrowHit, $"{ToPrettyString(args.Target):target} received {dmg.GetTotal():damage} damage from collision");
-
-            if (dmg is { Empty: false })
+            if (component.CritThreshold - component.StaminaDamage <= damage.StaminaCost)
             {
-                _color.RaiseEffect(Color.Red, new List<EntityUid>() { args.Target }, Filter.Pvs(args.Target, entityManager: EntityManager));
+                args.Cancelled = true;
+                _popup.PopupEntity(Loc.GetString("throw-no-stamina", ("item", args.ItemUid)), uid, uid);
+                return;
             }
 
-            _guns.PlayImpactSound(args.Target, dmg, null, false);
-            if (TryComp<PhysicsComponent>(uid, out var body) && body.LinearVelocity.LengthSquared() > 0f)
-            {
-                var direction = body.LinearVelocity.Normalized();
-                _sharedCameraRecoil.KickCamera(args.Target, direction);
-            }
-
-            // TODO: If more stuff touches this then handle it after.
-            if (TryComp<PhysicsComponent>(uid, out var physics))
-            {
-                _thrownItem.LandComponent(args.Thrown, args.Component, physics, false);
-            }
+            _stamina.TakeStaminaDamage(uid, damage.StaminaCost, component, visual: false);
         }
 
         private void OnDamageExamine(EntityUid uid, DamageOtherOnHitComponent component, ref DamageExamineEvent args)
         {
-            _damageExamine.AddDamageExamine(args.Message, component.Damage, Loc.GetString("damage-throw"));
+            _damageExamine.AddDamageExamine(args.Message, GetDamage(uid, component, args.User), Loc.GetString("damage-throw"));
+
+            if (component.StaminaCost == 0)
+                return;
+
+            var staminaCostMarkup = FormattedMessage.FromMarkupOrThrow(
+                Loc.GetString("damage-stamina-cost",
+                ("type", Loc.GetString("damage-throw")), ("cost", component.StaminaCost)));
+            args.Message.PushNewline();
+            args.Message.AddMessage(staminaCostMarkup);
         }
     }
 }

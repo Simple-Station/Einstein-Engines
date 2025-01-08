@@ -6,6 +6,7 @@ using Content.Shared.Conveyor;
 using Content.Shared.Maps;
 using Content.Shared.Physics;
 using Content.Shared.Physics.Controllers;
+using Content.Shared.Power;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Collision.Shapes;
 using Robust.Shared.Physics.Components;
@@ -67,7 +68,7 @@ public sealed class ConveyorController : SharedConveyorController
     {
         component.Powered = args.Powered;
         UpdateAppearance(uid, component);
-        Dirty(component);
+        Dirty(uid, component);
     }
 
     private void UpdateAppearance(EntityUid uid, ConveyorComponent component)
@@ -106,7 +107,7 @@ public sealed class ConveyorController : SharedConveyorController
         _materialReclaimer.SetReclaimerEnabled(uid, component.State != ConveyorState.Off);
 
         UpdateAppearance(uid, component);
-        Dirty(component);
+        Dirty(uid, component);
     }
 
     /// <summary>

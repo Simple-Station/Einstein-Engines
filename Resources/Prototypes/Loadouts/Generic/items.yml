@@ -1,0 +1,828 @@
+#Smokes
+- type: loadout
+  id: LoadoutItemCig
+  category: Items
+  cost: 0
+  items:
+    - Cigarette
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSmokes
+
+- type: loadout
+  id: LoadoutItemCigsGreen
+  category: Items
+  cost: 0
+  items:
+    - CigPackGreen
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSmokes
+
+- type: loadout
+  id: LoadoutItemCigsRed
+  category: Items
+  cost: 0
+  items:
+    - CigPackRed
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSmokes
+
+- type: loadout
+  id: LoadoutItemCigsBlue
+  category: Items
+  cost: 0
+  items:
+    - CigPackBlue
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSmokes
+
+- type: loadout
+  id: LoadoutItemCigsBlack
+  category: Items
+  cost: 0
+  items:
+    - CigPackBlack
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSmokes
+
+- type: loadout
+  id: LoadoutItemCigsMixed
+  category: Items
+  cost: 1
+  items:
+    - CigPackMixed
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSmokes
+
+- type: loadout
+  id: LoadoutItemCigsSyndicate
+  category: Items
+  cost: 2
+  items:
+    - CigPackSyndicate
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSmokes
+
+- type: loadout
+  id: LoadoutItemLighter
+  category: Items
+  cost: 1
+  customColorTint: true
+  items:
+    - Lighter
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLighters
+
+- type: loadout
+  id: LoadoutItemLighterCheap
+  category: Items
+  cost: 0
+  customColorTint: true
+  items:
+    - CheapLighter
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLighters
+
+- type: loadout
+  id: LoadoutItemLighterFlippo
+  category: Items
+  cost: 2
+  customColorTint: true
+  items:
+    - FlippoLighter
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLighters
+
+- type: loadout
+  id: LoadoutItemSmokingPipeFilledTobacco
+  category: Items
+  cost: 0
+  items:
+    - SmokingPipeFilledTobacco
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSmokes
+
+- type: loadout
+  id: LoadoutItemBlunt
+  category: Items
+  cost: 0
+  items:
+    - Blunt
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSmokes
+
+- type: loadout
+  id: LoadoutItemJoint
+  category: Items
+  cost: 0
+  items:
+    - Joint
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSmokes
+
+# Instruments
+- type: loadout
+  id: LoadoutItemMicrophoneInstrument
+  category: Items
+  cost: 2
+  items:
+    - MicrophoneInstrument
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutInstrumentsAny
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Musician
+
+- type: loadout
+  id: LoadoutItemKalimbaInstrument
+  category: Items
+  cost: 2
+  items:
+    - KalimbaInstrument
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutInstrumentsAny
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Musician
+
+- type: loadout
+  id: LoadoutItemTrumpetInstrument
+  category: Items
+  cost: 4
+  items:
+    - TrumpetInstrument
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutInstrumentsAny
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Musician
+
+- type: loadout
+  id: LoadoutItemElectricGuitar
+  category: Items
+  cost: 5
+  items:
+    - ElectricGuitarInstrument
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutInstrumentsAny
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Musician
+
+- type: loadout
+  id: LoadoutItemBassGuitar
+  category: Items
+  cost: 5
+  items:
+    - BassGuitarInstrument
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutInstrumentsAny
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Musician
+
+- type: loadout
+  id: LoadoutItemRockGuitar
+  category: Items
+  cost: 5
+  items:
+    - RockGuitarInstrument
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutInstrumentsAny
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Musician
+
+- type: loadout
+  id: LoadoutItemAcousticGuitar
+  category: Items
+  cost: 5
+  items:
+    - AcousticGuitarInstrument
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutInstrumentsAny
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Musician
+
+- type: loadout
+  id: LoadoutItemViolin
+  category: Items
+  cost: 4
+  items:
+    - ViolinInstrument
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutInstrumentsAny
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Musician
+
+- type: loadout
+  id: LoadoutItemHarmonica
+  category: Items
+  cost: 1
+  items:
+    - HarmonicaInstrument
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutInstrumentsAny
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Musician
+
+- type: loadout
+  id: LoadoutItemAccordion
+  category: Items
+  cost: 4
+  items:
+    - AccordionInstrument
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutInstrumentsAny
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Musician
+
+- type: loadout
+  id: LoadoutItemFlute
+  category: Items
+  cost: 2
+  items:
+    - FluteInstrument
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutInstrumentsAny
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Musician
+
+- type: loadout
+  id: LoadoutItemOcarina
+  category: Items
+  cost: 1
+  items:
+    - OcarinaInstrument
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutInstrumentsAny
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Musician
+
+# Survival Kit
+- type: loadout
+  id: LoadoutItemsEmergencyOxygenTank
+  category: Items
+  cost: 0
+  items:
+    - EmergencyOxygenTankFilled
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAirTank
+
+- type: loadout
+  id: LoadoutItemsExtendedEmergencyOxygenTank
+  category: Items
+  cost: 1
+  items:
+    - ExtendedEmergencyOxygenTankFilled
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAirTank
+
+- type: loadout
+  id: LoadoutItemsDoubleEmergencyOxygenTank
+  category: Items
+  cost: 2
+  items:
+    - DoubleEmergencyOxygenTankFilled
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAirTank
+
+- type: loadout
+  id: LoadoutItemClothingMaskBreath
+  category: Items
+  cost: 0
+  items:
+    - ClothingMaskBreath
+
+- type: loadout
+  id: LoadoutItemsEmergencyCrowbar
+  category: Items
+  cost: 3
+  canBeHeirloom: true
+  items:
+    - CrowbarRed
+
+- type: loadout
+  id: LoadoutItemFireExtinguisher
+  category: Items
+  cost: 3
+  items:
+    - FireExtinguisher
+
+- type: loadout
+  id: LoadoutItemFlashlightLantern
+  category: Items
+  cost: 2
+  items:
+    - FlashlightLantern
+
+- type: loadout
+  id: LoadoutItemFlare
+  category: Items
+  cost: 1
+  items:
+    - Flare
+
+- type: loadout
+  id: LoadoutEmergencyMedipen
+  category: Items
+  cost: 1
+  items:
+    - EmergencyMedipen
+
+- type: loadout
+  id: LoadoutSpaceMedipen
+  category: Items
+  cost: 1
+  items:
+    - SpaceMedipen
+
+# Paperwork
+- type: loadout
+  id: LoadoutItemPapers
+  category: Items
+  cost: 0
+  items:
+    - Paper
+    - Paper
+    - Paper
+    - Paper
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutWritables
+
+- type: loadout
+  id: LoadoutItemBoxFolderGrey
+  category: Items
+  cost: 0
+  items:
+    - BoxFolderGrey
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutWritables
+
+- type: loadout
+  id: LoadoutBookRandom
+  category: Items
+  cost: 1
+  items:
+    - BookRandom
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutWritables
+
+- type: loadout
+  id: LoadoutPen
+  category: Items
+  cost: 0
+  items:
+    - Pen
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutWritables
+
+# Food and drink
+- type: loadout
+  id: LoadoutDrinkWaterBottleFull
+  category: Items
+  cost: 1
+  items:
+    - DrinkWaterBottleFull
+
+- type: loadout
+  id: LoadoutItemLunchboxGenericFilledRandom
+  category: Items
+  cost: 3
+  items:
+    - LunchboxGenericFilledRandom
+
+- type: loadout
+  id: LoadoutItemDrinkMREFlask
+  category: Items
+  cost: 2
+  items:
+    - DrinkMREFlask
+
+# Survival boxes
+- type: loadout
+  id: LoadoutItemBoxSurvival
+  category: Items
+  cost: 0
+  items:
+    - BoxSurvival
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Medical
+         - Engineering
+    - !type:CharacterJobRequirement
+       inverted: true
+       jobs:
+         - Clown
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxKits
+
+- type: loadout
+  id: LoadoutItemBoxSurvivalEngineering
+  category: Items
+  cost: 0
+  items:
+    - BoxSurvivalEngineering
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Engineering
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxKits
+
+- type: loadout
+  id: LoadoutItemBoxSurvivalSecurity
+  category: Items
+  cost: 0
+  items:
+    - BoxSurvivalSecurity
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Security
+    - !type:CharacterJobRequirement
+       inverted: true
+       jobs:
+         - Brigmedic
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxKits
+
+- type: loadout
+  id: LoadoutItemBoxSurvivalBrigmedic
+  category: Items
+  cost: 0
+  items:
+    - BoxSurvivalBrigmedic
+  requirements:
+    - !type:CharacterJobRequirement
+       jobs:
+         - Brigmedic
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxKits
+
+- type: loadout
+  id: LoadoutItemBoxSurvivalMedical
+  category: Items
+  cost: 0
+  items:
+    - BoxSurvivalMedical
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Medical
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxKits
+
+- type: loadout
+  id: LoadoutItemBoxHug
+  category: Items
+  cost: 0
+  items:
+    - BoxHug
+  requirements:
+    - !type:CharacterJobRequirement
+       jobs:
+         - Clown
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxKits
+
+# Medkits
+- type: loadout
+  id: LoadoutMedkitFilled
+  category: Items
+  cost: 2
+  items:
+    - MedkitFilled
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxKits
+
+- type: loadout
+  id: LoadoutMedkitBruteFilled
+  category: Items
+  cost: 2
+  items:
+    - MedkitBruteFilled
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Paramedic
+        - ChiefMedicalOfficer
+        - MedicalIntern
+        - Brigmedic
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxKits
+
+- type: loadout
+  id: LoadoutMedkitBurnFilled
+  category: Items
+  cost: 2
+  items:
+    - MedkitBurnFilled
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Paramedic
+        - ChiefMedicalOfficer
+        - MedicalIntern
+        - Brigmedic
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxKits
+
+- type: loadout
+  id: LoadoutMedkitToxinFilled
+  category: Items
+  cost: 2
+  items:
+    - MedkitToxinFilled
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Paramedic
+        - ChiefMedicalOfficer
+        - MedicalIntern
+        - Brigmedic
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxKits
+
+- type: loadout
+  id: LoadoutMedkitOxygenFilled
+  category: Items
+  cost: 2
+  items:
+    - MedkitOxygenFilled
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Paramedic
+        - ChiefMedicalOfficer
+        - MedicalIntern
+        - Brigmedic
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxKits
+
+- type: loadout
+  id: LoadoutMedkitRadiationFilled
+  category: Items
+  cost: 2
+  items:
+    - MedkitRadiationFilled
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Paramedic
+        - ChiefMedicalOfficer
+        - MedicalIntern
+        - Brigmedic
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxKits
+
+- type: loadout
+  id: LoadoutMedkitAdvancedFilled
+  category: Items
+  cost: 3
+  items:
+    - MedkitAdvancedFilled
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Paramedic
+        - ChiefMedicalOfficer
+        - MedicalIntern
+        - Brigmedic
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxKits
+
+- type: loadout
+  id: LoadoutMedkitCombatFilled
+  category: Items
+  cost: 3
+  items:
+    - MedkitCombatFilled
+  requirements:
+    - !type:CharacterJobRequirement
+       jobs:
+         - ChiefMedicalOfficer
+         - Brigmedic
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxKits
+
+#Misc Items
+- type: loadout
+  id: LoadoutItemFlash
+  category: Items
+  cost: 1
+  items:
+    - Flash
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Security
+    - !type:CharacterJobRequirement
+       jobs:
+         - Brigmedic
+
+- type: loadout
+  id: LoadoutItemPAI
+  category: Items
+  cost: 3
+  canBeHeirloom: true
+  items:
+    - PersonalAI
+
+- type: loadout
+  id: LoadoutItemWaistbag
+  category: Items
+  cost: 2
+  items:
+    - ClothingBeltStorageWaistbag
+  requirements:
+    - !type:CharacterJobRequirement
+       inverted: true
+       jobs:
+         - Prisoner
+
+- type: loadout
+  id: LoadoutItemCrayonBox
+  category: Items
+  cost: 4
+  items:
+    - CrayonBox
+
+- type: loadout
+  id: LoadoutItemBarberScissors
+  category: Items
+  cost: 4
+  items:
+    - BarberScissors
+
+- type: loadout
+  id: LoadoutSolCommonTranslator
+  category: Items
+  cost: 3
+  items:
+    - SolCommonTranslator
+
+- type: loadout
+  id: LoadoutHandLabeler
+  category: Items
+  cost: 3
+  items:
+    - HandLabeler
+
+- type: loadout
+  id: LoadoutItemHandheldStationMap
+  category: Items
+  cost: 2
+  items:
+    - HandheldStationMap
+
+- type: loadout
+  id: LoadoutItemLantern
+  category: Items
+  cost: 2
+  items:
+    - Lantern
+
+- type: loadout
+  id: LoadoutItemDrinkShinyFlask
+  category: Items
+  cost: 1
+  customColorTint: true
+  canBeHeirloom: true
+  items:
+    - DrinkShinyFlask
+
+- type: loadout
+  id: LoadoutItemDrinkLithiumFlask
+  category: Items
+  cost: 1
+  customColorTint: true
+  items:
+    - DrinkLithiumFlask
+
+- type: loadout
+  id: LoadoutItemDrinkVacuumFlask
+  category: Items
+  cost: 1
+  customColorTint: true
+  items:
+    - DrinkVacuumFlask
+
+- type: loadout
+  id: LoadoutItemCaneBlind
+  category: Items
+  cost: 0 # It shouldnt cost points to be able to function.
+  items:
+    - WhiteCane
+
+# Pets
+- type: loadout
+  id: LoadoutItemPetMouse
+  category: Items
+  cost: 2
+  canBeHeirloom: true
+  items:
+    - MobMousePet
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPets
+  functions:
+    - !type:LoadoutMakeFollower
+
+- type: loadout
+  id: LoadoutItemPetHamster
+  category: Items
+  cost: 2
+  canBeHeirloom: true
+  items:
+    - MobHamsterPet
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPets
+  functions:
+    - !type:LoadoutMakeFollower
+
+- type: loadout
+  id: LoadoutItemPetMothroach
+  category: Items
+  cost: 2
+  canBeHeirloom: true
+  items:
+    - MobMothroachPet
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPets
+  functions:
+    - !type:LoadoutMakeFollower
+
+- type: loadout
+  id: LoadoutItemPetCockroach
+  category: Items
+  cost: 2
+  canBeHeirloom: true
+  items:
+    - MobCockroachPet
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPets
+  functions:
+    - !type:LoadoutMakeFollower

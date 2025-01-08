@@ -11,6 +11,7 @@ using Content.Shared.Database;
 using Content.Shared.Ghost;
 using Content.Shared.Maps;
 using Content.Shared.Parallax;
+using Content.Shared.SegmentedEntity;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Shuttles.Systems;
 using Content.Shared.StatusEffect;
@@ -81,6 +82,8 @@ public sealed partial class ShuttleSystem
     private void InitializeFTL()
     {
         SubscribeLocalEvent<StationPostInitEvent>(OnStationPostInit);
+        SubscribeLocalEvent<FTLComponent, ComponentShutdown>(OnFtlShutdown);
+
         _bodyQuery = GetEntityQuery<BodyComponent>();
         _buckleQuery = GetEntityQuery<BuckleComponent>();
         _beaconQuery = GetEntityQuery<FTLBeaconComponent>();
@@ -95,6 +98,12 @@ public sealed partial class ShuttleSystem
         _cfg.OnValueChanged(CCVars.FTLCooldown, time => FTLCooldown = time, true);
         _cfg.OnValueChanged(CCVars.FTLMassLimit, time => FTLMassLimit = time, true);
         _cfg.OnValueChanged(CCVars.HyperspaceKnockdownTime, time => _hyperspaceKnockdownTime = TimeSpan.FromSeconds(time), true);
+    }
+
+    private void OnFtlShutdown(Entity<FTLComponent> ent, ref ComponentShutdown args)
+    {
+        Del(ent.Comp.VisualizerEntity);
+        ent.Comp.VisualizerEntity = null;
     }
 
     private void OnStationPostInit(ref StationPostInitEvent ev)
@@ -210,18 +219,22 @@ public sealed partial class ShuttleSystem
     /// </summary>
     public bool CanFTL(EntityUid shuttleUid, [NotNullWhen(false)] out string? reason)
     {
+        // Currently in FTL already
         if (HasComp<FTLComponent>(shuttleUid))
         {
             reason = Loc.GetString("shuttle-console-in-ftl");
             return false;
         }
 
-        if (FTLMassLimit > 0 &&
-            TryComp(shuttleUid, out PhysicsComponent? shuttlePhysics) &&
-            shuttlePhysics.Mass > FTLMassLimit)
+        if (TryComp<PhysicsComponent>(shuttleUid, out var shuttlePhysics))
         {
-            reason = Loc.GetString("shuttle-console-mass");
-            return false;
+
+            // Too large to FTL
+            if (FTLMassLimit > 0 &&  shuttlePhysics.Mass > FTLMassLimit)
+            {
+                reason = Loc.GetString("shuttle-console-mass");
+                return false;
+            }
         }
 
         if (HasComp<PreventPilotComponent>(shuttleUid))
@@ -343,7 +356,11 @@ public sealed partial class ShuttleSystem
         component = AddComp<FTLComponent>(uid);
         component.State = FTLState.Starting;
         var audio = _audio.PlayPvs(_startupSound, uid);
-        audio.Value.Component.Flags |= AudioFlags.GridAudio;
+
+        if (audio == null)
+            return false;
+
+        audio!.Value.Component.Flags |= AudioFlags.GridAudio;
 
         if (_physicsQuery.TryGetComponent(uid, out var gridPhysics))
         {
@@ -422,8 +439,16 @@ public sealed partial class ShuttleSystem
         var comp = entity.Comp1;
         comp.StateTime = StartEndTime.FromCurTime(_gameTiming, DefaultArrivalTime);
         comp.State = FTLState.Arriving;
-        // TODO: Arrival effects
-        // For now we'll just use the ss13 bubbles but we can do fancier.
+
+        if (entity.Comp1.VisualizerProto != null)
+        {
+            comp.VisualizerEntity = SpawnAtPosition(entity.Comp1.VisualizerProto, entity.Comp1.TargetCoordinates);
+            var visuals = Comp<FtlVisualizerComponent>(comp.VisualizerEntity.Value);
+            visuals.Grid = entity.Owner;
+            Dirty(comp.VisualizerEntity.Value, visuals);
+            _transform.SetLocalRotation(comp.VisualizerEntity.Value, entity.Comp1.TargetAngle);
+            _pvs.AddGlobalOverride(comp.VisualizerEntity.Value);
+        }
 
         _thruster.DisableLinearThrusters(shuttle);
         _thruster.EnableLinearThrustDirection(shuttle, DirectionFlag.South);
@@ -509,7 +534,11 @@ public sealed partial class ShuttleSystem
 
         comp.TravelStream = _audio.Stop(comp.TravelStream);
         var audio = _audio.PlayPvs(_arrivalSound, uid);
-        audio.Value.Component.Flags |= AudioFlags.GridAudio;
+
+        if (audio == null)
+            return;
+
+        audio!.Value.Component.Flags |= AudioFlags.GridAudio;
         // TODO: Shitcode til engine fix
 
         if (_physicsQuery.TryGetComponent(uid, out var gridPhysics))
@@ -615,7 +644,9 @@ public sealed partial class ShuttleSystem
         var childEnumerator = xform.ChildEnumerator;
         while (childEnumerator.MoveNext(out var child))
         {
-            if (!_buckleQuery.TryGetComponent(child, out var buckle) || buckle.Buckled)
+            if (!_buckleQuery.TryGetComponent(child, out var buckle) || buckle.Buckled
+            || HasComp<SegmentedEntityComponent>(child)
+            || HasComp<SegmentedEntitySegmentComponent>(child))
                 continue;
 
             toKnock.Add(child);

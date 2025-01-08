@@ -91,19 +91,17 @@ public sealed class PenLightSystem : EntitySystem
             uid, target, uid)
         {
             BlockDuplicate = true,
-            BreakOnUserMove = true,
-            BreakOnTargetMove = true,
+            BreakOnMove = true,
             BreakOnHandChange = true,
             NeedHand = true
         });
     }
     private void OpenUserInterface(EntityUid user, EntityUid penlight)
     {
-        if (!TryComp<ActorComponent>(user, out var actor)
-            || !_uiSystem.TryGetOpenUi(penlight, PenLightUiKey.Key, out var ui))
+        if (!_uiSystem.HasUi(penlight, PenLightUiKey.Key))
             return;
 
-        _uiSystem.OpenUi(ui.Owner, ui.UiKey, actor.PlayerSession);
+        _uiSystem.OpenUi(penlight, PenLightUiKey.Key, user);
     }
 
     /// <summary>
@@ -111,7 +109,7 @@ public sealed class PenLightSystem : EntitySystem
     /// </summary>
     private void Diagnose(EntityUid penlight, EntityUid target)
     {
-        if (!_uiSystem.TryGetOpenUi(penlight, PenLightUiKey.Key, out var ui)
+        if (!_uiSystem.HasUi(penlight, PenLightUiKey.Key)
             || !HasComp<EyeComponent>(target)
             || !HasComp<DamageableComponent>(target))
             return;
@@ -136,8 +134,8 @@ public sealed class PenLightSystem : EntitySystem
         var healthy = !(blind || drunk || eyeDamage || seeingRainbows);
 
         _uiSystem.ServerSendUiMessage(
-            ui.Owner,
-            ui.UiKey,
+            penlight,
+            PenLightUiKey.Key,
             new PenLightUserMessage(GetNetEntity(target),
                 blind,
                 drunk,

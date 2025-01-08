@@ -35,10 +35,7 @@ public sealed partial class PsionicHealOtherPowerActionEvent : EntityTargetActio
     public bool DoRevive;
 
     [DataField]
-    public bool BreakOnUserMove = true;
-
-    [DataField]
-    public bool BreakOnTargetMove = false;
+    public bool BreakOnMove = true;
 
     [DataField]
     public float UseDelay = 8f;

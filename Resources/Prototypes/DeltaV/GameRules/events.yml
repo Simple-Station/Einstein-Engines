@@ -1,7 +1,7 @@
 - type: entity
   id: XenoVents
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     startAnnouncement: true
@@ -33,7 +33,7 @@
 - type: entity
   id: XenoVentsWeak
   parent: XenoVents
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     startAnnouncement: true
@@ -59,7 +59,7 @@
 - type: entity
   id: MothroachSpawn
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     earliestStart: 15
@@ -74,7 +74,7 @@
 - type: entity
   id: PirateRadioSpawn
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     weight: 7.5
@@ -83,5 +83,3 @@
     duration: 1
   - type: PirateRadioSpawnRule
     debrisCount: 6
-    distanceModifier: 13
-    debrisDistanceModifier: 3

@@ -181,16 +181,14 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
         }
 
         var gearEquippedEv = new StartingGearEquippedEvent(entity.Value);
-        RaiseLocalEvent(entity.Value, ref gearEquippedEv, true);
+        RaiseLocalEvent(entity.Value, ref gearEquippedEv);
 
         if (profile != null)
         {
             _humanoidSystem.LoadProfile(entity.Value, profile);
             _metaSystem.SetEntityName(entity.Value, profile.Name);
             if (profile.FlavorText != "" && _configurationManager.GetCVar(CCVars.FlavorText))
-            {
-                AddComp<DetailExaminableComponent>(entity.Value).Content = profile.FlavorText;
-            }
+                EnsureComp<DetailExaminableComponent>(entity.Value).Content = profile.FlavorText;
         }
 
         DoJobSpecials(job, entity.Value);
@@ -204,9 +202,7 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
             return;
 
         foreach (var jobSpecial in prototype.Special)
-        {
             jobSpecial.AfterEquip(entity);
-        }
     }
 
     /// <summary>
@@ -231,10 +227,8 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
         _cardSystem.TryChangeFullName(cardId, characterName, card);
         _cardSystem.TryChangeJobTitle(cardId, jobPrototype.LocalizedName, card);
 
-        if (_prototypeManager.TryIndex<StatusIconPrototype>(jobPrototype.Icon, out var jobIcon))
-        {
+        if (_prototypeManager.TryIndex(jobPrototype.Icon, out var jobIcon))
             _cardSystem.TryChangeJobIcon(cardId, jobIcon, card);
-        }
 
         var extendedAccess = false;
         if (station != null)

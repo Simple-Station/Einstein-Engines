@@ -3,7 +3,7 @@
   bodyPart: HeadSide
   markingCategory: HeadSide
   forcedColoring: true
-  speciesRestriction: [Oni]
+  speciesRestriction: [Oni, Harpy, Arachne, Lamia]
   sprites:
   - sprite: Mobs/Customization/pointy_ears.rsi
     state: pointy_ears_standard
@@ -13,7 +13,7 @@
   bodyPart: HeadSide
   markingCategory: HeadSide
   forcedColoring: true
-  speciesRestriction: [Oni]
+  speciesRestriction: [Oni, Harpy, Arachne, Lamia]
   sprites:
   - sprite: Mobs/Customization/pointy_ears.rsi
     state: pointy_ears_wide
@@ -23,7 +23,7 @@
   bodyPart: HeadSide
   markingCategory: HeadSide
   forcedColoring: true
-  speciesRestriction: [Oni]
+  speciesRestriction: [Oni, Harpy, Arachne, Lamia]
   sprites:
   - sprite: Mobs/Customization/pointy_ears.rsi
     state: pointy_ears_small
@@ -33,7 +33,7 @@
   bodyPart: HeadSide
   markingCategory: HeadSide
   forcedColoring: true
-  speciesRestriction: [Oni]
+  speciesRestriction: [Oni, Harpy, Arachne, Lamia]
   sprites:
   - sprite: Mobs/Customization/pointy_ears.rsi
     state: pointy_ears_upwards
@@ -43,7 +43,7 @@
   bodyPart: HeadSide
   markingCategory: HeadSide
   forcedColoring: true
-  speciesRestriction: [Oni]
+  speciesRestriction: [Oni, Harpy, Arachne, Lamia]
   sprites:
   - sprite: Mobs/Customization/pointy_ears.rsi
     state: pointy_ears_tall
@@ -53,7 +53,7 @@
   bodyPart: HeadSide
   markingCategory: HeadSide
   forcedColoring: true
-  speciesRestriction: [Oni]
+  speciesRestriction: [Oni, Harpy, Arachne, Lamia]
   sprites:
   - sprite: Mobs/Customization/pointy_ears.rsi
     state: pointy_ears_slanted
@@ -63,7 +63,7 @@
   bodyPart: HeadSide
   markingCategory: HeadSide
   forcedColoring: true
-  speciesRestriction: [Oni]
+  speciesRestriction: [Oni, Harpy, Arachne, Lamia]
   sprites:
   - sprite: Mobs/Customization/pointy_ears.rsi
     state: pointy_ears_thin
@@ -73,7 +73,7 @@
   bodyPart: HeadSide
   markingCategory: HeadSide
   forcedColoring: true
-  speciesRestriction: [Oni]
+  speciesRestriction: [Oni, Harpy, Arachne, Lamia]
   sprites:
   - sprite: Mobs/Customization/pointy_ears.rsi
     state: pointy_ears_large
@@ -83,7 +83,7 @@
   bodyPart: HeadSide
   markingCategory: HeadSide
   forcedColoring: true
-  speciesRestriction: [Oni]
+  speciesRestriction: [Oni, Harpy, Arachne, Lamia]
   sprites:
   - sprite: Mobs/Customization/pointy_ears.rsi
     state: pointy_ears_none
