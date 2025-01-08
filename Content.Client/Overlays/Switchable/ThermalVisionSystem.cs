@@ -1,14 +1,11 @@
-using Content.Shared.GameTicking;
+using Content.Shared.Inventory.Events;
 using Content.Shared.Overlays.Switchable;
 using Robust.Client.Graphics;
-using Robust.Client.Player;
-using Robust.Shared.Player;
 
 namespace Content.Client.Overlays.Switchable;
 
-public sealed class ThermalVisionSystem : SwitchableOverlaySystem<ThermalVisionComponent, ToggleThermalVisionEvent>
+public sealed class ThermalVisionSystem : EquipmentHudSystem<ThermalVisionComponent>
 {
-    [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly IOverlayManager _overlayMan = default!;
 
     private ThermalVisionOverlay _thermalOverlay = default!;
@@ -18,64 +15,81 @@ public sealed class ThermalVisionSystem : SwitchableOverlaySystem<ThermalVisionC
     {
         base.Initialize();
 
-        SubscribeLocalEvent<ThermalVisionComponent, PlayerAttachedEvent>(OnPlayerAttached);
-        SubscribeLocalEvent<ThermalVisionComponent, PlayerDetachedEvent>(OnPlayerDetached);
-        SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRestart);
+        SubscribeLocalEvent<ThermalVisionComponent, SwitchableOverlayToggledEvent>(OnToggle);
 
         _thermalOverlay = new ThermalVisionOverlay();
         _overlay = new BaseSwitchableOverlay<ThermalVisionComponent>();
     }
 
-    private void OnPlayerAttached(EntityUid uid, ThermalVisionComponent component, PlayerAttachedEvent args)
+    private void OnToggle(Entity<ThermalVisionComponent> ent, ref SwitchableOverlayToggledEvent args)
     {
-        if (!component.IsActive)
-            return;
-
-        UpdateVision(args.Player, component.IsActive);
+        RefreshOverlay(args.User);
     }
 
-    private void OnPlayerDetached(EntityUid uid, ThermalVisionComponent component, PlayerDetachedEvent args)
+    protected override void UpdateInternal(RefreshEquipmentHudEvent<ThermalVisionComponent> args)
     {
-        UpdateVision(args.Player, false);
-    }
-
-    private void OnRestart(RoundRestartCleanupEvent ev)
-    {
-        _overlayMan.RemoveOverlay(_thermalOverlay);
-        _overlayMan.RemoveOverlay(_overlay);
-    }
-
-    protected override void UpdateVision(EntityUid uid, bool active)
-    {
-        if (_player.LocalSession?.AttachedEntity != uid)
-            return;
-
-        UpdateOverlay(active, _thermalOverlay);
-        UpdateOverlay(active, _overlay);
-    }
-
-    private void UpdateVision(ICommonSession player, bool active)
-    {
-        if (_player.LocalSession != player)
-            return;
-
-        UpdateOverlay(active, _thermalOverlay);
-        UpdateOverlay(active, _overlay);
-    }
-
-    private void UpdateOverlay(bool active, Overlay overlay)
-    {
-        if (_player.LocalEntity == null)
+        base.UpdateInternal(args);
+        ThermalVisionComponent? tvComp = null;
+        var lightRadius = 0f;
+        foreach (var comp in args.Components)
         {
-            _overlayMan.RemoveOverlay(overlay);
-            return;
+            if (!comp.IsActive && (comp.PulseTime <= 0f || comp.PulseAccumulator >= comp.PulseTime))
+                continue;
+
+            if (tvComp == null)
+                tvComp = comp;
+            else if (!tvComp.DrawOverlay && comp.DrawOverlay)
+                tvComp = comp;
+            else if (tvComp.DrawOverlay == comp.DrawOverlay && tvComp.PulseTime > 0f && comp.PulseTime <= 0f)
+                tvComp = comp;
+
+            lightRadius = MathF.Max(lightRadius, comp.LightRadius);
         }
 
-        active |= TryComp<ThermalVisionComponent>(_player.LocalEntity.Value, out var component) && component.IsActive;
+        UpdateThermalOverlay(tvComp, lightRadius);
+        UpdateOverlay(tvComp);
+    }
 
-        if (active)
-            _overlayMan.AddOverlay(overlay);
-        else
-            _overlayMan.RemoveOverlay(overlay);
+    protected override void DeactivateInternal()
+    {
+        base.DeactivateInternal();
+
+        UpdateOverlay(null);
+        UpdateThermalOverlay(null, 0f);
+    }
+
+    private void UpdateThermalOverlay(ThermalVisionComponent? comp, float lightRadius)
+    {
+        _thermalOverlay.LightRadius = lightRadius;
+        _thermalOverlay.Comp = comp;
+
+        switch (comp)
+        {
+            case not null when !_overlayMan.HasOverlay<ThermalVisionOverlay>():
+                _overlayMan.AddOverlay(_thermalOverlay);
+                break;
+            case null:
+                _overlayMan.RemoveOverlay(_thermalOverlay);
+                _thermalOverlay.ResetLight();
+                break;
+        }
+    }
+
+    private void UpdateOverlay(ThermalVisionComponent? tvComp)
+    {
+        _overlay.Comp = tvComp;
+
+        switch (tvComp)
+        {
+            case { DrawOverlay: true } when !_overlayMan.HasOverlay<BaseSwitchableOverlay<ThermalVisionComponent>>():
+                _overlayMan.AddOverlay(_overlay);
+                break;
+            case null or { DrawOverlay: false }:
+                _overlayMan.RemoveOverlay(_overlay);
+                break;
+        }
+
+        // Night vision overlay is prioritized
+        _overlay.IsActive = !_overlayMan.HasOverlay<BaseSwitchableOverlay<NightVisionComponent>>();
     }
 }

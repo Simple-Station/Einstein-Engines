@@ -233,6 +233,7 @@
     - type: Body
       prototype: IPC
       requiredLegs: 2
+      thermalVisibility: false
     - type: Ensnareable
       sprite: Objects/Misc/ensnare.rsi
     - type: Speech

@@ -10,9 +10,9 @@
     sprite: Clothing/Eyes/Goggles/nightvision.rsi
   - type: Clothing
     sprite: Clothing/Eyes/Goggles/nightvision.rsi
-  - type: ClothingGrantComponent
-    component:
-    - type: NightVision
+  - type: NightVision
+  - type: IdentityBlocker
+    coverage: EYES
 
 - type: entity
   parent: [ClothingEyesNightVisionGoggles, ShowSecurityIcons]
@@ -76,9 +76,11 @@
     sprite: Clothing/Eyes/Goggles/thermal.rsi
   - type: Clothing
     sprite: Clothing/Eyes/Goggles/thermal.rsi
-  - type: ClothingGrantComponent
-    component:
-    - type: ThermalVision
+  - type: ThermalVision
+    pulseTime: 2
+    toggleAction: PulseThermalVision
+  - type: IdentityBlocker
+    coverage: EYES
 
 - type: entity
   parent: ClothingEyesThermalVisionGoggles

@@ -1,5 +1,3 @@
-using Content.Shared.Overlays.Switchable;
-
-namespace Content.Server.Overlays;
+namespace Content.Shared.Overlays.Switchable;
 
 public sealed class NightVisionSystem : SwitchableOverlaySystem<NightVisionComponent, ToggleNightVisionEvent>;
