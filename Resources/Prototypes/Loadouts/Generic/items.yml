@@ -848,3 +848,6 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCards
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Command
