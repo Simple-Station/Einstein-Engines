@@ -1,5 +1,5 @@
 <DefaultWindow xmlns="https://spacestation14.io"
-               Title="{Loc nano-chat-new-title}"
+               Title="{Loc nano-chat-edit-title}"
                MinSize="300 200">
     <PanelContainer StyleClasses="AngleRect">
         <BoxContainer Orientation="Vertical" Margin="4">
@@ -42,8 +42,8 @@
                         Text="{Loc nano-chat-cancel}"
                         StyleClasses="OpenRight"
                         MinSize="80 0" />
-                <Button Name="CreateButton"
-                        Text="{Loc nano-chat-create}"
+                <Button Name="ConfirmButton"
+                        Text="{Loc nano-chat-confirm}"
                         StyleClasses="OpenLeft"
                         MinSize="80 0"
                         Disabled="True" />
