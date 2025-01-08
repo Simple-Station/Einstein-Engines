@@ -1,4 +1,4 @@
-namespace Content.Shared._White.Overlays;
+namespace Content.Shared.Overlays;
 
 public abstract partial class BaseOverlayComponent : Component
 {

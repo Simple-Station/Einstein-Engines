@@ -1,8 +1,8 @@
 using System.Linq;
 using System.Numerics;
 using Content.Client.Stealth;
-using Content.Shared._White.Overlays;
 using Content.Shared.Body.Components;
+using Content.Shared.Overlays.Switchable;
 using Content.Shared.Stealth.Components;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
@@ -10,7 +10,7 @@ using Robust.Client.Player;
 using Robust.Shared.Enums;
 using Robust.Shared.Map;
 
-namespace Content.Client._White.Overlays;
+namespace Content.Client.Overlays.Switchable;
 
 public sealed class ThermalVisionOverlay : Overlay
 {

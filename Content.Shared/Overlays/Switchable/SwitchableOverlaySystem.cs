@@ -4,7 +4,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 
-namespace Content.Shared._White.Overlays;
+namespace Content.Shared.Overlays.Switchable;
 
 public abstract class SwitchableOverlaySystem<TComp, TEvent> : EntitySystem
     where TComp : SwitchableOverlayComponent

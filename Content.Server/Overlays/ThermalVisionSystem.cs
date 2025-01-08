@@ -1,5 +1,5 @@
-using Content.Shared._White.Overlays;
+using Content.Shared.Overlays.Switchable;
 
-namespace Content.Server._White.Overlays;
+namespace Content.Server.Overlays;
 
 public sealed class ThermalVisionSystem : SwitchableOverlaySystem<ThermalVisionComponent, ToggleThermalVisionEvent>;

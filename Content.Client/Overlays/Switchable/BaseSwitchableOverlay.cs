@@ -1,10 +1,11 @@
-using Content.Shared._White.Overlays;
+using System.Numerics;
+using Content.Shared.Overlays.Switchable;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 
-namespace Content.Client._White.Overlays;
+namespace Content.Client.Overlays.Switchable;
 
 public class BaseSwitchableOverlay<TComp> : Overlay
     where TComp : SwitchableOverlayComponent

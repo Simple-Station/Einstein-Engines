@@ -1,10 +1,10 @@
-using Content.Shared._White.Overlays;
 using Content.Shared.GameTicking;
+using Content.Shared.Overlays.Switchable;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Shared.Player;
 
-namespace Content.Client._White.Overlays;
+namespace Content.Client.Overlays.Switchable;
 
 public sealed class NightVisionSystem : SwitchableOverlaySystem<NightVisionComponent, ToggleNightVisionEvent>
 {

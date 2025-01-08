@@ -1,7 +1,6 @@
 using Robust.Shared.Audio;
-using Robust.Shared.GameStates;
 
-namespace Content.Shared._White.Overlays;
+namespace Content.Shared.Overlays.Switchable;
 
 public abstract partial class SwitchableOverlayComponent : BaseOverlayComponent
 {
@@ -10,11 +9,11 @@ public abstract partial class SwitchableOverlayComponent : BaseOverlayComponent
 
     [DataField]
     public virtual SoundSpecifier? ActivateSound { get; set; } =
-        new SoundPathSpecifier("/Audio/_White/Items/Goggles/activate.ogg");
+        new SoundPathSpecifier("/Audio/Items/Goggles/activate.ogg");
 
     [DataField]
     public virtual SoundSpecifier? DeactivateSound { get; set; } =
-        new SoundPathSpecifier("/Audio/_White/Items/Goggles/deactivate.ogg");
+        new SoundPathSpecifier("/Audio/Items/Goggles/deactivate.ogg");
 
     [DataField]
     public virtual string? ToggleAction { get; set; }

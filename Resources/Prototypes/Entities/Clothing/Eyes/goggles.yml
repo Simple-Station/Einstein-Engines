@@ -7,9 +7,9 @@
   description: An advanced heads-up display which provides id data and vision in complete darkness.
   components:
   - type: Sprite
-    sprite: _White/Clothing/Eyes/Goggles/nightvision.rsi
+    sprite: Clothing/Eyes/Goggles/nightvision.rsi
   - type: Clothing
-    sprite: _White/Clothing/Eyes/Goggles/nightvision.rsi
+    sprite: Clothing/Eyes/Goggles/nightvision.rsi
   - type: ClothingGrantComponent
     component:
     - type: NightVision
@@ -20,9 +20,9 @@
   name: night vision security goggles
   components:
   - type: Sprite
-    sprite: _White/Clothing/Eyes/Goggles/security_nightvision.rsi
+    sprite: Clothing/Eyes/Goggles/security_nightvision.rsi
   - type: Clothing
-    sprite: _White/Clothing/Eyes/Goggles/security_nightvision.rsi
+    sprite: Clothing/Eyes/Goggles/security_nightvision.rsi
 
 - type: entity
   parent: [ClothingEyesNightVisionGoggles, ClothingEyesHudMedical]
@@ -30,9 +30,9 @@
   name: night vision medical goggles
   components:
   - type: Sprite
-    sprite: _White/Clothing/Eyes/Goggles/medical_nightvision.rsi
+    sprite: Clothing/Eyes/Goggles/medical_nightvision.rsi
   - type: Clothing
-    sprite: _White/Clothing/Eyes/Goggles/medical_nightvision.rsi
+    sprite: Clothing/Eyes/Goggles/medical_nightvision.rsi
 
 - type: entity
   parent: [ClothingEyesNightVisionGoggles, ClothingEyesHudDiagnostic]
@@ -40,9 +40,9 @@
   name: night vision diagnostic goggles
   components:
   - type: Sprite
-    sprite: _White/Clothing/Eyes/Goggles/diagnostic_nightvision.rsi
+    sprite: Clothing/Eyes/Goggles/diagnostic_nightvision.rsi
   - type: Clothing
-    sprite: _White/Clothing/Eyes/Goggles/diagnostic_nightvision.rsi
+    sprite: Clothing/Eyes/Goggles/diagnostic_nightvision.rsi
 
 - type: entity
   parent: ClothingEyesNightVisionGoggles
@@ -51,7 +51,7 @@
   components:
   - type: ChameleonClothing
     slot: [eyes]
-    default: ClothingEyesGlassesSunglasses
+    default: ClothingEyesNightVisionGoggles
   - type: UserInterface
     interfaces:
       enum.ChameleonUiKey.Key:
@@ -73,9 +73,9 @@
   description: Thermals in the shape of glasses.
   components:
   - type: Sprite
-    sprite: _White/Clothing/Eyes/Goggles/thermal.rsi
+    sprite: Clothing/Eyes/Goggles/thermal.rsi
   - type: Clothing
-    sprite: _White/Clothing/Eyes/Goggles/thermal.rsi
+    sprite: Clothing/Eyes/Goggles/thermal.rsi
   - type: ClothingGrantComponent
     component:
     - type: ThermalVision
@@ -87,9 +87,9 @@
   description: Never before has seeing through walls felt so gentlepersonly.
   components:
   - type: Sprite
-    sprite: _White/Clothing/Eyes/Goggles/monocle_thermal.rsi
+    sprite: Clothing/Eyes/Goggles/monocle_thermal.rsi
   - type: Clothing
-    sprite: _White/Clothing/Eyes/Goggles/monocle_thermal.rsi
+    sprite: Clothing/Eyes/Goggles/monocle_thermal.rsi
 
 - type: entity
   parent: ClothingEyesThermalVisionGoggles
@@ -98,7 +98,7 @@
   components:
   - type: ChameleonClothing
     slot: [eyes]
-    default: ClothingEyesGlassesSunglasses
+    default: ClothingEyesThermalVisionGoggles
   - type: UserInterface
     interfaces:
       enum.ChameleonUiKey.Key:

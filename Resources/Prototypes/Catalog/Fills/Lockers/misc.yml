@@ -165,12 +165,10 @@
     - !type:EntSelector
       id: WeaponSniperMosin
       weight: 2
-    # WD EDIT START
     - !type:EntSelector
       id: ClothingEyesNightVisionGogglesSyndie
     - !type:EntSelector
       id: ClothingEyesThermalVisionGogglesSyndie
-    # WD EDIT END
 
 - type: entityTable
   id: MaintenanceLockerLoot

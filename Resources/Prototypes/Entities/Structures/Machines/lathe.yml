@@ -361,11 +361,9 @@
     - AnimalTranslator
     - MofficTranslatorImplanter
     - MofficTranslator
-      # WD EDIT START
-      - ClothingEyesNightVisionGoggles
-      - ClothingEyesNightVisionDiagnosticGoggles
-      - ClothingEyesThermalVisionGoggles
-    # WD EDIT END
+    - ClothingEyesNightVisionGoggles
+    - ClothingEyesNightVisionDiagnosticGoggles
+    - ClothingEyesThermalVisionGoggles
     - RCDAmmo #DeltaV
     - RCD #EE
     # Shitmed Change
@@ -889,7 +887,7 @@
     - ShuttleGunDusterCircuitboard
     - ShuttleGunFriendshipCircuitboard
     - ShuttleGunPerforatorCircuitboard
-    - ClothingEyesNightVisionSecurityGoggles # WWDP
+    - ClothingEyesNightVisionSecurityGoggles
     - ShuttleGunSvalinnMachineGunCircuitboard
     - Signaller
     - SignalTrigger
@@ -1052,7 +1050,7 @@
     - ClothingEyesHudMedical # Nyano
     - ChemicalPayload # Nyano
     - SyringeCryostasis
-    - ClothingEyesNightVisionMedicalGoggles # WWDP
+    - ClothingEyesNightVisionMedicalGoggles
     # Shitmed Change
     - EnergyScalpel
     - EnergyCautery

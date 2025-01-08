@@ -2,6 +2,7 @@ using Content.Shared.Clothing.Components;
 using Content.Shared.Inventory.Events;
 using Robust.Shared.Serialization.Manager;
 using Content.Shared.Tag;
+using Robust.Shared.Timing;
 
 namespace Content.Shared.SimpleStation14.Clothing;
 
@@ -10,6 +11,7 @@ public sealed class ClothingGrantingSystem : EntitySystem
     [Dependency] private readonly IComponentFactory _componentFactory = default!;
     [Dependency] private readonly ISerializationManager _serializationManager = default!;
     [Dependency] private readonly TagSystem _tagSystem = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
 
     public override void Initialize()
     {
@@ -24,13 +26,14 @@ public sealed class ClothingGrantingSystem : EntitySystem
 
     private void OnCompEquip(EntityUid uid, ClothingGrantComponentComponent component, GotEquippedEvent args)
     {
-        if (!TryComp<ClothingComponent>(uid, out var clothing)) return;
+        if (!_timing.IsFirstTimePredicted || _timing.ApplyingState
+            || !TryComp<ClothingComponent>(uid, out var clothing)
+            || !clothing.Slots.HasFlag(args.SlotFlags))
+            return;
 
-        if (!clothing.Slots.HasFlag(args.SlotFlags)) return;
-
-        if (component.Components.Count > 1)
+        if (component.Components.Count > 8)
         {
-            Logger.Error("Although a component registry supports multiple components, we cannot bookkeep more than 1 component for ClothingGrantComponent at this time.");
+            Logger.Error("Although a component registry supports multiple components, we cannot bookkeep more than 8 component for ClothingGrantComponent at this time.");
             return;
         }
 
@@ -46,9 +49,9 @@ public sealed class ClothingGrantingSystem : EntitySystem
             var temp = (object) newComp;
             _serializationManager.CopyTo(data.Component, ref temp);
             EntityManager.AddComponent(args.Equipee, (Component)temp!);
-
-            component.IsActive = true;
         }
+
+        component.IsActive = true;
     }
 
     private void OnCompUnequip(EntityUid uid, ClothingGrantComponentComponent component, GotUnequippedEvent args)
@@ -64,7 +67,6 @@ public sealed class ClothingGrantingSystem : EntitySystem
 
         component.IsActive = false;
     }
-
 
     private void OnTagEquip(EntityUid uid, ClothingGrantTagComponent component, GotEquippedEvent args)
     {
