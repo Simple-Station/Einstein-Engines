@@ -9434,3 +9434,12 @@ Entries:
   id: 6648
   time: '2025-01-08T06:56:46.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1460
+- author: Skubman
+  changes:
+    - type: Tweak
+      message: >-
+        The news article title character limit has been increased from 25 to 50
+        characters, and news content from 2048 to 2560 characters.
+  id: 6649
+  time: '2025-01-08T06:58:05.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1447
