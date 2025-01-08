@@ -617,10 +617,6 @@
       materialRequirements:
         Steel: 1
         Cable: 2
-    - type: ReverseEngineering # Delta
-      difficulty: 3
-      recipes:
-        - CrewMonitoringServerMachineCircuitboard
 
 - type: entity
   id: CryoPodMachineCircuitboard
@@ -649,7 +645,7 @@
     - type: Sprite
       state: medical
     - type: MachineBoard
-      prototype: chem_master
+      prototype: ChemMaster
       requirements:
         Capacitor: 1
       materialRequirements:
@@ -1237,6 +1233,21 @@
       - MicrowaveMachineBoard
 
 - type: entity
+  id: SyndicateMicrowaveMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: donk co. microwave machine board
+  components:
+    - type: Sprite
+      state: service
+    - type: MachineBoard
+      prototype: SyndicateMicrowave
+      requirements:
+        Capacitor: 1
+      materialRequirements:
+        Glass: 2
+        Cable: 2
+
+- type: entity
   id: FatExtractorMachineCircuitboard
   parent: BaseMachineCircuitboard
   name: lipid extractor machine board
@@ -1592,6 +1603,23 @@
 
 - type: entity
   parent: BaseMachineCircuitboard
+  id: StationAnchorCircuitboard
+  name: station anchor machine board
+  description: A machine printed circuit board for a station anchor.
+  components:
+  - type: MachineBoard
+    prototype: StationAnchor
+    requirements:
+      Capacitor: 4
+      MatterBin: 3
+    materialRequirements:
+      Steel: 10
+      Glass: 5
+      CableHV: 8
+      Uranium: 2
+
+- type: entity
+  parent: BaseMachineCircuitboard
   id: ReagentGrinderIndustrialMachineCircuitboard
   name: industrial reagent grinder machine board
   components:
@@ -1641,21 +1669,3 @@
       materialRequirements:
         Steel: 5
         Cable: 1
-    - type: ReverseEngineering # Nyano
-      difficulty: 2
-      recipes:
-      - TraversalDistorterMachineCircuitboard
-
-- type: entity
-  id: MedicalBiofabMachineBoard
-  parent: BaseMachineCircuitboard
-  name: medical biofab machine board
-  description: A machine printed circuit board for a medical biofab.
-  components:
-    - type: Sprite
-      state: medical
-    - type: MachineBoard
-      prototype: MedicalBiofabricator
-      requirements:
-        MatterBin: 2
-        Manipulator: 2

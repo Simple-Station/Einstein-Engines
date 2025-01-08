@@ -28,7 +28,7 @@ HyperlinkBookAtmos: BookAtmosDistro
 HyperlinkBookBartending: BookBartendersManual
 HyperlinkBookBotany: BookLeafLoversSecret
 HyperlinkBookChemistry: BookChemicalCompendium
-HyperlinkBookCooking: BookChefGaming
+HyperlinkBookCooking: BookHowToCookForFortySpaceman
 HyperlinkBookGlimmer: BookScientistsGuidebook
 HyperlinkBookHacking: BookEngineersHandbook
 HyperlinkBookMedical: BookMedicalReferenceBook
@@ -117,3 +117,6 @@ SophicScribe: SophicScribeSpawner
 
 # 2024-11-16
 GlassBoxLaser: null #Captain's Laser was moved to Loadouts.
+
+# 2024-12-22
+VendingMachineRestockSalvageEquipment: null

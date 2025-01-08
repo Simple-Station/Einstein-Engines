@@ -1,27 +1,34 @@
-- type: statusIcon
+- type: jobIcon
   parent: JobIcon
   id: JobIconMedicalBorg
   icon:
     sprite: /Textures/DeltaV/Interface/Misc/job_icons.rsi
     state: MedicalBorg
 
-- type: statusIcon
+- type: jobIcon
   parent: JobIcon
   id: JobIconChiefJustice
   icon:
     sprite: /Textures/DeltaV/Interface/Misc/job_icons.rsi
     state: ChiefJustice
 
-- type: statusIcon
+- type: jobIcon
   parent: JobIcon
   id: JobIconClerk
   icon:
     sprite: /Textures/DeltaV/Interface/Misc/job_icons.rsi
     state: Clerk
 
-- type: statusIcon
+- type: jobIcon
   parent: JobIcon
   id: JobIconProsecutor
   icon:
     sprite: /Textures/DeltaV/Interface/Misc/job_icons.rsi
     state: Prosecutor #need prosecutor
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconAdminAssitant
+  icon:
+    sprite: /Textures/DeltaV/Interface/Misc/job_icons.rsi
+    state: AdminAssistant

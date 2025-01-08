@@ -24,3 +24,7 @@ glimmer-monitor-program-name = Glimmer Monitor
 glimmer-monitor-current-glimmer = Current Glimmer: {$glimmer}Ψ
 glimmer-monitor-interval = Interval
 glimmer-monitor-sync = Sync
+
+astro-nav-program-name = AstroNav
+
+med-tek-program-name = MedTek

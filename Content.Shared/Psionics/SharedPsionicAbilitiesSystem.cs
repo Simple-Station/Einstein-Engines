@@ -147,7 +147,8 @@ namespace Content.Shared.Abilities.Psionics
             var query = EntityQueryEnumerator<PsionicComponent>();
             while (query.MoveNext(out var uid, out var component))
             {
-                if (_mobState.IsDead(uid))
+                if (_mobState.IsDead(uid)
+                    || HasComp<PsionicInsulationComponent>(uid))
                     continue;
 
                 component.ManaAccumulator += frameTime;
@@ -159,6 +160,9 @@ namespace Content.Shared.Abilities.Psionics
 
                 if (component.Mana > component.MaxMana)
                     component.Mana = component.MaxMana;
+
+                if (component.Mana < 0)
+                    component.Mana = 0;
 
                 if (component.Mana < component.MaxMana)
                 {

@@ -20,6 +20,17 @@
         Heat: 0.80
   - type: ExplosionResistance
     damageCoefficient: 0.90
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 9.6 # Assuming a level 3 bulletproof vest weighs 2.4kg
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
 
 #Alternate / slim basic armor vest
 - type: entity
@@ -54,6 +65,35 @@
         Caustic: 0.9
   - type: ExplosionResistance
     damageCoefficient: 0.9
+  - type: GroupExamine
+
+- type: entity
+  parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing, ClothingOuterEVASuitBase]
+  id: ClothingOuterArmorSwat
+  name: swat suit
+  description: Composed of semi-flexible polycarbonate, reinforced materials, and integrated ballistic plating, it offers exceptional protection against melee, bullet, and environmental threats, ensuring officers remain combat-ready in the harshest conditions.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Armor/swat.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Armor/swat.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.6
+        Heat: 0.85
+        Radiation: 0.75
+        Caustic: 0.85
+  - type: ExplosionResistance
+    damageCoefficient: 0.50
+  - type: ClothingSpeedModifier # Burdensome for running, but perfect for speedy gliding, even though running is still probably better
+    walkModifier: 0.9
+    sprintModifier: 0.7
   - type: GroupExamine
 
 - type: entity

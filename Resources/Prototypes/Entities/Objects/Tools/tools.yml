@@ -65,6 +65,7 @@
       Steel: 100
   - type: StaticPrice
     price: 30
+  # Shitmed Change
   - type: Retractor
     speed: 0.35
   - type: Hemostat
@@ -146,6 +147,7 @@
       Steel: 100
   - type: StaticPrice
     price: 30
+  # Shitmed Change
   - type: Retractor
     speed: 0.45
   - type: Tending
@@ -270,6 +272,7 @@
   - type: StaticPrice
     price: 22
   - type: Prying
+  # Shitmed Change
   - type: Tweezers
     speed: 0.55
   - type: SurgeryTool
@@ -425,7 +428,7 @@
   - type: Tool
     qualities:
       - Screwing
-    speed: 1.5
+    speedModifier: 1.5
     useSound: /Audio/Items/drill_use.ogg
   - type: MultipleTool
     statusShowBehavior: true
@@ -628,7 +631,7 @@
   - type: Tool
     qualities:
       - Screwing
-    speed: 1.2 # Kept for future adjustments. Currently 1.2x for balance
+    speedModifier: 1.2 # Kept for future adjustments. Currently 1.2x for balance
     useSound: /Audio/Items/drill_use.ogg
   - type: ToolTileCompatible
   - type: MultipleTool

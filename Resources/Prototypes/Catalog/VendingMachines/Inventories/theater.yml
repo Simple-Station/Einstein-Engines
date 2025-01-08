@@ -88,6 +88,50 @@
     ClothingShoesBootsCowboyBlack: 1
     ClothingShoesBootsCowboyWhite: 1
     ClothingMaskNeckGaiterRed: 2
+    ClothingUniformJumpskirtPerformer: 2
+    ClothingShoesBootsPerformer: 2
+    ClothingNeckCloakMoth: 2
+    ClothingUniformJumpskirtJanimaid: 2
+    ClothingNeckCloakVoid: 2
+    ClothingHeadBandRed: 1
+    ClothingHeadHatPirate: 1
+    ClothingOuterCoatPirate: 1
+    ClothingUniformJumpsuitPirate: 1
+    ClothingShoesBootsLaceup: 2
+    FoamCutlass: 2
+    ClothingHeadSafari: 2 # Frontier
+    ClothingUniformJumpsuitSafari: 2 # Frontier
+    ClothingUniformRandomArmlessNoSkirt: 6 # Frontier
+    ClothingUniformRandomArmless: 6 # Frontier
+    ClothingUniformRandomStandard: 6 # Frontier
+    ClothingUniformRandomBra: 6 # Frontier
+    ClothingUniformRandomShorts: 6 # Frontier
+    ClothingUniformRandomShirt: 6 # Frontier
+    ClothingHandsGlovesBoxingRed: 2
+    ClothingHandsGlovesBoxingBlue: 2
+    ClothingHandsGlovesBoxingYellow: 2
+    ClothingHandsGlovesBoxingGreen: 2
+    UniformShortsRed: 4
+    UniformShortsRedWithTop: 4
+    ClothingBackpackClownFilled: 2
+    ClothingBackpackSatchelClown: 2
+    ClothingBackpackDuffelClown: 2
+    ClothingMaskClown: 2
+    ClothingShoesClown: 2
+    ClothingUniformJumpsuitClown: 2
+    RubberStampClown: 1
+    ClothingBackpackMime: 2
+    ClothingBackpackSatchelMime: 2
+    ClothingBackpackDuffelMime: 2
+    ClothingHeadHatMimesoft: 2
+    ClothingMaskMime: 2
+    ClothingUniformJumpsuitMime: 2
+    ClothingUniformJumpskirtMime: 2
+    ClothingBeltSuspenders: 2
+    RubberStampMime: 1
+  contrabandInventory: # Frontier - Hidden inventory
+    ClothingHeadHatMimesoftFlipped: 1
+    BarberScissors: 1
     ClothingNeckBellCollar: 2
     ClothingOuterUnathiRobe: 1
   emaggedInventory:

@@ -4,6 +4,7 @@
   roundStart: true # I'll kill these issues somehow.
   prototype: MobArachne
   sprites: MobArachneSprites
+  defaultSkinTone: "#c0967f"
   markingLimits: MobArachneMarkingLimits
   dollPrototype: MobArachneDummy
   skinColoration: HumanToned
@@ -48,6 +49,7 @@
   id: MobArachneSprites
   sprites:
     Head: MobHumanHead
+    Face: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking
