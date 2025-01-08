@@ -52,6 +52,22 @@ job-name-boxer = Boxer
 job-name-zookeeper = Zookeeper
 job-name-visitor = Visitor
 
+# unused jobs
+# these are required for the agent ID job icon tooltips
+# I am keeping them for roleplaying opportunities
+job-name-geneticist = Geneticist
+job-name-no-id = No ID
+job-name-prisoner = Prisoner
+job-name-syndicate = Syndicate
+job-name-unknown = Unknown
+job-name-virologist = Virologist
+job-name-zombie = Zombie
+
+# Job titles
+job-title-visitor = Visitor
+job-title-cluwne = Cluwne
+job-title-universal = Universal
+
 # Role timers - Make these alphabetical or I cut you
 JobAtmosphericTechnician = Atmospheric Technician
 JobBartender = Bartender

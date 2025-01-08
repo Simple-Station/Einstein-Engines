@@ -9,6 +9,7 @@ using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 
@@ -27,6 +28,7 @@ namespace Content.Server.Preferences.Managers
         [Dependency] private readonly IDependencyCollection _dependencies = default!;
         [Dependency] private readonly ILogManager _log = default!;
         [Dependency] private readonly UserDbDataManager _userDb = default!;
+        [Dependency] private readonly IPrototypeManager _protos = default!;
 
         // Cache player prefs on the server so we don't need as much async hell related to them.
         private readonly Dictionary<NetUserId, PlayerPrefData> _cachedPlayerPrefs =
@@ -52,7 +54,7 @@ namespace Content.Server.Preferences.Managers
 
             if (!_cachedPlayerPrefs.TryGetValue(userId, out var prefsData) || !prefsData.PrefsLoaded)
             {
-                Logger.WarningS("prefs", $"User {userId} tried to modify preferences before they loaded.");
+                _sawmill.Error($"User {userId} tried to modify preferences before they loaded.");
                 return;
             }
 
@@ -219,6 +221,17 @@ namespace Content.Server.Preferences.Managers
                 MaxCharacterSlots = MaxCharacterSlots
             };
             _netManager.ServerSendMessage(msg, session.Channel);
+        }
+
+        public void SanitizeData(ICommonSession session)
+        {
+            // This is a separate step from the actual database load.
+            // Sanitizing preferences requires play time info due to loadouts.
+            // And play time info is loaded concurrently from the DB with preferences.
+            var data = _cachedPlayerPrefs[session.UserId];
+            DebugTools.Assert(data.Prefs != null);
+            data.Prefs = SanitizePreferences(session, data.Prefs, _dependencies);
+            _sawmill.Debug("here");
         }
 
         public void OnClientDisconnected(ICommonSession session)

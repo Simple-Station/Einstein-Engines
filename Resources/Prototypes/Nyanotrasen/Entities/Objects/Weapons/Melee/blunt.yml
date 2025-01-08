@@ -10,7 +10,7 @@
   - type: Item
     size: Normal
   - type: MeleeWeapon
-    attackRate: 0.75
+    attackRate: 1.3333
     range: 1.75
     damage:
       types:
@@ -44,7 +44,7 @@
     sprite: Nyanotrasen/Objects/Weapons/Melee/shinai.rsi
     state: icon
   - type: MeleeWeapon
-    attackRate: 1.25
+    attackRate: .8
     range: 1.75
     bluntStaminaDamageFactor: 2.0
     damage:

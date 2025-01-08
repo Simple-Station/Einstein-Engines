@@ -21,7 +21,7 @@
   - type: Tool
     qualities:
       - Prying
-    speed: 1.5
+    speedModifier: 1.5
     useSound: /Audio/Items/jaws_pry.ogg
   - type: Prying
     pryPowered: true
@@ -44,14 +44,14 @@
         changeSound: /Audio/Items/change_jaws.ogg
   - type: MeleeWeapon
     wideAnimationRotation: 90
-    attackRate: 0.85
+    attackRate: 1.17
     range: 1.65
     damage:
       types:
         Blunt: 10
         Slash: 2
     bluntStaminaDamageFactor: 2.0
-    heavyRateModifier: 0.8
+    heavyRateModifier: 1.25
     heavyDamageBaseModifier: 1.5
     heavyStaminaCost: 5
     maxTargets: 1
@@ -86,7 +86,7 @@
   - type: Tool
     qualities:
       - Prying
-    speed: 3.0
+    speedModifier: 3.0
   - type: MultipleTool
     entries:
       - behavior: Prying

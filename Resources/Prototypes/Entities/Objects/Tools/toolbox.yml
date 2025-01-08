@@ -21,7 +21,7 @@
   - type: Item
     size: Ginormous
   - type: MeleeWeapon
-    attackRate: 0.9
+    attackRate: 1.1
     range: 1.75
     damage:
       types:

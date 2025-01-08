@@ -8,13 +8,15 @@
     tags:
     - FireAxe
   - type: Sharp
+  - type: Execution
+    doAfterDuration: 4.0
   - type: Sprite
     sprite: Objects/Weapons/Melee/fireaxe.rsi
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: 135
     swingLeft: true
-    attackRate: 0.75
+    attackRate: 1.3333
     damage:
       types:
         # axes are kinda like sharp hammers, you know?
@@ -57,6 +59,7 @@
     stealGroup: FireAxe
   - type: IgniteOnMeleeHit
     fireStacks: -4
+  # Shitmed Change
   - type: Scalpel
     speed: 0.3
   - type: BoneSaw

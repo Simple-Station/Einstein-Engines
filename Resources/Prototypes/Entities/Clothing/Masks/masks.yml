@@ -89,6 +89,17 @@
   - type: IngestionBlocker
 
 - type: entity
+  parent: ClothingMaskGasExplorer
+  id: ClothingMaskGasCaptainCombat
+  name: captain's combat gas mask
+  description: A military-grade gas mask that can be connected to an air supply, painted and outfitted with an emblem befitting its wearer. Issued only to the station's finest.
+  components:
+  - type: Sprite
+    sprite: Clothing/Mask/gascaptaincombat.rsi
+  - type: Clothing
+    sprite: Clothing/Mask/gascaptaincombat.rsi
+
+- type: entity
   parent: ClothingMaskGasAtmos
   id: ClothingMaskGasCentcom
   name: CentCom gas mask
@@ -561,6 +572,16 @@
     tags:
     - WhitelistChameleon
     - IPCMaskWearable # Estacao Pirata - IPCs
+
+- type: entity
+  parent: ClothingMaskNeckGaiter
+  id: ClothingMaskNeckGaiterWhite
+  name: neck gaiter
+  components:
+  - type: Sprite
+    sprite: Clothing/Mask/neckgaiterwhite.rsi
+  - type: Clothing
+    sprite: Clothing/Mask/neckgaiterwhite.rsi
 
 - type: entity
   parent: ClothingMaskNeckGaiter

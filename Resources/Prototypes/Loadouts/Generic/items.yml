@@ -766,3 +766,63 @@
   customColorTint: true
   items:
     - DrinkVacuumFlask
+
+- type: loadout
+  id: LoadoutItemCaneBlind
+  category: Items
+  cost: 0 # It shouldnt cost points to be able to function.
+  items:
+    - WhiteCane
+
+# Pets
+- type: loadout
+  id: LoadoutItemPetMouse
+  category: Items
+  cost: 2
+  canBeHeirloom: true
+  items:
+    - MobMousePet
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPets
+  functions:
+    - !type:LoadoutMakeFollower
+
+- type: loadout
+  id: LoadoutItemPetHamster
+  category: Items
+  cost: 2
+  canBeHeirloom: true
+  items:
+    - MobHamsterPet
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPets
+  functions:
+    - !type:LoadoutMakeFollower
+
+- type: loadout
+  id: LoadoutItemPetMothroach
+  category: Items
+  cost: 2
+  canBeHeirloom: true
+  items:
+    - MobMothroachPet
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPets
+  functions:
+    - !type:LoadoutMakeFollower
+
+- type: loadout
+  id: LoadoutItemPetCockroach
+  category: Items
+  cost: 2
+  canBeHeirloom: true
+  items:
+    - MobCockroachPet
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPets
+  functions:
+    - !type:LoadoutMakeFollower

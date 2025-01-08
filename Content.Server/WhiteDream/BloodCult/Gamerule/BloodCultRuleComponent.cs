@@ -1,4 +1,4 @@
-﻿using Content.Server.NPC.Components;
+﻿using Content.Shared.NPC.Prototypes;
 using Content.Shared.WhiteDream.BloodCult.BloodCultist;
 using Content.Shared.WhiteDream.BloodCult.Constructs;
 using Robust.Shared.Prototypes;
@@ -26,8 +26,20 @@ public sealed partial class BloodCultRuleComponent : Component
     [DataField]
     public int PentagramThreshold = 8;
 
+    [DataField]
+    public int RendingRunePlacementsAmount = 3;
+
     [ViewVariables(VVAccess.ReadOnly)]
     public bool LeaderSelected;
+
+    /// <summary>
+    ///     If no rending rune markers were placed on the map, players will be able to place these runes anywhere on the map
+    ///     but no more than <see cref="RendingRunePlacementsAmount">total available</see>.
+    /// </summary>
+    [DataField]
+    public bool EmergencyMarkersMode;
+
+    public int EmergencyMarkersCount;
 
     /// <summary>
     ///     The entityUid of body which should be sacrificed.

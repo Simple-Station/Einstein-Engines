@@ -1,7 +1,7 @@
 - type: trait
   id: SignLanguage
   category: TraitsSpeechLanguages
-  points: 0
+  points: -2
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsLanguagesBasic
@@ -79,7 +79,7 @@
 - type: trait
   id: ValyrianStandard
   category: TraitsSpeechLanguages
-  points: 1
+  points: -1
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsLanguagesBasic
@@ -93,7 +93,7 @@
 - type: trait
   id: Azaziba
   category: TraitsSpeechLanguages
-  points: 1
+  points: -1
   requirements:
     - !type:CharacterSpeciesRequirement
       species:

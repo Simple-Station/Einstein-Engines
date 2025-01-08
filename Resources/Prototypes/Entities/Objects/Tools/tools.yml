@@ -31,7 +31,7 @@
     - state: cutters-cutty-thingy
   - type: MeleeWeapon
     wideAnimationRotation: -90
-    attackRate: 0.9
+    attackRate: 1.1
     range: 1.6
     damage:
       types:
@@ -65,6 +65,7 @@
       Steel: 100
   - type: StaticPrice
     price: 30
+  # Shitmed Change
   - type: Retractor
     speed: 0.35
   - type: Hemostat
@@ -114,7 +115,7 @@
     storedRotation: -90
   - type: MeleeWeapon
     wideAnimationRotation: -90
-    attackRate: 1.35
+    attackRate: .74
     damage:
       types:
         Piercing: 6
@@ -146,6 +147,7 @@
       Steel: 100
   - type: StaticPrice
     price: 30
+  # Shitmed Change
   - type: Retractor
     speed: 0.45
   - type: Tending
@@ -190,7 +192,7 @@
       state: storage
   - type: MeleeWeapon
     wideAnimationRotation: 135
-    attackRate: 0.9
+    attackRate: 1.1
     range: 1.6
     damage:
       types:
@@ -248,7 +250,7 @@
       state: storage
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.25
+    attackRate: .8
     damage:
       types:
         Blunt: 6
@@ -270,6 +272,7 @@
   - type: StaticPrice
     price: 22
   - type: Prying
+  # Shitmed Change
   - type: Tweezers
     speed: 0.55
   - type: SurgeryTool
@@ -312,7 +315,7 @@
     - state: green-unlit
       shader: unshaded
   - type: MeleeWeapon
-    attackRate: 0.75
+    attackRate: 1.3333
     damage:
       types:
         Shock: 2
@@ -425,7 +428,7 @@
   - type: Tool
     qualities:
       - Screwing
-    speed: 1.5
+    speedModifier: 1.5
     useSound: /Audio/Items/drill_use.ogg
   - type: MultipleTool
     statusShowBehavior: true
@@ -456,7 +459,7 @@
     price: 100
   - type: MeleeWeapon
     wideAnimationRotation: -90
-    attackRate: 0.9
+    attackRate: 1.1
     range: 1.4
     damage:
       types:
@@ -628,7 +631,7 @@
   - type: Tool
     qualities:
       - Screwing
-    speed: 1.2 # Kept for future adjustments. Currently 1.2x for balance
+    speedModifier: 1.2 # Kept for future adjustments. Currently 1.2x for balance
     useSound: /Audio/Items/drill_use.ogg
   - type: ToolTileCompatible
   - type: MultipleTool
@@ -685,7 +688,7 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: 45
-    attackRate: 0.8
+    attackRate: 1.25
     range: 1.75
     damage:
       types:
@@ -738,7 +741,7 @@
     - Belt
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 0.9
+    attackRate: 1.1
     damage:
       types:
         Blunt: 7

@@ -6,6 +6,7 @@ using Content.Server.GameTicking.Rules;
 using Content.Server.Ghost.Roles;
 using Content.Server.Ghost.Roles.Components;
 using Content.Server.Mind;
+using Content.Server.Objectives;
 using Content.Server.Preferences.Managers;
 using Content.Server.Roles;
 using Content.Server.Roles.Jobs;
@@ -17,6 +18,7 @@ using Content.Shared.GameTicking.Components;
 using Content.Shared.Ghost;
 using Content.Shared.Humanoid;
 using Content.Shared.Players;
+using Content.Shared.Whitelist;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
 using Robust.Server.Player;
@@ -40,6 +42,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
     [Dependency] private readonly RoleSystem _role = default!;
     [Dependency] private readonly StationSpawningSystem _stationSpawning = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
+    [Dependency] private readonly EntityWhitelistSystem _entityWhitelist = default!;
 
     // arbitrary random number to give late joining some mild interest.
     public const float LateJoinRandomChance = 0.5f;
@@ -50,6 +53,8 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         base.Initialize();
 
         SubscribeLocalEvent<GhostRoleAntagSpawnerComponent, TakeGhostRoleEvent>(OnTakeGhostRole);
+
+        SubscribeLocalEvent<AntagSelectionComponent, ObjectivesTextGetInfoEvent>(OnObjectivesTextGetInfo);
 
         SubscribeLocalEvent<RulePlayerSpawningEvent>(OnPlayerSpawning);
         SubscribeLocalEvent<RulePlayerJobsAssignedEvent>(OnJobsAssigned);
@@ -174,7 +179,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
             return;
 
         var players = _playerManager.Sessions
-            .Where(x => GameTicker.PlayerGameStatuses[x.UserId] == PlayerGameStatus.JoinedGame)
+            .Where(x => GameTicker.PlayerGameStatuses.TryGetValue(x.UserId, out var status) && status == PlayerGameStatus.JoinedGame)
             .ToList();
 
         ChooseAntags((uid, component), players);
@@ -402,19 +407,20 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         if (!def.AllowNonHumans && !HasComp<HumanoidAppearanceComponent>(entity))
             return false;
 
-        if (def.Whitelist != null)
-        {
-            if (!def.Whitelist.IsValid(entity.Value))
-                return false;
-        }
-
-        if (def.Blacklist != null)
-        {
-            if (def.Blacklist.IsValid(entity.Value))
-                return false;
-        }
+        if (_entityWhitelist.IsWhitelistFail(def.Whitelist, entity.Value)
+            || _entityWhitelist.IsBlacklistPass(def.Blacklist, entity.Value))
+            return false;
 
         return true;
+    }
+
+    private void OnObjectivesTextGetInfo(Entity<AntagSelectionComponent> ent, ref ObjectivesTextGetInfoEvent args)
+    {
+        if (ent.Comp.AgentName is not {} name)
+            return;
+
+        args.Minds = ent.Comp.SelectedMinds;
+        args.AgentName = Loc.GetString(name);
     }
 }
 

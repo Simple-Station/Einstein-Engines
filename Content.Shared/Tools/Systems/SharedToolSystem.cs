@@ -24,7 +24,7 @@ public abstract partial class SharedToolSystem : EntitySystem
     [Dependency] private   readonly SharedAudioSystem _audioSystem = default!;
     [Dependency] private   readonly SharedDoAfterSystem _doAfterSystem = default!;
     [Dependency] protected readonly SharedInteractionSystem InteractionSystem = default!;
-    [Dependency] protected readonly SharedItemToggleSystem ItemToggle = default!;
+    [Dependency] protected readonly ItemToggleSystem ItemToggle = default!;
     [Dependency] private   readonly SharedMapSystem _maps = default!;
     [Dependency] private   readonly SharedPopupSystem _popup = default!;
     [Dependency] protected readonly SharedSolutionContainerSystem SolutionContainerSystem = default!;
@@ -32,6 +32,9 @@ public abstract partial class SharedToolSystem : EntitySystem
     [Dependency] private   readonly TileSystem _tiles = default!;
     [Dependency] private   readonly TurfSystem _turfs = default!;
     [Dependency] protected readonly SharedSolutionContainerSystem SolutionContainer = default!;
+
+    public const string CutQuality = "Cutting";
+    public const string PulseQuality = "Pulsing";
 
     public override void Initialize()
     {
@@ -138,8 +141,8 @@ public abstract partial class SharedToolSystem : EntitySystem
         var doAfterArgs = new DoAfterArgs(EntityManager, user, delay / toolComponent.SpeedModifier, toolEvent, tool, target: target, used: tool)
         {
             BreakOnDamage = true,
-            BreakOnTargetMove = true,
-            BreakOnUserMove = true,
+            BreakOnMove = true,
+            BreakOnWeightlessMove = false,
             NeedHand = tool != user,
             AttemptFrequency = fuel > 0 ? AttemptFrequency.EveryTick : AttemptFrequency.Never
         };
@@ -217,7 +220,7 @@ public abstract partial class SharedToolSystem : EntitySystem
             return false;
 
         // check if the tool allows being used
-        var beforeAttempt = new ToolUseAttemptEvent(user);
+        var beforeAttempt = new ToolUseAttemptEvent(user, fuel);
         RaiseLocalEvent(tool, beforeAttempt);
         if (beforeAttempt.Cancelled)
             return false;
@@ -230,6 +233,9 @@ public abstract partial class SharedToolSystem : EntitySystem
 
         return !beforeAttempt.Cancelled;
     }
+
+    public void SetSpeedModifier(Entity<ToolComponent> ent, float value) =>
+        ent.Comp.SpeedModifier = value;
 
     #region DoAfterEvents
 
@@ -279,9 +285,7 @@ public abstract partial class SharedToolSystem : EntitySystem
         [DataField(required:true)]
         public NetCoordinates Coordinates;
 
-        private LatticeCuttingCompleteEvent()
-        {
-        }
+        private LatticeCuttingCompleteEvent() { }
 
         public LatticeCuttingCompleteEvent(NetCoordinates coordinates)
         {
@@ -296,4 +300,3 @@ public abstract partial class SharedToolSystem : EntitySystem
 public sealed partial class CableCuttingFinishedEvent : SimpleDoAfterEvent;
 
 #endregion
-

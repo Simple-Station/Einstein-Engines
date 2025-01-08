@@ -282,6 +282,13 @@ namespace Content.Shared.CCVar
             CVarDef.Create("game.soft_max_players", 30, CVar.SERVERONLY | CVar.ARCHIVE);
 
         /// <summary>
+        /// If a player gets denied connection to the server,
+        /// how long they are forced to wait before attempting to reconnect.
+        /// </summary>
+        public static readonly CVarDef<int> GameServerFullReconnectDelay =
+            CVarDef.Create("game.server_full_reconnect_delay", 30, CVar.SERVERONLY);
+
+        /// <summary>
         /// Whether or not panic bunker is currently enabled.
         /// </summary>
         public static readonly CVarDef<bool> PanicBunkerEnabled =
@@ -314,10 +321,10 @@ namespace Content.Shared.CCVar
             CVarDef.Create("game.panic_bunker.show_reason", false, CVar.SERVERONLY);
 
         /// <summary>
-        /// Minimum age of the account (from server's PoV, so from first-seen date) in minutes.
+        /// Minimum age of the account (from server's PoV, so from first-seen date) in hours.
         /// </summary>
         public static readonly CVarDef<int> PanicBunkerMinAccountAge =
-            CVarDef.Create("game.panic_bunker.min_account_age", 1440, CVar.SERVERONLY);
+            CVarDef.Create("game.panic_bunker.min_account_age", 24, CVar.SERVERONLY);
 
         /// <summary>
         /// Minimal overall played time.
@@ -337,6 +344,48 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<bool> BypassBunkerWhitelist =
             CVarDef.Create("game.panic_bunker.whitelisted_can_bypass", true, CVar.SERVERONLY);
+
+        /*
+         * TODO: Remove baby jail code once a more mature gateway process is established. This code is only being issued as a stopgap to help with potential tiding in the immediate future.
+         */
+
+        /// <summary>
+        /// Whether the baby jail is currently enabled.
+        /// </summary>
+        public static readonly CVarDef<bool> BabyJailEnabled  =
+            CVarDef.Create("game.baby_jail.enabled", false, CVar.NOTIFY | CVar.REPLICATED | CVar.SERVER);
+
+        /// <summary>
+        /// Show reason of disconnect for user or not.
+        /// </summary>
+        public static readonly CVarDef<bool> BabyJailShowReason =
+            CVarDef.Create("game.baby_jail.show_reason", false, CVar.SERVERONLY);
+
+        /// <summary>
+        /// Maximum age of the account (from server's PoV, so from first-seen date) in hours that can access baby
+        /// jailed servers.
+        /// </summary>
+        public static readonly CVarDef<int> BabyJailMaxAccountAge =
+            CVarDef.Create("game.baby_jail.max_account_age", 24, CVar.SERVERONLY);
+
+        /// <summary>
+        /// Maximum overall played time allowed to access baby jailed servers.
+        /// </summary>
+        public static readonly CVarDef<int> BabyJailMaxOverallHours =
+            CVarDef.Create("game.baby_jail.max_overall_hours", 2, CVar.SERVERONLY);
+
+        /// <summary>
+        /// A custom message that will be used for connections denied due to the baby jail.
+        /// If not empty, then will overwrite <see cref="BabyJailShowReason"/>
+        /// </summary>
+        public static readonly CVarDef<string> BabyJailCustomReason =
+            CVarDef.Create("game.baby_jail.custom_reason", string.Empty, CVar.SERVERONLY);
+
+        /// <summary>
+        /// Allow bypassing the baby jail if the user is whitelisted.
+        /// </summary>
+        public static readonly CVarDef<bool> BypassBabyJailWhitelist =
+            CVarDef.Create("game.baby_jail.whitelisted_can_bypass", true, CVar.SERVERONLY);
 
         /// <summary>
         /// Make people bonk when trying to climb certain objects like tables.
@@ -373,7 +422,7 @@ namespace Content.Shared.CCVar
         ///     How many traits a character can have at most.
         /// </summary>
         public static readonly CVarDef<int> GameTraitsMax =
-            CVarDef.Create("game.traits_max", 10, CVar.REPLICATED);
+            CVarDef.Create("game.traits_max", 14, CVar.REPLICATED);
 
         /// <summary>
         ///     How many points a character should start with.
@@ -381,6 +430,13 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<int> GameTraitsDefaultPoints =
             CVarDef.Create("game.traits_default_points", 10, CVar.REPLICATED);
 
+        /// <summary>
+        ///     Whether the game will SMITE people who used cheat engine to spawn with all of the traits.
+        ///     Illegal trait totals will still be logged even if this is disabled.
+        ///     If you are intending to decrease the trait points availability, or modify the costs of traits, consider temporarily disabling this.
+        /// </summary>
+        public static readonly CVarDef<bool> TraitsPunishCheaters =
+            CVarDef.Create("game.traits_punish_cheaters", true, CVar.REPLICATED);
 
         /// <summary>
         ///     Whether to allow characters to select loadout items.
@@ -919,6 +975,15 @@ namespace Content.Shared.CCVar
             CVarDef.Create("admin.server_ban_erase_player", false, CVar.ARCHIVE | CVar.SERVER | CVar.REPLICATED);
 
         /// <summary>
+        ///     Minimum players sharing a connection required to create an alert. -1 to disable the alert.
+        /// </summary>
+        /// <remarks>
+        ///     If you set this to 0 or 1 then it will alert on every connection, so probably don't do that.
+        /// </remarks>
+        public static readonly CVarDef<int> AdminAlertMinPlayersSharingConnection =
+            CVarDef.Create("admin.alert.min_players_sharing_connection", -1, CVar.SERVERONLY);
+
+        /// <summary>
         ///     Minimum explosion intensity to create an admin alert message. -1 to disable the alert.
         /// </summary>
         public static readonly CVarDef<int> AdminAlertExplosionMinIntensity =
@@ -977,6 +1042,15 @@ namespace Content.Shared.CCVar
         /// <seealso cref="AhelpAdminPrefixWebhook"/>
         public static readonly CVarDef<bool> AdminUseCustomNamesAdminRank =
             CVarDef.Create("admin.use_custom_names_admin_rank", true, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Determines whether admins count towards the total playercount when determining whether the server is over <see cref="SoftMaxPlayers"/>
+        ///     Ideally this should be used in conjuction with <see cref="AdminBypassPlayers"/>.
+        ///     This also applies to playercount limits in whitelist conditions
+        ///     If false, then admins will not be considered when checking whether the playercount is already above the soft player cap
+        /// </summary>
+        public static readonly CVarDef<bool> AdminsCountForMaxPlayers =
+            CVarDef.Create("admin.admins_count_for_max_players", false, CVar.SERVERONLY);
 
         /*
          * AHELP
@@ -1501,22 +1575,11 @@ namespace Content.Shared.CCVar
             CVarDef.Create("whitelist.enabled", false, CVar.REPLICATED);
 
         /// <summary>
-        ///     The loc string to display as a disconnect reason when someone is not whitelisted.
+        ///     Specifies the whitelist prototypes to be used by the server. This should be a comma-separated list of prototypes.
+        ///     If a whitelists conditions to be active fail (for example player count), the next whitelist will be used instead. If no whitelist is valid, the player will be allowed to connect.
         /// </summary>
-        public static readonly CVarDef<string> WhitelistReason =
-            CVarDef.Create("whitelist.reason", "whitelist-not-whitelisted", CVar.SERVERONLY);
-
-        /// <summary>
-        ///     If the playercount is below this number, the whitelist will not apply.
-        /// </summary>
-        public static readonly CVarDef<int> WhitelistMinPlayers =
-            CVarDef.Create("whitelist.min_players", 0, CVar.SERVERONLY);
-
-        /// <summary>
-        ///     If the playercount is above this number, the whitelist will not apply.
-        /// </summary>
-        public static readonly CVarDef<int> WhitelistMaxPlayers =
-            CVarDef.Create("whitelist.max_players", int.MaxValue, CVar.SERVERONLY);
+        public static readonly CVarDef<string> WhitelistPrototypeList =
+            CVarDef.Create("whitelist.prototype_list", "basicWhitelist", CVar.SERVERONLY);
 
         /*
          * VOTE
@@ -1637,7 +1700,7 @@ namespace Content.Shared.CCVar
         /// Whether the arrivals terminal should be on a planet map.
         /// </summary>
         public static readonly CVarDef<bool> ArrivalsPlanet =
-            CVarDef.Create("shuttle.arrivals_planet", true, CVar.SERVERONLY);
+            CVarDef.Create("shuttle.arrivals_planet", false, CVar.SERVERONLY);
 
         /// <summary>
         /// Whether the arrivals shuttle is enabled.
@@ -1978,7 +2041,7 @@ namespace Content.Shared.CCVar
         /// Disables all vision filters for species like Vulpkanin or Harpies. There are good reasons someone might want to disable these.
         /// </summary>
         public static readonly CVarDef<bool> NoVisionFilters =
-            CVarDef.Create("accessibility.no_vision_filters", false, CVar.CLIENTONLY | CVar.ARCHIVE);
+            CVarDef.Create("accessibility.no_vision_filters", true, CVar.CLIENTONLY | CVar.ARCHIVE);
 
         /*
          * CHAT
@@ -2027,6 +2090,9 @@ namespace Content.Shared.CCVar
 
         public static readonly CVarDef<bool> ChatFancyNameBackground =
             CVarDef.Create("chat.fancy_name_background", false, CVar.CLIENTONLY | CVar.ARCHIVE, "Toggles displaying a background under the speaking character's name.");
+
+        public static readonly CVarDef<int> ChatStackLastLines =
+            CVarDef.Create("chat.chatstack_last_lines", 1, CVar.CLIENTONLY | CVar.ARCHIVE, "How far into the chat history to look when looking for similiar messages to coalesce them.");
 
         /// <summary>
         /// A message broadcast to each player that joins the lobby.
@@ -2163,13 +2229,7 @@ namespace Content.Shared.CCVar
         ///     Don't show rules to localhost/loopback interface.
         /// </summary>
         public static readonly CVarDef<bool> RulesExemptLocal =
-            CVarDef.Create("rules.exempt_local", true, CVar.CLIENT);
-
-        /// <summary>
-        /// The next time the rules will popup for this client, expressed in minutes
-        /// </summary>
-        public static readonly CVarDef<string> RulesNextPopupTime =
-            CVarDef.Create("rules.next_popup_time", "Jan 1, 1997", CVar.CLIENTONLY | CVar.ARCHIVE);
+            CVarDef.Create("rules.exempt_local", false, CVar.SERVERONLY);
 
 
         /*
@@ -2795,6 +2855,17 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<bool> PresetAutoVoteEnabled =
             CVarDef.Create("vote.preset_autovote_enabled", true, CVar.SERVERONLY);
 
+        #region Psionics
+
+        /// <summary>
+        ///     When mindbroken, permanently eject the player from their own body, and turn their character into an NPC.
+        ///     Congratulations, now they *actually* aren't a person anymore.
+        ///     For people who complained that it wasn't obvious enough from the text that Mindbreaking is a form of Murder.
+        /// </summary>
+        public static readonly CVarDef<bool> ScarierMindbreaking =
+            CVarDef.Create("psionics.scarier_mindbreaking", false, CVar.SERVERONLY);
+        #endregion
+
         /// <summary>
         /// Set to true to enable the dynamic hostname system.
         /// Automatically updates the hostname to include current map and preset.
@@ -2802,5 +2873,28 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<bool> UseDynamicHostname =
             CVarDef.Create("game.use_dynamic_hostname", false, CVar.SERVERONLY);
+
+        #region SoftCrit
+
+        /// <summary>
+        ///     Used for basic Soft-Crit implementation. Entities are allowed to crawl when in crit, as this CVar intercepts the mover controller check for incapacitation,
+        ///     and prevents it from stopping movement if this CVar is set to true and the user is Crit but Not Dead. This is only for movement,
+        ///     you still can't stand up while crit, and you're still more or less helpless.
+        /// </summary>
+        public static readonly CVarDef<bool> AllowMovementWhileCrit =
+            CVarDef.Create("mobstate.allow_movement_while_crit", true, CVar.REPLICATED);
+
+        public static readonly CVarDef<bool> AllowTalkingWhileCrit =
+            CVarDef.Create("mobstate.allow_talking_while_crit", true, CVar.REPLICATED);
+
+        /// <summary>
+        ///     Currently does nothing because I would have to figure out WHERE I would even put this check, and the mover controller is fairly complicated.
+        ///     The goal is to make it so that attempting to move while in 'soft crit' can potentially cause further injury, causing you to die faster. Ideally there would be special
+        ///     actions that can be performed in soft crit, such as applying pressure to your own injuries to slow down the bleedout, or other varieties of "Will To Live".
+        /// </summary>
+        public static readonly CVarDef<bool> DamageWhileCritMove =
+            CVarDef.Create("mobstate.damage_while_crit_move", false, CVar.REPLICATED);
+
+        #endregion
     }
 }

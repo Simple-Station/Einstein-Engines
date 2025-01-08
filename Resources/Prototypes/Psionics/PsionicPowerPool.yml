@@ -1,0 +1,15 @@
+- type: weightedRandom
+  id: RandomPsionicPowerPool
+  weights:
+    MetapsionicPower: 1
+    DispelPower: 1
+    #TelegnosisPower: 1
+    PsionicRegenerationPower: 1
+    MassSleepPower: 0.3
+#    PsionicInvisibilityPower: 0.15
+    MindSwapPower: 0.15
+    TelepathyPower: 1
+    HealingWordPower: 0.85
+    ShadeskipPower: 0.15
+    TelekineticPulsePower: 0.15
+    PyrokineticFlare: 0.3

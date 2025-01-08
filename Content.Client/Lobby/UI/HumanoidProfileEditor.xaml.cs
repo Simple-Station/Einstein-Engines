@@ -95,7 +95,8 @@ namespace Content.Client.Lobby.UI
             IPlayerManager playerManager,
             IPrototypeManager prototypeManager,
             JobRequirementsManager requirements,
-            MarkingManager markings)
+            MarkingManager markings
+            )
         {
             RobustXamlLoader.Load(this);
             _cfgManager = cfgManager;
@@ -114,7 +115,8 @@ namespace Content.Client.Lobby.UI
             SaveButton.OnPressed += args => { Save?.Invoke(); };
             ResetButton.OnPressed += args =>
             {
-                SetProfile((HumanoidCharacterProfile?) _preferencesManager.Preferences?.SelectedCharacter,
+                SetProfile(
+                    (HumanoidCharacterProfile?) _preferencesManager.Preferences?.SelectedCharacter,
                     _preferencesManager.Preferences?.SelectedCharacterIndex);
             };
 
@@ -193,12 +195,11 @@ namespace Content.Client.Lobby.UI
 
             #endregion Species
 
-            #region Height
+            #region Height and Width
 
             var prototype = _species.Find(x => x.ID == Profile?.Species) ?? _species.First();
 
             UpdateHeightWidthSliders();
-            UpdateDimensions(SliderUpdate.Both);
 
             HeightSlider.OnValueChanged += _ => UpdateDimensions(SliderUpdate.Height);
             WidthSlider.OnValueChanged += _ => UpdateDimensions(SliderUpdate.Width);
@@ -492,7 +493,7 @@ namespace Content.Client.Lobby.UI
                 if (_flavorText != null)
                     return;
 
-                _flavorText = new FlavorText.FlavorText();
+                _flavorText = new();
                 _flavorText.OnFlavorTextChanged += OnFlavorTextChange;
                 _flavorTextEdit = _flavorText.CFlavorTextInput;
                 CTabContainer.AddTab(_flavorText, Loc.GetString("humanoid-profile-editor-flavortext-tab"));
@@ -763,14 +764,14 @@ namespace Content.Client.Lobby.UI
                 foreach (var job in jobs)
                 {
                     var jobContainer = new BoxContainer { Orientation = LayoutOrientation.Horizontal, };
-                    var selector = new RequirementsSelector { Margin = new Thickness(3f, 3f, 3f, 0f) };
+                    var selector = new RequirementsSelector { Margin = new(3f, 3f, 3f, 0f) };
 
                     var icon = new TextureRect
                     {
-                        TextureScale = new Vector2(2, 2),
+                        TextureScale = new(2, 2),
                         VerticalAlignment = VAlignment.Center
                     };
-                    var jobIcon = _prototypeManager.Index<StatusIconPrototype>(job.Icon);
+                    var jobIcon = _prototypeManager.Index<JobIconPrototype>(job.Icon);
                     icon.Texture = jobIcon.Icon.Frame0();
                     selector.Setup(items, job.LocalizedName, 200, job.LocalizedDescription, icon);
 
@@ -904,7 +905,7 @@ namespace Content.Client.Lobby.UI
                         TextureScale = new Vector2(2, 2),
                         VerticalAlignment = VAlignment.Center
                     };
-                    var jobIcon = _prototypeManager.Index<StatusIconPrototype>(job.Icon);
+                    var jobIcon = _prototypeManager.Index(job.Icon);
                     icon.Texture = jobIcon.Icon.Frame0();
                     selector.Setup(items, job.LocalizedName, 200, job.LocalizedDescription, icon);
 
@@ -1349,21 +1350,26 @@ namespace Content.Client.Lobby.UI
 
         private void UpdateHeightWidthSliders()
         {
+            if (Profile is null)
+                return;
+
             var species = _species.Find(x => x.ID == Profile?.Species) ?? _species.First();
 
             HeightSlider.MinValue = species.MinHeight;
             HeightSlider.MaxValue = species.MaxHeight;
-            HeightSlider.Value = Profile?.Height ?? species.DefaultHeight;
+            HeightSlider.SetValueWithoutEvent(Profile?.Height ?? species.DefaultHeight);
 
             WidthSlider.MinValue = species.MinWidth;
             WidthSlider.MaxValue = species.MaxWidth;
-            WidthSlider.Value = Profile?.Width ?? species.DefaultWidth;
+            WidthSlider.SetValueWithoutEvent(Profile?.Width ?? species.DefaultWidth);
 
             var height = MathF.Round(species.AverageHeight * HeightSlider.Value);
             HeightLabel.Text = Loc.GetString("humanoid-profile-editor-height-label", ("height", (int) height));
 
             var width = MathF.Round(species.AverageWidth * WidthSlider.Value);
             WidthLabel.Text = Loc.GetString("humanoid-profile-editor-width-label", ("width", (int) width));
+
+            UpdateDimensions(SliderUpdate.Both);
         }
 
         private enum SliderUpdate
@@ -1375,9 +1381,10 @@ namespace Content.Client.Lobby.UI
 
         private void UpdateDimensions(SliderUpdate updateType)
         {
-            var species = _species.Find(x => x.ID == Profile?.Species) ?? _species.First();
+            if (Profile == null)
+                return;
 
-            if (Profile == null) return;
+            var species = _species.Find(x => x.ID == Profile?.Species) ?? _species.First();
 
             var heightValue = Math.Clamp(HeightSlider.Value, species.MinHeight, species.MaxHeight);
             var widthValue = Math.Clamp(WidthSlider.Value, species.MinWidth, species.MaxWidth);
@@ -1391,7 +1398,6 @@ namespace Content.Client.Lobby.UI
             if (updateType == SliderUpdate.Width || updateType == SliderUpdate.Both)
                 if (ratio < 1 / sizeRatio || ratio > sizeRatio)
                     heightValue = widthValue * (ratio < 1 / sizeRatio ? (1 / sizeRatio) : sizeRatio);
-
 
             heightValue = Math.Clamp(heightValue, species.MinHeight, species.MaxHeight);
             widthValue = Math.Clamp(widthValue, species.MinWidth, species.MaxWidth);

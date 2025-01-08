@@ -1,5 +1,6 @@
 using Content.Shared.Customization.Systems;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.Manager;
 
 namespace Content.Shared.Clothing.Loadouts.Prototypes;
 
@@ -45,4 +46,19 @@ public sealed partial class LoadoutPrototype : IPrototype
 
     [DataField]
     public string GuideEntry { get; } = "";
+
+    [DataField(serverOnly: true)]
+    public LoadoutFunction[] Functions { get; private set; } = Array.Empty<LoadoutFunction>();
+}
+
+/// This serves as a hook for loadout functions to modify one or more entities upon spawning in.
+[ImplicitDataDefinitionForInheritors]
+public abstract partial class LoadoutFunction
+{
+    public abstract void OnPlayerSpawn(
+        EntityUid character,
+        EntityUid loadoutEntity,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager);
 }

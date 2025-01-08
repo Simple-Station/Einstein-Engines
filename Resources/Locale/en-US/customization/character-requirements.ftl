@@ -140,3 +140,11 @@ character-whitelist-requirement = You must{$inverted ->
     [true]{" "}not
     *[other]{""}
 } be whitelisted
+
+## CVar
+
+character-cvar-requirement = 
+    The server must{$inverted ->
+    [true]{" "}not
+    *[other]{""}
+} have [color={$color}]{$cvar}[/color] set to [color={$color}]{$value}[/color].

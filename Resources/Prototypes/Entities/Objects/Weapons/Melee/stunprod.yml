@@ -37,7 +37,7 @@
       types:
         Blunt: 7.5
     bluntStaminaDamageFactor: 2.0
-    heavyRateModifier: 0.8
+    heavyRateModifier: 1.25
     heavyDamageBaseModifier: 1.2
     animation: WeaponArcThrust
   - type: DamageOtherOnHit

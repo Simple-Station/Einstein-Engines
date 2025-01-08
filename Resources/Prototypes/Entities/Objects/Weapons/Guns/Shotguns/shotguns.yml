@@ -43,6 +43,25 @@
         ents: []
   - type: StaticPrice
     price: 500
+  - type: Execution
+  - type: MeleeWeapon
+    attackRate: 1.4
+    damage:
+      types:
+        Blunt: 10
+    bluntStaminaDamageFactor: 1.3333
+    swapKeys: true
+    disableHeavy: true
+    animation: WeaponArcThrust
+    wideAnimationRotation: 180
+    soundHit:
+      collection: MetalThud
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 2.5
+  - type: DamageOtherOnHit
+    staminaCost: 9.5
 
 - type: entity
   name: Bulldog
@@ -102,6 +121,25 @@
   - type: Appearance
   - type: StaticPrice
     price: 500
+  - type: Execution
+  - type: MeleeWeapon
+    attackRate: 1.4
+    damage:
+      types:
+        Blunt: 10
+    bluntStaminaDamageFactor: 1.3333
+    swapKeys: true
+    disableHeavy: true
+    animation: WeaponArcThrust
+    wideAnimationRotation: 180
+    soundHit:
+      collection: MetalThud
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 2.5
+  - type: DamageOtherOnHit
+    staminaCost: 9.5
 
 - type: entity
   name: antique Bulldog
@@ -136,6 +174,12 @@
     graph: ShotgunSawn
     node: start
     deconstructionTarget: null
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 8.5
+  - type: DamageOtherOnHit
+    staminaCost: 7.5
 
 - type: entity
   name: double-barreled shotgun
@@ -162,6 +206,13 @@
   - type: BallisticAmmoProvider
   - type: Wieldable
   - type: GunRequiresWield
+  - type: MeleeWeapon
+    attackRate: 1.4
+    damage:
+      types:
+        Blunt: 9
+  - type: DamageOtherOnHit
+    staminaCost: 8.0
 
 - type: entity
   parent: WeaponShotgunEnforcer
@@ -216,6 +267,13 @@
     graph: ShotgunSawn
     node: shotgunsawn
     deconstructionTarget: null
+  - type: MeleeWeapon
+    attackRate: 1.2
+    damage:
+      types:
+        Blunt: 7.5
+  - type: DamageOtherOnHit
+    staminaCost: 6
 
 - type: entity
   name: sawn-off shogun
@@ -255,6 +313,14 @@
     deconstructionTarget: null
   - type: StaticPrice
     price: 0
+  - type: MeleeWeapon
+    attackRate: 1.2
+    damage:
+      types:
+        Blunt: 7.5
+    wideAnimationRotation: 135
+  - type: DamageOtherOnHit
+    staminaCost: 5
 
 - type: entity
   name: blunderbuss

@@ -1,9 +1,14 @@
-{ pkgs ? (let lock = builtins.fromJSON (builtins.readFile ./flake.lock);
-in import (builtins.fetchTarball {
-  url =
-    "https://github.com/NixOS/nixpkgs/archive/${lock.nodes.nixpkgs.locked.rev}.tar.gz";
-  sha256 = lock.nodes.nixpkgs.locked.narHash;
-}) { }) }:
+{
+  pkgs ? (
+    let
+      lock = builtins.fromJSON (builtins.readFile ./flake.lock);
+    in
+    import (builtins.fetchTarball {
+      url = "https://github.com/NixOS/nixpkgs/archive/${lock.nodes.nixpkgs.locked.rev}.tar.gz";
+      sha256 = lock.nodes.nixpkgs.locked.narHash;
+    }) { }
+  ),
+}:
 
 let
   dependencies = with pkgs; [
@@ -40,9 +45,9 @@ let
     alsa-lib
     dbus
     at-spi2-core
-    cups
   ];
-in pkgs.mkShell {
+in
+pkgs.mkShell {
   name = "space-station-14-devshell";
   buildInputs = [ pkgs.gtk3 ];
   packages = dependencies;

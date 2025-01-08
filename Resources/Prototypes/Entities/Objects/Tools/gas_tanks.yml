@@ -33,13 +33,13 @@
     maxIntensity: 20
   - type: MeleeWeapon
     wideAnimationRotation: 45
-    attackRate: 0.8
+    attackRate: 1.25
     range: 1.75
     damage:
       types:
         Blunt: 8
     bluntStaminaDamageFactor: 2.5
-    heavyRateModifier: 0.8
+    heavyRateModifier: 1.25
     heavyDamageBaseModifier: 1.5
     heavyStaminaCost: 10
     maxTargets: 3
@@ -62,7 +62,7 @@
   - type: Tool
     qualities:
     - Rolling
-    speed: 0.6 # fairly unwieldly but nice round surface
+    speedModifier: 0.6 # fairly unwieldly but nice round surface
 
 - type: entity
   parent: GasTankRoundBase
