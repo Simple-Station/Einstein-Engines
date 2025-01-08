@@ -32,6 +32,9 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
     // no point in storing it on the comp
     private const int NotificationMaxLength = 64;
 
+    // The max length of the name and job title on the notification before being truncated.
+    private const int NotificationTitleMaxLength = 32;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -465,13 +468,19 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
                 HasComp<NanoChatCartridgeComponent>(loader.ActiveProgram)))
             return;
 
+        var title = "";
+        if (!String.IsNullOrEmpty(senderRecipient.JobTitle))
+        {
+            var titleRecipient = Truncate(Loc.GetString("nano-chat-new-message-title-recipient",
+                ("sender", senderName), ("jobTitle", senderRecipient.JobTitle)), NotificationTitleMaxLength, " \\[...\\]");
+            title = Loc.GetString("nano-chat-new-message-title", ("sender", titleRecipient));
+        }
+        else
+            title = Loc.GetString("nano-chat-new-message-title", ("sender", senderName));
+
         _cartridge.SendNotification(pdaUid,
-            !String.IsNullOrEmpty(senderRecipient.JobTitle)
-                ? Loc.GetString("nano-chat-new-message-title-job",
-                    ("sender", senderName), ("jobTitle", senderRecipient.JobTitle))
-                : Loc.GetString("nano-chat-new-message-title",
-                    ("sender", senderName)),
-            Loc.GetString("nano-chat-new-message-body", ("message", TruncateMessage(message.Content))),
+            title,
+            Loc.GetString("nano-chat-new-message-body", ("message", Truncate(message.Content, NotificationMaxLength, " [...]"))),
             loader);
     }
 
@@ -519,14 +528,12 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
     }
 
     /// <summary>
-    ///     Truncates a message to the notification maximum length.
+    ///     Truncates a string to a maximum length.
     /// </summary>
-    private static string TruncateMessage(string message)
-    {
-        return message.Length <= NotificationMaxLength
-            ? message
-            : message[..(NotificationMaxLength - 4)] + " [...]";
-    }
+    private static string Truncate(string text, int maxLength, string overflowText = "...") =>
+        text.Length <= maxLength
+            ? text
+            : text[..(maxLength - overflowText.Length)] + overflowText;
 
     private void OnUiReady(Entity<NanoChatCartridgeComponent> ent, ref CartridgeUiReadyEvent args)
     {
