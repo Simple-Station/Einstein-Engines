@@ -2,13 +2,15 @@ using System.Linq;
 using Content.Server.Chat.Systems;
 using Content.Server.Cuffs;
 using Content.Server.DoAfter;
+using Content.Shared.Cuffs.Components;
 using Content.Shared.DoAfter;
+using Content.Shared.Interaction;
 using Content.Shared.Speech.Muting;
 using Content.Shared.StatusEffect;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.WhiteDream.BloodCult.BloodCultist;
+using Content.Shared.WhiteDream.BloodCult.Spells;
 using Robust.Server.GameObjects;
-using Robust.Shared.Serialization;
 
 namespace Content.Server.WhiteDream.BloodCult.Items.ShadowShacklesAura;
 
@@ -34,7 +36,7 @@ public sealed class ShadowShacklesAuraSystem : EntitySystem
             return;
 
         var target = args.HitEntities.First();
-        if (uid == target || HasComp<BloodCultistComponent>(target))
+        if (uid == target || HasComp<BloodCultistComponent>(target) || !HasComp<CuffableComponent>(target))
             return;
 
         if (component.Speech != null)
@@ -45,10 +47,11 @@ public sealed class ShadowShacklesAuraSystem : EntitySystem
             args.User,
             component.Delay,
             new ShadowShacklesDoAfterEvent(),
-            target,
+            uid,
             target,
             uid)
         {
+            DistanceThreshold = SharedInteractionSystem.InteractionRange,
             BreakOnDamage = true,
             BreakOnMove = true,
         };
@@ -72,6 +75,3 @@ public sealed class ShadowShacklesAuraSystem : EntitySystem
         QueueDel(uid);
     }
 }
-
-[Serializable, NetSerializable]
-public sealed partial class ShadowShacklesDoAfterEvent : SimpleDoAfterEvent;
