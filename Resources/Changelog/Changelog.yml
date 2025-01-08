@@ -9443,3 +9443,10 @@ Entries:
   id: 6649
   time: '2025-01-08T06:58:05.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1447
+- author: aspiringLich
+  changes:
+    - type: Tweak
+      message: Some chemicals have been made more colorful and child-friendly.
+  id: 6650
+  time: '2025-01-08T07:06:22.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1461
