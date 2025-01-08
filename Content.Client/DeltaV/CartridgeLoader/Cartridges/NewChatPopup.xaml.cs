@@ -60,6 +60,7 @@ public sealed partial class NewChatPopup : DefaultWindow
     {
         var isValid = !string.IsNullOrWhiteSpace(NumberInput.Text) &&
                       !string.IsNullOrWhiteSpace(NameInput.Text) &&
+                      NumberInput.Text.Length == MaxNumberLength &&
                       uint.TryParse(NumberInput.Text, out _);
 
         CreateButton.Disabled = !isValid;

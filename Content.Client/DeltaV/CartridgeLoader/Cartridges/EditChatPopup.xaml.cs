@@ -13,9 +13,9 @@ public sealed partial class EditChatPopup : DefaultWindow
 
     // Used to see if the user input is different from the original data
     // to check if the user can submit
-    private string OriginalNumber = "";
-    private string OriginalName = "";
-    private string OriginalJob = "";
+    private string _originalNumber = "";
+    private string _originalName = "";
+    private string _originalJob = "";
 
     public event Action<uint, string, string?>? OnContactEdited;
 
@@ -64,12 +64,13 @@ public sealed partial class EditChatPopup : DefaultWindow
     private void ValidateInputs()
     {
         var isValid = !string.IsNullOrWhiteSpace(NumberInput.Text) &&
-            !string.IsNullOrWhiteSpace(NameInput.Text) &&
-            uint.TryParse(NumberInput.Text, out _) &&
-            // Only valid if there are any changes
-            (NumberInput.Text != OriginalNumber ||
-            NameInput.Text != OriginalName ||
-            JobInput.Text != OriginalJob);
+                      !string.IsNullOrWhiteSpace(NameInput.Text) &&
+                      NumberInput.Text.Length == MaxNumberLength &&
+                      uint.TryParse(NumberInput.Text, out _) &&
+                      // Only valid if there are any changes
+                      (NumberInput.Text != _originalNumber ||
+                      NameInput.Text != _originalName ||
+                      JobInput.Text != _originalJob);
 
         ConfirmButton.Disabled = !isValid;
     }
@@ -95,19 +96,19 @@ public sealed partial class EditChatPopup : DefaultWindow
 
     public void SetNumberInput(string newNumber)
     {
-        NumberInput.Text = newNumber;
-        OriginalNumber = newNumber;
+        NumberInput.Text = newNumber.PadLeft(MaxNumberLength, '0');
+        _originalNumber = newNumber;
     }
 
     public void SetNameInput(string newName)
     {
         NameInput.Text = newName;
-        OriginalName = newName;
+        _originalName = newName;
     }
 
     public void SetJobInput(string newJob)
     {
         JobInput.Text = newJob;
-        OriginalJob = newJob;
+        _originalJob = newJob;
     }
 }
