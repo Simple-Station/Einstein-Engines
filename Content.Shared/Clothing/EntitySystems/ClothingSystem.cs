@@ -88,11 +88,11 @@ public abstract class ClothingSystem : EntitySystem
         }
     }
 
-    private void ToggleVisualLayers(EntityUid equipee, HashSet<HumanoidVisualLayers> layers, HashSet<HumanoidVisualLayers> appearanceLayers)
+    private void ToggleVisualLayers(EntityUid equipee, HashSet<HumanoidVisualLayers> layers, HashSet<HumanoidVisualLayers> appearanceLayers, bool force = false)
     {
         foreach (HumanoidVisualLayers layer in layers)
         {
-            if (!appearanceLayers.Contains(layer))
+            if (!force && !appearanceLayers.Contains(layer))
                 break;
 
             InventorySystem.InventorySlotEnumerator enumerator = _invSystem.GetSlotEnumerator(equipee);
@@ -210,7 +210,7 @@ public abstract class ClothingSystem : EntitySystem
     private void CheckEquipmentForLayerHide(EntityUid equipment, EntityUid equipee)
     {
         if (TryComp(equipment, out HideLayerClothingComponent? clothesComp) && TryComp(equipee, out HumanoidAppearanceComponent? appearanceComp))
-            ToggleVisualLayers(equipee, clothesComp.Slots, appearanceComp.HideLayersOnEquip);
+            ToggleVisualLayers(equipee, clothesComp.Slots, appearanceComp.HideLayersOnEquip, clothesComp.Force);
     }
 
     #region Public API

@@ -160,6 +160,11 @@
     sprite: Clothing/Shoes/Misc/high_heels.rsi
   - type: Clothing
     sprite: Clothing/Shoes/Misc/high_heels.rsi
+  - type: HideLayerClothing
+    force: true
+    slots:
+    - LFoot
+    - RFoot
 
 - type: entity
   parent: ClothingShoesBaseButcherable
@@ -171,6 +176,11 @@
     sprite: Clothing/Shoes/Misc/long_high_heels.rsi
   - type: Clothing
     sprite: Clothing/Shoes/Misc/long_high_heels.rsi
+  - type: HideLayerClothing
+    force: true
+    slots:
+    - LFoot
+    - RFoot
 
 - type: entity
   parent: ClothingShoesBaseButcherable
