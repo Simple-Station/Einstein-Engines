@@ -13,5 +13,5 @@ public sealed partial class ShadowShacklesAuraComponent : BaseAuraComponent
     public TimeSpan MuteDuration = TimeSpan.FromSeconds(5);
 
     [DataField]
-    public TimeSpan KnockdownDuration = TimeSpan.FromSeconds(1);
+    public TimeSpan Delay = TimeSpan.FromSeconds(3);
 }

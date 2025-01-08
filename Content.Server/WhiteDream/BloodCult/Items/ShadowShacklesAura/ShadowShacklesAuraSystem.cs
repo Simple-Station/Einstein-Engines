@@ -1,30 +1,31 @@
 using System.Linq;
 using Content.Server.Chat.Systems;
 using Content.Server.Cuffs;
-using Content.Server.Stunnable;
+using Content.Server.DoAfter;
+using Content.Shared.DoAfter;
 using Content.Shared.Speech.Muting;
 using Content.Shared.StatusEffect;
-using Content.Shared.Stunnable;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.WhiteDream.BloodCult.BloodCultist;
 using Robust.Server.GameObjects;
-
+using Robust.Shared.Serialization;
 
 namespace Content.Server.WhiteDream.BloodCult.Items.ShadowShacklesAura;
 
 public sealed class ShadowShacklesAuraSystem : EntitySystem
 {
     [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
-    [Dependency] private readonly StunSystem _stun = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly CuffableSystem _cuffable = default!;
+    [Dependency] private readonly DoAfterSystem _doAfter = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<ShadowShacklesAuraComponent, MeleeHitEvent>(OnMeleeHit);
+        SubscribeLocalEvent<ShadowShacklesAuraComponent, ShadowShacklesDoAfterEvent>(OnDoAfter);
     }
 
     private void OnMeleeHit(EntityUid uid, ShadowShacklesAuraComponent component, MeleeHitEvent args)
@@ -33,23 +34,44 @@ public sealed class ShadowShacklesAuraSystem : EntitySystem
             return;
 
         var target = args.HitEntities.First();
-        if (uid == target
-            || !HasComp<StunnedComponent>(target)
-            || HasComp<BloodCultistComponent>(target))
+        if (uid == target || HasComp<BloodCultistComponent>(target))
             return;
 
         if (component.Speech != null)
             _chat.TrySendInGameICMessage(args.User, component.Speech, component.ChatType, false);
 
-        var shuckles = Spawn(component.ShacklesProto, _transform.GetMapCoordinates(args.User));
-        if (!_cuffable.TryAddNewCuffs(target, args.User, shuckles))
+        var doAfterArgs = new DoAfterArgs(
+            EntityManager,
+            args.User,
+            component.Delay,
+            new ShadowShacklesDoAfterEvent(),
+            target,
+            target,
+            uid)
         {
-            QueueDel(shuckles);
+            BreakOnDamage = true,
+            BreakOnMove = true,
+        };
+
+        _doAfter.TryStartDoAfter(doAfterArgs, out _);
+    }
+
+    private void OnDoAfter(EntityUid uid, ShadowShacklesAuraComponent component, ShadowShacklesDoAfterEvent args)
+    {
+        if (!args.Target.HasValue)
+            return;
+
+        var shackles = Spawn(component.ShacklesProto, _transform.GetMapCoordinates(args.User));
+        if (!_cuffable.TryAddNewCuffs(args.Target.Value, args.User, shackles))
+        {
+            QueueDel(shackles);
             return;
         }
 
-        _stun.TryKnockdown(target, component.KnockdownDuration, true);
-        _statusEffects.TryAddStatusEffect<MutedComponent>(target, "Muted", component.MuteDuration, true);
+        _statusEffects.TryAddStatusEffect<MutedComponent>(args.Target.Value, "Muted", component.MuteDuration, true);
         QueueDel(uid);
     }
 }
+
+[Serializable, NetSerializable]
+public sealed partial class ShadowShacklesDoAfterEvent : SimpleDoAfterEvent;
