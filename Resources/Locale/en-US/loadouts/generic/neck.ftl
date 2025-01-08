@@ -1,6 +1,8 @@
 loadout-name-LoadoutNeckOldMantle = old mantle (colorable)
 loadout-name-LoadoutNeckUnathiMantle = unathi mantle (colorable)
 loadout-name-LoadoutNeckTieWhite = suit tie (colorable)
+loadout-name-LoadoutNeckTieShort = short tie (colorable)
+loadout-name-LoadoutNeckTieLong = long tie (colorable)
 loadout-name-LoadoutNeckCrucifixColor = crucifix (colorable)
 loadout-name-LoadoutNeckCrucifixColorSaintPeter = Saint Peter crucifix (colorable)
 loadout-name-LoadoutNeckTallit = tallit (colorable)
