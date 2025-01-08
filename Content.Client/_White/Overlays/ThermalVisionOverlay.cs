@@ -88,7 +88,7 @@ public sealed class ThermalVisionOverlay : Overlay
             Render(entry.Ent, entry.Map, worldHandle, entry.EyeRot);
         }
 
-        worldHandle.SetTransform(Matrix3.Identity);
+        worldHandle.SetTransform(Matrix3x2.Identity);
     }
 
     private void Render(Entity<SpriteComponent, TransformComponent, BodyComponent> ent,
