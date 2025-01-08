@@ -505,7 +505,7 @@
 - type: loadout
   id: LoadoutOuterSuitJacket
   category: Outer
-  cost: 1
+  cost: 0
   customColorTint: true
   items:
     - ClothingOuterSuitJacket
@@ -516,7 +516,7 @@
 - type: loadout
   id: LoadoutOuterCoatModern
   category: Outer
-  cost: 1
+  cost: 0
   customColorTint: true
   items:
     - ClothingOuterCoatModern
@@ -558,7 +558,7 @@
 - type: loadout
   id: LoadoutOuterCardigan
   category: Outer
-  cost: 1
+  cost: 0
   customColorTint: true
   items:
     - ClothingOuterCardigan
@@ -569,7 +569,7 @@
 - type: loadout
   id: LoadoutOuterCardiganArgyle
   category: Outer
-  cost: 1
+  cost: 0
   customColorTint: true
   items:
     - ClothingOuterCardiganArgyle
@@ -580,7 +580,7 @@
 - type: loadout
   id: LoadoutOuterCardiganSweater
   category: Outer
-  cost: 1
+  cost: 0
   customColorTint: true
   items:
     - ClothingOuterCardiganSweater
@@ -591,7 +591,7 @@
 - type: loadout
   id: LoadoutOuterCardiganSlim
   category: Outer
-  cost: 1
+  cost: 0
   customColorTint: true
   items:
     - ClothingOuterCardiganSlim
@@ -602,7 +602,7 @@
 - type: loadout
   id: LoadoutOuterCowboyDuster
   category: Outer
-  cost: 1
+  cost: 0
   customColorTint: true
   items:
     - ClothingOuterCowboyDuster
@@ -613,7 +613,7 @@
 - type: loadout
   id: LoadoutOuterBlazerFormal
   category: Outer
-  cost: 1
+  cost: 0
   customColorTint: true
   items:
     - ClothingOuterBlazerFormal
@@ -624,7 +624,7 @@
 - type: loadout
   id: LoadoutOuterBlazerLooseSleeve
   category: Outer
-  cost: 1
+  cost: 0
   customColorTint: true
   items:
     - ClothingOuterBlazerLooseSleeve
@@ -635,7 +635,7 @@
 - type: loadout
   id: LoadoutOuterBlazerFlatCollar
   category: Outer
-  cost: 1
+  cost: 0
   customColorTint: true
   items:
     - ClothingOuterBlazerFlatCollar
@@ -646,7 +646,7 @@
 - type: loadout
   id: LoadoutOuterBlazerPosh
   category: Outer
-  cost: 1
+  cost: 0
   items:
     - ClothingOuterBlazerPosh
   requirements:
@@ -667,7 +667,7 @@
 - type: loadout
   id: LoadoutOuterCoatAsymmetric
   category: Outer
-  cost: 1
+  cost: 0
   customColorTint: true
   items:
     - ClothingOuterCoatAsymmetric
@@ -678,7 +678,7 @@
 - type: loadout
   id: LoadoutOuterVestColorable
   category: Outer
-  cost: 1
+  cost: 0
   customColorTint: true
   items:
     - ClothingOuterVestColorable
@@ -689,7 +689,7 @@
 - type: loadout
   id: LoadoutOuterVestThick
   category: Outer
-  cost: 1
+  cost: 0
   customColorTint: true
   items:
     - ClothingOuterVestThick
