@@ -20,13 +20,11 @@ public sealed class AdminLanguageCommand : ToolshedCommand
     public EntityUid AddLanguage(
         [CommandInvocationContext] IInvocationContext ctx,
         [PipedArgument] EntityUid input,
-        [CommandArgument] ValueRef<string, Prototype<LanguagePrototype>> @ref,
+        [CommandArgument] ProtoId<LanguagePrototype> language,
         [CommandArgument] bool canSpeak = true,
         [CommandArgument] bool canUnderstand = true
     )
     {
-        var language = @ref.Evaluate(ctx)!;
-
         if (language == SharedLanguageSystem.UniversalPrototype)
         {
             EnsureComp<UniversalLanguageSpeakerComponent>(input);
@@ -45,12 +43,11 @@ public sealed class AdminLanguageCommand : ToolshedCommand
     public EntityUid RemoveLanguage(
         [CommandInvocationContext] IInvocationContext ctx,
         [PipedArgument] EntityUid input,
-        [CommandArgument] ValueRef<string, Prototype<LanguagePrototype>> @ref,
+        [CommandArgument] ProtoId<LanguagePrototype> language,
         [CommandArgument] bool removeSpeak = true,
         [CommandArgument] bool removeUnderstand = true
     )
     {
-        var language = @ref.Evaluate(ctx)!;
         if (language == SharedLanguageSystem.UniversalPrototype && HasComp<UniversalLanguageSpeakerComponent>(input))
         {
             RemComp<UniversalLanguageSpeakerComponent>(input);
