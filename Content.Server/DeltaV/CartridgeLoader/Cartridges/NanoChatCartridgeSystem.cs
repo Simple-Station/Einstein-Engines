@@ -203,9 +203,25 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
             _nanoChat.GetRecipient((card, card.Comp), msg.RecipientNumber.Value) is not {} recipient)
             return;
 
+        var name = msg.Content;
+        if (!string.IsNullOrWhiteSpace(name))
+        {
+            name = name.Trim();
+            if (name.Length > IdCardConsoleComponent.MaxFullNameLength)
+                name = name[..IdCardConsoleComponent.MaxFullNameLength];
+        }
+
+        var jobTitle = msg.RecipientJob;
+        if (!string.IsNullOrWhiteSpace(jobTitle))
+        {
+            jobTitle = jobTitle.Trim();
+            if (jobTitle.Length > IdCardConsoleComponent.MaxJobTitleLength)
+                jobTitle = jobTitle[..IdCardConsoleComponent.MaxJobTitleLength];
+        }
+
         // Update recipient
-        recipient.Name = msg.Content;
-        recipient.JobTitle = msg.RecipientJob;
+        recipient.Name = name;
+        recipient.JobTitle = jobTitle;
 
         _nanoChat.SetRecipient((card, card.Comp), msg.RecipientNumber.Value, recipient);
 
