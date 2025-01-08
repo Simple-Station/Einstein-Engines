@@ -28,6 +28,10 @@
     - type: loadout
       id: LoadoutNeckTieWhite
     - type: loadout
+      id: LoadoutNeckTieShort
+    - type: loadout
+      id: LoadoutNeckTieLong
+    - type: loadout
       id: LoadoutItemsPrideLGBTPin
     - type: loadout
       id: LoadoutItemsPrideAromanticPin
