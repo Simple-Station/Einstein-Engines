@@ -410,7 +410,7 @@
   id: ToggleNightVision
   name: Switch night vision
   description: Switches night vision.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     itemIconStyle: BigAction
