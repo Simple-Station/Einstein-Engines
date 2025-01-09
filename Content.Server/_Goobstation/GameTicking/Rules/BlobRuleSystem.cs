@@ -34,7 +34,6 @@ public sealed class BlobRuleSystem : GameRuleSystem<BlobRuleComponent>
     [Dependency] private readonly AlertLevelSystem _alertLevelSystem = default!;
     [Dependency] private readonly IChatManager _chatManager = default!;
 
-    private static readonly SoundSpecifier BlobDetectAudio = new SoundPathSpecifier("/Audio/Announcements/outbreak5.ogg");
     public override void Initialize()
     {
         base.Initialize();
@@ -134,7 +133,7 @@ public sealed class BlobRuleSystem : GameRuleSystem<BlobRuleComponent>
                     Loc.GetString("blob-alert-detect"),
                     stationName,
                     false,
-                    // BlobDetectAudio, // https://github.com/Simple-Station/Einstein-Engines/issues/2437
+                    // blobRuleComp.DetectedAudio, // https://github.com/Simple-Station/Einstein-Engines/issues/2437
                     colorOverride: Color.Red);
 
                 _alertLevelSystem.SetLevel(stationUid, StationAlertDetected, true, true, true, true);
@@ -156,7 +155,7 @@ public sealed class BlobRuleSystem : GameRuleSystem<BlobRuleComponent>
                     Loc.GetString("blob-alert-critical"),
                     stationName,
                     false,
-                    // blobRuleComp.AlertAudio, // https://github.com/Simple-Station/Einstein-Engines/issues/2437
+                    // blobRuleComp.CriticalAudio, // https://github.com/Simple-Station/Einstein-Engines/issues/2437
                     colorOverride: Color.Red);
                 }
                 else
@@ -166,7 +165,7 @@ public sealed class BlobRuleSystem : GameRuleSystem<BlobRuleComponent>
                     Loc.GetString("blob-alert-critical-NoNukeCode"),
                     stationName,
                     false,
-                    // blobRuleComp.AlertAudio, // https://github.com/Simple-Station/Einstein-Engines/issues/2437
+                    // blobRuleComp.CriticalAudio, // https://github.com/Simple-Station/Einstein-Engines/issues/2437
                     colorOverride: Color.Red);
                 }
 
