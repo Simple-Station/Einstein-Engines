@@ -46,6 +46,19 @@
     - !type:CharacterItemGroupRequirement
       group: LoadoutNeck
 
+- type: loadout
+  id: LoadoutNeckDogtags
+  category: Neck
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
+  items:
+    - ClothingNeckDogtags
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+
 # Scarves
 - type: loadout
   id: LoadoutNeckScarfStripedRed
