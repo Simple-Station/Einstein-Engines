@@ -54,3 +54,19 @@
        inverted: true
        jobs:
          - Prisoner
+
+- type: loadout
+  id: LoadoutBackpackSatchelPurseFlipped
+  category: Backpacks
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingBackpackSatchelPurseFlipped
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacks
+    - !type:CharacterJobRequirement
+       inverted: true
+       jobs:
+         - Prisoner

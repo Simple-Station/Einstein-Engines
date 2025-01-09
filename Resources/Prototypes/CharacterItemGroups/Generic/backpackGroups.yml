@@ -15,3 +15,5 @@
       id: LoadoutBackpackSatchelHydroponics
     - type: loadout
       id: LoadoutBackpackSatchelPurse
+    - type: loadout
+      id: LoadoutBackpackSatchelPurseFlipped
