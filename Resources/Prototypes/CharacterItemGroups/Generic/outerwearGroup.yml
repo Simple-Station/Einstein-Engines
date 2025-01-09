@@ -100,6 +100,8 @@
     - type: loadout
       id: LoadoutOuterSuitJacket
     - type: loadout
+      id: LoadoutOuterSuitJacketOpened
+    - type: loadout
       id: LoadoutOuterCoatModern
     - type: loadout
       id: LoadoutOuterTailcoat
@@ -110,17 +112,29 @@
     - type: loadout
       id: LoadoutOuterCardigan
     - type: loadout
+      id: LoadoutOuterCardiganOpened
+    - type: loadout
       id: LoadoutOuterCardiganArgyle
+    - type: loadout
+      id: LoadoutOuterCardiganArgyleOpened
     - type: loadout
       id: LoadoutOuterCardiganSweater
     - type: loadout
+      id: LoadoutOuterCardiganSweaterOpened
+    - type: loadout
       id: LoadoutOuterCardiganSlim
+    - type: loadout
+      id: LoadoutOuterCardiganSlimOpened
     - type: loadout
       id: LoadoutOuterCowboyDuster
     - type: loadout
       id: LoadoutOuterBlazer
     - type: loadout
+      id: LoadoutOuterBlazerOpened
+    - type: loadout
       id: LoadoutOuterBlazerLong
+    - type: loadout
+      id: LoadoutOuterBlazerLongOpened
     - type: loadout
       id: LoadoutOuterBlazerFormal
     - type: loadout
@@ -132,7 +146,11 @@
     - type: loadout
       id: LoadoutOuterCoatPeacoat
     - type: loadout
+      id: LoadoutOuterCoatPeacoatOpened
+    - type: loadout
       id: LoadoutOuterCoatAsymmetric
+    - type: loadout
+      id: LoadoutOuterCoatAsymmetricOpened
     - type: loadout
       id: LoadoutOuterVestColorable
     - type: loadout

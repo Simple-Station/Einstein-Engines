@@ -538,6 +538,11 @@
     sprite: Clothing/OuterClothing/Coats/peacoat.rsi
 
 - type: entity
+  parent: [ClothingOuterFoldableBaseOpened, ClothingOuterCoatPeacoat]
+  id: ClothingOuterCoatPeacoatOpened
+  name: peacoat
+
+- type: entity
   parent: ClothingOuterStorageFoldableBase
   id: ClothingOuterCoatAsymmetric
   name: asymmetric coat
@@ -547,3 +552,8 @@
     sprite: Clothing/OuterClothing/Coats/asymmetric_coat.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Coats/asymmetric_coat.rsi
+
+- type: entity
+  parent: [ClothingOuterFoldableBaseOpened, ClothingOuterCoatAsymmetric]
+  id: ClothingOuterCoatAsymmetricOpened
+  name: asymmetric coat

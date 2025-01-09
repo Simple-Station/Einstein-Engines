@@ -549,7 +549,7 @@
 
 - type: entity
   parent: [ClothingOuterFoldableBaseOpened, ClothingOuterBlazer]
-  id: ClothingOuterCardiganBlazerOpened
+  id: ClothingOuterBlazerOpened
   name: blazer
 
 - type: entity
@@ -565,7 +565,7 @@
 
 - type: entity
   parent: [ClothingOuterFoldableBaseOpened, ClothingOuterBlazerLong]
-  id: ClothingOuterCardiganBlazerLongOpened
+  id: ClothingOuterBlazerLongOpened
   name: long blazer
 
 - type: entity

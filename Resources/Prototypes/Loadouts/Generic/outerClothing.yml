@@ -514,6 +514,17 @@
       group: LoadoutOuter
 
 - type: loadout
+  id: LoadoutOuterSuitJacketOpened
+  category: Outer
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingOuterSuitJacketOpened
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
   id: LoadoutOuterCoatModern
   category: Outer
   cost: 0
@@ -567,12 +578,34 @@
       group: LoadoutOuter
 
 - type: loadout
+  id: LoadoutOuterCardiganOpened
+  category: Outer
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingOuterCardiganOpened
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
   id: LoadoutOuterCardiganArgyle
   category: Outer
   cost: 0
   customColorTint: true
   items:
     - ClothingOuterCardiganArgyle
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterCardiganArgyleOpened
+  category: Outer
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingOuterCardiganArgyleOpened
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuter
@@ -589,12 +622,34 @@
       group: LoadoutOuter
 
 - type: loadout
+  id: LoadoutOuterCardiganSweaterOpened
+  category: Outer
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingOuterCardiganSweaterOpened
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
   id: LoadoutOuterCardiganSlim
   category: Outer
   cost: 0
   customColorTint: true
   items:
     - ClothingOuterCardiganSlim
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterCardiganSlimOpened
+  category: Outer
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingOuterCardiganSlimOpened
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuter
@@ -622,12 +677,34 @@
       group: LoadoutOuter
 
 - type: loadout
+  id: LoadoutOuterBlazerOpened
+  category: Outer
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingOuterBlazerOpened
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
   id: LoadoutOuterBlazerLong
   category: Outer
   cost: 1
   customColorTint: true
   items:
     - ClothingOuterBlazerLong
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterBlazerLongOpened
+  category: Outer
+  cost: 1
+  customColorTint: true
+  items:
+    - ClothingOuterBlazerLongOpened
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuter
@@ -687,12 +764,34 @@
       group: LoadoutOuter
 
 - type: loadout
+  id: LoadoutOuterCoatPeacoatOpened
+  category: Outer
+  cost: 1
+  customColorTint: true
+  items:
+    - ClothingOuterCoatPeacoatOpened
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
   id: LoadoutOuterCoatAsymmetric
   category: Outer
   cost: 0
   customColorTint: true
   items:
     - ClothingOuterCoatAsymmetric
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterCoatAsymmetricOpened
+  category: Outer
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingOuterCoatAsymmetricOpened
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuter
