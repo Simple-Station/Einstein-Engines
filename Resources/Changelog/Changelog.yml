@@ -9466,3 +9466,10 @@ Entries:
   id: 6652
   time: '2025-01-08T07:09:10.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1456
+- author: Skubman
+  changes:
+    - type: Fix
+      message: Fixed face markings showing up above eye-wear.
+  id: 6653
+  time: '2025-01-08T19:37:24.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1467

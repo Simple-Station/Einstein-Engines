@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: BaseMobSpeciesOrganic
   id: BaseMobVox
   abstract: true
@@ -65,6 +65,7 @@
     - map: [ "enum.HumanoidVisualLayers.Head" ]
     - map: [ "enum.HumanoidVisualLayers.Snout" ]
     - map: [ "enum.HumanoidVisualLayers.Eyes" ]
+    - map: [ "enum.HumanoidVisualLayers.Face" ]
     - map: [ "enum.HumanoidVisualLayers.RArm" ]
     - map: [ "enum.HumanoidVisualLayers.LArm" ]
     - map: [ "enum.HumanoidVisualLayers.RLeg" ]
@@ -83,7 +84,6 @@
     - map: [ "id" ]
     - map: [ "neck" ]
     - map: [ "back" ]
-    - map: [ "enum.HumanoidVisualLayers.Face" ]
     - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
     - map: [ "enum.HumanoidVisualLayers.Hair" ]
     - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
