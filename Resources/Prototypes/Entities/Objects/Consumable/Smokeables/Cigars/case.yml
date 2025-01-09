@@ -113,3 +113,13 @@
     contents:
     - id: CigarRobust
       amount: 5
+  - type: ItemCounter
+    count:
+      tags: [Cigar]
+    composite: true
+    layerStates:
+    - cigar1
+    - cigar2
+    - cigar3
+    - cigar4
+    - cigar5
