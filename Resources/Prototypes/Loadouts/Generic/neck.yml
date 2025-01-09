@@ -187,19 +187,6 @@
       group: LoadoutNeck
 
 - type: loadout
-  id: LoadoutNeckTieLong
-  category: Neck
-  cost: 0
-  exclusive: true
-  customColorTint: true
-  canBeHeirloom: true
-  items:
-    - ClothingNeckTieLong
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutNeck
-
-- type: loadout
   id: LoadoutNeckTieBow
   category: Neck
   cost: 0
