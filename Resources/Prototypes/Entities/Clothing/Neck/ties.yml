@@ -43,6 +43,22 @@
 
 - type: entity
   parent: ClothingNeckBase
+  id: ClothingNeckTieColor
+  name: tie
+  description: A neosilk clip-on tie.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Ties/color.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Ties/color.rsi
+    renderLayer: innerNeck
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - ClothMade
+
+- type: entity
+  parent: ClothingNeckBase
   id: ClothingNeckTieShort
   name: short tie
   description: A short tie, perfect for vests, blazers and suit jackets.

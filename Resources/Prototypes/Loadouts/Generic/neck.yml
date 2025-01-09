@@ -168,7 +168,7 @@
   customColorTint: true
   canBeHeirloom: true
   items:
-    - ClothingNeckTieWhite
+    - ClothingNeckTieColor
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutNeck
