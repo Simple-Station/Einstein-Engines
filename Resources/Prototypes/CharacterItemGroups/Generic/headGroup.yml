@@ -52,8 +52,26 @@
     - type: loadout
       id: LoadoutHeadBeretWhite
     - type: loadout
+      id: LoadoutHeadBeretArtist
+    - type: loadout
+      id: LoadoutHeadBeretPeaked
+    - type: loadout
+      id: LoadoutHeadBeretBeanie
+    - type: loadout
+      id: LoadoutHeadBeretBeanieWinter
+    - type: loadout
+      id: LoadoutHeadBeretBeanieSubmariner
+    - type: loadout
+      id: LoadoutHeadBeretBeanieTight
+    - type: loadout
+      id: LoadoutHeadSlouch
+    - type: loadout
+      id: LoadoutHeadSunVisor
+    - type: loadout
       id: LoadoutHeadHijabColorable
     - type: loadout
       id: LoadoutHeadTurbanColorable
     - type: loadout
       id: LoadoutHeadKippahColorable
+    - type: loadout
+      id: LoadoutHeadHeadBandBasic
