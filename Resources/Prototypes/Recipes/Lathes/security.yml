@@ -572,14 +572,6 @@
     Plastic: 160
 
 - type: latheRecipe
-  id: SpeedLoaderMagnumEmpty
-  result: SpeedLoaderMagnumEmpty
-  category: Ammo
-  completetime: 5
-  materials:
-    Steel: 50
-
-- type: latheRecipe
   id: MagazineBoxLightRifleRubber
   result: MagazineBoxLightRifleRubber
   category: Ammo
@@ -589,12 +581,29 @@
     Plastic: 600
 
 - type: latheRecipe
+  id: SpeedLoaderMagnumEmpty
+  result: SpeedLoaderMagnumEmpty
+  category: Ammo
+  completetime: 5
+  materials:
+    Steel: 50
+
+- type: latheRecipe
   id: SpeedLoaderMagnum
   result: SpeedLoaderMagnum
   category: Ammo
   completetime: 5
   materials:
     Steel: 190
+
+- type: latheRecipe
+  id: SpeedLoaderMagnumRubber
+  result: SpeedLoaderMagnumRubber
+  category: Ammo
+  completetime: 5
+  materials:
+    Steel: 50
+    Plastic: 70
 
 - type: latheRecipe
   id: SpeedLoaderMagnumPractice
