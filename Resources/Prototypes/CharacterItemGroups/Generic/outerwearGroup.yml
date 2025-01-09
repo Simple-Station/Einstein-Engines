@@ -118,6 +118,10 @@
     - type: loadout
       id: LoadoutOuterCowboyDuster
     - type: loadout
+      id: LoadoutOuterBlazer
+    - type: loadout
+      id: LoadoutOuterBlazerLong
+    - type: loadout
       id: LoadoutOuterBlazerFormal
     - type: loadout
       id: LoadoutOuterBlazerLooseSleeve

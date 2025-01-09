@@ -611,6 +611,28 @@
       group: LoadoutOuter
 
 - type: loadout
+  id: LoadoutOuterBlazer
+  category: Outer
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingOuterBlazer
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterBlazerLong
+  category: Outer
+  cost: 1
+  customColorTint: true
+  items:
+    - ClothingOuterBlazerLong
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
   id: LoadoutOuterBlazerFormal
   category: Outer
   cost: 0

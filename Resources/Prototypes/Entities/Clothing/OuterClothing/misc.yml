@@ -537,6 +537,38 @@
     sprite: Clothing/OuterClothing/Misc/cowboy_duster.rsi
 
 - type: entity
+  parent: ClothingOuterStorageFoldableBase
+  id: ClothingOuterBlazer
+  name: blazer
+  description: A charming jacket for when you want to play ball sports like an aristocrat.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Misc/blazer.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Misc/blazer.rsi
+
+- type: entity
+  parent: [ClothingOuterFoldableBaseOpened, ClothingOuterBlazer]
+  id: ClothingOuterCardiganBlazerOpened
+  name: blazer
+
+- type: entity
+  parent: ClothingOuterStorageFoldableBase
+  id: ClothingOuterBlazerLong
+  name: long blazer
+  description: A charming long jacket that almost substitutes for a coat.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Misc/blazer_long.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Misc/blazer_long.rsi
+
+- type: entity
+  parent: [ClothingOuterFoldableBaseOpened, ClothingOuterBlazerLong]
+  id: ClothingOuterCardiganBlazerLongOpened
+  name: long blazer
+
+- type: entity
   parent: ClothingOuterBase
   id: ClothingOuterBlazerFormal
   name: formal blazer
