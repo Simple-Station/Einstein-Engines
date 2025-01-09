@@ -9473,3 +9473,10 @@ Entries:
   id: 6653
   time: '2025-01-08T19:37:24.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1467
+- author: Lumminal
+  changes:
+    - type: Add
+      message: Added prisoner headset box to warden's locker.
+  id: 6654
+  time: '2025-01-09T21:32:06.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1470
