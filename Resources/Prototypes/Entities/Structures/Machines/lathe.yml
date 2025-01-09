@@ -870,12 +870,20 @@
       - MagazineBoxPistolRubber
       - MagazineBoxRifleRubber
       - MagazineGrenadeEmpty
+      - MagazineLightRifleRubber
       - MagazineLightRifleIncendiary
       - MagazineLightRifleUranium
+      - MagazinePistolRubber
       - MagazinePistolIncendiary
       - MagazinePistolUranium
+      - MagazinePistolSubMachineGunRubber
+      - MagazinePistolSubMachineGunIncendiary
+      - MagazinePistolSubMachineGunRubberUranium
+      - MagazineMagnumRubber
       - MagazineMagnumIncendiary
       - MagazineMagnumUranium
+      - SpeedLoaderMagnumRubber
+      - MagazineRifleRubber
       - MagazineRifleIncendiary
       - MagazineRifleUranium
       - MagazineShotgunBeanbag

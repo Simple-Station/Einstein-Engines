@@ -27,6 +27,7 @@
   - BoxShotgunIncendiary
   - MagazineRifleIncendiary
   - MagazinePistolIncendiary
+  - MagazinePistolSubMachineGunIncendiary
   - MagazineMagnumIncendiary
   - MagazineLightRifleIncendiary
   - SpeedLoaderMagnumIncendiary
@@ -69,6 +70,11 @@
   - CartridgeMagnumRubber
   - CartridgeLightRifleRubber
   - CartridgeRifleRubber
+  - MagazineRifleRubber
+  - MagazinePistolRubber
+  - MagazineMagnumRubber
+  - MagazineLightRifleRubber
+  - SpeedLoaderMagnumRubber
   - MagazineBoxPistolRubber
   - MagazineBoxMagnumRubber
   - MagazineBoxLightRifleRubber
@@ -89,6 +95,7 @@
   recipeUnlocks:
   - MagazineRifleUranium
   - MagazinePistolUranium
+  - MagazinePistolSubMachineGunIncendiary
   - MagazineMagnumUranium
   - MagazineLightRifleUranium
   - SpeedLoaderMagnumUranium
