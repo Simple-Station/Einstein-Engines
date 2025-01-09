@@ -39,11 +39,14 @@
         Heat: 1
   - type: BlobTile
     blobTileType: Normal
+  - type: BlobUpgradeableTile
+    transformTo: Strong
+    locale: blob-verb-upgrade-to-strong
   - type: Destructible
     thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 25
+          damage: 40
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
@@ -104,7 +107,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 400
+        damage: 500
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
@@ -125,17 +128,18 @@
       resource: 60
       factory: 80
       node: 50
-      reflective: 15
+      reflective: 20
       strong: 15
       normal: 6
-#      storage: 50
-#      turret: 75
+      storage: 50
+      #turret: 75
     actionPrototypes:
       - ActionSwapBlobChem
       - ActionTeleportBlobToCore
       - ActionCreateBlobFactory
       - ActionCreateBlobResource
       - ActionCreateBlobNode
+      - ActionCreateBlobStorage
       - ActionCreateBlobbernaut
       - ActionSplitBlobCore
       - ActionSwapBlobCore
@@ -188,7 +192,7 @@
       thresholds:
         - trigger:
             !type:DamageTrigger
-            damage: 120
+            damage: 80
           behaviors:
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
@@ -226,7 +230,7 @@
       thresholds:
         - trigger:
             !type:DamageTrigger
-            damage: 90
+            damage: 80
           behaviors:
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
@@ -266,7 +270,7 @@
       thresholds:
         - trigger:
             !type:DamageTrigger
-            damage: 150
+            damage: 100
           behaviors:
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
@@ -284,31 +288,77 @@
 
 - type: entity
   parent: BaseBlob
-  id: StrongBlobTile
-  name: StrongBlobTile
-  description: The basis of defensive positions has not only a strength of 6 times, this tile is also capable of withstanding various gases in order to become an atmospheric technician to protect the core, for example, from plasma that the enemy can set on fire.
+  id: StorageBlobTile
+  name: Storage Blob
+  description: Stores blob points in itself, expanding the maximum amount of points that the blob can have.
   categories: [ HideSpawnMenu ]
   components:
-    - type: Airtight
+    - type: Temperature
+      heatDamage:
+        types:
+          Heat: 5
+      coldDamage: {}
+      coldDamageThreshold: 0
+    - type: Flammable
+      fireSpread: true
+      damage:
+        types:
+          Heat: 1
     - type: BlobTile
-      blobTileType: Strong
+      blobTileType: Storage
     - type: Destructible
       thresholds:
         - trigger:
             !type:DamageTrigger
-            damage: 150
+            damage: 80
           behaviors:
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
+    - type: BlobStorage
     - type: Sprite
       sprite: Backmen/Mobs/Aliens/Blob/blob.rsi
       drawdepth: BlobTiles
       layers:
         - map: [ "enum.DamageStateVisualLayers.Base" ]
-          state: blob_shield
+          state: blob_special
         - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
-          state: blob_glow
+          state: blob_glow_special
+        - state: blob_storage_overlay
 #          shader: unshaded
+
+- type: entity
+  parent: BaseBlob
+  id: StrongBlobTile
+  name: StrongBlobTile
+  description: The basis of defensive positions has not only a strength of 6 times, this tile is also capable of withstanding various gases in order to become an atmospheric technician to protect the core, for example, from plasma that the enemy can set on fire.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Airtight
+  - type: BlobTile
+    blobTileType: Strong
+  - type: BlobUpgradeableTile
+    transformTo: Reflective
+    locale: blob-verb-upgrade-to-reflective
+  - type: Damageable
+    damageContainer: Blob
+    damageModifierSet: BlobStrong
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 150
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+  - type: Sprite
+    sprite: Backmen/Mobs/Aliens/Blob/blob.rsi
+    drawdepth: BlobTiles
+    layers:
+      - map: [ "enum.DamageStateVisualLayers.Base" ]
+        state: blob_shield
+      - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+        state: blob_glow
+#       shader: unshaded
 
 - type: entity
   parent: BaseBlob
@@ -317,28 +367,34 @@
   description: Upgrading a fortified cell in which they pay less strength for the ability to reflect only energy projectiles and lasers with a 90% chance.
   categories: [ HideSpawnMenu ]
   components:
-    - type: Airtight
-    - type: BlobTile
-      blobTileType: Reflective
-    - type: Destructible
-      thresholds:
-        - trigger:
-            !type:DamageTrigger
-            damage: 100
-          behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
-    - type: Reflect
-      reflectProb: 0.6
-      spread: 20
-      reflects:
-        - Energy
-    - type: Sprite
-      sprite: Backmen/Mobs/Aliens/Blob/blob.rsi
-      drawdepth: BlobTiles
-      layers:
-      - map: [ "enum.DamageStateVisualLayers.Base" ]
-        state: blob_shield
-      - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
-        state: blob_glow
-        shader: unshaded
+  - type: Airtight
+  - type: BlobTile
+    blobTileType: Reflective
+  - type: BlobUpgradeableTile
+    transformTo: Strong
+    locale: blob-verb-upgrade-to-strong
+  - type: Damageable
+    damageContainer: Blob
+    damageModifierSet: BlobReflective
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 150
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+  - type: Reflect
+    reflectProb: 0.5
+    spread: 40
+    reflects:
+    - Energy
+  - type: Sprite
+    sprite: Backmen/Mobs/Aliens/Blob/blob.rsi
+    drawdepth: BlobTiles
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: blob_shield
+    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+      state: blob_glow
+      shader: unshaded

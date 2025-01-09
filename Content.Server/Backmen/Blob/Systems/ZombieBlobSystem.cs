@@ -1,9 +1,19 @@
+<<<<<<< HEAD:Content.Server/Backmen/Blob/ZombieBlobSystem.cs
 ﻿using Content.Server.Atmos.Components;
+||||||| parent of 3c3173a51d ([Tweak] Blob Things (#963)):Content.Server/Backmen/Blob/ZombieBlobSystem.cs
+﻿using Content.Server.Atmos;
+using Content.Server.Atmos.Components;
+using Content.Server.Backmen.Blob.Components;
+using Content.Server.Backmen.Body.Components;
+=======
+﻿using Content.Server.Atmos.Components;
+using Content.Server.Backmen.Blob.Components;
+using Content.Server.Backmen.Body.Components;
+>>>>>>> 3c3173a51d ([Tweak] Blob Things (#963)):Content.Server/Backmen/Blob/Systems/ZombieBlobSystem.cs
 using Content.Server.Body.Components;
 using Content.Server.Chat.Managers;
 using Content.Server.Mind;
 using Content.Server.NPC;
-using Content.Server.NPC.Components;
 using Content.Server.NPC.HTN;
 using Content.Server.NPC.Systems;
 using Content.Server.Speech.Components;
@@ -16,7 +26,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
 
-namespace Content.Server.Backmen.Blob;
+namespace Content.Server.Backmen.Blob.Systems;
 
 public sealed class ZombieBlobSystem : EntitySystem
 {

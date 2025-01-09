@@ -86,7 +86,13 @@ namespace Content.Server.Body.Components
         /// <summary>
         /// Whether the entity is immuned to pressure (i.e possess the PressureImmunity component)
         /// </summary>
+<<<<<<< HEAD
         [ViewVariables]
+||||||| parent of 3c3173a51d ([Tweak] Blob Things (#963))
+        [ViewVariables, Access(typeof(Backmen.Blob.ZombieBlobSystem))]
+=======
+        [ViewVariables, Access(typeof(Backmen.Blob.Systems.ZombieBlobSystem))]
+>>>>>>> 3c3173a51d ([Tweak] Blob Things (#963))
         public bool HasImmunity = false;
 >>>>>>> 7fe67c7209 (Blob try 2 (#176))
     }

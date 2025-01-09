@@ -1,5 +1,4 @@
-﻿using Content.Server.Backmen.Blob;
-using Content.Shared.Backmen.Blob.Components;
+﻿using Content.Server.Backmen.Blob.Systems;
 using Content.Shared.Mind;
 using Robust.Shared.Audio;
 

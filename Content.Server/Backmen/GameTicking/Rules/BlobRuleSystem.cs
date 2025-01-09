@@ -179,6 +179,8 @@ public sealed class BlobRuleSystem : GameRuleSystem<BlobRuleComponent>
         }
     }
 
+    private const string BlobIssuer = "objective-issuer-blob";
+
     protected override void AppendRoundEndText(
         EntityUid uid,
         BlobRuleComponent blob,
@@ -186,9 +188,38 @@ public sealed class BlobRuleSystem : GameRuleSystem<BlobRuleComponent>
         ref RoundEndTextAppendEvent ev)
     {
         if (blob.Blobs.Count < 1)
-            return;
+            return; // no blob no fun
 
         var result = Loc.GetString("blob-round-end-result", ("blobCount", blob.Blobs.Count));
+        var totalPercentage = 0f;
+
+        // Get the total amount of blob tiles
+        foreach (var (mindId, mind) in blob.Blobs)
+        {
+            var objectives = mind.Objectives.ToArray();
+
+            foreach (var objective in objectives)
+            {
+                var comp = Comp<ObjectiveComponent>(objective);
+                if (comp.Issuer != BlobIssuer)
+                    continue;
+
+                var info = _objectivesSystem.GetInfo(objective, mindId, mind);
+                totalPercentage += info?.Progress ?? 0;
+            }
+        }
+
+        if (totalPercentage >= 0.99f)
+        {
+            result += "\n" + Loc.GetString("blob-end-victory");
+        }
+        else
+        {
+            result += "\n" + Loc.GetString("blob-end-fail");
+            result += "\n" + Loc.GetString("blob-end-fail-progress", ("progress", (int) (totalPercentage * 100)));
+        }
+
+        result += "\n";
 
         // yeah this is duplicated from traitor rules lol, there needs to be a generic rewrite where it just goes through all minds with objectives
         foreach (var (mindId, mind) in blob.Blobs)
@@ -234,17 +265,26 @@ public sealed class BlobRuleSystem : GameRuleSystem<BlobRuleComponent>
             else if (name != null)
                 result += "\n" + Loc.GetString("blob-was-a-blob-with-objectives-named", ("name", name));
 
+<<<<<<< HEAD
             foreach (var objectiveGroup in objectives.GroupBy(o => Comp<ObjectiveComponent>(o).Issuer))
+||||||| parent of 3c3173a51d ([Tweak] Blob Things (#963))
+            foreach (var objectiveGroup in objectives.GroupBy(o => Comp<ObjectiveComponent>(o).LocIssuer))
+=======
+            foreach (var objectiveGroup in objectives.GroupBy(o => Comp<ObjectiveComponent>(o).Issuer == BlobIssuer))
+>>>>>>> 3c3173a51d ([Tweak] Blob Things (#963))
             {
+                if (!objectiveGroup.Key)
+                    continue;
+
                 foreach (var objective in objectiveGroup)
                 {
                     var info = _objectivesSystem.GetInfo(objective, mindId, mind);
                     if (info == null)
                         continue;
 
-                    var objectiveTitle = info.Value.Title;
                     var progress = info.Value.Progress;
 
+<<<<<<< HEAD
                     if (progress > 0.99f)
                     {
                         result += "\n- " + Loc.GetString(
@@ -262,6 +302,30 @@ public sealed class BlobRuleSystem : GameRuleSystem<BlobRuleComponent>
                             ("markupColor", "red")
                         );
                     }
+||||||| parent of 3c3173a51d ([Tweak] Blob Things (#963))
+                    if (progress > 0.99f)
+                    {
+                        result += "\n- " + Loc.GetString(
+                            "objective-condition-success",
+                            ("condition", objectiveTitle),
+                            ("markupColor", "green")
+                        );
+                    }
+                    else
+                    {
+                        result += "\n- " + Loc.GetString(
+                            "objective-condition-fail",
+                            ("condition", objectiveTitle),
+                            ("progress", (int) (progress * 100)),
+                            ("markupColor", "red")
+                        );
+                    }
+=======
+                    result += "\n- " + Loc.GetString(
+                        "blob-objective-percentage",
+                        ("progress", (int) (progress * 100))
+                    );
+>>>>>>> 3c3173a51d ([Tweak] Blob Things (#963))
                 }
             }
         }

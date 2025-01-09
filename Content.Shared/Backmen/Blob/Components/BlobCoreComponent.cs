@@ -30,6 +30,9 @@ public sealed partial class BlobCoreComponent : Component
     [ViewVariables]
     public BlobChemType CurrentChem = BlobChemType.ReactiveSpines;
 
+    [ViewVariables]
+    public FixedPoint2 MaxStorageAmount = 500;
+
     #endregion
 
     #region Balance
@@ -45,6 +48,9 @@ public sealed partial class BlobCoreComponent : Component
 
     [DataField]
     public bool CanSplit = true;
+
+    [DataField]
+    public float TilesRadiusLimit = 9f;
 
     #endregion
 
@@ -145,9 +151,8 @@ public sealed partial class BlobCoreComponent : Component
         {BlobTileType.Reflective, 15},
         {BlobTileType.Strong, 15},
         {BlobTileType.Normal, 6},
-        /*
         {BlobTileType.Storage, 50},
-        {BlobTileType.Turret, 75},*/
+        //{BlobTileType.Turret, 75},
     };
 
     [DataField]
@@ -164,16 +169,6 @@ public sealed partial class BlobCoreComponent : Component
 
     #endregion
 
-    #region Blob Ranges
-
-    [DataField]
-    public float NodeRadiusLimit = 5f;
-
-    [DataField]
-    public float TilesRadiusLimit = 9f;
-
-    #endregion
-
     #region Prototypes
 
     [DataField]
@@ -186,7 +181,7 @@ public sealed partial class BlobCoreComponent : Component
         {BlobTileType.Strong, "StrongBlobTile"},
         {BlobTileType.Normal, "NormalBlobTile"},
         {BlobTileType.Invalid, "NormalBlobTile"}, // wtf
-        //{BlobTileType.Storage, "StorageBlobTile"},
+        {BlobTileType.Storage, "StorageBlobTile"},
         //{BlobTileType.Turret, "TurretBlobTile"},
         {BlobTileType.Core, "CoreBlobTile"},
     };

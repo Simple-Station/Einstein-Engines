@@ -19,7 +19,7 @@ using Robust.Shared.Player;
 >>>>>>> c57c139059 ([Tweak] Blob Refactor Part 1: General Rewrite (#703))
 using Robust.Shared.Prototypes;
 
-namespace Content.Server.Backmen.Blob;
+namespace Content.Server.Backmen.Blob.Systems;
 
 public sealed class BlobCarrierSystem : EntitySystem
 {

@@ -10,6 +10,7 @@
       event: !type:BlobTransformTileActionEvent
         transformFrom: Normal
         tileType: Factory
+        nodeSearchRadius: 3.0
       itemIconStyle: BigAction
       range: 200
       useDelay: 0.5
@@ -26,6 +27,24 @@
       event: !type:BlobTransformTileActionEvent
         transformFrom: Normal
         tileType: Resource
+        nodeSearchRadius: 3.0
+      itemIconStyle: BigAction
+      range: 200
+      useDelay: 0.5
+
+- type: entity
+  id: ActionCreateBlobStorage
+  name: blob-create-storage-action-name
+  description: blob-create-storage-action-desc
+  components:
+    - type: WorldTargetAction
+      icon:
+        sprite: Backmen/Interface/Actions/blob.rsi
+        state: blobStorage
+      event: !type:BlobTransformTileActionEvent
+        transformFrom: Normal
+        tileType: Storage
+        nodeSearchRadius: 3.0
       itemIconStyle: BigAction
       range: 200
       useDelay: 0.5
@@ -42,6 +61,7 @@
       event: !type:BlobTransformTileActionEvent
         transformFrom: Normal
         tileType: Node
+        tileSearchRadius: 4.5
       itemIconStyle: BigAction
       range: 200
       useDelay: 0.5

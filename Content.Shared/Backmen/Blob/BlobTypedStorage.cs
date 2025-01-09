@@ -26,12 +26,10 @@ public abstract partial class BlobTypedStorage<T> : IEnumerable<KeyValuePair<Blo
     public virtual T Strong  { get; set; } = default!;
     [DataField]
     public virtual T Normal { get; set; } = default!;
-    /*
     [DataField]
     public virtual T Storage  { get; set; }
-    [DataField]
-    public virtual T Turret { get; set; }
-*/
+    /*[DataField]
+    public virtual T Turret { get; set; }*/
     // Метод для доступа к полям через индексатор
     [Pure]
     public T this[BlobTileType type]
@@ -46,10 +44,8 @@ public abstract partial class BlobTypedStorage<T> : IEnumerable<KeyValuePair<Blo
             BlobTileType.Reflective => Reflective,
             BlobTileType.Strong => Strong,
             BlobTileType.Normal => Normal,
-            /*
             BlobTileType.Storage => Storage,
-            BlobTileType.Turret => Turret,
-            */
+            //BlobTileType.Turret => Turret,
             _ => throw new ArgumentOutOfRangeException(nameof(type), $"Unknown tile type: {type}")
         };
         set
@@ -80,14 +76,12 @@ public abstract partial class BlobTypedStorage<T> : IEnumerable<KeyValuePair<Blo
                 case BlobTileType.Normal:
                     Normal = value;
                     break;
-                /*
                 case BlobTileType.Storage:
                     Storage = value;
                     break;
-                case BlobTileType.Turret:
+                /*case BlobTileType.Turret:
                     Turret = value;
-                    break;
-                    */
+                    break;*/
                 default:
                     throw new ArgumentOutOfRangeException(nameof(type), $"Unknown tile type: {type}");
             }
@@ -109,10 +103,8 @@ public abstract partial class BlobTypedStorage<T> : IEnumerable<KeyValuePair<Blo
         yield return new KeyValuePair<BlobTileType, T>(BlobTileType.Reflective, Reflective);
         yield return new KeyValuePair<BlobTileType, T>(BlobTileType.Strong, Strong);
         yield return new KeyValuePair<BlobTileType, T>(BlobTileType.Normal, Normal);
-        /*
         yield return new KeyValuePair<BlobTileType, T>(BlobTileType.Storage, Storage);
-        yield return new KeyValuePair<BlobTileType, T>(BlobTileType.Turret, Turret);
-        */
+        //yield return new KeyValuePair<BlobTileType, T>(BlobTileType.Turret, Turret);
     }
 
     IEnumerator IEnumerable.GetEnumerator()

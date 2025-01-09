@@ -1,3 +1,4 @@
+<<<<<<< HEAD:Content.Server/Backmen/Blob/BlobMobSystem.cs
 <<<<<<< HEAD
 ||||||| parent of c57c139059 ([Tweak] Blob Refactor Part 1: General Rewrite (#703))
 using Content.Server.Backmen.Blob.Components;
@@ -5,19 +6,49 @@ using Content.Server.Backmen.Blob.Components;
 using System.Numerics;
 using Content.Server.Backmen.Blob.Components;
 >>>>>>> c57c139059 ([Tweak] Blob Refactor Part 1: General Rewrite (#703))
+||||||| parent of 3c3173a51d ([Tweak] Blob Things (#963)):Content.Server/Backmen/Blob/BlobMobSystem.cs
+using System.Numerics;
+using Content.Server.Backmen.Blob.Components;
+using Content.Server.Backmen.Language;
+using Content.Server.Backmen.Language.Events;
+=======
+using Content.Server.Backmen.Language;
+>>>>>>> 3c3173a51d ([Tweak] Blob Things (#963)):Content.Server/Backmen/Blob/Systems/BlobMobSystem.cs
 using Content.Server.Chat.Systems;
+<<<<<<< HEAD:Content.Server/Backmen/Blob/BlobMobSystem.cs
 using Content.Server.Explosion.EntitySystems;
 using Content.Server.Fluids.EntitySystems;
 using Content.Server.Popups;
+||||||| parent of 3c3173a51d ([Tweak] Blob Things (#963)):Content.Server/Backmen/Blob/BlobMobSystem.cs
+using Content.Server.Explosion.EntitySystems;
+using Content.Server.Fluids.EntitySystems;
+using Content.Server.Popups;
+using Content.Server.Radio;
+=======
+using Content.Server.Radio;
+>>>>>>> 3c3173a51d ([Tweak] Blob Things (#963)):Content.Server/Backmen/Blob/Systems/BlobMobSystem.cs
 using Content.Server.Radio.Components;
 using Content.Server.Radio.EntitySystems;
 using Content.Shared.Backmen.Blob;
+<<<<<<< HEAD:Content.Server/Backmen/Blob/BlobMobSystem.cs
 using Content.Shared.Backmen.Blob.Chemistry;
 using Content.Shared.Chemistry.Components;
+||||||| parent of 3c3173a51d ([Tweak] Blob Things (#963)):Content.Server/Backmen/Blob/BlobMobSystem.cs
+using Content.Shared.Backmen.Blob.Chemistry;
+using Content.Shared.Backmen.Blob.Components;
+using Content.Shared.Backmen.Language;
+using Content.Shared.Backmen.Targeting;
+using Content.Shared.Chat;
+using Content.Shared.Chemistry.Components;
+=======
+using Content.Shared.Backmen.Blob.Components;
+using Content.Shared.Backmen.Language;
+using Content.Shared.Backmen.Targeting;
+using Content.Shared.Chat;
+>>>>>>> 3c3173a51d ([Tweak] Blob Things (#963)):Content.Server/Backmen/Blob/Systems/BlobMobSystem.cs
 using Content.Shared.Damage;
-using Content.Shared.Interaction.Events;
-using Content.Shared.Popups;
 using Content.Shared.Speech;
+<<<<<<< HEAD:Content.Server/Backmen/Blob/BlobMobSystem.cs
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 <<<<<<< HEAD
@@ -26,12 +57,25 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 =======
 using Robust.Shared.Map;
+||||||| parent of 3c3173a51d ([Tweak] Blob Things (#963)):Content.Server/Backmen/Blob/BlobMobSystem.cs
+using Robust.Shared.Audio;
+using Robust.Shared.Audio.Systems;
+using Robust.Shared.Map;
+=======
+>>>>>>> 3c3173a51d ([Tweak] Blob Things (#963)):Content.Server/Backmen/Blob/Systems/BlobMobSystem.cs
 using Robust.Shared.Network;
 using Robust.Shared.Player;
+<<<<<<< HEAD:Content.Server/Backmen/Blob/BlobMobSystem.cs
 >>>>>>> c57c139059 ([Tweak] Blob Refactor Part 1: General Rewrite (#703))
 using Robust.Shared.Prototypes;
+||||||| parent of 3c3173a51d ([Tweak] Blob Things (#963)):Content.Server/Backmen/Blob/BlobMobSystem.cs
+using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
+using Robust.Shared.Utility;
+=======
+>>>>>>> 3c3173a51d ([Tweak] Blob Things (#963)):Content.Server/Backmen/Blob/Systems/BlobMobSystem.cs
 
-namespace Content.Server.Backmen.Blob;
+namespace Content.Server.Backmen.Blob.Systems;
 
 <<<<<<< HEAD
 public sealed class BlobMobSystem : EntitySystem
@@ -111,7 +155,74 @@ public sealed class BlobMobSystem : SharedBlobMobSystem
         SubscribeLocalEvent<BlobSpeakComponent, ComponentShutdown>(OnSpokeRemove);
         SubscribeLocalEvent<BlobSpeakComponent, TransformSpeakerNameEvent>(OnSpokeName);
         SubscribeLocalEvent<BlobSpeakComponent, SpeakAttemptEvent>(OnSpokeCan, after: new []{ typeof(SpeechSystem) });
+<<<<<<< HEAD:Content.Server/Backmen/Blob/BlobMobSystem.cs
         //SubscribeLocalEvent<SmokeOnTriggerComponent, TriggerEvent>(HandleSmokeTrigger);
+||||||| parent of 3c3173a51d ([Tweak] Blob Things (#963)):Content.Server/Backmen/Blob/BlobMobSystem.cs
+        SubscribeLocalEvent<BlobSpeakComponent, EntitySpokeEvent>(OnSpoke, before: new []{ typeof(RadioSystem), typeof(HeadsetSystem) });
+        SubscribeLocalEvent<BlobSpeakComponent, RadioReceiveEvent>(OnIntrinsicReceive);
+        //SubscribeLocalEvent<SmokeOnTriggerComponent, TriggerEvent>(HandleSmokeTrigger);
+
+        _activeBSpeak = GetEntityQuery<BlobSpeakComponent>();
+    }
+
+    private void OnIntrinsicReceive(Entity<BlobSpeakComponent> ent, ref RadioReceiveEvent args)
+    {
+        if (TryComp(ent, out ActorComponent? actor) && args.Channel.ID == ent.Comp.Channel)
+        {
+            _netMan.ServerSendMessage(args.ChatMsg, actor.PlayerSession.Channel);
+        }
+    }
+
+    private void OnSpoke(Entity<BlobSpeakComponent> ent, ref EntitySpokeEvent args)
+    {
+        if(args.Channel == null)
+            return;
+        _radioSystem.SendRadioMessage(ent, args.Message, ent.Comp.Channel, ent, language: args.Language);
+    }
+
+    private void OnLanguageApply(Entity<BlobSpeakComponent> ent, ref DetermineEntityLanguagesEvent args)
+    {
+        if(ent.Comp.LifeStage is
+           ComponentLifeStage.Removing
+           or ComponentLifeStage.Stopping
+           or ComponentLifeStage.Stopped)
+            return;
+
+        args.SpokenLanguages.Clear();
+        args.SpokenLanguages.Add(ent.Comp.Language);
+        args.UnderstoodLanguages.Add(ent.Comp.Language);
+=======
+        SubscribeLocalEvent<BlobSpeakComponent, EntitySpokeEvent>(OnSpoke, before: new []{ typeof(RadioSystem), typeof(HeadsetSystem) });
+        SubscribeLocalEvent<BlobSpeakComponent, RadioReceiveEvent>(OnIntrinsicReceive);
+    }
+
+    private void OnIntrinsicReceive(Entity<BlobSpeakComponent> ent, ref RadioReceiveEvent args)
+    {
+        if (TryComp(ent, out ActorComponent? actor) && args.Channel.ID == ent.Comp.Channel)
+        {
+            _netMan.ServerSendMessage(args.ChatMsg, actor.PlayerSession.Channel);
+        }
+    }
+
+    private void OnSpoke(Entity<BlobSpeakComponent> ent, ref EntitySpokeEvent args)
+    {
+        if(args.Channel == null)
+            return;
+        _radioSystem.SendRadioMessage(ent, args.Message, ent.Comp.Channel, ent, language: args.Language);
+    }
+
+    private void OnLanguageApply(Entity<BlobSpeakComponent> ent, ref DetermineEntityLanguagesEvent args)
+    {
+        if(ent.Comp.LifeStage is
+           ComponentLifeStage.Removing
+           or ComponentLifeStage.Stopping
+           or ComponentLifeStage.Stopped)
+            return;
+
+        args.SpokenLanguages.Clear();
+        args.SpokenLanguages.Add(ent.Comp.Language);
+        args.UnderstoodLanguages.Add(ent.Comp.Language);
+>>>>>>> 3c3173a51d ([Tweak] Blob Things (#963)):Content.Server/Backmen/Blob/Systems/BlobMobSystem.cs
     }
 
     private void OnSpokeName(Entity<BlobSpeakComponent> ent, ref TransformSpeakerNameEvent args)

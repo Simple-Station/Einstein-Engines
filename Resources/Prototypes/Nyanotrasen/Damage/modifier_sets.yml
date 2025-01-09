@@ -122,32 +122,31 @@
 - type: damageModifierSet
   id: BaseBlob # ReactiveSpines
   coefficients:
-    Blunt: 0.25
-    Slash: 0.25
-    Piercing: 0.25
-    Heat: 2.00
+    Blunt: 0.30
+    Slash: 0.40
+    Piercing: 0.40
+    Heat: 3.00
 
 - type: damageModifierSet
-  id: ElectromagneticWebBlob # Explosive Lattice
+  id: BlobMob
   coefficients:
     Blunt: 0.50
     Slash: 0.50
     Piercing: 0.50
-    Heat: 2.50
-    Shock: 0.50
+    Heat: 1.50
 
 - type: damageModifierSet
-  id: ExplosiveLatticeBlob # Explosive Lattice
+  id: BlobStrong # Strong against melee and weak against lasers.
   coefficients:
-    Blunt: 0.25
-    Slash: 0.25
-    Piercing: 0.25
-    Heat: 3.00
-    Shock: 1.50
+    Blunt: 0.40
+    Slash: 0.40
+    Piercing: 0.30
+    Heat: 2.00
 
 - type: damageModifierSet
-  id: BlobMob # Blob mobs
+  id: BlobReflective # Defence against lasers, but weak against melee damage.
   coefficients:
+<<<<<<< HEAD:Resources/Prototypes/Nyanotrasen/Damage/modifier_sets.yml
     Blunt: 0.5
     Slash: 0.5
     Piercing: 0.5
@@ -161,3 +160,66 @@
     Piercing: 0.9
     Heat: 1.5
 >>>>>>> b1f1be5a79 (Cleanup (#593)):Resources/Prototypes/Backmen/Damage/modifier_sets.yml
+||||||| parent of 3c3173a51d ([Tweak] Blob Things (#963)):Resources/Prototypes/_Backmen/Damage/modifier_sets.yml
+    Blunt: 0.5
+    Slash: 0.5
+    Piercing: 0.5
+    Heat: 1.5
+
+- type: damageModifierSet
+  id: BlobReflective # If it reflects lasers, then it must be fragile?
+  coefficients:
+    Blunt: 0.9
+    Slash: 0.9
+    Piercing: 0.9
+    Heat: 1.5
+
+- type: damageModifierSet
+  id: HardLightBarrier
+  coefficients:
+    Heat: 0.8
+    Blunt: 0.8
+    Slash: 0.8
+    Piercing: 0.8
+    Cold: 0.8
+    Shock: 1.6
+
+# backmen: surgery
+# Change this if you want to alter how damage types affect part severing/integrity.
+- type: damageModifierSet
+  id: PartDamage
+  coefficients:
+    Blunt: 0.8
+    Slash: 1.2
+    Piercing: 0.5
+    Cold: 0.5
+    Heat: 0.8
+    Shock: 0.5
+=======
+    Blunt: 1.00 # Weak for melee damages
+    Slash: 1.10
+    Piercing: 0.90
+    Heat: 0.80 # Good against heat
+
+- type: damageModifierSet
+  id: HardLightBarrier
+  coefficients:
+    Heat: 0.8
+    Blunt: 0.8
+    Slash: 0.8
+    Piercing: 0.8
+    Cold: 0.8
+    Shock: 1.6
+
+# backmen: surgery
+# Change this if you want to alter how damage types affect part severing/integrity.
+- type: damageModifierSet
+  id: PartDamage
+  coefficients:
+    Blunt: 0.8
+    Slash: 1.2
+    Piercing: 0.5
+    Cold: 0.5
+    Heat: 0.8
+    Shock: 0.5
+>>>>>>> 3c3173a51d ([Tweak] Blob Things (#963)):Resources/Prototypes/_Backmen/Damage/modifier_sets.yml

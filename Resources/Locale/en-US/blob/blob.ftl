@@ -17,6 +17,7 @@ blob-spent-resource = -{ $point }
 blobberaut-not-on-blob-tile = You are dying while not on blob tiles.
 blobberaut-factory-destroy = You are dying because your factory blob was destroyed.
 carrier-blob-alert = You have { $second } seconds left before transformation.
+blob-core-under-attack = Your core is under attack!
 
 blob-mob-zombify-second-start = { $pod } starts turning you into a zombie.
 blob-mob-zombify-third-start = { $pod } starts turning { $target } into a zombie.
@@ -112,11 +113,16 @@ blob-user-was-a-blob = [color=gray]{$user}[/color] was a blob.
 blob-user-was-a-blob-named = [color=White]{$name}[/color] ([color=gray]{$user}[/color]) was a blob.
 blob-was-a-blob-named = [color=White]{$name}[/color] was a blob.
 
+blob-objective-percentage = It captured [color=White]{ $progress }%[/color] to the victory.
+blob-end-victory = [color=Red]Blob(s) successfully absorbed the station![/color]
+blob-end-fail = [color=Green]Blob(s) failed to absorb the station.[/color]
+blob-end-fail-progress = All blobs captured [color=Yellow]{ $progress }%[/color] to the victory.
+
 preset-blob-objective-issuer-blob = [color=#33cc00]Blob[/color]
 
-blob-user-was-a-blob-with-objectives = [color=gray]{$user}[/color] was a blob who had the following objectives:
-blob-user-was-a-blob-with-objectives-named = [color=White]{$name}[/color] ([color=gray]{$user}[/color]) was a blob who had the following objectives:
-blob-was-a-blob-with-objectives-named = [color=White]{$name}[/color] was a blob who had the following objectives:
+blob-user-was-a-blob-with-objectives = [color=gray]{$user}[/color] was a blob:
+blob-user-was-a-blob-with-objectives-named = [color=White]{$name}[/color] ([color=gray]{$user}[/color]) was a blob:
+blob-was-a-blob-with-objectives-named = [color=White]{$name}[/color] was a blob:
 
 # Objectivies
 objective-condition-blob-capture-title = Take over the station
