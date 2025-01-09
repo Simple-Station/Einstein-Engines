@@ -267,7 +267,7 @@ public abstract partial class SharedSurgerySystem : EntitySystem
                     && !organs.Any(organ => HasComp<OrganReattachedComponent>(organ.Id))))
                     args.Cancelled = true;
             }
-            else if (!ent.Comp.Inverse || !_container.TryGetContainer(args.Part, _body.GetOrganContainerId(ent.Comp.SlotId), out _))
+            else if (!ent.Comp.Inverse || !_container.TryGetContainer(args.Part, SharedBodySystem.GetOrganContainerId(ent.Comp.SlotId), out _))
                 args.Cancelled = true;
         }
     }

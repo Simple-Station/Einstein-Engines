@@ -76,7 +76,7 @@ public abstract partial class SharedBodySystem : EntitySystem
     /// <summary>
     /// Gets the container Id for the specified slotId.
     /// </summary>
-    public string GetOrganContainerId(string slotId)
+    public static string GetOrganContainerId(string slotId)
     {
         return OrganSlotContainerIdPrefix + slotId;
     }
