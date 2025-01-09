@@ -797,6 +797,28 @@
       group: LoadoutOuter
 
 - type: loadout
+  id: LoadoutOuterCoatSubmariner
+  category: Outer
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingOuterCoatSubmariner
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterCoatSubmarinerOpened
+  category: Outer
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingOuterCoatSubmarinerOpened
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
   id: LoadoutOuterVestColorable
   category: Outer
   cost: 0

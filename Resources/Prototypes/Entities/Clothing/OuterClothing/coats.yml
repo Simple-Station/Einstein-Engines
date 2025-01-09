@@ -557,3 +557,19 @@
   parent: [ClothingOuterFoldableBaseOpened, ClothingOuterCoatAsymmetric]
   id: ClothingOuterCoatAsymmetricOpened
   name: asymmetric coat
+
+- type: entity
+  parent: ClothingOuterStorageFoldableBase
+  id: ClothingOuterCoatSubmariner
+  name: submariner coat
+  description: A leather jacket with a synthetic fur collar perfect for exploring the caves of Submarine.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Coats/submariner.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Coats/submariner.rsi
+
+- type: entity
+  parent: [ClothingOuterFoldableBaseOpened, ClothingOuterCoatSubmariner]
+  id: ClothingOuterCoatSubmarinerOpened
+  name: submariner coat
