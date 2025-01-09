@@ -714,3 +714,42 @@
     whitelist:
       tags:
       - WizardWand
+
+- type: entity
+  parent: ClothingBeltBase
+  id: ClothingBeltGeneric
+  name: belt
+  description: Only useful for holding up your pants.
+  components:
+  - type: Sprite
+    sprite: Clothing/Belt/generic.rsi
+    state: icon
+  - type: Clothing
+    sprite: Clothing/Belt/generic.rsi
+    renderLayer: innerBelt
+
+- type: entity
+  parent: ClothingBeltBase
+  id: ClothingBeltGenericThin
+  name: thin belt
+  description: Only useful for holding up your pants.
+  components:
+  - type: Sprite
+    sprite: Clothing/Belt/generic_thin.rsi
+    state: icon
+  - type: Clothing
+    sprite: Clothing/Belt/generic_thin.rsi
+    renderLayer: innerBelt
+
+- type: entity
+  parent: ClothingBeltBase
+  id: ClothingBeltGenericThick
+  name: thick belt
+  description: Only useful for holding up your pants.
+  components:
+  - type: Sprite
+    sprite: Clothing/Belt/generic_thick.rsi
+    state: icon
+  - type: Clothing
+    sprite: Clothing/Belt/generic_thick.rsi
+    renderLayer: innerBelt

@@ -62,3 +62,4 @@
     sprite: Clothing/Neck/Ties/longtie.rsi
   - type: Clothing
     sprite: Clothing/Neck/Ties/longtie.rsi
+    renderLayer: innerNeck
