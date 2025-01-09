@@ -850,3 +850,80 @@
     sprite: Clothing/Uniforms/Jumpskirt/olddress.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpskirt/olddress.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtDressAsymmetric
+  name: asymmetric dress
+  description: A one-piece fashionable garment.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpskirt/asymmetric_dress.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpskirt/asymmetric_dress.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtDressEvening
+  name: evening gown
+  description: A one-piece fashionable garment.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpskirt/evening_gown.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpskirt/evening_gown.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtDressMidi
+  name: midi dress
+  description: A one-piece fashionable garment.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpskirt/midi_dress.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpskirt/midi_dress.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtDressOpenShoulder
+  name: open-shoulder dress
+  description: A one-piece fashionable garment.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpskirt/openshoulder_dress.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpskirt/openshoulder_dress.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtDressTea
+  name: tea-length dress
+  description: A one-piece fashionable garment.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpskirt/tea_dress.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpskirt/tea_dress.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtDressSleeveless
+  name: sleeveless A-line dress
+  description: A one-piece fashionable garment.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpskirt/sleeveless_dress.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpskirt/sleeveless_dress.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtDressLongSleeve
+  name: long sleeve A-line dress
+  description: A one-piece fashionable garment.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpskirt/longsleeve_dress.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpskirt/longsleeve_dress.rsi

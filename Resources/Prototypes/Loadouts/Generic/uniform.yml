@@ -1048,3 +1048,124 @@
       inverted: true
       departments:
         - Command
+
+# Colorable dresses
+- type: loadout
+  id: LoadoutUniformJumpskirtDressAsymmetric
+  category: Uniform
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingUniformJumpskirtDressAsymmetric
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+        - Security
+
+- type: loadout
+  id: LoadoutUniformJumpskirtDressEvening
+  category: Uniform
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingUniformJumpskirtDressEvening
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+        - Security
+
+- type: loadout
+  id: LoadoutUniformJumpskirtDressMidi
+  category: Uniform
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingUniformJumpskirtDressMidi
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+        - Security
+
+- type: loadout
+  id: LoadoutUniformJumpskirtDressOpenShoulder
+  category: Uniform
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingUniformJumpskirtDressOpenShoulder
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+        - Security
+
+- type: loadout
+  id: LoadoutUniformJumpskirtDressTea
+  category: Uniform
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingUniformJumpskirtDressTea
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+        - Security
+
+- type: loadout
+  id: LoadoutUniformJumpskirtDressSleeveless
+  category: Uniform
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingUniformJumpskirtDressSleeveless
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+        - Security
+
+- type: loadout
+  id: LoadoutUniformJumpskirtDressLongSleeve
+  category: Uniform
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingUniformJumpskirtDressLongSleeve
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+        - Security
+
