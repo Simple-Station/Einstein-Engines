@@ -878,11 +878,10 @@
       - MagazinePistolUranium
       - MagazinePistolSubMachineGunRubber
       - MagazinePistolSubMachineGunIncendiary
-      - MagazinePistolSubMachineGunRubberUranium
+      - MagazinePistolSubMachineGunUranium
       - MagazineMagnumRubber
       - MagazineMagnumIncendiary
       - MagazineMagnumUranium
-      - SpeedLoaderMagnumRubber
       - MagazineRifleRubber
       - MagazineRifleIncendiary
       - MagazineRifleUranium
@@ -899,6 +898,7 @@
       - ShuttleGunSvalinnMachineGunCircuitboard
       - Signaller
       - SignalTrigger
+      - SpeedLoaderMagnumRubber
       - SpeedLoaderMagnumIncendiary
       - SpeedLoaderMagnumUranium
       - TelescopicShield
