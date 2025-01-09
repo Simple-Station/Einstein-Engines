@@ -40,7 +40,7 @@
         - Civilian
 
 - type: loadout
-  id: LoadoutItemBackpackSatchelPurse
+  id: LoadoutBackpackSatchelPurse
   category: Backpacks
   cost: 0
   exclusive: true
@@ -56,7 +56,7 @@
          - Prisoner
 
 - type: loadout
-  id: LoadoutItemBackpackSatchelPurseLuxury
+  id: LoadoutBackpackSatchelPurseLuxury
   category: Backpacks
   cost: 2
   exclusive: true
@@ -69,7 +69,7 @@
          - Prisoner
 
 - type: loadout
-  id: LoadoutItemBackpackSatchelPurseRoyalLuxury
+  id: LoadoutBackpackSatchelPurseRoyalLuxury
   category: Backpacks
   cost: 2
   exclusive: true
@@ -82,7 +82,7 @@
          - Prisoner
 
 - type: loadout
-  id: LoadoutItemBackpackSatchelLuxury
+  id: LoadoutBackpackSatchelLuxury
   category: Backpacks
   cost: 2
   exclusive: true

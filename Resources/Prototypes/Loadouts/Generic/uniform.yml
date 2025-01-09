@@ -454,6 +454,7 @@
   category: Uniform
   cost: 0
   exclusive: true
+  customColorTint: true
   items:
     - ClothingUniformJumpsuitBartender
   requirements:
@@ -470,6 +471,7 @@
   category: Uniform
   cost: 0
   exclusive: true
+  customColorTint: true
   items:
     - ClothingUniformJumpskirtBartender
   requirements:
@@ -911,6 +913,7 @@
   category: Uniform
   cost: 1
   exclusive: true
+  customColorTint: true
   items:
     - ClothingUniformJumpsuitSuitBlack
   requirements:
