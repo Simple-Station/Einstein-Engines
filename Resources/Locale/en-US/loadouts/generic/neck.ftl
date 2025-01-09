@@ -10,3 +10,7 @@ loadout-name-LoadoutNeckCrucifixColorSaintPeter = Saint Peter crucifix (colorabl
 loadout-name-LoadoutNeckTallit = tallit (colorable)
 loadout-name-LoadoutNeckBedsheetWhite = bedsheet (colorable)
 loadout-name-LoadoutNeckDogtags = dogtags (colorable)
+loadout-name-LoadoutNeckNecklaceStandard = necklace (colorable)
+loadout-name-LoadoutNeckNecklaceLow = low-hanging necklace (colorable)
+loadout-name-LoadoutNeckNecklaceRound = round necklace (colorable)
+loadout-name-LoadoutNeckNecklaceSmall = small necklace (colorable)

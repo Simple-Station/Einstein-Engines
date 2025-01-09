@@ -81,3 +81,27 @@
       id: LoadoutNeckBedsheetWhite
     - type: loadout
       id: LoadoutNeckBedsheetNT
+    - type: loadout
+      id: LoadoutNeckNecklaceStandard
+    - type: loadout
+      id: LoadoutNeckNecklaceLow
+    - type: loadout
+      id: LoadoutNeckNecklaceRound
+    - type: loadout
+      id: LoadoutNeckNecklaceSmall
+    - type: loadout
+      id: LoadoutNeckNecklaceGold
+    - type: loadout
+      id: LoadoutNeckNecklaceSilver
+    - type: loadout
+      id: LoadoutNeckNecklaceChainGold
+    - type: loadout
+      id: LoadoutNeckNecklaceChainSilver
+    - type: loadout
+      id: LoadoutNeckNecklacePendantGold
+    - type: loadout
+      id: LoadoutNeckNecklacePendantGoldLarge
+    - type: loadout
+      id: LoadoutNeckNecklacePendantSilver
+    - type: loadout
+      id: LoadoutNeckNecklacePendantSilverLarge
