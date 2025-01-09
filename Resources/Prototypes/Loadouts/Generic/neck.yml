@@ -186,12 +186,52 @@
     - !type:CharacterItemGroupRequirement
       group: LoadoutNeck
 
+- type: loadout
+  id: LoadoutNeckTieBow
+  category: Neck
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
+  items:
+    - ClothingNeckTieBow
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutNeckTieBowTie
+  category: Neck
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
+  items:
+    - ClothingNeckTieBowTie
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutNeckTieRibbon
+  category: Neck
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
+  items:
+    - ClothingNeckTieRibbon
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+
 #Pride Accessories
 - type: loadout
   id: LoadoutItemsPrideLGBTPin
   category: Neck
   cost: 0
   exclusive: true
+  canBeHeirloom: true
   items:
     - ClothingNeckLGBTPin
   requirements:
@@ -203,6 +243,7 @@
   category: Neck
   cost: 0
   exclusive: true
+  canBeHeirloom: true
   items:
     - ClothingNeckAromanticPin
   requirements:
@@ -214,6 +255,7 @@
   category: Neck
   cost: 0
   exclusive: true
+  canBeHeirloom: true
   items:
     - ClothingNeckAsexualPin
   requirements:
@@ -225,6 +267,7 @@
   category: Neck
   cost: 0
   exclusive: true
+  canBeHeirloom: true
   items:
     - ClothingNeckBisexualPin
   requirements:
@@ -236,6 +279,7 @@
   category: Neck
   cost: 0
   exclusive: true
+  canBeHeirloom: true
   items:
     - ClothingNeckGayPin
   requirements:
@@ -247,6 +291,7 @@
   category: Neck
   cost: 0
   exclusive: true
+  canBeHeirloom: true
   items:
     - ClothingNeckIntersexPin
   requirements:
@@ -258,6 +303,7 @@
   category: Neck
   cost: 0
   exclusive: true
+  canBeHeirloom: true
   items:
     - ClothingNeckLesbianPin
   requirements:
@@ -269,6 +315,7 @@
   category: Neck
   cost: 0
   exclusive: true
+  canBeHeirloom: true
   items:
     - ClothingNeckNonBinaryPin
   requirements:
@@ -280,6 +327,7 @@
   category: Neck
   cost: 0
   exclusive: true
+  canBeHeirloom: true
   items:
     - ClothingNeckPansexualPin
   requirements:
@@ -291,6 +339,7 @@
   category: Neck
   cost: 0
   exclusive: true
+  canBeHeirloom: true
   items:
     - ClothingNeckTransPin
   requirements:
