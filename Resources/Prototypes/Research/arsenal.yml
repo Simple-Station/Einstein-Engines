@@ -72,6 +72,7 @@
   - CartridgeRifleRubber
   - MagazineRifleRubber
   - MagazinePistolRubber
+  - MagazinePistolSubMachineGunRubber
   - MagazineMagnumRubber
   - MagazineLightRifleRubber
   - SpeedLoaderMagnumRubber
@@ -95,7 +96,7 @@
   recipeUnlocks:
   - MagazineRifleUranium
   - MagazinePistolUranium
-  - MagazinePistolSubMachineGunIncendiary
+  - MagazinePistolSubMachineGunUranium
   - MagazineMagnumUranium
   - MagazineLightRifleUranium
   - SpeedLoaderMagnumUranium
