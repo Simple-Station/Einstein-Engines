@@ -424,6 +424,41 @@
     Plastic: 540
 
 - type: latheRecipe
+  id: MagazineMagnumEmpty
+  result: MagazineMagnumEmpty
+  category: Ammo
+  completetime: 5
+  materials:
+    Steel: 30
+
+- type: latheRecipe
+  id: MagazineMagnum
+  result: MagazineMagnum
+  category: Ammo
+  completetime: 5
+  materials:
+    Steel: 150
+
+- type: latheRecipe
+  id: MagazineMagnumUranium
+  result: MagazineMagnumUranium
+  category: Ammo
+  completetime: 5
+  materials:
+    Steel: 30
+    Plastic: 75
+    Uranium: 150
+
+- type: latheRecipe
+  id: MagazineMagnumIncendiary
+  result: MagazineMagnumIncendiary
+  category: Ammo
+  completetime: 5
+  materials:
+    Steel: 30
+    Plastic: 150
+
+- type: latheRecipe
   id: MagazineBoxRifle
   result: MagazineBoxRifle
   category: Ammo

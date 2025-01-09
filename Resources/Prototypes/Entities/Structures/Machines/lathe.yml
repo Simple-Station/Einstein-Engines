@@ -805,6 +805,8 @@
       - MagazinePistolSubMachineGunEmpty
       - MagazinePistolSubMachineGunTopMounted
       - MagazinePistolSubMachineGunTopMountedEmpty
+      - MagazineMagnum
+      - MagazineMagnumEmpty
       - MagazineRifle
       - MagazineRifleEmpty
       - MagazineShotgun
@@ -872,6 +874,8 @@
       - MagazineLightRifleUranium
       - MagazinePistolIncendiary
       - MagazinePistolUranium
+      - MagazineMagnumIncendiary
+      - MagazineMagnumUranium
       - MagazineRifleIncendiary
       - MagazineRifleUranium
       - MagazineShotgunBeanbag
