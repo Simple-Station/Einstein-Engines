@@ -7,6 +7,11 @@
     - !type:CharacterDepartmentTimeRequirement
       department: Security
   startingGear: SecurityOfficerGear
+  conditionalStartingGear:
+    - id: SecurityOfficerPlasmamanGear
+      requirements:
+      - !type:CharacterSpeciesRequirement
+        species: [ Plasmaman ]
   icon: "JobIconSecurityOfficer"
   supervisors: job-supervisors-hos
   canBeAntag: false
@@ -36,3 +41,11 @@
   innerClothingSkirt: ClothingUniformJumpskirtSec
   satchel: ClothingBackpackSatchelSecurity
   duffelbag: ClothingBackpackDuffelSecurity
+
+- type: startingGear
+  id: SecurityOfficerPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitSec
+    head: ClothingHeadEnvirohelmSec
+    gloves: ClothingHandsGlovesEnviroglovesBlack

@@ -307,3 +307,9 @@
     shoes: ClothingShoesClownBanana
     jumpsuit: ClothingUniformJumpsuitClownBanana
     mask: ClothingMaskClownBanana
+
+# Plasmaman
+- type: startingGear
+  id: BasePlasmamanGear
+  equipment:
+    pocket2: DoubleEmergencyPlasmaTankFilled

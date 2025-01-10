@@ -92,6 +92,6 @@ public sealed class CharacterRequirementsSystem : EntitySystem
     {
         return _inventory.TryGetSlots(dummy, out var slots)
             && slots.Where(slot => !slot.SlotFlags.HasFlag(SlotFlags.POCKET))
-                .Any(slot => _inventory.CanEquip(dummy, clothing, slot.Name, out _, bypassAccessCheck: bypassAccessCheck));
+                .Any(slot => _inventory.CanEquip(dummy, clothing, slot.Name, out _, onSpawn: true, bypassAccessCheck: bypassAccessCheck));
     }
 }

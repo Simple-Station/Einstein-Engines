@@ -11,6 +11,11 @@
       department: Security
       min: 18000 # 4 hrs
   startingGear: CorpsmanGear
+  conditionalStartingGear: # TODO: corpsman plasmaman gear
+    - id: SecurityOfficerPlasmamanGear
+      requirements:
+      - !type:CharacterSpeciesRequirement
+        species: [ Plasmaman ]
   icon: "JobIconBrigmedic"
   supervisors: job-supervisors-hos
   canBeAntag: false

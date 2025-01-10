@@ -10,6 +10,11 @@
       department: Security
       min: 14400
   startingGear: PrisonGuardGear
+  conditionalStartingGear: # TODO: prison guard plasmaman gear
+    - id: SecurityOfficerPlasmamanGear
+      requirements:
+      - !type:CharacterSpeciesRequirement
+        species: [ Plasmaman ]
   alwaysUseSpawner: true
   canBeAntag: false
   icon: "JobIconPrisonGuard"

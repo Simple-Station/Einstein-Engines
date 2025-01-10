@@ -152,3 +152,29 @@
     - state: icon_flipped
       map: ["foldedLayer"]
       visible: true
+
+- type: entity
+  abstract: true
+  parent: [ClothingUniformBase, AllowSuitStorageClothing] # suit storage is a temporary stopgap before we get more clever tank storage ways
+  id: ClothingUniformEnvirosuitBase
+  components:
+  - type: IgniteFromGasImmunity
+  - type: Item
+    size: Huge
+  - type: Clothing
+    equipDelay: 1
+    unequipDelay: 0.75
+  - type: SelfExtinguisher
+    maxCharges: 5
+    cooldown: 100
+    requiresIgniteFromGasImmune: true
+    sound:
+      path: /Audio/Effects/extinguish.ogg
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.85
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - PlasmamanSafe

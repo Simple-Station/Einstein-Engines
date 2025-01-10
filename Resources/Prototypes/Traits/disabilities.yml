@@ -224,6 +224,7 @@
       inverted: true
       species:
         - IPC
+        - Plasmaman
   functions:
     - !type:TraitAddComponent
       components:
@@ -244,6 +245,7 @@
       inverted: true
       species:
         - IPC
+        - Plasmaman
   functions:
     - !type:TraitAddComponent
       components:

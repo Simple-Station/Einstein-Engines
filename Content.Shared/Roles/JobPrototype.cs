@@ -99,6 +99,12 @@ namespace Content.Shared.Roles
         public string? StartingGear { get; private set; }
 
         /// <summary>
+        ///   A list of requirements that when satisfied, add or replace from the base starting gear.
+        /// </summary>
+        [DataField("conditionalStartingGear")]
+        public List<ConditionalStartingGear>? ConditionalStartingGear { get; private set; }
+
+        /// <summary>
         /// Use this to spawn in as a non-humanoid (borg, test subject, etc.)
         /// Starting gear will be ignored.
         /// If you want to just add special attributes to a humanoid, use AddComponentSpecial instead.
@@ -126,6 +132,25 @@ namespace Content.Shared.Roles
 
         [DataField]
         public bool Whitelisted;
+    }
+
+    /// <summary>
+    ///   Starting gear that will only be applied upon satisfying requirements.
+    /// </summary>
+    [DataDefinition]
+    public sealed partial class ConditionalStartingGear
+    {
+        /// <summary>
+        ///   The requirements to check.
+        /// </summary>
+        [DataField(required: true)]
+        public List<CharacterRequirement> Requirements;
+
+        /// <summary>
+        ///   The starting gear to apply, replacing the equivalent slots.
+        /// </summary>
+        [DataField(required: true, customTypeSerializer: typeof(PrototypeIdSerializer<StartingGearPrototype>))]
+        public string Id { get; private set; }
     }
 
     /// <summary>

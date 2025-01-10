@@ -17,6 +17,11 @@
 
 
   startingGear: ClerkGear
+  conditionalStartingGear:
+    - id: LawyerPlasmamanGear
+      requirements:
+      - !type:CharacterSpeciesRequirement
+        species: [ Plasmaman ]
   icon: "JobIconClerk"
   requireAdminNotify: true
   supervisors: job-supervisors-cj

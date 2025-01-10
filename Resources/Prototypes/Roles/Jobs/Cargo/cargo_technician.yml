@@ -5,6 +5,11 @@
   playTimeTracker: JobCargoTechnician
   antagAdvantage: 2 # DeltaV - Reduced TC: External Access
   startingGear: CargoTechGear
+  conditionalStartingGear:
+    - id: CargoTechPlasmamanGear
+      requirements:
+      - !type:CharacterSpeciesRequirement
+        species: [ Plasmaman ]
   icon: "JobIconCargoTechnician"
   supervisors: job-supervisors-qm
   access:
@@ -27,3 +32,11 @@
   innerClothingSkirt: ClothingUniformJumpskirtCargo
   satchel: ClothingBackpackSatchelCargoFilled
   duffelbag: ClothingBackpackDuffelCargoFilled
+
+- type: startingGear
+  id: CargoTechPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitCargo
+    head: ClothingHeadEnvirohelmCargo
+    gloves: ClothingHandsGlovesEnviroglovesCargo
