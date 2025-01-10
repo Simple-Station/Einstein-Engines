@@ -30,6 +30,9 @@ public sealed class AssayPowerSystem : EntitySystem
         SubscribeLocalEvent<PsionicComponent, AssayDoAfterEvent>(OnDoAfter);
     }
 
+    /// <summary>
+    ///     This power activates when scanning any entity, displaying to the player's chat window a variety of psionic related statistics about the target.
+    /// </summary>
     private void OnPowerUsed(EntityUid uid, PsionicComponent psionic, AssayPowerActionEvent args)
     {
         if (!_psionics.OnAttemptPowerUse(args.Performer, "assay")
@@ -52,11 +55,14 @@ public sealed class AssayPowerSystem : EntitySystem
         args.Handled = true;
     }
 
-    private void OnDoAfter(EntityUid uid, PsionicComponent userPsionic, AssayDoAfterEvent args)
+    /// <summary>
+    ///     Assuming the DoAfter wasn't canceled, the user wasn't mindbroken, and the target still exists, prepare the scan results!
+    /// </summary>
+    private void OnDoAfter(EntityUid uid, PsionicComponent component, AssayDoAfterEvent args)
     {
-        if (userPsionic is null)
+        if (component is null)
             return;
-        userPsionic.DoAfter = null;
+        component.DoAfter = null;
 
         var user = uid;
         var target = args.Target;
@@ -64,42 +70,58 @@ public sealed class AssayPowerSystem : EntitySystem
             || !_playerManager.TryGetSessionByEntity(user, out var session))
             return;
 
-        if (target == user)
-        {
-            var userAmp = MathF.Round(userPsionic.CurrentAmplification, 2).ToString("#.##");
-            var userDamp = MathF.Round(userPsionic.CurrentDampening, 2).ToString("#.##");
-            var userPotentia = MathF.Round(userPsionic.Potentia, 2).ToString("#.##");
-            var assayBody = Loc.GetString("assay-body", ("entity", target), ("amplification", userAmp), ("dampening", userDamp), ("potentia", userPotentia));
-            var userFeedback = $"[font size={args.FontSize}][color={args.FontColor}]{assayBody}[/color][/font]";
-            SendDescToChat(userFeedback, session);
-
-            var assaySelf = Loc.GetString("assay-self", ("entity", target));
-            _popups.PopupEntity(assaySelf, user, user, PopupType.LargeCaution);
-
-            var assaySelfFeedback = $"[font size={args.FontSize}][color={args.FontColor}]{assaySelf}[/color][/font]";
-            SendDescToChat(assaySelfFeedback, session);
+        if (InspectSelf(uid, args, session))
             return;
-        }
 
         if (!TryComp<PsionicComponent>(target, out var targetPsionic))
         {
             var noPowers = Loc.GetString("no-powers", ("entity", target));
             _popups.PopupEntity(noPowers, user, user, PopupType.LargeCaution);
 
+            // Incredibly spooky message for non-psychic targets.
             var noPowersFeedback = $"[font size={args.FontSize}][color={args.FontColor}]{noPowers}[/color][/font]";
             SendDescToChat(noPowersFeedback, session);
             return;
         }
 
+        InspectOther(targetPsionic, args, session);
+    }
+
+    /// <summary>
+    ///     This is a special use-case for scanning yourself with the power. The player receives a unique feedback message if they do so.
+    ///     It however displays significantly less information when doing so. Consider this an intriguing easter egg.
+    /// </summary>
+    private bool InspectSelf(EntityUid uid, AssayDoAfterEvent args, ICommonSession session)
+    {
+        if (args.Target == args.User)
+            return false;
+
+        var user = uid;
+        var target = args.Target;
+
+        var assaySelf = Loc.GetString("assay-self", ("entity", target!.Value));
+        _popups.PopupEntity(assaySelf, user, user, PopupType.LargeCaution);
+
+        var assaySelfFeedback = $"[font size=20][color=#ff0000]{assaySelf}[/color][/font]";
+        SendDescToChat(assaySelfFeedback, session);
+        return true;
+    }
+
+    /// <summary>
+    ///     If the target turns out to be a psychic, display their feedback messages in chat.
+    /// </summary>
+    private void InspectOther(PsionicComponent targetPsionic, AssayDoAfterEvent args, ICommonSession session)
+    {
+        var target = args.Target;
         var targetAmp = MathF.Round(targetPsionic.CurrentAmplification, 2).ToString("#.##");
         var targetDamp = MathF.Round(targetPsionic.CurrentDampening, 2).ToString("#.##");
         var targetPotentia = MathF.Round(targetPsionic.Potentia, 2).ToString("#.##");
-        var message = $"[font size={args.FontSize}][color={args.FontColor}]{Loc.GetString("assay-body", ("entity", target), ("amplification", targetAmp), ("dampening", targetDamp), ("potentia", targetPotentia))}[/color][/font]";
+        var message = $"[font size={args.FontSize}][color={args.FontColor}]{Loc.GetString("assay-body", ("entity", target!.Value), ("amplification", targetAmp), ("dampening", targetDamp), ("potentia", targetPotentia))}[/color][/font]";
         SendDescToChat(message, session);
 
         foreach (var feedback in targetPsionic.AssayFeedback)
         {
-            var locale = Loc.GetString(feedback, ("entity", target));
+            var locale = Loc.GetString(feedback, ("entity", target!.Value));
             var feedbackMessage = $"[font size={args.FontSize}][color={args.FontColor}]{locale}[/color][/font]";
             SendDescToChat(feedbackMessage, session);
         }

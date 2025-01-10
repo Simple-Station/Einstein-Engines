@@ -1,6 +1,7 @@
 using Robust.Shared.Audio;
 
 namespace Content.Shared.Actions.Events;
+
 public sealed partial class AssayPowerActionEvent : EntityTargetActionEvent
 {
     [DataField]
