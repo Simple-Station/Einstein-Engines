@@ -9480,3 +9480,10 @@ Entries:
   id: 6654
   time: '2025-01-09T21:32:06.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1470
+- author: BlueHNT
+  changes:
+    - type: Add
+      message: Added missing lathe recipes
+  id: 6655
+  time: '2025-01-10T02:27:28.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1472
