@@ -8,3 +8,8 @@
     metabolizerTypes: [ Vox ]
   - type: Lung
     alert: LowNitrogen
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
+    - Lungs

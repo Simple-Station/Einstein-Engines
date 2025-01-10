@@ -5,6 +5,11 @@
   components:
   - type: Metabolizer
     metabolizerTypes: [Dwarf]
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
+    - Heart
 
 - type: entity
   id: OrganDwarfLiver
@@ -13,6 +18,11 @@
   components:
   - type: Metabolizer
     metabolizerTypes: [Dwarf, LiquorLifeline]
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
+    - Liver
 
 - type: entity
   id: OrganDwarfStomach
@@ -36,3 +46,8 @@
     # mm very yummy
     maxReagents: 5
     metabolizerTypes: [Dwarf]
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
+    - Stomach

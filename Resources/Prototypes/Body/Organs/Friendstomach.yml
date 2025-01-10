@@ -13,3 +13,8 @@
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 5
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
+    - Stomach

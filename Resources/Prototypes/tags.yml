@@ -594,6 +594,9 @@
 - type: Tag
   id: ExplosivePassable
 
+- type: Tag # goob edit
+  id: Eyes
+
 - type: Tag
   id: Figurine
 
@@ -647,6 +650,9 @@
 
 - type: Tag
   id: Galaxythistle
+
+- type: Tag # heretic edit
+  id: GasMask
 
 - type: Tag
   id: GasScrubber
@@ -728,6 +734,9 @@
 
 - type: Tag
   id: Head
+
+- type: Tag # goob edit
+  id: Heart
 
 - type: Tag
   id: HelmetEVA
@@ -825,6 +834,9 @@
 - type: Tag
   id: KeyedInstrument
 
+- type: Tag # goob edit
+  id: Kidneys
+
 - type: Tag
   id: KitchenKnife
 
@@ -839,6 +851,12 @@
 
 - type: Tag
   id: Lime
+
+- type: Tag # goob edit
+  id: Liver
+
+- type: Tag # goob edit
+  id: Lungs
 
 - type: Tag
   id: Machete
@@ -916,6 +934,9 @@
 
 - type: Tag
   id: MailingUnitElectronics
+
+- type: Tag # heretic edit
+  id: Mask
 
 - type: Tag
   id: Matchstick
@@ -998,6 +1019,9 @@
 - type: Tag
   id: Ore
 
+- type: Tag # goob edit
+  id: Organ
+
 - type: Tag
   id: Packet
 
@@ -1075,6 +1099,9 @@
 
 - type: Tag
   id: PlushieSharkGrey
+
+- type: Tag # goob edit
+  id: Poppy
 
 - type: Tag
   id: Potato
@@ -1248,11 +1275,17 @@
 - type: Tag
   id: StringInstrument
 
+- type: Tag # heretic edit
+  id: Stunbaton
+
 - type: Tag
   id: StationMapElectronics
 
 - type: Tag
   id: Steak
+
+- type: Tag # goob edit
+  id: Stomach
 
 - type: Tag
   id: SubdermalImplant
@@ -1278,6 +1311,9 @@
 - type: Tag
   id: Spellbook
 
+- type: Tag # heretic edit
+  id: Table
+
 - type: Tag
   id: Taser
 
@@ -1298,6 +1334,9 @@
 
 - type: Tag
   id: TimerSignalElectronics
+
+- type: Tag # goob edit
+  id: Tongue
 
 - type: Tag
   id: Toolbox
@@ -1358,6 +1397,9 @@
 
 - type: Tag
   id: WeaponShotgunKammerer
+
+- type: Tag # goob edit
+  id: WaterTank
 
 - type: Tag
   id: WeldingMask

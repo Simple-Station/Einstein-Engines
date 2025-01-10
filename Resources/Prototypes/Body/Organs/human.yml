@@ -26,6 +26,7 @@
   - type: Tag
     tags:
       - Meat
+      - Organ # heretic edit
 
 
 - type: entity
@@ -73,7 +74,12 @@
     entries:
       Burger: Brain
       Taco: Brain
-  
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
+    - Brain
+
 - type: entity
   id: OrganHumanEyes
   parent: BaseHumanOrgan
@@ -87,6 +93,11 @@
     layers:
       - state: eyeball-l
       - state: eyeball-r
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
+    - Eyes
 
 - type: entity
   id: OrganHumanTongue
@@ -96,6 +107,11 @@
   components:
   - type: Sprite
     state: tongue
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
+    - Tongue
 
 - type: entity
   id: OrganHumanAppendix
@@ -107,6 +123,10 @@
     - state: appendix
     - state: appendix-inflamed
       visible: false
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
 
 - type: entity
   id: OrganHumanEars
@@ -117,6 +137,10 @@
   - type: Sprite
     state: ears
   - type: Ears # Shitmed Change
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
 
 - type: entity
   id: OrganHumanLungs
@@ -153,6 +177,11 @@
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 5
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
+    - Lungs
 
 - type: entity
   id: OrganHumanHeart
@@ -175,7 +204,12 @@
     - id: Medicine
     - id: Poison
     - id: Narcotic
-
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
+    - Heart
+    
 - type: entity
   id: OrganHumanStomach
   parent: BaseHumanOrgan
@@ -206,6 +240,11 @@
     groups:
     - id: Food
     - id: Drink
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
+    - Stomach
 
 - type: entity
   id: OrganHumanLiver
@@ -224,6 +263,11 @@
     groups:
     - id: Alcohol
       rateModifier: 0.1 # removes alcohol very slowly along with the stomach removing it as a drink
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
+    - Liver
 
 - type: entity
   id: OrganHumanKidneys
@@ -242,3 +286,8 @@
     maxReagents: 5
     metabolizerTypes: [Human]
     removeEmpty: true
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
+    - Kidneys
