@@ -414,7 +414,7 @@ public sealed partial class StaminaSystem : EntitySystem
         _adminLogger.Add(LogType.Stamina, LogImpact.Medium, $"{ToPrettyString(uid):user} entered stamina crit");
     }
 
-    private void ExitStamCrit(EntityUid uid, StaminaComponent? component = null)
+    public void ExitStamCrit(EntityUid uid, StaminaComponent? component = null) // goob edit - made it public.
     {
         if (!Resolve(uid, ref component) || !component.Critical)
             return;

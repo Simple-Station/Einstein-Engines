@@ -25,7 +25,6 @@ public abstract class SharedActionsSystem : EntitySystem
     [Dependency] protected readonly IGameTiming GameTiming = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private readonly INetManager _net = default!;
-
     [Dependency] private readonly SharedInteractionSystem _interactionSystem = default!;
     [Dependency] private readonly ActionBlockerSystem _actionBlockerSystem = default!;
     [Dependency] private readonly RotateToFaceSystem _rotateToFaceSystem = default!;
