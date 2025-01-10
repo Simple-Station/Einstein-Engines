@@ -41,6 +41,5 @@
   components:
   - type: RevolverAmmoProvider
     capacity: 8
-    proto: CartridgeRifle
     chambers: [ False, False, False, False, False, False, False, False ]
     ammoSlots: [ null, null, null, null, null, null, null, null ]
