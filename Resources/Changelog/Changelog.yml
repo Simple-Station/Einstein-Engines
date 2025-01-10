@@ -9459,3 +9459,44 @@ Entries:
   id: 6651
   time: '2025-01-08T07:07:16.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1459
+- author: Lumminal
+  changes:
+    - type: Fix
+      message: Fixed Shadow Shackles spell not activating.
+  id: 6652
+  time: '2025-01-08T07:09:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1456
+- author: Skubman
+  changes:
+    - type: Fix
+      message: Fixed face markings showing up above eye-wear.
+  id: 6653
+  time: '2025-01-08T19:37:24.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1467
+- author: Lumminal
+  changes:
+    - type: Add
+      message: Added prisoner headset box to warden's locker.
+  id: 6654
+  time: '2025-01-09T21:32:06.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1470
+- author: BlueHNT
+  changes:
+    - type: Add
+      message: Added missing lathe recipes
+  id: 6655
+  time: '2025-01-10T02:27:28.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1472
+- author: Spatison
+  changes:
+    - type: Tweak
+      message: Nymphs are now operable.
+    - type: Fix
+      message: Skeletons can now lie down.
+    - type: Fix
+      message: >-
+        It is no longer possible to insert an organ into a body if the required
+        space is unavailable.
+  id: 6656
+  time: '2025-01-10T02:27:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1471
