@@ -32,7 +32,7 @@ public sealed partial class ClothingComponent : Component
     /// </summary>
     [DataField]
     [Access(typeof(ClothingSystem))]
-    public String? RenderLayer;
+    public string? RenderLayer;
 
     [DataField]
     public SoundSpecifier? EquipSound;

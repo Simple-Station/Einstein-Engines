@@ -75,3 +75,17 @@
       id: LoadoutHeadKippahColorable
     - type: loadout
       id: LoadoutHeadHeadBandBasic
+    - type: loadout
+      id: LoadoutHeadPin
+    - type: loadout
+      id: LoadoutHeadPinClover
+    - type: loadout
+      id: LoadoutHeadPinButterfly
+    - type: loadout
+      id: LoadoutHeadPinMagnetic
+    - type: loadout
+      id: LoadoutHeadRibbon
+    - type: loadout
+      id: LoadoutHeadBow
+    - type: loadout
+      id: LoadoutHeadBowSmall
