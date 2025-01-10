@@ -3,14 +3,16 @@
 [color=#a4885c]Glimmer[/color] is a more colloquial term for [color=#a4885c]noöspheric pressure[/color], measured in [color=#a4885c]milli-Psi (mΨ)[/color]. The Noösphere can be considered analogous to a pool of still,
 onyx black water. The waters have an inherent desire for stillness, for law, for an order of all things. The usage of psychic powers is like throwing a rock into the pool, creating waves that can be measured. As the waves
 build up, primordial chaos can potentially enter through our realm through areas where the pool is at its thinnest. While exceptions exist, the psychic powers generally follow Gunderaan's First Law when increasing
-Glimmer. Thus, Glimmer increases are given by the formula:
+Glimmer. Thus, Glimmer increases are approximated by the formula:
 
 ΔΨ = ~0.006 * kα - kδ
 
 Verbally, this law is read as, "Change in Glimmer is equal to approximately six milli-Psi times Amplification, minus Dampening."
 
-## Strossmayer's Constant (Glimmer Equilibrium) = 502.941
-Glimmer does not operate on a linear scale, rather it follows a logistic curve between values of 0 and 1000. There exists a number, known as Strossmayer's Constant, which is equal to 502.941.
+## Strossmayer's Constant ƥ (Glimmer Equilibrium)
+Named after Ljiljana Strossmayer, First Mystagogue, Original Founder of the Epistemics Cult. Strossmayer's Constant is approximated as the number 502.941.
+
+Glimmer does not operate on a linear scale, rather it follows a logistic curve between values of 0 and 1000.
 Given sufficient time and minimal input, Glimmer will always attempt to equalize itself at this value. If glimmer is below this number, it will rapidly attempt to increase until it reaches it.
 If glimmer is raised above the constant, it will rapidly attempt to decrease until it reaches it.
 
@@ -42,8 +44,7 @@ When glimmer is greater than 500, probers generate more points. Unfortunately, P
 research output is dramatically decreased. This pattern follows an inverse log base 4 scale. Meaning that, if one prober generates 20 research points, 2 probers will each generate 13.333 points(for a total of 26).
 4 probers are required to generate 40 research points per second. 8 probers will generate 64 research points.
 
-If your probers are not generating any points at all, it is likely that you will need to "PRIME" the station's local Glimmer. Probers do not generate any glimmer if there is no pre-existing glimmer.
-Therefore, they need to be "primed" by using enough psionic powers to start the machines.
+If your probers are not generating any points at all, it is likely that you will need to "prime" the station's local Glimmer. This can be done by using two or three psionic powers in a short span of time.
 
 Prober research output can be visualized by a graph located here: https://www.desmos.com/calculator/q183tseun8
 
