@@ -93,7 +93,7 @@ public sealed class AssayPowerSystem : EntitySystem
     /// </summary>
     private bool InspectSelf(EntityUid uid, AssayDoAfterEvent args, ICommonSession session)
     {
-        if (args.Target == args.User)
+        if (args.Target != args.User)
             return false;
 
         var user = uid;
