@@ -48,6 +48,9 @@
   research output is dramatically decreased. This pattern follows an inverse log base 4 scale. Meaning that, if one prober generates 20 research points, 2 probers will each generate 13.333 points(for a total of 26).
   4 probers are required to generate 40 research points per second. 8 probers will generate 64 research points.
 
+  If your probers are not generating any points at all, it is likely that you will need to "PRIME" the station's local Glimmer. Probers do not generate any glimmer if there is no pre-existing glimmer.
+  Therefore, they need to be "primed" by using enough psionic powers to start the machines.
+
   Prober research output can be visualized by a graph located here: https://www.desmos.com/calculator/zjzefpue03
 
   A clever Epistemiologist would at this point realize that they can detect the presence of anomalies or glimmer mites, merely by observing the research point generation of their probers.
