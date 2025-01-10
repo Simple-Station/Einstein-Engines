@@ -93,6 +93,7 @@ public abstract class SharedStunSystem : EntitySystem
         {
             case MobState.Alive:
                 break;
+            // case MobState.SoftCritical:
             case MobState.Critical:
                 {
                     _statusEffect.TryRemoveStatusEffect(uid, "Stun");

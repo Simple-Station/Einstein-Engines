@@ -244,7 +244,7 @@ public sealed class HealingSystem : EntitySystem
         if (!TryComp<MobThresholdsComponent>(uid, out var mobThreshold) ||
             !TryComp<DamageableComponent>(uid, out var damageable))
             return output;
-        if (!_mobThresholdSystem.TryGetThresholdForState(uid, MobState.Critical, out var amount, mobThreshold))
+        if (!_mobThresholdSystem.TryGetThresholdForState(uid, MobState.SoftCritical, out var amount, mobThreshold))
             return 1;
 
         var percentDamage = (float) (damageable.TotalDamage / amount);

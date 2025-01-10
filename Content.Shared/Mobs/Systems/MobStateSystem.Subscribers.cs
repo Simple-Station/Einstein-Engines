@@ -1,4 +1,4 @@
-﻿using Content.Shared.Bed.Sleep;
+using Content.Shared.Bed.Sleep;
 using Content.Shared.Buckle.Components;
 using Content.Shared.CCVar;
 using Content.Shared.CombatMode.Pacification;
@@ -54,14 +54,8 @@ public partial class MobStateSystem
 
     private void OnDirectionAttempt(Entity<MobStateComponent> ent, ref ChangeDirectionAttemptEvent args)
     {
-        if (ent.Comp.CurrentState is MobState.Alive
-            || ent.Comp.CurrentState is MobState.Critical
-            && ent.Comp.AllowMovementWhileCrit
-            && _configurationManager.GetCVar(CCVars.AllowMovementWhileCrit)
-            || ent.Comp.CurrentState is MobState.SoftCritical
-            && ent.Comp.AllowMovementWhileSoftCrit
-            || ent.Comp.CurrentState is MobState.Dead
-            && ent.Comp.AllowMovementWhileDead)
+        if (ent.Comp.CurrentState is MobState.Critical && _configurationManager.GetCVar(CCVars.AllowMovementWhileCrit) ||
+            ent.Comp.CurrentState is MobState.SoftCritical && _configurationManager.GetCVar(CCVars.AllowMovementWhileSoftCrit))
             return;
 
         args.Cancel();
@@ -69,14 +63,8 @@ public partial class MobStateSystem
 
     private void OnMoveAttempt(Entity<MobStateComponent> ent, ref UpdateCanMoveEvent args)
     {
-        if (ent.Comp.CurrentState is MobState.Alive
-            || ent.Comp.CurrentState is MobState.Critical
-            && ent.Comp.AllowMovementWhileCrit
-            && _configurationManager.GetCVar(CCVars.AllowMovementWhileCrit)
-            || ent.Comp.CurrentState is MobState.SoftCritical
-            && ent.Comp.AllowMovementWhileSoftCrit
-            || ent.Comp.CurrentState is MobState.Dead
-            && ent.Comp.AllowMovementWhileDead)
+        if (ent.Comp.CurrentState is MobState.Critical && _configurationManager.GetCVar(CCVars.AllowMovementWhileCrit) ||
+            ent.Comp.CurrentState is MobState.SoftCritical && _configurationManager.GetCVar(CCVars.AllowMovementWhileSoftCrit))
             return;
 
         args.Cancel();
@@ -108,6 +96,9 @@ public partial class MobStateSystem
         {
             case MobState.Alive:
                 //unused
+                break;
+            case MobState.SoftCritical:
+                // guess what?
                 break;
             case MobState.Critical:
                 if (component.CurrentState is not MobState.Alive)
@@ -150,6 +141,7 @@ public partial class MobStateSystem
                 _standing.Stand(target);
                 _appearance.SetData(target, MobStateVisuals.State, MobState.Alive);
                 break;
+            case MobState.SoftCritical:
             case MobState.Critical:
                 if (component.DownWhenCrit)
                     _standing.Down(target);
@@ -193,8 +185,10 @@ public partial class MobStateSystem
         // Incapacitated or dead targets get stripped two or three times as fast. Makes stripping corpses less tedious.
         if (IsDead(target, component))
             args.Multiplier /= 3;
-        else if (IsCritical(target, component))
+        else if (IsHardCritical(target, component))
             args.Multiplier /= 2;
+        //else if (IsSoftCritical(target, component))
+        //    args.Multiplier /= 1.5;
     }
 
     private void OnSpeakAttempt(EntityUid uid, MobStateComponent component, SpeakAttemptEvent args)
@@ -205,14 +199,8 @@ public partial class MobStateSystem
             return;
         }
 
-        if (component.CurrentState is MobState.Alive
-            || component.CurrentState is MobState.Critical
-            && component.AllowTalkingWhileCrit
-            && _configurationManager.GetCVar(CCVars.AllowTalkingWhileCrit)
-            || component.CurrentState is MobState.SoftCritical
-            && component.AllowTalkingWhileSoftCrit
-            || component.CurrentState is MobState.Dead
-            && component.AllowTalkingWhileDead)
+        if (component.CurrentState is MobState.Critical && _configurationManager.GetCVar(CCVars.AllowTalkingWhileCrit) ||
+            component.CurrentState is MobState.SoftCritical && _configurationManager.GetCVar(CCVars.AllowTalkingWhileSoftCrit))
             return;
 
         args.Cancel();

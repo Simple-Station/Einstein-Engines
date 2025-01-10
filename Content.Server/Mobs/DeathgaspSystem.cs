@@ -21,8 +21,9 @@ public sealed class DeathgaspSystem: EntitySystem
     private void OnMobStateChanged(EntityUid uid, DeathgaspComponent component, MobStateChangedEvent args)
     {
         // don't deathgasp if they arent going straight from crit to dead
-        if (component.NeedsCritical && args.OldMobState != MobState.Critical
-            || args.NewMobState != MobState.Dead)
+        if (component.NeedsCritical && (args.WasCrit(component.AllowSoftCritical))
+            ||
+            !args.IsDead() && args.IsValid())
             return;
 
         Deathgasp(uid, component);

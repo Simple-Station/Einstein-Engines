@@ -168,7 +168,12 @@ public sealed class DamageOverlay : Overlay
             _oldBruteLevel = BruteLevel;
         }
 
-        level = State != MobState.Critical ? _oldOxygenLevel : 1f;
+        level = State switch
+        {
+            MobState.Critical => 1f,
+            MobState.SoftCritical => 0.75f,
+            _ => _oldOxygenLevel
+        };
 
         if (level > 0f)
         {

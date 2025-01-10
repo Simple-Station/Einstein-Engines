@@ -311,7 +311,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             sendType = InGameOOCChatType.Dead;
 
         // If crit player LOOC is disabled, don't send the message at all.
-        if (!_critLoocEnabled && _mobStateSystem.IsCritical(source))
+        if (!_critLoocEnabled && _mobStateSystem.IsHardCritical(source))
             return;
 
         switch (sendType)
@@ -615,7 +615,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         else if (!_loocEnabled) return;
 
         // If crit player LOOC is disabled, don't send the message at all.
-        if (!_critLoocEnabled && _mobStateSystem.IsCritical(source))
+        if (!_critLoocEnabled && _mobStateSystem.IsHardCritical(source))
             return;
 
         var wrappedMessage = Loc.GetString("chat-manager-entity-looc-wrap-message",

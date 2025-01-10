@@ -352,7 +352,7 @@ public sealed partial class CloningSystem
     {
         if (!clonePodComp.DoGeneticDamage
             || !HasComp<DamageableComponent>(mob)
-            || !_thresholds.TryGetThresholdForState(mob, Shared.Mobs.MobState.Critical, out var threshold))
+            || !_thresholds.TryGetThresholdForState(mob, Shared.Mobs.MobState.Critical, Shared.Mobs.MobState.SoftCritical, out var threshold))
             return;
         DamageSpecifier damage = new();
         damage.DamageDict.Add("Cellular", (int) threshold + 1 + geneticDamage);

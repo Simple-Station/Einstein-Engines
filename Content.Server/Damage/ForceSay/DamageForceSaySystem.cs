@@ -114,12 +114,12 @@ public sealed class DamageForceSaySystem : EntitySystem
 
     private void OnMobStateChanged(EntityUid uid, DamageForceSayComponent component, MobStateChangedEvent args)
     {
-        if (args is not { OldMobState: MobState.Alive, NewMobState: MobState.Critical or MobState.Dead })
-            return;
-
-        // no suffix for the drama
-        // LING IN MAI-
-        TryForceSay(uid, component, false);
-        AllowNextSpeech(uid);
+        if (args.WasAlive() || args.IsCritOrDead())
+        {
+            // no suffix for the drama
+            // LING IN MAI-
+            TryForceSay(uid, component, false);
+            AllowNextSpeech(uid);
+        }
     }
 }

@@ -119,7 +119,7 @@ public sealed class FlightSystem : SharedFlightSystem
     private void OnMobStateChangedEvent(EntityUid uid, FlightComponent component, MobStateChangedEvent args)
     {
         if (!component.On
-            || args.NewMobState is MobState.Critical or MobState.Dead)
+            || args.IsCritOrDead())
             return;
 
         ToggleActive(args.Target, false, component);

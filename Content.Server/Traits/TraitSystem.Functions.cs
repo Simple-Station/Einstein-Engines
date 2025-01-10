@@ -396,6 +396,9 @@ public sealed partial class TraitAddSolutionContainer : TraitFunction
 public sealed partial class TraitModifyMobThresholds : TraitFunction
 {
     [DataField, AlwaysPushInheritance]
+    public int SoftCritThresholdModifier;
+
+    [DataField, AlwaysPushInheritance]
     public int CritThresholdModifier;
 
     [DataField, AlwaysPushInheritance]
@@ -413,6 +416,13 @@ public sealed partial class TraitModifyMobThresholds : TraitFunction
             return;
 
         var thresholdSystem = entityManager.System<MobThresholdSystem>();
+        if (SoftCritThresholdModifier != 0)
+        {
+            var softCritThreshold = thresholdSystem.GetThresholdForState(uid, MobState.SoftCritical, threshold);
+            if (softCritThreshold != 0)
+                thresholdSystem.SetMobStateThreshold(uid, softCritThreshold + SoftCritThresholdModifier, MobState.SoftCritical);
+        }
+        
         if (CritThresholdModifier != 0)
         {
             var critThreshold = thresholdSystem.GetThresholdForState(uid, MobState.Critical, threshold);

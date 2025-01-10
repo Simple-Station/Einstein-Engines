@@ -13,4 +13,12 @@ public sealed partial class CritModifierComponent : Component
     /// </summary>
     [DataField]
     public int CritThresholdModifier { get; private set; } = 0;
+
+    // WD EDIT START
+    /// <summary>
+    ///     The amount that an entity's softcrit threshold will be incremented by.
+    /// </summary>
+    [DataField]
+    public int SoftCritThresholdModifier { get; private set; } = 0;
+    // WD EDIT END
 }

@@ -93,13 +93,14 @@ public sealed partial class MobStateComponent : Component
     [AutoNetworkedField, ViewVariables]
     public MobState CurrentState { get; set; } = MobState.Alive;
 
-    [DataField]
-    [AutoNetworkedField]
-    public HashSet<MobState> AllowedStates = new()
-        {
-            MobState.Alive,
-            MobState.Critical,
-            MobState.SoftCritical,
-            MobState.Dead
-        };
+        [DataField]
+        [AutoNetworkedField]
+        public HashSet<MobState> AllowedStates = new()
+            {
+                MobState.Alive,
+                MobState.SoftCritical,
+                MobState.Critical,
+                MobState.Dead
+            };
+    }
 }

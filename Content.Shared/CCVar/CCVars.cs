@@ -3077,10 +3077,16 @@ namespace Content.Shared.CCVar
         ///     you still can't stand up while crit, and you're still more or less helpless.
         /// </summary>
         public static readonly CVarDef<bool> AllowMovementWhileCrit =
-            CVarDef.Create("mobstate.allow_movement_while_crit", true, CVar.REPLICATED);
+            CVarDef.Create("mobstate.allow_movement_while_crit", false, CVar.REPLICATED);
 
         public static readonly CVarDef<bool> AllowTalkingWhileCrit =
-            CVarDef.Create("mobstate.allow_talking_while_crit", true, CVar.REPLICATED);
+            CVarDef.Create("mobstate.allow_talking_while_crit", false, CVar.REPLICATED);
+
+        public static readonly CVarDef<bool> AllowMovementWhileSoftCrit =
+            CVarDef.Create("mobstate.allow_movement_while_softcrit", true, CVar.REPLICATED); // WD EDIT
+
+        public static readonly CVarDef<bool> AllowTalkingWhileSoftCrit =
+            CVarDef.Create("mobstate.allow_talking_while_softcrit", true, CVar.REPLICATED); // WD EDIT
 
         /// <summary>
         ///     Currently does nothing because I would have to figure out WHERE I would even put this check, and the mover controller is fairly complicated.

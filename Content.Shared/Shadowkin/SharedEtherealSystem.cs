@@ -123,8 +123,7 @@ public abstract class SharedEtherealSystem : EntitySystem
 
     private void OnMobStateChanged(EntityUid uid, EtherealComponent component, MobStateChangedEvent args)
     {
-        if (args.NewMobState == MobState.Critical
-            || args.NewMobState == MobState.Dead)
+        if (args.IsCritOrDead())
         {
             SpawnAtPosition("ShadowkinShadow", Transform(uid).Coordinates);
             SpawnAtPosition("EffectFlashShadowkinDarkSwapOff", Transform(uid).Coordinates);

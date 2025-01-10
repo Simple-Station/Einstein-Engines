@@ -48,14 +48,17 @@ public abstract partial class SharedDoAfterSystem : EntitySystem
 
     private void OnStateChanged(EntityUid uid, DoAfterComponent component, MobStateChangedEvent args)
     {
-        if (args.NewMobState != MobState.Dead || args.NewMobState != MobState.Critical)
-            return;
-
-        foreach (var doAfter in component.DoAfters.Values)
+        // Original code
+        /*if (args.NewMobState != MobState.Dead || args.NewMobState != MobState.Critical) // comment block of shame
+            return;*/
+        if (args.IsCritOrDead())
         {
-            InternalCancel(doAfter, component);
+            foreach (var doAfter in component.DoAfters.Values)
+            {
+                InternalCancel(doAfter, component);
+            }
+            Dirty(uid, component);
         }
-        Dirty(uid, component);
     }
 
     /// <summary>

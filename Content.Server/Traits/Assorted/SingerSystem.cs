@@ -71,7 +71,7 @@ public sealed class SingerSystem : SharedSingerSystem
 
     private void OnMobStateChangedEvent(EntityUid uid, SharedInstrumentComponent component, MobStateChangedEvent args)
     {
-        if (args.NewMobState is MobState.Critical or MobState.Dead)
+        if (args.IsCritOrDead())
             CloseMidiUi(args.Target);
     }
 
