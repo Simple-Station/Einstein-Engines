@@ -1260,7 +1260,7 @@
   parent: ClothingHeadBase
   id: ClothingHeadHatBeanieSubmariner
   name: submariner beanie
-  description: A design of tightly fitting beanie particularly popular among workers at Submarine.
+  description: A design of tightly fitting beanie popular among Submarine station workers.
   components:
   - type: Sprite
     sprite: Clothing/Head/Hats/beanie_submariner.rsi

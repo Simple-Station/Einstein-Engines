@@ -719,7 +719,7 @@
   parent: ClothingBeltBase
   id: ClothingBeltGeneric
   name: belt
-  description: Only useful for holding up your pants.
+  description: A plain belt made of leather.
   components:
   - type: Sprite
     sprite: Clothing/Belt/generic.rsi
@@ -732,7 +732,7 @@
   parent: ClothingBeltBase
   id: ClothingBeltGenericThin
   name: thin belt
-  description: Only useful for holding up your pants.
+  description: This is thinner than your usual belt.
   components:
   - type: Sprite
     sprite: Clothing/Belt/generic_thin.rsi
@@ -745,7 +745,7 @@
   parent: ClothingBeltBase
   id: ClothingBeltGenericThick
   name: thick belt
-  description: Only useful for holding up your pants.
+  description: A bold fashion statement.
   components:
   - type: Sprite
     sprite: Clothing/Belt/generic_thick.rsi

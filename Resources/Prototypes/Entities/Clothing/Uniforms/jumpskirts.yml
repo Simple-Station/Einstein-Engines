@@ -855,7 +855,7 @@
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtDressAsymmetric
   name: asymmetric dress
-  description: A one-piece fashionable garment.
+  description: A stylish dress held up with spaghetti straps.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpskirt/asymmetric_dress.rsi
@@ -866,7 +866,7 @@
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtDressEvening
   name: evening gown
-  description: A one-piece fashionable garment.
+  description: A floor-length dress to impress.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpskirt/evening_gown.rsi
@@ -877,7 +877,7 @@
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtDressMidi
   name: midi dress
-  description: A one-piece fashionable garment.
+  description: No, you can't play music with this.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpskirt/midi_dress.rsi
@@ -888,7 +888,7 @@
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtDressOpenShoulder
   name: open-shoulder dress
-  description: A one-piece fashionable garment.
+  description: This dress has open shoulders and an open upper back.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpskirt/openshoulder_dress.rsi
@@ -899,7 +899,7 @@
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtDressTea
   name: tea-length dress
-  description: A one-piece fashionable garment.
+  description: Perfect for tea time!
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpskirt/tea_dress.rsi
@@ -910,7 +910,7 @@
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtDressSleeveless
   name: sleeveless A-line dress
-  description: A one-piece fashionable garment.
+  description: A simple sleeveless dress with a flared bottom.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpskirt/sleeveless_dress.rsi
@@ -921,7 +921,7 @@
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtDressLongSleeve
   name: long sleeve A-line dress
-  description: A one-piece fashionable garment.
+  description: A dress with a flared bottom and sleeves that cover the arms.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpskirt/longsleeve_dress.rsi
