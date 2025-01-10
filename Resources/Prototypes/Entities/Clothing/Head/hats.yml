@@ -1273,7 +1273,7 @@
   parent: ClothingHeadBase
   id: ClothingHeadHatBeanieTight
   name: tight beanie
-  description: A rather tight beanie that hides hair.
+  description: A rather tight beanie that hides your hair.
   components:
   - type: Sprite
     sprite: Clothing/Head/Hats/beanie_tight.rsi
