@@ -76,6 +76,8 @@
     - type: loadout
       id: LoadingOuterCoatJacketLeather
     - type: loadout
+      id: LoadoutOuterJacketLeather
+    - type: loadout
       id: LoadoutOuterJacketBiker
     - type: loadout
       id: LoadoutOuterJacketJamrock
@@ -87,6 +89,8 @@
       id: LoadoutOuterJacketLettermanMagenta
     - type: loadout
       id: LoadoutOuterJacketLettermanRed
+    - type: loadout
+      id: LoadoutOuterBomberPinkSleeves
     - type: loadout
       id: LoadoutOuterCoatAcidRaincoat
     - type: loadout
