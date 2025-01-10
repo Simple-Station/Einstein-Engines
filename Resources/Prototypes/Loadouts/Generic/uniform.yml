@@ -74,6 +74,22 @@
         - Command
 
 - type: loadout
+  id: LoadoutUniformJumpsuitCasualBlue
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitCasualBlue
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+        - Command
+
+- type: loadout
   id: LoadoutUniformJumpskirtCasualBlue
   category: Uniform
   cost: 0
