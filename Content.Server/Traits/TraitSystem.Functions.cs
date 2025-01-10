@@ -456,9 +456,30 @@ public sealed partial class TraitModifyMobState : TraitFunction
     // Three-State Booleans my beloved.
     // :faridabirb.png:
 
-    [IncludeDataField(), AlwaysPushInheritance]
-    public MobStateParametersOverride Params;
+    [DataField(required: true)]
+    public MobState TargetState;
 
+    [DataField]
+    public bool? Moving, Talking, Emoting,
+        Throwing, PickingUp, Pulling, Attacking, Using, Pointing;
+
+    [DataField]
+    public bool? ForceDown;
+
+    [DataField]
+    public bool? ConsciousAttemptsAllowed;
+
+    [DataField]
+    public float? OxyDamageOverlay;
+
+    [DataField]
+    public bool? CanEquipSelf, CanUnequipSelf, CanEquipOther, CanUnequipOther;
+
+    [DataField]
+    public float? StrippingTimeMultiplier;
+
+    [DataField]
+    public MobStateParametersOverride Overrides = new();
     public override void OnPlayerSpawn(EntityUid uid,
         IComponentFactory factory,
         IEntityManager entityManager,
@@ -467,7 +488,9 @@ public sealed partial class TraitModifyMobState : TraitFunction
         if (!entityManager.TryGetComponent<MobStateComponent>(uid, out var comp))
             return;
 
-        // Fuck.
+        MobStateParameters modified = comp.MobStateParams[TargetState];
+
+        modified.Moving = Moving ?? modified.Moving;
 
         comp.Dirty() // why is this deprecated? it's much better than manually resolving entitymanager with ioc
     }
