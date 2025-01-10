@@ -214,6 +214,21 @@
         - Command
 
 - type: loadout
+  id: LoadoutUniformJumpsuitTShirtKhakiPants
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformTShirtKhakiPants
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+
+- type: loadout
   id: LoadoutUniformJumpsuitJeansGreen
   category: Uniform
   cost: 0
