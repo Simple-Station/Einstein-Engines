@@ -395,6 +395,13 @@
         Piercing: 15
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Piercing: 15
+  - type: EmbeddableProjectile
+    removalTime: 2
+  - type: EmbedPassiveDamage
   - type: Tool
     qualities:
       - Screwing
