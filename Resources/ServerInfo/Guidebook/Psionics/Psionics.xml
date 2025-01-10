@@ -27,8 +27,19 @@ It is notable that all Telepathic messages are fully anonymous, and are not guar
 
 Not all Psionic entities have Telepathy, but most do.
 
-## Acquiring Psionics
+## Sophia
+<GuideEntityEmbed Entity="SophicScribe"/>
+[color=#a4885c]Sophia(sometimes known as Sophic Grammateus)[/color] is a semi-divine manifestation of one of the patron deities of Epistemics. In truth, She is not actually a god,
+merely a being that exists in greater than the four dimensions known to mortal Man. She exists to study our Noösphere, as well as offer guidance to those seeking higher power. Sophia will periodically report
+on the current glimmer levels. She may also be asked directly about the current glimmer.
+
+## Oracle
 <GuideEntityEmbed Entity="Oracle" />
+[color=#a4885c]Oracle[/color] is like Sophic Grammateus, a semi-divine manifestation who offers patronage over Epistemics. Oracle cares not about studying Glimmer, rather she wishes to study our
+technology for reasons known only to herself. She will periodically make demands of her cult, which if met, will be exchanged with rewards. The most important of which is the divine hallucinogen known as Lotophagoi Oil.
+Worshippers of The Oracle are granted great power in exchange for her service, and much of the modern Epistemiological Cult centers around serving Her for the promise of enlightenment.
+
+## Acquiring Psionics
 
 First, an individual must be a Latent Psychic. Without the Potential for powers, an individual can never in their life obtain psionic abilities. Each individual has an initial "D100 Roll" to generate a random amount of Potentia, which is added to their baseline.
 When the individual's Potentia exceeds a threshold given by Gunderaan's Second Law:
@@ -49,5 +60,4 @@ The Potentia gained via drug consumption are given by Gunderaan's Third Law:
 Where χ is the percentage chance of obtaining powers, Ψ is the glimmer present during the roll, φ is the potential bonus chance some individuals may possess, and ψ is the potential multiplier
 that a given hallucinogen may have. Not all hallucinogens have the same chance of granting powers. Most famously, Lotophagic Oil multiplies a user's chances of obtaining powers by 4. Some individuals may also have
 an innate potential multiplier, such as the station's Chaplain.
-
 </Document>
