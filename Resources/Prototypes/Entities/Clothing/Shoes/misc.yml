@@ -211,6 +211,17 @@
   description: A pair of simple but stylish sandals.
   components:
   - type: Sprite
-    sprite: Clothing/Shoes/Misc/sandals.rsi
+    sprite: Clothing/Shoes/Sandals/sandals.rsi
   - type: Clothing
-    sprite: Clothing/Shoes/Misc/sandals.rsi
+    sprite: Clothing/Shoes/Sandals/sandals.rsi
+
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesSandalsFlipFlops
+  name: flip flops
+  description: A pair of flip flops. For those not afraid to show a little ankle.
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Sandals/flipflops.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Sandals/flipflops.rsi
