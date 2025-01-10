@@ -164,21 +164,19 @@ public sealed partial class MobStateParameters
 {
     public MobStateParameters() { }
 
+    // when adding new flags to here, remember to update TraitModifyMobState and MobStateParametersOverride, as well as add new getter methods for MobStateComponent.
+    // Yeah, this whole this is kinda dumb, but honestly, new generic kinds of actions should not appear often, and instead of adding a flag that will be used
+    // in 2 and a half systems, they can just check the CurrentState and go from there.
     [DataField]
     public bool Moving, Talking, Emoting,
-        Throwing, PickingUp, Pulling, Attacking, Using, Pointing;
-
-    [DataField]
-    public bool ForceDown;
-
-    [DataField]
-    public bool ConsciousAttemptsAllowed;
+        Throwing, PickingUp, Pulling, Attacking, Using, Pointing,
+        ConsciousAttemptsAllowed,
+        CanEquipSelf, CanUnequipSelf, CanEquipOther, CanUnequipOther,
+        ForceDown;
 
     [DataField]
     public float? OxyDamageOverlay;
 
-    [DataField]
-    public bool CanEquipSelf, CanUnequipSelf, CanEquipOther, CanUnequipOther;
 
     [DataField]
     public float StrippingTimeMultiplier = 1f;
@@ -192,22 +190,16 @@ public struct MobStateParametersOverride
 {
     [DataField]
     public bool? Moving, Talking, Emoting,
-        Throwing, PickingUp, Pulling, Attacking, Using, Pointing;
-
-    [DataField]
-    public bool? ForceDown;
-
-    [DataField]
-    public bool? ConsciousAttemptsAllowed;
+        Throwing, PickingUp, Pulling, Attacking, Using, Pointing,
+        ConsciousAttemptsAllowed,
+        CanEquipSelf, CanUnequipSelf, CanEquipOther, CanUnequipOther,
+        ForceDown;
 
     [DataField]
     public float? OxyDamageOverlay;
 
     [DataField]
     public float? StrippingTimeMultiplier;
-
-    [DataField]
-    public bool? CanEquipSelf, CanUnequipSelf, CanEquipOther, CanUnequipOther;
 }
 
 //[Prototype("mobStateParams")]

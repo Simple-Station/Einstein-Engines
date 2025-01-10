@@ -450,36 +450,33 @@ public sealed partial class TraitModifyMobThresholds : TraitFunction
     }
 }
 
+[DataDefinition, Serializable]
+public sealed partial class TraitModifyMobStateParams
+{
+    [DataField]
+    public bool? Moving, Talking, Emoting,
+    Throwing, PickingUp, Pulling, Attacking, Using, Pointing,
+    ConsciousAttemptsAllowed,
+    CanEquipSelf, CanUnequipSelf, CanEquipOther, CanUnequipOther,
+    ForceDown;
+
+    [DataField]
+    public float? OxyDamageOverlay;
+
+    [DataField]
+    public float? StrippingTimeMultiplier;
+}
+
 [UsedImplicitly]
 public sealed partial class TraitModifyMobState : TraitFunction
 {
     // Three-State Booleans my beloved.
     // :faridabirb.png:
 
-    [DataField(required: true)]
-    public MobState TargetState;
+    [IncludeDataField()]
+    public Dictionary<MobState, TraitModifyMobStateParams> Params;
 
-    [DataField]
-    public bool? Moving, Talking, Emoting,
-        Throwing, PickingUp, Pulling, Attacking, Using, Pointing;
 
-    [DataField]
-    public bool? ForceDown;
-
-    [DataField]
-    public bool? ConsciousAttemptsAllowed;
-
-    [DataField]
-    public float? OxyDamageOverlay;
-
-    [DataField]
-    public bool? CanEquipSelf, CanUnequipSelf, CanEquipOther, CanUnequipOther;
-
-    [DataField]
-    public float? StrippingTimeMultiplier;
-
-    [DataField]
-    public MobStateParametersOverride Overrides = new();
     public override void OnPlayerSpawn(EntityUid uid,
         IComponentFactory factory,
         IEntityManager entityManager,
@@ -488,9 +485,29 @@ public sealed partial class TraitModifyMobState : TraitFunction
         if (!entityManager.TryGetComponent<MobStateComponent>(uid, out var comp))
             return;
 
-        MobStateParameters modified = comp.MobStateParams[TargetState];
+        foreach (var pair in Params) {
+            MobStateParameters modified = comp.MobStateParams[pair.Key];
+            var p = pair.Value;
 
-        modified.Moving = Moving ?? modified.Moving;
+            modified.Moving = p.Moving ?? modified.Moving;
+            modified.Talking = p.Talking ?? modified.Talking;
+            modified.Emoting = p.Emoting ?? modified.Emoting;
+            modified.Throwing = p.Throwing ?? modified.Throwing;
+            modified.PickingUp = p.PickingUp ?? modified.PickingUp;
+            modified.Pulling = p.Pulling ?? modified.Pulling;
+            modified.Attacking = p.Attacking ?? modified.Attacking;
+            modified.Using = p.Using ?? modified.Using;
+            modified.Pointing = p.Pointing ?? modified.Pointing;
+            modified.ConsciousAttemptsAllowed = p.ConsciousAttemptsAllowed ?? modified.ConsciousAttemptsAllowed;
+            modified.CanEquipSelf = p.CanEquipSelf ?? modified.CanEquipSelf;
+            modified.CanEquipOther = p.CanEquipOther ?? modified.CanEquipOther;
+            modified.CanUnequipSelf = p.CanUnequipSelf ?? modified.CanUnequipSelf;
+            modified.CanUnequipOther = p.CanUnequipOther ?? modified.CanUnequipOther;
+            modified.ForceDown = p.ForceDown ?? modified.ForceDown;
+
+            modified.OxyDamageOverlay = p.OxyDamageOverlay ?? modified.OxyDamageOverlay;
+            modified.StrippingTimeMultiplier = p.StrippingTimeMultiplier ?? modified.StrippingTimeMultiplier;
+        }
 
         comp.Dirty() // why is this deprecated? it's much better than manually resolving entitymanager with ioc
     }
