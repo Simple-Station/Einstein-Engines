@@ -23,6 +23,8 @@
         - ReagentId: Ectoplasm
           Quantity: 15
   - type: Psionic
+    removable: false
+    roller: false
   - type: GlimmerSource
   - type: AmbientSound
     range: 6
@@ -75,6 +77,7 @@
   # powers
   - type: Psionic
     removable: false
+    roller: false
   - type: InnatePsionicPowers
     powersToAdd:
     - NoosphericZapPower

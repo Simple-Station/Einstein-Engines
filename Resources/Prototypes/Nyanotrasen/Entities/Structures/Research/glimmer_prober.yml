@@ -6,6 +6,7 @@
   components:
   - type: Psionic
     removable: false
+    roller: false
   - type: InnatePsionicPowers
     powersToAdd:
       - TelepathyPower
@@ -84,6 +85,8 @@
         path: /Audio/Ambience/Objects/prober_hum_dangerous.ogg
       Critical:
         path: /Audio/Ambience/Objects/prober_hum_dangerous.ogg
+  - type: GuideHelp
+    guides: [ Glimmer ]
 
 - type: entity
   parent: BaseMachinePowered
@@ -93,6 +96,7 @@
   components:
   - type: Psionic
     removable: false
+    roller: false
   - type: GlimmerSource
     addToGlimmer: false
   - type: Construction
@@ -119,6 +123,8 @@
   - type: NpcFactionMember
     factions:
     - PsionicInterloper # :^)
+  - type: GuideHelp
+    guides: [ Glimmer ]
 
 - type: entity
   id: GlimmerDeviceFrame
@@ -169,3 +175,5 @@
       - state: base
       - state: intermediate
     - type: CargoSellBlacklist
+    - type: GuideHelp
+      guides: [ Glimmer ]

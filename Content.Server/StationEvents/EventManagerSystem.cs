@@ -197,8 +197,8 @@ public sealed class EventManagerSystem : EntitySystem
         // This could not be cleanly done anywhere else.
         if (_configurationManager.GetCVar(CCVars.GlimmerEnabled) &&
             prototype.TryGetComponent<GlimmerEventComponent>(out var glimmerEvent) &&
-            (_glimmerSystem.Glimmer < glimmerEvent.MinimumGlimmer ||
-            _glimmerSystem.Glimmer > glimmerEvent.MaximumGlimmer))
+            (_glimmerSystem.GlimmerOutput < glimmerEvent.MinimumGlimmer ||
+            _glimmerSystem.GlimmerOutput > glimmerEvent.MaximumGlimmer))
         {
             return false;
         }

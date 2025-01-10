@@ -856,6 +856,7 @@
   id: LoadoutSecurityHeadHelmetInsulated
   category: JobsSecurityAUncategorized
   cost: 1
+  guideEntry: PsionicInsulation
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityHead

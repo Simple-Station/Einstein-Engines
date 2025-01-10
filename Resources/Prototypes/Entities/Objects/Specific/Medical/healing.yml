@@ -617,6 +617,8 @@
         reagents:
         - ReagentId: SpaceDrugs
           Quantity: 15
+  - type: GuideHelp
+    guides: [ Psionics ]
 
 - type: entity
   name: pill canister (LSD 15u)
@@ -630,6 +632,8 @@
     contents:
     - id: PillSpaceDrugs
       amount: 5
+  - type: GuideHelp
+    guides: [ Psionics ]
 
 - type: entity
   name: pax

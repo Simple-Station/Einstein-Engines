@@ -74,6 +74,7 @@
   - type: ZombieImmune
   - type: ClothingRequiredStepTriggerImmune
     slots: All
+  - type: Dispellable
 
 - type: entity
   abstract: true
@@ -104,6 +105,7 @@
     damageContainer: StructuralInorganic
   - type: Psionic
     removable: false
+    roller: false
   - type: InnatePsionicPowers
     powersToAdd:
       - TelepathyPower
@@ -302,6 +304,7 @@
   - type: DrainableSolution
     solution: bloodstream
   - type: Psionic
+    roller: false
     removable: false
   - type: InnatePsionicPowers
     powersToAdd:

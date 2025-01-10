@@ -166,7 +166,7 @@ namespace Content.Server.Psionics.Glimmer
                 Act = () =>
                 {
                     _sharedAudioSystem.PlayPvs(component.ShockNoises, args.User);
-                    _electrocutionSystem.TryDoElectrocution(args.User, null, _glimmerSystem.Glimmer / 200, TimeSpan.FromSeconds((float) _glimmerSystem.Glimmer / 100), false);
+                    _electrocutionSystem.TryDoElectrocution(args.User, null, (int) _glimmerSystem.GlimmerOutput / 200, TimeSpan.FromSeconds(_glimmerSystem.GlimmerOutput / 100), false);
                 },
                 Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/Spare/poweronoff.svg.192dpi.png")),
                 Text = Loc.GetString("power-switch-component-toggle-verb"),
@@ -178,7 +178,7 @@ namespace Content.Server.Psionics.Glimmer
         private void OnDamageChanged(EntityUid uid, SharedGlimmerReactiveComponent component, DamageChangedEvent args)
         {
             if (args.Origin == null
-                || !_random.Prob((float) _glimmerSystem.Glimmer / 1000))
+                || !_random.Prob(_glimmerSystem.GetGlimmerEquilibriumRatio() / 10))
                 return;
 
             var tier = _glimmerSystem.GetGlimmerTier();
@@ -195,13 +195,13 @@ namespace Content.Server.Psionics.Glimmer
             if (tier < GlimmerTier.High)
                 return;
 
-            var totalIntensity = (float) (_glimmerSystem.Glimmer * 2);
-            var slope = (float) (11 - _glimmerSystem.Glimmer / 100);
+            var totalIntensity = _glimmerSystem.GlimmerOutput * 2;
+            var slope = 11 - _glimmerSystem.GlimmerOutput / 100;
             var maxIntensity = 20;
 
-            var removed = (float) _glimmerSystem.Glimmer * _random.NextFloat(0.1f, 0.15f);
-            _glimmerSystem.Glimmer -= (int) removed;
-            BeamRandomNearProber(uid, _glimmerSystem.Glimmer / 350, _glimmerSystem.Glimmer / 50);
+            var removed = _glimmerSystem.GlimmerOutput * _random.NextFloat(0.1f, 0.15f);
+            _glimmerSystem.DeltaGlimmerInput(-removed);
+            BeamRandomNearProber(uid, (int) _glimmerSystem.GlimmerOutput / 350, _glimmerSystem.GlimmerOutput / 50);
             _explosionSystem.QueueExplosion(uid, "Default", totalIntensity, slope, maxIntensity);
         }
 
@@ -211,7 +211,7 @@ namespace Content.Server.Psionics.Glimmer
                 return;
 
             _sharedAudioSystem.PlayPvs(component.ShockNoises, args.User);
-            _electrocutionSystem.TryDoElectrocution(args.User, null, _glimmerSystem.Glimmer / 200, TimeSpan.FromSeconds((float) _glimmerSystem.Glimmer / 100), false);
+            _electrocutionSystem.TryDoElectrocution(args.User, null, (int) _glimmerSystem.GlimmerOutput / 200, TimeSpan.FromSeconds(_glimmerSystem.GlimmerOutput / 100), false);
             args.Cancel();
         }
 
@@ -248,7 +248,7 @@ namespace Content.Server.Psionics.Glimmer
 
             if (!lxform.Coordinates.TryDistance(EntityManager, txform.Coordinates, out var distance))
                 return;
-            if (distance > (float) (_glimmerSystem.Glimmer / 100))
+            if (distance > _glimmerSystem.GlimmerOutput / 100)
                 return;
 
             string beamproto;

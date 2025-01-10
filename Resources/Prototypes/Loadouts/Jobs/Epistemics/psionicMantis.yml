@@ -36,6 +36,7 @@
   id: LoadoutPsionicMantisPillCanisterSpaceDrugs
   category: JobsEpistemicsPsionicMantis
   cost: 0
+  guideEntry: Psionics
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutPsionicMantisEquipment
@@ -49,6 +50,7 @@
   id: LoadoutPsionicMantisPillCanisterCryptobiolin
   category: JobsEpistemicsPsionicMantis
   cost: 0
+  guideEntry: PsionicInsulation
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutPsionicMantisEquipment
