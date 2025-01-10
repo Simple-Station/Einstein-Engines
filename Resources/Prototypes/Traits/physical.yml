@@ -765,3 +765,44 @@
       components:
         - type: CritModifier
           critThresholdModifier: -50
+
+- type: trait
+  id: LightAmplification
+  category: Physical
+  points: -4
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+    - !type:CharacterTraitRequirement
+      traits:
+        - CyberEyes
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: NightVision
+
+- type: trait
+  id: ThermographicVision
+  category: Physical
+  points: -8
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+    - !type:CharacterTraitRequirement
+      traits:
+        - CyberEyes
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: ThermalVision
+          pulseTime: 2
+          toggleAction: PulseThermalVision
+    - !type:TraitPushDescription
+      descriptionExtensions:
+        - description: examine-thermal-vision-message
+          fontSize: 12
+          requireDetailRange: true
