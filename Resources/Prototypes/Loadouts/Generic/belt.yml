@@ -32,6 +32,28 @@
       group: LoadoutBelt
 
 - type: loadout
+  id: LoadoutBeltWaist
+  category: Belt
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingBeltWaist
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBelt
+
+- type: loadout
+  id: LoadoutBeltWaistThin
+  category: Belt
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingBeltWaistThin
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBelt
+
+- type: loadout
   id: LoadoutItemWaistbag
   category: Belt
   cost: 2

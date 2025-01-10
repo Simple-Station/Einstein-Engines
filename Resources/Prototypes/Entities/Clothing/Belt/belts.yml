@@ -753,3 +753,29 @@
   - type: Clothing
     sprite: Clothing/Belt/generic_thick.rsi
     renderLayer: innerBelt
+
+- type: entity
+  parent: ClothingBeltBase
+  id: ClothingBeltWaist
+  name: waist belt
+  description: For highlighting that snatched waist.
+  components:
+  - type: Sprite
+    sprite: Clothing/Belt/waist.rsi
+    state: icon
+  - type: Clothing
+    sprite: Clothing/Belt/waist.rsi
+    renderLayer: innerBelt
+
+- type: entity
+  parent: ClothingBeltBase
+  id: ClothingBeltWaistThin
+  name: thin waist belt
+  description: A thin belt that accentuates a thin waist!
+  components:
+  - type: Sprite
+    sprite: Clothing/Belt/waist_thin.rsi
+    state: icon
+  - type: Clothing
+    sprite: Clothing/Belt/waist_thin.rsi
+    renderLayer: innerBelt
