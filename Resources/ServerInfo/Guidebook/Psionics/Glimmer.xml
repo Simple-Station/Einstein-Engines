@@ -51,7 +51,7 @@
   If your probers are not generating any points at all, it is likely that you will need to "PRIME" the station's local Glimmer. Probers do not generate any glimmer if there is no pre-existing glimmer.
   Therefore, they need to be "primed" by using enough psionic powers to start the machines.
 
-  Prober research output can be visualized by a graph located here: https://www.desmos.com/calculator/zjzefpue03
+  Prober research output can be visualized by a graph located here: https://www.desmos.com/calculator/q183tseun8
 
   A clever Epistemiologist would at this point realize that they can detect the presence of anomalies or glimmer mites, merely by observing the research point generation of their probers.
   If one prober is generating 13.333 points, there must exist an anomaly somewhere on the station.
