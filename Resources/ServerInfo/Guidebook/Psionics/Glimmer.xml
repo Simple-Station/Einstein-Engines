@@ -16,7 +16,7 @@ Glimmer does not operate on a linear scale, rather it follows a logistic curve b
 Given sufficient time and minimal input, Glimmer will always attempt to equalize itself at this value. If glimmer is below this number, it will rapidly attempt to increase until it reaches it.
 If glimmer is raised above the constant, it will rapidly attempt to decrease until it reaches it.
 
-[color=#a4885c]As a general rule of thumb, psionic powers are weakened when glimmer is less than 500, and strengthened when glimmer greater than 500[/color]
+[color=#4169e1]As a general rule of thumb, psionic powers are weakened when glimmer is less than 500, and strengthened when glimmer is greater than 500[/color]
 
 ## Glimmer Sources
 <Box>
