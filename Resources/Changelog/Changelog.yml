@@ -9586,3 +9586,23 @@ Entries:
   id: 6664
   time: '2025-01-11T17:37:16.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1482
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added the Argenti, Gestio, Novalite C1, and SVT firearms. Added an
+        "Empty" Mosin variant for Salvage.
+    - type: Add
+      message: >-
+        Salvage technicians can now spend their mining points on new "Civilian
+        Grade" firearms from the Mining Vendor. These don't come with ammo, so
+        you'll have to request ammo be printed by Security.
+    - type: Add
+      message: Added the Argenti Revolver to Security Loadouts.
+    - type: Tweak
+      message: >-
+        Salvage Specialist lockers are now guaranteed to come with one pickaxe
+        and one ore bag.
+  id: 6665
+  time: '2025-01-11T18:24:39.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1490
