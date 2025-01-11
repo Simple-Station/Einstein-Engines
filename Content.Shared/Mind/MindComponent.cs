@@ -39,7 +39,7 @@ namespace Content.Shared.Mind
         ///     The session ID of the original owner, if any.
         ///     May end up used for round-end information (as the owner may have abandoned Mind since)
         /// </summary>
-        [AutoNetworkedField, Access(typeof(SharedMindSystem))]
+        [DataField, AutoNetworkedField, Access(typeof(SharedMindSystem))]
         public NetUserId? OriginalOwnerUserId { get; set; }
 
         /// <summary>
@@ -47,8 +47,8 @@ namespace Content.Shared.Mind
         ///     Might be relevant if the player has ghosted since.
         /// </summary>
         [AutoNetworkedField]
-        public NetEntity? OriginalOwnedEntity;
-        // This is a net entity, because this field currently ddoes not get set to null when this entity is deleted.
+        public NetEntity? OriginalOwnedEntity; // TODO WeakEntityReference make this a Datafield again
+        // This is a net entity, because this field currently does not get set to null when this entity is deleted.
         // This is a lazy way to ensure that people check that the entity still exists.
         // TODO MIND Fix this properly by adding an OriginalMindContainerComponent or something like that.
 
