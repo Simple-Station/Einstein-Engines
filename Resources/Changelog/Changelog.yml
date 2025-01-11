@@ -9651,3 +9651,10 @@ Entries:
   id: 6670
   time: '2025-01-11T19:58:08.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1499
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Fixed an issue where ranged NPCs were incapable of aiming.
+  id: 6671
+  time: '2025-01-11T20:40:09.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1500
