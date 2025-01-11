@@ -856,8 +856,6 @@
       - SpeedLoaderRifleHeavyEmpty
       - WeaponRifleNovaliteC1
       - WeaponRifleGestio
-      - MagazineMagnumEmpty # Goobstation
-      - MagazineMagnum # Goobstation
       - MagazineMagnumLeverRifle # Goobstation
       - MagazineMagnumLeverRifleEmpty # Goobstation
     dynamicRecipes:
