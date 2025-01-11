@@ -9613,3 +9613,10 @@ Entries:
   id: 6666
   time: '2025-01-11T18:26:39.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1491
+- author: Spatison
+  changes:
+    - type: Add
+      message: Added material silo
+  id: 6667
+  time: '2025-01-11T18:39:24.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1488
