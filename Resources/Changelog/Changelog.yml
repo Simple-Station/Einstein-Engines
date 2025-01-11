@@ -9642,3 +9642,12 @@ Entries:
   id: 6669
   time: '2025-01-11T19:02:09.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1466
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Added Station AI to (almost) every map in rotation.
+    - type: Add
+      message: Added Ore Silos to every map in rotation.
+  id: 6670
+  time: '2025-01-11T19:58:08.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1499
