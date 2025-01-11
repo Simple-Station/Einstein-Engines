@@ -9620,3 +9620,16 @@ Entries:
   id: 6667
   time: '2025-01-11T18:39:24.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1488
+- author: Tirochora
+  changes:
+    - type: Fix
+      message: You cannot take Photophobia while blind or you have cyber-eyes.
+    - type: Fix
+      message: You cannot take nearsightedness while blind or while having cyber-eyes.
+    - type: Fix
+      message: >-
+        You cannot be blind while nearsighted, photophobic, or while having
+        cyber-eyes.
+  id: 6668
+  time: '2025-01-11T18:54:37.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1492
