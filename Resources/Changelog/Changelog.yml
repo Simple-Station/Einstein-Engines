@@ -9606,3 +9606,10 @@ Entries:
   id: 6665
   time: '2025-01-11T18:24:39.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1490
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: Fixed announcement spam caused by my silly blunder.
+  id: 6666
+  time: '2025-01-11T18:26:39.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1491
