@@ -56,7 +56,7 @@ public sealed class InternalsSystem : EntitySystem
 
         var tank = FindBestGasTank(uid);
         if (tank == null)
-            return; 
+            return;
 
         // Could the entity metabolise the air in the linked gas tank?
         if (!_respirator.CanMetabolizeGas(uid, tank.Value.Comp.Air))
