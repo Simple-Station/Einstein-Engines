@@ -19,6 +19,7 @@ using Content.Shared.Strip.Components;
 using Content.Shared.Throwing;
 using Robust.Shared.Configuration;
 using Robust.Shared.Physics.Components;
+using System.ComponentModel;
 
 namespace Content.Shared.Mobs.Systems;
 
@@ -29,6 +30,8 @@ public partial class MobStateSystem
     //General purpose event subscriptions. If you can avoid it register these events inside their own systems
     private void SubscribeEvents()
     {
+        SubscribeLocalEvent<MobStateComponent, ComponentInit>(OnComponentInit);
+
         SubscribeLocalEvent<MobStateComponent, BeforeGettingStrippedEvent>(OnGettingStripped);
         SubscribeLocalEvent<MobStateComponent, ChangeDirectionAttemptEvent>(OnDirectionAttempt);
         SubscribeLocalEvent<MobStateComponent, UseAttemptEvent>(CheckActFactory(c => c.CanUse()));
@@ -52,12 +55,19 @@ public partial class MobStateSystem
         SubscribeLocalEvent<MobStateComponent, UnbuckleAttemptEvent>(OnUnbuckleAttempt);
     }
 
+    private void OnComponentInit(EntityUid uid, MobStateComponent comp, ref ChangeDirectionAttemptEvent args)
+    {
+        foreach(var entry in comp.InitMobStateParams)
+        {
+            // string to enum
+            // i forgor how 💀
+        }
+    }
+
+
     private void OnDirectionAttempt(Entity<MobStateComponent> ent, ref ChangeDirectionAttemptEvent args)
     {
-        if (ent.Comp.CurrentState is MobState.Alive ||
-			ent.Comp.CurrentState is MobState.Critical && ent.Comp.AllowMovementWhileCrit && _configurationManager.GetCVar(CCVars.AllowMovementWhileCrit)  ||
-            ent.Comp.CurrentState is MobState.SoftCritical && ent.Comp.AllowMovementWhileSoftCrit && _configurationManager.GetCVar(CCVars.AllowMovementWhileSoftCrit) || // todo: consistency: why check cvars for crit/softcrit states but not for dead state?
-			ent.Comp.CurrentState is MobState.Dead && ent.Comp.AllowMovementWhileDead)
+        if (!ent.Comp.CanMove())
             return;
 
         args.Cancel();
@@ -101,9 +111,9 @@ public partial class MobStateSystem
 
             case MobState.SoftCritical:
             case MobState.Critical:
-                if (component.CurrentState is not MobState.Alive)
-                    break;
-                _standing.Stand(target);
+                //if (component.CurrentState is not MobState.Alive)
+                //    break;
+                //_standing.Stand(target);
                 break;
             case MobState.Dead:
                 RemComp<CollisionWakeComponent>(target);
@@ -128,28 +138,23 @@ public partial class MobStateSystem
         if (_timing.ApplyingState)
             return;
 
+        if (component.CurrentStateParams.ForceDown)
+            _standing.Down(target);
+        else
+            _standing.Stand(target);
+
         _blocker.UpdateCanMove(target); //update movement anytime a state changes
         switch (state)
         {
             case MobState.Alive:
-                _standing.Stand(target);
                 _appearance.SetData(target, MobStateVisuals.State, MobState.Alive);
                 break;
             case MobState.SoftCritical:
-                if (component.DownWhenSoftCrit)
-                    _standing.Down(target);
-                _appearance.SetData(target, MobStateVisuals.State, MobState.Critical);
-                break;
             case MobState.Critical:
-                if (component.DownWhenCrit)
-                    _standing.Down(target);
                 _appearance.SetData(target, MobStateVisuals.State, MobState.Critical);
                 break;
             case MobState.Dead:
                 EnsureComp<CollisionWakeComponent>(target);
-                if (component.DownWhenDead)
-                    _standing.Down(target);
-
                 if (_standing.IsDown(target) && TryComp<PhysicsComponent>(target, out var physics))
                     _physics.SetCanCollide(target, false, body: physics);
 

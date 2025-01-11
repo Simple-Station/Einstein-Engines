@@ -91,6 +91,8 @@
   - type: RadiationReceiver
   - type: Stamina
   - type: MobState
+    mobStateParams:
+    - 
   - type: MobThresholds
     thresholds:
       0: Alive

@@ -18,6 +18,8 @@ public sealed partial class MobStateComponent : Component
 {
 
     [DataField]
+    public Dictionary<string, MobStateParameters> InitMobStateParams = new();
+
     public Dictionary<MobState, MobStateParameters> MobStateParams = new()
     {
         { MobState.Alive, new() },
@@ -27,81 +29,6 @@ public sealed partial class MobStateComponent : Component
     };
 
     public MobStateParameters CurrentStateParams => MobStateParams[CurrentState];
-
-    /// <summary>
-    ///     Whether this mob will be allowed to issue movement commands when in the Critical MobState.
-    /// </summary>
-    [DataField]
-    public bool AllowMovementWhileCrit;
-
-    /// <summary>
-    ///     Whether this mob will be allowed to issue movement commands when in the Soft-Crit MobState.
-    /// </summary>
-    [DataField]
-    public bool AllowMovementWhileSoftCrit;
-
-    /// <summary>
-    ///     Whether this mob will be allowed to issue movement commands when in the Dead MobState.
-    ///     This is provided for completeness sake, and *probably* shouldn't be used by default.
-    /// </summary>
-    [DataField]
-    public bool AllowMovementWhileDead;
-
-    /// <summary>
-    ///     Whether this mob will be allowed to talk while in the Critical MobState.
-    /// </summary>
-    [DataField]
-    public bool AllowTalkingWhileCrit = true;
-
-    /// <summary>
-    ///     Whether this mob will be allowed to talk while in the SoftCritical MobState.
-    /// </summary>
-    [DataField]
-    public bool AllowTalkingWhileSoftCrit = true;
-
-    /// <summary>
-    ///     Whether this mob will be allowed to talk while in the Dead MobState.
-    ///     This is provided for completeness sake, and *probably* shouldn't be used by default.
-    /// </summary>
-    [DataField]
-    public bool AllowTalkingWhileDead;
-
-    /// <summary>
-    ///     Whether this mob is forced to be downed when entering the Critical MobState.
-    /// </summary>
-    [DataField]
-    public bool DownWhenCrit = true;
-
-    /// <summary>
-    ///     Whether this mob is forced to be downed when entering the SoftCritical MobState.
-    /// </summary>
-    [DataField]
-    public bool DownWhenSoftCrit = true;
-
-    /// <summary>
-    ///     Whether this mob is forced to be downed when entering the Dead MobState.
-    /// </summary>
-    [DataField]
-    public bool DownWhenDead = true;
-
-    /// <summary>
-    ///     Whether this mob is allowed to perform hand interactions while in the Critical MobState.
-    /// </summary>
-    [DataField]
-    public bool AllowHandInteractWhileCrit;
-
-    /// <summary>
-    ///     Whether this mob is allowed to perform hand interactions while in the SoftCritical MobState.
-    /// </summary>
-    [DataField]
-    public bool AllowHandInteractWhileSoftCrit;
-
-    /// <summary>
-    ///     Whether this mob is allowed to perform hand interactions while in the Dead MobState.
-    ///     This is provided for completeness sake, and *probably* shouldn't be used by default.
-    /// </summary>
-    [DataField]
-    public bool AllowHandInteractWhileDead;
 
     //default mobstate is always the lowest state level
     [AutoNetworkedField, ViewVariables]
@@ -118,7 +45,7 @@ public sealed partial class MobStateComponent : Component
             };
 
 
-
+    #region getters
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public bool CanMove() => CurrentStateParams.Overrides.Moving ?? CurrentStateParams.Moving;
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -156,6 +83,7 @@ public sealed partial class MobStateComponent : Component
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public float GetStrippingTimeMultiplier() => CurrentStateParams.Overrides.StrippingTimeMultiplier ?? CurrentStateParams.StrippingTimeMultiplier;
+    #endregion
 }
 
 [DataDefinition]

@@ -476,7 +476,6 @@ public sealed partial class TraitModifyMobState : TraitFunction
     [IncludeDataField()]
     public Dictionary<MobState, TraitModifyMobStateParams> Params;
 
-
     public override void OnPlayerSpawn(EntityUid uid,
         IComponentFactory factory,
         IEntityManager entityManager,
@@ -509,7 +508,7 @@ public sealed partial class TraitModifyMobState : TraitFunction
             modified.StrippingTimeMultiplier = p.StrippingTimeMultiplier ?? modified.StrippingTimeMultiplier;
         }
 
-        comp.Dirty() // why is this deprecated? it's much better than manually resolving entitymanager with ioc
+        comp.Dirty(); // why is this deprecated? it's much better than manually resolving entitymanager with ioc
     }
 }
 
