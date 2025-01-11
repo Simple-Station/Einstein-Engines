@@ -40,6 +40,7 @@
     interfaces:
       enum.AtmosAlertsComputerUiKey.Key:
         type: AtmosAlertsComputerBoundUserInterface
+  - type: StationAiWhitelist
 
 - type: entity
   parent: BaseComputer
@@ -297,6 +298,7 @@
     interfaces:
       enum.PowerMonitoringConsoleUiKey.Key:
         type: PowerMonitoringConsoleBoundUserInterface
+  - type: StationAiWhitelist
 
 - type: entity
   parent: BaseComputer
@@ -677,6 +679,7 @@
     radius: 1.5
     energy: 1.6
     color: "#e6e227"
+  - type: StationAiWhitelist
 
 - type: entity
   parent: BaseComputer
@@ -790,6 +793,7 @@
   - type: GuideHelp
     guides:
     - Cargo
+  - type: StationAiWhitelist
 
 - type: entity
   id: ComputerCargoBounty
@@ -1027,6 +1031,7 @@
   - type: GuideHelp
     guides:
     - Cargo
+  - type: StationAiWhitelist
 
 - type: entity
   parent: BaseComputer

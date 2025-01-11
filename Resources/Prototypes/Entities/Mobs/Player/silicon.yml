@@ -224,6 +224,22 @@
         unshaded:
           Empty: { state: ai_empty }
           Occupied: { state: ai }
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - SolCommon
+    - Tradeband
+    - Freespeak
+    - Elyran
+    - RobotTalk
+    understands:
+    - TauCetiBasic
+    - SolCommon
+    - Tradeband
+    - Freespeak
+    - Elyran
+    - RobotTalk
+    - Sign # It's intentional that they don't "Speak" sign language.
 
 # The job-ready version of an AI spawn.
 - type: entity
@@ -299,6 +315,22 @@
     - state: default
       shader: unshaded
       map: ["base"]
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - SolCommon
+    - Tradeband
+    - Freespeak
+    - Elyran
+    - RobotTalk
+    understands:
+    - TauCetiBasic
+    - SolCommon
+    - Tradeband
+    - Freespeak
+    - Elyran
+    - RobotTalk
+    - Sign # It's intentional that they don't "Speak" sign language.
 
 # Borgs
 - type: entity
