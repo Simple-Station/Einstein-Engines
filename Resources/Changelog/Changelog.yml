@@ -9537,3 +9537,12 @@ Entries:
   id: 6659
   time: '2025-01-11T00:13:27.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1450
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: Ported Station AI.
+    - type: Add
+      message: Saltern is now fitted with a Station AI
+  id: 6660
+  time: '2025-01-11T04:39:29.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1423
