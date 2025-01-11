@@ -74,6 +74,7 @@
         color: "#008800"
         sprite: Mobs/Customization/eyes.rsi
         state: eyes
+      - map: [ "enum.HumanoidVisualLayers.Face" ]
       - map: [ "enum.HumanoidVisualLayers.RArm" ]
         color: "#e8b59b"
         sprite: Mobs/Species/Human/parts.rsi
@@ -106,14 +107,18 @@
       - map: [ "belt2" ]
       - map: [ "neck" ]
       - map: [ "back" ]
+      - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
       - map: [ "enum.HumanoidVisualLayers.Hair" ]
-        state: bald
-        sprite: Mobs/Customization/human_hair.rsi
+      - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
+      - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
       - map: [ "mask" ]
       - map: [ "head" ]
       - map: [ "pocket1" ]
       - map: [ "pocket2" ]
-      - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
+      - map: [ "clownedon" ] # Dynamically generated
+        sprite: "Effects/creampie.rsi"
+        state: "creampie_human"
+        visible: false
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Scale #TODO: make a new damage modifier set
@@ -216,6 +221,11 @@
       types:
         Bloodloss: -1
   - type: PortalExempt
+  - type: FootPrints
+    leftBarePrint: "dragging-1"
+    rightBarePrint: "dragging-1"
+    shoesPrint: "dragging-1"
+    suitPrint: "dragging-1"
 
 - type: entity
   save: false
@@ -242,6 +252,7 @@
         color: "#008800"
         sprite: Mobs/Customization/eyes.rsi
         state: eyes
+      - map: [ "enum.HumanoidVisualLayers.Face" ]
       - map: [ "enum.HumanoidVisualLayers.RArm" ]
         color: "#e8b59b"
         sprite: Mobs/Species/Human/parts.rsi
@@ -273,14 +284,14 @@
       - map: [ "belt" ]
       - map: [ "neck" ]
       - map: [ "back" ]
+      - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
       - map: [ "enum.HumanoidVisualLayers.Hair" ]
-        state: bald
-        sprite: Mobs/Customization/human_hair.rsi
+      - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
+      - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
       - map: [ "mask" ]
       - map: [ "head" ]
       - map: [ "pocket1" ]
       - map: [ "pocket2" ]
-      - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
       - map: [ "enum.HumanoidVisualLayers.Tail" ]
   - type: Inventory
     templateId: lamia

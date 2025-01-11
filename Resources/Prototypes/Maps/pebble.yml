@@ -61,3 +61,5 @@
             CargoTechnician: [ 2, 3 ]
           #civilian
             Passenger: [ -1, -1 ]
+          # Silicon
+            StationAi: [ 1, 1 ]

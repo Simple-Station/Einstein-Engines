@@ -5,6 +5,7 @@
     - MobAtmosStandard
     - MobFlammable
     - BaseMobSpecies
+    - MobRespirator
   id: MobShadowkinBase
   name: Urist McShadow
   abstract: true
@@ -153,6 +154,7 @@
         - map: ["enum.HumanoidVisualLayers.Snout"]
         - map: ["enum.HumanoidVisualLayers.Eyes"]
           shader: unshaded
+        - map: ["enum.HumanoidVisualLayers.Face"]
         - map: ["enum.HumanoidVisualLayers.RArm"]
         - map: ["enum.HumanoidVisualLayers.LArm"]
         - map: ["enum.HumanoidVisualLayers.RLeg"]
@@ -187,7 +189,6 @@
         - map: ["belt"]
         - map: ["neck"]
         - map: ["back"]
-        - map: [ "enum.HumanoidVisualLayers.Face" ]
         - map: ["enum.HumanoidVisualLayers.FacialHair"]
         - map: ["enum.HumanoidVisualLayers.Hair"]
         - map: ["enum.HumanoidVisualLayers.HeadSide"]
@@ -265,6 +266,7 @@
         - map: ["enum.HumanoidVisualLayers.Snout"]
         - map: ["enum.HumanoidVisualLayers.Eyes"]
           shader: unshaded
+        - map: ["enum.HumanoidVisualLayers.Face"]
         - map: ["enum.HumanoidVisualLayers.RArm"]
         - map: ["enum.HumanoidVisualLayers.LArm"]
         - map: ["enum.HumanoidVisualLayers.RLeg"]
@@ -299,7 +301,6 @@
         - map: ["belt"]
         - map: ["neck"]
         - map: ["back"]
-        - map: [ "enum.HumanoidVisualLayers.Face" ]
         - map: ["enum.HumanoidVisualLayers.FacialHair"]
         - map: ["enum.HumanoidVisualLayers.Hair"]
         - map: ["enum.HumanoidVisualLayers.HeadSide"]

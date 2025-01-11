@@ -70,6 +70,12 @@
     barkType: mouse
     minTime: 10 # Mice like to squeak, I think. You can always put your pet mouse to sleep if it gets annoying
     maxTime: 160
+  - type: NightVision
+    isActive: true
+    toggleAction: null
+    color: "#808080"
+    activateSound: null
+    deactivateSound: null
 
 - type: entity
   name: bee
@@ -418,6 +424,8 @@
         1.0
       FollowRange: !type:Single
         2.0
+  - type: SentienceTarget
+    flavorKind: station-event-random-sentience-flavor-organic
 
 - type: entity
   name: glockroach
@@ -1792,6 +1800,12 @@
       Taco: RatTaco
       Burger: RatBurger
       Skewer: RatSkewer
+  - type: NightVision
+    isActive: true
+    toggleAction: null
+    color: "#808080"
+    activateSound: null
+    deactivateSound: null
 
 - type: entity
   parent: MobMouse
