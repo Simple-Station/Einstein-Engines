@@ -23,7 +23,8 @@
           Quantity: 5
   - type: Tag
     tags:
-      - Meat
+    - Meat
+    - Organ # heretic edit
 
 - type: entity
   id: OrganArachnidStomach
@@ -49,6 +50,11 @@
           Quantity: 5
   - type: Metabolizer
     updateInterval: 1.5
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
+    - Stomach
 
 - type: entity
   id: OrganArachnidLungs
@@ -86,6 +92,11 @@
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 5
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
+    - Lungs
 
 - type: entity
   id: OrganArachnidHeart
@@ -106,6 +117,11 @@
   - type: Organ # Shitmed
     slotId: heart
   - type: Heart # Shitmed: Lets you transplant spider hearts into other species
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
+    - Heart
 
 - type: entity
   id: OrganArachnidLiver
@@ -126,6 +142,11 @@
   - type: Organ # Shitmed
     slotId: liver
   - type: Liver # Shitmed
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
+    - Liver
 
 - type: entity
   id: OrganArachnidKidneys
@@ -146,6 +167,11 @@
     maxReagents: 5
     metabolizerTypes: [Animal]
     removeEmpty: true
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
+    - Kidneys
 
 - type: entity
   id: OrganArachnidEyes
@@ -160,6 +186,11 @@
   - type: Organ # Shitmed
     slotId: eyes
   - type: Eyes # Shitmed
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
+    - Eyes
 
 - type: entity
   id: OrganArachnidTongue
@@ -169,3 +200,8 @@
   components:
   - type: Sprite
     state: tongue
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
+    - Tongue

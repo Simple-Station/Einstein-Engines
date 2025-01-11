@@ -5,6 +5,11 @@
   - type: Sprite
     sprite: Mobs/Species/Shadowkin/organs.rsi
     state: brain
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
+    - Brain
 
 - type: entity
   id: OrganShadowkinEyes
@@ -15,6 +20,11 @@
     sprite: Mobs/Species/Shadowkin/organs.rsi
     layers:
       - state: eyes
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
+    - Eyes
 
 - type: entity
   id: OrganShadowkinEars
@@ -24,6 +34,10 @@
   - type: Sprite
     sprite: Mobs/Species/Shadowkin/organs.rsi
     state: ears
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
 
 - type: entity
   id: OrganShadowkinTongue
@@ -32,7 +46,11 @@
   - type: Sprite
     sprite: Mobs/Species/Shadowkin/organs.rsi
     state: tongue
-
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
+    - Tongue
 
 - type: entity
   id: OrganShadowkinAppendix
@@ -42,7 +60,10 @@
     sprite: Mobs/Species/Shadowkin/organs.rsi
     layers:
       - state: appendix
-
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
 
 - type: entity
   id: OrganShadowkinHeart
@@ -58,6 +79,11 @@
     - id: Medicine
     - id: Poison
     - id: Narcotic
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
+    - Heart
 
 - type: entity
   id: OrganShadowkinStomach
@@ -82,6 +108,11 @@
     groups:
     - id: Food
     - id: Drink
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
+    - Stomach
 
 - type: entity
   id: OrganShadowkinLiver
@@ -97,6 +128,11 @@
     groups:
     - id: Alcohol
       rateModifier: 0.1
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
+    - Liver
 
 - type: entity
   id: OrganShadowkinKidneys
@@ -111,3 +147,8 @@
     maxReagents: 5
     metabolizerTypes: [Shadowkin]
     removeEmpty: true
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
+    - Kidneys

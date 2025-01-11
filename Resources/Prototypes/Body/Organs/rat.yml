@@ -5,7 +5,12 @@
   components:
   - type: Metabolizer
     metabolizerTypes: [ Rat ]
-
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
+    - Lungs
+    
 - type: entity
   id: OrganRatStomach
   parent: OrganAnimalStomach
@@ -22,3 +27,8 @@
           Quantity: 5
   - type: Sprite
     state: stomach
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
+    - Stomach

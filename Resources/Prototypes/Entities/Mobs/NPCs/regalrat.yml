@@ -329,7 +329,6 @@
     color: "#808080"
     activateSound: null
     deactivateSound: null
-
 - type: weightedRandomEntity
   id: RatKingLoot
   weights:

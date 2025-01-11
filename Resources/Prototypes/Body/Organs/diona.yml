@@ -24,6 +24,10 @@
   - type: FlavorProfile
     flavors:
       - people
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
 
 - type: entity
   id: BaseDionaOrgan
@@ -58,6 +62,11 @@
         reagents:
         - ReagentId: GreyMatter
           Quantity: 5
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
+    - Brain
 
 - type: entity
   id: OrganDionaEyes
@@ -72,6 +81,11 @@
   - type: Organ # Shitmed
     slotId: eyes
   - type: Eyes
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
+    - Eyes
 
 - type: entity
   id: OrganDionaStomach
@@ -105,6 +119,11 @@
       - id: Narcotic
       - id: Alcohol
         rateModifier: 0.1
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
+    - Stomach
 
 - type: entity
   id: OrganDionaLungs
@@ -138,6 +157,11 @@
       Lung:
         maxVol: 100
         canReact: False
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
+    - Lungs
 
 # Organs that turn into nymphs on removal
 - type: entity
@@ -151,6 +175,11 @@
   - type: Nymph # This will make the organs turn into a nymph when they're removed.
     entityPrototype: OrganDionaNymphBrain
     transferMind: true
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
+    - Brain
 
 - type: entity
   id: OrganDionaStomachNymph
@@ -161,6 +190,11 @@
   components:
   - type: Nymph
     entityPrototype: OrganDionaNymphStomach
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
+    - Stomach
 
 - type: entity
   id: OrganDionaLungsNymph
@@ -171,6 +205,11 @@
   components:
   - type: Nymph
     entityPrototype: OrganDionaNymphLungs
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
+    - Lungs
 
 # Nymphs that the organs will turn into
 - type: entity
@@ -184,11 +223,6 @@
   - type: IsDeadIC
   - type: Body
     prototype: AnimalNymphBrain
-  - type: SurgeryTarget
-  - type: UserInterface
-    interfaces:
-      enum.SurgeryUIKey.Key:
-        type: SurgeryBui
 
 - type: entity
   id: OrganDionaNymphStomach
@@ -201,11 +235,6 @@
   - type: IsDeadIC
   - type: Body
     prototype: AnimalNymphStomach
-  - type: SurgeryTarget
-  - type: UserInterface
-    interfaces:
-      enum.SurgeryUIKey.Key:
-        type: SurgeryBui
 
 - type: entity
   id: OrganDionaNymphLungs
@@ -218,8 +247,3 @@
   - type: IsDeadIC
   - type: Body
     prototype: AnimalNymphLungs
-  - type: SurgeryTarget
-  - type: UserInterface
-    interfaces:
-      enum.SurgeryUIKey.Key:
-        type: SurgeryBui

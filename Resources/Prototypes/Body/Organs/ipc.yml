@@ -16,6 +16,10 @@
         reagents:
         - ReagentId: Oil
           Quantity: 10
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
 
 - type: entity
   id: OrganIPCEyes
@@ -30,6 +34,11 @@
   - type: Organ
     slotId: eyes
   - type: Eyes
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
+    - Eyes
 
 - type: entity
   id: OrganIPCTongue
@@ -40,6 +49,11 @@
   - type: Sprite
     state: tongue
   - type: Organ
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
+    - Tongue
 
 - type: entity
   id: OrganIPCEars
@@ -51,6 +65,10 @@
     state: ears
   - type: Organ
   - type: Ears
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
 
 - type: entity
   id: OrganIPCPump
@@ -75,3 +93,8 @@
   #   - id: Medicine
   #   - id: Poison
   #   - id: Narcotic
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
+    - Heart

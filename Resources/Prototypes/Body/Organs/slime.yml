@@ -35,6 +35,12 @@
           reagents:
           - ReagentId: Slime
             Quantity: 10
+    - type: Tag # heretic edit
+      tags:
+      - Meat
+      - Organ
+      - Brain
+      - Stomach
 
 
 - type: entity
@@ -74,3 +80,8 @@
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 5
+  - type: Tag # heretic edit
+    tags:
+    - Meat
+    - Organ
+    - Lungs
