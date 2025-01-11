@@ -10101,6 +10101,11 @@ entities:
       rot: 3.141592653589793 rad
       pos: 67.5,27.5
       parent: 2
+  - uid: 357
+    components:
+    - type: Transform
+      pos: 75.5,25.5
+      parent: 2
 - proto: AirlockCargoGlassLocked
   entities:
   - uid: 99
@@ -11843,13 +11848,6 @@ entities:
     components:
     - type: Transform
       pos: 71.5,16.5
-      parent: 2
-- proto: AirlockServiceCaptainLocked
-  entities:
-  - uid: 357
-    components:
-    - type: Transform
-      pos: 75.5,25.5
       parent: 2
 - proto: AirlockServiceLocked
   entities:
@@ -15388,19 +15386,19 @@ entities:
     - type: Transform
       pos: 59.54428,38.528282
       parent: 2
-- proto: BookChefGaming
-  entities:
-  - uid: 838
-    components:
-    - type: Transform
-      pos: 54.416607,44.586376
-      parent: 2
 - proto: BookEngineersHandbook
   entities:
   - uid: 839
     components:
     - type: Transform
       pos: -11.444434,33.764362
+      parent: 2
+- proto: BookHowToCookForFortySpaceman
+  entities:
+  - uid: 838
+    components:
+    - type: Transform
+      pos: 54.416607,44.586376
       parent: 2
 - proto: BookJanitorTale
   entities:
@@ -48997,28 +48995,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 60.5,53.5
       parent: 2
-- proto: chem_master
-  entities:
-  - uid: 6928
-    components:
-    - type: Transform
-      pos: 47.5,45.5
-      parent: 2
-  - uid: 6929
-    components:
-    - type: Transform
-      pos: 59.5,42.5
-      parent: 2
-  - uid: 6930
-    components:
-    - type: Transform
-      pos: 14.5,24.5
-      parent: 2
-  - uid: 6931
-    components:
-    - type: Transform
-      pos: 13.5,27.5
-      parent: 2
 - proto: ChemDispenser
   entities:
   - uid: 6932
@@ -49074,6 +49050,28 @@ entities:
     components:
     - type: Transform
       pos: 13.5,28.5
+      parent: 2
+- proto: ChemMaster
+  entities:
+  - uid: 6928
+    components:
+    - type: Transform
+      pos: 47.5,45.5
+      parent: 2
+  - uid: 6929
+    components:
+    - type: Transform
+      pos: 59.5,42.5
+      parent: 2
+  - uid: 6930
+    components:
+    - type: Transform
+      pos: 14.5,24.5
+      parent: 2
+  - uid: 6931
+    components:
+    - type: Transform
+      pos: 13.5,27.5
       parent: 2
 - proto: CigarGoldCase
   entities:
@@ -97256,6 +97254,25 @@ entities:
     - type: Transform
       pos: 22.5,44.5
       parent: 2
+- proto: PlayerStationAi
+  entities:
+  - uid: 19713
+    components:
+    - type: Transform
+      pos: 30.5,-44.5
+      parent: 2
+- proto: PlayerStationAiEmpty
+  entities:
+  - uid: 19714
+    components:
+    - type: Transform
+      pos: 29.5,-45.5
+      parent: 2
+  - uid: 19715
+    components:
+    - type: Transform
+      pos: 31.5,-45.5
+      parent: 2
 - proto: PlushieMothBartender
   entities:
   - uid: 20376
@@ -108054,13 +108071,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 11.5,6.5
       parent: 2
-- proto: SignDrones
-  entities:
-  - uid: 14529
-    components:
-    - type: Transform
-      pos: 36.5,51.5
-      parent: 2
 - proto: SignElectricalMed
   entities:
   - uid: 14532
@@ -108231,7 +108241,7 @@ entities:
     - type: Transform
       pos: -18.5,47.5
       parent: 2
-- proto: SignHydro2
+- proto: SignHydro1
   entities:
   - uid: 18897
     components:
@@ -108298,6 +108308,13 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -4.5,9.5
+      parent: 2
+- proto: SignMaterials
+  entities:
+  - uid: 14529
+    components:
+    - type: Transform
+      pos: 36.5,51.5
       parent: 2
 - proto: SignMedical
   entities:
@@ -108993,7 +109010,7 @@ entities:
     - type: Transform
       pos: 74.49696,24.50985
       parent: 2
-- proto: soda_dispenser
+- proto: SodaDispenser
   entities:
   - uid: 14577
     components:
@@ -114805,23 +114822,6 @@ entities:
     components:
     - type: Transform
       pos: 34.416985,-24.524979
-      parent: 2
-- proto: ToyAi
-  entities:
-  - uid: 19713
-    components:
-    - type: Transform
-      pos: 30.48641,-44.35624
-      parent: 2
-  - uid: 19714
-    components:
-    - type: Transform
-      pos: 31.481829,-45.373753
-      parent: 2
-  - uid: 19715
-    components:
-    - type: Transform
-      pos: 29.482334,-45.373753
       parent: 2
 - proto: ToyFigurineBartender
   entities:
@@ -130138,7 +130138,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -87131.4
+      secondsUntilStateChange: -87228.59
       state: Opening
   - uid: 18112
     components:
