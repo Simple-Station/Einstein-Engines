@@ -9568,3 +9568,10 @@ Entries:
   id: 6662
   time: '2025-01-11T17:06:38.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1486
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Station AI has been added to Radstation
+  id: 6663
+  time: '2025-01-11T17:12:52.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1487
