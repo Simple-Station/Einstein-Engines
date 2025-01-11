@@ -5831,13 +5831,6 @@ entities:
     - type: Transform
       pos: -6.8905525,1.5128828
       parent: 179
-- proto: VehicleKeyJanicart
-  entities:
-  - uid: 14
-    components:
-    - type: Transform
-      pos: 6.5,16.5
-      parent: 179
 - proto: VendingMachineCigs
   entities:
   - uid: 870
