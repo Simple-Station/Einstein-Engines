@@ -7,6 +7,8 @@
   - type: Psionic
     removable: false
     roller: false
+    assayFeedback:
+      - prober-feedback
   - type: InnatePsionicPowers
     powersToAdd:
       - TelepathyPower
@@ -98,6 +100,8 @@
   - type: Psionic
     removable: false
     roller: false
+    assayFeedback:
+      - drain-feedback
   - type: GlimmerSource
     addToGlimmer: false
   - type: Construction

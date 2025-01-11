@@ -9526,3 +9526,14 @@ Entries:
   id: 6658
   time: '2025-01-10T05:14:46.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1477
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added Assay as a new psi-power, which is available roundstart to the
+        Psionic Mantis. Assay allows the caster to obtain more direct
+        information about the statistics of a specific Psion, as well as vague
+        hints as to what their powers may be, if any.
+  id: 6659
+  time: '2025-01-11T00:13:27.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1450

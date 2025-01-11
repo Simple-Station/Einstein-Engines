@@ -39,6 +39,7 @@
       powersToAdd:
         - MetapsionicPower
         - TelepathyPower
+        - AssayPower
 
 - type: startingGear
   id: ForensicMantisGear

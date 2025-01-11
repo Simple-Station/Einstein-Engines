@@ -106,6 +106,8 @@
   - type: Psionic
     removable: false
     roller: false
+    assayFeedback:
+      - orecrab-feedback
   - type: InnatePsionicPowers
     powersToAdd:
       - TelepathyPower
@@ -306,6 +308,9 @@
   - type: Psionic
     roller: false
     removable: false
+    roller: false
+    assayFeedback:
+      - reagent-slime-feedback
   - type: InnatePsionicPowers
     powersToAdd:
       - TelepathyPower

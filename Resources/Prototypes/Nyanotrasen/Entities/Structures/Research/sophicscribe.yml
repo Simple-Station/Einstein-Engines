@@ -26,6 +26,8 @@
   - type: Psionic
     removable: false
     roller: false
+    assayFeedback:
+      - sophic-grammateus-feedback
     psychognomicDescriptors:
       - p-descriptor-old
       - p-descriptor-demiurgic
