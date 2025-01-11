@@ -768,6 +768,7 @@
   category: Items
   cost: 2
   canBeHeirloom: true
+  customColorTint: true # Unethical hair dyes!
   items:
     - MobMousePet
   requirements:
@@ -781,6 +782,7 @@
   category: Items
   cost: 2
   canBeHeirloom: true
+  customColorTint: true
   items:
     - MobHamsterPet
   requirements:
@@ -794,6 +796,7 @@
   category: Items
   cost: 2
   canBeHeirloom: true
+  customColorTint: true
   items:
     - MobMothroachPet
   requirements:
@@ -807,6 +810,7 @@
   category: Items
   cost: 2
   canBeHeirloom: true
+  customColorTint: true
   items:
     - MobCockroachPet
   requirements:
