@@ -994,7 +994,7 @@
      Steel: 100
      Glass: 500
      Gold: 100
- 
+
 - type: latheRecipe
   id: JukeboxCircuitBoard
   result: JukeboxCircuitBoard
@@ -1002,3 +1002,13 @@
   materials:
     Steel: 100
     Glass: 500
+
+- type: latheRecipe
+  id: MaterialSiloCircuitboard
+  result: MaterialSiloCircuitboard
+  category: Circuitry
+  completetime: 5
+  materials:
+    Steel: 100
+    Glass: 500
+    Gold: 100
