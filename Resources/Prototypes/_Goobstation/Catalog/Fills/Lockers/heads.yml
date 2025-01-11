@@ -27,10 +27,7 @@
   id: LockerFillBlueshieldOfficer
   table: !type:AllSelector
     children:
-    - id: WeaponDisabler
-    - id: ClothingHeadHelmetSwat
     - id: Flash
-    - id: FlashlightSeclite
     - id: ClothingBeltSecurityFilled
     - id: ClothingBlueshieldArmourVest
     - id: ClothingEyesGlassesMedSec
@@ -38,7 +35,6 @@
     - id: ClothingHandsGlovesCombat
     - id: WeaponLeverChester
     - id: WeaponEnergyRevolver
-    - id: BlueshieldAmmunitionBoxFilled
 
 - type: entity
   id: LockerBlueshieldOfficerFilled
