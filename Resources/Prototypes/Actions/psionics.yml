@@ -367,3 +367,22 @@
         followMaster: true
         minGlimmer: 5
         maxGlimmer: 10
+
+- type: entity
+  id: ActionAssay
+  name: action-name-assay
+  description: action-description-assay
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: EntityTargetAction
+      icon: { sprite: Interface/Actions/psionics.rsi, state: assay }
+      useDelay: 45
+      checkCanAccess: false
+      range: 2
+      itemIconStyle: BigAction
+      canTargetSelf: true
+      blacklist:
+        components:
+          - PsionicInsulation
+          - Mindbroken
+      event: !type:AssayPowerActionEvent

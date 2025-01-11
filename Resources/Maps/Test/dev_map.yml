@@ -4447,6 +4447,13 @@ entities:
     - type: Transform
       pos: 1.5,-14.5
       parent: 179
+- proto: PlayerStationAi
+  entities:
+  - uid: 14
+    components:
+    - type: Transform
+      pos: -5.5,-5.5
+      parent: 179
 - proto: PortableGeneratorSuperPacman
   entities:
   - uid: 1016
@@ -5782,6 +5789,13 @@ entities:
     components:
     - type: Transform
       pos: -7.5,4.5
+      parent: 179
+- proto: VehicleKeyATV
+  entities:
+  - uid: 1187
+    components:
+    - type: Transform
+      pos: -6.8905525,1.5128828
       parent: 179
 - proto: VendingMachineCigs
   entities:

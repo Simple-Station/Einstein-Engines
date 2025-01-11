@@ -23,6 +23,10 @@
         - ReagentId: Ectoplasm
           Quantity: 15
   - type: Psionic
+    removable: false
+    roller: false
+    assayFeedback:
+      - glimmer-mite-feedback
   - type: GlimmerSource
   - type: AmbientSound
     range: 6

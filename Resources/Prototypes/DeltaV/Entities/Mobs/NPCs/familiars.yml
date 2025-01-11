@@ -92,6 +92,8 @@
     nameSegments: [names_golem]
   - type: Psionic
     removable: false
+    assayFeedback:
+      - ifrit-feedback
     psychognomicDescriptors:
       - p-descriptor-bound
       - p-descriptor-cyclic
