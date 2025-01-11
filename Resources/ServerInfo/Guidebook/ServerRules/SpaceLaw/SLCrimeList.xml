@@ -172,7 +172,7 @@
     </ColorBox>
     <ColorBox Color="#960000">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Hostile Agent (A)
+        Hostile Affiliation (A)
       </Box>
     </ColorBox>
     <ColorBox Color="#960000">
@@ -182,7 +182,7 @@
     </ColorBox>
     <ColorBox Color="#960000">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Enemy of the Corporation (A)
+        Enemy Combatant (A)
       </Box>
     </ColorBox>
     <ColorBox>
@@ -1167,17 +1167,17 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Hostile Agent (A)
+        Hostile Affiliation (A)
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To knowingly act as a recruiter, representative, messenger, ally, benefactor, or other associate of a hostile organization as defined within Code 405.
+        To knowingly act as a recruiter, representative, messenger, ally, benefactor, or associate of an organization criminally opposed to the Corporation or the Biesel Republic.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Being a traitor while having committed no other actual crimes should be charged under this. Syndicate agents such as traitors will generally fall under this charge, rather than Enemy of the Corporation.
+        Syndicate agents, such as traitors, will generally fall under this charge rather than "Enemy Combatant" (4-05) unless violent actions are confirmed.
       </Box>
     </ColorBox>
     <ColorBox>
@@ -1784,17 +1784,17 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Enemy of the Corporation (A)
+        Enemy Combatant (A)
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To be a member of any of the following organizations clearly conspiring for the destruction of station like Nukies, Wizards, Space Pirates and similar
+        To be confirmed without a shadow of a doubt as an active member of an organization that is in violent opposition to the Corporation or the Biesel Republic.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Membership of the syndicate with no actual actions should be charged under Code 205. Please also consider that deconversion is preferable to charging under EOTC. This is a LAST RESORT, and a trial must be held before conviction of personnel that were at any time on the crew manifest.
+        Membership in an opposition organization without further actions should be charged under Code 2-05. This is a LAST RESORT, and a trial must be held before convicting personnel who were at any time listed on the crew manifest.
       </Box>
     </ColorBox>
     <ColorBox>
