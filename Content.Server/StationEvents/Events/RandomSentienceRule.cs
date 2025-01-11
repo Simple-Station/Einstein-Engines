@@ -70,10 +70,14 @@ public sealed class RandomSentienceRule : StationEventSystem<RandomSentienceRule
 
         ChatSystem.DispatchStationAnnouncement(
             station.Value,
-            _announcer.GetAnnouncementId(args.RuleId),
-                ("kind1", kind1), ("kind2", kind2), ("kind3", kind3), ("amount", groupList.Count),
+            Loc.GetString(
+                "station-event-random-sentience-announcement",
+                ("kind1", kind1),
+                ("kind2", kind2),
+                ("kind3", kind3),
+                ("amount", groupList.Count),
                 ("data", _random.Pick(_prototype.Index<LocalizedDatasetPrototype>("RandomSentienceEventData"))),
-                ("strength", _random.Pick(_prototype.Index<LocalizedDatasetPrototype>("RandomSentienceEventStrength")))
+                ("strength", _random.Pick(_prototype.Index<LocalizedDatasetPrototype>("RandomSentienceEventStrength"))))
         );
     }
 }
