@@ -6,6 +6,15 @@
       id: LoadoutClothingBackpackBlueshield
 
 - type: characterItemGroup
+  id: LoadoutBlueshieldOfficerVests
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingBlueshieldArmoredJacket
+    - type: loadout
+      id: LoadoutClothingBlueshieldArmoredCowboyJacket
+
+- type: characterItemGroup
   id: LoadoutBlueshieldOfficerUniforms
   maxItems: 1
   items:
@@ -13,3 +22,4 @@
       id: LoadoutClothingUniformJumpskirtBlueshieldOfficer
     - type: loadout
       id: LoadoutClothingUniformJumpsuitBlueshieldOfficer
+      

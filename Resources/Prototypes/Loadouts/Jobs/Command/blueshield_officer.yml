@@ -33,13 +33,40 @@
 # Mask
 
 # Outer
+- type: loadout
+  id: LoadoutClothingBlueshieldArmoredJacket
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerVests
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingBlueshieldArmoredJacket
+
+- type: loadout
+  id: LoadoutClothingBlueshieldArmoredCowboyJacket
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerVests
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingBlueshieldArmoredCowboyJacket
 
 # Shoes
 
 # Uniforms
 - type: loadout
   id: LoadoutClothingUniformJumpskirtBlueshieldOfficer
-  category: JobsCommandNanorep
+  category: JobsCommandBlueshieldOfficer
   cost: 0
   exclusive: true
   requirements:
@@ -53,7 +80,7 @@
 
 - type: loadout
   id: LoadoutClothingUniformJumpsuitBlueshieldOfficer
-  category: JobsCommandNanorep
+  category: JobsCommandBlueshieldOfficer
   cost: 0
   exclusive: true
   requirements:
