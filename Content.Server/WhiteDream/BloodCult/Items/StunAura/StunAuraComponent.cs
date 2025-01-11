@@ -1,5 +1,4 @@
-using Content.Server.WhiteDream.BloodCult.Items.BaseAura;
-using Content.Shared.Chat;
+using Content.Shared.WhiteDream.BloodCult.Items.BaseAura;
 
 namespace Content.Server.WhiteDream.BloodCult.Items.StunAura;
 

@@ -2980,6 +2980,17 @@ namespace Content.Shared.CCVar
             CVarDef.Create("reclaimer.allow_gibbing", true, CVar.SERVER);
 
         #endregion
+
+        #region Material Silo
+
+        /// <summary>
+        ///     Is ore material enabled.
+        /// </summary>
+        public static readonly CVarDef<bool> SiloEnabled =
+            CVarDef.Create("silo.silo_enabled", true, CVar.SERVER | CVar.REPLICATED);
+
+        #endregion
+
         #region Jetpack System
         /*
          * Jetpack System

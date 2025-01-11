@@ -69,3 +69,5 @@
             CargoTechnician: [ 2, 4 ]
             SalvageSpecialist: [ 3, 5 ]
             MailCarrier: [ 2, 3 ]
+          # Silicon
+            StationAi: [ 1, 1 ]

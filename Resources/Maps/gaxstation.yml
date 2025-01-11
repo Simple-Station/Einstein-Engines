@@ -96043,6 +96043,13 @@ entities:
     - type: Physics
       angularDamping: 0
       linearDamping: 0
+- proto: MaterialSilo
+  entities:
+  - uid: 20260
+    components:
+    - type: Transform
+      pos: 31.5,-14.5
+      parent: 2
 - proto: MechEquipmentGrabber
   entities:
   - uid: 12860
@@ -114991,11 +114998,6 @@ entities:
         - Middle: Off
 - proto: UnfinishedMachineFrame
   entities:
-  - uid: 20260
-    components:
-    - type: Transform
-      pos: 31.5,-14.5
-      parent: 2
   - uid: 20261
     components:
     - type: Transform
@@ -130138,7 +130140,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -87228.59
+      secondsUntilStateChange: -87259.52
       state: Opening
   - uid: 18112
     components:
