@@ -9658,3 +9658,10 @@ Entries:
   id: 6671
   time: '2025-01-11T20:40:09.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1500
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Fixed a crash caused by Weather System creating millions of sounds.
+  id: 6672
+  time: '2025-01-11T20:40:15.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1501
