@@ -19,7 +19,7 @@
   - id: FultonBeacon
     cost: 400
   # TODO: bluespace shelter capsule for 400
-  - id: SalvageHarpoon # TheDen
+  - id: SalvageHarpoon
     cost: 450
   - id: ClothingEyesGlassesGarMeson
     cost: 500
