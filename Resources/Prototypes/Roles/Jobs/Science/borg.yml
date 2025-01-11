@@ -13,6 +13,8 @@
   supervisors: job-supervisors-rd
   jobEntity: StationAiBrain
   nameDataset: NamesAI
+  spawnLoadout: false
+  applyTraits: false
 
 - type: job
   id: Borg
