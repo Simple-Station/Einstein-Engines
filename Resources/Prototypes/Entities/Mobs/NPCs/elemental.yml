@@ -308,7 +308,6 @@
   - type: Psionic
     roller: false
     removable: false
-    roller: false
     assayFeedback:
       - reagent-slime-feedback
   - type: InnatePsionicPowers
