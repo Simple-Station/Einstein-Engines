@@ -61,8 +61,8 @@ entities:
       fixedRotation: False
       bodyType: Dynamic
     - type: PassiveDampening # To prevent cargotechs from flingling it away.
-      linearDampening: 0.01
-      angularDampening: 0.01
+      linearDampening: 0.05
+      angularDampening: 0.05
     - type: Fixtures
       fixtures: {}
     - type: OccluderTree

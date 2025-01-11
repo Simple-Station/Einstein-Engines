@@ -45,7 +45,6 @@
             Scientist: [ 5, 5 ]
             ForensicMantis: [ 1, 1 ]
             ResearchAssistant: [ 2, 2 ]
-            Borg: [ 1, 1 ]
             Chaplain: [ 1, 1 ]
             #security
             HeadOfSecurity: [ 1, 1 ]
@@ -73,3 +72,6 @@
             Clerk: [ 1, 1 ]
             Lawyer: [ 1, 1 ]
             Prosecutor: [ 1, 1]
+            #silicon
+            StationAi: [ 1, 1 ]
+            Borg: [ 3, 3 ]

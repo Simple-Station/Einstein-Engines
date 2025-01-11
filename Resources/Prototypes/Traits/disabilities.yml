@@ -8,6 +8,12 @@
       jobs:
         - Borg
         - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Photophobia
+        - Nearsighted
+        - CyberEyes
   functions:
     - !type:TraitAddComponent
       components:
@@ -23,6 +29,11 @@
       jobs:
         - Borg
         - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Blindness
+        - CyberEyes
   functions:
     - !type:TraitAddComponent
       components:
@@ -263,6 +274,11 @@
       species:
         - Vulpkanin # This trait functions exactly as-is for the Vulpkanin trait.
         - Shadowkin
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Blindness
+        - CyberEyes
   functions:
     - !type:TraitReplaceComponent
       components:

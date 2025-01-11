@@ -77,18 +77,18 @@
                                          MinWidth="82"
                                          MaxWidth="82"/>
                         <controls:Button Name="DampenerOn"
-                                         Text="{controls:Loc 'shuttle-console-inertia-dampener-dampen'}"
+                                         Text="{controls:Loc 'shuttle-console-inertia-dampener-dampened'}"
                                          TextAlign="Center"
                                          ToggleMode="True"
                                          MinWidth="82"
                                          MaxWidth="82"/>
                         <controls:Button Name="AnchorOn"
-                                         Text="{controls:Loc 'shuttle-console-inertia-dampener-anchor'}"
+                                         Text="{controls:Loc 'shuttle-console-inertia-dampener-anchored'}"
                                          TextAlign="Center"
                                          ToggleMode="True"
                                          MinWidth="82"
                                          MaxWidth="82"/>
                     </controls:BoxContainer>
-                    <!-- End Frontier - Inertia dampener controls-->
+                    <!--end Inertia dampener controls-->
                     </controls:BoxContainer>
                 </controls:BoxContainer>

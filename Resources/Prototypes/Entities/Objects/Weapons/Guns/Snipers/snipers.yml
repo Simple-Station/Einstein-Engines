@@ -111,6 +111,16 @@
     proto: CartridgeLightRifleRubber
 
 - type: entity
+  name: Kardashev-Mosin
+  parent: WeaponSniperMosin
+  id: WeaponSniperMosinEmpty
+  description: A weapon for hunting, or endless trench warfare. Uses .30 rifle ammo.
+  suffix: Empty
+  components:
+  - type: BallisticAmmoProvider
+    proto: null
+
+- type: entity
   name: Hristov
   parent: [BaseWeaponSniper, BaseGunWieldable]
   id: WeaponSniperHristov

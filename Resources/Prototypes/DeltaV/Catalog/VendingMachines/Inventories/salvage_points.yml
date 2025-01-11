@@ -19,6 +19,8 @@
   - id: FultonBeacon
     cost: 400
   # TODO: bluespace shelter capsule for 400
+  - id: SalvageHarpoon
+    cost: 450
   - id: ClothingEyesGlassesGarMeson
     cost: 500
   - id: ClothingBeltSalvageWebbing
@@ -37,8 +39,18 @@
   - id: Fulton
     cost: 1000
   # TODO: lazarus injector for 1k
+  - id: WeaponSniperMosinEmpty
+    cost: 750 # Literally the worst gun in the game.
+  - id: WeaponRevolverArgentiEmpty
+    cost: 1100
+  - id: WeaponRifleNovaliteC1Empty
+    cost: 1300
   - id: ClothingBackpackDuffelSalvageConscription
     cost: 1500
+  - id: WeaponRifleGestioEmpty
+    cost: 1600
+  - id: WeaponRifleSVTEmpty
+    cost: 1600
   - id: SpaceCash1000
     cost: 2000
   # TODO: super resonator for 2500

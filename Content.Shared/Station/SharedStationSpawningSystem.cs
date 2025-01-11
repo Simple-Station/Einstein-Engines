@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Shared.Dataset;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Inventory;
@@ -8,16 +9,20 @@ using Content.Shared.Storage;
 using Content.Shared.Storage.EntitySystems;
 using Robust.Shared.Collections;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
+using Robust.Shared.Utility;
 
 namespace Content.Shared.Station;
 
 public abstract class SharedStationSpawningSystem : EntitySystem
 {
     [Dependency] protected readonly IPrototypeManager PrototypeManager = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] protected readonly InventorySystem InventorySystem = default!;
-    [Dependency] private   readonly SharedHandsSystem _handsSystem = default!;
-    [Dependency] private   readonly SharedStorageSystem _storage = default!;
-    [Dependency] private   readonly SharedTransformSystem _xformSystem = default!;
+    [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
+    [Dependency] private readonly SharedStorageSystem _storage = default!;
+    [Dependency] private readonly SharedTransformSystem _xformSystem = default!;
+    [Dependency] private readonly MetaDataSystem _metadata = default!;
 
     private EntityQuery<HandsComponent> _handsQuery;
     private EntityQuery<InventoryComponent> _inventoryQuery;
@@ -31,6 +36,26 @@ public abstract class SharedStationSpawningSystem : EntitySystem
         _inventoryQuery = GetEntityQuery<InventoryComponent>();
         _storageQuery = GetEntityQuery<StorageComponent>();
         _xformQuery = GetEntityQuery<TransformComponent>();
+    }
+
+    /// <summary>
+    /// Applies the role's name as applicable to the entity.
+    /// </summary>
+    public void EquipJobName(EntityUid entity, JobPrototype job)
+    {
+        string? name = null;
+
+        if (string.IsNullOrEmpty(name)
+            && job.NameDataset.HasValue
+            && PrototypeManager.TryIndex(job.NameDataset.Value, out var nameData))
+        {
+            name = Loc.GetString(_random.Pick(nameData.Values));
+        }
+
+        if (!string.IsNullOrEmpty(name))
+        {
+            _metadata.SetEntityName(entity, name);
+        }
     }
 
     /// <summary>
