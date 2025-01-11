@@ -51,12 +51,12 @@ public sealed class InternalsSystem : EntitySystem
             return; // already connected
 
         // Can the entity breathe the air it is currently exposed to?
-        if (_respirator.CanMetabolizeInhaledAir(uid))
+        if (!TryComp(uid, out RespiratorComponent? respirator) || _respirator.CanMetabolizeInhaledAir((uid, respirator)))
             return;
 
         var tank = FindBestGasTank(uid);
         if (tank == null)
-            return;
+            return; 
 
         // Could the entity metabolise the air in the linked gas tank?
         if (!_respirator.CanMetabolizeGas(uid, tank.Value.Comp.Air))
