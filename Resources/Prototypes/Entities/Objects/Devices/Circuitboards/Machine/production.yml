@@ -1680,8 +1680,9 @@
       state: supply
     - type: MachineBoard
       prototype: MaterialSilo
-      stackRequirements:
+      requirements:
         MatterBin: 10
+      materialRequirements:
         Steel: 5
         Gold: 5
         Bluespace: 5
