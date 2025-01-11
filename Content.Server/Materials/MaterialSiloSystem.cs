@@ -11,6 +11,7 @@ namespace Content.Server.Materials;
 public sealed class MaterialSiloSystem : SharedMaterialSiloSystem
 {
     [Dependency] private readonly LatheSystem _lathe = default!;
+    [Dependency] private readonly PvsOverrideSystem _pvs = default!;
 
     public override void Initialize()
     {
@@ -18,6 +19,8 @@ public sealed class MaterialSiloSystem : SharedMaterialSiloSystem
 
         SubscribeLocalEvent<BecomesStationComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<MaterialSiloComponent, MaterialAmountChangedEvent>(OnMaterialAmountChanged);
+        SubscribeLocalEvent<SiloComponent, ComponentStartup>(OnStartup);
+        SubscribeLocalEvent<SiloComponent, ComponentShutdown>(OnShutdown);
     }
 
     private void OnMaterialAmountChanged(Entity<MaterialSiloComponent> ent, ref MaterialAmountChangedEvent args)
@@ -66,5 +69,15 @@ public sealed class MaterialSiloSystem : SharedMaterialSiloSystem
 
             DeviceLink.LinkDefaults(null, silo.Value, utilizer, silo.Value.Comp, sink);
         }
+    }
+
+    private void OnStartup(Entity<SiloComponent> ent, ref ComponentStartup args)
+    {
+        _pvs.AddGlobalOverride(ent);
+    }
+
+    private void OnShutdown(Entity<SiloComponent> ent, ref ComponentShutdown args)
+    {
+        _pvs.RemoveGlobalOverride(ent);
     }
 }
