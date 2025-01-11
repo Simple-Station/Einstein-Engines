@@ -4332,7 +4332,7 @@ entities:
       pos: 3.5,22.5
       parent: 31
     - type: Door
-      secondsUntilStateChange: -32451.49
+      secondsUntilStateChange: -32480.219
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -56998,6 +56998,13 @@ entities:
     components:
     - type: Transform
       pos: 7.2571726,18.545927
+      parent: 31
+- proto: MaterialSilo
+  entities:
+  - uid: 8292
+    components:
+    - type: Transform
+      pos: 47.5,-11.5
       parent: 31
 - proto: MaterialWoodPlank1
   entities:
