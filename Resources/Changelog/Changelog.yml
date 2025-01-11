@@ -9633,3 +9633,12 @@ Entries:
   id: 6668
   time: '2025-01-11T18:54:37.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1492
+- author: Spatison
+  changes:
+    - type: Tweak
+      message: Shadow shackles now have a delay before binding
+    - type: Fix
+      message: Shadow shackles can now be removed
+  id: 6669
+  time: '2025-01-11T19:02:09.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1466
