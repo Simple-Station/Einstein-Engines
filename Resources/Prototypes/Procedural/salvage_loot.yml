@@ -106,6 +106,10 @@
         - proto: WeaponTeslaGun
           prob: 0.1
           cost: 2
+        - proto: ClothingEyesNightVisionGoggles
+          cost: 8
+        - proto: ClothingEyesGlassesThermal
+          cost: 8
 
 # Mob loot table
 
