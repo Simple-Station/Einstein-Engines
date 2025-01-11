@@ -39,6 +39,8 @@
   - id: Fulton
     cost: 1000
   # TODO: lazarus injector for 1k
+  - id: WeaponSniperMosinEmpty
+    cost: 750 # Literally the worst gun in the game.
   - id: WeaponRevolverArgentiEmpty
     cost: 1100
   - id: WeaponRifleNovaliteC1Empty
