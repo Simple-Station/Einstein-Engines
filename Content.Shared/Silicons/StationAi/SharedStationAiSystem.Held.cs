@@ -6,7 +6,6 @@ using Content.Shared.Verbs;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
 
-
 namespace Content.Shared.Silicons.StationAi;
 
 public abstract partial class SharedStationAiSystem
