@@ -9466,3 +9466,112 @@ Entries:
   id: 6652
   time: '2025-01-08T07:09:10.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1456
+- author: Skubman
+  changes:
+    - type: Fix
+      message: Fixed face markings showing up above eye-wear.
+  id: 6653
+  time: '2025-01-08T19:37:24.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1467
+- author: Lumminal
+  changes:
+    - type: Add
+      message: Added prisoner headset box to warden's locker.
+  id: 6654
+  time: '2025-01-09T21:32:06.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1470
+- author: BlueHNT
+  changes:
+    - type: Add
+      message: Added missing lathe recipes
+  id: 6655
+  time: '2025-01-10T02:27:28.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1472
+- author: Spatison
+  changes:
+    - type: Tweak
+      message: Nymphs are now operable.
+    - type: Fix
+      message: Skeletons can now lie down.
+    - type: Fix
+      message: >-
+        It is no longer possible to insert an organ into a body if the required
+        space is unavailable.
+  id: 6656
+  time: '2025-01-10T02:27:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1471
+- author: Spatison
+  changes:
+    - type: Add
+      message: Added night vision goggle
+    - type: Add
+      message: Added thermal vision goggle
+    - type: Add
+      message: Deathsquad helmet now grants night and thermal vision.
+    - type: Add
+      message: Ninja visor now grants night vision.
+    - type: Tweak
+      message: Some animals have gained night vision.
+    - type: Tweak
+      message: Xenos have gained night vision.
+  id: 6657
+  time: '2025-01-10T04:41:32.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1462
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added 2 new traits related to CyberEyes. Light Amplification Module, and
+        Thermographic Scanner Module. 
+  id: 6658
+  time: '2025-01-10T05:14:46.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1477
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added Assay as a new psi-power, which is available roundstart to the
+        Psionic Mantis. Assay allows the caster to obtain more direct
+        information about the statistics of a specific Psion, as well as vague
+        hints as to what their powers may be, if any.
+  id: 6659
+  time: '2025-01-11T00:13:27.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1450
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: Ported Station AI.
+    - type: Add
+      message: Saltern is now fitted with a Station AI
+  id: 6660
+  time: '2025-01-11T04:39:29.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1423
+- author: Mike32oz
+  changes:
+    - type: Add
+      message: 'Meta Station, added Station AI '
+    - type: Add
+      message: Meta Station, added station anchor
+    - type: Add
+      message: >-
+        Meta Station, added senior positions: Senior Researcher, Senior
+        Engineer, Senior Physician, and Senior Officer.
+    - type: Tweak
+      message: Meta Station, tweaked Engineering Department
+  id: 6661
+  time: '2025-01-11T15:30:19.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1484
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Added Station AI to GaxStation
+  id: 6662
+  time: '2025-01-11T17:06:38.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1486
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Station AI has been added to Radstation
+  id: 6663
+  time: '2025-01-11T17:12:52.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1487

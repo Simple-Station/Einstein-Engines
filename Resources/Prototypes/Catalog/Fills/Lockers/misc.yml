@@ -44,7 +44,7 @@
       prob: 0.2
     - !type:EntSelector
       id: WeaponFlareGun
-      prob: 0.1
+      prob: 0.05
     - !type:EntSelector
       id: BoxMRE
       prob: 0.1
@@ -165,6 +165,10 @@
     - !type:EntSelector
       id: WeaponSniperMosin
       weight: 2
+    - !type:EntSelector
+      id: ClothingEyesNightVisionGogglesSyndie
+    - !type:EntSelector
+      id: ClothingEyesThermalVisionGogglesSyndie
 
 - type: entityTable
   id: MaintenanceLockerLoot

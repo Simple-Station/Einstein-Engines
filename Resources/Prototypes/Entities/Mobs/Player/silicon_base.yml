@@ -91,6 +91,7 @@
         - map: ["enum.HumanoidVisualLayers.Head"]
         - map: ["enum.HumanoidVisualLayers.Snout"]
         - map: ["enum.HumanoidVisualLayers.Eyes"]
+        - map: ["enum.HumanoidVisualLayers.Face"]
         - map: ["enum.HumanoidVisualLayers.RArm"]
         - map: ["enum.HumanoidVisualLayers.LArm"]
         - map: ["enum.HumanoidVisualLayers.RLeg"]
@@ -125,7 +126,6 @@
         - map: ["belt"]
         - map: ["neck"]
         - map: ["back"]
-        - map: [ "enum.HumanoidVisualLayers.Face" ]
         - map: ["enum.HumanoidVisualLayers.FacialHair"]
         - map: ["enum.HumanoidVisualLayers.Hair"]
         - map: ["enum.HumanoidVisualLayers.HeadSide"]
@@ -233,6 +233,7 @@
     - type: Body
       prototype: IPC
       requiredLegs: 2
+      thermalVisibility: false
     - type: Ensnareable
       sprite: Objects/Misc/ensnare.rsi
     - type: Speech
