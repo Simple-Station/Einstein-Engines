@@ -9731,3 +9731,13 @@ Entries:
   id: 6679
   time: '2025-01-12T21:23:18.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1508
+- author: Tirochora
+  changes:
+    - type: Fix
+      message: >-
+        the pew RSI's are now correct, so the sprites shouldn't be inverted.
+        That said, some maps still appear to be a little odd, so I'll have to
+        review them further at some point.
+  id: 6680
+  time: '2025-01-12T21:25:13.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1469
