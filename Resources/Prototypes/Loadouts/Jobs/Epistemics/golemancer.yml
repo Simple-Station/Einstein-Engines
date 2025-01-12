@@ -100,7 +100,18 @@
 # Mask
 
 # Outer
-
+- type: loadout
+  id: LoadoutScienceUniformWinterCoatRoboticist
+  category: JobsEpistemicsGolemancer
+  cost: 0
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutGolemancerUniforms
+  - !type:CharacterJobRequirement
+    jobs:
+    - Roboticist
+  items:
+  - ClothingOuterWinterRobo
 # Shoes
 
 # Uniforms

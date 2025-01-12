@@ -171,6 +171,8 @@
     - type: loadout
       id: LoadoutClothingOuterArmorPlateCarrier
     - type: loadout
+      id: LoadoutClothingOuterWinterCoatSec
+    - type: loadout
       id: LoadoutClothingOuterArmorDuraVest
     - type: loadout
       id: LoadoutClothingOuterArmorBasic
