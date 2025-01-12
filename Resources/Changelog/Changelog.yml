@@ -9748,3 +9748,12 @@ Entries:
   id: 6681
   time: '2025-01-12T23:08:27.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1520
+- author: LonoferaRS
+  changes:
+    - type: Add
+      message: >-
+        A bunch of winter coats that are already in the game were added as a
+        loadouts.
+  id: 6682
+  time: '2025-01-12T23:08:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1510
