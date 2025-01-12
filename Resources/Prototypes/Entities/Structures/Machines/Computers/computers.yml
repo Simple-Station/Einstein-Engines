@@ -40,6 +40,7 @@
     interfaces:
       enum.AtmosAlertsComputerUiKey.Key:
         type: AtmosAlertsComputerBoundUserInterface
+  - type: StationAiWhitelist
 
 - type: entity
   parent: BaseComputer
@@ -297,6 +298,7 @@
     interfaces:
       enum.PowerMonitoringConsoleUiKey.Key:
         type: PowerMonitoringConsoleBoundUserInterface
+  - type: StationAiWhitelist
 
 - type: entity
   parent: BaseComputer
@@ -584,6 +586,7 @@
   name: communications computer
   description: A computer used to make station wide announcements via keyboard, set the appropriate alert level, and call the emergency shuttle.
   components:
+  - type: StationAiWhitelist
   - type: Sprite
     layers:
     - map: ["computerLayerBody"]
@@ -676,6 +679,7 @@
     radius: 1.5
     energy: 1.6
     color: "#e6e227"
+  - type: StationAiWhitelist
 
 - type: entity
   parent: BaseComputer
@@ -789,6 +793,7 @@
   - type: GuideHelp
     guides:
     - Cargo
+  - type: StationAiWhitelist
 
 - type: entity
   id: ComputerCargoBounty
@@ -1026,6 +1031,7 @@
   - type: GuideHelp
     guides:
     - Cargo
+  - type: StationAiWhitelist
 
 - type: entity
   parent: BaseComputer
@@ -1140,3 +1146,46 @@
     access: [["ResearchDirector"]]
   - type: Lock
     unlockOnClick: false
+
+- type: entity
+  id: StationAiUploadComputer
+  parent: BaseComputer
+  name: AI upload console
+  description: Used to update the laws of the station AI.
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "computerLayerBody" ]
+      state: computer
+    - map: [ "computerLayerKeyboard" ]
+      state: generic_keyboard
+    - map: [ "computerLayerScreen" ]
+      state: aiupload
+    - map: [ "computerLayerKeys" ]
+      state: generic_keys
+  - type: ApcPowerReceiver
+    powerLoad: 1000
+  - type: AccessReader
+    access: [ [ "ResearchDirector" ] ]
+  - type: Lock
+    unlockOnClick: false
+  - type: SiliconLawUpdater
+    components:
+    - type: StationAiHeld
+  - type: ItemSlotsLock
+    slots:
+    - circuit_holder
+  - type: ItemSlotRequiresPower
+  - type: ItemSlots
+    slots:
+      circuit_holder:
+        name: circuit-holder
+        insertSuccessPopup: silicon-laws-updated
+        whitelist:
+          components:
+          - SiliconLawProvider
+          - Item
+  - type: ContainerContainer
+    containers:
+      circuit_holder: !type:ContainerSlot
+      board: !type:Container
