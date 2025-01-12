@@ -77,7 +77,7 @@ public sealed class MaterialSiloSystem : SharedMaterialSiloSystem
         _pvs.AddGlobalOverride(ent);
     }
 
-    private void OnShutdown(Entity>MaterialSiloComponent> ent, ref ComponentShutdown args)
+    private void OnShutdown(Entity<MaterialSiloComponent> ent, ref ComponentShutdown args)
     {
         _pvs.RemoveGlobalOverride(ent);
     }
