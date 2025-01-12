@@ -7,6 +7,13 @@
   - type: ShowMindShieldIcons
   - type: ShowCriminalRecordIcons
 
+- type: entity
+  id: ShowMedicalIcons
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ShowHealthBars
+  - type: ShowHealthIcons
 
 - type: entity
   parent: ClothingEyesBase

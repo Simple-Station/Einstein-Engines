@@ -25,6 +25,8 @@
   - type: Actions
   - type: Psionic
     removable: false
+    assayFeedback:
+      - sophic-grammateus-feedback
     psychognomicDescriptors:
       - p-descriptor-old
       - p-descriptor-demiurgic
