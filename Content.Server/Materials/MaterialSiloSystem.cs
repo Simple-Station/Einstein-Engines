@@ -20,8 +20,8 @@ public sealed class MaterialSiloSystem : SharedMaterialSiloSystem
 
         SubscribeLocalEvent<BecomesStationComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<MaterialSiloComponent, MaterialAmountChangedEvent>(OnMaterialAmountChanged);
-        SubscribeLocalEvent<SiloComponent, ComponentStartup>(OnStartup);
-        SubscribeLocalEvent<SiloComponent, ComponentShutdown>(OnShutdown);
+        SubscribeLocalEvent<MaterialSiloComponent, ComponentStartup>(OnStartup);
+        SubscribeLocalEvent<MaterialSiloComponent, ComponentShutdown>(OnShutdown);
     }
 
     private void OnMaterialAmountChanged(Entity<MaterialSiloComponent> ent, ref MaterialAmountChangedEvent args)
@@ -72,12 +72,12 @@ public sealed class MaterialSiloSystem : SharedMaterialSiloSystem
         }
     }
 
-    private void OnStartup(Entity<SiloComponent> ent, ref ComponentStartup args)
+    private void OnStartup(Entity<MaterialSiloComponent> ent, ref ComponentStartup args)
     {
         _pvs.AddGlobalOverride(ent);
     }
 
-    private void OnShutdown(Entity<SiloComponent> ent, ref ComponentShutdown args)
+    private void OnShutdown(Entity>MaterialSiloComponent> ent, ref ComponentShutdown args)
     {
         _pvs.RemoveGlobalOverride(ent);
     }
