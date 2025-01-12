@@ -9768,3 +9768,18 @@ Entries:
   id: 6683
   time: '2025-01-12T23:09:32.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1386
+- author: Mike32oz
+  changes:
+    - type: Add
+      message: 'Station anchor on ATS '
+    - type: Add
+      message: Clean bot and two locker
+    - type: Tweak
+      message: Air distribution on cargo shuttle
+    - type: Add
+      message: two seats including a wrench and a crowbar
+    - type: Remove
+      message: Plastic airtight flats and replace them with tiny fans
+  id: 6684
+  time: '2025-01-12T23:11:11.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1457
