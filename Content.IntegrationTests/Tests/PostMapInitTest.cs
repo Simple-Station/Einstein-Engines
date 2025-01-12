@@ -252,7 +252,7 @@ namespace Content.IntegrationTests.Tests
                     // This is done inside gamemap test because loading the map takes ages and we already have it.
                     var spawnPoints = entManager.EntityQuery<SpawnPointComponent>()
                         .Where(x => x.SpawnType == SpawnPointType.Job)
-                        .Where(x => x.Job == null || x.Job.JobEntity == null)
+                        .Where(x => x.Job!.JobEntity == null)
                         .Select(x => x.Job!.ID);
 
                     jobs.ExceptWith(spawnPoints);
