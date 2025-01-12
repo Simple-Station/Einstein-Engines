@@ -9704,3 +9704,10 @@ Entries:
   id: 6676
   time: '2025-01-12T20:28:22.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1516
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Fixed Energy Swords not displaying their blade when ignited.
+  id: 6677
+  time: '2025-01-12T21:20:27.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1519
