@@ -9722,3 +9722,12 @@ Entries:
   id: 6678
   time: '2025-01-12T21:21:34.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1512
+- author: CerberusWolfie
+  changes:
+    - type: Add
+      message: Added pockets to Admin Ghosts.
+    - type: Add
+      message: Added tail-drag (no-hands) to Admin Ghosts.
+  id: 6679
+  time: '2025-01-12T21:23:18.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1508
