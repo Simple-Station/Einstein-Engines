@@ -9665,3 +9665,19 @@ Entries:
   id: 6672
   time: '2025-01-11T20:40:15.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1501
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: >-
+        Added a command to easily allow for adding a jobs playtime requirements.
+        (playtime_unlock)
+  id: 6673
+  time: '2025-01-11T22:32:29.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1464
+- author: Aviu00
+  changes:
+    - type: Fix
+      message: Fix silo being out of range.
+  id: 6674
+  time: '2025-01-12T02:22:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1502
