@@ -4,8 +4,6 @@
   items:
     - type: loadout
       id: LoadoutClothingBackpackSatchelNanorep
-    - type: loadout
-      id: LoadoutClothingBackpackCentcom
 
 - type: characterItemGroup
   id: LoadoutNanorepUniforms

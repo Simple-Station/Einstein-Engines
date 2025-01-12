@@ -16,27 +16,6 @@
     Steel: 720
 
 - type: latheRecipe
-  parent: BaseEmptyAmmoRecipe
-  id: MagazineLightRifleBoxEmpty
-  result: MagazineLightRifleBoxEmpty
-  materials:
-    Steel: 100
-
-- type: latheRecipe
-  parent: BaseAmmoRecipe
-  id: MagazineLightRifleBox
-  result: MagazineLightRifleBox
-  materials:
-    Steel: 1600
-
-- type: latheRecipe
-  parent: BaseEmptyAmmoRecipe
-  id: MagazineHighCaliberEmpty
-  result: MagazineHighCaliberEmpty
-  materials:
-    Steel: 25
-
-- type: latheRecipe
   parent: BaseAmmoRecipe
   id: MagazineHighCaliber
   result: MagazineHighCaliber

@@ -14,20 +14,6 @@
   items:
     - ClothingBackpackSatchelNanorep
 
-- type: loadout
-  id: LoadoutClothingBackpackCentcom
-  category: JobsCommandNanorep
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutNanorepBackpacks
-    - !type:CharacterJobRequirement
-      jobs:
-        - NanotrasenRepresentative
-  items:
-    - ClothingBackpackCentcom
-
 # Belt
 
 # Ears

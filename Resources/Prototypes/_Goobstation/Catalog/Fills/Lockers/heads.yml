@@ -4,7 +4,7 @@
   parent: LockerNanorep
   components:
   - type: StorageFill
-    children:
+    contents:
     - id: BoxFolderCentCom
     - id: WeaponDisabler
     - id: BriefcaseBrownFilled

@@ -24,7 +24,6 @@
         whitelist:
           tags:
           - MagazineMagnumLeverRifle
-        whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
         priority: 1
