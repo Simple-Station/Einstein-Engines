@@ -14022,8 +14022,6 @@ entities:
       pos: -38.5,30.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 45
   - uid: 19573
@@ -14128,8 +14126,6 @@ entities:
       pos: 35.5,51.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 15
       - 45
@@ -90591,8 +90587,6 @@ entities:
       pos: 36.5,51.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 15
       - 45
@@ -92299,8 +92293,6 @@ entities:
       pos: 34.5,51.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 15
       - 45
@@ -97933,7 +97925,6 @@ entities:
           - 20470
           - 20471
           - 20472
-          - invalid
           - 20474
           - 20475
           - 20476
@@ -118931,10 +118922,6 @@ entities:
         - Right: Reverse
         - Middle: Off
         7274:
-        - Left: Forward
-        - Right: Reverse
-        - Middle: Off
-        invalid:
         - Left: Forward
         - Right: Reverse
         - Middle: Off
