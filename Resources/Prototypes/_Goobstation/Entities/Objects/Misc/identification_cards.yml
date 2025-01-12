@@ -7,7 +7,6 @@
   - type: Sprite
     layers:
     - state: centcom
-    - state: idcentcom
   - type: Item
     heldPrefix: 
   - type: PresetIdCard
