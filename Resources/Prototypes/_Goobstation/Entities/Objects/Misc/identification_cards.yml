@@ -6,6 +6,7 @@
   components:
   - type: Sprite
     layers:
+    - state: idcentcom
     - state: centcom
   - type: Item
     heldPrefix: 
