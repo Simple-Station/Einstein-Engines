@@ -6,9 +6,9 @@
   description: An armoured vest with the badge of the blueshield
   components:
   - type: Sprite
-    sprite: Goobstation/Clothing/Armor/bso_armour.rsi
+    sprite: _Goobstation/Clothing/Armor/bso_armour.rsi
   - type: Clothing
-    sprite: Goobstation/Clothing/Armor/bso_armour.rsi
+    sprite: _Goobstation/Clothing/Armor/bso_armour.rsi
   - type: Armor
     modifiers:
       coefficients:
