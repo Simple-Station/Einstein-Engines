@@ -9711,3 +9711,14 @@ Entries:
   id: 6677
   time: '2025-01-12T21:20:27.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1519
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: >-
+        Fixed Nanotrasen Representative lacking in the starter clothes
+        department
+    - type: Fix
+      message: Fixed Nanotrasen Representative lacking in the headset department
+  id: 6678
+  time: '2025-01-12T21:21:34.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1512
