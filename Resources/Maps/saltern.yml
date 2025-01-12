@@ -4332,7 +4332,7 @@ entities:
       pos: 3.5,22.5
       parent: 31
     - type: Door
-      secondsUntilStateChange: -32480.219
+      secondsUntilStateChange: -32552.574
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -66696,6 +66696,23 @@ entities:
     - type: Transform
       pos: 17.5,-0.5
       parent: 31
+- proto: SpawnPointAdminAssistant
+  entities:
+  - uid: 11407
+    components:
+    - type: Transform
+      pos: -0.5,25.5
+      parent: 31
+  - uid: 11409
+    components:
+    - type: Transform
+      pos: -0.5,24.5
+      parent: 31
+  - uid: 11410
+    components:
+    - type: Transform
+      pos: -2.5,24.5
+      parent: 31
 - proto: SpawnPointAtmos
   entities:
   - uid: 6425
@@ -66714,6 +66731,13 @@ entities:
     components:
     - type: Transform
       pos: -11.5,-7.5
+      parent: 31
+- proto: SpawnPointBlueshieldOfficer
+  entities:
+  - uid: 11406
+    components:
+    - type: Transform
+      pos: -2.5,25.5
       parent: 31
 - proto: SpawnPointBorg
   entities:
@@ -66906,6 +66930,13 @@ entities:
     components:
     - type: Transform
       pos: -11.5,-10.5
+      parent: 31
+- proto: SpawnPointNanotrasenRepresentative
+  entities:
+  - uid: 11408
+    components:
+    - type: Transform
+      pos: -1.5,26.5
       parent: 31
 - proto: SpawnPointObserver
   entities:
