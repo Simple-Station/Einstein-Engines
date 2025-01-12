@@ -983,6 +983,20 @@
 
 # Outer
 - type: loadout
+  id: LoadoutClothingOuterWinterCoatSec
+  category: JobsSecurityAUncategorized
+  cost: 0
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityOuter
+  - !type:CharacterDepartmentRequirement
+    departments:
+    - Security
+  items:
+  - ClothingOuterWinterSec
+
+
+- type: loadout
   id: LoadoutClothingOuterArmorPlateCarrier
   category: JobsSecurityAUncategorized
   cost: 0
