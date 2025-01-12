@@ -4,7 +4,7 @@ using Content.Server.Station.Components;
 using Content.Shared.DeviceLinking;
 using Content.Shared.Lathe;
 using Content.Shared.Materials;
-using Robust.Server.GameStates
+using Robust.Server.GameStates;
 using Robust.Shared.Timing;
 
 namespace Content.Server.Materials;
