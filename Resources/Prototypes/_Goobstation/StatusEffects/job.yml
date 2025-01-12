@@ -2,12 +2,12 @@
   parent: JobIcon
   id: JobIconNanotrasenRepresentative
   icon:
-    sprite: /Textures/Goobstation/Interface/Misc/job_icons.rsi
+    sprite: /Textures/_Goobstation/Interface/Misc/job_icons.rsi
     state: nanotrasenrepresentative
 
 - type: jobIcon
   parent: JobIcon
   id: JobIconBlueshield
   icon:
-    sprite: /Textures/Goobstation/Interface/Misc/job_icons.rsi
+    sprite: /Textures/_Goobstation/Interface/Misc/job_icons.rsi
     state: blueshield
