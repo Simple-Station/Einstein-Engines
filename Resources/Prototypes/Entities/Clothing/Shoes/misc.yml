@@ -165,6 +165,9 @@
     slots:
     - LFoot
     - RFoot
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepHighHeels
 
 - type: entity
   parent: ClothingShoesBaseButcherable
@@ -181,6 +184,9 @@
     slots:
     - LFoot
     - RFoot
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepHighHeels
 
 - type: entity
   parent: ClothingShoesBaseButcherable
@@ -192,6 +198,9 @@
     sprite: Clothing/Shoes/Misc/flats.rsi
   - type: Clothing
     sprite: Clothing/Shoes/Misc/flats.rsi
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepHighHeels
 
 - type: entity
   parent: ClothingShoesBaseButcherable

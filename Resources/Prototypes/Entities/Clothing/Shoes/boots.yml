@@ -111,6 +111,9 @@
     slots:
     - LFoot
     - RFoot
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepHighHeels
 
 - type: entity
   parent: ClothingShoesMilitaryBase
