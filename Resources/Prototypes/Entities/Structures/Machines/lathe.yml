@@ -223,15 +223,11 @@
     - SpeedLoaderMagnumEmpty
     - MagazinePistolCaselessRifle # Goobstation
     - MagazineBoxCaselessRifle # Goobstation
-    - MagazineLightRifleBoxEmpty # Goobstation
-    - MagazineLightRifleBox # Goobstation
-    - MagazineHighCaliberEmpty # Goobstation
-    - MagazineHighCaliber # Goobstation
-    - MagazineBoxHighCaliber # Goobstation
     - MagazineMagnumEmpty # Goobstation
     - MagazineMagnum # Goobstation
     - MagazineMagnumLeverRifleEmpty # Goobstation
     - MagazineMagnumLeverRifle # Goobstation
+
 - type: entity
   id: AutolatheHyperConvection
   parent: [Autolathe, BaseHyperlathe]

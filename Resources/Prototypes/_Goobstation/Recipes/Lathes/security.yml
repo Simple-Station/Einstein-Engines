@@ -9,20 +9,6 @@
 # Ammo
 - type: latheRecipe
   parent: BaseAmmoRecipe
-  id: MagazineHighCaliber
-  result: MagazineHighCaliber
-  materials:
-    Steel: 325
-
-- type: latheRecipe
-  parent: BaseAmmoRecipe
-  id: MagazineBoxHighCaliber
-  result: MagazineBoxHighCaliber
-  materials:
-    Steel: 600
-
-- type: latheRecipe
-  parent: BaseAmmoRecipe
   id: MagazineMagnumLeverRifleEmpty
   result: MagazineMagnumLeverRifleEmpty
   materials:
