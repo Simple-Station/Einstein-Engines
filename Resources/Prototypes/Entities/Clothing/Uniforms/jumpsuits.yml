@@ -1565,3 +1565,212 @@
     sprite: Clothing/Uniforms/Jumpsuit/familiar_garbs.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/familiar_garbs.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitSuitAmish
+  name: amish suit
+  description: It's a very Amish-looking suit.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/amish_suit.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/amish_suit.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitSuitAristocratic
+  name: aristocratic suit
+  description: A dapper-looking suit with blue accents that make you feel like an aristocrat.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/aristocratic_suit.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/aristocratic_suit.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitSuitAristocraticTuxedo
+  name: aristocratic tuxedo
+  description: You can almost smell the spesos this was sewn from.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/aristocratic_tuxedo.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/aristocratic_tuxedo.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitAscetic
+  name: plain ascetic garb
+  description: A rather plain-looking uniform.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/ascetic.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/ascetic.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitBarber
+  name: barber jumpsuit
+  description: Makes you want to cut hair.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/barber.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/barber.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitSuitBlueBlazer
+  name: blue blazer
+  description: A bold yet conservative outfit, red corduroys, navy blazer and a tie.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/blue_blazer.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/blue_blazer.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitDisheveled
+  name: disheveled suit
+  description: What might pass as well maintained formal attire. If you're blind.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/disheveled.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/disheveled.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitSuitRegal
+  name: regal suit
+  description: An elegant red suit with yellow accents.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/regal_suit.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/regal_suit.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitSuitRegalTuxedo
+  name: regal tuxedo
+  description: An elegant dapper suit with a red coat.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/regal_tuxedo.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/regal_tuxedo.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitRippedPunk
+  name: ripped punk jeans
+  description: Black ripped jeans and a fishnet top. How punk.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/rippedpunk.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/rippedpunk.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitSailor
+  name: sailor suit
+  description: Popular in the Submarine station.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/sailor.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/sailor.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitSuitStriped
+  name: striped suit
+  description: A red and white striped ensemble with dark suspenders.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/striped_suit.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/striped_suit.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitTrackpants
+  name: track pants
+  description: A plain t-shirt and track pants.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/trackpants.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/trackpants.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitTurtleneckGrey
+  name: grey turtleneck
+  description: A warm looking sweater and a pair of dark blue slacks.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/turtleneck_grey.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/turtleneck_grey.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitSuitVictorianRedBlack
+  name: red and black victorian suit
+  description: A Victorian-style suit, fancy!
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/victorian_red_black.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/victorian_red_black.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitSuitVictorianRedVest
+  name: red victorian suit
+  description: A Victorian-style suit, fancy!
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/victorian_red_vest.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/victorian_red_vest.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitSuitVictorianVest
+  name: victorian suit
+  description: A Victorian-style suit, fancy!
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/victorian_vest.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/victorian_vest.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitWaiter
+  name: waiter's outfit
+  description: Waiter! Waiter! More serves with that outfit please!
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/waiter.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/waiter.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitYogaGymBra
+  name: yoga gym bra
+  description: A gym bra paired with yoga pants. If you're gonna work out, might as well do it in style.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/yoga_gym_bra.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/yoga_gym_bra.rsi

@@ -244,6 +244,7 @@
   category: Shoes
   cost: 1
   exclusive: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes
@@ -290,6 +291,7 @@
   cost: 0
   exclusive: true
   customColorTint: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes
@@ -302,6 +304,7 @@
   cost: 0
   exclusive: true
   customColorTint: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes
@@ -314,6 +317,7 @@
   cost: 0
   exclusive: true
   customColorTint: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes
