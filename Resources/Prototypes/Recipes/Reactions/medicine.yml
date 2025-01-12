@@ -71,7 +71,7 @@
   reactants:
     Cryoxadone:
       amount: 1
-    UnstableMutagen:
+    Phalanximine:
       amount: 1
   products:
     Doxarubixadone: 2
@@ -561,8 +561,8 @@
   id: Opporozidone
   minTemp: 400 #Maybe if a method of reducing reagent temp exists one day, this could be -50
   reactants:
-    Cognizine: 
-      amount: 1
+    Formaldehyde: 
+      amount: 2
     Plasma:
       amount: 2
     Doxarubixadone:
@@ -662,3 +662,29 @@
       amount: 1
   products:
     Haloperidol: 5
+
+- type: reaction
+  id: Traumoxadone
+  reactants:
+    Cryoxadone:
+      amount: 1
+    SalicylicAcid:
+      amount: 1
+    Lipozine:
+      amount: 1
+  products:
+    Traumoxadone: 2
+
+- type: reaction
+  id: Stelloxadone
+  reactants:
+    Cryoxadone:
+      amount: 3
+    Stellibinin:
+      amount: 5
+    Arithrazine:
+      amount: 2
+  products:
+    Stelloxadone: 5
+    Water: 3
+    Fiber: 2
