@@ -5,9 +5,9 @@
   description: Sunglasses with a medical and security hud
   components:
   - type: Sprite
-    sprite: _GoobstationClothing/Eyes/Glasses/medglasses.rsi
+    sprite: _Goobstation/Clothing/Eyes/Glasses/medglasses.rsi
   - type: Clothing
-    sprite: _GoobstationClothing/Eyes/Glasses/medglasses.rsi
+    sprite: _Goobstation/Clothing/Eyes/Glasses/medglasses.rsi
   - type: FlashImmunity
   - type: EyeProtection
     protectionTime: 5
