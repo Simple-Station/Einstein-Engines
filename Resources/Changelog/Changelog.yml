@@ -9367,3 +9367,340 @@ Entries:
   id: 6644
   time: '2025-01-07T04:08:32.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1446
+- author: Spatison
+  changes:
+    - type: Fix
+      message: Humanoid color in the spawn panel is now correct.
+    - type: Fix
+      message: IPCs can no longer spawn invisible.
+  id: 6645
+  time: '2025-01-07T17:02:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1454
+- author: RadsammyT
+  changes:
+    - type: Tweak
+      message: >-
+        Languages that don't require speech (I.E. Sign Language) will no longer
+        play speech sounds.
+  id: 6646
+  time: '2025-01-07T17:15:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1448
+- author: CerberusWolfie
+  changes:
+    - type: Add
+      message: Add Time Transfer Panel
+  id: 6647
+  time: '2025-01-07T17:23:36.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1429
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        NanoChat message notifications will now show you the job title of the
+        sender alongside their name.
+    - type: Add
+      message: The NanoChat edit button now has a proper icon.
+    - type: Tweak
+      message: >-
+        The disk space (max amount of installable programs) on PDAs has been
+        increased from 5 to 8. This also fixes a bug where NanoChat was not
+        being installed on PDAs with more than 5 pre-installed cartridges.
+    - type: Tweak
+      message: >-
+        The character limit for names and job titles in NanoChat has been
+        increased to their actual limit on ID cards (30 characters).
+    - type: Tweak
+      message: >-
+        NanoChat chat list names/titles and notification titles that are too
+        long will be shortened, indicated with "..." at the end.
+    - type: Tweak
+      message: >-
+        The NanoChat edit popup now displays the correct text, instead of
+        appearing identical to the new chat popup.
+    - type: Fix
+      message: >-
+        NanoChat will now send a new message notification no matter what if you
+        don't have the chat open.
+    - type: Fix
+      message: Editing a chat in NanoChat no longer deselects that chat.
+    - type: Fix
+      message: >-
+        Fixed a issue where users could potentially send NanoChat messages
+        longer than the maximum allowed message length.
+    - type: Fix
+      message: >-
+        Fixed being able to create a new chat when you haven't typed in 4 digits
+        in the number field.
+  id: 6648
+  time: '2025-01-08T06:56:46.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1460
+- author: Skubman
+  changes:
+    - type: Tweak
+      message: >-
+        The news article title character limit has been increased from 25 to 50
+        characters, and news content from 2048 to 2560 characters.
+  id: 6649
+  time: '2025-01-08T06:58:05.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1447
+- author: aspiringLich
+  changes:
+    - type: Tweak
+      message: Some chemicals have been made more colorful and child-friendly.
+  id: 6650
+  time: '2025-01-08T07:06:22.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1461
+- author: Skubman
+  changes:
+    - type: Fix
+      message: >-
+        The Cybersun pen now properly deals 15 Piercing damage on throw and
+        deals passive damage when embedded.
+  id: 6651
+  time: '2025-01-08T07:07:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1459
+- author: Lumminal
+  changes:
+    - type: Fix
+      message: Fixed Shadow Shackles spell not activating.
+  id: 6652
+  time: '2025-01-08T07:09:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1456
+- author: Skubman
+  changes:
+    - type: Fix
+      message: Fixed face markings showing up above eye-wear.
+  id: 6653
+  time: '2025-01-08T19:37:24.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1467
+- author: Lumminal
+  changes:
+    - type: Add
+      message: Added prisoner headset box to warden's locker.
+  id: 6654
+  time: '2025-01-09T21:32:06.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1470
+- author: BlueHNT
+  changes:
+    - type: Add
+      message: Added missing lathe recipes
+  id: 6655
+  time: '2025-01-10T02:27:28.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1472
+- author: Spatison
+  changes:
+    - type: Tweak
+      message: Nymphs are now operable.
+    - type: Fix
+      message: Skeletons can now lie down.
+    - type: Fix
+      message: >-
+        It is no longer possible to insert an organ into a body if the required
+        space is unavailable.
+  id: 6656
+  time: '2025-01-10T02:27:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1471
+- author: Spatison
+  changes:
+    - type: Add
+      message: Added night vision goggle
+    - type: Add
+      message: Added thermal vision goggle
+    - type: Add
+      message: Deathsquad helmet now grants night and thermal vision.
+    - type: Add
+      message: Ninja visor now grants night vision.
+    - type: Tweak
+      message: Some animals have gained night vision.
+    - type: Tweak
+      message: Xenos have gained night vision.
+  id: 6657
+  time: '2025-01-10T04:41:32.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1462
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added 2 new traits related to CyberEyes. Light Amplification Module, and
+        Thermographic Scanner Module. 
+  id: 6658
+  time: '2025-01-10T05:14:46.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1477
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added Assay as a new psi-power, which is available roundstart to the
+        Psionic Mantis. Assay allows the caster to obtain more direct
+        information about the statistics of a specific Psion, as well as vague
+        hints as to what their powers may be, if any.
+  id: 6659
+  time: '2025-01-11T00:13:27.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1450
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: Ported Station AI.
+    - type: Add
+      message: Saltern is now fitted with a Station AI
+  id: 6660
+  time: '2025-01-11T04:39:29.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1423
+- author: Mike32oz
+  changes:
+    - type: Add
+      message: 'Meta Station, added Station AI '
+    - type: Add
+      message: Meta Station, added station anchor
+    - type: Add
+      message: >-
+        Meta Station, added senior positions: Senior Researcher, Senior
+        Engineer, Senior Physician, and Senior Officer.
+    - type: Tweak
+      message: Meta Station, tweaked Engineering Department
+  id: 6661
+  time: '2025-01-11T15:30:19.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1484
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Added Station AI to GaxStation
+  id: 6662
+  time: '2025-01-11T17:06:38.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1486
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Station AI has been added to Radstation
+  id: 6663
+  time: '2025-01-11T17:12:52.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1487
+- author: neuPanda
+  changes:
+    - type: Tweak
+      message: tweaked friction remover system
+    - type: Fix
+      message: fixed inertia dampening system resetting or effecting the wrong grid
+    - type: Remove
+      message: Removed overcomplicated alterations
+  id: 6664
+  time: '2025-01-11T17:37:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1482
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added the Argenti, Gestio, Novalite C1, and SVT firearms. Added an
+        "Empty" Mosin variant for Salvage.
+    - type: Add
+      message: >-
+        Salvage technicians can now spend their mining points on new "Civilian
+        Grade" firearms from the Mining Vendor. These don't come with ammo, so
+        you'll have to request ammo be printed by Security.
+    - type: Add
+      message: Added the Argenti Revolver to Security Loadouts.
+    - type: Tweak
+      message: >-
+        Salvage Specialist lockers are now guaranteed to come with one pickaxe
+        and one ore bag.
+  id: 6665
+  time: '2025-01-11T18:24:39.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1490
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: Fixed announcement spam caused by my silly blunder.
+  id: 6666
+  time: '2025-01-11T18:26:39.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1491
+- author: Spatison
+  changes:
+    - type: Add
+      message: Added material silo
+  id: 6667
+  time: '2025-01-11T18:39:24.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1488
+- author: Tirochora
+  changes:
+    - type: Fix
+      message: You cannot take Photophobia while blind or you have cyber-eyes.
+    - type: Fix
+      message: You cannot take nearsightedness while blind or while having cyber-eyes.
+    - type: Fix
+      message: >-
+        You cannot be blind while nearsighted, photophobic, or while having
+        cyber-eyes.
+  id: 6668
+  time: '2025-01-11T18:54:37.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1492
+- author: Spatison
+  changes:
+    - type: Tweak
+      message: Shadow shackles now have a delay before binding
+    - type: Fix
+      message: Shadow shackles can now be removed
+  id: 6669
+  time: '2025-01-11T19:02:09.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1466
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Added Station AI to (almost) every map in rotation.
+    - type: Add
+      message: Added Ore Silos to every map in rotation.
+  id: 6670
+  time: '2025-01-11T19:58:08.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1499
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Fixed an issue where ranged NPCs were incapable of aiming.
+  id: 6671
+  time: '2025-01-11T20:40:09.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1500
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Fixed a crash caused by Weather System creating millions of sounds.
+  id: 6672
+  time: '2025-01-11T20:40:15.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1501
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: >-
+        Added a command to easily allow for adding a jobs playtime requirements.
+        (playtime_unlock)
+  id: 6673
+  time: '2025-01-11T22:32:29.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1464
+- author: Aviu00
+  changes:
+    - type: Fix
+      message: Fix silo being out of range.
+  id: 6674
+  time: '2025-01-12T02:22:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1502
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: Added Nanotrasen Representative and Blueshield Officer
+    - type: Add
+      message: >-
+        Added Admin Assistant, Nanorep, and Blueshield Officer spawns to all
+        maps. BSO and Nanorep don't get an office, they get a unique teleporter.
+        (as of now) Ask your resident mapper to fix this.
+    - type: Add
+      message: >-
+        Added the loadout options for Nanotrasen Representative and Blueshield
+        Officer.
+  id: 6675
+  time: '2025-01-12T06:55:41.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1495
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: Disabled Shadowkin as a default roundstart-available species.
+  id: 6676
+  time: '2025-01-12T20:28:22.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1516

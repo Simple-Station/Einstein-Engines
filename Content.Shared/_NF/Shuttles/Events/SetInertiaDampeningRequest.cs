@@ -1,12 +1,12 @@
-// New Frontiers - This file is licensed under AGPLv3
-// Copyright (c) 2024 New Frontiers Contributors
+// NeuPanda - This file is licensed under AGPLv3
+// Copyright (c) 2025 NeuPanda
 // See AGPLv3.txt for details.
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._NF.Shuttles.Events
 {
     /// <summary>
-    /// Raised on the client when it wishes to change the inertial dampening of a ship.
+    /// Raised on the client when it wishes to not have 2 docking ports docked.
     /// </summary>
     [Serializable, NetSerializable]
     public sealed class SetInertiaDampeningRequest : BoundUserInterfaceMessage
@@ -16,12 +16,10 @@ namespace Content.Shared._NF.Shuttles.Events
     }
 
     [Serializable, NetSerializable]
-    public enum InertiaDampeningMode : byte
+    public enum InertiaDampeningMode
     {
         Off = 0,
-        Dampen = 1,
-        Anchor = 2,
-        Station = 3, // Reserved for station status, should not be used in requests.
-        Query = 255 // Reserved for requests - does not set the mode, only returns its state.
+        Dampened = 1,
+        Anchored = 2
     }
 }

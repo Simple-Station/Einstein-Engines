@@ -12,11 +12,11 @@ public sealed partial class AbsorbentSystem
     /// <summary>
     ///     Tries to clean a number of footprints in a range determined by the component. Returns the number of cleaned footprints.
     /// </summary>
-    private int TryCleanNearbyFootprints(EntityUid user, EntityUid used, Entity<AbsorbentComponent> target,  Entity<SolutionComponent> absorbentSoln)
+    private int TryCleanNearbyFootprints(EntityUid user, EntityUid target, Entity<AbsorbentComponent> used,  Entity<SolutionComponent> absorbentSoln)
     {
         var footprintQuery = GetEntityQuery<FootPrintComponent>();
         var targetCoords = Transform(target).Coordinates;
-        var entities = _lookup.GetEntitiesInRange<FootPrintComponent>(targetCoords, target.Comp.FootprintCleaningRange, LookupFlags.Uncontained);
+        var entities = _lookup.GetEntitiesInRange<FootPrintComponent>(targetCoords, used.Comp.FootprintCleaningRange, LookupFlags.Uncontained);
 
         // Take up to [MaxCleanedFootprints] footprints closest to the target
         var cleaned = entities.AsEnumerable()
@@ -29,10 +29,10 @@ public sealed partial class AbsorbentSystem
         var processed = 0;
         foreach (var (uid, footprintComp) in cleaned)
         {
-            if (TryPuddleInteract(user, used, uid, target.Comp, useDelay: null, absorbentSoln))
+            if (TryPuddleInteract(user, used.Owner, uid, used.Comp, useDelay: null, absorbentSoln))
                 processed++;
 
-            if (processed >= target.Comp.MaxCleanedFootprints)
+            if (processed >= used.Comp.MaxCleanedFootprints)
                 break;
         }
 

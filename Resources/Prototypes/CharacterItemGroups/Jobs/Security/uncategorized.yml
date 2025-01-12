@@ -58,6 +58,14 @@
       id: LoadoutMagazineMagnumSpare
     - type: loadout
       id: LoadoutMagazineMagnumRubberSpare
+    - type: loadout
+      id: LoadoutSpeedLoaderRifleHeavy
+    - type: loadout
+      id: LoadoutSpeedLoaderRifleHeavySpare
+    - type: loadout
+      id: LoadoutSpeedLoaderRifleHeavyRubber
+    - type: loadout
+      id: LoadoutSpeedLoaderRifleHeavyRubberSpare
 
 - type: characterItemGroup
   maxItems: 1
@@ -115,6 +123,10 @@
       id: LoadoutSecurityRevolverPython
     - type: loadout
       id: LoadoutSecurityRevolverPythonNonlethal
+    - type: loadout
+      id: LoadoutSecurityArgenti
+    - type: loadout
+      id: LoadoutSecurityArgentiNonLethal
 
 - type: characterItemGroup
   id: LoadoutSecurityEyes

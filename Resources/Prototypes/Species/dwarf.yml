@@ -4,6 +4,7 @@
   roundStart: false # DeltaV - Disable dwarf
   prototype: MobDwarf
   sprites: MobHumanSprites
+  defaultSkinTone: "#c0967f"
   markingLimits: MobHumanMarkingLimits
   dollPrototype: MobDwarfDummy
   skinColoration: HumanToned

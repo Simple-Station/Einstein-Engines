@@ -1,0 +1,57 @@
+- type: job
+  id: BlueshieldOfficer
+  name: Blueshield Officer
+  description: "Act as a bodyguard and advisor for Command and CentCom VIPs."
+  playTimeTracker: JobBlueshieldOfficer
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Command
+      min: 54000 # 15 hours
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      min: 54000 # 15 hours
+    - !type:DepartmentTimeRequirement
+      department: Security
+      min: 54000 # 15 hours
+  weight: 20
+  startingGear: BlueshieldOfficerGear
+  icon: "JobIconBlueshield"
+  requireAdminNotify: true
+  joinNotifyCrew: true
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  access:
+  - Security
+  - Brig
+  - External
+  - Cryogenics
+  - Maintenance
+  - Engineering
+  - Medical
+  - Research
+  - Command
+  - CentralCommand
+  - BlueshieldOfficer
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+      - type: CommandStaff
+
+- type: startingGear
+  id: BlueshieldOfficerGear
+  equipment:
+    back: ClothingBackpackBlueshield
+    jumpsuit: ClothingUniformJumpsuitBlueshieldOfficer
+    shoes: ClothingShoesBootsCombatFilled
+    eyes: ClothingEyesGlassesMedSec
+    gloves: ClothingHandsGlovesCombat
+    id: BlueshieldPDA
+    pocket1: UniqueBlueshieldOfficerLockerTeleporter
+
+    #outerClothing: ClothingBlueshieldArmourVest
+    #ears: ClothingHeadsetAltCommand
+    #belt: ClothingBeltSecurityFilled
+    #pocket1: WeaponPistolMk58
+    #pocket2: DeathAcidifierImplanter

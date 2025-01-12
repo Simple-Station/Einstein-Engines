@@ -377,6 +377,16 @@
   - type: SurgeryOrganCondition
     organ:
     - type: Brain
+    slotId: brain
+
+- type: entity
+  parent: SurgeryRemoveBrain
+  id: SurgeryRemoveBrainTorso
+  name: Remove Brain
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SurgeryPartCondition
+    part: Torso
 
 - type: entity
   parent: SurgeryBase
@@ -397,6 +407,16 @@
     - type: Brain
     inverse: true
     reattaching: true
+    slotId: brain
+
+- type: entity
+  parent: SurgeryInsertBrain
+  id: SurgeryInsertBrainTorso
+  name: Insert Brain
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SurgeryPartCondition
+    part: Torso
 
 - type: entity
   parent: SurgeryBase
@@ -415,6 +435,7 @@
   - type: SurgeryOrganCondition
     organ:
     - type: Heart
+    slotId: heart
 
 - type: entity
   parent: SurgeryBase
@@ -435,6 +456,7 @@
     - type: Heart
     inverse: true
     reattaching: true
+    slotId: heart
 
 - type: entity
   parent: SurgeryBase
@@ -453,6 +475,7 @@
   - type: SurgeryOrganCondition
     organ:
     - type: Liver
+    slotId: liver
 
 - type: entity
   parent: SurgeryBase
@@ -473,6 +496,7 @@
     - type: Liver
     inverse: true
     reattaching: true
+    slotId: liver
 
 - type: entity
   parent: SurgeryBase
@@ -491,6 +515,7 @@
   - type: SurgeryOrganCondition
     organ:
     - type: Lung
+    slotId: lungs
 
 - type: entity
   parent: SurgeryBase
@@ -511,6 +536,7 @@
     - type: Lung
     inverse: true
     reattaching: true
+    slotId: lungs
 
 - type: entity
   parent: SurgeryBase
@@ -529,6 +555,7 @@
   - type: SurgeryOrganCondition
     organ:
     - type: Stomach
+    slotId: stomach
 
 - type: entity
   parent: SurgeryBase
@@ -549,6 +576,7 @@
     - type: Stomach
     inverse: true
     reattaching: true
+    slotId: stomach
 
 - type: entity
   parent: SurgeryBase
@@ -567,6 +595,7 @@
   - type: SurgeryOrganCondition
     organ:
     - type: Eyes
+    slotId: eyes
 
 - type: entity
   parent: SurgeryBase
@@ -587,6 +616,7 @@
     - type: Eyes
     inverse: true
     reattaching: true
+    slotId: eyes
 
 - type: entity
   parent: SurgeryBase
@@ -602,6 +632,7 @@
   - type: SurgeryOrganCondition
     organ:
     - type: Brain
+    slotId: brain
   - type: SurgeryOrganOnAddCondition
     components:
       brain:
@@ -629,6 +660,7 @@
   - type: SurgeryOrganCondition
     organ:
     - type: Brain
+    slotId: brain
   - type: SurgeryOrganOnAddCondition
     components:
       brain:
