@@ -9681,3 +9681,19 @@ Entries:
   id: 6674
   time: '2025-01-12T02:22:30.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1502
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: Added Nanotrasen Representative and Blueshield Officer
+    - type: Add
+      message: >-
+        Added Admin Assistant, Nanorep, and Blueshield Officer spawns to all
+        maps. BSO and Nanorep don't get an office, they get a unique teleporter.
+        (as of now) Ask your resident mapper to fix this.
+    - type: Add
+      message: >-
+        Added the loadout options for Nanotrasen Representative and Blueshield
+        Officer.
+  id: 6675
+  time: '2025-01-12T06:55:41.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1495
