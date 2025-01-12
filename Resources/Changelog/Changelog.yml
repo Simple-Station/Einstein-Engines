@@ -9757,3 +9757,14 @@ Entries:
   id: 6682
   time: '2025-01-12T23:08:43.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1510
+- author: BlueHNT
+  changes:
+    - type: Add
+      message: Added New Law
+    - type: Tweak
+      message: Tweaked Space Law entries
+    - type: Remove
+      message: Removed Old Law
+  id: 6683
+  time: '2025-01-12T23:09:32.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1386
