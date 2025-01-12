@@ -88,6 +88,7 @@
 - type: entity
   parent: WeaponRifleGestio
   id: WeaponRifleGestioEmpty
+  suffix: Empty
   components:
   - type: ItemSlots
     slots:
@@ -107,6 +108,12 @@
         whitelist:
           tags:
             - CartridgeLightRifle
+  - type: ExtendDescription
+    descriptionList:
+      - description: "gun-legality-salvage"
+        fontSize: 12
+        color: "#ff4f00"
+        requireDetailRange: false
 
 - type: entity
   parent: BaseWeaponRifle
@@ -186,6 +193,7 @@
 - type: entity
   parent: WeaponRifleNovaliteC1
   id: WeaponRifleNovaliteC1Empty
+  suffix: Empty
   components:
   - type: ItemSlots
     slots:
@@ -205,6 +213,12 @@
         whitelist:
           tags:
             - CartridgeRifle
+  - type: ExtendDescription
+    descriptionList:
+      - description: "gun-legality-salvage"
+        fontSize: 12
+        color: "#ff4f00"
+        requireDetailRange: false
 
 - type: entity
   id: WeaponRifleSVT
@@ -266,6 +280,7 @@
 - type: entity
   parent: WeaponRifleSVT
   id: WeaponRifleSVTEmpty
+  suffix: Empty
   components:
   - type: ItemSlots
     slots:
@@ -285,3 +300,9 @@
         whitelist:
           tags:
             - CartridgeLightRifle
+  - type: ExtendDescription
+    descriptionList:
+      - description: "gun-legality-salvage"
+        fontSize: 12
+        color: "#ff4f00"
+        requireDetailRange: false

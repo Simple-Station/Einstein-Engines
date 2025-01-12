@@ -38,8 +38,15 @@
 - type: entity
   parent: WeaponRevolverArgenti
   id: WeaponRevolverArgentiEmpty
+  suffix: Empty
   components:
   - type: RevolverAmmoProvider
     capacity: 8
     chambers: [ False, False, False, False, False, False, False, False ]
     ammoSlots: [ null, null, null, null, null, null, null, null ]
+  - type: ExtendDescription
+    descriptionList:
+      - description: "gun-legality-salvage"
+        fontSize: 12
+        color: "#ff4f00"
+        requireDetailRange: false
