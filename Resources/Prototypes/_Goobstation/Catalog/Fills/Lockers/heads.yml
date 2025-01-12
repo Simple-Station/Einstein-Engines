@@ -23,17 +23,6 @@
       entity_storage: !type:NestedSelector
         tableId: LockerFillNanorep
 
-- type: entityTable
-  id: LockerFillBlueshieldOfficer
-  table: !type:AllSelector
-    children:
-    - id: Flash
-    - id: ClothingEyesGlassesMedSec
-    - id: PinpointerNuclear
-    - id: ClothingHandsGlovesCombat
-    - id: WeaponLeverChester
-    - id: WeaponEnergyRevolver
-
 - type: entity
   id: LockerBlueshieldOfficerFilled
   suffix: Filled
