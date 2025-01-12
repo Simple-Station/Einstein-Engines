@@ -254,7 +254,7 @@ namespace Content.IntegrationTests.Tests
                         .Where(x => x.SpawnType == SpawnPointType.Job)
                         .Select(x => x.Job!.ID);
 
-                    jobs.ExceptWith(spawnPoints);
+                    jobs.Where(job => job.JobEntity == null).ExceptWith(spawnPoints);
                     Assert.That(jobs, Is.Empty, $"There is no spawnpoints for {string.Join(", ", jobs)} on {mapProto}.");
                 }
 
