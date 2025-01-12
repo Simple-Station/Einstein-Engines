@@ -9697,3 +9697,10 @@ Entries:
   id: 6675
   time: '2025-01-12T06:55:41.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1495
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: Disabled Shadowkin as a default roundstart-available species.
+  id: 6676
+  time: '2025-01-12T20:28:22.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1516
