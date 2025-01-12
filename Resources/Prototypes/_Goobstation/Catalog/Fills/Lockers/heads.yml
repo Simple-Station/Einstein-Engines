@@ -27,7 +27,6 @@
   id: LockerFillBlueshieldOfficer
   table: !type:AllSelector
     children:
-    - id: Flash
     - id: ClothingBeltSecurityFilled
     - id: ClothingBlueshieldArmourVest
     - id: ClothingEyesGlassesMedSec
