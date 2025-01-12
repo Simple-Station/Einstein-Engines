@@ -37,5 +37,6 @@
   equipment:
     shoes: ClothingShoesColorBlack
     id: CentcomPDA
+    jumpsuit: ClothingUniformJumpsuitNanotrasenRepresentative
     ears: ClothingHeadsetCentCom
     pocket1: UniqueNanorepLockerTeleporter
