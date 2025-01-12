@@ -7,14 +7,6 @@
     Plastic: 100
 
 # Ammo
-
-- type: latheRecipe
-  parent: BaseAmmoRecipe
-  id: MagazineBoxCaselessRifle
-  result: MagazineBoxCaselessRifle
-  materials:
-    Steel: 720
-
 - type: latheRecipe
   parent: BaseAmmoRecipe
   id: MagazineHighCaliber
