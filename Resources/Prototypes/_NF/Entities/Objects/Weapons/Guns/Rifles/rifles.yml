@@ -60,6 +60,7 @@
     magState: mag
     steps: 1
     zeroVisible: true
+  - type: Appearance
 
 - type: entity
   parent: WeaponRifleGestio
@@ -156,6 +157,7 @@
     magState: mag
     steps: 1
     zeroVisible: true
+  - type: Appearance
 
 - type: entity
   parent: WeaponRifleNovaliteC1
@@ -258,6 +260,7 @@
     magState: mag
     steps: 1
     zeroVisible: true
+  - type: Appearance
 
 - type: entity
   parent: WeaponRifleSVT
