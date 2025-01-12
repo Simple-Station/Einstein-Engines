@@ -123,7 +123,7 @@ public static class MobStateHelpers
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static bool IsValid(this MobState state) // i am not going to invent nonsensical "NotAlive()" methods just to avoid "!state.IsDead()".
+    public static bool IsValid(this MobState state) // fix your shit. mobstate should never be invalid.
     {
         DebugTools.Assert(state != MobState.Invalid, "MobState is invalid.");
         return state != MobState.Invalid;

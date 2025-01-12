@@ -19,6 +19,9 @@ using Content.Shared.Strip.Components;
 using Content.Shared.Throwing;
 using Robust.Shared.Configuration;
 using Robust.Shared.Physics.Components;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Reflection;
+using Robust.Shared.Utility;
 using System.ComponentModel;
 
 namespace Content.Shared.Mobs.Systems;
@@ -26,6 +29,8 @@ namespace Content.Shared.Mobs.Systems;
 public partial class MobStateSystem
 {
     [Dependency] private readonly IConfigurationManager _configurationManager = default!;
+    [Dependency] private readonly IReflectionManager _wehavereflectionathome = default!;
+    [Dependency] private readonly IPrototypeManager _proto = default!;
 
     //General purpose event subscriptions. If you can avoid it register these events inside their own systems
     private void SubscribeEvents()
@@ -46,7 +51,7 @@ public partial class MobStateSystem
         SubscribeLocalEvent<MobStateComponent, PickupAttemptEvent>(CheckActFactory(c => c.CanPickUp()));
         SubscribeLocalEvent<MobStateComponent, StartPullAttemptEvent>(CheckActFactory(c => c.CanPull()));
         SubscribeLocalEvent<MobStateComponent, UpdateCanMoveEvent>(OnMoveAttempt);
-        SubscribeLocalEvent<MobStateComponent, StandAttemptEvent>(CheckActFactory(c => c.IsDowned()));
+        SubscribeLocalEvent<MobStateComponent, StandAttemptEvent>(CheckActFactory(c => !c.IsDowned()));
         SubscribeLocalEvent<MobStateComponent, PointAttemptEvent>(CheckActFactory(c => c.CanPoint()));
         SubscribeLocalEvent<MobStateComponent, TryingToSleepEvent>(OnSleepAttempt);
         SubscribeLocalEvent<MobStateComponent, CombatModeShouldHandInteractEvent>(OnCombatModeShouldHandInteract);
@@ -55,19 +60,22 @@ public partial class MobStateSystem
         SubscribeLocalEvent<MobStateComponent, UnbuckleAttemptEvent>(OnUnbuckleAttempt);
     }
 
-    private void OnComponentInit(EntityUid uid, MobStateComponent comp, ref ChangeDirectionAttemptEvent args)
+    private void OnComponentInit(EntityUid uid, MobStateComponent comp, ComponentInit args)
     {
         foreach(var entry in comp.InitMobStateParams)
         {
-            // string to enum
-            // i forgor how 💀
+            DebugTools.Assert(_wehavereflectionathome.TryParseEnumReference($"enum.MobState.{entry.Key}", out var e), $"MobState.{entry.Key} does not exist.");
+            MobState state = (MobState) e;
+            
+            DebugTools.Assert(!comp.MobStateParams.ContainsKey(state), "Two or more params specified for one MobState.");
+            comp.MobStateParams.Add(state, _proto.Index<MobStateParametersPrototype>(entry.Value));
         }
     }
 
 
     private void OnDirectionAttempt(Entity<MobStateComponent> ent, ref ChangeDirectionAttemptEvent args)
     {
-        if (!ent.Comp.CanMove())
+        if (ent.Comp.CanMove())
             return;
 
         args.Cancel();
@@ -117,11 +125,11 @@ public partial class MobStateSystem
                 break;
             case MobState.Dead:
                 RemComp<CollisionWakeComponent>(target);
-                if (component.CurrentState is MobState.Alive)
-                    _standing.Stand(target);
-
-                if (!_standing.IsDown(target) && TryComp<PhysicsComponent>(target, out var physics))
-                    _physics.SetCanCollide(target, true, body: physics);
+                //if (component.CurrentState is MobState.Alive)
+                //    _standing.Stand(target);
+                //
+                //if (!_standing.IsDown(target) && TryComp<PhysicsComponent>(target, out var physics))
+                //    _physics.SetCanCollide(target, true, body: physics);
                 break;
             case MobState.Invalid:
                 //unused
@@ -133,15 +141,15 @@ public partial class MobStateSystem
 
     private void OnStateEnteredSubscribers(EntityUid target, MobStateComponent component, MobState state)
     {
+        if (component.IsDowned())
+            _standing.Down(target);
+        else
+            _standing.Stand(target);
+
         // All of the state changes here should already be networked, so we do nothing if we are currently applying a
         // server state.
         if (_timing.ApplyingState)
             return;
-
-        if (component.CurrentStateParams.ForceDown)
-            _standing.Down(target);
-        else
-            _standing.Stand(target);
 
         _blocker.UpdateCanMove(target); //update movement anytime a state changes
         switch (state)
@@ -155,8 +163,8 @@ public partial class MobStateSystem
                 break;
             case MobState.Dead:
                 EnsureComp<CollisionWakeComponent>(target);
-                if (_standing.IsDown(target) && TryComp<PhysicsComponent>(target, out var physics))
-                    _physics.SetCanCollide(target, false, body: physics);
+                //if (_standing.IsDown(target) && TryComp<PhysicsComponent>(target, out var physics))
+                //    _physics.SetCanCollide(target, false, body: physics);
 
                 _appearance.SetData(target, MobStateVisuals.State, MobState.Dead);
                 break;

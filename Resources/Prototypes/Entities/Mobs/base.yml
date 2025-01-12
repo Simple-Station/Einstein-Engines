@@ -92,7 +92,10 @@
   - type: Stamina
   - type: MobState
     mobStateParams:
-    - 
+      Alive: AliveDefault
+      SoftCritical: SoftCriticalDefault
+      Critical: CriticalDefault
+      Dead: DeadDefault
   - type: MobThresholds
     thresholds:
       0: Alive

@@ -92,7 +92,7 @@ public partial class MobStateSystem : EntitySystem
     }
 
     /// <summary>
-    ///  Check if a Mob is Critical or Dead or SoftCrit
+    ///  Check if a Mob is incapacitated in its current MobState.
     /// </summary>
     /// <param name="target">Target Entity</param>
     /// <param name="component">The MobState component owned by the target</param>
@@ -101,8 +101,16 @@ public partial class MobStateSystem : EntitySystem
     {
         if (!Resolve(target, ref component, false))
             return false;
-        return component.CurrentState.IsCritOrDead();
+        return component.IsIncapacitated();
     }
+
+    public bool CanBreathe(EntityUid target, MobStateComponent? component = null)
+    {
+        if (!Resolve(target, ref component, false))
+            return false;
+        return component.CanBreathe();
+    }
+
 
     /// <summary>
     ///  Check if a Mob is in an Invalid state
@@ -112,9 +120,9 @@ public partial class MobStateSystem : EntitySystem
     /// <returns>If the entity is in an Invalid State</returns>
     public bool IsInvalidState(EntityUid target, MobStateComponent? component = null)
     {
-        if (!Resolve(target, ref component, false))
+        if (!Resolve(target, ref component, true)) // i think this one should log it
             return false;
-        return component.CurrentState is MobState.Invalid;
+        return component.CurrentState.IsValid();
     }
 
 
@@ -188,13 +196,12 @@ public partial class MobStateSystem : EntitySystem
         return component.ConsciousAttemptAllowed();
     }
 
-
-    //public bool CanHandInteract(EntityUid target, MobStateComponent? component = null)
-    //{
-    //    if (!Resolve(target, ref component, false))
-    //        return false;
-    //    return false; //component.();
-    //}
+    public bool IsDown(EntityUid target, MobStateComponent? component = null)
+    {
+        if (!Resolve(target, ref component, false))
+            return false;
+        return component.IsDowned();
+    }
 
     #endregion
 

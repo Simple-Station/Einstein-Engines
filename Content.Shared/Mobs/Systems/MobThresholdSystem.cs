@@ -450,11 +450,11 @@ public sealed class MobThresholdSystem : EntitySystem
 
     private void OnUpdateMobState(EntityUid target, MobThresholdsComponent component, ref UpdateMobStateEvent args)
     {
-        if (!component.AllowRevives && component.CurrentThresholdState == MobState.Dead)
+        if (!component.AllowRevives && component.CurrentThresholdState.IsDead())
         {
             args.State = MobState.Dead;
         }
-        else if (component.CurrentThresholdState != MobState.Invalid)
+        else if (component.CurrentThresholdState.IsValid())
         {
             args.State = component.CurrentThresholdState;
         }

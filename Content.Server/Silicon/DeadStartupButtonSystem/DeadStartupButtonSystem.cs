@@ -70,7 +70,7 @@ public sealed class DeadStartupButtonSystem : SharedDeadStartupButtonSystem
 
     private void OnMobStateChanged(EntityUid uid, DeadStartupButtonComponent comp, MobStateChangedEvent args)
     {
-        if (args.NewMobState != MobState.Alive)
+        if (args.IsCritOrDead())
             return;
 
         _popup.PopupEntity(Loc.GetString("dead-startup-system-reboot-success", ("target", MetaData(uid).EntityName)), uid);

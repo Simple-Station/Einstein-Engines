@@ -458,7 +458,7 @@ public sealed partial class TraitModifyMobStateParams
     Throwing, PickingUp, Pulling, Attacking, Using, Pointing,
     ConsciousAttemptsAllowed,
     CanEquipSelf, CanUnequipSelf, CanEquipOther, CanUnequipOther,
-    ForceDown;
+    ForceDown, Incapacitated, CanBreathe;
 
     [DataField]
     public float? OxyDamageOverlay;
@@ -473,7 +473,7 @@ public sealed partial class TraitModifyMobState : TraitFunction
     // Three-State Booleans my beloved.
     // :faridabirb.png:
 
-    [IncludeDataField()]
+    [DataField()]
     public Dictionary<MobState, TraitModifyMobStateParams> Params;
 
     public override void OnPlayerSpawn(EntityUid uid,
@@ -485,27 +485,29 @@ public sealed partial class TraitModifyMobState : TraitFunction
             return;
 
         foreach (var pair in Params) {
-            MobStateParameters modified = comp.MobStateParams[pair.Key];
+            MobStateParametersPrototype current = comp.MobStateParams[pair.Key];
             var p = pair.Value;
 
-            modified.Moving = p.Moving ?? modified.Moving;
-            modified.Talking = p.Talking ?? modified.Talking;
-            modified.Emoting = p.Emoting ?? modified.Emoting;
-            modified.Throwing = p.Throwing ?? modified.Throwing;
-            modified.PickingUp = p.PickingUp ?? modified.PickingUp;
-            modified.Pulling = p.Pulling ?? modified.Pulling;
-            modified.Attacking = p.Attacking ?? modified.Attacking;
-            modified.Using = p.Using ?? modified.Using;
-            modified.Pointing = p.Pointing ?? modified.Pointing;
-            modified.ConsciousAttemptsAllowed = p.ConsciousAttemptsAllowed ?? modified.ConsciousAttemptsAllowed;
-            modified.CanEquipSelf = p.CanEquipSelf ?? modified.CanEquipSelf;
-            modified.CanEquipOther = p.CanEquipOther ?? modified.CanEquipOther;
-            modified.CanUnequipSelf = p.CanUnequipSelf ?? modified.CanUnequipSelf;
-            modified.CanUnequipOther = p.CanUnequipOther ?? modified.CanUnequipOther;
-            modified.ForceDown = p.ForceDown ?? modified.ForceDown;
+            current.Moving = p.Moving ?? current.Moving;
+            current.Talking = p.Talking ?? current.Talking;
+            current.Emoting = p.Emoting ?? current.Emoting;
+            current.Throwing = p.Throwing ?? current.Throwing;
+            current.PickingUp = p.PickingUp ?? current.PickingUp;
+            current.Pulling = p.Pulling ?? current.Pulling;
+            current.Attacking = p.Attacking ?? current.Attacking;
+            current.Using = p.Using ?? current.Using;
+            current.Pointing = p.Pointing ?? current.Pointing;
+            current.ConsciousAttemptsAllowed = p.ConsciousAttemptsAllowed ?? current.ConsciousAttemptsAllowed;
+            current.CanEquipSelf = p.CanEquipSelf ?? current.CanEquipSelf;
+            current.CanEquipOther = p.CanEquipOther ?? current.CanEquipOther;
+            current.CanUnequipSelf = p.CanUnequipSelf ?? current.CanUnequipSelf;
+            current.CanUnequipOther = p.CanUnequipOther ?? current.CanUnequipOther;
+            current.ForceDown = p.ForceDown ?? current.ForceDown;
+            current.ForceDown = p.Incapacitated ?? current.Incapacitated;
+            current.ForceDown = p.CanBreathe ?? current.CanBreathe;
 
-            modified.OxyDamageOverlay = p.OxyDamageOverlay ?? modified.OxyDamageOverlay;
-            modified.StrippingTimeMultiplier = p.StrippingTimeMultiplier ?? modified.StrippingTimeMultiplier;
+            current.OxyDamageOverlay = p.OxyDamageOverlay ?? current.OxyDamageOverlay;
+            current.StrippingTimeMultiplier = p.StrippingTimeMultiplier ?? current.StrippingTimeMultiplier;
         }
 
         comp.Dirty(); // why is this deprecated? it's much better than manually resolving entitymanager with ioc

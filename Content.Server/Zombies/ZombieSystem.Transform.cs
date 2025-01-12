@@ -141,7 +141,7 @@ namespace Content.Server.Zombies
             melee.Angle = 0.0f;
             melee.SoundHit = zombiecomp.BiteSound;
 
-            if (mobState.CurrentState == MobState.Alive)
+            if (mobState.CurrentState.IsAlive())
             {
                 // Groaning when damaged
                 EnsureComp<EmoteOnDamageComponent>(target);

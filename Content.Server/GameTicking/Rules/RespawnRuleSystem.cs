@@ -50,7 +50,7 @@ public sealed class RespawnRuleSystem : GameRuleSystem<RespawnDeadRuleComponent>
 
     private void OnMobStateChanged(MobStateChangedEvent args)
     {
-        if (args.NewMobState == MobState.Alive)
+        if (args.IsAlive())
             return;
 
         if (!TryComp<ActorComponent>(args.Target, out var actor))
