@@ -7,6 +7,7 @@ using Content.Shared.Chat;
 using Content.Shared.CombatMode;
 using Content.Shared.Database;
 using Content.Shared.Ghost;
+using Content.Shared._Goobstation.Interaction;
 using Content.Shared.Hands;
 using Content.Shared.Hands.Components;
 using Content.Shared.Input;
@@ -1165,6 +1166,14 @@ namespace Content.Shared.Interaction
 
             if (checkCanUse && !_actionBlockerSystem.CanUseHeldEntity(user, used))
                 return false;
+
+            // Goobstation [
+            var useAttemptEv = new UseInHandAttemptEvent(user); 
+            RaiseLocalEvent(used, useAttemptEv);
+
+            if (useAttemptEv.Cancelled)
+                return false;
+            // ] Goobstation
 
             var useMsg = new UseInHandEvent(user);
             RaiseLocalEvent(used, useMsg, true);

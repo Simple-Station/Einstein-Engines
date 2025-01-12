@@ -149024,6 +149024,18 @@ entities:
     - type: Transform
       pos: 11.5,44.5
       parent: 1
+- proto: SpawnPointAdminAssistant
+  entities:
+  - uid: 27773
+    components:
+    - type: Transform
+      pos: 113.5,2.5
+      parent: 1
+  - uid: 27782
+    components:
+    - type: Transform
+      pos: 113.5,5.5
+      parent: 1
 - proto: SpawnPointAtmos
   entities:
   - uid: 6404
@@ -149062,6 +149074,13 @@ entities:
     components:
     - type: Transform
       pos: 0.5,-48.5
+      parent: 1
+- proto: SpawnPointBlueshieldOfficer
+  entities:
+  - uid: 27772
+    components:
+    - type: Transform
+      pos: 113.5,3.5
       parent: 1
 - proto: SpawnPointBorg
   entities:
@@ -149643,6 +149662,13 @@ entities:
     components:
     - type: Transform
       pos: -3.5,-49.5
+      parent: 1
+- proto: SpawnPointNanotrasenRepresentative
+  entities:
+  - uid: 27771
+    components:
+    - type: Transform
+      pos: 113.5,4.5
       parent: 1
 - proto: SpawnPointObserver
   entities:

@@ -65764,7 +65764,7 @@ entities:
       pos: -11.5,11.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -26383.6
+      secondsUntilStateChange: -26472.29
       state: Opening
     - type: Occluder
       enabled: True
@@ -78365,6 +78365,28 @@ entities:
     - type: Transform
       pos: 19.5,44.5
       parent: 1
+- proto: SpawnPointAdminAssistant
+  entities:
+  - uid: 8205
+    components:
+    - type: Transform
+      pos: -9.5,8.5
+      parent: 1
+  - uid: 16617
+    components:
+    - type: Transform
+      pos: -9.5,7.5
+      parent: 1
+  - uid: 16618
+    components:
+    - type: Transform
+      pos: -6.5,7.5
+      parent: 1
+  - uid: 16619
+    components:
+    - type: Transform
+      pos: -6.5,8.5
+      parent: 1
 - proto: SpawnPointAtmos
   entities:
   - uid: 4537
@@ -78383,6 +78405,13 @@ entities:
     components:
     - type: Transform
       pos: -11.5,29.5
+      parent: 1
+- proto: SpawnPointBlueshieldOfficer
+  entities:
+  - uid: 8169
+    components:
+    - type: Transform
+      pos: -8.5,9.5
       parent: 1
 - proto: SpawnPointBorg
   entities:
@@ -78718,6 +78747,13 @@ entities:
     components:
     - type: Transform
       pos: -38.5,13.5
+      parent: 1
+- proto: SpawnPointNanotrasenRepresentative
+  entities:
+  - uid: 8168
+    components:
+    - type: Transform
+      pos: -7.5,9.5
       parent: 1
 - proto: SpawnPointObserver
   entities:

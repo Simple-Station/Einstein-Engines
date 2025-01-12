@@ -15129,7 +15129,7 @@ entities:
       pos: 34.5,-35.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -55045.918
+      secondsUntilStateChange: -55516.35
       state: Opening
   - uid: 383
     components:
@@ -17822,17 +17822,6 @@ entities:
     - type: Transform
       pos: 0.5,-47.5
       parent: 2
-- proto: BalloonNT
-  entities:
-  - uid: 22318
-    components:
-    - type: Transform
-      parent: 22310
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: BannerMedical
   entities:
   - uid: 807
@@ -60605,17 +60594,6 @@ entities:
     - type: Transform
       pos: 26.467663,-34.491558
       parent: 2
-- proto: ClothingHeadsetCommand
-  entities:
-  - uid: 22313
-    components:
-    - type: Transform
-      parent: 22310
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: ClothingMaskBat
   entities:
   - uid: 8841
@@ -60783,28 +60761,6 @@ entities:
     - type: Transform
       pos: 19.387924,-13.55324
       parent: 2
-- proto: ClothingNeckCloakBoat
-  entities:
-  - uid: 22317
-    components:
-    - type: Transform
-      parent: 22310
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-- proto: ClothingNeckCloakNanotrasen
-  entities:
-  - uid: 22316
-    components:
-    - type: Transform
-      parent: 22310
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: ClothingNeckCloakTrans
   entities:
   - uid: 8858
@@ -60948,17 +60904,6 @@ entities:
     - type: Transform
       pos: -11.324873,-24.533173
       parent: 2
-- proto: ClothingOuterCorporateJacket
-  entities:
-  - uid: 22319
-    components:
-    - type: Transform
-      parent: 22310
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: ClothingOuterHardsuitClown
   entities:
   - uid: 10544
@@ -61336,17 +61281,6 @@ entities:
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingUniformJumpsuitCentcomAgent
-  entities:
-  - uid: 22312
-    components:
-    - type: Transform
-      parent: 22310
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: ClothingUniformJumpsuitClown
   entities:
   - uid: 10525
@@ -61466,17 +61400,6 @@ entities:
     components:
     - type: Transform
       parent: 10501
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-- proto: ClothingUniformJumpsuitNanotrasen
-  entities:
-  - uid: 22314
-    components:
-    - type: Transform
-      parent: 22310
     - type: Physics
       angularDamping: 0
       linearDamping: 0
@@ -110760,6 +110683,13 @@ entities:
           showEnts: False
           occludes: True
           ent: null
+- proto: LockerNanorepFilled
+  entities:
+  - uid: 22310
+    components:
+    - type: Transform
+      pos: 7.5,27.5
+      parent: 2
 - proto: LockerParamedicFilled
   entities:
   - uid: 15904
@@ -110799,49 +110729,6 @@ entities:
           occludes: True
           ents:
           - 15906
-        paper_label: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-- proto: LockerRepresentative
-  entities:
-  - uid: 22310
-    components:
-    - type: Transform
-      pos: 7.5,27.5
-      parent: 2
-    - type: EntityStorage
-      air:
-        volume: 200
-        immutable: False
-        temperature: 293.14673
-        moles:
-        - 1.7459903
-        - 6.568249
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 22311
-          - 22312
-          - 22313
-          - 22314
-          - 22316
-          - 22317
-          - 22318
-          - 22319
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True
@@ -110980,17 +110867,6 @@ entities:
     - type: Transform
       pos: 14.5,-48.5
       parent: 2
-- proto: LunchboxCommandFilledRandom
-  entities:
-  - uid: 22311
-    components:
-    - type: Transform
-      parent: 22310
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: MachineAnomalyGenerator
   entities:
   - uid: 15923
@@ -130954,6 +130830,23 @@ entities:
     - type: Transform
       pos: -17.5,-24.5
       parent: 2
+- proto: SpawnPointAdminAssistant
+  entities:
+  - uid: 22313
+    components:
+    - type: Transform
+      pos: 7.5,56.5
+      parent: 2
+  - uid: 22314
+    components:
+    - type: Transform
+      pos: 7.5,52.5
+      parent: 2
+  - uid: 22316
+    components:
+    - type: Transform
+      pos: 5.5,54.5
+      parent: 2
 - proto: SpawnPointAtmos
   entities:
   - uid: 18858
@@ -130982,6 +130875,13 @@ entities:
     components:
     - type: Transform
       pos: 16.5,17.5
+      parent: 2
+- proto: SpawnPointBlueshieldOfficer
+  entities:
+  - uid: 22312
+    components:
+    - type: Transform
+      pos: 6.5,55.5
       parent: 2
 - proto: SpawnPointBorg
   entities:
@@ -131295,6 +131195,13 @@ entities:
     components:
     - type: Transform
       pos: 41.5,15.5
+      parent: 2
+- proto: SpawnPointNanotrasenRepresentative
+  entities:
+  - uid: 22311
+    components:
+    - type: Transform
+      pos: 6.5,53.5
       parent: 2
 - proto: SpawnPointObserver
   entities:
@@ -157868,7 +157775,7 @@ entities:
       links:
       - 19976
     - type: Door
-      secondsUntilStateChange: -191338.22
+      secondsUntilStateChange: -191808.66
       state: Opening
   - uid: 23356
     components:
