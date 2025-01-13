@@ -507,7 +507,7 @@
 - type: entity
   parent: ClothingOuterBase
   id: ClothingOuterCoatVictorian
-  name: victorian coat
+  name: black victorian coat
   description: A fancy Victorian-style coat.
   components:
   - type: Sprite

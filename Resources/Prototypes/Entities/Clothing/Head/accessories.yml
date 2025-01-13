@@ -10,6 +10,8 @@
     sprite: Clothing/Head/Accessories/pin.rsi
     equipDelay: 0
     unequipDelay: 0
+  - type: Item
+    size: Tiny
 
 - type: entity
   parent: ClothingHeadBase
@@ -23,6 +25,8 @@
     sprite: Clothing/Head/Accessories/pin_clover.rsi
     equipDelay: 0
     unequipDelay: 0
+  - type: Item
+    size: Tiny
 
 - type: entity
   parent: ClothingHeadBase
@@ -36,6 +40,8 @@
     sprite: Clothing/Head/Accessories/pin_butterfly.rsi
     equipDelay: 0
     unequipDelay: 0
+  - type: Item
+    size: Tiny
 
 - type: entity
   parent: ClothingHeadBase

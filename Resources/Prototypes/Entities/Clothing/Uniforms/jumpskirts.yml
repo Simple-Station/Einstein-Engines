@@ -855,7 +855,7 @@
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtDressAsymmetric
   name: asymmetric dress
-  description: A stylish dress held up with spaghetti straps.
+  description: This dress forced the mothermatter to deyassinate in slaygineering.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpskirt/asymmetric_dress.rsi
@@ -877,7 +877,7 @@
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtDressMidi
   name: midi dress
-  description: No, you can't play music with this.
+  description: Contrary to popular belief, you can't play music with this dress.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpskirt/midi_dress.rsi
@@ -888,7 +888,7 @@
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtDressOpenShoulder
   name: open-shoulder dress
-  description: This dress has open shoulders and an open upper back.
+  description: No sleeves in this dress, only style fierce enough to snatch wigs.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpskirt/openshoulder_dress.rsi
@@ -932,7 +932,7 @@
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtDressBlackAndGold
   name: black and gold gown
-  description: Is the gown black and gold or blue and white?
+  description: Luckily it's not a white and blue gown.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpskirt/black_and_gold.rsi
@@ -953,8 +953,7 @@
 - type: entity
   parent: ClothingUniformJumpskirtDressBlackTango
   id: ClothingUniformJumpskirtDressBlackTangoAlt
-  name: black tango dress
-  description: An earthen black tango dress.
+  suffix: alternative
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpskirt/black_tango_alt.rsi
@@ -1042,7 +1041,7 @@
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtDressClub
   name: club dress
-  description: This dress caused a motherlarity in slaygineering to serve a motherloose.
+  description: This dress is perfect for turning heads.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpskirt/club_dress.rsi
@@ -1053,7 +1052,7 @@
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtDressCoveter
   name: coveter dress
-  description: Ah, the dress of young love.
+  description: Others will covet how your outfit slays with this dress.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpskirt/coveter.rsi
@@ -1119,7 +1118,7 @@
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtDressFluffy
   name: fluffy dress
-  description: A lovely fluffed out dress for formal occasions. Comes in many colors!
+  description: A lovely fluffed out dress with a black lacy top.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpskirt/fluffy.rsi
@@ -1130,7 +1129,7 @@
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtDressFormalRed
   name: formal red dress
-  description: A very formal red dress, for those fancy weddings in maintenance.
+  description: A big formal red dress, a totally regular outfit in NanoTrasen stations.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpskirt/formalred.rsi
@@ -1141,7 +1140,7 @@
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtDressGothic
   name: gothic dress
-  description: A black dress with a sheer mesh over it, tastefully old school goth.
+  description: A black dress with a sheer mesh over it, tastefully old-school goth.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpskirt/gothic.rsi
@@ -1163,7 +1162,7 @@
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtDressLacyGown
   name: lacy gown
-  description: A beautiful lace gown that can be found in many different colors.
+  description: A beautiful lacy gown with laces at the bottom.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpskirt/lacy_gown.rsi
@@ -1174,7 +1173,7 @@
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtDressLong
   name: long dress
-  description: A long dress.
+  description: A long dress that reaches the floor.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpskirt/long_dress.rsi
@@ -1185,7 +1184,7 @@
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtDressLongFlared
   name: long flared dress
-  description: A long white dress that flares out at the bottom.
+  description: A long dress that flares out at the bottom.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpskirt/long_flared_dress.rsi
@@ -1196,7 +1195,7 @@
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtQipao
   name: qipao
-  description: A traditional Solarian women's garment, typically made of (synthetic) silk.
+  description: A traditional Solarian garment, typically made of (synthetic) silk.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpskirt/qipao.rsi
@@ -1207,7 +1206,7 @@
   parent: ClothingUniformJumpskirtQipao
   id: ClothingUniformJumpskirtQipaoSlim
   name: slim qipao
-  description: A traditional Solarian women's garment, typically made of (synthetic) silk. This one is fairly slim.
+  description: A traditional Solarian garment, typically made of (synthetic) silk. This one is fairly slim.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpskirt/qipao_slim.rsi
@@ -1229,12 +1228,23 @@
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtPencilSkirtGymBra
   name: pencil skirt and gym bra
-  description: A fashion-forward pair popularized by a certain space influencer.
+  description: A fashion-forward pair popularized by an iconic space influencer with thousands of followers.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpskirt/skirt_pencil_gym_bra.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpskirt/skirt_pencil_gym_bra.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtDressPuffy
+  name: puffy dress
+  description: An iconic dress with a very puffy bottom.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpskirt/puffydress.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpskirt/puffydress.rsi
 
 - type: entity
   parent: ClothingUniformSkirtBase
@@ -1246,17 +1256,6 @@
     sprite: Clothing/Uniforms/Jumpskirt/sailor_dress.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpskirt/sailor_dress.rsi
-
-- type: entity
-  parent: ClothingUniformSkirtBase
-  id: ClothingUniformJumpskirtDressWhite
-  name: white dress
-  description: A fancy white dress with a blue underdress.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpskirt/whitedress.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpskirt/whitedress.rsi
 
 - type: entity
   parent: ClothingUniformSkirtBase
@@ -1294,8 +1293,8 @@
 - type: entity
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtDressSpider
-  name: spider victorian dress
-  description: A Victorian-style dress, fancy!
+  name: spider dress
+  description: A black dress with spider web patterns to instill fear in your arachnophobic enemies.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpskirt/spider.rsi
@@ -1339,7 +1338,7 @@
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtDressVictorianBlack
   name: black victorian dress
-  description: A Victorian-style dress, fancy!
+  description: A black Victorian-style dress often paired with the black Victorian coat.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpskirt/victorian_black_dress.rsi
@@ -1350,7 +1349,7 @@
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtDressVictorianRed
   name: red victorian dress
-  description: A Victorian-style dress, fancy!
+  description: A red Victorian-style dress often paired with the red Victorian coat.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpskirt/victorian_red_dress.rsi

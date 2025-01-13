@@ -572,7 +572,7 @@
   parent: ClothingOuterBase
   id: ClothingOuterBlazerFormal
   name: formal blazer
-  description: This is the one who got promoted.
+  description: A slim-fit blazer suitable for both smart casual and formal outfits.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Misc/blazer_formal.rsi
@@ -605,7 +605,7 @@
   parent: ClothingOuterBase
   id: ClothingOuterBlazerPosh
   name: posh blazer
-  description: This is a bit fancy, like the new service worker in Shoko who is trying too hard to impress the heads.
+  description: This is a bit fancy, like the new service worker in Saltern who is trying too hard to impress the heads.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Misc/blazer_posh.rsi

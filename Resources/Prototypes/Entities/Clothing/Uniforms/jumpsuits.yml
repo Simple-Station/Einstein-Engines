@@ -1636,7 +1636,7 @@
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitDisheveled
   name: disheveled suit
-  description: What might pass as well maintained formal attire. If you're blind.
+  description: What might pass as well-maintained formal attire, if you're blind.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/disheveled.rsi
@@ -1768,7 +1768,7 @@
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitYogaGymBra
   name: yoga gym bra
-  description: A gym bra paired with yoga pants. If you're gonna work out, might as well do it in style.
+  description: A gym bra paired with yoga pants, perfect for working out and looking good at the same time.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/yoga_gym_bra.rsi
@@ -1846,7 +1846,7 @@
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitCamouflageShirt
   name: camouflage shirt
-  description: A long-sleeve camouflage shirt paired with a nice pair of jeans.
+  description: A long-sleeve camouflage shirt paired with a classic pair of jeans.
   components:
   - type: Sprite
     sprite: _Nuclear14/Clothing/Uniforms/FalloutSuits/fudd.rsi
@@ -1879,7 +1879,7 @@
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitLumberjack
   name: lumberjack overalls
-  description: Red flannel is always a classic, especially paired with dark blue overalls.
+  description: Overalls that make you look like a lumberjack.
   components:
   - type: Sprite
     sprite: _Nuclear14/Clothing/Uniforms/FalloutSuits/lumberjack.rsi
@@ -1900,8 +1900,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitGreyShirt
-  name: grey shirt with olive pants
-  description: Waiting to be combined with a nice vibrant coat or jacket.
+  name: grey shirt and olive pants
+  description: Sometimes all you need is a tried but true combo, grey and olive.
   components:
   - type: Sprite
     sprite: _Nuclear14/Clothing/Uniforms/FalloutSuits/rangerv3.rsi
@@ -1911,8 +1911,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitFlannelJeans
-  name: flannel shirt with jeans
-  description: Red flannel paired with pale blue jeans. How original.
+  name: flannel shirt and jeans
+  description: A red flannel shirt paired with pale blue jeans. How original.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/flannel_jeans.rsi
@@ -1922,7 +1922,7 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitFlannelBlackJeans
-  name: black flannel shirt with jeans
+  name: black flannel shirt and jeans
   description: Not just any flannel, a flannel shirt that's black! Daring today, aren't we?
   components:
   - type: Sprite
@@ -1933,8 +1933,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitFlannelKhakis
-  name: flannel shirt with khakis
-  description: Red flannel with tan khaki pants, a warm classic.
+  name: flannel shirt and khakis
+  description: A red flannel shirt with tan khaki pants, a smart pairing.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/flannel_khakis.rsi
@@ -1944,8 +1944,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitFlannelBlackKhakis
-  name: black flannel shirt with khakis
-  description: Black flannel with tan khaki pants, a sharp classic.
+  name: black flannel shirt and khakis
+  description: A black flannel shirt with tan khaki pants, a smart pairing.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/black_flannel_khakis.rsi

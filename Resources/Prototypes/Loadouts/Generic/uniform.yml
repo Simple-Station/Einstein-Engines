@@ -1596,7 +1596,6 @@
       inverted: true
       departments:
         - Command
-        - Security
 
 - type: loadout
   id: LoadoutUniformJumpskirtQipaoSlim
@@ -1646,12 +1645,13 @@
         - Command
 
 - type: loadout
-  id: LoadoutUniformJumpskirtSailor
+  id: LoadoutUniformJumpskirtDressPuffy
   category: Uniform
-  cost: 1
+  cost: 2
   exclusive: true
+  customColorTint: true
   items:
-    - ClothingUniformJumpskirtSailor
+    - ClothingUniformJumpskirtDressPuffy
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutUniformsCivilian
@@ -1661,13 +1661,12 @@
         - Command
 
 - type: loadout
-  id: LoadoutUniformJumpskirtDressWhite
+  id: LoadoutUniformJumpskirtSailor
   category: Uniform
-  cost: 2
+  cost: 1
   exclusive: true
-  customColorTint: true
   items:
-    - ClothingUniformJumpskirtDressWhite
+    - ClothingUniformJumpskirtSailor
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutUniformsCivilian
@@ -1738,7 +1737,6 @@
       inverted: true
       departments:
         - Command
-        - Security
 
 - type: loadout
   id: LoadoutUniformJumpskirtDressStriped
@@ -1915,7 +1913,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitBarber
   category: Uniform
-  cost: 0
+  cost: 1
   exclusive: true
   items:
     - ClothingUniformJumpsuitBarber

@@ -154,7 +154,7 @@
   parent: ClothingShoesBaseButcherable
   id: ClothingShoesHighHeels
   name: high heels
-  description: These heels help you strut into work like it's a runway.
+  description: These heels help you sashay into the station like it's a catwalk.
   components:
   - type: Sprite
     sprite: Clothing/Shoes/Misc/high_heels.rsi
