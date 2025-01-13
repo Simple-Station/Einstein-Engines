@@ -1306,3 +1306,26 @@
     sprite: Clothing/Head/Hats/sun_visor.rsi
   - type: Clothing
     sprite: Clothing/Head/Hats/sun_visor.rsi
+
+# Nuclear 14 hats
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeanieGreen
+  name: green beanie
+  description: A dark green beanie.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Clothing/Head/FalloutHats/beanie.rsi
+  - type: Clothing
+    sprite: _Nuclear14/Clothing/Head/FalloutHats/beanie.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatMountie
+  name: mountie hat
+  description: A flat hat made 100% of fur felt.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Clothing/Head/FalloutHats/mountiehat.rsi
+  - type: Clothing
+    sprite: _Nuclear14/Clothing/Head/FalloutHats/mountiehat.rsi

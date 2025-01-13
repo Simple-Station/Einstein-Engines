@@ -527,3 +527,25 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadHatBeanieGreen
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadHatBeanieGreen
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadHatMountie
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadHatMountie
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead

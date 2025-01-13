@@ -1774,3 +1774,180 @@
     sprite: Clothing/Uniforms/Jumpsuit/yoga_gym_bra.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/yoga_gym_bra.rsi
+
+# Nuclear 14 outfits
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitSuitRolledSleeves
+  name: rolled sleeves suit
+  description: A dapper suit with a vest and a red tie, sleeves rolled up to show your forearms.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Clothing/Uniforms/FalloutSuits/detectivealt.rsi
+  - type: Clothing
+    sprite: _Nuclear14/Clothing/Uniforms/FalloutSuits/detectivealt.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitBartenderGrey
+  name: grey bartender's uniform
+  description: A nice and tidy grey uniform. Shame about the bar, though.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Clothing/Uniforms/FalloutSuits/bartenderalt.rsi
+  - type: Clothing
+    sprite: _Nuclear14/Clothing/Uniforms/FalloutSuits/bartenderalt.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitCheckered
+  name: checkered suit
+  description: The game was rigged from the start.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/checkered.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/checkered.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitFlannelOveralls
+  name: flannel overalls
+  description: Oh, I'm goin' down this road feelin' bad... Lord, I'm goin' down this road feelin' bad...
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Clothing/Uniforms/FalloutSuits/caravaneer.rsi
+  - type: Clothing
+    sprite: _Nuclear14/Clothing/Uniforms/FalloutSuits/caravaneer.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitCowboyBrown
+  name: brown cowboy outfit
+  description: Yeehaw, partner!
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Clothing/Uniforms/FalloutSuits/cowboybrown.rsi
+  - type: Clothing
+    sprite: _Nuclear14/Clothing/Uniforms/FalloutSuits/cowboybrown.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitCowboyGrey
+  name: grey cowboy outfit
+  description: Yeehaw, partner!
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Clothing/Uniforms/FalloutSuits/cowboygrey.rsi
+  - type: Clothing
+    sprite: _Nuclear14/Clothing/Uniforms/FalloutSuits/cowboygrey.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitCamouflageShirt
+  name: camouflage shirt
+  description: A long-sleeve camouflage shirt paired with a nice pair of jeans.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Clothing/Uniforms/FalloutSuits/fudd.rsi
+  - type: Clothing
+    sprite: _Nuclear14/Clothing/Uniforms/FalloutSuits/fudd.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitOliveSweater
+  name: olive sweater
+  description: A cozy sweater that fits snugly on top of grey work pants.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/olive_sweater.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/olive_sweater.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitDesertUniform
+  name: desert uniform
+  description: A replica of vintage Solarian combat uniforms, for LARPing as ancient soldiers.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Clothing/Uniforms/FalloutSuits/desertbdu.rsi
+  - type: Clothing
+    sprite: _Nuclear14/Clothing/Uniforms/FalloutSuits/desertbdu.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitLumberjack
+  name: lumberjack overalls
+  description: Red flannel is always a classic, especially paired with dark blue overalls.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Clothing/Uniforms/FalloutSuits/lumberjack.rsi
+  - type: Clothing
+    sprite: _Nuclear14/Clothing/Uniforms/FalloutSuits/lumberjack.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitLightBlueShirt
+  name: light blue shirt
+  description: A light blue shirt with pale khakis, lightweight and comfy.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/lightblue_shirt.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/lightblue_shirt.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitGreyShirt
+  name: grey shirt with olive pants
+  description: Waiting to be combined with a nice vibrant coat or jacket.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Clothing/Uniforms/FalloutSuits/rangerv3.rsi
+  - type: Clothing
+    sprite: _Nuclear14/Clothing/Uniforms/FalloutSuits/rangerv3.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitFlannelJeans
+  name: flannel shirt with jeans
+  description: Red flannel paired with pale blue jeans. How original.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/flannel_jeans.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/flannel_jeans.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitFlannelBlackJeans
+  name: black flannel shirt with jeans
+  description: Not just any flannel, a flannel shirt that's black! Daring today, aren't we?
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/black_flannel_jeans.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/black_flannel_jeans.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitFlannelKhakis
+  name: flannel shirt with khakis
+  description: Red flannel with tan khaki pants, a warm classic.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/flannel_khakis.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/flannel_khakis.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitFlannelBlackKhakis
+  name: black flannel shirt with khakis
+  description: Black flannel with tan khaki pants, a sharp classic.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/black_flannel_khakis.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/black_flannel_khakis.rsi
