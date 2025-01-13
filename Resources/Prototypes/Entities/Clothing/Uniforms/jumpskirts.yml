@@ -1041,7 +1041,7 @@
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtDressClub
   name: club dress
-  description: This dress is perfect for turning heads.
+  description: This well-tailored dress ate and left no crumbs.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpskirt/club_dress.rsi
@@ -1228,7 +1228,7 @@
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtPencilSkirtGymBra
   name: pencil skirt and gym bra
-  description: A fashion-forward pair popularized by an iconic space influencer with thousands of followers.
+  description: A fashion-forward pair popularized by an iconic space influencer.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpskirt/skirt_pencil_gym_bra.rsi
@@ -1294,7 +1294,7 @@
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtDressSpider
   name: spider dress
-  description: A black dress with spider web patterns to instill fear in your arachnophobic enemies.
+  description: A black dress with spider web patterns that instills fear in your arachnophobic enemies.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpskirt/spider.rsi
