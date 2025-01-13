@@ -72,7 +72,7 @@ public abstract partial class SharedStationAiSystem
 
     private bool TryGetCore(EntityUid ent, out Entity<StationAiCoreComponent?> core)
     {
-        if (!_containers.TryGetContainingContainer(ent, out var container) ||
+        if (!_containers.TryGetContainingContainer((ent, null, null), out var container) ||
             container.ID != StationAiCoreComponent.Container ||
             !TryComp(container.Owner, out StationAiCoreComponent? coreComp) ||
             coreComp.RemoteEntity == null)

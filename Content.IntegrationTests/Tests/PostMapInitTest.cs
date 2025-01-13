@@ -8,6 +8,7 @@ using Content.Server.Shuttles.Systems;
 using Content.Server.Spawners.Components;
 using Content.Server.Station.Components;
 using Content.Shared.CCVar;
+using Content.Shared.Roles;
 using Robust.Server.GameObjects;
 using Robust.Shared.Configuration;
 using Robust.Shared.ContentPack;
@@ -252,10 +253,21 @@ namespace Content.IntegrationTests.Tests
                     // This is done inside gamemap test because loading the map takes ages and we already have it.
                     var spawnPoints = entManager.EntityQuery<SpawnPointComponent>()
                         .Where(x => x.SpawnType == SpawnPointType.Job)
-                        .Where(x => x.Job!.JobEntity == null)
                         .Select(x => x.Job!.ID);
 
                     jobs.ExceptWith(spawnPoints);
+
+                    foreach (var jobId in jobs)
+                    {
+                        var exists = protoManager.TryIndex<JobPrototype>(jobId, out var jobPrototype);
+
+                        if (!exists)
+                            continue;
+
+                        if (jobPrototype.JobEntity != null)
+                            jobs.Remove(jobId);
+                    }
+
                     Assert.That(jobs, Is.Empty, $"There is no spawnpoints for {string.Join(", ", jobs)} on {mapProto}.");
                 }
 

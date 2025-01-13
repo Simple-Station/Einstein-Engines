@@ -239,6 +239,7 @@
       - id: RDIDCard # Delta-V
       - id: ClothingHeadsetAltScience
       - id: EncryptionKeyBinary
+      - id: Intellicard
       - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
 

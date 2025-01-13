@@ -257,6 +257,7 @@ namespace Content.Server.GameTicking
             DebugTools.AssertNotNull(mobMaybe);
             var mob = mobMaybe!.Value;
 
+            _stationSpawning.EquipJobName(mob, jobPrototype);
             _mind.TransferTo(newMind, mob);
 
             if (lateJoin && !silent)
