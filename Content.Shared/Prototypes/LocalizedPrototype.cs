@@ -26,10 +26,16 @@ public abstract class LocalizedPrototype : IPrototype
             ((PrototypeAttribute?) Attribute.GetCustomAttribute(GetType(), typeof(PrototypeAttribute)))?.Type
             ?? GetType().Name.Remove(GetType().Name.Length - 9);
         // Lowercase the first letter
-        type = char.ToLowerInvariant(type[0]) + type[1..];
+        type = OopsConcat(char.ToLowerInvariant(type[0]).ToString(), type[1..]);
         // Replace every uppercase letter with a dash and the lowercase letter
-        type = type.Aggregate("", (current, c) => current + (char.IsUpper(c) ? "-" + char.ToLowerInvariant(c) : c.ToString()));
+        type = type.Aggregate("", (current, c) => current + (char.IsUpper(c) ? OopsConcat("-", char.ToLowerInvariant(c).ToString()) : c.ToString()));
 
         return string.Format(LocFormat, type, ID, field);
+    }
+
+    private static string OopsConcat(string a, string b)
+    {
+        // This exists to prevent Roslyn being clever and compiling something that fails sandbox checks.
+        return a + b;
     }
 }

@@ -1,6 +1,6 @@
+using Content.Shared._NF.Shuttles.Events;
 using Robust.Shared.Map;
 using Robust.Shared.Serialization;
-using Content.Shared._NF.Shuttles.Events; // Frontier - InertiaDampeningMode access
 
 namespace Content.Shared.Shuttles.BUIStates;
 

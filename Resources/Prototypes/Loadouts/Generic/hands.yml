@@ -71,3 +71,15 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutGloves
+
+- type: loadout
+  id: LoadoutHandsGlovesEvening
+  category: Hands
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingHandsGlovesEvening
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGloves

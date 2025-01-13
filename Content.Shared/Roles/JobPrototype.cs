@@ -1,5 +1,6 @@
 using Content.Shared.Access;
 using Content.Shared.Customization.Systems;
+using Content.Shared.Dataset;
 using Content.Shared.Players.PlayTimeTracking;
 using Content.Shared.Roles;
 using Content.Shared.StatusIcon;
@@ -99,6 +100,13 @@ namespace Content.Shared.Roles
         public string? StartingGear { get; private set; }
 
         /// <summary>
+        ///     If this has a value, it will randomly set the entity name of the
+        ///     entity upon spawn based on the dataset.
+        /// </summary>
+        [DataField]
+        public ProtoId<LocalizedDatasetPrototype>? NameDataset;
+
+        /// <summary>
         ///   A list of requirements that when satisfied, add or replace from the base starting gear.
         /// </summary>
         [DataField("conditionalStartingGear")]
@@ -132,6 +140,12 @@ namespace Content.Shared.Roles
 
         [DataField]
         public bool Whitelisted;
+
+        [DataField]
+        public bool SpawnLoadout = true;
+
+        [DataField]
+        public bool ApplyTraits = true;
     }
 
     /// <summary>

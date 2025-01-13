@@ -81,6 +81,8 @@ public sealed class SharedLoadoutSystem : EntitySystem
         var failedLoadouts = new List<EntityUid>();
         var allLoadouts = new List<(EntityUid, LoadoutPreference, int)>();
         heirlooms = new();
+        if (!job.SpawnLoadout)
+            return (failedLoadouts, allLoadouts);
 
         var preferencesAndPrototypes = DetermineItems(uid, job, profile, playTimes, whitelisted);
 

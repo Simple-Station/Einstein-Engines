@@ -672,7 +672,15 @@ namespace Content.Client.Lobby.UI
             if (Profile == null || !_entManager.EntityExists(PreviewDummy))
                 return;
 
-            _entManager.System<HumanoidAppearanceSystem>().LoadProfile(PreviewDummy, Profile);
+            if (_entManager.TryGetComponent<HumanoidAppearanceComponent>(PreviewDummy, out var humanoid))
+            {
+                var hiddenLayers = humanoid.HiddenLayers;
+                var appearanceSystem = _entManager.System<HumanoidAppearanceSystem>();
+                appearanceSystem.LoadProfile(PreviewDummy, Profile, humanoid);
+                // Reapply the hidden layers set from clothing
+                appearanceSystem.SetLayersVisibility(PreviewDummy, hiddenLayers, false, humanoid: humanoid);
+            }
+
             SetPreviewRotation(_previewRotation);
             TraitsTabs.UpdateTabMerging();
             LoadoutsTabs.UpdateTabMerging();
@@ -708,8 +716,17 @@ namespace Content.Client.Lobby.UI
             _jobPriorities.Clear();
             var firstCategory = true;
 
-            var departments = _prototypeManager.EnumeratePrototypes<DepartmentPrototype>().ToArray();
-            Array.Sort(departments, DepartmentUIComparer.Instance);
+            // Get all displayed departments
+            var departments = new List<DepartmentPrototype>();
+            foreach (var department in _prototypeManager.EnumeratePrototypes<DepartmentPrototype>())
+            {
+                if (department.EditorHidden)
+                    continue;
+
+                departments.Add(department);
+            }
+
+            departments.Sort(DepartmentUIComparer.Instance);
 
             var items = new[]
             {
@@ -887,7 +904,7 @@ namespace Content.Client.Lobby.UI
                     JobList.AddChild(category);
                 }
 
-                var jobs = department.Roles.Select(jobId => _prototypeManager.Index<JobPrototype>(jobId))
+                var jobs = department.Roles.Select(jobId => _prototypeManager.Index(jobId))
                     .Where(job => job.SetPreference)
                     .ToArray();
                 Array.Sort(jobs, JobUIComparer.Instance);
