@@ -671,7 +671,15 @@ namespace Content.Client.Lobby.UI
             if (Profile == null || !_entManager.EntityExists(PreviewDummy))
                 return;
 
-            _entManager.System<HumanoidAppearanceSystem>().LoadProfile(PreviewDummy, Profile);
+            if (_entManager.TryGetComponent<HumanoidAppearanceComponent>(PreviewDummy, out var humanoid))
+            {
+                var hiddenLayers = humanoid.HiddenLayers;
+                var appearanceSystem = _entManager.System<HumanoidAppearanceSystem>();
+                appearanceSystem.LoadProfile(PreviewDummy, Profile, humanoid);
+                // Reapply the hidden layers set from clothing
+                appearanceSystem.SetLayersVisibility(PreviewDummy, hiddenLayers, false, humanoid: humanoid);
+            }
+
             SetPreviewRotation(_previewRotation);
             TraitsTabs.UpdateTabMerging();
             LoadoutsTabs.UpdateTabMerging();

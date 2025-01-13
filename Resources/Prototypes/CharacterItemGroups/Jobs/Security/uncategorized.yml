@@ -142,6 +142,12 @@
       id: LoadoutSecurityEyesHudSecurityPrescription
     - type: loadout
       id: LoadoutClothingEyesGlassesSecurity
+    - type: loadout
+      id: LoadoutClothingEyesGlassesSecurityAviator
+    - type: loadout
+      id: LoadoutClothingEyesGlassesSecurityBig
+    - type: loadout
+      id: LoadoutClothingEyesGlassesSecurityVisor
 
 #- type: characterItemGroup
 #  id: LoadoutSecurityGloves

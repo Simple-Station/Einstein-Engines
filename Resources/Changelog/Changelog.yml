@@ -9796,3 +9796,18 @@ Entries:
   id: 6685
   time: '2025-01-13T05:56:48.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1521
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        The Fashion Update is here. Almost two hundred brand-new clothes have
+        been added to Loadouts, like colorable suits, dresses, coats, blazers,
+        boots, necklaces, hats, glasses (including new Security glasses), belts,
+        a purse and more!
+    - type: Add
+      message: >-
+        Pets in the loadouts are now colorable. Go wild with pink mothroaches,
+        blue mice, green cockroaches and more!
+  id: 6686
+  time: '2025-01-13T16:24:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1526
