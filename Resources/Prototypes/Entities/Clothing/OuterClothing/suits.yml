@@ -318,6 +318,6 @@
   description: Magic is all about the spell power, ZE!
   components:
   - type: Sprite
-    sprite: Floof/Clothing/OuterClothing/Suits/witchrobe.rsi
+    sprite: Clothing/OuterClothing/Suits/witchrobe.rsi
   - type: Clothing
-    sprite: Floof/Clothing/OuterClothing/Suits/witchrobe.rsi
+    sprite: Clothing/OuterClothing/Suits/witchrobe.rsi
