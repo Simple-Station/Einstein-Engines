@@ -445,7 +445,7 @@ namespace Content.Shared.CCVar
         ///     If you are intending to decrease the trait points availability, or modify the costs of traits, consider temporarily disabling this.
         /// </summary>
         public static readonly CVarDef<bool> TraitsPunishCheaters =
-            CVarDef.Create("game.traits_punish_cheaters", true, CVar.REPLICATED);
+            CVarDef.Create("game.traits_punish_cheaters", false, CVar.REPLICATED);
 
         /// <summary>
         ///     Whether to allow characters to select loadout items.
