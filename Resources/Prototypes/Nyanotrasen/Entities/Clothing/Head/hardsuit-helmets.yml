@@ -6,6 +6,8 @@
   description: Lightweight hardsuit helmet that has a galaxy-first psionic passthrough system.
   components:
   - type: Psionic
+    removable: false
+    roller: false
   - type: TinfoilHat
     passthrough: true
     destroyOnFry: false

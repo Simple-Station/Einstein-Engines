@@ -25,6 +25,7 @@
   - type: Actions
   - type: Psionic
     removable: false
+    roller: false
     assayFeedback:
       - sophic-grammateus-feedback
     psychognomicDescriptors:
@@ -48,3 +49,5 @@
     - TauCetiBasic
     understands:
     - TauCetiBasic
+  - type: GuideHelp
+    guides: [ Psionics ]

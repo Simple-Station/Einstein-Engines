@@ -64,6 +64,7 @@
   id: LoadoutChaplainPillCanisterSpaceDrugs
   category: JobsEpistemicsChaplain
   cost: 0
+  guideEntry: Psionics
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutChaplainEquipment

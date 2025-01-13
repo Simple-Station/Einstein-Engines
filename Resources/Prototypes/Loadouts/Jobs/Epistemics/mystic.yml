@@ -36,6 +36,7 @@
   id: LoadoutMysticPillCanisterSpaceDrugs
   category: JobsEpistemicsMystic
   cost: 0
+  guideEntry: Psionics
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMysticEquipment

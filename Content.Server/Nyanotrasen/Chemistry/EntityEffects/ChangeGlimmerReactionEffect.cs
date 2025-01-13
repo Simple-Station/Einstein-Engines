@@ -15,8 +15,8 @@ public sealed partial class ChangeGlimmerReactionEffect : EntityEffect
     /// <summary>
     ///     Added to glimmer when reaction occurs.
     /// </summary>
-    [DataField("count")]
-    public int Count = 1;
+    [DataField]
+    public float Count = 1;
 
     public override void Effect(EntityEffectBaseArgs args)
     {
@@ -25,6 +25,6 @@ public sealed partial class ChangeGlimmerReactionEffect : EntityEffect
 
         var glimmerSystem = args.EntityManager.EntitySysManager.GetEntitySystem<GlimmerSystem>();
 
-        glimmerSystem.Glimmer += Count;
+        glimmerSystem.DeltaGlimmerInput(Count);
     }
 }

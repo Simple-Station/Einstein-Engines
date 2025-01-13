@@ -36,6 +36,7 @@
   id: LoadoutAcolytePillCanisterSpaceDrugs
   category: JobsEpistemicsAcolyte
   cost: 1
+  guideEntry: Psionics
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutAcolyteEquipment

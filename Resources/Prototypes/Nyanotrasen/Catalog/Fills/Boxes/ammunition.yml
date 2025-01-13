@@ -11,6 +11,9 @@
       layers:
         - state: boxwide
         - state: shellslug
+    - type: GuideHelp
+      guides: [ Mindbreaking ]
+
 
 - type: entity
   name: box of .45 magnum Universal magazines

@@ -12,6 +12,8 @@
   - type: ClothingGrantPsionicPower
     power: TelegnosisPower
   - type: Psionic
+    removable: false
+    roller: false
 
 - type: entity
   id: BedsheetInvisibilityCloak
@@ -26,6 +28,8 @@
   - type: ClothingGrantPsionicPower
     power: PsionicInvisibilityPower
   - type: Psionic
+    removable: false
+    roller: false
 
 - type: entity
   parent: ClothingHandsBase
@@ -46,6 +50,8 @@
   - type: ClothingGrantPsionicPower
     power: DispelPower
   - type: Psionic
+    removable: false
+    roller: false
 
 - type: entity
   parent: ClothingHandsBase
@@ -64,3 +70,5 @@
   - type: ClothingGrantPsionicPower
     power: NoosphericZapPower
   - type: Psionic
+    removable: false
+    roller: false

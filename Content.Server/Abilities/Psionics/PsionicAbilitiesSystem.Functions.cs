@@ -464,7 +464,7 @@ public sealed partial class PsionicModifyMana : PsionicPowerFunction
 public sealed partial class PsionicModifyGlimmer : PsionicPowerFunction
 {
     [DataField]
-    public int GlimmerModifier;
+    public float GlimmerModifier;
 
     public override void OnAddPsionic(
         EntityUid uid,
@@ -477,7 +477,7 @@ public sealed partial class PsionicModifyGlimmer : PsionicPowerFunction
         PsionicPowerPrototype proto)
     {
         var glimmerSystem = entityManager.System<GlimmerSystem>();
-        glimmerSystem.Glimmer += GlimmerModifier;
+        glimmerSystem.DeltaGlimmerInput(GlimmerModifier);
     }
 }
 

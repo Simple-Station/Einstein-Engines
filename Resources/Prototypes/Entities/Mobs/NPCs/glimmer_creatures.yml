@@ -79,6 +79,7 @@
   # powers
   - type: Psionic
     removable: false
+    roller: false
   - type: InnatePsionicPowers
     powersToAdd:
     - NoosphericZapPower

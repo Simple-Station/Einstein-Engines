@@ -3,6 +3,7 @@
     <PanelContainer StyleClasses="BackgroundDark"></PanelContainer>
     <BoxContainer Name="SettingsBox" Orientation="Horizontal" HorizontalExpand="True" VerticalExpand="False">
         <Label Text="{Loc 'glimmer-monitor-interval'}"/>
+        <Button Name="IntervalButton6s" Access="Public" Text="6s" StyleClasses="OpenRight"/>
         <Button Name="IntervalButton1" Access="Public" Text="1m" StyleClasses="OpenRight"/>
         <Button Name="IntervalButton5" Access="Public" Text="5m" StyleClasses="OpenBoth"/>
         <Button Name="IntervalButton10" Access="Public" Text="10m" StyleClasses="OpenLeft"/>

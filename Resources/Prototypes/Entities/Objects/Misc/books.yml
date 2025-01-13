@@ -536,3 +536,26 @@
       color: gold
   - type: Paper
     content: book-text-atmos-vents
+
+- type: entity
+  id: BookPsionicsGuidebook
+  parent: BaseItem
+  name: psionics guidebook
+  description: A guidebook about Psionics written by Gunther P. Gunderaan.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/books.rsi
+    layers:
+    - state: paper
+    - state: cover_base
+      color: "#542485"
+    - state: decor_wingette_circle
+      color: "#be69f0"
+    - state: icon_dna
+  - type: Tag
+    tags:
+    - Book
+  - type: GuideHelp
+    openOnActivation: true
+    guides:
+    - Psionics
