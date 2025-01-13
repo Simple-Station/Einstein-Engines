@@ -15,7 +15,7 @@
   - type: Clothing
     sprite: _NF/Objects/Weapons/Guns/Rifles/gestio.rsi
   - type: Gun
-    fireRate: 3.75
+    fireRate: 1.5
     projectileSpeed: 30
     angleDecay: 4 #in testing 3 was more balanced
     angleIncrease: 6
@@ -88,11 +88,13 @@
 - type: entity
   parent: WeaponRifleGestio
   id: WeaponRifleGestioEmpty
+  suffix: Empty
   components:
   - type: ItemSlots
     slots:
       gun_magazine:
         name: Magazine
+        startingItem: null
         insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
         priority: 2
@@ -101,10 +103,17 @@
             - MagazineLightRifle
       gun_chamber:
         name: Chamber
+        startingItem: null
         priority: 1
         whitelist:
           tags:
             - CartridgeLightRifle
+  - type: ExtendDescription
+    descriptionList:
+      - description: "gun-legality-salvage"
+        fontSize: 12
+        color: "#ff4f00"
+        requireDetailRange: false
 
 - type: entity
   parent: BaseWeaponRifle
@@ -122,7 +131,7 @@
   - type: Clothing
     sprite: _NF/Objects/Weapons/Guns/Rifles/novalitec1.rsi
   - type: Gun
-    fireRate: 4
+    fireRate: 2
     selectedMode: SemiAuto
     availableModes:
       - SemiAuto
@@ -184,11 +193,13 @@
 - type: entity
   parent: WeaponRifleNovaliteC1
   id: WeaponRifleNovaliteC1Empty
+  suffix: Empty
   components:
   - type: ItemSlots
     slots:
       gun_magazine:
         name: Magazine
+        startingItem: null
         insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
         priority: 2
@@ -197,10 +208,17 @@
             - MagazineNovaliteC1
       gun_chamber:
         name: Chamber
+        startingItem: null
         priority: 1
         whitelist:
           tags:
             - CartridgeRifle
+  - type: ExtendDescription
+    descriptionList:
+      - description: "gun-legality-salvage"
+        fontSize: 12
+        color: "#ff4f00"
+        requireDetailRange: false
 
 - type: entity
   id: WeaponRifleSVT
@@ -223,7 +241,7 @@
     - Back
     - suitStorage
   - type: Gun
-    fireRate: 4
+    fireRate: 3
     selectedMode: SemiAuto
     availableModes:
       - SemiAuto
@@ -262,11 +280,13 @@
 - type: entity
   parent: WeaponRifleSVT
   id: WeaponRifleSVTEmpty
+  suffix: Empty
   components:
   - type: ItemSlots
     slots:
       gun_magazine:
         name: Magazine
+        startingItem: null
         insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
         priority: 2
@@ -275,7 +295,14 @@
             - MagazineLightRifle
       gun_chamber:
         name: Chamber
+        startingItem: null
         priority: 1
         whitelist:
           tags:
             - CartridgeLightRifle
+  - type: ExtendDescription
+    descriptionList:
+      - description: "gun-legality-salvage"
+        fontSize: 12
+        color: "#ff4f00"
+        requireDetailRange: false
