@@ -20,6 +20,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - HeadOfSecurity
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponPulsePistolHoS
 
@@ -34,6 +36,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - HeadOfSecurity
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponSubMachineGunWt550HoS
 
@@ -62,6 +66,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - HeadOfSecurity
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponSubMachineGunC20rHoS
 
@@ -76,6 +82,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - HeadOfSecurity
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponShotgunBulldogHoS
 
@@ -104,6 +112,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - HeadOfSecurity
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponEnergyGunMultiphase
 

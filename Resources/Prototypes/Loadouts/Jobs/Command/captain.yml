@@ -166,6 +166,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - Captain
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponAntiqueLaser
 
@@ -180,6 +182,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - Captain
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponPulsePistolCaptain
 

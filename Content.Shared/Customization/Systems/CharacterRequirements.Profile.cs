@@ -25,8 +25,8 @@ public sealed partial class CharacterAgeRequirement : CharacterRequirement
     [DataField(required: true)]
     public int Min;
 
-    [DataField(required: true)]
-    public int Max;
+    [DataField]
+    public int Max = 2147483647;
 
     public override bool IsValid(
         JobPrototype job,
