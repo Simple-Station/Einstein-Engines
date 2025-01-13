@@ -7,7 +7,6 @@ using Robust.Shared.Serialization;
 namespace Content.Shared.Materials;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
-[Access(typeof(SharedMaterialStorageSystem))]
 public sealed partial class MaterialStorageComponent : Component
 {
     [DataField, AutoNetworkedField]

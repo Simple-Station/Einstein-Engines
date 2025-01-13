@@ -102,7 +102,7 @@ public abstract class EquipmentHudSystem<T> : EntitySystem where T : IComponent
         args.Components.Add(component);
     }
 
-    private void RefreshOverlay(EntityUid uid)
+    protected void RefreshOverlay(EntityUid uid)
     {
         if (uid != _player.LocalSession?.AttachedEntity)
             return;

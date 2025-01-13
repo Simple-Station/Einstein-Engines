@@ -18,6 +18,21 @@
       - state: handcuff
 
 - type: entity
+  name: prisoner headset box
+  parent: BoxCardboard
+  id: BoxPrisonerHeadset
+  description: A box of prisoner headsets.
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingHeadsetPrison
+      amount: 4
+  - type: Sprite
+    layers:
+    - state: box_security
+    - state: headset
+
+- type: entity
   name: flashbang box
   parent: BoxCardboard
   id: BoxFlashbang

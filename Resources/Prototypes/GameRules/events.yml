@@ -341,7 +341,10 @@
     weight: 6
     duration: 1
     maxOccurrences: 1 # this event has diminishing returns on interesting-ness, so we cap it
+    startAnnouncement: true
   - type: RandomSentienceRule
+    minSentiences: 2
+    maxSentiences: 5
 
 - type: entity
   parent: BaseGameRule

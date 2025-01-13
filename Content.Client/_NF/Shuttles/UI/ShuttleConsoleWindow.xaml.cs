@@ -1,5 +1,5 @@
-// New Frontiers - This file is licensed under AGPLv3
-// Copyright (c) 2024 New Frontiers Contributors
+// NeuPanda - This file is licensed under AGPLv3
+// Copyright (c) 2025 NeuPanda
 // See AGPLv3.txt for details.
 using Content.Shared._NF.Shuttles.Events;
 

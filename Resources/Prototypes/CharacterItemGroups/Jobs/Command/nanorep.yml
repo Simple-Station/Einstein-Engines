@@ -1,0 +1,15 @@
+- type: characterItemGroup
+  id: LoadoutNanorepBackpacks
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingBackpackSatchelNanorep
+
+- type: characterItemGroup
+  id: LoadoutNanorepUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingUniformJumpskirtNanotrasenRepresentative
+    - type: loadout
+      id: LoadoutClothingUniformJumpsuitNanotrasenRepresentative

@@ -1,4 +1,5 @@
 
+using Content.Shared.Bed.Sleep;
 using Content.Shared.Cuffs.Components;
 using Content.Shared.Damage.Components;
 using Content.Shared.DoAfter;
