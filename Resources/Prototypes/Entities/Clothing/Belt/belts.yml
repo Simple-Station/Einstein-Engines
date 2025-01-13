@@ -758,7 +758,7 @@
   parent: ClothingBeltBase
   id: ClothingBeltWaist
   name: waist belt
-  description: For highlighting that snatched waist.
+  description: A belt worn around the waist, giving outfits a more fitted silhouette.
   components:
   - type: Sprite
     sprite: Clothing/Belt/waist.rsi
@@ -771,7 +771,7 @@
   parent: ClothingBeltBase
   id: ClothingBeltWaistThin
   name: thin waist belt
-  description: A thin belt that accentuates a thin waist!
+  description: For highlighting that snatched waist.
   components:
   - type: Sprite
     sprite: Clothing/Belt/waist_thin.rsi

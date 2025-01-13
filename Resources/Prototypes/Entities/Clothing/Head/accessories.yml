@@ -47,7 +47,7 @@
   parent: ClothingHeadBase
   id: ClothingHeadHatPinMagnetic
   name: magnetic pin
-  description: Finally, a hair pin even a robot chassis can use.
+  description: A pair of magnetic pins that stick to your head with magnetism.
   components:
   - type: Sprite
     sprite: Clothing/Head/Accessories/pin_magnetic.rsi

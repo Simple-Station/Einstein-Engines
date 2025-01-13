@@ -1868,7 +1868,7 @@
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitDesertUniform
   name: desert uniform
-  description: A replica of vintage Solarian combat uniforms, for LARPing as ancient soldiers.
+  description: A replica of vintage Solarian combat uniforms, for LARPing purposes.
   components:
   - type: Sprite
     sprite: _Nuclear14/Clothing/Uniforms/FalloutSuits/desertbdu.rsi
