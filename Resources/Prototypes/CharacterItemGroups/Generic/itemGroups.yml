@@ -14,6 +14,8 @@
     - type: loadout
       id: LoadoutUniformJumpsuitFlannel
     - type: loadout
+      id: LoadoutUniformJumpsuitCasualBlue
+    - type: loadout
       id: LoadoutUniformJumpskirtCasualBlue
     - type: loadout
       id: LoadoutUniformJumpsuitCasualPurple
@@ -29,6 +31,8 @@
       id: LoadoutUniformJumpsuitTshirtJeansGray
     - type: loadout
       id: LoadoutUniformJumpsuitTshirtJeansPeach
+    - type: loadout
+      id: LoadoutUniformJumpsuitTShirtKhakiPants
     - type: loadout
       id: LoadoutUniformJumpsuitJeansGreen
     - type: loadout
@@ -135,3 +139,169 @@
       id: LoadoutClothingJumpsuitSuitWhiteAlt
     - type: loadout
       id: LoadoutClothingJumpsuitSuitWhiteMob
+    - type: loadout
+      id: LoadoutUniformJumpskirtDressAsymmetric
+    - type: loadout
+      id: LoadoutUniformJumpskirtDressEvening
+    - type: loadout
+      id: LoadoutUniformJumpskirtDressMidi
+    - type: loadout
+      id: LoadoutUniformJumpskirtDressOpenShoulder
+    - type: loadout
+      id: LoadoutUniformJumpskirtDressTea
+    - type: loadout
+      id: LoadoutUniformJumpskirtDressSleeveless
+    - type: loadout
+      id: LoadoutUniformJumpskirtDressLongSleeve
+    - type: loadout
+      id: LoadoutUniformJumpskirtDressBlackAndGold
+    - type: loadout
+      id: LoadoutUniformJumpskirtDressBlackTango
+    - type: loadout
+      id: LoadoutUniformJumpskirtDressBlackTangoAlt
+    - type: loadout
+      id: LoadoutUniformJumpskirtSuitBlueBlazer
+    - type: loadout
+      id: LoadoutUniformJumpskirtDressBlueSundress
+    - type: loadout
+      id: LoadoutUniformJumpskirtDressCheongsamBlue
+    - type: loadout
+      id: LoadoutUniformJumpskirtDressCheongsamGreen
+    - type: loadout
+      id: LoadoutUniformJumpskirtDressCheongsamPurple
+    - type: loadout
+      id: LoadoutUniformJumpskirtDressCheongsamRed
+    - type: loadout
+      id: LoadoutUniformJumpskirtDressCheongsamWhite
+    - type: loadout
+      id: LoadoutUniformJumpskirtDressClub
+    - type: loadout
+      id: LoadoutUniformJumpskirtDressCoveter
+    - type: loadout
+      id: LoadoutUniformJumpskirtDressFlamenco
+    - type: loadout
+      id: LoadoutUniformJumpskirtDressFire
+    - type: loadout
+      id: LoadoutUniformJumpskirtDressOrange
+    - type: loadout
+      id: LoadoutUniformJumpskirtDressYellow
+    - type: loadout
+      id: LoadoutUniformJumpskirtDressFlowergirl
+    - type: loadout
+      id: LoadoutUniformJumpskirtDressFluffy
+    - type: loadout
+      id: LoadoutUniformJumpskirtDressFormalRed
+    - type: loadout
+      id: LoadoutUniformJumpskirtDressGothic
+    - type: loadout
+      id: LoadoutUniformJumpskirtKimonoColor
+    - type: loadout
+      id: LoadoutUniformJumpskirtDressLacyGown
+    - type: loadout
+      id: LoadoutUniformJumpskirtDressLong
+    - type: loadout
+      id: LoadoutUniformJumpskirtDressLongFlared
+    - type: loadout
+      id: LoadoutUniformJumpskirtQipao
+    - type: loadout
+      id: LoadoutUniformJumpskirtQipaoSlim
+    - type: loadout
+      id: LoadoutUniformJumpskirtDressRedSwept
+    - type: loadout
+      id: LoadoutUniformJumpskirtPencilSkirtGymBra
+    - type: loadout
+      id: LoadoutUniformJumpskirtDressPuffy
+    - type: loadout
+      id: LoadoutUniformJumpskirtSailor
+    - type: loadout
+      id: LoadoutUniformJumpskirtDressSariGreen
+    - type: loadout
+      id: LoadoutUniformJumpskirtDressSariRed
+    - type: loadout
+      id: LoadoutUniformJumpskirtDressShort
+    - type: loadout
+      id: LoadoutUniformJumpskirtDressSpider
+    - type: loadout
+      id: LoadoutUniformJumpskirtDressStriped
+    - type: loadout
+      id: LoadoutUniformJumpskirtDressSundress
+    - type: loadout
+      id: LoadoutUniformJumpskirtDressSundressWhite
+    - type: loadout
+      id: LoadoutUniformJumpskirtDressVictorianBlack
+    - type: loadout
+      id: LoadoutUniformJumpskirtDressVictorianRed
+    - type: loadout
+      id: LoadoutUniformJumpskirtWaitress
+    - type: loadout
+      id: LoadoutUniformJumpskirtDressYellowSwoop
+    - type: loadout
+      id: LoadoutUniformJumpsuitSuitAmish
+    - type: loadout
+      id: LoadoutUniformJumpsuitSuitAristocratic
+    - type: loadout
+      id: LoadoutUniformJumpsuitSuitAristocraticTuxedo
+    - type: loadout
+      id: LoadoutUniformJumpsuitAscetic
+    - type: loadout
+      id: LoadoutUniformJumpsuitBarber
+    - type: loadout
+      id: LoadoutUniformJumpsuitSuitBlueBlazer
+    - type: loadout
+      id: LoadoutUniformJumpsuitDisheveled
+    - type: loadout
+      id: LoadoutUniformJumpsuitSuitRegal
+    - type: loadout
+      id: LoadoutUniformJumpsuitSuitRegalTuxedo
+    - type: loadout
+      id: LoadoutUniformJumpsuitRippedPunk
+    - type: loadout
+      id: LoadoutUniformJumpsuitSailor
+    - type: loadout
+      id: LoadoutUniformJumpsuitSuitStriped
+    - type: loadout
+      id: LoadoutUniformJumpsuitTrackpants
+    - type: loadout
+      id: LoadoutUniformJumpsuitTurtleneckGrey
+    - type: loadout
+      id: LoadoutUniformJumpsuitSuitVictorianRedBlack
+    - type: loadout
+      id: LoadoutUniformJumpsuitSuitVictorianRedVest
+    - type: loadout
+      id: LoadoutUniformJumpsuitSuitVictorianVest
+    - type: loadout
+      id: LoadoutUniformJumpsuitWaiter
+    - type: loadout
+      id: LoadoutUniformJumpsuitYogaGymBra
+    - type: loadout
+      id: LoadoutUniformJumpsuitSuitRolledSleeves
+    - type: loadout
+      id: LoadoutUniformJumpsuitBartenderGrey
+    - type: loadout
+      id: LoadoutUniformJumpsuitCheckered
+    - type: loadout
+      id: LoadoutUniformJumpsuitFlannelOveralls
+    - type: loadout
+      id: LoadoutUniformJumpsuitCowboyBrown
+    - type: loadout
+      id: LoadoutUniformJumpsuitCowboyGrey
+    - type: loadout
+      id: LoadoutUniformJumpsuitCamouflageShirt
+    - type: loadout
+      id: LoadoutUniformJumpsuitOliveSweater
+    - type: loadout
+      id: LoadoutUniformJumpsuitDesertUniform
+    - type: loadout
+      id: LoadoutUniformJumpsuitLumberjack
+    - type: loadout
+      id: LoadoutUniformJumpsuitLightBlueShirt
+    - type: loadout
+      id: LoadoutUniformJumpsuitGreyShirt
+    - type: loadout
+      id: LoadoutUniformJumpsuitFlannelJeans
+    - type: loadout
+      id: LoadoutUniformJumpsuitFlannelBlackJeans
+    - type: loadout
+      id: LoadoutUniformJumpsuitFlannelKhakis
+    - type: loadout
+      id: LoadoutUniformJumpsuitFlannelBlackKhakis

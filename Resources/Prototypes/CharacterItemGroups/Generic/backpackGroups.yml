@@ -11,3 +11,9 @@
       id: LoadoutItemBackpackSatchelLeather
     - type: loadout
       id: LoadoutBackpackMerc
+    - type: loadout
+      id: LoadoutBackpackSatchelHydroponics
+    - type: loadout
+      id: LoadoutBackpackSatchelPurse
+    - type: loadout
+      id: LoadoutBackpackSatchelPurseFlipped

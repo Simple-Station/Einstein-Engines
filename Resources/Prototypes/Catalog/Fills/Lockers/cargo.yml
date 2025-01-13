@@ -15,8 +15,6 @@
       - id: RadioHandheld
       - id: FlashlightSeclite
       - id: Pickaxe
-      - id: SeismicCharge
-        amount: 2
       - id: ClothingShoesBootsWinterMiner #Delta V: Add departmental winter boots
       - id: JetpackMiniFilled # DeltaV - Salv lost their shuttle
       - id: OreBag
@@ -45,8 +43,6 @@
       - id: RadioHandheld
       - id: FlashlightSeclite
       - id: Pickaxe
-      - id: SeismicCharge
-        amount: 2
       - id: ClothingShoesBootsWinterMiner #Delta V: Add departmental winter boots
       - id: JetpackMiniFilled # DeltaV - Salv lost their shuttle
       - id: OreBag

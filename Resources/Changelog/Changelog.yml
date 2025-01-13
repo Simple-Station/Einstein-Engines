@@ -9697,3 +9697,117 @@ Entries:
   id: 6675
   time: '2025-01-12T06:55:41.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1495
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: Disabled Shadowkin as a default roundstart-available species.
+  id: 6676
+  time: '2025-01-12T20:28:22.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1516
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Fixed Energy Swords not displaying their blade when ignited.
+  id: 6677
+  time: '2025-01-12T21:20:27.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1519
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: >-
+        Fixed Nanotrasen Representative lacking in the starter clothes
+        department
+    - type: Fix
+      message: Fixed Nanotrasen Representative lacking in the headset department
+  id: 6678
+  time: '2025-01-12T21:21:34.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1512
+- author: CerberusWolfie
+  changes:
+    - type: Add
+      message: Added pockets to Admin Ghosts.
+    - type: Add
+      message: Added tail-drag (no-hands) to Admin Ghosts.
+  id: 6679
+  time: '2025-01-12T21:23:18.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1508
+- author: Tirochora
+  changes:
+    - type: Fix
+      message: >-
+        the pew RSI's are now correct, so the sprites shouldn't be inverted.
+        That said, some maps still appear to be a little odd, so I'll have to
+        review them further at some point.
+  id: 6680
+  time: '2025-01-12T21:25:13.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1469
+- author: BlueHNT
+  changes:
+    - type: Tweak
+      message: Tweaked DeltaV armors
+  id: 6681
+  time: '2025-01-12T23:08:27.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1520
+- author: LonoferaRS
+  changes:
+    - type: Add
+      message: >-
+        A bunch of winter coats that are already in the game were added as a
+        loadouts.
+  id: 6682
+  time: '2025-01-12T23:08:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1510
+- author: BlueHNT
+  changes:
+    - type: Add
+      message: Added New Law
+    - type: Tweak
+      message: Tweaked Space Law entries
+    - type: Remove
+      message: Removed Old Law
+  id: 6683
+  time: '2025-01-12T23:09:32.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1386
+- author: Mike32oz
+  changes:
+    - type: Add
+      message: 'Station anchor on ATS '
+    - type: Add
+      message: Clean bot and two locker
+    - type: Tweak
+      message: Air distribution on cargo shuttle
+    - type: Add
+      message: two seats including a wrench and a crowbar
+    - type: Remove
+      message: Plastic airtight flats and replace them with tiny fans
+  id: 6684
+  time: '2025-01-12T23:11:11.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1457
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: 'Added a legality notice to the description of salvage''s firearms. '
+    - type: Tweak
+      message: The mining points cost of all salvage firearms have been increased by 4x
+    - type: Remove
+      message: >-
+        Salvage no longer starts with bombs in their lockers. Buy them with your
+        mining points.
+  id: 6685
+  time: '2025-01-13T05:56:48.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1521
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        The Fashion Update is here. Almost two hundred brand-new clothes have
+        been added to Loadouts, like colorable suits, dresses, coats, blazers,
+        boots, necklaces, hats, glasses (including new Security glasses), belts,
+        a purse and more!
+    - type: Add
+      message: >-
+        Pets in the loadouts are now colorable. Go wild with pink mothroaches,
+        blue mice, green cockroaches and more!
+  id: 6686
+  time: '2025-01-13T16:24:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1526
