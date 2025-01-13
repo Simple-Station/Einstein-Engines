@@ -8,6 +8,7 @@ using Content.Server.Shuttles.Systems;
 using Content.Server.Spawners.Components;
 using Content.Server.Station.Components;
 using Content.Shared.CCVar;
+using Content.Shared.Roles;
 using Robust.Server.GameObjects;
 using Robust.Shared.Configuration;
 using Robust.Shared.ContentPack;
@@ -246,25 +247,27 @@ namespace Content.IntegrationTests.Tests
                     }
 
                     var comp = entManager.GetComponent<StationJobsComponent>(station);
-                    var jobs = new List<string>(comp.SetupAvailableJobs.Keys);
+                    var jobs = new HashSet<string>(comp.SetupAvailableJobs.Keys);
 
                     // Test all availableJobs have spawnPoints
                     // This is done inside gamemap test because loading the map takes ages and we already have it.
                     var spawnPoints = entManager.EntityQuery<SpawnPointComponent>()
                         .Where(x => x.SpawnType == SpawnPointType.Job)
-                        .ToList();
+                        .Select(x => x.Job!.ID);
 
-                    foreach (var spawnPoint in spawnPoints)
+                    jobs.ExceptWith(spawnPoints);
+
+                    foreach (var jobId in jobs)
                     {
-                        if (spawnPoint.Job != null && spawnPoint.Job.JobEntity != null)
-                        {
-                            jobs.RemoveAll(x => x == spawnPoint.Job);
-                            spawnPoints.RemoveAll(x => x.Job == spawnPoint.Job);
-                        }
+                        var exists = protoManager.TryIndex<JobPrototype>(jobId, out var jobPrototype);
+
+                        if (!exists)
+                            continue;
+
+                        if (jobPrototype.JobEntity != null)
+                            jobs.Remove(jobId);
                     }
 
-                    spawnPoints = spawnPoints.Select(x => x.Job!.ID);
-                    jobs.ExceptWith(spawnPoints);
                     Assert.That(jobs, Is.Empty, $"There is no spawnpoints for {string.Join(", ", jobs)} on {mapProto}.");
                 }
 
