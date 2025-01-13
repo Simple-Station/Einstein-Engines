@@ -175,10 +175,7 @@ namespace Content.Client.Inventory
                 if (EntMan.TryGetComponent<CuffableComponent>(Owner, out var cuff) && _cuffable.GetAllCuffs(cuff).Contains(virt.BlockingEntity))
                     button.BlockedRect.MouseFilter = MouseFilterMode.Ignore;
             }
-            //Goobstation: Cards are always hidden. NO CHEATING FOR U.
-            var isCard = EntMan.HasComponent<CardComponent>(hand.HeldEntity) ||
-                         EntMan.HasComponent<CardHandComponent>(hand.HeldEntity);
-            UpdateEntityIcon(button, isCard ? _virtualHiddenEntity : hand.HeldEntity);
+            UpdateEntityIcon(button, EntMan.HasComponent<StripMenuHiddenComponent>(hand.HeldEntity) ? _virtualHiddenEntity : hand.HeldEntity);
             _strippingMenu!.HandsContainer.AddChild(button);
         }
 
@@ -217,13 +214,8 @@ namespace Content.Client.Inventory
                 && thiefComponent.IgnoreStripHidden))
                 entity = _virtualHiddenEntity;
 
-            // We don't want anyone, thief trait or otherwise, from seeing the cards.
-            var isCard = EntMan.HasComponent<CardComponent>(entity) ||
-                         EntMan.HasComponent<CardHandComponent>(entity);
-            if (entity != null && isCard)
-            {
+            if (entity != null && EntMan.HasComponent<StripMenuHiddenComponent>(entity))
                 entity = _virtualHiddenEntity;
-            }
 
 
             var button = new SlotButton(new SlotData(slotDef, container));
