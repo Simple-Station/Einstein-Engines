@@ -112,7 +112,6 @@
               collection: MetalGlassBreak
               params:
                 volume: -4
-  - type: StationAiWhitelist
 
 - type: entity
   id: AirAlarmAssembly
