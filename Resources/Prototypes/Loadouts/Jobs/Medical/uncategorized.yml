@@ -372,6 +372,19 @@
 
 # Outer
 - type: loadout
+  id: LoadoutMedicalOuterWinterCoat
+  category: JobsMedicalAUncategorized
+  cost: 0
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutMedicalOuter
+  - !type:CharacterDepartmentRequirement
+    departments:
+    - Medical
+  items:
+  - ClothingOuterWinterMed
+
+- type: loadout
   id: LoadoutMedicalOuterLabcoat
   category: JobsMedicalAUncategorized
   cost: 0

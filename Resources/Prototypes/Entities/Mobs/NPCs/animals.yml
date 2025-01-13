@@ -424,6 +424,8 @@
         1.0
       FollowRange: !type:Single
         2.0
+  - type: SentienceTarget
+    flavorKind: station-event-random-sentience-flavor-organic
 
 - type: entity
   name: glockroach
