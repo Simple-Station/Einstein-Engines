@@ -263,7 +263,7 @@ namespace Content.IntegrationTests.Tests
                         }
                     }
 
-                    spawnPoints = spawnPoints.Select(x = => x.Job!.ID);
+                    spawnPoints = spawnPoints.Select(x => x.Job!.ID);
                     jobs.ExceptWith(spawnPoints);
                     Assert.That(jobs, Is.Empty, $"There is no spawnpoints for {string.Join(", ", jobs)} on {mapProto}.");
                 }
