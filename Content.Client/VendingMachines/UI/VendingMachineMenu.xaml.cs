@@ -77,7 +77,6 @@ namespace Content.Client.VendingMachines.UI
                 vendingItem.Icon = null;
 
                 var itemName = entry.ID;
-                string? itemLabel = null;
 
                 Texture? icon = null;
                 if (_prototypeManager.TryIndex<EntityPrototype>(entry.ID, out var prototype))
@@ -89,7 +88,9 @@ namespace Content.Client.VendingMachines.UI
                     if (prototype.Components.TryGetValue(labelCompName, out var labelCompData)
                         && labelCompData.Component is LabelComponent labelComponent)
                     {
-                        itemLabel = labelComponent.CurrentLabel;
+                        var itemLabel = labelComponent.CurrentLabel;
+                        if (!string.IsNullOrEmpty(itemLabel))
+                            itemName += $" ({Loc.GetString(itemLabel)})";
                     }
                 }
 
@@ -105,12 +106,7 @@ namespace Content.Client.VendingMachines.UI
                 if (itemName.Length > longestEntry.Length)
                     longestEntry = itemName;
 
-                vendingItem.Text = $"{itemName}";
-                if (!string.IsNullOrEmpty(itemLabel))
-                {
-                    vendingItem.Text += $" ({Loc.GetString(itemLabel)})";
-                }
-                vendingItem.Text += $" [{entry.Amount}]";
+                vendingItem.Text = $"{itemName} [{entry.Amount}]";
 
                 vendingItem.Icon = icon;
                 filteredInventory.Add(i);
