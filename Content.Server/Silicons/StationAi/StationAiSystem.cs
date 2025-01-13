@@ -2,6 +2,8 @@ using System.Linq;
 using Content.Server.Chat.Managers;
 using Content.Server.Chat.Systems;
 using Content.Shared.Chat;
+using Content.Shared.Mind;
+using Content.Shared.Roles;
 using Content.Shared.Silicons.StationAi;
 using Content.Shared.StationAi;
 using Robust.Shared.Audio.Systems;
