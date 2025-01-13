@@ -35,48 +35,6 @@
     - type: loadout
       id: LoadoutServiceBartenderRepeaterNonlethal
 
-- type: loadout # Floof
-  id: LoadoutServiceBartenderBoxMagnumRubber
-  category: JobsServiceBartender
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBartenderAmmo
-    - !type:CharacterJobRequirement
-      jobs:
-        - Bartender
-  items:
-    - MagazineBoxMagnumRubber
-
-- type: loadout
-  id: LoadoutServiceBartenderArgentiNonlethal
-  category: JobsServiceBartender
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBartenderWeapon
-    - !type:CharacterJobRequirement
-      jobs:
-        - Bartender
-  items:
-    - WeaponRevolverArgentiNonlethal
-
-- type: loadout
-  id: LoadoutServiceBartenderRepeaterNonlethal
-  category: JobsServiceBartender
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBartenderWeapon
-    - !type:CharacterJobRequirement
-      jobs:
-        - Bartender
-  items:
-    - WeaponSniperRepeaterNonlethal
-
 #- type: characterItemGroup
 #  id: LoadoutBartenderEyes
 #  maxItems: 1
