@@ -11,7 +11,7 @@
   - id: Soap
     cost: 200
   - id: SeismicCharge
-    cost: 250
+    cost: 1500
   - id: WeaponGrapplingGun
     cost: 300
   # TODO: laser pointer 300, toy facehugger 300
@@ -40,17 +40,17 @@
     cost: 1000
   # TODO: lazarus injector for 1k
   - id: WeaponSniperMosinEmpty
-    cost: 750 # Literally the worst gun in the game.
+    cost: 1500
   - id: WeaponRevolverArgentiEmpty
-    cost: 1100
+    cost: 4400
   - id: WeaponRifleNovaliteC1Empty
-    cost: 1300
+    cost: 5200
   - id: ClothingBackpackDuffelSalvageConscription
     cost: 1500
   - id: WeaponRifleGestioEmpty
-    cost: 1600
+    cost: 6400
   - id: WeaponRifleSVTEmpty
-    cost: 1600
+    cost: 6400
   - id: SpaceCash1000
     cost: 2000
   # TODO: super resonator for 2500

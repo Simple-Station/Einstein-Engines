@@ -119,6 +119,12 @@
   components:
   - type: BallisticAmmoProvider
     proto: null
+  - type: ExtendDescription
+    descriptionList:
+      - description: "gun-legality-salvage"
+        fontSize: 12
+        color: "#ff4f00"
+        requireDetailRange: false
 
 - type: entity
   name: Hristov
