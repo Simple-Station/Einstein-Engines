@@ -172,7 +172,7 @@
         - !type:ReagentThreshold
           min: 15
       - !type:Drunk
-
+      
 - type: reagent
   id: Cryoxadone
   name: reagent-name-cryoxadone
@@ -1396,3 +1396,48 @@
   - !type:PlantAdjustHealth
     amount: 0.1
 
+- type: reagent
+  id : Traumoxadone
+  name: reagent-name-traumoxadone
+  group: Medicine
+  desc: reagent-desc-traumoxadone
+  physicalDesc: reagent-physical-desc-soothing
+  flavor: medicine
+  color: "#880077"
+  worksOnTheDead: true
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:Temperature
+          max: 213.0
+        damage:
+          types:
+            Blunt: -2
+            Piercing: -2
+            Slash: -2
+
+- type: reagent
+  id : Stelloxadone
+  name: reagent-name-stelloxadone
+  group: Medicine
+  desc: reagent-desc-stelloxadone
+  physicalDesc: reagent-physical-desc-soothing
+  flavor: medicine
+  color: "#FFA861"
+  worksOnTheDead: true
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:Temperature
+          max: 213.0
+        damage:
+          types:
+            Poison: -6
+            Radiation: -3
+            Cellular: 1
+          groups:
+            Brute: 3
