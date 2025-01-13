@@ -9783,3 +9783,16 @@ Entries:
   id: 6684
   time: '2025-01-12T23:11:11.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1457
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: 'Added a legality notice to the description of salvage''s firearms. '
+    - type: Tweak
+      message: The mining points cost of all salvage firearms have been increased by 4x
+    - type: Remove
+      message: >-
+        Salvage no longer starts with bombs in their lockers. Buy them with your
+        mining points.
+  id: 6685
+  time: '2025-01-13T05:56:48.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1521
