@@ -1827,9 +1827,9 @@
   description: Yeehaw, partner!
   components:
   - type: Sprite
-    sprite: _Nuclear14/Clothing/Uniforms/FalloutSuits/cowboybrown.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/cowboybrown.rsi
   - type: Clothing
-    sprite: _Nuclear14/Clothing/Uniforms/FalloutSuits/cowboybrown.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/cowboybrown.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -1838,9 +1838,9 @@
   description: Yeehaw, partner!
   components:
   - type: Sprite
-    sprite: _Nuclear14/Clothing/Uniforms/FalloutSuits/cowboygrey.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/cowboygrey.rsi
   - type: Clothing
-    sprite: _Nuclear14/Clothing/Uniforms/FalloutSuits/cowboygrey.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/cowboygrey.rsi
 
 - type: entity
   parent: ClothingUniformBase

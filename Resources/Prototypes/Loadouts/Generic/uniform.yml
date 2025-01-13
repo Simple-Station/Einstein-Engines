@@ -227,6 +227,7 @@
       inverted: true
       departments:
         - Command
+        - Security
 
 - type: loadout
   id: LoadoutUniformJumpsuitJeansGreen
@@ -1868,7 +1869,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitSuitAristocratic
   category: Uniform
-  cost: 1
+  cost: 2
   exclusive: true
   items:
     - ClothingUniformJumpsuitSuitAristocratic
@@ -1883,7 +1884,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitSuitAristocraticTuxedo
   category: Uniform
-  cost: 1
+  cost: 2
   exclusive: true
   items:
     - ClothingUniformJumpsuitSuitAristocraticTuxedo
@@ -1925,7 +1926,6 @@
       inverted: true
       departments:
         - Command
-        - Security
 
 - type: loadout
   id: LoadoutUniformJumpsuitSuitBlueBlazer
@@ -1963,7 +1963,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitSuitRegal
   category: Uniform
-  cost: 1
+  cost: 2
   exclusive: true
   items:
     - ClothingUniformJumpsuitSuitRegal
@@ -1978,7 +1978,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitSuitRegalTuxedo
   category: Uniform
-  cost: 1
+  cost: 2
   exclusive: true
   items:
     - ClothingUniformJumpsuitSuitRegalTuxedo
@@ -2266,6 +2266,7 @@
       inverted: true
       departments:
         - Command
+        - Security
 
 - type: loadout
   id: LoadoutUniformJumpsuitDesertUniform
@@ -2300,7 +2301,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitLightBlueShirt
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpsuitLightBlueShirt
@@ -2311,6 +2312,7 @@
       inverted: true
       departments:
         - Command
+        - Security
 
 - type: loadout
   id: LoadoutUniformJumpsuitGreyShirt
@@ -2326,6 +2328,7 @@
       inverted: true
       departments:
         - Command
+        - Security
 
 - type: loadout
   id: LoadoutUniformJumpsuitFlannelJeans
