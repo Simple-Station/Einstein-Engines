@@ -272,3 +272,19 @@
   - type: Sprite
     sprite: Clothing/Neck/Cloaks/pan.rsi
 
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakRedHood
+  name: Red Cloak
+  description: A cloak made for travel and comfort. Slightly smells of cherry pie?
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Cloaks/redhood.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodRedHood
+    requiredSlot:
+    - neck
+    slot: head
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}

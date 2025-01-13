@@ -518,3 +518,20 @@
     sprite: Clothing/Head/Hoods/Coat/hoodweb.rsi
   - type: Clothing
     sprite: Clothing/Head/Hoods/Coat/hoodweb.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatHoodRedHood
+  name: Red Hood
+  description: A hood of a red cloak, made to keep the harsh light out of a traveler's eyes. Sometimes it sparkles in the light of the sun.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/redhood.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/redhood.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+  - type: HideLayerClothing
+    slots:
+    - Hair

@@ -99,6 +99,9 @@
     equipDelay: 0.5
     unequipDelay: 6
   - type: HeadCage
+  - type: Tag
+    tags:
+    - ForensicBeltEquip
 
 - type: entity
   parent: ClothingHeadTinfoil

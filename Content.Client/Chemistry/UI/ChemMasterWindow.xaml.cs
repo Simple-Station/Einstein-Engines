@@ -103,7 +103,7 @@ namespace Content.Client.Chemistry.UI
         private List<ReagentButton> CreateReagentTransferButtons(ReagentId reagent, bool isBuffer, bool addReagentButtons)
         {
             if (!addReagentButtons)
-                return new List<ReagentButton>(); // Return an empty list if reagentTransferButton creation is disabled.
+                return new(); // Return an empty list if reagentTransferButton creation is disabled.
 
             var buttons = new List<ReagentButton>();
             var names = Enum.GetNames<ChemMasterReagentAmount>();
@@ -111,7 +111,8 @@ namespace Content.Client.Chemistry.UI
 
             for (int i = 0; i < names.Length; i++)
             {
-                var name = names[i];
+                var isNumber = int.TryParse(names[i].Substring(1), out int number);
+                var name = isNumber ? number.ToString() : names[i];
                 var reagentAmount = values[i];
 
                 var reagentTransferButton = MakeReagentButton(
