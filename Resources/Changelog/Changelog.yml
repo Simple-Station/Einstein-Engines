@@ -9811,3 +9811,12 @@ Entries:
   id: 6686
   time: '2025-01-13T16:24:56.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1526
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Attempted to fix a crash related to antag preferences saving multiple
+        times.
+  id: 6687
+  time: '2025-01-13T18:20:20.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1523
