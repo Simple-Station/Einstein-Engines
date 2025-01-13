@@ -149,3 +149,98 @@
     price: 75
   - type: Tag
     tags: [ ]
+
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesHighHeels
+  name: high heels
+  description: These heels help you sashay into the station like it's a catwalk.
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Misc/high_heels.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Misc/high_heels.rsi
+  - type: HideLayerClothing
+    force: true
+    slots:
+    - LFoot
+    - RFoot
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepHighHeels
+
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesHighHeelsLong
+  name: long high heels
+  description: Slay the house down boots!
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Misc/long_high_heels.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Misc/long_high_heels.rsi
+  - type: HideLayerClothing
+    force: true
+    slots:
+    - LFoot
+    - RFoot
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepHighHeels
+
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesFlats
+  name: flats
+  description: Fashionable and comfortable flats.
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Misc/flats.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Misc/flats.rsi
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepHighHeels
+
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesSkater
+  name: skater shoes
+  description: A pair of wide shoes with thick soles. Designed for skating.
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Misc/skater.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Misc/skater.rsi
+
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesSandals
+  name: sandals
+  description: A pair of simple but stylish sandals.
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Sandals/sandals.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Sandals/sandals.rsi
+
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesSandalsFlipFlops
+  name: flip flops
+  description: A pair of flip flops. For those not afraid to show a little ankle.
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Sandals/flipflops.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Sandals/flipflops.rsi
+
+- type: entity
+  parent: ClothingShoesSandalsFlipFlops
+  id: ClothingShoesSandalsFlipFlopsAlt
+  description: A pair of flip flops. The strap colors are lighter than the usual flip flops.
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Sandals/flipflops_alt.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Sandals/flipflops_alt.rsi

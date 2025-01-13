@@ -1329,6 +1329,8 @@
     - map: [ "gloves" ]
     - map: [ "shoes" ]
     - map: [ "ears" ]
+    - map: [ "innerBelt" ] # Einstein Engines
+    - map: [ "innerNeck" ] # Einstein Engines
     - map: [ "outerClothing" ]
     - map: [ "eyes" ]
     - map: [ "belt" ]
