@@ -149,6 +149,7 @@
   - type: InteractionVerbs
     allowedVerbs:
     - KnockOn
+  - type: StationAiWhitelist
 
 - type: entity
   id: BaseSecureWindoor
