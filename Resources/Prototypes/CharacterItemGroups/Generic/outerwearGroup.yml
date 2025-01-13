@@ -114,9 +114,9 @@
     - type: loadout
       id: LoadoutOuterCoatVictorianRed
     - type: loadout
-      id: LoadoutOuterCardigan
+      id: LoadoutOuterCardiganBasic
     - type: loadout
-      id: LoadoutOuterCardiganOpened
+      id: LoadoutOuterCardiganBasicOpened
     - type: loadout
       id: LoadoutOuterCardiganArgyle
     - type: loadout
@@ -132,9 +132,9 @@
     - type: loadout
       id: LoadoutOuterCowboyDuster
     - type: loadout
-      id: LoadoutOuterBlazer
+      id: LoadoutOuterBlazerBasic
     - type: loadout
-      id: LoadoutOuterBlazerOpened
+      id: LoadoutOuterBlazerBasicOpened
     - type: loadout
       id: LoadoutOuterBlazerLong
     - type: loadout

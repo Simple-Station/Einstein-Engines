@@ -567,7 +567,7 @@
       group: LoadoutOuter
 
 - type: loadout
-  id: LoadoutOuterCardigan
+  id: LoadoutOuterCardiganBasic
   category: Outer
   cost: 0
   customColorTint: true
@@ -578,7 +578,7 @@
       group: LoadoutOuter
 
 - type: loadout
-  id: LoadoutOuterCardiganOpened
+  id: LoadoutOuterCardiganBasicOpened
   category: Outer
   cost: 0
   customColorTint: true
@@ -666,9 +666,9 @@
       group: LoadoutOuter
 
 - type: loadout
-  id: LoadoutOuterBlazer
+  id: LoadoutOuterBlazerBasic
   category: Outer
-  cost: 0
+  cost: 1
   customColorTint: true
   items:
     - ClothingOuterBlazer
@@ -677,9 +677,9 @@
       group: LoadoutOuter
 
 - type: loadout
-  id: LoadoutOuterBlazerOpened
+  id: LoadoutOuterBlazerBasicOpened
   category: Outer
-  cost: 0
+  cost: 1
   customColorTint: true
   items:
     - ClothingOuterBlazerOpened
@@ -745,7 +745,7 @@
 - type: loadout
   id: LoadoutOuterBlazerPosh
   category: Outer
-  cost: 0
+  cost: 1
   items:
     - ClothingOuterBlazerPosh
   requirements:
@@ -777,7 +777,7 @@
 - type: loadout
   id: LoadoutOuterCoatAsymmetric
   category: Outer
-  cost: 0
+  cost: 1
   customColorTint: true
   items:
     - ClothingOuterCoatAsymmetric
@@ -788,7 +788,7 @@
 - type: loadout
   id: LoadoutOuterCoatAsymmetricOpened
   category: Outer
-  cost: 0
+  cost: 1
   customColorTint: true
   items:
     - ClothingOuterCoatAsymmetricOpened
@@ -821,7 +821,7 @@
 - type: loadout
   id: LoadoutOuterVestColorable
   category: Outer
-  cost: 0
+  cost: 1
   customColorTint: true
   items:
     - ClothingOuterVestColorable
@@ -832,7 +832,7 @@
 - type: loadout
   id: LoadoutOuterVestThick
   category: Outer
-  cost: 0
+  cost: 1
   customColorTint: true
   items:
     - ClothingOuterVestThick

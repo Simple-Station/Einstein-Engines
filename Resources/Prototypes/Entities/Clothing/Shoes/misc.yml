@@ -234,3 +234,13 @@
     sprite: Clothing/Shoes/Sandals/flipflops.rsi
   - type: Clothing
     sprite: Clothing/Shoes/Sandals/flipflops.rsi
+
+- type: entity
+  parent: ClothingShoesSandalsFlipFlops
+  id: ClothingShoesSandalsFlipFlopsAlt
+  description: A pair of flip flops. The strap colors are lighter than the usual flip flops.
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Sandals/flipflops_alt.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Sandals/flipflops_alt.rsi
