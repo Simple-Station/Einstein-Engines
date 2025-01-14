@@ -38,6 +38,6 @@ public abstract partial class SharedMoverController
             return;
 
         mover.DefaultSprinting = _netConfig.GetClientCVar(args.SenderSession.Channel, CCVars.DefaultWalk);
-        WalkingAlert(uid, mover);
+        WalkingAlert((uid, mover));
     }
 }
