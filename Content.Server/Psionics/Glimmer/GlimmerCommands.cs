@@ -29,7 +29,7 @@ public sealed class GlimmerSetCommand : IConsoleCommand
     {
         if (args.Length != 1
             || !float.TryParse(args[0], out var glimmerValue)
-            || glimmerValue > 999 || glimmerValue < 0)
+            || glimmerValue >= 1000 || glimmerValue < 0)
             return;
 
         var entMan = IoCManager.Resolve<IEntityManager>();
