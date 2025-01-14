@@ -9862,3 +9862,10 @@ Entries:
   id: 6689
   time: '2025-01-14T06:08:50.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1525
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: Fixes arrivals destroying all nearby doors/walls/etc.
+  id: 6690
+  time: '2025-01-14T08:47:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1539
