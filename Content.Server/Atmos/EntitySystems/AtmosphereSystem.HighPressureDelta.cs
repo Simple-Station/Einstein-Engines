@@ -114,7 +114,7 @@ public sealed partial class AtmosphereSystem
             if (nextTileDirection != AtmosDirection.Invalid
                 && nextTileDirection != tile.PressureDirection)
             {
-                throwDirection = (throwDirection + nextTileDirection.ToAngle().ToVec()) / 2;
+                throwDirection = throwDirection + nextTileDirection.ToAngle().ToVec();
                 differentiatedPressure += tile.AdjacentTiles[tile.PressureDirection.ToIndex()]!.PressureDifference * frameTime;
             }
         }
