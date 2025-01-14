@@ -21,6 +21,8 @@ using Content.Shared.Mobs;
 using Content.Shared.Damage.Components;
 using Content.Server.Administration.Commands;
 using Content.Shared.NPC.Systems;
+using Robust.Shared.Utility;
+using Robust.Shared.Reflection;
 
 namespace Content.Server.Traits;
 
@@ -459,9 +461,14 @@ public sealed partial class TraitModifyMobState : TraitFunction
 {
     // Three-State Booleans my beloved.
     // :faridabirb.png:
+    [Dependency] private readonly IReflectionManager _wehavereflectionathome = default!;
 
+    public TraitModifyMobState() : base()
+    {
+        IoCManager.InjectDependencies(this);
+    }
     [DataField()]
-    public Dictionary<MobState, TraitModifyMobStateParams> Params;
+    public Dictionary<string, TraitModifyMobStateParams> Params;
 
     public override void OnPlayerSpawn(EntityUid uid,
         IComponentFactory factory,
@@ -472,7 +479,9 @@ public sealed partial class TraitModifyMobState : TraitFunction
             return;
 
         foreach (var pair in Params) {
-            MobStateParametersPrototype current = comp.MobStateParams[pair.Key];
+            DebugTools.Assert(_wehavereflectionathome.TryParseEnumReference($"enum.MobState.{pair.Key}", out var e), $"MobState.{pair.Key} does not exist.");
+            MobState state = (MobState) e;
+            MobStateParametersPrototype current = comp.MobStateParams[state];
             var p = pair.Value;
 
             current.Moving = p.Moving ?? current.Moving;
