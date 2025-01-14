@@ -9820,3 +9820,12 @@ Entries:
   id: 6687
   time: '2025-01-13T18:20:20.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1523
+- author: CerberusWolfie
+  changes:
+    - type: Fix
+      message: Fixed the NTR Stamp Texture on Paper
+    - type: Fix
+      message: Fixed name of Senior Officer, CBURN, and Deathsquad.
+  id: 6688
+  time: '2025-01-14T01:28:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1534
