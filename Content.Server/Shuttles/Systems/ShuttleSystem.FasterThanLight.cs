@@ -406,17 +406,6 @@ public sealed partial class ShuttleSystem
                 clippedAudio.Value.Component.Flags |= AudioFlags.NoOcclusion;
         }
 
-        // Leave audio at the old spot
-        // Just so we don't clip
-        if (fromMapUid != null && TryComp(comp.StartupStream, out AudioComponent? startupAudio))
-        {
-            var clippedAudio = _audio.PlayStatic(_startupSound, Filter.Broadcast(),
-                new EntityCoordinates(fromMapUid.Value, _maps.GetGridPosition(entity.Owner)), true, startupAudio.Params);
-
-            _audio.SetPlaybackPosition(clippedAudio, entity.Comp1.StartupTime);
-            clippedAudio.Value.Component.Flags |= AudioFlags.NoOcclusion;
-        }
-
         // Offset the start by buffer range just to avoid overlap.
         var ftlStart = new EntityCoordinates(ftlMap, new Vector2(_index + width / 2f, 0f) - shuttleCenter);
 
