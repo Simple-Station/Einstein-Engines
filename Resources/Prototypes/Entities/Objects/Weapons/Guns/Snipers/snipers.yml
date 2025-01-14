@@ -143,12 +143,15 @@
     capacity: 5
     proto: CartridgeAntiMateriel
   - type: Telescope
+  - type: GunRequiresWield # DeltaV - Firing an antimateriel rifle is.. incredibly unweildy with one hand.
+  - type: Gun # DeltaV
+    fireRate: 0.5
 
 - type: entity
   name: musket
   parent: BaseWeaponSniper
   id: Musket
-  description: This should've been in a museum long before you were born. Uses .60 anti-materiel ammo.
+  description: This should've been in a museum long before you were born. Uses musket catridges. # Delta V - swapping to our crafted musket ammo
   components:
   - type: Sharp
   - type: Item
@@ -169,9 +172,9 @@
   - type: BallisticAmmoProvider
     whitelist:
       tags:
-      - CartridgeAntiMateriel
+      - CartridgeMusket # DeltaV - musket instead of anti materiel ammo
     capacity: 1
-    proto: CartridgeAntiMateriel
+    proto: CartridgeMusket # DeltaV
   - type: MeleeWeapon
     range: 1.75
     damage:
@@ -201,7 +204,7 @@
   name: flintlock pistol
   parent: BaseWeaponSniper
   id: WeaponPistolFlintlock
-  description: A pirate's companion. Yarrr! Uses .60 anti-materiel ammo.
+  description: A pirate's companion. Yarrr! Uses musket cartridges. # Delta V - Ditto the above
   components:
   - type: Gun
     minAngle: 0
@@ -220,9 +223,9 @@
   - type: BallisticAmmoProvider
     whitelist:
       tags:
-        - CartridgeAntiMateriel
+      - CartridgeMusket # DeltaV - musket instead of anti materiel ammo
     capacity: 1
-    proto: CartridgeAntiMateriel
+    proto: CartridgeMusket # DeltaV
   - type: StaticPrice
     price: 0
   - type: MeleeWeapon
