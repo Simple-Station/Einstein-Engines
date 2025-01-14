@@ -115,6 +115,7 @@
   id: Firelock
   parent: BaseFirelock
   components:
+  - type: StationAiWhitelist
   - type: ContainerContainer
     containers:
       board: !type:Container
@@ -132,6 +133,7 @@
   parent: Firelock
   name: glass firelock
   components:
+    - type: StationAiWhitelist
     - type: Sprite
       sprite: Structures/Doors/Airlocks/Glass/firelock.rsi
     - type: Occluder
@@ -157,6 +159,7 @@
   parent: Firelock
   name: firelock
   components:
+    - type: StationAiWhitelist
     - type: Sprite
       sprite: Structures/Doors/edge_door_hazard.rsi
       snapCardinals: false
