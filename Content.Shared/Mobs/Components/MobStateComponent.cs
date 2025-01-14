@@ -14,6 +14,8 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Runtime.CompilerServices;
 
+namespace Content.Shared.Mobs.Components;
+
 /// <summary>
 ///     When attached to an <see cref="DamageableComponent"/>,
 ///     this component will handle critical and death behaviors for mobs.
@@ -26,8 +28,14 @@ using System.Runtime.CompilerServices;
 public sealed partial class MobStateComponent : Component
 {
 
-    [DataField("mobStateParams", required: true, customTypeSerializer: typeof(PrototypeIdDictionarySerializer<MobStateParametersPrototype>))]
-    public Dictionary<string, string> InitMobStateParams;
+    [DataField("mobStateParams", customTypeSerializer: typeof(PrototypeIdDictionarySerializer<MobStateParametersPrototype>))]
+    public Dictionary<string, string> InitMobStateParams = new()
+    {
+        {"Alive", "AliveDefault" },
+        {"SoftCritical", "SoftCriticalDefault" },
+        {"Critical", "CriticalDefault" },
+        {"Dead", "DeadDefault" }
+    };
 
     [AutoNetworkedField]
     public Dictionary<MobState, MobStateParametersPrototype> MobStateParams = new();
@@ -147,7 +155,7 @@ public struct MobStateParametersOverride
         Throwing, PickingUp, Pulling, Attacking, Using, Pointing,
         ConsciousAttemptsAllowed,
         CanEquipSelf, CanUnequipSelf, CanEquipOther, CanUnequipOther,
-        ForceDown, Incapacitated, CanBreathe;  
+        ForceDown, Incapacitated, CanBreathe;
 
     [DataField]
     public float? OxyDamageOverlay;
@@ -212,4 +220,3 @@ public class PrototypeIdDictionarySerializer<TPrototype> :
         IDependencyCollection dependencies, ISerializationContext? context = null) =>
         PrototypeSerializer.Validate(serializationManager, node, dependencies, context);
 }
-

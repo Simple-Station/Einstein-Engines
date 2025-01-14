@@ -100,13 +100,8 @@ public partial class MobStateSystem
 
     private void CheckConcious(Entity<MobStateComponent> ent, ref ConsciousAttemptEvent args)
     {
-        switch (ent.Comp.CurrentState)
-        {
-            case MobState.Dead:
-            case MobState.Critical:
-                args.Cancelled = true;
-                break;
-        }
+        if (!ent.Comp.ConsciousAttemptAllowed())
+            args.Cancel();
     }
 
     private void OnStateExitSubscribers(EntityUid target, MobStateComponent component, MobState state)
@@ -243,16 +238,10 @@ public partial class MobStateSystem
 
     private void OnCombatModeShouldHandInteract(EntityUid uid, MobStateComponent component, ref CombatModeShouldHandInteractEvent args)
     {
-        if (component.CurrentState is MobState.Alive
-            || component.CurrentState is MobState.Critical
-            && component.AllowHandInteractWhileCrit
-            || component.CurrentState is MobState.SoftCritical
-            && component.AllowHandInteractWhileSoftCrit
-            || component.CurrentState is MobState.Dead
-            && component.AllowHandInteractWhileDead)
-            return;
-
-        args.Cancelled = true;
+        // Disallow empty-hand-interacting in combat mode
+        // for non-dead mobs
+        if (!IsDead(uid, component))
+            args.Cancelled = true;
     }
 
     private void OnAttemptPacifiedAttack(Entity<MobStateComponent> ent, ref AttemptPacifiedAttackEvent args)

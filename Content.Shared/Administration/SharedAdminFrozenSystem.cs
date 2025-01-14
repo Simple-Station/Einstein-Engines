@@ -37,7 +37,7 @@ public abstract class SharedAdminFrozenSystem : EntitySystem
 
     private void OnInteractAttempt(Entity<AdminFrozenComponent> ent, ref InteractionAttemptEvent args)
     {
-        args.Cancelled = true;
+        args.Cancel();
     }
 
     private void OnSpeakAttempt(EntityUid uid, AdminFrozenComponent component, SpeakAttemptEvent args)

@@ -403,12 +403,6 @@ public sealed partial class TraitModifyMobThresholds : TraitFunction
     public int SoftCritThresholdModifier;
 
     [DataField, AlwaysPushInheritance]
-    public int CritThresholdModifier;
-
-    [DataField, AlwaysPushInheritance]
-    public int SoftCritThresholdModifier;
-
-    [DataField, AlwaysPushInheritance]
     public int DeadThresholdModifier;
 
     public override void OnPlayerSpawn(EntityUid uid,
@@ -432,13 +426,6 @@ public sealed partial class TraitModifyMobThresholds : TraitFunction
             var critThreshold = thresholdSystem.GetThresholdForState(uid, MobState.Critical, threshold);
             if (critThreshold != 0)
                 thresholdSystem.SetMobStateThreshold(uid, critThreshold + CritThresholdModifier, MobState.Critical);
-        }
-
-        if (SoftCritThresholdModifier != 0)
-        {
-            var softCritThreshold = thresholdSystem.GetThresholdForState(uid, MobState.SoftCritical, threshold);
-            if (softCritThreshold != 0)
-                thresholdSystem.SetMobStateThreshold(uid, softCritThreshold + SoftCritThresholdModifier, MobState.SoftCritical);
         }
 
         if (DeadThresholdModifier != 0)

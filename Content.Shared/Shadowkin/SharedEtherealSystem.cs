@@ -164,7 +164,7 @@ public abstract class SharedEtherealSystem : EntitySystem
             || HasComp<EtherealComponent>(args.Target))
             return;
 
-        args.Cancelled = true;
+        args.Cancel();
         if (_gameTiming.InPrediction)
             return;
 

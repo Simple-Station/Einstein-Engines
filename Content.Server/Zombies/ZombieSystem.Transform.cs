@@ -70,7 +70,7 @@ namespace Content.Server.Zombies
         /// </summary>
         private void OnDamageChanged(EntityUid uid, ZombifyOnDeathComponent component, MobStateChangedEvent args)
         {
-            if (args.NewMobState == MobState.Dead)
+            if (args.IsDead())
             {
                 ZombifyEntity(uid, args.Component);
             }

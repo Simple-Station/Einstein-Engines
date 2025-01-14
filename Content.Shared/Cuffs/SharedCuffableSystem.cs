@@ -95,7 +95,7 @@ namespace Content.Shared.Cuffs
         private void CheckInteract(Entity<CuffableComponent> ent, ref InteractionAttemptEvent args)
         {
             if (!ent.Comp.CanStillInteract)
-                args.Cancelled = true;
+                args.Cancel();
         }
 
         private void OnUncuffAttempt(ref UncuffAttemptEvent args)

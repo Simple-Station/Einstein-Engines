@@ -81,7 +81,7 @@ public abstract class SharedStunSystem : EntitySystem
 
     private void OnAttemptInteract(Entity<StunnedComponent> ent, ref InteractionAttemptEvent args)
     {
-        args.Cancelled = true;
+        args.Cancel();
     }
 
     private void OnMobStateChanged(EntityUid uid, MobStateComponent component, MobStateChangedEvent args)

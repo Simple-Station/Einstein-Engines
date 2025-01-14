@@ -202,12 +202,12 @@ public sealed class MoodSystem : EntitySystem
         if (!_config.GetCVar(CCVars.MoodEnabled))
             return;
 
-        if (args.NewMobState == MobState.Dead && args.OldMobState != MobState.Dead)
+        if (args.IsDead() && !args.WasDead())
         {
             var ev = new MoodEffectEvent("Dead");
             RaiseLocalEvent(uid, ev);
         }
-        else if (args.OldMobState == MobState.Dead && args.NewMobState != MobState.Dead)
+        else if (args.WasDead() && !args.IsDead())
         {
             var ev = new MoodRemoveEffectEvent("Dead");
             RaiseLocalEvent(uid, ev);

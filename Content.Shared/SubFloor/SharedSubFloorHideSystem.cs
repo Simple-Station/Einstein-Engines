@@ -49,7 +49,7 @@ namespace Content.Shared.SubFloor
         {
             // No interactions with entities hidden under floor tiles.
             if (component.BlockInteractions && component.IsUnderCover)
-                args.Cancelled = true;
+                args.Cancel();
         }
 
         private void OnSubFloorStarted(EntityUid uid, SubFloorHideComponent component, ComponentStartup _)

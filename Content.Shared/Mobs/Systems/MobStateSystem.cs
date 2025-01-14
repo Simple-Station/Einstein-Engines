@@ -83,14 +83,6 @@ public partial class MobStateSystem : EntitySystem
         return component.CurrentState == MobState.Dead;
     }
 
-    public bool IsSoftCritical(EntityUid target, MobStateComponent? component = null)
-    {
-        if (!Resolve(target, ref component, false))
-            return false;
-
-        return component.CurrentState == MobState.SoftCritical;
-    }
-
     /// <summary>
     ///  Check if a Mob is incapacitated in its current MobState.
     /// </summary>
