@@ -9811,3 +9811,54 @@ Entries:
   id: 6686
   time: '2025-01-13T16:24:56.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1526
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Attempted to fix a crash related to antag preferences saving multiple
+        times.
+  id: 6687
+  time: '2025-01-13T18:20:20.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1523
+- author: CerberusWolfie
+  changes:
+    - type: Fix
+      message: Fixed the NTR Stamp Texture on Paper
+    - type: Fix
+      message: Fixed name of Senior Officer, CBURN, and Deathsquad.
+  id: 6688
+  time: '2025-01-14T01:28:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1534
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: Added Holopads (unmapped)
+    - type: Add
+      message: Intellicards are now useful for removing/adding a Station AI's brain.
+    - type: Add
+      message: Added the Communications Console to Station AI actions.
+    - type: Add
+      message: AI now has a warp point.
+    - type: Add
+      message: Added more things for the AI to press.
+    - type: Add
+      message: More AI laws have been added.
+    - type: Fix
+      message: Fixed the mail system
+    - type: Fix
+      message: Fixed AI actions
+    - type: Fix
+      message: >-
+        Fixed invalid spawns for station AI breaking and ruining your ability to
+        play it.
+    - type: Fix
+      message: >-
+        The Station AI's name will now properly send in "arrived to the station"
+        announcements.
+    - type: Fix
+      message: Changed the CPR sound to simply not loop until fixed.
+    - type: Fix
+      message: Fixed unlocalized messages being sent for the random sentience event.
+  id: 6689
+  time: '2025-01-14T06:08:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1525

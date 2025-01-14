@@ -22,7 +22,7 @@ public sealed class ContainerSpawnPointSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<PlayerSpawningEvent>(HandlePlayerSpawning, before: new []{ typeof(SpawnPointSystem) });
+        SubscribeLocalEvent<PlayerSpawningEvent>(HandlePlayerSpawning, before: [ typeof(SpawnPointSystem) ]);
     }
 
     public void HandlePlayerSpawning(PlayerSpawningEvent args)
@@ -30,9 +30,14 @@ public sealed class ContainerSpawnPointSystem : EntitySystem
         if (args.SpawnResult != null)
             return;
 
+        JobPrototype? jobProto = null;
+
         // If it's just a spawn pref check if it's for cryo (silly).
         if (args.HumanoidCharacterProfile?.SpawnPriority != SpawnPriorityPreference.Cryosleep &&
-            (!_proto.TryIndex(args.Job?.Prototype, out var jobProto) || jobProto.JobEntity == null))
+            (!_proto.TryIndex(args.Job?.Prototype, out jobProto) || jobProto.JobEntity == null))
+            return;
+
+        if (jobProto == null && !_proto.TryIndex(args.Job?.Prototype, out jobProto))
             return;
 
         var query = EntityQueryEnumerator<ContainerSpawnPointComponent, ContainerManagerComponent, TransformComponent>();
@@ -63,17 +68,15 @@ public sealed class ContainerSpawnPointSystem : EntitySystem
                 continue;
             }
 
-            if (_gameTicker.RunLevel == GameRunLevel.InRound && spawnPoint.SpawnType == SpawnPointType.LateJoin)
-            {
+            if (_gameTicker.RunLevel == GameRunLevel.InRound
+                && spawnPoint.SpawnType == SpawnPointType.LateJoin
+                && jobProto.JobEntity == null)
                 possibleContainers.Add((uid, spawnPoint, container, xform));
-            }
 
             if (_gameTicker.RunLevel != GameRunLevel.InRound &&
                 spawnPoint.SpawnType == SpawnPointType.Job &&
                 (args.Job == null || spawnPoint.Job == args.Job.Prototype))
-            {
                 possibleContainers.Add((uid, spawnPoint, container, xform));
-            }
         }
 
         if (possibleContainers.Count == 0)

@@ -7,6 +7,7 @@
     snap:
     - Wallmount
   components:
+  - type: StationAiWhitelist
   - type: WallMount
   - type: ApcPowerReceiver
   - type: Electrified
@@ -111,7 +112,6 @@
               collection: MetalGlassBreak
               params:
                 volume: -4
-  - type: StationAiWhitelist
 
 - type: entity
   id: AirAlarmAssembly
