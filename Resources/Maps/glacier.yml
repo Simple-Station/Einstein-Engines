@@ -45936,6 +45936,18 @@ entities:
     - type: Transform
       pos: 36.74322,44.429073
       parent: 2
+- proto: ClothingOuterWinterCentcom
+  entities:
+  - uid: 17499
+    components:
+    - type: Transform
+      pos: 32.888283,41.295105
+      parent: 2
+  - uid: 17500
+    components:
+    - type: Transform
+      pos: 36.825783,45.31073
+      parent: 2
 - proto: ClothingOuterWinterChem
   entities:
   - uid: 6216
@@ -96429,6 +96441,13 @@ entities:
     components:
     - type: Transform
       pos: -57.5,2.5
+      parent: 2
+- proto: SpawnPointMagistrate
+  entities:
+  - uid: 17498
+    components:
+    - type: Transform
+      pos: 32.5,41.5
       parent: 2
 - proto: SpawnPointMailCarrier
   entities:

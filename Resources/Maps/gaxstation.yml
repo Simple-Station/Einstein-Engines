@@ -110561,6 +110561,13 @@ entities:
     - type: Transform
       pos: 10.5,77.5
       parent: 2
+- proto: SpawnPointMagistrate
+  entities:
+  - uid: 20424
+    components:
+    - type: Transform
+      pos: 86.5,35.5
+      parent: 2
 - proto: SpawnPointMailCarrier
   entities:
   - uid: 14805
@@ -130171,7 +130178,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -87350.95
+      secondsUntilStateChange: -87406.4
       state: Opening
   - uid: 18112
     components:
