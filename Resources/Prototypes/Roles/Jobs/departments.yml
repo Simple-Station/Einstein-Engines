@@ -58,10 +58,19 @@
   - ERTEngineer
   - DeathSquad
   - AdministrativeAssistant # Delta V - Administrative Assistant, see Resources/Prototypes/Nyanotrasen/Roles/Jobs/Command/admin_assistant.yml
-  - BlueshieldOfficer # Goobstation
-  - NanotrasenRepresentative # Goobstation
   primary: false
   weight: 100
+
+- type: department
+  id: Dignitary
+  description: department-Dignitary-description
+  color: "#33FE6D"
+  roles:
+  - BlueshieldOfficer # Goobstation
+  - NanotrasenRepresentative # Goobstation
+  - Magistrate # Goobstation
+  primary: false
+  weight: 101
 
 - type: department
   id: Engineering

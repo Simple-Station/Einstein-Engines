@@ -1,0 +1,51 @@
+- type: job
+  id: Magistrate
+  name: Magistrate
+  description: "Ensure Space Law is being followed, Uphold Justice and Legality, Hold Hearings and Trials, Follow SOP, Ensure Command is Following Space Law."
+  playTimeTracker: JobMagistrate
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Command
+      min: 54000 # 15 hours
+    - !type:DepartmentTimeRequirement
+      department: Security
+      min: 54000 # 15 hours
+  weight: 20
+  startingGear: MagistrateGear
+  icon: "JobIconMagistrate"
+  requireAdminNotify: true
+  joinNotifyCrew: true
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  accessGroups:
+  - CentralCommand
+  - Command
+  - Brig
+  - Security
+  - Armory
+  - Maintenance
+  - Service
+  - External
+  - Detective
+  - Corpsman
+  - Cryogenics
+  - Engineering
+  - Medical
+  - Research
+  - Magistrate
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+      - type: CommandStaff
+
+- type: startingGear
+  id: MagistrateGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMagistrate
+    shoes: ClothingShoesColorBlack
+    gloves: ClothingHandsGlovesColorWhite
+    id: CentcomPDA
+    ears: ClothingHeadsetCentCom
+    # pocket1: UniqueMagistrateLockerTeleporter # TODO: ADD BACK (REMOVED FOR TESTING)
