@@ -10,6 +10,7 @@ public sealed class HeirloomSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _gameTiming = default!;
 
+    private const long HeirloomRepeatDuration = 60;
     private TimeSpan _nextUpdate;
 
 
@@ -34,15 +35,14 @@ public sealed class HeirloomSystem : EntitySystem
             var moodlet = comp.Moodlet;
 
             if (children.Any(c => c != comp.Heirloom))
-                moodlet = "HeirloomLost";
+                continue;
 
             var ev = new MoodEffectEvent(moodlet);
             RaiseLocalEvent(uid, ev);
         }
 
         query.Dispose();
-
-        _nextUpdate = _gameTiming.CurTime + TimeSpan.FromSeconds(30);
+        _nextUpdate = _gameTiming.CurTime + TimeSpan.FromSeconds(HeirloomRepeatDuration);
     }
 
     private IEnumerable<EntityUid> RecursiveGetAllChildren(EntityUid uid)
