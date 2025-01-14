@@ -72,7 +72,7 @@ petting-success-syndicate-cyborg = You pet {THE($target)} on {POSS-ADJ($target)}
 petting-success-derelict-cyborg = You pet {THE($target)} on {POSS-ADJ($target)} rusty metal head.
 petting-success-recycler = You pet {THE($target)} on {POSS-ADJ($target)} mildly threatening steel exterior.
 petting-success-station-ai = You pet {THE($target)} on {POSS-ADJ($target)} cold, square screen.
-petting-success-gladiabot = You pet {THE($target)} on {POSS-ADJ($target)} vicious metal head.
+petting-success-gladiabot = You pet {THE($target)} on {POSS-ADJ($target)} vicious cardboard head.
 
 petting-failure-honkbot = You reach out to pet {THE($target)}, but {SUBJECT($target)} honks in refusal!
 petting-failure-cleanbot = You reach out to pet {THE($target)}, but {SUBJECT($target)} {CONJUGATE-BE($target)} busy mopping!
