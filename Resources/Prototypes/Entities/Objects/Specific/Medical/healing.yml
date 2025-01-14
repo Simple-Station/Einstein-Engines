@@ -462,7 +462,7 @@
 - type: entity
   parent: PillCanister
   id: PillCanisterPotassiumIodide
-  suffix: Potassium iodide 10u, 5
+  suffix: Potassium iodide, 5
   components:
   - type: Label
     currentLabel: potassium iodide 10u
@@ -623,7 +623,7 @@
       amount: 5
 
 - type: entity
-  suffix: Pax
+  suffix: Pax 10u
   parent: Pill
   id: PillPax
   components:
