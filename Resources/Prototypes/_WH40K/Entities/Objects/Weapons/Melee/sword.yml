@@ -1,0 +1,46 @@
+- type: entity
+  name: Имперский силовой меч
+  parent: BaseSword
+  id: WHPowerSaberImperial
+  description: Это энергетическое поле позволяет лезвию прорезать плоть, кости и большинство защитных доспехов, что делает силовой меч эффективным оружием ближнего боя.
+  components:
+  - type: Sprite
+    sprite: _WH40K/Objects/Weapons/Melee/power_sword_imperial.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: .8
+    range: 1.75
+    soundHit:
+      path: /Audio/SimpleStation14/Weapons/Melee/rapierhit.ogg
+    damage:
+      types:
+        Slash: 15
+        Heat: 15
+    heavyRateModifier: 1.25
+    heavyRangeModifier: 1
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 5
+    maxTargets: 7
+    angle: 80
+  - type: DamageOtherOnHit
+    staminaCost: 5
+  - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
+  - type: ThrowingAngle
+    angle: 225
+  - type: Reflect
+    reflectProb: .1
+    spread: 90
+  - type: Item
+    size: Normal
+    sprite: _WH40K/Objects/Weapons/Melee/power_sword_imperial.rsi
+  - type: Tag
+    tags:
+    - CaptainSabre
+  - type: DisarmMalus
+  - type: SentienceTarget
+    flavorKind: station-event-random-sentience-flavor-inanimate
+    weight: 0.0002 
+  - type: PirateAccent
+
