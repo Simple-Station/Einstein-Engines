@@ -110,6 +110,5 @@
 
 - type: npcFaction
   id: GladiabotFFA
-  ishostiletoself: true
   hostile:
     - GladiabotFFA
