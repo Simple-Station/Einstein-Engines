@@ -9869,3 +9869,18 @@ Entries:
   id: 6690
   time: '2025-01-14T08:47:56.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1539
+- author: sleepyyapril
+  changes:
+    - type: Tweak
+      message: Outer clothing will now count as partial identity coverage.
+    - type: Fix
+      message: Fixed portal artifacts targeting the Station AI.
+    - type: Fix
+      message: Fixed job titles not showing up in various announcements.
+    - type: Fix
+      message: Ported some general mob AI fixes.
+    - type: Fix
+      message: Fixed energy shield visuals.
+  id: 6691
+  time: '2025-01-14T23:24:39.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1547
