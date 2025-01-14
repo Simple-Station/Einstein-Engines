@@ -1,0 +1,11 @@
+- type: localizedDataset
+  id: RandomSentienceEventData
+  values:
+    prefix: random-sentience-event-data-
+    count: 6
+
+- type: localizedDataset
+  id: RandomSentienceEventStrength
+  values:
+    prefix: random-sentience-event-strength-
+    count: 8

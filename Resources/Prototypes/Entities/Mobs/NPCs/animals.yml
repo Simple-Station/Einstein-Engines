@@ -424,6 +424,8 @@
         1.0
       FollowRange: !type:Single
         2.0
+  - type: SentienceTarget
+    flavorKind: station-event-random-sentience-flavor-organic
 
 - type: entity
   name: glockroach
@@ -1327,6 +1329,8 @@
     - map: [ "gloves" ]
     - map: [ "shoes" ]
     - map: [ "ears" ]
+    - map: [ "innerBelt" ] # Einstein Engines
+    - map: [ "innerNeck" ] # Einstein Engines
     - map: [ "outerClothing" ]
     - map: [ "eyes" ]
     - map: [ "belt" ]

@@ -501,3 +501,341 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterSuitJacket
+  category: Outer
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingOuterSuitJacket
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterSuitJacketOpened
+  category: Outer
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingOuterSuitJacketOpened
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterCoatModern
+  category: Outer
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingOuterCoatModern
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterTailcoat
+  category: Outer
+  cost: 1
+  customColorTint: true
+  items:
+    - ClothingOuterTailcoat
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterCoatVictorian
+  category: Outer
+  cost: 1
+  items:
+    - ClothingOuterCoatVictorian
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterCoatVictorianRed
+  category: Outer
+  cost: 1
+  items:
+    - ClothingOuterCoatVictorianRed
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterCardiganBasic
+  category: Outer
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingOuterCardigan
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterCardiganBasicOpened
+  category: Outer
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingOuterCardiganOpened
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterCardiganArgyle
+  category: Outer
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingOuterCardiganArgyle
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterCardiganArgyleOpened
+  category: Outer
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingOuterCardiganArgyleOpened
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterCardiganSweater
+  category: Outer
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingOuterCardiganSweater
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterCardiganSweaterOpened
+  category: Outer
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingOuterCardiganSweaterOpened
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterCardiganSlim
+  category: Outer
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingOuterCardiganSlim
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterCardiganSlimOpened
+  category: Outer
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingOuterCardiganSlimOpened
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterCowboyDuster
+  category: Outer
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingOuterCowboyDuster
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterBlazerBasic
+  category: Outer
+  cost: 1
+  customColorTint: true
+  items:
+    - ClothingOuterBlazer
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterBlazerBasicOpened
+  category: Outer
+  cost: 1
+  customColorTint: true
+  items:
+    - ClothingOuterBlazerOpened
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterBlazerLong
+  category: Outer
+  cost: 1
+  customColorTint: true
+  items:
+    - ClothingOuterBlazerLong
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterBlazerLongOpened
+  category: Outer
+  cost: 1
+  customColorTint: true
+  items:
+    - ClothingOuterBlazerLongOpened
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterBlazerFormal
+  category: Outer
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingOuterBlazerFormal
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterBlazerLooseSleeve
+  category: Outer
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingOuterBlazerLooseSleeve
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterBlazerFlatCollar
+  category: Outer
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingOuterBlazerFlatCollar
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterBlazerPosh
+  category: Outer
+  cost: 1
+  items:
+    - ClothingOuterBlazerPosh
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterCoatPeacoat
+  category: Outer
+  cost: 1
+  customColorTint: true
+  items:
+    - ClothingOuterCoatPeacoat
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterCoatPeacoatOpened
+  category: Outer
+  cost: 1
+  customColorTint: true
+  items:
+    - ClothingOuterCoatPeacoatOpened
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterCoatAsymmetric
+  category: Outer
+  cost: 1
+  customColorTint: true
+  items:
+    - ClothingOuterCoatAsymmetric
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterCoatAsymmetricOpened
+  category: Outer
+  cost: 1
+  customColorTint: true
+  items:
+    - ClothingOuterCoatAsymmetricOpened
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterCoatSubmariner
+  category: Outer
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingOuterCoatSubmariner
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterCoatSubmarinerOpened
+  category: Outer
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingOuterCoatSubmarinerOpened
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterVestColorable
+  category: Outer
+  cost: 1
+  customColorTint: true
+  items:
+    - ClothingOuterVestColorable
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterVestThick
+  category: Outer
+  cost: 1
+  customColorTint: true
+  items:
+    - ClothingOuterVestThick
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter

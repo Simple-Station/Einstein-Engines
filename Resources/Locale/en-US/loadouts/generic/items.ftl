@@ -43,7 +43,7 @@ loadout-name-LoadoutItemDrinkShinyFlask = shiny flask (colorable)
 loadout-name-LoadoutItemDrinkLithiumFlask = lithium flask (colorable)
 loadout-name-LoadoutItemDrinkVacuumFlask = vacuum flask (colorable)
 
-loadout-name-LoadoutItemPetMouse = pet mouse
-loadout-name-LoadoutItemPetHamster = pet hamster
-loadout-name-LoadoutItemPetMothroach = pet mothroach
-loadout-name-LoadoutItemPetCockroach = pet cockroach
+loadout-name-LoadoutItemPetMouse = pet mouse (colorable)
+loadout-name-LoadoutItemPetHamster = pet hamster (colorable)
+loadout-name-LoadoutItemPetMothroach = pet mothroach (colorable)
+loadout-name-LoadoutItemPetCockroach = pet cockroach (colorable)

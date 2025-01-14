@@ -3,6 +3,7 @@
   parent:
   - BaseMob
   - MobDamageable
+  - MobPolymorphable
   - MobCombat
   id: BaseMobSpecies
   abstract: true
@@ -36,6 +37,8 @@
     - map: [ "gloves" ]
     - map: [ "shoes" ]
     - map: [ "ears" ]
+    - map: [ "innerBelt" ]
+    - map: [ "innerNeck" ]
     - map: [ "outerClothing" ]
     - map: [ "eyes" ]
     - map: [ "belt" ]
@@ -375,6 +378,8 @@
     - map: [ "gloves" ]
     - map: [ "shoes" ]
     - map: [ "ears" ]
+    - map: [ "innerBelt" ]
+    - map: [ "innerNeck" ]
     - map: [ "outerClothing" ]
     - map: [ "eyes" ]
     - map: [ "belt" ]

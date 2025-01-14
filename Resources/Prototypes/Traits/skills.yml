@@ -16,6 +16,7 @@
         - Paramedic
         - ChiefMedicalOfficer
         - Brigmedic
+        - SeniorPhysician
 
 - type: trait
   id: SelfAware
