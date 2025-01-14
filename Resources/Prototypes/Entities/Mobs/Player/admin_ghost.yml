@@ -27,6 +27,7 @@
   - type: Hands
   - type: ComplexInteraction
   - type: Puller
+    needsHands: false # Tail Drag
     pushAcceleration: 1000000 # Will still be capped in max speed
     maxPushRange: 20
   - type: CombatMode

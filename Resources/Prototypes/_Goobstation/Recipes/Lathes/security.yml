@@ -1,0 +1,22 @@
+- type: latheRecipe
+  id: GrenadeFlashBang
+  result: GrenadeFlashBang
+  completetime: 3
+  materials:
+    Steel: 100
+    Plastic: 100
+
+# Ammo
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineMagnumLeverRifleEmpty
+  result: MagazineMagnumLeverRifleEmpty
+  materials:
+    Steel: 25
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineMagnumLeverRifle
+  result: MagazineMagnumLeverRifle
+  materials:
+    Steel: 185

@@ -117,6 +117,19 @@
 
 # Outer
 - type: loadout
+  id: LoadoutServiceBartenderWinterCoat
+  category: JobsServiceBartender
+  cost: 0
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutBartenderOuter
+  - !type:CharacterJobRequirement
+    jobs:
+    - Bartender
+  items:
+  - ClothingOuterWinterBar
+
+- type: loadout
   id: LoadoutServiceBartenderArmorDuraVest
   category: JobsServiceBartender
   cost: 0

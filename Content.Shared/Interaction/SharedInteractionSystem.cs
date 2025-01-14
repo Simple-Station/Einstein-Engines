@@ -7,6 +7,7 @@ using Content.Shared.Chat;
 using Content.Shared.CombatMode;
 using Content.Shared.Database;
 using Content.Shared.Ghost;
+using Content.Shared._Goobstation.Interaction;
 using Content.Shared.Hands;
 using Content.Shared.Hands.Components;
 using Content.Shared.Input;
@@ -20,6 +21,7 @@ using Content.Shared.Movement.Pulling.Systems;
 using Content.Shared.Physics;
 using Content.Shared.Players.RateLimiting;
 using Content.Shared.Popups;
+using Content.Shared.Silicons.StationAi;
 using Content.Shared.Storage;
 using Content.Shared.Strip;
 using Content.Shared.Tag;
@@ -83,7 +85,6 @@ namespace Content.Shared.Interaction
         private EntityQuery<WallMountComponent> _wallMountQuery;
         private EntityQuery<UseDelayComponent> _delayQuery;
         private EntityQuery<ActivatableUIComponent> _uiQuery;
-        private EntityQuery<ComplexInteractionComponent> _complexInteractionQuery;
 
         private const CollisionGroup InRangeUnobstructedMask = CollisionGroup.Impassable | CollisionGroup.InteractImpassable;
 
@@ -106,7 +107,6 @@ namespace Content.Shared.Interaction
             _wallMountQuery = GetEntityQuery<WallMountComponent>();
             _delayQuery = GetEntityQuery<UseDelayComponent>();
             _uiQuery = GetEntityQuery<ActivatableUIComponent>();
-            _complexInteractionQuery = GetEntityQuery<ComplexInteractionComponent>();
 
             SubscribeLocalEvent<BoundUserInterfaceCheckRangeEvent>(HandleUserInterfaceRangeCheck);
             SubscribeLocalEvent<BoundUserInterfaceMessageAttempt>(OnBoundInterfaceInteractAttempt);
@@ -191,7 +191,7 @@ namespace Content.Shared.Interaction
                 return;
             }
 
-            if (uiComp.RequireHands && !_handsQuery.HasComp(ev.Actor))
+            if (uiComp.RequiresComplex && !_actionBlockerSystem.CanComplexInteract(ev.Actor))
                 ev.Cancel();
         }
 
@@ -477,10 +477,7 @@ namespace Content.Shared.Interaction
 
         public void InteractHand(EntityUid user, EntityUid target)
         {
-            if (IsDeleted(user) || IsDeleted(target))
-                return;
-
-            var complexInteractions = SupportsComplexInteractions(user);
+            var complexInteractions = _actionBlockerSystem.CanComplexInteract(user);
             if (!complexInteractions)
             {
                 InteractionActivate(user,
@@ -665,6 +662,14 @@ namespace Content.Shared.Interaction
         {
             if (!Resolve(other, ref other.Comp))
                 return false;
+
+            var ev = new InRangeOverrideEvent(origin, other);
+            RaiseLocalEvent(origin, ref ev);
+
+            if (ev.Handled)
+            {
+                return ev.InRange;
+            }
 
             return InRangeUnobstructed(origin,
                 other,
@@ -1162,6 +1167,14 @@ namespace Content.Shared.Interaction
             if (checkCanUse && !_actionBlockerSystem.CanUseHeldEntity(user, used))
                 return false;
 
+            // Goobstation [
+            var useAttemptEv = new UseInHandAttemptEvent(user); 
+            RaiseLocalEvent(used, useAttemptEv);
+
+            if (useAttemptEv.Cancelled)
+                return false;
+            // ] Goobstation
+
             var useMsg = new UseInHandEvent(user);
             RaiseLocalEvent(used, useMsg, true);
             if (useMsg.Handled)
@@ -1188,7 +1201,7 @@ namespace Content.Shared.Interaction
             // Get list of alt-interact verbs
             var verbs = _verbSystem.GetLocalVerbs(target, user, typeof(AlternativeVerb));
 
-            if (!verbs.Any())
+            if (verbs.Count == 0)
                 return false;
 
             _verbSystem.ExecuteVerb(verbs.First(), user, target);
@@ -1245,6 +1258,13 @@ namespace Content.Shared.Interaction
         /// </summary>
         public bool IsAccessible(Entity<TransformComponent?> user, Entity<TransformComponent?> target)
         {
+            var ev = new AccessibleOverrideEvent(user, target);
+
+            RaiseLocalEvent(user, ref ev);
+
+            if (ev.Handled)
+                return ev.Accessible;
+
             if (_containerSystem.IsInSameOrParentContainer(user, target, out _, out var container))
                 return true;
 
@@ -1396,13 +1416,10 @@ namespace Content.Shared.Interaction
             return ev.Handled;
         }
 
-        /// <summary>
-        /// Checks if a given entity is able to do specific complex interactions.
-        /// This is used to gate manipulation to general humanoids. If a mouse shouldn't be able to do something, then it's complex.
-        /// </summary>
+        [Obsolete("Use ActionBlockerSystem")]
         public bool SupportsComplexInteractions(EntityUid user)
         {
-            return _complexInteractionQuery.HasComp(user);
+            return _actionBlockerSystem.CanComplexInteract(user);
         }
     }
 
@@ -1441,17 +1458,38 @@ namespace Content.Shared.Interaction
     };
 
     /// <summary>
-    ///     Raised directed by-ref on an item and a user to determine if interactions can occur.
-    /// </summary>
-    /// <param name="Cancelled">Whether the hand interaction should be cancelled.</param>
-    [ByRefEvent]
-    public record struct AttemptUseInteractEvent(EntityUid User, EntityUid Used, bool Cancelled = false);
-
-    /// <summary>
     ///     Raised directed by-ref on an item to determine if hand interactions should go through.
     ///     Defaults to allowing hand interactions to go through. Cancel to force the item to be attacked instead.
     /// </summary>
     /// <param name="Cancelled">Whether the hand interaction should be cancelled.</param>
     [ByRefEvent]
     public record struct CombatModeShouldHandInteractEvent(bool Cancelled = false);
+
+    /// <summary>
+    /// Override event raised directed on the user to say the target is accessible.
+    /// </summary>
+    /// <param name="User"></param>
+    /// <param name="Target"></param>
+    [ByRefEvent]
+    public record struct AccessibleOverrideEvent(EntityUid User, EntityUid Target)
+    {
+        public readonly EntityUid User = User;
+        public readonly EntityUid Target = Target;
+
+        public bool Handled;
+        public bool Accessible = false;
+    }
+
+    /// <summary>
+    /// Override event raised directed on a user to check InRangeUnoccluded AND InRangeUnobstructed to the target if you require custom logic.
+    /// </summary>
+    [ByRefEvent]
+    public record struct InRangeOverrideEvent(EntityUid User, EntityUid Target)
+    {
+        public readonly EntityUid User = User;
+        public readonly EntityUid Target = Target;
+
+        public bool Handled;
+        public bool InRange = false;
+    }
 }

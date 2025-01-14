@@ -478,14 +478,17 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
 
         var antags = AntagPreferences
             .Where(id => prototypeManager.TryIndex<AntagPrototype>(id, out var antag) && antag.SetPreference)
+            .Distinct()
             .ToList();
 
         var traits = TraitPreferences
             .Where(prototypeManager.HasIndex<TraitPrototype>)
+            .Distinct()
             .ToList();
 
         var loadouts = LoadoutPreferences
             .Where(l => prototypeManager.HasIndex<LoadoutPrototype>(l.LoadoutName))
+            .Distinct()
             .ToList();
 
         Name = name;

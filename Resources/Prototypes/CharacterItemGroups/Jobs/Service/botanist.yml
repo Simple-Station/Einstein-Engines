@@ -48,10 +48,12 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutBotanistOuter
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutBotanistOuter
+  maxItems: 1
+  items:
+  - type: loadout
+    id: LoadoutServiceBotanistWinterCoat
 #
 #- type: characterItemGroup
 #  id: LoadoutBotanistShoes

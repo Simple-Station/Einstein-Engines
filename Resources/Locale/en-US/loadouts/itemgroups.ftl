@@ -7,6 +7,7 @@ character-item-group-LoadoutHead = Civilian Headgear
 character-item-group-LoadoutMasks = Civilian Masks
 character-item-group-LoadoutNeck = Civilian Neckwear
 character-item-group-LoadoutOuter = Civilian Outerwear
+character-item-group-LoadoutBelt = Civilian Belts
 character-item-group-LoadoutShoes = Civilian Shoes
 character-item-group-LoadoutUniformsCivilian = Civilian Uniforms
 
