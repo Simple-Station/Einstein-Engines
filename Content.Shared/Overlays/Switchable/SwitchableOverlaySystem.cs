@@ -26,6 +26,29 @@ public abstract class SwitchableOverlaySystem<TComp, TEvent> : EntitySystem
         SubscribeLocalEvent<TComp, GetItemActionsEvent>(OnGetItemActions);
         SubscribeLocalEvent<TComp, ComponentGetState>(OnGetState);
         SubscribeLocalEvent<TComp, ComponentHandleState>(OnHandleState);
+        SubscribeLocalEvent<TComp, FlashDurationMultiplierEvent>(OnGetFlashMultiplier);
+        SubscribeLocalEvent<TComp, InventoryRelayedEvent<FlashDurationMultiplierEvent>>(OnGetInventoryFlashMultiplier);
+    }
+
+    private void OnGetFlashMultiplier(Entity<TComp> ent, ref FlashDurationMultiplierEvent args)
+    {
+        if (!ent.Comp.IsEquipment)
+            args.Multiplier *= GetFlashMultiplier(ent);
+    }
+
+    private void OnGetInventoryFlashMultiplier(Entity<TComp> ent,
+        ref InventoryRelayedEvent<FlashDurationMultiplierEvent> args)
+    {
+        if (ent.Comp.IsEquipment)
+            args.Args.Multiplier *= GetFlashMultiplier(ent);
+    }
+
+    private float GetFlashMultiplier(TComp comp)
+    {
+        if (!comp.IsActive && (comp.PulseTime <= 0f || comp.PulseAccumulator >= comp.PulseTime))
+            return 1f;
+
+        return comp.FlashDurationMultiplier;
     }
 
     public override void FrameUpdate(float frameTime)
@@ -102,19 +125,21 @@ public abstract class SwitchableOverlaySystem<TComp, TEvent> : EntitySystem
 
         component.IsActive = state.IsActive;
 
-        RaiseSwitchableOverlayToggledEvent(uid, uid, component.IsActive);
-        RaiseSwitchableOverlayToggledEvent(uid, Transform(uid).ParentUid, component.IsActive);
+        RaiseSwitchableOverlayToggledEvent(uid,
+            component.IsEquipment ? Transform(uid).ParentUid : uid,
+            component.IsActive);
     }
 
     private void OnGetItemActions(Entity<TComp> ent, ref GetItemActionsEvent args)
     {
-        if (ent.Comp.ToggleAction != null && args.SlotFlags is not SlotFlags.POCKET and not null)
+        if (ent.Comp.IsEquipment && ent.Comp.ToggleAction != null && args.SlotFlags is not SlotFlags.POCKET and not null)
             args.AddAction(ref ent.Comp.ToggleActionEntity, ent.Comp.ToggleAction);
     }
 
     private void OnShutdown(EntityUid uid, TComp component, ComponentShutdown args)
     {
-        _actions.RemoveAction(uid, component.ToggleActionEntity);
+        if (!component.IsEquipment)
+            _actions.RemoveAction(uid, component.ToggleActionEntity);
     }
 
     private void OnInit(EntityUid uid, TComp component, ComponentInit args)
@@ -124,7 +149,7 @@ public abstract class SwitchableOverlaySystem<TComp, TEvent> : EntitySystem
 
     private void OnMapInit(EntityUid uid, TComp component, MapInitEvent args)
     {
-        if (component.ToggleActionEntity == null && component.ToggleAction != null)
+        if (component is { IsEquipment: false, ToggleActionEntity: null, ToggleAction: not null })
             _actions.AddAction(uid, ref component.ToggleActionEntity, component.ToggleAction);
     }
 
