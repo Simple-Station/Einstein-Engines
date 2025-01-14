@@ -26,7 +26,7 @@
     animation: WeaponArcPunch
     damage:
       types:
-        Blunt: 15
+        Slash: 15
   - type: Destructible
     thresholds:
     - trigger:
@@ -56,6 +56,9 @@
   - type: HTN
     rootTask:
       task: GladiabotCompound
+    blackboard:
+      AttackDelayDeviation: !type:Single
+        0.3
   - type: InteractionPopup
     interactSuccessString: petting-success-gladiabot
     interactFailureString: petting-failure-gladiabot
