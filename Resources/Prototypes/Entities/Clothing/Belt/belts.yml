@@ -714,3 +714,68 @@
     whitelist:
       tags:
       - WizardWand
+
+- type: entity
+  parent: ClothingBeltBase
+  id: ClothingBeltGeneric
+  name: belt
+  description: A plain belt made of leather.
+  components:
+  - type: Sprite
+    sprite: Clothing/Belt/generic.rsi
+    state: icon
+  - type: Clothing
+    sprite: Clothing/Belt/generic.rsi
+    renderLayer: innerBelt
+
+- type: entity
+  parent: ClothingBeltBase
+  id: ClothingBeltGenericThin
+  name: thin belt
+  description: This is thinner than your usual belt.
+  components:
+  - type: Sprite
+    sprite: Clothing/Belt/generic_thin.rsi
+    state: icon
+  - type: Clothing
+    sprite: Clothing/Belt/generic_thin.rsi
+    renderLayer: innerBelt
+
+- type: entity
+  parent: ClothingBeltBase
+  id: ClothingBeltGenericThick
+  name: thick belt
+  description: A bold fashion statement.
+  components:
+  - type: Sprite
+    sprite: Clothing/Belt/generic_thick.rsi
+    state: icon
+  - type: Clothing
+    sprite: Clothing/Belt/generic_thick.rsi
+    renderLayer: innerBelt
+
+- type: entity
+  parent: ClothingBeltBase
+  id: ClothingBeltWaist
+  name: waist belt
+  description: A belt worn around the waist, giving outfits a more fitted silhouette.
+  components:
+  - type: Sprite
+    sprite: Clothing/Belt/waist.rsi
+    state: icon
+  - type: Clothing
+    sprite: Clothing/Belt/waist.rsi
+    renderLayer: innerBelt
+
+- type: entity
+  parent: ClothingBeltBase
+  id: ClothingBeltWaistThin
+  name: thin waist belt
+  description: For highlighting that snatched waist.
+  components:
+  - type: Sprite
+    sprite: Clothing/Belt/waist_thin.rsi
+    state: icon
+  - type: Clothing
+    sprite: Clothing/Belt/waist_thin.rsi
+    renderLayer: innerBelt

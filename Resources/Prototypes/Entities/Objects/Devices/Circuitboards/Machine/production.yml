@@ -1669,3 +1669,20 @@
       materialRequirements:
         Steel: 5
         Cable: 1
+
+- type: entity
+  id: MaterialSiloCircuitboard
+  parent: BaseMachineCircuitboard
+  name: material silo machine board
+  description: A machine printed circuit board for a material silo.
+  components:
+    - type: Sprite
+      state: supply
+    - type: MachineBoard
+      prototype: MaterialSilo
+      requirements:
+        MatterBin: 10
+      materialRequirements:
+        Steel: 5
+        Gold: 5
+        Bluespace: 5

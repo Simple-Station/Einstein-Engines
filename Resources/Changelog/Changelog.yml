@@ -9546,3 +9546,319 @@ Entries:
   id: 6660
   time: '2025-01-11T04:39:29.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1423
+- author: Mike32oz
+  changes:
+    - type: Add
+      message: 'Meta Station, added Station AI '
+    - type: Add
+      message: Meta Station, added station anchor
+    - type: Add
+      message: >-
+        Meta Station, added senior positions: Senior Researcher, Senior
+        Engineer, Senior Physician, and Senior Officer.
+    - type: Tweak
+      message: Meta Station, tweaked Engineering Department
+  id: 6661
+  time: '2025-01-11T15:30:19.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1484
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Added Station AI to GaxStation
+  id: 6662
+  time: '2025-01-11T17:06:38.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1486
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Station AI has been added to Radstation
+  id: 6663
+  time: '2025-01-11T17:12:52.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1487
+- author: neuPanda
+  changes:
+    - type: Tweak
+      message: tweaked friction remover system
+    - type: Fix
+      message: fixed inertia dampening system resetting or effecting the wrong grid
+    - type: Remove
+      message: Removed overcomplicated alterations
+  id: 6664
+  time: '2025-01-11T17:37:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1482
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added the Argenti, Gestio, Novalite C1, and SVT firearms. Added an
+        "Empty" Mosin variant for Salvage.
+    - type: Add
+      message: >-
+        Salvage technicians can now spend their mining points on new "Civilian
+        Grade" firearms from the Mining Vendor. These don't come with ammo, so
+        you'll have to request ammo be printed by Security.
+    - type: Add
+      message: Added the Argenti Revolver to Security Loadouts.
+    - type: Tweak
+      message: >-
+        Salvage Specialist lockers are now guaranteed to come with one pickaxe
+        and one ore bag.
+  id: 6665
+  time: '2025-01-11T18:24:39.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1490
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: Fixed announcement spam caused by my silly blunder.
+  id: 6666
+  time: '2025-01-11T18:26:39.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1491
+- author: Spatison
+  changes:
+    - type: Add
+      message: Added material silo
+  id: 6667
+  time: '2025-01-11T18:39:24.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1488
+- author: Tirochora
+  changes:
+    - type: Fix
+      message: You cannot take Photophobia while blind or you have cyber-eyes.
+    - type: Fix
+      message: You cannot take nearsightedness while blind or while having cyber-eyes.
+    - type: Fix
+      message: >-
+        You cannot be blind while nearsighted, photophobic, or while having
+        cyber-eyes.
+  id: 6668
+  time: '2025-01-11T18:54:37.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1492
+- author: Spatison
+  changes:
+    - type: Tweak
+      message: Shadow shackles now have a delay before binding
+    - type: Fix
+      message: Shadow shackles can now be removed
+  id: 6669
+  time: '2025-01-11T19:02:09.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1466
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Added Station AI to (almost) every map in rotation.
+    - type: Add
+      message: Added Ore Silos to every map in rotation.
+  id: 6670
+  time: '2025-01-11T19:58:08.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1499
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Fixed an issue where ranged NPCs were incapable of aiming.
+  id: 6671
+  time: '2025-01-11T20:40:09.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1500
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Fixed a crash caused by Weather System creating millions of sounds.
+  id: 6672
+  time: '2025-01-11T20:40:15.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1501
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: >-
+        Added a command to easily allow for adding a jobs playtime requirements.
+        (playtime_unlock)
+  id: 6673
+  time: '2025-01-11T22:32:29.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1464
+- author: Aviu00
+  changes:
+    - type: Fix
+      message: Fix silo being out of range.
+  id: 6674
+  time: '2025-01-12T02:22:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1502
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: Added Nanotrasen Representative and Blueshield Officer
+    - type: Add
+      message: >-
+        Added Admin Assistant, Nanorep, and Blueshield Officer spawns to all
+        maps. BSO and Nanorep don't get an office, they get a unique teleporter.
+        (as of now) Ask your resident mapper to fix this.
+    - type: Add
+      message: >-
+        Added the loadout options for Nanotrasen Representative and Blueshield
+        Officer.
+  id: 6675
+  time: '2025-01-12T06:55:41.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1495
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: Disabled Shadowkin as a default roundstart-available species.
+  id: 6676
+  time: '2025-01-12T20:28:22.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1516
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Fixed Energy Swords not displaying their blade when ignited.
+  id: 6677
+  time: '2025-01-12T21:20:27.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1519
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: >-
+        Fixed Nanotrasen Representative lacking in the starter clothes
+        department
+    - type: Fix
+      message: Fixed Nanotrasen Representative lacking in the headset department
+  id: 6678
+  time: '2025-01-12T21:21:34.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1512
+- author: CerberusWolfie
+  changes:
+    - type: Add
+      message: Added pockets to Admin Ghosts.
+    - type: Add
+      message: Added tail-drag (no-hands) to Admin Ghosts.
+  id: 6679
+  time: '2025-01-12T21:23:18.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1508
+- author: Tirochora
+  changes:
+    - type: Fix
+      message: >-
+        the pew RSI's are now correct, so the sprites shouldn't be inverted.
+        That said, some maps still appear to be a little odd, so I'll have to
+        review them further at some point.
+  id: 6680
+  time: '2025-01-12T21:25:13.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1469
+- author: BlueHNT
+  changes:
+    - type: Tweak
+      message: Tweaked DeltaV armors
+  id: 6681
+  time: '2025-01-12T23:08:27.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1520
+- author: LonoferaRS
+  changes:
+    - type: Add
+      message: >-
+        A bunch of winter coats that are already in the game were added as a
+        loadouts.
+  id: 6682
+  time: '2025-01-12T23:08:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1510
+- author: BlueHNT
+  changes:
+    - type: Add
+      message: Added New Law
+    - type: Tweak
+      message: Tweaked Space Law entries
+    - type: Remove
+      message: Removed Old Law
+  id: 6683
+  time: '2025-01-12T23:09:32.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1386
+- author: Mike32oz
+  changes:
+    - type: Add
+      message: 'Station anchor on ATS '
+    - type: Add
+      message: Clean bot and two locker
+    - type: Tweak
+      message: Air distribution on cargo shuttle
+    - type: Add
+      message: two seats including a wrench and a crowbar
+    - type: Remove
+      message: Plastic airtight flats and replace them with tiny fans
+  id: 6684
+  time: '2025-01-12T23:11:11.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1457
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: 'Added a legality notice to the description of salvage''s firearms. '
+    - type: Tweak
+      message: The mining points cost of all salvage firearms have been increased by 4x
+    - type: Remove
+      message: >-
+        Salvage no longer starts with bombs in their lockers. Buy them with your
+        mining points.
+  id: 6685
+  time: '2025-01-13T05:56:48.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1521
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        The Fashion Update is here. Almost two hundred brand-new clothes have
+        been added to Loadouts, like colorable suits, dresses, coats, blazers,
+        boots, necklaces, hats, glasses (including new Security glasses), belts,
+        a purse and more!
+    - type: Add
+      message: >-
+        Pets in the loadouts are now colorable. Go wild with pink mothroaches,
+        blue mice, green cockroaches and more!
+  id: 6686
+  time: '2025-01-13T16:24:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1526
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Attempted to fix a crash related to antag preferences saving multiple
+        times.
+  id: 6687
+  time: '2025-01-13T18:20:20.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1523
+- author: CerberusWolfie
+  changes:
+    - type: Fix
+      message: Fixed the NTR Stamp Texture on Paper
+    - type: Fix
+      message: Fixed name of Senior Officer, CBURN, and Deathsquad.
+  id: 6688
+  time: '2025-01-14T01:28:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1534
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: Added Holopads (unmapped)
+    - type: Add
+      message: Intellicards are now useful for removing/adding a Station AI's brain.
+    - type: Add
+      message: Added the Communications Console to Station AI actions.
+    - type: Add
+      message: AI now has a warp point.
+    - type: Add
+      message: Added more things for the AI to press.
+    - type: Add
+      message: More AI laws have been added.
+    - type: Fix
+      message: Fixed the mail system
+    - type: Fix
+      message: Fixed AI actions
+    - type: Fix
+      message: >-
+        Fixed invalid spawns for station AI breaking and ruining your ability to
+        play it.
+    - type: Fix
+      message: >-
+        The Station AI's name will now properly send in "arrived to the station"
+        announcements.
+    - type: Fix
+      message: Changed the CPR sound to simply not loop until fixed.
+    - type: Fix
+      message: Fixed unlocalized messages being sent for the random sentience event.
+  id: 6689
+  time: '2025-01-14T06:08:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1525
