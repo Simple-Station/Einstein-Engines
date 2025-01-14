@@ -347,7 +347,8 @@
 
 # Pills
 - type: entity
-  name: pill (dexalin 10u)
+  name: pill
+  suffix: Dexalin 10u
   parent: Pill
   id: PillDexalin
   components:
@@ -367,7 +368,7 @@
 
 
 - type: entity
-  name: pill canister (dexalin 10u)
+  name: pill canister
   parent: PillCanister
   id: PillCanisterDexalin
   suffix: Dexalin, 7
@@ -380,7 +381,8 @@
       amount: 7
 
 - type: entity
-  name: pill (dylovene 10u)
+  name: pill
+  suffix: Dylovene 10u
   parent: Pill
   id: PillDylovene
   components:
@@ -399,7 +401,7 @@
           Quantity: 10
 
 - type: entity
-  name: pill canister (dylovene 10u)
+  name: pill canister
   parent: PillCanister
   id: PillCanisterDylovene
   suffix: Dylovene, 5
@@ -412,7 +414,8 @@
       amount: 5
 
 - type: entity
-  name: pill (hyronalin 10u)
+  name: pill
+  suffix: Hyronalin 10u
   parent: Pill
   id: PillHyronalin
   components:
@@ -431,7 +434,7 @@
           Quantity: 10
 
 - type: entity
-  name: pill canister (hyronalin 10u)
+  name: pill canister
   parent: PillCanister
   id: PillCanisterHyronalin
   suffix: Hyronalin, 5
@@ -497,7 +500,8 @@
           Quantity: 10
 
 - type: entity
-  name: pill (copper 10u)
+  name: pill
+  suffix: Copper 10u
   parent: Pill
   id: PillCopper
   components:
@@ -516,7 +520,7 @@
           Quantity: 10
 
 - type: entity
-  name: pill canister (iron 10u)
+  name: pill canister
   parent: PillCanister
   id: PillCanisterIron
   suffix: Iron, 5
@@ -529,7 +533,7 @@
       amount: 5
 
 - type: entity
-  name: pill canister (copper 10u)
+  name: pill canister 
   parent: PillCanister
   id: PillCanisterCopper
   suffix: Copper, 5
@@ -542,7 +546,8 @@
       amount: 5
 
 - type: entity
-  name: pill (kelotane 10u)
+  name: pill
+  suffix: Kelotane 10u
   parent: Pill
   id: PillKelotane
   components:
@@ -561,7 +566,7 @@
           Quantity: 10
 
 - type: entity
-  name: pill canister (kelotane 10u)
+  name: pill canister 
   parent: PillCanister
   id: PillCanisterKelotane
   suffix: Kelotane, 5
@@ -574,7 +579,8 @@
       amount: 5
 
 - type: entity
-  name: pill (dermaline 10u)
+  name: pill
+  suffix: Dermaline 10u
   parent: Pill
   id: PillDermaline
   components:
@@ -593,7 +599,7 @@
           Quantity: 10
 
 - type: entity
-  name: pill canister (dermaline 10u)
+  name: pill canister 
   parent: PillCanister
   id: PillCanisterDermaline
   suffix: Dermaline, 5
@@ -606,10 +612,13 @@
       amount: 5
 
 - type: entity
-  name: space drugs
+  name: pill
+  suffix: Space drugs 15u
   parent: Pill
   id: PillSpaceDrugs
   components:
+  - type: Label
+    currentLabel: space drugs 15u
   - type: SolutionContainerManager
     solutions:
       food:
@@ -619,7 +628,7 @@
           Quantity: 15
 
 - type: entity
-  name: pill canister (LSD 15u)
+  name: pill canister
   parent: PillCanister
   id: PillCanisterSpaceDrugs
   suffix: Space Drugs, 5
@@ -632,10 +641,13 @@
       amount: 5
 
 - type: entity
-  name: pax
+  name: pill
+  suffix: Pax 10u
   parent: Pill
   id: PillPax
   components:
+  - type: Label
+    currentLabel: pax 10u
   - type: SolutionContainerManager
     solutions:
       food:
@@ -645,7 +657,7 @@
           Quantity: 10
 
 - type: entity
-  name: pill canister (Pax 10u)
+  name: pill canister
   parent: PillCanister
   id: PillCanisterPax
   suffix: Pax, 5
@@ -659,7 +671,8 @@
 
 
 - type: entity
-  name: pill (tricordrazine 10u)
+  name: pill
+  suffix: Tricordrazine 10u
   parent: Pill
   id: PillTricordrazine
   components:
@@ -678,7 +691,7 @@
           Quantity: 10
 
 - type: entity
-  name: pill canister (tricordrazine 10u)
+  name: pill canister
   parent: PillCanister
   id: PillCanisterTricordrazine
   suffix: Tricordrazine, 5
@@ -691,7 +704,8 @@
       amount: 5
 
 - type: entity
-  name: pill (bicaridine 10u)
+  name: pill
+  suffix: Bicaridine 10u
   parent: Pill
   id: PillBicaridine
   components:
@@ -710,7 +724,7 @@
           Quantity: 10
 
 - type: entity
-  name: pill canister (bicaridine 10u)
+  name: pill canister
   parent: PillCanister
   id: PillCanisterBicaridine
   suffix: Bicaridine, 5
@@ -723,7 +737,8 @@
       amount: 5
 
 - type: entity
-  name: pill (charcoal 10u)
+  name: pill
+  suffix: Charcoal 10u
   parent: Pill
   id: PillCharcoal
   components:
@@ -742,7 +757,7 @@
           Quantity: 10
 
 - type: entity
-  name: pill canister (charcoal 10u)
+  name: pill canister
   parent: PillCanister
   id: PillCanisterCharcoal
   suffix: Charcoal, 3
@@ -755,10 +770,13 @@
       amount: 3
 
 - type: entity
-  name: romerol pill
+  name: pill
+  suffix: Romerol 10u
   parent: Pill
   id: PillRomerol
   components:
+  - type: Label
+    currentLabel: romerol 10u
   - type: SolutionContainerManager
     solutions:
       food:
@@ -768,10 +786,13 @@
           Quantity: 10
 
 - type: entity
-  name: ambuzol pill
+  name: pill
+  suffix: Ambuzol 10u
   parent: Pill
   id: PillAmbuzol
   components:
+    - type: Label
+      currentLabel: ambuzol 10u
     - type: SolutionContainerManager
       solutions:
         food:
@@ -781,7 +802,8 @@
               Quantity: 10
 
 - type: entity
-  name: ambuzol plus pill
+  name: pill
+  suffix: Ambuzol plus 5u
   parent: Pill
   id: PillAmbuzolPlus
   components:
@@ -789,6 +811,8 @@
       pillType: 2
     - type: Sprite
       state: pill3
+    - type: Label
+      currentLabel: ambuzol plus 5u
     - type: SolutionContainerManager
       solutions:
         food:

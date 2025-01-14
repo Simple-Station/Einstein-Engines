@@ -27,7 +27,7 @@
           Quantity: 20
 
 - type: entity
-  name: pill canister (Cryptobiolin 20u)
+  name: pill canister
   parent: PillCanister
   id: PillCanisterCryptobiolin
   suffix: Cryptobiolin, 5
@@ -54,7 +54,7 @@
           Quantity: 20
 
 - type: entity
-  name: pill canister (Chloral-Hydrate 20u)
+  name: pill canister
   parent: PillCanister
   id: PillCanisterChloralHydrate
   suffix: ChloralHydrate, 5
