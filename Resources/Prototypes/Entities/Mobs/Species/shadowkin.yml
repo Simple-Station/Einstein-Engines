@@ -1,6 +1,7 @@
 - type: entity
   save: false
   parent:
+    - BaseMobSpeciesOrganic
     - MobBloodstream
     - MobAtmosStandard
     - MobFlammable
