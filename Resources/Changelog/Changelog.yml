@@ -9928,3 +9928,10 @@ Entries:
   id: 6695
   time: '2025-01-15T18:53:15.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1544
+- author: BlueHNT
+  changes:
+    - type: Tweak
+      message: Tweaked .35 magazine size to 12 rounds
+  id: 6696
+  time: '2025-01-15T19:23:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1532
