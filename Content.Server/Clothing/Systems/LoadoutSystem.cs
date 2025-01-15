@@ -34,7 +34,6 @@ public sealed class LoadoutSystem : EntitySystem
     [Dependency] private readonly ISerializationManager _serialization = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IComponentFactory _componentFactory = default!;
-    [Dependency] private readonly StationSpawningSystem _stationSpawning = default!;
 
 
     public override void Initialize()
@@ -46,11 +45,9 @@ public sealed class LoadoutSystem : EntitySystem
     private void OnPlayerSpawnComplete(PlayerSpawnCompleteEvent ev)
     {
         if (ev.JobId == null
-            || !_protoMan.TryIndex<JobPrototype>(ev.JobId, out var job)
+            || !_protoMan.TryIndex<JobPrototype>(ev.JobId, out _)
             || !_configurationManager.GetCVar(CCVars.GameLoadoutsEnabled))
             return;
-
-        _stationSpawning.EquipJobName(ev.Mob, job);
 
         ApplyCharacterLoadout(
             ev.Mob,

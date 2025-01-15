@@ -54,6 +54,7 @@
       staminaCost: 22.5
       soundHit:
         path: /Audio/Weapons/smash.ogg
+    - type: ToggleCellDraw
 
 - type: entity
   id: Defibrillator

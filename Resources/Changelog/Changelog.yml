@@ -9829,3 +9829,78 @@ Entries:
   id: 6688
   time: '2025-01-14T01:28:35.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1534
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: Added Holopads (unmapped)
+    - type: Add
+      message: Intellicards are now useful for removing/adding a Station AI's brain.
+    - type: Add
+      message: Added the Communications Console to Station AI actions.
+    - type: Add
+      message: AI now has a warp point.
+    - type: Add
+      message: Added more things for the AI to press.
+    - type: Add
+      message: More AI laws have been added.
+    - type: Fix
+      message: Fixed the mail system
+    - type: Fix
+      message: Fixed AI actions
+    - type: Fix
+      message: >-
+        Fixed invalid spawns for station AI breaking and ruining your ability to
+        play it.
+    - type: Fix
+      message: >-
+        The Station AI's name will now properly send in "arrived to the station"
+        announcements.
+    - type: Fix
+      message: Changed the CPR sound to simply not loop until fixed.
+    - type: Fix
+      message: Fixed unlocalized messages being sent for the random sentience event.
+  id: 6689
+  time: '2025-01-14T06:08:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1525
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: Fixes arrivals destroying all nearby doors/walls/etc.
+  id: 6690
+  time: '2025-01-14T08:47:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1539
+- author: sleepyyapril
+  changes:
+    - type: Tweak
+      message: Outer clothing will now count as partial identity coverage.
+    - type: Fix
+      message: Fixed portal artifacts targeting the Station AI.
+    - type: Fix
+      message: Fixed job titles not showing up in various announcements.
+    - type: Fix
+      message: Ported some general mob AI fixes.
+    - type: Fix
+      message: Fixed energy shield visuals.
+  id: 6691
+  time: '2025-01-14T23:24:39.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1547
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Added Space Wind Version 3. Smoother motion, better performance.
+    - type: Add
+      message: 'Monstermos rip tiles has returned as a default CVar. '
+    - type: Tweak
+      message: Floor Tiles once again are embeddable projectiles.
+  id: 6692
+  time: '2025-01-15T00:55:06.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1537
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed a bug where failing to cast the Assay power meant one lost the
+        ability to ever use psionic powers again.
+  id: 6693
+  time: '2025-01-15T05:19:36.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1551
