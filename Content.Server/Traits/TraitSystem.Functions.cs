@@ -461,14 +461,9 @@ public sealed partial class TraitModifyMobState : TraitFunction
 {
     // Three-State Booleans my beloved.
     // :faridabirb.png:
-    [Dependency] private readonly IReflectionManager _wehavereflectionathome = default!;
 
-    public TraitModifyMobState() : base()
-    {
-        IoCManager.InjectDependencies(this);
-    }
-    [DataField()]
-    public Dictionary<string, TraitModifyMobStateParams> Params;
+    [DataField(required: true)]
+    public Dictionary<string, TraitModifyMobStateParams> Params = default!;
 
     public override void OnPlayerSpawn(EntityUid uid,
         IComponentFactory factory,
@@ -478,8 +473,10 @@ public sealed partial class TraitModifyMobState : TraitFunction
         if (!entityManager.TryGetComponent<MobStateComponent>(uid, out var comp))
             return;
 
+        var _reflection = IoCManager.Resolve<IReflectionManager>();
+
         foreach (var pair in Params) {
-            DebugTools.Assert(_wehavereflectionathome.TryParseEnumReference($"enum.MobState.{pair.Key}", out var e), $"MobState.{pair.Key} does not exist.");
+            DebugTools.Assert(_reflection.TryParseEnumReference($"enum.MobState.{pair.Key}", out var e), $"MobState.{pair.Key} does not exist.");
             MobState state = (MobState) e;
             MobStateParametersPrototype current = comp.MobStateParams[state];
             var p = pair.Value;
