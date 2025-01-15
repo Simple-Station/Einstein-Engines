@@ -24,6 +24,10 @@ namespace Content.Client.Lobby
         [Dependency] private readonly IGameTiming _gameTiming = default!;
         [Dependency] private readonly IVoteManager _voteManager = default!;
 
+        private ISawmill _sawmill = default!;
+        private ClientGameTicker _gameTicker = default!;
+        private ContentAudioSystem _contentAudioSystem = default!;
+
         protected override Type? LinkedScreenType { get; } = typeof(LobbyGui);
         public LobbyGui? Lobby;
 
