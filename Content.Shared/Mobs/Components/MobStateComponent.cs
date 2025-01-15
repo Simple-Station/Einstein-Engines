@@ -28,7 +28,7 @@ namespace Content.Shared.Mobs.Components;
 public sealed partial class MobStateComponent : Component
 {
 
-    [DataField("mobStateParams", customTypeSerializer: typeof(PrototypeIdDictionarySerializer<MobStateParametersPrototype>))]
+    [DataField("mobStateParams")]
     public Dictionary<string, string> InitMobStateParams = new()
     {
         {"Alive", "AliveDefault" },
@@ -190,33 +190,4 @@ public sealed partial class MobStateParametersPrototype : IPrototype, IInheritin
 
     [DataField]
     public float StrippingTimeMultiplier = 1f;
-}
-
-public class PrototypeIdDictionarySerializer<TPrototype> : 
-    ITypeValidator<Dictionary<string, string>, MappingDataNode> where TPrototype : class, IPrototype
-{
-    protected virtual PrototypeIdSerializer<TPrototype> PrototypeSerializer => new();
-
-    public ValidationNode Validate(ISerializationManager serializationManager, MappingDataNode node,
-        IDependencyCollection dependencies, ISerializationContext? context = null)
-    {
-        var mapping = new Dictionary<ValidationNode, ValidationNode>();
-
-        foreach (var (key, val) in node.Children)
-        {
-            var keyVal = serializationManager.ValidateNode<string>(key, context);
-
-            var listVal = (val is ValueDataNode valuenode)
-                ? PrototypeSerializer.Validate(serializationManager, valuenode, dependencies, context)
-                : new ErrorNode(val, "PrototypeIdDictionarySerializer failed to get ValueDataNode");
-
-            mapping.Add(keyVal, listVal);
-        }
-
-        return new ValidatedMappingNode(mapping);
-    }
-
-    public ValidationNode Validate(ISerializationManager serializationManager, ValueDataNode node,
-        IDependencyCollection dependencies, ISerializationContext? context = null) =>
-        PrototypeSerializer.Validate(serializationManager, node, dependencies, context);
 }
