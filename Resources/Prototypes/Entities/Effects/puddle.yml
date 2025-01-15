@@ -205,3 +205,13 @@
     - type: Puddle
       solution: step
     - type: Appearance
+    - type: Drink
+      delay: 3
+      transferAmount: 1
+      solution: step
+      examinable: false
+    - type: ExaminableSolution
+      solution: step
+    - type: DrawableSolution
+      solution: step
+    - type: BadDrink

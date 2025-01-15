@@ -16,7 +16,6 @@ using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
-using FastAccessors;
 using Robust.Shared.Utility;
 using YamlDotNet.RepresentationModel;
 
@@ -65,7 +64,8 @@ namespace Content.IntegrationTests.Tests
             "Submarine", //DeltaV
             "Gax",
             "Rad",
-            "Europa"
+            "Europa",
+            "Meta"
         };
 
         /// <summary>
@@ -256,6 +256,18 @@ namespace Content.IntegrationTests.Tests
                         .Select(x => x.Job!.ID);
 
                     jobs.ExceptWith(spawnPoints);
+
+                    foreach (var jobId in jobs)
+                    {
+                        var exists = protoManager.TryIndex<JobPrototype>(jobId, out var jobPrototype);
+
+                        if (!exists)
+                            continue;
+
+                        if (jobPrototype.JobEntity != null)
+                            jobs.Remove(jobId);
+                    }
+
                     Assert.That(jobs, Is.Empty, $"There is no spawnpoints for {string.Join(", ", jobs)} on {mapProto}.");
                 }
 

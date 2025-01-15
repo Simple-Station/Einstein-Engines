@@ -4,6 +4,7 @@
   roundStart: true
   prototype: MobFelinid
   sprites: MobHumanSprites
+  defaultSkinTone: "#c0967f"
   markingLimits: MobFelinidMarkingLimits
   dollPrototype: MobFelinidDummy
   skinColoration: HumanToned
@@ -17,9 +18,6 @@
 - type: markingPoints
   id: MobFelinidMarkingLimits
   points:
-    Face:
-      points: 1
-      required: false
     Hair:
       points: 1
       required: false

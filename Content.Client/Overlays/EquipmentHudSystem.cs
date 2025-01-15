@@ -93,7 +93,8 @@ public abstract class EquipmentHudSystem<T> : EntitySystem where T : IComponent
 
     protected virtual void OnRefreshEquipmentHud(EntityUid uid, T component, InventoryRelayedEvent<RefreshEquipmentHudEvent<T>> args)
     {
-        OnRefreshComponentHud(uid, component, args.Args);
+        args.Args.Active = true;
+        args.Args.Components.Add(component);
     }
 
     protected virtual void OnRefreshComponentHud(EntityUid uid, T component, RefreshEquipmentHudEvent<T> args)
@@ -102,7 +103,7 @@ public abstract class EquipmentHudSystem<T> : EntitySystem where T : IComponent
         args.Components.Add(component);
     }
 
-    private void RefreshOverlay(EntityUid uid)
+    protected void RefreshOverlay(EntityUid uid)
     {
         if (uid != _player.LocalSession?.AttachedEntity)
             return;

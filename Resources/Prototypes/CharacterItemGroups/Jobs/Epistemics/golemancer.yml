@@ -61,10 +61,12 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutGolemancerOuter
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutGolemancerOuter
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutScienceUniformWinterCoatRoboticist
 #
 #- type: characterItemGroup
 #  id: LoadoutGolemancerShoes

@@ -37,6 +37,7 @@ public sealed class SlipperySystem : EntitySystem
         SubscribeLocalEvent<ThrownItemComponent, SlipCausingAttemptEvent>(OnThrownSlipAttempt);
         // as long as slip-resistant mice are never added, this should be fine (otherwise a mouse-hat will transfer it's power to the wearer).
         SubscribeLocalEvent<NoSlipComponent, InventoryRelayedEvent<SlipAttemptEvent>>((e, c, ev) => OnNoSlipAttempt(e, c, ev.Args));
+        SubscribeLocalEvent<SlippableModifierComponent, SlippedEvent>(OnSlippableModifierSlipped);
     }
 
     private void HandleStepTrigger(EntityUid uid, SlipperyComponent component, ref StepTriggeredOffEvent args)
@@ -60,6 +61,11 @@ public sealed class SlipperySystem : EntitySystem
     private void OnThrownSlipAttempt(EntityUid uid, ThrownItemComponent comp, ref SlipCausingAttemptEvent args)
     {
         args.Cancelled = true;
+    }
+
+    private void OnSlippableModifierSlipped(EntityUid uid, SlippableModifierComponent comp, ref SlippedEvent args)
+    {
+        args.ParalyzeTime *= comp.ParalyzeTimeMultiplier;
     }
 
     private bool CanSlip(EntityUid uid, EntityUid toSlip)
@@ -86,6 +92,9 @@ public sealed class SlipperySystem : EntitySystem
         var ev = new SlipEvent(other);
         RaiseLocalEvent(uid, ref ev);
 
+        var slippedEv = new SlippedEvent(uid, component.ParalyzeTime);
+        RaiseLocalEvent(other, ref slippedEv);
+
         if (TryComp(other, out PhysicsComponent? physics) && !HasComp<SlidingComponent>(other))
         {
             _physics.SetLinearVelocity(other, physics.LinearVelocity * component.LaunchForwardsMultiplier, body: physics);
@@ -100,7 +109,7 @@ public sealed class SlipperySystem : EntitySystem
 
         var playSound = !_statusEffects.HasStatusEffect(other, "KnockedDown");
 
-        _stun.TryParalyze(other, TimeSpan.FromSeconds(component.ParalyzeTime), true);
+        _stun.TryParalyze(other, TimeSpan.FromSeconds(slippedEv.ParalyzeTime), true);
 
         RaiseLocalEvent(other, new MoodEffectEvent("MobSlipped"));
 
@@ -134,3 +143,19 @@ public record struct SlipCausingAttemptEvent (bool Cancelled);
 /// <param name="Slipped">The entity being slipped</param>
 [ByRefEvent]
 public readonly record struct SlipEvent(EntityUid Slipped);
+
+/// Raised on an entity that slipped.
+/// <param name="Slipper">The entity that caused the slip</param>
+/// <param name="ParalyzeTime">How many seconds the entity will be paralyzed for, modifiable with this event.</param>
+[ByRefEvent]
+public record struct SlippedEvent
+{
+    public readonly EntityUid Slipper;
+    public float ParalyzeTime;
+
+    public SlippedEvent(EntityUid slipper, float paralyzeTime)
+    {
+        Slipper = slipper;
+        ParalyzeTime = paralyzeTime;
+    }
+}

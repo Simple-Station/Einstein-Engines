@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "PDA-Blueshield drawn by SolsticeOfTheWinter",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "light_overlay"
+    },
+    {
+      "name": "id_overlay"
+    },
+    {
+        "name": "pda-blueshield"
+    }
+  ]
+}

@@ -128,3 +128,13 @@
   id: Ethereal
   kind: source
   path: "/Textures/Shaders/ethereal.swsl"
+
+- type: shader
+  id: NightVision
+  kind: source
+  path: "/Textures/Shaders/nightvision.swsl"
+
+- type: shader  
+  id: Hologram
+  kind: source
+  path: "/Textures/Shaders/hologram.swsl"

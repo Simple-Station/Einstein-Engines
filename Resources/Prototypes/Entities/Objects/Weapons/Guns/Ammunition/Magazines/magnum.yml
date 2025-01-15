@@ -103,6 +103,20 @@
       map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
+  id: MagazineMagnumIncendiary
+  name: pistol magazine (.45 magnum incendiary)
+  parent: BaseMagazineMagnum
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeMagnumIncendiary
+  - type: Sprite
+    layers:
+    - state: red
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
   id: MagazineMagnumUranium
   name: pistol magazine (.45 magnum uranium)
   parent: BaseMagazineMagnum

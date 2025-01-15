@@ -1,0 +1,66 @@
+# Uncategorized
+# Backpacks
+- type: loadout
+  id: LoadoutClothingBackpackSatchelNanorep
+  category: JobsCommandNanorep
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNanorepBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - NanotrasenRepresentative
+  items:
+    - ClothingBackpackSatchelNanorep
+
+# Belt
+
+# Ears
+
+# Equipment
+
+# Eyes
+
+# Gloves
+
+# Head
+
+# Id
+
+# Neck
+
+# Mask
+
+# Outer
+
+# Shoes
+
+# Uniforms
+- type: loadout
+  id: LoadoutClothingUniformJumpskirtNanotrasenRepresentative
+  category: JobsCommandNanorep
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNanorepUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - NanotrasenRepresentative
+  items:
+    - ClothingUniformJumpskirtNanotrasenRepresentative
+
+- type: loadout
+  id: LoadoutClothingUniformJumpsuitNanotrasenRepresentative
+  category: JobsCommandNanorep
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNanorepUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - NanotrasenRepresentative
+  items:
+    - ClothingUniformJumpsuitNanotrasenRepresentative
