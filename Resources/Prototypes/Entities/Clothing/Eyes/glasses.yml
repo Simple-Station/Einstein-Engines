@@ -412,6 +412,7 @@
     sprite: Clothing/Eyes/Glasses/ninjavisor.rsi
   - type: FlashImmunity
   - type: NightVision
+    isEquipment: true
 
 - type: entity #Fake goggles, the latest in anti-valid hunting technology
   parent: ClothingEyesBase
