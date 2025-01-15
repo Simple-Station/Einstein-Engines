@@ -25,16 +25,20 @@ public sealed class NightVisionSystem : EquipmentHudSystem<NightVisionComponent>
         NightVisionComponent component,
         RefreshEquipmentHudEvent<NightVisionComponent> args)
     {
-        if (!component.IsEquipment)
-            base.OnRefreshComponentHud(uid, component, args);
+        if (component.IsEquipment)
+            return;
+        
+        base.OnRefreshComponentHud(uid, component, args);
     }
 
     protected override void OnRefreshEquipmentHud(EntityUid uid,
         NightVisionComponent component,
         InventoryRelayedEvent<RefreshEquipmentHudEvent<NightVisionComponent>> args)
     {
-        if (component.IsEquipment)
-            base.OnRefreshEquipmentHud(uid, component, args);
+        if (!component.IsEquipment)
+            return;
+            
+        base.OnRefreshEquipmentHud(uid, component, args);
     }
 
     private void OnToggle(Entity<NightVisionComponent> ent, ref SwitchableOverlayToggledEvent args)

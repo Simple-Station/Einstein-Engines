@@ -26,16 +26,20 @@ public sealed class ThermalVisionSystem : EquipmentHudSystem<ThermalVisionCompon
         ThermalVisionComponent component,
         RefreshEquipmentHudEvent<ThermalVisionComponent> args)
     {
-        if (!component.IsEquipment)
-            base.OnRefreshComponentHud(uid, component, args);
+        if (component.IsEquipment)
+            return;
+            
+        base.OnRefreshComponentHud(uid, component, args);
     }
 
     protected override void OnRefreshEquipmentHud(EntityUid uid,
         ThermalVisionComponent component,
         InventoryRelayedEvent<RefreshEquipmentHudEvent<ThermalVisionComponent>> args)
     {
-        if (component.IsEquipment)
-            base.OnRefreshEquipmentHud(uid, component, args);
+        if (!component.IsEquipment)
+            return;
+            
+        base.OnRefreshEquipmentHud(uid, component, args);
     }
 
     private void OnToggle(Entity<ThermalVisionComponent> ent, ref SwitchableOverlayToggledEvent args)

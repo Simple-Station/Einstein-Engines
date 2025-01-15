@@ -115,8 +115,10 @@ public abstract class SwitchableOverlaySystem<TComp, TEvent> : EntitySystem
 
     private void OnShutdown(EntityUid uid, TComp component, ComponentShutdown args)
     {
-        if (!component.IsEquipment)
-            _actions.RemoveAction(uid, component.ToggleActionEntity);
+        if (component.IsEquipment)
+            return;
+            
+        _actions.RemoveAction(uid, component.ToggleActionEntity);
     }
 
     private void OnInit(EntityUid uid, TComp component, ComponentInit args)
