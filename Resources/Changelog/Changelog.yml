@@ -9919,3 +9919,12 @@ Entries:
   id: 6694
   time: '2025-01-15T14:06:21.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1553
+- author: astriloqua
+  changes:
+    - type: Tweak
+      message: Tweaked the access of NTR to include Lawyer & Cargo
+    - type: Tweak
+      message: Tweaked the access of BSO to include Cargo
+  id: 6695
+  time: '2025-01-15T18:53:15.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1544
