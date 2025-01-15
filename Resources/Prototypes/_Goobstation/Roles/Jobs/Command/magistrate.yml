@@ -22,16 +22,11 @@
   - Command
   - Brig
   - Security
-  - Armory
   - Maintenance
-  - Service
   - External
   - Detective
   - Corpsman
   - Cryogenics
-  - Engineering
-  - Medical
-  - Research
   - Magistrate
   special:
   - !type:AddImplantSpecial
@@ -44,8 +39,8 @@
   id: MagistrateGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitMagistrate
-    shoes: ClothingShoesColorBlack
+    shoes: ClothingShoesLeather
     gloves: ClothingHandsGlovesColorWhite
     id: CentcomPDA
-    ears: ClothingHeadsetCentCom
+    ears: ClothingHeadsetMagistrate
     # pocket1: UniqueMagistrateLockerTeleporter # TODO: ADD BACK (REMOVED FOR TESTING)
