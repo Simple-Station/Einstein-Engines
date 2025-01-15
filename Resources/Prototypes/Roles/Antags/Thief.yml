@@ -9,6 +9,6 @@
   id: ThiefGear
   storage:
     back:
+    - ThiefBeacon
     - ToolboxThief
     - ClothingHandsChameleonThief
-    - ThiefBeacon
