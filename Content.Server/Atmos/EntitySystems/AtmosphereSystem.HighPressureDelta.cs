@@ -73,7 +73,8 @@ public sealed partial class AtmosphereSystem
     private void HighPressureMovements(Entity<GridAtmosphereComponent> gridAtmosphere, TileAtmosphere tile, EntityQuery<PhysicsComponent> bodies, EntityQuery<TransformComponent> xforms, EntityQuery<MovedByPressureComponent> pressureQuery, EntityQuery<MetaDataComponent> metas, float frameTime)
     {
         // No atmos yeets, return early.
-        if (!SpaceWind)
+        if (!SpaceWind
+            || tile.PressureDirection is AtmosDirection.Invalid)
             return;
 
         // Previously, we were comparing against the square of the target mass. Now we are comparing smaller values over a variable length of time. TLDR: Smoother space wind
@@ -106,18 +107,10 @@ public sealed partial class AtmosphereSystem
 
         var throwDirection = tile.PressureDirection.ToAngle().ToVec();
         // If we're using monstermos, smooth out the yeet direction to follow the flow
-        if (MonstermosEqualization
-            && tile.PressureDirection != AtmosDirection.Invalid
-            && tile.AdjacentBits.IsFlagSet(tile.PressureDirection))
-        {
-            var nextTileDirection = tile.AdjacentTiles[tile.PressureDirection.ToIndex()]!.PressureDirection;
-            if (nextTileDirection != AtmosDirection.Invalid
-                && nextTileDirection != tile.PressureDirection)
-            {
-                throwDirection = throwDirection + nextTileDirection.ToAngle().ToVec();
-                differentiatedPressure += tile.AdjacentTiles[tile.PressureDirection.ToIndex()]!.PressureDifference * frameTime;
-            }
-        }
+        if (MonstermosEqualization)
+            foreach (var nextTile in tile.AdjacentTiles)
+                if (nextTile is not null && nextTile.PressureDirection is not AtmosDirection.Invalid)
+                    throwDirection += nextTile.PressureDirection.ToAngle().ToVec();
 
         _entSet.Clear();
         _lookup.GetLocalEntitiesIntersecting(tile.GridIndex, tile.GridIndices, _entSet, 0f);
