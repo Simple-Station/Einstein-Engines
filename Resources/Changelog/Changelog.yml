@@ -9951,3 +9951,14 @@ Entries:
   id: 6698
   time: '2025-01-15T19:37:29.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1517
+- author: NeLepus
+  changes:
+    - type: Add
+      message: Added label rendering for vending machines & item preferences
+    - type: Tweak
+      message: Formatted pill without descriptions to follow  "pill (label)"
+    - type: Remove
+      message: Fake label duplicates in reagent jugs and pill canisters
+  id: 6699
+  time: '2025-01-15T20:03:08.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1538
