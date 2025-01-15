@@ -185,7 +185,7 @@ public partial class MobStateSystem : EntitySystem
     {
         if (!Resolve(target, ref component, false))
             return false;
-        return component.ConsciousAttemptAllowed();
+        return component.IsConscious();
     }
 
     public bool IsDown(EntityUid target, MobStateComponent? component = null)

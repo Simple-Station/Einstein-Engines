@@ -41,7 +41,7 @@ public partial class MobStateSystem
         SubscribeLocalEvent<MobStateComponent, ChangeDirectionAttemptEvent>(OnDirectionAttempt);
         SubscribeLocalEvent<MobStateComponent, UseAttemptEvent>(CheckActFactory(c => c.CanUse()));
         SubscribeLocalEvent<MobStateComponent, AttackAttemptEvent>(CheckActFactory(c => c.CanAttack()));
-        SubscribeLocalEvent<MobStateComponent, ConsciousAttemptEvent>(CheckActFactory(c => c.ConsciousAttemptAllowed()));
+        SubscribeLocalEvent<MobStateComponent, ConsciousAttemptEvent>(CheckActFactory(c => c.IsConscious()));
         SubscribeLocalEvent<MobStateComponent, ThrowAttemptEvent>(CheckActFactory(c => c.CanThrow()));
         SubscribeLocalEvent<MobStateComponent, SpeakAttemptEvent>(OnSpeakAttempt);
         SubscribeLocalEvent<MobStateComponent, IsEquippingAttemptEvent>(OnEquipAttempt);
@@ -102,7 +102,7 @@ public partial class MobStateSystem
 
     private void CheckConcious(Entity<MobStateComponent> ent, ref ConsciousAttemptEvent args)
     {
-        if (!ent.Comp.ConsciousAttemptAllowed())
+        if (!ent.Comp.IsConscious())
             args.Cancel();
     }
 

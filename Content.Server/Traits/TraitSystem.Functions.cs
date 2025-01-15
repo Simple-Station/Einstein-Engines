@@ -474,7 +474,7 @@ public sealed partial class TraitModifyMobState : TraitFunction
             current.Attacking = p.Attacking ?? current.Attacking;
             current.Using = p.Using ?? current.Using;
             current.Pointing = p.Pointing ?? current.Pointing;
-            current.ConsciousAttemptsAllowed = p.ConsciousAttemptsAllowed ?? current.ConsciousAttemptsAllowed;
+            current.IsConscious = p.IsConscious ?? current.IsConscious;
             current.CanEquipSelf = p.CanEquipSelf ?? current.CanEquipSelf;
             current.CanEquipOther = p.CanEquipOther ?? current.CanEquipOther;
             current.CanUnequipSelf = p.CanUnequipSelf ?? current.CanUnequipSelf;

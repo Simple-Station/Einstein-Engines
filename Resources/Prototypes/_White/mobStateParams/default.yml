@@ -9,7 +9,7 @@
   attacking: true
   using: true
   pointing: true 
-  consciousAttemptsAllowed: true
+  isConscious: true
   canEquipSelf: true
   canUnequipSelf: true
   canEquipOther: true
@@ -29,7 +29,7 @@
   attacking: false
   using: true
   pointing: true 
-  consciousAttemptsAllowed: true
+  isConscious: true
   canEquipSelf: false
   canUnequipSelf: true
   canEquipOther: false
@@ -51,7 +51,7 @@
   attacking: false
   using: false
   pointing: false 
-  consciousAttemptsAllowed: false
+  isConscious: false
   canEquipSelf: false
   canUnequipSelf: false
   canEquipOther: false
@@ -73,7 +73,7 @@
   attacking: false
   using: false
   pointing: false 
-  consciousAttemptsAllowed: false
+  isConscious: false
   canEquipSelf: false
   canUnequipSelf: false
   canEquipOther: false

@@ -93,7 +93,7 @@ public sealed partial class MobStateComponent : Component
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public bool CanPoint() =>CurrentStateOverrides.Pointing ?? CurrentStateParams?.Pointing ?? false;
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public bool ConsciousAttemptAllowed() => CurrentStateOverrides.ConsciousAttemptsAllowed ?? CurrentStateParams?.ConsciousAttemptsAllowed ?? false;
+    public bool IsConscious() => CurrentStateOverrides.IsConscious ?? CurrentStateParams?.IsConscious ?? false;
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public bool IsDowned() => CurrentStateOverrides.ForceDown ?? CurrentStateParams?.ForceDown ?? false;
@@ -125,7 +125,7 @@ public struct MobStateParametersOverride
     [DataField]
     public bool? Moving, Talking, Emoting,
         Throwing, PickingUp, Pulling, Attacking, Using, Pointing,
-        ConsciousAttemptsAllowed,
+        IsConscious,
         CanEquipSelf, CanUnequipSelf, CanEquipOther, CanUnequipOther,
         ForceDown, Incapacitated, CanBreathe;
 
@@ -153,7 +153,7 @@ public sealed partial class MobStateParametersPrototype : IPrototype, IInheritin
     [DataField]
     public bool? Moving, Talking, Emoting,
     Throwing, PickingUp, Pulling, Attacking, Using, Pointing,
-    ConsciousAttemptsAllowed,
+    IsConscious,
     CanEquipSelf, CanUnequipSelf, CanEquipOther, CanUnequipOther,
     ForceDown, Incapacitated, CanBreathe = false;
 
