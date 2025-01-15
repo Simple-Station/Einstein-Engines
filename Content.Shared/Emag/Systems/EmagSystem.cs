@@ -8,7 +8,7 @@ using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Content.Shared.Silicons.Laws.Components;
 using Content.Shared.Tag;
-using Content.Shared.Whitelist;
+using Content.Shared.Whitelist; // Shitmed - Starlight Abductors
 
 namespace Content.Shared.Emag.Systems;
 
@@ -68,7 +68,21 @@ public sealed class EmagSystem : EntitySystem
             return false;
         }
 
-        var handled = DoEmagEffect(user, target);
+        // Shitmed - Starlight Abductors: Check if the target has a whitelist, and check if it passes
+        if (_whitelist.IsWhitelistFail(comp.ValidTargets, target))
+        {
+            _popup.PopupClient(Loc.GetString("emag-attempt-failed", ("tool", uid)), user, user);
+            return false;
+        }
+
+        // Shitmed - Starlight Abductors: Check if the target has a whitelist, and check if it passes
+        if (_whitelist.IsWhitelistFail(comp.ValidTargets, target))
+        {
+            _popup.PopupClient(Loc.GetString("emag-attempt-failed", ("tool", uid)), user, user);
+            return false;
+        }
+
+        var handled = DoEmagEffect(user, target, uid); // Goob edit
         if (!handled)
             return false;
 

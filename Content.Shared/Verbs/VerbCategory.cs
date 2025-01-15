@@ -110,5 +110,8 @@ namespace Content.Shared.Verbs
 
         public static readonly VerbCategory BloodSpells = new("verb-categories-blood-cult",
             new SpriteSpecifier.Rsi(new ResPath("/Textures/WhiteDream/BloodCult/actions.rsi"), "blood_spells"));
+
+        // Shitmed - Starlight Abductors
+        public static readonly VerbCategory Switch = new("verb-categories-switch", "/Textures/Interface/VerbIcons/group.svg.192dpi.png");
     }
 }

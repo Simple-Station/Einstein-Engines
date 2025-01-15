@@ -298,6 +298,9 @@
   - type: Item
     sprite: _Shitmed/Objects/Specific/Medical/Surgery/bonesetter.rsi
   - type: BoneSetter
+  - type: SurgeryTool
+    startSound:
+      path: /Audio/_Shitmed/Medical/Surgery/bone_setter.ogg
 
 # Bone Gel - Shitmed Change
 - type: entity
@@ -357,7 +360,8 @@
   - type: BoneSaw
   - type: SurgeryTool
     startSound:
-      path: /Audio/_Shitmed/Medical/Surgery/saw.ogg
+      path: /Audio/_Shitmed/Medical/Surgery/bone_saw.ogg
+# No melee for regular saw because have you ever seen someone use a band saw as a weapon? It's dumb.
 
 - type: entity
   name: choppa
@@ -491,11 +495,6 @@
     state: e-cautery-on
   - type: Item
     sprite: _Shitmed/Objects/Specific/Medical/Surgery/e-cautery.rsi
-    inhandVisuals:
-      left:
-      - state: inhand-left-on
-      right:
-      - state: inhand-right-on
   - type: SurgeryTool
     startSound:
       path: /Audio/_Shitmed/Medical/Surgery/cautery1.ogg
@@ -522,11 +521,6 @@
     state: e-scalpel-on
   - type: Item
     sprite: _Shitmed/Objects/Specific/Medical/Surgery/e-scalpel.rsi
-    inhandVisuals:
-      left:
-      - state: inhand-left-on
-      right:
-      - state: inhand-right-on
   - type: SurgeryTool
     startSound:
       path: /Audio/_Shitmed/Medical/Surgery/scalpel1.ogg
@@ -553,11 +547,6 @@
     state: adv-retractor-on
   - type: Item
     sprite: _Shitmed/Objects/Specific/Medical/Surgery/adv-retractor.rsi
-    inhandVisuals:
-      left:
-      - state: inhand-left-on
-      right:
-      - state: inhand-right-on
   - type: SurgeryTool
     startSound:
       path: /Audio/_Shitmed/Medical/Surgery/retractor1.ogg

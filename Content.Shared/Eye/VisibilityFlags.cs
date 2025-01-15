@@ -12,5 +12,6 @@ namespace Content.Shared.Eye
         PsionicInvisibility = 1 << 2, //Nyano - Summary: adds Psionic Invisibility as a visibility layer. Currently does nothing.
         TelegnosticProjection = 5,
         Ethereal = 1 << 3,
+        Abductor  = 1 << 2, // Shitmed Change - Starlight Abductors
     }
 }
