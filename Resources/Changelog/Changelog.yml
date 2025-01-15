@@ -9895,3 +9895,12 @@ Entries:
   id: 6692
   time: '2025-01-15T00:55:06.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1537
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed a bug where failing to cast the Assay power meant one lost the
+        ability to ever use psionic powers again.
+  id: 6693
+  time: '2025-01-15T05:19:36.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1551
