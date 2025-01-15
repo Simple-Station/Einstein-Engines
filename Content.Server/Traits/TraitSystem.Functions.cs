@@ -480,8 +480,8 @@ public sealed partial class TraitModifyMobState : TraitFunction
             current.CanUnequipSelf = p.CanUnequipSelf ?? current.CanUnequipSelf;
             current.CanUnequipOther = p.CanUnequipOther ?? current.CanUnequipOther;
             current.ForceDown = p.ForceDown ?? current.ForceDown;
-            current.ForceDown = p.Incapacitated ?? current.Incapacitated;
-            current.ForceDown = p.CanBreathe ?? current.CanBreathe;
+            current.Incapacitated = p.Incapacitated ?? current.Incapacitated;
+            current.CanBreathe = p.CanBreathe ?? current.CanBreathe;
 
             current.OxyDamageOverlay = p.OxyDamageOverlay ?? current.OxyDamageOverlay;
             current.StrippingTimeMultiplier = p.StrippingTimeMultiplier;
