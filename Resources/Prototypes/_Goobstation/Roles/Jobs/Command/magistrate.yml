@@ -27,7 +27,7 @@
   - Corpsman
   - Command
   - CentralCommand
-  #- Magistrate
+  - Magistrate
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
