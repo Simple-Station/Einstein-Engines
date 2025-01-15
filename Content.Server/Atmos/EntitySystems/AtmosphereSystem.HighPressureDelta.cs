@@ -105,12 +105,17 @@ public sealed partial class AtmosphereSystem
         // Used by ExperiencePressureDifference to correct push/throw directions from tile-relative to physics world.
         var gridWorldRotation = _transformSystem.GetWorldRotation(gridAtmosphere);
 
+        // Atmos Directions only include NSEW cardinals, which means only 4 possible angles to throw at. If Monstermos is enabled, we'll instead do some
+        // Vector shennanigans to smooth it out so that we can throw in increments of up to pi/32. 
         var throwDirection = tile.PressureDirection.ToAngle().ToVec();
-        // If we're using monstermos, smooth out the yeet direction to follow the flow
         if (MonstermosEqualization)
             foreach (var nextTile in tile.AdjacentTiles)
                 if (nextTile is not null && nextTile.PressureDirection is not AtmosDirection.Invalid)
                     throwDirection += nextTile.PressureDirection.ToAngle().ToVec();
+
+        // Before you ask, yes I did actually have to convert the angles to vectors, then add them together, then convert the end result back to a normalized vector.
+        // We're normalizing this here and now so that we don't have to normalize it potentially hundreds of times during the next Foreach.
+        var throwVector = (throwDirection.ToAngle() + gridWorldRotation).ToWorldVec().Normalized();
 
         _entSet.Clear();
         _lookup.GetLocalEntitiesIntersecting(tile.GridIndex, tile.GridIndices, _entSet, 0f);
@@ -131,8 +136,7 @@ public sealed partial class AtmosphereSystem
                 (entity, EnsureComp<MovedByPressureComponent>(entity)),
                 gridAtmosphere.Comp.UpdateCounter,
                 differentiatedPressure,
-                throwDirection,
-                gridWorldRotation,
+                throwVector,
                 xforms.GetComponent(entity),
                 body);
         }
@@ -154,8 +158,7 @@ public sealed partial class AtmosphereSystem
         Entity<MovedByPressureComponent> ent,
         int cycle,
         float pressureDifference,
-        Vector2 direction,
-        Angle gridWorldRotation,
+        Vector2 throwVector,
         TransformComponent? xform = null,
         PhysicsComponent? physics = null)
     {
@@ -171,11 +174,9 @@ public sealed partial class AtmosphereSystem
         if (pressureDifference < physics.Mass)
             return;
 
-        // Grid-rotation adjusted direction
-        var dirVec = (direction.ToAngle() + gridWorldRotation).ToWorldVec();
         pressureDifference *= MathF.Max(physics.InvMass, SpaceWindMaximumCalculatedInverseMass);
 
-        _throwing.TryThrow(uid, dirVec.Normalized() * MathF.Min(pressureDifference, SpaceWindMaxVelocity), pressureDifference);
+        _throwing.TryThrow(uid, throwVector * MathF.Min(pressureDifference, SpaceWindMaxVelocity), pressureDifference);
         component.LastHighPressureMovementAirCycle = cycle;
     }
 }
