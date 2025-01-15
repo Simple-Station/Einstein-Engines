@@ -439,23 +439,6 @@ public sealed partial class TraitModifyMobThresholds : TraitFunction
     }
 }
 
-[DataDefinition, Serializable]
-public sealed partial class TraitModifyMobStateParams
-{
-    [DataField]
-    public bool? Moving, Talking, Emoting,
-    Throwing, PickingUp, Pulling, Attacking, Using, Pointing,
-    ConsciousAttemptsAllowed,
-    CanEquipSelf, CanUnequipSelf, CanEquipOther, CanUnequipOther,
-    ForceDown, Incapacitated, CanBreathe;
-
-    [DataField]
-    public float? OxyDamageOverlay;
-
-    [DataField]
-    public float? StrippingTimeMultiplier;
-}
-
 [UsedImplicitly]
 public sealed partial class TraitModifyMobState : TraitFunction
 {
@@ -463,7 +446,7 @@ public sealed partial class TraitModifyMobState : TraitFunction
     // :faridabirb.png:
 
     [DataField(required: true)]
-    public Dictionary<string, TraitModifyMobStateParams> Params = default!;
+    public Dictionary<string, ProtoId<MobStateParametersPrototype>> Params = default!;
 
     public override void OnPlayerSpawn(EntityUid uid,
         IComponentFactory factory,
@@ -474,12 +457,13 @@ public sealed partial class TraitModifyMobState : TraitFunction
             return;
 
         var _reflection = IoCManager.Resolve<IReflectionManager>();
+        var _proto = IoCManager.Resolve<IPrototypeManager>();
 
         foreach (var pair in Params) {
             DebugTools.Assert(_reflection.TryParseEnumReference($"enum.MobState.{pair.Key}", out var e), $"MobState.{pair.Key} does not exist.");
             MobState state = (MobState) e;
             MobStateParametersPrototype current = comp.MobStateParams[state];
-            var p = pair.Value;
+            var p = _proto.Index<MobStateParametersPrototype>(pair.Value);
 
             current.Moving = p.Moving ?? current.Moving;
             current.Talking = p.Talking ?? current.Talking;
@@ -500,9 +484,8 @@ public sealed partial class TraitModifyMobState : TraitFunction
             current.ForceDown = p.CanBreathe ?? current.CanBreathe;
 
             current.OxyDamageOverlay = p.OxyDamageOverlay ?? current.OxyDamageOverlay;
-            current.StrippingTimeMultiplier = p.StrippingTimeMultiplier ?? current.StrippingTimeMultiplier;
+            current.StrippingTimeMultiplier = p.StrippingTimeMultiplier;
         }
-
         comp.Dirty(); // why is this deprecated? it's much better than manually resolving entitymanager with ioc
     }
 }

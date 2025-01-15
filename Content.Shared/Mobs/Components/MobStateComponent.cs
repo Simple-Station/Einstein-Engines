@@ -72,9 +72,8 @@ public sealed partial class MobStateComponent : Component
 
     #region getters
 
-    // the "?? false" at the end is because at round restard MobStateParams apparently can be wiped,
-    // but stuff that relies on it will still run.
-    // Cool. Remove the "?." and "?? false" when this shit is dealt with.
+    // the "?." and "?? false" at the end is because at round restard MobStateParams apparently can be wiped,
+    // but stuff that relies on it will still run, and I don't know why. Cool.
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public bool CanMove() => CurrentStateOverrides.Moving ?? CurrentStateParams?.Moving ?? false;
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -120,33 +119,6 @@ public sealed partial class MobStateComponent : Component
     #endregion
 }
 
-//[DataDefinition]
-//[NetSerializable, Serializable]
-//public sealed partial class MobStateParameters
-//{
-//    public MobStateParameters() { }
-//
-//    // when adding new flags to here, remember to update TraitModifyMobState and MobStateParametersOverride, as well as add new getter methods for MobStateComponent.
-//    // Yeah, this whole this is kinda dumb, but honestly, new generic kinds of actions should not appear often, and instead of adding a flag that will be used
-//    // in 2 and a half systems, they can just check the CurrentState and go from there.
-//    [DataField]
-//    public bool? Moving, Talking, Emoting,
-//        Throwing, PickingUp, Pulling, Attacking, Using, Pointing,
-//        ConsciousAttemptsAllowed,
-//        CanEquipSelf, CanUnequipSelf, CanEquipOther, CanUnequipOther,
-//        ForceDown;
-//
-//    [DataField]
-//    public float? OxyDamageOverlay;
-//
-//
-//    [DataField]
-//    public float? StrippingTimeMultiplier = 1f;
-//
-//    [DataField]
-//    public MobStateParametersOverride Overrides = new();
-//}
-
 [NetSerializable, Serializable]
 public struct MobStateParametersOverride
 {
@@ -179,7 +151,7 @@ public sealed partial class MobStateParametersPrototype : IPrototype, IInheritin
     public bool Abstract { get; }
 
     [DataField]
-    public bool Moving, Talking, Emoting,
+    public bool? Moving, Talking, Emoting,
     Throwing, PickingUp, Pulling, Attacking, Using, Pointing,
     ConsciousAttemptsAllowed,
     CanEquipSelf, CanUnequipSelf, CanEquipOther, CanUnequipOther,

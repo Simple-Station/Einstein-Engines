@@ -66,9 +66,11 @@ public partial class MobStateSystem
         {
             DebugTools.Assert(_wehavereflectionathome.TryParseEnumReference($"enum.MobState.{entry.Key}", out var e), $"MobState.{entry.Key} does not exist.");
             MobState state = (MobState) e;
-            
-            DebugTools.Assert(!comp.MobStateParams.ContainsKey(state), "Two or more params specified for one MobState.");
-            comp.MobStateParams.Add(state, _proto.Index<MobStateParametersPrototype>(entry.Value));
+
+            // if this fails, then either the prototype has two parameters specified for one mobstate,
+            // or we've already received the params from the server before we had the chance to set them
+            // ourselves. (see TraitModifyMobState)
+            comp.MobStateParams.TryAdd(state, _proto.Index<MobStateParametersPrototype>(entry.Value));
         }
     }
 
