@@ -9,6 +9,7 @@
   - Revolutionaries
   - MinorAntagonists
   - SpaceNinja
+  - Abductors # Shitmed - Abductors
   - BloodCult
 
 - type: guideEntry
@@ -29,7 +30,7 @@
 - type: guideEntry
   id: Revolutionaries
   name: guide-entry-revolutionaries
-  text: "/ServerInfo/Guidebook/Antagonist/Revolutionaries.xml"
+  text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Revolutionaries.xml" # goobstation
 
 - type: guideEntry
   id: MinorAntagonists
