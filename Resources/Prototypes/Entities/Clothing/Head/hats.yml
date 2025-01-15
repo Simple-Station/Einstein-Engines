@@ -71,6 +71,34 @@
 
 - type: entity
   parent: ClothingHeadBase
+  id: ClothingHeadHatBeretArtist
+  name: artist beret
+  description: A beret fit for an artist.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beret_artist.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beret_artist.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeretPeaked
+  name: peaked beret
+  description: A peaked beret.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beret_peaked.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beret_peaked.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+
+- type: entity
+  parent: ClothingHeadBase
   id: ClothingHeadHatCasa
   name: casa
   description: Cone-shaped hat
@@ -1205,3 +1233,103 @@
     sprite: Clothing/Head/Hats/flatcap_orion.rsi
   - type: Clothing
     sprite: Clothing/Head/Hats/flatcap_orion.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeanie
+  name: beanie
+  description: A head-hugging brimless winter cap. This one is tight.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beanie.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beanie.rsi
+  - type: TemperatureProtection
+    coefficient: 0.5
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeanieWinter
+  name: winter beanie
+  description: A head-hugging brimless winter cap. This one has flaps that cover the ears.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beanie_winter.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beanie_winter.rsi
+  - type: TemperatureProtection
+    coefficient: 0.5
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeanieSubmariner
+  name: submariner beanie
+  description: A design of tightly fitting beanie popular among Submarine station workers.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beanie_submariner.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beanie_submariner.rsi
+  - type: TemperatureProtection
+    coefficient: 0.5
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeanieTight
+  name: tight beanie
+  description: A rather tight beanie that hides your hair.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beanie_tight.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beanie_tight.rsi
+  - type: TemperatureProtection
+    coefficient: 0.5
+  - type: HideLayerClothing
+    slots:
+    - Hair
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatSlouch
+  name: slouch hat
+  description: A wide brimmed hat folded to form a slouch.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/slouch.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/slouch.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatSunVisor
+  name: sun visor
+  description: A stylish visor intended for blocking out harsh sunlight.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/sun_visor.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/sun_visor.rsi
+
+# Nuclear 14 hats
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeanieGreen
+  name: green beanie
+  description: A dark green beanie.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Clothing/Head/FalloutHats/beanie.rsi
+  - type: Clothing
+    sprite: _Nuclear14/Clothing/Head/FalloutHats/beanie.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatMountie
+  name: mountie hat
+  description: A flat hat made 100% of fur felt.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Clothing/Head/FalloutHats/mountiehat.rsi
+  - type: Clothing
+    sprite: _Nuclear14/Clothing/Head/FalloutHats/mountiehat.rsi

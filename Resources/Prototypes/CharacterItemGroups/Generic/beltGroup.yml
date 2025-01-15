@@ -1,0 +1,17 @@
+- type: characterItemGroup
+  id: LoadoutBelt
+  items:
+    - type: loadout
+      id: LoadoutBeltGeneric
+    - type: loadout
+      id: LoadoutBeltGenericThin
+    - type: loadout
+      id: LoadoutBeltGenericThick
+    - type: loadout
+      id: LoadoutBeltWaist
+    - type: loadout
+      id: LoadoutBeltWaistThin
+    - type: loadout
+      id: LoadoutItemWaistbag
+    - type: loadout
+      id: LoadoutBeltWaistbagColor

@@ -9796,3 +9796,176 @@ Entries:
   id: 6685
   time: '2025-01-13T05:56:48.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1521
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        The Fashion Update is here. Almost two hundred brand-new clothes have
+        been added to Loadouts, like colorable suits, dresses, coats, blazers,
+        boots, necklaces, hats, glasses (including new Security glasses), belts,
+        a purse and more!
+    - type: Add
+      message: >-
+        Pets in the loadouts are now colorable. Go wild with pink mothroaches,
+        blue mice, green cockroaches and more!
+  id: 6686
+  time: '2025-01-13T16:24:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1526
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Attempted to fix a crash related to antag preferences saving multiple
+        times.
+  id: 6687
+  time: '2025-01-13T18:20:20.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1523
+- author: CerberusWolfie
+  changes:
+    - type: Fix
+      message: Fixed the NTR Stamp Texture on Paper
+    - type: Fix
+      message: Fixed name of Senior Officer, CBURN, and Deathsquad.
+  id: 6688
+  time: '2025-01-14T01:28:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1534
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: Added Holopads (unmapped)
+    - type: Add
+      message: Intellicards are now useful for removing/adding a Station AI's brain.
+    - type: Add
+      message: Added the Communications Console to Station AI actions.
+    - type: Add
+      message: AI now has a warp point.
+    - type: Add
+      message: Added more things for the AI to press.
+    - type: Add
+      message: More AI laws have been added.
+    - type: Fix
+      message: Fixed the mail system
+    - type: Fix
+      message: Fixed AI actions
+    - type: Fix
+      message: >-
+        Fixed invalid spawns for station AI breaking and ruining your ability to
+        play it.
+    - type: Fix
+      message: >-
+        The Station AI's name will now properly send in "arrived to the station"
+        announcements.
+    - type: Fix
+      message: Changed the CPR sound to simply not loop until fixed.
+    - type: Fix
+      message: Fixed unlocalized messages being sent for the random sentience event.
+  id: 6689
+  time: '2025-01-14T06:08:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1525
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: Fixes arrivals destroying all nearby doors/walls/etc.
+  id: 6690
+  time: '2025-01-14T08:47:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1539
+- author: sleepyyapril
+  changes:
+    - type: Tweak
+      message: Outer clothing will now count as partial identity coverage.
+    - type: Fix
+      message: Fixed portal artifacts targeting the Station AI.
+    - type: Fix
+      message: Fixed job titles not showing up in various announcements.
+    - type: Fix
+      message: Ported some general mob AI fixes.
+    - type: Fix
+      message: Fixed energy shield visuals.
+  id: 6691
+  time: '2025-01-14T23:24:39.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1547
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Added Space Wind Version 3. Smoother motion, better performance.
+    - type: Add
+      message: 'Monstermos rip tiles has returned as a default CVar. '
+    - type: Tweak
+      message: Floor Tiles once again are embeddable projectiles.
+  id: 6692
+  time: '2025-01-15T00:55:06.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1537
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed a bug where failing to cast the Assay power meant one lost the
+        ability to ever use psionic powers again.
+  id: 6693
+  time: '2025-01-15T05:19:36.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1551
+- author: Mike32oz
+  changes:
+    - type: Add
+      message: Meta Station, Holopad every Department.
+    - type: Add
+      message: Meta Station, Job Reporter/room near arrival.
+    - type: Add
+      message: Meta Station, added MacBoots/ industrial gloves in Atmos lockers.
+    - type: Tweak
+      message: Meta Station, Tweaked increased job for Cargo.
+    - type: Tweak
+      message: Meta Station, More AI laws-circuit boards have been added to upload.
+  id: 6694
+  time: '2025-01-15T14:06:21.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1553
+- author: astriloqua
+  changes:
+    - type: Tweak
+      message: Tweaked the access of NTR to include Lawyer & Cargo
+    - type: Tweak
+      message: Tweaked the access of BSO to include Cargo
+  id: 6695
+  time: '2025-01-15T18:53:15.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1544
+- author: BlueHNT
+  changes:
+    - type: Tweak
+      message: Tweaked .35 magazine size to 12 rounds
+  id: 6696
+  time: '2025-01-15T19:23:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1532
+- author: Piras314
+  changes:
+    - type: Fix
+      message: Fixed being able to get night vision from putting a mouse on your head.
+  id: 6697
+  time: '2025-01-15T19:26:34.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1554
+- author: Ichai
+  changes:
+    - type: Add
+      message: TEG added to the eng
+    - type: Tweak
+      message: AI Core tweaked to look better
+  id: 6698
+  time: '2025-01-15T19:37:29.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1517
+- author: NeLepus
+  changes:
+    - type: Add
+      message: Added label rendering for vending machines & item preferences
+    - type: Tweak
+      message: Formatted pill without descriptions to follow  "pill (label)"
+    - type: Remove
+      message: Fake label duplicates in reagent jugs and pill canisters
+  id: 6699
+  time: '2025-01-15T20:03:08.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1538
+- author: Piras314
+  changes:
+    - type: Fix
+      message: Fixed audio issue
+  id: 6700
+  time: '2025-01-15T20:35:37.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1555

@@ -917,6 +917,48 @@
   items:
     - ClothingEyesGlassesSecurity
 
+- type: loadout
+  id: LoadoutClothingEyesGlassesSecurityAviator
+  category: JobsSecurityAUncategorized
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityEyes
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingEyesGlassesSecurityAviator
+
+- type: loadout
+  id: LoadoutClothingEyesGlassesSecurityBig
+  category: JobsSecurityAUncategorized
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityEyes
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingEyesGlassesSecurityBig
+
+- type: loadout
+  id: LoadoutClothingEyesGlassesSecurityVisor
+  category: JobsSecurityAUncategorized
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityEyes
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingEyesGlassesSecurityVisor
+
 # Gloves
 
 # Head

@@ -59,8 +59,8 @@
 
 - type: entity
   abstract: true
-  parent: [ClothingOuterStorageBase, BaseFoldable]
-  id: ClothingOuterStorageFoldableBase
+  parent: [ClothingOuterBase, BaseFoldable]
+  id: ClothingOuterFoldableBase
   components:
   - type: Appearance
   - type: Foldable
@@ -80,8 +80,8 @@
 
 - type: entity
   abstract: true
-  parent: ClothingOuterStorageFoldableBase
-  id: ClothingOuterStorageFoldableBaseOpened
+  parent: ClothingOuterFoldableBase
+  id: ClothingOuterFoldableBaseOpened
   suffix: opened
   components:
   - type: Foldable
@@ -98,6 +98,17 @@
     - state: icon-open
       map: ["foldedLayer"]
       visible: true
+
+- type: entity
+  abstract: true
+  parent: [ClothingOuterStorageBase, ClothingOuterFoldableBase]
+  id: ClothingOuterStorageFoldableBase
+
+- type: entity
+  abstract: true
+  parent: [ClothingOuterStorageFoldableBase, ClothingOuterFoldableBaseOpened]
+  id: ClothingOuterStorageFoldableBaseOpened
+  suffix: opened
 
 - type: entity
   abstract: true

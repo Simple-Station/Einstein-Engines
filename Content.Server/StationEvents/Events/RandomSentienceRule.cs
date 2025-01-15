@@ -64,9 +64,14 @@ public sealed class RandomSentienceRule : StationEventSystem<RandomSentienceRule
             return;
 
         var groupList = groups.ToList();
-        var kind1 = groupList.Count > 0 ? groupList[0] : "???";
-        var kind2 = groupList.Count > 1 ? groupList[1] : "???";
-        var kind3 = groupList.Count > 2 ? groupList[2] : "???";
+        var kind1 = groupList.Count > 0 ? Loc.GetString(groupList[0]) : "???";
+        var kind2 = groupList.Count > 1 ? Loc.GetString(groupList[1]) : "???";
+        var kind3 = groupList.Count > 2 ? Loc.GetString(groupList[2]) : "???";
+        var data = _random.Pick(_prototype.Index<LocalizedDatasetPrototype>("RandomSentienceEventData"));
+        var strength = _random.Pick(_prototype.Index<LocalizedDatasetPrototype>("RandomSentienceEventStrength"));
+
+        data = Loc.GetString(data);
+        strength = Loc.GetString(strength);
 
         ChatSystem.DispatchStationAnnouncement(
             station.Value,
@@ -76,8 +81,8 @@ public sealed class RandomSentienceRule : StationEventSystem<RandomSentienceRule
                 ("kind2", kind2),
                 ("kind3", kind3),
                 ("amount", groupList.Count),
-                ("data", _random.Pick(_prototype.Index<LocalizedDatasetPrototype>("RandomSentienceEventData"))),
-                ("strength", _random.Pick(_prototype.Index<LocalizedDatasetPrototype>("RandomSentienceEventStrength"))))
+                ("data", data),
+                ("strength", strength))
         );
     }
 }
