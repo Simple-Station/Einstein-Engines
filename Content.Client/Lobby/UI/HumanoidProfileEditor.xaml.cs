@@ -173,11 +173,22 @@ namespace Content.Client.Lobby.UI
 
             PronounsButton.OnItemSelected += args =>
             {
+                var label = GetFormattedPronounsFromGender();
+
                 PronounsButton.SelectId(args.Id);
                 SetGender((Gender) args.Id);
+
+                if (Profile?.DisplayPronouns == null)
+                    UpdateDisplayPronounsControls();
             };
 
             #endregion Gender
+
+            #region Display Pronouns
+
+            DisplayPronounsNameEdit.OnTextChanged += args => { SetDisplayPronouns(args.Text); };
+
+            #endregion CustomSpecieName
 
             #region Species
 
@@ -640,6 +651,7 @@ namespace Content.Client.Lobby.UI
             UpdateNameEdit();
             UpdateSexControls();
             UpdateGenderControls();
+            UpdateDisplayPronounsControls();
             UpdateSkinColor();
             UpdateSpawnPriorityControls();
             UpdateFlavorTextEdit();
@@ -1146,6 +1158,26 @@ namespace Content.Client.Lobby.UI
             IsDirty = true;
         }
 
+        private void SetDisplayPronouns(string? displayPronouns)
+        {
+            if (displayPronouns == GetFormattedPronounsFromGender())
+                displayPronouns = null;
+
+            Profile = Profile?.WithDisplayPronouns(displayPronouns);
+            ReloadPreview();
+            IsDirty = true;
+        }
+
+        private string GetFormattedPronounsFromGender()
+        {
+            if (Profile == null)
+                return "they/them";
+
+            var genderName = Enum.GetName(typeof(Gender), Profile.Gender) ?? "Epicene";
+            var label = Loc.GetString($"humanoid-profile-editor-pronouns-{genderName.ToLower()}-text");
+            return label.Replace(" ", string.Empty).ToLower();
+        }
+
         private void SetSpecies(string newSpecies)
         {
             Profile = Profile?.WithSpecies(newSpecies);
@@ -1355,6 +1387,20 @@ namespace Content.Client.Lobby.UI
                 return;
 
             PronounsButton.SelectId((int) Profile.Gender);
+        }
+
+        private void UpdateDisplayPronounsControls()
+        {
+            if (Profile == null)
+                return;
+
+            var label = GetFormattedPronounsFromGender();
+            DisplayPronounsNameEdit.PlaceHolder = label;
+
+            if (Profile.DisplayPronouns == null)
+                DisplayPronounsNameEdit.Text = string.Empty;
+            else
+                DisplayPronounsNameEdit.Text = Profile.DisplayPronouns;
         }
 
         private void UpdateSpawnPriorityControls()
