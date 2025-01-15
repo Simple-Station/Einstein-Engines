@@ -9942,3 +9942,12 @@ Entries:
   id: 6697
   time: '2025-01-15T19:26:34.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1554
+- author: Ichai
+  changes:
+    - type: Add
+      message: TEG added to the eng
+    - type: Tweak
+      message: AI Core tweaked to look better
+  id: 6698
+  time: '2025-01-15T19:37:29.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1517
