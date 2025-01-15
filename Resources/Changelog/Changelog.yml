@@ -9962,3 +9962,10 @@ Entries:
   id: 6699
   time: '2025-01-15T20:03:08.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1538
+- author: Piras314
+  changes:
+    - type: Fix
+      message: Fixed audio issue
+  id: 6700
+  time: '2025-01-15T20:35:37.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1555
