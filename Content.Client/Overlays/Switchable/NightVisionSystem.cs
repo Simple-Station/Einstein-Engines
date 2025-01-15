@@ -1,5 +1,3 @@
-using Content.Client.Overlays;
-using Content.Shared._White.Overlays;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Overlays.Switchable;
