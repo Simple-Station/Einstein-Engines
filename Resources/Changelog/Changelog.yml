@@ -9935,3 +9935,10 @@ Entries:
   id: 6696
   time: '2025-01-15T19:23:30.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1532
+- author: Piras314
+  changes:
+    - type: Fix
+      message: Fixed being able to get night vision from putting a mouse on your head.
+  id: 6697
+  time: '2025-01-15T19:26:34.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1554
