@@ -84,20 +84,17 @@ public sealed class LightBehaviorSystem : EntitySystem
     public void StartLightBehaviour(Entity<LightBehaviourComponent> entity, string id = "")
     {
         if (!EntityManager.TryGetComponent(entity, out AnimationPlayerComponent? animation))
-        {
             return;
-        }
+
         foreach (var container in entity.Comp.Animations)
         {
-            if (container.LightBehaviour.ID == id || id == string.Empty)
-            {
-                if (!_player.HasRunningAnimation(entity, animation, LightBehaviourComponent.KeyPrefix + container.Key))
-                {
-                    CopyLightSettings(entity, container.LightBehaviour.Property);
-                    container.LightBehaviour.UpdatePlaybackValues(container.Animation);
-                    _player.Play(entity, container.Animation, LightBehaviourComponent.KeyPrefix + container.Key);
-                }
-            }
+            if (container.LightBehaviour.ID != id || id != string.Empty
+                || _player.HasRunningAnimation(entity, animation, LightBehaviourComponent.KeyPrefix + container.Key))
+                continue;
+                
+            CopyLightSettings(entity, container.LightBehaviour.Property);
+            container.LightBehaviour.UpdatePlaybackValues(container.Animation);
+            _player.Play(entity, container.Animation, LightBehaviourComponent.KeyPrefix + container.Key);
         }
     }
     /// <summary>
@@ -118,17 +115,14 @@ public sealed class LightBehaviorSystem : EntitySystem
         var toRemove = new List<LightBehaviourComponent.AnimationContainer>();
         foreach (var container in comp.Animations)
         {
-            if (container.LightBehaviour.ID == id || id == string.Empty)
-            {
-                if (_player.HasRunningAnimation(entity, animation, LightBehaviourComponent.KeyPrefix + container.Key))
-                {
-                    _player.Stop(entity, animation, LightBehaviourComponent.KeyPrefix + container.Key);
-                }
-                if (removeBehaviour)
-                {
-                    toRemove.Add(container);
-                }
-            }
+            if (container.LightBehaviour.ID != id || id != string.Empty)
+                continue;
+
+            if (_player.HasRunningAnimation(entity, animation, LightBehaviourComponent.KeyPrefix + container.Key))
+                _player.Stop(entity, animation, LightBehaviourComponent.KeyPrefix + container.Key);
+                    
+            if (removeBehaviour)
+                toRemove.Add(container);
         }
         foreach (var container in toRemove)
         {
