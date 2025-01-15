@@ -77,3 +77,23 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsNTR ]
+
+# MAG locked
+
+- type: entity
+  parent: AirlockCentralCommand
+  id: AirlockMagistrateCommandLocked
+  suffix: Magistrate, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMAG ]
+
+- type: entity
+  parent: AirlockCentralCommandGlass
+  id: AirlockMagistrateCommandGlassLocked
+  suffix: Magistrate, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMAG ]

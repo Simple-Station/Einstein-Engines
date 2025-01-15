@@ -43,4 +43,4 @@
     gloves: ClothingHandsGlovesColorWhite
     id: CentcomPDA
     ears: ClothingHeadsetMagistrate
-    # pocket1: UniqueMagistrateLockerTeleporter # TODO: ADD BACK (REMOVED FOR TESTING)
+    pocket1: UniqueMagistrateLockerTeleporter
