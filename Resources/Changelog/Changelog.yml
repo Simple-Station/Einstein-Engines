@@ -9884,3 +9884,14 @@ Entries:
   id: 6691
   time: '2025-01-14T23:24:39.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1547
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Added Space Wind Version 3. Smoother motion, better performance.
+    - type: Add
+      message: 'Monstermos rip tiles has returned as a default CVar. '
+    - type: Tweak
+      message: Floor Tiles once again are embeddable projectiles.
+  id: 6692
+  time: '2025-01-15T00:55:06.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1537
