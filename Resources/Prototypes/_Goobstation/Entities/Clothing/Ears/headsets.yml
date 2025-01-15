@@ -7,12 +7,12 @@
   - type: ContainerFill
     containers:
       key_slots:
+      - EncryptionKeyCommand
+      - EncryptionKeyCentCom
       - EncryptionKeyJustice
       - EncryptionKeyPrison
       - EncryptionKeySecurity
       - EncryptionKeyCommon
-      - EncryptionKeyCommand
-      - EncryptionKeyCentCom
   - type: Sprite
     sprite: DeltaV/Clothing/Ears/Headsets/justice.rsi
     state: icon_alt

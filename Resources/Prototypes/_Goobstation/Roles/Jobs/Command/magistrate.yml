@@ -17,17 +17,17 @@
   joinNotifyCrew: true
   supervisors: job-supervisors-centcom
   canBeAntag: false
-  accessGroups:
-  - CentralCommand
-  - Command
-  - Brig
+  access:
   - Security
-  - Maintenance
+  - Brig
   - External
+  - Cryogenics
+  - Maintenance
   - Detective
   - Corpsman
-  - Cryogenics
-  - Magistrate
+  - Command
+  - CentralCommand
+  #- Magistrate
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
