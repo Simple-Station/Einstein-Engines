@@ -17,7 +17,7 @@
   - !type:AddComponentSpecial
     components:
     - type: Boxer
-      rangeModifier: 1.066666
+      rangeModifier: 1.1
       modifiers:
         coefficients: # These only apply to unarmed
           Blunt: 1.5
