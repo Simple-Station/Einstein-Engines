@@ -19,4 +19,10 @@ public sealed partial class BoxerComponent : Component
     /// </summary>
     [DataField("boxingGlovesModifier")]
     public float BoxingGlovesModifier = 1.75f;
+
+    /// <summary>
+    ///   Turns the left click into a power attack when the light attack misses.
+    /// </summary>
+    [DataField]
+    public bool HeavyOnLightMiss = true;
 }

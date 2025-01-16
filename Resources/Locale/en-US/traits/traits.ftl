@@ -180,8 +180,9 @@ trait-description-Feeble =
 trait-name-MartialArtist = Martial Artist
 trait-description-MartialArtist =
     You have received formal training in unarmed combat, whether with Fists, Feet, or Claws.
-    Your unarmed melee attacks have a small range increase, and deal 50% more damage.
-    This does not apply to any form of armed melee, only the weapons you were naturally born with.
+    Your unarmed melee attacks deal [color=yellow]50%[/color] more damage, have a small range increase, and are now
+    considered a [color=yellow]Power Attack[/color], requiring less accuracy than regular unarmed melee attacks.
+    This has no effect on damage dealt with any form of armed melee.
 
 trait-name-Vigor = Vigor
 trait-description-Vigor =

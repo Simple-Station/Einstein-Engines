@@ -19,9 +19,16 @@ public sealed partial class BoxingSystem : EntitySystem
 
     private void OnInit(EntityUid uid, BoxerComponent component, ComponentInit args)
     {
-        if (TryComp<MeleeWeaponComponent>(uid, out var meleeComp))
-            meleeComp.Range *= component.RangeBonus;
+        if (!TryComp<MeleeWeaponComponent>(uid, out var meleeComp))
+            return;
+
+        meleeComp.Range *= component.RangeBonus;
+        meleeComp.HeavyOnLightMiss = component.HeavyOnLightMiss;
+
+        if (component.HeavyOnLightMiss)
+            meleeComp.WideAnimation = meleeComp.Animation;
     }
+
     private void OnMeleeHit(EntityUid uid, BoxerComponent component, MeleeHitEvent args)
     {
         args.ModifiersList.Add(component.UnarmedModifiers);

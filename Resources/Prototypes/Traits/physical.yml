@@ -284,7 +284,7 @@
 - type: trait
   id: MartialArtist
   category: Physical
-  points: -3
+  points: -5
   requirements:
   - !type:CharacterJobRequirement
     inverted: true
