@@ -9969,3 +9969,14 @@ Entries:
   id: 6700
   time: '2025-01-15T20:35:37.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1555
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: Fixed interactions not respecting identity.
+    - type: Fix
+      message: Potentially fixed spawning issues.
+    - type: Fix
+      message: Fixed borgs, animals and aghosts being able to enter cryosleep.
+  id: 6701
+  time: '2025-01-16T05:25:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1559
