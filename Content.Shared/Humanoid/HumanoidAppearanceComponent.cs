@@ -33,6 +33,12 @@ public sealed partial class HumanoidAppearanceComponent : Component
     public string? DisplayPronouns;
 
     [DataField, AutoNetworkedField]
+    public string? StationAiName;
+
+    [DataField, AutoNetworkedField]
+    public string? CyborgName;
+
+    [DataField, AutoNetworkedField]
     public int Age = 18;
 
     [DataField, AutoNetworkedField]

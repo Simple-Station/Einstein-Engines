@@ -230,6 +230,8 @@ namespace Content.Server.Database
                 sex,
                 gender,
                 profile.DisplayPronouns,
+                profile.StationAiName,
+                profile.CyborgName,
                 new HumanoidCharacterAppearance(
                     profile.HairName,
                     Color.FromHex(profile.HairColor),
@@ -273,6 +275,8 @@ namespace Content.Server.Database
             profile.Sex = humanoid.Sex.ToString();
             profile.Gender = humanoid.Gender.ToString();
             profile.DisplayPronouns = humanoid.DisplayPronouns;
+            profile.StationAiName = humanoid.StationAiName;
+            profile.CyborgName = humanoid.CyborgName;
             profile.Height = humanoid.Height;
             profile.Width = humanoid.Width;
             profile.HairName = appearance.HairStyleId;

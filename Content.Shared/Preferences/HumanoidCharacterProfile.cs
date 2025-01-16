@@ -82,7 +82,13 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     public Gender Gender { get; private set; } = Gender.Male;
 
     [DataField]
-    public string? DisplayPronouns { get; set; } = null;
+    public string? DisplayPronouns { get; set; }
+
+    [DataField]
+    public string? StationAiName { get; set; }
+
+    [DataField]
+    public string? CyborgName { get; set; }
 
     /// <see cref="Appearance"/>
     public ICharacterAppearance CharacterAppearance => Appearance;
@@ -125,6 +131,8 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         Sex sex,
         Gender gender,
         string? displayPronouns,
+        string? stationAiName,
+        string? cyborgName,
         HumanoidCharacterAppearance appearance,
         SpawnPriorityPreference spawnPriority,
         Dictionary<string, JobPriority> jobPriorities,
@@ -145,6 +153,8 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         Sex = sex;
         Gender = gender;
         DisplayPronouns = displayPronouns;
+        StationAiName = stationAiName;
+        CyborgName = cyborgName;
         Appearance = appearance;
         SpawnPriority = spawnPriority;
         _jobPriorities = jobPriorities;
@@ -169,6 +179,8 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             other.Sex,
             other.Gender,
             other.DisplayPronouns,
+            other.StationAiName,
+            other.CyborgName,
             other.Appearance.Clone(),
             other.SpawnPriority,
             new Dictionary<string, JobPriority>(other.JobPriorities),
@@ -272,6 +284,8 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     public HumanoidCharacterProfile WithSex(Sex sex) => new(this) { Sex = sex };
     public HumanoidCharacterProfile WithGender(Gender gender) => new(this) { Gender = gender };
     public HumanoidCharacterProfile WithDisplayPronouns(string? displayPronouns) => new(this) { DisplayPronouns = displayPronouns };
+    public HumanoidCharacterProfile WithStationAiName(string? stationAiName) => new(this) { StationAiName = stationAiName };
+    public HumanoidCharacterProfile WithCyborgName(string? cyborgName) => new(this) { CyborgName = cyborgName };
     public HumanoidCharacterProfile WithSpecies(string species) => new(this) { Species = species };
     public HumanoidCharacterProfile WithCustomSpeciesName(string customspeciename) => new(this) { Customspeciename = customspeciename };
     public HumanoidCharacterProfile WithHeight(float height) => new(this) { Height = height };

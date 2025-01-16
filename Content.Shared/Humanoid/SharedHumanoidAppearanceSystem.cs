@@ -429,6 +429,8 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
             grammar.Gender = profile.Gender;
 
         humanoid.DisplayPronouns = profile.DisplayPronouns;
+        humanoid.StationAiName = profile.StationAiName;
+        humanoid.CyborgName = profile.CyborgName;
         humanoid.Age = profile.Age;
 
         humanoid.CustomSpecieName = profile.Customspeciename;
