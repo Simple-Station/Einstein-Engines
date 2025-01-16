@@ -23,6 +23,7 @@ using Content.Shared.GameTicking;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Movement.Components;
 using Content.Shared.Parallax.Biomes;
+using Content.Shared.Roles;
 using Content.Shared.Salvage;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Tiles;
@@ -345,7 +346,7 @@ public sealed class ArrivalsSystem : EntitySystem
             && ev.Job.Prototype is not null
             && _protoManager.Index<JobPrototype>(ev.Job.Prototype.Value.Id).AlwaysUseSpawner)
             return;
-            
+
         if (!HasComp<StationArrivalsComponent>(ev.Station))
             return;
 
