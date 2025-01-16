@@ -288,7 +288,7 @@ public abstract partial class SharedStationAiSystem : EntitySystem
             BreakOnDamage = true,
             BreakOnMove = true,
             NeedHand = true,
-            BreakOnDropItem = true
+            BreakOnHandChange = true
         };
 
         _doAfter.TryStartDoAfter(doAfterArgs);
