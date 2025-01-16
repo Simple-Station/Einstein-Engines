@@ -1,5 +1,5 @@
 - type: decal
-  id: 0
+  id: alphanumeric_0
   tags: ["crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
@@ -9,7 +9,7 @@
     state: 0
 
 - type: decal
-  id: 1
+  id: alphanumeric_1
   tags: ["crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
@@ -19,7 +19,7 @@
     state: 1
 
 - type: decal
-  id: 2
+  id: alphanumeric_2
   tags: ["crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
@@ -29,7 +29,7 @@
     state: 2
 
 - type: decal
-  id: 3
+  id: alphanumeric_3
   tags: ["crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
@@ -39,7 +39,7 @@
     state: 3
 
 - type: decal
-  id: 4
+  id: alphanumeric_4
   tags: ["crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
@@ -49,7 +49,7 @@
     state: 4
 
 - type: decal
-  id: 5
+  id: alphanumeric_5
   tags: ["crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
@@ -59,7 +59,7 @@
     state: 5
 
 - type: decal
-  id: 6
+  id: alphanumeric_6
   tags: ["crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
@@ -69,7 +69,7 @@
     state: 6
 
 - type: decal
-  id: 7
+  id: alphanumeric_7
   tags: ["crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
@@ -79,7 +79,7 @@
     state: 7
 
 - type: decal
-  id: 8
+  id: alphanumeric_8
   tags: ["crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
@@ -89,7 +89,7 @@
     state: 8
 
 - type: decal
-  id: 9
+  id: alphanumeric_9
   tags: ["crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
@@ -1039,7 +1039,7 @@
     state: uboa
 
 - type: decal
-  id: a
+  id: alphanumeric_a
   tags: ["crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
@@ -1049,7 +1049,7 @@
     state: a
 
 - type: decal
-  id: b
+  id: alphanumeric_b
   tags: ["crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
@@ -1059,7 +1059,7 @@
     state: b
 
 - type: decal
-  id: c
+  id: alphanumeric_c
   tags: ["crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
@@ -1069,7 +1069,7 @@
     state: c
 
 - type: decal
-  id: d
+  id: alphanumeric_d
   tags: ["crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
@@ -1079,7 +1079,7 @@
     state: d
 
 - type: decal
-  id: e
+  id: alphanumeric_e
   tags: ["crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
@@ -1089,7 +1089,7 @@
     state: e
 
 - type: decal
-  id: f
+  id: alphanumeric_f
   tags: ["crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
@@ -1099,7 +1099,7 @@
     state: f
 
 - type: decal
-  id: g
+  id: alphanumeric_g
   tags: ["crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
@@ -1109,7 +1109,7 @@
     state: g
 
 - type: decal
-  id: h
+  id: alphanumeric_h
   tags: ["crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
@@ -1119,7 +1119,7 @@
     state: h
 
 - type: decal
-  id: i
+  id: alphanumeric_i
   tags: ["crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
@@ -1129,7 +1129,7 @@
     state: i
 
 - type: decal
-  id: j
+  id: alphanumeric_j
   tags: ["crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
@@ -1139,7 +1139,7 @@
     state: j
 
 - type: decal
-  id: k
+  id: alphanumeric_k
   tags: ["crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
@@ -1149,7 +1149,7 @@
     state: k
 
 - type: decal
-  id: l
+  id: alphanumeric_l
   tags: ["crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
@@ -1159,7 +1159,7 @@
     state: l
 
 - type: decal
-  id: m
+  id: alphanumeric_m
   tags: ["crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
@@ -1169,7 +1169,7 @@
     state: m
 
 - type: decal
-  id: n
+  id: alphanumeric_n
   tags: ["crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
@@ -1179,7 +1179,7 @@
     state: n
 
 - type: decal
-  id: o
+  id: alphanumeric_o
   tags: ["crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
@@ -1189,7 +1189,7 @@
     state: o
 
 - type: decal
-  id: p
+  id: alphanumeric_p
   tags: ["crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
@@ -1199,7 +1199,7 @@
     state: p
 
 - type: decal
-  id: q
+  id: alphanumeric_q
   tags: ["crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
@@ -1209,7 +1209,7 @@
     state: q
 
 - type: decal
-  id: r
+  id: alphanumeric_r
   tags: ["crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
@@ -1219,7 +1219,7 @@
     state: r
 
 - type: decal
-  id: s
+  id: alphanumeric_s
   tags: ["crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
@@ -1229,7 +1229,7 @@
     state: s
 
 - type: decal
-  id: t
+  id: alphanumeric_t
   tags: ["crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
@@ -1239,7 +1239,7 @@
     state: t
 
 - type: decal
-  id: u
+  id: alphanumeric_u
   tags: ["crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
@@ -1249,7 +1249,7 @@
     state: u
 
 - type: decal
-  id: v
+  id: alphanumeric_v
   tags: ["crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
@@ -1259,7 +1259,7 @@
     state: v
 
 - type: decal
-  id: w
+  id: alphanumeric_w
   tags: ["crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
@@ -1269,7 +1269,7 @@
     state: w
 
 - type: decal
-  id: x
+  id: alphanumeric_x
   tags: ["crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
@@ -1279,7 +1279,7 @@
     state: x
 
 - type: decal
-  id: y
+  id: alphanumeric_y
   tags: ["crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
@@ -1289,7 +1289,7 @@
     state: y
 
 - type: decal
-  id: z
+  id: alphanumeric_z
   tags: ["crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
