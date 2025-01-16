@@ -137,16 +137,6 @@
     size: Normal
 
 - type: entity
-  id: ActionBaseToggleMagboots
-  name: Toggle Magboots
-  description: Toggles the magboots on and off.
-  noSpawn: true
-  components:
-  - type: InstantAction
-    itemIconStyle: NoItem
-    event: !type:ToggleMagbootsEvent
-
-- type: entity
   id: ActionToggleMagboots
   name: Toggle Magboots
   description: Toggles the magboots on and off.
