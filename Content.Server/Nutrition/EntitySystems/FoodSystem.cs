@@ -24,6 +24,7 @@ using Content.Shared.Inventory;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Nutrition;
 using Content.Shared.Nutrition.EntitySystems;
+using Content.Shared.Popups; // Shitmed Change
 using Content.Shared.Stacks;
 using Content.Shared.Storage;
 using Content.Shared.Verbs;
@@ -164,10 +165,14 @@ public sealed class FoodSystem : EntitySystem
             return (false, true);
         }
 
+        // Shitmed Change
+        EntityUid? userName = null;
+
         var forceFeed = user != target;
         if (forceFeed)
         {
-            var userName = Identity.Entity(user, EntityManager);
+            // Shitmed Change
+            userName = Identity.Entity(user, EntityManager);
             _popup.PopupEntity(
                 Loc.GetString("food-system-force-feed", ("user", userName)),
                 user,
@@ -204,7 +209,25 @@ public sealed class FoodSystem : EntitySystem
             NeedHand = forceFeed
         };
 
-        _doAfter.TryStartDoAfter(doAfterArgs);
+        // Shitmed Change - track success of doafter to prevent popup on doafter cancel
+        var doAfterSuccess = _doAfter.TryStartDoAfter(doAfterArgs);
+
+        // Shitmed Change
+        if (foodComp.PopupOnEatAttempt && doAfterSuccess)
+        {
+            userName ??= Identity.Entity(user, EntityManager);
+            var foodName = Identity.Entity(food, EntityManager);
+            _popup.PopupPredicted(
+                !forceFeed
+                ? Loc.GetString("food-system-eat-popup", ("user", userName), ("food", foodName))
+                : Loc.GetString("food-system-force-feed-popup", ("user", userName), ("target", Identity.Entity(target, EntityManager)), ("food", foodName)),
+                user, target, PopupType.SmallCaution);
+
+            if (!forceFeed)
+                _popup.PopupEntity(Loc.GetString("food-system-eat-popup-self", ("user", userName), ("food", foodName)),
+                    user, target, PopupType.SmallCaution);
+        }
+
         return (true, true);
     }
 
