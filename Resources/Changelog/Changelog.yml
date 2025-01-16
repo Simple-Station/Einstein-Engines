@@ -9980,3 +9980,12 @@ Entries:
   id: 6701
   time: '2025-01-16T05:25:30.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1559
+- author: CerberusWolfie
+  changes:
+    - type: Fix
+      message: >-
+        Fixed the missing playtime requirement on Security Officer. It is now
+        set to 10 hours of Security Department.
+  id: 6702
+  time: '2025-01-16T07:17:19.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1561
