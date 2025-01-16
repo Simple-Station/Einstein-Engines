@@ -301,7 +301,7 @@ public sealed class FoodSystem : EntitySystem
         {
             var targetName = Identity.Entity(args.Target.Value, EntityManager);
             var userName = Identity.Entity(args.User, EntityManager);
-            _popup.PopupEntity(Loc.GetString("food-system-force-feed-success", ("user", userName), ("flavors", flavors)), entity.Owner, entity.Owner);
+            _popup.PopupEntity(Loc.GetString("food-system-force-feed-success", ("user", userName), ("flavors", flavors)), args.Target.Value, args.Target.Value);
 
             _popup.PopupEntity(Loc.GetString("food-system-force-feed-success-user", ("target", targetName)), args.User, args.User);
 
