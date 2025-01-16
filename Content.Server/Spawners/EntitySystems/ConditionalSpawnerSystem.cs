@@ -95,7 +95,7 @@ namespace Content.Server.Spawners.EntitySystems
             var picked = _robustRandom.Pick(component.Prototypes);
             try
             {
-                EntityManager.SpawnEntity(picked, coordinates);
+                EntityManager.SpawnEntity(picked, Transform(uid).Coordinates);
             }
             catch (EntityCreationException e)
             {
