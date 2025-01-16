@@ -181,7 +181,7 @@ trait-name-MartialArtist = Martial Artist
 trait-description-MartialArtist =
     You have received formal training in unarmed combat, whether with Fists, Feet, or Claws.
     Your unarmed melee attacks deal [color=yellow]50%[/color] more damage, have a small range increase, and are now
-    considered a [color=yellow]Power Attack[/color], requiring less accuracy than regular unarmed melee attacks.
+    considered a [color=red]Power Attack[/color], requiring less precision than regular unarmed melee attacks.
     This has no effect on damage dealt with any form of armed melee.
 
 trait-name-Vigor = Vigor
