@@ -1,6 +1,9 @@
 marking-BunnyTail = Bunny Tail
 marking-BunnyTail-bunnytail = Tail
 
+marking-BunnyTail2 = Bunny Tail 2
+marking-BunnyTail2-bunnytail2 = Bunny Tail 2
+
 marking-DobleFur = Doble Tail
 marking-DobleFur-doblefurtailtone1 = Outer
 marking-DobleFur-doblefurtailtone2 = Inner

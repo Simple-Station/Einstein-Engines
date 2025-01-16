@@ -38,6 +38,22 @@
     state: bunnyearstone2
 
 - type: marking
+  id: BunnyEars2
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Human]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+        - !type:SkinColoring
+  sprites:
+  - sprite: Mobs/Customization/kemonomimi-ears.rsi
+    state: bunnyears2
+
+- type: marking
   id: FoxEars
   bodyPart: HeadTop
   markingCategory: HeadTop
