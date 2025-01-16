@@ -9989,3 +9989,10 @@ Entries:
   id: 6702
   time: '2025-01-16T07:17:19.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1561
+- author: Skubman
+  changes:
+    - type: Fix
+      message: Big security glasses now provide flash immunity and a security HUD.
+  id: 6703
+  time: '2025-01-16T07:21:22.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1557
