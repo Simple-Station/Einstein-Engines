@@ -102,7 +102,7 @@
         - MobLayer
   - type: Body
     prototype: Arachne
-    requiredLegs: 8
+    requiredLegs: 0 # TODO: set required legs to 8 once arachne legs are properly set up
   - type: Speech
     speechSounds: Alto
   - type: Inventory
