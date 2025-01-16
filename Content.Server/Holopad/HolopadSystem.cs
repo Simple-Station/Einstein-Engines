@@ -10,6 +10,7 @@ using Content.Shared.Holopad;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Labels.Components;
 using Content.Shared.Silicons.StationAi;
+using Content.Shared.Speech;
 using Content.Shared.Telephone;
 using Content.Shared.UserInterface;
 using Content.Shared.Verbs;
@@ -18,8 +19,6 @@ using Robust.Shared.Containers;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using System.Linq;
-using Content.Shared.Chat;
-
 
 namespace Content.Server.Holopad;
 
@@ -153,8 +152,7 @@ public sealed class HolopadSystem : SharedHolopadSystem
         if (IsHolopadControlLocked(entity, args.Actor))
             return;
 
-        if (entityTelephone.CurrentState != TelephoneState.EndingCall && entityTelephone.CurrentState != TelephoneState.Idle)
-            _telephoneSystem.EndTelephoneCalls((entity, entityTelephone));
+        _telephoneSystem.EndTelephoneCalls((entity, entityTelephone));
 
         // If the user is an AI, end all calls originating from its
         // associated core to ensure that any broadcasts will end
@@ -162,8 +160,7 @@ public sealed class HolopadSystem : SharedHolopadSystem
             !_stationAiSystem.TryGetStationAiCore((args.Actor, stationAiHeld), out var stationAiCore))
             return;
 
-        if (TryComp<TelephoneComponent>(stationAiCore, out var telephone) &&
-            telephone.CurrentState != TelephoneState.EndingCall && telephone.CurrentState != TelephoneState.Idle)
+        if (TryComp<TelephoneComponent>(stationAiCore, out var telephone))
             _telephoneSystem.EndTelephoneCalls((stationAiCore.Value, telephone));
     }
 
@@ -221,7 +218,8 @@ public sealed class HolopadSystem : SharedHolopadSystem
         {
             var receiver = new Entity<TelephoneComponent>(receiverUid, receiverTelephone);
 
-            if (!_telephoneSystem.IsSourceAbleToReachReceiver(source, receiver))
+            // Check if the core can reach the call source, rather than the other way around
+            if (!_telephoneSystem.IsSourceAbleToReachReceiver(receiver, source))
                 continue;
 
             if (_telephoneSystem.IsTelephoneEngaged(receiver))
@@ -236,10 +234,9 @@ public sealed class HolopadSystem : SharedHolopadSystem
                 LinkHolopadToUser(entity, args.Actor);
         }
 
-        if (!reachableAiCores.Any())
-            return;
-
-        _telephoneSystem.BroadcastCallToTelephones(source, reachableAiCores, args.Actor);
+        // Ignore range so that holopads that ignore other devices on the same grid can request the AI
+        var options = new TelephoneCallOptions { IgnoreRange = true };
+        _telephoneSystem.BroadcastCallToTelephones(source, reachableAiCores, args.Actor, options);
     }
 
     #endregion
@@ -360,6 +357,9 @@ public sealed class HolopadSystem : SharedHolopadSystem
 
     private void OnHolopadShutdown(Entity<HolopadComponent> entity, ref ComponentShutdown args)
     {
+        if (TryComp<TelephoneComponent>(entity, out var telphone) && _telephoneSystem.IsTelephoneEngaged((entity.Owner, telphone)))
+            _telephoneSystem.EndTelephoneCalls((entity, telphone));
+
         ShutDownHolopad(entity);
         SetHolopadAmbientState(entity, false);
     }
@@ -529,16 +529,23 @@ public sealed class HolopadSystem : SharedHolopadSystem
             entity.Comp.HologramProtoId == null)
             return;
 
-        var uid = Spawn(entity.Comp.HologramProtoId, Transform(entity).Coordinates);
+        var hologramUid = Spawn(entity.Comp.HologramProtoId, Transform(entity).Coordinates);
 
         // Safeguard - spawned holograms must have this component
-        if (!TryComp<HolopadHologramComponent>(uid, out var component))
+        if (!TryComp<HolopadHologramComponent>(hologramUid, out var holopadHologram))
         {
-            Del(uid);
+            Del(hologramUid);
             return;
         }
 
-        entity.Comp.Hologram = new Entity<HolopadHologramComponent>(uid, component);
+        entity.Comp.Hologram = new Entity<HolopadHologramComponent>(hologramUid, holopadHologram);
+
+        // Relay speech preferentially through the hologram
+        if (TryComp<SpeechComponent>(hologramUid, out var hologramSpeech) &&
+            TryComp<TelephoneComponent>(entity, out var entityTelephone))
+        {
+            _telephoneSystem.SetSpeakerForTelephone((entity, entityTelephone), (hologramUid, hologramSpeech));
+        }
     }
 
     private void DeleteHologram(Entity<HolopadHologramComponent> hologram, Entity<HolopadComponent> attachedHolopad)
@@ -636,11 +643,6 @@ public sealed class HolopadSystem : SharedHolopadSystem
             UnlinkHolopadFromUser(entity, entity.Comp.User.Value);
         }
 
-            if (TryComp<TelephoneComponent>(entity, out var stationAiCoreTelphone) &&
-                stationAiCoreTelphone.CurrentState != TelephoneState.EndingCall && stationAiCoreTelphone.CurrentState != TelephoneState.Idle)
-                _telephoneSystem.EndTelephoneCalls((entity, stationAiCoreTelphone));
-        }
-
         Dirty(entity);
     }
 
@@ -691,8 +693,12 @@ public sealed class HolopadSystem : SharedHolopadSystem
 
         var source = new Entity<TelephoneComponent>(stationAiCore.Value, stationAiTelephone);
 
+        // Check if the AI is unable to activate the projector (unlikely this will ever pass; its just a safeguard)
         if (!_telephoneSystem.IsSourceInRangeOfReceiver(source, receiver))
+        {
+            _popupSystem.PopupEntity(Loc.GetString("holopad-ai-is-unable-to-activate-projector"), receiver, user);
             return;
+        }
 
         // Terminate any calls that the core is hosting and immediately connect to the receiver
         _telephoneSystem.TerminateTelephoneCalls(source);
@@ -737,7 +743,6 @@ public sealed class HolopadSystem : SharedHolopadSystem
             var receiverTelephoneEntity = new Entity<TelephoneComponent>(receiver, receiverTelephone);
 
             if (sourceTelephoneEntity == receiverTelephoneEntity ||
-                receiverTelephone.UnlistedNumber ||
                 !_telephoneSystem.IsSourceAbleToReachReceiver(sourceTelephoneEntity, receiverTelephoneEntity))
                 continue;
 
