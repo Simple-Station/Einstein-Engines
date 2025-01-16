@@ -19,6 +19,8 @@ using Robust.Shared.Containers;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using System.Linq;
+using Content.Shared.Chat;
+
 
 namespace Content.Server.Holopad;
 
