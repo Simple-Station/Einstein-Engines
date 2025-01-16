@@ -1,0 +1,59 @@
+- type: entity
+  name: Боевой Молот
+  parent: BaseItem
+  id: WHHamerImperial
+  description: Тяжёлый, крепкий, на удивление НЕ силовой молот. Многие считают его символом праведного гнева и правосудия.
+  components:
+  - type: Tag
+    tags:
+    - FireAxe
+  - type: Sharp
+  - type: Execution
+    doAfterDuration: 4.0
+  - type: Sprite
+    sprite: _WH40K/Objects/Weapons/Melee/hamer_imperial.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: 135
+    swingLeft: true
+    attackRate: 1.3333
+    damage:
+      types:
+        Blunt: 4
+        Slash: 20
+        Structural: 30
+    heavyDamageBaseModifier: 1.0
+    heavyStaminaCost: 10
+    angle: 100
+    soundHit:
+      collection: MetalThud
+  - type: DamageOtherOnHit
+    meleeDamageMultiplier: 1.5
+    staminaCost: 18
+  - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 2
+        Slash: 5
+        Structural: 40
+  - type: Item
+    size: Ginormous
+  - type: Clothing
+    sprite: _WH40K/Objects/Weapons/Melee/hamer_imperial.rsi
+    quickEquip: false
+    slots:
+    - back
+  - type: UseDelay
+    delay: 1
+  - type: StealTarget
+    stealGroup: FireAxe
+  - type: IgniteOnMeleeHit
+    fireStacks: -4
+  # Shitmed Change
+  - type: Scalpel
+    speed: 0.3
+  - type: BoneSaw
+    speed: 0.5
