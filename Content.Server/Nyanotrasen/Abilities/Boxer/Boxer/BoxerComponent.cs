@@ -11,21 +11,12 @@ public sealed partial class BoxerComponent : Component
     [DataField("modifiers", required: true)]
     public DamageModifierSet UnarmedModifiers = default!;
 
-    /// <summary>
-    ///   What to multiply the melee weapon range by.
-    /// </summary>
-    [DataField]
-    public float RangeModifier = 1f;
+    [DataField("rangeBonus")]
+    public float RangeBonus = 1.0f;
 
     /// <summary>
     /// Damage modifier with boxing glove stam damage.
     /// </summary>
-    [DataField]
+    [DataField("boxingGlovesModifier")]
     public float BoxingGlovesModifier = 1.75f;
-
-    /// <summary>
-    ///   Turns the left click into a power attack when the light attack misses.
-    /// </summary>
-    [DataField]
-    public bool HeavyOnLightMiss = true;
 }

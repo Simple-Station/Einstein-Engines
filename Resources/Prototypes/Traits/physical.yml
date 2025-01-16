@@ -292,16 +292,24 @@
       - Borg
       - MedicalBorg
       - Boxer
+      - MartialArtist
+      - Gladiator
   functions:
+    - !type:TraitModifyUnarmed
+      heavyOnLightMiss: true
+      attackRateModifier: 1.25
+      rangeModifier: 1.1
     - !type:TraitReplaceComponent
-      components:
-        - type: Boxer
-          rangeModifier: 1.1
+      components:     # Keep BoxerComponent for now until we have After/Before on traits prototypes
+        - type: Boxer # for potential conflicts with other traits that replace unarmed damage
           modifiers:
             coefficients:
-              Blunt: 1.5
-              Slash: 1.5
-              Piercing: 1.5
+              Blunt: 1.2
+              Slash: 1.2
+              Piercing: 1.2
+      # An attack rate of 1.25 hits per second multiplied by 20% extra damage
+      # effectively means 50% more overall DPS, same DPS bonus as before (1 * 1.25 * 1.2 = 1.5)
+      # but the extra attack rate makes it visually apparent that it's Martial Artist.
 
 - type: trait
   id: Small
@@ -414,7 +422,6 @@
     - !type:TraitModifyUnarmed
       soundHit:
         collection: Punch
-      angle: 30
       animation: WeaponArcFist
       damage:
         types:

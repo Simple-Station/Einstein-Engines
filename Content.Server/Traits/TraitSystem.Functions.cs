@@ -607,6 +607,12 @@ public sealed partial class TraitModifyUnarmed : TraitFunction
     public EntProtoId? Animation;
 
     // <summary>
+    //     Whether to set the power attack animation to be the same as the light attack.
+    // </summary>
+    [DataField, AlwaysPushInheritance]
+    public bool HeavyAnimationFromLight = true;
+
+    // <summary>
     //     The damage values of unarmed damage.
     // </summary>
     [DataField, AlwaysPushInheritance]
@@ -617,6 +623,24 @@ public sealed partial class TraitModifyUnarmed : TraitFunction
     // </summary>
     [DataField, AlwaysPushInheritance]
     public DamageSpecifier? FlatDamageIncrease;
+
+    /// <summary>
+    ///   Turns the left click into a power attack when the light attack misses.
+    /// </summary>
+    [DataField]
+    public bool? HeavyOnLightMiss;
+
+    // <summary>
+    //     What to multiply the melee weapon range by.
+    // </summary>
+    [DataField, AlwaysPushInheritance]
+    public float? RangeModifier;
+
+    // <summary>
+    //     What to multiply the attack rate by.
+    // </summary>
+    [DataField, AlwaysPushInheritance]
+    public float? AttackRateModifier;
 
     public override void OnPlayerSpawn(EntityUid uid,
         IComponentFactory factory,
@@ -630,15 +654,24 @@ public sealed partial class TraitModifyUnarmed : TraitFunction
             melee.SoundHit = SoundHit;
 
         if (Animation != null)
-        {
             melee.Animation = Animation.Value;
-            melee.WideAnimation = Animation.Value; // Special case for Martial Artist
-        }
+
+        if (HeavyAnimationFromLight)
+            melee.WideAnimation = melee.Animation;
 
         if (Damage != null)
             melee.Damage = Damage;
 
         if (FlatDamageIncrease != null)
             melee.Damage += FlatDamageIncrease;
+
+        if (HeavyOnLightMiss != null)
+            melee.HeavyOnLightMiss = HeavyOnLightMiss.Value;
+
+        if (RangeModifier != null)
+            melee.Range *= RangeModifier.Value;
+
+        if (AttackRateModifier != null)
+            melee.AttackRate *= AttackRateModifier.Value;
     }
 }
