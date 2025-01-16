@@ -9969,3 +9969,30 @@ Entries:
   id: 6700
   time: '2025-01-15T20:35:37.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1555
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: Fixed interactions not respecting identity.
+    - type: Fix
+      message: Potentially fixed spawning issues.
+    - type: Fix
+      message: Fixed borgs, animals and aghosts being able to enter cryosleep.
+  id: 6701
+  time: '2025-01-16T05:25:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1559
+- author: CerberusWolfie
+  changes:
+    - type: Fix
+      message: >-
+        Fixed the missing playtime requirement on Security Officer. It is now
+        set to 10 hours of Security Department.
+  id: 6702
+  time: '2025-01-16T07:17:19.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1561
+- author: Skubman
+  changes:
+    - type: Fix
+      message: Big security glasses now provide flash immunity and a security HUD.
+  id: 6703
+  time: '2025-01-16T07:21:22.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1557
