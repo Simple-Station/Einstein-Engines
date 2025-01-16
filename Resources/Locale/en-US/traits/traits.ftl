@@ -224,7 +224,7 @@ trait-description-Voracious =
     Nothing gets between you and your food.
     Your endless consumption of food and drinks is twice as fast.
 
--terrain-example = [color=gray](e.g. spider web, slime puddle, kudzu, space glue)[/color]
+-terrain-example = [color=gray](e.g. plastic flaps, spider web, slime puddle, kudzu)[/color]
 -slippery-example = [color=gray](e.g. banana peel, water puddle, soap, space lube)[/color]
 
 trait-name-ParkourTraining = Parkour Training
