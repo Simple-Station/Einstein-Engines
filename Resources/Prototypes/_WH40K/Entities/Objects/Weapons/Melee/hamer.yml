@@ -19,9 +19,9 @@
     attackRate: 1.3333
     damage:
       types:
-        Blunt: 4
-        Slash: 20
-        Structural: 30
+        Blunt: 5
+        Slash: 30
+        Structural: 50
     heavyDamageBaseModifier: 1.0
     heavyStaminaCost: 10
     angle: 100
