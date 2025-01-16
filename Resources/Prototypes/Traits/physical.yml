@@ -358,16 +358,14 @@
       traits:
         - Claws
   functions:
-    - !type:TraitReplaceComponent
-      components:
-        - type: MeleeWeapon
-          soundHit:
-            collection: AlienClaw
-          animation: WeaponArcClaw
-          damage:
-            types:
-              Piercing: 5 # No, this isn't "OP", this is literally the worst brute damage type in the game.
-                          # Same deal as Slash, except that a majority of all armor provides Piercing resistance.
+    - !type:TraitModifyUnarmed
+      soundHit:
+        collection: AlienClaw
+      animation: WeaponArcClaw
+      damage:
+        types:
+          Piercing: 5 # No, this isn't "OP", this is literally the worst brute damage type in the game.
+                      # Same deal as Slash, except that a majority of all armor provides Piercing resistance.
 
 - type: trait
   id: Claws
@@ -386,17 +384,14 @@
       traits:
         - Talons
   functions:
-    - !type:TraitReplaceComponent
-      components:
-        - type: MeleeWeapon
-          soundHit:
-            collection: AlienClaw
-          angle: 30
-          animation: WeaponArcClaw
-          damage:
-            types:
-              Slash: 5 # Trade stamina damage on hit for a very minor amount of extra bleed.
-                      # Blunt also deals bleed damage, so this is more of a sidegrade.
+    - !type:TraitModifyUnarmed
+      soundHit:
+        collection: AlienClaw
+      animation: WeaponArcClaw
+      damage:
+        types:
+          Slash: 5 # Trade stamina damage on hit for a very minor amount of extra bleed.
+                  # Blunt also deals bleed damage, so this is more of a sidegrade.
 
 - type: trait
   id: NaturalWeaponRemoval
@@ -415,16 +410,14 @@
         - Talons
         - Claws
   functions:
-    - !type:TraitReplaceComponent
-      components:
-        - type: MeleeWeapon
-          soundHit:
-            collection: Punch
-          angle: 30
-          animation: WeaponArcFist
-          damage:
-            types:
-              Blunt: 5
+    - !type:TraitModifyUnarmed
+      soundHit:
+        collection: Punch
+      angle: 30
+      animation: WeaponArcFist
+      damage:
+        types:
+          Blunt: 5
 
 - type: trait
   id: StrikingCalluses
@@ -453,16 +446,10 @@
           jobs:
             - Boxer
   functions:
-    - !type:TraitReplaceComponent
-      components:
-        - type: MeleeWeapon
-          soundHit:
-            collection: Punch
-          angle: 30
-          animation: WeaponArcFist
-          damage:
-            types:
-              Blunt: 6
+    - !type:TraitModifyUnarmed
+      flatDamageIncrease:
+        types:
+          Blunt: 1
 
 - type: trait
   id: Spinarette
