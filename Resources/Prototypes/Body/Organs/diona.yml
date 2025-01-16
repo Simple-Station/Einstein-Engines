@@ -45,7 +45,7 @@
   - type: Food # Shitmed Change
     delay: 5
     forceFeedDelay: 6
-    popupOnEatAttempt: true
+    popupOnEat: true
   - type: Brain # Shitmed
   - type: SolutionContainerManager
     solutions:

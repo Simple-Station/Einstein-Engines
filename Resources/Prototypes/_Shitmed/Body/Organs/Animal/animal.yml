@@ -11,7 +11,7 @@
   - type: Food
     delay: 5
     forceFeedDelay: 6
-    popupOnEatAttempt: true
+    popupOnEat: true
   - type: Input
     context: "ghost"
   - type: Brain
