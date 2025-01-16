@@ -9895,3 +9895,104 @@ Entries:
   id: 6692
   time: '2025-01-15T00:55:06.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1537
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed a bug where failing to cast the Assay power meant one lost the
+        ability to ever use psionic powers again.
+  id: 6693
+  time: '2025-01-15T05:19:36.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1551
+- author: Mike32oz
+  changes:
+    - type: Add
+      message: Meta Station, Holopad every Department.
+    - type: Add
+      message: Meta Station, Job Reporter/room near arrival.
+    - type: Add
+      message: Meta Station, added MacBoots/ industrial gloves in Atmos lockers.
+    - type: Tweak
+      message: Meta Station, Tweaked increased job for Cargo.
+    - type: Tweak
+      message: Meta Station, More AI laws-circuit boards have been added to upload.
+  id: 6694
+  time: '2025-01-15T14:06:21.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1553
+- author: astriloqua
+  changes:
+    - type: Tweak
+      message: Tweaked the access of NTR to include Lawyer & Cargo
+    - type: Tweak
+      message: Tweaked the access of BSO to include Cargo
+  id: 6695
+  time: '2025-01-15T18:53:15.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1544
+- author: BlueHNT
+  changes:
+    - type: Tweak
+      message: Tweaked .35 magazine size to 12 rounds
+  id: 6696
+  time: '2025-01-15T19:23:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1532
+- author: Piras314
+  changes:
+    - type: Fix
+      message: Fixed being able to get night vision from putting a mouse on your head.
+  id: 6697
+  time: '2025-01-15T19:26:34.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1554
+- author: Ichai
+  changes:
+    - type: Add
+      message: TEG added to the eng
+    - type: Tweak
+      message: AI Core tweaked to look better
+  id: 6698
+  time: '2025-01-15T19:37:29.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1517
+- author: NeLepus
+  changes:
+    - type: Add
+      message: Added label rendering for vending machines & item preferences
+    - type: Tweak
+      message: Formatted pill without descriptions to follow  "pill (label)"
+    - type: Remove
+      message: Fake label duplicates in reagent jugs and pill canisters
+  id: 6699
+  time: '2025-01-15T20:03:08.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1538
+- author: Piras314
+  changes:
+    - type: Fix
+      message: Fixed audio issue
+  id: 6700
+  time: '2025-01-15T20:35:37.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1555
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: Fixed interactions not respecting identity.
+    - type: Fix
+      message: Potentially fixed spawning issues.
+    - type: Fix
+      message: Fixed borgs, animals and aghosts being able to enter cryosleep.
+  id: 6701
+  time: '2025-01-16T05:25:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1559
+- author: CerberusWolfie
+  changes:
+    - type: Fix
+      message: >-
+        Fixed the missing playtime requirement on Security Officer. It is now
+        set to 10 hours of Security Department.
+  id: 6702
+  time: '2025-01-16T07:17:19.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1561
+- author: Skubman
+  changes:
+    - type: Fix
+      message: Big security glasses now provide flash immunity and a security HUD.
+  id: 6703
+  time: '2025-01-16T07:21:22.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1557
