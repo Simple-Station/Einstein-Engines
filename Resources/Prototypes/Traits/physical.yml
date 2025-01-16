@@ -415,6 +415,11 @@
         - Human
         - Oni
         - SlimePerson
+        - Diona
+        - Dwarf
+        - Arachne
+        - IPC # Other species could justify getting this trait for Blunt stamina damage,
+              # but 6 blunt -> 5 blunt is a straight up downgrade.
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
