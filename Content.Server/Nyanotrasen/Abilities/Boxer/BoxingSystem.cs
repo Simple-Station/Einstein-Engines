@@ -22,7 +22,7 @@ public sealed partial class BoxingSystem : EntitySystem
         if (!TryComp<MeleeWeaponComponent>(uid, out var meleeComp))
             return;
 
-        meleeComp.Range *= component.RangeBonus;
+        meleeComp.Range *= component.RangeModifier;
         meleeComp.HeavyOnLightMiss = component.HeavyOnLightMiss;
 
         if (component.HeavyOnLightMiss)

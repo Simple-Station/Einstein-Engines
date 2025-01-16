@@ -296,6 +296,7 @@
     - !type:TraitReplaceComponent
       components:
         - type: Boxer
+          rangeModifier: 1.066666
           modifiers:
             coefficients:
               Blunt: 1.5
