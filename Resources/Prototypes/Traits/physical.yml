@@ -307,6 +307,8 @@
               Blunt: 1.2
               Slash: 1.2
               Piercing: 1.2
+              Poison: 1.2
+              Asphyxiation: 1.2
       # An attack rate of 1.25 hits per second (1 / 0.8 = 1.25) multiplied by 20% extra damage
       # effectively means 50% more overall DPS, same DPS bonus as before (1 * 1.25 * 1.2 = 1.5)
       # but the extra attack rate makes it visually apparent that it's Martial Artist.

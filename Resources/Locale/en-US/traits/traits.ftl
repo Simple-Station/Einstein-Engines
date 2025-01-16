@@ -179,7 +179,7 @@ trait-description-Feeble =
 
 trait-name-MartialArtist = Martial Artist
 trait-description-MartialArtist =
-    You have received formal training in unarmed combat, whether with fists, feet, or claws.
+    You have received formal training in unarmed combat, whether with fists, claws, feet, or teeth.
     Your unarmed melee attack is now considered a single-target [color=orange]Power Attack[/color], requiring less precision.
     Additionally, your unarmed melee attacks deal [color=yellow]20%[/color] more damage, attack [color=yellow]25%[/color] faster, and have [color=yellow]10%[/color] increased range.
     This has no effect on damage dealt with any form of armed melee.
