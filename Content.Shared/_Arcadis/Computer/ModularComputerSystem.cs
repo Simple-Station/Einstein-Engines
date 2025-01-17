@@ -82,7 +82,7 @@ public sealed class ModularComputerSystem : EntitySystem
             return;
         }
 
-        if (_gameTiming.IsFirstTimePredicted || _netMan.IsServer) {
+        if (_netMan.IsServer) { // Has to run only on server or mispredict opens 2 seperate UIs. Very bad.
             var activateMsg = new ActivateInWorldEvent(args.User, diskComp.ProgramPrototypeEntity.Value, true);
             RaiseLocalEvent(diskComp.ProgramPrototypeEntity.Value, activateMsg);
         }

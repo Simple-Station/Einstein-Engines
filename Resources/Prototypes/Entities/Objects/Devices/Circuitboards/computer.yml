@@ -277,6 +277,7 @@
       state: cpu_command
     - type: ComputerBoard
       prototype: ComputerComms
+      modularComputerProgramPrototype: CommunicationsConsoleDiskPrototype
 
 - type: entity
   parent: BaseComputerCircuitboard
