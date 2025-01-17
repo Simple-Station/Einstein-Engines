@@ -110260,6 +110260,13 @@ entities:
     - type: Transform
       pos: 18.5,-9.5
       parent: 100
+- proto: SpawnPointMagistrate
+  entities:
+  - uid: 20900
+    components:
+    - type: Transform
+      pos: -8.5,58.5
+      parent: 100
 - proto: SpawnPointMailCarrier
   entities:
   - uid: 16733

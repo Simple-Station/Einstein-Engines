@@ -20,6 +20,7 @@ loadout-category-JobsCommandHeadOfPersonnel = Head of Personnel
 loadout-category-JobsCommandAdminAssistant = Administrative Assistant
 loadout-category-JobsCommandBlueshieldOfficer = Blueshield Officer
 loadout-category-JobsCommandNanorep = Nanotrasen Representative
+loadout-category-JobsCommandMagistrate = Magistrate
 
 # Engineering
 loadout-category-JobsEngineering = Engineering

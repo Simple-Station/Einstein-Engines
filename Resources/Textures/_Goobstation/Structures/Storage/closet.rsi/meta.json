@@ -4,7 +4,7 @@
     "x": 32,
     "y": 32
   },
-  "copyright": "Made by Icepick - https://discord.com/channels/1202734573247795300/1236697829171527841/1282401830181277789",
+  "copyright": "Made by Icepick - https://discord.com/channels/1202734573247795300/1236697829171527841/1282401830181277789. Mag and Mag_Open resprited from BSO by CerberusWolfie",
   "license": "CC-BY-SA-3.0",
   "states": [
     {
@@ -15,6 +15,12 @@
     },
     {
       "name": "bso_open"
+    },
+    {
+      "name": "mag"
+    },
+    {
+      "name": "mag_door"
     },
 	{
       "name": "ntr"

@@ -5,7 +5,6 @@
   description: Part of a recent initiative to make computers less static. Comes with a disk slot for various "program disks".
   components:
     - type: ModularComputer
-    # I plan to make modular itemslots a thing in the future for stuff like the fax machine. Coming Soon:tm:
     - type: ItemSlots
       slots:
         modularComputerDiskSlot:
