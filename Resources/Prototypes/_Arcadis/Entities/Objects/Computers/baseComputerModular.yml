@@ -8,7 +8,7 @@
     # I plan to make modular itemslots a thing in the future for stuff like the fax machine. Coming Soon:tm:
     - type: ItemSlots
       slots:
-        MCC_diskSlot:
+        modularComputerDiskSlot:
           name: Disk
           insertSound:
             path: /Audio/Machines/terminal_insert_disc.ogg
