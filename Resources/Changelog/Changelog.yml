@@ -10177,3 +10177,10 @@ Entries:
   id: 6714
   time: '2025-01-17T03:53:49.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1509
+- author: Skubman
+  changes:
+    - type: Add
+      message: IPCs can now wear Facial Hair.
+  id: 6715
+  time: '2025-01-17T04:55:26.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1575
