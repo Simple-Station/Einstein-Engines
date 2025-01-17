@@ -165,9 +165,7 @@ public abstract class SharedWiresSystem : EntitySystem
 
         if (component.RequireOpen != wires.Open)
         {
-            if (_netManager.IsServer)
-                _popup.PopupCursor(Loc.GetString("base-computer-ui-component-not-opened", ("machine", uid)));
-
+            _popup.PopupPredicted(Loc.GetString("base-computer-ui-component-not-opened", ("machine", uid)), uid, uid);
             args.Cancel();
         }
     }
