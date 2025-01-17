@@ -10194,3 +10194,26 @@ Entries:
   id: 6716
   time: '2025-01-17T06:08:10.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1577
+- author: Skubman
+  changes:
+    - type: Fix
+      message: The mining drill now has a fast fire rate and extra range again.
+    - type: Fix
+      message: >-
+        The pickaxe and the mining drill can now be used as throwing weapons
+        again.
+    - type: Fix
+      message: >-
+        Fixed a bug where selecting weapons with a fast attack rate took a few
+        seconds before you could attack with them.
+    - type: Fix
+      message: 'Fixed the Goliath attacking too fast. '
+    - type: Tweak
+      message: >-
+        The power attack stamina cost of mining drills has been reduced to 0.7
+        stamina.
+    - type: Tweak
+      message: Re-adjusted the damage of the pickaxe.
+  id: 6717
+  time: '2025-01-17T10:30:44.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1579
