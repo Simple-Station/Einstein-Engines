@@ -5,7 +5,7 @@
   name: card
   components:
     - type: Card
-      backSpriteLayers:
+      backSprite:
       - sprite: EstacaoPirata/Objects/Misc/cards.rsi
         state: singlecard_down_nanotrasen
 

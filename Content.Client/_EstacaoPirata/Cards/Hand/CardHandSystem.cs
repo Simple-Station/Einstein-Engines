@@ -48,10 +48,8 @@ public sealed class CardHandSystem : EntitySystem
     private bool TryGetCardLayer(EntityUid card, out SpriteComponent.Layer? layer)
     {
         layer = null;
-        if (!TryComp(card, out SpriteComponent? cardSprite))
-            return false;
-
-        if (!cardSprite.TryGetLayer(0, out var l))
+        if (!TryComp(card, out SpriteComponent? cardSprite)
+            || !cardSprite.TryGetLayer(0, out var l))
             return false;
 
         layer = l;
@@ -60,10 +58,8 @@ public sealed class CardHandSystem : EntitySystem
 
     private void UpdateSprite(EntityUid uid, CardHandComponent comp)
     {
-        if (!TryComp(uid, out SpriteComponent? sprite))
-            return;
-
-        if (!TryComp(uid, out CardStackComponent? cardStack))
+        if (!TryComp(uid, out SpriteComponent? sprite)
+            || !TryComp(uid, out CardStackComponent? cardStack))
             return;
 
         // Prevents error appearing at spawnMenu

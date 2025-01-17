@@ -64,5 +64,4 @@ public sealed class OpenTriggeredStorageFillSystem : EntitySystem
         _popup.PopupEntity(Loc.GetString("container-unsealed"), args.Target);
         RemComp(uid, comp);
     }
-
 }

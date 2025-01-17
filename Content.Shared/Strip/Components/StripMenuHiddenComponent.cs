@@ -1,13 +1,10 @@
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared.Strip.Components
-{
+namespace Content.Shared.Strip.Components;
 
-    /// <summary>
-    /// This is used for marking an entity (mainly one with ItemComponent) as a hidden item in the Strip Menu.
-    /// </summary>
-    [RegisterComponent, NetworkedComponent]
-    public sealed partial class StripMenuHiddenComponent : Component;
-
-}
+/// <summary>
+///     An item with this component is always hidden in the strip menu, regardless of other circumstances.
+/// </summary>
+[RegisterComponent, NetworkedComponent]
+public sealed partial class StripMenuHiddenComponent : Component;

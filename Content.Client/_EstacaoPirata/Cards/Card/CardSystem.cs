@@ -62,20 +62,12 @@ public sealed class CardSystem : EntitySystem
 
         //inserts Missing Layers
         if (spriteComponent.AllLayers.Count() < layerCount)
-        {
             for (var i = spriteComponent.AllLayers.Count(); i < layerCount; i++)
-            {
                 spriteComponent.AddBlankLayer(i);
-            }
-        }
         //Removes extra layers
         else if (spriteComponent.AllLayers.Count() > layerCount)
-        {
             for (var i = spriteComponent.AllLayers.Count() - 1; i >= layerCount; i--)
-            {
                 spriteComponent.RemoveLayer(i);
-            }
-        }
 
         for (var i = 0; i < newSprite.Count(); i++)
         {

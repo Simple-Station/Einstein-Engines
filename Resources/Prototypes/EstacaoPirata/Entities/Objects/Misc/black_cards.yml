@@ -181,7 +181,7 @@
   - type: UseDelay
     delay: 0.5
   - type: Card
-    backSpriteLayers:
+    backSprite:
     - sprite: EstacaoPirata/Objects/Misc/cards.rsi
       state: singlecard_down_black
     flipped: true

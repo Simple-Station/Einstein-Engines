@@ -9,5 +9,6 @@ namespace Content.Server._EstacaoPirata.OpenTriggeredStorageFill;
 [RegisterComponent]
 public sealed partial class OpenTriggeredStorageFillComponent : Component
 {
-    [DataField("contents")] public List<EntitySpawnEntry> Contents = new();
+    [DataField]
+    public List<EntitySpawnEntry> Contents = new();
 }

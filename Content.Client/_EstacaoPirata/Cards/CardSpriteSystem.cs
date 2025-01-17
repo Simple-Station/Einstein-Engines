@@ -34,21 +34,13 @@ public sealed class CardSpriteSystem : EntitySystem
         layerCount = int.Max(1, layerCount); // Frontier: you need one layer.
         //inserts Missing Layers
         if (sprite.AllLayers.Count() < layerCount)
-        {
             for (var i = sprite.AllLayers.Count(); i < layerCount; i++)
-            {
                 sprite.AddBlankLayer(i);
-            }
-        }
+
         //Removes extra layers
         else if (sprite.AllLayers.Count() > layerCount)
-        {
             for (var i = sprite.AllLayers.Count() - 1; i >= layerCount; i--)
-            {
                 sprite.RemoveLayer(i);
-            }
-        }
-
 
         return true;
     }
