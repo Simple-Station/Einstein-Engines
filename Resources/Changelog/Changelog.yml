@@ -10217,3 +10217,22 @@ Entries:
   id: 6717
   time: '2025-01-17T10:30:44.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1579
+- author: CerberusWolfie
+  changes:
+    - type: Add
+      message: Added Magistrate role.
+    - type: Add
+      message: Added Dignitary Department.
+    - type: Add
+      message: Added winter coats for NTR and Magistrate on Glacier Spawn.
+    - type: Tweak
+      message: >-
+        Moved Blueshield Officer and Nanotrasen Representative to Dignitary
+        Department.
+    - type: Fix
+      message: Fixed the category groups identifier for BSO and NTR in Loadouts.
+    - type: Fix
+      message: Fixed Chief Justice tag in ID Card Computer.
+  id: 6718
+  time: '2025-01-17T15:26:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1536
