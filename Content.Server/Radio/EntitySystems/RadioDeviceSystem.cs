@@ -1,6 +1,7 @@
 using System.Linq;
 using Content.Server.Chat.Systems;
 using Content.Server.Interaction;
+using Content.Server.Language;
 using Content.Server.Popups;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
@@ -15,7 +16,9 @@ using Content.Shared.Chat;
 using Content.Shared.Radio.Components;
 using Content.Shared.UserInterface; // Nuclear-14
 using Content.Shared._NC.Radio; // Nuclear-14
-using Robust.Server.GameObjects; // Nuclear-14
+using Robust.Server.GameObjects;
+using Robust.Shared.Network;
+using Robust.Shared.Player; // Nuclear-14
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.Radio.EntitySystems;
@@ -32,6 +35,8 @@ public sealed class RadioDeviceSystem : EntitySystem
     [Dependency] private readonly InteractionSystem _interaction = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
+    [Dependency] private readonly INetManager _netMan = default!;
+    [Dependency] private readonly LanguageSystem _language = default!;
 
     // Used to prevent a shitter from using a bunch of radios to spam chat.
     private HashSet<(string, EntityUid)> _recentlySent = new();
@@ -59,12 +64,10 @@ public sealed class RadioDeviceSystem : EntitySystem
         SubscribeLocalEvent<IntercomComponent, ToggleIntercomSpeakerMessage>(OnToggleIntercomSpeaker);
         SubscribeLocalEvent<IntercomComponent, SelectIntercomChannelMessage>(OnSelectIntercomChannel);
 
-        // Nuclear-14-Start
         SubscribeLocalEvent<RadioMicrophoneComponent, BeforeActivatableUIOpenEvent>(OnBeforeHandheldRadioUiOpen);
         SubscribeLocalEvent<RadioMicrophoneComponent, ToggleHandheldRadioMicMessage>(OnToggleHandheldRadioMic);
         SubscribeLocalEvent<RadioMicrophoneComponent, ToggleHandheldRadioSpeakerMessage>(OnToggleHandheldRadioSpeaker);
         SubscribeLocalEvent<RadioMicrophoneComponent, SelectHandheldRadioFrequencyMessage>(OnChangeHandheldRadioFrequency);
-        // Nuclear-14-End
 
         SubscribeLocalEvent<IntercomComponent, MapInitEvent>(OnMapInit); // Frontier
     }
@@ -197,9 +200,14 @@ public sealed class RadioDeviceSystem : EntitySystem
 
         using (args.PushGroup(nameof(RadioMicrophoneComponent)))
         {
-            args.PushMarkup(Loc.GetString("handheld-radio-component-on-examine", ("frequency", /*Nuclear-14-start*/ component.Frequency /*Nuclear-14-end*/)));
-            args.PushMarkup(Loc.GetString("handheld-radio-component-chennel-examine",
-                ("channel", proto.LocalizedName)));
+            args.PushMarkup(Loc.GetString(
+                "handheld-radio-component-on-examine",
+                ("frequency", component.Frequency),
+                ("color", proto.Color.ToHex())));
+            args.PushMarkup(Loc.GetString(
+                "handheld-radio-component-channel-examine",
+                ("channel", proto.LocalizedName),
+                ("color", proto.Color.ToHex())));
         }
     }
 
@@ -216,25 +224,21 @@ public sealed class RadioDeviceSystem : EntitySystem
     {
         if (component.PowerRequired && !this.IsPowered(uid, EntityManager)
             || component.UnobstructedRequired && !_interaction.InRangeUnobstructed(args.Source, uid, 0))
-        {
             args.Cancel();
-        }
     }
 
     private void OnReceiveRadio(EntityUid uid, RadioSpeakerComponent component, ref RadioReceiveEvent args)
     {
-        if (uid == args.RadioSource)
-            return;
-
-        var nameEv = new TransformSpeakerNameEvent(args.MessageSource, Name(args.MessageSource));
-        RaiseLocalEvent(args.MessageSource, nameEv);
-
-        var name = Loc.GetString("speech-name-relay",
-            ("speaker", Name(uid)),
-            ("originalName", nameEv.VoiceName));
-
-        // log to chat so people can identity the speaker/source, but avoid clogging ghost chat if there are many radios
-        _chat.TrySendInGameICMessage(uid, args.OriginalChatMsg.Message, InGameICChatType.Whisper, ChatTransmitRange.GhostRangeLimit, nameOverride: name, checkRadioPrefix: false);
+        var parent = Transform(uid).ParentUid;
+        if (TryComp(parent, out ActorComponent? actor))
+        {
+            var canUnderstand = _language.CanUnderstand(parent, args.Language.ID);
+            var msg = new MsgChatMessage
+            {
+                Message = canUnderstand ? args.OriginalChatMsg : args.LanguageObfuscatedChatMsg
+            };
+            _netMan.ServerSendMessage(msg, actor.PlayerSession.Channel);
+        }
     }
 
     private void OnIntercomEncryptionChannelsChanged(Entity<IntercomComponent> ent, ref EncryptionChannelsChangedEvent args)
@@ -366,18 +370,6 @@ public sealed class RadioDeviceSystem : EntitySystem
                 TryComp(uid, out RadioMicrophoneComponent? mic))
         {
             mic.Frequency = channel.Frequency;
-        }
-        if (ent.StartSpeakerOnMapInit)
-        {
-            SetSpeakerEnabled(uid, null, true);
-            ent.SpeakerEnabled = true;
-            _appearance.SetData(uid, RadioDeviceVisuals.Speaker, true);
-        }
-        if (ent.StartMicrophoneOnMapInit)
-        {
-            SetMicrophoneEnabled(uid, null, true);
-            ent.MicrophoneEnabled = true;
-            _appearance.SetData(uid, RadioDeviceVisuals.Broadcasting, true);
         }
     }
     // End Frontier

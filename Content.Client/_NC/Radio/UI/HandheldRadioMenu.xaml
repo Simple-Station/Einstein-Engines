@@ -10,7 +10,7 @@
         <Control MinHeight="10"/>
         <BoxContainer Orientation="Vertical" SeparationOverride="4" MinWidth="150">
             <Label Name="CurrentTextFrequency" Text="{Loc 'handheld-radio-current-text-frequency'}" />
-            <LineEdit Name="FrequencyLineEdit" />
+            <LineEdit Name="FrequencyLineEdit" Text="1330"/>
         </BoxContainer>
         <BoxContainer Orientation="Horizontal" HorizontalExpand="True" HorizontalAlignment="Right" Margin="5 0 5 5">
             <Button Name="MicButton" ToggleMode="True" Text="{Loc 'handheld-radio-button-text-mic'}" StyleClasses="OpenRight" MinWidth="70"/>
