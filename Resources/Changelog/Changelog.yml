@@ -10032,3 +10032,10 @@ Entries:
   id: 6705
   time: '2025-01-17T00:27:00.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1572
+- author: spess-empyrean
+  changes:
+    - type: Fix
+      message: Fixed some errors with looping behaviors like jitter.
+  id: 6706
+  time: '2025-01-17T00:29:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1552
