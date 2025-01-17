@@ -118,7 +118,7 @@
   functions:
     - !type:TraitModifyStamina
       staminaModifier: 10
-      decayModifier: 0.3
+      decayModifier: 0.6
       cooldownModifier: -0.75
 
 - type: trait
@@ -142,7 +142,7 @@
   functions:
     - !type:TraitModifyStamina
       staminaModifier: -15
-      decayModifier: -0.45
+      decayModifier: -0.6
       cooldownModifier: 0.75
 
 - type: trait
