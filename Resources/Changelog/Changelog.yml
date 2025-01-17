@@ -9996,3 +9996,46 @@ Entries:
   id: 6703
   time: '2025-01-16T07:21:22.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1557
+- author: Skubman
+  changes:
+    - type: Fix
+      message: Arachne can now stand up after lying down.
+  id: 6704
+  time: '2025-01-17T00:16:28.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1571
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: >-
+        Added a popup for when the UI cannot be open due to the maintenance
+        panel being closed.
+    - type: Fix
+      message: Fixed Ripley control panel.
+    - type: Fix
+      message: Fixed Ripley giving battery instead of taking.
+    - type: Fix
+      message: Hopefully fixed wire light not appearing.
+    - type: Fix
+      message: Fixed crayons not placing the decal you want.
+    - type: Fix
+      message: Fixed bloodred boots not acting as a jetpack or magboots.
+    - type: Fix
+      message: Fixed voicemask chameleon menu.
+    - type: Fix
+      message: Fixed spawnpoint issues. (hopefully)
+    - type: Tweak
+      message: >-
+        The crayons menu now has letters and numbers always next to each other,
+        sorted.
+    - type: Tweak
+      message: Crayon UI has been improved, including a search feature.
+  id: 6705
+  time: '2025-01-17T00:27:00.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1572
+- author: spess-empyrean
+  changes:
+    - type: Fix
+      message: Fixed some errors with looping behaviors like jitter.
+  id: 6706
+  time: '2025-01-17T00:29:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1552
