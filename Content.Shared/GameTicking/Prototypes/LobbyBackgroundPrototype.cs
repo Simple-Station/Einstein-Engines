@@ -21,9 +21,9 @@ public sealed partial class LobbyBackgroundPrototype : IPrototype
     [DataField("background", required: true)]
     public ResPath Background = default!;
 
-    [DataField("name")]
+    [DataField]
     public string? Name;
 
-    [DataField("artist")]
+    [DataField]
     public string? Artist;
 }
