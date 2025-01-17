@@ -59,7 +59,7 @@
     soundHit:
       path: "/Audio/Weapons/smash.ogg"
     angle: 0
-    attackRate: 0.75
+    attackRate: 1.3333
     animation: WeaponArcPunch
     damage:
       types:
