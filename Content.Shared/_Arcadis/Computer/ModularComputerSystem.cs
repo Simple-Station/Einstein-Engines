@@ -92,8 +92,6 @@ public sealed class ModularComputerSystem : EntitySystem
         if (args.Container.ID != component.DiskSlot)
             return;
 
-        UpdateComputer(new Entity<ModularComputerComponent>(uid, component));
-
         if (!TryComp(uid, out ItemSlotsComponent? slots))
             return;
 
@@ -103,7 +101,7 @@ public sealed class ModularComputerSystem : EntitySystem
         if (diskSlot.Item == null || !TryComp(diskSlot.Item, out ComputerDiskComponent? diskComp))
             return;
 
-        UpdateComputer(new Entity<ModularComputerComponent>(uid, component));
+        UpdateComputer(new Entity<ModularComputerComponent>(uid, component), diskComp, diskSlot);
 
         if (diskComp.ProgramPrototypeEntity != null)
         {
@@ -113,15 +111,9 @@ public sealed class ModularComputerSystem : EntitySystem
     }
 
 
-    private void UpdateComputer(Entity<ModularComputerComponent> computer)
+    private void UpdateComputer(Entity<ModularComputerComponent> computer, ComputerDiskComponent diskComp, ItemSlot diskSlot)
     {
-        if (!TryComp(computer.Owner, out ItemSlotsComponent? slots))
-            return;
-
-        if (!_itemSlots.TryGetSlot(computer.Owner, computer.Comp.DiskSlot, out var diskSlot, slots))
-            return;
-
-        if (diskSlot.Item == null || !TryComp(diskSlot.Item, out ComputerDiskComponent? diskComp))
+        if (diskSlot.Item == null)
             return;
 
         if (diskComp.ProgramPrototype == BlankDiskPrototype)
