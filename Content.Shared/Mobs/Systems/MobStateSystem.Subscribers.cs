@@ -5,6 +5,7 @@ using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Damage.ForceSay;
 using Content.Shared.Emoting;
 using Content.Shared.Hands;
+using Content.Shared.Hands.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Inventory.Events;
@@ -38,22 +39,23 @@ public partial class MobStateSystem
         SubscribeLocalEvent<MobStateComponent, ComponentInit>(OnComponentInit);
 
         SubscribeLocalEvent<MobStateComponent, BeforeGettingStrippedEvent>(OnGettingStripped);
+        SubscribeLocalEvent<MobStateComponent, SpeakAttemptEvent>(OnSpeakAttempt);
+        SubscribeLocalEvent<MobStateComponent, IsEquippingAttemptEvent>(OnEquipAttempt);
+        SubscribeLocalEvent<MobStateComponent, IsUnequippingAttemptEvent>(OnUnequipAttempt);
+        SubscribeLocalEvent<MobStateComponent, UpdateCanMoveEvent>(OnMoveAttempt);
+        SubscribeLocalEvent<MobStateComponent, TryingToSleepEvent>(OnSleepAttempt);
         SubscribeLocalEvent<MobStateComponent, ChangeDirectionAttemptEvent>(OnDirectionAttempt);
         SubscribeLocalEvent<MobStateComponent, UseAttemptEvent>(CheckActFactory(c => c.CanUse()));
         SubscribeLocalEvent<MobStateComponent, AttackAttemptEvent>(CheckActFactory(c => c.CanAttack()));
         SubscribeLocalEvent<MobStateComponent, ConsciousAttemptEvent>(CheckActFactory(c => c.IsConscious()));
+        SubscribeLocalEvent<MobStateComponent, InteractionAttemptEvent>(CheckActFactory(c => !c.IsIncapacitated()));
         SubscribeLocalEvent<MobStateComponent, ThrowAttemptEvent>(CheckActFactory(c => c.CanThrow()));
-        SubscribeLocalEvent<MobStateComponent, SpeakAttemptEvent>(OnSpeakAttempt);
-        SubscribeLocalEvent<MobStateComponent, IsEquippingAttemptEvent>(OnEquipAttempt);
         SubscribeLocalEvent<MobStateComponent, EmoteAttemptEvent>(CheckActFactory(c => c.CanEmote()));
-        SubscribeLocalEvent<MobStateComponent, IsUnequippingAttemptEvent>(OnUnequipAttempt);
         SubscribeLocalEvent<MobStateComponent, DropAttemptEvent>(CheckActFactory(c => c.CanPickUp()));
         SubscribeLocalEvent<MobStateComponent, PickupAttemptEvent>(CheckActFactory(c => c.CanPickUp()));
         SubscribeLocalEvent<MobStateComponent, StartPullAttemptEvent>(CheckActFactory(c => c.CanPull()));
-        SubscribeLocalEvent<MobStateComponent, UpdateCanMoveEvent>(OnMoveAttempt);
         SubscribeLocalEvent<MobStateComponent, StandAttemptEvent>(CheckActFactory(c => !c.IsDowned()));
         SubscribeLocalEvent<MobStateComponent, PointAttemptEvent>(CheckActFactory(c => c.CanPoint()));
-        SubscribeLocalEvent<MobStateComponent, TryingToSleepEvent>(OnSleepAttempt);
         SubscribeLocalEvent<MobStateComponent, CombatModeShouldHandInteractEvent>(OnCombatModeShouldHandInteract);
         SubscribeLocalEvent<MobStateComponent, AttemptPacifiedAttackEvent>(OnAttemptPacifiedAttack);
 
@@ -70,7 +72,10 @@ public partial class MobStateSystem
             // if this fails, then either the prototype has two parameters specified for one mobstate,
             // or we've already received the params from the server before we had the chance to set them
             // ourselves. (see TraitModifyMobState)
-            comp.MobStateParams.TryAdd(state, _proto.Index<MobStateParametersPrototype>(entry.Value));
+            if (comp.MobStateParams.TryAdd(state, _proto.Index<MobStateParametersPrototype>(entry.Value)))
+            {
+                //comp.MobStateParams[state].FillDefaults();
+            }
         }
     }
 
@@ -92,17 +97,11 @@ public partial class MobStateSystem
     }
 
 
-    private void OnUnbuckleAttempt(Entity<MobStateComponent> ent, ref UnbuckleAttemptEvent args)
+    private void OnUnbuckleAttempt(EntityUid uid, MobStateComponent comp, UnbuckleAttemptEvent args)
     {
         // TODO is this necessary?
         // Shouldn't the interaction have already been blocked by a general interaction check?
-        if (args.User == ent.Owner && IsIncapacitated(ent))
-            args.Cancelled = true;
-    }
-
-    private void CheckConcious(Entity<MobStateComponent> ent, ref ConsciousAttemptEvent args)
-    {
-        if (!ent.Comp.IsConscious())
+        if (args.User.HasValue && IsIncapacitated(args.User.Value, comp))
             args.Cancel();
     }
 
@@ -138,8 +137,11 @@ public partial class MobStateSystem
 
     private void OnStateEnteredSubscribers(EntityUid target, MobStateComponent component, MobState state)
     {
+        if (component.ShouldDropItems() && HasComp<HandsComponent>(target))
+            RaiseLocalEvent(target, new DropHandItemsEvent());
+
         if (component.IsDowned())
-            _standing.Down(target);
+            _standing.Down(target, dropHeldItems: false);
         else
             _standing.Stand(target);
 
@@ -203,7 +205,8 @@ public partial class MobStateSystem
     }
 
     /// <summary>
-    /// anti-boilerplate
+    /// anti-boilerplate.
+    /// Cancels the event if predicate returns false.
     /// </summary>
     private ComponentEventHandler<MobStateComponent, CancellableEntityEventArgs> CheckActFactory(Func<MobStateComponent, bool> predicate)
     {

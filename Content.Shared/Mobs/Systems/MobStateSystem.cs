@@ -96,11 +96,20 @@ public partial class MobStateSystem : EntitySystem
         return component.IsIncapacitated();
     }
 
-    public bool CanBreathe(EntityUid target, MobStateComponent? component = null)
+    public bool IsConscious(EntityUid target, MobStateComponent? component = null)
     {
         if (!Resolve(target, ref component, false))
             return false;
-        return component.CanBreathe();
+        return component.IsConscious();
+    }
+    /// <summary>
+    /// Clamped to [0,1]. Use <see cref="MobStateComponent.GetBreathingMultiplier"/> to get unclamped value.
+    /// </summary>
+    public float BreatheMultiplier(EntityUid target, MobStateComponent? component = null)
+    {
+        if (!Resolve(target, ref component, false))
+            return 0f;
+        return Math.Clamp(component.GetBreathingMultiplier(), 0, 1);
     }
 
 

@@ -74,7 +74,7 @@ namespace Content.IntegrationTests.Tests.Commands
                     Assert.That(mobStateSystem.IsDead(human, mobState), Is.True);
                     // This now may not be true for all mobs since the introduction of MobState parameters.
                     // Even though being dead should be incapacitating makes perfect sense.
-                    // If you're fucking around with parameters for MobState.Dead and this is
+                    // If you're fucking around with parameters for MobState.Dead and this
                     // throws at you, feel free to comment it. Or reconsider what you're doing.
                     Assert.That(mobStateSystem.IsIncapacitated(human, mobState), Is.True);
                 });

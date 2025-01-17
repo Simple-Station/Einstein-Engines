@@ -37,13 +37,13 @@ public sealed partial class MobStateComponent : Component
         {"Dead", "DeadDefault" }
     };
 
-    [AutoNetworkedField]
+    [AutoNetworkedField, ViewVariables]
     public Dictionary<MobState, MobStateParametersPrototype> MobStateParams = new();
 
     /// <summary>
     /// Use this to modify mobstate parameters without actually overwrithing them.
     /// </summary>
-    [AutoNetworkedField]
+    [AutoNetworkedField, ViewVariables]
     public Dictionary<MobState, MobStateParametersOverride> MobStateParamsOverrides = new()
     {
         { MobState.Alive, new() },
@@ -51,8 +51,9 @@ public sealed partial class MobStateComponent : Component
         { MobState.Critical, new() },
         { MobState.Dead, new() }
     };
-
+    [ViewVariables]
     public MobStateParametersPrototype CurrentStateParams => MobStateParams[CurrentState];
+    [ViewVariables]
     public MobStateParametersOverride CurrentStateOverrides => MobStateParamsOverrides[CurrentState];
 
     //default mobstate is always the lowest state level
@@ -98,10 +99,10 @@ public sealed partial class MobStateComponent : Component
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public bool IsDowned() => CurrentStateOverrides.ForceDown ?? CurrentStateParams?.ForceDown ?? false;
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public bool ShouldDropItems() => CurrentStateOverrides.DropItemsOnEntering ?? CurrentStateParams?.DropItemsOnEntering ?? false;
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public bool IsIncapacitated() => CurrentStateOverrides.Incapacitated ?? CurrentStateParams?.Incapacitated ?? false;
     
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public bool CanBreathe() => CurrentStateOverrides.CanBreathe ?? CurrentStateParams?.CanBreathe ?? false;
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public bool CanEquipSelf() => CurrentStateOverrides.CanEquipSelf ?? CurrentStateParams?.CanEquipSelf ?? false;
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -113,7 +114,12 @@ public sealed partial class MobStateComponent : Component
     
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public float? GetOxyDamageOverlay() => CurrentStateOverrides.OxyDamageOverlay ?? CurrentStateParams?.OxyDamageOverlay;
-
+    /// <summary>
+    /// Not clamped, but you really should, in case someone decides to be funny with the prototypes.
+    /// [0,1].
+    /// </summary>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public float GetBreathingMultiplier() => CurrentStateOverrides.BreathingMultiplier ?? CurrentStateParams?.BreathingMultiplier ?? 1f;
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public float GetStrippingTimeMultiplier() => CurrentStateOverrides.StrippingTimeMultiplier ?? CurrentStateParams?.StrippingTimeMultiplier ?? 1f;
     #endregion
@@ -127,13 +133,10 @@ public struct MobStateParametersOverride
         Throwing, PickingUp, Pulling, Attacking, Using, Pointing,
         IsConscious,
         CanEquipSelf, CanUnequipSelf, CanEquipOther, CanUnequipOther,
-        ForceDown, Incapacitated, CanBreathe;
+        ForceDown, DropItemsOnEntering, Incapacitated;
 
     [DataField]
-    public float? OxyDamageOverlay;
-
-    [DataField]
-    public float? StrippingTimeMultiplier;
+    public float? OxyDamageOverlay, BreathingMultiplier, StrippingTimeMultiplier;
 }
 
 [Prototype("mobStateParams")]
@@ -155,11 +158,59 @@ public sealed partial class MobStateParametersPrototype : IPrototype, IInheritin
     Throwing, PickingUp, Pulling, Attacking, Using, Pointing,
     IsConscious,
     CanEquipSelf, CanUnequipSelf, CanEquipOther, CanUnequipOther,
-    ForceDown, Incapacitated, CanBreathe = false;
+    ForceDown, DropItemsOnEntering, Incapacitated;
 
     [DataField]
-    public float? OxyDamageOverlay;
+    public float? OxyDamageOverlay, BreathingMultiplier, StrippingTimeMultiplier;
+}
 
-    [DataField]
-    public float StrippingTimeMultiplier = 1f;
+
+public static class MobStateParametersPrototypeExt
+{
+    public static void FillDefaults(this MobStateParametersPrototype p)
+    {
+        p.Moving = p.Moving ?? false;
+        p.Talking = p.Talking ?? false;
+        p.Emoting = p.Emoting ?? false;
+        p.Throwing = p.Throwing ?? false;
+        p.PickingUp = p.PickingUp ?? false;
+        p.Pulling = p.Pulling ?? false;
+        p.Attacking = p.Attacking ?? false;
+        p.Using = p.Using ?? false;
+        p.Pointing = p.Pointing ?? false;
+        p.IsConscious = p.IsConscious ?? false;
+        p.CanEquipSelf = p.CanEquipSelf ?? false;
+        p.CanUnequipSelf = p.CanUnequipSelf ?? false;
+        p.CanEquipOther = p.CanEquipOther ?? false;
+        p.CanUnequipOther = p.CanUnequipOther ?? false;
+        p.ForceDown = p.ForceDown ?? false;
+        p.DropItemsOnEntering = p.DropItemsOnEntering ?? false;
+        p.Incapacitated = p.Incapacitated ?? false;
+        p.BreathingMultiplier = p.BreathingMultiplier ?? 1f;
+        p.StrippingTimeMultiplier = p.StrippingTimeMultiplier ?? 1f;
+    }
+
+    public static void MergeWith(this MobStateParametersPrototype p, MobStateParametersPrototype other)
+    {
+        p.Moving = other.Moving ?? p.Moving;
+        p.Talking = other.Talking ?? p.Talking;
+        p.Emoting = other.Emoting ?? p.Emoting;
+        p.Throwing = other.Throwing ?? p.Throwing;
+        p.PickingUp = other.PickingUp ?? p.PickingUp;
+        p.Pulling = other.Pulling ?? p.Pulling;
+        p.Attacking = other.Attacking ?? p.Attacking;
+        p.Using = other.Using ?? p.Using;
+        p.Pointing = other.Pointing ?? p.Pointing;
+        p.IsConscious = other.IsConscious ?? p.IsConscious;
+        p.CanEquipSelf = other.CanEquipSelf ?? p.CanEquipSelf;
+        p.CanEquipOther = other.CanEquipOther ?? p.CanEquipOther;
+        p.CanUnequipSelf = other.CanUnequipSelf ?? p.CanUnequipSelf;
+        p.CanUnequipOther = other.CanUnequipOther ?? p.CanUnequipOther;
+        p.ForceDown = other.ForceDown ?? p.ForceDown;
+        p.Incapacitated = other.Incapacitated ?? p.Incapacitated;
+        p.DropItemsOnEntering = other.DropItemsOnEntering ?? p.DropItemsOnEntering;
+        p.BreathingMultiplier = other.BreathingMultiplier ?? p.BreathingMultiplier;
+        p.OxyDamageOverlay = other.OxyDamageOverlay ?? p.OxyDamageOverlay;
+        p.StrippingTimeMultiplier = other.StrippingTimeMultiplier ?? p.StrippingTimeMultiplier;
+    }
 }

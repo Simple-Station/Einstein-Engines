@@ -463,28 +463,9 @@ public sealed partial class TraitModifyMobState : TraitFunction
             DebugTools.Assert(_reflection.TryParseEnumReference($"enum.MobState.{pair.Key}", out var e), $"MobState.{pair.Key} does not exist.");
             MobState state = (MobState) e;
             MobStateParametersPrototype current = comp.MobStateParams[state];
-            var p = _proto.Index<MobStateParametersPrototype>(pair.Value);
-
-            current.Moving = p.Moving ?? current.Moving;
-            current.Talking = p.Talking ?? current.Talking;
-            current.Emoting = p.Emoting ?? current.Emoting;
-            current.Throwing = p.Throwing ?? current.Throwing;
-            current.PickingUp = p.PickingUp ?? current.PickingUp;
-            current.Pulling = p.Pulling ?? current.Pulling;
-            current.Attacking = p.Attacking ?? current.Attacking;
-            current.Using = p.Using ?? current.Using;
-            current.Pointing = p.Pointing ?? current.Pointing;
-            current.IsConscious = p.IsConscious ?? current.IsConscious;
-            current.CanEquipSelf = p.CanEquipSelf ?? current.CanEquipSelf;
-            current.CanEquipOther = p.CanEquipOther ?? current.CanEquipOther;
-            current.CanUnequipSelf = p.CanUnequipSelf ?? current.CanUnequipSelf;
-            current.CanUnequipOther = p.CanUnequipOther ?? current.CanUnequipOther;
-            current.ForceDown = p.ForceDown ?? current.ForceDown;
-            current.Incapacitated = p.Incapacitated ?? current.Incapacitated;
-            current.CanBreathe = p.CanBreathe ?? current.CanBreathe;
-
-            current.OxyDamageOverlay = p.OxyDamageOverlay ?? current.OxyDamageOverlay;
-            current.StrippingTimeMultiplier = p.StrippingTimeMultiplier;
+            var mod = _proto.Index<MobStateParametersPrototype>(pair.Value);
+            current.MergeWith(mod);
+            //current.FillDefaults();
         }
         comp.Dirty(); // why is this deprecated? it's much better than manually resolving entitymanager with ioc
     }
