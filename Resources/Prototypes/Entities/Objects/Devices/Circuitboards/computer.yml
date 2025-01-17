@@ -17,6 +17,10 @@
         Glass: 230
       chemicalComposition:
         Silicon: 20
+    - type: Tag
+      tags:
+        - ComputerBoard
+
 
 - type: entity
   parent: BaseComputerCircuitboard
