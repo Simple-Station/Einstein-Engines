@@ -9996,3 +9996,10 @@ Entries:
   id: 6703
   time: '2025-01-16T07:21:22.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1557
+- author: Skubman
+  changes:
+    - type: Fix
+      message: Arachne can now stand up after lying down.
+  id: 6704
+  time: '2025-01-17T00:16:28.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1571
