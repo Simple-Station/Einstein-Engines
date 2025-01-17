@@ -30,6 +30,10 @@
       id: LoadoutServiceBartenderShotgunDoubleBarreledRubber
     - type: loadout
       id: LoadoutServiceBartenderMosinRubber
+    - type: loadout
+      id: LoadoutServiceBartenderArgentiNonlethal
+    - type: loadout
+      id: LoadoutServiceBartenderRepeaterNonlethal
 
 #- type: characterItemGroup
 #  id: LoadoutBartenderEyes

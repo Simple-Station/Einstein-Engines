@@ -8,10 +8,10 @@
   - type: Sprite
     sprite: _NF/Objects/Weapons/Guns/Rifles/gestio.rsi
     layers:
-      - state: base
-        map: ["enum.GunVisualLayers.Base"]
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
   - type: Clothing
     sprite: _NF/Objects/Weapons/Guns/Rifles/gestio.rsi
   - type: Gun
@@ -60,6 +60,7 @@
     magState: mag
     steps: 1
     zeroVisible: true
+  - type: Appearance
 
 - type: entity
   parent: WeaponRifleGestio
@@ -124,10 +125,10 @@
   - type: Sprite
     sprite: _NF/Objects/Weapons/Guns/Rifles/novalitec1.rsi
     layers:
-      - state: base
-        map: ["enum.GunVisualLayers.Base"]
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
   - type: Clothing
     sprite: _NF/Objects/Weapons/Guns/Rifles/novalitec1.rsi
   - type: Gun
@@ -165,6 +166,7 @@
     magState: mag
     steps: 1
     zeroVisible: true
+  - type: Appearance
 
 - type: entity
   parent: WeaponRifleNovaliteC1
@@ -230,10 +232,10 @@
   - type: Sprite
     sprite: _NF/Objects/Weapons/Guns/Rifles/svt40.rsi
     layers:
-      - state: base
-        map: ["enum.GunVisualLayers.Base"]
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
   - type: Clothing
     sprite: _NF/Objects/Weapons/Guns/Rifles/svt40.rsi
     quickEquip: false
@@ -276,6 +278,7 @@
     magState: mag
     steps: 1
     zeroVisible: true
+  - type: Appearance
 
 - type: entity
   parent: WeaponRifleSVT

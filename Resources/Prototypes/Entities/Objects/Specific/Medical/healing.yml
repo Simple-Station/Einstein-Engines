@@ -609,6 +609,8 @@
         reagents:
         - ReagentId: SpaceDrugs
           Quantity: 15
+  - type: GuideHelp
+    guides: [ Psionics ]
 
 - type: entity
   parent: PillCanister
@@ -621,6 +623,8 @@
     contents:
     - id: PillSpaceDrugs
       amount: 5
+  - type: GuideHelp
+    guides: [ Psionics ]
 
 - type: entity
   suffix: Pax 10u
