@@ -36,6 +36,7 @@
         - MobLayer
   - type: Stamina
     critThreshold: 115
+    decay: 3.45 # 3 base decay multiplied by 1.15 = 3.45
   - type: TypingIndicator
     proto: oni
   - type: LanguageKnowledge

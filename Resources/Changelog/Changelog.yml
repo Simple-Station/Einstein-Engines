@@ -10236,3 +10236,18 @@ Entries:
   id: 6718
   time: '2025-01-17T15:26:50.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1536
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        The Vigor trait now has additional effects! Aside from increasing
+        stamina, Vigor now increases stamina regen per second, and reduces the
+        delay of stamina regen after taking stamina damage. The opposite effects
+        have been added to the Lethargy trait.
+    - type: Tweak
+      message: >-
+        The Oni species now has slightly increased stamina regen, and Felinids
+        decreased stamina regen.
+  id: 6719
+  time: '2025-01-17T15:53:24.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1578
