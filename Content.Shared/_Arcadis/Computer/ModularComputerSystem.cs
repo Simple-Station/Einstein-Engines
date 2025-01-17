@@ -59,7 +59,7 @@ public sealed class ModularComputerSystem : EntitySystem
             return;
         }
 
-        args.PushMarkup(Loc.GetString("modular-computer-examine-has-program ", ("program", EntityManager.GetComponent<MetaDataComponent>(diskComp.ProgramPrototypeEntity.Value).EntityName)));
+        args.PushMarkup(Loc.GetString("modular-computer-examine-has-program", ("program", EntityManager.GetComponent<MetaDataComponent>(diskComp.ProgramPrototypeEntity.Value).EntityName)));
     }
     private void OnActivate(EntityUid uid, ModularComputerComponent component, ActivateInWorldEvent args)
     {
