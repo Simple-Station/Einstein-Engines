@@ -10039,3 +10039,14 @@ Entries:
   id: 6706
   time: '2025-01-17T00:29:16.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1552
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Plastic flaps are now considered Difficult Terrain, and will slow you
+        down substantially when crawling through them. Note that the slows of
+        all Difficult Terrain are halved by the Parkour Training trait, and
+        increased by the Bad Knees trait.
+  id: 6707
+  time: '2025-01-17T01:53:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1573
