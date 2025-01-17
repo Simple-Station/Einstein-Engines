@@ -72,8 +72,8 @@ public sealed partial class FoodComponent : Component
     /// <summary>
     /// Shitmed Change: Whether to show a popup to everyone in range when attempting to eat this food, and upon successful eating.
     /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public bool PopupOnEat = false;
+    [DataField]
+    public bool PopupOnEat;
 
     /// <summary>
     /// For mobs that are food, requires killing them before eating.
