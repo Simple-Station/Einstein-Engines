@@ -8,6 +8,10 @@
     state: brain
   - type: Organ
     slotId: brain
+  - type: Food
+    delay: 5
+    forceFeedDelay: 6
+    popupOnEat: true
   - type: Input
     context: "ghost"
   - type: Brain
