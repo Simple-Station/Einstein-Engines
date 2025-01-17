@@ -10138,3 +10138,12 @@ Entries:
   id: 6711
   time: '2025-01-17T03:16:13.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1560
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: >-
+        Added handheld radio frequencies, accessible by pressing your "Use Item"
+        key while holding one.
+  id: 6712
+  time: '2025-01-17T03:30:13.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1574
