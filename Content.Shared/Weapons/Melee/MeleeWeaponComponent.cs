@@ -61,6 +61,12 @@ public sealed partial class MeleeWeaponComponent : Component
     [DataField]
     public bool DisableClick = false;
 
+    /// <summary>
+    ///   If true, when a light attack misses, the weapon will perform a power attack instead.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool HeavyOnLightMiss = false;
+
     /*
      * Melee combat works based around 2 types of attacks:
      * 1. Click attacks with left-click. This attacks whatever is under your mnouse

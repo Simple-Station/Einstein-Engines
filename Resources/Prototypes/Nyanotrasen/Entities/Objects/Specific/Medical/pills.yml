@@ -11,6 +11,8 @@
         reagents:
         - ReagentId: MindbreakerToxin
           Quantity: 20
+  - type: GuideHelp
+    guides: [ Mindbreaking ]
 
 - type: entity
   name: cryptobiolin
@@ -25,6 +27,8 @@
         reagents:
         - ReagentId: Cryptobiolin
           Quantity: 20
+  - type: GuideHelp
+    guides: [ PsionicInsulation ]
 
 - type: entity
   parent: PillCanister
@@ -37,6 +41,8 @@
     contents:
     - id: PillCryptobiolin
       amount: 5
+  - type: GuideHelp
+    guides: [ PsionicInsulation ]
 
 - type: entity
   name: chloral-hydrate
