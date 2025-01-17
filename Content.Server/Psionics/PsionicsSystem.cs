@@ -285,9 +285,8 @@ public sealed class PsionicsSystem : EntitySystem
             + _random.NextFloat(0, 100);
 
         // Increase the initial odds based on Glimmer.
-        // TODO: Change this equation when I do my Glimmer Refactor
         baselineChance += applyGlimmer
-            ? (float) _glimmerSystem.Glimmer / 1000 //Convert from Glimmer to %chance
+            ? _glimmerSystem.GetGlimmerEquilibriumRatio() * 25
             : 0;
 
         // Certain sources of power rolls provide their own multiplier.

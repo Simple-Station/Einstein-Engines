@@ -41,6 +41,7 @@
   - type: Familiar
   - type: Psionic
     removable: false
+    roller: false
     psychognomicDescriptors:
       - p-descriptor-bound
       - p-descriptor-cyclic
@@ -192,6 +193,7 @@
   - type: Dispellable
   - type: Psionic
     removable: false
+    roller: false
   - type: InnatePsionicPowers
     powersToAdd:
       - TelepathyPower

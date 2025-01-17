@@ -78,6 +78,7 @@
   id: LoadoutGolemancerPillCanisterSpaceDrugs
   category: JobsEpistemicsGolemancer
   cost: 1
+  guideEntry: Psionics
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutGolemancerEquipment
