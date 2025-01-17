@@ -10184,3 +10184,13 @@ Entries:
   id: 6715
   time: '2025-01-17T04:55:26.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1575
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Humans have received alternative bunny ears and bunny tail markings that
+        look the same as the bunny ears from the AutoDrobe, but
+        color-customizable.
+  id: 6716
+  time: '2025-01-17T06:08:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1577

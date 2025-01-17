@@ -7,7 +7,7 @@
   requirements:
     - !type:CharacterOverallTimeRequirement
       min: 216000 #60 hrs
-    - !type:DepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Medical
       min: 21600 #6 hrs
   canBeAntag: false
