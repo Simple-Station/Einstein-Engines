@@ -72,6 +72,15 @@
         Brute: 3
       types:
         Structural: 15
+  - type: DamageOtherOnHit
+    staminaCost: 12
+    damage:
+      groups:
+        Brute: 8
+      types:
+        Structural: 15
+  - type: ThrowingAngle
+    angle: 270
 
 - type: entity
   name: diamond tipped mining drill
@@ -92,6 +101,12 @@
     damage:
       groups:
         Brute: 6
+      types:
+        Structural: 30
+  - type: DamageOtherOnHit
+    damage:
+      groups:
+        Brute: 16
       types:
         Structural: 30
 
