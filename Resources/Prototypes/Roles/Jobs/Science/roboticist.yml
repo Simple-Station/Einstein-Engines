@@ -28,6 +28,7 @@
     outerClothing: ClothingOuterCoatRobo
     id: RoboticsPDA
     ears: ClothingHeadsetRobotics
+    pocket1: BookPsionicsGuidebook
   innerClothingSkirt: ClothingUniformJumpskirtRoboticist
   satchel: ClothingBackpackSatchelRoboticsFilled
   duffelbag: ClothingBackpackDuffelRoboticsFilled

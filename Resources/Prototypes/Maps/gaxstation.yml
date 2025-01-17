@@ -1,31 +1,29 @@
 - type: gameMap
   id: Gax
-  mapName: 'NCS Gax'
+  mapName: 'NVS Gax'
   mapPath: /Maps/gaxstation.yml
   minPlayers: 10
   maxPlayers: 45
   fallback: true
   stations:
-    Gaxstation:
+    NCS Gax:
       stationProto: StandardNanotrasenStation
       components:
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/DeltaV/NTES_Delta.yml
         - type: StationNameSetup
-          mapNameTemplate: '{0} NCS Gax {1}'
+          mapNameTemplate: '{0} NVS Gax {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: 'YG'
         - type: StationJobs
-          overflowJobs:
-          - Passenger
           availableJobs:
             #service
             Captain: [ 1, 1 ]
-            BlueshieldOfficer: [ 1, 1]
             NanotrasenRepresentative: [ 1, 1 ]
-            AdministrativeAssistant: [ 1, 1 ]
+            BlueshieldOfficer: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
+            AdministrativeAssistant: [ 1, 1 ]
             Bartender: [ 1, 1 ]
             Botanist: [3 , 3 ]
             Chef: [ 2, 2 ]
@@ -42,16 +40,14 @@
             MedicalDoctor: [ 3, 3 ]
             MedicalIntern: [ 3, 3 ]
             Paramedic: [ 2, 2 ]
-            MedicalBorg: [ 1, 1 ]
-            #Epistemics
+            #Science
             ResearchDirector: [ 1, 1 ]
-            Scientist: [ 4, 4 ]
-            ResearchAssistant: [ 2, 2 ]
-            Roboticist: [ 1, 2 ]
-            Borg: [ 2, 2 ]
-            Chaplain: [ 1, 1 ]
-            Librarian: [ 1, 1 ]
             ForensicMantis: [ 1, 1 ]
+            Scientist: [ 4, 4 ]
+            Roboticist: [ 1, 2 ]
+            Librarian: [ 1, 1 ]
+            Chaplain: [ 1, 1 ]
+            ResearchAssistant: [ 2, 2 ]
             #Security
             HeadOfSecurity: [ 1, 1 ]
             Warden: [ 1, 1 ]
@@ -72,5 +68,7 @@
             Clown: [ 1, 1 ]
             Mime: [ 1, 1 ]
             Musician: [ 1, 1 ]
-            #silicon
+            #Silicon
             StationAi: [ 1, 1 ]
+            Borg: [ 2, 3 ]
+            MedicalBorg: [ 1, 2 ]

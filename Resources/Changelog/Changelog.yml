@@ -9820,3 +9820,321 @@ Entries:
   id: 6687
   time: '2025-01-13T18:20:20.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1523
+- author: CerberusWolfie
+  changes:
+    - type: Fix
+      message: Fixed the NTR Stamp Texture on Paper
+    - type: Fix
+      message: Fixed name of Senior Officer, CBURN, and Deathsquad.
+  id: 6688
+  time: '2025-01-14T01:28:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1534
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: Added Holopads (unmapped)
+    - type: Add
+      message: Intellicards are now useful for removing/adding a Station AI's brain.
+    - type: Add
+      message: Added the Communications Console to Station AI actions.
+    - type: Add
+      message: AI now has a warp point.
+    - type: Add
+      message: Added more things for the AI to press.
+    - type: Add
+      message: More AI laws have been added.
+    - type: Fix
+      message: Fixed the mail system
+    - type: Fix
+      message: Fixed AI actions
+    - type: Fix
+      message: >-
+        Fixed invalid spawns for station AI breaking and ruining your ability to
+        play it.
+    - type: Fix
+      message: >-
+        The Station AI's name will now properly send in "arrived to the station"
+        announcements.
+    - type: Fix
+      message: Changed the CPR sound to simply not loop until fixed.
+    - type: Fix
+      message: Fixed unlocalized messages being sent for the random sentience event.
+  id: 6689
+  time: '2025-01-14T06:08:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1525
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: Fixes arrivals destroying all nearby doors/walls/etc.
+  id: 6690
+  time: '2025-01-14T08:47:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1539
+- author: sleepyyapril
+  changes:
+    - type: Tweak
+      message: Outer clothing will now count as partial identity coverage.
+    - type: Fix
+      message: Fixed portal artifacts targeting the Station AI.
+    - type: Fix
+      message: Fixed job titles not showing up in various announcements.
+    - type: Fix
+      message: Ported some general mob AI fixes.
+    - type: Fix
+      message: Fixed energy shield visuals.
+  id: 6691
+  time: '2025-01-14T23:24:39.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1547
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Added Space Wind Version 3. Smoother motion, better performance.
+    - type: Add
+      message: 'Monstermos rip tiles has returned as a default CVar. '
+    - type: Tweak
+      message: Floor Tiles once again are embeddable projectiles.
+  id: 6692
+  time: '2025-01-15T00:55:06.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1537
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed a bug where failing to cast the Assay power meant one lost the
+        ability to ever use psionic powers again.
+  id: 6693
+  time: '2025-01-15T05:19:36.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1551
+- author: Mike32oz
+  changes:
+    - type: Add
+      message: Meta Station, Holopad every Department.
+    - type: Add
+      message: Meta Station, Job Reporter/room near arrival.
+    - type: Add
+      message: Meta Station, added MacBoots/ industrial gloves in Atmos lockers.
+    - type: Tweak
+      message: Meta Station, Tweaked increased job for Cargo.
+    - type: Tweak
+      message: Meta Station, More AI laws-circuit boards have been added to upload.
+  id: 6694
+  time: '2025-01-15T14:06:21.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1553
+- author: astriloqua
+  changes:
+    - type: Tweak
+      message: Tweaked the access of NTR to include Lawyer & Cargo
+    - type: Tweak
+      message: Tweaked the access of BSO to include Cargo
+  id: 6695
+  time: '2025-01-15T18:53:15.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1544
+- author: BlueHNT
+  changes:
+    - type: Tweak
+      message: Tweaked .35 magazine size to 12 rounds
+  id: 6696
+  time: '2025-01-15T19:23:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1532
+- author: Piras314
+  changes:
+    - type: Fix
+      message: Fixed being able to get night vision from putting a mouse on your head.
+  id: 6697
+  time: '2025-01-15T19:26:34.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1554
+- author: Ichai
+  changes:
+    - type: Add
+      message: TEG added to the eng
+    - type: Tweak
+      message: AI Core tweaked to look better
+  id: 6698
+  time: '2025-01-15T19:37:29.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1517
+- author: NeLepus
+  changes:
+    - type: Add
+      message: Added label rendering for vending machines & item preferences
+    - type: Tweak
+      message: Formatted pill without descriptions to follow  "pill (label)"
+    - type: Remove
+      message: Fake label duplicates in reagent jugs and pill canisters
+  id: 6699
+  time: '2025-01-15T20:03:08.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1538
+- author: Piras314
+  changes:
+    - type: Fix
+      message: Fixed audio issue
+  id: 6700
+  time: '2025-01-15T20:35:37.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1555
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: Fixed interactions not respecting identity.
+    - type: Fix
+      message: Potentially fixed spawning issues.
+    - type: Fix
+      message: Fixed borgs, animals and aghosts being able to enter cryosleep.
+  id: 6701
+  time: '2025-01-16T05:25:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1559
+- author: CerberusWolfie
+  changes:
+    - type: Fix
+      message: >-
+        Fixed the missing playtime requirement on Security Officer. It is now
+        set to 10 hours of Security Department.
+  id: 6702
+  time: '2025-01-16T07:17:19.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1561
+- author: Skubman
+  changes:
+    - type: Fix
+      message: Big security glasses now provide flash immunity and a security HUD.
+  id: 6703
+  time: '2025-01-16T07:21:22.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1557
+- author: Skubman
+  changes:
+    - type: Fix
+      message: Arachne can now stand up after lying down.
+  id: 6704
+  time: '2025-01-17T00:16:28.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1571
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: >-
+        Added a popup for when the UI cannot be open due to the maintenance
+        panel being closed.
+    - type: Fix
+      message: Fixed Ripley control panel.
+    - type: Fix
+      message: Fixed Ripley giving battery instead of taking.
+    - type: Fix
+      message: Hopefully fixed wire light not appearing.
+    - type: Fix
+      message: Fixed crayons not placing the decal you want.
+    - type: Fix
+      message: Fixed bloodred boots not acting as a jetpack or magboots.
+    - type: Fix
+      message: Fixed voicemask chameleon menu.
+    - type: Fix
+      message: Fixed spawnpoint issues. (hopefully)
+    - type: Tweak
+      message: >-
+        The crayons menu now has letters and numbers always next to each other,
+        sorted.
+    - type: Tweak
+      message: Crayon UI has been improved, including a search feature.
+  id: 6705
+  time: '2025-01-17T00:27:00.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1572
+- author: spess-empyrean
+  changes:
+    - type: Fix
+      message: Fixed some errors with looping behaviors like jitter.
+  id: 6706
+  time: '2025-01-17T00:29:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1552
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Plastic flaps are now considered Difficult Terrain, and will slow you
+        down substantially when crawling through them. Note that the slows of
+        all Difficult Terrain are halved by the Parkour Training trait, and
+        increased by the Bad Knees trait.
+  id: 6707
+  time: '2025-01-17T01:53:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1573
+- author: Skubman
+  changes:
+    - type: Tweak
+      message: >-
+        Eating a brain now takes 5 seconds (from 1 second), and feeding someone
+        a brain takes 6 seconds.
+    - type: Add
+      message: >-
+        Attempting or succeeding to eat a brain now shows a red popup message to
+        everyone else in range, e.g. "Urist McHands is trying to eat the brain!"
+        / "Urist McHands ate the brain!".
+    - type: Fix
+      message: >-
+        Fixed a bug where players after being force-fed were not shown a popup
+        showing the food's flavors.
+  id: 6708
+  time: '2025-01-17T01:53:42.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1563
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Glimmer has been substantially reworked. Please read the new Psionics
+        Guidebook for more information. In short: "500 is the new normal
+        glimmer. Stop panicking if Sophia says the glimmer is 500. Call code
+        white if it gets to 750 and stays above that level."
+    - type: Add
+      message: >-
+        The much-requested Psionics Guidebook has returned, now with all new
+        up-to-date information. 
+    - type: Remove
+      message: >-
+        Removed "GLIMMERLOOSE". It's no longer possible for glimmer to start a
+        chain of events that ends the round if epistemics isn't destroyed. You
+        can ALWAYS recover from high glimmer now. 
+    - type: Tweak
+      message: >-
+        All glimmer events have had their thresholds tweaked to reflect the fact
+        that 500 is the new "Normal" amount of glimmer.
+  id: 6709
+  time: '2025-01-17T02:03:49.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1480
+- author: Eris
+  changes:
+    - type: Add
+      message: >-
+        The Modular Computer system has been ported. Expect cool stuff to come
+        soon.
+  id: 6710
+  time: '2025-01-17T03:12:40.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1556
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Martial Artist Rework: Martial Artist now costs 5 points, but it turns
+        all unarmed melee attacks into single-target power attacks, with 20%
+        bonus damage, 25% bonus attack rate and 10% bonus attack range.
+    - type: Tweak
+      message: >-
+        The reworked Martial Artist trait is now given for free to Boxers,
+        Martial Artists, and Gladiators.
+    - type: Tweak
+      message: >-
+        Martial Artists (the job) and Gladiators can now select the Striking
+        Calluses trait.
+    - type: Tweak
+      message: >-
+        The Martial Artist trait now applies bonus damage to the Lamiae's
+        unarmed Asphyxiation and Poison damage.
+    - type: Tweak
+      message: >-
+        The cost of Striking Calluses has been reduced from 4 points to 3
+        points.
+    - type: Fix
+      message: Fixed a bug where slow weapons were fast and fast weapons were slow.
+    - type: Fix
+      message: >-
+        You can pistol whip (right-click melee) immediately after firing a gun
+        again, and the cooldown on firing the gun after pistol whipping is
+        always 0.528 seconds again.
+    - type: Fix
+      message: >-
+        Prevented Dionas, Arachnae and IPCs, who all have pure Blunt damage from
+        selecting the redundant Natural Weapons Removal trait.
+  id: 6711
+  time: '2025-01-17T03:16:13.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1560

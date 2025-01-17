@@ -1361,6 +1361,9 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<bool> SpaceWind =
             CVarDef.Create("atmos.space_wind", true, CVar.SERVERONLY);
 
+        public static readonly CVarDef<float> SpaceWindStrengthMultiplier =
+            CVarDef.Create("atmos.space_wind_strength_multiplier", 1f, CVar.SERVERONLY);
+
         /// <summary>
         ///     Divisor from maxForce (pressureDifference * 2.25f) to force applied on objects.
         /// </summary>
@@ -1396,7 +1399,7 @@ namespace Content.Shared.CCVar
         ///     And maybe do your part to fix that? :)
         /// </remarks>
         public static readonly CVarDef<float> SpaceWindMinimumCalculatedMass =
-            CVarDef.Create("atmos.space_wind_minimum_calculated_mass", 10f, CVar.SERVERONLY);
+            CVarDef.Create("atmos.space_wind_minimum_calculated_mass", 5f, CVar.SERVERONLY);
 
         /// <summary>
         /// 	Calculated as 1/Mass, where Mass is the physics.Mass of the desired threshold.
@@ -1433,14 +1436,7 @@ namespace Content.Shared.CCVar
         ///     This should be set by default to the cube of the game's lowest mass tile as defined in their prototypes, but can be increased for server performance reasons
         /// </summary>
         public static readonly CVarDef<float> MonstermosRipTilesMinimumPressure =
-            CVarDef.Create("atmos.monstermos_rip_tiles_min_pressure", 7500f, CVar.SERVERONLY);
-
-        /// <summary>
-        ///     Taken after the minimum pressure is checked, the effective pressure is multiplied by this amount.
-        ///		This allows server hosts to finely tune how likely floor tiles are to be ripped apart by air pressure
-        /// </summary>
-        public static readonly CVarDef<float> MonstermosRipTilesPressureOffset =
-            CVarDef.Create("atmos.monstermos_rip_tiles_pressure_offset", 0.44f, CVar.SERVERONLY);
+            CVarDef.Create("atmos.monstermos_rip_tiles_min_pressure", 20f, CVar.SERVERONLY);
 
         /// <summary>
         ///     Whether explosive depressurization will cause the grid to gain an impulse.
@@ -1476,7 +1472,7 @@ namespace Content.Shared.CCVar
         /// This solves the problem of objects being trapped in an infinite loop of slamming into a wall repeatedly.
         /// </summary>
         public static readonly CVarDef<bool> MonstermosUseExpensiveAirflow =
-            CVarDef.Create("atmos.mmos_expensive_airflow", true, CVar.SERVERONLY);
+            CVarDef.Create("atmos.mmos_expensive_airflow", false, CVar.SERVERONLY);
 
         /// <summary>
         ///     Whether atmos superconduction is enabled.
@@ -2726,11 +2722,11 @@ namespace Content.Shared.CCVar
             CVarDef.Create("glimmer.enabled", true, CVar.REPLICATED);
 
         /// <summary>
-        ///     Passive glimmer drain per second.
-        ///     Note that this is randomized and this is an average value.
+        ///     The rate at which glimmer linearly decays. Since glimmer increases (usually) follow a logistic curve, this means glimmer
+        ///     becomes increasingly harder to raise after ~502 points.
         /// </summary>
-        public static readonly CVarDef<float> GlimmerLostPerSecond =
-            CVarDef.Create("glimmer.passive_drain_per_second", 0.1f, CVar.SERVERONLY);
+        public static readonly CVarDef<float> GlimmerLinearDecayPerMinute =
+            CVarDef.Create("glimmer.linear_decay_per_minute", 6f, CVar.SERVERONLY);
 
         /// <summary>
         ///     Whether random rolls for psionics are allowed.

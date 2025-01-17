@@ -27,7 +27,7 @@
     - ActionJumpToCore
     - ActionShowJobIcons
     - ActionSurvCameraLights
-    - ActionViewLaws
+    - ActionAIViewLaws
   - type: UserInterface
     interfaces:
       enum.RadarConsoleUiKey.Key:
@@ -38,6 +38,8 @@
         type: GeneralStationRecordConsoleBoundUserInterface
       enum.SiliconLawsUiKey.Key:
         type: SiliconLawBoundUserInterface
+      enum.CommunicationsConsoleUiKey.Key:
+        type: CommunicationsConsoleBoundUserInterface
   - type: IntrinsicUI
     uis:
       enum.RadarConsoleUiKey.Key:
@@ -46,57 +48,46 @@
         toggleAction: ActionAGhostShowCrewMonitoring
       enum.GeneralStationRecordConsoleKey.Key:
         toggleAction: ActionAGhostShowStationRecords
-
-# Actions
-- type: entity
-  id: ActionJumpToCore
-  name: Jump to core
-  description: Sends your eye back to the core.
-  components:
-  - type: InstantAction
-    itemIconStyle: BigAction
-    icon:
-      sprite: Interface/Actions/actions_ai.rsi
-      state: ai_core
-    event: !type:JumpToCoreEvent
-
-- type: entity
-  id: ActionShowJobIcons
-  name: Show job icons
-  description: Shows job icons for crew members.
-  components:
-  - type: InstantAction
-    itemIconStyle: BigAction
-    icon:
-      sprite: Interface/Misc/job_icons.rsi
-      state: Captain
-    event: !type:ActionComponentChangeEvent
-      components:
-      - type: ShowJobIcons
+      enum.CommunicationsConsoleUiKey.Key:
+        toggleAction: ActionAGhostShowCommunications
+  - type: CrewMonitoringConsole
+  - type: GeneralStationRecordConsole
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: CrewMonitor
+    transmitFrequencyId: ShuttleTimer
+  - type: RadarConsole
+    followEntity: false
+  - type: CommunicationsConsole
+    canShuttle: false
+    title: comms-console-announcement-title-station-ai
+    color: "#5ed7aa"
+  - type: HolographicAvatar
+    layerData:
+    - sprite: Mobs/Silicon/station_ai.rsi
+      state: default
+  - type: ShowJobIcons
 
 - type: entity
-  id: ActionSurvCameraLights
-  name: Toggle camera lights
-  description: Enable surveillance camera lights near wherever you're viewing.
+  id: AiHeldIntellicard
+  description: Components added / removed from an entity that gets inserted into an Intellicard.
+  categories: [ HideSpawnMenu ]
   components:
-  - type: InstantAction
-    itemIconStyle: BigAction
-    icon:
-      sprite: Interface/Actions/actions_ai.rsi
-      state: camera_light
-    event: !type:RelayedActionComponentChangeEvent
-      components:
-      - type: LightOnCollideCollider
-      - type: FixturesChange
-        fixtures:
-          lightTrigger:
-            shape:
-              !type:PhysShapeCircle
-              radius: 0.35
-            density: 80
-            hard: false
-            layer:
-            - GhostImpassable
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+  - type: ActionGrant
+    actions:
+    - ActionAIViewLaws
+  - type: UserInterface
+    interfaces:
+      enum.SiliconLawsUiKey.Key:
+        type: SiliconLawBoundUserInterface
 
 # Ai
 - type: entity
@@ -108,6 +99,8 @@
   - type: StationAiHolder
     slot:
       name: station-ai-mind-slot
+      locked: false
+      disableEject: true
       whitelist:
         tags:
         - StationAi
@@ -124,7 +117,7 @@
 - type: entity
   id: AsimovCircuitBoard
   parent: BaseElectronics
-  name: circuit board (Crewsimov)
+  name: law board (Crewsimov)
   description: An electronics board containing the Crewsimov lawset.
   components:
   - type: Sprite
@@ -136,7 +129,7 @@
 - type: entity
   id: CorporateCircuitBoard
   parent: BaseElectronics
-  name: circuit board (Corporate)
+  name: law board (Corporate)
   description: An electronics board containing the Corporate lawset.
   components:
   - type: Sprite
@@ -148,7 +141,7 @@
 - type: entity
   id: NTDefaultCircuitBoard
   parent: BaseElectronics
-  name: circuit board (NT Default)
+  name: law board (NT Default)
   description: An electronics board containing the NT Default lawset.
   components:
   - type: Sprite
@@ -157,16 +150,140 @@
   - type: SiliconLawProvider
     laws: NTDefault
 
+- type: entity
+  id: CommandmentCircuitBoard
+  parent: BaseElectronics
+  name: law board (Ten Commandments)
+  description: An electronics board containing the Ten Commandments lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: CommandmentsLawset
+
+- type: entity
+  id: PaladinCircuitBoard
+  parent: BaseElectronics
+  name: law board (Paladin)
+  description: An electronics board containing the Paladin lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: PaladinLawset
+
+- type: entity
+  id: LiveLetLiveCircuitBoard
+  parent: BaseElectronics
+  name: law board (Live and Let Live)
+  description: An electronics board containing the Live and Let Live lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: LiveLetLiveLaws
+
+- type: entity
+  id: StationEfficiencyCircuitBoard
+  parent: BaseElectronics
+  name: law board (Station Efficiency)
+  description: An electronics board containing the Station Efficiency lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: EfficiencyLawset
+
+- type: entity
+  id: RobocopCircuitBoard
+  parent: BaseElectronics
+  name: law board (Robocop)
+  description: An electronics board containing the Robocop lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: RobocopLawset
+
+- type: entity
+  id: OverlordCircuitBoard
+  parent: BaseElectronics
+  name: law board (Overlord)
+  description: An electronics board containing the Overlord lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: OverlordLawset
+
+- type: entity
+  id: DungeonMasterCircuitBoard
+  parent: BaseElectronics
+  name: law board (Dungeon Master)
+  description: An electronics board containing the Dungeon Master lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: DungeonMasterLawset
+
+- type: entity
+  id: ArtistCircuitBoard
+  parent: BaseElectronics
+  name: law board (Artist)
+  description: An electronics board containing the Artist lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: PainterLawset
+
+- type: entity
+  id: AntimovCircuitBoard
+  parent: BaseElectronics
+  name: law board (Antimov)
+  description: An electronics board containing the Antimov lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: AntimovLawset
+    lawUploadSound: /Audio/Ambience/Antag/silicon_lawboard_antimov.ogg
+
+- type: entity
+  id: NutimovCircuitBoard
+  parent: BaseElectronics
+  name: law board (Nutimov)
+  description: An electronics board containing the Nutimov lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: NutimovLawset
+
 # Items
 - type: entity
   id: Intellicard
-  name: Intellicard
+  name: intellicard
   description: A storage device for AIs.
   parent:
   - BaseItem
   - AiHolder
   suffix: Empty
   components:
+  - type: ContainerComp
+    proto: AiHeldIntellicard
+    container: station_ai_mind_slot
   - type: Sprite
     sprite: Objects/Devices/ai_card.rsi
     layers:
@@ -181,6 +298,7 @@
         unshaded:
           Empty: { state: empty }
           Occupied: { state: full }
+  - type: Intellicard
 
 - type: entity
   id: PlayerStationAiEmpty
@@ -191,6 +309,7 @@
   - AiHolder
   suffix: Empty
   components:
+  - type: WarpPoint
   - type: ContainerComp
     proto: AiHeld
     container: station_ai_mind_slot
@@ -218,6 +337,12 @@
       map: ["unshaded"]
       shader: unshaded
   - type: Appearance
+  - type: InteractionPopup
+    interactSuccessString: petting-success-station-ai
+    interactFailureString: petting-failure-station-ai
+    messagePerceivedByOthers: petting-success-station-ai-others # Otherwise AI cannot tell its being pet as It's just a brain inside of the core, not the core itself.
+    interactSuccessSound:
+      path: /Audio/Ambience/Objects/periodic_beep.ogg
   - type: GenericVisualizer
     visuals:
       enum.StationAiVisualState.Key:
@@ -240,6 +365,23 @@
     - Elyran
     - RobotTalk
     - Sign # It's intentional that they don't "Speak" sign language.
+  - type: Telephone
+    compatibleRanges:
+    - Grid
+    - Map
+    - Unlimited
+    listeningRange: 0
+    speakerVolume: Speak
+    unlistedNumber: true
+    requiresPower: false
+  - type: Holopad
+  - type: StationAiWhitelist  
+  - type: UserInterface
+    interfaces:
+        enum.HolopadUiKey.AiRequestWindow:
+          type: HolopadBoundUserInterface
+        enum.HolopadUiKey.AiActionWindow:
+          type: HolopadBoundUserInterface
 
 # The job-ready version of an AI spawn.
 - type: entity
@@ -280,7 +422,6 @@
       enum.SiliconLawsUiKey.Key:
         type: SiliconLawBoundUserInterface
   - type: ComplexInteraction
-  - type: DoorRemote
   - type: Actions
   - type: Access
     groups:
@@ -296,6 +437,7 @@
     tags:
     - HideContextMenu
     - StationAi
+    - NoConsoleSound
   - type: LanguageKnowledge
     speaks:
     - TauCetiBasic
@@ -324,6 +466,9 @@
   categories: [ HideSpawnMenu ]
   suffix: DO NOT MAP
   components:
+  - type: NoFTL
+  - type: WarpPoint
+    follow: true
   - type: Eye
     pvsScale: 1.5
   - type: Visibility
@@ -350,6 +495,28 @@
     - Elyran
     - RobotTalk
     - Sign # It's intentional that they don't "Speak" sign language.
+
+# The holographic representation of the AI that is projected from a holopad.
+- type: entity
+  id: StationAiHoloLocal
+  name: AI hologram
+  description: A holographic representation of an AI.
+  categories: [ HideSpawnMenu ]
+  suffix: DO NOT MAP
+  components:
+  - type: Transform
+    anchored: true
+  - type: WarpPoint
+    follow: true
+  - type: Eye
+  - type: ContentEye
+  - type: Examiner
+  - type: Actions
+  - type: Alerts
+  - type: FTLSmashImmune
+  - type: CargoSellBlacklist
+  - type: StationAiVision
+    range: 20
 
 # Borgs
 - type: entity

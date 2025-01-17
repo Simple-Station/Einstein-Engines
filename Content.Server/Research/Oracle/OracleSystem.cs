@@ -178,7 +178,7 @@ public sealed class OracleSystem : EntitySystem
             return;
 
         // Why is this hardcoded?
-        var amount = MathF.Round(20 + _random.Next(1, 30) + _glimmer.Glimmer / 10f);
+        var amount = MathF.Round(20 + _random.Next(1, 30) + _glimmer.GlimmerOutput / 10f);
         var temporarySol = new Solution();
         var reagent = _protoMan.Index(oracle.Comp.RewardReagents).Pick(_random);
 

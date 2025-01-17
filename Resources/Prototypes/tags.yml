@@ -978,6 +978,9 @@
   id: NoBlockAnchoring
 
 - type: Tag
+  id: NoConsoleSound
+
+- type: Tag
   id: NoPaint
 
 - type: Tag
