@@ -1,0 +1,32 @@
+- type: entity
+  id: DiskBurner
+  parent: BaseMachinePowered
+  name: disk burner
+  description: Takes a computer circuit board and disk as input. Burns the computer board's program to the disk.
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/circuit_imprinter.rsi
+    snapCardinals: true
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Machine
+    board: CircuitImprinterMachineCircuitboard
+
+- type: entity
+  id: DiskBurnerMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: disk burner machine board
+  components:
+  - type: Sprite
+    state: science
+  - type: MachineBoard
+    prototype: DiskBurner
+    requirements:
+      Capacitor: 2
+      Manipulator: 2
