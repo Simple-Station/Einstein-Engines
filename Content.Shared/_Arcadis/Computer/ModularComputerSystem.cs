@@ -24,6 +24,7 @@ public sealed class ModularComputerSystem : EntitySystem
 
     [Dependency] private readonly SharedTransformSystem _transform = default!;
 
+    public string BlankDiskPrototype = "UnburnedDiskPrototype";
     public override void Initialize()
     {
         base.Initialize();
@@ -48,17 +49,17 @@ public sealed class ModularComputerSystem : EntitySystem
 
         if (diskSlot.Item == null || !TryComp(diskSlot.Item, out ComputerDiskComponent? diskComp))
         {
-            args.PushMarkup($"This computer doesn't have a program loaded.");
+            args.PushMarkup(Loc.GetString("modular-computer-examine-no-disk"));
             return;
         }
 
         if (diskComp.ProgramPrototypeEntity == null)
         {
-            args.PushMarkup($"This computer doesn't have a program loaded. An error on the display reports that the loaded disk has no program.");
+            args.PushMarkup(Loc.GetString("modular-computer-examine-disk-error"));
             return;
         }
 
-        args.PushMarkup($"This computer has the {EntityManager.GetComponent<MetaDataComponent>(diskComp.ProgramPrototypeEntity.Value).EntityName} program loaded.");
+        args.PushMarkup(Loc.GetString("modular-computer-examine-has-program ", ("program", EntityManager.GetComponent<MetaDataComponent>(diskComp.ProgramPrototypeEntity.Value).EntityName)));
     }
     private void OnActivate(EntityUid uid, ModularComputerComponent component, ActivateInWorldEvent args)
     {
@@ -72,7 +73,7 @@ public sealed class ModularComputerSystem : EntitySystem
         if (diskSlot.Item == null || !TryComp(diskSlot.Item, out ComputerDiskComponent? diskComp))
         {
             if (_netMan.IsServer)
-                _popupSystem.PopupEntity("ERROR: No program loaded!", uid, args.User);
+                _popupSystem.PopupEntity(Loc.GetString("modular-computer-no-program"), uid, args.User);
             return;
         }
 
@@ -80,7 +81,7 @@ public sealed class ModularComputerSystem : EntitySystem
         {
             if (diskComp.ProgramPrototypeEntity == null)
             {
-                _popupSystem.PopupEntity("ERROR: No program on disk!", uid, args.User);
+                _popupSystem.PopupEntity(Loc.GetString("modular-computer-no-program-on-disk"), uid, args.User);
                 return;
             }
 
@@ -106,6 +107,8 @@ public sealed class ModularComputerSystem : EntitySystem
         if (diskSlot.Item == null || !TryComp(diskSlot.Item, out ComputerDiskComponent? diskComp))
             return;
 
+        UpdateComputer(new Entity<ModularComputerComponent>(uid, component));
+
         if (diskComp.ProgramPrototypeEntity != null)
         {
             if (_netMan.IsServer)
@@ -125,7 +128,7 @@ public sealed class ModularComputerSystem : EntitySystem
         if (diskSlot.Item == null || !TryComp(diskSlot.Item, out ComputerDiskComponent? diskComp))
             return;
 
-        if (diskComp.ProgramPrototype == "UnburnedDiskProtototype")
+        if (diskComp.ProgramPrototype == BlankDiskPrototype)
             return;
 
         EntityUid magicComputerEntity;
@@ -139,9 +142,7 @@ public sealed class ModularComputerSystem : EntitySystem
             diskComp.ProgramPrototypeEntity = magicComputerEntity;
         }
         else
-        {
             magicComputerEntity = diskComp.ProgramPrototypeEntity.Value;
-        }
 
         _transform.SetParent(magicComputerEntity, diskSlot.Item.Value);
 
