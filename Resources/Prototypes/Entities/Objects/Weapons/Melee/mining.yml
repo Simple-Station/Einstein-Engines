@@ -73,10 +73,10 @@
       types:
         Structural: 15
   - type: DamageOtherOnHit
-    staminaCost: 12
+    staminaCost: 9
     damage:
       groups:
-        Brute: 8
+        Brute: 9
       types:
         Structural: 15
   - type: ThrowingAngle
@@ -106,7 +106,7 @@
   - type: DamageOtherOnHit
     damage:
       groups:
-        Brute: 16
+        Brute: 18
       types:
         Structural: 30
 
