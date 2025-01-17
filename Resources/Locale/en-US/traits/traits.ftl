@@ -188,12 +188,16 @@ trait-description-MartialArtist =
 trait-name-Vigor = Vigor
 trait-description-Vigor =
     Whether by pure determination, fitness, or bionic augmentations, your endurance is enhanced.
-    Your stamina is increased by 10 points.
+    Your stamina is increased by [color=yellow]10 points[/color]. [color=gray](Most species start with 100 stamina.)[/color]
+    Your stamina regeneration rate is increased by [color=yellow]10%[/color].
+    Stamina regeneration now starts [color=lightblue]2.25 seconds[/color] after taking stamina damage, instead of [color=lightblue]3 seconds[/color].
 
 trait-name-Lethargy = Lethargy
 trait-description-Lethargy =
     You become tired faster than others, making you more vulnerable to exhaustion and fatigue.
-    Your stamina is decreased by 15 points.
+    Your stamina is decreased by [color=yellow]15 points[/color]. [color=gray](Most species start with 100 stamina.)[/color]
+    Your stamina regeneration rate is decreased by [color=yellow]15%[/color].
+    Stamina regeneration now starts [color=lightblue]3.75 seconds[/color] after taking stamina damage, instead of [color=lightblue]3 seconds[/color].
 
 trait-name-SignLanguage = Sign Language
 trait-description-SignLanguage =
