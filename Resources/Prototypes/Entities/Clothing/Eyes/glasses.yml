@@ -302,7 +302,7 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: ClothingEyesGlassesCheapSunglasses
+  parent: ClothingEyesGlassesSecurity
   id: ClothingEyesGlassesSecurityBig
   name: big security glasses
   description: Upgraded big sunglasses that provide flash immunity and a security HUD.
