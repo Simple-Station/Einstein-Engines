@@ -27,8 +27,8 @@ public sealed class PassiveGlimmerReductionSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        _cfg.OnValueChanged(CCVars.GlimmerLinearDecayPerMinute, UpdatePassiveGlimmer, true);
         _enabled = _cfg.GetCVar(CCVars.GlimmerEnabled);
+        _cfg.OnValueChanged(CCVars.GlimmerLinearDecayPerMinute, UpdatePassiveGlimmer, true);
         _cfg.OnValueChanged(CCVars.GlimmerEnabled, value => _enabled = value, true);
     }
 
@@ -41,15 +41,12 @@ public sealed class PassiveGlimmerReductionSystem : EntitySystem
         var curTime = _timing.CurTime;
         if (NextUpdateTime > curTime)
             return;
-
-        var glimmerDecay = _glimmerLinearDecay / (60 / TargetUpdatePeriod.Seconds);
-
-        _glimmerSystem.DeltaGlimmerOutput(-glimmerDecay);
-
-        GlimmerValues.Add((int) Math.Round(_glimmerSystem.GlimmerOutput));
-
         NextUpdateTime = curTime + TargetUpdatePeriod;
         LastUpdateTime = curTime;
+
+        var glimmerDecay = _glimmerLinearDecay / (60 / TargetUpdatePeriod.Seconds);
+        _glimmerSystem.DeltaGlimmerOutput(-glimmerDecay);
+        GlimmerValues.Add((int) Math.Round(_glimmerSystem.GlimmerOutput));
     }
 
     private void UpdatePassiveGlimmer(float value) => _glimmerLinearDecay = value;

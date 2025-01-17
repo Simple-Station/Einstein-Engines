@@ -106,7 +106,8 @@ public sealed class GlimmerStructuresSystem : EntitySystem
                 if (source.ResearchPointGeneration != null
                 && TryComp<ResearchPointSourceComponent>(source.Owner, out var research))
                     research.PointsPerSecond = (int) MathF.Round(
-                        source.ResearchPointGeneration.Value / (MathF.Log(glimmerSources, 4) + 1)
+                        source.ResearchPointGeneration.Value
+                        / (MathF.Log(glimmerSources, 4) + 1)
                         * _glimmerSystem.GetGlimmerEquilibriumRatio());
 
                 // Shorthand explanation:
