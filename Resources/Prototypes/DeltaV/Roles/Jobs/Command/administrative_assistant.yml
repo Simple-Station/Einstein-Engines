@@ -4,25 +4,22 @@
   description: job-description-admin-assistant
   playTimeTracker: JobAdminAssistant
   requirements:
-    - !type:DepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Engineering
       min: 10800 # 3 hours
-    - !type:DepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Logistics
       min: 10800 # 3 hours
-    - !type:DepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Medical
       min: 10800 # 3 hours
-    - !type:DepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Civilian
       min: 10800 # 3 hours
-    - !type:DepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Security
       min: 10800 # 3 hours
-    - !type:DepartmentTimeRequirement
-      department: Justice
-      min: 10800 # 3 hours
-    - !type:DepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Epistemics
       min: 10800 # 3 hours
   startingGear: AdminAssistantGear

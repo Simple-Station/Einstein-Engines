@@ -16,7 +16,7 @@
   setPreference: true
 #  whitelistRequired: true
   requirements:
-    - !type:DepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Security
       min: 21600
   special:

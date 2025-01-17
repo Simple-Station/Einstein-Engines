@@ -65764,7 +65764,7 @@ entities:
       pos: -11.5,11.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -26472.29
+      secondsUntilStateChange: -26515.367
       state: Opening
     - type: Occluder
       enabled: True
@@ -78678,6 +78678,13 @@ entities:
     components:
     - type: Transform
       pos: -28.5,-0.5
+      parent: 1
+- proto: SpawnPointMagistrate
+  entities:
+  - uid: 16620
+    components:
+    - type: Transform
+      pos: -8.5,6.5
       parent: 1
 - proto: SpawnPointMailCarrier
   entities:

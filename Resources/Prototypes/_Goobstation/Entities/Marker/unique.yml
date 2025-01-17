@@ -25,3 +25,17 @@
         state: ntr
   - type: UniqueEntityMarker
     markerName: NanorepLocker
+
+- type: entity
+  name: magistrate locker unique marker
+  id: UniqueMarkerMagistrateLocker
+  parent: MarkerBase
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: _Goobstation/Structures/Storage/closet.rsi
+        state: mag
+  - type: UniqueEntityMarker
+    markerName: MagistrateLocker

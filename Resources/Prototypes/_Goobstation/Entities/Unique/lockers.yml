@@ -5,7 +5,7 @@
   components:
   - type: ConditionalSpawner
     prototypes:
-    - UniqueMarkerNanorepLocker 
+    - UniqueMarkerNanorepLocker
 
 - type: entity
   id: UniqueLockerBlueshieldOfficerFilled
@@ -15,3 +15,12 @@
   - type: ConditionalSpawner
     prototypes:
     - UniqueMarkerBlueshieldLocker
+
+- type: entity
+  id: UniqueLockerMagistrateFilled
+  suffix: MAP THIS, Unique, Filled
+  parent: LockerMagistrateFilled
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - UniqueMarkerMagistrateLocker

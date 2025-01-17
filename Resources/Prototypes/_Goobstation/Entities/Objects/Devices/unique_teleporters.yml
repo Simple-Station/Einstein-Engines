@@ -22,7 +22,7 @@
   - type: Sprite
     state: bso
   - type: SpawnItemsOnUse
-    items: 
+    items:
     - id: UniqueLockerBlueshieldOfficerFilled
 
 - type: entity
@@ -46,7 +46,7 @@
   - type: Sprite
     state: ntr
   - type: SpawnItemsOnUse
-    items: 
+    items:
     - id: UniqueLockerNanorepFilled
 
 - type: entity
@@ -59,4 +59,28 @@
     markerName: NanorepLocker
   - type: UniqueEntityMarker
     markerName: NanorepLocker
+    stationOnly: false
+
+- type: entity
+  parent: BaseLockerTeleporter
+  id: MagistrateLockerTeleporter
+  name: magistrate locker teleporter
+  description: Device that allows you to request delivery of magistrate locker.
+  components:
+  - type: Sprite
+    state: mag
+  - type: SpawnItemsOnUse
+    items:
+    - id: UniqueLockerMagistrateFilled
+
+- type: entity
+  parent: MagistrateLockerTeleporter
+  id: UniqueMagistrateLockerTeleporter
+  suffix: Unique
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: UniqueEntityChecker
+    markerName: MagistrateLocker
+  - type: UniqueEntityMarker
+    markerName: MagistrateLocker
     stationOnly: false
