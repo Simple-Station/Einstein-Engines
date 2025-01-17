@@ -10050,3 +10050,21 @@ Entries:
   id: 6707
   time: '2025-01-17T01:53:16.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1573
+- author: Skubman
+  changes:
+    - type: Tweak
+      message: >-
+        Eating a brain now takes 5 seconds (from 1 second), and feeding someone
+        a brain takes 6 seconds.
+    - type: Add
+      message: >-
+        Attempting or succeeding to eat a brain now shows a red popup message to
+        everyone else in range, e.g. "Urist McHands is trying to eat the brain!"
+        / "Urist McHands ate the brain!".
+    - type: Fix
+      message: >-
+        Fixed a bug where players after being force-fed were not shown a popup
+        showing the food's flavors.
+  id: 6708
+  time: '2025-01-17T01:53:42.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1563
