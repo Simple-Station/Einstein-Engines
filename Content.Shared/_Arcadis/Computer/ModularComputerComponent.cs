@@ -16,6 +16,5 @@ public sealed partial class ModularComputerComponent : Component
     public string DiskSlot = "modularComputerDiskSlot";
 
     [DataField]
-
     public SoundSpecifier? DiskInsertSound = new SoundPathSpecifier("/Audio/_Arcadis/computer_startup.ogg");
 }
