@@ -12,6 +12,7 @@ using Content.Shared.Examine;
 using Content.Shared.Interaction;
 
 namespace Content.Shared._Arcadis.Computer;
+
 public sealed class ModularComputerSystem : EntitySystem
 {
     [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
@@ -41,10 +42,8 @@ public sealed class ModularComputerSystem : EntitySystem
 
     private void OnExamined(EntityUid uid, ModularComputerComponent component, ExaminedEvent args)
     {
-        if (!TryComp(uid, out ItemSlotsComponent? slots))
-            return;
-
-        if (!_itemSlots.TryGetSlot(uid, component.DiskSlot, out var diskSlot, slots))
+        if (!TryComp(uid, out ItemSlotsComponent? slots)
+            || !_itemSlots.TryGetSlot(uid, component.DiskSlot, out var diskSlot, slots))
             return;
 
         if (diskSlot.Item == null || !TryComp(diskSlot.Item, out ComputerDiskComponent? diskComp))
@@ -64,10 +63,8 @@ public sealed class ModularComputerSystem : EntitySystem
     private void OnActivate(EntityUid uid, ModularComputerComponent component, ActivateInWorldEvent args)
     {
         // go figure it out yourself
-        if (!TryComp(uid, out ItemSlotsComponent? slots))
-            return;
-
-        if (!_itemSlots.TryGetSlot(uid, component.DiskSlot, out var diskSlot, slots))
+        if (!TryComp(uid, out ItemSlotsComponent? slots)
+            || !_itemSlots.TryGetSlot(uid, component.DiskSlot, out var diskSlot, slots))
             return;
 
         if (diskSlot.Item == null || !TryComp(diskSlot.Item, out ComputerDiskComponent? diskComp))
@@ -88,35 +85,27 @@ public sealed class ModularComputerSystem : EntitySystem
 
     private void InsertDisk(EntityUid uid, ModularComputerComponent component, EntInsertedIntoContainerMessage args)
     {
-
-        if (args.Container.ID != component.DiskSlot)
-            return;
-
-        if (!TryComp(uid, out ItemSlotsComponent? slots))
-            return;
-
-        if (!_itemSlots.TryGetSlot(uid, component.DiskSlot, out var diskSlot, slots))
-            return;
-
-        if (diskSlot.Item == null || !TryComp(diskSlot.Item, out ComputerDiskComponent? diskComp))
+        if (args.Container.ID != component.DiskSlot
+            || !TryComp(uid, out ItemSlotsComponent? slots)
+            || !_itemSlots.TryGetSlot(uid, component.DiskSlot, out var diskSlot, slots)
+            || diskSlot.Item is null 
+            || !TryComp(diskSlot.Item, out ComputerDiskComponent? diskComp))
             return;
 
         UpdateComputer((uid, component), diskComp, diskSlot);
 
-        if (diskComp.ProgramPrototypeEntity != null)
-        {
-            if (_netMan.IsServer)
-                _audioSystem.PlayPvs(component.DiskInsertSound, uid, AudioParams.Default.WithVolume(+4f));
-        }
+        if (diskComp.ProgramPrototypeEntity is null
+            || _netMan.IsClient)
+            return;
+
+        _audioSystem.PlayPvs(component.DiskInsertSound, uid, AudioParams.Default.WithVolume(+4f));
     }
 
 
     private void UpdateComputer(Entity<ModularComputerComponent> computer, ComputerDiskComponent diskComp, ItemSlot diskSlot)
     {
-        if (diskSlot.Item == null)
-            return;
-
-        if (diskComp.ProgramPrototype == BlankDiskPrototype)
+        if (diskSlot.Item is null
+            || diskComp.ProgramPrototype == BlankDiskPrototype)
             return;
 
         EntityUid magicComputerEntity;
@@ -133,6 +122,5 @@ public sealed class ModularComputerSystem : EntitySystem
             magicComputerEntity = diskComp.ProgramPrototypeEntity.Value;
 
         _transform.SetParent(magicComputerEntity, diskSlot.Item.Value);
-
     }
 }
