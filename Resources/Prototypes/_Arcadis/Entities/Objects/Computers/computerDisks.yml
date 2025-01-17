@@ -8,7 +8,6 @@
       sprite: Objects/Misc/cd.rsi
       state: icon
     - type: ComputerDisk
-      saveData: false
 
 - type: entity
   parent: BaseProgramDisk
@@ -34,7 +33,8 @@
   parent: BaseProgramDisk
   id: ProgramDiskUnburnt
   name: program disk
-  description: A diskette for usage in a computer. This one has no program burnt to it.
+  description: A diskette for usage in a computer.
   components:
     - type: ComputerDisk
       programPrototype: UnburnedDiskPrototype
+      persistState: true
