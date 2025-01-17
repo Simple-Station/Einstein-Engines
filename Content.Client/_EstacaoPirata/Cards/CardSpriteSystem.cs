@@ -10,10 +10,7 @@ namespace Content.Client._EstacaoPirata.Cards;
 public sealed class CardSpriteSystem : EntitySystem
 {
     /// <inheritdoc/>
-    public override void Initialize()
-    {
-
-    }
+    public override void Initialize() { }
 
     public bool TryAdjustLayerQuantity(Entity<SpriteComponent, CardStackComponent> uid, int? cardLimit = null)
     {
