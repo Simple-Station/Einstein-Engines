@@ -101,7 +101,7 @@ public sealed class ModularComputerSystem : EntitySystem
         if (diskSlot.Item == null || !TryComp(diskSlot.Item, out ComputerDiskComponent? diskComp))
             return;
 
-        UpdateComputer(new Entity<ModularComputerComponent>(uid, component), diskComp, diskSlot);
+        UpdateComputer((uid, component), diskComp, diskSlot);
 
         if (diskComp.ProgramPrototypeEntity != null)
         {
