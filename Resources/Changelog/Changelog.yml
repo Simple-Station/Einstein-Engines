@@ -10147,3 +10147,10 @@ Entries:
   id: 6712
   time: '2025-01-17T03:30:13.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1574
+- author: Piras314
+  changes:
+    - type: Add
+      message: Added credits for lobby screens.
+  id: 6713
+  time: '2025-01-17T03:52:28.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1558
