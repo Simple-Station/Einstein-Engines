@@ -306,8 +306,8 @@
   - type: DrainableSolution
     solution: bloodstream
   - type: Psionic
-    removable: false
     roller: false
+    removable: false
     assayFeedback:
       - reagent-slime-feedback
   - type: InnatePsionicPowers
