@@ -8,7 +8,7 @@
     - type: ItemSlots
       slots:
         modularComputerDiskSlot:
-          name: Disk
+          name: Program disk
           insertSound:
             path: /Audio/Machines/terminal_insert_disc.ogg
           ejectSound:
@@ -20,7 +20,7 @@
 - type: entity
   parent: BaseComputerCircuitboard
   id: BaseComputerModularCircuitBoard
-  name: modular computer  board
+  name: modular computer board
   description: A computer printed circuit board for a modular computer.
   components:
     - type: ComputerBoard
