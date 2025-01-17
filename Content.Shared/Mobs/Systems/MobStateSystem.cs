@@ -55,6 +55,14 @@ public partial class MobStateSystem : EntitySystem
         return component.CurrentState.IsCrit();
     }
 
+    public bool IsCriticalOrDead(EntityUid target, MobStateComponent? component = null) => IsCriticalOrDead(target, true, component);
+    public bool IsCriticalOrDead(EntityUid target, bool countSoftCrit = true, MobStateComponent? component = null)
+    {
+        if (!Resolve(target, ref component, false))
+            return false;
+        return component.CurrentState.IsCritOrDead(countSoftCrit);
+    }
+
     public bool IsHardCritical(EntityUid target, MobStateComponent? component = null)
     {
         if (!Resolve(target, ref component, false))
