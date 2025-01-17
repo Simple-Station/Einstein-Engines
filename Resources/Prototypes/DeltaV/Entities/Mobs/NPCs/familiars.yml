@@ -92,6 +92,7 @@
     nameSegments: [names_golem]
   - type: Psionic
     removable: false
+    roller: false
     assayFeedback:
       - ifrit-feedback
     psychognomicDescriptors:
