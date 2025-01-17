@@ -38,7 +38,7 @@
     state: bunnyearstone2
 
 - type: marking
-  id: BunnyEars2
+  id: BunnyEarsAlt
   bodyPart: HeadTop
   markingCategory: HeadTop
   speciesRestriction: [Human]
@@ -51,7 +51,7 @@
         - !type:SkinColoring
   sprites:
   - sprite: Mobs/Customization/kemonomimi-ears.rsi
-    state: bunnyears2
+    state: bunnyearsalt
 
 - type: marking
   id: FoxEars

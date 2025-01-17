@@ -17,7 +17,7 @@
     state: bunnytail
 
 - type: marking
-  id: BunnyTail2
+  id: BunnyTailAlt
   bodyPart: Tail
   markingCategory: Tail
   speciesRestriction: [Human]
@@ -32,7 +32,7 @@
         - !type:SkinColoring
   sprites:
   - sprite: Mobs/Customization/kemonomimi-tails.rsi
-    state: bunnytail2
+    state: bunnytailalt
 
 - type: marking
   id: DobleFur
