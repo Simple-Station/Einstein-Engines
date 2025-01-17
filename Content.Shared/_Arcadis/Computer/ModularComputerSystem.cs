@@ -72,22 +72,18 @@ public sealed class ModularComputerSystem : EntitySystem
 
         if (diskSlot.Item == null || !TryComp(diskSlot.Item, out ComputerDiskComponent? diskComp))
         {
-            if (_netMan.IsServer)
-                _popupSystem.PopupEntity(Loc.GetString("modular-computer-no-program"), uid, args.User);
+            _popupSystem.PopupPredicted(Loc.GetString("modular-computer-no-program"), uid, args.User);
             return;
         }
 
-        if (_netMan.IsServer)
+        if (diskComp.ProgramPrototypeEntity == null)
         {
-            if (diskComp.ProgramPrototypeEntity == null)
-            {
-                _popupSystem.PopupEntity(Loc.GetString("modular-computer-no-program-on-disk"), uid, args.User);
-                return;
-            }
-
-            var activateMsg = new ActivateInWorldEvent(args.User, diskComp.ProgramPrototypeEntity.Value, true);
-            RaiseLocalEvent(diskComp.ProgramPrototypeEntity.Value, activateMsg);
+            _popupSystem.PopupPredicted(Loc.GetString("modular-computer-no-program-on-disk"), uid, args.User);
+            return;
         }
+
+        var activateMsg = new ActivateInWorldEvent(args.User, diskComp.ProgramPrototypeEntity.Value, true);
+        RaiseLocalEvent(diskComp.ProgramPrototypeEntity.Value, activateMsg);
     }
 
     private void InsertDisk(EntityUid uid, ModularComputerComponent component, EntInsertedIntoContainerMessage args)
