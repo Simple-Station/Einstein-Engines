@@ -4,10 +4,10 @@
   description: "Ensure Space Law is being followed, Uphold Justice and Legality, Hold Hearings and Trials, Follow SOP, Ensure Command is Following Space Law."
   playTimeTracker: JobMagistrate
   requirements:
-    - !type:DepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Command
       min: 54000 # 15 hours
-    - !type:DepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Security
       min: 54000 # 15 hours
   weight: 20
