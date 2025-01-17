@@ -10154,3 +10154,26 @@ Entries:
   id: 6713
   time: '2025-01-17T03:52:28.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1558
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: 'Changed the Warden suit''s capabilities. (Original author: Stop-Signs)'
+    - type: Add
+      message: Repeater, Argenti, and 45 magnum rubber box to Bartender's loadout.
+    - type: Add
+      message: 'Red cloak to loadout (Port from Floof PR #390)'
+    - type: Add
+      message: 'Witch Robes to loadout (Port from Floof PR #390)'
+    - type: Add
+      message: 'Sawed-off PKA (Port from Floof PR #390)'
+    - type: Add
+      message: The ChemMaster now has 20, 75, and 80 unit options available.
+    - type: Tweak
+      message: Made the ChemMaster wider.
+    - type: Fix
+      message: Ported Frontier fix to mag visuals on specific guns.
+    - type: Fix
+      message: Fixed heirlooms flickering negative mood when the moodlet ended.
+  id: 6714
+  time: '2025-01-17T03:53:49.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1509
