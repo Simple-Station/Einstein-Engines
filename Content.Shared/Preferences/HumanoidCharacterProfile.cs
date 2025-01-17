@@ -191,9 +191,19 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     /// <returns>Humanoid character profile with default settings.</returns>
     public static HumanoidCharacterProfile DefaultWithSpecies(string species = SharedHumanoidAppearanceSystem.DefaultSpecies)
     {
+        var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
+        var skinColor = SkinColor.ValidHumanSkinTone;
+
+        if (prototypeManager.TryIndex<SpeciesPrototype>(species, out var speciesPrototype))
+            skinColor = speciesPrototype.DefaultSkinTone;
+
         return new()
         {
             Species = species,
+            Appearance = new()
+            {
+                SkinColor = skinColor,
+            },
         };
     }
 
@@ -468,14 +478,17 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
 
         var antags = AntagPreferences
             .Where(id => prototypeManager.TryIndex<AntagPrototype>(id, out var antag) && antag.SetPreference)
+            .Distinct()
             .ToList();
 
         var traits = TraitPreferences
             .Where(prototypeManager.HasIndex<TraitPrototype>)
+            .Distinct()
             .ToList();
 
         var loadouts = LoadoutPreferences
             .Where(l => prototypeManager.HasIndex<LoadoutPrototype>(l.LoadoutName))
+            .Distinct()
             .ToList();
 
         Name = name;

@@ -19,6 +19,7 @@
     - CanPilot
     - BypassInteractionRangeChecks
     - BypassDropChecks
+    - NoConsoleSound
   - type: Input
     context: "aghost"
   - type: Ghost
@@ -27,6 +28,7 @@
   - type: Hands
   - type: ComplexInteraction
   - type: Puller
+    needsHands: false # Tail Drag
     pushAcceleration: 1000000 # Will still be capped in max speed
     maxPushRange: 20
   - type: CombatMode
@@ -35,6 +37,7 @@
     bodyType: Kinematic
   - type: Body
     prototype: Aghost
+    thermalVisibility: false
   - type: Access
     groups:
     - AllAccess
@@ -85,6 +88,7 @@
   - type: DeviceNetwork
     deviceNetId: Wireless
     receiveFrequencyId: CrewMonitor
+    transmitFrequencyId: ShuttleTimer
   - type: WirelessNetworkConnection
     range: 500
   - type: StationLimitedNetwork
@@ -123,10 +127,10 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
-    icon: { sprite: Structures/Machines/parts.rsi, state: box_0 }
-    iconOn: Structures/Machines/parts.rsi/box_2.png
+    icon: { sprite: Interface/Actions/actions_ai.rsi, state: comms_console }
+    iconOn: Interface/Actions/actions_ai.rsi/comms_console.png
     keywords: [ "AI", "console", "interface" ]
-    priority: -10
+    priority: -4
     event: !type:ToggleIntrinsicUIEvent { key: enum.CommunicationsConsoleUiKey.Key }
 
 - type: entity
@@ -136,10 +140,10 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
-    icon: { sprite: Structures/Machines/parts.rsi, state: box_0 }
-    iconOn: Structures/Machines/parts.rsi/box_2.png
+    icon: { sprite: Interface/Actions/actions_ai.rsi, state: mass_scanner }
+    iconOn: Interface/Actions/actions_ai.rsi/mass_scanner.png
     keywords: [ "AI", "console", "interface" ]
-    priority: -10
+    priority: -7
     event: !type:ToggleIntrinsicUIEvent { key: enum.RadarConsoleUiKey.Key }
 
 - type: entity
@@ -162,10 +166,10 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
-    icon: { sprite: Structures/Machines/parts.rsi, state: box_0 }
-    iconOn: Structures/Machines/parts.rsi/box_2.png
+    icon: { sprite: Interface/Actions/actions_ai.rsi, state: crew_monitor }
+    iconOn: Interface/Actions/actions_ai.rsi/crew_monitor.png
     keywords: [ "AI", "console", "interface" ]
-    priority: -10
+    priority: -9
     event: !type:ToggleIntrinsicUIEvent { key: enum.CrewMonitoringUIKey.Key }
 
 - type: entity
@@ -175,8 +179,8 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
-    icon: { sprite: Structures/Machines/parts.rsi, state: box_0 }
-    iconOn: Structures/Machines/parts.rsi/box_2.png
+    icon: { sprite: Interface/Actions/actions_ai.rsi, state: station_records }
+    iconOn: Interface/Actions/actions_ai.rsi/station_records.png
     keywords: [ "AI", "console", "interface" ]
-    priority: -10
+    priority: -8
     event: !type:ToggleIntrinsicUIEvent { key: enum.GeneralStationRecordConsoleKey.Key }

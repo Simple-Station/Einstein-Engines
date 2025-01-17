@@ -189,6 +189,19 @@
 
 # Outer
 - type: loadout
+  id: LoadoutCommandHOSOuterWinterUnarmored
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutHeadOfSecurityOuter
+  - !type:CharacterJobRequirement
+    jobs:
+    - HeadOfSecurity
+  items:
+  - ClothingOuterWinterHoSUnarmored
+
+- type: loadout
   id: LoadoutCommandHOSOuterWinter
   category: JobsSecurityHeadOfSecurity
   cost: 0

@@ -8,6 +8,10 @@ using Content.Client.Stylesheets;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 using FancyWindow = Content.Client.UserInterface.Controls.FancyWindow;
+using Content.Shared.Labels.Components;
+using Content.Shared.Prototypes;
+using System.Reflection.Emit;
+using Content.Client.Labels;
 
 namespace Content.Client.VendingMachines.UI
 {
@@ -73,11 +77,21 @@ namespace Content.Client.VendingMachines.UI
                 vendingItem.Icon = null;
 
                 var itemName = entry.ID;
+
                 Texture? icon = null;
                 if (_prototypeManager.TryIndex<EntityPrototype>(entry.ID, out var prototype))
                 {
                     itemName = prototype.Name;
                     icon = spriteSystem.GetPrototypeIcon(prototype).Default;
+
+                    const string labelCompName = "Label";
+                    if (prototype.Components.TryGetValue(labelCompName, out var labelCompData)
+                        && labelCompData.Component is LabelComponent labelComponent)
+                    {
+                        var itemLabel = labelComponent.CurrentLabel;
+                        if (!string.IsNullOrEmpty(itemLabel))
+                            itemName += $" ({Loc.GetString(itemLabel)})";
+                    }
                 }
 
                 // search filter
@@ -93,6 +107,7 @@ namespace Content.Client.VendingMachines.UI
                     longestEntry = itemName;
 
                 vendingItem.Text = $"{itemName} [{entry.Amount}]";
+
                 vendingItem.Icon = icon;
                 filteredInventory.Add(i);
             }

@@ -81,3 +81,7 @@ signal-port-description-logic-input-b = Second input of a logic gate.
 
 signal-port-name-logic-input = Input
 signal-port-description-logic-input = Input to the edge detector, cannot be a pulse signal.
+
+signal-port-name-material-silo-utilizer = Silo utilizer
+signal-port-description-material-silo-utilizer = Utilizer for station material silo
+

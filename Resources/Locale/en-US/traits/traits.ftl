@@ -163,6 +163,20 @@ trait-description-LowPainTolerance =
     Your tolerance for pain is far below average, and its effects are more inhibiting.
     Your melee/throwing damage is penalized by up to an additional 15% when taking stamina damage.
 
+trait-name-Steadfast = Steadfast
+trait-description-Steadfast =
+    When others would buckle from the weight of your injuries, you still march forward unrelentingly.
+    For most species [color=gray](excluding IPC/Shadowkin)[/color], this trait modifies:
+    - [color=yellow]25%[/color] movement slow at [color=red]60[/color] damage ➔ [color=yellow]17%[/color] movement slow at [color=red]70[/color] damage
+    - [color=yellow]45%[/color] movement slow at [color=red]80[/color] damage ➔ [color=yellow]30%[/color] movement slow at [color=red]90[/color] damage
+
+trait-name-Feeble = Feeble
+trait-description-Feeble =
+    Your body responds poorly to injuries, making damage affect your movement more severely.
+    For most species [color=gray](excluding IPC/Shadowkin)[/color], this trait modifies:
+    - [color=yellow]25%[/color] movement slow at [color=red]60[/color] damage ➔ [color=yellow]30%[/color] movement slow at [color=red]45[/color] damage
+    - [color=yellow]45%[/color] movement slow at [color=red]80[/color] damage ➔ [color=yellow]54%[/color] movement slow at [color=red]65[/color] damage
+
 trait-name-MartialArtist = Martial Artist
 trait-description-MartialArtist =
     You have received formal training in unarmed combat, whether with Fists, Feet, or Claws.
@@ -210,20 +224,32 @@ trait-description-Voracious =
     Nothing gets between you and your food.
     Your endless consumption of food and drinks is twice as fast.
 
+-terrain-example = [color=gray](e.g. spider web, slime puddle, kudzu, space glue)[/color]
+-slippery-example = [color=gray](e.g. banana peel, water puddle, soap, space lube)[/color]
+
 trait-name-ParkourTraining = Parkour Training
 trait-description-ParkourTraining =
     Whether as a hobby, lifestyle, or professional training, you are trained in the discipline of parkour.
-    You're faster with climbing, crawling, lying down, and getting up.
+    You climb structures like tables [color=yellow]50%[/color] faster.
+    Slipping leaves you stunned for [color=yellow]30%[/color] shorter. { -slippery-example }
+    You gain a [color=yellow]50%[/color] resistance to slows from difficult terrain. { -terrain-example }
+
+trait-name-BadKnees = Bad Knees
+trait-description-BadKnees =
+    Whether due to injury, age, or wear and tear, your knees aren't particularly strong or flexible.
+    You climb structures like tables [color=yellow]50%[/color] slower.
+    Slipping leaves you stunned for [color=yellow]40%[/color] longer. { -slippery-example }
+    Difficult terrain slows you down [color=yellow]35%[/color] more. { -terrain-example }
 
 trait-name-Sluggish = Sluggish
 trait-description-Sluggish =
     You navigate the world slower than others, perhaps due to a medical condition, inactivity, or age.
-    You move slower, and it takes longer for you to climb, lie down and get up.
+    Your movement speed is decreased by [color=yellow]16%[/color].
 
 trait-name-SnailPaced = Snail-Paced
 trait-description-SnailPaced =
     You walk at a snail's pace, perhaps due to a medical condition, mobility impairment, or age.
-    You move substantially slower, and it takes far longer for you to climb, lie down and get up.
+    Your movement speed is decreased by [color=yellow]32%[/color].
 
 trait-name-LightStep = Light Step
 trait-description-LightStep =
@@ -474,3 +500,12 @@ trait-name-BrittleBoneDisease = Osteogenesis Imperfecta
 trait-description-BrittleBoneDisease =
     Also known as "brittle bone disease", people with this genetic disorder have bones that are easily broken,
     often simply by moving. This trait reduces your threshold for critical injury by 50 points.
+
+trait-name-LightAmplification = CyberEyes Module: Light Amplification
+trait-description-LightAmplification =
+    Your CyberEyes have been enhanced with a light amplifier module, enabling the user to toggle between standard sight and "Night Vision" mode.
+
+trait-name-ThermographicVision = CyberEyes Module: Thermographic Scanner
+trait-description-ThermographicVision =
+    Your CyberEyes have been enhanced with a Thermographic Scanner. When enabled, it captures a snapshot of the user's surroundings, while highlighting all
+    biological life forms. It can even detect individuals through the walls of a station.

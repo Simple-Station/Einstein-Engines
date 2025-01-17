@@ -57,7 +57,6 @@
     - idcard
     - Belt
   - type: UnpoweredFlashlight
-  - type: EtherealLight
   - type: PointLight
     enabled: false
     radius: 1.5
@@ -68,6 +67,7 @@
     deviceNetId: Wireless
     receiveFrequencyId: PDA
     prefix: device-address-prefix-console
+    savableAddress: false
   - type: WirelessNetworkConnection
     range: 500
   - type: CartridgeLoader
@@ -113,6 +113,15 @@
     damage:
       types:
         Blunt: 4
+  - type: SentienceTarget # sentient PDA = pAI lite
+    flavorKind: station-event-random-sentience-flavor-mechanical
+    weight: 0.001 # 1,000 PDAs = as likely to be picked as 1 regular animal
+  - type: BlockMovement
+    blockInteraction: false # lets the PDA toggle its own flashlight
+  - type: TypingIndicator
+    proto: robot
+  - type: Speech
+    speechVerb: Robotic
 
 - type: entity
   parent: BasePDA
@@ -245,6 +254,8 @@
     borderColor: "#d7d7d0"
   - type: Icon
     state: pda-cook
+  - type: ReplacementAccent # for random sentience event
+    accent: italian
 
 - type: entity
   parent: BasePDA
@@ -329,6 +340,7 @@
     accentHColor: "#333333"
   - type: Icon
     state: pda-mime
+  - type: Muted # for random sentience event
 
 - type: entity
   name: chaplain PDA

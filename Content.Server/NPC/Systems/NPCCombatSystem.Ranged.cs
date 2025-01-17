@@ -189,9 +189,9 @@ public sealed partial class NPCCombatSystem
             EntityCoordinates targetCordinates;
 
             if (_mapManager.TryFindGridAt(xform.MapID, targetPos, out var gridUid, out var mapGrid))
-                targetCordinates = new(gridUid, _map.WorldToLocal(comp.Target, mapGrid, targetSpot));
+                targetCordinates = new EntityCoordinates(gridUid, mapGrid.WorldToLocal(targetSpot));
             else
-                targetCordinates = new(xform.MapUid!.Value, targetSpot);
+                targetCordinates = new EntityCoordinates(xform.MapUid!.Value, targetSpot);
 
             comp.Status = CombatStatus.Normal;
 

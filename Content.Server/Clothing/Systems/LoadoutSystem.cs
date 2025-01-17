@@ -2,6 +2,7 @@ using System.Linq;
 using Content.Server.GameTicking;
 using Content.Server.Paint;
 using Content.Server.Players.PlayTimeTracking;
+using Content.Server.Station.Systems;
 using Content.Shared.CCVar;
 using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Clothing.Loadouts.Systems;
@@ -43,8 +44,9 @@ public sealed class LoadoutSystem : EntitySystem
 
     private void OnPlayerSpawnComplete(PlayerSpawnCompleteEvent ev)
     {
-        if (ev.JobId == null ||
-            !_configurationManager.GetCVar(CCVars.GameLoadoutsEnabled))
+        if (ev.JobId == null
+            || !_protoMan.TryIndex<JobPrototype>(ev.JobId, out _)
+            || !_configurationManager.GetCVar(CCVars.GameLoadoutsEnabled))
             return;
 
         ApplyCharacterLoadout(
@@ -107,7 +109,6 @@ public sealed class LoadoutSystem : EntitySystem
             foreach (var function in loadoutProto.Functions)
                 function.OnPlayerSpawn(uid, loadout.Item1, _componentFactory, EntityManager, _serialization);
         }
-
 
         // Pick the heirloom
         if (heirlooms.Any())
