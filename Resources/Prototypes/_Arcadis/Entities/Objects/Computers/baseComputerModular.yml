@@ -18,4 +18,21 @@
             tags:
               - ComputerDisk
 
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: BaseComputerModularCircuitBoard
+  name: modular computer  board
+  description: A computer printed circuit board for a modular computer.
+  components:
+    - type: ComputerBoard
+      prototype: BaseComputerModular
 
+- type: latheRecipe
+  id: BaseComputerModularCircuitBoard
+  result: BaseComputerModularCircuitBoard
+  category: Circuitry
+  completetime: 4
+  materials:
+     Steel: 100
+     Glass: 500
+     Gold: 100

@@ -196,6 +196,7 @@
     - WeaponCapacitorRechargerCircuitboard
     - HandheldStationMap
     - ClothingHeadHatWelding
+    - ProgramDiskUnburnt # Arcadis - Modular Computer System
   - type: EmagLatheRecipes
     emagStaticRecipes:
     - BoxLethalshot
@@ -565,6 +566,8 @@
     - AutodocCircuitboard # Shitmed Change
     - OperatingTableCircuitboard # Shitmed Change
     - MaterialSiloCircuitboard
+    - BaseComputerModularCircuitBoard # Arcadis - Modular Computer System
+    - DiskBurnerMachineCircuitboard # Arcadis - Modular Computer System
   - type: EmagLatheRecipes
     emagDynamicRecipes:
     - ShuttleGunDusterCircuitboard

@@ -1,6 +1,6 @@
 - type: entity
   id: DiskBurner
-  parent: BaseMachinePowered
+  parent: [ BaseMachinePowered, ConstructibleMachine ]
   name: disk burner
   description: Takes a computer circuit board and disk as input. Burns the computer board's program to the disk.
   components:
@@ -14,7 +14,7 @@
       shader: unshaded
       map: ["enum.PowerDeviceVisualLayers.Powered"]
   - type: Machine
-    board: CircuitImprinterMachineCircuitboard
+    board: DiskBurnerMachineCircuitboard
   - type: ItemSlots
     slots:
       diskSlot:
@@ -45,3 +45,13 @@
     requirements:
       Capacitor: 2
       Manipulator: 2
+
+- type: latheRecipe
+  id: DiskBurnerMachineCircuitboard
+  result: DiskBurnerMachineCircuitboard
+  category: Circuitry
+  completetime: 4
+  materials:
+     Steel: 100
+     Glass: 700
+     Gold: 100

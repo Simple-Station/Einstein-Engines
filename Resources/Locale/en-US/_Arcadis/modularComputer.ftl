@@ -19,3 +19,5 @@ disk-burner-admemes-fail = The disk burner reports that a required slot is not a
 
 disk-burner-activate-not-ready = The disk burner isn't ready yet!
 disk-burner-activate-finished = The disk burner beeps successfully!
+
+research-technology-modular-computing = Modular Computing
