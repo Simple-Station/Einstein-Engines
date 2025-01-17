@@ -13,7 +13,7 @@ namespace Content.Shared._Arcadis.Computer;
 public sealed partial class ModularComputerComponent : Component
 {
     [DataField]
-    public string DiskSlot = "modularComputerdiskSlot";
+    public string DiskSlot = "modularComputerDiskSlot";
 
     [DataField]
 
