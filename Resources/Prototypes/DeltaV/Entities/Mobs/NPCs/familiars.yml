@@ -92,6 +92,7 @@
     nameSegments: [names_golem]
   - type: Psionic
     removable: false
+    roller: false
     assayFeedback:
       - ifrit-feedback
     psychognomicDescriptors:
@@ -125,9 +126,9 @@
     allowMovement: true
     allowSpeech: true
     requirements:
-    - !type:DepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Epistemics
-      time: 14400 # 4 hours
+      min: 14400 # 4 hours
 
 - type: entity
   parent: WelderExperimental

@@ -6,7 +6,7 @@
   requirements:
     - !type:CharacterOverallTimeRequirement
       min: 18000
-    - !type:DepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Epistemics # DeltaV - Epistemics Department replacing Science
       min: 3600
     - !type:CharacterLogicOrRequirement
@@ -54,7 +54,7 @@
     gloves: ClothingHandsGlovesColorWhite
     outerClothing: ClothingOuterCoatMantis
     belt: ClothingBeltMantis
-    # pocket2: ForensicScanner # DeltaV - Mantis is no longer a Detective
+    pocket1: BookPsionicsGuidebook
   innerClothingSkirt: ClothingUniformSkirtMantis
   satchel: ClothingBackpackSatchelMantisFilled
   duffelbag: ClothingBackpackDuffelMantisFilled

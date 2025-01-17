@@ -24,3 +24,14 @@
     sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/nanotrasen_representative.rsi
   - type: Clothing
     sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/nanotrasen_representative.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitMagistrate
+  name: magistrate robes
+  description: The robes worn by officials.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/magistrate.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/magistrate.rsi

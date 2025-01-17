@@ -82,13 +82,13 @@ namespace Content.Shared.Abilities.Psionics
             }
         }
 
-        public void LogPowerUsed(EntityUid uid, string power, int minGlimmer = 8, int maxGlimmer = 12)
+        public void LogPowerUsed(EntityUid uid, string power, float minGlimmer = 8, float maxGlimmer = 12)
         {
             _adminLogger.Add(Database.LogType.Psionics, Database.LogImpact.Medium, $"{ToPrettyString(uid):player} used {power}");
             var ev = new PsionicPowerUsedEvent(uid, power);
             RaiseLocalEvent(uid, ev, false);
 
-            _glimmerSystem.Glimmer += _robustRandom.Next(minGlimmer, maxGlimmer);
+            _glimmerSystem.DeltaGlimmerInput(_robustRandom.NextFloat(minGlimmer, maxGlimmer));
         }
 
         /// <summary>

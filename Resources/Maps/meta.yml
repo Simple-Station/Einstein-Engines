@@ -10339,7 +10339,7 @@ entities:
       pos: -53.5,-12.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -12845.943
+      secondsUntilStateChange: -12876.496
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -75704,7 +75704,7 @@ entities:
       pos: -3.5,-52.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -40871.477
+      secondsUntilStateChange: -40902.03
       state: Closing
   - uid: 11944
     components:
@@ -142408,6 +142408,13 @@ entities:
     components:
     - type: Transform
       pos: -25.5,-16.5
+      parent: 2
+- proto: SpawnPointMagistrate
+  entities:
+  - uid: 27707
+    components:
+    - type: Transform
+      pos: -2.5,-3.5
       parent: 2
 - proto: SpawnPointMailCarrier
   entities:
