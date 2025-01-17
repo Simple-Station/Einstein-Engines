@@ -16,8 +16,6 @@ public sealed partial class ComputerDiskComponent : Component
     /// </summary>
     [DataField]
     public EntProtoId ProgramPrototype;
-
-    [DataField]
     public EntityUid? ProgramPrototypeEntity;
 
     [DataField]

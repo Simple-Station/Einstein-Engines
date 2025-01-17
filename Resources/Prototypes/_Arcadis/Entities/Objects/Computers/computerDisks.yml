@@ -37,4 +37,4 @@
   description: A diskette for usage in a computer. This one has no program burnt to it.
   components:
     - type: ComputerDisk
-      programPrototype: UnburnedDiskProtototype
+      programPrototype: UnburnedDiskPrototype

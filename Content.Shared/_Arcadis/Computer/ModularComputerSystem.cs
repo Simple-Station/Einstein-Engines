@@ -10,6 +10,7 @@ using Robust.Shared.Audio.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
+using Robust.Shared.Timing;
 
 namespace Content.Shared._Arcadis.Computer;
 
@@ -24,6 +25,8 @@ public sealed class ModularComputerSystem : EntitySystem
     [Dependency] private readonly INetManager _netMan = default!;
 
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+
+    [Dependency] private readonly IGameTiming _gameTiming = default!;
 
     public string BlankDiskPrototype = "UnburnedDiskPrototype";
     public override void Initialize()
@@ -79,8 +82,10 @@ public sealed class ModularComputerSystem : EntitySystem
             return;
         }
 
-        var activateMsg = new ActivateInWorldEvent(args.User, diskComp.ProgramPrototypeEntity.Value, true);
-        RaiseLocalEvent(diskComp.ProgramPrototypeEntity.Value, activateMsg);
+        if (_gameTiming.IsFirstTimePredicted || _netMan.IsServer) {
+            var activateMsg = new ActivateInWorldEvent(args.User, diskComp.ProgramPrototypeEntity.Value, true);
+            RaiseLocalEvent(diskComp.ProgramPrototypeEntity.Value, activateMsg);
+        }
     }
 
     private void InsertDisk(EntityUid uid, ModularComputerComponent component, EntInsertedIntoContainerMessage args)
@@ -88,7 +93,7 @@ public sealed class ModularComputerSystem : EntitySystem
         if (args.Container.ID != component.DiskSlot
             || !TryComp(uid, out ItemSlotsComponent? slots)
             || !_itemSlots.TryGetSlot(uid, component.DiskSlot, out var diskSlot, slots)
-            || diskSlot.Item is null 
+            || diskSlot.Item is null
             || !TryComp(diskSlot.Item, out ComputerDiskComponent? diskComp))
             return;
 
