@@ -418,3 +418,17 @@
   sprites:
   - sprite: Mobs/Customization/face.rsi
     state: neck_thick_m
+
+- type: marking
+  id: IronJaw
+  bodyPart: Face
+  markingCategory: Face
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Arachne, Lamia]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+          negative: true
+  sprites:
+  - sprite: _ADT/Mobs/Customization/augments/headaugs.rsi
+    state: iron_jaw
