@@ -21,8 +21,13 @@
     - type: ContainerContainer
       containers:
         board: !type:Container
+          showEnts: False
+          occludes: True
           ents: []
-        modularComputerDiskSlot: !type:ContainerSlot {}
+        modularComputerDiskSlot: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
 
 - type: entity
   parent: BaseComputerCircuitboard
