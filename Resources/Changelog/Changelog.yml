@@ -10296,3 +10296,12 @@ Entries:
   id: 6724
   time: '2025-01-18T20:03:16.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1585
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        The "Scream Action" no longer appears by default. It may be set in your
+        server's configuration to spawn or not. 
+  id: 6725
+  time: '2025-01-18T20:28:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1589
