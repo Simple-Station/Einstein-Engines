@@ -13,7 +13,6 @@ using System.Linq;
 using System.Numerics;
 using Content.Shared.FixedPoint;
 using Robust.Client.Graphics;
-using Serilog;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
 
 namespace Content.Client.Chemistry.UI
