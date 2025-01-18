@@ -8,9 +8,7 @@ program-disk-no-program = This disk has no program burnt to it.
 program-disk-error = This disk has a corrupted program burnt to it.
 program-disk-has-program = This disk has the {$program} program burnt to it.
 
-disk-burner-no-disk = The disk burner reports that there is no disk inserted.
-disk-burner-no-board = The disk burner reports that there is no board inserted.
-disk-burner-no-anything = The disk burner reports that there is no board, or disk inserted.
+disk-burner-missing = The disk burner reports that there is no {$missing} inserted.
 disk-burner-bad-disk = The disk burner reports that the disk is not suitable to be burned to.
 disk-burner-incompatible-board = The disk burner reports that the inserted board is not compatible.
 disk-burner-ready = The disk burner reports that it is ready.

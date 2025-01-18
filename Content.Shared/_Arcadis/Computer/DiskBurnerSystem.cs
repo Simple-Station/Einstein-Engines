@@ -65,7 +65,6 @@ public sealed class DiskBurnerSystem : EntitySystem
         }
 
         diskComp.ProgramPrototype = boardComp.ModularComputerProgramPrototype.Value;
-
         _popupSystem.PopupPredicted(Loc.GetString("disk-burner-activate-finished"), entity, user);
 
     }
@@ -80,19 +79,23 @@ public sealed class DiskBurnerSystem : EntitySystem
             return;
         }
 
-        if (diskSlot.Item is null && boardSlot.Item is null)
+        if (diskSlot.Item is null || boardSlot.Item is null)
         {
-            args.PushMarkup(Loc.GetString("disk-burner-no-anything"));
-            return;
-        }
-        else if (diskSlot.Item is null)
-        {
-            args.PushMarkup(Loc.GetString("disk-burner-no-disk"));
-            return;
-        }
-        else if (boardSlot.Item is null)
-        {
-            args.PushMarkup(Loc.GetString("disk-burner-no-board"));
+            var missing = "";
+            if (diskSlot.Item is null)
+            {
+                missing += "disk";
+            }
+
+            if (boardSlot.Item is null)
+            {
+                if (missing != "")
+                {
+                    missing += " or ";
+                }
+                missing = "board";
+            }
+            args.PushMarkup(Loc.GetString("disk-burner-missing", ("missing", missing)));
             return;
         }
 
@@ -109,9 +112,12 @@ public sealed class DiskBurnerSystem : EntitySystem
         }
 
         if (boardComp.ModularComputerProgramPrototype is null)
+        {
             args.PushMarkup(Loc.GetString("disk-burner-incompatible-board"));
-        else
-            args.PushMarkup(Loc.GetString("disk-burner-ready"));
+            return;
+        }
+
+        args.PushMarkup(Loc.GetString("disk-burner-ready"));
 
     }
 }
