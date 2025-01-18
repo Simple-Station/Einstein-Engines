@@ -51,6 +51,9 @@ namespace Content.Client.Chemistry.UI
 
             _window.OnReagentButtonPressed += (_, button, amount) => SendMessage(new ChemMasterReagentAmountButtonMessage(button.Id, amount, button.IsBuffer));
             _window.OnSortMethodChanged += sortMethod => SendMessage(new ChemMasterSortMethodUpdated(sortMethod));
+            _window.OnTransferAmountChanged += amount => SendMessage(new ChemMasterTransferringAmountUpdated(amount));
+
+
         }
 
         /// <summary>

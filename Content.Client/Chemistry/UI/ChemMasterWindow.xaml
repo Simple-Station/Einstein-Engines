@@ -10,7 +10,7 @@
             <BoxContainer Orientation="Horizontal">
                 <Label Text="{Loc 'chem-master-window-container-label'}" />
                 <Control HorizontalExpand="True" />
-                <Label Name="InputAmountLabel" Text="{Loc 'chem-master-window-transferring-default-label'}" Margin="0 0 7 0"/>
+                <RichTextLabel Name="InputAmountLabel" Text="{Loc 'chem-master-window-transferring-default-label'}"  Margin="0 0 7 0"/>
                 <LineEdit MinSize="140 0" Name="InputAmountLineEdit" Access="Public" PlaceHolder="{Loc 'chem-master-window-amount-placeholder'}" />
                 <Button MinSize="80 0" Name="InputEjectButton" Access="Public" Text="{Loc 'chem-master-window-eject-button'}" StyleClasses="OpenLeft" />
             </BoxContainer>

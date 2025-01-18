@@ -26,5 +26,8 @@ namespace Content.Server.Chemistry.Components
 
         [DataField]
         public int SortMethod;
+
+        [DataField]
+        public int TransferringAmount;
     }
 }
