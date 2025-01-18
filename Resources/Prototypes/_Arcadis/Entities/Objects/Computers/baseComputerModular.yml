@@ -4,6 +4,8 @@
   name: modular computer
   description: Part of a recent initiative to make computers less static. Comes with a disk slot for various "program disks".
   components:
+    - type: Computer
+      board: BaseComputerModularCircuitBoard
     - type: ModularComputer
     - type: ItemSlots
       slots:
@@ -16,6 +18,11 @@
           whitelist:
             tags:
               - ComputerDisk
+  - type: ContainerContainer
+    containers:
+      board: !type:Container
+        ents: []
+      modularComputerDiskSlot: !type:ContainerSlot {}
 
 - type: entity
   parent: BaseComputerCircuitboard
