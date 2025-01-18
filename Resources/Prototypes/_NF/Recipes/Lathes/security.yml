@@ -80,7 +80,7 @@
   result: SpeedLoaderRifleHeavyRubber
   materials:
     Steel: 25
-    Plastic: 70
+    Plastic: 80
 
 - type: latheRecipe
   id: SpeedLoaderRifleHeavyUranium
