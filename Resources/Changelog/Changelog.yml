@@ -10251,3 +10251,17 @@ Entries:
   id: 6719
   time: '2025-01-17T15:53:24.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1578
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: Fixed full glimmer float being displayed to chat by Sophia.
+  id: 6720
+  time: '2025-01-18T03:23:15.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1581
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: Fixed not having enough space for longer chemicals on the ChemMaster UI.
+  id: 6721
+  time: '2025-01-18T04:10:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1582
