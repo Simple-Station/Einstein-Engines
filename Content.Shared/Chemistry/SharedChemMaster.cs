@@ -44,10 +44,10 @@ namespace Content.Shared.Chemistry
     public sealed class ChemMasterReagentAmountButtonMessage : BoundUserInterfaceMessage
     {
         public readonly ReagentId ReagentId;
-        public readonly ChemMasterReagentAmount Amount;
+        public readonly int Amount;
         public readonly bool FromBuffer;
 
-        public ChemMasterReagentAmountButtonMessage(ReagentId reagentId, ChemMasterReagentAmount amount, bool fromBuffer)
+        public ChemMasterReagentAmountButtonMessage(ReagentId reagentId, int amount, bool fromBuffer)
         {
             ReagentId = reagentId;
             Amount = amount;
@@ -81,6 +81,18 @@ namespace Content.Shared.Chemistry
             Dosage = dosage;
             Label = label;
         }
+    }
+
+    [Serializable, NetSerializable]
+    public sealed class ChemMasterSortMethodUpdated(int sortMethod) : BoundUserInterfaceMessage
+    {
+        public readonly int SortMethod = sortMethod;
+    }
+
+    [Serializable, NetSerializable]
+    public sealed class ChemMasterTransferringAmountUpdated(int transferringAmount) : BoundUserInterfaceMessage
+    {
+        public readonly int TransferringAmount = transferringAmount;
     }
 
     public enum ChemMasterMode
@@ -173,10 +185,13 @@ namespace Content.Shared.Chemistry
 
         public readonly bool UpdateLabel;
 
+        public readonly int SortMethod;
+        public readonly int TransferringAmount;
+
         public ChemMasterBoundUserInterfaceState(
             ChemMasterMode mode, ContainerInfo? inputContainerInfo, ContainerInfo? outputContainerInfo,
             IReadOnlyList<ReagentQuantity> bufferReagents, FixedPoint2 bufferCurrentVolume,
-            uint selectedPillType, uint pillDosageLimit, bool updateLabel)
+            uint selectedPillType, uint pillDosageLimit, bool updateLabel, int sortMethod, int transferringAmount)
         {
             InputContainerInfo = inputContainerInfo;
             OutputContainerInfo = outputContainerInfo;
@@ -186,6 +201,8 @@ namespace Content.Shared.Chemistry
             SelectedPillType = selectedPillType;
             PillDosageLimit = pillDosageLimit;
             UpdateLabel = updateLabel;
+            SortMethod = sortMethod;
+            TransferringAmount = transferringAmount;
         }
     }
 
