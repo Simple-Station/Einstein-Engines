@@ -22,7 +22,7 @@
       containers:
         board: !type:Container
           ents: []
-      modularComputerDiskSlot: !type:ContainerSlot {}
+        modularComputerDiskSlot: !type:ContainerSlot {}
 
 - type: entity
   parent: BaseComputerCircuitboard
