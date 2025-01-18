@@ -18,7 +18,7 @@ using JetBrains.Annotations;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
-using Robust.Shared.Player;
+using Robust.Shared.Map.Events;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
@@ -64,6 +64,42 @@ public sealed class NetworkConfiguratorSystem : SharedNetworkConfiguratorSystem
         SubscribeLocalEvent<NetworkConfiguratorComponent, NetworkConfiguratorButtonPressedMessage>(OnConfigButtonPressed);
 
         SubscribeLocalEvent<DeviceListComponent, ComponentRemove>(OnComponentRemoved);
+
+        SubscribeLocalEvent<BeforeSaveEvent>(OnMapSave);
+    }
+
+    private void OnMapSave(BeforeSaveEvent ev)
+    {
+        var enumerator = AllEntityQuery<NetworkConfiguratorComponent>();
+        while (enumerator.MoveNext(out var uid, out var conf))
+        {
+            if (CompOrNull<TransformComponent>(conf.ActiveDeviceList)?.MapUid != ev.Map)
+                continue;
+
+            // The linked device list is (probably) being saved. Make sure that the configurator is also being saved
+            // (i.e., not in the hands of a mapper/ghost). In the future, map saving should raise a separate event
+            // containing a set of all entities that are about to be saved, which would make checking this much easier.
+            // This is a shitty bandaid, and will force close the UI during auto-saves.
+            // TODO Map serialization refactor
+
+            var xform = Transform(uid);
+            if (xform.MapUid == ev.Map && IsSaveable(uid))
+                continue;
+
+            _uiSystem.CloseUi(uid, NetworkConfiguratorUiKey.Configure);
+            DebugTools.AssertNull(conf.ActiveDeviceList);
+        }
+
+        bool IsSaveable(EntityUid uid)
+        {
+            while (uid.IsValid())
+            {
+                if (Prototype(uid)?.MapSavable == false)
+                    return false;
+                uid = Transform(uid).ParentUid;
+            }
+            return true;
+        }
     }
 
     private void OnShutdown(EntityUid uid, NetworkConfiguratorComponent component, ComponentShutdown args)
@@ -435,11 +471,11 @@ public sealed class NetworkConfiguratorSystem : SharedNetworkConfiguratorSystem
         if (Delay(configurator))
             return;
 
-        if (!targetUid.HasValue || !configurator.ActiveDeviceLink.HasValue || !TryComp(userUid, out ActorComponent? actor) || !AccessCheck(targetUid.Value, userUid, configurator))
+        if (!targetUid.HasValue || !configurator.ActiveDeviceLink.HasValue || !AccessCheck(targetUid.Value, userUid, configurator))
             return;
 
 
-        _uiSystem.OpenUi(configuratorUid, NetworkConfiguratorUiKey.Link, actor.PlayerSession);
+        _uiSystem.OpenUi(configuratorUid, NetworkConfiguratorUiKey.Link, userUid);
         configurator.DeviceLinkTarget = targetUid;
 
 
@@ -489,6 +525,9 @@ public sealed class NetworkConfiguratorSystem : SharedNetworkConfiguratorSystem
 
         if (!TryComp(targetUid, out DeviceListComponent? list))
             return;
+
+        if (TryComp(configurator.ActiveDeviceList, out DeviceListComponent? oldList))
+            oldList.Configurators.Remove(configuratorUid);
 
         list.Configurators.Add(configuratorUid);
         configurator.ActiveDeviceList = targetUid;
@@ -763,7 +802,7 @@ public sealed class NetworkConfiguratorSystem : SharedNetworkConfiguratorSystem
                 {
                     if (query.TryGetComponent(device, out var comp))
                     {
-                        component.Devices[addr] = device;
+                        component.Devices.Add(addr, device);
                         comp.Configurators.Add(uid);
                     }
                 }
