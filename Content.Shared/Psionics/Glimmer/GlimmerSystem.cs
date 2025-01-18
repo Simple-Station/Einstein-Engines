@@ -32,7 +32,7 @@ public sealed class GlimmerSystem : EntitySystem
     ///     This returns a string that returns a more display-friendly glimmer input.
     ///     For example, 502.03837847 will become 502.03.
     /// </summary>
-    public string GlimmerInputString => _glimmerInput.ToString("0.00");
+    public string GlimmerInputString => _glimmerInput.ToString("#.##");
 
     private float _glimmerOutput = 0;
 
@@ -59,7 +59,7 @@ public sealed class GlimmerSystem : EntitySystem
     ///     This returns a string that returns a more display-friendly glimmer output.
     ///     For example, 502.03837847 will become 502.03.
     /// </summary>
-    public string GlimmerOutputString => _glimmerOutput.ToString("0.00");
+    public string GlimmerOutputString => _glimmerOutput.ToString("#.##");
 
     private bool _enabled;
     public override void Initialize()
