@@ -235,6 +235,7 @@
       inverted: true
       species:
         - IPC
+        - Lamia
   functions:
     - !type:TraitAddComponent
       components:
@@ -255,6 +256,7 @@
       inverted: true
       species:
         - IPC
+        - Lamia
   functions:
     - !type:TraitAddComponent
       components:
