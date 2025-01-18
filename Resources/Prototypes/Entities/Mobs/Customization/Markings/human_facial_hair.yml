@@ -243,3 +243,59 @@
   sprites:
     - sprite: Mobs/Customization/human_facial_hair.rsi
       state: sideburn
+- type: marking
+  id: HumanFacialHairChin
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: beard-beardchin
+- type: marking
+  id: HumanFacialHairLong
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: beard-beardlong
+- type: marking
+  id: HumanFacialHairShort
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: beard-beardshort
+- type: marking
+  id: HumanFacialHairThick
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: beard-beardthick
+- type: marking
+  id: HumanFacialHairViking
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: beard-beardviking
+- type: marking
+  id: HumanFacialHairBristle
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: beard-bristle
+- type: marking
+  id: HumanFacialHairMustacheWithStubble
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: beard-mustachewithstubble
+- type: marking
+  id: HumanFacialHairThickBristle
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: beard-thickbristle

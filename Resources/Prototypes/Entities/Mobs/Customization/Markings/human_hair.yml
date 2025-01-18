@@ -1384,3 +1384,66 @@
   sprites:
     - sprite: Mobs/Customization/human_hair.rsi
       state: longbow
+- type: marking
+  id: HumanHairArabicGathered
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: hair-arabicgatheredhair
+- type: marking
+  id: HumanHairClassicHair
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: hair-classichairmale
+- type: marking
+  id: HumanHairSideComb
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: hair-combedfromside
+- type: marking
+  id: HumanHairLong4
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: hair-longhair
+- type: marking
+  id: HumanHairManbun
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: hair-manbunold
+- type: marking
+  id: HumanHairPigtailTajaran
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: hair-pigtailtajaran
+- type: marking
+  id: HumanHairShavedSide
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: hair-shavedside
+- type: marking
+  id: HumanHairShorthair4
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: hair-shorthaired
+- type: marking
+  id: HumanFembun
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: hair-womenbun

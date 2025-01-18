@@ -83,7 +83,46 @@
   bodyPart: HeadSide
   markingCategory: HeadSide
   forcedColoring: true
-  speciesRestriction: [Oni, Harpy, Arachne, Lamia]
+  speciesRestriction: [Oni]
   sprites:
   - sprite: Mobs/Customization/pointy_ears.rsi
     state: pointy_ears_none
+
+- type: marking
+  id: PointyEarsElf
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  forcedColoring: true
+  speciesRestriction: [Oni, Harpy, Arachne, Lamia]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
+    state: ears_elf
+
+- type: marking
+  id: PointyEarsTiny
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  forcedColoring: true
+  speciesRestriction: [Oni, Harpy, Arachne, Lamia]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
+    state: demon_ears
+
+- type: marking
+  id: PointyEarsCow
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  forcedColoring: true
+  speciesRestriction: [Oni, Harpy, Arachne, Lamia]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
+    state: cow_ears
+
+- type: marking
+  id: PointyEarsMilky
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Human]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/demon.rsi
+    state: milky_ears

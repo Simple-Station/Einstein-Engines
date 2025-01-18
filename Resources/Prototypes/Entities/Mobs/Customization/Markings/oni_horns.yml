@@ -415,7 +415,7 @@
     state: antlers_3tone_3
 
 - type: marking
-  id: OniHornUnicorn
+  id: OniHornUnicorn2
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
@@ -523,3 +523,255 @@
     state: double_curved_outwards_3tone_2
   - sprite: Mobs/Customization/Oni/oni_horns.rsi
     state: double_curved_outwards_3tone_3
+
+- type: marking
+  id: OniHornCow
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Oni]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
+    state: cow_horns
+
+- type: marking
+  id: OniHornDeerAntlers
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Oni]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
+    state: deer_antlers_horns
+
+- type: marking
+  id: OniHornSmall
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Oni]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
+    state: small_horns
+
+- type: marking
+  id: OniHornBuffalo
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Oni]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
+    state: horns_buffalo
+
+- type: marking
+  id: OniHornCapricorn
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Oni]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
+    state: horns_capricorn
+
+- type: marking
+  id: OniHornDevil
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Oni]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
+    state: horns_devil
+
+- type: marking
+  id: OniHornDevil2
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Oni]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
+    state: horns_devil2
+
+- type: marking
+  id: OniHornDevil3
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Oni]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
+    state: horns_devil3
+
+- type: marking
+  id: OniHornDevil4
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Oni]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
+    state: horns_devil4
+
+- type: marking
+  id: OniHornRam
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Oni]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
+    state: horns_ram
+
+- type: marking
+  id: OniHornUnicorn
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Oni]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
+    state: horns_unicorn
+
+- type: marking
+  id: OniHornBackward
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Oni]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Demon/size_horns32x64.rsi
+    state: backward_horns
+
+- type: marking
+  id: OniHornDarkCrown
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Oni]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Demon/size_horns32x64.rsi
+    state: dark_crown
+
+- type: marking
+  id: OniHornDevilPrimeSi1
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Oni]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Demon/size_horns32x64.rsi
+    state: devil_prime1_s
+
+- type: marking
+  id: OniHornDevilPrime1
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Oni]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Demon/size_horns32x64.rsi
+    state: devil_prime1
+
+- type: marking
+  id: OniHornDevilPrime2
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Oni]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Demon/size_horns32x64.rsi
+    state: devil_prime2
+
+- type: marking
+  id: OniHornFat
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Oni]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Demon/size_horns32x64.rsi
+    state: fat_horn
+
+- type: marking
+  id: OniHornSimple1
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Sponsor/horns.rsi
+    state: horn1
+
+- type: marking
+  id: OniHornSimple2
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Sponsor/horns.rsi
+    state: horn2
+
+- type: marking
+  id: OniHornSimple3
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Sponsor/horns.rsi
+    state: horn3
+
+- type: marking
+  id: OniHornSimple4
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Sponsor/horns.rsi
+    state: horn4
+
+- type: marking
+  id: OniHornSimple5
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Sponsor/horns.rsi
+    state: horn5
+
+- type: marking
+  id: OniHornSimple6
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Sponsor/horns.rsi
+    state: horn6
+
+- type: marking
+  id: OniHornLord
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Sponsor/horns.rsi
+    state: lord
+
+- type: marking
+  id: OniHornSagittarius2
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Sponsor/horns.rsi
+    state: oldpain
+
+- type: marking
+  id: OniHornTaurus2
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Sponsor/horns.rsi
+    state: tavrhorn
+
+- type: marking
+  id: OniHornSerket2
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Sponsor/horns.rsi
+    state: telehorn
+
+- type: marking
+  id: OniHornVirgo2
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Sponsor/horns.rsi
+    state: vampirehorn
+
+- type: marking
+  id: OniHornMilky
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Human]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/demon.rsi
+    state: milky_horns
+  - sprite: _ADT/Mobs/Customization/Human/demon.rsi
+    state: milky_horns_secondary
