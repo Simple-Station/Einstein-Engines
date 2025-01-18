@@ -10281,3 +10281,18 @@ Entries:
   id: 6723
   time: '2025-01-18T19:22:41.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1588
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: Added sorting options to the ChemMaster.
+    - type: Add
+      message: >-
+        Added the ability to input custom amounts into the ChemMaster via a
+        textbox that resets on change.
+    - type: Tweak
+      message: The width of the ChemMaster UI has been lowered.
+    - type: Remove
+      message: Removed quantity buttons from the ChemMaster.
+  id: 6724
+  time: '2025-01-18T20:03:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1585
