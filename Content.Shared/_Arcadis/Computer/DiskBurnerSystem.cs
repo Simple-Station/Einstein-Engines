@@ -93,7 +93,7 @@ public sealed class DiskBurnerSystem : EntitySystem
                 {
                     missing += " or ";
                 }
-                missing = "board";
+                missing += "board";
             }
             args.PushMarkup(Loc.GetString("disk-burner-missing", ("missing", missing)));
             return;
