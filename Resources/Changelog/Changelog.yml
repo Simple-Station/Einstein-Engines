@@ -10251,3 +10251,82 @@ Entries:
   id: 6719
   time: '2025-01-17T15:53:24.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1578
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: Fixed full glimmer float being displayed to chat by Sophia.
+  id: 6720
+  time: '2025-01-18T03:23:15.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1581
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: Fixed not having enough space for longer chemicals on the ChemMaster UI.
+  id: 6721
+  time: '2025-01-18T04:10:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1582
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: Fixed IPCs being unable to cryo.
+  id: 6722
+  time: '2025-01-18T04:35:32.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1583
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Added the classic Asimov's Three Laws of Robotics to the game.
+    - type: Add
+      message: 'AI now starts with Asimov laws by default, instead of "Crewsimov". '
+  id: 6723
+  time: '2025-01-18T19:22:41.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1588
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: Added sorting options to the ChemMaster.
+    - type: Add
+      message: >-
+        Added the ability to input custom amounts into the ChemMaster via a
+        textbox that resets on change.
+    - type: Tweak
+      message: The width of the ChemMaster UI has been lowered.
+    - type: Remove
+      message: Removed quantity buttons from the ChemMaster.
+  id: 6724
+  time: '2025-01-18T20:03:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1585
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        The "Scream Action" no longer appears by default. It may be set in your
+        server's configuration to spawn or not. 
+  id: 6725
+  time: '2025-01-18T20:28:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1589
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Scream is once again by default on the action bar. The server
+        configuration for removing it still exists however.
+  id: 6726
+  time: '2025-01-18T21:31:15.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1590
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: >-
+        Fixed the infamous "Access denied" when using a network config in
+        mapping mode.
+  id: 6727
+  time: '2025-01-18T23:11:27.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1592
+- author: VMSolidus
+  changes:
+    - type: Remove
+      message: Lamia can no longer take blood related traits, such as Blood Deficiency.
+  id: 6728
+  time: '2025-01-18T23:37:19.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1586

@@ -235,6 +235,7 @@
       inverted: true
       species:
         - IPC
+        - Lamia
         - Plasmaman
   functions:
     - !type:TraitAddComponent
@@ -256,6 +257,7 @@
       inverted: true
       species:
         - IPC
+        - Lamia
         - Plasmaman
   functions:
     - !type:TraitAddComponent
