@@ -102,5 +102,5 @@ public sealed partial class CCVars
         CVarDef.Create("silicon.npcupdatetime", 1.5f, CVar.SERVERONLY);
 
     public static readonly CVarDef<bool> AllowScreamAction =
-        CVarDef.Create("vocal.allow_scream_action", false, CVar.SERVERONLY);
+        CVarDef.Create("vocal.allow_scream_action", true, CVar.SERVERONLY);
 }
