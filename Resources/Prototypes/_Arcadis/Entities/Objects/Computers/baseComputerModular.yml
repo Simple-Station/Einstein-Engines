@@ -18,10 +18,10 @@
           whitelist:
             tags:
               - ComputerDisk
-  - type: ContainerContainer
-    containers:
-      board: !type:Container
-        ents: []
+    - type: ContainerContainer
+      containers:
+        board: !type:Container
+          ents: []
       modularComputerDiskSlot: !type:ContainerSlot {}
 
 - type: entity
