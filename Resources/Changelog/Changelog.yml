@@ -10323,3 +10323,10 @@ Entries:
   id: 6727
   time: '2025-01-18T23:11:27.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1592
+- author: VMSolidus
+  changes:
+    - type: Remove
+      message: Lamia can no longer take blood related traits, such as Blood Deficiency.
+  id: 6728
+  time: '2025-01-18T23:37:19.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1586
