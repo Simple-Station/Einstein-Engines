@@ -100,4 +100,7 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<float> SiliconNpcUpdateTime =
         CVarDef.Create("silicon.npcupdatetime", 1.5f, CVar.SERVERONLY);
+
+    public static readonly CVarDef<bool> AllowScreamAction =
+        CVarDef.Create("vocal.allow_scream_action", false, CVar.SERVERONLY);
 }
