@@ -78,7 +78,7 @@
   - type: EmagSiliconLaw
     stunTime: 5
   - type: SiliconLawProvider
-    laws: Crewsimov
+    laws: Asimov
   - type: IonStormTarget
   - type: Strippable
   - type: InventorySlots
