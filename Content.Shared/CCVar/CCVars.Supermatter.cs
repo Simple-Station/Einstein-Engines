@@ -5,11 +5,6 @@ namespace Content.Shared.CCVar;
 
 public sealed partial class CCVars
 {
-    #region Supermatter System
-    /*
-        * Supermatter System
-        */
-
     /// <summary>
     ///     With completely default supermatter values, Singuloose delamination will occur if engineers inject at least 900 moles of coolant per tile
     ///     in the crystal chamber. For reference, a gas canister contains 1800 moles of air. This Cvar directly multiplies the amount of moles required to singuloose.
@@ -54,6 +49,4 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<float> SupermatterRadsModifier =
         CVarDef.Create("supermatter.rads_modifier", 1f, CVar.SERVER);
-
-    #endregion
 }

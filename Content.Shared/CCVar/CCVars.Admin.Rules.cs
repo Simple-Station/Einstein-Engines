@@ -14,5 +14,5 @@ public sealed partial class CCVars
     ///     Don't show rules to localhost/loopback interface.
     /// </summary>
     public static readonly CVarDef<bool> RulesExemptLocal =
-        CVarDef.Create("rules.exempt_local", true, CVar.SERVERONLY);
+        CVarDef.Create("rules.exempt_local", false, CVar.SERVERONLY);
 }

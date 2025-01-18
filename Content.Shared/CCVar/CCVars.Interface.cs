@@ -11,7 +11,10 @@ public sealed partial class CCVars
         CVarDef.Create("interface.hover_sound", "/Audio/UserInterface/hover.ogg", CVar.REPLICATED);
 
     public static readonly CVarDef<string> UILayout =
-        CVarDef.Create("ui.layout", "Default", CVar.CLIENTONLY | CVar.ARCHIVE);
+        CVarDef.Create("ui.layout", "Separated", CVar.CLIENTONLY | CVar.ARCHIVE);
+
+    public static readonly CVarDef<string> OverlayScreenChatSize =
+        CVarDef.Create("ui.overlay_chat_size", "", CVar.CLIENTONLY | CVar.ARCHIVE);
 
     public static readonly CVarDef<string> DefaultScreenChatSize =
         CVarDef.Create("ui.default_chat_size", "", CVar.CLIENTONLY | CVar.ARCHIVE);

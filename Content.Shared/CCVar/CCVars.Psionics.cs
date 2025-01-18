@@ -31,4 +31,10 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<bool> ScarierMindbreaking =
         CVarDef.Create("psionics.scarier_mindbreaking", false, CVar.SERVERONLY);
+
+    /// <summary>
+    /// Allow Ethereal Ent to PassThrough Walls/Objects while in Ethereal.
+    /// </summary>
+    public static readonly CVarDef<bool> EtherealPassThrough =
+        CVarDef.Create("ic.EtherealPassThrough", false, CVar.SERVER);
 }
