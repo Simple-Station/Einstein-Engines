@@ -30,11 +30,11 @@ namespace Content.Client.Chemistry.UI
         public readonly Button[] PillTypeButtons;
 
         private Dictionary<string, ReagentCached> _reagents;
-
+        private ReagentSortMethod _currentSortMethod = ReagentSortMethod.Alphabetical;
         private ChemMasterBoundUserInterfaceState? _lastState;
         private string _lastAmountText = "50";
         private int _amount = 50;
-        private ReagentSortMethod _currentSortMethod = ReagentSortMethod.Alphabetical;
+
 
         private const string PillsRsiPath = "/Textures/Objects/Specific/Chemistry/pills.rsi";
 
@@ -113,6 +113,22 @@ namespace Content.Client.Chemistry.UI
             SortMethod.AddItem(Loc.GetString("chem-master-window-sort-method-Amount-text"), (int) ReagentSortMethod.Amount);
             SortMethod.AddItem(Loc.GetString("chem-master-window-sort-method-Time-text"), (int) ReagentSortMethod.Time);
             SortMethod.OnItemSelected += HandleChildPressed;
+
+            BufferTransferButton.OnPressed += HandleDiscardTransferPress;
+            BufferDiscardButton.OnPressed += HandleDiscardTransferPress;
+        }
+
+        private void HandleDiscardTransferPress(BaseButton.ButtonEventArgs args)
+        {
+            var buttons = BufferInfo.Children
+                .Where(c => c is Button)
+                .Cast<Button>();
+            
+            foreach (var button in buttons)
+            {
+                var text = BufferTransferButton.Pressed ? "transfer" : "discard";
+                button.Text = Loc.GetString($"chem-master-window-{text}-button-text");
+            }
         }
 
         private void HandleSortMethodChange(int newSortMethod)
