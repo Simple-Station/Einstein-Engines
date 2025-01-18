@@ -10305,3 +10305,12 @@ Entries:
   id: 6725
   time: '2025-01-18T20:28:56.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1589
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Scream is once again by default on the action bar. The server
+        configuration for removing it still exists however.
+  id: 6726
+  time: '2025-01-18T21:31:15.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1590
