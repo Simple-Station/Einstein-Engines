@@ -10272,3 +10272,12 @@ Entries:
   id: 6722
   time: '2025-01-18T04:35:32.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1583
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Added the classic Asimov's Three Laws of Robotics to the game.
+    - type: Add
+      message: 'AI now starts with Asimov laws by default, instead of "Crewsimov". '
+  id: 6723
+  time: '2025-01-18T19:22:41.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1588
