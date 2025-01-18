@@ -69,3 +69,6 @@
     LeftHand:
       points: 3
       required: false
+    Wings:
+      points: 1
+      required: false
