@@ -5,6 +5,7 @@ using Content.Shared.GameTicking;
 
 namespace Content.Shared.Psionics.Glimmer;
 
+
 /// <summary>
 /// This handles setting / reading the value of glimmer.
 /// </summary>
@@ -13,6 +14,7 @@ public sealed class GlimmerSystem : EntitySystem
     [Dependency] private readonly IConfigurationManager _cfg = default!;
 
     private float _glimmerInput = 0;
+
     /// <summary>
     ///     GlimmerInput represents the system-facing value of the station's glimmer, and is given by f(y) for this graph: https://www.desmos.com/calculator/posutiq38e
     ///     Where x = GlimmerOutput and y = GlimmerInput
@@ -25,6 +27,13 @@ public sealed class GlimmerSystem : EntitySystem
         get { return _glimmerInput; }
         private set { _glimmerInput = _enabled ? Math.Max(value, 0) : 0; }
     }
+
+    /// <summary>
+    ///     This returns a string that returns a more display-friendly glimmer input.
+    ///     For example, 502.03837847 will become 502.03.
+    /// </summary>
+    public string GlimmerInputString => _glimmerInput.ToString("#.##");
+
     private float _glimmerOutput = 0;
 
     /// <summary>
@@ -45,6 +54,13 @@ public sealed class GlimmerSystem : EntitySystem
         get { return _glimmerOutput; }
         private set { _glimmerOutput = _enabled ? Math.Clamp(value, 0, 999.999f) : 0; }
     }
+
+    /// <summary>
+    ///     This returns a string that returns a more display-friendly glimmer output.
+    ///     For example, 502.03837847 will become 502.03.
+    /// </summary>
+    public string GlimmerOutputString => _glimmerOutput.ToString("#.##");
+
     private bool _enabled;
     public override void Initialize()
     {
