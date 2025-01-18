@@ -58,6 +58,7 @@ namespace Content.Server.Chemistry.EntitySystems
             SubscribeLocalEvent<ChemMasterComponent, ChemMasterReagentAmountButtonMessage>(OnReagentButtonMessage);
             SubscribeLocalEvent<ChemMasterComponent, ChemMasterCreatePillsMessage>(OnCreatePillsMessage);
             SubscribeLocalEvent<ChemMasterComponent, ChemMasterOutputToBottleMessage>(OnOutputToBottleMessage);
+            SubscribeLocalEvent<ChemMasterComponent, ChemMasterSortMethodUpdated>(OnSortMethodUpdated);
         }
 
         private void SubscribeUpdateUiState<T>(Entity<ChemMasterComponent> ent, ref T ev)
@@ -78,7 +79,7 @@ namespace Content.Server.Chemistry.EntitySystems
 
             var state = new ChemMasterBoundUserInterfaceState(
                 chemMaster.Mode, BuildInputContainerInfo(inputContainer), BuildOutputContainerInfo(outputContainer),
-                bufferReagents, bufferCurrentVolume, chemMaster.PillType, chemMaster.PillDosageLimit, updateLabel);
+                bufferReagents, bufferCurrentVolume, chemMaster.PillType, chemMaster.PillDosageLimit, updateLabel, chemMaster.SortMethod);
 
             _userInterfaceSystem.SetUiState(owner, ChemMasterUiKey.Key, state);
         }
@@ -107,17 +108,13 @@ namespace Content.Server.Chemistry.EntitySystems
 
         private void OnReagentButtonMessage(Entity<ChemMasterComponent> chemMaster, ref ChemMasterReagentAmountButtonMessage message)
         {
-            // Ensure the amount corresponds to one of the reagent amount buttons.
-            if (!Enum.IsDefined(typeof(ChemMasterReagentAmount), message.Amount))
-                return;
-
             switch (chemMaster.Comp.Mode)
             {
                 case ChemMasterMode.Transfer:
-                    TransferReagents(chemMaster, message.ReagentId, message.Amount.GetFixedPoint(), message.FromBuffer);
+                    TransferReagents(chemMaster, message.ReagentId, message.Amount, message.FromBuffer);
                     break;
                 case ChemMasterMode.Discard:
-                    DiscardReagents(chemMaster, message.ReagentId, message.Amount.GetFixedPoint(), message.FromBuffer);
+                    DiscardReagents(chemMaster, message.ReagentId, message.Amount, message.FromBuffer);
                     break;
                 default:
                     // Invalid mode.
@@ -345,6 +342,12 @@ namespace Content.Server.Chemistry.EntitySystems
             {
                 Reagents = solution.Contents
             };
+        }
+
+        private void OnSortMethodUpdated(EntityUid uid, ChemMasterComponent chemMaster, ChemMasterSortMethodUpdated args)
+        {
+            chemMaster.SortMethod = args.SortMethod;
+            UpdateUiState((uid, chemMaster));
         }
     }
 }
