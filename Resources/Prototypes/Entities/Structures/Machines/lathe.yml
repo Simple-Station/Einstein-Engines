@@ -854,8 +854,12 @@
       - WeaponRifleGestio
       - MagazineMagnumLeverRifle # Goobstation
       - MagazineMagnumLeverRifleEmpty # Goobstation
-    dynamicRecipes:
+      - ClothingEyesGlassesSecurity
+      - TelescopicShield
+      - HoloprojectorSecurity
       - BolaEnergy
+    dynamicRecipes:
+      - Truncheon
       - BoxBeanbag
       - BoxShotgunIncendiary
       - BoxShotgunUranium
@@ -872,13 +876,11 @@
       - CartridgeMagnumRubber
       - CartridgePistolRubber
       - CartridgeRifleRubber
-      - ClothingEyesGlassesSecurity
       - ExplosivePayload
       - FlashPayload
       - GrenadeBlast
       - GrenadeEMP
       - GrenadeFlash
-      - HoloprojectorSecurity
       - MagazineBoxLightRifleIncendiary
       - MagazineBoxLightRifleUranium
       - MagazineBoxMagnumIncendiary
@@ -927,9 +929,7 @@
       - SpeedLoaderRifleHeavyRubber
       - SpeedLoaderRifleHeavyIncendiary
       - SpeedLoaderRifleHeavyUranium
-      - TelescopicShield
       - TimerTrigger
-      - Truncheon
       - VoiceTrigger
       - WeaponAdvancedLaser
       - WeaponDisabler
