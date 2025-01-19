@@ -287,8 +287,8 @@
   - type: ItemToggleMeleeWeapon
     activatedDamage:
         types:
-            Slash: 2
-            Heat: 15
+            Slash: 6
+            Heat: 12
     deactivatedSecret: true
   - type: Sprite
     sprite: DeltaV/Objects/Weapons/Melee/e_cutlass.rsi
