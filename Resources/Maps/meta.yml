@@ -13274,8 +13274,6 @@ entities:
       pos: -47.5,-9.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 9437
   - uid: 627
@@ -13728,8 +13726,6 @@ entities:
       pos: 41.5,39.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 27683
 - proto: AltarConvertMaint
@@ -74579,8 +74575,6 @@ entities:
       pos: -50.5,-5.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 9437
   - uid: 11747
@@ -74711,8 +74705,6 @@ entities:
       pos: -51.5,-14.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 9437
   - uid: 27677
@@ -74722,8 +74714,6 @@ entities:
       pos: 38.5,39.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 27683
   - uid: 27678
@@ -74733,8 +74723,6 @@ entities:
       pos: 38.5,36.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 27683
   - uid: 27679
@@ -74744,8 +74732,6 @@ entities:
       pos: 44.5,36.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 27684
       - 27683
@@ -74756,8 +74742,6 @@ entities:
       pos: 44.5,39.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 27684
       - 27683
@@ -109696,8 +109680,6 @@ entities:
       pos: -49.5,-9.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 9437
     - type: AtmosPipeColor
@@ -109708,8 +109690,6 @@ entities:
       pos: 41.5,40.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 27683
     - type: AtmosPipeColor
@@ -111131,8 +111111,6 @@ entities:
       pos: -48.5,-9.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 9437
     - type: AtmosPipeColor
@@ -111143,8 +111121,6 @@ entities:
       pos: 41.5,37.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 27683
 - proto: GasVolumePump
