@@ -1,57 +1,27 @@
 using System.Linq;
-using Content.Server.Administration.Logs;
 using Content.Server.Atmos.Components;
 using Content.Server.Bed.Components;
+using Content.Shared._Shitmed.Targeting;
 using Content.Shared._Shitmed.Body.Events;
-using Content.Shared.Alert;
 using Content.Shared.Body.Part;
+using Content.Shared.Body.Systems;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
-using Robust.Shared.Containers;
 
 namespace Content.Server.Atmos.EntitySystems;
 
 public sealed class IgniteFromGasSystem : EntitySystem
 {
+    [Dependency] private readonly SharedBodySystem _body = default!;
+    [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly AtmosphereSystem _atmos = default!;
     [Dependency] private readonly FlammableSystem _flammable = default!;
-    [Dependency] private readonly AlertsSystem _alerts = default!;
-    [Dependency] private readonly IAdminLogManager _adminLogger= default!;
-    [Dependency] private readonly InventorySystem _inventory = default!;
 
+    // All ignitions tick at the same time because FlammableSystem is also the same
     private const float UpdateTimer = 1f;
     private float _timer;
-
-    /// <summary>
-    ///   Which clothing slots, when they have an item with IgniteFromGasImmunityComponent,
-    ///   grant immunity to body parts.
-    ///   TODO: move to IgniteFromGasImmunityComponent
-    /// </summary>
-    private readonly Dictionary<String, HashSet<BodyPartType>> ImmunitySlots = new() {
-        ["head"] = new HashSet<BodyPartType> { BodyPartType.Head },
-        ["jumpsuit"] = new HashSet<BodyPartType> {
-            BodyPartType.Other,
-            BodyPartType.Torso,
-            BodyPartType.Arm,
-            BodyPartType.Hand,
-            BodyPartType.Leg,
-            BodyPartType.Foot,
-            BodyPartType.Tail,
-        },
-        ["outerClothing"] = new HashSet<BodyPartType> {
-            BodyPartType.Other,
-            BodyPartType.Torso,
-            BodyPartType.Arm,
-            BodyPartType.Hand,
-            BodyPartType.Leg,
-            BodyPartType.Foot,
-            BodyPartType.Tail,
-        },
-        ["gloves"] = new HashSet<BodyPartType> { BodyPartType.Hand, },
-        ["shoes"] = new HashSet<BodyPartType> { BodyPartType.Foot, },
-    };
 
     public override void Initialize()
     {
@@ -65,135 +35,100 @@ public sealed class IgniteFromGasSystem : EntitySystem
         SubscribeLocalEvent<IgniteFromGasImmunityComponent, GotUnequippedEvent>(OnIgniteFromGasImmunityUnequipped);
     }
 
-    private void OnBodyPartAdded(EntityUid uid, FlammableComponent component, BodyPartAddedEvent args)
-    {
-        HandleAddBodyPart(uid, args.Part.Owner, args.Part.Comp);
-    }
+    private void OnBodyPartAdded(Entity<FlammableComponent> ent, ref BodyPartAddedEvent args) =>
+        HandleAddBodyPart(ent.Owner, args.Part);
+    private void OnBodyPartAttached(Entity<FlammableComponent> ent, ref BodyPartAttachedEvent args) =>
+        HandleAddBodyPart(ent.Owner, args.Part);
 
-    private void OnBodyPartAttached(EntityUid uid, FlammableComponent component, BodyPartAttachedEvent args)
+    private void HandleAddBodyPart(EntityUid uid, Entity<BodyPartComponent> part)
     {
-        HandleAddBodyPart(component.Owner, args.Part.Owner, args.Part.Comp);
-    }
-
-    private void HandleAddBodyPart(EntityUid uid, EntityUid partUid, BodyPartComponent comp)
-    {
-        if (!TryComp<IgniteFromGasPartComponent>(partUid, out var ignitePart))
+        if (!TryComp<IgniteFromGasPartComponent>(part, out var ignitePart) ||
+            _body.GetTargetBodyPart(part.Comp.PartType, part.Comp.Symmetry) is not { } targetBodyPart)
             return;
 
         if (!TryComp<IgniteFromGasComponent>(uid, out var ignite))
         {
-            ignite = new IgniteFromGasComponent{
-                Gas = ignitePart.Gas,
-                IgnitableBodyParts = new Dictionary<(BodyPartType, BodyPartSymmetry), float>()
-                {
-                    [(comp.PartType, comp.Symmetry)] = ignitePart.FireStacks
-                }
-            };
-
-            AddComp(uid, ignite);
+            ignite = EnsureComp<IgniteFromGasComponent>(uid);
+            ignite.Gas = ignitePart.Gas;
         }
-        else
-            ignite.IgnitableBodyParts[(comp.PartType, comp.Symmetry)] = ignitePart.FireStacks;
+
+        ignite.IgnitableBodyParts[targetBodyPart] = ignitePart.FireStacks;
 
         UpdateIgniteImmunity(uid, ignite);
     }
 
-    private void OnBodyPartRemoved(EntityUid uid, IgniteFromGasComponent component, BodyPartRemovedEvent args)
-    {
-        HandleRemoveBodyPart(uid, args.Part.Owner, args.Part.Comp, component);
-    }
+    private void OnBodyPartRemoved(Entity<IgniteFromGasComponent> ent, ref BodyPartRemovedEvent args) =>
+        HandleRemoveBodyPart(ent, args.Part);
+    private void OnBodyPartDropped(Entity<IgniteFromGasComponent> ent, ref BodyPartDroppedEvent args) =>
+        HandleRemoveBodyPart(ent, args.Part);
 
-    private void OnBodyPartDropped(EntityUid uid, IgniteFromGasComponent component, BodyPartDroppedEvent args)
+    private void HandleRemoveBodyPart(Entity<IgniteFromGasComponent> ent, Entity<BodyPartComponent> part)
     {
-        HandleRemoveBodyPart(component.Owner, args.Part.Owner, args.Part.Comp, component);
-    }
-
-    private void HandleRemoveBodyPart(EntityUid uid, EntityUid partUid, BodyPartComponent part, IgniteFromGasComponent ignite)
-    {
-        if (!TryComp<IgniteFromGasPartComponent>(partUid, out var ignitePart))
+        if (!TryComp<IgniteFromGasPartComponent>(part, out var ignitePart) ||
+            _body.GetTargetBodyPart(part.Comp.PartType, part.Comp.Symmetry) is not { } targetBodyPart)
             return;
 
-        ignite.IgnitableBodyParts.Remove((part.PartType, part.Symmetry));
+        ent.Comp.IgnitableBodyParts.Remove(targetBodyPart);
 
-        if (ignite.IgnitableBodyParts.Count == 0)
+        if (ent.Comp.IgnitableBodyParts.Count == 0)
         {
-            RemCompDeferred<IgniteFromGasComponent>(uid);
+            RemCompDeferred<IgniteFromGasComponent>(ent);
             return;
         }
 
-        UpdateIgniteImmunity(uid, ignite);
+        UpdateIgniteImmunity(ent, ent.Comp);
     }
 
-    private void OnIgniteFromGasImmunityEquipped(EntityUid uid, IgniteFromGasImmunityComponent igniteImmunity, GotEquippedEvent args)
-    {
-        if (TryComp<IgniteFromGasComponent>(args.Equipee, out var ignite) && ImmunitySlots.ContainsKey(args.Slot))
-            UpdateIgniteImmunity(args.Equipee, ignite);
-    }
+    private void OnIgniteFromGasImmunityEquipped(Entity<IgniteFromGasImmunityComponent> ent, ref GotEquippedEvent args) =>
+        UpdateIgniteImmunity(args.Equipee);
+    private void OnIgniteFromGasImmunityUnequipped(Entity<IgniteFromGasImmunityComponent> ent, ref GotUnequippedEvent args) =>
+        UpdateIgniteImmunity(args.Equipee);
 
-    private void OnIgniteFromGasImmunityUnequipped(EntityUid uid, IgniteFromGasImmunityComponent igniteImmunity, GotUnequippedEvent args)
+    public void UpdateIgniteImmunity(EntityUid uid, IgniteFromGasComponent? ignite = null, InventoryComponent? inv = null)
     {
-        if (TryComp<IgniteFromGasComponent>(args.Equipee, out var ignite) && ImmunitySlots.ContainsKey(args.Slot))
-            UpdateIgniteImmunity(args.Equipee, ignite);
-    }
-
-    public void UpdateIgniteImmunity(EntityUid uid, IgniteFromGasComponent? ignite = null, InventoryComponent? inv = null, ContainerManagerComponent? contMan = null)
-    {
-        if (!Resolve(uid, ref ignite, ref inv, ref contMan))
+        if (!Resolve(uid, ref ignite, ref inv))
             return;
 
-        var exposedBodyParts = new Dictionary<(BodyPartType, BodyPartSymmetry), float>(ignite.IgnitableBodyParts);
+        var exposedBodyParts = new Dictionary<TargetBodyPart, float>(ignite.IgnitableBodyParts);
 
-        // This is O(n^2) but I don't think it matters
-        // TODO: use TargetBodyPart instead of a tuple for these
-        foreach (var (slot, protectedBodyParts) in ImmunitySlots.Select(s => (s.Key, s.Value)))
+        var containerSlotEnumerator = _inventory.GetSlotEnumerator((uid, inv));
+        while (containerSlotEnumerator.NextItem(out var item, out _))
         {
-            if (!_inventory.TryGetSlotEntity(uid, slot, out var equipment, inv, contMan) ||
-                !HasComp<IgniteFromGasImmunityComponent>(equipment))
+            if (!TryComp<IgniteFromGasImmunityComponent>(item, out var immunity))
                 continue;
 
-            foreach (var protectedBodyPart in protectedBodyParts)
-            {
-                exposedBodyParts.Remove((protectedBodyPart, BodyPartSymmetry.Left));
-                exposedBodyParts.Remove((protectedBodyPart, BodyPartSymmetry.Right));
-                exposedBodyParts.Remove((protectedBodyPart, BodyPartSymmetry.None));
-            }
+            foreach (var immunePart in immunity.Parts)
+                exposedBodyParts.Remove(immunePart);
         }
 
-        if (exposedBodyParts.Count() == 0)
+        if (exposedBodyParts.Count == 0)
         {
-            ignite.HasImmunity = true;
-            ignite.FireStacks = 0;
+            ignite.FireStacksPerUpdate = 0;
             return;
         }
 
-        ignite.HasImmunity = false;
-        var exposedFireStacks = 0f;
-        foreach (var fireStacks in exposedBodyParts.Values)
-            exposedFireStacks += fireStacks;
-        ignite.FireStacks = ignite.BaseFireStacks + exposedFireStacks;
+        ignite.FireStacksPerUpdate = ignite.BaseFireStacksPerUpdate + exposedBodyParts.Values.Sum();
     }
 
     public override void Update(float frameTime)
     {
         _timer += frameTime;
-
         if (_timer < UpdateTimer)
             return;
-
         _timer -= UpdateTimer;
 
         var enumerator = EntityQueryEnumerator<IgniteFromGasComponent, MobStateComponent, FlammableComponent>();
         while (enumerator.MoveNext(out var uid, out var ignite, out var mobState, out var flammable))
         {
-            if (ignite.HasImmunity || mobState.CurrentState is MobState.Dead || HasComp<InStasisComponent>(uid))
+            if (ignite.FireStacksPerUpdate == 0 ||
+                mobState.CurrentState is MobState.Dead ||
+                HasComp<InStasisComponent>(uid) ||
+                _atmos.GetContainingMixture(uid, excite: true) is not { } gas ||
+                gas[(int) ignite.Gas] < ignite.MolesToIgnite
+                )
                 continue;
 
-            var gas = _atmos.GetContainingMixture(uid, excite: true);
-
-            if (gas is null || gas[(int) ignite.Gas] < ignite.MolesToIgnite)
-                continue;
-
-            _flammable.AdjustFireStacks(uid, ignite.FireStacks, flammable);
+            _flammable.AdjustFireStacks(uid, ignite.FireStacksPerUpdate, flammable);
             _flammable.Ignite(uid, uid, flammable, ignoreFireProtection: true);
         }
     }

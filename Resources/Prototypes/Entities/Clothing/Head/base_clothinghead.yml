@@ -127,6 +127,8 @@
   - type: TemperatureProtection
     coefficient: 0.2
   - type: IgniteFromGasImmunity
+    parts:
+    - Head
   - type: IngestionBlocker
   - type: Clothing
     #Copies ClothingHeadHardsuitBase behavior
@@ -168,6 +170,8 @@
   - type: FireProtection
     reduction: 0.2
   - type: IgniteFromGasImmunity
+    parts:
+    - Head
   - type: Armor
     modifiers:
       coefficients:
@@ -195,6 +199,8 @@
   name: base envirosuit helmet
   components:
   - type: IgniteFromGasImmunity
+    parts:
+    - Head
   - type: EyeProtection
   - type: BreathMask
   - type: PressureProtection # Same as EVA helmet

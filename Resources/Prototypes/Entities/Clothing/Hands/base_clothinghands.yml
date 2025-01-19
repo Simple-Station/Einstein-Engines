@@ -55,3 +55,6 @@
       coefficients:
         Caustic: 0.95
   - type: IgniteFromGasImmunity
+    parts:
+    - LeftHand
+    - RightHand

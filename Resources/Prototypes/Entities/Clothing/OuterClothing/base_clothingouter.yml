@@ -138,6 +138,17 @@
   - type: FireProtection
     reduction: 0.75 # almost perfectly sealed, atmos firesuit is better
   - type: IgniteFromGasImmunity
+    parts:
+    - Torso
+    - Groin
+    - LeftArm
+    - LeftHand
+    - RightArm
+    - RightHand
+    - LeftLeg
+    - LeftFoot
+    - RightLeg
+    - RightFoot
   - type: ClothingSpeedModifier
     walkModifier: 0.4
     sprintModifier: 0.6
@@ -207,6 +218,17 @@
   - type: TemperatureProtection
     coefficient: 0.01 # Not complete protection from fire
   - type: IgniteFromGasImmunity
+    parts:
+    - Torso
+    - Groin
+    - LeftArm
+    - LeftHand
+    - RightArm
+    - RightHand
+    - LeftLeg
+    - LeftFoot
+    - RightLeg
+    - RightFoot
   - type: ClothingSpeedModifier
     walkModifier: 0.8
     sprintModifier: 0.8

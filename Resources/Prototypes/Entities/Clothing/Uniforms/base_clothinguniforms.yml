@@ -160,6 +160,17 @@
   id: ClothingUniformEnvirosuitBase
   components:
   - type: IgniteFromGasImmunity
+    parts:
+    - Torso
+    - Groin
+    - LeftArm
+    - LeftHand
+    - RightArm
+    - RightHand
+    - LeftLeg
+    - LeftFoot
+    - RightLeg
+    - RightFoot
   - type: Item
     size: Huge
   - type: Clothing
