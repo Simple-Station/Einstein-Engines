@@ -31,7 +31,7 @@
 
 - type: technology
   id: BasicElectronics
-  name: research-technology-audio-visual-communication
+  name: research-technology-basic-electronics
   icon:
     sprite: Structures/Machines/computers.rsi
     state: television
