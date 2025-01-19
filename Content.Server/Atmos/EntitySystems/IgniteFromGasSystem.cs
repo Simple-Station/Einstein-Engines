@@ -86,7 +86,7 @@ public sealed class IgniteFromGasSystem : EntitySystem
 
     public void UpdateIgniteImmunity(Entity<IgniteFromGasComponent?, InventoryComponent?> ent)
     {
-        if (!Resolve(ent, ref ent.Comp1, ref ent.Comp2))
+        if (!Resolve(ent, ref ent.Comp1, ref ent.Comp2, false))
             return;
 
         var exposedBodyParts = new Dictionary<TargetBodyPart, float>(ent.Comp1.IgnitableBodyParts);
