@@ -8,6 +8,7 @@
 - type: latheRecipe
   id: ClothingOuterHardsuitCombatStandard
   result: ClothingOuterHardsuitCombatStandard
+  category: Tacsuits
   completetime: 60
   materials:
      Plasteel: 3000
@@ -20,6 +21,7 @@
 - type: latheRecipe
   id: ClothingOuterHardsuitCombatMedical
   result: ClothingOuterHardsuitCombatMedical
+  category: Tacsuits
   completetime: 60
   materials:
      Plasteel: 3000
@@ -33,6 +35,7 @@
 - type: latheRecipe
   id: ClothingOuterHardsuitCombatRiot
   result: ClothingOuterHardsuitCombatRiot
+  category: Tacsuits
   completetime: 90
   materials:
      Plasteel: 3500
@@ -48,6 +51,7 @@
 - type: latheRecipe
   id: ClothingOuterHardsuitCombatAdvanced
   result: ClothingOuterHardsuitCombatAdvanced
+  category: Tacsuits
   completetime: 120
   materials:
      Plasteel: 5000
@@ -61,6 +65,7 @@
 - type: latheRecipe
   id: ClothingOuterHardsuitSyndieReverseEngineered
   result: ClothingOuterHardsuitSyndieReverseEngineered
+  category: Tacsuits
   completetime: 180
   materials:
      Plasteel: 8000
@@ -75,6 +80,7 @@
 # - type: latheRecipe
 #   id: ClothingOuterHardsuitCybersunEliteUnpainted
 #   result: ClothingOuterHardsuitCybersunEliteUnpainted
+#   category: Tacsuits
 #   completetime: 120
 #   materials:
 #      Plasteel: 8000
@@ -89,6 +95,7 @@
 - type: latheRecipe
   id: ClothingOuterHardsuitJuggernautReverseEngineered
   result: ClothingOuterHardsuitJuggernautReverseEngineered
+  category: Tacsuits
   completetime: 300
   materials: # GOOD LUCK.
      Plasteel: 30000
