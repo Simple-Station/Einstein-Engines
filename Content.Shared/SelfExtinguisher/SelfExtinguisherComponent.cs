@@ -1,17 +1,18 @@
 using Robust.Shared.Audio;
+using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
-namespace Content.Server.Extinguisher;
+namespace Content.Shared.SelfExtinguisher;
 
 /// <summary>
 ///   When equipped, the SelfExtinguisherComponent will give an action to its wearer to self-extinguish when set on fire.
 /// </summary>
-[RegisterComponent, AutoGenerateComponentPause]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState, AutoGenerateComponentPause]
 public sealed partial class SelfExtinguisherComponent : Component
 {
     /// <summary>
-    ///     Action used to self-extinguish.
+    ///   Action used to self-extinguish.
     /// </summary>
     [DataField, AutoNetworkedField]
     public EntProtoId Action = "ActionSelfExtinguish";
@@ -28,17 +29,19 @@ public sealed partial class SelfExtinguisherComponent : Component
     /// <summary>
     ///   Time before the self-extinguisher can be used again.
     /// </summary>
-    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
-    [AutoPausedField]
+    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoNetworkedField, AutoPausedField]
     public TimeSpan NextExtinguish = TimeSpan.Zero;
 
     /// <summary>
-    ///     When failing self-extinguish attempts,
-    ///     don't spam popups every frame and instead have a cooldown.
+    ///   When failing self-extinguish attempts,
+    ///   don't spam popups every frame and instead have a cooldown.
     /// </summary>
     [DataField]
-    public TimeSpan PopupCooldown = TimeSpan.FromSeconds(1);
+    public TimeSpan PopupCooldown = TimeSpan.FromSeconds(0.8);
 
+    /// <summary>
+    ///   Time before the next popup can be shown.
+    /// </summary>
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
     [AutoPausedField]
     public TimeSpan? NextPopup = null;
