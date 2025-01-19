@@ -8,7 +8,7 @@ public sealed partial class CCVars
     ///     Controls if admin logs are enabled. Highly recommended to shut this off for development.
     /// </summary>
     public static readonly CVarDef<bool> AdminLogsEnabled =
-        CVarDef.Create("adminlogs.enabled", true, CVar.SERVERONLY);
+        CVarDef.Create("adminlogs.enabled", true, CVar.REPLICATED);
 
     public static readonly CVarDef<float> AdminLogsQueueSendDelay =
         CVarDef.Create("adminlogs.queue_send_delay_seconds", 5f, CVar.SERVERONLY);
