@@ -110,6 +110,13 @@ public partial class MobStateSystem : EntitySystem
             return false;
         return component.IsConscious();
     }
+
+    public bool IsThreatening(EntityUid target, MobStateComponent? component = null)
+    {
+        if (!Resolve(target, ref component, false))
+            return false;
+        return component.IsThreatening();
+    }
     /// <summary>
     /// Clamped to [0,1]. Use <see cref="MobStateComponent.GetBreathingMultiplier"/> to get unclamped value.
     /// </summary>

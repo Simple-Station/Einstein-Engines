@@ -29,6 +29,7 @@ public sealed class SingerSystem : SharedSingerSystem
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly InstrumentSystem _instrument = default!;
+    [Dependency] private readonly MobStateSystem _mobState = default!;
 
     public override void Initialize()
     {
@@ -71,7 +72,7 @@ public sealed class SingerSystem : SharedSingerSystem
 
     private void OnMobStateChangedEvent(EntityUid uid, SharedInstrumentComponent component, MobStateChangedEvent args)
     {
-        if (args.IsCritOrDead())
+        if (_mobState.IsIncapacitated(uid))
             CloseMidiUi(args.Target);
     }
 

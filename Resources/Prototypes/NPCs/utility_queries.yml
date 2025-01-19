@@ -86,7 +86,7 @@
   query:
     - !type:NearbyHostilesQuery
   considerations:
-    - !type:TargetIsAliveCon
+    - !type:TargetIsThreateningCon
       curve: !type:BoolCurve
     - !type:TargetDistanceCon
       curve: !type:PresetCurve
@@ -104,7 +104,7 @@
   query:
     - !type:NearbyHostilesQuery
   considerations:
-    - !type:TargetIsAliveCon
+    - !type:TargetIsThreateningCon
       curve: !type:BoolCurve
     - !type:TargetDistanceCon
       curve: !type:PresetCurve
@@ -164,7 +164,7 @@
   query:
     - !type:NearbyHostilesQuery
   considerations:
-    - !type:TargetIsAliveCon
+    - !type:TargetIsThreateningCon
       curve: !type:BoolCurve
     - !type:TargetDistanceCon
       curve: !type:PresetCurve

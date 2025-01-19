@@ -7,14 +7,15 @@
 #attacking
 #using                    - ???
 #pointing
-#isConscious              - Used to check if a mob in this state is to be considered "conscious". Effects may differ based on how entitysystems interpret this value.
+#isConscious              - Used to check if a mob in this state is to be considered "conscious". Effects may differ based on how entity systems interpret this value.
 #canEquipSelf
 #canUnequipSelf
 #canEquipOther
 #canUnequipOther
 #forceDown                - Forces mob in this state to be down. (i.e. crawling)
 #dropItemsOnEntering             - Forces mob to drop held items when entering this state.
-#incapacitated            - Blocks InteractionAttemptEvents if true. Otherwise, same thing as with "isConscious".
+#incapacitated            - Blocks InteractionAttemptEvents if true. Effects may differ based on how entity systems interpret this value.
+#threatening              - Used in mob AI. If false, will not be considered as a target by hostile AI.
 #breathingMultiplier      - Fraction of Atmospherics.BreathVolume this mob will take, with 1 being full, 0.5 being half, 0 being none at all.
 #                             Also modifies the amount of damage the mob will take when suffocating, with the inverse of this value. (1 / breathingMultiplier).
 #                             Clamped to [0,1].

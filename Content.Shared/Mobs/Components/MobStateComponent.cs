@@ -71,57 +71,64 @@ public sealed partial class MobStateComponent : Component
             };
 
 
-    #region getters
+    #region terraria wall of getters boss
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private MobStateParametersOverride GetOverride(MobState? State = null) => MobStateParamsOverrides[State ?? CurrentState];
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private MobStateParametersPrototype? GetParams(MobState? State = null) => MobStateParams[State ?? CurrentState];
 
     // the "?." and "?? false" at the end is because at round restard MobStateParams apparently can be wiped,
     // but stuff that relies on it will still run, and I don't know why. Cool.
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public bool CanMove() => CurrentStateOverrides.Moving ?? CurrentStateParams?.Moving ?? false;
+    public bool CanMove(MobState? State = null) => GetOverride(State).Moving ?? GetParams(State)?.Moving ?? false;
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public bool CanTalk() => CurrentStateOverrides.Talking ?? CurrentStateParams?.Talking ?? false;
+    public bool CanTalk(MobState? State = null) => GetOverride(State).Talking ?? GetParams(State)?.Talking ?? false;
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public bool CanEmote() => CurrentStateOverrides.Emoting ?? CurrentStateParams?.Emoting ?? false;
+    public bool CanEmote(MobState? State = null) => GetOverride(State).Emoting ?? GetParams(State)?.Emoting ?? false;
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public bool CanThrow() => CurrentStateOverrides.Throwing ?? CurrentStateParams?.Throwing ?? false;
+    public bool CanThrow(MobState? State = null) => GetOverride(State).Throwing ?? GetParams(State)?.Throwing ?? false;
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public bool CanPickUp() => CurrentStateOverrides.PickingUp ?? CurrentStateParams?.PickingUp ?? false;
+    public bool CanPickUp(MobState? State = null) => GetOverride(State).PickingUp ?? GetParams(State)?.PickingUp ?? false;
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public bool CanPull() => CurrentStateOverrides.Pulling ?? CurrentStateParams?.Pulling ?? false;
+    public bool CanPull(MobState? State = null) => GetOverride(State).Pulling ?? GetParams(State)?.Pulling ?? false;
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public bool CanAttack() => CurrentStateOverrides.Attacking ?? CurrentStateParams?.Attacking ?? false;
+    public bool CanAttack(MobState? State = null) => GetOverride(State).Attacking ?? GetParams(State)?.Attacking ?? false;
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public bool CanUse() => CurrentStateOverrides.Using ?? CurrentStateParams?.Using ?? false;
+    public bool CanUse(MobState? State = null) => GetOverride(State).Using ?? GetParams(State)?.Using ?? false;
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public bool CanPoint() =>CurrentStateOverrides.Pointing ?? CurrentStateParams?.Pointing ?? false;
+    public bool CanPoint(MobState? State = null) =>GetOverride(State).Pointing ?? GetParams(State)?.Pointing ?? false;
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public bool IsConscious() => CurrentStateOverrides.IsConscious ?? CurrentStateParams?.IsConscious ?? false;
+    public bool IsConscious(MobState? State = null) => GetOverride(State).IsConscious ?? GetParams(State)?.IsConscious ?? false;
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public bool IsDowned() => CurrentStateOverrides.ForceDown ?? CurrentStateParams?.ForceDown ?? false;
+    public bool IsDowned(MobState? State = null) => GetOverride(State).ForceDown ?? GetParams(State)?.ForceDown ?? false;
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public bool ShouldDropItems() => CurrentStateOverrides.DropItemsOnEntering ?? CurrentStateParams?.DropItemsOnEntering ?? false;
+    public bool ShouldDropItems(MobState? State = null) => GetOverride(State).DropItemsOnEntering ?? GetParams(State)?.DropItemsOnEntering ?? false;
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public bool IsIncapacitated() => CurrentStateOverrides.Incapacitated ?? CurrentStateParams?.Incapacitated ?? false;
+    public bool IsIncapacitated(MobState? State = null) => GetOverride(State).Incapacitated ?? GetParams(State)?.Incapacitated ?? false;
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public bool IsThreatening(MobState? State = null) => GetOverride(State).Threatening ?? GetParams(State)?.Threatening ?? true; // :)
     
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public bool CanEquipSelf() => CurrentStateOverrides.CanEquipSelf ?? CurrentStateParams?.CanEquipSelf ?? false;
+    public bool CanEquipSelf(MobState? State = null) => GetOverride(State).CanEquipSelf ?? GetParams(State)?.CanEquipSelf ?? false;
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public bool CanUnequipSelf() => CurrentStateOverrides.CanUnequipSelf ?? CurrentStateParams?.CanUnequipSelf ?? false;
+    public bool CanUnequipSelf(MobState? State = null) => GetOverride(State).CanUnequipSelf ?? GetParams(State)?.CanUnequipSelf ?? false;
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public bool CanEquipOther() => CurrentStateOverrides.CanEquipOther ?? CurrentStateParams?.CanEquipOther ?? false;
+    public bool CanEquipOther(MobState? State = null) => GetOverride(State).CanEquipOther ?? GetParams(State)?.CanEquipOther ?? false;
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public bool CanUnequipOther() => CurrentStateOverrides.CanUnequipOther ?? CurrentStateParams?.CanUnequipOther ?? false;
+    public bool CanUnequipOther(MobState? State = null) => GetOverride(State).CanUnequipOther ?? GetParams(State)?.CanUnequipOther ?? false;
     
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public float? GetOxyDamageOverlay() => CurrentStateOverrides.OxyDamageOverlay ?? CurrentStateParams?.OxyDamageOverlay;
+    public float? GetOxyDamageOverlay(MobState? State = null) => GetOverride(State).OxyDamageOverlay ?? GetParams(State)?.OxyDamageOverlay;
     /// <summary>
     /// Not clamped, but you really should, in case someone decides to be funny with the prototypes.
     /// [0,1].
     /// </summary>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public float GetBreathingMultiplier() => CurrentStateOverrides.BreathingMultiplier ?? CurrentStateParams?.BreathingMultiplier ?? 1f;
+    public float GetBreathingMultiplier(MobState? State = null) => GetOverride(State).BreathingMultiplier ?? GetParams(State)?.BreathingMultiplier ?? 1f;
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public float GetStrippingTimeMultiplier() => CurrentStateOverrides.StrippingTimeMultiplier ?? CurrentStateParams?.StrippingTimeMultiplier ?? 1f;
+    public float GetStrippingTimeMultiplier(MobState? State = null) => GetOverride(State).StrippingTimeMultiplier ?? GetParams(State)?.StrippingTimeMultiplier ?? 1f;
     #endregion
 }
 
@@ -133,7 +140,7 @@ public struct MobStateParametersOverride
         Throwing, PickingUp, Pulling, Attacking, Using, Pointing,
         IsConscious,
         CanEquipSelf, CanUnequipSelf, CanEquipOther, CanUnequipOther,
-        ForceDown, DropItemsOnEntering, Incapacitated;
+        ForceDown, DropItemsOnEntering, Incapacitated, Threatening;
 
     [DataField]
     public float? OxyDamageOverlay, BreathingMultiplier, StrippingTimeMultiplier;
@@ -158,7 +165,7 @@ public sealed partial class MobStateParametersPrototype : IPrototype, IInheritin
     Throwing, PickingUp, Pulling, Attacking, Using, Pointing,
     IsConscious,
     CanEquipSelf, CanUnequipSelf, CanEquipOther, CanUnequipOther,
-    ForceDown, DropItemsOnEntering, Incapacitated;
+    ForceDown, DropItemsOnEntering, Incapacitated, Threatening;
 
     [DataField]
     public float? OxyDamageOverlay, BreathingMultiplier, StrippingTimeMultiplier;
@@ -167,29 +174,6 @@ public sealed partial class MobStateParametersPrototype : IPrototype, IInheritin
 
 public static class MobStateParametersPrototypeExt
 {
-    public static void FillDefaults(this MobStateParametersPrototype p)
-    {
-        p.Moving = p.Moving ?? false;
-        p.Talking = p.Talking ?? false;
-        p.Emoting = p.Emoting ?? false;
-        p.Throwing = p.Throwing ?? false;
-        p.PickingUp = p.PickingUp ?? false;
-        p.Pulling = p.Pulling ?? false;
-        p.Attacking = p.Attacking ?? false;
-        p.Using = p.Using ?? false;
-        p.Pointing = p.Pointing ?? false;
-        p.IsConscious = p.IsConscious ?? false;
-        p.CanEquipSelf = p.CanEquipSelf ?? false;
-        p.CanUnequipSelf = p.CanUnequipSelf ?? false;
-        p.CanEquipOther = p.CanEquipOther ?? false;
-        p.CanUnequipOther = p.CanUnequipOther ?? false;
-        p.ForceDown = p.ForceDown ?? false;
-        p.DropItemsOnEntering = p.DropItemsOnEntering ?? false;
-        p.Incapacitated = p.Incapacitated ?? false;
-        p.BreathingMultiplier = p.BreathingMultiplier ?? 1f;
-        p.StrippingTimeMultiplier = p.StrippingTimeMultiplier ?? 1f;
-    }
-
     public static void MergeWith(this MobStateParametersPrototype p, MobStateParametersPrototype other)
     {
         p.Moving = other.Moving ?? p.Moving;
@@ -208,6 +192,7 @@ public static class MobStateParametersPrototypeExt
         p.CanUnequipOther = other.CanUnequipOther ?? p.CanUnequipOther;
         p.ForceDown = other.ForceDown ?? p.ForceDown;
         p.Incapacitated = other.Incapacitated ?? p.Incapacitated;
+        p.Threatening = other.Threatening ?? p.Threatening;
         p.DropItemsOnEntering = other.DropItemsOnEntering ?? p.DropItemsOnEntering;
         p.BreathingMultiplier = other.BreathingMultiplier ?? p.BreathingMultiplier;
         p.OxyDamageOverlay = other.OxyDamageOverlay ?? p.OxyDamageOverlay;
