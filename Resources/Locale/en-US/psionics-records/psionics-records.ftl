@@ -14,7 +14,7 @@ psionics-records-status-abusing = Abusing
 
 psionics-records-console-wanted-reason = [color=gray]Psionics Listed[/color]
 psionics-records-console-suspected-reason = [color=gray]Suspected Reason[/color]
-psionics-records-console-reason = Reason
+psionics-records-console-reason = Psionics/Reason
 psionics-records-console-reason-placeholder = For example: {$placeholder}
 
 psionics-records-permission-denied = Permission denied
@@ -26,7 +26,7 @@ psionics-records-console-suspected = {$officer} marked {$name} as suspicious bec
 psionics-records-console-not-suspected = {$name} is no longer a suspect.
 psionics-records-console-not-registered = {$name} is no longer registered.
 psionics-records-console-abusing = {$officer} marked {$name} as abusing because of: {$reason}.
-psionics-records-console-abusing = {$name} is no longer marked abusing.
+psionics-records-console-not-abusing = {$name} is no longer marked abusing.
 psionics-records-console-unknown-officer = <unknown officer>
 
 ## Filters
