@@ -54,7 +54,7 @@ public sealed class IgniteFromGasSystem : EntitySystem
 
         ignite.IgnitableBodyParts[targetBodyPart] = ignitePart.FireStacks;
 
-        UpdateIgniteImmunity(uid, ignite);
+        UpdateIgniteImmunity((uid, ignite));
     }
 
     private void OnBodyPartRemoved(Entity<IgniteFromGasComponent> ent, ref BodyPartRemovedEvent args) =>
@@ -76,7 +76,7 @@ public sealed class IgniteFromGasSystem : EntitySystem
             return;
         }
 
-        UpdateIgniteImmunity(ent, ent.Comp);
+        UpdateIgniteImmunity((ent, ent.Comp));
     }
 
     private void OnIgniteFromGasImmunityEquipped(Entity<IgniteFromGasImmunityComponent> ent, ref GotEquippedEvent args) =>
@@ -84,14 +84,14 @@ public sealed class IgniteFromGasSystem : EntitySystem
     private void OnIgniteFromGasImmunityUnequipped(Entity<IgniteFromGasImmunityComponent> ent, ref GotUnequippedEvent args) =>
         UpdateIgniteImmunity(args.Equipee);
 
-    public void UpdateIgniteImmunity(EntityUid uid, IgniteFromGasComponent? ignite = null, InventoryComponent? inv = null)
+    public void UpdateIgniteImmunity(Entity<IgniteFromGasComponent?, InventoryComponent?> ent)
     {
-        if (!Resolve(uid, ref ignite, ref inv))
+        if (!Resolve(ent, ref ent.Comp1, ref ent.Comp2))
             return;
 
-        var exposedBodyParts = new Dictionary<TargetBodyPart, float>(ignite.IgnitableBodyParts);
+        var exposedBodyParts = new Dictionary<TargetBodyPart, float>(ent.Comp1.IgnitableBodyParts);
 
-        var containerSlotEnumerator = _inventory.GetSlotEnumerator((uid, inv));
+        var containerSlotEnumerator = _inventory.GetSlotEnumerator((ent, ent.Comp2));
         while (containerSlotEnumerator.NextItem(out var item, out _))
         {
             if (!TryComp<IgniteFromGasImmunityComponent>(item, out var immunity))
@@ -103,11 +103,11 @@ public sealed class IgniteFromGasSystem : EntitySystem
 
         if (exposedBodyParts.Count == 0)
         {
-            ignite.FireStacksPerUpdate = 0;
+            ent.Comp1.FireStacksPerUpdate = 0;
             return;
         }
 
-        ignite.FireStacksPerUpdate = ignite.BaseFireStacksPerUpdate + exposedBodyParts.Values.Sum();
+        ent.Comp1.FireStacksPerUpdate = ent.Comp1.BaseFireStacksPerUpdate + exposedBodyParts.Values.Sum();
     }
 
     public override void Update(float frameTime)
