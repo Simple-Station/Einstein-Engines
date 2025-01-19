@@ -74,9 +74,10 @@ public sealed partial class MobStateComponent : Component
     #region terraria wall of getters boss
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private MobStateParametersOverride GetOverride(MobState? State = null) => MobStateParamsOverrides[State ?? CurrentState];
+    private MobStateParametersOverride GetOverride(MobState? State = null) { MobStateParamsOverrides.TryGetValue(State ?? CurrentState, out var value); return value; }
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private MobStateParametersPrototype? GetParams(MobState? State = null) => MobStateParams[State ?? CurrentState];
+    private MobStateParametersPrototype? GetParams(MobState? State = null) { MobStateParams.TryGetValue(State ?? CurrentState, out var value); return value; }
+
 
     // the "?." and "?? false" at the end is because at round restard MobStateParams apparently can be wiped,
     // but stuff that relies on it will still run, and I don't know why. Cool.
