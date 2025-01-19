@@ -150,7 +150,7 @@
   name: research-technology-advanced-weapons
   icon:
     sprite: Objects/Weapons/Guns/Battery/laser_cannon.rsi
-    state: full
+    state: icon
   discipline: Arsenal
   tier: 2
   cost: 15000
