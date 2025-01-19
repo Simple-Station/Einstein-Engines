@@ -223,7 +223,9 @@
   reactants:
     Ambuzol:
       amount: 5
-    Omnizine:
+    Necrosol:
+      amount: 1
+    Plasma:
       amount: 5
   products:
     AmbuzolPlus: 10
@@ -280,9 +282,9 @@
     HeartbreakerToxin:
       amount: 1
     Plasma:
-      amount: 1
-    Vestine:
-      amount: 1
+      amount: 3
+    Impedrezene:
+      amount: 3
   products:
     Lexorin: 2
 
@@ -439,7 +441,7 @@
     Bicaridine: # Bicaridine is a conflicting brute medication and if mixed incorrectly will make Razorium. This is intended.
       amount: 1
     Lithium:
-      amount: 0.9
+      amount: 1
     Sugar:
       amount: 1
   products:
@@ -561,7 +563,7 @@
   id: Opporozidone
   minTemp: 400 #Maybe if a method of reducing reagent temp exists one day, this could be -50
   reactants:
-    Cognizine: 
+    Acetone:
       amount: 1
     Plasma:
       amount: 2
@@ -577,8 +579,10 @@
   reactants:
     Blood:
       amount: 3
-    Omnizine:
-      amount: 1
+    Ammonia:
+      amount: 10
+    Doxarubixadone:
+      amount: 2
     Cryoxadone:
       amount: 2
   products:
