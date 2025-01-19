@@ -594,6 +594,7 @@ character-item-group-LoadoutHeadOfSecurityMask = Head Of Security Masks
 character-item-group-LoadoutHeadOfSecurityOuter = Head Of Security Outerwear
 character-item-group-LoadoutHeadOfSecurityShoes = Head Of Security Shoes
 character-item-group-LoadoutHeadOfSecurityUniforms = Head Of Security Uniforms
+character-item-group-LoadoutHeadOfSecurityTrinkets = Head Of Security Trinkets
 
 # Security - Security Officer
 character-item-group-LoadoutSecurityOfficerBackpacks = Security Officer Backpacks

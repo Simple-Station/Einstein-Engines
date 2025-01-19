@@ -4886,8 +4886,6 @@ entities:
       parent: 2
     - type: DeviceLinkSource
       linkedPorts:
-        invalid:
-        - Pressed: Toggle
         679:
         - Pressed: Toggle
   - uid: 740
