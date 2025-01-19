@@ -30,6 +30,7 @@
       baseWalkSpeed: 4
       baseSprintSpeed: 3
     - type: ZombieImmune
+    - type: CanEnterCryostorage
     - type: DoAfter
     - type: RotationVisuals
       horizontalRotation: 90
