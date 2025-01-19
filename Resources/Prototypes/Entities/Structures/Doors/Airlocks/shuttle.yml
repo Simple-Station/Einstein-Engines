@@ -47,6 +47,11 @@
       map: ["enum.DoorVisualLayers.BaseEmergencyAccess"]
     - state: panel_open
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - state: electrified
+      sprite: Interface/Misc/ai_hud.rsi
+      shader: unshaded
+      visible: false
+      map: ["enum.ElectrifiedLayers.Overlay"]
   - type: Wires
     layoutId: Docking
   - type: Door
@@ -99,6 +104,11 @@
       map: ["enum.DoorVisualLayers.BaseEmergencyAccess"]
     - state: panel_open
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - state: electrified
+      sprite: Interface/Misc/ai_hud.rsi
+      shader: unshaded
+      visible: false
+      map: ["enum.ElectrifiedLayers.Overlay"]
   - type: Occluder
     enabled: false
   - type: PaintableAirlock
@@ -150,6 +160,11 @@
       map: ["enum.DoorVisualLayers.BaseEmergencyAccess"]
     - state: panel_open
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - state: electrified
+      sprite: Interface/Misc/ai_hud.rsi
+      shader: unshaded
+      visible: false
+      map: ["enum.ElectrifiedLayers.Overlay"]
   - type: Occluder
     enabled: false
   - type: PaintableAirlock
