@@ -1,16 +1,14 @@
 using Robust.Shared.Audio;
-using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Server.Extinguisher;
 
 /// <summary>
-///   When equipped, the SelfExtinguisherComponent will try to automatically extinguish its wearer when on fire.
+///   When equipped, the SelfExtinguisherComponent will give an action to its wearer to self-extinguish when set on fire.
 /// </summary>
-[RegisterComponent]
-public partial class SelfExtinguisherComponent : Component
+[RegisterComponent, AutoGenerateComponentPause]
+public sealed partial class SelfExtinguisherComponent : Component
 {
     /// <summary>
     ///     Action used to self-extinguish.
@@ -31,7 +29,19 @@ public partial class SelfExtinguisherComponent : Component
     ///   Time before the self-extinguisher can be used again.
     /// </summary>
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
+    [AutoPausedField]
     public TimeSpan NextExtinguish = TimeSpan.Zero;
+
+    /// <summary>
+    ///     When failing self-extinguish attempts,
+    ///     don't spam popups every frame and instead have a cooldown.
+    /// </summary>
+    [DataField]
+    public TimeSpan PopupCooldown = TimeSpan.FromSeconds(1);
+
+    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
+    [AutoPausedField]
+    public TimeSpan? NextPopup = null;
 
     /// <summary>
     ///   If true, requires the wearer to be immune to gas ignition.
