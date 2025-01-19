@@ -13,7 +13,7 @@
   maxAge: 180
   maleFirstNames: names_plasmaman
   femaleFirstNames: names_plasmaman
-  lastNames: names_plasmaman_last
+  naming: FirstRoman
 
 - type: speciesBaseSprites
   id: MobPlasmamanSprites
