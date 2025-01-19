@@ -36,7 +36,7 @@
   id: Prospector
   name: NT-7 Prospector
   description: A small mining vessel designed to assist salvage operations.
-  price: 21000
+  price: 22000
   path: /Maps/Shuttles/DeltaV/prospector.yml
   categories:
   - Civilian
