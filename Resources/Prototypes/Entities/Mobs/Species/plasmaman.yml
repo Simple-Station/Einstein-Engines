@@ -27,8 +27,6 @@
     bloodMaxVolume: 0
   - type: Damageable
     damageModifierSet: Plasmaman
-  - type: TemperatureProtection
-    coefficient: 0.1 # Since plasmaman are immune to cold this just prevents the Too Cold alert from showing up
   - type: DamageVisuals
     damageOverlayGroups:
       Brute:
@@ -51,13 +49,12 @@
   - type: Inventory
     templateId: plasmaman
   - type: Temperature
-    heatDamageThreshold: 313    # 40    celsius
-    # coldDamageThreshold: 195    # -78.5 celsius # Just set this to default cause it wont make a difference
+    heatDamageThreshold: 313    # 40    celsius, -12 from base heat damage threshold
     currentTemperature: 270.15  # -3    celsius
     specificHeat: 46
     coldDamage:
       types:
-        Cold: 0.00
+        Cold: 0
     heatDamage:
       types:
         Heat: 3

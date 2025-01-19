@@ -32,6 +32,8 @@
   and are [color=#1e90ff]immune to Radiation and Cold damage[/color],
   but take [color=#ffa500]50% more Blunt and 50% more Heat damage[/color].
 
+  Due to their [color=#1e90ff]Cold immunity[/color], they can withstand cold environments such as the Glacier Station without the need of a winter coat.
+
   ## Medical Treatment
   <Box>
     <GuideEntityEmbed Entity="StasisBed" Caption="stasis bed"/>
