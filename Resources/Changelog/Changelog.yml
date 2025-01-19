@@ -10363,3 +10363,12 @@ Entries:
   id: 6731
   time: '2025-01-19T20:44:45.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1602
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Consolidated the Civilian Services research category to make them more
+        interesting and broadly useful.
+  id: 6732
+  time: '2025-01-19T21:54:48.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1603
