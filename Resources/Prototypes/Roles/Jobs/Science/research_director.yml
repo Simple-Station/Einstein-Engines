@@ -19,6 +19,15 @@
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Shadowkin
+        - !type:CharacterTraitRequirement
+          inverted: true
+          traits:
+            - ShadowkinBlackeye
   weight: 10
   startingGear: ResearchDirectorGear
   icon: "JobIconResearchDirector"
