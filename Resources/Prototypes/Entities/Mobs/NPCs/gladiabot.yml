@@ -7,9 +7,18 @@
   - type: Sprite
     sprite: Mobs/Silicon/Bots/gladiabot.rsi
     state: gladiabot
+  - type: Inventory
+    templateId: head
+  - type: InventorySlots
+  - type: UserInterface
+    interfaces:
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
   - type: Construction
     graph: GladiaBot
     node: bot
+  - type: Stripping
+  - type: Strippable
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-mechanical
   - type: UseDelay
