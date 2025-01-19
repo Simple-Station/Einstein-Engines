@@ -39,6 +39,7 @@ public abstract partial class SharedSelfExtinguisherSystem : EntitySystem
 
         var verb = new EquipmentVerb()
         {
+            // TODO add fire extinguisher svg sprite
             Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/snow.svg.192dpi.png")),
             Text = Loc.GetString("self-extinguisher-verb"),
             EventTarget = uid,

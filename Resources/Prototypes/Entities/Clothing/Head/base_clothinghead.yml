@@ -217,6 +217,8 @@
     slots:
     - Hair
     - Snout
+    clothingSlots:
+    - mask
   - type: ToggleableLightVisuals
   - type: PointLight
     enabled: false
