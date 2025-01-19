@@ -37,7 +37,7 @@
     state: television
   discipline: CivilianServices
   tier: 1
-  cost: 10000
+  cost: 12500
   recipeUnlocks:
   - SurveillanceCameraRouterCircuitboard
   - SurveillanceCameraWirelessRouterCircuitboard
@@ -102,6 +102,9 @@
   - CargoTelepadMachineCircuitboard
   - ClothingShoesBootsMagSci
   - ClothingShoesBootsMoon
+  - CloningConsoleComputerCircuitboard
+  - MedicalScannerMachineCircuitboard
+  - MetempsychoticMachineCircuitboard
 
 - type: technology
   id: HONKMech
@@ -126,8 +129,8 @@
 # Tier 3
 # TODO: Add recipes to manufacture Advanced Hardsuits
 # - type: technology
-#   id: BasicHardsuits
-#   name: research-technology-basic-hardsuits
+#   id: AdvancedHardsuits
+#   name: research-technology-advanced-hardsuits
 #   icon:
 #     sprite: Clothing/OuterClothing/Hardsuits/engineering-white.rsi
 #     state: icon
@@ -147,10 +150,11 @@
   tier: 2
   cost: 15000
   recipeUnlocks:
-  - ClothingShoesBootsMagAdv
+  - ClothingShoesBootsMagAdv # TODO: Separate this out from the silly "Steal the CE's Timbs" objective
   - ClothingShoesBootsSpeed
   - BluespaceBeaker
   - SyringeBluespace
+  # TODO: Add things like frontier's Hyposprays.
 
 - type: technology
   id: AdvancedTranslation

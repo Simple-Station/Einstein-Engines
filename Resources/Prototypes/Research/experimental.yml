@@ -29,30 +29,8 @@
   - NodeScanner
   - AnalysisComputerCircuitboard
   - ArtifactAnalyzerMachineCircuitboard
-
-- type: technology
-  id: AlternativeResearch
-  name: research-technology-alternative-research
-  icon:
-    sprite: Structures/Machines/tech_disk_printer.rsi
-    state: display
-  discipline: Experimental
-  tier: 1
-  cost: 5000
-  recipeUnlocks:
   - TechDiskComputerCircuitboard
-  - ReverseEngineeringMachineCircuitboard #DeltaV
-
-- type: technology
-  id: MagnetsTech
-  name: research-technology-magnets-tech
-  icon:
-    sprite: Clothing/Shoes/Boots/magboots-science.rsi
-    state: icon
-  discipline: Experimental
-  tier: 1
-  cost: 7500
-  recipeUnlocks:
+  - ReverseEngineeringMachineCircuitboard
 
 - type: technology
   id: AnomalyCoreHarnessing
@@ -81,18 +59,7 @@
   - AdvancedCapacitorStockPart
   - AdvancedMatterBinStockPart
   - NanoManipulatorStockPart
-
-- type: technology
-  id: AbnormalArtifactManipulation
-  name: research-technology-abnormal-artifact-manipulation
-  icon:
-    sprite: Structures/Machines/artifact_crusher.rsi
-    state: icon
-  discipline: Experimental
-  tier: 2
-  cost: 5000
-  recipeUnlocks:
-  - ArtifactCrusherMachineCircuitboard
+  - RPED
 
 - type: technology
   id: AdvancedAnomalyResearch
@@ -107,20 +74,9 @@
   - WeaponPistolCHIMP
   - AnomalySynchronizerCircuitboard
   - AnomalyVesselExperimentalCircuitboard
+  - ArtifactCrusherMachineCircuitboard
   technologyPrerequisites:
   - BasicAnomalousResearch
-
-- type: technology
-  id: RapidPartExchange
-  name: research-technology-rped
-  icon:
-    sprite: Objects/Specific/Research/rped.rsi
-    state: icon
-  discipline: Experimental
-  tier: 2
-  cost: 7500
-  recipeUnlocks:
-  - RPED
 
 - type: technology
   id: DeterrenceTechnologies
@@ -134,21 +90,6 @@
   recipeUnlocks:
   - WeaponParticleDecelerator
   - HoloprojectorField
-
-- type: technology
-  id: Metempsychosis
-  name: research-technology-metempsychosis
-  icon:
-    sprite: Structures/Machines/metempsychotic.rsi
-    state: cloning_idle
-  discipline: Experimental
-  tier: 2
-  cost: 15000
-  recipeUnlocks:
-    - BiomassReclaimerMachineCircuitboard
-    - CloningConsoleComputerCircuitboard
-    - MedicalScannerMachineCircuitboard
-    - MetempsychoticMachineCircuitboard
 
 - type: technology
   id: NightVisionTech
