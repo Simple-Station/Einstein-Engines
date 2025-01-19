@@ -1,19 +1,14 @@
-using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server.Administration.Logs;
 using Content.Server.Atmos.Components;
 using Content.Server.Bed.Components;
 using Content.Shared._Shitmed.Body.Events;
 using Content.Shared.Alert;
-using Content.Shared.Atmos;
-using Content.Shared.Body.Components;
 using Content.Shared.Body.Part;
-using Content.Shared.Damage;
-using Content.Shared.Database;
-using Content.Shared.FixedPoint;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
-using Content.Shared.Mood;
+using Content.Shared.Mobs;
+using Content.Shared.Mobs.Components;
 using Robust.Shared.Containers;
 
 namespace Content.Server.Atmos.EntitySystems;
@@ -32,6 +27,7 @@ public sealed class IgniteFromGasSystem : EntitySystem
     /// <summary>
     ///   Which clothing slots, when they have an item with IgniteFromGasImmunityComponent,
     ///   grant immunity to body parts.
+    ///   TODO: move to IgniteFromGasImmunityComponent
     /// </summary>
     private readonly Dictionary<String, HashSet<BodyPartType>> ImmunitySlots = new() {
         ["head"] = new HashSet<BodyPartType> { BodyPartType.Head },
@@ -186,10 +182,10 @@ public sealed class IgniteFromGasSystem : EntitySystem
 
         _timer -= UpdateTimer;
 
-        var enumerator = EntityQueryEnumerator<IgniteFromGasComponent, FlammableComponent>();
-        while (enumerator.MoveNext(out var uid, out var ignite, out var flammable))
+        var enumerator = EntityQueryEnumerator<IgniteFromGasComponent, MobStateComponent, FlammableComponent>();
+        while (enumerator.MoveNext(out var uid, out var ignite, out var mobState, out var flammable))
         {
-            if (ignite.HasImmunity || HasComp<InStasisComponent>(uid))
+            if (ignite.HasImmunity || mobState.CurrentState is MobState.Dead || HasComp<InStasisComponent>(uid))
                 continue;
 
             var gas = _atmos.GetContainingMixture(uid, excite: true);
