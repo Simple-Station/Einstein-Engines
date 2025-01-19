@@ -30,15 +30,15 @@
     requirements: # Worth considering these numbers for the goal of making sure someone willing to MRP takes this.
     - !type:CharacterOverallTimeRequirement
       min: 259200 # 72 hours
-    - !type:DepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Security
-      time: 40000 # 11.1 hours
-    - !type:DepartmentTimeRequirement
+      min: 40000 # 11.1 hours
+    - !type:CharacterDepartmentTimeRequirement
       department: Civilian
-      time: 40000 # 11.1 hours
-    - !type:DepartmentTimeRequirement
+      min: 40000 # 11.1 hours
+    - !type:CharacterDepartmentTimeRequirement
       department: Command
-      time: 40000 # 11.1 hours
+      min: 40000 # 11.1 hours
   - type: GhostRoleMobSpawner
     prototype: MobHumanSyndicateListener
   - type: Sprite

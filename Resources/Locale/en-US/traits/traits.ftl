@@ -185,15 +185,23 @@ trait-description-MartialArtist =
     This has no effect on damage dealt with any form of armed melee.
     The [color=#9FED58]Boxer[/color], [color=#9FED58]Martial Artist[/color], and [color=#9FED58]Gladiator[/color] jobs start with this trait by default.
 
+-stamina-info = [color=gray]Most species start with [color=#919039]100 points[/color] of stamina and [color=#919039]3 points[/color] of stamina regen per second.[/color]
+
 trait-name-Vigor = Vigor
 trait-description-Vigor =
     Whether by pure determination, fitness, or bionic augmentations, your endurance is enhanced.
-    Your stamina is increased by 10 points.
+    Your stamina is increased by [color=yellow]10 points[/color].
+    Your stamina regen per second is increased by [color=yellow]0.6 points[/color].
+    Stamina regen now starts [color=lightblue]2.25 seconds[/color] after taking stamina damage, instead of [color=lightblue]3 seconds[/color].
+    { -stamina-info }
 
 trait-name-Lethargy = Lethargy
 trait-description-Lethargy =
     You become tired faster than others, making you more vulnerable to exhaustion and fatigue.
-    Your stamina is decreased by 15 points.
+    Your stamina is decreased by [color=yellow]15 points[/color].
+    Your stamina regen per second is decreased by [color=yellow]0.6 points[/color].
+    Stamina regen now starts [color=lightblue]3.75 seconds[/color] after taking stamina damage, instead of [color=lightblue]3 seconds[/color].
+    { -stamina-info }
 
 trait-name-SignLanguage = Sign Language
 trait-description-SignLanguage =

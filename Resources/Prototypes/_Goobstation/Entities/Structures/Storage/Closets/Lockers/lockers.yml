@@ -27,3 +27,18 @@
     stateBaseClosed: ntr
     stateDoorOpen: ntr_open
     stateDoorClosed: ntr_door
+
+- type: entity
+  id: LockerMagistrate
+  name: magistrate locker
+  parent: LockerBaseSecure
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: _Goobstation/Structures/Storage/closet.rsi
+  - type: AccessReader
+    access: [["Magistrate"]]
+  - type: EntityStorageVisuals
+    stateBaseClosed: mag
+    stateDoorOpen: bso_open # Sue me
+    stateDoorClosed: mag_door

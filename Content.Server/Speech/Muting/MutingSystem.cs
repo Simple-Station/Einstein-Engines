@@ -4,10 +4,12 @@ using Content.Server.Language;
 using Content.Server.Popups;
 using Content.Server.Speech.Components;
 using Content.Server.Speech.EntitySystems;
+using Content.Shared.CCVar;
 using Content.Shared.Chat.Prototypes;
 using Content.Shared.Puppet;
 using Content.Shared.Speech;
 using Content.Shared.Speech.Muting;
+using Robust.Shared.Configuration;
 
 namespace Content.Server.Speech.Muting
 {
@@ -15,6 +17,7 @@ namespace Content.Server.Speech.Muting
     {
         [Dependency] private readonly LanguageSystem _languages = default!;
         [Dependency] private readonly PopupSystem _popupSystem = default!;
+        [Dependency] private readonly IConfigurationManager _config = default!;
 
         public override void Initialize()
         {
@@ -36,7 +39,7 @@ namespace Content.Server.Speech.Muting
 
         private void OnScreamAction(EntityUid uid, MutedComponent component, ScreamActionEvent args)
         {
-            if (args.Handled)
+            if (args.Handled || !_config.GetCVar(CCVars.AllowScreamAction))
                 return;
 
             if (HasComp<MimePowersComponent>(uid))

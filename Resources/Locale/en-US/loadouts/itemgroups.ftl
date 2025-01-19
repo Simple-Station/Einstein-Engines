@@ -82,6 +82,21 @@ character-item-group-LoadoutHeadOfPersonnelOuter = Head of Personnel Outerwear
 character-item-group-LoadoutHeadOfPersonnelShoes = Head of Personnel Shoes
 character-item-group-LoadoutHeadOfPersonnelUniforms = Head of Personnel Uniforms
 
+# Dignitary - BlueshieldOfficer
+character-item-group-LoadoutBlueshieldOfficerBackpacks = Blueshield Officer Backpacks
+character-item-group-LoadoutBlueshieldOfficerVests = Blueshield Officer Vests
+character-item-group-LoadoutBlueshieldOfficerUniforms = Blueshield Officer Uniforms
+
+# Dignitary - Magistrate
+character-item-group-LoadoutMagistrateHead = Magistrate Headgear
+character-item-group-LoadoutMagistrateNeck = Magistrate Neckwear
+character-item-group-LoadoutMagistrateOuter = Magistrate Outerwear
+character-item-group-LoadoutMagistrateUniforms = Magistrate Uniforms
+
+# Dignitary - Nanotrasen Representative
+character-item-group-LoadoutNanorepBackpacks = Nanotrasen Representative Backpacks
+character-tiem-group-LoadoutNanorepUniforms = Nanotrasen Representative Uniforms
+
 # Engineering
 character-item-group-LoadoutEngineeringBackpacks = Engineering Backpacks
 character-item-group-LoadoutEngineeringBelt = Engineering Belt
@@ -579,6 +594,7 @@ character-item-group-LoadoutHeadOfSecurityMask = Head Of Security Masks
 character-item-group-LoadoutHeadOfSecurityOuter = Head Of Security Outerwear
 character-item-group-LoadoutHeadOfSecurityShoes = Head Of Security Shoes
 character-item-group-LoadoutHeadOfSecurityUniforms = Head Of Security Uniforms
+character-item-group-LoadoutHeadOfSecurityTrinkets = Head Of Security Trinkets
 
 # Security - Security Officer
 character-item-group-LoadoutSecurityOfficerBackpacks = Security Officer Backpacks

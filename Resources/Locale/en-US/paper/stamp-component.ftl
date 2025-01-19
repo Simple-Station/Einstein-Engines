@@ -17,3 +17,4 @@ stamp-component-stamped-name-trader = Trader
 stamp-component-stamped-name-syndicate = Syndicate
 stamp-component-stamped-name-ce = Chief Engineer
 stamp-component-stamped-name-nanorep = Nanotrasen Representative
+stamp-component-stamped-name-magistrate = Magistrate

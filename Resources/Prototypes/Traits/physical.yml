@@ -116,10 +116,10 @@
         - Oni
         - IPC
   functions:
-    - !type:TraitReplaceComponent
-      components:
-        - type: StaminaCritModifier
-          critThresholdModifier: 10
+    - !type:TraitModifyStamina
+      staminaModifier: 10
+      decayModifier: 0.6
+      cooldownModifier: -0.75
 
 - type: trait
   id: Lethargy
@@ -140,10 +140,10 @@
       species:
         - Felinid
   functions:
-    - !type:TraitReplaceComponent
-      components:
-        - type: StaminaCritModifier
-          critThresholdModifier: -15
+    - !type:TraitModifyStamina
+      staminaModifier: -15
+      decayModifier: -0.6
+      cooldownModifier: 0.75
 
 - type: trait
   id: HighAdrenaline

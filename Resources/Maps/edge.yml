@@ -91074,6 +91074,13 @@ entities:
     - type: Transform
       pos: -20.5,20.5
       parent: 2
+- proto: SpawnPointMagistrate
+  entities:
+  - uid: 17481
+    components:
+    - type: Transform
+      pos: -8.5,35.5
+      parent: 2
 - proto: SpawnPointMailCarrier
   entities:
   - uid: 13998

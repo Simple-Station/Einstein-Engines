@@ -66,7 +66,7 @@ namespace Content.Client.Physics.Controllers
             Physics.UpdateIsPredicted(entity.Owner);
             Physics.UpdateIsPredicted(entity.Comp.RelayEntity);
             if (MoverQuery.TryGetComponent(entity.Comp.RelayEntity, out var inputMover))
-                SetMoveInput((entity.Owner, inputMover), MoveButtons.None);
+                SetMoveInput((entity.Comp.RelayEntity, inputMover), MoveButtons.None);
         }
 
         private void OnRelayPlayerDetached(Entity<RelayInputMoverComponent> entity, ref LocalPlayerDetachedEvent args)
@@ -74,7 +74,7 @@ namespace Content.Client.Physics.Controllers
             Physics.UpdateIsPredicted(entity.Owner);
             Physics.UpdateIsPredicted(entity.Comp.RelayEntity);
             if (MoverQuery.TryGetComponent(entity.Comp.RelayEntity, out var inputMover))
-                SetMoveInput((entity.Owner, inputMover), MoveButtons.None);
+                SetMoveInput((entity.Comp.RelayEntity, inputMover), MoveButtons.None);
         }
 
         private void OnPlayerAttached(Entity<InputMoverComponent> entity, ref LocalPlayerAttachedEvent args)
