@@ -1,13 +1,7 @@
 - type: characterItemGroup
   id: LoadoutPlasmamanEnvirogloves
-  minItems: 0
   maxItems: 1
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      species:
-        - Plasmaman
   items:
     - type: loadout
       id: LoadoutSpeciesHandsGlovesEnvirogloves
       priority: 0
-    # TODO add the rest of the envirogloves

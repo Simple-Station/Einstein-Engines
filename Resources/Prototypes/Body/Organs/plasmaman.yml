@@ -2,7 +2,7 @@
   id: OrganPlasmamanLungs
   parent: OrganHumanLungs
   name: plasmaman lungs
-  description: "The lungs yearn for the plasma. Only plasma gas can satiate these lungs, and oxygen is lethally toxic."
+  description: The lungs yearn for the plasma. Only plasma gas can satiate these lungs, and oxygen is lethally toxic.
   components:
   - type: Sprite
     sprite: Mobs/Species/Plasmaman/organs.rsi
@@ -23,7 +23,7 @@
   id: OrganPlasmamanStomach
   parent: OrganHumanStomach
   name: plasmaman stomach
-  description: "Why do plasmamen have stomachs if they don't need to eat?"
+  description: Why do plasmamen have stomachs if they don't need to eat?
   components:
   - type: Sprite
     sprite: Mobs/Species/Plasmaman/organs.rsi
@@ -100,7 +100,7 @@
   id: OrganPlasmamanHeart
   parent: OrganHumanHeart
   name: plasmaman heart
-  description: "It pulses with plasma even outside the body."
+  description: It pulses with plasma even outside the body.
   components:
   - type: Sprite
     sprite: Mobs/Species/Plasmaman/organs.rsi

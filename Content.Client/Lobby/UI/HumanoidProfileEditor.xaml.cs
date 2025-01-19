@@ -18,7 +18,6 @@ using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences;
-using Content.Shared.Prototypes;
 using Content.Shared.Roles;
 using Content.Shared.StatusIcon;
 using Content.Shared.Traits;
@@ -2042,45 +2041,18 @@ namespace Content.Client.Lobby.UI
             _loadouts.Clear();
             foreach (var loadout in _prototypeManager.EnumeratePrototypes<LoadoutPrototype>())
             {
-                var groupUsable = loadout.Groups.Count == 0 ? true : false;
-
-                // Check group requirement reasons
-                foreach (var groupID in loadout.Groups)
-                {
-                    if (!_prototypeManager.TryIndex<CharacterItemGroupPrototype>(groupID, out var group))
-                        continue;
-
-                    groupUsable = _characterRequirementsSystem.CheckRequirementsValid(
-                        group.Requirements,
-                        highJob ?? new JobPrototype(),
-                        Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
-                        _requirements.GetRawPlayTimeTrackers(),
-                        _requirements.IsWhitelisted(),
-                        loadout,
-                        _entManager,
-                        _prototypeManager,
-                        _cfgManager,
-                        out _
-                    );
-
-                    if (groupUsable)
-                        break;
-                }
-
-                var usable = groupUsable ?
-                    _characterRequirementsSystem.CheckRequirementsValid(
-                        loadout.Requirements,
-                        highJob ?? new JobPrototype(),
-                        Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
-                        _requirements.GetRawPlayTimeTrackers(),
-                        _requirements.IsWhitelisted(),
-                        loadout,
-                        _entManager,
-                        _prototypeManager,
-                        _cfgManager,
-                        out _
-                    ) : false;
-
+                var usable = _characterRequirementsSystem.CheckRequirementsValid(
+                    loadout.Requirements,
+                    highJob ?? new JobPrototype(),
+                    Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
+                    _requirements.GetRawPlayTimeTrackers(),
+                    _requirements.IsWhitelisted(),
+                    loadout,
+                    _entManager,
+                    _prototypeManager,
+                    _cfgManager,
+                    out _
+                );
                 _loadouts.Add(loadout, usable);
 
                 var list = _loadoutPreferences.ToList();
