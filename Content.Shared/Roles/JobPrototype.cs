@@ -110,7 +110,7 @@ namespace Content.Shared.Roles
         ///   A list of requirements that when satisfied, add or replace from the base starting gear.
         /// </summary>
         [DataField("conditionalStartingGear")]
-        public List<ConditionalStartingGear>? ConditionalStartingGear { get; private set; }
+        public List<ConditionalStartingGear>? ConditionalStartingGears { get; private set; }
 
         /// <summary>
         /// Use this to spawn in as a non-humanoid (borg, test subject, etc.)
@@ -163,8 +163,8 @@ namespace Content.Shared.Roles
         /// <summary>
         ///   The starting gear to apply, replacing the equivalent slots.
         /// </summary>
-        [DataField(required: true, customTypeSerializer: typeof(PrototypeIdSerializer<StartingGearPrototype>))]
-        public string Id { get; private set; }
+        [DataField(required: true)]
+        public ProtoId<StartingGearPrototype> Id { get; private set; }
     }
 
     /// <summary>

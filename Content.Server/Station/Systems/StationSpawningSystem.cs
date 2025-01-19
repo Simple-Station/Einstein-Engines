@@ -144,54 +144,8 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
         if (prototype?.StartingGear != null)
         {
             var startingGear = _prototypeManager.Index<StartingGearPrototype>(prototype.StartingGear);
-
-            if (profile != null && prototype.ConditionalStartingGear != null)
-            {
-                foreach (var conditionalStartingGear in prototype.ConditionalStartingGear)
-                {
-                    if (!_prototypeManager.TryIndex<StartingGearPrototype>(conditionalStartingGear.Id, out var conditionalGear) ||
-                        !_characterRequirements.CheckRequirementsValid(
-                            conditionalStartingGear.Requirements, prototype, profile, new Dictionary<string, TimeSpan>(), false, conditionalGear,
-                            EntityManager, _prototypeManager, _configurationManager,
-                            out _))
-                        continue;
-
-                    if (conditionalGear.InnerClothingSkirt != null)
-                        startingGear.InnerClothingSkirt = conditionalGear.InnerClothingSkirt;
-
-                    if (conditionalGear.Satchel != null)
-                        startingGear.Satchel = conditionalGear.Satchel;
-
-                    if (conditionalGear.Duffelbag != null)
-                        startingGear.Duffelbag = conditionalGear.Duffelbag;
-
-                    foreach (var (slot, entProtoId) in conditionalGear.Equipment)
-                    {
-                        // Don't remove items in pockets, instead put them in the backpack or hands
-                        if (slot == "pocket1" && startingGear.Equipment.TryGetValue("pocket1", out var pocket1) ||
-                            slot == "pocket2" && startingGear.Equipment.TryGetValue("pocket2", out var pocket2))
-                        {
-                            var pocketProtoId = slot == "pocket1" ? pocket1 : pocket2;
-
-                            if (!string.IsNullOrEmpty(startingGear.GetGear("back", null)))
-                            {
-                                if (!startingGear.Storage.ContainsKey("back"))
-                                    startingGear.Storage["back"] = new();
-                                startingGear.Storage["back"].Add(pocketProtoId);
-                            }
-                            else
-                                startingGear.Inhand.Add(pocketProtoId);
-                        }
-
-                        startingGear.Equipment[slot] = entProtoId;
-                    }
-
-                    startingGear.Inhand.AddRange(conditionalGear.Inhand);
-
-                    foreach (var (slot, entProtoIds) in conditionalGear.Storage)
-                        startingGear.Storage[slot].AddRange(entProtoIds);
-                }
-            }
+            if (profile != null)
+                startingGear = ApplyConditionalStartingGear(startingGear, prototype, profile);
 
             EquipStartingGear(entity.Value, startingGear, raiseEvent: false);
             if (profile != null)

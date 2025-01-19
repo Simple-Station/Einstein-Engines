@@ -192,3 +192,5 @@
     tags:
     - WhitelistChameleon
     - PlasmamanSafe
+  - type: ClothingRequiredStepTriggerImmune
+    slots: WITHOUT_POCKET
