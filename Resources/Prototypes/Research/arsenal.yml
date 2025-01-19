@@ -112,19 +112,19 @@
 
 # Tier 2
 
-# TODO: Make lathe recipes for a variety of advanced tacsuits.
-# TODO: Also make the "Unpainted Gunmetal Grey" versions of the suits.
-# - type: technology
-#   id: AdvancedTacsuits
-#   name: research-technology-advanced-tacsuits
-#   icon:
-#     sprite: DeltaV/Clothing/OuterClothing/Hardsuits/Combat/standard.rsi
-#     state: icon
-#   discipline: Arsenal
-#   tier: 2
-#   cost: 15000
-#   recipeUnlocks:
-#   - ClothingOuterHardsuitCombatStandard
+- type: technology
+  id: AdvancedTacsuits
+  name: research-technology-advanced-tacsuits
+  icon:
+    sprite: DeltaV/Clothing/OuterClothing/Hardsuits/Combat/standard.rsi
+    state: icon
+  discipline: Arsenal
+  tier: 2
+  cost: 15000
+  recipeUnlocks:
+  - ClothingOuterHardsuitCombatStandard
+  - ClothingOuterHardsuitCombatMedical
+  - ClothingOuterHardsuitCombatRiot
 
 - type: technology
   id: ExplosiveTechnology
@@ -172,19 +172,22 @@
 
 # Tier 3
 
-# TODO: Make lathe recipes for a variety of prototype tacsuits.
-# TODO: Also make the "Unpainted Gunmetal Grey" versions of the suits.
-# - type: technology
-#   id: PrototypeTacsuits
-#   name: research-technology-prototype-tacsuits
-#   icon:
-#     sprite: Nyanotrasen/Clothing/OuterClothing/ReverseEngineering/syndicate.rsi
-#     state: icon
-#   discipline: Arsenal
-#   tier: 3
-#   cost: 20000
-#   recipeUnlocks:
-#   - ClothingOuterHardsuitSyndieReverseEngineered
+- type: technology
+  id: PrototypeTacsuits
+  name: research-technology-prototype-tacsuits
+  icon:
+    sprite: Nyanotrasen/Clothing/OuterClothing/ReverseEngineering/syndicate.rsi
+    state: icon
+  discipline: Arsenal
+  tier: 3
+  cost: 25000
+  recipeUnlocks:
+  - ClothingOuterHardsuitCombatAdvanced
+  - ClothingOuterHardsuitSyndieReverseEngineered
+  - ClothingOuterHardsuitJuggernautReverseEngineered
+  #- ClothingOuterHardsuitCybersunEliteUnpainted # IOU
+  technologyPrerequisites:
+  - AdvancedTacsuits
 
 - type: technology
   id: PrototypeWeapons
