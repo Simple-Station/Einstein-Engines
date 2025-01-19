@@ -302,7 +302,7 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: ClothingEyesGlassesCheapSunglasses
+  parent: ClothingEyesGlassesSecurity
   id: ClothingEyesGlassesSecurityBig
   name: big security glasses
   description: Upgraded big sunglasses that provide flash immunity and a security HUD.
@@ -412,6 +412,7 @@
     sprite: Clothing/Eyes/Glasses/ninjavisor.rsi
   - type: FlashImmunity
   - type: NightVision
+    isEquipment: true
 
 - type: entity #Fake goggles, the latest in anti-valid hunting technology
   parent: ClothingEyesBase

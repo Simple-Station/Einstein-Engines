@@ -54,6 +54,7 @@
     - JobsCommandAdminAssistant
     - JobsCommandBlueshieldOfficer
     - JobsCommandNanorep
+    - JobsCommandMagistrate
 
 - type: loadoutCategory
   id: JobsCommandAUncategorized
@@ -72,6 +73,9 @@
 
 - type: loadoutCategory
   id: JobsCommandNanorep
+
+- type: loadoutCategory
+  id: JobsCommandMagistrate
 
 # Engineering
 - type: loadoutCategory

@@ -21,3 +21,11 @@
   components:
   - type: AccessReader
     access: [["BlueshieldOfficer"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsMAG
+  suffix: Magistrate, Locked
+  components:
+  - type: AccessReader
+    access: [["Magistrate"]]

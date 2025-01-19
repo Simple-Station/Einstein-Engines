@@ -36708,7 +36708,7 @@ entities:
       pos: -36.5,-22.5
       parent: 34
     - type: Door
-      secondsUntilStateChange: -67318.92
+      secondsUntilStateChange: -67401.266
       state: Closing
   - uid: 1274
     components:
@@ -72764,6 +72764,13 @@ entities:
     components:
     - type: Transform
       pos: -7.5,-17.5
+      parent: 34
+- proto: SpawnPointMagistrate
+  entities:
+  - uid: 13762
+    components:
+    - type: Transform
+      pos: 52.5,-36.5
       parent: 34
 - proto: SpawnPointMailCarrier
   entities:

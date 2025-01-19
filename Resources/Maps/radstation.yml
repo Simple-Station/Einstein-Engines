@@ -15129,7 +15129,7 @@ entities:
       pos: 34.5,-35.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -55516.35
+      secondsUntilStateChange: -55586.55
       state: Opening
   - uid: 383
     components:
@@ -131127,6 +131127,13 @@ entities:
     - type: Transform
       pos: 43.5,-0.5
       parent: 2
+- proto: SpawnPointMagistrate
+  entities:
+  - uid: 22317
+    components:
+    - type: Transform
+      pos: 5.5,53.5
+      parent: 2
 - proto: SpawnPointMailCarrier
   entities:
   - uid: 18892
@@ -157775,7 +157782,7 @@ entities:
       links:
       - 19976
     - type: Door
-      secondsUntilStateChange: -191808.66
+      secondsUntilStateChange: -191878.86
       state: Opening
   - uid: 23356
     components:

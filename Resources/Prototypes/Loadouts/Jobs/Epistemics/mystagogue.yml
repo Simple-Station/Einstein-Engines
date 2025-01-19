@@ -77,6 +77,7 @@
   id: LoadoutMystagoguePillCanisterSpaceDrugs
   category: JobsEpistemicsMystagogue
   cost: 0
+  guideEntry: Psionics
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMystagogueEquipment
