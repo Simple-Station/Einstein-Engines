@@ -91,41 +91,7 @@ public partial class MobStateSystem : EntitySystem
         return component.CurrentState == MobState.Dead;
     }
 
-    /// <summary>
-    ///  Check if a Mob is incapacitated in its current MobState.
-    /// </summary>
-    /// <param name="target">Target Entity</param>
-    /// <param name="component">The MobState component owned by the target</param>
-    /// <returns>If the entity is Critical or Dead</returns>
-    public bool IsIncapacitated(EntityUid target, MobStateComponent? component = null)
-    {
-        if (!Resolve(target, ref component, false))
-            return false;
-        return component.IsIncapacitated();
-    }
 
-    public bool IsConscious(EntityUid target, MobStateComponent? component = null)
-    {
-        if (!Resolve(target, ref component, false))
-            return false;
-        return component.IsConscious();
-    }
-
-    public bool IsThreatening(EntityUid target, MobStateComponent? component = null)
-    {
-        if (!Resolve(target, ref component, false))
-            return false;
-        return component.IsThreatening();
-    }
-    /// <summary>
-    /// Clamped to [0,1]. Use <see cref="MobStateComponent.GetBreathingMultiplier"/> to get unclamped value.
-    /// </summary>
-    public float BreatheMultiplier(EntityUid target, MobStateComponent? component = null)
-    {
-        if (!Resolve(target, ref component, false))
-            return 0f;
-        return Math.Clamp(component.GetBreathingMultiplier(), 0, 1);
-    }
 
 
     /// <summary>
@@ -218,6 +184,74 @@ public partial class MobStateSystem : EntitySystem
             return false;
         return component.IsDowned();
     }
+
+    public bool IsConscious(EntityUid target, MobStateComponent? component = null)
+    {
+        if (!Resolve(target, ref component, false))
+            return false;
+        return component.IsConscious();
+    }
+
+
+    /// <summary>
+    ///  Check if a Mob is incapacitated in its current MobState.
+    /// </summary>
+    /// <param name="target">Target Entity</param>
+    /// <param name="component">The MobState component owned by the target</param>
+    /// <returns>If the entity is Critical or Dead</returns>
+    public bool IsIncapacitated(EntityUid target, MobStateComponent? component = null)
+    {
+        if (!Resolve(target, ref component, false))
+            return false;
+        return component.IsIncapacitated();
+    }
+
+    public bool CanEquipSelf(EntityUid target, MobStateComponent? component = null)
+    {
+        if (!Resolve(target, ref component, false))
+            return false;
+        return component.CanEquipSelf();
+    }
+
+    public bool CanUnequipSelf(EntityUid target, MobStateComponent? component = null)
+    {
+        if (!Resolve(target, ref component, false))
+            return false;
+        return component.CanUnequipSelf();
+    }
+
+    public bool CanEquipOther(EntityUid target, MobStateComponent? component = null)
+    {
+        if (!Resolve(target, ref component, false))
+            return false;
+        return component.CanEquipOther();
+    }
+
+    public bool CanUnequipOther(EntityUid target, MobStateComponent? component = null)
+    {
+        if (!Resolve(target, ref component, false))
+            return false;
+        return component.CanUnequipOther();
+    }
+
+
+
+    public bool IsThreatening(EntityUid target, MobStateComponent? component = null)
+    {
+        if (!Resolve(target, ref component, false))
+            return false;
+        return component.IsThreatening();
+    }
+    /// <summary>
+    /// Clamped to [0,1]. Use <see cref="MobStateComponent.GetBreathingMultiplier"/> to get unclamped value.
+    /// </summary>
+    public float BreatheMultiplier(EntityUid target, MobStateComponent? component = null)
+    {
+        if (!Resolve(target, ref component, false))
+            return 0f;
+        return Math.Clamp(component.GetBreathingMultiplier(), 0, 1);
+    }
+
 
     #endregion
 
