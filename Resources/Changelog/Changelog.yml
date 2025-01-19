@@ -10351,3 +10351,15 @@ Entries:
   id: 6730
   time: '2025-01-19T19:24:31.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1600
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Made Arsenal Research significantly more interesting by consolidating
+        most of the useless single item researches into larger essential
+        categories. Basic Weapons, Advanced Weapons, Prototype Weapons. Going
+        forwards, these three categories will have significantly more exciting
+        options added to them that should make it more worthwhile to pursue. 
+  id: 6731
+  time: '2025-01-19T20:44:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1602
