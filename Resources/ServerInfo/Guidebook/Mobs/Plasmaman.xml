@@ -6,43 +6,58 @@
   </Box>
 
   They breathe plasma, and oxygen is highly toxic when inhaled.
-  Being exposed to oxygen sets them on fire, forcing them to wear envirosuits, EVA suits or hardsuits.
+  Being exposed to oxygen sets them on fire.
 
-  They come with a [bold]spaceworthy[/bold] envirosuit helmet that provides a flashlight and welding protection.
-  However, they cannot eat nor drink without taking off their envirosuit helmet.
+  To prevent ignition, they wear sealed suits made up of an envirosuit (in the jumpsuit slot) and an envirosuit helmet.
+  Other suits like EVA suits, vacsuits, tacsuits and hardsuits will also seal them from oxygen exposure.
 
-  <Box>
-    <GuideEntityEmbed Entity="ClothingUniformEnvirosuit" Caption="envirosuit"/>
-    <GuideEntityEmbed Entity="ClothingHeadEnvirohelm" Caption="envirosuit helmet"/>
-    <GuideEntityEmbed Entity="DoubleEmergencyPlasmaTankFilled" Caption="plasma internals tank"/>
-  </Box>
-
-  They don't have blood and cannot bleed out.
   They don't experience hunger nor thirst.
+  They don't have blood and cannot bleed out.
 
   They can consume Milk to gain a positive moodlet and slowly heal Brute, Heat, Shock, and Caustic damage.
-  They can also consume Plasma to gain a bigger positive moodlet and heal every damage type faster than Milk, except Cellular.
+  They can also consume Plasma to gain a bigger positive moodlet and heal almost every damage type faster, except for Cellular.
 
   <Box>
-    <GuideEntityEmbed Entity="DrinkCartonMilk" Caption="milk carton"/>
-    <GuideEntityEmbed Entity="SheetPlasma1" Caption="plasma"/>
+    <GuideEntityEmbed Entity="DrinkCartonMilk" />
+    <GuideEntityEmbed Entity="SheetPlasma1" />
   </Box>
 
   They take [color=#1e90ff]15% less Slash and 25% less Piercing damage[/color],
-  and are [color=#1e90ff]immune to Radiation and Cold damage[/color],
+  and are [color=#8658fc]immune to Radiation and Cold damage[/color],
   but take [color=#ffa500]50% more Blunt and 50% more Heat damage[/color].
 
-  Due to their [color=#1e90ff]Cold immunity[/color], they can withstand cold environments such as the Glacier Station without the need of a winter coat.
+  Due to their [color=#8658fc]Cold immunity[/color], they can live in cold environments such as Glacier Station without the need of a winter coat.
+
+  ## Equipment
+  <Box>
+    <GuideEntityEmbed Entity="ClothingUniformEnvirosuit" Caption="envirosuit"/>
+    <GuideEntityEmbed Entity="ClothingHeadEnvirohelm" Caption="envirosuit helmet"/>
+    <GuideEntityEmbed Entity="DoubleEmergencyPlasmaTankFilled" />
+  </Box>
+
+  All Plasmamen start with an envirosuit, an envirosuit helmet, and a plasma internals tank.
+
+  Their envirosuits contain a [color=#1e90ff]self-extinguisher[/color] with limited charges, which they can activate when they are on fire
+  and wearing their envirosuit helmet. The self-extinguisher needs to recharge between uses.
+
+  Their envirosuit helmets are [bold]spaceworthy[/bold] and provide a flashlight and welding protection.
+  However, they cannot eat nor drink without taking off their envirosuit helmet.
+
+  The plasma internals tank lasts roughly an hour before needing to be replaced or refilled.
 
   ## Medical Treatment
   <Box>
-    <GuideEntityEmbed Entity="StasisBed" Caption="stasis bed"/>
+    <GuideEntityEmbed Entity="StasisBed" />
   </Box>
 
-  To perform surgery on a Plasmaman, you need to take off their envirosuit first, which can be disastrous in an oxygenated environment.
+  Before performing surgery on a Plasmaman, their envirosuit needs to be unequipped first, which is disastrous in an oxygenated environment.
 
-  To get around this, you can buckle the Plasmaman to a [bold]stasis bed[/bold] before removing their envirosuit to prevent them from self-igniting throughout the surgery.
+  To get around this, the Plasmaman can be buckled to a [bold]stasis bed[/bold] before removing their envirosuit
+  to prevent them from self-igniting throughout the surgical procedure.
 
-  Their envirosuit helmet prevents them from eating pills, so it's recommended to use a syringe to administer chemicals.
+  <Box HorizontalAlignment="Stretch">
+    Their envirosuit helmets prevents them from eating pills, but their envirosuits allow chemicals to be injected through them.
+    <GuideEntityEmbed Entity="Syringe" Caption=""/>
+  </Box>
 
 </Document>
