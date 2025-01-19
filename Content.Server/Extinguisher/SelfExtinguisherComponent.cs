@@ -22,18 +22,6 @@ public partial class SelfExtinguisherComponent : Component
     public EntityUid? ActionEntity;
 
     /// <summary>
-    ///   The number of charges left.
-    /// </summary>
-    [DataField]
-    public int Charges = -1;
-
-    /// <summary>
-    ///   The maximum possible charges of self-extinguishes.
-    /// </summary>
-    [DataField(required: true)]
-    public int MaxCharges;
-
-    /// <summary>
     ///   Cooldown before the self-extinguisher can be used again.
     /// </summary>
     [DataField(required: true)]

@@ -1,4 +1,6 @@
 using Content.Shared.Actions;
+using Content.Shared.Charges.Components;
+using Content.Shared.Charges.Systems;
 using Content.Shared.Examine;
 using Content.Shared.Extinguisher;
 using Content.Shared.IdentityManagement;
@@ -19,6 +21,7 @@ public sealed partial class SelfExtinguisherSystem : EntitySystem
 {
     [Dependency] private readonly FlammableSystem _flammable = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
+    [Dependency] private readonly SharedChargesSystem _charges = default!;
     [Dependency] private readonly IgniteFromGasSystem _ignite = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
@@ -74,10 +77,6 @@ public sealed partial class SelfExtinguisherSystem : EntitySystem
 
     private void OnMapInit(EntityUid uid, SelfExtinguisherComponent component, MapInitEvent args)
     {
-        // Start out with this envirosuit filled out by default
-        if (component.Charges == -1)
-            component.Charges = component.MaxCharges;
-
         _actionContainer.EnsureAction(uid, ref component.ActionEntity, out var action, component.Action);
     }
 
@@ -102,7 +101,8 @@ public sealed partial class SelfExtinguisherSystem : EntitySystem
             return;
         }
 
-        if (selfExtinguisher.Charges == 0)
+        TryComp<LimitedChargesComponent>(uid, out var charges);
+        if (_charges.IsEmpty(uid, charges))
         {
             _popup.PopupEntity(Loc.GetString("self-extinguisher-no-charges", ("item", uid)), target, user);
             return;
@@ -118,7 +118,7 @@ public sealed partial class SelfExtinguisherSystem : EntitySystem
 
         if (selfExtinguisher.RequiresIgniteFromGasImmune &&
             ((TryComp<IgniteFromGasComponent>(target, out var ignite) && !ignite.HasImmunity) ||
-            false) ) // TODO check for ignite immunity using another way
+            false)) // TODO check for ignite immunity using another way
         {
             _popup.PopupEntity(Loc.GetString($"self-extinguisher-not-immune-to-fire-{suffix}", ("item", uid), ("target", targetIdentity)), target, user);
             return;
@@ -135,7 +135,8 @@ public sealed partial class SelfExtinguisherSystem : EntitySystem
             target, target
         );
 
-        selfExtinguisher.Charges -= 1;
+        if (charges != null)
+            _charges.UseCharge(uid, charges);
         selfExtinguisher.NextExtinguish = curTime + selfExtinguisher.Cooldown;
 
         _audio.PlayPvs(selfExtinguisher.Sound, uid, selfExtinguisher.Sound.Params.WithVariation(0.125f));
@@ -143,8 +144,6 @@ public sealed partial class SelfExtinguisherSystem : EntitySystem
 
     private void OnExamined(EntityUid uid, SelfExtinguisherComponent component, ExaminedEvent args)
     {
-        args.PushMarkup(Loc.GetString("self-extinguisher-examine-charges", ("charges", component.Charges)));
-
         var curTime = _timing.CurTime;
         if (component.NextExtinguish > curTime)
             args.PushMarkup(Loc.GetString("self-extinguisher-examine-cooldown", ("cooldown", (component.NextExtinguish - curTime).Seconds)));

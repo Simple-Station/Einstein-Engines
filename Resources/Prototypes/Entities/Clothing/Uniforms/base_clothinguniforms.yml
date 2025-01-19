@@ -156,7 +156,7 @@
 
 - type: entity
   abstract: true
-  parent: [ClothingUniformBase, AllowSuitStorageClothing] # suit storage is a temporary stopgap before we get more clever tank storage ways
+  parent: ClothingUniformBase
   id: ClothingUniformEnvirosuitBase
   components:
   - type: IgniteFromGasImmunity
@@ -177,11 +177,13 @@
     equipDelay: 1
     unequipDelay: 0.75
   - type: SelfExtinguisher
-    maxCharges: 5
     cooldown: 100
     requiresIgniteFromGasImmune: true
     sound:
       path: /Audio/Effects/extinguish.ogg
+  - type: LimitedCharges
+    maxCharges: 5
+    charges: 5
   - type: Armor
     modifiers:
       coefficients:
