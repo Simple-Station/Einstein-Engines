@@ -57,8 +57,8 @@
   pointing: true 
   isConscious: true
   threatening: true
-  canEquipSelf: true
-  canUnequipSelf: true
+  canEquipSelf: false
+  canUnequipSelf: false
   canEquipOther: false
   canUnequipOther: false
   forceDown: true
