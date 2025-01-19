@@ -196,6 +196,19 @@
     - WeaponCapacitorRechargerCircuitboard
     - HandheldStationMap
     - ClothingHeadHatWelding
+    - FauxTileAstroGrass
+    - FauxTileMowedAstroGrass
+    - FauxTileJungleAstroGrass
+    - FauxTileAstroIce
+    - FauxTileAstroSnow
+    - CanilunztTranslator
+    - BubblishTranslator
+    - NekomimeticTranslator
+    - DraconicTranslator
+    - SolCommonTranslator
+    - RootSpeakTranslator
+    - BasicGalaticCommonTranslatorImplanter
+    - MofficTranslator
   - type: EmagLatheRecipes
     emagStaticRecipes:
     - BoxLethalshot
@@ -327,6 +340,7 @@
     - ClothingShoesBootsMagSci
     - ClothingShoesBootsMoon
     - ClothingShoesBootsSpeed
+    - ClothingShoesBootsMagAdv
     - NodeScanner
     - HolofanProjector
     - BluespaceBeaker
@@ -342,21 +356,9 @@
     - WelderExperimental
     - JawsOfLife
     - CoreSilver # Nyanotrasen - Silver Golem core
-    - FauxTileAstroGrass
-    - FauxTileMowedAstroGrass
-    - FauxTileJungleAstroGrass
-    - FauxTileAstroIce
-    - FauxTileAstroSnow
     - OreBagOfHolding
     - DeviceQuantumSpinInverter
-    - CanilunztTranslator
-    - BubblishTranslator
-    - NekomimeticTranslator
-    - DraconicTranslator
-    - SolCommonTranslator
-    - RootSpeakTranslator
     - XenoTranslator
-    - BasicGalaticCommonTranslatorImplanter
     - AdvancedGalaticCommonTranslatorImplanter
     - BubblishTranslatorImplanter
     - NekomimeticTranslatorImplanter
@@ -366,7 +368,6 @@
     - RootSpeakTranslatorImplanter
     - AnimalTranslator
     - MofficTranslatorImplanter
-    - MofficTranslator
     - ClothingEyesNightVisionGoggles
     - ClothingEyesNightVisionDiagnosticGoggles
     - ClothingEyesThermalVisionGoggles
@@ -479,13 +480,17 @@
     - DeepFryerMachineCircuitboard #Nyano - Summary: adds deep fryer circuit board
     - SpaceHeaterMachineCircuitBoard
     - StationAnchorCircuitboard
+    - SeedExtractorMachineCircuitboard
+    - HydroponicsTrayMachineCircuitboard
+    - ReagentGrinderIndustrialMachineCircuitboard
+    - StasisBedMachineCircuitboard
+    - CryoPodMachineCircuitboard
     dynamicRecipes:
     - ThermomachineFreezerMachineCircuitBoard
     - HellfireFreezerMachineCircuitBoard
     - PortableScrubberMachineCircuitBoard
     - CloningPodMachineCircuitboard
     - MedicalScannerMachineCircuitboard
-    - CryoPodMachineCircuitboard
     - VaccinatorMachineCircuitboard
     - DiagnoserMachineCircuitboard
     - BiomassReclaimerMachineCircuitboard
@@ -498,7 +503,6 @@
     - JukeboxCircuitBoard
     - SurveillanceWirelessCameraMovableCircuitboard
     - SurveillanceWirelessCameraAnchoredCircuitboard
-    - HydroponicsTrayMachineCircuitboard
     - SolarControlComputerCircuitboard
     - SolarTrackerElectronics
     - TurboItemRechargerCircuitboard
@@ -515,7 +519,6 @@
     - TechDiskComputerCircuitboard
     - DawInstrumentMachineCircuitboard
     - CloningConsoleComputerCircuitboard
-    - StasisBedMachineCircuitboard
     - OreProcessorIndustrialMachineCircuitboard
     - CargoTelepadMachineCircuitboard
     - RipleyCentralElectronics
@@ -538,7 +541,6 @@
     - MiniGravityGeneratorCircuitboard
     - ShuttleGunKineticCircuitboard
     - GasRecyclerMachineCircuitboard
-    - SeedExtractorMachineCircuitboard
     - AnalysisComputerCircuitboard
     - ExosuitFabricatorMachineCircuitboard
     - AnomalyVesselCircuitboard
@@ -549,7 +551,6 @@
     - ArtifactCrusherMachineCircuitboard
     - TelecomServerCircuitboard
     - MassMediaCircuitboard
-    - ReagentGrinderIndustrialMachineCircuitboard
     - ReverseEngineeringMachineCircuitboard
     - CrewMonitoringComputerCircuitboard
     - DoorElectronics
