@@ -46,6 +46,19 @@
     - !type:CharacterItemGroupRequirement
       group: LoadoutNeck
 
+- type: loadout
+  id: LoadoutNeckDogtags
+  category: Neck
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
+  items:
+    - ClothingNeckDogtags
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+
 # Scarves
 - type: loadout
   id: LoadoutNeckScarfStripedRed
@@ -155,7 +168,59 @@
   customColorTint: true
   canBeHeirloom: true
   items:
-    - ClothingNeckTieWhite
+    - ClothingNeckTieColor
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutNeckTieShort
+  category: Neck
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
+  items:
+    - ClothingNeckTieShort
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutNeckTieBow
+  category: Neck
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
+  items:
+    - ClothingNeckTieBow
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutNeckTieBowTie
+  category: Neck
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
+  items:
+    - ClothingNeckTieBowTie
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutNeckTieRibbon
+  category: Neck
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
+  items:
+    - ClothingNeckTieRibbon
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutNeck
@@ -166,6 +231,7 @@
   category: Neck
   cost: 0
   exclusive: true
+  canBeHeirloom: true
   items:
     - ClothingNeckLGBTPin
   requirements:
@@ -177,6 +243,7 @@
   category: Neck
   cost: 0
   exclusive: true
+  canBeHeirloom: true
   items:
     - ClothingNeckAromanticPin
   requirements:
@@ -188,6 +255,7 @@
   category: Neck
   cost: 0
   exclusive: true
+  canBeHeirloom: true
   items:
     - ClothingNeckAsexualPin
   requirements:
@@ -199,6 +267,7 @@
   category: Neck
   cost: 0
   exclusive: true
+  canBeHeirloom: true
   items:
     - ClothingNeckBisexualPin
   requirements:
@@ -210,6 +279,7 @@
   category: Neck
   cost: 0
   exclusive: true
+  canBeHeirloom: true
   items:
     - ClothingNeckGayPin
   requirements:
@@ -221,6 +291,7 @@
   category: Neck
   cost: 0
   exclusive: true
+  canBeHeirloom: true
   items:
     - ClothingNeckIntersexPin
   requirements:
@@ -232,6 +303,7 @@
   category: Neck
   cost: 0
   exclusive: true
+  canBeHeirloom: true
   items:
     - ClothingNeckLesbianPin
   requirements:
@@ -243,6 +315,7 @@
   category: Neck
   cost: 0
   exclusive: true
+  canBeHeirloom: true
   items:
     - ClothingNeckNonBinaryPin
   requirements:
@@ -254,6 +327,7 @@
   category: Neck
   cost: 0
   exclusive: true
+  canBeHeirloom: true
   items:
     - ClothingNeckPansexualPin
   requirements:
@@ -265,6 +339,7 @@
   category: Neck
   cost: 0
   exclusive: true
+  canBeHeirloom: true
   items:
     - ClothingNeckTransPin
   requirements:
@@ -437,3 +512,152 @@
        inverted: true
        departments:
          - Command
+
+# Necklaces
+- type: loadout
+  id: LoadoutNeckNecklaceStandard
+  category: Neck
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
+  items:
+    - ClothingNeckNecklaceStandard
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutNeckNecklaceLow
+  category: Neck
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
+  items:
+    - ClothingNeckNecklaceLow
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutNeckNecklaceRound
+  category: Neck
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
+  items:
+    - ClothingNeckNecklaceRound
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutNeckNecklaceSmall
+  category: Neck
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
+  items:
+    - ClothingNeckNecklaceSmall
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutNeckNecklaceGold
+  category: Neck
+  cost: 1
+  exclusive: true
+  canBeHeirloom: true
+  items:
+    - ClothingNeckNecklaceGold
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutNeckNecklaceSilver
+  category: Neck
+  cost: 1
+  exclusive: true
+  canBeHeirloom: true
+  items:
+    - ClothingNeckNecklaceSilver
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutNeckNecklaceChainGold
+  category: Neck
+  cost: 3
+  exclusive: true
+  canBeHeirloom: true
+  items:
+    - ClothingNeckNecklaceChainGold
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutNeckNecklaceChainSilver
+  category: Neck
+  cost: 3
+  exclusive: true
+  canBeHeirloom: true
+  items:
+    - ClothingNeckNecklaceChainSilver
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutNeckNecklacePendantGold
+  category: Neck
+  cost: 1
+  exclusive: true
+  canBeHeirloom: true
+  items:
+    - ClothingNeckNecklacePendantGold
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutNeckNecklacePendantGoldLarge
+  category: Neck
+  cost: 2
+  exclusive: true
+  canBeHeirloom: true
+  items:
+    - ClothingNeckNecklacePendantGoldLarge
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutNeckNecklacePendantSilver
+  category: Neck
+  cost: 1
+  exclusive: true
+  canBeHeirloom: true
+  items:
+    - ClothingNeckNecklacePendantSilver
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutNeckNecklacePendantSilverLarge
+  category: Neck
+  cost: 2
+  exclusive: true
+  canBeHeirloom: true
+  items:
+    - ClothingNeckNecklacePendantSilverLarge
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck

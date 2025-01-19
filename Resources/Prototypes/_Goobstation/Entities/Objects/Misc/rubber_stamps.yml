@@ -10,3 +10,16 @@
   - type: Sprite
     sprite: _Goobstation/Objects/Misc/stamps.rsi
     state: stamp-nanorep
+
+- type: entity
+  name: magistrate rubber stamp
+  parent: RubberStampBase
+  id: RubberStampMagistrate
+  components:
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-magistrate
+    stampedColor: "#76a5b4"
+    stampState: "paper_stamp-magistrate"
+  - type: Sprite
+    sprite: _Goobstation/Objects/Misc/stamps.rsi
+    state: stamp-magistrate

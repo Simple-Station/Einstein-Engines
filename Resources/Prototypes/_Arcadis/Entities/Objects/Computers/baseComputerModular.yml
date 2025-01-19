@@ -1,0 +1,29 @@
+- type: entity
+  parent: BaseComputer
+  id: BaseComputerModular
+  name: modular computer
+  description: Part of a recent initiative to make computers less static. Comes with a disk slot for various "program disks".
+  components:
+    - type: ModularComputer
+    # I plan to make modular itemslots a thing in the future for stuff like the fax machine. Coming Soon:tm:
+    - type: ItemSlots
+      slots:
+        modularComputerDiskSlot:
+          name: Disk
+          insertSound:
+            path: /Audio/Machines/terminal_insert_disc.ogg
+          ejectSound:
+            path: /Audio/Machines/terminal_insert_disc.ogg
+    - type: ContainerContainer
+      containers:
+        board: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        modularComputerDiskSlot: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+
+
+

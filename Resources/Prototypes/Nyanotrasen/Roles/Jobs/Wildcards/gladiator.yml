@@ -11,18 +11,13 @@
   setPreference: true
 #  whitelistRequired: true
   requirements:
-    - !type:DepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Security
       min: 21600
   special:
-  - !type:AddComponentSpecial
-    components:
-    - type: Boxer
-      modifiers:
-        coefficients: # These only apply to unarmed
-          Blunt: 1.5
-          Slash: 1.5
-          Piercing: 1.5
+  - !type:AddTraitSpecial
+    traits:
+    - MartialArtist
 
 - type: startingGear
   id: NyanoGladiatorGear
