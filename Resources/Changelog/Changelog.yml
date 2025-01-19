@@ -10330,3 +10330,12 @@ Entries:
   id: 6728
   time: '2025-01-18T23:37:19.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1586
+- author: BlueHNT
+  changes:
+    - type: Add
+      message: Added Cohiba Robusto cigars
+    - type: Tweak
+      message: Tweaked nicotine amounts in cigars, smoke longer
+  id: 6729
+  time: '2025-01-19T02:45:07.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1455
