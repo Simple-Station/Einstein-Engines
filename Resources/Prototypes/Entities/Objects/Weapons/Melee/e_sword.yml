@@ -285,8 +285,8 @@
         types:
             Slash: 6
             Heat: 12
-    - type: GuideHelp  
-      guides: [ SecurityWeapons ]  
+  - type: GuideHelp  
+    guides: [ SecurityWeapons ]  
 
 - type: entity
   name: double-bladed energy sword
