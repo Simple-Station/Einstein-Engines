@@ -1,0 +1,126 @@
+- type: entity
+  id: OrganPlasmamanLungs
+  parent: OrganHumanLungs
+  name: plasmaman lungs
+  description: The lungs yearn for the plasma. Only plasma gas can satiate these lungs, and oxygen is lethally toxic.
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Plasmaman/organs.rsi
+    state: lungs
+    layers: []
+  - type: Metabolizer
+    metabolizerTypes: [ Plasmaman ]
+  - type: Lung
+    alert: LowPlasma
+  - type: Butcherable
+    butcheringType: Knife
+    butcherDelay: 5.0
+    spawned:
+    - id: SheetPlasma1
+      amount: 1
+
+- type: entity
+  id: OrganPlasmamanStomach
+  parent: OrganHumanStomach
+  name: plasmaman stomach
+  description: Why do plasmamen have stomachs if they don't need to eat?
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Plasmaman/organs.rsi
+  - type: Metabolizer
+    metabolizerTypes: [ Plasmaman ]
+  - type: Butcherable
+    butcheringType: Knife
+    butcherDelay: 5.0
+    spawned:
+    - id: SheetPlasma1
+      amount: 1
+
+- type: entity
+  id: OrganPlasmamanEyes
+  parent: OrganHumanEyes
+  name: plasmaman eyes
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Plasmaman/organs.rsi
+    state: eyes
+    layers: []
+  - type: Butcherable
+    butcheringType: Knife
+    butcherDelay: 5.0
+    spawned:
+    - id: SheetPlasma1
+      amount: 1
+
+- type: entity
+  id: OrganPlasmamanLiver
+  parent: OrganHumanLiver
+  name: plasmaman liver
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Plasmaman/organs.rsi
+  - type: Metabolizer
+    metabolizerTypes: [ Plasmaman ]
+  - type: Butcherable
+    butcheringType: Knife
+    butcherDelay: 5.0
+    spawned:
+    - id: SheetPlasma1
+      amount: 1
+
+- type: entity
+  id: OrganPlasmamanTongue
+  parent: OrganHumanTongue
+  name: plasmaman tongue
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Plasmaman/organs.rsi
+  - type: Butcherable
+    butcheringType: Knife
+    butcherDelay: 5.0
+    spawned:
+    - id: SheetPlasma1
+      amount: 1
+
+- type: entity
+  id: OrganPlasmamanKidneys
+  parent: OrganHumanKidneys
+  name: plasmaman kidneys
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Plasmaman/organs.rsi
+    state: kidneys
+    layers: []
+  - type: Metabolizer
+    metabolizerTypes: [ Plasmaman ]
+  - type: Butcherable
+    butcheringType: Knife
+    butcherDelay: 5.0
+    spawned:
+    - id: SheetPlasma1
+      amount: 1
+
+- type: entity
+  id: OrganPlasmamanHeart
+  parent: OrganHumanHeart
+  name: plasmaman heart
+  description: It pulses with plasma even outside the body.
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Plasmaman/organs.rsi
+  - type: Metabolizer
+    metabolizerTypes: [ Plasmaman ]
+  - type: Butcherable
+    butcheringType: Knife
+    butcherDelay: 5.0
+    spawned:
+    - id: SheetPlasma1
+      amount: 1
+
+- type: entity
+  id: OrganPlasmamanBrain
+  parent: OrganHumanBrain
+  name: plasmaman brain
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Plasmaman/organs.rsi

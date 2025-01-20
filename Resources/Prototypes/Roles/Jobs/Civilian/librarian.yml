@@ -23,6 +23,11 @@
           species:
             - Shadowkin
   startingGear: LibrarianGear
+  conditionalStartingGear:
+    - id: LibrarianPlasmamanGear
+      requirements:
+      - !type:CharacterSpeciesRequirement
+        species: [ Plasmaman ]
   icon: "JobIconLibrarian"
   supervisors: job-supervisors-rd
   access:
@@ -53,3 +58,11 @@
   innerClothingSkirt: ClothingUniformJumpskirtLibrarian
   satchel: ClothingBackpackSatchelLibrarianFilled
   duffelbag: ClothingBackpackDuffelLibrarianFilled
+
+- type: startingGear
+  id: LibrarianPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitLibrarian
+    head: ClothingHeadEnvirohelmLibrarian
+    gloves: ClothingHandsGlovesEnviroglovesPrototype

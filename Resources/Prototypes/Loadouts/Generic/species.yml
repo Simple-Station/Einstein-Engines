@@ -39,3 +39,55 @@
       group: LoadoutAirTank
   items:
     - DoubleEmergencyNitrogenTankFilled
+
+- type: loadout
+  id: LoadoutSpeciesDoubleEmergencyPlasmaTank
+  category: Species
+  cost: 0
+  items:
+    - DoubleEmergencyPlasmaTankFilled
+
+# Envirosuit
+
+- type: loadout
+  id: LoadoutSpeciesUniformEnvirosuit
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformEnvirosuit
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+        - Command
+
+# Envirohelm
+
+- type: loadout
+  id: LoadoutSpeciesHeadEnvirohelm
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadEnvirohelm
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+        - Command
+
+# Envirogloves
+
+- type: loadout
+  id: LoadoutSpeciesHandsGlovesEnvirogloves
+  category: Hands
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHandsGlovesEnvirogloves
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGloves

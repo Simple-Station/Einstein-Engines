@@ -8,6 +8,7 @@ namespace Content.Shared.Roles;
 public sealed partial class StartingGearPrototype : IPrototype, IInheritingPrototype
 {
     [DataField]
+    [AlwaysPushInheritance]
     public Dictionary<string, EntProtoId> Equipment = new();
 
     /// <summary>
@@ -23,12 +24,14 @@ public sealed partial class StartingGearPrototype : IPrototype, IInheritingProto
     public EntProtoId? Duffelbag;
 
     [DataField]
+    [AlwaysPushInheritance]
     public List<EntProtoId> Inhand = new(0);
 
     /// <summary>
     ///     Inserts entities into the specified slot's storage (if it does have storage).
     /// </summary>
     [DataField]
+    [AlwaysPushInheritance]
     public Dictionary<string, List<EntProtoId>> Storage = new();
 
     [ViewVariables]
@@ -41,6 +44,7 @@ public sealed partial class StartingGearPrototype : IPrototype, IInheritingProto
 
     /// <inheritdoc/>
     [AbstractDataField]
+    [NeverPushInheritance]
     public bool Abstract { get; }
 
     public string GetGear(string slot, HumanoidCharacterProfile? profile)

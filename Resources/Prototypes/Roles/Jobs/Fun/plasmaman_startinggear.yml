@@ -1,0 +1,14 @@
+# Base Plasmaman starting gear that all plasmaman starting gears should inherit from
+- type: startingGear
+  abstract: true
+  id: BasePlasmamanGear
+  equipment:
+    mask: ClothingMaskBreath
+    pocket2: DoubleEmergencyPlasmaTankFilled
+
+- type: startingGear
+  abstract: true
+  parent: BasePlasmamanGear
+  id: BasePlasmamanSecurityGear
+  equipment:
+    mask: ClothingMaskGasSecurity

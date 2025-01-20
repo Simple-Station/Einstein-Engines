@@ -420,6 +420,7 @@
         - Arachne
         - IPC # Other species could justify getting this trait for Blunt stamina damage,
               # but 6 blunt -> 5 blunt is a straight up downgrade.
+        - Plasmaman
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -467,6 +468,74 @@
       flatDamageIncrease:
         types:
           Blunt: 1
+
+- type: trait
+  id: PlasmafirePunch
+  category: Physical
+  points: -3
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Plasmaman
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Claws
+        - Talons
+        - ToxoplasmicPunch
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: MeleeWeapon
+          soundHit:
+            collection: Punch
+          angle: 30
+          animation: WeaponArcFist
+          damage:
+            types:
+              Heat: 6
+              Blunt: 1.5
+    - !type:TraitAddComponent
+      components:
+        - type: DamageOnHit
+          damage:
+            types:
+              Heat: 1.2
+          targetParts: [ RightHand, LeftHand ]
+
+- type: trait
+  id: ToxoplasmicPunch
+  category: Physical
+  points: -5
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Plasmaman
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Claws
+        - Talons
+        - PlasmafirePunch
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: MeleeWeapon
+          soundHit:
+            collection: Punch
+          angle: 30
+          animation: WeaponArcFist
+          damage:
+            types:
+              Poison: 6.5
+              Slash: 1.5
+    - !type:TraitAddComponent
+      components:
+        - type: DamageOnHit
+          damage:
+            types:
+              Slash: 1.5
+          targetParts: [ RightHand, LeftHand ]
 
 - type: trait
   id: Spinarette

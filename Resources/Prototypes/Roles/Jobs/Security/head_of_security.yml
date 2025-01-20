@@ -18,6 +18,11 @@
     - !type:CharacterWhitelistRequirement
   weight: 10
   startingGear: HoSGear
+  conditionalStartingGear:
+    - id: HoSPlasmamanGear
+      requirements:
+      - !type:CharacterSpeciesRequirement
+        species: [ Plasmaman ]
   icon: "JobIconHeadOfSecurity"
   requireAdminNotify: true
   supervisors: job-supervisors-captain
@@ -55,3 +60,11 @@
   innerClothingSkirt: ClothingUniformJumpskirtHoS
   satchel: ClothingBackpackSatchelHOSFilled
   duffelbag: ClothingBackpackDuffelHOSFilled
+
+- type: startingGear
+  id: HoSPlasmamanGear
+  parent: BasePlasmamanSecurityGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitHoS
+    head: ClothingHeadEnvirohelmHoS
+    gloves: ClothingHandsGlovesEnviroglovesBlack

@@ -8,6 +8,11 @@
       department: Civilian
       min: 3600 #DeltaV
   startingGear: BartenderGear
+  conditionalStartingGear:
+    - id: BartenderPlasmamanGear
+      requirements:
+      - !type:CharacterSpeciesRequirement
+        species: [ Plasmaman ]
   icon: "JobIconBartender"
   supervisors: job-supervisors-hop
   access:
@@ -31,3 +36,11 @@
   innerClothingSkirt: ClothingUniformJumpskirtBartender
   satchel: ClothingBackpackSatchelFilled
   duffelbag: ClothingBackpackDuffelFilled
+
+- type: startingGear
+  id: BartenderPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitEnviroslacks
+    head: ClothingHeadEnvirohelmWhite
+    gloves: ClothingHandsGlovesEnviroglovesWhite

@@ -8,6 +8,11 @@
       department: Epistemics # DeltaV - Epistemics Department replacing Science
       min: 14400 #4 hrs
   startingGear: ScientistGear
+  conditionalStartingGear:
+    - id: ScientistPlasmamanGear
+      requirements:
+      - !type:CharacterSpeciesRequirement
+        species: [ Plasmaman ]
   icon: "JobIconScientist"
   supervisors: job-supervisors-rd
   access:
@@ -27,3 +32,11 @@
   innerClothingSkirt: ClothingUniformJumpskirtScientist
   satchel: ClothingBackpackSatchelScienceFilled
   duffelbag: ClothingBackpackDuffelScienceFilled
+
+- type: startingGear
+  id: ScientistPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitScientist
+    head: ClothingHeadEnvirohelmScientist
+    gloves: ClothingHandsGlovesEnviroglovesWhite

@@ -7,6 +7,11 @@
     - !type:CharacterOverallTimeRequirement # DeltaV - Playtime requirement
       min: 7200 #2 hrs
   startingGear: ClownGear
+  conditionalStartingGear:
+    - id: ClownPlasmamanGear
+      requirements:
+      - !type:CharacterSpeciesRequirement
+        species: [ Plasmaman ]
   icon: "JobIconClown"
   supervisors: job-supervisors-hop
   access:
@@ -43,3 +48,12 @@
     ears: ClothingHeadsetService
   satchel: ClothingBackpackSatchelClownFilled
   duffelbag: ClothingBackpackDuffelClownFilled
+
+- type: startingGear
+  id: ClownPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitClown
+    head: ClothingHeadEnvirohelmClown
+    gloves: ClothingHandsGlovesEnviroglovesClown
+    mask: ClothingMaskClown # Parent sets mask to breath mask so set it again here

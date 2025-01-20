@@ -3,6 +3,11 @@
   name: job-name-mail-carrier
   description: job-description-mail-carrier
   startingGear: CourierGear
+  conditionalStartingGear:
+    - id: CourierPlasmamanGear
+      requirements:
+      - !type:CharacterSpeciesRequirement
+        species: [ Plasmaman ]
   playTimeTracker: JobMailCarrier
   icon: "JobIconMailCarrier"
   supervisors: job-supervisors-qm

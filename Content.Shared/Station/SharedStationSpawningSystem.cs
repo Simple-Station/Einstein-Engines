@@ -1,13 +1,16 @@
 using System.Linq;
 using Content.Shared.Dataset;
+using Content.Shared.Customization.Systems;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Inventory;
+using Content.Shared.Preferences;
 using Content.Shared.Preferences.Loadouts;
 using Content.Shared.Roles;
 using Content.Shared.Storage;
 using Content.Shared.Storage.EntitySystems;
 using Robust.Shared.Collections;
+using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
@@ -23,6 +26,8 @@ public abstract class SharedStationSpawningSystem : EntitySystem
     [Dependency] private readonly SharedStorageSystem _storage = default!;
     [Dependency] private readonly SharedTransformSystem _xformSystem = default!;
     [Dependency] private readonly MetaDataSystem _metadata = default!;
+    [Dependency] private readonly IConfigurationManager _configurationManager = default!;
+    [Dependency] private readonly CharacterRequirementsSystem _characterRequirements = default!;
 
     private EntityQuery<HandsComponent> _handsQuery;
     private EntityQuery<InventoryComponent> _inventoryQuery;
@@ -142,5 +147,82 @@ public abstract class SharedStationSpawningSystem : EntitySystem
             var ev = new StartingGearEquippedEvent(entity);
             RaiseLocalEvent(entity, ref ev);
         }
+    }
+
+    public StartingGearPrototype ApplyConditionalStartingGear(StartingGearPrototype startingGear,
+        JobPrototype job, HumanoidCharacterProfile profile)
+    {
+        if (job.ConditionalStartingGears == null)
+            return startingGear;
+
+        var newStartingGear = startingGear;
+        var foundConditionalMatch = false;
+
+        foreach (var conditionalStartingGear in job.ConditionalStartingGears)
+        {
+            if (!PrototypeManager.TryIndex<StartingGearPrototype>(conditionalStartingGear.Id, out var conditionalGear) ||
+                !_characterRequirements.CheckRequirementsValid(
+                    conditionalStartingGear.Requirements, job, profile, new Dictionary<string, TimeSpan>(), false, job,
+                    EntityManager, PrototypeManager, _configurationManager,
+                    out _))
+                continue;
+
+            // TODO put code below in a new method in StartingGearPrototype instead
+            if (!foundConditionalMatch)
+            {
+                foundConditionalMatch = true;
+                // Lazy init on making a new starting gear prototype for performance reasons.
+                // We can't just modify the original prototype or it will be modified for everyone.
+                newStartingGear = new StartingGearPrototype()
+                {
+                    Equipment = startingGear.Equipment.ToDictionary(static entry => entry.Key, static entry => entry.Value),
+                    InnerClothingSkirt = startingGear.InnerClothingSkirt,
+                    Satchel = startingGear.Satchel,
+                    Duffelbag = startingGear.Duffelbag,
+                    Inhand = new List<EntProtoId>(startingGear.Inhand),
+                    Storage = startingGear.Storage.ToDictionary(
+                        static entry => entry.Key,
+                        static entry => new List<EntProtoId>(entry.Value)
+                    ),
+                };
+            }
+
+            if (conditionalGear.InnerClothingSkirt != null)
+                newStartingGear.InnerClothingSkirt = conditionalGear.InnerClothingSkirt;
+
+            if (conditionalGear.Satchel != null)
+                newStartingGear.Satchel = conditionalGear.Satchel;
+
+            if (conditionalGear.Duffelbag != null)
+                newStartingGear.Duffelbag = conditionalGear.Duffelbag;
+
+            foreach (var (slot, entProtoId) in conditionalGear.Equipment)
+            {
+                // Don't remove items in pockets, instead put them in the backpack or hands
+                if (slot == "pocket1" && newStartingGear.Equipment.TryGetValue("pocket1", out var pocket1) ||
+                    slot == "pocket2" && newStartingGear.Equipment.TryGetValue("pocket2", out var pocket2))
+                {
+                    var pocketProtoId = slot == "pocket1" ? pocket1 : pocket2;
+
+                    if (!string.IsNullOrEmpty(newStartingGear.GetGear("back", null)))
+                    {
+                        if (!newStartingGear.Storage.ContainsKey("back"))
+                            newStartingGear.Storage["back"] = new();
+                        newStartingGear.Storage["back"].Add(pocketProtoId);
+                    }
+                    else
+                        newStartingGear.Inhand.Add(pocketProtoId);
+                }
+
+                newStartingGear.Equipment[slot] = entProtoId;
+            }
+
+            newStartingGear.Inhand.AddRange(conditionalGear.Inhand);
+
+            foreach (var (slot, entProtoIds) in conditionalGear.Storage)
+                newStartingGear.Storage[slot].AddRange(entProtoIds);
+        }
+
+        return newStartingGear;
     }
 }

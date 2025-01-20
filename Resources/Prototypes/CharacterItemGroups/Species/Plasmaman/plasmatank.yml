@@ -1,0 +1,7 @@
+- type: characterItemGroup
+  id: LoadoutPlasmamanPlasmaTank
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutSpeciesDoubleEmergencyPlasmaTank
+      priority: 0

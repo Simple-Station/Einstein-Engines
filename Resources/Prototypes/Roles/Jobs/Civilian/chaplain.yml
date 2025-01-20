@@ -23,6 +23,11 @@
           species:
             - Shadowkin
   startingGear: ChaplainGear
+  conditionalStartingGear:
+    - id: ChaplainPlasmamanGear
+      requirements:
+      - !type:CharacterSpeciesRequirement
+        species: [ Plasmaman ]
   icon: "JobIconChaplain"
   supervisors: job-supervisors-rd
   access:
@@ -53,3 +58,11 @@
   innerClothingSkirt: ClothingUniformJumpskirtChaplain
   satchel: ClothingBackpackSatchelChaplainFilled
   duffelbag: ClothingBackpackDuffelChaplainFilled
+
+- type: startingGear
+  id: ChaplainPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitChaplain
+    head: ClothingHeadEnvirohelmChaplain
+    gloves: ClothingHandsGlovesEnviroglovesBlack

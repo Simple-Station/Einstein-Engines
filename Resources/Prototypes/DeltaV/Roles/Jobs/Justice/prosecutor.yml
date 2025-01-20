@@ -7,6 +7,11 @@
     - !type:CharacterOverallTimeRequirement
       min: 36000 # 10 hrs
   startingGear: ProsecutorGear
+  conditionalStartingGear:
+    - id: LawyerPlasmamanGear
+      requirements:
+      - !type:CharacterSpeciesRequirement
+        species: [ Plasmaman ]
   icon: "JobIconProsecutor"
   supervisors: job-supervisors-cj
   access:

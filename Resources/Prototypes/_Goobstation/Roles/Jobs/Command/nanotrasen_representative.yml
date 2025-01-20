@@ -9,6 +9,11 @@
       min: 54000 # 15 hours
   weight: 20
   startingGear: NanotrasenRepresentativeGear
+  conditionalStartingGear:
+    - id: NanotrasenRepresentativePlasmamanGear
+      requirements:
+      - !type:CharacterSpeciesRequirement
+        species: [ Plasmaman ]
   icon: "JobIconNanotrasenRepresentative"
   requireAdminNotify: true
   joinNotifyCrew: true
@@ -42,3 +47,11 @@
     jumpsuit: ClothingUniformJumpsuitNanotrasenRepresentative
     ears: ClothingHeadsetCentCom
     pocket1: UniqueNanorepLockerTeleporter
+
+- type: startingGear
+  id: NanotrasenRepresentativePlasmamanGear # TODO: add NanoTrasen Representative envirosuit
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitEnviroslacks
+    head: ClothingHeadEnvirohelmWhite
+    gloves: ClothingHandsGlovesEnviroglovesWhite

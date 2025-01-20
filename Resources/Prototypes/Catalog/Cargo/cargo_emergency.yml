@@ -69,6 +69,16 @@
   group: market
 
 - type: cargoProduct
+  id: EmergencyPlasmamanLifeSupport
+  icon:
+    sprite: Objects/Tanks/plasmaman.rsi
+    state: icon
+  product: CratePlasmamanLifeSupport
+  cost: 400
+  category: cargoproduct-category-name-emergency
+  group: market
+
+- type: cargoProduct
   id: EmergencyBiosuit
   icon:
     sprite: Clothing/Head/Hoods/Bio/general.rsi

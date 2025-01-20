@@ -8,6 +8,11 @@
       department: Epistemics # DeltaV - Epistemics Department replacing Science
       min: 216000 #60 hrs
   startingGear: SeniorResearcherGear
+  conditionalStartingGear:
+    - id: ScientistPlasmamanGear
+      requirements:
+      - !type:CharacterSpeciesRequirement
+        species: [ Plasmaman ]
   icon: "JobIconSeniorResearcher"
   supervisors: job-supervisors-rd
   access:

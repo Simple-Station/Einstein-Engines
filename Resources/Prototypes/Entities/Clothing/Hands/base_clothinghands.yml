@@ -44,3 +44,17 @@
   - type: Fiber
     fiberMaterial: fibers-synthetic
   - type: FingerprintMask
+
+- type: entity
+  parent: ClothingHandsGlovesSyntheticBase
+  abstract: true
+  id: ClothingHandsGlovesEnviroglovesBase
+  components:
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.95
+  - type: IgniteFromGasImmunity
+    parts:
+    - LeftHand
+    - RightHand

@@ -12,6 +12,11 @@
       min: 14400 # DeltaV - 4 hours
     - !type:CharacterWhitelistRequirement
   startingGear: WardenGear
+  conditionalStartingGear:
+    - id: WardenPlasmamanGear
+      requirements:
+      - !type:CharacterSpeciesRequirement
+        species: [ Plasmaman ]
   icon: "JobIconWarden"
   supervisors: job-supervisors-hos
   canBeAntag: false
@@ -43,3 +48,11 @@
   innerClothingSkirt: ClothingUniformJumpskirtWarden
   satchel: ClothingBackpackSatchelSecurity
   duffelbag: ClothingBackpackDuffelSecurity
+
+- type: startingGear
+  id: WardenPlasmamanGear
+  parent: BasePlasmamanSecurityGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitWarden
+    head: ClothingHeadEnvirohelmWarden
+    gloves: ClothingHandsGlovesEnviroglovesBlack

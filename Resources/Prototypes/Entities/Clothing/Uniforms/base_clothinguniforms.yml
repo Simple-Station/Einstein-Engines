@@ -153,3 +153,41 @@
     - state: icon_flipped
       map: ["foldedLayer"]
       visible: true
+
+- type: entity
+  abstract: true
+  parent: ClothingUniformBase
+  id: ClothingUniformEnvirosuitBase
+  components:
+  - type: IgniteFromGasImmunity
+    parts:
+    - Torso
+    - Groin
+    - LeftArm
+    - LeftHand
+    - RightArm
+    - RightHand
+    - LeftLeg
+    - LeftFoot
+    - RightLeg
+    - RightFoot
+  - type: Clothing
+    femaleMask: NoMask
+  - type: SelfExtinguisher
+    cooldown: 100
+    requiresIgniteFromGasImmune: true
+    sound:
+      path: /Audio/Effects/extinguish.ogg
+  - type: LimitedCharges
+    maxCharges: 5
+    charges: 5
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.85
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - PlasmamanSafe
+  - type: ClothingRequiredStepTriggerImmune
+    slots: WITHOUT_POCKET

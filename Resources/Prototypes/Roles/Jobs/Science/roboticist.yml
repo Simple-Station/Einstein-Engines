@@ -8,6 +8,11 @@
     department: Epistemics
     min: 14400 # 4 hours - same as scientist
   startingGear: RoboticistGear
+  conditionalStartingGear:
+    - id: RoboticistPlasmamanGear
+      requirements:
+      - !type:CharacterSpeciesRequirement
+        species: [ Plasmaman ]
   icon: "JobIconRoboticist"
   supervisors: job-supervisors-rd
   access:
@@ -27,3 +32,11 @@
   innerClothingSkirt: ClothingUniformJumpskirtRoboticist
   satchel: ClothingBackpackSatchelRoboticsFilled
   duffelbag: ClothingBackpackDuffelRoboticsFilled
+
+- type: startingGear
+  id: RoboticistPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitRoboticist
+    head: ClothingHeadEnvirohelmRoboticist
+    gloves: ClothingHandsGlovesEnviroglovesRoboticist

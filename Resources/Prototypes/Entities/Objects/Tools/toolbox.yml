@@ -187,6 +187,7 @@
     - SyndieSet
     - SleeperSet
     - CommunicatorSet
+    - CommunicatorSetPlasmaman
     - SmugglerSet
   - type: ActivatableUI
     key: enum.ThiefBackpackUIKey.Key
