@@ -70,20 +70,19 @@ public sealed partial class ResearchSystem
         ResearchClientComponent? component = null,
         TechnologyDatabaseComponent? clientDatabase = null)
     {
-        if (!Resolve(client, ref component, ref clientDatabase, false))
-            return false;
-
-        if (!TryGetClientServer(client, out var serverEnt, out _, component))
-            return false;
-
-        if (!CanServerUnlockTechnology(client, prototype, clientDatabase, component))
-            return false;
-
-        if (!PrototypeManager.TryIndex(prototype.Discipline, out var disciplinePrototype))
+        if (!Resolve(client, ref component, ref clientDatabase, false)
+            || !TryGetClientServer(client, out var serverEnt, out _, component)
+            || !CanServerUnlockTechnology(client, prototype, clientDatabase, component)
+            || !PrototypeManager.TryIndex(prototype.Discipline, out var disciplinePrototype)
+            || !TryComp<ResearchServerComponent>(serverEnt.Value, out var researchServer)
+            || prototype.Cost * clientDatabase.SoftCapMultiplier > researchServer.Points)
             return false;
 
         if (prototype.Tier >= disciplinePrototype.LockoutTier)
+        {
             clientDatabase.SoftCapMultiplier *= prototype.SoftCapContribution;
+            researchServer.CurrentSoftCapMultiplier *= prototype.SoftCapContribution;
+        }
 
         AddTechnology(serverEnt.Value, prototype);
         TrySetMainDiscipline(prototype, serverEnt.Value);
