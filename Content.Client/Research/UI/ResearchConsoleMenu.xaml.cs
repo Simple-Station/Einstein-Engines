@@ -70,7 +70,7 @@ public sealed partial class ResearchConsoleMenu : FancyWindow
         foreach (var techId in database.CurrentTechnologyCards)
         {
             var tech = _prototype.Index<TechnologyPrototype>(techId);
-            var cardControl = new TechnologyCardControl(tech, _prototype, _sprite, _research.GetTechnologyDescription(tech, includeTier: false), state.Points, hasAccess);
+            var cardControl = new TechnologyCardControl(tech, _prototype, _sprite, _research.GetTechnologyDescription(tech, includeTier: false), state.Points, hasAccess, database);
             cardControl.OnPressed += () => OnTechnologyCardPressed?.Invoke(techId);
             TechnologyCardsContainer.AddChild(cardControl);
         }
