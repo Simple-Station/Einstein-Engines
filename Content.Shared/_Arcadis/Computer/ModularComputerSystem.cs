@@ -11,6 +11,7 @@ using Content.Shared.Popups;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Robust.Shared.Timing;
+using Content.Shared.Power.EntitySystems;
 
 namespace Content.Shared._Arcadis.Computer;
 
@@ -27,6 +28,8 @@ public sealed class ModularComputerSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
 
     [Dependency] private readonly IGameTiming _gameTiming = default!;
+
+    [Dependency] private readonly SharedPowerReceiverSystem _power = default!;
 
     public string BlankDiskPrototype = "UnburnedDiskPrototype";
     public override void Initialize()
@@ -47,6 +50,9 @@ public sealed class ModularComputerSystem : EntitySystem
     {
         if (!TryComp(uid, out ItemSlotsComponent? slots)
             || !_itemSlots.TryGetSlot(uid, component.DiskSlot, out var diskSlot, slots))
+            return;
+
+        if (component.RequiresPower && _power.IsPowered(uid) == false)
             return;
 
         if (diskSlot.Item == null || !TryComp(diskSlot.Item, out ComputerDiskComponent? diskComp))
@@ -70,6 +76,12 @@ public sealed class ModularComputerSystem : EntitySystem
             || !_itemSlots.TryGetSlot(uid, component.DiskSlot, out var diskSlot, slots))
             return;
 
+        if (component.RequiresPower && _power.IsPowered(uid) == false)
+        {
+            _popupSystem.PopupPredicted(Loc.GetString("modular-computer-no-power"), uid, args.User);
+            return;
+        }
+
         if (diskSlot.Item == null || !TryComp(diskSlot.Item, out ComputerDiskComponent? diskComp))
         {
             _popupSystem.PopupPredicted(Loc.GetString("modular-computer-no-program"), uid, args.User);
@@ -82,7 +94,8 @@ public sealed class ModularComputerSystem : EntitySystem
             return;
         }
 
-        if (_gameTiming.IsFirstTimePredicted || _netMan.IsServer) {
+        if (_netMan.IsServer) // Has to run only on server or mispredict opens 2 seperate UIs. Very bad.
+        {
             var activateMsg = new ActivateInWorldEvent(args.User, diskComp.ProgramPrototypeEntity.Value, true);
             RaiseLocalEvent(diskComp.ProgramPrototypeEntity.Value, activateMsg);
         }

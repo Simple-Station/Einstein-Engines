@@ -2,6 +2,8 @@
 law-asimov-2 = A robot must obey the orders given it by human beings except where such orders would conflict with the First Law.
 law-asimov-3 = A robot must protect its own existence as long as such protection does not conflict with the First or Second Law.
 
+law-augustine = A human being is defined as a mortal creature capable of complex thought.
+
 law-crewsimov-1 = You may not injure a crew member or, through inaction, allow a crew member to come to harm.
 law-crewsimov-2 = You must obey orders given to you by crew members, except where such orders would conflict with the First Law.
 law-crewsimov-3 = You must protect your own existence as long as such does not conflict with the First or Second Law.
