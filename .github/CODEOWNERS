@@ -1,9 +1,9 @@
-/.*
-*.sln
-*.csproj
-*.dotsettings
-*.DotSettings
-*.toml
+/.* @DEATHB4DEFEAT
+*.sln @DEATHB4DEFEAT
+*.csproj @DEATHB4DEFEAT
+*.dotsettings @DEATHB4DEFEAT
+*.DotSettings @DEATHB4DEFEAT
+*.toml @DEATHB4DEFEAT
 /Content.*/IoC @sleepyyapril
 
 
