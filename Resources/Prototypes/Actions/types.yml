@@ -205,6 +205,9 @@
   components:
   - type: InstantAction
     itemIconStyle: BigItem
+    icon:
+      sprite: Objects/Misc/fire_extinguisher.rsi
+      state: fire_extinguisher_open
     event: !type:SelfExtinguishEvent
 
 - type: entity
