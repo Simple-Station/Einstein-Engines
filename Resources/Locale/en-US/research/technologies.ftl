@@ -31,6 +31,8 @@ research-technology-nonlethal-ammunition = Nonlethal Ammunition
 research-technology-practice-ammunition = Practice Ammunition
 research-technology-advanced-weapons = Advanced Weapons
 research-technology-prototype-weapons = Prototype Weapons
+research-technology-advanced-tacsuits = Advanced Tacsuits
+research-technology-prototype-tacsuits = Prototype Tacsuits
 
 research-technology-basic-robotics = Basic Robotics
 research-technology-basic-anomalous-research = Basic Anomalous Research

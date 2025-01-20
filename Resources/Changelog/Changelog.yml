@@ -10372,3 +10372,12 @@ Entries:
   id: 6732
   time: '2025-01-19T21:54:48.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1603
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added Advanced Tacsuits, and Prototype Tacsuits to Arsenal research.
+        Along with them comes Security Techfab recipes for said tacsuits.
+  id: 6733
+  time: '2025-01-19T23:38:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1604

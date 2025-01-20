@@ -112,6 +112,10 @@
       - Sheet
       - RawMaterial
       - Ingot
+      - Wooden
+      - ClothMade
+      - Gauze
+      - Metal
   - type: Lathe
     idleState: icon
     runningState: building
@@ -279,6 +283,10 @@
       - Sheet
       - RawMaterial
       - Ingot
+      - Wooden
+      - ClothMade
+      - Gauze
+      - Metal
   - type: Lathe
     idleState: icon
     runningState: building
@@ -578,6 +586,10 @@
       - Sheet
       - RawMaterial
       - Ingot
+      - Wooden
+      - ClothMade
+      - Gauze
+      - Metal
   - type: RequireProjectileTarget
 
 - type: entity
@@ -715,6 +727,10 @@
       - Sheet
       - RawMaterial
       - Ingot
+      - Wooden
+      - ClothMade
+      - Gauze
+      - Metal
   - type: GuideHelp
     guides:
     - Robotics
@@ -745,6 +761,11 @@
       tags:
       - Sheet
       - RawMaterial
+      - Ingot
+      - Wooden
+      - ClothMade
+      - Gauze
+      - Metal
   - type: Lathe
     idleState: icon
     runningState: building
@@ -957,12 +978,22 @@
       - MagazineBoxSpecialMindbreaker
       - SecurityCyberneticEyes
       - MedicalCyberneticEyes
+      - ClothingOuterHardsuitCombatStandard
+      - ClothingOuterHardsuitCombatMedical
+      - ClothingOuterHardsuitCombatRiot
+      - ClothingOuterHardsuitCombatAdvanced
+      - ClothingOuterHardsuitSyndieReverseEngineered
+      - ClothingOuterHardsuitJuggernautReverseEngineered
   - type: MaterialStorage
     whitelist:
       tags:
       - Sheet
       - RawMaterial
       - Ingot
+      - Wooden
+      - ClothMade
+      - Gauze
+      - Metal
 
 - type: entity
   id: AmmoTechFab
@@ -1020,6 +1051,10 @@
           - Sheet
           - RawMaterial
           - Ingot
+          - Wooden
+          - ClothMade
+          - Gauze
+          - Metal
 
 - type: entity
   id: MedicalTechFab
@@ -1326,6 +1361,10 @@
       - Sheet
       - RawMaterial
       - Ingot
+      - Wooden
+      - ClothMade
+      - Gauze
+      - Metal
 
 - type: entity
   parent: [BaseLathe, BaseMaterialSiloUtilizer]
@@ -1604,6 +1643,11 @@
       tags:
       - Sheet
       - RawMaterial
+      - Ingot
+      - Wooden
+      - ClothMade
+      - Gauze
+      - Metal
   - type: Lathe
     idleState: limbgrower_idleoff
     runningState: limbgrower_idleon
