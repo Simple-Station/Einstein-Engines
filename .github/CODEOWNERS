@@ -14,66 +14,65 @@
 
 
 # UI
-*.xaml @sleepyyapril
-*.xaml.cs @sleepyyapril
+*.xaml @sleepyyapril @DEATHB4DEFEAT
+*.xaml.cs @sleepyyapril @DEATHB4DEFEAT
 
 # Lobby
 /Content.Client/Lobby @DEATHB4DEFEAT
 /Content.Client/MainMenu @DEATHB4DEFEAT
 
 # Queue
-/Content.*/DiscordAuth
-/Content.*/JoinQueue
+/Content.*/DiscordAuth @DEATHB4DEFEAT
+/Content.*/JoinQueue @DEATHB4DEFEAT
 
 
 # Writing
-*.xml
+*.xml @DEATHB4DEFEAT
 *.ftl @sleepyyapril
-*.md
-*.txt
-*.yml
+*.md @DEATHB4DEFEAT
+*.txt @DEATHB4DEFEAT
 
 # Shaders
-*.swsl
-/Resources/Prototypes/Shaders
+*.swsl @DEATHB4DEFEAT
+/Resources/Prototypes/Shaders @DEATHB4DEFEAT
 
 # Overlays
-/Content.Client/Overlays
+/Content.Client/Overlays @DEATHB4DEFEAT
 
 # Paint
-/Content.*/Paint
+/Content.*/Paint @DEATHB4DEFEAT
 
 
 # Parkstation/etc
-**/SimpleStation14
-**/Parkstation
+**/SimpleStation14 @DEATHB4DEFEAT
+**/Parkstation @DEATHB4DEFEAT
 
 # Announcer system
-/Content.*/Announcements
-/Content.Server/StationEvents
+/Content.*/Announcements @DEATHB4DEFEAT
+/Content.Server/StationEvents @DEATHB4DEFEAT
 
 # SSD
-/Content.*/SSDIndicator
+/Content.*/SSDIndicator @DEATHB4DEFEAT
 
 # Station Goals
-/Content.Server/StationGoal
+/Content.Server/StationGoal @DEATHB4DEFEAT
 
 # Random Bark
-/Content.Server/Speech/Components/RandomBarkComponent.cs
-/Content.Server/Speech/Systems/RandomBarkSystem.cs
-/Resources/Locale/en-US/random-barks
+/Content.Server/Speech/Components/RandomBarkComponent.cs @DEATHB4DEFEAT
+/Content.Server/Speech/Systems/RandomBarkSystem.cs @DEATHB4DEFEAT
+/Resources/Locale/en-US/random-barks @DEATHB4DEFEAT
 
 # Punpun
-/Content.Server/Punpun
+/Content.Server/Punpun @DEATHB4DEFEAT
 
 
 # Database
-/Content.*/Database @sleepyyapril
-/Content.*.Database @sleepyyapril
+/Content.*/Database @sleepyyapril @DEATHB4DEFEAT
+/Content.*.Database @sleepyyapril @DEATHB4DEFEAT
 
 # Preferences
 /Content.*/Preferences
-**/*CVar*/*.cs @sleepyyapril
+**/*CVar*/*.cs @sleepyyapril @DEATHB4DEFEAT
 
 # Discord
 /Content.*/Discord* @sleepyyapril
