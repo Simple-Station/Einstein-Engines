@@ -25,11 +25,15 @@
     - type: loadout
       id: LoadoutCatalogerPillCanisterSpaceDrugs
 
-#- type: characterItemGroup
-#  id: LoadoutCatalogerEyes
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutCatalogerEyes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCatalogerEyesEpiHUD
+    - type: loadout
+      id: LoadoutCatalogerEyesEpiGlasses
+
 #- type: characterItemGroup
 #  id: LoadoutCatalogerGloves
 #  maxItems: 1

@@ -61680,6 +61680,13 @@ entities:
     - type: Transform
       pos: -1.5,-11.5
       parent: 2
+- proto: ComputerPsionicsRecords
+  entities:
+  - uid: 22546
+    components:
+    - type: Transform
+      pos: 60.5,-11.5
+      parent: 2
 - proto: ComputerRadar
   entities:
   - uid: 4074

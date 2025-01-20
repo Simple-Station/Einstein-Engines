@@ -10339,7 +10339,7 @@ entities:
       pos: -53.5,-12.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -12876.496
+      secondsUntilStateChange: -13237.977
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -63769,6 +63769,14 @@ entities:
       rot: 3.141592653589793 rad
       pos: 110.5,-0.5
       parent: 2
+- proto: ComputerPsionicsRecords
+  entities:
+  - uid: 27708
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 10.5,-25.5
+      parent: 2
 - proto: ComputerRadar
   entities:
   - uid: 10045
@@ -75688,7 +75696,7 @@ entities:
       pos: -3.5,-52.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -40902.03
+      secondsUntilStateChange: -41263.51
       state: Closing
   - uid: 11944
     components:
