@@ -272,6 +272,23 @@
         shader: unshaded
 
 - type: entity
+  name: energy cutlass
+  parent: EnergyCutlass
+  id: EnergyCutlassSecurity
+  description: A sleek energy weapon, its blade hums with volatile plasma, expertly contained to cut through nearly any material. The serial number on the hilt marks this gun as belonging to an NT Security Officer. # how do I make the text blue
+  suffix: Security Loadouts
+  components:
+  - type: MeleeWeapon
+    attackRate: 0.6666
+  - type: ItemToggleMeleeWeapon
+    activatedDamage:
+        types:
+            Slash: 6
+            Heat: 12
+  - type: GuideHelp  
+    guides: [ SecurityWeapons ]  
+
+- type: entity
   name: double-bladed energy sword
   parent: EnergySword
   id: EnergySwordDouble
