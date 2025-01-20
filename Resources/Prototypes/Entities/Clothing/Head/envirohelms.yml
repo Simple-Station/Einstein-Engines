@@ -405,3 +405,183 @@
       - state: accent-equipped-HELMET
         color: "#c2911e"
       - state: visor-equipped-HELMET
+
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelmMusician
+  name: musician's envirosuit helmet
+  description: Experts are perplexed as to how plasmamen can still play the trumpet with this helmet on.
+  components:
+  - type: ToggleableLightVisuals
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+  - type: Sprite
+    sprite: Clothing/Head/Envirohelms/color.rsi
+    layers:
+    - state: icon
+      color: "#3c335b"
+    - state: accent-icon
+      color: "#f3f5f4"
+    - state: visor-icon
+    - state: icon-flash
+      visible: false
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#3c335b"
+      - state: accent-inhand-left
+        color: "#f3f5f4"
+      - state: visor-inhand-left
+      right:
+      - state: inhand-right
+        color: "#3c335b"
+      - state: accent-inhand-right
+        color: "#f3f5f4"
+      - state: visor-inhand-right
+  - type: Clothing
+    sprite: Clothing/Head/Envirohelms/color.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#3c335b"
+      - state: accent-equipped-HELMET
+        color: "#f3f5f4"
+      - state: visor-equipped-HELMET
+
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelmReporter
+  name: reporter envirosuit helmet
+  description: An envirosuit helmet for the reporter.
+  components:
+  - type: ToggleableLightVisuals
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+  - type: Sprite
+    sprite: Clothing/Head/Envirohelms/color.rsi
+    layers:
+    - state: icon
+      color: "#112334"
+    - state: accent-icon
+      color: "#79121b"
+    - state: visor-icon
+    - state: icon-flash
+      visible: false
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#112334"
+      - state: accent-inhand-left
+        color: "#79121b"
+      - state: visor-inhand-left
+      right:
+      - state: inhand-right
+        color: "#112334"
+      - state: accent-inhand-right
+        color: "#79121b"
+      - state: visor-inhand-right
+  - type: Clothing
+    sprite: Clothing/Head/Envirohelms/color.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#112334"
+      - state: accent-equipped-HELMET
+        color: "#79121b"
+      - state: visor-equipped-HELMET
+
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelmColorDarkGreen
+  name: dark green envirosuit helmet
+  description: A dark green envirosuit helmet.
+  components:
+  - type: ToggleableLightVisuals
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+  - type: Sprite
+    sprite: Clothing/Head/Envirohelms/color.rsi
+    layers:
+    - state: icon
+      color: "#9ed63a"
+    - state: accent-icon
+      color: "#f3f3f3"
+    - state: visor-icon
+    - state: icon-flash
+      visible: false
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#9ed63a"
+      - state: accent-inhand-left
+        color: "#f3f3f3"
+      - state: visor-inhand-left
+      right:
+      - state: inhand-right
+        color: "#9ed63a"
+      - state: accent-inhand-right
+        color: "#f3f3f3"
+      - state: visor-inhand-right
+  - type: Clothing
+    sprite: Clothing/Head/Envirohelms/color.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#9ed63a"
+      - state: accent-equipped-HELMET
+        color: "#f3f3f3"
+      - state: visor-equipped-HELMET
+
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelmMantis
+  name: mantis' envirosuit helmet
+  description: An envirosuit helmet for the forensic mantis.
+  components:
+  - type: ToggleableLightVisuals
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+  - type: Sprite
+    sprite: Clothing/Head/Envirohelms/color.rsi
+    layers:
+    - state: icon
+      color: "#46566d"
+    - state: accent-icon
+      color: "#7d2322"
+    - state: visor-icon
+    - state: icon-flash
+      visible: false
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#46566d"
+      - state: accent-inhand-left
+        color: "#7d2322"
+      - state: visor-inhand-left
+      right:
+      - state: inhand-right
+        color: "#46566d"
+      - state: accent-inhand-right
+        color: "#7d2322"
+      - state: visor-inhand-right
+  - type: Clothing
+    sprite: Clothing/Head/Envirohelms/color.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#46566d"
+      - state: accent-equipped-HELMET
+        color: "#7d2322"
+      - state: visor-equipped-HELMET

@@ -7,8 +7,8 @@
     - !type:CharacterOverallTimeRequirement
       min: 7200 # DeltaV - 2 hours
   startingGear: MusicianGear
-  conditionalStartingGear: # TODO: musician plasmaman gear
-    - id: PassengerPlasmamanGear
+  conditionalStartingGear:
+    - id: MusicianPlasmamanGear
       requirements:
       - !type:CharacterSpeciesRequirement
         species: [ Plasmaman ]
@@ -34,3 +34,11 @@
     ears: ClothingHeadsetService
   satchel: ClothingBackpackSatchelMusicianFilled
   duffelbag: ClothingBackpackDuffelMusicianFilled
+
+- type: startingGear
+  id: MusicianPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitMusician
+    head: ClothingHeadEnvirohelmMusician
+    gloves: ClothingHandsGlovesEnviroglovesWhite

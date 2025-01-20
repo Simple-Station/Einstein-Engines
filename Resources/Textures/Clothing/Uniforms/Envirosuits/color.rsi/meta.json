@@ -38,6 +38,74 @@
       "directions": 4
     },
     {
+      "name": "accent2-icon"
+    },
+    {
+      "name": "accent2-equipped-INNERCLOTHING",
+      "directions": 4
+    },
+    {
+      "name": "accent2-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "accent2-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "accent3-icon"
+    },
+    {
+      "name": "accent3-equipped-INNERCLOTHING",
+      "directions": 4
+    },
+    {
+      "name": "accent3-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "accent3-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "loweraccent-equipped-INNERCLOTHING",
+      "directions": 4
+    },
+    {
+      "name": "loweraccent2-equipped-INNERCLOTHING",
+      "directions": 4
+    },
+    {
+      "name": "pin-icon"
+    },
+    {
+      "name": "pin-equipped-INNERCLOTHING",
+      "directions": 4
+    },
+    {
+      "name": "pin-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "pin-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "buttons-icon"
+    },
+    {
+      "name": "buttons-equipped-INNERCLOTHING",
+      "directions": 4
+    },
+    {
+      "name": "buttons-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "buttons-inhand-right",
+      "directions": 4
+    },
+    {
       "name": "soles-icon"
     },
     {
@@ -50,6 +118,21 @@
     },
     {
       "name": "soles-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "pants-icon"
+    },
+    {
+      "name": "pants-equipped-INNERCLOTHING",
+      "directions": 4
+    },
+    {
+      "name": "pants-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "pants-inhand-right",
       "directions": 4
     }
   ]

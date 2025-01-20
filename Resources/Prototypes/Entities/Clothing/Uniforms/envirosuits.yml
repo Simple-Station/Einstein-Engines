@@ -387,25 +387,19 @@
     layers:
     - state: icon
       color: "#4a281f"
-    - state: accent-icon
-      color: "#c2911e"
-    - state: soles-icon
+    - state: accent2-icon
       color: "#c2911e"
   - type: Item
     inhandVisuals:
       left:
       - state: inhand-left
         color: "#4a281f"
-      - state: accent-inhand-left
-        color: "#c2911e"
-      - state: soles-inhand-left
+      - state: accent2-inhand-left
         color: "#c2911e"
       right:
       - state: inhand-right
         color: "#4a281f"
-      - state: accent-inhand-right
-        color: "#c2911e"
-      - state: soles-inhand-right
+      - state: accent2-inhand-right
         color: "#c2911e"
   - type: Clothing
     sprite: Clothing/Uniforms/Envirosuits/color.rsi
@@ -413,7 +407,183 @@
       jumpsuit:
       - state: equipped-INNERCLOTHING
         color: "#4a281f"
+      - state: accent2-equipped-INNERCLOTHING
+        color: "#c2911e"
+      - state: loweraccent2-equipped-INNERCLOTHING
+        color: "#c2911e"
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitMusician
+  name: musician's envirosuit
+  description: An envirosuit to play music with.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/color.rsi
+    layers:
+    - state: icon
+      color: "#3c335b"
+    - state: accent2-icon
+      color: "#f3f5f4"
+    - state: pin-icon
+      color: "#db2525"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#3c335b"
+      - state: accent2-inhand-left
+        color: "#f3f5f4"
+      - state: pin-inhand-left
+        color: "#db2525"
+      right:
+      - state: inhand-right
+        color: "#3c335b"
+      - state: accent2-inhand-right
+        color: "#f3f5f4"
+      - state: pin-inhand-right
+        color: "#db2525"
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/color.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#3c335b"
+      - state: accent2-equipped-INNERCLOTHING
+        color: "#f3f5f4"
+      - state: loweraccent-equipped-INNERCLOTHING
+        color: "#f3f5f4"
+      - state: pin-equipped-INNERCLOTHING
+        color: "#db2525"
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitReporter
+  name: reporter envirosuit
+  description: An envirosuit for the news-oriented Plasmamen.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/color.rsi
+    layers:
+    - state: icon
+      color: "#112334"
+    - state: accent2-icon
+      color: "#79121b"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#112334"
+      - state: accent2-inhand-left
+        color: "#79121b"
+      right:
+      - state: inhand-right
+        color: "#112334"
+      - state: accent2-inhand-right
+        color: "#79121b"
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/color.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#112334"
+      - state: accent2-equipped-INNERCLOTHING
+        color: "#79121b"
+      - state: loweraccent2-equipped-INNERCLOTHING
+        color: "#79121b"
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitColorDarkGreen
+  name: dark green envirosuit
+  description: A dark green envirosuit
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/color.rsi
+    layers:
+    - state: icon
+      color: "#9ed63a"
+    - state: accent-icon
+      color: "#f3f3f3"
+    - state: soles-icon
+      color: "#f3f3f3"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#9ed63a"
+      - state: accent-inhand-left
+        color: "#f3f3f3"
+      - state: soles-inhand-left
+        color: "#f3f3f3"
+      right:
+      - state: inhand-right
+        color: "#9ed63a"
+      - state: accent-inhand-right
+        color: "#f3f3f3"
+      - state: soles-inhand-right
+        color: "#f3f3f3"
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/color.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#9ed63a"
       - state: accent-equipped-INNERCLOTHING
-        color: "#c2911e"
+        color: "#f3f3f3"
+      - state: loweraccent-equipped-INNERCLOTHING
+        color: "#f3f3f3"
       - state: soles-equipped-INNERCLOTHING
-        color: "#c2911e"
+        color: "#f3f3f3"
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitMantis
+  name: mantis' envirosuit
+  description: Hunting down psionics in the safety of this envirosuit.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/color.rsi
+    layers:
+    - state: icon
+      color: "#46566d"
+    - state: pants-icon
+      color: "#7d2322"
+    - state: accent-icon
+      color: "#b69539"
+    - state: buttons-icon
+      color: "#b69539"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#46566d"
+      - state: pants-inhand-left
+        color: "#7d2322"
+      - state: accent-inhand-left
+        color: "#b69539"
+      - state: buttons-inhand-left
+        color: "#b69539"
+      right:
+      - state: inhand-right
+        color: "#46566d"
+      - state: pants-inhand-right
+        color: "#7d2322"
+      - state: accent-inhand-right
+        color: "#b69539"
+      - state: buttons-inhand-right
+        color: "#b69539"
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/color.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#46566d"
+      - state: pants-equipped-INNERCLOTHING
+        color: "#7d2322"
+      - state: accent-equipped-INNERCLOTHING
+        color: "#b69539"
+      - state: loweraccent-equipped-INNERCLOTHING
+        color: "#b69539"
+      - state: buttons-equipped-INNERCLOTHING
+        color: "#b69539"

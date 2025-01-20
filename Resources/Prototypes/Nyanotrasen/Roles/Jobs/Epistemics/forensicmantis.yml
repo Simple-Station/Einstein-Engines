@@ -19,8 +19,8 @@
           traits:
             - AnomalousPositronics
   startingGear: ForensicMantisGear
-  conditionalStartingGear: # TODO: forensic mantis plasmaman gear
-    - id: ScientistPlasmamanGear
+  conditionalStartingGear:
+    - id: ForensicMantisPlasmamanGear
       requirements:
       - !type:CharacterSpeciesRequirement
         species: [ Plasmaman ]
@@ -63,3 +63,11 @@
   innerClothingSkirt: ClothingUniformSkirtMantis
   satchel: ClothingBackpackSatchelMantisFilled
   duffelbag: ClothingBackpackDuffelMantisFilled
+
+- type: startingGear
+  id: ForensicMantisPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitMantis
+    head: ClothingHeadEnvirohelmMantis
+    gloves: ClothingHandsGlovesEnviroglovesWhite
