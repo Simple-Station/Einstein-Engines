@@ -9,6 +9,7 @@ using Content.Shared.Popups;
 using Content.Shared.Tools;
 using Content.Shared._Shitmed.Targeting;
 using Content.Shared.Body.Systems;
+using Content.Shared.Tools.Components;
 using SharedToolSystem = Content.Shared.Tools.Systems.SharedToolSystem;
 
 namespace Content.Server.Silicon.WeldingHealable;
@@ -81,8 +82,8 @@ public sealed class WeldingHealableSystem : SharedWeldingHealableSystem
             ? component.DoAfterDelay * component.SelfHealPenalty
             : component.DoAfterDelay;
 
-        args.Handled = _toolSystem.UseTool
-            (args.Used,
+        args.Handled = _toolSystem.UseTool(
+            args.Used,
             args.User,
             args.Target,
             delay,
@@ -93,7 +94,7 @@ public sealed class WeldingHealableSystem : SharedWeldingHealableSystem
             });
     }
 
-    private bool HasDamage(DamageableComponent component, WeldingHealingComponent healable)
+    private bool HasDamage(Entity<DamageableComponent> damageable, WeldingHealingComponent healable, EntityUid user)
     {
         if (healable.Damage.DamageDict is null)
             return false;
