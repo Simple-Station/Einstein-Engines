@@ -236,9 +236,11 @@
       speaks:
         - TauCetiBasic
         - Marish
+        - Empathy
       understands:
         - TauCetiBasic
         - Marish
+        - Empathy
     - type: Tag
       tags:
       - CanPilot
