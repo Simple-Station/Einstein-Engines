@@ -76,3 +76,19 @@
 
 # Discord
 /Content.*/Discord* @sleepyyapril @DEATHB4DEFEAT
+
+# Loadouts
+/Resources/Prototypes/Loadouts @angelofallars
+/Resources/Prototypes/CharacterItemGroups @angelofallars
+/Resources/Locale/en-US/loadouts @angelofallars
+
+# Traits
+/Resources/Prototypes/Traits @angelofallars
+/Resources/Locale/en-US/traits @angelofallars
+
+# Throwing
+/Content.*/DamageOtherOnHit @angelofallars
+/Content.*/Embed @angelofallars
+/Content.*/ProjectileSystem @angelofallars
+/Content.*/ThrownItem @angelofallars
+/Content.*/ThrowEvent @angelofallars
