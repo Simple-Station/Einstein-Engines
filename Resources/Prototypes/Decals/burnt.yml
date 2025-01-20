@@ -1,0 +1,39 @@
+- type: decal
+  id: burnt
+  abstract: true
+
+- type: decal
+  id: burnt1
+  parent: burnt
+  tags: ["burnt"]
+  defaultCleanable: true
+  sprite:
+    sprite: Decals/burnt.rsi
+    state: burnt1
+
+- type: decal
+  id: burnt2
+  parent: burnt
+  tags: ["burnt"]
+  defaultCleanable: true
+  sprite:
+    sprite: Decals/burnt.rsi
+    state: burnt2
+
+- type: decal
+  id: burnt3
+  parent: burnt
+  tags: ["burnt"]
+  defaultCleanable: true
+  sprite:
+    sprite: Decals/burnt.rsi
+    state: burnt3
+
+- type: decal
+  id: burnt4
+  parent: burnt
+  tags: ["burnt"]
+  defaultCleanable: true
+  sprite:
+    sprite: Decals/burnt.rsi
+    state: burnt4
