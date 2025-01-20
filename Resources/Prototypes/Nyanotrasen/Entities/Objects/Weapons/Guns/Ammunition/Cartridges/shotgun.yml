@@ -20,3 +20,5 @@
     maxTransferAmount: 15
   - type: SpentAmmoVisuals
     state: "practice"
+  - type: GuideHelp
+    guides: [ Mindbreaking ]

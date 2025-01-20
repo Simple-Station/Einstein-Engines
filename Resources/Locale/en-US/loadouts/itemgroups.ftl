@@ -82,6 +82,21 @@ character-item-group-LoadoutHeadOfPersonnelOuter = Head of Personnel Outerwear
 character-item-group-LoadoutHeadOfPersonnelShoes = Head of Personnel Shoes
 character-item-group-LoadoutHeadOfPersonnelUniforms = Head of Personnel Uniforms
 
+# Dignitary - BlueshieldOfficer
+character-item-group-LoadoutBlueshieldOfficerBackpacks = Blueshield Officer Backpacks
+character-item-group-LoadoutBlueshieldOfficerVests = Blueshield Officer Vests
+character-item-group-LoadoutBlueshieldOfficerUniforms = Blueshield Officer Uniforms
+
+# Dignitary - Magistrate
+character-item-group-LoadoutMagistrateHead = Magistrate Headgear
+character-item-group-LoadoutMagistrateNeck = Magistrate Neckwear
+character-item-group-LoadoutMagistrateOuter = Magistrate Outerwear
+character-item-group-LoadoutMagistrateUniforms = Magistrate Uniforms
+
+# Dignitary - Nanotrasen Representative
+character-item-group-LoadoutNanorepBackpacks = Nanotrasen Representative Backpacks
+character-tiem-group-LoadoutNanorepUniforms = Nanotrasen Representative Uniforms
+
 # Engineering
 character-item-group-LoadoutEngineeringBackpacks = Engineering Backpacks
 character-item-group-LoadoutEngineeringBelt = Engineering Belt

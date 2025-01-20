@@ -130,6 +130,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - MagazinePistol
 
@@ -146,6 +148,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - MagazinePistol
 
@@ -159,6 +163,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - MagazinePistolRubber
 
@@ -172,6 +178,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - MagazinePistolRubber
 
@@ -189,6 +197,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - SpeedLoaderMagnum
 
@@ -206,6 +216,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - SpeedLoaderMagnum
 
@@ -220,6 +232,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - SpeedLoaderMagnumRubber
 
@@ -234,6 +248,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - SpeedLoaderMagnumRubber
 
@@ -251,6 +267,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - MagazineMagnum
 
@@ -268,6 +286,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - MagazineMagnumRubber
 
@@ -285,6 +305,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - MagazineMagnum
 
@@ -302,6 +324,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - MagazineMagnumRubber
 
@@ -319,6 +343,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - SpeedLoaderRifleHeavy
 
@@ -336,6 +362,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - SpeedLoaderRifleHeavy
 
@@ -350,6 +378,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - SpeedLoaderRifleHeavyRubber
 
@@ -364,6 +394,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - SpeedLoaderRifleHeavyRubber
 
@@ -401,6 +433,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponPistolMk58Security
 
@@ -416,6 +450,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponPistolMk58SecurityNonlethal
 
@@ -434,6 +470,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponRevolverInspectorSecurity
 
@@ -449,6 +487,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponRevolverInspectorNonLethalSecurity
 
@@ -467,6 +507,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponRevolverDeckardSecurity
 
@@ -482,6 +524,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponRevolverDeckardNonLethalSecurity
 
@@ -500,6 +544,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponPistolN1984Security
 
@@ -515,6 +561,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponPistolN1984SecurityNonLethal
 
@@ -533,6 +581,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponPistolViperSecurity
 
@@ -548,6 +598,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponPistolViperSecurityNonLethal
 
@@ -566,6 +618,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponPistolViperWoodSecurity
 
@@ -605,6 +659,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponLaserSvalinn
 
@@ -623,6 +679,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponEnergyGunMiniSecurity
 
@@ -641,6 +699,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponEnergyGunPistolSecurity
 
@@ -659,6 +719,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponPistolPollockSecurity
 
@@ -674,6 +736,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponPistolPollockNonlethalSecurity
 
@@ -692,6 +756,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponRevolverSnubSecurity
 
@@ -707,6 +773,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponRevolverSnubNonlethalSecurity
 
@@ -725,6 +793,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponRevolverK38MasterSecurity
 
@@ -740,6 +810,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponRevolverK38MasterNonlethalSecurity
 
@@ -758,6 +830,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponRevolverFitzSecurity
 
@@ -773,6 +847,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponRevolverFitzNonlethalSecurity
 
@@ -791,6 +867,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponRevolverPythonSecurity
 
@@ -806,6 +884,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponRevolverPythonNonlethalSecurity
 
@@ -824,6 +904,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponRevolverArgentiSecurity
 
@@ -839,6 +921,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponRevolverArgentiNonLethalSecurity
 
@@ -994,6 +1078,7 @@
   id: LoadoutSecurityHeadHelmetInsulated
   category: JobsSecurityAUncategorized
   cost: 1
+  guideEntry: PsionicInsulation
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityHead

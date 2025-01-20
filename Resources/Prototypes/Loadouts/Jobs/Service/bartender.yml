@@ -17,6 +17,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - Bartender
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - BoxBeanbag
 
@@ -31,6 +33,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - Bartender
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - MagazineBoxLightRifleRubber
 
@@ -45,6 +49,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - Bartender
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponShotgunDoubleBarreledRubber
 
@@ -59,8 +65,52 @@
     - !type:CharacterJobRequirement
       jobs:
         - Bartender
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponSniperMosinRubber
+
+- type: loadout
+  id: LoadoutServiceBartenderBoxMagnumRubber
+  category: JobsServiceBartender
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderAmmo
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+  items:
+    - MagazineBoxMagnumRubber
+
+- type: loadout
+  id: LoadoutServiceBartenderArgentiNonlethal
+  category: JobsServiceBartender
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+  items:
+    - WeaponRevolverArgentiNonlethal
+
+- type: loadout
+  id: LoadoutServiceBartenderRepeaterNonlethal
+  category: JobsServiceBartender
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+  items:
+    - WeaponSniperRepeaterNonlethal
 
 # Eyes
 
