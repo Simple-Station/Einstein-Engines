@@ -174,7 +174,7 @@
   abstract: true
   components:
   - type: SiliconLawProvider
-    laws: Asimov
+    laws: Augustine
 
 - type: entity
   id: BaseStationSiliconLawCrewsimov
