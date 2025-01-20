@@ -15,6 +15,7 @@
   - WeaponProtoKineticAccelerator
   - ShuttleGunKineticCircuitboard
   - WeaponLaserCarbine
+  - WeaponMechCombatFiredartLaser # Goobstation
   - WeaponEnergyGun
   - WeaponEnergyGunMini
   - WeaponLaserSvalinn
@@ -50,19 +51,6 @@
   - MagazineBoxRifleIncendiary
   - CartridgeSpecialIncendiary
   - MagazineBoxSpecialIncendiary
-
-- type: technology
-  id: WeaponizedLaserManipulation
-  name: research-technology-weaponized-laser-manipulation
-  icon:
-    sprite: Objects/Weapons/Guns/Battery/laser_gun.rsi
-    state: icon
-  discipline: Arsenal
-  tier: 1
-  cost: 7500
-  recipeUnlocks:
-  - WeaponLaserCarbine
-  - WeaponMechCombatFiredartLaser # Goobstation
 
 - type: technology
   id: NonlethalAmmunition
