@@ -272,33 +272,21 @@
         shader: unshaded
 
 - type: entity
-  name: energy sword
+  name: energy cutlass
   parent: EnergyCutlass
-  id: EnergyCutlassSec
-  description: A sleek energy weapon, its blade hums with volatile plasma, expertly contained to cut through nearly any material. # faster, more expert made version of cutlass for security
+  id: EnergyCutlassSecurity
+  description: A sleek energy weapon, its blade hums with volatile plasma, expertly contained to cut through nearly any material. The serial number on the hilt marks this gun as belonging to an NT Security Officer. # how do I make the text blue
+  suffix: Security Loadouts
   components:
   - type: MeleeWeapon
     attackRate: 0.6666
-    soundHit:
-      path: /Audio/Weapons/eblade1.ogg
-    damage:
-      types:
-        Blunt: 6
   - type: ItemToggleMeleeWeapon
     activatedDamage:
         types:
             Slash: 6
             Heat: 12
-    deactivatedSecret: true
-  - type: Sprite
-    sprite: DeltaV/Objects/Weapons/Melee/e_cutlass.rsi
-    layers:
-      - state: e_cutlass
-      - state: e_cutlass_blade
-        color: "#e95151"
-        visible: false
-        shader: unshaded
-        map: [ "blade" ]
+    - type: GuideHelp  
+      guides: [ SecurityWeapons ]  
 
 - type: entity
   name: double-bladed energy sword

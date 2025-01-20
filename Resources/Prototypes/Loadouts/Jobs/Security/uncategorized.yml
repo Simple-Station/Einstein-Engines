@@ -653,14 +653,14 @@
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
-      min: 180000 # 50 hours (veterancy bonus)
+      min: 18000 # 5 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
   items:
-    - EnergyCutlass
+    - EnergyCutlassSecurity
 
 - type: loadout
   id: LoadoutSecurityPistolSvalin
@@ -955,14 +955,14 @@
       group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentTimeRequirement
       department: Security
-      min: 180000 # 50 hours (veterancy bonus)
+      min: 18000 # 5 hours
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
     - !type:CharacterAgeRequirement
       min: 21
   items:
-    - WeaponEnergyRevolver
+    - WeaponEnergyRevolverSecurity
 
 # Eyes
 - type: loadout
