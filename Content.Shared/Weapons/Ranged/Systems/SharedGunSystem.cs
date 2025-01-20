@@ -11,6 +11,7 @@ using Content.Shared.Examine;
 using Content.Shared.Gravity;
 using Content.Shared.Hands;
 using Content.Shared.Hands.Components;
+using Content.Shared.Item;
 using Content.Shared.Mech.Components; // Goobstation
 using Content.Shared.Popups;
 using Content.Shared.Projectiles;
