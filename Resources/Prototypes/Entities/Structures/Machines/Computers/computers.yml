@@ -392,7 +392,11 @@
   - type: Computer
     board: PsionicsRecordsComputerCircuitboard
   - type: AccessReader
-    access: [["Research"]]
+    access:
+      - [ Chapel ]
+      - [ Library ]
+      - [ Mantis ]
+      - [ ResearchDirector ]
   # - type: GuideHelp
     # guides: # TODO: Add a guide for Psionics Registry
 
