@@ -1023,6 +1023,7 @@
       - SecWatchCartridge # DeltaV: SecWatch replaces WantedList
       - StockTradingCartridge # Delta-V
       - NanoChatCartridge # DeltaV
+      - PsiWatchCartridge
 
 - type: entity
   parent: CentcomPDA
