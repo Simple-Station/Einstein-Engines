@@ -217,19 +217,19 @@ public sealed class GravityWellSystem : SharedGravityWellSystem
             if (!CanGravPulseAffect(entity))
                 continue;
 
-            isStatic |= TryComp<MovedByPressureComponent>(entity, out var movedPressure) && !movedPressure.Enabled; //Treat magboots users as static
+            isStatic |= TryComp<MovedByPressureComponent>(entity, out var movedPressure) && !movedPressure.Enabled; // Treat magboots users as static
 
             var displacement = epicenter - _transform.GetWorldPosition(entity, xformQuery);
             var distance2 = displacement.LengthSquared();
             if (distance2 < minRange2)
                 continue;
 
-            var scaling = (1f / distance2) * physics.FixturesMass; // TODO: Variable falloff gradiants.
+            var scaling = (1f / distance2) * physics.FixturesMass; // TODO: Variable falloff gradients
             if (isStatic)
                 scaling *= staticImpulse ?? 1f;
 
             var impulse = Vector2.Transform(displacement, baseMatrixDeltaV) * scaling;
-            if (!isStatic) // impulse shouldn't be applied to static entities
+            if (!isStatic) // Impulse shouldn't be applied to static entities
                 _physics.ApplyLinearImpulse(entity, impulse, body: physics);
 
             appliedImpulse += impulse;
