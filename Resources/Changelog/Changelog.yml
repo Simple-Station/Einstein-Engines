@@ -10510,3 +10510,10 @@ Entries:
   id: 6744
   time: '2025-01-20T23:13:35.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1618
+- author: sleepyyapril
+  changes:
+    - type: Tweak
+      message: Tweaked puddles and footsteps to be able to see them in context menu.
+  id: 6745
+  time: '2025-01-20T23:28:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1620
