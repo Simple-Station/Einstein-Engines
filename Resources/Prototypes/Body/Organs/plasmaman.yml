@@ -40,7 +40,11 @@
   id: OrganPlasmamanEyes
   parent: OrganHumanEyes
   name: plasmaman eyes
-  components: # TODO: add plasmaman eyes sprite
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Plasmaman/organs.rsi
+    state: eyes
+    layers: []
   - type: Butcherable
     butcheringType: Knife
     butcherDelay: 5.0

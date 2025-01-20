@@ -5,7 +5,7 @@ namespace Content.Shared.Humanoid;
 
 public sealed partial class NamingSystem : EntitySystem
 {
-    private readonly Dictionary<string, int> _romanMap = new()
+    private static readonly Dictionary<string, int> RomanMap = new()
     {
         { "M", 1000 },
         { "CM", 900 },
@@ -54,10 +54,10 @@ public sealed partial class NamingSystem : EntitySystem
     // <summary>
     //   Converts an integer to a Roman numeral.
     // </summary>
-    private string IntToRomanNumeral(int number)
+    private static string IntToRomanNumeral(int number)
     {
         var sb = new StringBuilder();
-        foreach (var (letters, equivalentNumber) in _romanMap)
+        foreach (var (letters, equivalentNumber) in RomanMap)
         {
             while (number >= equivalentNumber)
             {

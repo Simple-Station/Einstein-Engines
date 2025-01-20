@@ -173,9 +173,6 @@
     - RightFoot
   - type: Item
     size: Huge
-  - type: Clothing
-    equipDelay: 1
-    unequipDelay: 0.75
   - type: SelfExtinguisher
     cooldown: 100
     requiresIgniteFromGasImmune: true

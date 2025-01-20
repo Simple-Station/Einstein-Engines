@@ -364,30 +364,26 @@
 
 - type: entity
   parent: ClothingHandsGlovesEnviroglovesBase
-  id: ClothingHandsGlovesEnviroglovesHoP # TODO add HoP envirogloves sprite
+  id: ClothingHandsGlovesEnviroglovesHoP
   name: TODO
   description: TODO
   components:
   - type: Sprite
-    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    sprite: Clothing/Hands/Gloves/Envirogloves/hop.rsi
     layers:
     - state: icon
-      color: "#0000ff"
   - type: Item
-    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    sprite: Clothing/Hands/Gloves/Envirogloves/hop.rsi
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#0000ff"
       right:
       - state: inhand-right
-        color: "#0000ff"
   - type: Clothing
-    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    sprite: Clothing/Hands/Gloves/Envirogloves/hop.rsi
     clothingVisuals:
       gloves:
       - state: equipped-HAND
-        color: "#0000ff"
   - type: Fiber
     fiberColor: fibers-blue
 
