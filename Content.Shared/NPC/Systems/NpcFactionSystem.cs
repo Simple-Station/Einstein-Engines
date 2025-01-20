@@ -1,4 +1,5 @@
 using Content.Shared.NPC.Components;
+using Content.Shared.NPC.Events;
 using Content.Shared.NPC.Prototypes;
 using Robust.Shared.Prototypes;
 using System.Collections.Frozen;
@@ -106,6 +107,8 @@ public sealed partial class NpcFactionSystem : EntitySystem
         if (!ent.Comp.Factions.Add(faction))
             return;
 
+        RaiseLocalEvent(ent.Owner, new NpcFactionAddedEvent(faction));
+
         if (dirty)
             RefreshFactions((ent, ent.Comp));
     }
@@ -124,6 +127,8 @@ public sealed partial class NpcFactionSystem : EntitySystem
                 Log.Error($"Unable to find faction {faction}");
                 continue;
             }
+
+            RaiseLocalEvent(ent.Owner, new NpcFactionAddedEvent(faction));
 
             ent.Comp.Factions.Add(faction);
         }
@@ -148,6 +153,8 @@ public sealed partial class NpcFactionSystem : EntitySystem
 
         if (!ent.Comp.Factions.Remove(faction))
             return;
+
+        RaiseLocalEvent(ent.Owner, new NpcFactionRemovedEvent(faction));
 
         if (dirty)
             RefreshFactions((ent, ent.Comp));

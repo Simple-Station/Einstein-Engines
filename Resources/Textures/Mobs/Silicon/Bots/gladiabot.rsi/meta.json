@@ -8,7 +8,43 @@
     "copyright": "Tim Falken",
     "states": [
         {
-            "name": "gladiabot",
+            "name": "GladiabotFFA",
+            "delays": [
+                [
+                    0.5,
+                    0.2
+                ]
+            ]
+        },
+        {
+            "name": "GladiabotRed",
+            "delays": [
+                [
+                    0.5,
+                    0.2
+                ]
+            ]
+        },
+        {
+            "name": "GladiabotGreen",
+            "delays": [
+                [
+                    0.5,
+                    0.2
+                ]
+            ]
+        },
+        {
+            "name": "GladiabotBlue",
+            "delays": [
+                [
+                    0.5,
+                    0.2
+                ]
+            ]
+        },
+        {
+            "name": "GladiabotYellow",
             "delays": [
                 [
                     0.5,

@@ -6,7 +6,7 @@
   components:
   - type: Sprite
     sprite: Mobs/Silicon/Bots/gladiabot.rsi
-    state: gladiabot
+    state: GladiabotFFA
   - type: Inventory
     templateId: gladiabot
   - type: InventorySlots
@@ -26,6 +26,14 @@
   - type: NpcFactionMember
     factions:
     - GladiabotFFA
+  - type: NpcFactionSelector
+    selectableFactions:
+    - GladiabotFFA
+    - GladiabotRed
+    - GladiabotBlue
+    - GladiabotGreen
+    - GladiabotYellow
+  - type: NpcFactionSpriteStateSetter
   - type: CombatMode
   - type: MeleeWeapon
     altDisarm: false
@@ -66,13 +74,6 @@
         - head
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: NpcFactionSelector
-    selectableFactions:
-    - GladiabotFFA
-    - GladiabotRed
-    - GladiabotBlue
-    - GladiabotGreen
-    - GladiabotYellow
   - type: MovementSpeedModifier
     baseWalkSpeed: 2
     baseSprintSpeed: 3

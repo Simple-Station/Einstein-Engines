@@ -13,6 +13,7 @@ public sealed partial class NpcFactionSelectorSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly NpcFactionSystem _factionSystem = default!;
+    [Dependency] private readonly EntityManager _entityManager = default!;
 
     public override void Initialize()
     {
@@ -21,15 +22,17 @@ public sealed partial class NpcFactionSelectorSystem : EntitySystem
         SubscribeLocalEvent<NpcFactionSelectorComponent, GetVerbsEvent<Verb>>(OnGetVerb);
     }
 
-    private void OnGetVerb(EntityUid uid, NpcFactionSelectorComponent component, GetVerbsEvent<Verb> args)
+    private void OnGetVerb(Entity<NpcFactionSelectorComponent> entity, ref GetVerbsEvent<Verb> args)
     {
         if (!args.CanAccess || !args.CanInteract || args.Hands == null)
             return;
 
-        if (component.SelectableFactions.Count < 2)
+        NpcFactionSelectorComponent factionSelectorComponent = _entityManager.GetComponent<NpcFactionSelectorComponent>(entity);
+
+        if (factionSelectorComponent.SelectableFactions.Count < 2)
             return;
 
-        foreach (var type in component.SelectableFactions)
+        foreach (var type in factionSelectorComponent.SelectableFactions)
         {
             var proto = _prototype.Index<NpcFactionPrototype>(type);
 
@@ -42,13 +45,13 @@ public sealed partial class NpcFactionSelectorSystem : EntitySystem
                 DoContactInteraction = true,
                 Act = () =>
                 {
-                    _popup.PopupEntity(Loc.GetString("npcfaction-component-faction-set", ("faction", proto.ID)), uid);
-                    foreach (var type in component.SelectableFactions)
+                    _popup.PopupEntity(Loc.GetString("npcfaction-component-faction-set", ("faction", proto.ID)), entity.Owner);
+                    foreach (var type in factionSelectorComponent.SelectableFactions)
                     {
-                        _factionSystem.RemoveFaction(component.Owner, type);
+                        _factionSystem.RemoveFaction(entity.Owner, type);
                     }
 
-                    _factionSystem.AddFaction(component.Owner, proto.ID);
+                    _factionSystem.AddFaction(entity.Owner, proto.ID);
                 }
             };
             args.Verbs.Add(v);
