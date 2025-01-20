@@ -171,8 +171,8 @@
     - LeftFoot
     - RightLeg
     - RightFoot
-  - type: Item
-    size: Huge
+  - type: Clothing
+    femaleMask: NoMask
   - type: SelfExtinguisher
     cooldown: 100
     requiresIgniteFromGasImmune: true
