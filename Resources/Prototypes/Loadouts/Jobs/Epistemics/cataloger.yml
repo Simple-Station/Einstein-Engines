@@ -60,6 +60,33 @@
     - PillCanisterSpaceDrugs
 
 # Eyes
+- type: loadout
+  id: LoadoutCatalogerEyesEpiHUD
+  category: JobsEpistemicsCataloger
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCatalogerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Librarian
+  items:
+    - ClothingEyesHudEpistemics
+
+- type: loadout
+  id: LoadoutCatalogerEyesEpiGlasses
+  category: JobsEpistemicsCataloger
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCatalogerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Librarian
+  items:
+    - ClothingEyesGlassesEpistemics
 
 # Gloves
 
