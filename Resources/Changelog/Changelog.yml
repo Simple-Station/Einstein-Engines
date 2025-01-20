@@ -10433,3 +10433,26 @@ Entries:
   id: 6738
   time: '2025-01-20T04:52:00.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1580
+- author: Several contributors
+  changes:
+    - type: Add
+      message: >-
+        Added a new central command map that is randomly picked alongside the
+        old one (thank you to Spanky from Harmony)
+    - type: Add
+      message: Added Advanced SMES for mappers.
+    - type: Add
+      message: >-
+        Added the atmospheric network monitor for seeing what the temperature,
+        moles, and pressure is on every pipe everywhere through a computer.
+    - type: Add
+      message: Nukie med bundle now contains a compact defibrillator.
+    - type: Add
+      message: Ported a better mapping editor.
+    - type: Add
+      message: Added the throngler plushie.
+    - type: Remove
+      message: Removed the Throngler as a possible loot spawn for gamble crates.
+  id: 6739
+  time: '2025-01-20T07:24:23.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1610

@@ -575,6 +575,7 @@
     - AutodocCircuitboard # Shitmed Change
     - OperatingTableCircuitboard # Shitmed Change
     - MaterialSiloCircuitboard
+    - SMESAdvancedMachineCircuitboard
     - BaseComputerModularCircuitBoard # Arcadis - Modular Computer System
     - DiskBurnerMachineCircuitboard # Arcadis - Modular Computer System
   - type: EmagLatheRecipes
