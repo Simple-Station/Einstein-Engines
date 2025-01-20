@@ -205,6 +205,12 @@ public sealed partial class CloningSystem : EntitySystem
             || !CheckBiomassCost(uid, physics, clonePod, cloningCostMultiplier))
             return false;
         
+        // Special handling for humanoid data related to metempsychosis. This function is needed for Paradox Anomaly code to play nice with reincarnated people
+        var pref = humanoid.LastProfileLoaded;
+        if (pref == null
+            || !_prototypeManager.TryIndex(humanoid.Species, out var speciesPrototype))
+            return false;
+
         if (HasComp<SiliconComponent>(bodyToClone))
             return false; // Goobstation: Don't clone IPCs.
 
