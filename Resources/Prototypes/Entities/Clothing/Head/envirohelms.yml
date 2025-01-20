@@ -630,3 +630,57 @@
       - state: accent-equipped-HELMET
         color: "#a349a4"
       - state: visor-equipped-HELMET
+
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelmMartialGi
+  name: gi envirosuit helmet
+  description: A white envirosuit helmet with black stripes used for martial arts.
+  components:
+  - type: ToggleableLightVisuals
+    inhandVisuals:
+      left:
+      - state: visor-inhand-left
+        shader: unshaded
+      right:
+      - state: visor-inhand-right
+        shader: unshaded
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+        shader: unshaded
+  - type: Sprite
+    sprite: Clothing/Head/Envirohelms/color.rsi
+    layers:
+    - state: icon
+      color: "#ffffff"
+    - state: accent-icon
+      color: "#3b3b3b"
+    - state: visor-icon
+    - state: icon-flash
+      visible: false
+      shader: unshaded # TODO make every envirohelm light sprite unshaded
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ffffff"
+      - state: accent-inhand-left
+        color: "#3b3b3b"
+      - state: visor-inhand-left
+      right:
+      - state: inhand-right
+        color: "#ffffff"
+      - state: accent-inhand-right
+        color: "#3b3b3b"
+      - state: visor-inhand-right
+  - type: Clothing
+    sprite: Clothing/Head/Envirohelms/color.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#ffffff"
+      - state: accent-equipped-HELMET
+        color: "#3b3b3b"
+      - state: visor-equipped-HELMET

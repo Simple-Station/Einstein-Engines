@@ -623,3 +623,39 @@
         color: "#a349a4"
       - state: loweraccent-equipped-INNERCLOTHING
         color: "#a349a4"
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitMartialGi
+  name: gi envirosuit
+  description: A flowy envirosuit tailor-made for martial arts that doesn't restrict your mobility.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/color.rsi
+    layers:
+    - state: icon
+      color: "#ffffff"
+    - state: accent-icon
+      color: "#3b3b3b"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ffffff"
+      - state: accent-inhand-left
+        color: "#3b3b3b"
+      right:
+      - state: inhand-right
+        color: "#ffffff"
+      - state: accent-inhand-right
+        color: "#3b3b3b"
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/color.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#ffffff"
+      - state: accent-equipped-INNERCLOTHING
+        color: "#3b3b3b"
+      - state: loweraccent-equipped-INNERCLOTHING
+        color: "#3b3b3b"

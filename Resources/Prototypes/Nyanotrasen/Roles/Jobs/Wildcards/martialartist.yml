@@ -7,8 +7,8 @@
     - !type:CharacterOverallTimeRequirement
       min: 7200 #2 hours
   startingGear: MartialArtistGear
-  conditionalStartingGear: # TODO: martial artist plasmaman gear
-    - id: PassengerPlasmamanGear
+  conditionalStartingGear:
+    - id: MartialArtistPlasmamanGear
       requirements:
       - !type:CharacterSpeciesRequirement
         species: [ Plasmaman ]
@@ -37,3 +37,12 @@
     gloves: ClothingHandsGlovesBoxingRed
   satchel: ClothingBackpackSatchelFilled
   duffelbag: ClothingBackpackDuffelFilled
+
+- type: startingGear
+  id: MartialArtistPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitMartialGi
+    head: ClothingHeadEnvirohelmMartialGi
+    # No envirogloves, use the boxing gloves instead
+    shoes: ClothingShoesColorBlack
