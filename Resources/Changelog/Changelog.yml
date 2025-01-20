@@ -10406,3 +10406,10 @@ Entries:
   id: 6735
   time: '2025-01-20T01:25:56.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1607
+- author: Rane
+  changes:
+    - type: Add
+      message: Added Augustine lawset as a middle ground between Asimov and Crewsimov.
+  id: 6736
+  time: '2025-01-20T02:43:40.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1609
