@@ -74,7 +74,7 @@
     sprite: Objects/Tanks/plasmaman.rsi
     state: icon
   product: CratePlasmamanLifeSupport
-  cost: 500
+  cost: 400
   category: cargoproduct-category-name-emergency
   group: market
 
