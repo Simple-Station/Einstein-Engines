@@ -10413,3 +10413,23 @@ Entries:
   id: 6736
   time: '2025-01-20T02:43:40.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1609
+- author: Mike32oz
+  changes:
+    - type: Add
+      message: ATS, light post, snacks/drinks vendors.
+    - type: Tweak
+      message: ATS, tiny fan, convenient belt.
+    - type: Remove
+      message: ATS, spawn-MobBear in the Maintenance room.
+  id: 6737
+  time: '2025-01-20T04:51:26.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1612
+- author: Erisfiregamer1
+  changes:
+    - type: Add
+      message: >-
+        Added the Disk Burner, the Modular Computer as a board and a way to make
+        computer disks.
+  id: 6738
+  time: '2025-01-20T04:52:00.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1580

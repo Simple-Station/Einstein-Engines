@@ -200,6 +200,7 @@
     - WeaponCapacitorRechargerCircuitboard
     - HandheldStationMap
     - ClothingHeadHatWelding
+    - ProgramDiskUnburnt # Arcadis - Modular Computer System
     - FauxTileAstroGrass
     - FauxTileMowedAstroGrass
     - FauxTileJungleAstroGrass
@@ -574,6 +575,8 @@
     - AutodocCircuitboard # Shitmed Change
     - OperatingTableCircuitboard # Shitmed Change
     - MaterialSiloCircuitboard
+    - BaseComputerModularCircuitBoard # Arcadis - Modular Computer System
+    - DiskBurnerMachineCircuitboard # Arcadis - Modular Computer System
   - type: EmagLatheRecipes
     emagDynamicRecipes:
     - ShuttleGunDusterCircuitboard
