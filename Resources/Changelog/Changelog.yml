@@ -10339,3 +10339,45 @@ Entries:
   id: 6729
   time: '2025-01-19T02:45:07.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1455
+- author: VMSolidus
+  changes:
+    - type: Remove
+      message: >-
+        1984'd most instances of "Unobtainium" chemistry. Chems like Necrosol
+        that previously required normally unobtainable reagents such as
+        Cognizine or Vestine now instead have long production chains of chems
+        that are obtainable, but complicated to produce. Check the chemistry
+        menu for more information.
+  id: 6730
+  time: '2025-01-19T19:24:31.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1600
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Made Arsenal Research significantly more interesting by consolidating
+        most of the useless single item researches into larger essential
+        categories. Basic Weapons, Advanced Weapons, Prototype Weapons. Going
+        forwards, these three categories will have significantly more exciting
+        options added to them that should make it more worthwhile to pursue. 
+  id: 6731
+  time: '2025-01-19T20:44:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1602
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Consolidated the Civilian Services research category to make them more
+        interesting and broadly useful.
+  id: 6732
+  time: '2025-01-19T21:54:48.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1603
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added Advanced Tacsuits, and Prototype Tacsuits to Arsenal research.
+        Along with them comes Security Techfab recipes for said tacsuits.
+  id: 6733
+  time: '2025-01-19T23:38:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1604
