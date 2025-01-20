@@ -1,6 +1,7 @@
 - type: entity
   save: false
   parent:
+    - BaseMobSpeciesOrganic
     - MobBloodstream
     - MobAtmosStandard
     - MobFlammable
@@ -15,7 +16,7 @@
         - trigger:
             !type:DamageTypeTrigger
             damageType: Blunt
-            damage: 400
+            damage: 300
           behaviors:
             - !type:GibBehavior {}
             - !type:SpawnEntitiesBehavior
@@ -231,16 +232,15 @@
       mana: 100
       maxMana: 200
       noMana: shadowkin-tired
-    - type: InnatePsionicPowers
-      powersToAdd:
-        - DarkSwapPower
     - type: LanguageKnowledge
       speaks:
         - TauCetiBasic
         - Marish
+        - Empathy
       understands:
         - TauCetiBasic
         - Marish
+        - Empathy
     - type: Tag
       tags:
       - CanPilot
