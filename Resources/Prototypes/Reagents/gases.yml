@@ -142,7 +142,7 @@
         - !type:OrganType
           type: Plasmaman
         ratios:
-          CarbonDioxide: 1.0 # TODO: evaluate gas type for plasmaman exhale
+          Nitrogen: 1.0 # Interesting exhale for plasmamen
           Plasma: -1.0
     Medicine:
       effects:
