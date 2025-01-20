@@ -360,3 +360,48 @@
     sprite: Clothing/Head/Envirohelms/centcom_officer.rsi
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/centcom_officer.rsi
+
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelmCourier
+  name: courier's envirosuit helmet
+  description: An envirosuit helmet for the courier.
+  components:
+  - type: ToggleableLightVisuals
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+  - type: Sprite
+    sprite: Clothing/Head/Envirohelms/color.rsi
+    layers:
+    - state: icon
+      color: "#4a281f"
+    - state: accent-icon
+      color: "#c2911e"
+    - state: visor-icon
+    - state: icon-flash
+      visible: false
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#4a281f"
+      - state: accent-inhand-left
+        color: "#c2911e"
+      - state: visor-inhand-left
+      right:
+      - state: inhand-right
+        color: "#4a281f"
+      - state: accent-inhand-right
+        color: "#c2911e"
+      - state: visor-inhand-right
+  - type: Clothing
+    sprite: Clothing/Head/Envirohelms/color.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#4a281f"
+      - state: accent-equipped-HELMET
+        color: "#c2911e"
+      - state: visor-equipped-HELMET

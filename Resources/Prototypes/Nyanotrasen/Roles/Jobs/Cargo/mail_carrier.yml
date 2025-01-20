@@ -3,8 +3,8 @@
   name: job-name-mail-carrier
   description: job-description-mail-carrier
   startingGear: CourierGear
-  conditionalStartingGear: # TODO: courier-unique plasmaman gear
-    - id: CargoTechPlasmamanGear
+  conditionalStartingGear:
+    - id: CourierPlasmamanGear
       requirements:
       - !type:CharacterSpeciesRequirement
         species: [ Plasmaman ]
