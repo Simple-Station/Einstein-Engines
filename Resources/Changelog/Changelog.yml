@@ -10381,3 +10381,28 @@ Entries:
   id: 6733
   time: '2025-01-19T23:38:50.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1604
+- author: VMSolidus
+  changes:
+    - type: Remove
+      message: >-
+        Removed the "Tier 3 Tech Lockout" mechanic. You are no longer limited to
+        1 discipline worth of t3 research.
+    - type: Add
+      message: >-
+        Research is now "Softcapped" by Tier 3 unlocks. Each unlocked Tier 3
+        technology multiplicatively increases the cost of all other research.
+        Rushing a capstone can be quite expensive, as will be getting multiple
+        capstones. I hope you're glad that you can build more than one prober
+        now without guaranteeing the station will explode.
+  id: 6734
+  time: '2025-01-20T01:20:19.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1605
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Possibly fixed a crash related to Loadouts being applied to entities
+        that don't exist.
+  id: 6735
+  time: '2025-01-20T01:25:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1607

@@ -44,7 +44,7 @@ public sealed class LoadoutSystem : EntitySystem
 
     private void OnPlayerSpawnComplete(PlayerSpawnCompleteEvent ev)
     {
-        if (ev.JobId == null
+        if (ev.JobId == null || Deleted(ev.Mob) || !Exists(ev.Mob)
             || !_protoMan.TryIndex<JobPrototype>(ev.JobId, out _)
             || !_configurationManager.GetCVar(CCVars.GameLoadoutsEnabled))
             return;
