@@ -1,0 +1,41 @@
+- type: entity
+  parent: BaseItem
+  id: BaseProgramDisk
+  abstract: true
+  name: program disk
+  components:
+    - type: Sprite
+      sprite: Objects/Misc/cd.rsi
+      state: icon
+    - type: ComputerDisk
+    - type: Tag
+      tags:
+        - ComputerDisk
+
+- type: entity
+  parent: BaseProgramDisk
+  id: ProgramDiskCommunications
+  name: program disk
+  suffix: Communications
+  description: A diskette for usage in a computer.
+  components:
+    - type: ComputerDisk
+      programPrototype: CommunicationsConsoleDiskPrototype
+      persistState: true
+
+- type: entity
+  parent: BaseProgramDisk
+  id: ProgramDiskUnburnt
+  name: program disk
+  description: A diskette for usage in a computer.
+  components:
+    - type: ComputerDisk
+      programPrototype: UnburnedDiskPrototype
+      persistState: true
+
+- type: latheRecipe
+  id: ProgramDiskUnburnt
+  result: ProgramDiskUnburnt
+  completetime: 2
+  materials:
+    Plastic: 50

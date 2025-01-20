@@ -17,6 +17,10 @@
         Glass: 230
       chemicalComposition:
         Silicon: 20
+    - type: Tag
+      tags:
+        - ComputerBoard
+
 
 - type: entity
   parent: BaseComputerCircuitboard
@@ -26,6 +30,15 @@
   components:
     - type: ComputerBoard
       prototype: ComputerAlert
+      
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: AtmosMonitoringComputerCircuitboard
+  name: atmospheric network monitor board
+  description: A computer printed circuit board for an atmospheric network monitor.
+  components:
+    - type: ComputerBoard
+      prototype: ComputerAtmosMonitoring
 
 - type: entity
   parent: BaseComputerCircuitboard
@@ -62,6 +75,17 @@
       state: cpu_security
     - type: ComputerBoard
       prototype: ComputerCriminalRecords
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: PsionicsRecordsComputerCircuitboard
+  name: psionics registry computer board
+  description: A computer printed circuit board for a psionics registry computer.
+  components:
+    - type: Sprite
+      state: cpu_science
+    - type: ComputerBoard
+      prototype: ComputerPsionicsRecords
 
 - type: entity
   parent: BaseComputerCircuitboard
@@ -277,6 +301,7 @@
       state: cpu_command
     - type: ComputerBoard
       prototype: ComputerComms
+      modularComputerProgramPrototype: CommunicationsConsoleDiskPrototype
 
 - type: entity
   parent: BaseComputerCircuitboard

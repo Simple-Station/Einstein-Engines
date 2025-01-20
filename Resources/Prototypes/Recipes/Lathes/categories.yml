@@ -23,6 +23,10 @@
   name: lathe-category-robotics
 
 - type: latheCategory
+  id: Tacsuits
+  name: lathe-category-tacsuits
+
+- type: latheCategory
   id: Tools
   name: lathe-category-tools
 
