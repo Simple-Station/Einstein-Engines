@@ -78,6 +78,17 @@
 
 - type: entity
   parent: BaseComputerCircuitboard
+  id: PsionicsRecordsComputerCircuitboard
+  name: psionics registry computer board
+  description: A computer printed circuit board for a psionics registry computer.
+  components:
+    - type: Sprite
+      state: cpu_science
+    - type: ComputerBoard
+      prototype: ComputerPsionicsRecords
+
+- type: entity
+  parent: BaseComputerCircuitboard
   id: StationRecordsComputerCircuitboard
   name: station records computer board
   description: A computer printed circuit board for a station records computer.
