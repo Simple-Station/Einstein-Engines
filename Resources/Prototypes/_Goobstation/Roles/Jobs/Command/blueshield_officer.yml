@@ -15,6 +15,11 @@
       min: 54000 # 15 hours
   weight: 20
   startingGear: BlueshieldOfficerGear
+  conditionalStartingGear:
+    - id: BlueshieldPlasmamanGear
+      requirements:
+      - !type:CharacterSpeciesRequirement
+        species: [ Plasmaman ]
   icon: "JobIconBlueshield"
   requireAdminNotify: true
   joinNotifyCrew: true
@@ -57,3 +62,11 @@
     #belt: ClothingBeltSecurityFilled
     #pocket1: WeaponPistolMk58
     #pocket2: DeathAcidifierImplanter
+
+- type: startingGear
+  id: BlueshieldPlasmamanGear # TODO: add blueshield envirosuit
+  parent: BasePlasmamanSecurityGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitSec
+    head: ClothingHeadEnvirohelmSec
+    gloves: ClothingHandsGlovesEnviroglovesBlack

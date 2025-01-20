@@ -12,6 +12,11 @@
       min: 54000 # 15 hours
   weight: 20
   startingGear: MagistrateGear
+  conditionalStartingGear:
+    - id: MagistratePlasmamanGear
+      requirements:
+      - !type:CharacterSpeciesRequirement
+        species: [ Plasmaman ]
   icon: "JobIconMagistrate"
   requireAdminNotify: true
   joinNotifyCrew: true
@@ -44,3 +49,11 @@
     id: CentcomPDA
     ears: ClothingHeadsetMagistrate
     pocket1: UniqueMagistrateLockerTeleporter
+
+- type: startingGear
+  id: MagistratePlasmamanGear # TODO: add magistrate envirosuit
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitEnviroslacks
+    head: ClothingHeadEnvirohelmWhite
+    gloves: ClothingHandsGlovesEnviroglovesWhite
