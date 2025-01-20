@@ -10330,3 +10330,153 @@ Entries:
   id: 6728
   time: '2025-01-18T23:37:19.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1586
+- author: BlueHNT
+  changes:
+    - type: Add
+      message: Added Cohiba Robusto cigars
+    - type: Tweak
+      message: Tweaked nicotine amounts in cigars, smoke longer
+  id: 6729
+  time: '2025-01-19T02:45:07.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1455
+- author: VMSolidus
+  changes:
+    - type: Remove
+      message: >-
+        1984'd most instances of "Unobtainium" chemistry. Chems like Necrosol
+        that previously required normally unobtainable reagents such as
+        Cognizine or Vestine now instead have long production chains of chems
+        that are obtainable, but complicated to produce. Check the chemistry
+        menu for more information.
+  id: 6730
+  time: '2025-01-19T19:24:31.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1600
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Made Arsenal Research significantly more interesting by consolidating
+        most of the useless single item researches into larger essential
+        categories. Basic Weapons, Advanced Weapons, Prototype Weapons. Going
+        forwards, these three categories will have significantly more exciting
+        options added to them that should make it more worthwhile to pursue. 
+  id: 6731
+  time: '2025-01-19T20:44:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1602
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Consolidated the Civilian Services research category to make them more
+        interesting and broadly useful.
+  id: 6732
+  time: '2025-01-19T21:54:48.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1603
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added Advanced Tacsuits, and Prototype Tacsuits to Arsenal research.
+        Along with them comes Security Techfab recipes for said tacsuits.
+  id: 6733
+  time: '2025-01-19T23:38:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1604
+- author: VMSolidus
+  changes:
+    - type: Remove
+      message: >-
+        Removed the "Tier 3 Tech Lockout" mechanic. You are no longer limited to
+        1 discipline worth of t3 research.
+    - type: Add
+      message: >-
+        Research is now "Softcapped" by Tier 3 unlocks. Each unlocked Tier 3
+        technology multiplicatively increases the cost of all other research.
+        Rushing a capstone can be quite expensive, as will be getting multiple
+        capstones. I hope you're glad that you can build more than one prober
+        now without guaranteeing the station will explode.
+  id: 6734
+  time: '2025-01-20T01:20:19.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1605
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Possibly fixed a crash related to Loadouts being applied to entities
+        that don't exist.
+  id: 6735
+  time: '2025-01-20T01:25:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1607
+- author: Rane
+  changes:
+    - type: Add
+      message: Added Augustine lawset as a middle ground between Asimov and Crewsimov.
+  id: 6736
+  time: '2025-01-20T02:43:40.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1609
+- author: Mike32oz
+  changes:
+    - type: Add
+      message: ATS, light post, snacks/drinks vendors.
+    - type: Tweak
+      message: ATS, tiny fan, convenient belt.
+    - type: Remove
+      message: ATS, spawn-MobBear in the Maintenance room.
+  id: 6737
+  time: '2025-01-20T04:51:26.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1612
+- author: Erisfiregamer1
+  changes:
+    - type: Add
+      message: >-
+        Added the Disk Burner, the Modular Computer as a board and a way to make
+        computer disks.
+  id: 6738
+  time: '2025-01-20T04:52:00.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1580
+- author: Several contributors
+  changes:
+    - type: Add
+      message: >-
+        Added a new central command map that is randomly picked alongside the
+        old one (thank you to Spanky from Harmony)
+    - type: Add
+      message: Added Advanced SMES for mappers.
+    - type: Add
+      message: >-
+        Added the atmospheric network monitor for seeing what the temperature,
+        moles, and pressure is on every pipe everywhere through a computer.
+    - type: Add
+      message: Nukie med bundle now contains a compact defibrillator.
+    - type: Add
+      message: Ported a better mapping editor.
+    - type: Add
+      message: Added the throngler plushie.
+    - type: Remove
+      message: Removed the Throngler as a possible loot spawn for gamble crates.
+  id: 6739
+  time: '2025-01-20T07:24:23.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1610
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: The medbay fent zombie epidemic is now fixed.
+  id: 6740
+  time: '2025-01-20T08:13:06.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1614
+- author: CerberusWolfie
+  changes:
+    - type: Add
+      message: >-
+        Added Psionics Registry Computer. Now you can record Psionics users in
+        Epistemics.
+    - type: Add
+      message: >-
+        Added epi-glasses and epi-HUD to see Psionics Users icons. (Chaplain,
+        Cataloguer, Mantis, and Mystagogue have access in loadout).
+    - type: Add
+      message: Added PsiWatch. Now you can see the Psionics Records data on your PDA!
+    - type: Fix
+      message: Fixed Chaplain not having any programs in their PDA on spawn.
+  id: 6741
+  time: '2025-01-20T09:50:34.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1598

@@ -172,9 +172,9 @@
   id: Jukebox
   dummyWires: 2
   wires:
-    - !type:PowerWireAction
-    - !type:AiInteractWireAction
-    
+  - !type:PowerWireAction
+  - !type:AiInteractWireAction
+
 - type: wireLayout
   id: AnomalyGenerator
   dummyWires: 2
