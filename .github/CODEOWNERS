@@ -1,3 +1,79 @@
-# Last match in file takes precedence.
+/.*
+*.sln
+*.csproj
+*.dotsettings
+*.DotSettings
+*.toml
+/Content.*/IoC @sleepyyapril
 
-# TODO
+
+# Nix
+*.nix @DEATHB4DEFEAT @stellar-novas
+/flake.lock @DEATHB4DEFEAT @stellar-novas
+/.envrc @DEATHB4DEFEAT @stellar-novas
+
+
+# UI
+*.xaml @sleepyyapril
+*.xaml.cs @sleepyyapril
+
+# Lobby
+/Content.Client/Lobby @DEATHB4DEFEAT
+/Content.Client/MainMenu @DEATHB4DEFEAT
+
+# Queue
+/Content.*/DiscordAuth
+/Content.*/JoinQueue
+
+
+# Writing
+*.xml
+*.ftl @sleepyyapril
+*.md
+*.txt
+*.yml
+
+# Shaders
+*.swsl
+/Resources/Prototypes/Shaders
+
+# Overlays
+/Content.Client/Overlays
+
+# Paint
+/Content.*/Paint
+
+
+# Parkstation/etc
+**/SimpleStation14
+**/Parkstation
+
+# Announcer system
+/Content.*/Announcements
+/Content.Server/StationEvents
+
+# SSD
+/Content.*/SSDIndicator
+
+# Station Goals
+/Content.Server/StationGoal
+
+# Random Bark
+/Content.Server/Speech/Components/RandomBarkComponent.cs
+/Content.Server/Speech/Systems/RandomBarkSystem.cs
+/Resources/Locale/en-US/random-barks
+
+# Punpun
+/Content.Server/Punpun
+
+
+# Database
+/Content.*/Database @sleepyyapril
+/Content.*.Database @sleepyyapril
+
+# Preferences
+/Content.*/Preferences
+**/*CVar*/*.cs @sleepyyapril
+
+# Discord
+/Content.*/Discord* @sleepyyapril
