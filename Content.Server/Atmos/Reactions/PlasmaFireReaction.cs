@@ -68,7 +68,7 @@ namespace Content.Server.Atmos.Reactions
             {
                 var newHeatCapacity = atmosphereSystem.GetHeatCapacity(mixture, true);
                 if (newHeatCapacity > Atmospherics.MinimumHeatCapacity)
-                    mixture.Temperature = (temperature * oldHeatCapacity + energyReleased) / newHeatCapacity;
+                    mixture.Temperature = MathF.Min(Atmospherics.PlasmaUpperTemperature, (temperature * oldHeatCapacity + energyReleased) / newHeatCapacity);
             }
 
             if (location != null)
