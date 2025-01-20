@@ -8,9 +8,9 @@ psionics-records-console-no-record-found = No record was found for the selected 
 
 psionics-records-console-status = Status
 psionics-records-status-none = None
-psionics-records-status-registered = Registered
-psionics-records-status-suspected = Suspected
-psionics-records-status-abusing = Abusing
+psionics-records-status-registered = Registered Psionic
+psionics-records-status-suspected = Suspected Psionics
+psionics-records-status-abusing = Abusing Psionics
 
 psionics-records-console-wanted-reason = [color=gray]Psionics Listed[/color]
 psionics-records-console-suspected-reason = [color=gray]Suspected Reason[/color]
@@ -21,12 +21,12 @@ psionics-records-permission-denied = Permission denied
 
 ## Security channel notifications
 
-psionics-records-console-registered = {$name} is registered by {$officer} with psionics: {$reason}.
-psionics-records-console-suspected = {$officer} marked {$name} as suspicious because of: {$reason}.
-psionics-records-console-not-suspected = {$name} is no longer a suspect.
-psionics-records-console-not-registered = {$name} is no longer registered.
-psionics-records-console-abusing = {$officer} marked {$name} as abusing because of: {$reason}.
-psionics-records-console-not-abusing = {$name} is no longer marked abusing.
+psionics-records-console-registered = {$name} is registered as psionic by {$officer}: {$reason}.
+psionics-records-console-suspected = {$officer} marked {$name} as a possible psionic because of: {$reason}.
+psionics-records-console-not-suspected = {$name} is no longer a suspected psionic.
+psionics-records-console-not-registered = {$name} is no longer registered as psionic.
+psionics-records-console-abusing = {$officer} marked {$name} as abusing psionics because of: {$reason}.
+psionics-records-console-not-abusing = {$name} is no longer marked as abusing psionics.
 psionics-records-console-unknown-officer = <unknown officer>
 
 ## Filters
