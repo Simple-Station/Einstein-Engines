@@ -10498,3 +10498,15 @@ Entries:
   id: 6743
   time: '2025-01-20T21:34:51.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1617
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed the Supermatter engine math so that it actually respects the
+        server's tickrate. It should now be SIGNIFICANTLY less likely to enter a
+        plasma fire death spiral. If it does catch fire, just make sure coolant
+        is being pumped into the engine, and start blasting it with a fire
+        extinguisher. 
+  id: 6744
+  time: '2025-01-20T23:13:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1618
