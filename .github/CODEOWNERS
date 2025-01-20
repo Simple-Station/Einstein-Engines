@@ -4,7 +4,7 @@
 *.dotsettings @DEATHB4DEFEAT
 *.DotSettings @DEATHB4DEFEAT
 *.toml @DEATHB4DEFEAT
-/Content.*/IoC @sleepyyapril
+/Content.*/IoC @sleepyyapril @DEATHB4DEFEAT
 
 
 # Nix
@@ -68,11 +68,11 @@
 
 # Database
 /Content.*/Database @sleepyyapril @DEATHB4DEFEAT
-/Content.*.Database @sleepyyapril @DEATHB4DEFEAT
+/Content.*/.Database @sleepyyapril @DEATHB4DEFEAT
 
 # Preferences
-/Content.*/Preferences
+/Content.*/Preferences @DEATHB4DEFEAT
 **/*CVar*/*.cs @sleepyyapril @DEATHB4DEFEAT
 
 # Discord
-/Content.*/Discord* @sleepyyapril
+/Content.*/Discord* @sleepyyapril @DEATHB4DEFEAT
