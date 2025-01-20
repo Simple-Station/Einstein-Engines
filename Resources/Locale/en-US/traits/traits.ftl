@@ -500,11 +500,12 @@ trait-description-PsychognomyPower =
 
 trait-name-Redshirt = Redshirt
 trait-description-Redshirt =
-    They said this air would be breathable.
+    "They said this air would be breathable.
     Get in, get out again, and no one gets hurt.
     Something is pulling me up the hill.
     I look down in my red shirt.
-    I look down in my red shirt.
+    I look down in my red shirt."
+    Reduces your threshold for death by 100 points.
 
 trait-name-BrittleBoneDisease = Osteogenesis Imperfecta
 trait-description-BrittleBoneDisease =

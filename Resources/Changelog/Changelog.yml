@@ -10480,3 +10480,10 @@ Entries:
   id: 6741
   time: '2025-01-20T09:50:34.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1598
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Tweak
+      message: Made the Redshirt trait's description say what it does
+  id: 6742
+  time: '2025-01-20T19:35:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1616
