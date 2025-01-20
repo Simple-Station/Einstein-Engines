@@ -66,7 +66,9 @@ public partial class MobStateSystem
     {
         foreach(var entry in comp.InitMobStateParams)
         {
-            DebugTools.Assert(_wehavereflectionathome.TryParseEnumReference($"enum.MobState.{entry.Key}", out var e), $"MobState.{entry.Key} does not exist.");
+            Enum? e = null;
+            DebugTools.Assert(_wehavereflectionathome.TryParseEnumReference($"enum.MobState.{entry.Key}", out e), $"MobState.{entry.Key} does not exist.");
+
             MobState state = (MobState) e;
 
             // if this fails, then either the prototype has two parameters specified for one mobstate,
@@ -101,7 +103,7 @@ public partial class MobStateSystem
     {
         // TODO is this necessary?
         // Shouldn't the interaction have already been blocked by a general interaction check?
-        if (args.User.HasValue && IsIncapacitated(args.User.Value, comp))
+        if (args.User.HasValue && IsIncapacitated(args.User.Value))
             args.Cancel();
     }
 
