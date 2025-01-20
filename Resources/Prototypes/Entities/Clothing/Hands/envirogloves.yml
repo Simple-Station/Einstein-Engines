@@ -30,8 +30,8 @@
 - type: entity
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesBlack
-  name: TODO
-  description: TODO
+  name: black envirogloves
+  description: Covers up those scandalous boney hands.
   components:
   - type: Sprite
     sprite: Clothing/Hands/Gloves/Color/color.rsi
@@ -59,8 +59,8 @@
 - type: entity
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesNitrile
-  name: TODO
-  description: TODO
+  name: nitrile envirogloves
+  desc: Pricy nitrile gloves made for plasmamen.
   components:
   - type: Sprite
     sprite: Clothing/Hands/Gloves/nitrile.rsi
@@ -72,8 +72,8 @@
 - type: entity
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesWhite
-  name: TODO
-  description: TODO
+  name: white envirogloves
+  description: Covers up those scandalous boney hands.
   components:
   - type: Sprite
     sprite: Clothing/Hands/Gloves/Color/color.rsi
@@ -101,8 +101,8 @@
 - type: entity
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesRoboticist
-  name: TODO
-  description: TODO
+  name: roboticist envirogloves
+  description: Covers up those scandalous boney hands.
   components:
   - type: Sprite
     sprite: Clothing/Hands/Gloves/Color/color.rsi
@@ -130,8 +130,8 @@
 - type: entity
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesJanitor
-  name: TODO
-  description: TODO
+  name: janitor envirogloves
+  description: Covers up those scandalous boney hands.
   components:
   - type: Sprite
     sprite: Clothing/Hands/Gloves/Color/color.rsi
@@ -159,8 +159,8 @@
 - type: entity
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesCargo
-  name: TODO
-  description: TODO
+  name: logistics envirogloves
+  description: Covers up those scandalous boney hands.
   components:
   - type: Sprite
     sprite: Clothing/Hands/Gloves/Color/color.rsi
@@ -188,8 +188,8 @@
 - type: entity
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesEngineering
-  name: TODO
-  description: TODO
+  name: engineering envirogloves
+  description: Covers up those scandalous boney hands.
   components:
   - type: Sprite
     sprite: Clothing/Hands/Gloves/Color/color.rsi
@@ -217,8 +217,8 @@
 - type: entity
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesAtmos
-  name: TODO
-  description: TODO
+  name: atmos envirogloves
+  description: Covers up those scandalous boney hands.
   components:
   - type: Sprite
     sprite: Clothing/Hands/Gloves/Color/color.rsi
@@ -246,8 +246,8 @@
 - type: entity
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesSalvage
-  name: TODO
-  description: TODO
+  name: salvage envirogloves
+  description: Covers up those scandalous boney hands.
   components:
   - type: Sprite
     sprite: Clothing/Hands/Gloves/Color/color.rsi
@@ -275,8 +275,8 @@
 - type: entity
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesLeather
-  name: TODO
-  description: TODO
+  name: hydroponics envirogloves
+  desc: These leather gloves protect your boney hands against thorns, barbs, prickles, spikes and other harmful objects of floral origin.
   components:
   - type: Sprite
     sprite: Clothing/Hands/Gloves/Color/color.rsi
@@ -307,8 +307,8 @@
 - type: entity
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesPrototype
-  name: TODO
-  description: TODO
+  name: prototype envirogloves
+  description: Covers up those scandalous boney hands.
   components:
   - type: Sprite
     sprite: Clothing/Hands/Gloves/Color/color.rsi
@@ -336,8 +336,8 @@
 - type: entity
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesClown
-  name: TODO
-  description: TODO
+  name: clown envirogloves
+  description: Covers up those scandalous boney hands.
   components:
   - type: Sprite
     sprite: Clothing/Hands/Gloves/Color/color.rsi
@@ -365,8 +365,8 @@
 - type: entity
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesHoP
-  name: TODO
-  description: TODO
+  name: head of personnel's envirogloves
+  desc: Covers up those scandalous, bony hands. Appears to be an attempt at making a replica of the captain's gloves.
   components:
   - type: Sprite
     sprite: Clothing/Hands/Gloves/Envirogloves/hop.rsi
@@ -390,8 +390,8 @@
 - type: entity
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesChiefEngineer
-  name: TODO
-  description: TODO
+  name: chief engineer's envirogloves
+  description: Covers up those scandalous boney hands.
   components:
   - type: Sprite
     sprite: Clothing/Hands/Gloves/Color/color.rsi
@@ -419,8 +419,8 @@
 - type: entity
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesResearchDirector
-  name: TODO
-  description: TODO
+  name: research director's envirogloves
+  description: Covers up those scandalous boney hands.
   components:
   - type: Sprite
     sprite: Clothing/Hands/Gloves/Color/color.rsi

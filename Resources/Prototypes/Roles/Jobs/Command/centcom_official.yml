@@ -5,6 +5,11 @@
   playTimeTracker: JobCentralCommandOfficial
   setPreference: false
   startingGear: CentcomGear
+  conditionalStartingGear:
+    - id: CentcomPlasmamanGear
+      requirements:
+      - !type:CharacterSpeciesRequirement
+        species: [ Plasmaman ]
   icon: "JobIconNanotrasen"
   supervisors: job-supervisors-hos
   canBeAntag: false
@@ -27,3 +32,11 @@
     belt: WeaponPistolN1984
     pocket1: BoxFolderBlack
     pocket2: PenCentcom
+
+- type: startingGear
+  id: CentcomPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitCentcomOfficial
+    head: ClothingHeadEnvirohelmCentcomOfficial
+    gloves: ClothingHandsGlovesEnviroglovesBlack

@@ -12,8 +12,8 @@
 - type: entity
   parent: ClothingUniformEnvirosuitBase
   id: ClothingUniformEnvirosuitAtmos
-  name: TODO
-  description: TODO
+  name: atmospherics envirosuit
+  description: An air-tight suit designed to be used by plasmamen employed as atmos technicians, the usual purple stripes being replaced by atmos' blue.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Envirosuits/atmos.rsi
@@ -23,8 +23,8 @@
 - type: entity
   parent: ClothingUniformEnvirosuitBase
   id: ClothingUniformEnvirosuitCargo
-  name: TODO
-  description: TODO
+  name: logistics envirosuit
+  description: A joint envirosuit used by plasmamen logistics officers and cargo techs alike.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Envirosuits/cargo.rsi
@@ -45,8 +45,8 @@
 - type: entity
   parent: ClothingUniformEnvirosuitBase
   id: ClothingUniformEnvirosuitChiefEngineer
-  name: TODO
-  description: TODO
+  name: chief engineer's envirosuit
+  description: An air-tight suit designed to be used by plasmamen insane enough to achieve the rank of "Chief Engineer".
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Envirosuits/ce.rsi
@@ -56,8 +56,8 @@
 - type: entity
   parent: ClothingUniformEnvirosuitBase
   id: ClothingUniformEnvirosuitChaplain
-  name: TODO
-  description: TODO
+  name: chaplain's envirosuit
+  description: An envirosuit specially designed for only the most pious of plasmamen.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Envirosuits/chaplain.rsi
@@ -67,8 +67,8 @@
 - type: entity
   parent: ClothingUniformEnvirosuitBase
   id: ClothingUniformEnvirosuitChef
-  name: TODO
-  description: TODO
+  name: chef's envirosuit
+  description: A white plasmaman envirosuit designed for cullinary practices. One might question why a member of a species that doesn't need to eat would become a chef.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Envirosuits/chef.rsi
@@ -78,8 +78,8 @@
 - type: entity
   parent: ClothingUniformEnvirosuitBase
   id: ClothingUniformEnvirosuitChemist
-  name: TODO
-  description: TODO
+  name: chemistry envirosuit
+  description: A plasmaman envirosuit designed for chemists.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Envirosuits/chemist.rsi
@@ -89,8 +89,8 @@
 - type: entity
   parent: ClothingUniformEnvirosuitBase
   id: ClothingUniformEnvirosuitClown
-  name: TODO
-  description: TODO
+  name: clown envirosuit
+  description: HONK!
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Envirosuits/clown.rsi
@@ -100,8 +100,8 @@
 - type: entity
   parent: ClothingUniformEnvirosuitBase
   id: ClothingUniformEnvirosuitCMO
-  name: TODO
-  description: TODO
+  name: chief medical officer's envirosuit
+  description: It's an envirosuit worn by those with the experience to be "Chief Medical Officer".
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Envirosuits/cmo.rsi
@@ -111,8 +111,8 @@
 - type: entity
   parent: ClothingUniformEnvirosuitBase
   id: ClothingUniformEnvirosuitEngineering
-  name: TODO
-  description: TODO
+  name: engineering envirosuit
+  description: An air-tight suit designed to be used by plasmamen employed as engineers, the usual purple stripes being replaced by engineering's orange.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Envirosuits/engineering.rsi
@@ -123,7 +123,18 @@
   parent: ClothingUniformEnvirosuitBase
   id: ClothingUniformEnvirosuitEnviroslacks
   name: enviroslacks
-  description: The pet project of a posh plasmaman.
+  description: The pet project of a particularly posh plasmaman, this custom suit was quickly appropriated by Nanotrasen for its attorneys, and bartenders alike.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/enviroslacks.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/enviroslacks.rsi
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitDetective
+  name: detective envirosuit
+  description: The pet project of a particularly posh plasmaman, this custom suit was modified by Nanotrasen for its detectives.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Envirosuits/enviroslacks.rsi
@@ -144,8 +155,8 @@
 - type: entity
   parent: ClothingUniformEnvirosuitBase
   id: ClothingUniformEnvirosuitHoS
-  name: TODO
-  description: TODO
+  name: head of security's envirosuit
+  description: A plasmaman containment suit decorated for those few with the dedication to achieve the position of Head of Security.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Envirosuits/hos.rsi
@@ -155,8 +166,8 @@
 - type: entity
   parent: ClothingUniformEnvirosuitBase
   id: ClothingUniformEnvirosuitHydroponics
-  name: TODO
-  description: TODO
+  name: hydroponics envirosuit
+  description: A green and blue envirosuit designed to protect plasmamen from minor plant-related injuries.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Envirosuits/hydroponics.rsi
@@ -166,8 +177,8 @@
 - type: entity
   parent: ClothingUniformEnvirosuitBase
   id: ClothingUniformEnvirosuitJanitor
-  name: TODO
-  description: TODO
+  name: janitor envirosuit
+  description: A grey and purple envirosuit designated for plasmamen janitors.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Envirosuits/janitor.rsi
@@ -177,8 +188,8 @@
 - type: entity
   parent: ClothingUniformEnvirosuitBase
   id: ClothingUniformEnvirosuitLibrarian
-  name: TODO
-  description: TODO
+  name: catalogers's envirosuit
+  description: Made out of a modified NTSRA vacsuit, this suit was NanoTrasen's first solution to the logistical problems that come with employing plasmamen.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Envirosuits/librarian.rsi
@@ -188,8 +199,8 @@
 - type: entity
   parent: ClothingUniformEnvirosuitBase
   id: ClothingUniformEnvirosuitMedicalDoctor
-  name: TODO
-  description: TODO
+  name: medical doctor's envirosuit
+  description: A suit designed for the station's more plasma-based doctors.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Envirosuits/medical.rsi
@@ -198,9 +209,20 @@
 
 - type: entity
   parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitGenetics
+  name: genetics envirosuit
+  description: A plasmaman envirosuit designed for geneticists.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/genetics.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/genetics.rsi
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
   id: ClothingUniformEnvirosuitMime
-  name: TODO
-  description: TODO
+  name: mime envirosuit
+  description: It's not very colourful.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Envirosuits/mime.rsi
@@ -210,8 +232,8 @@
 - type: entity
   parent: ClothingUniformEnvirosuitBase
   id: ClothingUniformEnvirosuitParamedic
-  name: TODO
-  description: TODO
+  name: paramedic envirosuit
+  description: A suit designed for the station's plasmaman paramedics.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Envirosuits/paramedic.rsi
@@ -221,8 +243,8 @@
 - type: entity
   parent: ClothingUniformEnvirosuitBase
   id: ClothingUniformEnvirosuitPrisoner
-  name: TODO
-  description: TODO
+  name: prisoner envirosuit
+  description: An orange envirosuit identifying and protecting a criminal plasmaman.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Envirosuits/prisoner.rsi
@@ -232,8 +254,8 @@
 - type: entity
   parent: ClothingUniformEnvirosuitBase
   id: ClothingUniformEnvirosuitResearchDirector
-  name: TODO
-  description: TODO
+  name: mystagogue's envirosuit
+  description: It's an envirosuit worn by those with the know-how to achieve the position of "Mystagogue".
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Envirosuits/rd.rsi
@@ -243,8 +265,8 @@
 - type: entity
   parent: ClothingUniformEnvirosuitBase
   id: ClothingUniformEnvirosuitRoboticist
-  name: TODO
-  description: TODO
+  name: roboticist envirosuit
+  description: A plasmaman envirosuit designed for roboticists.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Envirosuits/roboticist.rsi
@@ -254,8 +276,8 @@
 - type: entity
   parent: ClothingUniformEnvirosuitBase
   id: ClothingUniformEnvirosuitSalvage
-  name: TODO
-  description: TODO
+  name: salvage envirosuit
+  description: An air-tight khaki suit designed for salvage operations by plasmamen.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Envirosuits/salvage.rsi
@@ -265,8 +287,8 @@
 - type: entity
   parent: ClothingUniformEnvirosuitBase
   id: ClothingUniformEnvirosuitScientist
-  name: TODO
-  description: TODO
+  name: science envirosuit
+  description: A plasmaman envirosuit designed for scientists.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Envirosuits/scientist.rsi
@@ -276,8 +298,8 @@
 - type: entity
   parent: ClothingUniformEnvirosuitBase
   id: ClothingUniformEnvirosuitSec
-  name: TODO
-  description: TODO
+  name: security envirosuit
+  description: A plasmaman containment suit designed for security officers, offering a limited amount of extra protection.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Envirosuits/security.rsi
@@ -287,8 +309,8 @@
 - type: entity
   parent: ClothingUniformEnvirosuitBase
   id: ClothingUniformEnvirosuitVirology
-  name: TODO
-  description: TODO
+  name: virology envirosuit
+  description: The suit worn by the safest people on the station, those who are completely immune to the monstrosities they create.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Envirosuits/virology.rsi
@@ -298,12 +320,58 @@
 - type: entity
   parent: ClothingUniformEnvirosuitBase
   id: ClothingUniformEnvirosuitWarden
-  name: TODO
-  description: TODO
+  name: warden's envirosuit
+  description: A plasmaman containment suit designed for the warden, white stripes being added to differentiate them from other members of security.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Envirosuits/warden.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Envirosuits/warden.rsi
 
-# TODO deal with adding commander, official and intern, using their equivalent ss14 CC jumpsuit names
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitTacticool
+  name: tacticool envirosuit
+  description: A sinister looking envirosuit, for the boniest of operatives.
+  components:
+    - type: Sprite
+      sprite: Clothing/Uniforms/Envirosuits/tacticool.rsi
+    - type: Clothing
+      sprite: Clothing/Uniforms/Envirosuits/tacticool.rsi
+    # Too cool for sensors to be on
+    - type: SuitSensor
+      randomMode: false
+      mode: SensorOff
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitCentcomAgent
+  name: CentCom agent's envirosuit
+  description: An envirosuit tailored for CentCom's legal team. Smells of burnt coffee.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/centcom_agent.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/centcom_agent.rsi
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitCentcomOfficial
+  name: CentCom official's envirosuit
+  description: It's an envirosuit worn by CentCom's officials.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/centcom_official.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/centcom_official.rsi
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitCentcomOfficer
+  name: CentCom officer's envirosuit
+  description: It's an envirosuit worn by CentCom Officers.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/centcom_officer.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/centcom_officer.rsi

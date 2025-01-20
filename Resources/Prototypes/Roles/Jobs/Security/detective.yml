@@ -48,6 +48,6 @@
   id: DetectivePlasmamanGear
   parent: BasePlasmamanGear
   equipment:
-    jumpsuit: ClothingUniformEnvirosuitEnviroslacks
-    head: ClothingHeadEnvirohelmWhite
+    jumpsuit: ClothingUniformEnvirosuitDetective
+    head: ClothingHeadEnvirohelmDetective
     gloves: ClothingHandsGlovesEnviroglovesWhite
