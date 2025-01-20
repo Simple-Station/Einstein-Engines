@@ -139,6 +139,7 @@
 #   cost: 15000
 #   recipeUnlocks:
 #   - ClothingOuterHardsuitEngineeringWhite
+#   softCapContribution: 1.5
 
 - type: technology
   id: AdvancedLifeImprovements
@@ -147,7 +148,7 @@
     sprite: Clothing/Shoes/Boots/speedboots.rsi
     state: icon
   discipline: CivilianServices
-  tier: 2
+  tier: 3
   cost: 15000
   recipeUnlocks:
   - ClothingShoesBootsMagAdv # TODO: Separate this out from the silly "Steal the CE's Timbs" objective
@@ -155,6 +156,7 @@
   - BluespaceBeaker
   - SyringeBluespace
   # TODO: Add things like frontier's Hyposprays.
+  softCapContribution: 1.5
 
 - type: technology
   id: AdvancedTranslation
@@ -176,3 +178,4 @@
   - RootSpeakTranslatorImplanter
   - AnimalTranslator
   - MofficTranslatorImplanter
+  softCapContribution: 1.5
