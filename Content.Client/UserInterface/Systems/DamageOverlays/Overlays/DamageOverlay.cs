@@ -1,4 +1,5 @@
 using Content.Shared.Mobs;
+using Content.Shared.Mobs.Components;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Shared.Enums;
@@ -21,7 +22,6 @@ public sealed class DamageOverlay : Overlay
     private readonly ShaderInstance _bruteShader;
 
     public MobState State = MobState.Alive;
-
     /// <summary>
     /// Handles the red pulsing overlay
     /// </summary>
@@ -33,6 +33,7 @@ public sealed class DamageOverlay : Overlay
     /// Handles the darkening overlay.
     /// </summary>
     public float OxygenLevel = 0f;
+    public float? OxygenLevelOverride; // for darkening in crit
 
     private float _oldOxygenLevel = 0f;
 
@@ -168,7 +169,7 @@ public sealed class DamageOverlay : Overlay
             _oldBruteLevel = BruteLevel;
         }
 
-        level = State != MobState.Critical ? _oldOxygenLevel : 1f;
+        level = OxygenLevelOverride ?? _oldOxygenLevel;
 
         if (level > 0f)
         {

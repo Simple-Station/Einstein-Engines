@@ -303,7 +303,7 @@ public abstract partial class SharedBuckleSystem
         }
 
         var buckleAttempt = new BuckleAttemptEvent((strapUid, strapComp), (buckleUid, buckleComp), user, popup);
-        RaiseLocalEvent(buckleUid, ref buckleAttempt);
+        RaiseLocalEvent(buckleUid, buckleAttempt);
         if (buckleAttempt.Cancelled)
             return false;
 
@@ -461,7 +461,7 @@ public abstract partial class SharedBuckleSystem
         Appearance.SetData(strap, StrapVisuals.State, strap.Comp.BuckledEntities.Count != 0);
         Appearance.SetData(buckle, BuckleVisuals.Buckled, false);
 
-        if (HasComp<KnockedDownComponent>(buckle) || _mobState.IsIncapacitated(buckle))
+        if (HasComp<KnockedDownComponent>(buckle) || _mobState.IsDown(buckle))
             _standing.Down(buckle, playSound: false);
         else
             _standing.Stand(buckle);
@@ -504,12 +504,12 @@ public abstract partial class SharedBuckleSystem
             return false;
 
         var unbuckleAttempt = new UnbuckleAttemptEvent(strap, buckle!, user, popup);
-        RaiseLocalEvent(buckle, ref unbuckleAttempt);
+        RaiseLocalEvent(buckle, unbuckleAttempt);
         if (unbuckleAttempt.Cancelled)
             return false;
 
         var unstrapAttempt = new UnstrapAttemptEvent(strap, buckle!, user, popup);
-        RaiseLocalEvent(strap, ref unstrapAttempt);
+        RaiseLocalEvent(strap, unstrapAttempt);
         return !unstrapAttempt.Cancelled;
     }
 

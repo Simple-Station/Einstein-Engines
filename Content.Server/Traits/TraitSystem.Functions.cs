@@ -19,9 +19,13 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Mobs;
 using Content.Shared.Damage.Components;
+using Content.Server.Administration.Commands;
 using Content.Shared.NPC.Systems;
+using Robust.Shared.Utility;
+using Robust.Shared.Reflection;
 using Content.Shared.Weapons.Melee;
 using Robust.Shared.Audio;
+
 
 namespace Content.Server.Traits;
 
@@ -415,18 +419,18 @@ public sealed partial class TraitModifyMobThresholds : TraitFunction
             return;
 
         var thresholdSystem = entityManager.System<MobThresholdSystem>();
-        if (CritThresholdModifier != 0)
-        {
-            var critThreshold = thresholdSystem.GetThresholdForState(uid, MobState.Critical, threshold);
-            if (critThreshold != 0)
-                thresholdSystem.SetMobStateThreshold(uid, critThreshold + CritThresholdModifier, MobState.Critical);
-        }
-
         if (SoftCritThresholdModifier != 0)
         {
             var softCritThreshold = thresholdSystem.GetThresholdForState(uid, MobState.SoftCritical, threshold);
             if (softCritThreshold != 0)
                 thresholdSystem.SetMobStateThreshold(uid, softCritThreshold + SoftCritThresholdModifier, MobState.SoftCritical);
+        }
+        
+        if (CritThresholdModifier != 0)
+        {
+            var critThreshold = thresholdSystem.GetThresholdForState(uid, MobState.Critical, threshold);
+            if (critThreshold != 0)
+                thresholdSystem.SetMobStateThreshold(uid, critThreshold + CritThresholdModifier, MobState.Critical);
         }
 
         if (DeadThresholdModifier != 0)
@@ -444,85 +448,29 @@ public sealed partial class TraitModifyMobState : TraitFunction
     // Three-State Booleans my beloved.
     // :faridabirb.png:
 
-    [DataField, AlwaysPushInheritance]
-    public bool? AllowMovementWhileCrit;
-
-    [DataField, AlwaysPushInheritance]
-    public bool? AllowMovementWhileSoftCrit;
-
-    [DataField, AlwaysPushInheritance]
-    public bool? AllowMovementWhileDead;
-
-    [DataField, AlwaysPushInheritance]
-    public bool? AllowTalkingWhileCrit;
-
-    [DataField, AlwaysPushInheritance]
-    public bool? AllowTalkingWhileSoftCrit;
-
-    [DataField, AlwaysPushInheritance]
-    public bool? AllowTalkingWhileDead;
-
-    [DataField, AlwaysPushInheritance]
-    public bool? DownWhenCrit;
-
-    [DataField, AlwaysPushInheritance]
-    public bool? DownWhenSoftCrit;
-
-    [DataField, AlwaysPushInheritance]
-    public bool? DownWhenDead;
-
-    [DataField, AlwaysPushInheritance]
-    public bool? AllowHandInteractWhileCrit;
-
-    [DataField, AlwaysPushInheritance]
-    public bool? AllowHandInteractWhileSoftCrit;
-
-    [DataField, AlwaysPushInheritance]
-    public bool? AllowHandInteractWhileDead;
+    [DataField(required: true)]
+    public Dictionary<string, ProtoId<MobStateParametersPrototype>> Params = default!;
 
     public override void OnPlayerSpawn(EntityUid uid,
         IComponentFactory factory,
         IEntityManager entityManager,
         ISerializationManager serializationManager)
     {
-        if (!entityManager.TryGetComponent<MobStateComponent>(uid, out var mobStateComponent))
+        if (!entityManager.TryGetComponent<MobStateComponent>(uid, out var comp))
             return;
 
-        if (AllowMovementWhileCrit is not null)
-            mobStateComponent.AllowMovementWhileCrit = AllowMovementWhileCrit.Value;
+        var _reflection = IoCManager.Resolve<IReflectionManager>();
+        var _proto = IoCManager.Resolve<IPrototypeManager>();
 
-        if (AllowMovementWhileSoftCrit is not null)
-            mobStateComponent.AllowHandInteractWhileSoftCrit = AllowMovementWhileSoftCrit.Value;
-
-        if (AllowMovementWhileDead is not null)
-            mobStateComponent.AllowMovementWhileDead = AllowMovementWhileDead.Value;
-
-        if (AllowTalkingWhileCrit is not null)
-            mobStateComponent.AllowTalkingWhileCrit = AllowTalkingWhileCrit.Value;
-
-        if (AllowTalkingWhileSoftCrit is not null)
-            mobStateComponent.AllowTalkingWhileSoftCrit = AllowTalkingWhileSoftCrit.Value;
-
-        if (AllowTalkingWhileDead is not null)
-            mobStateComponent.AllowTalkingWhileDead = AllowTalkingWhileDead.Value;
-
-        if (DownWhenCrit is not null)
-            mobStateComponent.DownWhenCrit = DownWhenCrit.Value;
-
-        if (DownWhenSoftCrit is not null)
-            mobStateComponent.DownWhenSoftCrit = DownWhenSoftCrit.Value;
-
-        if (DownWhenDead is not null)
-            mobStateComponent.DownWhenDead = DownWhenDead.Value;
-
-        if (AllowHandInteractWhileCrit is not null)
-            mobStateComponent.AllowHandInteractWhileCrit = AllowHandInteractWhileCrit.Value;
-
-        if (AllowHandInteractWhileSoftCrit is not null)
-            mobStateComponent.AllowHandInteractWhileSoftCrit = AllowHandInteractWhileSoftCrit.Value;
-
-        if (AllowHandInteractWhileDead is not null)
-            mobStateComponent.AllowHandInteractWhileDead = AllowHandInteractWhileDead.Value;
+        foreach (var pair in Params) {
+            DebugTools.Assert(_reflection.TryParseEnumReference($"enum.MobState.{pair.Key}", out var e), $"MobState.{pair.Key} does not exist.");
+            MobState state = (MobState) e;
+            MobStateParametersPrototype current = comp.MobStateParams[state];
+            var mod = _proto.Index<MobStateParametersPrototype>(pair.Value);
+            current.MergeWith(mod);
+            //current.FillDefaults();
+        }
+        comp.Dirty(); // why is this deprecated? it's much better than manually resolving entitymanager with ioc
     }
 }
 
