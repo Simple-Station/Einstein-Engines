@@ -659,3 +659,55 @@
         color: "#3b3b3b"
       - state: loweraccent-equipped-INNERCLOTHING
         color: "#3b3b3b"
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitQM
+  name: logistics officer's envirosuit
+  description: An air-tight suit designed to be used by plasmamen insane enough to achieve the rank of "Logistics Officer".
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/color.rsi
+    layers:
+    - state: icon
+      color: "#bb9042"
+    - state: accent3-icon
+      color: "#ffd600"
+    - state: pants-icon
+      color: "#a9a061"
+    - state: buttons-icon
+      color: "#3d3d3d"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#bb9042"
+      - state: accent3-inhand-left
+        color: "#ffd600"
+      - state: pants-inhand-left
+        color: "#a9a061"
+      - state: buttons-inhand-left
+        color: "#3d3d3d"
+      right:
+      - state: inhand-right
+        color: "#bb9042"
+      - state: accent3-inhand-right
+        color: "#ffd600"
+      - state: pants-inhand-right
+        color: "#a9a061"
+      - state: buttons-inhand-right
+        color: "#3d3d3d"
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/color.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#bb9042"
+      - state: accent3-equipped-INNERCLOTHING
+        color: "#ffd600"
+      - state: pants-equipped-INNERCLOTHING
+        color: "#a9a061"
+      - state: buttons-equipped-INNERCLOTHING
+        color: "#3d3d3d"
+      - state: loweraccent-equipped-INNERCLOTHING
+        color: "#ffd600"

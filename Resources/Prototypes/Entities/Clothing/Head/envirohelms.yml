@@ -684,3 +684,57 @@
       - state: accent-equipped-HELMET
         color: "#3b3b3b"
       - state: visor-equipped-HELMET
+
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelmQM
+  name: logistics officer's envirosuit helmet
+  description: A special containment helmet designed for the Logistics Officer.
+  components:
+  - type: ToggleableLightVisuals
+    inhandVisuals:
+      left:
+      - state: visor-inhand-left
+        shader: unshaded
+      right:
+      - state: visor-inhand-right
+        shader: unshaded
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+        shader: unshaded
+  - type: Sprite
+    sprite: Clothing/Head/Envirohelms/color.rsi
+    layers:
+    - state: icon
+      color: "#bb9042"
+    - state: accent-icon
+      color: "#ffd600"
+    - state: visor-icon
+    - state: icon-flash
+      visible: false
+      shader: unshaded
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#bb9042"
+      - state: accent-inhand-left
+        color: "#ffd600"
+      - state: visor-inhand-left
+      right:
+      - state: inhand-right
+        color: "#bb9042"
+      - state: accent-inhand-right
+        color: "#ffd600"
+      - state: visor-inhand-right
+  - type: Clothing
+    sprite: Clothing/Head/Envirohelms/color.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#bb9042"
+      - state: accent-equipped-HELMET
+        color: "#ffd600"
+      - state: visor-equipped-HELMET
