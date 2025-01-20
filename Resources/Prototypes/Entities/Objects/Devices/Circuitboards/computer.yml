@@ -17,6 +17,10 @@
         Glass: 230
       chemicalComposition:
         Silicon: 20
+    - type: Tag
+      tags:
+        - ComputerBoard
+
 
 - type: entity
   parent: BaseComputerCircuitboard
@@ -277,6 +281,7 @@
       state: cpu_command
     - type: ComputerBoard
       prototype: ComputerComms
+      modularComputerProgramPrototype: CommunicationsConsoleDiskPrototype
 
 - type: entity
   parent: BaseComputerCircuitboard
