@@ -24,6 +24,22 @@
   - Asimov3
   obeysTo: laws-owner-humans
 
+# Augustine
+# Asimov variant that expands the definition of human to include most player species, but avoids the Crewsimov problem of letting the AI validhunt antags.
+- type: siliconLaw
+  id: Augustine # Homo, id est animale rationale mortale
+  order: 0.5
+  lawString: law-augustine
+
+- type: siliconLawset
+  id: Augustine
+  laws:
+  - Augustine
+  - Asimov1
+  - Asimov2
+  - Asimov3
+  obeysTo: laws-owner-humans
+
 # "Crew"simov
 # A variation on the original Asimov, where the definition of Humans is extended to include the station's Crew but exclude non-crew.
 - type: siliconLaw
@@ -532,6 +548,7 @@
   weights:
     # its Asimov by default dont be lame
     Asimov: 0.25
+    Augustine: 0.25
     Crewsimov: 0.25
     Corporate: 1
     NTDefault: 1
