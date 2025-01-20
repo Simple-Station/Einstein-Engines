@@ -10397,3 +10397,12 @@ Entries:
   id: 6734
   time: '2025-01-20T01:20:19.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1605
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Possibly fixed a crash related to Loadouts being applied to entities
+        that don't exist.
+  id: 6735
+  time: '2025-01-20T01:25:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1607
