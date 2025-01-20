@@ -45,7 +45,7 @@
 
 - type: startingGear
   id: SecurityOfficerPlasmamanGear
-  parent: BasePlasmamanGear
+  parent: BasePlasmamanSecurityGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitSec
     head: ClothingHeadEnvirohelmSec

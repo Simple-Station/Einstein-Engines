@@ -51,7 +51,7 @@
 
 - type: startingGear
   id: WardenPlasmamanGear
-  parent: BasePlasmamanGear
+  parent: BasePlasmamanSecurityGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitWarden
     head: ClothingHeadEnvirohelmWarden

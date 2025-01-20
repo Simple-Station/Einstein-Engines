@@ -46,7 +46,7 @@
 
 - type: startingGear
   id: DetectivePlasmamanGear
-  parent: BasePlasmamanGear
+  parent: BasePlasmamanSecurityGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitDetective
     head: ClothingHeadEnvirohelmDetective

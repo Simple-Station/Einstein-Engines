@@ -63,7 +63,7 @@
 
 - type: startingGear
   id: HoSPlasmamanGear
-  parent: BasePlasmamanGear
+  parent: BasePlasmamanSecurityGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitHoS
     head: ClothingHeadEnvirohelmHoS

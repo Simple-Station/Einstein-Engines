@@ -5,3 +5,10 @@
   equipment:
     mask: ClothingMaskBreath
     pocket2: DoubleEmergencyPlasmaTankFilled
+
+- type: startingGear
+  abstract: true
+  parent: BasePlasmamanGear
+  id: BasePlasmamanSecurityGear
+  equipment:
+    mask: ClothingMaskGasSecurity
