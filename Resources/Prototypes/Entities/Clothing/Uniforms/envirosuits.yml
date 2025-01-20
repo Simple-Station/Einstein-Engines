@@ -709,5 +709,5 @@
         color: "#a9a061"
       - state: buttons-equipped-INNERCLOTHING
         color: "#3d3d3d"
-      - state: loweraccent-equipped-INNERCLOTHING
+      - state: loweraccent-equipped-INNERCLOTHING # TODO loweraccent 3 with same pattern as research director
         color: "#ffd600"
