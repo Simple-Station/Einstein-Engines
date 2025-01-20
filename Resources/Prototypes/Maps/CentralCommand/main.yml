@@ -1,0 +1,14 @@
+- type: gameMap
+  id: CentCommMain
+  mapName: 'Central Command'
+  mapPath: /Maps/CentralCommand/main.yml
+  minPlayers: 0
+  stations:
+    centcomm:
+      stationProto: NanotrasenCentralCommand
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Central Command {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: 'TG'
