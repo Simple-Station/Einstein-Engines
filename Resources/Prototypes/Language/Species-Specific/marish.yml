@@ -5,7 +5,7 @@
   speech:
     color: "#be3cc5"
     fontId: Lymphatic
-    empathySpeech: true
+    empathySpeech: false
     speechVerbOverrides:
     - chat-speech-verb-marish
   obfuscation:
