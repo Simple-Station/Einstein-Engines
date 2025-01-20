@@ -585,3 +585,48 @@
       - state: accent-equipped-HELMET
         color: "#7d2322"
       - state: visor-equipped-HELMET
+
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelmSafari
+  name: safari envirosuit helmet
+  description: Makes you a target for the locals.
+  components:
+  - type: ToggleableLightVisuals
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+  - type: Sprite
+    sprite: Clothing/Head/Envirohelms/color.rsi
+    layers:
+    - state: icon
+      color: "#d3b986"
+    - state: accent-icon
+      color: "#a349a4"
+    - state: visor-icon
+    - state: icon-flash
+      visible: false
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#d3b986"
+      - state: accent-inhand-left
+        color: "#a349a4"
+      - state: visor-inhand-left
+      right:
+      - state: inhand-right
+        color: "#d3b986"
+      - state: accent-inhand-right
+        color: "#a349a4"
+      - state: visor-inhand-right
+  - type: Clothing
+    sprite: Clothing/Head/Envirohelms/color.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#d3b986"
+      - state: accent-equipped-HELMET
+        color: "#a349a4"
+      - state: visor-equipped-HELMET

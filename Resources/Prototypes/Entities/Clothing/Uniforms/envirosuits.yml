@@ -587,3 +587,39 @@
         color: "#b69539"
       - state: buttons-equipped-INNERCLOTHING
         color: "#b69539"
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitSafari
+  name: safari envirosuit
+  description: Perfect for a jungle excursion.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/color.rsi
+    layers:
+    - state: icon
+      color: "#d3b986"
+    - state: accent-icon
+      color: "#a349a4"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#d3b986"
+      - state: accent-inhand-left
+        color: "#a349a4"
+      right:
+      - state: inhand-right
+        color: "#d3b986"
+      - state: accent-inhand-right
+        color: "#a349a4"
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/color.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#d3b986"
+      - state: accent-equipped-INNERCLOTHING
+        color: "#a349a4"
+      - state: loweraccent-equipped-INNERCLOTHING
+        color: "#a349a4"
