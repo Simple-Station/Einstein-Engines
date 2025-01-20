@@ -522,4 +522,4 @@ trait-description-ThermographicVision =
 
 trait-name-ShadowkinBlackeye = Blackeye
 trait-description-ShadowkinBlackeye = 
-    You lose your special Shadowkin powers & respect amongst your peers, in return for some points. Effectively, you are only shadowkin in name and not in practice.
+    You lose your special Shadowkin powers & respect amongst your peers, in return for some points. Effectively, you are only a Shadowkin in name, not in practice.
