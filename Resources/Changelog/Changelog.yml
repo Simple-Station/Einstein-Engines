@@ -10456,3 +10456,27 @@ Entries:
   id: 6739
   time: '2025-01-20T07:24:23.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1610
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: The medbay fent zombie epidemic is now fixed.
+  id: 6740
+  time: '2025-01-20T08:13:06.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1614
+- author: CerberusWolfie
+  changes:
+    - type: Add
+      message: >-
+        Added Psionics Registry Computer. Now you can record Psionics users in
+        Epistemics.
+    - type: Add
+      message: >-
+        Added epi-glasses and epi-HUD to see Psionics Users icons. (Chaplain,
+        Cataloguer, Mantis, and Mystagogue have access in loadout).
+    - type: Add
+      message: Added PsiWatch. Now you can see the Psionics Records data on your PDA!
+    - type: Fix
+      message: Fixed Chaplain not having any programs in their PDA on spawn.
+  id: 6741
+  time: '2025-01-20T09:50:34.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1598
