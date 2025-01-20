@@ -446,6 +446,8 @@
       state: registry
     - map: ["computerLayerKeys"]
       state: rd_key
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
   - type: PointLight
     radius: 1.5
     energy: 1.6
