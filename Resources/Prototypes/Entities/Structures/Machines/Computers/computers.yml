@@ -423,12 +423,12 @@
     guides:
     - CriminalRecords
 
-  parent: BaseComputer
+- type: entity
+  parent: BaseComputerAiAccess
   id: ComputerPsionicsRecords
   name: psionics registry computer
   description: This can be used to check psionics registry records. Only epistemics can modify them.
   components:
-  - type: StationAiWhitelist
   - type: PsionicsRecordsConsole
   - type: UserInterface
     interfaces:
