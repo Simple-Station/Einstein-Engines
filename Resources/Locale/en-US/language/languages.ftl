@@ -58,7 +58,7 @@ language-Moffic-description = The language of the mothpeople borders on complete
 language-RobotTalk-name = RobotTalk
 language-RobotTalk-description = A language consisting of harsh binary chirps, whistles, hisses, and whines. Organic tongues cannot speak it without aid from special translators.
 
-language-Calcic-name = Scapulan
+language-Calcic-name = Calcic
 language-Calcic-description = The bone-rattling language of skeletons and plasmamen. It sounds like a harmonic trousle of bones with a humerus tone, sans any off-tune ribbing.
 
 language-Sign-name = Tau-Ceti Basic Sign Language
