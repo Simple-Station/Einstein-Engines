@@ -45,7 +45,7 @@ public sealed partial class NpcFactionSelectorSystem : EntitySystem
                 DoContactInteraction = true,
                 Act = () =>
                 {
-                    _popup.PopupEntity(Loc.GetString("npcfaction-component-faction-set", ("faction", proto.ID)), entity.Owner);
+                    _popup.PopupPredicted(Loc.GetString("npcfaction-component-faction-set", ("faction", proto.ID)), entity.Owner, null);
                     foreach (var type in factionSelectorComponent.SelectableFactions)
                     {
                         _factionSystem.RemoveFaction(entity.Owner, type);
