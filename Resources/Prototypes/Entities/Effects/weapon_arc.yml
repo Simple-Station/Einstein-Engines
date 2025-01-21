@@ -93,15 +93,6 @@
       state: fist
 
 - type: entity
-  id: WeaponArcPurpleFist
-  parent: WeaponArcThrust
-  categories: [ HideSpawnMenu ]
-  components:
-    - type: Sprite
-      state: fist
-      color: "#ff80ff"
-
-- type: entity
   id: WeaponArcPunch
   parent: WeaponArcStatic
   categories: [ HideSpawnMenu ]
@@ -112,6 +103,27 @@
       state: punch
     - type: TimedDespawn
       lifetime: 0.499
+
+- type: entity
+  id: WeaponArcPurplePunch
+  parent: WeaponArcPunch
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      layers:
+      - state: punch
+        color: "#ff80f4"
+        shader: unshaded
+    - type: TimedDespawn
+      lifetime: 0.549
+    - type: PointLight
+      radius: 1.13
+      energy: 40
+      color: "#ff11d5"
+      netsync: false
+    - type: LightFade # TODO maybe increase energy then decrease?
+      rampUpDuration: 0.1
+      duration: 0.449
 
 - type: entity
   id: WeaponArcKick

@@ -90,11 +90,11 @@
   - type: MeleeWeapon
     soundHit:
       collection: FirePunch
-    animation: WeaponArcPurpleFist
+    animation: WeaponArcPurplePunch
     damage:
       types:
         Heat: 5
-        Blunt: 2
+        Blunt: 2.25
   - type: DamageOnHit
     damage:
       types:
