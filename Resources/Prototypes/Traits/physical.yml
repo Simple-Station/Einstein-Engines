@@ -377,6 +377,13 @@
         types:
           Piercing: 5 # No, this isn't "OP", this is literally the worst brute damage type in the game.
                       # Same deal as Slash, except that a majority of all armor provides Piercing resistance.
+    - !type:TraitRemoveComponent # Plasmamen have self-damage on melee attacks
+      components:
+        - type: DamageOnHit
+          damage:
+            types:
+              Blunt: 0
+
 
 - type: trait
   id: Claws
@@ -403,6 +410,12 @@
         types:
           Slash: 5 # Trade stamina damage on hit for a very minor amount of extra bleed.
                   # Blunt also deals bleed damage, so this is more of a sidegrade.
+    - !type:TraitRemoveComponent
+      components:
+        - type: DamageOnHit
+          damage:
+            types:
+              Blunt: 0
 
 - type: trait
   id: NaturalWeaponRemoval
@@ -420,7 +433,6 @@
         - Arachne
         - IPC # Other species could justify getting this trait for Blunt stamina damage,
               # but 6 blunt -> 5 blunt is a straight up downgrade.
-        - Plasmaman
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -434,6 +446,12 @@
       damage:
         types:
           Blunt: 5
+    - !type:TraitRemoveComponent
+      components:
+        - type: DamageOnHit
+          damage:
+            types:
+              Blunt: 0
 
 - type: trait
   id: StrikingCalluses
@@ -468,74 +486,6 @@
       flatDamageIncrease:
         types:
           Blunt: 1
-
-- type: trait
-  id: PlasmafirePunch
-  category: Physical
-  points: -3
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      species:
-        - Plasmaman
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Claws
-        - Talons
-        - ToxoplasmicPunch
-  functions:
-    - !type:TraitReplaceComponent
-      components:
-        - type: MeleeWeapon
-          soundHit:
-            collection: Punch
-          angle: 30
-          animation: WeaponArcFist
-          damage:
-            types:
-              Heat: 6
-              Blunt: 1.5
-    - !type:TraitAddComponent
-      components:
-        - type: DamageOnHit
-          damage:
-            types:
-              Heat: 1.2
-          targetParts: [ RightHand, LeftHand ]
-
-- type: trait
-  id: ToxoplasmicPunch
-  category: Physical
-  points: -5
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      species:
-        - Plasmaman
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Claws
-        - Talons
-        - PlasmafirePunch
-  functions:
-    - !type:TraitReplaceComponent
-      components:
-        - type: MeleeWeapon
-          soundHit:
-            collection: Punch
-          angle: 30
-          animation: WeaponArcFist
-          damage:
-            types:
-              Poison: 6.5
-              Slash: 1.5
-    - !type:TraitAddComponent
-      components:
-        - type: DamageOnHit
-          damage:
-            types:
-              Slash: 1.5
-          targetParts: [ RightHand, LeftHand ]
 
 - type: trait
   id: Spinarette

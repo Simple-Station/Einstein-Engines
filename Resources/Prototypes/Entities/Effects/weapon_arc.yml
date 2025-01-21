@@ -93,6 +93,15 @@
       state: fist
 
 - type: entity
+  id: WeaponArcPurpleFist
+  parent: WeaponArcThrust
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      state: fist
+      color: "#ff80ff"
+
+- type: entity
   id: WeaponArcPunch
   parent: WeaponArcStatic
   categories: [ HideSpawnMenu ]

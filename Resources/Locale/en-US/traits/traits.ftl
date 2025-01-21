@@ -211,18 +211,6 @@ trait-description-SignLanguage =
     You can understand and use Tau-Ceti Basic Sign Language (TCB-SL).
     If you are mute for any reason, you can still communicate with sign language.
 
-trait-name-PlasmafirePunch = Plasmafire Punch
-trait-description-PlasmafirePunch =
-    Infuse your fists with plasma dust that combusts upon a burst of force.
-    Your unarmed attack deals [color=gray]6[/color] [color=orange]Heat[/color] and [color=gray]1.5[/color] [color=red]Blunt[/color] damage.
-    However, each combustion deals [color=gray]1.2[/color] [color=orange]Heat[/color] damage to your hands.
-
-trait-name-ToxoplasmicPunch = Toxoplasmic Punch
-trait-description-ToxoplasmicPunch =
-    Infuse your fists with sharp plasma shards that poison on contact.
-    Your unarmed attack deals [color=gray]6.5[/color] [color=green]Poison[/color] and [color=gray]1.5[/color] [color=red]Slash[/color] damage.
-    However, the shards cut into your hands and each attack deals [color=gray]1.5[/color] [color=red]Slash[/color] damage to your hands.
-
 trait-name-SolCommon = Sol Common
 trait-description-SolCommon =
     With its roots in Mandarin Chinese - Common evolved as the official language of the Sol Alliance - with officials working to tie it together with a common tongue.

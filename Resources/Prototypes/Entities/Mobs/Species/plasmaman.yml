@@ -28,9 +28,9 @@
       visible: false
     - map: ["enum.HumanoidVisualLayers.LFoot"]
     - map: ["enum.HumanoidVisualLayers.RFoot"]
+    - map: ["jumpsuit"] # jumpsuit after foot to show envirosuit shoes
     - map: ["enum.HumanoidVisualLayers.LHand"]
     - map: ["enum.HumanoidVisualLayers.RHand"]
-    - map: ["jumpsuit"] # jumpsuit after foot to show envirosuit shoes
     - map: [ "gloves" ]
     - map: [ "shoes" ]
     - map: [ "ears" ]
@@ -87,6 +87,19 @@
         color: "#555555AA"
       Burn:
         sprite: Mobs/Effects/burn_damage.rsi
+  - type: MeleeWeapon
+    soundHit:
+      collection: FirePunch
+    animation: WeaponArcPurpleFist
+    damage:
+      types:
+        Heat: 5
+        Blunt: 2
+  - type: DamageOnHit
+    damage:
+      types:
+        Heat: 1
+    targetParts: [ RightHand, LeftHand ]
   - type: Speech
     speechVerb: Skeleton
   - type: Vocal

@@ -22,6 +22,10 @@
     <GuideEntityEmbed Entity="SheetPlasma1" />
   </Box>
 
+  They infuse their fists with plasma dust that combusts when they punch, dealing [color=orange]5 Heat[/color] and [color=red]2 Blunt[/color] damage. However, each successful punch deals [color=orange]1 Heat[/color] damage to their hands.
+
+  Plasmamen with [bold]Claws[/bold], [bold]Talons[/bold] or [bold]Natural Weapons Removal[/bold] traits have less unarmed damage but don't take self-damage from unarmed attacks.
+
   They take [color=#1e90ff]15% less Slash and 25% less Piercing damage[/color],
   and are [color=#8658fc]immune to Radiation and Cold damage[/color],
   but take [color=#ffa500]50% more Blunt and 50% more Heat damage[/color].

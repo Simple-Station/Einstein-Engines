@@ -722,7 +722,7 @@
     - state: pants-icon
       color: "#a9a061"
     - state: belt-icon
-      color: "#3a3a3a"
+      color: "#b3b3b3"
     - state: buttons-icon
       color: "#999999"
   - type: Item
@@ -735,7 +735,7 @@
       - state: pants-inhand-left
         color: "#a9a061"
       - state: belt-inhand-left
-        color: "#3a3a3a"
+        color: "#b3b3b3"
       - state: buttons-inhand-left
         color: "#999999"
       right:
@@ -746,7 +746,7 @@
       - state: pants-inhand-right
         color: "#a9a061"
       - state: belt-inhand-right
-        color: "#3a3a3a"
+        color: "#b3b3b3"
       - state: buttons-inhand-right
         color: "#999999"
   - type: Clothing
@@ -760,7 +760,7 @@
       - state: pants-equipped-INNERCLOTHING
         color: "#a9a061"
       - state: belt-equipped-INNERCLOTHING
-        color: "#3a3a3a"
+        color: "#b3b3b3"
       - state: buttons-equipped-INNERCLOTHING
         color: "#999999"
       - state: loweraccent-equipped-INNERCLOTHING
