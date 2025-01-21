@@ -86,6 +86,10 @@ namespace Content.Client.Lobby.UI
         private Direction _previewRotation = Direction.North;
         private ColorSelectorSliders _rgbSkinColorSelector;
 
+        private bool _customizePronouns;
+        private bool _customizeStationAiName;
+        private bool _customizeBorgName;
+
         public event Action<HumanoidCharacterProfile, int>? OnProfileChanged;
 
         [ValidatePrototypeId<GuideEntryPrototype>]
@@ -186,8 +190,6 @@ namespace Content.Client.Lobby.UI
 
             PronounsButton.OnItemSelected += args =>
             {
-                var label = GetFormattedPronounsFromGender();
-
                 PronounsButton.SelectId(args.Id);
                 SetGender((Gender) args.Id);
 
@@ -197,16 +199,34 @@ namespace Content.Client.Lobby.UI
 
             #endregion Gender
 
-            #region Display Pronouns
+            #region Cosmetic Pronouns
 
-            DisplayPronounsNameEdit.OnTextChanged += args => { SetDisplayPronouns(args.Text); };
+            _customizePronouns = _cfgManager.GetCVar(CCVars.AllowCosmeticPronouns);
+            _cfgManager.OnValueChanged(CCVars.AllowCosmeticPronouns, OnCosmeticPronounsValueChanged);
 
-            #endregion Display Pronouns
+            CosmeticPronounsNameEdit.OnTextChanged += args => { SetDisplayPronouns(args.Text); };
+
+            if (CosmeticPronousContainer.Visible != _customizePronouns)
+                CosmeticPronousContainer.Visible = _customizePronouns;
+
+            #endregion Cosmetic Pronouns
 
             #region Custom Names
 
+            _customizeStationAiName = _cfgManager.GetCVar(CCVars.AllowCustomStationAiName);
+            _customizeBorgName = _cfgManager.GetCVar(CCVars.AllowCustomCyborgName);
+
+            _cfgManager.OnValueChanged(CCVars.AllowCustomStationAiName, OnChangedStationAiNameCustomizationValue);
+            _cfgManager.OnValueChanged(CCVars.AllowCustomCyborgName, OnChangedCyborgNameCustomizationValue);
+
             StationAINameEdit.OnTextChanged += args => { SetStationAiName(args.Text); };
             CyborgNameEdit.OnTextChanged += args => { SetCyborgName(args.Text); };
+
+            if (StationAiNameContainer.Visible != _customizeStationAiName)
+                StationAiNameContainer.Visible = _customizeStationAiName;
+
+            if (CyborgNameContainer.Visible != _customizeBorgName)
+                CyborgNameContainer.Visible = _customizeBorgName;
 
             #endregion
 
@@ -541,6 +561,24 @@ namespace Content.Client.Lobby.UI
                 _flavorTextEdit?.Dispose();
                 _flavorTextEdit = null;
             }
+        }
+
+        private void OnCosmeticPronounsValueChanged(bool newValue)
+        {
+            _customizePronouns = newValue;
+            CosmeticPronousContainer.Visible = newValue;
+        }
+
+        private void OnChangedStationAiNameCustomizationValue(bool newValue)
+        {
+            _customizeStationAiName = newValue;
+            StationAiNameContainer.Visible = newValue;
+        }
+
+        private void OnChangedCyborgNameCustomizationValue(bool newValue)
+        {
+            _customizeBorgName = newValue;
+            CyborgNameContainer.Visible = newValue;
         }
 
         /// Refreshes the species selector
@@ -1431,12 +1469,12 @@ namespace Content.Client.Lobby.UI
                 return;
 
             var label = GetFormattedPronounsFromGender();
-            DisplayPronounsNameEdit.PlaceHolder = label;
+            CosmeticPronounsNameEdit.PlaceHolder = label;
 
             if (Profile.DisplayPronouns == null)
-                DisplayPronounsNameEdit.Text = string.Empty;
+                CosmeticPronounsNameEdit.Text = string.Empty;
             else
-                DisplayPronounsNameEdit.Text = Profile.DisplayPronouns;
+                CosmeticPronounsNameEdit.Text = Profile.DisplayPronouns;
         }
 
         private void UpdateStationAiControls()
@@ -1444,11 +1482,7 @@ namespace Content.Client.Lobby.UI
             if (Profile == null)
                 return;
 
-            if (Profile?.StationAiName != null)
-            {
-                StationAINameEdit.Text = Profile.StationAiName;
-                return;
-            }
+            StationAINameEdit.Text = Profile.StationAiName ?? string.Empty;
 
             if (StationAINameEdit.Text != string.Empty)
                 return;
@@ -1463,11 +1497,7 @@ namespace Content.Client.Lobby.UI
             if (Profile == null)
                 return;
 
-            if (Profile?.CyborgName != null)
-            {
-                CyborgNameEdit.Text = Profile.CyborgName;
-                return;
-            }
+            CyborgNameEdit.Text = Profile.CyborgName ?? string.Empty;
 
             if (CyborgNameEdit.Text != string.Empty)
                 return;
