@@ -25,10 +25,9 @@ namespace Content.Shared.Abilities.Psionics
         {
             base.Initialize();
             SubscribeLocalEvent<PsionicComponent, PsionicPowerUsedEvent>(OnPowerUsed);
-            SubscribeLocalEvent<PsionicComponent, RejuvenateEvent>(OnRejuvenate);
         }
 
-        public bool OnAttemptPowerUse(EntityUid uid, string power, float? manacost = null, bool checkInsulation = true)
+        public bool OnAttemptPowerUse(EntityUid uid, string power, bool checkInsulation = true)
         {
             if (!TryComp<PsionicComponent>(uid, out var component)
                 || HasComp<MindbrokenComponent>(uid)
@@ -45,24 +44,6 @@ namespace Content.Shared.Abilities.Psionics
             if (component.DoAfter is not null)
             {
                 _popups.PopupEntity(Loc.GetString(component.AlreadyCasting), uid, uid, PopupType.LargeCaution);
-                return false;
-            }
-
-            if (manacost is null)
-                return true;
-
-            if (component.Mana >= manacost
-                || component.BypassManaCheck)
-            {
-                var newmana = component.Mana - manacost;
-                component.Mana = newmana ?? component.Mana;
-
-                var ev = new OnManaUpdateEvent();
-                RaiseLocalEvent(uid, ref ev);
-            }
-            else
-            {
-                _popups.PopupEntity(Loc.GetString(component.NoMana), uid, uid, PopupType.LargeCaution);
                 return false;
             }
 
@@ -128,59 +109,14 @@ namespace Content.Shared.Abilities.Psionics
         ///     Returns the CurrentDampening of a given Entity, multiplied by the result of that Entity's MoodContest.
         ///     Lower mood means more Dampening, higher mood means less Dampening.
         /// </summary>
-        public float ModifiedDampening(EntityUid uid, PsionicComponent component)
-        {
-            return component.CurrentDampening / _contests.MoodContest(uid, true);
-        }
-
-        public void OnRejuvenate(EntityUid uid, PsionicComponent component, RejuvenateEvent args)
-        {
-            component.Mana = component.MaxMana;
-            var ev = new OnManaUpdateEvent();
-            RaiseLocalEvent(uid, ref ev);
-        }
-
-        public override void Update(float frameTime)
-        {
-            base.Update(frameTime);
-
-            var query = EntityQueryEnumerator<PsionicComponent>();
-            while (query.MoveNext(out var uid, out var component))
-            {
-                if (_mobState.IsDead(uid)
-                    || HasComp<PsionicInsulationComponent>(uid))
-                    continue;
-
-                component.ManaAccumulator += frameTime;
-
-                if (component.ManaAccumulator <= 1)
-                    continue;
-
-                component.ManaAccumulator -= 1;
-
-                if (component.Mana > component.MaxMana)
-                    component.Mana = component.MaxMana;
-
-                if (component.Mana < 0)
-                    component.Mana = 0;
-
-                if (component.Mana < component.MaxMana)
-                {
-                    var gainedmana = component.ManaGain * component.ManaGainMultiplier;
-                    component.Mana += gainedmana;
-                    FixedPoint2.Min(component.Mana, component.MaxMana);
-
-                    var ev = new OnManaUpdateEvent();
-                    RaiseLocalEvent(uid, ref ev);
-                }
-            }
-        }
+        public float ModifiedDampening(EntityUid uid, PsionicComponent component) =>
+         component.CurrentDampening / _contests.MoodContest(uid, true);
     }
 
     public sealed class PsionicPowerUsedEvent : HandledEntityEventArgs
     {
         public EntityUid User { get; }
-        public string Power = string.Empty;
+        public string Power;
 
         public PsionicPowerUsedEvent(EntityUid user, string power)
         {
