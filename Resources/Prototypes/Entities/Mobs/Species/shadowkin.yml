@@ -232,6 +232,9 @@
       mana: 100
       maxMana: 200
       noMana: shadowkin-tired
+    - type: InnatePsionicPowers
+      powersToAdd:
+        - DarkSwapPower
     - type: LanguageKnowledge
       speaks:
         - TauCetiBasic
