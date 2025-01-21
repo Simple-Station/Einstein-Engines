@@ -25,6 +25,7 @@ namespace Content.Client.Chemistry.UI
     {
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         public event Action<BaseButton.ButtonEventArgs, ReagentButton, int>? OnReagentButtonPressed;
+        public event Action<int>? OnAmountButtonPressed;
         public event Action<int>? OnSortMethodChanged;
         public event Action<int>? OnTransferAmountChanged;
         public readonly Button[] PillTypeButtons;
@@ -49,12 +50,9 @@ namespace Content.Client.Chemistry.UI
             IoCManager.InjectDependencies(this);
 
             _reagents = new();
-
-            InputAmountLineEdit.OnTextEntered += SetAmount;
-            InputAmountLineEdit.OnFocusExit += SetAmount;
-
-            OutputAmountLineEdit.OnTextEntered += SetAmount;
-            OutputAmountLineEdit.OnFocusExit += SetAmount;
+            AmountLabel.HorizontalAlignment = HAlignment.Center;
+            AmountLineEdit.OnTextEntered += SetAmount;
+            AmountLineEdit.OnFocusExit += SetAmount;
 
             // Pill type selection buttons, in total there are 20 pills.
             // Pill rsi file should have states named as pill1, pill2, and so on.
@@ -115,6 +113,37 @@ namespace Content.Client.Chemistry.UI
 
             BufferTransferButton.OnPressed += HandleDiscardTransferPress;
             BufferDiscardButton.OnPressed += HandleDiscardTransferPress;
+
+            var amounts = new List<int>()
+            {
+                1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 125, 150, 175, 200, 225, 250, 275, 300, 500
+            };
+
+            for (int i = 0; i < amounts.Count; i++)
+            {
+                var styleClass = StyleBase.ButtonOpenBoth;
+                var amount = amounts[i];
+                var columns = AmountButtons.Columns;
+
+                if (i == 0 || i % columns == 0)
+                    styleClass = StyleBase.ButtonOpenRight;
+
+                if ((i + 1) % columns == 0)
+                    styleClass = StyleBase.ButtonOpenLeft;
+
+                var button = new Button()
+                {
+                    Text = amount.ToString(),
+                    MinSize = new(10, 10),
+                    StyleClasses = { styleClass },
+                    HorizontalExpand = true
+                };
+
+                button.OnPressed += _ => OnAmountButtonPressed?.Invoke(amount);
+                AmountButtons.AddChild(button);
+            }
+
+            OnAmountButtonPressed += amount => SetAmountText(amount.ToString());
         }
 
         private void HandleDiscardTransferPress(BaseButton.ButtonEventArgs args)
@@ -158,8 +187,7 @@ namespace Content.Client.Chemistry.UI
         {
             if (string.IsNullOrWhiteSpace(newText) || !int.TryParse(newText, out int amount))
             {
-                InputAmountLineEdit.SetText(string.Empty);
-                OutputAmountLineEdit.SetText(string.Empty);
+                AmountLineEdit.SetText(string.Empty);
                 return false;
             }
 
@@ -174,10 +202,7 @@ namespace Content.Client.Chemistry.UI
 
         private void SetAmountText(string newText)
         {
-            if (newText == _lastAmountText)
-                return;
-
-            if (!ValidateAmount(newText))
+            if (newText == _lastAmountText || !ValidateAmount(newText))
                 return;
 
             var localizedAmount = Loc.GetString(
@@ -185,11 +210,8 @@ namespace Content.Client.Chemistry.UI
                 ("quantity", newText),
                 ("color", TransferringAmountColor));
 
-            InputAmountLabel.Text = localizedAmount;
-            OutputAmountLabel.Text = localizedAmount;
-
-            InputAmountLineEdit.SetText(string.Empty);
-            OutputAmountLineEdit.SetText(string.Empty);
+            AmountLabel.Text = localizedAmount;
+            AmountLineEdit.SetText(string.Empty);
         }
 
         private ReagentButton MakeReagentButton(string text, ReagentId id, bool isBuffer)
