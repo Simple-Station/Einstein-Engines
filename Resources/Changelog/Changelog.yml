@@ -10528,3 +10528,10 @@ Entries:
   id: 6746
   time: '2025-01-21T00:18:24.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1619
+- author: sleepyyapril
+  changes:
+    - type: Remove
+      message: Remove mana.
+  id: 6747
+  time: '2025-01-21T02:06:29.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1623
