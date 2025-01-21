@@ -20,7 +20,7 @@ public sealed class RandomHumanoidSystem : EntitySystem
 
     [Dependency] private readonly HumanoidAppearanceSystem _humanoid = default!;
 
-    private HashSet<string> NotRoundStartSpecies;
+    private HashSet<string> _notRoundStartSpecies = new();
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -40,7 +40,7 @@ public sealed class RandomHumanoidSystem : EntitySystem
             .Select(x => x.Prototype.Id)
             .ToHashSet();
 
-        NotRoundStartSpecies = speciesList;
+        _notRoundStartSpecies = speciesList;
     }
 
     public EntityUid SpawnRandomHumanoid(string prototypeId, EntityCoordinates coordinates, string name)
@@ -51,7 +51,7 @@ public sealed class RandomHumanoidSystem : EntitySystem
         var blacklist = prototype.SpeciesBlacklist;
 
         if (!prototype.SpeciesBlacklist.Any())
-            blacklist = NotRoundStartSpecies;
+            blacklist = _notRoundStartSpecies;
 
         var profile = HumanoidCharacterProfile.Random(blacklist);
         var speciesProto = _prototypeManager.Index<SpeciesPrototype>(profile.Species);
