@@ -222,6 +222,7 @@
   - type: ToggleableLightVisuals
   - type: PointLight
     enabled: false
+    color: "#ffa1ff"
     radius: 3
     energy: 2
     mask: /Textures/Effects/LightMasks/cone.png
