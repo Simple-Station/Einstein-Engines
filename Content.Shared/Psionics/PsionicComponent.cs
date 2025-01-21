@@ -204,10 +204,6 @@ namespace Content.Shared.Abilities.Psionics
         [DataField]
         public string AlreadyCasting = "already-casting";
 
-        /// Popup to play if there no Mana left for a power to execute.
-        [DataField]
-        public string NoMana = "no-mana";
-
         /// <summary>
         ///     The list of Familiars currently bound to this Psion.
         /// </summary>
