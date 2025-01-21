@@ -365,7 +365,7 @@
     Piercing: 1.1
     Asphyxiation: 0.5
     Cold: 0.8
-    Heat: 1.1
+    Heat: 1.2
 
 - type: damageModifierSet
   id: DermalArmor
