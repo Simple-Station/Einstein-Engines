@@ -250,6 +250,15 @@
     sprite: Clothing/Uniforms/Envirosuits/prisoner.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Envirosuits/prisoner.rsi
+  - type: SuitSensor
+    controlsLocked: true
+    randomMode: false
+    mode: SensorCords
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - PlasmamanSafe
+    - PrisonUniform
 
 - type: entity
   parent: ClothingUniformEnvirosuitBase
