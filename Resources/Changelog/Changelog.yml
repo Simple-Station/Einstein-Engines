@@ -10517,3 +10517,14 @@ Entries:
   id: 6745
   time: '2025-01-20T23:28:51.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1620
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Singularity and Tesla are now affected by objects thrown into them,
+        causing them to change directions. Unless a traitor intervenes (with a
+        Singularity Beacon), a "Singuloose" is extremely likely to be blown out
+        to space. 
+  id: 6746
+  time: '2025-01-21T00:18:24.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1619
