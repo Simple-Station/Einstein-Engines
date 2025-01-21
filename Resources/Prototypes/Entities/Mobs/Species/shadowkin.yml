@@ -228,9 +228,6 @@
     - type: Shadowkin
     - type: Psionic
       mindbreakingFeedback: shadowkin-blackeye
-    - type: InnatePsionicPowers
-      powersToAdd:
-        - DarkSwapPower
     - type: LanguageKnowledge
       speaks:
         - TauCetiBasic
