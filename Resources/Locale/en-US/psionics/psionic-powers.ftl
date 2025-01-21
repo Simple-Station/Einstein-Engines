@@ -1,6 +1,5 @@
 generic-power-initialization-feedback = I Awaken.
 already-casting = I cannot channel more than one power at a time.
-no-mana = I cannot channel enough power.
 
 # Dispel
 dispel-power-description = Dispel summoned entities such as familiars or forcewalls.
