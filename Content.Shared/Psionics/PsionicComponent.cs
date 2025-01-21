@@ -7,35 +7,9 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Abilities.Psionics
 {
-    [RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true)]
+    [RegisterComponent, NetworkedComponent]
     public sealed partial class PsionicComponent : Component
     {
-        /// <summary>
-        ///     Current Mana.
-        /// </summary>
-        [DataField, AutoNetworkedField]
-        public float Mana = 50;
-
-        /// <summary>
-        ///     Max Mana Possible.
-        /// </summary>
-        [DataField, AutoNetworkedField]
-        public float MaxMana = 100;
-
-        /// <summary>
-        ///     How much energy is gained per second.
-        /// </summary>
-        [DataField]
-        public float ManaGain = 1;
-
-        /// <summary>
-        ///     ManaGain Multiplier
-        /// </summary>
-        [DataField]
-        public float ManaGainMultiplier = 1;
-
-        public float ManaAccumulator;
-
         [DataField]
         public bool BypassManaCheck;
 
@@ -261,8 +235,5 @@ namespace Content.Shared.Abilities.Psionics
 
         [DataField]
         public Dictionary<string, float> AvailablePowers = new();
-
-        [DataField]
-        public ProtoId<AlertPrototype> ManaAlert = "Mana";
     }
 }

@@ -28,9 +28,7 @@ public sealed class ShadowkinSystem : EntitySystem
     {
         base.Initialize();
         SubscribeLocalEvent<ShadowkinComponent, ComponentStartup>(OnInit);
-        SubscribeLocalEvent<ShadowkinComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<ShadowkinComponent, OnMindbreakEvent>(OnMindbreak);
-        SubscribeLocalEvent<ShadowkinComponent, OnManaUpdateEvent>(OnManaUpdate);
         SubscribeLocalEvent<ShadowkinComponent, RejuvenateEvent>(OnRejuvenate);
         SubscribeLocalEvent<ShadowkinComponent, EyeColorInitEvent>(OnEyeColorChange);
     }
@@ -49,43 +47,6 @@ public sealed class ShadowkinSystem : EntitySystem
         component.OldEyeColor = humanoid.EyeColor;
         humanoid.EyeColor = component.BlackEyeColor;
         Dirty(uid, humanoid);
-    }
-
-    private void OnExamined(EntityUid uid, ShadowkinComponent component, ExaminedEvent args)
-    {
-        if (!args.IsInDetailsRange
-            || !TryComp<PsionicComponent>(uid, out var magic)
-            || HasComp<MindbrokenComponent>(uid))
-            return;
-
-        var severity = "shadowkin-power-" + ContentHelpers.RoundToLevels(magic.Mana, magic.MaxMana, 6);
-        var powerType = Loc.GetString(severity);
-
-        if (args.Examined == args.Examiner)
-            args.PushMarkup(Loc.GetString("shadowkin-power-examined-self",
-                ("power", Math.Floor(magic.Mana)),
-                ("powerMax", Math.Floor(magic.MaxMana)),
-                ("powerType", powerType)
-            ));
-        else
-            args.PushMarkup(Loc.GetString("shadowkin-power-examined-other",
-                ("target", uid),
-                ("powerType", powerType)
-            ));
-    }
-
-    private void OnManaUpdate(EntityUid uid, ShadowkinComponent component, ref OnManaUpdateEvent args)
-    {
-        if (!TryComp<PsionicComponent>(uid, out var magic))
-            return;
-
-        if (component.SleepManaRegen
-            && TryComp<SleepingComponent>(uid, out var sleep))
-            magic.ManaGainMultiplier = component.SleepManaRegenMultiplier;
-        else
-            magic.ManaGainMultiplier = 1;
-
-        Dirty(uid, magic); // Update Shadowkin Overlay.
     }
 
     private void OnMindbreak(EntityUid uid, ShadowkinComponent component, ref OnMindbreakEvent args)
@@ -117,13 +78,7 @@ public sealed class ShadowkinSystem : EntitySystem
             Dirty(uid, humanoid);
         }
 
-        EnsureComp<PsionicComponent>(uid, out var magic);
-        magic.Mana = 200;
-        magic.MaxMana = 200;
-        magic.ManaGain = 0.25f;
-        magic.MindbreakingFeedback = "shadowkin-blackeye";
-        magic.NoMana = "shadowkin-tired";
-
+        EnsureComp<PsionicComponent>(uid, out _);
         if (_prototypeManager.TryIndex<PsionicPowerPrototype>("ShadowkinPowers", out var shadowkinPowers))
             _psionicAbilitiesSystem.InitializePsionicPower(uid, shadowkinPowers);
     }
