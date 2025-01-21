@@ -45,6 +45,7 @@ public sealed class LoadoutSystem : EntitySystem
     private void OnPlayerSpawnComplete(PlayerSpawnCompleteEvent ev)
     {
         if (ev.JobId == null || Deleted(ev.Mob) || !Exists(ev.Mob)
+            || !HasComp<MetaDataComponent>(ev.Mob) // TODO: FIND THE STUPID RACE CONDITION THAT IS MAKING ME CHECK FOR THIS.
             || !_protoMan.TryIndex<JobPrototype>(ev.JobId, out _)
             || !_configurationManager.GetCVar(CCVars.GameLoadoutsEnabled))
             return;
