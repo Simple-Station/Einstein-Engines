@@ -47,9 +47,6 @@ public sealed class VentCrittersRule : StationEventSystem<VentCrittersRuleCompon
         if (!_navMap.TryGetNearestBeacon(mapCoords, out var beacon, out _))
             return;
 
-        var nearest = beacon?.Comp?.Text!;
-        Comp<StationEventComponent>(uid).StartAnnouncement = Loc.GetString("station-event-vent-creatures-start-announcement-deltav", ("location", nearest));
-
         base.Added(uid, comp, gameRule, args);
     }
 
