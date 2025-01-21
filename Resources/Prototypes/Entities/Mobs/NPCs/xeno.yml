@@ -73,7 +73,7 @@
       100: Dead
   - type: SlowOnDamage
     speedModifierThresholds:
-      25: 0.4
+      25: 0.75
   - type: Stamina
     critThreshold: 200
   - type: Bloodstream
