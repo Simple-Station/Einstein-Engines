@@ -64,9 +64,9 @@
     #pocket2: DeathAcidifierImplanter
 
 - type: startingGear
-  id: BlueshieldPlasmamanGear # TODO: add blueshield envirosuit
-  parent: BasePlasmamanSecurityGear
+  id: BlueshieldPlasmamanGear
+  parent: BasePlasmamanGear
   equipment:
-    jumpsuit: ClothingUniformEnvirosuitSec
-    head: ClothingHeadEnvirohelmSec
+    jumpsuit: ClothingUniformEnvirosuitBlueshield
+    head: ClothingHeadEnvirohelmBlueshield
     gloves: ClothingHandsGlovesEnviroglovesBlack

@@ -1022,3 +1022,57 @@
       - state: accent-equipped-HELMET
         color: "#292929"
       - state: visor-equipped-HELMET
+
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelmBlueshield
+  name: blueshield's envirosuit helmet
+  description: A plasmaman envirosuit helmet designed for the blueshield.
+  components:
+  - type: ToggleableLightVisuals
+    inhandVisuals:
+      left:
+      - state: visor-inhand-left
+        shader: unshaded
+      right:
+      - state: visor-inhand-right
+        shader: unshaded
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+        shader: unshaded
+  - type: Sprite
+    sprite: Clothing/Head/Envirohelms/color.rsi
+    layers:
+    - state: icon
+      color: "#535353"
+    - state: accent-icon
+      color: "#0044d4"
+    - state: visor-icon
+    - state: icon-flash
+      visible: false
+      shader: unshaded
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#535353"
+      - state: accent-inhand-left
+        color: "#0044d4"
+      - state: visor-inhand-left
+      right:
+      - state: inhand-right
+        color: "#535353"
+      - state: accent-inhand-right
+        color: "#0044d4"
+      - state: visor-inhand-right
+  - type: Clothing
+    sprite: Clothing/Head/Envirohelms/color.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#535353"
+      - state: accent-equipped-HELMET
+        color: "#0044d4"
+      - state: visor-equipped-HELMET

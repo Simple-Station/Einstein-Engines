@@ -226,7 +226,7 @@
     enabled: false
     color: "#ffa1ff"
     radius: 3
-    energy: 2
+    energy: 2.5
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
     netsync: false

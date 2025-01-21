@@ -992,3 +992,19 @@
         color: "#292929"
       - state: soles-equipped-INNERCLOTHING
         color: "#292929"
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitBlueshield
+  name: blueshield officer envirosuit
+  description: An envirosuit designed for plasmamen employed as the Blueshield.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/blueshield_officer.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/blueshield_officer.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Heat: 0.95
