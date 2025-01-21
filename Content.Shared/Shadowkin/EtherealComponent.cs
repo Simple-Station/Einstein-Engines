@@ -30,13 +30,7 @@ public sealed partial class EtherealComponent : Component
     [DataField]
     public bool CanBeStunned = true;
 
-    /// Drain Mana if this entity is psionic?
-    [DataField]
-    public bool DrainMana = true;
-
     public List<EntityUid> DarkenedLights = new();
-
-    public float OldManaGain;
 
     public float DarkenAccumulator;
 

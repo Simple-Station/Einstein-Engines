@@ -227,10 +227,6 @@
     - type: Shadowkin
     - type: Psionic
       mindbreakingFeedback: shadowkin-blackeye
-      manaGain: 0.25
-      mana: 100
-      maxMana: 200
-      noMana: shadowkin-tired
     - type: InnatePsionicPowers
       powersToAdd:
         - DarkSwapPower
