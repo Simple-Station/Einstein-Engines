@@ -26,7 +26,7 @@ public sealed class SharedLoadoutSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _sharedTransformSystem = default!;
     [Dependency] private readonly ILogManager _log = default!;
 
-    private ISawmill _sawmill;
+    private ISawmill _sawmill = default!;
 
     public override void Initialize()
     {
