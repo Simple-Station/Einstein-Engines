@@ -14,8 +14,6 @@
     entries:
     - id: MobXeno
       prob: 0.01
-    - id: MobXenoRouny
-      prob: 0.005
     - id: MobXenoDrone
       prob: 0.005
     - id: MobXenoSpitter
@@ -47,8 +45,6 @@
       prob: 0.004
     - id: MobXenoSpitter
       prob: 0.003
-    - id: MobXenoRouny
-      prob: 0.001
     - id: MobXenoRunner
       prob: 0.001
     - id: MobXenoPraetorian
