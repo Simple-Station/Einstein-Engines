@@ -4,7 +4,7 @@
   roundStart: true
   prototype: MobPlasmaman
   sprites: MobPlasmamanSprites
-  defaultSkinTone: "#ffffff"
+  defaultSkinTone: "#a349a4"
   markingLimits: MobPlasmamanMarkingLimits
   dollPrototype: MobPlasmamanDummy
   skinColoration: Hues
@@ -19,6 +19,7 @@
   id: MobPlasmamanSprites
   sprites:
     Head: MobPlasmamanHead
+    Face: MobHumanoidAnyMarking
     Chest: MobPlasmamanTorso
     Eyes: MobPlasmamanEyes
     LArm: MobPlasmamanLArm
@@ -33,12 +34,6 @@
 - type: markingPoints
   id: MobPlasmamanMarkingLimits
   points:
-    Hair:
-      points: 0
-      required: false
-    FacialHair:
-      points: 0
-      required: false
     Snout:
       points: 0
       required: false
