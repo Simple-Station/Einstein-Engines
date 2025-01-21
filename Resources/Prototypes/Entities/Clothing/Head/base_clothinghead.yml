@@ -202,6 +202,7 @@
     parts:
     - Head
   - type: Clothing
+    equipDelay: 0.4
     unequipDelay: 0.75 # Slightly higher delay to protect against accidental unequips
   - type: EyeProtection
   - type: BreathMask

@@ -32,13 +32,13 @@ public sealed partial class NamingSystem : EntitySystem
         (int, int) range;
         while (true)
         {
-            if (_random.Prob(0.84f))       // 84% chance for 1-100
+            if (_random.Prob(0.8f))       // 80% chance for 1-100
                 range = (1, 101);
-            else if (_random.Prob(0.5f))   //  8% chance for 101-500
+            else if (_random.Prob(0.6f))  // 12% chance for 101-500
                 range = (101, 501);
-            else if (_random.Prob(0.75f))  //  6% chance for 501-1,000
+            else if (_random.Prob(0.75f)) //  6% chance for 501-1,000
                 range = (501, 1001);
-            else                           //  2% chance for 1,001-3,999
+            else                          //  2% chance for 1,001-3,999
                 range = (1001, 4000);
 
             var numeral = IntToRomanNumeral(_random.Next(range.Item1, range.Item2));
