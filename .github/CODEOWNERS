@@ -1,10 +1,13 @@
+# hasn't specified or all
+* @sleepyyapril @VMSolidus @Remuchi
+
 /.* @DEATHB4DEFEAT
 *.sln @DEATHB4DEFEAT
 *.csproj @DEATHB4DEFEAT
 *.dotsettings @DEATHB4DEFEAT
 *.DotSettings @DEATHB4DEFEAT
 *.toml @DEATHB4DEFEAT
-/Content.*/IoC @sleepyyapril @DEATHB4DEFEAT
+/Content.*/IoC @DEATHB4DEFEAT
 
 
 # Nix
@@ -14,8 +17,8 @@
 
 
 # UI
-*.xaml @sleepyyapril @DEATHB4DEFEAT
-*.xaml.cs @sleepyyapril @DEATHB4DEFEAT
+*.xaml @DEATHB4DEFEAT
+*.xaml.cs @DEATHB4DEFEAT
 
 # Lobby
 /Content.Client/Lobby @DEATHB4DEFEAT
@@ -28,7 +31,7 @@
 
 # Writing
 *.xml @DEATHB4DEFEAT
-*.ftl @DEATHB4DEFEAT @sleepyyapril
+*.ftl @DEATHB4DEFEAT
 *.md @DEATHB4DEFEAT
 *.txt @DEATHB4DEFEAT
 
@@ -67,15 +70,15 @@
 
 
 # Database
-/Content.*/Database @sleepyyapril @DEATHB4DEFEAT
-/Content.*/.Database @sleepyyapril @DEATHB4DEFEAT
+/Content.*/Database @DEATHB4DEFEAT
+/Content.*/.Database @DEATHB4DEFEAT
 
 # Preferences
 /Content.*/Preferences @DEATHB4DEFEAT
-**/*CVar*/*.cs @sleepyyapril @DEATHB4DEFEAT
+**/*CVar*/*.cs @DEATHB4DEFEAT
 
 # Discord
-/Content.*/Discord* @sleepyyapril @DEATHB4DEFEAT
+/Content.*/Discord* @DEATHB4DEFEAT
 
 # Loadouts
 /Resources/Prototypes/Loadouts @angelofallars

@@ -10433,3 +10433,105 @@ Entries:
   id: 6738
   time: '2025-01-20T04:52:00.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1580
+- author: Several contributors
+  changes:
+    - type: Add
+      message: >-
+        Added a new central command map that is randomly picked alongside the
+        old one (thank you to Spanky from Harmony)
+    - type: Add
+      message: Added Advanced SMES for mappers.
+    - type: Add
+      message: >-
+        Added the atmospheric network monitor for seeing what the temperature,
+        moles, and pressure is on every pipe everywhere through a computer.
+    - type: Add
+      message: Nukie med bundle now contains a compact defibrillator.
+    - type: Add
+      message: Ported a better mapping editor.
+    - type: Add
+      message: Added the throngler plushie.
+    - type: Remove
+      message: Removed the Throngler as a possible loot spawn for gamble crates.
+  id: 6739
+  time: '2025-01-20T07:24:23.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1610
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: The medbay fent zombie epidemic is now fixed.
+  id: 6740
+  time: '2025-01-20T08:13:06.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1614
+- author: CerberusWolfie
+  changes:
+    - type: Add
+      message: >-
+        Added Psionics Registry Computer. Now you can record Psionics users in
+        Epistemics.
+    - type: Add
+      message: >-
+        Added epi-glasses and epi-HUD to see Psionics Users icons. (Chaplain,
+        Cataloguer, Mantis, and Mystagogue have access in loadout).
+    - type: Add
+      message: Added PsiWatch. Now you can see the Psionics Records data on your PDA!
+    - type: Fix
+      message: Fixed Chaplain not having any programs in their PDA on spawn.
+  id: 6741
+  time: '2025-01-20T09:50:34.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1598
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Tweak
+      message: Made the Redshirt trait's description say what it does
+  id: 6742
+  time: '2025-01-20T19:35:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1616
+- author: CerberusWolfie
+  changes:
+    - type: Add
+      message: Added MedTek to Blushield Officer PDA.
+    - type: Tweak
+      message: >-
+        Blueshield Officer now has a Central Command Headset instead of an
+        All-Access Command Headset.
+  id: 6743
+  time: '2025-01-20T21:34:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1617
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed the Supermatter engine math so that it actually respects the
+        server's tickrate. It should now be SIGNIFICANTLY less likely to enter a
+        plasma fire death spiral. If it does catch fire, just make sure coolant
+        is being pumped into the engine, and start blasting it with a fire
+        extinguisher. 
+  id: 6744
+  time: '2025-01-20T23:13:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1618
+- author: sleepyyapril
+  changes:
+    - type: Tweak
+      message: Tweaked puddles and footsteps to be able to see them in context menu.
+  id: 6745
+  time: '2025-01-20T23:28:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1620
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Singularity and Tesla are now affected by objects thrown into them,
+        causing them to change directions. Unless a traitor intervenes (with a
+        Singularity Beacon), a "Singuloose" is extremely likely to be blown out
+        to space. 
+  id: 6746
+  time: '2025-01-21T00:18:24.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1619
+- author: sleepyyapril
+  changes:
+    - type: Remove
+      message: Remove mana.
+  id: 6747
+  time: '2025-01-21T02:06:29.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1623
