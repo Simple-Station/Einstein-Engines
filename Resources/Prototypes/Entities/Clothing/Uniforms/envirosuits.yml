@@ -996,7 +996,7 @@
 - type: entity
   parent: ClothingUniformEnvirosuitBase
   id: ClothingUniformEnvirosuitBlueshield
-  name: blueshield officer envirosuit
+  name: blueshield's envirosuit
   description: An envirosuit designed for plasmamen employed as the Blueshield.
   components:
   - type: Sprite
