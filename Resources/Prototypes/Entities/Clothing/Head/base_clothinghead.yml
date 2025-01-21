@@ -201,6 +201,8 @@
   - type: IgniteFromGasImmunity
     parts:
     - Head
+  - type: Clothing
+    unequipDelay: 0.75 # Slightly higher delay to protect against accidental unequips
   - type: EyeProtection
   - type: BreathMask
   - type: PressureProtection # Same as EVA helmet
@@ -260,6 +262,8 @@
     modifiers:
       coefficients:
         Caustic: 0.90
+  - type: GuideHelp # While the playerbase is getting introduced to Plasmamen, add their guidebook here
+    guides: [ Plasmaman ]
 
 - type: entity
   abstract: true

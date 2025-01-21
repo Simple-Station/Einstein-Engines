@@ -172,6 +172,7 @@
     - RightLeg
     - RightFoot
   - type: Clothing
+    unequipDelay: 0.75 # Slightly higher delay to protect against accidental unequips
     femaleMask: NoMask
   - type: SelfExtinguisher
     cooldown: 100
@@ -191,3 +192,5 @@
     - PlasmamanSafe
   - type: ClothingRequiredStepTriggerImmune
     slots: WITHOUT_POCKET
+  - type: GuideHelp # While the playerbase is getting introduced to Plasmamen, add their guidebook here
+    guides: [ Plasmaman ]

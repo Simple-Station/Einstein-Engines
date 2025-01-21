@@ -24,7 +24,7 @@
   parent: ClothingHeadEnvirohelmBase
   id: ClothingHeadEnvirohelmCargo
   name: logistics envirosuit helmet
-  description: A plasmaman envirohelmet designed for cargo techs and logistics officers.
+  description: A plasmaman envirohelmet designed for cargo technicians.
   components:
   - type: Sprite
     sprite: Clothing/Head/Envirohelms/cargo.rsi
@@ -368,6 +368,13 @@
   description: An envirosuit helmet for the courier.
   components:
   - type: ToggleableLightVisuals
+    inhandVisuals:
+      left:
+      - state: visor-inhand-left
+        shader: unshaded
+      right:
+      - state: visor-inhand-right
+        shader: unshaded
     clothingVisuals:
       head:
       - state: on-equipped-HELMET
@@ -381,6 +388,7 @@
     - state: visor-icon
     - state: icon-flash
       visible: false
+      shader: unshaded
       map: [ "light" ]
   - type: Item
     inhandVisuals:
@@ -413,6 +421,13 @@
   description: Experts are perplexed as to how plasmamen can still play the trumpet with this helmet on.
   components:
   - type: ToggleableLightVisuals
+    inhandVisuals:
+      left:
+      - state: visor-inhand-left
+        shader: unshaded
+      right:
+      - state: visor-inhand-right
+        shader: unshaded
     clothingVisuals:
       head:
       - state: on-equipped-HELMET
@@ -426,6 +441,7 @@
     - state: visor-icon
     - state: icon-flash
       visible: false
+      shader: unshaded
       map: [ "light" ]
   - type: Item
     inhandVisuals:
@@ -458,6 +474,13 @@
   description: An envirosuit helmet for the reporter.
   components:
   - type: ToggleableLightVisuals
+    inhandVisuals:
+      left:
+      - state: visor-inhand-left
+        shader: unshaded
+      right:
+      - state: visor-inhand-right
+        shader: unshaded
     clothingVisuals:
       head:
       - state: on-equipped-HELMET
@@ -471,6 +494,7 @@
     - state: visor-icon
     - state: icon-flash
       visible: false
+      shader: unshaded
       map: [ "light" ]
   - type: Item
     inhandVisuals:
@@ -503,9 +527,17 @@
   description: A dark green envirosuit helmet.
   components:
   - type: ToggleableLightVisuals
+    inhandVisuals:
+      left:
+      - state: visor-inhand-left
+        shader: unshaded
+      right:
+      - state: visor-inhand-right
+        shader: unshaded
     clothingVisuals:
       head:
       - state: on-equipped-HELMET
+        shader: unshaded
   - type: Sprite
     sprite: Clothing/Head/Envirohelms/color.rsi
     layers:
@@ -516,6 +548,7 @@
     - state: visor-icon
     - state: icon-flash
       visible: false
+      shader: unshaded
       map: [ "light" ]
   - type: Item
     inhandVisuals:
@@ -545,12 +578,20 @@
   parent: ClothingHeadEnvirohelmBase
   id: ClothingHeadEnvirohelmMantis
   name: mantis' envirosuit helmet
-  description: An envirosuit helmet for the forensic mantis.
+  description: An envirosuit helmet for the forensic mantis with a fancy gold stripe.
   components:
   - type: ToggleableLightVisuals
+    inhandVisuals:
+      left:
+      - state: visor-inhand-left
+        shader: unshaded
+      right:
+      - state: visor-inhand-right
+        shader: unshaded
     clothingVisuals:
       head:
       - state: on-equipped-HELMET
+        shader: unshaded
   - type: Sprite
     sprite: Clothing/Head/Envirohelms/color.rsi
     layers:
@@ -558,9 +599,12 @@
       color: "#46566d"
     - state: accent-icon
       color: "#7d2322"
+    - state: midaccent-icon
+      color: "#d4af48"
     - state: visor-icon
     - state: icon-flash
       visible: false
+      shader: unshaded
       map: [ "light" ]
   - type: Item
     inhandVisuals:
@@ -569,12 +613,16 @@
         color: "#46566d"
       - state: accent-inhand-left
         color: "#7d2322"
+      - state: midaccent-inhand-left
+        color: "#d4af48"
       - state: visor-inhand-left
       right:
       - state: inhand-right
         color: "#46566d"
       - state: accent-inhand-right
         color: "#7d2322"
+      - state: midaccent-inhand-right
+        color: "#d4af48"
       - state: visor-inhand-right
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/color.rsi
@@ -584,6 +632,8 @@
         color: "#46566d"
       - state: accent-equipped-HELMET
         color: "#7d2322"
+      - state: midaccent-equipped-HELMET
+        color: "#d4af48"
       - state: visor-equipped-HELMET
 
 - type: entity
@@ -593,9 +643,17 @@
   description: Makes you a target for the locals.
   components:
   - type: ToggleableLightVisuals
+    inhandVisuals:
+      left:
+      - state: visor-inhand-left
+        shader: unshaded
+      right:
+      - state: visor-inhand-right
+        shader: unshaded
     clothingVisuals:
       head:
       - state: on-equipped-HELMET
+        shader: unshaded
   - type: Sprite
     sprite: Clothing/Head/Envirohelms/color.rsi
     layers:
@@ -606,6 +664,7 @@
     - state: visor-icon
     - state: icon-flash
       visible: false
+      shader: unshaded
       map: [ "light" ]
   - type: Item
     inhandVisuals:
@@ -707,9 +766,11 @@
     sprite: Clothing/Head/Envirohelms/color.rsi
     layers:
     - state: icon
-      color: "#bb9042"
+      color: "#ba9654"
     - state: accent-icon
       color: "#ffd600"
+    - state: midaccent-icon
+      color: "#d08200"
     - state: visor-icon
     - state: icon-flash
       visible: false
@@ -719,22 +780,245 @@
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#bb9042"
+        color: "#ba9654"
       - state: accent-inhand-left
         color: "#ffd600"
+      - state: midaccent-inhand-left
+        color: "#d08200"
       - state: visor-inhand-left
       right:
       - state: inhand-right
-        color: "#bb9042"
+        color: "#ba9654"
       - state: accent-inhand-right
         color: "#ffd600"
+      - state: midaccent-inhand-right
+        color: "#d08200"
       - state: visor-inhand-right
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/color.rsi
     clothingVisuals:
       head:
       - state: equipped-HELMET
-        color: "#bb9042"
+        color: "#ba9654"
       - state: accent-equipped-HELMET
         color: "#ffd600"
+      - state: midaccent-equipped-HELMET
+        color: "#d08200"
+      - state: visor-equipped-HELMET
+
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelmBoxing
+  name: boxing envirosuit helmet
+  description: A white envirosuit helmet with red stripes.
+  components:
+  - type: ToggleableLightVisuals
+    inhandVisuals:
+      left:
+      - state: visor-inhand-left
+        shader: unshaded
+      right:
+      - state: visor-inhand-right
+        shader: unshaded
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+        shader: unshaded
+  - type: Sprite
+    sprite: Clothing/Head/Envirohelms/color.rsi
+    layers:
+    - state: icon
+      color: "#eeeeee"
+    - state: accent-icon
+      color: "#a81818"
+    - state: visor-icon
+    - state: icon-flash
+      visible: false
+      shader: unshaded
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#eeeeee"
+      - state: accent-inhand-left
+        color: "#a81818"
+      - state: visor-inhand-left
+      right:
+      - state: inhand-right
+        color: "#eeeeee"
+      - state: accent-inhand-right
+        color: "#a81818"
+      - state: visor-inhand-right
+  - type: Clothing
+    sprite: Clothing/Head/Envirohelms/color.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#eeeeee"
+      - state: accent-equipped-HELMET
+        color: "#a81818"
+      - state: visor-equipped-HELMET
+
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelmAdminAssistant
+  name: administrative assistant's envirosuit helmet
+  description: A white envirosuit helmet with dark blue stripes.
+  components:
+  - type: ToggleableLightVisuals
+    inhandVisuals:
+      left:
+      - state: visor-inhand-left
+        shader: unshaded
+      right:
+      - state: visor-inhand-right
+        shader: unshaded
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+        shader: unshaded
+  - type: Sprite
+    sprite: Clothing/Head/Envirohelms/color.rsi
+    layers:
+    - state: icon
+      color: "#ffffff"
+    - state: accent-icon
+      color: "#315266"
+    - state: visor-icon
+    - state: icon-flash
+      visible: false
+      shader: unshaded
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ffffff"
+      - state: accent-inhand-left
+        color: "#315266"
+      - state: visor-inhand-left
+      right:
+      - state: inhand-right
+        color: "#ffffff"
+      - state: accent-inhand-right
+        color: "#315266"
+      - state: visor-inhand-right
+  - type: Clothing
+    sprite: Clothing/Head/Envirohelms/color.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#ffffff"
+      - state: accent-equipped-HELMET
+        color: "#315266"
+      - state: visor-equipped-HELMET
+
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelmBlackPink
+  name: black pink envirosuit helmet
+  description: Black pink envirosuit helmet in your area!
+  components:
+  - type: ToggleableLightVisuals
+    inhandVisuals:
+      left:
+      - state: visor-inhand-left
+        shader: unshaded
+      right:
+      - state: visor-inhand-right
+        shader: unshaded
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+        shader: unshaded
+  - type: Sprite
+    sprite: Clothing/Head/Envirohelms/color.rsi
+    layers:
+    - state: icon
+      color: "#292929"
+    - state: accent-icon
+      color: "#f4a5ba"
+    - state: visor-icon
+    - state: icon-flash
+      visible: false
+      shader: unshaded
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#292929"
+      - state: accent-inhand-left
+        color: "#f4a5ba"
+      - state: visor-inhand-left
+      right:
+      - state: inhand-right
+        color: "#292929"
+      - state: accent-inhand-right
+        color: "#f4a5ba"
+      - state: visor-inhand-right
+  - type: Clothing
+    sprite: Clothing/Head/Envirohelms/color.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#292929"
+      - state: accent-equipped-HELMET
+        color: "#f4a5ba"
+      - state: visor-equipped-HELMET
+
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelmBlackPinkAlt
+  name: black pink envirosuit helmet
+  suffix: Alternative
+  description: Black pink envirosuit helmet in your area!
+  components:
+  - type: ToggleableLightVisuals
+    inhandVisuals:
+      left:
+      - state: visor-inhand-left
+        shader: unshaded
+      right:
+      - state: visor-inhand-right
+        shader: unshaded
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+        shader: unshaded
+  - type: Sprite
+    sprite: Clothing/Head/Envirohelms/color.rsi
+    layers:
+    - state: icon
+      color: "#f4a5ba"
+    - state: accent-icon
+      color: "#292929"
+    - state: visor-icon
+    - state: icon-flash
+      visible: false
+      shader: unshaded
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#f4a5ba"
+      - state: accent-inhand-left
+        color: "#292929"
+      - state: visor-inhand-left
+      right:
+      - state: inhand-right
+        color: "#f4a5ba"
+      - state: accent-inhand-right
+        color: "#292929"
+      - state: visor-inhand-right
+  - type: Clothing
+    sprite: Clothing/Head/Envirohelms/color.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#f4a5ba"
+      - state: accent-equipped-HELMET
+        color: "#292929"
       - state: visor-equipped-HELMET

@@ -23,8 +23,8 @@
 - type: entity
   parent: ClothingUniformEnvirosuitBase
   id: ClothingUniformEnvirosuitCargo
-  name: logistics envirosuit
-  description: A joint envirosuit used by plasmamen logistics officers and cargo techs alike.
+  name: cargo tech envirosuit
+  description: An envirosuit used by plasmamen cargo technicians.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Envirosuits/cargo.rsi
@@ -411,6 +411,8 @@
         color: "#c2911e"
       - state: loweraccent2-equipped-INNERCLOTHING
         color: "#c2911e"
+      - state: soles-equipped-INNERCLOTHING
+        color: "#c2911e"
 
 - type: entity
   parent: ClothingUniformEnvirosuitBase
@@ -423,7 +425,11 @@
     layers:
     - state: icon
       color: "#3c335b"
-    - state: accent2-icon
+    - state: plaintop-icon
+      color: "#3c335b"
+    - state: accent-icon
+      color: "#f3f5f4"
+    - state: tie-icon
       color: "#f3f5f4"
     - state: pin-icon
       color: "#db2525"
@@ -432,14 +438,22 @@
       left:
       - state: inhand-left
         color: "#3c335b"
-      - state: accent2-inhand-left
+      - state: plaintop-inhand-left
+        color: "#3c335b"
+      - state: accent-inhand-left
+        color: "#f3f5f4"
+      - state: tie-inhand-left
         color: "#f3f5f4"
       - state: pin-inhand-left
         color: "#db2525"
       right:
       - state: inhand-right
         color: "#3c335b"
-      - state: accent2-inhand-right
+      - state: plaintop-inhand-right
+        color: "#3c335b"
+      - state: accent-inhand-right
+        color: "#f3f5f4"
+      - state: tie-inhand-right
         color: "#f3f5f4"
       - state: pin-inhand-right
         color: "#db2525"
@@ -449,12 +463,18 @@
       jumpsuit:
       - state: equipped-INNERCLOTHING
         color: "#3c335b"
-      - state: accent2-equipped-INNERCLOTHING
+      - state: plaintop-equipped-INNERCLOTHING
+        color: "#3c335b"
+      - state: accent-equipped-INNERCLOTHING
+        color: "#f3f5f4"
+      - state: tie-equipped-INNERCLOTHING
         color: "#f3f5f4"
       - state: loweraccent-equipped-INNERCLOTHING
         color: "#f3f5f4"
       - state: pin-equipped-INNERCLOTHING
         color: "#db2525"
+      - state: soles-equipped-INNERCLOTHING
+        color: "#bababa"
 
 - type: entity
   parent: ClothingUniformEnvirosuitBase
@@ -491,6 +511,8 @@
         color: "#79121b"
       - state: loweraccent2-equipped-INNERCLOTHING
         color: "#79121b"
+      - state: soles-equipped-INNERCLOTHING
+        color: "#bababa"
 
 - type: entity
   parent: ClothingUniformEnvirosuitBase
@@ -505,7 +527,7 @@
       color: "#9ed63a"
     - state: accent-icon
       color: "#f3f3f3"
-    - state: soles-icon
+    - state: corneraccent-icon
       color: "#f3f3f3"
   - type: Item
     inhandVisuals:
@@ -514,14 +536,14 @@
         color: "#9ed63a"
       - state: accent-inhand-left
         color: "#f3f3f3"
-      - state: soles-inhand-left
+      - state: corneraccent-inhand-left
         color: "#f3f3f3"
       right:
       - state: inhand-right
         color: "#9ed63a"
       - state: accent-inhand-right
         color: "#f3f3f3"
-      - state: soles-inhand-right
+      - state: corneraccent-inhand-right
         color: "#f3f3f3"
   - type: Clothing
     sprite: Clothing/Uniforms/Envirosuits/color.rsi
@@ -533,8 +555,10 @@
         color: "#f3f3f3"
       - state: loweraccent-equipped-INNERCLOTHING
         color: "#f3f3f3"
-      - state: soles-equipped-INNERCLOTHING
+      - state: corneraccent-equipped-INNERCLOTHING
         color: "#f3f3f3"
+      - state: soles-equipped-INNERCLOTHING
+        color: "#bababa"
 
 - type: entity
   parent: ClothingUniformEnvirosuitBase
@@ -549,10 +573,14 @@
       color: "#46566d"
     - state: pants-icon
       color: "#7d2322"
+    - state: belt-icon
+      color: "#51321a"
+    - state: beltbuckle-icon
+      color: "#dcbb60"
     - state: accent-icon
-      color: "#b69539"
+      color: "#d4af48"
     - state: buttons-icon
-      color: "#b69539"
+      color: "#997d30"
   - type: Item
     inhandVisuals:
       left:
@@ -560,19 +588,27 @@
         color: "#46566d"
       - state: pants-inhand-left
         color: "#7d2322"
+      - state: belt-inhand-left
+        color: "#51321a"
+      - state: beltbuckle-inhand-left
+        color: "#dcbb60"
       - state: accent-inhand-left
-        color: "#b69539"
+        color: "#d4af48"
       - state: buttons-inhand-left
-        color: "#b69539"
+        color: "#997d30"
       right:
       - state: inhand-right
         color: "#46566d"
       - state: pants-inhand-right
         color: "#7d2322"
+      - state: belt-inhand-right
+        color: "#51321a"
+      - state: beltbuckle-inhand-right
+        color: "#dcbb60"
       - state: accent-inhand-right
-        color: "#b69539"
+        color: "#d4af48"
       - state: buttons-inhand-right
-        color: "#b69539"
+        color: "#997d30"
   - type: Clothing
     sprite: Clothing/Uniforms/Envirosuits/color.rsi
     clothingVisuals:
@@ -581,12 +617,18 @@
         color: "#46566d"
       - state: pants-equipped-INNERCLOTHING
         color: "#7d2322"
-      - state: accent-equipped-INNERCLOTHING
-        color: "#b69539"
+      - state: belt-equipped-INNERCLOTHING
+        color: "#51321a"
+      - state: beltbuckle-equipped-INNERCLOTHING
+        color: "#dcbb60"
+      - state: accentalt-equipped-INNERCLOTHING
+        color: "#d4af48"
       - state: loweraccent-equipped-INNERCLOTHING
-        color: "#b69539"
+        color: "#d4af48"
       - state: buttons-equipped-INNERCLOTHING
-        color: "#b69539"
+        color: "#997d30"
+      - state: soles-equipped-INNERCLOTHING
+        color: "#d4af48"
 
 - type: entity
   parent: ClothingUniformEnvirosuitBase
@@ -623,6 +665,8 @@
         color: "#a349a4"
       - state: loweraccent-equipped-INNERCLOTHING
         color: "#a349a4"
+      - state: soles-equipped-INNERCLOTHING
+        color: "#bababa"
 
 - type: entity
   parent: ClothingUniformEnvirosuitBase
@@ -659,6 +703,8 @@
         color: "#3b3b3b"
       - state: loweraccent-equipped-INNERCLOTHING
         color: "#3b3b3b"
+      - state: soles-equipped-INNERCLOTHING
+        color: "#bababa"
 
 - type: entity
   parent: ClothingUniformEnvirosuitBase
@@ -670,44 +716,279 @@
     sprite: Clothing/Uniforms/Envirosuits/color.rsi
     layers:
     - state: icon
-      color: "#bb9042"
+      color: "#ba9654"
     - state: accent3-icon
       color: "#ffd600"
     - state: pants-icon
       color: "#a9a061"
+    - state: belt-icon
+      color: "#3a3a3a"
     - state: buttons-icon
-      color: "#3d3d3d"
+      color: "#999999"
   - type: Item
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#bb9042"
+        color: "#ba9654"
       - state: accent3-inhand-left
         color: "#ffd600"
       - state: pants-inhand-left
         color: "#a9a061"
+      - state: belt-inhand-left
+        color: "#3a3a3a"
       - state: buttons-inhand-left
-        color: "#3d3d3d"
+        color: "#999999"
       right:
       - state: inhand-right
-        color: "#bb9042"
+        color: "#ba9654"
       - state: accent3-inhand-right
         color: "#ffd600"
       - state: pants-inhand-right
         color: "#a9a061"
+      - state: belt-inhand-right
+        color: "#3a3a3a"
       - state: buttons-inhand-right
-        color: "#3d3d3d"
+        color: "#999999"
   - type: Clothing
     sprite: Clothing/Uniforms/Envirosuits/color.rsi
     clothingVisuals:
       jumpsuit:
       - state: equipped-INNERCLOTHING
-        color: "#bb9042"
+        color: "#ba9654"
       - state: accent3-equipped-INNERCLOTHING
         color: "#ffd600"
       - state: pants-equipped-INNERCLOTHING
         color: "#a9a061"
+      - state: belt-equipped-INNERCLOTHING
+        color: "#3a3a3a"
       - state: buttons-equipped-INNERCLOTHING
-        color: "#3d3d3d"
-      - state: loweraccent-equipped-INNERCLOTHING # TODO loweraccent 3 with same pattern as research director
+        color: "#999999"
+      - state: loweraccent-equipped-INNERCLOTHING
         color: "#ffd600"
+      - state: soles-equipped-INNERCLOTHING
+        color: "#bababa"
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitBoxing
+  name: boxing envirosuit
+  description: Used by plasmamen boxers.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/color.rsi
+    layers:
+    - state: icon
+      color: "#eeeeee"
+    - state: accent3-icon
+      color: "#a81818"
+    - state: pants-icon
+      color: "#a81818"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#eeeeee"
+      - state: accent3-inhand-left
+        color: "#a81818"
+      - state: pants-inhand-left
+        color: "#a81818"
+      right:
+      - state: inhand-right
+        color: "#eeeeee"
+      - state: accent3-inhand-right
+        color: "#a81818"
+      - state: pants-inhand-right
+        color: "#a81818"
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/color.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#eeeeee"
+      - state: accent3-equipped-INNERCLOTHING
+        color: "#a81818"
+      - state: pants-equipped-INNERCLOTHING
+        color: "#a81818"
+      - state: loweraccent2-equipped-INNERCLOTHING
+        color: "#eeeeee"
+      - state: soles-equipped-INNERCLOTHING
+        color: "#eeeeee"
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitAdminAssistant
+  name: administrative assistant's envirosuit
+  description: An envirosuit worn by the Administrative Assistant. Smells of burnt coffee.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/color.rsi
+    layers:
+    - state: icon
+      color: "#ffffff"
+    - state: plaintop-icon
+      color: "#ffffff"
+    - state: pants-icon
+      color: "#313131"
+    - state: belt-icon
+      color: "#4d4d4d"
+    - state: accent-icon
+      color: "#315266"
+    - state: tie-icon
+      color: "#315266"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ffffff"
+      - state: plaintop-inhand-left
+        color: "#ffffff"
+      - state: pants-inhand-left
+        color: "#313131"
+      - state: belt-inhand-left
+        color: "#4d4d4d"
+      - state: accent-inhand-left
+        color: "#315266"
+      - state: tie-inhand-left
+        color: "#315266"
+      right:
+      - state: inhand-right
+        color: "#ffffff"
+      - state: plaintop-inhand-right
+        color: "#ffffff"
+      - state: pants-inhand-right
+        color: "#313131"
+      - state: belt-inhand-right
+        color: "#4d4d4d"
+      - state: accent-inhand-right
+        color: "#315266"
+      - state: tie-inhand-right
+        color: "#315266"
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/color.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#ffffff"
+      - state: plaintop-equipped-INNERCLOTHING
+        color: "#ffffff"
+      - state: pants-equipped-INNERCLOTHING
+        color: "#313131"
+      - state: belt-equipped-INNERCLOTHING
+        color: "#4d4d4d"
+      - state: accent-equipped-INNERCLOTHING
+        color: "#315266"
+      - state: loweraccent-equipped-INNERCLOTHING
+        color: "#315266"
+      - state: tie-equipped-INNERCLOTHING
+        color: "#315266"
+      - state: soles-equipped-INNERCLOTHING
+        color: "#bababa"
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitBlackPink
+  name: black pink envirosuit
+  description: Black pink envirosuit in your area!
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/color.rsi
+    layers:
+    - state: icon
+      color: "#292929"
+    - state: plaintop-icon
+      color: "#292929"
+    - state: accent-icon
+      color: "#f4a5ba"
+    - state: heart-icon
+      color: "#f4a5ba"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#292929"
+      - state: plaintop-inhand-left
+        color: "#292929"
+      - state: accent-inhand-left
+        color: "#f4a5ba"
+      - state: heart-inhand-left
+        color: "#f4a5ba"
+      right:
+      - state: inhand-right
+        color: "#292929"
+      - state: plaintop-inhand-right
+        color: "#292929"
+      - state: accent-inhand-right
+        color: "#f4a5ba"
+      - state: heart-inhand-right
+        color: "#f4a5ba"
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/color.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#292929"
+      - state: plaintop-equipped-INNERCLOTHING
+        color: "#292929"
+      - state: accent-equipped-INNERCLOTHING
+        color: "#f4a5ba"
+      - state: heart-equipped-INNERCLOTHING
+        color: "#f4a5ba"
+      - state: loweraccent-equipped-INNERCLOTHING
+        color: "#f4a5ba"
+      - state: soles-equipped-INNERCLOTHING
+        color: "#f4a5ba"
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitBlackPinkAlt
+  name: black pink envirosuit
+  suffix: Alternative
+  description: Black pink envirosuit in your area!
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/color.rsi
+    layers:
+    - state: icon
+      color: "#f4a5ba"
+    - state: plaintop-icon
+      color: "#f4a5ba"
+    - state: accent-icon
+      color: "#292929"
+    - state: heart-icon
+      color: "#292929"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#f4a5ba"
+      - state: plaintop-inhand-left
+        color: "#f4a5ba"
+      - state: accent-inhand-left
+        color: "#292929"
+      - state: heart-inhand-left
+        color: "#292929"
+      right:
+      - state: inhand-right
+        color: "#f4a5ba"
+      - state: plaintop-inhand-right
+        color: "#f4a5ba"
+      - state: accent-inhand-right
+        color: "#292929"
+      - state: heart-inhand-right
+        color: "#292929"
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/color.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#f4a5ba"
+      - state: plaintop-equipped-INNERCLOTHING
+        color: "#f4a5ba"
+      - state: accent-equipped-INNERCLOTHING
+        color: "#292929"
+      - state: heart-equipped-INNERCLOTHING
+        color: "#292929"
+      - state: loweraccent-equipped-INNERCLOTHING
+        color: "#292929"
+      - state: soles-equipped-INNERCLOTHING
+        color: "#292929"

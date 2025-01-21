@@ -41,6 +41,6 @@
   id: BoxerPlasmamanGear
   parent: BasePlasmamanGear
   equipment:
-    jumpsuit: ClothingUniformEnvirosuit
-    head: ClothingHeadEnvirohelm
+    jumpsuit: ClothingUniformEnvirosuitBoxing
+    head: ClothingHeadEnvirohelmBoxing
     # No envirogloves, use the boxing gloves instead

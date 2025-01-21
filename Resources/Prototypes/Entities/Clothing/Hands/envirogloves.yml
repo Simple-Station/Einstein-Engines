@@ -472,4 +472,33 @@
       - state: equipped-HAND
         color: "#a349a4"
   - type: Fiber
-    fiberColor: fibers-black
+    fiberColor: fibers-purple
+
+- type: entity
+  parent: ClothingHandsGlovesEnviroglovesBase
+  id: ClothingHandsGlovesEnviroglovesAdminAssistant
+  name: administrative assistant's envirogloves
+  description: Covers up those scandalous boney hands.
+  components:
+  - type: Sprite
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    layers:
+    - state: icon
+      color: "#315266"
+  - type: Item
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#315266"
+      right:
+      - state: inhand-right
+        color: "#315266"
+  - type: Clothing
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    clothingVisuals:
+      gloves:
+      - state: equipped-HAND
+        color: "#315266"
+  - type: Fiber
+    fiberColor: fibers-blue

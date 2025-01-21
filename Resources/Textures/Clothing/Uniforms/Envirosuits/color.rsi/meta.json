@@ -30,6 +30,10 @@
       "directions": 4
     },
     {
+      "name": "accentalt-equipped-INNERCLOTHING",
+      "directions": 4
+    },
+    {
       "name": "accent-inhand-left",
       "directions": 4
     },
@@ -106,18 +110,63 @@
       "directions": 4
     },
     {
-      "name": "soles-icon"
+      "name": "plaintop-icon"
     },
     {
-      "name": "soles-equipped-INNERCLOTHING",
+      "name": "plaintop-equipped-INNERCLOTHING",
       "directions": 4
     },
     {
-      "name": "soles-inhand-left",
+      "name": "plaintop-inhand-left",
       "directions": 4
     },
     {
-      "name": "soles-inhand-right",
+      "name": "plaintop-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "tie-icon"
+    },
+    {
+      "name": "tie-equipped-INNERCLOTHING",
+      "directions": 4
+    },
+    {
+      "name": "tie-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "tie-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "heart-icon"
+    },
+    {
+      "name": "heart-equipped-INNERCLOTHING",
+      "directions": 4
+    },
+    {
+      "name": "heart-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "heart-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "corneraccent-icon"
+    },
+    {
+      "name": "corneraccent-equipped-INNERCLOTHING",
+      "directions": 4
+    },
+    {
+      "name": "corneraccent-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "corneraccent-inhand-right",
       "directions": 4
     },
     {
@@ -133,6 +182,44 @@
     },
     {
       "name": "pants-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "belt-icon"
+    },
+    {
+      "name": "belt-equipped-INNERCLOTHING",
+      "directions": 4
+    },
+    {
+      "name": "belt-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "belt-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "beltbuckle-icon"
+    },
+    {
+      "name": "beltbuckle-equipped-INNERCLOTHING",
+      "directions": 4
+    },
+    {
+      "name": "beltbuckle-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "beltbuckle-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "shoes-equipped-INNERCLOTHING",
+      "directions": 4
+    },
+    {
+      "name": "soles-equipped-INNERCLOTHING",
       "directions": 4
     }
   ]
