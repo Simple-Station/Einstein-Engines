@@ -8,7 +8,7 @@
   They breathe plasma, and oxygen is highly toxic when inhaled.
   Being exposed to oxygen sets them on fire.
 
-  To prevent ignition, they wear sealed suits made up of an envirosuit (in the jumpsuit slot) and an envirosuit helmet.
+  To prevent ignition, they wear sealed suits made up of an envirosuit (in the jumpsuit slot) and a [bold]spaceworthy[/bold] envirosuit helmet.
   Other suits like EVA suits, vacsuits, tacsuits and hardsuits will also seal them from oxygen exposure.
 
   They don't experience hunger nor thirst.
@@ -41,8 +41,14 @@
 
   All Plasmamen start with an envirosuit, an envirosuit helmet, and a plasma internals tank.
 
-  Their envirosuits contain a [color=#1e90ff]self-extinguisher[/color] with limited charges, which they can activate when they are on fire
+  Their envirosuits contain a [color=#1e90ff]self-extinguisher[/color] with 5 charges, which they can activate when they are on fire
   and wearing their envirosuit helmet. The self-extinguisher needs to recharge between uses.
+
+  <Box HorizontalAlignment="Stretch">
+    Cartridge refills of the envirosuit's self-extinguisher can be bought in [bold]Loadouts[/bold], or printed at the medical techfab after research.
+    A refill makes a recharging self-extinguisher immediately usable again.
+    <GuideEntityEmbed Entity="EnvirosuitExtinguisherRefill" />
+  </Box>
 
   Their envirosuit helmets are [bold]spaceworthy[/bold] and provide a flashlight and welding protection.
   However, they cannot eat nor drink without taking off their envirosuit helmet.

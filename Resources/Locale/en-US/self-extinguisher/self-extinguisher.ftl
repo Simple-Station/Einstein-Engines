@@ -13,3 +13,6 @@ self-extinguisher-not-immune-to-fire-other = {$target} {CONJUGATE-BE($target)} n
 
 self-extinguisher-extinguish-self = The {$item} extinguishes you!
 self-extinguisher-extinguish-other = The {$item} extinguishes {$target}!
+
+self-extinguisher-refill = You refill the suit's self-extinguisher, using up the cartridge.
+self-extinguisher-refill-full = The self-extinguisher is full.

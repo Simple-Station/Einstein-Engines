@@ -80,7 +80,7 @@ public sealed partial class SelfExtinguisherSystem : SharedSelfExtinguisherSyste
         if (selfExtinguisher.RequiresIgniteFromGasImmune &&
             // Non-self-igniters can use the self-extinguish whenever, but self-igniters must have
             // all ignitable body parts covered up
-            (!TryComp<IgniteFromGasComponent>(target, out var ignite) || !ignite.HasImmunity))
+            TryComp<IgniteFromGasComponent>(target, out var ignite) && !ignite.HasImmunity)
         {
             if (!SetPopupCooldown((uid, selfExtinguisher), curTime))
                 return;
@@ -119,19 +119,5 @@ public sealed partial class SelfExtinguisherSystem : SharedSelfExtinguisherSyste
         _actions.StartUseDelay(selfExtinguisher.ActionEntity);
 
         Dirty(uid, selfExtinguisher);
-    }
-
-    // <summary>
-    //   Returns:
-    //   - true if a popup is ready to be shown. The popup cooldown is also set.
-    //   - false if popups are still on cooldown
-    // </summary>
-    private bool SetPopupCooldown(Entity<SelfExtinguisherComponent> ent, TimeSpan curTime)
-    {
-        if (curTime < ent.Comp.NextPopup)
-            return false;
-
-        ent.Comp.NextPopup = curTime + ent.Comp.PopupCooldown;
-        return true;
     }
 }

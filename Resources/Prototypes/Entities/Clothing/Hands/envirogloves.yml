@@ -99,6 +99,24 @@
     fiberColor: fibers-white
 
 - type: entity
+  parent: ClothingHandsGlovesEnviroglovesWhite
+  id: ClothingHandsGlovesEnviroglovesColor
+  name: envirogloves
+  description: Covers up those scandalous boney hands.
+  suffix: Loadouts, Colorable
+
+- type: entity
+  parent: ClothingHandsGlovesEnviroglovesBase
+  id: ClothingHandsGlovesEnviroglovesEvening
+  name: evening envirogloves
+  description: Who said Plasmamen can't serve elegance and looks?
+  components:
+  - type: Sprite
+    sprite: Clothing/Hands/Gloves/evening_gloves.rsi
+  - type: Clothing
+    sprite: Clothing/Hands/Gloves/evening_gloves.rsi
+
+- type: entity
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesRoboticist
   name: roboticist envirogloves

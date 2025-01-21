@@ -37,7 +37,7 @@ public sealed partial class SelfExtinguisherComponent : Component
     ///   don't spam popups every frame and instead have a cooldown.
     /// </summary>
     [DataField]
-    public TimeSpan PopupCooldown = TimeSpan.FromSeconds(0.8);
+    public TimeSpan PopupCooldown = TimeSpan.FromSeconds(1);
 
     /// <summary>
     ///   Time before the next popup can be shown.

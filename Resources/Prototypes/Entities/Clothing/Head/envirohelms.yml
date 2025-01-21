@@ -918,7 +918,7 @@
   parent: ClothingHeadEnvirohelmBase
   id: ClothingHeadEnvirohelmBlackPink
   name: black pink envirosuit helmet
-  description: Black pink envirosuit helmet in your area!
+  description: How you like that envirosuit helmet?
   components:
   - type: ToggleableLightVisuals
     inhandVisuals:
@@ -973,7 +973,7 @@
   id: ClothingHeadEnvirohelmBlackPinkAlt
   name: black pink envirosuit helmet
   suffix: Alternative
-  description: Black pink envirosuit helmet in your area!
+  description: This envirosuit helmet makes you want to kill this love.
   components:
   - type: ToggleableLightVisuals
     inhandVisuals:
