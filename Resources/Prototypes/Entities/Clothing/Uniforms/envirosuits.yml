@@ -542,36 +542,36 @@
     - state: icon
       color: "#9ed63a"
     - state: accent-icon
-      color: "#f3f3f3"
+      color: "#a349a4"
     - state: corneraccent-icon
-      color: "#f3f3f3"
+      color: "#a349a4"
   - type: Item
     inhandVisuals:
       left:
       - state: inhand-left
         color: "#9ed63a"
       - state: accent-inhand-left
-        color: "#f3f3f3"
+        color: "#a349a4"
       - state: corneraccent-inhand-left
-        color: "#f3f3f3"
+        color: "#a349a4"
       right:
       - state: inhand-right
         color: "#9ed63a"
       - state: accent-inhand-right
-        color: "#f3f3f3"
+        color: "#a349a4"
       - state: corneraccent-inhand-right
-        color: "#f3f3f3"
+        color: "#a349a4"
   - type: Clothing
     clothingVisuals:
       jumpsuit:
       - state: equipped-INNERCLOTHING
         color: "#9ed63a"
       - state: accent-equipped-INNERCLOTHING
-        color: "#f3f3f3"
+        color: "#a349a4"
       - state: loweraccent-equipped-INNERCLOTHING
-        color: "#f3f3f3"
+        color: "#a349a4"
       - state: corneraccent-equipped-INNERCLOTHING
-        color: "#f3f3f3"
+        color: "#a349a4"
       - state: soles-equipped-INNERCLOTHING
         color: "#bababa"
 
@@ -1067,3 +1067,105 @@
         color: "#ffb0c0"
       - state: soles-equipped-INNERCLOTHING
         color: "#5dd2ff"
+
+- type: entity
+  parent: ClothingUniformEnvirosuitCustomBase
+  id: ClothingUniformEnvirosuitPrisonGuard
+  name: prison guard's envirosuit
+  description: A comfortable, durable, envirosuit made to keep Plasmamen prison staff comfortable and safe.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#d76b00"
+    - state: accent2-icon
+      color: "#363636"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#d76b00"
+      - state: accent2-inhand-left
+        color: "#363636"
+      right:
+      - state: inhand-right
+        color: "#d76b00"
+      - state: accent2-inhand-right
+        color: "#363636"
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#d76b00"
+      - state: accent2-equipped-INNERCLOTHING
+        color: "#363636"
+      - state: loweraccent-equipped-INNERCLOTHING
+        color: "#363636"
+      - state: shoesdark-equipped-INNERCLOTHING
+        color: "#d76b00"
+      - state: soles-equipped-INNERCLOTHING
+        color: "#bababa"
+
+- type: entity
+  parent: ClothingUniformEnvirosuitCustomBase
+  id: ClothingUniformEnvirosuitBrigmedic
+  name: corpsman envirosuit
+  description: An envirosuit assigned to corpsmen Plasmamen.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#486782"
+    - state: accent-icon
+      color: "#2f74b8"
+    - state: accent2_chestonly-icon
+      color: "#3b3b3b"
+    - state: clip-icon
+      color: "#860000"
+    - state: pants-icon
+      color: "#3b3b3b"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#486782"
+      - state: accent-inhand-left
+        color: "#2f74b8"
+      - state: accent2_chestonly-inhand-left
+        color: "#3b3b3b"
+      - state: clip-inhand-left
+        color: "#860000"
+      - state: pants-inhand-left
+        color: "#3b3b3b"
+      right:
+      - state: inhand-right
+        color: "#486782"
+      - state: accent-inhand-right
+        color: "#2f74b8"
+      - state: accent2_chestonly-inhand-right
+        color: "#3b3b3b"
+      - state: clip-inhand-right
+        color: "#860000"
+      - state: pants-inhand-right
+        color: "#3b3b3b"
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#486782"
+      - state: accentalt-equipped-INNERCLOTHING
+        color: "#2f74b8"
+      - state: accent2_chestonly-equipped-INNERCLOTHING
+        color: "#3b3b3b"
+      - state: clip-equipped-INNERCLOTHING
+        color: "#860000"
+      - state: cuffs-equipped-INNERCLOTHING
+        color: "#b0bdca"
+      - state: pants-equipped-INNERCLOTHING
+        color: "#3b3b3b"
+      - state: loweraccent-equipped-INNERCLOTHING
+        color: "#363636"
+      - state: shoesdark-equipped-INNERCLOTHING
+        color: "#486782"
+      - state: soles-equipped-INNERCLOTHING
+        color: "#b0bdca"

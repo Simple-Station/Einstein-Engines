@@ -521,7 +521,7 @@
     - state: icon
       color: "#9ed63a"
     - state: accent-icon
-      color: "#f3f3f3"
+      color: "#a349a4"
     - state: visor-icon
     - state: icon-flash
       visible: false
@@ -533,13 +533,13 @@
       - state: inhand-left
         color: "#9ed63a"
       - state: accent-inhand-left
-        color: "#f3f3f3"
+        color: "#a349a4"
       - state: visor-inhand-left
       right:
       - state: inhand-right
         color: "#9ed63a"
       - state: accent-inhand-right
-        color: "#f3f3f3"
+        color: "#a349a4"
       - state: visor-inhand-right
   - type: Clothing
     clothingVisuals:
@@ -547,7 +547,7 @@
       - state: equipped-HELMET
         color: "#9ed63a"
       - state: accent-equipped-HELMET
-        color: "#f3f3f3"
+        color: "#a349a4"
       - state: visor-equipped-HELMET
 
 - type: entity
@@ -973,4 +973,84 @@
         color: "#ffb0c0"
       - state: sideaccent-equipped-HELMET
         color: "#5dd2ff"
+      - state: visor-equipped-HELMET
+
+- type: entity
+  parent: ClothingHeadEnvirohelmCustomBase
+  id: ClothingHeadEnvirohelmPrisonGuard
+  name: prison guard's envirosuit helmet
+  description: Hope a prisoner doesn't snatch this away from you!
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#d76b00"
+    - state: accent-icon
+      color: "#363636"
+    - state: visor-icon
+    - state: icon-flash
+      visible: false
+      shader: unshaded
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#d76b00"
+      - state: accent-inhand-left
+        color: "#363636"
+      - state: visor-inhand-left
+      right:
+      - state: inhand-right
+        color: "#d76b00"
+      - state: accent-inhand-right
+        color: "#363636"
+      - state: visor-inhand-right
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#d76b00"
+      - state: accent-equipped-HELMET
+        color: "#363636"
+      - state: visor-equipped-HELMET
+
+- type: entity
+  parent: ClothingHeadEnvirohelmCustomBase
+  id: ClothingHeadEnvirohelmBrigmedic
+  name: corpsman envirosuit helmet
+  description: A helmet provided to Corpsmen Plasmamen.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#486782"
+    - state: accent-icon
+      color: "#3b3b3b"
+    - state: visor-icon
+    - state: icon-flash
+      visible: false
+      shader: unshaded
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#486782"
+      - state: accent-inhand-left
+        color: "#3b3b3b"
+      - state: visor-inhand-left
+      right:
+      - state: inhand-right
+        color: "#486782"
+      - state: accent-inhand-right
+        color: "#3b3b3b"
+      - state: visor-inhand-right
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#486782"
+      - state: accent-equipped-HELMET
+        color: "#3b3b3b"
       - state: visor-equipped-HELMET
