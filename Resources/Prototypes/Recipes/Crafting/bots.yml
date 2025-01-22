@@ -75,3 +75,16 @@
   icon:
     sprite: Mobs/Silicon/Bots/supplybot.rsi
     state: supplybot
+
+- type: construction
+  name: gladiabot
+  id: gladiabot
+  graph: GladiaBot
+  startNode: start
+  targetNode: bot
+  category: construction-category-utilities
+  objectType: Item
+  description: This bot fights for honour and glory!
+  icon:
+    sprite: Mobs/Silicon/Bots/gladiabot.rsi
+    state: GladiabotFFA
