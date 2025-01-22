@@ -10535,3 +10535,20 @@ Entries:
   id: 6747
   time: '2025-01-21T02:06:29.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1623
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: >-
+        Added GladiaBots. Make them in the Build menu and challenge your
+        friends!
+    - type: Tweak
+      message: >-
+        Tweaked HTN combat behaviours to allow for a random deviation in attack
+        time. At the moment, only the Gladiabot uses it.
+    - type: Tweak
+      message: >-
+        Tweaked the faction code to allow for factions explicitly hostile to
+        themselves.
+  id: 6748
+  time: '2025-01-21T14:56:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1548
