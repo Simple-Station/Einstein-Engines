@@ -14,7 +14,7 @@
 - type: loadout
   id: LoadoutSpeciesDoubleEmergencyPlasmaTank
   category: Species
-  cost: 5
+  cost: 6
   requirements:
     - !type:CharacterSpeciesRequirement
       species:
