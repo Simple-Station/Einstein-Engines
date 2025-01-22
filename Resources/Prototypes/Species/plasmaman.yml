@@ -33,7 +33,14 @@
 
 - type: markingPoints
   id: MobPlasmamanMarkingLimits
+  onlyWhitelisted: true
   points:
+    Hair:
+      points: 0
+      required: false
+    FacialHair:
+      points: 0
+      required: false
     Snout:
       points: 0
       required: false

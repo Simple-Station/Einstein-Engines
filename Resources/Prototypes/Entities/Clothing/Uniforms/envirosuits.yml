@@ -387,12 +387,25 @@
 
 - type: entity
   parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitBlueshield
+  name: blueshield's envirosuit
+  description: An envirosuit designed for plasmamen employed as the Blueshield.
+  components:
+  - type: Sprite
+  - type: Clothing
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Heat: 0.95
+
+- type: entity
+  parent: ClothingUniformEnvirosuitCustomBase
   id: ClothingUniformEnvirosuitCourier
   name: courier's envirosuit
   description: An envirosuit tailored for the courier.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Envirosuits/color.rsi
     layers:
     - state: icon
       color: "#4a281f"
@@ -411,7 +424,6 @@
       - state: accent2-inhand-right
         color: "#c2911e"
   - type: Clothing
-    sprite: Clothing/Uniforms/Envirosuits/color.rsi
     clothingVisuals:
       jumpsuit:
       - state: equipped-INNERCLOTHING
@@ -424,13 +436,12 @@
         color: "#c2911e"
 
 - type: entity
-  parent: ClothingUniformEnvirosuitBase
+  parent: ClothingUniformEnvirosuitCustomBase
   id: ClothingUniformEnvirosuitMusician
   name: musician's envirosuit
   description: An envirosuit to play music with.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Envirosuits/color.rsi
     layers:
     - state: icon
       color: "#3c335b"
@@ -467,7 +478,6 @@
       - state: pin-inhand-right
         color: "#db2525"
   - type: Clothing
-    sprite: Clothing/Uniforms/Envirosuits/color.rsi
     clothingVisuals:
       jumpsuit:
       - state: equipped-INNERCLOTHING
@@ -486,13 +496,12 @@
         color: "#bababa"
 
 - type: entity
-  parent: ClothingUniformEnvirosuitBase
+  parent: ClothingUniformEnvirosuitCustomBase
   id: ClothingUniformEnvirosuitReporter
   name: reporter envirosuit
   description: An envirosuit for the news-oriented Plasmamen.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Envirosuits/color.rsi
     layers:
     - state: icon
       color: "#112334"
@@ -511,7 +520,6 @@
       - state: accent2-inhand-right
         color: "#79121b"
   - type: Clothing
-    sprite: Clothing/Uniforms/Envirosuits/color.rsi
     clothingVisuals:
       jumpsuit:
       - state: equipped-INNERCLOTHING
@@ -524,13 +532,12 @@
         color: "#bababa"
 
 - type: entity
-  parent: ClothingUniformEnvirosuitBase
+  parent: ClothingUniformEnvirosuitCustomBase
   id: ClothingUniformEnvirosuitColorDarkGreen
   name: dark green envirosuit
   description: A dark green envirosuit.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Envirosuits/color.rsi
     layers:
     - state: icon
       color: "#9ed63a"
@@ -555,7 +562,6 @@
       - state: corneraccent-inhand-right
         color: "#f3f3f3"
   - type: Clothing
-    sprite: Clothing/Uniforms/Envirosuits/color.rsi
     clothingVisuals:
       jumpsuit:
       - state: equipped-INNERCLOTHING
@@ -570,13 +576,12 @@
         color: "#bababa"
 
 - type: entity
-  parent: ClothingUniformEnvirosuitBase
+  parent: ClothingUniformEnvirosuitCustomBase
   id: ClothingUniformEnvirosuitMantis
   name: mantis' envirosuit
   description: Hunting down psionics in the safety of this envirosuit.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Envirosuits/color.rsi
     layers:
     - state: icon
       color: "#46566d"
@@ -619,7 +624,6 @@
       - state: buttons-inhand-right
         color: "#997d30"
   - type: Clothing
-    sprite: Clothing/Uniforms/Envirosuits/color.rsi
     clothingVisuals:
       jumpsuit:
       - state: equipped-INNERCLOTHING
@@ -640,13 +644,12 @@
         color: "#d4af48"
 
 - type: entity
-  parent: ClothingUniformEnvirosuitBase
+  parent: ClothingUniformEnvirosuitCustomBase
   id: ClothingUniformEnvirosuitSafari
   name: safari envirosuit
   description: Perfect for a jungle excursion.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Envirosuits/color.rsi
     layers:
     - state: icon
       color: "#d3b986"
@@ -665,7 +668,6 @@
       - state: accent-inhand-right
         color: "#a349a4"
   - type: Clothing
-    sprite: Clothing/Uniforms/Envirosuits/color.rsi
     clothingVisuals:
       jumpsuit:
       - state: equipped-INNERCLOTHING
@@ -678,13 +680,12 @@
         color: "#bababa"
 
 - type: entity
-  parent: ClothingUniformEnvirosuitBase
+  parent: ClothingUniformEnvirosuitCustomBase
   id: ClothingUniformEnvirosuitMartialGi
   name: gi envirosuit
   description: A flowy envirosuit tailor-made for martial arts that doesn't restrict your mobility.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Envirosuits/color.rsi
     layers:
     - state: icon
       color: "#ffffff"
@@ -703,7 +704,6 @@
       - state: accent-inhand-right
         color: "#3b3b3b"
   - type: Clothing
-    sprite: Clothing/Uniforms/Envirosuits/color.rsi
     clothingVisuals:
       jumpsuit:
       - state: equipped-INNERCLOTHING
@@ -716,13 +716,12 @@
         color: "#bababa"
 
 - type: entity
-  parent: ClothingUniformEnvirosuitBase
+  parent: ClothingUniformEnvirosuitCustomBase
   id: ClothingUniformEnvirosuitQM
   name: logistics officer's envirosuit
   description: An air-tight suit designed to be used by plasmamen insane enough to achieve the rank of "Logistics Officer".
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Envirosuits/color.rsi
     layers:
     - state: icon
       color: "#bb934b"
@@ -771,7 +770,6 @@
       - state: buttons-inhand-right
         color: "#535353"
   - type: Clothing
-    sprite: Clothing/Uniforms/Envirosuits/color.rsi
     clothingVisuals:
       jumpsuit:
       - state: equipped-INNERCLOTHING
@@ -798,13 +796,12 @@
         color: "#bababa"
 
 - type: entity
-  parent: ClothingUniformEnvirosuitBase
+  parent: ClothingUniformEnvirosuitCustomBase
   id: ClothingUniformEnvirosuitBoxing
   name: boxing envirosuit
   description: Used by plasmamen boxers.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Envirosuits/color.rsi
     layers:
     - state: icon
       color: "#eeeeee"
@@ -829,7 +826,6 @@
       - state: pants-inhand-right
         color: "#a81818"
   - type: Clothing
-    sprite: Clothing/Uniforms/Envirosuits/color.rsi
     clothingVisuals:
       jumpsuit:
       - state: equipped-INNERCLOTHING
@@ -844,13 +840,12 @@
         color: "#eeeeee"
 
 - type: entity
-  parent: ClothingUniformEnvirosuitBase
+  parent: ClothingUniformEnvirosuitCustomBase
   id: ClothingUniformEnvirosuitAdminAssistant
   name: administrative assistant's envirosuit
   description: An envirosuit worn by the Administrative Assistant. Smells of burnt coffee.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Envirosuits/color.rsi
     layers:
     - state: icon
       color: "#ffffff"
@@ -893,7 +888,6 @@
       - state: tie-inhand-right
         color: "#315266"
   - type: Clothing
-    sprite: Clothing/Uniforms/Envirosuits/color.rsi
     clothingVisuals:
       jumpsuit:
       - state: equipped-INNERCLOTHING
@@ -914,13 +908,12 @@
         color: "#bababa"
 
 - type: entity
-  parent: ClothingUniformEnvirosuitBase
+  parent: ClothingUniformEnvirosuitCustomBase
   id: ClothingUniformEnvirosuitBlackPink
   name: black pink envirosuit
   description: Black pink envirosuit in your area!
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Envirosuits/color.rsi
     layers:
     - state: icon
       color: "#292929"
@@ -951,7 +944,6 @@
       - state: heart-inhand-right
         color: "#f4a5ba"
   - type: Clothing
-    sprite: Clothing/Uniforms/Envirosuits/color.rsi
     clothingVisuals:
       jumpsuit:
       - state: equipped-INNERCLOTHING
@@ -968,14 +960,13 @@
         color: "#f4a5ba"
 
 - type: entity
-  parent: ClothingUniformEnvirosuitBase
+  parent: ClothingUniformEnvirosuitCustomBase
   id: ClothingUniformEnvirosuitBlackPinkAlt
   name: black pink envirosuit
   suffix: Alternative
   description: Black pink envirosuit in your area!
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Envirosuits/color.rsi
     layers:
     - state: icon
       color: "#f4a5ba"
@@ -1006,7 +997,6 @@
       - state: heart-inhand-right
         color: "#292929"
   - type: Clothing
-    sprite: Clothing/Uniforms/Envirosuits/color.rsi
     clothingVisuals:
       jumpsuit:
       - state: equipped-INNERCLOTHING
@@ -1023,29 +1013,12 @@
         color: "#292929"
 
 - type: entity
-  parent: ClothingUniformEnvirosuitBase
-  id: ClothingUniformEnvirosuitBlueshield
-  name: blueshield's envirosuit
-  description: An envirosuit designed for plasmamen employed as the Blueshield.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Envirosuits/blueshield_officer.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Envirosuits/blueshield_officer.rsi
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.95
-        Heat: 0.95
-
-- type: entity
-  parent: ClothingUniformEnvirosuitBase
+  parent: ClothingUniformEnvirosuitCustomBase
   id: ClothingUniformEnvirosuitTrans
   name: trans envirosuit
   description: The signature envirosuit of Transylvanian plasmamen.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Envirosuits/color.rsi
     layers:
     - state: icon
       color: "#ffffff"
@@ -1076,7 +1049,6 @@
       - state: heart-inhand-right
         color: "#ffb0c0"
   - type: Clothing
-    sprite: Clothing/Uniforms/Envirosuits/color.rsi
     clothingVisuals:
       jumpsuit:
       - state: equipped-INNERCLOTHING
