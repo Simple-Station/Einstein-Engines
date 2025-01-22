@@ -1,7 +1,7 @@
 - type: entity
   parent: BaseItem
   id: EnvirosuitExtinguisherRefill
-  name: envirosuit extinguisher cartridge
+  name: envirosuit extinguisher refill
   description: A cartridge loaded with a compressed extinguisher mix, used to refill the self-extinguisher on plasma envirosuits.
   components:
   - type: Sprite
