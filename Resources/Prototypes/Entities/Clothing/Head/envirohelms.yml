@@ -1713,7 +1713,7 @@
   - type: Sprite
     layers:
     - state: icon
-      color: "#453112"
+      color: "#543e1b"
     - state: accent-icon
       color: "#a349a4"
     - state: visor-icon
@@ -1725,13 +1725,13 @@
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#453112"
+        color: "#543e1b"
       - state: accent-inhand-left
         color: "#a349a4"
       - state: visor-inhand-left
       right:
       - state: inhand-right
-        color: "#453112"
+        color: "#543e1b"
       - state: accent-inhand-right
         color: "#a349a4"
       - state: visor-inhand-right
@@ -1739,7 +1739,7 @@
     clothingVisuals:
       head:
       - state: equipped-HELMET
-        color: "#453112"
+        color: "#543e1b"
       - state: accent-equipped-HELMET
         color: "#a349a4"
       - state: visor-equipped-HELMET

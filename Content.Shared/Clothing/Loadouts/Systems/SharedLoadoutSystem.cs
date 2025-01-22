@@ -112,7 +112,7 @@ public sealed class SharedLoadoutSystem : EntitySystem
                 }
 
                 allLoadouts.Add((item, loadout, i));
-                if (loadout.CustomHeirloom == true)
+                if (i == 0 && loadout.CustomHeirloom == true) // Only the first item can be an heirloom
                     heirlooms.Add((item, loadout));
 
                 // Equip it

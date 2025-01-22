@@ -2019,7 +2019,7 @@
   - type: Sprite
     layers:
     - state: icon
-      color: "#453112"
+      color: "#543e1b"
     - state: accent-icon
       color: "#a349a4"
     - state: corneraccent-icon
@@ -2028,14 +2028,14 @@
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#453112"
+        color: "#543e1b"
       - state: accent-inhand-left
         color: "#a349a4"
       - state: corneraccent-inhand-left
         color: "#a349a4"
       right:
       - state: inhand-right
-        color: "#453112"
+        color: "#543e1b"
       - state: accent-inhand-right
         color: "#a349a4"
       - state: corneraccent-inhand-right
@@ -2044,7 +2044,7 @@
     clothingVisuals:
       jumpsuit:
       - state: equipped-INNERCLOTHING
-        color: "#453112"
+        color: "#543e1b"
       - state: accent-equipped-INNERCLOTHING
         color: "#a349a4"
       - state: loweraccent-equipped-INNERCLOTHING
