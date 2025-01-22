@@ -319,3 +319,5 @@
       id: LoadoutUniformEnvirosuitSafari
     - type: loadout
       id: LoadoutUniformEnvirosuitColorDarkGreen
+    - type: loadout
+      id: LoadoutUniformEnvirosuitTrans

@@ -205,3 +205,23 @@
   items:
     - ClothingUniformEnvirosuitColorDarkGreen
     - ClothingHeadEnvirohelmColorDarkGreen
+
+- type: loadout
+  id: LoadoutUniformEnvirosuitTrans
+  category: Uniform
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Plasmaman
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+        - Command
+  items:
+    - ClothingUniformEnvirosuitTrans
+    - ClothingHeadEnvirohelmTrans

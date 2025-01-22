@@ -211,6 +211,11 @@
     clothingVisuals:
       head:
       - state: equipped-HELMET
+  - type: ToggleableLightVisuals
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+        shader: unshaded
   - type: IgniteFromGasImmunity
     parts:
     - Head
@@ -232,11 +237,6 @@
     - Snout
     clothingSlots:
     - mask
-  - type: ToggleableLightVisuals
-    clothingVisuals:
-      head:
-      - state: on-equipped-HELMET
-        shader: unshaded
   - type: PointLight
     enabled: false
     color: "#ffa1ff"

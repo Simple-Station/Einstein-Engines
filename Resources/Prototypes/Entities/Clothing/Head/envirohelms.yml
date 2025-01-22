@@ -396,17 +396,6 @@
   name: courier's envirosuit helmet
   description: An envirosuit helmet for the courier.
   components:
-  - type: ToggleableLightVisuals
-    inhandVisuals:
-      left:
-      - state: visor-inhand-left
-        shader: unshaded
-      right:
-      - state: visor-inhand-right
-        shader: unshaded
-    clothingVisuals:
-      head:
-      - state: on-equipped-HELMET
   - type: Sprite
     layers:
     - state: icon
@@ -447,17 +436,6 @@
   name: musician's envirosuit helmet
   description: Experts are perplexed as to how plasmamen can still play the trumpet with this helmet on.
   components:
-  - type: ToggleableLightVisuals
-    inhandVisuals:
-      left:
-      - state: visor-inhand-left
-        shader: unshaded
-      right:
-      - state: visor-inhand-right
-        shader: unshaded
-    clothingVisuals:
-      head:
-      - state: on-equipped-HELMET
   - type: Sprite
     layers:
     - state: icon
@@ -498,17 +476,6 @@
   name: reporter envirosuit helmet
   description: An envirosuit helmet for the reporter.
   components:
-  - type: ToggleableLightVisuals
-    inhandVisuals:
-      left:
-      - state: visor-inhand-left
-        shader: unshaded
-      right:
-      - state: visor-inhand-right
-        shader: unshaded
-    clothingVisuals:
-      head:
-      - state: on-equipped-HELMET
   - type: Sprite
     layers:
     - state: icon
@@ -549,18 +516,6 @@
   name: dark green envirosuit helmet
   description: A dark green envirosuit helmet.
   components:
-  - type: ToggleableLightVisuals
-    inhandVisuals:
-      left:
-      - state: visor-inhand-left
-        shader: unshaded
-      right:
-      - state: visor-inhand-right
-        shader: unshaded
-    clothingVisuals:
-      head:
-      - state: on-equipped-HELMET
-        shader: unshaded
   - type: Sprite
     layers:
     - state: icon
@@ -601,18 +556,6 @@
   name: mantis' envirosuit helmet
   description: An envirosuit helmet for the forensic mantis with a fancy gold stripe.
   components:
-  - type: ToggleableLightVisuals
-    inhandVisuals:
-      left:
-      - state: visor-inhand-left
-        shader: unshaded
-      right:
-      - state: visor-inhand-right
-        shader: unshaded
-    clothingVisuals:
-      head:
-      - state: on-equipped-HELMET
-        shader: unshaded
   - type: Sprite
     layers:
     - state: icon
@@ -661,18 +604,6 @@
   name: safari envirosuit helmet
   description: Makes you a target for the locals.
   components:
-  - type: ToggleableLightVisuals
-    inhandVisuals:
-      left:
-      - state: visor-inhand-left
-        shader: unshaded
-      right:
-      - state: visor-inhand-right
-        shader: unshaded
-    clothingVisuals:
-      head:
-      - state: on-equipped-HELMET
-        shader: unshaded
   - type: Sprite
     layers:
     - state: icon
@@ -713,18 +644,6 @@
   name: gi envirosuit helmet
   description: A white envirosuit helmet with black stripes used for martial arts.
   components:
-  - type: ToggleableLightVisuals
-    inhandVisuals:
-      left:
-      - state: visor-inhand-left
-        shader: unshaded
-      right:
-      - state: visor-inhand-right
-        shader: unshaded
-    clothingVisuals:
-      head:
-      - state: on-equipped-HELMET
-        shader: unshaded
   - type: Sprite
     layers:
     - state: icon
@@ -765,22 +684,10 @@
   name: logistics officer's envirosuit helmet
   description: A special containment helmet designed for the Logistics Officer.
   components:
-  - type: ToggleableLightVisuals
-    inhandVisuals:
-      left:
-      - state: visor-inhand-left
-        shader: unshaded
-      right:
-      - state: visor-inhand-right
-        shader: unshaded
-    clothingVisuals:
-      head:
-      - state: on-equipped-HELMET
-        shader: unshaded
   - type: Sprite
     layers:
     - state: icon
-      color: "#ba9654"
+      color: "#bb934b"
     - state: accent-icon
       color: "#ffd600"
     - state: midaccent-icon
@@ -794,7 +701,7 @@
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#ba9654"
+        color: "#bb934b"
       - state: accent-inhand-left
         color: "#ffd600"
       - state: midaccent-inhand-left
@@ -802,7 +709,7 @@
       - state: visor-inhand-left
       right:
       - state: inhand-right
-        color: "#ba9654"
+        color: "#bb934b"
       - state: accent-inhand-right
         color: "#ffd600"
       - state: midaccent-inhand-right
@@ -812,7 +719,7 @@
     clothingVisuals:
       head:
       - state: equipped-HELMET
-        color: "#ba9654"
+        color: "#bb934b"
       - state: accent-equipped-HELMET
         color: "#ffd600"
       - state: midaccent-equipped-HELMET
@@ -825,18 +732,6 @@
   name: boxing envirosuit helmet
   description: A white envirosuit helmet with red stripes.
   components:
-  - type: ToggleableLightVisuals
-    inhandVisuals:
-      left:
-      - state: visor-inhand-left
-        shader: unshaded
-      right:
-      - state: visor-inhand-right
-        shader: unshaded
-    clothingVisuals:
-      head:
-      - state: on-equipped-HELMET
-        shader: unshaded
   - type: Sprite
     layers:
     - state: icon
@@ -1030,4 +925,52 @@
         color: "#535353"
       - state: accent-equipped-HELMET
         color: "#0044d4"
+      - state: visor-equipped-HELMET
+
+- type: entity
+  parent: ClothingHeadEnvirohelmCustomBase
+  id: ClothingHeadEnvirohelmTrans
+  name: trans envirosuit helmet
+  description: The preferred headgear of Transylvanian plasmamen to prevent burning from oxygen.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#FFFFFF"
+    - state: accent-icon
+      color: "#ffb0c0"
+    - state: sideaccent-icon
+      color: "#5dd2ff"
+    - state: visor-icon
+    - state: icon-flash
+      visible: false
+      shader: unshaded
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#FFFFFF"
+      - state: accent-inhand-left
+        color: "#ffb0c0"
+      - state: sideaccent-inhand-left
+        color: "#5dd2ff"
+      - state: visor-inhand-left
+      right:
+      - state: inhand-right
+        color: "#FFFFFF"
+      - state: accent-inhand-right
+        color: "#ffb0c0"
+      - state: sideaccent-inhand-right
+        color: "#5dd2ff"
+      - state: visor-inhand-right
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#FFFFFF"
+      - state: accent-equipped-HELMET
+        color: "#ffb0c0"
+      - state: sideaccent-equipped-HELMET
+        color: "#5dd2ff"
       - state: visor-equipped-HELMET

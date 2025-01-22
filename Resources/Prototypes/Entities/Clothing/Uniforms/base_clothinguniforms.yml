@@ -195,3 +195,41 @@
     slots: WITHOUT_POCKET
   - type: GuideHelp # While the playerbase is getting introduced to Plasmamen, add their guidebook here
     guides: [ Plasmaman ]
+
+- type: entity
+  abstract: true
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitCustomBase
+  name: base custom envirosuit
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/color.rsi
+    layers:
+    - state: icon
+      color: "#FFFFFF"
+    - state: accent-icon
+      color: "#FFFFFF"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#FFFFFF"
+      - state: accent-inhand-left
+        color: "#FFFFFF"
+      right:
+      - state: inhand-right
+        color: "#FFFFFF"
+      - state: accent-inhand-right
+        color: "#FFFFFF"
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/color.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#FFFFFF"
+      - state: accent-equipped-INNERCLOTHING
+        color: "#FFFFFF"
+      - state: loweraccent-equipped-INNERCLOTHING
+        color: "#FFFFFF"
+      - state: soles-equipped-INNERCLOTHING
+        color: "#bababa" # Recommended default soles color

@@ -92,7 +92,7 @@
       collection: FirePunch
     animation: WeaponArcPurplePunch
     damage:
-      types:
+      types: # oooh scarier extra damage~
         Heat: 5
         Blunt: 2.25
   - type: DamageOnHit

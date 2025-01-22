@@ -527,7 +527,7 @@
   parent: ClothingUniformEnvirosuitBase
   id: ClothingUniformEnvirosuitColorDarkGreen
   name: dark green envirosuit
-  description: A dark green envirosuit
+  description: A dark green envirosuit.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Envirosuits/color.rsi
@@ -725,54 +725,74 @@
     sprite: Clothing/Uniforms/Envirosuits/color.rsi
     layers:
     - state: icon
-      color: "#ba9654"
-    - state: accent3-icon
+      color: "#bb934b"
+    - state: accent-icon
       color: "#ffd600"
+    - state: accent3_chestonly-icon
+      color: "#d08200"
     - state: pants-icon
-      color: "#a9a061"
-    - state: belt-icon
-      color: "#b3b3b3"
-    - state: buttons-icon
       color: "#999999"
+    - state: belt-icon
+      color: "#6f6f6f"
+    - state: beltbuckle-icon
+      color: "#eadb83"
+    - state: buttons-icon
+      color: "#535353"
   - type: Item
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#ba9654"
-      - state: accent3-inhand-left
+        color: "#bb934b"
+      - state: accent-inhand-left
         color: "#ffd600"
+      - state: accent3_chestonly-inhand-left
+        color: "#d08200"
       - state: pants-inhand-left
-        color: "#a9a061"
-      - state: belt-inhand-left
-        color: "#b3b3b3"
-      - state: buttons-inhand-left
         color: "#999999"
+      - state: belt-inhand-left
+        color: "#6f6f6f"
+      - state: beltbuckle-inhand-left
+        color: "#eadb83"
+      - state: buttons-inhand-left
+        color: "#535353"
       right:
       - state: inhand-right
-        color: "#ba9654"
-      - state: accent3-inhand-right
+        color: "#bb934b"
+      - state: accent-inhand-right
         color: "#ffd600"
+      - state: accent3_chestonly-inhand-right
+        color: "#d08200"
       - state: pants-inhand-right
-        color: "#a9a061"
-      - state: belt-inhand-right
-        color: "#b3b3b3"
-      - state: buttons-inhand-right
         color: "#999999"
+      - state: belt-inhand-right
+        color: "#6f6f6f"
+      - state: beltbuckle-inhand-right
+        color: "#eadb83"
+      - state: buttons-inhand-right
+        color: "#535353"
   - type: Clothing
     sprite: Clothing/Uniforms/Envirosuits/color.rsi
     clothingVisuals:
       jumpsuit:
       - state: equipped-INNERCLOTHING
-        color: "#ba9654"
-      - state: accent3-equipped-INNERCLOTHING
+        color: "#bb934b"
+      - state: accentalt-equipped-INNERCLOTHING
         color: "#ffd600"
+      - state: accent3_chestonly-equipped-INNERCLOTHING
+        color: "#d08200"
+      - state: cuffs-equipped-INNERCLOTHING
+        color: "#d08200"
       - state: pants-equipped-INNERCLOTHING
-        color: "#a9a061"
-      - state: belt-equipped-INNERCLOTHING
-        color: "#b3b3b3"
-      - state: buttons-equipped-INNERCLOTHING
         color: "#999999"
+      - state: belt-equipped-INNERCLOTHING
+        color: "#6f6f6f"
+      - state: beltbuckle-equipped-INNERCLOTHING
+        color: "#eadb83"
+      - state: buttons-equipped-INNERCLOTHING
+        color: "#535353"
       - state: loweraccent-equipped-INNERCLOTHING
+        color: "#ffd600"
+      - state: shoes-equipped-INNERCLOTHING
         color: "#ffd600"
       - state: soles-equipped-INNERCLOTHING
         color: "#bababa"
@@ -1017,3 +1037,61 @@
       coefficients:
         Blunt: 0.95
         Heat: 0.95
+
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitTrans
+  name: trans envirosuit
+  description: The signature envirosuit of Transylvanian plasmamen.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/color.rsi
+    layers:
+    - state: icon
+      color: "#ffffff"
+    - state: plaintop-icon
+      color: "#ffffff"
+    - state: accent-icon
+      color: "#5dd2ff"
+    - state: heart-icon
+      color: "#ffb0c0"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ffffff"
+      - state: plaintop-inhand-left
+        color: "#ffffff"
+      - state: accent-inhand-left
+        color: "#5dd2ff"
+      - state: heart-inhand-left
+        color: "#ffb0c0"
+      right:
+      - state: inhand-right
+        color: "#ffffff"
+      - state: plaintop-inhand-right
+        color: "#ffffff"
+      - state: accent-inhand-right
+        color: "#5dd2ff"
+      - state: heart-inhand-right
+        color: "#ffb0c0"
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/color.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#ffffff"
+      - state: plaintop-equipped-INNERCLOTHING
+        color: "#ffffff"
+      - state: accentalt-equipped-INNERCLOTHING
+        color: "#5dd2ff"
+      - state: heart-equipped-INNERCLOTHING
+        color: "#ffb0c0"
+      - state: cuffs-equipped-INNERCLOTHING
+        color: "#ffb0c0"
+      - state: loweraccent2_top-equipped-INNERCLOTHING
+        color: "#5dd2ff"
+      - state: loweraccent2_bottom-equipped-INNERCLOTHING
+        color: "#ffb0c0"
+      - state: soles-equipped-INNERCLOTHING
+        color: "#5dd2ff"

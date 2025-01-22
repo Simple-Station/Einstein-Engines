@@ -57,6 +57,18 @@
       "directions": 4
     },
     {
+      "name": "accent2_chestonly-equipped-INNERCLOTHING",
+      "directions": 4
+    },
+    {
+      "name": "accent2_chestonly-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "accent2_chestonly-inhand-right",
+      "directions": 4
+    },
+    {
       "name": "accent3-icon"
     },
     {
@@ -72,11 +84,34 @@
       "directions": 4
     },
     {
+      "name": "accent3_chestonly-icon"
+    },
+    {
+      "name": "accent3_chestonly-equipped-INNERCLOTHING",
+      "directions": 4
+    },
+    {
+      "name": "accent3_chestonly-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "accent3_chestonly-inhand-right",
+      "directions": 4
+    },
+    {
       "name": "loweraccent-equipped-INNERCLOTHING",
       "directions": 4
     },
     {
       "name": "loweraccent2-equipped-INNERCLOTHING",
+      "directions": 4
+    },
+    {
+      "name": "loweraccent2_bottom-equipped-INNERCLOTHING",
+      "directions": 4
+    },
+    {
+      "name": "loweraccent2_top-equipped-INNERCLOTHING",
       "directions": 4
     },
     {
@@ -137,6 +172,21 @@
     },
     {
       "name": "tie-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "tieclip-icon"
+    },
+    {
+      "name": "tieclip-equipped-INNERCLOTHING",
+      "directions": 4
+    },
+    {
+      "name": "tieclip-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "tieclip-inhand-right",
       "directions": 4
     },
     {
@@ -216,6 +266,10 @@
     },
     {
       "name": "shoes-equipped-INNERCLOTHING",
+      "directions": 4
+    },
+    {
+      "name": "cuffs-equipped-INNERCLOTHING",
       "directions": 4
     },
     {
