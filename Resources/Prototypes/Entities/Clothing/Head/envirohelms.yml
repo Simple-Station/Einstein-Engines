@@ -1094,3 +1094,51 @@
       - state: accent-equipped-HELMET
         color: "#3b3b3b"
       - state: visor-equipped-HELMET
+
+- type: entity
+  parent: ClothingHeadEnvirohelmCustomBase
+  id: ClothingHeadEnvirohelmNanotrasenRepresentative
+  name: nanotrasen representative envirosuit helmet
+  description: A black envirosuit helmet worn by the NanoTrasen Representative.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#292929"
+    - state: accent-icon
+      color: "#ffce5b"
+    - state: midaccent-icon
+      color: "#004e99"
+    - state: visor-icon
+    - state: icon-flash
+      visible: false
+      shader: unshaded
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#292929"
+      - state: accent-inhand-left
+        color: "#ffce5b"
+      - state: midaccent-inhand-left
+        color: "#004e99"
+      - state: visor-inhand-left
+      right:
+      - state: inhand-right
+        color: "#292929"
+      - state: accent-inhand-right
+        color: "#ffce5b"
+      - state: midaccent-inhand-right
+        color: "#004e99"
+      - state: visor-inhand-right
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#292929"
+      - state: accent-equipped-HELMET
+        color: "#ffce5b"
+      - state: midaccent-equipped-HELMET
+        color: "#004e99"
+      - state: visor-equipped-HELMET

@@ -49,9 +49,9 @@
     pocket1: UniqueNanorepLockerTeleporter
 
 - type: startingGear
-  id: NanotrasenRepresentativePlasmamanGear # TODO: add NanoTrasen Representative envirosuit
+  id: NanotrasenRepresentativePlasmamanGear
   parent: BasePlasmamanGear
   equipment:
-    jumpsuit: ClothingUniformEnvirosuitEnviroslacks
-    head: ClothingHeadEnvirohelmWhite
-    gloves: ClothingHandsGlovesEnviroglovesWhite
+    jumpsuit: ClothingUniformEnvirosuitNanotrasenRepresentative
+    head: ClothingHeadEnvirohelmNanotrasenRepresentative
+    gloves: ClothingHandsGlovesEnviroglovesBlack

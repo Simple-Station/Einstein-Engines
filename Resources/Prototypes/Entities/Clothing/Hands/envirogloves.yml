@@ -552,7 +552,7 @@
 
 - type: entity
   parent: ClothingHandsGlovesEnviroglovesBase
-  id: ClothingHandsGlovesEnviroglovesAdminAssistant
+  id: ClothingHandsGlovesEnviroglovesGladiator
   name: gladiator envirogloves
   description: Covers up those scandalous boney hands.
   components:
