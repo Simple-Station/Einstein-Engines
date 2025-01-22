@@ -83,7 +83,7 @@ namespace Content.Server.GameTicking
 
                 if (startFailed)
                 {
-                    _sawmill.Info($"Failed starting preset {presetTitle} on map {_gameMapManager.GetSelectedMap().MapName}")
+                    _sawmill.Info($"Failed starting preset {presetTitle} on map {_gameMapManager.GetSelectedMap().MapName}");
                     FailedPresetRestart();
                     return false;
                 }
