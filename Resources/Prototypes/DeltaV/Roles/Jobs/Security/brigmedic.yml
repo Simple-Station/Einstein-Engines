@@ -11,8 +11,8 @@
       department: Security
       min: 18000 # 4 hrs
   startingGear: CorpsmanGear
-  conditionalStartingGear: # TODO: corpsman plasmaman gear
-    - id: SecurityOfficerPlasmamanGear
+  conditionalStartingGear:
+    - id: BrigmedicPlasmamanGear
       requirements:
       - !type:CharacterSpeciesRequirement
         species: [ Plasmaman ]
@@ -53,3 +53,11 @@
   innerClothingSkirt: ClothingUniformJumpskirtBrigmedic
   satchel: ClothingBackpackSatchelBrigmedicFilled
   duffelbag: ClothingBackpackDuffelBrigmedicFilled
+
+- type: startingGear
+  id: BrigmedicPlasmamanGear
+  parent: BasePlasmamanSecurityGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitBrigmedic
+    head: ClothingHeadEnvirohelmBrigmedic
+    gloves: ClothingHandsGlovesEnviroglovesBlack

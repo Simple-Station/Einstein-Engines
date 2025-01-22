@@ -22,7 +22,7 @@
   weight: 10
   startingGear: ResearchDirectorGear
   conditionalStartingGear:
-    - id: ScientistPlasmamanGear
+    - id: ResearchDirectorPlasmamanGear
       requirements:
       - !type:CharacterSpeciesRequirement
         species: [ Plasmaman ]
@@ -68,3 +68,11 @@
   innerClothingSkirt: ClothingUniformJumpskirtResearchDirector
   satchel: ClothingBackpackSatchelResearchDirectorFilled
   duffelbag: ClothingBackpackDuffelResearchDirectorFilled
+
+- type: startingGear
+  id: ResearchDirectorPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitResearchDirector
+    head: ClothingHeadEnvirohelmResearchDirector
+    gloves: ClothingHandsGlovesEnviroglovesWhite

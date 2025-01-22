@@ -4,8 +4,8 @@
   description: job-description-gladiator
   playTimeTracker: JobGladiator
   startingGear: NyanoGladiatorGear
-  conditionalStartingGear: # TODO: gladiator plasmaman gear
-    - id: PassengerPlasmamanGear
+  conditionalStartingGear:
+    - id: GladiatorPlasmamanGear
       requirements:
       - !type:CharacterSpeciesRequirement
         species: [ Plasmaman ]
@@ -33,3 +33,11 @@
     ears: ClothingHeadsetGrey
   innerClothingSkirt: UniformShortsRedWithTop
   #any other possessions, spawn in cell
+
+- type: startingGear
+  id: GladiatorPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitGladiator
+    head: ClothingHeadEnvirohelmGladiator
+    gloves: ClothingHandsGlovesEnviroglovesGladiator

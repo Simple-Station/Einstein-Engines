@@ -10,8 +10,8 @@
       department: Security
       min: 14400
   startingGear: PrisonGuardGear
-  conditionalStartingGear: # TODO: prison guard plasmaman gear
-    - id: SecurityOfficerPlasmamanGear
+  conditionalStartingGear:
+    - id: PrisonGuardPlasmamanGear
       requirements:
       - !type:CharacterSpeciesRequirement
         species: [ Plasmaman ]
@@ -44,3 +44,11 @@
   innerClothingSkirt: ClothingUniformJumpsuitPrisonGuard
   satchel: ClothingBackpackSatchelSecurityFilled
   duffelbag: ClothingBackpackDuffelSecurityFilled
+
+- type: startingGear
+  id: PrisonGuardPlasmamanGear
+  parent: BasePlasmamanSecurityGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitPrisonGuard
+    head: ClothingHeadEnvirohelmPrisonGuard
+    gloves: ClothingHandsGlovesEnviroglovesBlack

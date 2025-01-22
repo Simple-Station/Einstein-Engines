@@ -121,7 +121,7 @@
       energy: 40
       color: "#ff11d5"
       netsync: false
-    - type: LightFade # TODO maybe increase energy then decrease?
+    - type: LightFade
       rampUpDuration: 0.1
       duration: 0.449
 

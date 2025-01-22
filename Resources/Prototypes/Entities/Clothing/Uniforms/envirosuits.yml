@@ -577,6 +577,50 @@
 
 - type: entity
   parent: ClothingUniformEnvirosuitCustomBase
+  id: ClothingUniformEnvirosuitGladiator
+  name: gladiator envirosuit
+  description: Made for bloodthirsty Plasmamen.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#dab13b"
+    - state: accent-icon
+      color: "#a349a4"
+    - state: corneraccent-icon
+      color: "#a349a4"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#dab13b"
+      - state: accent-inhand-left
+        color: "#a349a4"
+      - state: corneraccent-inhand-left
+        color: "#a349a4"
+      right:
+      - state: inhand-right
+        color: "#dab13b"
+      - state: accent-inhand-right
+        color: "#a349a4"
+      - state: corneraccent-inhand-right
+        color: "#a349a4"
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#dab13b"
+      - state: accent-equipped-INNERCLOTHING
+        color: "#a349a4"
+      - state: loweraccent2-equipped-INNERCLOTHING
+        color: "#a349a4"
+      - state: corneraccent-equipped-INNERCLOTHING
+        color: "#a349a4"
+      - state: soles-equipped-INNERCLOTHING
+        color: "#a349a4"
+
+- type: entity
+  parent: ClothingUniformEnvirosuitCustomBase
   id: ClothingUniformEnvirosuitMantis
   name: mantis' envirosuit
   description: Hunting down psionics in the safety of this envirosuit.
@@ -1166,6 +1210,6 @@
       - state: loweraccent-equipped-INNERCLOTHING
         color: "#363636"
       - state: shoesdark-equipped-INNERCLOTHING
-        color: "#486782"
+        color: "#363636"
       - state: soles-equipped-INNERCLOTHING
         color: "#b0bdca"

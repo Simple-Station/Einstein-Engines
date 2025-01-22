@@ -552,6 +552,46 @@
 
 - type: entity
   parent: ClothingHeadEnvirohelmCustomBase
+  id: ClothingHeadEnvirohelmGladiator
+  name: gladiator envirosuit helmet
+  description: Protects the head from toy spears and poisonous oxygen.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#dab13b"
+    - state: accent-icon
+      color: "#a349a4"
+    - state: visor-icon
+    - state: icon-flash
+      visible: false
+      shader: unshaded
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#dab13b"
+      - state: accent-inhand-left
+        color: "#a349a4"
+      - state: visor-inhand-left
+      right:
+      - state: inhand-right
+        color: "#dab13b"
+      - state: accent-inhand-right
+        color: "#a349a4"
+      - state: visor-inhand-right
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#dab13b"
+      - state: accent-equipped-HELMET
+        color: "#a349a4"
+      - state: visor-equipped-HELMET
+
+- type: entity
+  parent: ClothingHeadEnvirohelmCustomBase
   id: ClothingHeadEnvirohelmMantis
   name: mantis' envirosuit helmet
   description: An envirosuit helmet for the forensic mantis with a fancy gold stripe.
