@@ -6,8 +6,22 @@
   components:
   - type: Sprite
     sprite: Clothing/Head/Envirohelms/plain.rsi
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/plain.rsi
+  - type: ToggleableLightVisuals
+    inhandVisuals:
+      left:
+      - state: on-inhand-left
+        shader: unshaded
+      right:
+      - state: on-inhand-right
+        shader: unshaded
 
 - type: entity
   parent: ClothingHeadEnvirohelmBase
@@ -107,6 +121,8 @@
     sprite: Clothing/Head/Envirohelms/clown.rsi
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/clown.rsi
+  - type: PointLight
+    color: "#a777ff"
 
 - type: entity
   parent: ClothingHeadEnvirohelmBase
@@ -184,6 +200,17 @@
     sprite: Clothing/Head/Envirohelms/librarian.rsi
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/librarian.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+      - state: visor-equipped-HELMET
+  - type: ToggleableLightVisuals
+    clothingVisuals:
+      head:
+      - state: visor-equipped-HELMET
+        shader: unshaded
+  - type: PointLight
+    color: "#ffffff"
 
 - type: entity
   parent: ClothingHeadEnvirohelmBase
@@ -217,6 +244,8 @@
     sprite: Clothing/Head/Envirohelms/mime.rsi
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/mime.rsi
+  - type: PointLight
+    color: "#ffffff"
 
 - type: entity
   parent: ClothingHeadEnvirohelmBase
@@ -362,7 +391,7 @@
     sprite: Clothing/Head/Envirohelms/centcom_officer.rsi
 
 - type: entity
-  parent: ClothingHeadEnvirohelmBase
+  parent: ClothingHeadEnvirohelmCustomBase
   id: ClothingHeadEnvirohelmCourier
   name: courier's envirosuit helmet
   description: An envirosuit helmet for the courier.
@@ -379,7 +408,6 @@
       head:
       - state: on-equipped-HELMET
   - type: Sprite
-    sprite: Clothing/Head/Envirohelms/color.rsi
     layers:
     - state: icon
       color: "#4a281f"
@@ -405,7 +433,6 @@
         color: "#c2911e"
       - state: visor-inhand-right
   - type: Clothing
-    sprite: Clothing/Head/Envirohelms/color.rsi
     clothingVisuals:
       head:
       - state: equipped-HELMET
@@ -415,7 +442,7 @@
       - state: visor-equipped-HELMET
 
 - type: entity
-  parent: ClothingHeadEnvirohelmBase
+  parent: ClothingHeadEnvirohelmCustomBase
   id: ClothingHeadEnvirohelmMusician
   name: musician's envirosuit helmet
   description: Experts are perplexed as to how plasmamen can still play the trumpet with this helmet on.
@@ -432,7 +459,6 @@
       head:
       - state: on-equipped-HELMET
   - type: Sprite
-    sprite: Clothing/Head/Envirohelms/color.rsi
     layers:
     - state: icon
       color: "#3c335b"
@@ -458,7 +484,6 @@
         color: "#f3f5f4"
       - state: visor-inhand-right
   - type: Clothing
-    sprite: Clothing/Head/Envirohelms/color.rsi
     clothingVisuals:
       head:
       - state: equipped-HELMET
@@ -468,7 +493,7 @@
       - state: visor-equipped-HELMET
 
 - type: entity
-  parent: ClothingHeadEnvirohelmBase
+  parent: ClothingHeadEnvirohelmCustomBase
   id: ClothingHeadEnvirohelmReporter
   name: reporter envirosuit helmet
   description: An envirosuit helmet for the reporter.
@@ -485,7 +510,6 @@
       head:
       - state: on-equipped-HELMET
   - type: Sprite
-    sprite: Clothing/Head/Envirohelms/color.rsi
     layers:
     - state: icon
       color: "#112334"
@@ -511,7 +535,6 @@
         color: "#79121b"
       - state: visor-inhand-right
   - type: Clothing
-    sprite: Clothing/Head/Envirohelms/color.rsi
     clothingVisuals:
       head:
       - state: equipped-HELMET
@@ -521,7 +544,7 @@
       - state: visor-equipped-HELMET
 
 - type: entity
-  parent: ClothingHeadEnvirohelmBase
+  parent: ClothingHeadEnvirohelmCustomBase
   id: ClothingHeadEnvirohelmColorDarkGreen
   name: dark green envirosuit helmet
   description: A dark green envirosuit helmet.
@@ -539,7 +562,6 @@
       - state: on-equipped-HELMET
         shader: unshaded
   - type: Sprite
-    sprite: Clothing/Head/Envirohelms/color.rsi
     layers:
     - state: icon
       color: "#9ed63a"
@@ -565,7 +587,6 @@
         color: "#f3f3f3"
       - state: visor-inhand-right
   - type: Clothing
-    sprite: Clothing/Head/Envirohelms/color.rsi
     clothingVisuals:
       head:
       - state: equipped-HELMET
@@ -575,7 +596,7 @@
       - state: visor-equipped-HELMET
 
 - type: entity
-  parent: ClothingHeadEnvirohelmBase
+  parent: ClothingHeadEnvirohelmCustomBase
   id: ClothingHeadEnvirohelmMantis
   name: mantis' envirosuit helmet
   description: An envirosuit helmet for the forensic mantis with a fancy gold stripe.
@@ -593,7 +614,6 @@
       - state: on-equipped-HELMET
         shader: unshaded
   - type: Sprite
-    sprite: Clothing/Head/Envirohelms/color.rsi
     layers:
     - state: icon
       color: "#46566d"
@@ -625,7 +645,6 @@
         color: "#d4af48"
       - state: visor-inhand-right
   - type: Clothing
-    sprite: Clothing/Head/Envirohelms/color.rsi
     clothingVisuals:
       head:
       - state: equipped-HELMET
@@ -637,7 +656,7 @@
       - state: visor-equipped-HELMET
 
 - type: entity
-  parent: ClothingHeadEnvirohelmBase
+  parent: ClothingHeadEnvirohelmCustomBase
   id: ClothingHeadEnvirohelmSafari
   name: safari envirosuit helmet
   description: Makes you a target for the locals.
@@ -655,7 +674,6 @@
       - state: on-equipped-HELMET
         shader: unshaded
   - type: Sprite
-    sprite: Clothing/Head/Envirohelms/color.rsi
     layers:
     - state: icon
       color: "#d3b986"
@@ -681,7 +699,6 @@
         color: "#a349a4"
       - state: visor-inhand-right
   - type: Clothing
-    sprite: Clothing/Head/Envirohelms/color.rsi
     clothingVisuals:
       head:
       - state: equipped-HELMET
@@ -691,7 +708,7 @@
       - state: visor-equipped-HELMET
 
 - type: entity
-  parent: ClothingHeadEnvirohelmBase
+  parent: ClothingHeadEnvirohelmCustomBase
   id: ClothingHeadEnvirohelmMartialGi
   name: gi envirosuit helmet
   description: A white envirosuit helmet with black stripes used for martial arts.
@@ -709,7 +726,6 @@
       - state: on-equipped-HELMET
         shader: unshaded
   - type: Sprite
-    sprite: Clothing/Head/Envirohelms/color.rsi
     layers:
     - state: icon
       color: "#ffffff"
@@ -735,7 +751,6 @@
         color: "#3b3b3b"
       - state: visor-inhand-right
   - type: Clothing
-    sprite: Clothing/Head/Envirohelms/color.rsi
     clothingVisuals:
       head:
       - state: equipped-HELMET
@@ -745,7 +760,7 @@
       - state: visor-equipped-HELMET
 
 - type: entity
-  parent: ClothingHeadEnvirohelmBase
+  parent: ClothingHeadEnvirohelmCustomBase
   id: ClothingHeadEnvirohelmQM
   name: logistics officer's envirosuit helmet
   description: A special containment helmet designed for the Logistics Officer.
@@ -763,7 +778,6 @@
       - state: on-equipped-HELMET
         shader: unshaded
   - type: Sprite
-    sprite: Clothing/Head/Envirohelms/color.rsi
     layers:
     - state: icon
       color: "#ba9654"
@@ -795,7 +809,6 @@
         color: "#d08200"
       - state: visor-inhand-right
   - type: Clothing
-    sprite: Clothing/Head/Envirohelms/color.rsi
     clothingVisuals:
       head:
       - state: equipped-HELMET
@@ -807,7 +820,7 @@
       - state: visor-equipped-HELMET
 
 - type: entity
-  parent: ClothingHeadEnvirohelmBase
+  parent: ClothingHeadEnvirohelmCustomBase
   id: ClothingHeadEnvirohelmBoxing
   name: boxing envirosuit helmet
   description: A white envirosuit helmet with red stripes.
@@ -825,7 +838,6 @@
       - state: on-equipped-HELMET
         shader: unshaded
   - type: Sprite
-    sprite: Clothing/Head/Envirohelms/color.rsi
     layers:
     - state: icon
       color: "#eeeeee"
@@ -851,7 +863,6 @@
         color: "#a81818"
       - state: visor-inhand-right
   - type: Clothing
-    sprite: Clothing/Head/Envirohelms/color.rsi
     clothingVisuals:
       head:
       - state: equipped-HELMET
@@ -861,25 +872,12 @@
       - state: visor-equipped-HELMET
 
 - type: entity
-  parent: ClothingHeadEnvirohelmBase
+  parent: ClothingHeadEnvirohelmCustomBase
   id: ClothingHeadEnvirohelmAdminAssistant
   name: administrative assistant's envirosuit helmet
   description: A white envirosuit helmet with dark blue stripes.
   components:
-  - type: ToggleableLightVisuals
-    inhandVisuals:
-      left:
-      - state: visor-inhand-left
-        shader: unshaded
-      right:
-      - state: visor-inhand-right
-        shader: unshaded
-    clothingVisuals:
-      head:
-      - state: on-equipped-HELMET
-        shader: unshaded
   - type: Sprite
-    sprite: Clothing/Head/Envirohelms/color.rsi
     layers:
     - state: icon
       color: "#ffffff"
@@ -905,7 +903,6 @@
         color: "#315266"
       - state: visor-inhand-right
   - type: Clothing
-    sprite: Clothing/Head/Envirohelms/color.rsi
     clothingVisuals:
       head:
       - state: equipped-HELMET
@@ -915,25 +912,12 @@
       - state: visor-equipped-HELMET
 
 - type: entity
-  parent: ClothingHeadEnvirohelmBase
+  parent: ClothingHeadEnvirohelmCustomBase
   id: ClothingHeadEnvirohelmBlackPink
   name: black pink envirosuit helmet
   description: How you like that envirosuit helmet?
   components:
-  - type: ToggleableLightVisuals
-    inhandVisuals:
-      left:
-      - state: visor-inhand-left
-        shader: unshaded
-      right:
-      - state: visor-inhand-right
-        shader: unshaded
-    clothingVisuals:
-      head:
-      - state: on-equipped-HELMET
-        shader: unshaded
   - type: Sprite
-    sprite: Clothing/Head/Envirohelms/color.rsi
     layers:
     - state: icon
       color: "#292929"
@@ -959,7 +943,6 @@
         color: "#f4a5ba"
       - state: visor-inhand-right
   - type: Clothing
-    sprite: Clothing/Head/Envirohelms/color.rsi
     clothingVisuals:
       head:
       - state: equipped-HELMET
@@ -969,26 +952,13 @@
       - state: visor-equipped-HELMET
 
 - type: entity
-  parent: ClothingHeadEnvirohelmBase
+  parent: ClothingHeadEnvirohelmCustomBase
   id: ClothingHeadEnvirohelmBlackPinkAlt
   name: black pink envirosuit helmet
   suffix: Alternative
   description: This envirosuit helmet makes you want to kill this love.
   components:
-  - type: ToggleableLightVisuals
-    inhandVisuals:
-      left:
-      - state: visor-inhand-left
-        shader: unshaded
-      right:
-      - state: visor-inhand-right
-        shader: unshaded
-    clothingVisuals:
-      head:
-      - state: on-equipped-HELMET
-        shader: unshaded
   - type: Sprite
-    sprite: Clothing/Head/Envirohelms/color.rsi
     layers:
     - state: icon
       color: "#f4a5ba"
@@ -1014,7 +984,6 @@
         color: "#292929"
       - state: visor-inhand-right
   - type: Clothing
-    sprite: Clothing/Head/Envirohelms/color.rsi
     clothingVisuals:
       head:
       - state: equipped-HELMET
@@ -1024,25 +993,12 @@
       - state: visor-equipped-HELMET
 
 - type: entity
-  parent: ClothingHeadEnvirohelmBase
+  parent: ClothingHeadEnvirohelmCustomBase
   id: ClothingHeadEnvirohelmBlueshield
   name: blueshield's envirosuit helmet
   description: A plasmaman envirosuit helmet designed for the blueshield.
   components:
-  - type: ToggleableLightVisuals
-    inhandVisuals:
-      left:
-      - state: visor-inhand-left
-        shader: unshaded
-      right:
-      - state: visor-inhand-right
-        shader: unshaded
-    clothingVisuals:
-      head:
-      - state: on-equipped-HELMET
-        shader: unshaded
   - type: Sprite
-    sprite: Clothing/Head/Envirohelms/color.rsi
     layers:
     - state: icon
       color: "#535353"
@@ -1068,7 +1024,6 @@
         color: "#0044d4"
       - state: visor-inhand-right
   - type: Clothing
-    sprite: Clothing/Head/Envirohelms/color.rsi
     clothingVisuals:
       head:
       - state: equipped-HELMET
