@@ -237,6 +237,8 @@
         - TauCetiBasic
         - Marish
         - Empathy
+    - type: PotentiaModifier
+      potentiaMultiplier: 1.25
     - type: Tag
       tags:
       - CanPilot
