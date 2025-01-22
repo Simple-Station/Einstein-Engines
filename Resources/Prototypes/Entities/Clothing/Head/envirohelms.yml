@@ -301,6 +301,8 @@
     sprite: Clothing/Head/Envirohelms/salvage.rsi
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/salvage.rsi
+  - type: PointLight
+    color: "#c77eff"
 
 - type: entity
   parent: ClothingHeadEnvirohelmBase

@@ -213,14 +213,13 @@
     clothingVisuals:
       head:
       - state: equipped-HELMET
-  - type: ToggleableLightVisuals
-    clothingVisuals:
-      head:
-      - state: on-equipped-HELMET
-        shader: unshaded
   - type: IgniteFromGasImmunity
     parts:
     - Head
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.90
   - type: EyeProtection
   - type: BreathMask
   - type: PressureProtection # Same as EVA helmet
@@ -239,10 +238,15 @@
     - Snout
     clothingSlots:
     - mask
+  - type: ToggleableLightVisuals
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+        shader: unshaded
   - type: PointLight
     enabled: false
     color: "#ffa1ff"
-    radius: 3
+    radius: 3.5
     energy: 2.5
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
@@ -269,16 +273,16 @@
         minValue: 0.1
         maxValue: 2.0
         isLooped: true
-  - type: Battery
-    maxCharge: 300 #lights drain 3/s but recharge of 2 makes this 1/s. Therefore 300 is 5 minutes of light.
-    startingCharge: 300
-  - type: BatterySelfRecharger
-    autoRecharge: true
-    autoRechargeRate: 2 #recharge of 2 makes total drain 1w / s so max charge is 1:1 with time. Time to fully charge should be 2.5 minutes. Having recharge gives light an extended flicker period which gives you some warning to return to light area.
-  - type: Armor
-    modifiers:
-      coefficients:
-        Caustic: 0.90
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot {}
   - type: GuideHelp # While the playerbase is getting introduced to Plasmamen, add their guidebook here
     guides: [ Plasmaman ]
 

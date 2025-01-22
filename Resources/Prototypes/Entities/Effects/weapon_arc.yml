@@ -113,7 +113,6 @@
       layers:
       - state: punch
         color: "#ff80f4"
-        shader: unshaded
     - type: TimedDespawn
       lifetime: 0.549
     - type: PointLight
