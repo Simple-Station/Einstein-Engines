@@ -30,6 +30,6 @@
   id: PassengerPlasmamanGear
   parent: BasePlasmamanGear
   equipment:
-    jumpsuit: ClothingUniformEnvirosuit
-    head: ClothingHeadEnvirohelm
-    gloves: ClothingHandsGlovesEnvirogloves
+    jumpsuit: ClothingUniformEnvirosuitColorGrey
+    head: ClothingHeadEnvirohelmColorGrey
+    gloves: ClothingHandsGlovesEnviroglovesColorDarkGrey

@@ -187,6 +187,84 @@
     - ClothingHeadEnvirohelmSafari
 
 - type: loadout
+  id: LoadoutUniformEnvirosuitColorWhite
+  category: Uniform
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Plasmaman
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+        - Command
+  items:
+    - ClothingUniformEnvirosuitColorWhite
+    - ClothingHeadEnvirohelmWhite
+
+- type: loadout
+  id: LoadoutUniformEnvirosuitColorGrey
+  category: Uniform
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Plasmaman
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+        - Command
+  items:
+    - ClothingUniformEnvirosuitColorGrey
+    - ClothingHeadEnvirohelmColorGrey
+
+- type: loadout
+  id: LoadoutUniformEnvirosuitColorBlack
+  category: Uniform
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Plasmaman
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+  items:
+    - ClothingUniformEnvirosuitColorBlack
+    - ClothingHeadEnvirohelmColorBlack
+
+- type: loadout
+  id: LoadoutUniformEnvirosuitColorRed
+  category: Uniform
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Plasmaman
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+  items:
+    - ClothingUniformEnvirosuitColorRed
+    - ClothingHeadEnvirohelmColorRed
+
+- type: loadout
   id: LoadoutUniformEnvirosuitColorDarkGreen
   category: Uniform
   cost: 0
@@ -205,6 +283,46 @@
   items:
     - ClothingUniformEnvirosuitColorDarkGreen
     - ClothingHeadEnvirohelmColorDarkGreen
+
+- type: loadout
+  id: LoadoutUniformEnvirosuitColorBlue
+  category: Uniform
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Plasmaman
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+        - Command
+  items:
+    - ClothingUniformEnvirosuitColorBlue
+    - ClothingHeadEnvirohelmColorBlue
+
+- type: loadout
+  id: LoadoutUniformEnvirosuitColorYellow
+  category: Uniform
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Plasmaman
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+        - Command
+  items:
+    - ClothingUniformEnvirosuitColorYellow
+    - ClothingHeadEnvirohelmColorYellow
 
 - type: loadout
   id: LoadoutUniformEnvirosuitTrans

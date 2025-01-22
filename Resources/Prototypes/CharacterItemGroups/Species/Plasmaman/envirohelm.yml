@@ -1,7 +1,0 @@
-- type: characterItemGroup
-  id: LoadoutPlasmamanEnvirohelm
-  maxItems: 1
-  items:
-    - type: loadout
-      id: LoadoutSpeciesHeadEnvirohelm
-      priority: 0

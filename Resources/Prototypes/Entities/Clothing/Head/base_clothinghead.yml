@@ -205,6 +205,8 @@
       visible: false
       shader: unshaded
       map: [ "light" ]
+  - type: Item
+    size: Normal
   - type: Clothing
     equipDelay: 0.4
     unequipDelay: 0.75 # Slightly higher delay to protect against accidental unequips

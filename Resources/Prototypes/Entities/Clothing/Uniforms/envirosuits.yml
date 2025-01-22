@@ -523,50 +523,6 @@
 
 - type: entity
   parent: ClothingUniformEnvirosuitCustomBase
-  id: ClothingUniformEnvirosuitColorDarkGreen
-  name: dark green envirosuit
-  description: A dark green envirosuit.
-  components:
-  - type: Sprite
-    layers:
-    - state: icon
-      color: "#9ed63a"
-    - state: accent-icon
-      color: "#a349a4"
-    - state: corneraccent-icon
-      color: "#a349a4"
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#9ed63a"
-      - state: accent-inhand-left
-        color: "#a349a4"
-      - state: corneraccent-inhand-left
-        color: "#a349a4"
-      right:
-      - state: inhand-right
-        color: "#9ed63a"
-      - state: accent-inhand-right
-        color: "#a349a4"
-      - state: corneraccent-inhand-right
-        color: "#a349a4"
-  - type: Clothing
-    clothingVisuals:
-      jumpsuit:
-      - state: equipped-INNERCLOTHING
-        color: "#9ed63a"
-      - state: accent-equipped-INNERCLOTHING
-        color: "#a349a4"
-      - state: loweraccent-equipped-INNERCLOTHING
-        color: "#a349a4"
-      - state: corneraccent-equipped-INNERCLOTHING
-        color: "#a349a4"
-      - state: soles-equipped-INNERCLOTHING
-        color: "#bababa"
-
-- type: entity
-  parent: ClothingUniformEnvirosuitCustomBase
   id: ClothingUniformEnvirosuitGladiator
   name: gladiator envirosuit
   description: Made for bloodthirsty Plasmamen.
@@ -1391,3 +1347,312 @@
         color: "#ffce5b"
       - state: soles-equipped-INNERCLOTHING
         color: "#634737"
+
+# Color envirosuits
+- type: entity
+  parent: ClothingUniformEnvirosuitCustomBase
+  id: ClothingUniformEnvirosuitColorWhite
+  name: white envirosuit
+  description: A generic white jumpsuit with no rank markings.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#ffffff"
+    - state: accent-icon
+      color: "#a349a4"
+    - state: corneraccent-icon
+      color: "#a349a4"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ffffff"
+      - state: accent-inhand-left
+        color: "#a349a4"
+      - state: corneraccent-inhand-left
+        color: "#a349a4"
+      right:
+      - state: inhand-right
+        color: "#ffffff"
+      - state: accent-inhand-right
+        color: "#a349a4"
+      - state: corneraccent-inhand-right
+        color: "#a349a4"
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#ffffff"
+      - state: accent-equipped-INNERCLOTHING
+        color: "#a349a4"
+      - state: loweraccent-equipped-INNERCLOTHING
+        color: "#a349a4"
+      - state: corneraccent-equipped-INNERCLOTHING
+        color: "#a349a4"
+      - state: soles-equipped-INNERCLOTHING
+        color: "#bababa"
+
+- type: entity
+  parent: ClothingUniformEnvirosuitCustomBase
+  id: ClothingUniformEnvirosuitColorGrey
+  name: grey envirosuit
+  description: A tasteful grey envirosuit that reminds you of the good old days.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#b3b3b3"
+    - state: accent-icon
+      color: "#a349a4"
+    - state: corneraccent-icon
+      color: "#a349a4"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#b3b3b3"
+      - state: accent-inhand-left
+        color: "#a349a4"
+      - state: corneraccent-inhand-left
+        color: "#a349a4"
+      right:
+      - state: inhand-right
+        color: "#b3b3b3"
+      - state: accent-inhand-right
+        color: "#a349a4"
+      - state: corneraccent-inhand-right
+        color: "#a349a4"
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#b3b3b3"
+      - state: accent-equipped-INNERCLOTHING
+        color: "#a349a4"
+      - state: loweraccent-equipped-INNERCLOTHING
+        color: "#a349a4"
+      - state: corneraccent-equipped-INNERCLOTHING
+        color: "#a349a4"
+      - state: soles-equipped-INNERCLOTHING
+        color: "#bababa"
+
+- type: entity
+  parent: ClothingUniformEnvirosuitCustomBase
+  id: ClothingUniformEnvirosuitColorBlack
+  name: black envirosuit
+  description: A generic black envirosuit with no rank markings.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#3f3f3f"
+    - state: accent-icon
+      color: "#a349a4"
+    - state: corneraccent-icon
+      color: "#a349a4"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#3f3f3f"
+      - state: accent-inhand-left
+        color: "#a349a4"
+      - state: corneraccent-inhand-left
+        color: "#a349a4"
+      right:
+      - state: inhand-right
+        color: "#3f3f3f"
+      - state: accent-inhand-right
+        color: "#a349a4"
+      - state: corneraccent-inhand-right
+        color: "#a349a4"
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#3f3f3f"
+      - state: accent-equipped-INNERCLOTHING
+        color: "#a349a4"
+      - state: loweraccent-equipped-INNERCLOTHING
+        color: "#a349a4"
+      - state: corneraccent-equipped-INNERCLOTHING
+        color: "#a349a4"
+      - state: soles-equipped-INNERCLOTHING
+        color: "#bababa"
+
+- type: entity
+  parent: ClothingUniformEnvirosuitCustomBase
+  id: ClothingUniformEnvirosuitColorRed
+  name: red envirosuit
+  description: A dark green envirosuit.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#d1423f"
+    - state: accent-icon
+      color: "#a349a4"
+    - state: corneraccent-icon
+      color: "#a349a4"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#d1423f"
+      - state: accent-inhand-left
+        color: "#a349a4"
+      - state: corneraccent-inhand-left
+        color: "#a349a4"
+      right:
+      - state: inhand-right
+        color: "#d1423f"
+      - state: accent-inhand-right
+        color: "#a349a4"
+      - state: corneraccent-inhand-right
+        color: "#a349a4"
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#d1423f"
+      - state: accent-equipped-INNERCLOTHING
+        color: "#a349a4"
+      - state: loweraccent-equipped-INNERCLOTHING
+        color: "#a349a4"
+      - state: corneraccent-equipped-INNERCLOTHING
+        color: "#a349a4"
+      - state: soles-equipped-INNERCLOTHING
+        color: "#bababa"
+
+- type: entity
+  parent: ClothingUniformEnvirosuitCustomBase
+  id: ClothingUniformEnvirosuitColorDarkGreen
+  name: dark green envirosuit
+  description: A generic dark green envirosuit with no rank markings.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#9ed63a"
+    - state: accent-icon
+      color: "#a349a4"
+    - state: corneraccent-icon
+      color: "#a349a4"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#9ed63a"
+      - state: accent-inhand-left
+        color: "#a349a4"
+      - state: corneraccent-inhand-left
+        color: "#a349a4"
+      right:
+      - state: inhand-right
+        color: "#9ed63a"
+      - state: accent-inhand-right
+        color: "#a349a4"
+      - state: corneraccent-inhand-right
+        color: "#a349a4"
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#9ed63a"
+      - state: accent-equipped-INNERCLOTHING
+        color: "#a349a4"
+      - state: loweraccent-equipped-INNERCLOTHING
+        color: "#a349a4"
+      - state: corneraccent-equipped-INNERCLOTHING
+        color: "#a349a4"
+      - state: soles-equipped-INNERCLOTHING
+        color: "#bababa"
+
+- type: entity
+  parent: ClothingUniformEnvirosuitCustomBase
+  id: ClothingUniformEnvirosuitColorBlue
+  name: blue envirosuit
+  description: A generic blue envirosuit with no rank markings.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#52aecc"
+    - state: accent-icon
+      color: "#a349a4"
+    - state: corneraccent-icon
+      color: "#a349a4"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#52aecc"
+      - state: accent-inhand-left
+        color: "#a349a4"
+      - state: corneraccent-inhand-left
+        color: "#a349a4"
+      right:
+      - state: inhand-right
+        color: "#52aecc"
+      - state: accent-inhand-right
+        color: "#a349a4"
+      - state: corneraccent-inhand-right
+        color: "#a349a4"
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#52aecc"
+      - state: accent-equipped-INNERCLOTHING
+        color: "#a349a4"
+      - state: loweraccent-equipped-INNERCLOTHING
+        color: "#a349a4"
+      - state: corneraccent-equipped-INNERCLOTHING
+        color: "#a349a4"
+      - state: soles-equipped-INNERCLOTHING
+        color: "#bababa"
+
+- type: entity
+  parent: ClothingUniformEnvirosuitCustomBase
+  id: ClothingUniformEnvirosuitColorYellow
+  name: yellow envirosuit
+  description: A generic yellow envirosuit with no rank markings.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#ffe14d"
+    - state: accent-icon
+      color: "#a349a4"
+    - state: corneraccent-icon
+      color: "#a349a4"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ffe14d"
+      - state: accent-inhand-left
+        color: "#a349a4"
+      - state: corneraccent-inhand-left
+        color: "#a349a4"
+      right:
+      - state: inhand-right
+        color: "#ffe14d"
+      - state: accent-inhand-right
+        color: "#a349a4"
+      - state: corneraccent-inhand-right
+        color: "#a349a4"
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#ffe14d"
+      - state: accent-equipped-INNERCLOTHING
+        color: "#a349a4"
+      - state: loweraccent-equipped-INNERCLOTHING
+        color: "#a349a4"
+      - state: corneraccent-equipped-INNERCLOTHING
+        color: "#a349a4"
+      - state: soles-equipped-INNERCLOTHING
+        color: "#bababa"

@@ -552,6 +552,35 @@
 
 - type: entity
   parent: ClothingHandsGlovesEnviroglovesBase
+  id: ClothingHandsGlovesEnviroglovesColorDarkGrey
+  name: dark grey envirogloves
+  description: Covers up those scandalous boney hands.
+  components:
+  - type: Sprite
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    layers:
+    - state: icon
+      color: "#616161"
+  - type: Item
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#616161"
+      right:
+      - state: inhand-right
+        color: "#616161"
+  - type: Clothing
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    clothingVisuals:
+      gloves:
+      - state: equipped-HAND
+        color: "#616161"
+  - type: Fiber
+    fiberColor: fibers-grey
+
+- type: entity
+  parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesGladiator
   name: gladiator envirogloves
   description: Covers up those scandalous boney hands.

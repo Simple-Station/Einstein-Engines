@@ -1,7 +1,0 @@
-- type: characterItemGroup
-  id: LoadoutPlasmamanEnvirogloves
-  maxItems: 1
-  items:
-    - type: loadout
-      id: LoadoutSpeciesHandsGlovesEnvirogloves
-      priority: 0
