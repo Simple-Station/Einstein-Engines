@@ -23,6 +23,9 @@
       reagents:
       - ReagentId: Plasma
         Quantity: 5
+  - type: FlavorProfile
+    flavors:
+      - plasma
 
 - type: entity
   id: OrganPlasmamanLungs
