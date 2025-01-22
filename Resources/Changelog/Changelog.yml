@@ -10552,3 +10552,12 @@ Entries:
   id: 6748
   time: '2025-01-21T14:56:35.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1548
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Harpies can now wear pants, and have a displacement map to make them
+        look less terrible when doing so.
+  id: 6749
+  time: '2025-01-22T21:44:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1633
