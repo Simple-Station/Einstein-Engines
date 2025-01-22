@@ -7,7 +7,7 @@
     - !type:CharacterOverallTimeRequirement
       min: 7200 #DeltaV 2 hours
   startingGear: ZookeeperGear
-  conditionalStartingGear: # TODO: zookeeper plasmaman gear
+  conditionalStartingGear:
     - id: ZookeeperPlasmamanGear
       requirements:
       - !type:CharacterSpeciesRequirement

@@ -51,9 +51,9 @@
     pocket1: UniqueMagistrateLockerTeleporter
 
 - type: startingGear
-  id: MagistratePlasmamanGear # TODO: add magistrate envirosuit
+  id: MagistratePlasmamanGear
   parent: BasePlasmamanGear
   equipment:
-    jumpsuit: ClothingUniformEnvirosuitEnviroslacks
-    head: ClothingHeadEnvirohelmWhite
+    jumpsuit: ClothingUniformEnvirosuitMagistrate
+    head: ClothingHeadEnvirohelmMagistrate
     gloves: ClothingHandsGlovesEnviroglovesWhite

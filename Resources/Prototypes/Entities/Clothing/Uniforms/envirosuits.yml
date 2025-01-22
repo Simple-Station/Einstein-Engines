@@ -1281,3 +1281,89 @@
         color: "#ffce5b"
       - state: soles-equipped-INNERCLOTHING
         color: "#ffce5b"
+
+- type: entity
+  parent: ClothingUniformEnvirosuitCustomBase
+  id: ClothingUniformEnvirosuitMagistrate
+  name: magistrate envirosuit
+  description: The envirosuit that doles out justice.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#ebebeb"
+    - state: plaintop-icon
+      color: "#ebebeb"
+    - state: tie-icon
+      color: "#333333"
+    - state: tieclip-icon
+      color: "#e6b952"
+    - state: accent-icon
+      color: "#ffce5b"
+    - state: pants-icon
+      color: "#292929"
+    - state: belt-icon
+      color: "#634737"
+    - state: beltbuckle-icon
+      color: "#ffce5b"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ebebeb"
+      - state: plaintop-inhand-left
+        color: "#ebebeb"
+      - state: tie-inhand-left
+        color: "#333333"
+      - state: tieclip-inhand-left
+        color: "#e6b952"
+      - state: accent-inhand-left
+        color: "#ffce5b"
+      - state: pants-inhand-left
+        color: "#292929"
+      - state: belt-inhand-left
+        color: "#634737"
+      - state: beltbuckle-inhand-left
+        color: "#ffce5b"
+      right:
+      - state: inhand-right
+        color: "#ebebeb"
+      - state: plaintop-inhand-right
+        color: "#ebebeb"
+      - state: tie-inhand-right
+        color: "#333333"
+      - state: tieclip-inhand-right
+        color: "#e6b952"
+      - state: accent-inhand-right
+        color: "#ffce5b"
+      - state: pants-inhand-right
+        color: "#292929"
+      - state: belt-inhand-right
+        color: "#634737"
+      - state: beltbuckle-inhand-right
+        color: "#ffce5b"
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#ebebeb"
+      - state: plaintop-equipped-INNERCLOTHING
+        color: "#ebebeb"
+      - state: tie-equipped-INNERCLOTHING
+        color: "#333333"
+      - state: tieclip-equipped-INNERCLOTHING
+        color: "#e6b952"
+      - state: accentalt-equipped-INNERCLOTHING
+        color: "#ffce5b"
+      - state: cuffs-equipped-INNERCLOTHING
+        color: "#634737"
+      - state: pants-equipped-INNERCLOTHING
+        color: "#292929"
+      - state: belt-equipped-INNERCLOTHING
+        color: "#634737"
+      - state: beltbuckle-equipped-INNERCLOTHING
+        color: "#ffce5b"
+      - state: loweraccent-equipped-INNERCLOTHING
+        color: "#ffce5b"
+      - state: soles-equipped-INNERCLOTHING
+        color: "#634737"

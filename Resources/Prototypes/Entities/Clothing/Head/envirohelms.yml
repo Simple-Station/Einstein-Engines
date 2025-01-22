@@ -693,7 +693,7 @@
     - state: visor-icon
     - state: icon-flash
       visible: false
-      shader: unshaded # TODO make every envirohelm light sprite unshaded
+      shader: unshaded
       map: [ "light" ]
   - type: Item
     inhandVisuals:
@@ -1141,4 +1141,44 @@
         color: "#ffce5b"
       - state: midaccent-equipped-HELMET
         color: "#004e99"
+      - state: visor-equipped-HELMET
+
+- type: entity
+  parent: ClothingHeadEnvirohelmCustomBase
+  id: ClothingHeadEnvirohelmMagistrate
+  name: magistrate envirosuit helmet
+  description: A plain white envirosuit with yellow stripes.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#ebebeb"
+    - state: accent-icon
+      color: "#ffce5b"
+    - state: visor-icon
+    - state: icon-flash
+      visible: false
+      shader: unshaded
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ebebeb"
+      - state: accent-inhand-left
+        color: "#ffce5b"
+      - state: visor-inhand-left
+      right:
+      - state: inhand-right
+        color: "#ebebeb"
+      - state: accent-inhand-right
+        color: "#ffce5b"
+      - state: visor-inhand-right
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#ebebeb"
+      - state: accent-equipped-HELMET
+        color: "#ffce5b"
       - state: visor-equipped-HELMET
