@@ -3,128 +3,131 @@
 - type: entity
   id: PartPlasmaman
   parent: [BaseItem, BasePart]
-  name: "plasmaman body part"
+  name: plasmaman body part
   abstract: true
   components:
-  - type: Extractable
-    juiceSolution:
-      reagents:
-      - ReagentId: Plasma
-        Quantity: 3
+  - type: Sprite
+    sprite: Mobs/Species/Plasmaman/parts.rsi
+  - type: Butcherable
+    butcheringType: Knife
+    butcherDelay: 4.0
+    spawned:
+    - id: SheetPlasma1
+      amount: 1
   - type: IgniteFromGasPart
     gas: Oxygen
 
 - type: entity
   id: TorsoPlasmaman
-  name: "plasmaman torso"
+  name: plasmaman torso
   parent: [PartPlasmaman, BaseTorso]
   components:
   - type: Sprite
-    sprite: Mobs/Species/Plasmaman/parts.rsi
-    state: "torso_m"
-  - type: Extractable
-    juiceSolution:
-      reagents:
-      - ReagentId: Plasma
-        Quantity: 6
+    state: torso_m
+  - type: Butcherable
+    butcherDelay: 6.0
+    spawned:
+    - id: SheetPlasma1
+      amount: 3
   - type: IgniteFromGasPart
     fireStacks: 0.06
 
 - type: entity
   id: HeadPlasmaman
-  name: "plasmaman head"
+  name: plasmaman head
   parent: [PartPlasmaman, BaseHead]
   components:
   - type: Sprite
-    sprite: Mobs/Species/Plasmaman/parts.rsi
-    state: "head_m"
+    state: head_m
+  - type: Butcherable
+    butcherDelay: 5.0
   - type: IgniteFromGasPart
     fireStacks: 0.02
 
 - type: entity
   id: LeftArmPlasmaman
-  name: "left plasmaman arm"
+  name: left plasmaman arm
   parent: [PartPlasmaman, BaseLeftArm]
   components:
   - type: Sprite
-    sprite: Mobs/Species/Plasmaman/parts.rsi
-    state: "l_arm"
+    state: l_arm
   - type: IgniteFromGasPart
     fireStacks: 0.02
 
 - type: entity
   id: RightArmPlasmaman
-  name: "right plasmaman arm"
+  name: right plasmaman arm
   parent: [PartPlasmaman, BaseRightArm]
   components:
   - type: Sprite
-    sprite: Mobs/Species/Plasmaman/parts.rsi
-    state: "r_arm"
+    state: r_arm
   - type: IgniteFromGasPart
     fireStacks: 0.02
 
 - type: entity
   id: LeftHandPlasmaman
-  name: "left plasmaman hand"
+  name: left plasmaman hand
   parent: [PartPlasmaman, BaseLeftHand]
   components:
   - type: Sprite
-    sprite: Mobs/Species/Plasmaman/parts.rsi
-    state: "l_hand"
+    state: l_hand
+  - type: Butcherable
+    butcherDelay: 3.0
   - type: IgniteFromGasPart
     fireStacks: 0.01
 
 - type: entity
   id: RightHandPlasmaman
-  name: "right plasmaman hand"
+  name: right plasmaman hand
   parent: [PartPlasmaman, BaseRightHand]
   components:
   - type: Sprite
-    sprite: Mobs/Species/Plasmaman/parts.rsi
-    state: "r_hand"
+    state: r_hand
+  - type: Butcherable
+    butcherDelay: 3.0
   - type: IgniteFromGasPart
     fireStacks: 0.01
 
 - type: entity
   id: LeftLegPlasmaman
-  name: "left plasmaman leg"
+  name: left plasmaman leg
   parent: [PartPlasmaman, BaseLeftLeg]
   components:
   - type: Sprite
-    sprite: Mobs/Species/Plasmaman/parts.rsi
-    state: "l_leg"
+    state: l_leg
   - type: IgniteFromGasPart
     fireStacks: 0.02
 
 - type: entity
   id: RightLegPlasmaman
-  name: "right plasmaman leg"
+  name: right plasmaman leg
   parent: [PartPlasmaman, BaseRightLeg]
   components:
   - type: Sprite
-    sprite: Mobs/Species/Plasmaman/parts.rsi
-    state: "r_leg"
+    state: r_leg
   - type: IgniteFromGasPart
     fireStacks: 0.02
 
 - type: entity
   id: LeftFootPlasmaman
-  name: "left plasmaman foot"
+  name: left plasmaman foot
   parent: [PartPlasmaman, BaseLeftFoot]
   components:
   - type: Sprite
-    sprite: Mobs/Species/Plasmaman/parts.rsi
-    state: "l_foot"
+    state: l_foot
+  - type: Butcherable
+    butcherDelay: 3.0
   - type: IgniteFromGasPart
     fireStacks: 0.01
 
 - type: entity
   id: RightFootPlasmaman
-  name: "right plasmaman foot"
+  name: right plasmaman foot
   parent: [PartPlasmaman, BaseRightFoot]
   components:
   - type: Sprite
-    sprite: Mobs/Species/Plasmaman/parts.rsi
-    state: "r_foot"
+    state: r_foot
+  - type: Butcherable
+    butcherDelay: 3.0
   - type: IgniteFromGasPart
     fireStacks: 0.01

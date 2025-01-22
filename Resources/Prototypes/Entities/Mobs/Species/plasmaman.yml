@@ -111,7 +111,7 @@
     butcheringType: Spike
     spawned:
     - id: SheetPlasma1
-      amount: 4
+      amount: 8
   - type: Inventory
     templateId: plasmaman
   - type: Temperature
