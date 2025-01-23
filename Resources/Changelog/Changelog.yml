@@ -10561,3 +10561,57 @@ Entries:
   id: 6749
   time: '2025-01-22T21:44:47.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1633
+- author: sleepyyapril
+  changes:
+    - type: Tweak
+      message: >-
+        The H.O.N.K. has received an airtight cabin for honk operations in outer
+        space.
+    - type: Add
+      message: >-
+        Added the Ripley MK-II, a heavy, slow all-purpose mech, featuring a
+        pressurized cabin for space operations.
+    - type: Add
+      message: >-
+        Added the Clarke, A fast moving mech for space travel, with built in
+        thrusters (not certain if they work properly though :trollface:)
+    - type: Add
+      message: >-
+        Added the Gygax, a lightly armored and highly mobile mech with enough
+        force to rip walls, or someone's head off.
+    - type: Add
+      message: >-
+        Added the Durand, a slow but beefy combat suit that you dont want to
+        fight in close quarters.
+    - type: Add
+      message: Added the Marauder, a specialized mech issued to ERT operatives.
+    - type: Add
+      message: Added the Seraph, a specialized combat suit issued to ??? operatives.
+    - type: Add
+      message: >-
+        The syndicate has started issuing units under the codenames "Dark Gygax"
+        and "Mauler" to syndicate agents at an introductory price.
+    - type: Add
+      message: The exosuit fabricator can now be emagged to reveal new recipes.
+    - type: Add
+      message: >-
+        There are 4 new bounties cargo can fulfill for mechs. Feedback on the
+        cost/reward is welcome!
+  id: 6750
+  time: '2025-01-23T00:16:33.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1611
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: Added cosmetic pronouns. (disabled by default)
+    - type: Add
+      message: >-
+        Added Station AI name customization through character customization.
+        (disabled by default)
+    - type: Add
+      message: >-
+        Added Cyborg name customization through character customization.
+        (disabled by default)
+  id: 6751
+  time: '2025-01-23T00:19:49.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1626

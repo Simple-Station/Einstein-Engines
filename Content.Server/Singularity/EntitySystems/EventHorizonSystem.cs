@@ -36,9 +36,13 @@ public sealed class EventHorizonSystem : SharedEventHorizonSystem
     [Dependency] private readonly TagSystem _tagSystem = default!;
     #endregion Dependencies
 
+    private EntityQuery<PhysicsComponent> _physicsQuery;
+
     public override void Initialize()
     {
         base.Initialize();
+
+        _physicsQuery = GetEntityQuery<PhysicsComponent>();
 
         SubscribeLocalEvent<MapGridComponent, EventHorizonAttemptConsumeEntityEvent>(PreventConsume);
         SubscribeLocalEvent<GhostComponent, EventHorizonAttemptConsumeEntityEvent>(PreventConsume);
@@ -171,24 +175,19 @@ public sealed class EventHorizonSystem : SharedEventHorizonSystem
     /// Attempts to consume all entities within a given distance of an entity;
     /// Excludes the center entity.
     /// </summary>
-    public void ConsumeEntitiesInRange(EntityUid uid, float range, TransformComponent? xform = null, EventHorizonComponent? eventHorizon = null)
+    public void ConsumeEntitiesInRange(EntityUid uid, float range, PhysicsComponent? body = null, EventHorizonComponent? eventHorizon = null)
     {
-        if (!Resolve(uid, ref xform, ref eventHorizon))
+        if (!Resolve(uid, ref body, ref eventHorizon))
             return;
 
-        var range2 = range * range;
-        var xformQuery = EntityManager.GetEntityQuery<TransformComponent>();
-        var epicenter = _xformSystem.GetWorldPosition(xform, xformQuery);
-        foreach (var entity in _lookup.GetEntitiesInRange(_xformSystem.GetMapCoordinates(uid, xform), range, flags: LookupFlags.Uncontained))
+        // TODO: Should be sundries + static-sundries but apparently this is load-bearing for SpawnAndDeleteAllEntitiesInTheSameSpot so go figure.
+        foreach (var entity in _lookup.GetEntitiesInRange(uid, range, flags: LookupFlags.Uncontained))
         {
             if (entity == uid)
                 continue;
-            if (!xformQuery.TryGetComponent(entity, out var entityXform))
-                continue;
 
-            // GetEntitiesInRange gets everything in a _square_ centered on the given position, but we are a _circle_. If we don't have this check and the station is rotated it is possible for the singularity to reach _outside of the containment field_ and eat the emitters.
-            var displacement = _xformSystem.GetWorldPosition(entityXform, xformQuery) - epicenter;
-            if (displacement.LengthSquared() > range2)
+            // See TODO above
+            if (_physicsQuery.TryComp(entity, out var otherBody) && !_physics.IsHardCollidable((uid, null, body), (entity, null, otherBody)))
                 continue;
 
             AttemptConsumeEntity(uid, entity, eventHorizon);
@@ -330,11 +329,11 @@ public sealed class EventHorizonSystem : SharedEventHorizonSystem
     /// </summary>
     public void ConsumeEverythingInRange(EntityUid uid, float range, TransformComponent? xform = null, EventHorizonComponent? eventHorizon = null)
     {
-        if (!Resolve(uid, ref xform, ref eventHorizon))
+        if (!Resolve(uid, ref eventHorizon))
             return;
 
         if (eventHorizon.ConsumeEntities)
-            ConsumeEntitiesInRange(uid, range, xform, eventHorizon);
+            ConsumeEntitiesInRange(uid, range, null, eventHorizon);
         if (eventHorizon.ConsumeTiles)
             ConsumeTilesInRange(uid, range, xform, eventHorizon);
     }
