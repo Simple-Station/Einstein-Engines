@@ -106,7 +106,9 @@ public sealed class ToggleableClothingSystem : EntitySystem
         if (comp.StripDelay == null)
             return;
 
-        var (time, stealth) = _strippable.GetStripTimeModifiers(user, wearer, toggleable, comp.StripDelay.Value);
+        var (time, stealth) = _strippable.GetStripTimeModifiers(user, wearer, comp.StripDelay.Value);
+
+        bool hidden = (stealth == ThievingStealth.Hidden);
 
         var args = new DoAfterArgs(EntityManager, user, time, new ToggleClothingDoAfterEvent(), toggleable, wearer, toggleable)
         {
@@ -118,7 +120,7 @@ public sealed class ToggleableClothingSystem : EntitySystem
         if (!_doAfter.TryStartDoAfter(args))
             return;
 
-        if ((int) stealth != 2)
+        if (!hidden)
         {
             var popup = Loc.GetString("strippable-component-alert-owner-interact", ("user", Identity.Entity(user, EntityManager)), ("item", toggleable));
             _popupSystem.PopupEntity(popup, wearer, wearer, PopupType.Large);
