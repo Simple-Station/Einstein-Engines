@@ -228,6 +228,7 @@
         - id: OxygenTankFilled
         - id: ClothingOuterHardsuitCap
         - id: ClothingMaskGasCaptain
+        - id: ClothingMaskGasCaptainCombat
   - type: AccessReader
     access: [["Captain"]]
 

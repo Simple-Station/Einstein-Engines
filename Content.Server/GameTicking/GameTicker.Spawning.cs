@@ -4,17 +4,20 @@ using System.Numerics;
 using Content.Server.Administration.Managers;
 using Content.Server.GameTicking.Events;
 using Content.Server.Ghost;
+using Content.Server.RandomMetadata;
 using Content.Server.Spawners.Components;
 using Content.Server.Speech.Components;
 using Content.Server.Station.Components;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
 using Content.Shared.Database;
+using Content.Shared.Dataset;
 using Content.Shared.Mind;
 using Content.Shared.Players;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Content.Shared.Roles.Jobs;
+using Content.Shared.Silicon.Components;
 using JetBrains.Annotations;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -36,6 +39,12 @@ namespace Content.Server.GameTicking
 
         [ValidatePrototypeId<EntityPrototype>]
         public const string AdminObserverPrototypeName = "AdminObserver";
+
+        [ValidatePrototypeId<LocalizedDatasetPrototype>]
+        public const string AiNamesDataset = "NamesAI";
+
+        [ValidatePrototypeId<JobPrototype>]
+        public const string CyborgJobPrototypeName = "Borg";
 
         /// <summary>
         /// How many players have joined the round through normal methods.
@@ -256,6 +265,21 @@ namespace Content.Server.GameTicking
             var mobMaybe = _stationSpawning.SpawnPlayerCharacterOnStation(station, job, character, spawnPointType: spawnPointType);
             DebugTools.AssertNotNull(mobMaybe);
             var mob = mobMaybe!.Value;
+
+            if (jobPrototype.NameDataset == AiNamesDataset)
+            {
+                if (character.StationAiName != null)
+                    _metaData.SetEntityName(mob, character.StationAiName);
+                else
+                    _stationSpawning.EquipJobName(mob, jobPrototype);
+            }
+
+            if (jobPrototype.ID == CyborgJobPrototypeName
+                && character.CyborgName != null)
+            {
+                EnsureComp<RandomMetadataExcludedComponent>(mob);
+                _metaData.SetEntityName(mob, character.CyborgName);
+            }
 
             _mind.TransferTo(newMind, mob);
 

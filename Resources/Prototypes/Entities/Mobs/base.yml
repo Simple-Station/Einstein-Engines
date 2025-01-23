@@ -50,6 +50,13 @@
   - type: OwnInteractionVerbs
     allowedVerbs: [] # TODO: define something here, or don't.
 
+- type: entity
+  save: false
+  id: MobPolymorphable
+  abstract: true
+  components:
+  - type: Polymorphable
+
 # Used for mobs that have health and can take damage.
 - type: entity
   save: false

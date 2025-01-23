@@ -2,17 +2,24 @@ using Content.Shared.Administration.Logs;
 using Content.Shared.Database;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
+using Content.Shared.Popups;
 using Content.Shared.Tools.Systems;
+using Content.Shared.UserInterface;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Network;
+
 
 namespace Content.Shared.Wires;
 
 public abstract class SharedWiresSystem : EntitySystem
 {
     [Dependency] protected readonly ISharedAdminLogManager AdminLogger = default!;
+    [Dependency] private readonly ActivatableUISystem _activatableUI = default!;
     [Dependency] protected readonly SharedAppearanceSystem Appearance = default!;
     [Dependency] protected readonly SharedAudioSystem Audio = default!;
     [Dependency] protected readonly SharedToolSystem Tool = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly INetManager _netManager = default!;
 
     public override void Initialize()
     {
@@ -22,6 +29,9 @@ public abstract class SharedWiresSystem : EntitySystem
         SubscribeLocalEvent<WiresPanelComponent, WirePanelDoAfterEvent>(OnPanelDoAfter);
         SubscribeLocalEvent<WiresPanelComponent, InteractUsingEvent>(OnInteractUsing);
         SubscribeLocalEvent<WiresPanelComponent, ExaminedEvent>(OnExamine);
+
+        SubscribeLocalEvent<ActivatableUIRequiresPanelComponent, ActivatableUIOpenAttemptEvent>(OnAttemptOpenActivatableUI);
+        SubscribeLocalEvent<ActivatableUIRequiresPanelComponent, PanelChangedEvent>(OnActivatableUIPanelChanged);
     }
 
     private void OnStartup(Entity<WiresPanelComponent> ent, ref ComponentStartup args)
@@ -125,10 +135,19 @@ public abstract class SharedWiresSystem : EntitySystem
         return !attempt.Cancelled;
     }
 
-    public bool IsPanelOpen(Entity<WiresPanelComponent?> entity)
+    public bool IsPanelOpen(Entity<WiresPanelComponent?> entity, EntityUid? tool = null)
     {
         if (!Resolve(entity, ref entity.Comp, false))
             return true;
+
+        if (tool != null)
+        {
+            var ev = new PanelOverrideEvent();
+            RaiseLocalEvent(tool.Value, ref ev);
+
+            if (ev.Allowed)
+                return true;
+        }
 
         // Listen, i don't know what the fuck this component does. it's stapled on shit for airlocks
         // but it looks like an almost direct duplication of WiresPanelComponent except with a shittier API.
@@ -138,4 +157,33 @@ public abstract class SharedWiresSystem : EntitySystem
 
         return entity.Comp.Open;
     }
+
+    private void OnAttemptOpenActivatableUI(EntityUid uid, ActivatableUIRequiresPanelComponent component, ActivatableUIOpenAttemptEvent args)
+    {
+        if (args.Cancelled || !TryComp<WiresPanelComponent>(uid, out var wires))
+            return;
+
+        if (component.RequireOpen != wires.Open)
+        {
+            _popup.PopupPredicted(Loc.GetString("base-computer-ui-component-not-opened", ("machine", uid)), uid, uid);
+            args.Cancel();
+        }
+    }
+
+    private void OnActivatableUIPanelChanged(EntityUid uid, ActivatableUIRequiresPanelComponent component, ref PanelChangedEvent args)
+    {
+        if (args.Open == component.RequireOpen)
+            return;
+
+        _activatableUI.CloseAll(uid);
+    }
+}
+
+/// <summary>
+/// Raised directed on a tool to try and override panel visibility.
+/// </summary>
+[ByRefEvent]
+public record struct PanelOverrideEvent()
+{
+    public bool Allowed = true;
 }

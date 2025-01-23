@@ -62,7 +62,9 @@
     range: 5
     sound:
       path: /Audio/Ambience/Objects/gas_pump.ogg
-
+  - type: AtmosMonitoringConsoleDevice
+    navMapBlip: GasFlowRegulator
+    
 - type: entity
   parent: GasBinaryBase
   id: GasVolumePump
@@ -111,7 +113,9 @@
       examinableAddress: true
       prefix: device-address-prefix-volume-pump
     - type: WiredNetworkConnection
-
+    - type: AtmosMonitoringConsoleDevice
+      navMapBlip: GasFlowRegulator
+    
 - type: entity
   parent: GasBinaryBase
   id: GasPassiveGate
@@ -140,7 +144,9 @@
       range: 5
       sound:
         path: /Audio/Ambience/Objects/gas_hiss.ogg
-
+    - type: AtmosMonitoringConsoleDevice
+      navMapBlip: GasValve
+      
 - type: entity
   parent: GasBinaryBase
   id: GasValve
@@ -188,7 +194,9 @@
       range: 5
       sound:
         path: /Audio/Ambience/Objects/gas_hiss.ogg
-
+    - type: AtmosMonitoringConsoleDevice
+      navMapBlip: GasValve
+      
 - type: entity
   parent: GasBinaryBase
   id: SignalControlledValve
@@ -197,6 +205,7 @@
   placement:
     mode: SnapgridCenter
   components:
+  - type: StationAiWhitelist
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/pump.rsi
     layers:
@@ -246,7 +255,9 @@
     range: 5
     sound:
       path: /Audio/Ambience/Objects/gas_hiss.ogg
-
+  - type: AtmosMonitoringConsoleDevice
+    navMapBlip: GasValve
+      
 - type: entity
   parent: GasBinaryBase
   id: GasPort
@@ -275,7 +286,9 @@
     - type: Construction
       graph: GasBinary
       node: port
-
+    - type: AtmosMonitoringConsoleDevice
+      navMapBlip: GasVentOpening
+      
 - type: entity
   parent: GasVentPump
   id: GasDualPortVentPump
@@ -330,7 +343,9 @@
           pipeDirection: South
     - type: AmbientSound
       enabled: true
-
+    - type: AtmosMonitoringConsoleDevice
+      navMapBlip: GasVentOpening
+      
 - type: entity
   parent: [ BaseMachine, ConstructibleMachine ]
   id: GasRecycler
@@ -391,7 +406,9 @@
         acts: ["Destruction"]
   - type: Machine
     board: GasRecyclerMachineCircuitboard
-
+  - type: AtmosMonitoringConsoleDevice
+    navMapBlip: GasValve
+    
 - type: entity
   parent: GasBinaryBase
   id: HeatExchanger
@@ -431,3 +448,5 @@
   - type: Construction
     graph: GasBinary
     node: radiator
+  - type: AtmosMonitoringConsoleDevice
+    navMapBlip: Thermoregulator

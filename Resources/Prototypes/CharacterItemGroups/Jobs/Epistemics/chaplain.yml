@@ -29,11 +29,15 @@
     - type: loadout
       id: LoadoutChaplainPillCanisterSpaceDrugs
 
-#- type: characterItemGroup
-#  id: LoadoutChaplainEyes
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutChaplainEyes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutChaplainEyesEpiHUD
+    - type: loadout
+      id: LoadoutChaplainEyesEpiGlasses
+
 #- type: characterItemGroup
 #  id: LoadoutChaplainGloves
 #  maxItems: 1

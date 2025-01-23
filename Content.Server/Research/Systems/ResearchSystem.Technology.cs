@@ -70,18 +70,23 @@ public sealed partial class ResearchSystem
         ResearchClientComponent? component = null,
         TechnologyDatabaseComponent? clientDatabase = null)
     {
-        if (!Resolve(client, ref component, ref clientDatabase, false))
+        if (!Resolve(client, ref component, ref clientDatabase, false)
+            || !TryGetClientServer(client, out var serverEnt, out _, component)
+            || !CanServerUnlockTechnology(client, prototype, clientDatabase, component)
+            || !PrototypeManager.TryIndex(prototype.Discipline, out var disciplinePrototype)
+            || !TryComp<ResearchServerComponent>(serverEnt.Value, out var researchServer)
+            || prototype.Cost * clientDatabase.SoftCapMultiplier > researchServer.Points)
             return false;
 
-        if (!TryGetClientServer(client, out var serverEnt, out _, component))
-            return false;
-
-        if (!CanServerUnlockTechnology(client, prototype, clientDatabase, component))
-            return false;
+        if (prototype.Tier >= disciplinePrototype.LockoutTier)
+        {
+            clientDatabase.SoftCapMultiplier *= prototype.SoftCapContribution;
+            researchServer.CurrentSoftCapMultiplier *= prototype.SoftCapContribution;
+        }
 
         AddTechnology(serverEnt.Value, prototype);
         TrySetMainDiscipline(prototype, serverEnt.Value);
-        ModifyServerPoints(serverEnt.Value, -prototype.Cost);
+        ModifyServerPoints(serverEnt.Value, -(int) (prototype.Cost * clientDatabase.SoftCapMultiplier));
         UpdateTechnologyCards(serverEnt.Value);
 
         _adminLog.Add(LogType.Action, LogImpact.Medium,
@@ -151,7 +156,7 @@ public sealed partial class ResearchSystem
         if (!IsTechnologyAvailable(database, technology))
             return false;
 
-        if (technology.Cost > serverComp.Points)
+        if (technology.Cost * database.SoftCapMultiplier > serverComp.Points)
             return false;
 
         return true;

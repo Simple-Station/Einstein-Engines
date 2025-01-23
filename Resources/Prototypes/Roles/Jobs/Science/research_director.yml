@@ -58,7 +58,8 @@
     shoes: ClothingShoesColorBrown
     id: RnDPDA
     ears: ClothingHeadsetRD
-    belt: BibleMystagogue # Nyanotrasen - Mystagogue book for their Ifrit
+    pocket1: BookPsionicsGuidebook
+    pocket2: BibleMystagogue
   innerClothingSkirt: ClothingUniformJumpskirtResearchDirector
   satchel: ClothingBackpackSatchelResearchDirectorFilled
   duffelbag: ClothingBackpackDuffelResearchDirectorFilled

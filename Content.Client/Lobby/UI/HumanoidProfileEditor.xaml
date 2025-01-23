@@ -81,6 +81,24 @@
                                 <Control HorizontalExpand="True"/>
                                 <OptionButton Name="PronounsButton" HorizontalAlignment="Right" />
                             </BoxContainer>
+                            <!-- Customizable, cosmetic pronouns -->
+                            <BoxContainer Name="CosmeticPronousContainer" HorizontalExpand="True">
+                                <Label Text="{Loc 'humanoid-profile-editor-display-pronouns-label'}" />
+                                <Control HorizontalExpand="True"/>
+                                <LineEdit Name="CosmeticPronounsNameEdit" MinSize="270 0" HorizontalAlignment="Right" />
+                            </BoxContainer>
+                            <!-- Station AI name -->
+                            <BoxContainer Name="StationAiNameContainer" HorizontalExpand="True">
+                                <Label Text="{Loc 'humanoid-profile-editor-station-ai-name-label'}" />
+                                <Control HorizontalExpand="True"/>
+                                <LineEdit Name="StationAINameEdit" MinSize="270 0" HorizontalAlignment="Right" />
+                            </BoxContainer>
+                            <!-- Cyborg name -->
+                            <BoxContainer Name="CyborgNameContainer" HorizontalExpand="True">
+                                <Label Text="{Loc 'humanoid-profile-editor-cyborg-name-label'}" />
+                                <Control HorizontalExpand="True"/>
+                                <LineEdit Name="CyborgNameEdit" MinSize="270 0" HorizontalAlignment="Right" />
+                            </BoxContainer>
                             <!-- Show clothing -->
                             <BoxContainer HorizontalExpand="True">
                                 <Label Text="{Loc 'humanoid-profile-editor-clothing'}" />

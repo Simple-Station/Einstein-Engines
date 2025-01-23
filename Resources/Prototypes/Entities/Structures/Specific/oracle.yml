@@ -18,6 +18,9 @@
   - type: Actions
   - type: Psionic
     removable: false
+    roller: false
+    assayFeedback:
+      - oracle-feedback
     psychognomicDescriptors:
       - p-descriptor-old
       - p-descriptor-demiurgic
@@ -65,6 +68,8 @@
     - TauCetiBasic
     understands:
     - TauCetiBasic
+  - type: GuideHelp
+    guides: [ Psionics ]
 
 
 - type: weightedRandomEntity
