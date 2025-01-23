@@ -40,6 +40,13 @@ public sealed partial class DoAfterArgs
 
     public NetEntity? NetUsed;
 
+    // Goobstation - Show doAfter progress bar to another entity
+    [NonSerialized]
+    [DataField]
+    public EntityUid? ShowTo;
+
+    public NetEntity? NetShowTo;
+
     /// <summary>
     /// Whether the progress bar for this DoAfter should be hidden from other players.
     /// </summary>
