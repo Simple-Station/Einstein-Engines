@@ -10,7 +10,7 @@ using Content.Server.Jobs;
 using Content.Server.Materials;
 using Content.Server.Popups;
 using Content.Server.Power.EntitySystems;
-using Content.Server.Traits.Assorted;
+using Content.Shared.Silicon.Components; // Goobstation
 using Content.Shared.Atmos;
 using Content.Shared.CCVar;
 using Content.Shared.Chemistry.Components;
@@ -204,12 +204,15 @@ public sealed partial class CloningSystem : EntitySystem
             || !_playerManager.TryGetSessionById(mind.UserId.Value, out var client)
             || !CheckBiomassCost(uid, physics, clonePod, cloningCostMultiplier))
             return false;
-
+        
         // Special handling for humanoid data related to metempsychosis. This function is needed for Paradox Anomaly code to play nice with reincarnated people
         var pref = humanoid.LastProfileLoaded;
         if (pref == null
             || !_prototypeManager.TryIndex(humanoid.Species, out var speciesPrototype))
             return false;
+
+        if (HasComp<SiliconComponent>(bodyToClone))
+            return false; // Goobstation: Don't clone IPCs.
 
         // Yes, this can return true without making a body. If it returns true, we're making clone soup instead.
         if (CheckGeneticDamage(uid, bodyToClone, clonePod, out var geneticDamage, failChanceModifier))
