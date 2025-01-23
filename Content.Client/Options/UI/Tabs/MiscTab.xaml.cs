@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using Content.Client.UserInterface.Screens;
 using Content.Shared.CCVar;
 using Content.Shared.HUD;
@@ -56,6 +56,18 @@ namespace Content.Client.Options.UI.Tabs
             HudLayoutOption.OnItemSelected += args =>
             {
                 HudLayoutOption.SelectId(args.Id);
+                UpdateApplyButton();
+            };
+
+            ChatStackOption.AddItem(Loc.GetString("ui-options-chatstack-off"), 0);
+            ChatStackOption.AddItem(Loc.GetString("ui-options-chatstack-single"), 1);
+            ChatStackOption.AddItem(Loc.GetString("ui-options-chatstack-double"), 2);
+            ChatStackOption.AddItem(Loc.GetString("ui-options-chatstack-triple"), 3);
+            ChatStackOption.TrySelectId(_cfg.GetCVar(CCVars.ChatStackLastLines));
+
+            ChatStackOption.OnItemSelected += args =>
+            {
+                ChatStackOption.SelectId(args.Id);
                 UpdateApplyButton();
             };
 
@@ -157,6 +169,7 @@ namespace Content.Client.Options.UI.Tabs
             // _cfg.SetCVar(CCVars.ToggleWalk, ToggleWalk.Pressed);
             _cfg.SetCVar(CCVars.StaticStorageUI, StaticStorageUI.Pressed);
             _cfg.SetCVar(CCVars.NoVisionFilters, DisableFiltersCheckBox.Pressed);
+            _cfg.SetCVar(CCVars.ChatStackLastLines, ChatStackOption.SelectedId);
 
             if (HudLayoutOption.SelectedMetadata is string opt)
             {
@@ -188,6 +201,7 @@ namespace Content.Client.Options.UI.Tabs
             // var isToggleWalkSame = ToggleWalk.Pressed == _cfg.GetCVar(CCVars.ToggleWalk);
             var isStaticStorageUISame = StaticStorageUI.Pressed == _cfg.GetCVar(CCVars.StaticStorageUI);
             var isNoVisionFiltersSame = DisableFiltersCheckBox.Pressed == _cfg.GetCVar(CCVars.NoVisionFilters);
+            var isChatStackTheSame = ChatStackOption.SelectedId == _cfg.GetCVar(CCVars.ChatStackLastLines);
 
             ApplyButton.Disabled = isHudThemeSame &&
                                    isLayoutSame &&
@@ -207,7 +221,8 @@ namespace Content.Client.Options.UI.Tabs
                                    isScreenShakeIntensitySame &&
                                    // isToggleWalkSame &&
                                    isStaticStorageUISame &&
-                                   isNoVisionFiltersSame;
+                                   isNoVisionFiltersSame &&
+                                   isChatStackTheSame;
         }
 
     }

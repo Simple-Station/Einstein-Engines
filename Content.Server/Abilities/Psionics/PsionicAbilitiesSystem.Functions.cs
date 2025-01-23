@@ -433,38 +433,10 @@ public sealed partial class PsionicModifyRemovable : PsionicPowerFunction
 }
 
 [UsedImplicitly]
-public sealed partial class PsionicModifyMana : PsionicPowerFunction
-{
-    [DataField]
-    public float MaxManaModifier;
-
-    [DataField]
-    public float ManaGainModifier;
-
-    [DataField]
-    public float ManaGainMultiplierModifier;
-
-    public override void OnAddPsionic(
-        EntityUid uid,
-        IComponentFactory factory,
-        IEntityManager entityManager,
-        ISerializationManager serializationManager,
-        ISharedPlayerManager playerManager,
-        ILocalizationManager loc,
-        PsionicComponent psionicComponent,
-        PsionicPowerPrototype proto)
-    {
-        psionicComponent.MaxMana += MaxManaModifier;
-        psionicComponent.ManaGain += ManaGainModifier;
-        psionicComponent.ManaGainMultiplier += ManaGainMultiplierModifier;
-    }
-}
-
-[UsedImplicitly]
 public sealed partial class PsionicModifyGlimmer : PsionicPowerFunction
 {
     [DataField]
-    public int GlimmerModifier;
+    public float GlimmerModifier;
 
     public override void OnAddPsionic(
         EntityUid uid,
@@ -477,7 +449,7 @@ public sealed partial class PsionicModifyGlimmer : PsionicPowerFunction
         PsionicPowerPrototype proto)
     {
         var glimmerSystem = entityManager.System<GlimmerSystem>();
-        glimmerSystem.Glimmer += GlimmerModifier;
+        glimmerSystem.DeltaGlimmerInput(GlimmerModifier);
     }
 }
 

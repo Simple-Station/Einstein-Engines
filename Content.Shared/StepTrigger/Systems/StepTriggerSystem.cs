@@ -1,5 +1,6 @@
 using Content.Shared.Gravity;
 using Content.Shared.StepTrigger.Components;
+using Content.Shared.Traits.Assorted.Components;
 using Content.Shared.Whitelist;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics;
@@ -97,7 +98,11 @@ public sealed class StepTriggerSystem : EntitySystem
         // this is hard to explain
         var intersect = Box2.Area(otherAabb.Intersect(ourAabb));
         var ratio = Math.Max(intersect / Box2.Area(otherAabb), intersect / Box2.Area(ourAabb));
-        if (otherPhysics.LinearVelocity.Length() < component.RequiredTriggeredSpeed
+        var requiredTriggeredSpeed = component.RequiredTriggeredSpeed;
+        if (TryComp<TraitSpeedModifierComponent>(otherUid, out var speedModifier))
+            requiredTriggeredSpeed *= speedModifier.RequiredTriggeredSpeedModifier;
+
+        if (otherPhysics.LinearVelocity.Length() < requiredTriggeredSpeed
             || component.CurrentlySteppedOn.Contains(otherUid)
             || ratio < component.IntersectRatio
             || !CanTrigger(uid, otherUid, component))

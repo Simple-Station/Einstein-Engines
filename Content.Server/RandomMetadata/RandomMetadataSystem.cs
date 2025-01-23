@@ -1,4 +1,5 @@
 ﻿using Content.Shared.Dataset;
+using Content.Shared.Humanoid;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -23,10 +24,9 @@ public sealed class RandomMetadataSystem : EntitySystem
     {
         var meta = MetaData(uid);
 
-        if (component.NameSegments != null)
-        {
+        if (component.NameSegments != null
+            && !HasComp<RandomMetadataExcludedComponent>(uid))
             _metaData.SetEntityName(uid, GetRandomFromSegments(component.NameSegments, component.NameSeparator), meta);
-        }
 
         if (component.DescriptionSegments != null)
         {

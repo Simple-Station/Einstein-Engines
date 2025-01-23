@@ -1,6 +1,7 @@
 using Content.Server.Chat.Systems;
 using Content.Server.CombatMode.Disarm;
 using Content.Server.Movement.Systems;
+using Content.Server.Weapons.Ranged.Systems;
 using Content.Shared.Actions.Events;
 using Content.Shared.Administration.Components;
 using Content.Shared.CombatMode;
@@ -44,7 +45,7 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
     {
         base.Initialize();
         SubscribeLocalEvent<MeleeSpeechComponent, MeleeHitEvent>(OnSpeechHit);
-        SubscribeLocalEvent<MeleeWeaponComponent, DamageExamineEvent>(OnMeleeExamineDamage);
+        SubscribeLocalEvent<MeleeWeaponComponent, DamageExamineEvent>(OnMeleeExamineDamage, after: [typeof(GunSystem)]);
     }
 
     private void OnMeleeExamineDamage(EntityUid uid, MeleeWeaponComponent component, ref DamageExamineEvent args)
@@ -68,7 +69,7 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
             {
                 var staminaCostMarkup = FormattedMessage.FromMarkupOrThrow(
                     Loc.GetString("damage-stamina-cost",
-                    ("type", Loc.GetString("damage-melee-heavy")), ("cost", component.HeavyStaminaCost)));
+                    ("type", Loc.GetString("damage-melee-heavy")), ("cost", Math.Round(component.HeavyStaminaCost, 2).ToString("0.##"))));
                 args.Message.PushNewline();
                 args.Message.AddMessage(staminaCostMarkup);
             }

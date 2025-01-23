@@ -5,6 +5,7 @@
     - MobAtmosStandard
     - MobFlammable
     - BaseMobSpecies
+    - MobRespirator
   id: MobShadowkinBase
   name: Urist McShadow
   abstract: true
@@ -153,6 +154,7 @@
         - map: ["enum.HumanoidVisualLayers.Snout"]
         - map: ["enum.HumanoidVisualLayers.Eyes"]
           shader: unshaded
+        - map: ["enum.HumanoidVisualLayers.Face"]
         - map: ["enum.HumanoidVisualLayers.RArm"]
         - map: ["enum.HumanoidVisualLayers.LArm"]
         - map: ["enum.HumanoidVisualLayers.RLeg"]
@@ -182,12 +184,13 @@
         - map: ["gloves"]
         - map: ["shoes"]
         - map: ["ears"]
+        - map: ["innerBelt"]
+        - map: ["innerNeck"]
         - map: ["outerClothing"]
         - map: ["eyes"]
         - map: ["belt"]
         - map: ["neck"]
         - map: ["back"]
-        - map: [ "enum.HumanoidVisualLayers.Face" ]
         - map: ["enum.HumanoidVisualLayers.FacialHair"]
         - map: ["enum.HumanoidVisualLayers.Hair"]
         - map: ["enum.HumanoidVisualLayers.HeadSide"]
@@ -224,10 +227,6 @@
     - type: Shadowkin
     - type: Psionic
       mindbreakingFeedback: shadowkin-blackeye
-      manaGain: 0.25
-      mana: 100
-      maxMana: 200
-      noMana: shadowkin-tired
     - type: InnatePsionicPowers
       powersToAdd:
         - DarkSwapPower
@@ -265,6 +264,7 @@
         - map: ["enum.HumanoidVisualLayers.Snout"]
         - map: ["enum.HumanoidVisualLayers.Eyes"]
           shader: unshaded
+        - map: ["enum.HumanoidVisualLayers.Face"]
         - map: ["enum.HumanoidVisualLayers.RArm"]
         - map: ["enum.HumanoidVisualLayers.LArm"]
         - map: ["enum.HumanoidVisualLayers.RLeg"]
@@ -294,12 +294,13 @@
         - map: ["gloves"]
         - map: ["shoes"]
         - map: ["ears"]
+        - map: ["innerBelt"]
+        - map: ["innerNeck"]
         - map: ["outerClothing"]
         - map: ["eyes"]
         - map: ["belt"]
         - map: ["neck"]
         - map: ["back"]
-        - map: [ "enum.HumanoidVisualLayers.Face" ]
         - map: ["enum.HumanoidVisualLayers.FacialHair"]
         - map: ["enum.HumanoidVisualLayers.Hair"]
         - map: ["enum.HumanoidVisualLayers.HeadSide"]

@@ -21,6 +21,7 @@
   - type: ItemToggleHot
   - type: ItemToggleSize
     activatedSize: Huge
+  - type: ItemTogglePointLight
   - type: ItemToggleMeleeWeapon
     activatedSoundOnHit:
       path: /Audio/Weapons/eblade1.ogg
@@ -69,7 +70,7 @@
   - type: EmbedPassiveDamage
   - type: Item
     size: Small
-    sprite: DeltaV/Objects/Weapons/Melee/e_sword.rsi # Delta-V
+    sprite: Objects/Weapons/Melee/e_sword-inhands.rsi
   - type: UseDelay
     delay: 1.0
   - type: PointLight
@@ -183,8 +184,6 @@
     damage:
       types:
         Blunt: 0
-  - type: ThrowingAngle
-    angle: 315
   - type: Item
     size: Tiny
     sprite: Objects/Weapons/Melee/e_dagger.rsi
@@ -271,6 +270,23 @@
       right:
       - state: inhand-right-blade
         shader: unshaded
+
+- type: entity
+  name: energy cutlass
+  parent: EnergyCutlass
+  id: EnergyCutlassSecurity
+  description: A sleek energy weapon, its blade hums with volatile plasma, expertly contained to cut through nearly any material. The serial number on the hilt marks this gun as belonging to an NT Security Officer. # how do I make the text blue
+  suffix: Security Loadouts
+  components:
+  - type: MeleeWeapon
+    attackRate: 0.6666
+  - type: ItemToggleMeleeWeapon
+    activatedDamage:
+        types:
+            Slash: 6
+            Heat: 12
+  - type: GuideHelp  
+    guides: [ SecurityWeapons ]  
 
 - type: entity
   name: double-bladed energy sword

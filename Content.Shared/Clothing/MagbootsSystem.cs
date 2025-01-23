@@ -76,7 +76,7 @@ public sealed class SharedMagbootsSystem : EntitySystem
             return;
 
         // do not cancel weightlessness if the person is in off-grid.
-        if (ent.Comp.RequiresGrid && !_gravity.IsWeightless(ent.Owner))
+        if (ent.Comp.RequiresGrid && !_gravity.EntityOnGravitySupportingGridOrMap(ent.Owner))
             return;
 
         args.IsWeightless = false;
