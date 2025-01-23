@@ -10643,3 +10643,14 @@ Entries:
   id: 6753
   time: '2025-01-23T01:11:05.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1615
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        (For Developers): Added the MathNet.Numerics library. It contains a
+        great number of scientific and engineering math related functions. For
+        more information, its documentation can be found here,
+        https://numerics.mathdotnet.com/api/MathNet.Numerics/index.htm
+  id: 6754
+  time: '2025-01-23T03:45:53.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1641
