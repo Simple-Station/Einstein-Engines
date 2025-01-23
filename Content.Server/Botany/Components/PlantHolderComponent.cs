@@ -92,6 +92,6 @@ public sealed partial class PlantHolderComponent : Component
     [ViewVariables(VVAccess.ReadWrite), DataField("solution")]
     public string SoilSolutionName = "soil";
 
-    [DataField]
+    [ViewVariables]
     public Entity<SolutionComponent>? SoilSolution = null;
 }

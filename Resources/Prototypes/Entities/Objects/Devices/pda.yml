@@ -57,7 +57,6 @@
     - idcard
     - Belt
   - type: UnpoweredFlashlight
-  - type: EtherealLight
   - type: PointLight
     enabled: false
     radius: 1.5
@@ -68,6 +67,7 @@
     deviceNetId: Wireless
     receiveFrequencyId: PDA
     prefix: device-address-prefix-console
+    savableAddress: false
   - type: WirelessNetworkConnection
     range: 500
   - type: CartridgeLoader
@@ -113,6 +113,15 @@
     damage:
       types:
         Blunt: 4
+  - type: SentienceTarget # sentient PDA = pAI lite
+    flavorKind: station-event-random-sentience-flavor-mechanical
+    weight: 0.001 # 1,000 PDAs = as likely to be picked as 1 regular animal
+  - type: BlockMovement
+    blockInteraction: false # lets the PDA toggle its own flashlight
+  - type: TypingIndicator
+    proto: robot
+  - type: Speech
+    speechVerb: Robotic
 
 - type: entity
   parent: BasePDA
@@ -245,6 +254,8 @@
     borderColor: "#d7d7d0"
   - type: Icon
     state: pda-cook
+  - type: ReplacementAccent # for random sentience event
+    accent: italian
 
 - type: entity
   parent: BasePDA
@@ -329,6 +340,7 @@
     accentHColor: "#333333"
   - type: Icon
     state: pda-mime
+  - type: Muted # for random sentience event
 
 - type: entity
   name: chaplain PDA
@@ -357,6 +369,14 @@
   - type: Icon
     sprite: DeltaV/Objects/Devices/pda.rsi # DeltaV - Give Chaplain PDA Epistemics colors
     state: pda-chaplain
+  - type: CartridgeLoader # Nyanotrasen - Glimmer Monitor
+    preinstalled:
+      - CrewManifestCartridge
+      - NotekeeperCartridge
+      - NewsReaderCartridge
+      - GlimmerMonitorCartridge
+      - NanoChatCartridge # DeltaV
+      - PsiWatchCartridge
 
 - type: entity
   name: logistics officer PDA # DeltaV - Logistics Department replacing Cargo
@@ -488,6 +508,7 @@
       - NewsReaderCartridge
       - GlimmerMonitorCartridge
       - NanoChatCartridge
+      - PsiWatchCartridge
 
 - type: entity
   parent: BasePDA
@@ -797,6 +818,7 @@
       - NewsReaderCartridge
       - GlimmerMonitorCartridge
       - NanoChatCartridge # DeltaV
+      - PsiWatchCartridge
 
 - type: entity
   parent: BasePDA
@@ -820,6 +842,7 @@
       - NewsReaderCartridge
       - GlimmerMonitorCartridge
       - NanoChatCartridge
+      - PsiWatchCartridge
 
 - type: entity
   parent: BasePDA
@@ -1000,6 +1023,7 @@
       - SecWatchCartridge # DeltaV: SecWatch replaces WantedList
       - StockTradingCartridge # Delta-V
       - NanoChatCartridge # DeltaV
+      - PsiWatchCartridge
 
 - type: entity
   parent: CentcomPDA
@@ -1119,6 +1143,7 @@
       - SecWatchCartridge # DeltaV: SecWatch replaces WantedList
       - LogProbeCartridge
       - NanoChatCartridge # DeltaV
+      - MedTekCartridge
 
 - type: entity
   parent: ERTLeaderPDA
@@ -1375,6 +1400,9 @@
     accentVColor: "#8900c9"
   - type: Icon
     state: pda-seniorresearcher
+  - type: CartridgeLoader
+    preinstalled:
+    - PsiWatchCartridge
 
 - type: entity
   parent: BaseMedicalPDA

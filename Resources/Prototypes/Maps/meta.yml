@@ -19,20 +19,26 @@
           availableJobs:
             #service
             Captain: [ 1, 1 ]
+            BlueshieldOfficer: [ 1, 1]
+            NanotrasenRepresentative: [ 1, 1 ]
+            Magistrate: [ 1, 1 ]
+            AdministrativeAssistant: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 2, 2 ]
             Botanist: [ 2, 3 ]
             Chef: [ 2, 2 ]
-            Janitor: [ 1, 2 ]
+            Janitor: [ 1, 3 ]
             Librarian: [ 1, 1 ]
-            ServiceWorker: [ 2, 2 ]
+            ServiceWorker: [ 2, 3 ]
             #engineering
             ChiefEngineer: [ 1, 1 ]
+            SeniorEngineer: [ 1, 1 ]
             AtmosphericTechnician: [ 3, 3 ]
             StationEngineer: [ 5, 7 ]
             TechnicalAssistant: [ 3, 6 ]
             #medical
             ChiefMedicalOfficer: [ 1, 1 ]
+            SeniorPhysician: [ 1, 1 ]
             Chemist: [ 3, 3 ]
             MedicalDoctor: [ 5, 5 ]
             MedicalIntern: [ 3, 6 ]
@@ -44,6 +50,7 @@
             Chaplain: [ 1, 1 ]
             Roboticist: [ 1, 2 ]
             ForensicMantis: [ 1, 1 ]
+            SeniorResearcher: [ 1, 1 ]
             #security
             HeadOfSecurity: [ 1, 1 ]
             Warden: [ 1, 1 ]
@@ -54,15 +61,19 @@
             Brigmedic: [ 1, 1 ]
             Prisoner: [ 1, 2 ]
             PrisonGuard: [ 1, 1 ]
+            SeniorOfficer: [ 1, 1 ]
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]
-            CargoTechnician: [ 3, 3 ]
+            CargoTechnician: [ 3, 5 ]
             MailCarrier: [ 1, 2 ]
             #civilian
             Passenger: [ -1, -1 ]
             Clown: [ 1, 1 ]
             Mime: [ 1, 1 ]
-            Musician: [ 1, 1 ]
+            Musician: [ 1, 2 ]
+            Reporter: [ 2, 2 ]
             #silicon
             Borg: [ 2, 2 ]
+            MedicalBorg: [ 2, 2 ]
+            StationAi: [ 1, 1 ]

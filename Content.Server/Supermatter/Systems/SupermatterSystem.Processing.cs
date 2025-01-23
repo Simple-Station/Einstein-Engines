@@ -14,7 +14,7 @@ public sealed partial class SupermatterSystem
     /// <summary>
     ///     Handle power and radiation output depending on atmospheric things.
     /// </summary>
-    private void ProcessAtmos(EntityUid uid, SupermatterComponent sm)
+    private void ProcessAtmos(EntityUid uid, SupermatterComponent sm, float frameTime)
     {
         var mix = _atmosphere.GetContainingMixture(uid, true, true);
 
@@ -104,7 +104,9 @@ public sealed partial class SupermatterSystem
                 * _config.GetCVar(CCVars.SupermatterRadsModifier);
 
         // Power * 0.55 * 0.8~1
-        var energy = sm.Power * sm.ReactionPowerModifier;
+        // This has to be differentiated with respect to time, since its going to be interacting with systems
+        // that also differentiate. Basically, if we don't multiply by 2 * frameTime, the supermatter will explode faster if your server's tickrate is higher.
+        var energy = 2 * sm.Power * sm.ReactionPowerModifier * frameTime;
 
         // Keep in mind we are only adding this temperature to (efficiency)% of the one tile the rock is on.
         // An increase of 4°C at 25% efficiency here results in an increase of 1°C / (#tilesincore) overall.

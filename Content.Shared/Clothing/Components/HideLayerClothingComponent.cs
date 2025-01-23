@@ -21,4 +21,11 @@ public sealed partial class HideLayerClothingComponent : Component
     /// </summary>
     [DataField]
     public bool HideOnToggle = false;
+
+    /// <summary>
+    /// If true, the layer will always be hidden even if the layer
+    /// is not present in the equipee's HumanoidAppearanceComponent.HideLayerOnEquip field.
+    /// </summary>
+    [DataField]
+    public bool Force = false;
 }

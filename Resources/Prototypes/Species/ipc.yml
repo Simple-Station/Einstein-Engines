@@ -4,6 +4,7 @@
   roundStart: true
   prototype: MobIPC
   sprites: MobIPCSprites
+  defaultSkinTone: "#aaa9ad"
   markingLimits: MobIPCMarkingLimits
   dollPrototype: MobIPCDummy
   skinColoration: Hues
@@ -33,6 +34,7 @@
     HeadSide: MobHumanoidAnyMarking
     Tail: MobHumanoidAnyMarking
     Hair: MobHumanoidMarkingMatchSkin
+    FacialHair: MobHumanoidMarkingMatchSkin
     Chest: MobIPCTorso
     LArm: MobIPCLArm
     RArm: MobIPCRArm

@@ -11,16 +11,16 @@
   name: lathe-category-lights
 
 - type: latheCategory
-  id: Mech
-  name: lathe-category-mechs
-
-- type: latheCategory
   id: Parts
   name: lathe-category-parts
 
 - type: latheCategory
   id: Robotics
   name: lathe-category-robotics
+
+- type: latheCategory
+  id: Tacsuits
+  name: lathe-category-tacsuits
 
 - type: latheCategory
   id: Tools

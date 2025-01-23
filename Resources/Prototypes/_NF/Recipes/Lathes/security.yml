@@ -1,0 +1,118 @@
+- type: latheRecipe
+  abstract: true
+  id: BaseWeaponRecipe
+  category: Weapons
+  completetime: 2
+  materials:
+    Steel: 300
+    Plastic: 300
+
+- type: latheRecipe
+  abstract: true
+  parent: BaseWeaponRecipe
+  id: BaseWeaponRecipeLong
+  completetime: 5
+
+- type: latheRecipe
+  abstract: true
+  id: BaseAmmoRecipe
+  category: Ammo
+  completetime: 5
+
+- type: latheRecipe
+  abstract: true
+  parent: BaseAmmoRecipe
+  id: BaseEmptyAmmoRecipe
+  completetime: 1
+
+- type: latheRecipe # novalite mag empty
+  id: MagazineNovaliteC1Empty
+  parent: BaseEmptyAmmoRecipe
+  result: MagazineNovaliteC1Empty
+  materials:
+    Steel: 20
+
+- type: latheRecipe # novalite mag
+  id: MagazineNovaliteC1
+  parent: BaseAmmoRecipe
+  result: MagazineNovaliteC1
+  materials:
+    Steel: 245 # 20 [Steel per empty mag] + 15 [bullets] * 15 [Steel per bullet]
+
+- type: latheRecipe # gestio mag empty
+  id: MagazineLightRifleLowCapacityEmpty
+  parent: BaseEmptyAmmoRecipe
+  result: MagazineLightRifleLowCapacityEmpty
+  materials:
+    Steel: 20
+
+- type: latheRecipe # gestio mag
+  id: MagazineLightRifleLowCapacity
+  parent: BaseAmmoRecipe
+  result: MagazineLightRifleLowCapacity
+  materials:
+    Steel: 245 # 20 [Steel per empty mag] + 15 [bullets] * 15 [Steel per bullet]
+
+- type: latheRecipe
+  id: SpeedLoaderRifleHeavyEmpty
+  parent: BaseEmptyAmmoRecipe
+  result: SpeedLoaderRifleHeavyEmpty
+  materials:
+    Steel: 25
+
+- type: latheRecipe
+  id: SpeedLoaderRifleHeavy
+  parent: BaseAmmoRecipe
+  result: SpeedLoaderRifleHeavy
+  materials:
+    Steel: 140 # 25 [Steel per empty mag] + 8 [bullets] * 15 [Steel per bullet]
+
+- type: latheRecipe
+  id: SpeedLoaderRifleHeavyPractice
+  parent: BaseAmmoRecipe
+  result: SpeedLoaderRifleHeavyPractice
+  materials:
+    Steel: 65 # 25 [Steel per empty mag] + 8 [bullets] * 5 [Steel per practice bullet]
+
+- type: latheRecipe
+  id: SpeedLoaderRifleHeavyRubber
+  parent: BaseAmmoRecipe
+  result: SpeedLoaderRifleHeavyRubber
+  materials:
+    Steel: 25
+    Plastic: 80
+
+- type: latheRecipe
+  id: SpeedLoaderRifleHeavyUranium
+  parent: BaseAmmoRecipe
+  result: SpeedLoaderRifleHeavyUranium
+  materials:
+    Steel: 25 # 25 [Steel per empty mag]
+    Plastic: 80 # 8 [bullets] * 10 [Plastic per bullet]
+    Uranium: 80 # 8 [bullets] * 10 [Uranium per bullet]
+
+- type: latheRecipe
+  id: SpeedLoaderRifleHeavyIncendiary
+  parent: BaseAmmoRecipe
+  result: SpeedLoaderRifleHeavyIncendiary
+  materials:
+    Steel: 25 # 25 [Steel per empty mag]
+    Plastic: 120 # 8 [bullets] * 15 [Plastic per bullet]
+
+- type: latheRecipe
+  id: WeaponRifleNovaliteC1
+  parent: BaseWeaponRecipeLong
+  result: WeaponRifleNovaliteC1
+  materials:
+    Steel: 2500
+    Plasteel: 1200
+    Plastic: 1500
+
+- type: latheRecipe
+  id: WeaponRifleGestio
+  parent: BaseWeaponRecipeLong
+  result: WeaponRifleGestio
+  materials:
+    Steel: 2500
+    Plasteel: 1200
+    Plastic: 1500

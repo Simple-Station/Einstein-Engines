@@ -170,6 +170,9 @@
     - !type:AddPsionicStatSources
       amplificationModifier: 0.5
       dampeningModifier: 0.5
+    - !type:PsionicAddAvailablePowers
+      powerPrototype: AssayPower
+      weight: 0.1
   removalFunctions:
     - !type:RemovePsionicActions
     - !type:RemovePsionicPowerComponents
@@ -178,6 +181,8 @@
     - !type:RemovePsionicStatSources
     - !type:RemoveAssayFeedback
       assayFeedback: metapsionic-power-metapsionic-feedback
+    - !type:PsionicRemoveAvailablePowers
+      powerPrototype: AssayPower
 
 - type: psionicPower
   id: PsionicRegenerationPower
@@ -661,3 +666,25 @@
     - !type:RemovePsionicPsychognomicDescriptors
       psychognomicDescriptor: calling
   powerSlotCost: 0
+
+- type: psionicPower
+  id: AssayPower
+  name: Assay
+  powerCategories:
+    - Mentalic
+  initializeFunctions:
+    - !type:AddPsionicActions
+      actions:
+        - ActionAssay
+    - !type:PsionicFeedbackPopup
+    - !type:PsionicFeedbackSelfChat
+      feedbackMessage: assay-power-initialization-feedback
+    - !type:AddPsionicAssayFeedback
+      assayFeedback: assay-power-metapsionic-feedback
+    - !type:AddPsionicStatSources
+      dampeningModifier: 0.5
+  removalFunctions:
+    - !type:RemovePsionicActions
+    - !type:RemovePsionicStatSources
+    - !type:RemoveAssayFeedback
+      assayFeedback: assay-power-metapsionic-feedback

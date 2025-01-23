@@ -24,7 +24,7 @@
     sprite: Clothing/Neck/Ties/dettie.rsi
   - type: Clothing
     sprite: Clothing/Neck/Ties/dettie.rsi
-    
+
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckTieSci
@@ -40,3 +40,63 @@
     - ClothMade
     - HamsterWearable
     - WhitelistChameleon
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckTieColor
+  name: tie
+  description: A neosilk clip-on tie.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Ties/color.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Ties/color.rsi
+    renderLayer: innerNeck
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - ClothMade
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckTieShort
+  name: short tie
+  description: A short tie, perfect for vests.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Ties/shorttie.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Ties/shorttie.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckTieBow
+  name: neck bow
+  description: A bow for adorning the neck.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Ties/bow.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Ties/bow.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckTieBowTie
+  name: bow tie
+  description: A bow tie. Snazzy!
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Ties/bowtie.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Ties/bowtie.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckTieRibbon
+  name: neck ribbon
+  description: A ribbon for adorning the neck.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Ties/ribbon.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Ties/ribbon.rsi

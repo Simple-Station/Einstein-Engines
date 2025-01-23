@@ -25,6 +25,9 @@ public sealed partial class NpcFactionPrototype : IPrototype
 public record struct FactionData
 {
     [ViewVariables]
+    public bool IsHostileToSelf;
+
+    [ViewVariables]
     public HashSet<ProtoId<NpcFactionPrototype>> Friendly;
 
     [ViewVariables]

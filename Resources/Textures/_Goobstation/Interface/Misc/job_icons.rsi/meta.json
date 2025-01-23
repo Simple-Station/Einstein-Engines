@@ -1,0 +1,20 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Blueshield and Nanotrasen Representative taken from Paradise @ https://github.com/ParadiseSS13/Paradise/commit/5a68c5f6d3b60ee82c06e0287d1eb8108d2e1fe2",
+    "size": {
+        "x": 8,
+        "y": 8
+    },
+    "states": [
+      {
+        "name": "nanotrasenrepresentative"
+      },
+      {
+        "name": "blueshield"
+      },
+      {
+        "name": "magistrate"
+      }
+  ]
+}

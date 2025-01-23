@@ -54,3 +54,8 @@
   id: HeirloomLost
   moodChange: -15
   category: Heirloom
+
+- type: moodEffect
+  id: HeirloomNeutral
+  moodChange: -5
+  category: Heirloom

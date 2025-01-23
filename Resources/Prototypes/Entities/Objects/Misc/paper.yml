@@ -18,7 +18,7 @@
   - type: PaperLabelType
   - type: ActivatableUI
     key: enum.PaperUiKey.Key
-    requireHands: false
+    requiresComplex: false
   - type: UserInterface
     interfaces:
       enum.PaperUiKey.Key:
@@ -395,6 +395,13 @@
         Piercing: 15
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Piercing: 15
+  - type: EmbeddableProjectile
+    removalTime: 2
+  - type: EmbedPassiveDamage
   - type: Tool
     qualities:
       - Screwing

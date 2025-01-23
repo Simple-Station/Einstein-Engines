@@ -1,6 +1,7 @@
 using Robust.Shared.Serialization;
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
+using Content.Shared.Abilities.Psionics;
 
 namespace Content.Shared.Psionics.Events;
 
@@ -63,6 +64,32 @@ public sealed partial class PsionicHealOtherDoAfterEvent : DoAfterEvent
     public PsionicHealOtherDoAfterEvent(TimeSpan startedAt)
     {
         StartedAt = startedAt;
+    }
+
+    public override DoAfterEvent Clone() => this;
+}
+
+[Serializable, NetSerializable]
+public sealed partial class AssayDoAfterEvent : DoAfterEvent
+{
+    [DataField(required: true)]
+    public TimeSpan StartedAt;
+
+    [DataField]
+    public int FontSize = 12;
+
+    [DataField]
+    public string FontColor = "#8A00C2";
+
+    private AssayDoAfterEvent()
+    {
+    }
+
+    public AssayDoAfterEvent(TimeSpan startedAt, int fontSize, string fontColor)
+    {
+        StartedAt = startedAt;
+        FontSize = fontSize;
+        FontColor = fontColor;
     }
 
     public override DoAfterEvent Clone() => this;
