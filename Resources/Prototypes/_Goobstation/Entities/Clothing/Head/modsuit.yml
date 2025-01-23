@@ -11,6 +11,7 @@
   - type: InteractionOutline
   - type: GroupExamine
   - type: Clothing
+    equippedPrefix: off
     equipSound: /Audio/Mecha/mechmove03.ogg
     unequipSound: /Audio/Mecha/mechmove03.ogg
     quickEquip: false
