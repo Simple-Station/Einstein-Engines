@@ -69,17 +69,17 @@
     Chest:
       points: 1
       required: false
-    Underwear:
-      points: 1
+    LeftLeg:
+      points: 2
       required: false
-    Undershirt:
-      points: 1
+    RightLeg:
+      points: 2
       required: false
-    Legs:
-      points: 6
+    LeftArm:
+      points: 2
       required: false
-    Arms:
-      points: 6
+    RightArm:
+      points: 2
       required: false
 
 - type: humanoidBaseSprite

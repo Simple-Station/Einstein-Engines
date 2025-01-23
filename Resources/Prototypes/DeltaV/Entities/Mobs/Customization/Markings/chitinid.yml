@@ -194,7 +194,7 @@
 - type: marking
   id: ChitinidLArmCharred
   bodyPart: LArm
-  markingCategory: Arms
+  markingCategory: LeftArm
   speciesRestriction: [Chitinid]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Chitinid/chitinid_parts.rsi
@@ -203,7 +203,7 @@
 - type: marking
   id: ChitinidRArmCharred
   bodyPart: RArm
-  markingCategory: Arms
+  markingCategory: RightArm
   speciesRestriction: [Chitinid]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Chitinid/chitinid_parts.rsi
@@ -222,7 +222,7 @@
 - type: marking
   id: ChitinidLArmPlated
   bodyPart: LArm
-  markingCategory: Arms
+  markingCategory: LeftArm
   speciesRestriction: [Chitinid]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Chitinid/chitinid_parts.rsi
@@ -231,7 +231,7 @@
 - type: marking
   id: ChitinidRArmPlated
   bodyPart: RArm
-  markingCategory: Arms
+  markingCategory: RightArm
   speciesRestriction: [Chitinid]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Chitinid/chitinid_parts.rsi
@@ -277,7 +277,7 @@
 - type: marking
   id: ChitinidLArmStripes
   bodyPart: LArm
-  markingCategory: Arms
+  markingCategory: LeftArm
   speciesRestriction: [Chitinid]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Chitinid/chitinid_parts.rsi
@@ -286,7 +286,7 @@
 - type: marking
   id: ChitinidRArmStripes
   bodyPart: RArm
-  markingCategory: Arms
+  markingCategory: RightArm
   speciesRestriction: [Chitinid]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Chitinid/chitinid_parts.rsi
@@ -332,7 +332,7 @@
 - type: marking
   id: ChitinidLArmRadiant
   bodyPart: LArm
-  markingCategory: Arms
+  markingCategory: LeftArm
   speciesRestriction: [Chitinid]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Chitinid/chitinid_parts.rsi
@@ -341,7 +341,7 @@
 - type: marking
   id: ChitinidRArmRadiant
   bodyPart: RArm
-  markingCategory: Arms
+  markingCategory: RightArm
   speciesRestriction: [Chitinid]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Chitinid/chitinid_parts.rsi
@@ -387,7 +387,7 @@
 - type: marking
   id: ChitinidLArmToxic
   bodyPart: LArm
-  markingCategory: Arms
+  markingCategory: LeftArm
   speciesRestriction: [Chitinid]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Chitinid/chitinid_parts.rsi
@@ -396,7 +396,7 @@
 - type: marking
   id: ChitinidRArmToxic
   bodyPart: RArm
-  markingCategory: Arms
+  markingCategory: RightArm
   speciesRestriction: [Chitinid]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Chitinid/chitinid_parts.rsi
@@ -442,7 +442,7 @@
 - type: marking
   id: ChitinidLArmSpotted
   bodyPart: LArm
-  markingCategory: Arms
+  markingCategory: LeftArm
   speciesRestriction: [Chitinid]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Chitinid/chitinid_parts.rsi
@@ -451,7 +451,7 @@
 - type: marking
   id: ChitinidRArmSpotted
   bodyPart: RArm
-  markingCategory: Arms
+  markingCategory: RightArm
   speciesRestriction: [Chitinid]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Chitinid/chitinid_parts.rsi
