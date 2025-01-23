@@ -259,15 +259,44 @@
     sprite: Clothing/Head/Envirohelms/paramedic.rsi
 
 - type: entity
-  parent: ClothingHeadEnvirohelmBase
+  parent: ClothingHeadEnvirohelmCustomBase
   id: ClothingHeadEnvirohelmPrisoner
   name: prisoner envirosuit helmet
   description: A plasmaman containment helmet for prisoners.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Envirohelms/prisoner.rsi
+    layers:
+    - state: icon
+      color: "#ff8300"
+    - state: accent-icon
+      color: "#3c3c3c"
+    - state: visor-icon
+    - state: icon-flash
+      visible: false
+      shader: unshaded
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ff8300"
+      - state: accent-inhand-left
+        color: "#3c3c3c"
+      - state: visor-inhand-left
+      right:
+      - state: inhand-right
+        color: "#ff8300"
+      - state: accent-inhand-right
+        color: "#3c3c3c"
+      - state: visor-inhand-right
   - type: Clothing
-    sprite: Clothing/Head/Envirohelms/prisoner.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#ff8300"
+      - state: accent-equipped-HELMET
+        color: "#3c3c3c"
+      - state: visor-equipped-HELMET
 
 - type: entity
   parent: ClothingHeadEnvirohelmBase

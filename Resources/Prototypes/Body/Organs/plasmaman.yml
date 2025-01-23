@@ -34,8 +34,8 @@
   description: The lungs yearn for the plasma. Only plasma gas can satiate these lungs, and oxygen is lethally toxic.
   components:
   - type: Sprite
-    state: lungs
-    layers: []
+    layers:
+      state: lungs
   - type: Metabolizer
     metabolizerTypes: [ Plasmaman ]
   - type: Lung
@@ -92,8 +92,8 @@
   name: plasmaman eyes
   components:
   - type: Sprite
-    state: eyes
-    layers: []
+    layers:
+    - state: eyes
 
 - type: entity
   id: OrganPlasmamanLiver
@@ -114,8 +114,8 @@
   name: plasmaman kidneys
   components:
   - type: Sprite
-    state: kidneys
-    layers: []
+    layers:
+    - state: kidneys
   - type: Metabolizer
     metabolizerTypes: [ Plasmaman ]
 

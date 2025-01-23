@@ -241,15 +241,48 @@
     sprite: Clothing/Uniforms/Envirosuits/paramedic.rsi
 
 - type: entity
-  parent: ClothingUniformEnvirosuitBase
+  parent: ClothingUniformEnvirosuitCustomBase
   id: ClothingUniformEnvirosuitPrisoner
   name: prisoner envirosuit
   description: An orange envirosuit identifying and protecting a criminal plasmaman.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Envirosuits/prisoner.rsi
+    layers:
+    - state: icon
+      color: "#ff8300"
+    - state: plaintop-icon
+      color: "#ff8300"
+    - state: accentprisoner-icon
+      color: "#3c3c3c"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ff8300"
+      - state: plaintop-inhand-left
+        color: "#ff8300"
+      - state: accentprisoner-inhand-left
+        color: "#3c3c3c"
+      right:
+      - state: inhand-right
+        color: "#ff8300"
+      - state: plaintop-inhand-right
+        color: "#ff8300"
+      - state: accentprisoner-inhand-right
+        color: "#3c3c3c"
   - type: Clothing
-    sprite: Clothing/Uniforms/Envirosuits/prisoner.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#ff8300"
+      - state: plaintop-equipped-INNERCLOTHING
+        color: "#ff8300"
+      - state: accentprisoner-equipped-INNERCLOTHING
+        color: "#3c3c3c"
+      - state: loweraccent-equipped-INNERCLOTHING
+        color: "#3c3c3c"
+      - state: soles-equipped-INNERCLOTHING
+        color: "#bababa"
   - type: SuitSensor
     controlsLocked: true
     randomMode: false
