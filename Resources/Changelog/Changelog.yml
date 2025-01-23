@@ -10552,3 +10552,105 @@ Entries:
   id: 6748
   time: '2025-01-21T14:56:35.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1548
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Harpies can now wear pants, and have a displacement map to make them
+        look less terrible when doing so.
+  id: 6749
+  time: '2025-01-22T21:44:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1633
+- author: sleepyyapril
+  changes:
+    - type: Tweak
+      message: >-
+        The H.O.N.K. has received an airtight cabin for honk operations in outer
+        space.
+    - type: Add
+      message: >-
+        Added the Ripley MK-II, a heavy, slow all-purpose mech, featuring a
+        pressurized cabin for space operations.
+    - type: Add
+      message: >-
+        Added the Clarke, A fast moving mech for space travel, with built in
+        thrusters (not certain if they work properly though :trollface:)
+    - type: Add
+      message: >-
+        Added the Gygax, a lightly armored and highly mobile mech with enough
+        force to rip walls, or someone's head off.
+    - type: Add
+      message: >-
+        Added the Durand, a slow but beefy combat suit that you dont want to
+        fight in close quarters.
+    - type: Add
+      message: Added the Marauder, a specialized mech issued to ERT operatives.
+    - type: Add
+      message: Added the Seraph, a specialized combat suit issued to ??? operatives.
+    - type: Add
+      message: >-
+        The syndicate has started issuing units under the codenames "Dark Gygax"
+        and "Mauler" to syndicate agents at an introductory price.
+    - type: Add
+      message: The exosuit fabricator can now be emagged to reveal new recipes.
+    - type: Add
+      message: >-
+        There are 4 new bounties cargo can fulfill for mechs. Feedback on the
+        cost/reward is welcome!
+  id: 6750
+  time: '2025-01-23T00:16:33.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1611
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: Added cosmetic pronouns. (disabled by default)
+    - type: Add
+      message: >-
+        Added Station AI name customization through character customization.
+        (disabled by default)
+    - type: Add
+      message: >-
+        Added Cyborg name customization through character customization.
+        (disabled by default)
+  id: 6751
+  time: '2025-01-23T00:19:49.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1626
+- author: BlueHNT
+  changes:
+    - type: Add
+      message: Added 2 new security loadout items
+    - type: Tweak
+      message: Tweaked BSO's ammo
+    - type: Fix
+      message: Fixed energy cutlass sprite
+    - type: Remove
+      message: Removed broken Ion component
+  id: 6752
+  time: '2025-01-23T00:22:22.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1599
+- author: Mike32oz
+  changes:
+    - type: Add
+      message: >-
+        Box Station, supermatter crystal, holopads, and Thermal-electric
+        generator.
+    - type: Tweak
+      message: >-
+        Box Station, Engineer, Medical, Epistemics, Cargo, Security, and Service
+        Departments.
+    - type: Remove
+      message: Box Station, Particle Accelerator Room in Engineer Departments.
+  id: 6753
+  time: '2025-01-23T01:11:05.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1615
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        (For Developers): Added the MathNet.Numerics library. It contains a
+        great number of scientific and engineering math related functions. For
+        more information, its documentation can be found here,
+        https://numerics.mathdotnet.com/api/MathNet.Numerics/index.htm
+  id: 6754
+  time: '2025-01-23T03:45:53.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1641
