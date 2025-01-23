@@ -72,7 +72,7 @@
   category: Mental
   points: 4
   functions:
-    - !type:TraitModifyComponent
+    - !type:TraitReplaceComponent
       components:
         - type: Shadowkin
           blackeyeSpawn: true
