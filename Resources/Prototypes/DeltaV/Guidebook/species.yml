@@ -1,4 +1,9 @@
 - type: guideEntry
+  id: Harpy
+  name: species-name-harpy
+  text: "/ServerInfo/Guidebook/Mobs/DeltaV/Harpy.xml"
+
+- type: guideEntry
   id: Chitinid
   name: species-name-chitinid
   text: "/ServerInfo/Guidebook/Mobs/DeltaV/Chitinid.xml"
