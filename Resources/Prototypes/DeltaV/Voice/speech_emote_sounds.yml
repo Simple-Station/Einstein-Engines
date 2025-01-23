@@ -174,8 +174,6 @@
       collection: FemaleCry
     Weh:
       collection: Weh
-    Hew:
-      collection: Hew
     Sneeze:
       collection: MaleSneezes
     Cough:
@@ -184,7 +182,3 @@
       collection: MaleYawn
     Hiss:
       path: /Audio/Animals/snake_hiss.ogg
-    Gasp:
-      collection: MaleGasp
-    DefaultDeathgasp:
-      collection: MothDeathGasp
