@@ -139,13 +139,22 @@ public sealed class DoAfterOverlay : Overlay
                 {
                     var elapsed = time - doAfter.StartTime;
                     elapsedRatio = (float) Math.Min(1, elapsed.TotalSeconds / doAfter.Args.Delay.TotalSeconds);
-                    color = GetProgressColor(elapsedRatio, alpha);
+                    if (elapsedRatio < 1.0f)
+                        color = GetProgressColor(elapsedRatio, alpha);
+                    else
+                        color = GetProgressColor(0.35f, alpha); // Make orange/yellow color
                 }
 
                 var xProgress = (EndX - StartX) * elapsedRatio + StartX;
-                var box = new Box2(new Vector2(StartX, 3f) / EyeManager.PixelsPerMeter, new Vector2(xProgress, 4f) / EyeManager.PixelsPerMeter);
+                var box = new Box2(new Vector2(StartX, 2f) / EyeManager.PixelsPerMeter, new Vector2(xProgress, 5f) / EyeManager.PixelsPerMeter);
                 box = box.Translated(position);
+                // Brighter line, like /tg/station bar
+                var boxInner = new Box2(new Vector2(StartX, 3f) / EyeManager.PixelsPerMeter, new Vector2(xProgress, 4f) / EyeManager.PixelsPerMeter);
+                boxInner = boxInner.Translated(position);
+
                 handle.DrawRect(box, color);
+                handle.DrawRect(boxInner, Color.InterpolateBetween(color, Color.White, 0.5f));
+
                 offset += _barTexture.Height / scale;
             }
         }
