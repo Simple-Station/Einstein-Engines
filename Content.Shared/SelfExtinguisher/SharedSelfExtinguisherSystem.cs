@@ -121,7 +121,7 @@ public abstract partial class SharedSelfExtinguisherSystem : EntitySystem
 
         _popup.PopupClient(Loc.GetString("self-extinguisher-refill"), args.User, args.User);
 
-        QueueDel(args.Used);
+        Del(args.Used);
     }
 
     private void OnExamined(EntityUid uid, SelfExtinguisherComponent component, ExaminedEvent args)

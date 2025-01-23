@@ -35,7 +35,7 @@
   components:
   - type: Sprite
     layers:
-      state: lungs
+    - state: lungs
   - type: Metabolizer
     metabolizerTypes: [ Plasmaman ]
   - type: Lung
