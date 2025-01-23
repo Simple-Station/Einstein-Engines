@@ -50,7 +50,7 @@
 - type: entity
   id: OrganShadowkinAppendix
   parent: OrganHumanAppendix
-  Description: "I think it does nothing..."
+  description: "I think it does nothing..."
   components:
   - type: Sprite
     sprite: Mobs/Species/Shadowkin/organs.rsi
@@ -61,7 +61,7 @@
 - type: entity
   id: OrganShadowkinHeart
   parent: OrganHumanHeart
-  Description: "Oops, I think this belongs to someone!"
+  description: "Oops, I think this belongs to someone!"
   components:
   - type: Sprite
     sprite: Mobs/Species/Shadowkin/organs.rsi
