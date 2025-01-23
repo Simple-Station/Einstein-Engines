@@ -344,7 +344,7 @@ public sealed partial class GunSystem : SharedGunSystem
         component.LastFire = component.NextFire;
 
         // Convert it so angle can go either side.
-        var random = user != null ? Random.NextFloat(-0.5f, 0.5f) / _contests.MassContest(user) : Random.NextFloat(-0.5f, 0.5f);
+        var random = Random.NextFloat(-0.5f, 0.5f) / _contests.MassContest(user);
         var spread = component.CurrentAngle.Theta * random;
         var angle = new Angle(direction.Theta + component.CurrentAngle.Theta * random);
         DebugTools.Assert(spread <= component.MaxAngleModified.Theta);
