@@ -27,13 +27,13 @@
     state: ears
 
 - type: entity
-  id: OrganShadowkinLungs
+  id: OrganShadowkinCore
   parent: OrganHumanLungs
-  description: "Huh I guess they do have lungs after all"
+  description: "What is this thing?"
   components:
   - type: Sprite
     sprite: Mobs/Species/Shadowkin/organs.rsi
-    state: lungs
+    state: core
 
 
 - type: entity
