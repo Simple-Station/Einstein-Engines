@@ -8,6 +8,8 @@ using Robust.Client.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Robust.Shared.Configuration;
+using Content.Shared.CCVar;
 
 namespace Content.Client.DoAfter;
 
@@ -16,6 +18,7 @@ public sealed class DoAfterOverlay : Overlay
     private readonly IEntityManager _entManager;
     private readonly IGameTiming _timing;
     private readonly IPlayerManager _player;
+    private readonly IConfigurationManager _cfg;
     private readonly SharedTransformSystem _transform;
     private readonly MetaDataSystem _meta;
     private readonly ProgressColorSystem _progressColor;
@@ -39,6 +42,7 @@ public sealed class DoAfterOverlay : Overlay
         _entManager = entManager;
         _timing = timing;
         _player = player;
+        _cfg = IoCManager.Resolve<IConfigurationManager>();
         _transform = _entManager.EntitySysManager.GetEntitySystem<SharedTransformSystem>();
         _meta = _entManager.EntitySysManager.GetEntitySystem<MetaDataSystem>();
         _progressColor = _entManager.System<ProgressColorSystem>();
@@ -139,21 +143,40 @@ public sealed class DoAfterOverlay : Overlay
                 {
                     var elapsed = time - doAfter.StartTime;
                     elapsedRatio = (float) Math.Min(1, elapsed.TotalSeconds / doAfter.Args.Delay.TotalSeconds);
-                    if (elapsedRatio < 1.0f)
-                        color = GetProgressColor(elapsedRatio, alpha);
+
+                    if (_cfg.GetCVar(CCVars.ModernProgressBar))
+                    {
+                        if (elapsedRatio < 1.0f)
+                            color = GetProgressColor(elapsedRatio, alpha);
+                        else
+                            color = GetProgressColor(0.35f, alpha); // Make orange/yellow color
+                    }
                     else
-                        color = GetProgressColor(0.35f, alpha); // Make orange/yellow color
+                    {
+                        color = GetProgressColor(elapsedRatio, alpha);
+                    }
                 }
 
                 var xProgress = (EndX - StartX) * elapsedRatio + StartX;
-                var box = new Box2(new Vector2(StartX, 2f) / EyeManager.PixelsPerMeter, new Vector2(xProgress, 5f) / EyeManager.PixelsPerMeter);
-                box = box.Translated(position);
-                // Brighter line, like /tg/station bar
-                var boxInner = new Box2(new Vector2(StartX, 3f) / EyeManager.PixelsPerMeter, new Vector2(xProgress, 4f) / EyeManager.PixelsPerMeter);
-                boxInner = boxInner.Translated(position);
 
-                handle.DrawRect(box, color);
-                handle.DrawRect(boxInner, Color.InterpolateBetween(color, Color.White, 0.5f));
+                if (_cfg.GetCVar(CCVars.ModernProgressBar))
+                {
+                    var box = new Box2(new Vector2(StartX, 2f) / EyeManager.PixelsPerMeter, new Vector2(xProgress, 5f) / EyeManager.PixelsPerMeter);
+                    box = box.Translated(position);
+                    // Brighter line, like /tg/station bar
+                    var boxInner = new Box2(new Vector2(StartX, 3f) / EyeManager.PixelsPerMeter, new Vector2(xProgress, 4f) / EyeManager.PixelsPerMeter);
+                    boxInner = boxInner.Translated(position);
+
+                    handle.DrawRect(box, color);
+                    handle.DrawRect(boxInner, Color.InterpolateBetween(color, Color.White, 0.5f));
+                }
+                else
+                {
+                    var box = new Box2(new Vector2(StartX, 3f) / EyeManager.PixelsPerMeter, new Vector2(xProgress, 4f) / EyeManager.PixelsPerMeter);
+                    box = box.Translated(position);
+
+                    handle.DrawRect(box, color);
+                }
 
                 offset += _barTexture.Height / scale;
             }
