@@ -6,6 +6,7 @@ using Content.Shared.Interaction;
 using Content.Shared.Inventory;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
@@ -19,6 +20,7 @@ public abstract partial class SharedSelfExtinguisherSystem : EntitySystem
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedChargesSystem _charges = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
 
     public override void Initialize()
     {
@@ -120,8 +122,9 @@ public abstract partial class SharedSelfExtinguisherSystem : EntitySystem
         Dirty(uid, component);
 
         _popup.PopupClient(Loc.GetString("self-extinguisher-refill"), args.User, args.User);
+        _audio.PlayPredicted(component.RefillSound, uid, args.User);
 
-        Del(args.Used);
+        QueueDel(args.Used);
     }
 
     private void OnExamined(EntityUid uid, SelfExtinguisherComponent component, ExaminedEvent args)

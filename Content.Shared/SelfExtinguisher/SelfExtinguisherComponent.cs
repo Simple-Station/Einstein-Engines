@@ -57,4 +57,10 @@ public sealed partial class SelfExtinguisherComponent : Component
     /// </summary>
     [DataField(required: true)]
     public SoundSpecifier Sound { get; private set; } = default!;
+
+    /// <summary>
+    ///   The sound effect that plays upon getting refilled.
+    /// </summary>
+    [DataField]
+    public SoundSpecifier RefillSound = new SoundPathSpecifier("/Audio/Weapons/Guns/MagIn/revolver_magin.ogg");
 }
