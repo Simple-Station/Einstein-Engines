@@ -195,6 +195,9 @@ public sealed partial class SupermatterSystem
             totalDamage += healHeatDamage;
         }
 
+        // Return the manipulated gas back to the mix
+        _atmosphere.Merge(mix, absorbedGas);
+
         // Check for space tiles next to SM
         //TODO: Change moles out for checking if adjacent tiles exist
         var enumerator = _atmosphere.GetAdjacentTileMixtures(xform.GridUid.Value, indices, false, false);
