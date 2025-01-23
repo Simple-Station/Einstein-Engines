@@ -11,11 +11,6 @@
 #      time: 54000 #15 hrs
 #      inverted: true # stop playing intern if you're good at security!
   startingGear: SecurityCadetGear
-  conditionalStartingGear: # TODO: technical assistant plasmaman gear
-    - id: SecurityOfficerPlasmamanGear
-      requirements:
-      - !type:CharacterSpeciesRequirement
-        species: [ Plasmaman ]
   icon: "JobIconSecurityCadet"
   supervisors: job-supervisors-security
   canBeAntag: false
@@ -37,6 +32,8 @@
 
 - type: startingGear
   id: SecurityCadetGear
+  subGear:
+  - SecurityOfficerPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorRed
     back: ClothingBackpackSecurity

@@ -7,11 +7,6 @@
     - !type:CharacterOverallTimeRequirement
       min: 7200 # DeltaV - 2 hours
   startingGear: MusicianGear
-  conditionalStartingGear:
-    - id: MusicianPlasmamanGear
-      requirements:
-      - !type:CharacterSpeciesRequirement
-        species: [ Plasmaman ]
   icon: "JobIconMusician"
   supervisors: job-supervisors-hire
   access:
@@ -25,6 +20,8 @@
 
 - type: startingGear
   id: MusicianGear
+  subGear:
+  - MusicianPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitMusician
     back: ClothingBackpackMusicianFilled

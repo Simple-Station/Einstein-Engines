@@ -4,11 +4,6 @@
   description: job-description-prisoner
   playTimeTracker: JobPrisoner
   startingGear: PrisonerGear
-  conditionalStartingGear:
-    - id: PrisonerPlasmamanGear
-      requirements:
-      - !type:CharacterSpeciesRequirement
-        species: [ Plasmaman ]
   alwaysUseSpawner: true
   canBeAntag: false
 #  whitelistRequired: true
@@ -30,6 +25,8 @@
 
 - type: startingGear
   id: PrisonerGear
+  subGear:
+  - PrisonerPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitPrisoner
     shoes: ClothingShoesColorBlack

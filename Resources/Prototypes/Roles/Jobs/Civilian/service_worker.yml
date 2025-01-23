@@ -7,11 +7,6 @@
     - !type:CharacterOverallTimeRequirement
       min: 7200 # DeltaV - 2 hours
   startingGear: ServiceWorkerGear
-  conditionalStartingGear:
-    - id: ServiceWorkerPlasmamanGear
-      requirements:
-      - !type:CharacterSpeciesRequirement
-        species: [ Plasmaman ]
   icon: "JobIconServiceWorker"
   supervisors: job-supervisors-service
   canBeAntag: true # DeltaV - Can be antagonist
@@ -26,6 +21,8 @@
 
 - type: startingGear
   id: ServiceWorkerGear
+  subGear:
+  - ServiceWorkerPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorDarkGreen # DeltaV
     back: ClothingBackpackFilled

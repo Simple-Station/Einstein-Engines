@@ -20,6 +20,8 @@
 # Syndicate Operative Outfit - Civilian
 - type: startingGear
   id: SyndicateOperativeGearCivilian
+  subGear:
+  - SyndicateOperativePlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitSyndieFormal
     back: ClothingBackpackDuffelSyndicate
@@ -69,9 +71,18 @@
     belt: ClothingBeltMilitaryWebbingMedFilled
   innerClothingSkirt: ClothingUniformJumpskirtColorBlack
 
+- type: startingGear
+  id: SyndicateOperativePlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitTacticool
+    head: ClothingHeadEnvirohelmTacticool
+
 #Syndicate Operative Outfit - Full Kit
 - type: startingGear
   id: SyndicateOperativeGearFull
+  subGear:
+  - SyndicateOperativePlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitOperative
     back: ClothingBackpackDuffelSyndicateOperative
@@ -92,6 +103,8 @@
 #Nuclear Operative Commander Gear
 - type: startingGear
   id: SyndicateCommanderGearFull
+  subGear:
+  - SyndicateOperativePlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitOperative
     back: ClothingBackpackDuffelSyndicateOperative
@@ -115,6 +128,8 @@
 #Nuclear Operative Medic Gear
 - type: startingGear
   id: SyndicateOperativeMedicFull
+  subGear:
+  - SyndicateOperativePlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitOperative
     back: ClothingBackpackDuffelSyndicateOperativeMedic
@@ -135,6 +150,8 @@
 # Syndicate Footsoldier Gear
 - type: startingGear
   id: SyndicateFootsoldierGear
+  subGear:
+  - SyndicateOperativePlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitOperative
     head: ClothingHeadHelmetSwatSyndicate
@@ -152,6 +169,8 @@
 # Syndicate Footsoldier Gear - No Headset
 - type: startingGear
   id: SyndicateFootsoldierGearRuin
+  subGear:
+  - SyndicateOperativePlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitOperative
     head: ClothingHeadHelmetSwatSyndicate

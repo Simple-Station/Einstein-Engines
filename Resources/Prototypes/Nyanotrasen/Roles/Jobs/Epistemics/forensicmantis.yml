@@ -19,11 +19,6 @@
           traits:
             - AnomalousPositronics
   startingGear: ForensicMantisGear
-  conditionalStartingGear:
-    - id: ForensicMantisPlasmamanGear
-      requirements:
-      - !type:CharacterSpeciesRequirement
-        species: [ Plasmaman ]
   icon: "JobIconForensicMantis"
   supervisors: job-supervisors-rd
   antagAdvantage: 5 # DeltaV - From 4 to 5
@@ -48,6 +43,8 @@
 
 - type: startingGear
   id: ForensicMantisGear
+  subGear:
+  - ForensicMantisPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitMantis
     back: ClothingBackpackMantisFilled

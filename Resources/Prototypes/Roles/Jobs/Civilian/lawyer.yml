@@ -10,11 +10,6 @@
     - !type:CharacterDepartmentTimeRequirement # DeltaV - Security dept time requirement
       department: Security
       min: 14400 # 4 hours
-  conditionalStartingGear:
-    - id: LawyerPlasmamanGear
-      requirements:
-      - !type:CharacterSpeciesRequirement
-        species: [ Plasmaman ]
   startingGear: LawyerGear
   icon: "JobIconLawyer"
   supervisors: job-supervisors-cj  # Delta V - Change supervisor to chief justice
@@ -25,6 +20,8 @@
 
 - type: startingGear
   id: LawyerGear
+  subGear:
+  - LawyerPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitLawyerBlack  # TODO change jumpsuit to randomiser of the 4 variants
     back: ClothingBackpackLawyerFilled #DeltaV - stamp included

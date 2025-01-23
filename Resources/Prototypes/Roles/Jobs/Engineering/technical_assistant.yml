@@ -12,11 +12,6 @@
     #   time: 54000 #15 hrs
     #   inverted: true # stop playing intern if you're good at engineering!
   startingGear: TechnicalAssistantGear
-  conditionalStartingGear: # TODO: technical assistant plasmaman gear
-    - id: StationEngineerPlasmamanGear
-      requirements:
-      - !type:CharacterSpeciesRequirement
-        species: [ Plasmaman ]
   icon: "JobIconTechnicalAssistant"
   supervisors: job-supervisors-engineering
   canBeAntag: true # DeltaV - Can be antagonist
@@ -27,6 +22,8 @@
 
 - type: startingGear
   id: TechnicalAssistantGear
+  subGear:
+  - StationEngineerPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorYellow
     back: ClothingBackpackEngineeringFilled

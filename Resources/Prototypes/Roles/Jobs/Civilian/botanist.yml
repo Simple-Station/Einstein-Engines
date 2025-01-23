@@ -4,11 +4,6 @@
   description: job-description-botanist
   playTimeTracker: JobBotanist
   startingGear: BotanistGear
-  conditionalStartingGear:
-    - id: BotanistPlasmamanGear
-      requirements:
-      - !type:CharacterSpeciesRequirement
-        species: [ Plasmaman ]
   icon: "JobIconBotanist"
   supervisors: job-supervisors-hop
   access:
@@ -21,6 +16,8 @@
 
 - type: startingGear
   id: BotanistGear
+  subGear:
+  - BotanistPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitHydroponics
     back: ClothingBackpackHydroponicsFilled

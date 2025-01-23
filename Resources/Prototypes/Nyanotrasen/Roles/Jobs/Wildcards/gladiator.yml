@@ -4,11 +4,6 @@
   description: job-description-gladiator
   playTimeTracker: JobGladiator
   startingGear: NyanoGladiatorGear
-  conditionalStartingGear:
-    - id: GladiatorPlasmamanGear
-      requirements:
-      - !type:CharacterSpeciesRequirement
-        species: [ Plasmaman ]
   alwaysUseSpawner: true
   canBeAntag: false
   icon: "JobIconGladiator"
@@ -31,6 +26,8 @@
 
 - type: startingGear
   id: NyanoGladiatorGear
+  subGear:
+  - GladiatorPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitGladiator
     outerClothing: ClothingOuterArmorGladiator

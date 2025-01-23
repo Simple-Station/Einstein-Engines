@@ -8,11 +8,6 @@
     department: Security
     min: 36000 # DeltaV - 10 hours
   startingGear: DetectiveGear
-  conditionalStartingGear:
-    - id: DetectivePlasmamanGear
-      requirements:
-      - !type:CharacterSpeciesRequirement
-        species: [ Plasmaman ]
   icon: "JobIconDetective"
   supervisors: job-supervisors-hos
   canBeAntag: false
@@ -35,6 +30,8 @@
 
 - type: startingGear
   id: DetectiveGear
+  subGear:
+  - DetectivePlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitDetective
     back: ClothingBackpackSecurity

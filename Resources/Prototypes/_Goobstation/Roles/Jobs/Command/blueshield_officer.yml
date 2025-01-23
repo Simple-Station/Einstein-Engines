@@ -15,11 +15,6 @@
       min: 54000 # 15 hours
   weight: 20
   startingGear: BlueshieldOfficerGear
-  conditionalStartingGear:
-    - id: BlueshieldPlasmamanGear
-      requirements:
-      - !type:CharacterSpeciesRequirement
-        species: [ Plasmaman ]
   icon: "JobIconBlueshield"
   requireAdminNotify: true
   joinNotifyCrew: true
@@ -52,6 +47,8 @@
 
 - type: startingGear
   id: BlueshieldOfficerGear
+  subGear:
+  - BlueshieldPlasmamanGear
   equipment:
     back: ClothingBackpackBlueshield
     jumpsuit: ClothingUniformJumpsuitBlueshieldOfficer

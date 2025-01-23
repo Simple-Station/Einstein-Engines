@@ -1,5 +1,7 @@
 - type: startingGear
   id: CourierGear
+  subGear:
+  - CourierPlasmamanGear
   equipment:
     head: ClothingHeadCourier
     jumpsuit: ClothingUniformCourier

@@ -23,11 +23,6 @@
       department: Epistemics
       min: 10800 # 3 hours
   startingGear: AdminAssistantGear
-  conditionalStartingGear:
-    - id: AdminAssistantPlasmamanGear
-      requirements:
-      - !type:CharacterSpeciesRequirement
-        species: [ Plasmaman ]
   icon: "JobIconAdminAssitant"
   supervisors: job-supervisors-command
   canBeAntag: false
@@ -43,6 +38,8 @@
 
 - type: startingGear
   id: AdminAssistantGear
+  subGear:
+  - AdminAssistantPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitAdminAssistant
     id: AdminAssistantPDA

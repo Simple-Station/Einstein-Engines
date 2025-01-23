@@ -10,11 +10,6 @@
       department: Security
       min: 14400
   startingGear: PrisonGuardGear
-  conditionalStartingGear:
-    - id: PrisonGuardPlasmamanGear
-      requirements:
-      - !type:CharacterSpeciesRequirement
-        species: [ Plasmaman ]
   alwaysUseSpawner: true
   canBeAntag: false
   icon: "JobIconPrisonGuard"
@@ -36,6 +31,8 @@
 
 - type: startingGear
   id: PrisonGuardGear
+  subGear:
+  - PrisonGuardPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitPrisonGuard
     back: ClothingBackpackSecurityFilled

@@ -20,11 +20,6 @@
       min: 72000 # DeltaV - 20 hours
   weight: 10
   startingGear: CMOGear
-  conditionalStartingGear:
-    - id: CMOPlasmamanGear
-      requirements:
-      - !type:CharacterSpeciesRequirement
-        species: [ Plasmaman ]
   icon: "JobIconChiefMedicalOfficer"
   requireAdminNotify: true
   supervisors: job-supervisors-captain
@@ -58,6 +53,8 @@
 
 - type: startingGear
   id: CMOGear
+  subGear:
+  - CMOPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitCMO
     back: ClothingBackpackCMOFilled

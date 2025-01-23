@@ -7,11 +7,6 @@
     - !type:CharacterOverallTimeRequirement
       min: 7200 #2 hours
   startingGear: MartialArtistGear
-  conditionalStartingGear:
-    - id: MartialArtistPlasmamanGear
-      requirements:
-      - !type:CharacterSpeciesRequirement
-        species: [ Plasmaman ]
   icon: "JobIconMartialArtist"
   supervisors: job-supervisors-hop
   setPreference: true
@@ -27,6 +22,8 @@
 
 - type: startingGear
   id: MartialArtistGear
+  subGear:
+  - MartialArtistPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformMartialGi
     belt: ClothingBeltMartialBlack

@@ -7,11 +7,6 @@
     - !type:CharacterOverallTimeRequirement
       min: 7200 # DeltaV - 2 hours
   startingGear: MimeGear
-  conditionalStartingGear:
-    - id: MimePlasmamanGear
-      requirements:
-      - !type:CharacterSpeciesRequirement
-        species: [ Plasmaman ]
   icon: "JobIconMime"
   supervisors: job-supervisors-hop
   access:
@@ -26,6 +21,8 @@
 
 - type: startingGear
   id: MimeGear
+  subGear:
+  - MimePlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitMime
     back: ClothingBackpackMimeFilled

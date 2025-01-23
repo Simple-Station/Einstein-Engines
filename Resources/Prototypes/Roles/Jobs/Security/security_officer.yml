@@ -8,11 +8,6 @@
       department: Security
       min: 36000 # 10 hours
   startingGear: SecurityOfficerGear
-  conditionalStartingGear:
-    - id: SecurityOfficerPlasmamanGear
-      requirements:
-      - !type:CharacterSpeciesRequirement
-        species: [ Plasmaman ]
   icon: "JobIconSecurityOfficer"
   supervisors: job-supervisors-hos
   canBeAntag: false
@@ -34,6 +29,8 @@
 
 - type: startingGear
   id: SecurityOfficerGear
+  subGear:
+  - SecurityOfficerPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitSec
     back: ClothingBackpackSecurity

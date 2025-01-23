@@ -9,11 +9,6 @@
     #   time: 54000 #15 hrs
     #   inverted: true # stop playing intern if you're good at science!
   startingGear: ResearchAssistantGear
-  conditionalStartingGear: # TODO: research assistant plasmaman gear
-    - id: ScientistPlasmamanGear
-      requirements:
-      - !type:CharacterSpeciesRequirement
-        species: [ Plasmaman ]
   icon: "JobIconResearchAssistant"
   supervisors: job-supervisors-science
   canBeAntag: true # DeltaV - Can be antagonist
@@ -23,6 +18,8 @@
 
 - type: startingGear
   id: ResearchAssistantGear
+  subGear:
+  - ScientistPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorWhite
     back: ClothingBackpackScienceFilled

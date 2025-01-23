@@ -21,11 +21,6 @@
             - AnomalousPositronics
   weight: 10
   startingGear: ResearchDirectorGear
-  conditionalStartingGear:
-    - id: ResearchDirectorPlasmamanGear
-      requirements:
-      - !type:CharacterSpeciesRequirement
-        species: [ Plasmaman ]
   icon: "JobIconResearchDirector"
   requireAdminNotify: true
   supervisors: job-supervisors-captain
@@ -62,6 +57,8 @@
 
 - type: startingGear
   id: ResearchDirectorGear
+  subGear:
+  - ResearchDirectorPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitResearchDirector
     back: ClothingBackpackResearchDirectorFilled

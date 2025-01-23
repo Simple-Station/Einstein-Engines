@@ -7,11 +7,6 @@
     - !type:CharacterOverallTimeRequirement
       min: 7200 #DeltaV 2 hours
   startingGear: ZookeeperGear
-  conditionalStartingGear:
-    - id: ZookeeperPlasmamanGear
-      requirements:
-      - !type:CharacterSpeciesRequirement
-        species: [ Plasmaman ]
   icon: "JobIconZookeeper"
   supervisors: job-supervisors-hop
   access:
@@ -21,6 +16,8 @@
 
 - type: startingGear
   id: ZookeeperGear
+  subGear:
+  - ZookeeperPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitSafari
     back: ClothingBackpackFilled

@@ -17,11 +17,6 @@
 
 
   startingGear: ClerkGear
-  conditionalStartingGear:
-    - id: PassengerPlasmamanGear
-      requirements:
-      - !type:CharacterSpeciesRequirement
-        species: [ Plasmaman ]
   icon: "JobIconClerk"
   requireAdminNotify: true
   supervisors: job-supervisors-cj
@@ -33,6 +28,8 @@
 
 - type: startingGear
   id: ClerkGear
+  subGear:
+  - PassengerPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitClerk
     back: ClothingBackpackFilled

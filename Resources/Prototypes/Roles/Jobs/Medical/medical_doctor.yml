@@ -8,11 +8,6 @@
       department: Medical
       min: 14400 #4 hrs
   startingGear: DoctorGear
-  conditionalStartingGear:
-    - id: DoctorPlasmamanGear
-      requirements:
-      - !type:CharacterSpeciesRequirement
-        species: [ Plasmaman ]
   icon: "JobIconMedicalDoctor"
   supervisors: job-supervisors-cmo
   access:
@@ -30,6 +25,8 @@
 
 - type: startingGear
   id: DoctorGear
+  subGear:
+  - DoctorPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitMedicalDoctor
     back: ClothingBackpackMedicalFilled

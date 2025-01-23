@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Shared.Body.Systems;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Customization.Systems;
@@ -32,7 +33,8 @@ public sealed class SharedLoadoutSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<LoadoutComponent, MapInitEvent>(OnMapInit);
+        // Wait until the character has all their organs before we give them their loadout to activate internals
+        SubscribeLocalEvent<LoadoutComponent, MapInitEvent>(OnMapInit, after: [typeof(SharedBodySystem)]);
 
         _sawmill = _log.GetSawmill("loadouts");
     }

@@ -17,11 +17,6 @@
 #      time: 72000 # DeltaV - 20 hours
   weight: 10
   startingGear: ChiefEngineerGear
-  conditionalStartingGear:
-    - id: ChiefEngineerPlasmamanGear
-      requirements:
-      - !type:CharacterSpeciesRequirement
-        species: [ Plasmaman ]
   icon: "JobIconChiefEngineer"
   requireAdminNotify: true
   supervisors: job-supervisors-captain
@@ -48,6 +43,8 @@
 
 - type: startingGear
   id: ChiefEngineerGear
+  subGear:
+  - ChiefEngineerPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitChiefEngineer
     back: ClothingBackpackChiefEngineerFilled

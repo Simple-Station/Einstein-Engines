@@ -145,7 +145,7 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
         {
             var startingGear = _prototypeManager.Index<StartingGearPrototype>(prototype.StartingGear);
             if (profile != null)
-                startingGear = ApplyConditionalStartingGear(startingGear, prototype, profile);
+                startingGear = ApplySubGear(startingGear, profile, prototype);
 
             EquipStartingGear(entity.Value, startingGear, raiseEvent: false);
             if (profile != null)

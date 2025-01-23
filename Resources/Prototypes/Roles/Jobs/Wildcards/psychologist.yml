@@ -10,11 +10,6 @@
       department: Medical
       min: 14400 #DeltaV 4 hrs
   startingGear: PsychologistGear
-  conditionalStartingGear:
-    - id: PsychologistPlasmamanGear
-      requirements:
-      - !type:CharacterSpeciesRequirement
-        species: [ Plasmaman ]
   icon: "JobIconPsychologist"
   supervisors: job-supervisors-cmo
   access:
@@ -26,6 +21,8 @@
 
 - type: startingGear
   id: PsychologistGear
+  subGear:
+  - PsychologistPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitPsychologist
     back: ClothingBackpackPsychologistFilled #DeltaV - stamp included

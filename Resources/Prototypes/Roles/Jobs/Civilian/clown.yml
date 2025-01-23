@@ -7,11 +7,6 @@
     - !type:CharacterOverallTimeRequirement # DeltaV - Playtime requirement
       min: 7200 #2 hrs
   startingGear: ClownGear
-  conditionalStartingGear:
-    - id: ClownPlasmamanGear
-      requirements:
-      - !type:CharacterSpeciesRequirement
-        species: [ Plasmaman ]
   icon: "JobIconClown"
   supervisors: job-supervisors-hop
   access:
@@ -37,6 +32,8 @@
 
 - type: startingGear
   id: ClownGear
+  subGear:
+  - ClownPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitClown
     back: ClothingBackpackClownFilled

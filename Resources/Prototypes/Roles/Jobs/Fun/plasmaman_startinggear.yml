@@ -5,6 +5,9 @@
   equipment:
     mask: ClothingMaskBreath
     pocket2: DoubleEmergencyPlasmaTankFilled
+  requirements:
+  - !type:CharacterSpeciesRequirement
+    species: [ Plasmaman ]
 
 - type: startingGear
   abstract: true
@@ -12,3 +15,11 @@
   id: BasePlasmamanSecurityGear
   equipment:
     mask: ClothingMaskGasSecurity
+
+- type: startingGear
+  parent: BasePlasmamanGear
+  id: PlaceholderPlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitColorGrey
+    head: ClothingHeadEnvirohelmColorGrey
+    gloves: ClothingHandsGlovesEnviroglovesColorDarkGrey

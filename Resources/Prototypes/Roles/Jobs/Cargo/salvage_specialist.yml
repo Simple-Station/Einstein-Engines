@@ -12,11 +12,6 @@
   #    time: 36000 #10 hrs
   icon: "JobIconShaftMiner"
   startingGear: SalvageSpecialistGear
-  conditionalStartingGear:
-    - id: SalvageSpecialistPlasmamanGear
-      requirements:
-      - !type:CharacterSpeciesRequirement
-        species: [ Plasmaman ]
   supervisors: job-supervisors-qm
   access:
   - Cargo
@@ -26,6 +21,8 @@
 
 - type: startingGear
   id: SalvageSpecialistGear
+  subGear:
+  - SalvageSpecialistPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitSalvageSpecialist
     back: ClothingBackpackSalvageFilled

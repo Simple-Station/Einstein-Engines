@@ -1,3 +1,4 @@
+using Content.Shared.Customization.Systems;
 using Content.Shared.Preferences;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
@@ -33,6 +34,22 @@ public sealed partial class StartingGearPrototype : IPrototype, IInheritingProto
     [DataField]
     [AlwaysPushInheritance]
     public Dictionary<string, List<EntProtoId>> Storage = new();
+
+    /// <summary>
+    ///     The list of starting gears that overwrite the entries on this starting gear
+    ///     if their requirements are satisfied.
+    /// </summary>
+    [DataField("subGear")]
+    [AlwaysPushInheritance]
+    public List<ProtoId<StartingGearPrototype>> SubGears = new();
+
+    /// <summary>
+    ///     The requirements of this starting gear.
+    ///     Only used if this starting gear is a sub-gear of another starting gear.
+    /// </summary>
+    [DataField]
+    [AlwaysPushInheritance]
+    public List<CharacterRequirement> Requirements = new();
 
     [ViewVariables]
     [IdDataField]

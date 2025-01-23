@@ -14,11 +14,6 @@
       department: Medical
       min: 216000 # 60 hrs
   startingGear: SeniorPhysicianGear
-  conditionalStartingGear:
-    - id: DoctorPlasmamanGear
-      requirements:
-      - !type:CharacterSpeciesRequirement
-        species: [ Plasmaman ]
   icon: "JobIconSeniorPhysician"
   supervisors: job-supervisors-cmo
   access:
@@ -34,6 +29,8 @@
 
 - type: startingGear
   id: SeniorPhysicianGear
+  subGear:
+  - DoctorPlasmamanGear
   equipment:
     head: ClothingHeadHatBeretSeniorPhysician
     jumpsuit: ClothingUniformJumpsuitSeniorPhysician
