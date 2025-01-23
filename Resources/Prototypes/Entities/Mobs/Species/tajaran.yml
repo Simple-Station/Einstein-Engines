@@ -25,11 +25,10 @@
     prototype: Tajaran
   - type: Damageable
     damageModifierSet: Tajaran
-  # Goobstation - Siouxcide, tajarans have standard slow on damage numbers
-# - type: SlowOnDamage
-#   speedModifierThresholds:
-#     60: 0.85  # 0.7 is base speed.
-#     80: 0.75  # 0.5 is base speed.
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      60: 0.85  # 0.7 is base speed.
+      80: 0.75  # 0.5 is base speed.
   - type: MeleeWeapon
     soundHit:
       collection: Punch
@@ -48,9 +47,10 @@
       types:
         Blunt: 1
   - type: Stamina
-    critThreshold: 75 # Goobstation - Siouxcide, tajarans take 3 disabler shots to down
+    critThreshold: 85
+    decay: 2.55 # 3 base decay multiplied by 0.85 = 2.55
   - type: TypingIndicator
-    proto: tajaran
+    proto: felinid
   - type: PseudoItem
     storedOffset: 0,17
     shape:
@@ -63,16 +63,33 @@
       Male: MaleTajaran
       Female: FemaleTajaran
       Unsexed: MaleTajaran
-  #- type: OwOAccent this is just like that book by jorjorwell... 1984
-  - type: Felinid # refers to the felinid component that allows coughing up hairballs
+  - type: Felinid
   - type: NoShoesSilentFootsteps
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - Nekomimetic
+    understands:
+    - TauCetiBasic
+    - Nekomimetic
+  - type: Thieving
+    ignoreStripHidden: true
+    stealth: Subtle
+    stripTimeReduction: 0
+    stripTimeMultiplier: 0.667
+  - type: StepTriggerImmune
+    whitelist:
+      types:
+        - Shard
+        - Landmine
+        - Mousetrap
+        - SlipEntity
   - type: Tag
     tags:
     - CanPilot
     - FootstepSound
     - DoorBumpOpener
     - TajaranEmotes
-  - type: FootPrints # WD EDIT
 
 - type: entity
   save: false

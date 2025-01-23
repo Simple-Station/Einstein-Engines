@@ -107,7 +107,8 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
-        - Felinid
+        # - Felinid
+        - Tajaran
 
 - type: trait
   id: Voracious
@@ -166,7 +167,8 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
-        - Felinid
+        # - Felinid
+        - Tajaran
 
 - type: trait
   id: Singer
@@ -311,7 +313,8 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
-        - Felinid
+        # - Felinid
+        - Tajaran
         - Harpy
 
 - type: trait

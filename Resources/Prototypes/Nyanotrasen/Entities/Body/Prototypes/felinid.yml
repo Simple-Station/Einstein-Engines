@@ -2,6 +2,7 @@
   id: Felinid
   name: "felinid"
   root: torso
+  abstract: true
   slots:
     head:
       part: HeadHuman

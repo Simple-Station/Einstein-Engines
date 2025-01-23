@@ -5,11 +5,6 @@
   id: MobTajaran
   components:
   - type: CombatMode
-  - type: InteractionPopup
-    successChance: 1
-    interactSuccessString: petting-success-soft-floofy
-    interactSuccessSound: /Audio/Effects/thudswoosh.ogg
-    messagePerceivedByOthers: hugging-success-generic-others
   - type: MindContainer
     showExamineInfo: true
   - type: Input
@@ -49,16 +44,4 @@
   - type: NpcFactionMember
     factions:
     - NanoTrasen
-
-
-- type: entity
-  parent: MobTajaran
-  id: MobTajaranRandom
-  name: Urist McTajaran
-  suffix: Random Appearance
-  components:
-  - type: RandomHumanoidAppearance
-  - type: RandomMetadata
-    nameSegments:
-    - names_first
-    - names_last
+    - Cat
