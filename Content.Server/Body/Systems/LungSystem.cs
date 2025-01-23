@@ -1,20 +1,25 @@
 using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Body.Components;
-using Content.Server.Chemistry.Containers.EntitySystems;
+using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Atmos;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Clothing;
 using Content.Shared.Inventory.Events;
+using Content.Shared.Inventory;
+using Content.Server.Power.EntitySystems;
+using Robust.Server.Containers;
 
 namespace Content.Server.Body.Systems;
 
 public sealed class LungSystem : EntitySystem
 {
-    [Dependency] private readonly AtmosphereSystem _atmos = default!;
-    [Dependency] private readonly InternalsSystem _internals = default!;
-    [Dependency] private readonly SolutionContainerSystem _solutionContainerSystem = default!;
     [Dependency] private readonly AtmosphereSystem _atmosphereSystem = default!;
+    [Dependency] private readonly InternalsSystem _internals = default!;
+    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
+    [Dependency] private readonly InventorySystem _inventory = default!; // Goobstaiton
+
+
 
     public static string LungSolutionName = "Lung";
 
@@ -22,6 +27,7 @@ public sealed class LungSystem : EntitySystem
     {
         base.Initialize();
         SubscribeLocalEvent<LungComponent, ComponentInit>(OnComponentInit);
+        SubscribeLocalEvent<BreathToolComponent, ComponentInit>(OnBreathToolInit); // Goobstation - Modsuits - Update on component toggle
         SubscribeLocalEvent<BreathToolComponent, GotEquippedEvent>(OnGotEquipped);
         SubscribeLocalEvent<BreathToolComponent, GotUnequippedEvent>(OnGotUnequipped);
         SubscribeLocalEvent<BreathToolComponent, ItemMaskToggledEvent>(OnMaskToggled);
@@ -50,16 +56,39 @@ public sealed class LungSystem : EntitySystem
 
     private void OnComponentInit(Entity<LungComponent> entity, ref ComponentInit args)
     {
-        var solution = _solutionContainerSystem.EnsureSolution(entity.Owner, entity.Comp.SolutionName);
-        solution.MaxVolume = 100.0f;
-        solution.CanReact = false; // No dexalin lungs
+        if (_solutionContainerSystem.EnsureSolution(entity.Owner, entity.Comp.SolutionName, out var solution))
+        {
+            solution.MaxVolume = 100.0f;
+            solution.CanReact = false; // No dexalin lungs
+        }
     }
+
+    // Goobstation - Update component state on component toggle
+    private void OnBreathToolInit(Entity<BreathToolComponent> ent, ref ComponentInit args)
+    {
+        var comp = ent.Comp;
+
+        comp.IsFunctional = true;
+
+        if (!_inventory.TryGetContainingEntity(ent.Owner, out var parent) || !_inventory.TryGetContainingSlot(ent.Owner, out var slot))
+            return;
+
+        if ((slot.SlotFlags & comp.AllowedSlots) == 0)
+            return;
+
+        if (TryComp(parent, out InternalsComponent? internals))
+        {
+            ent.Comp.ConnectedInternalsEntity = parent;
+            _internals.ConnectBreathTool((parent.Value, internals), ent);
+        }
+    }
+
 
     private void OnMaskToggled(Entity<BreathToolComponent> ent, ref ItemMaskToggledEvent args)
     {
         if (args.IsToggled || args.IsEquip)
         {
-            _atmos.DisconnectInternals(ent.Comp);
+            _atmosphereSystem.DisconnectInternals(ent);
         }
         else
         {
