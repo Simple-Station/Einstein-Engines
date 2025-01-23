@@ -21,7 +21,11 @@ namespace Content.Server.Atmos.EntitySystems
         [Dependency] private readonly IAdminLogManager _adminLogger = default!;
         [Dependency] private readonly InventorySystem _inventorySystem = default!;
 
+        [Dependency] private readonly ILogManager _logManager = default!;
+
         private const float UpdateTimer = 1f;
+
+        private ISawmill _sawmill = default!;
         private float _timer;
 
         public override void Initialize()
@@ -33,6 +37,8 @@ namespace Content.Server.Atmos.EntitySystems
 
             SubscribeLocalEvent<PressureImmunityComponent, ComponentInit>(OnPressureImmuneInit);
             SubscribeLocalEvent<PressureImmunityComponent, ComponentRemove>(OnPressureImmuneRemove);
+
+            _sawmill = _logManager.GetSawmill("replay");
         }
 
         private void OnPressureImmuneInit(EntityUid uid, PressureImmunityComponent pressureImmunity, ComponentInit args)
