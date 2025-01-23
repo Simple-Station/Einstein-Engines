@@ -13,6 +13,7 @@
     - IPCs
     - Harpy
     - Shadowkin
+    - Chitinid
 
 - type: guideEntry
   id: Arachnid
@@ -63,3 +64,8 @@
   id: Shadowkin
   name: species-name-shadowkin
   text: "/ServerInfo/Guidebook/Mobs/Shadowkin.xml"
+
+- type: guideEntry
+  id: Chitinid
+  name: species-name-chitinid
+  text: "/ServerInfo/Guidebook/Mobs/_DV/Chitinid.xml"
