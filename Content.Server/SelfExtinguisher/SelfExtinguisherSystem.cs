@@ -3,11 +3,13 @@ using Content.Server.Atmos.EntitySystems;
 using Content.Shared.Actions;
 using Content.Shared.Charges.Components;
 using Content.Shared.Charges.Systems;
+using Content.Shared.Effects;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Popups;
 using Content.Shared.SelfExtinguisher;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
+using Robust.Shared.Player;
 using Robust.Shared.Timing;
 
 namespace Content.Server.SelfExtinguisher;
@@ -21,6 +23,11 @@ public sealed partial class SelfExtinguisherSystem : SharedSelfExtinguisherSyste
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedActionsSystem _actions = default!;
+    [Dependency] private readonly SharedColorFlashEffectSystem _color = default!;
+
+    // Same color as the water reagent
+    private readonly Color ExtinguishColor = Color.FromHex("#75b1f0");
+    private const float ExtinguishAnimationLength = 0.45f;
 
     public override void Initialize()
     {
@@ -91,8 +98,8 @@ public sealed partial class SelfExtinguisherSystem : SharedSelfExtinguisherSyste
         }
 
         _flammable.Extinguish(target, flammable);
+        _color.RaiseEffect(ExtinguishColor, [target], Filter.Pvs(target, entityManager: EntityManager), ExtinguishAnimationLength);
         _audio.PlayPvs(selfExtinguisher.Sound, uid, selfExtinguisher.Sound.Params.WithVariation(0.125f));
-        // TODO add visuals like stam damage for being extinguished
 
         _popup.PopupPredicted(
             Loc.GetString("self-extinguisher-extinguish-other", ("item", uid), ("target", targetIdentity)),
