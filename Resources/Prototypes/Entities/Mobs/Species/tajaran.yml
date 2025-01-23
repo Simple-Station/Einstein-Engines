@@ -1,10 +1,20 @@
 - type: entity
-  save: false
   name: Urist McTajaran
-  parent: BaseMobHuman
-  id: MobTajaranBase
+  parent: BaseMobSpeciesOrganic
+  id: BaseMobTajaran
   abstract: true
   components:
+  - type: Hunger
+  - type: Thirst
+  - type: Carriable # Carrying system from nyanotrasen.
+  - type: Icon
+    sprite: Mobs/Species/Slime/parts.rsi
+    state: full
+  - type: Butcherable
+    butcheringType: Spike
+    spawned:
+    - id: FoodMeatHuman
+      amount: 5
   - type: Sprite
     scale: 0.8, 0.8
   - type: HumanoidAppearance
@@ -23,6 +33,7 @@
         - MobLayer
   - type: Body
     prototype: Tajaran
+    requiredLegs: 2
   - type: Damageable
     damageModifierSet: Tajaran
   - type: SlowOnDamage
@@ -84,6 +95,28 @@
         - Landmine
         - Mousetrap
         - SlipEntity
+  - type: Reactive
+    groups:
+      Flammable: [ Touch ]
+      Extinguish: [ Touch ]
+    reactions:
+    - reagents: [ Water, SpaceCleaner ]
+      methods: [ Touch ]
+      effects:
+      - !type:WashCreamPieReaction
+    - reagents: [ Water ]
+      methods: [ Touch ]
+      effects:
+      - !type:Emote
+        emote: Scream
+        probability: 0.2
+  - type: Respirator
+    damage:
+      types:
+        Asphyxiation: 1.0
+    damageRecovery:
+      types:
+        Asphyxiation: -1.0
   - type: Tag
     tags:
     - CanPilot

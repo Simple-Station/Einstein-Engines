@@ -13,6 +13,9 @@
   minWidth: 0.6
   defaultWidth: 0.8
   maxWidth: 1.15
+  maleFirstNames: names_tajaran_first_male
+  femaleFirstNames: names_tajaran_first_female
+  lastNames: names_tajaran_last
   
 
 - type: markingPoints
