@@ -56,16 +56,6 @@
   text: "/ServerInfo/Guidebook/Mobs/IPCs.xml"
 
 - type: guideEntry
-  id: Harpy
-  name: species-name-harpy
-  text: "/ServerInfo/Guidebook/Mobs/Harpy.xml"
-  
-- type: guideEntry
   id: Shadowkin
   name: species-name-shadowkin
   text: "/ServerInfo/Guidebook/Mobs/Shadowkin.xml"
-
-- type: guideEntry
-  id: Chitinid
-  name: species-name-chitinid
-  text: "/ServerInfo/Guidebook/Mobs/DeltaV/Chitinid.xml"
