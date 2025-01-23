@@ -33,7 +33,8 @@
   components:
   - type: Sprite
     sprite: Mobs/Species/Shadowkin/organs.rsi
-    state: core
+    layers:
+    - state: core
 
 
 - type: entity
