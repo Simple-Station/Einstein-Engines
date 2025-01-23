@@ -12,7 +12,7 @@
     sprite: Objects/Misc/extinguisher_refill.rsi
     size: Small
   - type: SelfExtinguisherRefill
-    refillAmount: 5
+    refillAmount: 10
   - type: GuideHelp
     guides: [ Plasmaman ]
   - type: MeleeWeapon # Same values as double emergency tank

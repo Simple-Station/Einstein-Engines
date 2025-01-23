@@ -8,7 +8,7 @@
       min: 36000 # 10 hrs
   startingGear: ProsecutorGear
   conditionalStartingGear:
-    - id: LawyerPlasmamanGear
+    - id: PassengerPlasmamanGear
       requirements:
       - !type:CharacterSpeciesRequirement
         species: [ Plasmaman ]

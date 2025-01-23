@@ -18,7 +18,7 @@
 
   startingGear: ClerkGear
   conditionalStartingGear:
-    - id: LawyerPlasmamanGear
+    - id: PassengerPlasmamanGear
       requirements:
       - !type:CharacterSpeciesRequirement
         species: [ Plasmaman ]

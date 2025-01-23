@@ -261,7 +261,7 @@
 - type: entity
   parent: ClothingHeadEnvirohelmBase
   id: ClothingHeadEnvirohelmPrisoner
-  name: prisoner's envirosuit helmet
+  name: prisoner envirosuit helmet
   description: A plasmaman containment helmet for prisoners.
   components:
   - type: Sprite

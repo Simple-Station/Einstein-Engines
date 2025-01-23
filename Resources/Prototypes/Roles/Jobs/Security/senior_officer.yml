@@ -35,6 +35,11 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
+  afterLoadoutSpecial:
+  - !type:ModifyEnvirosuitSpecial
+    charges: 6
+  - !type:ModifyEnvirohelmSpecial
+    powerCell: PowerCellHigh
 
 - type: startingGear
   id: SeniorOfficerGear

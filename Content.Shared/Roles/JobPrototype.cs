@@ -126,6 +126,9 @@ namespace Content.Shared.Roles
         [DataField("special", serverOnly: true)]
         public JobSpecial[] Special { get; private set; } = Array.Empty<JobSpecial>();
 
+        [DataField("afterLoadoutSpecial", serverOnly: true)]
+        public JobSpecial[] AfterLoadoutSpecial { get; private set; } = [];
+
         [DataField("access")]
         public IReadOnlyCollection<ProtoId<AccessLevelPrototype>> Access { get; private set; } = Array.Empty<ProtoId<AccessLevelPrototype>>();
 

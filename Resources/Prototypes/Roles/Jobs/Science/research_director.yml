@@ -54,6 +54,11 @@
           - DispelPower
           - MetapsionicPower
           - TelepathyPower
+  afterLoadoutSpecial:
+  - !type:ModifyEnvirosuitSpecial
+    charges: 8
+  - !type:ModifyEnvirohelmSpecial
+    powerCell: PowerCellHigh
 
 - type: startingGear
   id: ResearchDirectorGear

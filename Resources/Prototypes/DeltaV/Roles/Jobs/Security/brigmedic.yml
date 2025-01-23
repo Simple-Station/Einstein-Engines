@@ -36,6 +36,11 @@
     - type: CPRTraining
     - type: SurgerySpeedModifier
       speedModifier: 2.0
+  afterLoadoutSpecial:
+  - !type:ModifyEnvirosuitSpecial
+    charges: 6
+  - !type:ModifyEnvirohelmSpecial
+    powerCell: PowerCellHigh
 
 - type: startingGear
   id: CorpsmanGear # see Prototypes/Roles/Jobs/Fun/misc_startinggear.yml for "BrigmedicGear"

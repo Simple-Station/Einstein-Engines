@@ -181,8 +181,8 @@
     sound:
       path: /Audio/Effects/extinguish.ogg
   - type: LimitedCharges
-    maxCharges: 5
-    charges: 5
+    maxCharges: 4
+    charges: 4
   - type: Armor
     modifiers:
       coefficients:

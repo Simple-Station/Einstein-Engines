@@ -41,7 +41,7 @@
 
   All Plasmamen start with an envirosuit, an envirosuit helmet, and a plasma internals tank.
 
-  Their envirosuits contain a [color=#1e90ff]self-extinguisher[/color] with 5 charges, which they can activate when they are on fire
+  Their envirosuits contain a [color=#1e90ff]self-extinguisher[/color] with limited charges, which they can activate when they are on fire
   and wearing their envirosuit helmet. The self-extinguisher needs to recharge between uses.
 
   <Box HorizontalAlignment="Stretch">

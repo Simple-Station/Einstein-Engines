@@ -17,6 +17,11 @@
   - AllAccess
   access:
   - CentralCommand
+  afterLoadoutSpecial:
+  - !type:ModifyEnvirosuitSpecial
+    charges: 10
+  - !type:ModifyEnvirohelmSpecial
+    powerCell: PowerCellHigh
 
 - type: startingGear
   id: CentcomGear

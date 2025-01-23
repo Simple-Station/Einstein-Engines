@@ -23,6 +23,11 @@
   - !type:AddTraitSpecial
     traits:
     - MartialArtist
+  afterLoadoutSpecial:
+  - !type:ModifyEnvirosuitSpecial
+    charges: 3
+  - !type:ModifyEnvirohelmSpecial
+    powerCell: PowerCellPotato
 
 - type: startingGear
   id: NyanoGladiatorGear

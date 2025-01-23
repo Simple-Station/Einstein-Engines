@@ -50,6 +50,20 @@ public abstract partial class SharedSelfExtinguisherSystem : EntitySystem
         }
     }
 
+    public void SetCharges(EntityUid uid, int? charges, int? maxCharges, SelfExtinguisherComponent? component = null)
+    {
+        if (!Resolve(uid, ref component) ||
+            !TryComp<LimitedChargesComponent>(uid, out var chargeComp))
+            return;
+
+        _charges.SetCharges((uid, chargeComp), charges, maxCharges);
+        _actions.SetCharges(component.ActionEntity, chargeComp.Charges);
+        _actions.SetMaxCharges(component.ActionEntity, chargeComp.MaxCharges);
+
+        if (charges == 0)
+            _actions.SetEnabled(component.ActionEntity, false);
+    }
+
     private void GetRelayedVerbs(EntityUid uid, SelfExtinguisherComponent component, InventoryRelayedEvent<GetVerbsEvent<EquipmentVerb>> args)
     {
         OnGetVerbs(uid, component, args.Args);

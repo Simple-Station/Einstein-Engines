@@ -19,7 +19,7 @@
   weight: 20
   startingGear: CJGear
   conditionalStartingGear:
-    - id: LawyerPlasmamanGear
+    - id: PassengerPlasmamanGear
       requirements:
       - !type:CharacterSpeciesRequirement
         species: [ Plasmaman ]
