@@ -176,7 +176,7 @@
 - type: marking
   id: ChitinidLLegCharred
   bodyPart: LLeg
-  markingCategory: Legs
+  markingCategory: LeftLeg
   speciesRestriction: [Chitinid]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Chitinid/chitinid_parts.rsi
@@ -185,7 +185,7 @@
 - type: marking
   id: ChitinidRLegCharred
   bodyPart: RLeg
-  markingCategory: Legs
+  markingCategory: RightLeg
   speciesRestriction: [Chitinid]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Chitinid/chitinid_parts.rsi
@@ -259,7 +259,7 @@
 - type: marking
   id: ChitinidLLegStripes
   bodyPart: LLeg
-  markingCategory: Legs
+  markingCategory: LeftLeg
   speciesRestriction: [Chitinid]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Chitinid/chitinid_parts.rsi
@@ -268,7 +268,7 @@
 - type: marking
   id: ChitinidRLegStripes
   bodyPart: RLeg
-  markingCategory: Legs
+  markingCategory: RightLeg
   speciesRestriction: [Chitinid]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Chitinid/chitinid_parts.rsi
@@ -314,7 +314,7 @@
 - type: marking
   id: ChitinidLLegRadiant
   bodyPart: LLeg
-  markingCategory: Legs
+  markingCategory: LeftLeg
   speciesRestriction: [Chitinid]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Chitinid/chitinid_parts.rsi
@@ -323,7 +323,7 @@
 - type: marking
   id: ChitinidRLegRadiant
   bodyPart: RLeg
-  markingCategory: Legs
+  markingCategory: RightLeg
   speciesRestriction: [Chitinid]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Chitinid/chitinid_parts.rsi
@@ -369,7 +369,7 @@
 - type: marking
   id: ChitinidLLegToxic
   bodyPart: LLeg
-  markingCategory: Legs
+  markingCategory: LeftLeg
   speciesRestriction: [Chitinid]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Chitinid/chitinid_parts.rsi
@@ -378,7 +378,7 @@
 - type: marking
   id: ChitinidRLegToxic
   bodyPart: RLeg
-  markingCategory: Legs
+  markingCategory: RightLeg
   speciesRestriction: [Chitinid]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Chitinid/chitinid_parts.rsi
@@ -424,7 +424,7 @@
 - type: marking
   id: ChitinidLLegSpotted
   bodyPart: LLeg
-  markingCategory: Legs
+  markingCategory: LeftLeg
   speciesRestriction: [Chitinid]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Chitinid/chitinid_parts.rsi
@@ -433,7 +433,7 @@
 - type: marking
   id: ChitinidRLegSpotted
   bodyPart: RLeg
-  markingCategory: Legs
+  markingCategory: RightLeg
   speciesRestriction: [Chitinid]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Chitinid/chitinid_parts.rsi
