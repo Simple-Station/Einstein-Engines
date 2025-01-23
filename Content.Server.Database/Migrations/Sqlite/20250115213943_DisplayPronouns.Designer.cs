@@ -3,6 +3,7 @@ using System;
 using Content.Server.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Content.Server.Database.Migrations.Sqlite
 {
     [DbContext(typeof(SqliteServerDbContext))]
-    partial class SqliteServerDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250115213943_DisplayPronouns")]
+    partial class DisplayPronouns
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.0");
@@ -591,6 +594,61 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.ToTable("connection_log", (string)null);
                 });
 
+            modelBuilder.Entity("Content.Server.Database.ConsentSettings", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("consent_settings_id");
+
+                    b.Property<string>("ConsentFreetext")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("consent_freetext");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("user_id");
+
+                    b.HasKey("Id")
+                        .HasName("PK_consent_settings");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
+
+                    b.ToTable("consent_settings", (string)null);
+                });
+
+            modelBuilder.Entity("Content.Server.Database.ConsentToggle", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("consent_toggle_id");
+
+                    b.Property<int>("ConsentSettingsId")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("consent_settings_id");
+
+                    b.Property<string>("ToggleProtoId")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("toggle_proto_id");
+
+                    b.Property<string>("ToggleProtoState")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("toggle_proto_state");
+
+                    b.HasKey("Id")
+                        .HasName("PK_consent_toggle");
+
+                    b.HasIndex("ConsentSettingsId", "ToggleProtoId")
+                        .IsUnique();
+
+                    b.ToTable("consent_toggle", (string)null);
+                });
+
             modelBuilder.Entity("Content.Server.Database.Job", b =>
                 {
                     b.Property<int>("Id")
@@ -803,10 +861,6 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("custom_specie_name");
 
-                    b.Property<string>("CyborgName")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("cyborg_name");
-
                     b.Property<string>("DisplayPronouns")
                         .HasColumnType("TEXT")
                         .HasColumnName("display_pronouns");
@@ -884,10 +938,6 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .IsRequired()
                         .HasColumnType("TEXT")
                         .HasColumnName("species");
-
-                    b.Property<string>("StationAiName")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("station_ai_name");
 
                     b.Property<float>("Width")
                         .HasColumnType("REAL")
@@ -1582,6 +1632,18 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Navigation("Server");
                 });
 
+            modelBuilder.Entity("Content.Server.Database.ConsentToggle", b =>
+                {
+                    b.HasOne("Content.Server.Database.ConsentSettings", "ConsentSettings")
+                        .WithMany("ConsentToggles")
+                        .HasForeignKey("ConsentSettingsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_consent_toggle_consent_settings_consent_settings_id");
+
+                    b.Navigation("ConsentSettings");
+                });
+
             modelBuilder.Entity("Content.Server.Database.Job", b =>
                 {
                     b.HasOne("Content.Server.Database.Profile", "Profile")
@@ -1880,6 +1942,11 @@ namespace Content.Server.Database.Migrations.Sqlite
             modelBuilder.Entity("Content.Server.Database.ConnectionLog", b =>
                 {
                     b.Navigation("BanHits");
+                });
+
+            modelBuilder.Entity("Content.Server.Database.ConsentSettings", b =>
+                {
+                    b.Navigation("ConsentToggles");
                 });
 
             modelBuilder.Entity("Content.Server.Database.Player", b =>
