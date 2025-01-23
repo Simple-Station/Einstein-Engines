@@ -10,6 +10,12 @@
     - type: loadout
       id: LoadoutShoesBootsWork
     - type: loadout
+      id: LoadoutShoesBootsWorkColor
+    - type: loadout
+      id: LoadoutShoesBootsJackFake
+    - type: loadout
+      id: LoadoutShoesBootsJackColor
+    - type: loadout
       id: LoadoutShoesBootsLaceup
     - type: loadout
       id: LoadoutShoesBootsWinter
@@ -19,6 +25,16 @@
       id: LoadoutShoesBootsCowboyFancy
     - type: loadout
       id: LoadoutShoesBootsFishing
+    - type: loadout
+      id: LoadoutShoesBootsAnkle
+    - type: loadout
+      id: LoadoutShoesBootsFull
+    - type: loadout
+      id: LoadoutShoesBootsMud
+    - type: loadout
+      id: LoadoutShoesBootsMudThigh
+    - type: loadout
+      id: LoadoutShoesBootsThigh
     - type: loadout
       id: LoadoutShoesSlippersDuck
     - type: loadout
@@ -33,3 +49,17 @@
       id: LoadoutShoesUnderSocksBee
     - type: loadout
       id: LoadoutShoesClothWrap
+    - type: loadout
+      id: LoadoutShoesHighHeels
+    - type: loadout
+      id: LoadoutShoesHighHeelsLong
+    - type: loadout
+      id: LoadoutShoesFlats
+    - type: loadout
+      id: LoadoutShoesSkater
+    - type: loadout
+      id: LoadoutShoesSandals
+    - type: loadout
+      id: LoadoutShoesSandalsFlipFlops
+    - type: loadout
+      id: LoadoutShoesSandalsFlipFlopsAlt

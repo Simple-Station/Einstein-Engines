@@ -81,6 +81,15 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     [DataField]
     public Gender Gender { get; private set; } = Gender.Male;
 
+    [DataField]
+    public string? DisplayPronouns { get; set; }
+
+    [DataField]
+    public string? StationAiName { get; set; }
+
+    [DataField]
+    public string? CyborgName { get; set; }
+
     /// <see cref="Appearance"/>
     public ICharacterAppearance CharacterAppearance => Appearance;
 
@@ -121,6 +130,9 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         int age,
         Sex sex,
         Gender gender,
+        string? displayPronouns,
+        string? stationAiName,
+        string? cyborgName,
         HumanoidCharacterAppearance appearance,
         SpawnPriorityPreference spawnPriority,
         Dictionary<string, JobPriority> jobPriorities,
@@ -140,6 +152,9 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         Age = age;
         Sex = sex;
         Gender = gender;
+        DisplayPronouns = displayPronouns;
+        StationAiName = stationAiName;
+        CyborgName = cyborgName;
         Appearance = appearance;
         SpawnPriority = spawnPriority;
         _jobPriorities = jobPriorities;
@@ -163,6 +178,9 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             other.Age,
             other.Sex,
             other.Gender,
+            other.DisplayPronouns,
+            other.StationAiName,
+            other.CyborgName,
             other.Appearance.Clone(),
             other.SpawnPriority,
             new Dictionary<string, JobPriority>(other.JobPriorities),
@@ -191,9 +209,19 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     /// <returns>Humanoid character profile with default settings.</returns>
     public static HumanoidCharacterProfile DefaultWithSpecies(string species = SharedHumanoidAppearanceSystem.DefaultSpecies)
     {
+        var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
+        var skinColor = SkinColor.ValidHumanSkinTone;
+
+        if (prototypeManager.TryIndex<SpeciesPrototype>(species, out var speciesPrototype))
+            skinColor = speciesPrototype.DefaultSkinTone;
+
         return new()
         {
             Species = species,
+            Appearance = new()
+            {
+                SkinColor = skinColor,
+            },
         };
     }
 
@@ -255,6 +283,9 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     public HumanoidCharacterProfile WithAge(int age) => new(this) { Age = age };
     public HumanoidCharacterProfile WithSex(Sex sex) => new(this) { Sex = sex };
     public HumanoidCharacterProfile WithGender(Gender gender) => new(this) { Gender = gender };
+    public HumanoidCharacterProfile WithDisplayPronouns(string? displayPronouns) => new(this) { DisplayPronouns = displayPronouns };
+    public HumanoidCharacterProfile WithStationAiName(string? stationAiName) => new(this) { StationAiName = stationAiName };
+    public HumanoidCharacterProfile WithCyborgName(string? cyborgName) => new(this) { CyborgName = cyborgName };
     public HumanoidCharacterProfile WithSpecies(string species) => new(this) { Species = species };
     public HumanoidCharacterProfile WithCustomSpeciesName(string customspeciename) => new(this) { Customspeciename = customspeciename };
     public HumanoidCharacterProfile WithHeight(float height) => new(this) { Height = height };
@@ -468,14 +499,17 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
 
         var antags = AntagPreferences
             .Where(id => prototypeManager.TryIndex<AntagPrototype>(id, out var antag) && antag.SetPreference)
+            .Distinct()
             .ToList();
 
         var traits = TraitPreferences
             .Where(prototypeManager.HasIndex<TraitPrototype>)
+            .Distinct()
             .ToList();
 
         var loadouts = LoadoutPreferences
             .Where(l => prototypeManager.HasIndex<LoadoutPrototype>(l.LoadoutName))
+            .Distinct()
             .ToList();
 
         Name = name;

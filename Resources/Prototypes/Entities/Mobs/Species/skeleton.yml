@@ -104,6 +104,7 @@
   - type: FireVisuals
     alternateState: Standing
   - type: FootPrints
+  - type: LayingDown
 
 - type: entity
   parent: BaseSpeciesDummy

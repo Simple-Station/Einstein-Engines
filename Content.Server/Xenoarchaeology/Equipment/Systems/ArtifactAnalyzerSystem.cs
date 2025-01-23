@@ -11,6 +11,7 @@ using Content.Shared.DeviceLinking;
 using Content.Shared.DeviceLinking.Events;
 using Content.Shared.Placeable;
 using Content.Shared.Popups;
+using Content.Shared.Power;
 using Content.Shared.Research.Components;
 using Content.Shared.Xenoarchaeology.Equipment;
 using Content.Shared.Xenoarchaeology.XenoArtifacts;
@@ -377,7 +378,7 @@ public sealed class ArtifactAnalyzerSystem : EntitySystem
         if (TryComp<ArtifactAnalyzerComponent>(component.AnalyzerEntity.Value, out var analyzer) &&
             analyzer != null)
         {
-            _glimmerSystem.Glimmer += (int) pointValue / analyzer.ExtractRatio;
+            _glimmerSystem.DeltaGlimmerInput(pointValue / analyzer.ExtractRatio);
         }
         // Nyano - End modified code block.
 

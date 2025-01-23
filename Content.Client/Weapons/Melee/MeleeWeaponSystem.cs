@@ -146,11 +146,14 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
         if (!weapon.DisableClick &&
             (!weapon.SwapKeys ? useDown : altDown))
         {
-            var attackerPos = Transform(entity).MapPosition;
+            var attackerPos = TransformSystem.GetMapCoordinates(entity);
 
             if (mousePos.MapId != attackerPos.MapId ||
                 (attackerPos.Position - mousePos.Position).Length() > weapon.Range)
             {
+                if (weapon.HeavyOnLightMiss)
+                    ClientHeavyAttack(entity, coordinates, weaponUid, weapon);
+
                 return;
             }
 
@@ -164,6 +167,12 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
             // Don't light-attack if interaction will be handling this instead
             if (Interaction.CombatModeCanHandInteract(entity, target))
                 return;
+
+            if (weapon.HeavyOnLightMiss && !CanDoLightAttack(entity, target, weapon, out _))
+            {
+                ClientHeavyAttack(entity, coordinates, weaponUid, weapon);
+                return;
+            }
 
             RaisePredictiveEvent(new LightAttackEvent(GetNetEntity(target), GetNetEntity(weaponUid), GetNetCoordinates(coordinates)));
         }

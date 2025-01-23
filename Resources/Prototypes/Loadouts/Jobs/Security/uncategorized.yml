@@ -130,6 +130,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - MagazinePistol
 
@@ -146,6 +148,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - MagazinePistol
 
@@ -159,6 +163,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - MagazinePistolRubber
 
@@ -172,6 +178,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - MagazinePistolRubber
 
@@ -189,6 +197,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - SpeedLoaderMagnum
 
@@ -206,6 +216,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - SpeedLoaderMagnum
 
@@ -220,6 +232,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - SpeedLoaderMagnumRubber
 
@@ -234,6 +248,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - SpeedLoaderMagnumRubber
 
@@ -251,6 +267,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - MagazineMagnum
 
@@ -268,6 +286,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - MagazineMagnumRubber
 
@@ -285,6 +305,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - MagazineMagnum
 
@@ -302,8 +324,80 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - MagazineMagnumRubber
+
+- type: loadout
+  id: LoadoutSpeedLoaderRifleHeavy
+  category: JobsSecurityAUncategorized
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 3600 # 1 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityEquipment
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterAgeRequirement
+      min: 21
+  items:
+    - SpeedLoaderRifleHeavy
+
+- type: loadout
+  id: LoadoutSpeedLoaderRifleHeavySpare
+  category: JobsSecurityAUncategorized
+  cost: 4
+  exclusive: true
+  requirements:
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 3600 # 1 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityEquipment
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterAgeRequirement
+      min: 21
+  items:
+    - SpeedLoaderRifleHeavy
+
+- type: loadout
+  id: LoadoutSpeedLoaderRifleHeavyRubber
+  category: JobsSecurityAUncategorized
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityEquipment
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterAgeRequirement
+      min: 21
+  items:
+    - SpeedLoaderRifleHeavyRubber
+
+- type: loadout
+  id: LoadoutSpeedLoaderRifleHeavyRubberSpare
+  category: JobsSecurityAUncategorized
+  cost: 4
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityEquipment
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterAgeRequirement
+      min: 21
+  items:
+    - SpeedLoaderRifleHeavyRubber
 
 # Service Weapon, limit 1 selection.
 # Security no longer spawns with a weapon automatically, instead they have a free choice of security appropriate Duty Pistol in their loadouts.
@@ -339,6 +433,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponPistolMk58Security
 
@@ -354,6 +450,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponPistolMk58SecurityNonlethal
 
@@ -372,6 +470,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponRevolverInspectorSecurity
 
@@ -387,6 +487,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponRevolverInspectorNonLethalSecurity
 
@@ -405,6 +507,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponRevolverDeckardSecurity
 
@@ -420,6 +524,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponRevolverDeckardNonLethalSecurity
 
@@ -438,6 +544,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponPistolN1984Security
 
@@ -453,6 +561,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponPistolN1984SecurityNonLethal
 
@@ -471,6 +581,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponPistolViperSecurity
 
@@ -486,6 +598,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponPistolViperSecurityNonLethal
 
@@ -504,6 +618,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponPistolViperWoodSecurity
 
@@ -529,6 +645,24 @@
     - Truncheon
 
 - type: loadout
+  id: LoadoutSecurityEquipmentEnergySword
+  category: JobsSecurityAUncategorized
+  cost: 4
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 18000 # 5 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityWeapons
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - EnergyCutlassSecurity
+
+- type: loadout
   id: LoadoutSecurityPistolSvalin
   category: JobsSecurityAUncategorized
   cost: 1
@@ -543,6 +677,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponLaserSvalinn
 
@@ -561,6 +697,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponEnergyGunMiniSecurity
 
@@ -579,6 +717,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponEnergyGunPistolSecurity
 
@@ -597,6 +737,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponPistolPollockSecurity
 
@@ -612,6 +754,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponPistolPollockNonlethalSecurity
 
@@ -630,6 +774,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponRevolverSnubSecurity
 
@@ -645,6 +791,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponRevolverSnubNonlethalSecurity
 
@@ -663,6 +811,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponRevolverK38MasterSecurity
 
@@ -678,6 +828,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponRevolverK38MasterNonlethalSecurity
 
@@ -696,6 +848,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponRevolverFitzSecurity
 
@@ -711,6 +865,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponRevolverFitzNonlethalSecurity
 
@@ -729,6 +885,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponRevolverPythonSecurity
 
@@ -744,8 +902,67 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponRevolverPythonNonlethalSecurity
+
+- type: loadout
+  id: LoadoutSecurityArgenti
+  category: JobsSecurityAUncategorized
+  cost: 0
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 3600 # 1 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityWeapons
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterAgeRequirement
+      min: 21
+  items:
+    - WeaponRevolverArgentiSecurity
+
+- type: loadout
+  id: LoadoutSecurityArgentiNonLethal
+  category: JobsSecurityAUncategorized
+  cost: 0
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityWeapons
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterAgeRequirement
+      min: 21
+  items:
+    - WeaponRevolverArgentiNonLethalSecurity
+
+- type: loadout
+  id: LoadoutSecurityEnergyRevolver
+  category: JobsSecurityAUncategorized
+  cost: 10
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityWeapons
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 18000 # 5 hours
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterAgeRequirement
+      min: 21
+  items:
+    - WeaponEnergyRevolverSecurity
 
 # Eyes
 - type: loadout
@@ -821,6 +1038,48 @@
   items:
     - ClothingEyesGlassesSecurity
 
+- type: loadout
+  id: LoadoutClothingEyesGlassesSecurityAviator
+  category: JobsSecurityAUncategorized
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityEyes
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingEyesGlassesSecurityAviator
+
+- type: loadout
+  id: LoadoutClothingEyesGlassesSecurityBig
+  category: JobsSecurityAUncategorized
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityEyes
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingEyesGlassesSecurityBig
+
+- type: loadout
+  id: LoadoutClothingEyesGlassesSecurityVisor
+  category: JobsSecurityAUncategorized
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityEyes
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingEyesGlassesSecurityVisor
+
 # Gloves
 
 # Head
@@ -856,6 +1115,7 @@
   id: LoadoutSecurityHeadHelmetInsulated
   category: JobsSecurityAUncategorized
   cost: 1
+  guideEntry: PsionicInsulation
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityHead
@@ -886,6 +1146,20 @@
     - ClothingMaskGasSwat
 
 # Outer
+- type: loadout
+  id: LoadoutClothingOuterWinterCoatSec
+  category: JobsSecurityAUncategorized
+  cost: 0
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityOuter
+  - !type:CharacterDepartmentRequirement
+    departments:
+    - Security
+  items:
+  - ClothingOuterWinterSec
+
+
 - type: loadout
   id: LoadoutClothingOuterArmorPlateCarrier
   category: JobsSecurityAUncategorized

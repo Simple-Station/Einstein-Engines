@@ -97,6 +97,8 @@
   items:
     - type: loadout
       id: LoadoutAtmosphericTechnicianChickenSuit
+    - type: loadout
+      id: LoadoutAtmosphericTechnicianWinterCoat
 
 - type: characterItemGroup
   id: LoadoutAtmosphericTechnicianShoes

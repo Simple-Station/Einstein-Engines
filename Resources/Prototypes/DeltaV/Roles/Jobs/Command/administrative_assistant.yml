@@ -1,0 +1,46 @@
+- type: job
+  id: AdministrativeAssistant
+  name: job-name-admin-assistant
+  description: job-description-admin-assistant
+  playTimeTracker: JobAdminAssistant
+  requirements:
+    - !type:CharacterDepartmentTimeRequirement
+      department: Engineering
+      min: 10800 # 3 hours
+    - !type:CharacterDepartmentTimeRequirement
+      department: Logistics
+      min: 10800 # 3 hours
+    - !type:CharacterDepartmentTimeRequirement
+      department: Medical
+      min: 10800 # 3 hours
+    - !type:CharacterDepartmentTimeRequirement
+      department: Civilian
+      min: 10800 # 3 hours
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 10800 # 3 hours
+    - !type:CharacterDepartmentTimeRequirement
+      department: Epistemics
+      min: 10800 # 3 hours
+  startingGear: AdminAssistantGear
+  icon: "JobIconAdminAssitant"
+  supervisors: job-supervisors-command
+  canBeAntag: false
+  access:
+    - Command
+    - Maintenance
+  special:
+    - !type:AddImplantSpecial
+      implants: [MindShieldImplant]
+    - !type:AddComponentSpecial
+      components:
+      - type: CommandStaff
+
+- type: startingGear
+  id: AdminAssistantGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitAdminAssistant
+    id: AdminAssistantPDA
+    ears: ClothingHeadsetAdminAssist
+    shoes: ClothingShoesLeather
+  innerClothingSkirt: ClothingUniformJumpskirtAdminAssistant

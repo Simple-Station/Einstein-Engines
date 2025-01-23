@@ -20,6 +20,11 @@ ui-options-general-cursor = Cursor
 ui-options-general-speech = Speech
 ui-options-general-storage = Storage
 ui-options-general-accessibility = Accessibility
+ui-options-chatstack = Automatically merge identical chat messages
+ui-options-chatstack-off = Off
+ui-options-chatstack-single = Only last message
+ui-options-chatstack-double = Last two messages
+ui-options-chatstack-triple = Last three messages
 
 ## Audio menu
 
@@ -213,6 +218,9 @@ ui-options-function-editor-line-place = Place line
 ui-options-function-editor-rotate-object = Rotate
 ui-options-function-editor-flip-object = Flip
 ui-options-function-editor-copy-object = Copy
+ui-options-function-mapping-enable-pick = Pick object/tile
+ui-options-function-mapping-enable-decal-pick = Pick decal
+ui-options-function-mapping-enable-delete = Delete object
 
 ui-options-function-show-debug-console = Open Console
 ui-options-function-show-debug-monitors = Show Debug Monitors

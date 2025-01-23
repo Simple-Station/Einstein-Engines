@@ -1,14 +1,12 @@
 ﻿<Document>
+  Certain substances are considered controlled due to their hazardous, addictive, or otherwise detrimental nature. These substances are categorized based on their potential for abuse, danger to personnel, or restricted usage outside of authorized roles and departments. Unauthorized possession, production, or distribution of these substances is a violation of NanoTrasen policy.
+
   # Space Law: Controlled Substances
-  - \[Chemists/Science\] Explosive and pyrotechnic compounds excluding welding fuel contained in welders or welding fuel storage vessels
-  - \[Science\] Toxins
-  - \[Medical\] Chloral hydrate, Impedrezene, Ipecac, and Pax
-  - \[Medical\] Desoxyephedrine and Ephedrine
-  - \[None\] Mindbreaker toxin
-  - \[None\] Mute toxin
-  - \[None\] Nocturine
-  - \[None\] Norepinephirc acid
-  - \[None\] Romerol
-  - \[None\] Space drugs
-  - \[None\] Stimulants, excluding Desoxyephedrine and Ephedrine
+
+  - [color=#cb0000]\[Chemists/Science\][/color] Includes any compound capable of combustion, explosion, or significant thermal output (excluding welding fuel stored in approved containers or welders for maintenance use.)
+  - [color=#cb0000]\[Science\][/color] Substances that directly harm or kill biological organisms. Examples include chemical toxins used in research or biohazard testing
+  - [color=#cb0000]\[Medical\][/color] Includes substances designed to impair cognitive function, induce paralysis, or suppress neural activity (Authorized for use by medical staff only in controlled doses for therapeutic purposes.)
+  - [color=#cb0000]\[Medical\][/color] Substances that enhance physical or mental performance, increase energy, or reduce fatigue (Restricted to medical use or approved research by medical personnel.)
+  - [color=#cb0000]\[None\][/color] Substances that alter perception, induce hallucinations, or affect mental stability (Unauthorized possession or distribution is prohibited unless explicitly authorized for research purposes.)
+  - [color=#cb0000]\[None\][/color] Any chemical compound classified as experimental or restricted under NanoTrasen policy (Includes substances with unknown effects or those tied to unauthorized cult activity or rituals.)
 </Document>

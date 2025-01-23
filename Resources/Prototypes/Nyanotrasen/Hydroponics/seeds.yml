@@ -22,8 +22,8 @@
     Nutriment:
       Min: 1
       Max: 10
-      potencyDivisor: 10
+      PotencyDivisor: 10
     DemonsBlood:
       Min: 1
       Max: 4
-      potencyDivisor: 25
+      PotencyDivisor: 25

@@ -66,7 +66,7 @@ public sealed class CultRuneRendingSystem : EntitySystem
         var ev = new RendingRuneDoAfter();
         var argsDoAfterEvent = new DoAfterArgs(EntityManager, args.User, rune.Comp.SummonTime, ev, rune)
         {
-            BreakOnUserMove = true
+            BreakOnMove = true
         };
 
         if (!_doAfter.TryStartDoAfter(argsDoAfterEvent, out rune.Comp.CurrentDoAfter))

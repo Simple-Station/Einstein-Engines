@@ -51,6 +51,10 @@
     - JobsCommandAUncategorized
     - JobsCommandCaptain
     - JobsCommandHeadOfPersonnel
+    - JobsCommandAdminAssistant
+    - JobsCommandBlueshieldOfficer
+    - JobsCommandNanorep
+    - JobsCommandMagistrate
 
 - type: loadoutCategory
   id: JobsCommandAUncategorized
@@ -60,6 +64,18 @@
 
 - type: loadoutCategory
   id: JobsCommandHeadOfPersonnel
+
+- type: loadoutCategory
+  id: JobsCommandAdminAssistant
+
+- type: loadoutCategory
+  id: JobsCommandBlueshieldOfficer
+
+- type: loadoutCategory
+  id: JobsCommandNanorep
+
+- type: loadoutCategory
+  id: JobsCommandMagistrate
 
 # Engineering
 - type: loadoutCategory
@@ -287,6 +303,10 @@
 
 - type: loadoutCategory
   id: Outer
+  root: true
+
+- type: loadoutCategory
+  id: Belt
   root: true
 
 - type: loadoutCategory

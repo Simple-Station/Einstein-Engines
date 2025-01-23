@@ -1,0 +1,83 @@
+- type: loadout
+  id: LoadoutBeltGeneric
+  category: Belt
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingBeltGeneric
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBelt
+
+- type: loadout
+  id: LoadoutBeltGenericThin
+  category: Belt
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingBeltGenericThin
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBelt
+
+- type: loadout
+  id: LoadoutBeltGenericThick
+  category: Belt
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingBeltGenericThick
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBelt
+
+- type: loadout
+  id: LoadoutBeltWaist
+  category: Belt
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingBeltWaist
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBelt
+
+- type: loadout
+  id: LoadoutBeltWaistThin
+  category: Belt
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingBeltWaistThin
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBelt
+
+- type: loadout
+  id: LoadoutItemWaistbag
+  category: Belt
+  cost: 2
+  items:
+    - ClothingBeltStorageWaistbag
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBelt
+    - !type:CharacterJobRequirement
+       inverted: true
+       jobs:
+         - Prisoner
+
+- type: loadout
+  id: LoadoutBeltWaistbagColor
+  category: Belt
+  cost: 2
+  customColorTint: true
+  items:
+    - ClothingBeltStorageWaistbagColor
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBelt
+    - !type:CharacterJobRequirement
+       inverted: true
+       jobs:
+         - Prisoner

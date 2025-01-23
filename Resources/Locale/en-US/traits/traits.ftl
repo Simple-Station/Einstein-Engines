@@ -163,21 +163,45 @@ trait-description-LowPainTolerance =
     Your tolerance for pain is far below average, and its effects are more inhibiting.
     Your melee/throwing damage is penalized by up to an additional 15% when taking stamina damage.
 
+trait-name-Steadfast = Steadfast
+trait-description-Steadfast =
+    When others would buckle from the weight of your injuries, you still march forward unrelentingly.
+    For most species [color=gray](excluding IPC/Shadowkin)[/color], this trait modifies:
+    - [color=yellow]25%[/color] movement slow at [color=red]60[/color] damage ➔ [color=yellow]17%[/color] movement slow at [color=red]70[/color] damage
+    - [color=yellow]45%[/color] movement slow at [color=red]80[/color] damage ➔ [color=yellow]30%[/color] movement slow at [color=red]90[/color] damage
+
+trait-name-Feeble = Feeble
+trait-description-Feeble =
+    Your body responds poorly to injuries, making damage affect your movement more severely.
+    For most species [color=gray](excluding IPC/Shadowkin)[/color], this trait modifies:
+    - [color=yellow]25%[/color] movement slow at [color=red]60[/color] damage ➔ [color=yellow]30%[/color] movement slow at [color=red]45[/color] damage
+    - [color=yellow]45%[/color] movement slow at [color=red]80[/color] damage ➔ [color=yellow]54%[/color] movement slow at [color=red]65[/color] damage
+
 trait-name-MartialArtist = Martial Artist
 trait-description-MartialArtist =
-    You have received formal training in unarmed combat, whether with Fists, Feet, or Claws.
-    Your unarmed melee attacks have a small range increase, and deal 50% more damage.
-    This does not apply to any form of armed melee, only the weapons you were naturally born with.
+    You have received formal training in unarmed combat, whether with fists, claws, feet, or teeth.
+    Your unarmed melee attack is now considered a single-target [color=orange]Power Attack[/color], requiring less precision.
+    Additionally, your unarmed melee attacks deal [color=yellow]20%[/color] more damage, attack [color=yellow]25%[/color] faster, and have [color=yellow]10%[/color] increased range.
+    This has no effect on damage dealt with any form of armed melee.
+    The [color=#9FED58]Boxer[/color], [color=#9FED58]Martial Artist[/color], and [color=#9FED58]Gladiator[/color] jobs start with this trait by default.
+
+-stamina-info = [color=gray]Most species start with [color=#919039]100 points[/color] of stamina and [color=#919039]3 points[/color] of stamina regen per second.[/color]
 
 trait-name-Vigor = Vigor
 trait-description-Vigor =
     Whether by pure determination, fitness, or bionic augmentations, your endurance is enhanced.
-    Your stamina is increased by 10 points.
+    Your stamina is increased by [color=yellow]10 points[/color].
+    Your stamina regen per second is increased by [color=yellow]0.6 points[/color].
+    Stamina regen now starts [color=lightblue]2.25 seconds[/color] after taking stamina damage, instead of [color=lightblue]3 seconds[/color].
+    { -stamina-info }
 
 trait-name-Lethargy = Lethargy
 trait-description-Lethargy =
     You become tired faster than others, making you more vulnerable to exhaustion and fatigue.
-    Your stamina is decreased by 15 points.
+    Your stamina is decreased by [color=yellow]15 points[/color].
+    Your stamina regen per second is decreased by [color=yellow]0.6 points[/color].
+    Stamina regen now starts [color=lightblue]3.75 seconds[/color] after taking stamina damage, instead of [color=lightblue]3 seconds[/color].
+    { -stamina-info }
 
 trait-name-SignLanguage = Sign Language
 trait-description-SignLanguage =
@@ -210,20 +234,32 @@ trait-description-Voracious =
     Nothing gets between you and your food.
     Your endless consumption of food and drinks is twice as fast.
 
+-terrain-example = [color=gray](e.g. plastic flaps, spider webs, slime puddles, kudzu)[/color]
+-slippery-example = [color=gray](e.g. banana peels, water puddles, soap, space lube)[/color]
+
 trait-name-ParkourTraining = Parkour Training
 trait-description-ParkourTraining =
     Whether as a hobby, lifestyle, or professional training, you are trained in the discipline of parkour.
-    You're faster with climbing, crawling, lying down, and getting up.
+    You climb structures like tables [color=yellow]50%[/color] faster.
+    Slipping leaves you stunned for [color=yellow]30%[/color] shorter. { -slippery-example }
+    You gain a [color=yellow]50%[/color] resistance to slows from difficult terrain. { -terrain-example }
+
+trait-name-BadKnees = Bad Knees
+trait-description-BadKnees =
+    Whether due to injury, age, or wear and tear, your knees aren't particularly strong or flexible.
+    You climb structures like tables [color=yellow]50%[/color] slower.
+    Slipping leaves you stunned for [color=yellow]40%[/color] longer. { -slippery-example }
+    Difficult terrain slows you down [color=yellow]35%[/color] more. { -terrain-example }
 
 trait-name-Sluggish = Sluggish
 trait-description-Sluggish =
     You navigate the world slower than others, perhaps due to a medical condition, inactivity, or age.
-    You move slower, and it takes longer for you to climb, lie down and get up.
+    Your movement speed is decreased by [color=yellow]16%[/color].
 
 trait-name-SnailPaced = Snail-Paced
 trait-description-SnailPaced =
     You walk at a snail's pace, perhaps due to a medical condition, mobility impairment, or age.
-    You move substantially slower, and it takes far longer for you to climb, lie down and get up.
+    Your movement speed is decreased by [color=yellow]32%[/color].
 
 trait-name-LightStep = Light Step
 trait-description-LightStep =
@@ -366,7 +402,7 @@ trait-description-HighPotential =
     Your connection to the noösphere is greater than average, making it easier to obtain new psionic powers.
 
 trait-name-LowAmplification = kα Deficiency
-trait-description-LowAmplifiction =
+trait-description-LowAmplification =
     Your psionic abilities are noticeably weaker than ones used by other psions.
 
 trait-name-HighAmplification = kα Abundance
@@ -412,32 +448,29 @@ trait-description-CyberEyes =
     Their most basic functionality is to provide amelioration for weaknesses of the wearer's natural eyes.
     The functionality of these implants can be extended by a variety of commercially available modules.
 
-trait-name-FlareShielding = Cyber-Eyes Flare Shielding
+trait-name-FlareShielding = Cyber-Eyes: Eye Damage Resistance
 trait-description-FlareShielding =
     Your cybereyes have been fitted with a photochromic lense that automatically darkens in response to intense stimuli.
-    This provides substantial protection from bright flashes of light, such as those from welding arcs.
+    This provides immunity from most bright flashes of light, such as those from welding arcs.
 
-trait-name-CyberEyesSecurity = Cyber-Eyes SecHud
+trait-name-CyberEyesSecurity = Cyber-Eyes: SecHud Module
 trait-description-CyberEyesSecurity =
     Your Cyber-Eyes have been upgraded to include a built-in Security Hud. Note that this augmentation is considered Contraband
     for anyone not under the employ of station Security personel, and may be disabled by your employer before dispatch to the station.
 
-trait-name-CyberEyesMedical = Cyber-Eyes MedHud
+trait-name-CyberEyesMedical = Cyber-Eyes: MedHud Module
 trait-description-CyberEyesMedical =
     Your Cyber-Eyes have been upgraded to include a built-in Medical Hud, allowing you to track the relative health condition of biological organisms.
 
-trait-name-CyberEyesDiagnostic = Cyber-Eyes DiagHud
+trait-name-CyberEyesDiagnostic = Cyber-Eyes: Diagnostics Module
 trait-description-CyberEyesDiagnostic =
     Your Cyber-Eyes have been upgraded to include a built-in Diagnostic Hud, allowing you to track the condition of synthetic entities.
 
-trait-name-CyberEyesOmni = Cyber-Eyes HudSuite
+trait-name-CyberEyesOmni = Cyber-Eyes: Premium Suite Module
 trait-description-CyberEyesOmni =
-    This expensive implant provides the combined benefits of a SecHud, MedHud, and a DiagHud.
+    This expensive implant provides the combined benefits of a SecHud, MedHud, and a Diagnostics Module.
     Note that this augmentation is considered Contraband for anyone not under the employ of station Security personel,
     and may be disabled by your employer before dispatch to the station.
-
-trait-name-ShadowkinBlackeye = Blackeye
-trait-description-ShadowkinBlackeye = You lose your special Shadowkin powers, in return for some points.
 
 trait-name-DispelPower = Normality Projection
 trait-description-DispelPower =
@@ -467,13 +500,23 @@ trait-description-PsychognomyPower =
 
 trait-name-Redshirt = Redshirt
 trait-description-Redshirt =
-    They said this air would be breathable.
+    "They said this air would be breathable.
     Get in, get out again, and no one gets hurt.
     Something is pulling me up the hill.
     I look down in my red shirt.
-    I look down in my red shirt.
+    I look down in my red shirt."
+    Reduces your threshold for death by 100 points.
 
 trait-name-BrittleBoneDisease = Osteogenesis Imperfecta
 trait-description-BrittleBoneDisease =
     Also known as "brittle bone disease", people with this genetic disorder have bones that are easily broken,
     often simply by moving. This trait reduces your threshold for critical injury by 50 points.
+
+trait-name-LightAmplification = CyberEyes Module: Light Amplification
+trait-description-LightAmplification =
+    Your CyberEyes have been enhanced with a light amplifier module, enabling the user to toggle between standard sight and "Night Vision" mode.
+
+trait-name-ThermographicVision = CyberEyes Module: Thermographic Scanner
+trait-description-ThermographicVision =
+    Your CyberEyes have been enhanced with a Thermographic Scanner. When enabled, it captures a snapshot of the user's surroundings, while highlighting all
+    biological life forms. It can even detect individuals through the walls of a station.

@@ -121,3 +121,16 @@
       id: LoadoutBookRandom
     - type: loadout
       id: LoadoutPen
+
+- type: characterItemGroup
+  id: LoadoutPets
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutItemPetMouse
+    - type: loadout
+      id: LoadoutItemPetHamster
+    - type: loadout
+      id: LoadoutItemPetMothroach
+    - type: loadout
+      id: LoadoutItemPetCockroach

@@ -18,15 +18,6 @@
       min: 43200 # DeltaV - 12 hours
     - !type:CharacterOverallTimeRequirement
       min: 72000 # DeltaV - 20 hours
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterSpeciesRequirement
-          inverted: true
-          species:
-            - Shadowkin
-        - !type:CharacterTraitRequirement
-          traits:
-            - ShadowkinBlackeye
   weight: 10
   startingGear: CMOGear
   icon: "JobIconChiefMedicalOfficer"
@@ -53,7 +44,7 @@
     components:
     - type: CPRTraining
     - type: SurgerySpeedModifier
-      SpeedModifier: 2.5
+      speedModifier: 2.5
 
 - type: startingGear
   id: CMOGear
