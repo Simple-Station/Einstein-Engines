@@ -25,7 +25,7 @@
   - type: Carriable
 
   - type: Icon
-    sprite: _DV/Mobs/Species/Chitinid/parts.rsi
+    sprite: DeltaV/Mobs/Species/Chitinid/parts.rsi
     state: full
 
   - type: Body

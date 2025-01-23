@@ -7,7 +7,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: _DV/Mobs/Species/Chitinid/parts.rsi
+    sprite: DeltaV/Mobs/Species/Chitinid/parts.rsi
   - type: Extractable
     juiceSolution:
       reagents:

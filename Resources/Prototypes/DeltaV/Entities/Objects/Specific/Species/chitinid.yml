@@ -5,7 +5,7 @@
   description: A small radioactive stone formed in the chest cavity of a radioactive chitinid, gross.... but kinda pretty?
   components:
   - type: Sprite
-    sprite: _DV/Objects/Specific/Species/chitinid.rsi
+    sprite: DeltaV/Objects/Specific/Species/chitinid.rsi
     layers:
       - state: chitzite
       - state: chitzite_glow
