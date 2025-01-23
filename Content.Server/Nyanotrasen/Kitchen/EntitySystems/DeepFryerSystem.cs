@@ -124,6 +124,24 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
         SubscribeLocalEvent<DeepFriedComponent, ExaminedEvent>(OnExamineFried);
         SubscribeLocalEvent<DeepFriedComponent, PriceCalculationEvent>(OnPriceCalculation);
         SubscribeLocalEvent<DeepFriedComponent, FoodSlicedEvent>(OnSliceDeepFried);
+
+        SubscribeLocalEvent<DeepFryerComponent, CanDropTargetEvent>(OnCanDragDropOn);
+        SubscribeLocalEvent<DeepFryerComponent, DragDropTargetEvent>(OnDragDropOn);
+        SubscribeLocalEvent<DeepFryerComponent, RefreshPartsEvent>(OnRefreshParts);
+    }
+
+    private void OnRefreshParts(EntityUid uid, DeepFryerComponent component, RefreshPartsEvent args)
+    {
+        var ratingStorage = args.PartRatings[component.MachinePartStorageMax];
+
+        component.StorageMaxEntities = component.BaseStorageMaxEntities +
+            (int) (component.StoragePerPartRating * (ratingStorage - 1));
+    }
+
+    private void OnDragDropOn(EntityUid uid, DeepFryerComponent component, ref DragDropTargetEvent args)
+    {
+        _containerSystem.Insert(args.Dragged, component.Storage);
+        args.Handled = true;
     }
 
     private void UpdateUserInterface(EntityUid uid, DeepFryerComponent component)
