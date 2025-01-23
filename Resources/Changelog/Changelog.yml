@@ -10600,3 +10600,18 @@ Entries:
   id: 6750
   time: '2025-01-23T00:16:33.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1611
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: Added cosmetic pronouns. (disabled by default)
+    - type: Add
+      message: >-
+        Added Station AI name customization through character customization.
+        (disabled by default)
+    - type: Add
+      message: >-
+        Added Cyborg name customization through character customization.
+        (disabled by default)
+  id: 6751
+  time: '2025-01-23T00:19:49.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1626
