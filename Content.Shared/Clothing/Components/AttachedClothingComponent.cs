@@ -1,4 +1,4 @@
-ausing Content.Shared.Clothing.EntitySystems;
+using Content.Shared.Clothing.EntitySystems;
 using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
 
