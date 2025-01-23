@@ -43,5 +43,5 @@
       highPressureMultiplier: 0.3
       lowPressureMultiplier: 1000
     - type: TemperatureProtection
-      coolingCoefficient: 0.1
-      heatingCoefficient: 0.4
+      coefficient: 0.1
+
