@@ -53,3 +53,9 @@
   id: oni
   typingState: oni0
   offset: 0, 0.0625
+
+- type: typingIndicator
+  id: tajaran
+  spritePath: /Textures/_DV/Effects/speech.rsi
+  typingState: felinid0
+  offset: 0, 0.2 # 0625

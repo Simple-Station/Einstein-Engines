@@ -168,3 +168,9 @@ chat-speech-verb-electricity-2 = buzzes
 chat-speech-verb-electricity-3 = screeches
 
 chat-speech-verb-marish = Mars
+
+chat-speech-verb-name-tajaran = Tajaran
+chat-speech-verb-tajaran-1 = mraows
+chat-speech-verb-tajaran-2 = mews
+chat-speech-verb-tajaran-3 = meows
+chat-speech-verb-tajaran-4 = purrs out

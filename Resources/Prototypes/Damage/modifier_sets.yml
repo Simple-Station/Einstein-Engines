@@ -384,3 +384,10 @@
   id: PotassiumIodide
   coefficients:
     Radiation: 0.1
+
+- type: damageModifierSet 
+  id: Tajaran
+  coefficients: # Literally the same as felinids, but seperate cuz there's no parenting?
+    Blunt: 1.15
+    Slash: 1.15
+    Piercing: 1.15

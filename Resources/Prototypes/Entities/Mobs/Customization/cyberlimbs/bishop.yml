@@ -76,7 +76,7 @@
   id: CyberLimbsMarkingBishopLFoot
   bodyPart: LFoot
   markingCategory: LeftFoot
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian]
+  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Tajaran]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/bishop/bishop_main.rsi
     state: l_foot
@@ -87,7 +87,7 @@
   id: CyberLimbsMarkingBishopRArm
   bodyPart: RArm
   markingCategory: RightArm
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Arachne, Lamia]
+  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Arachne, Lamia, Tajaran]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/bishop/bishop_main.rsi
     state: r_arm-primary
@@ -101,7 +101,7 @@
   id: CyberLimbsMarkingBishopRHand
   bodyPart: RHand
   markingCategory: RightHand
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Arachne, Lamia]
+  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Arachne, Lamia, Tajaran]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/bishop/bishop_main.rsi
     state: r_hand
@@ -110,7 +110,7 @@
   id: CyberLimbsMarkingBishopRLeg
   bodyPart: RLeg
   markingCategory: RightLeg
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian]
+  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Tajaran]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/bishop/bishop_main.rsi
     state: r_leg-primary
@@ -122,7 +122,7 @@
   id: CyberLimbsMarkingBishopRFoot
   bodyPart: RFoot
   markingCategory: RightFoot
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian]
+  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Tajaran]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/bishop/bishop_main.rsi
     state: r_foot

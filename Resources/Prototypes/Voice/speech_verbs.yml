@@ -173,3 +173,12 @@
   - chat-speech-verb-electricity-1
   - chat-speech-verb-electricity-2
   - chat-speech-verb-electricity-3
+
+- type: speechVerb
+  id: Tajaran
+  name: chat-speech-verb-name-tajaran
+  speechVerbStrings:
+  - chat-speech-verb-tajaran-1
+  - chat-speech-verb-tajaran-2
+  - chat-speech-verb-tajaran-3
+  - chat-speech-verb-tajaran-4
