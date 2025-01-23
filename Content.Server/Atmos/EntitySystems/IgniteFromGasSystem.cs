@@ -64,7 +64,7 @@ public sealed class IgniteFromGasSystem : EntitySystem
 
     private void HandleRemoveBodyPart(Entity<IgniteFromGasComponent> ent, Entity<BodyPartComponent> part)
     {
-        if (!TryComp<IgniteFromGasPartComponent>(part, out var ignitePart) ||
+        if (!HasComp<IgniteFromGasPartComponent>(part) ||
             _body.GetTargetBodyPart(part.Comp.PartType, part.Comp.Symmetry) is not { } targetBodyPart)
             return;
 

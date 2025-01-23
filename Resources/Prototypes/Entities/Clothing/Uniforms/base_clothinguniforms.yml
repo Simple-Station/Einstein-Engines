@@ -173,7 +173,7 @@
     - RightFoot
   - type: Clothing
     equipDelay: 0.4
-    unequipDelay: 0.75 # Slightly higher delay to protect against accidental unequips
+    unequipDelay: 0.6 # Slightly higher delay to protect against accidental unequips
     femaleMask: NoMask
   - type: SelfExtinguisher
     cooldown: 100

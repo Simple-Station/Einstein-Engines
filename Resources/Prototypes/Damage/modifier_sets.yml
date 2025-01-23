@@ -381,6 +381,7 @@
     Cold: 0
     Heat: 1.5
     Radiation: 0
+    Bloodloss: 0.0 # Immune to weapons that directly deal bloodloss damage
 
 - type: damageModifierSet
   id: DermalArmor

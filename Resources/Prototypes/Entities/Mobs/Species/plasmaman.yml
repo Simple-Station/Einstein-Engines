@@ -64,6 +64,7 @@
   - type: Body
     prototype: Plasmaman
     requiredLegs: 2
+    gibSound: /Audio/Effects/bone_rattle.ogg
   - type: Bloodstream
     bloodlossThreshold: 0
     bleedReductionAmount: 0
