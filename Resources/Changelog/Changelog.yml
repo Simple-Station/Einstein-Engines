@@ -10615,3 +10615,16 @@ Entries:
   id: 6751
   time: '2025-01-23T00:19:49.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1626
+- author: BlueHNT
+  changes:
+    - type: Add
+      message: Added 2 new security loadout items
+    - type: Tweak
+      message: Tweaked BSO's ammo
+    - type: Fix
+      message: Fixed energy cutlass sprite
+    - type: Remove
+      message: Removed broken Ion component
+  id: 6752
+  time: '2025-01-23T00:22:22.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1599
