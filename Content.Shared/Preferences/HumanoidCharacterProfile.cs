@@ -231,7 +231,11 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
         var random = IoCManager.Resolve<IRobustRandom>();
 
-        var species = "Plasmaman";
+        var species = random.Pick(prototypeManager
+            .EnumeratePrototypes<SpeciesPrototype>()
+            .Where(x => ignoredSpecies == null ? x.RoundStart : x.RoundStart && !ignoredSpecies.Contains(x.ID))
+            .ToArray()
+        ).ID;
 
         return RandomWithSpecies(species);
     }
