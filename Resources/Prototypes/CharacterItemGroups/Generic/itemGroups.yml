@@ -320,6 +320,8 @@
     - type: loadout
       id: LoadoutUniformEnvirosuitTrans
     - type: loadout
+      id: LoadoutUniformEnvirosuitAncientVoid
+    - type: loadout
       id: LoadoutUniformEnvirosuitColorWhite
     - type: loadout
       id: LoadoutUniformEnvirosuitColorGrey

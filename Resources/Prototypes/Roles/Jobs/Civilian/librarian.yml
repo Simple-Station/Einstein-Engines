@@ -60,6 +60,6 @@
   id: LibrarianPlasmamanGear
   parent: BasePlasmamanGear
   equipment:
-    jumpsuit: ClothingUniformEnvirosuitLibrarian
-    head: ClothingHeadEnvirohelmLibrarian
+    jumpsuit: ClothingUniformEnvirosuitAncientVoid
+    head: ClothingHeadEnvirohelmAncientVoid
     gloves: ClothingHandsGlovesEnviroglovesPrototype

@@ -1,7 +1,0 @@
-- type: characterItemGroup
-  id: LoadoutPlasmamanEnvirosuit
-  maxItems: 1
-  items:
-    - type: loadout
-      id: LoadoutSpeciesUniformEnvirosuit
-      priority: 0

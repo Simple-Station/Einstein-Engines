@@ -3,7 +3,7 @@
 - type: loadout
   id: LoadoutSpeciesEnvirosuitExtinguisherRefill
   category: Species
-  cost: 4
+  cost: 5
   requirements:
     - !type:CharacterSpeciesRequirement
       species:
@@ -15,11 +15,11 @@
   id: LoadoutSpeciesDoubleEmergencyPlasmaTank
   category: Species
   cost: 6
+  canBeHeirloom: true
   requirements:
     - !type:CharacterSpeciesRequirement
       species:
         - Plasmaman
-  canBeHeirloom: true
   items:
     - DoubleEmergencyPlasmaTankFilled
 
@@ -27,11 +27,11 @@
   id: LoadoutSpeciesDrinkMilkCartonAndSyringe
   category: Species
   cost: 3
+  canBeHeirloom: true
   requirements:
     - !type:CharacterSpeciesRequirement
       species:
         - Plasmaman
-  canBeHeirloom: true
   items:
     - DrinkMilkCarton
     - Syringe
@@ -234,6 +234,30 @@
   items:
     - ClothingUniformEnvirosuitColorWhite
     - ClothingHeadEnvirohelmWhite
+
+- type: loadout
+  id: LoadoutUniformEnvirosuitAncientVoid
+  category: Uniform
+  cost: 2
+  exclusive: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Plasmaman
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Librarian # Librarian already starts with this envirosuit
+  items:
+    - ClothingUniformEnvirosuitAncientVoid
+    - ClothingHeadEnvirohelmAncientVoid
 
 - type: loadout
   id: LoadoutUniformEnvirosuitColorGrey
