@@ -322,15 +322,244 @@
     sprite: Clothing/Uniforms/Envirosuits/scientist.rsi
 
 - type: entity
-  parent: ClothingUniformEnvirosuitBase
+  parent: ClothingUniformEnvirosuitCustomBase
   id: ClothingUniformEnvirosuitSec
   name: security envirosuit
-  description: A Plasmaman containment suit designed for security officers, offering a limited amount of extra protection.
+  description: A Plasmaman containment suit designed for security officers.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Envirosuits/security.rsi
+    layers:
+    - state: icon
+      color: "#8f3132"
+    - state: accent2-icon
+      color: "#2e2e2e"
+    - state: accenthighlight-icon
+      color: "#313e5a"
+    - state: clip-icon
+      color: "#730000"
+    - state: clip_right-icon
+      color: "#313e5a"
+    - state: pants-icon
+      color: "#2e2e2e"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#8f3132"
+      - state: accent2-inhand-left
+        color: "#2e2e2e"
+      - state: accenthighlight-inhand-left
+        color: "#313e5a"
+      - state: clip-inhand-left
+        color: "#730000"
+      - state: clip_right-inhand-left
+        color: "#313e5a"
+      - state: pants-inhand-left
+        color: "#2e2e2e"
+      right:
+      - state: inhand-right
+        color: "#8f3132"
+      - state: accent2-inhand-right
+        color: "#2e2e2e"
+      - state: accenthighlight-inhand-right
+        color: "#313e5a"
+      - state: clip-inhand-right
+        color: "#730000"
+      - state: clip_right-inhand-right
+        color: "#313e5a"
+      - state: pants-inhand-right
+        color: "#2e2e2e"
   - type: Clothing
-    sprite: Clothing/Uniforms/Envirosuits/security.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#8f3132"
+      - state: accent2-equipped-INNERCLOTHING
+        color: "#2e2e2e"
+      - state: accenthighlight-equipped-INNERCLOTHING
+        color: "#313e5a"
+      - state: clip-equipped-INNERCLOTHING
+        color: "#730000"
+      - state: clip_right-equipped-INNERCLOTHING
+        color: "#313e5a"
+      - state: pants-equipped-INNERCLOTHING
+        color: "#2e2e2e"
+      - state: loweraccent-equipped-INNERCLOTHING
+        color: "#732829"
+      - state: shoesdark-equipped-INNERCLOTHING
+        color: "#2e2e2e"
+      - state: soles-equipped-INNERCLOTHING
+        color: "#7a7a7a"
+
+- type: entity
+  parent: ClothingUniformEnvirosuitCustomBase
+  id: ClothingUniformEnvirosuitSecBlue
+  name: blue security envirosuit
+  description: A cool blue enviroshirt over charcoal trousers, for the calm and collected Plasmaman officer.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#b9c1d9"
+    - state: accent-icon
+      color: "#2e2e2e"
+    - state: accent3_chestonly-icon
+      color: "#36476b"
+    - state: accenthighlight-icon
+      color: "#313e5a"
+    - state: clip-icon
+      color: "#860000"
+    - state: clip_right-icon
+      color: "#313e5a"
+    - state: pants-icon
+      color: "#232938"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#b9c1d9"
+      - state: accent-inhand-left
+        color: "#2e2e2e"
+      - state: accent3_chestonly-inhand-left
+        color: "#36476b"
+      - state: accenthighlight-inhand-left
+        color: "#313e5a"
+      - state: clip-inhand-left
+        color: "#860000"
+      - state: clip_right-inhand-left
+        color: "#313e5a"
+      - state: pants-inhand-left
+        color: "#232938"
+      right:
+      - state: inhand-right
+        color: "#b9c1d9"
+      - state: accent-inhand-right
+        color: "#2e2e2e"
+      - state: accent3_chestonly-inhand-right
+        color: "#36476b"
+      - state: accenthighlight-inhand-right
+        color: "#313e5a"
+      - state: clip-inhand-right
+        color: "#860000"
+      - state: clip_right-inhand-right
+        color: "#313e5a"
+      - state: pants-inhand-right
+        color: "#232938"
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#b9c1d9"
+      - state: accentalt_noback-equipped-INNERCLOTHING
+        color: "#2e2e2e"
+      - state: accent3_chestonly-equipped-INNERCLOTHING
+        color: "#36476b"
+      - state: backaccent-equipped-INNERCLOTHING
+        color: "#36476b"
+      - state: accenthighlight-equipped-INNERCLOTHING
+        color: "#313e5a"
+      - state: clip-equipped-INNERCLOTHING
+        color: "#860000"
+      - state: clip_right-equipped-INNERCLOTHING
+        color: "#313e5a"
+      - state: pants-equipped-INNERCLOTHING
+        color: "#232938"
+      - state: loweraccent-equipped-INNERCLOTHING
+        color: "#36476b"
+      - state: shoesdark-equipped-INNERCLOTHING
+        color: "#2e2e2e"
+      - state: soles-equipped-INNERCLOTHING
+        color: "#7a7a7a"
+
+- type: entity
+  parent: ClothingUniformEnvirosuitCustomBase
+  id: ClothingUniformEnvirosuitSecGrey
+  name: grey security envirosuit
+  description: Light grey enviroslacks with bright red highlights, for dedicated and responsive security officers.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#7e7e7e"
+    - state: plaintop-icon
+      color: "#7e7e7e"
+    - state: accent-icon
+      color: "#333333"
+    - state: accenthighlight-icon
+      color: "#313e5a"
+    - state: tie-icon
+      color: "#a61d1d"
+    - state: clip-icon
+      color: "#860000"
+    - state: clip_right-icon
+      color: "#313e5a"
+    - state: pants-icon
+      color: "#333333"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#7e7e7e"
+      - state: plaintop-inhand-left
+        color: "#7e7e7e"
+      - state: accent-inhand-left
+        color: "#333333"
+      - state: accenthighlight-inhand-left
+        color: "#313e5a"
+      - state: tie-inhand-left
+        color: "#a61d1d"
+      - state: clip-inhand-left
+        color: "#860000"
+      - state: clip_right-inhand-left
+        color: "#313e5a"
+      - state: pants-inhand-left
+        color: "#333333"
+      right:
+      - state: inhand-right
+        color: "#7e7e7e"
+      - state: plaintop-inhand-right
+        color: "#7e7e7e"
+      - state: accent-inhand-right
+        color: "#333333"
+      - state: accenthighlight-inhand-right
+        color: "#313e5a"
+      - state: tie-inhand-right
+        color: "#a61d1d"
+      - state: clip-inhand-right
+        color: "#860000"
+      - state: clip_right-inhand-right
+        color: "#313e5a"
+      - state: pants-inhand-right
+        color: "#333333"
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#7e7e7e"
+      - state: plaintop-equipped-INNERCLOTHING
+        color: "#7e7e7e"
+      - state: accentalt-equipped-INNERCLOTHING
+        color: "#333333"
+      - state: accenthighlight-equipped-INNERCLOTHING
+        color: "#313e5a"
+      - state: tie-equipped-INNERCLOTHING
+        color: "#a61d1d"
+      - state: clip-equipped-INNERCLOTHING
+        color: "#860000"
+      - state: clip_right-equipped-INNERCLOTHING
+        color: "#313e5a"
+      - state: cuffs-equipped-INNERCLOTHING
+        color: "#a11a1a"
+      - state: cuffs_upper-equipped-INNERCLOTHING
+        color: "#c92323"
+      - state: pants-equipped-INNERCLOTHING
+        color: "#333333"
+      - state: loweraccent-equipped-INNERCLOTHING
+        color: "#a61d1d"
+      - state: shoesdark-equipped-INNERCLOTHING
+        color: "#333333"
+      - state: soles-equipped-INNERCLOTHING
+        color: "#7a7a7a"
 
 - type: entity
   parent: ClothingUniformEnvirosuitBase
@@ -1087,8 +1316,12 @@
       color: "#d76b00"
     - state: accent2-icon
       color: "#363636"
+    - state: accenthighlight-icon
+      color: "#313e5a"
     - state: clip-icon
-      color: "#2e2e2e"
+      color: "#860000"
+    - state: clip_right-icon
+      color: "#313e5a"
     - state: pants-icon
       color: "#363636"
   - type: Item
@@ -1098,8 +1331,12 @@
         color: "#d76b00"
       - state: accent2-inhand-left
         color: "#363636"
+      - state: accenthighlight-inhand-left
+        color: "#313e5a"
       - state: clip-inhand-left
-        color: "#2e2e2e"
+        color: "#860000"
+      - state: clip_right-inhand-left
+        color: "#313e5a"
       - state: pants-inhand-left
         color: "#363636"
       right:
@@ -1107,8 +1344,12 @@
         color: "#d76b00"
       - state: accent2-inhand-right
         color: "#363636"
+      - state: accenthighlight-inhand-right
+        color: "#313e5a"
       - state: clip-inhand-right
-        color: "#2e2e2e"
+        color: "#860000"
+      - state: clip_right-inhand-right
+        color: "#313e5a"
       - state: pants-inhand-right
         color: "#363636"
   - type: Clothing
@@ -1118,8 +1359,12 @@
         color: "#d76b00"
       - state: accent2-equipped-INNERCLOTHING
         color: "#363636"
+      - state: accenthighlight-equipped-INNERCLOTHING
+        color: "#313e5a"
       - state: clip-equipped-INNERCLOTHING
-        color: "#2e2e2e"
+        color: "#860000"
+      - state: clip_right-equipped-INNERCLOTHING
+        color: "#313e5a"
       - state: pants-equipped-INNERCLOTHING
         color: "#363636"
       - state: loweraccent-equipped-INNERCLOTHING
@@ -1140,13 +1385,17 @@
     - state: icon
       color: "#486782"
     - state: accent-icon
-      color: "#3b3b3b"
+      color: "#333333"
     - state: accent2_chestonly-icon
+      color: "#3b3b3b"
+    - state: accenthighlight-icon
       color: "#2f74b8"
     - state: buttons-icon
-      color: "#292929"
+      color: "#b0bdca"
     - state: clip-icon
       color: "#860000"
+    - state: clip_right-icon
+      color: "#313e5a"
     - state: pants-icon
       color: "#3b3b3b"
   - type: Item
@@ -1155,26 +1404,34 @@
       - state: inhand-left
         color: "#486782"
       - state: accent-inhand-left
-        color: "#3b3b3b"
+        color: "#333333"
       - state: accent2_chestonly-inhand-left
+        color: "#3b3b3b"
+      - state: accenthighlight-inhand-left
         color: "#2f74b8"
       - state: buttons-inhand-left
-        color: "#292929"
+        color: "#b0bdca"
       - state: clip-inhand-left
         color: "#860000"
+      - state: clip_right-inhand-left
+        color: "#313e5a"
       - state: pants-inhand-left
         color: "#3b3b3b"
       right:
       - state: inhand-right
         color: "#486782"
       - state: accent-inhand-right
-        color: "#3b3b3b"
+        color: "#333333"
       - state: accent2_chestonly-inhand-right
+        color: "#3b3b3b"
+      - state: accenthighlight-inhand-right
         color: "#2f74b8"
       - state: buttons-inhand-right
-        color: "#292929"
+        color: "#b0bdca"
       - state: clip-inhand-right
         color: "#860000"
+      - state: clip_right-inhand-right
+        color: "#313e5a"
       - state: pants-inhand-right
         color: "#3b3b3b"
   - type: Clothing
@@ -1183,21 +1440,25 @@
       - state: equipped-INNERCLOTHING
         color: "#486782"
       - state: accentalt-equipped-INNERCLOTHING
-        color: "#3b3b3b"
+        color: "#333333"
       - state: accent2_chestonly-equipped-INNERCLOTHING
+        color: "#3b3b3b"
+      - state: accenthighlight-equipped-INNERCLOTHING
         color: "#2f74b8"
       - state: buttons-equipped-INNERCLOTHING
-        color: "#292929"
+        color: "#b0bdca"
       - state: clip-equipped-INNERCLOTHING
         color: "#860000"
+      - state: clip_right-equipped-INNERCLOTHING
+        color: "#313e5a"
       - state: cuffs-equipped-INNERCLOTHING
         color: "#bfcddb"
       - state: pants-equipped-INNERCLOTHING
         color: "#3b3b3b"
       - state: loweraccent-equipped-INNERCLOTHING
-        color: "#486782"
+        color: "#9ca7b3"
       - state: shoesdark-equipped-INNERCLOTHING
-        color: "#363636"
+        color: "#3b3b3b"
       - state: soles-equipped-INNERCLOTHING
         color: "#bfcddb"
 

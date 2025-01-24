@@ -226,3 +226,7 @@
       id: LoadoutUniformJumpsuitSecFormal
     - type: loadout
       id: LoadoutUniformJumpsuitSecSummer
+    - type: loadout
+      id: LoadoutSecurityUniformEnvirosuitBlue
+    - type: loadout
+      id: LoadoutSecurityUniformEnvirosuitGrey

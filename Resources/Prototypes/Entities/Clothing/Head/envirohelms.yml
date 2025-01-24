@@ -350,15 +350,124 @@
     sprite: Clothing/Head/Envirohelms/scientist.rsi
 
 - type: entity
-  parent: ClothingHeadEnvirohelmBase
+  parent: ClothingHeadEnvirohelmCustomBase
   id: ClothingHeadEnvirohelmSec
   name: security envirosuit helmet
   description: A Plasmaman containment helmet designed for security officers, protecting them from burning alive, alongside other undesirables.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Envirohelms/security.rsi
+    layers:
+    - state: icon
+      color: "#8f3132"
+    - state: accent-icon
+      color: "#2e2e2e"
+    - state: visor-icon
+    - state: icon-flash
+      visible: false
+      shader: unshaded
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#8f3132"
+      - state: accent-inhand-left
+        color: "#2e2e2e"
+      - state: visor-inhand-left
+      right:
+      - state: inhand-right
+        color: "#8f3132"
+      - state: accent-inhand-right
+        color: "#2e2e2e"
+      - state: visor-inhand-right
   - type: Clothing
-    sprite: Clothing/Head/Envirohelms/security.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#8f3132"
+      - state: accent-equipped-HELMET
+        color: "#2e2e2e"
+      - state: visor-equipped-HELMET
+
+- type: entity
+  parent: ClothingHeadEnvirohelmCustomBase
+  id: ClothingHeadEnvirohelmSecBlue
+  name: blue security envirosuit helmet
+  description: A cool blue envirosuit helmet for Plasmaman Security personnel.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#b9c1d9"
+    - state: accent-icon
+      color: "#36476b"
+    - state: visor-icon
+    - state: icon-flash
+      visible: false
+      shader: unshaded
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#b9c1d9"
+      - state: accent-inhand-left
+        color: "#36476b"
+      - state: visor-inhand-left
+      right:
+      - state: inhand-right
+        color: "#b9c1d9"
+      - state: accent-inhand-right
+        color: "#36476b"
+      - state: visor-inhand-right
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#b9c1d9"
+      - state: accent-equipped-HELMET
+        color: "#36476b"
+      - state: visor-equipped-HELMET
+
+- type: entity
+  parent: ClothingHeadEnvirohelmCustomBase
+  id: ClothingHeadEnvirohelmSecGrey
+  name: grey security envirosuit helmet
+  description: A light grey envirosuit helmet with bright red highlights for Plasmamen Security personnel.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#7e7e7e"
+    - state: accent-icon
+      color: "#a61d1d"
+    - state: visor-icon
+    - state: icon-flash
+      visible: false
+      shader: unshaded
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#7e7e7e"
+      - state: accent-inhand-left
+        color: "#a61d1d"
+      - state: visor-inhand-left
+      right:
+      - state: inhand-right
+        color: "#7e7e7e"
+      - state: accent-inhand-right
+        color: "#a61d1d"
+      - state: visor-inhand-right
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#7e7e7e"
+      - state: accent-equipped-HELMET
+        color: "#a61d1d"
+      - state: visor-equipped-HELMET
 
 - type: entity
   parent: ClothingHeadEnvirohelmBase
@@ -1062,7 +1171,7 @@
     - state: icon
       color: "#486782"
     - state: accent-icon
-      color: "#3b3b3b"
+      color: "#2e2e2e"
     - state: visor-icon
     - state: icon-flash
       visible: false
@@ -1074,13 +1183,13 @@
       - state: inhand-left
         color: "#486782"
       - state: accent-inhand-left
-        color: "#3b3b3b"
+        color: "#2e2e2e"
       - state: visor-inhand-left
       right:
       - state: inhand-right
         color: "#486782"
       - state: accent-inhand-right
-        color: "#3b3b3b"
+        color: "#2e2e2e"
       - state: visor-inhand-right
   - type: Clothing
     clothingVisuals:
@@ -1088,7 +1197,7 @@
       - state: equipped-HELMET
         color: "#486782"
       - state: accent-equipped-HELMET
-        color: "#3b3b3b"
+        color: "#2e2e2e"
       - state: visor-equipped-HELMET
 
 - type: entity

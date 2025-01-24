@@ -30,10 +30,6 @@
       "directions": 4
     },
     {
-      "name": "accentalt-equipped-INNERCLOTHING",
-      "directions": 4
-    },
-    {
       "name": "accent-inhand-left",
       "directions": 4
     },
@@ -114,6 +110,33 @@
     },
     {
       "name": "accentprisoner-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "accenthighlight-icon"
+    },
+    {
+      "name": "accenthighlight-equipped-INNERCLOTHING",
+      "directions": 4
+    },
+    {
+      "name": "accenthighlight-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "accenthighlight-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "accentalt-equipped-INNERCLOTHING",
+      "directions": 4
+    },
+    {
+      "name": "accentalt_noback-equipped-INNERCLOTHING",
+      "directions": 4
+    },
+    {
+      "name": "backaccent-equipped-INNERCLOTHING",
       "directions": 4
     },
     {
@@ -223,6 +246,21 @@
       "directions": 4
     },
     {
+      "name": "clip_right-icon"
+    },
+    {
+      "name": "clip_right-equipped-INNERCLOTHING",
+      "directions": 4
+    },
+    {
+      "name": "clip_right-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "clip_right-inhand-right",
+      "directions": 4
+    },
+    {
       "name": "heart-icon"
     },
     {
@@ -299,6 +337,10 @@
     },
     {
       "name": "cuffs-equipped-INNERCLOTHING",
+      "directions": 4
+    },
+    {
+      "name": "cuffs_upper-equipped-INNERCLOTHING",
       "directions": 4
     },
     {
