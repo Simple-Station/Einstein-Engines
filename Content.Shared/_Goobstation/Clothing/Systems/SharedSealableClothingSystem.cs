@@ -24,7 +24,7 @@ public abstract class SharedSealableClothingSystem : EntitySystem
     [Dependency] private readonly INetManager _netManager = default!;
     [Dependency] private readonly ActionBlockerSystem _actionBlockerSystem = default!;
     [Dependency] private readonly ActionContainerSystem _actionContainerSystem = default!;
-    [Dependency] private readonly ComponentTogglerSystem _componentTogglerSystem = default!; 
+    [Dependency] private readonly ComponentTogglerSystem _componentTogglerSystem = default!;
     [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearanceSystem = default!;
     [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
@@ -198,15 +198,15 @@ public abstract class SharedSealableClothingSystem : EntitySystem
         if (!TryComp<SealableClothingComponent>(part, out var sealableComponent))
             return;
 
-        sealableComponet.IsSealed = !comp.IsCurrentlySealed;
+        sealableComponent.IsSealed = !comp.IsCurrentlySealed;
 
-        Dirty(part.Value, sealableComponet);
+        Dirty(part.Value, sealableComponent);
 
-        _audioSystem.PlayPvs(sealableComponet.SealUpSound, uid);
+        _audioSystem.PlayPvs(sealableComponent.SealUpSound, uid);
 
-        _appearanceSystem.SetData(part.Value, SealableClothingVisuals.Sealed, sealableComponet.IsSealed);
+        _appearanceSystem.SetData(part.Value, SealableClothingVisuals.Sealed, sealableComponent.IsSealed);
 
-        var ev = new ClothingPartSealCompleteEvent(sealableComponet.IsSealed);
+        var ev = new ClothingPartSealCompleteEvent(sealableComponent.IsSealed);
         RaiseLocalEvent(part.Value, ref ev);
 
         NextSealProcess(control);

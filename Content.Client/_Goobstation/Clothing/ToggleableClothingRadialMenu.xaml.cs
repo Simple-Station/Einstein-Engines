@@ -33,7 +33,7 @@ public sealed partial class ToggleableClothingRadialMenu : RadialMenu
         var main = FindControl<RadialContainer>("Main");
 
         if (!_entityManager.TryGetComponent<ToggleableClothingComponent>(Entity, out var clothing)
-            || clothing.Container is { } clothingContainer)
+            || clothing.Container is not { } clothingContainer)
             return;
 
         foreach (var attached in clothing.ClothingUids)

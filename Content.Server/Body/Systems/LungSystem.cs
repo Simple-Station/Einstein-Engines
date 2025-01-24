@@ -71,7 +71,7 @@ public sealed class LungSystem : EntitySystem
         comp.IsFunctional = true;
 
         if (!_inventory.TryGetContainingEntity(ent.Owner, out var parent)
-            || !_inventory.TryGetContainingSlot(ent.Owner, out var slot
+            || !_inventory.TryGetContainingSlot(ent.Owner, out var slot)
             || (slot.SlotFlags & comp.AllowedSlots) == 0)
             return;
 
