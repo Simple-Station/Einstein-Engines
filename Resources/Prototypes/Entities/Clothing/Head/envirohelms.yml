@@ -24,6 +24,16 @@
         shader: unshaded
 
 - type: entity
+  parent: ClothingHeadEnvirohelm
+  id: ClothingHeadEnvirohelmEmpty
+  suffix: Empty
+  components:
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+
+- type: entity
   parent: ClothingHeadEnvirohelmBase
   id: ClothingHeadEnvirohelmAtmos
   name: atmospherics envirosuit helmet

@@ -112,7 +112,7 @@
     contents:
       - id: ClothingUniformEnvirosuit
         amount: 2
-      - id: ClothingHeadEnvirohelm
+      - id: ClothingHeadEnvirohelmEmpty
         amount: 2
       - id: ClothingHandsGlovesEnvirogloves
         amount: 2
