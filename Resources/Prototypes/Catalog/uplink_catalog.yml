@@ -1631,8 +1631,6 @@
   description: uplink-syndicate-stamp-desc
   productEntity: RubberStampSyndicate
   discountCategory: rareDiscounts
-  discountDownTo:
-    Telecrystal: 1
   cost:
     Telecrystal: 1
   categories:
