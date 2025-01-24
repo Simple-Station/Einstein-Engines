@@ -24,4 +24,7 @@ public sealed partial class CCVars
 
     public static readonly CVarDef<bool> HudFpsCounterVisible =
         CVarDef.Create("hud.fps_counter_visible", false, CVar.CLIENTONLY | CVar.ARCHIVE);
+
+    public static readonly CVarDef<bool> ModernProgressBar =
+        CVarDef.Create("hud.modern_progress_bar", true, CVar.CLIENTONLY | CVar.ARCHIVE);
 }
