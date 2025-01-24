@@ -348,20 +348,12 @@ public sealed class ToggleableClothingSystem : EntitySystem
             return;
 
         if (GetAttachedToggleStatus(toggleable, comp) == ToggleableClothingAttachedStatus.NoneToggled)
-        {
             foreach (var clothing in attachedClothings)
-            {
                 EquipClothing(user, toggleable, clothing.Key, clothing.Value);
-            }
-        }
         else
-        {
             foreach (var clothing in attachedClothings)
-            {
                 if (!container!.Contains(clothing.Key))
                     UnequipClothing(user, toggleable, clothing.Key, clothing.Value);
-            }
-        }
     }
 
     private bool CanToggleClothing(EntityUid user, Entity<ToggleableClothingComponent> toggleable)
