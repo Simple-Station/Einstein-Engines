@@ -79,7 +79,7 @@
 - type: startingGear
   id: SyndicateOperativeGearFull
   subGear:
-  - SyndicateOperativePlasmamanGear
+  - SyndicateOperativePlasmamanSuitStorageGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitOperative
     back: ClothingBackpackDuffelSyndicateOperative
@@ -101,7 +101,7 @@
 - type: startingGear
   id: SyndicateCommanderGearFull
   subGear:
-  - SyndicateOperativePlasmamanGear
+  - SyndicateOperativePlasmamanSuitStorageGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitOperative
     back: ClothingBackpackDuffelSyndicateOperative
@@ -126,7 +126,7 @@
 - type: startingGear
   id: SyndicateOperativeMedicFull
   subGear:
-  - SyndicateOperativePlasmamanGear
+  - SyndicateOperativePlasmamanSuitStorageGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitOperative
     back: ClothingBackpackDuffelSyndicateOperativeMedic

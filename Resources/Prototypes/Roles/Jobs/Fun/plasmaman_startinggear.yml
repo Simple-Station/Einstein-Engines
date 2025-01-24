@@ -23,6 +23,18 @@
   equipment:
     jumpsuit: ClothingUniformEnvirosuitTacticool
     head: ClothingHeadEnvirohelmTacticool
+    mask: ClothingMaskGasSyndicate
+
+- type: startingGear
+  id: SyndicateOperativePlasmamanSuitStorageGear
+  requirements:
+  - !type:CharacterSpeciesRequirement
+    species: [ Plasmaman ]
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitTacticool
+    head: ClothingHeadEnvirohelmTacticool
+    mask: ClothingMaskGasSyndicate
+    suitstorage: PlasmaTankFilled
 
 - type: startingGear
   id: SpaceNinjaPlasmamanGear
