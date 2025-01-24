@@ -148,7 +148,7 @@ public sealed class DoAfterOverlay : Overlay
                     var elapsed = time - doAfter.StartTime;
                     elapsedRatio = (float) Math.Min(1, elapsed.TotalSeconds / doAfter.Args.Delay.TotalSeconds);
 
-                    if (_cfg.GetCVar(CCVars.ModernProgressBar))
+                    if (_useModernHUD)
                     {
                         if (elapsedRatio < 1.0f)
                             color = GetProgressColor(elapsedRatio, alpha);
