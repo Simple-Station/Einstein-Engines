@@ -207,9 +207,11 @@
       map: [ "light" ]
   - type: Item
     size: Normal
+    heldPrefix: off
   - type: Clothing
     equipDelay: 0.4
     unequipDelay: 0.6 # Slightly higher delay to protect against accidental unequips
+    equippedPrefix: off
     clothingVisuals:
       head:
       - state: equipped-HELMET
