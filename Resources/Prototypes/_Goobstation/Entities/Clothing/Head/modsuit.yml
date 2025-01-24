@@ -89,7 +89,7 @@
       - Snout
       - HeadTop
       - HeadSide
-  #THIS WILL BE REPLACED WITH MODULE ↓↓
+  # This will all be replaced by modules later
   - type: ToggleableLightVisuals
   - type: PointLight
     enabled: false
@@ -120,7 +120,7 @@
         maxValue: 2.0
         isLooped: true
   - type: Battery
-    maxCharge: 600 #lights drain 3/s but recharge of 2 makes this 1/s. Therefore 600 is 10 minutes of light.
+    maxCharge: 600 # Lights drain 3/s but recharge of 2 makes this 1/s, therefore 600 is 10 minutes of light
     startingCharge: 600
   - type: BatterySelfRecharger
     autoRecharge: true

@@ -272,7 +272,7 @@ internal sealed class ChargerSystem : EntitySystem
             return true;
         }
 
-        // try get battery by checking for a power cell slot on the inserted entity
+        // Try to get the battery by checking for a power cell slot on the inserted entity
         if (_powerCell.TryGetBatteryFromSlot(uid, out batteryUid, out component))
             return true;
 

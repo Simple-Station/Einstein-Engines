@@ -53,10 +53,7 @@ public sealed partial class DoAfterArgs
     [DataField]
     public bool Hidden;
 
-    /// <summary>
-    /// Goobstation
     /// Whether the delay multiplier event should be raised
-    /// </summary>
     [DataField]
     public bool MultiplyDelay = true;
 

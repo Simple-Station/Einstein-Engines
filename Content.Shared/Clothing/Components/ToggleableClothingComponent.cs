@@ -7,8 +7,6 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared.Clothing.Components;
 
-// GOOBSTATION - MODSUITS FULLY CHANGE THIS SYSTEM
-
 /// <summary>
 ///     This component gives an item an action that will equip or un-equip some clothing e.g. hardsuits and hardsuit helmets.
 /// </summary>

@@ -4,9 +4,7 @@ using Robust.Shared.GameStates;
 
 namespace Content.Shared._Goobstation.Clothing.Components;
 
-/// <summary>
-///     Defines the clothing entity that can be sealed by <see cref="SealableClothingControlComponent"/>
-/// </summary>
+/// Defines the clothing entity that can be sealed by <see cref="SealableClothingControlComponent"/>
 [RegisterComponent]
 [NetworkedComponent, AutoGenerateComponentState]
 [Access(typeof(SharedSealableClothingSystem))]

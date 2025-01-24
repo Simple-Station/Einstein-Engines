@@ -69,13 +69,12 @@ namespace Content.Server.Atmos.EntitySystems
                 slotTarget = slot.Name;
             }
 
-            if (TryComp<BarotraumaComponent>(protectionTarget, out var barotrauma))
-            {
-                if (slotTarget != null && !barotrauma.ProtectionSlots.Contains(slotTarget))
+            if (slotTarget != null
+                && TryComp<BarotraumaComponent>(protectionTarget, out var barotrauma)
+                && !barotrauma.ProtectionSlots.Contains(slotTarget))
                     return;
 
                 UpdateCachedResistances(protectionTarget, barotrauma);
-            }
         }
 
         /// <summary>

@@ -17,7 +17,7 @@ public sealed class LungSystem : EntitySystem
     [Dependency] private readonly AtmosphereSystem _atmosphereSystem = default!;
     [Dependency] private readonly InternalsSystem _internals = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
-    [Dependency] private readonly InventorySystem _inventory = default!; // Goobstaiton
+    [Dependency] private readonly InventorySystem _inventory = default!; // Goobstation
 
 
 
@@ -70,10 +70,9 @@ public sealed class LungSystem : EntitySystem
 
         comp.IsFunctional = true;
 
-        if (!_inventory.TryGetContainingEntity(ent.Owner, out var parent) || !_inventory.TryGetContainingSlot(ent.Owner, out var slot))
-            return;
-
-        if ((slot.SlotFlags & comp.AllowedSlots) == 0)
+        if (!_inventory.TryGetContainingEntity(ent.Owner, out var parent)
+            || !_inventory.TryGetContainingSlot(ent.Owner, out var slot
+            || (slot.SlotFlags & comp.AllowedSlots) == 0)
             return;
 
         if (TryComp(parent, out InternalsComponent? internals))

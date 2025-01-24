@@ -6,56 +6,40 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Goobstation.Clothing.Components;
 
-/// <summary>
-///     Component used to designate contol of sealable clothing. It'll contain action to seal clothing.
-/// </summary>
+/// Component used to designate contol of sealable clothing. It'll contain action to seal clothing
 [RegisterComponent]
 [NetworkedComponent, AutoGenerateComponentState]
 [Access(typeof(SharedSealableClothingSystem))]
 public sealed partial class SealableClothingControlComponent : Component
 {
-    /// <summary>
-    ///     Action that used to start sealing
-    /// </summary>
+    /// Action that used to start sealing
     [DataField, AutoNetworkedField]
     public EntProtoId SealAction = "ActionClothingSeal";
 
     [DataField, AutoNetworkedField]
     public EntityUid? SealActionEntity;
 
-    /// <summary>
-    ///     Slot required for control to show action
-    /// </summary>
+    /// Slot required for control to show action
     [DataField("requiredSlot"), AutoNetworkedField]
     public SlotFlags RequiredControlSlot = SlotFlags.BACK;
 
-    /// <summary>
-    ///     True if clothing in sealing/unsealing process, false if not
-    /// </summary>
+    /// True if clothing in sealing/unsealing process, false if not
     [DataField, AutoNetworkedField]
     public bool IsInProcess = false;
 
-    /// <summary>
-    ///     True if clothing is currently sealed and need to start unsealing process. False if opposite.
-    /// </summary>
+    /// True if clothing is currently sealed and need to start unsealing process. False if opposite
     [DataField, AutoNetworkedField]
     public bool IsCurrentlySealed = false;
 
-    /// <summary>
-    ///     Queue of attached parts that should be sealed/unsealed
-    /// </summary>
+    /// Queue of attached parts that should be sealed/unsealed
     [DataField, AutoNetworkedField]
     public Queue<NetEntity> ProcessQueue = new();
 
-    /// <summary>
-    ///     Uid of entity that currently wear seal control
-    /// </summary>
+    /// Uid of entity that currently wear seal control
     [DataField, AutoNetworkedField]
     public EntityUid? WearerEntity;
 
-    /// <summary>
-    ///     Doafter time for other players to start sealing via stripping menu
-    /// </summary>
+    /// Doafter time for other players to start sealing via stripping menu
     [DataField, AutoNetworkedField]
     public TimeSpan NonWearerSealingTime = TimeSpan.FromSeconds(4);
 

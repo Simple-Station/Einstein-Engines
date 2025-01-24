@@ -26,7 +26,6 @@ public sealed partial class PoweredSealableClothingSystem : SharedPoweredSealabl
         SubscribeLocalEvent<SealableClothingRequiresPowerComponent, PowerCellSlotEmptyEvent>(OnPowerCellEmpty);
         SubscribeLocalEvent<SealableClothingRequiresPowerComponent, ClothingControlSealCompleteEvent>(OnRequiresPowerSealCompleteEvent);
         SubscribeLocalEvent<SealableClothingRequiresPowerComponent, InventoryRelayedEvent<FindInventoryBatteryEvent>>(OnFindInventoryBatteryEvent);
-
     }
 
     private void OnPowerCellChanged(Entity<SealableClothingRequiresPowerComponent> entity, ref PowerCellChangedEvent args)
@@ -50,9 +49,7 @@ public sealed partial class PoweredSealableClothingSystem : SharedPoweredSealabl
         ModifySpeed(entity);
     }
 
-    /// <summary>
     /// Enables or disables power cell draw on seal/unseal complete
-    /// </summary>
     private void OnRequiresPowerSealCompleteEvent(Entity<SealableClothingRequiresPowerComponent> entity, ref ClothingControlSealCompleteEvent args)
     {
         if (!TryComp(entity, out PowerCellDrawComponent? drawComp))
@@ -85,9 +82,7 @@ public sealed partial class PoweredSealableClothingSystem : SharedPoweredSealabl
         _movementSpeed.RefreshMovementSpeedModifiers(controlComp.WearerEntity.Value);
     }
 
-    /// <summary>
     /// Sets power alert to wearer when clothing is sealed
-    /// </summary>
     private void UpdateClothingPowerAlert(Entity<SealableClothingRequiresPowerComponent> entity)
     {
         var (uid, comp) = entity;
@@ -105,9 +100,7 @@ public sealed partial class PoweredSealableClothingSystem : SharedPoweredSealabl
         _alertsSystem.ShowAlert(controlComp.WearerEntity.Value, comp.SuitPowerAlert, (short) severity);
     }
 
-    /// <summary>
     /// Tries to find battery for charger
-    /// </summary>
     private void OnFindInventoryBatteryEvent(Entity<SealableClothingRequiresPowerComponent> entity, ref InventoryRelayedEvent<FindInventoryBatteryEvent> args)
     {
         if (args.Args.FoundBattery != null)

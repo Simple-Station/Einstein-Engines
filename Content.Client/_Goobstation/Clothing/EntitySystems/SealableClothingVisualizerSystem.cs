@@ -24,9 +24,7 @@ public sealed class SealableClothingVisualizerSystem : VisualizerSystem<Sealable
             return;
 
         if (args.Sprite != null && component.SpriteLayer != null && args.Sprite.LayerMapTryGet(component.SpriteLayer, out var layer))
-        {
             args.Sprite.LayerSetVisible(layer, isSealed);
-        }
 
         _itemSystem.VisualsChanged(uid);
     }

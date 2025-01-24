@@ -32,12 +32,8 @@ public sealed partial class ToggleableClothingRadialMenu : RadialMenu
     {
         var main = FindControl<RadialContainer>("Main");
 
-        if (!_entityManager.TryGetComponent<ToggleableClothingComponent>(Entity, out var clothing))
-            return;
-
-        var clothingContainer = clothing.Container;
-
-        if (clothingContainer == null)
+        if (!_entityManager.TryGetComponent<ToggleableClothingComponent>(Entity, out var clothing)
+            || clothing.Container is { } clothingContainer)
             return;
 
         foreach (var attached in clothing.ClothingUids)
@@ -75,17 +71,13 @@ public sealed partial class ToggleableClothingRadialMenu : RadialMenu
 
     private void AddToggleableClothingMenuButtonOnClickAction(Control control)
     {
-        var mainControl = control as RadialContainer;
-
-        if (mainControl == null)
+        if (control is not RadialContainer mainControl)
             return;
 
         foreach (var child in mainControl.Children)
         {
-            var castChild = child as ToggleableClothingRadialMenuButton;
-
-            if (castChild == null)
-                return;
+            if (child is not ToggleableClothingRadialMenuButton castChild)
+                continue;
 
             castChild.OnButtonDown += _ =>
             {

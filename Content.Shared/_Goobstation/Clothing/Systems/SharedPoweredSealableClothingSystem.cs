@@ -6,9 +6,7 @@ using Content.Shared.Wires;
 
 namespace Content.Shared._Goobstation.Clothing.Systems;
 
-/// <summary>
 /// Used for sealable clothing that requires power to work
-/// </summary>
 public abstract class SharedPoweredSealableClothingSystem : EntitySystem
 {
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
@@ -31,12 +29,12 @@ public abstract class SharedPoweredSealableClothingSystem : EntitySystem
         draw.Enabled = control.IsCurrentlySealed;
     }
 
-    /// <summary>
     /// Checks if control have enough power to seal
-    /// </summary>
     private void OnRequiresPowerSealAttempt(Entity<SealableClothingRequiresPowerComponent> entity, ref ClothingSealAttemptEvent args)
     {
-        if (!TryComp(entity, out SealableClothingControlComponent? controlComp) || !TryComp(entity, out PowerCellDrawComponent? cellDrawComp) || args.Cancelled)
+        if (!TryComp(entity, out SealableClothingControlComponent? controlComp)
+            || !TryComp(entity, out PowerCellDrawComponent? cellDrawComp)
+            || args.Cancelled)
             return;
 
         // Prevents sealing if wires panel is opened
@@ -58,9 +56,7 @@ public abstract class SharedPoweredSealableClothingSystem : EntitySystem
         }
     }
 
-    /// <summary>
     /// Prevents wires panel from opening if clothing is sealed
-    /// </summary>
     private void OnRequiresPowerChangePanelAttempt(Entity<SealableClothingRequiresPowerComponent> entity, ref AttemptChangePanelEvent args)
     {
         if (args.Cancelled || !TryComp(entity, out SealableClothingControlComponent? controlComp))

@@ -17,18 +17,14 @@ public sealed partial class SealableClothingRequiresPowerComponent : Component
     [DataField]
     public LocId ClosePanelFirstPopup = "sealable-clothing-close-panel-first";
 
-    /// <summary>
-    /// Movement speed on power end
-    /// </summary>
+    /// Movement speed when without power
     [DataField]
     public float MovementSpeedPenalty = 0.3f;
 
     [DataField, AutoNetworkedField]
     public bool IsPowered = false;
 
-    /// <summary>
-    /// Alert to show for suit power.
-    /// </summary>
+    /// Alert to show for the suit's power
     [DataField]
     public ProtoId<AlertPrototype> SuitPowerAlert = "ModsuitPower";
 }
