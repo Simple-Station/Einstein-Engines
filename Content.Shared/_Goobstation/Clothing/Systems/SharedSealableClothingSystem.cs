@@ -55,27 +55,15 @@ public abstract class SharedSealableClothingSystem : EntitySystem
 
     #region Events
 
-    /// <summary>
     /// Toggles components on part when suit complete sealing process
-    /// </summary>
-    /// <param name="part"></param>
-    /// <param name="args"></param>
     private void OnPartSealingComplete(Entity<SealableClothingComponent> part, ref ClothingPartSealCompleteEvent args)
-    {
-        _componentTogglerSystem.ToggleComponent(part, args.IsSealed);
-    }
+        => _componentTogglerSystem.ToggleComponent(part, args.IsSealed);
 
-    /// <summary>
-    ///     Toggles components on control when suit complete sealing process
-    /// </summary>
+    /// Toggles components on control when suit complete sealing process
     private void OnControlSealingComplete(Entity<SealableClothingControlComponent> control, ref ClothingControlSealCompleteEvent args)
-    {
-        _componentTogglerSystem.ToggleComponent(control, args.IsSealed);
-    }
+        => _componentTogglerSystem.ToggleComponent(control, args.IsSealed);
 
-    /// <summary>
     /// Add/Remove wearer on clothing equip/unequip
-    /// </summary>
     private void OnControlEquip(Entity<SealableClothingControlComponent> control, ref ClothingGotEquippedEvent args)
     {
         control.Comp.WearerEntity = args.Wearer;
@@ -88,9 +76,7 @@ public abstract class SharedSealableClothingSystem : EntitySystem
         Dirty(control);
     }
 
-    /// <summary>
     /// Removes seal action on component remove
-    /// </summary>
     private void OnControlRemove(Entity<SealableClothingControlComponent> control, ref ComponentRemove args)
     {
         var comp = control.Comp;
@@ -98,9 +84,7 @@ public abstract class SharedSealableClothingSystem : EntitySystem
         _actionsSystem.RemoveAction(comp.SealActionEntity);
     }
 
-    /// <summary>
     /// Ensures seal action to wearer when it equip the seal control
-    /// </summary>
     private void OnControlGetItemActions(Entity<SealableClothingControlComponent> control, ref GetItemActionsEvent args)
     {
         var (uid, comp) = control;
@@ -111,23 +95,18 @@ public abstract class SharedSealableClothingSystem : EntitySystem
         args.AddAction(comp.SealActionEntity.Value);
     }
 
-    /// <summary>
     /// Adds unsealing verbs to sealing control allowing other users to unseal/seal clothing via stripping
-    /// </summary>
     private void OnEquipmentVerb(Entity<SealableClothingControlComponent> control, ref GetVerbsEvent<Verb> args)
     {
         var (uid, comp) = control;
         var user = args.User;
 
-        if (!args.CanComplexInteract)
-            return;
-
-        // Since sealing control in wearer's container system just won't show verb on args.CanAccess
-        if (!_interactionSystem.InRangeUnobstructed(user, uid))
-            return;
-
-        if (comp.WearerEntity == null ||
-            comp.WearerEntity != user && _actionBlockerSystem.CanInteract(comp.WearerEntity.Value, null))
+        if (!args.CanComplexInteract
+            // Since sealing control in wearer's container system just won't show verb on args.CanAccess
+            || !_interactionSystem.InRangeUnobstructed(user, uid)
+            || comp.WearerEntity == null
+            || comp.WearerEntity != user
+            && _actionBlockerSystem.CanInteract(comp.WearerEntity.Value, null))
             return;
 
         var verbIcon = comp.IsCurrentlySealed ?
@@ -162,9 +141,7 @@ public abstract class SharedSealableClothingSystem : EntitySystem
         args.Verbs.Add(verb);
     }
 
-    /// <summary>
     /// Ensure actionEntity on map init
-    /// </summary>
     private void OnControlMapInit(Entity<SealableClothingControlComponent> control, ref MapInitEvent args)
     {
         var (uid, comp) = control;
@@ -181,9 +158,7 @@ public abstract class SharedSealableClothingSystem : EntitySystem
         TryStartSealToggleProcess(control);
     }*/
 
-    /// <summary>
     /// Trying to start sealing on action. It'll notify wearer if process already started
-    /// </summary>
     private void OnControlSealEvent(Entity<SealableClothingControlComponent> control, ref SealClothingEvent args)
     {
         var (uid, comp) = control;
@@ -210,9 +185,7 @@ public abstract class SharedSealableClothingSystem : EntitySystem
         TryStartSealToggleProcess(control, args.Performer);
     }
 
-    /// <summary>
     /// Toggle seal on one part and starts same process on next part
-    /// </summary>
     private void OnSealClothingDoAfter(Entity<SealableClothingControlComponent> control, ref SealClothingDoAfterEvent args)
     {
         var (uid, comp) = control;
@@ -222,17 +195,14 @@ public abstract class SharedSealableClothingSystem : EntitySystem
 
         var part = args.Target;
 
-        if (!TryComp<SealableClothingComponent>(part, out var sealableComponet))
+        if (!TryComp<SealableClothingComponent>(part, out var sealableComponent))
             return;
 
         sealableComponet.IsSealed = !comp.IsCurrentlySealed;
 
         Dirty(part.Value, sealableComponet);
 
-        if (sealableComponet.IsSealed)
-            _audioSystem.PlayPvs(sealableComponet.SealUpSound, uid);
-        else
-            _audioSystem.PlayPvs(sealableComponet.SealUpSound, uid);
+        _audioSystem.PlayPvs(sealableComponet.SealUpSound, uid);
 
         _appearanceSystem.SetData(part.Value, SealableClothingVisuals.Sealed, sealableComponet.IsSealed);
 
@@ -242,9 +212,7 @@ public abstract class SharedSealableClothingSystem : EntitySystem
         NextSealProcess(control);
     }
 
-    /// <summary>
     /// Prevents clothing from toggling if it's sealed or in sealing process
-    /// </summary>
     private void OnToggleClothingAttempt(Entity<SealableClothingControlComponent> control, ref ToggleClothingAttemptEvent args)
     {
         var (uid, comp) = control;
@@ -273,11 +241,7 @@ public abstract class SharedSealableClothingSystem : EntitySystem
     }
     #endregion
 
-    /// <summary>
-    ///     Tries to start sealing process
-    /// </summary>
-    /// <param name="control"></param>
-    /// <returns></returns>
+    /// Tries to start sealing process
     public bool TryStartSealToggleProcess(Entity<SealableClothingControlComponent> control, EntityUid? user = null)
     {
         var (uid, comp) = control;
@@ -332,10 +296,7 @@ public abstract class SharedSealableClothingSystem : EntitySystem
         return true;
     }
 
-    /// <summary>
-    ///     Recursively seals/unseals all parts of sealable clothing
-    /// </summary>
-    /// <param name="control"></param>
+    /// Recursively seals/unseals all parts of sealable clothing
     private void NextSealProcess(Entity<SealableClothingControlComponent> control)
     {
         var (uid, comp) = control;
@@ -346,10 +307,7 @@ public abstract class SharedSealableClothingSystem : EntitySystem
             comp.IsInProcess = false;
             comp.IsCurrentlySealed = !comp.IsCurrentlySealed;
 
-            if (comp.IsCurrentlySealed)
-                _audioSystem.PlayEntity(comp.SealCompleteSound, comp.WearerEntity!.Value, uid);
-            else
-                _audioSystem.PlayEntity(comp.UnsealCompleteSound, comp.WearerEntity!.Value, uid);
+            _audioSystem.PlayEntity(comp.UnsealCompleteSound, comp.WearerEntity!.Value, uid);
 
             var ev = new ClothingControlSealCompleteEvent(comp.IsCurrentlySealed);
             RaiseLocalEvent(control, ref ev);
@@ -402,31 +360,21 @@ public abstract class SharedSealableClothingSystem : EntitySystem
 }
 
 [Serializable, NetSerializable]
-public sealed partial class SealClothingDoAfterEvent : SimpleDoAfterEvent
-{
-}
+public sealed partial class SealClothingDoAfterEvent : SimpleDoAfterEvent { }
 
 [Serializable, NetSerializable]
-public sealed partial class StartSealingProcessDoAfterEvent : SimpleDoAfterEvent
-{
-}
+public sealed partial class StartSealingProcessDoAfterEvent : SimpleDoAfterEvent { }
 
-public sealed partial class SealClothingEvent : InstantActionEvent
-{
-}
+public sealed partial class SealClothingEvent : InstantActionEvent { }
 
-/// <summary>
-///     Raises on control when clothing finishes it's sealing or unsealing process
-/// </summary>
+/// Raises on control when clothing finishes it's sealing or unsealing process
 [ByRefEvent]
 public readonly record struct ClothingControlSealCompleteEvent(bool IsSealed)
 {
     public readonly bool IsSealed = IsSealed;
 }
 
-/// <summary>
-///     Raises on part when clothing finishes it's sealing or unsealing process
-/// </summary>
+/// Raises on part when clothing finishes it's sealing or unsealing process
 [ByRefEvent]
 public readonly record struct ClothingPartSealCompleteEvent(bool IsSealed)
 {
