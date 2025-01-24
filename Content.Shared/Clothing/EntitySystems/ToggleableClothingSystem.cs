@@ -497,7 +497,7 @@ public sealed class ToggleableClothingSystem : EntitySystem
         if (container == null || attachedClothings.Count == 0)
             return ToggleableClothingAttachedStatus.NoneToggled;
 
-        var toggledCount = attachedClothings.Count(c => container.Contains(c.Key));
+        var toggledCount = attachedClothings.Count(c => !container.Contains(c.Key));
 
         if (toggledCount == 0)
             return ToggleableClothingAttachedStatus.NoneToggled;
