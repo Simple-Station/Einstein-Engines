@@ -122,7 +122,7 @@
       netsync: false
     - type: LightFade
       rampUpDuration: 0.1
-      duration: 0.449
+      duration: 0.451 # Making this slightly longer to fix error "Predicting the queued deletion of a networked entity"
 
 - type: entity
   id: WeaponArcKick
