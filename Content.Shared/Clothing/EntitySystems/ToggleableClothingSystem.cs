@@ -206,10 +206,7 @@ public sealed class ToggleableClothingSystem : EntitySystem
         foreach (var part in parts)
         {
             // Check if entity in container what means it already unequipped
-            if (comp.Container.Contains(part.Key))
-                continue;
-
-            if (part.Value == null)
+            if (comp.Container.Contains(part.Key) || part.Value == null)
                 continue;
 
             _inventorySystem.TryUnequip(args.Equipee, part.Value, force: true);
@@ -231,9 +228,7 @@ public sealed class ToggleableClothingSystem : EntitySystem
             return;
 
         foreach (var clothing in comp.ClothingUids.Keys)
-        {
             QueueDel(clothing);
-        }
     }
 
     private void OnAttachedUnequipAttempt(Entity<AttachedClothingComponent> attached, ref BeingUnequippedAttemptEvent args)
@@ -393,10 +388,7 @@ public sealed class ToggleableClothingSystem : EntitySystem
         var ev = new ToggleClothingAttemptEvent(user, toggleable);
         RaiseLocalEvent(toggleable, ev);
 
-        if (ev.Cancelled)
-            return false;
-
-        return true;
+        return !ev.Cancelled;
     }
 
     private void UnequipClothing(EntityUid user, Entity<ToggleableClothingComponent> toggleable, EntityUid clothing, string slot)
@@ -525,15 +517,7 @@ public sealed class ToggleableClothingSystem : EntitySystem
         if (container == null || attachedClothings.Count == 0)
             return ToggleableClothingAttachedStatus.NoneToggled;
 
-        var toggledCount = 0;
-
-        foreach (var attached in attachedClothings)
-        {
-            if (container.Contains(attached.Key))
-                continue;
-
-            toggledCount++;
-        }
+        var toggledCount = attachedClothings.Count(c => container.Contains(c.Key));
 
         if (toggledCount == 0)
             return ToggleableClothingAttachedStatus.NoneToggled;
