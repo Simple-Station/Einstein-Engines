@@ -23,7 +23,6 @@
   equipment:
     jumpsuit: ClothingUniformEnvirosuitTacticool
     head: ClothingHeadEnvirohelmTacticool
-    gloves: ClothingHandsGlovesEnviroglovesBlack
     mask: ClothingMaskGasSyndicate
 
 - type: startingGear
@@ -34,7 +33,6 @@
   equipment:
     jumpsuit: ClothingUniformEnvirosuitTacticool
     head: ClothingHeadEnvirohelmTacticool
-    gloves: ClothingHandsGlovesEnviroglovesBlack
     mask: ClothingMaskGasSyndicate
     suitstorage: PlasmaTankFilled
 
