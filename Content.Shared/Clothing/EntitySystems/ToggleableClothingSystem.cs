@@ -108,7 +108,7 @@ public sealed class ToggleableClothingSystem : EntitySystem
 
         var (time, stealth) = _strippable.GetStripTimeModifiers(user, wearer, comp.StripDelay.Value);
 
-        bool hidden = (stealth == ThievingStealth.Hidden);
+        bool hidden = stealth == ThievingStealth.Hidden;
 
         var args = new DoAfterArgs(EntityManager, user, time, new ToggleClothingDoAfterEvent(), toggleable, wearer, toggleable)
         {
@@ -245,15 +245,13 @@ public sealed class ToggleableClothingSystem : EntitySystem
 
         var comp = attached.Comp;
 
-        if (!TryComp(comp.AttachedUid, out ToggleableClothingComponent? toggleableComp))
-            return;
-
-        if (toggleableComp.LifeStage > ComponentLifeStage.Running)
+        if (!TryComp(comp.AttachedUid, out ToggleableClothingComponent? toggleableComp)
+            || toggleableComp.LifeStage > ComponentLifeStage.Running)
             return;
 
         var clothingUids = toggleableComp.ClothingUids;
 
-        if (!clothingUids.Remove(attached.Owner))
+        if (!clothingUids.Remove(attached.Owner) || clothingUids.Count > 0)
             return;
 
         // If no attached clothing left - remove component and action
