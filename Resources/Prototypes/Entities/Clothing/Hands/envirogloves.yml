@@ -531,22 +531,22 @@
     sprite: Clothing/Hands/Gloves/Color/color.rsi
     layers:
     - state: icon
-      color: "#9ed63a"
+      color: "#79CC26"
   - type: Item
     sprite: Clothing/Hands/Gloves/Color/color.rsi
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#9ed63a"
+        color: "#79CC26"
       right:
       - state: inhand-right
-        color: "#9ed63a"
+        color: "#79CC26"
   - type: Clothing
     sprite: Clothing/Hands/Gloves/Color/color.rsi
     clothingVisuals:
       gloves:
       - state: equipped-HAND
-        color: "#9ed63a"
+        color: "#79CC26"
   - type: Fiber
     fiberColor: fibers-green
 

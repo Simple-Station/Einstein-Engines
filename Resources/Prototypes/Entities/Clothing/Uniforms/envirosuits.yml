@@ -120,26 +120,10 @@
     sprite: Clothing/Uniforms/Envirosuits/engineering.rsi
 
 - type: entity
-  parent: ClothingUniformEnvirosuitBase
-  id: ClothingUniformEnvirosuitEnviroslacks
-  name: enviroslacks
-  description: The pet project of a particularly posh Plasmaman.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Envirosuits/enviroslacks.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Envirosuits/enviroslacks.rsi
-
-- type: entity
-  parent: ClothingUniformEnvirosuitBase
+  parent: ClothingUniformEnvirosuitEnviroslacksColorOrange
   id: ClothingUniformEnvirosuitDetective
   name: detective envirosuit
   description: The pet project of a particularly posh Plasmaman, this custom suit was modified by Nanotrasen for its detectives.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Envirosuits/enviroslacks.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Envirosuits/enviroslacks.rsi
 
 - type: entity
   parent: ClothingUniformEnvirosuitBase
@@ -1380,6 +1364,564 @@
         color: "#ffce5b"
       - state: soles-equipped-INNERCLOTHING
         color: "#634737"
+
+
+# The Tortured Enviroslacks Department (Skubman's Version)
+- type: entity
+  parent: ClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitEnviroslacks
+  name: enviroslacks
+  description: The pet project of a particularly posh Plasmaman. Professional!
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/enviroslacks.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/enviroslacks.rsi
+
+- type: entity
+  parent: ClothingUniformEnvirosuitCustomBase
+  id: ClothingUniformEnvirosuitEnviroslacksNegative
+  name: negative enviroslacks
+  description: The pet project of a particularly posh Plasmaman, this variant has inverted colors. Dapper!
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#3f3f3f"
+    - state: plaintop-icon
+      color: "#3f3f3f"
+    - state: tie-icon
+      color: "#a349a4"
+    - state: accent-icon
+      color: "#a349a4"
+    - state: pants-icon
+      color: "#f2f2f2"
+    - state: belt-icon
+      color: "#737373"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#3f3f3f"
+      - state: plaintop-inhand-left
+        color: "#3f3f3f"
+      - state: tie-inhand-left
+        color: "#a349a4"
+      - state: accent-inhand-left
+        color: "#a349a4"
+      - state: pants-inhand-left
+        color: "#f2f2f2"
+      - state: belt-inhand-left
+        color: "#737373"
+      right:
+      - state: inhand-right
+        color: "#3f3f3f"
+      - state: plaintop-inhand-right
+        color: "#3f3f3f"
+      - state: tie-inhand-right
+        color: "#a349a4"
+      - state: accent-inhand-right
+        color: "#a349a4"
+      - state: pants-inhand-right
+        color: "#f2f2f2"
+      - state: belt-inhand-right
+        color: "#737373"
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#3f3f3f"
+      - state: plaintop-equipped-INNERCLOTHING
+        color: "#3f3f3f"
+      - state: tie-equipped-INNERCLOTHING
+        color: "#a349a4"
+      - state: accentalt-equipped-INNERCLOTHING
+        color: "#a349a4"
+      - state: pants-equipped-INNERCLOTHING
+        color: "#f2f2f2"
+      - state: belt-equipped-INNERCLOTHING
+        color: "#737373"
+      - state: loweraccent-equipped-INNERCLOTHING
+        color: "#a349a4"
+      - state: soles-equipped-INNERCLOTHING
+        color: "#bababa"
+
+- type: entity
+  parent: ClothingUniformEnvirosuitCustomBase
+  id: ClothingUniformEnvirosuitEnviroslacksColorRed
+  name: red enviroslacks
+  description: The pet project of a particularly posh Plasmaman, this variant comes with red accents. Fancy!
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#ffffff"
+    - state: plaintop-icon
+      color: "#ffffff"
+    - state: tie-icon
+      color: "#99211f"
+    - state: accent-icon
+      color: "#99211f"
+    - state: pants-icon
+      color: "#292929"
+    - state: belt-icon
+      color: "#737373"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ffffff"
+      - state: plaintop-inhand-left
+        color: "#ffffff"
+      - state: tie-inhand-left
+        color: "#99211f"
+      - state: accent-inhand-left
+        color: "#99211f"
+      - state: pants-inhand-left
+        color: "#292929"
+      - state: belt-inhand-left
+        color: "#737373"
+      right:
+      - state: inhand-right
+        color: "#ffffff"
+      - state: plaintop-inhand-right
+        color: "#ffffff"
+      - state: tie-inhand-right
+        color: "#99211f"
+      - state: accent-inhand-right
+        color: "#99211f"
+      - state: pants-inhand-right
+        color: "#292929"
+      - state: belt-inhand-right
+        color: "#737373"
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#ffffff"
+      - state: plaintop-equipped-INNERCLOTHING
+        color: "#ffffff"
+      - state: tie-equipped-INNERCLOTHING
+        color: "#99211f"
+      - state: accentalt-equipped-INNERCLOTHING
+        color: "#99211f"
+      - state: pants-equipped-INNERCLOTHING
+        color: "#292929"
+      - state: belt-equipped-INNERCLOTHING
+        color: "#737373"
+      - state: loweraccent-equipped-INNERCLOTHING
+        color: "#99211f"
+      - state: soles-equipped-INNERCLOTHING
+        color: "#bababa"
+
+- type: entity
+  parent: ClothingUniformEnvirosuitCustomBase
+  id: ClothingUniformEnvirosuitEnviroslacksColorOrange
+  name: orange enviroslacks
+  description: The pet project of a particularly posh Plasmaman, this variant comes with orange accents. Zesty!
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#ffffff"
+    - state: plaintop-icon
+      color: "#ffffff"
+    - state: tie-icon
+      color: "#c2680f"
+    - state: accent-icon
+      color: "#c2680f"
+    - state: pants-icon
+      color: "#292929"
+    - state: belt-icon
+      color: "#737373"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ffffff"
+      - state: plaintop-inhand-left
+        color: "#ffffff"
+      - state: tie-inhand-left
+        color: "#c2680f"
+      - state: accent-inhand-left
+        color: "#c2680f"
+      - state: pants-inhand-left
+        color: "#292929"
+      - state: belt-inhand-left
+        color: "#737373"
+      right:
+      - state: inhand-right
+        color: "#ffffff"
+      - state: plaintop-inhand-right
+        color: "#ffffff"
+      - state: tie-inhand-right
+        color: "#c2680f"
+      - state: accent-inhand-right
+        color: "#c2680f"
+      - state: pants-inhand-right
+        color: "#292929"
+      - state: belt-inhand-right
+        color: "#737373"
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#ffffff"
+      - state: plaintop-equipped-INNERCLOTHING
+        color: "#ffffff"
+      - state: tie-equipped-INNERCLOTHING
+        color: "#c2680f"
+      - state: accentalt-equipped-INNERCLOTHING
+        color: "#c2680f"
+      - state: pants-equipped-INNERCLOTHING
+        color: "#292929"
+      - state: belt-equipped-INNERCLOTHING
+        color: "#737373"
+      - state: loweraccent-equipped-INNERCLOTHING
+        color: "#c2680f"
+      - state: soles-equipped-INNERCLOTHING
+        color: "#bababa"
+
+- type: entity
+  parent: ClothingUniformEnvirosuitCustomBase
+  id: ClothingUniformEnvirosuitEnviroslacksColorGreen
+  name: green enviroslacks
+  description: The pet project of a particularly posh Plasmaman, this variant comes with green accents. Leafy!
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#ffffff"
+    - state: plaintop-icon
+      color: "#ffffff"
+    - state: tie-icon
+      color: "#5b991f"
+    - state: accent-icon
+      color: "#5b991f"
+    - state: pants-icon
+      color: "#292929"
+    - state: belt-icon
+      color: "#737373"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ffffff"
+      - state: plaintop-inhand-left
+        color: "#ffffff"
+      - state: tie-inhand-left
+        color: "#5b991f"
+      - state: accent-inhand-left
+        color: "#5b991f"
+      - state: pants-inhand-left
+        color: "#292929"
+      - state: belt-inhand-left
+        color: "#737373"
+      right:
+      - state: inhand-right
+        color: "#ffffff"
+      - state: plaintop-inhand-right
+        color: "#ffffff"
+      - state: tie-inhand-right
+        color: "#5b991f"
+      - state: accent-inhand-right
+        color: "#5b991f"
+      - state: pants-inhand-right
+        color: "#292929"
+      - state: belt-inhand-right
+        color: "#737373"
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#ffffff"
+      - state: plaintop-equipped-INNERCLOTHING
+        color: "#ffffff"
+      - state: tie-equipped-INNERCLOTHING
+        color: "#5b991f"
+      - state: accentalt-equipped-INNERCLOTHING
+        color: "#5b991f"
+      - state: pants-equipped-INNERCLOTHING
+        color: "#292929"
+      - state: belt-equipped-INNERCLOTHING
+        color: "#737373"
+      - state: loweraccent-equipped-INNERCLOTHING
+        color: "#5b991f"
+      - state: soles-equipped-INNERCLOTHING
+        color: "#bababa"
+
+- type: entity
+  parent: ClothingUniformEnvirosuitCustomBase
+  id: ClothingUniformEnvirosuitEnviroslacksColorBlue
+  name: blue enviroslacks
+  description: The pet project of a particularly posh Plasmaman, this variant comes with blue accents. Cool!
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#ffffff"
+    - state: plaintop-icon
+      color: "#ffffff"
+    - state: tie-icon
+      color: "#2b5c99"
+    - state: accent-icon
+      color: "#2b5c99"
+    - state: pants-icon
+      color: "#292929"
+    - state: belt-icon
+      color: "#737373"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ffffff"
+      - state: plaintop-inhand-left
+        color: "#ffffff"
+      - state: tie-inhand-left
+        color: "#2b5c99"
+      - state: accent-inhand-left
+        color: "#2b5c99"
+      - state: pants-inhand-left
+        color: "#292929"
+      - state: belt-inhand-left
+        color: "#737373"
+      right:
+      - state: inhand-right
+        color: "#ffffff"
+      - state: plaintop-inhand-right
+        color: "#ffffff"
+      - state: tie-inhand-right
+        color: "#2b5c99"
+      - state: accent-inhand-right
+        color: "#2b5c99"
+      - state: pants-inhand-right
+        color: "#292929"
+      - state: belt-inhand-right
+        color: "#737373"
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#ffffff"
+      - state: plaintop-equipped-INNERCLOTHING
+        color: "#ffffff"
+      - state: tie-equipped-INNERCLOTHING
+        color: "#2b5c99"
+      - state: accentalt-equipped-INNERCLOTHING
+        color: "#2b5c99"
+      - state: pants-equipped-INNERCLOTHING
+        color: "#292929"
+      - state: belt-equipped-INNERCLOTHING
+        color: "#737373"
+      - state: loweraccent-equipped-INNERCLOTHING
+        color: "#2b5c99"
+      - state: soles-equipped-INNERCLOTHING
+        color: "#bababa"
+
+- type: entity
+  parent: ClothingUniformEnvirosuitCustomBase
+  id: ClothingUniformEnvirosuitEnviroslacksColorMonochrome
+  name: monochrome enviroslacks
+  description: The pet project of a particularly posh Plasmaman, this variant is fully black and white. Classic!
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#ffffff"
+    - state: plaintop-icon
+      color: "#ffffff"
+    - state: tie-icon
+      color: "#363636"
+    - state: accent-icon
+      color: "#363636"
+    - state: pants-icon
+      color: "#292929"
+    - state: belt-icon
+      color: "#737373"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ffffff"
+      - state: plaintop-inhand-left
+        color: "#ffffff"
+      - state: tie-inhand-left
+        color: "#363636"
+      - state: accent-inhand-left
+        color: "#363636"
+      - state: pants-inhand-left
+        color: "#292929"
+      - state: belt-inhand-left
+        color: "#737373"
+      right:
+      - state: inhand-right
+        color: "#ffffff"
+      - state: plaintop-inhand-right
+        color: "#ffffff"
+      - state: tie-inhand-right
+        color: "#363636"
+      - state: accent-inhand-right
+        color: "#363636"
+      - state: pants-inhand-right
+        color: "#292929"
+      - state: belt-inhand-right
+        color: "#737373"
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#ffffff"
+      - state: plaintop-equipped-INNERCLOTHING
+        color: "#ffffff"
+      - state: tie-equipped-INNERCLOTHING
+        color: "#363636"
+      - state: accentalt-equipped-INNERCLOTHING
+        color: "#363636"
+      - state: pants-equipped-INNERCLOTHING
+        color: "#292929"
+      - state: belt-equipped-INNERCLOTHING
+        color: "#737373"
+      - state: loweraccent-equipped-INNERCLOTHING
+        color: "#d6d6d6"
+      - state: soles-equipped-INNERCLOTHING
+        color: "#bababa"
+
+- type: entity
+  parent: ClothingUniformEnvirosuitCustomBase
+  id: ClothingUniformEnvirosuitEnviroslacksColorMonochromeAlt
+  name: monochrome enviroslacks
+  description: The pet project of a particularly posh Plasmaman, this variant is fully white and black. Noir!
+  suffix: Alternative
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#3b3b3b"
+    - state: plaintop-icon
+      color: "#3b3b3b"
+    - state: tie-icon
+      color: "#d6d6d6"
+    - state: accent-icon
+      color: "#d6d6d6"
+    - state: pants-icon
+      color: "#f2f2f2"
+    - state: belt-icon
+      color: "#737373"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#3b3b3b"
+      - state: plaintop-inhand-left
+        color: "#3b3b3b"
+      - state: tie-inhand-left
+        color: "#d6d6d6"
+      - state: accent-inhand-left
+        color: "#d6d6d6"
+      - state: pants-inhand-left
+        color: "#f2f2f2"
+      - state: belt-inhand-left
+        color: "#737373"
+      right:
+      - state: inhand-right
+        color: "#3b3b3b"
+      - state: plaintop-inhand-right
+        color: "#3b3b3b"
+      - state: tie-inhand-right
+        color: "#d6d6d6"
+      - state: accent-inhand-right
+        color: "#d6d6d6"
+      - state: pants-inhand-right
+        color: "#f2f2f2"
+      - state: belt-inhand-right
+        color: "#737373"
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#3b3b3b"
+      - state: plaintop-equipped-INNERCLOTHING
+        color: "#3b3b3b"
+      - state: tie-equipped-INNERCLOTHING
+        color: "#d6d6d6"
+      - state: accentalt-equipped-INNERCLOTHING
+        color: "#d6d6d6"
+      - state: pants-equipped-INNERCLOTHING
+        color: "#f2f2f2"
+      - state: belt-equipped-INNERCLOTHING
+        color: "#737373"
+      - state: loweraccent-equipped-INNERCLOTHING
+        color: "#424242"
+      - state: soles-equipped-INNERCLOTHING
+        color: "#bababa"
+
+- type: entity
+  parent: ClothingUniformEnvirosuitCustomBase
+  id: ClothingUniformEnvirosuitEnviroslacksPsychologist
+  name: psychologist enviroslacks
+  description: The pet project of a particularly posh Plasmaman, this variant was made for the psychologist. Mind-boggling!
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#ffffff"
+    - state: plaintop-icon
+      color: "#ffffff"
+    - state: tie-icon
+      color: "#5ba0cf"
+    - state: accent-icon
+      color: "#5ba0cf"
+    - state: pants-icon
+      color: "#292929"
+    - state: belt-icon
+      color: "#737373"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ffffff"
+      - state: plaintop-inhand-left
+        color: "#ffffff"
+      - state: tie-inhand-left
+        color: "#5ba0cf"
+      - state: accent-inhand-left
+        color: "#5ba0cf"
+      - state: pants-inhand-left
+        color: "#292929"
+      - state: belt-inhand-left
+        color: "#737373"
+      right:
+      - state: inhand-right
+        color: "#ffffff"
+      - state: plaintop-inhand-right
+        color: "#ffffff"
+      - state: tie-inhand-right
+        color: "#5ba0cf"
+      - state: accent-inhand-right
+        color: "#5ba0cf"
+      - state: pants-inhand-right
+        color: "#292929"
+      - state: belt-inhand-right
+        color: "#737373"
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#ffffff"
+      - state: plaintop-equipped-INNERCLOTHING
+        color: "#ffffff"
+      - state: tie-equipped-INNERCLOTHING
+        color: "#5ba0cf"
+      - state: accentalt-equipped-INNERCLOTHING
+        color: "#5ba0cf"
+      - state: pants-equipped-INNERCLOTHING
+        color: "#292929"
+      - state: belt-equipped-INNERCLOTHING
+        color: "#737373"
+      - state: loweraccent-equipped-INNERCLOTHING
+        color: "#5ba0cf"
+      - state: soles-equipped-INNERCLOTHING
+        color: "#bababa"
 
 # Color envirosuits
 - type: entity

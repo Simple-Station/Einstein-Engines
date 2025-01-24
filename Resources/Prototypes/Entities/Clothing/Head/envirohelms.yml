@@ -89,15 +89,10 @@
     sprite: Clothing/Head/Envirohelms/chaplain.rsi
 
 - type: entity
-  parent: ClothingHeadEnvirohelmBase
+  parent: ClothingHeadEnvirohelmEnviroslacksColorOrange
   id: ClothingHeadEnvirohelmDetective
   name: detective's envirosuit helmet
   description: A special containment helmet designed for detectives, protecting them from burning alive, alongside other undesirables.
-  components:
-  - type: Sprite
-    sprite: Clothing/Head/Envirohelms/white.rsi
-  - type: Clothing
-    sprite: Clothing/Head/Envirohelms/white.rsi
 
 - type: entity
   parent: ClothingHeadEnvirohelmBase
@@ -225,8 +220,8 @@
 - type: entity
   parent: ClothingHeadEnvirohelmBase
   id: ClothingHeadEnvirohelmMedicalDoctor
-  name: medical doctor's envirosuit helmet
-  description: An envirohelmet designed for Plasmaman medical doctors, having two stripes down its length to denote as much.
+  name: medical envirosuit helmet
+  description: An envirohelmet designed for Plasmaman Medical personnel, having two stripes down its length to denote as much.
   components:
   - type: Sprite
     sprite: Clothing/Head/Envirohelms/medical.rsi
@@ -1783,4 +1778,245 @@
         color: "#543e1b"
       - state: accent-equipped-HELMET
         color: "#a349a4"
+      - state: visor-equipped-HELMET
+
+- type: entity
+  parent: ClothingHeadEnvirohelmCustomBase
+  id: ClothingHeadEnvirohelmEnviroslacksColorRed
+  name: red enviroslacks helmet
+  description: The pet project of a particularly posh Plasmaman, this envirohelm comes with red accents. Fancy!
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#ffffff"
+    - state: accent-icon
+      color: "#99211f"
+    - state: visor-icon
+    - state: icon-flash
+      visible: false
+      shader: unshaded
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ffffff"
+      - state: accent-inhand-left
+        color: "#99211f"
+      - state: visor-inhand-left
+      right:
+      - state: inhand-right
+        color: "#ffffff"
+      - state: accent-inhand-right
+        color: "#99211f"
+      - state: visor-inhand-right
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#ffffff"
+      - state: accent-equipped-HELMET
+        color: "#99211f"
+      - state: visor-equipped-HELMET
+
+- type: entity
+  parent: ClothingHeadEnvirohelmCustomBase
+  id: ClothingHeadEnvirohelmEnviroslacksColorOrange
+  name: orange enviroslacks helmet
+  description: The pet project of a particularly posh Plasmaman, this envirohelm comes with orange accents. Zesty!
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#ffffff"
+    - state: accent-icon
+      color: "#c2680f"
+    - state: visor-icon
+    - state: icon-flash
+      visible: false
+      shader: unshaded
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ffffff"
+      - state: accent-inhand-left
+        color: "#c2680f"
+      - state: visor-inhand-left
+      right:
+      - state: inhand-right
+        color: "#ffffff"
+      - state: accent-inhand-right
+        color: "#c2680f"
+      - state: visor-inhand-right
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#ffffff"
+      - state: accent-equipped-HELMET
+        color: "#c2680f"
+      - state: visor-equipped-HELMET
+
+- type: entity
+  parent: ClothingHeadEnvirohelmCustomBase
+  id: ClothingHeadEnvirohelmEnviroslacksColorGreen
+  name: green enviroslacks helmet
+  description: The pet project of a particularly posh Plasmaman, this envirohelm comes with green accents. Leafy!
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#ffffff"
+    - state: accent-icon
+      color: "#5b991f"
+    - state: visor-icon
+    - state: icon-flash
+      visible: false
+      shader: unshaded
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ffffff"
+      - state: accent-inhand-left
+        color: "#5b991f"
+      - state: visor-inhand-left
+      right:
+      - state: inhand-right
+        color: "#ffffff"
+      - state: accent-inhand-right
+        color: "#5b991f"
+      - state: visor-inhand-right
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#ffffff"
+      - state: accent-equipped-HELMET
+        color: "#5b991f"
+      - state: visor-equipped-HELMET
+
+- type: entity
+  parent: ClothingHeadEnvirohelmCustomBase
+  id: ClothingHeadEnvirohelmEnviroslacksColorBlue
+  name: blue enviroslacks helmet
+  description: The pet project of a particularly posh Plasmaman, this envirohelm comes with blue accents. Cool!
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#ffffff"
+    - state: accent-icon
+      color: "#2b5c99"
+    - state: visor-icon
+    - state: icon-flash
+      visible: false
+      shader: unshaded
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ffffff"
+      - state: accent-inhand-left
+        color: "#2b5c99"
+      - state: visor-inhand-left
+      right:
+      - state: inhand-right
+        color: "#ffffff"
+      - state: accent-inhand-right
+        color: "#2b5c99"
+      - state: visor-inhand-right
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#ffffff"
+      - state: accent-equipped-HELMET
+        color: "#2b5c99"
+      - state: visor-equipped-HELMET
+
+- type: entity
+  parent: ClothingHeadEnvirohelmCustomBase
+  id: ClothingHeadEnvirohelmEnviroslacksColorMonochrome
+  name: monochrome enviroslacks helmet
+  description: The pet project of a particularly posh Plasmaman, this envirohelm is fully black and white. Classic!
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#ffffff"
+    - state: accent-icon
+      color: "#363636"
+    - state: visor-icon
+    - state: icon-flash
+      visible: false
+      shader: unshaded
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ffffff"
+      - state: accent-inhand-left
+        color: "#363636"
+      - state: visor-inhand-left
+      right:
+      - state: inhand-right
+        color: "#ffffff"
+      - state: accent-inhand-right
+        color: "#363636"
+      - state: visor-inhand-right
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#ffffff"
+      - state: accent-equipped-HELMET
+        color: "#363636"
+      - state: visor-equipped-HELMET
+
+- type: entity
+  parent: ClothingHeadEnvirohelmCustomBase
+  id: ClothingHeadEnvirohelmEnviroslacksColorMonochromeAlt
+  name: monochrome enviroslacks helmet
+  description: The pet project of a particularly posh Plasmaman, this envirohelm is fully white and black. Noir!
+  suffix: Alternative
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#3b3b3b"
+    - state: accent-icon
+      color: "#d6d6d6"
+    - state: visor-icon
+    - state: icon-flash
+      visible: false
+      shader: unshaded
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#3b3b3b"
+      - state: accent-inhand-left
+        color: "#d6d6d6"
+      - state: visor-inhand-left
+      right:
+      - state: inhand-right
+        color: "#3b3b3b"
+      - state: accent-inhand-right
+        color: "#d6d6d6"
+      - state: visor-inhand-right
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#3b3b3b"
+      - state: accent-equipped-HELMET
+        color: "#d6d6d6"
       - state: visor-equipped-HELMET

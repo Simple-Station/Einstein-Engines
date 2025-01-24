@@ -308,8 +308,6 @@
     - type: loadout
       id: LoadoutUniformEnvirosuit
     - type: loadout
-      id: LoadoutUniformEnvirosuitEnviroslacks
-    - type: loadout
       id: LoadoutUniformEnvirosuitBlackPink
     - type: loadout
       id: LoadoutUniformEnvirosuitBlackPinkAlt
@@ -353,3 +351,19 @@
       id: LoadoutUniformEnvirosuitColorLightBrown
     - type: loadout
       id: LoadoutUniformEnvirosuitColorBrown
+    - type: loadout
+      id: LoadoutUniformEnvirosuitEnviroslacks
+    - type: loadout
+      id: LoadoutUniformEnvirosuitEnviroslacksNegative
+    - type: loadout
+      id: LoadoutUniformEnvirosuitEnviroslacksColorRed
+    - type: loadout
+      id: LoadoutUniformEnvirosuitEnviroslacksColorOrange
+    - type: loadout
+      id: LoadoutUniformEnvirosuitEnviroslacksColorGreen
+    - type: loadout
+      id: LoadoutUniformEnvirosuitEnviroslacksColorBlue
+    - type: loadout
+      id: LoadoutUniformEnvirosuitEnviroslacksColorMonochrome
+    - type: loadout
+      id: LoadoutUniformEnvirosuitEnviroslacksColorMonochromeAlt

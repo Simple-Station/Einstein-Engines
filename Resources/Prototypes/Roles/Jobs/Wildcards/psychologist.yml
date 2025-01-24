@@ -37,6 +37,6 @@
   id: PsychologistPlasmamanGear
   parent: BasePlasmamanGear
   equipment:
-    jumpsuit: ClothingUniformEnvirosuitEnviroslacks
+    jumpsuit: ClothingUniformEnvirosuitEnviroslacksPsychologist
     head: ClothingHeadEnvirohelmMedicalDoctor
     gloves: ClothingHandsGlovesEnviroglovesWhite
