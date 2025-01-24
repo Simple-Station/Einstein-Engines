@@ -138,7 +138,8 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
-        - Felinid
+        # - Felinid
+        - Tajaran
   functions:
     - !type:TraitModifyStamina
       staminaModifier: -15
@@ -248,7 +249,8 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
-        - Felinid
+        # - Felinid
+        - Tajaran
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -271,7 +273,8 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
-        - Felinid
+        # - Felinid
+        - Tajaran
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -321,7 +324,8 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
-        - Felinid # Felinids already have this feature by default.
+        #- Felinid # Felinids/Tajaran already have this feature by default.
+        - Tajaran
     - !type:CharacterHeightRequirement
       max: 150
     - !type:CharacterWidthRequirement
@@ -386,7 +390,8 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
-        - Felinid # Felinids already have cat claws.
+        # - Felinid # Felinids already have cat claws.
+        - Tajaran # Tajaran also have cat claws
         - Reptilian # Reptilians also have cat claws.
         - Shadowkin # Shadowkins also have claws.
         # - Vulpkanin # Vulpkanin have "Blunt" claws. One could argue this trait "Sharpens" their claws.
