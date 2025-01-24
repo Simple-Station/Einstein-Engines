@@ -1,4 +1,4 @@
-using System.Diagnostics.CodeAnalysis;
+    using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server.Administration.Logs;
 using Content.Server.Audio;
@@ -15,10 +15,8 @@ using Content.Server.Nyanotrasen.Kitchen.Components;
 using Content.Server.Popups;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
-using Content.Server.Storage.EntitySystems;
 using Content.Server.Temperature.Components;
 using Content.Server.Temperature.Systems;
-using Content.Server.UserInterface;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
@@ -41,6 +39,7 @@ using Content.Shared.Item;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Events;
+using Content.Shared.Nutrition;
 using Content.Shared.Nyanotrasen.Kitchen;
 using Content.Shared.Nyanotrasen.Kitchen.Components;
 using Content.Shared.Nyanotrasen.Kitchen.UI;
@@ -57,6 +56,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Robust.Shared.Physics.Components;
 
 namespace Content.Server.Nyanotrasen.Kitchen.EntitySystems;
 
@@ -105,12 +105,15 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
 
         SubscribeLocalEvent<DeepFryerComponent, ComponentInit>(OnInitDeepFryer);
         SubscribeLocalEvent<DeepFryerComponent, PowerChangedEvent>(OnPowerChange);
+        SubscribeLocalEvent<DeepFryerComponent, RefreshPartsEvent>(OnRefreshParts);
         SubscribeLocalEvent<DeepFryerComponent, MachineDeconstructedEvent>(OnDeconstruct);
         SubscribeLocalEvent<DeepFryerComponent, DestructionEventArgs>(OnDestruction);
         SubscribeLocalEvent<DeepFryerComponent, ThrowHitByEvent>(OnThrowHitBy);
         SubscribeLocalEvent<DeepFryerComponent, SolutionChangedEvent>(OnSolutionChange);
         SubscribeLocalEvent<DeepFryerComponent, ContainerRelayMovementEntityEvent>(OnRelayMovement);
         SubscribeLocalEvent<DeepFryerComponent, InteractUsingEvent>(OnInteractUsing);
+        SubscribeLocalEvent<DeepFryerComponent, CanDropTargetEvent>(OnCanDragDropOn);
+        SubscribeLocalEvent<DeepFryerComponent, DragDropTargetEvent>(OnDragDropOn);
 
         SubscribeLocalEvent<DeepFryerComponent, BeforeActivatableUIOpenEvent>(OnBeforeActivatableUIOpen);
         SubscribeLocalEvent<DeepFryerComponent, DeepFryerRemoveItemMessage>(OnRemoveItem);
@@ -124,24 +127,6 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
         SubscribeLocalEvent<DeepFriedComponent, ExaminedEvent>(OnExamineFried);
         SubscribeLocalEvent<DeepFriedComponent, PriceCalculationEvent>(OnPriceCalculation);
         SubscribeLocalEvent<DeepFriedComponent, FoodSlicedEvent>(OnSliceDeepFried);
-
-        SubscribeLocalEvent<DeepFryerComponent, CanDropTargetEvent>(OnCanDragDropOn);
-        SubscribeLocalEvent<DeepFryerComponent, DragDropTargetEvent>(OnDragDropOn);
-        SubscribeLocalEvent<DeepFryerComponent, RefreshPartsEvent>(OnRefreshParts);
-    }
-
-    private void OnRefreshParts(EntityUid uid, DeepFryerComponent component, RefreshPartsEvent args)
-    {
-        var ratingStorage = args.PartRatings[component.MachinePartStorageMax];
-
-        component.StorageMaxEntities = component.BaseStorageMaxEntities +
-            (int) (component.StoragePerPartRating * (ratingStorage - 1));
-    }
-
-    private void OnDragDropOn(EntityUid uid, DeepFryerComponent component, ref DragDropTargetEvent args)
-    {
-        _containerSystem.Insert(args.Dragged, component.Storage);
-        args.Handled = true;
     }
 
     private void UpdateUserInterface(EntityUid uid, DeepFryerComponent component)
@@ -152,7 +137,7 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
             component.FryingOilThreshold,
             EntityManager.GetNetEntityArray(component.Storage.ContainedEntities.ToArray()));
 
-        _uiSystem.SetUiState(uid, DeepFryerUiKey.Key, state);
+        _uiSystem.SetUiState(new Entity<UserInterfaceComponent?>(uid, null), DeepFryerUiKey.Key, state);
     }
 
     /// <summary>
@@ -180,6 +165,12 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
         }
 
         return oilVolume;
+    }
+
+    private void OnDragDropOn(EntityUid uid, DeepFryerComponent component, ref DragDropTargetEvent args)
+    {
+        _containerSystem.Insert(args.Dragged, component.Storage);
+        args.Handled = true;
     }
 
     /// <summary>
@@ -356,12 +347,12 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
 
         MakeCrispy(item);
 
-        var itemComponent = Comp<ItemComponent>(item);
+        var oilToUse = 0;
 
-        // Determine how much solution to spend on this item.
-        var solutionQuantity = FixedPoint2.Min(
-            component.Solution.Volume,
-            itemComponent.Size.Id switch
+        if (HasComp<ItemComponent>(item)) {
+            var itemComponent = Comp<ItemComponent>(item);
+
+            oilToUse = (int) (itemComponent.Size.Id switch
             {
                 "Tiny" => 1,
                 "Small" => 5,
@@ -371,6 +362,15 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
                 "Ginormous" => 50,
                 _ => 10
             } * component.SolutionSizeCoefficient);
+        } else {
+            oilToUse = (int) (TryComp<PhysicsComponent>(item, out var physicsComponent) ? physicsComponent.Mass : 10);
+        }
+
+        // Determine how much solution to spend on this item.
+        var solutionQuantity = FixedPoint2.Min(
+            component.Solution.Volume,
+            oilToUse
+        );
 
         if (component.Whitelist != null && _whitelistSystem.IsWhitelistPass(component.Whitelist, item) ||
             beingEvent.TurnIntoFood)
@@ -400,7 +400,6 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
         {
             //JJ Comment - not sure this works. Need to check if Reagent.ToString is correct.
             _prototypeManager.TryIndex<ReagentPrototype>(reagent.Reagent.ToString(), out var proto);
-
             var effectsArgs = new EntityEffectReagentArgs(uid,
                 EntityManager,
                 null,
@@ -452,6 +451,14 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
     private void OnDestruction(EntityUid uid, DeepFryerComponent component, DestructionEventArgs args)
     {
         _containerSystem.EmptyContainer(component.Storage, true);
+    }
+
+    private void OnRefreshParts(EntityUid uid, DeepFryerComponent component, RefreshPartsEvent args)
+    {
+        var ratingStorage = args.PartRatings[component.MachinePartStorageMax];
+
+        component.StorageMaxEntities = component.BaseStorageMaxEntities +
+                                       (int) (component.StoragePerPartRating * (ratingStorage - 1));
     }
 
     /// <summary>
@@ -515,7 +522,6 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
     private void OnRelayMovement(EntityUid uid, DeepFryerComponent component,
         ref ContainerRelayMovementEntityEvent args)
     {
-
         if (!_containerSystem.Remove(args.Entity, component.Storage, destination: Transform(uid).Coordinates))
             return;
 
@@ -542,7 +548,7 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
             if (!_containerSystem.Remove(removedItem, component.Storage))
                 return;
 
-            var user = args.Actor;
+            var user = EntityManager.GetEntity(args.Entity);
 
             _handsSystem.TryPickupAnyHand(user, removedItem);
 
@@ -595,10 +601,9 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
 
     private void OnScoopVat(EntityUid uid, DeepFryerComponent component, DeepFryerScoopVatMessage args)
     {
-        var user = args.Actor;
+        var user = EntityManager.GetEntity(args.Entity);
 
-        if (user == null ||
-            !TryGetActiveHandSolutionContainer(uid, user, out var heldItem, out var heldSolution,
+        if (!TryGetActiveHandSolutionContainer(uid, user, out var heldItem, out var heldSolution,
                 out var transferAmount))
             return;
 
@@ -617,7 +622,7 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
 
     private void OnClearSlagStart(EntityUid uid, DeepFryerComponent component, DeepFryerClearSlagMessage args)
     {
-        var user = args.Actor;
+        var user = EntityManager.GetEntity(args.Entity);
 
         if (!TryGetActiveHandSolutionContainer(uid, user, out var heldItem, out var heldSolution,
                 out var transferAmount))
@@ -634,7 +639,7 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
             return;
         }
 
-        var delay = TimeSpan.FromSeconds(Math.Clamp((float) wasteVolume * 0.1f, 1f, 5f));
+        var delay = Math.Clamp((float) wasteVolume * 0.1f, 1f, 5f);
 
         var ev = new ClearSlagDoAfterEvent(heldSolution.Value.Comp.Solution, transferAmount);
 
@@ -650,7 +655,6 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
         _doAfterSystem.TryStartDoAfter(doAfterArgs);
     }
 
-    [Obsolete("Obsolete")]
     private void OnRemoveAllItems(EntityUid uid, DeepFryerComponent component, DeepFryerRemoveAllItemsMessage args)
     {
         if (component.Storage.ContainedEntities.Count == 0)
@@ -658,7 +662,7 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
 
         _containerSystem.EmptyContainer(component.Storage);
 
-        var user = args.Actor;
+        var user = EntityManager.GetEntity(args.Entity);
 
         _adminLogManager.Add(LogType.Action, LogImpact.Low,
             $"{ToPrettyString(user)} removed all items from {ToPrettyString(uid)}.");
