@@ -141,7 +141,7 @@
   description: An easily portable tank for emergencies. Contains very little plasma, rated for survival use only.
   components:
   - type: Sprite
-    sprite: Objects/Tanks/emergency_red.rsi
+    sprite: Objects/Tanks/emergency_red.rsi # TODO: emergency plasma tank sprite
   - type: Item
     sprite: Objects/Tanks/emergency_red.rsi
   - type: Clothing
@@ -184,7 +184,7 @@
   description: An emergency tank with extended capacity. Technically rated for prolonged use.
   components:
   - type: Sprite
-    sprite: Objects/Tanks/emergency_extended_red.rsi
+    sprite: Objects/Tanks/emergency_extended_red.rsi # TODO: extended-capacity emergency plasma tank sprite
   - type: Item
     sprite: Objects/Tanks/emergency_extended_red.rsi
   - type: Clothing
