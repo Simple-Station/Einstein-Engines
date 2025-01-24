@@ -18,9 +18,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Shared._Goobstation.Clothing.Systems;
 
-/// <summary>
-///     System used for sealable clothing (like modsuits)
-/// </summary>
+/// System used for sealable clothing
 public abstract class SharedSealableClothingSystem : EntitySystem
 {
     [Dependency] private readonly INetManager _netManager = default!;
