@@ -18,7 +18,7 @@
         - ReagentId: Plasma
           Quantity: 5
   - type: Extractable
-    grindableSolution: food
+    grindableSolutionName: food
     juiceSolution:
       reagents:
       - ReagentId: Plasma

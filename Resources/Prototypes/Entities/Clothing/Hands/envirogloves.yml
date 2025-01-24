@@ -60,7 +60,7 @@
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesNitrile
   name: nitrile envirogloves
-  desc: Pricy nitrile gloves made for Plasmamen.
+  description: Pricy nitrile gloves made for Plasmamen.
   components:
   - type: Sprite
     sprite: Clothing/Hands/Gloves/nitrile.rsi
