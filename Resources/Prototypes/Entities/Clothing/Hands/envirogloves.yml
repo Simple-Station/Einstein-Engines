@@ -294,7 +294,7 @@
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesLeather
   name: hydroponics envirogloves
-  desc: These leather gloves protect your boney hands against thorns, barbs, prickles, spikes and other harmful objects of floral origin.
+  description: These leather gloves protect your boney hands against thorns, barbs, prickles, and spikes.
   components:
   - type: Sprite
     sprite: Clothing/Hands/Gloves/Color/color.rsi
@@ -384,7 +384,7 @@
   parent: ClothingHandsGlovesEnviroglovesBase
   id: ClothingHandsGlovesEnviroglovesHoP
   name: head of personnel's envirogloves
-  desc: Covers up those scandalous, bony hands. Appears to be an attempt at making a replica of the captain's gloves.
+  description: Covers up those scandalous, bony hands. Appears to be an attempt at making a replica of the captain's gloves.
   components:
   - type: Sprite
     sprite: Clothing/Hands/Gloves/Envirogloves/hop.rsi
