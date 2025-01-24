@@ -62,8 +62,16 @@
       - id: PhoneInstrumentSyndicate
       - id: ClothingUniformEnvirosuitTacticool
       - id: ClothingHeadEnvirohelmTacticool
-      - id: ClothingOuterCoatJensen
+      - id: ClothingOuterCoatJensenFilled
       - id: ClothingHandsGlovesCombat
+
+- type: entity # No more space in briefcase due to envirohelm so put the syndicate flag in the jensen coat
+  id: ClothingOuterCoatJensenFilled
+  parent: ClothingOuterCoatJensen
+  suffix: Syndicate Flag Inside
+  components:
+  - type: StorageFill
+    contents:
       - id: SyndieHandyFlag
 
 - type: entity
