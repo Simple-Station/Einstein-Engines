@@ -307,7 +307,7 @@ public abstract class SharedSealableClothingSystem : EntitySystem
             comp.IsInProcess = false;
             comp.IsCurrentlySealed = !comp.IsCurrentlySealed;
 
-            _audioSystem.PlayEntity(comp.UnsealCompleteSound, comp.WearerEntity!.Value, uid);
+            _audioSystem.PlayEntity(comp.IsCurrentlySealed ? comp.SealCompleteSound : comp.UnsealCompleteSound, comp.WearerEntity!.Value, uid);
 
             var ev = new ClothingControlSealCompleteEvent(comp.IsCurrentlySealed);
             RaiseLocalEvent(control, ref ev);

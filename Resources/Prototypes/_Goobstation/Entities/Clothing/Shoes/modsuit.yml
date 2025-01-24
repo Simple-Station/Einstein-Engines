@@ -11,6 +11,7 @@
     layers:
     - state: boots
     - state: boots-sealed
+      visible: false
       map: [ "sealed" ]
   - type: Clothing
     equipSound: /Audio/Mecha/mechmove03.ogg
