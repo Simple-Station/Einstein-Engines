@@ -1046,7 +1046,7 @@ namespace Content.Client.Lobby.UI
             var firstCategory = true;
             foreach (var department in departments)
             {
-                var departmentName = Loc.GetString($"department-{department.ID}");
+                var departmentName = Loc.GetString(department.Name);
 
                 if (!_jobCategories.TryGetValue(department.ID, out var category))
                 {
