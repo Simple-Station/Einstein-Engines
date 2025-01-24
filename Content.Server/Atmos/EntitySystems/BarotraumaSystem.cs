@@ -38,7 +38,7 @@ namespace Content.Server.Atmos.EntitySystems
             SubscribeLocalEvent<PressureImmunityComponent, ComponentInit>(OnPressureImmuneInit);
             SubscribeLocalEvent<PressureImmunityComponent, ComponentRemove>(OnPressureImmuneRemove);
 
-            _sawmill = _logManager.GetSawmill("replay");
+            // _sawmill = _logManager.GetSawmill("barotrauma");
         }
 
         private void OnPressureImmuneInit(EntityUid uid, PressureImmunityComponent pressureImmunity, ComponentInit args)
@@ -69,12 +69,13 @@ namespace Content.Server.Atmos.EntitySystems
                 slotTarget = slot.Name;
             }
 
-            if (slotTarget != null
-                && TryComp<BarotraumaComponent>(protectionTarget, out var barotrauma)
-                && !barotrauma.ProtectionSlots.Contains(slotTarget))
-                    return;
+            if (!TryComp<BarotraumaComponent>(protectionTarget, out var barotrauma))
+                return;
 
-                UpdateCachedResistances(protectionTarget, barotrauma);
+            if (slotTarget != null && !barotrauma.ProtectionSlots.Contains(slotTarget))
+                return;
+
+            UpdateCachedResistances(protectionTarget, barotrauma);
         }
 
         /// <summary>
