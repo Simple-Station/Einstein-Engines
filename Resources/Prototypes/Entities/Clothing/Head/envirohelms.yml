@@ -96,17 +96,6 @@
 
 - type: entity
   parent: ClothingHeadEnvirohelmBase
-  id: ClothingHeadEnvirohelmWhite
-  name: white envirosuit helmet
-  description: A generic white envirohelm.
-  components:
-  - type: Sprite
-    sprite: Clothing/Head/Envirohelms/white.rsi
-  - type: Clothing
-    sprite: Clothing/Head/Envirohelms/white.rsi
-
-- type: entity
-  parent: ClothingHeadEnvirohelmBase
   id: ClothingHeadEnvirohelmChemist
   name: chemistry envirosuit helmet
   description: A Plasmaman envirosuit designed for chemists, two orange stripes going down its face.
@@ -1289,6 +1278,17 @@
       - state: visor-equipped-HELMET
 
 # Color envirohelms
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelmColorWhite
+  name: white envirosuit helmet
+  description: A generic white envirohelm.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Envirohelms/white.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Envirohelms/white.rsi
+
 - type: entity
   parent: ClothingHeadEnvirohelmCustomBase
   id: ClothingHeadEnvirohelmColorGrey

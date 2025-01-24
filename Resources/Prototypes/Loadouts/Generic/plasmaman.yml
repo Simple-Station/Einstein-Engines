@@ -238,7 +238,7 @@
         - Command
   items:
     - ClothingUniformEnvirosuitColorWhite
-    - ClothingHeadEnvirohelmWhite
+    - ClothingHeadEnvirohelmColorWhite
 
 - type: loadout
   id: LoadoutUniformEnvirosuitColorGrey
@@ -558,7 +558,7 @@
         - Command
   items:
     - ClothingUniformEnvirosuitEnviroslacks
-    - ClothingHeadEnvirohelmWhite
+    - ClothingHeadEnvirohelmColorWhite
 
 - type: loadout
   id: LoadoutUniformEnvirosuitEnviroslacksNegative
