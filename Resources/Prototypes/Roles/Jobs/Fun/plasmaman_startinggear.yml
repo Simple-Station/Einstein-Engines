@@ -34,7 +34,7 @@
     jumpsuit: ClothingUniformEnvirosuitTacticool
     head: ClothingHeadEnvirohelmTacticool
     mask: ClothingMaskGasSyndicate
-    suitstorage: PlasmaTankFilled
+    suitstorage: PlasmaTankFilledInternals
 
 - type: startingGear
   id: SpaceNinjaPlasmamanGear
@@ -43,7 +43,7 @@
     species: [ Plasmaman ]
   equipment:
     jumpsuit: ClothingUniformEnvirosuitColorBlack # TODO: actual ninja envirosuit
-    suitstorage: PlasmaTankFilled
+    suitstorage: PlasmaTankFilledInternals
 
 # ERT starting gear
 - type: startingGear
@@ -60,7 +60,7 @@
   id: ERTPlasmamanGear
   parent: ERTPlasmamanGearNoTank
   equipment:
-    suitstorage: PlasmaTankFilled
+    suitstorage: PlasmaTankFilledInternals
 
 - type: startingGear
   id: InhandTankGear
@@ -86,7 +86,7 @@
   - !type:CharacterSpeciesRequirement
     species: [ Plasmaman ]
   inhand:
-    - PlasmaTankFilled
+    - PlasmaTankFilledInternals
 
 - type: startingGear
   id: DeathMatchPlasmamanGear
