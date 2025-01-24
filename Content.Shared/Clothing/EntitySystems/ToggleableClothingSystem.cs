@@ -269,22 +269,12 @@ public sealed class ToggleableClothingSystem : EntitySystem
     {
         var comp = attached.Comp;
 
-        // Let containers worry about it.
-        if (_timing.ApplyingState)
-            return;
-
-        if (comp.LifeStage > ComponentLifeStage.Running)
-            return;
-
-        if (!TryComp(comp.AttachedUid, out ToggleableClothingComponent? toggleableComp))
-            return;
-
-        if (toggleableComp.LifeStage > ComponentLifeStage.Running)
-            return;
-
-        // As unequipped gets called in the middle of container removal, we cannot call a container-insert without causing issues.
-        // So we delay it and process it during a system update:
-        if (!toggleableComp.ClothingUids.ContainsKey(attached.Owner))
+        // Death told me to do this- if you need to figure out why each of these are here, idk, figure it out.
+        if (_timing.ApplyingState
+            || comp.LifeStage > ComponentLifeStage.Running
+            || !TryComp(comp.AttachedUid, out ToggleableClothingComponent? toggleableComp)
+            || toggleableComp.LifeStage > ComponentLifeStage.Running
+            || !toggleableComp.ClothingUids.ContainsKey(attached.Owner))
             return;
 
         if (toggleableComp.Container != null)
