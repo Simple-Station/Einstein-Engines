@@ -62,8 +62,7 @@ public abstract partial class SharedSelfExtinguisherSystem : EntitySystem
         _actions.SetCharges(component.ActionEntity, chargeComp.Charges);
         _actions.SetMaxCharges(component.ActionEntity, chargeComp.MaxCharges);
 
-        if (charges == 0)
-            _actions.SetEnabled(component.ActionEntity, false);
+        _actions.SetEnabled(component.ActionEntity, chargeComp.Charges != 0);
     }
 
     private void GetRelayedVerbs(EntityUid uid, SelfExtinguisherComponent component, InventoryRelayedEvent<GetVerbsEvent<EquipmentVerb>> args)
@@ -114,6 +113,9 @@ public abstract partial class SharedSelfExtinguisherSystem : EntitySystem
         // Add charges
         _charges.AddCharges(uid, refill.RefillAmount, charges);
         _actions.SetCharges(component.ActionEntity, charges.Charges);
+
+        // Reenable action
+        _actions.SetEnabled(component.ActionEntity, charges.Charges != 0);
 
         // Reset cooldown
         _actions.ClearCooldown(component.ActionEntity);
