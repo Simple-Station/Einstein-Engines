@@ -18,21 +18,23 @@
 
 # Syndicate Operative Plasmaman outfit
 - type: startingGear
-  id: SyndicateOperativePlasmamanGear
+  id: SyndicatePlasmamanGear
   parent: BasePlasmamanGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitTacticool
     head: ClothingHeadEnvirohelmTacticool
+    gloves: ClothingHandsGlovesEnviroglovesBlack
     mask: ClothingMaskGasSyndicate
 
 - type: startingGear
-  id: SyndicateOperativePlasmamanSuitStorageGear
+  id: SyndicatePlasmamanSuitStorageGear
   requirements:
   - !type:CharacterSpeciesRequirement
     species: [ Plasmaman ]
   equipment:
     jumpsuit: ClothingUniformEnvirosuitTacticool
     head: ClothingHeadEnvirohelmTacticool
+    gloves: ClothingHandsGlovesEnviroglovesBlack
     mask: ClothingMaskGasSyndicate
     suitstorage: PlasmaTankFilled
 

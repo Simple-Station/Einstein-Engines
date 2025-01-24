@@ -21,7 +21,7 @@
 - type: startingGear
   id: SyndicateOperativeGearCivilian
   subGear:
-  - SyndicateOperativePlasmamanGear
+  - SyndicatePlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitSyndieFormal
     back: ClothingBackpackDuffelSyndicate
@@ -79,7 +79,7 @@
 - type: startingGear
   id: SyndicateOperativeGearFull
   subGear:
-  - SyndicateOperativePlasmamanSuitStorageGear
+  - SyndicatePlasmamanSuitStorageGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitOperative
     back: ClothingBackpackDuffelSyndicateOperative
@@ -101,7 +101,7 @@
 - type: startingGear
   id: SyndicateCommanderGearFull
   subGear:
-  - SyndicateOperativePlasmamanSuitStorageGear
+  - SyndicatePlasmamanSuitStorageGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitOperative
     back: ClothingBackpackDuffelSyndicateOperative
@@ -126,7 +126,7 @@
 - type: startingGear
   id: SyndicateOperativeMedicFull
   subGear:
-  - SyndicateOperativePlasmamanSuitStorageGear
+  - SyndicatePlasmamanSuitStorageGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitOperative
     back: ClothingBackpackDuffelSyndicateOperativeMedic
@@ -148,7 +148,7 @@
 - type: startingGear
   id: SyndicateFootsoldierGear
   subGear:
-  - SyndicateOperativePlasmamanGear
+  - SyndicatePlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitOperative
     head: ClothingHeadHelmetSwatSyndicate
@@ -167,7 +167,7 @@
 - type: startingGear
   id: SyndicateFootsoldierGearRuin
   subGear:
-  - SyndicateOperativePlasmamanGear
+  - SyndicatePlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitOperative
     head: ClothingHeadHelmetSwatSyndicate
