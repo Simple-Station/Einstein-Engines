@@ -63,11 +63,28 @@
   description: Pricy nitrile gloves made for Plasmamen.
   components:
   - type: Sprite
-    sprite: Clothing/Hands/Gloves/nitrile.rsi
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    layers:
+    - state: icon
+      color: "#234f60"
+  - type: Item
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#234f60"
+      right:
+      - state: inhand-right
+        color: "#234f60"
   - type: Clothing
-    sprite: Clothing/Hands/Gloves/nitrile.rsi
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    clothingVisuals:
+      gloves:
+      - state: equipped-HAND
+        color: "#234f60"
   - type: Fiber
     fiberMaterial: fibers-nitrile
+  - type: FingerprintMask
 
 - type: entity
   parent: ClothingHandsGlovesEnviroglovesBase

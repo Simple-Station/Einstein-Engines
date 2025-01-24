@@ -823,7 +823,7 @@
     - state: icon
       color: "#bb934b"
     - state: accent-icon
-      color: "#ffd600"
+      color: "#ffc000"
     - state: midaccent-icon
       color: "#d08200"
     - state: visor-icon
@@ -837,7 +837,7 @@
       - state: inhand-left
         color: "#bb934b"
       - state: accent-inhand-left
-        color: "#ffd600"
+        color: "#ffc000"
       - state: midaccent-inhand-left
         color: "#d08200"
       - state: visor-inhand-left
@@ -845,7 +845,7 @@
       - state: inhand-right
         color: "#bb934b"
       - state: accent-inhand-right
-        color: "#ffd600"
+        color: "#ffc000"
       - state: midaccent-inhand-right
         color: "#d08200"
       - state: visor-inhand-right
@@ -855,7 +855,7 @@
       - state: equipped-HELMET
         color: "#bb934b"
       - state: accent-equipped-HELMET
-        color: "#ffd600"
+        color: "#ffc000"
       - state: midaccent-equipped-HELMET
         color: "#d08200"
       - state: visor-equipped-HELMET
@@ -951,7 +951,7 @@
     - state: icon
       color: "#292929"
     - state: accent-icon
-      color: "#f4a5ba"
+      color: "#f4a1b7"
     - state: visor-icon
     - state: icon-flash
       visible: false
@@ -963,13 +963,13 @@
       - state: inhand-left
         color: "#292929"
       - state: accent-inhand-left
-        color: "#f4a5ba"
+        color: "#f4a1b7"
       - state: visor-inhand-left
       right:
       - state: inhand-right
         color: "#292929"
       - state: accent-inhand-right
-        color: "#f4a5ba"
+        color: "#f4a1b7"
       - state: visor-inhand-right
   - type: Clothing
     clothingVisuals:
@@ -977,7 +977,7 @@
       - state: equipped-HELMET
         color: "#292929"
       - state: accent-equipped-HELMET
-        color: "#f4a5ba"
+        color: "#f4a1b7"
       - state: visor-equipped-HELMET
 
 - type: entity
@@ -990,7 +990,7 @@
   - type: Sprite
     layers:
     - state: icon
-      color: "#f4a5ba"
+      color: "#f4a1b7"
     - state: accent-icon
       color: "#292929"
     - state: visor-icon
@@ -1002,13 +1002,13 @@
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#f4a5ba"
+        color: "#f4a1b7"
       - state: accent-inhand-left
         color: "#292929"
       - state: visor-inhand-left
       right:
       - state: inhand-right
-        color: "#f4a5ba"
+        color: "#f4a1b7"
       - state: accent-inhand-right
         color: "#292929"
       - state: visor-inhand-right
@@ -1016,7 +1016,7 @@
     clothingVisuals:
       head:
       - state: equipped-HELMET
-        color: "#f4a5ba"
+        color: "#f4a1b7"
       - state: accent-equipped-HELMET
         color: "#292929"
       - state: visor-equipped-HELMET
@@ -1193,7 +1193,7 @@
   parent: ClothingHeadEnvirohelmCustomBase
   id: ClothingHeadEnvirohelmNanotrasenRepresentative
   name: nanotrasen representative envirosuit helmet
-  description: A black envirosuit helmet worn by the NanoTrasen Representative.
+  description: A black envirosuit helmet worn by the NanoTrasen Representative, with black and gold accents.
   components:
   - type: Sprite
     layers:
@@ -1202,7 +1202,7 @@
     - state: accent-icon
       color: "#ffce5b"
     - state: midaccent-icon
-      color: "#004e99"
+      color: "#266199"
     - state: visor-icon
     - state: icon-flash
       visible: false
@@ -1216,7 +1216,7 @@
       - state: accent-inhand-left
         color: "#ffce5b"
       - state: midaccent-inhand-left
-        color: "#004e99"
+        color: "#266199"
       - state: visor-inhand-left
       right:
       - state: inhand-right
@@ -1224,7 +1224,7 @@
       - state: accent-inhand-right
         color: "#ffce5b"
       - state: midaccent-inhand-right
-        color: "#004e99"
+        color: "#266199"
       - state: visor-inhand-right
   - type: Clothing
     clothingVisuals:
@@ -1234,7 +1234,7 @@
       - state: accent-equipped-HELMET
         color: "#ffce5b"
       - state: midaccent-equipped-HELMET
-        color: "#004e99"
+        color: "#266199"
       - state: visor-equipped-HELMET
 
 - type: entity

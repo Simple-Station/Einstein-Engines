@@ -237,7 +237,7 @@
     - state: plaintop-icon
       color: "#ff8300"
     - state: accentprisoner-icon
-      color: "#3c3c3c"
+      color: "#404040"
   - type: Item
     inhandVisuals:
       left:
@@ -246,14 +246,14 @@
       - state: plaintop-inhand-left
         color: "#ff8300"
       - state: accentprisoner-inhand-left
-        color: "#3c3c3c"
+        color: "#404040"
       right:
       - state: inhand-right
         color: "#ff8300"
       - state: plaintop-inhand-right
         color: "#ff8300"
       - state: accentprisoner-inhand-right
-        color: "#3c3c3c"
+        color: "#404040"
   - type: Clothing
     clothingVisuals:
       jumpsuit:
@@ -262,9 +262,9 @@
       - state: plaintop-equipped-INNERCLOTHING
         color: "#ff8300"
       - state: accentprisoner-equipped-INNERCLOTHING
-        color: "#3c3c3c"
+        color: "#404040"
       - state: loweraccent-equipped-INNERCLOTHING
-        color: "#3c3c3c"
+        color: "#404040"
       - state: soles-equipped-INNERCLOTHING
         color: "#bababa"
   - type: SuitSensor
@@ -697,8 +697,6 @@
       color: "#3c335b"
     - state: accent2-icon
       color: "#f3f5f4"
-    - state: tie-icon
-      color: "#f3f5f4"
     - state: pin-icon
       color: "#db2525"
   - type: Item
@@ -962,15 +960,19 @@
     - state: icon
       color: "#bb934b"
     - state: accent-icon
-      color: "#ffd600"
+      color: "#ffc000"
     - state: accent3_chestonly-icon
       color: "#d08200"
+    - state: clip-icon
+      color: "#c0c0c0"
+    - state: clip_right-icon
+      color: "#a7a7a7"
     - state: pants-icon
-      color: "#999999"
+      color: "#8a8a8a"
     - state: belt-icon
       color: "#6f6f6f"
     - state: beltbuckle-icon
-      color: "#eadb83"
+      color: "#bfbfbf"
     - state: buttons-icon
       color: "#535353"
   - type: Item
@@ -979,30 +981,38 @@
       - state: inhand-left
         color: "#bb934b"
       - state: accent-inhand-left
-        color: "#ffd600"
+        color: "#ffc000"
       - state: accent3_chestonly-inhand-left
         color: "#d08200"
+      - state: clip-inhand-left
+        color: "#c0c0c0"
+      - state: clip_right-inhand-left
+        color: "#a7a7a7"
       - state: pants-inhand-left
-        color: "#999999"
+        color: "#8a8a8a"
       - state: belt-inhand-left
         color: "#6f6f6f"
       - state: beltbuckle-inhand-left
-        color: "#eadb83"
+        color: "#bfbfbf"
       - state: buttons-inhand-left
         color: "#535353"
       right:
       - state: inhand-right
         color: "#bb934b"
       - state: accent-inhand-right
-        color: "#ffd600"
+        color: "#ffc000"
       - state: accent3_chestonly-inhand-right
         color: "#d08200"
+      - state: clip-inhand-right
+        color: "#c0c0c0"
+      - state: clip_right-inhand-right
+        color: "#a7a7a7"
       - state: pants-inhand-right
-        color: "#999999"
+        color: "#8a8a8a"
       - state: belt-inhand-right
         color: "#6f6f6f"
       - state: beltbuckle-inhand-right
-        color: "#eadb83"
+        color: "#bfbfbf"
       - state: buttons-inhand-right
         color: "#535353"
   - type: Clothing
@@ -1011,25 +1021,31 @@
       - state: equipped-INNERCLOTHING
         color: "#bb934b"
       - state: accentalt-equipped-INNERCLOTHING
-        color: "#ffd600"
+        color: "#ffc000"
       - state: accent3_chestonly-equipped-INNERCLOTHING
         color: "#d08200"
+      - state: clip-equipped-INNERCLOTHING
+        color: "#c0c0c0"
+      - state: clip_right-equipped-INNERCLOTHING
+        color: "#a7a7a7"
       - state: cuffs-equipped-INNERCLOTHING
         color: "#d08200"
+      - state: cuffs_upper-equipped-INNERCLOTHING
+        color: "#6e6e6e"
       - state: pants-equipped-INNERCLOTHING
-        color: "#999999"
+        color: "#8a8a8a"
       - state: belt-equipped-INNERCLOTHING
         color: "#6f6f6f"
       - state: beltbuckle-equipped-INNERCLOTHING
-        color: "#eadb83"
+        color: "#bfbfbf"
       - state: buttons-equipped-INNERCLOTHING
         color: "#535353"
       - state: loweraccent-equipped-INNERCLOTHING
-        color: "#ffd600"
-      - state: shoes-equipped-INNERCLOTHING
-        color: "#ffd600"
+        color: "#ffc000"
+      - state: shoesdark-equipped-INNERCLOTHING
+        color: "#828282"
       - state: soles-equipped-INNERCLOTHING
-        color: "#bababa"
+        color: "#ffc000"
 
 - type: entity
   parent: ClothingUniformEnvirosuitCustomBase
@@ -1156,9 +1172,9 @@
     - state: plaintop-icon
       color: "#292929"
     - state: accent-icon
-      color: "#f4a5ba"
+      color: "#f4a1b7"
     - state: heart-icon
-      color: "#f4a5ba"
+      color: "#f4a1b7"
   - type: Item
     inhandVisuals:
       left:
@@ -1167,18 +1183,18 @@
       - state: plaintop-inhand-left
         color: "#292929"
       - state: accent-inhand-left
-        color: "#f4a5ba"
+        color: "#f4a1b7"
       - state: heart-inhand-left
-        color: "#f4a5ba"
+        color: "#f4a1b7"
       right:
       - state: inhand-right
         color: "#292929"
       - state: plaintop-inhand-right
         color: "#292929"
       - state: accent-inhand-right
-        color: "#f4a5ba"
+        color: "#f4a1b7"
       - state: heart-inhand-right
-        color: "#f4a5ba"
+        color: "#f4a1b7"
   - type: Clothing
     clothingVisuals:
       jumpsuit:
@@ -1187,13 +1203,13 @@
       - state: plaintop-equipped-INNERCLOTHING
         color: "#292929"
       - state: accent-equipped-INNERCLOTHING
-        color: "#f4a5ba"
+        color: "#f4a1b7"
       - state: heart-equipped-INNERCLOTHING
-        color: "#f4a5ba"
+        color: "#f4a1b7"
       - state: loweraccent-equipped-INNERCLOTHING
-        color: "#f4a5ba"
+        color: "#f4a1b7"
       - state: soles-equipped-INNERCLOTHING
-        color: "#f4a5ba"
+        color: "#f4a1b7"
 
 - type: entity
   parent: ClothingUniformEnvirosuitCustomBase
@@ -1205,9 +1221,9 @@
   - type: Sprite
     layers:
     - state: icon
-      color: "#f4a5ba"
+      color: "#f4a1b7"
     - state: plaintop-icon
-      color: "#f4a5ba"
+      color: "#f4a1b7"
     - state: accent-icon
       color: "#292929"
     - state: heart-icon
@@ -1216,18 +1232,18 @@
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#f4a5ba"
+        color: "#f4a1b7"
       - state: plaintop-inhand-left
-        color: "#f4a5ba"
+        color: "#f4a1b7"
       - state: accent-inhand-left
         color: "#292929"
       - state: heart-inhand-left
         color: "#292929"
       right:
       - state: inhand-right
-        color: "#f4a5ba"
+        color: "#f4a1b7"
       - state: plaintop-inhand-right
-        color: "#f4a5ba"
+        color: "#f4a1b7"
       - state: accent-inhand-right
         color: "#292929"
       - state: heart-inhand-right
@@ -1236,9 +1252,9 @@
     clothingVisuals:
       jumpsuit:
       - state: equipped-INNERCLOTHING
-        color: "#f4a5ba"
+        color: "#f4a1b7"
       - state: plaintop-equipped-INNERCLOTHING
-        color: "#f4a5ba"
+        color: "#f4a1b7"
       - state: accent-equipped-INNERCLOTHING
         color: "#292929"
       - state: heart-equipped-INNERCLOTHING
@@ -1314,7 +1330,7 @@
     layers:
     - state: icon
       color: "#d76b00"
-    - state: accent2-icon
+    - state: accent3-icon
       color: "#363636"
     - state: accenthighlight-icon
       color: "#313e5a"
@@ -1329,7 +1345,7 @@
       left:
       - state: inhand-left
         color: "#d76b00"
-      - state: accent2-inhand-left
+      - state: accent3-inhand-left
         color: "#363636"
       - state: accenthighlight-inhand-left
         color: "#313e5a"
@@ -1342,7 +1358,7 @@
       right:
       - state: inhand-right
         color: "#d76b00"
-      - state: accent2-inhand-right
+      - state: accent3-inhand-right
         color: "#363636"
       - state: accenthighlight-inhand-right
         color: "#313e5a"
@@ -1357,7 +1373,7 @@
       jumpsuit:
       - state: equipped-INNERCLOTHING
         color: "#d76b00"
-      - state: accent2-equipped-INNERCLOTHING
+      - state: accent3-equipped-INNERCLOTHING
         color: "#363636"
       - state: accenthighlight-equipped-INNERCLOTHING
         color: "#313e5a"
@@ -1472,16 +1488,14 @@
     layers:
     - state: icon
       color: "#292929"
+    - state: accent3_chestonly-icon
+      color: "#266199"
     - state: accent2-icon
       color: "#ffce5b"
-    # - state: corneraccent-icon
-    #   color: "#004e99"
     - state: buttons-icon
       color: "#f3f5f4"
-    - state: clip-icon
-      color: "#00488c"
     - state: belt-icon
-      color: "#804000"
+      color: "#87511b"
     - state: beltbuckle-icon
       color: "#969696"
   - type: Item
@@ -1489,31 +1503,27 @@
       left:
       - state: inhand-left
         color: "#292929"
+      - state: accent3_chestonly-inhand-left
+        color: "#266199"
       - state: accent2-inhand-left
         color: "#ffce5b"
-      # - state: corneraccent-inhand-left
-      #   color: "#004e99"
       - state: buttons-inhand-left
         color: "#f3f5f4"
-      - state: clip-inhand-left
-        color: "#00488c"
       - state: belt-inhand-left
-        color: "#804000"
+        color: "#87511b"
       - state: beltbuckle-inhand-left
         color: "#969696"
       right:
       - state: inhand-right
         color: "#292929"
+      - state: accent3_chestonly-inhand-right
+        color: "#266199"
       - state: accent2-inhand-right
         color: "#ffce5b"
-      # - state: corneraccent-inhand-right
-      #   color: "#004e99"
       - state: buttons-inhand-right
         color: "#f3f5f4"
-      - state: clip-inhand-right
-        color: "#00488c"
       - state: belt-inhand-right
-        color: "#804000"
+        color: "#87511b"
       - state: beltbuckle-inhand-right
         color: "#969696"
   - type: Clothing
@@ -1521,22 +1531,22 @@
       jumpsuit:
       - state: equipped-INNERCLOTHING
         color: "#292929"
+      - state: accent3_chestonly-equipped-INNERCLOTHING
+        color: "#266199"
       - state: accent2-equipped-INNERCLOTHING
         color: "#ffce5b"
-      - state: corneraccent-equipped-INNERCLOTHING
-        color: "#004e99"
       - state: buttons-equipped-INNERCLOTHING
         color: "#f3f5f4"
-      - state: clip-equipped-INNERCLOTHING
-        color: "#00488c"
       - state: cuffs-equipped-INNERCLOTHING
-        color: "#004e99"
+        color: "#ffce5b"
+      - state: cuffs_upper-equipped-INNERCLOTHING
+        color: "#0057a8"
       - state: belt-equipped-INNERCLOTHING
-        color: "#804000"
+        color: "#87511b"
       - state: beltbuckle-equipped-INNERCLOTHING
         color: "#969696"
       - state: loweraccent-equipped-INNERCLOTHING
-        color: "#ffce5b"
+        color: "#266199"
       - state: soles-equipped-INNERCLOTHING
         color: "#ffce5b"
 
