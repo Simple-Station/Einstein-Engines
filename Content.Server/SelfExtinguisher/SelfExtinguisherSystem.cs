@@ -60,7 +60,7 @@ public sealed partial class SelfExtinguisherSystem : SharedSelfExtinguisherSyste
                 return;
 
             _popup.PopupEntity(Loc.GetString("self-extinguisher-no-charges", ("item", uid)),
-                target, user, !flammable.OnFire ? PopupType.Small : PopupType.SmallCaution);
+                target, user, !flammable.OnFire ? PopupType.Small : PopupType.MediumCaution);
             return;
         }
 
@@ -70,7 +70,7 @@ public sealed partial class SelfExtinguisherSystem : SharedSelfExtinguisherSyste
                 return;
 
             _popup.PopupEntity(Loc.GetString($"self-extinguisher-on-cooldown", ("item", uid)),
-                target, user, !flammable.OnFire ? PopupType.Small : PopupType.SmallCaution);
+                target, user, !flammable.OnFire ? PopupType.Small : PopupType.MediumCaution);
             return;
         }
 
@@ -93,7 +93,7 @@ public sealed partial class SelfExtinguisherSystem : SharedSelfExtinguisherSyste
                 return;
 
             _popup.PopupEntity(Loc.GetString($"self-extinguisher-not-immune-to-fire-{locSuffix}", ("item", uid), ("target", targetIdentity)),
-                target, user, PopupType.SmallCaution);
+                target, user, PopupType.MediumCaution);
             return;
         }
 
