@@ -35,6 +35,8 @@ public sealed class DoAfterOverlay : Overlay
     private const float StartX = 2;
     private const float EndX = 22f;
 
+    private bool _useModernHUD = false;
+
     public override OverlaySpace Space => OverlaySpace.WorldSpaceBelowFOV;
 
     public DoAfterOverlay(IEntityManager entManager, IPrototypeManager protoManager, IGameTiming timing, IPlayerManager player)
@@ -50,6 +52,8 @@ public sealed class DoAfterOverlay : Overlay
         _barTexture = _entManager.EntitySysManager.GetEntitySystem<SpriteSystem>().Frame0(sprite);
 
         _unshadedShader = protoManager.Index<ShaderPrototype>("unshaded").Instance();
+        _useModernHUD = _cfg.GetCVar(CCVars.ModernProgressBar);
+        _cfg.OnValueChanged(CCVars.ModernProgressBar, (newValue) => { _useModernHUD = newValue; } );
     }
 
     protected override void Draw(in OverlayDrawArgs args)
@@ -159,7 +163,7 @@ public sealed class DoAfterOverlay : Overlay
 
                 var xProgress = (EndX - StartX) * elapsedRatio + StartX;
 
-                if (_cfg.GetCVar(CCVars.ModernProgressBar))
+                if (_useModernHUD)
                 {
                     var box = new Box2(new Vector2(StartX, 2f) / EyeManager.PixelsPerMeter, new Vector2(xProgress, 5f) / EyeManager.PixelsPerMeter);
                     box = box.Translated(position);
