@@ -10654,3 +10654,10 @@ Entries:
   id: 6754
   time: '2025-01-23T03:45:53.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1641
+- author: BlueHNT
+  changes:
+    - type: Tweak
+      message: Tweaked lamia bite
+  id: 6755
+  time: '2025-01-24T22:29:08.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1645
