@@ -64,3 +64,8 @@
   id: Harpy
   name: species-name-harpy
   text: "/ServerInfo/Guidebook/Mobs/Harpy.xml"
+
+- type: guideEntry
+  id: Tajaran
+  name: species-name-tajaran
+  text: "ServerInfo/Guidebook/Mobs/Tajaran.xml"
