@@ -34,10 +34,15 @@ public sealed class LoadoutSystem : EntitySystem
     [Dependency] private readonly ISerializationManager _serialization = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IComponentFactory _componentFactory = default!;
+    [Dependency] private readonly ILogManager _log = default!;
+
+    private ISawmill _sawmill = default!;
 
 
     public override void Initialize()
     {
+        _sawmill = _log.GetSawmill("loadouts");
+
         SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawnComplete);
     }
 
@@ -92,7 +97,12 @@ public sealed class LoadoutSystem : EntitySystem
             if (loadout.Item1 == EntityUid.Invalid
                 || !HasComp<MetaDataComponent>(loadout.Item1)
                 || Deleted(loadout.Item1))
+            {
+                _sawmill.Warning($"Loadout {loadout.Item2.LoadoutName} failed to load properly, deleting.");
+                EntityManager.QueueDeleteEntity(loadout.Item1);
+
                 continue;
+            }
 
             var loadoutProto = _protoMan.Index<LoadoutPrototype>(loadout.Item2.LoadoutName);
             if (loadoutProto.CustomName && loadout.Item2.CustomName != null)
