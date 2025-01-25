@@ -10721,3 +10721,10 @@ Entries:
   id: 6761
   time: '2025-01-25T18:34:15.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1451
+- author: ElusiveCoin
+  changes:
+    - type: Add
+      message: Added a new species, the Chitinid.
+  id: 6762
+  time: '2025-01-25T20:12:52.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1644
