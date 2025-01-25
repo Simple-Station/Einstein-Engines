@@ -14,6 +14,8 @@
   maleFirstNames: names_plasmaman
   femaleFirstNames: names_plasmaman
   naming: FirstRoman
+  sexes:
+  - Unsexed
 
 - type: speciesBaseSprites
   id: MobPlasmamanSprites
