@@ -1,8 +1,0 @@
-- type: marking
-  id: OniWings
-  bodyPart: Wings
-  markingCategory: Wings
-  speciesRestriction: [Oni]
-  sprites:
-    - sprite: Mobs/Customization/oni_wings.rsi
-      state: standard

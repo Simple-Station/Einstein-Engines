@@ -24,15 +24,3 @@ marking-PointyEarsLarge = Large Ears
 
 marking-PointyEarsNone-pointy_ears_none = No Ears
 marking-PointyEarsNone = No Ears
-
-marking-PointyEarsElf-ears_elf = Elf Ears
-marking-PointyEarsElf = Elf Ears
-
-marking-PointyEarsTiny-demon_ears = Tiny Ears
-marking-PointyEarsTiny = Tiny Ears
-
-marking-PointyEarsCow-cow_ears = Cow Ears
-marking-PointyEarsCow = Cow Ears
-
-marking-PointyEarsMilky-milky_ears = Milky Ears
-marking-PointyEarsMilky = Milky Ears

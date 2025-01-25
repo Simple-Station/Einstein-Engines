@@ -28,9 +28,6 @@
     FacialHair:
       points: 1
       required: false
-    Tail:
-      points: 1
-      required: false
     HeadTop:
       points: 1
       required: true
@@ -38,7 +35,7 @@
     HeadSide:
       points: 3
       required: true
-      defaultMarkings: [ PointyEarsTiny ]
+      defaultMarkings: [ PointyEarsUpwards ]
     Snout:
       points: 2
       required: false
@@ -68,7 +65,4 @@
       required: false
     LeftHand:
       points: 3
-      required: false
-    Wings:
-      points: 1
       required: false
