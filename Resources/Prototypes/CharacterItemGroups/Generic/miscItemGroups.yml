@@ -134,3 +134,12 @@
       id: LoadoutItemPetMothroach
     - type: loadout
       id: LoadoutItemPetCockroach
+
+- type: characterItemGroup
+  id: LoadoutCards
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutItemBlackDeck
+    - type: loadout
+      id: LoadoutItemNTDeck

@@ -203,7 +203,7 @@
       animation: WeaponArcClaw
       damage:
         types:
-          Slash: 8
+          Slash: 5
     - type: Vocal
       sounds:
         Male: MaleShadowkin
