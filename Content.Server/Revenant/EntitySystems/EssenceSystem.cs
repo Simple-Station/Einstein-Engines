@@ -72,6 +72,9 @@ public sealed class EssenceSystem : EntitySystem
                 else
                     component.EssenceAmount = _random.NextFloat(45f, 70f);
                 break;
+            case MobState.SoftCritical:
+                component.EssenceAmount = _random.NextFloat(40f, 60f); // i dunno?
+                break;
             case MobState.Critical:
                 component.EssenceAmount = _random.NextFloat(35f, 50f);
                 break;

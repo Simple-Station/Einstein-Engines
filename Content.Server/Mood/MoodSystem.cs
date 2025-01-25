@@ -1,4 +1,4 @@
-﻿using Content.Server.Chat.Managers;
+using Content.Server.Chat.Managers;
 using Content.Server.Popups;
 using Content.Shared.Alert;
 using Content.Shared.Chat;
@@ -202,12 +202,12 @@ public sealed class MoodSystem : EntitySystem
         if (!_config.GetCVar(CCVars.MoodEnabled))
             return;
 
-        if (args.NewMobState == MobState.Dead && args.OldMobState != MobState.Dead)
+        if (args.IsDead() && !args.WasDead())
         {
             var ev = new MoodEffectEvent("Dead");
             RaiseLocalEvent(uid, ev);
         }
-        else if (args.OldMobState == MobState.Dead && args.NewMobState != MobState.Dead)
+        else if (args.WasDead() && !args.IsDead())
         {
             var ev = new MoodRemoveEffectEvent("Dead");
             RaiseLocalEvent(uid, ev);
@@ -242,10 +242,13 @@ public sealed class MoodSystem : EntitySystem
             return;
 
         if (_config.GetCVar(CCVars.MoodModifiesThresholds)
-            && TryComp<MobThresholdsComponent>(uid, out var mobThresholdsComponent)
-            && _mobThreshold.TryGetThresholdForState(uid, MobState.Critical, out var critThreshold, mobThresholdsComponent))
-            component.CritThresholdBeforeModify = critThreshold.Value;
-
+            && TryComp<MobThresholdsComponent>(uid, out var mobThresholdsComponent))
+        {
+            if(_mobThreshold.TryGetThresholdForState(uid, MobState.Critical, out var critThreshold, mobThresholdsComponent))
+                component.CritThresholdBeforeModify = critThreshold.Value;
+            if(_mobThreshold.TryGetThresholdForState(uid, MobState.SoftCritical, out var softCritThreshold, mobThresholdsComponent))
+                component.SoftCritThresholdBeforeModify = softCritThreshold.Value;
+        }
         EnsureComp<NetMoodComponent>(uid);
         RefreshMood(uid, component);
     }
@@ -335,19 +338,34 @@ public sealed class MoodSystem : EntitySystem
     private void SetCritThreshold(EntityUid uid, MoodComponent component, int modifier)
     {
         if (!_config.GetCVar(CCVars.MoodModifiesThresholds)
-            || !TryComp<MobThresholdsComponent>(uid, out var mobThresholds)
-            || !_mobThreshold.TryGetThresholdForState(uid, MobState.Critical, out var key))
+            || !TryComp<MobThresholdsComponent>(uid, out var mobThresholds))
             return;
 
-        var newKey = modifier switch
+        if (_mobThreshold.TryGetThresholdForState(uid, MobState.Critical, out var key))
         {
-            1 => FixedPoint2.New(key.Value.Float() * component.IncreaseCritThreshold),
-            -1 => FixedPoint2.New(key.Value.Float() * component.DecreaseCritThreshold),
-            _ => component.CritThresholdBeforeModify,
-        };
+            var newKey = modifier switch
+            {
+                1 => FixedPoint2.New(key.Value.Float() * component.IncreaseCritThreshold),
+                -1 => FixedPoint2.New(key.Value.Float() * component.DecreaseCritThreshold),
+                _ => component.CritThresholdBeforeModify,
+            };
 
-        component.CritThresholdBeforeModify = key.Value;
-        _mobThreshold.SetMobStateThreshold(uid, newKey, MobState.Critical, mobThresholds);
+            component.CritThresholdBeforeModify = key.Value;
+            _mobThreshold.SetMobStateThreshold(uid, newKey, MobState.Critical, mobThresholds);
+        }
+
+        if (_mobThreshold.TryGetThresholdForState(uid, MobState.SoftCritical, out key))
+        {
+            var newKey = modifier switch
+            {
+                1 => FixedPoint2.New(key.Value.Float() * component.IncreaseSoftCritThreshold),
+                -1 => FixedPoint2.New(key.Value.Float() * component.DecreaseSoftCritThreshold),
+                _ => component.SoftCritThresholdBeforeModify,
+            };
+
+            component.SoftCritThresholdBeforeModify = key.Value;
+            _mobThreshold.SetMobStateThreshold(uid, newKey, MobState.SoftCritical, mobThresholds);
+        }
     }
 
     private MoodThreshold GetMoodThreshold(MoodComponent component, float? moodLevel = null)
@@ -376,7 +394,7 @@ public sealed class MoodSystem : EntitySystem
 
     private void OnDamageChange(EntityUid uid, MoodComponent component, DamageChangedEvent args)
     {
-        if (!_mobThreshold.TryGetPercentageForState(uid, MobState.Critical, args.Damageable.TotalDamage, out var damage))
+        if (!_mobThreshold.TryGetPercentageForState(uid, MobState.SoftCritical, args.Damageable.TotalDamage, out var damage))
             return;
 
         var protoId = "HealthNoDamage";

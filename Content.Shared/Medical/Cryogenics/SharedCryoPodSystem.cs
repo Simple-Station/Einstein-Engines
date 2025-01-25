@@ -122,7 +122,7 @@ public abstract partial class SharedCryoPodSystem: EntitySystem
         // RemComp<InsideCryoPodComponent>(contained);
 
         // Restore the correct position of the patient. Checking the components manually feels hacky, but I did not find a better way for now.
-        if (HasComp<KnockedDownComponent>(contained) || _mobStateSystem.IsIncapacitated(contained))
+        if (HasComp<KnockedDownComponent>(contained) || _mobStateSystem.IsDown(contained))
         {
             _standingStateSystem.Down(contained);
         }

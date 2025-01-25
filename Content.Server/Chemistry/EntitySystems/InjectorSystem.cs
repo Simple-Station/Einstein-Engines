@@ -1,5 +1,7 @@
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
+using Content.Server.Power.EntitySystems;
+using Content.Server.Stunnable;
 using Content.Shared.Chemistry;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;
@@ -13,12 +15,14 @@ using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Stacks;
+using Content.Shared.StatusEffect;
 
 namespace Content.Server.Chemistry.EntitySystems;
 
 public sealed class InjectorSystem : SharedInjectorSystem
 {
     [Dependency] private readonly BloodstreamSystem _blood = default!;
+    [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
     [Dependency] private readonly ReactiveSystem _reactiveSystem = default!;
 
     public override void Initialize()
@@ -163,7 +167,7 @@ public sealed class InjectorSystem : SharedInjectorSystem
 
 
             // Check if the target is incapacitated or in combat mode and modify time accordingly.
-            if (MobState.IsIncapacitated(target))
+            if (MobState.IsIncapacitated(target) /*|| _statusEffects.TryGetTime(target, "Stun", out var _)*/)
             {
                 actualDelay /= 2.5f;
             }

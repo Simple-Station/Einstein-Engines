@@ -1,0 +1,131 @@
+#moving
+#talking
+#emoting
+#throwing
+#pickingUp                - Allows picking items up or dropping them.
+#pulling
+#attacking
+#using                    - Blocks UseAttemptEvent if false.
+#pointing
+#isConscious              - Used to check if a mob in this state is to be considered "conscious". Effects may differ based on how entity systems interpret this value.
+#canEquipSelf
+#canUnequipSelf
+#canEquipOther
+#canUnequipOther
+#forceDown                - Forces mob in this state to be down. (i.e. crawling)
+#dropItemsOnEntering             - Forces mob to drop held items when entering this state.
+#incapacitated            - Blocks InteractionAttemptEvents if true. Effects may differ based on how entity systems interpret this value.
+#threatening              - Used in mob AI. If false, will not be considered as a target by hostile AI.
+#breathingMultiplier      - Fraction of Atmospherics.BreathVolume this mob will take, with 1 being full, 0.5 being half, 0 being none at all.
+#                             Also modifies the amount of damage the mob will take when suffocating, with the inverse of this value. (1 / breathingMultiplier).
+#                             Clamped to [0,1].
+#oxyDamageOverlay         - If set, controls the black vingette that is used for crit blackout. If not, overlay is drawn depending on current oxy damage..
+#strippingTimeMultiplier  - How fast this mob can be stripped by other mobs. Less is faster.
+
+
+- type: mobStateParams
+  id: AliveDefault
+  moving: true
+  talking: true
+  emoting: true
+  throwing: true
+  pickingUp: true
+  pulling: true
+  attacking: true
+  using: true
+  pointing: true 
+  isConscious: true
+  threatening: true
+  canEquipSelf: true
+  canUnequipSelf: true
+  canEquipOther: true
+  canUnequipOther: true
+  #forceDown: false     # both default to false if not specified
+  #incapacitated: false # 
+  #breathingMultiplier: 1 # defaults to 1 if not specified
+
+- type: mobStateParams
+  id: SoftCriticalDefault
+  moving: true
+  talking: true
+  emoting: true
+  throwing: false
+  pickingUp: false
+  pulling: false
+  attacking: false
+  using: true
+  pointing: true 
+  isConscious: true
+  threatening: true
+  canEquipSelf: false
+  canUnequipSelf: false
+  canEquipOther: false
+  canUnequipOther: false
+  forceDown: true
+  dropItemsOnEntering: true
+  incapacitated: true
+  breathingMultiplier: 0.25 # This should probably be handled by lungs instead.
+  oxyDamageOverlay: 0.75
+  strippingTimeMultiplier: 0.5
+
+
+- type: mobStateParams
+  id: CriticalDefault
+  moving: false
+  talking: false
+  emoting: false
+  throwing: false
+  pickingUp: false
+  pulling: false
+  attacking: false
+  using: false
+  pointing: false 
+  isConscious: false
+  threatening: false
+  canEquipSelf: false
+  canUnequipSelf: false
+  canEquipOther: false
+  canUnequipOther: false
+  forceDown: true
+  dropItemsOnEntering: true
+  incapacitated: true
+  breathingMultiplier: 0
+  oxyDamageOverlay: 1
+  strippingTimeMultiplier: 0.33
+
+- type: mobStateParams
+  id: DeadDefault
+  moving: false
+  talking: false
+  emoting: false
+  throwing: false
+  pickingUp: false
+  pulling: false
+  attacking: false
+  using: false
+  pointing: false 
+  isConscious: false
+  threatening: false
+  canEquipSelf: false
+  canUnequipSelf: false
+  canEquipOther: false
+  canUnequipOther: false
+  forceDown: true
+  dropItemsOnEntering: true
+  incapacitated: true
+  breathingMultiplier: 0
+  oxyDamageOverlay: 0
+  strippingTimeMultiplier: 0.33
+
+- type: mobStateParams
+  id: DeadGripMod
+  dropItemsOnEntering: false
+
+- type: mobStateParams
+  id: AuxiliaryDiaphragmSoftCrit
+  breathingMultiplier: 0.75
+
+- type: mobStateParams
+  id: AuxiliaryDiaphragmHardCrit
+  breathingMultiplier: 0.25
+
