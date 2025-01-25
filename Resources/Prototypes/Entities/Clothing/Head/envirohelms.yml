@@ -482,6 +482,17 @@
 
 - type: entity
   parent: ClothingHeadEnvirohelmBase
+  id: ClothingHeadEnvirohelmOperative
+  name: operative envirosuit helmet
+  description: Anyone wearing this is badass and deserves at least a cursory nod of respect.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Envirohelms/tacticool.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Envirohelms/tacticool.rsi
+
+- type: entity
+  parent: ClothingHeadEnvirohelmBase
   id: ClothingHeadEnvirohelmTacticool
   name: tacticool envirosuit helmet
   description: There's no doubt about it, this helmet puts you above ALL of the other Plasmamen.

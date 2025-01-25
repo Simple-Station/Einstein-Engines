@@ -79,7 +79,7 @@
 - type: startingGear
   id: SyndicateOperativeGearFull
   subGear:
-  - SyndicatePlasmamanSuitStorageGear
+  - SyndicateOperativePlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitOperative
     back: ClothingBackpackDuffelSyndicateOperative
@@ -101,7 +101,7 @@
 - type: startingGear
   id: SyndicateCommanderGearFull
   subGear:
-  - SyndicatePlasmamanSuitStorageGear
+  - SyndicateOperativePlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitOperative
     back: ClothingBackpackDuffelSyndicateOperative
@@ -126,7 +126,7 @@
 - type: startingGear
   id: SyndicateOperativeMedicFull
   subGear:
-  - SyndicatePlasmamanSuitStorageGear
+  - SyndicateOperativePlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitOperative
     back: ClothingBackpackDuffelSyndicateOperativeMedic
@@ -148,7 +148,7 @@
 - type: startingGear
   id: SyndicateFootsoldierGear
   subGear:
-  - SyndicatePlasmamanGear
+  - SyndicateOperativePlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitOperative
     head: ClothingHeadHelmetSwatSyndicate
@@ -167,7 +167,7 @@
 - type: startingGear
   id: SyndicateFootsoldierGearRuin
   subGear:
-  - SyndicatePlasmamanGear
+  - SyndicateOperativePlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitOperative
     head: ClothingHeadHelmetSwatSyndicate
@@ -204,7 +204,7 @@
 - type: startingGear
   id: CBURNGear
   subGear:
-  - ERTPlasmamanGear # TODO: death squad envirosuit
+  - CBURNPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorBrown
     back: ClothingBackpackDuffelCBURNFilled

@@ -96,6 +96,9 @@
     sprite: Clothing/Uniforms/Envirosuits/clown.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Envirosuits/clown.rsi
+  - type: Tag
+    tags:
+    - ClownSuit
 
 - type: entity
   parent: ClothingUniformEnvirosuitBase
@@ -273,6 +276,7 @@
     mode: SensorCords
   - type: Tag
     tags:
+    - ClothMade
     - WhitelistChameleon
     - PlasmamanSafe
     - PrisonUniform
@@ -582,6 +586,17 @@
     sprite: Clothing/Uniforms/Envirosuits/warden.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Envirosuits/warden.rsi
+
+- type: entity
+  parent: UnsensoredClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitOperative
+  name: operative envirosuit
+  description: A sinister looking envirosuit, for the most elite of bony operatives.
+  components:
+    - type: Sprite
+      sprite: Clothing/Uniforms/Envirosuits/tacticool.rsi
+    - type: Clothing
+      sprite: Clothing/Uniforms/Envirosuits/tacticool.rsi
 
 - type: entity
   parent: ClothingUniformEnvirosuitBase
