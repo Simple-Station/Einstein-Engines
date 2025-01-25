@@ -31,9 +31,16 @@
     - type: CPRTraining
     - type: SurgerySpeedModifier
       speedModifier: 2.0
+  afterLoadoutSpecial:
+  - !type:ModifyEnvirosuitSpecial
+    charges: 6
+  - !type:ModifyEnvirohelmSpecial
+    powerCell: PowerCellHigh
 
 - type: startingGear
   id: CorpsmanGear # see Prototypes/Roles/Jobs/Fun/misc_startinggear.yml for "BrigmedicGear"
+  subGear:
+  - CorpsmanPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitBrigmedic
     outerClothing: ClothingOuterArmorPlateCarrier
@@ -48,3 +55,11 @@
   innerClothingSkirt: ClothingUniformJumpskirtBrigmedic
   satchel: ClothingBackpackSatchelBrigmedicFilled
   duffelbag: ClothingBackpackDuffelBrigmedicFilled
+
+- type: startingGear
+  id: CorpsmanPlasmamanGear
+  parent: BasePlasmamanSecurityGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitBrigmedic
+    head: ClothingHeadEnvirohelmBrigmedic
+    gloves: ClothingHandsGlovesEnviroglovesBlack
