@@ -115,9 +115,9 @@ public sealed class InjectorSystem : SharedInjectorSystem
     /// </summary>
     private void InjectDoAfter(Entity<InjectorComponent> injector, EntityUid target, EntityUid user)
     {
-        if (HasComp<BlockInjectionComponent>(target)) // DeltaV
+        if (TryComp<BlockInjectionComponent>(target, out var blockComponent)) // DeltaV
         {
-            Popup.PopupEntity(Loc.GetString("injector-component-deny-user"), target, user);
+            Popup.PopupEntity(Loc.GetString($"injector-component-deny-{blockComponent.BlockReason}"), target, user);
             return;
         }
 
