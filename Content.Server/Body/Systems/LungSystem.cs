@@ -72,14 +72,12 @@ public sealed class LungSystem : EntitySystem
 
         if (!_inventory.TryGetContainingEntity(ent.Owner, out var parent)
             || !_inventory.TryGetContainingSlot(ent.Owner, out var slot)
-            || (slot.SlotFlags & comp.AllowedSlots) == 0)
+            || (slot.SlotFlags & comp.AllowedSlots) == 0
+            || !TryComp(parent, out InternalsComponent? internals))
             return;
 
-        if (TryComp(parent, out InternalsComponent? internals))
-        {
-            ent.Comp.ConnectedInternalsEntity = parent;
-            _internals.ConnectBreathTool((parent.Value, internals), ent);
-        }
+        ent.Comp.ConnectedInternalsEntity = parent;
+        _internals.ConnectBreathTool((parent.Value, internals), ent);
     }
 
 
