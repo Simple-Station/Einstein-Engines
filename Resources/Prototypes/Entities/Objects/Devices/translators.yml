@@ -254,3 +254,20 @@
     requires:
     - Draconic
     - Azaziba
+
+- type: entity
+  id: ChittinTranslator
+  parent: [ TranslatorPoweredBase ]
+  name: Chittin translator
+  description: Translates speech between Chittin and Tau-Ceti Basic. For talking to Chitinids!
+  components:
+  - type: HandheldTranslator
+    spoken:
+    - TauCetiBasic
+    - Chittin
+    understood:
+    - TauCetiBasic
+    - Chittin
+    requires:
+    - TauCetiBasic
+    - Chittin
