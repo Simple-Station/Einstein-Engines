@@ -22,13 +22,13 @@ public sealed class TeachLessonConditionSystem : EntitySystem
         SubscribeLocalEvent<KillTrackerComponent, MobStateChangedEvent>(OnMobStateChanged);
     }
 
-    // TODO: subscribe by ref at some point in the future
     private void OnMobStateChanged(EntityUid uid, KillTrackerComponent trackerComponent, MobStateChangedEvent args)
     {
         if (args.NewMobState != trackerComponent.KillState || args.OldMobState >= args.NewMobState
             || !TryComp<MindContainerComponent>(args.Target, out var mc) || mc.OriginalMind is not { } mindId)
             return;
 
+        // If the attacker actually has the objective, we can just skip any enumeration outright.
         if (args.Origin is not null
             && TryComp<TargetObjectiveComponent>(args.Origin, out var targetComp)
             && targetComp.Target == mindId)
