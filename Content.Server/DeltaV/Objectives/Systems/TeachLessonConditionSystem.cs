@@ -12,6 +12,7 @@ namespace Content.Server.DeltaV.Objectives.Systems;
 public sealed class TeachLessonConditionSystem : EntitySystem
 {
     [Dependency] private readonly CodeConditionSystem _codeCondition = default!;
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
 
     public override void Initialize()
     {
@@ -34,13 +35,16 @@ public sealed class TeachLessonConditionSystem : EntitySystem
         // Get all TeachLessonConditionComponent entities
         var query = EntityQueryEnumerator<TeachLessonConditionComponent, TargetObjectiveComponent>();
 
-        while (query.MoveNext(out var uid, out conditionComp, out var targetObjective))
+        while (query.MoveNext(out var uid, out var conditionComp, out var targetObjective))
         {
             // Check if this objective's target matches the entity that died
             if (targetObjective.Target != mindId)
                 continue;
-                
-            var distance = (Transform(uid).WorldPosition - Transform(args.Target).WorldPosition).Length;
+
+            var userWorldPos = _transform.GetWorldPosition(uid);
+            var targetWorldPos = _transform.GetWorldPosition(args.Target);
+            
+            var distance = (userWorldPos - targetWorldPos).Length();
             if (distance > conditionComp.MaxDistance
                 || Transform(uid).MapID != Transform(args.Target).MapID)
                 continue;
