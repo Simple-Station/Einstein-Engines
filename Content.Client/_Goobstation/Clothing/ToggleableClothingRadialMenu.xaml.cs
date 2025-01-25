@@ -30,6 +30,7 @@ public sealed partial class ToggleableClothingRadialMenu : RadialMenu
 
     public void RefreshUI()
     {
+        // Even EmotesMenu has to call this, I'm assuming it's essential.
         var main = FindControl<RadialContainer>("Main");
 
         if (!_entityManager.TryGetComponent<ToggleableClothingComponent>(Entity, out var clothing)
