@@ -18,9 +18,16 @@
   - !type:AddTraitSpecial
     traits:
     - MartialArtist
+  afterLoadoutSpecial:
+  - !type:ModifyEnvirosuitSpecial
+    charges: 3
+  - !type:ModifyEnvirohelmSpecial
+    powerCell: PowerCellPotato
 
 - type: startingGear
   id: NyanoGladiatorGear
+  subGear:
+  - GladiatorPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitGladiator
     outerClothing: ClothingOuterArmorGladiator
@@ -28,3 +35,11 @@
     ears: ClothingHeadsetGrey
   innerClothingSkirt: UniformShortsRedWithTop
   #any other possessions, spawn in cell
+
+- type: startingGear
+  id: GladiatorPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitGladiator
+    head: ClothingHeadEnvirohelmGladiator
+    gloves: ClothingHandsGlovesEnviroglovesGladiator

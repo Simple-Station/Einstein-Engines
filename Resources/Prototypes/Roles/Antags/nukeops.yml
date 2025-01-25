@@ -44,6 +44,8 @@
 #Lone Operative Gear
 - type: startingGear
   id: SyndicateLoneOperativeGearFull
+  subGear:
+  - SyndicatePlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitOperative
     back: ClothingBackpackDuffelSyndicateOperative

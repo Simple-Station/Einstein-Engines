@@ -1,3 +1,4 @@
+using Content.Shared.Customization.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
@@ -13,6 +14,7 @@ public sealed partial class ThiefBackpackSetPrototype : IPrototype
     [DataField] public string Name { get; private set; } = string.Empty;
     [DataField] public string Description { get; private set; } = string.Empty;
     [DataField] public SpriteSpecifier Sprite { get; private set; } = SpriteSpecifier.Invalid;
+    [DataField] public List<CharacterRequirement> Requirements { get; private set; } = [];
 
     [DataField] public List<EntProtoId> Content = new();
 }

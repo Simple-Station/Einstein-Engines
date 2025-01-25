@@ -13,6 +13,7 @@
     - IPCs
     - Harpy
     - Shadowkin
+    - Plasmaman
     - Chitinid
 
 - type: guideEntry
@@ -56,11 +57,16 @@
   text: "/ServerInfo/Guidebook/Mobs/IPCs.xml"
 
 - type: guideEntry
+  id: Harpy
+  name: species-name-harpy
+  text: "/ServerInfo/Guidebook/Mobs/Harpy.xml"
+
+- type: guideEntry
   id: Shadowkin
   name: species-name-shadowkin
   text: "/ServerInfo/Guidebook/Mobs/Shadowkin.xml"
 
 - type: guideEntry
-  id: Harpy
-  name: species-name-harpy
-  text: "/ServerInfo/Guidebook/Mobs/Harpy.xml"
+  id: Plasmaman
+  name: species-name-plasmaman
+  text: "/ServerInfo/Guidebook/Mobs/Plasmaman.xml"

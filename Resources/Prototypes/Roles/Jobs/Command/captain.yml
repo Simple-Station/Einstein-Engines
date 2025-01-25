@@ -27,7 +27,7 @@
     - !type:CharacterWhitelistRequirement
   weight: 20
   startingGear: CaptainGear
-  icon: JobIconCaptain
+  icon: "JobIconCaptain"
   requireAdminNotify: true
   joinNotifyCrew: true
   supervisors: job-supervisors-centcom
@@ -40,9 +40,16 @@
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
+  afterLoadoutSpecial:
+  - !type:ModifyEnvirosuitSpecial
+    charges: 8
+  - !type:ModifyEnvirohelmSpecial
+    powerCell: PowerCellHigh
 
 - type: startingGear
   id: CaptainGear
+  subGear:
+  - CaptainPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitCaptain
     back: ClothingBackpackCaptainFilled
@@ -52,3 +59,11 @@
   innerClothingSkirt: ClothingUniformJumpskirtCaptain
   satchel: ClothingBackpackSatchelCaptainFilled
   duffelbag: ClothingBackpackDuffelCaptainFilled
+
+- type: startingGear
+  id: CaptainPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitCaptain
+    head: ClothingHeadEnvirohelmCaptain
+    gloves: ClothingHandsGlovesCaptain

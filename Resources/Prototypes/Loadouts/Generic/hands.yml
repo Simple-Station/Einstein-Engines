@@ -10,6 +10,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutGloves
+    - !type:CharacterSpeciesRequirement # Use the envirogloves that use the same sprite instead.
+      inverted: true
+      species:
+        - Plasmaman
 
 - type: loadout
   id: LoadoutHandsColorYellowBudget
@@ -71,6 +75,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutGloves
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Plasmaman
 
 - type: loadout
   id: LoadoutHandsGlovesEvening
@@ -83,3 +91,7 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutGloves
+    - !type:CharacterSpeciesRequirement # Use the evening envirogloves that use the same sprite instead.
+      inverted: true
+      species:
+        - Plasmaman
