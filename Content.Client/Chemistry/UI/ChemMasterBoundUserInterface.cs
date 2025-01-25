@@ -10,14 +10,10 @@ namespace Content.Client.Chemistry.UI
     /// Initializes a <see cref="ChemMasterWindow"/> and updates it when new server messages are received.
     /// </summary>
     [UsedImplicitly]
-    public sealed class ChemMasterBoundUserInterface : BoundUserInterface
+    public sealed class ChemMasterBoundUserInterface(EntityUid owner, Enum uiKey) : BoundUserInterface(owner, uiKey)
     {
         [ViewVariables]
         private ChemMasterWindow? _window;
-
-        public ChemMasterBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-        {
-        }
 
         /// <summary>
         /// Called each time a chem master UI instance is opened. Generates the window and fills it with
@@ -34,8 +30,6 @@ namespace Content.Client.Chemistry.UI
             // Setup static button actions.
             _window.InputEjectButton.OnPressed += _ => SendMessage(
                 new ItemSlotButtonPressedEvent(SharedChemMaster.InputSlotName));
-            _window.OutputEjectButton.OnPressed += _ => SendMessage(
-                new ItemSlotButtonPressedEvent(SharedChemMaster.OutputSlotName));
             _window.BufferTransferButton.OnPressed += _ => SendMessage(
                 new ChemMasterSetModeMessage(ChemMasterMode.Transfer));
             _window.BufferDiscardButton.OnPressed += _ => SendMessage(
@@ -53,7 +47,9 @@ namespace Content.Client.Chemistry.UI
                 _window.PillTypeButtons[i].OnPressed += _ => SendMessage(new ChemMasterSetPillTypeMessage(pillType));
             }
 
-            _window.OnReagentButtonPressed += (args, button) => SendMessage(new ChemMasterReagentAmountButtonMessage(button.Id, button.Amount, button.IsBuffer));
+            _window.OnReagentButtonPressed += (_, button, amount, isOutput) => SendMessage(new ChemMasterReagentAmountButtonMessage(button.Id, amount, button.IsBuffer, isOutput));
+            _window.OnSortMethodChanged += sortMethod => SendMessage(new ChemMasterSortMethodUpdated(sortMethod));
+            _window.OnTransferAmountChanged += amount => SendMessage(new ChemMasterTransferringAmountUpdated(amount));
         }
 
         /// <summary>
@@ -68,7 +64,6 @@ namespace Content.Client.Chemistry.UI
             base.UpdateState(state);
 
             var castState = (ChemMasterBoundUserInterfaceState) state;
-
             _window?.UpdateState(castState); // Update window state
         }
     }

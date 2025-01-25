@@ -19,6 +19,7 @@ ui-options-general-discord = Discord
 ui-options-general-cursor = Cursor
 ui-options-general-speech = Speech
 ui-options-general-storage = Storage
+ui-options-general-other = Other
 ui-options-general-accessibility = Accessibility
 ui-options-chatstack = Automatically merge identical chat messages
 ui-options-chatstack-off = Off
@@ -159,6 +160,7 @@ ui-options-function-save-item-location = Save item location
 ui-options-function-toggle-standing = Toggle standing
 ui-options-function-toggle-crawling-under = Toggle crawling under furniture
 ui-options-static-storage-ui = Lock storage window to hotbar
+ui-options-modern-progress-bar = Modern progress bar
 
 ui-options-function-smart-equip-backpack = Smart-equip to backpack
 ui-options-function-smart-equip-belt = Smart-equip to belt
@@ -218,6 +220,9 @@ ui-options-function-editor-line-place = Place line
 ui-options-function-editor-rotate-object = Rotate
 ui-options-function-editor-flip-object = Flip
 ui-options-function-editor-copy-object = Copy
+ui-options-function-mapping-enable-pick = Pick object/tile
+ui-options-function-mapping-enable-decal-pick = Pick decal
+ui-options-function-mapping-enable-delete = Delete object
 
 ui-options-function-show-debug-console = Open Console
 ui-options-function-show-debug-monitors = Show Debug Monitors

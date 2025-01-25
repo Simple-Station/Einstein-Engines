@@ -34896,12 +34896,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 6.5,33.5
       parent: 1
-  - uid: 299
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 10.5,17.5
-      parent: 1
   - uid: 455
     components:
     - type: Transform
@@ -37854,6 +37848,14 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -19.5,-24.5
+      parent: 1
+- proto: ComputerPsionicsRecords
+  entities:
+  - uid: 299
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 10.5,17.5
       parent: 1
 - proto: ComputerRadar
   entities:
@@ -65764,7 +65766,7 @@ entities:
       pos: -11.5,11.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -26515.367
+      secondsUntilStateChange: -27843.273
       state: Opening
     - type: Occluder
       enabled: True

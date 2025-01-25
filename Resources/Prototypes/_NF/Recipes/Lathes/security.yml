@@ -75,6 +75,14 @@
     Steel: 65 # 25 [Steel per empty mag] + 8 [bullets] * 5 [Steel per practice bullet]
 
 - type: latheRecipe
+  id: SpeedLoaderRifleHeavyRubber
+  parent: BaseAmmoRecipe
+  result: SpeedLoaderRifleHeavyRubber
+  materials:
+    Steel: 25
+    Plastic: 80
+
+- type: latheRecipe
   id: SpeedLoaderRifleHeavyUranium
   parent: BaseAmmoRecipe
   result: SpeedLoaderRifleHeavyUranium

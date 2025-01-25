@@ -167,9 +167,8 @@
     animation: WeaponArcBite
     damage:
       types:
-        Piercing: 1
-        Poison: 2
-        Asphyxiation: 2
+        Piercing: 2
+        Poison: 3
   - type: SolutionContainerManager
     solutions:
       melee:

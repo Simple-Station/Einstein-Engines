@@ -30445,6 +30445,14 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 42.5,-35.5
       parent: 34
+- proto: ComputerPsionicsRecords
+  entities:
+  - uid: 13763
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -30.5,-11.5
+      parent: 34
 - proto: ComputerRadar
   entities:
   - uid: 5579
@@ -36708,7 +36716,7 @@ entities:
       pos: -36.5,-22.5
       parent: 34
     - type: Door
-      secondsUntilStateChange: -67401.266
+      secondsUntilStateChange: -68431.75
       state: Closing
   - uid: 1274
     components:

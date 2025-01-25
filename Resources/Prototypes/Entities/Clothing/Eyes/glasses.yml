@@ -232,6 +232,25 @@
     coverage: EYES
 
 - type: entity
+  parent: [ClothingEyesBase, ShowPsionicsIcons]
+  id: ClothingEyesGlassesEpistemics
+  name: epi psionics glasses
+  description: Upgraded sunglasses that provide flash immunity and a epistemics psionics HUD.
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Glasses/epiglasses.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Glasses/epiglasses.rsi
+  - type: FlashImmunity
+  - type: EyeProtection
+    protectionTime: 5
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+  - type: IdentityBlocker
+    coverage: EYES
+
+- type: entity
   parent: ClothingEyesGlassesCheapSunglasses
   id: ClothingEyesGlassesCheapSunglassesAviator
   name: cheap aviators

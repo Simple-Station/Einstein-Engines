@@ -7,17 +7,20 @@ namespace Content.Shared._Arcadis.Computer;
 /// <summary>
 /// Main component for the ComputerDisk system
 /// </summary>
-[RegisterComponent, NetworkedComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 //[Access(typeof(ComputerDiskSystem))]
 public sealed partial class ComputerDiskComponent : Component
 {
     /// <summary>
     /// The prototype of the computer that will be used
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField]
     public EntProtoId ProgramPrototype;
+
+    [AutoNetworkedField]
+
     public EntityUid? ProgramPrototypeEntity;
 
-    [DataField]
+    [DataField, AutoNetworkedField]
     public bool PersistState;
 }
