@@ -5,7 +5,7 @@
     <GuideEntityEmbed Entity="MobPlasmaman" Caption=""/>
   </Box>
 
-  They breathe plasma, and oxygen is highly toxic when inhaled.
+  They breathe plasma, and oxygen is highly toxic to them when inhaled.
   Being exposed to oxygen sets them on fire.
 
   To prevent ignition, they wear sealed suits made up of an envirosuit (in the jumpsuit slot) and a [bold]spaceworthy[/bold] envirosuit helmet.
@@ -14,8 +14,8 @@
   They don't experience hunger nor thirst.
   They don't have blood and cannot bleed out.
 
-  They can consume Milk to gain a positive moodlet and slowly heal Brute, Heat, Shock, and Caustic damage.
-  They can also consume Plasma to gain a bigger positive moodlet and heal almost every damage type faster, except for Cellular.
+  Due to their skeleton body, they can consume Milk to gain a positive moodlet and slowly heal Brute, Heat, Shock, and Caustic damage.
+  They can also consume Plasma to gain a bigger positive moodlet and heal every damage type faster, except for Cellular damage.
 
   <Box>
     <GuideEntityEmbed Entity="DrinkCartonMilk" />
@@ -26,7 +26,7 @@
 
   Plasmamen with the traits [bold]Claws[/bold], [bold]Talons[/bold] or [bold]Natural Weapons Removal[/bold] have less unarmed damage but don't take self-damage from unarmed attacks.
 
-  They take [color=#1e90ff]15% less Slash and 25% less Piercing damage[/color],
+  They take [color=#1e90ff]25% less Piercing, 20% less Poison, and 15% less Slash damage[/color],
   and are [color=#8658fc]immune to Radiation and Cold damage[/color],
   but take [color=#ffa500]50% more Blunt and 50% more Heat damage[/color].
 
