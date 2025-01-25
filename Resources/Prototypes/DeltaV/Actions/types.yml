@@ -1,7 +1,7 @@
 - type: entity
   id: ActionChitzite
   name: Cough Up Chitzite
-  description: Purge the excess radiation build-up from your body, and gain a cool danger rock.
+  description: Purge the excess radiation build-up from your body by expelling it as a mass of toxic material.
   components:
   - type: InstantAction
     charges: 0
