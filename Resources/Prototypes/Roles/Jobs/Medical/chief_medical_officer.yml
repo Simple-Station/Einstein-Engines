@@ -17,7 +17,7 @@
       department: Medical
       min: 43200 # DeltaV - 12 hours
     - !type:CharacterOverallTimeRequirement
-      min: 72000 # DeltaV - 20 hours
+      min: 90000 # 25 hours
   weight: 10
   startingGear: CMOGear
   icon: "JobIconChiefMedicalOfficer"

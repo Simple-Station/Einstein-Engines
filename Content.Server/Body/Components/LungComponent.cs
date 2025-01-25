@@ -34,4 +34,10 @@ public sealed partial class LungComponent : Component
     /// </summary>
     [DataField]
     public ProtoId<AlertPrototype> Alert = "LowOxygen";
+
+    [DataField]
+    public float MaxVolume = 100f;
+
+    [DataField]
+    public bool CanReact = false; // No Dexalin lungs... right?
 }

@@ -10654,3 +10654,61 @@ Entries:
   id: 6754
   time: '2025-01-23T03:45:53.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1641
+- author: BlueHNT
+  changes:
+    - type: Tweak
+      message: Tweaked lamia bite
+  id: 6755
+  time: '2025-01-24T22:29:08.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1645
+- author: CerberusWolfie
+  changes:
+    - type: Tweak
+      message: >-
+        Logistics Officer now has 30 hours instead of 40 hours of time
+        requirement overall.
+    - type: Tweak
+      message: >-
+        Chief Engineer and CMO have 25 hours instead of 30 hours of time
+        requirement.
+    - type: Tweak
+      message: Mystagogue now has 5 hours of time requirement as Mantis and Cataloguer.
+  id: 6756
+  time: '2025-01-25T00:53:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1649
+- author: Timfa
+  changes:
+    - type: Add
+      message: Add Batonbot
+    - type: Add
+      message: Add Disablerbot
+  id: 6757
+  time: '2025-01-25T16:58:46.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1631
+- author: Erisfiregamer1
+  changes:
+    - type: Add
+      message: Modsuits have been ported from Goobstation!
+  id: 6758
+  time: '2025-01-25T17:17:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1640
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: >-
+        A new ChemMaster experience has been granted to the people of Einstein
+        Engines. Includes a pill buffer!
+  id: 6759
+  time: '2025-01-25T17:29:37.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1650
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Engineering Hardsuits, Maxim Hardsuit, and Cybersun's Elite Tacsuit now
+        all make the wearer immune to atmos fires. Have fun walking directly
+        into the supermatter engine. Play out your heroic engineer fantasy by
+        dragging the supermatter crystal to space in order to save the station.
+  id: 6760
+  time: '2025-01-25T17:31:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1445
