@@ -76,31 +76,38 @@
     - mrra
 
 # Tajaran sign language. Crucially, only tajara can "speak" it, due to need for tajara body language
-# (if they cut off your tail or legs you shouldn't be able to speak it, but well)
+# (if they cut off your tail or ears you shouldn't be able to speak it, but well)
 - type: language
   id: TajaraSign
   speech:
     allowRadio: false
     requireSpeech: false
     color: "#dddddd"
-    messageWrapOverrides: # TODO actually make it like, seperate thing.
+    messageWrapOverrides: # TODO: replace this, it's not working as intended
       Speak: chat-sign-language-message-wrap
       Whisper: chat-sign-language-whisper-wrap
     speechVerbOverrides:
-    - chat-speech-verb-sign-1
+    - chat-speech-verb-sign-tajaran-1
+    - chat-speech-verb-sign-tajaran-2
+    - chat-speech-verb-sign-tajaran-3
+    - chat-speech-verb-sign-tajaran-4
+    - chat-speech-verb-sign-tajaran-5
+    - chat-speech-verb-sign-1 # this can be actually reused! should look fine, but still distinct
     - chat-speech-verb-sign-2
-    - chat-speech-verb-sign-3
+    # - chat-speech-verb-sign-3 # except for this one
   obfuscation:
     !type:ReplacementObfuscation
     replacement:
-    - something
-    - a cryptic message
-    - a signal
-    - a message
+    - ""
+    - " briefly"
+    - " a few times"
+    - " several times in quick succession"
+    - " for a while"
 
 # One of 5 languages that Tajara could speak, this one is Tajara exclusive, and get some cool stuff thanks to that (non-verbal element)
 # Short name is Tajr
 # To quote: "Language native to the Tajara, it employs both verbal and non-verbal elements"
+# TODO: make it actually work as intended!!!
 - type: language
   id: SiikTajr
   isVisibleLanguage: true
