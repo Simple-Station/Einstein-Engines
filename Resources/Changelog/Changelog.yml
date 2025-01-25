@@ -10728,3 +10728,19 @@ Entries:
   id: 6762
   time: '2025-01-25T20:12:52.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1644
+- author: sleepyyapril
+  changes:
+    - type: Tweak
+      message: >-
+        Kill random person objective has been replaced by teaching them a
+        lesson, removing the need to RR a random person.
+  id: 6763
+  time: '2025-01-25T20:38:25.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1654
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Fixed melee weapons having the wrong attack speed calculations(again)
+  id: 6764
+  time: '2025-01-25T20:39:09.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1653
