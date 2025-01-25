@@ -2105,9 +2105,85 @@
 
 - type: entity
   parent: ClothingUniformEnvirosuitCustomBase
-  id: ClothingUniformEnvirosuitEnviroslacksColorMonochrome
-  name: monochrome enviroslacks
-  description: The pet project of a particularly posh Plasmaman, this variant is fully black and white. Classic!
+  id: ClothingUniformEnvirosuitEnviroslacksColorBrown
+  name: brown enviroslacks
+  description: The pet project of a particularly posh Plasmaman, this variant has brown pants. Reminds you of dusty offices.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#ffffff"
+    - state: plaintop-icon
+      color: "#ffffff"
+    - state: tie-icon
+      color: "#a349a4"
+    - state: accent-icon
+      color: "#a349a4"
+    - state: pants-icon
+      color: "#583f20"
+    - state: belt-icon
+      color: "#363636"
+    - state: beltbuckle_small-icon
+      color: "#3e3e3e"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ffffff"
+      - state: plaintop-inhand-left
+        color: "#ffffff"
+      - state: tie-inhand-left
+        color: "#a349a4"
+      - state: accent-inhand-left
+        color: "#a349a4"
+      - state: pants-inhand-left
+        color: "#583f20"
+      - state: belt-inhand-left
+        color: "#363636"
+      - state: beltbuckle_small-inhand-left
+        color: "#3e3e3e"
+      right:
+      - state: inhand-right
+        color: "#ffffff"
+      - state: plaintop-inhand-right
+        color: "#ffffff"
+      - state: tie-inhand-right
+        color: "#a349a4"
+      - state: accent-inhand-right
+        color: "#a349a4"
+      - state: pants-inhand-right
+        color: "#583f20"
+      - state: belt-inhand-right
+        color: "#363636"
+      - state: beltbuckle_small-inhand-right
+        color: "#3e3e3e"
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#ffffff"
+      - state: plaintop-equipped-INNERCLOTHING
+        color: "#ffffff"
+      - state: tie-equipped-INNERCLOTHING
+        color: "#a349a4"
+      - state: accentalt-equipped-INNERCLOTHING
+        color: "#a349a4"
+      - state: pants-equipped-INNERCLOTHING
+        color: "#583f20"
+      - state: belt-equipped-INNERCLOTHING
+        color: "#363636"
+      - state: beltbuckle_small-equipped-INNERCLOTHING
+        color: "#3e3e3e"
+      - state: loweraccent-equipped-INNERCLOTHING
+        color: "#a349a4"
+      - state: soles-equipped-INNERCLOTHING
+        color: "#bababa"
+
+- type: entity
+  parent: ClothingUniformEnvirosuitCustomBase
+  id: ClothingUniformEnvirosuitEnviroslacksMNK
+  name: MNK enviroslacks
+  description: The iconic enviroslacks, with MNK's signature monochrome aesthetic. Classic!
   components:
   - type: Sprite
     layers:
@@ -2173,9 +2249,9 @@
 
 - type: entity
   parent: ClothingUniformEnvirosuitCustomBase
-  id: ClothingUniformEnvirosuitEnviroslacksColorMonochromeAlt
-  name: monochrome enviroslacks
-  description: The pet project of a particularly posh Plasmaman, this variant is fully white and black. Noir!
+  id: ClothingUniformEnvirosuitEnviroslacksMNKAlt
+  name: MNK enviroslacks
+  description: The iconic enviroslacks, with MNK's signature monochrome aesthetic. Noir!
   suffix: Alternative
   components:
   - type: Sprite

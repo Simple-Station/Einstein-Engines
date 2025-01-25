@@ -2112,9 +2112,9 @@
 
 - type: entity
   parent: ClothingHeadEnvirohelmCustomBase
-  id: ClothingHeadEnvirohelmEnviroslacksColorMonochrome
-  name: monochrome enviroslacks helmet
-  description: The pet project of a particularly posh Plasmaman, this envirohelm is fully black and white. Classic!
+  id: ClothingHeadEnvirohelmEnviroslacksMNK
+  name: MNK enviroslacks helmet
+  description: A sleek envirohelm brought to you by MNK. Classic!
   components:
   - type: Sprite
     layers:
@@ -2152,9 +2152,9 @@
 
 - type: entity
   parent: ClothingHeadEnvirohelmCustomBase
-  id: ClothingHeadEnvirohelmEnviroslacksColorMonochromeAlt
+  id: ClothingHeadEnvirohelmEnviroslacksMNKAlt
   name: monochrome enviroslacks helmet
-  description: The pet project of a particularly posh Plasmaman, this envirohelm is fully white and black. Noir!
+  description: A sleek envirohelm brought to you by MNK. Noir!
   suffix: Alternative
   components:
   - type: Sprite

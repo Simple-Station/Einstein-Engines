@@ -663,7 +663,7 @@
     - ClothingHeadEnvirohelmEnviroslacksColorBlue
 
 - type: loadout
-  id: LoadoutUniformEnvirosuitEnviroslacksColorMonochrome
+  id: LoadoutUniformEnvirosuitEnviroslacksColorBrown
   category: Uniform
   cost: 1
   exclusive: true
@@ -679,11 +679,11 @@
       departments:
         - Command
   items:
-    - ClothingUniformEnvirosuitEnviroslacksColorMonochrome
-    - ClothingHeadEnvirohelmEnviroslacksColorMonochrome
+    - ClothingUniformEnvirosuitEnviroslacksColorBrown
+    - ClothingHeadEnvirohelmColorWhite
 
 - type: loadout
-  id: LoadoutUniformEnvirosuitEnviroslacksColorMonochromeAlt
+  id: LoadoutUniformEnvirosuitEnviroslacksMNK
   category: Uniform
   cost: 1
   exclusive: true
@@ -699,5 +699,25 @@
       departments:
         - Command
   items:
-    - ClothingUniformEnvirosuitEnviroslacksColorMonochromeAlt
-    - ClothingHeadEnvirohelmEnviroslacksColorMonochromeAlt
+    - ClothingUniformEnvirosuitEnviroslacksMNK
+    - ClothingHeadEnvirohelmEnviroslacksMNK
+
+- type: loadout
+  id: LoadoutUniformEnvirosuitEnviroslacksMNKAlt
+  category: Uniform
+  cost: 1
+  exclusive: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Plasmaman
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+  items:
+    - ClothingUniformEnvirosuitEnviroslacksMNKAlt
+    - ClothingHeadEnvirohelmEnviroslacksMNKAlt

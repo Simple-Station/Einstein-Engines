@@ -364,6 +364,8 @@
     - type: loadout
       id: LoadoutUniformEnvirosuitEnviroslacksColorBlue
     - type: loadout
-      id: LoadoutUniformEnvirosuitEnviroslacksColorMonochrome
+      id: LoadoutUniformEnvirosuitEnviroslacksColorBrown
     - type: loadout
-      id: LoadoutUniformEnvirosuitEnviroslacksColorMonochromeAlt
+      id: LoadoutUniformEnvirosuitEnviroslacksMNK
+    - type: loadout
+      id: LoadoutUniformEnvirosuitEnviroslacksMNKAlt
