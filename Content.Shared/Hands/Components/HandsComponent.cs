@@ -29,6 +29,7 @@ public sealed partial class HandsComponent : Component
     /// <summary>
     ///     List of hand-names. These are keys for <see cref="Hands"/>. The order of this list determines the order in which hands are iterated over.
     /// </summary>
+    [ViewVariables]
     public List<string> SortedHands = new();
 
     /// <summary>
@@ -38,11 +39,11 @@ public sealed partial class HandsComponent : Component
     public bool DisableExplosionRecursion = false;
 
     /// <summary>
-    ///     The amount of throw impulse per distance the player is from the throw target.
+    ///     Modifies the speed at which items are thrown.
     /// </summary>
-    [DataField("throwForceMultiplier")]
+    [DataField]
     [ViewVariables(VVAccess.ReadWrite)]
-    public float ThrowForceMultiplier { get; set; } = 10f; //should be tuned so that a thrown item lands about under the player's cursor
+    public float BaseThrowspeed { get; set; } = 10f;
 
     /// <summary>
     ///     Distance after which longer throw targets stop increasing throw impulse.

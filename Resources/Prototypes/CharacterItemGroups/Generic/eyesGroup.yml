@@ -1,0 +1,47 @@
+- type: characterItemGroup
+  id: LoadoutEyes
+  items:
+    - type: loadout
+      id: LoadoutEyesEyepatch
+    - type: loadout
+      id: LoadoutEyesEyepatchColor
+    - type: loadout
+      id: LoadoutEyesEyepatchColorFlipped
+    - type: loadout
+      id: LoadoutEyesGlasses
+    - type: loadout
+      id: LoadoutEyesGlassesJamjar
+    - type: loadout
+      id: LoadoutEyesGlassesJensen
+    - type: loadout
+      id: LoadoutEyesGlasses3D
+    - type: loadout
+      id: LoadoutEyesGlassesHipster
+    - type: loadout
+      id: LoadoutEyesGlassesMonocle
+    - type: loadout
+      id: LoadoutEyesGlassesPanto
+    - type: loadout
+      id: LoadoutEyesBlindfold
+    - type: loadout
+      id: LoadoutEyesBlindfoldColor
+    - type: loadout
+      id: LoadoutItemCheapSunglasses
+    - type: loadout
+      id: LoadoutEyesGlassesCheapSunglassesAviator
+    - type: loadout
+      id: LoadoutEyesGlassesCheapSunglassesBig
+    - type: loadout
+      id: LoadoutEyesGlassesCheapSunglassesVisor
+    - type: loadout
+      id: LoadoutItemSunglasses
+    - type: loadout
+      id: LoadoutEyesGlassesSunglassesAviator
+    - type: loadout
+      id: LoadoutEyesGlassesSunglassesBig
+    - type: loadout
+      id: LoadoutEyesGlassesSunglassesVisor
+    - type: loadout
+      id: LoadoutItemBlindfoldFake
+    - type: loadout
+      id: LoadoutEyesBlindfoldFakeColor

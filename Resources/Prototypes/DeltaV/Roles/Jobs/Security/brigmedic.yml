@@ -4,10 +4,10 @@
   description: job-description-brigmedic
   playTimeTracker: JobBrigmedic
   requirements:
-    - !type:DepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Medical
       min: 21600 # 6 hrs
-    - !type:DepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Security
       min: 18000 # 4 hrs
   startingGear: CorpsmanGear
@@ -29,6 +29,8 @@
   - !type:AddComponentSpecial
     components:
     - type: CPRTraining
+    - type: SurgerySpeedModifier
+      speedModifier: 2.0
 
 - type: startingGear
   id: CorpsmanGear # see Prototypes/Roles/Jobs/Fun/misc_startinggear.yml for "BrigmedicGear"

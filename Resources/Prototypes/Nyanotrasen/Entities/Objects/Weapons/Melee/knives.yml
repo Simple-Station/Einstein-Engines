@@ -5,7 +5,7 @@
   description: A special knife designed for killing psychics.
   components:
   - type: MeleeWeapon
-    attackRate: 1.5
+    attackRate: .6666
     damage:
       types:
         Slash: 10
@@ -24,6 +24,9 @@
     state: icon
   - type: Item
     sprite: Nyanotrasen/Objects/Weapons/Melee/anti_psychic_knife.rsi
+    storedSprite:
+      state: icon
+      sprite: Nyanotrasen/Objects/Weapons/Melee/anti_psychic_knife.rsi
   - type: Tag
     tags:
     - ForensicBeltEquip

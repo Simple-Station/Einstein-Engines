@@ -1,0 +1,99 @@
+# Chief Medical Officer
+#- type: characterItemGroup
+#  id: LoadoutChiefMedicalOfficerBackpacks
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutChiefMedicalOfficerBelt
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutChiefMedicalOfficerBeltMedical
+    - type: loadout
+      id: LoadoutChiefMedicalOfficerBeltMedicalAdvancedFilled
+
+#- type: characterItemGroup
+#  id: LoadoutChiefMedicalOfficerEars
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutChiefMedicalOfficerEquipment
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutChiefMedicalOfficerEyes
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutChiefMedicalOfficerGloves
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutChiefMedicalOfficerHead
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCommandCMOHatBeret
+
+- type: characterItemGroup
+  id: LoadoutChiefMedicalOfficerId
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutChiefMedicalOfficerNTPDA
+    - type: loadout
+      id: LoadoutClothingHeadMirror
+
+- type: characterItemGroup
+  id: LoadoutChiefMedicalOfficerNeck
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCommandCMONeckMantle
+    - type: loadout
+      id: LoadoutCommandCMONeckCloak
+    - type: loadout
+      id: LoadoutChiefMedicalOfficerNeckMedalMedical
+
+#- type: characterItemGroup
+#  id: LoadoutChiefMedicalOfficerMask
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutChiefMedicalOfficerOuter
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCommandCMOOuterWinter
+    - type: loadout
+      id: LoadoutCommandCMOOuterLab
+
+- type: characterItemGroup
+  id: LoadoutChiefMedicalOfficerShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCommandCMOShoesBootsWinter
+    - type: loadout
+      id: LoadoutChiefMedicalOfficerShoesLaceup
+    - type: loadout
+      id: LoadoutChiefMedicalOfficerShoesLeather
+
+- type: characterItemGroup
+  id: LoadoutChiefMedicalOfficerUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutChiefMedicalOfficerJumpsuit
+    - type: loadout
+      id: LoadoutChiefMedicalOfficerJumpskirt
+    - type: loadout
+      id: LoadoutChiefMedicalOfficerTurtleskirt
+    - type: loadout
+      id: LoadoutChiefMedicalOfficerTurtlesuit

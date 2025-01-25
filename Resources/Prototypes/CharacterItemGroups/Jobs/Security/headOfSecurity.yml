@@ -1,0 +1,130 @@
+# Head Of Security
+#- type: characterItemGroup
+#  id: LoadoutHeadOfSecurityBackpacks
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutHeadOfSecurityBelt
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutHeadOfSecurityEars
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutHeadOfSecurityEquipment
+#  maxItems: 1
+#  items:
+
+- type: characterItemGroup
+  maxItems: 1
+  id: LoadoutHeadOfSecurityWeapon
+  items:
+    - type: loadout
+      id: LoadoutCommandHoSPulsePistol
+    - type: loadout
+      id: LoadoutCommandHoSWt550
+    - type: loadout
+      id: LoadoutCommandHoSKatanaSheath
+    - type: loadout
+      id: LoadoutCommandHoSC20r
+    - type: loadout
+      id: LoadoutCommandHoSBulldog
+    - type: loadout
+      id: LoadoutCommandHoSEnergySword
+    - type: loadout
+      id: LoadoutCommandHoSEnergyGun
+
+#- type: characterItemGroup
+#  id: LoadoutHeadOfSecurityEyes
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutHeadOfSecurityGloves
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutHeadOfSecurityHead
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCommandHOSHatBeret
+    - type: loadout
+      id: LoadoutCommandHOSHatHoshat
+
+- type: characterItemGroup
+  id: LoadoutHeadOfSecurityId
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutHeadOfSecurityNTPDA
+
+- type: characterItemGroup
+  id: LoadoutHeadOfSecurityNeck
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCommandHOSNeckMantle
+    - type: loadout
+      id: LoadoutCommandHOSNeckCloak
+
+#- type: characterItemGroup
+#  id: LoadoutHeadOfSecurityMask
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutHeadOfSecurityOuter
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCommandHOSOuterWinter
+    - type: loadout
+      id: LoadoutCommandHOSOuterTrench
+    - type: loadout
+      id: LoadoutCommandHOSOuterWinterUnarmored
+
+- type: characterItemGroup
+  id: LoadoutHeadOfSecurityShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCommandHOSShoesBootsWinter
+
+- type: characterItemGroup
+  id: LoadoutHeadOfSecurityUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutUniformJumpskirtHoSBlue
+    - type: loadout
+      id: LoadoutUniformJumpskirtHoSGrey
+    - type: loadout
+      id: LoadoutCommandHOSJumpsuitAlt
+    - type: loadout
+      id: LoadoutCommandHOSJumpsuitBlue
+    - type: loadout
+      id: LoadoutCommandHOSJumpsuitGrey
+    - type: loadout
+      id: LoadoutCommandHOSJumpsuitParade
+    - type: loadout
+      id: LoadoutCommandHOSJumpsuitFormal
+    - type: loadout
+      id: LoadoutCommandHOSJumpskirtAlt
+    - type: loadout
+      id: LoadoutCommandHOSJumpskirtParade
+    - type: loadout
+      id: LoadoutCommandHOSJumpskirtFormal
+
+- type: characterItemGroup
+  id: LoadoutHeadOfSecurityTrinkets
+  maxItems: 2
+  items:
+    - type: loadout
+      id: LoadoutHoSCigarCase
+    # TBD

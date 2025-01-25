@@ -28,10 +28,10 @@ public sealed class MobThresholdSystem : EntitySystem
     private void OnGetState(EntityUid uid, MobThresholdsComponent component, ref ComponentGetState args)
     {
         var thresholds = new Dictionary<FixedPoint2, MobState>();
+
         foreach (var (key, value) in component.Thresholds)
-        {
             thresholds.Add(key, value);
-        }
+
         args.State = new MobThresholdsComponentState(thresholds,
             component.TriggersAlerts,
             component.CurrentThresholdState,
@@ -431,7 +431,7 @@ public sealed class MobThresholdSystem : EntitySystem
     private void MobThresholdShutdown(EntityUid target, MobThresholdsComponent component, ComponentShutdown args)
     {
         if (component.TriggersAlerts)
-            _alerts.ClearAlertCategory(target, AlertCategory.Health);
+            _alerts.ClearAlertCategory(target, component.HealthAlertCategory);
     }
 
     private void OnUpdateMobState(EntityUid target, MobThresholdsComponent component, ref UpdateMobStateEvent args)

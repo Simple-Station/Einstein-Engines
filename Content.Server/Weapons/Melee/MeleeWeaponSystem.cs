@@ -1,6 +1,7 @@
 using Content.Server.Chat.Systems;
 using Content.Server.CombatMode.Disarm;
 using Content.Server.Movement.Systems;
+using Content.Server.Weapons.Ranged.Systems;
 using Content.Shared.Actions.Events;
 using Content.Shared.Administration.Components;
 using Content.Shared.CombatMode;
@@ -22,6 +23,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
+using Robust.Shared.Utility;
 using System.Linq;
 using System.Numerics;
 using Content.Shared.Chat;
@@ -43,7 +45,7 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
     {
         base.Initialize();
         SubscribeLocalEvent<MeleeSpeechComponent, MeleeHitEvent>(OnSpeechHit);
-        SubscribeLocalEvent<MeleeWeaponComponent, DamageExamineEvent>(OnMeleeExamineDamage);
+        SubscribeLocalEvent<MeleeWeaponComponent, DamageExamineEvent>(OnMeleeExamineDamage, after: [typeof(GunSystem)]);
     }
 
     private void OnMeleeExamineDamage(EntityUid uid, MeleeWeaponComponent component, ref DamageExamineEvent args)
@@ -52,14 +54,26 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
             return;
 
         var damageSpec = GetDamage(uid, args.User, component);
-
         if (damageSpec.Empty)
             return;
 
-        _damageExamine.AddDamageExamine(args.Message, damageSpec, Loc.GetString("damage-melee"));
+        if (!component.DisableClick)
+            _damageExamine.AddDamageExamine(args.Message, damageSpec, Loc.GetString("damage-melee"));
 
-        if (damageSpec * component.HeavyDamageBaseModifier != damageSpec)
-            _damageExamine.AddDamageExamine(args.Message, damageSpec * component.HeavyDamageBaseModifier, Loc.GetString("damage-melee-heavy"));
+        if (!component.DisableHeavy)
+        {
+            if (damageSpec * component.HeavyDamageBaseModifier != damageSpec)
+                _damageExamine.AddDamageExamine(args.Message, damageSpec * component.HeavyDamageBaseModifier, Loc.GetString("damage-melee-heavy"));
+
+            if (component.HeavyStaminaCost != 0)
+            {
+                var staminaCostMarkup = FormattedMessage.FromMarkupOrThrow(
+                    Loc.GetString("damage-stamina-cost",
+                    ("type", Loc.GetString("damage-melee-heavy")), ("cost", Math.Round(component.HeavyStaminaCost, 2).ToString("0.##"))));
+                args.Message.PushNewline();
+                args.Message.AddMessage(staminaCostMarkup);
+            }
+        }
     }
 
     protected override bool ArcRaySuccessful(EntityUid targetUid, Vector2 position, Angle angle, Angle arcWidth, float range, MapId mapId,
@@ -185,15 +199,10 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
         if (session is { } pSession)
         {
             (targetCoordinates, targetLocalAngle) = _lag.GetCoordinatesAngle(target, pSession);
-        }
-        else
-        {
-            var xform = Transform(target);
-            targetCoordinates = xform.Coordinates;
-            targetLocalAngle = xform.LocalRotation;
+            return Interaction.InRangeUnobstructed(user, target, targetCoordinates, targetLocalAngle, range);
         }
 
-        return Interaction.InRangeUnobstructed(user, target, targetCoordinates, targetLocalAngle, range);
+        return Interaction.InRangeUnobstructed(user, target, range);
     }
 
     protected override void DoDamageEffect(List<EntityUid> targets, EntityUid? user, TransformComponent targetXform)

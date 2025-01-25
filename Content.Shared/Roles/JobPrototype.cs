@@ -1,5 +1,6 @@
 using Content.Shared.Access;
 using Content.Shared.Customization.Systems;
+using Content.Shared.Dataset;
 using Content.Shared.Players.PlayTimeTracking;
 using Content.Shared.Roles;
 using Content.Shared.StatusIcon;
@@ -99,6 +100,13 @@ namespace Content.Shared.Roles
         public string? StartingGear { get; private set; }
 
         /// <summary>
+        ///     If this has a value, it will randomly set the entity name of the
+        ///     entity upon spawn based on the dataset.
+        /// </summary>
+        [DataField]
+        public ProtoId<LocalizedDatasetPrototype>? NameDataset;
+
+        /// <summary>
         /// Use this to spawn in as a non-humanoid (borg, test subject, etc.)
         /// Starting gear will be ignored.
         /// If you want to just add special attributes to a humanoid, use AddComponentSpecial instead.
@@ -106,8 +114,8 @@ namespace Content.Shared.Roles
         [DataField("jobEntity", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
         public string? JobEntity = null;
 
-        [DataField("icon", customTypeSerializer: typeof(PrototypeIdSerializer<StatusIconPrototype>))]
-        public string Icon { get; private set; } = "JobIconUnknown";
+        [DataField]
+        public ProtoId<JobIconPrototype> Icon { get; private set; } = "JobIconUnknown";
 
         [DataField("special", serverOnly: true)]
         public JobSpecial[] Special { get; private set; } = Array.Empty<JobSpecial>();
@@ -126,6 +134,12 @@ namespace Content.Shared.Roles
 
         [DataField]
         public bool Whitelisted;
+
+        [DataField]
+        public bool SpawnLoadout = true;
+
+        [DataField]
+        public bool ApplyTraits = true;
     }
 
     /// <summary>

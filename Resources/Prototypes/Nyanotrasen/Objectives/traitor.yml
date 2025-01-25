@@ -1,5 +1,5 @@
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseTraitorStealObjective
   id: MantisKnifeStealObjective
   components:
@@ -14,7 +14,7 @@
 #  parent: BaseTraitorObjective
 #  name: objective-condition-become-golem-title
 #  description: objective-condition-become-golem-description.
-#  noSpawn: true
+#  categories: [ HideSpawnMenu ]
 #  components:
 #  - type: NotJobRequirement
 #    job: Chaplain
@@ -33,7 +33,7 @@
 - type: entity
   id: RaiseGlimmerObjective
   parent: BaseTraitorObjective
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: Raise Glimmer.
   description: Get the glimmer above the specified amount.
   components:

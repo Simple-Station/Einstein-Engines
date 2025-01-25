@@ -5,6 +5,7 @@
     - MobAtmosStandard
     - MobFlammable
     - BaseMobSpecies
+    - MobRespirator
   id: MobShadowkinBase
   name: Urist McShadow
   abstract: true
@@ -153,6 +154,7 @@
         - map: ["enum.HumanoidVisualLayers.Snout"]
         - map: ["enum.HumanoidVisualLayers.Eyes"]
           shader: unshaded
+        - map: ["enum.HumanoidVisualLayers.Face"]
         - map: ["enum.HumanoidVisualLayers.RArm"]
         - map: ["enum.HumanoidVisualLayers.LArm"]
         - map: ["enum.HumanoidVisualLayers.RLeg"]
@@ -182,6 +184,8 @@
         - map: ["gloves"]
         - map: ["shoes"]
         - map: ["ears"]
+        - map: ["innerBelt"]
+        - map: ["innerNeck"]
         - map: ["outerClothing"]
         - map: ["eyes"]
         - map: ["belt"]
@@ -223,14 +227,9 @@
     - type: Shadowkin
     - type: Psionic
       mindbreakingFeedback: shadowkin-blackeye
-      manaGain: 0.25
-      mana: 150
-      maxMana: 250
-      bypassManaCheck: true
-      removable: false
     - type: InnatePsionicPowers
       powersToAdd:
-        - ShadowkinPowers
+        - DarkSwapPower
     - type: LanguageKnowledge
       speaks:
         - TauCetiBasic
@@ -238,12 +237,18 @@
       understands:
         - TauCetiBasic
         - Marish
+    - type: Tag
+      tags:
+      - CanPilot
+      - FootstepSound
+      - DoorBumpOpener
+      - ShadowkinEmotes
 
 - type: entity
   save: false
   parent: MobHumanDummy
   id: MobShadowkinDummy
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: A dummy shadowkin meant to be used in character setup.
   components:
     - type: HumanoidAppearance
@@ -259,6 +264,7 @@
         - map: ["enum.HumanoidVisualLayers.Snout"]
         - map: ["enum.HumanoidVisualLayers.Eyes"]
           shader: unshaded
+        - map: ["enum.HumanoidVisualLayers.Face"]
         - map: ["enum.HumanoidVisualLayers.RArm"]
         - map: ["enum.HumanoidVisualLayers.LArm"]
         - map: ["enum.HumanoidVisualLayers.RLeg"]
@@ -288,6 +294,8 @@
         - map: ["gloves"]
         - map: ["shoes"]
         - map: ["ears"]
+        - map: ["innerBelt"]
+        - map: ["innerNeck"]
         - map: ["outerClothing"]
         - map: ["eyes"]
         - map: ["belt"]

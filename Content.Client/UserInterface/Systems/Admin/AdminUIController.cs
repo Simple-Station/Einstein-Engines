@@ -3,9 +3,11 @@ using Content.Client.Administration.Systems;
 using Content.Client.Administration.UI;
 using Content.Client.Administration.UI.Tabs.ObjectsTab;
 using Content.Client.Administration.UI.Tabs.PanicBunkerTab;
+using Content.Client.Administration.UI.Tabs.BabyJailTab;
 using Content.Client.Administration.UI.Tabs.PlayerTab;
 using Content.Client.Gameplay;
 using Content.Client.Lobby;
+using Content.Client.Mapping;
 using Content.Client.UserInterface.Controls;
 using Content.Client.Verbs.UI;
 using Content.Shared.Administration.Events;
@@ -26,6 +28,7 @@ namespace Content.Client.UserInterface.Systems.Admin;
 public sealed class AdminUIController : UIController,
     IOnStateEntered<GameplayState>,
     IOnStateEntered<LobbyState>,
+    IOnStateEntered<MappingState>,
     IOnSystemChanged<AdminSystem>
 {
     [Dependency] private readonly IClientAdminManager _admin = default!;
@@ -37,11 +40,13 @@ public sealed class AdminUIController : UIController,
     private AdminMenuWindow? _window;
     private MenuButton? AdminButton => UIManager.GetActiveUIWidgetOrNull<MenuBar.Widgets.GameTopMenuBar>()?.AdminButton;
     private PanicBunkerStatus? _panicBunker;
+    private BabyJailStatus? _babyJail;
 
     public override void Initialize()
     {
         base.Initialize();
         SubscribeNetworkEvent<PanicBunkerChangedEvent>(OnPanicBunkerUpdated);
+        SubscribeNetworkEvent<BabyJailChangedEvent>(OnBabyJailUpdated);
     }
 
     private void OnPanicBunkerUpdated(PanicBunkerChangedEvent msg, EntitySessionEventArgs args)
@@ -56,6 +61,18 @@ public sealed class AdminUIController : UIController,
         }
     }
 
+    private void OnBabyJailUpdated(BabyJailChangedEvent msg, EntitySessionEventArgs args)
+    {
+        var showDialog = _babyJail == null && msg.Status.Enabled;
+        _babyJail = msg.Status;
+        _window?.BabyJailControl.UpdateStatus(msg.Status);
+
+        if (showDialog)
+        {
+            UIManager.CreateWindow<BabyJailStatusWindow>().OpenCentered();
+        }
+    }
+
     public void OnStateEntered(GameplayState state)
     {
         EnsureWindow();
@@ -63,6 +80,12 @@ public sealed class AdminUIController : UIController,
     }
 
     public void OnStateEntered(LobbyState state)
+    {
+        EnsureWindow();
+        AdminStatusUpdated();
+    }
+
+    public void OnStateEntered(MappingState state)
     {
         EnsureWindow();
         AdminStatusUpdated();
@@ -100,6 +123,13 @@ public sealed class AdminUIController : UIController,
 
         if (_panicBunker != null)
             _window.PanicBunkerControl.UpdateStatus(_panicBunker);
+
+        /*
+         * TODO: Remove baby jail code once a more mature gateway process is established. This code is only being issued as a stopgap to help with potential tiding in the immediate future.
+         */
+
+        if (_babyJail != null)
+            _window.BabyJailControl.UpdateStatus(_babyJail);
 
         _window.PlayerTabControl.OnEntryKeyBindDown += PlayerTabEntryKeyBindDown;
         _window.ObjectsTabControl.OnEntryKeyBindDown += ObjectsTabEntryKeyBindDown;
@@ -177,12 +207,15 @@ public sealed class AdminUIController : UIController,
         }
     }
 
-    private void PlayerTabEntryKeyBindDown(PlayerTabEntry entry, GUIBoundKeyEventArgs args)
+    private void PlayerTabEntryKeyBindDown(GUIBoundKeyEventArgs args, ListData? data)
     {
-        if (entry.PlayerEntity == null)
+        if (data is not PlayerListData {Info: var info})
             return;
 
-        var entity = entry.PlayerEntity.Value;
+        if (info.NetEntity == null)
+            return;
+
+        var entity = info.NetEntity.Value;
         var function = args.Function;
 
         if (function == EngineKeyFunctions.UIClick)
@@ -195,14 +228,17 @@ public sealed class AdminUIController : UIController,
         args.Handle();
     }
 
-    private void ObjectsTabEntryKeyBindDown(ObjectsTabEntry entry, GUIBoundKeyEventArgs args)
+    private void ObjectsTabEntryKeyBindDown(GUIBoundKeyEventArgs args, ListData? data)
     {
-        var uid = entry.AssocEntity;
+        if (data is not ObjectsListData { Info: var info })
+            return;
+
+        var uid = info.Entity;
         var function = args.Function;
 
         if (function == EngineKeyFunctions.UIClick)
             _conHost.ExecuteCommand($"vv {uid}");
-        else if (function == EngineKeyFunctions.UseSecondary)
+        else if (function == EngineKeyFunctions.UIRightClick)
             _verb.OpenVerbMenu(uid, true);
         else
             return;

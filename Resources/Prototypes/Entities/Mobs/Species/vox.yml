@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: BaseMobSpeciesOrganic
   id: BaseMobVox
   abstract: true
@@ -65,6 +65,7 @@
     - map: [ "enum.HumanoidVisualLayers.Head" ]
     - map: [ "enum.HumanoidVisualLayers.Snout" ]
     - map: [ "enum.HumanoidVisualLayers.Eyes" ]
+    - map: [ "enum.HumanoidVisualLayers.Face" ]
     - map: [ "enum.HumanoidVisualLayers.RArm" ]
     - map: [ "enum.HumanoidVisualLayers.LArm" ]
     - map: [ "enum.HumanoidVisualLayers.RLeg" ]
@@ -77,6 +78,8 @@
     - map: [ "gloves" ]
     - map: [ "shoes" ]
     - map: [ "ears" ]
+    - map: [ "innerBelt" ]
+    - map: [ "innerNeck" ]
     - map: [ "outerClothing" ]
     - map: [ "eyes" ]
     - map: [ "belt" ]
@@ -102,11 +105,14 @@
       sprite: "Effects/creampie.rsi"
       state: "creampie_vox" # Not default
       visible: false
+  - type: FootPrints
+    leftBarePrint: "footprint-left-bare-lizard"
+    rightBarePrint: "footprint-right-bare-lizard"
 
 - type: entity
   parent: BaseSpeciesDummy
   id: MobVoxDummy
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: HumanoidAppearance
     species: Vox

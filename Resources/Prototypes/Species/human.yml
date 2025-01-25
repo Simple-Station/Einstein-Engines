@@ -4,6 +4,7 @@
   roundStart: true
   prototype: MobHuman
   sprites: MobHumanSprites
+  defaultSkinTone: "#c0967f"
   markingLimits: MobHumanMarkingLimits
   dollPrototype: MobHumanDummy
   skinColoration: HumanToned
@@ -18,6 +19,7 @@
   id: MobHumanSprites
   sprites:
     Head: MobHumanHead
+    Face: MobHumanoidAnyMarking
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking
     Snout: MobHumanoidAnyMarking
@@ -53,6 +55,9 @@
     HeadTop:
       points: 1
       required: false
+    HeadSide:
+      points: 4
+      required: false
     Chest:
       points: 1
       required: false
@@ -72,13 +77,13 @@
       points: 2
       required: false
     RightHand:
-      points: 2
+      points: 3
       required: false
     LeftArm:
       points: 2
       required: false
     LeftHand:
-      points: 2
+      points: 3
       required: false
 
 - type: humanoidBaseSprite

@@ -15,8 +15,11 @@ humanoid-profile-editor-height-label = Height: {$height}cm
 humanoid-profile-editor-width-label = Width: {$width}cm
 humanoid-profile-editor-weight-label = Weight: {$weight}kg
 humanoid-profile-editor-species-label = Species:
-humanoid-profile-editor-customspeciename-label = Custom Specie Name:
-humanoid-profile-editor-pronouns-label = Pronouns:
+humanoid-profile-editor-customspeciename-label = Custom Species Name:
+humanoid-profile-editor-station-ai-name-label = Station AI Name:
+humanoid-profile-editor-cyborg-name-label = Cyborg Name:
+humanoid-profile-editor-pronouns-label = Primary Pronouns:
+humanoid-profile-editor-display-pronouns-label = Cosmetic Pronouns:
 humanoid-profile-editor-pronouns-male-text = He / Him
 humanoid-profile-editor-pronouns-female-text = She / Her
 humanoid-profile-editor-pronouns-epicene-text = They / Them
@@ -94,7 +97,15 @@ humanoid-profile-editor-loadouts-remove-unusable-button = Remove {$count ->
 humanoid-profile-editor-loadouts-remove-unusable-button-tooltip =
     If you click this button, all loadouts that your current character setup cannot use will be removed.
     You will be asked for confirmation before the loadouts are removed.
-humanoid-profile-editor-loadouts-no-loadouts = No loadouts foundtime.
+humanoid-profile-editor-loadouts-no-loadouts = No loadouts found.
+humanoid-profile-editor-loadouts-customize = Customize
+humanoid-profile-editor-loadouts-customize-name = Name
+humanoid-profile-editor-loadouts-customize-description = Description
+humanoid-profile-editor-loadouts-customize-color = Color tint
+humanoid-profile-editor-loadouts-customize-save = Save
+humanoid-profile-editor-loadouts-guidebook-button-tooltip = Click for more info
+humanoid-profile-editor-loadouts-heirloom = Heirloom
+humanoid-profile-editor-loadouts-heirloom-tooltip = Whichever loadouts you choose to be your potential heirloom will be randomly picked from on spawn.
 
 humanoid-profile-editor-markings-tab = Markings
 humanoid-profile-editor-flavortext-tab = Description

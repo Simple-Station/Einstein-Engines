@@ -18,6 +18,7 @@ using Content.Shared.DeviceLinking;
 using Content.Shared.DeviceNetwork;
 using Content.Shared.DeviceNetwork.Systems;
 using Content.Shared.Interaction;
+using Content.Shared.Power;
 using Content.Shared.Wires;
 using Robust.Server.GameObjects;
 using Robust.Shared.Player;
@@ -246,6 +247,9 @@ public sealed class AirAlarmSystem : EntitySystem
 
     private void OnActivate(EntityUid uid, AirAlarmComponent component, ActivateInWorldEvent args)
     {
+        if (!args.Complex)
+            return;
+
         if (TryComp<WiresPanelComponent>(uid, out var panel) && panel.Open)
         {
             args.Handled = false;

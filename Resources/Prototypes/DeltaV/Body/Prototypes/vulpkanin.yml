@@ -1,4 +1,4 @@
-- type: body
+﻿- type: body
   name: "vulpkanin"
   id: Vulpkanin
   root: torso
@@ -23,6 +23,7 @@
       - left arm
       - right leg
       - left leg
+      - head # Shitmed Change
     right arm:
       part: RightArmVulpkanin
       connections:

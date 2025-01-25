@@ -1,0 +1,102 @@
+# Bartender
+#- type: characterItemGroup
+#  id: LoadoutBartenderBackpacks
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutBartenderBelt
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutBartenderEars
+#  maxItems: 1
+#  items:
+#
+
+- type: characterItemGroup
+  id: LoadoutBartenderAmmo
+  items:
+    - type: loadout
+      id: LoadoutServiceBartenderBoxBeanbags
+    - type: loadout
+      id: LoadoutServiceBartenderBoxLightRifleRubber
+
+- type: characterItemGroup
+  id: LoadoutBartenderWeapon
+  items:
+    - type: loadout
+      id: LoadoutServiceBartenderShotgunDoubleBarreledRubber
+    - type: loadout
+      id: LoadoutServiceBartenderMosinRubber
+    - type: loadout
+      id: LoadoutServiceBartenderArgentiNonlethal
+    - type: loadout
+      id: LoadoutServiceBartenderRepeaterNonlethal
+
+#- type: characterItemGroup
+#  id: LoadoutBartenderEyes
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutBartenderGloves
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutBartenderHead
+  items:
+    - type: loadout
+      id: LoadoutServiceHeadBartenderNt
+    - type: loadout
+      id: LoadoutServiceHeadBartenderIdris
+    - type: loadout
+      id: LoadoutServiceHeadBartenderOrion
+
+#- type: characterItemGroup
+#  id: LoadoutBartenderId
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutBartenderNeck
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutBartenderMask
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutBartenderOuter
+  items:
+    - type: loadout
+      id: LoadoutServiceBartenderWinterCoat
+    - type: loadout
+      id: LoadoutServiceBartenderArmorDuraVest
+    - type: loadout
+      id: LoadoutServiceOuterBartenderNt
+    - type: loadout
+      id: LoadoutServiceOuterBartenderIdris
+    - type: loadout
+      id: LoadoutServiceOuterBartenderOrion
+
+#- type: characterItemGroup
+#  id: LoadoutBartenderShoes
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutBartenderUniforms
+  items:
+    - type: loadout
+      id: LoadoutServiceBartenderUniformPurple
+    - type: loadout
+      id: LoadoutServiceJumpsuitBartenderNt
+    - type: loadout
+      id: LoadoutServiceJumpsuitBartenderIdris
+    - type: loadout
+      id: LoadoutServiceJumpsuitBartenderOrion

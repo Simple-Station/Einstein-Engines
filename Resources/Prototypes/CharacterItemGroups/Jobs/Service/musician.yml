@@ -1,0 +1,157 @@
+# Musician
+#- type: characterItemGroup
+#  id: LoadoutMusicianBackpacks
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMusicianBelt
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMusicianEars
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutMusicianEquipment
+  maxItems: 3
+  items:
+  # Brass
+    - type: loadout
+      id: LoadoutItemTrumpetInstrumentMusician
+    - type: loadout
+      id: LoadoutItemTromboneInstrumentMusician
+    - type: loadout
+      id: LoadoutItemFrenchHornInstrumentMusician
+    - type: loadout
+      id: LoadoutItemEuphoniumInstrumentMusician
+  # Misc
+    - type: loadout
+      id: LoadoutItemSeashellInstrumentMusician
+    - type: loadout
+      id: LoadoutItemBirdToyInstrumentMusician
+  # Percussion
+    - type: loadout
+      id: LoadoutItemGlockenspielInstrumentMusician
+    - type: loadout
+      id: LoadoutItemMusicBoxInstrumentMusician
+    - type: loadout
+      id: LoadoutItemXylophoneInstrumentMusician
+    - type: loadout
+      id: LoadoutItemMicrophoneInstrumentMusician
+    - type: loadout
+      id: LoadoutItemSynthesizerInstrumentMusician
+    - type: loadout
+      id: LoadoutItemKalimbaInstrumentMusician
+    - type: loadout
+      id: LoadoutItemWoodblockInstrumentMusician
+  # String
+    - type: loadout
+      id: LoadoutItemElectricGuitarInstrumentMusician
+    - type: loadout
+      id: LoadoutItemBassGuitarInstrumentMusician
+    - type: loadout
+      id: LoadoutItemRockGuitarInstrumentMusician
+    - type: loadout
+      id: LoadoutItemAcousticGuitarInstrumentMusician
+    - type: loadout
+      id: LoadoutItemBanjoInstrumentMusician
+    - type: loadout
+      id: LoadoutItemViolinInstrumentMusician
+    - type: loadout
+      id: LoadoutItemViolaInstrumentMusician
+    - type: loadout
+      id: LoadoutItemCelloInstrumentMusician
+  # Structure
+    - type: loadout
+      id: LoadoutItemPianoInstrumentMusician
+    - type: loadout
+      id: LoadoutItemUprightPianoInstrumentMusician
+    - type: loadout
+      id: LoadoutItemVibraphoneInstrumentMusician
+    - type: loadout
+      id: LoadoutItemMarimbaInstrumentMusician
+    - type: loadout
+      id: LoadoutItemChurchOrganInstrumentMusician
+    - type: loadout
+      id: LoadoutItemTubaInstrumentMusician
+    - type: loadout
+      id: LoadoutItemHarpInstrumentMusician
+    - type: loadout
+      id: LoadoutItemTimpaniInstrumentMusician
+    - type: loadout
+      id: LoadoutItemTaikoInstrumentMusician
+    - type: loadout
+      id: LoadoutItemContrabassInstrumentMusician
+    - type: loadout
+      id: LoadoutItemMinimoogInstrumentMusician
+    - type: loadout
+      id: LoadoutItemTomDrumsInstrumentMusician
+  # Wind
+    - type: loadout
+      id: LoadoutItemSaxophoneInstrumentMusician
+    - type: loadout
+      id: LoadoutItemAccordionInstrumentMusician
+    - type: loadout
+      id: LoadoutItemHarmonicaInstrumentMusician
+    - type: loadout
+      id: LoadoutItemClarinetInstrumentMusician
+    - type: loadout
+      id: LoadoutItemFluteInstrumentMusician
+    - type: loadout
+      id: LoadoutItemRecorderInstrumentMusician
+    - type: loadout
+      id: LoadoutItemPanFluteInstrumentMusician
+    - type: loadout
+      id: LoadoutItemOcarinaInstrumentMusician
+    - type: loadout
+      id: LoadoutItemBagpipeInstrumentMusician
+
+#- type: characterItemGroup
+#  id: LoadoutMusicianEyes
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMusicianGloves
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMusicianHead
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMusicianId
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMusicianNeck
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMusicianMask
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutMusicianOuter
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutServiceWinterCoatMusician
+#
+#- type: characterItemGroup
+#  id: LoadoutMusicianShoes
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMusicianUniforms
+#  maxItems: 1
+#  items:

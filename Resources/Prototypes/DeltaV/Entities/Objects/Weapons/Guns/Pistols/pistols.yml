@@ -34,6 +34,16 @@
       gun_chamber: !type:ContainerSlot
 
 - type: entity
+  name: viper
+  parent: WeaponPistolViperWood
+  id: WeaponPistolViperWoodSecurity
+  description: A small, low-power pistol with pleasant lacquered wooden grips. Uses .35 auto ammo.
+               The serial number on the handguard marks this gun as belonging to an NT Security Officer.
+  components:
+  - type: GuideHelp
+    guides: [ SecurityWeapons ]
+
+- type: entity
   name: Pollock
   parent: BaseWeaponPistol
   id: WeaponPistolPollock
@@ -71,6 +81,43 @@
     containers:
       gun_magazine: !type:ContainerSlot
       gun_chamber: !type:ContainerSlot
+
+- type: entity
+  name: Pollock
+  parent: WeaponPistolPollock
+  id: WeaponPistolPollockSecurity
+  description: A compact and mass-produced combat pistol. Uses .35 auto ammo.
+               The serial number on the handguard marks this gun as belonging to an NT Security Officer.
+  components:
+  - type: GuideHelp
+    guides: [ SecurityWeapons ]
+
+- type: entity
+  name: Pollock
+  parent: WeaponPistolPollockSecurity
+  id: WeaponPistolPollockNonlethalSecurity
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistolRubber
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazinePistol
+            - MagazinePistolHighCapacity
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgePistolRubber
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgePistol
+  - type: GuideHelp
+    guides: [ SecurityWeapons ]
 
 - type: entity
   name: psi-breaker

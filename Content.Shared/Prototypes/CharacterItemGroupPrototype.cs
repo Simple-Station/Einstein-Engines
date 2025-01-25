@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Clothing.Loadouts.Prototypes;
+using Content.Shared.Clothing.Loadouts.Systems;
 using Content.Shared.Customization.Systems;
 using Content.Shared.Preferences;
 using Content.Shared.Traits;
@@ -46,7 +47,7 @@ public sealed partial class CharacterItemGroupItem
                     p => protoMan.Index<TraitPrototype>((string) p).ID == ID, out value);
             case "loadout":
                 return profile.LoadoutPreferences.TryFirstOrDefault(
-                    p => protoMan.Index<LoadoutPrototype>((string) p).ID == ID, out value);
+                    p => protoMan.Index<LoadoutPrototype>(((Loadout) p).LoadoutName).ID == ID, out value);
             default:
                 DebugTools.Assert($"Invalid CharacterItemGroupItem Type: {Type}");
                 return false;

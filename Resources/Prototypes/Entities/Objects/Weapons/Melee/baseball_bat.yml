@@ -15,7 +15,7 @@
         Blunt: 7.5
         Structural: 5
     bluntStaminaDamageFactor: 2.0
-    heavyRateModifier: 0.5
+    heavyRateModifier: 2
     heavyDamageBaseModifier: 1.75
     heavyStaminaCost: 10
     maxTargets: 2
@@ -28,12 +28,14 @@
       types:
         Blunt: 4
         Structural: 10
+  - type: DamageOtherOnHit
+    staminaCost: 10
   - type: Item
     size: Normal
   - type: Tool
     qualities:
     - Rolling
-    speed: 0.75 # a bit unwieldly but does the job
+    speedModifier: 0.75 # a bit unwieldly but does the job
   - type: Clothing
     quickEquip: false
     slots:

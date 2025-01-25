@@ -4,18 +4,11 @@ using Content.Shared.Clothing.Components;
 
 namespace Content.Shared.Clothing;
 
-/// <summary>
-///     Raised directed at a piece of clothing to get the set of layers to show on the wearer's sprite
-/// </summary>
-public sealed class GetEquipmentVisualsEvent : EntityEventArgs
+/// Raised directed at a piece of clothing to get the set of layers to show on the wearer's sprite
+public sealed class GetEquipmentVisualsEvent(EntityUid equipee, string slot) : EntityEventArgs
 {
-    /// <summary>
-    ///     Entity that is wearing the item.
-    /// </summary>
-    public readonly EntityUid Equipee;
-
-    public readonly string Slot;
-
+    public readonly EntityUid Equipee = equipee;
+    public readonly string Slot = slot;
     /// <summary>
     ///     The layers that will be added to the entity that is wearing this item.
     /// </summary>
@@ -23,12 +16,6 @@ public sealed class GetEquipmentVisualsEvent : EntityEventArgs
     ///     Note that the actual ordering of the layers depends on the order in which they are added to this list;
     /// </remarks>
     public List<(string, PrototypeLayerData)> Layers = new();
-
-    public GetEquipmentVisualsEvent(EntityUid equipee, string slot)
-    {
-        Equipee = equipee;
-        Slot = slot;
-    }
 }
 
 /// <summary>
@@ -37,26 +24,12 @@ public sealed class GetEquipmentVisualsEvent : EntityEventArgs
 /// <remarks>
 ///     Useful for systems/components that modify the visual layers that an item adds to a player. (e.g. RGB memes)
 /// </remarks>
-public sealed class EquipmentVisualsUpdatedEvent : EntityEventArgs
+public sealed class EquipmentVisualsUpdatedEvent(EntityUid equipee, string slot, HashSet<string> revealedLayers) : EntityEventArgs
 {
-    /// <summary>
-    ///     Entity that is wearing the item.
-    /// </summary>
-    public readonly EntityUid Equipee;
-
-    public readonly string Slot;
-
-    /// <summary>
-    ///     The layers that this item is now revealing.
-    /// </summary>
-    public HashSet<string> RevealedLayers;
-
-    public EquipmentVisualsUpdatedEvent(EntityUid equipee, string slot, HashSet<string> revealedLayers)
-    {
-        Equipee = equipee;
-        Slot = slot;
-        RevealedLayers = revealedLayers;
-    }
+    public readonly EntityUid Equipee = equipee;
+    public readonly string Slot = slot;
+    /// The layers that this item is now revealing.
+    public HashSet<string> RevealedLayers = revealedLayers;
 }
 
 public sealed partial class ToggleMaskEvent : InstantActionEvent { }

@@ -22,6 +22,7 @@ using Robust.Shared.Timing;
 using System.Linq;
 using Content.Server.Jittering;
 using Content.Shared.Jittering;
+using Content.Shared.Power;
 
 namespace Content.Server.Kitchen.EntitySystems
 {
@@ -323,9 +324,15 @@ namespace Content.Server.Kitchen.EntitySystems
             var active = AddComp<ActiveReagentGrinderComponent>(uid);
             active.EndTime = _timing.CurTime + reagentGrinder.WorkTime * reagentGrinder.WorkTimeMultiplier;
             active.Program = program;
+            
+            // slightly higher pitched
+            var audio = _audioSystem.PlayPvs(sound, uid,
+                AudioParams.Default.WithPitchScale(1 / reagentGrinder.WorkTimeMultiplier));
 
-            reagentGrinder.AudioStream = _audioSystem.PlayPvs(sound, uid,
-                AudioParams.Default.WithPitchScale(1 / reagentGrinder.WorkTimeMultiplier)).Value.Entity; //slightly higher pitched
+            if (audio == null)
+                return;
+
+            reagentGrinder.AudioStream = audio!.Value.Entity;
             _userInterfaceSystem.ServerSendUiMessage(uid, ReagentGrinderUiKey.Key,
                 new ReagentGrinderWorkStartedMessage(program));
         }

@@ -25,9 +25,6 @@ accept-psionics-window-prompt-text-part = You rolled a psionic power!
 action-name-psionic-invisibility = Psionic Invisibility
 action-description-psionic-invisibility = Render yourself invisible to any entity that could potentially be psychic. Borgs, animals, and so on are not affected.
 
-action-name-psionic-invisibility = Psionic Invisibility
-action-description-psionic-invisibility = Render yourself invisible to any entity that could potentially be psychic. Borgs, animals, and so on are not affected.
-
 action-name-psionic-invisibility-off = Turn Off Psionic Invisibility
 action-description-psionic-invisibility-off = Return to visibility, and receive a stun.
 
@@ -71,3 +68,6 @@ action-description-psychokinesis = Bend the fabric of space to instantly move ac
 
 action-name-rf-sensitivity = Toggle RF Sensitivity
 action-desc-rf-sensitivity = Toggle your ability to interpret radio waves on and off.
+
+action-name-assay = Assay
+action-description-assay = Probe an entity at close range to glean metaphorical information about any powers they may have

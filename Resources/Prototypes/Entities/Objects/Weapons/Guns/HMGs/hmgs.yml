@@ -19,7 +19,22 @@
       path: /Audio/Weapons/Guns/Empty/lmg_empty.ogg
   - type: StaticPrice
     price: 500
+  - type: Execution
   # No chamber because HMG may want its own
+  - type: MeleeWeapon
+    attackRate: 1.5
+    damage:
+      types:
+        Blunt: 16
+    bluntStaminaDamageFactor: 1.5
+    swapKeys: true
+    disableHeavy: true
+    animation: WeaponArcThrust
+    wideAnimationRotation: 180
+    soundHit:
+      collection: MetalThud
+  - type: DamageOtherOnHit
+    staminaCost: 16
 
 - type: entity
   name: minigun

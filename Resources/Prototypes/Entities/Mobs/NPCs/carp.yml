@@ -15,7 +15,7 @@
           true
     - type: NpcFactionMember
       factions:
-        - SimpleHostile
+      - Dragon
     - type: Sprite
       drawdepth: Mobs
       sprite: Mobs/Aliens/Carps/space.rsi
@@ -71,6 +71,7 @@
       tags:
         - Carp
         - DoorBumpOpener
+        - NoPaint
     - type: ReplacementAccent
       accent: genericAggressive
     - type: Speech
@@ -80,6 +81,19 @@
       interactFailureString: petting-failure-carp
       interactFailureSound:
         path: /Audio/Effects/bite.ogg
+    - type: Body # Shitmed - Adds carp organs.
+      prototype: Carp
+    - type: SurgeryTarget
+    - type: UserInterface
+      interfaces:
+        enum.SurgeryUIKey.Key:
+          type: SurgeryBui
+    - type: NightVision
+      isActive: true
+      toggleAction: null
+      color: "#808080"
+      activateSound: null
+      deactivateSound: null
 
 - type: entity
   parent: BaseMobCarp
@@ -239,6 +253,11 @@
         types:
           Slash: 12
           Bloodloss: 5
+    - type: SurgeryTarget
+    - type: UserInterface
+      interfaces:
+        enum.SurgeryUIKey.Key:
+          type: SurgeryBui
 
 - type: entity
   id: MobSharkSalvage

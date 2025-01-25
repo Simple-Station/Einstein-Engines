@@ -14,13 +14,16 @@ public sealed class GlimmerShowCommand : IConsoleCommand
     public async void Execute(IConsoleShell shell, string argStr, string[] args)
     {
         var entMan = IoCManager.Resolve<IEntityManager>();
-        shell.WriteLine(entMan.EntitySysManager.GetEntitySystem<GlimmerSystem>().Glimmer.ToString());
+        shell.WriteLine(entMan.EntitySysManager.GetEntitySystem<GlimmerSystem>().GlimmerOutput.ToString("#.##"));
     }
 }
 
 [AdminCommand(AdminFlags.Debug)]
 public sealed class GlimmerSetCommand : IConsoleCommand
 {
+    // SetGlimmerOutput cannot accept inputs greater than or equal to this number. The equation spits out imaginary number solutions past this point.
+    private const int MaxGlimmer = 1000;
+
     public string Command => "glimmerset";
     public string Description => Loc.GetString("command-glimmerset-description");
     public string Help => Loc.GetString("command-glimmerset-help");
@@ -28,10 +31,12 @@ public sealed class GlimmerSetCommand : IConsoleCommand
     public async void Execute(IConsoleShell shell, string argStr, string[] args)
     {
         if (args.Length != 1
-            || !int.TryParse(args[0], out var glimmerValue))
+            || !float.TryParse(args[0], out var glimmerValue)
+            || glimmerValue >= MaxGlimmer || glimmerValue < 0)
             return;
 
         var entMan = IoCManager.Resolve<IEntityManager>();
-        entMan.EntitySysManager.GetEntitySystem<GlimmerSystem>().Glimmer = glimmerValue;
+        var glimmerSystem = entMan.System<GlimmerSystem>();
+        glimmerSystem.SetGlimmerOutput(glimmerValue);
     }
 }

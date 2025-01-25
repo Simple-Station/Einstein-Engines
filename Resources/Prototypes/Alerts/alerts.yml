@@ -7,8 +7,8 @@
     - category: Health
     - category: Mood
     - category: Stamina
-    - alertType: ShadowkinPower
     - alertType: SuitPower
+    - alertType: ModsuitPower # Goobstation - Modsuits
     - category: Internals
     - alertType: Fire
     - alertType: Handcuffed
@@ -31,7 +31,7 @@
 
 - type: entity
   id: AlertSpriteView
-  categories: [ hideSpawnMenu ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     layers:

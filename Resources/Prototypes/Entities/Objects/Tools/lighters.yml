@@ -16,6 +16,17 @@
     activatedDamage:
         types:
             Heat: 1
+    activatedSoundOnHit:
+      path: /Audio/Weapons/Guns/Hits/energy_meat1.ogg
+      params:
+        variation: 0.250
+        volume: -15
+    activatedSoundOnHitNoDamage:
+      path: /Audio/Weapons/Guns/Hits/energy_meat1.ogg
+      params:
+        variation: 0.250
+        volume: -17
+  - type: ItemToggleDamageOtherOnHit
   - type: ItemToggleSize
     activatedSize: Small
   - type: ItemToggleHot
@@ -78,6 +89,7 @@
     damage:
       types:
         Blunt: 0
+  - type: DamageOtherOnHit
   - type: Welder
     fuelConsumption: 0.01
     fuelLitCost: 0.1
@@ -87,6 +99,15 @@
     netsync: false
     radius: 1.1 #smallest possible
     color: orange
+  # Shitmed Change
+  - type: Cautery
+    speed: 0.45
+  - type: SurgeryTool
+    startSound:
+      collection: lighterOnSounds
+    endSound:
+      collection: lighterOffSounds
+  - type: ItemTogglePointLight
 
 - type: entity
   name: cheap lighter
@@ -152,6 +173,17 @@
     activatedDamage:
         types:
             Heat: 1
+    activatedSoundOnHit:
+      path: /Audio/Weapons/Guns/Hits/energy_meat1.ogg
+      params:
+        variation: 0.250
+        volume: -15
+    activatedSoundOnHitNoDamage:
+      path: /Audio/Weapons/Guns/Hits/energy_meat1.ogg
+      params:
+        variation: 0.250
+        volume: -17
+  - type: ItemToggleDamageOtherOnHit
   - type: ItemToggleSize
     activatedSize: Small
   - type: ItemToggleHot
@@ -200,11 +232,13 @@
     damage:
       types:
         Blunt: 1 # does a little bit of damage on hit when off
+  - type: DamageOtherOnHit
   - type: PointLight
     enabled: false
     netsync: false
     radius: 1.2 #slightly stronger than the other lighters
     color: orange
+  - type: ItemTogglePointLight
   - type: UseDelay
   - type: IgnitionSource
     ignited: false

@@ -32,9 +32,6 @@
   id: ATVKeys
 
 - type: Tag
-  id: Baguette
-
-- type: Tag
   id: Balloon
 
 - type: Tag
@@ -227,7 +224,7 @@
   id: BoxHug
 
 - type: Tag
-  id: Burnt
+  id: Brain
 
 - type: Tag
   id: BrassInstrument
@@ -251,7 +248,19 @@
   id: Bucket
 
 - type: Tag
+  id: Burger
+
+- type: Tag
   id: BulletFoam
+
+- type: Tag
+  id: BulletRubber
+
+- type: Tag
+  id: Burnt
+
+- type: Tag
+  id: Bun
 
 - type: Tag
   id: BypassDropChecks
@@ -260,7 +269,13 @@
   id: BypassInteractionRangeChecks
 
 - type: Tag
+  id: Cable
+
+- type: Tag
   id: CableCoil
+
+- type: Tag
+  id: Cake
 
 - type: Tag
   id: CaneBlade
@@ -372,6 +387,13 @@
   id: Chicken
 
 - type: Tag
+  id: Cheese
+
+# Allowed to control someone wearing a Chef's hat if inside their hat.
+- type: Tag
+  id: ChefPilot
+
+- type: Tag
   id: ChemDispensable # container that can go into the chem dispenser
 
 - type: Tag
@@ -394,6 +416,9 @@
 
 - type: Tag
   id: ClothMade
+
+- type: Tag
+  id: ClothingHeadHelmetBasic
 
 - type: Tag
   id: ClownMask
@@ -430,6 +455,9 @@
 
 - type: Tag
   id: Cow
+
+- type: Tag
+  id: Crab
 
 - type: Tag
   id: Crayon
@@ -513,6 +541,12 @@
   id: DiscreteHealthAnalyzer #So construction recipes don't eat medical PDAs
 
 - type: Tag
+  id: Disposal
+
+- type: Tag
+  id: DNASolutionScannable
+
+- type: Tag
   id: DockArrivals
 
 - type: Tag
@@ -541,6 +575,9 @@
 
 - type: Tag
   id: DrinkCan
+
+- type: Tag
+  id: DrinkGlass
 
 - type: Tag
   id: DrinkSpaceGlue
@@ -646,6 +683,9 @@
 
 - type: Tag
   id: Goat
+
+- type: Tag
+  id: Goliath
 
 - type: Tag
   id: GPS
@@ -766,6 +806,9 @@
 
 - type: Tag
   id: Igniter
+
+- type: Tag
+  id: Ingredient
 
 - type: Tag #Drop this innate tool instead of deleting it.
   id: InnateDontDelete
@@ -947,7 +990,16 @@
   id: NoBlockAnchoring
 
 - type: Tag
+  id: NoConsoleSound
+
+- type: Tag
+  id: NoPaint
+
+- type: Tag
   id: NozzleBackTank
+
+- type: Tag
+  id: Nugget # for chicken nuggets
 
 - type: Tag
   id: NukeOpsUplink
@@ -1137,6 +1189,9 @@
   id: ShellShotgun
 
 - type: Tag
+  id: ShellShotgunLight # shotgun shells that are compatible with the flare gun.
+
+- type: Tag
   id: Shiv
 
 - type: Tag
@@ -1153,6 +1208,9 @@
 
 - type: Tag
   id: Skewer
+
+- type: Tag
+  id: Slice # sliced fruit, vegetables, pizza etc.
 
 - type: Tag
   id: SmallAIChip
@@ -1206,10 +1264,16 @@
   id: StringInstrument
 
 - type: Tag
+  id: StationAi
+
+- type: Tag
   id: StationMapElectronics
 
 - type: Tag
   id: Steak
+
+- type: Tag
+  id: Stunbaton
 
 - type: Tag
   id: SubdermalImplant
@@ -1240,6 +1304,9 @@
 
 - type: Tag
   id: TabletopBoard
+
+- type: Tag
+  id: Taco
 
 - type: Tag
   id: TabletopPiece
@@ -1308,6 +1375,9 @@
   id: WeaponAntiqueLaser
 
 - type: Tag
+  id: WeaponDisabler
+
+- type: Tag
   id: WeaponPistolCHIMPUpgradeKit
 
 - type: Tag
@@ -1360,3 +1430,23 @@
 
 - type: Tag
   id: WriteIgnoreStamps
+
+# ALPHABETICAL
+
+- type: Tag
+  id: FelinidEmotes
+
+- type: Tag
+  id: HarpyEmotes
+
+- type: Tag
+  id: VulpEmotes
+
+- type: Tag
+  id: ShadowkinEmotes
+
+- type: Tag
+  id: SiliconEmotes
+
+- type: Tag
+  id: UnathiEmotes

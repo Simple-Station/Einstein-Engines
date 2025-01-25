@@ -3,7 +3,6 @@
   name: job-name-senior-researcher
   description: job-description-senior-researcher
   playTimeTracker: JobSeniorResearcher
-  setPreference: true
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Epistemics # DeltaV - Epistemics Department replacing Science
@@ -25,6 +24,7 @@
     outerClothing: ClothingOuterCoatLabSeniorResearcher
     id: SeniorResearcherPDA
     ears: ClothingHeadsetScience
+    pocket1: BookPsionicsGuidebook
   innerClothingSkirt: ClothingUniformJumpskirtSeniorResearcher
   satchel: ClothingBackpackSatchelScienceFilled
   duffelbag: ClothingBackpackDuffelScienceFilled

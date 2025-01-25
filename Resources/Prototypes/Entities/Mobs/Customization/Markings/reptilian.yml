@@ -2,7 +2,7 @@
   id: LizardFrillsAquatic
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Reptilian, Human]
+  speciesRestriction: [Reptilian, Human, Lamia]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: frills_aquatic
@@ -11,7 +11,7 @@
   id: LizardFrillsShort
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Reptilian, Human]
+  speciesRestriction: [Reptilian, Human, Lamia]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: frills_short
@@ -20,7 +20,7 @@
   id: LizardFrillsSimple
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Reptilian, Human]
+  speciesRestriction: [Reptilian, Human, Lamia]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: frills_simple
@@ -29,7 +29,7 @@
   id: LizardFrillsDivinity
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Reptilian, Human]
+  speciesRestriction: [Reptilian, Human, Lamia]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: frills_divinity
@@ -38,7 +38,7 @@
   id: LizardFrillsBig
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Reptilian, Human]
+  speciesRestriction: [Reptilian, Human, Lamia]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: frills_big
@@ -47,7 +47,7 @@
   id: LizardFrillsAxolotl
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Reptilian, Human]
+  speciesRestriction: [Reptilian, Human, Lamia]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: frills_axolotl
@@ -56,7 +56,7 @@
   id: LizardFrillsHood
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Reptilian, Human]
+  speciesRestriction: [Reptilian, Human, Lamia]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: frills_hood_primary
@@ -67,7 +67,7 @@
   id: LizardFrillsNeckfull
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Reptilian]
+  speciesRestriction: [Reptilian, Lamia]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: frills_neckfull
@@ -76,7 +76,7 @@
   id: LizardHornsAngler
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Reptilian, Human]
+  speciesRestriction: [Reptilian, Human, Lamia, Kobold] # Shitmed Change
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: horns_angler
@@ -85,7 +85,7 @@
   id: LizardHornsCurled
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Reptilian, Human]
+  speciesRestriction: [Reptilian, Human, Lamia, Kobold] # Shitmed Change
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: horns_curled
@@ -94,7 +94,7 @@
   id: LizardHornsRam
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Reptilian, Human]
+  speciesRestriction: [Reptilian, Human, Lamia, Kobold] # Shitmed Change
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: horns_ram
@@ -103,7 +103,7 @@
   id: LizardHornsShort
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Reptilian, Human]
+  speciesRestriction: [Reptilian, Human, Lamia, Kobold] # Shitmed Change
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: horns_short
@@ -112,7 +112,7 @@
   id: LizardHornsSimple
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Reptilian, Human]
+  speciesRestriction: [Reptilian, Human, Lamia, Kobold] # Shitmed Change
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: horns_simple
@@ -121,7 +121,7 @@
   id: LizardHornsDouble
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Reptilian, Human]
+  speciesRestriction: [Reptilian, Human, Lamia, Kobold] # Shitmed Change
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: horns_double
@@ -208,7 +208,7 @@
   id: LizardChestTiger
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Reptilian, Shadowkin]
+  speciesRestriction: [Reptilian, Shadowkin, Lamia]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: body_tiger
@@ -226,7 +226,7 @@
   id: LizardLArmTiger
   bodyPart: LArm
   markingCategory: LeftArm
-  speciesRestriction: [Reptilian]
+  speciesRestriction: [Reptilian, Lamia]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: l_arm_tiger
@@ -244,7 +244,7 @@
   id: LizardRArmTiger
   bodyPart: RArm
   markingCategory: RightArm
-  speciesRestriction: [Reptilian]
+  speciesRestriction: [Reptilian, Lamia]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: r_arm_tiger
@@ -262,7 +262,7 @@
   id: LizardHornsArgali
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Reptilian, Human]
+  speciesRestriction: [Reptilian, Human, Lamia, Kobold] # Shitmed Change
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: horns_argali
@@ -271,7 +271,7 @@
   id: LizardHornsAyrshire
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Reptilian, Human]
+  speciesRestriction: [Reptilian, Human, Lamia, Kobold] # Shitmed Change
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: horns_ayrshire
@@ -280,7 +280,7 @@
   id: LizardHornsMyrsore
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Reptilian, Human]
+  speciesRestriction: [Reptilian, Human, Lamia, Kobold] # Shitmed Change
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: horns_myrsore
@@ -289,7 +289,7 @@
   id: LizardHornsBighorn
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Reptilian, Human]
+  speciesRestriction: [Reptilian, Human, Lamia, Kobold] # Shitmed Change
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: horns_bighorn
@@ -298,7 +298,7 @@
   id: LizardHornsKoboldEars
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Reptilian, Human]
+  speciesRestriction: [Reptilian, Human, Kobold] # Shitmed Change
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: horns_kobold_ears
@@ -307,7 +307,7 @@
   id: LizardHornsFloppyKoboldEars
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Reptilian, Human]
+  speciesRestriction: [Reptilian, Human, Kobold] # Shitmed Change
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: horns_floppy_kobold_ears
@@ -325,7 +325,7 @@
   id: LizardChestBackspikes
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Reptilian]
+  speciesRestriction: [Reptilian, Lamia]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: body_backspikes

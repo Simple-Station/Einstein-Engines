@@ -28,6 +28,8 @@
       - state: eyeball-l
       - state: eyeball-r
   - type: Organ
+    slotId: eyes
+  - type: Eyes
 
 - type: entity
   id: OrganIPCTongue
@@ -48,6 +50,7 @@
   - type: Sprite
     state: ears
   - type: Organ
+  - type: Ears
 
 - type: entity
   id: OrganIPCPump
@@ -58,6 +61,8 @@
   - type: Sprite
     state: heart-on
   - type: Organ
+    slotId: heart
+  - type: Heart
   # The heart 'metabolizes' medicines and poisons that aren't filtered out by other organs.
   # This is done because these chemicals need to have some effect even if they aren't being filtered out of your body.
   # You're technically 'immune to poison' without a heart, but.. uhh, you'll have bigger problems on your hands.

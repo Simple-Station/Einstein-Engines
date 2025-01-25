@@ -1,0 +1,67 @@
+# Reporter
+# Backpacks
+
+# Belt
+
+# Ears
+
+# Equipment
+
+# Eyes
+
+# Gloves
+
+# Head
+
+# Id
+
+# Neck
+
+# Mask
+
+# Outer
+
+# Shoes
+
+# Uniforms
+- type: loadout
+  id: LoadoutServiceReporterUniformDetectivesuit
+  category: JobsServiceReporter
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutReporterUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Reporter
+  items:
+    - ClothingUniformJumpsuitDetective
+
+- type: loadout
+  id: LoadoutServiceReporterUniformDetectiveskirt
+  category: JobsServiceReporter
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutReporterUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Reporter
+  items:
+    - ClothingUniformJumpskirtDetective
+
+- type: loadout
+  id: LoadoutServiceReporterUniformJournalist
+  category: JobsServiceReporter
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutReporterUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Reporter
+  items:
+    - ClothingUniformJumpsuitJournalist

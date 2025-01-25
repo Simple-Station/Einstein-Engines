@@ -1,0 +1,137 @@
+# All Medical
+- type: characterItemGroup
+  id: LoadoutMedicalBackpacks
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutBackpackMedical
+    - type: loadout
+      id: LoadoutBackpackVirology
+    - type: loadout
+      id: LoadoutBackpackGenetics
+    - type: loadout
+      id: LoadoutBackpackSatchelMedical
+    - type: loadout
+      id: LoadoutBackpackSatchelVirology
+    - type: loadout
+      id: LoadoutBackpackSatchelGenetics
+    - type: loadout
+      id: LoadoutBackpackDuffelMedical
+    - type: loadout
+      id: LoadoutBackpackDuffelVirology
+    - type: loadout
+      id: LoadoutBackpackDuffelGenetics
+    - type: loadout
+      id: LoadoutBackpackMedicalDuffelSurgeryFilled
+
+#- type: characterItemGroup
+#  id: LoadoutMedicalBelt
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutMedicalEars
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMedicalEquipment
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutMedicalEyes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutMedicalEyesHudMedical
+    - type: loadout
+      id: LoadoutMedicalEyesEyepatchHudMedical
+    - type: loadout
+      id: LoadoutMedicalEyesHudMedicalPrescription
+
+- type: characterItemGroup
+  id: LoadoutMedicalGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutMedicalGlovesNitrile
+    - type: loadout
+      id: LoadoutMedicalGlovesLatex
+
+- type: characterItemGroup
+  id: LoadoutMedicalHead
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutMedicalHeadSurgcapBlue
+    - type: loadout
+      id: LoadoutMedicalHeadSurgcapPurple
+    - type: loadout
+      id: LoadoutMedicalHeadSurgcapGreen
+    - type: loadout
+      id: LoadoutMedicalHeadSurgcapCyan
+    - type: loadout
+      id: LoadoutMedicalHeadSurgcapBlack
+    - type: loadout
+      id: LoadoutMedicalHeadSurgcapPink
+    - type: loadout
+      id: LoadoutMedicalHeadSurgcapWhite
+    - type: loadout
+      id: LoadoutMedicalHeadSurgcapCybersun
+
+#- type: characterItemGroup
+#  id: LoadoutMedicalId
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutMedicalNeck
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutMedicalNeckStethoscope
+    - type: loadout
+      id: LoadoutMedicalBedsheetMedical
+
+#- type: characterItemGroup
+#  id: LoadoutMedicalMask
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutMedicalOuter
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutMedicalOuterWinterCoat
+    - type: loadout
+      id: LoadoutMedicalOuterLabcoat
+    - type: loadout
+      id: LoadoutMedicalOuterCybersunWindbreaker
+
+#- type: characterItemGroup
+#  id: LoadoutMedicalShoes
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutMedicalUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutMedicalUniformScrubsBlue
+    - type: loadout
+      id: LoadoutMedicalUniformScrubsGreen
+    - type: loadout
+      id: LoadoutMedicalUniformScrubsPurple
+    - type: loadout
+      id: LoadoutMedicalUniformScrubsCyan
+    - type: loadout
+      id: LoadoutMedicalUniformScrubsBlack
+    - type: loadout
+      id: LoadoutMedicalUniformScrubsPink
+    - type: loadout
+      id: LoadoutMedicalUniformScrubsCybersun
+    - type: loadout
+      id: LoadoutMedicalUniformScrubsWhite

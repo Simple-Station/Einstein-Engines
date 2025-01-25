@@ -22,10 +22,12 @@
       color: "#e8b59b"
       sprite: Mobs/Species/Human/parts.rsi
       state: head_m
+    - map: [ "enum.HumanoidVisualLayers.Snout" ]
     - map: [ "enum.HumanoidVisualLayers.Eyes" ]
       color: "#008800"
       sprite: Mobs/Species/eyes.rsi
       state: eyes
+    - map: [ "enum.HumanoidVisualLayers.Face" ]
     - map: [ "enum.HumanoidVisualLayers.RArm" ]
       color: "#e8b59b"
       sprite: Mobs/Species/Human/parts.rsi
@@ -60,15 +62,19 @@
     - map: [ "gloves" ]
     - map: [ "shoes" ]
     - map: [ "ears" ]
+    - map: [ "innerBelt" ]
+    - map: [ "innerNeck" ]
     - map: [ "outerClothing" ]
     - map: [ "eyes" ]
     - map: [ "belt" ]
     - map: [ "neck" ]
     - map: [ "back" ]
+    - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
     - map: [ "enum.HumanoidVisualLayers.Hair" ]
       state: bald
       sprite: Mobs/Customization/human_hair.rsi
     - map: [ "mask" ]
+    - map: [ "enum.HumanoidVisualLayers.HeadSide" ] # This is not in the default order so earrings are rendered above masks
     - map: [ "head" ]
     - map: [ "pocket1" ]
     - map: [ "pocket2" ]
@@ -104,6 +110,7 @@
   - type: Tag
     tags:
     - CanPilot
+    - FootstepSound
     - DoorBumpOpener
   - type: StepTriggerImmune
   - type: Bloodstream
@@ -135,13 +142,16 @@
     fireStackAlternateState: 3
   - type: Spider
   - type: IgnoreSpiderWeb
+  - type: FootPrints
+    leftBarePrint: "footprint-left-bare-spider"
+    rightBarePrint: "footprint-right-bare-spider"
 
 - type: entity
   save: false
   name: Urist McHands
   parent: MobHumanDummy
   id: MobArachneDummy
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: A dummy arachne meant to be used in character setup.
   components:
   - type: Sprite
@@ -160,10 +170,12 @@
       color: "#e8b59b"
       sprite: Mobs/Species/Human/parts.rsi
       state: head_m
+    - map: [ "enum.HumanoidVisualLayers.Snout" ]
     - map: [ "enum.HumanoidVisualLayers.Eyes" ]
       color: "#008800"
       sprite: Mobs/Species/eyes.rsi
       state: eyes
+    - map: [ "enum.HumanoidVisualLayers.Face" ]
     - map: [ "enum.HumanoidVisualLayers.RArm" ]
       color: "#e8b59b"
       sprite: Mobs/Species/Human/parts.rsi
@@ -198,15 +210,19 @@
     - map: [ "gloves" ]
     - map: [ "shoes" ]
     - map: [ "ears" ]
+    - map: [ "innerBelt" ]
+    - map: [ "innerNeck" ]
     - map: [ "outerClothing" ]
     - map: [ "eyes" ]
     - map: [ "belt" ]
     - map: [ "neck" ]
     - map: [ "back" ]
+    - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
     - map: [ "enum.HumanoidVisualLayers.Hair" ]
       state: bald
       sprite: Mobs/Customization/human_hair.rsi
     - map: [ "mask" ]
+    - map: [ "enum.HumanoidVisualLayers.HeadSide" ] # This is not in the default order so earrings are rendered above masks
     - map: [ "head" ]
     - map: [ "pocket1" ]
     - map: [ "pocket2" ]

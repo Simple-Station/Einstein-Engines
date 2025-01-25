@@ -3,8 +3,7 @@
   id: BaseFlatpack
   name: base flatpack
   description: A flatpack used for constructing something.
-  categories:
-  - hideSpawnMenu
+  categories: [ HideSpawnMenu ]
   components:
   - type: Item
     size: Large
@@ -67,6 +66,42 @@
     guides: [ AME, Power ]
   - type: StealTarget
     stealGroup: AmePartFlatpack
+
+- type: entity
+  parent: BaseFlatpack
+  id: TegCenterPartFlatpack
+  name: TEG Center flatpack
+  description: A flatpack used for constructing the central core of a TEG.
+  components:
+  - type: Flatpack
+    entity: TegCenter
+  - type: Sprite
+    layers:
+    - state: base
+    - state: overlay
+      color: "#cec8ac"
+      map: ["enum.FlatpackVisualLayers.Overlay"]
+    - state: icon-default
+  - type: GuideHelp
+    guides: [ TEG, Power ]
+
+- type: entity
+  parent: BaseFlatpack
+  id: TegCirculatorPartFlatpack
+  name: TEG Circulator flatpack
+  description: A flatpack used for constructing the circulator of a TEG.
+  components:
+  - type: Flatpack
+    entity: TegCirculator
+  - type: Sprite
+    layers:
+    - state: base
+    - state: overlay
+      color: "#cec8ac"
+      map: ["enum.FlatpackVisualLayers.Overlay"]
+    - state: icon-default
+  - type: GuideHelp
+    guides: [ TEG, Power ]
 
 - type: entity
   parent: BaseFlatpack

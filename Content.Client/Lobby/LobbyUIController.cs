@@ -20,6 +20,7 @@ using Robust.Client.UserInterface.Controllers;
 using Robust.Shared.Configuration;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
 using Robust.Shared.Utility;
 using static Content.Shared.Humanoid.SharedHumanoidAppearanceSystem;
 using CharacterSetupGui = Content.Client.Lobby.UI.CharacterSetupGui;
@@ -38,10 +39,11 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
     [Dependency] private readonly IStateManager _stateManager = default!;
     [Dependency] private readonly JobRequirementsManager _requirements = default!;
     [Dependency] private readonly MarkingManager _markings = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly JobRequirementsManager _jobRequirements = default!;
     [UISystemDependency] private readonly HumanoidAppearanceSystem _humanoid = default!;
     [UISystemDependency] private readonly ClientInventorySystem _inventory = default!;
-    [UISystemDependency] private readonly LoadoutSystem _loadouts = default!;
+    [UISystemDependency] private readonly SharedLoadoutSystem _loadouts = default!;
 
     private CharacterSetupGui? _characterSetup;
     private HumanoidProfileEditor? _profileEditor;
@@ -159,7 +161,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
             return;
         }
 
-        var dummy = LoadProfileEntity(humanoid, true);
+        var dummy = LoadProfileEntity(humanoid, true, true);
         PreviewPanel.SetSprite(dummy);
         PreviewPanel.SetSummaryText(humanoid.Summary);
     }
@@ -202,7 +204,8 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
             _playerManager,
             _prototypeManager,
             _requirements,
-            _markings);
+            _markings,
+            _random);
 
         _characterSetup = new CharacterSetupGui(EntityManager, _prototypeManager, _resourceCache, _preferencesManager, _profileEditor);
 
@@ -262,14 +265,6 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
                 EntityManager.DeleteEntity(unequippedItem.Value);
     }
 
-    /// Applies the highest priority job's clothes and loadouts to the dummy.
-    public void GiveDummyJobClothesLoadout(EntityUid dummy, HumanoidCharacterProfile profile)
-    {
-        var job = GetPreferredJob(profile);
-        GiveDummyJobClothes(dummy, job, profile);
-        _loadouts.ApplyCharacterLoadout(dummy, job, profile, _jobRequirements.GetRawPlayTimeTrackers(), _jobRequirements.IsWhitelisted());
-    }
-
     /// Applies the specified job's clothes to the dummy.
     public void GiveDummyJobClothes(EntityUid dummy, JobPrototype job, HumanoidCharacterProfile profile)
     {
@@ -295,7 +290,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
     }
 
     /// Loads the profile onto a dummy entity
-    public EntityUid LoadProfileEntity(HumanoidCharacterProfile? humanoid, bool jobClothes)
+    public EntityUid LoadProfileEntity(HumanoidCharacterProfile? humanoid, bool jobClothes, bool loadouts)
     {
         EntityUid dummyEnt;
 
@@ -311,8 +306,14 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
 
         _humanoid.LoadProfile(dummyEnt, humanoid);
 
-        if (humanoid != null && jobClothes)
-            GiveDummyJobClothesLoadout(dummyEnt, humanoid);
+        if (humanoid != null)
+        {
+            var job = GetPreferredJob(humanoid);
+            if (jobClothes)
+                GiveDummyJobClothes(dummyEnt, job, humanoid);
+            if (loadouts)
+                _loadouts.ApplyCharacterLoadout(dummyEnt, job, humanoid, _jobRequirements.GetRawPlayTimeTrackers(), _jobRequirements.IsWhitelisted(), out _);
+        }
 
         return dummyEnt;
     }

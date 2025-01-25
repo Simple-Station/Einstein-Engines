@@ -127,6 +127,11 @@
     bodyType: Static
   - type: Fixtures
     fixtures:
+      # Context / examine fixture
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.25
       slipFixture:
         shape:
           !type:PhysShapeAabb
@@ -166,3 +171,57 @@
     solution: puddle
   - type: BadDrink
   - type: IgnoresFingerprints
+  - type: PuddleFootPrints
+
+- type: entity
+  name: Footstep
+  id: Footstep
+  save: false
+  description: Trace of liquid
+  components:
+    - type: Clickable
+    - type: FootstepModifier
+      footstepSoundCollection:
+        collection: FootstepWater
+        params:
+          volume: 3
+    - type: Transform
+      noRot: false
+    - type: Sprite
+      drawdepth: FloorObjects
+      color: "#FFFFFF80"
+    - type: Physics
+      bodyType: Static
+    - type: Fixtures
+      fixtures:
+        # Context / examine fixture
+        fix1:
+          shape:
+            !type:PhysShapeCircle
+            radius: 0.25
+        slipFixture:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.4,-0.4,0.4,0.4"
+          mask:
+            - ItemMask
+          layer:
+            - SlipLayer
+          hard: false
+    - type: SolutionContainerManager
+      solutions:
+        step: { maxVol: 2 }
+    - type: FootPrint
+    - type: Puddle
+      solution: step
+    - type: Appearance
+    - type: Drink
+      delay: 3
+      transferAmount: 1
+      solution: step
+      examinable: false
+    - type: ExaminableSolution
+      solution: step
+    - type: DrawableSolution
+      solution: step
+    - type: BadDrink

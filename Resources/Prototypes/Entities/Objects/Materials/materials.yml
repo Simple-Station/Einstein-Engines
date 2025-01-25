@@ -117,6 +117,9 @@
   - type: Appearance
   - type: Food
     requiresSpecialDigestion: true
+  - type: FlavorProfile
+    flavors:
+    - fiber
   - type: SolutionContainerManager
     solutions:
       food:
@@ -350,8 +353,17 @@
   components:
   - type: Stack
     stackType: Diamond
+    baseLayer: base
+    layerStates:
+    - diamond
+    - diamond_2
+    - diamond_3
   - type: Sprite
     state: diamond
+    layers:
+    - state: diamond
+      map: ["base"]
+  - type: Appearance
   - type: Item
     heldPrefix: diamond
   - type: Extractable
@@ -362,6 +374,10 @@
         reagents:
         - ReagentId: Carbon
           Quantity: 20
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      Diamond: 100
 
 - type: entity
   parent: MaterialDiamond
@@ -392,6 +408,9 @@
   - type: Appearance
   - type: Food
     requiresSpecialDigestion: true
+  - type: FlavorProfile
+    flavors:
+    - fiber
   - type: SolutionContainerManager
     solutions:
       food:
@@ -493,13 +512,14 @@
     layerStates:
       - bananium
       - bananium_1
-  - type: RadiationSource
+  - type: RadiationSource #Delta V - Adds radiation
     intensity: 0.1
   - type: FlavorProfile
     flavors:
       - banana
   - type: Food
-    trash: TrashBananiumPeel
+    trash:
+    - TrashBananiumPeel
   - type: BadFood
   - type: SolutionContainerManager
     solutions:
@@ -538,6 +558,7 @@
   description: A webby material.
   suffix: Full
   components:
+  - type: Material
   - type: PhysicalComposition
     materialComposition:
       WebSilk: 100
@@ -619,6 +640,62 @@
 - type: entity
   parent: MaterialBones
   id: MaterialBones1
+  suffix: 1
+  components:
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: MaterialBase
+  id: MaterialGunpowder
+  name: gunpowder
+  description: An explosive compound.
+  components:
+  - type: Stack
+    stackType: Gunpowder
+    count: 1
+  - type: Sprite
+    sprite: Objects/Misc/reagent_fillings.rsi
+    state: powderpile
+    color: darkgray
+  - type: PhysicalComposition
+    materialComposition:
+      Gunpowder: 100
+  - type: Item
+    size: Tiny
+
+- type: entity
+  parent: MaterialBase
+  id: MaterialGoliathHide
+  name: goliath hide plates
+  description: Pieces of a goliath's rocky hide, these might be able to make your suit a bit more durable to attack from the local fauna.
+  suffix: Full
+  components:
+  - type: Sprite
+    sprite: Objects/Materials/hide.rsi
+    layers:
+    - state: goliath_hide
+      map: [ "base" ]
+  - type: StaticPrice
+    price: 0
+  - type: StackPrice
+    price: 1500
+  - type: Appearance
+  - type: Stack
+    stackType: GoliathHide
+    baseLayer: base
+    layerStates:
+    - goliath_hide
+    - goliath_hide_2
+    - goliath_hide_3
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,2,2
+
+- type: entity
+  parent: MaterialGoliathHide
+  id: MaterialGoliathHide1
   suffix: 1
   components:
   - type: Stack

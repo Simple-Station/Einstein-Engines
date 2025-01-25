@@ -2,7 +2,7 @@
   id: MobObserverTelegnostic
   name: telegnostic projection
   description: Ominous. Placeholder sprite.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     overrideContainerOcclusion: true # Ghosts always show up regardless of where they're contained.
@@ -15,6 +15,8 @@
       - state: eyeball
         shader: unshaded
   - type: Psionic
+    removable: false
+    roller: false
   - type: MindContainer
   - type: Clickable
   - type: InteractionOutline

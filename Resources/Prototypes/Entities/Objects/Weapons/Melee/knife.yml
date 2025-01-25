@@ -7,22 +7,29 @@
     tags:
     - Knife
   - type: Sharp
+  - type: Execution
+    doAfterDuration: 4.0
   - type: Utensil
     types:
       - Knife
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.25
+    attackRate: .8
     range: 1.5
     damage:
       types:
         Slash: 8
-    heavyRateModifier: 0.8
+    heavyRateModifier: 1.25
     heavyDamageBaseModifier: 1.2
     maxTargets: 3
     angle: 40
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: DamageOtherOnHit
+    staminaCost: 5
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/star_hit.ogg
+  - type: EmbedPassiveDamage
   - type: Sprite
   - type: Item
     size: Small
@@ -31,6 +38,14 @@
       - Slicing
     useSound:
       path: /Audio/Items/Culinary/chop.ogg
+  # Shitmed Change
+  - type: Scalpel
+    speed: 0.65
+  - type: SurgeryTool
+    startSound:
+      path: /Audio/Medical/Surgery/scalpel1.ogg
+    endSound:
+      path: /Audio/Medical/Surgery/scalpel2.ogg
 
 - type: entity
   name: kitchen knife
@@ -45,6 +60,8 @@
   - type: Sprite
     sprite: Objects/Weapons/Melee/kitchen_knife.rsi
     state: icon
+  - type: ThrowingAngle
+    angle: 225
   - type: Item
     sprite: Objects/Weapons/Melee/kitchen_knife.rsi
   - type: GuideHelp
@@ -71,12 +88,21 @@
       types:
         Slash: 8
         Blunt: 1
+  - type: DamageOtherOnHit
+    staminaCost: 7.5
+  - type: ThrowingAngle
+    angle: 245
   - type: Item
     size: Normal
     sprite: Objects/Weapons/Melee/cleaver.rsi
   - type: GuideHelp
     guides:
     - Chef
+  # Shitmed Change
+  - type: Scalpel
+    speed: 0.3
+  - type: BoneSaw 
+    speed: 0.5
 
 - type: entity
   name: combat knife
@@ -93,16 +119,19 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.5
+    attackRate: .6666
     damage:
       types:
-        Slash: 9
+        Slash: 12
   - type: EmbeddableProjectile
     sound: /Audio/Weapons/star_hit.ogg
+  - type: LandAtCursor
   - type: DamageOtherOnHit
     damage:
       types:
         Slash: 9
+  - type: ThrowingAngle
+    angle: 225
   - type: Item
     sprite: Objects/Weapons/Melee/combat_knife.rsi
   - type: DisarmMalus
@@ -119,10 +148,12 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.25
+    attackRate: .8
     damage:
       types:
         Slash: 8
+  - type: ThrowingAngle
+    angle: 225
   - type: Item
     sprite: Objects/Weapons/Melee/survival_knife.rsi
 
@@ -141,6 +172,8 @@
     damage:
       types:
         Slash: 10
+  - type: ThrowingAngle
+    angle: 225
   - type: Item
     sprite: Objects/Weapons/Melee/kukri_knife.rsi
 
@@ -156,14 +189,15 @@
     node: icon
   - type: MeleeWeapon
     wideAnimationRotation: 90
-    attackRate: 1.2
+    attackRate: .83
     damage:
       types:
         Slash: 5
   - type: DamageOtherOnHit
-    damage:
-      types:
-        Slash: 10
+    staminaCost: 5
+  - type: LandAtCursor
+  - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
   - type: Sprite
     sprite: Clothing/Head/Hats/greyflatcap.rsi
   - type: Clothing
@@ -200,11 +234,13 @@
     sprite: Objects/Weapons/Melee/shiv.rsi
     state: icon
   - type: MeleeWeapon
-    attackRate: 1.75
+    attackRate: .57
     range: 1.4
     damage:
       types:
         Slash: 5.5
+  - type: ThrowingAngle
+    angle: 200
   - type: Item
     sprite: Objects/Weapons/Melee/shiv.rsi
   - type: DisarmMalus
@@ -280,12 +316,13 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 2
+    attackRate: .5
     damage:
       types:
         Slash: 5
   - type: EmbeddableProjectile
     sound: /Audio/Weapons/star_hit.ogg
+  - type: LandAtCursor
   - type: DamageOtherOnHit
     ignoreResistances: true
     damage:

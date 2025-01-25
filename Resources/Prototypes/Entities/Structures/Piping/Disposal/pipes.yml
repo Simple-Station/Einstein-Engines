@@ -56,12 +56,15 @@
   - type: ContainerContainer
     containers:
       DisposalTube: !type:Container
+  - type: Tag
+    tags:
+      - Disposal
   - type: StaticPrice
     price: 22
 
 - type: entity
   id: DisposalHolder
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: disposal holder
   components:
   - type: DisposalHolder
@@ -495,3 +498,4 @@
           Anchored: { state: signal-router-flipped }
   - type: Construction
     node: signal_router_flipped
+

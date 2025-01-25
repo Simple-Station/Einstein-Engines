@@ -2,6 +2,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using Content.Shared.CCVar;
 using Content.Shared.Clothing.Loadouts.Prototypes;
+using Content.Shared.Clothing.Loadouts.Systems;
 using Content.Shared.GameTicking;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
@@ -46,10 +47,10 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     private HashSet<string> _traitPreferences = new();
 
     /// <see cref="_loadoutPreferences"/>
-    public HashSet<string> LoadoutPreferences => _loadoutPreferences;
+    public HashSet<LoadoutPreference> LoadoutPreferences => _loadoutPreferences;
 
     [DataField]
-    private HashSet<string> _loadoutPreferences = new();
+    private HashSet<LoadoutPreference> _loadoutPreferences = new();
 
     [DataField]
     public string Name { get; set; } = "John Doe";
@@ -79,6 +80,15 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
 
     [DataField]
     public Gender Gender { get; private set; } = Gender.Male;
+
+    [DataField]
+    public string? DisplayPronouns { get; set; }
+
+    [DataField]
+    public string? StationAiName { get; set; }
+
+    [DataField]
+    public string? CyborgName { get; set; }
 
     /// <see cref="Appearance"/>
     public ICharacterAppearance CharacterAppearance => Appearance;
@@ -120,6 +130,9 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         int age,
         Sex sex,
         Gender gender,
+        string? displayPronouns,
+        string? stationAiName,
+        string? cyborgName,
         HumanoidCharacterAppearance appearance,
         SpawnPriorityPreference spawnPriority,
         Dictionary<string, JobPriority> jobPriorities,
@@ -128,7 +141,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         PreferenceUnavailableMode preferenceUnavailable,
         HashSet<string> antagPreferences,
         HashSet<string> traitPreferences,
-        HashSet<string> loadoutPreferences)
+        HashSet<LoadoutPreference> loadoutPreferences)
     {
         Name = name;
         FlavorText = flavortext;
@@ -139,6 +152,9 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         Age = age;
         Sex = sex;
         Gender = gender;
+        DisplayPronouns = displayPronouns;
+        StationAiName = stationAiName;
+        CyborgName = cyborgName;
         Appearance = appearance;
         SpawnPriority = spawnPriority;
         _jobPriorities = jobPriorities;
@@ -162,6 +178,9 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             other.Age,
             other.Sex,
             other.Gender,
+            other.DisplayPronouns,
+            other.StationAiName,
+            other.CyborgName,
             other.Appearance.Clone(),
             other.SpawnPriority,
             new Dictionary<string, JobPriority>(other.JobPriorities),
@@ -170,7 +189,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             other.PreferenceUnavailable,
             new HashSet<string>(other.AntagPreferences),
             new HashSet<string>(other.TraitPreferences),
-            new HashSet<string>(other.LoadoutPreferences))
+            new HashSet<LoadoutPreference>(other.LoadoutPreferences))
     {
     }
 
@@ -190,9 +209,19 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     /// <returns>Humanoid character profile with default settings.</returns>
     public static HumanoidCharacterProfile DefaultWithSpecies(string species = SharedHumanoidAppearanceSystem.DefaultSpecies)
     {
+        var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
+        var skinColor = SkinColor.ValidHumanSkinTone;
+
+        if (prototypeManager.TryIndex<SpeciesPrototype>(species, out var speciesPrototype))
+            skinColor = speciesPrototype.DefaultSkinTone;
+
         return new()
         {
             Species = species,
+            Appearance = new()
+            {
+                SkinColor = skinColor,
+            },
         };
     }
 
@@ -254,8 +283,11 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     public HumanoidCharacterProfile WithAge(int age) => new(this) { Age = age };
     public HumanoidCharacterProfile WithSex(Sex sex) => new(this) { Sex = sex };
     public HumanoidCharacterProfile WithGender(Gender gender) => new(this) { Gender = gender };
+    public HumanoidCharacterProfile WithDisplayPronouns(string? displayPronouns) => new(this) { DisplayPronouns = displayPronouns };
+    public HumanoidCharacterProfile WithStationAiName(string? stationAiName) => new(this) { StationAiName = stationAiName };
+    public HumanoidCharacterProfile WithCyborgName(string? cyborgName) => new(this) { CyborgName = cyborgName };
     public HumanoidCharacterProfile WithSpecies(string species) => new(this) { Species = species };
-    public HumanoidCharacterProfile WithCustomSpeciesName(string customspeciename) => new(this) { Customspeciename = customspeciename};
+    public HumanoidCharacterProfile WithCustomSpeciesName(string customspeciename) => new(this) { Customspeciename = customspeciename };
     public HumanoidCharacterProfile WithHeight(float height) => new(this) { Height = height };
     public HumanoidCharacterProfile WithWidth(float width) => new(this) { Width = width };
 
@@ -309,14 +341,19 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         return new(this) { _traitPreferences = list };
     }
 
-    public HumanoidCharacterProfile WithLoadoutPreference(string loadoutId, bool pref)
+    public HumanoidCharacterProfile WithLoadoutPreference(
+        string loadoutId,
+        bool pref,
+        string? customName = null,
+        string? customDescription = null,
+        string? customColor = null,
+        bool? customHeirloom = null)
     {
-        var list = new HashSet<string>(_loadoutPreferences);
+        var list = new HashSet<LoadoutPreference>(_loadoutPreferences);
 
+        list.RemoveWhere(l => l.LoadoutName == loadoutId);
         if (pref)
-            list.Add(loadoutId);
-        else
-            list.Remove(loadoutId);
+            list.Add(new(loadoutId, customName, customDescription, customColor, customHeirloom) { Selected = pref });
 
         return new HumanoidCharacterProfile(this) { _loadoutPreferences = list };
     }
@@ -368,7 +405,9 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
 
         // ensure the species can be that sex and their age fits the founds
         if (!speciesPrototype.Sexes.Contains(sex))
+        {
             sex = speciesPrototype.Sexes[0];
+        }
 
         var age = Math.Clamp(Age, speciesPrototype.MinAge, speciesPrototype.MaxAge);
 
@@ -383,16 +422,24 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
 
         string name;
         if (string.IsNullOrEmpty(Name))
+        {
             name = GetName(Species, gender);
+        }
         else if (Name.Length > MaxNameLength)
+        {
             name = Name[..MaxNameLength];
+        }
         else
+        {
             name = Name;
+        }
 
         name = name.Trim();
 
         if (configManager.GetCVar(CCVars.RestrictedNames))
+        {
             name = RestrictedNameRegex.Replace(name, string.Empty);
+        }
 
         if (configManager.GetCVar(CCVars.ICNameCase))
         {
@@ -405,17 +452,23 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             || string.IsNullOrEmpty(Customspeciename)
                 ? ""
                 : Customspeciename.Length > MaxNameLength
-                    ? FormattedMessage.RemoveMarkup(Customspeciename)[..MaxNameLength]
-                    : FormattedMessage.RemoveMarkup(Customspeciename);
+                    ? FormattedMessage.RemoveMarkupPermissive(Customspeciename)[..MaxNameLength]
+                    : FormattedMessage.RemoveMarkupPermissive(Customspeciename);
 
         if (string.IsNullOrEmpty(name))
+        {
             name = GetName(Species, gender);
+        }
 
         string flavortext;
         if (FlavorText.Length > MaxDescLength)
-            flavortext = FormattedMessage.RemoveMarkup(FlavorText)[..MaxDescLength];
+        {
+            flavortext = FormattedMessage.RemoveMarkupPermissive(FlavorText)[..MaxDescLength];
+        }
         else
-            flavortext = FormattedMessage.RemoveMarkup(FlavorText);
+        {
+            flavortext = FormattedMessage.RemoveMarkupPermissive(FlavorText);
+        }
 
         var appearance = HumanoidCharacterAppearance.EnsureValid(Appearance, Species, Sex);
 
@@ -446,14 +499,17 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
 
         var antags = AntagPreferences
             .Where(id => prototypeManager.TryIndex<AntagPrototype>(id, out var antag) && antag.SetPreference)
+            .Distinct()
             .ToList();
 
         var traits = TraitPreferences
             .Where(prototypeManager.HasIndex<TraitPrototype>)
+            .Distinct()
             .ToList();
 
         var loadouts = LoadoutPreferences
-            .Where(prototypeManager.HasIndex<LoadoutPrototype>)
+            .Where(l => prototypeManager.HasIndex<LoadoutPrototype>(l.LoadoutName))
+            .Distinct()
             .ToList();
 
         Name = name;
@@ -468,7 +524,9 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         _jobPriorities.Clear();
 
         foreach (var (job, priority) in priorities)
+        {
             _jobPriorities.Add(job, priority);
+        }
 
         PreferenceUnavailable = prefsUnavailableMode;
 
@@ -513,11 +571,11 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         hashCode.Add(FlavorText);
         hashCode.Add(Species);
         hashCode.Add(Age);
-        hashCode.Add((int)Sex);
-        hashCode.Add((int)Gender);
+        hashCode.Add((int) Sex);
+        hashCode.Add((int) Gender);
         hashCode.Add(Appearance);
-        hashCode.Add((int)SpawnPriority);
-        hashCode.Add((int)PreferenceUnavailable);
+        hashCode.Add((int) SpawnPriority);
+        hashCode.Add((int) PreferenceUnavailable);
         hashCode.Add(Customspeciename);
         return hashCode.ToHashCode();
     }

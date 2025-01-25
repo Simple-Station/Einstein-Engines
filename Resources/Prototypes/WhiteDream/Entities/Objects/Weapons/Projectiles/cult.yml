@@ -1,0 +1,19 @@
+﻿- type: entity
+  parent: BaseBulletTrigger
+  id: ProjectileGauntlet
+  name: gauntlet
+  description: Oh no.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    color: "#FF0000"
+    radius: 2.0
+    energy: 5.0
+  - type: Projectile
+    ignoreResistances: true
+    damage:
+      types:
+        Blunt: 50
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    state: gauntlet_echo

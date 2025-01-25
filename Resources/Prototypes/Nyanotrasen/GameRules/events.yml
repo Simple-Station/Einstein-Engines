@@ -2,7 +2,7 @@
 - type: entity
   id: NoosphericStorm
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: StationEvent
       startAnnouncement: true
@@ -25,7 +25,7 @@
   - type: MidRoundAntagRule
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseMidRoundAntag
   id: RatKingSpawn
   components:
@@ -33,7 +33,7 @@
     spawner: SpawnPointGhostRatKing
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseMidRoundAntag
   id: ParadoxAnomalySpawn
   components:
@@ -44,7 +44,7 @@
 - type: entity
   id: BaseGlimmerEvent
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: StationEvent
       # Favor glimmer events just a little more than regular events.
@@ -56,20 +56,20 @@
 - type: entity
   id: MundaneDischarge
   parent: BaseGlimmerEvent
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: StationEvent
       reoccurrenceDelay: 15
     - type: GlimmerEvent
-      maximumGlimmer: 300
-      glimmerBurnLower: 18
-      glimmerBurnUpper: 40
+      maximumGlimmer: 800
+      glimmerBurnLower: 80
+      glimmerBurnUpper: 120
     - type: MundaneDischargeRule
 
 - type: entity
   id: NoosphericZap
   parent: BaseGlimmerEvent
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: StationEvent
       weight: 25 # Guaranteed to happen every once in a while, but with intervals between incidents
@@ -81,34 +81,34 @@
 - type: entity
   id: NoosphericFry
   parent: BaseGlimmerEvent
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: GlimmerEvent
-      minimumGlimmer: 550
+      minimumGlimmer: 650
       maximumGlimmer: 1000
     - type: NoosphericFryRule
 
 - type: entity
   id: PsionicCatGotYourTongue
   parent: BaseGlimmerEvent
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: GlimmerEvent
-      minimumGlimmer: 400
+      minimumGlimmer: 600
       maximumGlimmer: 1000
-      glimmerBurnLower: 18
-      glimmerBurnUpper: 40
+      glimmerBurnLower: 80
+      glimmerBurnUpper: 120
     - type: PsionicCatGotYourTongueRule
 
 - type: entity
   id: MassMindSwap
   parent: BaseGlimmerEvent
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: GlimmerEvent
       minimumGlimmer: 900
-      glimmerBurnLower: 350
-      glimmerBurnUpper: 450 # Unless epistemics badly f-d up, this will restore the glimmer balance for a while.
+      glimmerBurnLower: 750
+      glimmerBurnUpper: 950 # Unless epistemics badly f-d up, this will restore the glimmer balance for a while.
     - type: MassMindSwapRule
       isTemporary: true # Permanent mindswap is hell.
 
@@ -116,7 +116,7 @@
   abstract: true
   parent: BaseGlimmerEvent
   id: BaseGlimmerSignaturesEvent
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: GlimmerEvent
     minimumGlimmer: 300
@@ -126,7 +126,7 @@
 - type: entity
   id: GlimmerWispSpawn
   parent: BaseGlimmerSignaturesEvent
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: GlimmerMobRule
     mobPrototype: MobGlimmerWisp
@@ -134,15 +134,18 @@
 - type: entity
   parent: BaseGlimmerSignaturesEvent
   id: FreeProber
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: FreeProberRule
+  - type: GlimmerEvent
+    minimumGlimmer: 700
+    maximumGlimmer: 1000
 
 ## converted upstream events
 - type: entity
   parent: BaseGlimmerSignaturesEvent
   id: GlimmerRandomSentience
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     weight: 7
@@ -158,23 +161,25 @@
 - type: entity
   parent: BaseGlimmerSignaturesEvent
   id: GlimmerRevenantSpawn
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: GlimmerEvent
-      minimumGlimmer: 450
+      minimumGlimmer: 750
       maximumGlimmer: 900
-      glimmerBurnLower: 50
-      glimmerBurnUpper: 100 # Gives epi a chance to recover
+      glimmerBurnLower: 120
+      glimmerBurnUpper: 200
     - type: GlimmerRevenantRule
 
 - type: entity
   parent: BaseGlimmerSignaturesEvent
   id: GlimmerMiteSpawn
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: GlimmerEvent
-    minimumGlimmer: 250
+    minimumGlimmer: 700
     maximumGlimmer: 900
+    glimmerBurnLower: 50
+    glimmerBurnUpper: 250
   - type: GlimmerMobRule
     mobPrototype: MobGlimmerMite
     glimmerTier: Low # get more mites earlier on

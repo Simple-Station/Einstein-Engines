@@ -3,6 +3,7 @@
   name: guide-entry-ss14
   text: "/ServerInfo/Guidebook/SpaceStation14.xml"
   children:
+  - SpaceLaw
   - Controls
   - Jobs
   - Survival
@@ -11,6 +12,9 @@
   - Species
   - Writing
   - Glossary
+  - LoadoutInfo
+  - SettingLore
+  - Psionics
 
 - type: guideEntry
   id: Writing
@@ -21,5 +25,3 @@
   id: Glossary
   name: guide-entry-glossary
   text: "/ServerInfo/Guidebook/Glossary.xml"
-
-

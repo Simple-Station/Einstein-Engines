@@ -65,18 +65,30 @@
   - type: Appearance
   - type: StaticPrice
     price: 500
+  - type: Execution
   - type: AmmoCounter
+  - type: MeleeWeapon
+    attackRate: 1.2
+    damage:
+      types:
+        Blunt: 7.5
+    swapKeys: true
+    disableHeavy: true
+    animation: WeaponArcThrust
+    wideAnimationRotation: 135
+    soundHit:
+      collection: MetalThud
+  - type: DamageOtherOnHit
+    staminaCost: 5
 
 - type: entity
   name: viper
   parent: BaseWeaponPistol
   id: WeaponPistolViper
-  description: A small, easily concealable, but somewhat underpowered gun, produced by a bulk arms manufacturer now defunct for over a century. Uses .35 auto ammo. # DeltaV - change description to reflect forced semi
+  description: A small, easily concealable, but somewhat underpowered gun, produced by a bulk arms manufacturer now defunct for over a century. Uses .35 auto ammo.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Pistols/viper.rsi
-    availableModes: # DeltaV - force semi for balance
-    - SemiAuto
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -111,10 +123,23 @@
     fireOnDropChance: 0.3
 
 - type: entity
+  name: viper
+  parent: WeaponPistolViper
+  id: WeaponPistolViperSecurity
+  description: A small, easily concealable, but somewhat underpowered gun, produced by a bulk arms manufacturer now defunct for over a century.
+               Uses .35 auto ammo. The serial number on the handguard marks this gun as belonging to an NT Security Officer.
+  suffix: Security Loadouts
+  components:
+  - type: GuideHelp
+    guides: [ SecurityWeapons ]
+
+- type: entity
   id: WeaponPistolViperNonLethal
   parent: WeaponPistolViper
   suffix: Non-lethal
   components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Pistols/vipernl.rsi
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -134,6 +159,16 @@
         whitelist:
           tags:
             - CartridgePistol
+
+- type: entity
+  id: WeaponPistolViperSecurityNonLethal
+  parent: WeaponPistolViperNonLethal
+  suffix: Non-lethal, SecurityLoadouts
+  description: A small, easily concealable, but somewhat underpowered gun, produced by a bulk arms manufacturer now defunct for over a century.
+               Uses .35 auto ammo. The serial number on the handguard marks this gun as belonging to an NT Security Officer.
+  components:
+  - type: GuideHelp
+    guides: [ SecurityWeapons ]
 
 - type: entity
   name: cobra
@@ -208,10 +243,23 @@
     fireOnDropChance: 0.5
 
 - type: entity
+  name: mk 58
+  parent: WeaponPistolMk58
+  id: WeaponPistolMk58Security
+  description: A cheap, ubiquitous sidearm, produced by a NanoTrasen subsidiary. Uses .35 auto ammo.
+               The serial number on the handguard marks this gun as belonging to an NT Security Officer.
+  suffix: Security Loadouts
+  components:
+  - type: GuideHelp
+    guides: [ SecurityWeapons ]
+
+- type: entity
   id: WeaponPistolMk58Nonlethal
   parent: WeaponPistolMk58
   suffix: Non-lethal
   components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Pistols/mk58nl.rsi
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -230,6 +278,16 @@
         whitelist:
           tags:
             - CartridgePistol
+
+- type: entity
+  id: WeaponPistolMk58SecurityNonlethal
+  parent: WeaponPistolMk58Nonlethal
+  suffix: Non-lethal, Security Loadouts
+  description: A cheap, ubiquitous sidearm, produced by a NanoTrasen subsidiary. Uses .35 auto ammo.
+               The serial number on the handguard marks this gun as belonging to an NT Security Officer.
+  components:
+  - type: GuideHelp
+    guides: [ SecurityWeapons ]
 
 - type: entity
   name: N1984
@@ -279,9 +337,22 @@
 - type: entity
   name: N1984
   parent: WeaponPistolN1984
+  id: WeaponPistolN1984Security # the spaces in description are for formatting.
+  description: The sidearm of any self respecting officer.     Comes in .45 magnum, the lord's caliber.
+               The serial number on the handguard marks this gun as belonging to an NT Security Officer.
+  suffix: Security Loadouts
+  components:
+  - type: GuideHelp
+    guides: [ SecurityWeapons ]
+
+- type: entity
+  name: N1984
+  parent: WeaponPistolN1984
   id: WeaponPistolN1984NonLethal
   suffix: Non-lethal
   components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Pistols/N1984nl.rsi
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -300,3 +371,14 @@
         whitelist:
           tags:
             - CartridgeMagnum
+
+- type: entity
+  name: N1984
+  parent: WeaponPistolN1984NonLethal
+  id: WeaponPistolN1984SecurityNonLethal
+  description: The sidearm of any self respecting officer.     Comes in .45 magnum, the lord's caliber.
+               The serial number on the handguard marks this gun as belonging to an NT Security Officer.
+  suffix: Security Loadouts
+  components:
+  - type: GuideHelp
+    guides: [ SecurityWeapons ]

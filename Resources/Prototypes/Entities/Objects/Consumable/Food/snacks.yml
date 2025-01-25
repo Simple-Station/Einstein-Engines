@@ -41,7 +41,8 @@
     state: boritos
   - type: Item
   - type: Food
-    trash: FoodPacketBoritosTrash
+    trash: 
+    - FoodPacketBoritosTrash
 
 - type: entity
   name: C&Ds
@@ -56,7 +57,8 @@
     state: cnds
   - type: Item
   - type: Food
-    trash: FoodPacketCnDsTrash
+    trash: 
+    - FoodPacketCnDsTrash
 
 - type: entity
   name: cheesie honkers
@@ -72,7 +74,8 @@
     state: cheesiehonkers
   - type: Item
   - type: Food
-    trash: FoodPacketCheesieTrash
+    trash: 
+    - FoodPacketCheesieTrash
 
 - type: entity
   name: chips
@@ -89,7 +92,8 @@
     state: chips
   - type: Item
   - type: Food
-    trash: FoodPacketChipsTrash
+    trash: 
+    - FoodPacketChipsTrash
 
 - type: entity
   name: chocolate bar
@@ -183,7 +187,8 @@
     state: pistachio
   - type: Item
   - type: Food
-    trash: FoodPacketPistachioTrash
+    trash: 
+    - FoodPacketPistachioTrash
   - type: Tag
     tags:
     - Fruit # Seed of a fruit, you can yell at me
@@ -204,7 +209,8 @@
   - type: Item
     heldPrefix: popcorn
   - type: Food
-    trash: FoodPacketPopcornTrash
+    trash: 
+    - FoodPacketPopcornTrash
 
 - type: entity
   name: 4no raisins
@@ -219,7 +225,8 @@
     state: raisins
   - type: Item
   - type: Food
-    trash: FoodPacketRaisinsTrash
+    trash: 
+    - FoodPacketRaisinsTrash
   - type: Tag
     tags:
     - Fruit
@@ -237,7 +244,8 @@
     state: semki
   - type: Item
   - type: Food
-    trash: FoodPacketSemkiTrash
+    trash: 
+    - FoodPacketSemkiTrash
 
 - type: entity
   name: sus jerky
@@ -252,7 +260,8 @@
     state: susjerky
   - type: Item
   - type: Food
-    trash: FoodPacketSusTrash
+    trash: 
+    - FoodPacketSusTrash
   - type: Tag
     tags:
     - Meat
@@ -270,7 +279,49 @@
     state: syndicakes
   - type: Item
   - type: Food
-    trash: FoodPacketSyndiTrash
+    trash: 
+    - FoodPacketSyndiTrash
+
+- type: entity
+  parent: FoodSnackBase
+  id: DrinkRamen
+  name: cup ramen
+  description: A cheap food with a taste that reminds you of your school years.
+  components:
+  - type: RefillableSolution
+    solution: food
+  - type: InjectableSolution
+    solution: food
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50 #big cup
+        reagents:
+        - ReagentId: DryRamen
+          Quantity: 30
+        - ReagentId: Soysauce
+          Quantity: 5
+  - type: Sprite
+    state: ramen
+  - type: Food
+    trash: 
+    - FoodPacketCupRamenTrash
+
+- type: entity
+  parent: DrinkRamen
+  id: DrinkHellRamen
+  name: hell ramen
+  description: Super spicy flavor!
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: DryRamen
+          Quantity: 30
+        - ReagentId: CapsaicinOil
+          Quantity: 5
 
 - type: entity
   name: chow mein
@@ -296,7 +347,8 @@
         - ReagentId: Soysauce
           Quantity: 2
   - type: Food
-    trash: FoodPacketChowMeinTrash
+    trash: 
+    - FoodPacketChowMeinTrash
 
 - type: entity
   name: dan dan noodles
@@ -324,7 +376,8 @@
         - ReagentId: Soysauce
           Quantity: 2
   - type: Food
-    trash: FoodPacketDanDanTrash
+    trash: 
+    - FoodPacketDanDanTrash
 
 - type: entity
   name: fortune cookie
@@ -349,7 +402,8 @@
     heldPrefix: packet
     size: Tiny
   - type: Food
-    trash: FoodCookieFortune
+    trash: 
+    - FoodCookieFortune
 
 - type: entity
   id: FoodSnackNutribrick
@@ -443,7 +497,7 @@
 # Trash
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseItem
   id: FoodPacketTrash
   description: This is rubbish.
@@ -466,7 +520,7 @@
     price: 0
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: FoodPacketTrash
   id: FoodPacketBoritosTrash
   name: boritos bag
@@ -475,7 +529,7 @@
     state: boritos-trash
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: FoodPacketTrash
   id: FoodPacketCnDsTrash
   name: C&Ds bag
@@ -484,7 +538,7 @@
     state: cnds-trash
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: FoodPacketTrash
   id: FoodPacketCheesieTrash
   name: cheesie honkers
@@ -493,7 +547,7 @@
     state: cheesiehonkers-trash
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: FoodPacketTrash
   id: FoodPacketChipsTrash
   name: chips
@@ -502,7 +556,7 @@
     state: chips-trash
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: FoodPacketTrash
   id: FoodPacketChocolateTrash
   name: chocolate wrapper
@@ -511,7 +565,7 @@
     state: chocolatebar-trash
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: FoodPacketTrash
   id: FoodPacketEnergyTrash
   name: energybar wrapper
@@ -520,7 +574,7 @@
     state: energybar-trash
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: FoodPacketTrash
   id: FoodPacketPistachioTrash
   name: pistachios packet
@@ -529,7 +583,7 @@
     state: pistachio-trash
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: FoodPacketTrash
   id: FoodPacketPopcornTrash
   name: popcorn box
@@ -538,7 +592,7 @@
     state: popcorn-trash
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: FoodPacketTrash
   id: FoodPacketRaisinsTrash
   name: 4no raisins
@@ -547,7 +601,7 @@
     state: raisins-trash
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: FoodPacketTrash
   id: FoodPacketSemkiTrash
   name: semki packet
@@ -556,7 +610,7 @@
     state: semki-trash
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: FoodPacketTrash
   id: FoodPacketSusTrash
   name: sus jerky
@@ -565,7 +619,7 @@
     state: susjerky-trash
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: FoodPacketTrash
   id: FoodPacketSyndiTrash
   name: syndi-cakes box
@@ -574,7 +628,16 @@
     state: syndicakes-trash
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
+  parent: FoodPacketTrash
+  id: FoodPacketCupRamenTrash
+  name: empty cup ramen
+  components:
+  - type: Sprite
+    state: ramen
+
+- type: entity
+  categories: [ HideSpawnMenu ]
   parent: FoodPacketTrash
   id: FoodPacketChowMeinTrash
   name: empty chow mein box
@@ -583,7 +646,7 @@
     state: chinese1
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: FoodPacketTrash
   id: FoodPacketDanDanTrash
   name: empty dan dan box
@@ -592,7 +655,7 @@
     state: chinese2
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: FoodPacketTrash
   id: FoodCookieFortune
   name: cookie fortune
@@ -605,7 +668,7 @@
     descriptionSegments: [CookieFortuneDescriptions]
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: FoodPacketTrash
   id: FoodPacketMRETrash
   name: MRE wrapper
@@ -642,7 +705,8 @@
     state: proteinbar
   - type: Item
   - type: Food
-    trash: FoodPacketProteinbarTrash
+    trash:
+    - FoodPacketProteinbarTrash
   - type: SolutionContainerManager
     solutions:
       food:
@@ -780,7 +844,8 @@
     state: tidegobs
   - type: Item
   - type: Food
-    trash: FoodPacketTidegobsTrash
+    trash:
+    - FoodPacketTidegobsTrash
 
 - type: entity
   parent: FoodSnackBase
@@ -796,7 +861,8 @@
     state: saturno
   - type: Item
   - type: Food
-    trash: FoodPacketSaturnosTrash
+    trash:
+    - FoodPacketSaturnosTrash
 
 - type: entity
   parent: FoodSnackBase
@@ -812,7 +878,8 @@
     state: jupiter
   - type: Item
   - type: Food
-    trash: FoodPacketJoveGelloTrash
+    trash:
+    - FoodPacketJoveGelloTrash
 
 - type: entity
   parent: FoodSnackBase
@@ -828,7 +895,8 @@
     state: pluto
   - type: Item
   - type: Food
-    trash: FoodPacketPlutoniumrodsTrash
+    trash:
+    - FoodPacketPlutoniumrodsTrash
 
 - type: entity
   parent: FoodSnackBase
@@ -846,7 +914,8 @@
     state: mars
   - type: Item
   - type: Food
-    trash: FoodPacketMarsFroukaTrash
+    trash:
+    - FoodPacketMarsFroukaTrash
 
 - type: entity
   parent: FoodSnackBase
@@ -862,7 +931,8 @@
     state: venus
   - type: Item
   - type: Food
-    trash: FoodPacketVenusTrash
+    trash: 
+    - FoodPacketVenusTrash
 
 - type: entity
   parent: FoodSnackBase
@@ -879,7 +949,8 @@
     state: oort
   - type: Item
   - type: Food
-    trash: FoodPacketOortrocksTrash
+    trash: 
+    - FoodPacketOortrocksTrash
 
 # Weeb Vend
 - type: entity
@@ -890,13 +961,14 @@
   components:
   - type: FlavorProfile
     flavors:
-      - spicy
+    - spicy
   - type: Sprite
     sprite: Objects/Consumable/Food/bay_food.rsi
     state: weebonuts
   - type: Item
   - type: Food
-    trash: FoodPacketRedalertnutsTrash
+    trash: 
+    - FoodPacketRedalertnutsTrash
 
 - type: entity
   parent: FoodSnackBase
@@ -942,7 +1014,8 @@
     state: chocobanana
   - type: Item
   - type: Food
-    trash: FoodPacketStickTrash
+    trash:
+    - FoodPacketStickTrash
 
 - type: entity
   parent: FoodSnackBase
@@ -959,7 +1032,8 @@
     state: dango
   - type: Item
   - type: Food
-    trash: FoodPacketStickTrash
+    trash:
+    - FoodPacketStickTrash
 
 # Old food
 - type: entity
@@ -1025,7 +1099,7 @@
 
 # trash
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: FoodPacketTrash
   id: FoodPacketLunacakeTrash
   name: lunacake wrapper
@@ -1036,7 +1110,7 @@
   - type: Item
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: FoodPacketLunacakeTrash
   id: FoodPacketMochicakeTrash
   name: mochicake wrapper
@@ -1046,7 +1120,7 @@
   - type: Item
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: FoodPacketLunacakeTrash
   id: FoodPacketMooncakeTrash
   name: mooncake wrapper
@@ -1056,7 +1130,7 @@
   - type: Item
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: FoodPacketLunacakeTrash
   id: FoodPacketTidegobsTrash
   name: tidegobs trash
@@ -1066,7 +1140,7 @@
   - type: Item
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: FoodPacketLunacakeTrash
   id: FoodPacketSaturnosTrash
   name: saturn-os trash
@@ -1076,7 +1150,7 @@
   - type: Item
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: FoodPacketLunacakeTrash
   id: FoodPacketJoveGelloTrash
   name: jove gello trash
@@ -1086,7 +1160,7 @@
   - type: Item
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: FoodPacketLunacakeTrash
   id: FoodPacketPlutoniumrodsTrash
   name: plutonium rods trash
@@ -1096,7 +1170,7 @@
   - type: Item
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: FoodPacketLunacakeTrash
   id: FoodPacketMarsFroukaTrash
   name: mars frouka trash
@@ -1106,7 +1180,7 @@
   - type: Item
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: FoodPacketLunacakeTrash
   id: FoodPacketVenusTrash
   name: venus hot cakes trash
@@ -1116,7 +1190,7 @@
   - type: Item
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: FoodPacketLunacakeTrash
   id: FoodPacketOortrocksTrash
   name: oort rocks trash
@@ -1127,7 +1201,7 @@
 
 # weebo vend
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: FoodPacketLunacakeTrash
   id: FoodPacketRedalertnutsTrash
   name: red alert nuts packet
@@ -1137,7 +1211,7 @@
   - type: Item
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: FoodPacketLunacakeTrash
   id: FoodPacketStickTrash
   name: stick
@@ -1148,7 +1222,7 @@
 
 #
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: FoodPacketLunacakeTrash
   id: FoodPacketProteinbarTrash
   name: protein bar wrapper

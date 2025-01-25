@@ -1,29 +1,60 @@
 - type: entity
-  id: AnomalySpawn
+  id: BaseStationEvent
   parent: BaseGameRule
-  noSpawn: true
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GameRule
+    delay:
+      min:  10
+      max:  20
+
+- type: entity
+  id: BaseStationEventShortDelay
+  parent: BaseGameRule
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GameRule
+    delay:
+      min:  10
+      max:  20
+
+- type: entity
+  id: BaseStationEventLongDelay
+  parent: BaseGameRule
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GameRule
+    delay:
+      min:  40
+      max:  60
+
+- type: entity
+  id: AnomalySpawn
+  parent: BaseStationEventLongDelay
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     weight: 8
-    startDelay: 30
     duration: 35
   - type: AnomalySpawnRule
 
 - type: entity
   id: BluespaceArtifact
-  parent: BaseGameRule
-  noSpawn: true
+  parent: BaseStationEventLongDelay
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     weight: 8
-    startDelay: 30
     duration: 35
   - type: BluespaceArtifactRule
 
 - type: entity
   id: BluespaceLocker
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     weight: 2
@@ -35,7 +66,7 @@
 - type: entity
   id: BreakerFlip
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     weight: 7
@@ -46,7 +77,7 @@
 - type: entity
   id: BureaucraticError
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     startAnnouncement: true
@@ -58,7 +89,7 @@
 - type: entity
   id: ClericalError
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     startAnnouncement: true
@@ -70,7 +101,7 @@
 - type: entity
   parent: BaseGameRule
   id: ClosetSkeleton
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     weight: 5
@@ -82,7 +113,7 @@
 - type: entity
   parent: BaseGameRule
   id: DragonSpawn
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     weight: 6.5
@@ -96,7 +127,7 @@
 - type: entity
   parent: BaseGameRule
   id: NinjaSpawn
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     weight: 6
@@ -104,12 +135,48 @@
     earliestStart: 30
     reoccurrenceDelay: 20
     minimumPlayers: 30
-  - type: NinjaSpawnRule
+  - type: SpaceSpawnRule
+  - type: AntagLoadProfileRule
+  - type: AntagObjectives
+    objectives:
+    - StealResearchObjective
+    - DoorjackObjective
+    - SpiderChargeObjective
+    - TerrorObjective
+    - MassArrestObjective
+    - NinjaSurviveObjective
+  - type: AntagSelection
+    agentName: ninja-round-end-agent-name
+    definitions:
+    - spawnerPrototype: SpawnPointGhostSpaceNinja
+      min: 1
+      max: 1
+      pickPlayer: false
+      startingGear: SpaceNinjaGear
+      briefing:
+        text: ninja-role-greeting
+        color: Green
+        sound: /Audio/Misc/ninja_greeting.ogg
+      components:
+      - type: SpaceNinja
+      - type: NpcFactionMember
+        factions:
+        - Syndicate
+      - type: AutoImplant
+        implants:
+        - DeathAcidifierImplant
+      - type: RandomMetadata
+        nameSegments:
+        - names_ninja_title
+        - names_ninja
+      mindComponents:
+      - type: NinjaRole
+        prototype: SpaceNinja
 
 - type: entity
   parent: BaseGameRule
   id: RevenantSpawn
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     weight: 7.5
@@ -123,7 +190,7 @@
 #- type: entity
 #  id: FalseAlarm
 #  parent: BaseGameRule
-#  noSpawn: true
+#  categories: [ HideSpawnMenu ]
 #  components:
 #  - type: StationEvent
 #    weight: 15
@@ -133,7 +200,7 @@
 - type: entity
   id: GasLeak
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     startAnnouncement: true
@@ -145,7 +212,7 @@
 - type: entity
   id: KudzuGrowth
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     earliestStart: 15
@@ -158,7 +225,7 @@
 - type: entity
   id: MeteorSwarm
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     earliestStart: 30
@@ -173,7 +240,7 @@
 - type: entity
   id: MouseMigration
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     startAnnouncement: true
@@ -198,7 +265,7 @@
 - type: entity
   id: CockroachMigration
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     startAnnouncement: true
@@ -213,9 +280,48 @@
       prob: 0.008
 
 - type: entity
+  id: SnailMigrationLowPop
+  parent: BaseGameRule
+  components:
+  - type: StationEvent
+    startAnnouncement: true
+    startDelay: 10
+    weight: 6
+    duration: 50
+  - type: VentCrittersRule
+    entries:
+    - id: MobSnail
+      prob: 0.02
+    - id: MobSnailSpeed
+      prob: 0.002
+    - id: MobSnailMoth
+      prob: 0.002
+
+- type: entity
+  id: SnailMigration
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    startAnnouncement: true
+    earliestStart: 15
+    weight: 6
+    duration: 50
+    minimumPlayers: 30
+  - type: VentCrittersRule
+    entries:
+    - id: MobSnail
+      prob: 0.02
+    - id: MobSnailSpeed
+      prob: 0.002
+    - id: MobSnailMoth
+      prob: 0.002
+    - id: MobSnailInstantDeath
+      prob: 0.00001 #  ~ 1:2000 snails
+
+- type: entity
   id: PowerGridCheck
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     weight: 5
@@ -229,18 +335,21 @@
 - type: entity
   id: RandomSentience
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     weight: 6
     duration: 1
     maxOccurrences: 1 # this event has diminishing returns on interesting-ness, so we cap it
+    startAnnouncement: true
   - type: RandomSentienceRule
+    minSentiences: 2
+    maxSentiences: 5
 
 - type: entity
   parent: BaseGameRule
   id: SolarFlare
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     weight: 8
@@ -267,7 +376,7 @@
 - type: entity
   id: VentClog
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     startAnnouncement: true
@@ -281,7 +390,7 @@
 - type: entity
   id: SlimesSpawn
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     startAnnouncement: true
@@ -302,7 +411,7 @@
 - type: entity
   id: SpiderSpawn
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     startAnnouncement: true
@@ -319,7 +428,7 @@
 - type: entity
   id: SpiderClownSpawn
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     startAnnouncement: false
@@ -336,7 +445,7 @@
 - type: entity
   id: ZombieOutbreak
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     earliestStart: 50
@@ -352,7 +461,7 @@
       blacklist:
         components:
         - ZombieImmune
-        - InitialInfectedExempt
+        - AntagImmune
       briefing:
         text: zombie-patientzero-role-greeting
         color: Plum
@@ -368,9 +477,9 @@
         prototype: InitialInfected
 
 - type: entity
+  categories: [ HideSpawnMenu ]
+  parent: BaseNukeopsRule
   id: LoneOpsSpawn
-  parent: BaseGameRule
-  noSpawn: true
   components:
   - type: StationEvent
     earliestStart: 35
@@ -402,9 +511,9 @@
         prototype: Nukeops
 
 - type: entity
-  id: SleeperAgentsRule
-  parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
+  parent: BaseTraitorRule
+  id: SleeperAgents
   components:
   - type: StationEvent
     earliestStart: 25
@@ -412,22 +521,25 @@
     minimumPlayers: 15
     reoccurrenceDelay: 30
     startAnnouncement: false
-  - type: AlertLevelInterceptionRule
-  - type: TraitorRule
+# - type: AlertLevelInterceptionRule - Disable setting to blue with sleeper agents. Uncomment to enable.
   - type: AntagSelection
     definitions:
-    - prefRoles: [ Traitor ]
+    - prefRoles: [ TraitorSleeper ]
+      fallbackRoles: [ Traitor ]
       min: 1
       max: 2
       playerRatio: 10
+      blacklist:
+        components:
+        - AntagImmune
       mindComponents:
       - type: TraitorRole
-        prototype: Traitor
+        prototype: TraitorSleeper
 
 - type: entity
   id: MassHallucinations
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     weight: 7
@@ -444,7 +556,7 @@
 - type: entity
   id: ImmovableRodSpawn
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     startAnnouncement: false
@@ -455,7 +567,7 @@
   - type: ImmovableRodRule
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseGameRule
   id: IonStorm
   components:
@@ -468,7 +580,7 @@
 - type: entity
   id: MimicVendorRule
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: StationEvent
       earliestStart: 0
@@ -476,3 +588,15 @@
       maxOccurrences: 1 # this event has diminishing returns on interesting-ness, so we cap it
       weight: 5
     - type: MobReplacementRule
+
+- type: entity
+  id: AirlockVirusRule
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: StationEvent
+      earliestStart: 15
+      minimumPlayers: 5
+      maxOccurrences: 1
+      weight: 3
+    - type: AirlockVirusRule

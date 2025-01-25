@@ -1,0 +1,83 @@
+# Golemancer
+- type: characterItemGroup
+  id: LoadoutGolemancerBackpacks
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutBackpackRobotics
+    - type: loadout
+      id: LoadoutBackpackSatchelRobotics
+    - type: loadout
+      id: LoadoutBackpackDuffelRobotics
+
+#- type: characterItemGroup
+#  id: LoadoutGolemancerBelt
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutGolemancerEars
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutGolemancerEquipment
+  maxItems: 3
+  items:
+    - type: loadout
+      id: LoadoutGolemancerEquipmentCandles
+    - type: loadout
+      id: LoadoutGolemancerEquipmentCandlesSmall
+    - type: loadout
+      id: LoadoutGolemancerPillCanisterSpaceDrugs
+
+#- type: characterItemGroup
+#  id: LoadoutGolemancerEyes
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutGolemancerGloves
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutGolemancerHead
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutGolemancerId
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutGolemancerNeck
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutGolemancerMask
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutGolemancerOuter
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutScienceUniformWinterCoatRoboticist
+#
+#- type: characterItemGroup
+#  id: LoadoutGolemancerShoes
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutGolemancerUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutScienceUniformJumpskirtRoboticist
+    - type: loadout
+      id: LoadoutScienceUniformJumpsuitRoboticist

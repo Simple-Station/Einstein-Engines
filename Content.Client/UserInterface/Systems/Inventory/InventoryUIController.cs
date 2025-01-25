@@ -132,6 +132,9 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
         if (clientInv == null)
         {
             _inventoryHotbar?.ClearButtons();
+            if (_inventoryButton != null)
+                _inventoryButton.Visible = false;
+
             return;
         }
 
@@ -396,6 +399,9 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
         foreach (var slotData in clientInv.SlotData.Values)
         {
             AddSlot(slotData);
+
+            if (_inventoryButton != null)
+                _inventoryButton.Visible = true;
         }
 
         UpdateInventoryHotbar(_playerInventory);
@@ -403,12 +409,17 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
 
     private void UnloadSlots()
     {
+        if (_inventoryButton != null)
+            _inventoryButton.Visible = false;
+
         _playerUid = null;
         _playerInventory = null;
         foreach (var slotGroup in _slotGroups.Values)
         {
             slotGroup.ClearButtons();
         }
+
+        UpdateInventoryHotbar(null);
     }
 
     private void SpriteUpdated(SlotSpriteUpdate update)

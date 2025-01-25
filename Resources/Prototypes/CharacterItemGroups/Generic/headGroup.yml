@@ -1,0 +1,95 @@
+- type: characterItemGroup
+  id: LoadoutHead
+  items:
+    - type: loadout
+      id: LoadoutHeadBeaverHat
+    - type: loadout
+      id: LoadoutHeadTophat
+    - type: loadout
+      id: LoadoutHeadFedoraWhite
+    - type: loadout
+      id: LoadoutHeadFlatBlack
+    - type: loadout
+      id: LoadoutHeadFlatBrown
+    - type: loadout
+      id: LoadoutHeadHatCowboyWhite
+    - type: loadout
+      id: LoadoutHeadHatCowboyBountyHunter
+    - type: loadout
+      id: LoadoutHeadTinfoil
+    - type: loadout
+      id: LoadoutHeadBellhop
+    - type: loadout
+      id: LoadoutHeadPoppy
+    - type: loadout
+      id: LoadoutHeadPoppyWhite
+    - type: loadout
+      id: LoadoutHeadHatCorpsoft
+    - type: loadout
+      id: LoadoutHeadHatCorpsoftFlipped
+    - type: loadout
+      id: LoadoutHeadHatMimesoft
+    - type: loadout
+      id: LoadoutHeadHatMimesoftFlipped
+    - type: loadout
+      id: LoadoutHeadBandWhite
+    - type: loadout
+      id: LoadoutHeadBandSkull
+    - type: loadout
+      id: LoadoutHeadBandBrown
+    - type: loadout
+      id: LoadoutHeadFishCap
+    - type: loadout
+      id: LoadoutHeadRastaHat
+    - type: loadout
+      id: LoadoutHeadFez
+    - type: loadout
+      id: LoadoutHeadBowlerHat
+    - type: loadout
+      id: LoadoutHeadGreyFlatcap
+    - type: loadout
+      id: LoadoutHeadBrownFlatcap
+    - type: loadout
+      id: LoadoutHeadBeretWhite
+    - type: loadout
+      id: LoadoutHeadBeretArtist
+    - type: loadout
+      id: LoadoutHeadBeretPeaked
+    - type: loadout
+      id: LoadoutHeadBeanie
+    - type: loadout
+      id: LoadoutHeadBeanieWinter
+    - type: loadout
+      id: LoadoutHeadBeanieSubmariner
+    - type: loadout
+      id: LoadoutHeadBeanieTight
+    - type: loadout
+      id: LoadoutHeadSlouch
+    - type: loadout
+      id: LoadoutHeadSunVisor
+    - type: loadout
+      id: LoadoutHeadHijabColorable
+    - type: loadout
+      id: LoadoutHeadTurbanColorable
+    - type: loadout
+      id: LoadoutHeadKippahColorable
+    - type: loadout
+      id: LoadoutHeadHeadBandBasic
+    - type: loadout
+      id: LoadoutHeadPin
+    - type: loadout
+      id: LoadoutHeadPinClover
+    - type: loadout
+      id: LoadoutHeadPinButterfly
+    - type: loadout
+      id: LoadoutHeadPinMagnetic
+    - type: loadout
+      id: LoadoutHeadRibbon
+    - type: loadout
+      id: LoadoutHeadBow
+    - type: loadout
+      id: LoadoutHeadBowSmall
+    - type: loadout
+      id: LoadoutHeadHatBeanieGreen
+    - type: loadout
+      id: LoadoutHeadHatMountie

@@ -67,7 +67,7 @@ namespace Content.Server.Carrying
             SubscribeLocalEvent<BeingCarriedComponent, GettingInteractedWithAttemptEvent>(OnInteractedWith);
             SubscribeLocalEvent<BeingCarriedComponent, PullAttemptEvent>(OnPullAttempt);
             SubscribeLocalEvent<BeingCarriedComponent, StartClimbEvent>(OnStartClimb);
-            SubscribeLocalEvent<BeingCarriedComponent, BuckleChangeEvent>(OnBuckleChange);
+            SubscribeLocalEvent<BeingCarriedComponent, BuckledEvent>(OnBuckled);
             SubscribeLocalEvent<CarriableComponent, CarryDoAfterEvent>(OnDoAfter);
         }
 
@@ -139,7 +139,7 @@ namespace Content.Server.Carrying
 
             args.ItemUid = virtItem.BlockingEntity;
 
-            args.ThrowStrength *= _contests.MassContest(uid, virtItem.BlockingEntity, false, 2f)
+            args.ThrowSpeed *= _contests.MassContest(uid, virtItem.BlockingEntity, false, 2f)
                             * _contests.StaminaContest(uid, virtItem.BlockingEntity);
         }
 
@@ -168,7 +168,7 @@ namespace Content.Server.Carrying
             var targetParent = Transform(args.Target.Value).ParentUid;
 
             if (args.Target.Value != component.Carrier && targetParent != component.Carrier && targetParent != uid)
-                args.Cancel();
+                args.Cancelled = true;
         }
 
         /// <summary>
@@ -202,7 +202,7 @@ namespace Content.Server.Carrying
         private void OnInteractedWith(EntityUid uid, BeingCarriedComponent component, GettingInteractedWithAttemptEvent args)
         {
             if (args.Uid != component.Carrier)
-                args.Cancel();
+                args.Cancelled = true;
         }
 
         private void OnPullAttempt(EntityUid uid, BeingCarriedComponent component, PullAttemptEvent args)
@@ -215,7 +215,7 @@ namespace Content.Server.Carrying
             DropCarried(component.Carrier, uid);
         }
 
-        private void OnBuckleChange(EntityUid uid, BeingCarriedComponent component, ref BuckleChangeEvent args)
+        private void OnBuckled(EntityUid uid, BeingCarriedComponent component, ref BuckledEvent args)
         {
             DropCarried(component.Carrier, uid);
         }
@@ -250,8 +250,7 @@ namespace Content.Server.Carrying
             var ev = new CarryDoAfterEvent();
             var args = new DoAfterArgs(EntityManager, carrier, length, ev, carried, target: carried)
             {
-                BreakOnTargetMove = true,
-                BreakOnUserMove = true,
+                BreakOnMove = true,
                 NeedHand = true
             };
 

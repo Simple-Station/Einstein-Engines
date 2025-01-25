@@ -22,7 +22,7 @@
     Slash: 10
     Piercing: 10
     Heat: 10
-    Structural: 10
+    Structural: 80
 
 - type: damageModifierSet
   id: StructuralMetallic
@@ -378,3 +378,9 @@
     Blunt: 0.9
     Slash: 0.9
     Piercing: 0.9
+
+# protects against radiation
+- type: damageModifierSet
+  id: PotassiumIodide
+  coefficients:
+    Radiation: 0.1

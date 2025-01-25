@@ -3,6 +3,7 @@ using Content.Server.Beam;
 using Content.Server.Beam.Components;
 using Content.Server.Lightning.Components;
 using Content.Shared.Lightning;
+using Robust.Server.GameObjects;
 using Robust.Shared.Random;
 
 namespace Content.Server.Lightning;
@@ -20,6 +21,7 @@ public sealed class LightningSystem : SharedLightningSystem
     [Dependency] private readonly BeamSystem _beam = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
 
     public override void Initialize()
     {
@@ -73,29 +75,31 @@ public sealed class LightningSystem : SharedLightningSystem
         //To Do: Remove Hardcode LightningTargetComponent (this should be a parameter of the SharedLightningComponent)
         //To Do: This is still pretty bad for perf but better than before and at least it doesn't re-allocate
         // several hashsets every time
-
-        var targets = _lookup.GetComponentsInRange<LightningTargetComponent>(Transform(user).MapPosition, range).ToList();
+        var mapCoords = _transform.GetMapCoordinates(user);
+        var targets = _lookup.GetEntitiesInRange<LightningTargetComponent>(mapCoords, range).ToList();
         _random.Shuffle(targets);
-        targets.Sort((x, y) => y.Priority.CompareTo(x.Priority));
+        targets.Sort((x, y) => y.Comp.Priority.CompareTo(x.Comp.Priority));
 
-        int shootedCount = 0;
+        int shotCount = 0;
         int count = -1;
-        while(shootedCount < boltCount)
+
+        while (shotCount < boltCount)
         {
             count++;
 
             if (count >= targets.Count) { break; }
-
             var curTarget = targets[count];
-            if (!_random.Prob(curTarget.HitProbability)) //Chance to ignore target
+
+            // Chance to ignore target
+            if (!_random.Prob(curTarget.Comp.HitProbability))
                 continue;
 
             ShootLightning(user, targets[count].Owner, lightningPrototype, triggerLightningEvents);
-            if (arcDepth - targets[count].LightningResistance > 0)
-            {
-                ShootRandomLightnings(targets[count].Owner, range, 1, lightningPrototype, arcDepth - targets[count].LightningResistance, triggerLightningEvents);
-            }
-            shootedCount++;
+
+            if (arcDepth - targets[count].Comp.LightningResistance > 0)
+                ShootRandomLightnings(targets[count].Owner, range, 1, lightningPrototype, arcDepth - targets[count].Comp.LightningResistance, triggerLightningEvents);
+
+            shotCount++;
         }
     }
 }

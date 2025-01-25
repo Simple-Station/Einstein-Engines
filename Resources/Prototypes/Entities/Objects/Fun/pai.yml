@@ -17,7 +17,7 @@
         type: InstrumentBoundUserInterface
         requireInputValidation: false
       enum.StationMapUiKey.Key:
-        type: UntrackedStationMapBoundUserInterface
+        type: StationMapBoundUserInterface
         requireInputValidation: false
   - type: Sprite
     sprite: Objects/Fun/pai.rsi
@@ -88,6 +88,10 @@
     - Elyran
     - RobotTalk
     - Sign # It's intentional that they don't "Speak" sign language.
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 3
 
 - type: entity
   parent: PersonalAI
@@ -152,7 +156,7 @@
   id: ActionPAIPlayMidi
   name: Play MIDI
   description: Open your portable MIDI interface to soothe your owner.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     checkCanInteract: false
@@ -165,7 +169,7 @@
   id: ActionPAIOpenMap
   name: Open Map
   description: Open your map interface and guide your owner.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: InstantAction
       checkCanInteract: false

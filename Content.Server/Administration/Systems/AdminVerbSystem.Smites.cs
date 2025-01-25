@@ -22,6 +22,7 @@ using Content.Shared.Administration;
 using Content.Shared.Administration.Components;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Part;
+using Content.Shared.Clumsy;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Cluwne;
 using Content.Shared.Damage;
@@ -100,7 +101,7 @@ public sealed partial class AdminVerbSystem
             Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/smite.svg.192dpi.png")),
             Act = () =>
             {
-                var coords = Transform(args.Target).MapPosition;
+                var coords = _transformSystem.GetMapCoordinates(args.Target);
                 Timer.Spawn(_gameTiming.TickPeriod,
                     () => _explosionSystem.QueueExplosion(coords, ExplosionSystem.DefaultExplosionPrototypeId,
                         4, 1, 2, maxTileBreak: 0), // it gibs, damage doesn't need to be high.
@@ -635,13 +636,13 @@ public sealed partial class AdminVerbSystem
         {
             Text = "Remove gravity",
             Category = VerbCategory.Smite,
-            Icon = new SpriteSpecifier.Rsi(new ("/Textures/Structures/Machines/gravity_generator.rsi"), "off"),
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/Structures/Machines/gravity_generator.rsi"), "off"),
             Act = () =>
             {
                 var grav = EnsureComp<MovementIgnoreGravityComponent>(args.Target);
                 grav.Weightless = true;
 
-                Dirty(grav);
+                Dirty(args.Target, grav);
             },
             Impact = LogImpact.Extreme,
             Message = Loc.GetString("admin-smite-remove-gravity-description"),
@@ -738,7 +739,7 @@ public sealed partial class AdminVerbSystem
                 var movementSpeed = EnsureComp<MovementSpeedModifierComponent>(args.Target);
                 (movementSpeed.BaseSprintSpeed, movementSpeed.BaseWalkSpeed) = (movementSpeed.BaseWalkSpeed, movementSpeed.BaseSprintSpeed);
 
-                Dirty(movementSpeed);
+                Dirty(args.Target, movementSpeed);
 
                 _popupSystem.PopupEntity(Loc.GetString("admin-smite-run-walk-swap-prompt"), args.Target,
                     args.Target, PopupType.LargeCaution);

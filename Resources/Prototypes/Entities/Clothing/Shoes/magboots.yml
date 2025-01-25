@@ -1,37 +1,42 @@
 - type: entity
-  parent: ClothingShoesBase
-  id: ClothingShoesBootsMag
+  parent: [ClothingShoesBase, BaseToggleClothing]
+  id: ClothingShoesBootsMagBase
   name: magboots
   description: Magnetic boots, often used during extravehicular activity to ensure the user remains safely attached to the vehicle.
+  abstract: true
   components:
-    - type: Sprite
-      sprite: Clothing/Shoes/Boots/magboots.rsi
-      layers:
-      - state: icon
-        map: [ "enum.ToggleVisuals.Layer" ]
-    - type: Clothing
-      sprite: Clothing/Shoes/Boots/magboots.rsi
-    - type: Magboots
-    - type: ClothingSpeedModifier
-      walkModifier: 0.85
-      sprintModifier: 0.8
-      enabled: false
-    - type: Appearance
-    - type: GenericVisualizer
-      visuals:
-        enum.ToggleVisuals.Toggled:
-          enum.ToggleVisuals.Layer:
-            True: {state: icon-on}
-            False: {state: icon}
-    - type: StaticPrice
-      price: 200
-    - type: Tag
-      tags:
-      - WhitelistChameleon
-    - type: ReverseEngineering
-      difficulty: 2
-      recipes:
-        - ClothingShoesBootsMag
+  - type: Sprite
+    sprite: Clothing/Shoes/Boots/magboots.rsi
+    layers:
+    - state: icon
+      map: [ "enum.ToggleVisuals.Layer" ]
+  - type: Clothing
+    sprite: Clothing/Shoes/Boots/magboots.rsi
+  - type: ToggleClothing
+    action: ActionToggleMagboots
+  - type: ComponentToggler
+    components:
+    - type: NoSlip
+  - type: Magboots
+  - type: ClothingSpeedModifier
+    walkModifier: 0.85
+    sprintModifier: 0.8
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleVisuals.Toggled:
+        enum.ToggleVisuals.Layer:
+          True: {state: icon-on}
+          False: {state: icon}
+  - type: StaticPrice
+    price: 200
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: [ClothingShoesBootsMagBase]
+  id: ClothingShoesBootsMag
 
 - type: entity
   parent: ClothingShoesBootsMag
@@ -44,13 +49,9 @@
     state: icon
   - type: Clothing
     sprite: Clothing/Shoes/Boots/magboots-advanced.rsi
-  - type: Magboots
-    toggleAction: ActionToggleMagbootsAdvanced
   - type: ClothingSpeedModifier
     walkModifier: 1
     sprintModifier: 1
-    enabled: false
-  - type: NoSlip
   - type: Tag
     tags:
     - WhitelistChameleon
@@ -59,6 +60,11 @@
     price: 750
   - type: StealTarget
     stealGroup: ClothingShoesBootsMagAdv
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 13
+    staminaCost: 15
 
 - type: entity
   parent: ClothingShoesBootsMag
@@ -68,8 +74,6 @@
     sprite: Clothing/Shoes/Boots/magboots-science.rsi
   - type: Clothing
     sprite: Clothing/Shoes/Boots/magboots-science.rsi
-  - type: Magboots
-    toggleAction: ActionToggleMagbootsSci
 
 - type: entity
   parent: ClothingShoesBootsMag
@@ -80,12 +84,11 @@
   - type: ClothingSpeedModifier
     walkModifier: 1.10 #PVS isn't too much of an issue when you are blind...
     sprintModifier: 1.10
-    enabled: false
   - type: StaticPrice
     price: 3000
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: [ClothingShoesBootsMagBase, BaseJetpack]
   id: ClothingShoesBootsMagSyndie
   name: blood-red magboots
   description: Reverse-engineered magnetic boots that have a heavy magnetic pull and integrated thrusters.
@@ -95,12 +98,9 @@
     state: icon
   - type: Clothing
     sprite: Clothing/Shoes/Boots/magboots-syndicate.rsi
-  - type: Magboots
-    toggleAction: ActionToggleMagbootsSyndie
   - type: ClothingSpeedModifier
     walkModifier: 0.95
     sprintModifier: 0.9
-    enabled: false
   - type: GasTank
     outputPressure: 42.6
     air:
@@ -131,49 +131,16 @@
   - type: Tag
     tags:
       - WhitelistChameleon
-
-- type: entity
-  id: ActionBaseToggleMagboots
-  name: Toggle Magboots
-  description: Toggles the magboots on and off.
-  noSpawn: true
-  components:
-  - type: InstantAction
-    itemIconStyle: NoItem
-    event: !type:ToggleMagbootsEvent
+  - type: Item
+    sprite: null
+    size: Normal
 
 - type: entity
   id: ActionToggleMagboots
-  parent: ActionBaseToggleMagboots
-  noSpawn: true
+  name: Toggle Magboots
+  description: Toggles the magboots on and off.
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
-    icon: { sprite: Clothing/Shoes/Boots/magboots.rsi, state: icon }
-    iconOn: { sprite : Clothing/Shoes/Boots/magboots.rsi, state: icon-on }
-
-- type: entity
-  id: ActionToggleMagbootsAdvanced
-  parent: ActionBaseToggleMagboots
-  noSpawn: true
-  components:
-  - type: InstantAction
-    icon: { sprite: Clothing/Shoes/Boots/magboots-advanced.rsi, state: icon }
-    iconOn: Clothing/Shoes/Boots/magboots-advanced.rsi/icon-on.png
-
-- type: entity
-  id: ActionToggleMagbootsSci
-  parent: ActionBaseToggleMagboots
-  noSpawn: true
-  components:
-  - type: InstantAction
-    icon: { sprite: Clothing/Shoes/Boots/magboots-science.rsi, state: icon }
-    iconOn: Clothing/Shoes/Boots/magboots-science.rsi/icon-on.png
-
-- type: entity
-  id: ActionToggleMagbootsSyndie
-  parent: ActionBaseToggleMagboots
-  noSpawn: true
-  components:
-  - type: InstantAction
-    icon: { sprite: Clothing/Shoes/Boots/magboots-syndicate.rsi, state: icon }
-    iconOn: Clothing/Shoes/Boots/magboots-syndicate.rsi/icon-on.png
+    itemIconStyle: BigItem
+    event: !type:ToggleActionEvent

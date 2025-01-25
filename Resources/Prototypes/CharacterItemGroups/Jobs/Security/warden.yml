@@ -1,0 +1,79 @@
+# Warden
+#- type: characterItemGroup
+#  id: LoadoutWardenBackpacks
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutWardenBelt
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutWardenEars
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutWardenEquipment
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutWardenEyes
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutWardenGloves
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutWardenHead
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingHeadHatBeretWarden
+
+#- type: characterItemGroup
+#  id: LoadoutWardenId
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutWardenNeck
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutWardenMask
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutWardenOuter
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingOuterWinterCoatWarden
+    - type: loadout
+      id: LoadoutClothingOuterCoatWarden
+
+#- type: characterItemGroup
+#  id: LoadoutWardenShoes
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutWardenUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutUniformJumpsuitWardenBlue
+    - type: loadout
+      id: LoadoutUniformJumpsuitWardenGrey
+    - type: loadout
+      id: LoadoutUniformJumpskirtWardenBlue
+    - type: loadout
+      id: LoadoutUniformJumpskirtWardenGrey

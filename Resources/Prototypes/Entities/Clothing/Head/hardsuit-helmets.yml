@@ -136,7 +136,7 @@
 - type: entity
   parent: ClothingHeadHardsuitBase
   id: ClothingHeadHelmetHardsuitMaxim
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: salvager maxim helmet
   description: A predication of decay washes over your mind.
   components:
@@ -744,6 +744,10 @@
         Heat: 0.80
         Radiation: 0.80
         Caustic: 0.95
+  - type: ThermalVision
+    isEquipment: true
+    color: "#98EEFB"
+    lightRadius: 15
 
 #MISC. HARDSUITS
 #Clown Hardsuit

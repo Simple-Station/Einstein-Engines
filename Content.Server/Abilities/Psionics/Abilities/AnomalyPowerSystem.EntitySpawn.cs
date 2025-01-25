@@ -66,7 +66,7 @@ public sealed partial class AnomalyPowerSystem
                         component.CurrentDampening,
                         component.CurrentAmplification,
                         entry.Settings,
-                        _glimmerSystem.Glimmer / 1000,
+                        _glimmerSystem.GlimmerOutput / 1000,
                         component.CurrentAmplification,
                         component.CurrentAmplification);
 

@@ -11,6 +11,8 @@
         reagents:
         - ReagentId: MindbreakerToxin
           Quantity: 20
+  - type: GuideHelp
+    guides: [ Mindbreaking ]
 
 - type: entity
   name: cryptobiolin
@@ -25,3 +27,45 @@
         reagents:
         - ReagentId: Cryptobiolin
           Quantity: 20
+  - type: GuideHelp
+    guides: [ PsionicInsulation ]
+
+- type: entity
+  parent: PillCanister
+  id: PillCanisterCryptobiolin
+  suffix: Cryptobiolin, 5
+  components:
+  - type: Label
+    currentLabel: Cryptobiolin 20u
+  - type: StorageFill
+    contents:
+    - id: PillCryptobiolin
+      amount: 5
+  - type: GuideHelp
+    guides: [ PsionicInsulation ]
+
+- type: entity
+  name: chloral-hydrate
+  parent: Pill
+  id: PillChloralHydrate
+  description: A powerful sedative.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: ChloralHydrate
+          Quantity: 20
+
+- type: entity
+  parent: PillCanister
+  id: PillCanisterChloralHydrate
+  suffix: ChloralHydrate, 5
+  components:
+  - type: Label
+    currentLabel: chloral-hydrate 20u
+  - type: StorageFill
+    contents:
+    - id: PillChloralHydrate
+      amount: 5

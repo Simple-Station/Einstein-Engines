@@ -52,20 +52,22 @@ public sealed partial class TelepathicChatSystem : EntitySystem
     private IEnumerable<INetChannel> GetAdminClients()
     {
         return _adminManager.ActiveAdmins
-            .Select(p => p.ConnectedClient);
+            .Select(p => p.Channel);
     }
 
     private List<INetChannel> GetDreamers(IEnumerable<INetChannel> removeList)
     {
+        var filteredList = new List<INetChannel>();
         var filtered = Filter.Empty()
             .AddWhereAttachedEntity(entity =>
                 HasComp<PsionicComponent>(entity) && !HasComp<TelepathyComponent>(entity)
                 || HasComp<SleepingComponent>(entity)
                 || HasComp<SeeingRainbowsComponent>(entity) && !HasComp<PsionicsDisabledComponent>(entity) && !HasComp<PsionicInsulationComponent>(entity))
             .Recipients
-            .Select(p => p.ConnectedClient);
+            .Select(p => p.Channel);
 
-        var filteredList = filtered.ToList();
+        if (filtered.ToList() != null)
+            filteredList = filtered.ToList();
 
         foreach (var entity in removeList)
             filteredList.Remove(entity);
@@ -115,11 +117,11 @@ public sealed partial class TelepathicChatSystem : EntitySystem
         }
 
         if (_random.Prob(0.1f))
-            _glimmerSystem.Glimmer++;
+            _glimmerSystem.DeltaGlimmerInput(1);
 
-        if (_random.Prob(Math.Min(0.33f + (float) _glimmerSystem.Glimmer / 1500, 1)))
+        if (_random.Prob(Math.Min(0.33f + (float) _glimmerSystem.GlimmerOutput / 1500, 1)))
         {
-            float obfuscation = 0.25f + (float) _glimmerSystem.Glimmer / 2000;
+            float obfuscation = 0.25f + (float) _glimmerSystem.GlimmerOutput / 2000;
             var obfuscated = ObfuscateMessageReadability(message, obfuscation);
             _chatManager.ChatMessageToMany(ChatChannel.Telepathic, obfuscated, messageWrap, source, hideChat, false, GetDreamers(clients.normal.Concat(clients.psychog)), Color.PaleVioletRed);
         }
@@ -134,7 +136,7 @@ public sealed partial class TelepathicChatSystem : EntitySystem
 
         for (var i = 0; i < message.Length; i++)
         {
-            if (char.IsWhiteSpace((modifiedMessage[i])))
+            if (char.IsWhiteSpace(modifiedMessage[i]))
             {
                 continue;
             }

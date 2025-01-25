@@ -57,6 +57,16 @@
       collection: IanBark
 
 - type: entity
+  parent: ClothingBackpackIan
+  id: ClothingBackpackIanFilled
+  name: Ian's backpack
+  description: Sometimes he wears it.
+  components:
+  - type: StorageFill
+    contents:
+      - id: Flash
+
+- type: entity
   parent: ClothingBackpack
   id: ClothingBackpackSecurity
   name: security backpack
@@ -266,6 +276,16 @@
   components:
   - type: Sprite
     sprite: Clothing/Back/Backpacks/ertchaplain.rsi
+
+- type: entity
+  parent: ClothingBackpackERTSecurity
+  id: ClothingBackpackDeathSquad
+  name: death squad backpack
+  description: Holds the kit of CentComm's most feared agents.
+  components:
+    - type: Storage
+      grid:
+      - 0,0,7,6
 
 #Syndicate
 - type: entity

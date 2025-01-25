@@ -14,6 +14,10 @@ using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
 using Content.Shared.Abilities.Psionics;
 using Content.Shared.Tag;
+using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Systems;
+using Content.Shared.Standing;
+
 
 namespace Content.Shared.Shadowkin;
 
@@ -24,6 +28,8 @@ public abstract class SharedEtherealSystem : EntitySystem
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly TagSystem _tag = default!;
+    [Dependency] private readonly StaminaSystem _stamina = default!;
+    [Dependency] private readonly StandingStateSystem _standingState = default!;
 
     public override void Initialize()
     {
@@ -75,12 +81,15 @@ public abstract class SharedEtherealSystem : EntitySystem
         _physics.SetCollisionMask(uid, fixture.Key, fixture.Value, component.OldMobMask, fixtures);
         _physics.SetCollisionLayer(uid, fixture.Key, fixture.Value, component.OldMobLayer, fixtures);
 
-        if (component.HasDoorBumpTag)
-            _tag.AddTag(uid, "DoorBumpOpener");
+        if (_cfg.GetCVar(CCVars.EtherealPassThrough))
+            if (component.HasDoorBumpTag)
+                _tag.AddTag(uid, "DoorBumpOpener");
     }
 
     private void OnMindbreak(EntityUid uid, EtherealComponent component, ref OnMindbreakEvent args)
     {
+        SpawnAtPosition("ShadowkinShadow", Transform(uid).Coordinates);
+        SpawnAtPosition("EffectFlashShadowkinDarkSwapOff", Transform(uid).Coordinates);
         RemComp(uid, component);
     }
 
@@ -88,7 +97,11 @@ public abstract class SharedEtherealSystem : EntitySystem
     {
         if (args.NewMobState == MobState.Critical
             || args.NewMobState == MobState.Dead)
+        {
+            SpawnAtPosition("ShadowkinShadow", Transform(uid).Coordinates);
+            SpawnAtPosition("EffectFlashShadowkinDarkSwapOff", Transform(uid).Coordinates);
             RemComp(uid, component);
+        }
     }
 
     private void OnShootAttempt(Entity<EtherealComponent> ent, ref ShotAttemptedEvent args)
@@ -124,7 +137,7 @@ public abstract class SharedEtherealSystem : EntitySystem
             || HasComp<EtherealComponent>(args.Target))
             return;
 
-        args.Cancel();
+        args.Cancelled = true;
         if (_gameTiming.InPrediction)
             return;
 

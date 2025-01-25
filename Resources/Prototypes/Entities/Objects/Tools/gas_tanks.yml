@@ -33,17 +33,21 @@
     maxIntensity: 20
   - type: MeleeWeapon
     wideAnimationRotation: 45
-    attackRate: 0.8
+    attackRate: 1.25
     range: 1.75
     damage:
       types:
         Blunt: 8
     bluntStaminaDamageFactor: 2.5
-    heavyRateModifier: 0.8
+    heavyRateModifier: 1.25
     heavyDamageBaseModifier: 1.5
     heavyStaminaCost: 10
     maxTargets: 3
     angle: 100
+    soundHit:
+      path: /Audio/Weapons/smash.ogg
+  - type: DamageOtherOnHit
+    staminaCost: 8
   - type: PhysicalComposition
     materialComposition:
       Steel: 185
@@ -58,7 +62,7 @@
   - type: Tool
     qualities:
     - Rolling
-    speed: 0.6 # fairly unwieldly but nice round surface
+    speedModifier: 0.6 # fairly unwieldly but nice round surface
 
 - type: entity
   parent: GasTankRoundBase
@@ -111,6 +115,8 @@
     damage:
       types:
         Blunt: 5
+  - type: DamageOtherOnHit
+    staminaCost: 3.5
   - type: PhysicalComposition
     materialComposition:
       Steel: 100
@@ -179,6 +185,8 @@
     damage:
       types:
         Blunt: 7.5
+  - type: DamageOtherOnHit
+    staminaCost: 5
 
 - type: entity
   parent: DoubleEmergencyOxygenTank

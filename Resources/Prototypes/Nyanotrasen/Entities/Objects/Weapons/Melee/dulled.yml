@@ -16,6 +16,10 @@
       types:
         Blunt: 5
         Slash: 1
+  - type: DamageOtherOnHit
+    staminaCost: 10
+  - type: ThrowingAngle
+    angle: 225
   - type: Item
     size: Normal
     sprite: Objects/Weapons/Melee/katana.rsi
@@ -31,11 +35,15 @@
     sprite: Objects/Weapons/Melee/claymore.rsi
     state: icon
   - type: MeleeWeapon
-    attackRate: 0.75
+    attackRate: 1.3333
     damage:
       types:
         Blunt: 6
         Slash: 1
+  - type: DamageOtherOnHit
+    staminaCost: 18
+  - type: ThrowingAngle
+    angle: 225
   - type: Item
     size: Normal
   - type: Clothing

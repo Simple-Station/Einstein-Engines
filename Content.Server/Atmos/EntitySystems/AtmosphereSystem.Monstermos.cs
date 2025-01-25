@@ -685,14 +685,14 @@ namespace Content.Server.Atmos.EntitySystems
             adj.MonstermosInfo[idx.ToOppositeDir()] -= amount;
         }
 
-        private void HandleDecompressionFloorRip(MapGridComponent mapGrid, TileAtmosphere tile, float delta)
+        private void HandleDecompressionFloorRip(MapGridComponent mapGrid, TileAtmosphere tile, float sum)
         {
-            if (!mapGrid.TryGetTileRef(tile.GridIndices, out var tileRef))
+            if (!MonstermosRipTiles)
                 return;
-            var tileref = tileRef.Tile;
 
-            var tileDef = (ContentTileDefinition) _tileDefinitionManager[tileref.TypeId];
-            if (!tileDef.Reinforced && tileDef.TileRipResistance < delta * MonstermosRipTilesPressureOffset)
+            var chance = MathHelper.Clamp(0.01f + sum / SpacingMaxWind * 0.3f, 0.003f, 0.3f);
+
+            if (sum > 20 && _robustRandom.Prob(chance))
                 PryTile(mapGrid, tile.GridIndices);
         }
 
