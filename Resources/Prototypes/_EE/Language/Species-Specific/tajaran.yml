@@ -6,7 +6,7 @@
   isVisibleLanguage: true
   speech:
     color: "#da954bee"
-    fontId: Noganas
+    fontId: Noganas # Rugged, like the people and the land
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 2 # this is mostly based on the name generator, 2-4 is there so it goes here too
@@ -116,8 +116,8 @@
   id: SiikTajr
   isVisibleLanguage: true
   speech:
-    color: "#da954bee" # TODO: change it
-    fontId: Noganas
+    color: "#f58c9aee" # Bright red, to push this energy through
+    fontId: Sriracha # relatively energetic, portraying the body movement I suppose
     allowRadio: true # It's actually ok, since message wrap overrides are broken for radio, yipee?
     requireSpeech: false
     messageWrapOverrides:
@@ -210,8 +210,8 @@
   id: YaSsa
   isVisibleLanguage: true
   speech:
-    color: "#da954bee" # TODO: change it
-    fontId: Noganas
+    color: "#9a69f5ee" # More or less the color of nobility
+    fontId: GrenzeGotisch # Old and distinguished, but not unreadable
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 3 
@@ -289,8 +289,8 @@
   id: Delvahii
   isVisibleLanguage: true
   speech:
-    color: "#da954bee" # TODO: change it
-    fontId: Noganas
+    color: "#b1c472ee" # Green, color of grass, of change, and of spring
+    fontId: RubikDirt # Aptly named
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 2 
