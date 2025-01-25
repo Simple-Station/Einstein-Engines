@@ -259,7 +259,7 @@ public static class SkinColor
 
         hsv.X = Math.Clamp(hsv.X, MinAnimalFurHue, MaxAnimalFurHue);
         hsv.Y = Math.Clamp(hsv.Y, MinAnimalFurSaturation, MaxAnimalFurSaturation);
-        hsv.Z = Math.Clamp(hsv.Z, MaxAnimalFurValue, MinAnimalFurValue);
+        hsv.Z = Math.Clamp(hsv.Z, MinAnimalFurValue, MaxAnimalFurValue);
 
         return Color.FromHsv(hsv);
     }
