@@ -418,6 +418,9 @@
   id: ClothMade
 
 - type: Tag
+  id: ClothingHeadHelmetBasic
+
+- type: Tag
   id: ClownMask
 
 - type: Tag
@@ -1270,6 +1273,9 @@
   id: Steak
 
 - type: Tag
+  id: Stunbaton
+
+- type: Tag
   id: SubdermalImplant
 
 - type: Tag
@@ -1367,6 +1373,9 @@
 
 - type: Tag
   id: WeaponAntiqueLaser
+
+- type: Tag
+  id: WeaponDisabler
 
 - type: Tag
   id: WeaponPistolCHIMPUpgradeKit

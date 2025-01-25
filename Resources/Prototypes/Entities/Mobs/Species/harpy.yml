@@ -143,6 +143,7 @@
 
 - type: entity
   save: false
+  categories: [ HideSpawnMenu ]
   name: Urist McBirb
   parent: MobHumanDummy
   id: MobHarpyDummy

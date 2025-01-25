@@ -166,7 +166,7 @@
   license: "CC0-1.0"
   copyright: "by Ko4erga"
   source: "https://github.com/space-wizards/space-station-14/pull/30431"
-  
+
 - files: ["double_ring.ogg"]
   license: "CC0-1.0"
   copyright: "Created by fspera, converted to OGG and modified by chromiumboy."
@@ -180,3 +180,8 @@
   license: "CC0-1.0"
   copyright: "by ScarKy0"
   source: "https://github.com/space-wizards/space-station-14/pull/32012"
+
+- files: ["scanbuzz.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from TG station"
+  source: "https://github.com/tgstation/tgstation/pull/39986"
