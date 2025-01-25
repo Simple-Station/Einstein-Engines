@@ -11,6 +11,14 @@
     requiredLegs: 2
   - type: Damageable
     damageModifierSet: Tajaran
+  - type: NightVision
+    color: "#808080"
+    activateSound: null
+    deactivateSound: null
+  - type: Flashable
+    eyeDamageChance: 0.3
+    eyeDamage: 1
+    durationMultiplier: 1.5
 
 - type: entity
   save: false
