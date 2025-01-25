@@ -1,5 +1,5 @@
 # hasn't specified or all
-* @sleepyyapril @VMSolidus @Remuchi
+* @sleepyyapril @Remuchi
 
 /.* @DEATHB4DEFEAT
 *.sln @DEATHB4DEFEAT
@@ -95,3 +95,13 @@
 /Content.*/ProjectileSystem @angelofallars
 /Content.*/ThrownItem @angelofallars
 /Content.*/ThrowEvent @angelofallars
+
+# Nyano Systems
+/Content.*/Weapons @VMSolidus
+/Content.*/Abilities/Psionics @VMSolidus
+/Content.*/Psionics @VMSolidus
+/Content.*/Contests @VMSolidus
+/Content.*/Carrying @VMSolidus
+
+# Physics Stuff
+/Content.*/Atmos @VMSolidus
