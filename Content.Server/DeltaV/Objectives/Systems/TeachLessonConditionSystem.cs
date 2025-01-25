@@ -34,10 +34,15 @@ public sealed class TeachLessonConditionSystem : EntitySystem
         // Get all TeachLessonConditionComponent entities
         var query = EntityQueryEnumerator<TeachLessonConditionComponent, TargetObjectiveComponent>();
 
-        while (query.MoveNext(out var uid, out _, out var targetObjective))
+        while (query.MoveNext(out var uid, out conditionComp, out var targetObjective))
         {
             // Check if this objective's target matches the entity that died
             if (targetObjective.Target != mindId)
+                continue;
+                
+            var distance = (Transform(uid).WorldPosition - Transform(args.Target).WorldPosition).Length;
+            if (distance > conditionComp.MaxDistance
+                || Transform(uid).MapID != Transform(args.Target).MapID)
                 continue;
 
             _codeCondition.SetCompleted(uid);
