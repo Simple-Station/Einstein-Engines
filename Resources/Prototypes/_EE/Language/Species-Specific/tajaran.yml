@@ -78,7 +78,7 @@
 # Tajaran sign language. Crucially, only tajara can "speak" it, due to need for tajara body language
 # (if they cut off your tail or ears you shouldn't be able to speak it, but well)
 - type: language
-  id: TajaraSign
+  id: NalRasan
   speech:
     allowRadio: false
     requireSpeech: false
@@ -87,11 +87,11 @@
       Speak: chat-sign-language-message-wrap
       Whisper: chat-sign-language-whisper-wrap
     speechVerbOverrides:
-    - chat-speech-verb-sign-tajaran-1
-    - chat-speech-verb-sign-tajaran-2
-    - chat-speech-verb-sign-tajaran-3
-    - chat-speech-verb-sign-tajaran-4
-    - chat-speech-verb-sign-tajaran-5
+    - chat-speech-verb-sign-nalrasan-1
+    - chat-speech-verb-sign-nalrasan-2
+    - chat-speech-verb-sign-nalrasan-3
+    - chat-speech-verb-sign-nalrasan-4
+    - chat-speech-verb-sign-nalrasan-5
     - chat-speech-verb-sign-1 # this can be actually reused! should look fine, but still distinct
     - chat-speech-verb-sign-2
     # - chat-speech-verb-sign-3 # except for this one
