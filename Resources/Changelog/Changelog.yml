@@ -10701,3 +10701,14 @@ Entries:
   id: 6759
   time: '2025-01-25T17:29:37.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1650
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Engineering Hardsuits, Maxim Hardsuit, and Cybersun's Elite Tacsuit now
+        all make the wearer immune to atmos fires. Have fun walking directly
+        into the supermatter engine. Play out your heroic engineer fantasy by
+        dragging the supermatter crystal to space in order to save the station.
+  id: 6760
+  time: '2025-01-25T17:31:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1445
