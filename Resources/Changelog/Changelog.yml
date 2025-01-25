@@ -10737,3 +10737,10 @@ Entries:
   id: 6763
   time: '2025-01-25T20:38:25.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1654
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Fixed melee weapons having the wrong attack speed calculations(again)
+  id: 6764
+  time: '2025-01-25T20:39:09.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1653
