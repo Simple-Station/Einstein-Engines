@@ -58,8 +58,8 @@ public sealed class LungSystem : EntitySystem
     {
         if (_solutionContainerSystem.EnsureSolution(entity.Owner, entity.Comp.SolutionName, out var solution))
         {
-            solution.MaxVolume = 100.0f;
-            solution.CanReact = false; // No dexalin lungs
+            solution.MaxVolume = entity.Comp.MaxVolume;
+            solution.CanReact = entity.Comp.CanReact;
         }
     }
 
