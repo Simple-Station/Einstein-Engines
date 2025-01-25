@@ -36,7 +36,6 @@
     Tail: MobHumanoidAnyMarking # Nyanotrasen - Felinid
     HeadTop: MobHumanoidAnyMarking # Nyanotrasen - Felinid & Oni
     HeadSide: MobHumanoidAnyMarking
-    Wings: MobHumanoidAnyMarking # For Oni wings
 
 - type: markingPoints
   id: MobHumanMarkingLimits

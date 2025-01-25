@@ -1,0 +1,91 @@
+- type: marking
+  id: HumanHairArabicGathered
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: hair-arabicgatheredhair
+- type: marking
+  id: HumanHairClassicHair
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: hair-classichairmale
+- type: marking
+  id: HumanHairSideComb
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: hair-combedfromside
+- type: marking
+  id: HumanHairLong4
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: hair-longhair
+- type: marking
+  id: HumanHairManbun2
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: hair-manbunold
+- type: marking
+  id: HumanHairPigtailTajaran
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: hair-pigtailtajaran
+- type: marking
+  id: HumanHairShavedSide
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: hair-shavedside
+- type: marking
+  id: HumanHairShorthair8
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: hair-shorthaired
+- type: marking
+  id: HumanFembun
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: hair-womenbun
+- type: marking
+  id: HumanHairAfricanPigtails
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+    - sprite: _Corvax/Mobs/Customization/human_hair.rsi
+      state: africanpigtails
+- type: marking
+  id: HumanHairAfropuffDouble
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+    - sprite: _Corvax/Mobs/Customization/human_hair.rsi
+      state: afropuffdouble
+- type: marking
+  id: HumanHairAfropuffLeft
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+    - sprite: _Corvax/Mobs/Customization/human_hair.rsi
+      state: afropuffleft
+- type: marking
+  id: HumanHairAfropuffRight
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+    - sprite: _Corvax/Mobs/Customization/human_hair.rsi
+      state: afropuffright
