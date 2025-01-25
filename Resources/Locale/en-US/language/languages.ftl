@@ -64,9 +64,6 @@ language-Sign-description = TCB-SL for short, this sign language is prevalent am
 language-Marish-name = Marish
 language-Marish-description =  A language spoken only by Shadowkin, one that is unable to be replicated by normal tongues.
 
-language-Empathy-name = Empathy
-language-Empathy-description = An inherently empathic language, it could be described as a way for Shadowkin to communicate with one another telepathically.
-
 language-ValyrianStandard-name = Valyrian Standard
 language-ValyrianStandard-description =
     A language descended from eastern european languages of old earth - Valyrian Standard is the commonly spoken tongue of Harpies brought up on their homeworld of Valyrian 4b

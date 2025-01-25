@@ -2,11 +2,6 @@
   save: false
   parent:
     - BaseMobSpeciesOrganic
-    - MobBloodstream
-    - MobAtmosStandard
-    - MobFlammable
-    - BaseMobSpecies
-    - MobRespirator
   id: MobShadowkinBase
   name: Urist McShadow
   abstract: true
@@ -228,15 +223,16 @@
     - type: Shadowkin
     - type: Psionic
       mindbreakingFeedback: shadowkin-blackeye
+     - type: InnatePsionicPowers
+      powersToAdd:
+        - TelepathyPower
     - type: LanguageKnowledge
       speaks:
         - TauCetiBasic
         - Marish
-        - Empathy
       understands:
         - TauCetiBasic
         - Marish
-        - Empathy
     - type: PotentiaModifier
       potentiaMultiplier: 1.25
     - type: Tag
