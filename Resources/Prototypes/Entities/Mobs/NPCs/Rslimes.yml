@@ -219,69 +219,69 @@
         state: alive
         color: "#c6c8cc"
 
-- type: entity
-  id: reagentslimeVents
-  parent: BaseGameRule
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: StationEvent
-    startAnnouncement: true
-    earliestStart: 20
-    reoccurrenceDelay: 12
-    minimumPlayers: 30
-    weight: 6 # Really weak compared to other critters
-    duration: 60
-  - type: VentCrittersRule
-    entries:
-    - id: ReagentSlimeBeer
-      prob: 0.003
-    - id: ReagentSlimePax
-      prob: 0.001
-    - id: ReagentSlimeNocturine
-      prob: 0.001
-    - id: ReagentSlimeTHC
-      prob: 0.002
-    - id: ReagentSlimeBicaridine
-      prob: 0.002
-    - id: ReagentSlimeToxin
-      prob: 0.002
-    - id: ReagentSlimeNapalm
-      prob: 0.002
-    - id: ReagentSlimeOmnizine
-      prob: 0.003
-    - id: ReagentSlimeMuteToxin
-      prob: 0.002
-    - id: ReagentSlimeNorepinephricAcid
-      prob: 0.002
-    - id: ReagentSlimeEphedrine
-      prob: 0.002
-    - id: ReagentSlimeRobustHarvest
-      prob: 0.003
-    - id: ReagentSlimeIchor
-      prob: 0.002
-    - id: ReagentSlimeBleach
-      prob: 0.002
-    - id: ReagentSlimeSoap
-      prob: 0.002
-    - id: ReagentSlimeSpacelube
-      prob: 0.002
-    - id: ReagentSlimeBuzzachloricbees
-      prob: 0.002
-    - id: ReagentSlimeWehjuice
-      prob: 0.003
-    - id: ReagentCognizine
-      prob: 0.003
-    - id: ReagentSlimeNecrosol
-      prob: 0.002
-    - id: ReagentSlimeSpaceDrugs
-      prob: 0.003
-    - id: ReagentSlimeUnstableMutagen
-      prob: 0.001
-    - id: ReagentSlimeLead
-      prob: 0.001
-    - id: ReagentSlimechlorinetriflouride
-      prob: 0.002
-    - id: ReagentSlimePotassium
-      prob: 0.002
-    - id: ReagentSlimeLotophagoiOil
-      prob: 0.001
+# - type: entity
+#   id: reagentslimeVents
+#   parent: BaseGameRule
+#   categories: [ HideSpawnMenu ]
+#   components:
+#   - type: StationEvent
+#     startAnnouncement: true
+#     earliestStart: 20
+#     reoccurrenceDelay: 12
+#     minimumPlayers: 30
+#     weight: 6 # Really weak compared to other critters
+#     duration: 60
+#   - type: VentCrittersRule
+#     table: 
+#     - id: ReagentSlimeBeer
+#       weight: 0.04
+#     - id: ReagentSlimePax
+#       weight: 0.01
+#     - id: ReagentSlimeNocturine
+#       weight: 0.01
+#     - id: ReagentSlimeTHC
+#       weight: 0.04
+#     - id: ReagentSlimeBicaridine
+#       weight: 0.04
+#     - id: ReagentSlimeToxin
+#       weight: 0.04
+#     - id: ReagentSlimeNapalm
+#       weight: 0.01
+#     - id: ReagentSlimeOmnizine
+#       weight: 0.01
+#     - id: ReagentSlimeMuteToxin
+#       weight: 0.01
+#     - id: ReagentSlimeNorepinephricAcid
+#       weight: 0.04
+#     - id: ReagentSlimeEphedrine
+#       weight: 0.04
+#     - id: ReagentSlimeRobustHarvest
+#       weight: 0.04
+#     - id: ReagentSlimeIchor
+#       weight: 0.02
+#     - id: ReagentSlimeBleach
+#       weight: 0.03
+#     - id: ReagentSlimeSoap
+#       weight: 0.04
+#     - id: ReagentSlimeSpacelube
+#       weight: 0.20
+#     - id: ReagentSlimeBuzzachloricbees
+#       weight: 0.04
+#     - id: ReagentSlimeWehjuice
+#       weight: 0.04
+#     - id: ReagentCognizine
+#       weight: 0.01
+#     - id: ReagentSlimeNecrosol
+#       weight: 0.01
+#     - id: ReagentSlimeSpaceDrugs
+#       weight: 0.01
+#     - id: ReagentSlimeUnstableMutagen
+#       weight: 0.04
+#     - id: ReagentSlimeLead
+#       weight: 0.04
+#     - id: ReagentSlimechlorinetriflouride
+#       weight: 0.04
+#     - id: ReagentSlimePotassium
+#       weight: 0.04
+#     - id: ReagentSlimeLotophagoiOil
+#       weight: 0.04
