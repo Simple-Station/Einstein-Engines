@@ -72,12 +72,11 @@
     understands:
     - TauCetiBasic
     - Nekomimetic
-  # Einstein Engines - removed, Tajaran parent from this
-  # - type: Thieving
-  #   ignoreStripHidden: true
-  #   stealth: Subtle
-  #   stripTimeReduction: 0
-  #   stripTimeMultiplier: 0.667
+  - type: Thieving
+    ignoreStripHidden: true
+    stealth: Subtle
+    stripTimeReduction: 0
+    stripTimeMultiplier: 0.667
   - type: StepTriggerImmune
     whitelist:
       types:

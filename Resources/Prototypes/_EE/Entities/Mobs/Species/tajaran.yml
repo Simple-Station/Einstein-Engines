@@ -38,10 +38,10 @@
     spawned:
     - id: FoodMeatHuman
       amount: 5
-  - type: TemperatureProtection
+  - type: TemperatureProtection # fur is a good insulator, actually
     coefficient: 0.1
   - type: Flammable
-    fireStackIncreaseMultiplier: 1.35
+    fireStackIncreaseMultiplier: 1.35 # until you light it up, cuz it's oily too
   - type: NightVision
     color: "#808080"
     activateSound: null
@@ -104,6 +104,14 @@
     - DoorBumpOpener
     - FelinidEmotes
   - type: FootPrints
+  - type: Temperature
+    coldDamageThreshold: 248.15 # -25 degrees centigrade, like 12 degrees below normal
+    currentTemperature: 311.76  # Body temperature of cat
+    heatDamage:
+      types:
+        Heat: 2 # poor kitty
+  - type: ThermalRegulator
+    normalBodyTemperature: 311.76
 
 
 - type: entity

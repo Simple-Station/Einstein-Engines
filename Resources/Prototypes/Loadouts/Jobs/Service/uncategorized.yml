@@ -23,7 +23,7 @@
               sex: Male
             - !type:CharacterSpeciesRequirement
               species:
-                - Tajaran # Einstein Engines
+                - Felinid
             - !type:CharacterHeightRequirement
               min: 110
               max: 122

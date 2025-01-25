@@ -138,7 +138,7 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
-        # - Felinid
+        - Felinid
         - Tajaran
   functions:
     - !type:TraitModifyStamina
@@ -249,7 +249,7 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
-        # - Felinid
+        - Felinid
         - Tajaran
     - !type:CharacterTraitRequirement
       inverted: true
@@ -273,7 +273,7 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
-        # - Felinid
+        - Felinid
         - Tajaran
     - !type:CharacterTraitRequirement
       inverted: true
@@ -325,7 +325,7 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
-        #- Felinid # Felinids/Tajaran already have this feature by default.
+        - Felinid # Felinids/Tajaran already have this feature by default.
         - Tajaran
     - !type:CharacterHeightRequirement
       max: 150
@@ -398,7 +398,7 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
-        # - Felinid # Felinids already have cat claws.
+        - Felinid # Felinids already have cat claws.
         - Tajaran # Tajaran also have cat claws
         - Reptilian # Reptilians also have cat claws.
         - Shadowkin # Shadowkins also have claws.
