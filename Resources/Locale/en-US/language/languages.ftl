@@ -73,6 +73,11 @@ language-ValyrianStandard-description =
     It is rarely spoken outside of the worlds of its native speakers, and has in modern times been supplanted by the 'Conlangs of the Sol Alliance.
     Its speakers are those who wish to uphold the traditions and beliefs of ancient peoples from before the colonial era.
 
+language-Chittin-name = Chittin
+language-Chittin-description = 
+    A language consisting of clicks, buzzes, and some variety of harsh insect sounds.
+    Most of what makes up their speech comes from their antennae, making it a near-impossible language for those without to learn.
+
 # Animal Languages
 
 language-Cat-name = Cat
