@@ -61,5 +61,5 @@
   markingCategory: Tail
   speciesRestriction: [Oni]
   sprites:
-    - sprite: _ADT/Mobs/Customization/Demon/succubus.rsi
-      state: succubus
+  - sprite: _ADT/Mobs/Customization/Demon/succubus.rsi
+    state: succubus

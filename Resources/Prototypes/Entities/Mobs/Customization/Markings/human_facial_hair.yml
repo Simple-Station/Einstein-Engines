@@ -244,14 +244,14 @@
     - sprite: Mobs/Customization/human_facial_hair.rsi
       state: sideburn
 - type: marking
-  id: HumanFacialHairChin
+  id: HumanFacialHairChin2
   bodyPart: FacialHair
   markingCategory: FacialHair
   sprites:
   - sprite: _ADT/Mobs/Customization/Human/custom.rsi
     state: beard-beardchin
 - type: marking
-  id: HumanFacialHairLong
+  id: HumanFacialHairSuperLong
   bodyPart: FacialHair
   markingCategory: FacialHair
   sprites:
@@ -286,7 +286,7 @@
   - sprite: _ADT/Mobs/Customization/Human/custom.rsi
     state: beard-bristle
 - type: marking
-  id: HumanFacialHairMustacheWithStubble
+  id: HumanFacialHairMoustacheWithStubble
   bodyPart: FacialHair
   markingCategory: FacialHair
   sprites:
@@ -314,7 +314,7 @@
     - sprite: _Corvax/Mobs/Customization/human_facial_hair.rsi
       state: handlebar
 - type: marking
-  id: HumanFacialHairHandlebarAlt
+  id: HumanFacialHairHandlebar2
   bodyPart: FacialHair
   markingCategory: FacialHair
   sprites:

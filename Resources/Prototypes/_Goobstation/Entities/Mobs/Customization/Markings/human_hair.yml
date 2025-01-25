@@ -7,21 +7,21 @@
     - sprite: _Goobstation/Mobs/Customization/human_hair.rsi
       state: braidedExtensions
 
-# - type: marking
-#   id: HumanHairCometTail
-#   bodyPart: Hair
-#   markingCategory: Hair
-#   sprites:
-#     - sprite: _Goobstation/Mobs/Customization/human_hair.rsi
-#       state: cometTail
+- type: marking
+  id: HumanHairCometTail
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+    - sprite: _Goobstation/Mobs/Customization/human_hair.rsi
+      state: cometTail
 
-# - type: marking
-#   id: HumanHairFantasyHair
-#   bodyPart: Hair
-#   markingCategory: Hair
-#   sprites:
-#     - sprite: _Goobstation/Mobs/Customization/human_hair.rsi
-#       state: fantasyHair
+- type: marking
+  id: HumanHairFantasyHair
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+    - sprite: _Goobstation/Mobs/Customization/human_hair.rsi
+      state: fantasyHair
 
 - type: marking
   id: HumanHairFlatTwistsUpdo
@@ -111,13 +111,13 @@
     - sprite: _Goobstation/Mobs/Customization/human_hair.rsi
       state: longCurvy
 
-# - type: marking
-#   id: HumanHairLongPompadour
-#   bodyPart: Hair
-#   markingCategory: Hair
-#   sprites:
-#     - sprite: _Goobstation/Mobs/Customization/human_hair.rsi
-#       state: longPompadour
+- type: marking
+  id: HumanHairLongPompadour
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+    - sprite: _Goobstation/Mobs/Customization/human_hair.rsi
+      state: longPompadour
 
 - type: marking
   id: HumanHairMediumCurls
@@ -199,13 +199,13 @@
     - sprite: _Goobstation/Mobs/Customization/human_hair.rsi
       state: shoulderLengthBraid
 
-# - type: marking
-#   id: HumanHairSideSpike
-#   bodyPart: Hair
-#   markingCategory: Hair
-#   sprites:
-#     - sprite: _Goobstation/Mobs/Customization/human_hair.rsi
-#       state: sideSpike
+- type: marking
+  id: HumanHairSideSpike
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+    - sprite: _Goobstation/Mobs/Customization/human_hair.rsi
+      state: sideSpike
 
 - type: marking
   id: HumanHairSpaceLoops

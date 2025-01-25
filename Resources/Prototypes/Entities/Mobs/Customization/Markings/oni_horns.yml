@@ -642,15 +642,6 @@
     state: dark_crown
 
 - type: marking
-  id: OniHornDevilPrimeSi1
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Oni]
-  sprites:
-  - sprite: _ADT/Mobs/Customization/Demon/size_horns32x64.rsi
-    state: devil_prime1_s
-
-- type: marking
   id: OniHornDevilPrime1
   bodyPart: HeadTop
   markingCategory: HeadTop
@@ -669,6 +660,15 @@
     state: devil_prime2
 
 - type: marking
+  id: OniHornDevilPrime3
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Oni]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Demon/size_horns32x64.rsi
+    state: devil_prime1_s
+
+- type: marking
   id: OniHornFat
   bodyPart: HeadTop
   markingCategory: HeadTop
@@ -678,7 +678,7 @@
     state: fat_horn
 
 - type: marking
-  id: OniHornSimple1
+  id: OniHornFool
   bodyPart: HeadTop
   markingCategory: HeadTop
   sprites:
@@ -686,7 +686,7 @@
     state: horn1
 
 - type: marking
-  id: OniHornSimple2
+  id: OniHornDemon
   bodyPart: HeadTop
   markingCategory: HeadTop
   sprites:
@@ -694,7 +694,7 @@
     state: horn2
 
 - type: marking
-  id: OniHornSimple3
+  id: OniHornCunningOne
   bodyPart: HeadTop
   markingCategory: HeadTop
   sprites:
@@ -702,7 +702,7 @@
     state: horn3
 
 - type: marking
-  id: OniHornSimple4
+  id: OniHornImp
   bodyPart: HeadTop
   markingCategory: HeadTop
   sprites:
@@ -710,7 +710,7 @@
     state: horn4
 
 - type: marking
-  id: OniHornSimple5
+  id: OniHornShaitan
   bodyPart: HeadTop
   markingCategory: HeadTop
   sprites:
@@ -718,7 +718,7 @@
     state: horn5
 
 - type: marking
-  id: OniHornSimple6
+  id: OniHornAccursed
   bodyPart: HeadTop
   markingCategory: HeadTop
   sprites:
