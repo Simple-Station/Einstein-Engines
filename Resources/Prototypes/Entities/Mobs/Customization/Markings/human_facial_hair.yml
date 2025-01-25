@@ -300,13 +300,6 @@
   - sprite: _ADT/Mobs/Customization/Human/custom.rsi
     state: beard-thickbristle
 - type: marking
-  id: HumanFacialHairGoatee
-  bodyPart: FacialHair
-  markingCategory: FacialHair
-  sprites:
-  - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
-    state: goatee
-- type: marking
   id: HumanFacialHairHandlebar
   bodyPart: FacialHair
   markingCategory: FacialHair

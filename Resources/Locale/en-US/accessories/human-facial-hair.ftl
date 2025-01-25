@@ -41,6 +41,5 @@ marking-HumanFacialHairViking = Beard (Viking)
 marking-HumanFacialHairBristle = Beard (Bristle)
 marking-HumanFacialHairMoustacheWithStubble = Moustache (Stubble)
 marking-HumanFacialHairThickBristle = Beard (Thick Bristle)
-marking-HumanFacialHairGoatee = Beard (Goatee) 2
 marking-HumanFacialHairHandlebar = Moustache (Handlebar)
 marking-HumanFacialHairHandlebar2 = Moustache (Handlebar) 2
