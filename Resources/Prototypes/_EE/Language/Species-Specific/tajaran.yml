@@ -83,43 +83,61 @@
     allowRadio: false
     requireSpeech: false
     color: "#dddddd"
-    messageWrapOverrides: # TODO: replace this, it's not working as intended
-      Speak: chat-sign-language-message-wrap
-      Whisper: chat-sign-language-whisper-wrap
+    messageWrapOverrides:
+      Speak: chat-sign-nalrasan-language-message-wrap
+      Whisper: chat-sign-nalrasan-language-whisper-wrap
     speechVerbOverrides:
     - chat-speech-verb-sign-nalrasan-1
     - chat-speech-verb-sign-nalrasan-2
     - chat-speech-verb-sign-nalrasan-3
     - chat-speech-verb-sign-nalrasan-4
     - chat-speech-verb-sign-nalrasan-5
-    - chat-speech-verb-sign-1 # this can be actually reused! should look fine, but still distinct
-    - chat-speech-verb-sign-2
-    # - chat-speech-verb-sign-3 # except for this one
+    - chat-speech-verb-sign-nalrasan-6
+    - chat-speech-verb-sign-nalrasan-7
+    - chat-speech-verb-sign-nalrasan-8
+    - chat-speech-verb-sign-nalrasan-9
+    - chat-speech-verb-sign-nalrasan-10
+    - chat-speech-verb-sign-nalrasan-11
+    - chat-speech-verb-sign-nalrasan-12
+    - chat-speech-verb-sign-nalrasan-13
+    - chat-speech-verb-sign-nalrasan-14
+    - chat-speech-verb-sign-nalrasan-15
+    - chat-speech-verb-sign-nalrasan-16
+    - chat-speech-verb-sign-nalrasan-17
   obfuscation:
     !type:ReplacementObfuscation
     replacement:
-    - "something"
-    - "a cryptic message"
-    - "a message"
-    - "a signal"
-    - "with intent"
+    - "" # basically we can't get around this, so let's pretend that it's alright while crying
 
 # One of 5 languages that Tajara could speak, this one is Tajara exclusive, and get some cool stuff thanks to that (non-verbal element)
 # Short name is Tajr
 # To quote: "Language native to the Tajara, it employs both verbal and non-verbal elements"
-# TODO: make it actually work as intended!!!
 - type: language
   id: SiikTajr
   isVisibleLanguage: true
   speech:
     color: "#da954bee" # TODO: change it
     fontId: Noganas
-    allowRadio: false # It's kinda a mess since it can let the sign symbols through on radio otherwise, so uh, TODO
+    allowRadio: true # It's actually ok, since message wrap overrides are broken for radio, yipee?
     requireSpeech: false
+    messageWrapOverrides:
+      Speak: chat-sign-siiktajr-language-message-wrap
+      Whisper: chat-sign-siiktajr-language-whisper-wrap
+    speechVerbOverrides:
+    - chat-speech-verb-sign-siiktajr-1
+    - chat-speech-verb-sign-siiktajr-2
+    - chat-speech-verb-sign-siiktajr-3
+    - chat-speech-verb-sign-siiktajr-4
+    - chat-speech-verb-sign-siiktajr-5
+    - chat-speech-verb-sign-siiktajr-6
+    - chat-speech-verb-sign-siiktajr-7
+    - chat-speech-verb-sign-siiktajr-8
+    - chat-speech-verb-sign-siiktajr-9
+    - chat-speech-verb-sign-siiktajr-10
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 2 
-    maxSyllables: 3 # in order to make it more interesting, this one will use shorter syllabes, since there's the nonverbal element too
+    maxSyllables: 3 # shorter cuz dual lingo i suppose
     replacement:
     - mrr
     - rr
