@@ -98,11 +98,11 @@
   obfuscation:
     !type:ReplacementObfuscation
     replacement:
-    - ""
-    - " briefly"
-    - " a few times"
-    - " several times in quick succession"
-    - " for a while"
+    - "something"
+    - "a cryptic message"
+    - "a message"
+    - "a signal"
+    - "with intent"
 
 # One of 5 languages that Tajara could speak, this one is Tajara exclusive, and get some cool stuff thanks to that (non-verbal element)
 # Short name is Tajr
