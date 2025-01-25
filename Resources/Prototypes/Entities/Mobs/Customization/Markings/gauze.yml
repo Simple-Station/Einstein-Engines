@@ -226,7 +226,7 @@
   id: GauzeHead
   bodyPart: Head
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Moth]
+  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Felinid, Oni, Vulpkanin, Arachne, Lamia] # Delta V - Felinid, Oni, Vulpkanin # EE - Arachne, Lamia
   coloring:
     default:
       type:
