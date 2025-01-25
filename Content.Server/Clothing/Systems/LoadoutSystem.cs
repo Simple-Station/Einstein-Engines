@@ -34,10 +34,15 @@ public sealed class LoadoutSystem : EntitySystem
     [Dependency] private readonly ISerializationManager _serialization = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IComponentFactory _componentFactory = default!;
+    [Dependency] private readonly ILogManager _log = default!;
+
+    private ISawmill _sawmill = default!;
 
 
     public override void Initialize()
     {
+        _sawmill = _log.GetSawmill("loadouts");
+
         SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawnComplete);
     }
 
@@ -46,7 +51,7 @@ public sealed class LoadoutSystem : EntitySystem
     {
         if (ev.JobId == null || Deleted(ev.Mob) || !Exists(ev.Mob)
             || !HasComp<MetaDataComponent>(ev.Mob) // TODO: FIND THE STUPID RACE CONDITION THAT IS MAKING ME CHECK FOR THIS.
-            || !_protoMan.TryIndex<JobPrototype>(ev.JobId, out _)
+            || !_protoMan.TryIndex<JobPrototype>(ev.JobId, out var job)
             || !_configurationManager.GetCVar(CCVars.GameLoadoutsEnabled))
             return;
 
@@ -55,7 +60,8 @@ public sealed class LoadoutSystem : EntitySystem
             ev.JobId,
             ev.Profile,
             _playTimeTracking.GetTrackerTimes(ev.Player),
-            ev.Player.ContentData()?.Whitelisted ?? false);
+            ev.Player.ContentData()?.Whitelisted ?? false,
+            jobProto: job);
     }
 
 
@@ -66,29 +72,36 @@ public sealed class LoadoutSystem : EntitySystem
         HumanoidCharacterProfile profile,
         Dictionary<string, TimeSpan> playTimes,
         bool whitelisted,
-        bool deleteFailed = false)
+        bool deleteFailed = false,
+        JobPrototype? jobProto = null)
     {
         // Spawn the loadout, get a list of items that failed to equip
         var (failedLoadouts, allLoadouts) =
             _loadout.ApplyCharacterLoadout(uid, job, profile, playTimes, whitelisted, out var heirlooms);
 
         // Try to find back-mounted storage apparatus
-        if (!_inventory.TryGetSlotEntity(uid, "back", out var item) ||
-            !EntityManager.TryGetComponent<StorageComponent>(item, out var inventory))
-            return;
-
-        // Try inserting the entity into the storage, if it can't, it leaves the loadout item on the ground
-        foreach (var loadout in failedLoadouts)
-        {
-            if ((!EntityManager.TryGetComponent<ItemComponent>(loadout, out var itemComp)
-                    || !_storage.CanInsert(item.Value, loadout, out _, inventory, itemComp)
-                    || !_storage.Insert(item.Value, loadout, out _, playSound: false))
-                && deleteFailed)
-                EntityManager.QueueDeleteEntity(loadout);
-        }
+        if (_inventory.TryGetSlotEntity(uid, "back", out var item) &&
+            EntityManager.TryGetComponent<StorageComponent>(item, out var inventory))
+            // Try inserting the entity into the storage, if it can't, it leaves the loadout item on the ground
+            foreach (var loadout in failedLoadouts)
+                if ((!EntityManager.TryGetComponent<ItemComponent>(loadout, out var itemComp)
+                        || !_storage.CanInsert(item.Value, loadout, out _, inventory, itemComp)
+                        || !_storage.Insert(item.Value, loadout, out _, playSound: false))
+                    && deleteFailed)
+                    EntityManager.QueueDeleteEntity(loadout);
 
         foreach (var loadout in allLoadouts)
         {
+            if (loadout.Item1 == EntityUid.Invalid
+                || !HasComp<MetaDataComponent>(loadout.Item1)
+                || Deleted(loadout.Item1))
+            {
+                _sawmill.Warning($"Loadout {loadout.Item2.LoadoutName} failed to load properly, deleting.");
+                EntityManager.QueueDeleteEntity(loadout.Item1);
+
+                continue;
+            }
+
             var loadoutProto = _protoMan.Index<LoadoutPrototype>(loadout.Item2.LoadoutName);
             if (loadoutProto.CustomName && loadout.Item2.CustomName != null)
                 _meta.SetEntityName(loadout.Item1, loadout.Item2.CustomName);
@@ -122,5 +135,10 @@ public sealed class LoadoutSystem : EntitySystem
             Dirty(uid, haver);
             Dirty(heirloom.Item1, comp);
         }
+
+        if (jobProto != null ||
+            _protoMan.TryIndex(job, out jobProto))
+            foreach (var special in jobProto.AfterLoadoutSpecial)
+                special.AfterEquip(uid);
     }
 }

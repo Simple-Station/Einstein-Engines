@@ -248,6 +248,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes
+    - !type:CharacterSpeciesRequirement # Due to a visual bug with envirosuits and heels they are disabled for now.
+      inverted: true
+      species:
+        - Plasmaman
   items:
     - ClothingShoesHighheelBoots
 # Socks
@@ -295,6 +299,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Plasmaman
   items:
     - ClothingShoesHighHeels
 
@@ -308,6 +316,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Plasmaman
   items:
     - ClothingShoesHighHeelsLong
 

@@ -10721,3 +10721,50 @@ Entries:
   id: 6761
   time: '2025-01-25T18:34:15.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1451
+- author: ElusiveCoin
+  changes:
+    - type: Add
+      message: Added a new species, the Chitinid.
+  id: 6762
+  time: '2025-01-25T20:12:52.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1644
+- author: sleepyyapril
+  changes:
+    - type: Tweak
+      message: >-
+        Kill random person objective has been replaced by teaching them a
+        lesson, removing the need to RR a random person.
+  id: 6763
+  time: '2025-01-25T20:38:25.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1654
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Fixed melee weapons having the wrong attack speed calculations(again)
+  id: 6764
+  time: '2025-01-25T20:39:09.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1653
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        The Plasmaman species has arrived! They need to breathe plasma to live,
+        and a special jumpsuit to prevent oxygen from igniting them. In
+        exchange, they deal formidable unarmed Heat damage, are never hungry nor
+        thirsty, and are immune to cold and radiation damage. Read more about
+        Plasmamen in their Guidebook entry.
+    - type: Tweak
+      message: >-
+        Internals are no longer toggled off if you take your helmet off but
+        still have a gas mask on and vice versa.
+    - type: Tweak
+      message: >-
+        Paradox Anomalies will now spawn with the original person's Loadout
+        items.
+    - type: Fix
+      message: >-
+        Fixed prisoners not being able to have custom Loadout names and
+        descriptions, and heirlooms if they didn't have a backpack when joining.
+  id: 6765
+  time: '2025-01-25T21:13:19.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1291

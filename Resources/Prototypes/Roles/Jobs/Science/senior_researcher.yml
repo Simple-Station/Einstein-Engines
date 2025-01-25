@@ -16,6 +16,8 @@
 
 - type: startingGear
   id: SeniorResearcherGear
+  subGear:
+  - ScientistPlasmamanGear
   equipment:
     head: ClothingHeadHatBeretRND
     jumpsuit: ClothingUniformJumpsuitSeniorResearcher
