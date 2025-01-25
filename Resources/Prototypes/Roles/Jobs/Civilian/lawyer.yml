@@ -20,6 +20,8 @@
 
 - type: startingGear
   id: LawyerGear
+  subGear:
+  - LawyerPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitLawyerBlack  # TODO change jumpsuit to randomiser of the 4 variants
     back: ClothingBackpackLawyerFilled #DeltaV - stamp included
@@ -32,3 +34,11 @@
   innerClothingSkirt: ClothingUniformJumpskirtLawyerBlack
   satchel: ClothingBackpackSatchelLawyerFilled #DeltaV - stamp included
   duffelbag: ClothingBackpackDuffelLawyerFilled #DeltaV - stamp included
+
+- type: startingGear
+  id: LawyerPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitEnviroslacks
+    head: ClothingHeadEnvirohelmColorWhite
+    gloves: ClothingHandsGlovesEnviroglovesWhite

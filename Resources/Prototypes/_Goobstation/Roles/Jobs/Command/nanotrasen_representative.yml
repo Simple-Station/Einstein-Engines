@@ -33,12 +33,27 @@
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
+  afterLoadoutSpecial:
+  - !type:ModifyEnvirosuitSpecial
+    charges: 8
+  - !type:ModifyEnvirohelmSpecial
+    powerCell: PowerCellHigh
 
 - type: startingGear
   id: NanotrasenRepresentativeGear
+  subGear:
+  - NanotrasenRepresentativePlasmamanGear
   equipment:
     shoes: ClothingShoesColorBlack
     id: CentcomPDA
     jumpsuit: ClothingUniformJumpsuitNanotrasenRepresentative
     ears: ClothingHeadsetCentCom
     pocket1: UniqueNanorepLockerTeleporter
+
+- type: startingGear
+  id: NanotrasenRepresentativePlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitNanotrasenRepresentative
+    head: ClothingHeadEnvirohelmNanotrasenRepresentative
+    gloves: ClothingHandsGlovesEnviroglovesBlack

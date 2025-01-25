@@ -307,6 +307,7 @@
               Blunt: 1.2
               Slash: 1.2
               Piercing: 1.2
+              Heat: 1.2
               Poison: 1.2
               Asphyxiation: 1.2
       # An attack rate of 1.25 hits per second (1 / 0.8 = 1.25) multiplied by 20% extra damage
@@ -377,6 +378,13 @@
         types:
           Piercing: 5 # No, this isn't "OP", this is literally the worst brute damage type in the game.
                       # Same deal as Slash, except that a majority of all armor provides Piercing resistance.
+    - !type:TraitRemoveComponent # Plasmamen have self-damage on melee attacks
+      components:
+        - type: DamageOnHit
+          damage:
+            types:
+              Blunt: 0
+
 
 - type: trait
   id: Claws
@@ -403,6 +411,12 @@
         types:
           Slash: 5 # Trade stamina damage on hit for a very minor amount of extra bleed.
                   # Blunt also deals bleed damage, so this is more of a sidegrade.
+    - !type:TraitRemoveComponent
+      components:
+        - type: DamageOnHit
+          damage:
+            types:
+              Blunt: 0
 
 - type: trait
   id: NaturalWeaponRemoval
@@ -433,6 +447,12 @@
       damage:
         types:
           Blunt: 5
+    - !type:TraitRemoveComponent
+      components:
+        - type: DamageOnHit
+          damage:
+            types:
+              Blunt: 0
 
 - type: trait
   id: StrikingCalluses

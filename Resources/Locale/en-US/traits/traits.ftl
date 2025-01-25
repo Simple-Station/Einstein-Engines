@@ -95,6 +95,9 @@ trait-description-NormalVisionHarpy =
     Your eyes have been modified by means of advanced medicine to see in the standard colors of Red, Green, and Blue.
     You do not have the usual vision anomaly that your species may possess.
 
+trait-name-SkeletonAccent = Skeleton Accent
+trait-description-SkeletonAccent = You have a humerus skeleton accent that will rattle others to the bone!
+
 trait-name-NormalVision = Trichromat Modification
 trait-description-NormalVision =
     Your eyes have been modified by means of advanced medicine to see in the standard colors of Red, Green, and Blue.

@@ -690,6 +690,20 @@ namespace Content.Client.Lobby.UI
             SpriteView.SetEntity(PreviewDummy);
         }
 
+        /// Reloads the dummy entity's clothes for preview
+        private void ReloadClothes()
+        {
+            if (Profile == null)
+                return;
+
+            _controller.RemoveDummyClothes(PreviewDummy);
+            var job = _controller.GetPreferredJob(Profile);
+            if (ShowClothes.Pressed)
+                _controller.GiveDummyJobClothes(PreviewDummy, job, Profile);
+            if (ShowLoadouts.Pressed)
+                _controller.GiveDummyLoadout(PreviewDummy, job, Profile);
+        }
+
         /// Resets the profile to the defaults
         public void ResetToDefault()
         {
@@ -1265,6 +1279,7 @@ namespace Content.Client.Lobby.UI
             UpdateSpeciesGuidebookIcon();
             IsDirty = true;
             ReloadProfilePreview();
+            ReloadClothes(); // Species may have job-specific gear, reload the clothes
         }
 
         private void SetName(string newName)

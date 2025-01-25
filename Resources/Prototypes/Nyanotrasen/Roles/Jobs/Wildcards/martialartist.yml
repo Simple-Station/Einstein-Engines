@@ -22,6 +22,8 @@
 
 - type: startingGear
   id: MartialArtistGear
+  subGear:
+  - MartialArtistPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformMartialGi
     belt: ClothingBeltMartialBlack
@@ -32,3 +34,12 @@
     gloves: ClothingHandsGlovesBoxingRed
   satchel: ClothingBackpackSatchelFilled
   duffelbag: ClothingBackpackDuffelFilled
+
+- type: startingGear
+  id: MartialArtistPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitMartialGi
+    head: ClothingHeadEnvirohelmMartialGi
+    # No envirogloves, use the boxing gloves instead
+    shoes: ClothingShoesColorBlack

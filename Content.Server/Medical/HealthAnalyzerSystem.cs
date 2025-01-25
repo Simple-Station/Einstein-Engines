@@ -247,7 +247,7 @@ public sealed class HealthAnalyzerSystem : EntitySystem
             _solutionContainerSystem.ResolveSolution(target, bloodstream.BloodSolutionName,
                 ref bloodstream.BloodSolution, out var bloodSolution))
         {
-            bloodAmount = bloodSolution.FillFraction;
+            bloodAmount = bloodSolution.MaxVolume != 0 ? bloodSolution.FillFraction : 0;
             bleeding = bloodstream.BleedAmount > 0;
         }
 
