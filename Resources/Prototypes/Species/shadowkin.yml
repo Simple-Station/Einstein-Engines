@@ -30,6 +30,7 @@
   sprites:
     Head: MobShadowkinHead
     Snout: MobShadowkinAnyMarkingFollowSkin
+    Hair: MobHumanoidAnyMarking
     HeadTop: MobShadowkinAnyMarkingFollowSkin
     HeadSide: MobShadowkinAnyMarkingFollowSkin
     Tail: MobShadowkinAnyMarkingFollowSkin
@@ -55,6 +56,8 @@
       points: 1
       required: true
       defaultMarkings: [EarsShadowkin]
+    Hair:
+      points: 1
     Chest:
       points: 1
       required: false
