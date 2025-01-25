@@ -310,7 +310,7 @@
       - state: on-equipped-HELMET
         shader: unshaded
   - type: Sprite
-    sprite: Clothing/Head/Envirohelms/color.rsi
+    sprite: Clothing/Head/Envirohelms/custom.rsi
     layers:
     - state: icon
       color: "#FFFFFF"
@@ -342,7 +342,7 @@
       #   color: "#0000FF"
       - state: visor-inhand-right
   - type: Clothing
-    sprite: Clothing/Head/Envirohelms/color.rsi
+    sprite: Clothing/Head/Envirohelms/custom.rsi
     clothingVisuals:
       head:
       - state: equipped-HELMET
