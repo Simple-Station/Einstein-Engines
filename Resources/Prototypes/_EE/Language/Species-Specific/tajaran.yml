@@ -75,3 +75,261 @@
     - mrro
     - mrra
 
+# Tajaran sign language. Crucially, only tajara can "speak" it, due to need for tajara body language
+# (if they cut off your tail or legs you shouldn't be able to speak it, but well)
+- type: language
+  id: TajaraSign
+  speech:
+    allowRadio: false
+    requireSpeech: false
+    color: "#dddddd"
+    messageWrapOverrides: # TODO actually make it like, seperate thing.
+      Speak: chat-sign-language-message-wrap
+      Whisper: chat-sign-language-whisper-wrap
+    speechVerbOverrides:
+    - chat-speech-verb-sign-1
+    - chat-speech-verb-sign-2
+    - chat-speech-verb-sign-3
+  obfuscation:
+    !type:ReplacementObfuscation
+    replacement:
+    - something
+    - a cryptic message
+    - a signal
+    - a message
+
+# One of 5 languages that Tajara could speak, this one is Tajara exclusive, and get some cool stuff thanks to that (non-verbal element)
+# Short name is Tajr
+# To quote: "Language native to the Tajara, it employs both verbal and non-verbal elements"
+- type: language
+  id: SiikTajr
+  isVisibleLanguage: true
+  speech:
+    color: "#da954bee" # TODO: change it
+    fontId: Noganas
+    allowRadio: false # It's kinda a mess since it can let the sign symbols through on radio otherwise, so uh, TODO
+    requireSpeech: false
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 2 
+    maxSyllables: 3 # in order to make it more interesting, this one will use shorter syllabes, since there's the nonverbal element too
+    replacement:
+    - mrr
+    - rr
+    - tajr
+    - kir
+    - raj
+    - kii
+    - mir
+    - kra
+    - ahk
+    - nal
+    - vah
+    - khaz
+    - jri
+    - ran
+    - darr
+    - mi
+    - jri
+    - dynh
+    - manq
+    - rhe
+    - zar
+    - rrhaz
+    - kal
+    - chur
+    - eech
+    - thaa
+    - dra
+    - jurl
+    - mah
+    - sanu
+    - dra
+    - ii'r
+    - ka
+    - aasi
+    - far
+    - wa
+    - baq
+    - ara
+    - qara
+    - zir
+    - sam
+    - mak
+    - hrar
+    - nja
+    - rir
+    - khan
+    - jun
+    - dar
+    - rik
+    - kah
+    - hal
+    - ket
+    - jurl
+    - mah
+    - tul
+    - cresh
+    - azu
+    - ragh
+    - mro
+    - mra
+    - mrro
+    - mrra
+
+
+# One of 5 languages that Tajara could speak, this one is your classic "The Nobility Language", also should have no translators availible
+# Short name is Yas
+# To quote: "The traditional language of the tajaran nobility"
+- type: language
+  id: YaSsa
+  isVisibleLanguage: true
+  speech:
+    color: "#da954bee" # TODO: change it
+    fontId: Noganas
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 3 
+    maxSyllables: 5 # since it's for nobility, we can make it a lil longer
+    replacement:
+    - hrr
+    - rhr
+    - tarj
+    - khir
+    - rajh
+    - kir
+    - mier
+    - kre
+    - ahek
+    - nlhal
+    - veh
+    - khaz
+    - dri
+    - rhan
+    - darrer
+    - mi
+    - jhri
+    - dynher
+    - manqi
+    - rhas
+    - shar
+    - drhaz
+    - kalh
+    - shur
+    - echi
+    - tha
+    - draer
+    - jurl
+    - maher
+    - sanii
+    - dra
+    - ii'r
+    - kan
+    - aesi
+    - fare
+    - we
+    - bash
+    - arha
+    - quara
+    - zhir
+    - sem
+    - make
+    - hrer
+    - nja
+    - rir
+    - can
+    - jhun
+    - dar
+    - rik
+    - kah
+    - hal
+    - kete
+    - juril
+    - mah
+    - tul
+    - cresh
+    - azu
+    - ragh
+    - miro
+    - mara
+    - mrero
+    - mrara
+
+
+# One of 5 languages that Tajara could speak, this one is the dialect lingo
+# Short name is Del
+# To quote: "A dialect developed by the Zhan-Khazan communities, commonly used in religious
+# ceremonies dedicated to the Snow God and amongst settlements comprised mostly of Zhan-Khazan"
+- type: language
+  id: Delvahii
+  isVisibleLanguage: true
+  speech:
+    color: "#da954bee" # TODO: change it
+    fontId: Noganas
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 2 
+    maxSyllables: 4 # again, normal length
+    replacement:
+    - mrr
+    - rr
+    - tajr
+    - kir
+    - raj
+    - kii
+    - mir
+    - kra
+    - ahk
+    - nal
+    - vah
+    - khaz
+    - jri
+    - ran
+    - darr
+    - mi
+    - jri
+    - dynh
+    - manq
+    - rhe
+    - zar
+    - rrhaz
+    - kal
+    - chur
+    - eech
+    - thaa
+    - dra
+    - jurl
+    - mah
+    - sanu
+    - dra
+    - ii'r
+    - ka
+    - aasi
+    - far
+    - wa
+    - baq
+    - ara
+    - qara
+    - zir
+    - sam
+    - mak
+    - hrar
+    - nja
+    - rir
+    - khan
+    - jun
+    - dar
+    - rik
+    - kah
+    - hal
+    - ket
+    - jurl
+    - mah
+    - tul
+    - cresh
+    - azu
+    - ragh
+    - mro
+    - mra
+    - mrro
+    - mrra
