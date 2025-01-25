@@ -105,7 +105,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
 
         // If someone swaps to this weapon then reset its cd.
         var curTime = Timing.CurTime;
-        var minimum = curTime + TimeSpan.FromSeconds(GetAttackRate(uid, args.User, component));
+        var minimum = curTime + TimeSpan.FromSeconds(attackRate);
 
         if (minimum < component.NextAttack)
             return;
