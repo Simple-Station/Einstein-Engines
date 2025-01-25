@@ -89,6 +89,11 @@ public sealed class LoadoutSystem : EntitySystem
 
         foreach (var loadout in allLoadouts)
         {
+            if (loadout.Item1 == EntityUid.Invalid
+                || !HasComp<MetaDataComponent>(loadout.Item1)
+                || Deleted(loadout.Item1))
+                continue;
+
             var loadoutProto = _protoMan.Index<LoadoutPrototype>(loadout.Item2.LoadoutName);
             if (loadoutProto.CustomName && loadout.Item2.CustomName != null)
                 _meta.SetEntityName(loadout.Item1, loadout.Item2.CustomName);
