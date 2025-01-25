@@ -89,6 +89,12 @@ public sealed partial class ToggleableClothingComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public bool ReplaceCurrentClothing = false;
+
+    [DataField, AutoNetworkedField]
+    public string AttachTooltip = "toggleable-clothing-attach-tooltip";
+
+    [DataField, AutoNetworkedField]
+    public string UhattachTooltip = "toggleable-clothing-unattach-tooltip";
 }
 
 [Serializable, NetSerializable]
