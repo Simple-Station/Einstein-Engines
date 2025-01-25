@@ -1,0 +1,77 @@
+# One of 5 languages that Tajara could speak, lore-wise best choice since others (lore wise) rely on gesticulation too
+# Short name is Maas
+# To quote: "The traditionally employed tongue of Adhomai, comprised of expressive yowls and chirps. Native to the Tajara"
+- type: language
+  id: SiikMaas
+  isVisibleLanguage: true
+  speech:
+    color: "#da954bee"
+    fontId: Noganas
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 2 # this is mostly based on the name generator, 2-4 is there so it goes here too
+    maxSyllables: 4
+    replacement:
+    - mrr
+    - rr
+    - tajr
+    - kir
+    - raj
+    - kii
+    - mir
+    - kra
+    - ahk
+    - nal
+    - vah
+    - khaz
+    - jri
+    - ran
+    - darr
+    - mi
+    - jri
+    - dynh
+    - manq
+    - rhe
+    - zar
+    - rrhaz
+    - kal
+    - chur
+    - eech
+    - thaa
+    - dra
+    - jurl
+    - mah
+    - sanu
+    - dra
+    - ii'r
+    - ka
+    - aasi
+    - far
+    - wa
+    - baq
+    - ara
+    - qara
+    - zir
+    - sam
+    - mak
+    - hrar
+    - nja
+    - rir
+    - khan
+    - jun
+    - dar
+    - rik
+    - kah
+    - hal
+    - ket
+    - jurl
+    - mah
+    - tul
+    - cresh
+    - azu
+    - ragh
+    - mro
+    - mra
+    - mrro
+    - mrra
+

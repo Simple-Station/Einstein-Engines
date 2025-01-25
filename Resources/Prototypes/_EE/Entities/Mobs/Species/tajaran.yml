@@ -19,6 +19,13 @@
     eyeDamageChance: 0.3
     eyeDamage: 1
     durationMultiplier: 1.5
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - SiikMaas
+    understands:
+    - TauCetiBasic
+    - SiikMaas
 
 - type: entity
   save: false
