@@ -41,7 +41,7 @@
   parent: BaseSubdermalImplant
   id: NekomimeticTranslatorImplant
   name: nekomimetic translator implant
-  description: A translator implant intially designed to help domestic cat owners understand their pets, now granting the ability to understand and speak to Tajara!
+  description: A translator implant intially designed to help domestic cat owners understand their pets, now granting the ability to understand and speak to Felinids!
   categories: [ HideSpawnMenu ]
   components:
   - type: TranslatorImplant
@@ -169,5 +169,20 @@
     - Chittin
     spoken:
     - Chittin
+    requires:
+    - TauCetiBasic
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: SiikMaasTranslatorImplant
+  name: siik'maas translator implant
+  description: An implant giving the ability to understand and speak Siik'maas.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TranslatorImplant
+    understood:
+    - SiikMaas
+    spoken:
+    - SiikMaas
     requires:
     - TauCetiBasic
