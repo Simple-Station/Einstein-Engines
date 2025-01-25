@@ -16,7 +16,6 @@
       id: ValyrianStandard
     - type: trait
       id: Azaziba
-    # Einstein Engines - Tajaran section start
     - type: trait
       id: SiikMaas
     - type: trait
@@ -27,7 +26,6 @@
       id: YaSsa
     - type: trait
       id: Delvahii
-    # Einstein Engines - Tajaran section end
 
 - type: characterItemGroup
   id: TraitsAccents
