@@ -1,4 +1,4 @@
-﻿- type: job
+- type: job
   id: ServiceWorker
   name: job-name-serviceworker
   description: job-description-serviceworker
@@ -21,6 +21,8 @@
 
 - type: startingGear
   id: ServiceWorkerGear
+  subGear:
+  - ServiceWorkerPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorDarkGreen # DeltaV
     back: ClothingBackpackFilled
@@ -30,3 +32,11 @@
   innerClothingSkirt: ClothingUniformJumpskirtColorDarkGreen # DeltaV
   satchel: ClothingBackpackSatchelFilled
   duffelbag: ClothingBackpackDuffelFilled
+
+- type: startingGear
+  id: ServiceWorkerPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitColorDarkGreen
+    head: ClothingHeadEnvirohelmColorDarkGreen
+    gloves: ClothingHandsGlovesEnviroglovesColorDarkGreen

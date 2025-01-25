@@ -45,9 +45,16 @@
     - type: CPRTraining
     - type: SurgerySpeedModifier
       speedModifier: 2.5
+  afterLoadoutSpecial:
+  - !type:ModifyEnvirosuitSpecial
+    charges: 8
+  - !type:ModifyEnvirohelmSpecial
+    powerCell: PowerCellHigh
 
 - type: startingGear
   id: CMOGear
+  subGear:
+  - CMOPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitCMO
     back: ClothingBackpackCMOFilled
@@ -57,3 +64,11 @@
   innerClothingSkirt: ClothingUniformJumpskirtCMO
   satchel: ClothingBackpackSatchelCMOFilled
   duffelbag: ClothingBackpackDuffelCMOFilled
+
+- type: startingGear
+  id: CMOPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitCMO
+    head: ClothingHeadEnvirohelmCMO
+    gloves: ClothingHandsGlovesEnviroglovesWhite

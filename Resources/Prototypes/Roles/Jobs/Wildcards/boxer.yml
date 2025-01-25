@@ -20,6 +20,8 @@
 
 - type: startingGear
   id: BoxerGear
+  subGear:
+  - BoxerPlasmamanGear
   equipment:
     jumpsuit: UniformShortsRed
     back: ClothingBackpackFilled
@@ -31,3 +33,11 @@
   innerClothingSkirt: UniformShortsRedWithTop
   satchel: ClothingBackpackSatchelFilled
   duffelbag: ClothingBackpackDuffelFilled
+
+- type: startingGear
+  id: BoxerPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitBoxing
+    head: ClothingHeadEnvirohelmBoxing
+    # No envirogloves, use the boxing gloves instead

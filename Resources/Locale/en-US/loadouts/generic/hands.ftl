@@ -1,3 +1,5 @@
 loadout-name-LoadoutHandsColorWhite = gloves (colorable)
 loadout-name-LoadoutHandsGlovesFingerlessWhite = fingerless gloves (colorable)
 loadout-name-LoadoutHandsGlovesEvening = evening gloves (colorable)
+loadout-name-LoadoutHandsGlovesEnviroglovesColor = envirogloves (colorable)
+loadout-name-LoadoutHandsGlovesEnviroglovesEvening = evening envirogloves (colorable)

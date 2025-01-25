@@ -43,6 +43,8 @@
 
 - type: startingGear
   id: ChaplainGear
+  subGear:
+  - ChaplainPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitChaplain
     back: ClothingBackpack
@@ -53,3 +55,11 @@
   innerClothingSkirt: ClothingUniformJumpskirtChaplain
   satchel: ClothingBackpackSatchelChaplainFilled
   duffelbag: ClothingBackpackDuffelChaplainFilled
+
+- type: startingGear
+  id: ChaplainPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitChaplain
+    head: ClothingHeadEnvirohelmChaplain
+    gloves: ClothingHandsGlovesEnviroglovesBlack

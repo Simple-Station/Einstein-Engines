@@ -21,6 +21,8 @@
 
 - type: startingGear
   id: MimeGear
+  subGear:
+  - MimePlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitMime
     back: ClothingBackpackMimeFilled
@@ -36,6 +38,15 @@
   innerClothingSkirt: ClothingUniformJumpskirtMime
   satchel: ClothingBackpackSatchelMimeFilled
   duffelbag: ClothingBackpackDuffelMimeFilled
+
+- type: startingGear
+  id: MimePlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitMime
+    head: ClothingHeadEnvirohelmMime
+    gloves: ClothingHandsGlovesEnviroglovesWhite
+    mask: ClothingMaskMime # Parent sets mask to breath mask so set it again here
 
 - type: entity
   id: ActionMimeInvisibleWall

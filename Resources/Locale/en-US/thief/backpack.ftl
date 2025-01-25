@@ -54,6 +54,13 @@ thief-backpack-category-communicator-description =
     for all station channels, a cybersun pen, a portable
     crew monitor, a voice chameleon mask and lots of money for business deals.
 
+thief-backpack-category-communicator-plasmaman-name = communicator's kit
+thief-backpack-category-communicator-plasmaman-description =
+    A communication enthusiast's kit. Includes a master key
+    for all station channels, a cybersun pen, a portable
+    crew monitor, a voice chameleon mask, a tacticool envirosuit
+    and lots of money for business deals.
+
 thief-backpack-category-smuggler-name = smuggler's kit
 thief-backpack-category-smuggler-description =
     A kit for those who like to have big pockets.

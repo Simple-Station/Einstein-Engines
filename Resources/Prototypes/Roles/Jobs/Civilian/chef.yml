@@ -24,6 +24,8 @@
 
 - type: startingGear
   id: ChefGear
+  subGear:
+  - ChefPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitChef
     head: ClothingHeadHatChef
@@ -37,3 +39,11 @@
   innerClothingSkirt: ClothingUniformJumpskirtChef
   satchel: ClothingBackpackSatchelFilled
   duffelbag: ClothingBackpackDuffelFilled
+
+- type: startingGear
+  id: ChefPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitChef
+    head: ClothingHeadEnvirohelmColorWhite
+    gloves: ClothingHandsGlovesEnviroglovesWhite

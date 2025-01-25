@@ -55,6 +55,8 @@
 
 - type: startingGear
   id: SyndicateListenerGear
+  subGear:
+  - SyndicatePlasmamanGear # TODO: syndicate listener enviropyjamas
   equipment:
     jumpsuit: ClothingUniformJumpsuitPyjamaSyndicateBlack
     head: ClothingHeadPyjamaSyndicateBlack

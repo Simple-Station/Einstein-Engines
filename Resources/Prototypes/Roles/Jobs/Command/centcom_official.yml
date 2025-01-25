@@ -12,9 +12,16 @@
   - AllAccess
   access:
   - CentralCommand
+  afterLoadoutSpecial:
+  - !type:ModifyEnvirosuitSpecial
+    charges: 10
+  - !type:ModifyEnvirohelmSpecial
+    powerCell: PowerCellHigh
 
 - type: startingGear
   id: CentcomGear
+  subGear:
+  - CentcomPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitCentcomOfficial
     shoes: ClothingShoesBootsCombatFilled
@@ -27,3 +34,11 @@
     belt: WeaponPistolN1984
     pocket1: BoxFolderBlack
     pocket2: PenCentcom
+
+- type: startingGear
+  id: CentcomPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitCentcomOfficial
+    head: ClothingHeadEnvirohelmCentcomOfficial
+    gloves: ClothingHandsGlovesEnviroglovesBlack

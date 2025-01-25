@@ -1133,3 +1133,8 @@
   id: compressed-meat
   flavorType: Complex
   description: flavor-complex-compressed-meat
+
+- type: flavor
+  id: plasma
+  flavorType: Complex
+  description: flavor-complex-plasma

@@ -23,6 +23,8 @@
 
 - type: startingGear
   id: ChemistGear
+  subGear:
+  - ChemistPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitChemistry
     back: ClothingBackpackChemistryFilled
@@ -32,3 +34,11 @@
   innerClothingSkirt: ClothingUniformJumpskirtChemistry
   satchel: ClothingBackpackSatchelChemistryFilled
   duffelbag: ClothingBackpackDuffelChemistryFilled
+
+- type: startingGear
+  id: ChemistPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitChemist
+    head: ClothingHeadEnvirohelmChemist
+    gloves: ClothingHandsGlovesEnviroglovesWhite
