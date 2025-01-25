@@ -566,6 +566,56 @@
 
 - type: entity
   parent: ClothingHeadEnvirohelmCustomBase
+  id: ClothingHeadEnvirohelmMailCarrier
+  name: mail carrier's envirosuit helmet
+  description: Smells like a good pension.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#394dc6"
+    - state: accent-icon
+      color: "#dcdcdc"
+    - state: midaccent-icon
+      color: "#d82927"
+    - state: visor-icon
+    - state: icon-flash
+      visible: false
+      shader: unshaded
+      map: [ "light" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#394dc6"
+      - state: accent-inhand-left
+        color: "#dcdcdc"
+      - state: midaccent-inhand-left
+        color: "#d82927"
+      - state: visor-inhand-left
+      right:
+      - state: inhand-right
+        color: "#394dc6"
+      - state: accent-inhand-right
+        color: "#dcdcdc"
+      - state: midaccent-inhand-right
+        color: "#d82927"
+      - state: visor-inhand-right
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#394dc6"
+      - state: accent-equipped-HELMET
+        color: "#dcdcdc"
+      - state: midaccent-equipped-HELMET
+        color: "#d82927"
+      - state: visor-equipped-HELMET
+  - type: ClothingAddFaction
+    faction: Mailman
+
+- type: entity
+  parent: ClothingHeadEnvirohelmCustomBase
   id: ClothingHeadEnvirohelmMusician
   name: musician's envirosuit helmet
   description: Experts are perplexed as to how Plasmamen can still play the trumpet with this helmet on.

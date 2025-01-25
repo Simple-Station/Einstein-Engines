@@ -454,8 +454,6 @@
         color: "#2e2e2e"
       - state: accent3_chestonly-equipped-INNERCLOTHING
         color: "#36476b"
-      - state: backaccent-equipped-INNERCLOTHING
-        color: "#36476b"
       - state: accenthighlight-equipped-INNERCLOTHING
         color: "#313e5a"
       - state: clip-equipped-INNERCLOTHING
@@ -464,6 +462,8 @@
         color: "#313e5a"
       - state: pants-equipped-INNERCLOTHING
         color: "#232938"
+      - state: backaccent-equipped-INNERCLOTHING
+        color: "#36476b"
       - state: loweraccent-equipped-INNERCLOTHING
         color: "#36476b"
       - state: shoesdark-equipped-INNERCLOTHING
@@ -659,6 +659,10 @@
       color: "#4a281f"
     - state: accent2-icon
       color: "#c2911e"
+    - state: clip-icon
+      color: "#c2911e"
+    - state: clip_right-icon
+      color: "#c2911e"
   - type: Item
     inhandVisuals:
       left:
@@ -666,10 +670,18 @@
         color: "#4a281f"
       - state: accent2-inhand-left
         color: "#c2911e"
+      - state: clip-inhand-left
+        color: "#c2911e"
+      - state: clip_right-inhand-left
+        color: "#c2911e"
       right:
       - state: inhand-right
         color: "#4a281f"
       - state: accent2-inhand-right
+        color: "#c2911e"
+      - state: clip-inhand-right
+        color: "#c2911e"
+      - state: clip_right-inhand-right
         color: "#c2911e"
   - type: Clothing
     clothingVisuals:
@@ -678,10 +690,94 @@
         color: "#4a281f"
       - state: accent2-equipped-INNERCLOTHING
         color: "#c2911e"
+      - state: clip-equipped-INNERCLOTHING
+        color: "#c2911e"
+      - state: clip_right-equipped-INNERCLOTHING
+        color: "#c2911e"
       - state: loweraccent2-equipped-INNERCLOTHING
         color: "#c2911e"
       - state: soles-equipped-INNERCLOTHING
         color: "#c2911e"
+
+- type: entity
+  parent: ClothingUniformEnvirosuitCustomBase
+  id: ClothingUniformEnvirosuitMailCarrier
+  name: mail carrier's envirosuit
+  description: An envirosuit tailored for the mail carrier. The color pattern makes pitbulls go wild.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#394dc6"
+    - state: accent-icon
+      color: "#d82927"
+    - state: accent2_chestonly-icon
+      color: "#dcdcdc"
+    - state: clip-icon
+      color: "#dcdcdc"
+    - state: clip_right-icon
+      color: "#c2c2c2"
+    - state: belt-icon
+      color: "#cfcfcf"
+    - state: beltbuckle_small-icon
+      color: "#f0990c"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#394dc6"
+      - state: accent-inhand-left
+        color: "#d82927"
+      - state: accent2_chestonly-inhand-left
+        color: "#dcdcdc"
+      - state: clip-inhand-left
+        color: "#dcdcdc"
+      - state: clip_right-inhand-left
+        color: "#c2c2c2"
+      - state: belt-inhand-left
+        color: "#cfcfcf"
+      - state: beltbuckle_small-inhand-left
+        color: "#f0990c"
+      right:
+      - state: inhand-right
+        color: "#394dc6"
+      - state: accent-inhand-right
+        color: "#d82927"
+      - state: accent2_chestonly-inhand-right
+        color: "#dcdcdc"
+      - state: clip-inhand-right
+        color: "#dcdcdc"
+      - state: clip_right-inhand-right
+        color: "#c2c2c2"
+      - state: belt-inhand-right
+        color: "#cfcfcf"
+      - state: beltbuckle_small-inhand-right
+        color: "#f0990c"
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#394dc6"
+      - state: accentalt_noback-equipped-INNERCLOTHING
+        color: "#d82927"
+      - state: accent2_chestonly-equipped-INNERCLOTHING
+        color: "#dcdcdc"
+      - state: clip-equipped-INNERCLOTHING
+        color: "#dcdcdc"
+      - state: clip_right-equipped-INNERCLOTHING
+        color: "#c2c2c2"
+      - state: belt-equipped-INNERCLOTHING
+        color: "#cfcfcf"
+      - state: beltbuckle_small-equipped-INNERCLOTHING
+        color: "#f0990c"
+      - state: backaccent-equipped-INNERCLOTHING
+        color: "#dcdcdc"
+      - state: loweraccent2-equipped-INNERCLOTHING
+        color: "#dcdcdc"
+      - state: soles-equipped-INNERCLOTHING
+        color: "#dcdcdc"
+  - type: ClothingAddFaction
+    faction: Mailman
 
 - type: entity
   parent: ClothingUniformEnvirosuitCustomBase

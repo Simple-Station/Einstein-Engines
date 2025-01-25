@@ -33,7 +33,7 @@
 
 - type: markingPoints
   id: MobPlasmamanMarkingLimits
-  onlyWhitelisted: true
+  onlyWhitelisted: true # Hides the hair and facial hair options
   points:
     Hair:
       points: 0
