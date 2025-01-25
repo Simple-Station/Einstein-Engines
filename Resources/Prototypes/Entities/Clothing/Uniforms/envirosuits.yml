@@ -597,6 +597,9 @@
       sprite: Clothing/Uniforms/Envirosuits/tacticool.rsi
     - type: Clothing
       sprite: Clothing/Uniforms/Envirosuits/tacticool.rsi
+    - type: LimitedCharges
+      maxCharges: 6
+      charges: 6
 
 - type: entity
   parent: ClothingUniformEnvirosuitBase
