@@ -6,7 +6,7 @@
   sprites: MobTajaranSprites
   markingLimits: MobTajaranMarkingLimits
   dollPrototype: MobTajaranDummy
-  skinColoration: Hues
+  skinColoration: AnimalFur
   minHeight: 0.65
   defaultHeight: 0.8
   maxHeight: 1.1
