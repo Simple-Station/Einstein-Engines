@@ -58,7 +58,7 @@ namespace Content.Shared.Mind.Components
     }
 
     /// <summary>
-    ///     True if we have a mind, false otherwise.
+    /// Event raised directed at a mind-container when a mind gets removed.
     /// </summary>
     public sealed class MindRemovedMessage : MindEvent
     {
