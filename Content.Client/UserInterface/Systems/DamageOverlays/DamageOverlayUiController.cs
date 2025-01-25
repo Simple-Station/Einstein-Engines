@@ -35,7 +35,7 @@ public sealed class DamageOverlayUiController : UIController
         ClearOverlay();
         if (!EntityManager.TryGetComponent<MobStateComponent>(args.Entity, out var mobState))
             return;
-        if (mobState.CurrentState != MobState.Dead)
+        if (mobState.CurrentState.IsCritOrAlive())
             UpdateOverlays(args.Entity, mobState);
         _overlayManager.AddOverlay(_overlay);
     }
@@ -89,6 +89,7 @@ public sealed class DamageOverlayUiController : UIController
 
         var critThreshold = foundThreshold.Value;
         _overlay.State = mobState.CurrentState;
+        _overlay.OxygenLevelOverride = mobState.GetOxyDamageOverlay();
 
         switch (mobState.CurrentState)
         {
@@ -113,6 +114,7 @@ public sealed class DamageOverlayUiController : UIController
                 _overlay.DeadLevel = 0;
                 break;
             }
+            case MobState.SoftCritical:
             case MobState.Critical:
             {
                 if (!_mobThresholdSystem.TryGetDeadPercentage(entity,
@@ -124,7 +126,7 @@ public sealed class DamageOverlayUiController : UIController
                 _overlay.DeadLevel = 0;
                 break;
             }
-            case MobState.Dead:
+            case MobState.Dead: // todo: move (some of?) the stuff above and below to mobstate parameters
             {
                 _overlay.BruteLevel = 0;
                 _overlay.CritLevel = 0;

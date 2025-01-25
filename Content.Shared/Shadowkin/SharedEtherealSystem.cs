@@ -17,6 +17,7 @@ using Content.Shared.Tag;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Standing;
+using Content.Shared.Mobs.Systems;
 
 
 namespace Content.Shared.Shadowkin;
@@ -30,6 +31,7 @@ public abstract class SharedEtherealSystem : EntitySystem
     [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly StaminaSystem _stamina = default!;
     [Dependency] private readonly StandingStateSystem _standingState = default!;
+    [Dependency] private readonly MobStateSystem _mobState = default!;
 
     public override void Initialize()
     {
@@ -95,8 +97,7 @@ public abstract class SharedEtherealSystem : EntitySystem
 
     private void OnMobStateChanged(EntityUid uid, EtherealComponent component, MobStateChangedEvent args)
     {
-        if (args.NewMobState == MobState.Critical
-            || args.NewMobState == MobState.Dead)
+        if (_mobState.IsIncapacitated(uid))
         {
             SpawnAtPosition("ShadowkinShadow", Transform(uid).Coordinates);
             SpawnAtPosition("EffectFlashShadowkinDarkSwapOff", Transform(uid).Coordinates);
@@ -137,7 +138,7 @@ public abstract class SharedEtherealSystem : EntitySystem
             || HasComp<EtherealComponent>(args.Target))
             return;
 
-        args.Cancelled = true;
+        args.Cancel();
         if (_gameTiming.InPrediction)
             return;
 

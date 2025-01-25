@@ -256,7 +256,7 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
             {
                 if (TryComp<MobStateComponent>(entity, out var state))
                 {
-                    if (state.CurrentState == MobState.Dead || state.CurrentState == MobState.Invalid)
+                    if (state.CurrentState.IsDead() || !state.CurrentState.IsValid())
                     {
                         gone++;
                     }
