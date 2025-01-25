@@ -23,6 +23,7 @@
         stomach: OrganShadowkinStomach
         liver:  OrganShadowkinLiver
         kidneys: OrganShadowkinKidneys
+        lungs: OrganShadowkinCore
     right arm:
       part: RightArmShadowkin
       connections:

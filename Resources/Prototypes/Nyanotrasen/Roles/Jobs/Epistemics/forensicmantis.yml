@@ -18,6 +18,15 @@
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Shadowkin
+        - !type:CharacterTraitRequirement
+          inverted: true
+          traits:
+            - ShadowkinBlackeye
   startingGear: ForensicMantisGear
   icon: "JobIconForensicMantis"
   supervisors: job-supervisors-rd

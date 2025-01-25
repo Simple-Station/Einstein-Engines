@@ -62,7 +62,10 @@ language-Sign-name = Tau-Ceti Basic Sign Language
 language-Sign-description = TCB-SL for short, this sign language is prevalent among mute and deaf people.
 
 language-Marish-name = Marish
-language-Marish-description =  An inherently empathetic language, conveying emotions with a single word; spoken effortlessly by Shadowkins, though nearly impossible to learn or replicate.
+language-Marish-description =  A language spoken only by Shadowkin, one that is unable to be replicated by normal tongues.
+
+language-Empathy-name = Empathy
+language-Empathy-description = An inherently empathic language, it could be described as a way for Shadowkin to communicate with one another telepathically.
 
 language-ValyrianStandard-name = Valyrian Standard
 language-ValyrianStandard-description =

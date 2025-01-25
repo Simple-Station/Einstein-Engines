@@ -361,16 +361,11 @@
 - type: damageModifierSet
   id: Shadowkin
   coefficients:
-    Blunt: 0.95
     Slash: 1.2
     Piercing: 1.1
-    Asphyxiation: 0
-    Cold: 0.75
+    Asphyxiation: 0.5
+    Cold: 0.8
     Heat: 1.2
-    Cellular: 0.25
-    Bloodloss: 1.35
-    Shock: 1.25
-    Radiation: 1.3
 
 - type: damageModifierSet
   id: DermalArmor

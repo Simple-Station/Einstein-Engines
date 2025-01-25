@@ -1,6 +1,7 @@
 - type: entity
   save: false
   parent:
+    - BaseMobSpeciesOrganic
     - MobBloodstream
     - MobAtmosStandard
     - MobFlammable
@@ -15,7 +16,7 @@
         - trigger:
             !type:DamageTypeTrigger
             damageType: Blunt
-            damage: 400
+            damage: 300
           behaviors:
             - !type:GibBehavior {}
             - !type:SpawnEntitiesBehavior
@@ -207,7 +208,7 @@
       animation: WeaponArcClaw
       damage:
         types:
-          Slash: 5
+          Slash: 8
     - type: Vocal
       sounds:
         Male: MaleShadowkin
@@ -227,16 +228,17 @@
     - type: Shadowkin
     - type: Psionic
       mindbreakingFeedback: shadowkin-blackeye
-    - type: InnatePsionicPowers
-      powersToAdd:
-        - DarkSwapPower
     - type: LanguageKnowledge
       speaks:
         - TauCetiBasic
         - Marish
+        - Empathy
       understands:
         - TauCetiBasic
         - Marish
+        - Empathy
+    - type: PotentiaModifier
+      potentiaMultiplier: 1.25
     - type: Tag
       tags:
       - CanPilot

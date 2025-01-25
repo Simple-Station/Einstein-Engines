@@ -520,3 +520,7 @@ trait-name-ThermographicVision = CyberEyes Module: Thermographic Scanner
 trait-description-ThermographicVision =
     Your CyberEyes have been enhanced with a Thermographic Scanner. When enabled, it captures a snapshot of the user's surroundings, while highlighting all
     biological life forms. It can even detect individuals through the walls of a station.
+
+trait-name-ShadowkinBlackeye = Blackeye
+trait-description-ShadowkinBlackeye = 
+    You lose your special Shadowkin powers & respect amongst your peers, in return for some points. Effectively, you are only a Shadowkin in name, not in practice.
