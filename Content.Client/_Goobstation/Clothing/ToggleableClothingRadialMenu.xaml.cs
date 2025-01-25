@@ -40,10 +40,10 @@ public sealed partial class ToggleableClothingRadialMenu : RadialMenu
         foreach (var attached in clothing.ClothingUids)
         {
             // Change tooltip text if attached clothing is toggle/untoggled
-            var tooltipText = Loc.GetString("toggleable-clothing-unattach-tooltip");
+            var tooltipText = Loc.GetString(clothing.UnattachTooltip);
 
             if (clothingContainer.Contains(attached.Key))
-                tooltipText = Loc.GetString("toggleable-clothing-attach-tooltip");
+                tooltipText = Loc.GetString(clothing.AttachTooltip);
 
             var button = new ToggleableClothingRadialMenuButton()
             {
