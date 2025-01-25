@@ -74,6 +74,8 @@
   - type: Construction
     graph: TinfoilHat
     node: tinfoilhat
+  - type: GuideHelp
+    guides: [ PsionicInsulation ]
 
 - type: entity
   parent: ClothingHeadBase
@@ -99,6 +101,9 @@
     equipDelay: 0.5
     unequipDelay: 6
   - type: HeadCage
+  - type: Tag
+    tags:
+    - ForensicBeltEquip
 
 - type: entity
   parent: ClothingHeadTinfoil
@@ -117,6 +122,9 @@
         Slash: 0.85
         Piercing: 0.95
         Radiation: 0.95
+  - type: GuideHelp
+    guides: [ PsionicInsulation ]
+
 
 - type: entity
   parent: ClothingHeadBase

@@ -116,10 +116,10 @@
         - Oni
         - IPC
   functions:
-    - !type:TraitReplaceComponent
-      components:
-        - type: StaminaCritModifier
-          critThresholdModifier: 10
+    - !type:TraitModifyStamina
+      staminaModifier: 10
+      decayModifier: 0.6
+      cooldownModifier: -0.75
 
 - type: trait
   id: Lethargy
@@ -140,10 +140,10 @@
       species:
         - Felinid
   functions:
-    - !type:TraitReplaceComponent
-      components:
-        - type: StaminaCritModifier
-          critThresholdModifier: -15
+    - !type:TraitModifyStamina
+      staminaModifier: -15
+      decayModifier: -0.6
+      cooldownModifier: 0.75
 
 - type: trait
   id: HighAdrenaline
@@ -284,7 +284,7 @@
 - type: trait
   id: MartialArtist
   category: Physical
-  points: -3
+  points: -5
   requirements:
   - !type:CharacterJobRequirement
     inverted: true
@@ -292,15 +292,26 @@
       - Borg
       - MedicalBorg
       - Boxer
+      - MartialArtist
+      - Gladiator
   functions:
+    - !type:TraitModifyUnarmed
+      heavyOnLightMiss: true
+      attackRateModifier: 0.8
+      rangeModifier: 1.1
     - !type:TraitReplaceComponent
-      components:
-        - type: Boxer
+      components:     # Keep BoxerComponent for now until we have After/Before on traits prototypes
+        - type: Boxer # for potential conflicts with other traits that replace unarmed damage
           modifiers:
             coefficients:
-              Blunt: 1.5
-              Slash: 1.5
-              Piercing: 1.5
+              Blunt: 1.2
+              Slash: 1.2
+              Piercing: 1.2
+              Poison: 1.2
+              Asphyxiation: 1.2
+      # An attack rate of 1.25 hits per second (1 / 0.8 = 1.25) multiplied by 20% extra damage
+      # effectively means 50% more overall DPS, same DPS bonus as before (1 * 1.25 * 1.2 = 1.5)
+      # but the extra attack rate makes it visually apparent that it's Martial Artist.
 
 - type: trait
   id: Small
@@ -358,16 +369,14 @@
       traits:
         - Claws
   functions:
-    - !type:TraitReplaceComponent
-      components:
-        - type: MeleeWeapon
-          soundHit:
-            collection: AlienClaw
-          animation: WeaponArcClaw
-          damage:
-            types:
-              Piercing: 5 # No, this isn't "OP", this is literally the worst brute damage type in the game.
-                          # Same deal as Slash, except that a majority of all armor provides Piercing resistance.
+    - !type:TraitModifyUnarmed
+      soundHit:
+        collection: AlienClaw
+      animation: WeaponArcClaw
+      damage:
+        types:
+          Piercing: 5 # No, this isn't "OP", this is literally the worst brute damage type in the game.
+                      # Same deal as Slash, except that a majority of all armor provides Piercing resistance.
 
 - type: trait
   id: Claws
@@ -386,17 +395,14 @@
       traits:
         - Talons
   functions:
-    - !type:TraitReplaceComponent
-      components:
-        - type: MeleeWeapon
-          soundHit:
-            collection: AlienClaw
-          angle: 30
-          animation: WeaponArcClaw
-          damage:
-            types:
-              Slash: 5 # Trade stamina damage on hit for a very minor amount of extra bleed.
-                      # Blunt also deals bleed damage, so this is more of a sidegrade.
+    - !type:TraitModifyUnarmed
+      soundHit:
+        collection: AlienClaw
+      animation: WeaponArcClaw
+      damage:
+        types:
+          Slash: 5 # Trade stamina damage on hit for a very minor amount of extra bleed.
+                  # Blunt also deals bleed damage, so this is more of a sidegrade.
 
 - type: trait
   id: NaturalWeaponRemoval
@@ -409,27 +415,29 @@
         - Human
         - Oni
         - SlimePerson
+        - Diona
+        - Dwarf
+        - Arachne
+        - IPC # Other species could justify getting this trait for Blunt stamina damage,
+              # but 6 blunt -> 5 blunt is a straight up downgrade.
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
         - Talons
         - Claws
   functions:
-    - !type:TraitReplaceComponent
-      components:
-        - type: MeleeWeapon
-          soundHit:
-            collection: Punch
-          angle: 30
-          animation: WeaponArcFist
-          damage:
-            types:
-              Blunt: 5
+    - !type:TraitModifyUnarmed
+      soundHit:
+        collection: Punch
+      animation: WeaponArcFist
+      damage:
+        types:
+          Blunt: 5
 
 - type: trait
   id: StrikingCalluses
   category: Physical
-  points: -4
+  points: -3
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -452,17 +460,13 @@
         - !type:CharacterJobRequirement
           jobs:
             - Boxer
+            - MartialArtist
+            - Gladiator
   functions:
-    - !type:TraitReplaceComponent
-      components:
-        - type: MeleeWeapon
-          soundHit:
-            collection: Punch
-          angle: 30
-          animation: WeaponArcFist
-          damage:
-            types:
-              Blunt: 6
+    - !type:TraitModifyUnarmed
+      flatDamageIncrease:
+        types:
+          Blunt: 1
 
 - type: trait
   id: Spinarette

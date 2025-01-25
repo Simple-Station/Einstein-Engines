@@ -36,6 +36,7 @@
   id: LoadoutNoviciatePillCanisterSpaceDrugs
   category: JobsEpistemicsNoviciate
   cost: 2
+  guideEntry: Psionics
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutNoviciateEquipment

@@ -44908,6 +44908,13 @@ entities:
     - type: Transform
       pos: -7.5,-39.5
       parent: 100
+- proto: ComputerPsionicsRecords
+  entities:
+  - uid: 20901
+    components:
+    - type: Transform
+      pos: -21.5,-6.5
+      parent: 100
 - proto: ComputerResearchAndDevelopment
   entities:
   - uid: 5793
@@ -109795,6 +109802,23 @@ entities:
     - type: Transform
       pos: 7.5,47.5
       parent: 100
+- proto: SpawnPointAdminAssistant
+  entities:
+  - uid: 20895
+    components:
+    - type: Transform
+      pos: -11.5,61.5
+      parent: 100
+  - uid: 20896
+    components:
+    - type: Transform
+      pos: -11.5,59.5
+      parent: 100
+  - uid: 20897
+    components:
+    - type: Transform
+      pos: -11.5,57.5
+      parent: 100
 - proto: SpawnPointAtmos
   entities:
   - uid: 16151
@@ -109843,6 +109867,13 @@ entities:
     components:
     - type: Transform
       pos: 4.5,9.5
+      parent: 100
+- proto: SpawnPointBlueshieldOfficer
+  entities:
+  - uid: 20898
+    components:
+    - type: Transform
+      pos: -9.5,62.5
       parent: 100
 - proto: SpawnPointBorg
   entities:
@@ -110236,6 +110267,13 @@ entities:
     - type: Transform
       pos: 18.5,-9.5
       parent: 100
+- proto: SpawnPointMagistrate
+  entities:
+  - uid: 20900
+    components:
+    - type: Transform
+      pos: -8.5,58.5
+      parent: 100
 - proto: SpawnPointMailCarrier
   entities:
   - uid: 16733
@@ -110332,6 +110370,13 @@ entities:
     components:
     - type: Transform
       pos: -10.5,7.5
+      parent: 100
+- proto: SpawnPointNanotrasenRepresentative
+  entities:
+  - uid: 20899
+    components:
+    - type: Transform
+      pos: -8.5,60.5
       parent: 100
 - proto: SpawnPointObserver
   entities:

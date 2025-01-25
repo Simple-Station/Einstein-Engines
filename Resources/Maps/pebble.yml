@@ -29532,6 +29532,14 @@ entities:
       rot: 3.141592653589793 rad
       pos: 37.5,14.5
       parent: 2
+- proto: ComputerPsionicsRecords
+  entities:
+  - uid: 10854
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -0.5,28.5
+      parent: 2
 - proto: ComputerRadar
   entities:
   - uid: 4588
@@ -58786,6 +58794,18 @@ entities:
     - type: Transform
       pos: 24.5,-19.5
       parent: 2
+- proto: SpawnPointAdminAssistant
+  entities:
+  - uid: 9274
+    components:
+    - type: Transform
+      pos: -1.5,-20.5
+      parent: 2
+  - uid: 9373
+    components:
+    - type: Transform
+      pos: 0.5,-20.5
+      parent: 2
 - proto: SpawnPointAtmos
   entities:
   - uid: 8868
@@ -58819,6 +58839,13 @@ entities:
     components:
     - type: Transform
       pos: -7.5,-12.5
+      parent: 2
+- proto: SpawnPointBlueshieldOfficer
+  entities:
+  - uid: 10134
+    components:
+    - type: Transform
+      pos: 1.5,-20.5
       parent: 2
 - proto: SpawnPointBorg
   entities:
@@ -59176,6 +59203,13 @@ entities:
     - type: Transform
       pos: -29.5,-4.5
       parent: 2
+- proto: SpawnPointMagistrate
+  entities:
+  - uid: 10228
+    components:
+    - type: Transform
+      pos: -0.5,-24.5
+      parent: 2
 - proto: SpawnPointMailCarrier
   entities:
   - uid: 8928
@@ -59260,6 +59294,13 @@ entities:
     components:
     - type: Transform
       pos: 0.5,-12.5
+      parent: 2
+- proto: SpawnPointNanotrasenRepresentative
+  entities:
+  - uid: 9755
+    components:
+    - type: Transform
+      pos: -2.5,-20.5
       parent: 2
 - proto: SpawnPointObserver
   entities:

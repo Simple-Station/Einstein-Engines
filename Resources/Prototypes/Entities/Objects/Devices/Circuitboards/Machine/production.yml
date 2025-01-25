@@ -765,6 +765,23 @@
         CableHV: 10
 
 - type: entity
+  id: SMESAdvancedMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: advanced SMES machine board
+  description: A machine printed circuit board for an Advanced SMES.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: power_mod
+  - type: MachineBoard
+    prototype: SMESAdvancedEmpty
+    requirements:
+      Capacitor: 2
+      PowerCell: 4
+    materialRequirements:
+      CableHV: 20
+
+- type: entity
   id: CellRechargerCircuitboard
   parent: BaseMachineCircuitboard
   name: cell recharger machine board

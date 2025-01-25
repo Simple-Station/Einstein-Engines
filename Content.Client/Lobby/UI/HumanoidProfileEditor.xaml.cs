@@ -13,6 +13,7 @@ using Content.Shared.Clothing.Components;
 using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Clothing.Loadouts.Systems;
 using Content.Shared.Customization.Systems;
+using Content.Shared.Dataset;
 using Content.Shared.GameTicking;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
@@ -33,6 +34,7 @@ using Robust.Shared.Enums;
 using Robust.Shared.Map;
 using Robust.Shared.Physics;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
 using Robust.Shared.Utility;
 using Direction = Robust.Shared.Maths.Direction;
 
@@ -51,6 +53,8 @@ namespace Content.Client.Lobby.UI
         private readonly JobRequirementsManager _requirements;
         private readonly CharacterRequirementsSystem _characterRequirementsSystem;
         private readonly LobbyUIController _controller;
+        private readonly IRobustRandom _random;
+
         private FlavorText.FlavorText? _flavorText;
         private BoxContainer _ccustomspecienamecontainerEdit => CCustomSpecieName;
         private LineEdit _customspecienameEdit => CCustomSpecieNameEdit;
@@ -82,10 +86,20 @@ namespace Content.Client.Lobby.UI
         private Direction _previewRotation = Direction.North;
         private ColorSelectorSliders _rgbSkinColorSelector;
 
+        private bool _customizePronouns;
+        private bool _customizeStationAiName;
+        private bool _customizeBorgName;
+
         public event Action<HumanoidCharacterProfile, int>? OnProfileChanged;
 
         [ValidatePrototypeId<GuideEntryPrototype>]
         private const string DefaultSpeciesGuidebook = "Species";
+
+        [ValidatePrototypeId<LocalizedDatasetPrototype>]
+        private const string StationAiNames = "NamesAI";
+
+        [ValidatePrototypeId<DatasetPrototype>]
+        private const string CyborgNames = "names_borg";
 
         public HumanoidProfileEditor(
             IClientPreferencesManager preferencesManager,
@@ -95,7 +109,8 @@ namespace Content.Client.Lobby.UI
             IPlayerManager playerManager,
             IPrototypeManager prototypeManager,
             JobRequirementsManager requirements,
-            MarkingManager markings
+            MarkingManager markings,
+            IRobustRandom random
             )
         {
             RobustXamlLoader.Load(this);
@@ -107,6 +122,8 @@ namespace Content.Client.Lobby.UI
             _markingManager = markings;
             _preferencesManager = preferencesManager;
             _requirements = requirements;
+            _random = random;
+
             _characterRequirementsSystem = _entManager.System<CharacterRequirementsSystem>();
             _controller = UserInterfaceManager.GetUIController<LobbyUIController>();
 
@@ -131,11 +148,11 @@ namespace Content.Client.Lobby.UI
 
             #endregion Name
 
-            #region Custom Specie Name
+            #region Custom Species Name
 
             _customspecienameEdit.OnTextChanged += args => { SetCustomSpecieName(args.Text); };
 
-            #endregion CustomSpecieName
+            #endregion Custom Species Name
 
             #region Appearance
 
@@ -175,9 +192,43 @@ namespace Content.Client.Lobby.UI
             {
                 PronounsButton.SelectId(args.Id);
                 SetGender((Gender) args.Id);
+
+                if (Profile?.DisplayPronouns == null)
+                    UpdateDisplayPronounsControls();
             };
 
             #endregion Gender
+
+            #region Cosmetic Pronouns
+
+            _customizePronouns = _cfgManager.GetCVar(CCVars.AllowCosmeticPronouns);
+            _cfgManager.OnValueChanged(CCVars.AllowCosmeticPronouns, OnCosmeticPronounsValueChanged);
+
+            CosmeticPronounsNameEdit.OnTextChanged += args => { SetDisplayPronouns(args.Text); };
+
+            if (CosmeticPronousContainer.Visible != _customizePronouns)
+                CosmeticPronousContainer.Visible = _customizePronouns;
+
+            #endregion Cosmetic Pronouns
+
+            #region Custom Names
+
+            _customizeStationAiName = _cfgManager.GetCVar(CCVars.AllowCustomStationAiName);
+            _customizeBorgName = _cfgManager.GetCVar(CCVars.AllowCustomCyborgName);
+
+            _cfgManager.OnValueChanged(CCVars.AllowCustomStationAiName, OnChangedStationAiNameCustomizationValue);
+            _cfgManager.OnValueChanged(CCVars.AllowCustomCyborgName, OnChangedCyborgNameCustomizationValue);
+
+            StationAINameEdit.OnTextChanged += args => { SetStationAiName(args.Text); };
+            CyborgNameEdit.OnTextChanged += args => { SetCyborgName(args.Text); };
+
+            if (StationAiNameContainer.Visible != _customizeStationAiName)
+                StationAiNameContainer.Visible = _customizeStationAiName;
+
+            if (CyborgNameContainer.Visible != _customizeBorgName)
+                CyborgNameContainer.Visible = _customizeBorgName;
+
+            #endregion
 
             #region Species
 
@@ -512,6 +563,24 @@ namespace Content.Client.Lobby.UI
             }
         }
 
+        private void OnCosmeticPronounsValueChanged(bool newValue)
+        {
+            _customizePronouns = newValue;
+            CosmeticPronousContainer.Visible = newValue;
+        }
+
+        private void OnChangedStationAiNameCustomizationValue(bool newValue)
+        {
+            _customizeStationAiName = newValue;
+            StationAiNameContainer.Visible = newValue;
+        }
+
+        private void OnChangedCyborgNameCustomizationValue(bool newValue)
+        {
+            _customizeBorgName = newValue;
+            CyborgNameContainer.Visible = newValue;
+        }
+
         /// Refreshes the species selector
         public void RefreshSpecies()
         {
@@ -640,6 +709,9 @@ namespace Content.Client.Lobby.UI
             UpdateNameEdit();
             UpdateSexControls();
             UpdateGenderControls();
+            UpdateDisplayPronounsControls();
+            UpdateStationAiControls();
+            UpdateCyborgControls();
             UpdateSkinColor();
             UpdateSpawnPriorityControls();
             UpdateFlavorTextEdit();
@@ -671,7 +743,15 @@ namespace Content.Client.Lobby.UI
             if (Profile == null || !_entManager.EntityExists(PreviewDummy))
                 return;
 
-            _entManager.System<HumanoidAppearanceSystem>().LoadProfile(PreviewDummy, Profile);
+            if (_entManager.TryGetComponent<HumanoidAppearanceComponent>(PreviewDummy, out var humanoid))
+            {
+                var hiddenLayers = humanoid.HiddenLayers;
+                var appearanceSystem = _entManager.System<HumanoidAppearanceSystem>();
+                appearanceSystem.LoadProfile(PreviewDummy, Profile, humanoid);
+                // Reapply the hidden layers set from clothing
+                appearanceSystem.SetLayersVisibility(PreviewDummy, hiddenLayers, false, humanoid: humanoid);
+            }
+
             SetPreviewRotation(_previewRotation);
             TraitsTabs.UpdateTabMerging();
             LoadoutsTabs.UpdateTabMerging();
@@ -1138,6 +1218,40 @@ namespace Content.Client.Lobby.UI
             IsDirty = true;
         }
 
+        private void SetDisplayPronouns(string? displayPronouns)
+        {
+            if (displayPronouns == GetFormattedPronounsFromGender())
+                displayPronouns = null;
+
+            Profile = Profile?.WithDisplayPronouns(displayPronouns);
+            ReloadPreview();
+            IsDirty = true;
+        }
+
+        private void SetStationAiName(string? stationAiName)
+        {
+            Profile = Profile?.WithStationAiName(stationAiName);
+            ReloadPreview();
+            IsDirty = true;
+        }
+
+        private void SetCyborgName(string? cyborgName)
+        {
+            Profile = Profile?.WithCyborgName(cyborgName);
+            ReloadPreview();
+            IsDirty = true;
+        }
+
+        private string GetFormattedPronounsFromGender()
+        {
+            if (Profile == null)
+                return "they/them";
+
+            var genderName = Enum.GetName(typeof(Gender), Profile.Gender) ?? "Epicene";
+            var label = Loc.GetString($"humanoid-profile-editor-pronouns-{genderName.ToLower()}-text");
+            return label.Replace(" ", string.Empty).ToLower();
+        }
+
         private void SetSpecies(string newSpecies)
         {
             Profile = Profile?.WithSpecies(newSpecies);
@@ -1347,6 +1461,50 @@ namespace Content.Client.Lobby.UI
                 return;
 
             PronounsButton.SelectId((int) Profile.Gender);
+        }
+
+        private void UpdateDisplayPronounsControls()
+        {
+            if (Profile == null)
+                return;
+
+            var label = GetFormattedPronounsFromGender();
+            CosmeticPronounsNameEdit.PlaceHolder = label;
+
+            if (Profile.DisplayPronouns == null)
+                CosmeticPronounsNameEdit.Text = string.Empty;
+            else
+                CosmeticPronounsNameEdit.Text = Profile.DisplayPronouns;
+        }
+
+        private void UpdateStationAiControls()
+        {
+            if (Profile == null)
+                return;
+
+            StationAINameEdit.Text = Profile.StationAiName ?? string.Empty;
+
+            if (StationAINameEdit.Text != string.Empty)
+                return;
+
+            var stationAiNames = _prototypeManager.Index<LocalizedDatasetPrototype>(StationAiNames);
+            var randomName = _random.Pick(stationAiNames.Values);
+            StationAINameEdit.PlaceHolder = Loc.GetString(randomName);
+        }
+
+        private void UpdateCyborgControls()
+        {
+            if (Profile == null)
+                return;
+
+            CyborgNameEdit.Text = Profile.CyborgName ?? string.Empty;
+
+            if (CyborgNameEdit.Text != string.Empty)
+                return;
+
+            var borgNames = _prototypeManager.Index<DatasetPrototype>(CyborgNames);
+            var randomName = _random.Pick(borgNames.Values);
+            CyborgNameEdit.PlaceHolder = Loc.GetString(randomName);
         }
 
         private void UpdateSpawnPriorityControls()

@@ -101,6 +101,8 @@
       - map: [ "id" ]
       - map: [ "gloves" ]
       - map: [ "ears" ]
+      - map: [ "innerBelt" ]
+      - map: [ "innerNeck" ]
       - map: [ "outerClothing" ]
       - map: [ "eyes" ]
       - map: [ "belt" ]
@@ -165,9 +167,8 @@
     animation: WeaponArcBite
     damage:
       types:
-        Piercing: 1
-        Poison: 2
-        Asphyxiation: 2
+        Piercing: 2
+        Poison: 3
   - type: SolutionContainerManager
     solutions:
       melee:
@@ -279,6 +280,8 @@
       - map: [ "id" ]
       - map: [ "gloves" ]
       - map: [ "ears" ]
+      - map: [ "innerBelt" ]
+      - map: [ "innerNeck" ]
       - map: [ "outerClothing" ]
       - map: [ "eyes" ]
       - map: [ "belt" ]

@@ -34896,12 +34896,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 6.5,33.5
       parent: 1
-  - uid: 299
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 10.5,17.5
-      parent: 1
   - uid: 455
     components:
     - type: Transform
@@ -37854,6 +37848,14 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -19.5,-24.5
+      parent: 1
+- proto: ComputerPsionicsRecords
+  entities:
+  - uid: 299
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 10.5,17.5
       parent: 1
 - proto: ComputerRadar
   entities:
@@ -65764,7 +65766,7 @@ entities:
       pos: -11.5,11.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -26383.6
+      secondsUntilStateChange: -27843.273
       state: Opening
     - type: Occluder
       enabled: True
@@ -78365,6 +78367,28 @@ entities:
     - type: Transform
       pos: 19.5,44.5
       parent: 1
+- proto: SpawnPointAdminAssistant
+  entities:
+  - uid: 8205
+    components:
+    - type: Transform
+      pos: -9.5,8.5
+      parent: 1
+  - uid: 16617
+    components:
+    - type: Transform
+      pos: -9.5,7.5
+      parent: 1
+  - uid: 16618
+    components:
+    - type: Transform
+      pos: -6.5,7.5
+      parent: 1
+  - uid: 16619
+    components:
+    - type: Transform
+      pos: -6.5,8.5
+      parent: 1
 - proto: SpawnPointAtmos
   entities:
   - uid: 4537
@@ -78383,6 +78407,13 @@ entities:
     components:
     - type: Transform
       pos: -11.5,29.5
+      parent: 1
+- proto: SpawnPointBlueshieldOfficer
+  entities:
+  - uid: 8169
+    components:
+    - type: Transform
+      pos: -8.5,9.5
       parent: 1
 - proto: SpawnPointBorg
   entities:
@@ -78650,6 +78681,13 @@ entities:
     - type: Transform
       pos: -28.5,-0.5
       parent: 1
+- proto: SpawnPointMagistrate
+  entities:
+  - uid: 16620
+    components:
+    - type: Transform
+      pos: -8.5,6.5
+      parent: 1
 - proto: SpawnPointMailCarrier
   entities:
   - uid: 1223
@@ -78718,6 +78756,13 @@ entities:
     components:
     - type: Transform
       pos: -38.5,13.5
+      parent: 1
+- proto: SpawnPointNanotrasenRepresentative
+  entities:
+  - uid: 8168
+    components:
+    - type: Transform
+      pos: -7.5,9.5
       parent: 1
 - proto: SpawnPointObserver
   entities:

@@ -184,6 +184,8 @@
         - map: ["gloves"]
         - map: ["shoes"]
         - map: ["ears"]
+        - map: ["innerBelt"]
+        - map: ["innerNeck"]
         - map: ["outerClothing"]
         - map: ["eyes"]
         - map: ["belt"]
@@ -225,10 +227,6 @@
     - type: Shadowkin
     - type: Psionic
       mindbreakingFeedback: shadowkin-blackeye
-      manaGain: 0.25
-      mana: 100
-      maxMana: 200
-      noMana: shadowkin-tired
     - type: InnatePsionicPowers
       powersToAdd:
         - DarkSwapPower
@@ -296,6 +294,8 @@
         - map: ["gloves"]
         - map: ["shoes"]
         - map: ["ears"]
+        - map: ["innerBelt"]
+        - map: ["innerNeck"]
         - map: ["outerClothing"]
         - map: ["eyes"]
         - map: ["belt"]

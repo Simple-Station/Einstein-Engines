@@ -19,7 +19,7 @@ public sealed class SharedShadowShacklesAuraSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<ShadowShacklesAuraComponent, MeleeHitEvent>(OnMeleeHit);
-        SubscribeLocalEvent<ShadowShacklesAuraComponent, ComponentInit>(OnInit);
+        SubscribeLocalEvent<ShadowShacklesAuraComponent, MapInitEvent>(OnInit);
     }
 
     private void OnMeleeHit(EntityUid uid, ShadowShacklesAuraComponent component, MeleeHitEvent args)
@@ -35,7 +35,7 @@ public sealed class SharedShadowShacklesAuraSystem : EntitySystem
             RaiseLocalEvent(uid, new SpeakOnAuraUseEvent(args.User));
     }
 
-    private void OnInit(EntityUid uid, ShadowShacklesAuraComponent component, ComponentInit args)
+    private void OnInit(EntityUid uid, ShadowShacklesAuraComponent component, MapInitEvent args)
     {
         var container = _container.EnsureContainer<Container>(uid, "shackles");
         component.Shackles = Spawn(component.ShacklesProto, _transform.GetMapCoordinates(uid));

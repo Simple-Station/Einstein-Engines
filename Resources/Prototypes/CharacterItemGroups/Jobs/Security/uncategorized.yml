@@ -98,6 +98,8 @@
     - type: loadout
       id: LoadoutSecurityEquipmentTruncheon
     - type: loadout
+      id: LoadoutSecurityEquipmentEnergySword
+    - type: loadout
       id: LoadoutSecurityPistolSvalin
     - type: loadout
       id: LoadoutSecurityEnergyGunMini
@@ -127,6 +129,8 @@
       id: LoadoutSecurityArgenti
     - type: loadout
       id: LoadoutSecurityArgentiNonLethal
+    - type: loadout
+      id: LoadoutSecurityPistolEnergyRevolver
 
 - type: characterItemGroup
   id: LoadoutSecurityEyes
@@ -142,6 +146,12 @@
       id: LoadoutSecurityEyesHudSecurityPrescription
     - type: loadout
       id: LoadoutClothingEyesGlassesSecurity
+    - type: loadout
+      id: LoadoutClothingEyesGlassesSecurityAviator
+    - type: loadout
+      id: LoadoutClothingEyesGlassesSecurityBig
+    - type: loadout
+      id: LoadoutClothingEyesGlassesSecurityVisor
 
 #- type: characterItemGroup
 #  id: LoadoutSecurityGloves
@@ -182,6 +192,8 @@
   items:
     - type: loadout
       id: LoadoutClothingOuterArmorPlateCarrier
+    - type: loadout
+      id: LoadoutClothingOuterWinterCoatSec
     - type: loadout
       id: LoadoutClothingOuterArmorDuraVest
     - type: loadout

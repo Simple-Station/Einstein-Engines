@@ -8,8 +8,14 @@
     - !type:CharacterDepartmentTimeRequirement
       department: Epistemics # DeltaV - Epistemics Department replacing Science
       min: 54000 # DeltaV - 15 hours
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobForensicMantis
+      min: 18000 # 5 hours
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobLibrarian
+      min: 18000 # 5 hours
     - !type:CharacterOverallTimeRequirement
-      min: 72000 # DeltaV - 20 hours
+      min: 90000 # 25 hours
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
@@ -58,7 +64,8 @@
     shoes: ClothingShoesColorBrown
     id: RnDPDA
     ears: ClothingHeadsetRD
-    belt: BibleMystagogue # Nyanotrasen - Mystagogue book for their Ifrit
+    pocket1: BookPsionicsGuidebook
+    pocket2: BibleMystagogue
   innerClothingSkirt: ClothingUniformJumpskirtResearchDirector
   satchel: ClothingBackpackSatchelResearchDirectorFilled
   duffelbag: ClothingBackpackDuffelResearchDirectorFilled

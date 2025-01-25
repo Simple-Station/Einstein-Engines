@@ -179,19 +179,29 @@ trait-description-Feeble =
 
 trait-name-MartialArtist = Martial Artist
 trait-description-MartialArtist =
-    You have received formal training in unarmed combat, whether with Fists, Feet, or Claws.
-    Your unarmed melee attacks have a small range increase, and deal 50% more damage.
-    This does not apply to any form of armed melee, only the weapons you were naturally born with.
+    You have received formal training in unarmed combat, whether with fists, claws, feet, or teeth.
+    Your unarmed melee attack is now considered a single-target [color=orange]Power Attack[/color], requiring less precision.
+    Additionally, your unarmed melee attacks deal [color=yellow]20%[/color] more damage, attack [color=yellow]25%[/color] faster, and have [color=yellow]10%[/color] increased range.
+    This has no effect on damage dealt with any form of armed melee.
+    The [color=#9FED58]Boxer[/color], [color=#9FED58]Martial Artist[/color], and [color=#9FED58]Gladiator[/color] jobs start with this trait by default.
+
+-stamina-info = [color=gray]Most species start with [color=#919039]100 points[/color] of stamina and [color=#919039]3 points[/color] of stamina regen per second.[/color]
 
 trait-name-Vigor = Vigor
 trait-description-Vigor =
     Whether by pure determination, fitness, or bionic augmentations, your endurance is enhanced.
-    Your stamina is increased by 10 points.
+    Your stamina is increased by [color=yellow]10 points[/color].
+    Your stamina regen per second is increased by [color=yellow]0.6 points[/color].
+    Stamina regen now starts [color=lightblue]2.25 seconds[/color] after taking stamina damage, instead of [color=lightblue]3 seconds[/color].
+    { -stamina-info }
 
 trait-name-Lethargy = Lethargy
 trait-description-Lethargy =
     You become tired faster than others, making you more vulnerable to exhaustion and fatigue.
-    Your stamina is decreased by 15 points.
+    Your stamina is decreased by [color=yellow]15 points[/color].
+    Your stamina regen per second is decreased by [color=yellow]0.6 points[/color].
+    Stamina regen now starts [color=lightblue]3.75 seconds[/color] after taking stamina damage, instead of [color=lightblue]3 seconds[/color].
+    { -stamina-info }
 
 trait-name-SignLanguage = Sign Language
 trait-description-SignLanguage =
@@ -224,8 +234,8 @@ trait-description-Voracious =
     Nothing gets between you and your food.
     Your endless consumption of food and drinks is twice as fast.
 
--terrain-example = [color=gray](e.g. spider web, slime puddle, kudzu, space glue)[/color]
--slippery-example = [color=gray](e.g. banana peel, water puddle, soap, space lube)[/color]
+-terrain-example = [color=gray](e.g. plastic flaps, spider webs, slime puddles, kudzu)[/color]
+-slippery-example = [color=gray](e.g. banana peels, water puddles, soap, space lube)[/color]
 
 trait-name-ParkourTraining = Parkour Training
 trait-description-ParkourTraining =
@@ -490,11 +500,12 @@ trait-description-PsychognomyPower =
 
 trait-name-Redshirt = Redshirt
 trait-description-Redshirt =
-    They said this air would be breathable.
+    "They said this air would be breathable.
     Get in, get out again, and no one gets hurt.
     Something is pulling me up the hill.
     I look down in my red shirt.
-    I look down in my red shirt.
+    I look down in my red shirt."
+    Reduces your threshold for death by 100 points.
 
 trait-name-BrittleBoneDisease = Osteogenesis Imperfecta
 trait-description-BrittleBoneDisease =
