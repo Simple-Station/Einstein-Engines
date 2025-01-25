@@ -84,12 +84,18 @@ namespace Content.Shared.Cuffs
             SubscribeLocalEvent<CuffableComponent, PickupAttemptEvent>(CheckAct);
             SubscribeLocalEvent<CuffableComponent, AttackAttemptEvent>(CheckAct);
             SubscribeLocalEvent<CuffableComponent, UseAttemptEvent>(CheckAct);
-            SubscribeLocalEvent<CuffableComponent, InteractionAttemptEvent>(CheckAct);
+            SubscribeLocalEvent<CuffableComponent, InteractionAttemptEvent>(CheckInteract);
 
             SubscribeLocalEvent<HandcuffComponent, AfterInteractEvent>(OnCuffAfterInteract);
             SubscribeLocalEvent<HandcuffComponent, MeleeHitEvent>(OnCuffMeleeHit);
             SubscribeLocalEvent<HandcuffComponent, AddCuffDoAfterEvent>(OnAddCuffDoAfter);
             SubscribeLocalEvent<HandcuffComponent, VirtualItemDeletedEvent>(OnCuffVirtualItemDeleted);
+        }
+
+        private void CheckInteract(Entity<CuffableComponent> ent, ref InteractionAttemptEvent args)
+        {
+            if (!ent.Comp.CanStillInteract)
+                args.Cancelled = true;
         }
 
         private void OnUncuffAttempt(ref UncuffAttemptEvent args)
@@ -206,7 +212,7 @@ namespace Content.Shared.Cuffs
             if (cancelled || user != ent.Owner)
                 return;
 
-            if (!TryComp<HandsComponent>(ent, out var hands) || ent.Comp.CuffedHandCount != hands.Count)
+            if (!TryComp<HandsComponent>(ent, out var hands) || ent.Comp.CuffedHandCount < hands.Count)
                 return;
 
             cancelled = true;
@@ -475,7 +481,7 @@ namespace Content.Shared.Cuffs
         }
 
         /// <returns>False if the target entity isn't cuffable.</returns>
-        public bool TryCuffing(EntityUid user, EntityUid target, EntityUid handcuff, HandcuffComponent? handcuffComponent = null, CuffableComponent? cuffable = null)
+        public bool TryCuffing(EntityUid user, EntityUid target, EntityUid handcuff, HandcuffComponent? handcuffComponent = null, CuffableComponent? cuffable = null, float distanceThreshold = 0.3f)
         {
             if (!Resolve(handcuff, ref handcuffComponent) || !Resolve(target, ref cuffable, false))
                 return false;
@@ -515,7 +521,7 @@ namespace Content.Shared.Cuffs
                 BreakOnWeightlessMove = false,
                 BreakOnDamage = true,
                 NeedHand = true,
-                DistanceThreshold = 0.3f
+                DistanceThreshold = distanceThreshold
             };
 
             if (!_doAfter.TryStartDoAfter(doAfterEventArgs))
@@ -539,6 +545,25 @@ namespace Content.Shared.Cuffs
             }
 
             _audio.PlayPredicted(handcuffComponent.StartCuffSound, handcuff, user);
+            return true;
+        }
+
+        /// <summary>
+        /// Checks if the target is handcuffed.
+        /// </summary>
+        /// <param name="requireFullyCuffed">when true, return false if the target is only partially cuffed (for things with more than 2 hands)</param>
+        /// <returns></returns>
+        public bool IsCuffed(Entity<CuffableComponent> target, bool requireFullyCuffed = true)
+        {
+            if (!TryComp<HandsComponent>(target, out var hands))
+                return false;
+
+            if (target.Comp.CuffedHandCount <= 0)
+                return false;
+
+            if (requireFullyCuffed && hands.Count > target.Comp.CuffedHandCount)
+                return false;
+
             return true;
         }
 

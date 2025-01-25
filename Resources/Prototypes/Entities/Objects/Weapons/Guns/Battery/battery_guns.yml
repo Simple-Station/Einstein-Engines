@@ -529,6 +529,7 @@
       tags:
         - Taser
         - Sidearm
+        - WeaponDisabler
     - type: Sprite
       sprite: Objects/Weapons/Guns/Battery/disabler.rsi
       layers:
@@ -713,7 +714,7 @@
   - type: StaticPrice
     price: 750
   - type: StealTarget
-    stealGroup: WeaponCaptain
+    stealGroup: WeaponAntiqueLaser
   - type: MeleeWeapon
     attackRate: 1.3333
     damage:
@@ -723,6 +724,10 @@
     wideAnimationRotation: 135
   - type: DamageOtherOnHit
     staminaCost: 5
+  - type: SentienceTarget # I hope this is only the captain's gun
+    flavorKind: station-event-random-sentience-flavor-inanimate
+    weight: 0.0002 # 5,000 times less likely than 1 regular animal
+    # not putting a BlockMovement component here cause that's funny.
 
 - type: entity
   name: advanced laser pistol

@@ -22,6 +22,10 @@
           availableJobs:
             #service
             Captain: [ 1, 1 ]
+            BlueshieldOfficer: [ 1, 1]
+            NanotrasenRepresentative: [ 1, 1 ]
+            Magistrate: [ 1, 1 ]
+            AdministrativeAssistant: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 1, 2 ]
             Botanist: [ 1, 3 ]
@@ -62,4 +66,5 @@
             Mime: [ 1, 1 ]
             Musician: [ 1, 2 ]
             Passenger: [ -1, -1 ]
-
+            #silicon
+            StationAi: [ 1, 1 ]

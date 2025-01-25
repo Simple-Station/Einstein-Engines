@@ -1,0 +1,49 @@
+- type: entity
+  parent: BaseComputer
+  id: BaseComputerModular
+  name: modular computer
+  description: Part of a recent initiative to make computers less static. Comes with a disk slot for various "program disks".
+  components:
+    - type: Computer
+      board: BaseComputerModularCircuitBoard
+    - type: ModularComputer
+    - type: ItemSlots
+      slots:
+        modularComputerDiskSlot:
+          name: Program disk
+          insertSound:
+            path: /Audio/Machines/terminal_insert_disc.ogg
+          ejectSound:
+            path: /Audio/Machines/terminal_insert_disc.ogg
+          whitelist:
+            tags:
+              - ComputerDisk
+    - type: ContainerContainer
+      containers:
+        board: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        modularComputerDiskSlot: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: BaseComputerModularCircuitBoard
+  name: modular computer board
+  description: A computer printed circuit board for a modular computer.
+  components:
+    - type: ComputerBoard
+      prototype: BaseComputerModular
+
+- type: latheRecipe
+  id: BaseComputerModularCircuitBoard
+  result: BaseComputerModularCircuitBoard
+  category: Circuitry
+  completetime: 4
+  materials:
+     Steel: 100
+     Glass: 500
+     Gold: 100

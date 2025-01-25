@@ -13,8 +13,8 @@
     - !type:CharacterDepartmentTimeRequirement
       department: Engineering
       min: 90000 # DeltaV - 25 hours
-#    - !type:OverallPlaytimeRequirement
-#      time: 72000 # DeltaV - 20 hours
+    - !type:CharacterOverallTimeRequirement
+      min: 108000 # 30 hours
   weight: 10
   startingGear: ChiefEngineerGear
   icon: "JobIconChiefEngineer"

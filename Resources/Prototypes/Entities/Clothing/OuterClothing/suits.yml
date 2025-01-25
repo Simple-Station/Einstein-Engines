@@ -144,7 +144,7 @@
     slot: head
   - type: ContainerContainer
     containers:
-      toggleable-clothing: !type:ContainerSlot {}
+      toggleable-clothing: !type:Container {}
   - type: ClothingRequiredStepTriggerImmune
     slots: WITHOUT_POCKET
   - type: Tag
@@ -187,6 +187,7 @@
       lastVisibility: 0.1
   - type: PowerCellDraw
     drawRate: 1.8 # 200 seconds on the default cell
+  - type: ToggleCellDraw
   # throwing star ability
   - type: ItemCreator
     action: ActionCreateThrowingStar
@@ -250,7 +251,7 @@
     sprite: Clothing/OuterClothing/Suits/monkey.rsi
   - type: ContainerContainer
     containers:
-      toggleable-clothing: !type:ContainerSlot {}
+      toggleable-clothing: !type:Container {}
   - type: ClothingRequiredStepTriggerImmune
     slots: WITHOUT_POCKET
   - type: Tag
@@ -273,7 +274,7 @@
     clothingPrototype: ClothingHeadHatHoodIan
   - type: ContainerContainer
     containers:
-      toggleable-clothing: !type:ContainerSlot {}
+      toggleable-clothing: !type:Container {}
   - type: Construction
     graph: ClothingOuterSuitIan
     node: suit
@@ -296,7 +297,7 @@
     clothingPrototype: ClothingHeadHatHoodCarp
   - type: ContainerContainer
     containers:
-      toggleable-clothing: !type:ContainerSlot {}
+      toggleable-clothing: !type:Container {}
 
 - type: entity
   parent: ClothingOuterSuitCarp
@@ -310,3 +311,14 @@
     coefficient: 0.01
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitCarp
+
+- type: entity # From Upstream
+  parent: ClothingOuterBase
+  id: ClothingOuterSuitWitchRobes
+  name: witch robes
+  description: Magic is all about the spell power, ZE!
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Suits/witchrobe.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Suits/witchrobe.rsi

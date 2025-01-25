@@ -74,6 +74,7 @@
         color: "#008800"
         sprite: Mobs/Customization/eyes.rsi
         state: eyes
+      - map: [ "enum.HumanoidVisualLayers.Face" ]
       - map: [ "enum.HumanoidVisualLayers.RArm" ]
         color: "#e8b59b"
         sprite: Mobs/Species/Human/parts.rsi
@@ -100,13 +101,14 @@
       - map: [ "id" ]
       - map: [ "gloves" ]
       - map: [ "ears" ]
+      - map: [ "innerBelt" ]
+      - map: [ "innerNeck" ]
       - map: [ "outerClothing" ]
       - map: [ "eyes" ]
       - map: [ "belt" ]
       - map: [ "belt2" ]
       - map: [ "neck" ]
       - map: [ "back" ]
-      - map: [ "enum.HumanoidVisualLayers.Face" ]
       - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
       - map: [ "enum.HumanoidVisualLayers.Hair" ]
       - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
@@ -165,9 +167,8 @@
     animation: WeaponArcBite
     damage:
       types:
-        Piercing: 1
-        Poison: 2
-        Asphyxiation: 2
+        Piercing: 2
+        Poison: 3
   - type: SolutionContainerManager
     solutions:
       melee:
@@ -252,6 +253,7 @@
         color: "#008800"
         sprite: Mobs/Customization/eyes.rsi
         state: eyes
+      - map: [ "enum.HumanoidVisualLayers.Face" ]
       - map: [ "enum.HumanoidVisualLayers.RArm" ]
         color: "#e8b59b"
         sprite: Mobs/Species/Human/parts.rsi
@@ -278,12 +280,13 @@
       - map: [ "id" ]
       - map: [ "gloves" ]
       - map: [ "ears" ]
+      - map: [ "innerBelt" ]
+      - map: [ "innerNeck" ]
       - map: [ "outerClothing" ]
       - map: [ "eyes" ]
       - map: [ "belt" ]
       - map: [ "neck" ]
       - map: [ "back" ]
-      - map: [ "enum.HumanoidVisualLayers.Face" ]
       - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
       - map: [ "enum.HumanoidVisualLayers.Hair" ]
       - map: [ "enum.HumanoidVisualLayers.HeadSide" ]

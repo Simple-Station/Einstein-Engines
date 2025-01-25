@@ -456,3 +456,14 @@
     fiberMaterial: fibers-rubber
     fiberColor: fibers-yellow
   - type: FingerprintMask
+
+- type: entity
+  parent: ClothingHandsGlovesSyntheticBase
+  id: ClothingHandsGlovesEvening
+  name: evening gloves
+  description: Gloves that reach past the elbow. Serving elegance and serving looks!
+  components:
+  - type: Sprite
+    sprite: Clothing/Hands/Gloves/evening_gloves.rsi
+  - type: Clothing
+    sprite: Clothing/Hands/Gloves/evening_gloves.rsi

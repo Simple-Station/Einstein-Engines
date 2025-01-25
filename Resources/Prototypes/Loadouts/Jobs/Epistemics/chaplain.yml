@@ -64,6 +64,7 @@
   id: LoadoutChaplainPillCanisterSpaceDrugs
   category: JobsEpistemicsChaplain
   cost: 0
+  guideEntry: Psionics
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutChaplainEquipment
@@ -74,6 +75,33 @@
     - PillCanisterSpaceDrugs
 
 # Eyes
+- type: loadout
+  id: LoadoutChaplainEyesEpiHUD
+  category: JobsEpistemicsChaplain
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChaplainEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chaplain
+  items:
+    - ClothingEyesHudEpistemics
+
+- type: loadout
+  id: LoadoutChaplainEyesEpiGlasses
+  category: JobsEpistemicsChaplain
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChaplainEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chaplain
+  items:
+    - ClothingEyesGlassesEpistemics
 
 # Gloves
 
