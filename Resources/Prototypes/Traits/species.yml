@@ -76,6 +76,9 @@
       components:
         - type: Shadowkin
           blackeyeSpawn: true
+    - !type:TraitRemoveComponent
+      components:
+        - type: Psionic
   requirements:
     - !type:CharacterSpeciesRequirement
       species:
