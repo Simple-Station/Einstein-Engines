@@ -223,7 +223,7 @@
     - type: Shadowkin
     - type: Psionic
       mindbreakingFeedback: shadowkin-blackeye
-     - type: InnatePsionicPowers
+    - type: InnatePsionicPowers
       powersToAdd:
         - TelepathyPower
     - type: LanguageKnowledge
