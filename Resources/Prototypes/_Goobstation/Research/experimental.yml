@@ -5,8 +5,11 @@
     sprite: _Goobstation/Objects/Specific/Robotics/modsuit_parts.rsi
     state: mod-core-standard
   discipline: Experimental
-  tier: 1
+  tier: 3
   cost: 5000
+  technologyPrerequisites:
+  - AdvancedTacsuits
+  softCapContribution: 1.5
   recipeUnlocks:
   - ModsuitChestplate
   - ModsuitBoots
