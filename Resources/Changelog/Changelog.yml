@@ -10654,3 +10654,25 @@ Entries:
   id: 6754
   time: '2025-01-23T03:45:53.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1641
+- author: BlueHNT
+  changes:
+    - type: Tweak
+      message: Tweaked lamia bite
+  id: 6755
+  time: '2025-01-24T22:29:08.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1645
+- author: CerberusWolfie
+  changes:
+    - type: Tweak
+      message: >-
+        Logistics Officer now has 30 hours instead of 40 hours of time
+        requirement overall.
+    - type: Tweak
+      message: >-
+        Chief Engineer and CMO have 25 hours instead of 30 hours of time
+        requirement.
+    - type: Tweak
+      message: Mystagogue now has 5 hours of time requirement as Mantis and Cataloguer.
+  id: 6756
+  time: '2025-01-25T00:53:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1649
