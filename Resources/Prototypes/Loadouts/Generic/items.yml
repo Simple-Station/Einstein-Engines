@@ -818,3 +818,28 @@
       group: LoadoutPets
   functions:
     - !type:LoadoutMakeFollower
+
+- type: loadout
+  id: LoadoutItemBlackDeck
+  category: Items
+  cost: 3
+  canBeHeirloom: false
+  items:
+    - CardBoxBlack
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCards
+
+- type: loadout
+  id: LoadoutItemNTDeck
+  category: Items
+  cost: 3
+  canBeHeirloom: false
+  items:
+    - CardBoxNanotrasen
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCards
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Command
