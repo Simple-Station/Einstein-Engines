@@ -17,7 +17,7 @@
         - SiikMaas
 
 - type: trait
-  id: TajaraSignLanguage
+  id: NalRasan
   category: TraitsSpeechLanguages
   points: -1
   requirements:
@@ -29,9 +29,9 @@
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
-        - TajaraSign
+        - NalRasan
       languagesUnderstood:
-        - TajaraSign
+        - NalRasan
 
 - type: trait
   id: SiikTajr
