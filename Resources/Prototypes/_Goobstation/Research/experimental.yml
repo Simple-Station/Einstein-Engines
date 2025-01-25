@@ -1,0 +1,19 @@
+- type: technology
+  id: ModsuitsTech
+  name: research-technology-modsuits
+  icon:
+    sprite: _Goobstation/Objects/Specific/Robotics/modsuit_parts.rsi
+    state: mod-core-standard
+  discipline: Experimental
+  tier: 3
+  cost: 5000
+  technologyPrerequisites:
+  - AdvancedTacsuits
+  softCapContribution: 1.5
+  recipeUnlocks:
+  - ModsuitChestplate
+  - ModsuitBoots
+  - ModsuitHelmet
+  - ModsuitGauntlets
+  - ModsuitShell
+  - ModsuitPlatingExternal

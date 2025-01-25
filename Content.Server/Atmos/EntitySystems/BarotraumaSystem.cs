@@ -18,21 +18,27 @@ namespace Content.Server.Atmos.EntitySystems
         [Dependency] private readonly AtmosphereSystem _atmosphereSystem = default!;
         [Dependency] private readonly DamageableSystem _damageableSystem = default!;
         [Dependency] private readonly AlertsSystem _alertsSystem = default!;
-        [Dependency] private readonly IAdminLogManager _adminLogger= default!;
+        [Dependency] private readonly IAdminLogManager _adminLogger = default!;
         [Dependency] private readonly InventorySystem _inventorySystem = default!;
 
+        [Dependency] private readonly ILogManager _logManager = default!;
+
         private const float UpdateTimer = 1f;
+
+        private ISawmill _sawmill = default!;
         private float _timer;
 
         public override void Initialize()
         {
             SubscribeLocalEvent<PressureProtectionComponent, GotEquippedEvent>(OnPressureProtectionEquipped);
             SubscribeLocalEvent<PressureProtectionComponent, GotUnequippedEvent>(OnPressureProtectionUnequipped);
-            SubscribeLocalEvent<PressureProtectionComponent, ComponentInit>(OnUpdateResistance);
-            SubscribeLocalEvent<PressureProtectionComponent, ComponentRemove>(OnUpdateResistance);
+            SubscribeLocalEvent<PressureProtectionComponent, ComponentInit>(OnPressureProtectionChanged); // Goobstation - Update component state on toggle
+            SubscribeLocalEvent<PressureProtectionComponent, ComponentRemove>(OnPressureProtectionChanged); // Goobstation - Update component state on toggle
 
             SubscribeLocalEvent<PressureImmunityComponent, ComponentInit>(OnPressureImmuneInit);
             SubscribeLocalEvent<PressureImmunityComponent, ComponentRemove>(OnPressureImmuneRemove);
+
+            // _sawmill = _logManager.GetSawmill("barotrauma");
         }
 
         private void OnPressureImmuneInit(EntityUid uid, PressureImmunityComponent pressureImmunity, ComponentInit args)
@@ -49,6 +55,27 @@ namespace Content.Server.Atmos.EntitySystems
             {
                 barotrauma.HasImmunity = false;
             }
+        }
+
+        // Goobstation - Modsuits - Update component state on toggle
+        private void OnPressureProtectionChanged(EntityUid uid, PressureProtectionComponent pressureProtection, EntityEventArgs args)
+        {
+            var protectionTarget = uid;
+            string? slotTarget = null;
+
+            if (_inventorySystem.TryGetContainingEntity(uid, out var entity) && _inventorySystem.TryGetContainingSlot(uid, out var slot))
+            {
+                protectionTarget = entity.Value;
+                slotTarget = slot.Name;
+            }
+
+            if (!TryComp<BarotraumaComponent>(protectionTarget, out var barotrauma))
+                return;
+
+            if (slotTarget != null && !barotrauma.ProtectionSlots.Contains(slotTarget))
+                return;
+
+            UpdateCachedResistances(protectionTarget, barotrauma);
         }
 
         /// <summary>

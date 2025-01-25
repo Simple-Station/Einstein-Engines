@@ -1,3 +1,4 @@
+using Content.Shared.Popups;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
@@ -15,8 +16,15 @@ public sealed partial class ConfirmableActionComponent : Component
     /// <summary>
     /// Warning popup shown when priming the action.
     /// </summary>
-    [DataField(required: true)]
-    public LocId Popup = string.Empty;
+    // Goobstation - Modsuits - Removed required string
+    [DataField]
+    public LocId? Popup = null;
+
+    /// <summary>
+    /// Type of warning popup - Goobstaiton - Modsuits
+    /// </summary>
+    [DataField("popupType")]
+    public PopupType PopupFontType = PopupType.LargeCaution;
 
     /// <summary>
     /// If not null, this is when the action can be confirmed at.
