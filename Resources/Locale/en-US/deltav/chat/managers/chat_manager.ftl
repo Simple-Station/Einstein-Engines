@@ -15,3 +15,9 @@ chat-speech-verb-harpy-1 = chirps
 chat-speech-verb-harpy-2 = tweets
 chat-speech-verb-harpy-3 = caws
 chat-speech-verb-harpy-4 = trills
+
+chat-speech-verb-name-chitinid = Chitinid
+chat-speech-verb-chitinid-1 = clicks
+chat-speech-verb-chitinid-2 = chitters
+chat-speech-verb-chitinid-3 = hisses
+chat-speech-verb-chitinid-4 = buzzes
