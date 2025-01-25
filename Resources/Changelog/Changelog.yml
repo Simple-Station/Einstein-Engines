@@ -10685,3 +10685,10 @@ Entries:
   id: 6757
   time: '2025-01-25T16:58:46.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1631
+- author: Erisfiregamer1
+  changes:
+    - type: Add
+      message: Modsuits have been ported from Goobstation!
+  id: 6758
+  time: '2025-01-25T17:17:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1640
