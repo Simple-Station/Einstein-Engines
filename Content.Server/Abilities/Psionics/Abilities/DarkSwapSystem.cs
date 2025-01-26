@@ -56,5 +56,3 @@ namespace Content.Server.Abilities.Psionics
         }
     }
 }
-
-

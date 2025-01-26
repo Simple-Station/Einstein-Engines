@@ -67,16 +67,19 @@
         - Swashbuckler
         - Spearmaster
 
-# - type: trait
-#   id: ShadowkinBlackeye
-#   category: Mental
-#   points: 4
-#   functions:
-#     - !type:TraitReplaceComponent
-#       components:
-#         - type: Shadowkin
-#           blackeyeSpawn: true
-#   requirements:
-#     - !type:CharacterSpeciesRequirement
-#       species:
-#         - Shadowkin
+- type: trait
+  id: ShadowkinBlackeye
+  category: Mental
+  points: 4
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: Shadowkin
+          blackeyeSpawn: true
+    - !type:TraitRemoveComponent
+      components:
+        - type: Psionic
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Shadowkin
