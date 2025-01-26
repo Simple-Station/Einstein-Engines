@@ -5,6 +5,7 @@ comms-console-menu-announcement-button = Announce
 comms-console-menu-broadcast-button = Broadcast
 comms-console-menu-call-shuttle = Call emergency shuttle
 comms-console-menu-recall-shuttle = Recall emergency shuttle
+comms-console-menu-time-remaining = Time remaining: {$time}
 
 # Popup
 comms-console-permission-denied = Permission denied
@@ -19,3 +20,4 @@ comms-console-announcement-unknown-sender = Unknown
 comms-console-announcement-title-station = Communications Console
 comms-console-announcement-title-centcom = Central Command
 comms-console-announcement-title-nukie = Syndicate Nuclear Operative
+comms-console-announcement-title-station-ai = Station AI

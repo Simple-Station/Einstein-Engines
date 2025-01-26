@@ -1,0 +1,76 @@
+<Document>
+# Glimmer
+[color=#a4885c]Glimmer[/color] is a more colloquial term for [color=#a4885c]noöspheric pressure[/color], measured in [color=#a4885c]milli-Psi (mΨ)[/color]. The Noösphere can be considered analogous to a pool of still,
+onyx black water. The waters have an inherent desire for stillness, for law, for an order of all things. The usage of psychic powers is like throwing a rock into the pool, creating waves that can be measured. As the waves
+build up, primordial chaos can potentially enter through our realm through areas where the pool is at its thinnest. While exceptions exist, the psychic powers generally follow Gunderaan's First Law when increasing
+Glimmer. Thus, Glimmer increases are approximated by the formula:
+
+ΔΨ = ~0.006 * kα - kδ
+
+Verbally, this law is read as, "Change in Glimmer is equal to approximately six milli-Psi times Amplification, minus Dampening."
+
+## Strossmayer's Constant ƥ (Glimmer Equilibrium)
+Named after Ljiljana Strossmayer, First Mystagogue, Original Founder of the Epistemics Cult. Strossmayer's Constant is approximated as the number 502.941.
+
+Glimmer does not operate on a linear scale, rather it follows a logistic curve between values of 0 and 1000.
+Given sufficient time and minimal input, Glimmer will always attempt to equalize itself at this value. If glimmer is below this number, it will rapidly attempt to increase until it reaches it.
+If glimmer is raised above the constant, it will rapidly attempt to decrease until it reaches it.
+
+[color=#4169e1]As a general rule of thumb, psionic powers are weakened when glimmer is less than 500, and strengthened when glimmer is greater than 500[/color]
+
+## Glimmer Sources
+<Box>
+<GuideEntityEmbed Entity="GlimmerProber"/>
+<GuideEntityEmbed Entity="GlimmerDrain"/>
+<GuideEntityEmbed Entity="AnomalyPyroclastic"/>
+<GuideEntityEmbed Entity="MobGlimmerMite"/>
+</Box>
+
+There exist several entities which can interact with glimmer, usually by causing it to fluctuate above or below the Strossmayer's Constant. These include, but are not limited to:
+- Glimmer Probers and Drainers
+- All Anomalies
+- Glimmer Mites
+
+Epistemics can build devices to interact with glimmer. These are usually the main determiners of where glimmer is going.
+[color=#a4885c]Glimmer probers[/color] will increase glimmer, but directly generate research points without further input. [color=#a4885c]Glimmer drains[/color] simply drain glimmer at the cost of electricity.
+Glimmer Probers and Drainers work by agitating the Noösphere, which causes glimmer to fluctuate randomly.
+
+Probers increase the range of random fluctuations, while Drainers decrease the range of fluctations.
+This increase in range follows an exponential scale. The more sources of glimmer there are, the more chaotic glimmer becomes. For example, one Prober will cause glimmer to fluctuate between 502.941 and 550.
+But two probers will cause it to fluctuate between 502.941 and 620. Four sources will make it jump randomly between 502.941 and 750.
+
+Probers in turn generate research based on observing the generated Noöspheric fluctuations. As a baseline, probers generate 20 research points per second. When glimmer is less than 500, they generate less points.
+When glimmer is greater than 500, probers generate more points. Unfortunately, Probers are interfered with by the presence of other glimmer sources. For each additional glimmer source (Prober, Drainer, Anomaly, etc.)
+research output is dramatically decreased. This pattern follows an inverse log base 4 scale. Meaning that, if one prober generates 20 research points, 2 probers will each generate 13.333 points(for a total of 26).
+4 probers are required to generate 40 research points per second. 8 probers will generate 64 research points.
+
+If your probers are not generating any points at all, it is likely that you will need to "prime" the station's local Glimmer. This can be done by using two or three psionic powers in a short span of time.
+
+Prober research output can be visualized by a graph located here: https://www.desmos.com/calculator/q183tseun8
+
+A clever Epistemiologist would at this point realize that they can detect the presence of anomalies or glimmer mites, merely by observing the research point generation of their probers.
+If one prober is generating 13.333 points, there must exist an anomaly somewhere on the station.
+
+## Discharges
+Glimmer will occasionally discharge if it's above 500 mΨ, causing a wide range of effects based on how high it is. The most common is giving all entities with psionic potential a small seizure,
+which is something most people working on stations with an Epistemics department have grown used to.
+
+## Handling Glimmer Emergencies
+<Box>
+<GuideEntityEmbed Entity="GlimmerProber"/>
+<GuideEntityEmbed Entity="GlimmerDrain"/>
+<GuideEntityEmbed Entity="MaterialNormality"/>
+<GuideEntityEmbed Entity="Ectoplasm" />
+</Box>
+Probers should be turned off before glimmer exceeds 750 mΨ.
+
+Glimmer drains are quite effective at draining glimmer, taking it out as fast as a prober can put it in. Glimmer Drains are constructed using Normality Crystals, which can be quite rare.
+Normality Crystals can be manufactured out of Ectoplasm, but they are much more easily obtained from mining during Planetary Expeditions. Therefore one should ask their station's Salvage Specialists
+to bring in any normality they find while mining, and use them to build drains as often as possible.
+
+[color=#a4885c]Ectoplasm[/color] when combined in a beaker with equal parts water, ash, blood, plasma, [color=#fcdf03]and heated to at least 400 celsius[/color] will produce a normality crystal.
+Ectoplasm is a very rare substance that can only be obtained from noöspheric entities.
+
+In a true emergency, Psionic individuals can be sacrificed upon an altar by the station's Chaplain or Mystagogue. Doing so causes glimmer to massively decrease. Be ready to shut off the probers immediately
+once this is done.
+</Document>

@@ -21,10 +21,12 @@
     components:
     - type: CPRTraining
     - type: SurgerySpeedModifier
-      SpeedModifier: 1.75
+      speedModifier: 1.75
 
 - type: startingGear
   id: DoctorGear
+  subGear:
+  - DoctorPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitMedicalDoctor
     back: ClothingBackpackMedicalFilled
@@ -34,3 +36,11 @@
   innerClothingSkirt: ClothingUniformJumpskirtMedicalDoctor
   satchel: ClothingBackpackSatchelMedicalFilled
   duffelbag: ClothingBackpackDuffelMedicalFilled
+
+- type: startingGear
+  id: DoctorPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitMedicalDoctor
+    head: ClothingHeadEnvirohelmMedicalDoctor
+    gloves: ClothingHandsGlovesEnviroglovesWhite

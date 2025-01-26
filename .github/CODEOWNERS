@@ -1,3 +1,107 @@
-# Last match in file takes precedence.
+# hasn't specified or all
+* @sleepyyapril @Remuchi
 
-# TODO
+/.* @DEATHB4DEFEAT
+*.sln @DEATHB4DEFEAT
+*.csproj @DEATHB4DEFEAT
+*.dotsettings @DEATHB4DEFEAT
+*.DotSettings @DEATHB4DEFEAT
+*.toml @DEATHB4DEFEAT
+/Content.*/IoC @DEATHB4DEFEAT
+
+
+# Nix
+*.nix @DEATHB4DEFEAT @stellar-novas
+/flake.lock @DEATHB4DEFEAT @stellar-novas
+/.envrc @DEATHB4DEFEAT @stellar-novas
+
+
+# UI
+*.xaml @DEATHB4DEFEAT
+*.xaml.cs @DEATHB4DEFEAT
+
+# Lobby
+/Content.Client/Lobby @DEATHB4DEFEAT
+/Content.Client/MainMenu @DEATHB4DEFEAT
+
+# Queue
+/Content.*/DiscordAuth @DEATHB4DEFEAT
+/Content.*/JoinQueue @DEATHB4DEFEAT
+
+
+# Writing
+*.xml @DEATHB4DEFEAT
+*.ftl @DEATHB4DEFEAT
+*.md @DEATHB4DEFEAT
+*.txt @DEATHB4DEFEAT
+
+# Shaders
+*.swsl @DEATHB4DEFEAT
+/Resources/Prototypes/Shaders @DEATHB4DEFEAT
+
+# Overlays
+/Content.Client/Overlays @DEATHB4DEFEAT
+
+# Paint
+/Content.*/Paint @DEATHB4DEFEAT
+
+
+# Parkstation/etc
+**/SimpleStation14 @DEATHB4DEFEAT
+**/Parkstation @DEATHB4DEFEAT
+
+# Announcer system
+/Content.*/Announcements @DEATHB4DEFEAT
+/Content.Server/StationEvents @DEATHB4DEFEAT
+
+# SSD
+/Content.*/SSDIndicator @DEATHB4DEFEAT
+
+# Station Goals
+/Content.Server/StationGoal @DEATHB4DEFEAT
+
+# Random Bark
+/Content.Server/Speech/Components/RandomBarkComponent.cs @DEATHB4DEFEAT
+/Content.Server/Speech/Systems/RandomBarkSystem.cs @DEATHB4DEFEAT
+/Resources/Locale/en-US/random-barks @DEATHB4DEFEAT
+
+# Punpun
+/Content.Server/Punpun @DEATHB4DEFEAT
+
+
+# Database
+/Content.*/Database @DEATHB4DEFEAT
+/Content.*/.Database @DEATHB4DEFEAT
+
+# Preferences
+/Content.*/Preferences @DEATHB4DEFEAT
+**/*CVar*/*.cs @DEATHB4DEFEAT
+
+# Discord
+/Content.*/Discord* @DEATHB4DEFEAT
+
+# Loadouts
+/Resources/Prototypes/Loadouts @angelofallars
+/Resources/Prototypes/CharacterItemGroups @angelofallars
+/Resources/Locale/en-US/loadouts @angelofallars
+
+# Traits
+/Resources/Prototypes/Traits @angelofallars
+/Resources/Locale/en-US/traits @angelofallars
+
+# Throwing
+/Content.*/DamageOtherOnHit @angelofallars
+/Content.*/Embed @angelofallars
+/Content.*/ProjectileSystem @angelofallars
+/Content.*/ThrownItem @angelofallars
+/Content.*/ThrowEvent @angelofallars
+
+# Nyano Systems
+/Content.*/Weapons @VMSolidus
+/Content.*/Abilities/Psionics @VMSolidus
+/Content.*/Psionics @VMSolidus
+/Content.*/Contests @VMSolidus
+/Content.*/Carrying @VMSolidus
+
+# Physics Stuff
+/Content.*/Atmos @VMSolidus

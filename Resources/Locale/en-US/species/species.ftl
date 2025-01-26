@@ -1,4 +1,4 @@
-﻿## Species Names
+## Species Names
 
 species-name-human = Human
 species-name-dwarf = Dwarf
@@ -12,3 +12,8 @@ species-name-skeleton = Skeleton
 species-name-vox = Vox
 species-name-ipc = IPC
 species-name-shadowkin = Shadowkin
+species-name-plasmaman = Plasmaman
+
+## Misc species things
+
+snail-hurt-by-salt-popup = The salty solution burns like acid!

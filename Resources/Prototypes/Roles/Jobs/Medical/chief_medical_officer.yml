@@ -6,27 +6,6 @@
   description: job-description-cmo
   playTimeTracker: JobChiefMedicalOfficer
   antagAdvantage: 6 # DeltaV - Reduced TC: Head of Staff
-  requirements:
-    - !type:CharacterPlaytimeRequirement
-      tracker: JobChemist
-      min: 14400 #DeltaV 4 hrs
-#    - !type:RoleTimeRequirement # DeltaV - No Medical Doctor time requirement
-#      role: JobMedicalDoctor
-#      time: 21600 #6 hrs
-    - !type:CharacterDepartmentTimeRequirement
-      department: Medical
-      min: 43200 # DeltaV - 12 hours
-    - !type:CharacterOverallTimeRequirement
-      min: 72000 # DeltaV - 20 hours
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterSpeciesRequirement
-          inverted: true
-          species:
-            - Shadowkin
-        - !type:CharacterTraitRequirement
-          traits:
-            - ShadowkinBlackeye
   weight: 10
   startingGear: CMOGear
   icon: "JobIconChiefMedicalOfficer"
@@ -53,10 +32,17 @@
     components:
     - type: CPRTraining
     - type: SurgerySpeedModifier
-      SpeedModifier: 2.5
+      speedModifier: 2.5
+  afterLoadoutSpecial:
+  - !type:ModifyEnvirosuitSpecial
+    charges: 8
+  - !type:ModifyEnvirohelmSpecial
+    powerCell: PowerCellHigh
 
 - type: startingGear
   id: CMOGear
+  subGear:
+  - CMOPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitCMO
     back: ClothingBackpackCMOFilled
@@ -66,3 +52,11 @@
   innerClothingSkirt: ClothingUniformJumpskirtCMO
   satchel: ClothingBackpackSatchelCMOFilled
   duffelbag: ClothingBackpackDuffelCMOFilled
+
+- type: startingGear
+  id: CMOPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitCMO
+    head: ClothingHeadEnvirohelmCMO
+    gloves: ClothingHandsGlovesEnviroglovesWhite

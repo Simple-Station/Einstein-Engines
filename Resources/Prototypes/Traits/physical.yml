@@ -15,6 +15,7 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
+        - Redshirt
         - WillToDie
   functions:
     - !type:TraitReplaceComponent
@@ -64,6 +65,7 @@
       inverted: true
       traits:
         - GlassJaw
+        - BrittleBoneDisease
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -114,10 +116,10 @@
         - Oni
         - IPC
   functions:
-    - !type:TraitReplaceComponent
-      components:
-        - type: StaminaCritModifier
-          critThresholdModifier: 10
+    - !type:TraitModifyStamina
+      staminaModifier: 10
+      decayModifier: 0.6
+      cooldownModifier: -0.75
 
 - type: trait
   id: Lethargy
@@ -137,11 +139,12 @@
       inverted: true
       species:
         - Felinid
+        - Tajaran
   functions:
-    - !type:TraitReplaceComponent
-      components:
-        - type: StaminaCritModifier
-          critThresholdModifier: -15
+    - !type:TraitModifyStamina
+      staminaModifier: -15
+      decayModifier: -0.6
+      cooldownModifier: 0.75
 
 - type: trait
   id: HighAdrenaline
@@ -234,9 +237,57 @@
           rangeModifier: 0.6
 
 - type: trait
+  id: Steadfast
+  category: Physical
+  points: -4
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Felinid
+        - Tajaran
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Feeble
+  functions:
+    - !type:TraitModifySlowOnDamage
+      damageThresholdsModifier: 10
+      speedModifierMultiplier: 0.68
+
+- type: trait
+  id: Feeble
+  category: Physical
+  points: 3
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Felinid
+        - Tajaran
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Steadfast
+  functions:
+    - !type:TraitModifySlowOnDamage
+      damageThresholdsModifier: -15
+      speedModifierMultiplier: 1.2
+
+- type: trait
   id: MartialArtist
   category: Physical
-  points: -3
+  points: -5
   requirements:
   - !type:CharacterJobRequirement
     inverted: true
@@ -244,15 +295,27 @@
       - Borg
       - MedicalBorg
       - Boxer
+      - MartialArtist
+      - Gladiator
   functions:
+    - !type:TraitModifyUnarmed
+      heavyOnLightMiss: true
+      attackRateModifier: 0.8
+      rangeModifier: 1.1
     - !type:TraitReplaceComponent
-      components:
-        - type: Boxer
+      components:     # Keep BoxerComponent for now until we have After/Before on traits prototypes
+        - type: Boxer # for potential conflicts with other traits that replace unarmed damage
           modifiers:
             coefficients:
-              Blunt: 1.5
-              Slash: 1.5
-              Piercing: 1.5
+              Blunt: 1.2
+              Slash: 1.2
+              Piercing: 1.2
+              Heat: 1.2
+              Poison: 1.2
+              Asphyxiation: 1.2
+      # An attack rate of 1.25 hits per second (1 / 0.8 = 1.25) multiplied by 20% extra damage
+      # effectively means 50% more overall DPS, same DPS bonus as before (1 * 1.25 * 1.2 = 1.5)
+      # but the extra attack rate makes it visually apparent that it's Martial Artist.
 
 - type: trait
   id: Small
@@ -262,7 +325,8 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
-        - Felinid # Felinids already have this feature by default.
+        - Felinid # Felinids/Tajaran already have this feature by default.
+        - Tajaran
     - !type:CharacterHeightRequirement
       max: 150
     - !type:CharacterWidthRequirement
@@ -310,16 +374,21 @@
       traits:
         - Claws
   functions:
-    - !type:TraitReplaceComponent
+    - !type:TraitModifyUnarmed
+      soundHit:
+        collection: AlienClaw
+      animation: WeaponArcClaw
+      damage:
+        types:
+          Piercing: 5 # No, this isn't "OP", this is literally the worst brute damage type in the game.
+                      # Same deal as Slash, except that a majority of all armor provides Piercing resistance.
+    - !type:TraitRemoveComponent # Plasmamen have self-damage on melee attacks
       components:
-        - type: MeleeWeapon
-          soundHit:
-            collection: AlienClaw
-          animation: WeaponArcClaw
+        - type: DamageOnHit
           damage:
             types:
-              Piercing: 5 # No, this isn't "OP", this is literally the worst brute damage type in the game.
-                          # Same deal as Slash, except that a majority of all armor provides Piercing resistance.
+              Blunt: 0
+
 
 - type: trait
   id: Claws
@@ -330,6 +399,7 @@
       inverted: true
       species:
         - Felinid # Felinids already have cat claws.
+        - Tajaran # Tajaran also have cat claws
         - Reptilian # Reptilians also have cat claws.
         - Shadowkin # Shadowkins also have claws.
         # - Vulpkanin # Vulpkanin have "Blunt" claws. One could argue this trait "Sharpens" their claws.
@@ -338,17 +408,20 @@
       traits:
         - Talons
   functions:
-    - !type:TraitReplaceComponent
+    - !type:TraitModifyUnarmed
+      soundHit:
+        collection: AlienClaw
+      animation: WeaponArcClaw
+      damage:
+        types:
+          Slash: 5 # Trade stamina damage on hit for a very minor amount of extra bleed.
+                  # Blunt also deals bleed damage, so this is more of a sidegrade.
+    - !type:TraitRemoveComponent
       components:
-        - type: MeleeWeapon
-          soundHit:
-            collection: AlienClaw
-          angle: 30
-          animation: WeaponArcClaw
+        - type: DamageOnHit
           damage:
             types:
-              Slash: 5 # Trade stamina damage on hit for a very minor amount of extra bleed.
-                      # Blunt also deals bleed damage, so this is more of a sidegrade.
+              Blunt: 0
 
 - type: trait
   id: NaturalWeaponRemoval
@@ -361,27 +434,35 @@
         - Human
         - Oni
         - SlimePerson
+        - Diona
+        - Dwarf
+        - Arachne
+        - IPC # Other species could justify getting this trait for Blunt stamina damage,
+              # but 6 blunt -> 5 blunt is a straight up downgrade.
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
         - Talons
         - Claws
   functions:
-    - !type:TraitReplaceComponent
+    - !type:TraitModifyUnarmed
+      soundHit:
+        collection: Punch
+      animation: WeaponArcFist
+      damage:
+        types:
+          Blunt: 5
+    - !type:TraitRemoveComponent
       components:
-        - type: MeleeWeapon
-          soundHit:
-            collection: Punch
-          angle: 30
-          animation: WeaponArcFist
+        - type: DamageOnHit
           damage:
             types:
-              Blunt: 5
+              Blunt: 0
 
 - type: trait
   id: StrikingCalluses
   category: Physical
-  points: -4
+  points: -3
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -404,17 +485,13 @@
         - !type:CharacterJobRequirement
           jobs:
             - Boxer
+            - MartialArtist
+            - Gladiator
   functions:
-    - !type:TraitReplaceComponent
-      components:
-        - type: MeleeWeapon
-          soundHit:
-            collection: Punch
-          angle: 30
-          animation: WeaponArcFist
-          damage:
-            types:
-              Blunt: 6
+    - !type:TraitModifyUnarmed
+      flatDamageIncrease:
+        types:
+          Blunt: 1
 
 - type: trait
   id: Spinarette
@@ -669,3 +746,92 @@
           - Biological
           - Inorganic
           - Silicon
+
+- type: trait
+  id: Redshirt
+  category: Physical
+  points: 8
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - WillToLive
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: DeadModifier
+          deadThresholdModifier: -100
+
+- type: trait
+  id: BrittleBoneDisease
+  category: Physical
+  points: 10
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Tenacity
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: CritModifier
+          critThresholdModifier: -50
+
+- type: trait
+  id: LightAmplification
+  category: Physical
+  points: -4
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+    - !type:CharacterTraitRequirement
+      traits:
+        - CyberEyes
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: NightVision
+
+- type: trait
+  id: ThermographicVision
+  category: Physical
+  points: -8
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+    - !type:CharacterTraitRequirement
+      traits:
+        - CyberEyes
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: ThermalVision
+          pulseTime: 2
+          toggleAction: PulseThermalVision
+    - !type:TraitPushDescription
+      descriptionExtensions:
+        - description: examine-thermal-vision-message
+          fontSize: 12
+          requireDetailRange: true

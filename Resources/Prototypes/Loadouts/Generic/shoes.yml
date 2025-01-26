@@ -1,82 +1,5 @@
 # Colored
 - type: loadout
-  id: LoadoutShoesBlack
-  category: Shoes
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutShoes
-  items:
-    - ClothingShoesColorBlack
-
-- type: loadout
-  id: LoadoutShoesBlue
-  category: Shoes
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutShoes
-  items:
-    - ClothingShoesColorBlue
-
-- type: loadout
-  id: LoadoutShoesBrown
-  category: Shoes
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutShoes
-  items:
-    - ClothingShoesColorBrown
-
-- type: loadout
-  id: LoadoutShoesGreen
-  category: Shoes
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutShoes
-  items:
-    - ClothingShoesColorGreen
-
-- type: loadout
-  id: LoadoutShoesOrange
-  category: Shoes
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutShoes
-  items:
-    - ClothingShoesColorOrange
-
-- type: loadout
-  id: LoadoutShoesPurple
-  category: Shoes
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutShoes
-  items:
-    - ClothingShoesColorPurple
-
-- type: loadout
-  id: LoadoutShoesRed
-  category: Shoes
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutShoes
-  items:
-    - ClothingShoesColorRed
-
-- type: loadout
   id: LoadoutShoesWhite
   category: Shoes
   cost: 0
@@ -87,17 +10,6 @@
       group: LoadoutShoes
   items:
     - ClothingShoesColorWhite
-
-- type: loadout
-  id: LoadoutShoesYellow
-  category: Shoes
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutShoes
-  items:
-    - ClothingShoesColorYellow
 
 - type: loadout
   id: LoadoutShoesGeta
@@ -134,6 +46,41 @@
     - ClothingShoesBootsWork
 
 - type: loadout
+  id: LoadoutShoesBootsWorkColor
+  category: Shoes
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoes
+  items:
+    - ClothingShoesBootsWorkColor
+
+- type: loadout
+  id: LoadoutShoesBootsJackFake
+  category: Shoes
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoes
+  items:
+    - ClothingShoesBootsJackFake
+
+- type: loadout
+  id: LoadoutShoesBootsJackColor
+  category: Shoes
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoes
+  items:
+    - ClothingShoesBootsJackColor
+
+- type: loadout
   id: LoadoutShoesBootsLaceup
   category: Shoes
   cost: 1
@@ -154,30 +101,6 @@
       group: LoadoutShoes
   items:
     - ClothingShoesBootsWinter
-
-- type: loadout
-  id: LoadoutShoesBootsCowboyBrown
-  category: Shoes
-  cost: 1
-  exclusive: true
-  canBeHeirloom: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutShoes
-  items:
-    - ClothingShoesBootsCowboyBrown
-
-- type: loadout
-  id: LoadoutShoesBootsCowboyBlack
-  category: Shoes
-  cost: 1
-  exclusive: true
-  canBeHeirloom: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutShoes
-  items:
-    - ClothingShoesBootsCowboyBlack
 
 - type: loadout
   id: LoadoutShoesBootsCowboyWhite
@@ -215,6 +138,67 @@
       group: LoadoutShoes
   items:
     - ClothingShoesBootsFishing
+
+- type: loadout
+  id: LoadoutShoesBootsAnkle
+  category: Shoes
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoes
+  items:
+    - ClothingShoesBootsAnkle
+
+- type: loadout
+  id: LoadoutShoesBootsFull
+  category: Shoes
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoes
+  items:
+    - ClothingShoesBootsFull
+
+- type: loadout
+  id: LoadoutShoesBootsMud
+  category: Shoes
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoes
+  items:
+    - ClothingShoesBootsMud
+
+- type: loadout
+  id: LoadoutShoesBootsMudThigh
+  category: Shoes
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoes
+  items:
+    - ClothingShoesBootsMudThigh
+
+- type: loadout
+  id: LoadoutShoesBootsThigh
+  category: Shoes
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoes
+  items:
+    - ClothingShoesBootsThigh
+
 
 # Miscellaneous
 - type: loadout
@@ -260,12 +244,16 @@
   category: Shoes
   cost: 1
   exclusive: true
+  canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes
+    - !type:CharacterSpeciesRequirement # Due to a visual bug with envirosuits and heels they are disabled for now.
+      inverted: true
+      species:
+        - Plasmaman
   items:
     - ClothingShoesHighheelBoots
-
 # Socks
 - type: loadout
   id: LoadoutShoesUnderSocksCoder
@@ -300,3 +288,98 @@
       group: LoadoutShoes
   items:
     - ClothingClothWrap
+
+- type: loadout
+  id: LoadoutShoesHighHeels
+  category: Shoes
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoes
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Plasmaman
+  items:
+    - ClothingShoesHighHeels
+
+- type: loadout
+  id: LoadoutShoesHighHeelsLong
+  category: Shoes
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoes
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Plasmaman
+  items:
+    - ClothingShoesHighHeelsLong
+
+- type: loadout
+  id: LoadoutShoesFlats
+  category: Shoes
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoes
+  items:
+    - ClothingShoesFlats
+
+- type: loadout
+  id: LoadoutShoesSkater
+  category: Shoes
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoes
+  items:
+    - ClothingShoesSkater
+
+- type: loadout
+  id: LoadoutShoesSandals
+  category: Shoes
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoes
+  items:
+    - ClothingShoesSandals
+
+- type: loadout
+  id: LoadoutShoesSandalsFlipFlops
+  category: Shoes
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoes
+  items:
+    - ClothingShoesSandalsFlipFlops
+
+- type: loadout
+  id: LoadoutShoesSandalsFlipFlopsAlt
+  category: Shoes
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoes
+  items:
+    - ClothingShoesSandalsFlipFlopsAlt

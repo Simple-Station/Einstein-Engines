@@ -3,12 +3,6 @@
   name: job-name-guard
   description: job-description-guard
   playTimeTracker: JobPrisonGuard
-  requirements:
-    - !type:CharacterOverallTimeRequirement
-      min: 18000
-    - !type:DepartmentTimeRequirement
-      department: Security
-      min: 14400
   startingGear: PrisonGuardGear
   alwaysUseSpawner: true
   canBeAntag: false
@@ -23,10 +17,16 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
-
+  afterLoadoutSpecial:
+  - !type:ModifyEnvirosuitSpecial
+    charges: 6
+  - !type:ModifyEnvirohelmSpecial
+    powerCell: PowerCellHigh
 
 - type: startingGear
   id: PrisonGuardGear
+  subGear:
+  - PrisonGuardPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitPrisonGuard
     back: ClothingBackpackSecurityFilled
@@ -39,3 +39,11 @@
   innerClothingSkirt: ClothingUniformJumpsuitPrisonGuard
   satchel: ClothingBackpackSatchelSecurityFilled
   duffelbag: ClothingBackpackDuffelSecurityFilled
+
+- type: startingGear
+  id: PrisonGuardPlasmamanGear
+  parent: BasePlasmamanSecurityGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitPrisonGuard
+    head: ClothingHeadEnvirohelmPrisonGuard
+    gloves: ClothingHandsGlovesEnviroglovesBlack

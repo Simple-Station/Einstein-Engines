@@ -178,7 +178,7 @@ public sealed class OracleSystem : EntitySystem
             return;
 
         // Why is this hardcoded?
-        var amount = MathF.Round(20 + _random.Next(1, 30) + _glimmer.Glimmer / 10f);
+        var amount = MathF.Round(20 + _random.Next(1, 30) + _glimmer.GlimmerOutput / 10f);
         var temporarySol = new Solution();
         var reagent = _protoMan.Index(oracle.Comp.RewardReagents).Pick(_random);
 
@@ -271,6 +271,10 @@ public sealed class OracleSystem : EntitySystem
         }
 
         proto = _random.Pick(techs);
+
+        if (proto == null)
+            return false;
+
         return true;
     }
 
@@ -291,7 +295,7 @@ public sealed class OracleSystem : EntitySystem
         return true;
     }
 
-    private bool IsDemandValid(Entity<OracleComponent> oracle, ProtoId<EntityPrototype>? id)
+    private bool IsDemandValid(Entity<OracleComponent> oracle, EntProtoId? id)
     {
         if (id == null || oracle.Comp.BlacklistedDemands.Contains(id.Value))
             return false;

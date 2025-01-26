@@ -11,6 +11,8 @@ using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Storage.Components;
 using Robust.Server.Containers;
 using Content.Shared.Whitelist;
+using Content.Shared.Inventory;
+using Content.Shared._Goobstation.Clothing.Systems;
 
 namespace Content.Server.Power.EntitySystems;
 
@@ -22,6 +24,7 @@ internal sealed class ChargerSystem : EntitySystem
     [Dependency] private readonly BatterySystem _battery = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
+    [Dependency] private readonly InventorySystem _inventorySystem = default!;
 
     public override void Initialize()
     {
@@ -43,7 +46,37 @@ internal sealed class ChargerSystem : EntitySystem
 
     private void OnChargerExamine(EntityUid uid, ChargerComponent component, ExaminedEvent args)
     {
-        args.PushMarkup(Loc.GetString("charger-examine", ("color", "yellow"), ("chargeRate", (int) component.ChargeRate)));
+        using (args.PushGroup(nameof(ChargerComponent)))
+        {
+            // rate at which the charger charges
+            args.PushMarkup(Loc.GetString("charger-examine", ("color", "yellow"), ("chargeRate", (int) component.ChargeRate)));
+
+            // try to get contents of the charger
+            if (!_container.TryGetContainer(uid, component.SlotId, out var container))
+                return;
+
+            if (HasComp<PowerCellSlotComponent>(uid))
+                return;
+
+            // if charger is empty and not a power cell type charger, add empty message
+            // power cells have their own empty message by default, for things like flash lights
+            if (container.ContainedEntities.Count == 0)
+            {
+                args.PushMarkup(Loc.GetString("charger-empty"));
+            }
+            else
+            {
+                // add how much each item is charged it
+                foreach (var contained in container.ContainedEntities)
+                {
+                    if (!TryComp<BatteryComponent>(contained, out var battery))
+                        continue;
+
+                    var chargePercentage = (battery.CurrentCharge / battery.MaxCharge) * 100;
+                    args.PushMarkup(Loc.GetString("charger-content", ("chargePercentage", (int) chargePercentage)));
+                }
+            }
+        }
     }
 
     public override void Update(float frameTime)
@@ -201,7 +234,7 @@ internal sealed class ChargerSystem : EntitySystem
 
         return CellChargerStatus.Charging;
     }
-    
+
     private void TransferPower(EntityUid uid, EntityUid targetEntity, ChargerComponent component, float frameTime)
     {
         if (!TryComp(uid, out ApcPowerReceiverComponent? receiverComponent))
@@ -226,15 +259,45 @@ internal sealed class ChargerSystem : EntitySystem
         UpdateStatus(uid, component);
     }
 
+    // Goobstation - Modsuits - Changed charger logic to work with suits in cyborg charger
     private bool SearchForBattery(EntityUid uid, [NotNullWhen(true)] out EntityUid? batteryUid, [NotNullWhen(true)] out BatteryComponent? component)
     {
+        batteryUid = null;
+        component = null;
+
         // try get a battery directly on the inserted entity
-        if (!TryComp(uid, out component))
+        if (TryComp(uid, out component))
         {
-            // or by checking for a power cell slot on the inserted entity
-            return _powerCell.TryGetBatteryFromSlot(uid, out batteryUid, out component);
+            batteryUid = uid;
+            return true;
         }
-        batteryUid = uid;
-        return true;
+
+        // Try to get the battery by checking for a power cell slot on the inserted entity
+        if (_powerCell.TryGetBatteryFromSlot(uid, out batteryUid, out component))
+            return true;
+
+        if (TryComp<InventoryComponent>(uid, out var inventory))
+        {
+            var relayEv = new FindInventoryBatteryEvent();
+            _inventorySystem.RelayEvent((uid, inventory), ref relayEv);
+
+            if (relayEv.FoundBattery != null)
+            {
+                batteryUid = relayEv.FoundBattery.Value.Owner;
+                component = relayEv.FoundBattery.Value.Comp;
+                return true;
+            }
+        }
+
+        return false;
     }
+}
+
+// Goobstation - Modsuits stuff
+[ByRefEvent]
+public record struct FindInventoryBatteryEvent() : IInventoryRelayEvent
+{
+    public SlotFlags TargetSlots { get; } = SlotFlags.WITHOUT_POCKET;
+
+    public Entity<BatteryComponent>? FoundBattery { get; set; }
 }

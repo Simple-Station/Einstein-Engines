@@ -1,0 +1,35 @@
+- type: emote
+  id: Flip
+  name: chat-emote-name-flip
+  whitelist:
+    components:
+    - HumanoidAppearance
+  chatMessages: ["chat-emote-msg-flip"]
+  chatTriggers:
+  - flip
+  - flips
+  event: !type:AnimationFlipEmoteEvent
+
+- type: emote
+  id: Spin
+  name: chat-emote-name-spin
+  whitelist:
+    components:
+    - HumanoidAppearance
+  chatMessages: ["chat-emote-msg-spin"]
+  chatTriggers:
+  - spin
+  - spins
+  event: !type:AnimationSpinEmoteEvent
+
+- type: emote
+  id: Jump
+  name: chat-emote-name-jump
+  whitelist:
+    components:
+    - HumanoidAppearance
+  chatMessages: ["chat-emote-msg-jump"]
+  chatTriggers:
+  - jump
+  - jumps
+  event: !type:AnimationJumpEmoteEvent

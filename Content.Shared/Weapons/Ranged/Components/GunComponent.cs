@@ -1,6 +1,5 @@
-using Content.Shared.Damage;
+using System.Numerics;
 using Content.Shared.Nyanotrasen.Abilities.Oni;
-using Content.Shared.Tag;
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Weapons.Ranged.Systems;
 using Robust.Shared.Audio;
@@ -160,6 +159,30 @@ public sealed partial class GunComponent : Component
     public int ShotsPerBurstModified = 3;
 
     /// <summary>
+    /// How long time must pass between burstfire shots.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float BurstCooldown = 0.25f;
+
+    /// <summary>
+    /// The fire rate of the weapon in burst fire mode.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float BurstFireRate = 8f;
+
+    /// <summary>
+    /// Whether the burst fire mode has been activated.
+    /// </summary>
+    [AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]
+    public bool BurstActivated = false;
+
+    /// <summary>
+    /// The burst fire bullet count.
+    /// </summary>
+    [AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]
+    public int BurstShotsCount = 0;
+
+    /// <summary>
     /// Used for tracking semi-auto / burst
     /// </summary>
     [ViewVariables]
@@ -209,6 +232,12 @@ public sealed partial class GunComponent : Component
     public TimeSpan NextFire = TimeSpan.Zero;
 
     /// <summary>
+    ///   After dealing a melee attack with this gun, the minimum cooldown in seconds before the gun can shoot again.
+    /// </summary>
+    [DataField]
+    public float MeleeCooldown = 0.528f;
+
+    /// <summary>
     /// What firemodes can be selected.
     /// </summary>
     [DataField]
@@ -237,16 +266,16 @@ public sealed partial class GunComponent : Component
     public bool ClumsyProof = false;
 
     /// <summary>
+    /// Firing direction for an item not being held (e.g. shuttle cannons, thrown guns still firing).
+    /// </summary>
+    [DataField]
+    public Vector2 DefaultDirection = new Vector2(0, -1);
+
+    /// <summary>
     ///     The percentage chance of a given gun to accidentally discharge if violently thrown into a wall or person
     /// </summary>
     [DataField]
     public float FireOnDropChance = 0.1f;
-
-    /// <summary>
-    ///     Whether or not this gun is truly Recoilless, such as Lasers, and therefore shouldn't move the user.
-    /// </summary>
-    [DataField]
-    public bool DoRecoil = true;
 }
 
 [Flags]

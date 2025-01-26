@@ -1,0 +1,12 @@
+# Damage taken when the organ fails or is rotting.
+- type: damageType
+  id: Decay
+  name: damage-type-organ
+  armorCoefficientPrice: 1
+  armorFlatPrice: 1
+
+- type: damageType
+  id: Trauma
+  name: damage-type-trauma
+  armorCoefficientPrice: 1
+  armorFlatPrice: 1

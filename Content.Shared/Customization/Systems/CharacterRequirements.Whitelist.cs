@@ -29,6 +29,10 @@ public sealed partial class CharacterWhitelistRequirement : CharacterRequirement
         out string? reason,
         int depth = 0)
     {
+        reason = null;
+        if (!configManager.IsCVarRegistered("whitelist.enabled"))
+            return whitelisted;
+
         reason = Loc.GetString("character-whitelist-requirement", ("inverted", Inverted));
         return !configManager.GetCVar(CCVars.WhitelistEnabled) || whitelisted;
     }

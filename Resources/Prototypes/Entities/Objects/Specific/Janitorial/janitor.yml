@@ -13,7 +13,7 @@
       types:
         Blunt: 2
     bluntStaminaDamageFactor: 3
-    heavyRateModifier: 0.8
+    heavyRateModifier: 1.25
     heavyRangeModifier: 1.25
     heavyDamageBaseModifier: 1.25
     heavyStaminaCost: 7.5
@@ -21,6 +21,11 @@
     angle: 180
     soundHit:
       collection: MetalThud
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 6
+    staminaCost: 8
   - type: Spillable
     solution: absorbed
   - type: Wieldable
@@ -32,6 +37,8 @@
     size: Large
     sprite: Objects/Specific/Janitorial/mop.rsi
   - type: Absorbent
+    footprintCleaningRange: 0.45
+    maxCleanedFootprints: 25
   - type: SolutionContainerManager
     solutions:
       absorbed:
@@ -64,7 +71,7 @@
         types:
           Blunt: 2
       bluntStaminaDamageFactor: 3
-      heavyRateModifier: 0.8
+      heavyRateModifier: 1.25
       heavyRangeModifier: 1.25
       heavyDamageBaseModifier: 1.25
       heavyStaminaCost: 7.5
@@ -72,6 +79,11 @@
       angle: 180
       soundHit:
          collection: MetalThud
+    - type: DamageOtherOnHit
+      damage:
+        types:
+          Blunt: 6
+      staminaCost: 8
     - type: Spillable
       solution: absorbed
     - type: Wieldable
@@ -84,6 +96,8 @@
       sprite: Objects/Specific/Janitorial/advmop.rsi
     - type: Absorbent
       pickupAmount: 100
+      footprintCleaningRange: 0.75
+      maxCleanedFootprints: 25
     - type: UseDelay
       delay: 1.0
     - type: SolutionRegeneration
@@ -234,6 +248,7 @@
     embedOnThrow: True
   - type: ThrowingAngle
     angle: 0
+  - type: LandAtCursor
   - type: Ammo
     muzzleFlash: null
   - type: Projectile

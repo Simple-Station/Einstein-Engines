@@ -12,9 +12,6 @@
     quickEquip: false
     equipSound:
       path: /Audio/SimpleStation14/Items/Equip/toolbelt_equip.ogg
-    clothingVisuals:
-      belt2: #there should be a cleaner way to do this tbh
-      - state: equipped-BELT
   - type: PhysicalComposition
     materialComposition:
       Cloth: 50

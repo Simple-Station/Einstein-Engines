@@ -34,7 +34,7 @@
     limit: 2 # there is usually only 1 of each steal objective, have 2 max for drama
 
 - type: entity # Head of Security steal objective.
-  categories: [ HideSpawnMenu ]
+  categories: [HideSpawnMenu]
   parent: BaseTraitorStealObjective
   id: HoSAntiqueWeaponStealObjective
   components:
@@ -50,7 +50,7 @@
 # state
 
 - type: entity
-  categories: [ HideSpawnMenu ]
+  categories: [HideSpawnMenu]
   parent: [BaseTraitorObjective, BaseLivingObjective]
   id: EscapeShuttleObjective
   name: Escape to centcom alive and unrestrained.
@@ -63,43 +63,43 @@
       state: shuttle
   - type: EscapeShuttleCondition
 
-##- type: entity # DeltaV
-#  categories: [ HideSpawnMenu ]
-#  parent: BaseTraitorObjective
-#  id: DieObjective
-#  name: Die a glorious death
-#  description: Die.
-#  components:
-#  - type: Objective
-#    difficulty: 0.5
-#    icon:
-#      sprite: Mobs/Ghosts/ghost_human.rsi
-#      state: icon
-#  - type: ObjectiveBlacklistRequirement
-#    blacklist:
-#      components:
-#      - EscapeShuttleCondition
-#      - StealCondition
-#  - type: DieCondition
+- type: entity
+  categories: [HideSpawnMenu]
+  parent: BaseTraitorObjective
+  id: DieObjective
+  name: Die a glorious death
+  description: Die.
+  components:
+  - type: Objective
+    difficulty: 0.5
+    icon:
+      sprite: Mobs/Ghosts/ghost_human.rsi
+      state: icon
+  - type: ObjectiveBlacklistRequirement
+    blacklist:
+      components:
+      - EscapeShuttleCondition
+      - StealCondition
+  - type: DieCondition
 
-#- type: entity
-#  categories: [ HideSpawnMenu ]
-#  parent: [BaseTraitorObjective, BaseLivingObjective]
-#  id: HijackShuttleObjective
-#  name: Hijack emergency shuttle
-#  description: Leave on the shuttle free and clear of the loyal Nanotrasen crew on board. Use ANY methods available to you. Syndicate agents, Nanotrasen enemies, and handcuffed hostages may remain alive on the shuttle. Ignore assistance from anyone other than a support agent.
-#  components:
-#    - type: Objective
-#      difficulty: 5 # insane, default config max difficulty
-#      icon:
-#        sprite: Objects/Tools/emag.rsi
-#        state: icon
-#    - type: HijackShuttleCondition
+- type: entity
+  categories: [HideSpawnMenu]
+  parent: [BaseTraitorObjective, BaseLivingObjective]
+  id: HijackShuttleObjective
+  name: Hijack emergency shuttle
+  description: Leave on the shuttle free and clear of the loyal Nanotrasen crew on board. Use ANY methods available to you. Syndicate agents, Nanotrasen enemies, and handcuffed hostages may remain alive on the shuttle. Ignore assistance from anyone other than a support agent.
+  components:
+  - type: Objective
+    difficulty: 5 # insane, default config max difficulty
+    icon:
+      sprite: Objects/Tools/emag.rsi
+      state: icon
+  - type: HijackShuttleCondition
 
 # kill
 
 - type: entity
-  categories: [ HideSpawnMenu ]
+  categories: [HideSpawnMenu]
   parent: [BaseTraitorObjective, BaseKillObjective]
   id: KillRandomPersonObjective
   description: Do it however you like, just make sure they don't make it to centcom.
@@ -112,7 +112,7 @@
   - type: PickRandomPerson
 
 - type: entity
-  categories: [ HideSpawnMenu ]
+  categories: [HideSpawnMenu]
   parent: [BaseTraitorObjective, BaseKillObjective]
   id: KillRandomHeadObjective
   description: We need this head gone and you probably know why. Good luck, agent.
@@ -133,7 +133,7 @@
 # social
 
 - type: entity
-  categories: [ HideSpawnMenu ]
+  categories: [HideSpawnMenu]
   parent: [BaseTraitorSocialObjective, BaseKeepAliveObjective]
   id: RandomTraitorAliveObjective
   description: Identify yourself at your own risk. We just need them alive.
@@ -145,7 +145,7 @@
   - type: RandomTraitorAlive
 
 - type: entity
-  categories: [ HideSpawnMenu ]
+  categories: [HideSpawnMenu]
   parent: [BaseTraitorSocialObjective, BaseHelpProgressObjective]
   id: RandomTraitorProgressObjective
   description: Identify yourself at your own risk. We just need them to succeed.
@@ -171,7 +171,7 @@
     owner: job-name-cmo
 
 - type: entity
-  categories: [ HideSpawnMenu ]
+  categories: [HideSpawnMenu]
   parent: BaseCMOStealObjective
   id: CMOHyposprayStealObjective
   components:
@@ -202,7 +202,7 @@
     owner: job-name-rd
 
 - type: entity
-  categories: [ HideSpawnMenu ]
+  categories: [HideSpawnMenu]
   parent: BaseRDStealObjective
   id: RDHardsuitStealObjective
   components:
@@ -214,7 +214,7 @@
     difficulty: 3
 
 - type: entity
-  categories: [ HideSpawnMenu ]
+  categories: [HideSpawnMenu]
   parent: BaseRDStealObjective
   id: HandTeleporterStealObjective
   components:
@@ -222,27 +222,10 @@
     stealGroup: HandTeleporter
     verifyMapExistence: true
 
-## hos
-
-- type: entity
-  categories: [ HideSpawnMenu ]
-  parent: BaseTraitorStealObjective
-  id: SecretDocumentsStealObjective
-  components:
-  - type: Objective
-    # hos has a gun ce does not, higher difficulty than most
-    difficulty: 3
-  - type: NotJobRequirement
-    job: HeadOfSecurity
-  - type: StealCondition
-    stealGroup: BookSecretDocuments
-    verifyMapExistence: true
-    owner: job-name-hos
-
 ## ce
 
 - type: entity
-  categories: [ HideSpawnMenu ]
+  categories: [HideSpawnMenu]
   parent: BaseTraitorStealObjective
   id: MagbootsStealObjective
   components:
@@ -256,7 +239,7 @@
 ## qm
 
 - type: entity
-  categories: [ HideSpawnMenu ]
+  categories: [HideSpawnMenu]
   parent: BaseTraitorStealObjective
   id: ClipboardStealObjective
   components:
@@ -270,7 +253,7 @@
 ## hop
 
 - type: entity
-  categories: [ HideSpawnMenu ]
+  categories: [HideSpawnMenu]
   parent: BaseTraitorStealObjective
   id: CorgiMeatStealObjective
   components:
@@ -296,7 +279,7 @@
     job: Captain
 
 - type: entity
-  categories: [ HideSpawnMenu ]
+  categories: [HideSpawnMenu]
   parent: BaseCaptainObjective
   id: CaptainIDStealObjective
   components:
@@ -305,7 +288,7 @@
     verifyMapExistence: true
 
 - type: entity
-  categories: [ HideSpawnMenu ]
+  categories: [HideSpawnMenu]
   parent: BaseCaptainObjective
   id: CaptainJetpackStealObjective
   components:
@@ -314,7 +297,7 @@
     verifyMapExistence: true
 
 - type: entity
-  categories: [ HideSpawnMenu ]
+  categories: [HideSpawnMenu]
   parent: BaseCaptainObjective
   id: CaptainGunStealObjective
   components:
@@ -324,7 +307,7 @@
     verifyMapExistence: true
 
 - type: entity
-  categories: [ HideSpawnMenu ]
+  categories: [HideSpawnMenu]
   parent: BaseCaptainObjective
   id: NukeDiskStealObjective
   components:
@@ -340,7 +323,7 @@
     owner: objective-condition-steal-station
 
 - type: entity
-  categories: [ HideSpawnMenu ]
+  categories: [HideSpawnMenu]
   parent: BaseTraitorStealObjective
   id: StealSupermatterSliverObjective
   components:

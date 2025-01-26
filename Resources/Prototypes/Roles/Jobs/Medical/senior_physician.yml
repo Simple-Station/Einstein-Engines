@@ -25,10 +25,12 @@
     components:
     - type: CPRTraining
     - type: SurgerySpeedModifier
-      SpeedModifier: 2.0
+      speedModifier: 2.0
 
 - type: startingGear
   id: SeniorPhysicianGear
+  subGear:
+  - DoctorPlasmamanGear
   equipment:
     head: ClothingHeadHatBeretSeniorPhysician
     jumpsuit: ClothingUniformJumpsuitSeniorPhysician

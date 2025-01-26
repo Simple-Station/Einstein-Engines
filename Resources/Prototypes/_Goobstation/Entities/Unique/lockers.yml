@@ -1,0 +1,26 @@
+- type: entity
+  id: UniqueLockerNanorepFilled
+  suffix: MAP THIS, Unique, Filled
+  parent: LockerNanorepFilled
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - UniqueMarkerNanorepLocker
+
+- type: entity
+  id: UniqueLockerBlueshieldOfficerFilled
+  suffix: MAP THIS, Unique, Filled
+  parent: LockerBlueshieldOfficerFilled
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - UniqueMarkerBlueshieldLocker
+
+- type: entity
+  id: UniqueLockerMagistrateFilled
+  suffix: MAP THIS, Unique, Filled
+  parent: LockerMagistrateFilled
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - UniqueMarkerMagistrateLocker

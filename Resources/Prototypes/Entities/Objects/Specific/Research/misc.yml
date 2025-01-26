@@ -6,4 +6,6 @@
   components:
   - type: TelepathicRepeater
   - type: Psionic
+    removable: false
+    roller: false
   - type: Speech

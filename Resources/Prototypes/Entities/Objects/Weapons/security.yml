@@ -9,6 +9,9 @@
     layers:
     - state: stunbaton_off
       map: [ "enum.ToggleVisuals.Layer" ]
+  - type: Tag
+    tags:
+    - Stunbaton
   - type: Stunbaton
     energyPerUse: 50
   - type: ItemToggle
@@ -29,6 +32,7 @@
     activatedDamage:
       types:
         Blunt: 0
+  - type: ItemToggleDamageOtherOnHit
   - type: MeleeWeapon
     wideAnimationRotation: -135
     damage:
@@ -39,6 +43,7 @@
     heavyDamageBaseModifier: 1.75
     heavyStaminaCost: 1
     animation: WeaponArcSlash
+  - type: DamageOtherOnHit
   - type: StaminaDamageOnHit
     damage: 35
     sound: /Audio/Weapons/egloves.ogg
@@ -109,10 +114,12 @@
     heavyRateModifier: 1
     heavyDamageBaseModifier: 1.2
     heavyStaminaCost: 7.5
+  - type: DamageOtherOnHit
+    staminaCost: 9
   - type: Item
     size: Normal
   - type: Tag
-    tags: 
+    tags:
     - Truncheon
   - type: Clothing
     sprite: Objects/Weapons/Melee/truncheon.rsi

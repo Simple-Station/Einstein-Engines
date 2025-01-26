@@ -13,7 +13,7 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 0.85
+    attackRate: 1.17
     range: 1.75
     damage:
       types:
@@ -26,6 +26,11 @@
     angle: 100
     soundHit:
       collection: MetalThud
+  - type: DamageOtherOnHit
+    staminaCost: 9
+  - type: EmbeddableProjectile
+  - type: ThrowingAngle
+    angle: 225
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:

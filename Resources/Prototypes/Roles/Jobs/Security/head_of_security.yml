@@ -3,19 +3,6 @@
   name: job-name-hos
   description: job-description-hos
   playTimeTracker: JobHeadOfSecurity
-  requirements:
-    - !type:CharacterPlaytimeRequirement
-      tracker: JobWarden
-      min: 14400 #DeltaV 4 hrs
-  #  - !type:RoleTimeRequirement # DeltaV - No Security Officer time requirement - REIMPLEMENT WHEN MORE PEOPLE HAVE IT
-  #    role: JobDetective
-  #    time: 14400 #DeltaV 4 hrs
-    - !type:CharacterDepartmentTimeRequirement # DeltaV - Command dept time requirement
-      department: Command
-      min: 36000 # 10 hours
-    - !type:CharacterOverallTimeRequirement
-      min: 90000 # DeltaV - 25 hours
-    - !type:CharacterWhitelistRequirement
   weight: 10
   startingGear: HoSGear
   icon: "JobIconHeadOfSecurity"
@@ -40,9 +27,16 @@
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
+  afterLoadoutSpecial:
+  - !type:ModifyEnvirosuitSpecial
+    charges: 8
+  - !type:ModifyEnvirohelmSpecial
+    powerCell: PowerCellHigh
 
 - type: startingGear
   id: HoSGear
+  subGear:
+  - HoSPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitHoS
     back: ClothingBackpackHOSFilled
@@ -55,3 +49,11 @@
   innerClothingSkirt: ClothingUniformJumpskirtHoS
   satchel: ClothingBackpackSatchelHOSFilled
   duffelbag: ClothingBackpackDuffelHOSFilled
+
+- type: startingGear
+  id: HoSPlasmamanGear
+  parent: BasePlasmamanSecurityGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitHoS
+    head: ClothingHeadEnvirohelmHoS
+    gloves: ClothingHandsGlovesEnviroglovesBlack

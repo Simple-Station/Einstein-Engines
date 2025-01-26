@@ -4,9 +4,6 @@
   antagonist: true
   setPreference: true
   objective: roles-antag-initial-infected-objective
-  requirements:
-  - !type:CharacterOverallTimeRequirement # DeltaV - Playtime requirement
-    min: 43200 # DeltaV - 12 hours
 
 - type: antag
   id: Zombie

@@ -33,17 +33,21 @@
     maxIntensity: 20
   - type: MeleeWeapon
     wideAnimationRotation: 45
-    attackRate: 0.8
+    attackRate: 1.25
     range: 1.75
     damage:
       types:
         Blunt: 8
     bluntStaminaDamageFactor: 2.5
-    heavyRateModifier: 0.8
+    heavyRateModifier: 1.25
     heavyDamageBaseModifier: 1.5
     heavyStaminaCost: 10
     maxTargets: 3
     angle: 100
+    soundHit:
+      path: /Audio/Weapons/smash.ogg
+  - type: DamageOtherOnHit
+    staminaCost: 8
   - type: PhysicalComposition
     materialComposition:
       Steel: 185
@@ -58,7 +62,7 @@
   - type: Tool
     qualities:
     - Rolling
-    speed: 0.6 # fairly unwieldly but nice round surface
+    speedModifier: 0.6 # fairly unwieldly but nice round surface
 
 - type: entity
   parent: GasTankRoundBase
@@ -111,6 +115,8 @@
     damage:
       types:
         Blunt: 5
+  - type: DamageOtherOnHit
+    staminaCost: 3.5
   - type: PhysicalComposition
     materialComposition:
       Steel: 100
@@ -123,6 +129,19 @@
   components:
   - type: Sprite
     sprite: Objects/Tanks/emergency_red.rsi
+  - type: Item
+    sprite: Objects/Tanks/emergency_red.rsi
+  - type: Clothing
+    sprite: Objects/Tanks/emergency_red.rsi
+
+- type: entity
+  parent: EmergencyOxygenTank
+  id: EmergencyPlasmaTank
+  name: emergency plasma tank
+  description: An easily portable tank for emergencies. Contains very little plasma, rated for survival use only.
+  components:
+  - type: Sprite
+    sprite: Objects/Tanks/emergency_red.rsi # TODO: emergency plasma tank sprite
   - type: Item
     sprite: Objects/Tanks/emergency_red.rsi
   - type: Clothing
@@ -160,6 +179,19 @@
 
 - type: entity
   parent: ExtendedEmergencyOxygenTank
+  id: ExtendedEmergencyPlasmaTank
+  name: extended-capacity emergency plasma tank
+  description: An emergency tank with extended capacity. Technically rated for prolonged use.
+  components:
+  - type: Sprite
+    sprite: Objects/Tanks/emergency_extended_red.rsi # TODO: extended-capacity emergency plasma tank sprite
+  - type: Item
+    sprite: Objects/Tanks/emergency_extended_red.rsi
+  - type: Clothing
+    sprite: Objects/Tanks/emergency_extended_red.rsi
+
+- type: entity
+  parent: ExtendedEmergencyOxygenTank
   id: DoubleEmergencyOxygenTank
   name: double emergency oxygen tank
   description: A high-grade dual-tank emergency life support container. It holds a decent amount of oxygen for it's small size.
@@ -179,6 +211,8 @@
     damage:
       types:
         Blunt: 7.5
+  - type: DamageOtherOnHit
+    staminaCost: 5
 
 - type: entity
   parent: DoubleEmergencyOxygenTank
@@ -192,6 +226,19 @@
     sprite: Objects/Tanks/emergency_double_red.rsi
   - type: Clothing
     sprite: Objects/Tanks/emergency_double_red.rsi
+
+- type: entity
+  parent: DoubleEmergencyOxygenTank
+  id: DoubleEmergencyPlasmaTank
+  name: plasma internals tank
+  description: A tank of plasma designed to be internals for Plasmamen.
+  components:
+  - type: Sprite
+    sprite: Objects/Tanks/plasmaman.rsi
+  - type: Item
+    sprite: Objects/Tanks/plasmaman.rsi
+  - type: Clothing
+    sprite: Objects/Tanks/plasmaman.rsi
 
 - type: entity
   parent: EmergencyOxygenTank
@@ -235,7 +282,7 @@
   parent: GasTankBase
   id: PlasmaTank
   name: plasma tank
-  description: Contains dangerous plasma. Do not inhale. Extremely flammable.
+  description: Contains dangerous plasma. Do not inhale, unless you're a plasmaman. Extremely flammable.
   components:
   - type: Sprite
     sprite: Objects/Tanks/plasma.rsi

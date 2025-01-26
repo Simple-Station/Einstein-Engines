@@ -47,7 +47,7 @@
         sound:
           collection: MetalBreak
   - type: StaticPrice
-    price: 10
+    price: 25
   - type: RequireProjectileTarget
 
 #Starts unanchored, cannot be rotated while anchored

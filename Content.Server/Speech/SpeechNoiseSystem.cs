@@ -60,7 +60,7 @@ namespace Content.Server.Speech
 
         private void OnEntitySpoke(EntityUid uid, SpeechComponent component, EntitySpokeEvent args)
         {
-            if (component.SpeechSounds == null)
+            if (component.SpeechSounds == null || !args.Language.SpeechOverride.RequireSpeech)
                 return;
 
             var currentTime = _gameTiming.CurTime;

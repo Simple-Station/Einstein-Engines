@@ -1,39 +1,15 @@
+using Content.Shared.Alert;
 using Content.Shared.DoAfter;
 using Content.Shared.Psionics;
+using Content.Shared.Random;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Abilities.Psionics
 {
-    [RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true)]
+    [RegisterComponent, NetworkedComponent]
     public sealed partial class PsionicComponent : Component
     {
-        /// <summary>
-        ///     Current Mana.
-        /// </summary>
-        [DataField, AutoNetworkedField]
-        public float Mana;
-
-        /// <summary>
-        ///     Max Mana Possible.
-        /// </summary>
-        [DataField, AutoNetworkedField]
-        public float MaxMana = 100;
-
-        /// <summary>
-        ///     How much energy is gained per second.
-        /// </summary>
-        [DataField]
-        public float ManaGain = 1;
-
-        /// <summary>
-        ///     ManaGain Multiplier
-        /// </summary>
-        [DataField]
-        public float ManaGainMultiplier = 1;
-
-        public float ManaAccumulator;
-
         [DataField]
         public bool BypassManaCheck;
 
@@ -43,6 +19,12 @@ namespace Content.Shared.Abilities.Psionics
         /// </summary>
         [DataField]
         public float Potentia;
+
+        /// <summary>
+        ///     The base cost for new powers.
+        /// </summary>
+        [DataField]
+        public float BaselinePowerCost = 100;
 
         /// <summary>
         ///     Each time a Psion rolls for a new power, they roll a number between 0 and 100, adding any relevant modifiers. This number is then added to Potentia,
@@ -79,6 +61,11 @@ namespace Content.Shared.Abilities.Psionics
         /// </summary>
         [DataField]
         public string MindbreakingFeedback = "mindbreaking-feedback";
+
+        /// <summary>
+        /// </summary>
+        [DataField]
+        public string HardMindbreakingFeedback = "hard-mindbreaking-feedback";
 
         /// <summary>
         ///     How much should the odds of obtaining a Psionic Power be multiplied when rolling for one.
@@ -139,6 +126,12 @@ namespace Content.Shared.Abilities.Psionics
         }
 
         /// <summary>
+        ///     Whether this entity is capable of randomly rolling for powers.
+        /// </summary>
+        [DataField]
+        public bool Roller = true;
+
+        /// <summary>
         ///     Ifrits, revenants, etc are explicitly magical beings that shouldn't get mindbroken
         /// </summary>
         [DataField]
@@ -152,10 +145,10 @@ namespace Content.Shared.Abilities.Psionics
         public HashSet<PsionicPowerPrototype> ActivePowers = new();
 
         /// <summary>
-        ///     The list of each Psionic Power by action with entityUid.
+        ///     The list of each Psionic Power by prototype with entityUid.
         /// </summary>
         [ViewVariables(VVAccess.ReadOnly)]
-        public Dictionary<EntProtoId, EntityUid?> Actions = new();
+        public Dictionary<string, EntityUid?> Actions = new();
 
         /// <summary>
         ///     What sources of Amplification does this Psion have?
@@ -201,7 +194,7 @@ namespace Content.Shared.Abilities.Psionics
         ///     unneccesary subs for unique psionic entities like e.g. Oracle.
         /// </summary>
         [DataField]
-        public List<string>? PsychognomicDescriptors = null;
+        public List<string> PsychognomicDescriptors = new();
 
         /// Used for tracking what spell a Psion is actively casting
         [DataField]
@@ -210,9 +203,6 @@ namespace Content.Shared.Abilities.Psionics
         /// Popup to play if a Psion attempts to start casting a power while already casting one
         [DataField]
         public string AlreadyCasting = "already-casting";
-
-        /// Popup to play if there no Mana left for a power to execute.
-        public string NoMana = "no-mana";
 
         /// <summary>
         ///     The list of Familiars currently bound to this Psion.
@@ -225,5 +215,21 @@ namespace Content.Shared.Abilities.Psionics
         /// </summary>
         [DataField]
         public int FamiliarLimit = 1;
+
+        /// <summary>
+        ///     The list of all potential Assay messages that can be obtained from this Psion.
+        /// </summary>
+        [DataField]
+        public List<string> AssayFeedback = new();
+
+        /// <summary>
+        ///     The list of powers that this Psion is eligible to roll new abilities from.
+        ///     This generates the initial ability pool, but can also be modified by other systems.
+        /// </summary>
+        [DataField]
+        public ProtoId<WeightedRandomPrototype> PowerPool = "RandomPsionicPowerPool";
+
+        [DataField]
+        public Dictionary<string, float> AvailablePowers = new();
     }
 }

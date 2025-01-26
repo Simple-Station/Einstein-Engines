@@ -258,7 +258,14 @@
     - ActionFabricateGumball
   - type: SiliconLawProvider
     laws: Medical
-  - type: SurgeryTarget
+  - type: SurgeryTarget # Shitmed
+  - type: Sanitized # Shitmed
+  - type: SolutionScanner
+  - type: InteractionPopup
+    interactSuccessString: petting-success-medical-cyborg
+    interactFailureString: petting-failure-medical-cyborg
+    interactSuccessSound:
+      path: /Audio/Ambience/Objects/periodic_beep.ogg
 
 - type: entity
   id: BorgChassisService

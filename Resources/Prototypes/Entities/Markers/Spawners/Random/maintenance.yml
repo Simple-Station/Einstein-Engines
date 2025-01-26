@@ -130,6 +130,8 @@
       - !type:EntSelector
         id: ClothingShoesBootsJack
       - !type:EntSelector
+        id: ClothingShoesBootsJackFake
+      - !type:EntSelector
         id: ClothingShoesHighheelBoots
       - !type:EntSelector
         id: ClothingShoesBootsLaceup
@@ -243,6 +245,8 @@
         - !type:EntSelector
           id: ClothingNeckBisexualPin
         - !type:EntSelector
+          id: ClothingNeckGayPin
+        - !type:EntSelector
           id: ClothingNeckIntersexPin
         - !type:EntSelector
           id: ClothingNeckLesbianPin
@@ -315,6 +319,12 @@
           id: NitrogenTankFilled
         - !type:EntSelector
           id: DoubleEmergencyNitrogenTankFilled
+      - !type:GroupSelector
+        children:
+        - !type:EntSelector
+          id: PlasmaTankFilled
+        - !type:EntSelector
+          id: DoubleEmergencyPlasmaTankFilled
       - !type:EntSelector
         id: EmergencyFunnyOxygenTankFilled
         weight: 0.5

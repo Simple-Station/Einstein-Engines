@@ -28,10 +28,12 @@
     components:
     - type: CPRTraining
     - type: SurgerySpeedModifier
-      SpeedModifier: 1.75
+      speedModifier: 1.75
 
 - type: startingGear
   id: ParamedicGear
+  subGear:
+  - ParamedicPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitParamedic
     back: ClothingBackpackParamedicFilledDV
@@ -44,3 +46,12 @@
   innerClothingSkirt: ClothingUniformJumpskirtParamedic
   satchel: ClothingBackpackSatchelParamedicFilledDV
   duffelbag: ClothingBackpackDuffelParamedicFilledDV
+
+- type: startingGear
+  id: ParamedicPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitParamedic
+    head: ClothingHeadEnvirohelmParamedic
+    gloves: ClothingHandsGlovesEnviroglovesNitrile
+    shoes: ClothingShoesColorBlue

@@ -4,21 +4,6 @@
   description: job-description-qm
   playTimeTracker: JobQuartermaster
   antagAdvantage: 6 # DeltaV - Reduced TC: Head of Staff
-  requirements:
-  #  - !type:RoleTimeRequirement #DeltaV
-  #    role: JobCargoTechnician
-  #    time: 21600 #6 hrs
-    - !type:CharacterPlaytimeRequirement
-      tracker: JobSalvageSpecialist
-      min: 10800 #3 hrs
-    - !type:CharacterPlaytimeRequirement # DeltaV - Courier role time requirement
-      tracker: JobMailCarrier
-      min: 7200 # 2 hours
-    - !type:CharacterDepartmentTimeRequirement
-      department: Logistics # DeltaV - Logistics Department replacing Cargo
-      min: 43200 #DeltaV 12 hours
-    - !type:CharacterOverallTimeRequirement
-      min: 144000 #40 hrs
   weight: 10
   startingGear: QuartermasterGear
   icon: "JobIconQuarterMaster"
@@ -40,9 +25,14 @@
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
+  afterLoadoutSpecial:
+  - !type:ModifyEnvirosuitSpecial
+    charges: 8
 
 - type: startingGear
   id: QuartermasterGear
+  subGear:
+  - QuartermasterPlasmamanGear
   equipment:
     head: ClothingHeadHatBeretLogi
     jumpsuit: ClothingUniformJumpsuitQM
@@ -55,3 +45,11 @@
   innerClothingSkirt: ClothingUniformJumpskirtQM
   satchel: ClothingBackpackSatchelQuartermasterFilled
   duffelbag: ClothingBackpackDuffelQuartermasterFilled
+
+- type: startingGear
+  id: QuartermasterPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitQM
+    head: ClothingHeadEnvirohelmQM
+    gloves: ClothingHandsGlovesEnviroglovesCargo

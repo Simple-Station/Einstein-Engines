@@ -41,6 +41,8 @@
 
 - type: startingGear
   id: LibrarianGear
+  subGear:
+  - LibrarianPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitLibrarian
     back: ClothingBackpackLibrarianFilled
@@ -48,8 +50,16 @@
     outerClothing: ClothingOuterCoatRnd
     id: LibrarianPDA
     ears: ClothingHeadsetScience
-    pocket1: d10Dice
+    pocket1: BookPsionicsGuidebook
     pocket2: HandLabeler
   innerClothingSkirt: ClothingUniformJumpskirtLibrarian
   satchel: ClothingBackpackSatchelLibrarianFilled
   duffelbag: ClothingBackpackDuffelLibrarianFilled
+
+- type: startingGear
+  id: LibrarianPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitAncientVoid
+    head: ClothingHeadEnvirohelmAncientVoid
+    gloves: ClothingHandsGlovesEnviroglovesPrototype

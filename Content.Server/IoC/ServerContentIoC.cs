@@ -11,6 +11,8 @@ using Content.Server.Discord;
 using Content.Server.DiscordAuth;
 using Content.Server.EUI;
 using Content.Server.GhostKick;
+using Content.Server.Info;
+using Content.Server.Mapping;
 using Content.Server.Maps;
 using Content.Server.Players.JobWhitelist;
 using Content.Server.MoMMI;
@@ -54,6 +56,7 @@ namespace Content.Server.IoC
             IoCManager.Register<IPlayerLocator, PlayerLocator>();
             IoCManager.Register<IAfkManager, AfkManager>();
             IoCManager.Register<IGameMapManager, GameMapManager>();
+            IoCManager.Register<RulesManager, RulesManager>();
             IoCManager.Register<IBanManager, BanManager>();
             IoCManager.Register<ContentNetworkResourceManager>();
             IoCManager.Register<IAdminNotesManager, AdminNotesManager>();
@@ -73,6 +76,7 @@ namespace Content.Server.IoC
             IoCManager.Register<JobWhitelistManager>();
             IoCManager.Register<PlayerRateLimitManager>();
             IoCManager.Register<SharedPlayerRateLimitManager, PlayerRateLimitManager>();
+            IoCManager.Register<MappingManager>();
         }
     }
 }

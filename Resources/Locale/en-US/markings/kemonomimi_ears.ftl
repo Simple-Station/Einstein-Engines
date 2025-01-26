@@ -2,6 +2,9 @@ marking-BunnyEars = Bunny Ears
 marking-BunnyEars-bunnyearstone1 = Outer ear
 marking-BunnyEars-bunnyearstone2 = Inner ear
 
+marking-BunnyEarsAlt = Bunny Ears, Alternative
+marking-BunnyEarsAlt-bunnyearsalt = Bunny Ears, Alternative
+
 marking-BullishHorns = Bull Horns
 marking-BullishHorns-bullishhorns = Horns
 

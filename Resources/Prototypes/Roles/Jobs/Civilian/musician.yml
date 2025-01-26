@@ -3,9 +3,6 @@
   name: job-name-musician
   description: job-description-musician
   playTimeTracker: JobMusician
-  requirements:
-    - !type:CharacterOverallTimeRequirement
-      min: 7200 # DeltaV - 2 hours
   startingGear: MusicianGear
   icon: "JobIconMusician"
   supervisors: job-supervisors-hire
@@ -20,6 +17,8 @@
 
 - type: startingGear
   id: MusicianGear
+  subGear:
+  - MusicianPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitMusician
     back: ClothingBackpackMusicianFilled
@@ -29,3 +28,11 @@
     ears: ClothingHeadsetService
   satchel: ClothingBackpackSatchelMusicianFilled
   duffelbag: ClothingBackpackDuffelMusicianFilled
+
+- type: startingGear
+  id: MusicianPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitMusician
+    head: ClothingHeadEnvirohelmMusician
+    gloves: ClothingHandsGlovesEnviroglovesWhite

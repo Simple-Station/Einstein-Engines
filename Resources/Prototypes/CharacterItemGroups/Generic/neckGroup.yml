@@ -10,6 +10,8 @@
     - type: loadout
       id: LoadoutNeckUnathiMantle
     - type: loadout
+      id: LoadoutNeckDogtags
+    - type: loadout
       id: LoadoutNeckScarfStripedRed
     - type: loadout
       id: LoadoutNeckScarfStripedBlue
@@ -26,15 +28,15 @@
     - type: loadout
       id: LoadoutNeckScarfStripedZebra
     - type: loadout
-      id: LoadoutNeckTieRed
-    - type: loadout
       id: LoadoutNeckTieWhite
     - type: loadout
-      id: LoadoutNeckTieBlack
+      id: LoadoutNeckTieShort
     - type: loadout
-      id: LoadoutNeckTieBlue
+      id: LoadoutNeckTieBow
     - type: loadout
-      id: LoadoutNeckTieGreen
+      id: LoadoutNeckTieBowTie
+    - type: loadout
+      id: LoadoutNeckTieRibbon
     - type: loadout
       id: LoadoutItemsPrideLGBTPin
     - type: loadout
@@ -43,6 +45,8 @@
       id: LoadoutItemsPrideAsexualPin
     - type: loadout
       id: LoadoutItemsPrideBisexualPin
+    - type: loadout
+      id: LoadoutItemsPrideGayPin
     - type: loadout
       id: LoadoutItemsPrideIntersexPin
     - type: loadout
@@ -54,28 +58,50 @@
     - type: loadout
       id: LoadoutItemsPrideTransPin
     - type: loadout
-      id: LoadoutNeckBedsheetBlack
+      id: LoadoutNeckCrucifixColor
     - type: loadout
-      id: LoadoutNeckBedsheetBlue
+      id: LoadoutNeckCrucifixColorSaintPeter
     - type: loadout
-      id: LoadoutNeckBedsheetBrown
+      id: LoadoutNeckCrucifixGold
+    - type: loadout
+      id: LoadoutNeckCrucifixGoldSaintPeter
+    - type: loadout
+      id: LoadoutNeckCrucifixSilver
+    - type: loadout
+      id: LoadoutNeckCrucifixSilverSaintPeter
+    - type: loadout
+      id: LoadoutNeckScapular
+    - type: loadout
+      id: LoadoutNeckTallit
     - type: loadout
       id: LoadoutNeckBedsheetCosmos
     - type: loadout
-      id: LoadoutNeckBedsheetGreen
-    - type: loadout
-      id: LoadoutNeckBedsheetGrey
-    - type: loadout
-      id: LoadoutNeckBedsheetOrange
-    - type: loadout
-      id: LoadoutNeckBedsheetPurple
-    - type: loadout
       id: LoadoutNeckBedsheetRainbow
-    - type: loadout
-      id: LoadoutNeckBedsheetRed
     - type: loadout
       id: LoadoutNeckBedsheetWhite
     - type: loadout
-      id: LoadoutNeckBedsheetYellow
-    - type: loadout
       id: LoadoutNeckBedsheetNT
+    - type: loadout
+      id: LoadoutNeckNecklaceStandard
+    - type: loadout
+      id: LoadoutNeckNecklaceLow
+    - type: loadout
+      id: LoadoutNeckNecklaceRound
+    - type: loadout
+      id: LoadoutNeckNecklaceSmall
+    - type: loadout
+      id: LoadoutNeckNecklaceGold
+    - type: loadout
+      id: LoadoutNeckNecklaceSilver
+    - type: loadout
+      id: LoadoutNeckNecklaceChainGold
+    - type: loadout
+      id: LoadoutNeckNecklaceChainSilver
+    - type: loadout
+      id: LoadoutNeckNecklacePendantGold
+    - type: loadout
+      id: LoadoutNeckNecklacePendantGoldLarge
+    - type: loadout
+      id: LoadoutNeckNecklacePendantSilver
+    - type: loadout
+      id: LoadoutNeckNecklacePendantSilverLarge

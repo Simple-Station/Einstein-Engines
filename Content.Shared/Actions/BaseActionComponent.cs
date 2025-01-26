@@ -1,4 +1,4 @@
-﻿using Robust.Shared.Audio;
+using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
@@ -25,6 +25,16 @@ public abstract partial class BaseActionComponent : Component
     ///     when turned on.
     /// </summary>
     [DataField("iconOn")] public SpriteSpecifier? IconOn;
+
+    /// <summary>
+    ///     For actions with a cooldown, icon to show when the action is on cooldown.
+    /// </summary>
+    [DataField] public SpriteSpecifier? IconCooldown;
+
+    /// <summary>
+    ///     For actions with a cooldown, icon to show when the action is disabled.
+    /// </summary>
+    [DataField] public SpriteSpecifier? IconDisabled;
 
     /// <summary>
     ///     For toggle actions only, background to show when toggled on.
@@ -65,6 +75,11 @@ public abstract partial class BaseActionComponent : Component
     /// </summary>
     // TODO serialization
     public (TimeSpan Start, TimeSpan End)? Cooldown;
+
+    /// <summary>
+    ///     If true, the action will have an initial cooldown applied upon addition.
+    /// </summary>
+    [DataField] public bool StartDelay = false;
 
     /// <summary>
     ///     Time interval between action uses.

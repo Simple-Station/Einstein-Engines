@@ -11,6 +11,17 @@
   - type: Matchbox
 
 - type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesBootsWorkColor
+  name: workboots
+  description: Lace-up work boots for the especially blue-collar. In a variety of colors!
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Boots/workboots_color.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Boots/workboots_color.rsi
+
+- type: entity
   parent: ClothingShoesMilitaryBase
   id: ClothingShoesBootsJack
   name: jackboots
@@ -20,6 +31,30 @@
     sprite: Clothing/Shoes/Boots/jackboots.rsi
   - type: Clothing
     sprite: Clothing/Shoes/Boots/jackboots.rsi
+  - type: ClothingSlowOnDamageModifier
+    modifier: 0.8
+
+- type: entity
+  parent: ClothingShoesMilitaryBase
+  id: ClothingShoesBootsJackFake
+  name: jackboots
+  description: Civilian-grade replica of Nanotrasen Security combat boots. Looks the part but lacks the performance—ideal for the heated situations.
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Boots/jackboots.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Boots/jackboots.rsi
+
+- type: entity
+  parent: ClothingShoesMilitaryBase
+  id: ClothingShoesBootsJackColor
+  name: fashion jackboots
+  description: Civilian-grade replica of Nanotrasen Security combat boots, impractical but fashionable.
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Boots/jackboots_color.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Boots/jackboots_color.rsi
 
 - type: entity
   parent: ClothingShoesBaseButcherable
@@ -54,6 +89,8 @@
     sprite: Clothing/Shoes/Boots/combatboots.rsi
   - type: Clothing
     sprite: Clothing/Shoes/Boots/combatboots.rsi
+  - type: ClothingSlowOnDamageModifier
+    modifier: 0.8
 
 - type: entity
   parent: ClothingShoesMilitaryBase
@@ -69,6 +106,14 @@
     sprite: Clothing/Shoes/Boots/highheelboots.rsi
   - type: Clothing
     sprite: Clothing/Shoes/Boots/highheelboots.rsi
+  - type: HideLayerClothing
+    force: true
+    slots:
+    - LFoot
+    - RFoot
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepHighHeels
 
 - type: entity
   parent: ClothingShoesMilitaryBase
@@ -80,6 +125,8 @@
     sprite: Clothing/Shoes/Boots/mercboots.rsi
   - type: Clothing
     sprite: Clothing/Shoes/Boots/mercboots.rsi
+  - type: ClothingSlowOnDamageModifier
+    modifier: 0.6
 
 - type: entity
   parent: ClothingShoesBaseButcherable
@@ -232,3 +279,58 @@
     sprite: Clothing/Shoes/Boots/cowboybootsfancy.rsi
   - type: Clothing
     sprite: Clothing/Shoes/Boots/cowboybootsfancy.rsi
+
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesBootsAnkle
+  name: ankle boots
+  description: A pair of low-heeled boots, if you need inclosed shoes.
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Boots/ankleboots.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Boots/ankleboots.rsi
+
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesBootsFull
+  name: full-length boots
+  description: A pair of boots that cover the entire leg.
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Boots/fullboots.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Boots/fullboots.rsi
+
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesBootsMud
+  name: mudboots
+  description: A nice pair of weatherproof mudboots to keep your feet dry.
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Boots/mudboots.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Boots/mudboots.rsi
+
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesBootsMudThigh
+  name: thigh-high mudboots
+  description: A nice pair of weatherproof mudboots to keep your legs dry.
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Boots/thighmudboots.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Boots/thighmudboots.rsi
+
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesBootsThigh
+  name: thigh-high boots
+  description: A pair of casual boots that reach up to the thighs.
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Boots/thighboots.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Boots/thighboots.rsi
