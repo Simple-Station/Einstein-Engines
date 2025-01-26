@@ -44,7 +44,7 @@ chat-emote-name-vulpbark = Bark
 chat-emote-name-vulpsnarl = Snarl
 chat-emote-name-vulpwhine = Whine
 chat-emote-name-vulphowl = Howl
-# Felinid
+# Felinid / Tajaran
 chat-emote-name-meow = Meow
 chat-emote-name-mew = Mew
 chat-emote-name-purr = Purr

@@ -15,6 +15,7 @@
     - Shadowkin
     - Plasmaman
     - Chitinid
+    - Tajaran 
 
 - type: guideEntry
   id: Arachnid
@@ -65,6 +66,11 @@
   id: Shadowkin
   name: species-name-shadowkin
   text: "/ServerInfo/Guidebook/Mobs/Shadowkin.xml"
+
+- type: guideEntry
+  id: Tajaran
+  name: species-name-tajaran
+  text: "/ServerInfo/Guidebook/Mobs/Tajaran.xml"
 
 - type: guideEntry
   id: Plasmaman
