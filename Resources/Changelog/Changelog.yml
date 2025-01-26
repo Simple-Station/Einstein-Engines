@@ -10775,3 +10775,22 @@ Entries:
   id: 6766
   time: '2025-01-26T00:53:00.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1647
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        New hairstyles have arrived, including all Goob LRP-original hairstyles,
+        Pulato, new facial hair and more!
+    - type: Add
+      message: 'Added epic IPC wings and Plasmaman wings. '
+    - type: Add
+      message: Added the Iron Jaw face marking.
+    - type: Tweak
+      message: Increased the maximum number of Reptilian chest markings to 3.
+    - type: Fix
+      message: >-
+        Harpy, Arachne and Lamia can no longer pick the "No Ears" marking which
+        had no effect as they had no default ear markings. 
+  id: 6767
+  time: '2025-01-26T01:14:42.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1658
