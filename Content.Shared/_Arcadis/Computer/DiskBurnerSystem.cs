@@ -87,7 +87,7 @@ public sealed class DiskBurnerSystem : EntitySystem
                 missing.Add("disk");
 
             if (boardSlot.Item is null)
-                missing.Add("or");
+                missing.Add("board");
 
             args.PushMarkup(Loc.GetString("disk-burner-missing", ("missing", string.Join(", or ", missing))));
             return;
