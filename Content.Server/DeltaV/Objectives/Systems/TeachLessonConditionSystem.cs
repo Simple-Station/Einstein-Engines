@@ -19,17 +19,18 @@ public sealed class TeachLessonConditionSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<KillTrackerComponent, MobStateChangedEvent>(OnMobStateChanged);
+        SubscribeLocalEvent<MobStateChangedEvent>(OnMobStateChanged);
     }
 
-    private void OnMobStateChanged(EntityUid uid, KillTrackerComponent trackerComponent, MobStateChangedEvent args)
+    private void OnMobStateChanged(MobStateChangedEvent args)
     {
-        if (args.NewMobState != trackerComponent.KillState || args.OldMobState >= args.NewMobState
+        if (args.NewMobState != MobState.Critical || args.OldMobState >= args.NewMobState
             || !TryComp<MindContainerComponent>(args.Target, out var mc) || mc.OriginalMind is not { } mindId)
             return;
 
         // If the attacker actually has the objective, we can just skip any enumeration outright.
         if (args.Origin is not null
+            && HasComp<TeachLessonConditionComponent>(args.Origin)
             && TryComp<TargetObjectiveComponent>(args.Origin, out var targetComp)
             && targetComp.Target == mindId)
         {
@@ -51,7 +52,7 @@ public sealed class TeachLessonConditionSystem : EntitySystem
 
             var distance = (userWorldPos - targetWorldPos).Length();
             if (distance > conditionComp.MaxDistance
-                || Transform(uid).MapID != Transform(args.Target).MapID)
+                || Transform(ent).MapID != Transform(args.Target).MapID)
                 continue;
 
             _codeCondition.SetCompleted(ent);
