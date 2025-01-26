@@ -10812,3 +10812,12 @@ Entries:
   id: 6769
   time: '2025-01-26T12:51:39.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1664
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: >-
+        ChemMaster no longer loses your last added progress because of a silly
+        goose move.
+  id: 6770
+  time: '2025-01-26T15:44:04.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1663
