@@ -37,8 +37,7 @@
   id: CyberLimbsMarkingHesphiastosLArm
   bodyPart: LArm
   markingCategory: LeftArm
-  speciesRestriction: [Rodentia, Harpy, Chitinid]
-  invertSpeciesRestriction: true
+  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Arachne, Lamia]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/hesphiastos/hesphiastos_main.rsi
     state: l_arm-1
@@ -49,8 +48,7 @@
   id: CyberLimbsMarkingHesphiastosLHand
   bodyPart: LHand
   markingCategory: LeftHand
-  speciesRestriction: [Rodentia, Harpy, Chitinid]
-  invertSpeciesRestriction: true
+  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Arachne, Lamia]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/hesphiastos/hesphiastos_main.rsi
     state: l_hand-1
@@ -61,8 +59,7 @@
   id: CyberLimbsMarkingHesphiastosLLeg
   bodyPart: LLeg
   markingCategory: LeftLeg
-  speciesRestriction: [Rodentia, Harpy, Chitinid, Arachne]
-  invertSpeciesRestriction: true
+  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/hesphiastos/hesphiastos_main.rsi
     state: l_leg-1
@@ -74,8 +71,7 @@
   id: CyberLimbsMarkingHesphiastosLFoot
   bodyPart: LFoot
   markingCategory: LeftFoot
-  speciesRestriction: [Rodentia, Harpy, Chitinid, Arachne]
-  invertSpeciesRestriction: true
+  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/hesphiastos/hesphiastos_main.rsi
     state: l_foot-1
@@ -88,8 +84,7 @@
   id: CyberLimbsMarkingHesphiastosRArm
   bodyPart: RArm
   markingCategory: RightArm
-  speciesRestriction: [Rodentia, Harpy, Chitinid]
-  invertSpeciesRestriction: true
+  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Arachne, Lamia]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/hesphiastos/hesphiastos_main.rsi
     state: r_arm-1
@@ -101,8 +96,7 @@
   id: CyberLimbsMarkingHesphiastosRHand
   bodyPart: RHand
   markingCategory: RightHand
-  speciesRestriction: [Rodentia, Harpy, Chitinid]
-  invertSpeciesRestriction: true
+  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Arachne, Lamia]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/hesphiastos/hesphiastos_main.rsi
     state: r_hand-1
@@ -114,8 +108,7 @@
   id: CyberLimbsMarkingHesphiastosRLeg
   bodyPart: RLeg
   markingCategory: RightLeg
-  speciesRestriction: [Rodentia, Harpy, Chitinid, Arachne]
-  invertSpeciesRestriction: true
+  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/hesphiastos/hesphiastos_main.rsi
     state: r_leg-1
@@ -127,8 +120,7 @@
   id: CyberLimbsMarkingHesphiastosRFoot
   bodyPart: RFoot
   markingCategory: RightFoot
-  speciesRestriction: [Rodentia, Harpy, Chitinid, Arachne]
-  invertSpeciesRestriction: true
+  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/hesphiastos/hesphiastos_main.rsi
     state: r_foot-1

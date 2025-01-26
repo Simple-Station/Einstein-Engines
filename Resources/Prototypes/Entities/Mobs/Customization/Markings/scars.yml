@@ -2,8 +2,7 @@
   id: ScarEyeRight
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [IPC, Diona, Arachnid, Reptilian, Moth]
-  invertSpeciesRestriction: true # Delta V - Felinid, Oni, Harpy, Rodentia
+  speciesRestriction: [Human, Dwarf, Felinid, Harpy, Oni, Arachne, Lamia] # Delta V - Felinid, Oni, Harpy
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi
@@ -13,8 +12,7 @@
   id: ScarEyeLeft
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [IPC, Diona, Arachnid, Reptilian, Moth]
-  invertSpeciesRestriction: true # Delta V - Felinid, Oni, Harpy, Rodentia
+  speciesRestriction: [Human, Dwarf, Felinid, Harpy, Oni, Arachne, Lamia] # Delta V - Felinid, Oni, Harpy
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi

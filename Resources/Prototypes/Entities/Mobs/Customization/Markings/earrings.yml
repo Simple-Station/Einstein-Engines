@@ -2,8 +2,7 @@
   id: EarringsStudLeft
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Felinid, Vulpkanin, Harpy, Gingerbread, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -17,8 +16,7 @@
   id: EarringsStudRight
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Felinid, Vulpkanin, Harpy, Gingerbread, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -32,8 +30,7 @@
   id: EarringsHeavyLeft
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Felinid, Vulpkanin, Harpy, Gingerbread, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -47,8 +44,7 @@
   id: EarringsHeavyRight
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Felinid, Vulpkanin, Harpy, Gingerbread, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -62,8 +58,7 @@
   id: EarringsDropBasicLeft
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Felinid, Vulpkanin, Harpy, Gingerbread, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -77,8 +72,7 @@
   id: EarringsDropBasicRight
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Felinid, Vulpkanin, Harpy, Gingerbread, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -92,8 +86,7 @@
   id: EarringsDropColoredLeft
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Felinid, Vulpkanin, Harpy, Gingerbread, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -109,8 +102,7 @@
   id: EarringsDropColoredRight
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Felinid, Vulpkanin, Harpy, Gingerbread, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -126,8 +118,7 @@
   id: EarringsDropLongLeft
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Felinid, Vulpkanin, Harpy, Gingerbread, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -143,8 +134,7 @@
   id: EarringsDropLongRight
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Felinid, Vulpkanin, Harpy, Gingerbread, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -160,8 +150,7 @@
   id: EarringsCrescentLeft
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Felinid, Vulpkanin, Harpy, Gingerbread, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -175,8 +164,7 @@
   id: EarringsCrescentRight
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Felinid, Vulpkanin, Harpy, Gingerbread, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -190,8 +178,7 @@
   id: EarringsBangleLeft
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Felinid, Vulpkanin, Harpy, Gingerbread, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -205,8 +192,7 @@
   id: EarringsBangleRight
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Felinid, Vulpkanin, Harpy, Gingerbread, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -220,8 +206,7 @@
   id: EarringsHoopBasicLeft
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Felinid, Vulpkanin, Harpy, Gingerbread, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -235,8 +220,7 @@
   id: EarringsHoopBasicRight
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Felinid, Vulpkanin, Harpy, Gingerbread, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -250,8 +234,7 @@
   id: EarringsHoopMiniLeft
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Felinid, Vulpkanin, Harpy, Gingerbread, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -265,8 +248,7 @@
   id: EarringsHoopMiniRight
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Felinid, Vulpkanin, Harpy, Gingerbread, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -280,8 +262,7 @@
   id: EarringsCrossBasicLeft
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Felinid, Vulpkanin, Harpy, Gingerbread, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -295,8 +276,7 @@
   id: EarringsCrossBasicRight
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Felinid, Vulpkanin, Harpy, Gingerbread, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -310,8 +290,7 @@
   id: EarringsCrossSaintPeterLeft
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Felinid, Vulpkanin, Harpy, Gingerbread, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -325,8 +304,7 @@
   id: EarringsCrossSaintPeterRight
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Felinid, Vulpkanin, Harpy, Gingerbread, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -340,8 +318,7 @@
   id: EarringsGemstoneBasicLeft
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Felinid, Vulpkanin, Harpy, Gingerbread, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -357,8 +334,7 @@
   id: EarringsGemstoneBasicRight
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Felinid, Vulpkanin, Harpy, Gingerbread, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -374,8 +350,7 @@
   id: EarringsGemstoneLongLeft
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Felinid, Vulpkanin, Harpy, Gingerbread, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -391,8 +366,7 @@
   id: EarringsGemstoneLongRight
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Felinid, Vulpkanin, Harpy, Gingerbread, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -408,8 +382,7 @@
   id: EarringsGemstoneDoubleLeft
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Felinid, Vulpkanin, Harpy, Gingerbread, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -427,8 +400,7 @@
   id: EarringsGemstoneDoubleRight
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Felinid, Vulpkanin, Harpy, Gingerbread, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -446,8 +418,7 @@
   id: EarringsDangleBasicLeft
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Felinid, Vulpkanin, Harpy, Gingerbread, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -463,8 +434,7 @@
   id: EarringsDangleBasicRight
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Felinid, Vulpkanin, Harpy, Gingerbread, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -480,8 +450,7 @@
   id: EarringsDangleLongLeft
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Felinid, Vulpkanin, Harpy, Gingerbread, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -497,8 +466,7 @@
   id: EarringsDangleLongRight
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Felinid, Vulpkanin, Harpy, Gingerbread, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -514,8 +482,7 @@
   id: EarringsEightLeft
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Felinid, Vulpkanin, Harpy, Gingerbread, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -529,8 +496,7 @@
   id: EarringsEightRight
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Felinid, Vulpkanin, Harpy, Gingerbread, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -544,8 +510,7 @@
   id: EarringsCrystalBasicLeft
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Felinid, Vulpkanin, Harpy, Gingerbread, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -561,8 +526,7 @@
   id: EarringsCrystalBasicRight
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Felinid, Vulpkanin, Harpy, Gingerbread, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -578,8 +542,7 @@
   id: EarringsCrystalLongLeft
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Felinid, Vulpkanin, Harpy, Gingerbread, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -595,8 +558,7 @@
   id: EarringsCrystalLongRight
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Arachnid, Reptilian, Diona, Oni, Felinid, Vulpkanin, Harpy, Gingerbread, Arachne, Lamia]
   coloring:
     default:
       type:
