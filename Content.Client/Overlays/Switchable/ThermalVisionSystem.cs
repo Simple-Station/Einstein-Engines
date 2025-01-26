@@ -28,7 +28,7 @@ public sealed class ThermalVisionSystem : EquipmentHudSystem<ThermalVisionCompon
     {
         if (component.IsEquipment)
             return;
-            
+
         base.OnRefreshComponentHud(uid, component, args);
     }
 
@@ -38,7 +38,7 @@ public sealed class ThermalVisionSystem : EquipmentHudSystem<ThermalVisionCompon
     {
         if (!component.IsEquipment)
             return;
-            
+
         base.OnRefreshEquipmentHud(uid, component, args);
     }
 
@@ -54,14 +54,14 @@ public sealed class ThermalVisionSystem : EquipmentHudSystem<ThermalVisionCompon
         var lightRadius = 0f;
         foreach (var comp in args.Components)
         {
-            if (!comp.IsActive && (comp.PulseTime <= 0f || comp.PulseAccumulator >= comp.PulseTime))
+            if (!comp.IsActive && (comp.PulseTime <= TimeSpan.Zero || comp.PulseAccumulator >= comp.PulseTime))
                 continue;
 
             if (tvComp == null)
                 tvComp = comp;
             else if (!tvComp.DrawOverlay && comp.DrawOverlay)
                 tvComp = comp;
-            else if (tvComp.DrawOverlay == comp.DrawOverlay && tvComp.PulseTime > 0f && comp.PulseTime <= 0f)
+            else if (tvComp.DrawOverlay == comp.DrawOverlay && tvComp.PulseTime > TimeSpan.Zero && comp.PulseTime <= TimeSpan.Zero)
                 tvComp = comp;
 
             lightRadius = MathF.Max(lightRadius, comp.LightRadius);

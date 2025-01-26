@@ -1,3 +1,4 @@
+using System.Reflection.Metadata;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Overlays.Switchable;
@@ -27,7 +28,7 @@ public sealed class NightVisionSystem : EquipmentHudSystem<NightVisionComponent>
     {
         if (component.IsEquipment)
             return;
-        
+
         base.OnRefreshComponentHud(uid, component, args);
     }
 
@@ -37,7 +38,7 @@ public sealed class NightVisionSystem : EquipmentHudSystem<NightVisionComponent>
     {
         if (!component.IsEquipment)
             return;
-            
+
         base.OnRefreshEquipmentHud(uid, component, args);
     }
 
@@ -54,21 +55,15 @@ public sealed class NightVisionSystem : EquipmentHudSystem<NightVisionComponent>
         NightVisionComponent? nvComp = null;
         foreach (var comp in args.Components)
         {
-            if (comp.IsActive || comp.PulseTime > 0f && comp.PulseAccumulator < comp.PulseTime)
-                active = true;
-            else
+            if (!comp.IsActive && (comp.PulseTime <= TimeSpan.Zero || comp.PulseAccumulator >= comp.PulseTime))
                 continue;
 
-            if (comp.DrawOverlay)
-            {
-                if (nvComp == null)
-                    nvComp = comp;
-                else if (nvComp.PulseTime > 0f && comp.PulseTime <= 0f)
-                    nvComp = comp;
-            }
-
-            if (active && nvComp is { PulseTime: <= 0 })
-                break;
+            if (nvComp == null)
+                nvComp = comp;
+            else if (!nvComp.DrawOverlay && comp.DrawOverlay)
+                nvComp = comp;
+            else if (nvComp.DrawOverlay == comp.DrawOverlay && nvComp.PulseTime > TimeSpan.Zero && comp.PulseTime <= TimeSpan.Zero)
+                nvComp = comp;
         }
 
         UpdateNightVision(active);
