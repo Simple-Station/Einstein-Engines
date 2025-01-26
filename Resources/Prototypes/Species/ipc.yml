@@ -44,6 +44,7 @@
     RLeg: MobIPCRLeg
     LFoot: MobIPCLFoot
     RFoot: MobIPCRFoot
+    Wings: MobHumanoidAnyMarking
 
 - type: markingPoints
   id: MobIPCMarkingLimits
@@ -94,6 +95,9 @@
       points: 1
       required: false
       defaultMarkings: [ MobIPCLHandDefault ]
+    Wings:
+      points: 1
+      required: false
 
 - type: humanoidBaseSprite
   id: MobIPCMarkingFollowSkin

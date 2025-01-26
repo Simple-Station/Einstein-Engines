@@ -90,3 +90,6 @@ marking-FaceNeckSlimThick-neck_thick_f = Neck Cover (Slim Thick)
 
 marking-FaceNeckWideThick = Neck Cover (Wide Thick)
 marking-FaceNeckWideThick-neck_thick_m = Neck Cover (Wide Thick)
+
+marking-IronJaw = Iron Jaw
+marking-IronJaw-iron_jaw = Iron Jaw
