@@ -17,7 +17,7 @@ namespace Content.Shared.Humanoid.Markings
         [DataField("markingCategory", required: true)]
         public MarkingCategories MarkingCategory { get; private set; }
 
-        [DataField]
+        [DataField("speciesRestriction")]
         public List<string>? SpeciesRestrictions { get; private set; }
 
         [DataField]
