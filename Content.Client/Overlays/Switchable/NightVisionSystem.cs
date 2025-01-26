@@ -3,6 +3,7 @@ using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Overlays.Switchable;
 using Robust.Client.Graphics;
+using Robust.Shared.Timing;
 
 namespace Content.Client.Overlays.Switchable;
 
@@ -10,6 +11,7 @@ public sealed class NightVisionSystem : EquipmentHudSystem<NightVisionComponent>
 {
     [Dependency] private readonly IOverlayManager _overlayMan = default!;
     [Dependency] private readonly ILightManager _lightManager = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
 
     private BaseSwitchableOverlay<NightVisionComponent> _overlay = default!;
 
@@ -55,14 +57,14 @@ public sealed class NightVisionSystem : EquipmentHudSystem<NightVisionComponent>
         NightVisionComponent? nvComp = null;
         foreach (var comp in args.Components)
         {
-            if (!comp.IsActive && (comp.PulseTime <= TimeSpan.Zero || comp.PulseAccumulator >= comp.PulseTime))
+            if (!comp.IsActive && (comp.PulseTime <= 0 || _timing.CurTime < comp.PulseEndTime))
                 continue;
 
             if (nvComp == null)
                 nvComp = comp;
             else if (!nvComp.DrawOverlay && comp.DrawOverlay)
                 nvComp = comp;
-            else if (nvComp.DrawOverlay == comp.DrawOverlay && nvComp.PulseTime > TimeSpan.Zero && comp.PulseTime <= TimeSpan.Zero)
+            else if (nvComp.DrawOverlay == comp.DrawOverlay && nvComp.PulseTime > 0 && comp.PulseTime <= 0)
                 nvComp = comp;
         }
 

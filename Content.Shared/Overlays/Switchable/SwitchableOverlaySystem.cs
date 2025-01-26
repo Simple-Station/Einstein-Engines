@@ -50,11 +50,14 @@ public abstract class SwitchableOverlaySystem<TComp, TEvent> : EntitySystem
 
         while (query.MoveNext(out var uid, out var comp))
         {
-            if (comp.PulseTime <= TimeSpan.FromSeconds(0) || comp.PulseAccumulator >= comp.PulseTime)
+            if (comp.PulseTime <= 0)
                 continue;
 
-            comp.PulseAccumulator += TimeSpan.FromSeconds(frameTime);
-            if (comp.PulseAccumulator < comp.PulseTime)
+            // The accumulator is for visually rendering the pulse strength decaying.
+            comp.PulseAccumulator += comp.PulseEndTime - _timing.CurTime;
+
+            // This line is for the actual check that shuts off the pulse when its time is up.
+            if (_timing.CurTime < comp.PulseEndTime)
                 continue;
 
             Toggle(uid, comp, false, false);
@@ -100,6 +103,8 @@ public abstract class SwitchableOverlaySystem<TComp, TEvent> : EntitySystem
             return;
 
         component.IsActive = state.IsActive;
+        if (component.PulseTime != 0)
+            component.PulseEndTime = _timing.CurTime + TimeSpan.FromSeconds(component.PulseTime);
 
         RaiseSwitchableOverlayToggledEvent(uid,
             component.IsEquipment ? Transform(uid).ParentUid : uid,
@@ -122,7 +127,7 @@ public abstract class SwitchableOverlaySystem<TComp, TEvent> : EntitySystem
 
     private void OnInit(EntityUid uid, TComp component, ComponentInit args)
     {
-        component.PulseAccumulator = component.PulseTime;
+        component.PulseAccumulator = TimeSpan.FromSeconds(component.PulseTime);
     }
 
     private void OnMapInit(EntityUid uid, TComp component, MapInitEvent args)
@@ -148,9 +153,9 @@ public abstract class SwitchableOverlaySystem<TComp, TEvent> : EntitySystem
                 false);
         }
 
-        if (component.PulseTime > TimeSpan.FromSeconds(0))
+        if (component.PulseTime > 0)
         {
-            component.PulseAccumulator = activate ? TimeSpan.Zero : component.PulseTime;
+            component.PulseAccumulator = activate ? TimeSpan.Zero : TimeSpan.FromSeconds(component.PulseTime);
             return;
         }
 
