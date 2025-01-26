@@ -10794,3 +10794,12 @@ Entries:
   id: 6767
   time: '2025-01-26T01:14:42.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1658
+- author: VMSolidus
+  changes:
+    - type: Remove
+      message: >-
+        Removed almost all of the EE DEFAULT playtime requirements. If you're a
+        downstream, set these yourself. 
+  id: 6768
+  time: '2025-01-26T02:13:32.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1660
