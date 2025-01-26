@@ -3,9 +3,6 @@
   name: job-name-reporter
   description: job-description-reporter
   playTimeTracker: JobReporter
-  requirements:
-    - !type:CharacterOverallTimeRequirement
-      min: 7200 #DeltaV 2 hours
   startingGear: ReporterGear
   icon: "JobIconReporter"
   supervisors: job-supervisors-hop
