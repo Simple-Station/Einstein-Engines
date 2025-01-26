@@ -86,6 +86,24 @@ namespace Content.Server.Chemistry.EntitySystems
             var pillBufferReagents = pillBufferSolution.Contents;
             var pillBufferCurrentVolume = pillBufferSolution.Volume;
 
+            var bufferTimes = new Dictionary<string, long>();
+            var pillBufferTimes = new Dictionary<string, long>();
+
+            foreach (var bufferReagent in bufferReagents)
+            {
+                bool exists = chemMaster.BufferReagentsTime.TryGetValue(bufferReagent.Reagent.Prototype, out var currentTime);
+                bufferTimes.Add(bufferReagent.Reagent.Prototype, exists ? currentTime : DateTimeOffset.Now.ToUnixTimeMilliseconds());
+            }
+
+            foreach (var bufferReagent in pillBufferReagents)
+            {
+                bool exists = chemMaster.PillBufferReagentsTime.TryGetValue(bufferReagent.Reagent.Prototype, out var currentTime);
+                pillBufferTimes.Add(bufferReagent.Reagent.Prototype, exists ? currentTime : DateTimeOffset.Now.ToUnixTimeMilliseconds());
+            }
+
+            ent.Comp.BufferReagentsTime = bufferTimes;
+            ent.Comp.PillBufferReagentsTime = pillBufferTimes;
+
             var state = new ChemMasterBoundUserInterfaceState(
                 chemMaster.Mode,
                 BuildInputContainerInfo(container),
@@ -97,7 +115,9 @@ namespace Content.Server.Chemistry.EntitySystems
                 chemMaster.PillDosageLimit,
                 updateLabel,
                 chemMaster.SortMethod,
-                chemMaster.TransferringAmount);
+                chemMaster.TransferringAmount,
+                bufferTimes,
+                pillBufferTimes);
 
             _userInterfaceSystem.SetUiState(owner, ChemMasterUiKey.Key, state);
         }
