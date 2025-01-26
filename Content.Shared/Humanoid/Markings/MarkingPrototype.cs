@@ -12,24 +12,30 @@ namespace Content.Shared.Humanoid.Markings
         public string Name { get; private set; } = default!;
 
         [DataField("bodyPart", required: true)]
-        public HumanoidVisualLayers BodyPart { get; private set; } = default!;
+        public HumanoidVisualLayers BodyPart { get; private set; }
 
         [DataField("markingCategory", required: true)]
-        public MarkingCategories MarkingCategory { get; private set; } = default!;
+        public MarkingCategories MarkingCategory { get; private set; }
 
         [DataField("speciesRestriction")]
         public List<string>? SpeciesRestrictions { get; private set; }
 
-        [DataField("sexRestriction")]
+        [DataField]
+        public bool InvertSpeciesRestriction { get; private set; }
+
+        [DataField]
         public Sex? SexRestriction { get; private set; }
 
-        [DataField("followSkinColor")]
-        public bool FollowSkinColor { get; private set; } = false;
+        [DataField]
+        public bool InvertSexRestriction { get; private set; }
 
-        [DataField("forcedColoring")]
-        public bool ForcedColoring { get; private set; } = false;
+        [DataField]
+        public bool FollowSkinColor { get; private set; }
 
-        [DataField("coloring")]
+        [DataField]
+        public bool ForcedColoring { get; private set; }
+
+        [DataField]
         public MarkingColors Coloring { get; private set; } = new();
 
         [DataField("sprites", required: true)]
