@@ -1,70 +1,101 @@
 # Names for the shadowkin,
 # Shadowkin names are descriptive of
-# Their Primary Emotion,
-# A State of Being,
-# Or past Memories.
+# The two schools of thought,
+# A job designated for them,
+# Or something symbolic.
 
 - type: dataset
   id: names_shadowkin
   values:
-  # Mar
-  # - Mar
+  # Marish
+  - Maaar
+  - Lwmar
+  - Lmwarmrrraw
+  - WlurrlmrrrAw
+  - UurlmmrwlAmur
+  - Mwrrrmlar
+  - Mwaarlwurm
+  - Aralwurm
+  - Arrmaurm
+  - Mwalwamar
+  - Mwalwarr
+  - Malamur
+  - Marur
+  - Wurmar
+  - Mmarr
+  - Mwalwarr
+  - Maarl
+  - Mmaraar
+  - Maamwaarr
+  - Maalmwar
+  - Mlarrul
+  - Maalamur
+  - Aarmwaarr
+  - Aalmwar
+  - Aarwalwar
+  - Amwalwar
+  - Aarmur
+  - Arlmur
+  - Mmarwaarr
+  - Mmalmwar
+  - Mmarwalwar
+  - Lmwamwar
+  - Mwalwarwar
+  - Mlalmwar
+  - Lmwaramur
+  - Maarlwurlmar
 
-  # Sad
-  - Fragile
-  - Heartbreak
-  - Inferior
-  - Lone
-  - Lonesome
-  - Loss
-  - Solitary
-  - Solitude
-  - Sorrow
-  - Shade
+  # Civil Service
+  - Peacekeeper
+  - Fireman
+  - Courier
+  - Teacher
+  - Accountant
+  - Hairdresser
+  - Barkeep
+  - Janitor
+  - Librarian
 
-  # Angry
-  - Fear
-  - Fearful
-  - Fury
-  - Pain
-  - Rage
-  - Rush
-  - Wrath
+  # Trades
+  - Welder
+  - Technician
+  - Carpenter
+  - Mason
+  - Blacksmith
+  - Plumber
+  - Locksmith
+  - Mechanic
+  - Framer
 
-  # Happy
-  - Calm
-  - Content
-  - Contented
-  - Happy
-  - Hope
-  - Joyous
-  - Lovely
-  - Peace
-  - Peaceful
-  - Quiet
-  - Serene
-  - Serenity
-  - Tranquil
-  - Tranquility
+  # Medical
+  - Doctor
+  - Nurse
+  - Shaman
+  - Paramedic
+  - Apothecary
+  - Alchemist
+  - Druid
+  - Herbalist
+  - Medicus
 
-  # Memory
-  - Dillusioned
-  - Forgotten
-  - Focusless
-  - Lost
-  - Memory
-  - Recollection
-  - Remembrance
-  - Reminisce
-  - Reminiscence
+  # Military
+  - Fighter
+  - Fixer
+  - Healer
+  - Supplier
+  - Scouter
+  - Veteran
+  - Sailor
+  - Rider
+  - Archer
 
-  # Other
-  - Apathy
-  - Collected
-  - Curiosity
-  - Free
-  - Interest
-  - Jax # White eye (jack of all trades) :)
-  - Still
-  - Unbound
-  - Shadows
+  # Special
+  - Ash
+  - Ember
+  - Dreamer
+  - Leaf
+  - River
+  - Dirt
+  - Bark
+  - Stone
+  - Flame

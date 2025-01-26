@@ -371,6 +371,12 @@ namespace Content.Client.Chemistry.UI
             };
             bufferHBox.AddChild(bufferVol);
 
+            foreach (var reagent in _reagents.Keys)
+            {
+                if (state.BufferReagents.All(x => x.Reagent.Prototype != reagent))
+                    _reagents.Remove(reagent);
+            }
+
             // initialises rowCount to allow for striped rows
             var rowCount = 0;
             var bufferReagents = state.BufferReagents.OrderBy(x => x.Reagent.Prototype);
