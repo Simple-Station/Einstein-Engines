@@ -19,7 +19,6 @@ entities:
     components:
     - type: MetaData
       name: Pathfinder
-    - type: ProtectedGrid
     - type: Transform
     - type: MapGrid
       chunks:
