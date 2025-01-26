@@ -2,8 +2,7 @@
   id: FaceBindi
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Vox, Moth, Diona, Reptilian]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -17,8 +16,7 @@
   id: FaceFullblush
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Vox, Moth, Diona, Reptilian]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Vulpkanin, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -32,8 +30,7 @@
   id: FaceCheekspotRight
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Vox, Moth, Diona]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -47,8 +44,7 @@
   id: FaceCheekspotLeft
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Vox, Moth, Diona]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -90,8 +86,7 @@
   id: FaceCrowRight
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Vox, Moth, Diona]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -105,8 +100,7 @@
   id: FaceCrowLeft
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Vox, Moth, Diona]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -148,8 +142,7 @@
   id: FaceEyebrowRight
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Vox, Moth, Diona]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -164,8 +157,7 @@
   id: FaceEyebrowLeft
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Vox, Moth, Diona]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -180,8 +172,7 @@
   id: FaceEyebrows
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Vox, Moth, Diona]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -195,8 +186,7 @@
   id: FaceEyecornerRight
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Vox, Moth, Diona]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -210,8 +200,7 @@
   id: FaceEyecornerLeft
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Vox, Moth, Diona]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -225,8 +214,7 @@
   id: FaceEyelashRight
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Vox, Moth, Diona]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -240,8 +228,7 @@
   id: FaceEyelashLeft
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Vox, Moth, Diona]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -269,8 +256,7 @@
   id: FaceLipcornerRight
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Vox, Moth, Diona]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -284,8 +270,7 @@
   id: FaceLipcornerLeft
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Vox, Moth, Diona]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -299,8 +284,7 @@
   id: FaceGlabella
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Vox, Moth, Diona]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -314,8 +298,7 @@
   id: FaceLowercheekRight
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Vox, Moth, Diona]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -329,8 +312,7 @@
   id: FaceLowercheekLeft
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Vox, Moth, Diona]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -387,8 +369,7 @@
   id: FaceUnibrow
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Vox, Moth, Diona]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia]
   coloring:
     default:
       type:
@@ -402,8 +383,7 @@
   id: FaceNeckSlim
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Vox, Moth, Diona]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia]
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/face.rsi
@@ -413,8 +393,7 @@
   id: FaceNeckWide
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Vox, Moth, Diona]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia]
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/face.rsi
@@ -424,8 +403,7 @@
   id: FaceNeckSlimThick
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Vox, Moth, Diona]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia]
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/face.rsi
@@ -435,8 +413,7 @@
   id: FaceNeckWideThick
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Vox, Moth, Diona]
-  invertSpeciesRestriction: true
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia]
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/face.rsi
