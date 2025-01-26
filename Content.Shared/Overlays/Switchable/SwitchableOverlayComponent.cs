@@ -22,10 +22,10 @@ public abstract partial class SwitchableOverlayComponent : BaseOverlayComponent
     /// If it is greater than 0, overlay isn't toggled but pulsed instead
     /// </summary>
     [DataField]
-    public float PulseTime;
+    public TimeSpan PulseTime = TimeSpan.FromSeconds(0);
 
     [ViewVariables(VVAccess.ReadOnly)]
-    public float PulseAccumulator;
+    public TimeSpan PulseAccumulator = TimeSpan.FromSeconds(0);
 
     [DataField]
     public virtual SoundSpecifier? ActivateSound { get; set; } =

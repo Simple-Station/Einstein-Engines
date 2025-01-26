@@ -50,11 +50,10 @@ public abstract class SwitchableOverlaySystem<TComp, TEvent> : EntitySystem
 
         while (query.MoveNext(out var uid, out var comp))
         {
-            if (comp.PulseTime <= 0f || comp.PulseAccumulator >= comp.PulseTime)
+            if (comp.PulseTime <= TimeSpan.FromSeconds(0) || comp.PulseAccumulator >= comp.PulseTime)
                 continue;
 
-            comp.PulseAccumulator += frameTime;
-
+            comp.PulseAccumulator += TimeSpan.FromSeconds(frameTime);
             if (comp.PulseAccumulator < comp.PulseTime)
                 continue;
 
@@ -117,7 +116,7 @@ public abstract class SwitchableOverlaySystem<TComp, TEvent> : EntitySystem
     {
         if (component.IsEquipment)
             return;
-            
+
         _actions.RemoveAction(uid, component.ToggleActionEntity);
     }
 
