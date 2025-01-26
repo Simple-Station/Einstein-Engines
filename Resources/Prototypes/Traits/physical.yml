@@ -848,14 +848,14 @@
     - !type:CharacterTraitRequirement
       traits:
         - CyberEyes
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
         - type: ThermalVision
           pulseTime: 2
           toggleAction: PulseThermalVision
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
     - !type:TraitPushDescription
       descriptionExtensions:
         - description: examine-thermal-vision-message
