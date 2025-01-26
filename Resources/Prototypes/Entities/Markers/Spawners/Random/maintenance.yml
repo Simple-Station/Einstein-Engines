@@ -319,6 +319,12 @@
           id: NitrogenTankFilled
         - !type:EntSelector
           id: DoubleEmergencyNitrogenTankFilled
+      - !type:GroupSelector
+        children:
+        - !type:EntSelector
+          id: PlasmaTankFilled
+        - !type:EntSelector
+          id: DoubleEmergencyPlasmaTankFilled
       - !type:EntSelector
         id: EmergencyFunnyOxygenTankFilled
         weight: 0.5

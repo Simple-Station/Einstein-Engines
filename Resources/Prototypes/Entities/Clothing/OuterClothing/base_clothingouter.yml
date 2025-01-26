@@ -120,7 +120,7 @@
     slot: head
   - type: ContainerContainer
     containers:
-      toggleable-clothing: !type:ContainerSlot {}
+      toggleable-clothing: !type:Container {}
       storagebase: !type:Container
         ents: []
 
@@ -137,6 +137,18 @@
     coefficient: 0.01
   - type: FireProtection
     reduction: 0.75 # almost perfectly sealed, atmos firesuit is better
+  - type: IgniteFromGasImmunity
+    parts:
+    - Torso
+    - Groin
+    - LeftArm
+    - LeftHand
+    - RightArm
+    - RightHand
+    - LeftLeg
+    - LeftFoot
+    - RightLeg
+    - RightFoot
   - type: ClothingSpeedModifier
     walkModifier: 0.4
     sprintModifier: 0.6
@@ -155,7 +167,7 @@
     slot: head
   - type: ContainerContainer
     containers:
-      toggleable-clothing: !type:ContainerSlot {}
+      toggleable-clothing: !type:Container {}
   - type: GroupExamine
   - type: Tag
     tags:
@@ -164,6 +176,7 @@
     - HidesHarpyWings #DeltaV: Used by harpies to help render their hardsuit sprites
     - AllowLamiaHardsuit
     - FullBodyOuter
+    - PlasmamanSafe
   - type: Clothing
     equipDelay: 2.5 # Hardsuits are heavy and take a while to put on/off.
     unequipDelay: 2.5
@@ -204,6 +217,18 @@
     lowPressureMultiplier: 1000
   - type: TemperatureProtection
     coefficient: 0.01 # Not complete protection from fire
+  - type: IgniteFromGasImmunity
+    parts:
+    - Torso
+    - Groin
+    - LeftArm
+    - LeftHand
+    - RightArm
+    - RightHand
+    - LeftLeg
+    - LeftFoot
+    - RightLeg
+    - RightFoot
   - type: ClothingSpeedModifier
     walkModifier: 0.8
     sprintModifier: 0.8
@@ -214,6 +239,7 @@
     tags:
     - AllowLamiaHardsuit #DeltaV: Used by Lamia to render snek hardsuits
     - HidesHarpyWings #DeltaV: Used by harpies to help render their hardsuit sprites
+    - PlasmamanSafe
   - type: Clothing
     equipDelay: 1.25 # Softsuits are easier to put on and off
     unequipDelay: 1
@@ -242,7 +268,7 @@
     slot: head
   - type: ContainerContainer
     containers:
-      toggleable-clothing: !type:ContainerSlot {}
+      toggleable-clothing: !type:Container {}
       storagebase: !type:Container
         ents: []
 

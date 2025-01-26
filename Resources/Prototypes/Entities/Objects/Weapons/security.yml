@@ -9,6 +9,9 @@
     layers:
     - state: stunbaton_off
       map: [ "enum.ToggleVisuals.Layer" ]
+  - type: Tag
+    tags:
+    - Stunbaton
   - type: Stunbaton
     energyPerUse: 50
   - type: ItemToggle

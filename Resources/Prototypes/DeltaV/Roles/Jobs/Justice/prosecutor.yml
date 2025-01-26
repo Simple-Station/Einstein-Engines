@@ -3,9 +3,6 @@
   name: job-name-prosecutor
   description: job-description-prosecutor
   playTimeTracker: JobProsecutor
-  requirements:
-    - !type:CharacterOverallTimeRequirement
-      min: 36000 # 10 hrs
   startingGear: ProsecutorGear
   icon: "JobIconProsecutor"
   supervisors: job-supervisors-cj
@@ -17,6 +14,8 @@
 
 - type: startingGear
   id: ProsecutorGear
+  subGear:
+  - PassengerPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitProsecutor
     neck: ClothingNeckProsecutorbadge

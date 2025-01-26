@@ -16,6 +16,8 @@
 
 - type: startingGear
   id: RoboticistGear
+  subGear:
+  - RoboticistPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitRoboticist
     back: ClothingBackpackRoboticsFilled
@@ -27,3 +29,11 @@
   innerClothingSkirt: ClothingUniformJumpskirtRoboticist
   satchel: ClothingBackpackSatchelRoboticsFilled
   duffelbag: ClothingBackpackDuffelRoboticsFilled
+
+- type: startingGear
+  id: RoboticistPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitRoboticist
+    head: ClothingHeadEnvirohelmRoboticist
+    gloves: ClothingHandsGlovesEnviroglovesRoboticist

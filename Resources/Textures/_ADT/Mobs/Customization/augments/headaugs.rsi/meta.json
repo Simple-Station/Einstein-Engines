@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "made by nope_ingeneer",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "directions": 4,
+      "name": "iron_jaw"
+    }
+  ]
+}

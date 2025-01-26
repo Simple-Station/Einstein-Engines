@@ -3,13 +3,6 @@
   name: job-name-cadet
   description: job-description-cadet
   playTimeTracker: JobSecurityCadet
-  requirements:
-    - !type:CharacterOverallTimeRequirement
-      min: 14400 # DeltaV - 4 hours
-#    - !type:DepartmentTimeRequirement # DeltaV - Removes time limit
-#      department: Security
-#      time: 54000 #15 hrs
-#      inverted: true # stop playing intern if you're good at security!
   startingGear: SecurityCadetGear
   icon: "JobIconSecurityCadet"
   supervisors: job-supervisors-security
@@ -24,9 +17,16 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
+  afterLoadoutSpecial:
+  - !type:ModifyEnvirosuitSpecial
+    charges: 6
+  - !type:ModifyEnvirohelmSpecial
+    powerCell: PowerCellHigh
 
 - type: startingGear
   id: SecurityCadetGear
+  subGear:
+  - SecurityOfficerPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorRed
     back: ClothingBackpackSecurity

@@ -24,7 +24,7 @@
   id: ScarTopSurgeryShort
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Arachne, Lamia]
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Arachne, Lamia, Tajaran] # Einstein Engines - Tajaran
   sexRestriction: [Male]
   followSkinColor: true
   sprites:
@@ -35,7 +35,7 @@
   id: ScarTopSurgeryLong
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Felinid,  Oni, Arachne, Lamia]
+  speciesRestriction: [Human, Dwarf, Felinid,  Oni, Arachne, Lamia, Tajaran] # Einstein Engines - Tajaran
   sexRestriction: [Male]
   followSkinColor: true
   sprites:
@@ -46,7 +46,7 @@
   id: ScarChest
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Arachne, Lamia]
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Arachne, Lamia, Tajaran] # Einstein Engines - Tajaran
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi

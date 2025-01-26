@@ -4,21 +4,6 @@
   description: job-description-hop
   playTimeTracker: JobHeadOfPersonnel
   antagAdvantage: 6 # DeltaV - Reduced TC: Head of Staff
-  requirements:
-    - !type:CharacterPlaytimeRequirement
-      tracker: JobChef
-      min: 14400 # DeltaV - 4 hours
-    - !type:CharacterPlaytimeRequirement
-      tracker: JobBartender
-      min: 14400 # DeltaV - 4 hours
-    - !type:CharacterPlaytimeRequirement
-      tracker: JobJanitor
-      min: 14400 # DeltaV - 4 hours
-    - !type:CharacterDepartmentTimeRequirement # DeltaV - Civilian dept time requirement
-      department: Civilian
-      min: 72000 # 20 hours
-    - !type:CharacterOverallTimeRequirement # DeltaV - Playtime requirement
-      min: 90000 # 25 hours
   weight: 10 # DeltaV - Changed HoP weight from 20 to 10 due to them not being more important than other Heads
   startingGear: HoPGear
   icon: "JobIconHeadOfPersonnel"
@@ -66,9 +51,16 @@
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
+  afterLoadoutSpecial:
+  - !type:ModifyEnvirosuitSpecial
+    charges: 8
+  - !type:ModifyEnvirohelmSpecial
+    powerCell: PowerCellHigh
 
 - type: startingGear
   id: HoPGear
+  subGear:
+  - HoPPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitHoP
     back: ClothingBackpackHOPFilled
@@ -78,3 +70,11 @@
   innerClothingSkirt: ClothingUniformJumpskirtHoP
   satchel: ClothingBackpackSatchelHOPFilled
   duffelbag: ClothingBackpackDuffelHOPFilled
+
+- type: startingGear
+  id: HoPPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitHoP
+    head: ClothingHeadEnvirohelmHoP
+    gloves: ClothingHandsGlovesEnviroglovesHoP

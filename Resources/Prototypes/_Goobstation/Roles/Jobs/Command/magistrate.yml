@@ -34,9 +34,16 @@
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
+  afterLoadoutSpecial:
+  - !type:ModifyEnvirosuitSpecial
+    charges: 8
+  - !type:ModifyEnvirohelmSpecial
+    powerCell: PowerCellHigh
 
 - type: startingGear
   id: MagistrateGear
+  subGear:
+  - MagistratePlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitMagistrate
     shoes: ClothingShoesLeather
@@ -44,3 +51,11 @@
     id: CentcomPDA
     ears: ClothingHeadsetMagistrate
     pocket1: UniqueMagistrateLockerTeleporter
+
+- type: startingGear
+  id: MagistratePlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitMagistrate
+    head: ClothingHeadEnvirohelmMagistrate
+    gloves: ClothingHandsGlovesEnviroglovesWhite

@@ -3,31 +3,9 @@
   name: job-name-captain
   description: job-description-captain
   playTimeTracker: JobCaptain
-  requirements:
-    - !type:CharacterDepartmentTimeRequirement
-      department: Logistics # DeltaV - Logistics Department replacing Cargo
-      min: 18000 # DeltaV - 5 hours
-    - !type:CharacterDepartmentTimeRequirement
-      department: Engineering
-      min: 18000 # DeltaV - 5 hours
-    - !type:CharacterDepartmentTimeRequirement
-      department: Medical
-      min: 18000 # DeltaV - 5 hours
-    - !type:CharacterDepartmentTimeRequirement
-      department: Security
-      min: 18000 # DeltaV - 5 hours
-    - !type:CharacterDepartmentTimeRequirement # DeltaV - Epistemics dept time requirement
-      department: Epistemics # DeltaV - Epistemics Department replacing Science
-      min: 18000 # 5 hours
-    - !type:CharacterDepartmentTimeRequirement
-      department: Command
-      min: 108000 # DeltaV - 30 hours
-    - !type:CharacterOverallTimeRequirement # DeltaV - Playtime requirement
-      min: 108000 # 30 hours
-    - !type:CharacterWhitelistRequirement
   weight: 20
   startingGear: CaptainGear
-  icon: JobIconCaptain
+  icon: "JobIconCaptain"
   requireAdminNotify: true
   joinNotifyCrew: true
   supervisors: job-supervisors-centcom
@@ -40,9 +18,16 @@
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
+  afterLoadoutSpecial:
+  - !type:ModifyEnvirosuitSpecial
+    charges: 8
+  - !type:ModifyEnvirohelmSpecial
+    powerCell: PowerCellHigh
 
 - type: startingGear
   id: CaptainGear
+  subGear:
+  - CaptainPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitCaptain
     back: ClothingBackpackCaptainFilled
@@ -52,3 +37,11 @@
   innerClothingSkirt: ClothingUniformJumpskirtCaptain
   satchel: ClothingBackpackSatchelCaptainFilled
   duffelbag: ClothingBackpackDuffelCaptainFilled
+
+- type: startingGear
+  id: CaptainPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitCaptain
+    head: ClothingHeadEnvirohelmCaptain
+    gloves: ClothingHandsGlovesCaptain

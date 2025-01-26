@@ -58,6 +58,9 @@ language-Moffic-description = The language of the mothpeople borders on complete
 language-RobotTalk-name = RobotTalk
 language-RobotTalk-description = A language consisting of harsh binary chirps, whistles, hisses, and whines. Organic tongues cannot speak it without aid from special translators.
 
+language-Calcic-name = Calcic
+language-Calcic-description = The bone-rattling language of skeletons and Plasmamen. It sounds like a harmonic trousle of bones with a humerus tone, sans any off-tune ribbing.
+
 language-Sign-name = Tau-Ceti Basic Sign Language
 language-Sign-description = TCB-SL for short, this sign language is prevalent among mute and deaf people.
 
@@ -69,6 +72,11 @@ language-ValyrianStandard-description =
     A language descended from eastern european languages of old earth - Valyrian Standard is the commonly spoken tongue of Harpies brought up on their homeworld of Valyrian 4b
     It is rarely spoken outside of the worlds of its native speakers, and has in modern times been supplanted by the 'Conlangs of the Sol Alliance.
     Its speakers are those who wish to uphold the traditions and beliefs of ancient peoples from before the colonial era.
+
+language-Chittin-name = Chittin
+language-Chittin-description = 
+    A language consisting of clicks, buzzes, and some variety of harsh insect sounds.
+    Most of what makes up their speech comes from their antennae, making it a near-impossible language for those without to learn.
 
 # Animal Languages
 
