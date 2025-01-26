@@ -2,7 +2,7 @@
   id: EarringsStudLeft
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
+  speciesRestriction: [Moth, Vox, Rodentia, Shadowkin, Plasmaman, Chitinid, Tajaran]
   invertSpeciesRestriction: true
   coloring:
     default:
@@ -17,7 +17,7 @@
   id: EarringsStudRight
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
+  speciesRestriction: [Moth, Vox, Rodentia, Shadowkin, Plasmaman, Chitinid, Tajaran]
   invertSpeciesRestriction: true
   coloring:
     default:
@@ -32,7 +32,7 @@
   id: EarringsHeavyLeft
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
+  speciesRestriction: [Moth, Vox, Rodentia, Shadowkin, Plasmaman, Chitinid, Tajaran]
   invertSpeciesRestriction: true
   coloring:
     default:
@@ -47,7 +47,7 @@
   id: EarringsHeavyRight
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
+  speciesRestriction: [Moth, Vox, Rodentia, Shadowkin, Plasmaman, Chitinid, Tajaran]
   invertSpeciesRestriction: true
   coloring:
     default:
@@ -62,7 +62,7 @@
   id: EarringsDropBasicLeft
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
+  speciesRestriction: [Moth, Vox, Rodentia, Shadowkin, Plasmaman, Chitinid, Tajaran]
   invertSpeciesRestriction: true
   coloring:
     default:
@@ -77,7 +77,7 @@
   id: EarringsDropBasicRight
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
+  speciesRestriction: [Moth, Vox, Rodentia, Shadowkin, Plasmaman, Chitinid, Tajaran]
   invertSpeciesRestriction: true
   coloring:
     default:
@@ -92,7 +92,7 @@
   id: EarringsDropColoredLeft
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
+  speciesRestriction: [Moth, Vox, Rodentia, Shadowkin, Plasmaman, Chitinid, Tajaran]
   invertSpeciesRestriction: true
   coloring:
     default:
@@ -109,7 +109,7 @@
   id: EarringsDropColoredRight
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
+  speciesRestriction: [Moth, Vox, Rodentia, Shadowkin, Plasmaman, Chitinid, Tajaran]
   invertSpeciesRestriction: true
   coloring:
     default:
@@ -126,7 +126,7 @@
   id: EarringsDropLongLeft
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
+  speciesRestriction: [Moth, Vox, Rodentia, Shadowkin, Plasmaman, Chitinid, Tajaran]
   invertSpeciesRestriction: true
   coloring:
     default:
@@ -143,7 +143,7 @@
   id: EarringsDropLongRight
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
+  speciesRestriction: [Moth, Vox, Rodentia, Shadowkin, Plasmaman, Chitinid, Tajaran]
   invertSpeciesRestriction: true
   coloring:
     default:
@@ -160,7 +160,7 @@
   id: EarringsCrescentLeft
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
+  speciesRestriction: [Moth, Vox, Rodentia, Shadowkin, Plasmaman, Chitinid, Tajaran]
   invertSpeciesRestriction: true
   coloring:
     default:
@@ -175,7 +175,7 @@
   id: EarringsCrescentRight
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
+  speciesRestriction: [Moth, Vox, Rodentia, Shadowkin, Plasmaman, Chitinid, Tajaran]
   invertSpeciesRestriction: true
   coloring:
     default:
@@ -190,7 +190,7 @@
   id: EarringsBangleLeft
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
+  speciesRestriction: [Moth, Vox, Rodentia, Shadowkin, Plasmaman, Chitinid, Tajaran]
   invertSpeciesRestriction: true
   coloring:
     default:
@@ -205,7 +205,7 @@
   id: EarringsBangleRight
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
+  speciesRestriction: [Moth, Vox, Rodentia, Shadowkin, Plasmaman, Chitinid, Tajaran]
   invertSpeciesRestriction: true
   coloring:
     default:
@@ -220,7 +220,7 @@
   id: EarringsHoopBasicLeft
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
+  speciesRestriction: [Moth, Vox, Rodentia, Shadowkin, Plasmaman, Chitinid, Tajaran]
   invertSpeciesRestriction: true
   coloring:
     default:
@@ -235,7 +235,7 @@
   id: EarringsHoopBasicRight
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
+  speciesRestriction: [Moth, Vox, Rodentia, Shadowkin, Plasmaman, Chitinid, Tajaran]
   invertSpeciesRestriction: true
   coloring:
     default:
@@ -250,7 +250,7 @@
   id: EarringsHoopMiniLeft
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
+  speciesRestriction: [Moth, Vox, Rodentia, Shadowkin, Plasmaman, Chitinid, Tajaran]
   invertSpeciesRestriction: true
   coloring:
     default:
@@ -265,7 +265,7 @@
   id: EarringsHoopMiniRight
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
+  speciesRestriction: [Moth, Vox, Rodentia, Shadowkin, Plasmaman, Chitinid, Tajaran]
   invertSpeciesRestriction: true
   coloring:
     default:
@@ -280,7 +280,7 @@
   id: EarringsCrossBasicLeft
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
+  speciesRestriction: [Moth, Vox, Rodentia, Shadowkin, Plasmaman, Chitinid, Tajaran]
   invertSpeciesRestriction: true
   coloring:
     default:
@@ -295,7 +295,7 @@
   id: EarringsCrossBasicRight
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
+  speciesRestriction: [Moth, Vox, Rodentia, Shadowkin, Plasmaman, Chitinid, Tajaran]
   invertSpeciesRestriction: true
   coloring:
     default:
@@ -310,7 +310,7 @@
   id: EarringsCrossSaintPeterLeft
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
+  speciesRestriction: [Moth, Vox, Rodentia, Shadowkin, Plasmaman, Chitinid, Tajaran]
   invertSpeciesRestriction: true
   coloring:
     default:
@@ -325,7 +325,7 @@
   id: EarringsCrossSaintPeterRight
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
+  speciesRestriction: [Moth, Vox, Rodentia, Shadowkin, Plasmaman, Chitinid, Tajaran]
   invertSpeciesRestriction: true
   coloring:
     default:
@@ -340,7 +340,7 @@
   id: EarringsGemstoneBasicLeft
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
+  speciesRestriction: [Moth, Vox, Rodentia, Shadowkin, Plasmaman, Chitinid, Tajaran]
   invertSpeciesRestriction: true
   coloring:
     default:
@@ -357,7 +357,7 @@
   id: EarringsGemstoneBasicRight
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
+  speciesRestriction: [Moth, Vox, Rodentia, Shadowkin, Plasmaman, Chitinid, Tajaran]
   invertSpeciesRestriction: true
   coloring:
     default:
@@ -374,7 +374,7 @@
   id: EarringsGemstoneLongLeft
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
+  speciesRestriction: [Moth, Vox, Rodentia, Shadowkin, Plasmaman, Chitinid, Tajaran]
   invertSpeciesRestriction: true
   coloring:
     default:
@@ -391,7 +391,7 @@
   id: EarringsGemstoneLongRight
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
+  speciesRestriction: [Moth, Vox, Rodentia, Shadowkin, Plasmaman, Chitinid, Tajaran]
   invertSpeciesRestriction: true
   coloring:
     default:
@@ -408,7 +408,7 @@
   id: EarringsGemstoneDoubleLeft
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
+  speciesRestriction: [Moth, Vox, Rodentia, Shadowkin, Plasmaman, Chitinid, Tajaran]
   invertSpeciesRestriction: true
   coloring:
     default:
@@ -427,7 +427,7 @@
   id: EarringsGemstoneDoubleRight
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
+  speciesRestriction: [Moth, Vox, Rodentia, Shadowkin, Plasmaman, Chitinid, Tajaran]
   invertSpeciesRestriction: true
   coloring:
     default:
@@ -446,7 +446,7 @@
   id: EarringsDangleBasicLeft
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
+  speciesRestriction: [Moth, Vox, Rodentia, Shadowkin, Plasmaman, Chitinid, Tajaran]
   invertSpeciesRestriction: true
   coloring:
     default:
@@ -463,7 +463,7 @@
   id: EarringsDangleBasicRight
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
+  speciesRestriction: [Moth, Vox, Rodentia, Shadowkin, Plasmaman, Chitinid, Tajaran]
   invertSpeciesRestriction: true
   coloring:
     default:
@@ -480,7 +480,7 @@
   id: EarringsDangleLongLeft
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
+  speciesRestriction: [Moth, Vox, Rodentia, Shadowkin, Plasmaman, Chitinid, Tajaran]
   invertSpeciesRestriction: true
   coloring:
     default:
@@ -497,7 +497,7 @@
   id: EarringsDangleLongRight
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
+  speciesRestriction: [Moth, Vox, Rodentia, Shadowkin, Plasmaman, Chitinid, Tajaran]
   invertSpeciesRestriction: true
   coloring:
     default:
@@ -514,7 +514,7 @@
   id: EarringsEightLeft
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
+  speciesRestriction: [Moth, Vox, Rodentia, Shadowkin, Plasmaman, Chitinid, Tajaran]
   invertSpeciesRestriction: true
   coloring:
     default:
@@ -529,7 +529,7 @@
   id: EarringsEightRight
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
+  speciesRestriction: [Moth, Vox, Rodentia, Shadowkin, Plasmaman, Chitinid, Tajaran]
   invertSpeciesRestriction: true
   coloring:
     default:
@@ -544,7 +544,7 @@
   id: EarringsCrystalBasicLeft
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
+  speciesRestriction: [Moth, Vox, Rodentia, Shadowkin, Plasmaman, Chitinid, Tajaran]
   invertSpeciesRestriction: true
   coloring:
     default:
@@ -561,7 +561,7 @@
   id: EarringsCrystalBasicRight
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
+  speciesRestriction: [Moth, Vox, Rodentia, Shadowkin, Plasmaman, Chitinid, Tajaran]
   invertSpeciesRestriction: true
   coloring:
     default:
@@ -578,7 +578,7 @@
   id: EarringsCrystalLongLeft
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
+  speciesRestriction: [Moth, Vox, Rodentia, Shadowkin, Plasmaman, Chitinid, Tajaran]
   invertSpeciesRestriction: true
   coloring:
     default:
@@ -595,7 +595,7 @@
   id: EarringsCrystalLongRight
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Vox, Rodentia, Felinid, Tajaran]
+  speciesRestriction: [Moth, Vox, Rodentia, Shadowkin, Plasmaman, Chitinid, Tajaran]
   invertSpeciesRestriction: true
   coloring:
     default:
