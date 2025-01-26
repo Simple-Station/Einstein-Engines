@@ -29,11 +29,5 @@ namespace Content.Server.Chemistry.Components
 
         [DataField]
         public int TransferringAmount;
-
-        [DataField]
-        public Dictionary<string, long> BufferReagentsTime = new();
-
-        [DataField]
-        public Dictionary<string, long> PillBufferReagentsTime = new();
     }
 }

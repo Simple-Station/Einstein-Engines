@@ -152,9 +152,7 @@ namespace Content.Shared.Chemistry
         uint pillDosageLimit,
         bool updateLabel,
         int sortMethod,
-        int transferringAmount,
-        Dictionary<string, long> bufferTimes,
-        Dictionary<string, long> pillBufferTimes)
+        int transferringAmount)
         : BoundUserInterfaceState
     {
         public readonly ContainerInfo? ContainerInfo = containerInfo;
@@ -181,9 +179,6 @@ namespace Content.Shared.Chemistry
 
         public readonly int SortMethod = sortMethod;
         public readonly int TransferringAmount = transferringAmount;
-
-        public readonly IReadOnlyDictionary<string, long> BufferTimes = bufferTimes;
-        public readonly IReadOnlyDictionary<string, long> PillBufferTimes = pillBufferTimes;
     }
 
     [Serializable, NetSerializable]
