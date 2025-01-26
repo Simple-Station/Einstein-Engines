@@ -37,6 +37,7 @@ entities:
     components:
     - type: MetaData
       name: Automated Trade Station
+    - type: ProtectedGrid
     - type: Transform
       pos: -2.9375,-1.625
       parent: 1
