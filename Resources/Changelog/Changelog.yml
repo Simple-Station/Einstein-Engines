@@ -10803,3 +10803,12 @@ Entries:
   id: 6768
   time: '2025-01-26T02:13:32.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1660
+- author: SX-7
+  changes:
+    - type: Fix
+      message: Fixed typos in guidebook entry for tajara
+    - type: Fix
+      message: Temperature related fixes for tajara
+  id: 6769
+  time: '2025-01-26T12:51:39.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1664
