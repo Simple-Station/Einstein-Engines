@@ -1,5 +1,4 @@
 ﻿using Content.Server.DeltaV.Objectives.Components;
-using Content.Server.KillTracking;
 using Content.Server.Objectives.Components;
 using Content.Server.Objectives.Systems;
 using Content.Shared.Mind.Components;
