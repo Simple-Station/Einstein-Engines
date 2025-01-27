@@ -785,7 +785,7 @@
 - type: loadout
   id: LoadoutItemAACTablet
   category: Items
-  cost: 1
+  cost: 2
   items:
     - AACTablet
 
