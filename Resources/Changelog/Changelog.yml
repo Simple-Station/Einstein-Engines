@@ -10835,3 +10835,10 @@ Entries:
   id: 6772
   time: '2025-01-27T05:41:33.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1672
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: Other species can pick Cataloguer, Psionic Mantis, and Mystagogue again.
+  id: 6773
+  time: '2025-01-27T05:41:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1673
