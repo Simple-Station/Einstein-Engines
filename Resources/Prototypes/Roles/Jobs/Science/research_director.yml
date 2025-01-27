@@ -14,10 +14,15 @@
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
+        - !type:CharacterTraitRequirement
+          inverted: true
+          traits:
+            - ShadowkinBlackeye
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - ShadowkinBlackeye
+        - Foreigner
+        - ForeignerLight
   weight: 10
   startingGear: ResearchDirectorGear
   icon: "JobIconResearchDirector"
