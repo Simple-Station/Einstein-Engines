@@ -39,6 +39,9 @@
       collection: FootstepHull
   - type: RequireProjectileTarget
   - type: ThrownItemImmune
+  - type: Tag
+    tags:
+    - ForceFixRotations
 
 - type: entity
   id: CounterBase
