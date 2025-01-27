@@ -10842,3 +10842,24 @@ Entries:
   id: 6773
   time: '2025-01-27T05:41:56.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1673
+- author: ShirouAjisai
+  changes:
+    - type: Tweak
+      message: >-
+        Security Department can no longer have pacifist, muted, blind, brittle
+        bone disease, or foreigner traits.
+    - type: Tweak
+      message: >-
+        Head of Security can no longer have pacifist, muted, blind, brittle bone
+        disease, or foreigner traits.
+    - type: Tweak
+      message: Heads of staff can no longer have foreigner traits.
+    - type: Tweak
+      message: The Captain can no longer have pacifist or foreigner traits.
+    - type: Tweak
+      message: The Head of Personnel can no longer have foreigner traits.
+    - type: Tweak
+      message: The Administrative Assistant can no longer have foreigner traits.
+  id: 6774
+  time: '2025-01-27T17:45:36.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1670
