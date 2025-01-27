@@ -3,6 +3,16 @@
   name: job-name-cadet
   description: job-description-cadet
   playTimeTracker: JobSecurityCadet
+  requirements:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
+        - Pacifist
+        - BrittleBoneDisease
   startingGear: SecurityCadetGear
   icon: "JobIconSecurityCadet"
   supervisors: job-supervisors-security
