@@ -39,6 +39,11 @@
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
+  - !type:AddComponentSpecial
+    components:
+    - type: CPRTraining
+    - type: SurgerySpeedModifier
+      speedModifier: 1.75
   afterLoadoutSpecial:
   - !type:ModifyEnvirosuitSpecial
     charges: 8
