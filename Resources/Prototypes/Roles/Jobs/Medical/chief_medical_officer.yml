@@ -6,6 +6,14 @@
   description: job-description-cmo
   playTimeTracker: JobChiefMedicalOfficer
   antagAdvantage: 6 # DeltaV - Reduced TC: Head of Staff
+  requirements:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
   weight: 10
   startingGear: CMOGear
   icon: "JobIconChiefMedicalOfficer"

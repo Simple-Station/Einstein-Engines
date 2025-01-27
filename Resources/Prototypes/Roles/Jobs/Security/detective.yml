@@ -7,6 +7,15 @@
   - !type:CharacterDepartmentTimeRequirement
     department: Security
     min: 36000 # DeltaV - 10 hours
+  - !type:CharacterTraitRequirement
+    inverted: true
+    traits:
+      - Foreigner
+      - ForeignerLight
+      - Muted
+      - Blindness
+      - Pacifist
+      - BrittleBoneDisease
   startingGear: DetectiveGear
   icon: "JobIconDetective"
   supervisors: job-supervisors-hos
@@ -31,7 +40,8 @@
 - type: startingGear
   id: DetectiveGear
   subGear:
-  - DetectivePlasmamanGear
+  - DetectivePlasmamanGear
+
   equipment:
     jumpsuit: ClothingUniformJumpsuitDetective
     back: ClothingBackpackSecurity

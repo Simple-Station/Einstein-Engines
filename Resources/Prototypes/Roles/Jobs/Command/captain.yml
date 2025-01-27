@@ -3,6 +3,16 @@
   name: job-name-captain
   description: job-description-captain
   playTimeTracker: JobCaptain
+  requirements:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
+        - Pacifist
+        - BrittleBoneDisease
   weight: 20
   startingGear: CaptainGear
   icon: "JobIconCaptain"

@@ -23,6 +23,13 @@
           inverted: true
           traits:
             - ShadowkinBlackeye
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
   weight: 10
   startingGear: ResearchDirectorGear
   icon: "JobIconResearchDirector"
