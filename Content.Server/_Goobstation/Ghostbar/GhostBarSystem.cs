@@ -36,13 +36,10 @@ public sealed class GhostBarSystem : EntitySystem
     [Dependency] private readonly TraitSystem _trait = default!;
     // Einstein Engines end
 
-    private static readonly List<JobComponent> _jobComponents = new() // Einstein Engines - use JobComponent
+    [ValidatePrototypeId<JobPrototype>] // Einstein Engines - validate job prototypes
+    private static readonly List<ProtoId<JobPrototype>> _jobComponents = new()
     {
-        new JobComponent { Prototype = "Passenger" },
-        new JobComponent { Prototype = "Bartender" },
-        new JobComponent { Prototype = "Botanist" },
-        new JobComponent { Prototype = "Chef" },
-        new JobComponent { Prototype = "Janitor" }
+        "Passenger", "Bartender", "Botanist", "Chef", "Janitor"
     };
 
     public override void Initialize()
@@ -102,17 +99,17 @@ public sealed class GhostBarSystem : EntitySystem
         var randomSpawnPoint = _random.Pick(spawnPoints);
         var randomJob = _random.Pick(_jobComponents);
         var profile = _ticker.GetPlayerProfile(args.SenderSession);
-        var mobUid = _spawningSystem.SpawnPlayerMob(randomSpawnPoint, randomJob, profile, null);
+        var mobUid = _spawningSystem.SpawnPlayerMob(randomSpawnPoint, new JobComponent { Prototype = randomJob }, profile, null); // Einstein Engines - pass in JobComponent
 
         // Einstein Engines start - apply loadouts and traits
         var playTimes = _playTimeTracking.GetTrackerTimes(player);
         var whitelisted = player.ContentData()?.Whitelisted ?? false;
 
         _loadout.ApplyCharacterLoadout(
-            mobUid, randomJob.Prototype ?? new JobPrototype(), profile, playTimes, whitelisted
+            mobUid, randomJob, profile, playTimes, whitelisted
         );
         _trait.ApplyTraits(
-            mobUid, randomJob.Prototype, profile, playTimes, whitelisted, punishCheater: false
+            mobUid, randomJob, profile, playTimes, whitelisted, punishCheater: false
         );
         // Einstein Engines end - apply loadouts and traits
 
