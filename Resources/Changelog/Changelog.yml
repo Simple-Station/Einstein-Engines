@@ -10828,3 +10828,10 @@ Entries:
   id: 6771
   time: '2025-01-27T04:36:31.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1669
+- author: ShirouAjisai
+  changes:
+    - type: Add
+      message: Blueshield Officer now has CPR as a roundstart trait.
+  id: 6772
+  time: '2025-01-27T05:41:33.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1672
