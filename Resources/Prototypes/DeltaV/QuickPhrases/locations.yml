@@ -265,11 +265,6 @@
   id: LocationChiefJusticePhrase
   text: station-beacon-chiefjustice
 
-- type: quickPhrase
-  parent: BaseJusticeLocationPhrase
-  id: LocationClerkPhrase
-  text: station-beacon-clerk
-
 # Logistics
 
 - type: quickPhrase

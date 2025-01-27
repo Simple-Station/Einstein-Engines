@@ -153,11 +153,6 @@
   id: CourierPhrase
   text: job-name-courier
 
-- type: quickPhrase
-  parent: BaseLogisticsJobPhrase
-  id: CargoAssistantPhrase
-  text: job-name-cargo-assistant
-
 # Justice
 
 - type: quickPhrase
@@ -206,11 +201,6 @@
   parent: BaseMedicalJobPhrase
   id: MedicalInternPhrase
   text: job-name-intern
-
-- type: quickPhrase
-  parent: BaseMedicalJobPhrase
-  id: SurgeonPhrase
-  text: job-name-surgeon
 
 # Security
 
