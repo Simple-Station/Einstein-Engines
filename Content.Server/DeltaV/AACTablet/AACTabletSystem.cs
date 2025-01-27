@@ -35,7 +35,7 @@ public sealed class AACTabletSystem : EntitySystem
         if (!_prototype.TryIndex(message.PhraseId, out var phrase))
             return;
 
-        if (HasComp<AACTabletComponent>(message.Actor))
+        if (HasComp<MimePowersComponent>(message.Actor))
             _mimePowers.BreakVow(message.Actor);
 
         EnsureComp<VoiceOverrideComponent>(ent).NameOverride = speakerName;
