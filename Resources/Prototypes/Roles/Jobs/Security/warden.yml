@@ -11,6 +11,10 @@
       tracker: JobDetective
       min: 14400 # DeltaV - 4 hours
     - !type:CharacterWhitelistRequirement
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
   startingGear: WardenGear
   icon: "JobIconWarden"
   supervisors: job-supervisors-hos

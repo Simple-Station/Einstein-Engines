@@ -3,6 +3,11 @@
   name: job-name-hos
   description: job-description-hos
   playTimeTracker: JobHeadOfSecurity
+  requirements:
+    - !type:CharacterSpeciesRequirement
+    inverted: true
+    species:
+      - IPC
   weight: 10
   startingGear: HoSGear
   icon: "JobIconHeadOfSecurity"

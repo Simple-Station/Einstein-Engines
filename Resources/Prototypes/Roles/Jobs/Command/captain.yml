@@ -3,6 +3,11 @@
   name: job-name-captain
   description: job-description-captain
   playTimeTracker: JobCaptain
+  requirements:
+    - !type:CharacterSpeciesRequirement
+    inverted: true
+    species:
+      - IPC
   weight: 20
   startingGear: CaptainGear
   icon: "JobIconCaptain"
