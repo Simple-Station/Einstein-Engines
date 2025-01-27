@@ -18,6 +18,10 @@
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
+        - !type:CharacterTraitRequirement
+          inverted: true
+          traits:
+            - Pacifist
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
