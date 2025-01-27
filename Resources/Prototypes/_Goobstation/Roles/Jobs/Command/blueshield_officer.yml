@@ -39,6 +39,7 @@
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
+      - type: CPRTraining
   afterLoadoutSpecial:
   - !type:ModifyEnvirosuitSpecial
     charges: 8
