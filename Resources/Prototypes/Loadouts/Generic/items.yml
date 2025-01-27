@@ -795,6 +795,11 @@
   cost: 0 # It shouldnt cost points to be able to function.
   items:
     - AACTablet
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Mime
 
 # Pets
 - type: loadout
