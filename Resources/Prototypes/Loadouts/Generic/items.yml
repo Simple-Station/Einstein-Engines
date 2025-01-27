@@ -795,11 +795,6 @@
   cost: 2
   items:
     - AACTablet
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Mime
 
 # Pets
 - type: loadout
