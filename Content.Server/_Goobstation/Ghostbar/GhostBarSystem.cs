@@ -14,6 +14,7 @@ using Content.Shared.Roles;
 using Content.Server.Antag.Components;
 using Content.Shared.Mindshield.Components;
 using Content.Shared.Players;
+using Content.Shared.Roles.Jobs; // EE - use JobComponent
 
 namespace Content.Server._Goobstation.Ghostbar;
 
@@ -27,7 +28,7 @@ public sealed class GhostBarSystem : EntitySystem
     [Dependency] private readonly MindSystem _mindSystem = default!;
     [Dependency] private readonly IEntityManager _entityManager = default!;
 
-    private static readonly List<JobComponent> _jobComponents = new()
+    private static readonly List<JobComponent> _jobComponents = new() // EE - use JobComponent
     {
         new JobComponent { Prototype = "Passenger" },
         new JobComponent { Prototype = "Bartender" },
