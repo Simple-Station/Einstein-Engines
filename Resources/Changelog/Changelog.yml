@@ -10821,3 +10821,10 @@ Entries:
   id: 6770
   time: '2025-01-26T15:44:04.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1663
+- author: ShirouAjisai
+  changes:
+    - type: Tweak
+      message: Mantis can no longer be a pacifist
+  id: 6771
+  time: '2025-01-27T04:36:31.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1669
