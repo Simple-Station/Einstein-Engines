@@ -10,7 +10,6 @@
       traits:
         - Foreigner
         - ForeignerLight
-        - Blindness
   weight: 10
   startingGear: QuartermasterGear
   icon: "JobIconQuarterMaster"

@@ -26,7 +26,6 @@
       traits:
         - Foreigner
         - ForeignerLight
-        - Blindness
   weight: 10
   startingGear: ResearchDirectorGear
   icon: "JobIconResearchDirector"

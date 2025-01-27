@@ -15,7 +15,6 @@
       traits:
         - Foreigner
         - ForeignerLight
-        - Blindness
   weight: 20
   startingGear: MagistrateGear
   icon: "JobIconMagistrate"

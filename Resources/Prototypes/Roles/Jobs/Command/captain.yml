@@ -9,7 +9,6 @@
       traits:
         - Foreigner
         - ForeignerLight
-        - Blindness
         - Pacifist
   weight: 20
   startingGear: CaptainGear

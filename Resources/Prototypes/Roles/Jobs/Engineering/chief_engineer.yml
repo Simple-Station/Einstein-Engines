@@ -9,7 +9,6 @@
       traits:
         - Foreigner
         - ForeignerLight
-        - Blindness
   weight: 10
   startingGear: ChiefEngineerGear
   icon: "JobIconChiefEngineer"
