@@ -1,6 +1,8 @@
 using Robust.Server.GameObjects;
+using Content.Server.Clothing.Systems; // Einstein Engines
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Events;
+using Content.Server.Players.PlayTimeTracking; // Einstein Engines
 using Content.Server.Station.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
@@ -12,9 +14,10 @@ using Content.Server.Mind;
 using Content.Shared.Mind.Components;
 using Content.Shared.Roles;
 using Content.Server.Antag.Components;
+using Content.Server.Traits; // Einstein Engines
 using Content.Shared.Mindshield.Components;
 using Content.Shared.Players;
-using Content.Shared.Roles.Jobs; // EE - use JobComponent
+using Content.Shared.Roles.Jobs; // Einstein Engines - use JobComponent
 
 namespace Content.Server._Goobstation.Ghostbar;
 
@@ -27,8 +30,13 @@ public sealed class GhostBarSystem : EntitySystem
     [Dependency] private readonly StationSpawningSystem _spawningSystem = default!;
     [Dependency] private readonly MindSystem _mindSystem = default!;
     [Dependency] private readonly IEntityManager _entityManager = default!;
+    // Einstein Engines start
+    [Dependency] private readonly PlayTimeTrackingManager _playTimeTracking = default!;
+    [Dependency] private readonly LoadoutSystem _loadout = default!;
+    [Dependency] private readonly TraitSystem _trait = default!;
+    // Einstein Engines end
 
-    private static readonly List<JobComponent> _jobComponents = new() // EE - use JobComponent
+    private static readonly List<JobComponent> _jobComponents = new() // Einstein Engines - use JobComponent
     {
         new JobComponent { Prototype = "Passenger" },
         new JobComponent { Prototype = "Bartender" },
@@ -95,6 +103,18 @@ public sealed class GhostBarSystem : EntitySystem
         var randomJob = _random.Pick(_jobComponents);
         var profile = _ticker.GetPlayerProfile(args.SenderSession);
         var mobUid = _spawningSystem.SpawnPlayerMob(randomSpawnPoint, randomJob, profile, null);
+
+        // Einstein Engines start - apply loadouts and traits
+        var playTimes = _playTimeTracking.GetTrackerTimes(player);
+        var whitelisted = player.ContentData()?.Whitelisted ?? false;
+
+        _loadout.ApplyCharacterLoadout(
+            mobUid, randomJob.Prototype ?? new JobPrototype(), profile, playTimes, whitelisted
+        );
+        _trait.ApplyTraits(
+            mobUid, randomJob.Prototype, profile, playTimes, whitelisted, punishCheater: false
+        );
+        // Einstein Engines end - apply loadouts and traits
 
         _entityManager.EnsureComponent<GhostBarPlayerComponent>(mobUid);
         _entityManager.EnsureComponent<MindShieldComponent>(mobUid);
