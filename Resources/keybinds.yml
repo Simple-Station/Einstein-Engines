@@ -590,9 +590,11 @@ binds:
   type: State
   key: Num9
   mod1: Shift
+# WD EDIT START
 - function: LookUp
   type: State
   key: Space
+# WD EDIT END
 - function: MappingUnselect
   type: State
   key: MouseRight

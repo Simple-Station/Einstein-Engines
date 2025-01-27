@@ -297,6 +297,4 @@ cmd-options-desc = Opens options menu, optionally with a specific tab selected.
 cmd-options-help = Usage: options [tab]
 
 ## Combat Options
-ui-options-function-look-up = Look up/Take aim
 ui-options-function-auto-get-up = Automatically get up after falling
-ui-options-function-hold-look-up = Hold down the key to aim
