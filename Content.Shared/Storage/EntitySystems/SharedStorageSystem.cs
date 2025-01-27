@@ -1302,6 +1302,7 @@ public abstract class SharedStorageSystem : EntitySystem
         }
 
         Dirty(ent, ent.Comp);
+        UpdateUI((ent.Owner, ent.Comp));
     }
 
     /// <summary>
