@@ -109,14 +109,14 @@
     range: 200
   - type: DeviceLinkSink
     ports:
-      - Open
-      - Close
-      - Toggle
-      - AutoClose
-      - DoorBolt
+    - Open
+    - Close
+    - Toggle
+    - AutoClose
+    - DoorBolt
   - type: DeviceLinkSource
     ports:
-      - DoorStatus
+    - DoorStatus
     lastSignals:
       DoorStatus: false
   - type: SoundOnOverload
@@ -167,10 +167,15 @@
     priority: 1
   - type: Tag
     tags:
-      - Airlock
-      # This tag is used to nagivate the Airlock construction graph. It's needed because the construction graph is shared between Airlock, AirlockGlass, and HighSecDoor
+    - Airlock
+    # This tag is used to nagivate the Airlock construction graph. It's needed because the construction graph is shared between Airlock, AirlockGlass, and HighSecDoor
   - type: PryUnpowered
   - type: BlockWeather
+  - type: GuideHelp
+    guides:
+    - Airlocks
+    - WirePanels
+    - Networking
   - type: InteractionVerbs
     allowedVerbs:
     - KnockOn
@@ -227,5 +232,5 @@
     resistance: 1
   - type: Tag
     tags:
-      - GlassAirlock
-      # This tag is used to nagivate the Airlock construction graph. It's needed because the construction graph is shared between Airlock, AirlockGlass, and HighSecDoor
+    - GlassAirlock
+    # This tag is used to nagivate the Airlock construction graph. It's needed because the construction graph is shared between Airlock, AirlockGlass, and HighSecDoor

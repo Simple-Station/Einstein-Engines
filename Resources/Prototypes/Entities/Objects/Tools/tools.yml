@@ -247,6 +247,9 @@
         - ItemMask
         restitution: 0.3
         friction: 0.2
+  - type: GuideHelp
+    guides:
+    - Construction
 
 - type: entity
   name: multitool
@@ -322,6 +325,12 @@
         - ItemMask
         restitution: 0.3
         friction: 0.2
+  - type: GuideHelp
+    guides:
+    - Networking
+    - WirePanels
+    - Airlocks
+    - InspectingPower
 
 - type: entity
   name: network configurator
@@ -372,7 +381,7 @@
     price: 56
   - type: GuideHelp
     guides:
-    - NetworkConfigurator
+    - Networking
   - type: Fixtures
     fixtures:
       fix1:

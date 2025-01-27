@@ -101,6 +101,9 @@
         - prototype: SheetRUGlass
         - prototype: SheetRUGlass0
         - prototype: SheetRGlass
+  - type: GuideHelp
+    guides:
+    - ExpandingRepairingStation
 
 - type: entity
   parent: PartRodMetal

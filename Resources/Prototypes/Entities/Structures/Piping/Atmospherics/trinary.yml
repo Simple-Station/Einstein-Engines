@@ -73,6 +73,9 @@
     - type: AtmosMonitoringConsoleDevice
       navMapBlip: GasFlowRegulator
     - type: StationAiWhitelist
+    - type: GuideHelp
+      guides:
+      - MixingAndFiltering
 
 - type: entity
   parent: GasFilter
@@ -164,6 +167,9 @@
     - type: AtmosMonitoringConsoleDevice
       navMapBlip: GasFlowRegulator
     - type: StationAiWhitelist
+    - type: GuideHelp
+      guides:
+      - MixingAndFiltering
 
 - type: entity
   parent: GasMixer
@@ -266,3 +272,8 @@
     - type: AtmosMonitoringConsoleDevice
       navMapBlip: GasFlowRegulator
     - type: StationAiWhitelist
+    - type: GuideHelp
+      guides:
+      - PneumaticValve
+      - Pumps
+      - Valves
