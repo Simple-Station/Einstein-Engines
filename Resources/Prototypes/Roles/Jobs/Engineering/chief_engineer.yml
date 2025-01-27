@@ -9,7 +9,6 @@
       traits:
         - Foreigner
         - ForeignerLight
-        - Muted
         - Blindness
   weight: 10
   startingGear: ChiefEngineerGear

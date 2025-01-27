@@ -7,6 +7,12 @@
     - !type:CharacterDepartmentTimeRequirement
       department: Command
       min: 54000 # 15 hours
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Blindness
   weight: 20
   startingGear: NanotrasenRepresentativeGear
   icon: "JobIconNanotrasenRepresentative"
