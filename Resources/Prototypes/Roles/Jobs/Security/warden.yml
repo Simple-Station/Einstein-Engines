@@ -11,6 +11,15 @@
       tracker: JobDetective
       min: 14400 # DeltaV - 4 hours
     - !type:CharacterWhitelistRequirement
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
+        - Pacifist
+        - BrittleBoneDisease
   startingGear: WardenGear
   icon: "JobIconWarden"
   supervisors: job-supervisors-hos
