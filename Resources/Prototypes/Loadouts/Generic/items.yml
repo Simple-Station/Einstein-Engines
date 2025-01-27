@@ -782,12 +782,12 @@
   items:
     - DrinkVacuumFlask
 
-# - type: loadout
-#   id: LoadoutItemAACTablet
-#   category: Items
-#   cost: 1
-#   items:
-#     - AACTablet
+- type: loadout
+  id: LoadoutItemAACTablet
+  category: Items
+  cost: 1
+  items:
+    - AACTablet
 
 - type: loadout
   id: LoadoutItemCaneBlind
