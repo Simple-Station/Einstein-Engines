@@ -10863,3 +10863,22 @@ Entries:
   id: 6774
   time: '2025-01-27T17:45:36.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1670
+- author: Skubman
+  changes:
+    - type: Tweak
+      message: >-
+        All plasma tanks of all kinds now have the correct output pressure for
+        use as Plasmamen internals.
+    - type: Tweak
+      message: >-
+        Plasmamen can no longer select the Temperature Tolerance trait which has
+        no effect since they are already immune to Cold damage.
+    - type: Fix
+      message: Reduced the price of mechs on the uplink.
+    - type: Fix
+      message: Thief game rule now properly selects more than one thief.
+    - type: Remove
+      message: Remove the Raise Glimmer To 500 traitor objective.
+  id: 6775
+  time: '2025-01-27T19:34:53.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1676
