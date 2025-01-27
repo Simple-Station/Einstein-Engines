@@ -7,7 +7,7 @@
   icon: { sprite: /Textures/Objects/Specific/Mech/mecha.rsi, state: darkgygax }
   productEntity: CrateCybersunDarkGygaxBundle
   cost:
-    Telecrystal: 400
+    Telecrystal: 80 # Einstein Engines -  1/5th the price due to no telecrystal rework
   categories:
   - UplinkAllies
 
@@ -18,7 +18,7 @@
   icon: { sprite: /Textures/Objects/Specific/Mech/mecha.rsi, state: mauler }
   productEntity: CrateCybersunMaulerBundle
   cost:
-    Telecrystal: 650
+    Telecrystal: 130 # Einstein Engines - 1/5th the price due to no telecrystal rework
   categories:
   - UplinkAllies
   conditions:
