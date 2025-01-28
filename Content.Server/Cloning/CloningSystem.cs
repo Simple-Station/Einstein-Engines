@@ -179,7 +179,8 @@ public sealed partial class CloningSystem : EntitySystem
     /// </summary>
     public bool TryCloning(EntityUid uid, EntityUid bodyToClone, Entity<MindComponent> mindEnt, CloningPodComponent clonePod, float failChanceModifier = 1)
     {
-        if (!_mobStateSystem.IsDead(bodyToClone)
+        var allowLivingPeople = _config.GetCVar(CCVars.CloningAllowLivingPeople);
+        if ((!allowLivingPeople && !_mobStateSystem.IsDead(bodyToClone))
             || clonePod.ActivelyCloning
             || clonePod.ConnectedConsole == null
             || !CheckUncloneable(uid, bodyToClone, clonePod, out var cloningCostMultiplier)
@@ -188,7 +189,7 @@ public sealed partial class CloningSystem : EntitySystem
             return false;
 
         var mind = mindEnt.Comp;
-        if (ClonesWaitingForMind.TryGetValue(mind, out var clone))
+        if (!allowLivingPeople && ClonesWaitingForMind.TryGetValue(mind, out var clone))
         {
             if (EntityManager.EntityExists(clone) &&
                 !_mobStateSystem.IsDead(clone) &&
@@ -199,12 +200,12 @@ public sealed partial class CloningSystem : EntitySystem
             ClonesWaitingForMind.Remove(mind);
         }
 
-        if (mind.OwnedEntity != null && !_mobStateSystem.IsDead(mind.OwnedEntity.Value)
+        if ((!allowLivingPeople && mind.OwnedEntity != null && !_mobStateSystem.IsDead(mind.OwnedEntity.Value))
             || mind.UserId == null
             || !_playerManager.TryGetSessionById(mind.UserId.Value, out var client)
             || !CheckBiomassCost(uid, physics, clonePod, cloningCostMultiplier))
             return false;
-        
+
         // Special handling for humanoid data related to metempsychosis. This function is needed for Paradox Anomaly code to play nice with reincarnated people
         var pref = humanoid.LastProfileLoaded;
         if (pref == null

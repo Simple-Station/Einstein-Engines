@@ -57,4 +57,10 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<bool> CloningPreserveFlavorText =
         CVarDef.Create("cloning.preserve_flavor_text", true, CVar.SERVERONLY);
+
+    /// <summary>
+    ///     Controls whether or not living people can be cloned.
+    /// </summary>
+    public static readonly CVarDef<bool> CloningAllowLivingPeople =
+        CVarDef.Create("cloning.allow_living_people", true, CVar.SERVERONLY);
 }
