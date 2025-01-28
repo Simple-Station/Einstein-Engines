@@ -1,3 +1,4 @@
+using System.Dynamic;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
@@ -18,14 +19,15 @@ public abstract partial class SwitchableOverlayComponent : BaseOverlayComponent
     [DataField]
     public bool IsEquipment;
 
-    /// <summary>
-    /// If it is greater than 0, overlay isn't toggled but pulsed instead
-    /// </summary>
+
     [DataField]
-    public float PulseTime;
+    public float PulseTime = 0;
 
     [ViewVariables(VVAccess.ReadOnly)]
-    public float PulseAccumulator;
+    public TimeSpan PulseAccumulator = TimeSpan.Zero;
+
+    [ViewVariables(VVAccess.ReadOnly)]
+    public TimeSpan PulseEndTime = TimeSpan.Zero;
 
     [DataField]
     public virtual SoundSpecifier? ActivateSound { get; set; } =

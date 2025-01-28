@@ -1,0 +1,59 @@
+- type: characterItemGroup
+  id: TraitsMind
+  maxItems: 2
+  items:
+    - type: trait
+      id: HighPotential
+    - type: trait
+      id: LowPotential
+    - type: trait
+      id: LowAmplification
+    - type: trait
+      id: HighAmplification
+    - type: trait
+      id: PowerOverwhelming
+    - type: trait
+      id: LowDampening
+    - type: trait
+      id: HighDampening
+    - type: trait
+      id: DispelPower
+    - type: trait
+      id: MetapsionicPower
+    - type: trait
+      id: XenoglossyPower
+    - type: trait
+      id: PsychognomyPower
+    - type: trait
+      id: LatentPsychic
+
+- type: characterItemGroup
+  id: TraitsMachine
+  maxItems: 2
+  items:
+    - type: trait
+      id: StrikingCalluses
+    - type: trait
+      id: Spinarette
+    - type: trait
+      id: BionicArm
+    - type: trait
+      id: PlateletFactories
+    - type: trait
+      id: DermalArmor
+    - type: trait
+      id: CyberEyes
+    - type: trait
+      id: FlareShielding
+    - type: trait
+      id: CyberEyesSecurity
+    - type: trait
+      id: CyberEyesMedical
+    - type: trait
+      id: CyberEyesDiagnostic
+    - type: trait
+      id: CyberEyesOmni
+    - type: trait
+      id: LightAmplification
+    - type: trait
+      id: ThermographicVision

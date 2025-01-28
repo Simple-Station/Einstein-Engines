@@ -35,6 +35,8 @@
       inverted: true
       traits:
         - LowPotential
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMachine
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -78,6 +80,8 @@
       inverted: true
       traits:
         - HighPotential
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMachine
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -118,6 +122,8 @@
       traits:
         - HighAmplification
         - PowerOverwhelming
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMachine
   functions:
     - !type:TraitAddPsionics
       psionicPowers:
@@ -153,6 +159,8 @@
       traits:
         - LowAmplification
         - PowerOverwhelming
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMachine
   functions:
     - !type:TraitAddPsionics
       psionicPowers:
@@ -188,6 +196,8 @@
       traits:
         - LowAmplification
         - HighAmplification
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMachine
   functions:
     - !type:TraitAddPsionics
       psionicPowers:
@@ -222,6 +232,8 @@
       inverted: true
       traits:
         - HighDampening
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMachine
   functions:
     - !type:TraitAddPsionics
       psionicPowers:
@@ -256,6 +268,8 @@
       inverted: true
       traits:
         - LowDampening
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMachine
   functions:
     - !type:TraitAddPsionics
       psionicPowers:
@@ -289,6 +303,8 @@
       inverted: true
       jobs:
         - ResearchDirector
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMachine
   functions:
     - !type:TraitAddPsionics
       psionicPowers:
@@ -322,6 +338,8 @@
       jobs:
         - ResearchDirector
         - ForensicMantis
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMachine
   functions:
     - !type:TraitAddPsionics
       psionicPowers:
@@ -356,6 +374,8 @@
       inverted: true
       jobs:
         - Librarian
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMachine
   functions:
     - !type:TraitAddPsionics
       psionicPowers:
@@ -387,6 +407,8 @@
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMachine
   functions:
     - !type:TraitAddPsionics
       psionicPowers:
