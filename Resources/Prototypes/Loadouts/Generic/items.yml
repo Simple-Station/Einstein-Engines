@@ -783,6 +783,13 @@
     - DrinkVacuumFlask
 
 - type: loadout
+  id: LoadoutItemAACTablet
+  category: Items
+  cost: 2
+  items:
+    - AACTablet
+
+- type: loadout
   id: LoadoutItemCaneBlind
   category: Items
   cost: 0 # It shouldnt cost points to be able to function.
