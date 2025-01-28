@@ -85,6 +85,11 @@ public sealed partial class CloningSystem : EntitySystem
     [Dependency] private readonly MobThresholdSystem _thresholds = default!;
     public readonly Dictionary<MindComponent, EntityUid> ClonesWaitingForMind = new();
 
+    // <summary>
+    //   The minimum mass an entity needs for its mass to affect the cloning timer with a MassContest.
+    // </summary>
+    private const float MinMassContestMass = 71f;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -252,7 +257,7 @@ public sealed partial class CloningSystem : EntitySystem
     {
         if (cloningPodComponent.BodyContainer.ContainedEntity is { Valid: true } entity
             && TryComp<PhysicsComponent>(entity, out var physics)
-            && physics.Mass > 71)
+            && physics.Mass > MinMassContestMass)
         {
             Timer.Spawn(TimeSpan.FromSeconds(cloningPodComponent.CloningTime * _contests.MassContest(entity, physics, true)), () => EndCloning(cloningPod, cloningPodComponent));
             return;
