@@ -531,6 +531,7 @@
       playerRatio: 10
       blacklist:
         components:
+        - MindShield # DeltaV - Mind Shielded people are immune to becoming syndicate
         - AntagImmune
       mindComponents:
       - type: TraitorRole
