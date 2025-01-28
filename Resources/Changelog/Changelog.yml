@@ -10897,3 +10897,12 @@ Entries:
   id: 6776
   time: '2025-01-28T00:39:57.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1675
+- author: Skubman
+  changes:
+    - type: Tweak
+      message: You can now clone living people.
+    - type: Tweak
+      message: Plasmamen no longer ignite while being cloned in a cloning pod.
+  id: 6777
+  time: '2025-01-28T18:16:31.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1679
