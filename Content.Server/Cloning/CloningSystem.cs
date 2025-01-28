@@ -252,7 +252,10 @@ public sealed partial class CloningSystem : EntitySystem
         if (cloningPodComponent.BodyContainer.ContainedEntity is { Valid: true } entity
             && TryComp<PhysicsComponent>(entity, out var physics)
             && physics.Mass > 71)
+        {
             Timer.Spawn(TimeSpan.FromSeconds(cloningPodComponent.CloningTime * _contests.MassContest(entity, physics, true)), () => EndCloning(cloningPod, cloningPodComponent));
+            return;
+        }
 
         Timer.Spawn(TimeSpan.FromSeconds(cloningPodComponent.CloningTime), () => EndCloning(cloningPod, cloningPodComponent));
     }
