@@ -189,9 +189,10 @@ public sealed partial class CloningSystem : EntitySystem
             return false;
 
         var mind = mindEnt.Comp;
-        if (!allowLivingPeople && ClonesWaitingForMind.TryGetValue(mind, out var clone))
+        if (ClonesWaitingForMind.TryGetValue(mind, out var clone))
         {
-            if (EntityManager.EntityExists(clone) &&
+            if (!allowLivingPeople &&
+                EntityManager.EntityExists(clone) &&
                 !_mobStateSystem.IsDead(clone) &&
                 TryComp<MindContainerComponent>(clone, out var cloneMindComp) &&
                 (cloneMindComp.Mind == null || cloneMindComp.Mind == mindEnt))
