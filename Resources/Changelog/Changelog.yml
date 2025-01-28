@@ -10882,3 +10882,18 @@ Entries:
   id: 6775
   time: '2025-01-27T19:34:53.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1676
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Ghost Bar! When you die, you can now go to the Ghost Bar to chill and
+        talk about the round with other ghosts. (by Aidenkrz)
+    - type: Add
+      message: Foam Force rifle to cargo lottery! (by IProduceWidgets)
+    - type: Add
+      message: 'Re-enabled the Kill objective for traitors. '
+    - type: Tweak
+      message: Reduced the chances of traitors getting the "Teach a Lesson" objective.
+  id: 6776
+  time: '2025-01-28T00:39:57.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1675
