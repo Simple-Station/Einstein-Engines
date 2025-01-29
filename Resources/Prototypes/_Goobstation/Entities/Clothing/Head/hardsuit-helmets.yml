@@ -6,9 +6,9 @@
   components:
   - type: BreathMask
   - type: Sprite
-    sprite: _Goobstation\Clothing\Head\Hardsuits\blueshield.rsi
+    sprite: _Goobstation/Clothing/Head/Hardsuits/blueshield.rsi
   - type: Clothing
-    sprite: _Goobstation\Clothing\Head\Hardsuits\blueshield.rsi
+    sprite: _Goobstation/Clothing/Head/Hardsuits/blueshield.rsi
   - type: PointLight
     color: "#57b9ff"
   - type: PressureProtection
