@@ -10906,3 +10906,20 @@ Entries:
   id: 6777
   time: '2025-01-28T18:16:31.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1679
+- author: ShirouAjisai
+  changes:
+    - type: Add
+      message: Added Blueshield (Winter) Coat (Toggleable)
+    - type: Add
+      message: Added Blueshield Marine Armor
+    - type: Add
+      message: Added Blueshield Armor Vest
+    - type: Add
+      message: Added Blueshield Kimono
+    - type: Add
+      message: Added Blueshield Hardsuit
+    - type: Tweak
+      message: Fixed Blueshield loadout options
+  id: 6778
+  time: '2025-01-29T08:09:14.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1682
