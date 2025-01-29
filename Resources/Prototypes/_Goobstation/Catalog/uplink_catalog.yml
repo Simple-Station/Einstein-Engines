@@ -7,7 +7,7 @@
   icon: { sprite: /Textures/Objects/Specific/Mech/mecha.rsi, state: darkgygax }
   productEntity: CrateCybersunDarkGygaxBundle
   cost:
-    Telecrystal: 400
+    Telecrystal: 80 # Einstein Engines -  1/5th the price due to no telecrystal rework
   categories:
   - UplinkAllies
 
@@ -18,7 +18,8 @@
   icon: { sprite: /Textures/Objects/Specific/Mech/mecha.rsi, state: mauler }
   productEntity: CrateCybersunMaulerBundle
   cost:
-    Telecrystal: 650
+    Telecrystal: 105 # Einstein Engines - lower the price due to no telecrystal rework
+                     # cost reduced such that nukies can still only buy one with all pooled nukies' TC
   categories:
   - UplinkAllies
   conditions:

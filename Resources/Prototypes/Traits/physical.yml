@@ -350,6 +350,7 @@
       inverted: true
       species:
         - Vulpkanin # This trait functions exactly as-is for the Vulpkanin trait.
+        - Plasmaman # Plasmamen have cold immunity so this trait is unnecessary
   functions:
     - !type:TraitReplaceComponent
       components:

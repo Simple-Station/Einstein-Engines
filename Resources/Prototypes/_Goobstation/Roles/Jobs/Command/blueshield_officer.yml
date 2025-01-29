@@ -13,6 +13,15 @@
     - !type:CharacterDepartmentTimeRequirement
       department: Security
       min: 54000 # 15 hours
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
+        - Pacifist
+        - BrittleBoneDisease
   weight: 20
   startingGear: BlueshieldOfficerGear
   icon: "JobIconBlueshield"
@@ -39,6 +48,7 @@
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
+      - type: CPRTraining
   afterLoadoutSpecial:
   - !type:ModifyEnvirosuitSpecial
     charges: 8
