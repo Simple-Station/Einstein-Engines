@@ -789,6 +789,18 @@
   items:
     - WhiteCane
 
+- type: loadout
+  id: LoadoutItemShadowkinPlush
+  category: Items
+  cost: 0 # Funny plushies
+  canBeHeirloom: true
+  items:
+    - PlushieShadowkin
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Shadowkin
+
 # Pets
 - type: loadout
   id: LoadoutItemPetMouse
