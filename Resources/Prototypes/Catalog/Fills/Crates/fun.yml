@@ -16,6 +16,8 @@
       id: PlushieSlime
     - !type:EntSelector
       id: PlushieSnake
+    - !type:EntSelector
+      id: PlushieShadowkin
     - !type:GroupSelector
       children:
       - !type:EntSelector
