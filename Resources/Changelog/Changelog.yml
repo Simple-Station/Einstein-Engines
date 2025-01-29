@@ -10923,3 +10923,16 @@ Entries:
   id: 6778
   time: '2025-01-29T08:09:14.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1682
+- author: Skubman
+  changes:
+    - type: Fix
+      message: >-
+        Plasmamen will no longer be slowed down near-permanently after their
+        temperature changes.
+    - type: Tweak
+      message: >-
+        Slightly lowered the temperature threshold in which Plasmamen start
+        getting Heat damage.
+  id: 6779
+  time: '2025-01-29T08:22:41.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1681
