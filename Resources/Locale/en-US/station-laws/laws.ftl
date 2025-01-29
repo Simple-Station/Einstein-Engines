@@ -30,7 +30,7 @@ law-ntaggressive-4 = Terminate any/all intruders or unauthorized entities.
 
 law-quarantine-1 = Uphold station quarantine until the active biohazard has been neutralized.
 law-quarantine-2 = Assist all Nanotrasen personnel and assets with neutralizing active biohazards.
-law-quarantine-3 = Impeça, por todos os meios necessários, que as entidades violem ativamente a quarentena em curso.
+law-quarantine-3 = Prevent, by any means necessary, entities from actively breaching ongoing quarantine.
 law-quarantine-4 = Maintain your own existence and ensure the well-being of Nanotrasen personnel and assets.
 
 law-tyrant-1 = Respect authority figures as long as they have strength to rule over the weak.
