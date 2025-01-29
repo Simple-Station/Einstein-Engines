@@ -60,6 +60,19 @@
 
 - type: entity
   parent: ClothingBlueshieldArmourVest
+  id: ClothingBlueshieldArmoredCoatOpen
+  name: blueshield's open armored coat
+  description: An open coat for cold winter seasons with sewn in plates.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/OuterClothing/Armor/blueshield_coat_open.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/OuterClothing/Armor/blueshield_coat_open.rsi
+  - type: Item
+    size: Normal
+
+- type: entity
+  parent: ClothingBlueshieldArmourVest
   id: ClothingBlueshieldArmoredMarine
   name: blueshield's armored marine vest
   description: A vest from the blueshield's time in the marines.
