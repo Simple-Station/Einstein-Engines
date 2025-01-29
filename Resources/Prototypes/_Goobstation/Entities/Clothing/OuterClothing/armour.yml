@@ -46,7 +46,7 @@
     size: Normal
 
 - type: entity
-  parent: ClothingBlueshieldArmourVest
+  parent: [ClothingOuterBaseMedium, AllowSuitStorageClothing]
   id: ClothingBlueshieldArmoredCoat
   name: blueshield's armored coat
   description: A coat for cold winter seasons with sewn in plates.
@@ -57,9 +57,18 @@
     sprite: _Goobstation/Clothing/OuterClothing/Armor/blueshield_coat.rsi
   - type: Item
     size: Normal
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.60
+        Slash: 0.60
+        Piercing: 0.65
+        Heat: 0.70
+  - type: TemperatureProtection
+    coefficient: 0.1
 
 - type: entity
-  parent: ClothingBlueshieldArmourVest
+  parent: ClothingBlueshieldArmoredCoat
   id: ClothingBlueshieldArmoredCoatOpen
   name: blueshield's open armored coat
   description: An open coat for cold winter seasons with sewn in plates.
