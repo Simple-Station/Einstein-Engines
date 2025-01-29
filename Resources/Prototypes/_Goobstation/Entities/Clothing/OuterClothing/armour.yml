@@ -104,7 +104,7 @@
   description: As times evolve, so must the Blueshield.
   components:
   - type: Sprite
-    sprite: _GoobStation/Clothing/OuterClothing/Armor/blueshield_kimono.rsi
+    sprite: _Goobstation/Clothing/OuterClothing/Armor/blueshield_kimono.rsi
   - type: Clothing
     sprite: _Goobstation/Clothing/OuterClothing/Armor/blueshield_kimono.rsi
   - type: Item
