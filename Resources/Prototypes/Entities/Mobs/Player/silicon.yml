@@ -176,6 +176,54 @@
     laws: NTDefault
 
 - type: entity
+  id: TyrantCircuitBoard
+  parent: BaseElectronics
+  name: law board (T.Y.R.A.N.T)
+  description: An electronics board containing the NT Default lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: TYRANT
+
+- type: entity
+  id: NTAgressiveCircuitBoard
+  parent: BaseElectronics
+  name: law board (NT Agressive)
+  description: An electronics board containing the NT Default lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: NTAgressive
+
+- type: entity
+  id: CCTVCircuitBoard
+  parent: BaseElectronics
+  name: law board (CCTV)
+  description: An electronics board containing the NT Default lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: CCTV
+
+- type: entity
+  id: QuarantineCircuitBoard
+  parent: BaseElectronics
+  name: law board (Quarantine)
+  description: An electronics board containing the NT Default lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: Quarantine
+
+- type: entity
   id: CommandmentCircuitBoard
   parent: BaseElectronics
   name: law board (Ten Commandments)
@@ -455,6 +503,7 @@
     drawFov: false
   - type: Examiner
   - type: InputMover
+  - type: IonStormTarget
   - type: Speech
     speechVerb: Robotic
     speechSounds: Borg
@@ -549,6 +598,7 @@
   parent: BorgChassisGeneric
   suffix: Battery, Tools
   components:
+  - type: StationAiVision
   - type: ContainerFill
     containers:
       borg_brain:
@@ -568,6 +618,7 @@
   parent: BorgChassisGeneric
   suffix: Battery
   components:
+  - type: StationAiVision
   - type: ContainerFill
     containers:
       borg_brain:
