@@ -1,0 +1,79 @@
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: SheetScrapBase
+  description: A collection of scrap from whatever wrecks you come across.
+  components:
+  - type: Sprite
+    sprite: Objects/Materials/Sheets/metal.rsi
+  - type: Item
+    sprite: Objects/Materials/Sheets/metal.rsi
+    size: Normal
+  - type: StaticPrice
+    price: 0
+  - type: Tag
+    tags:
+    - NoPaint
+
+- type: entity
+  parent: SheetScrapBase
+  id: SheetScrap
+  name: scrap
+  suffix: Full
+  components:
+  - type: Sprite
+    state: steel_3
+    layers:
+    - state: steel_3
+      map: ["base"]
+  - type: Item
+  - type: Appearance
+  - type: Scrap
+    OutputItems: ScrapItemOutputs
+    OutputMaterials: ScrapMaterialOutputs
+
+- type: entity
+  parent: SheetScrapBase
+  id: SheetScrapAlien
+  name: alien scrap
+  suffix: Full
+  description: Scrap salvaged from alien wrecks. Reprocessing this may hold some value.
+  components:
+  - type: Sprite
+    state: steel_3
+    layers:
+    - state: steel_3
+      map: ["base"]
+  - type: Item
+  - type: Appearance
+  - type: Scrap
+    OutputItems: AlienScrapItemOutputs
+    OutputMaterials: AlientScrapMaterialOutputs
+
+- type: weightedRandomEntity
+  id: ScrapItemOutputs
+  weights:
+    ResearchDisk5000: 20
+    ResearchDisk10000: 5
+    ResearchDisk20000: 1
+
+- type: weightedRandomEntity
+  id: ScrapMaterialOutputs
+  weights:
+    ResearchDisk5000: 20
+    ResearchDisk10000: 5
+    ResearchDisk20000: 1
+
+- type: weightedRandomEntity
+  id: AlienScrapItemOutputs
+  weights:
+    ResearchDisk5000: 20
+    ResearchDisk10000: 5
+    ResearchDisk20000: 1
+
+- type: weightedRandomEntity
+  id: AlientScrapMaterialOutputs
+  weights:
+    ResearchDisk5000: 20
+    ResearchDisk10000: 5
+    ResearchDisk20000: 1
