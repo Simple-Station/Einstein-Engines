@@ -163,6 +163,11 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSpatio
+  - type: Tag
+    tags:
+    - Hardsuit
+    - WhitelistChameleon
+    - HardsuitSpatio
   - type: GuideHelp
     guides: [ HephaestusIndustries ]
 
@@ -199,41 +204,42 @@
   - type: GuideHelp
     guides: [ HephaestusIndustries ]
 
-#Paramedic Voidsuit
+#Goliath Hardsuit
 - type: entity
-  parent: [ClothingOuterHardsuitBase, BaseIntegratedMagboot, BaseIntegratedManeuveringThrusters]
-  id: ClothingOuterHardsuitVoidParamed
-  name: paramedic hardsuit
-  description: A hardsuit made for paramedics.
+  parent: [ClothingOuterHardsuitBase, BaseCargoContraband]
+  id: ClothingOuterHardsuitGoliath
+  name: goliath hardsuit
+  description: A lightweight hardsuit, adorned with a patchwork of thick, chitinous goliath hide.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Hardsuits/paramed.rsi
+    sprite: Clothing/OuterClothing/Hardsuits/goliath.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Hardsuits/paramed.rsi
-  - type: TemperatureProtection
-    heatingCoefficient: 0.1
-    coolingCoefficient: 0.1
+    sprite: Clothing/OuterClothing/Hardsuits/goliath.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.5
     lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.3
   - type: Armor
     modifiers:
       coefficients:
-        Heat: 0.90
-        Radiation: 0.75
-        Caustic: 0.5
-  - type: StealTarget
-    stealGroup: ClothingOuterHardsuitVoidParamed
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.5
+        Heat: 0.7 #Goliath hide gets grilled instead of you
+        Radiation: 0.3
+        Caustic: 0.8
   - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
+    walkModifier: 0.8
+    sprintModifier: 0.8
   - type: HeldSpeedModifier
   - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHelmetHardsuitVoidParamed
-  - type: GuideHelp
-    guides: [ ZengHuPharmaceuticals ]
+    clothingPrototype: ClothingHeadHelmetHardsuitGoliath
+  - type: Construction
+    graph: HardsuitGoliath
+    node: hardsuitGoliath
 
-
+#Maxim Hardsuit
 - type: entity
   parent: [ClothingOuterHardsuitBaseMedium, BaseCargoContraband, BaseIntegratedMagboot, BaseIntegratedManeuveringThrusters]
   id: ClothingOuterHardsuitMaxim
@@ -269,6 +275,40 @@
     clothingPrototype: ClothingHeadHelmetHardsuitMaxim
   - type: GuideHelp
     guides: [ HephaestusIndustries ]
+
+#Paramedic Voidsuit
+- type: entity
+  parent: [ClothingOuterHardsuitBase, BaseIntegratedMagboot, BaseIntegratedManeuveringThrusters]
+  id: ClothingOuterHardsuitVoidParamed
+  name: paramedic hardsuit
+  description: A hardsuit made for paramedics.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Hardsuits/paramed.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Hardsuits/paramed.rsi
+  - type: TemperatureProtection
+    heatingCoefficient: 0.1
+    coolingCoefficient: 0.1
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.90
+        Radiation: 0.75
+        Caustic: 0.5
+  - type: StealTarget
+    stealGroup: ClothingOuterHardsuitVoidParamed
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitVoidParamed
+  - type: GuideHelp
+    guides: [ ZengHuPharmaceuticals ]
 
 #Security Hardsuit
 - type: entity
