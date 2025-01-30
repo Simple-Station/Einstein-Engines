@@ -221,6 +221,8 @@
       inverted: true
       traits:
         - PsionicInsulation
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMachine
 
 - type: trait
   id: PsionicInsulation
