@@ -41,6 +41,42 @@
   id: ClothingUniformJumpsuitCasualCentcom
   name: casual centcom jumpsuit
   description: Paperwork's tough.
+<<<<<<< HEAD
+=======
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/casualcentcom.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/casualcentcom.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitCasualCommand
+  name: casual command jumpsuit
+  description: Wait, where's my PDA?.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/casualcommand.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/casualcommand.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitCasualEngineer
+  name: casual engineering jumpsuit
+  description: Sparks? Fiberglass? What about 'em?
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/casualengineer.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/casualengineer.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitBlueshieldOfficer
+  name: blueshield officer jumpsuit
+  description: A short-sleeved grey and blue jumpsuit, made out of a sturdy material. Blueshield standard issue.
+>>>>>>> 4826ad580f (More casual jumpsuits (#1402))
   components:
   - type: Sprite
     sprite: _Resources/Textures/Clothing/Uniforms/Jumpsuit/centcomformal.rsi
@@ -101,6 +137,7 @@
   - type: Sprite
     sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/navy_gold.rsi
   - type: Clothing
+<<<<<<< HEAD
     sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/navy_gold.rsi
   - type: Armor
     modifiers:
@@ -146,3 +183,6 @@
         Piercing: 0.70
         Heat: 0.75
 
+=======
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/hecu.rsi
+>>>>>>> 4826ad580f (More casual jumpsuits (#1402))
