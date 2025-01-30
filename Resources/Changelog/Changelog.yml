@@ -10956,3 +10956,18 @@ Entries:
   id: 6781
   time: '2025-01-30T15:15:44.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1665
+- author: Mike32oz
+  changes:
+    - type: Add
+      message: Meta/Box stations, added psionics registry computer
+    - type: Add
+      message: 'Meta/Box stations, added command''s office Computer ID '
+    - type: Fix
+      message: Meta/Box stations, fixed wires, tiny fan
+    - type: Tweak
+      message: Box Station, Expanded the Docking Bay for Salvage Pathfinder
+    - type: Remove
+      message: Meta/Box stations, antimov at upload
+  id: 6782
+  time: '2025-01-30T15:16:54.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1687
