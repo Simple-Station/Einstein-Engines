@@ -408,7 +408,8 @@ public sealed partial class ChatSystem : SharedChatSystem
             return;
 
         // The original message
-        var message = TransformSpeech(source, FormattedMessage.RemoveMarkup(originalMessage), language);
+        originalMessage = FormattedMessage.EscapeText(originalMessage);
+        var message = TransformSpeech(source, FormattedMessage.RemoveMarkupPermissive(originalMessage), language);
 
         if (message.Length == 0)
             return;
@@ -481,7 +482,8 @@ public sealed partial class ChatSystem : SharedChatSystem
         if (!_actionBlocker.CanSpeak(source) && !ignoreActionBlocker)
             return;
 
-        var message = TransformSpeech(source, FormattedMessage.RemoveMarkup(originalMessage), language);
+        originalMessage = FormattedMessage.EscapeText(originalMessage);
+        var message = TransformSpeech(source, FormattedMessage.RemoveMarkupPermissive(originalMessage), language);
         if (message.Length == 0)
             return;
 
@@ -586,12 +588,13 @@ public sealed partial class ChatSystem : SharedChatSystem
         // get the entity's apparent name (if no override provided).
         var ent = Identity.Entity(source, EntityManager);
         string name = FormattedMessage.EscapeText(nameOverride ?? Name(ent));
+        action = FormattedMessage.EscapeText(action);
 
         // Emotes use Identity.Name, since it doesn't actually involve your voice at all.
         var wrappedMessage = Loc.GetString("chat-manager-entity-me-wrap-message",
             ("entityName", name),
             ("entity", ent),
-            ("message", FormattedMessage.RemoveMarkup(action)));
+            ("message", FormattedMessage.RemoveMarkupPermissive(action)));
 
         if (checkEmote)
             TryEmoteChatInput(source, action);
@@ -774,6 +777,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         var newMessage = SanitizeMessageReplaceWords(message.Trim());
 
         GetRadioKeycodePrefix(source, newMessage, out newMessage, out var prefix);
+        _sanitizer.TrySanitizeOutSmilies(newMessage, source, out newMessage, out emoteStr);
 
         if (capitalize)
             newMessage = SanitizeMessageCapital(newMessage);
