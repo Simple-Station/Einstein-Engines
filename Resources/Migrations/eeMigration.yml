@@ -154,4 +154,4 @@ ShockCollar: ClothingBackpackElectropack
 SpawnPointCourier: SpawnPointMailCarrier # Courier -  It doesn't load correctly, kicks everybody from the map, and return to Lobby use mail carrier instead
 
 #2025-09-19
-Doorjack: null
+Doorjack: AccessBreaker
