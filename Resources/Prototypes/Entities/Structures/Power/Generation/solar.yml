@@ -58,10 +58,10 @@
   description: A plasma solar panel that generates power.
   components:
   - type: PowerSupplier
-    supplyRampTolerance: 500
-    supplyRampRate: 500
+    supplyRampTolerance: 2000
+    supplyRampRate: 2000
   - type: SolarPanel
-    maxSupply: 1000
+    maxSupply: 4000
   - type: Sprite
     sprite: Structures/Power/Generation/solar_panel.rsi
     state: solar_panel_plasma
@@ -92,10 +92,10 @@
   description: A uranium solar panel that generates power.
   components:
   - type: PowerSupplier
-    supplyRampTolerance: 500
-    supplyRampRate: 500
+    supplyRampTolerance: 2000
+    supplyRampRate: 2000
   - type: SolarPanel
-    maxSupply: 1500
+    maxSupply: 6000
   - type: Sprite
     sprite: Structures/Power/Generation/solar_panel.rsi
     state: solar_panel_uranium
@@ -126,8 +126,8 @@
   description: A solar panel that generates power.
   components:
   - type: PowerSupplier
-    supplyRampTolerance: 1000
-    supplyRampRate: 1000
+    supplyRampTolerance: 4000
+    supplyRampRate: 4000
   - type: SolarPanel
   - type: Damageable
     damageContainer: Inorganic
