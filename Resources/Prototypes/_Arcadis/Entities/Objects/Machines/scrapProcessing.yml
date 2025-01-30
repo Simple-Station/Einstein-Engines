@@ -1,0 +1,36 @@
+- type: entity
+  id: ScrapReprocessor
+  parent: [ BaseMachinePowered, ConstructibleMachine ]
+  name: scrap reprocessor
+  description: Takes apart, melts, and recycles scrap into useful materials and parts.
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/Medical/biomass_reclaimer.rsi
+    state: icon
+    snapCardinals: true
+  - type: Machine
+    board: ScrapReprocessorMachineCircuitboard
+  - type: DiskBurner
+
+- type: entity
+  id: ScrapReprocessorMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: disk burner machine board
+  components:
+  - type: Sprite
+    state: science
+  - type: MachineBoard
+    prototype: ScrapReprocessor
+    requirements:
+      Capacitor: 2
+      Manipulator: 8
+
+- type: latheRecipe
+  id: ScrapReprocessorMachineCircuitboard
+  result: ScrapReprocessorMachineCircuitboard
+  category: Circuitry
+  completetime: 4
+  materials:
+     Steel: 100
+     Glass: 700
+     Gold: 100
