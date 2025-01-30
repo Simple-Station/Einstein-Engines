@@ -1,0 +1,29 @@
+{
+    "version": 1,
+    "license": "CC0-1.0",
+    "copyright": "Original work of the inhand sprites by TJohnson. Resprite of the inhand sprites by ShirouAjisai. Icon & OUTERCLOTHING from Bubberstation.",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "icon"
+        },
+        {
+            "name": "equipped-OUTERCLOTHING",
+            "directions": 4
+        },
+        {
+            "name": "inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "segment"
+        }
+    ]
+}

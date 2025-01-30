@@ -1,0 +1,31 @@
+- type: entity
+  parent: ClothingOuterHardsuitSecurity
+  id: ClothingOuterHardsuitBlueshield
+  name: blueshield's hardsuit
+  description: A special hardsuit made for the Blueshield, contains extra armor.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/OuterClothing/Hardsuits/Combat/blueshield.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/OuterClothing/Hardsuits/Combat/blueshield.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.6
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.5
+        Piercing: 0.5
+        Radiation: 0.5
+        Caustic: 0.6
+  - type: ClothingSpeedModifier
+    walkModifier: 0.85
+    sprintModifier: 0.85
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitBlueshield
+  - type: StaminaDamageResistance
+    coefficient: 0.5 # 50%

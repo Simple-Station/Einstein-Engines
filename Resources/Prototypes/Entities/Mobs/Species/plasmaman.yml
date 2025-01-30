@@ -116,7 +116,7 @@
   - type: Inventory
     templateId: plasmaman
   - type: Temperature
-    heatDamageThreshold: 313    # 40 celsius, -12 from base heat damage threshold
+    heatDamageThreshold: 308    # 35 celsius, -17 from base heat damage threshold
     currentTemperature: 270.15  # -3 celsius
     specificHeat: 46
     coldDamage:
@@ -125,6 +125,9 @@
     heatDamage:
       types:
         Heat: 3
+  - type: TemperatureSpeed
+    thresholds:
+      243: 0.8
   - type: ThermalRegulator
     normalBodyTemperature: 270.15
   - type: Flammable
