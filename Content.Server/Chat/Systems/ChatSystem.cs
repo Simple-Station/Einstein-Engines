@@ -263,6 +263,8 @@ public sealed partial class ChatSystem : SharedChatSystem
             }
         }
 
+        message = FormattedMessage.EscapeText(message);
+
         // Otherwise, send whatever type.
         switch (desiredType)
         {
@@ -408,7 +410,6 @@ public sealed partial class ChatSystem : SharedChatSystem
             return;
 
         // The original message
-        originalMessage = FormattedMessage.EscapeText(originalMessage);
         var message = TransformSpeech(source, FormattedMessage.RemoveMarkupPermissive(originalMessage), language);
 
         if (message.Length == 0)
@@ -482,7 +483,6 @@ public sealed partial class ChatSystem : SharedChatSystem
         if (!_actionBlocker.CanSpeak(source) && !ignoreActionBlocker)
             return;
 
-        originalMessage = FormattedMessage.EscapeText(originalMessage);
         var message = TransformSpeech(source, FormattedMessage.RemoveMarkupPermissive(originalMessage), language);
         if (message.Length == 0)
             return;
@@ -519,7 +519,7 @@ public sealed partial class ChatSystem : SharedChatSystem
 
             var canUnderstandLanguage = _language.CanUnderstand(listener, language.ID);
             // How the entity perceives the message depends on whether it can understand its language
-            var perceivedMessage = FormattedMessage.EscapeText(canUnderstandLanguage ? message : languageObfuscatedMessage);
+            var perceivedMessage = canUnderstandLanguage ? message : languageObfuscatedMessage;
 
             // Result is the intermediate message derived from the perceived one via obfuscation
             // Wrapped message is the result wrapped in an "x says y" string
@@ -546,7 +546,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             _chatManager.ChatMessageToOne(ChatChannel.Whisper, result, wrappedMessage, source, false, session.Channel);
         }
 
-        var replayWrap = WrapWhisperMessage(source, "chat-manager-entity-whisper-wrap-message", name, FormattedMessage.EscapeText(message), language);
+        var replayWrap = WrapWhisperMessage(source, "chat-manager-entity-whisper-wrap-message", name, message, language);
         _replay.RecordServerMessage(new ChatMessage(ChatChannel.Whisper, message, replayWrap, GetNetEntity(source), null, MessageRangeHideChatForReplay(range)));
 
         var ev = new EntitySpokeEvent(source, message, channel, true, language);
@@ -588,7 +588,6 @@ public sealed partial class ChatSystem : SharedChatSystem
         // get the entity's apparent name (if no override provided).
         var ent = Identity.Entity(source, EntityManager);
         string name = FormattedMessage.EscapeText(nameOverride ?? Name(ent));
-        action = FormattedMessage.EscapeText(action);
 
         // Emotes use Identity.Name, since it doesn't actually involve your voice at all.
         var wrappedMessage = Loc.GetString("chat-manager-entity-me-wrap-message",
