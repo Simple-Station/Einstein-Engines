@@ -21,5 +21,5 @@ public sealed partial class ScrapComponent : Component {
 
     // Chance to spit out an item
     [DataField]
-    public float? ItemChance = 0.25f;
+    public float? ItemChance = 0.005f;
 }
