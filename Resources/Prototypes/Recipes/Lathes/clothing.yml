@@ -479,9 +479,9 @@
 - type: latheRecipe
   id: ClothingUniformJumpskirtOperative
   result: ClothingUniformJumpskirtOperative
-  completetime: 4
-  materials:
-    Cloth: 300
+
+
+## Paramedic
 
 - type: latheRecipe
   id: ClothingUniformJumpsuitParamedic
