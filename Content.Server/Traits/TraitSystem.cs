@@ -9,13 +9,11 @@ using Content.Shared.Chat;
 using Content.Shared.Customization.Systems;
 using Content.Shared.Database;
 using Content.Shared.Players;
-using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Content.Shared.Traits;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Content.Shared.Whitelist;
-using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization.Manager;
@@ -46,25 +44,15 @@ public sealed class TraitSystem : EntitySystem
     }
 
     // When the player is spawned in, add all trait components selected during character creation
-    private void OnPlayerSpawnComplete(PlayerSpawnCompleteEvent args) =>
-        ApplyTraits(args.Mob, args.JobId, args.Profile,
-            _playTimeTracking.GetTrackerTimes(args.Player), args.Player.ContentData()?.Whitelisted ?? false);
-
-    /// <summary>
-    ///     Adds the traits selected by a player to an entity.
-    /// </summary>
-    public void ApplyTraits(EntityUid uid, ProtoId<JobPrototype>? jobId, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, bool whitelisted, bool punishCheater = true)
+    private void OnPlayerSpawnComplete(PlayerSpawnCompleteEvent args)
     {
         var pointsTotal = _configuration.GetCVar(CCVars.GameTraitsDefaultPoints);
         var traitSelections = _configuration.GetCVar(CCVars.GameTraitsMax);
-        if (jobId is not null && !_prototype.TryIndex(jobId, out var jobPrototype)
+        if (args.JobId is not null && !_prototype.TryIndex<JobPrototype>(args.JobId, out var jobPrototype)
             && jobPrototype is not null && !jobPrototype.ApplyTraits)
             return;
 
-        var jobPrototypeToUse = _prototype.Index(jobId ?? _prototype.EnumeratePrototypes<JobPrototype>().First().ID);
-
-        foreach (var traitId in profile.TraitPreferences)
+        foreach (var traitId in args.Profile.TraitPreferences)
         {
             if (!_prototype.TryIndex<TraitPrototype>(traitId, out var traitPrototype))
             {
@@ -74,8 +62,8 @@ public sealed class TraitSystem : EntitySystem
 
             if (!_characterRequirements.CheckRequirementsValid(
                 traitPrototype.Requirements,
-                jobPrototypeToUse,
-                profile, playTimes, whitelisted, traitPrototype,
+                _prototype.Index<JobPrototype>(args.JobId ?? _prototype.EnumeratePrototypes<JobPrototype>().First().ID),
+                args.Profile, _playTimeTracking.GetTrackerTimes(args.Player), args.Player.ContentData()?.Whitelisted ?? false, traitPrototype,
                 EntityManager, _prototype, _configuration,
                 out _))
                 continue;
@@ -84,11 +72,11 @@ public sealed class TraitSystem : EntitySystem
             pointsTotal += traitPrototype.Points;
             --traitSelections;
 
-            AddTrait(uid, traitPrototype);
+            AddTrait(args.Mob, traitPrototype);
         }
 
-        if (punishCheater && (pointsTotal < 0 || traitSelections < 0))
-            PunishCheater(uid);
+        if (pointsTotal < 0 || traitSelections < 0)
+            PunishCheater(args.Mob);
     }
 
     /// <summary>
