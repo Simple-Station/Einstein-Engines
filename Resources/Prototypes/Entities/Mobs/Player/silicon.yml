@@ -179,7 +179,7 @@
   id: TyrantCircuitBoard
   parent: BaseElectronics
   name: law board (T.Y.R.A.N.T)
-  description: An electronics board containing the NT Default lawset.
+  description: An electronics board containing the T.Y.R.A.N.T lawset.
   components:
   - type: Sprite
     sprite: Objects/Misc/module.rsi
@@ -191,7 +191,7 @@
   id: NTAgressiveCircuitBoard
   parent: BaseElectronics
   name: law board (NT Agressive)
-  description: An electronics board containing the NT Default lawset.
+  description: An electronics board containing the NT Agressive lawset.
   components:
   - type: Sprite
     sprite: Objects/Misc/module.rsi
@@ -203,7 +203,7 @@
   id: CCTVCircuitBoard
   parent: BaseElectronics
   name: law board (CCTV)
-  description: An electronics board containing the NT Default lawset.
+  description: An electronics board containing the CCTV lawset.
   components:
   - type: Sprite
     sprite: Objects/Misc/module.rsi
@@ -215,7 +215,7 @@
   id: QuarantineCircuitBoard
   parent: BaseElectronics
   name: law board (Quarantine)
-  description: An electronics board containing the NT Default lawset.
+  description: An electronics board containing the Quarantine lawset.
   components:
   - type: Sprite
     sprite: Objects/Misc/module.rsi
