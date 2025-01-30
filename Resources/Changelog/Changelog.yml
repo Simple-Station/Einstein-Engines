@@ -10971,3 +10971,10 @@ Entries:
   id: 6782
   time: '2025-01-30T15:16:54.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1687
+- author: Ichai
+  changes:
+    - type: Tweak
+      message: Change the AI Hologram to AI eye
+  id: 6783
+  time: '2025-01-30T15:18:55.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1680
