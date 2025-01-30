@@ -10936,3 +10936,10 @@ Entries:
   id: 6779
   time: '2025-01-29T08:22:41.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1681
+- author: CaasGit
+  changes:
+    - type: Add
+      message: Solar panels can now be upgraded with plasma or uranium glass.
+  id: 6780
+  time: '2025-01-30T15:14:17.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1677
