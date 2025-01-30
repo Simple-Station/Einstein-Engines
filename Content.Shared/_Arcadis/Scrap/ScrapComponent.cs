@@ -1,3 +1,4 @@
+using Content.Shared.Random;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -14,7 +15,7 @@ public sealed partial class ScrapComponent : Component {
     [DataField]
     public ProtoId<WeightedRandomPrototype>? OutputItems;
 
-    // Output materials, like steel, glass, plastic, and HOLMINUM (when I port it)
+    // Output materials, like steel, glass, plastic, and HOLMIUM (when I port it)
     [DataField]
     public ProtoId<WeightedRandomPrototype> OutputMaterials;
 
