@@ -41,6 +41,10 @@ materials-raw-bananium = raw bananium
 materials-raw-salt = raw salt
 materials-raw-bluespace = raw bluespace
 materials-raw-normality = raw normality
+materials-raw-aluminium = raw aluminium
+materials-raw-lead = raw lead
+materials-raw-sulfur = raw sulfur
+materials-raw-copper = raw copper
 
 # Material Reclaimer
 material-reclaimer-upgrade-process-rate = process rate

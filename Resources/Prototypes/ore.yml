@@ -112,6 +112,27 @@
     OreArtifactFragment: 0.5
     OreBluespace: 0.5
     OreNormality: 0.3
+    OreAluminium: 2
+    OreLead: 2
+    OreCopper: 2
+
+- type: weightedRandomOre
+  id: RandomOreDistributionBasalt
+  weights:
+    OreSteel: 20
+    OreCoal: .1
+    OreSpaceQuartz: .1
+    OreGold: 10
+    OrePlasma: .4
+    OreSilver: .1
+    OreUranium: .1
+    OreBananium: 0.1
+    OreArtifactFragment: 0.1
+    OreBluespace: 0.5
+    OreNormality: 0.3
+    OreAluminium: 8
+    OreLead: .2
+    OreCopper: .2
 
 - type: weightedRandomOre
   id: OreCrab
