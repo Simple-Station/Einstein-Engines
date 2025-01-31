@@ -32,12 +32,3 @@
   icon: { sprite: /Textures/_Nuclear14/Objects/Misc/materials.rsi, state: ingot_copper }
   color: "#B87333"
   price: 0.01
-
-- type: material
-  id: N14Brass
-  stackEntity: N14IngotBrass1
-  name: materials-N14brass
-  unit: materials-unit-bar
-  icon: { sprite: /Textures/_Nuclear14/Objects/Misc/materials.rsi, state: ingot_brass }
-  color: "#B5A642"
-  price: 0.01
