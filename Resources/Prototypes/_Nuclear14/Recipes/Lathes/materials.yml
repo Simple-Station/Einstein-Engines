@@ -22,7 +22,7 @@
   completetime: 2
   miningPoints: 10
   materials:
-    NRawAluminium: 100
+    RawAluminium: 100
     Coal: 50
 
 - type: latheRecipe
