@@ -1,6 +1,6 @@
 - type: entity
   id: ScrapReprocessor
-  parent: [ BaseMachinePowered, ConstructibleMachine ]
+  parent: [ BaseMachinePowered, ConstructibleMachine, BaseMaterialSiloUtilizer ]
   name: scrap reprocessor
   description: Takes apart, melts, and recycles scrap into useful materials and parts.
   components:
@@ -10,7 +10,7 @@
     snapCardinals: true
   - type: Machine
     board: ScrapReprocessorMachineCircuitboard
-  - type: DiskBurner
+  - type: ScrapReprocessor
 
 - type: entity
   id: ScrapReprocessorMachineCircuitboard

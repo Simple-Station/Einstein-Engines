@@ -9,7 +9,8 @@ namespace Content.Shared._Arcadis.Scrap;
 /// Real salvagers only use REAL scrap!
 /// </summary>
 [RegisterComponent, NetworkedComponent]
-public sealed partial class ScrapComponent : Component {
+public sealed partial class ScrapComponent : Component
+{
 
     // Output item prototypes, such as rare parts or tech boards
     [DataField]

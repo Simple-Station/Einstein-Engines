@@ -12,4 +12,8 @@ namespace Content.Shared._Arcadis.Scrap;
 public sealed partial class ScrapReprocessorComponent : Component
 {
 
+    [DataField]
+    public SoundSpecifier Sound = new SoundPathSpecifier("/Audio/Effects/metal_scrape1.ogg");
+
+    public EntityUid? MatSilo;
 }
