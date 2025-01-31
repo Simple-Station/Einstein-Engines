@@ -5,15 +5,27 @@
   description: A collection of scrap from whatever wrecks you come across.
   components:
   - type: Sprite
-    sprite: Objects/Materials/Sheets/metal.rsi
+    sprite: Objects/Materials/materials.rsi
+    state: cloth_3
+    layers:
+    - state: cloth_3
+      map: ["base"]
   - type: Item
-    sprite: Objects/Materials/Sheets/metal.rsi
+    sprite: Objects/Materials/materials.rsi
     size: Normal
+  - type: Appearance
   - type: StaticPrice
     price: 0
   - type: Tag
     tags:
     - NoPaint
+  - type: Stack
+    stackType: Scrap
+    baseLayer: base
+    layerStates:
+    - cloth
+    - cloth_2
+    - cloth_3
 
 - type: entity
   parent: SheetScrapBase
@@ -21,13 +33,6 @@
   name: scrap
   suffix: Full
   components:
-  - type: Sprite
-    state: steel_3
-    layers:
-    - state: steel_3
-      map: ["base"]
-  - type: Item
-  - type: Appearance
   - type: Scrap
     outputItems: ScrapItemOutputs
     outputMaterials: ScrapMaterialOutputs
@@ -39,16 +44,9 @@
   suffix: Full
   description: Scrap salvaged from alien wrecks. Reprocessing this may hold some value.
   components:
-  - type: Sprite
-    state: steel_3
-    layers:
-    - state: steel_3
-      map: ["base"]
-  - type: Item
-  - type: Appearance
   - type: Scrap
     outputItems: AlienScrapItemOutputs
-    outputMaterials: AlientScrapMaterialOutputs
+    outputMaterials: AlienScrapMaterialOutputs
     itemChance: 0.05
 
 - type: weightedRandomEntity
@@ -79,8 +77,17 @@
     ResearchDisk20000: 1
 
 - type: weightedRandomEntity
-  id: AlientScrapMaterialOutputs
+  id: AlienScrapMaterialOutputs
   weights:
     Steel: 10
     Glass: 3
     Holmium: 1
+
+- type: stack
+  id: Scrap
+  name: scrap
+  icon: { sprite: Objects/Materials/materials.rsi, state: cloth }
+  spawn: SheetScrap
+  maxCount: 30
+  itemSize: 1
+

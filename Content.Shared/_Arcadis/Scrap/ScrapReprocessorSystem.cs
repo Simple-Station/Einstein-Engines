@@ -14,12 +14,15 @@ public sealed class ScrapReprocessorSystem : EntitySystem
     [Dependency] private readonly SharedDeviceLinkSystem _deviceLinkSystem = default!;
     [Dependency] private readonly SharedMaterialStorageSystem _matStorSys = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
+
+    [Dependency] private readonly ILogManager _logManager = default!;
+    private ISawmill _sawmill = default!;
     public override void Initialize()
     {
+        _sawmill = _logManager.GetSawmill("factorio");
+
         base.Initialize();
         SubscribeLocalEvent<ScrapReprocessorComponent, InteractUsingEvent>(OnInteractUsing);
-        SubscribeLocalEvent<ScrapReprocessorComponent, NewLinkEvent>(OnNewLink);
-        SubscribeLocalEvent<ScrapReprocessorComponent, PortDisconnectedEvent>(OnPortDisconnected);
     }
 
     private void OnInteractUsing(EntityUid uid, ScrapReprocessorComponent component, InteractUsingEvent args)
@@ -27,12 +30,12 @@ public sealed class ScrapReprocessorSystem : EntitySystem
         // Check if inhand item is scrap
         if (!TryComp<ScrapComponent>(args.Used, out var scrapComponent))
         {
-            _popupSystem.PopupPredicted(Loc.GetString("reprocessor-not-scrap"), args.Target, args.User);
+            _popupSystem.PopupPredicted(Loc.GetString("reprocessor-not-scrap"), uid, args.User);
             return;
         }
 
         // Check if reprocessor has a matsilo connected
-        if (!component.MatSilo.HasValue)
+        if (!TryComp<MaterialSiloUtilizerComponent>(uid, out var siloUtilizerComponent) || siloUtilizerComponent.Silo == null)
         {
             _popupSystem.PopupPredicted(Loc.GetString("reprocessor-no-silo"), args.Target, args.User);
             return;
@@ -41,31 +44,7 @@ public sealed class ScrapReprocessorSystem : EntitySystem
         // Play sound
         _audioSystem.PlayPvs(component.Sound, args.Target);
 
-        _popupSystem.PopupPredicted(Loc.GetString("debug"), args.Target, args.User);
 
 
-    }
-
-    private void OnNewLink(EntityUid uid, ScrapReprocessorComponent component, NewLinkEvent args)
-    {
-        if (args.Source != uid)
-            return;
-
-        if (TryComp<MaterialSiloComponent>(args.Sink, out var siloComponent))
-        {
-            component.MatSilo = args.Sink;
-        }
-        else
-        {
-            _popupSystem.PopupPredicted(Loc.GetString("debug"), args.Source, args.User);
-        }
-    }
-
-    private void OnPortDisconnected(EntityUid uid, ScrapReprocessorComponent component, PortDisconnectedEvent args)
-    {
-        if (args.Port == "MaterialSilo")
-        {
-            component.MatSilo = null;
-        }
     }
 }
