@@ -15,5 +15,6 @@ public sealed partial class ScrapReprocessorComponent : Component
     [DataField]
     public SoundSpecifier Sound = new SoundPathSpecifier("/Audio/Effects/metal_scrape1.ogg");
 
+    [DataField]
     public EntityUid? MatSilo;
 }

@@ -29,8 +29,8 @@
   - type: Item
   - type: Appearance
   - type: Scrap
-    OutputItems: ScrapItemOutputs
-    OutputMaterials: ScrapMaterialOutputs
+    outputItems: ScrapItemOutputs
+    outputMaterials: ScrapMaterialOutputs
 
 - type: entity
   parent: SheetScrapBase
@@ -47,9 +47,9 @@
   - type: Item
   - type: Appearance
   - type: Scrap
-    OutputItems: AlienScrapItemOutputs
-    OutputMaterials: AlientScrapMaterialOutputs
-    ItemChance: 0.05
+    outputItems: AlienScrapItemOutputs
+    outputMaterials: AlientScrapMaterialOutputs
+    itemChance: 0.05
 
 - type: weightedRandomEntity
   id: ScrapItemOutputs

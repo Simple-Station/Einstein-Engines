@@ -19,6 +19,7 @@ public sealed class ScrapReprocessorSystem : EntitySystem
         base.Initialize();
         SubscribeLocalEvent<ScrapReprocessorComponent, InteractUsingEvent>(OnInteractUsing);
         SubscribeLocalEvent<ScrapReprocessorComponent, NewLinkEvent>(OnNewLink);
+        SubscribeLocalEvent<ScrapReprocessorComponent, PortDisconnectedEvent>(OnPortDisconnected);
     }
 
     private void OnInteractUsing(EntityUid uid, ScrapReprocessorComponent component, InteractUsingEvent args)
@@ -40,6 +41,8 @@ public sealed class ScrapReprocessorSystem : EntitySystem
         // Play sound
         _audioSystem.PlayPvs(component.Sound, args.Target);
 
+        _popupSystem.PopupPredicted(Loc.GetString("debug"), args.Target, args.User);
+
 
     }
 
@@ -51,6 +54,18 @@ public sealed class ScrapReprocessorSystem : EntitySystem
         if (TryComp<MaterialSiloComponent>(args.Sink, out var siloComponent))
         {
             component.MatSilo = args.Sink;
+        }
+        else
+        {
+            _popupSystem.PopupPredicted(Loc.GetString("debug"), args.Source, args.User);
+        }
+    }
+
+    private void OnPortDisconnected(EntityUid uid, ScrapReprocessorComponent component, PortDisconnectedEvent args)
+    {
+        if (args.Port == "MaterialSilo")
+        {
+            component.MatSilo = null;
         }
     }
 }
