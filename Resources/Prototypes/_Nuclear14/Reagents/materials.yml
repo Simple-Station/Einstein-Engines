@@ -16,15 +16,6 @@
   price: 0.04
 
 - type: material
-  id: Sulfur
-  stackEntity: SulfurPowder1
-  name: materials-sulfur
-  unit: materials-unit-bar
-  icon: { sprite: /Textures/_Nuclear14/Objects/Misc/materials.rsi, state: powder_brass }
-  color: "#FDD805"
-  price: 0.01
-
-- type: material
   id: Aluminum
   stackEntity: N14IngotAluminium1
   name: materials-aluminium

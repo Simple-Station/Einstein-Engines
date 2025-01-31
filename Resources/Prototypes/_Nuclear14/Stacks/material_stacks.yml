@@ -61,11 +61,3 @@
   spawn: N14IngotCopper1
   maxCount: 30
   itemSize: 1
-
-- type: stack
-  id: Sulfur
-  name: sulfur
-  icon: { sprite: "/Textures/_Nuclear14/Objects/Misc/materials.rsi", state: powder_brass }
-  spawn: SulfurPowder1
-  maxCount: 30
-  itemSize: 1

@@ -26,15 +26,6 @@
     Coal: 50
 
 - type: latheRecipe
-  id: SulfurPowder
-  result: SulfurPowder1
-  applyMaterialDiscount: false
-  completetime: 2
-  miningPoints: 2
-  materials:
-    RawSulfur: 100
-
-- type: latheRecipe
   id: N14MaterialCircuitry
   result: N14MaterialCircuitry1
   completetime: 2
