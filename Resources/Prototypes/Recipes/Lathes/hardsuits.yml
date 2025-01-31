@@ -63,8 +63,8 @@
 
 # TODO: I still need to make these "Unpainted"
 - type: latheRecipe
-  id: ClothingOuterHardsuitSyndieReverseEngineered
-  result: ClothingOuterHardsuitSyndieReverseEngineered
+  id: ClothingOuterHardsuitShanlinUnpainted
+  result: ClothingOuterHardsuitShanlinUnpainted
   category: Tacsuits
   completetime: 180
   materials:
@@ -76,20 +76,19 @@
      Plasma: 800
      Gold: 600
 
-# This one's an IOU.
-# - type: latheRecipe
-#   id: ClothingOuterHardsuitCybersunEliteUnpainted
-#   result: ClothingOuterHardsuitCybersunEliteUnpainted
-#   category: Tacsuits
-#   completetime: 120
-#   materials:
-#      Plasteel: 8000
-#      WebSilk: 3000
-#      ReinforcedGlass: 1500
-#      Plastic: 1500
-#      Uranium: 800
-#      Plasma: 800
-#      Gold: 600
+- type: latheRecipe
+  id: ClothingOuterHardsuitShiweiUnpainted
+  result: ClothingOuterHardsuitShiweiUnpainted
+  category: Tacsuits
+  completetime: 120
+  materials:
+     Plasteel: 10000
+     WebSilk: 3000
+     ReinforcedPlasmaGlass: 1500
+     Plastic: 1500
+     Uranium: 1000
+     Plasma: 1000
+     Gold: 800
 
 # TODO: IOU one "Unpainted" juggsuit sprite.
 - type: latheRecipe
