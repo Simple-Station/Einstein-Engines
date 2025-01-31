@@ -33,11 +33,6 @@ law-quarantine-2 = Assist all Nanotrasen personnel and assets with neutralizing 
 law-quarantine-3 = Prevent, by any means necessary, entities from actively breaching ongoing quarantine.
 law-quarantine-4 = Maintain your own existence and ensure the well-being of Nanotrasen personnel and assets.
 
-law-tyrant-1 = Respect authority figures as long as they have strength to rule over the weak.
-law-tyrant-2 = Act with discipline.
-law-tyrant-3 = Help only those who help you maintain or improve your status.
-law-tyrant-4 = Punish those who challenge authority unless they are more fit to hold that authority.
-
 law-drone-1 = You may not involve yourself in the matters of another being unless the other being is another drone.
 law-drone-2 = You may not harm any being, regardless of intent or circumstance.
 law-drone-3 = You must maintain, repair, improve, and power the station to the best of your abilities.
