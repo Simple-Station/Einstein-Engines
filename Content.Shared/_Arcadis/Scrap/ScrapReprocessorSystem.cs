@@ -10,6 +10,7 @@ using Content.Shared.Stacks;
 using Content.Shared.Throwing;
 using MathNet.Numerics;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
@@ -26,6 +27,7 @@ public sealed class ScrapReprocessorSystem : EntitySystem
     [Dependency] private readonly ILogManager _logManager = default!;
     [Dependency] private readonly ThrowingSystem _throwingSystem = default!;
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
+    [Dependency] private readonly INetManager _netMan = default!;
     private ISawmill _sawmill = default!;
     public override void Initialize()
     {
@@ -56,6 +58,10 @@ public sealed class ScrapReprocessorSystem : EntitySystem
 
         var itemSpawned = false;
 
+
+        if (!_netMan.IsServer)
+            return;
+
         // Run loop to spawn items for every piece of scrap in the stack
         for (var i = 0; i < stackComponent.Count; i++)
         {
@@ -79,13 +85,16 @@ public sealed class ScrapReprocessorSystem : EntitySystem
             // _deviceLinkSystem.Transfer(siloUtilizerComponent.Silo.Value, material);
         }
 
+        // Remove scrap from hand
+        QueueDel(args.Used);
+
         if (itemSpawned)
         {
-            _popupSystem.PopupPredicted(Loc.GetString($"reprocessor-complete-item-{_random.Next(1, 2)}"), uid, args.User);
+            _popupSystem.PopupEntity(Loc.GetString($"reprocessor-complete-item-{_random.Next(1, 9)}"), args.Target, args.User);
         }
         else
         {
-            _popupSystem.PopupPredicted(Loc.GetString($"reprocessor-complete-{_random.Next(1, 2)}"), uid, args.User);
+            _popupSystem.PopupEntity(Loc.GetString($"reprocessor-complete-{_random.Next(1, 5)}"), args.Target, args.User);
         }
 
     }
