@@ -10936,3 +10936,45 @@ Entries:
   id: 6779
   time: '2025-01-29T08:22:41.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1681
+- author: CaasGit
+  changes:
+    - type: Add
+      message: Solar panels can now be upgraded with plasma or uranium glass.
+  id: 6780
+  time: '2025-01-30T15:14:17.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1677
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Psionic traits are now mutually exclusive with cybernetic traits, and
+        vice versa.
+    - type: Fix
+      message: >-
+        Thermographic Vision now correctly measures its pulse duration in
+        seconds instead of nanoseconds. It provides a 2 second scan.
+  id: 6781
+  time: '2025-01-30T15:15:44.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1665
+- author: Mike32oz
+  changes:
+    - type: Add
+      message: Meta/Box stations, added psionics registry computer
+    - type: Add
+      message: 'Meta/Box stations, added command''s office Computer ID '
+    - type: Fix
+      message: Meta/Box stations, fixed wires, tiny fan
+    - type: Tweak
+      message: Box Station, Expanded the Docking Bay for Salvage Pathfinder
+    - type: Remove
+      message: Meta/Box stations, antimov at upload
+  id: 6782
+  time: '2025-01-30T15:16:54.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1687
+- author: Ichai
+  changes:
+    - type: Tweak
+      message: Change the AI Hologram to AI eye
+  id: 6783
+  time: '2025-01-30T15:18:55.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1680
