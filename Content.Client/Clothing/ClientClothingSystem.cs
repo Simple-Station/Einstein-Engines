@@ -1,12 +1,9 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using System.Numerics;
-using Content.Client.DisplacementMap;
 using Content.Client.Inventory;
 using Content.Shared.Clothing;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Clothing.EntitySystems;
-using Content.Shared.DisplacementMap;
 using Content.Shared.Humanoid;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
@@ -50,8 +47,8 @@ public sealed class ClientClothingSystem : ClothingSystem
     };
 
     [Dependency] private readonly IResourceCache _cache = default!;
+    [Dependency] private readonly ISerializationManager _serialization = default!;
     [Dependency] private readonly InventorySystem _inventorySystem = default!;
-    [Dependency] private readonly DisplacementMapSystem _displacement = default!;
 
     public override void Initialize()
     {
@@ -71,7 +68,12 @@ public sealed class ClientClothingSystem : ClothingSystem
         if (args.Sprite == null)
             return;
 
-        UpdateAllSlots(uid, component);
+        if (_inventorySystem.TryGetSlotEntity(uid, Jumpsuit, out var suit, component)
+            && TryComp(suit, out ClothingComponent? clothing))
+        {
+            SetGenderedMask(uid, args.Sprite, clothing);
+            return;
+        }
 
         // No clothing equipped -> make sure the layer is hidden, though this should already be handled by on-unequip.
         if (args.Sprite.LayerMapTryGet(HumanoidVisualLayers.StencilMask, out var layer))
@@ -129,7 +131,11 @@ public sealed class ClientClothingSystem : ClothingSystem
                 i++;
             }
 
-            item.MappedLayer = key;
+            if (inventory.SpeciesId != null && item.Sprite != null
+                && _cache.TryGetResource<RSIResource>(SpriteSpecifierSerializer.TextureRoot / item.Sprite, out var rsi)
+                && rsi.RSI.TryGetState($"{layer.State}-{inventory.SpeciesId}", out _))
+                layer.State = $"{layer.State}-{inventory.SpeciesId}";
+
             args.Layers.Add((key, layer));
         }
     }
@@ -147,8 +153,8 @@ public sealed class ClientClothingSystem : ClothingSystem
 
         RSI? rsi = null;
 
-        if (clothing.RsiPath != null)
-            rsi = _cache.GetResource<RSIResource>(SpriteSpecifierSerializer.TextureRoot / clothing.RsiPath).RSI;
+        if (clothing.Sprite != null)
+            rsi = _cache.GetResource<RSIResource>(SpriteSpecifierSerializer.TextureRoot / clothing.Sprite).RSI;
         else if (TryComp(uid, out SpriteComponent? sprite))
             rsi = sprite.BaseRSI;
 
@@ -170,9 +176,13 @@ public sealed class ClientClothingSystem : ClothingSystem
 
         // species specific
         if (speciesId != null && rsi.TryGetState($"{state}-{speciesId}", out _))
+        {
             state = $"{state}-{speciesId}";
+        }
         else if (!rsi.TryGetState(state, out _))
+        {
             return false;
+        }
 
         var layer = new PrototypeLayerData();
         layer.RsiPath = rsi.Path.ToString();
@@ -194,11 +204,33 @@ public sealed class ClientClothingSystem : ClothingSystem
 
     private void OnDidUnequip(EntityUid uid, SpriteComponent component, DidUnequipEvent args)
     {
+        // Hide jumpsuit mask layer.
+        if (args.Slot == Jumpsuit
+            && TryComp(uid, out SpriteComponent? sprite)
+            && sprite.LayerMapTryGet(HumanoidVisualLayers.StencilMask, out var maskLayer))
+        {
+                sprite.LayerSetVisible(maskLayer, false);
+        }
+
         if (!TryComp(uid, out InventorySlotsComponent? inventorySlots))
             return;
 
         if (!inventorySlots.VisualLayerKeys.TryGetValue(args.Slot, out var revealedLayers))
             return;
+
+        if (TryComp<HideLayerClothingComponent>(args.Equipment, out var hideLayer) &&
+            hideLayer.ClothingSlots != null)
+        {
+            foreach (var clothingSlot in hideLayer.ClothingSlots)
+            {
+                if (!inventorySlots.VisualLayerKeys.TryGetValue(clothingSlot, out var revealedLayersToShow))
+                    continue;
+
+                foreach (var layerToShow in revealedLayersToShow)
+                    component.LayerSetVisible(layerToShow, true);
+            }
+            inventorySlots.HiddenSlots.ExceptWith(hideLayer.ClothingSlots);
+        }
 
         // Remove old layers. We could also just set them to invisible, but as items may add arbitrary layers, this
         // may eventually bloat the player with lots of invisible layers.
@@ -238,6 +270,9 @@ public sealed class ClientClothingSystem : ClothingSystem
             return;
         }
 
+        if (slot == Jumpsuit)
+            SetGenderedMask(equipee, sprite, clothingComponent);
+
         if (!_inventorySystem.TryGetSlot(equipee, slot, out var slotDef, inventory))
             return;
 
@@ -266,6 +301,25 @@ public sealed class ClientClothingSystem : ClothingSystem
             return;
         }
 
+        if (TryComp<HideLayerClothingComponent>(equipment, out var hideLayer) &&
+            hideLayer.ClothingSlots != null)
+        {
+            foreach (var clothingSlot in hideLayer.ClothingSlots)
+            {
+                if (!inventorySlots.VisualLayerKeys.TryGetValue(clothingSlot, out var revealedLayersToHide))
+                    continue;
+
+                foreach (var layerToHide in revealedLayersToHide)
+                    sprite.LayerSetVisible(layerToHide, false);
+            }
+            inventorySlots.HiddenSlots.UnionWith(hideLayer.ClothingSlots);
+        }
+
+        var displacementData = inventory.Displacements.GetValueOrDefault(slot);
+
+        if (clothingComponent.RenderLayer != null)
+            slot = clothingComponent.RenderLayer;
+
         // temporary, until layer draw depths get added. Basically: a layer with the key "slot" is being used as a
         // bookmark to determine where in the list of layers we should insert the clothing layers.
         bool slotLayerExists = sprite.LayerMapTryGet(slot, out var index);
@@ -288,14 +342,12 @@ public sealed class ClientClothingSystem : ClothingSystem
 
                 if (layerData.Color != null)
                     sprite.LayerSetColor(key, layerData.Color.Value);
-                if (layerData.Scale != null)
-                    sprite.LayerSetScale(key, layerData.Scale.Value);
             }
             else
                 index = sprite.LayerMapReserveBlank(key);
 
             if (sprite[index] is not Layer layer)
-                continue;
+                return;
 
             // In case no RSI is given, use the item's base RSI as a default. This cuts down on a lot of unnecessary yaml entries.
             if (layerData.RsiPath == null
@@ -306,20 +358,81 @@ public sealed class ClientClothingSystem : ClothingSystem
                 layer.SetRsi(clothingSprite.BaseRSI);
             }
 
+            // Another "temporary" fix for clothing stencil masks.
+            // Sprite layer redactor when
+            // Sprite "redactor" just a week away.
+            if (slot == Jumpsuit)
+                layerData.Shader ??= "StencilDraw";
+
+            if (inventorySlots.HiddenSlots.Contains(slot))
+                layerData.Visible = false;
+
             sprite.LayerSetData(index, layerData);
             layer.Offset += slotDef.Offset;
 
-            if (displacementData is not null)
+            if (displacementData != null)
             {
-                //Checking that the state is not tied to the current race. In this case we don't need to use the displacement maps.
-                if (layerData.State is not null && inventory.SpeciesId is not null && layerData.State.EndsWith(inventory.SpeciesId))
-                    continue;
+                if (displacementData.ShaderOverride != null)
+                    sprite.LayerSetShader(index, displacementData.ShaderOverride);
 
-                if (_displacement.TryAddDisplacement(displacementData, sprite, index, key, revealedLayers))
-                    index++;
+                var displacementKey = $"{key}-displacement";
+                if (!revealedLayers.Add(displacementKey))
+                {
+                    Log.Warning($"Duplicate key for clothing visuals DISPLACEMENT: {displacementKey}.");
+                    continue;
+                }
+
+                var displacementLayer = _serialization.CreateCopy(displacementData.Layer, notNullableOverride: true);
+                displacementLayer.CopyToShaderParameters!.LayerKey = key;
+
+                // Add before main layer for this item.
+                sprite.AddLayer(displacementLayer, index);
+                sprite.LayerMapSet(displacementKey, index);
+
+                revealedLayers.Add(displacementKey);
             }
         }
 
         RaiseLocalEvent(equipment, new EquipmentVisualsUpdatedEvent(equipee, slot, revealedLayers), true);
+    }
+
+
+    /// <summary>
+    ///     Sets a sprite's gendered mask based on gender (obviously).
+    /// </summary>
+    /// <param name="sprite">Sprite to modify</param>
+    /// <param name="humanoid">Humanoid, to get gender from</param>
+    /// <param name="clothing">Clothing component, to get mask sprite type</param>
+    private void SetGenderedMask(EntityUid uid, SpriteComponent sprite, ClothingComponent clothing)
+    {
+        if (!sprite.LayerMapTryGet(HumanoidVisualLayers.StencilMask, out var layer))
+            return;
+
+        ClothingMask mask;
+        string prefix;
+
+        switch (CompOrNull<HumanoidAppearanceComponent>(uid)?.Sex)
+        {
+            case Sex.Male:
+                mask = clothing.MaleMask;
+                prefix = "male_";
+                break;
+            case Sex.Female:
+                mask = clothing.FemaleMask;
+                prefix = "female_";
+                break;
+            default:
+                mask = clothing.UnisexMask;
+                prefix = "unisex_";
+                break;
+        }
+
+        sprite.LayerSetState(layer, mask switch
+        {
+            ClothingMask.NoMask => $"{prefix}none",
+            ClothingMask.UniformTop => $"{prefix}top",
+            _ => $"{prefix}full",
+        });
+        sprite.LayerSetVisible(layer, true);
     }
 }
