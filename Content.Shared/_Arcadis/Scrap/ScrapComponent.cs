@@ -14,7 +14,7 @@ public sealed partial class ScrapComponent : Component
 
     // Output item prototypes, such as rare parts or tech boards
     [DataField]
-    public ProtoId<WeightedRandomPrototype>? OutputItems;
+    public ProtoId<WeightedRandomEntityPrototype>? OutputItems;
 
     // Output materials, like steel, glass, plastic, and HOLMIUM (when I port it)
     [DataField]

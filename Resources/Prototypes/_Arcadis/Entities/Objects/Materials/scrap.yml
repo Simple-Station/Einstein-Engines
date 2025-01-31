@@ -62,7 +62,7 @@
     AutolatheMachineCircuitboard: 0.85
     CircuitImprinterMachineCircuitboard: 0.1
 
-- type: weightedRandomEntity
+- type: weightedRandom
   id: ScrapMaterialOutputs
   weights:
     Steel: 20
@@ -76,7 +76,7 @@
     ResearchDisk10000: 3
     ResearchDisk20000: 1
 
-- type: weightedRandomEntity
+- type: weightedRandom
   id: AlienScrapMaterialOutputs
   weights:
     Steel: 10
