@@ -10997,3 +10997,12 @@ Entries:
   id: 6784
   time: '2025-01-31T20:22:45.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1692
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed an issue where Glimmer can reach infinite values under certain
+        conditions.
+  id: 6785
+  time: '2025-01-31T23:42:34.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1694
