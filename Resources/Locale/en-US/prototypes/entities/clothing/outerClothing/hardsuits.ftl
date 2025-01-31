@@ -89,6 +89,10 @@ ent-ClothingOuterHardsuitSyndieElite = CSA-54UA - "Shiwei" tacsuit
     .desc = An "Up-Armored" tactical combat hardsuit produced by the Cybersun-Armaments Corporation.
     The suit's tags indicate its rated for high exposure to radiation, heat and explosions, along with moderate physical trauma protection.
     It feels incredibly light.
+ent-ClothingOuterHardsuitShiweiUnpainted = CSA-54UA - "Shiwei" tacsuit
+    .desc = An "Up-Armored" tactical combat hardsuit produced by the Cybersun-Armaments Corporation.
+    The suit's tags indicate its rated for high exposure to radiation, heat and explosions, along with moderate physical trauma protection.
+    It is unpainted bare spaceship alloy. It feels incredibly light.
 ent-ClothingOuterHardsuitSyndieCommander = CSA-54c - "Tianming" tacsuit
     .desc = A "Commander" tactical combat hardsuit produced by the Cybersun-Armaments Corporation. The suit's tags indicate that it protects greatly against all forms of damage.
     This one has been painted blood red. It doesn't seem to have any weight.

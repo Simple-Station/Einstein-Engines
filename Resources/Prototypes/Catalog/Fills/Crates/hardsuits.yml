@@ -52,6 +52,16 @@
     - id: ClothingOuterHardsuitShanlinUnpainted
 
 - type: entity
+  id: CrateSecurityShiweiTacsuit
+  parent: CrateSecgear
+  name: shiwei tacsuit crate
+  description: Contains a single CSA-54UA "Shiwei" tacsuit. Requires Security access to open.
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingOuterHardsuitShiweiUnpainted
+
+- type: entity
   id: CrateSecurityGuanYuTacsuit
   parent: CrateSecgear
   name: guan-yu tacsuit crate
