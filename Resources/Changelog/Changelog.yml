@@ -10978,3 +10978,22 @@ Entries:
   id: 6783
   time: '2025-01-30T15:18:55.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1680
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Clothing now supports having multiple species-specific layers, and
+        species-specific shaders. 
+    - type: Add
+      message: >-
+        New "Unpainted" engineering hardsuit, and "Unpainted" Shanlin Tacsuit.
+        More to come soon. 
+    - type: Add
+      message: >-
+        Unpainted variant of the "Shiwei" tacsuit(AKA: Elite suit). This one is
+        uniquely titanium white instead of the standard gunmetal grey. It can
+        either be ordered through cargo at an exhorbitant cost, or manufactured
+        with the Prototype Tacsuits research.
+  id: 6784
+  time: '2025-01-31T20:22:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1692
