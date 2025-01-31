@@ -67,6 +67,24 @@
 
 #Engineering Hardsuit
 - type: entity
+  parent: ClothingOuterHardsuitEngineering
+  id: ClothingOuterHardsuitEngineeringUnpainted
+  name: engineering hardsuit
+  description: A special suit that protects against hazardous, low pressure environments. Has radiation shielding.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Hardsuits/engineering-base.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Hardsuits/engineering-base.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: equipped-OUTERCLOTHING-unshaded
+        shader: unshaded
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitEngineeringUnpainted
+
+- type: entity
   parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitEngineering
   name: engineering hardsuit
@@ -554,13 +572,31 @@
 #ANTAG HARDSUITS
 #Blood-red Hardsuit
 - type: entity
+  parent: ClothingOuterHardsuitSyndie
+  id: ClothingOuterHardsuitShanlinUnpainted
+  name: Cybersun tacsuit
+  description: A special suit that protects against hazardous, low pressure environments. Has radiation shielding.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Hardsuits/syndicate-base.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Hardsuits/syndicate-base.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: equipped-OUTERCLOTHING-unshaded
+        shader: unshaded
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitShanlinUnpainted
+
+- type: entity
   parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitSyndie
   name: blood-red hardsuit
   description: A heavily armored hardsuit designed for work in special operations. Property of Gorlex Marauders.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Hardsuits/syndicate.rsi
+    sprite: Clothing/OuterClothing/Hardsuits/syndicate-base.rsi
   - type: Item
     size: Huge
   - type: Clothing

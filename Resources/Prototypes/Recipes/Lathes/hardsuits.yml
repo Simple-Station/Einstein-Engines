@@ -63,8 +63,8 @@
 
 # TODO: I still need to make these "Unpainted"
 - type: latheRecipe
-  id: ClothingOuterHardsuitSyndieReverseEngineered
-  result: ClothingOuterHardsuitSyndieReverseEngineered
+  id: ClothingOuterHardsuitShanlinUnpainted
+  result: ClothingOuterHardsuitShanlinUnpainted
   category: Tacsuits
   completetime: 180
   materials:
