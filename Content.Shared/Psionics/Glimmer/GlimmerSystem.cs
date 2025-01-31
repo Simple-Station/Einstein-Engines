@@ -2,6 +2,7 @@ using Robust.Shared.Serialization;
 using Robust.Shared.Configuration;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
+using Prometheus;
 
 namespace Content.Shared.Psionics.Glimmer;
 
@@ -12,6 +13,15 @@ namespace Content.Shared.Psionics.Glimmer;
 public sealed class GlimmerSystem : EntitySystem
 {
     [Dependency] private readonly IConfigurationManager _cfg = default!;
+
+    private static readonly Gauge GlimmerInputCount = Metrics.CreateGauge(
+        "glimmer_input",
+        "Amount of Input Glimmer");
+
+    private static readonly Gauge GlimmerOutputCount = Metrics.CreateGauge(
+        "glimmer_output",
+        "Amount of Output Glimmer");
+
 
     private float _glimmerInput = 0;
 
@@ -73,7 +83,10 @@ public sealed class GlimmerSystem : EntitySystem
     private void Reset(RoundRestartCleanupEvent args)
     {
         GlimmerInput = 0;
+        GlimmerInputCount.Set(GlimmerInput);
+
         GlimmerOutput = 0;
+        GlimmerOutputCount.Set(GlimmerOutput);
     }
 
     /// <summary>
@@ -118,7 +131,10 @@ public sealed class GlimmerSystem : EntitySystem
         if (_enabled && delta != 0)
         {
             GlimmerInput += delta;
-            GlimmerOutput = 2000 / (1 + MathF.Pow(MathF.E, -.0022f * GlimmerInput)) - 1000;
+            GlimmerInputCount.Set(GlimmerInput);
+
+            GlimmerOutput = Math.Clamp(2000 / (1 + MathF.Pow(MathF.E, -.0022f * GlimmerInput)) - 1000, 0, 999.999999f);
+            GlimmerOutputCount.Set(GlimmerOutput);
         }
     }
 
@@ -132,7 +148,10 @@ public sealed class GlimmerSystem : EntitySystem
         if (_enabled && delta != 0)
         {
             GlimmerOutput += delta;
-            GlimmerInput = 2000 / (1 + MathF.Pow(MathF.E, -.0022f * GlimmerOutput)) - 1000;
+            GlimmerOutputCount.Set(GlimmerOutput);
+
+            GlimmerInput = Math.Max(2000 / (1 + MathF.Pow(MathF.E, -.0022f * GlimmerOutput)) - 1000, 0);
+            GlimmerInputCount.Set(GlimmerInput);
         }
     }
 
@@ -146,7 +165,10 @@ public sealed class GlimmerSystem : EntitySystem
         if (_enabled && set != 0)
         {
             GlimmerOutput = Math.Clamp(set, 0, 999.999f);
+            GlimmerOutputCount.Set(GlimmerOutput);
+
             GlimmerInput = 2000 / (1 + MathF.Pow(MathF.E, -.0022f * GlimmerOutput)) - 1000;
+            GlimmerInputCount.Set(GlimmerInput);
         }
     }
 
@@ -160,7 +182,10 @@ public sealed class GlimmerSystem : EntitySystem
         if (_enabled && set >= 0)
         {
             GlimmerInput = set;
+            GlimmerInputCount.Set(GlimmerInput);
+
             GlimmerOutput = 2000 / (1 + MathF.Pow(MathF.E, -.0022f * GlimmerOutput)) - 1000;
+            GlimmerOutputCount.Set(GlimmerOutput);
         }
     }
 
