@@ -6,7 +6,7 @@
   components:
   - type: Stack
     stackType: N14AluminiumOre
-    count: 10
+    count: 30
   - type: Sprite
     sprite: /Textures/_Nuclear14/Objects/Misc/materials.rsi
     state: aluminium
@@ -32,7 +32,7 @@
   components:
   - type: Stack
     stackType: N14LeadOre
-    count: 10
+    count: 30
   - type: Sprite
     sprite: /Textures/_Nuclear14/Objects/Misc/materials.rsi
     state: lead
@@ -98,7 +98,7 @@
   components:
   - type: Stack
     stackType: SulfurOre
-    count: 10
+    count: 30
   - type: Sprite
     sprite: /Textures/_Nuclear14/Objects/Misc/materials.rsi
     state: sulfur
