@@ -1,0 +1,275 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-SA-3.0",
+  "copyright": "Taken from MS13 at commit https://github.com/Mojave-Sun/mojave-sun-13/commit/5e2e8ebe440947bcf947189d5a46bfbb5ae2e8e8",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "scrap_glass"
+    },
+    {
+      "name": "scrap_glass_2"
+    },
+    {
+      "name": "scrap_glass_3"
+    },
+    {
+      "name": "scrap_parts"
+    },
+    {
+      "name": "scrap_parts_2"
+    },
+    {
+      "name": "scrap_parts_3"
+    },
+    {
+      "name": "scrap"
+    },
+    {
+      "name": "scrap_2"
+    },
+    {
+      "name": "scrap_3"
+    },
+    {
+      "name": "thread"
+    },
+    {
+      "name": "scrap_clockwork"
+    },
+    {
+      "name": "scrap_electronic"
+    },
+    {
+      "name": "scrap_electronic_2"
+    },
+    {
+      "name": "scrap_electronic_3"
+    },
+    {
+      "name": "circuits"
+    },
+    {
+      "name": "circuits_2"
+    },
+    {
+      "name": "circuits_3"
+    },
+    {
+      "name": "redwire"
+    },
+    {
+      "name": "redwire_2"
+    },
+    {
+      "name": "redwire_3"
+    },
+    {
+      "name": "greenwire"
+    },
+    {
+      "name": "greenwire_2"
+    },
+    {
+      "name": "greenwire_3"
+    },
+    {
+      "name": "bluewire"
+    },
+    {
+      "name": "bluewire_2"
+    },
+    {
+      "name": "bluewire_3"
+    },
+    {
+      "name": "yellowwire"
+    },
+    {
+      "name": "yellowwire_2"
+    },
+    {
+      "name": "yellowwire_3"
+    },
+    {
+      "name": "nail"
+    },
+    {
+      "name": "nail_2"
+    },
+    {
+      "name": "nail_3"
+    },
+    {
+      "name": "nail_4"
+    },
+    {
+      "name": "plank"
+    },
+    {
+      "name": "plank_2"
+    },
+    {
+      "name": "plank_3"
+    },
+    {
+      "name": "log"
+    },
+    {
+      "name": "firewood"
+    },
+    {
+      "name": "firewood_2"
+    },
+    {
+      "name": "firewood_3"
+    },
+    {
+      "name": "ingot_aluminum"
+    },
+    {
+      "name": "scrap_aluminum"
+    },
+    {
+      "name": "powder_aluminum"
+    },
+    {
+      "name": "ingot_copper"
+    },
+    {
+      "name": "scrap_copper"
+    },
+    {
+      "name": "powder_copper"
+    },
+    {
+      "name": "ingot_gold"
+    },
+    {
+      "name": "scrap_gold"
+    },
+    {
+      "name": "powder_gold"
+    },
+    {
+      "name": "ingot_silver"
+    },
+    {
+      "name": "scrap_silver"
+    },
+    {
+      "name": "powder_silver"
+    },
+    {
+      "name": "ingot_iron"
+    },
+    {
+      "name": "scrap_steel"
+    },
+    {
+      "name": "scrap_steel_2"
+    },
+    {
+      "name": "scrap_steel_3"
+    },
+    {
+      "name": "powder_steel"
+    },
+    {
+      "name": "ingot_brass"
+    },
+    {
+      "name": "scrap_brass"
+    },
+    {
+      "name": "casings"
+    },
+    {
+      "name": "powder_brass"
+    },
+    {
+      "name": "ingot_lead"
+    },
+    {
+      "name": "scrap_lead"
+    },
+    {
+      "name": "bullets"
+    },
+    {
+      "name": "powder_lead"
+    },
+    {
+      "name": "rubber"
+    },
+    {
+      "name": "scrap_wood"
+    },
+    {
+      "name": "plastic"
+    },
+    {
+      "name": "ceramic"
+    },
+    {
+      "name": "ceramic_2"
+    },
+    {
+      "name": "ceramic_3"
+    },
+    {
+      "name": "militaryfiber"
+    },
+    {
+      "name": "leather_1"
+    },
+    {
+      "name": "leather_2"
+    },
+    {
+      "name": "leather_3"
+    },
+    {
+      "name": "raw_leather_1"
+    },
+    {
+      "name": "raw_leather_2"
+    },
+    {
+      "name": "cloth"
+    },
+    {
+      "name": "uranium"
+    },
+    {
+      "name": "coal"
+    },
+    {
+      "name": "aluminium"
+    },
+    {
+      "name": "gold"
+    },
+    {
+      "name": "silver"
+    },
+    {
+      "name": "iron"
+    },
+    {
+      "name": "brass"
+    },
+    {
+      "name": "copper"
+    },
+    {
+      "name": "lead"
+    },
+    {
+      "name": "sulfur"
+    }
+  ]
+}

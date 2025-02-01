@@ -14,6 +14,48 @@
   radius: 4
 
 - type: biomeMarkerLayer
+  id: OreAluminium
+  entityMask:
+    AsteroidRock: AsteroidRockAluminium
+    WallRock: WallRockAluminium
+    WallRockBasalt: WallRockBasaltAluminium
+    WallRockChromite: WallRockChromiteAluminium
+    WallRockSand: WallRockSandAluminium
+    WallRockSnow: WallRockSnowAluminium
+  maxCount: 30
+  minGroupSize: 7
+  maxGroupSize: 15
+  radius: 4
+
+- type: biomeMarkerLayer
+  id: OreCopper
+  entityMask:
+    AsteroidRock: AsteroidRockCopper
+    WallRock: WallRockCopper
+    WallRockBasalt: WallRockBasaltCopper
+    WallRockChromite: WallRockChromiteCopper
+    WallRockSand: WallRockSandCopper
+    WallRockSnow: WallRockSnowCopper
+  maxCount: 30
+  minGroupSize: 7
+  maxGroupSize: 15
+  radius: 4
+
+- type: biomeMarkerLayer
+  id: OreLead
+  entityMask:
+    AsteroidRock: AsteroidRockLead
+    WallRock: WallRockLead
+    WallRockBasalt: WallRockBasaltLead
+    WallRockChromite: WallRockChromiteLead
+    WallRockSand: WallRockSandLead
+    WallRockSnow: WallRockSnowLead
+  maxCount: 30
+  minGroupSize: 5
+  maxGroupSize: 8
+  radius: 4
+
+- type: biomeMarkerLayer
   id: OreQuartz
   entityMask:
     AsteroidRock: AsteroidRockQuartz

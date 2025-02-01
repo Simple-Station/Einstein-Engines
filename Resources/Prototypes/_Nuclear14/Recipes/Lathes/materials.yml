@@ -1,0 +1,35 @@
+- type: latheRecipe
+  id: N14IngotLead1
+  result: N14IngotLead1
+  miningPoints: 10
+  applyMaterialDiscount: false
+  completetime: 2
+  materials:
+    RawLead: 100
+
+- type: latheRecipe
+  id: N14IngotCopper1
+  result: N14IngotCopper1
+  completetime: 2
+  miningPoints: 10
+  materials:
+    N14RawCopper: 100
+    Coal: 50
+
+- type: latheRecipe
+  id: N14IngotAluminium1
+  result: N14IngotAluminium1
+  completetime: 2
+  miningPoints: 10
+  materials:
+    RawAluminium: 100
+    Coal: 50
+
+- type: latheRecipe
+  id: N14MaterialCircuitry
+  result: N14MaterialCircuitry1
+  completetime: 2
+  materials:
+    Gold: 100
+    Plastic: 100
+    Glass: 100

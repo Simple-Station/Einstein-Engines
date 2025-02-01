@@ -1,0 +1,151 @@
+#MARK: Lead
+- type: entity
+  parent: IngotBase
+  id: N14IngotLead
+  name: lead bar
+  suffix: Full, 30
+  components:
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      Lead: 100
+  - type: Stack
+    stackType: Lead
+    baseLayer: base
+    layerStates:
+    - ingot_lead
+    - ingot_lead
+    - ingot_lead
+  - type: Sprite
+    sprite: /Textures/_Nuclear14/Objects/Misc/materials.rsi
+    state: ingot_lead
+    layers:
+    - state: ingot_lead
+      map: ["base"]
+  - type: MeleeWeapon
+    attackRate: 0.6
+    damage:
+      types:
+        Blunt: 9
+    soundHit:
+      path: /Audio/Weapons/smash.ogg
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 14
+  - type: Item
+    heldPrefix: ingot_lead
+  - type: Appearance
+  - type: Extractable
+    grindableSolutionName: lead
+  - type: SolutionContainerManager
+    solutions:
+      lead:
+        reagents:
+        - ReagentId: Lead
+          Quantity: 10
+
+- type: entity
+  parent: N14IngotLead
+  id: N14IngotLead1
+  name: lead bar
+  suffix: Single
+  components:
+  - type: Sprite
+    state: ingot_lead
+  - type: Stack
+    count: 1
+
+#MARK: Aluminum
+- type: entity
+  parent: IngotBase
+  id: N14IngotAluminium
+  name: aluminium bar
+  suffix: Full, 30
+  components:
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      Aluminum: 100
+  - type: Stack
+    stackType: Aluminium
+    baseLayer: base
+    layerStates:
+    - ingot_aluminum
+    - ingot_aluminum
+    - ingot_aluminum
+  - type: Sprite
+    sprite: /Textures/_Nuclear14/Objects/Misc/materials.rsi
+    state: ingot_aluminum
+    layers:
+    - state: ingot_aluminum
+      map: ["base"]
+  - type: Item
+    heldPrefix: ingot_aluminum
+  - type: Appearance
+  - type: Extractable
+    grindableSolutionName: aluminium
+  - type: SolutionContainerManager
+    solutions:
+      aluminium:
+        reagents:
+        - ReagentId: Aluminium
+          Quantity: 10
+
+- type: entity
+  parent: N14IngotAluminium
+  id: N14IngotAluminium1
+  name: aluminium bar
+  suffix: Single
+  components:
+  - type: Sprite
+    state: ingot_aluminum
+  - type: Stack
+    count: 1
+
+#MARK: Copper
+- type: entity
+  parent: IngotBase
+  id: N14IngotCopper
+  name: copper bar
+  suffix: Full, 30
+  components:
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      N14Copper: 100
+  - type: Stack
+    stackType: N14Copper
+    baseLayer: base
+    layerStates:
+    - ingot_copper
+    - ingot_copper
+    - ingot_copper
+  - type: Sprite
+    sprite: /Textures/_Nuclear14/Objects/Misc/materials.rsi
+    state: ingot_copper
+    layers:
+    - state: ingot_copper
+      map: ["base"]
+  - type: Item
+    heldPrefix: ingot_copper
+  - type: Appearance
+  - type: Extractable
+    grindableSolutionName: copper
+  - type: SolutionContainerManager
+    solutions:
+      copper:
+        reagents:
+        - ReagentId: Copper
+          Quantity: 10
+
+- type: entity
+  parent: N14IngotCopper
+  id: N14IngotCopper1
+  name: copper bar
+  suffix: Single
+  components:
+  - type: Sprite
+    state: ingot_copper
+  - type: Stack
+    count: 1
