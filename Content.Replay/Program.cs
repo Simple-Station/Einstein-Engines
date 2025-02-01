@@ -12,8 +12,8 @@ internal static class Program
             ContentModulePrefix = "Content.",
             ContentBuildDirectory = "Content.Replay",
             DefaultWindowTitle = "SS14 Replay",
-            UserDataDirectoryName = "Space Station 14",
-            ConfigFileName = "replay.toml"
+            UserDataDirectoryName = Environment.GetEnvironmentVariable("SS14_LAUNCHER_DATADIR") ?? "SimpleStation14",
+            ConfigFileName = "replay.toml",
         });
     }
 }
