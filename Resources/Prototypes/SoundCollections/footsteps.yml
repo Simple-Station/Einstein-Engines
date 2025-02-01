@@ -220,3 +220,8 @@
   - /Audio/Effects/Footsteps/highheels3.ogg
   - /Audio/Effects/Footsteps/highheels4.ogg
   - /Audio/Effects/Footsteps/highheels5.ogg
+
+- type: soundCollection
+  id: FootstepHardsuit
+  files:
+  - /Audio/Effects/Footsteps/tacsuit_step_00.ogg

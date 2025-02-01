@@ -54,7 +54,8 @@ public sealed class EmitsSoundOnMoveSystem : EntitySystem
 
     private void UpdateSound(EntityUid uid, EmitsSoundOnMoveComponent component)
     {
-        if (!_physicsQuery.TryGetComponent(uid, out var physics))
+        if (!_physicsQuery.TryGetComponent(uid, out var physics)
+            || !_timing.IsFirstTimePredicted)
             return;
 
         // Space does not transmit sound
@@ -70,11 +71,15 @@ public sealed class EmitsSoundOnMoveSystem : EntitySystem
                      _clothingQuery.TryGetComponent(uid, out var clothing)
                      && clothing.InSlot != null
                      && component.IsSlotValid;
+
+        if (component.RequiresWorn && !isWorn)
+            return;
+
         // If this entity is worn by another entity, use that entity's coordinates
         var coordinates = isWorn ? Transform(parent).Coordinates : Transform(uid).Coordinates;
         var distanceNeeded = (isWorn && _moverQuery.TryGetComponent(parent, out var mover) && mover.Sprinting)
-            ? 1.5f // The parent is a mob that is currently sprinting
-            : 2f; // The parent is not a mob or is not sprinting
+            ? component.DistanceWalking // The parent is a mob that is currently sprinting
+            : component.DistanceSprinting; // The parent is not a mob or is not sprinting
 
         if (!coordinates.TryDistance(EntityManager, component.LastPosition, out var distance) || distance > distanceNeeded)
             component.SoundDistance = distanceNeeded;
