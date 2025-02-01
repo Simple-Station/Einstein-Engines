@@ -11006,3 +11006,23 @@ Entries:
   id: 6785
   time: '2025-01-31T23:42:34.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1694
+- author: VMSolidus and MajorMoth
+  changes:
+    - type: Add
+      message: Hardsuits now have sounds made when the wearer moves!
+    - type: Fix
+      message: >-
+        Fixed several bugs with EmitSoundOnMove. It no longer plays the same
+        sound 7 times in a row for the client. It can now differentiate between
+        items that must be worn to make sounds and otherwise. It can also have
+        variable distance needed to travel to make a sound.
+    - type: Add
+      message: >-
+        Hardsuits and Tacsuits are now separated into Light, Medium, and Heavy
+        categories, with each category having its own sound effects, mass,
+        throwing statistics, and don/doff time. Most hardsuits are Light. Most
+        Tacsuits are Medium. Some suits like Warden, Juggernaut, Nukie
+        Commander, and Mysta Bombsuit are heavy.
+  id: 6786
+  time: '2025-02-01T17:46:07.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1698
