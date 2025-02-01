@@ -273,7 +273,7 @@
     damage:
       types:
         Blunt: 45
-    staminaCost: 80
+    staminaCost: 110
     soundHit:
       collection: MetalThud
   - type: Clothing
