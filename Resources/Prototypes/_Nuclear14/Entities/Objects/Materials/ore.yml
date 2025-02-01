@@ -4,6 +4,9 @@
   name: bauxite
   suffix: Full
   components:
+  - type: Stack
+    stackType: N14AluminiumOre
+    count: 10
   - type: Sprite
     sprite: /Textures/_Nuclear14/Objects/Misc/materials.rsi
     state: aluminium
