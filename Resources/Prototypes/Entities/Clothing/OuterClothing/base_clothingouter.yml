@@ -209,6 +209,8 @@
     soundCollection:
       collection: FootstepHardsuit
     requiresWorn: true
+    distanceWalking: 2
+    distanceSprinting: 3
 
 - type: entity
   abstract: true
