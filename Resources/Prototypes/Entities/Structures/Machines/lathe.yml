@@ -1058,6 +1058,7 @@
       - WeaponMechCombatDisabler
       - WeaponMechCombatFlashbangLauncher
       - WeaponMechCombatMissileRack8
+      - EnergySword
   - type: MaterialStorage
     whitelist:
       tags:

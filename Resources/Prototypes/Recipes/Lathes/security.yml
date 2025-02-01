@@ -1020,3 +1020,13 @@
     Glass: 300
     Silver: 100
     Gold: 100
+
+- type: latheRecipe
+  id: EnergySword
+  result: EnergySword
+  completetime: 5
+  materials:
+    Tungsten: 300
+    Gold: 300
+    Bluespace: 300
+    Diamond: 100
