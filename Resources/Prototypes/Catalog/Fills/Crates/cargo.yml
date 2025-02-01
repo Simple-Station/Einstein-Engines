@@ -313,6 +313,9 @@
     - id: PlushieThrongler
       prob: 0.0005
       orGroup: Plushies
+    - id: PlushieShadowkin
+      prob: 0.01
+      orGroup: Plushies
     #useful
     - id: AmeJar
       prob: 0.01
