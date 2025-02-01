@@ -45,6 +45,7 @@ materials-raw-aluminium = raw aluminium
 materials-raw-lead = raw lead
 materials-raw-sulfur = raw sulfur
 materials-raw-copper = raw copper
+materials-raw-tungsten = raw tungsten
 
 # Material Reclaimer
 material-reclaimer-upgrade-process-rate = process rate
