@@ -113,6 +113,11 @@ public sealed class ClientClothingSystem : ClothingSystem
                 i++;
             }
 
+            if (inventory.SpeciesId != null && item.Sprite != null
+                && _cache.TryGetResource<RSIResource>(SpriteSpecifierSerializer.TextureRoot / item.Sprite, out var rsi)
+                && rsi.RSI.TryGetState($"{layer.State}-{inventory.SpeciesId}", out _))
+                layer.State = $"{layer.State}-{inventory.SpeciesId}";
+
             args.Layers.Add((key, layer));
         }
     }

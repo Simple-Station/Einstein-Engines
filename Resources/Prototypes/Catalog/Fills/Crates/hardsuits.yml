@@ -13,11 +13,11 @@
   id: CrateEngineeringLampsiHardsuit
   parent: CrateEngineering
   name: lampsi hardsuit crate
-  description: Contains a single HpI-19r "Lampsi" hardsuit. Requires Engineering access to open.
+  description: Contains a single HpI-19r "Lampsi" hardsuit. The suit comes unpainted. Requires Engineering access to open.
   components:
   - type: StorageFill
     contents:
-    - id: ClothingOuterHardsuitAtmos
+    - id: ClothingOuterHardsuitEngineeringUnpainted
 
 # Logistics
 - type: entity
@@ -49,7 +49,17 @@
   components:
   - type: StorageFill
     contents:
-    - id: ClothingOuterHardsuitSyndieReverseEngineered
+    - id: ClothingOuterHardsuitShanlinUnpainted
+
+- type: entity
+  id: CrateSecurityShiweiTacsuit
+  parent: CrateSecgear
+  name: shiwei tacsuit crate
+  description: Contains a single CSA-54UA "Shiwei" tacsuit. Requires Security access to open.
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingOuterHardsuitShiweiUnpainted
 
 - type: entity
   id: CrateSecurityGuanYuTacsuit
