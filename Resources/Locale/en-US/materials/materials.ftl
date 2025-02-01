@@ -9,6 +9,10 @@ materials-steel = steel
 materials-gold = gold
 materials-silver = silver
 materials-plasteel = plasteel
+materials-aluminium = aluminium
+materials-copper = copper
+materials-tungsten = tungsten-carbide
+materials-lead = lead
 
 # Other
 materials-biomass = biomass
