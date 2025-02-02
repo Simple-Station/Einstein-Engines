@@ -25,4 +25,4 @@
         name: welding tool
         doAfter: 2
   - node: bot
-    entity: MobWeldBot
+    entity: MobWeldbot
