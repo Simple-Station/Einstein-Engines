@@ -24,18 +24,18 @@ public sealed partial class PickNearbyWeldableOperator : HTNOperator
     private PathfindingSystem _pathfinding = default!;
     private TagSystem _tagSystem = default!;
 
-    [DataField("rangeKey")] public string RangeKey = NPCBlackboard.WeldbotWeldRange;
+    [DataField] public string RangeKey = NPCBlackboard.WeldbotWeldRange;
 
     /// <summary>
     /// Target entity to weld
     /// </summary>
-    [DataField("targetKey", required: true)]
+    [DataField(required: true)]
     public string TargetKey = string.Empty;
 
     /// <summary>
     /// Target entitycoordinates to move to.
     /// </summary>
-    [DataField("targetMoveKey", required: true)]
+    [DataField(required: true)]
     public string TargetMoveKey = string.Empty;
 
     public override void Initialize(IEntitySystemManager sysManager)
@@ -59,7 +59,7 @@ public sealed partial class PickNearbyWeldableOperator : HTNOperator
             return (false, null);
 
         var damageQuery = _entManager.GetEntityQuery<DamageableComponent>();
-        bool emagged = _entManager.HasComponent<EmaggedComponent>(owner);
+        var emagged = _entManager.HasComponent<EmaggedComponent>(owner);
 
         foreach (var target in _lookup.GetEntitiesInRange(owner, range))
         {

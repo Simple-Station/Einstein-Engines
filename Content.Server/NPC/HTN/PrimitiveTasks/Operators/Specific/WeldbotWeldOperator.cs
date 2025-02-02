@@ -28,7 +28,7 @@ public sealed partial class WeldbotWeldOperator : HTNOperator
     /// <summary>
     /// Target entity to inject.
     /// </summary>
-    [DataField("targetKey", required: true)]
+    [DataField(required: true)]
     public string TargetKey = string.Empty;
 
     public override void Initialize(IEntitySystemManager sysManager)
@@ -78,18 +78,14 @@ public sealed partial class WeldbotWeldOperator : HTNOperator
         if (botComp.IsEmagged)
         {
             if (!_prototypeManager.TryIndex<DamageGroupPrototype>("Burn", out var prototype))
-            {
                 return HTNOperatorStatus.Failed;
-            }
 
             _damageableSystem.TryChangeDamage(target, new DamageSpecifier(prototype, 10), true, false, damage);
         }
         else
         {
             if (!_prototypeManager.TryIndex<DamageGroupPrototype>("Brute", out var prototype))
-            {
                 return HTNOperatorStatus.Failed;
-            }
 
             _damageableSystem.TryChangeDamage(target, new DamageSpecifier(prototype, -50), true, false, damage);
         }

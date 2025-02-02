@@ -14,7 +14,7 @@
         doAfter: 2
       - tag: WeldingMask
         icon:
-          sprite: Clothing\Head\Welding\welding.rsi
+          sprite: Clothing/Head/Welding/welding.rsi
           state: icon
         name: welding mask
         doAfter: 2

@@ -13,7 +13,7 @@ public sealed partial class WeldbotComponent : Component
     /// <summary>
     /// Sound played after welding a patient.
     /// </summary>
-    [DataField("weldSound")]
+    [DataField]
     public SoundSpecifier WeldSound = new SoundPathSpecifier("/Audio/Items/welder2.ogg");
 
     public bool IsEmagged = false;
