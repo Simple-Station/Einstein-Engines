@@ -20,7 +20,7 @@
         doAfter: 2
       - tag: WeldingTool
         icon:
-          sprite: Objects\Tools\welder.rsi
+          sprite: Objects/Tools/welder.rsi
           state: icon
         name: welding tool
         doAfter: 2
