@@ -11033,3 +11033,12 @@ Entries:
   id: 6787
   time: '2025-02-01T22:43:56.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1699
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added sound effects for all variety of "Tactical Webbing", such as
+        Security Webbing, Chest Rigs, etc.
+  id: 6788
+  time: '2025-02-02T02:08:49.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1701
