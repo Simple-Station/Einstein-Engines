@@ -10,7 +10,6 @@ using Content.Shared.Tag;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 
-
 namespace Content.Server.NPC.HTN.PrimitiveTasks.Operators.Specific;
 
 public sealed partial class WeldbotWeldOperator : HTNOperator
@@ -24,6 +23,8 @@ public sealed partial class WeldbotWeldOperator : HTNOperator
     private SharedPopupSystem _popup = default!;
     private DamageableSystem _damageableSystem = default!;
     private TagSystem _tagSystem = default!;
+
+    public const string SiliconTag = "SiliconMob";
 
     /// <summary>
     /// Target entity to inject.
@@ -56,7 +57,7 @@ public sealed partial class WeldbotWeldOperator : HTNOperator
         if (!blackboard.TryGetValue<EntityUid>(TargetKey, out var target, _entMan) || _entMan.Deleted(target))
             return HTNOperatorStatus.Failed;
 
-        var tagPrototype = _prototypeManager.Index<TagPrototype>("SiliconMob");
+        var tagPrototype = _prototypeManager.Index<TagPrototype>(SiliconTag);
 
         if (!_entMan.TryGetComponent<TagComponent>(target, out var tagComponent) || !_tagSystem.HasTag(tagComponent, tagPrototype))
             return HTNOperatorStatus.Failed;

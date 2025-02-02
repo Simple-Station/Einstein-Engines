@@ -61,7 +61,7 @@ public sealed partial class PickNearbyWeldableOperator : HTNOperator
             if (!damageQuery.TryGetComponent(target, out var damage))
                 continue;
 
-            var tagPrototype = _prototypeManager.Index<TagPrototype>("SiliconMob");
+            var tagPrototype = _prototypeManager.Index<TagPrototype>(WeldbotWeldOperator.SiliconTag);
 
             if (!_entManager.TryGetComponent<TagComponent>(target, out var tagComponent) || !_tagSystem.HasTag(tagComponent, tagPrototype))
                 continue;
