@@ -71,9 +71,7 @@ public sealed partial class WeldbotWeldOperator : HTNOperator
         if (!_interaction.InRangeUnobstructed(owner, target))
             return HTNOperatorStatus.Failed;
 
-        var total = damage.DamagePerGroup["Brute"].Value;
-
-        if (total == 0 && !_entMan.HasComponent<EmaggedComponent>(owner))
+        if (damage.DamagePerGroup["Brute"].Value == 0 && !_entMan.HasComponent<EmaggedComponent>(owner))
             return HTNOperatorStatus.Failed;
 
         if (botComp.IsEmagged)
@@ -92,7 +90,10 @@ public sealed partial class WeldbotWeldOperator : HTNOperator
         }
 
         _audio.PlayPvs(botComp.WeldSound, target);
-        _chat.TrySendInGameICMessage(owner, Loc.GetString("weldbot-finish-weld"), InGameICChatType.Speak, hideChat: true, hideLog: true);
+
+        if(damage.DamagePerGroup["Brute"].Value == 0) //only say "all done if we're actually done!"
+            _chat.TrySendInGameICMessage(owner, Loc.GetString("weldbot-finish-weld"), InGameICChatType.Speak, hideChat: true, hideLog: true);
+
         return HTNOperatorStatus.Finished;
     }
 }
