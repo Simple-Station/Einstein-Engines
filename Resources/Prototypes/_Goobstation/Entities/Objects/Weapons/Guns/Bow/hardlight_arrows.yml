@@ -34,7 +34,7 @@
     onlyCollideWhenShot: true
     damage:
       types:
-        Heat: 30
+        Heat: 45
   - type: TimedDespawn
     lifetime: 10
   - type: PointLight
@@ -100,7 +100,7 @@
       types:
         Heat: 15
   - type: IgniteOnCollide
-    fireStacks: 1.5
+    fireStacks: 4
 
 - type: entity
   parent: [BaseHardlightArrow, BaseHardlightEmbeddableArrow]
@@ -115,9 +115,9 @@
   - type: Projectile
     damage:
       types:
-        Cold: 20
+        Cold: 10
   - type: ChangeTemperatureOnCollide
-    heat: -70000
+    heat: -300000
 
 - type: entity
   parent: [BaseHardlightArrow, BaseHardlightEmbeddableArrow]
@@ -157,7 +157,7 @@
     penetrate: true
     damage:
       types:
-        Heat: 24
+        Heat: 30
   - type: Fixtures
     fixtures:
       projectile:
