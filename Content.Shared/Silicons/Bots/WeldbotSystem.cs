@@ -1,11 +1,10 @@
 using Content.Shared.Emag.Systems;
 using Robust.Shared.Audio.Systems;
 
-
 namespace Content.Shared.Silicons.Bots;
 
 /// <summary>
-/// Handles emagging Weldbots and provides api.
+/// Handles emagging Weldbots
 /// </summary>
 public sealed class WeldbotSystem : EntitySystem
 {
@@ -15,17 +14,14 @@ public sealed class WeldbotSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<EmaggableWeldbotComponent, GotEmaggedEvent>(OnEmagged);
+        SubscribeLocalEvent<WeldbotComponent, GotEmaggedEvent>(OnEmagged);
     }
 
-    private void OnEmagged(EntityUid uid, EmaggableWeldbotComponent comp, ref GotEmaggedEvent args)
+    private void OnEmagged(EntityUid uid, WeldbotComponent comp, ref GotEmaggedEvent args)
     {
-        if (!TryComp<WeldbotComponent>(uid, out var Weldbot))
-            return;
+        _audio.PlayPredicted(comp.EmagSparkSound, uid, args.UserUid);
 
-        _audio.PlayPredicted(comp.SparkSound, uid, args.UserUid);
-
-        Weldbot.IsEmagged = true;
+        comp.IsEmagged = true;
         args.Handled = true;
     }
 }

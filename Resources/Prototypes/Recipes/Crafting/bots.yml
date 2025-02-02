@@ -125,5 +125,5 @@
   objectType: Item
   description: Repairs the inorganic crew.
   icon:
-    sprite: Mobs/Silicon/Bots/disablerbot.rsi
-    state: disablerbot
+    sprite: Mobs/Silicon/Bots/weldbot.rsi
+    state: weldbot

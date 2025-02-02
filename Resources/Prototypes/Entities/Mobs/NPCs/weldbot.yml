@@ -5,7 +5,6 @@
   description: No substitute for an engineer, but better than nothing.
   components:
   - type: Weldbot
-  - type: EmaggableWeldbot
   - type: Sprite
     sprite: Mobs/Silicon/Bots/weldbot.rsi
     state: weldbot
