@@ -1,5 +1,3 @@
-using Content.Server.Atmos.Components;
-using Content.Server.Atmos.EntitySystems;
 using Content.Server.Chat.Systems;
 using Content.Shared.Chat;
 using Content.Shared.Damage;
@@ -26,7 +24,6 @@ public sealed partial class WeldbotWeldOperator : HTNOperator
     private SharedPopupSystem _popup = default!;
     private DamageableSystem _damageableSystem = default!;
     private TagSystem _tagSystem = default!;
-    private FlammableSystem _flammableSystem = default!;
 
     /// <summary>
     /// Target entity to inject.
@@ -44,7 +41,6 @@ public sealed partial class WeldbotWeldOperator : HTNOperator
         _popup = sysManager.GetEntitySystem<SharedPopupSystem>();
         _damageableSystem = sysManager.GetEntitySystem<DamageableSystem>();
         _tagSystem = sysManager.GetEntitySystem<TagSystem>();
-        _flammableSystem = sysManager.GetEntitySystem<FlammableSystem>();
     }
 
     public override void TaskShutdown(NPCBlackboard blackboard, HTNOperatorStatus status)
@@ -62,7 +58,7 @@ public sealed partial class WeldbotWeldOperator : HTNOperator
 
         var tagPrototype = _prototypeManager.Index<TagPrototype>("SiliconMob");
 
-        if (_entMan.TryGetComponent<TagComponent>(target, out var tagComponent) && _tagSystem.HasTag(tagComponent, tagPrototype))
+        if (!_entMan.TryGetComponent<TagComponent>(target, out var tagComponent) || !_tagSystem.HasTag(tagComponent, tagPrototype))
             return HTNOperatorStatus.Failed;
 
         if (!_entMan.TryGetComponent<WeldbotComponent>(owner, out var botComp))
@@ -81,10 +77,12 @@ public sealed partial class WeldbotWeldOperator : HTNOperator
 
         if (botComp.IsEmagged)
         {
-            if (!_entMan.TryGetComponent<FlammableComponent>(target, out var flammableComponent))
+            if (!_prototypeManager.TryIndex<DamageGroupPrototype>("Burn", out var prototype))
+            {
                 return HTNOperatorStatus.Failed;
+            }
 
-            _flammableSystem.Ignite(target, owner, flammableComponent);
+            _damageableSystem.TryChangeDamage(target, new DamageSpecifier(prototype, 10), true, false, damage);
         }
         else
         {
@@ -93,7 +91,7 @@ public sealed partial class WeldbotWeldOperator : HTNOperator
                 return HTNOperatorStatus.Failed;
             }
 
-            _damageableSystem.TryChangeDamage(target, new DamageSpecifier(prototype, -5), true, false, damage);
+            _damageableSystem.TryChangeDamage(target, new DamageSpecifier(prototype, -50), true, false, damage);
         }
 
         _audio.PlayPvs(botComp.WeldSound, target);

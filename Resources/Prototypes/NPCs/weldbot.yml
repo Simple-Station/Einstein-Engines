@@ -13,7 +13,7 @@
   branches:
     - tasks:
         - !type:HTNPrimitiveTask
-          operator: !type:PickNearbyInjectableOperator
+          operator: !type:PickNearbyWeldableOperator
             targetKey: WeldTarget
             targetMoveKey: TargetCoordinates
 
