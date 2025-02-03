@@ -274,6 +274,10 @@
     - type: loadout
       id: LoadoutUniformJumpsuitYogaGymBra
     - type: loadout
+      id: LoadoutUniformJumpsuitBlackTurtleneck
+    - type: loadout
+      id: LoadoutUniformJumpsuitBlackTurtleneckFlipped
+    - type: loadout
       id: LoadoutUniformJumpsuitSuitRolledSleeves
     - type: loadout
       id: LoadoutUniformJumpsuitBartenderGrey

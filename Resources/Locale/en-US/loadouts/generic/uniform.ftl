@@ -43,5 +43,6 @@ loadout-name-LoadoutUniformJumpsuitSailor = sailor suit (colorable)
 loadout-name-LoadoutUniformJumpsuitTrackpants = track pants (colorable)
 loadout-name-LoadoutUniformJumpsuitTurtleneckGrey = grey turtleneck (colorable)
 loadout-name-LoadoutUniformJumpsuitYogaGymBra = yoga gym bra (colorable)
+loadout-name-LoadoutUniformJumpsuitBlackTurtleneckFlipped = black turtleneck, rolled sleeves
 loadout-name-LoadoutUniformEnvirosuitBlackPinkAlt = black pink envirosuit, alternative
 loadout-name-LoadoutUniformEnvirosuitEnviroslacksMNKAlt = MNK enviroslacks, alternative

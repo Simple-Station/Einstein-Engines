@@ -88,3 +88,27 @@
       amount: 1
   products:
     Mothamphetamine: 3  
+
+- type: reaction
+  id: DoubleIceCream
+  reactants:
+    RootBeerFloat:
+      amount: 1
+    IceCream:
+      amount: 1
+    Sugar:
+      amount: 1
+  products:
+    DoubleIceCream: 3
+
+- type: reaction
+  id: DrGibbBloodRed
+  reactants:
+    DrGibb:
+      amount: 3
+    Blood:
+      amount: 2
+    Sugar:
+      amount: 1
+  products:
+    DrGibbBloodRed: 6

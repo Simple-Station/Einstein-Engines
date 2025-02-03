@@ -3,6 +3,9 @@
   id: AllowLamiaHardsuit
 
 - type: Tag
+  id: Bayonet #Craftable Musket
+
+- type: Tag
   id: BeltSlotNotBelt #not a 'belt'
 
 - type: Tag
@@ -10,6 +13,9 @@
 
 - type: Tag
   id: CartridgeSpecial # For the .38 special ammo and revolver
+
+- type: Tag
+  id: CartridgeMusket #For the Craftable Musket
 
 - type: Tag
   id: Directional
@@ -36,6 +42,12 @@
   id: MagazinePistolSpecial # For the .38 special ammo and pistol
 
 - type: Tag
+  id: ModularBreech #Craftable Musket
+
+- type: Tag
+  id: ModularTrigger #Craftable Musket
+
+- type: Tag
   id: SecDogWearable # allows Laika to wear meson goggles (and more later?)
 
 - type: Tag
@@ -49,6 +61,9 @@
 
 - type: Tag
   id: PaperSlip
+
+- type: Tag
+  id: HudMedicalSecurity #Craftable Corpsman Glasses
 
 - type: Tag
   id: Skirt

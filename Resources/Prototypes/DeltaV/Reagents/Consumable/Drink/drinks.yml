@@ -171,7 +171,7 @@
   parent: BaseDrink
   desc: reagent-desc-kvass
   physicalDesc: reagent-physical-desc-bubbly
-  flavor: bread
+  flavor: kvass #Delta-V Flavor additions
   color: "#381600"
   metamorphicSprite:
     sprite: DeltaV/Objects/Consumable/Drinks/kvass.rsi
@@ -194,7 +194,7 @@
   parent: BaseDrink
   desc: reagent-desc-mothamphetamine
   physicalDesc: reagent-physical-desc-fuzzy
-  flavor: cotton
+  flavor: mothamphetamine #Delta-V Flavor additions
   color: "#2fa1ef"
   metamorphicSprite:
     sprite: DeltaV/Objects/Consumable/Drinks/mothamphetamine.rsi
@@ -213,3 +213,19 @@
     Poison:
       effects:
       - !type:Jitter
+
+- type: reagent
+  id: DoubleIceCream
+  name: reagent-name-double-ice-cream
+  parent: BaseSoda
+  desc: reagent-desc-double-ice-cream
+  physicalDesc: reagent-physical-desc-fizzy-and-creamy
+  flavor: doubleicecream
+  color: "#a06f42"
+  metamorphicSprite:
+    sprite:  DeltaV/Objects/Consumable/Drinks/doubleicecreamglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  fizziness: 0.4

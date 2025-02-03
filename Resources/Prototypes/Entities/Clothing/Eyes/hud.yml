@@ -190,6 +190,9 @@
   - type: ShowHealthIcons
     damageContainers:
     - Biological
+  - type: Tag
+    tags:
+    - HudMedicalSecurity
 
 - type: entity
   parent: [ClothingEyesBase, ShowSecurityIcons]

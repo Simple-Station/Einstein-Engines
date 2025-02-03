@@ -109,7 +109,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: ClothingEyesHudSecurity
+      - id: ClothingEyesGlassesCorpsman # DeltaV - Corpsman Glasses
       - id: WeaponDisabler
       - id: TrackingImplanter
         amount: 2
@@ -149,7 +149,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: ClothingEyesHudSecurity
+      - id: ClothingEyesGlassesCorpsman # DeltaV - Corpsman Glasses
       - id: WeaponDisabler
       - id: TrackingImplanter
         amount: 2

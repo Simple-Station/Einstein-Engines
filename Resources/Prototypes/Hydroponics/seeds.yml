@@ -1038,6 +1038,7 @@
     - FoodChiliPepper
   mutationPrototypes:
     - chilly
+    - GhostPepper #Delta-V
   harvestRepeat: Repeat
   lifespan: 25
   maturation: 6
@@ -1283,7 +1284,7 @@
   productPrototypes:
     - FoodGalaxythistle
   mutationPrototypes:
-    - glasstle
+    - CrystalThistle #Delta-V
   lifespan: 25
   maturation: 10
   production: 3
