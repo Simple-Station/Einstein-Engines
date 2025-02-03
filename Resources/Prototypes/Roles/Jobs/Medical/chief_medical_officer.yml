@@ -7,17 +7,11 @@
   playTimeTracker: JobChiefMedicalOfficer
   antagAdvantage: 6 # DeltaV - Reduced TC: Head of Staff
   requirements:
-    - !type:CharacterPlaytimeRequirement
-      tracker: JobChemist
-      min: 14400 #DeltaV 4 hrs
-#    - !type:RoleTimeRequirement # DeltaV - No Medical Doctor time requirement
-#      role: JobMedicalDoctor
-#      time: 21600 #6 hrs
-    - !type:CharacterDepartmentTimeRequirement
-      department: Medical
-      min: 43200 # DeltaV - 12 hours
-    - !type:CharacterOverallTimeRequirement
-      min: 90000 # 25 hours
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
   weight: 10
   startingGear: CMOGear
   icon: "JobIconChiefMedicalOfficer"

@@ -3,12 +3,6 @@
   name: job-name-guard
   description: job-description-guard
   playTimeTracker: JobPrisonGuard
-  requirements:
-    - !type:CharacterOverallTimeRequirement
-      min: 18000
-    - !type:CharacterDepartmentTimeRequirement
-      department: Security
-      min: 14400
   startingGear: PrisonGuardGear
   alwaysUseSpawner: true
   canBeAntag: false

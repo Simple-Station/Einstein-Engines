@@ -1,0 +1,79 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Created by discord:prazat911",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "beard-beardchin",
+            "directions": 4
+        },
+        {
+            "name": "beard-beardlong",
+            "directions": 4
+        },
+        {
+            "name": "beard-beardshort",
+            "directions": 4
+        },
+        {
+            "name": "beard-beardthick",
+            "directions": 4
+        },
+        {
+            "name": "beard-beardviking",
+            "directions": 4
+        },
+        {
+            "name": "beard-bristle",
+            "directions": 4
+        },
+        {
+            "name": "beard-mustachewithstubble",
+            "directions": 4
+        },
+        {
+            "name": "beard-thickbristle",
+            "directions": 4
+        },
+        {
+            "name": "hair-arabicgatheredhair",
+            "directions": 4
+        },
+        {
+            "name": "hair-classichairmale",
+            "directions": 4
+        },
+        {
+            "name": "hair-combedfromside",
+            "directions": 4
+        },
+        {
+            "name": "hair-longhair",
+            "directions": 4
+        },
+        {
+            "name": "hair-manbunold",
+            "directions": 4
+        },
+        {
+            "name": "hair-pigtailtajaran",
+            "directions": 4
+        },
+        {
+            "name": "hair-shavedside",
+            "directions": 4
+        },
+        {
+            "name": "hair-shorthaired",
+            "directions": 4
+        },
+        {
+            "name": "hair-womenbun",
+            "directions": 4
+        }
+    ]
+}

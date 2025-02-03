@@ -1,0 +1,8 @@
+- type: damageModifierSet 
+  id: Tajaran
+  coefficients:
+    Blunt: 1.15
+    Slash: 1.15
+    Piercing: 1.15
+    Heat: 1.35
+    Cold: 0.65

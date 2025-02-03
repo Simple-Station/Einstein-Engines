@@ -78,3 +78,14 @@
   id: OnlyYou
   path: /Fonts/Only_You.otf
 
+- type: font
+  id: Sriracha
+  path: /Fonts/Sriracha/Sriracha.ttf
+
+- type: font
+  id: GrenzeGotisch
+  path: /Fonts/Grenze_Gotisch/GrenzeGotisch.ttf
+
+- type: font
+  id: RubikDirt
+  path: /Fonts/Rubik_Dirt/RubikDirt.ttf

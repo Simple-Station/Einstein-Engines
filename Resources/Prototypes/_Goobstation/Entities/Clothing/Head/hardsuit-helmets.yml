@@ -1,0 +1,23 @@
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitBlueshield
+  name: blueshield's hardsuit helmet
+  description: Blueshield hardsuit with a top of the line gunlink. Belongs to the Blueshield.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Head/Hardsuits/blueshield.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Head/Hardsuits/blueshield.rsi
+  - type: PointLight
+    color: "#57b9ff"
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9

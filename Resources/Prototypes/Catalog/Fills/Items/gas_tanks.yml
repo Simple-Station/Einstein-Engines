@@ -117,7 +117,7 @@
   - type: GasTank
     outputPressure: 5.325
     air:
-      # 36 minutes with Plasmaman lungs
+      # 37 minutes with Plasmaman lungs
       volume: 1.5
       moles:
         - 0           # oxygen
@@ -163,7 +163,7 @@
   - type: GasTank
     outputPressure: 5.325
     air:
-      # 60 minutes with Plasmaman lungs
+      # 62 minutes with Plasmaman lungs
       volume: 1.5
       moles:
         - 0           # oxygen
@@ -260,9 +260,9 @@
   suffix: Filled
   components:
   - type: GasTank
-    outputPressure: 21.3
+    outputPressure: 5.325
     air:
-      # 6 minutes of agony
+      # 125.2 minutes with Plasmaman lungs
       volume: 5
       moles:
         - 0           # oxygen
@@ -270,13 +270,3 @@
         - 0           # CO2
         - 2.051379050 # plasma
       temperature: 293.15
-
-- type: entity
-  id: PlasmaTankFilledInternals
-  parent: PlasmaTankFilled
-  name: plasma tank
-  suffix: Filled, Plasmaman Internals
-  components:
-  - type: GasTank
-    # 120 minutes with Plasmaman lungs
-    outputPressure: 5.325

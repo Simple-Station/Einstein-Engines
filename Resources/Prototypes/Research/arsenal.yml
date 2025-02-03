@@ -189,7 +189,8 @@
   cost: 25000
   recipeUnlocks:
   - ClothingOuterHardsuitCombatAdvanced
-  - ClothingOuterHardsuitSyndieReverseEngineered
+  - ClothingOuterHardsuitShanlinUnpainted
+  - ClothingOuterHardsuitShiweiUnpainted
   - ClothingOuterHardsuitJuggernautReverseEngineered
   #- ClothingOuterHardsuitCybersunEliteUnpainted # IOU
   technologyPrerequisites:
