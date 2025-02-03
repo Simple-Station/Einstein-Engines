@@ -4,7 +4,6 @@
   entityMask:
     AsteroidRock: AsteroidRockTin
     WallRock: WallRockTin
-    WallRockBasalt: WallRockBasaltTin
     WallRockChromite: WallRockChromiteTin
     WallRockSand: WallRockSandTin
     WallRockSnow: WallRockSnowTin
@@ -14,11 +13,49 @@
   radius: 4
 
 - type: biomeMarkerLayer
+  id: OreAluminium
+  entityMask:
+    AsteroidRock: AsteroidRockAluminium
+    WallRock: WallRockAluminium
+    WallRockChromite: WallRockChromiteAluminium
+    WallRockSand: WallRockSandAluminium
+    WallRockSnow: WallRockSnowAluminium
+  maxCount: 30
+  minGroupSize: 7
+  maxGroupSize: 15
+  radius: 4
+
+- type: biomeMarkerLayer
+  id: OreCopper
+  entityMask:
+    AsteroidRock: AsteroidRockCopper
+    WallRock: WallRockCopper
+    WallRockChromite: WallRockChromiteCopper
+    WallRockSand: WallRockSandCopper
+    WallRockSnow: WallRockSnowCopper
+  maxCount: 30
+  minGroupSize: 7
+  maxGroupSize: 15
+  radius: 4
+
+- type: biomeMarkerLayer
+  id: OreLead
+  entityMask:
+    AsteroidRock: AsteroidRockLead
+    WallRock: WallRockLead
+    WallRockChromite: WallRockChromiteLead
+    WallRockSand: WallRockSandLead
+    WallRockSnow: WallRockSnowLead
+  maxCount: 30
+  minGroupSize: 5
+  maxGroupSize: 8
+  radius: 4
+
+- type: biomeMarkerLayer
   id: OreQuartz
   entityMask:
     AsteroidRock: AsteroidRockQuartz
     WallRock: WallRockQuartz
-    WallRockBasalt: WallRockBasaltQuartz
     WallRockChromite: WallRockChromiteQuartz
     WallRockSnow: WallRockSnowQuartz
   maxCount: 30
@@ -31,7 +68,6 @@
   entityMask:
     AsteroidRock: AsteroidRockCoal
     WallRock: WallRockCoal
-    WallRockBasalt: WallRockBasaltCoal
     WallRockChromite: WallRockChromiteCoal
     WallRockSand: WallRockSandCoal
     WallRockSnow: WallRockSnowCoal
@@ -45,7 +81,6 @@
   entityMask:
     AsteroidRock: AsteroidRockSalt
     WallRock: WallRockSalt
-    WallRockBasalt: WallRockBasaltSalt
     WallRockChromite: WallRockChromiteSalt
     WallRockSand: WallRockSandSalt
     WallRockSnow: WallRockSnowSalt
@@ -61,7 +96,6 @@
   entityMask:
     AsteroidRock: AsteroidRockGold
     WallRock: WallRockGold
-    WallRockBasalt: WallRockBasaltGold
     WallRockChromite: WallRockChromiteGold
     WallRockSand: WallRockSandGold
     WallRockSnow: WallRockSnowGold
@@ -76,7 +110,6 @@
   entityMask:
     AsteroidRock: AsteroidRockSilver
     WallRock: WallRockSilver
-    WallRockBasalt: WallRockBasaltSilver
     WallRockChromite: WallRockChromiteSilver
     WallRockSand: WallRockSandSilver
     WallRockSnow: WallRockSnowSilver
@@ -92,7 +125,6 @@
   entityMask:
     AsteroidRock: AsteroidRockPlasma
     WallRock: WallRockPlasma
-    WallRockBasalt: WallRockBasaltPlasma
     WallRockChromite: WallRockChromitePlasma
     WallRockSand: WallRockSandPlasma
     WallRockSnow: WallRockSnowPlasma
@@ -107,7 +139,6 @@
   entityMask:
     AsteroidRock: AsteroidRockUranium
     WallRock: WallRockUranium
-    WallRockBasalt: WallRockBasaltUranium
     WallRockChromite: WallRockChromiteUranium
     WallRockSand: WallRockSandUranium
     WallRockSnow: WallRockSnowUranium
@@ -121,7 +152,6 @@
   entityMask:
     AsteroidRock: AsteroidRockBananium
     WallRock: WallRockBananium
-    WallRockBasalt: WallRockBasaltBananium
     WallRockChromite: WallRockChromiteBananium
     WallRockSand: WallRockSandBananium
     WallRockSnow: WallRockSnowBananium
@@ -135,7 +165,6 @@
   entityMask:
     AsteroidRock: AsteroidRockDiamond
     WallRock: WallRockDiamond
-    WallRockBasalt: WallRockBasaltDiamond
     WallRockChromite: WallRockChromiteDiamond
     WallRockSand: WallRockSandDiamond
     WallRockSnow: WallRockSnowDiamond
@@ -150,7 +179,6 @@
   entityMask:
     AsteroidRock: AsteroidRockArtifactFragment
     WallRock: WallRockArtifactFragment
-    WallRockBasalt: WallRockBasaltArtifactFragment
     WallRockChromite: WallRockChromiteArtifactFragment
     WallRockSand: WallRockSandArtifactFragment
     WallRockSnow: WallRockSnowArtifactFragment
@@ -165,7 +193,6 @@
   entityMask:
     AsteroidRock: AsteroidRockBluespace
     WallRock: WallRockBluespace
-    WallRockBasalt: WallRockBasaltBluespace
     WallRockChromite: WallRockChromiteBluespace
     WallRockSand: WallRockSandBluespace
     WallRockSnow: WallRockSnowBluespace
@@ -179,7 +206,6 @@
   entityMask:
     AsteroidRock: AsteroidRockNormality
     WallRock: WallRockNormality
-    WallRockBasalt: WallRockBasaltNormality
     WallRockChromite: WallRockChromiteNormality
     WallRockSand: WallRockSandNormality
     WallRockSnow: WallRockSnowNormality

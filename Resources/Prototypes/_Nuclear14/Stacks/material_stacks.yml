@@ -1,0 +1,63 @@
+- type: stack
+  id: Circuitry
+  name: circuitry
+  icon: { sprite: _Nuclear14/Objects/Misc/materials.rsi, state: circuits_3 }
+  spawn: N14MaterialCircuitry1
+  maxCount: 15
+
+- type: stack
+  id: N14AluminiumOre
+  name: bauxite
+  icon: { sprite: "/Textures/_Nuclear14/Objects/Misc/materials.rsi", state: lead }
+  spawn: N14AluminiumOre1
+  maxCount: 10
+  itemSize: 1
+
+- type: stack
+  id: N14LeadOre
+  name: lead ore
+  icon: { sprite: "/Textures/_Nuclear14/Objects/Misc/materials.rsi", state: lead }
+  spawn: N14LeadOre1
+  maxCount: 10
+  itemSize: 1
+
+- type: stack
+  id: N14CopperOre
+  name: copper ore
+  icon: { sprite: "/Textures/_Nuclear14/Objects/Misc/materials.rsi", state: copper }
+  spawn: N14CopperOre1
+  maxCount: 30
+  itemSize: 1
+
+- type: stack
+  id: SulfurOre
+  name: sulfur ore
+  icon: { sprite: "/Textures/_Nuclear14/Objects/Misc/materials.rsi", state: sulfur }
+  spawn: SulfurOre1
+  maxCount: 10
+  itemSize: 1
+
+# Metals
+- type: stack
+  id: Lead
+  name: lead
+  icon: { sprite: "/Textures/_Nuclear14/Objects/Misc/materials.rsi", state: ingot_lead }
+  spawn: N14IngotLead1
+  maxCount: 30
+  itemSize: 1
+
+- type: stack
+  id: Aluminium
+  name: aluminium
+  icon: { sprite: "/Textures/_Nuclear14/Objects/Misc/materials.rsi", state: ingot_aluminum }
+  spawn: N14IngotAluminium1
+  maxCount: 30
+  itemSize: 1
+
+- type: stack
+  id: N14Copper
+  name: copper
+  icon: { sprite: "/Textures/_Nuclear14/Objects/Misc/materials.rsi", state: ingot_copper }
+  spawn: N14IngotCopper1
+  maxCount: 30
+  itemSize: 1

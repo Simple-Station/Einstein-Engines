@@ -11,7 +11,7 @@
   category: Tacsuits
   completetime: 60
   materials:
-     Plasteel: 3000
+     Tungsten: 300
      Durathread: 300
      ReinforcedGlass: 1000
      Uranium: 100
@@ -24,7 +24,7 @@
   category: Tacsuits
   completetime: 60
   materials:
-     Plasteel: 3000
+     Tungsten: 300
      Durathread: 300
      ReinforcedGlass: 1000
      Uranium: 100
@@ -38,7 +38,7 @@
   category: Tacsuits
   completetime: 90
   materials:
-     Plasteel: 3500
+     Tungsten: 350
      ReinforcedGlass: 1250
      Durathread: 500
      Plastic: 500
@@ -54,7 +54,7 @@
   category: Tacsuits
   completetime: 120
   materials:
-     Plasteel: 5000
+     Tungsten: 500
      WebSilk: 3000
      ReinforcedGlass: 1500
      Plastic: 1000
@@ -68,7 +68,7 @@
   category: Tacsuits
   completetime: 180
   materials:
-     Plasteel: 8000
+     Tungsten: 800
      WebSilk: 3000
      ReinforcedGlass: 1500
      Plastic: 1500
@@ -82,7 +82,7 @@
   category: Tacsuits
   completetime: 120
   materials:
-     Plasteel: 10000
+     Tungsten: 1000
      WebSilk: 3000
      ReinforcedPlasmaGlass: 1500
      Plastic: 1500
@@ -97,7 +97,7 @@
   category: Tacsuits
   completetime: 300
   materials: # GOOD LUCK.
-     Plasteel: 30000
+     Tungsten: 3000
      ReinforcedPlasmaGlass: 4500
      WebSilk: 3500
      Plastic: 3000

@@ -1,0 +1,32 @@
+- type: material
+  id: RawAluminium
+  stackEntity: N14AluminiumOre1
+  name: materials-raw-aluminium
+  unit: materials-unit-chunk
+  icon: { sprite: /Textures/_Nuclear14/Objects/Misc/materials.rsi, state: aluminium }
+  price: 0.05
+
+- type: material
+  id: RawLead
+  stackEntity: N14LeadOre1
+  name: materials-raw-lead
+  unit: materials-unit-chunk
+  icon: { sprite: /Textures/_Nuclear14/Objects/Misc/materials.rsi, state: lead }
+  price: 0.05
+
+- type: material
+  id: RawSulfur
+  stackEntity: SulfurOre1
+  name: materials-raw-sulfur
+  unit: materials-unit-chunk
+  icon: { sprite: /Textures/_Nuclear14/Objects/Misc/materials.rsi, state: sulfur }
+  price: 0.05
+
+- type: material
+  id: N14RawCopper
+  stackEntity: N14CopperOre1
+  name: materials-raw-copper
+  unit: materials-unit-chunk
+  icon: { sprite: /Textures/_Nuclear14/Objects/Misc/materials.rsi, state: copper }
+  color: "#9A6E3A"
+  price: 0.05

@@ -126,6 +126,28 @@
       proto: OreIron
 
 - type: salvageLoot
+  id: OreAluminium
+  guaranteed: true
+  loots:
+    - !type:BiomeMarkerLoot
+      proto: OreAluminium
+
+- type: salvageLoot
+  id: OreCopper
+  guaranteed: true
+  loots:
+    - !type:BiomeMarkerLoot
+      proto: OreCopper
+
+- type: salvageLoot
+  id: OreLead
+  guaranteed: true
+  loots:
+    - !type:BiomeMarkerLoot
+      proto: OreLead
+
+
+- type: salvageLoot
   id: OreCoal
   guaranteed: true
   loots:
