@@ -463,8 +463,9 @@ public sealed partial class TraitModifyMobState : TraitFunction
         var _proto = IoCManager.Resolve<IPrototypeManager>();
 
         foreach (var pair in Params) {
-            DebugTools.Assert(_reflection.TryParseEnumReference($"enum.MobState.{pair.Key}", out var e), $"MobState.{pair.Key} does not exist.");
-            MobState state = (MobState) e;
+            var succ = _reflection.TryParseEnumReference($"enum.MobState.{pair.Key}", out var rawEnum);
+            DebugTools.Assert(succ, $"MobState.{pair.Key} does not exist.");
+            MobState state = (MobState) rawEnum!;
             MobStateParametersPrototype current = comp.MobStateParams[state];
             var mod = _proto.Index<MobStateParametersPrototype>(pair.Value);
             current.MergeWith(mod);
