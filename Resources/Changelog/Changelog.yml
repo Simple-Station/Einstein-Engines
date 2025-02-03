@@ -11049,3 +11049,13 @@ Entries:
   id: 6789
   time: '2025-02-03T04:45:50.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1708
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Both standard Cloner, and Metem Machines(when you win the psychic
+        willpower roll) now correctly transfer over your old character
+        appearance.
+  id: 6790
+  time: '2025-02-03T04:56:21.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1709
