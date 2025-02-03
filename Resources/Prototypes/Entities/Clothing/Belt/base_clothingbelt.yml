@@ -11,18 +11,29 @@
     slots: [belt]
     quickEquip: false
     equipSound:
-      path: /Audio/SimpleStation14/Items/Equip/toolbelt_equip.ogg
+      path: /Audio/SimpleStation14/Items/Handling/toolbelt_pickup.ogg
+      params:
+        volume: -10
   - type: PhysicalComposition
     materialComposition:
       Cloth: 50
   - type: StaticPrice
     price: 20
   - type: EmitSoundOnPickup
-    sound: /Audio/SimpleStation14/Items/Handling/toolbelt_pickup.ogg
+    sound:
+      path: /Audio/SimpleStation14/Items/Handling/toolbelt_pickup.ogg
+      params:
+        volume: -10
   - type: EmitSoundOnDrop
-    sound: /Audio/SimpleStation14/Items/Handling/toolbelt_drop.ogg
+    sound:
+      path: /Audio/SimpleStation14/Items/Handling/toolbelt_pickup.ogg
+      params:
+        volume: -10
   - type: EmitSoundOnLand
-    sound: /Audio/SimpleStation14/Items/Handling/toolbelt_drop.ogg
+    sound:
+      path: /Audio/SimpleStation14/Items/Handling/toolbelt_pickup.ogg
+      params:
+        volume: -10
 
 - type: entity
   abstract: true

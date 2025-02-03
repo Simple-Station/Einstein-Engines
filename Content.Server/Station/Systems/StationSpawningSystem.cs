@@ -12,6 +12,7 @@ using Content.Server.Station.Components;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
 using Content.Shared.CCVar;
+using Content.Shared.Customization.Systems;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.PDA;
@@ -50,6 +51,7 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
     [Dependency] private readonly InternalEncryptionKeySpawner _internalEncryption = default!;
     [Dependency] private readonly ArrivalsSystem _arrivalsSystem = default!;
     [Dependency] private readonly ContainerSpawnPointSystem _containerSpawnPointSystem = default!;
+    [Dependency] private readonly CharacterRequirementsSystem _characterRequirements = default!;
 
     private bool _randomizeCharacters;
 
@@ -142,6 +144,9 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
         if (prototype?.StartingGear != null)
         {
             var startingGear = _prototypeManager.Index<StartingGearPrototype>(prototype.StartingGear);
+            if (profile != null)
+                startingGear = ApplySubGear(startingGear, profile, prototype);
+
             EquipStartingGear(entity.Value, startingGear, raiseEvent: false);
             if (profile != null)
                 EquipIdCard(entity.Value, profile.Name, prototype, station);

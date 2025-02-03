@@ -19,6 +19,7 @@ character-item-group-LoadoutSmokes = Smokeables
 character-item-group-LoadoutBoxKits = Survival Kits
 character-item-group-LoadoutWritables = Writing Tools
 character-item-group-LoadoutPets = Pets
+character-item-group-LoadoutCards = Playing Cards
 
 # Job Specific Template
 character-item-group-LoadoutJOBBackpacks = JOB Backpacks
@@ -796,3 +797,7 @@ character-item-group-LoadoutReporterUniforms = Reporter Uniforms
 # Traits - Languages
 character-item-group-TraitsLanguagesBasic = Basic Languages
 character-item-group-TraitsAccents = Accents
+
+# Traits - Mind Or Machine
+character-item-group-TraitsMind = Mind Over Machine
+character-item-group-TraitsMachine = Machine Over Mind

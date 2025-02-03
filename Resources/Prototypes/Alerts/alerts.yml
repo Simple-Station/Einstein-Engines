@@ -7,8 +7,8 @@
     - category: Health
     - category: Mood
     - category: Stamina
-    - alertType: Mana
     - alertType: SuitPower
+    - alertType: ModsuitPower # Goobstation - Modsuits
     - category: Internals
     - alertType: Fire
     - alertType: Handcuffed
@@ -54,6 +54,24 @@
       state: not_enough_nitro
   name: alerts-low-nitrogen-name
   description: alerts-low-nitrogen-desc
+
+- type: alert
+  id: LowPlasma
+  category: Breathing
+  icons:
+    - sprite: /Textures/Interface/Alerts/breathing.rsi
+      state: not_enough_tox
+  name: alerts-low-plasma-name
+  description: alerts-low-plasma-desc
+
+- type: alert
+  id: HighOxygen
+  category: Breathing
+  icons:
+    - sprite: /Textures/Interface/Alerts/breathing.rsi
+      state: too_much_oxy
+  name: alerts-high-oxygen-name
+  description: alerts-high-oxygen-desc
 
 - type: alert
   id: Toxins
@@ -619,28 +637,3 @@
     state: deflecting0
   name: alerts-deflecting-name
   description: alerts-deflecting-desc
-
-- type: alert
-  id: Mana
-  onClick: !type:CheckMana { }
-  icons:
-  - sprite: /Textures/Interface/Alerts/mana.rsi
-    state: power0
-  - sprite: /Textures/Interface/Alerts/mana.rsi
-    state: power1
-  - sprite: /Textures/Interface/Alerts/mana.rsi
-    state: power2
-  - sprite: /Textures/Interface/Alerts/mana.rsi
-    state: power3
-  - sprite: /Textures/Interface/Alerts/mana.rsi
-    state: power4
-  - sprite: /Textures/Interface/Alerts/mana.rsi
-    state: power5
-  - sprite: /Textures/Interface/Alerts/mana.rsi
-    state: power6
-  - sprite: /Textures/Interface/Alerts/mana.rsi
-    state: power7
-  name: alerts-mana-name
-  description: alerts-mana-desc
-  minSeverity: 0
-  maxSeverity: 7

@@ -645,6 +645,24 @@
     - Truncheon
 
 - type: loadout
+  id: LoadoutSecurityEquipmentEnergySword
+  category: JobsSecurityAUncategorized
+  cost: 4
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 18000 # 5 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityWeapons
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - EnergyCutlassSecurity
+
+- type: loadout
   id: LoadoutSecurityPistolSvalin
   category: JobsSecurityAUncategorized
   cost: 1
@@ -926,6 +944,25 @@
   items:
     - WeaponRevolverArgentiNonLethalSecurity
 
+- type: loadout
+  id: LoadoutSecurityEnergyRevolver
+  category: JobsSecurityAUncategorized
+  cost: 10
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityWeapons
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 18000 # 5 hours
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterAgeRequirement
+      min: 21
+  items:
+    - WeaponEnergyRevolverSecurity
 
 # Eyes
 - type: loadout
@@ -1292,3 +1329,39 @@
         - Security
   items:
     - ClothingUniformJumpsuitSecSummer
+
+- type: loadout
+  id: LoadoutSecurityUniformEnvirosuitBlue
+  category: JobsSecurityAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityUniforms
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Plasmaman
+  items:
+    - ClothingUniformEnvirosuitSecBlue
+    - ClothingHeadEnvirohelmSecBlue
+
+- type: loadout
+  id: LoadoutSecurityUniformEnvirosuitGrey
+  category: JobsSecurityAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityUniforms
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Plasmaman
+  items:
+    - ClothingUniformEnvirosuitSecGrey
+    - ClothingHeadEnvirohelmSecGrey

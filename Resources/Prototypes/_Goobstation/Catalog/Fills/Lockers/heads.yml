@@ -29,6 +29,8 @@
     - id: WeaponLeverChester
     - id: WeaponEnergyRevolver
     - id: BlueshieldAmmunitionBoxFilled
+    - id: ClothingOuterHardsuitBlueshield
+    - id: ClothingBlueshieldArmoredCoat
 
 - type: entity
   id: LockerMagistrateFilled

@@ -15129,7 +15129,7 @@ entities:
       pos: 34.5,-35.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -55586.55
+      secondsUntilStateChange: -55771.664
       state: Opening
   - uid: 383
     components:
@@ -62311,6 +62311,14 @@ entities:
     components:
     - type: Transform
       pos: -12.5,-55.5
+      parent: 2
+- proto: ComputerPsionicsRecords
+  entities:
+  - uid: 22318
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -5.5,-28.5
       parent: 2
 - proto: ComputerRadar
   entities:
@@ -157782,7 +157790,7 @@ entities:
       links:
       - 19976
     - type: Door
-      secondsUntilStateChange: -191878.86
+      secondsUntilStateChange: -192063.97
       state: Opening
   - uid: 23356
     components:

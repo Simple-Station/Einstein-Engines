@@ -95,6 +95,9 @@ trait-description-NormalVisionHarpy =
     Your eyes have been modified by means of advanced medicine to see in the standard colors of Red, Green, and Blue.
     You do not have the usual vision anomaly that your species may possess.
 
+trait-name-SkeletonAccent = Skeleton Accent
+trait-description-SkeletonAccent = You have a humerus skeleton accent that will rattle others to the bone!
+
 trait-name-NormalVision = Trichromat Modification
 trait-description-NormalVision =
     Your eyes have been modified by means of advanced medicine to see in the standard colors of Red, Green, and Blue.
@@ -328,7 +331,7 @@ trait-description-Clumsy =
 trait-name-Small = Small
 trait-description-Small =
     You are much smaller than a typical person, and can climb into spaces others would not normally be able to fit into, such as duffel bags.
-    This trait does not in any way modify your character's size, it merely requires that your character be at most the size of a standard Felinid.
+    This trait does not in any way modify your character's size, it merely requires that your character be at most the size of a standard Tajaran.
 
 trait-name-TemperatureTolerance = Temperature Tolerance
 trait-description-TemperatureTolerance =
@@ -500,11 +503,12 @@ trait-description-PsychognomyPower =
 
 trait-name-Redshirt = Redshirt
 trait-description-Redshirt =
-    They said this air would be breathable.
+    "They said this air would be breathable.
     Get in, get out again, and no one gets hurt.
     Something is pulling me up the hill.
     I look down in my red shirt.
-    I look down in my red shirt.
+    I look down in my red shirt."
+    Reduces your threshold for death by 100 points.
 
 trait-name-BrittleBoneDisease = Osteogenesis Imperfecta
 trait-description-BrittleBoneDisease =
@@ -519,3 +523,7 @@ trait-name-ThermographicVision = CyberEyes Module: Thermographic Scanner
 trait-description-ThermographicVision =
     Your CyberEyes have been enhanced with a Thermographic Scanner. When enabled, it captures a snapshot of the user's surroundings, while highlighting all
     biological life forms. It can even detect individuals through the walls of a station.
+
+trait-name-ShadowkinBlackeye = Blackeye
+trait-description-ShadowkinBlackeye = 
+    You lose your special Shadowkin powers & respect amongst your peers, in return for some points. Effectively, you are only a Shadowkin in name, not in practice.

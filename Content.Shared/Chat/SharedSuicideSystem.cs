@@ -50,7 +50,7 @@ public sealed class SharedSuicideSystem : EntitySystem
         // Mob thresholds are sorted from alive -> crit -> dead,
         // grabbing the last key will give us how much damage is needed to kill a target from zero
         // The exact lethal damage amount is adjusted based on their current damage taken
-        var lethalAmountOfDamage = mobThresholds.Thresholds.Keys.Last() - target.Comp.TotalDamage;
+        var lethalAmountOfDamage = mobThresholds.Thresholds.Keys.Last() - target.Comp.Damage.GetTotal();
 
         // We don't want structural damage for the same reasons listed above
         if (!_prototypeManager.TryIndex(damageType, out var damagePrototype) || damagePrototype.ID == "Structural")

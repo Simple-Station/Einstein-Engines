@@ -1,7 +1,10 @@
+using Content.Server.Abilities.Chitinid;
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
-using Content.Server.Power.EntitySystems;
-using Content.Server.Stunnable;
+using Content.Server.Chat.Managers;
+using Content.Shared.Chat;
+//???//using Content.Server.Power.EntitySystems;
+//???//using Content.Server.Stunnable;
 using Content.Shared.Chemistry;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;
@@ -15,7 +18,8 @@ using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Stacks;
-using Content.Shared.StatusEffect;
+using Robust.Server.Player;
+//???//using Content.Shared.StatusEffect;
 
 namespace Content.Server.Chemistry.EntitySystems;
 
@@ -24,6 +28,10 @@ public sealed class InjectorSystem : SharedInjectorSystem
     [Dependency] private readonly BloodstreamSystem _blood = default!;
     [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
     [Dependency] private readonly ReactiveSystem _reactiveSystem = default!;
+    [Dependency] private readonly IChatManager _chat = default!;
+    [Dependency] private readonly IPlayerManager _playerManager = default!;
+
+    private const ChatChannel BlockInjectionDenyChannel = ChatChannel.Emotes;
 
     public override void Initialize()
     {
@@ -118,6 +126,24 @@ public sealed class InjectorSystem : SharedInjectorSystem
     /// </summary>
     private void InjectDoAfter(Entity<InjectorComponent> injector, EntityUid target, EntityUid user)
     {
+        if (TryComp<BlockInjectionComponent>(target, out var blockComponent)) // DeltaV
+        {
+            var msg = Loc.GetString($"injector-component-deny-{blockComponent.BlockReason}");
+            Popup.PopupEntity(msg, target, user);
+
+            if (!_playerManager.TryGetSessionByEntity(target, out var session))
+                return;
+
+            _chat.ChatMessageToOne(
+                BlockInjectionDenyChannel,
+                msg,
+                msg,
+                EntityUid.Invalid,
+                false,
+                session.Channel);
+            return;
+        }
+
         // Create a pop-up for the user
         if (injector.Comp.ToggleState == InjectorToggleMode.Draw)
         {
@@ -258,6 +284,9 @@ public sealed class InjectorSystem : SharedInjectorSystem
     private void TryInject(Entity<InjectorComponent> injector, EntityUid targetEntity,
         Entity<SolutionComponent> targetSolution, EntityUid user, bool asRefill)
     {
+        if (HasComp<BlockInjectionComponent>(targetEntity))  // DeltaV
+            return;
+
         if (!SolutionContainers.TryGetSolution(injector.Owner, injector.Comp.SolutionName, out var soln,
                 out var solution) || solution.Volume == 0)
             return;

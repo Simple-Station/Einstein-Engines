@@ -10,7 +10,7 @@ using Content.Server.Jobs;
 using Content.Server.Materials;
 using Content.Server.Popups;
 using Content.Server.Power.EntitySystems;
-using Content.Server.Traits.Assorted;
+using Content.Shared.Silicon.Components; // Goobstation
 using Content.Shared.Atmos;
 using Content.Shared.CCVar;
 using Content.Shared.Chemistry.Components;
@@ -84,6 +84,11 @@ public sealed partial class CloningSystem : EntitySystem
     [Dependency] private readonly SharedDrunkSystem _drunk = default!;
     [Dependency] private readonly MobThresholdSystem _thresholds = default!;
     public readonly Dictionary<MindComponent, EntityUid> ClonesWaitingForMind = new();
+
+    // <summary>
+    //   The minimum mass an entity needs for its mass to affect the cloning timer with a MassContest.
+    // </summary>
+    private const float MinMassContestMass = 71f;
 
     public override void Initialize()
     {
@@ -179,7 +184,8 @@ public sealed partial class CloningSystem : EntitySystem
     /// </summary>
     public bool TryCloning(EntityUid uid, EntityUid bodyToClone, Entity<MindComponent> mindEnt, CloningPodComponent clonePod, float failChanceModifier = 1)
     {
-        if (!_mobStateSystem.IsDead(bodyToClone)
+        var allowLivingPeople = _config.GetCVar(CCVars.CloningAllowLivingPeople);
+        if ((!allowLivingPeople && !_mobStateSystem.IsDead(bodyToClone))
             || clonePod.ActivelyCloning
             || clonePod.ConnectedConsole == null
             || !CheckUncloneable(uid, bodyToClone, clonePod, out var cloningCostMultiplier)
@@ -190,7 +196,8 @@ public sealed partial class CloningSystem : EntitySystem
         var mind = mindEnt.Comp;
         if (ClonesWaitingForMind.TryGetValue(mind, out var clone))
         {
-            if (EntityManager.EntityExists(clone) &&
+            if (!allowLivingPeople &&
+                EntityManager.EntityExists(clone) &&
                 !_mobStateSystem.IsDead(clone) &&
                 TryComp<MindContainerComponent>(clone, out var cloneMindComp) &&
                 (cloneMindComp.Mind == null || cloneMindComp.Mind == mindEnt))
@@ -199,7 +206,7 @@ public sealed partial class CloningSystem : EntitySystem
             ClonesWaitingForMind.Remove(mind);
         }
 
-        if (mind.OwnedEntity != null && !_mobStateSystem.IsDead(mind.OwnedEntity.Value)
+        if ((!allowLivingPeople && mind.OwnedEntity != null && !_mobStateSystem.IsDead(mind.OwnedEntity.Value))
             || mind.UserId == null
             || !_playerManager.TryGetSessionById(mind.UserId.Value, out var client)
             || !CheckBiomassCost(uid, physics, clonePod, cloningCostMultiplier))
@@ -210,6 +217,9 @@ public sealed partial class CloningSystem : EntitySystem
         if (pref == null
             || !_prototypeManager.TryIndex(humanoid.Species, out var speciesPrototype))
             return false;
+
+        if (HasComp<SiliconComponent>(bodyToClone))
+            return false; // Goobstation: Don't clone IPCs.
 
         // Yes, this can return true without making a body. If it returns true, we're making clone soup instead.
         if (CheckGeneticDamage(uid, bodyToClone, clonePod, out var geneticDamage, failChanceModifier))
@@ -247,8 +257,11 @@ public sealed partial class CloningSystem : EntitySystem
     {
         if (cloningPodComponent.BodyContainer.ContainedEntity is { Valid: true } entity
             && TryComp<PhysicsComponent>(entity, out var physics)
-            && physics.Mass > 71)
+            && physics.Mass > MinMassContestMass)
+        {
             Timer.Spawn(TimeSpan.FromSeconds(cloningPodComponent.CloningTime * _contests.MassContest(entity, physics, true)), () => EndCloning(cloningPod, cloningPodComponent));
+            return;
+        }
 
         Timer.Spawn(TimeSpan.FromSeconds(cloningPodComponent.CloningTime), () => EndCloning(cloningPod, cloningPodComponent));
     }

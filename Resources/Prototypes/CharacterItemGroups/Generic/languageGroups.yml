@@ -16,6 +16,16 @@
       id: ValyrianStandard
     - type: trait
       id: Azaziba
+    - type: trait
+      id: SiikMaas
+    - type: trait
+      id: NalRasan
+    - type: trait
+      id: SiikTajr
+    - type: trait
+      id: YaSsa
+    - type: trait
+      id: Delvahii
 
 - type: characterItemGroup
   id: TraitsAccents
@@ -33,3 +43,5 @@
       id: Southern
     - type: trait
       id: ScottishAccent
+    - type: trait
+      id: SkeletonAccent

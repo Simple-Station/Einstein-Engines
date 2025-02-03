@@ -100,6 +100,8 @@ namespace Content.Shared.Verbs
 
         public static readonly VerbCategory SelectType = new("verb-categories-select-type");
 
+        public static readonly VerbCategory SelectFaction = new("verb-categories-select-faction");
+
         public static readonly VerbCategory PowerLevel = new("verb-categories-power-level");
 
         public static readonly VerbCategory Interaction = new("verb-categories-interaction");

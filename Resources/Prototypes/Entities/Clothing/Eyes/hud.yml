@@ -16,6 +16,13 @@
   - type: ShowHealthIcons
 
 - type: entity
+  id: ShowPsionicsIcons
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ShowPsionicsRecordIcons
+
+- type: entity
   parent: ClothingEyesBase
   id: ClothingEyesHudDiagnostic
   name: diagnostic hud
@@ -63,6 +70,17 @@
   - type: Tag
     tags:
     - HudSecurity
+
+- type: entity
+  parent: [ClothingEyesBase, ShowPsionicsIcons]
+  id: ClothingEyesHudEpistemics
+  name: epi psionics hud
+  description: A heads-up display that scans the humanoids in view and provides accurate data about their psionics records.
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Hud/epi.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Hud/epi.rsi
 
 - type: entity
   parent: ClothingEyesBase
@@ -170,7 +188,7 @@
     damageContainers:
     - Biological
   - type: ShowHealthIcons
-    damageContainers: 
+    damageContainers:
     - Biological
 
 - type: entity

@@ -46151,7 +46151,7 @@ entities:
           occludes: True
           ents:
           - 6158
-        toggleable-clothing: !type:ContainerSlot
+        toggleable-clothing: !type:Container
           showEnts: False
           occludes: True
           ent: null
@@ -46639,6 +46639,14 @@ entities:
     components:
     - type: Transform
       pos: 35.5,50.5
+      parent: 2
+- proto: ComputerPsionicsRecords
+  entities:
+  - uid: 17501
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 29.5,-21.5
       parent: 2
 - proto: ComputerRadar
   entities:

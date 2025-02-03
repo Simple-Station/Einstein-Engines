@@ -22,32 +22,33 @@
     walkSpeed: 0.7
     staminaDamage: 10
 
-- type: entity
-  id: BulletMagnumEMP
-  name: bullet (.45 magnum EMP)
-  parent: BaseBulletTrigger
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
-    layers:
-    - state: rubber
-      color: "#009eff"
-  - type: EmpOnTrigger
-    range: 0.2
-    energyConsumption: 80
-    disableDuration: 1
-  - type: Ammo
-    muzzleFlash: null
-  - type: PointLight
-    radius: 1.5
-    color: blue
-    energy: 0.5
-  - type: Projectile
-    damage:
-      types:
-        Piercing: 10
-        Ion: 20
+# How did this make it in? It's entirely broken
+# - type: entity
+#   id: BulletMagnumEMP
+#   name: bullet (.45 magnum EMP)
+#   parent: BaseBulletTrigger
+#   categories: [ HideSpawnMenu ]
+#   components:
+#   - type: Sprite
+#     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+#     layers:
+#     - state: rubber
+#       color: "#009eff"
+#   - type: EmpOnTrigger
+#     range: 0.2
+#     energyConsumption: 80
+#     disableDuration: 1
+#   - type: Ammo
+#     muzzleFlash: null
+#   - type: PointLight
+#     radius: 1.5
+#     color: blue
+#     energy: 0.5
+#   - type: Projectile
+#     damage:
+#       types:
+#         Piercing: 10
+#         Ion: 20
 
 - type: entity
   id: BulletMagnumFlash

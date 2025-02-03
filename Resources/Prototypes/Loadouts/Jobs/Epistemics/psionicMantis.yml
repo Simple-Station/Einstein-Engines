@@ -61,6 +61,34 @@
     - PillCanisterCryptobiolin
 
 # Eyes
+- type: loadout
+  id: LoadoutPsionicMantisEyesEpiHUD
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingEyesHudEpistemics
+
+- type: loadout
+  id: LoadoutPsionicMantisEyesEpiGlasses
+  category: JobsEpistemicsPsionicMantis
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingEyesGlassesEpistemics
+
 
 # Gloves
 

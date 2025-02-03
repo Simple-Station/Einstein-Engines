@@ -815,6 +815,27 @@
     Telecrystal: 4
   categories:
     - UplinkDeception
+  conditions:
+  - !type:BuyerSpeciesCondition
+    blacklist:
+    - Plasmaman
+
+- type: listing
+  id: UplinkBribePlasmaman
+  name: uplink-bribe-plasmaman-name
+  description: uplink-bribe-plasmaman-desc
+  productEntity: BriefcaseSyndieLobbyingBundlePlasmamanFilled
+  discountCategory: usualDiscounts
+  discountDownTo:
+    Telecrystal: 2
+  cost:
+    Telecrystal: 4
+  categories:
+    - UplinkDeception
+  conditions:
+  - !type:BuyerSpeciesCondition
+    whitelist:
+    - Plasmaman
 
 # - type: listing
 #   id: UplinkGigacancerScanner
@@ -833,8 +854,6 @@
   icon: { sprite: /Textures/Objects/Tools/Decoys/operative_decoy.rsi, state: folded }
   productEntity: ClothingBackpackDuffelSyndicateDecoyKitFilled
   discountCategory: usualDiscounts
-  discountDownTo:
-    Telecrystal: 3
   cost:
     Telecrystal: 1
   categories:
@@ -1612,8 +1631,6 @@
   description: uplink-syndicate-stamp-desc
   productEntity: RubberStampSyndicate
   discountCategory: rareDiscounts
-  discountDownTo:
-    Telecrystal: 1
   cost:
     Telecrystal: 1
   categories:

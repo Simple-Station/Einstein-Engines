@@ -621,5 +621,7 @@ public sealed partial class TraitModifyUnarmed : TraitFunction
 
         if (AttackRateModifier != null)
             melee.AttackRate *= AttackRateModifier.Value;
+
+        entityManager.Dirty(uid, melee);
     }
 }

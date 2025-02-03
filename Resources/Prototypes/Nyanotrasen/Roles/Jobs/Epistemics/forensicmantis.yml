@@ -18,6 +18,14 @@
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
+        - !type:CharacterTraitRequirement
+          inverted: true
+          traits:
+            - Pacifist
+        - !type:CharacterTraitRequirement
+          inverted: true
+          traits:
+            - ShadowkinBlackeye
   startingGear: ForensicMantisGear
   icon: "JobIconForensicMantis"
   supervisors: job-supervisors-rd
@@ -43,6 +51,8 @@
 
 - type: startingGear
   id: ForensicMantisGear
+  subGear:
+  - ForensicMantisPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitMantis
     back: ClothingBackpackMantisFilled
@@ -58,3 +68,11 @@
   innerClothingSkirt: ClothingUniformSkirtMantis
   satchel: ClothingBackpackSatchelMantisFilled
   duffelbag: ClothingBackpackDuffelMantisFilled
+
+- type: startingGear
+  id: ForensicMantisPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitMantis
+    head: ClothingHeadEnvirohelmMantis
+    gloves: ClothingHandsGlovesEnviroglovesWhite

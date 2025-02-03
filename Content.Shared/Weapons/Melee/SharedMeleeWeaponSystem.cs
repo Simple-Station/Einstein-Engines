@@ -53,16 +53,6 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
 
     private const int AttackMask = (int) (CollisionGroup.MobMask | CollisionGroup.Opaque);
 
-    /// <summary>
-    /// Maximum amount of targets allowed for a wide-attack.
-    /// </summary>
-    public const int MaxTargets = 5;
-
-    /// <summary>
-    /// If an attack is released within this buffer it's assumed to be full damage.
-    /// </summary>
-    public const float GracePeriod = 0.05f;
-
     public override void Initialize()
     {
         base.Initialize();
@@ -105,7 +95,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
 
         // If someone swaps to this weapon then reset its cd.
         var curTime = Timing.CurTime;
-        var minimum = curTime + TimeSpan.FromSeconds(GetAttackRate(uid, args.User, component));
+        var minimum = curTime + TimeSpan.FromSeconds(attackRate);
 
         if (minimum < component.NextAttack)
             return;
@@ -174,7 +164,8 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
             return;
 
         if (!TryGetWeapon(user, out var weaponUid, out var weapon) ||
-            weaponUid != GetEntity(msg.Weapon))
+            weaponUid != GetEntity(msg.Weapon) ||
+            !weapon.CanWideSwing) // Goobstation Change
         {
             return;
         }

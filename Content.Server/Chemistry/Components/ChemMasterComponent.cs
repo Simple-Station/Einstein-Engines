@@ -28,6 +28,12 @@ namespace Content.Server.Chemistry.Components
         public int SortMethod;
 
         [DataField]
-        public int TransferringAmount;
+        public int TransferringAmount = 1;
+
+        [DataField]
+        public List<int> Amounts = new()
+        {
+            1, 5, 10, 15, 20, 25, 30, 50
+        };
     }
 }

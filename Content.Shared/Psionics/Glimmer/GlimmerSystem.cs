@@ -118,7 +118,7 @@ public sealed class GlimmerSystem : EntitySystem
         if (_enabled && delta != 0)
         {
             GlimmerInput += delta;
-            GlimmerOutput = 2000 / (1 + MathF.Pow(MathF.E, -.0022f * GlimmerInput)) - 1000;
+            GlimmerOutput = Math.Clamp(2000 / (1 + MathF.Pow(MathF.E, -.0022f * GlimmerInput)) - 1000, 0, 999.999999f);
         }
     }
 
@@ -132,7 +132,7 @@ public sealed class GlimmerSystem : EntitySystem
         if (_enabled && delta != 0)
         {
             GlimmerOutput += delta;
-            GlimmerInput = 2000 / (1 + MathF.Pow(MathF.E, -.0022f * GlimmerOutput)) - 1000;
+            GlimmerInput = Math.Max(2000 / (1 + MathF.Pow(MathF.E, -.0022f * GlimmerOutput)) - 1000, 0);
         }
     }
 

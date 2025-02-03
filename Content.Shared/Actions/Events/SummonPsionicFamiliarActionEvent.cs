@@ -17,12 +17,6 @@ public sealed partial class SummonPsionicFamiliarActionEvent : InstantActionEven
     public string PowerName;
 
     /// <summary>
-    ///     How much Mana this power should cost, if any.
-    /// </summary>
-    [DataField]
-    public float ManaCost;
-
-    /// <summary>
     ///     Whether this power checks if the wearer is psionically insulated.
     /// </summary>
     [DataField]

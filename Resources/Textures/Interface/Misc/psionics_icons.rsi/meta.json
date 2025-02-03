@@ -1,0 +1,20 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Created by CerberusWolfie",
+    "size": {
+      "x": 8,
+      "y": 8
+    },
+    "states": [
+      {
+        "name": "hud_suspected"
+      },
+      {
+        "name": "hud_registered"
+      },
+      {
+        "name": "hud_abusing"
+      }
+    ]
+  }

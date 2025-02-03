@@ -13,6 +13,15 @@
     - !type:CharacterDepartmentTimeRequirement
       department: Security
       min: 54000 # 15 hours
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
+        - Pacifist
+        - BrittleBoneDisease
   weight: 20
   startingGear: BlueshieldOfficerGear
   icon: "JobIconBlueshield"
@@ -39,15 +48,23 @@
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
+      - type: CPRTraining
+  afterLoadoutSpecial:
+  - !type:ModifyEnvirosuitSpecial
+    charges: 8
+  - !type:ModifyEnvirohelmSpecial
+    powerCell: PowerCellHigh
 
 - type: startingGear
   id: BlueshieldOfficerGear
+  subGear:
+  - BlueshieldPlasmamanGear
   equipment:
     back: ClothingBackpackBlueshield
     jumpsuit: ClothingUniformJumpsuitBlueshieldOfficer
     shoes: ClothingShoesBootsCombatFilled
     eyes: ClothingEyesGlassesMedSec
-    ears: ClothingHeadsetAltCommand
+    ears: ClothingHeadsetCentCom
     gloves: ClothingHandsGlovesCombat
     id: BlueshieldPDA
     pocket1: UniqueBlueshieldOfficerLockerTeleporter
@@ -57,3 +74,11 @@
     #belt: ClothingBeltSecurityFilled
     #pocket1: WeaponPistolMk58
     #pocket2: DeathAcidifierImplanter
+
+- type: startingGear
+  id: BlueshieldPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitBlueshield
+    head: ClothingHeadEnvirohelmBlueshield
+    gloves: ClothingHandsGlovesEnviroglovesBlack

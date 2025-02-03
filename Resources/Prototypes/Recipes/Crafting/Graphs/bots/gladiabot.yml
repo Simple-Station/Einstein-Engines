@@ -1,0 +1,25 @@
+- type: constructionGraph
+  id: GladiaBot
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: bot
+      steps:
+      - material: Cardboard
+        amount: 1
+        doAfter: 2
+      - tag: ProximitySensor
+        icon:
+          sprite: Objects/Misc/proximity_sensor.rsi
+          state: icon
+        name: proximity sensor
+        doAfter: 2
+      - tag: Shiv
+        icon:
+          sprite: Objects/Weapons/Melee/shiv.rsi
+          state: icon
+        name: shiv
+        doAfter: 2
+  - node: bot
+    entity: MobGladiaBot

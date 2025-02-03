@@ -32,6 +32,7 @@
   id: TraitorObjectiveGroupKill
   weights:
     KillRandomPersonObjective: 1
+    TeachLessonRandomPersonObjective: 0.25
     KillRandomHeadObjective: 0.25
 
 - type: weightedRandom
@@ -46,7 +47,7 @@
   weights:
     RandomTraitorAliveObjective: 1
     RandomTraitorProgressObjective: 1
-    RaiseGlimmerObjective: 0.5 # Nyanotrasen - Raise glimmer to a target amount, see Resources/Prototypes/Nyanotrasen/Objectives/traitor.yml
+    # RaiseGlimmerObjective: 0.5 # Nyanotrasen - Raise glimmer to a target amount, see Resources/Prototypes/Nyanotrasen/Objectives/traitor.yml
 
 #Thief groups
 - type: weightedRandom

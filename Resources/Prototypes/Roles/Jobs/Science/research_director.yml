@@ -5,11 +5,6 @@
   playTimeTracker: JobResearchDirector
   antagAdvantage: 6 # DeltaV - Reduced TC: Head of Staff
   requirements:
-    - !type:CharacterDepartmentTimeRequirement
-      department: Epistemics # DeltaV - Epistemics Department replacing Science
-      min: 54000 # DeltaV - 15 hours
-    - !type:CharacterOverallTimeRequirement
-      min: 72000 # DeltaV - 20 hours
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
@@ -19,6 +14,15 @@
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
+        - !type:CharacterTraitRequirement
+          inverted: true
+          traits:
+            - ShadowkinBlackeye
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
   weight: 10
   startingGear: ResearchDirectorGear
   icon: "JobIconResearchDirector"
@@ -49,9 +53,16 @@
           - DispelPower
           - MetapsionicPower
           - TelepathyPower
+  afterLoadoutSpecial:
+  - !type:ModifyEnvirosuitSpecial
+    charges: 8
+  - !type:ModifyEnvirohelmSpecial
+    powerCell: PowerCellHigh
 
 - type: startingGear
   id: ResearchDirectorGear
+  subGear:
+  - ResearchDirectorPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitResearchDirector
     back: ClothingBackpackResearchDirectorFilled
@@ -63,3 +74,11 @@
   innerClothingSkirt: ClothingUniformJumpskirtResearchDirector
   satchel: ClothingBackpackSatchelResearchDirectorFilled
   duffelbag: ClothingBackpackDuffelResearchDirectorFilled
+
+- type: startingGear
+  id: ResearchDirectorPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitResearchDirector
+    head: ClothingHeadEnvirohelmResearchDirector
+    gloves: ClothingHandsGlovesEnviroglovesResearchDirector

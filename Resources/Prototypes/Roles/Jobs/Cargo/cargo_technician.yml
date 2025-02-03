@@ -16,6 +16,8 @@
 
 - type: startingGear
   id: CargoTechGear
+  subGear:
+  - CargoTechPlasmamanGear
   equipment:
     head: ClothingHeadHatCargosoft
     jumpsuit: ClothingUniformJumpsuitCargo
@@ -27,3 +29,11 @@
   innerClothingSkirt: ClothingUniformJumpskirtCargo
   satchel: ClothingBackpackSatchelCargoFilled
   duffelbag: ClothingBackpackDuffelCargoFilled
+
+- type: startingGear
+  id: CargoTechPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitCargo
+    head: ClothingHeadEnvirohelmCargo
+    gloves: ClothingHandsGlovesEnviroglovesCargo

@@ -22,6 +22,11 @@
     - !type:CharacterDepartmentTimeRequirement
       department: Epistemics
       min: 10800 # 3 hours
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
   startingGear: AdminAssistantGear
   icon: "JobIconAdminAssitant"
   supervisors: job-supervisors-command
@@ -38,9 +43,19 @@
 
 - type: startingGear
   id: AdminAssistantGear
+  subGear:
+  - AdminAssistantPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitAdminAssistant
     id: AdminAssistantPDA
     ears: ClothingHeadsetAdminAssist
     shoes: ClothingShoesLeather
   innerClothingSkirt: ClothingUniformJumpskirtAdminAssistant
+
+- type: startingGear
+  id: AdminAssistantPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitAdminAssistant
+    head: ClothingHeadEnvirohelmAdminAssistant
+    gloves: ClothingHandsGlovesEnviroglovesAdminAssistant

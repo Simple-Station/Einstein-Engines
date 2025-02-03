@@ -120,7 +120,7 @@
     slot: head
   - type: ContainerContainer
     containers:
-      toggleable-clothing: !type:ContainerSlot {}
+      toggleable-clothing: !type:Container {}
       storagebase: !type:Container
         ents: []
 
@@ -137,6 +137,18 @@
     coefficient: 0.01
   - type: FireProtection
     reduction: 0.75 # almost perfectly sealed, atmos firesuit is better
+  - type: IgniteFromGasImmunity
+    parts:
+    - Torso
+    - Groin
+    - LeftArm
+    - LeftHand
+    - RightArm
+    - RightHand
+    - LeftLeg
+    - LeftFoot
+    - RightLeg
+    - RightFoot
   - type: ClothingSpeedModifier
     walkModifier: 0.4
     sprintModifier: 0.6
@@ -155,7 +167,7 @@
     slot: head
   - type: ContainerContainer
     containers:
-      toggleable-clothing: !type:ContainerSlot {}
+      toggleable-clothing: !type:Container {}
   - type: GroupExamine
   - type: Tag
     tags:
@@ -164,6 +176,7 @@
     - HidesHarpyWings #DeltaV: Used by harpies to help render their hardsuit sprites
     - AllowLamiaHardsuit
     - FullBodyOuter
+    - PlasmamanSafe
   - type: Clothing
     equipDelay: 2.5 # Hardsuits are heavy and take a while to put on/off.
     unequipDelay: 2.5
@@ -192,6 +205,86 @@
         - ItemMask
         restitution: 0.3
         friction: 0.2
+  - type: EmitsSoundOnMove
+    soundCollection:
+      collection: FootstepHardsuitLight
+      params:
+        volume: -5
+    requiresWorn: true
+    distanceWalking: 2
+    distanceSprinting: 3
+
+- type: entity
+  abstract: true
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitBaseMedium
+  name: base hardsuit
+  components:
+  - type: EmitsSoundOnMove
+    soundCollection:
+      collection: FootstepHardsuitMedium
+      params:
+        volume: -5
+    requiresWorn: true
+    distanceWalking: 2
+    distanceSprinting: 3
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 600
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 30
+    staminaCost: 60
+    soundHit:
+      collection: MetalThud
+  - type: Clothing
+    equipDelay: 4 # For stuff like standard Tacsuits and Heavy Hardsuits.
+    unequipDelay: 4
+
+- type: entity
+  abstract: true
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitBaseHeavy
+  name: base hardsuit
+  components:
+  - type: EmitsSoundOnMove
+    soundCollection:
+      collection: FootstepHardsuitHeavy
+      params:
+        volume: -5
+    requiresWorn: true
+    distanceWalking: 2
+    distanceSprinting: 3
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 800
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 45
+    staminaCost: 110
+    soundHit:
+      collection: MetalThud
+  - type: Clothing
+    equipDelay: 5 # For stuff like "Heavy" Tacsuits.
+    unequipDelay: 5
 
 - type: entity
   abstract: true
@@ -204,6 +297,18 @@
     lowPressureMultiplier: 1000
   - type: TemperatureProtection
     coefficient: 0.01 # Not complete protection from fire
+  - type: IgniteFromGasImmunity
+    parts:
+    - Torso
+    - Groin
+    - LeftArm
+    - LeftHand
+    - RightArm
+    - RightHand
+    - LeftLeg
+    - LeftFoot
+    - RightLeg
+    - RightFoot
   - type: ClothingSpeedModifier
     walkModifier: 0.8
     sprintModifier: 0.8
@@ -214,6 +319,7 @@
     tags:
     - AllowLamiaHardsuit #DeltaV: Used by Lamia to render snek hardsuits
     - HidesHarpyWings #DeltaV: Used by harpies to help render their hardsuit sprites
+    - PlasmamanSafe
   - type: Clothing
     equipDelay: 1.25 # Softsuits are easier to put on and off
     unequipDelay: 1
@@ -242,7 +348,7 @@
     slot: head
   - type: ContainerContainer
     containers:
-      toggleable-clothing: !type:ContainerSlot {}
+      toggleable-clothing: !type:Container {}
       storagebase: !type:Container
         ents: []
 
