@@ -23,7 +23,7 @@
 - type: latheRecipe
   id: ClothingHeadHelmetBasic
   result: ClothingHeadHelmetBasic
-  completeTime: 2
+  completetime: 2
   materials:
     Steel: 250
     Glass: 100
