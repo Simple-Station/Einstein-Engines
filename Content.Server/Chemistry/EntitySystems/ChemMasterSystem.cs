@@ -371,6 +371,7 @@ namespace Content.Server.Chemistry.EntitySystems
         private void OnTransferringAmountUpdated(EntityUid uid, ChemMasterComponent chemMaster, ChemMasterTransferringAmountUpdated args)
         {
             chemMaster.TransferringAmount = args.TransferringAmount;
+            ClickSound((uid, chemMaster));
             UpdateUiState((uid, chemMaster));
         }
     }
