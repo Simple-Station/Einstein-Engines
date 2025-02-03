@@ -11042,3 +11042,10 @@ Entries:
   id: 6788
   time: '2025-02-02T02:08:49.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1701
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Space no longer gibs you instantly.
+  id: 6789
+  time: '2025-02-03T04:45:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1708
