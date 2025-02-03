@@ -208,6 +208,8 @@
   - type: EmitsSoundOnMove
     soundCollection:
       collection: FootstepHardsuitLight
+      params:
+        volume: -5
     requiresWorn: true
     distanceWalking: 2
     distanceSprinting: 3
@@ -221,6 +223,8 @@
   - type: EmitsSoundOnMove
     soundCollection:
       collection: FootstepHardsuitMedium
+      params:
+        volume: -5
     requiresWorn: true
     distanceWalking: 2
     distanceSprinting: 3
@@ -255,6 +259,8 @@
   - type: EmitsSoundOnMove
     soundCollection:
       collection: FootstepHardsuitHeavy
+      params:
+        volume: -5
     requiresWorn: true
     distanceWalking: 2
     distanceSprinting: 3
