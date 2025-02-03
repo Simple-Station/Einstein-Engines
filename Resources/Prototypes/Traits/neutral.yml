@@ -41,6 +41,17 @@
     - !type:TraitAddComponent
       components:
         - type: SouthernAccent
+        
+- type: trait
+  id: GermanAccent
+  category: TraitsSpeechAccents
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsAccents
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: GermanAccent
 
 - type: trait
   id: NormalVision
