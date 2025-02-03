@@ -274,7 +274,7 @@ namespace Content.Server.Atmos.EntitySystems
                 {
                     var damageScale = MathF.Min(((pressure / Atmospherics.HazardHighPressure) - 1) * Atmospherics.PressureDamageCoefficient, Atmospherics.MaxHighPressureDamage);
 
-                    _damageableSystem.TryChangeDamage(uid, barotrauma.Damage * damageScale, true, false, canSever: false); // Shitmed Change
+                    _damageableSystem.TryChangeDamage(uid, barotrauma.Damage * damageScale, true, false, canSever: false, doPartDamage: false); // Shitmed Change
                     RaiseLocalEvent(uid, new MoodEffectEvent("MobHighPressure"));
 
                     if (!barotrauma.TakingDamage)
