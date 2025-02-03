@@ -170,33 +170,30 @@ public sealed partial class MobStateParametersPrototype : IPrototype, IInheritin
 
     [DataField]
     public float? OxyDamageOverlay, BreathingMultiplier, StrippingTimeMultiplier;
-}
 
-
-public static class MobStateParametersPrototypeExt
-{
-    public static void MergeWith(this MobStateParametersPrototype p, MobStateParametersPrototype other)
+    public void MergeWith(MobStateParametersPrototype other)
     {
-        p.Moving = other.Moving ?? p.Moving;
-        p.Talking = other.Talking ?? p.Talking;
-        p.Emoting = other.Emoting ?? p.Emoting;
-        p.Throwing = other.Throwing ?? p.Throwing;
-        p.PickingUp = other.PickingUp ?? p.PickingUp;
-        p.Pulling = other.Pulling ?? p.Pulling;
-        p.Attacking = other.Attacking ?? p.Attacking;
-        p.Using = other.Using ?? p.Using;
-        p.Pointing = other.Pointing ?? p.Pointing;
-        p.IsConscious = other.IsConscious ?? p.IsConscious;
-        p.CanEquipSelf = other.CanEquipSelf ?? p.CanEquipSelf;
-        p.CanEquipOther = other.CanEquipOther ?? p.CanEquipOther;
-        p.CanUnequipSelf = other.CanUnequipSelf ?? p.CanUnequipSelf;
-        p.CanUnequipOther = other.CanUnequipOther ?? p.CanUnequipOther;
-        p.ForceDown = other.ForceDown ?? p.ForceDown;
-        p.Incapacitated = other.Incapacitated ?? p.Incapacitated;
-        p.Threatening = other.Threatening ?? p.Threatening;
-        p.DropItemsOnEntering = other.DropItemsOnEntering ?? p.DropItemsOnEntering;
-        p.BreathingMultiplier = other.BreathingMultiplier ?? p.BreathingMultiplier;
-        p.OxyDamageOverlay = other.OxyDamageOverlay ?? p.OxyDamageOverlay;
-        p.StrippingTimeMultiplier = other.StrippingTimeMultiplier ?? p.StrippingTimeMultiplier;
+        this.Moving = other.Moving ?? this.Moving;
+        this.Talking = other.Talking ?? this.Talking;
+        this.Emoting = other.Emoting ?? this.Emoting;
+        this.Throwing = other.Throwing ?? this.Throwing;
+        this.PickingUp = other.PickingUp ?? this.PickingUp;
+        this.Pulling = other.Pulling ?? this.Pulling;
+        this.Attacking = other.Attacking ?? this.Attacking;
+        this.Using = other.Using ?? this.Using;
+        this.Pointing = other.Pointing ?? this.Pointing;
+        this.IsConscious = other.IsConscious ?? this.IsConscious;
+        this.CanEquipSelf = other.CanEquipSelf ?? this.CanEquipSelf;
+        this.CanEquipOther = other.CanEquipOther ?? this.CanEquipOther;
+        this.CanUnequipSelf = other.CanUnequipSelf ?? this.CanUnequipSelf;
+        this.CanUnequipOther = other.CanUnequipOther ?? this.CanUnequipOther;
+        this.ForceDown = other.ForceDown ?? this.ForceDown;
+        this.Incapacitated = other.Incapacitated ?? this.Incapacitated;
+        this.Threatening = other.Threatening ?? this.Threatening;
+        this.DropItemsOnEntering = other.DropItemsOnEntering ?? this.DropItemsOnEntering;
+        this.BreathingMultiplier = other.BreathingMultiplier ?? this.BreathingMultiplier;
+        this.OxyDamageOverlay = other.OxyDamageOverlay ?? this.OxyDamageOverlay;
+        this.StrippingTimeMultiplier = other.StrippingTimeMultiplier ?? this.StrippingTimeMultiplier;
     }
+
 }
