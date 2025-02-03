@@ -1,4 +1,4 @@
-﻿mood-show-effects-start = [font size=12]Mood:[/font]
+mood-show-effects-start = [font size=12]Mood:[/font]
 
 mood-effect-HungerOverfed = I ate so much, I feel as though I'm about to burst!
 mood-effect-HungerOkay = I am feeling full.
@@ -78,3 +78,10 @@ mood-effect-EthanolBenefit =
     I feel so relaxed from drinking.
 mood-effect-SpaceDrugsBenefit =
     Woaaaah, such pretty colors maaaaan. It's like I can hear color and taste sound maaan.
+
+# Plasmaman
+mood-effect-PlasmamanIngestPlasma =
+    My body is rejuvenated by the fresh plasma coursing through my body.
+
+mood-effect-PlasmamanIngestMilk =
+    I can feel the milk's calcium repairing my bones. This is dairy-lightful!

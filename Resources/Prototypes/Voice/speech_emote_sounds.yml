@@ -770,3 +770,13 @@
     path: /Audio/Animals/parrot_raught.ogg
     params:
       variation: 0.125
+
+- type: emoteSounds
+  id: UnisexPlasmaman
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      collection: PlasmamanUnisexScreams
+  sound:
+    path: /Audio/Voice/Skeleton/skeleton_scream.ogg

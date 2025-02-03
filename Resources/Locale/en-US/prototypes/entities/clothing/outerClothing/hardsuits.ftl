@@ -6,6 +6,8 @@ ent-ClothingOuterHardsuitAtmos = HpI-19t "Fotia" hardsuit
 ent-ClothingOuterHardsuitEngineering = HpI-19r "Lampsi" hardsuit
     .desc = A standard-issue hardsuit produced by Hephaestus Industries, used by engineers in low & high pressure environments.
     The label indicates that its rated for moderate amounts of radiation exposure. It feels a bit heavy.
+ent-ClothingOuterHardsuitEngineeringUnpainted = HpI-19r "Lampsi" hardsuit
+    .desc = { ent-ClothingOuterHardsuitEngineering.desc }
 ent-ClothingOuterHardsuitSpatio = HpI-20s "Kriti" hardsuit
     .desc = A standard-issue hardsuit produced by Hephaestus Industries, designed for industrial work in low pressure environments.
     The label indicates that its rated for moderate amounts of radiation exposure, and it feels somewhat light.
@@ -74,6 +76,9 @@ ent-ClothingOuterHardsuitLuxury = HpI-20c - "Minos" hardsuit
 ent-ClothingOuterHardsuitSyndie = CSA-51a - "Shanlin" tacsuit
     .desc = A tactical combat hardsuit produced by the Cybersun-Armaments Corporation, the suit's tags indicate it provides moderate protection against most forms of damage.
     This one has been painted blood red. It feels incredibly light.
+ent-ClothingOuterHardsuitShanlinUnpainted = CSA-51a - "Shanlin" tacsuit
+    .desc = A tactical combat hardsuit produced by the Cybersun-Armaments Corporation, the suit's tags indicate it provides moderate protection against most forms of damage.
+    This one is unpainted bare metal. It feels incredibly light.
 ent-ClothingOuterHardsuitSyndieReverseEngineered = CSA-51a - "Shanlin" tacsuit
     .desc = A tactical combat hardsuit produced by the Cybersun-Armaments Corporation, the suit's tags indicate it provides moderate protection against most forms of damage.
         This one has been painted blue. It feels incredibly light.
@@ -84,13 +89,17 @@ ent-ClothingOuterHardsuitSyndieElite = CSA-54UA - "Shiwei" tacsuit
     .desc = An "Up-Armored" tactical combat hardsuit produced by the Cybersun-Armaments Corporation.
     The suit's tags indicate its rated for high exposure to radiation, heat and explosions, along with moderate physical trauma protection.
     It feels incredibly light.
+ent-ClothingOuterHardsuitShiweiUnpainted = CSA-54UA - "Shiwei" tacsuit
+    .desc = An "Up-Armored" tactical combat hardsuit produced by the Cybersun-Armaments Corporation.
+    The suit's tags indicate its rated for high exposure to radiation, heat and explosions, along with moderate physical trauma protection.
+    It is unpainted bare spaceship alloy. It feels incredibly light.
 ent-ClothingOuterHardsuitSyndieCommander = CSA-54c - "Tianming" tacsuit
     .desc = A "Commander" tactical combat hardsuit produced by the Cybersun-Armaments Corporation. The suit's tags indicate that it protects greatly against all forms of damage.
     This one has been painted blood red. It doesn't seem to have any weight.
 ent-ClothingOuterHardsuitJuggernaut = CSA-80UA - "Guan Yu" tacsuit
     .desc = The pride and joy of the Cybersun-Armaments Corporation, named after an ancient Sol' War God. Commonly known throughout the galaxy as a "Juggernaut".
     Matching its bulky appearance, it protects against all forms of damage. It feels VERY heavy.
-end-ClothingOuterHardsuitJuggernautReverseEngineered = CSA-80UA - "Guan Yu" tacsuit
+ent-ClothingOuterHardsuitJuggernautReverseEngineered = CSA-80UA - "Guan Yu" tacsuit
     .desc = The pride and joy of the Cybersun-Armaments Corporation, named after an ancient Sol' War God. Commonly known throughout the galaxy as a "Juggernaut".
         Matching its bulky appearance, it protects against all forms of damage. It feels VERY heavy.
 ent-ClothingOuterHardsuitWizard = WZD-84 - "Mana" tacsuit

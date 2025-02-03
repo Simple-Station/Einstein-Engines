@@ -17,6 +17,24 @@
     state: bunnytail
 
 - type: marking
+  id: BunnyTailAlt
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Human]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+        - !type:CategoryColoring
+          category: FacialHair
+        - !type:SkinColoring
+  sprites:
+  - sprite: Mobs/Customization/kemonomimi-tails.rsi
+    state: bunnytailalt
+
+- type: marking
   id: DobleFur
   bodyPart: Tail
   markingCategory: Tail

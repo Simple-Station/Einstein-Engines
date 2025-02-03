@@ -136,10 +136,6 @@ public abstract class SharedResearchSystem : EntitySystem
             if (percent < techDiscipline.TierPrerequisites[tier])
                 break;
 
-            if (tier >= techDiscipline.LockoutTier &&
-                component.MainDiscipline != null &&
-                techDiscipline.ID != component.MainDiscipline)
-                break;
             tier++;
         }
 
@@ -151,7 +147,8 @@ public abstract class SharedResearchSystem : EntitySystem
         bool includeCost = true,
         bool includeTier = true,
         bool includePrereqs = false,
-        TechDisciplinePrototype? disciplinePrototype = null)
+        TechDisciplinePrototype? disciplinePrototype = null,
+        TechnologyDatabaseComponent? databaseComponent = null)
     {
         var description = new FormattedMessage();
         if (includeTier)
@@ -162,9 +159,11 @@ public abstract class SharedResearchSystem : EntitySystem
             description.PushNewline();
         }
 
+
         if (includeCost)
         {
-            description.AddMarkup(Loc.GetString("research-console-cost", ("amount", technology.Cost)));
+            var softCap = databaseComponent is not null ? databaseComponent.SoftCapMultiplier : 1;
+            description.AddMarkup(Loc.GetString("research-console-cost", ("amount", (technology.Cost * softCap).ToString("#.##"))));
             description.PushNewline();
         }
 

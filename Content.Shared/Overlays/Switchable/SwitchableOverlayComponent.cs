@@ -1,3 +1,4 @@
+using System.Dynamic;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
@@ -13,13 +14,20 @@ public abstract partial class SwitchableOverlayComponent : BaseOverlayComponent
     public bool DrawOverlay = true;
 
     /// <summary>
-    /// If it is greater than 0, overlay isn't toggled but pulsed instead
+    /// Whether it should grant equipment enhanced vision or is it mob vision
     /// </summary>
     [DataField]
-    public float PulseTime;
+    public bool IsEquipment;
+
+
+    [DataField]
+    public float PulseTime = 0;
 
     [ViewVariables(VVAccess.ReadOnly)]
-    public float PulseAccumulator;
+    public TimeSpan PulseAccumulator = TimeSpan.Zero;
+
+    [ViewVariables(VVAccess.ReadOnly)]
+    public TimeSpan PulseEndTime = TimeSpan.Zero;
 
     [DataField]
     public virtual SoundSpecifier? ActivateSound { get; set; } =

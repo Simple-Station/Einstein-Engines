@@ -34896,12 +34896,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 6.5,33.5
       parent: 1
-  - uid: 299
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 10.5,17.5
-      parent: 1
   - uid: 455
     components:
     - type: Transform
@@ -36072,18 +36066,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 6.5,22.5
       parent: 1
-- proto: chem_master
-  entities:
-  - uid: 5934
-    components:
-    - type: Transform
-      pos: 20.5,41.5
-      parent: 1
-  - uid: 6006
-    components:
-    - type: Transform
-      pos: 17.5,41.5
-      parent: 1
 - proto: ChemDispenser
   entities:
   - uid: 3759
@@ -36102,6 +36084,18 @@ entities:
     components:
     - type: Transform
       pos: 17.5,44.5
+      parent: 1
+- proto: ChemMaster
+  entities:
+  - uid: 5934
+    components:
+    - type: Transform
+      pos: 20.5,41.5
+      parent: 1
+  - uid: 6006
+    components:
+    - type: Transform
+      pos: 17.5,41.5
       parent: 1
 - proto: ChessBoard
   entities:
@@ -37854,6 +37848,14 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -19.5,-24.5
+      parent: 1
+- proto: ComputerPsionicsRecords
+  entities:
+  - uid: 299
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 10.5,17.5
       parent: 1
 - proto: ComputerRadar
   entities:
@@ -65764,7 +65766,7 @@ entities:
       pos: -11.5,11.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -26341.395
+      secondsUntilStateChange: -27843.273
       state: Opening
     - type: Occluder
       enabled: True
@@ -67543,6 +67545,13 @@ entities:
     - type: Transform
       pos: -6.3909945,13.581151
       parent: 1
+- proto: MaterialSilo
+  entities:
+  - uid: 2285
+    components:
+    - type: Transform
+      pos: 21.5,27.5
+      parent: 1
 - proto: MaterialWoodPlank
   entities:
   - uid: 10301
@@ -68693,6 +68702,13 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 28.5,56.5
+      parent: 1
+- proto: PlayerStationAi
+  entities:
+  - uid: 1933
+    components:
+    - type: Transform
+      pos: 26.5,16.5
       parent: 1
 - proto: PlushieArachne
   entities:
@@ -71485,11 +71501,6 @@ entities:
     components:
     - type: Transform
       pos: 12.5,15.5
-      parent: 1
-  - uid: 1933
-    components:
-    - type: Transform
-      pos: 26.5,16.5
       parent: 1
   - uid: 2236
     components:
@@ -76487,18 +76498,16 @@ entities:
       parent: 1
 - proto: SignAtmos
   entities:
-  - uid: 5791
-    components:
-    - type: Transform
-      pos: -13.5,-12.5
-      parent: 1
-- proto: SignAtmosMinsky
-  entities:
   - uid: 3217
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -13.5,-10.5
+      parent: 1
+  - uid: 5791
+    components:
+    - type: Transform
+      pos: -13.5,-12.5
       parent: 1
 - proto: SignBar
   entities:
@@ -77203,7 +77212,7 @@ entities:
     - type: Transform
       pos: -11.5,15.5
       parent: 1
-- proto: SignHydro3
+- proto: SignHydro1
   entities:
   - uid: 610
     components:
@@ -77422,7 +77431,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 8.5,15.5
       parent: 1
-- proto: SignScience2
+- proto: SignScience
   entities:
   - uid: 1682
     components:
@@ -78358,6 +78367,28 @@ entities:
     - type: Transform
       pos: 19.5,44.5
       parent: 1
+- proto: SpawnPointAdminAssistant
+  entities:
+  - uid: 8205
+    components:
+    - type: Transform
+      pos: -9.5,8.5
+      parent: 1
+  - uid: 16617
+    components:
+    - type: Transform
+      pos: -9.5,7.5
+      parent: 1
+  - uid: 16618
+    components:
+    - type: Transform
+      pos: -6.5,7.5
+      parent: 1
+  - uid: 16619
+    components:
+    - type: Transform
+      pos: -6.5,8.5
+      parent: 1
 - proto: SpawnPointAtmos
   entities:
   - uid: 4537
@@ -78376,6 +78407,13 @@ entities:
     components:
     - type: Transform
       pos: -11.5,29.5
+      parent: 1
+- proto: SpawnPointBlueshieldOfficer
+  entities:
+  - uid: 8169
+    components:
+    - type: Transform
+      pos: -8.5,9.5
       parent: 1
 - proto: SpawnPointBorg
   entities:
@@ -78643,6 +78681,13 @@ entities:
     - type: Transform
       pos: -28.5,-0.5
       parent: 1
+- proto: SpawnPointMagistrate
+  entities:
+  - uid: 16620
+    components:
+    - type: Transform
+      pos: -8.5,6.5
+      parent: 1
 - proto: SpawnPointMailCarrier
   entities:
   - uid: 1223
@@ -78711,6 +78756,13 @@ entities:
     components:
     - type: Transform
       pos: -38.5,13.5
+      parent: 1
+- proto: SpawnPointNanotrasenRepresentative
+  entities:
+  - uid: 8168
+    components:
+    - type: Transform
+      pos: -7.5,9.5
       parent: 1
 - proto: SpawnPointObserver
   entities:
@@ -81930,11 +81982,6 @@ entities:
       parent: 1
 - proto: ToyAi
   entities:
-  - uid: 2285
-    components:
-    - type: Transform
-      pos: 26.502884,16.651182
-      parent: 1
   - uid: 5360
     components:
     - type: Transform

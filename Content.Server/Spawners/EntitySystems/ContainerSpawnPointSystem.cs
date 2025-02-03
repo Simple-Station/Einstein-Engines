@@ -12,10 +12,10 @@ namespace Content.Server.Spawners.EntitySystems;
 
 public sealed class ContainerSpawnPointSystem : EntitySystem
 {
-    [Dependency] private readonly GameTicker _gameTicker = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly ContainerSystem _container = default!;
+    [Dependency] private readonly GameTicker _gameTicker = default!;
+    [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly StationSpawningSystem _stationSpawning = default!;
 
@@ -28,6 +28,10 @@ public sealed class ContainerSpawnPointSystem : EntitySystem
     public void HandlePlayerSpawning(PlayerSpawningEvent args)
     {
         if (args.SpawnResult != null)
+            return;
+
+        // DeltaV - Ignore these two desired spawn types
+        if (args.DesiredSpawnPointType is SpawnPointType.Observer or SpawnPointType.LateJoin)
             return;
 
         // If it's just a spawn pref check if it's for cryo (silly).
@@ -44,12 +48,11 @@ public sealed class ContainerSpawnPointSystem : EntitySystem
                 continue;
 
             // DeltaV - Custom override for override spawnpoints, only used for prisoners currently. This shouldn't run for any other jobs
-            if (args.DesiredSpawnPointType == SpawnPointType.Job
-                && spawnPoint.SpawnType == SpawnPointType.Job
-                && args.Job is not null
-                && spawnPoint.Job is not ""
-                && spawnPoint.Job == args.Job.Prototype)
+            if (args.DesiredSpawnPointType == SpawnPointType.Job)
             {
+                if (spawnPoint.SpawnType != SpawnPointType.Job || spawnPoint.Job != args.Job?.Prototype)
+                    continue;
+
                 possibleContainers.Add((uid, spawnPoint, container, xform));
                 continue;
             }
@@ -64,16 +67,12 @@ public sealed class ContainerSpawnPointSystem : EntitySystem
             }
 
             if (_gameTicker.RunLevel == GameRunLevel.InRound && spawnPoint.SpawnType == SpawnPointType.LateJoin)
-            {
                 possibleContainers.Add((uid, spawnPoint, container, xform));
-            }
 
             if (_gameTicker.RunLevel != GameRunLevel.InRound &&
                 spawnPoint.SpawnType == SpawnPointType.Job &&
                 (args.Job == null || spawnPoint.Job == args.Job.Prototype))
-            {
                 possibleContainers.Add((uid, spawnPoint, container, xform));
-            }
         }
 
         if (possibleContainers.Count == 0)

@@ -70,6 +70,12 @@ public sealed partial class FoodComponent : Component
     public float ForceFeedDelay = 3;
 
     /// <summary>
+    /// Shitmed Change: Whether to show a popup to everyone in range when attempting to eat this food, and upon successful eating.
+    /// </summary>
+    [DataField]
+    public bool PopupOnEat;
+
+    /// <summary>
     /// For mobs that are food, requires killing them before eating.
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]

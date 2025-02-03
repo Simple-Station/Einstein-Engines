@@ -44,14 +44,14 @@ public sealed class InternalsSystem : EntitySystem
 
     private void OnStartingGear(EntityUid uid, InternalsComponent component, ref StartingGearEquippedEvent args)
     {
-        if (component.BreathToolEntity == null)
+        if (component.BreathTools.Count == 0)
             return;
 
         if (component.GasTankEntity != null)
             return; // already connected
 
         // Can the entity breathe the air it is currently exposed to?
-        if (_respirator.CanMetabolizeInhaledAir(uid))
+        if (!TryComp(uid, out RespiratorComponent? respirator) || _respirator.CanMetabolizeInhaledAir((uid, respirator)))
             return;
 
         var tank = FindBestGasTank(uid);
@@ -111,7 +111,7 @@ public sealed class InternalsSystem : EntitySystem
         }
 
         // If they're not on then check if we have a mask to use
-        if (internals.BreathToolEntity is null)
+        if (internals.BreathTools.Count == 0)
         {
             _popupSystem.PopupEntity(Loc.GetString("internals-no-breath-tool"), uid, user);
             return;
@@ -178,29 +178,28 @@ public sealed class InternalsSystem : EntitySystem
             _alerts.ShowAlert(ent, ent.Comp.InternalsAlert, GetSeverity(ent));
         }
     }
-    public void DisconnectBreathTool(Entity<InternalsComponent> ent)
+    public void DisconnectBreathTool(Entity<InternalsComponent> ent, EntityUid toolEntity)
     {
-        var old = ent.Comp.BreathToolEntity;
-        ent.Comp.BreathToolEntity = null;
+        ent.Comp.BreathTools.Remove(toolEntity);
 
-        if (TryComp(old, out BreathToolComponent? breathTool))
-        {
-            _atmos.DisconnectInternals(breathTool);
+        if (TryComp(toolEntity, out BreathToolComponent? breathTool))
+            _atmos.DisconnectInternals((toolEntity, breathTool));
+
+        if (ent.Comp.BreathTools.Count == 0)
             DisconnectTank(ent);
-        }
 
         _alerts.ShowAlert(ent, ent.Comp.InternalsAlert, GetSeverity(ent));
     }
 
     public void ConnectBreathTool(Entity<InternalsComponent> ent, EntityUid toolEntity)
     {
-        if (TryComp(ent.Comp.BreathToolEntity, out BreathToolComponent? tool))
-        {
-            _atmos.DisconnectInternals(tool);
-        }
+        if (!ent.Comp.BreathTools.Add(toolEntity))
+            return;
 
-        ent.Comp.BreathToolEntity = toolEntity;
         _alerts.ShowAlert(ent, ent.Comp.InternalsAlert, GetSeverity(ent));
+
+        var ev = new BreathToolConnectedEvent(ent.Owner, toolEntity);
+        RaiseLocalEvent(ent.Owner, ev);
     }
 
     public void DisconnectTank(InternalsComponent? component)
@@ -217,7 +216,7 @@ public sealed class InternalsSystem : EntitySystem
 
     public bool TryConnectTank(Entity<InternalsComponent> ent, EntityUid tankEntity)
     {
-        if (ent.Comp.BreathToolEntity is null)
+        if (ent.Comp.BreathTools.Count == 0)
             return false;
 
         if (TryComp(ent.Comp.GasTankEntity, out GasTankComponent? tank))
@@ -236,14 +235,14 @@ public sealed class InternalsSystem : EntitySystem
 
     public bool AreInternalsWorking(InternalsComponent component)
     {
-        return TryComp(component.BreathToolEntity, out BreathToolComponent? breathTool)
+        return TryComp(component.BreathTools.FirstOrNull(), out BreathToolComponent? breathTool)
             && breathTool.IsFunctional
             && HasComp<GasTankComponent>(component.GasTankEntity);
     }
 
     private short GetSeverity(InternalsComponent component)
     {
-        if (component.BreathToolEntity is null || !AreInternalsWorking(component))
+        if (component.BreathTools.Count == 0 || !AreInternalsWorking(component))
             return 2;
 
         // If pressure in the tank is below low pressure threshold, flash warning on internals UI
@@ -290,5 +289,20 @@ public sealed class InternalsSystem : EntitySystem
         }
 
         return null;
+    }
+}
+
+/// <summary>
+///   Raised on an equipee when it has breath tools connected.
+/// </summary>
+public sealed class BreathToolConnectedEvent : EntityEventArgs
+{
+    public readonly EntityUid Equipee;
+    public readonly EntityUid BreathTool;
+
+    public BreathToolConnectedEvent(EntityUid equipee, EntityUid breathTool)
+    {
+        Equipee = equipee;
+        BreathTool = breathTool;
     }
 }

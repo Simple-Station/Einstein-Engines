@@ -65,7 +65,7 @@
   files:
   - /Audio/Effects/Footsteps/clownstep1.ogg
   - /Audio/Effects/Footsteps/clownstep2.ogg
-  
+
 - type: soundCollection
   id: FootstepJester
   files:
@@ -189,7 +189,7 @@
   id: FootstepBlood
   files:
   - /Audio/Effects/Footsteps/gib_step.ogg
-  
+
 - type: soundCollection
   id: FootstepSticky
   files:
@@ -211,3 +211,37 @@
   id: FootstepHoverBorg
   files:
   - /Audio/Effects/Footsteps/borgwalk2.ogg
+
+- type: soundCollection
+  id: FootstepHighHeels
+  files:
+  - /Audio/Effects/Footsteps/highheels1.ogg
+  - /Audio/Effects/Footsteps/highheels2.ogg
+  - /Audio/Effects/Footsteps/highheels3.ogg
+  - /Audio/Effects/Footsteps/highheels4.ogg
+  - /Audio/Effects/Footsteps/highheels5.ogg
+
+- type: soundCollection
+  id: FootstepHardsuitLight
+  files:
+  - /Audio/Effects/Footsteps/tacsuit_step_01.ogg
+
+- type: soundCollection
+  id: FootstepHardsuitMedium
+  files:
+  - /Audio/Effects/Footsteps/tacsuit_step_02.ogg
+
+- type: soundCollection
+  id: FootstepHardsuitHeavy
+  files:
+  - /Audio/Effects/Footsteps/tacsuit_step_00.ogg
+
+- type: soundCollection
+  id: FootstepTacticalWebbing
+  files:
+  - /Audio/Effects/Footsteps/gear1.ogg
+  - /Audio/Effects/Footsteps/gear2.ogg
+  - /Audio/Effects/Footsteps/gear3.ogg
+  - /Audio/Effects/Footsteps/gear4.ogg
+  - /Audio/Effects/Footsteps/gear5.ogg
+  - /Audio/Effects/Footsteps/gear6.ogg

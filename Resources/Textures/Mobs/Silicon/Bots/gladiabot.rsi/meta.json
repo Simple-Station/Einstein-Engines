@@ -1,0 +1,56 @@
+{
+    "version": 1,
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Tim Falken",
+    "states": [
+        {
+            "name": "GladiabotFFA",
+            "delays": [
+                [
+                    0.5,
+                    0.2
+                ]
+            ]
+        },
+        {
+            "name": "GladiabotRed",
+            "delays": [
+                [
+                    0.5,
+                    0.2
+                ]
+            ]
+        },
+        {
+            "name": "GladiabotGreen",
+            "delays": [
+                [
+                    0.5,
+                    0.2
+                ]
+            ]
+        },
+        {
+            "name": "GladiabotBlue",
+            "delays": [
+                [
+                    0.5,
+                    0.2
+                ]
+            ]
+        },
+        {
+            "name": "GladiabotYellow",
+            "delays": [
+                [
+                    0.5,
+                    0.2
+                ]
+            ]
+        }
+    ]
+}

@@ -163,6 +163,20 @@
     - type: SalvageMagnetData
 
 - type: entity
+  id: BaseStationSiliconLawAsimov
+  abstract: true
+  components:
+  - type: SiliconLawProvider
+    laws: Asimov
+
+- type: entity
+  id: BaseStationSiliconLawAugustine
+  abstract: true
+  components:
+  - type: SiliconLawProvider
+    laws: Augustine
+
+- type: entity
   id: BaseStationSiliconLawCrewsimov
   abstract: true
   components:

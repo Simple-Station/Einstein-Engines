@@ -147,7 +147,7 @@ public sealed class SuicideSystem : EntitySystem
             return;
         }
 
-        args.DamageType ??= "Bloodloss";
+        args.DamageType ??= "Slash";
         _suicide.ApplyLethalDamage(victim, args.DamageType);
         args.Handled = true;
     }

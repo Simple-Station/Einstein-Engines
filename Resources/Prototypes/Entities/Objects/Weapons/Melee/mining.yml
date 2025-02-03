@@ -11,20 +11,28 @@
     sprite: Objects/Weapons/Melee/pickaxe.rsi
     state: pickaxe
   - type: MeleeWeapon
-    attackRate: 0.7
+    attackRate: 0.85
+    range: 1.5
     wideAnimationRotation: -135
     soundHit:
       path: "/Audio/Weapons/smash.ogg"
       params:
         volume: -3
     damage:
-      groups:
-        Brute: 5
+      types:
+        Blunt: 6
+        Piercing: 3
+    bluntStaminaDamageFactor: 2.0
+    heavyDamageBaseModifier: 1.75
+    maxTargets: 5
+    angle: 80
+  - type: DamageOtherOnHit
+    staminaCost: 5
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:
       groups:
-        Brute: 10
+        Brute: 5
       types:
         Structural: 30
   - type: Item
@@ -56,12 +64,23 @@
     wideAnimationRotation: -90
     soundHit:
       path: "/Audio/Items/drill_hit.ogg"
-    attackRate: 4
+    attackRate: 0.25
+    range: 1.5
+    heavyStaminaCost: 0.7
     damage:
       groups:
         Brute: 3
       types:
         Structural: 15
+  - type: DamageOtherOnHit
+    staminaCost: 9
+    damage:
+      groups:
+        Brute: 9
+      types:
+        Structural: 15
+  - type: ThrowingAngle
+    angle: 270
 
 - type: entity
   name: diamond tipped mining drill
@@ -78,10 +97,16 @@
     wideAnimationRotation: -90
     soundHit:
       path: "/Audio/Items/drill_hit.ogg"
-    attackRate: 4
+    heavyStaminaCost: 0.55 # More efficient so less stamina needed to use
     damage:
       groups:
         Brute: 6
+      types:
+        Structural: 30
+  - type: DamageOtherOnHit
+    damage:
+      groups:
+        Brute: 18
       types:
         Structural: 30
 

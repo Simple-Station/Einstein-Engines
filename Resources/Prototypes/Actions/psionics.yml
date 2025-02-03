@@ -302,7 +302,6 @@
       useDelay: 10
       checkCanInteract: false
       event: !type:DarkSwapActionEvent
-        manaCost: 30
 
 - type: entity
   id: ActionPyrokineticFlare

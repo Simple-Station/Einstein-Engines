@@ -1,4 +1,65 @@
 - type: latheRecipe
+  abstract: true
+  id: BaseElectronicsRecipe
+  category: Circuitry
+  completetime: 2
+  materials:
+    Steel: 100
+    Plastic: 300
+
+- type: latheRecipe
+  abstract: true
+  parent: BaseElectronicsRecipe
+  id: BaseCheapElectronicsRecipe
+  materials:
+    Steel: 50
+    Plastic: 50
+
+- type: latheRecipe
+  abstract: true
+  parent: BaseElectronicsRecipe
+  id: BaseCheapCircuitboardRecipe
+  materials:
+     Steel: 50
+     Glass: 250
+
+- type: latheRecipe
+  abstract: true
+  parent: BaseElectronicsRecipe
+  id: BaseCircuitboardRecipe
+  completetime: 4
+  materials:
+    Steel: 100
+    Glass: 500
+
+- type: latheRecipe
+  abstract: true
+  parent: BaseCircuitboardRecipe
+  id: BaseGoldCircuitboardRecipe
+  materials:
+    Steel: 100
+    Glass: 500
+    Gold: 100
+
+- type: latheRecipe
+  abstract: true
+  parent: BaseCircuitboardRecipe
+  id: BaseSilverCircuitboardRecipe
+  materials:
+    Steel: 100
+    Glass: 500
+    Silver: 100
+
+- type: latheRecipe
+  abstract: true
+  parent: BaseCircuitboardRecipe
+  id: BaseBananiumCircuitboardRecipe
+  materials:
+    Steel: 100
+    Glass: 500
+    Bananium: 100
+
+- type: latheRecipe
   id: FirelockElectronics
   result: FirelockElectronics
   category: Circuitry
@@ -626,6 +687,12 @@
      Glass: 500
 
 - type: latheRecipe
+  parent: BaseGoldCircuitboardRecipe
+  id: SMESAdvancedMachineCircuitboard
+  result: SMESAdvancedMachineCircuitboard
+
+- type: latheRecipe
+  parent: BaseCircuitboardRecipe
   id: PortableGeneratorPacmanMachineCircuitboard
   result: PortableGeneratorPacmanMachineCircuitboard
   category: Circuitry
@@ -994,7 +1061,7 @@
      Steel: 100
      Glass: 500
      Gold: 100
- 
+
 - type: latheRecipe
   id: JukeboxCircuitBoard
   result: JukeboxCircuitBoard
@@ -1002,3 +1069,13 @@
   materials:
     Steel: 100
     Glass: 500
+
+- type: latheRecipe
+  id: MaterialSiloCircuitboard
+  result: MaterialSiloCircuitboard
+  category: Circuitry
+  completetime: 5
+  materials:
+    Steel: 100
+    Glass: 500
+    Gold: 100

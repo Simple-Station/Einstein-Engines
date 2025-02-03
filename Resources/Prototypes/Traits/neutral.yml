@@ -98,6 +98,20 @@
         - type: SpanishAccent
 
 - type: trait
+  id: SkeletonAccent
+  category: TraitsSpeechAccents
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsAccents
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Plasmaman
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: SkeletonAccent
+
+- type: trait
   id: NormalVision
   category: Visual
   requirements:

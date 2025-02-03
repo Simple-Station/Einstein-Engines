@@ -94,6 +94,7 @@
   exclusive: true
   customColorTint: true
   canBeHeirloom: true
+  guideEntry: PsionicInsulation
   items:
     - ClothingHeadTinfoil
   requirements:
@@ -299,6 +300,103 @@
       group: LoadoutHead
 
 - type: loadout
+  id: LoadoutHeadBeretArtist
+  category: Head
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingHeadHatBeretArtist
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadBeretPeaked
+  category: Head
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingHeadHatBeretPeaked
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+
+# Beanies
+- type: loadout
+  id: LoadoutHeadBeanie
+  category: Head
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingHeadHatBeanie
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadBeanieWinter
+  category: Head
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingHeadHatBeanieWinter
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadBeanieSubmariner
+  category: Head
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingHeadHatBeanieSubmariner
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadBeanieTight
+  category: Head
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingHeadHatBeanieTight
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadSlouch
+  category: Head
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingHeadHatSlouch
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadSunVisor
+  category: Head
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingHeadHatSunVisor
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+
+- type: loadout
   id: LoadoutHeadHijabColorable
   category: Head
   cost: 0
@@ -330,6 +428,125 @@
   customColorTint: true
   items:
     - ClothingHeadHatKippahColorable
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadHeadBandBasic
+  category: Head
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingHeadHatHeadBandBasic
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+
+# Hair Accessories
+- type: loadout
+  id: LoadoutHeadPin
+  category: Head
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingHeadHatPin
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadPinClover
+  category: Head
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingHeadHatPinClover
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadPinButterfly
+  category: Head
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingHeadHatPinButterfly
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadPinMagnetic
+  category: Head
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingHeadHatPinMagnetic
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadRibbon
+  category: Head
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingHeadHatRibbon
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadBow
+  category: Head
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingHeadHatBow
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadBowSmall
+  category: Head
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingHeadHatBowSmall
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadHatBeanieGreen
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadHatBeanieGreen
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadHatMountie
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadHatMountie
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutHead

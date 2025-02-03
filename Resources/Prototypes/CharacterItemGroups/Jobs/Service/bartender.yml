@@ -30,6 +30,10 @@
       id: LoadoutServiceBartenderShotgunDoubleBarreledRubber
     - type: loadout
       id: LoadoutServiceBartenderMosinRubber
+    - type: loadout
+      id: LoadoutServiceBartenderArgentiNonlethal
+    - type: loadout
+      id: LoadoutServiceBartenderRepeaterNonlethal
 
 #- type: characterItemGroup
 #  id: LoadoutBartenderEyes
@@ -69,6 +73,8 @@
 - type: characterItemGroup
   id: LoadoutBartenderOuter
   items:
+    - type: loadout
+      id: LoadoutServiceBartenderWinterCoat
     - type: loadout
       id: LoadoutServiceBartenderArmorDuraVest
     - type: loadout

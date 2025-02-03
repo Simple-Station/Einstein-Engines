@@ -18,7 +18,6 @@
   sexes:
     - Male
     - Female
-    - Unsexed
   minHeight: 0.65
   defaultHeight: 0.85
   maxHeight: 1.15

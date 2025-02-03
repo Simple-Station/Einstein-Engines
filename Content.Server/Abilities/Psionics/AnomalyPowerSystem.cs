@@ -49,10 +49,10 @@ public sealed partial class AnomalyPowerSystem : EntitySystem
 
     private void OnPowerUsed(EntityUid uid, PsionicComponent component, AnomalyPowerActionEvent args)
     {
-        if (!_psionics.OnAttemptPowerUse(args.Performer, args.Settings.PowerName, args.Settings.ManaCost, args.Settings.CheckInsulation))
+        if (!_psionics.OnAttemptPowerUse(args.Performer, args.Settings.PowerName, args.Settings.CheckInsulation))
             return;
 
-        var overcharged = args.Settings.DoSupercritical ? _glimmerSystem.Glimmer * component.CurrentAmplification
+        var overcharged = args.Settings.DoSupercritical ? _glimmerSystem.GlimmerOutput * component.CurrentAmplification
             > Math.Min(args.Settings.SupercriticalThreshold * component.CurrentDampening, args.Settings.MaxSupercriticalThreshold)
             : false;
 
@@ -84,7 +84,7 @@ public sealed partial class AnomalyPowerSystem : EntitySystem
         }
 
         if (args.Settings.PulseSound is null
-            || _glimmerSystem.Glimmer < args.Settings.GlimmerSoundThreshold * component.CurrentDampening)
+            || _glimmerSystem.GlimmerOutput < args.Settings.GlimmerSoundThreshold * component.CurrentDampening)
             return;
 
         _audio.PlayEntity(args.Settings.PulseSound, uid, uid);

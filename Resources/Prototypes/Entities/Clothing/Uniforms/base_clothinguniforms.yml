@@ -56,6 +56,7 @@
   - type: DeviceNetwork
     deviceNetId: Wireless
     transmitFrequencyId: SuitSensor
+    savableAddress: false
   - type: WirelessNetworkConnection
     range: 1200
   - type: StationLimitedNetwork
@@ -152,3 +153,108 @@
     - state: icon_flipped
       map: ["foldedLayer"]
       visible: true
+
+- type: entity
+  abstract: true
+  parent: UnsensoredClothingUniformBase
+  id: UnsensoredClothingUniformEnvirosuitBase
+  components:
+  - type: IgniteFromGasImmunity
+    parts:
+    - Torso
+    - Groin
+    - LeftArm
+    - LeftHand
+    - RightArm
+    - RightHand
+    - LeftLeg
+    - LeftFoot
+    - RightLeg
+    - RightFoot
+  - type: Clothing
+    equipDelay: 0.4
+    unequipDelay: 0.6 # Slightly higher delay to protect against accidental unequips
+    femaleMask: NoMask
+  - type: SelfExtinguisher
+    cooldown: 100
+    requiresIgniteFromGasImmune: true
+    sound:
+      path: /Audio/Effects/extinguish.ogg
+  - type: LimitedCharges
+    maxCharges: 4
+    charges: 4
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.85
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - PlasmamanSafe
+  - type: ClothingRequiredStepTriggerImmune
+    slots: WITHOUT_POCKET
+  - type: GuideHelp # While the playerbase is getting introduced to Plasmamen, add their guidebook here
+    guides: [ Plasmaman ]
+
+- type: entity
+  abstract: true
+  parent: UnsensoredClothingUniformEnvirosuitBase
+  id: ClothingUniformEnvirosuitBase
+  components:
+  - type: SuitSensor
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    transmitFrequencyId: SuitSensor
+  - type: WirelessNetworkConnection
+    range: 1200
+  - type: StationLimitedNetwork
+
+- type: entity
+  abstract: true
+  parent: UnsensoredClothingUniformEnvirosuitBase
+  id: UnsensoredClothingUniformEnvirosuitCustomBase
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Envirosuits/custom.rsi
+    layers:
+    - state: icon
+      color: "#FFFFFF"
+    - state: accent-icon
+      color: "#FF0000"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#FFFFFF"
+      - state: accent-inhand-left
+        color: "#FF0000"
+      right:
+      - state: inhand-right
+        color: "#FFFFFF"
+      - state: accent-inhand-right
+        color: "#FF0000"
+  - type: Clothing
+    sprite: Clothing/Uniforms/Envirosuits/custom.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#FFFFFF"
+      - state: accent-equipped-INNERCLOTHING
+        color: "#FF0000"
+      - state: loweraccent-equipped-INNERCLOTHING
+        color: "#FF0000"
+      - state: soles-equipped-INNERCLOTHING
+        color: "#bababa" # Recommended default soles color
+
+- type: entity
+  abstract: true
+  parent: UnsensoredClothingUniformEnvirosuitCustomBase
+  id: ClothingUniformEnvirosuitCustomBase
+  components:
+  - type: SuitSensor
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    transmitFrequencyId: SuitSensor
+  - type: WirelessNetworkConnection
+    range: 1200
+  - type: StationLimitedNetwork

@@ -91,7 +91,7 @@ public sealed class SurveillanceCameraMonitorSystem : EntitySystem
     private void OnSubnetRequest(EntityUid uid, SurveillanceCameraMonitorComponent component,
         SurveillanceCameraMonitorSubnetRequestMessage args)
     {
-        if (args.Actor != null)
+        if (args.Actor is { Valid: true } actor && !Deleted(actor))
         {
             SetActiveSubnet(uid, args.Subnet, component);
         }
@@ -147,6 +147,7 @@ public sealed class SurveillanceCameraMonitorSystem : EntitySystem
                     break;
                 case SurveillanceCameraSystem.CameraSubnetData:
                     if (args.Data.TryGetValue(SurveillanceCameraSystem.CameraSubnetData, out string? subnet)
+                        && !string.IsNullOrEmpty(subnet)
                         && !component.KnownSubnets.ContainsKey(subnet))
                     {
                         component.KnownSubnets.Add(subnet, args.SenderAddress);
@@ -218,6 +219,7 @@ public sealed class SurveillanceCameraMonitorSystem : EntitySystem
     {
         if (!Resolve(uid, ref monitor)
             || monitor.LastHeartbeatSent < _heartbeatDelay
+            || string.IsNullOrEmpty(monitor.ActiveSubnet)
             || !monitor.KnownSubnets.TryGetValue(monitor.ActiveSubnet, out var subnetAddress))
         {
             return;
@@ -279,6 +281,7 @@ public sealed class SurveillanceCameraMonitorSystem : EntitySystem
         SurveillanceCameraMonitorComponent? monitor = null)
     {
         if (!Resolve(uid, ref monitor)
+            || string.IsNullOrEmpty(subnet)
             || !monitor.KnownSubnets.ContainsKey(subnet))
         {
             return;
@@ -296,6 +299,7 @@ public sealed class SurveillanceCameraMonitorSystem : EntitySystem
     private void RequestActiveSubnetInfo(EntityUid uid, SurveillanceCameraMonitorComponent? monitor = null)
     {
         if (!Resolve(uid, ref monitor)
+            || string.IsNullOrEmpty(monitor.ActiveSubnet)
             || !monitor.KnownSubnets.TryGetValue(monitor.ActiveSubnet, out var address))
         {
             return;
@@ -311,6 +315,7 @@ public sealed class SurveillanceCameraMonitorSystem : EntitySystem
     private void ConnectToSubnet(EntityUid uid, string subnet, SurveillanceCameraMonitorComponent? monitor = null)
     {
         if (!Resolve(uid, ref monitor)
+            || string.IsNullOrEmpty(subnet)
             || !monitor.KnownSubnets.TryGetValue(subnet, out var address))
         {
             return;
@@ -328,6 +333,7 @@ public sealed class SurveillanceCameraMonitorSystem : EntitySystem
     private void DisconnectFromSubnet(EntityUid uid, string subnet, SurveillanceCameraMonitorComponent? monitor = null)
     {
         if (!Resolve(uid, ref monitor)
+            || string.IsNullOrEmpty(subnet)
             || !monitor.KnownSubnets.TryGetValue(subnet, out var address))
         {
             return;
@@ -416,6 +422,7 @@ public sealed class SurveillanceCameraMonitorSystem : EntitySystem
         SurveillanceCameraMonitorComponent? monitor = null)
     {
         if (!Resolve(uid, ref monitor)
+            || string.IsNullOrEmpty(monitor.ActiveSubnet)
             || !monitor.KnownSubnets.TryGetValue(monitor.ActiveSubnet, out var subnetAddress))
         {
             return;

@@ -3,9 +3,6 @@
   name: job-name-boxer
   description: job-description-boxer
   playTimeTracker: JobBoxer
-  requirements:
-    - !type:CharacterOverallTimeRequirement
-      min: 7200 #DeltaV 2 hours
   startingGear: BoxerGear
   icon: "JobIconBoxer"
   supervisors: job-supervisors-hop
@@ -14,17 +11,14 @@
   - Theatre # DeltaV - Add Theatre access
   - Boxer # DeltaV - Add Boxer access
   special: # Nyanotrasen - BoxerComponent, see Content.Server/Nyanotrasen/Abilities/Boxer/Boxer/BoxerComponent.cs
-  - !type:AddComponentSpecial
-    components:
-    - type: Boxer
-      modifiers:
-        coefficients: # These only apply to unarmed
-          Blunt: 1.5
-          Slash: 1.5
-          Piercing: 1.5
+  - !type:AddTraitSpecial
+    traits:
+    - MartialArtist
 
 - type: startingGear
   id: BoxerGear
+  subGear:
+  - BoxerPlasmamanGear
   equipment:
     jumpsuit: UniformShortsRed
     back: ClothingBackpackFilled
@@ -36,3 +30,11 @@
   innerClothingSkirt: UniformShortsRedWithTop
   satchel: ClothingBackpackSatchelFilled
   duffelbag: ClothingBackpackDuffelFilled
+
+- type: startingGear
+  id: BoxerPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitBoxing
+    head: ClothingHeadEnvirohelmBoxing
+    # No envirogloves, use the boxing gloves instead

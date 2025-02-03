@@ -11,5 +11,9 @@ namespace Content.Shared.Construction.Components
     {
         [DataField("prototype", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
         public string? Prototype { get; private set; }
+
+        [DataField]
+
+        public EntProtoId? ModularComputerProgramPrototype;
     }
 }

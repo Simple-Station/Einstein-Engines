@@ -1,0 +1,107 @@
+# Tier 1 Vacsuits
+
+# Tier 2 Hardsuits
+
+# Tier 3 Hardsuits
+
+# Tier 2 Tacsuits
+- type: latheRecipe
+  id: ClothingOuterHardsuitCombatStandard
+  result: ClothingOuterHardsuitCombatStandard
+  category: Tacsuits
+  completetime: 60
+  materials:
+     Plasteel: 3000
+     Durathread: 300
+     ReinforcedGlass: 1000
+     Uranium: 100
+     Plastic: 500
+     Gold: 100
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitCombatMedical
+  result: ClothingOuterHardsuitCombatMedical
+  category: Tacsuits
+  completetime: 60
+  materials:
+     Plasteel: 3000
+     Durathread: 300
+     ReinforcedGlass: 1000
+     Uranium: 100
+     Plastic: 500
+     Gold: 100
+
+# Unpainted variant of the Warden's tacsuit.
+- type: latheRecipe
+  id: ClothingOuterHardsuitCombatRiot
+  result: ClothingOuterHardsuitCombatRiot
+  category: Tacsuits
+  completetime: 90
+  materials:
+     Plasteel: 3500
+     ReinforcedGlass: 1250
+     Durathread: 500
+     Plastic: 500
+     Uranium: 200
+     Gold: 200
+
+# Tier 3 Tacsuits
+
+# Notably, this is not the Head of Security's tacsuit. It's the base version that's unpainted.
+- type: latheRecipe
+  id: ClothingOuterHardsuitCombatAdvanced
+  result: ClothingOuterHardsuitCombatAdvanced
+  category: Tacsuits
+  completetime: 120
+  materials:
+     Plasteel: 5000
+     WebSilk: 3000
+     ReinforcedGlass: 1500
+     Plastic: 1000
+     Uranium: 400
+     Gold: 400
+
+# TODO: I still need to make these "Unpainted"
+- type: latheRecipe
+  id: ClothingOuterHardsuitShanlinUnpainted
+  result: ClothingOuterHardsuitShanlinUnpainted
+  category: Tacsuits
+  completetime: 180
+  materials:
+     Plasteel: 8000
+     WebSilk: 3000
+     ReinforcedGlass: 1500
+     Plastic: 1500
+     Uranium: 800
+     Plasma: 800
+     Gold: 600
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitShiweiUnpainted
+  result: ClothingOuterHardsuitShiweiUnpainted
+  category: Tacsuits
+  completetime: 120
+  materials:
+     Plasteel: 10000
+     WebSilk: 3000
+     ReinforcedPlasmaGlass: 1500
+     Plastic: 1500
+     Uranium: 1000
+     Plasma: 1000
+     Gold: 800
+
+# TODO: IOU one "Unpainted" juggsuit sprite.
+- type: latheRecipe
+  id: ClothingOuterHardsuitJuggernautReverseEngineered
+  result: ClothingOuterHardsuitJuggernautReverseEngineered
+  category: Tacsuits
+  completetime: 300
+  materials: # GOOD LUCK.
+     Plasteel: 30000
+     ReinforcedPlasmaGlass: 4500
+     WebSilk: 3500
+     Plastic: 3000
+     Uranium: 1500
+     Gold: 1500
+     Plasma: 1000
+     Diamond: 300

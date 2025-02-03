@@ -1,0 +1,49 @@
+- type: characterItemGroup
+  id: LoadoutBlueshieldOfficerBackpacks
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingBackpackBlueshield
+    - type: loadout
+      id: LoadoutClothingSatchelBlueshield
+    - type: loadout
+      id: LoadoutClothingDuffelBlueshield
+
+- type: characterItemGroup
+  id: LoadoutBlueshieldOfficerVests
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingBlueshieldArmoredJacket
+    - type: loadout
+      id: LoadoutClothingBlueshieldArmoredCowboyJacket
+    - type: loadout
+      id: LoadoutClothingBlueshieldArmorVest
+    - type: loadout
+      id: LoadoutClothingBlueshieldArmoredMarine
+    - type: loadout
+      id: LoadoutClothingBlueshieldArmoredVest
+    - type: loadout
+      id: LoadoutClothingBlueshieldArmoredKimono
+    - type: loadout
+      id: LoadoutClothingBlueshieldArmoredCoat
+
+- type: characterItemGroup
+  id: LoadoutBlueshieldOfficerUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingUniformJumpskirtBlueshieldOfficer
+    - type: loadout
+      id: LoadoutClothingUniformJumpsuitBlueshieldOfficer
+
+- type: characterItemGroup
+  id: LoadoutBlueshieldOfficerHats
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingBlueshieldBeretNavy
+    - type: loadout
+      id: LoadoutClothingBlueshieldBeretOfficer
+    - type: loadout
+      id: LoadoutClothingBlueshieldCowboyHat

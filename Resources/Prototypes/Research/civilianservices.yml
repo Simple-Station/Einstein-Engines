@@ -1,31 +1,20 @@
 # Tier 1
-
 - type: technology
-  id: Hydroponics
-  name: research-technology-basic-hydroponics
+  id: BasicCybernetics
+  name: research-technology-basic-cybernetics
   icon:
-    sprite: Structures/Machines/seed_extractor.rsi
-    state: seedextractor
+    sprite: Mobs/Silicon/chassis.rsi
+    state: robot
   discipline: CivilianServices
   tier: 1
-  cost: 5000
+  cost: 15000
   recipeUnlocks:
+  - BorgModuleLightReplacer
+  - BorgModuleAdvancedCleaning
   - BorgModuleGardening
   - BorgModuleHarvesting
-  - SeedExtractorMachineCircuitboard
-  - HydroponicsTrayMachineCircuitboard
-  - ReagentGrinderIndustrialMachineCircuitboard
-
-- type: technology
-  id: CritterMechs
-  name: research-technology-critter-mechs
-  icon:
-    sprite: Objects/Specific/Mech/mecha.rsi
-    state: hamtr
-  discipline: CivilianServices
-  tier: 1
-  cost: 7500
-  recipeUnlocks:
+  - BorgModuleMusique
+  - BorgModuleClowning
   - HamtrHarness
   - HamtrLArm
   - HamtrRArm
@@ -35,16 +24,20 @@
   - HamtrPeripheralsElectronics
   - MechEquipmentGrabberSmall
   - VimHarness
+  - ProximitySensor
+  - ExosuitFabricatorMachineCircuitboard
+  - BorgModuleArtifact
+  - BorgModuleAnomaly
 
 - type: technology
-  id: AudioVisualCommunication
-  name: research-technology-audio-visual-communication
+  id: BasicElectronics
+  name: research-technology-basic-electronics
   icon:
-    sprite: Structures/Wallmounts/camera.rsi
-    state: cameracase
+    sprite: Structures/Machines/computers.rsi
+    state: television
   discipline: CivilianServices
   tier: 1
-  cost: 5000
+  cost: 12500
   recipeUnlocks:
   - SurveillanceCameraRouterCircuitboard
   - SurveillanceCameraWirelessRouterCircuitboard
@@ -53,97 +46,66 @@
   - SurveillanceCameraMonitorCircuitboard
   - SurveillanceWirelessCameraMonitorCircuitboard
   - TelecomServerCircuitboard
-
-- type: technology
-  id: AdvancedEntertainment
-  name: research-technology-advanced-entertainment
-  icon:
-    sprite: Structures/Machines/computers.rsi
-    state: television
-  discipline: CivilianServices
-  tier: 1
-  cost: 7500
-  recipeUnlocks:
-    - ComputerTelevisionCircuitboard
-    - SynthesizerInstrument
-    - BorgModuleMusique
-    - BorgModuleClowning
-    - DawInstrumentMachineCircuitboard
-    - MassMediaCircuitboard
-    - JukeboxCircuitBoard
-
-- type: technology
-  id: RoboticCleanliness
-  name: research-technology-robotic-cleanliness
-  icon:
-    sprite: Mobs/Silicon/chassis.rsi
-    state: janitor
-  discipline: CivilianServices
-  tier: 1
-  cost: 5000
-  recipeUnlocks:
-  - BorgModuleLightReplacer
-  - BorgModuleAdvancedCleaning
-
-- type: technology
-  id: MeatManipulation
-  name: research-technology-meat-manipulation
-  icon:
-    sprite: Structures/Machines/fat_sucker.rsi
-    state: display
-  discipline: CivilianServices
-  tier: 1
-  cost: 7500
-  recipeUnlocks:
+  - ComputerTelevisionCircuitboard
+  - SynthesizerInstrument
+  - DawInstrumentMachineCircuitboard
+  - MassMediaCircuitboard
+  - JukeboxCircuitBoard
   - FatExtractorMachineCircuitboard
   - BiofabricatorMachineCircuitboard
   - BiomassReclaimerMachineCircuitboard
 
+# TODO: Add recipes to manufacture Vacsuits.
+# - type: technology
+#   id: BasicVacsuits
+#   name: research-technology-basic-vacsuits
+#   icon:
+#     sprite: Clothing/OuterClothing/Suits/eva_emergency.rsi
+#     state: icon
+#   discipline: CivilianServices
+#   tier: 1
+#   cost: 10000
+#   recipeUnlocks:
+#   - ClothingOuterSuitEmergency
+
 # Tier 2
 
-- type: technology
-  id: FauxAstroTiles
-  name: research-technology-faux-astro-tiles
-  icon:
-    sprite: Objects/Tiles/tile.rsi
-    state: astroice
-  discipline: CivilianServices
-  tier: 2
-  cost: 5000
-  recipeUnlocks:
-  - FauxTileAstroGrass
-  - FauxTileMowedAstroGrass
-  - FauxTileJungleAstroGrass
-  - FauxTileAstroIce
-  - FauxTileAstroSnow
+# TODO: Add recipes to manufacture Hardsuits
+# - type: technology
+#   id: BasicHardsuits
+#   name: research-technology-basic-hardsuits
+#   icon:
+#     sprite: Clothing/OuterClothing/Hardsuits/engineering.rsi
+#     state: icon
+#   discipline: CivilianServices
+#   tier: 1
+#   cost: 15000
+#   recipeUnlocks:
+#   - ClothingOuterHardsuitEngineering
 
 - type: technology
-  id: BiochemicalStasis
-  name: research-technology-biochemical-stasis
+  id: BasicLifeImprovements
+  name: research-technology-basic-life-improvements
   icon:
     sprite: Structures/Machines/stasis_bed.rsi
     state: icon
   discipline: CivilianServices
   tier: 2
-  cost: 7500
+  cost: 15000
   recipeUnlocks:
-  - StasisBedMachineCircuitboard
-  - CryoPodMachineCircuitboard
   - CryostasisBeaker
   - SyringeCryostasis
-
-- type: technology
-  id: AdvancedCleaning
-  name: research-technology-advanced-cleaning
-  icon:
-    sprite: Objects/Specific/Janitorial/advmop.rsi
-    state: advmop
-  discipline: CivilianServices
-  tier: 2
-  cost: 10000
-  recipeUnlocks:
   - AdvMopItem
   - MegaSprayBottle
+  - WeaponSprayNozzle
+  - ClothingBackpackWaterTank
+  - CargoTelepadMachineCircuitboard
+  - ClothingShoesBootsMagSci
+  - ClothingShoesBootsMoon
+  - CloningConsoleComputerCircuitboard
+  - MedicalScannerMachineCircuitboard
+  - MetempsychoticMachineCircuitboard
+  - EnvirosuitExtinguisherRefill
 
 - type: technology
   id: HONKMech
@@ -165,76 +127,37 @@
   - HonkerTargetingElectronics
   - MechEquipmentHorn
 
-- type: technology
-  id: AdvancedSpray
-  name: research-technology-advanced-spray
-  icon:
-    sprite: Objects/Weapons/Guns/Basic/spraynozzle.rsi
-    state: icon
-  discipline: CivilianServices
-  tier: 2
-  cost: 10000
-  recipeUnlocks:
-  - WeaponSprayNozzle
-  - ClothingBackpackWaterTank
-
-- type: technology
-  id: BluespaceCargoTransport
-  name: research-technology-bluespace-cargo-transport
-  icon:
-    sprite: Structures/cargo_telepad.rsi
-    state: display
-  discipline: CivilianServices
-  tier: 2
-  cost: 15000
-  recipeUnlocks:
-  - CargoTelepadMachineCircuitboard
-
 # Tier 3
+# TODO: Add recipes to manufacture Advanced Hardsuits
+# - type: technology
+#   id: AdvancedHardsuits
+#   name: research-technology-advanced-hardsuits
+#   icon:
+#     sprite: Clothing/OuterClothing/Hardsuits/engineering-white.rsi
+#     state: icon
+#   discipline: CivilianServices
+#   tier: 1
+#   cost: 15000
+#   recipeUnlocks:
+#   - ClothingOuterHardsuitEngineeringWhite
+#   softCapContribution: 1.5
 
 - type: technology
-  id: QuantumFiberWeaving
-  name: research-technology-quantum-fiber-weaving
+  id: AdvancedLifeImprovements
+  name: research-technology-advanced-life-improvements
   icon:
     sprite: Clothing/Shoes/Boots/speedboots.rsi
     state: icon
   discipline: CivilianServices
   tier: 3
-  cost: 10000
+  cost: 15000
   recipeUnlocks:
+  - ClothingShoesBootsMagAdv # TODO: Separate this out from the silly "Steal the CE's Timbs" objective
   - ClothingShoesBootsSpeed
-
-- type: technology
-  id: BluespaceChemistry
-  name: research-technology-bluespace-chemistry
-  icon:
-    sprite: Objects/Specific/Chemistry/beaker_bluespace.rsi
-    state: beakerbluespace
-  discipline: CivilianServices
-  tier: 3
-  cost: 10000
-  recipeUnlocks:
   - BluespaceBeaker
   - SyringeBluespace
-
-- type: technology
-  id: BasicTranslation
-  name: research-technology-basic-translation
-  icon:
-    sprite: Objects/Devices/translator.rsi
-    state: icon
-  discipline: CivilianServices
-  tier: 2
-  cost: 10000
-  recipeUnlocks:
-  - CanilunztTranslator
-  - BubblishTranslator
-  - NekomimeticTranslator
-  - DraconicTranslator
-  - SolCommonTranslator
-  - RootSpeakTranslator
-  - BasicGalaticCommonTranslatorImplanter
-  - MofficTranslator
+  # TODO: Add things like frontier's Hyposprays.
+  softCapContribution: 1.5
 
 - type: technology
   id: AdvancedTranslation
@@ -256,3 +179,4 @@
   - RootSpeakTranslatorImplanter
   - AnimalTranslator
   - MofficTranslatorImplanter
+  softCapContribution: 1.5

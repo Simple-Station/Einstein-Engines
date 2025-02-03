@@ -53,23 +53,11 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
 
     private const int AttackMask = (int) (CollisionGroup.MobMask | CollisionGroup.Opaque);
 
-    /// <summary>
-    /// Maximum amount of targets allowed for a wide-attack.
-    /// </summary>
-    public const int MaxTargets = 5;
-
-    /// <summary>
-    /// If an attack is released within this buffer it's assumed to be full damage.
-    /// </summary>
-    public const float GracePeriod = 0.05f;
-
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<MeleeWeaponComponent, HandSelectedEvent>(OnMeleeSelected);
-        SubscribeLocalEvent<MeleeWeaponComponent, ShotAttemptedEvent>(OnMeleeShotAttempted);
-        SubscribeLocalEvent<MeleeWeaponComponent, GunShotEvent>(OnMeleeShot);
         SubscribeLocalEvent<BonusMeleeDamageComponent, GetMeleeDamageEvent>(OnGetBonusMeleeDamage);
         SubscribeLocalEvent<BonusMeleeDamageComponent, GetHeavyDamageModifierEvent>(OnGetBonusHeavyDamageModifier);
         SubscribeLocalEvent<BonusMeleeAttackRateComponent, GetMeleeAttackRateEvent>(OnGetBonusMeleeAttackRate);
@@ -93,24 +81,6 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
 #endif
     }
 
-    private void OnMeleeShotAttempted(EntityUid uid, MeleeWeaponComponent comp, ref ShotAttemptedEvent args)
-    {
-        if (comp.NextAttack > Timing.CurTime)
-            args.Cancel();
-    }
-
-    private void OnMeleeShot(EntityUid uid, MeleeWeaponComponent component, ref GunShotEvent args)
-    {
-        if (!TryComp<GunComponent>(uid, out var gun))
-            return;
-
-        if (gun.NextFire > component.NextAttack)
-        {
-            component.NextAttack = gun.NextFire;
-            DirtyField(uid, component, nameof(MeleeWeaponComponent.NextAttack));
-        }
-    }
-
     private void OnMeleeSelected(EntityUid uid, MeleeWeaponComponent component, HandSelectedEvent args)
     {
         var attackRate = GetAttackRate(uid, args.User, component);
@@ -125,7 +95,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
 
         // If someone swaps to this weapon then reset its cd.
         var curTime = Timing.CurTime;
-        var minimum = curTime + TimeSpan.FromSeconds(1 / attackRate);
+        var minimum = curTime + TimeSpan.FromSeconds(attackRate);
 
         if (minimum < component.NextAttack)
             return;
@@ -194,7 +164,8 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
             return;
 
         if (!TryGetWeapon(user, out var weaponUid, out var weapon) ||
-            weaponUid != GetEntity(msg.Weapon))
+            weaponUid != GetEntity(msg.Weapon) ||
+            !weapon.CanWideSwing) // Goobstation Change
         {
             return;
         }
@@ -351,6 +322,8 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         if (!CombatMode.IsInCombatMode(user))
             return false;
 
+        var fireRateSwingModifier = 1f;
+
         EntityUid? target = null;
         switch (attack)
         {
@@ -369,6 +342,9 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
                     return false;
 
                 break;
+            case HeavyAttackEvent:
+                fireRateSwingModifier = weapon.HeavyRateModifier;
+                break;
             case DisarmAttackEvent disarm:
                 if (disarm.Target != null && !TryGetEntity(disarm.Target, out target))
                 {
@@ -386,7 +362,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         }
 
         // Windup time checked elsewhere.
-        var fireRate = TimeSpan.FromSeconds(1f / GetAttackRate(weaponUid, user, weapon));
+        var fireRate = TimeSpan.FromSeconds(GetAttackRate(weaponUid, user, weapon) * fireRateSwingModifier);
         var swings = 0;
 
         // TODO: If we get autoattacks then probably need a shotcounter like guns so we can do timing properly.
@@ -457,6 +433,16 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
 
     protected abstract bool InRange(EntityUid user, EntityUid target, float range, ICommonSession? session);
 
+    protected bool CanDoLightAttack(EntityUid user, [NotNullWhen(true)] EntityUid? target, MeleeWeaponComponent component, [NotNullWhen(true)] out TransformComponent? targetXform, ICommonSession? session = null)
+    {
+        targetXform = null;
+        return !Deleted(target) &&
+            HasComp<DamageableComponent>(target) &&
+            TryComp<TransformComponent>(target, out targetXform) &&
+            // Not in LOS.
+            InRange(user, target.Value, component.Range, session);
+    }
+
     protected virtual void DoLightAttack(EntityUid user, LightAttackEvent ev, EntityUid meleeUid, MeleeWeaponComponent component, ICommonSession? session)
     {
         // If I do not come back later to fix Light Attacks being Heavy Attacks you can throw me in the spider pit -Errant
@@ -465,11 +451,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         var resistanceBypass = GetResistanceBypass(meleeUid, user, component);
 
         // For consistency with wide attacks stuff needs damageable.
-        if (Deleted(target) ||
-            !HasComp<DamageableComponent>(target) ||
-            !TryComp(target, out TransformComponent? targetXform) ||
-            // Not in LOS.
-            !InRange(user, target.Value, component.Range, session))
+        if (!CanDoLightAttack(user, target, component, out var targetXform, session))
         {
             // Leave IsHit set to true, because the only time it's set to false
             // is when a melee weapon is examined. Misses are inferred from an

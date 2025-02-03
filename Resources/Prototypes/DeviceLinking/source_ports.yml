@@ -154,3 +154,9 @@
   id: PowerDischarging
   name: signal-port-name-power-discharging
   description: signal-port-description-power-discharging
+
+- type: sourcePort
+  id: MaterialSilo
+  name: signal-port-name-material-silo
+  description: signal-port-description-material-silo
+  defaultLinks: [ MaterialSiloUtilizer ]

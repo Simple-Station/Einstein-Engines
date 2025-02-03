@@ -132,6 +132,7 @@
     speechVerb: LargeMob
   - type: Psionic
     removable: false
+    roller: false
   - type: InnatePsionicPowers
     powersToAdd:
       - TelepathyPower

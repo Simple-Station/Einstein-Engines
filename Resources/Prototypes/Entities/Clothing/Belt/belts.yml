@@ -503,6 +503,13 @@
           - SmokeOnTrigger
     sprite: Clothing/Belt/belt_overlay.rsi
   - type: Appearance
+  - type: EmitsSoundOnMove
+    soundCollection:
+      collection: FootstepTacticalWebbing
+      params:
+        volume: -10
+    distanceWalking: 2
+    distanceSprinting: 3
 
 - type: entity
   parent: [ClothingBeltBase, ClothingSlotBase]
@@ -584,6 +591,13 @@
   - type: Storage
     grid:
     - 0,0,3,1
+  - type: EmitsSoundOnMove
+    soundCollection:
+      collection: FootstepTacticalWebbing
+      params:
+        volume: -10
+    distanceWalking: 2
+    distanceSprinting: 3
 
 - type: entity
   parent: ClothingBeltStorageBase
@@ -606,6 +620,13 @@
         - Gun
         - BallisticAmmoProvider
         - CartridgeAmmo
+  - type: EmitsSoundOnMove
+    soundCollection:
+      collection: FootstepTacticalWebbing
+      params:
+        volume: -10
+    distanceWalking: 2
+    distanceSprinting: 3
 
 - type: entity
   parent: ClothingBeltSecurity
@@ -617,6 +638,13 @@
     sprite: Clothing/Belt/securitywebbing.rsi
   - type: Clothing
     sprite: Clothing/Belt/securitywebbing.rsi
+  - type: EmitsSoundOnMove
+    soundCollection:
+      collection: FootstepTacticalWebbing
+      params:
+        volume: -10
+    distanceWalking: 2
+    distanceSprinting: 3
 
 - type: entity
   parent: ClothingBeltSecurityWebbing
@@ -642,6 +670,13 @@
     sprite: Clothing/Belt/mercwebbing.rsi
   - type: Clothing
     sprite: Clothing/Belt/mercwebbing.rsi
+  - type: EmitsSoundOnMove
+    soundCollection:
+      collection: FootstepTacticalWebbing
+      params:
+        volume: -10
+    distanceWalking: 2
+    distanceSprinting: 3
 
 - type: entity
   parent: ClothingBeltStorageBase
@@ -653,6 +688,13 @@
     sprite: Clothing/Belt/salvagewebbing.rsi
   - type: Clothing
     sprite: Clothing/Belt/salvagewebbing.rsi
+  - type: EmitsSoundOnMove
+    soundCollection:
+      collection: FootstepTacticalWebbing
+      params:
+        volume: -10
+    distanceWalking: 2
+    distanceSprinting: 3
 
 - type: entity
   parent: [ClothingBeltStorageBase, ContentsExplosionResistanceBase]
@@ -666,6 +708,13 @@
     sprite: Clothing/Belt/militarywebbing.rsi
   - type: ExplosionResistance
     damageCoefficient: 0.5
+  - type: EmitsSoundOnMove
+    soundCollection:
+      collection: FootstepTacticalWebbing
+      params:
+        volume: -10
+    distanceWalking: 2
+    distanceSprinting: 3
 
 - type: entity
   parent: ClothingBeltMilitaryWebbing
@@ -681,6 +730,13 @@
     size: Huge
   - type: ExplosionResistance
     damageCoefficient: 0.1
+  - type: EmitsSoundOnMove
+    soundCollection:
+      collection: FootstepTacticalWebbing
+      params:
+        volume: -10
+    distanceWalking: 2
+    distanceSprinting: 3
 
 - type: entity
   parent: ClothingBeltBase
@@ -714,3 +770,68 @@
     whitelist:
       tags:
       - WizardWand
+
+- type: entity
+  parent: ClothingBeltBase
+  id: ClothingBeltGeneric
+  name: belt
+  description: A plain belt made of leather.
+  components:
+  - type: Sprite
+    sprite: Clothing/Belt/generic.rsi
+    state: icon
+  - type: Clothing
+    sprite: Clothing/Belt/generic.rsi
+    renderLayer: innerBelt
+
+- type: entity
+  parent: ClothingBeltBase
+  id: ClothingBeltGenericThin
+  name: thin belt
+  description: This is thinner than your usual belt.
+  components:
+  - type: Sprite
+    sprite: Clothing/Belt/generic_thin.rsi
+    state: icon
+  - type: Clothing
+    sprite: Clothing/Belt/generic_thin.rsi
+    renderLayer: innerBelt
+
+- type: entity
+  parent: ClothingBeltBase
+  id: ClothingBeltGenericThick
+  name: thick belt
+  description: A bold fashion statement.
+  components:
+  - type: Sprite
+    sprite: Clothing/Belt/generic_thick.rsi
+    state: icon
+  - type: Clothing
+    sprite: Clothing/Belt/generic_thick.rsi
+    renderLayer: innerBelt
+
+- type: entity
+  parent: ClothingBeltBase
+  id: ClothingBeltWaist
+  name: waist belt
+  description: A belt worn around the waist, giving outfits a more fitted silhouette.
+  components:
+  - type: Sprite
+    sprite: Clothing/Belt/waist.rsi
+    state: icon
+  - type: Clothing
+    sprite: Clothing/Belt/waist.rsi
+    renderLayer: innerBelt
+
+- type: entity
+  parent: ClothingBeltBase
+  id: ClothingBeltWaistThin
+  name: thin waist belt
+  description: For highlighting that snatched waist.
+  components:
+  - type: Sprite
+    sprite: Clothing/Belt/waist_thin.rsi
+    state: icon
+  - type: Clothing
+    sprite: Clothing/Belt/waist_thin.rsi
+    renderLayer: innerBelt

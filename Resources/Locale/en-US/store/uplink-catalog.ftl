@@ -213,8 +213,8 @@ uplink-chemistry-kit-desc = A starter kit for the aspiring chemist, includes tox
 uplink-knives-kit-name = Throwing Knives Kit
 uplink-knives-kit-desc = A set of 4 syndicate branded throwing knives, perfect for embedding into the body of your victims.
 
-uplink-meds-bundle-name = Medical Bundle
-uplink-meds-bundle-desc = All you need to get your comrades back in the fight: mainly a combat medkit, a defibrillator and three combat medipens.
+uplink-meds-bundle-name = Interdyne Medical Bundle
+uplink-meds-bundle-desc = An assortment of autoinjectors and premium medical equipment to cover for every possible situation. Contains an elite compact defibrillator that can be used as a weapon.
 
 uplink-ammo-bundle-name = Ammo Bundle
 uplink-ammo-bundle-desc = Reloading! Contains 4 magazines for the C-20r, 4 drums for the Bulldog, and 2 ammo boxes for the L6 SAW.
@@ -435,6 +435,9 @@ uplink-syndicate-pai-desc = A Syndicate variant of the pAI with access to the Sy
 
 uplink-bribe-name = Lobbying Bundle
 uplink-bribe-desc = A heartfelt gift that can help you sway someone's opinion. Real or counterfeit? Yes.
+
+uplink-bribe-plasmaman-name = Lobbying Bundle
+uplink-bribe-plasmaman-desc = A heartfelt gift that can help you sway someone's opinion. Real or counterfeit? Yes. Includes a tacticool envirosuit for a tacticool plasmaman like you.
 
 uplink-hypodart-name = Hypodart
 uplink-hypodart-desc = A seemingly unremarkable dart with an enlarged reservoir for chemicals. It can store up to 7u reagents in itself, and instantly inject when it hits the target. Starts empty.

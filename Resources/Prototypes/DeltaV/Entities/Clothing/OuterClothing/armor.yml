@@ -1,6 +1,6 @@
 #Basic armor vest replacement
 - type: entity
-  parent: ClothingOuterBaseMedium
+  parent: [ClothingOuterBaseMedium, AllowSuitStorageClothing]
   id: ClothingOuterArmorPlateCarrier
   name: plate carrier
   description: A large and bulky carrier featuring steel plates that offer decent protection against gunfire.
@@ -24,7 +24,7 @@
 
 #Alternate / slim basic armor vest replacement
 - type: entity
-  parent: ClothingOuterBaseMedium
+  parent: [ClothingOuterBaseMedium, AllowSuitStorageClothing]
   id: ClothingOuterArmorDuraVest
   name: durathread vest
   description: A tight-fitting and sturdy armor vest, reinforced with durathread weave to protect against sharp objects and blunt force trauma.
@@ -44,7 +44,7 @@
     damageCoefficient: 0.90
 
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing]
   id: ClothingOuterArmorARC
   name: ARCS
   description: The Advanced Riot Control Suit, or ARCS for short, is generally regarded as far too bulky and overly hot for any practical use - but when the riots are raging, most officers invariably take great comfort from the thick and claustrophobic padding.

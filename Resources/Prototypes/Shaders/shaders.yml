@@ -133,3 +133,8 @@
   id: NightVision
   kind: source
   path: "/Textures/Shaders/nightvision.swsl"
+
+- type: shader  
+  id: Hologram
+  kind: source
+  path: "/Textures/Shaders/hologram.swsl"

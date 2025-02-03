@@ -17,11 +17,14 @@
   - type: EventHorizon # To make the singularity consume things.
     radius: 0.5
     canBreachContainment: false
+    inheritMomentum: true
     colliderFixtureId: EventHorizonCollider
     consumerFixtureId: EventHorizonConsumer
   - type: GravityWell # To make the singularity attract things.
     baseRadialAcceleration: 10
     maxRange: 4
+    applyCounterforce: true
+    staticAttraction: 0.3
   - type: Fixtures
     fixtures:
       EventHorizonCollider:
@@ -30,20 +33,20 @@
             radius: 0.35
         hard: true
         restitution: 0.8
-        density: 99999
+        density: 2000
         mask:
-        - AllMask
+        - SingularityLayer
         layer:
-        - AllMask
+        - SingularityLayer
       EventHorizonConsumer:
         shape:
           !type:PhysShapeCircle
             radius: 0.35
         hard: false
         mask:
-        - AllMask
+        - SingularityLayer
         layer:
-        - AllMask
+        - SingularityLayer
   - type: Singularity
     energy: 180
     level: 1
@@ -52,6 +55,7 @@
   - type: RandomWalk # To make the singularity move around.
     maxSpeed: 2.5
     minSpeed: 1.875
+    accumulatorRatio: 0.7
   - type: SingularityDistortion
     falloffPower: 2.529822
     intensity: 3645

@@ -227,6 +227,20 @@
     Steel: 500
 
 - type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazinePistolCaselessRifle
+  result: MagazinePistolCaselessRifle
+  materials:
+    Steel: 145
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineBoxCaselessRifle
+  result: MagazineBoxCaselessRifle
+  materials:
+    Steel: 720
+
+- type: latheRecipe
   id: MagazinePistolEmpty
   result: MagazinePistolEmpty
   category: Ammo

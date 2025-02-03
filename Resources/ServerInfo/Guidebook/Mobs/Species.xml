@@ -13,8 +13,10 @@
   <GuideEntityEmbed Entity="MobMoth" Caption="Moth Person"/>
   <GuideEntityEmbed Entity="MobReptilian" Caption="Reptilian"/>
   <GuideEntityEmbed Entity="MobSlimePerson" Caption="Slime Person"/>
+  <GuideEntityEmbed Entity="MobShadowkinDummy" Caption="Shadowkin"/>
+  <GuideEntityEmbed Entity="MobChitinid" Caption="Chitinid"/>
   </Box>
-  
+
   # Parkstation specific species
   <Box>
   <GuideEntityEmbed Entity="MobIPCDummy" Caption="I.P.C."/>

@@ -1,4 +1,4 @@
-﻿- type: job
+- type: job
   id: ResearchAssistant
   name: job-name-research-assistant
   description: job-description-research-assistant
@@ -18,12 +18,15 @@
 
 - type: startingGear
   id: ResearchAssistantGear
+  subGear:
+  - ScientistPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorWhite
     back: ClothingBackpackScienceFilled
     shoes: ClothingShoesColorWhite
     id: ResearchAssistantPDA
     ears: ClothingHeadsetScience
+    pocket1: BookPsionicsGuidebook
     pocket2: BookScientistsGuidebook
   innerClothingSkirt: ClothingUniformJumpskirtColorWhite
   satchel: ClothingBackpackSatchelScienceFilled

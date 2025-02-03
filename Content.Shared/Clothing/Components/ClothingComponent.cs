@@ -27,6 +27,13 @@ public sealed partial class ClothingComponent : Component
     [Access(typeof(ClothingSystem), typeof(InventorySystem), Other = AccessPermissions.ReadExecute)]
     public SlotFlags Slots = SlotFlags.NONE;
 
+    /// <summary>
+    ///   The actual sprite layer to render this entity's equipped sprite to, overriding the layer determined by the slot.
+    /// </summary>
+    [DataField]
+    [Access(typeof(ClothingSystem))]
+    public string? RenderLayer;
+
     [DataField]
     public SoundSpecifier? EquipSound;
 

@@ -1,0 +1,25 @@
+- type: entity
+  save: false
+  name: Urist McTajaran
+  parent: MobTajaranBase
+  id: MobTajaran
+  components:
+  - type: CombatMode
+  - type: MindContainer
+    showExamineInfo: true
+  - type: Input
+    context: "human"
+  - type: Speech
+    speechVerb: Felinid
+  - type: MobMover
+  - type: InputMover
+  - type: Alerts
+  - type: Actions
+  - type: Eye
+  - type: CameraRecoil
+  - type: Examiner
+  - type: CanHostGuardian
+  - type: NpcFactionMember
+    factions:
+    - NanoTrasen
+    - Cat

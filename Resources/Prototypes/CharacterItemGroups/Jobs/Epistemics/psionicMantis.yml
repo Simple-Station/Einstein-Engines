@@ -27,11 +27,15 @@
     - type: loadout
       id: LoadoutPsionicMantisPillCanisterCryptobiolin
 
-#- type: characterItemGroup
-#  id: LoadoutPsionicMantisEyes
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutPsionicMantisEyes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutPsionicMantisEyesEpiHUD
+    - type: loadout
+      id: LoadoutPsionicMantisEyesEpiGlasses
+
 #- type: characterItemGroup
 #  id: LoadoutPsionicMantisGloves
 #  maxItems: 1

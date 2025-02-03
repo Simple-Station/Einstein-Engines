@@ -70,7 +70,7 @@ public sealed partial class ResearchConsoleMenu : FancyWindow
         foreach (var techId in database.CurrentTechnologyCards)
         {
             var tech = _prototype.Index<TechnologyPrototype>(techId);
-            var cardControl = new TechnologyCardControl(tech, _prototype, _sprite, _research.GetTechnologyDescription(tech, includeTier: false), state.Points, hasAccess);
+            var cardControl = new TechnologyCardControl(tech, _prototype, _sprite, _research.GetTechnologyDescription(tech, includeTier: false, databaseComponent: database), state.Points, hasAccess, database);
             cardControl.OnPressed += () => OnTechnologyCardPressed?.Invoke(techId);
             TechnologyCardsContainer.AddChild(cardControl);
         }
@@ -102,6 +102,11 @@ public sealed partial class ResearchConsoleMenu : FancyWindow
         msg.AddMarkup(Loc.GetString("research-console-menu-main-discipline",
             ("name", disciplineText), ("color", disciplineColor)));
         MainDisciplineLabel.SetMessage(msg);
+
+        var softcapMsg = new FormattedMessage();
+        softcapMsg.AddMarkup(Loc.GetString("research-console-menu-softcap-amount-text",
+            ("softcap", state.SoftCapMultiplier.ToString("#.##"))));
+        SoftcapAmountLabel.SetMessage(softcapMsg);
 
         TierDisplayContainer.Children.Clear();
         foreach (var disciplineId in database.SupportedDisciplines)

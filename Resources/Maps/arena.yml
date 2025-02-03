@@ -55649,28 +55649,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -10.337725,-65.55754
       parent: 6747
-- proto: chem_master
-  entities:
-  - uid: 1712
-    components:
-    - type: Transform
-      pos: -19.5,-13.5
-      parent: 6747
-  - uid: 3673
-    components:
-    - type: Transform
-      pos: 13.5,-25.5
-      parent: 6747
-  - uid: 19848
-    components:
-    - type: Transform
-      pos: 10.5,-27.5
-      parent: 6747
-  - uid: 21533
-    components:
-    - type: Transform
-      pos: 54.5,-41.5
-      parent: 6747
 - proto: ChemDispenser
   entities:
   - uid: 3242
@@ -55746,6 +55724,28 @@ entities:
     components:
     - type: Transform
       pos: 55.5,-42.5
+      parent: 6747
+- proto: ChemMaster
+  entities:
+  - uid: 1712
+    components:
+    - type: Transform
+      pos: -19.5,-13.5
+      parent: 6747
+  - uid: 3673
+    components:
+    - type: Transform
+      pos: 13.5,-25.5
+      parent: 6747
+  - uid: 19848
+    components:
+    - type: Transform
+      pos: 10.5,-27.5
+      parent: 6747
+  - uid: 21533
+    components:
+    - type: Transform
+      pos: 54.5,-41.5
       parent: 6747
 - proto: ChurchOrganInstrument
   entities:
@@ -58310,6 +58310,14 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 50.5,7.5
+      parent: 6747
+- proto: ComputerPsionicsRecords
+  entities:
+  - uid: 27824
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 22.5,-62.5
       parent: 6747
 - proto: ComputerRadar
   entities:
@@ -76157,6 +76165,11 @@ entities:
     - type: Transform
       pos: 0.63343143,-28.369678
       parent: 6747
+  - uid: 21851
+    components:
+    - type: Transform
+      pos: -32.628227,-73.3529
+      parent: 6747
   - uid: 22528
     components:
     - type: Transform
@@ -76289,13 +76302,6 @@ entities:
     components:
     - type: Transform
       pos: -2.3555942,-22.542295
-      parent: 6747
-- proto: FoodMeatRatdoubleKebab
-  entities:
-  - uid: 21851
-    components:
-    - type: Transform
-      pos: -32.628227,-73.3529
       parent: 6747
 - proto: FoodMeatSpiderLeg
   entities:
@@ -121588,6 +121594,13 @@ entities:
     - type: Transform
       pos: 36.5,2.5
       parent: 6747
+- proto: MaterialSilo
+  entities:
+  - uid: 4984
+    components:
+    - type: Transform
+      pos: -11.5,-57.5
+      parent: 6747
 - proto: MaterialWoodPlank
   entities:
   - uid: 9140
@@ -148256,8 +148269,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 49.5,28.5
       parent: 6747
-- proto: SignAtmosMinsky
-  entities:
   - uid: 7488
     components:
     - type: Transform
@@ -148304,18 +148315,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 54.5,-40.5
-      parent: 6747
-- proto: SignCourt
-  entities:
-  - uid: 6079
-    components:
-    - type: Transform
-      pos: -3.5,-41.5
-      parent: 6747
-  - uid: 8205
-    components:
-    - type: Transform
-      pos: -3.5,-47.5
       parent: 6747
 - proto: SignCryogenics
   entities:
@@ -148922,13 +148921,6 @@ entities:
     - type: Transform
       pos: 31.5,-90.5
       parent: 6747
-- proto: SignDrones
-  entities:
-  - uid: 11134
-    components:
-    - type: Transform
-      pos: 70.5,19.5
-      parent: 6747
 - proto: SignElectricalMed
   entities:
   - uid: 6878
@@ -149076,8 +149068,6 @@ entities:
     - type: Transform
       pos: -12.5,-19.5
       parent: 6747
-- proto: SignHydro3
-  entities:
   - uid: 2662
     components:
     - type: Transform
@@ -149099,6 +149089,16 @@ entities:
       parent: 6747
 - proto: SignLawyer
   entities:
+  - uid: 6079
+    components:
+    - type: Transform
+      pos: -3.5,-41.5
+      parent: 6747
+  - uid: 8205
+    components:
+    - type: Transform
+      pos: -3.5,-47.5
+      parent: 6747
   - uid: 27084
     components:
     - type: Transform
@@ -149122,6 +149122,13 @@ entities:
     components:
     - type: Transform
       pos: 30.5,14.5
+      parent: 6747
+- proto: SignMaterials
+  entities:
+  - uid: 11134
+    components:
+    - type: Transform
+      pos: 70.5,19.5
       parent: 6747
 - proto: SignMedical
   entities:
@@ -149270,19 +149277,15 @@ entities:
     - type: Transform
       pos: 23.5,-48.5
       parent: 6747
-- proto: SignScience1
-  entities:
-  - uid: 8912
-    components:
-    - type: Transform
-      pos: 8.5,-61.5
-      parent: 6747
-- proto: SignScience2
-  entities:
   - uid: 8911
     components:
     - type: Transform
       pos: 17.5,-61.5
+      parent: 6747
+  - uid: 8912
+    components:
+    - type: Transform
+      pos: 8.5,-61.5
       parent: 6747
 - proto: SignSec
   entities:
@@ -149320,17 +149323,15 @@ entities:
       parent: 6747
 - proto: SignToxins
   entities:
-  - uid: 16791
-    components:
-    - type: Transform
-      pos: 6.5,-74.5
-      parent: 6747
-- proto: SignToxins2
-  entities:
   - uid: 16790
     components:
     - type: Transform
       pos: 3.5,-74.5
+      parent: 6747
+  - uid: 16791
+    components:
+    - type: Transform
+      pos: 6.5,-74.5
       parent: 6747
 - proto: SilverDoor
   entities:
@@ -149613,7 +149614,7 @@ entities:
     - type: Transform
       pos: -35.5,-11.5
       parent: 6747
-- proto: soda_dispenser
+- proto: SodaDispenser
   entities:
   - uid: 1826
     components:
@@ -150773,6 +150774,23 @@ entities:
     - type: Transform
       pos: 31.5,-61.5
       parent: 6747
+- proto: SpawnPointAdminAssistant
+  entities:
+  - uid: 27820
+    components:
+    - type: Transform
+      pos: -25.5,-55.5
+      parent: 6747
+  - uid: 27821
+    components:
+    - type: Transform
+      pos: -24.5,-55.5
+      parent: 6747
+  - uid: 27822
+    components:
+    - type: Transform
+      pos: -26.5,-55.5
+      parent: 6747
 - proto: SpawnPointAtmos
   entities:
   - uid: 17076
@@ -150811,6 +150829,13 @@ entities:
     components:
     - type: Transform
       pos: -18.5,-37.5
+      parent: 6747
+- proto: SpawnPointBlueshieldOfficer
+  entities:
+  - uid: 27819
+    components:
+    - type: Transform
+      pos: -24.5,-51.5
       parent: 6747
 - proto: SpawnPointBorg
   entities:
@@ -151129,6 +151154,13 @@ entities:
     - type: Transform
       pos: -31.5,17.5
       parent: 6747
+- proto: SpawnPointMagistrate
+  entities:
+  - uid: 27823
+    components:
+    - type: Transform
+      pos: -23.5,-51.5
+      parent: 6747
 - proto: SpawnPointMailCarrier
   entities:
   - uid: 27031
@@ -151263,6 +151295,13 @@ entities:
     components:
     - type: Transform
       pos: 35.5,-6.5
+      parent: 6747
+- proto: SpawnPointNanotrasenRepresentative
+  entities:
+  - uid: 27818
+    components:
+    - type: Transform
+      pos: -26.5,-51.5
       parent: 6747
 - proto: SpawnPointObserver
   entities:
@@ -157102,13 +157141,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -25.534996,-73.55089
-      parent: 6747
-- proto: ToyAi
-  entities:
-  - uid: 4984
-    components:
-    - type: Transform
-      pos: -13.014382,-57.852844
       parent: 6747
 - proto: ToyFigurinePassenger
   entities:

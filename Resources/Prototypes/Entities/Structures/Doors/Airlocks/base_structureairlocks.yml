@@ -30,6 +30,11 @@
       shader: unshaded
     - state: panel_open
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - state: electrified
+      sprite: Interface/Misc/ai_hud.rsi
+      shader: unshaded
+      visible: false
+      map: ["enum.ElectrifiedLayers.HUD"]
   - type: AnimationPlayer
   - type: Physics
   - type: Fixtures
@@ -72,6 +77,7 @@
   - type: DoorBolt
   - type: Appearance
   - type: WiresVisuals
+  - type: ElectrocutionHUDVisuals
   - type: ApcPowerReceiver
     powerLoad: 20
   - type: ExtensionCableReceiver

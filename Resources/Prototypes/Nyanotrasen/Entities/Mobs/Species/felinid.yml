@@ -48,6 +48,7 @@
         Blunt: 1
   - type: Stamina
     critThreshold: 85
+    decay: 2.55 # 3 base decay multiplied by 0.85 = 2.55
   - type: TypingIndicator
     proto: felinid
   - type: PseudoItem

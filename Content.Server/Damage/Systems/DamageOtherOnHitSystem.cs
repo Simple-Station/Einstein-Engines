@@ -60,7 +60,7 @@ namespace Content.Server.Damage.Systems
 
             var staminaCostMarkup = FormattedMessage.FromMarkupOrThrow(
                 Loc.GetString("damage-stamina-cost",
-                ("type", Loc.GetString("damage-throw")), ("cost", component.StaminaCost)));
+                ("type", Loc.GetString("damage-throw")), ("cost", Math.Round(component.StaminaCost, 2).ToString("0.##"))));
             args.Message.PushNewline();
             args.Message.AddMessage(staminaCostMarkup);
         }

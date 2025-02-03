@@ -76,6 +76,8 @@
     - type: loadout
       id: LoadingOuterCoatJacketLeather
     - type: loadout
+      id: LoadoutOuterJacketLeather
+    - type: loadout
       id: LoadoutOuterJacketBiker
     - type: loadout
       id: LoadoutOuterJacketJamrock
@@ -88,6 +90,8 @@
     - type: loadout
       id: LoadoutOuterJacketLettermanRed
     - type: loadout
+      id: LoadoutOuterBomberPinkSleeves
+    - type: loadout
       id: LoadoutOuterCoatAcidRaincoat
     - type: loadout
       id: LoadoutOuterCoatAcidRaincoatBlue
@@ -97,3 +101,65 @@
       id: LoadoutOuterCoatAcidRaincoatMagenta
     - type: loadout
       id: LoadoutOuterCoatAcidRaincoatYellow
+    - type: loadout
+      id: LoadoutOuterSuitJacket
+    - type: loadout
+      id: LoadoutOuterSuitJacketOpened
+    - type: loadout
+      id: LoadoutOuterCoatModern
+    - type: loadout
+      id: LoadoutOuterTailcoat
+    - type: loadout
+      id: LoadoutOuterCoatVictorian
+    - type: loadout
+      id: LoadoutOuterCoatVictorianRed
+    - type: loadout
+      id: LoadoutOuterCardiganBasic
+    - type: loadout
+      id: LoadoutOuterCardiganBasicOpened
+    - type: loadout
+      id: LoadoutOuterCardiganArgyle
+    - type: loadout
+      id: LoadoutOuterCardiganArgyleOpened
+    - type: loadout
+      id: LoadoutOuterCardiganSweater
+    - type: loadout
+      id: LoadoutOuterCardiganSweaterOpened
+    - type: loadout
+      id: LoadoutOuterCardiganSlim
+    - type: loadout
+      id: LoadoutOuterCardiganSlimOpened
+    - type: loadout
+      id: LoadoutOuterCowboyDuster
+    - type: loadout
+      id: LoadoutOuterBlazerBasic
+    - type: loadout
+      id: LoadoutOuterBlazerBasicOpened
+    - type: loadout
+      id: LoadoutOuterBlazerLong
+    - type: loadout
+      id: LoadoutOuterBlazerLongOpened
+    - type: loadout
+      id: LoadoutOuterBlazerFormal
+    - type: loadout
+      id: LoadoutOuterBlazerLooseSleeve
+    - type: loadout
+      id: LoadoutOuterBlazerFlatCollar
+    - type: loadout
+      id: LoadoutOuterBlazerPosh
+    - type: loadout
+      id: LoadoutOuterCoatPeacoat
+    - type: loadout
+      id: LoadoutOuterCoatPeacoatOpened
+    - type: loadout
+      id: LoadoutOuterCoatAsymmetric
+    - type: loadout
+      id: LoadoutOuterCoatAsymmetricOpened
+    - type: loadout
+      id: LoadoutOuterCoatSubmariner
+    - type: loadout
+      id: LoadoutOuterCoatSubmarinerOpened
+    - type: loadout
+      id: LoadoutOuterVestColorable
+    - type: loadout
+      id: LoadoutOuterVestThick

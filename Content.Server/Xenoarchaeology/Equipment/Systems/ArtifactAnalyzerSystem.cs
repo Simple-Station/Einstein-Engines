@@ -378,7 +378,7 @@ public sealed class ArtifactAnalyzerSystem : EntitySystem
         if (TryComp<ArtifactAnalyzerComponent>(component.AnalyzerEntity.Value, out var analyzer) &&
             analyzer != null)
         {
-            _glimmerSystem.Glimmer += (int) pointValue / analyzer.ExtractRatio;
+            _glimmerSystem.DeltaGlimmerInput(pointValue / analyzer.ExtractRatio);
         }
         // Nyano - End modified code block.
 

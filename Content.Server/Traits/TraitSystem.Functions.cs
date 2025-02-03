@@ -20,6 +20,8 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.Mobs;
 using Content.Shared.Damage.Components;
 using Content.Shared.NPC.Systems;
+using Content.Shared.Weapons.Melee;
+using Robust.Shared.Audio;
 
 namespace Content.Server.Traits;
 
@@ -583,5 +585,95 @@ public sealed partial class TraitModifySlowOnDamage : TraitFunction
             newSpeedModifierThresholds[damageThreshold + DamageThresholdsModifier] = 1 - (1 - speedModifier) * SpeedModifierMultiplier;
 
         slowOnDamage.SpeedModifierThresholds = newSpeedModifierThresholds;
+    }
+}
+
+/// <summary>
+///     Used for traits that modify unarmed damage on MeleeWeaponComponent.
+/// </summary>
+[UsedImplicitly]
+public sealed partial class TraitModifyUnarmed : TraitFunction
+{
+    // <summary>
+    //     The sound played on hitting targets.
+    // </summary>
+    [DataField, AlwaysPushInheritance]
+    public SoundSpecifier? SoundHit;
+
+    // <summary>
+    //     The animation to play on hit, for both light and power attacks.
+    // </summary>
+    [DataField, AlwaysPushInheritance]
+    public EntProtoId? Animation;
+
+    // <summary>
+    //     Whether to set the power attack animation to be the same as the light attack.
+    // </summary>
+    [DataField, AlwaysPushInheritance]
+    public bool HeavyAnimationFromLight = true;
+
+    // <summary>
+    //     The damage values of unarmed damage.
+    // </summary>
+    [DataField, AlwaysPushInheritance]
+    public DamageSpecifier? Damage;
+
+    // <summary>
+    //     Additional damage added to the existing damage.
+    // </summary>
+    [DataField, AlwaysPushInheritance]
+    public DamageSpecifier? FlatDamageIncrease;
+
+    /// <summary>
+    ///   Turns the left click into a power attack when the light attack misses.
+    /// </summary>
+    [DataField]
+    public bool? HeavyOnLightMiss;
+
+    // <summary>
+    //     What to multiply the melee weapon range by.
+    // </summary>
+    [DataField, AlwaysPushInheritance]
+    public float? RangeModifier;
+
+    // <summary>
+    //     What to multiply the attack rate by.
+    // </summary>
+    [DataField, AlwaysPushInheritance]
+    public float? AttackRateModifier;
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        if (!entityManager.TryGetComponent<MeleeWeaponComponent>(uid, out var melee))
+            return;
+
+        if (SoundHit != null)
+            melee.SoundHit = SoundHit;
+
+        if (Animation != null)
+            melee.Animation = Animation.Value;
+
+        if (HeavyAnimationFromLight)
+            melee.WideAnimation = melee.Animation;
+
+        if (Damage != null)
+            melee.Damage = Damage;
+
+        if (FlatDamageIncrease != null)
+            melee.Damage += FlatDamageIncrease;
+
+        if (HeavyOnLightMiss != null)
+            melee.HeavyOnLightMiss = HeavyOnLightMiss.Value;
+
+        if (RangeModifier != null)
+            melee.Range *= RangeModifier.Value;
+
+        if (AttackRateModifier != null)
+            melee.AttackRate *= AttackRateModifier.Value;
+
+        entityManager.Dirty(uid, melee);
     }
 }

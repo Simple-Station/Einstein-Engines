@@ -107,3 +107,44 @@
 
 - type: npcFaction
   id: AnimalFriend
+
+- type: npcFaction
+  id: GladiabotFFA
+  hostile:
+    - GladiabotFFA
+    - GladiabotRed
+    - GladiabotGreen
+    - GladiabotBlue
+    - GladiabotYellow
+
+- type: npcFaction
+  id: GladiabotRed
+  hostile:
+    - GladiabotFFA
+    - GladiabotGreen
+    - GladiabotBlue
+    - GladiabotYellow
+
+- type: npcFaction
+  id: GladiabotGreen
+  hostile:
+    - GladiabotFFA
+    - GladiabotRed
+    - GladiabotBlue
+    - GladiabotYellow
+
+- type: npcFaction
+  id: GladiabotBlue
+  hostile:
+    - GladiabotFFA
+    - GladiabotRed
+    - GladiabotGreen
+    - GladiabotYellow
+
+- type: npcFaction
+  id: GladiabotYellow
+  hostile:
+    - GladiabotFFA
+    - GladiabotRed
+    - GladiabotGreen
+    - GladiabotBlue

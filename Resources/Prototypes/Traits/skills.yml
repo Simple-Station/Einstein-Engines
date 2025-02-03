@@ -16,6 +16,7 @@
         - Paramedic
         - ChiefMedicalOfficer
         - Brigmedic
+        - SeniorPhysician
 
 - type: trait
   id: SelfAware
@@ -166,6 +167,7 @@
       inverted: true
       species:
         - Felinid
+        - Tajaran
 
 - type: trait
   id: Singer
@@ -219,6 +221,8 @@
       inverted: true
       traits:
         - PsionicInsulation
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMachine
 
 - type: trait
   id: PsionicInsulation
@@ -311,6 +315,7 @@
       inverted: true
       species:
         - Felinid
+        - Tajaran
         - Harpy
 
 - type: trait

@@ -71,18 +71,18 @@ public sealed partial class SupermatterSystem : EntitySystem
             if (sm.UpdateAccumulator >= sm.UpdateTimer)
             {
                 sm.UpdateAccumulator -= sm.UpdateTimer;
-                Cycle(uid, sm);
+                Cycle(uid, sm, frameTime);
             }
         }
     }
 
 
-    public void Cycle(EntityUid uid, SupermatterComponent sm)
+    public void Cycle(EntityUid uid, SupermatterComponent sm, float frameTime)
     {
         sm.ZapAccumulator++;
         sm.YellAccumulator++;
 
-        ProcessAtmos(uid, sm);
+        ProcessAtmos(uid, sm, frameTime);
         HandleDamage(uid, sm);
 
         if (sm.Damage >= sm.DamageDelaminationPoint || sm.Delamming)

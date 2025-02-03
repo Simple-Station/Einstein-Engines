@@ -74,7 +74,7 @@
     clothingPrototype: ClothingHeadHatHoodCultHoodTrue
   - type: ContainerContainer
     containers:
-      toggleable-clothing: !type:ContainerSlot { }
+      toggleable-clothing: !type:Container { }
 
 - type: entity
   parent: ClothingHeadHatHoodCulthood
@@ -115,6 +115,7 @@
   - type: EyeProtection
   - type: NightVision
     isActive: true
+    isEquipment: true
     toggleAction: null
     activateSound: null
     deactivateSound: null

@@ -8,6 +8,7 @@ namespace Content.Server.Objectives.Systems
     {
         [Dependency] private readonly IEntitySystemManager _sysMan = default!;
         [Dependency] private readonly MetaDataSystem _metaData = default!;
+        [Dependency] private readonly GlimmerSystem _glimmer = default!;
         public override void Initialize()
         {
             base.Initialize();
@@ -30,10 +31,9 @@ namespace Content.Server.Objectives.Systems
             args.Progress = GetProgress(comp.Target);
         }
 
-        private float GetProgress(int target)
+        private float GetProgress(float target)
         {
-            var glimmer = _sysMan.GetEntitySystem<GlimmerSystem>().Glimmer;
-            var progress = Math.Min((float) glimmer / (float) target, 1f);
+            var progress = Math.Min(_glimmer.GlimmerOutput / target, 1f);
             return progress;
         }
     }

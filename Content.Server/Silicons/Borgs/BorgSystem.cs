@@ -5,7 +5,6 @@ using Content.Server.DeviceNetwork.Systems;
 using Content.Server.Explosion.EntitySystems;
 using Content.Server.Hands.Systems;
 using Content.Server.PowerCell;
-using Content.Shared.UserInterface;
 using Content.Shared.Access.Systems;
 using Content.Shared.Alert;
 using Content.Shared.Database;
@@ -202,6 +201,7 @@ public sealed partial class BorgSystem : SharedBorgSystem
         Toggle.TryDeactivate(uid);
         UpdateUI(uid, component);
     }
+    
     private void OnGetDeadIC(EntityUid uid, BorgChassisComponent component, ref GetCharactedDeadIcEvent args)
     {
         args.Dead = true;
@@ -283,6 +283,7 @@ public sealed partial class BorgSystem : SharedBorgSystem
     {
         Popup.PopupEntity(Loc.GetString("borg-mind-added", ("name", Identity.Name(uid, EntityManager))), uid);
         Toggle.TryActivate(uid);
+        _powerCell.SetDrawEnabled(uid, _mobState.IsAlive(uid));
         _appearance.SetData(uid, BorgVisuals.HasPlayer, true);
     }
 
@@ -293,6 +294,7 @@ public sealed partial class BorgSystem : SharedBorgSystem
     {
         Popup.PopupEntity(Loc.GetString("borg-mind-removed", ("name", Identity.Name(uid, EntityManager))), uid);
         Toggle.TryDeactivate(uid);
+        _powerCell.SetDrawEnabled(uid, false);
         _appearance.SetData(uid, BorgVisuals.HasPlayer, false);
     }
 

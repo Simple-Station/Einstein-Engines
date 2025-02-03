@@ -385,11 +385,11 @@ entities:
     - type: Transform
     - type: Map
     - type: PhysicsMap
+    - type: GridTree
+    - type: MovedGrids
     - type: Broadphase
     - type: OccluderTree
     - type: LoadedMap
-    - type: GridTree
-    - type: MovedGrids
 - proto: AirAlarm
   entities:
   - uid: 800
@@ -401,8 +401,6 @@ entities:
     - type: DeviceList
       devices:
       - 801
-    - type: AtmosDevice
-      joinedGrid: 179
 - proto: AirCanister
   entities:
   - uid: 458
@@ -410,8 +408,6 @@ entities:
     - type: Transform
       pos: 7.5,-0.5
       parent: 179
-    - type: AtmosDevice
-      joinedGrid: 179
 - proto: Airlock
   entities:
   - uid: 48
@@ -2660,13 +2656,6 @@ entities:
     - type: Transform
       pos: 24.5,5.5
       parent: 179
-- proto: chem_master
-  entities:
-  - uid: 311
-    components:
-    - type: Transform
-      pos: 8.5,11.5
-      parent: 179
 - proto: ChemDispenser
   entities:
   - uid: 583
@@ -2703,6 +2692,13 @@ entities:
     components:
     - type: Transform
       pos: 6.4651074,9.828774
+      parent: 179
+- proto: ChemMaster
+  entities:
+  - uid: 311
+    components:
+    - type: Transform
+      pos: 8.5,11.5
       parent: 179
 - proto: ChemMasterMachineCircuitboard
   entities:
@@ -3575,8 +3571,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 3.5,-3.5
       parent: 179
-    - type: AtmosDevice
-      joinedGrid: 179
 - proto: GasMixer
   entities:
   - uid: 747
@@ -3585,8 +3579,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 3.5,-2.5
       parent: 179
-    - type: AtmosDevice
-      joinedGrid: 179
 - proto: GasOutletInjector
   entities:
   - uid: 429
@@ -3595,8 +3587,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 6.5,-1.5
       parent: 179
-    - type: AtmosDevice
-      joinedGrid: 179
 - proto: GasPipeBend
   entities:
   - uid: 727
@@ -3635,8 +3625,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 6.5,-0.5
       parent: 179
-    - type: AtmosDevice
-      joinedGrid: 179
 - proto: GasPressurePump
   entities:
   - uid: 171
@@ -3645,8 +3633,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 4.5,-3.5
       parent: 179
-    - type: AtmosDevice
-      joinedGrid: 179
 - proto: GasValve
   entities:
   - uid: 168
@@ -3655,8 +3641,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 4.5,-2.5
       parent: 179
-    - type: AtmosDevice
-      joinedGrid: 179
 - proto: GasVentPump
   entities:
   - uid: 729
@@ -3665,8 +3649,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 6.5,-3.5
       parent: 179
-    - type: AtmosDevice
-      joinedGrid: 179
 - proto: GasVentScrubber
   entities:
   - uid: 452
@@ -3675,8 +3657,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 6.5,-2.5
       parent: 179
-    - type: AtmosDevice
-      joinedGrid: 179
 - proto: GasVolumePump
   entities:
   - uid: 160
@@ -3685,8 +3665,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 4.5,-1.5
       parent: 179
-    - type: AtmosDevice
-      joinedGrid: 179
 - proto: GeigerCounter
   entities:
   - uid: 759
@@ -4241,6 +4219,13 @@ entities:
     - type: Transform
       pos: -5.5,10.5
       parent: 179
+- proto: MaterialSilo
+  entities:
+  - uid: 1199
+    components:
+    - type: Transform
+      pos: -2.5,10.5
+      parent: 179
 - proto: MedicalScanner
   entities:
   - uid: 592
@@ -4387,8 +4372,6 @@ entities:
     - type: Transform
       pos: 7.5,-1.5
       parent: 179
-    - type: AtmosDevice
-      joinedGrid: 179
 - proto: Ointment
   entities:
   - uid: 148
@@ -4408,8 +4391,6 @@ entities:
     - type: Transform
       pos: 7.5,-3.5
       parent: 179
-    - type: AtmosDevice
-      joinedGrid: 179
 - proto: PaperBin10
   entities:
   - uid: 977
@@ -4443,8 +4424,6 @@ entities:
     - type: Transform
       pos: 7.5,-2.5
       parent: 179
-    - type: AtmosDevice
-      joinedGrid: 179
 - proto: PlasticFlapsAirtightClear
   entities:
   - uid: 997
@@ -5127,7 +5106,7 @@ entities:
     - type: Transform
       pos: -6.5,-12.5
       parent: 179
-- proto: soda_dispenser
+- proto: SodaDispenser
   entities:
   - uid: 751
     components:
@@ -5178,20 +5157,6 @@ entities:
     components:
     - type: Transform
       pos: -3.5,4.5
-      parent: 179
-- proto: SpawnVehicleATV
-  entities:
-  - uid: 1176
-    components:
-    - type: Transform
-      pos: -7.5,1.5
-      parent: 179
-- proto: SpawnVehicleJanicart
-  entities:
-  - uid: 904
-    components:
-    - type: Transform
-      pos: 5.5,16.5
       parent: 179
 - proto: Spear
   entities:
@@ -5823,13 +5788,6 @@ entities:
     components:
     - type: Transform
       pos: -7.5,4.5
-      parent: 179
-- proto: VehicleKeyATV
-  entities:
-  - uid: 1187
-    components:
-    - type: Transform
-      pos: -6.8905525,1.5128828
       parent: 179
 - proto: VendingMachineCigs
   entities:

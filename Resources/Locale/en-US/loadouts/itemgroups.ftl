@@ -7,6 +7,7 @@ character-item-group-LoadoutHead = Civilian Headgear
 character-item-group-LoadoutMasks = Civilian Masks
 character-item-group-LoadoutNeck = Civilian Neckwear
 character-item-group-LoadoutOuter = Civilian Outerwear
+character-item-group-LoadoutBelt = Civilian Belts
 character-item-group-LoadoutShoes = Civilian Shoes
 character-item-group-LoadoutUniformsCivilian = Civilian Uniforms
 
@@ -18,6 +19,7 @@ character-item-group-LoadoutSmokes = Smokeables
 character-item-group-LoadoutBoxKits = Survival Kits
 character-item-group-LoadoutWritables = Writing Tools
 character-item-group-LoadoutPets = Pets
+character-item-group-LoadoutCards = Playing Cards
 
 # Job Specific Template
 character-item-group-LoadoutJOBBackpacks = JOB Backpacks
@@ -80,6 +82,21 @@ character-item-group-LoadoutHeadOfPersonnelNeck = Head of Personnel Neckwear
 character-item-group-LoadoutHeadOfPersonnelOuter = Head of Personnel Outerwear
 character-item-group-LoadoutHeadOfPersonnelShoes = Head of Personnel Shoes
 character-item-group-LoadoutHeadOfPersonnelUniforms = Head of Personnel Uniforms
+
+# Dignitary - BlueshieldOfficer
+character-item-group-LoadoutBlueshieldOfficerBackpacks = Blueshield Officer Backpacks
+character-item-group-LoadoutBlueshieldOfficerVests = Blueshield Officer Vests
+character-item-group-LoadoutBlueshieldOfficerUniforms = Blueshield Officer Uniforms
+
+# Dignitary - Magistrate
+character-item-group-LoadoutMagistrateHead = Magistrate Headgear
+character-item-group-LoadoutMagistrateNeck = Magistrate Neckwear
+character-item-group-LoadoutMagistrateOuter = Magistrate Outerwear
+character-item-group-LoadoutMagistrateUniforms = Magistrate Uniforms
+
+# Dignitary - Nanotrasen Representative
+character-item-group-LoadoutNanorepBackpacks = Nanotrasen Representative Backpacks
+character-tiem-group-LoadoutNanorepUniforms = Nanotrasen Representative Uniforms
 
 # Engineering
 character-item-group-LoadoutEngineeringBackpacks = Engineering Backpacks
@@ -578,6 +595,7 @@ character-item-group-LoadoutHeadOfSecurityMask = Head Of Security Masks
 character-item-group-LoadoutHeadOfSecurityOuter = Head Of Security Outerwear
 character-item-group-LoadoutHeadOfSecurityShoes = Head Of Security Shoes
 character-item-group-LoadoutHeadOfSecurityUniforms = Head Of Security Uniforms
+character-item-group-LoadoutHeadOfSecurityTrinkets = Head Of Security Trinkets
 
 # Security - Security Officer
 character-item-group-LoadoutSecurityOfficerBackpacks = Security Officer Backpacks
@@ -779,3 +797,7 @@ character-item-group-LoadoutReporterUniforms = Reporter Uniforms
 # Traits - Languages
 character-item-group-TraitsLanguagesBasic = Basic Languages
 character-item-group-TraitsAccents = Accents
+
+# Traits - Mind Or Machine
+character-item-group-TraitsMind = Mind Over Machine
+character-item-group-TraitsMachine = Machine Over Mind

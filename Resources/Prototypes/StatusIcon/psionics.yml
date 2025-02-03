@@ -1,0 +1,27 @@
+- type: psionicsIcon
+  id: PsionicsIcon
+  abstract: true
+  offset: 1
+  locationPreference: Left
+  isShaded: true
+
+- type: psionicsIcon
+  parent: PsionicsIcon
+  id: PsionicsIconSuspected
+  icon:
+    sprite: /Textures/Interface/Misc/psionics_icons.rsi
+    state: hud_suspected
+
+- type: psionicsIcon
+  parent: PsionicsIcon
+  id: PsionicsIconRegistered
+  icon:
+    sprite: /Textures/Interface/Misc/psionics_icons.rsi
+    state: hud_registered
+
+- type: psionicsIcon
+  parent: PsionicsIcon
+  id: PsionicsIconAbusing
+  icon:
+    sprite: /Textures/Interface/Misc/psionics_icons.rsi
+    state: hud_abusing

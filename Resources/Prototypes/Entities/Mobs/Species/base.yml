@@ -37,6 +37,8 @@
     - map: [ "gloves" ]
     - map: [ "shoes" ]
     - map: [ "ears" ]
+    - map: [ "innerBelt" ]
+    - map: [ "innerNeck" ]
     - map: [ "outerClothing" ]
     - map: [ "eyes" ]
     - map: [ "belt" ]
@@ -48,6 +50,7 @@
     - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
     - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
     - map: [ "enum.HumanoidVisualLayers.Tail" ]
+    - map: [ "enum.HumanoidVisualLayers.Wings" ]
     - map: [ "mask" ]
     - map: [ "head" ]
     - map: [ "pocket1" ]
@@ -177,6 +180,11 @@
     damage:
       types:
         Blunt: 5
+    heavyRateModifier: 1
+    heavyDamageBaseModifier: 1
+    heavyPartDamageMultiplier: 1
+    heavyStaminaCost: 0
+    maxTargets: 1
   - type: SleepEmitSound
   - type: SSDIndicator
   - type: StandingState
@@ -185,6 +193,12 @@
   - type: Scent
   - type: MindContainer
     showExamineInfo: true
+  - type: CanEnterCryostorage
+  - type: InteractionPopup
+    successChance: 1
+    interactSuccessString: hugging-success-generic
+    interactSuccessSound: /Audio/Effects/thudswoosh.ogg
+    messagePerceivedByOthers: hugging-success-generic-others
   - type: CanHostGuardian
   - type: NpcFactionMember
     factions:
@@ -299,6 +313,11 @@
     heatDamage:
       types:
         Heat: 1.5 #per second, scales with temperature & other constants
+  - type: TemperatureSpeed
+    thresholds:
+      293: 0.8
+      280: 0.6
+      260: 0.4
   - type: ThermalRegulator
     metabolismHeat: 800
     radiatedHeat: 100
@@ -376,6 +395,8 @@
     - map: [ "gloves" ]
     - map: [ "shoes" ]
     - map: [ "ears" ]
+    - map: [ "innerBelt" ]
+    - map: [ "innerNeck" ]
     - map: [ "outerClothing" ]
     - map: [ "eyes" ]
     - map: [ "belt" ]

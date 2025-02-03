@@ -117,11 +117,11 @@ public sealed partial class TelepathicChatSystem : EntitySystem
         }
 
         if (_random.Prob(0.1f))
-            _glimmerSystem.Glimmer++;
+            _glimmerSystem.DeltaGlimmerInput(1);
 
-        if (_random.Prob(Math.Min(0.33f + (float) _glimmerSystem.Glimmer / 1500, 1)))
+        if (_random.Prob(Math.Min(0.33f + (float) _glimmerSystem.GlimmerOutput / 1500, 1)))
         {
-            float obfuscation = 0.25f + (float) _glimmerSystem.Glimmer / 2000;
+            float obfuscation = 0.25f + (float) _glimmerSystem.GlimmerOutput / 2000;
             var obfuscated = ObfuscateMessageReadability(message, obfuscation);
             _chatManager.ChatMessageToMany(ChatChannel.Telepathic, obfuscated, messageWrap, source, hideChat, false, GetDreamers(clients.normal.Concat(clients.psychog)), Color.PaleVioletRed);
         }

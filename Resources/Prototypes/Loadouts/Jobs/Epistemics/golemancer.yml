@@ -78,6 +78,7 @@
   id: LoadoutGolemancerPillCanisterSpaceDrugs
   category: JobsEpistemicsGolemancer
   cost: 1
+  guideEntry: Psionics
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutGolemancerEquipment
@@ -100,7 +101,18 @@
 # Mask
 
 # Outer
-
+- type: loadout
+  id: LoadoutScienceUniformWinterCoatRoboticist
+  category: JobsEpistemicsGolemancer
+  cost: 0
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutGolemancerUniforms
+  - !type:CharacterJobRequirement
+    jobs:
+    - Roboticist
+  items:
+  - ClothingOuterWinterRobo
 # Shoes
 
 # Uniforms

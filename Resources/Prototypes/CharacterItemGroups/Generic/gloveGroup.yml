@@ -12,4 +12,10 @@
     - type: loadout
       id: LoadoutHandsGlovesRobohands
     - type: loadout
-      id: LoadoutHandsGlovesFingerless
+      id: LoadoutHandsGlovesFingerlessWhite
+    - type: loadout
+      id: LoadoutHandsGlovesEvening
+    - type: loadout
+      id: LoadoutHandsGlovesEnviroglovesColor
+    - type: loadout
+      id: LoadoutHandsGlovesEnviroglovesEvening

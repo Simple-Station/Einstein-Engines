@@ -50,12 +50,14 @@ public abstract class SwitchableOverlaySystem<TComp, TEvent> : EntitySystem
 
         while (query.MoveNext(out var uid, out var comp))
         {
-            if (comp.PulseTime <= 0f || comp.PulseAccumulator >= comp.PulseTime)
+            if (comp.PulseTime <= 0)
                 continue;
 
-            comp.PulseAccumulator += frameTime;
+            // The accumulator is for visually rendering the pulse strength decaying.
+            comp.PulseAccumulator += comp.PulseEndTime - _timing.CurTime;
 
-            if (comp.PulseAccumulator < comp.PulseTime)
+            // This line is for the actual check that shuts off the pulse when its time is up.
+            if (_timing.CurTime < comp.PulseEndTime)
                 continue;
 
             Toggle(uid, comp, false, false);
@@ -101,30 +103,36 @@ public abstract class SwitchableOverlaySystem<TComp, TEvent> : EntitySystem
             return;
 
         component.IsActive = state.IsActive;
+        if (component.PulseTime != 0)
+            component.PulseEndTime = _timing.CurTime + TimeSpan.FromSeconds(component.PulseTime);
 
-        RaiseSwitchableOverlayToggledEvent(uid, uid, component.IsActive);
-        RaiseSwitchableOverlayToggledEvent(uid, Transform(uid).ParentUid, component.IsActive);
+        RaiseSwitchableOverlayToggledEvent(uid,
+            component.IsEquipment ? Transform(uid).ParentUid : uid,
+            component.IsActive);
     }
 
     private void OnGetItemActions(Entity<TComp> ent, ref GetItemActionsEvent args)
     {
-        if (ent.Comp.ToggleAction != null && args.SlotFlags is not SlotFlags.POCKET and not null)
+        if (ent.Comp.IsEquipment && ent.Comp.ToggleAction != null && args.SlotFlags is not SlotFlags.POCKET and not null)
             args.AddAction(ref ent.Comp.ToggleActionEntity, ent.Comp.ToggleAction);
     }
 
     private void OnShutdown(EntityUid uid, TComp component, ComponentShutdown args)
     {
+        if (component.IsEquipment)
+            return;
+
         _actions.RemoveAction(uid, component.ToggleActionEntity);
     }
 
     private void OnInit(EntityUid uid, TComp component, ComponentInit args)
     {
-        component.PulseAccumulator = component.PulseTime;
+        component.PulseAccumulator = TimeSpan.FromSeconds(component.PulseTime);
     }
 
     private void OnMapInit(EntityUid uid, TComp component, MapInitEvent args)
     {
-        if (component.ToggleActionEntity == null && component.ToggleAction != null)
+        if (component is { IsEquipment: false, ToggleActionEntity: null, ToggleAction: not null })
             _actions.AddAction(uid, ref component.ToggleActionEntity, component.ToggleAction);
     }
 
@@ -145,9 +153,9 @@ public abstract class SwitchableOverlaySystem<TComp, TEvent> : EntitySystem
                 false);
         }
 
-        if (component.PulseTime > 0f)
+        if (component.PulseTime > 0)
         {
-            component.PulseAccumulator = activate ? 0f : component.PulseTime;
+            component.PulseAccumulator = activate ? TimeSpan.Zero : TimeSpan.FromSeconds(component.PulseTime);
             return;
         }
 

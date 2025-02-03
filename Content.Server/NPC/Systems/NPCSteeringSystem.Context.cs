@@ -243,12 +243,20 @@ public sealed partial class NPCSteeringSystem
                 // Alright just adjust slightly and grab the next node so we don't stop moving for a tick.
                 // TODO: If it's the last node just grab the target instead.
                 targetCoordinates = GetTargetCoordinates(steering);
-                targetMap = targetCoordinates.ToMap(EntityManager, _transform);
+
+                if (!targetCoordinates.IsValid(EntityManager))
+                {
+                    SetDirection(uid, mover, steering, Vector2.Zero);
+                    steering.Status = SteeringStatus.NoPath;
+                    return false;
+                }
+
+                targetMap = _transform.ToMapCoordinates(targetCoordinates);
 
                 // Can't make it again.
                 if (ourMap.MapId != targetMap.MapId)
                 {
-                    SetDirection(mover, steering, Vector2.Zero);
+                    SetDirection(uid, mover, steering, Vector2.Zero);
                     steering.Status = SteeringStatus.NoPath;
                     return false;
                 }

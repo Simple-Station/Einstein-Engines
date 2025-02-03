@@ -11,23 +11,11 @@ namespace Content.Server.Database.Migrations.Sqlite
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.Sql("DROP TABLE IF EXISTS ProileLoadouts;");
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_loadout_profile_profile_id",
-                table: "loadout",
-                column: "profile_id",
-                principalTable: "profile",
-                principalColumn: "profile_id",
-                onDelete: ReferentialAction.Cascade);
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_loadout_profile_profile_id",
-                table: "loadout");
-
             migrationBuilder.CreateTable(
                 name: "ProfileLoadout",
                 columns: table => new

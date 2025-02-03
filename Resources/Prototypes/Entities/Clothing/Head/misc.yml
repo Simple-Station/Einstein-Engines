@@ -308,3 +308,14 @@
       - WhitelistChameleon
   - type: StaticPrice
     price: 1
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatHeadBandBasic
+  name: basic headband
+  description: Perfect for martial artists, sweaty rogue operators, and tunnel gangsters.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Misc/headband.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Misc/headband.rsi

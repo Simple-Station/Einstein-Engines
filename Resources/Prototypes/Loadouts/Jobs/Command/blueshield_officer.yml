@@ -1,0 +1,232 @@
+# Uncategorized
+# Backpacks
+- type: loadout
+  id: LoadoutClothingBackpackBlueshield
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingBackpackBlueshield
+
+- type: loadout
+  id: LoadoutClothingSatchelBlueshield
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingBackpackSatchelBlueshield
+
+- type: loadout
+  id: LoadoutClothingDuffelBlueshield
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingBackpackDuffelBlueshield
+
+# Belt
+
+# Ears
+
+# Equipment
+
+# Eyes
+
+# Gloves
+
+# Head
+- type: loadout
+  id: LoadoutClothingBlueshieldBeretNavy
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerHats
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingHeadHatBeretNavy
+
+- type: loadout
+  id: LoadoutClothingBlueshieldBeretOfficer
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerHats
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingHeadHatBeretOfficer
+
+- type: loadout
+  id: LoadoutClothingBlueshieldCowboyHat
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerHats
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingHeadHatCowboyBlueshield
+
+# Id
+
+# Neck
+
+# Mask
+
+# Outer
+- type: loadout
+  id: LoadoutClothingBlueshieldArmoredJacket
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerVests
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingBlueshieldArmoredJacket
+
+- type: loadout
+  id: LoadoutClothingBlueshieldArmoredCowboyJacket
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerVests
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingBlueshieldArmoredCowboyJacket
+
+- type: loadout
+  id: LoadoutClothingBlueshieldArmorVest
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerVests
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingBlueshieldArmourVest
+
+- type: loadout
+  id: LoadoutClothingBlueshieldArmoredMarine
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerVests
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingBlueshieldArmoredMarine
+
+- type: loadout
+  id: LoadoutClothingBlueshieldArmoredVest
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerVests
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingBlueshieldArmoredVest
+
+- type: loadout
+  id: LoadoutClothingBlueshieldArmoredKimono
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerVests
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingBlueshieldArmoredKimono
+
+- type: loadout
+  id: LoadoutClothingBlueshieldArmoredCoat
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerVests
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingBlueshieldArmoredCoat
+
+# Shoes
+
+# Uniforms
+- type: loadout
+  id: LoadoutClothingUniformJumpskirtBlueshieldOfficer
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingUniformJumpskirtBlueshieldOfficer
+
+- type: loadout
+  id: LoadoutClothingUniformJumpsuitBlueshieldOfficer
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingUniformJumpsuitBlueshieldOfficer

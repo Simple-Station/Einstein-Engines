@@ -311,6 +311,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutAirTank
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Plasmaman
 
 - type: loadout
   id: LoadoutItemsExtendedEmergencyOxygenTank
@@ -321,6 +325,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutAirTank
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Plasmaman
 
 - type: loadout
   id: LoadoutItemsDoubleEmergencyOxygenTank
@@ -331,6 +339,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutAirTank
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Plasmaman
 
 - type: loadout
   id: LoadoutItemClothingMaskBreath
@@ -433,6 +445,11 @@
   cost: 1
   items:
     - DrinkWaterBottleFull
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Plasmaman
 
 - type: loadout
   id: LoadoutItemLunchboxGenericFilledRandom
@@ -440,6 +457,11 @@
   cost: 3
   items:
     - LunchboxGenericFilledRandom
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Plasmaman
 
 - type: loadout
   id: LoadoutItemDrinkMREFlask
@@ -447,6 +469,11 @@
   cost: 2
   items:
     - DrinkMREFlask
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Plasmaman
 
 # Survival boxes
 - type: loadout
@@ -689,18 +716,6 @@
     - PersonalAI
 
 - type: loadout
-  id: LoadoutItemWaistbag
-  category: Items
-  cost: 2
-  items:
-    - ClothingBeltStorageWaistbag
-  requirements:
-    - !type:CharacterJobRequirement
-       inverted: true
-       jobs:
-         - Prisoner
-
-- type: loadout
   id: LoadoutItemCrayonBox
   category: Items
   cost: 4
@@ -780,6 +795,7 @@
   category: Items
   cost: 2
   canBeHeirloom: true
+  customColorTint: true # Unethical hair dyes!
   items:
     - MobMousePet
   requirements:
@@ -793,6 +809,7 @@
   category: Items
   cost: 2
   canBeHeirloom: true
+  customColorTint: true
   items:
     - MobHamsterPet
   requirements:
@@ -806,6 +823,7 @@
   category: Items
   cost: 2
   canBeHeirloom: true
+  customColorTint: true
   items:
     - MobMothroachPet
   requirements:
@@ -819,6 +837,7 @@
   category: Items
   cost: 2
   canBeHeirloom: true
+  customColorTint: true
   items:
     - MobCockroachPet
   requirements:
@@ -826,3 +845,28 @@
       group: LoadoutPets
   functions:
     - !type:LoadoutMakeFollower
+
+- type: loadout
+  id: LoadoutItemBlackDeck
+  category: Items
+  cost: 3
+  canBeHeirloom: false
+  items:
+    - CardBoxBlack
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCards
+
+- type: loadout
+  id: LoadoutItemNTDeck
+  category: Items
+  cost: 3
+  canBeHeirloom: false
+  items:
+    - CardBoxNanotrasen
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCards
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Command
