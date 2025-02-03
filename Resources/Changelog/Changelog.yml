@@ -11059,3 +11059,10 @@ Entries:
   id: 6790
   time: '2025-02-03T04:56:21.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1709
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: 'Made hardsuits 5db quieter. '
+  id: 6791
+  time: '2025-02-03T05:14:24.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1710
