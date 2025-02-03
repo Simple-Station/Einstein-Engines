@@ -28,7 +28,11 @@ namespace Content.Client.Chemistry.UI
         public event Action<int>? OnAmountButtonPressed;
         public event Action<int>? OnSortMethodChanged;
         public event Action<int>? OnTransferAmountChanged;
+        public event Action<List<int>>? OnUpdateAmounts;
+
         public readonly Button[] PillTypeButtons;
+
+        private List<int> _amounts = new();
 
         private const string TransferringAmountColor = "#ffffff";
         private ReagentSortMethod _currentSortMethod = ReagentSortMethod.Alphabetical;
@@ -48,7 +52,9 @@ namespace Content.Client.Chemistry.UI
 
             AmountLabel.HorizontalAlignment = HAlignment.Center;
             AmountLineEdit.OnTextEntered += SetAmount;
-            AmountLineEdit.OnFocusExit += SetAmount;
+
+            SetAmountButton.OnPressed += _ => SetAmountText(AmountLineEdit.Text);
+            SaveAsFrequentButton.OnPressed += HandleSaveAsFrequentPressed;
 
             // Pill type selection buttons, in total there are 20 pills.
             // Pill rsi file should have states named as pill1, pill2, and so on.
@@ -130,15 +136,19 @@ namespace Content.Client.Chemistry.UI
             BufferTransferButton.OnPressed += HandleDiscardTransferPress;
             BufferDiscardButton.OnPressed += HandleDiscardTransferPress;
 
-            var amounts = new List<int>()
-            {
-                1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 125, 150, 175, 200, 225, 250, 275, 300, 500
-            };
+            CreateAmountButtons();
 
-            for (int i = 0; i < amounts.Count; i++)
+            OnAmountButtonPressed += amount => SetAmountText(amount.ToString());
+        }
+
+        private void CreateAmountButtons()
+        {
+            AmountButtons.DisposeAllChildren();
+
+            for (int i = 0; i < _amounts.Count; i++)
             {
                 var styleClass = StyleBase.ButtonOpenBoth;
-                var amount = amounts[i];
+                var amount = _amounts[i];
                 var columns = AmountButtons.Columns;
 
                 if (i == 0 || i % columns == 0)
@@ -158,8 +168,17 @@ namespace Content.Client.Chemistry.UI
                 button.OnPressed += _ => OnAmountButtonPressed?.Invoke(amount);
                 AmountButtons.AddChild(button);
             }
+        }
 
-            OnAmountButtonPressed += amount => SetAmountText(amount.ToString());
+        private void HandleSaveAsFrequentPressed(BaseButton.ButtonEventArgs args)
+        {
+            if (!int.TryParse(AmountLineEdit.Text, out var amount)
+                || _amounts.Any(a => amount == a))
+                return;
+
+            _amounts.Add(amount);
+            _amounts.Sort();
+            CreateAmountButtons();
         }
 
         private void HandleDiscardTransferPress(BaseButton.ButtonEventArgs args)
@@ -275,6 +294,13 @@ namespace Content.Client.Chemistry.UI
             UpdatePanelInfo(castState);
             HandleSortMethodChange(castState.SortMethod);
             SetAmountText(castState.TransferringAmount.ToString());
+
+            if (_amounts != castState.Amounts)
+            {
+                _amounts = castState.Amounts;
+                _amounts.Sort();
+                CreateAmountButtons();
+            }
 
             BufferCurrentVolume.Text = $" {castState.PillBufferCurrentVolume?.Int() ?? 0}u";
 
