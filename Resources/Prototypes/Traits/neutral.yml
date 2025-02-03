@@ -52,6 +52,50 @@
     - !type:TraitAddComponent
       components:
         - type: GermanAccent
+        
+- type: trait
+  id: RussianAccent
+  category: TraitsSpeechAccents
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsAccents
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: RussianAccent
+        
+- type: trait
+  id: FrenchAccent
+  category: TraitsSpeechAccents
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsAccents
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: FrenchAccent
+        
+- type: trait
+  id: ItalianAccent
+  category: TraitsSpeechAccents
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsAccents
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: ItalianAccent
+        
+- type: trait
+  id: SpanishAccent
+  category: TraitsSpeechAccents
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsAccents
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: SpanishAccent
 
 - type: trait
   id: NormalVision
