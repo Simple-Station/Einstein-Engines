@@ -84,7 +84,7 @@
   functions:
     - !type:TraitAddComponent
       components:
-        - type: ItalianAccent
+        - type: MobsterAccent
         
 - type: trait
   id: SpanishAccent
