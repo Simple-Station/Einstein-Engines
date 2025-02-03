@@ -99530,11 +99530,6 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraCommand
       id: AI Core
-    - type: UserInterface
-      actors:
-        enum.SurveillanceCameraSetupUiKey.Camera:
-        - invalid
-    - type: ActiveUserInterface
 - proto: SurveillanceCameraEngineering
   entities:
   - uid: 5352
