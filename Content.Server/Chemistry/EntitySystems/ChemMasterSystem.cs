@@ -64,7 +64,11 @@ namespace Content.Server.Chemistry.EntitySystems
             SubscribeLocalEvent<ChemMasterComponent, ChemMasterOutputToBottleMessage>(OnOutputToBottleMessage);
             SubscribeLocalEvent<ChemMasterComponent, ChemMasterSortMethodUpdated>(OnSortMethodUpdated);
             SubscribeLocalEvent<ChemMasterComponent, ChemMasterTransferringAmountUpdated>(OnTransferringAmountUpdated);
+            SubscribeLocalEvent<ChemMasterComponent, ChemMasterAmountsUpdated>(OnAmountsUpdated);
         }
+
+        private void OnAmountsUpdated(Entity<ChemMasterComponent> ent, ref ChemMasterAmountsUpdated args) =>
+            ent.Comp.Amounts = args.Amounts;
 
         private void SubscribeUpdateUiState<T>(Entity<ChemMasterComponent> ent, ref T ev) =>
             UpdateUiState(ent);
@@ -97,7 +101,8 @@ namespace Content.Server.Chemistry.EntitySystems
                 chemMaster.PillDosageLimit,
                 updateLabel,
                 chemMaster.SortMethod,
-                chemMaster.TransferringAmount);
+                chemMaster.TransferringAmount,
+                chemMaster.Amounts);
 
             _userInterfaceSystem.SetUiState(owner, ChemMasterUiKey.Key, state);
         }
@@ -366,6 +371,7 @@ namespace Content.Server.Chemistry.EntitySystems
         private void OnTransferringAmountUpdated(EntityUid uid, ChemMasterComponent chemMaster, ChemMasterTransferringAmountUpdated args)
         {
             chemMaster.TransferringAmount = args.TransferringAmount;
+            ClickSound((uid, chemMaster));
             UpdateUiState((uid, chemMaster));
         }
     }
