@@ -9,6 +9,7 @@ using Content.Shared.Interaction.Events;
 using Content.Shared.Inventory.VirtualItem;
 using Content.Shared.Item;
 using Content.Shared.Movement.Components;
+using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
 using Content.Shared.StatusEffect;
 using Content.Shared.Stunnable;
@@ -30,6 +31,7 @@ namespace Content.Shared.Wieldable;
 
 public abstract class SharedWieldableSystem : EntitySystem
 {
+    [Dependency] private readonly MovementSpeedModifierSystem _movementSpeedModifier = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly INetManager _netManager = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
@@ -61,6 +63,9 @@ public abstract class SharedWieldableSystem : EntitySystem
         SubscribeLocalEvent<GunWieldBonusComponent, ItemUnwieldedEvent>(OnGunUnwielded);
         SubscribeLocalEvent<GunWieldBonusComponent, GunRefreshModifiersEvent>(OnGunRefreshModifiers);
         SubscribeLocalEvent<GunWieldBonusComponent, ExaminedEvent>(OnExamine);
+        SubscribeLocalEvent<SpeedModifiedOnWieldComponent, ItemWieldedEvent>(OnSpeedModifierWielded);
+        SubscribeLocalEvent<SpeedModifiedOnWieldComponent, ItemUnwieldedEvent>(OnSpeedModifierUnwielded);
+        SubscribeLocalEvent<SpeedModifiedOnWieldComponent, HeldRelayedEvent<RefreshMovementSpeedModifiersEvent>>(OnRefreshSpeedWielded);
 
         SubscribeLocalEvent<IncreaseDamageOnWieldComponent, GetMeleeDamageEvent>(OnGetMeleeDamage);
     }
@@ -136,9 +141,29 @@ public abstract class SharedWieldableSystem : EntitySystem
         }
     }
 
+    private void OnSpeedModifierWielded(EntityUid uid, SpeedModifiedOnWieldComponent component, ItemWieldedEvent args)
+    {
+        if (args.User != null)
+            _movementSpeedModifier.RefreshMovementSpeedModifiers(args.User);
+    }
+
+    private void OnSpeedModifierUnwielded(EntityUid uid, SpeedModifiedOnWieldComponent component, ItemUnwieldedEvent args)
+    {
+        if (args.User != null)
+            _movementSpeedModifier.RefreshMovementSpeedModifiers(args.User);
+    }
+
+    private void OnRefreshSpeedWielded(EntityUid uid, SpeedModifiedOnWieldComponent component, ref HeldRelayedEvent<RefreshMovementSpeedModifiersEvent> args)
+    {
+        if (TryComp<WieldableComponent>(uid, out var wield) && wield.Wielded)
+        {
+            args.Args.ModifySpeed(component.WalkModifier, component.SprintModifier);
+        }
+    }
+
     private void OnExamineRequires(Entity<GunRequiresWieldComponent> entity, ref ExaminedEvent args)
     {
-        if(entity.Comp.WieldRequiresExamineMessage != null)
+        if (entity.Comp.WieldRequiresExamineMessage != null)
             args.PushText(Loc.GetString(entity.Comp.WieldRequiresExamineMessage));
     }
 
