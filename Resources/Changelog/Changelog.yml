@@ -11073,3 +11073,10 @@ Entries:
   id: 6792
   time: '2025-02-03T10:53:53.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1711
+- author: Peptide90
+  changes:
+    - type: Add
+      message: 'Added traits for accents: Russian, German, French, Italian and Spanish'
+  id: 6793
+  time: '2025-02-04T06:36:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1712
