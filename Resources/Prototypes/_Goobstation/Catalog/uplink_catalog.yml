@@ -207,7 +207,7 @@
   id: UplinkLightRifleSubsonicMag
   name: uplink-rifle-subsonic-mag-name
   description: uplink-rifle-subsonic-mag-desc
-  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/LightRifle/light_rifle_mag.rsi, state: rubber }
+  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/LightRifle/light_rifle_mag.rsi, state: practice }
   productEntity: MagazineLightRifleSubsonic
   cost:
     Telecrystal: 5
