@@ -2,12 +2,14 @@ using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Overlays.Switchable;
 using Robust.Client.Graphics;
+using Robust.Shared.Timing;
 
 namespace Content.Client.Overlays.Switchable;
 
 public sealed class ThermalVisionSystem : EquipmentHudSystem<ThermalVisionComponent>
 {
     [Dependency] private readonly IOverlayManager _overlayMan = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
 
     private ThermalVisionOverlay _thermalOverlay = default!;
     private BaseSwitchableOverlay<ThermalVisionComponent> _overlay = default!;
@@ -28,7 +30,7 @@ public sealed class ThermalVisionSystem : EquipmentHudSystem<ThermalVisionCompon
     {
         if (component.IsEquipment)
             return;
-            
+
         base.OnRefreshComponentHud(uid, component, args);
     }
 
@@ -38,7 +40,7 @@ public sealed class ThermalVisionSystem : EquipmentHudSystem<ThermalVisionCompon
     {
         if (!component.IsEquipment)
             return;
-            
+
         base.OnRefreshEquipmentHud(uid, component, args);
     }
 
@@ -54,14 +56,14 @@ public sealed class ThermalVisionSystem : EquipmentHudSystem<ThermalVisionCompon
         var lightRadius = 0f;
         foreach (var comp in args.Components)
         {
-            if (!comp.IsActive && (comp.PulseTime <= 0f || comp.PulseAccumulator >= comp.PulseTime))
+            if (!comp.IsActive && (comp.PulseTime <= 0 || _timing.CurTime < comp.PulseEndTime))
                 continue;
 
             if (tvComp == null)
                 tvComp = comp;
             else if (!tvComp.DrawOverlay && comp.DrawOverlay)
                 tvComp = comp;
-            else if (tvComp.DrawOverlay == comp.DrawOverlay && tvComp.PulseTime > 0f && comp.PulseTime <= 0f)
+            else if (tvComp.DrawOverlay == comp.DrawOverlay && tvComp.PulseTime > 0 && comp.PulseTime <= 0)
                 tvComp = comp;
 
             lightRadius = MathF.Max(lightRadius, comp.LightRadius);

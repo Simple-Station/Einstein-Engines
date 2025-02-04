@@ -16,7 +16,8 @@
         - SubfloorMask
         layer:
         - LowImpassable
-        hard: false
+  - type: Physics
+    canCollide: False
   - type: ApcPowerReceiver
     powerLoad: 300
   - type: StationAiVision
@@ -90,7 +91,7 @@
   - type: WiresVisuals
   - type: Wires
     boardName: wires-board-name-holopad
-    layoutId: Holopad 
+    layoutId: Holopad
   - type: Destructible
     thresholds:
     - trigger:
@@ -104,7 +105,7 @@
         node: machineFrame
       - !type:DoActsBehavior
         acts: ["Destruction"]
- 
+
 - type: entity
   name: long-range holopad
   description: "A floor-mounted device for projecting holographic images to similar devices that are far away."
@@ -117,7 +118,7 @@
     - Map
     - Unlimited
     ignoreTelephonesOnSameGrid: true
-    
+
 - type: entity
   name: quantum entangling holopad
   description: "An floor-mounted device for projecting holographic images to similar devices at extreme distances."
@@ -151,7 +152,7 @@
   id: HolopadHologram
   name: hologram
   categories: [ HideSpawnMenu ]
-  suffix: DO NOT MAP    
+  suffix: DO NOT MAP
   components:
   - type: Transform
     anchored: true

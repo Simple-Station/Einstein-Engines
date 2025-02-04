@@ -80,6 +80,21 @@ trait-description-Stutter =
 trait-name-Southern = Southern Drawl
 trait-description-Southern = You have a different way of speakin'.
 
+trait-name-GermanAccent = German accent
+trait-description-GermanAccent = You speak with a German accent.
+
+trait-name-RussianAccent = Russian accent
+trait-description-RussianAccent = You speak with a Russian accent.
+
+trait-name-FrenchAccent = French accent
+trait-description-FrenchAccent = You speak with a French accent.
+
+trait-name-ItalianAccent = Italian accent
+trait-description-ItalianAccent = You speak with a Italian accent.
+
+trait-name-SpanishAccent = Spanish accent
+trait-description-SpanishAccent = You speak with a Spanish accent.
+
 trait-name-Snoring = Snoring
 trait-description-Snoring = You tend to snore loudly while sleeping.
 

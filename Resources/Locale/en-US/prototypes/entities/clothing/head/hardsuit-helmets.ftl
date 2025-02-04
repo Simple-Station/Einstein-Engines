@@ -4,6 +4,8 @@ ent-ClothingHeadHelmetHardsuitAtmos = HpI-19t helmet
     .desc = The Fotia's standard helmet, it features the same heat protection as the suit, along with some integrated protective gear for the wearer's head.
 ent-ClothingHeadHelmetHardsuitEngineering = HpI-19r helmet
     .desc = The Lampsi's standard helmet, it features the same radiation protection as the suit, along with some integrated protective gear for the wearer's head.
+ent-ClothingHeadHelmetHardsuitEngineeringUnpainted = HpI-19r helmet
+    .desc = { ent-ClothingHeadHelmetHardsuitEngineering.desc }
 ent-ClothingHeadHelmetHardsuitSpatio = HpI-20s helmet
     .desc = A lightweight helmet designed for the Kriti hardsuit, it allows for better mobility, along with some protection against radiation.
 ent-ClothingHeadHelmetHardsuitSalvage = HpI-20a helmet
@@ -55,6 +57,8 @@ ent-ClothingHeadHelmetHardsuitLuxury = HpI-20c helmet
     .desc = A modified helmet for the Minos hardsuit, fashioned after the Logistics Officer's colors. It's been modified for greater mobility at the expense of physical trauma protection.
 ent-ClothingHeadHelmetHardsuitSyndie = CSA-51a helmet
     .desc = An armored helmet deployed over a Shanlin tacsuit. This one has been painted blood red.
+ent-ClothingHeadHelmetHardsuitShanlinUnpainted = CSA-51a helmet
+    .desc = An armored helmet deployed over a Shanlin tacsuit. This one is unpainted bare metal.
 ent-ClothingHeadHelmetHardsuitSyndieReverseEngineered = CSA-51a helmet
     .desc = An armored helmet deployed over a Shanlin tacsuit. This one has been painted blue.
 ent-ClothingHeadHelmetHardsuitSyndieMedic = CSA-51m helmet
@@ -62,6 +66,9 @@ ent-ClothingHeadHelmetHardsuitSyndieMedic = CSA-51m helmet
     Designed to enable the survival of combat medics in the most dangerous of environments.
 ent-ClothingHeadHelmetHardsuitSyndieElite = CSA-54UA helmet
     .desc = An elite version of the Shanlin tacsuit's helmet, featuring improved armor and fireproofing.
+ent-ClothingHeadHelmetHardsuitShiweiUnpainted = CSA-54UA helmet
+    .desc = An elite version of the Shanlin tacsuit's helmet, featuring improved armor and fireproofing.
+    It is unpainted bare spaceship alloy.
 ent-ClothingHeadHelmetHardsuitSyndieCommander = CSA-54c helmet
     .desc = A bulked up version of the Shanlin tacsuit's helmet, purpose-built for commanders of special operation squads. This one has been painted blood-red.
 ent-ClothingHeadHelmetHardsuitCybersun = CSA-80UA helmet
