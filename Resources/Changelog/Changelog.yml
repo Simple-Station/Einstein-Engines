@@ -11080,3 +11080,97 @@ Entries:
   id: 6793
   time: '2025-02-04T06:36:16.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1712
+- author: Several Contributors
+  changes:
+    - type: Add
+      message: Added Lone Digger by Caravan Palace to the jukebox! (by MilonPL)
+    - type: Add
+      message: Added Deck The Halls by Kevin Macleod to the jukebox! (by Lyndomen)
+    - type: Tweak
+      message: Now medical belts have a slot for medkits. (by Radezolid)
+    - type: Add
+      message: >-
+        Added a way for muskets, flintlocks, and musket cartridges (NOT .60) to
+        be crafted. (by Tryded)
+    - type: Add
+      message: >-
+        Added Vulpkanin-specific sprites to a lot of helmets and masks. (by
+        Adrian16199, TadJohnson00)
+    - type: Add
+      message: >-
+        Security dogs (such as Laika) now have Vulpkanin vocal emotes. Howl! (by
+        Remuchi)
+    - type: Add
+      message: >-
+        Split the Emag into the Cryptographic Sequencer and the Airlock Access
+        Override. (by Warmechanic)
+    - type: Add
+      message: >-
+        Added Corpsman Glasses, no more getting flashed as Corpsman! Also
+        available in Loadouts. (by Unkn0wnGh0st333)
+    - type: Add
+      message: Harpies can now mimic harps! (by TheOneWhoIsManyFrame)
+    - type: Tweak
+      message: Cats will now play with mouse toys. (by Deltanedas)
+    - type: Add
+      message: Added a black turtleneck, available in Loadouts! (by Aikakakah)
+    - type: Add
+      message: >-
+        Added the Binary Translator Key to the uplink costing 1 TC and the
+        listening post operative headset. (by Radezolid)
+    - type: Add
+      message: >-
+        Spesos now have a new pretty look transferred from the Frontier Station.
+        (by whatston3)
+    - type: Add
+      message: The home-run bat has been re-added to the traitor uplink.
+    - type: Add
+      message: >-
+        Added the CrystalThistle, mutated from the Galaxythistle that generates
+        Quartzite which when heated produces glass sheets. (by jimmy12or)
+    - type: Add
+      message: >-
+        Added a Ghost Pepper! A friendly looking Pepper that's so Spicy, it
+        hurts! (by jimmy12or)
+    - type: Add
+      message: >-
+        Added a Cosmic Revenant! A spooky mutation of the Ghost pepper that
+        produced Ectoplasm. (by jimmy12or)
+    - type: Add
+      message: >-
+        Added blue and purple tomato soup, made using Blue Tomatoes. (by
+        DisposableCrewmember42)
+    - type: Add
+      message: >-
+        Added new drinks: the double ice cream (by dge21) and Dr. Gibb Blood Red
+        (by BlitzTheSquishy).
+    - type: Add
+      message: >-
+        Some drink reactions now require shaking with the shaker or stirring
+        with a spoon. (by Vermidia)
+    - type: Add
+      message: Added "Selene" wing customization option for moths (by boogiebogus)
+    - type: Add
+      message: >-
+        Added the tiger tail sprite for Felinids, Humans and Tajarans. (by
+        Adrian16199)
+    - type: Add
+      message: >-
+        NanoTrasen has established business relations with HydroCo! You can now
+        order powdered milk and juice via your Logistics department. (by
+        DisposableCrewmember42)
+    - type: Tweak
+      message: >-
+        Bar and kitchen shelves no longer restrict the items that can be placed
+        in them. (by Velcroboy)
+    - type: Tweak
+      message: >-
+        Bookshelves can now fit any kind of item, not just books. (by
+        Deltanedas)
+    - type: Add
+      message: >-
+        New magic crayons have appeared in the sector, artists rejoice! (by
+        AvalonProto)
+  id: 6794
+  time: '2025-02-04T09:25:17.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1697
