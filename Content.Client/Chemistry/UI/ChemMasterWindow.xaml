@@ -137,12 +137,18 @@
             </PanelContainer>
             <RichTextLabel Name="AmountLabel" Text="{Loc 'chem-master-window-transferring-default-label'}"  Margin="0 0 7 0" />
             <LineEdit MinSize="140 0" Name="AmountLineEdit" Access="Public" PlaceHolder="{Loc 'chem-master-window-amount-placeholder'}" />
+            <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+                <Button Name="SetAmountButton" Text="{Loc 'chem-master-window-set-amount-label'}" HorizontalExpand="True" StyleClasses="OpenRight"/>
+                <Button Name="SaveAsFrequentButton" Text="{Loc 'chem-master-window-save-as-frequent-label'}" HorizontalExpand="True" StyleClasses="OpenLeft"/>
+            </BoxContainer>
+            <RichTextLabel Text="Both of the above buttons use the textbox" />
+            <Control MinSize="0 5" />
             <GridContainer
                 Name="AmountButtons"
                 VerticalExpand="True"
                 HorizontalExpand="True"
                 Margin="2 2 2 2"
-                Columns="5" />
+                Columns="4" />
         </BoxContainer>
     </BoxContainer>
 </controls:FancyWindow>
