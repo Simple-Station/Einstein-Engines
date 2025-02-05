@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ BaseComputerCircuitboard, BaseEngineeringContraband ]
+  parent: BaseComputerCircuitboard
   id: SupermatterComputerCircuitboard
   name: supermatter monitoring console board
   description: A computer printed circuit board for a supermatter monitoring console.

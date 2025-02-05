@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ BaseComputerAiAccess, BaseEngineeringContraband ]
+  parent: BaseComputerAiAccess
   id: ComputerSupermatter
   name: supermatter monitoring console
   description: Used to monitor the status of supermatter crystals.
