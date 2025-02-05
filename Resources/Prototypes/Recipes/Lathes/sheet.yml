@@ -285,3 +285,14 @@
   completetime: 4
   materials:
     RawNormality: 100
+
+- type: latheRecipe
+  id: IngotTungsten1
+  result: IngotTungsten1
+  applyMaterialDiscount: false
+  miningPoints: 5
+  completetime: 4
+  materials:
+    RawTungsten: 100
+    RawIron: 100
+    Coal: 100
