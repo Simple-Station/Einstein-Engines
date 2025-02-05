@@ -18,6 +18,12 @@ public sealed partial class EmagReplaceFactionsComponent : Component
     public int StunSeconds = 5;
 
     /// <summary>
+    /// Should the component add factions to the existing list of factions instead of replacing them?
+    /// </summary>
+    [DataField(required:false)]
+    public bool Additive = false;
+
+    /// <summary>
     /// Factions to replace from the original set.
     /// </summary>
     [DataField(required: true), ViewVariables(VVAccess.ReadWrite)]
