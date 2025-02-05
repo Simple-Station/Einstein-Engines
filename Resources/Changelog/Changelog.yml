@@ -11191,3 +11191,27 @@ Entries:
   id: 6795
   time: '2025-02-05T03:56:37.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1706
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added lathe and ore processor materials for Lead, Aluminium, Copper,
+        Tungsten-Carbide, and Circuitry. Only Tungsten-Carbide currently has a
+        use.
+    - type: Add
+      message: >-
+        Tacsuits now require Tungsten-Carbide to make instead of Plasteel, and
+        require a lot less.
+    - type: Add
+      message: >-
+        Reworked ore drops for Lava planets. Lava planets now have random ores
+        that drop from any rock, but with their own drop table. Iron & Gold are
+        "Plentiful" on lava planets, with moderate amounts of Aluminium and
+        Tungsten. All other ores are very rare from Lava rocks.
+    - type: Add
+      message: >-
+        Energy Swords can now be manufactured at a Secfab after researching
+        Arsenal T3 Prototype Weapons
+  id: 6796
+  time: '2025-02-05T15:47:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1693
