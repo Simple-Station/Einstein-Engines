@@ -1,5 +1,7 @@
 ﻿# Legal Info
 
+DISCLAIMER: We have no idea what we are doing with licensing so for now will just label everything from goon with "Goonstation feature", we are just doing this for fun mostly.
+
 ## Copyright
 
 The Authors retain all copyright to their respective work submitted here.
