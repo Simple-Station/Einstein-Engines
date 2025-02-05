@@ -170,3 +170,5 @@ chat-speech-verb-electricity-2 = buzzes
 chat-speech-verb-electricity-3 = screeches
 
 chat-speech-verb-marish = Mars
+
+chat-speech-verb-supermatter = states
