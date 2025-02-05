@@ -21,6 +21,14 @@
     Plasma: 150
 
 - type: latheRecipe
+  id: ClothingHeadHelmetBasic
+  result: ClothingHeadHelmetBasic
+  completetime: 2
+  materials:
+    Steel: 250
+    Glass: 100
+
+- type: latheRecipe
   id: Stunbaton
   result: Stunbaton
   category: Weapons
