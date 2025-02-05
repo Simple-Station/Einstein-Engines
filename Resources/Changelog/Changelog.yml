@@ -11215,3 +11215,10 @@ Entries:
   id: 6796
   time: '2025-02-05T15:47:47.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1693
+- author: Timfa
+  changes:
+    - type: Add
+      message: Add plunger to a Borg Cleaning Mobule
+  id: 6797
+  time: '2025-02-05T18:33:22.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1718
