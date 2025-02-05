@@ -40,7 +40,9 @@ public sealed class EmagReplaceFactionsSystem : EntitySystem
             newFactions.Add(comp.Factions[i]);
         }
 
-        _npcFactionSystem.ClearFactions(uid, false);
+        if(!comp.Additive)
+            _npcFactionSystem.ClearFactions(uid, false);
+
         _npcFactionSystem.AddFactions(uid, newFactions);
 
         if(comp.StunSeconds > 0)
