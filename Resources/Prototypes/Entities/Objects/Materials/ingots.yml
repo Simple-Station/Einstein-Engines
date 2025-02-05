@@ -115,3 +115,40 @@
     state: silver
   - type: Stack
     count: 1
+
+- type: entity
+  parent: IngotBase
+  id: IngotTungsten
+  name: tungsten-carbide bar
+  suffix: Full
+  components:
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      Tungsten: 100
+  - type: Stack
+    stackType: Tungsten
+    baseLayer: base
+    layerStates:
+    - tungsten_1
+    - tungsten_2
+    - tungsten_3
+  - type: Sprite
+    state: tungsten_3
+    layers:
+    - state: tungsten_3
+      map: ["base"]
+  - type: Item
+    heldPrefix: tungsten
+  - type: Appearance
+
+- type: entity
+  parent: IngotTungsten
+  id: IngotTungsten1
+  name: tungsten-carbide bar
+  suffix: Single
+  components:
+  - type: Sprite
+    state: tungsten_1
+  - type: Stack
+    count: 1
