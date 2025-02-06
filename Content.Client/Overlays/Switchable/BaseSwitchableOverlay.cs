@@ -37,8 +37,8 @@ public sealed class BaseSwitchableOverlay<TComp> : Overlay where TComp : Switcha
 
         var worldHandle = args.WorldHandle;
 
-        var accumulator = Math.Clamp((float) Comp.PulseAccumulator.TotalSeconds, 0f, Comp.PulseTime);
-        var alpha = Comp.PulseTime <= 0 ? 1f : float.Lerp(1f, 0f, accumulator / Comp.PulseTime);
+        var accumulator = Math.Clamp(Comp.PulseAccumulator, 0f, Comp.PulseTime);
+        var alpha = Comp.PulseTime <= 0f ? 1f : float.Lerp(1f, 0f, accumulator / Comp.PulseTime);
 
         worldHandle.SetTransform(Matrix3x2.Identity);
         worldHandle.UseShader(_shader);
