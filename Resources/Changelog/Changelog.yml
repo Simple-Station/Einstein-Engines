@@ -11272,3 +11272,12 @@ Entries:
   id: 6803
   time: '2025-02-06T02:37:21.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1725
+- author: sowelipililimute
+  changes:
+    - type: Tweak
+      message: >-
+        Autodoc only lists surgeries relevant to the given part, e.g. it won't
+        suggest that you can lobotomise a left leg
+  id: 6804
+  time: '2025-02-06T18:55:29.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1728
