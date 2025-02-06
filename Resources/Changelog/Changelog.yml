@@ -11281,3 +11281,12 @@ Entries:
   id: 6804
   time: '2025-02-06T18:55:29.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1728
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added the ability to roll down jumpsuits to the waist, as well as
+        undergarment markings for wearing alongside said rolled jumpsuits.
+  id: 6805
+  time: '2025-02-06T18:59:12.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1720
