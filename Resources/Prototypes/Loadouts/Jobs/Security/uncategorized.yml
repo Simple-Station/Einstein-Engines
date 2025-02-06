@@ -98,9 +98,14 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityEquipment
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
   items:
     - CombatKnife
 
@@ -111,9 +116,14 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityEquipment
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
   items:
     - Flash
 
@@ -127,9 +137,14 @@
       min: 3600 # 1 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityEquipment
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
@@ -145,9 +160,14 @@
       min: 3600 # 1 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityEquipment
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
@@ -160,9 +180,14 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityEquipment
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
@@ -175,9 +200,14 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityEquipment
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
@@ -194,9 +224,14 @@
       min: 3600 # 1 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityEquipment
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
@@ -213,9 +248,14 @@
       min: 3600 # 1 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityEquipment
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
@@ -229,9 +269,14 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityEquipment
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
@@ -245,9 +290,14 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityEquipment
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
@@ -264,9 +314,14 @@
       min: 3600 # 1 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityEquipment
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
@@ -283,9 +338,14 @@
       min: 3600 # 1 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityEquipment
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
@@ -302,9 +362,14 @@
       min: 3600 # 1 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityEquipment
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
@@ -321,9 +386,14 @@
       min: 3600 # 1 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityEquipment
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
@@ -340,9 +410,14 @@
       min: 3600 # 1 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityEquipment
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
@@ -359,9 +434,14 @@
       min: 3600 # 1 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityEquipment
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
@@ -375,9 +455,14 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityEquipment
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
@@ -391,9 +476,14 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityEquipment
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
@@ -412,9 +502,14 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
   items:
     - WeaponDisabler
 
@@ -430,9 +525,14 @@
       min: 3600 # 1 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
@@ -447,9 +547,14 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
@@ -467,9 +572,14 @@
       min: 3600 # 1 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
@@ -484,9 +594,14 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
@@ -504,9 +619,14 @@
       min: 3600 # 1 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
@@ -521,9 +641,14 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
@@ -541,9 +666,14 @@
       min: 3600 # 1 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
@@ -558,9 +688,14 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
@@ -578,9 +713,14 @@
       min: 3600 # 1 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
@@ -595,9 +735,14 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
@@ -615,9 +760,14 @@
       min: 108000 # 30 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
@@ -635,9 +785,14 @@
       min: 3600 # 1 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterSpeciesRequirement
       species:
         - Oni
@@ -656,9 +811,14 @@
       min: 18000 # 5 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
   items:
     - EnergyCutlassSecurity
 
@@ -674,9 +834,14 @@
       min: 3600 # 1 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
@@ -694,9 +859,14 @@
       min: 3600 # 1 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
@@ -714,9 +884,14 @@
       min: 3600 # 1 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
@@ -734,9 +909,14 @@
       min: 3600 # 1 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
@@ -751,9 +931,14 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
@@ -771,9 +956,14 @@
       min: 3600 # 1 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
@@ -788,9 +978,14 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
@@ -808,9 +1003,14 @@
       min: 3600 # 1 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
@@ -825,9 +1025,14 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
@@ -845,9 +1050,14 @@
       min: 3600 # 1 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
@@ -862,9 +1072,14 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
@@ -882,9 +1097,14 @@
       min: 3600 # 1 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
@@ -899,9 +1119,14 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
@@ -919,9 +1144,14 @@
       min: 3600 # 1 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
@@ -936,9 +1166,14 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
@@ -956,9 +1191,14 @@
     - !type:CharacterDepartmentTimeRequirement
       department: Security
       min: 18000 # 5 hours
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
