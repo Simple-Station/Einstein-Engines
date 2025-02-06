@@ -19,6 +19,9 @@
       visible: false
       shader: unshaded
       map: ["enum.ToggleVisuals.Layer"]
+  - type: Tag
+    tags:
+    - WeldingTool
   - type: GenericVisualizer
     visuals:
       enum.ToggleVisuals.Toggled:

@@ -1089,6 +1089,9 @@
   id: PlushieGhost
 
 - type: Tag
+  id: SiliconMob
+
+- type: Tag
   id: PlushieSharkBlue
 
 - type: Tag
@@ -1391,6 +1394,9 @@
 
 - type: Tag
   id: WeldingMask
+
+- type: Tag
+  id: WeldingTool
 
 - type: Tag
   id: WetFloorSign
