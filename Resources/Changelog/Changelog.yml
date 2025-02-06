@@ -11290,3 +11290,12 @@ Entries:
   id: 6805
   time: '2025-02-06T18:59:12.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1720
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        BSO now selects their weapon from the same list as Security Officers. So
+        you can trade your energy revolver for a Python if desired. 
+  id: 6806
+  time: '2025-02-06T19:05:07.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1727
