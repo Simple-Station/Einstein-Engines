@@ -11299,3 +11299,10 @@ Entries:
   id: 6806
   time: '2025-02-06T19:05:07.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1727
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: 'Fixed the most pressing issue: arcade games not working.'
+  id: 6807
+  time: '2025-02-06T21:05:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1731
