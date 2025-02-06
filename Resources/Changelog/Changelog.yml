@@ -11263,3 +11263,12 @@ Entries:
   id: 6802
   time: '2025-02-06T02:16:44.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1716
+- author: VMSolidus
+  changes:
+    - type: Remove
+      message: >-
+        Removed the ability to use Telepathy while unconscious. It is now safe
+        to sleepy-pen people who have psi powers.
+  id: 6803
+  time: '2025-02-06T02:37:21.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1725
