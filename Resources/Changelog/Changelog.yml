@@ -11249,3 +11249,10 @@ Entries:
   id: 6800
   time: '2025-02-06T01:46:06.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1723
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: Ported the AAC tablet from Delta-V.
+  id: 6801
+  time: '2025-02-06T01:47:15.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1674
