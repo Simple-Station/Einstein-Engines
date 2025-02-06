@@ -8,6 +8,7 @@
     - Dwarf
     - Human
     - Moth
+    - Oni
     - Reptilian
     - SlimePerson
     - IPCs
@@ -41,6 +42,11 @@
   id: Moth
   name: species-name-moth
   text: "/ServerInfo/Guidebook/Mobs/Moth.xml"
+
+- type: guideEntry
+  id: Oni
+  name: species-name-oni
+  text: "/ServerInfo/Guidebook/Mobs/Oni.xml"
 
 - type: guideEntry
   id: Reptilian
