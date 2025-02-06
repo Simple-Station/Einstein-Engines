@@ -7,6 +7,11 @@
     - PetsNT
     - Zombie
     - Revolutionary
+    - GladiabotFFA
+    - GladiabotRed
+    - GladiabotGreen
+    - GladiabotBlue
+    - GladiabotYellow
 
 - type: npcFaction
   id: NanoTrasen
@@ -16,6 +21,7 @@
   - Xeno
   - Zombie
   - Revolutionary
+  - Dragon
 
 - type: npcFaction
   id: Mouse
@@ -45,6 +51,11 @@
   - Zombie
   - Revolutionary
   - GeometerOfBlood
+  - GladiabotFFA
+  - GladiabotRed
+  - GladiabotGreen
+  - GladiabotBlue
+  - GladiabotYellow
 
 - type: npcFaction
   id: SimpleNeutral
@@ -67,6 +78,11 @@
   - PetsNT
   - Zombie
   - Revolutionary
+  - GladiabotFFA
+  - GladiabotRed
+  - GladiabotGreen
+  - GladiabotBlue
+  - GladiabotYellow
 
 - type: npcFaction
   id: Zombie
@@ -78,6 +94,11 @@
   - Passive
   - PetsNT
   - Revolutionary
+  - GladiabotFFA
+  - GladiabotRed
+  - GladiabotGreen
+  - GladiabotBlue
+  - GladiabotYellow
 
 - type: npcFaction
   id: Revolutionary
@@ -101,6 +122,9 @@
 
 - type: npcFaction
   id: Cat
+  hostile:
+  - Mouse
+  - SimpleHostile
 
 - type: npcFaction
   id: Birb
@@ -116,6 +140,10 @@
     - GladiabotGreen
     - GladiabotBlue
     - GladiabotYellow
+    - SimpleHostile
+    - Xeno
+    - Zombie
+    - Dragon
 
 - type: npcFaction
   id: GladiabotRed
@@ -124,6 +152,10 @@
     - GladiabotGreen
     - GladiabotBlue
     - GladiabotYellow
+    - SimpleHostile
+    - Xeno
+    - Zombie
+    - Dragon
 
 - type: npcFaction
   id: GladiabotGreen
@@ -132,6 +164,10 @@
     - GladiabotRed
     - GladiabotBlue
     - GladiabotYellow
+    - SimpleHostile
+    - Xeno
+    - Zombie
+    - Dragon
 
 - type: npcFaction
   id: GladiabotBlue
@@ -140,6 +176,10 @@
     - GladiabotRed
     - GladiabotGreen
     - GladiabotYellow
+    - SimpleHostile
+    - Xeno
+    - Zombie
+    - Dragon
 
 - type: npcFaction
   id: GladiabotYellow
@@ -148,3 +188,7 @@
     - GladiabotRed
     - GladiabotGreen
     - GladiabotBlue
+    - SimpleHostile
+    - Xeno
+    - Zombie
+    - Dragon

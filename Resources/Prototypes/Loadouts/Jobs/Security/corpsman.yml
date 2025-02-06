@@ -62,6 +62,19 @@
 # Equipment
 
 # Eyes
+- type: loadout
+  id: LoadoutClothingEyesGlassesCorpsman
+  category: JobsSecurityAUncategorized
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityEyes
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - ClothingEyesGlassesCorpsman
 
 # Gloves
 - type: loadout

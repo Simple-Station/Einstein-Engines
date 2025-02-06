@@ -38,6 +38,7 @@
   whitelist:
     tags:
     - SiliconEmotes
+    - HarpyEmotes
   chatTriggers:
     - honks
 
@@ -82,11 +83,10 @@
   id: Squish
   name: chat-emote-name-squish
   category: Vocal
-  available: false
   icon: Interface/Emotes/squish.png
   whitelist:
     components:
-    - Vocal
+    - HarpyEmotes
   blacklist:
     components:
     - BorgChassis
@@ -98,11 +98,10 @@
   id: Chitter
   name: chat-emote-name-chitter
   category: Vocal
-  available: false
   icon: Interface/Emotes/chitter.png
   whitelist:
     components:
-    - Vocal
+    - HarpyEmotes
   blacklist:
     components:
     - BorgChassis
@@ -114,11 +113,10 @@
   id: Squeak
   name: chat-emote-name-squeak
   category: Vocal
-  available: false
   icon: Interface/Emotes/squeak.png
   whitelist:
     components:
-      - Vocal
+    - HarpyEmotes
   blacklist:
     components:
     - BorgChassis
@@ -130,11 +128,10 @@
   id: Click
   name: chat-emote-name-click
   category: Vocal
-  available: false
   icon: Interface/Emotes/click.png
   whitelist:
     components:
-    - Vocal
+    - HarpyEmotes
   blacklist:
     components:
     - BorgChassis
@@ -251,9 +248,9 @@
   category: Vocal
   icon: Interface/Emotes/chirp.png
   whitelist:
-    requireAll: true
     components:
     - Nymph
+    - HarpyEmotes
   chatMessages: ["chat-emote-msg-chirp"]
   chatTriggers:
     - chirps
