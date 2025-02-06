@@ -11242,3 +11242,10 @@ Entries:
   id: 6799
   time: '2025-02-06T01:44:52.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1722
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Fixed night vision not working correctly.
+  id: 6800
+  time: '2025-02-06T01:46:06.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1723
