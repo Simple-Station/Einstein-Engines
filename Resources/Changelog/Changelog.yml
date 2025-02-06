@@ -11256,3 +11256,10 @@ Entries:
   id: 6801
   time: '2025-02-06T01:47:15.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1674
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: Fixes the ChemMaster playing the button press sound on open.
+  id: 6802
+  time: '2025-02-06T02:16:44.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1716
