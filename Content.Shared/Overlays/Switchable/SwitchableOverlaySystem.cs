@@ -148,9 +148,9 @@ public abstract class SwitchableOverlaySystem<TComp, TEvent> : EntitySystem
                 false);
         }
 
-        if (component.PulseTime > TimeSpan.FromSeconds(0))
+        if (component.PulseTime > 0f)
         {
-            component.PulseAccumulator = activate ? TimeSpan.Zero : component.PulseTime;
+            component.PulseAccumulator = activate ? 0f : component.PulseTime;
             return;
         }
 
