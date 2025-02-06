@@ -93,17 +93,6 @@
     mode: SensorCords
 
 - type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitBartenderPurple
-  name: purple bartender's uniform
-  description: A special purple outfit to serve drinks.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/bartender_purple.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/bartender_purple.rsi
-
-- type: entity
   parent: [ClothingUniformBase, BaseCommandContraband, ClothingUniformFoldableBase]
   id: ClothingUniformJumpsuitCaptain
   name: captain's jumpsuit
