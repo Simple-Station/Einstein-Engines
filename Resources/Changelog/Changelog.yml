@@ -11235,3 +11235,10 @@ Entries:
   id: 6798
   time: '2025-02-05T23:21:44.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1717
+- author: trashalice
+  changes:
+    - type: Add
+      message: Psionic Mantis Guidebook
+  id: 6799
+  time: '2025-02-06T01:44:52.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1722
