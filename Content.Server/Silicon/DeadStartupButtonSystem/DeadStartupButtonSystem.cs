@@ -42,7 +42,7 @@ public sealed class DeadStartupButtonSystem : SharedDeadStartupButtonSystem
             || !_mobState.IsDead(uid, mobStateComponent)
             || !TryComp<MobThresholdsComponent>(uid, out var mobThresholdsComponent)
             || !TryComp<DamageableComponent>(uid, out var damageable)
-            || !_mobThreshold.TryGetThresholdForState(uid, MobState.Critical, out var criticalThreshold, mobThresholdsComponent))
+            || !_mobThreshold.TryGetThresholdForState(uid, MobState.Critical, MobState.SoftCritical, out var criticalThreshold, mobThresholdsComponent))
             return;
 
         if (damageable.TotalDamage < criticalThreshold)
@@ -70,7 +70,7 @@ public sealed class DeadStartupButtonSystem : SharedDeadStartupButtonSystem
 
     private void OnMobStateChanged(EntityUid uid, DeadStartupButtonComponent comp, MobStateChangedEvent args)
     {
-        if (args.NewMobState != MobState.Alive)
+        if (_mobState.IsIncapacitated(uid))
             return;
 
         _popup.PopupEntity(Loc.GetString("dead-startup-system-reboot-success", ("target", MetaData(uid).EntityName)), uid);

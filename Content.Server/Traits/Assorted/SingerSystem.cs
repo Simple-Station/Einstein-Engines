@@ -10,6 +10,7 @@ using Content.Shared.Instruments;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Mobs;
+using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
 using Content.Shared.StatusEffect;
 using Content.Shared.Stunnable;
@@ -29,6 +30,7 @@ public sealed class SingerSystem : SharedSingerSystem
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly InstrumentSystem _instrument = default!;
+    [Dependency] private readonly MobStateSystem _mobState = default!;
 
     public override void Initialize()
     {
@@ -71,7 +73,7 @@ public sealed class SingerSystem : SharedSingerSystem
 
     private void OnMobStateChangedEvent(EntityUid uid, SharedInstrumentComponent component, MobStateChangedEvent args)
     {
-        if (args.NewMobState is MobState.Critical or MobState.Dead)
+        if (_mobState.IsIncapacitated(uid))
             CloseMidiUi(args.Target);
     }
 

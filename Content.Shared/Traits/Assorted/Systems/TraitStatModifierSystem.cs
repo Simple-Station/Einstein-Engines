@@ -29,9 +29,11 @@ public sealed partial class TraitStatModifierSystem : EntitySystem
         if (!TryComp<MobThresholdsComponent>(uid, out var threshold))
             return;
 
-        var critThreshold = _threshold.GetThresholdForState(uid, Mobs.MobState.Critical, threshold);
-        if (critThreshold != 0)
-            _threshold.SetMobStateThreshold(uid, critThreshold + component.CritThresholdModifier, Mobs.MobState.Critical);
+        if(_threshold.TryGetThresholdForState(uid, Mobs.MobState.Critical, out var critThreshold))
+            _threshold.SetMobStateThreshold(uid, critThreshold.Value + component.CritThresholdModifier, Mobs.MobState.Critical);
+
+        if(_threshold.TryGetThresholdForState(uid, Mobs.MobState.SoftCritical, out var softCritThreshold))
+            _threshold.SetMobStateThreshold(uid, softCritThreshold.Value + component.SoftCritThresholdModifier, Mobs.MobState.SoftCritical);
     }
 
     private void OnDeadStartup(EntityUid uid, DeadModifierComponent component, ComponentStartup args)

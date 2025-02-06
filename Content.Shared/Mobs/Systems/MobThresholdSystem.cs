@@ -136,6 +136,20 @@ public sealed class MobThresholdSystem : EntitySystem
         return false;
     }
 
+    // WD EDIT START
+    public bool TryGetThresholdForState(EntityUid target, MobState mobState, MobState fallbackMobState,
+        [NotNullWhen(true)] out FixedPoint2? threshold,
+        MobThresholdsComponent? thresholdComponent = null)
+    {
+        threshold = null;
+        if (TryGetThresholdForState(target, mobState, out threshold, thresholdComponent))
+            return true;
+        if (TryGetThresholdForState(target, fallbackMobState, out threshold, thresholdComponent))
+            return true;
+        return false;
+    }
+    // WD EDIT END
+
     /// <summary>
     /// Try to get the a percentage of the Damage Threshold for the appropriate state if it exists
     /// </summary>
@@ -436,11 +450,11 @@ public sealed class MobThresholdSystem : EntitySystem
 
     private void OnUpdateMobState(EntityUid target, MobThresholdsComponent component, ref UpdateMobStateEvent args)
     {
-        if (!component.AllowRevives && component.CurrentThresholdState == MobState.Dead)
+        if (!component.AllowRevives && component.CurrentThresholdState.IsDead())
         {
             args.State = MobState.Dead;
         }
-        else if (component.CurrentThresholdState != MobState.Invalid)
+        else if (component.CurrentThresholdState.IsValid())
         {
             args.State = component.CurrentThresholdState;
         }

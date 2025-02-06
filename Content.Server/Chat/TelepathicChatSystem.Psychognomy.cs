@@ -17,6 +17,7 @@ using Robust.Shared.Enums;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Random;
+using Content.Shared.Mobs;
 
 namespace Content.Server.Chat;
 public sealed partial class TelepathicChatSystem
@@ -76,7 +77,7 @@ public sealed partial class TelepathicChatSystem
 
     private void DescribeMobState(EntityUid uid, MobStateComponent component, GetPsychognomicDescriptorEvent ev)
     {
-        if (component.CurrentState != Shared.Mobs.MobState.Critical)
+        if (!component.CurrentState.IsCrit())
             return;
 
         ev.Descriptors.Add(Loc.GetString("p-descriptor-liminal"));

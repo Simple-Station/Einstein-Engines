@@ -112,10 +112,10 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
 
         var target = GetEntity(ev.Target!.Value);
 
-        if (_mobState.IsIncapacitated(target))
-        {
-            return false;
-        }
+        //if (_mobState.IsIncapacitated(target))
+        //{
+        //    return false;
+        //}
 
         if (!TryComp<HandsComponent>(target, out var targetHandsComponent))
         {

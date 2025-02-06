@@ -1,4 +1,4 @@
-﻿using Content.Server.Objectives.Components;
+using Content.Server.Objectives.Components;
 using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Systems;
 using Content.Shared.Cuffs.Components;
@@ -87,7 +87,11 @@ public sealed class HijackShuttleConditionSystem : EntitySystem
                 continue;
 
             var isPersonIncapacitated = _mobState.IsIncapacitated(player.AttachedEntity.Value);
-            if (isPersonIncapacitated) // Allow dead and crit
+            if (isPersonIncapacitated) // allow incapacitated people
+                continue;
+
+            var isPersonHardcritOrDead = _mobState.IsCriticalOrDead(player.AttachedEntity.Value, false);
+            if (isPersonIncapacitated) // allow dead and hardcritted people
                 continue;
 
             var isPersonCuffed =

@@ -47,7 +47,7 @@ namespace Content.Server.NPC.Systems
 
         public void OnPlayerNPCDetach(EntityUid uid, HTNComponent component, PlayerDetachedEvent args)
         {
-            if (_mobState.IsIncapacitated(uid) || TerminatingOrDeleted(uid))
+            if (TerminatingOrDeleted(uid))
                 return;
 
             // This NPC has an attached mind, so it should not wake up.
@@ -150,6 +150,7 @@ namespace Content.Server.NPC.Systems
                 case MobState.Alive:
                     WakeNPC(uid, component);
                     break;
+                case MobState.SoftCritical:
                 case MobState.Critical:
                 case MobState.Dead:
                     SleepNPC(uid, component);
