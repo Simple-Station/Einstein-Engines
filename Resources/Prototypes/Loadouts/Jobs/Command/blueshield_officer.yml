@@ -47,6 +47,20 @@
 # Ears
 
 # Equipment
+# Blueshield Officer Weapon Selection
+# Currently just stolen from HOS until BSO gets its own unique weapon(s) 
+# There was no group for BSO weapons so I just removed the requirement, should be fine for now.
+- type: loadout
+  id: LoadoutCommandHoSEnergySword
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  canBeHeirloom: true
+  requirements:
+   - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - EnergySwordHoS
 
 # Eyes
 
