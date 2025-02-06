@@ -14,10 +14,16 @@ reagent-name-bicaridine = bicaridine
 reagent-desc-bicaridine = An analgesic which is highly effective at treating brute damage. It's useful for stabilizing people who have been severely beaten, as well as treating less life-threatening injuries.
 
 reagent-name-cryoxadone = cryoxadone
-reagent-desc-cryoxadone = Required for the proper function of cryogenics. Heals all standard types of damage, but only works in temperatures under 213K. It can treat and rejuvenate plants when applied in small doses.
+reagent-desc-cryoxadone = Required for the proper function of cryogenics. Useful in treating asphyxiation and bloodloss, but only works in temperatures under 213K. It can treat and rejuvenate plants when applied in small doses. Works regardless of the patient being alive or dead.
 
 reagent-name-doxarubixadone = doxarubixadone
-reagent-desc-doxarubixadone = A cryogenics chemical. Heals certain types of cellular damage done by Slimes and improper use of other chemicals.
+reagent-desc-doxarubixadone = A cryogenics chemical. Heals certain types of cellular damage done by Slimes and improper use of other chemicals. Works regardless of the patient being alive or dead.
+
+reagent-name-traumoxadone = traumoxadone
+reagent-desc-traumoxadone = A cryogenics chemical. Used to treat severe trauma via regeneration of the damaged tissue. Works regardless of the patient being alive or dead.  Product of Mystic Medical
+
+reagent-name-stelloxadone = stelloxadone
+reagent-desc-stelloxadone = A cryogenics chemical. Used to aggressively dissolve toxins from the body. Works regardless of the patient being alive or dead.  Product of Mystic Medical
 
 reagent-name-dermaline = dermaline
 reagent-desc-dermaline = An advanced chemical that is more effective at treating burn damage than kelotane.
