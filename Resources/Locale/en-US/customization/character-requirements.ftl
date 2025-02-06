@@ -56,7 +56,7 @@ character-age-requirement-minimum-only = You must{$inverted ->
 character-age-requirement-maximum-only = You must{$inverted ->
     [true]{" "}not
     *[other]{""}
-} be younger than [color=yellow]{$max}[/color] years old
+} be older than [color=yellow]{$max}[/color] years old
 
 character-backpack-type-requirement = You must {$inverted ->
     [true] not use
