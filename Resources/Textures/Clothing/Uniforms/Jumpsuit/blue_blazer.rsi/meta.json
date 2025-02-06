@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "A prestige captain's jumpsuit for Impstation by Sha-Seng (github), folded version taken from tgstation spritework and edited by Pinkbat5 (github)",
+  "copyright": "Taken from World Server at commit https://github.com/GeneriedJenelle/The-World-Server-Redux/commit/af40bc8515d560aeff3d397a5f33f556accbb890",
   "size": {
     "x": 32,
     "y": 32
@@ -12,18 +12,6 @@
     },
     {
       "name": "equipped-INNERCLOTHING",
-      "directions": 4
-    },
-    {
-      "name": "equipped-INNERCLOTHING-vox",
-      "directions": 4
-    },
-    {
-      "name": "folded-equipped-INNERCLOTHING",
-      "directions": 4
-    },
-    {
-      "name": "folded-equipped-INNERCLOTHING-vox",
       "directions": 4
     },
     {
