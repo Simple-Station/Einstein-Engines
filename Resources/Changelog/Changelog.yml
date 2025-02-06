@@ -10821,3 +10821,417 @@ Entries:
   id: 6770
   time: '2025-01-26T15:44:04.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1663
+- author: ShirouAjisai
+  changes:
+    - type: Tweak
+      message: Mantis can no longer be a pacifist
+  id: 6771
+  time: '2025-01-27T04:36:31.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1669
+- author: ShirouAjisai
+  changes:
+    - type: Add
+      message: Blueshield Officer now has CPR as a roundstart trait.
+  id: 6772
+  time: '2025-01-27T05:41:33.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1672
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: Other species can pick Cataloguer, Psionic Mantis, and Mystagogue again.
+  id: 6773
+  time: '2025-01-27T05:41:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1673
+- author: ShirouAjisai
+  changes:
+    - type: Tweak
+      message: >-
+        Security Department can no longer have pacifist, muted, blind, brittle
+        bone disease, or foreigner traits.
+    - type: Tweak
+      message: >-
+        Head of Security can no longer have pacifist, muted, blind, brittle bone
+        disease, or foreigner traits.
+    - type: Tweak
+      message: Heads of staff can no longer have foreigner traits.
+    - type: Tweak
+      message: The Captain can no longer have pacifist or foreigner traits.
+    - type: Tweak
+      message: The Head of Personnel can no longer have foreigner traits.
+    - type: Tweak
+      message: The Administrative Assistant can no longer have foreigner traits.
+  id: 6774
+  time: '2025-01-27T17:45:36.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1670
+- author: Skubman
+  changes:
+    - type: Tweak
+      message: >-
+        All plasma tanks of all kinds now have the correct output pressure for
+        use as Plasmamen internals.
+    - type: Tweak
+      message: >-
+        Plasmamen can no longer select the Temperature Tolerance trait which has
+        no effect since they are already immune to Cold damage.
+    - type: Fix
+      message: Reduced the price of mechs on the uplink.
+    - type: Fix
+      message: Thief game rule now properly selects more than one thief.
+    - type: Remove
+      message: Remove the Raise Glimmer To 500 traitor objective.
+  id: 6775
+  time: '2025-01-27T19:34:53.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1676
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Ghost Bar! When you die, you can now go to the Ghost Bar to chill and
+        talk about the round with other ghosts. (by Aidenkrz)
+    - type: Add
+      message: Foam Force rifle to cargo lottery! (by IProduceWidgets)
+    - type: Add
+      message: 'Re-enabled the Kill objective for traitors. '
+    - type: Tweak
+      message: Reduced the chances of traitors getting the "Teach a Lesson" objective.
+  id: 6776
+  time: '2025-01-28T00:39:57.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1675
+- author: Skubman
+  changes:
+    - type: Tweak
+      message: You can now clone living people.
+    - type: Tweak
+      message: Plasmamen no longer ignite while being cloned in a cloning pod.
+  id: 6777
+  time: '2025-01-28T18:16:31.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1679
+- author: ShirouAjisai
+  changes:
+    - type: Add
+      message: Added Blueshield (Winter) Coat (Toggleable)
+    - type: Add
+      message: Added Blueshield Marine Armor
+    - type: Add
+      message: Added Blueshield Armor Vest
+    - type: Add
+      message: Added Blueshield Kimono
+    - type: Add
+      message: Added Blueshield Hardsuit
+    - type: Tweak
+      message: Fixed Blueshield loadout options
+  id: 6778
+  time: '2025-01-29T08:09:14.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1682
+- author: Skubman
+  changes:
+    - type: Fix
+      message: >-
+        Plasmamen will no longer be slowed down near-permanently after their
+        temperature changes.
+    - type: Tweak
+      message: >-
+        Slightly lowered the temperature threshold in which Plasmamen start
+        getting Heat damage.
+  id: 6779
+  time: '2025-01-29T08:22:41.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1681
+- author: CaasGit
+  changes:
+    - type: Add
+      message: Solar panels can now be upgraded with plasma or uranium glass.
+  id: 6780
+  time: '2025-01-30T15:14:17.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1677
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Psionic traits are now mutually exclusive with cybernetic traits, and
+        vice versa.
+    - type: Fix
+      message: >-
+        Thermographic Vision now correctly measures its pulse duration in
+        seconds instead of nanoseconds. It provides a 2 second scan.
+  id: 6781
+  time: '2025-01-30T15:15:44.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1665
+- author: Mike32oz
+  changes:
+    - type: Add
+      message: Meta/Box stations, added psionics registry computer
+    - type: Add
+      message: 'Meta/Box stations, added command''s office Computer ID '
+    - type: Fix
+      message: Meta/Box stations, fixed wires, tiny fan
+    - type: Tweak
+      message: Box Station, Expanded the Docking Bay for Salvage Pathfinder
+    - type: Remove
+      message: Meta/Box stations, antimov at upload
+  id: 6782
+  time: '2025-01-30T15:16:54.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1687
+- author: Ichai
+  changes:
+    - type: Tweak
+      message: Change the AI Hologram to AI eye
+  id: 6783
+  time: '2025-01-30T15:18:55.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1680
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Clothing now supports having multiple species-specific layers, and
+        species-specific shaders. 
+    - type: Add
+      message: >-
+        New "Unpainted" engineering hardsuit, and "Unpainted" Shanlin Tacsuit.
+        More to come soon. 
+    - type: Add
+      message: >-
+        Unpainted variant of the "Shiwei" tacsuit(AKA: Elite suit). This one is
+        uniquely titanium white instead of the standard gunmetal grey. It can
+        either be ordered through cargo at an exhorbitant cost, or manufactured
+        with the Prototype Tacsuits research.
+  id: 6784
+  time: '2025-01-31T20:22:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1692
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed an issue where Glimmer can reach infinite values under certain
+        conditions.
+  id: 6785
+  time: '2025-01-31T23:42:34.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1694
+- author: VMSolidus and MajorMoth
+  changes:
+    - type: Add
+      message: Hardsuits now have sounds made when the wearer moves!
+    - type: Fix
+      message: >-
+        Fixed several bugs with EmitSoundOnMove. It no longer plays the same
+        sound 7 times in a row for the client. It can now differentiate between
+        items that must be worn to make sounds and otherwise. It can also have
+        variable distance needed to travel to make a sound.
+    - type: Add
+      message: >-
+        Hardsuits and Tacsuits are now separated into Light, Medium, and Heavy
+        categories, with each category having its own sound effects, mass,
+        throwing statistics, and don/doff time. Most hardsuits are Light. Most
+        Tacsuits are Medium. Some suits like Warden, Juggernaut, Nukie
+        Commander, and Mysta Bombsuit are heavy.
+  id: 6786
+  time: '2025-02-01T17:46:07.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1698
+- author: dootythefrooty
+  changes:
+    - type: Fix
+      message: Fixed holopads being unable to be right clicked on.
+  id: 6787
+  time: '2025-02-01T22:43:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1699
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added sound effects for all variety of "Tactical Webbing", such as
+        Security Webbing, Chest Rigs, etc.
+  id: 6788
+  time: '2025-02-02T02:08:49.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1701
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Space no longer gibs you instantly.
+  id: 6789
+  time: '2025-02-03T04:45:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1708
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Both standard Cloner, and Metem Machines(when you win the psychic
+        willpower roll) now correctly transfer over your old character
+        appearance.
+  id: 6790
+  time: '2025-02-03T04:56:21.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1709
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: 'Made hardsuits 5db quieter. '
+  id: 6791
+  time: '2025-02-03T05:14:24.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1710
+- author: sleepyyapril
+  changes:
+    - type: Tweak
+      message: Tweaked the ChemMaster to no longer have 300 buttons.
+  id: 6792
+  time: '2025-02-03T10:53:53.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1711
+- author: Peptide90
+  changes:
+    - type: Add
+      message: 'Added traits for accents: Russian, German, French, Italian and Spanish'
+  id: 6793
+  time: '2025-02-04T06:36:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1712
+- author: Several Contributors
+  changes:
+    - type: Add
+      message: Added Lone Digger by Caravan Palace to the jukebox! (by MilonPL)
+    - type: Add
+      message: Added Deck The Halls by Kevin Macleod to the jukebox! (by Lyndomen)
+    - type: Tweak
+      message: Now medical belts have a slot for medkits. (by Radezolid)
+    - type: Add
+      message: >-
+        Added a way for muskets, flintlocks, and musket cartridges (NOT .60) to
+        be crafted. (by Tryded)
+    - type: Add
+      message: >-
+        Added Vulpkanin-specific sprites to a lot of helmets and masks. (by
+        Adrian16199, TadJohnson00)
+    - type: Add
+      message: >-
+        Security dogs (such as Laika) now have Vulpkanin vocal emotes. Howl! (by
+        Remuchi)
+    - type: Add
+      message: >-
+        Split the Emag into the Cryptographic Sequencer and the Airlock Access
+        Override. (by Warmechanic)
+    - type: Add
+      message: >-
+        Added Corpsman Glasses, no more getting flashed as Corpsman! Also
+        available in Loadouts. (by Unkn0wnGh0st333)
+    - type: Add
+      message: Harpies can now mimic harps! (by TheOneWhoIsManyFrame)
+    - type: Tweak
+      message: Cats will now play with mouse toys. (by Deltanedas)
+    - type: Add
+      message: Added a black turtleneck, available in Loadouts! (by Aikakakah)
+    - type: Add
+      message: >-
+        Added the Binary Translator Key to the uplink costing 1 TC and the
+        listening post operative headset. (by Radezolid)
+    - type: Add
+      message: >-
+        Spesos now have a new pretty look transferred from the Frontier Station.
+        (by whatston3)
+    - type: Add
+      message: The home-run bat has been re-added to the traitor uplink.
+    - type: Add
+      message: >-
+        Added the CrystalThistle, mutated from the Galaxythistle that generates
+        Quartzite which when heated produces glass sheets. (by jimmy12or)
+    - type: Add
+      message: >-
+        Added a Ghost Pepper! A friendly looking Pepper that's so Spicy, it
+        hurts! (by jimmy12or)
+    - type: Add
+      message: >-
+        Added a Cosmic Revenant! A spooky mutation of the Ghost pepper that
+        produced Ectoplasm. (by jimmy12or)
+    - type: Add
+      message: >-
+        Added blue and purple tomato soup, made using Blue Tomatoes. (by
+        DisposableCrewmember42)
+    - type: Add
+      message: >-
+        Added new drinks: the double ice cream (by dge21) and Dr. Gibb Blood Red
+        (by BlitzTheSquishy).
+    - type: Add
+      message: >-
+        Some drink reactions now require shaking with the shaker or stirring
+        with a spoon. (by Vermidia)
+    - type: Add
+      message: Added "Selene" wing customization option for moths (by boogiebogus)
+    - type: Add
+      message: >-
+        Added the tiger tail sprite for Felinids, Humans and Tajarans. (by
+        Adrian16199)
+    - type: Add
+      message: >-
+        NanoTrasen has established business relations with HydroCo! You can now
+        order powdered milk and juice via your Logistics department. (by
+        DisposableCrewmember42)
+    - type: Tweak
+      message: >-
+        Bar and kitchen shelves no longer restrict the items that can be placed
+        in them. (by Velcroboy)
+    - type: Tweak
+      message: >-
+        Bookshelves can now fit any kind of item, not just books. (by
+        Deltanedas)
+    - type: Add
+      message: >-
+        New magic crayons have appeared in the sector, artists rejoice! (by
+        AvalonProto)
+  id: 6794
+  time: '2025-02-04T09:25:17.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1697
+- author: Timfa
+  changes:
+    - type: Add
+      message: Added security helmet to techfab
+    - type: Tweak
+      message: Slightly increased Disablerbot and Batonbot health
+    - type: Tweak
+      message: Slightly increase Disablerbot accuracy
+    - type: Add
+      message: >-
+        Component  that lets an NPC's factions be swapped with different
+        factions via Emag
+    - type: Tweak
+      message: Disablerbot and Batonbots are emaggable now...
+  id: 6795
+  time: '2025-02-05T03:56:37.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1706
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added lathe and ore processor materials for Lead, Aluminium, Copper,
+        Tungsten-Carbide, and Circuitry. Only Tungsten-Carbide currently has a
+        use.
+    - type: Add
+      message: >-
+        Tacsuits now require Tungsten-Carbide to make instead of Plasteel, and
+        require a lot less.
+    - type: Add
+      message: >-
+        Reworked ore drops for Lava planets. Lava planets now have random ores
+        that drop from any rock, but with their own drop table. Iron & Gold are
+        "Plentiful" on lava planets, with moderate amounts of Aluminium and
+        Tungsten. All other ores are very rare from Lava rocks.
+    - type: Add
+      message: >-
+        Energy Swords can now be manufactured at a Secfab after researching
+        Arsenal T3 Prototype Weapons
+  id: 6796
+  time: '2025-02-05T15:47:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1693
+- author: Timfa
+  changes:
+    - type: Add
+      message: Add plunger to a Borg Cleaning Mobule
+  id: 6797
+  time: '2025-02-05T18:33:22.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1718
+- author: Timfa
+  changes:
+    - type: Tweak
+      message: >-
+        Gladiabots will fight hostile critters now. It takes about five of them
+        to kill a slime. Have fun in the arena!
+    - type: Tweak
+      message: >-
+        Gladiabots are emaggable now. They're weak, so you can kill them with
+        your bare hands.
+  id: 6798
+  time: '2025-02-05T23:21:44.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1717

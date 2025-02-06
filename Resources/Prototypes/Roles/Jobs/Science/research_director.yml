@@ -14,15 +14,15 @@
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterSpeciesRequirement
-          species:
-            - Shadowkin
         - !type:CharacterTraitRequirement
           inverted: true
           traits:
             - ShadowkinBlackeye
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
   weight: 10
   startingGear: ResearchDirectorGear
   icon: "JobIconResearchDirector"
@@ -36,6 +36,7 @@
   - ResearchDirector
   - Mantis # DeltaV - Mantis, see Resources/Prototypes/DeltaV/Access/epistemics.yml
   - Chapel # DeltaV - Chaplain is in Epistemics
+  - External # DeltaV - AI satellite access
   - Cryogenics
   special: # Nyanotrasen - Mystagogue can use the Bible
   - !type:AddComponentSpecial

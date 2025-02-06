@@ -205,6 +205,86 @@
         - ItemMask
         restitution: 0.3
         friction: 0.2
+  - type: EmitsSoundOnMove
+    soundCollection:
+      collection: FootstepHardsuitLight
+      params:
+        volume: -5
+    requiresWorn: true
+    distanceWalking: 2
+    distanceSprinting: 3
+
+- type: entity
+  abstract: true
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitBaseMedium
+  name: base hardsuit
+  components:
+  - type: EmitsSoundOnMove
+    soundCollection:
+      collection: FootstepHardsuitMedium
+      params:
+        volume: -5
+    requiresWorn: true
+    distanceWalking: 2
+    distanceSprinting: 3
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 600
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 30
+    staminaCost: 60
+    soundHit:
+      collection: MetalThud
+  - type: Clothing
+    equipDelay: 4 # For stuff like standard Tacsuits and Heavy Hardsuits.
+    unequipDelay: 4
+
+- type: entity
+  abstract: true
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitBaseHeavy
+  name: base hardsuit
+  components:
+  - type: EmitsSoundOnMove
+    soundCollection:
+      collection: FootstepHardsuitHeavy
+      params:
+        volume: -5
+    requiresWorn: true
+    distanceWalking: 2
+    distanceSprinting: 3
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 800
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 45
+    staminaCost: 110
+    soundHit:
+      collection: MetalThud
+  - type: Clothing
+    equipDelay: 5 # For stuff like "Heavy" Tacsuits.
+    unequipDelay: 5
 
 - type: entity
   abstract: true

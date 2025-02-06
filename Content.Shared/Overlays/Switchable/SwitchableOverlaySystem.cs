@@ -99,6 +99,8 @@ public abstract class SwitchableOverlaySystem<TComp, TEvent> : EntitySystem
             return;
 
         component.IsActive = state.IsActive;
+        if (component.PulseTime != 0)
+            component.PulseEndTime = _timing.CurTime + TimeSpan.FromSeconds(component.PulseTime);
 
         RaiseSwitchableOverlayToggledEvent(uid,
             component.IsEquipment ? Transform(uid).ParentUid : uid,
@@ -121,7 +123,7 @@ public abstract class SwitchableOverlaySystem<TComp, TEvent> : EntitySystem
 
     private void OnInit(EntityUid uid, TComp component, ComponentInit args)
     {
-        component.PulseAccumulator = component.PulseTime;
+        component.PulseAccumulator = TimeSpan.FromSeconds(component.PulseTime);
     }
 
     private void OnMapInit(EntityUid uid, TComp component, MapInitEvent args)
@@ -147,9 +149,9 @@ public abstract class SwitchableOverlaySystem<TComp, TEvent> : EntitySystem
                 false);
         }
 
-        if (component.PulseTime > 0f)
+        if (component.PulseTime > 0)
         {
-            component.PulseAccumulator = activate ? 0f : component.PulseTime;
+            component.PulseAccumulator = activate ? TimeSpan.Zero : TimeSpan.FromSeconds(component.PulseTime);
             return;
         }
 
