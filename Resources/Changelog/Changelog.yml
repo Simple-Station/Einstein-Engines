@@ -11222,3 +11222,16 @@ Entries:
   id: 6797
   time: '2025-02-05T18:33:22.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1718
+- author: Timfa
+  changes:
+    - type: Tweak
+      message: >-
+        Gladiabots will fight hostile critters now. It takes about five of them
+        to kill a slime. Have fun in the arena!
+    - type: Tweak
+      message: >-
+        Gladiabots are emaggable now. They're weak, so you can kill them with
+        your bare hands.
+  id: 6798
+  time: '2025-02-05T23:21:44.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1717
