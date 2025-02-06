@@ -50,10 +50,9 @@ public abstract class SwitchableOverlaySystem<TComp, TEvent> : EntitySystem
 
         while (query.MoveNext(out var uid, out var comp))
         {
-            if (comp.PulseTime <= TimeSpan.FromSeconds(0) || comp.PulseAccumulator >= comp.PulseTime)
-                continue;
+            if (comp.PulseTime <= 0f || comp.PulseAccumulator >= comp.PulseTime)
 
-            comp.PulseAccumulator += TimeSpan.FromSeconds(frameTime);
+            comp.PulseAccumulator += frameTime;
             if (comp.PulseAccumulator < comp.PulseTime)
                 continue;
 
