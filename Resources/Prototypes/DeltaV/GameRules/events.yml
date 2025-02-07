@@ -128,7 +128,6 @@
   components:
   - type: StationEvent
     duration: null
-  - type: ParadoxClonerRule
   - type: AntagObjectives
     objectives:
     - ParadoxAnomalyKillObjective
