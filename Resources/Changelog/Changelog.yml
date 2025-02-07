@@ -11299,3 +11299,80 @@ Entries:
   id: 6806
   time: '2025-02-06T19:05:07.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1727
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: 'Fixed the most pressing issue: arcade games not working.'
+  id: 6807
+  time: '2025-02-06T21:05:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1731
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: 'Loadouts will no longer show the integer limit. '
+  id: 6808
+  time: '2025-02-07T06:52:55.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1732
+- author: Timfa
+  changes:
+    - type: Add
+      message: >-
+        Added weldbot! It'll fix IPC's, Borgs and other robots. If they stay
+        still for long enough...
+  id: 6809
+  time: '2025-02-07T10:27:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1703
+- author: dootythefrooty
+  changes:
+    - type: Add
+      message: Holopads are now in Glacier.
+    - type: Add
+      message: >-
+        Nanotrasen Representatives and Blueshield Officers now both have an
+        office in Glacier. One slightly better than the other.
+  id: 6810
+  time: '2025-02-07T16:12:31.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1704
+- author: Ichai
+  changes:
+    - type: Add
+      message: Bagel Station added to the rotation.
+  id: 6811
+  time: '2025-02-07T16:13:38.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1700
+- author: Ichai
+  changes:
+    - type: Add
+      message: >-
+        Added 4 law boards to the game: NT Agressive, Quarantine, CCTV and
+        TYRANT to the AI
+    - type: Tweak
+      message: AI can see through borgs
+    - type: Tweak
+      message: AI is now affected by ion storm
+  id: 6812
+  time: '2025-02-07T16:17:25.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1686
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: Salvage vendors will no longer accept any inputs to buy an item.
+  id: 6813
+  time: '2025-02-07T16:18:48.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1735
+- author: trashalice
+  changes:
+    - type: Remove
+      message: Dwarves from guidebook, begone beer boy.
+  id: 6814
+  time: '2025-02-07T16:19:46.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1734
+- author: RedFoxIV
+  changes:
+    - type: Fix
+      message: >-
+        Fixed damageable entities being stuck red after being damaged several
+        times in a quick succession.
+  id: 6815
+  time: '2025-02-07T16:25:29.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1738
