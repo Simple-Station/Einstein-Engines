@@ -11322,3 +11322,14 @@ Entries:
   id: 6809
   time: '2025-02-07T10:27:47.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1703
+- author: dootythefrooty
+  changes:
+    - type: Add
+      message: Holopads are now in Glacier.
+    - type: Add
+      message: >-
+        Nanotrasen Representatives and Blueshield Officers now both have an
+        office in Glacier. One slightly better than the other.
+  id: 6810
+  time: '2025-02-07T16:12:31.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1704
