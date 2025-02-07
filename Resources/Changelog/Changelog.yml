@@ -11360,3 +11360,10 @@ Entries:
   id: 6813
   time: '2025-02-07T16:18:48.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1735
+- author: trashalice
+  changes:
+    - type: Remove
+      message: Dwarves from guidebook, begone beer boy.
+  id: 6814
+  time: '2025-02-07T16:19:46.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1734
