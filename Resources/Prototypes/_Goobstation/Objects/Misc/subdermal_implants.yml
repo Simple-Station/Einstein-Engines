@@ -2,7 +2,7 @@
   parent: BaseSubdermalImplant
   id: BluespaceLifelineImplant
   name: bluespace lifeline implant
-  description: This implants teleport user body to safe place, forcing him to leave current location so he won't be able to come back.
+  description: This implant teleports the user's body to a safe place, forcing them to leave the current location so they won't be able to come back.
   categories: [ HideSpawnMenu ]
   components:
   - type: SubdermalImplant
