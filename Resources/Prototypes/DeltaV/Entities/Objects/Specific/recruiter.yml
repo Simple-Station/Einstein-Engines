@@ -34,5 +34,3 @@
         Piercing: 8
   - type: StealTarget
     stealGroup: RecruiterPen # not stolen, its for keeping it safe objective
-  - type: EmitSoundOnUse
-    handle: false # need to handle the event for pricking

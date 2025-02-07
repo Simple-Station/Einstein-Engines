@@ -22,7 +22,6 @@
 - type: entity
   parent: BaseUnknownShuttleRule
   id: UnknownShuttleTravelingCuisine
-  parent: BaseGameRule
   categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
@@ -36,7 +35,6 @@
 - type: entity
   parent: BaseUnknownShuttleRule
   id: UnknownShuttleDisasterEvacPod
-  parent: BaseGameRule
   categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
@@ -50,7 +48,6 @@
 - type: entity
   parent: BaseUnknownShuttleRule
   id: UnknownShuttleHonki
-  parent: BaseGameRule
   categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
@@ -62,7 +59,6 @@
 - type: entity
   parent: BaseUnknownShuttleRule
   id: UnknownShuttleSyndieEvacPod
-  parent: BaseGameRule
   categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
