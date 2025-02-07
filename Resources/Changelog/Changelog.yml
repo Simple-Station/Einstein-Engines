@@ -11313,3 +11313,12 @@ Entries:
   id: 6808
   time: '2025-02-07T06:52:55.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1732
+- author: Timfa
+  changes:
+    - type: Add
+      message: >-
+        Added weldbot! It'll fix IPC's, Borgs and other robots. If they stay
+        still for long enough...
+  id: 6809
+  time: '2025-02-07T10:27:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1703
