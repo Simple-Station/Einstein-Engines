@@ -1,16 +1,3 @@
-# Mid round antag spawns
-- type: entity
-  abstract: true
-  parent: BaseGameRule
-  id: BaseMidRoundAntag
-  components:
-  - type: StationEvent
-    weight: 7
-    reoccurrenceDelay: 5
-    minimumPlayers: 15
-    earliestStart: 25
-  - type: MidRoundAntagRule
-
 - type: entity
   id: XenoVents
   parent: BaseGameRule
