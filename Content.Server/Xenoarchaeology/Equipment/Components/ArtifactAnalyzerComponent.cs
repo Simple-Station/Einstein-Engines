@@ -35,7 +35,7 @@ public sealed partial class ArtifactAnalyzerComponent : Component
     /// A multiplier applied to the amount of points generated based on the machine parts inserted.
     /// </summary>
     [DataField]
-    public float UpgradeTimeReductionMultiplier = 1;
+    public float UpgradeTimeReductionMultiplier = 10;
 
     // Nyano - Summary - Begin modified code block: tie artifacts to glimmer.
     /// <summary>

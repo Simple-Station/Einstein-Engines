@@ -170,7 +170,7 @@ public sealed class ArtifactAnalyzerSystem : EntitySystem
     private void OnRefreshParts(EntityUid uid, ArtifactAnalyzerComponent component, RefreshPartsEvent args)
     {
         var rating = args.PartRatings[component.MachinePartTimeReduction];
-        component.AnalysisDuration = component.BaseAnalysisDuration / ( component.UpgradeTimeReductionMultiplier * rating);
+        component.AnalysisDuration = component.BaseAnalysisDuration - TimeSpan.FromSeconds(component.UpgradeTimeReductionMultiplier * (rating - 1));
     }
 
     private void OnUpgradeExamine(EntityUid uid, ArtifactAnalyzerComponent component, UpgradeExamineEvent args)
