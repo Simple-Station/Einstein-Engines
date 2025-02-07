@@ -34,4 +34,4 @@ ghost-role-information-synthesis-rules =
     Sell your concoctions to local agents, crew, and anyone with supplies.
     Stay on your ship, it is your lifeblood!
 
-    You are just a chemist so do not act like a full-on antagonist, i.e. no killing people yourself unless your ship is in danger.
+    You are a simple chemist, you should not kill anyone unless your life is in danger.
