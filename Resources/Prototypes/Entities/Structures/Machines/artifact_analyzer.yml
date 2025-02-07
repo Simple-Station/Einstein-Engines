@@ -13,6 +13,8 @@
     - state: unshaded
       shader: unshaded
       map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: panel
+      map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
   - type: Physics
     bodyType: Static
     canCollide: true
@@ -49,6 +51,8 @@
     whitelist:
       components:
       - Artifact
+  - type: WiresPanel
+  - type: WiresVisuals
   - type: DeviceNetwork
     deviceNetId: Wired
     receiveFrequencyId: BasicDevice
