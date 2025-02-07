@@ -66,6 +66,7 @@
   - type: Tag
     tags:
     - DoorBumpOpener
+    - SiliconMob
   - type: MobState
     allowedStates:
       - Alive
