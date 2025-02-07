@@ -11405,3 +11405,13 @@ Entries:
   id: 6818
   time: '2025-02-07T16:45:59.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1729
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed industrial ore processor not inheriting its recipes from the
+        standard one. You are now able to make Tungsten Carbide on your upgraded
+        ore processor.
+  id: 6819
+  time: '2025-02-07T17:03:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1737
