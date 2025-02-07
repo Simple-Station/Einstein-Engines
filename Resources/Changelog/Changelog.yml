@@ -11367,3 +11367,12 @@ Entries:
   id: 6814
   time: '2025-02-07T16:19:46.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1734
+- author: RedFoxIV
+  changes:
+    - type: Fix
+      message: >-
+        Fixed damageable entities being stuck red after being damaged several
+        times in a quick succession.
+  id: 6815
+  time: '2025-02-07T16:25:29.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1738
