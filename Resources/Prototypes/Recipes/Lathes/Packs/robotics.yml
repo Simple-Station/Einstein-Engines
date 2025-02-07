@@ -1,0 +1,121 @@
+## Static
+
+- type: latheRecipePack
+  id: RoboticsStatic
+  recipes:
+  - MMI
+  - PositronicBrain
+  - SciFlash
+  - CyborgEndoskeleton
+  # EE EDIT START
+  - MechAirTank
+  - MechThruster
+  # EE EDIT END
+
+- type: latheRecipePack
+  id: BorgModulesStatic
+  recipes:
+  - BorgModuleCable
+  - BorgModuleFireExtinguisher
+  - BorgModuleRadiationDetection
+  - BorgModuleTool
+  # EE EDIT START
+  - BorgModuleSurgery
+  # EE EDIT END
+
+- type: latheRecipePack
+  id: BorgLimbsStatic
+  recipes:
+  - LeftArmBorg
+  - RightArmBorg
+  - LeftLegBorg
+  - RightLegBorg
+  - LightHeadBorg
+  - TorsoBorg
+
+## Dynamic
+
+- type: latheRecipePack
+  id: Robotics
+  recipes:
+  - ProximitySensor
+  # EE EDIT START
+  - ReverseMMI
+  # EE EDIT END
+
+- type: latheRecipePack
+  id: BorgModules
+  recipes:
+  - BorgModuleAdvancedCleaning
+  - BorgModuleAdvancedTool
+  - BorgModuleGPS
+  - BorgModuleArtifact
+  - BorgModuleAnomaly
+  - BorgModuleGardening
+  - BorgModuleHarvesting
+  - BorgModuleDefibrillator
+  - BorgModuleAdvancedTreatment
+  # EE EDIT START
+  - BorgModulePka
+  - BorgModuleAdvancedSurgery
+  - BorgModuleJetpack
+  # EE EDIT END
+
+- type: latheRecipePack
+  id: MechParts
+  recipes:
+  - RipleyHarness
+  - RipleyLArm
+  - RipleyRArm
+  - RipleyLLeg
+  - RipleyRLeg
+  - HonkerHarness
+  - HonkerLArm
+  - HonkerRArm
+  - HonkerLLeg
+  - HonkerRLeg
+  - HamtrHarness
+  - HamtrLArm
+  - HamtrRArm
+  - HamtrLLeg
+  - HamtrRLeg
+  - VimHarness
+  # EE EDIT START
+  - ClarkeHarness
+  - ClarkeHead
+  - ClarkeLArm
+  - ClarkeRArm
+  - ClarkeTreads
+  - DurandHarness
+  - DurandArmor
+  - DurandHead
+  - DurandLArm
+  - DurandLLeg
+  - DurandRArm
+  - DurandRLeg
+  - GygaxHarness
+  - GygaxArmor
+  - GygaxHead
+  - GygaxLArm
+  - GygaxLLeg
+  - GygaxRArm
+  - GygaxRLeg
+  # EE EDIT END
+
+- type: latheRecipePack
+  id: MechEquipment
+  recipes:
+    - MechEquipmentGrabber
+    - MechEquipmentHorn
+    - MechEquipmentGrabberSmall
+    # EE EDIT START
+    - PowerCageMedium
+    - PowerCageSmall
+    - RipleyMKIIHarness
+    - RipleyUpgradeKit
+    - MechEquipmentDrill
+    - MechEquipmentDrillDiamond
+    - MechEquipmentKineticAccelerator
+    - MechEquipmentHonkerBananaMortar
+    - MechEquipmentHonkerMousetrapMortar
+    # EE EDIT END

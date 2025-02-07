@@ -25,6 +25,7 @@
   - WeaponDisabler
   - WeaponCivilianDisabler
   - WeaponMechCombatDisabler # Goobstation
+  - WeaponMechCombatFlashbangLauncher # Goobstation
   #- WeaponPistolMk58 #todo: Add a bunch of basic ballistic guns to the list and make lathe recipes for them.
   - MechEquipmentKineticAccelerator # Goobstation
   - WeaponPistolMk58
@@ -55,7 +56,6 @@
   - MagazineBoxLightRifleIncendiary
   - MagazineBoxRifleIncendiary
   - MagazineBoxCaselessRifleIncendiary
-  - CartridgeSpecialIncendiary
   - MagazineBoxSpecialIncendiary
   - MagazineUniversalMagnumIncendiary
 
@@ -83,7 +83,6 @@
   - MagazineBoxRifleUranium
   - MagazineBoxCaselessRifleUranium
   - BoxShotgunUranium
-  - CartridgeSpecialUranium
   - MagazineBoxSpecialUranium
   - MagazineUniversalMagnumUranium
 

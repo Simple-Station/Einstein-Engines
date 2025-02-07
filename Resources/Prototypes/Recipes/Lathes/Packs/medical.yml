@@ -1,0 +1,125 @@
+## Static
+
+- type: latheRecipePack
+  id: TopicalsStatic
+  recipes:
+  - Brutepack
+  - Ointment
+  - Gauze
+  # EE EDIT START
+  - MedicalPatchBasic
+  - MedicalPatchRapid
+  - MedicalPatchLarge
+  - MedicalPatchTherapeutic
+  # EE EDIT END
+
+- type: latheRecipePack
+  id: BasicChemistryStatic
+  recipes:
+  - Beaker
+  - LargeBeaker
+  - Syringe
+  - PillCanister
+  - HandLabeler
+  # EE EDIT START
+  - DisposableSyringe
+  # EE EDIT END
+
+- type: latheRecipePack
+  parent: BasicChemistryStatic
+  id: ChemistryStatic
+  recipes:
+  - Jug
+  - ChemistryEmptyBottle01
+  - ClothingEyesGlassesChemical
+
+- type: latheRecipePack
+  id: SurgeryStatic
+  recipes:
+  - Scalpel
+  - Retractor
+  - Cautery
+  - Drill
+  - Saw
+  - Hemostat
+  # EE EDIT START
+  - BoneGel
+  # EE EDIT END
+
+- type: latheRecipePack
+  id: MedicalStatic
+  recipes:
+  - Implanter
+  - Defibrillator
+  - HandheldHealthAnalyzer
+  - DiseaseSwab
+  - BodyBag
+  - WhiteCane
+  # EE EDIT START
+  - AACTablet
+  - SyringeCase
+  # EE EDIT END
+
+- type: latheRecipePack
+  id: RollerBedsStatic
+  recipes:
+  - RollerBedSpawnFolded
+  - CheapRollerBedSpawnFolded
+  - EmergencyRollerBedSpawnFolded
+  # EE EDIT START
+  - VehicleWheelchairFolded
+  # EE EDIT END
+
+- type: latheRecipePack
+  id: MedicalClothingStatic
+  recipes:
+  - ClothingHandsGlovesLatex
+  - ClothingHandsGlovesNitrile
+  - ClothingMaskSterile
+
+# These are all empty
+- type: latheRecipePack
+  id: EmptyMedkitsStatic
+  recipes:
+  - Medkit
+  - MedkitBurn
+  - MedkitToxin
+  - MedkitO2
+  - MedkitBrute
+  - MedkitAdvanced
+  - MedkitRadiation
+  - MedkitCombat
+
+- type: latheRecipePack
+  id: MedicalBoardsStatic
+  recipes:
+  - ElectrolysisUnitMachineCircuitboard
+  - CentrifugeMachineCircuitboard
+  - ChemDispenserMachineCircuitboard
+  - ChemMasterMachineCircuitboard
+  - CondenserMachineCircuitBoard
+  - HotplateMachineCircuitboard
+
+## Dynamic
+
+# Shared with protolathe
+- type: latheRecipePack
+  id: Chemistry
+  recipes:
+  - ChemicalPayload
+  - CryostasisBeaker
+  - SyringeCryostasis
+  - BluespaceBeaker
+  - SyringeBluespace
+
+- type: latheRecipePack
+  id: MedicalBoards
+  recipes:
+  - StasisBedMachineCircuitboard
+  - CryoPodMachineCircuitboard
+  - BiomassReclaimerMachineCircuitboard
+  # EE EDIT START
+  - AutodocCircuitboard
+  - CloningConsoleComputerCircuitboard
+  - MedicalScannerMachineCircuitboard
+  # EE EDIT END

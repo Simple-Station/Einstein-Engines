@@ -1,0 +1,36 @@
+## Static
+
+- type: latheRecipePack
+  id: CargoStatic
+  recipes:
+  - AppraisalTool
+  - Pickaxe
+
+- type: latheRecipePack
+  id: CargoBoardsStatic
+  recipes:
+  - OreProcessorMachineCircuitboard
+  - SalvageMagnetMachineCircuitboard
+
+## Dynamic
+
+- type: latheRecipePack
+  id: Mining
+  recipes:
+  - MiningDrill
+  - MiningDrillDiamond
+  - MineralScannerEmpty
+  - AdvancedMineralScannerEmpty
+  - OreBagOfHolding
+  # EE EDIT START
+  - PKAUpgradeDamage
+  - PKAUpgradeRange
+  - PKAUpgradeFireRate
+  # EE EDIT END
+
+- type: latheRecipePack
+  id: CargoBoards
+  recipes:
+  - OreProcessorIndustrialMachineCircuitboard
+  - CargoTelepadMachineCircuitboard
+  - ShuttleGunKineticCircuitboard

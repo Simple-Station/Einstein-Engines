@@ -53,9 +53,6 @@
     state: cpu_engineering
   - type: ComputerBoard
     prototype: ComputerPowerMonitoring
-  - type: ReverseEngineering
-    recipes:
-    - PowerComputerCircuitboard
 
 - type: entity
   parent: BaseComputerCircuitboard
