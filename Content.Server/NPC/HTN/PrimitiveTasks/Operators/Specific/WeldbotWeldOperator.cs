@@ -59,19 +59,11 @@ public sealed partial class WeldbotWeldOperator : HTNOperator
 
         var tagPrototype = _prototypeManager.Index<TagPrototype>(SiliconTag);
 
-        if (!_entMan.TryGetComponent<TagComponent>(target, out var tagComponent) || !_tagSystem.HasTag(tagComponent, tagPrototype))
-            return HTNOperatorStatus.Failed;
-
-        if (!_entMan.TryGetComponent<WeldbotComponent>(owner, out var botComp))
-            return HTNOperatorStatus.Failed;
-
-        if (!_entMan.TryGetComponent<DamageableComponent>(target, out var damage))
-            return HTNOperatorStatus.Failed;
-
-        if (!_interaction.InRangeUnobstructed(owner, target))
-            return HTNOperatorStatus.Failed;
-
-        if (damage.DamagePerGroup["Brute"].Value == 0 && !_entMan.HasComponent<EmaggedComponent>(owner))
+        if (!_entMan.TryGetComponent<TagComponent>(target, out var tagComponent) || !_tagSystem.HasTag(tagComponent, tagPrototype)
+            || !_entMan.TryGetComponent<WeldbotComponent>(owner, out var botComp)
+            || !_entMan.TryGetComponent<DamageableComponent>(target, out var damage)
+            || !_interaction.InRangeUnobstructed(owner, target)
+            || (damage.DamagePerGroup["Brute"].Value == 0 && !_entMan.HasComponent<EmaggedComponent>(owner)))
             return HTNOperatorStatus.Failed;
 
         if (botComp.IsEmagged)

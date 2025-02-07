@@ -47,10 +47,7 @@ public sealed partial class PickNearbyWeldableOperator : HTNOperator
     {
         var owner = blackboard.GetValue<EntityUid>(NPCBlackboard.Owner);
 
-        if (!blackboard.TryGetValue<float>(RangeKey, out var range, _entManager))
-            return (false, null);
-
-        if (!_entManager.TryGetComponent<WeldbotComponent>(owner, out var weldbot))
+        if (!blackboard.TryGetValue<float>(RangeKey, out var range, _entManager) || !_entManager.TryGetComponent<WeldbotComponent>(owner, out var weldbot))
             return (false, null);
 
         var damageQuery = _entManager.GetEntityQuery<DamageableComponent>();
@@ -63,11 +60,7 @@ public sealed partial class PickNearbyWeldableOperator : HTNOperator
 
             var tagPrototype = _prototypeManager.Index<TagPrototype>(WeldbotWeldOperator.SiliconTag);
 
-            if (!_entManager.TryGetComponent<TagComponent>(target, out var tagComponent) || !_tagSystem.HasTag(tagComponent, tagPrototype))
-                continue;
-
-            // Only go towards a target if the bot can actually help them or if the weldbot is emagged
-            if (!emagged && damage.DamagePerGroup["Brute"].Value == 0)
+            if (!_entManager.TryGetComponent<TagComponent>(target, out var tagComponent) || !_tagSystem.HasTag(tagComponent, tagPrototype) || !emagged && damage.DamagePerGroup["Brute"].Value == 0)
                 continue;
 
             //Needed to make sure it doesn't sometimes stop right outside it's interaction range
