@@ -81,7 +81,7 @@ public abstract class SharedStunSystem : EntitySystem
 
     private void OnAttemptInteract(Entity<StunnedComponent> ent, ref InteractionAttemptEvent args)
     {
-        args.Cancel();
+        args.Cancelled = true;
     }
 
     private void OnMobStateChanged(EntityUid uid, MobStateComponent component, MobStateChangedEvent args)
@@ -93,7 +93,6 @@ public abstract class SharedStunSystem : EntitySystem
         {
             case MobState.Alive:
                 break;
-            // case MobState.SoftCritical:
             case MobState.Critical:
                 {
                     _statusEffect.TryRemoveStatusEffect(uid, "Stun");

@@ -6,7 +6,6 @@ using Content.Shared.DoAfter;
 using Content.Shared.Flight;
 using Content.Shared.Flight.Events;
 using Content.Shared.Mobs;
-using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Standing;
 using Content.Shared.Stunnable;
@@ -20,7 +19,6 @@ public sealed class FlightSystem : SharedFlightSystem
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly StandingStateSystem _standing = default!;
-    [Dependency] private readonly MobStateSystem _mobState = default!;
 
     public override void Initialize()
     {
@@ -121,7 +119,7 @@ public sealed class FlightSystem : SharedFlightSystem
     private void OnMobStateChangedEvent(EntityUid uid, FlightComponent component, MobStateChangedEvent args)
     {
         if (!component.On
-            || _mobState.IsIncapacitated(uid))
+            || args.NewMobState is MobState.Critical or MobState.Dead)
             return;
 
         ToggleActive(args.Target, false, component);

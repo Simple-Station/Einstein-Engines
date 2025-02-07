@@ -53,10 +53,10 @@ public sealed class FoldableSystem : EntitySystem
             args.Cancelled = true;
     }
 
-    public void OnStrapAttempt(EntityUid uid, FoldableComponent comp, StrapAttemptEvent args)
+    public void OnStrapAttempt(EntityUid uid, FoldableComponent comp, ref StrapAttemptEvent args)
     {
         if (comp.IsFolded)
-            args.Cancel();
+            args.Cancelled = true;
     }
 
     /// <summary>

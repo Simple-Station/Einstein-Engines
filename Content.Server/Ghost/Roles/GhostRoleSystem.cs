@@ -97,7 +97,6 @@ namespace Content.Server.Ghost.Roles
                             RegisterGhostRole((component, ghostRole));
                         break;
                     }
-                //case MobState.SoftCritical: // allow ghosts to enter a softcritted vessel and beg for mercy
                 case MobState.Critical:
                 case MobState.Dead:
                     UnregisterGhostRole((component, ghostRole));

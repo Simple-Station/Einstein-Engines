@@ -77,7 +77,6 @@ namespace Content.Shared.Damage
         public Dictionary<MobState, ProtoId<HealthIconPrototype>> HealthIcons = new()
         {
             { MobState.Alive, "HealthIconFine" },
-            { MobState.SoftCritical, "HealthIconCritical" },
             { MobState.Critical, "HealthIconCritical" },
             { MobState.Dead, "HealthIconDead" },
         };

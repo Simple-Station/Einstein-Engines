@@ -29,7 +29,7 @@ public sealed partial class ReplaySpectatorSystem
 
     private void OnInteractAttempt(Entity<ReplaySpectatorComponent> ent, ref InteractionAttemptEvent args)
     {
-        args.Cancel();
+        args.Cancelled = true;
     }
 
     private void OnAttempt(EntityUid uid, ReplaySpectatorComponent component, CancellableEntityEventArgs args)

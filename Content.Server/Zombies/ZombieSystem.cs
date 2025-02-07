@@ -165,7 +165,7 @@ namespace Content.Server.Zombies
 
         private void OnMobState(EntityUid uid, ZombieComponent component, MobStateChangedEvent args)
         {
-            if (args.IsAlive())
+            if (args.NewMobState == MobState.Alive)
             {
                 // Groaning when damaged
                 EnsureComp<EmoteOnDamageComponent>(uid);
@@ -243,12 +243,12 @@ namespace Content.Server.Zombies
                     }
                 }
 
-                if (_mobState.IsCriticalOrDead(entity, false, mobState) && !HasComp<ZombieComponent>(entity) && !HasComp<ZombieImmuneComponent>(entity))
+                if (_mobState.IsIncapacitated(entity, mobState) && !HasComp<ZombieComponent>(entity) && !HasComp<ZombieImmuneComponent>(entity))
                 {
                     ZombifyEntity(entity);
                     args.BonusDamage = -args.BaseDamage;
                 }
-                else if (_mobState.IsAlive(entity, mobState)) //heals when zombies bite live entities
+                else if (mobState.CurrentState == MobState.Alive) //heals when zombies bite live entities
                 {
                     _damageable.TryChangeDamage(uid, component.HealingOnBite, true, false);
                 }
