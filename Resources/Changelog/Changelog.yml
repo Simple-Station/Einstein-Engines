@@ -11376,3 +11376,12 @@ Entries:
   id: 6815
   time: '2025-02-07T16:25:29.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1738
+- author: RedFoxIV
+  changes:
+    - type: Add
+      message: >-
+        Soft critical state. Crawl to safety, or to your doom - whatever is
+        closer.
+  id: 6816
+  time: '2025-02-07T16:41:09.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1545
