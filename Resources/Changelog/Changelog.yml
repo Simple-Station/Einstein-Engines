@@ -11385,3 +11385,12 @@ Entries:
   id: 6816
   time: '2025-02-07T16:41:09.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1545
+- author: trashalice
+  changes:
+    - type: Add
+      message: Oni Statistics, lore and information to guidebook
+    - type: Add
+      message: Oni to species parent guidebook entry
+  id: 6817
+  time: '2025-02-07T16:43:34.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1733
