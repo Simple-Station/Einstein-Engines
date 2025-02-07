@@ -11394,3 +11394,14 @@ Entries:
   id: 6817
   time: '2025-02-07T16:43:34.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1733
+- author: dootythefrooty
+  changes:
+    - type: Add
+      message: Added part upgrading to the artifact analysis machine.
+    - type: Tweak
+      message: Tweaked default artifact analysis scan time to 40 seconds.
+    - type: Fix
+      message: Fixed anomaly vessels not actually upgrading.
+  id: 6818
+  time: '2025-02-07T16:45:59.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1729
