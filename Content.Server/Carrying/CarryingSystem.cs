@@ -168,7 +168,7 @@ namespace Content.Server.Carrying
             var targetParent = Transform(args.Target.Value).ParentUid;
 
             if (args.Target.Value != component.Carrier && targetParent != component.Carrier && targetParent != uid)
-                args.Cancel();
+                args.Cancelled = true;
         }
 
         /// <summary>
@@ -202,7 +202,7 @@ namespace Content.Server.Carrying
         private void OnInteractedWith(EntityUid uid, BeingCarriedComponent component, GettingInteractedWithAttemptEvent args)
         {
             if (args.Uid != component.Carrier)
-                args.Cancel();
+                args.Cancelled = true;
         }
 
         private void OnPullAttempt(EntityUid uid, BeingCarriedComponent component, PullAttemptEvent args)

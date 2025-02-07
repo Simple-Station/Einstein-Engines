@@ -75,61 +75,52 @@ public sealed partial class BuckleComponent : Component
 /// Event raised directed at a strap entity before some entity gets buckled to it.
 /// </summary>
 [ByRefEvent]
-public class StrapAttemptEvent(
-    Entity<StrapComponent> strap,
-    Entity<BuckleComponent> buckle,
-    EntityUid? user,
-    bool popup) : CancellableEntityEventArgs
+public record struct StrapAttemptEvent(
+    Entity<StrapComponent> Strap,
+    Entity<BuckleComponent> Buckle,
+    EntityUid? User,
+    bool Popup)
 {
-    public Entity<StrapComponent> Strap = strap;
-    public Entity<BuckleComponent> Buckle = buckle;
-    public EntityUid? User = user;
-    public bool Popup = popup;
+    public bool Cancelled;
 }
 
 /// <summary>
 /// Event raised directed at a buckle entity before it gets buckled to some strap entity.
 /// </summary>
-public class BuckleAttemptEvent(
-    Entity<StrapComponent> strap,
-    Entity<BuckleComponent> buckle,
-    EntityUid? user,
-    bool popup) : CancellableEntityEventArgs
+[ByRefEvent]
+public record struct BuckleAttemptEvent(
+    Entity<StrapComponent> Strap,
+    Entity<BuckleComponent> Buckle,
+    EntityUid? User,
+    bool Popup)
 {
-    public Entity<StrapComponent> Strap = strap;
-    public Entity<BuckleComponent> Buckle = buckle;
-    public EntityUid? User = user;
-    public bool Popup = popup;
+    public bool Cancelled;
 }
 
 /// <summary>
 /// Event raised directed at a strap entity before some entity gets unbuckled from it.
 /// </summary>
-public class UnstrapAttemptEvent(
-    Entity<StrapComponent> strap,
-    Entity<BuckleComponent> buckle,
-    EntityUid? user,
-    bool popup) : CancellableEntityEventArgs
+[ByRefEvent]
+public record struct UnstrapAttemptEvent(
+    Entity<StrapComponent> Strap,
+    Entity<BuckleComponent> Buckle,
+    EntityUid? User,
+    bool Popup)
 {
-    public Entity<StrapComponent> Strap = strap;
-    public Entity<BuckleComponent> Buckle = buckle;
-    public EntityUid? User = user;
-    public bool Popup = popup;
+    public bool Cancelled;
 }
 
 /// <summary>
 /// Event raised directed at a buckle entity before it gets unbuckled.
 /// </summary>
-public class UnbuckleAttemptEvent(
-    Entity<StrapComponent> strap,
-    Entity<BuckleComponent> buckle,
-    EntityUid? user,
-    bool popup) : CancellableEntityEventArgs
+[ByRefEvent]
+public record struct UnbuckleAttemptEvent(
+    Entity<StrapComponent> Strap,
+    Entity<BuckleComponent> Buckle,
+    EntityUid? User,
+    bool Popup)
 {
-    public Entity<StrapComponent> Strap = strap;
-    public Entity<BuckleComponent> Buckle = buckle;
-    public EntityUid? User = user;
-    public bool Popup = popup;
+    public bool Cancelled;
 }
 
 /// <summary>

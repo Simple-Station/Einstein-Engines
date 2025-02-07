@@ -54,8 +54,8 @@ namespace Content.Shared.Examine
             if (IsClientSide(entity))
                 return true;
 
-            // check if the mob is conscious to examine something
-            if (MobStateSystem.IsConscious(examiner))
+            // check if the mob is in critical or dead
+            if (MobStateSystem.IsIncapacitated(examiner))
                 return false;
 
             if (!InRangeUnOccluded(examiner, entity, ExamineDetailsRange))

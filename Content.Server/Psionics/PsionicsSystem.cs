@@ -304,7 +304,7 @@ public sealed class PsionicsSystem : EntitySystem
     private void OnMobstateChanged(EntityUid uid, PsionicComponent component, MobStateChangedEvent args)
     {
         if (component.Familiars.Count <= 0
-            || !args.IsDead())
+            || args.NewMobState != MobState.Dead)
             return;
 
         foreach (var familiar in component.Familiars)

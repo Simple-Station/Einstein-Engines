@@ -197,9 +197,9 @@ namespace Content.Server.Explosion.EntitySystems
                 return;
 
             // Sends a message to the radio channel specified by the implant
-            if (mobstate.CurrentState.IsCrit())
+            if (mobstate.CurrentState == MobState.Critical)
                 _radioSystem.SendRadioMessage(uid, critMessage, _prototypeManager.Index<RadioChannelPrototype>(component.RadioChannel), uid);
-            if (mobstate.CurrentState.IsDead())
+            if (mobstate.CurrentState == MobState.Dead)
                 _radioSystem.SendRadioMessage(uid, deathMessage, _prototypeManager.Index<RadioChannelPrototype>(component.RadioChannel), uid);
 
             args.Handled = true;
