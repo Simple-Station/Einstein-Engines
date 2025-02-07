@@ -172,7 +172,7 @@ public sealed partial class BorgSystem : SharedBorgSystem
 
     private void OnMobStateChanged(EntityUid uid, BorgChassisComponent component, MobStateChangedEvent args)
     {
-        if (args.NewMobState == MobState.Alive)
+        if (args.IsAlive())
         {
             if (_mind.TryGetMind(uid, out _, out _))
                 _powerCell.SetDrawEnabled(uid, true);

@@ -21,4 +21,10 @@ public sealed partial class DeathgaspComponent : Component
     /// </summary>
     [DataField]
     public bool NeedsCritical = true;
+
+    /// <summary>
+    /// Allows deathgasp to happen in softcrit too. Does nothing if <see cref="NeedsCritical"/> is false.
+    /// </summary>
+    [DataField]
+    public bool AllowSoftCritical = true;
 }

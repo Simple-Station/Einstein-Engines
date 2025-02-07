@@ -32,8 +32,8 @@ public sealed class EmitBuzzWhileDamagedSystem : EntitySystem
         while (query.MoveNext(out var uid, out var emitBuzzOnCritComponent, out var mobStateComponent, out var thresholdsComponent, out var damageableComponent))
         {
             if (_mobState.IsDead(uid, mobStateComponent)
-                || !_mobThreshold.TryGetThresholdForState(uid, MobState.Critical, out var threshold, thresholdsComponent)
-                || damageableComponent.TotalDamage < threshold / 2)
+                || !_mobThreshold.TryGetThresholdForState(uid, MobState.SoftCritical, MobState.Critical, out var threshold, thresholdsComponent) // who knows, maybe we'll want softcrittable borgs some day
+                || damageableComponent.TotalDamage < threshold.Value / 2)
                 continue;
 
             // Check update time

@@ -143,7 +143,7 @@ public abstract partial class SharedPseudoItemSystem : EntitySystem
     private void OnInteractAttempt(EntityUid uid, PseudoItemComponent component, InteractionAttemptEvent args)
     {
         if (args.Uid == args.Target && component.Active)
-            args.Cancelled = true;
+            args.Cancel();
     }
 
     private void OnDoAfter(EntityUid uid, PseudoItemComponent component, DoAfterEvent args)

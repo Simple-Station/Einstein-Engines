@@ -155,7 +155,7 @@ public sealed partial class SleepingSystem : EntitySystem
 
     private void OnConsciousAttempt(Entity<SleepingComponent> ent, ref ConsciousAttemptEvent args)
     {
-        args.Cancelled = true;
+        args.Cancel();
     }
 
     private void OnExamined(Entity<SleepingComponent> ent, ref ExaminedEvent args)

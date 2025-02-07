@@ -1,4 +1,4 @@
-﻿using Content.Server.Administration.Commands;
+using Content.Server.Administration.Commands;
 using Content.Server.Administration.Systems;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
@@ -72,6 +72,10 @@ namespace Content.IntegrationTests.Tests.Commands
                     Assert.That(mobStateSystem.IsAlive(human, mobState), Is.False);
                     Assert.That(mobStateSystem.IsCritical(human, mobState), Is.False);
                     Assert.That(mobStateSystem.IsDead(human, mobState), Is.True);
+                    // This now may not be true for all mobs since the introduction of MobState parameters.
+                    // Even though being dead should be incapacitating makes perfect sense.
+                    // If you're fucking around with parameters for MobState.Dead and this
+                    // throws at you, feel free to comment it. Or reconsider what you're doing.
                     Assert.That(mobStateSystem.IsIncapacitated(human, mobState), Is.True);
                 });
 
@@ -84,6 +88,7 @@ namespace Content.IntegrationTests.Tests.Commands
                     Assert.That(mobStateSystem.IsAlive(human, mobState), Is.True);
                     Assert.That(mobStateSystem.IsCritical(human, mobState), Is.False);
                     Assert.That(mobStateSystem.IsDead(human, mobState), Is.False);
+                    // see above, same thing but for MobState.Alive
                     Assert.That(mobStateSystem.IsIncapacitated(human, mobState), Is.False);
 
                     Assert.That(damageable.TotalDamage, Is.EqualTo(FixedPoint2.Zero));

@@ -95,7 +95,7 @@ public sealed partial class MeleeOperator : HTNOperator, IHtnConditionalShutdown
 
             // Success
             if (_entManager.TryGetComponent<MobStateComponent>(target, out var mobState) &&
-                mobState.CurrentState > TargetState)
+                !mobState.IsThreatening())
             {
                 status = HTNOperatorStatus.Finished;
             }

@@ -324,6 +324,10 @@ public sealed class NPCUtilitySystem : EntitySystem
             {
                 return _mobState.IsAlive(targetUid) ? 1f : 0f;
             }
+            case TargetIsThreateningCon:
+            {
+                return _mobState.IsThreatening(targetUid) ? 1f : 0f;
+            }
             case TargetIsCritCon:
             {
                 return _mobState.IsCritical(targetUid) ? 1f : 0f;

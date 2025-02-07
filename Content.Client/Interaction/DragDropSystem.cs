@@ -495,7 +495,7 @@ public sealed class DragDropSystem : SharedDragDropSystem
         // CanInteract() doesn't support checking a second "target" entity.
         // Doing so manually:
         var ev = new GettingInteractedWithAttemptEvent(user, dragged);
-        RaiseLocalEvent(dragged, ref ev);
+        RaiseLocalEvent(dragged, ev);
 
         if (ev.Cancelled)
             return false;
