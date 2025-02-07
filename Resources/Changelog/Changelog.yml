@@ -11340,3 +11340,16 @@ Entries:
   id: 6811
   time: '2025-02-07T16:13:38.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1700
+- author: Ichai
+  changes:
+    - type: Add
+      message: >-
+        Added 4 law boards to the game: NT Agressive, Quarantine, CCTV and
+        TYRANT to the AI
+    - type: Tweak
+      message: AI can see through borgs
+    - type: Tweak
+      message: AI is now affected by ion storm
+  id: 6812
+  time: '2025-02-07T16:17:25.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1686
