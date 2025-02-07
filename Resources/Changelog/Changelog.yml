@@ -11333,3 +11333,10 @@ Entries:
   id: 6810
   time: '2025-02-07T16:12:31.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1704
+- author: Ichai
+  changes:
+    - type: Add
+      message: Bagel Station added to the rotation.
+  id: 6811
+  time: '2025-02-07T16:13:38.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1700
