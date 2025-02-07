@@ -72,7 +72,7 @@
       prob: 0.05
 
 - type: entity
-  id: ListeningPost
+  id: PirateRadioSpawn
   parent: BaseGameRule
   categories: [ HideSpawnMenu ]
   components:

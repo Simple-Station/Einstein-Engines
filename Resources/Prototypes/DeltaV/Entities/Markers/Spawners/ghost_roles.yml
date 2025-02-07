@@ -16,28 +16,29 @@
         - sprite: Mobs/Species/Human/parts.rsi
           state: full
 
-- type: entity # Part of ListeningPost
-  noSpawn: true
-  parent: BaseAntagSpawner
+- type: entity # Part of PirateRadioSpawn
+  categories: [ HideSpawnMenu ]
   id: SpawnPointGhostSyndicateListener
+  name: ghost role spawn point
+  suffix: syndicate listener
+  parent: MarkerBase
   components:
   - type: GhostRole
     name: ghost-role-information-listeningop-name
     description: ghost-role-information-listeningop-description
     rules: ghost-role-information-listeningop-rules
-    requirements: # Worth considering these numbers for the goal of making sure someone willing to MRP takes this.
-    - !type:CharacterDepartmentTimeRequirement
-      department: Security
-      time: 40000 # 11.1 hours
-    - !type:CharacterDepartmentTimeRequirement
-      department: Civilian
-      time: 40000 # 11.1 hours
-    - !type:CharacterDepartmentTimeRequirement
-      department: Command
-      time: 40000 # 11.1 hours
+  - type: GhostRoleMobSpawner
+    prototype: MobHumanSyndicateListener
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+      - state: green
+      - sprite: Structures/Wallmounts/signs.rsi
+        state: radiation
+  - type: GhostRoleAntagSpawner
 
 - type: entity
-  parent: BaseAntagSpawner
+  parent: MarkerBase
   id: SpawnPointGhostParadoxAnomaly
   name: paradox anomaly spawn point
   components:
@@ -45,6 +46,12 @@
     name: ghost-role-information-paradox-anomaly-name
     description: ghost-role-information-paradox-anomaly-description
     rules: ghost-role-information-paradox-anomaly-rules
+  - type: ParadoxAnomalySpawner
+  - type: GhostRoleAntagSpawner
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+      - state: green
 
 - type: entity
   parent: BaseAntagSpawner

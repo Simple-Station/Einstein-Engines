@@ -5710,7 +5710,7 @@ entities:
     - type: Transform
       pos: 2.5,2.5
       parent: 1
-- proto: SpawnPointNukies
+- proto: SpawnPointGhostSyndicateListener
   entities:
   - uid: 813
     components:
