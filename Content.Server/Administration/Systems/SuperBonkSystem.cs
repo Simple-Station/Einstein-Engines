@@ -27,7 +27,7 @@ public sealed class SuperBonkSystem : EntitySystem
         //The other check in the code to stop when the target dies does not work if the target is already dead.
         if (stopWhenDead && TryComp<MobStateComponent>(target, out var mState))
         {
-            if (mState.CurrentState == MobState.Dead)
+            if (mState.CurrentState.IsDead())
                 return;
         }
 
