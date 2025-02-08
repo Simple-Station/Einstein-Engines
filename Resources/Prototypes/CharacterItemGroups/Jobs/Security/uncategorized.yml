@@ -131,6 +131,10 @@
       id: LoadoutSecurityArgentiNonLethal
     - type: loadout
       id: LoadoutSecurityPistolEnergyRevolver
+    - type: loadout
+      id: LoadoutBSOEnergyRevolver
+    - type: loadout
+      id: LoadoutBSORifleChester
 
 - type: characterItemGroup
   id: LoadoutSecurityEyes
@@ -152,6 +156,8 @@
       id: LoadoutClothingEyesGlassesSecurityBig
     - type: loadout
       id: LoadoutClothingEyesGlassesSecurityVisor
+    - type: loadout
+      id: LoadoutClothingEyesGlassesCorpsman
 
 #- type: characterItemGroup
 #  id: LoadoutSecurityGloves

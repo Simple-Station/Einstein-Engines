@@ -1,0 +1,17 @@
+- type: ore
+  id: OreAluminium
+  oreEntity: N14AluminiumOre1
+  minOreYield: 1
+  maxOreYield: 5
+
+- type: ore
+  id: OreLead
+  oreEntity: N14LeadOre1
+  minOreYield: 1
+  maxOreYield: 5
+
+- type: ore
+  id: OreCopper
+  oreEntity: N14CopperOre1
+  minOreYield: 1
+  maxOreYield: 5

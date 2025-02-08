@@ -424,3 +424,26 @@
   components:
   - type: Stack
     count: 1
+
+- type: entity
+  parent: OreBase
+  id: TungstenOre
+  name: wolframite
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: TungstenOre
+  - type: Sprite
+    state: tungsten
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      RawTungsten: 500
+
+- type: entity
+  parent: TungstenOre
+  id: TungstenOre1
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1

@@ -330,6 +330,7 @@
     - MopItem
     - Bucket
     - TrashBag
+    - Plunger
 
 - type: entity
   id: BorgModuleAdvancedCleaning

@@ -21,6 +21,14 @@
     Plasma: 150
 
 - type: latheRecipe
+  id: ClothingHeadHelmetBasic
+  result: ClothingHeadHelmetBasic
+  completetime: 2
+  materials:
+    Steel: 250
+    Glass: 100
+
+- type: latheRecipe
   id: Stunbaton
   result: Stunbaton
   category: Weapons
@@ -1020,3 +1028,36 @@
     Glass: 300
     Silver: 100
     Gold: 100
+
+- type: latheRecipe
+  id: EnergySword
+  result: EnergySword
+  completetime: 10
+  materials:
+    Tungsten: 300
+    Gold: 300
+    Bluespace: 300
+    Plasma: 300
+    Diamond: 100
+
+- type: latheRecipe
+  id: EnergyCutlass
+  result: EnergyCutlass
+  completetime: 10
+  materials:
+    Tungsten: 300
+    Gold: 300
+    Bluespace: 300
+    Plasma: 300
+    Diamond: 100
+
+- type: latheRecipe
+  id: EnergySwordDouble
+  result: EnergySwordDouble
+  completetime: 20
+  materials:
+    Tungsten: 600
+    Gold: 600
+    Bluespace: 600
+    Plasma: 600
+    Diamond: 200

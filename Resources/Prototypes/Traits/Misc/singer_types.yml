@@ -9,6 +9,7 @@
     "Acoustic": {24: 0}
     "Flute": {73: 0}
     "Sax": {66: 0}
+    "Harp": {46: 0}
   defaultInstrument: "Voice"
   midiUi: Key
   midiActionId: ActionHarpyPlayMidi

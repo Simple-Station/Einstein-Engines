@@ -186,6 +186,8 @@
     - id: CrayonBox
     - id: Paper
       maxAmount: 3
+    - id: CrayonMagic
+    - prob: .2
 
 - type: entity
   categories: [ HideSpawnMenu ]
