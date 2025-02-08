@@ -253,7 +253,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
 
     private void OnMobStateChanged(EntityUid uid, NukeOperativeComponent component, MobStateChangedEvent ev)
     {
-        if (ev.IsDead())
+        if (ev.NewMobState == MobState.Dead)
             CheckRoundShouldEnd();
     }
 

@@ -30,7 +30,7 @@ namespace Content.Shared.Ghost
         private void OnAttemptInteract(Entity<GhostComponent> ent, ref InteractionAttemptEvent args)
         {
             if (!ent.Comp.CanGhostInteract)
-                args.Cancel();
+                args.Cancelled = true;
         }
 
         private void OnAttempt(EntityUid uid, GhostComponent component, CancellableEntityEventArgs args)

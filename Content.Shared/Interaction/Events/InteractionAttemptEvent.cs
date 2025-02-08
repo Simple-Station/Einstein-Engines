@@ -1,10 +1,12 @@
-namespace Content.Shared.Interaction.Events
+﻿namespace Content.Shared.Interaction.Events
 {
     /// <summary>
     ///     Event raised directed at a user to see if they can perform a generic interaction.
     /// </summary>
-    public class InteractionAttemptEvent(EntityUid uid, EntityUid? target) : CancellableEntityEventArgs
+    [ByRefEvent]
+    public struct InteractionAttemptEvent(EntityUid uid, EntityUid? target)
     {
+        public bool Cancelled;
         public readonly EntityUid Uid = uid;
         public readonly EntityUid? Target = target;
     }
@@ -12,8 +14,10 @@ namespace Content.Shared.Interaction.Events
     /// <summary>
     /// Raised to determine whether an entity is conscious to perform an action.
     /// </summary>
-    public class ConsciousAttemptEvent(EntityUid uid) : CancellableEntityEventArgs
+    [ByRefEvent]
+    public struct ConsciousAttemptEvent(EntityUid uid)
     {
+        public bool Cancelled;
         public readonly EntityUid Uid = uid;
     }
 
@@ -21,8 +25,10 @@ namespace Content.Shared.Interaction.Events
     ///     Event raised directed at the target entity of an interaction to see if the user is allowed to perform some
     ///     generic interaction.
     /// </summary>
-    public class GettingInteractedWithAttemptEvent(EntityUid uid, EntityUid? target) : CancellableEntityEventArgs
+    [ByRefEvent]
+    public struct GettingInteractedWithAttemptEvent(EntityUid uid, EntityUid? target)
     {
+        public bool Cancelled;
         public readonly EntityUid Uid = uid;
         public readonly EntityUid? Target = target;
     }

@@ -1,4 +1,4 @@
-using System.Numerics;
+﻿using System.Numerics;
 using Content.Client.Buckle;
 using Content.Client.Gravity;
 using Content.Shared.ActionBlocker;
@@ -82,7 +82,7 @@ public sealed class WaddleAnimationSystem : EntitySystem
             return;
 
         // Do nothing if crit or dead (for obvious reasons)
-        if (_mobState.IsHardCritical(uid) || _mobState.IsDead(uid))
+        if (_mobState.IsIncapacitated(uid))
             return;
 
         var tumbleIntensity = component.LastStep ? 360 - component.TumbleIntensity : component.TumbleIntensity;

@@ -5,7 +5,6 @@ using Content.Server.Radio.Components;
 using Content.Server.Speech;
 using Content.Shared.Chat;
 using Content.Shared.Inventory.Events;
-using Content.Shared.Mobs.Systems;
 using Content.Shared.Radio;
 using Content.Shared.Radio.Components;
 using Content.Shared.Radio.EntitySystems;
@@ -19,7 +18,6 @@ public sealed class HeadsetSystem : SharedHeadsetSystem
     [Dependency] private readonly INetManager _netMan = default!;
     [Dependency] private readonly RadioSystem _radio = default!;
     [Dependency] private readonly LanguageSystem _language = default!;
-    [Dependency] private readonly MobStateSystem _mobState = default!;
 
     public override void Initialize()
     {
@@ -56,8 +54,7 @@ public sealed class HeadsetSystem : SharedHeadsetSystem
     {
         if (args.Channel != null
             && TryComp(component.Headset, out EncryptionKeyHolderComponent? keys)
-            && keys.Channels.Contains(args.Channel.ID)
-            && !_mobState.IsIncapacitated(uid))
+            && keys.Channels.Contains(args.Channel.ID))
         {
             _radio.SendRadioMessage(uid, args.Message, args.Channel, component.Headset);
             args.Channel = null; // prevent duplicate messages from other listeners.

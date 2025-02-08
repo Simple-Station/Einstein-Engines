@@ -140,15 +140,11 @@ public abstract partial class SharedStationAiSystem
     private void OnHeldInteraction(Entity<StationAiHeldComponent> ent, ref InteractionAttemptEvent args)
     {
         // Cancel if it's not us or something with a whitelist, or whitelist is disabled.
-        if ((!TryComp<StationAiWhitelistComponent>(args.Target, out var whitelistComponent)
-             || !whitelistComponent.Enabled)
-             && ent.Owner != args.Target
-             && args.Target != null)
-        {
-            args.Cancel();
-        }
-
-        if (whitelistComponent is {Enabled: false })
+        args.Cancelled = (!TryComp(args.Target, out StationAiWhitelistComponent? whitelistComponent)
+                          || !whitelistComponent.Enabled)
+                         && ent.Owner != args.Target
+                         && args.Target != null;
+        if (whitelistComponent is { Enabled: false })
         {
             ShowDeviceNotRespondingPopup(ent.Owner);
         }

@@ -1,4 +1,4 @@
-using Content.Shared.Alert;
+﻿using Content.Shared.Alert;
 using Content.Shared.FixedPoint;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Generic;
@@ -48,18 +48,8 @@ public sealed partial class MoodComponent : Component
     [DataField]
     public float DecreaseCritThreshold = 0.9f;
 
-    // WD EDIT START
-    [DataField]
-    public float IncreaseSoftCritThreshold = 1.1f;
-
-    [DataField]
-    public float DecreaseSoftCritThreshold = 0.95f;
-    // WD EDIT END
-
     [ViewVariables(VVAccess.ReadOnly)]
     public FixedPoint2 CritThresholdBeforeModify;
-    [ViewVariables(VVAccess.ReadOnly)]
-    public FixedPoint2 SoftCritThresholdBeforeModify;
 
     [DataField]
     public ProtoId<AlertCategoryPrototype> MoodCategory = "Mood";

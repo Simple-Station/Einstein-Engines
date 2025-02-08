@@ -54,7 +54,6 @@ public abstract class SharedDevourSystem : EntitySystem
         {
             switch (targetState.CurrentState)
             {
-                // case MobState.SoftCritical: // they squirm too much
                 case MobState.Critical:
                 case MobState.Dead:
 

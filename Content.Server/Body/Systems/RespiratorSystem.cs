@@ -21,7 +21,6 @@ using Content.Shared.Mood;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
-using Content.Shared.Mobs.Components;
 
 namespace Content.Server.Body.Systems;
 
@@ -84,13 +83,12 @@ public sealed class RespiratorSystem : EntitySystem
 
             UpdateSaturation(uid, -(float) respirator.UpdateInterval.TotalSeconds, respirator);
 
-            float mul = _mobState.BreatheMultiplier(uid);
-            if (mul > 0f && !HasComp<DebrainedComponent>(uid)) // Shitmed: cannot breathe in crit or when no brain.
+            if (!_mobState.IsIncapacitated(uid) && !HasComp<DebrainedComponent>(uid)) // Shitmed: cannot breathe in crit or when no brain.
             {
                 switch (respirator.Status)
                 {
                     case RespiratorStatus.Inhaling:
-                        Inhale(uid, body, mul);
+                        Inhale(uid, body);
                         respirator.Status = RespiratorStatus.Exhaling;
                         break;
                     case RespiratorStatus.Exhaling:
@@ -108,7 +106,7 @@ public sealed class RespiratorSystem : EntitySystem
                     _popupSystem.PopupEntity(Loc.GetString("lung-behavior-gasp"), uid);
                 }
 
-                TakeSuffocationDamage((uid, respirator), 1 - mul);
+                TakeSuffocationDamage((uid, respirator));
                 respirator.SuffocationCycles += 1;
                 continue;
             }
@@ -118,7 +116,7 @@ public sealed class RespiratorSystem : EntitySystem
         }
     }
 
-    public void Inhale(EntityUid uid, BodyComponent? body = null, float breathVolumeMultiplier = 1f)
+    public void Inhale(EntityUid uid, BodyComponent? body = null)
     {
         if (!Resolve(uid, ref body, logMissing: false))
             return;
@@ -136,7 +134,7 @@ public sealed class RespiratorSystem : EntitySystem
             return;
         }
 
-        var actualGas = ev.Gas.RemoveVolume(Atmospherics.BreathVolume * breathVolumeMultiplier);
+        var actualGas = ev.Gas.RemoveVolume(Atmospherics.BreathVolume);
 
         var lungRatio = 1.0f / organs.Count;
         var gas = organs.Count == 1 ? actualGas : actualGas.RemoveRatio(lungRatio);
@@ -288,7 +286,7 @@ public sealed class RespiratorSystem : EntitySystem
         return saturation;
     }
 
-    private void TakeSuffocationDamage(Entity<RespiratorComponent> ent, float damageMultiplier = 1f)
+    private void TakeSuffocationDamage(Entity<RespiratorComponent> ent)
     {
         if (ent.Comp.SuffocationCycles == 2)
             _adminLogger.Add(LogType.Asphyxiation, $"{ToPrettyString(ent):entity} started suffocating");
@@ -303,11 +301,8 @@ public sealed class RespiratorSystem : EntitySystem
             }
             RaiseLocalEvent(ent, new MoodEffectEvent("Suffocating"));
         }
-        var damageToTake = ent.Comp.Damage;
-        if (HasComp<DebrainedComponent>(ent))
-            damageToTake *= 4.5f;
-        damageToTake *= damageMultiplier;
-        _damageableSys.TryChangeDamage(ent, damageToTake, interruptsDoAfters: false);
+
+        _damageableSys.TryChangeDamage(ent, HasComp<DebrainedComponent>(ent) ? ent.Comp.Damage * 4.5f : ent.Comp.Damage, interruptsDoAfters: false);
     }
 
     private void StopSuffocation(Entity<RespiratorComponent> ent)
