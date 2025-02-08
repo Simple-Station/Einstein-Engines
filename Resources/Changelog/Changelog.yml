@@ -11446,3 +11446,10 @@ Entries:
   id: 6822
   time: '2025-02-08T16:13:44.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1742
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Fix
+      message: Fixed alerts being halfway down the screen
+  id: 6823
+  time: '2025-02-08T23:24:03.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1745
