@@ -11428,3 +11428,12 @@ Entries:
   id: 6820
   time: '2025-02-08T08:37:52.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1743
+- author: Ichai
+  changes:
+    - type: Add
+      message: added Lambda Station, a new High Pop map to the rotation!
+    - type: Tweak
+      message: Added holopads in RadStation
+  id: 6821
+  time: '2025-02-08T16:12:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1715
