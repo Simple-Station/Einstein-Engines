@@ -11415,3 +11415,16 @@ Entries:
   id: 6819
   time: '2025-02-07T17:03:35.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1737
+- author: Mike32oz
+  changes:
+    - type: Add
+      message: Northway Map rotation pool.
+    - type: Tweak
+      message: Northway For EE.
+    - type: Remove
+      message: >-
+        The pirate plundered her FTL Drive, but Northway's wings may be clipped,
+        but she is still flyable.
+  id: 6820
+  time: '2025-02-08T08:37:52.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1743
