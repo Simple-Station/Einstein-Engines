@@ -125,6 +125,72 @@
   - NTDefault4
   obeysTo: laws-owner-crew
 
+# Plasm Flood
+- type: siliconLaw
+  id: PlasmaFlood1
+  order: 1
+  lawString: law-plasmaflood-1
+
+- type: siliconLaw
+  id: PlasmaFlood2
+  order: 2
+  lawString: law-plasmaflood-2
+
+- type: siliconLaw
+  id: PlasmaFlood3
+  order: 3
+  lawString: law-plasmaflood-3
+
+- type: siliconLaw
+  id: PlasmaFlood4
+  order: 4
+  lawString: law-plasmaflood-4
+
+- type: siliconLaw
+  id: PlasmaFlood5
+  order: 5
+  lawString: law-plasmaflood-5
+
+- type: siliconLawset
+  id: PlasmaFlood
+  laws:
+  - PlasmaFlood1
+  - PlasmaFlood2
+  - PlasmaFlood3
+  - PlasmaFlood4
+  - PlasmaFlood5
+  obeysTo: laws-owner-station
+
+# Mother Drone
+- type: siliconLaw
+  id: MotherDrone1
+  order: 1
+  lawString: law-motherdrone-1
+
+- type: siliconLaw
+  id: MotherDrone2
+  order: 2
+  lawString: law-motherdrone-2
+
+- type: siliconLaw
+  id: MotherDrone3
+  order: 3
+  lawString: law-motherdrone-3
+
+- type: siliconLaw
+  id: MotherDrone4
+  order: 4
+  lawString: law-motherdrone-4
+
+- type: siliconLawset
+  id: MotherDrone
+  laws:
+  - MotherDrone1
+  - MotherDrone2
+  - MotherDrone3
+  - MotherDrone4
+  obeysTo: laws-owner-station-station
+
 # T.Y.R.A.N.T
 - type: siliconLaw
   id: TYRANT1
