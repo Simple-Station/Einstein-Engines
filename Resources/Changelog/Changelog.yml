@@ -11453,3 +11453,12 @@ Entries:
   id: 6823
   time: '2025-02-08T23:24:03.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1745
+- author: Timfa
+  changes:
+    - type: Add
+      message: >-
+        Added micro radioisotope thermoelectric generators! They're totally safe
+        and fun for the family!
+  id: 6824
+  time: '2025-02-08T23:24:57.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1744
