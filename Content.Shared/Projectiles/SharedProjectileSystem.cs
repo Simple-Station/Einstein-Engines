@@ -69,7 +69,7 @@ public abstract partial class SharedProjectileSystem : EntitySystem
             if (comp.EmbeddedIntoUid is { } targetUid)
                 _popup.PopupClient(Loc.GetString("throwing-embed-falloff", ("item", uid)), targetUid, targetUid);
 
-            RemoveEmbed(uid, comp);
+            UnEmbed(uid, comp);
         }
     }
 
@@ -100,50 +100,7 @@ public abstract partial class SharedProjectileSystem : EntitySystem
         if (args.Cancelled)
             return;
 
-        RemoveEmbed(uid, component, args.User);
-    }
-
-    public void RemoveEmbed(EntityUid uid, EmbeddableProjectileComponent component, EntityUid? remover = null)
-    {
-        component.AutoRemoveTime = null;
-        component.EmbeddedIntoUid = null;
-        component.TargetBodyPart = null;
-        RemCompDeferred<ActiveEmbeddableProjectileComponent>(uid);
-
-        var ev = new RemoveEmbedEvent(remover);
-        RaiseLocalEvent(uid, ref ev);
-
-        if (component.DeleteOnRemove)
-        {
-            QueueDel(uid);
-            return;
-        }
-
-        if (!TryComp(uid, out PhysicsComponent? physics))
-            return;
-
-        var xform = Transform(uid);
-        _physics.SetBodyType(uid, BodyType.Dynamic, body: physics, xform: xform);
-        _transform.AttachToGridOrMap(uid, xform);
-
-        // Reset whether the projectile has damaged anything if it successfully was removed
-        if (TryComp<ProjectileComponent>(uid, out var projectile))
-        {
-            projectile.Shooter = null;
-            projectile.Weapon = null;
-            projectile.ProjectileSpent = false;
-        }
-
-        // Land it just coz uhhh yeah
-        var landEv = new LandEvent(remover, true);
-        RaiseLocalEvent(uid, ref landEv);
-        _physics.WakeBody(uid, body: physics);
-
-        // try place it in the user's hand
-        if (remover is { } removerUid)
-            _hands.TryPickupAnyHand(removerUid, uid);
-
-        Dirty(uid, component);
+        UnEmbed(uid, component, args.User);
     }
 
     private void OnEmbedThrowDoHit(EntityUid uid, EmbeddableProjectileComponent component, ThrowDoHitEvent args)
@@ -201,6 +158,49 @@ public abstract partial class SharedProjectileSystem : EntitySystem
 
         Dirty(uid, component);
         return true;
+    }
+
+    public void UnEmbed(EntityUid uid, EmbeddableProjectileComponent component, EntityUid? remover = null)
+    {
+        component.AutoRemoveTime = null;
+        component.EmbeddedIntoUid = null;
+        component.TargetBodyPart = null;
+        RemCompDeferred<ActiveEmbeddableProjectileComponent>(uid);
+
+        var ev = new RemoveEmbedEvent(remover);
+        RaiseLocalEvent(uid, ref ev);
+
+        if (component.DeleteOnRemove)
+        {
+            QueueDel(uid);
+            return;
+        }
+
+        if (!TryComp(uid, out PhysicsComponent? physics))
+            return;
+
+        var xform = Transform(uid);
+        _physics.SetBodyType(uid, BodyType.Dynamic, body: physics, xform: xform);
+        _transform.AttachToGridOrMap(uid, xform);
+
+        // Reset whether the projectile has damaged anything if it successfully was removed
+        if (TryComp<ProjectileComponent>(uid, out var projectile))
+        {
+            projectile.Shooter = null;
+            projectile.Weapon = null;
+            projectile.ProjectileSpent = false;
+        }
+
+        // Land it just coz uhhh yeah
+        var landEv = new LandEvent(remover, true);
+        RaiseLocalEvent(uid, ref landEv);
+        _physics.WakeBody(uid, body: physics);
+
+        // try place it in the user's hand
+        if (remover is { } removerUid)
+            _hands.TryPickupAnyHand(removerUid, uid);
+
+        Dirty(uid, component);
     }
 
     private void PreventCollision(EntityUid uid, ProjectileComponent component, ref PreventCollideEvent args)
