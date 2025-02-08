@@ -11415,3 +11415,34 @@ Entries:
   id: 6819
   time: '2025-02-07T17:03:35.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1737
+- author: Mike32oz
+  changes:
+    - type: Add
+      message: Northway Map rotation pool.
+    - type: Tweak
+      message: Northway For EE.
+    - type: Remove
+      message: >-
+        The pirate plundered her FTL Drive, but Northway's wings may be clipped,
+        but she is still flyable.
+  id: 6820
+  time: '2025-02-08T08:37:52.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1743
+- author: Ichai
+  changes:
+    - type: Add
+      message: added Lambda Station, a new High Pop map to the rotation!
+    - type: Tweak
+      message: Added holopads in RadStation
+  id: 6821
+  time: '2025-02-08T16:12:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1715
+- author: Ichai
+  changes:
+    - type: Add
+      message: >-
+        Added 10 new Law Boards to the AI: Plasma Flood, Mother Drone, Druid,
+        Cowboy, Chaplain, Clown, Janitor, Engineer, Research and Medical.
+  id: 6822
+  time: '2025-02-08T16:13:44.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1742

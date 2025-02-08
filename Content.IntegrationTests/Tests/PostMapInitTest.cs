@@ -70,7 +70,9 @@ namespace Content.IntegrationTests.Tests
             "Europa",
             "Meta",
             "Box",
-            "Bagel"
+            "Lambda",
+            "Bagel",
+            "Northway"
         };
 
         /// <summary>
