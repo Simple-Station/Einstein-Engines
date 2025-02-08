@@ -4,7 +4,6 @@ using Content.Shared.ActionBlocker;
 using Content.Shared.Damage;
 using Content.Shared.Hands.Components;
 using Content.Shared.Mobs;
-using Content.Shared.Mobs.Systems;
 using Content.Shared.Tag;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
@@ -19,7 +18,6 @@ public abstract partial class SharedDoAfterSystem : EntitySystem
     [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly TagSystem _tag = default!;
-    [Dependency] private readonly MobStateSystem _mobState = default!;
 
     /// <summary>
     ///     We'll use an excess time so stuff like finishing effects can show.
@@ -50,17 +48,14 @@ public abstract partial class SharedDoAfterSystem : EntitySystem
 
     private void OnStateChanged(EntityUid uid, DoAfterComponent component, MobStateChangedEvent args)
     {
-        // Original code
-        /*if (args.NewMobState != MobState.Dead || args.NewMobState != MobState.Critical) // comment block of shame
-            return;*/
-        if (_mobState.IsIncapacitated(uid))
+        if (args.NewMobState != MobState.Dead || args.NewMobState != MobState.Critical)
+            return;
+
+        foreach (var doAfter in component.DoAfters.Values)
         {
-            foreach (var doAfter in component.DoAfters.Values)
-            {
-                InternalCancel(doAfter, component);
-            }
-            Dirty(uid, component);
+            InternalCancel(doAfter, component);
         }
+        Dirty(uid, component);
     }
 
     /// <summary>

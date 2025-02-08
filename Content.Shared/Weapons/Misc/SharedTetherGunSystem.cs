@@ -69,7 +69,7 @@ public abstract partial class SharedTetherGunSystem : EntitySystem
 
     private void OnTetheredBuckleAttempt(EntityUid uid, TetheredComponent component, ref BuckleAttemptEvent args)
     {
-        args.Cancel();
+        args.Cancelled = true;
     }
 
     private void OnTetheredUpdateCanMove(EntityUid uid, TetheredComponent component, UpdateCanMoveEvent args)

@@ -27,7 +27,7 @@ public abstract class SharedVentriloquistPuppetSystem : EntitySystem
 
     private void CancelInteract(Entity<VentriloquistPuppetComponent> ent, ref InteractionAttemptEvent args)
     {
-        args.Cancel();
+        args.Cancelled = true;
     }
 
     private void OnStartup(EntityUid uid, VentriloquistPuppetComponent component, ComponentStartup args)

@@ -311,7 +311,8 @@ namespace Content.Shared.Movement.Systems
                 if (MoverQuery.TryGetComponent(entity, out var mover))
                     SetMoveInput((entity, mover), MoveButtons.None);
 
-                if (!_mobState.CanMove(entity))
+                if (_mobState.IsDead(entity)
+                    || _mobState.IsCritical(entity) && !_configManager.GetCVar(CCVars.AllowMovementWhileCrit))
                     return;
 
                 HandleDirChange(relayMover.RelayEntity, dir, subTick, state);

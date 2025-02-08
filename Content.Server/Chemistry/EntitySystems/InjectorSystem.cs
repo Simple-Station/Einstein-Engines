@@ -18,6 +18,7 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Stacks;
 using Robust.Server.Player;
 
+
 namespace Content.Server.Chemistry.EntitySystems;
 
 public sealed class InjectorSystem : SharedInjectorSystem
@@ -189,7 +190,7 @@ public sealed class InjectorSystem : SharedInjectorSystem
 
 
             // Check if the target is incapacitated or in combat mode and modify time accordingly.
-            if (MobState.IsIncapacitated(target) /*|| _statusEffects.TryGetTime(target, "Stun", out var _)*/)
+            if (MobState.IsIncapacitated(target))
             {
                 actualDelay /= 2.5f;
             }

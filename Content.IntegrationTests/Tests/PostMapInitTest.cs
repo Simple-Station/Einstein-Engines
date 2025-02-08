@@ -71,7 +71,8 @@ namespace Content.IntegrationTests.Tests
             "Meta",
             "Box",
             "Lambda",
-            "Bagel"
+            "Bagel",
+            "Northway"
         };
 
         /// <summary>
