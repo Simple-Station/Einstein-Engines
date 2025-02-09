@@ -11462,3 +11462,12 @@ Entries:
   id: 6824
   time: '2025-02-08T23:24:57.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1744
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added "Lyre Bird" as a new trait exclusively available to Harpies. It
+        massively expands their ability to play Midis. 
+  id: 6825
+  time: '2025-02-09T04:12:25.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1747
