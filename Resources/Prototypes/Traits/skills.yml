@@ -185,6 +185,20 @@
           proto: NormalSinger
 
 - type: trait
+  id: LyreBird
+  category: Auditory
+  points: -10
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Harpy
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: Singer
+          proto: HarpySingerAll
+
+- type: trait
   id: LatentPsychic
   category: Mental
   points: -4
