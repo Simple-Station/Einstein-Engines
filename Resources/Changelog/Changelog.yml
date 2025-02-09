@@ -11480,3 +11480,12 @@ Entries:
   id: 6826
   time: '2025-02-09T04:33:04.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1748
+- author: dootythefrooty
+  changes:
+    - type: Fix
+      message: Station AI no longer hears all channels
+    - type: Tweak
+      message: Station AI can now speak on the Prison channel
+  id: 6827
+  time: '2025-02-09T08:58:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1749
