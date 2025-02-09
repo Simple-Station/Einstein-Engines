@@ -14,11 +14,21 @@
     - Medical
     - Science
     - Security
+    - Prison
     - Service
     - Supply
   - type: ActiveRadio
-    receiveAllChannels: true
-    globalReceive: true
+    channels:
+    - Binary
+    - Common
+    - Command
+    - Engineering
+    - Medical
+    - Science
+    - Security
+    - Prison
+    - Service
+    - Supply
   - type: IgnoreUIRange
   - type: StationAiHeld
   - type: StationAiOverlay
