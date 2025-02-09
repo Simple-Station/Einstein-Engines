@@ -15,6 +15,16 @@
   midiActionId: ActionHarpyPlayMidi
 
 - type: SingerInstrument
+  id: HarpySingerAll
+  instrumentList:
+    "Lyresong": {52: 0}
+  defaultInstrument: "Lyresong"
+  midiUi: Key
+  midiActionId: ActionHarpyPlayMidi
+  allowPercussion: true
+  allowProgramChange: true
+
+- type: SingerInstrument
   id: NormalSinger
   instrumentList:
     "Voice": {52: 0}
