@@ -90,7 +90,7 @@ namespace Content.Client.Options.UI.Tabs
             ViewportLowResCheckBox.Pressed = !_cfg.GetCVar(CCVars.ViewportScaleRender);
             ParallaxLowQualityCheckBox.Pressed = _cfg.GetCVar(CCVars.ParallaxLowQuality);
             FpsCounterCheckBox.Pressed = _cfg.GetCVar(CCVars.HudFpsCounterVisible);
-            MoodVisualEffectsCheckBox.Pressed = _cfg.GetCVar(CCVars.MoodVisualsEffects);
+            MoodVisualEffectsCheckBox.Pressed = _cfg.GetCVar(CCVars.MoodVisualEffects);
             ViewportWidthSlider.Value = _cfg.GetCVar(CCVars.ViewportWidth);
 
             _cfg.OnValueChanged(CCVars.ViewportMinimumWidth, _ => UpdateViewportWidthRange());
