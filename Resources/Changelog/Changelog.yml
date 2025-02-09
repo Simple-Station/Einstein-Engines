@@ -11489,3 +11489,10 @@ Entries:
   id: 6827
   time: '2025-02-09T08:58:51.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1749
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: Arachne are immune to slipping
+  id: 6828
+  time: '2025-02-09T15:54:06.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1739
