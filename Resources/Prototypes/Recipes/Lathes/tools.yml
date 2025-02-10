@@ -246,3 +246,13 @@
     Steel: 750
     Plasma: 150
     Uranium: 150
+
+- type: latheRecipe
+  id: AccessConfigurator
+  result: AccessConfigurator
+  category: Tools
+  completetime: 2
+  materials:
+    Plastic: 300
+    Circuitry: 200
+    Glass: 100
