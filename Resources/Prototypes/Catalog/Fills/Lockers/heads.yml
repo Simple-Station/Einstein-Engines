@@ -243,6 +243,7 @@
       - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
       - id: PsiWatchCartridge
+      - id: StationAiUploadCircuitboard
 
 - type: entity
   id: LockerResearchDirectorFilled
@@ -266,6 +267,7 @@
       - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
       - id: PsiWatchCartridge
+      - id: StationAiUploadCircuitboard
 
 - type: entity
   id: LockerHeadOfSecurityFilledHardsuit
