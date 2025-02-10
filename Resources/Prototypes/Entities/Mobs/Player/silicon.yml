@@ -461,6 +461,7 @@
   - type: SiliconLawProvider
     laws: AntimovLawset
     lawUploadSound: /Audio/Ambience/Antag/silicon_lawboard_antimov.ogg
+    unRemovable: true
 
 - type: entity
   id: NutimovCircuitBoard
