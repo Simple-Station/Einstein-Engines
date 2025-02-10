@@ -11539,3 +11539,13 @@ Entries:
   id: 6832
   time: '2025-02-10T18:30:50.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1761
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added functionality for "Permanent" lawsets that cannot be removed by
+        the AI Upload. Currently used by ANTIMOV, which is needed for the MALF
+        AI Antagonist.
+  id: 6833
+  time: '2025-02-10T18:30:59.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1762
