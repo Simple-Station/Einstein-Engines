@@ -11549,3 +11549,10 @@ Entries:
   id: 6833
   time: '2025-02-10T18:30:59.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1762
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: removed LoadoutSecurityWeapons tag from the chester
+  id: 6834
+  time: '2025-02-10T23:45:06.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1764
