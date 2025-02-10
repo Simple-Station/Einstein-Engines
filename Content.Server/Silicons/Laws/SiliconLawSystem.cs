@@ -271,16 +271,19 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
     /// <summary>
     /// Set the laws of a silicon entity while notifying the player.
     /// </summary>
-    public void SetLaws(List<SiliconLaw> newLaws, EntityUid target)
+    public bool SetLaws(List<SiliconLaw> newLaws, EntityUid target, bool unRemovable = false)
     {
-        if (!TryComp<SiliconLawProviderComponent>(target, out var component))
-            return;
+        if (!TryComp<SiliconLawProviderComponent>(target, out var component)
+            || component.UnRemovable)
+            return false;
 
         if (component.Lawset == null)
             component.Lawset = new SiliconLawset();
 
+        component.UnRemovable = unRemovable;
         component.Lawset.Laws = newLaws;
         NotifyLawsChanged(target);
+        return true;
     }
 
     protected override void OnUpdaterInsert(Entity<SiliconLawUpdaterComponent> ent, ref EntInsertedIntoContainerMessage args)
@@ -294,7 +297,9 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
 
         while (query.MoveNext(out var update))
         {
-            SetLaws(lawset, update);
+            if (!SetLaws(lawset, update, provider.UnRemovable))
+                continue;
+
             if (provider.LawUploadSound != null && _mind.TryGetMind(update, out var mindId, out _))
                 _roles.MindPlaySound(mindId, provider.LawUploadSound);
         }
