@@ -106,16 +106,16 @@
 #MARK: Copper
 - type: entity
   parent: IngotBase
-  id: N14IngotCopper
+  id: IngotCopper
   name: copper bar
   suffix: Full, 30
   components:
   - type: Material
   - type: PhysicalComposition
     materialComposition:
-      N14Copper: 100
+      Copper: 100
   - type: Stack
-    stackType: N14Copper
+    stackType: Copper
     baseLayer: base
     layerStates:
     - ingot_copper
@@ -140,8 +140,8 @@
           Quantity: 10
 
 - type: entity
-  parent: N14IngotCopper
-  id: N14IngotCopper1
+  parent: IngotCopper
+  id: IngotCopper1
   name: copper bar
   suffix: Single
   components:
