@@ -30,7 +30,7 @@
   components:
     - type: ComputerBoard
       prototype: ComputerAlert
-      
+
 - type: entity
   parent: BaseComputerCircuitboard
   id: AtmosMonitoringComputerCircuitboard
@@ -459,3 +459,14 @@
       state: cpu_science
     - type: ComputerBoard
       prototype: ComputerRoboticsControl
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: StationAiUploadCircuitboard
+  name: station ai upload console board
+  description: A computer printed circuit board for a station AI upload console.
+  components:
+    - type: Sprite
+      state: cpu_science
+    - type: ComputerBoard
+      prototype: StationAiUploadComputer
