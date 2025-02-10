@@ -126,7 +126,7 @@
   id: RandomOreDistributionBasalt
   weights:
     OreSteel: 20
-    OreCoal: 0.8
+    OreCoal: 1.6
     OreSpaceQuartz: 0.8
     OreGold: 10
     OrePlasma: 0.32
