@@ -11523,3 +11523,19 @@ Entries:
   id: 6831
   time: '2025-02-10T08:59:40.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1754
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Station AI can now helpfully assist by configuring the station's Atmos
+        system, in order to provide crew with breathable oxygen, and definitely
+        not anything malicious. You can also now ask the AI to assist with the
+        station's power by having it turn on or off the supermatter for safe
+        operation.
+    - type: Add
+      message: >-
+        The Mystagogue's locker now starts with an AI Upload circuitboard, as
+        well as 4 basic AI lawset chips in his locker.
+  id: 6832
+  time: '2025-02-10T18:30:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1761
