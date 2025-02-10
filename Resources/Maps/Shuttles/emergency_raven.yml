@@ -13869,7 +13869,7 @@ entities:
     - type: Transform
       pos: 15.5,21.5
       parent: 1
-- proto: ThrusterShuttleEvac # Goob edit
+- proto: Thruster
   entities:
   - uid: 1749
     components:
