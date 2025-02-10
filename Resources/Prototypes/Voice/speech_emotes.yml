@@ -85,7 +85,7 @@
   category: Vocal
   icon: Interface/Emotes/squish.png
   whitelist:
-    components:
+    tags:
     - HarpyEmotes
   blacklist:
     components:
@@ -100,7 +100,7 @@
   category: Vocal
   icon: Interface/Emotes/chitter.png
   whitelist:
-    components:
+    tags:
     - HarpyEmotes
   blacklist:
     components:
@@ -115,7 +115,7 @@
   category: Vocal
   icon: Interface/Emotes/squeak.png
   whitelist:
-    components:
+    tags:
     - HarpyEmotes
   blacklist:
     components:
@@ -130,7 +130,7 @@
   category: Vocal
   icon: Interface/Emotes/click.png
   whitelist:
-    components:
+    tags:
     - HarpyEmotes
   blacklist:
     components:
@@ -248,8 +248,10 @@
   category: Vocal
   icon: Interface/Emotes/chirp.png
   whitelist:
+    requireAll: false
     components:
     - Nymph
+    tags:
     - HarpyEmotes
   chatMessages: ["chat-emote-msg-chirp"]
   chatTriggers:

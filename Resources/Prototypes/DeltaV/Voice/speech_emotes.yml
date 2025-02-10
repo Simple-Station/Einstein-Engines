@@ -143,10 +143,10 @@
   id: Awoo
   name: delta-chat-emote-name-awoo
   category: Vocal
-  available: false
   whitelist:
     components:
     - Vocal
+    - HarpyEmotes
   blacklist:
     components:
     - BorgChassis

@@ -15,15 +15,7 @@
             "directions": 4
         },
         {
-        "name": "equipped-OUTERCLOTHING-vox",
-        "directions": 4
-        },
-        {
-            "name": "inhand-left",
-            "directions": 4
-        },
-        {
-            "name": "inhand-right",
+            "name": "equipped-OUTERCLOTHING-vox",
             "directions": 4
         },
         {
@@ -32,6 +24,22 @@
         },
         {
             "name": "equipped-OUTERCLOTHING-lamia",
+            "directions": 4
+        },
+        {
+            "name": "equipped-OUTERCLOTHING-unshaded",
+            "directions": 4
+        },
+        {
+            "name": "equipped-OUTERCLOTHING-unshaded-harpy",
+            "directions": 4
+        },
+        {
+            "name": "inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "inhand-right",
             "directions": 4
         },
         {

@@ -11496,3 +11496,30 @@ Entries:
   id: 6828
   time: '2025-02-09T15:54:06.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1739
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Stations SMES now store 120MW of power, up from 8MW. They should
+        actually do what they are intended to do now. 
+  id: 6829
+  time: '2025-02-10T02:23:39.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1752
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Fixed Harpies missing 8 different emotes.
+  id: 6830
+  time: '2025-02-10T08:54:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1751
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Thrown objects will no longer collide with entities that are laying
+        down(voluntarily or otherwise). This includes objects thrown by space
+        wind, which will now fly over you once you've been critted by floor
+        tiles.
+  id: 6831
+  time: '2025-02-10T08:59:40.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1754
