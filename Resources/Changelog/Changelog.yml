@@ -11505,3 +11505,10 @@ Entries:
   id: 6829
   time: '2025-02-10T02:23:39.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1752
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Fixed Harpies missing 8 different emotes.
+  id: 6830
+  time: '2025-02-10T08:54:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1751
