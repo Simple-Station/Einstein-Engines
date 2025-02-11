@@ -11,7 +11,7 @@ public sealed partial class AtmosphereSystem
     /// <summary>
     ///     The standard issue "Search Pattern" used by the Matrix Airflow System.
     /// </summary>
-    private List<(int, int)> _mASSearchPattern = new List<(int, int)>
+    private List<(int, int)> MASSearchPattern = new List<(int, int)>
     {
         (-1,1),  (0,1),  (1,1),
         (-1,0),          (1,0),
@@ -25,7 +25,7 @@ public sealed partial class AtmosphereSystem
             return new Vector2(0, 0);
 
         var pressureVector = new Vector2(0, 0);
-        foreach (var (x, y) in _mASSearchPattern)
+        foreach (var (x, y) in MASSearchPattern)
         {
             if (!gridAtmos.Tiles.TryGetValue(tile.GridIndices + (x, y), out var tileAtmosphere)
                 || tileAtmosphere.Air is null)
