@@ -11580,3 +11580,18 @@ Entries:
   id: 6836
   time: '2025-02-11T19:26:07.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1766
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Added job spawns for all 4 Senior roles on Lambda Station
+    - type: Add
+      message: >-
+        Lambda Station now has 3 AI job slots. What? It literally has the
+        largest AI satellite of any map we have in rotation. Seriously it has an
+        AI Sat the size of fucking Shoko. Of course it should have more than one
+        AI slot. This thing is INSANE.
+    - type: Fix
+      message: Fixed arrivals being LOCKED on Lambda Station
+  id: 6837
+  time: '2025-02-11T19:26:32.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1753
