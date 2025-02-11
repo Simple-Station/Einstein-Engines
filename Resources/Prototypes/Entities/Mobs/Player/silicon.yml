@@ -513,6 +513,7 @@
   - AiHolder
   suffix: Empty
   components:
+  - type: IonStormTarget
   - type: WarpPoint
   - type: ContainerComp
     proto: AiHeld
