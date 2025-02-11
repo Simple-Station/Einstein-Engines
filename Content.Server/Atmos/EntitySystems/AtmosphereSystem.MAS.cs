@@ -43,6 +43,5 @@ public sealed partial class AtmosphereSystem
             pressureVector += new Vector2(x * pressure, y * pressure);
         }
         return pressureVector * 2 * deltaT * _cfg.GetCVar(CCVars.SpaceWindStrengthMultiplier);
-
     }
 }
