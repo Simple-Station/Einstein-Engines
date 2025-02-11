@@ -145,6 +145,7 @@
   - type: FootPrints
     leftBarePrint: "footprint-left-bare-spider"
     rightBarePrint: "footprint-right-bare-spider"
+  - type: NoSlip
 
 - type: entity
   save: false
@@ -234,4 +235,3 @@
     templateId: anytaur
   - type: HumanoidAppearance
     species: Arachne
-  - type: NoSlip
