@@ -8,6 +8,7 @@ namespace Content.Server.Atmos.EntitySystems;
 // WELCOME TO THE MATRIX AIRFLOW SYSTEM.
 public sealed partial class AtmosphereSystem
 {
+# pragma warning disable IDE1006
     /// <summary>
     ///     The standard issue "Search Pattern" used by the Matrix Airflow System.
     /// </summary>
@@ -17,6 +18,7 @@ public sealed partial class AtmosphereSystem
         (-1,0),          (1,0),
         (-1,-1), (0,-1), (1,-1)
     };
+# pragma warning restore IDE1006
 
     public Vector2 GetPressureVectorFromTile(TileAtmosphere tile, float deltaT)
     {
