@@ -28,7 +28,8 @@ public sealed partial class AtmosphereSystem
     public Vector2 GetPressureVectorFromTile(TileAtmosphere tile, float deltaT)
     {
         if (!HasComp<MapGridComponent>(tile.GridIndex)
-            || !TryComp(tile.GridIndex, out GridAtmosphereComponent? gridAtmos))
+            || !TryComp(tile.GridIndex, out GridAtmosphereComponent? gridAtmos)
+            || tile.Air is null || tile.PressureDirection is Shared.Atmos.AtmosDirection.Invalid)
             return new Vector2(0, 0);
 
         var pressureVector = new Vector2(0, 0);
@@ -39,8 +40,8 @@ public sealed partial class AtmosphereSystem
                 || tileAtmosphere.PressureDirection is Shared.Atmos.AtmosDirection.Invalid)
                 continue;
 
-            var pressure = tileAtmosphere.Air.Pressure;
-            pressureVector += new Vector2(x * pressure, y * pressure);
+            var pressureDiff = tile.Air.Pressure - tileAtmosphere.Air.Pressure;
+            pressureVector += new Vector2(x * pressureDiff, y * pressureDiff);
         }
         return pressureVector * 2 * deltaT * _cfg.GetCVar(CCVars.SpaceWindStrengthMultiplier);
     }
