@@ -20,6 +20,11 @@ public sealed partial class AtmosphereSystem
     };
 # pragma warning restore IDE1006
 
+    /// <summary>
+    ///     A helper function from MAS that allows for (partially) converting Monstermos Tiles to MAS Vectors.
+    ///     It returns a vector representing the flow direction of air passing over a tile, as described by Laplace's Equations.
+    ///     The equations here are simplified however, and are omitting the matrix subdivisions.
+    /// </summary>
     public Vector2 GetPressureVectorFromTile(TileAtmosphere tile, float deltaT)
     {
         if (!HasComp<MapGridComponent>(tile.GridIndex)
