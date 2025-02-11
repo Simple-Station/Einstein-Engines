@@ -74,8 +74,40 @@ public sealed partial class AtmosphereSystem
     {
         // No atmos yeets, return early.
         if (!SpaceWind
-            || tile.PressureDirection is AtmosDirection.Invalid)
+            || tile.PressureDirection is AtmosDirection.Invalid
+            || tile.Air is null)
             return;
+
+        if (_cfg.GetCVar(CCVars.SpaceWindV4))
+        {
+            var pressureVector = GetPressureVectorFromTile(tile, frameTime);
+            if (pressureVector.Length() < SpaceWindMinimumCalculatedMass)
+                return;
+
+            _entSet.Clear();
+            _lookup.GetLocalEntitiesIntersecting(tile.GridIndex, tile.GridIndices, _entSet, 0f);
+
+            foreach (var entity in _entSet)
+            {
+                // Ideally containers would have their own EntityQuery internally or something given recursively it may need to slam GetComp<T> anyway.
+                // Also, don't care about static bodies (but also due to collisionwakestate can't query dynamic directly atm).
+                if (!bodies.TryGetComponent(entity, out var body)
+                    || !pressureQuery.TryGetComponent(entity, out var pressure)
+                    || !pressure.Enabled
+                    || _containers.IsEntityInContainer(entity, metas.GetComponent(entity))
+                    || pressure.LastHighPressureMovementAirCycle >= gridAtmosphere.Comp.UpdateCounter)
+                    continue;
+
+                // tl;dr YEET
+                SpaceWindV4(
+                    (entity, EnsureComp<MovedByPressureComponent>(entity)),
+                    gridAtmosphere.Comp.UpdateCounter,
+                    pressureVector,
+                    xforms.GetComponent(entity),
+                    body);
+            }
+            return;
+        }
 
         // Previously, we were comparing against the square of the target mass. Now we are comparing smaller values over a variable length of time. TLDR: Smoother space wind
         var differentiatedPressure = 2 * tile.PressureDifference * frameTime * _cfg.GetCVar(CCVars.SpaceWindStrengthMultiplier);
@@ -152,6 +184,36 @@ public sealed partial class AtmosphereSystem
 
         tile.PressureDifference = difference;
         tile.PressureDirection = differenceDirection;
+    }
+
+    public void SpaceWindV4(Entity<MovedByPressureComponent> ent,
+        int cycle,
+        Vector2 pressureVector,
+        TransformComponent? xform = null,
+        PhysicsComponent? physics = null)
+    {
+        var (uid, component) = ent;
+        if (!Resolve(uid, ref physics, false)
+            || !Resolve(uid, ref xform)
+            || physics.BodyType == BodyType.Static
+            || float.IsPositiveInfinity(component.MoveResist))
+            return;
+
+        if (HasComp<HumanoidAppearanceComponent>(ent))
+            pressureVector *= HumanoidThrowMultiplier;
+        if (pressureVector.Length() < physics.Mass)
+            return;
+
+        pressureVector *= MathF.Max(physics.InvMass, SpaceWindMaximumCalculatedInverseMass);
+        var pressureTarget = pressureVector;
+        if (pressureTarget.Length() > SpaceWindMaxVelocity)
+            pressureTarget = pressureTarget.Normalized() * SpaceWindMaxVelocity;
+
+        _throwing.TryThrow(uid, pressureVector.Length() > SpaceWindMaxVelocity
+            ? pressureTarget.Normalized() * SpaceWindMaxVelocity
+            : pressureVector,
+            pressureVector.Length());
+        component.LastHighPressureMovementAirCycle = cycle;
     }
 
     public void ExperiencePressureDifference(
