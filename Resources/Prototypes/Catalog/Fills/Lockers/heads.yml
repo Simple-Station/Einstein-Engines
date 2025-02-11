@@ -109,7 +109,6 @@
       - id: RubberStampApproved
       - id: BoxEncryptionKeyPassenger
       - id: BoxEncryptionKeyService
-      - id: AccessConfigurator
       - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
 

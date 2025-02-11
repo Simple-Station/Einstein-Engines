@@ -129,6 +129,7 @@
     - Crowbar
     - Multitool
     - NetworkConfigurator
+    - AccessConfigurator
     - SprayPainter
     - FlashlightLantern
     - CableStack
@@ -1490,7 +1491,7 @@
     - IngotSilver1
     - MaterialBananium1
     - N14IngotLead1
-    - N14IngotCopper1
+    - IngotCopper1
     - N14IngotAluminium1
     - IngotTungsten1
   - type: MaterialStorageMagnetPickup # Delta V - Summary: Adds magnet pull from Frontier
