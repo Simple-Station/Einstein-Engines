@@ -282,6 +282,10 @@ public sealed partial class PolymorphSystem : EntitySystem
         if (PausedMap != null)
             _transform.SetParent(uid, targetTransformComp, PausedMap.Value);
 
+        // Raise an event to inform anything that wants to know about the entity swap
+        var ev = new PolymorphedEvent(uid, child, false);
+        RaiseLocalEvent(uid, ref ev);
+
         return child;
     }
 
@@ -353,6 +357,10 @@ public sealed partial class PolymorphSystem : EntitySystem
 
         // if an item polymorph was picked up, put it back down after reverting
         _transform.AttachToGridOrMap(parent, parentXform);
+
+        // Raise an event to inform anything that wants to know about the entity swap
+        var ev = new PolymorphedEvent(uid, parent, true);
+        RaiseLocalEvent(uid, ref ev);
 
         _popup.PopupEntity(Loc.GetString("polymorph-revert-popup-generic",
                 ("parent", Identity.Entity(uid, EntityManager)),
