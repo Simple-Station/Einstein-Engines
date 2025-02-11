@@ -35,7 +35,8 @@ public sealed partial class AtmosphereSystem
         foreach (var (x, y) in MASSearchPattern)
         {
             if (!gridAtmos.Tiles.TryGetValue(tile.GridIndices + (x, y), out var tileAtmosphere)
-                || tileAtmosphere.Air is null)
+                || tileAtmosphere.Air is null
+                || tileAtmosphere.PressureDirection is Shared.Atmos.AtmosDirection.Invalid)
                 continue;
 
             var pressure = tileAtmosphere.Air.Pressure;
