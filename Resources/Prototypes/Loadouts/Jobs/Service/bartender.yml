@@ -39,6 +39,22 @@
     - MagazineBoxLightRifleRubber
 
 - type: loadout
+  id: LoadoutServiceBartenderBoxRifleRubber
+  category: JobsServiceBartender
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderAmmo
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+    - !type:CharacterAgeRequirement
+      min: 21
+  items:
+    - MagazineBoxRifleRubber
+
+- type: loadout
   id: LoadoutServiceBartenderShotgunDoubleBarreledRubber
   category: JobsServiceBartender
   cost: 0
@@ -81,6 +97,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - Bartender
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - MagazineBoxMagnumRubber
 
@@ -95,6 +113,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - Bartender
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponRevolverArgentiNonlethal
 
@@ -109,6 +129,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - Bartender
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponSniperRepeaterNonlethal
 
