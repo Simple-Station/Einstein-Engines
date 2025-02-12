@@ -1,6 +1,7 @@
 using Content.Server.Station.Systems;
 using Content.Shared.Parallax.Biomes;
 using Content.Shared.Parallax.Biomes.Markers;
+using Content.Shared.Procedural;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.Station.Components;
@@ -19,6 +20,18 @@ public sealed partial class StationBiomeComponent : Component
     /// </summary>
     [DataField]
     public List<ProtoId<BiomeMarkerLayerPrototype>> BiomeLayers;
+
+    /// <summary>
+    ///     Whether your station comes with one or more complimentary dungeons somewhere in the world.
+    /// </summary>
+    [DataField]
+    public List<DungeonConfigPrototype> Dungeons;
+
+    [DataField]
+    public float DungeonMinDistance = 100f;
+
+    [DataField]
+    public float DungeonMaxDistance = 500f;
 
     // If null, its random
     [DataField]

@@ -1,9 +1,12 @@
 using Content.Server.Parallax;
+using Content.Server.Procedural;
 using Content.Server.Station.Components;
 using Content.Server.Station.Events;
 using Content.Shared.Parallax.Biomes;
 using Robust.Server.GameObjects;
+using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
 
 namespace Content.Server.Station.Systems;
 public sealed partial class StationBiomeSystem : EntitySystem
@@ -12,6 +15,8 @@ public sealed partial class StationBiomeSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly MapSystem _mapSystem = default!;
+    [Dependency] private readonly DungeonSystem _dungeon = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
 
     public override void Initialize()
     {
@@ -45,6 +50,15 @@ public sealed partial class StationBiomeSystem : EntitySystem
 
             biomeComp.MarkerLayers.Add(layer);
             biomeComp.ForcedMarkerLayers.Add(layer);
+        }
+        if (!TryComp(mapUid, out MapGridComponent? mapGrid))
+            return;
+
+        foreach (var dungeonProto in map.Comp.Dungeons)
+        {
+            // TODO: Pester TCJ about adding a _random.NextVector2i to Supermatter Engine, as well as adding methods for "officially" casting vector 2s as integer vectors.
+            var distVector = (Vector2i) _random.NextVector2(map.Comp.DungeonMinDistance, map.Comp.DungeonMaxDistance).Rounded();
+            _dungeon.GenerateDungeon(dungeonProto, mapUid!.Value, mapGrid, distVector, _random.Next());
         }
     }
 }
