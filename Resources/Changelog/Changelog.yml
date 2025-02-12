@@ -11602,3 +11602,12 @@ Entries:
   id: 6838
   time: '2025-02-11T21:09:16.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1767
+- author: Ichai
+  changes:
+    - type: Tweak
+      message: >-
+        Box Station: gravity generator has been moved to engineering and and the
+        Vault was moved closer to the bridge.
+  id: 6839
+  time: '2025-02-12T14:56:04.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1763
