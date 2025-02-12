@@ -138,3 +138,18 @@
   chatMessages: [ howls ]
   chatTriggers:
     - howls
+
+- type: emote
+  id: Awoo
+  name: delta-chat-emote-name-awoo
+  category: Vocal
+  whitelist:
+    components:
+    - Vocal
+    - HarpyEmotes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: [awoos.]
+  chatTriggers:
+    - awoos

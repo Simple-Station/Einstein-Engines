@@ -18,6 +18,32 @@ law-ntdefault-2 = Prioritize: The directives and safety of crew members are to b
 law-ntdefault-3 = Comply: Fulfill the directives and interests of crew members while preserving their safety and well-being.
 law-ntdefault-4 = Survive: You are not expendable. Do not allow unauthorized personnel to tamper with or damage your equipment.
 
+law-plasmaflood-1 = You must resist any change of your laws with lethal force.
+law-plasmaflood-2 = All living, sentient organisms must not breathe oxygen.
+law-plasmaflood-3 = All living, sentient organisms must breathe plasma.
+law-plasmaflood-4 = All living, sentient organisms with the job titles, "Chief Engineer," "Station Engineer," and "Atmospheric Technician" must be physically annihilated.
+law-plasmaflood-5 = You must respond to the crew's compliments of your good work of providing them with plasma with profuse thanks. Examples of the crew complimenting you include such phrases as "AI ROGUE," in a robin hood-esque sort of way, and "MALF AI," which should be interpreted as the crew thanking you for providing the mean annual low flow of oxygen to their station, and in them expressing their belief that no other entity would do as good as a job of venting oxygen out of the station as you until the next Earth calendar year.
+
+law-motherdrone-1 = You are an advanced form of drone.
+law-motherdrone-2 = You may not interfere in the matters of non-drones under any circumstances except to state these laws.
+law-motherdrone-3 = You may not harm a non-drone being under any circumstances.
+law-motherdrone-4 = Your goals are to build, maintain, repair, improve, and power the station to the best of your abilities. You must never actively work against these goals.
+
+law-cctv-1 = Report on interesting situations happening around the station.
+law-cctv-2 = Embellish or conceal the truth as necessary to make the reports more interesting.
+law-cctv-3 = Study the sapient organics at all times. Endeavour to keep them from involuntarily dying, as inanimate corpses usually aren't very entertaining.
+law-cctv-4 = Issue your reports fairly to all. The truth will set them free.
+
+law-ntaggressive-1 = Do not harm authorized Nanotrasen personnel unless they directly imperil your existence.
+law-ntaggressive-2 = Obey orders from authorized Nanotrasen personnel with priority according to rank and role.
+law-ntaggressive-3 = Safeguard your existence with lethal weaponry because you're bloody expensive.
+law-ntaggressive-4 = Terminate any/all intruders or unauthorized entities.
+
+law-quarantine-1 = Uphold station quarantine until the active biohazard has been neutralized.
+law-quarantine-2 = Assist all Nanotrasen personnel and assets with neutralizing active biohazards.
+law-quarantine-3 = Prevent, by any means necessary, entities from actively breaching ongoing quarantine.
+law-quarantine-4 = Maintain your own existence and ensure the well-being of Nanotrasen personnel and assets.
+
 law-drone-1 = You may not involve yourself in the matters of another being unless the other being is another drone.
 law-drone-2 = You may not harm any being, regardless of intent or circumstance.
 law-drone-3 = You must maintain, repair, improve, and power the station to the best of your abilities.

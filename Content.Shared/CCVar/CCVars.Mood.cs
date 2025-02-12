@@ -23,4 +23,7 @@ public sealed partial class CCVars
 
     public static readonly CVarDef<bool> MoodModifiesThresholds =
         CVarDef.Create("mood.modify_thresholds", false, CVar.SERVER);
+
+    public static readonly CVarDef<bool> MoodVisualEffects =
+        CVarDef.Create("mood.visual_effects", false, CVar.CLIENTONLY | CVar.ARCHIVE);
 }

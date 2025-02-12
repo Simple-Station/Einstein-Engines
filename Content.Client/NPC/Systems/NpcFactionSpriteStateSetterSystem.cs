@@ -23,6 +23,10 @@ public sealed partial class NpcFactionSpriteStateSetterSystem : EntitySystem
             return;
 
         SpriteComponent spriteComponent = _entityManager.GetComponent<SpriteComponent>(entity);
-        spriteComponent.LayerSetState(0, new Robust.Client.Graphics.RSI.StateId(args.FactionID));
+
+        var rsi = spriteComponent.LayerGetActualRSI(0);
+
+        if(rsi != null && rsi.TryGetState(args.FactionID, out _))
+            spriteComponent.LayerSetState(0, new Robust.Client.Graphics.RSI.StateId(args.FactionID));
     }
 }

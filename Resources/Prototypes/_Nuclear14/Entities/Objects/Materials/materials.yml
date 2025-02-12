@@ -1,0 +1,60 @@
+# See specific/hydroponics for fertilizer.
+
+#MARK: Base
+- type: entity
+  abstract: true
+  parent: MaterialBase
+  id: N14MaterialBase
+  suffix: Full, 30
+  description: A raw material.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Objects/Misc/materials.rsi
+  - type: Material
+  - type: Appearance
+
+#MARK: Circuitry
+- type: entity
+  parent: N14MaterialBase
+  id: N14MaterialCircuitry
+  name: circuitry
+  suffix: Full
+  components:
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      Circuitry: 100
+  - type: Stack
+    stackType: Circuitry
+    baseLayer: base
+    layerStates:
+    - circuits
+    - circuits_2
+    - circuits_3
+    count: 15
+  - type: Sprite
+    state: circuits_3
+    layers:
+    - state: circuits_3
+      map: ["base"]
+  - type: Appearance
+
+- type: entity
+  parent: N14MaterialCircuitry
+  id: N14MaterialCircuitry10
+  suffix: 10
+  components:
+  - type: Sprite
+    state: circuits_2
+  - type: Stack
+    count: 10
+
+- type: entity
+  parent: N14MaterialCircuitry
+  id: N14MaterialCircuitry1
+  suffix: Single
+  components:
+  - type: Sprite
+    state: circuits
+  - type: Stack
+    count: 1
