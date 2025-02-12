@@ -70,5 +70,11 @@ namespace Content.Server.Shuttles.Components
         /// </summary>
         [DataField]
         public float SmimshDistance = 0.2f;
+
+        /// <summary>
+        ///     Whether or not the shuttle calls the DoTheDinosaur function upon FTL'ing. I'm not explaining this, you owe it to yourself to do a code search for it.
+        /// </summary>
+        [DataField]
+        public bool DoTheDinosaur = true;
     }
 }

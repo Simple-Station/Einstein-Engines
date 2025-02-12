@@ -381,7 +381,9 @@ public sealed partial class ShuttleSystem
         var uid = entity.Owner;
         var comp = entity.Comp1;
         var xform = _xformQuery.GetComponent(entity);
-        DoTheDinosaur(xform);
+
+        if (entity.Comp2.DoTheDinosaur)
+            DoTheDinosaur(xform);
 
         comp.State = FTLState.Travelling;
         var fromMapUid = xform.MapUid;
