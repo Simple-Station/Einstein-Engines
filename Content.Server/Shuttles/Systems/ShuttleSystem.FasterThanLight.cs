@@ -558,7 +558,7 @@ public sealed partial class ShuttleSystem
         comp.StateTime = StartEndTime.FromCurTime(_gameTiming, FTLCooldown);
         _console.RefreshShuttleConsoles(uid);
         _mapManager.SetMapPaused(mapId, false);
-        Smimsh(uid, xform: xform);
+        Smimsh(uid, xform: xform, smimshDistance: entity.Comp2.SmimshDistance);
 
         var ftlEvent = new FTLCompletedEvent(uid, _mapSystem.GetMap(mapId));
         RaiseLocalEvent(uid, ref ftlEvent, true);
@@ -959,7 +959,7 @@ public sealed partial class ShuttleSystem
     /// <summary>
     /// Flattens / deletes everything under the grid upon FTL.
     /// </summary>
-    private void Smimsh(EntityUid uid, FixturesComponent? manager = null, MapGridComponent? grid = null, TransformComponent? xform = null)
+    private void Smimsh(EntityUid uid, FixturesComponent? manager = null, MapGridComponent? grid = null, TransformComponent? xform = null, float smimshDistance = 0.2f)
     {
         if (!Resolve(uid, ref manager, ref grid, ref xform) || xform.MapUid == null)
             return;
@@ -981,7 +981,7 @@ public sealed partial class ShuttleSystem
 
             // Shift it slightly
             // Create a small border around it.
-            aabb = aabb.Enlarged(0.2f);
+            aabb = aabb.Enlarged(smimshDistance);
             aabbs.Add(aabb);
 
             // Handle clearing biome stuff as relevant.

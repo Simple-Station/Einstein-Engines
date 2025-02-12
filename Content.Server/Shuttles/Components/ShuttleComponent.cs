@@ -64,5 +64,11 @@ namespace Content.Server.Shuttles.Components
 
         [DataField("angularDamping"), ViewVariables(VVAccess.ReadWrite)]
         public float AngularDamping = 0.05f;
+
+        /// <summary>
+        ///     How far from the shuttle's bounding box will it crush and destroy things?
+        /// </summary>
+        [DataField]
+        public float SmimshDistance = 0.2f;
     }
 }
