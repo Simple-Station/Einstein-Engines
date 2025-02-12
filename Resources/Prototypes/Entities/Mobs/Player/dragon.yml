@@ -149,9 +149,13 @@
 - type: entity
   parent: BaseMobDragon
   id: MobDragon
+  suffix: No role or objectives
   components:
   - type: Dragon
     spawnRiftAction: ActionSpawnRift
+  - type: ActionGun
+    action: ActionDragonsBreath
+    gunProto: DragonsBreathGun
   - type: GuideHelp
     guides:
     - MinorAntagonists
