@@ -11637,3 +11637,10 @@ Entries:
   id: 6841
   time: '2025-02-12T18:51:09.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1772
+- author: Skubman
+  changes:
+    - type: Tweak
+      message: The Rouny sprite has been changed back into the old iconic sprite!
+  id: 6842
+  time: '2025-02-12T20:16:04.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1770
