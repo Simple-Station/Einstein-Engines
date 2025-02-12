@@ -11623,3 +11623,17 @@ Entries:
   id: 6840
   time: '2025-02-12T17:33:25.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1771
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Removed the following maps from rotation: Pebble, Edge, Tortuga, Arena,
+        Asterisk, Hive, Hammurabi, and Submarine. These maps aren't permanently
+        gone, they just won't appear in the map vote list. If you want to see
+        them return in an official capacity, and have any talent/desire for
+        mapping, feel free to submit a PR to give one of these maps the
+        attention and care it deserves. None of them have received any updates
+        in over a year.
+  id: 6841
+  time: '2025-02-12T18:51:09.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1772
