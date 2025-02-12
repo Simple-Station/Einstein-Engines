@@ -65,6 +65,13 @@
     prototype: Plasmaman
     requiredLegs: 2
     gibSound: /Audio/Effects/bone_rattle.ogg
+  - type: SpawnGasOnGib
+    gasMixture:
+      moles:
+      - 0   # oxygen
+      - 0   # nitrogen
+      - 0   # CO2
+      - 90  # plasma
   - type: Fixtures
     fixtures: # TODO: This needs a second fixture just for mob collisions.
       fix1:
@@ -93,6 +100,36 @@
     bloodMaxVolume: 0
   - type: Damageable
     damageModifierSet: Plasmaman
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 400
+      behaviors:
+      - !type:GibBehavior { }
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 1500
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawnInContainer: true
+        spawn:
+          Ash:
+            min: 1
+            max: 1
+      - !type:BurnBodyBehavior { }
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MeatLaserImpact
+      - !type:SpawnGasBehavior
+        gasMixture:
+          moles:
+          - 0   # oxygen
+          - 0   # nitrogen
+          - 0   # CO2
+          - 70  # plasma, lower than gas on gibbing
   - type: DamageVisuals
     damageOverlayGroups:
       Brute:
