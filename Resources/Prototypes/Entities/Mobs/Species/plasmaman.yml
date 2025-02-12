@@ -68,10 +68,10 @@
   - type: SpawnGasOnGib
     gasMixture:
       moles:
-      - 0   # oxygen
-      - 0   # nitrogen
-      - 0   # CO2
-      - 90  # plasma
+      - 0    # oxygen
+      - 0    # nitrogen
+      - 0    # CO2
+      - 100  # plasma
   - type: Fixtures
     fixtures: # TODO: This needs a second fixture just for mob collisions.
       fix1:
@@ -126,10 +126,10 @@
       - !type:SpawnGasBehavior
         gasMixture:
           moles:
-          - 0   # oxygen
-          - 0   # nitrogen
-          - 0   # CO2
-          - 70  # plasma, lower than gas on gibbing
+          - 0    # oxygen
+          - 0    # nitrogen
+          - 0    # CO2
+          - 80   # plasma, lower than gas on gibbing
   - type: DamageVisuals
     damageOverlayGroups:
       Brute:
