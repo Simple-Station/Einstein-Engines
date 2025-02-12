@@ -65,6 +65,18 @@
     prototype: Plasmaman
     requiredLegs: 2
     gibSound: /Audio/Effects/bone_rattle.ogg
+  - type: Fixtures
+    fixtures: # TODO: This needs a second fixture just for mob collisions.
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 160
+        restitution: 0.0
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
   - type: Bloodstream
     bloodlossThreshold: 0
     bleedReductionAmount: 0
