@@ -11611,3 +11611,15 @@ Entries:
   id: 6839
   time: '2025-02-12T14:56:04.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1763
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Saltern's generator room now correctly spawns with a crate containing
+        uranium fuel. As a reminder, Saltern is unique among all other maps in
+        that it is the only map which can be run on its solars alone. The
+        generators and generous battery backups are there to provide more than
+        adequate time to setup your choice of solars or supermatter. 
+  id: 6840
+  time: '2025-02-12T17:33:25.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1771
