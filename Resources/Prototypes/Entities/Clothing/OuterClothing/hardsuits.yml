@@ -278,13 +278,16 @@
 
 #Paramedic Voidsuit
 - type: entity
-  parent: [ClothingOuterHardsuitBase, BaseIntegratedMagboot, BaseIntegratedManeuveringThrusters]
+  parent: [ClothingOuterHardsuitBase, BaseIntegratedMagboot, BaseIntegratedManeuveringThrusters, BaseMedicalContraband]
   id: ClothingOuterHardsuitVoidParamed
   name: paramedic hardsuit
   description: A hardsuit made for paramedics.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/paramed.rsi
+    layers:
+    - state: icon
+  - type: Appearance
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/paramed.rsi
   - type: TemperatureProtection
@@ -307,6 +310,31 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitVoidParamed
+  - type: ItemToggle
+    onUse: false
+    soundActivate:
+      path: /Audio/Items/flashlight_on.ogg
+    soundDeactivate:
+      path: /Audio/Items/flashlight_off.ogg
+  - type: ItemToggleActiveSound
+    activeSound:
+      path: /Audio/Effects/Vehicle/ambulancesiren.ogg #not the best sound, but after looking through all of current freesound regarding sirens and ambulance, this was the best compromise
+      params:
+        volume: -4
+  - type: UseDelay
+    delay: 1.0
+  - type: ToggleClothing
+    action: ActionToggleParamedicSiren
+  - type: ItemTogglePointLight
+  - type: PointLight
+    enabled: false
+    radius: 2
+    energy: 2
+    color: blue
+    netsync: false
+    mask: /Textures/Effects/LightMasks/double_cone.png
+  - type: RotatingLight
+    speed: 360
   - type: GuideHelp
     guides: [ ZengHuPharmaceuticals ]
 
