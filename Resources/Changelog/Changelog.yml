@@ -11655,3 +11655,20 @@ Entries:
   id: 6843
   time: '2025-02-13T02:40:00.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1774
+- author: Skubman
+  changes:
+    - type: Tweak
+      message: >-
+        Plasmamen now have a slightly lower density and thus lower weight than
+        the average species (this is a nerf).
+    - type: Tweak
+      message: >-
+        Plasmamen have their Slash resist increased from 15% to 20%, and their
+        Piercing resist increased from 25% to 40% (this is a buff).
+    - type: Tweak
+      message: >-
+        The cost of the envirosuit extinguisher refill in Loadouts has been
+        reduced from 5 points to 4 points.
+  id: 6844
+  time: '2025-02-13T03:21:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1769
