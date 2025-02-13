@@ -1,4 +1,4 @@
-﻿using Content.Shared.Whitelist;
+using Content.Shared.Whitelist;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 
@@ -25,6 +25,10 @@ public sealed partial class EntityTargetActionComponent : BaseTargetActionCompon
     /// <remarks>No whitelist check when null.</remarks>
     [DataField] public EntityWhitelist? Whitelist;
 
+    /// <summary>
+    /// Determines which entities are NOT valid targets for this action.
+    /// </summary>
+    /// <remarks>No blacklist check when null.</remarks>
     [DataField] public EntityWhitelist? Blacklist;
 
     /// <summary>
