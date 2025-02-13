@@ -62,6 +62,8 @@
       collection: HarpySqueak
     HarpyCaw:
       collection: HarpyCaws
+    HarpyHoot:
+      collection: HarpyHoots
     Chirp:
       collection: HarpyChirps
     Snarl:

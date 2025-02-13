@@ -43,6 +43,12 @@
         - TrayScanner
         - GasAnalyzer
         - HandLabeler
+        - RemoteSignaller
+        - RemoteSignallerAdvanced
+        - AnomalyScanner
+        - AnomalyLocatorUnpowered
+        - AnomalyLocatorWideUnpowered
+        - NodeScanner
   - type: ItemMapper
     mapLayers:
       drill:
