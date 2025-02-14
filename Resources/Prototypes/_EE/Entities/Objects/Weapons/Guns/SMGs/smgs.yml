@@ -20,8 +20,8 @@
     soundGunshot:
       path: /Audio/_EE/Weapons/Guns/Gunshots/pp90-suppressed-gunshot.ogg
       params:
-        volume: -1
-        maxDistance: 12
+        volume: -3
+        maxDistance: 8
         rolloffFactor: 1.2
     availableModes:
       - Burst
