@@ -11706,3 +11706,10 @@ Entries:
   id: 6846
   time: '2025-02-13T03:32:25.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1768
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: reenabled war ops
+  id: 6847
+  time: '2025-02-14T01:09:58.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1776
