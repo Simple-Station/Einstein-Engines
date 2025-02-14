@@ -49,7 +49,6 @@ namespace Content.Server.Shuttles.Components
         /// <summary>
         ///     Tracks whether or not the above "One way trip" has been taken.
         /// </summary>
-        [DataField]
         public bool OneWayTripTaken;
     }
 }
