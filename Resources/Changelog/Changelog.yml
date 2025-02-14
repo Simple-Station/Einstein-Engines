@@ -11752,3 +11752,14 @@ Entries:
   id: 6852
   time: '2025-02-14T19:14:37.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1778
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: >-
+        Added disposable syringes! These cheaper, quicker-to-produce syringes
+        let Chemists pick dosages while preparing medicine so that doctors can
+        inject without worrying about volume, but the syringes cannot be used
+        more than once.
+  id: 6853
+  time: '2025-02-14T22:56:04.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1775
