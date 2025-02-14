@@ -11644,3 +11644,72 @@ Entries:
   id: 6842
   time: '2025-02-12T20:16:04.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1770
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Shuttles can now take off and land from planet surfaces. They however
+        will still respect exclusion zone beacons set by stations. Maybe in the
+        future there might be a special shuttle (drop pod) that is set to ignore
+        these exclusion zones.
+  id: 6843
+  time: '2025-02-13T02:40:00.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1774
+- author: Skubman
+  changes:
+    - type: Tweak
+      message: >-
+        Plasmamen now have a slightly lower density and thus lower weight than
+        the average species (this is a nerf).
+    - type: Tweak
+      message: >-
+        Plasmamen have their Slash resist increased from 15% to 20%, and their
+        Piercing resist increased from 25% to 40% (this is a buff).
+    - type: Tweak
+      message: >-
+        The cost of the envirosuit extinguisher refill in Loadouts has been
+        reduced from 5 points to 4 points.
+  id: 6844
+  time: '2025-02-13T03:21:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1769
+- author: The Den Contributors
+  changes:
+    - type: Add
+      message: Added a Trooper Uniform and Hat for Security use. (by Rosycup)
+    - type: Add
+      message: Harpies have gained the ability to hoot. (by KyuPolaris)
+    - type: Add
+      message: Added ability for Arachne to produce silk. (by KyuPolaris)
+    - type: Tweak
+      message: >-
+        Tweaked tool belts to take more tools and mantis belts to be able to fit
+        certain epistemics tools. (by Rosycup)
+    - type: Add
+      message: >-
+        Hopping, that's it. *hop and *hops now triggers the jump emote. (by
+        KyuPolaris)
+    - type: Fix
+      message: >-
+        Shadowkin are now able to select Psionic Power traits without taking the
+        Latent Psychic trait. (by Rosycup)
+  id: 6845
+  time: '2025-02-13T03:23:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1773
+- author: GNUtopia
+  changes:
+    - type: Add
+      message: Added .20 rifle rubber ammo box to bartender loadout
+    - type: Add
+      message: >-
+        Added age requirement to Argenti, repeater rifle, .45 magnum rubber ammo
+        box
+  id: 6846
+  time: '2025-02-13T03:32:25.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1768
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: reenabled war ops
+  id: 6847
+  time: '2025-02-14T01:09:58.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1776

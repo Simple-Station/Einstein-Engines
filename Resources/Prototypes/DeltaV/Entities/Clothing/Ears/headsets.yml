@@ -54,7 +54,6 @@
     containers:
       key_slots:
       - EncryptionKeyJustice
-      - EncryptionKeyPrison
       - EncryptionKeySecurity
       - EncryptionKeyCommon
   - type: Sprite
@@ -73,7 +72,6 @@
     containers:
       key_slots:
       - EncryptionKeyJustice
-      - EncryptionKeyPrison
       - EncryptionKeySecurity
       - EncryptionKeyCommon
       - EncryptionKeyCommand
