@@ -22,6 +22,8 @@
   - WeaponEnergyGunPistol
   - WeaponDisablerSMG
   - Truncheon
+  - WeaponDisabler
+  - WeaponMechCombatDisabler # Goobstation
   #- WeaponPistolMk58 #todo: Add a bunch of basic ballistic guns to the list and make lathe recipes for them.
   - MechEquipmentKineticAccelerator # Goobstation
   # These are roundstart but not replenishable for salvage
@@ -51,43 +53,6 @@
   - MagazineBoxRifleIncendiary
   - CartridgeSpecialIncendiary
   - MagazineBoxSpecialIncendiary
-
-- type: technology
-  id: NonlethalAmmunition
-  name: research-technology-nonlethal-ammunition
-  icon:
-    sprite: Objects/Weapons/Guns/Ammunition/Casings/shotgun_shell.rsi
-    state: beanbag
-  discipline: Arsenal
-  tier: 1
-  cost: 5000
-  recipeUnlocks:
-  - MagazineShotgunBeanbag
-  - ShellTranquilizer
-  - BoxBeanbag
-  - CartridgePistolRubber
-  - CartridgeMagnumRubber
-  - CartridgeLightRifleRubber
-  - CartridgeRifleRubber
-  - MagazineRifleRubber
-  - MagazinePistolRubber
-  - MagazinePistolSubMachineGunRubber
-  - MagazineMagnumRubber
-  - MagazineLightRifleRubber
-  - SpeedLoaderMagnumRubber
-  - MagazineBoxPistolRubber
-  - MagazineBoxMagnumRubber
-  - MagazineBoxLightRifleRubber
-  - MagazineBoxRifleRubber
-  - CartridgeSpecialRubber
-  - MagazineBoxSpecialRubber
-  - WeaponDisabler
-  - MagazineBoxLightRifleRubber # Frontier
-  - MagazineBoxMagnumRubber # Frontier
-  - MagazineBoxPistolRubber # Frontier
-  - MagazineBoxRifleRubber # Frontier
-  - SpeedLoaderRifleHeavyRubber
-  - WeaponMechCombatDisabler # Goobstation
 
 - type: technology
   id: UraniumMunitions
