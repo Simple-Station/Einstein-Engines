@@ -92,13 +92,22 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
-        - Borg
+       - Borg
         - MedicalBorg
         - Mime
   functions:
     - !type:TraitAddComponent
       components:
-        - type: Muted
+      - type: Muted
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+      - Sign
+      languagesUnderstood:
+      - Sign
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+      - SignLanguage
 
 - type: trait
   id: Uncloneable
