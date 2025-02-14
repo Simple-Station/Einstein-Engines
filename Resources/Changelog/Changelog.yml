@@ -11722,3 +11722,12 @@ Entries:
   id: 6848
   time: '2025-02-14T19:00:16.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1786
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Nonlethal Ammunition research has been removed. Instead Security
+        Techfabs can manufacture rubber bullets at roundstart.
+  id: 6849
+  time: '2025-02-14T19:02:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1784
