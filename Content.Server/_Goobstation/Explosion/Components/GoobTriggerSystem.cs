@@ -17,6 +17,9 @@ public sealed partial class GoobTriggerSystem : EntitySystem
         if (!TryComp<TransformComponent>(entity, out var xform))
             return;
 
+        if (HasComp<MapComponent>(xform.ParentUid))
+            return;
+            
         EntityManager.QueueDeleteEntity(xform.ParentUid);
         args.Handled = true;
     }
