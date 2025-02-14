@@ -20,7 +20,7 @@ public sealed partial class FillableOneTimeInjectorComponent : Component
     ///     The minimum amount of solution that can be transferred at once from this solution.
     /// </summary>
     [DataField("minTransferAmount")]
-    public FixedPoint2 MinimumTransferAmount = FixedPoint2.New(5);
+    public FixedPoint2 MinimumTransferAmount = FixedPoint2.New(1);
 
     /// <summary>
     ///     The maximum amount of solution that can be transferred at once from this solution.
@@ -34,7 +34,7 @@ public sealed partial class FillableOneTimeInjectorComponent : Component
     /// </summary>
     [DataField]
     [AutoNetworkedField]
-    public FixedPoint2 TransferAmount = FixedPoint2.New(5);
+    public FixedPoint2 TransferAmount = FixedPoint2.New(1);
 
     /// <summary>
     /// Injection delay (seconds) when the target is a mob.
