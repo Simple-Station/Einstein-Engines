@@ -11713,3 +11713,12 @@ Entries:
   id: 6847
   time: '2025-02-14T01:09:58.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1776
+- author: Erisfiregamer1
+  changes:
+    - type: Add
+      message: >-
+        New chemical, Sedin. It restores seeds on plants 20% of the time with
+        other adverse effects included.
+  id: 6848
+  time: '2025-02-14T19:00:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1786
