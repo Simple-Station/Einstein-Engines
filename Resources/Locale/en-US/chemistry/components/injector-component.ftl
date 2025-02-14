@@ -14,6 +14,7 @@ onetime-injector-simple-volume-label = Volume: [color=white]{$currentVolume}[/co
 
 injector-component-drawing-text = Now drawing
 injector-component-injecting-text = Now injecting
+injector-component-injecting-locked-text = Locked to inject
 injector-component-cannot-transfer-message = You aren't able to transfer to {$target}!
 injector-component-cannot-draw-message = You aren't able to draw from {$target}!
 injector-component-cannot-inject-message = You aren't able to inject to {$target}!

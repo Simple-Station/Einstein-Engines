@@ -47,38 +47,38 @@ public sealed class FillableOneTimeInjectorStatusControl : Control
         var modeStringLocalized = "";
 
         // only updates the UI if any of the details are different than they previously were
-            if(PrevToggleStateIndex == _parent.Comp.ToggleState)
-                return;
+        if(PrevToggleStateIndex == _parent.Comp.ToggleState)
+            return;
 
-            PrevToggleStateIndex = _parent.Comp.ToggleState;
+        PrevToggleStateIndex = _parent.Comp.ToggleState;
 
-            // Update current volume and injector state
-            modeStringLocalized = Loc.GetString(
-                _parent.Comp.ToggleState switch
-                {
-                    FillableOneTimeInjectorToggleMode.Draw => "injector-draw-text",
-                    FillableOneTimeInjectorToggleMode.Inject => "injector-inject-text",
-                    FillableOneTimeInjectorToggleMode.Spent => "injector-spent-text",
-                    _ => "injector-invalid-injector-toggle-mode"
-                });
-
-            if (_parent.Comp.ToggleState != FillableOneTimeInjectorToggleMode.Draw)
+        // Update current volume and injector state
+        modeStringLocalized = Loc.GetString(
+            _parent.Comp.ToggleState switch
             {
-                _label.SetMarkup(
-                    Loc.GetString(
-                        "onetime-injector-simple-volume-label",
-                        ("currentVolume", solution.Volume),
-                        ("modeString", modeStringLocalized)));
-            }
-            else
-            {
-                _label.SetMarkup(
-                    Loc.GetString(
-                        "injector-volume-label",
-                        ("currentVolume", solution.Volume),
-                        ("totalVolume", solution.MaxVolume),
-                        ("modeString", modeStringLocalized),
-                        ("transferVolume", _parent.Comp.TransferAmount)));
-            }
+                FillableOneTimeInjectorToggleMode.Draw => "injector-draw-text",
+                FillableOneTimeInjectorToggleMode.Inject => "injector-inject-text",
+                FillableOneTimeInjectorToggleMode.Spent => "injector-spent-text",
+                _ => "injector-invalid-injector-toggle-mode"
+            });
+
+        if (_parent.Comp.ToggleState != FillableOneTimeInjectorToggleMode.Draw)
+        {
+            _label.SetMarkup(
+                Loc.GetString(
+                    "onetime-injector-simple-volume-label",
+                    ("currentVolume", solution.Volume),
+                    ("modeString", modeStringLocalized)));
+        }
+        else
+        {
+            _label.SetMarkup(
+                Loc.GetString(
+                    "injector-volume-label",
+                    ("currentVolume", solution.Volume),
+                    ("totalVolume", solution.MaxVolume),
+                    ("modeString", modeStringLocalized),
+                    ("transferVolume", _parent.Comp.TransferAmount)));
+        }
     }
 }

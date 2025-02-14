@@ -337,8 +337,12 @@ public sealed class FillableOneTimeInjectorSystem : SharedFillableOneTimeInjecto
     private void AfterInject(Entity<FillableOneTimeInjectorComponent> injector, EntityUid target)
     {
         // Automatically set syringe to draw after draining it.
-        SetMode(injector, FillableOneTimeInjectorToggleMode.Spent);
-
+        if (SolutionContainers.TryGetSolution(injector.Owner, injector.Comp.SolutionName, out var user,
+                out var solution) && solution.Volume == 0)
+        {
+            SetMode(injector, FillableOneTimeInjectorToggleMode.Spent);
+            Popup.PopupClient(Loc.GetString("injector-spent-text"), injector, user);
+        }
         // Leave some DNA from the injectee on it
         var ev = new TransferDnaEvent { Donor = target, Recipient = injector };
         RaiseLocalEvent(target, ref ev);
@@ -346,8 +350,13 @@ public sealed class FillableOneTimeInjectorSystem : SharedFillableOneTimeInjecto
 
     private void AfterDraw(Entity<FillableOneTimeInjectorComponent> injector, EntityUid target)
     {
-        // Automatically set syringe to inject after filling it.
-        SetMode(injector, FillableOneTimeInjectorToggleMode.Inject);
+        // Automatically set syringe to inject after filling it completely.
+        if (SolutionContainers.TryGetSolution(injector.Owner, injector.Comp.SolutionName, out var user,
+                out var solution) && solution.AvailableVolume == 0)
+        {
+            SetMode(injector, FillableOneTimeInjectorToggleMode.Inject);
+            Popup.PopupClient(Loc.GetString("injector-component-injecting-locked-text"), injector, user);
+        }
 
         // Leave some DNA from the drawee on it
         var ev = new TransferDnaEvent { Donor = target, Recipient = injector };

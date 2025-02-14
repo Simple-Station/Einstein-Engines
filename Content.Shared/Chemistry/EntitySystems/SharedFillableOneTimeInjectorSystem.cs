@@ -13,11 +13,6 @@ namespace Content.Shared.Chemistry.EntitySystems;
 
 public abstract class SharedFillableOneTimeInjectorSystem : EntitySystem
 {
-    /// <summary>
-    ///     Default transfer amounts for the set-transfer verb.
-    /// </summary>
-    public static readonly FixedPoint2[] TransferAmounts = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
-
     [Dependency] protected readonly SharedPopupSystem Popup = default!;
     [Dependency] protected readonly SharedSolutionContainerSystem SolutionContainers = default!;
     [Dependency] protected readonly MobStateSystem MobState = default!;
@@ -29,6 +24,7 @@ public abstract class SharedFillableOneTimeInjectorSystem : EntitySystem
     {
         SubscribeLocalEvent<FillableOneTimeInjectorComponent, GetVerbsEvent<AlternativeVerb>>(AddSetTransferVerbs);
         SubscribeLocalEvent<FillableOneTimeInjectorComponent, ComponentStartup>(OnInjectorStartup);
+        SubscribeLocalEvent<FillableOneTimeInjectorComponent, UseInHandEvent>(OnInjectorUse);
     }
 
     private void AddSetTransferVerbs(Entity<FillableOneTimeInjectorComponent> entity, ref GetVerbsEvent<AlternativeVerb> args)
@@ -64,19 +60,17 @@ public abstract class SharedFillableOneTimeInjectorSystem : EntitySystem
         priority -= 1;
 
         // Add specific transfer verbs according to the container's size
-        foreach (var amount in TransferAmounts)
+        for (var amount = entity.Comp.MinimumTransferAmount; amount <= entity.Comp.MaximumTransferAmount; amount += 1)
         {
-            if (amount < component.MinimumTransferAmount || amount > component.MaximumTransferAmount)
-                continue;
-
+            var transferAmount = amount;
             AlternativeVerb verb = new()
             {
                 Text = Loc.GetString("comp-solution-transfer-verb-amount", ("amount", amount)),
                 Category = VerbCategory.SetTransferAmount,
                 Act = () =>
                 {
-                    component.TransferAmount = amount;
-                    Popup.PopupClient(Loc.GetString("comp-solution-transfer-set-amount", ("amount", amount)), user, user);
+                    component.TransferAmount = transferAmount;
+                    Popup.PopupClient(Loc.GetString("comp-solution-transfer-set-amount", ("amount", transferAmount)), user, user);
                     Dirty(entity);
                 },
 
@@ -88,6 +82,15 @@ public abstract class SharedFillableOneTimeInjectorSystem : EntitySystem
 
             args.Verbs.Add(verb);
         }
+    }
+
+    private void OnInjectorUse(Entity<FillableOneTimeInjectorComponent> entity, ref UseInHandEvent args)
+    {
+        if (args.Handled || entity.Comp.ToggleState != FillableOneTimeInjectorToggleMode.Draw)
+            return;
+
+        SetMode(entity, FillableOneTimeInjectorToggleMode.Inject);
+        args.Handled = true;
     }
 
     private void OnInjectorStartup(Entity<FillableOneTimeInjectorComponent> entity, ref ComponentStartup args)
