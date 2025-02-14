@@ -11611,3 +11611,105 @@ Entries:
   id: 6839
   time: '2025-02-12T14:56:04.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1763
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Saltern's generator room now correctly spawns with a crate containing
+        uranium fuel. As a reminder, Saltern is unique among all other maps in
+        that it is the only map which can be run on its solars alone. The
+        generators and generous battery backups are there to provide more than
+        adequate time to setup your choice of solars or supermatter. 
+  id: 6840
+  time: '2025-02-12T17:33:25.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1771
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Removed the following maps from rotation: Pebble, Edge, Tortuga, Arena,
+        Asterisk, Hive, Hammurabi, and Submarine. These maps aren't permanently
+        gone, they just won't appear in the map vote list. If you want to see
+        them return in an official capacity, and have any talent/desire for
+        mapping, feel free to submit a PR to give one of these maps the
+        attention and care it deserves. None of them have received any updates
+        in over a year.
+  id: 6841
+  time: '2025-02-12T18:51:09.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1772
+- author: Skubman
+  changes:
+    - type: Tweak
+      message: The Rouny sprite has been changed back into the old iconic sprite!
+  id: 6842
+  time: '2025-02-12T20:16:04.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1770
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Shuttles can now take off and land from planet surfaces. They however
+        will still respect exclusion zone beacons set by stations. Maybe in the
+        future there might be a special shuttle (drop pod) that is set to ignore
+        these exclusion zones.
+  id: 6843
+  time: '2025-02-13T02:40:00.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1774
+- author: Skubman
+  changes:
+    - type: Tweak
+      message: >-
+        Plasmamen now have a slightly lower density and thus lower weight than
+        the average species (this is a nerf).
+    - type: Tweak
+      message: >-
+        Plasmamen have their Slash resist increased from 15% to 20%, and their
+        Piercing resist increased from 25% to 40% (this is a buff).
+    - type: Tweak
+      message: >-
+        The cost of the envirosuit extinguisher refill in Loadouts has been
+        reduced from 5 points to 4 points.
+  id: 6844
+  time: '2025-02-13T03:21:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1769
+- author: The Den Contributors
+  changes:
+    - type: Add
+      message: Added a Trooper Uniform and Hat for Security use. (by Rosycup)
+    - type: Add
+      message: Harpies have gained the ability to hoot. (by KyuPolaris)
+    - type: Add
+      message: Added ability for Arachne to produce silk. (by KyuPolaris)
+    - type: Tweak
+      message: >-
+        Tweaked tool belts to take more tools and mantis belts to be able to fit
+        certain epistemics tools. (by Rosycup)
+    - type: Add
+      message: >-
+        Hopping, that's it. *hop and *hops now triggers the jump emote. (by
+        KyuPolaris)
+    - type: Fix
+      message: >-
+        Shadowkin are now able to select Psionic Power traits without taking the
+        Latent Psychic trait. (by Rosycup)
+  id: 6845
+  time: '2025-02-13T03:23:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1773
+- author: GNUtopia
+  changes:
+    - type: Add
+      message: Added .20 rifle rubber ammo box to bartender loadout
+    - type: Add
+      message: >-
+        Added age requirement to Argenti, repeater rifle, .45 magnum rubber ammo
+        box
+  id: 6846
+  time: '2025-02-13T03:32:25.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1768
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: reenabled war ops
+  id: 6847
+  time: '2025-02-14T01:09:58.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1776

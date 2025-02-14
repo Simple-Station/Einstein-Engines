@@ -116,8 +116,8 @@
     pocket1: DoubleEmergencyOxygenTankFilled
     pocket2: BaseUplinkRadio40TC
     belt: ClothingBeltMilitaryWebbing
-  #inhand: # DeltaV - Prevent commander spawning with the declaration of war
-  #  - NukeOpsDeclarationOfWar
+  inhand:
+    - NukeOpsDeclarationOfWar
   innerClothingSkirt: ClothingUniformJumpskirtOperative
   satchel: ClothingBackpackDuffelSyndicateOperative
   duffelbag: ClothingBackpackDuffelSyndicateOperative
