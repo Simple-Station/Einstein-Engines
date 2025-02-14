@@ -218,7 +218,7 @@
 - type: listing
   id: UplinkFPApp90Bundle
   name: uplink-fpa-pp90-bundle-name
-  description: uplink-fpa-pp20-bundle-desc
+  description: uplink-fpa-pp90-bundle-desc
   icon: { sprite: /Textures/_EE/Objects/Weapons/Guns/SMGs/pp90.rsi, state: icon }
   productEntity: ClothingBackpackDuffelSyndicateFilledFPApp90
   discountCategory: veryRareDiscounts
