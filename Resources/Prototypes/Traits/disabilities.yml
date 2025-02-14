@@ -1,183 +1,148 @@
+---
 - type: trait
   id: Blindness
   category: Visual
   points: 10
   requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
+    - inverted: true
       jobs:
         - Borg
         - MedicalBorg
-    - !type:CharacterTraitRequirement
-      inverted: true
+    - inverted: true
       traits:
         - Photophobia
         - Nearsighted
         - CyberEyes
   functions:
-    - !type:TraitAddComponent
-      components:
+    - components:
         - type: PermanentBlindness
-
 - type: trait
   id: Nearsighted
   category: Visual
   points: 1
   requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
+    - inverted: true
       jobs:
         - Borg
         - MedicalBorg
-    - !type:CharacterTraitRequirement
-      inverted: true
+    - inverted: true
       traits:
         - Blindness
         - CyberEyes
   functions:
-    - !type:TraitAddComponent
-      components:
+    - components:
         - type: PermanentBlindness
           blindness: 4
-
 - type: trait
   id: Narcolepsy
   category: Mental
   points: 2
   requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
+    - inverted: true
       jobs:
         - Borg
         - MedicalBorg
-    - !type:CharacterSpeciesRequirement
-      inverted: true
+    - inverted: true
       species:
         - IPC
   functions:
-    - !type:TraitAddComponent
-      components:
-      - type: Narcolepsy
-        timeBetweenIncidents: 300, 600
-        durationOfIncident: 10, 30
-
+    - components:
+        - type: Narcolepsy
+          timeBetweenIncidents: 300, 600
+          durationOfIncident: 10, 30
 - type: trait
   id: Pacifist
   category: Mental
   points: 6
   functions:
-    - !type:TraitAddComponent
-      components:
+    - components:
         - type: Pacified
-
 - type: trait
   id: Paracusia
   category: Auditory
   points: 2
   functions:
-    - !type:TraitAddComponent
-      components:
+    - components:
         - type: Paracusia
           minTimeBetweenIncidents: 0.1
           maxTimeBetweenIncidents: 300
           maxSoundDistance: 7
           sounds:
             collection: Paracusia
-
 - type: trait
   id: Muted
   category: Mental
   points: 4
   requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
+    - inverted: true
       jobs:
-       - Borg
+        - Borg
         - MedicalBorg
         - Mime
   functions:
-    - !type:TraitAddComponent
-      components:
-      - type: Muted
-    - !type:TraitModifyLanguages
-      languagesSpoken:
-      - Sign
+    - components:
+        - type: Muted
+    - languagesSpoken:
+        - Sign
       languagesUnderstood:
-      - Sign
-    - !type:CharacterTraitRequirement
-      inverted: true
+        - Sign
+    - inverted: true
       traits:
-      - SignLanguage
-
+        - SignLanguage
 - type: trait
   id: Uncloneable
   category: Physical
   points: 1
   requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
+    - inverted: true
       jobs:
         - Borg
         - MedicalBorg
   functions:
-    - !type:TraitAddComponent
-      components:
+    - components:
         - type: Uncloneable
-
 - type: trait
   id: FrontalLisp
   category: TraitsSpeechAccents
   requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
+    - inverted: true
       jobs:
         - Borg
         - MedicalBorg
-    - !type:CharacterSpeciesRequirement
-      inverted: true
+    - inverted: true
       species:
         - IPC
-    - !type:CharacterItemGroupRequirement
-      group: TraitsAccents
+    - group: TraitsAccents
   functions:
-    - !type:TraitAddComponent
-      components:
+    - components:
         - type: FrontalLisp
-
 - type: trait
   id: Snoring
   category: Auditory
   requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
+    - inverted: true
       jobs:
         - Borg
         - MedicalBorg
-    - !type:CharacterSpeciesRequirement
-      inverted: true
+    - inverted: true
       species:
         - IPC
   functions:
-    - !type:TraitAddComponent
-      components:
+    - components:
         - type: Snoring
-
 - type: trait
   id: BadKnees
   category: Physical
   points: 3
   requirements:
-    - !type:CharacterTraitRequirement
-      inverted: true
+    - inverted: true
       traits:
         - ParkourTraining
-    - !type:CharacterSpeciesRequirement
-      inverted: true
+    - inverted: true
       species:
         - Diona
   functions:
-    - !type:TraitAddComponent
-      components:
+    - components:
         - type: ClimbDelayModifier
           climbDelayMultiplier: 1.5
         - type: SlippableModifier
@@ -185,138 +150,114 @@
         - type: SpeedModifiedByContactModifier
           walkModifierEffectiveness: 1.35
           sprintModifierEffectiveness: 1.35
-
 - type: trait
   id: Sluggish
   category: Physical
   points: 3
   requirements:
-    - !type:CharacterTraitRequirement
-      inverted: true
+    - inverted: true
       traits:
         - ParkourTraining
         - SnailPaced
-    - !type:CharacterSpeciesRequirement
-      inverted: true
+    - inverted: true
       species:
         - Diona
   functions:
-    - !type:TraitAddComponent
-      components:
+    - components:
         - type: TraitSpeedModifier
           sprintModifier: 0.84
           walkModifier: 0.84
           requiredTriggeredSpeedModifier: 0.84
-
 - type: trait
   id: SnailPaced
   category: Physical
   points: 5
   requirements:
-    - !type:CharacterTraitRequirement
-      inverted: true
+    - inverted: true
       traits:
         - ParkourTraining
         - Sluggish
-    - !type:CharacterSpeciesRequirement
-      inverted: true
+    - inverted: true
       species:
         - Diona
   functions:
-    - !type:TraitAddComponent
-      components:
+    - components:
         - type: TraitSpeedModifier
           sprintModifier: 0.68
           walkModifier: 0.68
-          requiredTriggeredSpeedModifier: 0.68 # Still slip against normal slips with the new sprint speed
-
+          requiredTriggeredSpeedModifier: 0.68
 - type: trait
   id: BloodDeficiency
   category: Physical
   points: 5
   requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
+    - inverted: true
       jobs:
         - Borg
         - MedicalBorg
-    - !type:CharacterSpeciesRequirement
-      inverted: true
+    - inverted: true
       species:
         - IPC
         - Lamia
         - Plasmaman
   functions:
-    - !type:TraitAddComponent
-      components:
-        - type: BloodDeficiency # By default, start taking bloodloss damage at around ~21.4 minutes,
-          bloodLossPercentage: 0.0002333333  # then become crit ~10 minutes
-
+    - components:
+        - type: BloodDeficiency
+          bloodLossPercentage: 0.0002333333
 - type: trait
   id: Hemophilia
   category: Physical
   points: 2
   requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
+    - inverted: true
       jobs:
         - Borg
         - MedicalBorg
-    - !type:CharacterSpeciesRequirement
-      inverted: true
+    - inverted: true
       species:
         - IPC
         - Lamia
         - Plasmaman
   functions:
-    - !type:TraitAddComponent
-      components:
+    - components:
         - type: Hemophilia
           bleedReductionModifier: 0.5
           damageModifiers:
             coefficients:
               Blunt: 1.1
-
 - type: trait
   id: Photophobia
   category: Visual
   points: 1
   requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
+    - inverted: true
       species:
-        - Vulpkanin # This trait functions exactly as-is for the Vulpkanin trait.
+        - Vulpkanin
         - Shadowkin
-    - !type:CharacterTraitRequirement
-      inverted: true
+    - inverted: true
       traits:
         - Blindness
         - CyberEyes
   functions:
-    - !type:TraitReplaceComponent
-      components:
+    - components:
         - type: Flashable
           eyeDamageChance: 0.3
           eyeDamage: 1
           durationMultiplier: 1.5
-
 - type: trait
   id: Clumsy
   category: Physical
   points: 1
   requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
+    - inverted: true
       jobs:
-        - Clown # This trait functions exactly as is for the Clown's trait.
-    - !type:CharacterDepartmentRequirement
-      inverted: true
+        - Clown
+    - inverted: true
       departments:
-        - Command # Because I know for a fact people will play Captain and grief with their inability to fight back.
-        - Security # Because I know for a fact people will play Security and grief with their inability to use guns.
+        - Command
+        - Security
   functions:
-    - !type:TraitAddComponent
-      components:
+    - components:
         - type: Clumsy
           gunShootFailDamage:
             types:
