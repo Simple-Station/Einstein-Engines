@@ -328,6 +328,46 @@
     sprite: Objects/Specific/Chemistry/dropper.rsi
 
 - type: entity
+  name: disposable syringe
+  parent: BaseItem
+  description: Used to inject mobs with controlled dosages of specific reagents. One-time use.
+  id: DisposableSyringe
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Chemistry/disposablesyringe.rsi
+    layers:
+      - state: syringe1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+      - state: syringe_base0
+        map: ["enum.SolutionContainerLayers.Base"]
+  - type: Icon
+    sprite: Objects/Specific/Chemistry/disposablesyringe.rsi
+    state: "syringe_base0"
+  - type: Item
+    size: Tiny
+    sprite: Objects/Specific/Chemistry/disposablesyringe.rsi
+  - type: SolutionContainerManager
+    solutions:
+      injector:
+        maxVol: 15
+  - type: FillableOneTimeInjector
+    transferAmount: 15
+    toggleState: Draw
+  - type: ExaminableSolution
+    solution: injector
+  - type: Spillable
+    solution: injector
+  - type: TrashOnSolutionEmpty
+    solution: injector
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: syringe
+    inHandsMaxFillLevels: 3
+    inHandsFillBaseName: -fill-
+
+- type: entity
   name: syringe
   parent: BaseItem
   description: Used to draw blood samples from mobs, or to inject them with reagents.
