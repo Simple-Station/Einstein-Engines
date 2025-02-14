@@ -1,0 +1,55 @@
+- type: entity
+  name: FPA-pp90 sub machine gun
+  parent: BaseWeaponPistol
+  id: WeaponSubMachineGunFPApp90
+  description: It's a cheap piece of shit made by a company well known for cheap guns, but at least you don't need hearing protection while using it. It fires .25 caseless.
+  components:
+  - type: Sprite
+    sprite: _EE/Objects/Weapons/Guns/SMGs/pp90.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Gun
+    fireRate: 20
+    burstFireRate: 20
+    shotsPerBurst: 3
+    burstCooldown: 1.5
+    selectedMode: Burst
+    soundGunshot:
+      path: /Audio/_EE/Weapons/Guns/Gunshots/pp90-suppressed-gunshot.ogg
+      params:
+        volume: -1
+        maxDistance: 12
+        rolloffFactor: 1.2
+    availableModes:
+      - Burst
+    fireOnDropChance: 1
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineCaselessRifle
+        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineCaselessRifle
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeCaselessRifle
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeCaselessRifle
+  - type: Appearance
+  - type: StaticPrice
+    price: 200
+  - type: Item
+    size: Large

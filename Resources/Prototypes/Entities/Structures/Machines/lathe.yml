@@ -242,6 +242,8 @@
     - SpeedLoaderMagnum
     - SpeedLoaderMagnumEmpty
     - MagazinePistolCaselessRifle # Goobstation
+    - MagazineCaselessRifleShort # EE
+    - MagazineCaselessRifle # EE
     - MagazineBoxCaselessRifle # Goobstation
     - MagazineMagnumEmpty # Goobstation
     - MagazineMagnum # Goobstation
@@ -904,6 +906,10 @@
       - MagazinePistolSubMachineGunEmpty
       - MagazinePistolSubMachineGunTopMounted
       - MagazinePistolSubMachineGunTopMountedEmpty
+      - MagazinePistolCaselessRifle # EE
+      - MagazineCaselessRifleShort # EE
+      - MagazineCaselessRifle # EE
+      - MagazineBoxCaselessRifle # EE
       - MagazineMagnum
       - MagazineMagnumEmpty
       - MagazineRifle
@@ -1068,6 +1074,7 @@
       - EnergySword
       - EnergySwordDouble
       - EnergyCutlass
+      - WeaponSubMachineGunFPApp90
   - type: MaterialStorage
     whitelist:
       tags:

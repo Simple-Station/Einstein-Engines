@@ -243,6 +243,20 @@
 
 - type: latheRecipe
   parent: BaseAmmoRecipe
+  id: MagazineCaselessRifleShort
+  result: MagazineCaselessRifleShort
+  materials:
+    Steel: 250
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineCaselessRifle
+  result: MagazineCaselessRifle
+  materials:
+    Steel: 350
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
   id: MagazineBoxCaselessRifle
   result: MagazineBoxCaselessRifle
   materials:
@@ -1061,3 +1075,13 @@
     Bluespace: 600
     Plasma: 600
     Diamond: 200
+
+- type: latheRecipe
+  id: WeaponSubMachineGunFPApp90
+  result: WeaponSubMachineGunFPApp90
+  category: Weapons
+  completetime: 6
+  materials:
+    Aluminum: 1800
+    Steel: 300
+    Plastic: 250
