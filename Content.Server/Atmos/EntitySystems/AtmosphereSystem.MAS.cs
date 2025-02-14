@@ -51,10 +51,12 @@ public sealed partial class AtmosphereSystem
     ///     It returns a vector representing the flow direction of air passing over a tile, as described by Laplace's Equations.
     ///     The equations here are simplified however, and are omitting the matrix subdivisions.
     /// </summary>
+    /// <remarks>
+    ///     This function assumes you've already checked if tile.Air is null.
+    /// </remarks>
     public Vector2 GetPressureVectorFromTile(GridAtmosphereComponent gridAtmos, TileAtmosphere tile, float deltaT)
     {
-        if (!HasComp<MapGridComponent>(tile.GridIndex)
-            || tile.Air is null || tile.PressureDirection is Shared.Atmos.AtmosDirection.Invalid)
+        if (!HasComp<MapGridComponent>(tile.GridIndex))
             return new Vector2(0, 0);
 
         var pressureVector = new Vector2(0, 0);
@@ -65,7 +67,7 @@ public sealed partial class AtmosphereSystem
                 || tileAtmosphere.PressureDirection is Shared.Atmos.AtmosDirection.Invalid)
                 continue;
 
-            var pressureDiff = tile.Air.Pressure - tileAtmosphere.Air.Pressure;
+            var pressureDiff = tile.Air!.Pressure - tileAtmosphere.Air.Pressure;
             pressureVector += new Vector2(x * pressureDiff, y * pressureDiff);
         }
         return pressureVector * 2 * deltaT * _cfg.GetCVar(CCVars.SpaceWindStrengthMultiplier);
