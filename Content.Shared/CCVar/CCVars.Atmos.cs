@@ -10,8 +10,17 @@ public sealed partial class CCVars
     public static readonly CVarDef<bool> SpaceWind =
         CVarDef.Create("atmos.space_wind", true, CVar.SERVERONLY);
 
+    /// <summary>
+    ///     Space Wind with "Full Float Precision", allowing for curved motion of air.
+    ///     This is provided as a "Standalone" version of SWV4 that does not require the full MAS System.
+    ///     But as a consequence of being "Bolted on top of" Monstermos, it has no time complexity savings.
+    ///     THIS IS SIGNIFICANTLY MORE EXPENSIVE THAN EVEN WIZDEN'S SPACE WIND. YOU ARE WARNED.
+    /// </summary>
+    public static readonly CVarDef<bool> SpaceWindV4 =
+        CVarDef.Create("atmos.space_wind_version_4", true, CVar.SERVER);
+
     public static readonly CVarDef<float> SpaceWindStrengthMultiplier =
-        CVarDef.Create("atmos.space_wind_strength_multiplier", 1f, CVar.SERVERONLY);
+        CVarDef.Create("atmos.space_wind_strength_multiplier", 3f, CVar.SERVERONLY);
 
     /// <summary>
     ///     Divisor from maxForce (pressureDifference * 2.25f) to force applied on objects.
@@ -48,7 +57,7 @@ public sealed partial class CCVars
     ///     And maybe do your part to fix that? :)
     /// </remarks>
     public static readonly CVarDef<float> SpaceWindMinimumCalculatedMass =
-        CVarDef.Create("atmos.space_wind_minimum_calculated_mass", 5f, CVar.SERVERONLY);
+        CVarDef.Create("atmos.space_wind_minimum_calculated_mass", 1f, CVar.SERVERONLY);
 
     /// <summary>
     /// 	Calculated as 1/Mass, where Mass is the physics.Mass of the desired threshold.
