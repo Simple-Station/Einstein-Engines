@@ -17,6 +17,7 @@
     - Prison
     - Service
     - Supply
+    - Justice
   - type: ActiveRadio
     channels:
     - Binary
@@ -29,6 +30,7 @@
     - Prison
     - Service
     - Supply
+    - Justice
   - type: IgnoreUIRange
   - type: StationAiHeld
   - type: StationAiOverlay
