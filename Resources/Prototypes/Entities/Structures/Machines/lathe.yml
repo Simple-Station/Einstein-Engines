@@ -1498,6 +1498,11 @@
     - IngotCopper1
     - N14IngotAluminium1
     - IngotTungsten1
+    # Additional recipes
+    - SheetPlasteel1
+    - SheetUGlass1
+    - SheetRUGlass1
+    - MaterialDiamond
   - type: MaterialStorageMagnetPickup # Delta V - Summary: Adds magnet pull from Frontier
     magnetEnabled: True
     range: 0.30 # Delta V - End Magnet Pull
