@@ -1,11 +1,11 @@
 - type: entity
-  name: FPA-pp90 sub machine gun
+  name: FPA-90 sub machine gun
   parent: BaseWeaponPistol
-  id: WeaponSubMachineGunFPApp90
+  id: WeaponSubMachineGunFPA90
   description: It's a cheap piece of shit made by a company well known for cheap guns, but at least you don't need hearing protection while using it. It fires .25 caseless.
   components:
   - type: Sprite
-    sprite: _EE/Objects/Weapons/Guns/SMGs/pp90.rsi
+    sprite: _EE/Objects/Weapons/Guns/SMGs/FPA90.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -18,7 +18,7 @@
     burstCooldown: 1.5
     selectedMode: Burst
     soundGunshot:
-      path: /Audio/_EE/Weapons/Guns/Gunshots/pp90-suppressed-gunshot.ogg
+      path: /Audio/_EE/Weapons/Guns/Gunshots/fpa-90-suppressed-gunshot.ogg
       params:
         volume: -3
         maxDistance: 8

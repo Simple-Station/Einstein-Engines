@@ -432,12 +432,12 @@
 
 - type: entity
   parent: ClothingBackpackDuffelSyndicateBundle
-  id: ClothingBackpackDuffelSyndicateFilledFPApp90
-  name: FPA-pp90 bundle
+  id: ClothingBackpackDuffelSyndicateFilledFPA90
+  name: FPA-90 bundle
   description: "A cheap integrally suppressed SMG. Comes bundled with three magazines."
   components:
   - type: StorageFill
     contents:
-      - id: WeaponSubMachineGunFPApp90
+      - id: WeaponSubMachineGunFPA90
       - id: MagazineCaselessRifle
         amount: 2

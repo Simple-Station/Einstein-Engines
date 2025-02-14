@@ -107,7 +107,7 @@ uplink-pistol-magazine-caseless-rubber-name = Pistol Magazine (.25 caseless, rub
 uplink-pistol-magazine-caseless-rubber-desc = Pistol magazine with 10 catridges. For when you need to (quietly) take someone alive.
 
 uplink-magazine-caseless-name = SMG magazine (.25 caseless)
-uplink-magazine-caseless-desc = Rifle magazine with 30 cartridges. Compatible with the FPA-pp90.
+uplink-magazine-caseless-desc = Rifle magazine with 30 cartridges. Compatible with the FPA-90.
 
 uplink-magazine-caseless-rubber-name = SMG magazine (.25 caseless, rubber)
 uplink-magazine-caseless-rubber-desc = Rifle magazine with 30 cartridges. For when you need to (quietly) take many hostages.
@@ -265,8 +265,8 @@ uplink-surplus-bundle-desc = Contains 50 telecrystals worth of completely random
 uplink-super-surplus-bundle-name = Super Surplus Crate
 uplink-super-surplus-bundle-desc = Contains 125 telecrystals worth of completely random Syndicate items.
 
-uplink-fpa-pp90-bundle-name = FPA-pp90 Bundle
-uplink-fpa-pp90-bundle-desc = A cheap integrally suppressed SMG. Comes bundled with three .25 caseless magazines.
+uplink-fpa-90-bundle-name = FPA-90 Bundle
+uplink-fpa-90-bundle-desc = A cheap integrally suppressed SMG. Comes bundled with three .25 caseless magazines.
 
 # Tools
 uplink-toolbox-name = Toolbox
