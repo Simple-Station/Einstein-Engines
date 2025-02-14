@@ -78,76 +78,9 @@ public sealed partial class AtmosphereSystem
             || tile.Air is null)
             return;
 
-        if (_cfg.GetCVar(CCVars.SpaceWindV4))
-        {
-            var pressureVector = GetPressureVectorFromTile(tile, frameTime);
-            if (pressureVector.Length() < SpaceWindMinimumCalculatedMass)
-                return;
-
-            _entSet.Clear();
-            _lookup.GetLocalEntitiesIntersecting(tile.GridIndex, tile.GridIndices, _entSet, 0f);
-
-            foreach (var entity in _entSet)
-            {
-                // Ideally containers would have their own EntityQuery internally or something given recursively it may need to slam GetComp<T> anyway.
-                // Also, don't care about static bodies (but also due to collisionwakestate can't query dynamic directly atm).
-                if (!bodies.TryGetComponent(entity, out var body)
-                    || !pressureQuery.TryGetComponent(entity, out var pressure)
-                    || !pressure.Enabled
-                    || _containers.IsEntityInContainer(entity, metas.GetComponent(entity))
-                    || pressure.LastHighPressureMovementAirCycle >= gridAtmosphere.Comp.UpdateCounter)
-                    continue;
-
-                // tl;dr YEET
-                SpaceWindV4(
-                    (entity, EnsureComp<MovedByPressureComponent>(entity)),
-                    gridAtmosphere.Comp.UpdateCounter,
-                    pressureVector,
-                    xforms.GetComponent(entity),
-                    body);
-            }
+        var pressureVector = GetPressureVectorFromTile(tile, frameTime);
+        if (pressureVector.Length() < SpaceWindMinimumCalculatedMass)
             return;
-        }
-
-        // Previously, we were comparing against the square of the target mass. Now we are comparing smaller values over a variable length of time. TLDR: Smoother space wind
-        var differentiatedPressure = 2 * tile.PressureDifference * frameTime * _cfg.GetCVar(CCVars.SpaceWindStrengthMultiplier);
-        if (differentiatedPressure < SpaceWindMinimumCalculatedMass)
-            return;
-        // TODO ATMOS finish this
-
-        // Don't play the space wind sound on tiles that are on fire...
-        if (tile.PressureDifference > 15 && !tile.Hotspot.Valid)
-        {
-            if (_spaceWindSoundCooldown == 0 && !string.IsNullOrEmpty(SpaceWindSound))
-            {
-                var coordinates = _mapSystem.ToCenterCoordinates(tile.GridIndex, tile.GridIndices);
-                _audio.PlayPvs(SpaceWindSound, coordinates, AudioParams.Default.WithVariation(0.125f).WithVolume(MathHelper.Clamp(tile.PressureDifference / 10, 10, 100)));
-            }
-        }
-
-
-        if (tile.PressureDifference > 100)
-        {
-            // TODO ATMOS Do space wind graphics here!
-        }
-
-        if (_spaceWindSoundCooldown++ > SpaceWindSoundCooldownCycles)
-            _spaceWindSoundCooldown = 0;
-
-        // Used by ExperiencePressureDifference to correct push/throw directions from tile-relative to physics world.
-        var gridWorldRotation = _transformSystem.GetWorldRotation(gridAtmosphere);
-
-        // Atmos Directions only include NSEW cardinals, which means only 4 possible angles to throw at. If Monstermos is enabled, we'll instead do some
-        // Vector shennanigans to smooth it out so that we can throw in increments of up to pi/32.
-        var throwDirection = tile.PressureDirection.ToAngle().ToVec();
-        if (MonstermosEqualization)
-            foreach (var nextTile in tile.AdjacentTiles)
-                if (nextTile is not null && nextTile.PressureDirection is not AtmosDirection.Invalid)
-                    throwDirection += nextTile.PressureDirection.ToAngle().ToVec();
-
-        // Before you ask, yes I did actually have to convert the angles to vectors, then add them together, then convert the end result back to a normalized vector.
-        // We're normalizing this here and now so that we don't have to normalize it potentially hundreds of times during the next Foreach.
-        var throwVector = (throwDirection.ToAngle() + gridWorldRotation).ToWorldVec().Normalized();
 
         _entSet.Clear();
         _lookup.GetLocalEntitiesIntersecting(tile.GridIndex, tile.GridIndices, _entSet, 0f);
@@ -167,8 +100,7 @@ public sealed partial class AtmosphereSystem
             ExperiencePressureDifference(
                 (entity, EnsureComp<MovedByPressureComponent>(entity)),
                 gridAtmosphere.Comp.UpdateCounter,
-                differentiatedPressure,
-                throwVector,
+                pressureVector,
                 xforms.GetComponent(entity),
                 body);
         }
@@ -186,7 +118,7 @@ public sealed partial class AtmosphereSystem
         tile.PressureDirection = differenceDirection;
     }
 
-    public void SpaceWindV4(Entity<MovedByPressureComponent> ent,
+    public void ExperiencePressureDifference(Entity<MovedByPressureComponent> ent,
         int cycle,
         Vector2 pressureVector,
         TransformComponent? xform = null,
@@ -213,32 +145,6 @@ public sealed partial class AtmosphereSystem
             ? pressureTarget.Normalized() * SpaceWindMaxVelocity
             : pressureVector,
             pressureVector.Length());
-        component.LastHighPressureMovementAirCycle = cycle;
-    }
-
-    public void ExperiencePressureDifference(
-        Entity<MovedByPressureComponent> ent,
-        int cycle,
-        float pressureDifference,
-        Vector2 throwVector,
-        TransformComponent? xform = null,
-        PhysicsComponent? physics = null)
-    {
-        var (uid, component) = ent;
-        if (!Resolve(uid, ref physics, false)
-            || !Resolve(uid, ref xform)
-            || physics.BodyType == BodyType.Static
-            || float.IsPositiveInfinity(component.MoveResist))
-            return;
-
-        if (HasComp<HumanoidAppearanceComponent>(ent))
-            pressureDifference *= HumanoidThrowMultiplier;
-        if (pressureDifference < physics.Mass)
-            return;
-
-        pressureDifference *= MathF.Max(physics.InvMass, SpaceWindMaximumCalculatedInverseMass);
-
-        _throwing.TryThrow(uid, throwVector * MathF.Min(pressureDifference, SpaceWindMaxVelocity), pressureDifference);
         component.LastHighPressureMovementAirCycle = cycle;
     }
 }

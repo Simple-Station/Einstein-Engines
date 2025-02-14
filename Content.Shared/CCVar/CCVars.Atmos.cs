@@ -10,29 +10,8 @@ public sealed partial class CCVars
     public static readonly CVarDef<bool> SpaceWind =
         CVarDef.Create("atmos.space_wind", true, CVar.SERVERONLY);
 
-    /// <summary>
-    ///     Space Wind with "Full Float Precision", allowing for curved motion of air.
-    ///     This is provided as a "Standalone" version of SWV4 that does not require the full MAS System.
-    ///     But as a consequence of being "Bolted on top of" Monstermos, it has no time complexity savings.
-    ///     THIS IS SIGNIFICANTLY MORE EXPENSIVE THAN EVEN WIZDEN'S SPACE WIND. YOU ARE WARNED.
-    /// </summary>
-    public static readonly CVarDef<bool> SpaceWindV4 =
-        CVarDef.Create("atmos.space_wind_version_4", true, CVar.SERVER);
-
     public static readonly CVarDef<float> SpaceWindStrengthMultiplier =
         CVarDef.Create("atmos.space_wind_strength_multiplier", 3f, CVar.SERVERONLY);
-
-    /// <summary>
-    ///     Divisor from maxForce (pressureDifference * 2.25f) to force applied on objects.
-    /// </summary>
-    public static readonly CVarDef<float> SpaceWindPressureForceDivisorThrow =
-        CVarDef.Create("atmos.space_wind_pressure_force_divisor_throw", 15f, CVar.SERVERONLY);
-
-    /// <summary>
-    ///     Divisor from maxForce (pressureDifference * 2.25f) to force applied on objects.
-    /// </summary>
-    public static readonly CVarDef<float> SpaceWindPressureForceDivisorPush =
-        CVarDef.Create("atmos.space_wind_pressure_force_divisor_push", 2500f, CVar.SERVERONLY);
 
     /// <summary>
     ///     The maximum velocity (not force) that may be applied to an object by atmospheric pressure differences.
@@ -40,13 +19,6 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<float> SpaceWindMaxVelocity =
         CVarDef.Create("atmos.space_wind_max_velocity", 15f, CVar.SERVERONLY);
-
-    /// <summary>
-    ///     The maximum force that may be applied to an object by pushing (i.e. not throwing) atmospheric pressure differences.
-    ///     A "throwing" atmospheric pressure difference ignores this limit, but not the max. velocity limit.
-    /// </summary>
-    public static readonly CVarDef<float> SpaceWindMaxPushForce =
-        CVarDef.Create("atmos.space_wind_max_push_force", 20f, CVar.SERVERONLY);
 
     /// <summary>
     ///     If an object's mass is below this number, then this number is used in place of mass to determine whether air pressure can throw an object.
@@ -124,13 +96,6 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<float> AtmosSpacingMaxWind =
         CVarDef.Create("atmos.mmos_max_wind", 500f, CVar.SERVERONLY);
-
-    /// <summary>
-    /// Increases default airflow calculations to O(n^2) complexity, for use with heavy space wind optimizations. Potato servers BEWARE
-    /// This solves the problem of objects being trapped in an infinite loop of slamming into a wall repeatedly.
-    /// </summary>
-    public static readonly CVarDef<bool> MonstermosUseExpensiveAirflow =
-        CVarDef.Create("atmos.mmos_expensive_airflow", false, CVar.SERVERONLY);
 
     /// <summary>
     ///     Whether atmos superconduction is enabled.
