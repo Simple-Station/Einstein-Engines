@@ -104,6 +104,17 @@
   items:
     - Portafib
 
+- type: loadout
+  id: LoadoutBSOCrewMonitor
+  category: JobsCommandBlueshieldOfficer
+  cost: 6
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - HandheldCrewMonitor
+
 # Eyes
 
 # Gloves
