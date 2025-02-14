@@ -10,6 +10,7 @@
     - id: PlushieNuke
     - id: PlushieSlime
     - id: PlushieSnake
+    - id: PlushieShadowkin
     - !type:GroupSelector
       children:
       - id: PlushieLizard
