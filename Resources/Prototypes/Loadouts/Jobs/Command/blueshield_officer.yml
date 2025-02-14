@@ -82,6 +82,28 @@
   items:
     - WeaponLeverChester
 
+- type: loadout
+  id: LoadoutBSOMedkitCombatFilled
+  category: JobsCommandBlueshieldOfficer
+  cost: 2
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - MedkitCombatFilled
+
+- type: loadout
+  id: LoadoutBSOPortafib
+  category: JobsCommandBlueshieldOfficer
+  cost: 2
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - Portafib
+
 # Eyes
 
 # Gloves
