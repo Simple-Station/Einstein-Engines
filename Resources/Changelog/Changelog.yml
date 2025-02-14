@@ -11738,3 +11738,12 @@ Entries:
   id: 6850
   time: '2025-02-14T19:06:38.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1785
+- author: Skubman
+  changes:
+    - type: Fix
+      message: >-
+        The industrial ore processor can now make plasteel, uranium glass,
+        reinforced uranium glass, and refined diamonds again.
+  id: 6851
+  time: '2025-02-14T19:06:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1777
