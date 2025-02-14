@@ -1376,6 +1376,8 @@
   name: AI upload console
   description: Used to update the laws of the station AI.
   components:
+  - type: Computer
+    board: StationAiUploadCircuitboard
   - type: Sprite
     layers:
     - map: [ "computerLayerBody" ]
