@@ -4,9 +4,11 @@ using Content.Client.Guidebook;
 using Content.Client.Guidebook.Controls;
 using Content.Client.Lobby;
 using Content.Client.UserInterface.Controls;
+using Content.Shared.CCVar;
 using Content.Shared.Input;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controllers;
+using Robust.Shared.Configuration;
 using static Robust.Client.UserInterface.Controls.BaseButton;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Prototypes;
@@ -18,6 +20,7 @@ public sealed class GuidebookUIController : UIController, IOnStateEntered<LobbyS
 {
     [UISystemDependency] private readonly GuidebookSystem _guidebookSystem = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private readonly IConfigurationManager _cfgManager = default!;
 
     private GuidebookWindow? _guideWindow;
     private MenuButton? GuidebookButton => UIManager.GetActiveUIWidgetOrNull<MenuBar.Widgets.GameTopMenuBar>()?.GuidebookButton;
@@ -177,7 +180,7 @@ public sealed class GuidebookUIController : UIController, IOnStateEntered<LobbyS
             }
             else
             {
-                selected = _configuration.GetCVar(CCVars.DefaultGuide);
+                selected = _cfgManager.GetCVar(CCVars.DefaultGuide);
             }
         }
         _guideWindow.UpdateGuides(guides, rootEntries, forceRoot, selected);
