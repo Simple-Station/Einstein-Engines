@@ -11,11 +11,11 @@ public sealed partial class GoobTriggerSystem : EntitySystem
     {
         base.Initialize();
 
-@@ -14,10 +16,20 @@ public override void Initialize()
+        SubscribeLocalEvent<DeleteParentOnTriggerComponent, TriggerEvent>(HandleDeleteParentTrigger);
+    }
 
     private void HandleDeleteParentTrigger(Entity<DeleteParentOnTriggerComponent> entity, ref TriggerEvent args)
     {
-        if (!TryComp<TransformComponent>(entity, out var xform))
         var uid = entity.Owner;
 
         if (!TryComp<TransformComponent>(uid, out var xform))
@@ -27,9 +27,9 @@ public sealed partial class GoobTriggerSystem : EntitySystem
         if (EntityManager.GetComponents(parentUid).Any(c => c is INonDeletable))
             return;
 
-        EntityManager.QueueDeleteEntity(xform.ParentUid);
         EntityManager.QueueDeleteEntity(parentUid);
         args.Handled = true;
     }
+
 
 }
