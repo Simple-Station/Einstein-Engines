@@ -15,11 +15,17 @@ public sealed partial class GoobTriggerSystem : EntitySystem
 
     private void HandleDeleteParentTrigger(Entity<DeleteParentOnTriggerComponent> entity, ref TriggerEvent args)
     {
-
-        if (!TryComp<TransformComponent>(entity, out var xform))
+         if (!TryComp<TransformComponent>(entity, out var xform))
             return;
 
-        if (HasComp<MapComponent>(xform.ParentUid)) // don't delete map
+        var parentUid = xform.ParentUid;
+
+        // Don't delete map
+        if (HasComp<MapComponent>(parentUid))
+            return;
+
+        // Prevent deleting Grids
+        if (TryComp<TransformComponent>(parentUid, out var parentXform) && parentXform.GridUid == parentUid)
             return;
 
         EntityManager.QueueDeleteEntity(xform.ParentUid);
