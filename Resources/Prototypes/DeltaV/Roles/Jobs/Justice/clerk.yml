@@ -3,7 +3,6 @@
   name: job-name-clerk
   description: job-description-clerk
   playTimeTracker: JobClerk
-  antagAdvantage: 2
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
