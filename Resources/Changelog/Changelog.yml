@@ -11763,3 +11763,10 @@ Entries:
   id: 6853
   time: '2025-02-14T22:56:04.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1775
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: High Cap Battery as a loadout item for IPCs
+  id: 6854
+  time: '2025-02-15T03:21:59.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1793
