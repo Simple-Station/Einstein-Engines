@@ -58,7 +58,7 @@
     shape: null
 
 - type: entity
-  name: BRDI AR-25
+  name: BRDI R-25
   parent: [BaseWeaponSubMachineGun, BaseGunWieldable]
   id: WeaponSubMachineGunBRDIR25
   description: An iconic weapon used by members of the Biesel Republic Foreign Legion. As a pride and joy of the colonies, it represents freedom from the tyranny of the Sol Alliance. It is chambered in .25 Caseless Rifle.
@@ -123,7 +123,7 @@
             - CartridgeCaselessRifle
 
 - type: entity
-  name: antique BRDI AR-25
+  name: antique BRDI R-25
   parent: WeaponSubMachineGunBRDIR25
   id: WeaponSubMachineGunBRDIR25HoS
   description: Once wielded by an unknown member of the Biesel Foreign Legion, this beloved rifle has seen battle with Sol on every world in the colonies.
