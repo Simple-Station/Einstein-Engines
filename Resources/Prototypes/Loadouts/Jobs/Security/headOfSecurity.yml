@@ -118,6 +118,22 @@
   items:
     - WeaponEnergyGunMultiphase
 
+- type: loadout
+  id: LoadoutCommandHoSBRDIR25
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+    - !type:CharacterAgeRequirement
+      min: 21
+  items:
+    - WeaponSubMachineGunBRDIR25HoS
+
 # Eyes
 
 # Gloves

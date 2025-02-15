@@ -215,6 +215,20 @@
   categories:
   - UplinkWeaponry
 
+- type: listing
+  id: UplinkFPA90Bundle
+  name: uplink-fpa-90-bundle-name
+  description: uplink-fpa-90-bundle-desc
+  icon: { sprite: /Textures/_EE/Objects/Weapons/Guns/SMGs/FPA90.rsi, state: icon }
+  productEntity: ClothingBackpackDuffelSyndicateFilledFPA90
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 40
+  cost:
+    Telecrystal: 80
+  categories:
+  - UplinkWeaponry
+
 # Explosives
 
 - type: listing
@@ -478,7 +492,7 @@
   id: UplinkPistol9mmMagazineRubber
   name: uplink-pistol-magazine-rubber-name
   description: uplink-pistol-magazine-rubber-desc
-  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Pistol/pistol_mag.rsi, state: red-icon }
+  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Pistol/pistol_mag.rsi, state: rubber }
   productEntity: MagazinePistolRubber
   cost:
     Telecrystal: 5
@@ -489,7 +503,7 @@
   id: UplinkPistol9mmMagazineIncendiary
   name: uplink-pistol-magazine-incendiary-name
   description: uplink-pistol-magazine-incendiary-desc
-  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Pistol/pistol_mag.rsi, state: red-icon }
+  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Pistol/pistol_mag.rsi, state: practice }
   productEntity: MagazinePistolIncendiary
   cost:
     Telecrystal: 8
@@ -512,7 +526,7 @@
   id: UplinkMagazinePistolSubMachineGunRubber
   name: uplink-pistol-magazine-c20r-rubber-name
   description: uplink-pistol-magazine-c20r-rubber-desc
-  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Pistol/smg_mag.rsi, state: red-icon }
+  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Pistol/smg_mag.rsi, state: rubber }
   productEntity: MagazinePistolSubMachineGunRubber
   cost:
     Telecrystal: 10
@@ -523,14 +537,14 @@
   id: UplinkMagazinePistolSubMachineGunIncendiary
   name: uplink-pistol-magazine-c20r-incendiary-name
   description: uplink-pistol-magazine-c20r-incendiary-desc
-  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Pistol/smg_mag.rsi, state: red-icon }
+  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Pistol/smg_mag.rsi, state: practice }
   productEntity: MagazinePistolSubMachineGunIncendiary
   cost:
     Telecrystal: 14
   categories:
   - UplinkAmmo
 
-# For the Cobra
+# .25 Caseless Rifle, for the Cobra and FPA-90
 - type: listing
   id: UplinkMagazinePistolCaselessRifle
   name: uplink-pistol-magazine-caseless-name
@@ -539,6 +553,39 @@
   productEntity: MagazinePistolCaselessRifle
   cost:
     Telecrystal: 5
+  categories:
+  - UplinkAmmo
+
+- type: listing
+  id: UplinkMagazinePistolCaselessRifleRubber
+  name: uplink-pistol-magazine-caseless-rubber-name
+  description: uplink-pistol-magazine-caseless-rubber-desc
+  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/CaselessRifle/caseless_pistol_mag.rsi, state: rubber }
+  productEntity: MagazinePistolCaselessRifleRubber
+  cost:
+    Telecrystal: 5
+  categories:
+  - UplinkAmmo
+
+- type: listing
+  id: UplinkMagazineCaselessRifle
+  name: uplink-magazine-caseless-name
+  description: uplink-magazine-caseless-desc
+  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/CaselessRifle/caseless_rifle_mag.rsi, state: red }
+  productEntity: MagazineCaselessRifle
+  cost:
+    Telecrystal: 10
+  categories:
+  - UplinkAmmo
+
+- type: listing
+  id: UplinkMagazineCaselessRifleRubber
+  name: uplink-magazine-caseless-rubber-name
+  description: uplink-magazine-caseless-rubber-desc
+  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/CaselessRifle/caseless_rifle_mag.rsi, state: rubber }
+  productEntity: MagazineCaselessRifleRubber
+  cost:
+    Telecrystal: 10
   categories:
   - UplinkAmmo
 
