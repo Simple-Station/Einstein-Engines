@@ -119,7 +119,7 @@
     - WeaponEnergyGunMultiphase
 
 - type: loadout
-  id: LoadoutCommandHoSBRDIAR25
+  id: LoadoutCommandHoSBRDIR25
   category: JobsSecurityHeadOfSecurity
   cost: 0
   canBeHeirloom: true
@@ -132,7 +132,7 @@
     - !type:CharacterAgeRequirement
       min: 21
   items:
-    - WeaponSubMachineGunBRDIAR25HoS
+    - WeaponSubMachineGunBRDIR25HoS
 
 # Eyes
 
