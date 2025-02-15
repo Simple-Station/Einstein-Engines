@@ -19,8 +19,6 @@
         - Folder
       components:
         - AnomalyScanner
-        - AnomalyLocatorUnpowered
-        - AnomalyLocatorWideUnpowered
         - NodeScanner
         - Flash
 
