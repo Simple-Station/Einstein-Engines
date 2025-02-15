@@ -58,10 +58,6 @@
         Piercing: 1
   - type: Speech
     speechSounds: Alto
-  - type: DamageOnHighSpeedImpact # Landing on all fours!
-    damage:
-      types:
-        Blunt: 1
   - type: Stamina
     critThreshold: 85
     decay: 2.55 # 3 base decay multiplied by 0.85 = 2.55
