@@ -7046,23 +7046,6 @@ entities:
     - type: Transform
       pos: 11.327477,4.5964174
       parent: 1
-- proto: DrinkSigmaJuiceBase
-  entities:
-  - uid: 2527
-    components:
-    - type: Transform
-      pos: 10.220531,4.42659
-      parent: 1
-  - uid: 2528
-    components:
-    - type: Transform
-      pos: 11.085115,4.509981
-      parent: 1
-  - uid: 2529
-    components:
-    - type: Transform
-      pos: 12.689281,4.478709
-      parent: 1
 - proto: EmergencyLight
   entities:
   - uid: 2491
@@ -13886,7 +13869,7 @@ entities:
     - type: Transform
       pos: 15.5,21.5
       parent: 1
-- proto: ThrusterShuttleEvac # Goob edit
+- proto: Thruster
   entities:
   - uid: 1749
     components:

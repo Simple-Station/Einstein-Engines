@@ -126,19 +126,19 @@
   id: RandomOreDistributionBasalt
   weights:
     OreSteel: 20
-    OreCoal: 0.1
-    OreSpaceQuartz: 0.1
+    OreCoal: 1.6
+    OreSpaceQuartz: 0.8
     OreGold: 10
-    OrePlasma: 0.4
-    OreSilver: 0.1
-    OreUranium: 0.1
-    OreBananium: 0.1
-    OreArtifactFragment: 0.1
+    OrePlasma: 0.32
+    OreSilver: 0.8
+    OreUranium: 0.8
+    OreBananium: 0.8
+    OreArtifactFragment: 0.8
     OreBluespace: 0.5
     OreNormality: 0.3
     OreAluminium: 8
-    OreLead: 0.2
-    OreCopper: 0.2
+    OreLead: 1.6
+    OreCopper: 1.6
     OreTungsten: 5
 
 - type: weightedRandomOre

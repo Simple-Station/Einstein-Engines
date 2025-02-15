@@ -284,6 +284,36 @@
 
 - type: entity
   parent: ClothingBackpackDuffelSyndicateBundle
+  id: ClothingBackpackDuffelSyndicateHardsuitCommanderBundle
+  name: syndicate commander hardsuit bundle
+  description: "Contains the Syndicate's signature blood red hardsuit."
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingOuterHardsuitSyndieCommander
+      - id: ClothingMaskGasSyndicate
+      - id: ClothingHandsGlovesCombat
+      - id: DoubleEmergencyOxygenTankFilled
+      - id: DoubleEmergencyNitrogenTankFilled
+      - id: DoubleEmergencyPlasmaTankFilled
+
+- type: entity
+  parent: ClothingBackpackDuffelSyndicateBundle
+  id: ClothingBackpackDuffelSyndicateHardsuitMedicBundle
+  name: syndicate medic hardsuit bundle
+  description: "Contains the Syndicate's signature blood red hardsuit."
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingOuterHardsuitSyndieMedic
+      - id: ClothingMaskGasSyndicate
+      - id: ClothingHandsGlovesCombat
+      - id: DoubleEmergencyOxygenTankFilled
+      - id: DoubleEmergencyNitrogenTankFilled
+      - id: DoubleEmergencyPlasmaTankFilled
+
+- type: entity
+  parent: ClothingBackpackDuffelSyndicateBundle
   id: ClothingBackpackDuffelSyndicateEliteHardsuitBundle
   name: syndicate elite hardsuit bundle
   description: "Contains the Syndicate's elite hardsuit, which comes with some more stuff in it."
@@ -398,4 +428,16 @@
       - id: GrenadeDummy
         amount: 2
       - id: SyndieTrickyBomb
+        amount: 2
+
+- type: entity
+  parent: ClothingBackpackDuffelSyndicateBundle
+  id: ClothingBackpackDuffelSyndicateFilledFPA90
+  name: FPA-90 bundle
+  description: "A cheap integrally suppressed SMG. Comes bundled with three magazines."
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponSubMachineGunFPA90
+      - id: MagazineCaselessRifle
         amount: 2

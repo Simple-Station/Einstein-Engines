@@ -25,8 +25,8 @@
   price: 0.01
 
 - type: material
-  id: N14Copper
-  stackEntity: N14IngotCopper1
+  id: Copper
+  stackEntity: IngotCopper1
   name: materials-copper
   unit: materials-unit-bar
   icon: { sprite: /Textures/_Nuclear14/Objects/Misc/materials.rsi, state: ingot_copper }
