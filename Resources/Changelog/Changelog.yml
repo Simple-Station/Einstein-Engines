@@ -11789,3 +11789,30 @@ Entries:
   id: 6856
   time: '2025-02-15T07:55:12.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1792
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added the FPA-90, an integrally supressed submachine gun. It can be
+        found either in the syndicate uplink, or manufactured at a security
+        techfab after Epistemics unlocks Advanced Weapons.
+    - type: Add
+      message: >-
+        Added the BRDI-R25, an integrally supressed bullpup rifle chambered in
+        .25 Caseless. It has an "Extremely fast" burst fire mode, and a "More
+        controllable" full-auto/semi mode. Unlike the FPA-90, it is not
+        available to syndicate agents. It can be manufactured after researching
+        Prototype Weapons.
+    - type: Add
+      message: >-
+        Antique variant of the BRDI-R25, which can be taken by the Head of
+        Security as his personal weapon.
+    - type: Add
+      message: Added a variety of different ammunition options to Syndicate uplinks.
+    - type: Add
+      message: >-
+        Security Techfabs can now manufacture .25 caseless rifle ammo and
+        magazines.
+  id: 6857
+  time: '2025-02-15T20:06:52.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1794

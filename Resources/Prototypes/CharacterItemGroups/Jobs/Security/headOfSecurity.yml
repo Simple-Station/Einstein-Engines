@@ -37,6 +37,8 @@
       id: LoadoutCommandHoSEnergySword
     - type: loadout
       id: LoadoutCommandHoSEnergyGun
+    - type: loadout
+      id: LoadoutCommandHoSBRDIR25
 
 #- type: characterItemGroup
 #  id: LoadoutHeadOfSecurityEyes
