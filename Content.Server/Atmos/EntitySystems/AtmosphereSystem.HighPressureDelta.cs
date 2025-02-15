@@ -79,7 +79,8 @@ public sealed partial class AtmosphereSystem
             return;
 
         var pressureVector = GetPressureVectorFromTile(gridAtmosphere, tile, frameTime);
-        if (pressureVector.Length() < SpaceWindMinimumCalculatedMass)
+        if (!pressureVector.IsValid()
+            || pressureVector.Length() < SpaceWindMinimumCalculatedMass)
             return;
 
         _entSet.Clear();
