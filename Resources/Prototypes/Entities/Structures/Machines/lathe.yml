@@ -1099,6 +1099,7 @@
       - EnergySwordDouble
       - EnergyCutlass
       - WeaponSubMachineGunFPA90
+      - WeaponSubMachineGunBRDIAR25
   - type: MaterialStorage
     whitelist:
       tags:

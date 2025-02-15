@@ -1146,3 +1146,16 @@
     Aluminum: 2000
     Steel: 500
     Plastic: 750
+
+- type: latheRecipe
+  id: WeaponSubMachineGunBRDIAR25
+  result: WeaponSubMachineGunBRDIAR25
+  category: Weapons
+  completetime: 6
+  materials:
+    Aluminum: 2500
+    Plastic: 2000
+    Plasteel: 1500
+    Steel: 500
+    Circuitry: 500
+    Tungsten: 200
