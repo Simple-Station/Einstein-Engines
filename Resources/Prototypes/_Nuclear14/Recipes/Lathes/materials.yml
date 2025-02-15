@@ -8,12 +8,12 @@
     RawLead: 100
 
 - type: latheRecipe
-  id: N14IngotCopper1
-  result: N14IngotCopper1
+  id: IngotCopper1
+  result: IngotCopper1
   completetime: 2
   miningPoints: 10
   materials:
-    N14RawCopper: 100
+    RawCopper: 100
     Coal: 50
 
 - type: latheRecipe

@@ -23,8 +23,8 @@
   price: 0.05
 
 - type: material
-  id: N14RawCopper
-  stackEntity: N14CopperOre1
+  id: RawCopper
+  stackEntity: CopperOre1
   name: materials-raw-copper
   unit: materials-unit-chunk
   icon: { sprite: /Textures/_Nuclear14/Objects/Misc/materials.rsi, state: copper }

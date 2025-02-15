@@ -31,10 +31,10 @@
     - type: Smes
     - type: UpgradeBattery
       maxChargeMultiplier: 2
-      baseMaxCharge: 8000000
+      baseMaxCharge: 120000000
     - type: UpgradePowerSupplyRamping
       scaling: Linear
-      supplyRampingMultiplier: 1     
+      supplyRampingMultiplier: 1
     - type: Appearance
     - type: Battery
       startingCharge: 0
@@ -62,10 +62,10 @@
       voltage: High
       node: input
     - type: PowerNetworkBattery
-      maxSupply: 150000
-      maxChargeRate: 5000
-      supplyRampTolerance: 5000
-      supplyRampRate: 1000
+      maxSupply: 750000
+      maxChargeRate: 25000
+      supplyRampTolerance: 25000
+      supplyRampRate: 5000
     - type: PointLight
       radius: 1.5
       energy: 1.6
@@ -100,11 +100,11 @@
 - type: entity
   parent: BaseSMES
   id: SMESBasic
-  suffix: Basic, 8MW
+  suffix: Basic, 120MW
   components:
   - type: Battery
-    maxCharge: 8000000
-    startingCharge: 8000000
+    maxCharge: 120000000
+    startingCharge: 120000000
 
 - type: entity
   parent: SMESBasic
@@ -117,7 +117,7 @@
 - type: entity
   parent: BaseSMES
   id: SMESAdvanced
-  suffix: Advanced, 16MJ
+  suffix: Advanced, 480MJ
   name: advanced SMES
   description: An even-higher-capacity superconducting magnetic energy storage (SMES) unit.
   components:
@@ -141,8 +141,8 @@
   - type: Machine
     board: SMESAdvancedMachineCircuitboard
   - type: Battery
-    maxCharge: 16000000
-    startingCharge: 16000000
+    maxCharge: 240000000
+    startingCharge: 240000000
   - type: PowerMonitoringDevice
     group: SMES
     sourceNode: input

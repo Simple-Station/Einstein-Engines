@@ -540,5 +540,19 @@ trait-description-ThermographicVision =
     biological life forms. It can even detect individuals through the walls of a station.
 
 trait-name-ShadowkinBlackeye = Blackeye
-trait-description-ShadowkinBlackeye = 
+trait-description-ShadowkinBlackeye =
     You lose your special Shadowkin powers & respect amongst your peers, in return for some points. Effectively, you are only a Shadowkin in name, not in practice.
+
+trait-name-LyreBird = Lyre Bird
+trait-description-LyreBird =
+    Your natural talent for mimicry vastly exceeds that of other Harpies. You have the ability to perfectly imitate songs in their entirety.
+    Be your own full symphony orchestra, jazz group, or metal band.
+
+trait-name-NaniteAutoRepairBots = Nanite Auto-Repair Bots
+trait-description-NaniteAutoRepairBots =
+    Your chassis has been outfitted with Nanite Repair Drones. Whenever your sensors detect that you've recieved structural damage, the NRDs will activate to bring you back to operational standards.
+
+trait-name-BionicLeg = Bionic Leg
+trait-description-BionicLeg =
+    One or more of your limbs have been replaced with an expensive, state of the art bionic. It could be either one made of highly realistic synthflesh,
+    or a more obvious metal limb. This limb provides enhanced speed to it's user, allowing you to run away from situations faster or get to a place faster.

@@ -39,3 +39,14 @@
       group: LoadoutAirTank
   items:
     - DoubleEmergencyNitrogenTankFilled
+
+- type: loadout
+  id: LoadoutSpeciesPowerCellHigh
+  category: Species
+  cost: 6
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - IPC
+  items:
+    - PowerCellHigh

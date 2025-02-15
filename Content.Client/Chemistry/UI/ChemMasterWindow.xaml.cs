@@ -220,7 +220,7 @@ namespace Content.Client.Chemistry.UI
             UpdatePanelInfo(_lastState);
         }
 
-        private bool ValidateAmount(string newText)
+        private bool ValidateAmount(string newText, bool invokeEvent = true)
         {
             if (string.IsNullOrWhiteSpace(newText) || !int.TryParse(newText, out int amount))
             {
@@ -229,16 +229,19 @@ namespace Content.Client.Chemistry.UI
             }
 
             _transferAmount = amount;
-            OnTransferAmountChanged?.Invoke(amount);
+
+            if (invokeEvent)
+                OnTransferAmountChanged?.Invoke(amount);
+
             return true;
         }
 
         private void SetAmount(LineEdit.LineEditEventArgs args) =>
             SetAmountText(args.Text);
 
-        private void SetAmountText(string newText)
+        private void SetAmountText(string newText, bool invokeEvent = true)
         {
-            if (newText == _transferAmount.ToString() || !ValidateAmount(newText))
+            if (newText == _transferAmount.ToString() || !ValidateAmount(newText, invokeEvent))
                 return;
 
             var localizedAmount = Loc.GetString(
@@ -293,7 +296,7 @@ namespace Content.Client.Chemistry.UI
             // Ensure the Panel Info is updated, including UI elements for Buffer Volume, Output Container and so on
             UpdatePanelInfo(castState);
             HandleSortMethodChange(castState.SortMethod);
-            SetAmountText(castState.TransferringAmount.ToString());
+            SetAmountText(castState.TransferringAmount.ToString(), false);
 
             if (_amounts != castState.Amounts)
             {
