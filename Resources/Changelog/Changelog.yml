@@ -11713,3 +11713,53 @@ Entries:
   id: 6847
   time: '2025-02-14T01:09:58.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1776
+- author: Erisfiregamer1
+  changes:
+    - type: Add
+      message: >-
+        New chemical, Sedin. It restores seeds on plants 20% of the time with
+        other adverse effects included.
+  id: 6848
+  time: '2025-02-14T19:00:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1786
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Nonlethal Ammunition research has been removed. Instead Security
+        Techfabs can manufacture rubber bullets at roundstart.
+  id: 6849
+  time: '2025-02-14T19:02:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1784
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: 'Added the "Telecrystal Rebalance" from Goob. '
+  id: 6850
+  time: '2025-02-14T19:06:38.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1785
+- author: Skubman
+  changes:
+    - type: Fix
+      message: >-
+        The industrial ore processor can now make plasteel, uranium glass,
+        reinforced uranium glass, and refined diamonds again.
+  id: 6851
+  time: '2025-02-14T19:06:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1777
+- author: Sornarok
+  changes: []
+  id: 6852
+  time: '2025-02-14T19:14:37.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1778
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: >-
+        Added disposable syringes! These cheaper, quicker-to-produce syringes
+        let Chemists pick dosages while preparing medicine so that doctors can
+        inject without worrying about volume, but the syringes cannot be used
+        more than once.
+  id: 6853
+  time: '2025-02-14T22:56:04.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1775
