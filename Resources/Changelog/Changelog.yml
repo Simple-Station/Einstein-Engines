@@ -11816,3 +11816,12 @@ Entries:
   id: 6857
   time: '2025-02-15T20:06:52.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1794
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: Ported Storage UI v2.
+    - type: Tweak
+      message: The guidebook will now remember where you left off.
+  id: 6858
+  time: '2025-02-15T22:21:57.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1799
