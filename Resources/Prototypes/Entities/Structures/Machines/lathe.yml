@@ -148,6 +148,7 @@
     - SheetRGlass
     - Beaker
     - Syringe
+    - DisposableSyringe
     - HandLabeler
     - LightTube
     - LedLightTube
@@ -317,6 +318,7 @@
     - CryostasisBeaker
     - SyringeCryostasis
     - Syringe
+    - DisposableSyringe
     - Implanter
     - PillCanister
     - ChemistryEmptyBottle01
@@ -947,9 +949,32 @@
       - HoloprojectorSecurity
       - BolaEnergy
       - ClothingHeadHelmetBasic
+      - MagazineShotgunBeanbag
+      - ShellTranquilizer
+      - BoxBeanbag
+      - CartridgePistolRubber
+      - CartridgeMagnumRubber
+      - CartridgeLightRifleRubber
+      - CartridgeRifleRubber
+      - MagazineRifleRubber
+      - MagazinePistolRubber
+      - MagazinePistolSubMachineGunRubber
+      - MagazineMagnumRubber
+      - MagazineLightRifleRubber
+      - SpeedLoaderMagnumRubber
+      - MagazineBoxPistolRubber
+      - MagazineBoxMagnumRubber
+      - MagazineBoxLightRifleRubber
+      - MagazineBoxRifleRubber
+      - CartridgeSpecialRubber
+      - MagazineBoxSpecialRubber
+      - MagazineBoxLightRifleRubber # Frontier
+      - MagazineBoxMagnumRubber # Frontier
+      - MagazineBoxPistolRubber # Frontier
+      - MagazineBoxRifleRubber # Frontier
+      - SpeedLoaderRifleHeavyRubber
     dynamicRecipes:
       - Truncheon
-      - BoxBeanbag
       - BoxShotgunIncendiary
       - BoxShotgunUranium
       - EncryptionKeySyndie
@@ -961,10 +986,6 @@
       - CartridgeMagnumUranium
       - CartridgePistolUranium
       - CartridgeRifleUranium
-      - CartridgeLightRifleRubber
-      - CartridgeMagnumRubber
-      - CartridgePistolRubber
-      - CartridgeRifleRubber
       - ExplosivePayload
       - FlashPayload
       - GrenadeBlast
@@ -979,43 +1000,30 @@
       - MagazineBoxRifleIncendiary
       - MagazineBoxRifleUranium
       - ShellSoulbreaker
-      - MagazineBoxLightRifleRubber
-      - MagazineBoxMagnumRubber
-      - MagazineBoxPistolRubber
-      - MagazineBoxRifleRubber
       - MagazineGrenadeEmpty
-      - MagazineLightRifleRubber
       - MagazineLightRifleIncendiary
       - MagazineLightRifleUranium
-      - MagazinePistolRubber
       - MagazinePistolIncendiary
       - MagazinePistolUranium
-      - MagazinePistolSubMachineGunRubber
       - MagazinePistolSubMachineGunIncendiary
       - MagazinePistolSubMachineGunUranium
-      - MagazineMagnumRubber
       - MagazineMagnumIncendiary
       - MagazineMagnumUranium
-      - MagazineRifleRubber
       - MagazineRifleIncendiary
       - MagazineRifleUranium
-      - MagazineShotgunBeanbag
       - MagazineShotgunIncendiary
       - PortableRecharger
       - PowerCageHigh
       - PowerCageMedium
       - PowerCageSmall
-      - ShellTranquilizer
       - ShuttleGunDusterCircuitboard
       - ShuttleGunFriendshipCircuitboard
       - ShuttleGunPerforatorCircuitboard
       - ShuttleGunSvalinnMachineGunCircuitboard
       - Signaller
       - SignalTrigger
-      - SpeedLoaderMagnumRubber
       - SpeedLoaderMagnumIncendiary
       - SpeedLoaderMagnumUranium
-      - SpeedLoaderRifleHeavyRubber
       - SpeedLoaderRifleHeavyIncendiary
       - SpeedLoaderRifleHeavyUranium
       - TimerTrigger
@@ -1034,12 +1042,10 @@
       - WeaponEnergyGunMini
       - WeaponEnergyGunPistol
       - WeaponGunLaserCarbineAutomatic
-      - CartridgeSpecialRubber
       - CartridgeSpecialIncendiary
       - CartridgeSpecialUranium
       - CartridgeSpecialHoly
       - CartridgeSpecialMindbreaker
-      - MagazineBoxSpecialRubber
       - MagazineBoxSpecialIncendiary
       - MagazineBoxSpecialUranium
       - MagazineBoxSpecialMindbreaker
@@ -1174,6 +1180,7 @@
     - Dropper
     - Jug
     - Syringe
+    - DisposableSyringe
     - Implanter
     - PillCanister
     - BodyBag
@@ -1494,6 +1501,11 @@
     - IngotCopper1
     - N14IngotAluminium1
     - IngotTungsten1
+    # Additional recipes
+    - SheetPlasteel1
+    - SheetUGlass1
+    - SheetRUGlass1
+    - MaterialDiamond
   - type: MaterialStorageMagnetPickup # Delta V - Summary: Adds magnet pull from Frontier
     magnetEnabled: True
     range: 0.30 # Delta V - End Magnet Pull
