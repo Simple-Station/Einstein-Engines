@@ -81,6 +81,7 @@
     burstFireRate: 20 # 1200rpm in Burst mode.
     shotsPerBurst: 5
     burstCooldown: 0.8
+    cameraRecoilScalar: 0.5
     selectedMode: Burst
     soundGunshot:
       path: /Audio/_EE/Weapons/Guns/Gunshots/fpa-90-suppressed-gunshot.ogg
