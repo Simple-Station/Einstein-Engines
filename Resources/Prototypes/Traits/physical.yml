@@ -862,3 +862,54 @@
         - description: examine-thermal-vision-message
           fontSize: 12
           requireDetailRange: true
+
+- type: trait
+  id: NaniteAutoRepairBots
+  category: Physical
+  points: -10
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+    - !type:CharacterSpeciesRequirement
+      species:
+        - IPC
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMind
+  functions: # TODO: Code Platelet factories as an actual obtainable implant, and replace this with TraitAddImplant
+    - !type:TraitReplaceComponent
+      components:
+        - type: PassiveDamage
+          allowedStates:
+          - Alive
+          - Critical
+          - Dead
+          damageCap: 200
+          damage:
+            groups:
+              Brute: -0.9
+              Burn: -0.9
+
+- type: trait
+  id: BionicLeg
+  category: Physical
+  points: -6
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMind
+  functions:
+    - !type:TraitAddComponent
+      components:
+      - type: MovementBodyPart
+        walkSpeed: 3.125
+        sprintSpeed: 5.625
+    - !type:TraitPushDescription
+      descriptionExtensions:
+        - description: examine-bionic-leg-message
+          fontSize: 12
+          requireDetailRange: true

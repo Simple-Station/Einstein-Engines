@@ -242,8 +242,22 @@
     - RiotShield
     - SpeedLoaderMagnum
     - SpeedLoaderMagnumEmpty
-    - MagazinePistolCaselessRifle # Goobstation
-    - MagazineBoxCaselessRifle # Goobstation
+    # .35 Caseless Pistol
+    - MagazinePistolCaselessRiflePractice # EE
+    - MagazinePistolCaselessRifle # EE
+    - MagazinePistolCaselessRifleRubber # EE
+    # .35 Caseless (Civilian) Rifle
+    - MagazineCaselessRifleShortPractice # EE
+    - MagazineCaselessRifleShort # EE
+    - MagazineCaselessRifleShortRubber # EE
+    # .35 Caseless (Military) Rifle
+    - MagazineCaselessRiflePractice # EE
+    - MagazineCaselessRifle # EE
+    - MagazineCaselessRifleRubber # EE
+    # .35 Caseless (Box Mag) Rifle
+    - MagazineBoxCaselessRiflePractice # EE
+    - MagazineBoxCaselessRifle # EE
+    - MagazineBoxCaselessRifleRubber # EE
     - MagazineMagnumEmpty # Goobstation
     - MagazineMagnum # Goobstation
     - MagazineMagnumLeverRifleEmpty # Goobstation
@@ -906,6 +920,22 @@
       - MagazinePistolSubMachineGunEmpty
       - MagazinePistolSubMachineGunTopMounted
       - MagazinePistolSubMachineGunTopMountedEmpty
+      # .35 Caseless Pistol
+      - MagazinePistolCaselessRiflePractice # EE
+      - MagazinePistolCaselessRifle # EE
+      - MagazinePistolCaselessRifleRubber # EE
+      # .35 Caseless (Civilian) Rifle
+      - MagazineCaselessRifleShortPractice # EE
+      - MagazineCaselessRifleShort # EE
+      - MagazineCaselessRifleShortRubber # EE
+      # .35 Caseless (Military) Rifle
+      - MagazineCaselessRiflePractice # EE
+      - MagazineCaselessRifle # EE
+      - MagazineCaselessRifleRubber # EE
+      # .35 Caseless (Box Mag) Rifle
+      - MagazineBoxCaselessRiflePractice # EE
+      - MagazineBoxCaselessRifle # EE
+      - MagazineBoxCaselessRifleRubber # EE
       - MagazineMagnum
       - MagazineMagnumEmpty
       - MagazineRifle
@@ -1070,6 +1100,8 @@
       - EnergySword
       - EnergySwordDouble
       - EnergyCutlass
+      - WeaponSubMachineGunFPA90
+      - WeaponSubMachineGunBRDIR25
   - type: MaterialStorage
     whitelist:
       tags:
@@ -1131,6 +1163,22 @@
         - SpeedLoaderRifleHeavyEmpty
         - CartridgeSpecial
         - MagazineBoxSpecial
+        # .35 Caseless Pistol
+        - MagazinePistolCaselessRiflePractice # EE
+        - MagazinePistolCaselessRifle # EE
+        - MagazinePistolCaselessRifleRubber # EE
+        # .35 Caseless (Civilian) Rifle
+        - MagazineCaselessRifleShortPractice # EE
+        - MagazineCaselessRifleShort # EE
+        - MagazineCaselessRifleShortRubber # EE
+        # .35 Caseless (Military) Rifle
+        - MagazineCaselessRiflePractice # EE
+        - MagazineCaselessRifle # EE
+        - MagazineCaselessRifleRubber # EE
+        # .35 Caseless (Box Mag) Rifle
+        - MagazineBoxCaselessRiflePractice # EE
+        - MagazineBoxCaselessRifle # EE
+        - MagazineBoxCaselessRifleRubber # EE
     - type: MaterialStorage
       whitelist:
         tags:
@@ -1696,56 +1744,4 @@
   - type: MaterialStorage
     whitelist:
       tags:
-      - PrizeTicket
-
-- type: entity
-  id: MedicalBiofabricator
-  parent: [BaseLathe, BaseMaterialSiloUtilizer]
-  name: medical biofabricator
-  description: Produces organs and other organic matter that can be surgically grafted onto patients with biomass.
-  components:
-  - type: Sprite
-    sprite: _Shitmed/Structures/Machines/limbgrower.rsi
-    snapCardinals: true
-    layers:
-    - state: limbgrower_idleoff
-      map: ["enum.LatheVisualLayers.IsRunning"]
-  #    - state: limbgrower_idleoff
-  #      shader: unshaded
-  #      map: ["enum.PowerDeviceVisualLayers.Powered"]
-  #    - state: inserting
-  #      map: ["enum.MaterialStorageVisualLayers.Inserting"]
-  #    - state: panel
-  #      map: ["enum.WiresVisualLayers.MaintenancePanel"]
-  - type: Machine
-    board: MedicalBiofabMachineBoard
-  - type: MaterialStorage
-    whitelist:
-      tags:
-      - Sheet
-      - RawMaterial
-      - Ingot
-      - Wooden
-      - ClothMade
-      - Gauze
-      - Metal
-  - type: Lathe
-    idleState: limbgrower_idleoff
-    runningState: limbgrower_idleon
-    staticRecipes:
-    - SynthLiver
-    - SynthHeart
-    - SynthLungs
-    - SynthEyes
-    - SynthLeftLeg
-    - SynthRightLeg
-    - SynthLeftFoot
-    - SynthRightFoot
-    - SynthLeftArm
-    - SynthRightArm
-    - SynthLeftHand
-    - SynthRightHand
-  - type: EmagLatheRecipes
-    emagStaticRecipes:
-    - PizzaLeftArm
-    - PizzaRightArm
+        - PrizeTicket

@@ -429,3 +429,15 @@
         amount: 2
       - id: SyndieTrickyBomb
         amount: 2
+
+- type: entity
+  parent: ClothingBackpackDuffelSyndicateBundle
+  id: ClothingBackpackDuffelSyndicateFilledFPA90
+  name: FPA-90 bundle
+  description: "A cheap integrally suppressed SMG. Comes bundled with three magazines."
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponSubMachineGunFPA90
+      - id: MagazineCaselessRifle
+        amount: 2
