@@ -320,12 +320,6 @@ public sealed class StorageUIController : UIController, IOnSystemChanged<Storage
                     window.Reclaim(dragLoc, control);
                 }
             }
-            else
-            {
-                _entity.RaisePredictiveEvent(new StorageRemoveItemEvent(
-                    _entity.GetNetEntity(draggingGhost.Entity),
-                    _entity.GetNetEntity(storageEnt)));
-            }
 
             targetStorage?.FlagDirty();
         }
