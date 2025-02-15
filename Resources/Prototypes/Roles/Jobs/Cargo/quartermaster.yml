@@ -3,7 +3,6 @@
   name: job-name-qm
   description: job-description-qm
   playTimeTracker: JobQuartermaster
-  antagAdvantage: 6 # DeltaV - Reduced TC: Head of Staff
   requirements:
     - !type:CharacterTraitRequirement
       inverted: true

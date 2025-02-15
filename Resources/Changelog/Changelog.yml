@@ -11752,3 +11752,76 @@ Entries:
   id: 6852
   time: '2025-02-14T19:14:37.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1778
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: >-
+        Added disposable syringes! These cheaper, quicker-to-produce syringes
+        let Chemists pick dosages while preparing medicine so that doctors can
+        inject without worrying about volume, but the syringes cannot be used
+        more than once.
+  id: 6853
+  time: '2025-02-14T22:56:04.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1775
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: High Cap Battery as a loadout item for IPCs
+  id: 6854
+  time: '2025-02-15T03:21:59.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1793
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: >-
+        Gave BSO access to a filled combat medkit, a portafib, and a handheld
+        crew monitor
+  id: 6855
+  time: '2025-02-15T03:56:25.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1795
+- author: Diggy
+  changes:
+    - type: Add
+      message: >-
+        A trait for IPCs, which is essentially a platelet factories, at the same
+        trait cost, etc, as the normal platelet factories, and bionic legs,
+        which are just speed legs roundstart.
+  id: 6856
+  time: '2025-02-15T07:55:12.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1792
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added the FPA-90, an integrally supressed submachine gun. It can be
+        found either in the syndicate uplink, or manufactured at a security
+        techfab after Epistemics unlocks Advanced Weapons.
+    - type: Add
+      message: >-
+        Added the BRDI-R25, an integrally supressed bullpup rifle chambered in
+        .25 Caseless. It has an "Extremely fast" burst fire mode, and a "More
+        controllable" full-auto/semi mode. Unlike the FPA-90, it is not
+        available to syndicate agents. It can be manufactured after researching
+        Prototype Weapons.
+    - type: Add
+      message: >-
+        Antique variant of the BRDI-R25, which can be taken by the Head of
+        Security as his personal weapon.
+    - type: Add
+      message: Added a variety of different ammunition options to Syndicate uplinks.
+    - type: Add
+      message: >-
+        Security Techfabs can now manufacture .25 caseless rifle ammo and
+        magazines.
+  id: 6857
+  time: '2025-02-15T20:06:52.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1794
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: Ported Storage UI v2.
+    - type: Tweak
+      message: The guidebook will now remember where you left off.
+  id: 6858
+  time: '2025-02-15T22:21:57.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1799
