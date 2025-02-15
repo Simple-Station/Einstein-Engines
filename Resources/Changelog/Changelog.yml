@@ -11779,3 +11779,13 @@ Entries:
   id: 6855
   time: '2025-02-15T03:56:25.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1795
+- author: Diggy
+  changes:
+    - type: Add
+      message: >-
+        A trait for IPCs, which is essentially a platelet factories, at the same
+        trait cost, etc, as the normal platelet factories, and bionic legs,
+        which are just speed legs roundstart.
+  id: 6856
+  time: '2025-02-15T07:55:12.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1792
