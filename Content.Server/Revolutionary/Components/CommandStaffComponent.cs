@@ -11,3 +11,5 @@ public sealed partial class CommandStaffComponent : Component
     public float PsionicBonusModifier = 1;
     public float PsionicBonusOffset = 0.25f;
 }
+
+//TODO this should probably be on a mind role, not the mob

@@ -36,7 +36,7 @@ public sealed class ContainerSpawnPointSystem : EntitySystem
 
         // If it's just a spawn pref check if it's for cryo (silly).
         if (args.HumanoidCharacterProfile?.SpawnPriority != SpawnPriorityPreference.Cryosleep &&
-            (!_proto.TryIndex(args.Job?.Prototype, out var jobProto) || jobProto.JobEntity == null))
+            (!_proto.TryIndex(args.Job, out var jobProto) || jobProto.JobEntity == null))
             return;
 
         var query = EntityQueryEnumerator<ContainerSpawnPointComponent, ContainerManagerComponent, TransformComponent>();
@@ -50,7 +50,7 @@ public sealed class ContainerSpawnPointSystem : EntitySystem
             // DeltaV - Custom override for override spawnpoints, only used for prisoners currently. This shouldn't run for any other jobs
             if (args.DesiredSpawnPointType == SpawnPointType.Job)
             {
-                if (spawnPoint.SpawnType != SpawnPointType.Job || spawnPoint.Job != args.Job?.Prototype)
+                if (spawnPoint.SpawnType != SpawnPointType.Job || spawnPoint.Job != args.Job)
                     continue;
 
                 possibleContainers.Add((uid, spawnPoint, container, xform));
@@ -61,7 +61,7 @@ public sealed class ContainerSpawnPointSystem : EntitySystem
             if (spawnPoint.SpawnType == SpawnPointType.Unset)
             {
                 // make sure we also check the job here for various reasons.
-                if (spawnPoint.Job == null || spawnPoint.Job == args.Job?.Prototype)
+                if (spawnPoint.Job == null || spawnPoint.Job == args.Job)
                     possibleContainers.Add((uid, spawnPoint, container, xform));
                 continue;
             }
@@ -71,7 +71,7 @@ public sealed class ContainerSpawnPointSystem : EntitySystem
 
             if (_gameTicker.RunLevel != GameRunLevel.InRound &&
                 spawnPoint.SpawnType == SpawnPointType.Job &&
-                (args.Job == null || spawnPoint.Job == args.Job.Prototype))
+                (args.Job == null || spawnPoint.Job == args.Job))
                 possibleContainers.Add((uid, spawnPoint, container, xform));
         }
 

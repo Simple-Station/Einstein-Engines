@@ -3,4 +3,4 @@
 namespace Content.Shared.WhiteDream.BloodCult.BloodCultist;
 
 [RegisterComponent]
-public sealed partial class BloodCultistRoleComponent : AntagonistRoleComponent;
+public sealed partial class BloodCultistRoleComponent : BaseMindRoleComponent;

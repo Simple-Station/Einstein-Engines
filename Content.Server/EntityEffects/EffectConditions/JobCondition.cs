@@ -5,6 +5,7 @@ using Robust.Shared.Prototypes;
 using Content.Shared.Mind.Components;
 using Content.Shared.Roles;
 using Content.Shared.Roles.Jobs;
+using Content.Shared.Mind;
 
 namespace Content.Server.EntityEffects.EffectConditions;
 
@@ -15,15 +16,22 @@ public sealed partial class JobCondition : EntityEffectCondition
     public override bool Condition(EntityEffectBaseArgs args)
     {
         args.EntityManager.TryGetComponent<MindContainerComponent>(args.TargetEntity, out var mindContainer);
-        if (mindContainer != null && mindContainer.Mind != null)
+
+        if ( mindContainer is null
+             || !args.EntityManager.TryGetComponent<MindComponent>(mindContainer.Mind, out var mind))
+            return false;
+
+        foreach (var roleId in mind.MindRoles)
         {
-            var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
-            if (args.EntityManager.TryGetComponent<JobComponent>(mindContainer?.Mind, out var comp) && prototypeManager.TryIndex(comp.Prototype, out var prototype))
-            {
-                foreach (var jobId in Job)
-                    if (prototype.ID == jobId)
-                        return true;
-            }
+            if(!args.EntityManager.HasComponent<JobRoleComponent>(roleId))
+                continue;
+
+            if(!args.EntityManager.TryGetComponent<MindRoleComponent>(roleId, out var mindRole)
+               || mindRole.JobPrototype is null)
+                continue;
+
+            if (Job.Contains(mindRole.JobPrototype.Value))
+                return true;
         }
 
         return false;
@@ -35,5 +43,3 @@ public sealed partial class JobCondition : EntityEffectCondition
         return Loc.GetString("reagent-effect-condition-guidebook-job-condition", ("job", ContentLocalizationManager.FormatListToOr(localizedNames)));
     }
 }
-
-

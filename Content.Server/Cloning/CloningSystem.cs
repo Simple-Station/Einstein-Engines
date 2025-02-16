@@ -242,7 +242,7 @@ public sealed partial class CloningSystem : EntitySystem
 
         clonePod.ActivelyCloning = true;
 
-        if (_jobs.MindTryGetJob(mindEnt, out _, out var prototype))
+        if (_jobs.MindTryGetJob(mindEnt, out var prototype))
             foreach (var special in prototype.Special)
                 if (special is AddComponentSpecial)
                     special.AfterEquip(mob);

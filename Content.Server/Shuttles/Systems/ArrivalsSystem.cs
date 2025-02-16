@@ -343,8 +343,7 @@ public sealed class ArrivalsSystem : EntitySystem
             return;
 
         if (ev.Job is not null
-            && ev.Job.Prototype is not null
-            && _protoManager.Index<JobPrototype>(ev.Job.Prototype.Value.Id).AlwaysUseSpawner)
+            && _protoManager.Index<JobPrototype>(ev.Job).AlwaysUseSpawner)
             return;
 
         if (!HasComp<StationArrivalsComponent>(ev.Station))
