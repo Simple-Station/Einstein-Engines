@@ -1,12 +1,14 @@
+using Content.Server.Construction.Completions;
 using Content.Server.Explosion.Components;
 using Content.Server.Explosion.EntitySystems;
-using System.Linq;
+
 
 namespace Content.Server._Goobstation.Explosion.EntitySystems;
 
+
 public sealed partial class GoobTriggerSystem : EntitySystem
 {
-    public interface INonDeletable;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -16,20 +18,17 @@ public sealed partial class GoobTriggerSystem : EntitySystem
 
     private void HandleDeleteParentTrigger(Entity<DeleteParentOnTriggerComponent> entity, ref TriggerEvent args)
     {
+
         var uid = entity.Owner;
 
-        if (!TryComp<TransformComponent>(uid, out var xform))
+        if (!TryComp<TransformComponent>(uid, out var userXform))
             return;
 
-        var parentUid = xform.ParentUid;
-
-        // Check if the parent entity has any component that implements INonDeletable
-        if (EntityManager.GetComponents(parentUid).Any(c => c is INonDeletable))
+        if (userXform.ParentUid == userXform.GridUid || userXform.ParentUid == userXform.MapUid)
             return;
 
-        EntityManager.QueueDeleteEntity(parentUid);
+        EntityManager.QueueDeleteEntity(userXform.ParentUid);
         args.Handled = true;
     }
-
 
 }
