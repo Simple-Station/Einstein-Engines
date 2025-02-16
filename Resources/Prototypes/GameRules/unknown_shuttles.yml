@@ -1,7 +1,6 @@
 - type: entity
   abstract: true
   parent: BaseGameRule
-  categories: [ HideSpawnMenu ]
   id: BaseUnknownShuttleRule
   components:
   - type: StationEvent
