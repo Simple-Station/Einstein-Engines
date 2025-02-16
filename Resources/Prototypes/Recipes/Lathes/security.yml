@@ -234,6 +234,14 @@
   materials:
     Steel: 500
 
+# .25 Caseless Pistol Magazines
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazinePistolCaselessRiflePractice
+  result: MagazinePistolCaselessRiflePractice
+  materials:
+    Steel: 85
+
 - type: latheRecipe
   parent: BaseAmmoRecipe
   id: MagazinePistolCaselessRifle
@@ -243,11 +251,78 @@
 
 - type: latheRecipe
   parent: BaseAmmoRecipe
+  id: MagazinePistolCaselessRifleRubber
+  result: MagazinePistolCaselessRifleRubber
+  materials:
+    Plastic: 145
+
+# .25 Caseless (Civilian) Rifle Magazines
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineCaselessRifleShortPractice
+  result: MagazineCaselessRifleShortPractice
+  materials:
+    Steel: 150
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineCaselessRifleShort
+  result: MagazineCaselessRifleShort
+  materials:
+    Steel: 250
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineCaselessRifleShortRubber
+  result: MagazineCaselessRifleShortRubber
+  materials:
+    Plastic: 250
+
+# .25 Caseless (Military) Rifle Magazines
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineCaselessRiflePractice
+  result: MagazineCaselessRiflePractice
+  materials:
+    Steel: 250
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineCaselessRifle
+  result: MagazineCaselessRifle
+  materials:
+    Steel: 350
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineCaselessRifleRubber
+  result: MagazineCaselessRifleRubber
+  materials:
+    Plastic: 350
+
+# .25 Caseless (Box Mag) Rifle Magazines
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineBoxCaselessRiflePractice
+  result: MagazineBoxCaselessRiflePractice
+  materials:
+    Steel: 500
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
   id: MagazineBoxCaselessRifle
   result: MagazineBoxCaselessRifle
   materials:
     Steel: 720
 
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineBoxCaselessRifleRubber
+  result: MagazineBoxCaselessRifleRubber
+  materials:
+    Steel: 720
+
+# .35 Pistol Magazines
 - type: latheRecipe
   id: MagazinePistolEmpty
   result: MagazinePistolEmpty
@@ -1061,3 +1136,26 @@
     Bluespace: 600
     Plasma: 600
     Diamond: 200
+
+- type: latheRecipe
+  id: WeaponSubMachineGunFPA90
+  result: WeaponSubMachineGunFPA90
+  category: Weapons
+  completetime: 6
+  materials:
+    Aluminum: 2000
+    Steel: 500
+    Plastic: 750
+
+- type: latheRecipe
+  id: WeaponSubMachineGunBRDIR25
+  result: WeaponSubMachineGunBRDIR25
+  category: Weapons
+  completetime: 6
+  materials:
+    Aluminum: 2500
+    Plastic: 2000
+    Plasteel: 1500
+    Steel: 500
+    Circuitry: 500
+    Tungsten: 200
