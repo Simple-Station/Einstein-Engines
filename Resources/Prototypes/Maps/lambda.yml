@@ -30,7 +30,6 @@
             Botanist: [ 2 , 3 ]
             Chef: [ 1, 2 ]
             Janitor: [ 2, 3 ]
-            ServiceWorker: [ 2, 3 ]
             #engineering
             ChiefEngineer: [ 1, 1 ]
             AtmosphericTechnician: [ 2, 4 ]
@@ -56,7 +55,6 @@
             #security
             HeadOfSecurity: [ 1, 1 ]
             Warden: [ 1, 1 ]
-            Brigmedic: [ 1, 1 ]
             Prisoner: [ 2, 3 ]
             PrisonGuard: [ 2, 3 ]
             SecurityOfficer: [ 5, 6 ]

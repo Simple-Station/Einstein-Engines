@@ -352,8 +352,9 @@
       - DoorElectronicsConfigurator
   - type: PhysicalComposition
     materialComposition:
-      Steel: 100
-      Plastic: 100
+      Aluminum: 50
+      Plastic: 50
+      Circuitry: 25
   - type: StaticPrice
     price: 56
 
@@ -452,7 +453,8 @@
   - type: PhysicalComposition
     materialComposition:
       Steel: 300
-      Plastic: 100
+      Plastic: 50
+      Circuitry: 50
 #  - type: DynamicPrice
 #    price: 100
   - type: StaticPrice
@@ -525,8 +527,9 @@
     - Belt
   - type: PhysicalComposition
     materialComposition:
-      Steel: 600
-      Plastic: 150
+      Steel: 400
+      Plastic: 100
+      Circuitry: 50
   - type: StaticPrice
     price: 100
   - type: UserInterface
