@@ -46,6 +46,14 @@
     size: Huge
   - type: Clothing
     sprite: _Goobstation/Clothing/OuterClothing/Hardsuits/cybersunstealth.rsi
+    onEquipFunctions:
+      - !type:TraitAddComponent
+        components:
+          - type: BreakStealthOnAttack
+    onUnequipFunctions:
+      - !type:TraitRemoveComponent
+        components:
+          - type: BreakStealthOnAttack
   - type: PressureProtection
     highPressureMultiplier: 0.05
     lowPressureMultiplier: 1000
