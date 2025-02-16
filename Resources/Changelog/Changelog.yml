@@ -11825,3 +11825,14 @@ Entries:
   id: 6858
   time: '2025-02-15T22:21:57.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1799
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: Ported planet lighting for indoor / outdoor areas.
+    - type: Add
+      message: Ported day-night cycle functionality.
+    - type: Add
+      message: Ported some Storage UI v2 fixes.
+  id: 6859
+  time: '2025-02-16T17:27:39.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1802
