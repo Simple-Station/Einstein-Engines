@@ -527,7 +527,7 @@
     - Belt
   - type: PhysicalComposition
     materialComposition:
-      Steel: 500
+      Steel: 400
       Plastic: 100
       Circuitry: 50
   - type: StaticPrice
