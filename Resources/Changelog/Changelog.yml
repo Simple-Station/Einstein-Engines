@@ -11847,3 +11847,12 @@ Entries:
   id: 6860
   time: '2025-02-17T20:15:48.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1800
+- author: Plyushsune
+  changes:
+    - type: Add
+      message: >-
+        Pebble Station has been re added to the map pool after some much needed
+        changes.
+  id: 6861
+  time: '2025-02-17T20:32:17.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1779
