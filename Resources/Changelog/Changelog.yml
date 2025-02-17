@@ -11879,3 +11879,10 @@ Entries:
   id: 6864
   time: '2025-02-17T20:52:16.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1811
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: Corpsman can take portable crew mon
+  id: 6865
+  time: '2025-02-17T22:37:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1817
