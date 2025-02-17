@@ -11856,3 +11856,12 @@ Entries:
   id: 6861
   time: '2025-02-17T20:32:17.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1779
+- author: sleepyyapril
+  changes:
+    - type: Tweak
+      message: >-
+        NanoChat will now scroll to the bottom of your chat history when
+        selecting a new chat.
+  id: 6862
+  time: '2025-02-17T20:47:24.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1814
