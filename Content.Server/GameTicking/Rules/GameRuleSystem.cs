@@ -54,7 +54,7 @@ public abstract partial class GameRuleSystem<T> : EntitySystem where T : ICompon
             //     GameTicker.EndGameRule(uid, component);
             // }
 
-            GameTicker.EndGameRule(uid, component);
+            GameTicker.EndGameRule(uid, gameRule);
         }
     }
 
