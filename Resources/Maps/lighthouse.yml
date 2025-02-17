@@ -84202,7 +84202,6 @@ entities:
       parent: 2
     - type: GasPressurePump
       targetPressure: 4500
-      enabled: True
     - type: AtmosPipeColor
       color: '#00B7EBFF'
   - uid: 12044
@@ -87538,8 +87537,6 @@ entities:
     - type: Transform
       pos: 11.5,-83.5
       parent: 2
-    - type: GasVolumePump
-      enabled: True
     - type: AtmosPipeColor
       color: '#00B7EBFF'
   - uid: 12451
@@ -87652,8 +87649,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 15.5,-89.5
       parent: 2
-    - type: GasVolumePump
-      enabled: True
     - type: AtmosPipeColor
       color: '#00B7EBFF'
   - uid: 12465
@@ -87662,8 +87657,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 15.5,-88.5
       parent: 2
-    - type: GasVolumePump
-      enabled: True
     - type: AtmosPipeColor
       color: '#00B7EBFF'
   - uid: 12466
@@ -87672,8 +87665,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 15.5,-87.5
       parent: 2
-    - type: GasVolumePump
-      enabled: True
     - type: AtmosPipeColor
       color: '#00B7EBFF'
   - uid: 12467
@@ -87682,8 +87673,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 15.5,-86.5
       parent: 2
-    - type: GasVolumePump
-      enabled: True
     - type: AtmosPipeColor
       color: '#00B7EBFF'
   - uid: 12468
@@ -87692,8 +87681,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 11.5,-89.5
       parent: 2
-    - type: GasVolumePump
-      enabled: True
     - type: AtmosPipeColor
       color: '#00B7EBFF'
   - uid: 12469
@@ -87702,8 +87689,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 11.5,-88.5
       parent: 2
-    - type: GasVolumePump
-      enabled: True
     - type: AtmosPipeColor
       color: '#00B7EBFF'
   - uid: 12470
@@ -87712,8 +87697,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 11.5,-87.5
       parent: 2
-    - type: GasVolumePump
-      enabled: True
     - type: AtmosPipeColor
       color: '#00B7EBFF'
   - uid: 12471
@@ -87728,8 +87711,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 15.5,-83.5
       parent: 2
-    - type: GasVolumePump
-      enabled: True
     - type: AtmosPipeColor
       color: '#00B7EBFF'
   - uid: 12473
@@ -87738,8 +87719,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 11.5,-86.5
       parent: 2
-    - type: GasVolumePump
-      enabled: True
     - type: AtmosPipeColor
       color: '#00B7EBFF'
 - proto: Gauze10Lingering
@@ -119101,6 +119080,13 @@ entities:
     components:
     - type: Transform
       pos: 9.5,-44.5
+      parent: 2
+- proto: SpawnPointWarden
+  entities:
+  - uid: 22198
+    components:
+    - type: Transform
+      pos: 7.5,38.5
       parent: 2
 - proto: Spear
   entities:
