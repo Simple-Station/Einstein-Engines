@@ -12,7 +12,7 @@
           mapNameTemplate: '{0} Pebble Station {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
-            prefixCreator: 'NYA
+            prefixCreator: 'NYA'
 #        - type: GridSpawn
 #          groups:
 #            AISAT:

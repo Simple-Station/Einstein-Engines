@@ -72323,14 +72323,6 @@ entities:
     - type: Transform
       pos: 27.429993,15.471506
       parent: 2
-- proto: WeaponTeslaGun
-  entities:
-  - uid: 4495
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -5.557982,-28.98893
-      parent: 2
 - proto: WeldingFuelTankFull
   entities:
   - uid: 10689
