@@ -11825,3 +11825,74 @@ Entries:
   id: 6858
   time: '2025-02-15T22:21:57.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1799
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: Ported planet lighting for indoor / outdoor areas.
+    - type: Add
+      message: Ported day-night cycle functionality.
+    - type: Add
+      message: Ported some Storage UI v2 fixes.
+  id: 6859
+  time: '2025-02-16T17:27:39.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1802
+- author: Ichai
+  changes:
+    - type: Tweak
+      message: >-
+        Lambda: added hardsuit for paramedic, added missing chemvend, add
+        missing bounty computer on cargo.
+    - type: Remove
+      message: Remove the NRP (L6 and RPG) from emergency_raven
+  id: 6860
+  time: '2025-02-17T20:15:48.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1800
+- author: Plyushsune
+  changes:
+    - type: Add
+      message: >-
+        Pebble Station has been re added to the map pool after some much needed
+        changes.
+  id: 6861
+  time: '2025-02-17T20:32:17.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1779
+- author: sleepyyapril
+  changes:
+    - type: Tweak
+      message: >-
+        NanoChat will now scroll to the bottom of your chat history when
+        selecting a new chat.
+  id: 6862
+  time: '2025-02-17T20:47:24.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1814
+- author: Diggy
+  changes:
+    - type: Add
+      message: Made it so IPCs can take cyber eyes without having to waste 4 points.
+  id: 6863
+  time: '2025-02-17T20:48:19.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1813
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: 'Syndicate Surplus Crates are now included in the TC Rework. '
+  id: 6864
+  time: '2025-02-17T20:52:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1811
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: Corpsman can take portable crew mon
+  id: 6865
+  time: '2025-02-17T22:37:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1817
+- author: VMSolidus
+  changes:
+    - type: Remove
+      message: >-
+        Disabled random variation for Light Breaking, Wall Rusting, and
+        Bloodstains. Our new maps have more carefully measured light usage, and
+        all three of these interfere with good mapping practice.
+  id: 6866
+  time: '2025-02-17T22:51:05.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1815
