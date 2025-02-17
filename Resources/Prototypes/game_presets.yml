@@ -7,7 +7,6 @@
   description: survival-description
   rules:
     - RampingStationEventScheduler
-    - GameRuleMeteorScheduler
     - BasicRoundstartVariation
     - SubGamemodesRule
 
@@ -54,7 +53,6 @@
     - Revolutionary
     - Zombie
     - RampingStationEventScheduler
-    - GameRuleMeteorScheduler
 
 - type: gamePreset
   id: Extended
@@ -79,7 +77,6 @@
   description: greenshift-description
   rules:
   - BasicRoundstartVariation
-  - GameRuleMeteorScheduler
 
 - type: gamePreset
   id: Secret
