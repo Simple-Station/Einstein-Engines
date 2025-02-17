@@ -67,7 +67,7 @@
   requirements:
     - !type:CharacterJobRequirement
       jobs:
-        - BrigMedic
+        - Brigmedic
   items:
     - HandheldCrewMonitor
 
