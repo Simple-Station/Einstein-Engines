@@ -11865,3 +11865,10 @@ Entries:
   id: 6862
   time: '2025-02-17T20:47:24.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1814
+- author: Diggy
+  changes:
+    - type: Add
+      message: Made it so IPCs can take cyber eyes without having to waste 4 points.
+  id: 6863
+  time: '2025-02-17T20:48:19.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1813
