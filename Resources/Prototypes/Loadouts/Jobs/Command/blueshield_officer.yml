@@ -87,7 +87,7 @@
 - type: loadout
   id: LoadoutBSORifleBRDIR25
   category: JobsCommandBlueshieldOfficer
-  cost: 4 # Significant upgrade over a Chester, offered here for the STYLE.
+  cost: 9 # Significant upgrade over a Chester, offered here for the STYLE. Intentionally priced at you not being able to buy a crew monitor with it.
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
