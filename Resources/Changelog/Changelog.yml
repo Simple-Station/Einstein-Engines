@@ -11872,3 +11872,10 @@ Entries:
   id: 6863
   time: '2025-02-17T20:48:19.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1813
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: 'Syndicate Surplus Crates are now included in the TC Rework. '
+  id: 6864
+  time: '2025-02-17T20:52:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1811
