@@ -53,7 +53,7 @@ namespace Content.IntegrationTests.Tests
             "MeteorArena",
             "NukieOutpost",
             "Core", // No current maintainer. In need of a rework...
-            "Pebble",
+            "Pebble", // Maintained by Plyushsune
             // "Edge", // De-rotated, no current maintainer.
             "Saltern", // Maintained by the Sin Mapping Team, ODJ, and TCJ.
             "Shoukou", // Maintained by Violet
