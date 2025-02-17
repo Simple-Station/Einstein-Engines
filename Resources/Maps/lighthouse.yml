@@ -14769,23 +14769,21 @@ entities:
     - type: Transform
       pos: 33.690674,21.588686
       parent: 2
-- proto: BaseComputer
+- proto: ComputerSupermatter
   entities:
   - uid: 905
     components:
-    - type: MetaData
-      name: replace me with supermatter monitor
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 3.5,-70.5
       parent: 2
   - uid: 906
     components:
-    - type: MetaData
-      name: replace me with supermatter monitor
     - type: Transform
       pos: -0.5,-66.5
       parent: 2
+- proto: BaseComputer
+  entities:
   - uid: 7132
     components:
     - type: Transform
