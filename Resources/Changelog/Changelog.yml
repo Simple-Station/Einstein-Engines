@@ -11836,3 +11836,14 @@ Entries:
   id: 6859
   time: '2025-02-16T17:27:39.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1802
+- author: Ichai
+  changes:
+    - type: Tweak
+      message: >-
+        Lambda: added hardsuit for paramedic, added missing chemvend, add
+        missing bounty computer on cargo.
+    - type: Remove
+      message: Remove the NRP (L6 and RPG) from emergency_raven
+  id: 6860
+  time: '2025-02-17T20:15:48.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1800
