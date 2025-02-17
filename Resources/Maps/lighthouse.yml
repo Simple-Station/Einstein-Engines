@@ -101543,7 +101543,7 @@ entities:
     - type: Transform
       pos: -1.1134281,-67.761856
       parent: 2
-- proto: N14CopperOre1
+- proto: CopperOre1
   entities:
   - uid: 15742
     components:
