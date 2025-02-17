@@ -11896,3 +11896,10 @@ Entries:
   id: 6866
   time: '2025-02-17T22:51:05.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1815
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Added Supermatter Monitoring Console.
+  id: 6867
+  time: '2025-02-17T23:06:11.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1719
