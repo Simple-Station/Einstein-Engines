@@ -11886,3 +11886,13 @@ Entries:
   id: 6865
   time: '2025-02-17T22:37:51.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1817
+- author: VMSolidus
+  changes:
+    - type: Remove
+      message: >-
+        Disabled random variation for Light Breaking, Wall Rusting, and
+        Bloodstains. Our new maps have more carefully measured light usage, and
+        all three of these interfere with good mapping practice.
+  id: 6866
+  time: '2025-02-17T22:51:05.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1815
