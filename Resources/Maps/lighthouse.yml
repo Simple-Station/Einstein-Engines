@@ -94492,12 +94492,6 @@ entities:
     - type: Transform
       pos: -58.5,10.5
       parent: 2
-  - uid: 22173
-    components:
-    - type: Transform
-      anchored: False
-      pos: -50.04417,-14.071622
-      parent: 1
 - proto: GunpetInstrument
   entities:
   - uid: 13754
