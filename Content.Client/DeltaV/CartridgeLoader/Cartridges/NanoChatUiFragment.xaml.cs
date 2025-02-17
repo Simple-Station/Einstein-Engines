@@ -146,6 +146,9 @@ public sealed partial class NanoChatUiFragment : BoxContainer
             UpdateChatList(_recipients);
         }
 
+        if (MessageList.Parent is ScrollContainer scroll)
+            scroll.SetScrollValue(new Vector2(0, float.MaxValue));
+
         ActionSendUiMessage?.Invoke(NanoChatUiMessageType.SelectChat, number, null, null);
         UpdateCurrentChat();
     }
