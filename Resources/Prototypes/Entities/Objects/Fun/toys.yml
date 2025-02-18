@@ -1763,7 +1763,7 @@
         volume: -10
 
 - type: entity
-  parent: BaseItem
+  parent: [ BaseItem, BaseMagicalContraband ]
   id: PonderingOrb
   name: pondering orb
   description: Ponderous, man... Really ponderous.
