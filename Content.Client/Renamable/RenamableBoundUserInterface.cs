@@ -14,6 +14,7 @@ public sealed class RenamableBoundUserInterface : BoundUserInterface
     [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly NameModifierSystem _nameModifier = default!;
+    [Dependency] private EntityQuery<MetaDataComponent> _metaQuery = default!;
 
     [ViewVariables]
     private RenamableWindow? _window;
@@ -45,10 +46,10 @@ public sealed class RenamableBoundUserInterface : BoundUserInterface
         if (_window == null)
             return;
 
-        var currentName = _metaData.GetEntityName(Owner);
-        if (currentName != null)
-        {
-            _window.SetCurrentLabel(currentName);
-        }
+        MetaDataComponent? metadata = null;
+        if (!_metaQuery.Resolve(Owner, ref metadata))
+            return;
+
+        _window.SetCurrentLabel(metadata.EntityName);
     }
 }
