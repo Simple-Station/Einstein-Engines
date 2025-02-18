@@ -469,37 +469,23 @@
       inverted: true
       jobs:
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-    - !type:CharacterSpeciesRequirement
-      species:
-        - Human # Entirely arbitrary, I've decided I want a trait unique to humans. Since they don't normally get anything exciting.
-                # When we get the Character Records system in, I also want to make this require certain Backgrounds.
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
         - Claws
         - Talons
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterTraitRequirement
-          traits:
-            - MartialArtist
-        - !type:CharacterJobRequirement
-          jobs:
-            - Boxer
-            - MartialArtist
-            - Gladiator
     - !type:CharacterItemGroupRequirement
       group: TraitsMind
   functions:
     - !type:TraitModifyUnarmed
       flatDamageIncrease:
         types:
-          Blunt: 1
+          Blunt: 2 # Change - removed majority of requirements and buffed the damage. Flavor text writer good luck.
 
 - type: trait
   id: Spinarette
   category: Physical
-  points: -4
+  points: -3
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -521,31 +507,7 @@
           action: ActionSericulture
           productionLength: 2
           entityProduced: MaterialWebSilk1
-          hungerCost: 4
-
-- type: trait
-  id: BionicArm
-  category: Physical
-  points: -8
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-        - Gladiator
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: Prying
-          speedModifier: 1
-          pryPowered: true
-    - !type:TraitPushDescription
-      descriptionExtensions:
-        - description: examine-bionic-arm-message
-          fontSize: 12
-          requireDetailRange: true
+          hungerCost: 1 # no one takes this in the first place, so the hunger penality was removed and cost lowered.
 
 - type: trait
   id: PlateletFactories
@@ -569,14 +531,14 @@
           allowedStates:
           - Alive
           - Critical
-          damageCap: 200
+          damageCap: 400 # Change - increased to allow to Lamias to fully benefit if they ever return but also for anyone with more than 200 hp
           damage:
             groups:
-              Brute: -0.07
-              Burn: -0.07
-              Airloss: -0.07
-              Toxin: -0.07
-              Genetic: -0.07
+              Brute: -0.35 # Change - increased by 5 times so it doesn't feel like dog shit, round will end before any wounds heal, will be adjusted based on field testing
+              Burn: -0.35
+              Airloss: -0.35
+              Toxin: -0.35
+              Genetic: -0.35
 
 - type: trait
   id: DermalArmor
@@ -602,7 +564,7 @@
 - type: trait
   id: CyberEyes
   category: Physical
-  points: -4
+  points: -3 # Change - Cost decreased
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -639,8 +601,6 @@
     - !type:CharacterTraitRequirement
       traits:
         - CyberEyes
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -667,8 +627,6 @@
       inverted: true
       traits:
         - CyberEyesOmni
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -693,8 +651,6 @@
       traits:
         - CyberEyesDiagnostic
         - CyberEyesOmni
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -722,8 +678,6 @@
       traits:
         - CyberEyesMedical
         - CyberEyesOmni
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -753,8 +707,6 @@
         - CyberEyesMedical
         - CyberEyesDiagnostic
         - CyberEyesSecurity
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -830,8 +782,6 @@
     - !type:CharacterTraitRequirement
       traits:
         - CyberEyes
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -840,7 +790,7 @@
 - type: trait
   id: ThermographicVision
   category: Physical
-  points: -8
+  points: -4 # Change - Comes in the same research tier as night vision 
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -849,13 +799,15 @@
     - !type:CharacterTraitRequirement
       traits:
         - CyberEyes
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - StrongThermographicVision
   functions:
     - !type:TraitAddComponent
       components:
         - type: ThermalVision
-          pulseTime: 2
+          pulseTime: 10 # Change - I don't fucking know what's wrong with this since it pings for 0.2 seconds, if i set it to 20, would it ping properly for 2 seconds? Feel free to revert this to 2 if someone fixes it.
           toggleAction: PulseThermalVision
     - !type:TraitPushDescription
       descriptionExtensions:
@@ -863,163 +815,8 @@
           fontSize: 12
           requireDetailRange: true
 
-- type: trait
-  id: NaniteAutoRepairBots
-  category: Physical
-  points: -10
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-    - !type:CharacterSpeciesRequirement
-      species:
-        - IPC
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
-  functions: # TODO: Code Platelet factories as an actual obtainable implant, and replace this with TraitAddImplant
-    - !type:TraitReplaceComponent
-      components:
-        - type: PassiveDamage
-          allowedStates:
-          - Alive
-          - Critical
-          - Dead
-          damageCap: 200
-          damage:
-            groups:
-              Brute: -0.9
-              Burn: -0.9
-
-- type: trait
-  id: BionicLeg
-  category: Physical
-  points: -6
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
-  functions:
-    - !type:TraitAddComponent
-      components:
-      - type: MovementBodyPart
-        walkSpeed: 3.125
-        sprintSpeed: 5.625
-    - !type:TraitPushDescription
-      descriptionExtensions:
-        - description: examine-bionic-leg-message
-          fontSize: 12
-          requireDetailRange: true
-
-- type: trait
-  id: FlareShieldingModule
-  category: Physical
-  points: -4
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-    - !type:CharacterSpeciesRequirement
-      species:
-        - IPC
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: FlashImmunity
-        - type: EyeProtection
-
-- type: trait
-  id: SecurityEyesModule
-  category: Physical
-  points: -1
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
-    - !type:CharacterSpeciesRequirement
-      species:
-        - IPC
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - OmniEyesModule
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: ShowJobIcons
-        - type: ShowMindShieldIcons
-        - type: ShowCriminalRecordIcons
-
-- type: trait
-  id: MedicalEyesModule
-  category: Physical
-  points: -1
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-    - !type:CharacterSpeciesRequirement
-      species:
-        - IPC
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - DiagnosticEyesModule
-        - OmniEyesModule
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: ShowHealthBars
-          damageContainers:
-          - Biological
-        - type: ShowHealthIcons
-          damageContainers:
-          - Biological
-
-- type: trait
-  id: DiagnosticEyesModule
-  category: Physical
-  points: -1
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-    - !type:CharacterSpeciesRequirement
-      species:
-        - IPC
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - MedicalEyesModule
-        - OmniEyesModule
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: ShowHealthBars
-          damageContainers:
-          - Inorganic
-          - Silicon
-
-- type: trait
-  id: OmniEyesModule
+- type: trait # Change - Split Bionic Arms into 2 traits, which is effectively a nerf due to max number of trait useage, more modular stuff planned
+  id: BionicArmBasic
   category: Physical
   points: -3
   requirements:
@@ -1027,37 +824,18 @@
       inverted: true
       jobs:
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
-    - !type:CharacterSpeciesRequirement
-      species:
-        - IPC
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - MedicalEyesModule
-        - DiagnosticEyesModule
-        - SecurityEyesModule
+        - Gladiator
     - !type:CharacterItemGroupRequirement
       group: TraitsMind
   functions:
-    - !type:TraitAddComponent
-      components:
-        - type: ShowJobIcons
-        - type: ShowMindShieldIcons
-        - type: ShowCriminalRecordIcons
-        - type: ShowHealthIcons
-          damageContainers:
-          - Biological
-        - type: ShowHealthBars
-          damageContainers:
-          - Biological
-          - Inorganic
-          - Silicon
+    - !type:TraitPushDescription
+      descriptionExtensions:
+        - description: examine-bionic-arm-message
+          fontSize: 12
+          requireDetailRange: true
 
-- type: trait
-  id: LightAmplificationModule
+- type: trait # Change - 
+  id: BionicArmBreach
   category: Physical
   points: -4
   requirements:
@@ -1065,38 +843,13 @@
       inverted: true
       jobs:
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-    - !type:CharacterSpeciesRequirement
-      species:
-        - IPC
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
+        - Gladiator
+    - !type:CharacterTraitRequirement
+      traits:
+        - BionicArmBasic
   functions:
     - !type:TraitAddComponent
       components:
-        - type: NightVision
-
-- type: trait
-  id: ThermographicVisionModule
-  category: Physical
-  points: -8
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-    - !type:CharacterSpeciesRequirement
-      species:
-        - IPC
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: ThermalVision
-          pulseTime: 2
-          toggleAction: PulseThermalVision
-    - !type:TraitPushDescription
-      descriptionExtensions:
-        - description: examine-thermal-vision-message
-          fontSize: 12
-          requireDetailRange: true
+        - type: Prying
+          speedModifier: 1
+          pryPowered: true
