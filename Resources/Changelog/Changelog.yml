@@ -11903,3 +11903,28 @@ Entries:
   id: 6867
   time: '2025-02-17T23:06:11.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1719
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Lighthouse Detailing Pass, including the new largest, most advanced
+        supermatter engine to date!
+    - type: Tweak
+      message: Lighthouse Cargo fully updated
+    - type: Tweak
+      message: >-
+        Lighthouse medical given a surgery room along with some minor brush up
+        work.
+    - type: Tweak
+      message: New kitchen and botany area for Lighthouse
+    - type: Tweak
+      message: Lighthouse' laser tag arena is now a large boxing arena.
+    - type: Tweak
+      message: Lighthouse reporter area moved to dorms.
+    - type: Fix
+      message: >-
+        Fixed a crash to desktop with the cargo telepad that was unreported
+        despite being on 5 of our maps.
+  id: 6868
+  time: '2025-02-18T00:45:27.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1806
