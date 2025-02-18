@@ -213,7 +213,7 @@ namespace Content.Shared.Damage.Systems
             if (component.ContestArgs is not null && user is EntityUid userUid)
                 ev.Damage *= _contests.ContestConstructor(userUid, component.ContestArgs);
 
-            return DamageSpecifier.ApplyModifierSets(ev.Damage, ev.Modifiers);
+            return DamageSpecifier.ApplyModifierSets(ev.Damage, ev.Modifiers) * _damageable.UniversalThrownDamageModifier;
         }
     }
 }
