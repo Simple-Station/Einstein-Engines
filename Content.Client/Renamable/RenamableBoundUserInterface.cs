@@ -37,18 +37,14 @@ public sealed class RenamableBoundUserInterface : BoundUserInterface
     {
         _popup.PopupPredicted(Loc.GetString("comp-renamable-rename", ("newname", newName)), Owner, null);
         _metaData.SetEntityName(Owner, newName);
-        _nameModifier.RefreshNameModifiers(Owner);
     }
 
     private void Reload()
     {
-        if (_window == null)
-            return;
-
         MetaDataComponent? metadata = null;
         if (!_metaQuery.Resolve(Owner, ref metadata))
             return;
 
-        _window.SetCurrentName(metadata.EntityName);
+        _window!.SetCurrentName(metadata.EntityName);
     }
 }
