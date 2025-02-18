@@ -5,9 +5,10 @@ using Content.Shared.Verbs;
 
 namespace Content.Shared.Renamable.EntitySystems;
 
-public abstract class SharedRenamableSystem : EntitySystem
+public partial class SharedRenamableSystem : EntitySystem
 {
     [Dependency] private readonly SharedUserInterfaceSystem _uiSystem = null!;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -18,17 +19,15 @@ public abstract class SharedRenamableSystem : EntitySystem
     {
         if (!args.CanAccess || !args.CanInteract || args.Hands == null)
             return;
-
+        var entityUid = entity.Owner;
+        var user = args.User;
         var v = new Verb
         {
-            Priority = 1,
-            Category = VerbCategory.Rename,
-            Text = "verb-categories-rename",
-            Impact = LogImpact.Low,
+            Text = Loc.GetString("verb-categories-rename"),
             DoContactInteraction = true,
             Act = () =>
             {
-                _uiSystem.OpenUi(entity.Owner, SharedRenamableInterfaceKey.Key, entity.Owner);
+                _uiSystem.OpenUi(entityUid, SharedRenamableInterfaceKey.Key, user);
             }
         };
         args.Verbs.Add(v);

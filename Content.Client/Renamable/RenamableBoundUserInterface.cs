@@ -1,27 +1,26 @@
-﻿using Content.Shared.Labels;
-using Content.Shared.Labels.Components;
-using Content.Shared.NameModifier.EntitySystems;
+﻿using Content.Shared.NameModifier.EntitySystems;
 using Content.Shared.Popups;
-using Content.Shared.Renamable.Components;
 using Robust.Client.UserInterface;
-
 
 namespace Content.Client.Renamable;
 
-
 public sealed class RenamableBoundUserInterface : BoundUserInterface
 {
-    [Dependency] private readonly MetaDataSystem _metaData = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly NameModifierSystem _nameModifier = default!;
-    [Dependency] private EntityQuery<MetaDataComponent> _metaQuery = default!;
+    [Dependency] private readonly IEntityManager _entManager = default!;
+    private readonly MetaDataSystem _metaData;
+    private readonly SharedPopupSystem _popup;
+    private readonly NameModifierSystem _nameModifier;
+    private EntityQuery<MetaDataComponent> _metaQuery;
 
     [ViewVariables]
     private RenamableWindow? _window;
 
     public RenamableBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
     {
-        IoCManager.InjectDependencies(this);
+        _metaQuery = _entManager.GetEntityQuery<MetaDataComponent>();
+        _metaData = _entManager.System<MetaDataSystem>();
+        _popup = _entManager.System<SharedPopupSystem>();
+        _nameModifier = _entManager.System<NameModifierSystem>();
     }
 
     protected override void Open()
@@ -50,6 +49,6 @@ public sealed class RenamableBoundUserInterface : BoundUserInterface
         if (!_metaQuery.Resolve(Owner, ref metadata))
             return;
 
-        _window.SetCurrentLabel(metadata.EntityName);
+        _window.SetCurrentName(metadata.EntityName);
     }
 }

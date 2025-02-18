@@ -36,7 +36,7 @@ public sealed partial class RenamableWindow : DefaultWindow
         };
     }
 
-    public void SetCurrentLabel(string label)
+    public void SetCurrentName(string label)
     {
         if (label == _name)
             return;
