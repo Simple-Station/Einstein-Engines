@@ -799,10 +799,6 @@
     - !type:CharacterTraitRequirement
       traits:
         - CyberEyes
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - StrongThermographicVision
   functions:
     - !type:TraitAddComponent
       components:
