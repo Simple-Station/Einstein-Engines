@@ -1,5 +1,7 @@
-﻿using Content.Shared.NameModifier.EntitySystems;
+﻿using System.IO;
+using Content.Shared.NameModifier.EntitySystems;
 using Content.Shared.Popups;
+using Content.Shared.Renamable.EntitySystems;
 using Robust.Client.UserInterface;
 
 namespace Content.Client.Renamable;
@@ -7,9 +9,6 @@ namespace Content.Client.Renamable;
 public sealed class RenamableBoundUserInterface : BoundUserInterface
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
-    private readonly MetaDataSystem _metaData;
-    private readonly SharedPopupSystem _popup;
-    private readonly NameModifierSystem _nameModifier;
     private EntityQuery<MetaDataComponent> _metaQuery;
 
     [ViewVariables]
@@ -18,9 +17,6 @@ public sealed class RenamableBoundUserInterface : BoundUserInterface
     public RenamableBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
     {
         _metaQuery = _entManager.GetEntityQuery<MetaDataComponent>();
-        _metaData = _entManager.System<MetaDataSystem>();
-        _popup = _entManager.System<SharedPopupSystem>();
-        _nameModifier = _entManager.System<NameModifierSystem>();
     }
 
     protected override void Open()
@@ -33,11 +29,7 @@ public sealed class RenamableBoundUserInterface : BoundUserInterface
         Reload();
     }
 
-    private void OnNameChanged(string newName)
-    {
-        _popup.PopupPredicted(Loc.GetString("comp-renamable-rename", ("newname", newName)), Owner, null);
-        _metaData.SetEntityName(Owner, newName);
-    }
+    private void OnNameChanged(string newName) => _entManager.EventBus.RaiseEvent(EventSource.Network, new RenameEvent(_entManager.GetNetEntity(Owner), newName));
 
     private void Reload()
     {
