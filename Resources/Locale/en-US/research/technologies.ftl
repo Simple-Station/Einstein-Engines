@@ -27,7 +27,6 @@ research-technology-basic-weapons = Basic Weapons
 research-technology-draconic-munitions = Draconic Munitions
 research-technology-uranium-munitions = Uranium Munitions
 research-technology-explosive-technology = Explosive Technology
-research-technology-nonlethal-ammunition = Nonlethal Ammunition
 research-technology-practice-ammunition = Practice Ammunition
 research-technology-advanced-weapons = Advanced Weapons
 research-technology-prototype-weapons = Prototype Weapons
