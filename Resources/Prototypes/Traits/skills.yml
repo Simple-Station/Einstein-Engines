@@ -178,6 +178,10 @@
       inverted: true
       species:
         - Harpy
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Muted
   functions:
     - !type:TraitAddComponent
       components:
@@ -192,6 +196,10 @@
     - !type:CharacterSpeciesRequirement
       species:
         - Harpy
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Muted
   functions:
     - !type:TraitReplaceComponent
       components:
