@@ -536,8 +536,7 @@ trait-description-LightAmplification =
 
 trait-name-ThermographicVision = CyberEyes Module: Thermographic Scanner
 trait-description-ThermographicVision =
-    Your CyberEyes have been enhanced with a Thermographic Scanner. When enabled, it captures a snapshot of the user's surroundings, while highlighting all
-    biological life forms. It can even detect individuals through the walls of a station.
+    Your CyberEyes have been enhanced with a Thermographic Scanner. Toggling it on allows users to see all lifeforms nearby, even through walls.
 
 trait-name-ShadowkinBlackeye = Blackeye
 trait-description-ShadowkinBlackeye =
