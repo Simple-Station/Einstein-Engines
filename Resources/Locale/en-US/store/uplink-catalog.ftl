@@ -85,11 +85,32 @@ uplink-shrapnel-grenade-desc = Launches a spray of sharp fragments dealing great
 uplink-pistol-magazine-name = Pistol Magazine (.35 auto)
 uplink-pistol-magazine-desc = Pistol magazine with 10 catridges. Compatible with the Viper.
 
+uplink-pistol-magazine-rubber-name = Pistol Magazine (.35 auto, rubber)
+uplink-pistol-magazine-rubber-desc = Pistol magazine with 10 cartridges. For when you need to take someone alive.
+
+uplink-pistol-magazine-incendiary-name = Pistol Magazine (.35 auto, incendiary)
+uplink-pistol-magazine-incendiary-desc = A premium magazine for putting burning holes in both your wallet, and your victims.
+
 uplink-pistol-magazine-c20r-name = SMG magazine (.35 auto)
 uplink-pistol-magazine-c20r-desc = Rifle magazine with 30 catridges. Compatible with C-20r.
 
+uplink-pistol-magazine-c20r-rubber-name = SMG magazine (.35 auto, rubber)
+uplink-pistol-magazine-c20r-rubber-desc = Rifle magazine with 30 catridges. For when you need to take many hostages.
+
+uplink-pistol-magazine-c20r-incendiary-name = SMG magazine (.35 auto, incendiary)
+uplink-pistol-magazine-c20r-incendiary-desc = WAKE THE FUCK UP SAMURAI, WE GOT A STATION TO BURN!
+
 uplink-pistol-magazine-caseless-name = Pistol Magazine (.25 caseless)
 uplink-pistol-magazine-caseless-desc = Pistol magazine with 10 catridges. Compatible with the Cobra.
+
+uplink-pistol-magazine-caseless-rubber-name = Pistol Magazine (.25 caseless, rubber)
+uplink-pistol-magazine-caseless-rubber-desc = Pistol magazine with 10 catridges. For when you need to (quietly) take someone alive.
+
+uplink-magazine-caseless-name = SMG magazine (.25 caseless)
+uplink-magazine-caseless-desc = Rifle magazine with 30 cartridges. Compatible with the FPA-90.
+
+uplink-magazine-caseless-rubber-name = SMG magazine (.25 caseless, rubber)
+uplink-magazine-caseless-rubber-desc = Rifle magazine with 30 cartridges. For when you need to (quietly) take many hostages.
 
 uplink-speedloader-magnum-name = Speedloader (.45 magnum AP)
 uplink-speedloader-magnu-desc = Revolver speedloader with 6 armor-piercing catridges, capable of ignoring armor entirely. Compatible with the Python.
@@ -116,7 +137,7 @@ uplink-chest-rig-name = Chest Rig
 uplink-chest-rig-desc = Explosion-resistant tactical webbing used for holding traitor goods.
 
 # DeltaV - Correct Emag name, Emag no longer breaks doors
-uplink-emag-name = Cryptographic Sequencer 
+uplink-emag-name = Cryptographic Sequencer
 uplink-emag-desc = The business card of the Syndicate, this sequencer is able to tamper with a variety of station devices. Rendered obsolete against airlocks.
 
 uplink-agent-id-card-name = Agent ID Card
@@ -244,6 +265,9 @@ uplink-surplus-bundle-desc = Contains 50 telecrystals worth of completely random
 uplink-super-surplus-bundle-name = Super Surplus Crate
 uplink-super-surplus-bundle-desc = Contains 125 telecrystals worth of completely random Syndicate items.
 
+uplink-fpa-90-bundle-name = FPA-90 Bundle
+uplink-fpa-90-bundle-desc = A cheap integrally suppressed SMG. Comes bundled with three .25 caseless magazines.
+
 # Tools
 uplink-toolbox-name = Toolbox
 uplink-toolbox-desc = A full compliment of tools for the mechanically inclined traitor. Includes a pair of insulated combat gloves, syndicate gas mask and a utility belt.
@@ -321,8 +345,14 @@ uplink-eva-syndie-desc = A simple EVA suit that offers no protection other than 
 uplink-hardsuit-carp-name = Carp Hardsuit
 uplink-hardsuit-carp-desc = Looks like an ordinary carp suit, except fully spaceproof and tricks space carp into thinking you are one of them.
 
-uplink-hardsuit-syndie-name = Syndicate Hardsuit
-uplink-hardsuit-syndie-desc = The Syndicate's well known armored blood red hardsuit, capable of space walks and bullet resistant.
+uplink-hardsuit-syndie-name = Blood-red Tacsuit
+uplink-hardsuit-syndie-desc = The calling card of pirates, outlaws, mercenaries, and deserters. The "Blood Red" Shanlin Tacsuit is an iconic piece of equipment employed by the Syndicate.
+
+uplink-hardsuit-syndie-medic-name = Blood-red Medic Tacsuit
+uplink-hardsuit-syndie-medic-desc = A variant of the "Blood-red" tacsuit that includes medical markings.
+
+uplink-hardsuit-syndie-commander-name = Blood-red "Commander" Tacsuit
+uplink-hardsuit-syndie-commander-desc = An up-armored variant of the iconic "Blood-red" tacsuit.
 
 uplink-hardsuit-syndieelite-name = Syndicate Elite Hardsuit
 uplink-hardsuit-syndieelite-desc = An elite version of the blood-red hardsuit, with improved mobility and fireproofing. Property of Gorlex Marauders.

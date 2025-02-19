@@ -41,11 +41,20 @@ public abstract partial class GameRuleSystem<T> : EntitySystem where T : ICompon
             if (args.Players.Length >= minPlayers)
                 continue;
 
-            ChatManager.SendAdminAnnouncement(Loc.GetString("preset-not-enough-ready-players",
-                ("readyPlayersCount", args.Players.Length),
-                ("minimumPlayers", minPlayers),
-                ("presetName", ToPrettyString(uid))));
-            args.Cancel();
+            // if (gameRule.CancelPresetOnTooFewPlayers)
+            // {
+            //     ChatManager.SendAdminAnnouncement(Loc.GetString("preset-not-enough-ready-players",
+            //         ("readyPlayersCount", args.Players.Length),
+            //         ("minimumPlayers", minPlayers),
+            //         ("presetName", ToPrettyString(uid))));
+            //     args.Cancel();
+            // }
+            // else
+            // {
+            //     GameTicker.EndGameRule(uid, component);
+            // }
+
+            GameTicker.EndGameRule(uid, gameRule);
         }
     }
 

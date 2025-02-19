@@ -3,12 +3,12 @@
   name: job-name-lawyer
   description: job-description-lawyer
   playTimeTracker: JobLawyer
-  antagAdvantage: 2 # DeltaV - Reduced TC: Security Radio and Access
   startingGear: LawyerGear
   icon: "JobIconLawyer"
   supervisors: job-supervisors-cj  # Delta V - Change supervisor to chief justice
   access:
-  - Service
+  # - Service - DeltaV, removed from service department
+  - Justice # DeltaV - Justice dept
   - Lawyer
   - Maintenance
 

@@ -4,7 +4,7 @@
   description: uplink-kanabou-desc
   productEntity: Kanabou
   cost:
-    Telecrystal: 10
+    Telecrystal: 50
   categories:
   - UplinkWeaponry
   conditions:
@@ -18,7 +18,7 @@
   description: uplink-rickenbacker4001-desc
   productEntity: Rickenbacker4001Instrument
   cost:
-    Telecrystal: 10
+    Telecrystal: 50
   categories:
   - UplinkJob
   conditions:
@@ -32,7 +32,7 @@
   description: uplink-samurai-crate-desc
   productEntity: CrateSyndicateSamurai
   cost:
-    Telecrystal: 6
+    Telecrystal: 30
   categories:
   - UplinkWearables
   conditions:

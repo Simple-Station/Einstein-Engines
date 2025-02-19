@@ -201,6 +201,44 @@
     color: "#c94242"
   - type: Computer
     board: SyndicateShuttleConsoleCircuitboard
+  - type: ShuttleConsole
+    ftlToPlanets: true
+
+- type: entity
+  parent: BaseComputerShuttle
+  id: ComputerShuttleSyndieDropPod
+  name: syndicate drop pod console
+  description: "Used to launch a drop pod. It's a one way trip, make sure you've packed your lunch."
+  components:
+  - type: Sprite
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerKeyboard"]
+      state: generic_keyboard
+    - map: ["computerLayerScreen"]
+      state: syndishuttle
+    - map: ["computerLayerKeys"]
+      state: syndie_key
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
+  - type: Tag
+    tags:
+      - Syndicate
+  - type: RadarConsole
+    maxRange: 384
+  - type: WorldLoader
+    radius: 1536
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#c94242"
+  - type: Computer
+    board: SyndicateShuttleConsoleCircuitboard
+  - type: ShuttleConsole
+    ftlToPlanets: true
+    ignoreExclusionZones: true # It can intentionally be crashed into the station, crushing whatever's underneath the target location.
+    oneWayTrip: true
 
 - type: entity
   parent: BaseComputerShuttle
@@ -233,6 +271,8 @@
     board: CargoShuttleConsoleCircuitboard
   - type: StealTarget
     stealGroup: CargoShuttleConsoleCircuitboard
+  - type: ShuttleConsole
+    ftlToPlanets: true
 
 - type: entity
   parent: BaseComputerShuttle
@@ -263,6 +303,8 @@
       board: SalvageShuttleConsoleCircuitboard
     - type: StealTarget
       stealGroup: SalvageShuttleConsoleCircuitboard
+    - type: ShuttleConsole
+      ftlToPlanets: true
 
 - type: entity
   parent: BaseComputerAiAccess
@@ -1334,6 +1376,8 @@
   name: AI upload console
   description: Used to update the laws of the station AI.
   components:
+  - type: Computer
+    board: StationAiUploadCircuitboard
   - type: Sprite
     layers:
     - map: [ "computerLayerBody" ]

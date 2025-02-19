@@ -321,6 +321,14 @@
 
 - type: entity
   parent: DoorElectronics
+  id: DoorElectronicsClerk
+  suffix: Clerk, Locked
+  components:
+  - type: AccessReader
+    access: [["Clerk"]]
+
+- type: entity
+  parent: DoorElectronics
   id: DoorElectronicsJustice
   suffix: Justice, Locked
   components:
