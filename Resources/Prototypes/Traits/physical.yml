@@ -469,37 +469,23 @@
       inverted: true
       jobs:
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-    - !type:CharacterSpeciesRequirement
-      species:
-        - Human # Entirely arbitrary, I've decided I want a trait unique to humans. Since they don't normally get anything exciting.
-                # When we get the Character Records system in, I also want to make this require certain Backgrounds.
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
         - Claws
         - Talons
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterTraitRequirement
-          traits:
-            - MartialArtist
-        - !type:CharacterJobRequirement
-          jobs:
-            - Boxer
-            - MartialArtist
-            - Gladiator
     - !type:CharacterItemGroupRequirement
       group: TraitsMind
   functions:
     - !type:TraitModifyUnarmed
       flatDamageIncrease:
         types:
-          Blunt: 1
+          Blunt: 2
 
 - type: trait
   id: Spinarette
   category: Physical
-  points: -4
+  points: -3
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -521,7 +507,7 @@
           action: ActionSericulture
           productionLength: 2
           entityProduced: MaterialWebSilk1
-          hungerCost: 4
+          hungerCost: 1 
 
 - type: trait
   id: BionicArm
@@ -569,14 +555,14 @@
           allowedStates:
           - Alive
           - Critical
-          damageCap: 200
+          damageCap: 400
           damage:
             groups:
-              Brute: -0.07
-              Burn: -0.07
-              Airloss: -0.07
-              Toxin: -0.07
-              Genetic: -0.07
+              Brute: -0.35
+              Burn: -0.35
+              Airloss: -0.35
+              Toxin: -0.35
+              Genetic: -0.35
 
 - type: trait
   id: DermalArmor
@@ -639,8 +625,6 @@
     - !type:CharacterTraitRequirement
       traits:
         - CyberEyes
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -667,8 +651,6 @@
       inverted: true
       traits:
         - CyberEyesOmni
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -693,8 +675,6 @@
       traits:
         - CyberEyesDiagnostic
         - CyberEyesOmni
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -722,8 +702,6 @@
       traits:
         - CyberEyesMedical
         - CyberEyesOmni
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -753,8 +731,6 @@
         - CyberEyesMedical
         - CyberEyesDiagnostic
         - CyberEyesSecurity
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -830,8 +806,6 @@
     - !type:CharacterTraitRequirement
       traits:
         - CyberEyes
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -849,8 +823,6 @@
     - !type:CharacterTraitRequirement
       traits:
         - CyberEyes
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -885,7 +857,7 @@
           - Alive
           - Critical
           - Dead
-          damageCap: 200
+          damageCap: 250
           damage:
             groups:
               Brute: -0.9
@@ -1093,8 +1065,7 @@
     - !type:TraitAddComponent
       components:
         - type: ThermalVision
-          pulseTime: 2
-          toggleAction: PulseThermalVision
+          toggleAction: ToggleThermalVision
     - !type:TraitPushDescription
       descriptionExtensions:
         - description: examine-thermal-vision-message
