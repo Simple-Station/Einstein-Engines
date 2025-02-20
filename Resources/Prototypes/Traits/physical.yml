@@ -824,10 +824,7 @@
       traits:
         - CyberEyes
   functions:
-    - !type:TraitAddComponent
-      components:
-        - type: ThermalVision
-          toggleAction: ToggleThermalVision
+    - !type:TraitReplaceComponent
         - type: PassiveDamage
           allowedStates:
           - Alive
@@ -836,7 +833,10 @@
           damage:
             groups:
               Burn: 0.3
-    - !type:TraitReplaceComponent
+    - !type:TraitAddComponent
+      components:
+        - type: ThermalVision
+          toggleAction: ToggleThermalVision
         - type: PassiveDamage
           allowedStates:
           - Alive
@@ -1080,8 +1080,6 @@
   functions:
     - !type:TraitAddComponent
       components:
-        - type: ThermalVision
-          toggleAction: ToggleThermalVision
     - !type:TraitReplaceComponent
         - type: PassiveDamage
           allowedStates:
@@ -1091,6 +1089,8 @@
           damage:
             groups:
               Burn: 0.3
+        - type: ThermalVision
+          toggleAction: ToggleThermalVision
     - !type:TraitPushDescription
       descriptionExtensions:
         - description: examine-thermal-vision-message
