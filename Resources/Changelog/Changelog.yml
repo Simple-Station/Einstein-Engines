@@ -11944,3 +11944,14 @@ Entries:
   id: 6870
   time: '2025-02-20T03:41:28.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1807
+- author: GNUtopia
+  changes:
+    - type: Tweak
+      message: Made Muted give sign language
+    - type: Tweak
+      message: Blacklisted muted characters from taking sign language
+    - type: Fix
+      message: Blacklisted muted characters from taking Singer or Lyrebird
+  id: 6871
+  time: '2025-02-20T03:55:29.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1823
