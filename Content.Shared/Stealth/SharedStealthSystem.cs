@@ -1,7 +1,10 @@
 using Content.Shared.Examine;
+using Content.Shared.Interaction.Events;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Stealth.Components;
+using Content.Shared.Throwing;
+using Content.Shared.Weapons.Ranged.Events;
 using Robust.Shared.GameStates;
 using Robust.Shared.Timing;
 
@@ -25,6 +28,9 @@ public abstract class SharedStealthSystem : EntitySystem
         SubscribeLocalEvent<StealthComponent, ExamineAttemptEvent>(OnExamineAttempt);
         SubscribeLocalEvent<StealthComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<StealthComponent, MobStateChangedEvent>(OnMobStateChanged);
+        SubscribeLocalEvent<BreakStealthOnAttackComponent, BeforeThrowEvent>(OnThrow);
+        SubscribeLocalEvent<BreakStealthOnAttackComponent, AttackAttemptEvent>(OnAttack);
+        SubscribeLocalEvent<BreakStealthOnAttackComponent, ShotAttemptedEvent>(OnShoot);
     }
 
     private void OnExamineAttempt(EntityUid uid, StealthComponent component, ExamineAttemptEvent args)
@@ -187,6 +193,19 @@ public abstract class SharedStealthSystem : EntitySystem
 
         return Math.Clamp(component.LastVisibility + ev.FlatModifier, component.MinVisibility, component.MaxVisibility);
     }
+
+    private void OnThrow(EntityUid uid, BreakStealthOnAttackComponent stealth, BeforeThrowEvent args) => BreakStealth(uid);
+    private void OnAttack(EntityUid uid, BreakStealthOnAttackComponent stealth, AttackAttemptEvent args) => BreakStealth(uid);
+    private void OnShoot(EntityUid uid, BreakStealthOnAttackComponent stealth, ShotAttemptedEvent args) => BreakStealth(uid);
+
+    public void BreakStealth(EntityUid uid)
+    {
+        if (!TryComp(uid, out StealthComponent? stealth))
+            return;
+
+        BreakStealth(uid, stealth);
+    }
+    public void BreakStealth(EntityUid uid, StealthComponent stealth) => ModifyVisibility(uid, stealth.MaxVisibility, stealth);
 
     /// <summary>
     ///     Used to run through any stealth effecting components on the entity.

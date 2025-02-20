@@ -29,3 +29,67 @@
     clothingPrototype: ClothingHeadHelmetHardsuitBlueshield
   - type: StaminaDamageResistance
     coefficient: 0.5 # 50%
+
+
+# cybersun stealth
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitCybersunStealth
+  suffix: stealth
+  name: cybersun stealth hardsuit
+  description: A hardsuit with stealth plating for operations, the shielding doesn't work while you're moving though! Needs the helmet on to finish the stealth field.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/OuterClothing/Hardsuits/cybersunstealth.rsi
+  - type: Item
+    size: Huge
+  - type: Clothing
+    sprite: _Goobstation/Clothing/OuterClothing/Hardsuits/cybersunstealth.rsi
+    onEquipFunctions:
+      - !type:TraitAddComponent
+        components:
+          - type: BreakStealthOnAttack
+    onUnequipFunctions:
+      - !type:TraitRemoveComponent
+        components:
+          - type: BreakStealthOnAttack
+  - type: PressureProtection
+    highPressureMultiplier: 0.05
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.75
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.85 # Metamaterials are quite brittle
+        Slash: 0.75
+        Piercing: 0.70 # But at least it can have steel plates underneath.
+        Heat: 0.75
+        Radiation: 0.85
+        Caustic: 0.85
+  - type: ClothingSpeedModifier
+    walkModifier: 0.8
+    sprintModifier: 0.85
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitCybersunStealth
+  - type: Tag
+    tags:
+    - Hardsuit
+    - WhitelistChameleon
+  - type: ClothingGrantComponent
+    component:
+    - type: StealthOnMove
+      passiveVisibilityRate: -0.65
+      movementVisibilityRate: 0.575
+  - type: EmitsSoundOnMove
+    soundCollection:
+      collection: FootstepHardsuitLight
+      params:
+        volume: -12
+        maxDistance: 5
+        rolloffFactor: 1.2
+        # SIGNIFICANTLY Quieter than a normal hardsuit, but not perfectly stealthy. If you move while people are close enough, they can still hear it.
+  - type: StaminaDamageResistance
+    coefficient: 0.85 # 15%. Substantially lower than a normal hardsuit.
