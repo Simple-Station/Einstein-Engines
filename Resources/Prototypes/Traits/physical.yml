@@ -836,6 +836,15 @@
           damage:
             groups:
               Burn: 0.3
+    - !type:TraitReplaceComponent
+        - type: PassiveDamage
+          allowedStates:
+          - Alive
+          - Critical
+          damageCap: 400
+          damage:
+            groups:
+              Burn: 0.3
     - !type:TraitPushDescription
       descriptionExtensions:
         - description: examine-thermal-vision-message
@@ -1073,10 +1082,12 @@
       components:
         - type: ThermalVision
           toggleAction: ToggleThermalVision
+    - !type:TraitReplaceComponent
         - type: PassiveDamage
           allowedStates:
           - Alive
           - Critical
+          damageCap: 400
           damage:
             groups:
               Burn: 0.3
