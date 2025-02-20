@@ -1,7 +1,10 @@
+using System.Diagnostics;
 using Content.Shared.Database;
+using Content.Shared.NameIdentifier;
 using Content.Shared.Popups;
 using Content.Shared.Renamable.Components;
 using Content.Shared.Verbs;
+using Robust.Shared.Serialization;
 
 
 namespace Content.Shared.Renamable.EntitySystems;
@@ -11,23 +14,32 @@ public partial class SharedRenamableSystem : EntitySystem
     [Dependency] private readonly IEntityManager _entManager = default!;
     [Dependency] private readonly SharedUserInterfaceSystem _uiSystem = null!;
     private SharedPopupSystem? _popup;
-    private MetaDataSystem? _metaData;
+    private MetaDataSystem _metaData = default!;
 
     public override void Initialize()
     {
         base.Initialize();
         SubscribeLocalEvent<RenamableComponent, GetVerbsEvent<Verb>>(OnGetVerbs);
-        SubscribeLocalEvent<RenamableComponent, RenameEvent>(OnRename);
+        SubscribeLocalEvent<RenamableComponent, RenamableBuiMessage>(OnRename);
         _popup = _entManager.System<SharedPopupSystem>();
         _metaData = _entManager.System<MetaDataSystem>();
     }
 
-    private void OnRename(Entity<RenamableComponent> entity, ref RenameEvent renameEvent)
+    private void OnRename(Entity<RenamableComponent> entity, ref RenamableBuiMessage renameMessage)
     {
-        var uid = EntityManager.GetEntity(renameEvent.NetEntity);
-        _metaData!.SetEntityName(uid, renameEvent.NewName);
-        _popup!.PopupPredicted(Loc.GetString("comp-renamable-rename", ("newname", renameEvent.NewName)), entity, null);
-        DirtyEntity(entity.Owner);
+        _popup!.PopupPredicted(Loc.GetString("comp-renamable-rename", ("newname", renameMessage.Name)), entity, null);
+
+        var name = renameMessage.Name.Trim();
+        if (TryComp<NameIdentifierComponent>(entity, out var identifier))
+            name = $"{name} {identifier.FullIdentifier}";
+
+        var metaData = MetaData(entity);
+
+        // don't change the name if the value doesn't actually change
+        if (metaData.EntityName.Equals(name, StringComparison.InvariantCulture))
+            return;
+
+        _metaData.SetEntityName(entity, name, metaData);
     }
 
     private void OnGetVerbs(Entity<RenamableComponent> entity, ref GetVerbsEvent<Verb> args)
@@ -49,13 +61,8 @@ public partial class SharedRenamableSystem : EntitySystem
     }
 }
 
-public partial class RenameEvent : EntityEventArgs
+[Serializable, NetSerializable]
+public sealed class RenamableBuiMessage(string name) : BoundUserInterfaceMessage
 {
-    public NetEntity NetEntity;
-    public string NewName;
-
-    public RenameEvent(NetEntity netEntity, string newName)
-    {
-        NewName = newName;
-    }
+    public string Name = name;
 }

@@ -29,7 +29,7 @@ public sealed class RenamableBoundUserInterface : BoundUserInterface
         Reload();
     }
 
-    private void OnNameChanged(string newName) => _entManager.EventBus.RaiseEvent(EventSource.Network, new RenameEvent(_entManager.GetNetEntity(Owner), newName));
+    private void OnNameChanged(string newName) => SendPredictedMessage(new RenamableBuiMessage(newName));
 
     private void Reload()
     {
