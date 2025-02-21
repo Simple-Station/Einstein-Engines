@@ -24,19 +24,17 @@ public sealed class RenamableBoundUserInterface : BoundUserInterface
         base.Open();
 
         _window = this.CreateWindow<RenamableWindow>();
-
         _window.OnNameChanged += OnNameChanged;
         Reload();
     }
 
     private void OnNameChanged(string newName) => SendPredictedMessage(new RenamableBuiMessage(newName));
 
-    private void Reload()
+    private void Reload(MetaDataComponent? metaData = null)
     {
-        MetaDataComponent? metadata = null;
-        if (!_metaQuery.Resolve(Owner, ref metadata))
+        if (!_metaQuery.Resolve(Owner, ref metaData))
             return;
 
-        _window!.SetCurrentName(metadata.EntityName);
+        _window!.SetCurrentName(metaData.EntityName);
     }
 }

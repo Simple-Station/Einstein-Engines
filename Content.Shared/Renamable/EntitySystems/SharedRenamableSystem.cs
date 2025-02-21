@@ -21,6 +21,7 @@ public partial class SharedRenamableSystem : EntitySystem
         base.Initialize();
         SubscribeLocalEvent<RenamableComponent, GetVerbsEvent<Verb>>(OnGetVerbs);
         SubscribeLocalEvent<RenamableComponent, RenamableBuiMessage>(OnRename);
+
         _popup = _entManager.System<SharedPopupSystem>();
         _metaData = _entManager.System<MetaDataSystem>();
     }
@@ -46,9 +47,10 @@ public partial class SharedRenamableSystem : EntitySystem
     {
         if (!args.CanAccess || !args.CanInteract || args.Hands == null)
             return;
+
         var entityUid = entity.Owner;
         var user = args.User;
-        var v = new Verb
+        var renameVerb = new Verb
         {
             Text = Loc.GetString("verb-categories-rename"),
             DoContactInteraction = true,
@@ -57,7 +59,7 @@ public partial class SharedRenamableSystem : EntitySystem
                 _uiSystem.OpenUi(entityUid, SharedRenamableInterfaceKey.Key, user);
             }
         };
-        args.Verbs.Add(v);
+        args.Verbs.Add(renameVerb);
     }
 }
 

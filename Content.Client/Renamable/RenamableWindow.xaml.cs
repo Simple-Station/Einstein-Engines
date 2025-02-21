@@ -22,9 +22,9 @@ public sealed partial class RenamableWindow : DefaultWindow
     {
         RobustXamlLoader.Load(this);
 
-        NameLineEdit.OnTextEntered += e =>
+        NameLineEdit.OnTextEntered += args =>
         {
-            _name = e.Text;
+            _name = args.Text;
             OnNameChanged?.Invoke(_name);
         };
 
