@@ -11979,3 +11979,13 @@ Entries:
   id: 6874
   time: '2025-02-21T14:26:05.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1818
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added "Blueshield primary weapon" loadout group. His primary selection
+        currently consists of the classic Chester rifle, an energy shield, and
+        an R25.
+  id: 6875
+  time: '2025-02-21T14:27:33.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1816
