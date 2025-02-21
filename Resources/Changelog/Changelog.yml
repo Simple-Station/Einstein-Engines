@@ -11989,3 +11989,14 @@ Entries:
   id: 6875
   time: '2025-02-21T14:27:33.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1816
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added handgun manufacturing to Arsenal research. Most firearms made this
+        way require Aluminium mined from planets to manufacture.
+    - type: Add
+      message: 'The BRDI-R25 rifle can now be purchased via cargo. '
+  id: 6876
+  time: '2025-02-21T14:34:14.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1810
