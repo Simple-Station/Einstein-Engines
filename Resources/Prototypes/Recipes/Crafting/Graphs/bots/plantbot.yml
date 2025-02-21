@@ -29,4 +29,4 @@
         name: plant clippers
         doAfter: 2
   - node: bot
-    entity: MobPlantBot
+    entity: MobPlantbot
