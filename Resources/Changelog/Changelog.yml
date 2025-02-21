@@ -11962,3 +11962,13 @@ Entries:
   id: 6872
   time: '2025-02-21T02:33:19.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1829
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Singularity shouldn't escape its containment anymore. If it's still
+        escaping containment, do me a favor and revert PR 1619 (Newtonian
+        Singularity)
+  id: 6873
+  time: '2025-02-21T08:01:55.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1830
