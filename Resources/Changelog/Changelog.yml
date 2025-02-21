@@ -12007,3 +12007,10 @@ Entries:
   id: 6877
   time: '2025-02-21T16:24:25.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1821
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: Added Plantbot
+  id: 6878
+  time: '2025-02-21T16:46:25.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1831
