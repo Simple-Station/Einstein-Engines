@@ -11955,3 +11955,10 @@ Entries:
   id: 6871
   time: '2025-02-20T03:55:29.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1823
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: Ported fix for high lighting quality
+  id: 6872
+  time: '2025-02-21T02:33:19.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1829
