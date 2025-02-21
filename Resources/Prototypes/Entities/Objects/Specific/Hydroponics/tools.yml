@@ -39,6 +39,7 @@
   - type: Tag
     tags:
     - PlantSampleTaker
+    - HydroponicsToolClippers
   - type: Sprite
     sprite: Objects/Tools/Hydroponics/clippers.rsi
     state: icon
