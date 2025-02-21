@@ -157,7 +157,7 @@
   name: advanced industrial welding tool
   parent: WelderIndustrial
   id: WelderIndustrialAdvanced
-  description: "An advanced industrial welder with over five times the fuel capacity and hotter flame."
+  description: "An advanced industrial welder with over five times the fuel capacity and a hotter flame."
   components:
   - type: Sprite
     sprite: Objects/Tools/welder_industrialadv.rsi
