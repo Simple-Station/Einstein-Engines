@@ -125,6 +125,21 @@
 - type: entity
   name: viper
   parent: WeaponPistolViper
+  id: WeaponPistolViperEmpty
+  suffix: Empty
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: null
+      gun_chamber:
+        name: Chamber
+        startingItem: null
+
+- type: entity
+  name: viper
+  parent: WeaponPistolViper
   id: WeaponPistolViperSecurity
   description: A small, easily concealable, but somewhat underpowered gun, produced by a bulk arms manufacturer now defunct for over a century.
                Uses .35 auto ammo. The serial number on the handguard marks this gun as belonging to an NT Security Officer.
@@ -220,6 +235,21 @@
       gun_chamber: !type:ContainerSlot
 
 - type: entity
+  name: cobra
+  parent: WeaponPistolCobra
+  id: WeaponPistolCobraEmpty
+  suffix: Empty
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: null
+      gun_chamber:
+        name: Chamber
+        startingItem: null
+
+- type: entity
   name: mk 58
   parent: BaseWeaponPistol
   id: WeaponPistolMk58
@@ -241,6 +271,21 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
     fireOnDropChance: 0.5
+
+- type: entity
+  name: mk58
+  parent: WeaponPistolMk58
+  id: WeaponPistolMk58Empty
+  suffix: Empty
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: null
+      gun_chamber:
+        name: Chamber
+        startingItem: null
 
 - type: entity
   name: mk 58
@@ -333,6 +378,21 @@
         whitelist:
           tags:
             - CartridgeMagnum
+
+- type: entity
+  name: N1984
+  parent: WeaponPistolN1984
+  id: WeaponPistolN1984Empty
+  suffix: Empty
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: null
+      gun_chamber:
+        name: Chamber
+        startingItem: null
 
 - type: entity
   name: N1984

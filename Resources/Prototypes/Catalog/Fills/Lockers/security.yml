@@ -309,3 +309,16 @@
     contents:
     - id: WeaponLaserCarbine
       amount: 3
+
+- type: entity
+  id: GunSafeRifleBRDIR25
+  suffix: BRDI-R25
+  parent: GunSafe
+  name: BRDI-R25 safe
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponSubMachineGunBRDIR25
+      amount: 2
+    - id: MagazineCaselessRifle
+      amount: 4
