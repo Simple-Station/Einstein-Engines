@@ -37,6 +37,7 @@ public sealed class EventHorizonSystem : SharedEventHorizonSystem
     #endregion Dependencies
 
     private EntityQuery<PhysicsComponent> _physicsQuery;
+    private const float CosmicSpeedLimit = 20f;
 
     public override void Initialize()
     {
@@ -142,6 +143,9 @@ public sealed class EventHorizonSystem : SharedEventHorizonSystem
             var impulse = (otherPhysics.LinearVelocity - thisPhysics.LinearVelocity)
                 * otherPhysics.FixturesMass
                 * thisPhysics.FixturesMass / (thisPhysics.FixturesMass + otherPhysics.FixturesMass); // Accounts for the expected mass change from consuming the object
+            if (impulse.Length() >= CosmicSpeedLimit) // Stop it from quantum tunneling through walls.
+                impulse = impulse.Normalized() * CosmicSpeedLimit;
+
             _physics.ApplyLinearImpulse(hungry, impulse, body: thisPhysics);
         }
 
