@@ -17,6 +17,7 @@ public sealed partial class PlantbotServiceOperator : HTNOperator
 {
     [Dependency] private readonly IEntityManager _entMan = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+
     private ChatSystem _chat = default!;
     private SharedAudioSystem _audio = default!;
     private SharedInteractionSystem _interaction = default!;
@@ -36,6 +37,7 @@ public sealed partial class PlantbotServiceOperator : HTNOperator
     public override void Initialize(IEntitySystemManager sysManager)
     {
         base.Initialize(sysManager);
+
         _chat = sysManager.GetEntitySystem<ChatSystem>();
         _audio = sysManager.GetEntitySystem<SharedAudioSystem>();
         _interaction = sysManager.GetEntitySystem<SharedInteractionSystem>();

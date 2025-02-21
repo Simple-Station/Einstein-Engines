@@ -13,6 +13,7 @@ public sealed partial class PickNearbyServicableHydroponicsTrayOperator : HTNOpe
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    
     private EntityLookupSystem _lookup = default!;
     private PathfindingSystem _pathfinding = default!;
 
@@ -33,6 +34,7 @@ public sealed partial class PickNearbyServicableHydroponicsTrayOperator : HTNOpe
     public override void Initialize(IEntitySystemManager sysManager)
     {
         base.Initialize(sysManager);
+
         _lookup = sysManager.GetEntitySystem<EntityLookupSystem>();
         _pathfinding = sysManager.GetEntitySystem<PathfindingSystem>();
     }
@@ -53,7 +55,7 @@ public sealed partial class PickNearbyServicableHydroponicsTrayOperator : HTNOpe
             if (!entityQuery.TryGetComponent(target, out var plantHolderComponent))
                 continue;
 
-            if(plantHolderComponent is { WaterLevel: > 80f, WeedLevel: < 1f } && (!emagged || plantHolderComponent.Dead || plantHolderComponent.WaterLevel <= 0f))
+            if (plantHolderComponent is { WaterLevel: > 80f, WeedLevel: < 1f } && (!emagged || plantHolderComponent.Dead || plantHolderComponent.WaterLevel <= 0f))
                 continue;
 
             //Needed to make sure it doesn't sometimes stop right outside it's interaction range
