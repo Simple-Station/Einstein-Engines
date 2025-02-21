@@ -26,6 +26,10 @@ public sealed partial class PlantbotServiceOperator : HTNOperator
     private DamageableSystem _damageableSystem = default!;
     private TagSystem _tagSystem = default!;
 
+    public const float RequiredWaterLevelToService = 80f;
+    public const float RequiredWeedsAmountToWeed = 1f;
+    public const float WaterTransferAmount = 10f;
+    public const float WeedsRemovedAmount = 1f;
     public const string SiliconTag = "SiliconMob";
 
     /// <summary>
@@ -61,25 +65,25 @@ public sealed partial class PlantbotServiceOperator : HTNOperator
         if (!_entMan.TryGetComponent<PlantbotComponent>(owner, out var botComp)
             || !_entMan.TryGetComponent<PlantHolderComponent>(target, out var plantHolderComponent)
             || !_interaction.InRangeUnobstructed(owner, target)
-            || (plantHolderComponent is { WaterLevel: > 80f, WeedLevel: < 1f } && (!_entMan.HasComponent<EmaggedComponent>(owner) || plantHolderComponent.Dead || plantHolderComponent.WaterLevel <= 0f)))
+            || (plantHolderComponent is { WaterLevel: >= RequiredWaterLevelToService, WeedLevel: <= RequiredWeedsAmountToWeed } && (!_entMan.HasComponent<EmaggedComponent>(owner) || plantHolderComponent.Dead || plantHolderComponent.WaterLevel <= 0f)))
             return HTNOperatorStatus.Failed;
 
         if (botComp.IsEmagged)
         {
-            _plantHolderSystem.AdjustWater(target, -10f);
+            _plantHolderSystem.AdjustWater(target, -WaterTransferAmount);
             _audio.PlayPvs(botComp.RemoveWaterSound, target);
         }
         else
         {
-            if (plantHolderComponent.WaterLevel < 80f)
+            if (plantHolderComponent.WaterLevel <= RequiredWaterLevelToService)
             {
                 _plantHolderSystem.AdjustWater(target, 10);
                 _audio.PlayPvs(botComp.WaterSound, target);
                 _chat.TrySendInGameICMessage(owner, Loc.GetString("plantbot-add-water"), InGameICChatType.Speak, hideChat: true, hideLog: true);
             }
-            else if (plantHolderComponent.WeedLevel > 1)
+            else if (plantHolderComponent.WeedLevel >= RequiredWeedsAmountToWeed)
             {
-                plantHolderComponent.WeedLevel -= 1;
+                plantHolderComponent.WeedLevel -= WeedsRemovedAmount;
                 _audio.PlayPvs(botComp.WeedSound, target);
                 _chat.TrySendInGameICMessage(owner, Loc.GetString("plantbot-remove-weeds"), InGameICChatType.Speak, hideChat: true, hideLog: true);
             }
