@@ -177,7 +177,7 @@
   name: experimental welding tool
   parent: Welder
   id: WelderExperimental
-  Description: "An experimental welder that is less harmful to the eyes while having a hotter flame and slowly regenerating fuel."
+  description: "An experimental welder that is less harmful to the eyes while having a hotter flame and slowly regenerating fuel."
   components:
   - type: Sprite
     sprite: Objects/Tools/welder_experimental.rsi
