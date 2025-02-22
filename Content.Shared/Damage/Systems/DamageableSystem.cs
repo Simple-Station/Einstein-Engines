@@ -276,15 +276,15 @@ namespace Content.Shared.Damage
             DamageChanged(uid, component, new DamageSpecifier());
 
             // Shitmed Change Start
-            if (HasComp<TargetingComponent>(uid))
+            if (!HasComp<TargetingComponent>(uid))
+                continue;
+                
+            foreach (var (part, _) in _body.GetBodyChildren(uid))
             {
-                foreach (var (part, _) in _body.GetBodyChildren(uid))
-                {
-                    if (!TryComp(part, out DamageableComponent? damageComp))
-                        continue;
+                if (!TryComp(part, out DamageableComponent? damageComp))
+                    continue;
 
-                    ChangeAllDamage(part, damageComp, addedValue);
-                }
+                ChangeAllDamage(part, damageComp, addedValue);
             }
             // Shitmed Change End
         }
