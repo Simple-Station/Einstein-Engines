@@ -57,3 +57,13 @@
   cost: 5200
   category: cargoproduct-category-name-armory
   group: market
+
+- type: cargoProduct
+  id: ArmoryBRDIR25
+  icon:
+    sprite: _EE/Objects/Weapons/Guns/SMGs/BRDI_R25.rsi
+    state: icon
+  product: CrateArmoryBRDIR25
+  cost: 12000
+  category: cargoproduct-category-name-armory
+  group: market

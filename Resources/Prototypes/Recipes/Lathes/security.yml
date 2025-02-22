@@ -1159,3 +1159,48 @@
     Steel: 500
     Circuitry: 500
     Tungsten: 200
+
+- type: latheRecipe
+  id: WeaponPistolMk58
+  result: WeaponPistolMk58Empty
+  category: Weapons
+  completetime: 6
+  materials:
+    Aluminum: 800
+    Steel: 100
+    Plastic: 150
+
+- type: latheRecipe
+  id: WeaponPistolN1984
+  result: WeaponPistolN1984Empty
+  category: Weapons
+  completetime: 6
+  materials:
+    Steel: 800 #Yes, Steel and not Aluminum, the original M1911 handguns that this is in reference to are steel frame.
+               #For balancing reasons(Steel is way easier to get), it includes other rarer materials.
+    Plasteel: 100
+    Plastic: 250
+    Gold: 200
+    Silver: 100
+
+- type: latheRecipe
+  id: WeaponPistolViper
+  result: WeaponPistolViperEmpty
+  category: Weapons
+  completetime: 6
+  materials:
+    Aluminum: 900
+    Plasteel: 100
+    Plastic: 150
+    Silver: 100
+
+- type: latheRecipe
+  id: WeaponPistolCobra
+  result: WeaponPistolCobraEmpty
+  category: Weapons
+  completetime: 6
+  materials:
+    Aluminum: 600
+    Plasteel: 100
+    Plastic: 450
+    Silver: 100
