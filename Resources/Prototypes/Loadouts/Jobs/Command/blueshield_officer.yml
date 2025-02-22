@@ -102,6 +102,22 @@
     - WeaponSubMachineGunBRDIR25
 
 - type: loadout
+  id: LoadoutBSOEnergyShotgun
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerPrimary
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+    - !type:CharacterAgeRequirement
+      min: 21
+  items:
+    - WeaponEnergyShotgun
+
+- type: loadout
   id: LoadoutBSOEnergyShield
   category: JobsCommandBlueshieldOfficer
   cost: 0
