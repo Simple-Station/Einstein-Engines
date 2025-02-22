@@ -12014,3 +12014,18 @@ Entries:
   id: 6878
   time: '2025-02-21T16:46:25.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1831
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: Advanced Industrial welder from 250 capacity to 500
+    - type: Tweak
+      message: Advanced Industrial welder from 1.3x speed to 1.5x speed
+    - type: Tweak
+      message: Experimental welder from 1000 capacity to 200
+    - type: Tweak
+      message: Experimental welder from 1u of welder fuel generated to 0.5u
+    - type: Tweak
+      message: Experimental welder from 1x speed to 2x speed
+  id: 6879
+  time: '2025-02-22T03:46:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1832
