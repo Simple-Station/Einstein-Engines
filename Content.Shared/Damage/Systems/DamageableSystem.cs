@@ -277,8 +277,8 @@ namespace Content.Shared.Damage
 
             // Shitmed Change Start
             if (!HasComp<TargetingComponent>(uid))
-                continue;
-                
+                return;
+
             foreach (var (part, _) in _body.GetBodyChildren(uid))
             {
                 if (!TryComp(part, out DamageableComponent? damageComp))
