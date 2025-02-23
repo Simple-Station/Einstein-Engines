@@ -4,16 +4,15 @@
   text: "/ServerInfo/Guidebook/Antagonist/Antagonists.xml"
   children:
   - Traitors
+  - Thieves
+  - Revolutionaries
+  - NuclearOperatives
+  - SpaceNinja
+  - Zombies
+  - MinorAntagonists
   - Changelings # Goobstation - changelings
   - Blob # Goobstation - Blob
-  - NuclearOperatives
-  - Zombies
-  - Revolutionaries
-  - MinorAntagonists
-  - SpaceNinja
-  - Thieves
   - Abductors # Shitmed - Abductors
-  #  - Bingle # Goob content
   - Devil # Goob content
   - BloodCult
   - Shadowlings
