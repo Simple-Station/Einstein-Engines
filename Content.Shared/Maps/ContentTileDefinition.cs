@@ -142,11 +142,4 @@ namespace Content.Shared.Maps
         [DataField]
         public bool SimulatedTurf = true;
     }
-
-    [Flags]
-    public enum TileFlag : byte
-    {
-        None = 0,
-        Roof = 1 << 0,
-    }
 }
