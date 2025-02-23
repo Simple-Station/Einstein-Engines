@@ -100,7 +100,7 @@
   id: LoadoutHandsClothWrap
   category: Hands
   cost: 0
-  exclusive: true
+  exclusive: false
   customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
