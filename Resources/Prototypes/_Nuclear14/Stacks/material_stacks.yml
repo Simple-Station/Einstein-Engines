@@ -22,10 +22,10 @@
   itemSize: 1
 
 - type: stack
-  id: N14CopperOre
+  id: CopperOre
   name: copper ore
   icon: { sprite: "/Textures/_Nuclear14/Objects/Misc/materials.rsi", state: copper }
-  spawn: N14CopperOre1
+  spawn: CopperOre1
   maxCount: 30
   itemSize: 1
 
@@ -55,9 +55,9 @@
   itemSize: 1
 
 - type: stack
-  id: N14Copper
+  id: Copper
   name: copper
   icon: { sprite: "/Textures/_Nuclear14/Objects/Misc/materials.rsi", state: ingot_copper }
-  spawn: N14IngotCopper1
+  spawn: IngotCopper1
   maxCount: 30
   itemSize: 1

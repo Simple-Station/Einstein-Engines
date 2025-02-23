@@ -6,6 +6,7 @@
   name: personal ai device
   description: Your electronic pal who's fun to be with!
   components:
+  - type: Renamable
   - type: Instrument
     allowPercussion: false
     handheld: false
@@ -19,6 +20,8 @@
       enum.StationMapUiKey.Key:
         type: StationMapBoundUserInterface
         requireInputValidation: false
+      enum.SharedRenamableInterfaceKey.Key:
+        type: RenamableBoundUserInterface
   - type: Sprite
     sprite: Objects/Fun/pai.rsi
     layers:

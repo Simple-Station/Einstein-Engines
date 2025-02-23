@@ -1074,6 +1074,9 @@
   id: PlantSampleTaker
 
 - type: Tag
+  id: HydroponicsToolClippers
+
+- type: Tag
   id: PlasmaGlassShard
 
 - type: Tag
@@ -1090,6 +1093,9 @@
 
 - type: Tag
   id: SiliconMob
+
+- type: Tag
+  id: WeldbotFixableStructure
 
 - type: Tag
   id: PlushieSharkBlue

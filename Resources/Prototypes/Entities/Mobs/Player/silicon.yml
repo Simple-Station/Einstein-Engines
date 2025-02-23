@@ -14,11 +14,23 @@
     - Medical
     - Science
     - Security
+    - Prison
     - Service
     - Supply
+    - Justice
   - type: ActiveRadio
-    receiveAllChannels: true
-    globalReceive: true
+    channels:
+    - Binary
+    - Common
+    - Command
+    - Engineering
+    - Medical
+    - Science
+    - Security
+    - Prison
+    - Service
+    - Supply
+    - Justice
   - type: IgnoreUIRange
   - type: StationAiHeld
   - type: StationAiOverlay
@@ -451,6 +463,7 @@
   - type: SiliconLawProvider
     laws: AntimovLawset
     lawUploadSound: /Audio/Ambience/Antag/silicon_lawboard_antimov.ogg
+    unRemovable: true
 
 - type: entity
   id: NutimovCircuitBoard
@@ -502,6 +515,7 @@
   - AiHolder
   suffix: Empty
   components:
+  - type: IonStormTarget
   - type: WarpPoint
   - type: ContainerComp
     proto: AiHeld

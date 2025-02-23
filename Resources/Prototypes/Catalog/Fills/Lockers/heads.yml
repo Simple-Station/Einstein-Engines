@@ -109,7 +109,6 @@
       - id: RubberStampApproved
       - id: BoxEncryptionKeyPassenger
       - id: BoxEncryptionKeyService
-      - id: AccessConfigurator
       - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
 
@@ -243,6 +242,11 @@
       - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
       - id: PsiWatchCartridge
+      - id: StationAiUploadCircuitboard
+      - id: AsimovCircuitBoard
+      - id: AugustineCircuitBoard
+      - id: CrewsimovCircuitBoard
+      - id: AntimovCircuitBoard
 
 - type: entity
   id: LockerResearchDirectorFilled
@@ -266,6 +270,11 @@
       - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
       - id: PsiWatchCartridge
+      - id: StationAiUploadCircuitboard
+      - id: AsimovCircuitBoard
+      - id: AugustineCircuitBoard
+      - id: CrewsimovCircuitBoard
+      - id: AntimovCircuitBoard
 
 - type: entity
   id: LockerHeadOfSecurityFilledHardsuit

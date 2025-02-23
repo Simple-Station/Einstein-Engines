@@ -6,7 +6,7 @@
   maxPlayers: 55
   stations:
     Lighthouse:
-      stationProto: StandardNanotrasenStation
+      stationProto: StandardNanotrasenStationNoATS
       components:
       - type: StationEmergencyShuttle
         emergencyShuttlePath: /Maps/Shuttles/DeltaV/NTES_BC20.yml
@@ -41,6 +41,7 @@
           AtmosphericTechnician: [ 1, 2 ]
           StationEngineer: [ 3, 4 ]
           TechnicalAssistant: [ 2, 3 ]
+          SeniorEngineer: [ 1, 1 ]
         #medical
           ChiefMedicalOfficer: [ 1, 1 ]
           Chemist: [ 1, 2 ]
@@ -48,6 +49,7 @@
           Psychologist: [ 1, 1 ]
           MedicalDoctor: [ 3, 4 ]
           MedicalIntern: [ 2, 3 ]
+          SeniorPhysician: [ 1, 1 ]
         #science
           ResearchDirector: [ 1, 1 ]
           Chaplain: [ 1, 1 ]
@@ -55,6 +57,7 @@
           Scientist: [ 3, 4 ]
           ResearchAssistant: [ 2, 3 ]
           Borg: [ 1, 2 ]
+          SeniorResearcher: [ 1, 1 ]
         #security
           HeadOfSecurity: [ 1, 1 ]
           Warden: [ 1, 1 ]
@@ -62,6 +65,7 @@
           SecurityOfficer: [ 2, 4 ]
           SecurityCadet: [ 1, 4 ]
           Prisoner: [ 2, 3 ]
+          SeniorOfficer: [ 1, 1 ]
         #supply
           Quartermaster: [ 1, 1 ]
           MailCarrier: [ 2, 2 ]
