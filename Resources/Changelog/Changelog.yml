@@ -12029,3 +12029,12 @@ Entries:
   id: 6879
   time: '2025-02-22T03:46:30.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1832
+- author: Timfa2112
+  changes:
+    - type: Tweak
+      message: >-
+        Weldbots can now fix specific structures, like windows and grounding
+        rods.
+  id: 6880
+  time: '2025-02-22T18:08:01.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1838

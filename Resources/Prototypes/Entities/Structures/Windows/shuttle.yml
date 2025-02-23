@@ -39,6 +39,9 @@
   - type: IconSmooth
     base: swindow
   - type: Appearance
+  - type: Tag
+    tags:
+      - WeldbotFixableStructure
   - type: DamageVisuals
     thresholds: [4, 8, 12]
     damageDivisor: 28
