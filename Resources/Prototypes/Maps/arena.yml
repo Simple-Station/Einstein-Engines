@@ -74,3 +74,7 @@
             CargoTechnician: [ 2, 3 ]
             SalvageSpecialist: [ 2, 3 ]
             MailCarrier: [ 1, 2 ]
+          #silicon
+            StationAi: [ 1, 1 ]
+            Borg: [ 2, 2 ]
+            MedicalBorg: [ 1, 1 ]
