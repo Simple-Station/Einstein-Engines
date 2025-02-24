@@ -12038,3 +12038,15 @@ Entries:
   id: 6880
   time: '2025-02-22T18:08:01.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1838
+- author: Timfa2112
+  changes:
+    - type: Tweak
+      message: >-
+        Tweaked Tricordrazine to heal MINOR amounts of radiation damage. This
+        includes Medibots. If it's more than a teeny tiny amount, go to medical!
+        This also alleviates the issue where the medibot keeps pestering you
+        about the 0.1 rad damage because it thinks it can heal it, while the
+        medicine it'll inject (before this change) didn't actually do anything.
+  id: 6881
+  time: '2025-02-24T00:21:05.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1840
