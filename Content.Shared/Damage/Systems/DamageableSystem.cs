@@ -256,6 +256,39 @@ namespace Content.Shared.Damage
             // Shitmed Change End
         }
 
+        /// <summary>
+        ///     Changes all damage types supported by a <see cref="DamageableComponent"/> by the specified value.
+        /// </summary>
+        /// <remakrs>
+        ///     Will not lower damage to a negative value.
+        /// </remakrs>
+        public void ChangeAllDamage(EntityUid uid, DamageableComponent component, FixedPoint2 addedValue)
+        {
+            foreach (var type in component.Damage.DamageDict.Keys)
+            {
+                component.Damage.DamageDict[type] += addedValue;
+                if (component.Damage.DamageDict[type] < 0)
+                    component.Damage.DamageDict[type] = 0;
+            }
+
+            // Changing damage does not count as 'dealing' damage, even if it is set to a larger value, so we pass an
+            // empty damage delta.
+            DamageChanged(uid, component, new DamageSpecifier());
+
+            // Shitmed Change Start
+            if (!HasComp<TargetingComponent>(uid))
+                return;
+
+            foreach (var (part, _) in _body.GetBodyChildren(uid))
+            {
+                if (!TryComp(part, out DamageableComponent? damageComp))
+                    continue;
+
+                ChangeAllDamage(part, damageComp, addedValue);
+            }
+            // Shitmed Change End
+        }
+
         public void SetDamageModifierSetId(EntityUid uid, string damageModifierSetId, DamageableComponent? comp = null)
         {
             if (!_damageableQuery.Resolve(uid, ref comp))
