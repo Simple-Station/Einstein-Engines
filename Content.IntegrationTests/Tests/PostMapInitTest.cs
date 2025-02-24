@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Content.Server.Administration.Systems;
 using Content.Server.GameTicking;
 using Content.Server.Maps;
 using Content.Server.Shuttles.Components;
@@ -41,6 +42,7 @@ namespace Content.IntegrationTests.Tests
         {
             "/Maps/CentralCommand/main.yml",
             "/Maps/CentralCommand/harmony.yml", // Harmony CC version
+            AdminTestArenaSystem.ArenaMapPath,
         };
 
         private static readonly string[] GameMaps =
