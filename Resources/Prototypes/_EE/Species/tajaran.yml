@@ -16,7 +16,7 @@
   maleFirstNames: names_tajaran_first
   femaleFirstNames: names_tajaran_first
   lastNames: names_tajaran_last
-  
+
 
 - type: markingPoints
   id: MobTajaranMarkingLimits
@@ -67,6 +67,7 @@
   id: MobTajaranSprites
   sprites:
     Head: MobTajaranHead
+    Face: MobHumanoidAnyMarking
     HeadTop: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
     Hair: MobHumanoidAnyMarking
