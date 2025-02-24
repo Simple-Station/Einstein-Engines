@@ -383,7 +383,7 @@ trait-description-StrikingCalluses =
     Striking Calluses consist of bony dermal deposits grafted into a user's hands, either inside the palm
     for "Tiger Style" fighting, or just below the knuckles for those who favor traditional boxing.
     Owners of prosthetic or bionic limbs would instead have a hard plastic shell over their knuckles.
-    These enhancements increase your unarmed strike damage by 1 point base, but do not confer
+    These enhancements increase your unarmed strike damage by 2 point base, but do not confer
     any benefits to any form of armed melee.
 
 trait-name-Spinarette = Bionic Spinarette
@@ -391,8 +391,7 @@ trait-description-Spinarette =
     This vatgrown organ-- trademarked and patented by the Cybersun Corporation, is marketed as a highly
     utilitarian enhancement, and sold in clinics all across known space. It consists of a nodule that is traditionally
     implanted right below the wrist, which absorbs bodily lipids to convert into all natural silk. A small opening
-    in the palm allows the user to 'spin' this thread. Users of this enhancement typically require twice as much food
-    as a standard Sol Human, owing to the high metabolic cost of artificial Sericulture.
+    in the palm allows the user to 'spin' this thread.
 
 trait-name-AddictionNicotine = Nicotine Addiction
 trait-description-AddictionNicotine =
@@ -530,13 +529,13 @@ trait-description-BrittleBoneDisease =
     Also known as "brittle bone disease", people with this genetic disorder have bones that are easily broken,
     often simply by moving. This trait reduces your threshold for critical injury by 50 points.
 
-trait-name-LightAmplification = CyberEyes Module: Light Amplification
+trait-name-LightAmplification = Cyber-Eyes: Light Amplification Module
 trait-description-LightAmplification =
-    Your CyberEyes have been enhanced with a light amplifier module, enabling the user to toggle between standard sight and "Night Vision" mode.
+    Your Cyber-Eyes have been enhanced with a light amplifier module, enabling the user to toggle between standard sight and "Night Vision" mode.
 
-trait-name-ThermographicVision = CyberEyes Module: Thermographic Scanner
+trait-name-ThermographicVision = Cyber-Eyes: Thermographic Scanner Module
 trait-description-ThermographicVision =
-    Your CyberEyes have been enhanced with a Thermographic Scanner. When enabled, it captures a snapshot of the user's surroundings, while highlighting all
+    Your Cyber-Eyes have been enhanced with a Thermographic Scanner. When enabled, it captures a snapshot of the user's surroundings, while highlighting all
     biological life forms. It can even detect individuals through the walls of a station.
 
 trait-name-ShadowkinBlackeye = Blackeye
