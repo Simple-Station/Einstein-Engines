@@ -19,7 +19,7 @@
     - type: DamageOnHighSpeedImpact
       damage:
         types:
-          Blunt: 10
+          Blunt: 1
       soundHit:
         path: /Audio/Effects/hit_kick.ogg
     - type: Damageable
