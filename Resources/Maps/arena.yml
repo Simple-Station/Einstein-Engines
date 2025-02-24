@@ -11296,6 +11296,13 @@ entities:
       id: Arena
     - type: GasTileOverlay
     - type: SpreaderGrid
+- proto: ActionClearNetworkLinkOverlays
+  entities:
+  - uid: 27913
+    components:
+    - type: Transform
+      pos: -16.815392,-52.873158
+      parent: 6747
 - proto: AirAlarm
   entities:
   - uid: 304
@@ -12217,6 +12224,8 @@ entities:
       - 22241
       - 15359
       - 21428
+      - 15358
+      - 15428
   - uid: 22288
     components:
     - type: Transform
@@ -109301,6 +109310,9 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -12.5,-58.5
       parent: 6747
+    - type: DeviceNetwork
+      deviceLists:
+      - 22239
     - type: AtmosPipeColor
       color: '#0335FCFF'
   - uid: 15445
@@ -111218,6 +111230,9 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -12.5,-57.5
       parent: 6747
+    - type: DeviceNetwork
+      deviceLists:
+      - 22239
     - type: AtmosPipeColor
       color: '#FF1212FF'
   - uid: 15359
