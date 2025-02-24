@@ -19,7 +19,7 @@ public sealed partial class StartingGearPrototype : IPrototype, IInheritingProto
     /// <inheritdoc/>
     [AbstractDataField]
     [NeverPushInheritance]
-    public bool Abstract { get; }
+    public bool Abstract { get; private set; }
 
     /// <summary>
     ///     The list of starting gears that overwrite the entries on this starting gear
