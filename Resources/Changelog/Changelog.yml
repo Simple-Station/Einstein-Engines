@@ -12057,3 +12057,12 @@ Entries:
   id: 6882
   time: '2025-02-25T02:16:52.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1841
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: Holoparasite melee damage from 20 blunt to 10 blunt
+    - type: Tweak
+      message: Holoparasite melee speed from 1.8 to 0.3
+  id: 6883
+  time: '2025-02-25T05:22:08.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1843
