@@ -18,6 +18,7 @@
     tags:
       - ForceFixRotations
       - Window
+      - WeldbotFixableStructure
   - type: Sprite
     drawdepth: WallTops
     sprite: Structures/Windows/window.rsi
@@ -115,6 +116,7 @@
     tags:
       - Window
       - Directional #Delta V - Summary: Allows the tilewindow mapping command to work.
+      - WeldbotFixableStructure
   - type: MeleeSound
     soundGroups:
       Brute:
