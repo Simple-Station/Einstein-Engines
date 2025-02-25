@@ -46,6 +46,7 @@ public sealed class SecretRuleSystem : GameRuleSystem<SecretRuleComponent>
 
         Log.Info($"Selected {preset.ID} as the secret preset.");
         _adminLogger.Add(LogType.EventStarted, $"Selected {preset.ID} as the secret preset.");
+        _chatManager.SendAdminAnnouncement(Loc.GetString("rule-secret-selected-preset", ("preset", preset.ID)));
 
         foreach (var rule in preset.Rules)
         {

@@ -37,6 +37,7 @@ public sealed class EventHorizonSystem : SharedEventHorizonSystem
     #endregion Dependencies
 
     private EntityQuery<PhysicsComponent> _physicsQuery;
+    private const float CosmicSpeedLimit = 20f;
 
     public override void Initialize()
     {
@@ -125,10 +126,12 @@ public sealed class EventHorizonSystem : SharedEventHorizonSystem
     /// </summary>
     public void ConsumeEntity(EntityUid hungry, EntityUid morsel, EventHorizonComponent eventHorizon, BaseContainer? outerContainer = null)
     {
-        if (!EntityManager.IsQueuedForDeletion(morsel) // I saw it log twice a few times for some reason?
-        && (HasComp<MindContainerComponent>(morsel)
+        if (EntityManager.IsQueuedForDeletion(morsel)) // already handled, and we're substepping
+            return;
+
+        if (HasComp<MindContainerComponent>(morsel)
             || _tagSystem.HasTag(morsel, "HighRiskItem")
-            || HasComp<ContainmentFieldGeneratorComponent>(morsel)))
+            || HasComp<ContainmentFieldGeneratorComponent>(morsel))
         {
             _adminLogger.Add(LogType.EntityDelete, LogImpact.Extreme, $"{ToPrettyString(morsel)} entered the event horizon of {ToPrettyString(hungry)} and was deleted");
         }
@@ -140,6 +143,9 @@ public sealed class EventHorizonSystem : SharedEventHorizonSystem
             var impulse = (otherPhysics.LinearVelocity - thisPhysics.LinearVelocity)
                 * otherPhysics.FixturesMass
                 * thisPhysics.FixturesMass / (thisPhysics.FixturesMass + otherPhysics.FixturesMass); // Accounts for the expected mass change from consuming the object
+            if (impulse.Length() >= CosmicSpeedLimit) // Stop it from quantum tunneling through walls.
+                impulse = impulse.Normalized() * CosmicSpeedLimit;
+
             _physics.ApplyLinearImpulse(hungry, impulse, body: thisPhysics);
         }
 
