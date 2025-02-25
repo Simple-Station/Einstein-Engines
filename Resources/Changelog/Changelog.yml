@@ -12066,3 +12066,12 @@ Entries:
   id: 6883
   time: '2025-02-25T05:22:08.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1843
+- author: Diggy
+  changes:
+    - type: Tweak
+      message: Tweaked the nano bot trait value from 0,9 to 0,6.
+    - type: Fix
+      message: Bionic legs DO work now, yay.
+  id: 6884
+  time: '2025-02-25T14:39:19.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1833
