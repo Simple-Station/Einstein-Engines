@@ -12050,3 +12050,10 @@ Entries:
   id: 6881
   time: '2025-02-24T00:21:05.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1840
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: Added cloth wraps to hands loadouts
+  id: 6882
+  time: '2025-02-25T02:16:52.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1841
