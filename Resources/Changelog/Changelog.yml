@@ -12014,3 +12014,64 @@ Entries:
   id: 6878
   time: '2025-02-21T16:46:25.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1831
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: Advanced Industrial welder from 250 capacity to 500
+    - type: Tweak
+      message: Advanced Industrial welder from 1.3x speed to 1.5x speed
+    - type: Tweak
+      message: Experimental welder from 1000 capacity to 200
+    - type: Tweak
+      message: Experimental welder from 1u of welder fuel generated to 0.5u
+    - type: Tweak
+      message: Experimental welder from 1x speed to 2x speed
+  id: 6879
+  time: '2025-02-22T03:46:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1832
+- author: Timfa2112
+  changes:
+    - type: Tweak
+      message: >-
+        Weldbots can now fix specific structures, like windows and grounding
+        rods.
+  id: 6880
+  time: '2025-02-22T18:08:01.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1838
+- author: Timfa2112
+  changes:
+    - type: Tweak
+      message: >-
+        Tweaked Tricordrazine to heal MINOR amounts of radiation damage. This
+        includes Medibots. If it's more than a teeny tiny amount, go to medical!
+        This also alleviates the issue where the medibot keeps pestering you
+        about the 0.1 rad damage because it thinks it can heal it, while the
+        medicine it'll inject (before this change) didn't actually do anything.
+  id: 6881
+  time: '2025-02-24T00:21:05.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1840
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: Added cloth wraps to hands loadouts
+  id: 6882
+  time: '2025-02-25T02:16:52.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1841
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: Holoparasite melee damage from 20 blunt to 10 blunt
+    - type: Tweak
+      message: Holoparasite melee speed from 1.8 to 0.3
+  id: 6883
+  time: '2025-02-25T05:22:08.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1843
+- author: Diggy
+  changes:
+    - type: Tweak
+      message: Tweaked the nano bot trait value from 0,9 to 0,6.
+    - type: Fix
+      message: Bionic legs DO work now, yay.
+  id: 6884
+  time: '2025-02-25T14:39:19.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1833

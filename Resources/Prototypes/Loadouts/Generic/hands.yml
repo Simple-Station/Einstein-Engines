@@ -95,3 +95,15 @@
       inverted: true
       species:
         - Plasmaman
+
+- type: loadout
+  id: LoadoutHandsClothWrap
+  category: Hands
+  cost: 0
+  exclusive: false
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGloves
+  items:
+    - ClothingClothWrap
