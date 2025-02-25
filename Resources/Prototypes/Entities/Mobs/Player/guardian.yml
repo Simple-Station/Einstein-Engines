@@ -134,6 +134,18 @@
           map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
           color: "#40a7d7"
           shader: unshaded
+    - type: MeleeWeapon
+      hidden: false
+      altDisarm: false
+      animation: WeaponArcFist
+      attackRate: 0.35
+      autoAttack: true
+      soundHit:
+        collection: Punch
+      damage:
+        types:
+          Blunt: 7
+          Structural: 7
     - type: HTN
       rootTask:
         task: SimpleHumanoidHostileCompound
