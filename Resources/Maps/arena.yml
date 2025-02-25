@@ -59955,6 +59955,16 @@ entities:
     - type: SingletonDeviceNetServer
       active: False
       available: False
+- proto: CrewsimovCircuitBoard
+  entities:
+  - uid: 27918
+    components:
+    - type: Transform
+      pos: -21.631866,-58.66917
+      parent: 6747
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: CriminalRecordsComputerCircuitboard
   entities:
   - uid: 17737
@@ -71375,6 +71385,16 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 55.20318,-41.446514
       parent: 6747
+- proto: DungeonMasterCircuitBoard
+  entities:
+  - uid: 27921
+    components:
+    - type: Transform
+      pos: -19.658852,-58.41917
+      parent: 6747
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: Eggshells
   entities:
   - uid: 2717
@@ -120610,6 +120630,16 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 52.319195,26.26902
       parent: 6747
+- proto: LiveLetLiveCircuitBoard
+  entities:
+  - uid: 27920
+    components:
+    - type: Transform
+      pos: -19.518122,-58.76292
+      parent: 6747
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: LockerAtmosphericsFilledHardsuit
   entities:
   - uid: 6093
@@ -121120,11 +121150,6 @@ entities:
     components:
     - type: Transform
       pos: 54.5,18.5
-      parent: 6747
-  - uid: 27382
-    components:
-    - type: Transform
-      pos: -21.5,-58.5
       parent: 6747
 - proto: Machete
   entities:
@@ -124390,6 +124415,13 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 38.5,-30.5
       parent: 6747
+- proto: NTDefaultCircuitBoard
+  entities:
+  - uid: 27916
+    components:
+    - type: Transform
+      pos: -21.628353,-58.407795
+      parent: 6747
 - proto: NuclearBomb
   entities:
   - uid: 9347
@@ -124397,6 +124429,13 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -33.5,-47.5
+      parent: 6747
+- proto: NutimovCircuitBoard
+  entities:
+  - uid: 27919
+    components:
+    - type: Transform
+      pos: -19.377392,-58.497295
       parent: 6747
 - proto: OatBushel
   entities:
@@ -135824,6 +135863,16 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -53.5,6.5
       parent: 6747
+  - uid: 27914
+    components:
+    - type: Transform
+      pos: -19.5,-58.5
+      parent: 6747
+  - uid: 27915
+    components:
+    - type: Transform
+      pos: -21.5,-58.5
+      parent: 6747
 - proto: RadioHandheld
   entities:
   - uid: 817
@@ -145889,6 +145938,13 @@ entities:
       rot: 3.141592653589793 rad
       pos: -33.64376,1.5674789
       parent: 6747
+- proto: RobocopCircuitBoard
+  entities:
+  - uid: 27917
+    components:
+    - type: Transform
+      pos: -21.393805,-58.501545
+      parent: 6747
 - proto: Roboisseur
   entities:
   - uid: 363
@@ -152031,6 +152087,14 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 74.67728,9.580869
+      parent: 6747
+- proto: StationAiUploadComputer
+  entities:
+  - uid: 27382
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -20.5,-58.5
       parent: 6747
 - proto: StationMap
   entities:
