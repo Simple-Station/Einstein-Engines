@@ -58322,11 +58322,23 @@ entities:
       parent: 6747
 - proto: ComputerPsionicsRecords
   entities:
+  - uid: 5234
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 5.5,-57.5
+      parent: 6747
   - uid: 27824
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 22.5,-62.5
+      parent: 6747
+  - uid: 27922
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 12.5,-68.5
       parent: 6747
 - proto: ComputerRadar
   entities:
@@ -72517,11 +72529,6 @@ entities:
     components:
     - type: Transform
       pos: -5.5,-66.5
-      parent: 6747
-  - uid: 5234
-    components:
-    - type: Transform
-      pos: 12.5,-68.5
       parent: 6747
   - uid: 5235
     components:
