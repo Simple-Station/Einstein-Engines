@@ -282,6 +282,9 @@
   requirements:
     - !type:CharacterLogicOrRequirement
       requirements:
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Shadowkin # Innate Psionics
         - !type:CharacterTraitRequirement
           traits:
             - LatentPsychic
@@ -299,6 +302,10 @@
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - ShadowkinBlackeye
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
@@ -317,6 +324,9 @@
   requirements:
     - !type:CharacterLogicOrRequirement
       requirements:
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Shadowkin # Innate Psionics
         - !type:CharacterTraitRequirement
           traits:
             - LatentPsychic
@@ -333,6 +343,10 @@
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - ShadowkinBlackeye
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
@@ -352,6 +366,9 @@
   requirements:
     - !type:CharacterLogicOrRequirement
       requirements:
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Shadowkin # Innate Psionics
         - !type:CharacterTraitRequirement
           traits:
             - LatentPsychic
@@ -370,6 +387,10 @@
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - ShadowkinBlackeye
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
@@ -388,6 +409,9 @@
   requirements:
     - !type:CharacterLogicOrRequirement
       requirements:
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Shadowkin # Innate Psionics
         - !type:CharacterTraitRequirement
           traits:
             - LatentPsychic
@@ -409,6 +433,10 @@
             - AnomalousPositronics
     - !type:CharacterItemGroupRequirement
       group: TraitsMachine
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - ShadowkinBlackeye
   functions:
     - !type:TraitAddPsionics
       psionicPowers:

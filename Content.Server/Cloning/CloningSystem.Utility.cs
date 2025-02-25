@@ -327,7 +327,9 @@ public sealed partial class CloningSystem
                 pref = pref.WithFlavorText(flavorText);
 
             _humanoidSystem.LoadProfile(mob, pref);
+            return;
         }
+        _humanoidSystem.LoadProfile(mob, pref);
     }
 
     /// <summary>

@@ -3,7 +3,6 @@
   name: job-name-rd
   description: job-description-rd
   playTimeTracker: JobResearchDirector
-  antagAdvantage: 6 # DeltaV - Reduced TC: Head of Staff
   requirements:
     - !type:CharacterLogicOrRequirement
       requirements:
@@ -36,6 +35,7 @@
   - ResearchDirector
   - Mantis # DeltaV - Mantis, see Resources/Prototypes/DeltaV/Access/epistemics.yml
   - Chapel # DeltaV - Chaplain is in Epistemics
+  - External # DeltaV - AI satellite access
   - Cryogenics
   special: # Nyanotrasen - Mystagogue can use the Bible
   - !type:AddComponentSpecial

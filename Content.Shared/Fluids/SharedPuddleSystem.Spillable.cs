@@ -65,6 +65,11 @@ public abstract partial class SharedPuddleSystem
                     injectorComp.ToggleState = InjectorToggleMode.Draw;
                     Dirty(entity, injectorComp);
                 }
+                else if (TryComp<FillableOneTimeInjectorComponent>(entity, out var fillableOneTimeInjectorComponent))
+                {
+                    fillableOneTimeInjectorComponent.ToggleState = FillableOneTimeInjectorToggleMode.Spent;
+                    Dirty(entity, fillableOneTimeInjectorComponent);
+                }
             };
         }
         else

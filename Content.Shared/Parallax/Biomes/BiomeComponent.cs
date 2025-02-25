@@ -1,15 +1,13 @@
 using Content.Shared.Parallax.Biomes.Layers;
 using Content.Shared.Parallax.Biomes.Markers;
 using Robust.Shared.GameStates;
-using Robust.Shared.Noise;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Dictionary;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.List;
 
 namespace Content.Shared.Parallax.Biomes;
 
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true), Access(typeof(SharedBiomeSystem))]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true)]
 public sealed partial class BiomeComponent : Component
 {
     /// <summary>

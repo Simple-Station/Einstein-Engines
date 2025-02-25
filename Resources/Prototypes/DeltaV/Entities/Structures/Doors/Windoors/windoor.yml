@@ -51,6 +51,15 @@
 
 - type: entity
   parent: WindoorSecure
+  id: WindoorSecureClerkLocked
+  suffix: Clerk, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsClerk ]
+      
+- type: entity
+  parent: WindoorSecure
   id: WindoorSecureLawyerLocked
   suffix: Lawyer, Locked
   components:

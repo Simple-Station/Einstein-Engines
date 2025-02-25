@@ -57,15 +57,20 @@ public sealed class NightVisionSystem : EquipmentHudSystem<NightVisionComponent>
         NightVisionComponent? nvComp = null;
         foreach (var comp in args.Components)
         {
-            if (!comp.IsActive && (comp.PulseTime <= 0 || _timing.CurTime < comp.PulseEndTime))
+            if (comp.IsActive || comp.PulseTime > 0f && comp.PulseAccumulator < comp.PulseTime)
+                active = true;
+            else
                 continue;
+            if (comp.DrawOverlay)
+            {
+                if (nvComp == null)
+                    nvComp = comp;
+                else if (nvComp.PulseTime > 0f && comp.PulseTime <= 0f)
+                    nvComp = comp;
+            }
 
-            if (nvComp == null)
-                nvComp = comp;
-            else if (!nvComp.DrawOverlay && comp.DrawOverlay)
-                nvComp = comp;
-            else if (nvComp.DrawOverlay == comp.DrawOverlay && nvComp.PulseTime > 0 && comp.PulseTime <= 0)
-                nvComp = comp;
+            if (active && nvComp is { PulseTime: <= 0 })
+                break;
         }
 
         UpdateNightVision(active);

@@ -6,11 +6,11 @@
   <Box>
   <GuideEntityEmbed Entity="MobArachnid" Caption="Arachnid"/>
   <GuideEntityEmbed Entity="MobDiona" Caption="Diona"/>
-  <GuideEntityEmbed Entity="MobDwarf" Caption="Dwarf"/>
   <GuideEntityEmbed Entity="MobHuman" Caption="Human"/>
   </Box>
   <Box>
   <GuideEntityEmbed Entity="MobMoth" Caption="Moth Person"/>
+  <GuideEntityEmbed Entity="MobOni" Caption="Oni"/>
   <GuideEntityEmbed Entity="MobReptilian" Caption="Reptilian"/>
   <GuideEntityEmbed Entity="MobSlimePerson" Caption="Slime Person"/>
   <GuideEntityEmbed Entity="MobShadowkinDummy" Caption="Shadowkin"/>
