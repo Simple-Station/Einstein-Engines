@@ -152155,6 +152155,40 @@ entities:
       rot: 3.141592653589793 rad
       pos: -9.5,-13.5
       parent: 6747
+  - uid: 27934
+    components:
+    - type: Transform
+      pos: -7.5,-48.5
+      parent: 6747
+  - uid: 27935
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 32.5,-41.5
+      parent: 6747
+  - uid: 27936
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 20.5,-28.5
+      parent: 6747
+  - uid: 27937
+    components:
+    - type: Transform
+      pos: 39.5,14.5
+      parent: 6747
+  - uid: 27938
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 21.5,4.5
+      parent: 6747
+  - uid: 27939
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -3.5,-5.5
+      parent: 6747
 - proto: StationMapCircuitboard
   entities:
   - uid: 7394
@@ -153116,6 +153150,16 @@ entities:
       - SurveillanceCameraEngineering
       nameSet: True
       id: Engineering Lockers
+  - uid: 27940
+    components:
+    - type: Transform
+      pos: 52.5,41.5
+      parent: 6747
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraEngineering
+      nameSet: True
+      id: Burn Chamber
 - proto: SurveillanceCameraGeneral
   entities:
   - uid: 6186
@@ -153539,6 +153583,27 @@ entities:
       - SurveillanceCameraGeneral
       nameSet: True
       id: Arrivals
+  - uid: 27932
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 36.5,-27.5
+      parent: 6747
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraGeneral
+      nameSet: True
+      id: HoP Line
+  - uid: 27933
+    components:
+    - type: Transform
+      pos: 65.5,-29.5
+      parent: 6747
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraGeneral
+      nameSet: True
+      id: Arrivals Hallway
 - proto: SurveillanceCameraMedical
   entities:
   - uid: 4586
