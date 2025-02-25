@@ -12075,3 +12075,10 @@ Entries:
   id: 6884
   time: '2025-02-25T14:39:19.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1833
+- author: LaryNevesPR
+  changes:
+    - type: Fix
+      message: Fixed tendons not causing damage! Careful!
+  id: 6885
+  time: '2025-02-25T22:06:27.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1835
