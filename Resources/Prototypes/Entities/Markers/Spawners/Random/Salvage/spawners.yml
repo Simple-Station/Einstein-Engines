@@ -375,3 +375,25 @@
     table: !type:NestedSelector
       tableId: SalvageEquipmentSpawnerValuable
       prob: 0.75
+
+- type: entity
+  parent: MarkerBase
+  id: SalvageSpawnerMobMiningAsteroid
+  name: Mining Asteroid Mob Spawner
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: Mobs/Aliens/Asteroid/goliath.rsi
+      state: goliath
+  - type: EntityTableSpawner
+    table: !type:GroupSelector
+      children:
+      - id: MobGoliath
+        weight: 35
+      #- id: MobHivelord
+      #  weight: 30
+      #- id: MobArgocyteLeviathing #goobstation
+      #  weight: 10
+      #- id: MobArgocyteFounder
+      #  weight: 25
