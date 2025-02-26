@@ -1157,6 +1157,8 @@
   - type: HTN
     rootTask:
       task: SimpleHostileCompound
+  - type: Fauna # Lavaland Change
+
 
 - type: entity
   name: kangaroo
@@ -2468,6 +2470,7 @@
     interfaces:
       enum.SurgeryUIKey.Key:
         type: SurgeryBui
+  - type: Fauna # Lavaland Change
 
 - type: entity
   parent: MobSpiderBase

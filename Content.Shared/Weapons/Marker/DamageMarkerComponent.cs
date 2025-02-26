@@ -34,7 +34,16 @@ public sealed partial class DamageMarkerComponent : Component
     [ViewVariables(VVAccess.ReadWrite), DataField("marker"), AutoNetworkedField]
     public EntityUid Marker;
 
-    [ViewVariables(VVAccess.ReadWrite), DataField("endTime", customTypeSerializer:typeof(TimeOffsetSerializer)), AutoNetworkedField]
+    [ViewVariables(VVAccess.ReadWrite), DataField("endTime", customTypeSerializer: typeof(TimeOffsetSerializer)), AutoNetworkedField]
     [AutoPausedField]
     public TimeSpan EndTime;
 }
+
+/// <summary>
+///     Lavaland Change: We raise this event so that the server can determine how much extra damage to apply to an entity.
+/// </summary>
+/// <remarks>
+///     I hate having to deal with only serverside for this, but atmos is not predicted lmao.
+///     EE-TODO: MAS :trolley:
+/// </remarks>
+public record struct ApplyMarkerBonusEvent(EntityUid Weapon, EntityUid User);

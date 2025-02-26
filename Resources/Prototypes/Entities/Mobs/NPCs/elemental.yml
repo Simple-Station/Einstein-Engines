@@ -75,6 +75,7 @@
   - type: ClothingRequiredStepTriggerImmune
     slots: All
   - type: Dispellable
+  - type: Fauna # Lavaland Change
 
 - type: entity
   abstract: true
@@ -313,6 +314,7 @@
   - type: InnatePsionicPowers
     powersToAdd:
       - TelepathyPower
+  - type: Fauna # Lavaland Change
 
 - type: entity
   name: Reagent Slime Spawner

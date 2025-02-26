@@ -54,6 +54,7 @@
   - type: Flashable
   - type: NameIdentifier
     group: GenericNumber
+  - type: Fauna # Lavaland Change
 
 - type: entity
   parent: BaseMobArgocyte
