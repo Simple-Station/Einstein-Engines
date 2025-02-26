@@ -8,7 +8,7 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 using System.Numerics;
 
-namespace Content.Client._DV.Salvage.UI;
+namespace Content.Client.DeltaV.Salvage.UI;
 
 [GenerateTypedNameReferences]
 public sealed partial class MiningVoucherMenu : RadialMenu
@@ -22,8 +22,8 @@ public sealed partial class MiningVoucherMenu : RadialMenu
 
     public MiningVoucherMenu()
     {
-        RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
+        RobustXamlLoader.Load(this);
 
         _sprite = _entMan.System<SpriteSystem>();
     }
