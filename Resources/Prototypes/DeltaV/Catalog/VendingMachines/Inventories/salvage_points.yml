@@ -29,8 +29,6 @@
     cost: 500
   - id: ClothingShoesBootsJack
     cost: 550
-  - id: MineralScanner
-    cost: 550
   - id: MedkitBruteFilled
     cost: 600
   - id: MedkitBurnFilled
@@ -49,8 +47,6 @@
     cost: 1000
   - id: PKAUpgradeFireRate
     cost: 1000
-  - id: AdvancedMineralScanner
-    cost: 1100
   - id: PKAUpgradeDamage
     cost: 1200
   - id: LavalandEquipmentExplorerSuit
@@ -82,8 +78,8 @@
     cost: 6400
   - id: WeaponRifleSVTEmpty
     cost: 6400
-  - id: WeaponPlasmaCutter
-    cost: 1700
+ # - id: WeaponPlasmaCutter -- TODO: Port from goob
+ #   cost: 1700
   - id: SpaceCash1000
     cost: 2000
   - id: ShelterCapsule

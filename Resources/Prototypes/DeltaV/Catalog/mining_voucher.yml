@@ -7,7 +7,7 @@
     state: icon
   content:
   - WeaponCrusher
-  - FireExtinguisherMini
+  - FireExtinguisher # should be mini but who cares we can balance this later
 
 - type: thiefBackpackSet
   id: MiningExtraction
