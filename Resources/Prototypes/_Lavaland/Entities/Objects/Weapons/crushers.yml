@@ -115,7 +115,7 @@
   - type: MeleeThrowOnHit
     speed: 5
     lifetime: 0.5
-  - type: FlipOnHit
+ #- type: FlipOnHit
   - type: GunRequiresWield
   - type: Wieldable
   - type: MeleeRequiresWield
