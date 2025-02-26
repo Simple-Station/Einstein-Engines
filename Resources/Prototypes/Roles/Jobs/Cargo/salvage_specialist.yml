@@ -24,7 +24,9 @@
   - SalvageSpecialistPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitSalvageSpecialist
-    back: ClothingBackpackSalvageFilled
+    back:
+      - ClothingBackpackSalvageFilled
+      - MiningVoucher
     shoes: ClothingShoesBootsSalvage
     id: SalvagePDA
     ears: ClothingHeadsetCargo

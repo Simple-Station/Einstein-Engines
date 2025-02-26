@@ -67,6 +67,7 @@
   - type: GhostTakeoverAvailable
   - type: Speech
     speechVerb: LargeMob
+  - type: Fauna # Lavaland Change
 
 - type: entity
   name: space bear
@@ -518,7 +519,7 @@
         visualType: Large
         messages: [ "snail-hurt-by-salt-popup" ]
         probability: 0.66
-    
+
 - type: entity
   parent: MobSnail
   id: MobSnailInstantDeath

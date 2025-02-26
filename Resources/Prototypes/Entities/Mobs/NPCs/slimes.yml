@@ -118,6 +118,7 @@
     interfaces:
       enum.SurgeryUIKey.Key:
         type: SurgeryBui
+  - type: Fauna # Lavaland Change
 
 - type: entity
   name: basic slime
