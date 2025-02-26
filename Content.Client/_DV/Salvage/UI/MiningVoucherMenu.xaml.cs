@@ -8,7 +8,7 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 using System.Numerics;
 
-namespace Content.Client.DeltaV.Salvage.UI;
+namespace Content.Client._DV.Salvage.UI;
 
 [GenerateTypedNameReferences]
 public sealed partial class MiningVoucherMenu : RadialMenu
