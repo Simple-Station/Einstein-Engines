@@ -1,5 +1,5 @@
 - type: entity
-  parent: [BaseItem, BaseSecurityCargoContraband]
+  parent: [BaseItem]
   id: LavalandWeaponKineticBase
   abstract: true
   components:
@@ -29,7 +29,7 @@
   - type: MegafaunaWeaponLooter
 
 - type: entity
-  parent: [LavalandWeaponKineticBase, BaseSecurityCargoContraband]
+  parent: [LavalandWeaponKineticBase]
   id: LavalandWeaponKineticSpear
   name: kinetic spear
   description: A long-ranged melee weapon. Deals less damage than a normal crusher, but has longer attack range.
@@ -147,7 +147,7 @@
     wideAnimationRotation: -135
     damage:
       types:
-        Slash: 5 
+        Slash: 5
     soundHit:
       collection: MetalThud
     angle: 0
