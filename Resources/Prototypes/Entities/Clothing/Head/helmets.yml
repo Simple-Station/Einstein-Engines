@@ -350,7 +350,7 @@
 
 # Lavaland shuttupance - Raid Helmet
 - type: entity
-  parent: ClothingHeadHelmetBase
+  parent: ClothingHeadHelmetBasic
   id: ClothingHeadHelmetRaid
   name: syndicate raid helmet
   description: An armored helmet for use with the syndicate raid suit. Very stylish.
