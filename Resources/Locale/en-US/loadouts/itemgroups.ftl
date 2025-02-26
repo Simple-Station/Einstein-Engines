@@ -98,6 +98,7 @@ character-item-group-LoadoutMagistrateUniforms = Magistrate Uniforms
 # Dignitary - Nanotrasen Representative
 character-item-group-LoadoutNanorepBackpacks = Nanotrasen Representative Backpacks
 character-tiem-group-LoadoutNanorepUniforms = Nanotrasen Representative Uniforms
+character-tiem-group-LoadoutNanotrasenRepresentativeWeapon = Nanotrasen Representative Weapons
 
 # Engineering
 character-item-group-LoadoutEngineeringBackpacks = Engineering Backpacks
