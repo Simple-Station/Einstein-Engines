@@ -1640,10 +1640,7 @@ entities:
       solution:
         maxVol: 1
         name: food
-        reagents:
-        - data: []
-          ReagentId: Fiber
-          Quantity: 1
+        reagents: []
     - type: ContainedSolution
       containerName: food
       container: 3

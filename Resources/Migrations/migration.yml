@@ -311,3 +311,9 @@ FoodMeatFiestaKebab: FoodKebabSkewer
 ImprovisedExplosive: FireBomb
 ImprovisedExplosiveEmpty: FireBombEmpty
 ImprovisedExplosiveFuel: FireBombFuel
+
+# Lavaland EE stuff
+TreasureDatadiskEncrypted: null
+VendingMachineBoozeSyndicate: VendingMachineBooze
+ClothingOuterHardsuitSyndicateDurathread: ClothingOuterHardsuitSyndicate
+PoweredDimSmallLight: PoweredSmallLight
