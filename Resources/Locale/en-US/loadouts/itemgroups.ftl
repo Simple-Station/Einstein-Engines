@@ -87,6 +87,7 @@ character-item-group-LoadoutHeadOfPersonnelUniforms = Head of Personnel Uniforms
 character-item-group-LoadoutBlueshieldOfficerBackpacks = Blueshield Officer Backpacks
 character-item-group-LoadoutBlueshieldOfficerVests = Blueshield Officer Vests
 character-item-group-LoadoutBlueshieldOfficerUniforms = Blueshield Officer Uniforms
+character-item-group-LoadoutBlueshieldOfficerPrimary = Blueshield Officer Primary Weapon
 
 # Dignitary - Magistrate
 character-item-group-LoadoutMagistrateHead = Magistrate Headgear
