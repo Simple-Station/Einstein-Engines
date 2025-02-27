@@ -222,13 +222,12 @@ public sealed class PsionicsSystem : EntitySystem
         if (component.Potentia < component.NextPowerCost)
             return false;
 
-        RollAgain:
-        component.Potentia -= component.NextPowerCost;
-        _psionicAbilitiesSystem.AddPsionics(uid);
-        component.NextPowerCost = Math.Abs( // Taking the absolute value here as a logical guard against this GOTO infinitely looping.
-            component.BaselinePowerCost * MathF.Pow(2, component.PowerSlotsTaken));
-        if (component.Potentia > component.NextPowerCost)
-            goto RollAgain;
+        while (component.Potentia >= component.NextPowerCost)
+        {
+            component.Potentia -= component.NextPowerCost;
+            _psionicAbilitiesSystem.AddPsionics(uid);
+            component.NextPowerCost = Math.Abs(component.BaselinePowerCost * MathF.Pow(2, component.PowerSlotsTaken));
+        }
 
         return true;
     }

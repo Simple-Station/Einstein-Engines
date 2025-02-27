@@ -160,20 +160,20 @@ public sealed class GlimmerSystem : EntitySystem
         if (_enabled && set >= 0)
         {
             GlimmerInput = set;
-            GlimmerOutput = 2000 / (1 + Math.Pow(Math.E, -.0022 * GlimmerOutput)) - 1000;
+            GlimmerOutput = 2000 / (1 + Math.Pow(Math.E, -.0022 * set)) - 1000;
         }
     }
 
     /// <summary>
     ///     Outputs the ratio between actual glimmer and glimmer equilibrium(The intersection of the Glimmer Equation and the line y = x).
-    ///     This will return 0.01f if glimmer is 0, and 1 if glimmer is disabled.
+    ///     This will return 0.01 if glimmer is 0, and 1 if glimmer is disabled.
     /// </summary>
     public double GetGlimmerEquilibriumRatio()
     {
         if (!_enabled)
             return 1;
         else if (GlimmerOutput == 0)
-            return 0.01f;
+            return 0.01;
         else return GlimmerOutput / GlimmerEquilibrium;
     }
 
