@@ -12082,3 +12082,10 @@ Entries:
   id: 6885
   time: '2025-02-25T22:06:27.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1835
+- author: Tonk
+  changes:
+    - type: Add
+      message: 'Tajarans now have separate eye, wrist, tattoo, and makeup markings '
+  id: 6886
+  time: '2025-02-27T00:03:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1834
