@@ -12089,3 +12089,32 @@ Entries:
   id: 6886
   time: '2025-02-27T00:03:30.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1834
+- author: Raikyr0
+  changes:
+    - type: Tweak
+      message: >-
+        Striking Calluses no longer require you to be one of 3 jobs and Human. 
+        Also increased the +1 damage to +2.
+    - type: Tweak
+      message: >-
+        Bionic Spinarette SHOULD no longer have a hunger penalty and costs
+        less. 
+    - type: Tweak
+      message: >-
+        Platelet Factories heal rate buffed from 0.07 to 0.35, airloss from 0.7
+        to 0.25 and healing cap increased from 200 to 400.
+    - type: Tweak
+      message: Decreased the cost of Thermal Vision to be in line with Night Vision.
+    - type: Tweak
+      message: IPC Platelet Factories healing cap increased from 200 to 250
+    - type: Tweak
+      message: Cyber-Eyes Omnihud now pickable by Command too.
+    - type: Fix
+      message: >-
+        Fixed name and description of Cyber-Eyes Modules for Night Vision and
+        Thermal Vision.
+    - type: Remove
+      message: Mind over Machine from Cyber-Eyes Modules.
+  id: 6887
+  time: '2025-02-27T02:27:48.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1828
