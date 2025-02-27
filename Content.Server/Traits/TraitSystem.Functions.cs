@@ -680,10 +680,10 @@ public sealed partial class TraitModifyUnarmed : TraitFunction
 }
 
 
-    // <summary>
-    // Adds a Tag to something
-    // </summary>
-    [UsedImplicitly]
+// <summary>
+// Adds a Tag to something
+// </summary>
+[UsedImplicitly]
 public sealed partial class TraitAddTag : TraitFunction
 {
     // Your datafields go here
