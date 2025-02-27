@@ -165,9 +165,9 @@ public sealed partial class PlantAnalyzerWindow : FancyWindow
             ];
             EnvironmentLabel.Text = msg.TolerancesData.ConsumeGasses.Count == 0
                 ? msg.TolerancesData.IdealHeat - msg.TolerancesData.HeatTolerance <= 0f && msg.TolerancesData.IdealPressure - msg.TolerancesData.PressureTolerance <= 0f
-                    ? Loc.GetString("plant-analyzer-component-environemt-void", [.. parameters])
-                    : Loc.GetString("plant-analyzer-component-environemt", [.. parameters])
-                : Loc.GetString("plant-analyzer-component-environemt-gas", [.. parameters]);
+                    ? Loc.GetString("plant-analyzer-component-environment-void", [.. parameters])
+                    : Loc.GetString("plant-analyzer-component-environment", [.. parameters])
+                : Loc.GetString("plant-analyzer-component-environment-gas", [.. parameters]);
 
             EnvironmentBox.Visible = true;
         }

@@ -128,7 +128,7 @@ public sealed class PlantAnalyzerSystem : AbstractAnalyzerSystem<PlantAnalyzerCo
         {
             // This shouldn't occur due to the UI guarding against it, but
             // if it does, tell the user why nothing happened.
-            _popupSystem.PopupEntity(Loc.GetString("forensic-scanner-printer-not-ready"), uid, user);
+            _popupSystem.PopupEntity(Loc.GetString("plant-analyzer-printer-not-ready"), uid, user);
             return;
         }
 

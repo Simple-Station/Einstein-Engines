@@ -1,9 +1,13 @@
 - type: entity
   id: PlantAnalyzer
-  parent: BaseItem
+  parent: [BaseItem, PowerCellSlotSmallItem]
   name: plant analyzer
   description: A scanner used to evaluate a plant's various areas of growth, genetic traits and chemicals.
   components:
+  - type: PowerCellDraw
+    drawRate: 0.8
+  - type: ToggleCellDraw
+  - type: ActivatableUIRequiresPowerCell
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/plant_analyzer.rsi
     layers:

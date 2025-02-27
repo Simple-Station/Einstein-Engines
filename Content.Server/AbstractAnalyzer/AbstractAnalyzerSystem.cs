@@ -150,6 +150,7 @@ public abstract class AbstractAnalyzerSystem<TAnalyzerComponent, TAnalyzerDoAfte
         analyzer.Comp.ScannedEntity = target;
 
         _toggle.TryActivate(analyzer.Owner);
+        _cell.SetDrawEnabled(analyzer.Owner, true);
 
         UpdateScannedUser(analyzer, target, true);
     }
@@ -165,6 +166,7 @@ public abstract class AbstractAnalyzerSystem<TAnalyzerComponent, TAnalyzerDoAfte
         analyzer.Comp.ScannedEntity = null;
 
         _toggle.TryDeactivate(analyzer.Owner);
+        _cell.SetDrawEnabled(analyzer.Owner, false);
 
         UpdateScannedUser(analyzer, target, false);
     }
