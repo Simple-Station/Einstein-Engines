@@ -7,19 +7,6 @@
   - type: Sprite
     sprite: _NF/Objects/Weapons/Guns/Basic/sawn_kinetic_accelerator.rsi
     state: icon
-    layers:
-    - state: pistol
-      map: [ "enum.WeaponVisualLayers.Base" ]
-      visible: false
-    - state: flight
-      map: [ "enum.WeaponVisualLayers.FlightOff" ]
-      visible: false
-    - state: flight-on
-      map: [ "enum.WeaponVisualLayers.FlightOn" ]
-      visible: false
-    - state: animation-pistol
-      visible: false
-      map: [ "empty-icon" ]
   - type: Item
     sprite: _NF/Objects/Weapons/Guns/Basic/sawn_kinetic_accelerator.rsi
     size: Small
