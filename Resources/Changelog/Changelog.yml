@@ -12134,3 +12134,10 @@ Entries:
   id: 6889
   time: '2025-02-27T04:52:38.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1846
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: Added SpiderCraft to Arachne
+  id: 6890
+  time: '2025-02-27T07:02:55.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1847
