@@ -861,8 +861,8 @@
           damageCap: 250
           damage:
             groups:
-              Brute: -0.9
-              Burn: -0.9
+              Brute: -0.6
+              Burn: -0.6
 
 - type: trait
   id: BionicLeg
@@ -876,11 +876,11 @@
     - !type:CharacterItemGroupRequirement
       group: TraitsMind
   functions:
-    - !type:TraitAddComponent
+    - !type:TraitReplaceComponent
       components:
-      - type: MovementBodyPart
-        walkSpeed: 3.125
-        sprintSpeed: 5.625
+      - type: TraitSpeedModifier
+        sprintModifier: 1.300
+        walkModifier: 1.125
     - !type:TraitPushDescription
       descriptionExtensions:
         - description: examine-bionic-leg-message
