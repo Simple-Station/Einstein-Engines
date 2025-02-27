@@ -695,9 +695,7 @@ public sealed partial class TraitAddTag : TraitFunction
         IEntityManager entityManager,
         ISerializationManager serializationManager)
     {
-        // DO STUFF between these two brackets
         var tagSystem = entityManager.System<TagSystem>();
-        // tagSystem now contains a massive library of functions, but the relevant one we want is AddTags(), which takes a "target" in the form of uid, and a list of tags, which we just declared in our DataField
         tagSystem.AddTags(uid, Tags);
     }
 }
