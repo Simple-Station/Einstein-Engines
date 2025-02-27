@@ -222,9 +222,13 @@ public sealed class PsionicsSystem : EntitySystem
         if (component.Potentia < component.NextPowerCost)
             return false;
 
+        RollAgain:
         component.Potentia -= component.NextPowerCost;
         _psionicAbilitiesSystem.AddPsionics(uid);
         component.NextPowerCost = component.BaselinePowerCost * MathF.Pow(2, component.PowerSlotsTaken);
+        if (component.Potentia > component.NextPowerCost)
+            goto RollAgain;
+
         return true;
     }
 
