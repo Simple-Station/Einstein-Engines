@@ -225,7 +225,8 @@ public sealed class PsionicsSystem : EntitySystem
         RollAgain:
         component.Potentia -= component.NextPowerCost;
         _psionicAbilitiesSystem.AddPsionics(uid);
-        component.NextPowerCost = component.BaselinePowerCost * MathF.Pow(2, component.PowerSlotsTaken);
+        component.NextPowerCost = Math.Abs( // Taking the absolute value here as a logical guard against this GOTO infinitely looping.
+            component.BaselinePowerCost * MathF.Pow(2, component.PowerSlotsTaken));
         if (component.Potentia > component.NextPowerCost)
             goto RollAgain;
 
