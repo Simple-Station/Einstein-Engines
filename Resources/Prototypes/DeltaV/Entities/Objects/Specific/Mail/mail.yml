@@ -782,7 +782,7 @@
       orGroup: Plushie
     - id: PlushieShadowkin
       prob: 0.5
-      onGroup: Plushie
+      orGroup: Plushie
 
 # Random snacks, replaces MailChocolate (lousy animal organs)
 - type: entity
