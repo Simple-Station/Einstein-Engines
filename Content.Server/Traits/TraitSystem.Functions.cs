@@ -677,3 +677,26 @@ public sealed partial class TraitModifyUnarmed : TraitFunction
         entityManager.Dirty(uid, melee);
     }
 }
+
+
+    // <summary>
+    // Adds a Tag to something
+    // </summary>
+    [UsedImplicitly]
+public sealed partial class TraitAddTag : TraitFunction
+{
+    // Your datafields go here
+    [DataField]
+    public List<ProtoId<TagPrototype>> Tags { get; private set; } = new();
+    // The "Override" goes here
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        // DO STUFF between these two brackets
+        var tagSystem = entityManager.System<TagSystem>();
+        // tagSystem now contains a massive library of functions, but the relevant one we want is AddTags(), which takes a "target" in the form of uid, and a list of tags, which we just declared in our DataField
+        tagSystem.AddTags(uid, Tags);
+    }
+}
