@@ -7,11 +7,11 @@ namespace Content.Shared.Botany.PlantAnalyzer;
 public sealed class PlantAnalyzerScannedUserMessage(NetEntity? targetEntity, bool? scanMode, PlantAnalyzerPlantData? plantData, PlantAnalyzerTrayData? trayData, PlantAnalyzerTolerancesData? tolerancesData, PlantAnalyzerProduceData? produceData, TimeSpan? printReadyAt) : BoundUserInterfaceMessage
 {
     public readonly NetEntity? TargetEntity = targetEntity;
-    public bool? ScanMode = scanMode;
-    public PlantAnalyzerPlantData? PlantData = plantData;
-    public PlantAnalyzerTrayData? TrayData = trayData;
-    public PlantAnalyzerTolerancesData? TolerancesData = tolerancesData;
-    public PlantAnalyzerProduceData? ProduceData = produceData;
+    public readonly bool? ScanMode = scanMode;
+    public readonly PlantAnalyzerPlantData? PlantData = plantData;
+    public readonly PlantAnalyzerTrayData? TrayData = trayData;
+    public readonly PlantAnalyzerTolerancesData? TolerancesData = tolerancesData;
+    public readonly PlantAnalyzerProduceData? ProduceData = produceData;
     public readonly TimeSpan? PrintReadyAt = printReadyAt;
 }
 
