@@ -38,6 +38,7 @@
   hostile:
   - PetsNT
   - AllHostile
+  - Wizard
 
 - type: npcFaction
   id: Passive
@@ -50,6 +51,7 @@
   - Zombie
   - Xeno
   - AllHostile
+  - Wizard
   - Blob # Goobstation - Blob
 
 - type: npcFaction
@@ -172,7 +174,11 @@
   hostile:
   - NanoTrasen
   - Dragon
+  - Mouse
+  - Passive
+  - PetsNT
   - SimpleHostile
+  - SimpleNeutral
   - Syndicate
   - Xeno
   - Zombie
@@ -279,3 +285,4 @@
   - Dragon
   - Changeling
   - Shadowling
+
