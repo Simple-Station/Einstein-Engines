@@ -567,6 +567,35 @@
       wideAnimationRotation: 135
 
 - type: entity
+  name: CentCom disabler
+  parent: WeaponDisabler
+  id: WeaponCCDisabler
+  description: An improved self-defense weapon that exhausts organic targets, weakening them until they collapse. Only for the finest officers that we don't trust with lethals.
+  components:
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 20
+  - type: StealTarget
+    stealGroup: NTRepWeapon
+  - type: Gun
+    fireRate: 3
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/taser2.ogg
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Battery/ccdisabler.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-unshaded-0
+        map: ["enum.GunVisualLayers.MagUnshaded"]
+        shader: unshaded
+  - type: Tag
+    tags:
+    - HighRiskItem
+    - Taser
+    - Sidearm
+
+- type: entity
   name: disabler SMG
   parent: BaseWeaponBattery
   id: WeaponDisablerSMG
