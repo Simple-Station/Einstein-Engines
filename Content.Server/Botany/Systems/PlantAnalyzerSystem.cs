@@ -3,6 +3,7 @@ using System.Linq;
 using System.Text;
 using Content.Server.AbstractAnalyzer;
 using Content.Server.Botany.Components;
+using Content.Server.Paper;
 using Content.Server.Popups;
 using Content.Shared.Botany.PlantAnalyzer;
 using Content.Shared.Chemistry.EntitySystems;
@@ -173,7 +174,7 @@ public sealed class PlantAnalyzerSystem : AbstractAnalyzerSystem<PlantAnalyzerCo
             ("nl", "\n")
         ];
 
-        _paperSystem.SetContent((printed, paperComp), Loc.GetString($"plant-analyzer-printout", [.. parameters]));
+        _paperSystem.SetContent(printed, Loc.GetString($"plant-analyzer-printout", [.. parameters]));
         _labelSystem.Label(printed, seedName);
         _audioSystem.PlayPvs(component.SoundPrint, uid,
             AudioParams.Default
