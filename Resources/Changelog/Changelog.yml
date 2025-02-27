@@ -12141,3 +12141,12 @@ Entries:
   id: 6890
   time: '2025-02-27T07:02:55.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1847
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: >-
+        Added CentCom disabler as loadout option for the Nanotrasen
+        Representative.
+  id: 6891
+  time: '2025-02-27T18:48:23.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1845
