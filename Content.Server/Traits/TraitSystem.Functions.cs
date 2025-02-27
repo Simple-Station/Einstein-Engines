@@ -688,6 +688,7 @@ public sealed partial class TraitAddTag : TraitFunction
 {
     [DataField]
     public List<ProtoId<TagPrototype>> Tags { get; private set; } = new();
+    
     public override void OnPlayerSpawn(EntityUid uid,
         IComponentFactory factory,
         IEntityManager entityManager,
