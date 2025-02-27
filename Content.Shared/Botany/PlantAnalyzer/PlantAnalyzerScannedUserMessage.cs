@@ -81,31 +81,30 @@ public sealed class PlantAnalyzerProduceData(int yield, float potency, List<stri
     public List<Gas> ExudeGasses = exudeGasses;
     public bool Seedless = seedless;
 
+    private static readonly Dictionary<float, string> PotencyThresholds = new()
+    {
+        { 5f, "tiny" },
+        { 10f, "small" },
+        { 15f, "below-average" },
+        { 20f, "average" },
+        { 25f, "above-average" },
+        { 30f, "large" },
+        { 40f, "huge" },
+        { 50f, "gigantic" },
+        { 60f, "ludicrous" }
+    };
+
     private static string ObscurePotency(float potency)
     {
-        var potencyFtl = "plant-analyzer-potency-";
-        if (potency <= 5)      // 5 should still be tiny
-            potencyFtl += "tiny";
-        else if (potency < 10) // 10 should be below-average
-            potencyFtl += "small";
-        else if (potency < 15)
-            potencyFtl += "below-average";
-        else if (potency < 20)
-            potencyFtl += "average";
-        else if (potency <= 25) // 25 is the highest starting value
-            potencyFtl += "above-average";
-        else if (potency < 30)
-            potencyFtl += "large";
-        else if (potency < 40)
-            potencyFtl += "huge";
-        else if (potency < 50)
-            potencyFtl += "gigantic";
-        else if (potency < 60)
-            potencyFtl += "ludicrous";
-        else
-            potencyFtl += "immeasurable";
+        foreach (var threshold in PotencyThresholds)
+        {
+            if (potency <= threshold.Key)
+            {
+                return "plant-analyzer-potency-" + threshold.Value;
+            }
+        }
 
-        return potencyFtl;
+        return "plant-analyzer-potency-immeasurable";
     }
 }
 
