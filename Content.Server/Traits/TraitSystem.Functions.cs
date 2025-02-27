@@ -22,6 +22,7 @@ using Content.Shared.Damage.Components;
 using Content.Shared.NPC.Systems;
 using Content.Shared.Weapons.Melee;
 using Robust.Shared.Audio;
+using Content.Shared.Tag;
 
 namespace Content.Server.Traits;
 
