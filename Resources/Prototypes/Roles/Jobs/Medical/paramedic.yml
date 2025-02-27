@@ -3,7 +3,6 @@
   name: job-name-paramedic
   description: job-description-paramedic
   playTimeTracker: JobParamedic
-  antagAdvantage: 2 # DeltaV - Reduced TC: External Access
   requirements:
     # - !type:RoleTimeRequirement # DeltaV - No Medical Doctor time requirement
     #   role: JobMedicalDoctor
@@ -32,6 +31,8 @@
 
 - type: startingGear
   id: ParamedicGear
+  subGear:
+  - ParamedicPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitParamedic
     back: ClothingBackpackParamedicFilledDV
@@ -44,3 +45,12 @@
   innerClothingSkirt: ClothingUniformJumpskirtParamedic
   satchel: ClothingBackpackSatchelParamedicFilledDV
   duffelbag: ClothingBackpackDuffelParamedicFilledDV
+
+- type: startingGear
+  id: ParamedicPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitParamedic
+    head: ClothingHeadEnvirohelmParamedic
+    gloves: ClothingHandsGlovesEnviroglovesNitrile
+    shoes: ClothingShoesColorBlue

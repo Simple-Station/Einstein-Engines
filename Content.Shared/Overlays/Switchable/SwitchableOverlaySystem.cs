@@ -53,8 +53,10 @@ public abstract class SwitchableOverlaySystem<TComp, TEvent> : EntitySystem
             if (comp.PulseTime <= 0f || comp.PulseAccumulator >= comp.PulseTime)
                 continue;
 
+            // The accumulator is for visually rendering the pulse strength decaying.
             comp.PulseAccumulator += frameTime;
 
+            // This line is for the actual check that shuts off the pulse when its time is up.
             if (comp.PulseAccumulator < comp.PulseTime)
                 continue;
 
@@ -117,7 +119,7 @@ public abstract class SwitchableOverlaySystem<TComp, TEvent> : EntitySystem
     {
         if (component.IsEquipment)
             return;
-            
+
         _actions.RemoveAction(uid, component.ToggleActionEntity);
     }
 

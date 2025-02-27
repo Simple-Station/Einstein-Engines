@@ -133,7 +133,7 @@ namespace Content.Shared.Damage
         public DamageSpecifier? TryChangeDamage(EntityUid? uid, DamageSpecifier damage, bool ignoreResistances = false,
             bool interruptsDoAfters = true, DamageableComponent? damageable = null, EntityUid? origin = null,
             // Shitmed Change
-            bool? canSever = true, bool? canEvade = false, float? partMultiplier = 1.00f, TargetBodyPart? targetPart = null)
+            bool? canSever = true, bool? canEvade = false, float? partMultiplier = 1.00f, TargetBodyPart? targetPart = null, bool doPartDamage = true)
         {
             if (!uid.HasValue || !_damageableQuery.Resolve(uid.Value, ref damageable, false))
             {
@@ -153,11 +153,14 @@ namespace Content.Shared.Damage
                 return null;
 
             // Shitmed Change Start
-            var partDamage = new TryChangePartDamageEvent(damage, origin, targetPart, ignoreResistances, canSever ?? true, canEvade ?? false, partMultiplier ?? 1.00f);
-            RaiseLocalEvent(uid.Value, ref partDamage);
+            if (doPartDamage)
+            {
+                var partDamage = new TryChangePartDamageEvent(damage, origin, targetPart, ignoreResistances, canSever ?? true, canEvade ?? false, partMultiplier ?? 1.00f);
+                RaiseLocalEvent(uid.Value, ref partDamage);
 
-            if (partDamage.Evaded || partDamage.Cancelled)
-                return null;
+                if (partDamage.Evaded || partDamage.Cancelled)
+                    return null;
+            }
 
             // Shitmed Change End
 
@@ -249,6 +252,39 @@ namespace Content.Shared.Damage
 
                     SetAllDamage(part, damageComp, newValue);
                 }
+            }
+            // Shitmed Change End
+        }
+
+        /// <summary>
+        ///     Changes all damage types supported by a <see cref="DamageableComponent"/> by the specified value.
+        /// </summary>
+        /// <remakrs>
+        ///     Will not lower damage to a negative value.
+        /// </remakrs>
+        public void ChangeAllDamage(EntityUid uid, DamageableComponent component, FixedPoint2 addedValue)
+        {
+            foreach (var type in component.Damage.DamageDict.Keys)
+            {
+                component.Damage.DamageDict[type] += addedValue;
+                if (component.Damage.DamageDict[type] < 0)
+                    component.Damage.DamageDict[type] = 0;
+            }
+
+            // Changing damage does not count as 'dealing' damage, even if it is set to a larger value, so we pass an
+            // empty damage delta.
+            DamageChanged(uid, component, new DamageSpecifier());
+
+            // Shitmed Change Start
+            if (!HasComp<TargetingComponent>(uid))
+                return;
+
+            foreach (var (part, _) in _body.GetBodyChildren(uid))
+            {
+                if (!TryComp(part, out DamageableComponent? damageComp))
+                    continue;
+
+                ChangeAllDamage(part, damageComp, addedValue);
             }
             // Shitmed Change End
         }

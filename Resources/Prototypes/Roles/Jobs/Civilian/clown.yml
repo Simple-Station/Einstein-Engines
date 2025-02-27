@@ -3,9 +3,6 @@
   name: job-name-clown
   description: job-description-clown
   playTimeTracker: JobClown
-  requirements:
-    - !type:CharacterOverallTimeRequirement # DeltaV - Playtime requirement
-      min: 7200 #2 hrs
   startingGear: ClownGear
   icon: "JobIconClown"
   supervisors: job-supervisors-hop
@@ -32,6 +29,8 @@
 
 - type: startingGear
   id: ClownGear
+  subGear:
+  - ClownPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitClown
     back: ClothingBackpackClownFilled
@@ -43,3 +42,12 @@
     ears: ClothingHeadsetService
   satchel: ClothingBackpackSatchelClownFilled
   duffelbag: ClothingBackpackDuffelClownFilled
+
+- type: startingGear
+  id: ClownPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitClown
+    head: ClothingHeadEnvirohelmClown
+    gloves: ClothingHandsGlovesEnviroglovesClown
+    mask: ClothingMaskClown # Parent sets mask to breath mask so set it again here

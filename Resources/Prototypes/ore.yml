@@ -65,6 +65,12 @@
   maxOreYield: 2
 
 - type: ore
+  id: OreTungsten
+  oreEntity: TungstenOre1
+  minOreYield: 1
+  maxOreYield: 2
+
+- type: ore
   id: OreQuartzCrab
   oreEntity: MobSpawnCrabQuartz
 
@@ -112,6 +118,28 @@
     OreArtifactFragment: 0.5
     OreBluespace: 0.5
     OreNormality: 0.3
+    OreAluminium: 2
+    OreLead: 2
+    OreCopper: 2
+
+- type: weightedRandomOre
+  id: RandomOreDistributionBasalt
+  weights:
+    OreSteel: 20
+    OreCoal: 1.6
+    OreSpaceQuartz: 0.8
+    OreGold: 10
+    OrePlasma: 0.32
+    OreSilver: 0.8
+    OreUranium: 0.8
+    OreBananium: 0.8
+    OreArtifactFragment: 0.8
+    OreBluespace: 0.5
+    OreNormality: 0.3
+    OreAluminium: 8
+    OreLead: 1.6
+    OreCopper: 1.6
+    OreTungsten: 5
 
 - type: weightedRandomOre
   id: OreCrab

@@ -3,7 +3,6 @@
   name: job-name-salvagespec
   description: job-description-salvagespec
   playTimeTracker: JobSalvageSpecialist
-  antagAdvantage: 3 # DeltaV - Reduced TC: External Access + Free hardsuit and weapons
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Logistics # DeltaV - Logistics Department replacing Cargo
@@ -21,6 +20,8 @@
 
 - type: startingGear
   id: SalvageSpecialistGear
+  subGear:
+  - SalvageSpecialistPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitSalvageSpecialist
     back: ClothingBackpackSalvageFilled
@@ -29,3 +30,12 @@
     ears: ClothingHeadsetCargo
   satchel: ClothingBackpackSatchelSalvageFilled
   duffelbag: ClothingBackpackDuffelSalvageFilled
+
+- type: startingGear
+  id: SalvageSpecialistPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitSalvage
+    head: ClothingHeadEnvirohelmSalvage
+    gloves: ClothingHandsGlovesEnviroglovesSalvage
+    mask: ClothingMaskGasExplorer

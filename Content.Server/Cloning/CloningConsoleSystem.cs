@@ -6,6 +6,7 @@ using Content.Server.Medical.Components;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Shared.UserInterface;
+using Content.Shared.CCVar;
 using Content.Shared.Cloning;
 using Content.Shared.Cloning.CloningConsole;
 using Content.Shared.Database;
@@ -19,6 +20,7 @@ using Content.Shared.Power;
 using JetBrains.Annotations;
 using Robust.Server.GameObjects;
 using Robust.Server.Player;
+using Robust.Shared.Configuration;
 
 namespace Content.Server.Cloning
 {
@@ -33,6 +35,7 @@ namespace Content.Server.Cloning
         [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
         [Dependency] private readonly PowerReceiverSystem _powerReceiverSystem = default!;
         [Dependency] private readonly SharedMindSystem _mindSystem = default!;
+        [Dependency] private readonly IConfigurationManager _config = default!;
 
         public override void Initialize()
         {
@@ -220,7 +223,7 @@ namespace Content.Server.Cloning
                 {
                     scanBodyInfo = MetaData(scanBody.Value).EntityName;
 
-                    if (!_mobStateSystem.IsDead(scanBody.Value))
+                    if (!_config.GetCVar(CCVars.CloningAllowLivingPeople) && !_mobStateSystem.IsDead(scanBody.Value))
                         clonerStatus = ClonerStatus.ScannerOccupantAlive;
                     else if (!_mindSystem.TryGetMind(scanBody.Value, out _, out var mind)
                         || mind.UserId == null

@@ -9,6 +9,10 @@ materials-steel = steel
 materials-gold = gold
 materials-silver = silver
 materials-plasteel = plasteel
+materials-aluminium = aluminium
+materials-copper = copper
+materials-tungsten = tungsten-carbide
+materials-lead = lead
 
 # Other
 materials-biomass = biomass
@@ -39,8 +43,14 @@ materials-raw-plasma = raw plasma
 materials-raw-uranium = raw uranium
 materials-raw-bananium = raw bananium
 materials-raw-salt = raw salt
+materials-raw-diamond = raw diamond
 materials-raw-bluespace = raw bluespace
 materials-raw-normality = raw normality
+materials-raw-aluminium = raw aluminium
+materials-raw-lead = raw lead
+materials-raw-sulfur = raw sulfur
+materials-raw-copper = raw copper
+materials-raw-tungsten = raw tungsten
 
 # Material Reclaimer
 material-reclaimer-upgrade-process-rate = process rate

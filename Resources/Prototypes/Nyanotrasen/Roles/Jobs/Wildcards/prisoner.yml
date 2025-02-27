@@ -13,16 +13,40 @@
     - !type:CharacterDepartmentTimeRequirement
       department: Security
       min: 21600
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - Shadowkin
+        - !type:CharacterTraitRequirement
+          traits:
+            - ShadowkinBlackeye
   special:
   - !type:AddComponentSpecial
     components:
       - type: Pacified
+  afterLoadoutSpecial:
+  - !type:ModifyEnvirosuitSpecial
+    charges: 3 # Poor prisoners with not a lot of self-extinguishes.
+  - !type:ModifyEnvirohelmSpecial
+    powerCell: PowerCellPotato
 
 - type: startingGear
   id: PrisonerGear
+  subGear:
+  - PrisonerPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitPrisoner
     shoes: ClothingShoesColorBlack
     id: PrisonerPDA
     ears: ClothingHeadsetPrison #deltaV
   innerClothingSkirt: ClothingUniformJumpsuitPrisoner
+
+- type: startingGear
+  id: PrisonerPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitPrisoner
+    head: ClothingHeadEnvirohelmPrisoner
+    gloves: ClothingHandsGlovesEnviroglovesBlack

@@ -1,0 +1,8 @@
+- type: marking
+  id: WingsSkeleton
+  bodyPart: Wings
+  markingCategory: Wings
+  speciesRestriction: [Plasmaman]
+  sprites:
+    - sprite: _SimpleStation/Mobs/Customization/wings64x34.rsi
+      state: skeleton

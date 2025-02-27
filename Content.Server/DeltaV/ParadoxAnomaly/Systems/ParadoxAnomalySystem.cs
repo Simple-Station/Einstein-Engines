@@ -1,3 +1,4 @@
+using Content.Server.Clothing.Systems;
 using Content.Server.DeltaV.ParadoxAnomaly.Components;
 using Content.Server.DetailExaminable;
 using Content.Server.GenericAntag;
@@ -37,6 +38,7 @@ public sealed class ParadoxAnomalySystem : EntitySystem
     [Dependency] private readonly SharedRoleSystem _role = default!;
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly StationSpawningSystem _stationSpawning = default!;
+    [Dependency] private readonly LoadoutSystem _loadout = default!;
 
     public override void Initialize()
     {
@@ -147,6 +149,7 @@ public sealed class ParadoxAnomalySystem : EntitySystem
                 profile.Name,
                 job,
                 station);
+            _loadout.ApplyCharacterLoadout(spawned, job, profile, [], false); // TODO: find a way to get playtimes and whitelisted
         }
 
         foreach (var special in job.Special)

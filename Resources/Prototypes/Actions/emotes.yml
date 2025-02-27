@@ -32,4 +32,6 @@
   chatTriggers:
   - jump
   - jumps
+  - hop # TheDen
+  - hops # TheDen
   event: !type:AnimationJumpEmoteEvent

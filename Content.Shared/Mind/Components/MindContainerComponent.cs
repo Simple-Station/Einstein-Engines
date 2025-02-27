@@ -37,6 +37,12 @@ namespace Content.Shared.Mind.Components
         [DataField("ghostOnShutdown")]
         [Access(typeof(SharedMindSystem), Other = AccessPermissions.ReadWriteExecute)] // FIXME Friends
         public bool GhostOnShutdown { get; set; } = true;
+
+        /// <summary>
+        /// DeltaV: The first mind to control this mob. Will only be null if the mob never had a mind at all.
+        /// </summary>
+        [DataField, AutoNetworkedField]
+        public EntityUid? OriginalMind;
     }
 
     public abstract class MindEvent : EntityEventArgs

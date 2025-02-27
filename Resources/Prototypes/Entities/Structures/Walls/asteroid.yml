@@ -429,6 +429,72 @@
     oreChance: 0.33
     oreRarityPrototypeId: RandomOreDistributionStandard
 
+- type: entity
+  id: AsteroidRockAluminium
+  parent: AsteroidRock
+  description: An ore vein rich with bauxite.
+  suffix: Aluminium
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreAluminium
+    - type: Sprite
+      layers:
+        - state: rock_asteroid
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_asteroid_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_asteroid_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_asteroid_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_asteroid_west
+        - state: rock_bauxite
+
+- type: entity
+  id: AsteroidRockLead
+  parent: AsteroidRock
+  description: An ore vein rich with casiterite.
+  suffix: Lead
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreLead
+    - type: Sprite
+      layers:
+        - state: rock_asteroid
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_asteroid_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_asteroid_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_asteroid_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_asteroid_west
+        - state: rock_lead
+
+- type: entity
+  id: AsteroidRockCopper
+  parent: AsteroidRock
+  description: An ore vein rich with native copper.
+  suffix: Copper
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreCopper
+    - type: Sprite
+      layers:
+        - state: rock_asteroid
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_asteroid_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_asteroid_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_asteroid_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_asteroid_west
+        - state: rock_copper
+
 
 # Rocks and ore veins
 - type: entity
@@ -764,6 +830,72 @@
           state: rock_west
         - state: rock_bluespace
 
+- type: entity
+  id: WallRockAluminium
+  parent: WallRock
+  description: An ore vein rich with bauxite.
+  suffix: Aluminium
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreAluminium
+    - type: Sprite
+      layers:
+        - state: rock
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_west
+        - state: rock_bauxite
+
+- type: entity
+  id: WallRockLead
+  parent: WallRock
+  description: An ore vein rich with casiterite.
+  suffix: Lead
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreLead
+    - type: Sprite
+      layers:
+        - state: rock
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_west
+        - state: rock_lead
+
+- type: entity
+  id: WallRockCopper
+  parent: WallRock
+  description: An ore vein rich with native copper.
+  suffix: Copper
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreCopper
+    - type: Sprite
+      layers:
+        - state: rock
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_west
+        - state: rock_copper
+
 # Basalt variants
 - type: entity
   id: WallRockBasalt
@@ -785,6 +917,9 @@
           state: rock_wall_north
         - map: [ "enum.EdgeLayer.West" ]
           state: rock_wall_west
+    - type: OreVein
+      oreChance: 0.33
+      oreRarityPrototypeId: RandomOreDistributionBasalt
 
 - type: entity
   id: WallRockBasaltCoal
@@ -1072,6 +1207,72 @@
         - map: [ "enum.EdgeLayer.West" ]
           state: rock_wall_west
         - state: rock_bluespace
+
+- type: entity
+  id: WallRockBasaltAluminium
+  parent: WallRockBasalt
+  description: An ore vein rich with bauxite.
+  suffix: Aluminium
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreAluminium
+    - type: Sprite
+      layers:
+        - state: rock_wall
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_wall_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_wall_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_wall_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_wall_west
+        - state: rock_bauxite
+
+- type: entity
+  id: WallRockBasaltLead
+  parent: WallRockBasalt
+  description: An ore vein rich with casiterite.
+  suffix: Lead
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreLead
+    - type: Sprite
+      layers:
+        - state: rock_wall
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_wall_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_wall_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_wall_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_wall_west
+        - state: rock_lead
+
+- type: entity
+  id: WallRockBasaltCopper
+  parent: WallRockBasalt
+  description: An ore vein rich with native copper.
+  suffix: Copper
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreCopper
+    - type: Sprite
+      layers:
+        - state: rock_wall
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_wall_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_wall_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_wall_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_wall_west
+        - state: rock_copper
 
 # Snow variants
 - type: entity
@@ -1382,6 +1583,72 @@
           state: rock_snow_west
         - state: rock_bluespace
 
+- type: entity
+  id: WallRockSnowAluminium
+  parent: WallRockSnow
+  description: An ore vein rich with bauxite.
+  suffix: Aluminium
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreAluminium
+    - type: Sprite
+      layers:
+        - state: rock_snow
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_snow_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_snow_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_snow_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_snow_west
+        - state: rock_bauxite
+
+- type: entity
+  id: WallRockSnowLead
+  parent: WallRockSnow
+  description: An ore vein rich with casiterite.
+  suffix: Lead
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreLead
+    - type: Sprite
+      layers:
+        - state: rock_snow
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_snow_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_snow_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_snow_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_snow_west
+        - state: rock_lead
+
+- type: entity
+  id: WallRockSnowCopper
+  parent: WallRockSnow
+  description: An ore vein rich with native copper.
+  suffix: Copper
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreCopper
+    - type: Sprite
+      layers:
+        - state: rock_snow
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_snow_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_snow_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_snow_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_snow_west
+        - state: rock_copper
+
 # Sand variants
 - type: entity
   id: WallRockSand
@@ -1689,6 +1956,72 @@
         - map: [ "enum.EdgeLayer.West" ]
           state: rock_sand_west
         - state: rock_bluespace
+
+- type: entity
+  id: WallRockSandAluminium
+  parent: WallRockSand
+  description: An ore vein rich with bauxite.
+  suffix: Aluminium
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreAluminium
+    - type: Sprite
+      layers:
+        - state: rock_sand
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_sand_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_sand_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_sand_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_sand_west
+        - state: rock_bauxite
+
+- type: entity
+  id: WallRockSandLead
+  parent: WallRockSand
+  description: An ore vein rich with casiterite.
+  suffix: Lead
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreLead
+    - type: Sprite
+      layers:
+        - state: rock_sand
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_sand_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_sand_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_sand_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_sand_west
+        - state: rock_lead
+
+- type: entity
+  id: WallRockSandCopper
+  parent: WallRockSand
+  description: An ore vein rich with native copper.
+  suffix: Copper
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreCopper
+    - type: Sprite
+      layers:
+        - state: rock_sand
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_sand_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_sand_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_sand_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_sand_west
+        - state: rock_copper
 
 # Chromite variants
 - type: entity
@@ -1999,6 +2332,72 @@
           state: rock_chromite_west
         - state: rock_bluespace
 
+- type: entity
+  id: WallRockChromiteAluminium
+  parent: WallRockChromite
+  description: An ore vein rich with bauxite.
+  suffix: Aluminium
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreAluminium
+    - type: Sprite
+      layers:
+        - state: rock_chromite
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_chromite_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_chromite_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_chromite_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_chromite_west
+        - state: rock_bauxite
+
+- type: entity
+  id: WallRockChromiteLead
+  parent: WallRockChromite
+  description: An ore vein rich with casiterite.
+  suffix: Lead
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreLead
+    - type: Sprite
+      layers:
+        - state: rock_chromite
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_chromite_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_chromite_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_chromite_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_chromite_west
+        - state: rock_lead
+
+- type: entity
+  id: WallRockChromiteCopper
+  parent: WallRockChromite
+  description: An ore vein rich with native copper.
+  suffix: Copper
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreCopper
+    - type: Sprite
+      layers:
+        - state: rock_chromite
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_chromite_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_chromite_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_chromite_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_chromite_west
+        - state: rock_copper
+
 # Andesite variants
 - type: entity
   id: WallRockAndesite
@@ -2307,3 +2706,69 @@
         - map: [ "enum.EdgeLayer.West" ]
           state: rock_andesite_west
         - state: rock_bluespace
+
+- type: entity
+  id: WallRockAndesiteAluminium
+  parent: WallRockAndesite
+  description: An ore vein rich with bauxite.
+  suffix: Aluminium
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreAluminium
+    - type: Sprite
+      layers:
+        - state: rock_andesite
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_andesite_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_andesite_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_andesite_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_andesite_west
+        - state: rock_bauxite
+
+- type: entity
+  id: WallRockAndesiteLead
+  parent: WallRockAndesite
+  description: An ore vein rich with casiterite.
+  suffix: Lead
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreLead
+    - type: Sprite
+      layers:
+        - state: rock_andesite
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_andesite_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_andesite_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_andesite_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_andesite_west
+        - state: rock_lead
+
+- type: entity
+  id: WallRockAndesiteCopper
+  parent: WallRockAndesite
+  description: An ore vein rich with native copper.
+  suffix: Copper
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreCopper
+    - type: Sprite
+      layers:
+        - state: rock_andesite
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_andesite_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_andesite_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_andesite_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_andesite_west
+        - state: rock_copper

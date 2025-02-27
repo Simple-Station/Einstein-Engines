@@ -10,3 +10,13 @@
     Blunt: 1.15
     Slash: 1.15
     Piercing: 1.15
+
+- type: damageModifierSet
+  id: Chitinid
+  coefficients:
+    Blunt: 0.9
+    Piercing: 0.9
+    Slash: 0.9
+    Cold: 1.1
+    Shock: 1.15
+    Radiation: 0.2

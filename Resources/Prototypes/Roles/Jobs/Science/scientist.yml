@@ -16,6 +16,8 @@
 
 - type: startingGear
   id: ScientistGear
+  subGear:
+  - ScientistPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitScientist
     back: ClothingBackpackScienceFilled
@@ -27,3 +29,11 @@
   innerClothingSkirt: ClothingUniformJumpskirtScientist
   satchel: ClothingBackpackSatchelScienceFilled
   duffelbag: ClothingBackpackDuffelScienceFilled
+
+- type: startingGear
+  id: ScientistPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitScientist
+    head: ClothingHeadEnvirohelmScientist
+    gloves: ClothingHandsGlovesEnviroglovesWhite

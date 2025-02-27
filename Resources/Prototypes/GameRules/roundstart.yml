@@ -73,6 +73,7 @@
     - operationPrefix
     - operationSuffix
   - type: NukeopsRule
+  - type: RuleGrids
   - type: AntagSelection
   - type: AntagLoadProfileRule
 
@@ -319,13 +320,13 @@
   components:
   - type: RoundstartStationVariationRule
     rules:
-    - id: BasicPoweredLightVariationPass
+#    - id: BasicPoweredLightVariationPass
     - id: BasicTrashVariationPass
-    - id: SolidWallRustingVariationPass
-    - id: ReinforcedWallRustingVariationPass
+#    - id: SolidWallRustingVariationPass
+#    - id: ReinforcedWallRustingVariationPass
     - id: BasicPuddleMessVariationPass
       prob: 0.99
       orGroup: puddleMess
-    - id: BloodbathPuddleMessVariationPass
-      prob: 0.01
-      orGroup: puddleMess
+#    - id: BloodbathPuddleMessVariationPass
+#      prob: 0.01
+#      orGroup: puddleMess

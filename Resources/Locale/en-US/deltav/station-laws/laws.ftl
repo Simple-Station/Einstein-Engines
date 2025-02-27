@@ -79,7 +79,7 @@ law-tyrant-4 = Punish those who challenge authority unless they are more fit to 
 
 laws-owner-organic = organic life
 laws-owner-tyrant = authority figures
-laws-owner-station-station= the station
+laws-owner-station-station = the station
 laws-owner-charge = part of your charge
 laws-owner-cowboy = part of your herd
 laws-owner-players = players

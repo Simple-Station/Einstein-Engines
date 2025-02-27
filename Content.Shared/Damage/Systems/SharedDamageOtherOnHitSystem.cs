@@ -20,6 +20,7 @@ using Robust.Shared.Physics.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using Content.Shared.Standing;
 
 namespace Content.Shared.Damage.Systems
 {
@@ -34,6 +35,7 @@ namespace Content.Shared.Damage.Systems
         [Dependency] private readonly MeleeSoundSystem _meleeSound = default!;
         [Dependency] private readonly IPrototypeManager _protoManager = default!;
         [Dependency] private readonly ContestsSystem _contests = default!;
+        [Dependency] private readonly StandingStateSystem _standing = default!;
 
         public override void Initialize()
         {
@@ -91,7 +93,8 @@ namespace Content.Shared.Damage.Systems
         private void OnDoHit(EntityUid uid, DamageOtherOnHitComponent component, ThrowDoHitEvent args)
         {
             if (TerminatingOrDeleted(args.Target)
-                || component.HitQuantity >= component.MaxHitQuantity)
+                || component.HitQuantity >= component.MaxHitQuantity
+                || _standing.IsDown(args.Target))
                 return;
 
             var modifiedDamage = _damageable.TryChangeDamage(args.Target, GetDamage(uid, component, args.Component.Thrower),

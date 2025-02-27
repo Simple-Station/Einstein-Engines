@@ -99,6 +99,11 @@
     - !type:TraitAddComponent
       components:
         - type: Muted
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - Sign
+      languagesUnderstood:
+        - Sign
 
 - type: trait
   id: Uncloneable
@@ -236,6 +241,7 @@
       species:
         - IPC
         - Lamia
+        - Plasmaman
   functions:
     - !type:TraitAddComponent
       components:
@@ -257,6 +263,7 @@
       species:
         - IPC
         - Lamia
+        - Plasmaman
   functions:
     - !type:TraitAddComponent
       components:

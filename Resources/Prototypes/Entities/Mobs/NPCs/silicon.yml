@@ -3,6 +3,11 @@
   abstract: true
   id: MobSiliconBase
   components:
+  - type: Renamable
+  - type: UserInterface
+    interfaces:
+      enum.SharedRenamableInterfaceKey.Key:
+        type: RenamableBoundUserInterface
   - type: LagCompensation
   - type: Reactive
     groups:
@@ -66,6 +71,7 @@
   - type: Tag
     tags:
     - DoorBumpOpener
+    - SiliconMob
   - type: MobState
     allowedStates:
       - Alive

@@ -23,12 +23,10 @@
   - type: StorageFill
     contents:
     - id: Flash
-    - id: ClothingEyesGlassesMedSec
     - id: PinpointerNuclear
-    - id: ClothingHandsGlovesCombat
-    - id: WeaponLeverChester
-    - id: WeaponEnergyRevolver
     - id: BlueshieldAmmunitionBoxFilled
+    - id: ClothingOuterHardsuitBlueshield
+    - id: ClothingBlueshieldArmoredCoat
 
 - type: entity
   id: LockerMagistrateFilled

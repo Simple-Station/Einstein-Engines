@@ -388,6 +388,8 @@
       path: /Audio/Voice/Arachnid/arachnid_chitter.ogg
     Click:
       path: /Audio/Voice/Arachnid/arachnid_click.ogg
+    Hiss:
+      path: /Audio/Animals/snake_hiss.ogg #DeltaV
     Weh:
       collection: Weh
     Sneeze:
@@ -770,3 +772,13 @@
     path: /Audio/Animals/parrot_raught.ogg
     params:
       variation: 0.125
+
+- type: emoteSounds
+  id: UnisexPlasmaman
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      collection: PlasmamanUnisexScreams
+  sound:
+    path: /Audio/Voice/Skeleton/skeleton_scream.ogg
