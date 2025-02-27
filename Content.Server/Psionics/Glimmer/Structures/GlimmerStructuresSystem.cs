@@ -105,9 +105,9 @@ public sealed class GlimmerStructuresSystem : EntitySystem
                 // As a fun novelty, this means that a highly psionic Epistemics department can essentially "Study" their powers for actual research points!
                 if (source.ResearchPointGeneration != null
                 && TryComp<ResearchPointSourceComponent>(source.Owner, out var research))
-                    research.PointsPerSecond = (int) MathF.Round(
+                    research.PointsPerSecond = (int) Math.Round(
                         source.ResearchPointGeneration.Value
-                        / (MathF.Log(glimmerSources, 4) + 1)
+                        / (Math.Log(glimmerSources, 4) + 1)
                         * _glimmerSystem.GetGlimmerEquilibriumRatio());
 
                 // Shorthand explanation:
@@ -120,14 +120,16 @@ public sealed class GlimmerStructuresSystem : EntitySystem
                 if (source.AddToGlimmer)
                 {
                     _glimmerSystem.DeltaGlimmerInput((_glimmerSystem.GlimmerOutput > glimmerEquilibrium
-                    ? MathF.Pow(_glimmerSystem.GetGlimmerOutputInteger() - source.GlimmerExponentOffset + glimmerSources, 2) : 1f)
-                    * (_glimmerSystem.GlimmerOutput < glimmerEquilibrium ? _glimmerSystem.GetGlimmerEquilibriumRatio() : 1f));
+                    ? Math.Pow(_glimmerSystem.GetGlimmerOutputInteger() - source.GlimmerExponentOffset + glimmerSources, 2) : 1)
+                    * (_glimmerSystem.GlimmerOutput < glimmerEquilibrium ? _glimmerSystem.GetGlimmerEquilibriumRatio() : 1)
+                    * frameTime);
                 }
                 else
                 {
                     _glimmerSystem.DeltaGlimmerInput(-(_glimmerSystem.GlimmerOutput > glimmerEquilibrium
-                    ? MathF.Pow(_glimmerSystem.GetGlimmerOutputInteger() - source.GlimmerExponentOffset + glimmerSources, 2) : 1f)
-                    * (_glimmerSystem.GlimmerOutput > glimmerEquilibrium ? _glimmerSystem.GetGlimmerEquilibriumRatio() : 1f));
+                    ? Math.Pow(_glimmerSystem.GetGlimmerOutputInteger() - source.GlimmerExponentOffset + glimmerSources, 2) : 1)
+                    * (_glimmerSystem.GlimmerOutput > glimmerEquilibrium ? _glimmerSystem.GetGlimmerEquilibriumRatio() : 1)
+                    * frameTime);
                 }
             }
         }
