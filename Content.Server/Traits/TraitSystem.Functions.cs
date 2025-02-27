@@ -686,7 +686,7 @@ public sealed partial class TraitModifyUnarmed : TraitFunction
 [UsedImplicitly]
 public sealed partial class TraitAddTag : TraitFunction
 {
-    [DataField]
+    [DataField, AlwaysPushInheritance]
     public List<ProtoId<TagPrototype>> Tags { get; private set; } = new();
     
     public override void OnPlayerSpawn(EntityUid uid,
