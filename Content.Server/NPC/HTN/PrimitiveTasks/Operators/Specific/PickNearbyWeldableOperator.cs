@@ -58,13 +58,24 @@ public sealed partial class PickNearbyWeldableOperator : HTNOperator
             if (!damageQuery.TryGetComponent(target, out var damage))
                 continue;
 
-            var tagPrototype = _prototypeManager.Index<TagPrototype>(WeldbotWeldOperator.SiliconTag);
+            var tagSiliconMobPrototype = _prototypeManager.Index<TagPrototype>(WeldbotWeldOperator.SiliconTag);
+            var tagWeldFixableStructurePrototype = _prototypeManager.Index<TagPrototype>(WeldbotWeldOperator.WeldotFixableStructureTag);
 
-            if (!_entManager.TryGetComponent<TagComponent>(target, out var tagComponent) || !_tagSystem.HasTag(tagComponent, tagPrototype) || !emagged && damage.DamagePerGroup["Brute"].Value == 0)
+            if (!_entManager.TryGetComponent<TagComponent>(target, out var tagComponent))
                 continue;
 
-            //Needed to make sure it doesn't sometimes stop right outside it's interaction range
-            var pathRange = SharedInteractionSystem.InteractionRange - 1f;
+            var canWeldSiliconMob = _tagSystem.HasTag(tagComponent, tagSiliconMobPrototype) && (emagged || damage.DamagePerGroup["Brute"].Value > 0);
+            var canWeldStructure = _tagSystem.HasTag(tagComponent, tagWeldFixableStructurePrototype) && damage.TotalDamage.Value > 0;
+
+            if(!canWeldSiliconMob && !canWeldStructure)
+                continue;
+
+            var pathRange = SharedInteractionSystem.InteractionRange;
+
+            //Needed to make sure it doesn't sometimes stop right outside its interaction range, in case of a mob.
+            if (canWeldSiliconMob)
+                pathRange--;
+
             var path = await _pathfinding.GetPath(owner, target, pathRange, cancelToken);
 
             if (path.Result == PathResult.NoPath)

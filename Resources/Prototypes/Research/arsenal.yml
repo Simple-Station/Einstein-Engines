@@ -26,6 +26,7 @@
   - WeaponMechCombatDisabler # Goobstation
   #- WeaponPistolMk58 #todo: Add a bunch of basic ballistic guns to the list and make lathe recipes for them.
   - MechEquipmentKineticAccelerator # Goobstation
+  - WeaponPistolMk58
   # These are roundstart but not replenishable for salvage
 
 - type: technology
@@ -139,6 +140,9 @@
   - WeaponLaserCannon
   - WeaponMechCombatSolarisLaser # Goobstation
   - WeaponSubMachineGunFPA90
+  - WeaponPistolN1984
+  - WeaponPistolViper
+  - WeaponPistolCobra
   technologyPrerequisites:
   - BasicWeapons
 

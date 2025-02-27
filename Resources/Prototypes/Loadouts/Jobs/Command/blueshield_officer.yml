@@ -74,6 +74,8 @@
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerPrimary
     - !type:CharacterJobRequirement
       jobs:
         - BlueshieldOfficer
@@ -81,6 +83,40 @@
       min: 21
   items:
     - WeaponLeverChester
+
+- type: loadout
+  id: LoadoutBSORifleBRDIR25
+  category: JobsCommandBlueshieldOfficer
+  cost: 9 # Significant upgrade over a Chester, offered here for the STYLE. Intentionally priced at you not being able to buy a crew monitor with it.
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerPrimary
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+    - !type:CharacterAgeRequirement
+      min: 21
+  items:
+    - WeaponSubMachineGunBRDIR25
+
+- type: loadout
+  id: LoadoutBSOEnergyShield
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerPrimary
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+    - !type:CharacterAgeRequirement
+      min: 21
+  items:
+    - EnergyShield
 
 - type: loadout
   id: LoadoutBSOMedkitCombatFilled
