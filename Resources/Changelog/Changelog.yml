@@ -12118,3 +12118,12 @@ Entries:
   id: 6887
   time: '2025-02-27T02:27:48.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1828
+- author: ShirouAjisai
+  changes:
+    - type: Add
+      message: Added Shadowkin plushie to crates and stuff
+    - type: Tweak
+      message: Tweaked Shadowkin age brackets
+  id: 6888
+  time: '2025-02-27T03:39:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1684
