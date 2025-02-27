@@ -6,7 +6,12 @@
   components:
   - type: Sprite
     sprite: _NF/Objects/Weapons/Guns/Basic/sawn_kinetic_accelerator.rsi
-    state: icon
+    layers:
+    - state: icon
+      map: [ "enum.WeaponVisualLayers.Base" ]
+    - state: bayonet
+      map: [ "enum.WeaponVisualLayers.Bayonet" ]
+      visible: false
   - type: Item
     sprite: _NF/Objects/Weapons/Guns/Basic/sawn_kinetic_accelerator.rsi
     size: Small
