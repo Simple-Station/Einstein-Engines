@@ -43,9 +43,9 @@ public sealed partial class PlantAnalyzerWindow : FancyWindow
 
         ScanModeLabel.Text = msg.ScanMode.HasValue
             ? msg.ScanMode.Value
-                ? Loc.GetString("health-analyzer-window-scan-mode-active")
-                : Loc.GetString("health-analyzer-window-scan-mode-inactive")
-            : Loc.GetString("health-analyzer-window-entity-unknown-text");
+                ? Loc.GetString("plant-analyzer-window-scan-mode-active")
+                : Loc.GetString("plant-analyzer-window-scan-mode-inactive")
+            : Loc.GetString("plant-analyzer-window-entity-unknown-text");
         ScanModeLabel.FontColorOverride = msg.ScanMode.HasValue && msg.ScanMode.Value ? Color.Green : Color.Red;
 
         SeedLabel.Text = msg.PlantData == null
