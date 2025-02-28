@@ -112,7 +112,7 @@
   markingCategory: Hair
   sprites:
     - sprite: _EE/Mobs/Customization/human_hair.rsi
-      state: shavedbun
+      state: loosebunshaved
 
 - type: marking
   id: HumanHairLoosebun
