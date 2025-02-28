@@ -33,11 +33,8 @@ public sealed partial class PlantAnalyzerWindow : FancyWindow
             || msg.PrintReadyAt.GetValueOrDefault(TimeSpan.MaxValue) > _gameTiming.CurTime
             || msg.PlantData is null;
 
-        var target = _entityManager.GetEntity(msg.TargetEntity);
-        if (target is null)
-        {
+        if (!_entityManager.TryGetEntity(msg.TargetEntity, out var target) || target is null)
             return;
-        }
 
         // Section 1: Icon and basic information.
         SpriteView.SetEntity(target.Value);

@@ -41,10 +41,8 @@ public abstract class AbstractAnalyzerSystem<TAnalyzerComponent, TAnalyzerDoAfte
         while (analyzerQuery.MoveNext(out var uid, out var component, out var transform))
         {
             //Update rate limited to 1 second
-            if (component.NextUpdate > _timing.CurTime)
-                continue;
-
-            if (component.ScannedEntity is not { } target)
+            if (component.NextUpdate > _timing.CurTime
+                || component.ScannedEntity is not { } target)
                 continue;
 
             if (Deleted(target))
@@ -78,7 +76,8 @@ public abstract class AbstractAnalyzerSystem<TAnalyzerComponent, TAnalyzerDoAfte
 
         _audio.PlayPvs(uid.Comp.ScanningBeginSound, uid);
 
-        var doAfterCancelled = !_doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, args.User, uid.Comp.ScanDelay, new TAnalyzerDoAfterEvent(), uid, target: args.Target, used: uid)
+        var doAfterCancelled = !_doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager,
+            args.User, uid.Comp.ScanDelay, new TAnalyzerDoAfterEvent(), uid, target: args.Target, used: uid)
         {
             NeedHand = true,
             BreakOnMove = true,

@@ -24,10 +24,8 @@ public sealed class PlantAnalyzerBoundUserInterface : BoundUserInterface
 
     protected override void ReceiveMessage(BoundUserInterfaceMessage message)
     {
-        if (_window == null)
-            return;
-
-        if (message is not PlantAnalyzerScannedUserMessage cast)
+        if (_window is null
+            || message is not PlantAnalyzerScannedUserMessage cast)
             return;
 
         _window.Populate(cast);
@@ -36,7 +34,9 @@ public sealed class PlantAnalyzerBoundUserInterface : BoundUserInterface
     private void Print()
     {
         SendMessage(new PlantAnalyzerPrintMessage());
-        if (_window != null)
-            _window.Print.Disabled = true;
+        if (_window is null)
+            return;
+
+        _window.Print.Disabled = true;
     }
 }

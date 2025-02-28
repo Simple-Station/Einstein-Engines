@@ -212,20 +212,8 @@ public sealed partial class BotanySystem : EntitySystem
         return !proto.Ligneous || proto.Ligneous && held != null && HasComp<SharpComponent>(held);
     }
 
-    public static int CalculateTotalYield(int yield, int yieldMod)
-    {
-        var totalYield = 0;
-        if (yield > -1)
-        {
-            if (yieldMod < 0)
-                totalYield = yield;
-            else
-                totalYield = yield * yieldMod;
-
-            totalYield = Math.Max(1, totalYield);
-        }
-        return totalYield;
-    }
+    public static int CalculateTotalYield(int yield, int yieldMod) =>
+        yield > -1 ? Math.Max(1, yieldMod < 0 ? yield : yield * yieldMod) : 0;
 
     #endregion
 }

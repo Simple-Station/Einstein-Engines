@@ -5,7 +5,6 @@ using Content.Server.Botany.Components;
 using Content.Server.Paper;
 using Content.Server.Popups;
 using Content.Shared.Botany.PlantAnalyzer;
-using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.Labels.EntitySystems;
@@ -28,7 +27,6 @@ public sealed class PlantAnalyzerSystem : AbstractAnalyzerSystem<PlantAnalyzerCo
     [Dependency] private readonly PaperSystem _paperSystem = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly SharedLabelSystem _labelSystem = default!;
-    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
 
     public override void Initialize()
     {
@@ -40,13 +38,9 @@ public sealed class PlantAnalyzerSystem : AbstractAnalyzerSystem<PlantAnalyzerCo
     /// <inheritdoc/>
     public override void UpdateScannedUser(EntityUid analyzer, EntityUid target, bool scanMode)
     {
-        if (!_uiSystem.HasUi(analyzer, PlantAnalyzerUiKey.Key))
-            return;
-
-        if (!ValidScanTarget(target))
-            return;
-
-        if (!_entityManager.TryGetComponent<PlantAnalyzerComponent>(analyzer, out var analyzerComponent))
+        if (!_uiSystem.HasUi(analyzer, PlantAnalyzerUiKey.Key)
+            || !ValidScanTarget(target)
+            || !_entityManager.TryGetComponent<PlantAnalyzerComponent>(analyzer, out var analyzerComponent))
             return;
 
         _uiSystem.ServerSendUiMessage(analyzer, PlantAnalyzerUiKey.Key, GatherData(analyzerComponent, scanMode, target: target));
@@ -185,10 +179,7 @@ public sealed class PlantAnalyzerSystem : AbstractAnalyzerSystem<PlantAnalyzerCo
     }
 
     /// <inheritdoc/>
-    protected override Enum GetUiKey()
-    {
-        return PlantAnalyzerUiKey.Key;
-    }
+    protected override Enum GetUiKey() => PlantAnalyzerUiKey.Key;
 
     /// <inheritdoc/>
     protected override bool ScanTargetPopupMessage(Entity<PlantAnalyzerComponent> uid, AfterInteractEvent args, [NotNullWhen(true)] out string? message)
@@ -198,8 +189,5 @@ public sealed class PlantAnalyzerSystem : AbstractAnalyzerSystem<PlantAnalyzerCo
     }
 
     /// <inheritdoc/>
-    protected override bool ValidScanTarget(EntityUid? target)
-    {
-        return HasComp<PlantHolderComponent>(target);
-    }
+    protected override bool ValidScanTarget(EntityUid? target) => HasComp<PlantHolderComponent>(target);
 }
