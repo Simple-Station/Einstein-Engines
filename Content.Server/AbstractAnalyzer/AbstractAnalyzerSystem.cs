@@ -182,7 +182,7 @@ public abstract class AbstractAnalyzerSystem<TAnalyzerComponent, TAnalyzerDoAfte
     protected abstract Enum GetUiKey();
 
     /// <summary>
-    /// The message the scan target recieves on scan.
+    /// The message the scan target receives on scan.
     /// </summary>
     /// <returns>true if the message should be shown</returns>
     protected abstract bool ScanTargetPopupMessage(Entity<TAnalyzerComponent> uid, AfterInteractEvent args, [NotNullWhen(true)] out string? message);
