@@ -1,0 +1,134 @@
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsModsuitBase
+  name: base MOD gauntlets
+  description: A pair of gauntlets for a MODsuit.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Hands/Gloves/Modsuit/standart.rsi
+  - type: Clothing
+    sprite: Backmen/Clothing/Hands/Gloves/Modsuit/standart.rsi
+    equipSound: /Audio/Mecha/mechmove03.ogg
+    unequipSound: /Audio/Mecha/mechmove03.ogg
+    equipDelay: 3
+    unequipDelay: 3
+  - type: Fiber
+    fiberMaterial: fibers-durathread
+    fiberColor: fibers-regal-blue
+  - type: FingerprintMask
+
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsModsuitAtmos
+  name: atmos MOD gauntlets
+  description: A pair of gauntlets for a MODsuit.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Hands/Gloves/Modsuit/atmospheric.rsi
+  - type: Clothing
+    sprite: Backmen/Clothing/Hands/Gloves/Modsuit/atmospheric.rsi
+    equipSound: /Audio/Mecha/mechmove03.ogg
+    unequipSound: /Audio/Mecha/mechmove03.ogg
+    equipDelay: 3
+    unequipDelay: 3
+  - type: Insulated
+  - type: Fiber
+    fiberMaterial: fibers-durathread
+    fiberColor: fibers-regal-yellow
+
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsModsuitClown
+  name: clown MOD gauntlets
+  description: A pair of gauntlets for a MODsuit.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Hands/Gloves/Modsuit/clown.rsi
+  - type: Clothing
+    sprite: Backmen/Clothing/Hands/Gloves/Modsuit/clown.rsi
+    equipSound: /Audio/Mecha/mechmove03.ogg
+    unequipSound: /Audio/Mecha/mechmove03.ogg
+    equipDelay: 3
+    unequipDelay: 3
+  - type: Fiber
+    fiberMaterial: fibers-durathread
+    fiberColor: fibers-regal-yellow
+
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsModsuitEngineering
+  name: atmos MOD gauntlets
+  description: A pair of gauntlets for a MODsuit.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Hands/Gloves/Modsuit/engineering.rsi
+  - type: Clothing
+    sprite: Backmen/Clothing/Hands/Gloves/Modsuit/engineering.rsi
+    equipSound: /Audio/Mecha/mechmove03.ogg
+    unequipSound: /Audio/Mecha/mechmove03.ogg
+    equipDelay: 3
+    unequipDelay: 3
+  - type: Insulated
+  - type: Fiber
+    fiberMaterial: fibers-durathread
+    fiberColor: fibers-regal-yellow
+
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsModsuitMedical
+  name: atmos MOD gauntlets
+  description: A pair of gauntlets for a MODsuit.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Hands/Gloves/Modsuit/medical.rsi
+  - type: Clothing
+    sprite: Backmen/Clothing/Hands/Gloves/Modsuit/medical.rsi
+    equipSound: /Audio/Mecha/mechmove03.ogg
+    unequipSound: /Audio/Mecha/mechmove03.ogg
+    equipDelay: 3
+    unequipDelay: 3
+
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsModsuitMining
+  name: mining MOD gauntlets
+  description: A pair of gauntlets for a MODsuit.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Hands/Gloves/Modsuit/mining.rsi
+  - type: Clothing
+    sprite: Backmen/Clothing/Hands/Gloves/Modsuit/mining.rsi
+    equipSound: /Audio/Mecha/mechmove03.ogg
+    unequipSound: /Audio/Mecha/mechmove03.ogg
+    equipDelay: 3
+    unequipDelay: 3
+
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsModsuitSecurity
+  name: security MOD gauntlets
+  description: A pair of gauntlets for a MODsuit.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Hands/Gloves/Modsuit/security.rsi
+  - type: Clothing
+    sprite: Backmen/Clothing/Hands/Gloves/Modsuit/security.rsi
+    equipSound: /Audio/Mecha/mechmove03.ogg
+    unequipSound: /Audio/Mecha/mechmove03.ogg
+    equipDelay: 3
+    unequipDelay: 3
+
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsModsuitScience
+  name: Science MOD gauntlets
+  description: A pair of gauntlets for a MODsuit.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Hands/Gloves/Modsuit/science.rsi
+  - type: Clothing
+    sprite: Backmen/Clothing/Hands/Gloves/Modsuit/science.rsi
+    equipSound: /Audio/Mecha/mechmove03.ogg
+    unequipSound: /Audio/Mecha/mechmove03.ogg
+    equipDelay: 3
+    unequipDelay: 3

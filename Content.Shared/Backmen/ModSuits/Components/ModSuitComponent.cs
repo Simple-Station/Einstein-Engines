@@ -17,7 +17,7 @@ public sealed partial class ModSuitComponent : Component
     ///     Action used to toggle the clothing on or off.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public EntProtoId Action = "ADTActionToggleMODPiece";
+    public EntProtoId Action = "ActionToggleMODPiece";
 
     [DataField, AutoNetworkedField]
     public EntityUid? ActionEntity;

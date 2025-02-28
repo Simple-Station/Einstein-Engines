@@ -1,0 +1,392 @@
+# Default MOD
+- type: entity
+  parent: Clothing
+  id: ClothingModsuitBackBase
+  name: base MOD control unit
+  description: A civilian class suit by Nakamura Engineering, doesn't offer much other than slightly quicker movement.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Back/Modsuit/standart.rsi
+    state: icon
+  - type: ModSuit
+    clothingPrototypes:
+      head: ClothingHeadHelmetModsuitBase
+      gloves: ClothingHandsModsuitBase
+      outerClothing: ClothingOuterModsuitBodyBase
+      shoes: ClothingModsuitShoesBase
+  - type: ContainerContainer
+    containers:
+      modsuit-part: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+      modsuit-mod1: !type:ContainerSlot
+        showEnts: False
+        occludes: True
+        ent: null
+      modsuit-mod2: !type:ContainerSlot
+        showEnts: False
+        occludes: True
+        ent: null
+      modsuit-mod3: !type:ContainerSlot
+        showEnts: False
+        occludes: True
+        ent: null
+      modsuit-mod4: !type:ContainerSlot
+        showEnts: False
+        occludes: True
+        ent: null
+      modsuit-mod5: !type:ContainerSlot
+        showEnts: False
+        occludes: True
+        ent: null
+      storagebase: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: UserInterface
+    interfaces:
+      enum.ModSuitUiKey.Key:
+        type: ModSuitBoundUserInterface
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - back
+  - type: ClothingSpeedModifier
+  - type: Construction
+    graph: ModsuitStandard
+    node: sciencemodsuitstandard
+  - type: ItemSlots
+    slots:
+      modsuit-mod1:
+        swap: false
+        whitelist:
+          components:
+          - ModSuitMod
+      modsuit-mod2:
+        swap: false
+        whitelist:
+          components:
+          - ModSuitMod
+      modsuit-mod3:
+        swap: false
+        whitelist:
+          components:
+          - ModSuitMod
+      modsuit-mod4:
+        swap: false
+        whitelist:
+          components:
+          - ModSuitMod
+      modsuit-mod5:
+        swap: false
+        whitelist:
+          components:
+          - ModSuitMod
+  - type: WiresPanel
+  - type: ActivatableUIRequiresPanel
+    requireOpen: false
+  - type: Item
+    size: Huge
+
+- type: entity
+  parent: ClothingModsuitBackBase
+  id: ClothingModsuitBackAtmos
+  name: atmos MOD control unit
+  description: An atmospheric-resistant suit by Nakamura Engineering, offering extreme heat resistance compared to the engineer suit.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Back/Modsuit/atmospheric.rsi
+    state: icon
+  - type: ModSuit
+    clothingPrototypes:
+      head: ClothingHeadHelmetModsuitAtmos
+      gloves: ClothingHandsModsuitAtmos
+      outerClothing: ClothingOuterModsuitBodyAtmos
+      shoes: ClothingModsuitShoesAtmos
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: Construction
+    graph: ModsuitAtmospheric
+    node: sciencemodsuitatmospheric
+  - type: ItemSlots
+    slots:
+      modsuit-mod1:
+        swap: false
+        whitelist:
+          components:
+          - ModSuitMod
+      modsuit-mod2:
+        swap: false
+        whitelist:
+          components:
+          - ModSuitMod
+      modsuit-mod3:
+        swap: false
+        whitelist:
+          components:
+          - ModSuitMod
+  - type: ContainerContainer
+    containers:
+      modsuit-part: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+      modsuit-mod1: !type:ContainerSlot
+        showEnts: False
+        occludes: True
+        ent: null
+      modsuit-mod2: !type:ContainerSlot
+        showEnts: False
+        occludes: True
+        ent: null
+      modsuit-mod3: !type:ContainerSlot
+        showEnts: False
+        occludes: True
+        ent: null
+      storagebase: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+
+- type: entity
+  parent: ClothingModsuitBackBase
+  id: ClothingModsuitBackClown
+  name: clown MOD control unit
+  description: A suit by Honk Ltd. Protects against low humor environments.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Back/Modsuit/clown.rsi
+    state: icon
+  - type: ModSuit
+    clothingPrototypes:
+      head: ClothingHeadHelmetModsuitClown
+      gloves: ClothingHandsModsuitClown
+      outerClothing: ClothingOuterModsuitBodyClown
+      shoes: ClothingModsuitShoesClown
+  - type: Construction
+    graph: ModsuitClown
+    node: sciencemodsuitclown
+
+- type: entity
+  parent: ClothingModsuitBackBase
+  id: ClothingModsuitBackEngineering
+  name: engineering MOD control unit
+  description: An engineer-fit suit with heat and shock resistance. Nakamura Engineering's classic.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Back/Modsuit/engineering.rsi
+    state: icon
+  - type: ModSuit
+    clothingPrototypes:
+      head: ClothingHeadHelmetModsuitEngineering
+      gloves: ClothingHandsModsuitEngineering
+      outerClothing: ClothingOuterModsuitBodyEngineering
+      shoes: ClothingModsuitShoesEngineering
+  - type: Construction
+    graph: ModsuitEngineering
+    node: sciencemodsuitengineering
+
+- type: entity
+  parent: ClothingModsuitBackBase
+  id: ClothingModsuitBackMedical
+  name: medical MOD control unit
+  description: A lightweight suit by DeForest Medical Corporation, allows for easier movement.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Back/Modsuit/medical.rsi
+    state: icon
+  - type: ModSuit
+    clothingPrototypes:
+      head: ClothingHeadHelmetModsuitMedical
+      gloves: ClothingHandsModsuitMedical
+      outerClothing: ClothingOuterModsuitBodyMedical
+      shoes: ClothingModsuitShoesMedical
+  - type: Construction
+    graph: ModsuitMedical
+    node: sciencemodsuitmedical
+
+- type: entity
+  parent: ClothingModsuitBackBase
+  id: ClothingModsuitBackMining
+  name: mining MOD control unit
+  description: A Nanotrasen mining suit for on-site operations, fit with accreting ash armor and a sphere form.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Back/Modsuit/mining.rsi
+    state: icon
+  - type: ModSuit
+    clothingPrototypes:
+      head: ClothingHeadHelmetModsuitMining
+      gloves: ClothingHandsModsuitMining
+      outerClothing: ClothingOuterModsuitBodyMining
+      shoes: ClothingModsuitShoesMining
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: Construction
+    graph: ModsuitMining
+    node: sciencemodsuitmining
+
+- type: entity
+  parent: ClothingModsuitBackBase
+  id: ClothingModsuitBackSecurity
+  name: security MOD control unit
+  description: An Apadyne Technologies security suit, offering quicker speed at the cost of carrying capacity.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Back/Modsuit/security.rsi
+    state: icon
+  - type: ModSuit
+    clothingPrototypes:
+      head: ClothingHeadHelmetModsuitSecurity
+      gloves: ClothingHandsModsuitSecurity
+      outerClothing: ClothingOuterModsuitBodySecurity
+      shoes: ClothingModsuitShoesSecurity
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: Construction
+    graph: ModsuitSecurity
+    node: sciencemodsuitsecurity
+  - type: ItemSlots
+    slots:
+      modsuit-mod1:
+        swap: false
+        whitelist:
+          components:
+          - ModSuitMod
+      modsuit-mod2:
+        swap: false
+        whitelist:
+          components:
+          - ModSuitMod
+      modsuit-mod3:
+        swap: false
+        whitelist:
+          components:
+          - ModSuitMod
+  - type: ContainerContainer
+    containers:
+      modsuit-part: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+      modsuit-mod1: !type:ContainerSlot
+        showEnts: False
+        occludes: True
+        ent: null
+      modsuit-mod2: !type:ContainerSlot
+        showEnts: False
+        occludes: True
+        ent: null
+      modsuit-mod3: !type:ContainerSlot
+        showEnts: False
+        occludes: True
+        ent: null
+      storagebase: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+
+- type: entity
+  parent: Clothing
+  id: ClothingModsuitBackScience
+  name: Science MOD control unit
+  description: Made by scientists for scientists. With love!
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Back/Modsuit/science.rsi
+    state: icon
+  - type: ModSuit
+    clothingPrototypes:
+      head: ClothingHeadHelmetModsuitScience
+      gloves: ClothingHandsModsuitScience
+      outerClothing: ClothingOuterModsuitBodyScience
+      shoes: ClothingModsuitShoesScience
+  - type: ContainerContainer
+    containers:
+      modsuit-part: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+      modsuit-mod1: !type:ContainerSlot
+        showEnts: False
+        occludes: True
+        ent: null
+      modsuit-mod2: !type:ContainerSlot
+        showEnts: False
+        occludes: True
+        ent: null
+      modsuit-mod3: !type:ContainerSlot
+        showEnts: False
+        occludes: True
+        ent: null
+      modsuit-mod4: !type:ContainerSlot
+        showEnts: False
+        occludes: True
+        ent: null
+      modsuit-mod5: !type:ContainerSlot
+        showEnts: False
+        occludes: True
+        ent: null
+      modsuit-mod6: !type:ContainerSlot
+        showEnts: False
+        occludes: True
+        ent: null
+      storagebase: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: UserInterface
+    interfaces:
+      enum.ModSuitUiKey.Key:
+        type: ModSuitBoundUserInterface
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - back
+  - type: ClothingSpeedModifier
+  - type: Construction
+    graph: ModsuitScience
+    node: modsuitcience
+  - type: ItemSlots
+    slots:
+      modsuit-mod1:
+        swap: false
+        whitelist:
+          components:
+          - ModSuitMod
+      modsuit-mod2:
+        swap: false
+        whitelist:
+          components:
+          - ModSuitMod
+      modsuit-mod3:
+        swap: false
+        whitelist:
+          components:
+          - ModSuitMod
+      modsuit-mod4:
+        swap: false
+        whitelist:
+          components:
+          - ModSuitMod
+      modsuit-mod5:
+        swap: false
+        whitelist:
+          components:
+          - ModSuitMod
+      modsuit-mod6:
+        swap: false
+        whitelist:
+          components:
+          - ModSuitMod
+  - type: WiresPanel
+  - type: ActivatableUIRequiresPanel
+    requireOpen: false

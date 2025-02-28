@@ -1,0 +1,190 @@
+- type: entity
+  id: BaseModsuitCorePart
+  parent: BaseMechPart
+  abstract: true
+  components:
+  - type: Sprite
+    drawdepth: Items
+    noRot: false
+    sprite: Backmen/Objects/Specific/Modsuits/modcore_construction.rsi
+
+- type: entity
+  id: BaseModsuitCorePartItem
+  parent: BaseModsuitCorePart
+  abstract: true
+  components:
+  - type: Item
+
+- type: entity
+  parent: BaseModsuitCorePartItem
+  id: ModsuitHelmet
+  name: MOD helmet
+  components:
+  - type: Sprite
+    state: helmet
+  - type: Tag
+    tags:
+    - ModsuitHelmet
+
+- type: entity
+  parent: BaseModsuitCorePartItem
+  id: ModsuitGauntlets
+  name: MOD gauntlets
+  components:
+  - type: Sprite
+    state: gauntlets
+  - type: Tag
+    tags:
+    - ModsuitGauntlets
+
+- type: entity
+  parent: BaseModsuitCorePartItem
+  id: ModsuitCoreEnergy
+  name: MOD energy core
+  components:
+  - type: Sprite
+    state: mod-core-standard
+  - type: Tag
+    tags:
+    - ModsuitCoreEnergy
+
+- type: entity
+  parent: BaseModsuitCorePartItem
+  id: ModsuitChestplate
+  name: MOD chestplate
+  components:
+  - type: Sprite
+    state: chestplate
+  - type: Tag
+    tags:
+    - ModsuitChestplate
+
+- type: entity
+  parent: BaseModsuitCorePartItem
+  id: ModsuitBoots
+  name: MOD boots
+  components:
+  - type: Sprite
+    state: boots
+  - type: Tag
+    tags:
+    - ModsuitBoots
+
+- type: entity
+  parent: BaseModsuitCorePartItem
+  id: ModsuitPlateAtmospheric
+  name: atmospheric MOD plate
+  components:
+  - type: Sprite
+    state: atmospheric
+  - type: Tag
+    tags:
+    - ModsuitPlateAtmospheric
+
+- type: entity
+  parent: BaseModsuitCorePartItem
+  id: ModsuitPlateCosmohonk
+  name: cosmohonk MOD plate
+  components:
+  - type: Sprite
+    state: cosmohonk
+  - type: Tag
+    tags:
+    - ModsuitPlateCosmohonk
+
+- type: entity
+  parent: BaseModsuitCorePartItem
+  id: ModsuitPlateEngineering
+  name: engineering MOD plate
+  components:
+  - type: Sprite
+    state: engineering
+  - type: Tag
+    tags:
+    - ModsuitPlateEngineering
+
+- type: entity
+  parent: BaseModsuitCorePartItem
+  id: ModsuitPlateMedical
+  name: medical MOD plate
+  components:
+  - type: Sprite
+    state: medical
+  - type: Tag
+    tags:
+    - ModsuitPlateMedical
+
+- type: entity
+  parent: BaseModsuitCorePartItem
+  id: ModsuitPlateSecurity
+  name: security MOD plate
+  components:
+  - type: Sprite
+    state: security
+  - type: Tag
+    tags:
+    - ModsuitPlateSecurity
+
+- type: entity
+  parent: BaseModsuitCorePartItem
+  id: ModsuitPlateStandard
+  name: standart  MOD plate
+  components:
+  - type: Sprite
+    state: standard
+  - type: Tag
+    tags:
+    - ModsuitPlateStandard
+
+- type: entity
+  parent: BaseModsuitCorePartItem
+  id: ModsuitPlateCience
+  name: cience MOD plate
+  components:
+  - type: Sprite
+    state: cience
+  - type: Tag
+    tags:
+    - ModsuitPlateCience
+
+- type: entity
+  parent: BaseModsuitCorePartItem
+  id: ModsuitPlateMining
+  name: mining MOD plate
+  components:
+  - type: Sprite
+    state: engineering
+  - type: Tag
+    tags:
+    - ModsuitPlateMining
+
+- type: entity
+  id: ModsuitAssembly
+  parent: BaseModsuitCorePart
+  name: MOD core assembly
+  components:
+  - type: ContainerContainer
+    containers:
+      battery-container: !type:Container
+  - type: Appearance
+  - type: MechAssemblyVisuals
+    statePrefix: modcore
+  - type: Sprite
+    noRot: true
+    state: modcore0
+  - type: Construction
+    graph: ModsuitAssembled
+    node: start
+    defaultTarget: modsuitassembled
+  - type: Item
+
+- type: entity
+  id: ModsuitAssembled
+  parent: BaseModsuitCorePartItem
+  name: MOD core
+  components:
+  - type: Tag
+    tags:
+    - ModsuitAssembledPart
+  - type: Sprite
+    state: modcore8

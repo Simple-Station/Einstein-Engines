@@ -9,7 +9,6 @@ namespace Content.Shared.Backmen.ModSuits.Systems;
 
 public sealed class ModSuitModSystem : EntitySystem
 {
-    [Dependency] private readonly ClothingSpeedModifierSystem _clothing = default!;
     [Dependency] private readonly ModSuitSystem _modsuit = default!;
     public override void Initialize()
     {
