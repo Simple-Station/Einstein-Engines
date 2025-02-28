@@ -69,3 +69,16 @@
       amount: 2
     - id: MagazinePistol
       amount: 4
+
+- type: entity
+  id: CrateArmoryBRDIR25
+  parent: CrateWeaponSecure
+  name: BRDI-R25 crate
+  description: Contains two integrally suppressed bullpup rifles. Imported from Biesel Republic Defense Industries. Requires Armory access to open.
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponSubMachineGunBRDIR25
+      amount: 2
+    - id: MagazineCaselessRifle
+      amount: 4

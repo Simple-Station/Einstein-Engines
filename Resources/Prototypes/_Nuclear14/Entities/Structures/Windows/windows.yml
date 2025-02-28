@@ -19,6 +19,7 @@
     tags:
       - ForceFixRotations
       - Window
+      - WeldbotFixableStructure
   - type: Physics
     bodyType: Static
   - type: Fixtures

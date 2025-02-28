@@ -174,10 +174,10 @@
   - type: PuddleFootPrints
 
 - type: entity
-  name: Footstep
+  name: footstep
   id: Footstep
   save: false
-  description: Trace of liquid
+  description: Trace of liquid.
   components:
     - type: Clickable
     - type: FootstepModifier
@@ -222,6 +222,12 @@
       examinable: false
     - type: ExaminableSolution
       solution: step
+    - type: MixableSolution
+      solution: step
     - type: DrawableSolution
       solution: step
     - type: BadDrink
+    - type: IgnoresFingerprints
+    - type: Tag
+      tags:
+      - DNASolutionScannable
