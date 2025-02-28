@@ -157,7 +157,7 @@
   name: advanced industrial welding tool
   parent: WelderIndustrial
   id: WelderIndustrialAdvanced
-  description: "An advanced industrial welder with over double the fuel capacity and hotter flame."
+  description: "An advanced industrial welder with over five times the fuel capacity and a hotter flame."
   components:
   - type: Sprite
     sprite: Objects/Tools/welder_industrialadv.rsi
@@ -168,16 +168,16 @@
       Welder:
         reagents:
         - ReagentId: WeldingFuel
-          Quantity: 250
-        maxVol: 250
+          Quantity: 500
+        maxVol: 500
   - type: Tool
-    speedModifier: 1.3
+    speedModifier: 1.5
 
 - type: entity
   name: experimental welding tool
   parent: Welder
   id: WelderExperimental
-  description: "An experimental welder capable of self-fuel generation and less harmful to the eyes."
+  description: "An experimental welder that is less harmful to the eyes while having a hotter flame and slowly regenerating fuel."
   components:
   - type: Sprite
     sprite: Objects/Tools/welder_experimental.rsi
@@ -188,8 +188,8 @@
       Welder:
         reagents:
         - ReagentId: WeldingFuel
-          Quantity: 1000
-        maxVol: 1000
+          Quantity: 200
+        maxVol: 200
   - type: PointLight
     enabled: false
     radius: 1.5
@@ -199,7 +199,9 @@
     generated:
       reagents:
       - ReagentId: WeldingFuel
-        Quantity: 1
+        Quantity: 0.5
+  - type: Tool
+    speedModifier: 2
 
 - type: entity
   name: emergency welding tool

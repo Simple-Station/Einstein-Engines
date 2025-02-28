@@ -383,7 +383,7 @@ trait-description-StrikingCalluses =
     Striking Calluses consist of bony dermal deposits grafted into a user's hands, either inside the palm
     for "Tiger Style" fighting, or just below the knuckles for those who favor traditional boxing.
     Owners of prosthetic or bionic limbs would instead have a hard plastic shell over their knuckles.
-    These enhancements increase your unarmed strike damage by 1 point base, but do not confer
+    These enhancements increase your unarmed strike damage by 2 point base, but do not confer
     any benefits to any form of armed melee.
 
 trait-name-Spinarette = Bionic Spinarette
@@ -391,8 +391,7 @@ trait-description-Spinarette =
     This vatgrown organ-- trademarked and patented by the Cybersun Corporation, is marketed as a highly
     utilitarian enhancement, and sold in clinics all across known space. It consists of a nodule that is traditionally
     implanted right below the wrist, which absorbs bodily lipids to convert into all natural silk. A small opening
-    in the palm allows the user to 'spin' this thread. Users of this enhancement typically require twice as much food
-    as a standard Sol Human, owing to the high metabolic cost of artificial Sericulture.
+    in the palm allows the user to 'spin' this thread.
 
 trait-name-AddictionNicotine = Nicotine Addiction
 trait-description-AddictionNicotine =
@@ -530,13 +529,13 @@ trait-description-BrittleBoneDisease =
     Also known as "brittle bone disease", people with this genetic disorder have bones that are easily broken,
     often simply by moving. This trait reduces your threshold for critical injury by 50 points.
 
-trait-name-LightAmplification = CyberEyes Module: Light Amplification
+trait-name-LightAmplification = Cyber-Eyes: Light Amplification Module
 trait-description-LightAmplification =
-    Your CyberEyes have been enhanced with a light amplifier module, enabling the user to toggle between standard sight and "Night Vision" mode.
+    Your Cyber-Eyes have been enhanced with a light amplifier module, enabling the user to toggle between standard sight and "Night Vision" mode.
 
-trait-name-ThermographicVision = CyberEyes Module: Thermographic Scanner
+trait-name-ThermographicVision = Cyber-Eyes: Thermographic Scanner Module
 trait-description-ThermographicVision =
-    Your CyberEyes have been enhanced with a Thermographic Scanner. When enabled, it captures a snapshot of the user's surroundings, while highlighting all
+    Your Cyber-Eyes have been enhanced with a Thermographic Scanner. When enabled, it captures a snapshot of the user's surroundings, while highlighting all
     biological life forms. It can even detect individuals through the walls of a station.
 
 trait-name-ShadowkinBlackeye = Blackeye
@@ -556,3 +555,36 @@ trait-name-BionicLeg = Bionic Leg
 trait-description-BionicLeg =
     One or more of your limbs have been replaced with an expensive, state of the art bionic. It could be either one made of highly realistic synthflesh,
     or a more obvious metal limb. This limb provides enhanced speed to it's user, allowing you to run away from situations faster or get to a place faster.
+
+trait-name-FlareShieldingModule = I.P.C Eye Module: Flare Shielding
+trait-description-FlareShieldingModule =
+    Your cybereyes have been fitted with a photochromic lense that automatically darkens in response to intense stimuli.
+    This provides immunity from most bright flashes of light, such as those from welding arcs, exclusive to IPCs because it only needs the module
+    skipping the eye insertion process.
+
+trait-name-SecurityEyesModule = I.P.C Eye Module: Sechud
+trait-description-SecurityEyesModule =
+    A module installed in IPCs that work for the security department and similar, this module is considered contraband and may be removed if the unit isn't working for the security department.
+
+trait-name-MedicalEyesModule = I.P.C Eye Module: Medical
+trait-description-MedicalEyesModule =
+    Your eyes have been upgraded to include a built-in Medical Hud, allowing you to track the relative health condition of biological organisms.
+
+trait-name-DiagnosticEyesModule = I.P.C Eye Module: Diagnostics
+trait-description-DiagnosticEyesModule =
+    You possess a built-in Diagnostic Hud, allowing you to track the condition of synthetic entities.
+
+trait-name-OmniEyesModule = I.P.C Eye Module: Premium Model
+trait-description-OmniEyesModule =
+    This upgrade provides the combined benefits of a SecHud, MedHud, and a Diagnostics Module.
+    Note that this module is considered Contraband for anyone not under the employ of station Security personel,
+    and may be disabled by your employer before dispatch to the station.
+
+trait-name-LightAmplificationModule = I.P.C Eye Module: Light Amplification
+trait-description-LightAmplificationModule =
+    Your vision has been enhanced with a light amplifier module, enabling the user to toggle between standard sight and "Night Vision" mode.
+
+trait-name-ThermographicVisionModule = I.P.C Eye Module: Thermographic Scanner
+trait-description-ThermographicVisionModule =
+    Your vision has been enhanced with a Thermographic Scanner. When enabled, it captures a snapshot of the user's surroundings, while highlighting all
+    biological life forms. It can even detect individuals through the walls of a station.
