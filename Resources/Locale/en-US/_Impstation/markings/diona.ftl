@@ -1,0 +1,53 @@
+marking-DionaFlowersHead_colorable-flowers_head_primary_colorable = Stems
+marking-DionaFlowersHead_colorable-flowers_head_secondary_colorable = Flowers
+
+marking-DionaFlowersBody_colorable-flowers_body_primary_colorable = Vine
+marking-DionaFlowersBody_colorable-flowers_body_secondary_colorable = Flowers
+
+marking-DionaBloomHead_colorable-bloom_primary_colorable = Stem
+marking-DionaBloomHead_colorable-bloom_secondary_colorable = Flower
+
+marking-DionaCornflowerHead_colorable-cornflower_primary_colorable = Leaves
+marking-DionaCornflowerHead_colorable-cornflower_secondary_colorable = Flowers (Inner)
+marking-DionaCornflowerHead_colorable-cornflower_flowers_colorable = Flowers
+
+marking-DionaGarlandHead_colorable-garland_primary_colorable = Leaves
+marking-DionaGarlandHead_colorable-garland_secondary_colorable = Flowers (Inner)
+marking-DionaGarlandHead_colorable-garland_flowers1_colorable = Flowers 1
+marking-DionaGarlandHead_colorable-garland_flowers2_colorable = Flowers 2
+marking-DionaGarlandHead_colorable-garland_flowers3_colorable = Flowers 3
+
+marking-DionaKingHead_colorable-king_primary_colorable = Stem
+marking-DionaKingHead_colorable-king_secondary_colorable = Flower
+
+marking-DionaLotusHead_colorable-lotus_primary_colorable = Stem
+marking-DionaLotusHead_colorable-lotus_secondary_colorable = Flower
+
+marking-DionaRoseHead_colorable-rose_primary_colorable = Stem
+marking-DionaRoseHead_colorable-rose_secondary_colorable = Flower
+
+marking-DionaRoseyHead_colorable-rosey_primary_colorable = Bush
+marking-DionaRoseyHead_colorable-rosey_secondary_colorable = Flowers (Inner)
+marking-DionaRoseyHead_colorable-rosey_flowers_colorable = Flowers
+
+marking-DionaSpinnerHeadSide_colorable-spinner_primary_colorable = Roots
+marking-DionaSpinnerHeadSide_colorable-spinner_secondary_colorable = Eyes
+
+marking-DionaSproutHeadSide_colorable-sprout_primary_colorable = Primary
+marking-DionaSproutHeadSide_colorable-sprout_secondary_colorable = Secondary
+
+marking-DionaVineHeadTop_colorable-vine_primary_colorable = Root
+marking-DionaVineHeadTop_colorable-vine_secondary_colorable = Vines
+
+marking-DionaVinelHead_colorable-vinel_primary_colorable = Primary
+marking-DionaVinelHead_colorable-vinel_secondary_colorable = Secondary
+
+marking-DionaVinesHead_colorable-vines_primary_colorable = Primary
+marking-DionaVinesHead_colorable-vines_secondary_colorable = Secondary
+
+marking-DionaWildflowerHead_colorable-wildflower_primary_colorable = Leaves
+marking-DionaWildflowerHead_colorable-wildflower_secondary_colorable = Flowers (Inner)
+marking-DionaWildflowerHead_colorable-wildflower_flowers1_colorable = Flowers 1
+marking-DionaWildflowerHead_colorable-wildflower_flowers2_colorable = Flowers 2
+marking-DionaWildflowerHead_colorable-wildflower_flowers3_colorable = Flowers 3
+marking-DionaWildflowerHead_colorable-wildflower_flowers4_colorable = Flowers 4
