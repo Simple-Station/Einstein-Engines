@@ -12118,3 +12118,42 @@ Entries:
   id: 6887
   time: '2025-02-27T02:27:48.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1828
+- author: ShirouAjisai
+  changes:
+    - type: Add
+      message: Added Shadowkin plushie to crates and stuff
+    - type: Tweak
+      message: Tweaked Shadowkin age brackets
+  id: 6888
+  time: '2025-02-27T03:39:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1684
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: TraitAddTag Function
+  id: 6889
+  time: '2025-02-27T04:52:38.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1846
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: Added SpiderCraft to Arachne
+  id: 6890
+  time: '2025-02-27T07:02:55.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1847
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: >-
+        Added CentCom disabler as loadout option for the Nanotrasen
+        Representative.
+  id: 6891
+  time: '2025-02-27T18:48:23.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1845
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: Port Plant Analyzer from botanySupremacist, who took it from ian321
+  id: 6892
+  time: '2025-03-01T17:15:38.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1849

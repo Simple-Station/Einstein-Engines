@@ -109,18 +109,41 @@
         state: radiation
 
 - type: entity
+  categories: [ HideSpawnMenu, Spawner ]
+  parent: SpawnPointLoneNukeOperative
+  id: SpawnPointNukeopsCommander
+  components:
+  - type: GhostRole
+    name: roles-antag-nuclear-operative-commander-name
+    description: roles-antag-nuclear-operative-commander-objective
+
+- type: entity
+  categories: [ HideSpawnMenu, Spawner ]
+  parent: SpawnPointLoneNukeOperative
+  id: SpawnPointNukeopsMedic
+  components:
+  - type: GhostRole
+    name: roles-antag-nuclear-operative-agent-name
+    description: roles-antag-nuclear-operative-agent-objective
+
+- type: entity
+  categories: [ HideSpawnMenu, Spawner ]
+  parent: SpawnPointLoneNukeOperative
+  id: SpawnPointNukeopsOperative
+  components:
+  - type: GhostRole
+    name: roles-antag-nuclear-operative-name
+    description: roles-antag-nuclear-operative-objective
+
+- type: entity
+  categories: [ HideSpawnMenu, Spawner ]
   parent: BaseAntagSpawner
   id: SpawnPointGhostDragon
-  categories: [ HideSpawnMenu, Spawner ]
-  name: ghost role spawn point
-  suffix: dragon
   components:
   - type: GhostRole
     name: ghost-role-information-space-dragon-name
     description: ghost-role-information-space-dragon-description
     rules: ghost-role-component-default-rules
-  - type: GhostRoleMobSpawner
-    prototype: MobDragon
   - type: Sprite
     layers:
     - state: green
