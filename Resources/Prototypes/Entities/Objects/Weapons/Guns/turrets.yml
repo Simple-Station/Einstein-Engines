@@ -138,9 +138,9 @@
       factions:
         - SAN
     - type: Gun
-      fireRate: 10 # Guaranteed to spook the shit out of people.
+      fireRate: 10  # Guaranteed to spook the shit out of people.
       minAngle: 40
-      maxAngle: 45 # Not guaranteed to do a whole lot of damage unless they stand there and let it hit them.
+      maxAngle: 45  # Not guaranteed to do a whole lot of damage unless they stand there and let it hit them.
       soundGunshot:
         path: /Audio/Weapons/Guns/Gunshots/c-20r.ogg
     - type: BallisticAmmoProvider
@@ -169,7 +169,6 @@
                 SheetSteel1:
                   min: 3
                   max: 5
-
 - type: entity
   parent: BaseWeaponTurret
   name: disposable ballistic turret
