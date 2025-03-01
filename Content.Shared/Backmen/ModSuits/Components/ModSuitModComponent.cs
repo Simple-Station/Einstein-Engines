@@ -29,7 +29,7 @@ public sealed partial class ModSuitModComponent : Component
     ///     The container that the clothing is stored in when not equipped.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float SpeedMod = 0.01f;
+    public float SpeedMod = -0.01f;
 
     public bool Inserted = false;
 }

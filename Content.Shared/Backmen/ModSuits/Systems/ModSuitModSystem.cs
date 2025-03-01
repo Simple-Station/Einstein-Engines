@@ -10,6 +10,8 @@ namespace Content.Shared.Backmen.ModSuits.Systems;
 public sealed class ModSuitModSystem : EntitySystem
 {
     [Dependency] private readonly ModSuitSystem _modsuit = default!;
+    [Dependency] private readonly ClothingSpeedModifierSystem _speedModifier = default!;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -41,8 +43,7 @@ public sealed class ModSuitModSystem : EntitySystem
 
         if (TryComp<ClothingSpeedModifierComponent>(args.SlotEntity, out var modify))
         {
-            modify.SprintModifier += component.SpeedMod;
-            modify.WalkModifier += component.SpeedMod;
+            _speedModifier.ModifySpeed(uid, modify, component.SpeedMod);
 
             component.Inserted = true;
         }
@@ -92,8 +93,7 @@ public sealed class ModSuitModSystem : EntitySystem
 
         if (TryComp<ClothingSpeedModifierComponent>(args.SlotEntity, out var modify))
         {
-            modify.SprintModifier -= component.SpeedMod;
-            modify.WalkModifier -= component.SpeedMod;
+            _speedModifier.ModifySpeed(uid, modify, -component.SpeedMod);
 
             component.Inserted = false;
         }

@@ -121,4 +121,20 @@ public sealed class ClothingSpeedModifierSystem : EntitySystem
             _movementSpeed.RefreshMovementSpeedModifiers(container.Owner);
         }
     }
+
+    // Backmen edit start
+    public bool ModifySpeed(EntityUid uid, ClothingSpeedModifierComponent comp, float change)
+    {
+        var walk = comp.WalkModifier += change;
+        var sprint = comp.SprintModifier += change;
+
+        if (walk <= 0 || sprint <= 0)
+            return false;
+
+        comp.SprintModifier = sprint;
+        comp.WalkModifier = walk;
+
+        return true;
+    }
+    // Backmen edit end
 }
