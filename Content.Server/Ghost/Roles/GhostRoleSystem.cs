@@ -504,7 +504,12 @@ namespace Content.Server.Ghost.Roles
 
             var newMind = _mindSystem.CreateMind(player.UserId,
                 EntityManager.GetComponent<MetaDataComponent>(mob).EntityName);
-            _roleSystem.MindAddRole(newMind, new GhostRoleMarkerRoleComponent { Name = role.RoleName });
+
+            _roleSystem.MindAddRole(newMind, "MindRoleGhostMarker");
+
+            if (_roleSystem.MindHasRole<GhostRoleMarkerRoleComponent>(newMind, out _, out var markerRole)
+                && markerRole is not null)
+                markerRole.Value.Comp.Name = role.RoleName;
 
             _mindSystem.SetUserId(newMind, player.UserId);
             _mindSystem.TransferTo(newMind, mob);
