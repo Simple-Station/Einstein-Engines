@@ -40,29 +40,6 @@ public sealed partial class PullableComponent : Component
     [AutoNetworkedField, DataField]
     public bool PrevFixedRotation;
 
-    // Goobstation start
-    // Added Grab variables
-
-
-    [DataField]
-    public Dictionary<GrabStage, short> PulledAlertAlertSeverity = new()
-    {
-        { GrabStage.No, 0 },
-        { GrabStage.Soft, 1 },
-        { GrabStage.Hard, 2 },
-        { GrabStage.Suffocate, 3 },
-    };
-
-    [AutoNetworkedField, DataField]
-    public GrabStage GrabStage = GrabStage.No;
-
-    [AutoNetworkedField, DataField]
-    public float GrabEscapeChance = 1f;
-
-    // Goobstation start
-    // Added Grab variables
-
-
     [DataField]
     public Dictionary<GrabStage, short> PulledAlertAlertSeverity = new()
     {

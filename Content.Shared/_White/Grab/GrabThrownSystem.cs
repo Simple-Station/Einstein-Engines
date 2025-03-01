@@ -6,7 +6,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Player;
 using System.Numerics;
-using Content.Shared._White.Standing;
+using Content.Shared._White;
 using Content.Shared.Standing;
 
 namespace Content.Shared._White.Grab;

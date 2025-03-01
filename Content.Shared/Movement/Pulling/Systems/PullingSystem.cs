@@ -22,6 +22,8 @@ using Content.Shared.Item;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components; // Goobstation
 using Content.Shared.Mobs.Systems;
+using Content.Shared.Popups;
+using Content.Shared.IdentityManagement;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Events;
 using Content.Shared.Movement.Pulling.Components;
@@ -39,7 +41,6 @@ using Robust.Shared.Containers;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Network; // Goobstation
 using Robust.Shared.Map;
-using Robust.Shared.Network;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
@@ -47,8 +48,6 @@ using Robust.Shared.Physics.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Random; // Goobstation
 using Robust.Shared.Timing;
-using Content.Shared.Throwing;
-using System.Numerics;
 
 namespace Content.Shared.Movement.Pulling.Systems;
 
@@ -68,7 +67,9 @@ public sealed class PullingSystem : EntitySystem
     [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
     [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
     [Dependency] private readonly SharedInteractionSystem _interaction = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
+    [Dependency] private readonly HeldSpeedModifierSystem _clothingMoveSpeed = default!;
     [Dependency] private readonly SharedTransformSystem _xformSys = default!;
     [Dependency] private readonly ThrownItemSystem _thrownItem = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
@@ -382,7 +383,7 @@ public sealed class PullingSystem : EntitySystem
                 damage *= damageModifier;
 
                 var throwbackforce = 0.15f;
-                TryStopPull(args.BlockingEntity, comp, uid, true, uid);
+                TryStopPull(args.BlockingEntity, comp, uid, true);
                 _grabThrown.Throw(args.BlockingEntity, uid, direction * 2f, 120f, damage * component.GrabThrowDamageModifier, damage * component.GrabThrowDamageModifier); // Throwing the grabbed person
                 _throwing.TryThrow(uid, -direction * throwbackforce); // Throws back the grabber
                 _audio.PlayPvs(new SoundPathSpecifier("/Audio/Effects/thudswoosh.ogg"), uid);
