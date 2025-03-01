@@ -13,7 +13,7 @@
     - type: Clothing
       sprite: Clothing/Neck/Misc/dogtags.rsi
       slots:
-      - idcard
+        - idcard
     - type: Access
       tags:
       - SAN
