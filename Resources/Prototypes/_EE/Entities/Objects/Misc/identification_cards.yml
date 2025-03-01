@@ -1,6 +1,6 @@
 # SAN ID
 - type: entity
-  parent: [ IDCardStandard, SolAllianceInfo ]
+  parent: [IDCardStandard, SolAllianceInfo]
   id: SANIdCard
   name: "Solarian Alliance Navy RFItags"
   components:
