@@ -319,3 +319,26 @@
         - id: OxygenTankFilled
         - id: ClothingOuterHardsuitWizard
         - id: ClothingMaskBreath
+
+# Cybersun Armoring Corporation
+- type: entity
+  id: SuitStorageShanlin
+  parent: SuitStorageBase
+  suffix: CSA-51a
+  components:
+    - type: StorageFill
+      contents:
+          - id: OxygenTankFilled
+          - id: ClothingOuterHardsuitShanlinUnpainted
+          - id: ClothingMaskBreath
+
+- type: entity
+  id: SuitStorageShiwei
+  parent: SuitStorageBase
+  suffix: CSA-54UA
+  components:
+    - type: StorageFill
+      contents:
+          - id: OxygenTankFilled
+          - id: ClothingOuterHardsuitShiweiUnpainted
+          - id: ClothingMaskBreath

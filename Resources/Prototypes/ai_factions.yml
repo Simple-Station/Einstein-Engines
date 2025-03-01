@@ -192,3 +192,14 @@
     - Xeno
     - Zombie
     - Dragon
+
+- type: npcFaction
+  id: SAN
+  hostile:
+    - NanoTrasen
+    - SimpleHostile
+    - Syndicate
+    - Xeno
+    - Zombie
+    - Revolutionary
+    - Dragon

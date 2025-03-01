@@ -4,12 +4,15 @@
   text: "/ServerInfo/Guidebook/Lore/SettingLore.xml"
   children:
     - Corporations
+    - Nations
 
+# Corporations
 - type: guideEntry
   id: Corporations
   name: guide-entry-corporations
   text: "/ServerInfo/Guidebook/Lore/Corporations/Corporations.xml"
   children:
+    # Major Corporations
     - IdrisIncorporated
     - EinsteinEngines
     - StellarCorporateConglomerate
@@ -19,7 +22,9 @@
     - HephaestusIndustries
     - ZavodskoiInterstellar
     - PrivateMilitaryContractingGroup
+    # Minor Corporations/Subsidiaries
 
+# Major Corporations
 - type: guideEntry
   id: IdrisIncorporated
   name: guide-entry-idris-incorporated
@@ -64,3 +69,22 @@
   id: PrivateMilitaryContractingGroup
   name: guide-entry-private-military-contracting-group
   text: "/ServerInfo/Guidebook/Lore/Corporations/PrivateMilitaryContractingGroup.xml"
+# Minor Corporations/Subsidiaries
+
+- type: guideEntry
+  id: Nations
+  name: guide-entry-nations
+  text: "/ServerInfo/Guidebook/Lore/Nations/Nations.xml"
+  children:
+    # Major Nations
+    - SolAlliance
+    #- BieselRepublic
+    #- CoalitionOfColonies
+    #- AdhomaiFactions
+    #- MoghesFactions
+    # Minor Nations
+
+- type: guideEntry
+  id: SolAlliance
+  name: guide-entry-sol-alliance
+  text: "/ServerInfo/Guidebook/Lore/Nations/SolAlliance.xml"
