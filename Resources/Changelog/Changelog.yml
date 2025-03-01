@@ -12150,3 +12150,10 @@ Entries:
   id: 6891
   time: '2025-02-27T18:48:23.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1845
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: Port Plant Analyzer from botanySupremacist, who took it from ian321
+  id: 6892
+  time: '2025-03-01T17:15:38.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1849
