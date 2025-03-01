@@ -169,7 +169,6 @@
                 SheetSteel1:
                   min: 3
                   max: 5
-
 - type: entity
   parent: BaseWeaponTurret
   name: disposable ballistic turret
