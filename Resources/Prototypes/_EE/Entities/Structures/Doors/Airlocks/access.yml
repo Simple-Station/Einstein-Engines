@@ -4,6 +4,6 @@
   id: HighSecSANLocked
   suffix: SAN, Locked
   components:
-  - type: ContainerFill
-    containers:
-      board: [ DoorElectronicsSAN ]
+    - type: ContainerFill
+      containers:
+        board: [DoorElectronicsSAN]

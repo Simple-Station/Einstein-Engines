@@ -196,10 +196,10 @@
 - type: npcFaction
   id: SAN
   hostile:
-  - NanoTrasen
-  - SimpleHostile
-  - Syndicate
-  - Xeno
-  - Zombie
-  - Revolutionary
-  - Dragon
+    - NanoTrasen
+    - SimpleHostile
+    - Syndicate
+    - Xeno
+    - Zombie
+    - Revolutionary
+    - Dragon
