@@ -334,10 +334,9 @@ public sealed class PullingSystem : EntitySystem
     // Goobstation - Grab Intent
     private void OnVirtualItemThrown(EntityUid uid, PullerComponent component, VirtualItemThrownEvent args)
     {
-        if (component.Pulling == null)
-            return;
-
-        if (component.Pulling != args.BlockingEntity)
+        if (!TryComp(uid, out PhysicsComponent? throwerPhysics)
+            || component.Pulling == null
+            || component.Pulling != args.BlockingEntity)
             return;
 
         if (TryComp(args.BlockingEntity, out PullableComponent? comp))
@@ -358,7 +357,7 @@ public sealed class PullingSystem : EntitySystem
                     damage * component.GrabThrowDamageModifier,
                     damage * component.GrabThrowDamageModifier); // Throwing the grabbed person
 
-                _throwing.TryThrow(uid, -direction); // Throws back the grabber
+                _throwing.TryThrow(uid, -direction * throwerPhysics.InvMass); // Throws back the grabber
                 _audio.PlayPvs(new SoundPathSpecifier("/Audio/Effects/thudswoosh.ogg"), uid);
                 component.NextStageChange.Add(TimeSpan.FromSeconds(2f));  // To avoid grab and throw spamming
             }
