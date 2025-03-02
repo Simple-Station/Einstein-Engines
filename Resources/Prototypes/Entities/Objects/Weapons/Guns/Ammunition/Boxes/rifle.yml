@@ -139,3 +139,23 @@
       map: ["enum.GunVisualLayers.Mag"]
     - state: uranium
 
+- type: entity
+  parent: BaseMagazineBoxRifle
+  id: MagazineBoxRifleMinigun
+  name: ammunition box (.10 rifle)
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 2000
+    proto: BulletMinigun
+  - type: Sprite
+    layers:
+    - state: base-b
+      map: ["enum.GunVisualLayers.Base"]
+    - state: magb-1
+      map: ["enum.GunVisualLayers.Mag"]
+    - state: practice-b
+  - type: MagazineVisuals
+    magState: magb
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
