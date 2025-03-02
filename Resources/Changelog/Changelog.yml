@@ -12075,3 +12075,131 @@ Entries:
   id: 6884
   time: '2025-02-25T14:39:19.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1833
+- author: LaryNevesPR
+  changes:
+    - type: Fix
+      message: Fixed tendons not causing damage! Careful!
+  id: 6885
+  time: '2025-02-25T22:06:27.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1835
+- author: Tonk
+  changes:
+    - type: Add
+      message: 'Tajarans now have separate eye, wrist, tattoo, and makeup markings '
+  id: 6886
+  time: '2025-02-27T00:03:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1834
+- author: Raikyr0
+  changes:
+    - type: Tweak
+      message: >-
+        Striking Calluses no longer require you to be one of 3 jobs and Human. 
+        Also increased the +1 damage to +2.
+    - type: Tweak
+      message: >-
+        Bionic Spinarette SHOULD no longer have a hunger penalty and costs
+        less. 
+    - type: Tweak
+      message: >-
+        Platelet Factories heal rate buffed from 0.07 to 0.35, airloss from 0.7
+        to 0.25 and healing cap increased from 200 to 400.
+    - type: Tweak
+      message: Decreased the cost of Thermal Vision to be in line with Night Vision.
+    - type: Tweak
+      message: IPC Platelet Factories healing cap increased from 200 to 250
+    - type: Tweak
+      message: Cyber-Eyes Omnihud now pickable by Command too.
+    - type: Fix
+      message: >-
+        Fixed name and description of Cyber-Eyes Modules for Night Vision and
+        Thermal Vision.
+    - type: Remove
+      message: Mind over Machine from Cyber-Eyes Modules.
+  id: 6887
+  time: '2025-02-27T02:27:48.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1828
+- author: ShirouAjisai
+  changes:
+    - type: Add
+      message: Added Shadowkin plushie to crates and stuff
+    - type: Tweak
+      message: Tweaked Shadowkin age brackets
+  id: 6888
+  time: '2025-02-27T03:39:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1684
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: TraitAddTag Function
+  id: 6889
+  time: '2025-02-27T04:52:38.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1846
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: Added SpiderCraft to Arachne
+  id: 6890
+  time: '2025-02-27T07:02:55.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1847
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: >-
+        Added CentCom disabler as loadout option for the Nanotrasen
+        Representative.
+  id: 6891
+  time: '2025-02-27T18:48:23.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1845
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: Port Plant Analyzer from botanySupremacist, who took it from ian321
+  id: 6892
+  time: '2025-03-01T17:15:38.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1849
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        A new Midround Antagonist has been added to the game. The "Solarian
+        Deserters" are a group of highly trained soldiers who haven't been paid
+        for far too long, whom have come to the station to loot it for
+        everything valuable. 
+    - type: Add
+      message: >-
+        Lore guidebook entry for the Solarian Alliance, a majorly antagonistic
+        faction. 
+  id: 6893
+  time: '2025-03-01T22:19:22.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1851
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added high pressure variants of atmos devices intended for supermatter
+        engines.
+    - type: Add
+      message: >-
+        Added engineering locked high security doors, also for use in
+        supermatter engines.
+    - type: Add
+      message: >-
+        Fix Atmos markers can now accept a gas mixture directly for modifying
+        their tile.
+  id: 6894
+  time: '2025-03-02T18:41:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1859
+- author: astriloqua
+  changes:
+    - type: Add
+      message: Arena is back
+  id: 6895
+  time: '2025-03-02T19:47:37.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1853
+- author: Eagle
+  changes:
+    - type: Add
+      message: Ported Grab Intent from Goobstation
+  id: 6896
+  time: '2025-03-02T21:15:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1856

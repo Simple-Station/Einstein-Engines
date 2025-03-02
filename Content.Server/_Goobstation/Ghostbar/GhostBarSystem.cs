@@ -99,7 +99,7 @@ public sealed class GhostBarSystem : EntitySystem
         var randomSpawnPoint = _random.Pick(spawnPoints);
         var randomJob = _random.Pick(_jobComponents);
         var profile = _ticker.GetPlayerProfile(args.SenderSession);
-        var mobUid = _spawningSystem.SpawnPlayerMob(randomSpawnPoint, new JobComponent { Prototype = randomJob }, profile, null); // Einstein Engines - pass in JobComponent
+        var mobUid = _spawningSystem.SpawnPlayerMob(randomSpawnPoint, randomJob, profile, null);
 
         // Einstein Engines start - apply loadouts and traits
         var playTimes = _playTimeTracking.GetTrackerTimes(player);

@@ -95024,26 +95024,26 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 20.5,-64.5
       parent: 2
-- proto: HighSecDoor
+- proto: HighSecEngineeringLocked
   entities:
   - uid: 13819
     components:
     - type: MetaData
-      name: replace me with engineering high sec locked
+      name: Supermatter Engine access
     - type: Transform
       pos: 13.5,-71.5
       parent: 2
   - uid: 13820
     components:
     - type: MetaData
-      name: replace me with engineering high sec locked
+      name: Supermatter Engine access
     - type: Transform
       pos: 11.5,-71.5
       parent: 2
   - uid: 13821
     components:
     - type: MetaData
-      name: replace me with engineering high sec locked
+      name: Supermatter Engine access
     - type: Transform
       pos: 11.5,-73.5
       parent: 2

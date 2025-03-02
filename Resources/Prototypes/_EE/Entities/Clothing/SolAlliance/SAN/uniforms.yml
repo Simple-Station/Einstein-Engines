@@ -1,0 +1,45 @@
+# For faction clothing related to the Sol Alliance Navy and her Armed Forces
+# Lore Info Link
+- type: entity
+  id: SolAllianceInfo
+  abstract: true
+  components:
+    - type: GuideHelp
+      guides: [SolAlliance]
+
+# Uniforms
+- type: entity
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase, SolAllianceInfo]
+  id: ClothingUniformJumpsuitSolFatigueGreen
+  name: SAN fatigues
+  suffix: Green
+  description: A common uniform worn by "grunts" in the Solarian Armed Forces. Although Earth is no longer the green paradise of old, olive BDUs remain an emblem of old Earth's militaries.
+  components:
+    - type: Sprite
+      sprite: _EE/Clothing/SolAlliance/Uniforms/SAN_fatigue_green.rsi
+    - type: Clothing
+      sprite: _EE/Clothing/SolAlliance/Uniforms/SAN_fatigue_green.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase, SolAllianceInfo]
+  id: ClothingUniformJumpsuitSolFatigueGrey
+  name: SAN fatigues
+  suffix: Grey
+  description: A common uniform worn by "grunts" in the Solarian Armed Forces. Although not as common as olive BDUs, "stone gray" remains a popular choice of uniform color.
+  components:
+    - type: Sprite
+      sprite: _EE/Clothing/SolAlliance/Uniforms/SAN_fatigue_grey.rsi
+    - type: Clothing
+      sprite: _EE/Clothing/SolAlliance/Uniforms/SAN_fatigue_grey.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase, SolAllianceInfo]
+  id: ClothingUniformJumpsuitSolFatigueIPC
+  name: SAN IPC fatigues
+  suffix: Grey
+  description: IPCs serve as the only exception to the infamous xenophobia of the Solarians Armed Forces. For while SAN has never once permitted an alien to serve, it is eager to make use of synthetics to save pure humans from back breaking labor or charging into meat grinders.
+  components:
+    - type: Sprite
+      sprite: _EE/Clothing/SolAlliance/Uniforms/SAN_fatigue_ipc.rsi
+    - type: Clothing
+      sprite: _EE/Clothing/SolAlliance/Uniforms/SAN_fatigue_ipc.rsi
