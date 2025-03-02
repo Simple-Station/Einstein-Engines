@@ -94,7 +94,7 @@
   sprites:
   - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
     state: dionamoonbloom
-  shader: unshaded
+    shader: unshaded
 
 - type: marking
   id: DionaBigFirefly
@@ -106,7 +106,7 @@
   sprites:
   - sprite: _Impstation/Mobs/Customization/animatedmarkings.rsi
     state: dionabigfirefly
-  shader: unshaded
+    shader: unshaded
 
 - type: marking
   id: DionaFirefly
@@ -118,7 +118,7 @@
   sprites:
   - sprite: _Impstation/Mobs/Customization/animatedmarkings.rsi
     state: dionafirefly
-  shader: unshaded
+    shader: unshaded
 
 - type: marking
   id: DionaPollenDust
@@ -141,7 +141,7 @@
   sprites:
   - sprite: _Impstation/Mobs/Customization/animatedmarkings.rsi
     state: spidermirror
-  shader: unshaded
+    shader: unshaded
 
 - type: marking
   id: SpiderGlowEyes
@@ -153,7 +153,7 @@
   sprites:
   - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
     state: spidergloweyes
-  shader: unshaded
+    shader: unshaded
 
 - type: marking
   id: SpiderEyesMulti
@@ -242,7 +242,7 @@
   sprites:
   - sprite: _Impstation/Mobs/Customization/animatedmarkings.rsi
     state: mothglowantenna
-  shader: unshaded
+    shader: unshaded
 
 - type: marking
   id: MothFireflyOverlay
@@ -254,7 +254,7 @@
   sprites:
   - sprite: _Impstation/Mobs/Customization/animatedmarkings.rsi
     state: mothfirefly1
-  shader: unshaded
+    shader: unshaded
 
 - type: marking
   id: MothFirefly
@@ -592,7 +592,7 @@
   sprites:
   - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
     state: voxtaillantern
-  shader: unshaded
+    shader: unshaded
 
 - type: marking
   id: VoxTailSingleStripe
