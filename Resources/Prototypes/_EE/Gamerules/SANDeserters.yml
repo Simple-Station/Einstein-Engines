@@ -27,6 +27,8 @@
       name: ghost-role-information-deserter-name
       description: ghost-role-information-deserter-description
       rules: ghost-role-information-deserter-rules
+      mindRoles:
+      - MindRoleDeserter
     - type: GhostRoleMobSpawner
       prototype: MobHumanSANDeserter
     - type: Sprite
@@ -60,6 +62,21 @@
   antagonist: true
   setPreference: false
   objective: roles-antag-sol-alliance-navy-deserter-objective
+
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleDeserter
+  name: SAN Deserter Role
+  components:
+  - type: MindRole
+    antagPrototype: SANDeserter
+    exclusiveAntag: false
+    roleType: SANAntagonist
+
+- type: roleType
+  id: SANAntagonist
+  name: role-type-SAN-antagonist-name
+  color: '#d82000'
 
 - type: startingGear
   id: SANDeserterGearFull

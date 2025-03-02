@@ -8,3 +8,4 @@ ghost-role-information-deserter-rules =
 roles-antag-sol-alliance-navy-deserter = Solarian Navy Deserter
 roles-antag-sol-alliance-navy-deserter-objective = Fill your dropship with as much valuable loot as possible, while living to brag about it at the next freeport.
 id-card-access-level-sol-alliance-navy = SAN
+role-type-SAN-antagonist-name = Deserter
