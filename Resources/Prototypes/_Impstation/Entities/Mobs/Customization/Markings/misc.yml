@@ -62,7 +62,7 @@
     state: fadingstars2
   - sprite: _Impstation/Mobs/Customization/animatedmarkings.rsi
     state: fadingstars3
-  shader: unshaded
+    shader: unshaded
 
 - type: marking
   id: DionaLivingNymph
