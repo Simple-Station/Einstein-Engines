@@ -115,7 +115,7 @@
   description: "Supermatter coolant, equivalent to a liquid nitrogen canister"
   components:
   - type: AtmosFixMarker
-    gasMixture:
+    gasMix:
       volume: 2500
       moles:
         - 0 # oxygen
