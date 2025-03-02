@@ -6150,6 +6150,54 @@ entities:
           decals:
             24: 49.021217,-13.107667
         - node:
+            color: '#334E6DC8'
+            id: MiniTileBoxOverlay
+          decals:
+            5664: -13,-57
+            5676: 59,9
+        - node:
+            color: '#52B4E996'
+            id: MiniTileBoxOverlay
+          decals:
+            5666: -15,-57
+            5673: 62,9
+        - node:
+            color: '#9FED5896'
+            id: MiniTileBoxOverlay
+          decals:
+            5665: -14,-57
+            5670: 61,7
+        - node:
+            color: '#A4610696'
+            id: MiniTileBoxOverlay
+          decals:
+            5662: -12,-60
+            5671: 60,7
+        - node:
+            color: '#D381C996'
+            id: MiniTileBoxOverlay
+          decals:
+            5668: -15,-60
+            5669: 62,7
+        - node:
+            color: '#D4D4D496'
+            id: MiniTileBoxOverlay
+          decals:
+            5663: -12,-57
+            5677: 59,7
+        - node:
+            color: '#DE3A3A96'
+            id: MiniTileBoxOverlay
+          decals:
+            5667: -14,-60
+            5675: 60,9
+        - node:
+            color: '#EFB34196'
+            id: MiniTileBoxOverlay
+          decals:
+            5661: -13,-60
+            5674: 61,9
+        - node:
             color: '#52B4E996'
             id: MiniTileCheckerAOverlay
           decals:
@@ -71613,8 +71661,10 @@ entities:
   - uid: 27060
     components:
     - type: Transform
-      parent: 8368
+      parent: 8388
     - type: Physics
+      angularDamping: 0
+      linearDamping: 0
       canCollide: False
 - proto: EncryptionKeyEngineering
   entities:
@@ -71640,14 +71690,6 @@ entities:
       parent: 6181
     - type: Physics
       canCollide: False
-- proto: EncryptionKeyScience
-  entities:
-  - uid: 27061
-    components:
-    - type: Transform
-      parent: 8388
-    - type: Physics
-      canCollide: False
 - proto: EncryptionKeySecurity
   entities:
   - uid: 27064
@@ -71663,6 +71705,8 @@ entities:
     - type: Transform
       parent: 8368
     - type: Physics
+      angularDamping: 0
+      linearDamping: 0
       canCollide: False
 - proto: ExosuitFabricator
   entities:
@@ -157149,7 +157193,6 @@ entities:
           occludes: True
           ents:
           - 27059
-          - 27060
         machine_board: !type:Container
           showEnts: False
           occludes: True
@@ -157169,7 +157212,7 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 27061
+          - 27060
         machine_board: !type:Container
           showEnts: False
           occludes: True
