@@ -150,7 +150,7 @@
   - type: DrainableSolution
     solution: ammo
   - type: SolutionInjectOnProjectileHit
-    transferAmount: 30 #"Hey, you're not meant to have a shotgun its gree- *snores*"
+    transferAmount: 30 # "Hey, you're not meant to have a shotgun its gree- *snores*"
     solution: ammo
   - type: InjectableSolution
     solution: ammo
