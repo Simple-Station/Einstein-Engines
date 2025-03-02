@@ -12172,3 +12172,20 @@ Entries:
   id: 6893
   time: '2025-03-01T22:19:22.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1851
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added high pressure variants of atmos devices intended for supermatter
+        engines.
+    - type: Add
+      message: >-
+        Added engineering locked high security doors, also for use in
+        supermatter engines.
+    - type: Add
+      message: >-
+        Fix Atmos markers can now accept a gas mixture directly for modifying
+        their tile.
+  id: 6894
+  time: '2025-03-02T18:41:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1859
