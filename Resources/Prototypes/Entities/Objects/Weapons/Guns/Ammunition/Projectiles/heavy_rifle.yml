@@ -15,8 +15,6 @@
   parent: BulletHeavyRifle
   categories: [ HideSpawnMenu ]
   components:
-  - type: CartridgeAmmo
-    deleteOnSpawn: True
   - type: Projectile
     damage:
       types:
