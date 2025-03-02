@@ -1,5 +1,4 @@
 using Content.Server.Chat.Managers;
-using Content.Server.GameTicking;
 using Content.Shared.Chat;
 using Content.Shared.Mind;
 using Content.Shared.Roles;
@@ -11,19 +10,6 @@ public sealed class RoleSystem : SharedRoleSystem
 {
     [Dependency] private readonly IChatManager _chat = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly SharedMindSystem _minds = default!;
-    public override void Initialize()
-    {
-        SubscribeLocalEvent<StartingMindRoleComponent, PlayerSpawnCompleteEvent>(OnSpawn);
-    }
-
-    private void OnSpawn(EntityUid uid, StartingMindRoleComponent component, PlayerSpawnCompleteEvent args)
-    {
-        if (!_minds.TryGetMind(uid, out var mindId, out var mindComp))
-            return;
-
-        MindAddRole(mindId, component.MindRole, mind: mindComp, silent: component.Silent);
-    }
 
     public string? MindGetBriefing(EntityUid? mindId)
     {

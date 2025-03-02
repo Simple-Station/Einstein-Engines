@@ -27,6 +27,15 @@ public abstract class SharedRoleSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
     public override void Initialize()
     {
+        SubscribeLocalEvent<StartingMindRoleComponent, PlayerSpawnCompleteEvent>(OnSpawn);
+    }
+
+    private void OnSpawn(EntityUid uid, StartingMindRoleComponent component, PlayerSpawnCompleteEvent args)
+    {
+        if (!_minds.TryGetMind(uid, out var mindId, out var mindComp))
+            return;
+
+        MindAddRole(mindId, component.MindRole, mind: mindComp, silent: component.Silent);
     }
 
     /// <summary>
@@ -81,7 +90,10 @@ public abstract class SharedRoleSystem : EntitySystem
         string? jobPrototype = null)
     {
         if (!Resolve(mindId, ref mind))
+        {
+            Log.Warning($"No Mind found for {ToPrettyString(mindId)} when attempting to add job role.");
             return;
+        }
 
         // Can't have someone get paid for two jobs now, can we
         if (MindHasRole<JobRoleComponent>((mindId, mind), out var jobRole)
