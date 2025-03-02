@@ -58,9 +58,17 @@
   - type: GunWieldBonus
     minAngle: -70
     maxAngle: -155
-  - type: BallisticAmmoProvider
-    proto: CartridgeMinigun
-    capacity: 1000
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineBoxRifleMinigun
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineBoxRifleMinigun
   - type: ClothingSpeedModifier
     walkModifier: 0.4
     sprintModifier: 0.4
