@@ -12196,3 +12196,10 @@ Entries:
   id: 6895
   time: '2025-03-02T19:47:37.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1853
+- author: Eagle
+  changes:
+    - type: Add
+      message: Ported Grab Intent from Goobstation
+  id: 6896
+  time: '2025-03-02T21:15:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1856
