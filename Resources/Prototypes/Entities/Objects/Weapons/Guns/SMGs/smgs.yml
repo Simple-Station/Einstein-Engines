@@ -203,7 +203,7 @@
     - type: Appearance
 
 #Commented out the Vector, as it is deprecated.
-#- type: entity
+# - type: entity
 #  name: Vector
 #  parent: BaseWeaponSubMachineGun
 #  id: WeaponSubMachineGunVector
