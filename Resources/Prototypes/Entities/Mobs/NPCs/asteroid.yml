@@ -89,6 +89,7 @@
     - id: FoodMeatGoliath
       amount: 3
     - id: MaterialGoliathHide1
+  - type: Fauna # Lavaland Change
 
 - type: entity
   id: ActionGoliathTentacle

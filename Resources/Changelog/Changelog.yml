@@ -12203,3 +12203,10 @@ Entries:
   id: 6896
   time: '2025-03-02T21:15:16.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1856
+- author: Erisfiregamer1
+  changes:
+    - type: Add
+      message: Lavaland has been ported!
+  id: 6897
+  time: '2025-03-02T23:33:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1844

@@ -66,6 +66,7 @@ namespace Content.IntegrationTests.Tests
             "Lighthouse", // Maintained by Violet
             // "Submarine", // De-rotated, no current maintainer.
             "Gax", // Maintained by Estacao Pirata
+            "Lavatest", // Lavaland Change
             "Rad", // Maintained by Estacao Pirata
             // "Europa", // De-rotated, has significant issues.
             "Meta", // Maintained by Estacao Pirata

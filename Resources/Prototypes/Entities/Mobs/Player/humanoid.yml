@@ -45,6 +45,8 @@
       description: ghost-role-information-Death-Squad-description
       raffle:
         settings: short
+      mindRoles:
+      - MindRoleGhostRoleFamiliar
     - type: Loadout
       prototypes: [ DeathSquadGear ]
     - type: RandomMetadata
