@@ -5,7 +5,7 @@
   abstract: true
   components:
   - type: Tag
-    tags:
+      tags:
       - MagazineHeavyRifle
   - type: Item
     size: Small
