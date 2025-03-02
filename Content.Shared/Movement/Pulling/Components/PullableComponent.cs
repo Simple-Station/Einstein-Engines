@@ -1,4 +1,5 @@
 using Content.Shared.Alert;
+using Content.Shared.Movement.Pulling.Systems; // Goobstation
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
@@ -39,6 +40,25 @@ public sealed partial class PullableComponent : Component
     [AutoNetworkedField, DataField]
     public bool PrevFixedRotation;
 
+    [DataField]
+    public Dictionary<GrabStage, short> PulledAlertAlertSeverity = new()
+    {
+        { GrabStage.No, 0 },
+        { GrabStage.Soft, 1 },
+        { GrabStage.Hard, 2 },
+        { GrabStage.Suffocate, 3 },
+    };
+
+    [AutoNetworkedField, DataField]
+    public GrabStage GrabStage = GrabStage.No;
+
+    [AutoNetworkedField, DataField]
+    public float GrabEscapeChance = 1f;
+
+    [AutoNetworkedField]
+    public TimeSpan NextEscapeAttempt = TimeSpan.Zero;
+    // Goobstation end
+
     /// <summary>
     ///     Whether the entity is currently being actively pushed by the puller.
     ///     If true, the entity will be able to enter disposals upon colliding with them, and the like.
@@ -47,4 +67,5 @@ public sealed partial class PullableComponent : Component
     public bool BeingActivelyPushed = false;
     [DataField]
     public ProtoId<AlertPrototype> PulledAlert = "Pulled";
+
 }
