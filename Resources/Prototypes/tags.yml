@@ -891,6 +891,9 @@
   id: MagazineHeavyRifleBox
 
 - type: Tag
+  id: MagazineBoxRifleMinigun
+
+- type: Tag
   id: MagazineLightRifle
 
 - type: Tag
