@@ -891,6 +891,22 @@
   - type: Stack
     stackType: FloorTileBCircuit
 
+- type: entity
+  name: red circuit floor
+  parent: FloorTileItemBase
+  id: FloorTileItemRCircuit
+  components:
+  - type: Sprite
+    state: rcircuit
+  - type: Item
+    heldPrefix: rcircuit
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorRedCircuit
+  - type: Stack
+    stackType: FloorTileRCircuit
+
 # Circuits stacks
 
 - type: entity
