@@ -422,10 +422,12 @@ public sealed class PullingSystem : EntitySystem
                     args.ModifySpeed(walkMod * softSpeedMod, sprintMod * softSpeedMod);
                     break;
                 case GrabStage.Hard:
-                    args.ModifySpeed(walkMod * 0.7f, sprintMod * 0.7f);
+                    var hardSpeedMod = component.HardGrabSpeedModifier;
+                    args.ModifySpeed(walkMod * hardSpeedMod, sprintMod * hardSpeedMod);
                     break;
                 case GrabStage.Suffocate:
-                    args.ModifySpeed(walkMod * 0.4f, sprintMod * 0.4f);
+                    var chokeSpeedMod = component.ChokeGrabSpeedModifier;
+                    args.ModifySpeed(walkMod * chokeSpeedMod, sprintMod * chokeSpeedMod);
                     break;
                 default:
                     args.ModifySpeed(walkMod, sprintMod);
