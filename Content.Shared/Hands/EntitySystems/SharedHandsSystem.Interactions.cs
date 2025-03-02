@@ -99,8 +99,6 @@ public abstract partial class SharedHandsSystem : EntitySystem
     {
         if (TryComp(session?.AttachedEntity, out HandsComponent? hands) && hands.ActiveHand != null)
             TryDrop(session.AttachedEntity.Value, hands.ActiveHand, coords, handsComp: hands);
-        {
-        }
 
         // always send to server.
         return false;

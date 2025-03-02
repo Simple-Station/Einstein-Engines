@@ -1,5 +1,5 @@
 popup-grab-soft-target = {CAPITALIZE($puller)} grabbed you softly.
-popup-grab-hard-target = {CAPITALIZE($puller)} grabbed you hardly.
+popup-grab-hard-target = {CAPITALIZE($puller)} grabbed you firmly.
 popup-grab-suffocate-target = {CAPITALIZE($puller)} started to choke you!
 popup-grab-no-target = {CAPITALIZE($puller)} stopped grabbing you.
 popup-grab-soft-self = You grabbed {CAPITALIZE($target)} softly.
