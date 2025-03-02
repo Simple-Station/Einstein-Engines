@@ -19,7 +19,7 @@ public sealed class GrabThrownSystem : EntitySystem
     [Dependency] private readonly ThrowingSystem _throwing = default!;
     [Dependency] private readonly INetManager _netMan = default!;
     [Dependency] private readonly SharedLayingDownSystem _layingDown = default!;
-    private float _grabThrownSpeed = 7f;
+    private const float GrabThrownSpeed = 7f;
 
     public override void Initialize()
     {
@@ -89,7 +89,7 @@ public sealed class GrabThrownSystem : EntitySystem
         DamageSpecifier? damageToUid = null,
         DamageSpecifier? damageToWall = null)
     {
-        _throwing.TryThrow(uid, vector, _grabThrownSpeed, animated: false);
+        _throwing.TryThrow(uid, vector, GrabThrownSpeed, animated: false);
 
         var comp = EnsureComp<GrabThrownComponent>(uid);
         comp.StaminaDamageOnCollide = staminaDamage;
