@@ -58,6 +58,10 @@
   - type: GunWieldBonus
     minAngle: -70
     maxAngle: -155
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/lmg_cock.ogg
+  - type: AmmoCounter
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -69,6 +73,17 @@
         whitelist:
           tags:
             - MagazineBoxRifleMinigun
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeMinigun
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeMinigun
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
   - type: ClothingSpeedModifier
     walkModifier: 0.4
     sprintModifier: 0.4
@@ -77,7 +92,3 @@
     magState: mag
     steps: 4
     zeroVisible: true
-  - type: Appearance
-  - type: ContainerContainer
-    containers:
-      gun_magazine: !type:ContainerSlot
