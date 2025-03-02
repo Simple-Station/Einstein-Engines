@@ -52,12 +52,12 @@
     sprite: Objects/Weapons/Guns/HMGs/minigun.rsi
   - type: Gun
     minAngle: 80
-    maxAngle: 140
+    maxAngle: 200
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/minigun.ogg
   - type: GunWieldBonus
     minAngle: -70
-    maxAngle: -90
+    maxAngle: -155
   - type: BallisticAmmoProvider
     proto: CartridgeMinigun
     capacity: 1000
