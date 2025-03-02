@@ -144,6 +144,9 @@
   id: MagazineBoxRifleMinigun
   name: ammunition box (.10 rifle)
   components:
+  - type: Tag
+    tags:
+      - MagazineBoxRifleMinigun
   - type: BallisticAmmoProvider
     capacity: 500
     proto: CartridgeMinigun
