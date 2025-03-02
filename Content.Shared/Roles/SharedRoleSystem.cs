@@ -192,7 +192,9 @@ public abstract class SharedRoleSystem : EntitySystem
 
         foreach (var role in mind.MindRoles)
         {
-            var comp = Comp<MindRoleComponent>(role);
+            if (!TryComp<MindRoleComponent>(role, out var comp))
+                continue;
+
             if (comp.RoleType is not null)
                 roles.Add(comp.RoleType.Value);
         }
