@@ -61,6 +61,10 @@
   - type: BallisticAmmoProvider
     proto: CartridgeMinigun
     capacity: 1000
+  - type: ClothingSpeedModifier
+    walkModifier: 0.4
+    sprintModifier: 0.4
+  - type: HeldSpeedModifier
   - type: MagazineVisuals
     magState: mag
     steps: 4
