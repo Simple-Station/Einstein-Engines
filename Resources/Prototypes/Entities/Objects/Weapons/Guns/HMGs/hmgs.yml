@@ -80,5 +80,4 @@
   - type: Appearance
   - type: ContainerContainer
     containers:
-      ballistic-ammo: !type:Container
-        ents: []
+      gun_magazine: !type:ContainerSlot
