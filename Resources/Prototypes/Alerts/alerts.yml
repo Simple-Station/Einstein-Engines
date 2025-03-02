@@ -420,7 +420,7 @@
     state: grabbed-hard
   - sprite: /Textures/_White/Interface/Alerts/pull.rsi
     state: grabbed-choke
-  clickEvent: !type:StopBeingPulledAlertEvent  { }
+  onClick: !type:StopBeingPulled { }
   name: alerts-pulled-name
   description: alerts-pulled-desc
   minSeverity: 0
@@ -437,7 +437,7 @@
     state: grab-hard
   - sprite: /Textures/_White/Interface/Alerts/pull.rsi
     state: grab-choke
-  clickEvent: !type:StopPullingAlertEvent  { }
+  onClick: !type:StopPulling  { }
   name: alerts-pulling-name
   description: alerts-pulling-desc
   minSeverity: 0

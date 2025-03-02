@@ -1074,7 +1074,7 @@ public sealed class PullingSystem : EntitySystem
     /// <summary>
     /// Attempts to release entity from grab
     /// </summary>
-    /// <param name="pullable">Grabbed entity</param>
+    /// <param name="playerPullable">Grabbed entity</param>
     /// <returns></returns>
     public bool AttemptGrabRelease(Entity<PullableComponent?> pullable)
     {
