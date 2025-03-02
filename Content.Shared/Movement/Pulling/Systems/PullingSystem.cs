@@ -335,6 +335,7 @@ public sealed class PullingSystem : EntitySystem
     private void OnVirtualItemThrown(EntityUid uid, PullerComponent component, VirtualItemThrownEvent args)
     {
         if (!TryComp(uid, out PhysicsComponent? throwerPhysics)
+            || !TryComp(args.BlockingEntity, out PhysicsComponent? throweePhysics)
             || component.Pulling == null
             || component.Pulling != args.BlockingEntity)
             return;
@@ -345,15 +346,16 @@ public sealed class PullingSystem : EntitySystem
                 !HasComp<GrabThrownComponent>(args.BlockingEntity) &&
                 component.GrabStage > GrabStage.Soft)
             {
-                var direction = args.Direction;
+                var distanceToCursor = args.Direction.Length();
+                var direction = args.Direction.Normalized() * MathF.Min(distanceToCursor, component.ThrowingDistance);
 
                 var damage = new DamageSpecifier();
                 damage.DamageDict.Add("Blunt", 5);
 
                 TryStopPull(args.BlockingEntity, comp, uid, true);
                 _grabThrown.Throw(args.BlockingEntity, uid, direction,
-                    component.StaminaDamageOnThrown,
                     component.GrabThrownSpeed,
+                    component.StaminaDamageOnThrown,
                     damage * component.GrabThrowDamageModifier,
                     damage * component.GrabThrowDamageModifier); // Throwing the grabbed person
 
