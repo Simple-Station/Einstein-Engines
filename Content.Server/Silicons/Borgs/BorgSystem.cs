@@ -5,6 +5,7 @@ using Content.Server.DeviceNetwork.Systems;
 using Content.Server.Explosion.EntitySystems;
 using Content.Server.Hands.Systems;
 using Content.Server.PowerCell;
+using Content.Shared.Access.Systems;
 using Content.Shared.Alert;
 using Content.Shared.Database;
 using Content.Shared.IdentityManagement;
@@ -200,7 +201,7 @@ public sealed partial class BorgSystem : SharedBorgSystem
         Toggle.TryDeactivate(uid);
         UpdateUI(uid, component);
     }
-    
+
     private void OnGetDeadIC(EntityUid uid, BorgChassisComponent component, ref GetCharactedDeadIcEvent args)
     {
         args.Dead = true;
