@@ -117,7 +117,7 @@
   - type: ModSuitMod
     slot: head
     components:
-    - type: NightVisionItem
+    - type: NightVision
       slotFlags: HEAD
     - type: ItemToggle
 

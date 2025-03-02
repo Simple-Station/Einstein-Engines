@@ -8,42 +8,13 @@
   - type: Sprite
     sprite: Backmen/Clothing/Back/Modsuit/standart.rsi
     state: icon
+  - type: Appearance
   - type: ModSuit
     clothingPrototypes:
       head: ClothingHeadHelmetModsuitBase
       gloves: ClothingHandsModsuitBase
       outerClothing: ClothingOuterModsuitBodyBase
       shoes: ClothingModsuitShoesBase
-  - type: ContainerContainer
-    containers:
-      modsuit-part: !type:Container
-        showEnts: False
-        occludes: True
-        ents: []
-      modsuit-mod1: !type:ContainerSlot
-        showEnts: False
-        occludes: True
-        ent: null
-      modsuit-mod2: !type:ContainerSlot
-        showEnts: False
-        occludes: True
-        ent: null
-      modsuit-mod3: !type:ContainerSlot
-        showEnts: False
-        occludes: True
-        ent: null
-      modsuit-mod4: !type:ContainerSlot
-        showEnts: False
-        occludes: True
-        ent: null
-      modsuit-mod5: !type:ContainerSlot
-        showEnts: False
-        occludes: True
-        ent: null
-      storagebase: !type:Container
-        showEnts: False
-        occludes: True
-        ents: []
   - type: UserInterface
     interfaces:
       enum.ModSuitUiKey.Key:
@@ -58,33 +29,6 @@
   - type: Construction
     graph: ModsuitStandard
     node: sciencemodsuitstandard
-  - type: ItemSlots
-    slots:
-      modsuit-mod1:
-        swap: false
-        whitelist:
-          components:
-          - ModSuitMod
-      modsuit-mod2:
-        swap: false
-        whitelist:
-          components:
-          - ModSuitMod
-      modsuit-mod3:
-        swap: false
-        whitelist:
-          components:
-          - ModSuitMod
-      modsuit-mod4:
-        swap: false
-        whitelist:
-          components:
-          - ModSuitMod
-      modsuit-mod5:
-        swap: false
-        whitelist:
-          components:
-          - ModSuitMod
   - type: WiresPanel
   - type: ActivatableUIRequiresPanel
     requireOpen: false

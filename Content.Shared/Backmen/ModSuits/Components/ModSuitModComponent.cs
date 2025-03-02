@@ -7,10 +7,16 @@ namespace Content.Shared.Backmen.ModSuits.Components;
 public sealed partial class ModSuitModComponent : Component
 {
     /// <summary>
-    ///     The container that the clothing is stored in when not equipped.
+    /// The container that the clothing is stored in when not equipped.
     /// </summary>
     [DataField, AutoNetworkedField]
     public string Slot = "head";
+
+    /// <summary>
+    /// How much complexity does this mod take up?
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public int ModComplexity = 1;
 
     /// <summary>
     /// The components to add when activated.

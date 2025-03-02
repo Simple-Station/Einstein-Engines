@@ -1,0 +1,98 @@
+{
+  "copyright" : "Based on tgstation at https://github.com/tgstation/tgstation/blob/adf4605b24258e9c96fa985e1d11912add6aae19/icons/obj/vehicles.dmi and modified by @deltanedas (github)",
+  "license" : "CC-BY-SA-3.0",
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "boots"
+    },
+    {
+      "name": "chestplate"
+    },
+    {
+      "name": "gauntlets"
+    },
+    {
+      "name": "helmet"
+    },
+    {
+      "name": "mod-core-standard",
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "modcore0"
+    },
+    {
+      "name": "modcore1",
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "modcore2",
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "modcore3"
+    },
+    {
+      "name": "modcore4"
+    },
+    {
+      "name": "modcore5"
+    },
+    {
+      "name": "modcore6"
+    },
+    {
+      "name": "modcore7"
+    },
+    {
+      "name": "modcore8"
+    },
+    {
+      "name": "atmospheric"
+    },
+    {
+      "name": "cosmohonk"
+    },
+    {
+      "name": "engineering"
+    },
+    {
+      "name": "medical"
+    },
+    {
+      "name": "security"
+    },
+    {
+      "name": "standard"
+    },
+    {
+      "name": "science"
+    }
+  ]
+}

@@ -33,15 +33,55 @@ public sealed partial class TogglePartDoAfterEvent : SimpleDoAfterEvent
 /// <summary>
 ///     Event raises on modsuit when someone trying to toggle it
 /// </summary>
-public sealed class ToggleClothingAttemptEvent : CancellableEntityEventArgs
+public sealed class EquipModClothingAttemptEvent : CancellableEntityEventArgs
 {
     public EntityUid User { get; }
     public EntityUid Target { get; }
 
-    public ToggleClothingAttemptEvent(EntityUid user, EntityUid target)
+    public EquipModClothingAttemptEvent(EntityUid user, EntityUid target)
     {
         User = user;
         Target = target;
+    }
+}
+
+/// <summary>
+///     Event raises on modsuit when someone trying to toggle it
+/// </summary>
+public sealed class UnequipModClothingAttemptEvent : CancellableEntityEventArgs
+{
+    public EntityUid User { get; }
+    public EntityUid Target { get; }
+
+    public UnequipModClothingAttemptEvent(EntityUid user, EntityUid target)
+    {
+        User = user;
+        Target = target;
+    }
+}
+
+[Serializable, NetSerializable]
+public enum ModSuitVisualizerKeys : byte
+{
+    ClothingPieces,
+}
+
+
+[Serializable, NetSerializable]
+public sealed class ModSuitVisualizerGroupData : ICloneable
+{
+    public List<NetEntity> PieceList;
+    public List<NetEntity> AttachedPieces;
+
+    public ModSuitVisualizerGroupData(List<NetEntity> pieceList, List<NetEntity> attachedPieces)
+    {
+        PieceList = pieceList;
+        AttachedPieces = attachedPieces;
+    }
+
+    public object Clone()
+    {
+        return new ModSuitVisualizerGroupData(new List<NetEntity>(PieceList), new List<NetEntity>(AttachedPieces));
     }
 }
 

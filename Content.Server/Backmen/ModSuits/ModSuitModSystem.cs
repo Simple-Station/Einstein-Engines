@@ -1,11 +1,11 @@
 using System.Linq;
+using Content.Shared.Backmen.ModSuits;
 using Content.Shared.Backmen.ModSuits.Components;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Clothing;
 using Content.Shared.Wires;
 
-namespace Content.Shared.Backmen.ModSuits.Systems;
-
+namespace Content.Server.Backmen.ModSuits;
 
 public sealed class ModSuitModSystem : EntitySystem
 {

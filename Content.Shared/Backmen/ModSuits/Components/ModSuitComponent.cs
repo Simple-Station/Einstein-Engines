@@ -23,10 +23,10 @@ public sealed partial class ModSuitComponent : Component
     public EntityUid? ActionEntity;
 
     /// <summary>
-    ///     Default clothing entity prototype to spawn into the clothing container.
+    /// How much complexity can this mod suit fit?
     /// </summary>
     [DataField, AutoNetworkedField]
-    public EntProtoId? ClothingPrototype;
+    public int MaxComplexity = 10;
 
     /// <summary>
     ///     The inventory slot that the clothing is equipped to.
@@ -34,6 +34,13 @@ public sealed partial class ModSuitComponent : Component
     [ViewVariables(VVAccess.ReadWrite)]
     [DataField, AutoNetworkedField]
     public string Slot = string.Empty;
+
+    /// <summary>
+    ///     The inventory slot, that will always be deployed first.
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite)]
+    [DataField, AutoNetworkedField]
+    public string FirstSlotToDeploy = "outerClothing";
 
     /// <summary>
     ///     Dictionary of inventory slots and entity prototypes to spawn into the clothing container.
@@ -48,6 +55,12 @@ public sealed partial class ModSuitComponent : Component
     public Dictionary<EntityUid, string> ClothingUids = new();
 
     /// <summary>
+    ///     Entities queued for deployment
+    /// </summary>
+    [ViewVariables]
+    public Dictionary<string, EntityUid> EntitiesToDeploy = new();
+
+    /// <summary>
     ///     The container that the clothing is stored in when not equipped.
     /// </summary>
     [DataField, AutoNetworkedField]
@@ -57,10 +70,10 @@ public sealed partial class ModSuitComponent : Component
     public Container? Container;
 
     /// <summary>
-    ///     Time it takes for this clothing to be toggled via the stripping menu verbs. Null prevents the verb from even showing up.
+    ///     Time it takes for this clothing to toggle one part of a mod suit
     /// </summary>
     [DataField, AutoNetworkedField]
-    public TimeSpan? StripDelay = TimeSpan.FromSeconds(3);
+    public TimeSpan ModPartToggleDelay = TimeSpan.FromSeconds(1.7f);
 
     /// <summary>
     ///     Text shown in the toggle-clothing verb. Defaults to using the name of the <see cref="ActionEntity"/> action.

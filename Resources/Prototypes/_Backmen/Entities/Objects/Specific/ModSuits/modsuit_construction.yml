@@ -138,14 +138,14 @@
 
 - type: entity
   parent: BaseModsuitCorePartItem
-  id: ModsuitPlateCience
-  name: cience MOD plate
+  id: ModsuitPlateScience
+  name: Science MOD plate
   components:
   - type: Sprite
-    state: cience
+    state: science
   - type: Tag
     tags:
-    - ModsuitPlateCience
+    - ModsuitPlateScience
 
 - type: entity
   parent: BaseModsuitCorePartItem

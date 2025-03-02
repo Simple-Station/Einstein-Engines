@@ -13,8 +13,10 @@ namespace Content.Shared.Backmen.ModSuits.Components;
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class ModAttachedClothingComponent : Component
 {
+    public const string DefaultClothingContainerId = "replaced-clothing";
+
     /// <summary>
-    ///     The Id of the piece of clothing that this entity belongs to.
+    ///     The ID of the piece of clothing that this entity belongs to.
     /// </summary>
     [DataField, AutoNetworkedField]
     public EntityUid AttachedUid;
@@ -27,6 +29,4 @@ public sealed partial class ModAttachedClothingComponent : Component
 
     [ViewVariables, NonSerialized]
     public ContainerSlot? ClothingContainer;
-
-    public const string DefaultClothingContainerId = "replaced-clothing";
 }
