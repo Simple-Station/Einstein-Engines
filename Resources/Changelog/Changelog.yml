@@ -12189,3 +12189,10 @@ Entries:
   id: 6894
   time: '2025-03-02T18:41:45.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1859
+- author: astriloqua
+  changes:
+    - type: Add
+      message: Arena is back
+  id: 6895
+  time: '2025-03-02T19:47:37.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1853
