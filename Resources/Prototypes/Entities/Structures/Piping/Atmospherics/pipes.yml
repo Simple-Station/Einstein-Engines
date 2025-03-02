@@ -70,6 +70,7 @@
     price: 11
 
 # Goobstation - Allow device-on-pipe stacking
+
 - type: entity
   abstract: true
   parent: GasPipeBase
@@ -99,7 +100,7 @@
     node: half
 
 - type: entity
-  parent: GasPipeNoOverlap
+  parent: GasPipeBase
   id: GasPipeStraight
   suffix: Straight
   components:

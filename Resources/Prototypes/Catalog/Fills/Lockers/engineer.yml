@@ -98,7 +98,7 @@
       - id: RCD
       - id: RCDAmmo
       - id: RPD
-      - id: RCDAmmo #Extra Compressed matter for the RPD
+      - id: RCDAmmo # Extra Compressed matter for the RPD
       - id: LunchboxEngineeringFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
       - id: AccessConfigurator
@@ -120,7 +120,7 @@
       - id: RCD
       - id: RCDAmmo
       - id: RPD
-      - id: RCDAmmo #Extra Compressed matter for the RPD
+      - id: RCDAmmo # Extra Compressed matter for the RPD
       - id: LunchboxEngineeringFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
       - id: AccessConfigurator
