@@ -347,45 +347,18 @@ public sealed class PullingSystem : EntitySystem
                 component.GrabStage > GrabStage.Soft)
             {
                 var direction = args.Direction;
-                var vecBetween = (Transform(args.BlockingEntity).Coordinates.ToMapPos(EntityManager, _transform) - Transform(uid).WorldPosition);
-
-                // Getting angle between us
-                var dirAngle = direction.ToWorldAngle().Degrees;
-                var betweenAngle = vecBetween.ToWorldAngle().Degrees;
-
-                var angle = dirAngle - betweenAngle;
-
-                if (angle < 0)
-                    angle = -angle;
-
-                var maxDistance = 3f;
-                var damageModifier = 1f;
-
-                if (angle < 30)
-                {
-                    damageModifier = 0.3f;
-                    maxDistance = 1f;
-                }
-                else if (angle < 90)
-                {
-                    damageModifier = 0.7f;
-                    maxDistance = 1.5f;
-                }
-                else
-                    maxDistance = 2.25f;
-
-                var distance = Math.Clamp(args.Direction.Length(), 0.5f, maxDistance);
-                direction *= distance / args.Direction.Length();
-
 
                 var damage = new DamageSpecifier();
                 damage.DamageDict.Add("Blunt", 5);
-                damage *= damageModifier;
 
-                var throwbackforce = 0.15f;
                 TryStopPull(args.BlockingEntity, comp, uid, true);
-                _grabThrown.Throw(args.BlockingEntity, uid, direction * 2f, 120f, damage * component.GrabThrowDamageModifier, damage * component.GrabThrowDamageModifier); // Throwing the grabbed person
-                _throwing.TryThrow(uid, -direction * throwbackforce); // Throws back the grabber
+                _grabThrown.Throw(args.BlockingEntity, uid, direction,
+                    component.StaminaDamageOnThrown,
+                    component.GrabThrownSpeed,
+                    damage * component.GrabThrowDamageModifier,
+                    damage * component.GrabThrowDamageModifier); // Throwing the grabbed person
+
+                _throwing.TryThrow(uid, -direction); // Throws back the grabber
                 _audio.PlayPvs(new SoundPathSpecifier("/Audio/Effects/thudswoosh.ogg"), uid);
                 component.NextStageChange.Add(TimeSpan.FromSeconds(2f));  // To avoid grab and throw spamming
             }
@@ -445,7 +418,8 @@ public sealed class PullingSystem : EntitySystem
                     args.ModifySpeed(walkMod, sprintMod);
                     break;
                 case GrabStage.Soft:
-                    args.ModifySpeed(walkMod * 0.9f, sprintMod * 0.9f);
+                    var softSpeedMod = component.SoftGrabSpeedModifier;
+                    args.ModifySpeed(walkMod * softSpeedMod, sprintMod * softSpeedMod);
                     break;
                 case GrabStage.Hard:
                     args.ModifySpeed(walkMod * 0.7f, sprintMod * 0.7f);
@@ -466,7 +440,8 @@ public sealed class PullingSystem : EntitySystem
                 args.ModifySpeed(component.WalkSpeedModifier, component.SprintSpeedModifier);
                 break;
             case GrabStage.Soft:
-                args.ModifySpeed(component.WalkSpeedModifier * 0.9f, component.SprintSpeedModifier * 0.9f);
+                var softSpeedMod = component.SoftGrabSpeedModifier;
+                args.ModifySpeed(component.WalkSpeedModifier * softSpeedMod, component.SprintSpeedModifier * softSpeedMod);
                 break;
             case GrabStage.Hard:
                 args.ModifySpeed(component.WalkSpeedModifier * 0.7f, component.SprintSpeedModifier * 0.7f);
