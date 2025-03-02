@@ -1,7 +1,7 @@
 - type: gameMapPool
   id: DefaultMapPool
   maps:
- # - Arena # De-rotated, no current maintainer.
+  - Arena # Maintained by astriloqua.
  # - Asterisk # De-rotated, no current maintainer.
   - Core # No current Maintainer. In need of a rework...
  # - Edge # De-rotated, no current maintainer.
