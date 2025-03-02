@@ -1566,6 +1566,14 @@
   - type: GuideHelp
     guides:
     - Salvage
+  - type: MiningVendor # Lavaland Change
+    kits:
+    - MiningCrusher
+    - MiningExtraction
+    #- MiningResonator
+    #- MiningSurvival
+    #- MiningDrone
+    - MiningConscription
 
 - type: entity
   parent: VendingMachine

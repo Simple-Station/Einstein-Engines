@@ -417,11 +417,11 @@
     impactEffect: BulletImpactEffectKinetic
     damage:
       types:
-        Blunt: 25
-        Structural: 30
+        Blunt: 40 # Lavaland Change - TOTAL PKA VICTORY
+        Structural: 30 # Lavaland/Eris change: Yes easy break ins
   # Short lifespan
   - type: TimedDespawn
-    lifetime: 0.4
+    lifetime: 0.170 # Lavaland Change
 
 - type: entity
   id: BulletKineticShuttle
@@ -468,6 +468,7 @@
         shader: unshaded
   - type: GatheringProjectile
   - type: DamageMarkerOnCollide
+    onlyWorkOnFauna: true # Lavaland Change
     whitelist:
       components:
         - MobState
@@ -1046,7 +1047,7 @@
       collection: MeatLaserImpact
 
 - type: entity
-  name: laser bolt 
+  name: laser bolt
   id: BulletLaser
   parent: BaseBullet
   categories: [ HideSpawnMenu ]
@@ -1095,7 +1096,7 @@
   - type: ProjectileSpread
     proto: BulletLaser
     count: 5 #50 heat damage if you hit all your shots, but wide spread
-    spread: 30 
+    spread: 30
 
 - type: entity
   name: narrow laser barrage
@@ -1139,7 +1140,7 @@
   - type: ProjectileSpread
     proto: BulletDisablerSmg
     count: 3 #bit stronger than a disabler if you hit your shots you goober, still not a 2 hit stun though
-    spread: 9 
+    spread: 9
 
 - type: entity #Goobstation, put here so the X-01 stuff isnt spread everywhere.
   name: magnum bolt
