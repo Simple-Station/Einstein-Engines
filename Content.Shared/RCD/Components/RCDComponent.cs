@@ -46,7 +46,7 @@ public sealed partial class RCDComponent : Component
     /// Indicates if a mirrored version of the construction prototype should be used (if available)
     /// </summary>
     [AutoNetworkedField, ViewVariables(VVAccess.ReadOnly)]
-    public bool UseMirrorPrototype = false;
+    public bool UseMirrorPrototype { get; set; } = false;
 
     /// <summary>
     /// Indicates whether this is an RCD or an RPD

@@ -56,7 +56,7 @@
   - type: Appearance
   - type: PipeColorVisuals
   - type: NodeContainer
-  #- type: PipeRestrictOverlap - Allow pipe stacking
+  # - type: PipeRestrictOverlap - Allow pipe stacking
   - type: AtmosUnsafeUnanchor
   - type: AtmosPipeColor
   - type: AtmosMonitoringConsoleDevice

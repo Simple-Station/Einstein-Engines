@@ -109,11 +109,10 @@ public sealed class RCDConstructionGhostSystem : EntitySystem
         _rcdSystem.UpdateCachedPrototype(heldEntity.Value, rcd);
         var useProto = (_useMirrorPrototype && !string.IsNullOrEmpty(rcd.CachedPrototype.MirrorPrototype)) ? rcd.CachedPrototype.MirrorPrototype : rcd.CachedPrototype.Prototype;
 
-        if (heldEntity != placerEntity || useProto != placerProto)
-        {
+        bool needNewPlacer = heldEntity != placerEntity;
+        bool needNewPrototypeUpdate = useProto != placerProto;
+        if (needNewPlacer || needNewPrototypeUpdate)
             CreatePlacer(heldEntity.Value, rcd, useProto);
-        }
-
 
     }
 
