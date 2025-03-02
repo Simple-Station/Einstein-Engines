@@ -145,7 +145,7 @@
   name: ammunition box (.10 rifle)
   components:
   - type: BallisticAmmoProvider
-    capacity: 2000
+    capacity: 500
     proto: CartridgeMinigun
   - type: Sprite
     layers:
