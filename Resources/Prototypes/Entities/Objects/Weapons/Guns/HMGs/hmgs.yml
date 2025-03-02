@@ -50,14 +50,14 @@
       map: ["enum.GunVisualLayers.Base"]
   - type: Item
     sprite: Objects/Weapons/Guns/HMGs/minigun.rsi
-  - type: GunWieldBonus
-      minAngle: -22
-      maxAngle: -30
   - type: Gun
       minAngle: 30
       maxAngle: 60
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/minigun.ogg
+  - type: GunWieldBonus
+      minAngle: -22
+      maxAngle: -30
   - type: BallisticAmmoProvider
     proto: CartridgeMinigun
     capacity: 1000
