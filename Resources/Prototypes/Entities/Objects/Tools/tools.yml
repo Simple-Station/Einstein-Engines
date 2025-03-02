@@ -670,6 +670,29 @@
     rechargeDuration: 1
 
 - type: entity
+  id: RPDRecharging
+  parent: RPD
+  name: experimental RPD
+  description: A bluespace-enhanced rapid piping device that passively generates its own compressed matter.
+  suffix: AutoRecharge
+  components:
+  - type: LimitedCharges
+    maxCharges: 25
+    charges: 25
+  - type: AutoRecharge
+    rechargeDuration: 10
+
+- type: entity
+  id: RPDExperimental
+  parent: RPD
+  suffix: Admeme
+  name: experimental RPD
+  description: A bluespace-enhanced rapid piping device that passively generates its own compressed matter.
+  components:
+  - type: AutoRecharge
+    rechargeDuration: 1
+
+- type: entity
   name: compressed matter
   parent: BaseItem
   id: RCDAmmo
