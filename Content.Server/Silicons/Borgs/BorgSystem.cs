@@ -201,7 +201,7 @@ public sealed partial class BorgSystem : SharedBorgSystem
         Toggle.TryDeactivate(uid);
         UpdateUI(uid, component);
     }
-    
+
     private void OnGetDeadIC(EntityUid uid, BorgChassisComponent component, ref GetCharactedDeadIcEvent args)
     {
         args.Dead = true;
