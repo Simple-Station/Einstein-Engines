@@ -146,7 +146,7 @@
   components:
   - type: BallisticAmmoProvider
     capacity: 2000
-    proto: BulletMinigun
+    proto: CartridgeMinigun
   - type: Sprite
     layers:
     - state: base-b
