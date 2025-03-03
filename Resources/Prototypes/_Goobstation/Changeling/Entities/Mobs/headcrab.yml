@@ -29,7 +29,7 @@
     baseSprintSpeed: 7
   - type: ExplosionResistance
     damageCoefficient: 0
-  - type: VentCrawler
+# - type: VentCrawler # ! UNCOMMENT WHEN PORTED
   - type: Fixtures
     fixtures:
       fix1:
