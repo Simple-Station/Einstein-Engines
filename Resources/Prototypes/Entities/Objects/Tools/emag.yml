@@ -14,7 +14,7 @@
       - description: "emag-extenddescription-command"
         fontSize: 12
         color: "#1155ff"
-        requireDetailRange: false
+        requireDetailRange: true
         requirements:
         - !type:CharacterDepartmentRequirement
           departments:
@@ -22,7 +22,7 @@
       - description: "emag-extenddescription-engineering"
         fontSize: 12
         color: "#ffaf00"
-        requireDetailRange: false
+        requireDetailRange: true
         requirements:
         - !type:CharacterDepartmentRequirement
           departments:
@@ -30,7 +30,7 @@
       - description: "emag-extenddescription-security"
         fontSize: 12
         color: "#ff0000"
-        requireDetailRange: false
+        requireDetailRange: true
         requirements:
         - !type:CharacterDepartmentRequirement
           departments:
@@ -38,7 +38,7 @@
       - description: "emag-extenddescription-epistemics"
         fontSize: 12
         color: "#aa00aa"
-        requireDetailRange: false
+        requireDetailRange: true
         requirements:
         - !type:CharacterDepartmentRequirement
           departments:
@@ -48,9 +48,14 @@
         color: "#880000"
         requireDetailRange: false
         requirements:
-        - !type:CharacterDepartmentRequirement
-          departments:
-            - Security
+        - !type:CharacterAntagonistRequirement
+          antagonists:
+            - Traitor
+            - TraitorSleeper
+            - SpaceNinja
+            - Nukeops
+            - NukeopsMedic
+            - NukeopsCommander
   - type: Sprite
     sprite: Objects/Tools/emag.rsi
     state: icon
