@@ -12210,3 +12210,14 @@ Entries:
   id: 6897
   time: '2025-03-02T23:33:56.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1844
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added EE-Specific ores to Lavaland, such as Bauxite, Cassiterite,
+        Wolframite, etc. 
+    - type: Add
+      message: Wolframite now spawns in veins just like other ores.
+  id: 6898
+  time: '2025-03-03T17:52:02.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1864
