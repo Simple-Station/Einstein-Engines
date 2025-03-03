@@ -90,7 +90,7 @@
           Heat: 0.7
         flatReductions:
           Heat: 2
-    - type: StackPrice
+    - type: StaticPrice
       price: 500
 
 - type: entity
@@ -115,7 +115,7 @@
         flatReductions:
           Blunt: 1.5
           Piercing: 1.5
-    - type: StackPrice
+    - type: StaticPrice
       price: 500
 
 #Craftable shields
