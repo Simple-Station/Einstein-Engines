@@ -207,7 +207,7 @@
   - type: Tool
     speedModifier: 2
   - type: StaticPrice
-    price: 1250  # Genuine reason to steal it from the CE.
+    price: 2000  # Genuine reason to steal it from the CE.
 
 - type: entity
   name: emergency welding tool
