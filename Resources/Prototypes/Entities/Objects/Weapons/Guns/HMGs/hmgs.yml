@@ -76,11 +76,11 @@
             - MagazineBoxRifleMinigun
       gun_chamber:
         name: Chamber
-        startingItem: CartridgeMinigun
+        startingItem: CartridgeHeavyRifle
         priority: 1
         whitelist:
           tags:
-            - CartridgeMinigun
+            - CartridgeHeavyRifle
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot
