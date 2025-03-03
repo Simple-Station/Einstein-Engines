@@ -12236,3 +12236,16 @@ Entries:
   id: 6899
   time: '2025-03-03T17:59:41.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1852
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed an issue where SAN members(currently just Deserters) weren't
+        attacked by other hostile NPCs.
+    - type: Tweak
+      message: >-
+        Tweaked the design of the SAN Dropship. It also now comes with some
+        jetpacks.
+  id: 6900
+  time: '2025-03-03T19:59:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1871
