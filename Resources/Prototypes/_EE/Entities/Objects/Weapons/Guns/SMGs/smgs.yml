@@ -83,8 +83,8 @@
   - type: Gun
     minAngle: 21
     maxAngle: 32
-    fireRate: 5 # 300rpm in Semi & Full Auto
-    burstFireRate: 20 # 1200rpm in Burst mode.
+    fireRate: 5  # 300rpm in Semi & Full Auto
+    burstFireRate: 20  # 1200rpm in Burst mode.
     shotsPerBurst: 5
     burstCooldown: 1.1
     cameraRecoilScalar: 0.5
