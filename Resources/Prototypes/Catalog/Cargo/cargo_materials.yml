@@ -124,7 +124,7 @@
     sprite: Objects/Materials/ingots.rsi
     state: gold_3
   product: CrateMaterialGold
-  cost: 3000
+  cost: 3750
   category: cargoproduct-category-name-materials
   group: market
 
