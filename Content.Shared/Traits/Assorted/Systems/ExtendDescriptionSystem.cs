@@ -28,7 +28,8 @@ public sealed class ExtendDescriptionSystem : EntitySystem
             var meetsRequirements = desc.Requirements == null || _characterRequirements.CheckRequirementsValid(desc.Requirements, args.Examiner, comp.EntityPrototype, out _);
             var description = meetsRequirements ? desc.Description : desc.RequirementsNotMetDescription;
 
-            args.PushMarkup($"[font size ={desc.FontSize}][color={desc.Color}]{Loc.GetString(description, ("entity", uid))}[/color][/font]");
+            if(description == string.Empty)
+                args.PushMarkup($"[font size ={desc.FontSize}][color={desc.Color}]{Loc.GetString(description, ("entity", uid))}[/color][/font]");
         }
     }
 }
