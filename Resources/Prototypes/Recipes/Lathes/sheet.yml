@@ -291,7 +291,7 @@
   result: IngotTungsten1
   applyMaterialDiscount: false
   miningPoints: 5
-  completetime: 4
+  completetime: 0.13 # Or, 4 seconds over 30 ingots.
   materials:
     RawTungsten: 100
     RawIron: 100
