@@ -594,6 +594,10 @@
       inverted: true
       jobs:
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+    - !type:CharacterSpeciesRequirement
+        inverted: true
+        species:
+          - IPC
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -899,6 +903,12 @@
     - !type:CharacterSpeciesRequirement
       species:
         - IPC
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Photophobia
+        - Blindness
+        - Nearsighted
     - !type:CharacterItemGroupRequirement
       group: TraitsMind
   functions:
@@ -926,6 +936,9 @@
       inverted: true
       traits:
         - OmniEyesModule
+        - Photophobia
+        - Blindness
+        - Nearsighted
     - !type:CharacterItemGroupRequirement
       group: TraitsMind
   functions:
@@ -952,6 +965,9 @@
       traits:
         - DiagnosticEyesModule
         - OmniEyesModule
+        - Photophobia
+        - Blindness
+        - Nearsighted
     - !type:CharacterItemGroupRequirement
       group: TraitsMind
   functions:
@@ -981,6 +997,9 @@
       traits:
         - MedicalEyesModule
         - OmniEyesModule
+        - Photophobia
+        - Blindness
+        - Nearsighted
     - !type:CharacterItemGroupRequirement
       group: TraitsMind
   functions:
@@ -1010,6 +1029,9 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
+        - Photophobia
+        - Blindness
+        - Nearsighted
         - MedicalEyesModule
         - DiagnosticEyesModule
         - SecurityEyesModule
@@ -1042,6 +1064,12 @@
     - !type:CharacterSpeciesRequirement
       species:
         - IPC
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Photophobia
+        - Blindness
+        - Nearsighted
     - !type:CharacterItemGroupRequirement
       group: TraitsMind
   functions:
@@ -1061,6 +1089,12 @@
     - !type:CharacterSpeciesRequirement
       species:
         - IPC
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Photophobia
+        - Blindness
+        - Nearsighted
     - !type:CharacterItemGroupRequirement
       group: TraitsMind
   functions:
