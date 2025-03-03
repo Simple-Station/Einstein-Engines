@@ -311,3 +311,33 @@ FoodMeatFiestaKebab: FoodKebabSkewer
 ImprovisedExplosive: FireBomb
 ImprovisedExplosiveEmpty: FireBombEmpty
 ImprovisedExplosiveFuel: FireBombFuel
+
+# Lavaland EE stuff
+TreasureDatadiskEncrypted: null
+VendingMachineBoozeSyndicate: VendingMachineBooze
+ClothingOuterHardsuitSyndicateDurathread: ClothingOuterHardsuitSyndicate
+PoweredDimSmallLight: PoweredSmallLight
+PosterLegitGoobFaded: null
+ClothingOuterWinterColorBlue: ClothingOuterWinterMed
+ClothingOuterWinterColorBrown: ClothingOuterWinterHydro
+MineralScanner: null
+AdvancedMineralScanner: null
+FoamThrongler: PlushieThrongler
+GlueGrenade: null
+LubeGrenade: CleanerGrenade
+PlushieBlackburn: null # Waiting for port
+PlushieBlackburnMatryoskya: null
+PlushieDesislavaBlackburn: null
+PlushieDurk: null
+PlushieLouie: null
+PlushieRainbowLizard: null
+SoapHomemadeBanana: Soap
+
+BoxAgrichem: null
+portableChemicalMixer: null
+
+WallRockBasaltBSCrystal: WallRockBasaltBluespace
+AirlockHydroponics: AirlockHydroponicsLocked
+Biogenerator: null
+FloraGreyStalagmite: null
+FelinidCube: TajaranCube
