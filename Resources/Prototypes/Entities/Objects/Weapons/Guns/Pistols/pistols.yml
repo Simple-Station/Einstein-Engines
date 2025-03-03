@@ -121,7 +121,7 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/pistol.ogg
     fireOnDropChance: 0.3
-  - type: StackPrice
+  - type: StaticPrice
     price: 750
 
 - type: entity
@@ -235,7 +235,7 @@
     containers:
       gun_magazine: !type:ContainerSlot
       gun_chamber: !type:ContainerSlot
-  - type: StackPrice
+  - type: StaticPrice
     price: 1000
 
 - type: entity
@@ -275,7 +275,7 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
     fireOnDropChance: 0.5
-  - type: StackPrice
+  - type: StaticPrice
     price: 350
 
 - type: entity
@@ -384,7 +384,7 @@
         whitelist:
           tags:
             - CartridgeMagnum
-  - type: StackPrice
+  - type: StaticPrice
     price: 1000
 
 - type: entity
