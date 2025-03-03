@@ -88,7 +88,7 @@ public sealed class FootPrintsSystem : EntitySystem
 
         stepTransform.LocalRotation = dragging
             ? (newPos - component.LastStepPos).ToAngle() + Angle.FromDegrees(-90f)
-            : args.Component.LocalRotation + Angle.FromDegrees(180f);
+            : args.Component.LocalRotation + Math.PI;
 
         if (!TryComp<SolutionContainerManagerComponent>(footprintUid, out var solutionContainer)
             || !_solution.ResolveSolution((footprintUid, solutionContainer), footPrintComponent.SolutionName, ref footPrintComponent.Solution, out var solution))
@@ -108,7 +108,7 @@ public sealed class FootPrintsSystem : EntitySystem
             return new(uid, transform.LocalPosition);
 
         var offset = component.RightStep
-            ? new Angle(Angle.FromDegrees(180f) + transform.LocalRotation).RotateVec(component.OffsetPrint)
+            ? new Angle(Math.PI + transform.LocalRotation).RotateVec(component.OffsetPrint)
             : new Angle(transform.LocalRotation).RotateVec(component.OffsetPrint);
 
         return new(uid, transform.LocalPosition + offset);
