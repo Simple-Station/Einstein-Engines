@@ -47,9 +47,9 @@ public sealed partial class CharacterAntagonistRequirement : CharacterRequiremen
                 continue;
 
             if (Antagonists.Contains(mindRoleComponent.AntagPrototype.Value))
-                return true;
+                return !Inverted;
         }
 
-        return false;
+        return Inverted;
     }
 }
