@@ -9,7 +9,8 @@
       layers:
         - state: icon
     - type: MeleeWeapon
-      wideAnimationRotation: -90
+      animationRotation: 45 # WWDP
+      wideAnimationRotation: 135 # WWDP
       damage:
         types:
           Blunt: 2

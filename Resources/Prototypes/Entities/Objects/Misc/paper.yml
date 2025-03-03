@@ -395,6 +395,7 @@
     sprite: Objects/Misc/bureaucracy.rsi
     state: overpriced_pen
   - type: MeleeWeapon
+    animationRotation: -45 # WWDP
     wideAnimationRotation: -45
     damage:
       types:

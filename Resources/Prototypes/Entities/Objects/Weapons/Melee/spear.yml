@@ -36,6 +36,7 @@
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
   - type: MeleeWeapon
+    animationRotation: -135 # WWDP
     wideAnimationRotation: -135
     range: 1.75
     damage:
@@ -128,6 +129,7 @@
   - type: Sprite
     sprite: Objects/Weapons/Melee/reinforced_spear.rsi
   - type: MeleeWeapon
+    animationRotation: -135 # WWDP
     wideAnimationRotation: -135
     damage:
       types:
@@ -149,6 +151,7 @@
   - type: Sprite
     sprite: Objects/Weapons/Melee/plasma_spear.rsi
   - type: MeleeWeapon
+    animationRotation: -135 # WWDP
     wideAnimationRotation: -135
     damage:
       types:
@@ -170,6 +173,7 @@
   - type: Sprite
     sprite: Objects/Weapons/Melee/uranium_spear.rsi
   - type: MeleeWeapon
+    animationRotation: -135 # WWDP
     wideAnimationRotation: -135
     damage:
       types:

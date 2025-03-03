@@ -1970,6 +1970,8 @@
     - type: StaminaDamageOnHit
       damage: 0.8
     - type: MeleeWeapon
+      canBeBlocked: false # WD EDIT
+      animationRotation: -45 # WWDP
       wideAnimationRotation: -135
       attackRate: .1
       damage:
@@ -2030,7 +2032,7 @@
       params:
         variation: 0.05
   - type: EmitSoundOnLand
-    sound: 
+    sound:
       path: /Audio/DeltaV/Voice/Harpy/caw1.ogg
       params:
         variation: 0.05

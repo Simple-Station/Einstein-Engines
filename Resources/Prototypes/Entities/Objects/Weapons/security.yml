@@ -105,6 +105,7 @@
     sprite: Objects/Weapons/Melee/truncheon.rsi
     state: icon
   - type: MeleeWeapon
+    animationRotation: -45 # WWDP
     wideAnimationRotation: -135
     attackRate: 0.8
     damage:

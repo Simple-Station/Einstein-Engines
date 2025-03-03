@@ -13,6 +13,7 @@
     types:
       - Knife
   - type: MeleeWeapon
+    animationRotation: -135 # WWDP
     wideAnimationRotation: -135
     attackRate: .8
     range: 1.5
@@ -168,6 +169,7 @@
     sprite: Objects/Weapons/Melee/kukri_knife.rsi
     state: icon
   - type: MeleeWeapon
+    animationRotation: -45 # WWDP
     attackRate: 1.0
     range: 1.75
     damage:

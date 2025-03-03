@@ -31,6 +31,7 @@
     - Payload # yes, you can make re-usable prank grenades
     - BikeHorn
   - type: MeleeWeapon
+    animationRotation: 135 # WWDP
     wideAnimationRotation: 135
     soundHit:
       collection: BikeHorn
@@ -78,6 +79,7 @@
       params:
         variation: 0.246
   - type: MeleeWeapon
+    animationRotation: 135 # WWDP
     wideAnimationRotation: 135
     soundHit:
       collection: CluwneHorn

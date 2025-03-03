@@ -119,7 +119,7 @@
         visible: false
         map: [ "light" ]
   - type: MeleeWeapon
-    wideAnimationRotation: 90
+    wideAnimationRotation: -90
     attackRate: 1.25
     damage:
       types:

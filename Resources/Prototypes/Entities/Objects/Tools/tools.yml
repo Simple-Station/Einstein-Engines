@@ -30,6 +30,7 @@
       map: [ "enum.DamageStateVisualLayers.Base" ]
     - state: cutters-cutty-thingy
   - type: MeleeWeapon
+    animationRotation: -90 # WWDP
     wideAnimationRotation: -90
     attackRate: 1.1
     range: 1.6
@@ -114,6 +115,7 @@
     sprite: Objects/Tools/screwdriver.rsi
     storedRotation: -90
   - type: MeleeWeapon
+    animationRotation: -90 # WWDP
     wideAnimationRotation: -90
     attackRate: .74
     damage:
@@ -191,6 +193,7 @@
       sprite: Objects/Tools/wrench.rsi
       state: storage
   - type: MeleeWeapon
+    animationRotation: 225 # WWDP
     wideAnimationRotation: 135
     attackRate: 1.1
     range: 1.6
@@ -249,6 +252,7 @@
       sprite: Objects/Tools/crowbar.rsi
       state: storage
   - type: MeleeWeapon
+    animationRotation: -45 # WWDP
     wideAnimationRotation: -135
     attackRate: .8
     damage:
@@ -460,7 +464,8 @@
   - type: StaticPrice
     price: 100
   - type: MeleeWeapon
-    wideAnimationRotation: -90
+    animationRotation: 90 # WWDP
+    wideAnimationRotation: 90 # WWDP
     attackRate: 1.1
     range: 1.4
     damage:
@@ -690,6 +695,7 @@
     sprite: Objects/Tools/shovel.rsi
     state: icon
   - type: MeleeWeapon
+    animationRotation: -45 # WWDP
     wideAnimationRotation: 45
     attackRate: 1.25
     range: 1.75
@@ -743,6 +749,7 @@
     slots:
     - Belt
   - type: MeleeWeapon
+    animationRotation: -45 # WWDP
     wideAnimationRotation: -135
     attackRate: 1.1
     damage:

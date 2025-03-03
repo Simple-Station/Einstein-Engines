@@ -31,6 +31,7 @@
     - Plastic
     - Trash
   - type: MeleeWeapon
+    animationRotation: 180 # WWDP
     wideAnimationRotation: 180
     attackRate: .6666
     damage:
@@ -53,6 +54,7 @@
     types:
     - Fork
   - type: MeleeWeapon
+    animationRotation: 180 # WWDP
     wideAnimationRotation: 180
     attackRate: .6666
     damage:
@@ -102,6 +104,7 @@
     types:
     - Spoon
   - type: MeleeWeapon
+    animationRotation: 180 # WWDP
     wideAnimationRotation: 180
     attackRate: .6666
     damage:
@@ -178,6 +181,7 @@
     reactionTypes:
     - Stir
   - type: MeleeWeapon
+    animationRotation: 180 # WWDP
     wideAnimationRotation: 180
     attackRate: .5
     damage:
