@@ -56,7 +56,7 @@
       moleUsage: 0.00085
     - type: Appearance
     - type: StaticPrice
-      price: 1000
+      price: 500
 #    - type: DynamicPrice
 #      price: 100
     - type: ReverseEngineering # Nyano
@@ -210,6 +210,8 @@
       difficulty: 2
       recipes:
         - JetpackMini
+    - type: StaticPrice
+      price: 200
 
 # Filled mini
 - type: entity
