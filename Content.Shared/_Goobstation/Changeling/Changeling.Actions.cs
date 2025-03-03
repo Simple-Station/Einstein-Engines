@@ -1,5 +1,6 @@
 using Content.Shared.Actions;
 using Robust.Shared.GameStates;
+using Robust.Shared.Serialization;
 
 namespace Content.Shared.Changeling;
 
@@ -73,7 +74,7 @@ public sealed partial class ActionContortBodyEvent : InstantActionEvent { }
 
 #region Events - Misc
 
-[DataDefinition]
+[DataDefinition, NetSerializable, Serializable] // why did I have to readd netserializable to this? why did it not just inherit it?
 public sealed partial class AugmentedEyesightPurchasedEvent : EntityEventArgs;
 
 #endregion
