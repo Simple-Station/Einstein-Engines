@@ -2,7 +2,6 @@ using Content.Server.Light.Components;
 using Content.Server.Nutrition.Components;
 using Content.Server.Objectives.Components;
 using Content.Server.Radio.Components;
-using Content.Shared._White.Overlays;
 using Content.Shared.Changeling;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;
@@ -23,6 +22,7 @@ using Content.Shared.Stealth.Components;
 using Content.Shared._Goobstation.Weapons.AmmoSelector;
 using Content.Shared.Actions;
 using Content.Shared.Movement.Pulling.Systems;
+using Content.Shared.Overlays.Switchable;
 
 namespace Content.Server.Changeling;
 

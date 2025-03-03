@@ -57,12 +57,13 @@ using Content.Shared.Jittering;
 using Content.Server.Explosion.EntitySystems;
 using System.Linq;
 using Content.Server.Flash.Components;
-using Content.Shared.Heretic;
+// using Content.Shared.Heretic;
 using Content.Shared._Goobstation.Actions;
 using Content.Shared._Goobstation.Weapons.AmmoSelector;
 using Content.Shared.Projectiles;
-using Content.Shared._White.Overlays;
+// using Content.Shared._White.Overlays;
 using Content.Shared.Eye.Blinding.Components;
+using Content.Shared.Overlays.Switchable;
 
 namespace Content.Server.Changeling;
 
@@ -300,7 +301,7 @@ public sealed partial class ChangelingSystem : SharedChangelingSystem
         if (comp.StrainedMusclesActive)
         {
             var stamina = EnsureComp<StaminaComponent>(uid);
-            _stamina.TakeStaminaDamage(uid, 7.5f, visual: false, immediate: false);
+            _stamina.TakeStaminaDamage(uid, 7.5f, visual: false);
             if (stamina.StaminaDamage >= stamina.CritThreshold || _gravity.IsWeightless(uid))
                 ToggleStrainedMuscles(uid, comp);
         }
@@ -649,8 +650,6 @@ public sealed partial class ChangelingSystem : SharedChangelingSystem
         {
             typeof(HeadRevolutionaryComponent),
             typeof(RevolutionaryComponent),
-            typeof(GhoulComponent),
-            typeof(HereticComponent),
             typeof(StoreComponent),
             typeof(FlashImmunityComponent),
             typeof(EyeProtectionComponent),

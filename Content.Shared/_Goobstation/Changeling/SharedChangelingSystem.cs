@@ -1,5 +1,5 @@
-using Content.Shared._White.Overlays;
 using Content.Shared.Eye.Blinding.Components;
+using Content.Shared.Overlays.Switchable;
 
 namespace Content.Shared.Changeling;
 
