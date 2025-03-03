@@ -1,3 +1,4 @@
+using Content.Shared.Customization.Systems;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.Traits.Assorted.Components;
@@ -6,7 +7,13 @@ namespace Content.Shared.Traits.Assorted.Components;
 public sealed partial class DescriptionExtension
 {
     [DataField]
+    public List<CharacterRequirement>? Requirements;
+
+    [DataField]
     public string Description = "";
+
+    [DataField]
+    public string RequirementsNotMetDescription = "";
 
     [DataField]
     public int FontSize = 12;

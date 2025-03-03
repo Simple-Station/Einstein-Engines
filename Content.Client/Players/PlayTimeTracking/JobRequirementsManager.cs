@@ -41,6 +41,12 @@ public sealed partial class JobRequirementsManager : ISharedPlaytimeManager
         _client.RunLevelChanged += ClientOnRunLevelChanged;
     }
 
+    public bool TryGetTrackerTimes(ICommonSession id, [NotNullWhen(true)] out Dictionary<string, TimeSpan>? time)
+    {
+        time = new(_roles);
+        return true;
+    }
+
     private void ClientOnRunLevelChanged(object? sender, RunLevelChangedEventArgs e)
     {
         if (e.NewLevel == ClientRunLevel.Initialize)

@@ -1,4 +1,5 @@
 using Content.Shared.CCVar;
+using Content.Shared.Mind;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using JetBrains.Annotations;
@@ -27,7 +28,8 @@ public sealed partial class CharacterWhitelistRequirement : CharacterRequirement
         IPrototypeManager prototypeManager,
         IConfigurationManager configManager,
         out string? reason,
-        int depth = 0)
+        int depth = 0,
+        MindComponent? mind = null)
     {
         reason = null;
         if (!configManager.IsCVarRegistered("whitelist.enabled"))
