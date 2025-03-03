@@ -12210,3 +12210,29 @@ Entries:
   id: 6897
   time: '2025-03-02T23:33:56.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1844
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added EE-Specific ores to Lavaland, such as Bauxite, Cassiterite,
+        Wolframite, etc. 
+    - type: Add
+      message: Wolframite now spawns in veins just like other ores.
+  id: 6898
+  time: '2025-03-03T17:52:02.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1864
+- author: Diggy0
+  changes:
+    - type: Add
+      message: Many markings from Impstation.
+    - type: Tweak
+      message: >-
+        Marking limits have been expanded, now most races should be able to have
+        6 markings instead of 1 or 2 or 3.
+    - type: Fix
+      message: Most races should now have access to underwear.
+    - type: Remove
+      message: My sanity.
+  id: 6899
+  time: '2025-03-03T17:59:41.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1852
