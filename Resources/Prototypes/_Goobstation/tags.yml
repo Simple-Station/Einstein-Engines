@@ -96,7 +96,7 @@
 
 - type: Tag
   id: RipleyMkII
-  
+
 - type: Tag
   id: Clarke
 
@@ -105,3 +105,29 @@
 
 - type: Tag
   id: Gygax
+
+  # MODsuits
+
+- type: Tag
+  id: ModsuitPart
+
+- type: Tag
+  id: ModsuitShell
+
+- type: Tag
+  id: ModsuitGauntlets
+
+- type: Tag
+  id: ModsuitHelmet
+
+- type: Tag
+  id: ModsuitBoots
+
+- type: Tag
+  id: ModsuitChestplate
+
+- type: Tag
+  id: ModsuitCore
+
+- type: Tag
+  id: ModsuitPlatingExternal

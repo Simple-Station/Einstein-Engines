@@ -444,7 +444,7 @@ public sealed partial class ExplosionSystem
             foreach (var (entity, damage) in _toDamage)
             {
                 // TODO EXPLOSIONS turn explosions into entities, and pass the the entity in as the damage origin.
-                _damageableSystem.TryChangeDamage(entity, damage, ignoreResistances: true);
+                _damageableSystem.TryChangeDamage(entity, damage, ignoreResistances: true, partMultiplier: 0.3f); // Shitmed: Temp change, nerf explosion delimbing
 
             }
         }

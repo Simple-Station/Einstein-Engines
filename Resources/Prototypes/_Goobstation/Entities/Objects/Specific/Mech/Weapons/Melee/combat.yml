@@ -13,7 +13,7 @@
     wideAnimationRotation: -90
     soundHit:
       path: "/Audio/Weapons/chainsaw.ogg"
-    attackRate: 3.5
+    attackRate: 0.3
     damage:
       types:
         Structural: 35

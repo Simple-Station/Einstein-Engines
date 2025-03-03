@@ -4,7 +4,6 @@ using Content.Server.Chat.Managers;
 using Content.Server.Forensics;
 using Content.Server.GameTicking;
 using Content.Server.Hands.Systems;
-using Content.Server.IdentityManagement;
 using Content.Server.Mind;
 using Content.Server.Players.PlayTimeTracking;
 using Content.Server.Popups;
@@ -16,6 +15,7 @@ using Content.Shared.GameTicking;
 using Content.Shared.Hands.Components;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Inventory;
+using Content.Shared.Mind;
 using Content.Shared.PDA;
 using Content.Shared.Players.PlayTimeTracking;
 using Content.Shared.Popups;
@@ -31,6 +31,7 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.Administration.Systems
 {
@@ -52,6 +53,7 @@ namespace Content.Server.Administration.Systems
         [Dependency] private readonly SharedAudioSystem _audio = default!;
         [Dependency] private readonly StationRecordsSystem _stationRecords = default!;
         [Dependency] private readonly TransformSystem _transform = default!;
+        [Dependency] private readonly IPrototypeManager _protoMan = default!;
 
         private readonly Dictionary<NetUserId, PlayerInfo> _playerList = new();
 
@@ -105,13 +107,11 @@ namespace Content.Server.Administration.Systems
 
             foreach (var (id, data) in _playerList)
             {
-                if (!data.ActiveThisRound)
+                if (!data.ActiveThisRound
+                    || !_playerManager.TryGetPlayerData(id, out var playerData)
+                    || !_playerManager.TryGetSessionById(id, out var session))
                     continue;
 
-                if (!_playerManager.TryGetPlayerData(id, out var playerData))
-                    return;
-
-                _playerManager.TryGetSessionById(id, out var session);
                 _playerList[id] = GetPlayerInfo(playerData, session);
             }
 
@@ -158,11 +158,13 @@ namespace Content.Server.Administration.Systems
         private void OnRoleEvent(RoleEvent ev)
         {
             var session = _minds.GetSession(ev.Mind);
-            if (!ev.Antagonist || session == null)
+
+            if (!ev.RoleTypeUpdate || session == null)
                 return;
 
             UpdatePlayerList(session);
         }
+
 
         private void OnAdminPermsChanged(AdminPermsChangedEventArgs obj)
         {
@@ -231,9 +233,16 @@ namespace Content.Server.Administration.Systems
             }
 
             var antag = false;
+
+            RoleTypePrototype roleType = new();
             var startingRole = string.Empty;
-            if (_minds.TryGetMind(session, out var mindId, out _))
+            if (_minds.TryGetMind(session, out var mindId, out var mindComp))
             {
+                if (_protoMan.TryIndex(mindComp.RoleType, out var role))
+                    roleType = role;
+                else
+                    Log.Error($"{ToPrettyString(mindId)} has invalid Role Type '{mindComp.RoleType}'. Displaying '{Loc.GetString(roleType.Name)}' instead");
+
                 antag = _role.MindIsAntagonist(mindId);
                 startingRole = _jobs.MindTryGetJobName(mindId);
             }
@@ -247,7 +256,7 @@ namespace Content.Server.Administration.Systems
                 overallPlaytime = playTime;
             }
 
-            return new PlayerInfo(name, entityName, identityName, startingRole, antag, GetNetEntity(session?.AttachedEntity), data.UserId,
+            return new PlayerInfo(name, entityName, identityName, startingRole, antag, roleType, GetNetEntity(session?.AttachedEntity), data.UserId,
                 connected, _roundActivePlayers.Contains(data.UserId), overallPlaytime);
         }
 

@@ -1,6 +1,7 @@
 - type: entity
   id: OrganShadowkinBrain
   parent: OrganHumanBrain
+  description: "Oops, I should put this back where I found it."
   components:
   - type: Sprite
     sprite: Mobs/Species/Shadowkin/organs.rsi
@@ -9,7 +10,7 @@
 - type: entity
   id: OrganShadowkinEyes
   parent: OrganHumanEyes
-  description: I see beyond anything you ever will!
+  description: "I see beyond anything you ever will!"
   components:
   - type: Sprite
     sprite: Mobs/Species/Shadowkin/organs.rsi
@@ -19,15 +20,27 @@
 - type: entity
   id: OrganShadowkinEars
   parent: OrganHumanEars
-  description: Hey, listen!
+  description: "Hey, listen!"
   components:
   - type: Sprite
     sprite: Mobs/Species/Shadowkin/organs.rsi
     state: ears
 
 - type: entity
+  id: OrganShadowkinCore
+  parent: OrganHumanLungs
+  description: "What is this thing?"
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Shadowkin/organs.rsi
+    layers:
+    - state: core
+
+
+- type: entity
   id: OrganShadowkinTongue
   parent: OrganHumanTongue
+  description: "What does this do again?"
   components:
   - type: Sprite
     sprite: Mobs/Species/Shadowkin/organs.rsi
@@ -37,6 +50,7 @@
 - type: entity
   id: OrganShadowkinAppendix
   parent: OrganHumanAppendix
+  description: "I think it does nothing..."
   components:
   - type: Sprite
     sprite: Mobs/Species/Shadowkin/organs.rsi
@@ -47,6 +61,7 @@
 - type: entity
   id: OrganShadowkinHeart
   parent: OrganHumanHeart
+  description: "Oops, I think this belongs to someone!"
   components:
   - type: Sprite
     sprite: Mobs/Species/Shadowkin/organs.rsi
@@ -101,7 +116,7 @@
 - type: entity
   id: OrganShadowkinKidneys
   parent: OrganHumanKidneys
-  description: Give the kid their knees back, please, this is the third time this week.
+  description: "Give the kid their knees back, please, this is the third time this week."
   components:
   - type: Sprite
     sprite: Mobs/Species/Shadowkin/organs.rsi

@@ -418,6 +418,9 @@
   id: ClothMade
 
 - type: Tag
+  id: ClothingHeadHelmetBasic
+
+- type: Tag
   id: ClownMask
 
 - type: Tag
@@ -596,6 +599,9 @@
 
 - type: Tag
   id: EmitterBolt
+
+- type: Tag
+  id: Envirohelm
 
 - type: Tag
   id: Enzyme
@@ -1068,7 +1074,13 @@
   id: PlantSampleTaker
 
 - type: Tag
+  id: HydroponicsToolClippers
+
+- type: Tag
   id: PlasmaGlassShard
+
+- type: Tag
+  id: PlasmamanSafe
 
 - type: Tag
   id: Plastic
@@ -1078,6 +1090,12 @@
 
 - type: Tag
   id: PlushieGhost
+
+- type: Tag
+  id: SiliconMob
+
+- type: Tag
+  id: WeldbotFixableStructure
 
 - type: Tag
   id: PlushieSharkBlue
@@ -1270,6 +1288,9 @@
   id: Steak
 
 - type: Tag
+  id: Stunbaton
+
+- type: Tag
   id: SubdermalImplant
 
 - type: Tag
@@ -1369,6 +1390,9 @@
   id: WeaponAntiqueLaser
 
 - type: Tag
+  id: WeaponDisabler
+
+- type: Tag
   id: WeaponPistolCHIMPUpgradeKit
 
 - type: Tag
@@ -1376,6 +1400,9 @@
 
 - type: Tag
   id: WeldingMask
+
+- type: Tag
+  id: WeldingTool
 
 - type: Tag
   id: WetFloorSign

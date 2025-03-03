@@ -156,3 +156,33 @@
     - Azaziba
     requires:
     - Draconic
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: ChittinTranslatorImplant
+  name: chittin translator implant
+  description: An implant giving the ability to understand and speak Chittin.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TranslatorImplant
+    understood:
+    - Chittin
+    spoken:
+    - Chittin
+    requires:
+    - TauCetiBasic
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: SiikMaasTranslatorImplant
+  name: siik'maas translator implant
+  description: An implant giving the ability to understand and speak Siik'maas.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TranslatorImplant
+    understood:
+    - SiikMaas
+    spoken:
+    - SiikMaas
+    requires:
+    - TauCetiBasic

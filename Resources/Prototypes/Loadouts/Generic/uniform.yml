@@ -551,6 +551,7 @@
         - Command
 
 # Kimono
+
 - type: loadout
   id: LoadoutClothingJumpsuitKimono
   category: Uniform
@@ -2136,6 +2137,36 @@
   customColorTint: true
   items:
     - ClothingUniformJumpsuitYogaGymBra
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+
+- type: loadout
+  id: LoadoutUniformJumpsuitBlackTurtleneck
+  category: Uniform
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitBlackTurtleneck
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+
+- type: loadout
+  id: LoadoutUniformJumpsuitBlackTurtleneckFlipped
+  category: Uniform
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitBlackTurtleneckFlipped
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutUniformsCivilian

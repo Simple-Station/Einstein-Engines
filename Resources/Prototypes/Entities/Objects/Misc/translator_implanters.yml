@@ -91,3 +91,19 @@
   components:
   - type: Implanter
     implant: AzazibaTranslatorImplant
+
+- type: entity
+  id: ChittinTranslatorImplanter
+  parent: [ BaseTranslatorImplanter ]
+  name: chittin translator implant
+  components:
+  - type: Implanter
+    implant: ChittinTranslatorImplant
+
+- type: entity
+  id: SiikMaasTranslatorImplanter
+  parent: [ BaseTranslatorImplanter ]
+  name: siik'maas translator implant
+  components:
+  - type: Implanter
+    implant: SiikMaasTranslatorImplant

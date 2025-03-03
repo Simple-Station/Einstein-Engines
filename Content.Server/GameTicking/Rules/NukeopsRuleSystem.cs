@@ -13,7 +13,6 @@ using Content.Server.RoundEnd;
 using Content.Server.Shuttles.Events;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Station.Components;
-using Content.Server.Store.Components;
 using Content.Server.Store.Systems;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
@@ -37,9 +36,9 @@ namespace Content.Server.GameTicking.Rules;
 
 public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
 {
+    [Dependency] private readonly AntagSelectionSystem _antag = default!;
     [Dependency] private readonly EmergencyShuttleSystem _emergency = default!;
     [Dependency] private readonly NpcFactionSystem _npcFaction = default!;
-    [Dependency] private readonly AntagSelectionSystem _antag = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
     [Dependency] private readonly RoundEndSystem _roundEndSystem = default!;
     [Dependency] private readonly StoreSystem _store = default!;
@@ -64,6 +63,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
         SubscribeLocalEvent<NukeOperativeComponent, EntityZombifiedEvent>(OnOperativeZombified);
 
         SubscribeLocalEvent<NukeOpsShuttleComponent, MapInitEvent>(OnMapInit);
+        SubscribeLocalEvent<NukeopsRoleComponent, GetBriefingEvent>(OnGetBriefing);
 
         SubscribeLocalEvent<ConsoleFTLAttemptEvent>(OnShuttleFTLAttempt);
         SubscribeLocalEvent<WarDeclaredEvent>(OnWarDeclared);
@@ -72,7 +72,9 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
         SubscribeLocalEvent<NukeopsRuleComponent, AfterAntagEntitySelectedEvent>(OnAfterAntagEntSelected);
     }
 
-    protected override void Started(EntityUid uid, NukeopsRuleComponent component, GameRuleComponent gameRule,
+    protected override void Started(EntityUid uid,
+        NukeopsRuleComponent component,
+        GameRuleComponent gameRule,
         GameRuleStartedEvent args)
     {
         var eligible = new List<Entity<StationEventEligibleComponent, NpcFactionMemberComponent>>();
@@ -92,7 +94,9 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
     }
 
     #region Event Handlers
-    protected override void AppendRoundEndText(EntityUid uid, NukeopsRuleComponent component, GameRuleComponent gameRule,
+    protected override void AppendRoundEndText(EntityUid uid,
+        NukeopsRuleComponent component,
+        GameRuleComponent gameRule,
         ref RoundEndTextAppendEvent args)
     {
         var winText = Loc.GetString($"nukeops-{component.WinType.ToString().ToLower()}");
@@ -233,7 +237,8 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
 
         // If the disk is currently at Central Command, the crew wins - just slightly.
         // This also implies that some nuclear operatives have died.
-        SetWinType(ent, diskAtCentCom
+        SetWinType(ent,
+            diskAtCentCom
             ? WinType.CrewMinor
             : WinType.OpsMinor);
         ent.Comp.WinConditions.Add(diskAtCentCom
@@ -266,10 +271,10 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
     {
         var map = Transform(ent).MapID;
 
-        var rules = EntityQueryEnumerator<NukeopsRuleComponent, LoadMapRuleComponent>();
-        while (rules.MoveNext(out var uid, out _, out var mapRule))
+        var rules = EntityQueryEnumerator<NukeopsRuleComponent, RuleGridsComponent>();
+        while (rules.MoveNext(out var uid, out _, out var grids))
         {
-            if (map != mapRule.Map)
+            if (map != grids.Map)
                 continue;
             ent.Comp.AssociatedRule = uid;
             break;
@@ -330,7 +335,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
             if (nukeops.WarDeclaredTime != null)
                 continue;
 
-            if (TryComp<LoadMapRuleComponent>(uid, out var mapComp) && Transform(ev.DeclaratorEntity).MapID != mapComp.Map)
+            if (TryComp<RuleGridsComponent>(uid, out var grids) && Transform(ev.DeclaratorEntity).MapID != grids.Map)
                 continue;
 
             var newStatus = GetWarCondition(nukeops, ev.Status);
@@ -451,7 +456,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
 
         // Check that there are spawns available and that they can access the shuttle.
         var spawnsAvailable = EntityQuery<NukeOperativeSpawnerComponent>(true).Any();
-        if (spawnsAvailable && CompOrNull<LoadMapRuleComponent>(ent)?.Map == shuttleMapId)
+        if (spawnsAvailable && CompOrNull<RuleGridsComponent>(ent)?.Map == shuttleMapId)
             return; // Ghost spawns can still access the shuttle. Continue the round.
 
         // The shuttle is inaccessible to both living nuke operatives and yet to spawn nuke operatives,
@@ -461,8 +466,11 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
             : WinCondition.AllNukiesDead);
 
         SetWinType(ent, WinType.CrewMajor, false);
-        _roundEndSystem.DoRoundEndBehavior(
-            nukeops.RoundEndBehavior, nukeops.EvacShuttleTime, nukeops.RoundEndTextSender, nukeops.RoundEndTextShuttleCall, nukeops.RoundEndTextAnnouncement);
+        _roundEndSystem.DoRoundEndBehavior(nukeops.RoundEndBehavior,
+            nukeops.EvacShuttleTime,
+            nukeops.RoundEndTextSender,
+            nukeops.RoundEndTextShuttleCall,
+            nukeops.RoundEndTextAnnouncement);
 
         // prevent it called multiple times
         nukeops.RoundEndBehavior = RoundEndBehavior.Nothing;
@@ -470,21 +478,27 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
 
     private void OnAfterAntagEntSelected(Entity<NukeopsRuleComponent> ent, ref AfterAntagEntitySelectedEvent args)
     {
-        if (ent.Comp.TargetStation is not { } station)
-            return;
+        var target = (ent.Comp.TargetStation is not null) ? Name(ent.Comp.TargetStation.Value) : "the target";
 
-        _antag.SendBriefing(args.Session, Loc.GetString("nukeops-welcome",
-                ("station", station),
+        _antag.SendBriefing(args.Session,
+            Loc.GetString("nukeops-welcome",
+                ("station", target),
                 ("name", Name(ent))),
             Color.Red,
             ent.Comp.GreetSoundNotification);
+    }
+
+    private void OnGetBriefing(Entity<NukeopsRoleComponent> role, ref GetBriefingEvent args)
+    {
+        // TODO Different character screen briefing for the 3 nukie types
+        args.Append(Loc.GetString("nukeops-briefing"));
     }
 
     /// <remarks>
     /// Is this method the shitty glue holding together the last of my sanity? yes.
     /// Do i have a better solution? not presently.
     /// </remarks>
-    private EntityUid? GetOutpost(Entity<LoadMapRuleComponent?> ent)
+    private EntityUid? GetOutpost(Entity<RuleGridsComponent?> ent)
     {
         if (!Resolve(ent, ref ent.Comp, false))
             return null;

@@ -60,4 +60,19 @@ public sealed partial class SlotDefinition
     ///     Entity blacklist for CanEquip checks.
     /// </summary>
     [DataField("blacklist")] public EntityWhitelist? Blacklist = null;
+
+    /// <summary>
+    ///     Entity whitelist for CanEquip checks, on spawn only.
+    /// </summary>
+    [DataField("spawnWhitelist")] public EntityWhitelist? SpawnWhitelist = null;
+
+    /// <summary>
+    ///     Entity blacklist for CanEquip checks, on spawn only.
+    /// </summary>
+    [DataField("spawnBlacklist")] public EntityWhitelist? SpawnBlacklist = null;
+
+    /// <summary>
+    ///     Is this slot disabled? Could be due to severing or other reasons.
+    /// </summary>
+    [DataField] public bool Disabled;
 }

@@ -19,6 +19,7 @@ character-item-group-LoadoutSmokes = Smokeables
 character-item-group-LoadoutBoxKits = Survival Kits
 character-item-group-LoadoutWritables = Writing Tools
 character-item-group-LoadoutPets = Pets
+character-item-group-LoadoutCards = Playing Cards
 
 # Job Specific Template
 character-item-group-LoadoutJOBBackpacks = JOB Backpacks
@@ -86,6 +87,7 @@ character-item-group-LoadoutHeadOfPersonnelUniforms = Head of Personnel Uniforms
 character-item-group-LoadoutBlueshieldOfficerBackpacks = Blueshield Officer Backpacks
 character-item-group-LoadoutBlueshieldOfficerVests = Blueshield Officer Vests
 character-item-group-LoadoutBlueshieldOfficerUniforms = Blueshield Officer Uniforms
+character-item-group-LoadoutBlueshieldOfficerPrimary = Blueshield Officer Primary Weapon
 
 # Dignitary - Magistrate
 character-item-group-LoadoutMagistrateHead = Magistrate Headgear
@@ -95,7 +97,8 @@ character-item-group-LoadoutMagistrateUniforms = Magistrate Uniforms
 
 # Dignitary - Nanotrasen Representative
 character-item-group-LoadoutNanorepBackpacks = Nanotrasen Representative Backpacks
-character-tiem-group-LoadoutNanorepUniforms = Nanotrasen Representative Uniforms
+character-item-group-LoadoutNanorepUniforms = Nanotrasen Representative Uniforms
+character-item-group-LoadoutNanotrasenRepresentativeWeapon = Nanotrasen Representative Weapons
 
 # Engineering
 character-item-group-LoadoutEngineeringBackpacks = Engineering Backpacks
@@ -796,3 +799,7 @@ character-item-group-LoadoutReporterUniforms = Reporter Uniforms
 # Traits - Languages
 character-item-group-TraitsLanguagesBasic = Basic Languages
 character-item-group-TraitsAccents = Accents
+
+# Traits - Mind Or Machine
+character-item-group-TraitsMind = Mind Over Machine
+character-item-group-TraitsMachine = Machine Over Mind

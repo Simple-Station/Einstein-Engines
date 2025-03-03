@@ -4,6 +4,67 @@
   items:
     - type: loadout
       id: LoadoutClothingBackpackBlueshield
+    - type: loadout
+      id: LoadoutClothingSatchelBlueshield
+    - type: loadout
+      id: LoadoutClothingDuffelBlueshield
+
+#- type: characterItemGroup
+#  id: LoadoutJOBBelt
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutJOBEars
+#  maxItems: 1
+#  items:
+
+- type: characterItemGroup
+  id: LoadoutBlueshieldOfficerPrimary
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutBSORifleChester
+    - type: loadout
+      id: LoadoutBSOEnergyShield
+    - type: loadout
+      id: LoadoutBSORifleBRDIR25
+
+#- type: characterItemGroup
+#  id: LoadoutJOBEyes
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutJOBGloves
+#  maxItems: 1
+#  items:
+
+- type: characterItemGroup
+  id: LoadoutBlueshieldOfficerHats
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingBlueshieldBeretNavy
+    - type: loadout
+      id: LoadoutClothingBlueshieldBeretOfficer
+    - type: loadout
+      id: LoadoutClothingBlueshieldCowboyHat
+
+#- type: characterItemGroup
+#  id: LoadoutJOBId
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutJOBNeck
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutJOBMask
+#  maxItems: 1
+#  items:
 
 - type: characterItemGroup
   id: LoadoutBlueshieldOfficerVests
@@ -13,6 +74,21 @@
       id: LoadoutClothingBlueshieldArmoredJacket
     - type: loadout
       id: LoadoutClothingBlueshieldArmoredCowboyJacket
+    - type: loadout
+      id: LoadoutClothingBlueshieldArmorVest
+    - type: loadout
+      id: LoadoutClothingBlueshieldArmoredMarine
+    - type: loadout
+      id: LoadoutClothingBlueshieldArmoredVest
+    - type: loadout
+      id: LoadoutClothingBlueshieldArmoredKimono
+    - type: loadout
+      id: LoadoutClothingBlueshieldArmoredCoat
+
+#- type: characterItemGroup
+#  id: LoadoutJOBShoes
+#  maxItems: 1
+#  items:
 
 - type: characterItemGroup
   id: LoadoutBlueshieldOfficerUniforms
@@ -22,4 +98,3 @@
       id: LoadoutClothingUniformJumpskirtBlueshieldOfficer
     - type: loadout
       id: LoadoutClothingUniformJumpsuitBlueshieldOfficer
-      

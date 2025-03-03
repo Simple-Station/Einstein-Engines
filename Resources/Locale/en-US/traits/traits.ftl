@@ -80,6 +80,21 @@ trait-description-Stutter =
 trait-name-Southern = Southern Drawl
 trait-description-Southern = You have a different way of speakin'.
 
+trait-name-GermanAccent = German accent
+trait-description-GermanAccent = You speak with a German accent.
+
+trait-name-RussianAccent = Russian accent
+trait-description-RussianAccent = You speak with a Russian accent.
+
+trait-name-FrenchAccent = French accent
+trait-description-FrenchAccent = You speak with a French accent.
+
+trait-name-ItalianAccent = Italian accent
+trait-description-ItalianAccent = You speak with a Italian accent.
+
+trait-name-SpanishAccent = Spanish accent
+trait-description-SpanishAccent = You speak with a Spanish accent.
+
 trait-name-Snoring = Snoring
 trait-description-Snoring = You tend to snore loudly while sleeping.
 
@@ -94,6 +109,9 @@ trait-name-NormalVisionHarpy = Trichromat Modification
 trait-description-NormalVisionHarpy =
     Your eyes have been modified by means of advanced medicine to see in the standard colors of Red, Green, and Blue.
     You do not have the usual vision anomaly that your species may possess.
+
+trait-name-SkeletonAccent = Skeleton Accent
+trait-description-SkeletonAccent = You have a humerus skeleton accent that will rattle others to the bone!
 
 trait-name-NormalVision = Trichromat Modification
 trait-description-NormalVision =
@@ -328,7 +346,7 @@ trait-description-Clumsy =
 trait-name-Small = Small
 trait-description-Small =
     You are much smaller than a typical person, and can climb into spaces others would not normally be able to fit into, such as duffel bags.
-    This trait does not in any way modify your character's size, it merely requires that your character be at most the size of a standard Felinid.
+    This trait does not in any way modify your character's size, it merely requires that your character be at most the size of a standard Tajaran.
 
 trait-name-TemperatureTolerance = Temperature Tolerance
 trait-description-TemperatureTolerance =
@@ -365,7 +383,7 @@ trait-description-StrikingCalluses =
     Striking Calluses consist of bony dermal deposits grafted into a user's hands, either inside the palm
     for "Tiger Style" fighting, or just below the knuckles for those who favor traditional boxing.
     Owners of prosthetic or bionic limbs would instead have a hard plastic shell over their knuckles.
-    These enhancements increase your unarmed strike damage by 1 point base, but do not confer
+    These enhancements increase your unarmed strike damage by 2 point base, but do not confer
     any benefits to any form of armed melee.
 
 trait-name-Spinarette = Bionic Spinarette
@@ -373,8 +391,7 @@ trait-description-Spinarette =
     This vatgrown organ-- trademarked and patented by the Cybersun Corporation, is marketed as a highly
     utilitarian enhancement, and sold in clinics all across known space. It consists of a nodule that is traditionally
     implanted right below the wrist, which absorbs bodily lipids to convert into all natural silk. A small opening
-    in the palm allows the user to 'spin' this thread. Users of this enhancement typically require twice as much food
-    as a standard Sol Human, owing to the high metabolic cost of artificial Sericulture.
+    in the palm allows the user to 'spin' this thread.
 
 trait-name-AddictionNicotine = Nicotine Addiction
 trait-description-AddictionNicotine =
@@ -512,11 +529,62 @@ trait-description-BrittleBoneDisease =
     Also known as "brittle bone disease", people with this genetic disorder have bones that are easily broken,
     often simply by moving. This trait reduces your threshold for critical injury by 50 points.
 
-trait-name-LightAmplification = CyberEyes Module: Light Amplification
+trait-name-LightAmplification = Cyber-Eyes: Light Amplification Module
 trait-description-LightAmplification =
-    Your CyberEyes have been enhanced with a light amplifier module, enabling the user to toggle between standard sight and "Night Vision" mode.
+    Your Cyber-Eyes have been enhanced with a light amplifier module, enabling the user to toggle between standard sight and "Night Vision" mode.
 
-trait-name-ThermographicVision = CyberEyes Module: Thermographic Scanner
+trait-name-ThermographicVision = Cyber-Eyes: Thermographic Scanner Module
 trait-description-ThermographicVision =
-    Your CyberEyes have been enhanced with a Thermographic Scanner. When enabled, it captures a snapshot of the user's surroundings, while highlighting all
+    Your Cyber-Eyes have been enhanced with a Thermographic Scanner. When enabled, it captures a snapshot of the user's surroundings, while highlighting all
+    biological life forms. It can even detect individuals through the walls of a station.
+
+trait-name-ShadowkinBlackeye = Blackeye
+trait-description-ShadowkinBlackeye =
+    You lose your special Shadowkin powers & respect amongst your peers, in return for some points. Effectively, you are only a Shadowkin in name, not in practice.
+
+trait-name-LyreBird = Lyre Bird
+trait-description-LyreBird =
+    Your natural talent for mimicry vastly exceeds that of other Harpies. You have the ability to perfectly imitate songs in their entirety.
+    Be your own full symphony orchestra, jazz group, or metal band.
+
+trait-name-NaniteAutoRepairBots = Nanite Auto-Repair Bots
+trait-description-NaniteAutoRepairBots =
+    Your chassis has been outfitted with Nanite Repair Drones. Whenever your sensors detect that you've recieved structural damage, the NRDs will activate to bring you back to operational standards.
+
+trait-name-BionicLeg = Bionic Leg
+trait-description-BionicLeg =
+    One or more of your limbs have been replaced with an expensive, state of the art bionic. It could be either one made of highly realistic synthflesh,
+    or a more obvious metal limb. This limb provides enhanced speed to it's user, allowing you to run away from situations faster or get to a place faster.
+
+trait-name-FlareShieldingModule = I.P.C Eye Module: Flare Shielding
+trait-description-FlareShieldingModule =
+    Your cybereyes have been fitted with a photochromic lense that automatically darkens in response to intense stimuli.
+    This provides immunity from most bright flashes of light, such as those from welding arcs, exclusive to IPCs because it only needs the module
+    skipping the eye insertion process.
+
+trait-name-SecurityEyesModule = I.P.C Eye Module: Sechud
+trait-description-SecurityEyesModule =
+    A module installed in IPCs that work for the security department and similar, this module is considered contraband and may be removed if the unit isn't working for the security department.
+
+trait-name-MedicalEyesModule = I.P.C Eye Module: Medical
+trait-description-MedicalEyesModule =
+    Your eyes have been upgraded to include a built-in Medical Hud, allowing you to track the relative health condition of biological organisms.
+
+trait-name-DiagnosticEyesModule = I.P.C Eye Module: Diagnostics
+trait-description-DiagnosticEyesModule =
+    You possess a built-in Diagnostic Hud, allowing you to track the condition of synthetic entities.
+
+trait-name-OmniEyesModule = I.P.C Eye Module: Premium Model
+trait-description-OmniEyesModule =
+    This upgrade provides the combined benefits of a SecHud, MedHud, and a Diagnostics Module.
+    Note that this module is considered Contraband for anyone not under the employ of station Security personel,
+    and may be disabled by your employer before dispatch to the station.
+
+trait-name-LightAmplificationModule = I.P.C Eye Module: Light Amplification
+trait-description-LightAmplificationModule =
+    Your vision has been enhanced with a light amplifier module, enabling the user to toggle between standard sight and "Night Vision" mode.
+
+trait-name-ThermographicVisionModule = I.P.C Eye Module: Thermographic Scanner
+trait-description-ThermographicVisionModule =
+    Your vision has been enhanced with a Thermographic Scanner. When enabled, it captures a snapshot of the user's surroundings, while highlighting all
     biological life forms. It can even detect individuals through the walls of a station.

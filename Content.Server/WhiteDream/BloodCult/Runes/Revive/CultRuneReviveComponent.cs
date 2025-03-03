@@ -1,4 +1,4 @@
-﻿using Content.Shared.Damage;
+using Content.Shared.Damage;
 using Content.Shared.FixedPoint;
 
 namespace Content.Server.WhiteDream.BloodCult.Runes.Revive;
@@ -14,9 +14,12 @@ public sealed partial class CultRuneReviveComponent : Component
     {
         DamageDict = new Dictionary<string, FixedPoint2>
         {
-            ["Brute"] = -100,
-            ["Burn"] = -100,
-            ["Heat"] = -100,
+            ["Blunt"] = -33,
+            ["Slash"] = -33,
+            ["Piercing"] = -33,
+            ["Heat"] = -33,
+            ["Cold"] = -33,
+            ["Shock"] = -33,
             ["Asphyxiation"] = -100,
             ["Bloodloss"] = -100,
             ["Poison"] = -50,

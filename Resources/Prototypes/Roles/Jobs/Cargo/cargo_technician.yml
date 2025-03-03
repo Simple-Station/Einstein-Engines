@@ -3,7 +3,6 @@
   name: job-name-cargotech
   description: job-description-cargotech
   playTimeTracker: JobCargoTechnician
-  antagAdvantage: 2 # DeltaV - Reduced TC: External Access
   startingGear: CargoTechGear
   icon: "JobIconCargoTechnician"
   supervisors: job-supervisors-qm
@@ -16,6 +15,8 @@
 
 - type: startingGear
   id: CargoTechGear
+  subGear:
+  - CargoTechPlasmamanGear
   equipment:
     head: ClothingHeadHatCargosoft
     jumpsuit: ClothingUniformJumpsuitCargo
@@ -27,3 +28,11 @@
   innerClothingSkirt: ClothingUniformJumpskirtCargo
   satchel: ClothingBackpackSatchelCargoFilled
   duffelbag: ClothingBackpackDuffelCargoFilled
+
+- type: startingGear
+  id: CargoTechPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitCargo
+    head: ClothingHeadEnvirohelmCargo
+    gloves: ClothingHandsGlovesEnviroglovesCargo

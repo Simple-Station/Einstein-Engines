@@ -20,6 +20,10 @@ using Content.Shared.Wieldable.Components;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
 using Robust.Shared.Timing;
+// Lavaland Change
+using Content.Shared.StatusEffect;
+using Content.Shared.Stunnable;
+using Robust.Shared.Audio;
 
 namespace Content.Shared.Wieldable;
 
@@ -35,7 +39,8 @@ public sealed class WieldableSystem : EntitySystem
     [Dependency] private readonly SharedGunSystem _gun = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly INetManager _netManager = default!;
-
+    [Dependency] private readonly StatusEffectsSystem _statusEffects = default!; // Lavaland Change
+    [Dependency] private readonly SharedStunSystem _stun = default!; // Lavaland Change
     public override void Initialize()
     {
         base.Initialize();
@@ -63,8 +68,20 @@ public sealed class WieldableSystem : EntitySystem
         if (TryComp<WieldableComponent>(uid, out var wieldable) &&
             !wieldable.Wielded)
         {
+            // Lavaland Change: If the weapon can fumble, the player will get knocked down if they try to use the weapon without wielding it.
+            if (component.FumbleOnAttempt)
+            {
+                args.Message = Loc.GetString("wieldable-component-requires-fumble", ("item", uid));
+                var playSound = !_statusEffects.HasStatusEffect(args.PlayerUid, "KnockedDown");
+                _stun.TryKnockdown(args.PlayerUid, TimeSpan.FromSeconds(1.5f), true);
+                if (playSound)
+                    _audioSystem.PlayPredicted(new SoundPathSpecifier("/Audio/Effects/slip.ogg"), args.PlayerUid, args.PlayerUid);
+            }
+            else
+            {
+                args.Message = Loc.GetString("wieldable-component-requires", ("item", uid));
+            }
             args.Cancelled = true;
-            args.Message = Loc.GetString("wieldable-component-requires", ("item", uid));
         }
     }
 
