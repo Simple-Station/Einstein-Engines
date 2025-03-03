@@ -186,6 +186,20 @@
   maxGroupSize: 2
   radius: 4
 
+- type: biomeMarkerLayer
+  id: OreTungsten
+  entityMask:
+    AsteroidRock: AsteroidRockTungsten
+    WallRock: WallRockTungsten
+    WallRockBasalt: WallRockBasaltTungsten
+    WallRockChromite: WallRockChromiteTungsten
+    WallRockSand: WallRockSandTungsten
+    WallRockSnow: WallRockSnowTungsten
+  maxCount: 6
+  minGroupSize: 3
+  maxGroupSize: 6
+  radius: 4
+
 # Artifact Fragment
 - type: biomeMarkerLayer
   id: OreArtifactFragment
