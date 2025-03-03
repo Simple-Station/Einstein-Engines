@@ -500,7 +500,7 @@
   id: AsteroidRockTungsten
   parent: AsteroidRock
   description: An ore vein rich with wolframite.
-  suffix: Copper
+  suffix: Tungsten
   components:
     - type: OreVein
       oreChance: 1.0
@@ -923,7 +923,7 @@
   id: WallRockTungsten
   parent: WallRock
   description: An ore vein rich with wolframite.
-  suffix: Copper
+  suffix: Tungsten
   components:
     - type: OreVein
       oreChance: 1.0
@@ -1320,7 +1320,7 @@
   id: WallRockBasaltTungsten
   parent: WallRockBasalt
   description: An ore vein rich with wolframite.
-  suffix: Copper
+  suffix: Tungsten
   components:
     - type: OreVein
       oreChance: 1.0
@@ -1717,7 +1717,7 @@
   id: WallRockSnowTungsten
   parent: WallRockSnow
   description: An ore vein rich with wolframite.
-  suffix: Copper
+  suffix: Tungsten
   components:
     - type: OreVein
       oreChance: 1.0
@@ -2485,10 +2485,32 @@
         - state: rock_lead
 
 - type: entity
+  id: WallRockChromiteCopper
+  parent: WallRockChromite
+  description: An ore vein rich with native copper.
+  suffix: Copper
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreCopper
+    - type: Sprite
+      layers:
+        - state: rock_chromite
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_chromite_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_chromite_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_chromite_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_chromite_west
+        - state: rock_copper
+
+- type: entity
   id: WallRockChromiteTungsten
   parent: WallRockChromite
   description: An ore vein rich with wolframite.
-  suffix: Copper
+  suffix: Tungsten
   components:
     - type: OreVein
       oreChance: 1.0
