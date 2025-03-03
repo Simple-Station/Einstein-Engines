@@ -64,6 +64,8 @@
     - type: Tag
       tags:
       - Flashlight
+    - type: StackPrice
+      price: 50
 
 - type: entity
   parent: Lantern

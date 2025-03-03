@@ -27,3 +27,5 @@
   - type: GuideHelp
     guides:
     - Cargo
+  - type: StaticPrice
+    price: 75

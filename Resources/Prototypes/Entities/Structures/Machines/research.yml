@@ -56,6 +56,8 @@
   - type: GuideHelp
     guides:
     - Science
+  - type: StackPrice
+    price: 20000  # Hello there extremely rare and valuable object that the crew can't rebuild. Would you like to steal it?
 
 - type: entity
   id: BaseResearchAndDevelopmentPointSource

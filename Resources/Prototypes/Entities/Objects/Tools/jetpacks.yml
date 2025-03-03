@@ -56,7 +56,7 @@
       moleUsage: 0.00085
     - type: Appearance
     - type: StaticPrice
-      price: 100
+      price: 1000
 #    - type: DynamicPrice
 #      price: 100
     - type: ReverseEngineering # Nyano

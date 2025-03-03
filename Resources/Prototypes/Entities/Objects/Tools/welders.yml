@@ -115,7 +115,7 @@
     materialComposition:
       Steel: 200
   - type: StaticPrice
-    price: 40
+    price: 200
   - type: IgnitionSource
     temperature: 700
   - type: WeldingHealing # Same as Brutepack - Estacao Pirata IPCs
@@ -152,6 +152,8 @@
         - ReagentId: WeldingFuel
           Quantity: 250
         maxVol: 250
+  - type: StaticPrice
+    price: 600
 
 - type: entity
   name: advanced industrial welding tool
@@ -172,6 +174,8 @@
         maxVol: 500
   - type: Tool
     speedModifier: 1.5
+  - type: StaticPrice
+    price: 1000
 
 - type: entity
   name: experimental welding tool
@@ -202,6 +206,8 @@
         Quantity: 0.5
   - type: Tool
     speedModifier: 2
+  - type: StaticPrice
+    price: 3000  # Genuine reason to steal it from the CE.
 
 - type: entity
   name: emergency welding tool
@@ -229,3 +235,5 @@
     enabled: false
     radius: 1.0
     color: orange
+  - type: StaticPrice
+    price: 150

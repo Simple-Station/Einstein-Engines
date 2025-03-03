@@ -4,7 +4,7 @@
   name: materials-circuitry # N14TODO: Localise
   icon: { sprite: /Textures/_Nuclear14/Objects/Misc/materials.rsi, state: circuits_3 }
   color: "#8A9A5B"
-  price: 0.1
+  price: 1
 
 - type: material
   id: Lead
@@ -13,7 +13,7 @@
   unit: materials-unit-bar
   icon: { sprite: /Textures/_Nuclear14/Objects/Misc/materials.rsi, state: ingot_lead }
   color: "#C0C0C0"
-  price: 0.04
+  price: 0.40
 
 - type: material
   id: Aluminum
@@ -22,7 +22,7 @@
   unit: materials-unit-bar
   icon: { sprite: /Textures/_Nuclear14/Objects/Misc/materials.rsi, state: ingot_aluminum }
   color: "#C0C0C0"
-  price: 0.01
+  price: 0.10
 
 - type: material
   id: Copper
@@ -31,4 +31,4 @@
   unit: materials-unit-bar
   icon: { sprite: /Textures/_Nuclear14/Objects/Misc/materials.rsi, state: ingot_copper }
   color: "#B87333"
-  price: 0.01
+  price: 0.10

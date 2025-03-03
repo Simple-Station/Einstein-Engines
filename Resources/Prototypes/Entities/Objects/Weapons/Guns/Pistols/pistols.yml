@@ -121,6 +121,8 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/pistol.ogg
     fireOnDropChance: 0.3
+  - type: StackPrice
+    price: 750
 
 - type: entity
   name: viper
@@ -233,6 +235,8 @@
     containers:
       gun_magazine: !type:ContainerSlot
       gun_chamber: !type:ContainerSlot
+  - type: StackPrice
+    price: 1000
 
 - type: entity
   name: cobra
@@ -271,6 +275,8 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
     fireOnDropChance: 0.5
+  - type: StackPrice
+    price: 350
 
 - type: entity
   name: mk58
@@ -378,6 +384,8 @@
         whitelist:
           tags:
             - CartridgeMagnum
+  - type: StackPrice
+    price: 1000
 
 - type: entity
   name: N1984
