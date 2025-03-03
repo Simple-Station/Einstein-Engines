@@ -1,3 +1,4 @@
+using Content.Shared.Customization.Systems;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.Traits.Assorted.Components;
@@ -6,7 +7,13 @@ namespace Content.Shared.Traits.Assorted.Components;
 public sealed partial class DescriptionExtension
 {
     [DataField]
+    public List<CharacterRequirement> Requirements = new();
+
+    [DataField]
     public string Description = "";
+
+    [DataField]
+    public string RequirementsNotMetDescription = "";
 
     [DataField]
     public int FontSize = 12;
@@ -14,6 +21,8 @@ public sealed partial class DescriptionExtension
     [DataField]
     public string Color = "#ffffff";
 
+    /// todo: replace this with a CharacterRequirement; this will need updating a bunch of yml before this field can be safely removed.
+    /// Deprecated.
     [DataField]
     public bool RequireDetailRange = true;
 }

@@ -1,3 +1,4 @@
+using Content.Shared.Customization.Systems;
 using Content.Shared.Examine;
 using Content.Shared.Traits.Assorted.Components;
 
@@ -5,6 +6,8 @@ namespace Content.Shared.Traits.Assorted.Systems;
 
 public sealed class ExtendDescriptionSystem : EntitySystem
 {
+    [Dependency] private readonly CharacterRequirementsSystem _characterRequirements = default!;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -18,10 +21,12 @@ public sealed class ExtendDescriptionSystem : EntitySystem
 
         foreach (var desc in component.DescriptionList)
         {
-            if (!args.IsInDetailsRange && desc.RequireDetailRange)
+            if (!args.IsInDetailsRange && desc.RequireDetailRange
+                || !TryComp(args.Examiner, out MetaDataComponent? comp) || comp.EntityPrototype == null)
                 continue;
 
-            args.PushMarkup($"[font size ={desc.FontSize}][color={desc.Color}]{Loc.GetString(desc.Description, ("entity", uid))}[/color][/font]");
+            if(_characterRequirements.CheckRequirementsValid(desc.Requirements, args.Examiner, comp.EntityPrototype, out _))
+                args.PushMarkup($"[font size ={desc.FontSize}][color={desc.Color}]{Loc.GetString(desc.Description, ("entity", uid))}[/color][/font]");
         }
     }
 }
