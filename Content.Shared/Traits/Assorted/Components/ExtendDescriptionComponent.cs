@@ -7,7 +7,7 @@ namespace Content.Shared.Traits.Assorted.Components;
 public sealed partial class DescriptionExtension
 {
     [DataField]
-    public List<CharacterRequirement> Requirements = new();
+    public List<CharacterRequirement>? Requirements;
 
     [DataField]
     public string Description = "";
@@ -21,8 +21,6 @@ public sealed partial class DescriptionExtension
     [DataField]
     public string Color = "#ffffff";
 
-    /// todo: replace this with a CharacterRequirement; this will need updating a bunch of yml before this field can be safely removed.
-    /// Deprecated.
     [DataField]
     public bool RequireDetailRange = true;
 }

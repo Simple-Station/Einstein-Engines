@@ -43,7 +43,7 @@ public sealed partial class JobRequirementsManager : ISharedPlaytimeManager
 
     public bool TryGetTrackerTimes(ICommonSession id, [NotNullWhen(true)] out Dictionary<string, TimeSpan>? time)
     {
-        time = _roles;
+        time = new(_roles);
         return true;
     }
 

@@ -41,6 +41,16 @@ public sealed class CharacterRequirementsSystem : EntitySystem
                 : !requirement.Inverted;
     }
 
+    /// <summary>
+    ///     Checks if a character entity meets the specified requirements.
+    /// </summary>
+    /// <param name="requirements">The list of requirements to validate.</param>
+    /// <param name="characterUid">The entity ID of the character to check.</param>
+    /// <param name="prototype">The prototype associated with the requirements.</param>
+    /// <param name="reasons">Output list of reasons why requirements weren't met.</param>
+    /// <param name="depth">Current recursion depth for nested requirements.</param>
+    /// <param name="whitelisted">Whether the character is whitelisted.</param>
+    /// <returns>True if all requirements are met, false otherwise.</returns>
     public bool CheckRequirementsValid(List<CharacterRequirement> requirements, EntityUid characterUid, IPrototype prototype, out List<string> reasons, int depth = 0, bool whitelisted = false)
     {
         reasons = new List<string>();
