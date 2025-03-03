@@ -219,16 +219,17 @@
   id: WelderExperimental
   result: WelderExperimental
   category: Tools
-  completetime: 6
-  materials:
-    Steel: 800
-    Plasma: 200
+  completetime: 20
+  materials: # It has a really good sell price, so it should also have expensive materials
+    Tungsten: 800
+    Plasteel: 200
+    Circuitry: 200
 
 - type: latheRecipe
   id: JawsOfLife
   result: JawsOfLife
   category: Tools
-  completetime: 6
+  completetime: 20
   materials:
     Steel: 1000
     Glass: 500

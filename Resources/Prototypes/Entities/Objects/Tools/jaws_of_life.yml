@@ -66,6 +66,8 @@
     difficulty: 3
     recipes:
       - JawsOfLife
+  - type: StaticPrice
+    price: 3000
 
 - type: entity
   name: syndicate jaws of life

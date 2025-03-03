@@ -87,3 +87,5 @@
     - type: ContainerContainer
       containers:
         AccessOverrider-privilegedId: !type:ContainerSlot
+    - type: StaticPrice
+      price: 350

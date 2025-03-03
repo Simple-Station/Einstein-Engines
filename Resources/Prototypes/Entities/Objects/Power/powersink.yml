@@ -47,3 +47,5 @@
       state: powersink
     - type: WarpPoint
       location: powersink
+    - type: StackPrice
+      price: 5000

@@ -36,6 +36,8 @@
   - type: HitscanBatteryAmmoProvider
     proto: RedLightLaser
     fireCost: 50
+  - type: StackPrice
+    price: 100
 
 - type: entity
   name: potato battery

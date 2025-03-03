@@ -39,6 +39,8 @@
     sound: /Audio/SimpleStation14/Items/Handling/book_drop.ogg
   - type: EmitSoundOnLand
     sound: /Audio/SimpleStation14/Items/Handling/book_drop.ogg
+  - type: StackPrice
+    price: 10
 
 - type: entity
   id: BookSpaceEncyclopedia

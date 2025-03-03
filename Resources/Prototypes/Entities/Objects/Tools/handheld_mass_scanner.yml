@@ -36,7 +36,7 @@
       enum.RadarConsoleUiKey.Key:
         type: RadarConsoleBoundUserInterface
   - type: StaticPrice
-    price: 150
+    price: 750
   - type: ReverseEngineering # Delta
     difficulty: 3
     recipes:

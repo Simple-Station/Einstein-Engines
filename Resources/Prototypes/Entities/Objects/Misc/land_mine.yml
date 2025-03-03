@@ -45,6 +45,8 @@
       - Landmine
     requiredTriggeredSpeed: 0
     stepOn: true
+  - type: StackPrice
+    price: 500
 
 - type: entity
   name: kick mine

@@ -45,6 +45,8 @@
           True: { state: icon-open }
           False: { state: icon }
   - type: Appearance
+  - type: StaticPrice
+    price: 150
 
 - type: entity
   name: emergency toolbox
