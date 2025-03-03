@@ -67,11 +67,11 @@ public sealed partial class FootPrintsComponent : Component
     ///     Reagent volume used for footprints.
     /// </summary>
     [DataField]
-    public Solution ContainedSolution = new(3) { CanReact = true, MaxVolume = 5f, };
+    public Solution ContainedSolution = new(3) { CanReact = true, MaxVolume = 25f, };
 
     /// <summary>
     ///     Amount of reagents used per footprint.
     /// </summary>
     [DataField]
-    public FixedPoint2 FootprintVolume = 1f;
+    public FixedPoint2 FootprintVolume = 5f;
 }
