@@ -62,13 +62,13 @@ public sealed class CharacterRequirementsSystem : EntitySystem
             || !_playtimeManager.TryGetTrackerTimes(mind.Session, out var trackerTimes))
             return false;
 
-        return CheckRequirementsValid(requirements, jobPrototype, stationSpawningProfile, trackerTimes, whitelisted, prototype, _entManager, _protomanager, _configurationManager, out reasons, depth);
+        return CheckRequirementsValid(requirements, jobPrototype, stationSpawningProfile, trackerTimes, whitelisted, prototype, _entManager, _protomanager, _configurationManager, out reasons, depth, mind);
     }
 
     public bool CheckRequirementsValid(List<CharacterRequirement> requirements, JobPrototype job,
         HumanoidCharacterProfile profile, Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
-        out List<string> reasons, int depth = 0)
+        out List<string> reasons, int depth = 0, MindComponent? mind = null)
     {
         reasons = new List<string>();
         var valid = true;
@@ -79,7 +79,7 @@ public sealed class CharacterRequirementsSystem : EntitySystem
             // If it's inverted set valid to false when it's valid
             if (!requirement.IsValid(job, profile, playTimes, whitelisted, prototype,
                 entityManager, prototypeManager, configManager,
-                out var reason, depth))
+                out var reason, depth, mind))
             {
                 if (valid)
                     valid = requirement.Inverted;

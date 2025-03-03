@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Shared.CCVar;
 using Content.Shared.Mind;
 using Content.Shared.Preferences;
@@ -13,12 +14,15 @@ namespace Content.Shared.Customization.Systems;
 
 
 /// <summary>
-///     Requires the player to be whitelisted if whitelists are enabled
+///     Requires the player to be a specific antagonist
 /// </summary>
 [UsedImplicitly]
 [Serializable, NetSerializable]
-public sealed partial class CharacterWhitelistRequirement : CharacterRequirement
+public sealed partial class CharacterAntagonistRequirement : CharacterRequirement
 {
+    [DataField(required: true)]
+    public List<ProtoId<AntagPrototype>> Antagonists;
+
     public override bool IsValid(JobPrototype job,
         HumanoidCharacterProfile profile,
         Dictionary<string, TimeSpan> playTimes,
@@ -31,11 +35,21 @@ public sealed partial class CharacterWhitelistRequirement : CharacterRequirement
         int depth = 0,
         MindComponent? mind = null)
     {
-        reason = null;
-        if (!configManager.IsCVarRegistered("whitelist.enabled"))
-            return whitelisted;
+        // Considering this will not be used in the character creation menu, players will likely never see this text.
+        reason = Loc.GetString("character-antagonist-requirement", ("inverted", Inverted));
 
-        reason = Loc.GetString("character-whitelist-requirement", ("inverted", Inverted));
-        return !configManager.GetCVar(CCVars.WhitelistEnabled) || whitelisted;
+        if (mind == null)
+            return false;
+
+        foreach (var mindRoleComponent in mind.MindRoles.Select(entityManager.GetComponent<MindRoleComponent>))
+        {
+            if (!mindRoleComponent.AntagPrototype.HasValue)
+                continue;
+
+            if (Antagonists.Contains(mindRoleComponent.AntagPrototype.Value))
+                return true;
+        }
+
+        return false;
     }
 }
