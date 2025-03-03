@@ -25,8 +25,10 @@ public sealed class ExtendDescriptionSystem : EntitySystem
                 || !TryComp(args.Examiner, out MetaDataComponent? comp) || comp.EntityPrototype == null)
                 continue;
 
-            if(_characterRequirements.CheckRequirementsValid(desc.Requirements, args.Examiner, comp.EntityPrototype, out _))
-                args.PushMarkup($"[font size ={desc.FontSize}][color={desc.Color}]{Loc.GetString(desc.Description, ("entity", uid))}[/color][/font]");
+            var meetsRequirements = _characterRequirements.CheckRequirementsValid(desc.Requirements, args.Examiner, comp.EntityPrototype, out _);
+            var description = meetsRequirements ? desc.Description : desc.RequirementsNotMetDescription;
+
+            args.PushMarkup($"[font size ={desc.FontSize}][color={desc.Color}]{Loc.GetString(description, ("entity", uid))}[/color][/font]");
         }
     }
 }
