@@ -113,6 +113,7 @@
   id: AtmosFixCoolant
   suffix: Coolant
   description: "Supermatter coolant, equivalent to a liquid nitrogen canister"
+  parent: MarkerBase
   components:
     - type: Sprite
       layers:
