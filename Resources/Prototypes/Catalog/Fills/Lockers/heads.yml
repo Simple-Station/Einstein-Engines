@@ -25,6 +25,7 @@
       - id: AstroNavCartridge
       - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
+      - id: PrinterDocFlatpack  # Corvax-Printer
 
 - type: entity
   id: LockerCaptainFilledHardsuit
@@ -47,6 +48,7 @@
       - id: JetpackCaptainFilled
       - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
+      - id: PrinterDocFlatpack  # Corvax-Printer
 
 - type: entity
   id: LockerCaptainFilled
@@ -68,6 +70,7 @@
       - id: JetpackCaptainFilled
       - id: LunchboxCommandFilledRandom
         prob: 0.3
+      - id: PrinterDocFlatpack  # Corvax-Printer
 
 - type: entity
   id: LockerCaptainFilledNoLaser
@@ -89,6 +92,7 @@
       - id: JetpackCaptainFilled
       - id: LunchboxCommandFilledRandom
         prob: 0.3
+      - id: PrinterDocFlatpack  # Corvax-Printer
 
 - type: entity
   id: LockerHeadOfPersonnelFilled
@@ -111,6 +115,7 @@
       - id: BoxEncryptionKeyService
       - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
+      - id: PrinterDocFlatpack  # Corvax-Printer
 
 - type: entity
   id: LockerChiefEngineerFilledHardsuit
@@ -138,6 +143,7 @@
       - id: CEIDCard # Delta-V
       - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
+      - id: PrinterDocFlatpack  # Corvax-Printer
 
 - type: entity
   id: LockerChiefEngineerFilled
@@ -162,6 +168,7 @@
       - id: RCDAmmo
       - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
+      - id: PrinterDocFlatpack  # Corvax-Printer
 
 - type: entity
   id: LockerChiefMedicalOfficerFilledHardsuit
@@ -191,6 +198,7 @@
       - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
       - id: MedicalBiofabMachineBoard # Shitmed Change
+      - id: PrinterDocFlatpack  # Corvax-Printer
 
 - type: entity
   id: LockerChiefMedicalOfficerFilled
@@ -217,6 +225,7 @@
       - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
       - id: MedicalBiofabMachineBoard # Shitmed Change
+      - id: PrinterDocFlatpack  # Corvax-Printer
 
 - type: entity
   id: LockerResearchDirectorFilledHardsuit
@@ -247,6 +256,7 @@
       - id: AugustineCircuitBoard
       - id: CrewsimovCircuitBoard
       - id: AntimovCircuitBoard
+      - id: PrinterDocFlatpack  # Corvax-Printer
 
 - type: entity
   id: LockerResearchDirectorFilled
@@ -275,6 +285,7 @@
       - id: AugustineCircuitBoard
       - id: CrewsimovCircuitBoard
       - id: AntimovCircuitBoard
+      - id: PrinterDocFlatpack  # Corvax-Printer
 
 - type: entity
   id: LockerHeadOfSecurityFilledHardsuit
@@ -304,6 +315,7 @@
       - id: HoSIDCard # Delta-V
       - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
+      - id: PrinterDocFlatpack  # Corvax-Printer
 
 - type: entity
   id: LockerHeadOfSecurityFilled
@@ -331,6 +343,7 @@
       - id: HoSIDCard # Delta-V
       - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
+      - id: PrinterDocFlatpack  # Corvax-Printer
 
 - type: entity
   id: LockerFreezerVaultFilled
