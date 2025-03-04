@@ -2,7 +2,7 @@
   id: PrinterDocMachineCircuitboard
   parent: BaseMachineCircuitboard
   name: document printer machine board
-  description: A machine printed circuit board for an document printer
+  description: A machine printed circuit board for a document printer
   components:
     - type: MachineBoard
       prototype: PrinterDoc

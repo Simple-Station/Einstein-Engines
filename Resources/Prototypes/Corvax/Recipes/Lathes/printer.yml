@@ -244,7 +244,7 @@
 - type: latheRecipe
   id: PrintedDocumentComplaintViolationLaborRulesRecipe
   result: PrintedDocumentComplaintViolationLaborRules
-  category: Complaintst
+  category: Complaints
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -253,7 +253,7 @@
 - type: latheRecipe
   id: PrintedDocumentComplaintOffenseRecipe
   result: PrintedDocumentComplaintOffense
-  category: Complaintst
+  category: Complaints
   completetime: 2
   applyMaterialDiscount: false
   materials:
