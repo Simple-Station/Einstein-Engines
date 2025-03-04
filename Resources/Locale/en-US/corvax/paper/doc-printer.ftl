@@ -2,7 +2,7 @@ doc-text-printer-report-station =
    ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
    ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
    ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-   ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+   ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
    ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                                 SITUATION REPORT
@@ -20,12 +20,12 @@ doc-text-printer-report-station =
     Current situation:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-report-on-elimination-of-violations =
    ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
    ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
    ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-   ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+   ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
    ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                             VIOLATION CORRECTION REPORT
@@ -42,12 +42,12 @@ doc-text-printer-report-on-elimination-of-violations =
     Actions taken to correct the violations:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-report-department =
    ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
    ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
    ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-   ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+   ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
    ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                                 DEPARTMENT PERFORMANCE REPORT
@@ -64,12 +64,12 @@ doc-text-printer-report-department =
     Overall condition of the department:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-report-employee-performance =
    ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
    ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
    ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-   ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+   ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
    ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                         EMPLOYEE PERFORMANCE REPORT
@@ -82,12 +82,12 @@ doc-text-printer-report-employee-performance =
     Performed work:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-report-on-the-chapters-meeting =
    ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
    ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
    ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-   ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+   ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
    ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                                 HEADS OF DEPARTMENTS MEETING REPORT
@@ -109,12 +109,12 @@ doc-text-printer-report-on-the-chapters-meeting =
 
     Decision of the Heads of Departments Meeting:
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-internal-affairs-agents-report =
    ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
    ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
    ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-   ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+   ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
    ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                 INTERNAL INVESTIGATION REPORT
@@ -128,12 +128,12 @@ doc-text-printer-internal-affairs-agents-report =
     I would also like to report the following:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-condition-report =
    ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
    ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
    ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-   ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+   ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
    ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                         TECHNICAL CONDITION REPORT
@@ -150,12 +150,12 @@ doc-text-printer-condition-report =
     Repairs carried out on the object:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-Report-study-object =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                         OBJECT STUDY REPORT
@@ -170,12 +170,12 @@ doc-text-printer-Report-study-object =
     Identified properties of the object:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-experiment-report =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                         EXPERIMENT REPORT
@@ -198,12 +198,12 @@ doc-text-printer-experiment-report =
     Actual result:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-disposal-report =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                             DISPOSAL REPORT
@@ -216,12 +216,12 @@ doc-text-printer-disposal-report =
     List of discovered items:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-application-appointment-interim =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                     REQUEST FOR ACTING APPOINTMENT
@@ -235,12 +235,12 @@ doc-text-printer-application-appointment-interim =
 
     Upon the arrival of the Head of the department/Captain from Central Command, I undertake to return elevated access, valuable items, and equipment.
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-application-employment =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                         JOB APPLICATION
@@ -252,12 +252,12 @@ doc-text-printer-application-employment =
     I, (full name), in the current position of (full job title), request to be appointed as an employee of (department name) in the position of (full job title).
     I undertake to follow the department's Standard Operating Procedures. I undertake to return the department's work equipment and gear upon transfer.
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-letter-resignation =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                         RESIGNATION LETTER
@@ -269,12 +269,12 @@ doc-text-printer-letter-resignation =
     I, (full name), in the current position of (full job title), want to resign from the department (department name) for the reason (reason).
     I undertake to pay the fine stipulated by the terms of the termination of the fixed-term/permanent contract, at the Central Command station.
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-application-access =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                     REQUEST FOR ACCESS
@@ -288,12 +288,12 @@ doc-text-printer-application-access =
     Reason for obtaining elevated access:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-application-equipment =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                     REQUEST FOR EQUIPMENT ACQUISITION
@@ -307,12 +307,12 @@ doc-text-printer-application-equipment =
     Reason for obtaining equipment:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-appeal =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                             ADDRESS
@@ -327,12 +327,12 @@ doc-text-printer-appeal =
     Reasons for writing it:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-evacuation-shuttle-request =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                     REQUEST FOR EVACUATION SHUTTLE
@@ -345,12 +345,12 @@ doc-text-printer-evacuation-shuttle-request =
     Reason for ending the shift:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-shuttle-registration-request =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                         REQUEST FOR SHUTTLE REGISTRATION
@@ -369,12 +369,12 @@ doc-text-printer-shuttle-registration-request =
     Requested name:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-request-call-members-central-committee-dso =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                     REQUEST FOR CALLING MEMBERS OF THE CENTRAL COMMITTEE
@@ -388,12 +388,12 @@ doc-text-printer-request-call-members-central-committee-dso =
     Reason for the call:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-request-to-establish-threat-level =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                     REQUEST FOR THREAT LEVEL ASSESSMENT
@@ -407,12 +407,12 @@ doc-text-printer-request-to-establish-threat-level =
     Reason for code establishment:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-request-change-salary =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
             REQUEST FOR SALARY CHANGE
@@ -425,12 +425,12 @@ doc-text-printer-request-change-salary =
     Reason for the increase/decrease in salary:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-request-for-non-listed-employment =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
             REQUEST FOR NON-STANDARD EMPLOYMENT
@@ -451,12 +451,12 @@ doc-text-printer-request-for-non-listed-employment =
     Reason for employment:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-request-for-promotion =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                 REQUEST FOR PROMOTION
@@ -473,12 +473,12 @@ doc-text-printer-request-for-promotion =
     Reason for the promotion:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-request-documents =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
             REQUEST FOR DOCUMENT PROVISION
@@ -490,12 +490,12 @@ doc-text-printer-request-documents =
     I, (full name), in the position of Internal Affairs Agent, request the provision of a copy/original of the documents for verification of compliance with Corporate Law:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-request-euthanasia =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                     REQUEST FOR EUTHANASIA
@@ -507,12 +507,12 @@ doc-text-printer-request-euthanasia =
     I, (full name), in the capacity of (full job title), request the assistance of the medical department in euthanizing as a medical treatment for the reason of (specify reason for request). I am familiar with the consequences of this decision and the medical staff has determined that this decision is rational and humane. I have no complaints about the medical department in their adherence to euthanasia protocols.
     At the end of the procedure, please dispose of the body by (method of disposal) if possible.
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-request-construction-work =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
         REQUEST FOR CONSTRUCTION WORK
@@ -525,12 +525,12 @@ doc-text-printer-request-construction-work =
     List of construction works:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-request-modernization =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                 REQUEST FOR MODERNIZATION
@@ -543,12 +543,12 @@ doc-text-printer-request-modernization =
     List of modernizations:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-complaint-violation-labor-rules =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
             COMPLAINT ABOUT LABOR ORDER VIOLATION
@@ -561,12 +561,12 @@ doc-text-printer-complaint-violation-labor-rules =
 
     I request an internal investigation into these violations.
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-complaint-offense =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                         COMPLAINT ABOUT VIOLATION OF LAW
@@ -579,12 +579,12 @@ doc-text-printer-complaint-offense =
     What happened from my point of view:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-permission-equipment =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
         PERMISSION FOR USE OF EQUIPMENT
@@ -596,12 +596,12 @@ doc-text-printer-permission-equipment =
     I, (full name), in the position of head of the department (full name of the department), authorize (full name), in the position of (full job title), to use the following work equipment of the department:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-permission-to-travel-in-case-of-threat=
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
             PERMISSION FOR MOVEMENT IN CASE OF THREAT
@@ -616,12 +616,12 @@ doc-text-printer-permission-to-travel-in-case-of-threat=
     Authorized parts of the station for the employee's presence (you can specify the entire station):
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-search-permission =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                         PERMISSION FOR SEARCH
@@ -634,12 +634,12 @@ doc-text-printer-search-permission =
     Reason for the search:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-permission-to-carry-weapons =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                     PERMISSION FOR WEAPON CARRYING
@@ -656,12 +656,12 @@ doc-text-printer-permission-to-carry-weapons =
     Reason for issuing the permission:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-prescription-drug-authorization =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                 PERMISSION FOR PRESCRIPTION MEDICATION
@@ -676,12 +676,12 @@ doc-text-printer-prescription-drug-authorization =
     Reason for prescribing the medication:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-permission-dispose-body =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                     PERMISSION FOR BODY DISPOSAL
@@ -694,12 +694,12 @@ doc-text-printer-permission-dispose-body =
     Method of disposal:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-construction-permit =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                         PERMISSION FOR CONSTRUCTION
@@ -712,12 +712,12 @@ doc-text-printer-construction-permit =
     Agreed scope of reconfiguration:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-permission-to-extend-marriage =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                 PERMISSION FOR MARRIAGE EXTENSION
@@ -735,12 +735,12 @@ doc-text-printer-permission-to-extend-marriage =
     ⠀...
     (Full name), in the position of (full job title)
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-order-dismissal =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                             ORDER FOR DISMISSAL
@@ -752,12 +752,12 @@ doc-text-printer-order-dismissal =
     I, (full name), in the position of (full job title), order the dismissal of the employee (full name) from the department (department name) in the position of (dismissed employee's full job title) for the reason:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-order-deprivation-access =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                         ORDER TO REVOKE ACCESS
@@ -769,12 +769,12 @@ doc-text-printer-order-deprivation-access =
     I, (full name), in the position of (full job title), order to revoke the following access from the employee (full name) in the position of (full job title):
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-order-encouragement =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                             ORDER FOR ENCOURAGEMENT
@@ -786,12 +786,12 @@ doc-text-printer-order-encouragement =
     I, (full name), in the position of (full job title) award (full name), in the position of (awardee's full job title), with a medal/certificate/memento/prize in the amount of (prize amount) for the following merits:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-order-parole-prisoner =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                     ORDER FOR PRISONER PAROLE
@@ -803,12 +803,12 @@ doc-text-printer-order-parole-prisoner =
     I, (full name), in the position of (full job title), authorize the release of the prisoner (full name) to the brig/permanent brig. After the issuance of the parole, the prisoner will be assigned a civilian profession with mandatory work until the end of the shift.
     Assigned profession:
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-order-recognizing-rentience-creature =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
             ORDER OF RECOGNITION OF SENTIENCE OF A CREATURE
@@ -824,12 +824,12 @@ doc-text-printer-order-recognizing-rentience-creature =
 
     Creature accepted/not accepted as a passenger of the station until the end of the shift.
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-order-medical-intervention =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
     ORDER FOR MEDICAL INTERVENTION
@@ -842,12 +842,12 @@ doc-text-printer-order-medical-intervention =
     Basis for the operation:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-product-manufacturing-order =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                     ORDER FOR PRODUCT MANUFACTURING
@@ -862,7 +862,7 @@ doc-text-printer-product-manufacturing-order =
     Reason for the order:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-order-purchase-resources-equipment =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
@@ -883,12 +883,12 @@ doc-text-printer-order-purchase-resources-equipment =
     Reason:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-ordering-special-equipment =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                     ORDER FOR SPECIAL EQUIPMENT
@@ -903,12 +903,12 @@ doc-text-printer-ordering-special-equipment =
     Reason for request:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-order-purchase-weapons =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                     ORDER FOR WEAPONS PURCHASE
@@ -921,12 +921,12 @@ doc-text-printer-order-purchase-weapons =
     Reason for order:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-certificate =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                                         CERTIFICATE OF HONOR
@@ -938,12 +938,12 @@ doc-text-printer-certificate =
     (Full name), in the position of (full job title), is awarded a certificate of honor for the following merits:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-certificate-advanced-training =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
     CERTIFICATE OF PROFESSIONAL DEVELOPMENT
@@ -954,12 +954,12 @@ doc-text-printer-certificate-advanced-training =
 
     I, (full name), in the position of head of the department (full name of the department), certify that the employee (full name), in the position of (employee's position), has successfully completed the educational course "(course name)" and has been certified.
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-certificate-offense =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                 CERTIFICATE OF OFFENSE
@@ -979,12 +979,12 @@ doc-text-printer-certificate-offense =
     Full chronology of events:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-death-certificate =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                             DEATH CERTIFICATE
@@ -1001,12 +1001,12 @@ doc-text-printer-death-certificate =
     Possibility of resuscitation or cloning:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-marriage-certificate =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                 MARRIAGE CERTIFICATE
@@ -1022,12 +1022,12 @@ doc-text-printer-marriage-certificate =
     After the marriage, the following full names were assigned to the newlyweds:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-divorce-certificate =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                 DIVORCE CERTIFICATE
@@ -1045,12 +1045,12 @@ doc-text-printer-divorce-certificate =
     The division of property was carried out as follows:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-closing-indictment =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                         INDICTMENT
@@ -1067,12 +1067,12 @@ doc-text-printer-closing-indictment =
     Indirect evidence:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-sentence =
         ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
         ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
         ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-        ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+        ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
         ⠀[color=#1b487e]░░░░██░░░████░███[/color]
         =============================================
                                         VERDICT
@@ -1090,12 +1090,12 @@ doc-text-printer-sentence =
         (demotion, dismissal)
         The period of detention begins from: (start time of detention)
         =============================================
-                                    ⠀[italic]Place for seals[/italic]
+                                    ⠀          [italic]Place for seals[/italic]
 doc-text-printer-judgment =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                     JUDICIAL DECISION
@@ -1122,12 +1122,12 @@ doc-text-printer-judgment =
     My decision is justified by (the fact that):
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-statement-health =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                     HEALTH CONDITION CONCLUSION
@@ -1148,12 +1148,12 @@ doc-text-printer-statement-health =
     Treatment provided during hospitalization:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-decision-to-start-trial =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color]           [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
             DECISION ON THE START OF A LEGAL PROCEEDING
@@ -1166,12 +1166,12 @@ doc-text-printer-decision-to-start-trial =
     Alleged violations:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-error-loading-form-header =
     ⠀[color=#B50F1D] ███░██████░███[/color]
     ⠀[color=#B50F1D] █░░░██░░░░░░░█[/color]    [head=3]Document template[/head]
     ⠀[color=#B50F1D] █░░░░████░░░░█[/color]             [head=3]Syndicate[/head]
-    ⠀[color=#B50F1D] █░░░░░░░██░░░█[/color]   [bold]Station XX-000[/bold]
+    ⠀[color=#B50F1D] █░░░░░░░██░░░█[/color]       [bold]Station XX-000 SY[/bold]
     ⠀[color=#B50F1D] ███░██████░███[/color]
     =============================================
                         DOCUMENT TITLE
@@ -1181,12 +1181,12 @@ doc-text-printer-error-loading-form-header =
 
     Full content of the document with all necessary information and description
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-notice-of-liquidation =
     ⠀[color=#B50F1D] ███░██████░███[/color]
     ⠀[color=#B50F1D] █░░░██░░░░░░░█[/color]    [head=3]Document template[/head]
     ⠀[color=#B50F1D] █░░░░████░░░░█[/color]             [head=3]Syndicate[/head]
-    ⠀[color=#B50F1D] █░░░░░░░██░░░█[/color]   [bold]Station XX-000[/bold]
+    ⠀[color=#B50F1D] █░░░░░░░██░░░█[/color]       [bold]Station XX-000 SY[/bold]
     ⠀[color=#B50F1D] ███░██████░███[/color]
     =============================================
                         NOTICE OF LIQUIDATION
@@ -1198,12 +1198,12 @@ doc-text-printer-notice-of-liquidation =
     Reason for liquidation:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-business-deal =
     ⠀[color=#B50F1D] ███░██████░███[/color]
     ⠀[color=#B50F1D] █░░░██░░░░░░░█[/color]    [head=3]Document template[/head]
     ⠀[color=#B50F1D] █░░░░████░░░░█[/color]             [head=3]Syndicate[/head]
-    ⠀[color=#B50F1D] █░░░░░░░██░░░█[/color]   [bold]Station XX-000[/bold]
+    ⠀[color=#B50F1D] █░░░░░░░██░░░█[/color]       [bold]Station XX-000 SY[/bold]
     ⠀[color=#B50F1D] ███░██████░███[/color]
     =============================================
                                 BUSINESS DEAL
@@ -1216,12 +1216,12 @@ doc-text-printer-business-deal =
     Reason for fulfilling the terms of the deal:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-note-beginning-military-actions =
     ⠀[color=#B50F1D] ███░██████░███[/color]
     ⠀[color=#B50F1D] █░░░██░░░░░░░█[/color]    [head=3]Document template[/head]
     ⠀[color=#B50F1D] █░░░░████░░░░█[/color]             [head=3]Syndicate[/head]
-    ⠀[color=#B50F1D] █░░░░░░░██░░░█[/color]   [bold]Station XX-000[/bold]
+    ⠀[color=#B50F1D] █░░░░░░░██░░░█[/color]       [bold]Station XX-000 SY[/bold]
     ⠀[color=#B50F1D] ███░██████░███[/color]
     =============================================
                     NOTE ON THE START OF MILITARY ACTIONS
@@ -1233,12 +1233,12 @@ doc-text-printer-note-beginning-military-actions =
     Reason for the note:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
 doc-text-printer-report-accomplishment-goals =
     ⠀[color=#B50F1D] ███░██████░███[/color]
     ⠀[color=#B50F1D] █░░░██░░░░░░░█[/color]    [head=3]Document template[/head]
     ⠀[color=#B50F1D] █░░░░████░░░░█[/color]             [head=3]Syndicate[/head]
-    ⠀[color=#B50F1D] █░░░░░░░██░░░█[/color]   [bold]Station XX-000[/bold]
+    ⠀[color=#B50F1D] █░░░░░░░██░░░█[/color]       [bold]Station XX-000 SY[/bold]
     ⠀[color=#B50F1D] ███░██████░███[/color]
     =============================================
                         PERFORMANCE REPORT
@@ -1250,4 +1250,4 @@ doc-text-printer-report-accomplishment-goals =
     Report:
 
     =============================================
-                                ⠀[italic]Place for seals[/italic]
+                                ⠀          [italic]Place for seals[/italic]
