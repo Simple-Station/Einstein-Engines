@@ -6,6 +6,8 @@
   abstract: true
   components:
   - type: Sprite
+  - type: Wieldable
+    unwieldOnUse: false
   - type: Item
     size: Ginormous
   - type: Gun
@@ -50,18 +52,44 @@
   - type: Item
     sprite: Objects/Weapons/Guns/HMGs/minigun.rsi
   - type: Gun
-    fireRate: 15
+    minAngle: 80
+    maxAngle: 200
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/minigun.ogg
-  - type: BallisticAmmoProvider
-    proto: CartridgeMinigun
-    capacity: 1000
+  - type: GunWieldBonus
+    minAngle: -75
+    maxAngle: -175
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/lmg_cock.ogg
+  - type: AmmoCounter
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineBoxRifleMinigun
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineBoxRifleMinigun
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeMinigun
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeMinigun
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: ClothingSpeedModifier
+    walkModifier: 0.35
+    sprintModifier: 0.35
+  - type: HeldSpeedModifier
   - type: MagazineVisuals
     magState: mag
     steps: 4
     zeroVisible: true
-  - type: Appearance
-  - type: ContainerContainer
-    containers:
-      ballistic-ammo: !type:Container
-        ents: []

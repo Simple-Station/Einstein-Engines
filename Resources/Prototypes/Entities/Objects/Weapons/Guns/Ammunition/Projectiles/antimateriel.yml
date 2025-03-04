@@ -7,8 +7,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 50 # DeltaV - Damage Bumped, was 40
-        Structural: 200 # DeltaV - was 30
-    ignoreResistances: true # DeltaV - Hristov be spooky now
+        Piercing: 70 # AntiMateriel Sniper should hurt real bad
+        Structural: 400 # Sniper is rarely used this way, but this ammo type exists to burst down CONCRETE and TANKS 
+    ignoreResistances: true
   - type: StaminaDamageOnCollide
-    damage: 50 # DeltaV - was 35
+    damage: 75 # Getting hit with this should knock you the fuck down
