@@ -24,7 +24,7 @@
 
 - type: entity
   parent: PrintedDocument
-  id: PrintedDocumentReporDepartment
+  id: PrintedDocumentReportDepartment
   name: Report on the work of the department
   components:
     - type: Paper
@@ -68,7 +68,7 @@
   name: Report on object Investigation
   components:
     - type: Paper
-      content: doc-text-printer-Report-study-object
+      content: doc-text-printer-report-study-object
 
 - type: entity
   parent: PrintedDocument
@@ -481,7 +481,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentNoticeOfLiquidation
-  name: NOTICE OF LIQUIDIZATION
+  name: NOTICE OF LIQUIDATION
   components:
     - type: Paper
       content: doc-text-printer-notice-of-liquidation

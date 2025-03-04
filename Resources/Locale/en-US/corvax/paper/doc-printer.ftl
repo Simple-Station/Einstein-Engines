@@ -151,7 +151,7 @@ doc-text-printer-condition-report =
 
     =============================================
                                 ⠀          [italic]Place for seals[/italic]
-doc-text-printer-Report-study-object =
+doc-text-printer-report-study-object =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
@@ -867,7 +867,7 @@ doc-text-printer-order-purchase-resources-equipment =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000 КОД-СНБ[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000 NT[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
             ORDER FOR THE PURCHASE OF RESOURCES AND EQUIPMENT

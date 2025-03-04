@@ -28,7 +28,7 @@
     staticRecipes:
       - PrintedDocumentReportStationRecipe
       - PrintedDocumentReportOnEliminationOfViolationsRecipe
-      - PrintedDocumentReporDepartmentRecipe
+      - PrintedDocumentReportDepartmentRecipe
       - PrintedDocumentReportEmployeePerformanceRecipe
       - PrintedDocumentReportOnTheChaptersMeetingRecipe
       - PrintedDocumentInternalAffairsAgentsReportRecipe
