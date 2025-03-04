@@ -613,22 +613,22 @@
         - type: Flashable # Effectively, removes any flash-vulnerability species traits.
 
 
-- type: trait
-  id: FlareShielding
-  category: Physical
-  points: -3
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-    - !type:CharacterTraitRequirement
-      traits:
-        - CyberEyes
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: EyeProtection
+# - type: trait
+#  id: FlareShielding
+#  category: Physical
+#  points: -3
+#  requirements:
+#    - !type:CharacterJobRequirement
+#      inverted: true
+#      jobs:
+#        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+#    - !type:CharacterTraitRequirement
+#      traits:
+#        - CyberEyes
+#  functions:
+#    - !type:TraitAddComponent
+#      components:
+#        - type: EyeProtection
 
 
 - type: trait
@@ -886,24 +886,24 @@
           fontSize: 12
           requireDetailRange: true
 
-- type: trait
-  id: FlareShieldingModule
-  category: Physical
-  points: -2
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-    - !type:CharacterSpeciesRequirement
-      species:
-        - IPC
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: EyeProtection
+# - type: trait
+#  id: FlareShieldingModule
+#  category: Physical
+#  points: -2
+#  requirements:
+#    - !type:CharacterJobRequirement
+#      inverted: true
+#      jobs:
+#        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+#    - !type:CharacterSpeciesRequirement
+#      species:
+#        - IPC
+#    - !type:CharacterItemGroupRequirement
+#      group: TraitsMind
+#  functions:
+#   - !type:TraitAddComponent
+#     components:
+#       - type: EyeProtection
 
 - type: trait
   id: SecurityEyesModule
