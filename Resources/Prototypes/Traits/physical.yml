@@ -616,7 +616,7 @@
 - type: trait
   id: FlareShielding
   category: Physical
-  points: -4
+  points: -3
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -628,7 +628,6 @@
   functions:
     - !type:TraitAddComponent
       components:
-        - type: FlashImmunity
         - type: EyeProtection
 
 
@@ -890,7 +889,7 @@
 - type: trait
   id: FlareShieldingModule
   category: Physical
-  points: -4
+  points: -2
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -904,7 +903,6 @@
   functions:
     - !type:TraitAddComponent
       components:
-        - type: FlashImmunity
         - type: EyeProtection
 
 - type: trait
