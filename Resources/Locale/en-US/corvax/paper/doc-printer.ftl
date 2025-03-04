@@ -1017,7 +1017,7 @@ doc-text-printer-marriage-certificate =
 
     I, (full name), in the position of (full job title), officiate the marriage between:
     (Full name), in the position of (full job title)
-     ...
+    ⠀...
     (Full name), in the position of (full job title)
     After the marriage, the following full names were assigned to the newlyweds:
 
