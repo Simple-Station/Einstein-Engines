@@ -804,7 +804,7 @@ doc-text-printer-order-parole-prisoner =
     Assigned profession:
     =============================================
                                 ⠀          [italic]Place for seals[/italic]
-doc-text-printer-order-recognizing-rentience-creature =
+doc-text-printer-order-recognizing-sentience-creature =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document template[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]

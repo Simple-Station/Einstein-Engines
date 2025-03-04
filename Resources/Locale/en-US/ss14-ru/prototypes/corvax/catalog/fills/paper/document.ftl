@@ -57,7 +57,6 @@ ent-PrintedDocumentRequestModernization = Request for modernization
 ent-PrintedDocumentComplaintViolationLaborRules = Complaint for violation of labor order
     .desc = { ent-PrintedDocument.desc }
 ent-PrintedDocumentComplaintOffense = Complaint about an offense
-
   .desc = { ent-PrintedDocument.desc }
 ent-PrintedDocumentPermissionEquipment = Authorization to use equipment
     .desc = { ent-PrintedDocument.desc }

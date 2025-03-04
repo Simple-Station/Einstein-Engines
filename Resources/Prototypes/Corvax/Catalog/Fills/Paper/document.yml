@@ -62,7 +62,6 @@
     - type: Paper
       content: doc-text-printer-condition-report
 
-
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentReportStudyObject
@@ -341,7 +340,7 @@
   name: An order recognizing the reasonableness of the substance
   components:
     - type: Paper
-      content: doc-text-printer-order-recognizing-rentience-creature
+      content: doc-text-printer-order-recognizing-sentience-creature
 
 - type: entity
   parent: PrintedDocument
