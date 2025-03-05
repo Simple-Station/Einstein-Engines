@@ -1,10 +1,9 @@
 using Content.Shared.Chat;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
-using Content.Shared.Mindshield.Components;
+using Content.Shared.Interaction.Events;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Revolutionary.Components;
-using Robust.Shared.Player;
 
 
 namespace Content.Shared.Revolutionary;
@@ -23,6 +22,7 @@ public sealed class RevolutionaryConverterSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<RevolutionaryConverterComponent, RevolutionaryConverterDoAfterEvent>(OnConvertDoAfter);
+        SubscribeLocalEvent<RevolutionaryConverterComponent, UseInHandEvent>(OnUseInHand);
         SubscribeLocalEvent<RevolutionaryConverterComponent, AfterInteractEvent>(OnConverterAfterInteract);
 
         var i = 1;
@@ -31,6 +31,14 @@ public sealed class RevolutionaryConverterSystem : EntitySystem
             _speechLocalizationKeys.Add($"{RevConvertSpeechBaseKey}{i}");
             i++;
         }
+    }
+
+    private void OnUseInHand(Entity<RevolutionaryConverterComponent> ent, ref UseInHandEvent args)
+    {
+        var message = _speechLocalizationKeys[System.Random.Shared.Next(_speechLocalizationKeys.Count)];
+        _chat.TrySendInGameICMessage(args.User, Loc.GetString(message), InGameICChatType.Speak, hideChat: false, hideLog: false);
+
+        args.Handled = true;
     }
 
     public void OnConvertDoAfter(Entity<RevolutionaryConverterComponent> entity, ref RevolutionaryConverterDoAfterEvent args)
@@ -59,9 +67,6 @@ public sealed class RevolutionaryConverterSystem : EntitySystem
 
     private void ConvertDoAfter(Entity<RevolutionaryConverterComponent> converter, EntityUid target, EntityUid user)
     {
-        if (HasComp<MindShieldComponent>(target))
-            return;
-
         if (user == target)
             return;
 

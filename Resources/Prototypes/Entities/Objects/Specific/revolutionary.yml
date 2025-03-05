@@ -5,24 +5,23 @@
   description: A manifesto written by a self-proclaimed revolutionary leader. Very critical of Nanotrasen.
   components:
     - type: Sprite
-      sprite: Objects/Weapons/Melee/flash.rsi
+      sprite: Objects/Misc/books.rsi
       layers:
-      - state: flash
-        map: [ "enum.FlashVisuals.BaseLayer" ]
+      - state: paper
+      - state: cover_base
+        color: "#ee0000"
+      - state: icon_manifesto
+      - state: detail_bookmark
+        color: "#aaaa24"
     - type: RevolutionaryConverter
       conversionDuration: 3
-    - type: MeleeWeapon
-      wideAnimationRotation: 0
-      damage:
-        types:
-          Blunt: 0 # Needed to convert targeted individuals
-      angle: 10
-    - type: Item
-      size: Small
-      sprite: Objects/Weapons/Melee/flash.rsi
-    - type: StaticPrice
-      price: 40
     - type: Appearance
+    - type: EmitSoundOnPickup
+      sound: /Audio/SimpleStation14/Items/Handling/book_pickup.ogg
+    - type: EmitSoundOnDrop
+      sound: /Audio/SimpleStation14/Items/Handling/book_drop.ogg
+    - type: EmitSoundOnLand
+      sound: /Audio/SimpleStation14/Items/Handling/book_drop.ogg
     - type: GuideHelp
       guides:
       - Revolutionaries
