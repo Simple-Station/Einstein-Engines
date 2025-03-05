@@ -312,6 +312,11 @@ ImprovisedExplosive: FireBomb
 ImprovisedExplosiveEmpty: FireBombEmpty
 ImprovisedExplosiveFuel: FireBombFuel
 
+# 2025-03-05
+PosterLegitEnlist: null
+PosterLegitNoErp: null
+PosterLegitOppenhopper: null
+
 # Lavaland EE stuff
 TreasureDatadiskEncrypted: null
 VendingMachineBoozeSyndicate: VendingMachineBooze
