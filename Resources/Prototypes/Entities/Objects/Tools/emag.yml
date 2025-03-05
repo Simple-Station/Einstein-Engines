@@ -3,7 +3,7 @@
   id: EmagUnlimited
   suffix: Unlimited
   name: cryptographic sequencer
-  description: A red circuit board with a charge indicator. Its purpose is unknown.
+  description: A red circuit board with a charge indicator.
   components:
   - type: Emag
     blacklist: # DeltaV - Split Emag into 2 items, this one cannot emag doors
