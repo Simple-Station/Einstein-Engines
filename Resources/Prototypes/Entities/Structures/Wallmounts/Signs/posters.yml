@@ -564,14 +564,14 @@
     - type: Sprite
       state: poster59_contraband
 
-# - type: entity
-#  parent: PosterBase
-#  id: PosterContrabandEnlistGorlex
-#  name: "Enlist"
-#  description: "Enlist with the Gorlex Marauders today! See the galaxy, kill corpos, get paid!"
-#  components:
-#    - type: Sprite
-#      state: poster60_contraband
+ - type: entity
+  parent: PosterBase
+  id: PosterContrabandEnlistGorlex
+  name: "Enlist"
+  description: "Enlist with the Gorlex Marauders today! See the galaxy, kill corpos, get paid!"
+  components:
+    - type: Sprite
+      state: poster60_contraband
 
 - type: entity
   parent: PosterBase
@@ -853,14 +853,14 @@
   - type: Sprite
     state: poster28_legit
 
-# - type: entity
-#  parent: PosterBase
-#  id: PosterLegitEnlist
-#  name: "Enlist"
-#  description: "Enlist in the NanoTrasen ERT reserves today!" # DeltaV - expunged blatant reference to Division of Asset Protection death squads
-#  components:
-#  - type: Sprite
-#    state: poster29_legit
+ - type: entity
+  parent: PosterBase
+  id: PosterLegitEnlist
+  name: "Enlist"
+  description: "Enlist in the NanoTrasen ERT reserves today!" # DeltaV - expunged blatant reference to Division of Asset Protection death squads
+  components:
+  - type: Sprite
+    state: poster29_legit
 
 - type: entity
   parent: PosterBase
@@ -898,14 +898,14 @@
   - type: Sprite
     state: poster33_legit
 
-# - type: entity
-#  parent: PosterBase
-#  id: PosterLegitNoERP
-#  name: "No ERP"
-#  description: "This poster reminds the crew that Eroticism and Pornography are banned on Nanotrasen stations."
-#  components:
-#  - type: Sprite
-#    state: poster34_legit
+ - type: entity
+  parent: PosterBase
+  id: PosterLegitNoERP
+  name: "No ERP"
+  description: "This poster reminds the crew that Eroticism and Pornography are banned on Nanotrasen stations."
+  components:
+  - type: Sprite
+    state: poster34_legit
 
 - type: entity
   parent: PosterBase
@@ -1069,14 +1069,14 @@
   - type: Sprite
     state: poster52_legit
 
-# - type: entity
-#  parent: PosterBase
-#  id: PosterLegitOppenhopper
-#  name: "Oppenhopper"
-#  description: "A poster for a long-forgotten movie. It follows a group of tenacious greenhorns from the Grasshopper Sector as they defend against onslaughts of the infamous Nuclear Operatives. The tagline reads: \"Nuke Ops will continue until robustness improves.\""
-#  components:
-#  - type: Sprite
-#    state: poster53_legit
+ - type: entity
+  parent: PosterBase
+  id: PosterLegitOppenhopper
+  name: "Oppenhopper"
+  description: "A poster for a long-forgotten movie. It follows a group of tenacious greenhorns from the Grasshopper Sector as they defend against onslaughts of the infamous Nuclear Operatives. The tagline reads: \"Nuke Ops will continue until robustness improves.\""
+  components:
+  - type: Sprite
+    state: poster53_legit
 
 #maps
 
