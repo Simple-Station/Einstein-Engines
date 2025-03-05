@@ -14,7 +14,7 @@ public sealed class RevolutionaryConverterSystem : EntitySystem
     private const string RevConvertSpeechBaseKey = "revolutionary-converter-speech-";
 
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private readonly ISharedChatManager _chat = default!;
+    [Dependency] private readonly SharedChatSystem _chat = default!;
 
     private List<string> _speechLocalizationKeys = new();
 
@@ -35,7 +35,7 @@ public sealed class RevolutionaryConverterSystem : EntitySystem
 
     public void OnConvertDoAfter(Entity<RevolutionaryConverterComponent> entity, ref RevolutionaryConverterDoAfterEvent args)
     {
-        if (args.Target != null)
+        if (args.Target == null)
             return;
 
         var ev = new AfterConvertedEvent(args.Target!.Value, args.User, args.Used);
@@ -50,7 +50,7 @@ public sealed class RevolutionaryConverterSystem : EntitySystem
         if (args.Handled || !args.CanReach)
             return;
 
-        if (args.Target is not { Valid: true } target || !HasComp<MobStateComponent>(target))
+        if (args.Target is not { Valid: true } target || !HasComp<MobStateComponent>(target) || !HasComp<HeadRevolutionaryComponent>(args.User))
             return;
 
         ConvertDoAfter(entity, target, args.User);
@@ -66,7 +66,7 @@ public sealed class RevolutionaryConverterSystem : EntitySystem
             return;
 
         var message = _speechLocalizationKeys[System.Random.Shared.Next(_speechLocalizationKeys.Count)];
-        _chat.ChatMessageToAll(ChatChannel.IC, message, message, user, false, true);
+        _chat.TrySendInGameICMessage(user, Loc.GetString(message), InGameICChatType.Speak, hideChat: false, hideLog: false);
 
         _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager, user, converter.Comp.ConversionDuration, new RevolutionaryConverterDoAfterEvent(), converter.Owner, target: target, used: converter.Owner)
         {

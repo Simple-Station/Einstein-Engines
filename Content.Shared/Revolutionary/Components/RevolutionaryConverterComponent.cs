@@ -14,7 +14,4 @@ public sealed partial class RevolutionaryConverterComponent : Component
 {
     [DataField]
     public TimeSpan ConversionDuration { get; set; }
-
-    [DataField]
-    public string ConversionSpeechLocalizationKey { get; set; } = default!;
 }
