@@ -1,5 +1,7 @@
 using System.Linq;
+using Content.Shared.Implants.Components;
 using Content.Shared.Mind;
+using Content.Shared.Mindshield.Components;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using JetBrains.Annotations;
@@ -10,15 +12,12 @@ using Robust.Shared.Serialization;
 namespace Content.Shared.Customization.Systems;
 
 /// <summary>
-///     Requires the player to be a specific antagonist
+///     Requires the player to have a mindshield
 /// </summary>
 [UsedImplicitly]
 [Serializable, NetSerializable]
-public sealed partial class CharacterAntagonistRequirement : CharacterRequirement
+public sealed partial class CharacterMindshieldRequirement : CharacterRequirement
 {
-    [DataField(required: true)]
-    public List<ProtoId<AntagPrototype>> Antagonists;
-
     public override bool IsValid(JobPrototype job,
         HumanoidCharacterProfile profile,
         Dictionary<string, TimeSpan> playTimes,
@@ -31,21 +30,11 @@ public sealed partial class CharacterAntagonistRequirement : CharacterRequiremen
         int depth = 0,
         MindComponent? mind = null)
     {
-        // Considering this will not be used in the character creation menu, players will likely never see this text.
-        reason = Loc.GetString("character-antagonist-requirement", ("inverted", Inverted));
+        reason = Loc.GetString("character-mindshield-requirement", ("inverted", Inverted));
 
         if (mind == null)
             return false;
 
-        foreach (var mindRoleComponent in mind.MindRoles.Select(entityManager.GetComponent<MindRoleComponent>))
-        {
-            if (!mindRoleComponent.AntagPrototype.HasValue)
-                continue;
-
-            if (Antagonists.Contains(mindRoleComponent.AntagPrototype.Value))
-                return !Inverted;
-        }
-
-        return Inverted;
+        return entityManager.HasComponent<MindShieldComponent>(mind.CurrentEntity) != Inverted;
     }
 }

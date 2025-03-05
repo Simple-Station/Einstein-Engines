@@ -56,6 +56,12 @@
             - Nukeops
             - NukeopsMedic
             - NukeopsCommander
+      - description: "mindshield-extenddescription-emag"
+        fontSize: 12
+        color: "#11aaff"
+        requireDetailRange: true
+        requirements:
+        - !type:CharacterMindshieldRequirement
   - type: Sprite
     sprite: Objects/Tools/emag.rsi
     state: icon
