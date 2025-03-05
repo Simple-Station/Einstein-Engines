@@ -564,14 +564,14 @@
     - type: Sprite
       state: poster59_contraband
 
-- type: entity
-  parent: PosterBase
-  id: PosterContrabandEnlistGorlex
-  name: "Enlist"
-  description: "Enlist with the Gorlex Marauders today! See the galaxy, kill corpos, get paid!"
-  components:
-    - type: Sprite
-      state: poster60_contraband
+# - type: entity
+#  parent: PosterBase
+#  id: PosterContrabandEnlistGorlex
+#  name: "Enlist"
+#  description: "Enlist with the Gorlex Marauders today! See the galaxy, kill corpos, get paid!"
+#  components:
+#    - type: Sprite
+#      state: poster60_contraband
 
 - type: entity
   parent: PosterBase
