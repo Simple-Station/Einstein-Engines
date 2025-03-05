@@ -35,7 +35,7 @@ public sealed class RevolutionaryConverterSystem : EntitySystem
 
     public void OnConvertDoAfter(Entity<RevolutionaryConverterComponent> entity, ref RevolutionaryConverterDoAfterEvent args)
     {
-        if (args.Target == null)
+        if (args.Target == null || args.Cancelled)
             return;
 
         var ev = new AfterConvertedEvent(args.Target!.Value, args.User, args.Used);
