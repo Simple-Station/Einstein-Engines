@@ -7,7 +7,7 @@ head-rev-role-greeting =
     You are a Head Revolutionary.
     You are tasked with removing all of Command from station via death, exilement or imprisonment.
     The Syndicate has sponsored you with a manifesto that persuades the crew to your side.
-    Beware, this won't work on Security or Command-their loyalty is unwavering.
+    Beware, this won't work on Security or Command - their loyalty is unwavering.
     Viva la revolución!
 
 head-rev-briefing =

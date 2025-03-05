@@ -127,7 +127,7 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
     }
 
     /// <summary>
-    /// Called when a Head Rev uses a flash in melee to convert somebody else.
+    /// Called when a Head Rev uses a Revolutionary Manifesto to convert somebody else.
     /// </summary>
     private void OnPostConvert(EntityUid uid, HeadRevolutionaryComponent comp, ref RevolutionaryConverterSystem.AfterConvertedEvent ev)
     {
