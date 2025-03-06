@@ -6,7 +6,6 @@ using Content.Shared.Popups;
 using Content.Shared.Stunnable;
 using Content.Shared.Weapons.Melee.Events;
 
-
 namespace Content.Server._EE.Item;
 
 public sealed class OniOnlySystem : EntitySystem
@@ -28,10 +27,15 @@ public sealed class OniOnlySystem : EntitySystem
         if (CanUse(args.PlayerUid))
             return;
 
+        // Apply knockdown and force drop before showing popup
         KnockdownAndDropItem(component, args.PlayerUid);
 
-        var selfMessage = Loc.GetString("oni-only-component-attack-fail-self", ("item", component.Owner));
-        var othersMessage = Loc.GetString("oni-only-component-attack-fail-other", ("user", Identity.Entity(args.PlayerUid, EntityManager)), ("item", component.Owner));
+        // Convert entity IDs to display names using the identity system
+        var itemName = Identity.Entity(component.Owner, EntityManager);
+        var userName = Identity.Entity(args.PlayerUid, EntityManager);
+        var selfMessage = Loc.GetString("oni-only-component-attack-fail-self", ("item", itemName));
+        var othersMessage = Loc.GetString("oni-only-component-attack-fail-other", ("user", userName), ("item", itemName));
+
         _popupSystem.PopupPredicted(selfMessage, othersMessage, args.PlayerUid, args.PlayerUid);
 
         args.Cancelled = true;
