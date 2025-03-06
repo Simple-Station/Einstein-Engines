@@ -50,5 +50,3 @@
     qualities:
     - Prying
   - type: Prying
-  - type: MeleeRequiresWield
-    fumbleOnAttempt: true
