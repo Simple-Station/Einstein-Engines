@@ -27,7 +27,7 @@ public sealed class OniOnlySystem : EntitySystem
         if (CanUse(args.PlayerUid))
             return;
 
-uhh        KnockdownAndDropItem(component, args.PlayerUid, Loc.GetString("oni-only-component-attack-fail"));
+        KnockdownAndDropItem(component, args.PlayerUid, Loc.GetString("oni-only-component-attack-fail"));
 
         args.Cancelled = true;
     }
