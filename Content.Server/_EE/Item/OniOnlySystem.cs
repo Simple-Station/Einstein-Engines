@@ -27,7 +27,7 @@ public sealed class OniOnlySystem : EntitySystem
         if (CanUse(args.PlayerUid))
             return;
 
-        KnockdownAndDropItem(component, args.PlayerUid, Loc.GetString("cult-item-component-attack-fail"));
+uhh        KnockdownAndDropItem(component, args.PlayerUid, Loc.GetString("oni-only-component-attack-fail"));
 
         args.Cancelled = true;
     }
@@ -35,9 +35,9 @@ public sealed class OniOnlySystem : EntitySystem
     private void KnockdownAndDropItem(OniOnlyComponent component, EntityUid user, string message, bool serverOnly = false)
     {
         if (serverOnly)
-            _popup.PopupEntity(message, component.Owner, user); // Yes this is obsolete. Yes this is shitcode.
+            _popup.PopupEntity(message, user, user);
         else
-            _popup.PopupPredicted(message, component.Owner, user);
+            _popup.PopupPredicted(message, user, user);
 
         _stun.TryKnockdown(user, component.KnockdownDuration, true);
         _hands.TryDrop(user);
