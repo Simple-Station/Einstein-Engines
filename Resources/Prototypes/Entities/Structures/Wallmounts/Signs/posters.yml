@@ -564,7 +564,7 @@
     - type: Sprite
       state: poster59_contraband
 
- - type: entity
+- type: entity
   parent: PosterBase
   id: PosterContrabandEnlistGorlex
   name: "Enlist"
@@ -853,7 +853,7 @@
   - type: Sprite
     state: poster28_legit
 
- - type: entity
+- type: entity
   parent: PosterBase
   id: PosterLegitEnlist
   name: "Enlist"
@@ -898,7 +898,7 @@
   - type: Sprite
     state: poster33_legit
 
- - type: entity
+- type: entity
   parent: PosterBase
   id: PosterLegitNoERP
   name: "No ERP"
@@ -1069,7 +1069,7 @@
   - type: Sprite
     state: poster52_legit
 
- - type: entity
+- type: entity
   parent: PosterBase
   id: PosterLegitOppenhopper
   name: "Oppenhopper"
