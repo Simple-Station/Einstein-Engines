@@ -9,7 +9,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 
 
-namespace Content.Server._EE.Item;
+namespace Content.Shared._EE.Item;
 
 public sealed class OniOnlySystem : EntitySystem
 {
