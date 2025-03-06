@@ -29,14 +29,13 @@ public sealed class OniOnlySystem : EntitySystem
     {
         bool CanUse(EntityUid? uid) => HasComp<OniComponent>(uid) || HasComp<GhostComponent>(uid);
 
-        // Allow the melee attempt if the user is either an Oni or a Ghost.
+        // Specism.
         if (CanUse(args.PlayerUid))
             return;
 
-        // Get the text
         args.Message = Loc.GetString("oni-only-component-attack-fail-self", ("item", uid));
 
-        // Check if the user isn't already knocked down before playing the sound.
+        // Don't knock down if already knocking down.
         var playSound = !_statusEffects.HasStatusEffect(args.PlayerUid, "KnockedDown");
 
         // Apply knockdown using the specified duration and force-drop any held item.
@@ -47,7 +46,7 @@ public sealed class OniOnlySystem : EntitySystem
             _audioSystem.PlayPredicted(new SoundPathSpecifier("/Audio/Effects/slip.ogg"), args.PlayerUid, args.PlayerUid);
 
         // Display the message to the player and cancel the melee attempt.
-        _popupSystem.PopupClient(args.Message, uid, args.PlayerUid, PopupType.MediumCaution);
+        _popupSystem.PopupClient(args.Message, args.PlayerUid);
         args.Cancelled = true;
     }
 }
