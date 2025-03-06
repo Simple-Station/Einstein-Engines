@@ -34,7 +34,7 @@ public sealed class OniOnlySystem : EntitySystem
             return;
 
         // Get the text
-        args.Message = Loc.GetString("wieldable-component-requires-fumble", ("item", uid));
+        args.Message = Loc.GetString("oni-only-component-attack-fail-self", ("item", uid));
 
         // Check if the user isn't already knocked down before playing the sound.
         var playSound = !_statusEffects.HasStatusEffect(args.PlayerUid, "KnockedDown");
@@ -47,7 +47,7 @@ public sealed class OniOnlySystem : EntitySystem
             _audioSystem.PlayPredicted(new SoundPathSpecifier("/Audio/Effects/slip.ogg"), args.PlayerUid, args.PlayerUid);
 
         // Display the message to the player and cancel the melee attempt.
-        _popupSystem.PopupClient(args.Message, uid, args.PlayerUid);
+        _popupSystem.PopupClient(args.Message, uid, args.PlayerUid, PopupType.Medium);
         args.Cancelled = true;
     }
 }
