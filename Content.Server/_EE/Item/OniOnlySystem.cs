@@ -24,23 +24,22 @@ public sealed class OniOnlySystem : EntitySystem
     private void OnMeleeAttempt(EntityUid uid, OniOnlyComponent component, ref AttemptMeleeEvent args)
     {
         bool CanUse(EntityUid? uid) => HasComp<OniComponent>(uid) || HasComp<GhostComponent>(uid);
-        
+
         if (CanUse(args.PlayerUid))
             return;
 
-        KnockdownAndDropItem(component, args.PlayerUid, "oni-only-component-attack-fail-self");
+        KnockdownAndDropItem(component, args.PlayerUid);
+
+        var selfMessage = Loc.GetString("oni-only-component-attack-fail-self", ("item", component.Owner));
+        var othersMessage = Loc.GetString("oni-only-component-attack-fail-other", ("user", Identity.Entity(args.PlayerUid, EntityManager)), ("item", component.Owner));
+        _popupSystem.PopupPredicted(selfMessage, othersMessage, args.PlayerUid, args.PlayerUid);
 
         args.Cancelled = true;
     }
 
-    private void KnockdownAndDropItem(OniOnlyComponent component, EntityUid user, string message, bool serverOnly = false)
+    private void KnockdownAndDropItem(OniOnlyComponent component, EntityUid user)
     {
         _stun.TryKnockdown(user, component.KnockdownDuration, true);
         _hands.TryDrop(user);
-
-        if (serverOnly)
-            _popupSystem.PopupEntity(message, component.Owner, user);
-        else
-            _popupSystem.PopupPredicted(message, component.Owner, user);
     }
 }
