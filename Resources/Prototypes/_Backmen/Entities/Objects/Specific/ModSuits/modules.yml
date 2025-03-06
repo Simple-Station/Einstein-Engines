@@ -1,14 +1,14 @@
 - type: entity
   parent: BaseItem
-  id: ModsuitModBase
+  id: ModSuitModBase
   abstract: true
   components:
   - type: Sprite
     sprite: Backmen/Objects/Specific/ModSuits/modules.rsi
 
 - type: entity
-  parent: ModsuitModBase
-  id: ModsuitModAntigravity
+  parent: ModSuitModBase
+  id: ModSuitModAntigravity
   name: MOD antigravity module
   description: A module that uses a gravitational core to make the user completely weightless.
   components:
@@ -20,8 +20,8 @@
     - type: AntiGravityClothing
 
 - type: entity
-  parent: ModsuitModBase
-  id: ModsuitModApparatus
+  parent: ModSuitModBase
+  id: ModSuitModApparatus
   name: MOD apparatus module
   description: A favorite by Miners, this modification to the helmet utilizes a nanotechnology barrier in front of the mouth to allow eating and drinking while retaining protection and atmosphere. However, it will do nothing to improve the taste of a goliath steak.
   components:
@@ -35,8 +35,8 @@
     - type: IngestionBlocker
 
 - type: entity
-  parent: ModsuitModBase
-  id: ModsuitModDrill
+  parent: ModSuitModBase
+  id: ModSuitModDrill
   name: MOD drill module
   description: An integrated drill, typically extending over the user's hand. While useful for drilling through rock, your drill is surely the one that both pierces and creates the heavens.
   components:
@@ -65,8 +65,8 @@
           Structural: 15
 
 - type: entity
-  parent: ModsuitModBase
-  id: ModsuitModJetpack
+  parent: ModSuitModBase
+  id: ModSuitModJetpack
   name: MOD jetpack module
   description: It's a jetpack module. It can hold 5 L of gas.
   components:
@@ -91,8 +91,8 @@
       moleUsage: 0.00085
 
 - type: entity
-  parent: ModsuitModBase
-  id: ModsuitModMagBoots
+  parent: ModSuitModBase
+  id: ModSuitModMagBoots
   name: MOD mag boots module
   description: These are powerful electromagnets fitted into the suit's boots, allowing users both excellent traction no matter the condition indoors, and to essentially hitch a ride on the exterior of a hull. However, these basic models do not feature computerized systems to automatically toggle them on and off, so numerous users report a certain stickiness to their steps.
   components:
@@ -107,8 +107,8 @@
     - type: Magboots
 
 - type: entity
-  parent: ModsuitModBase
-  id: ModsuitModNightVision
+  parent: ModSuitModBase
+  id: ModSuitModNightVision
   name: MOD night vision module
   description: A heads-up display installed into the visor of the suit. Typical for both civilian and military applications, this allows the user to perceive their surroundings while in complete darkness.
   components:
@@ -122,8 +122,8 @@
     - type: ItemToggle
 
 - type: entity
-  parent: ModsuitModBase
-  id: ModsuitModStun
+  parent: ModSuitModBase
+  id: ModSuitModStun
   name: MOD stun module
   description: Allows you to stun people with punching.
   components:
@@ -143,8 +143,8 @@
       mustBeEquippedToUse: true
 
 - type: entity
-  parent: ModsuitModBase
-  id: ModsuitModNoSlip
+  parent: ModSuitModBase
+  id: ModSuitModNoSlip
   name: MOD no slip module
   description: These are a modified variant of standard magnetic boots, utilizing piezoelectric crystals on the soles. The two plates on the bottom of the boots automatically extend and magnetize as the user steps; a pull that's too weak to offer them the ability to affix to a hull, but just strong enough to protect against the fact that you didn't read the wet floor sign. Honk Co. has come out numerous times in protest of these modules being legal.
   components:
@@ -156,8 +156,8 @@
     - type: NoSlip
 
 - type: entity
-  parent: ModsuitModBase
-  id: ModsuitModPowerKick
+  parent: ModSuitModBase
+  id: ModSuitModPowerKick
   name: MOD power kick module
   description: Super mega power punch! Throwing back every one punched.
   components:
@@ -177,14 +177,53 @@
       mustBeEquippedToUse: true
 
 - type: entity
-  parent: ModsuitModBase
-  id: ModsuitModSecHud
+  parent: ModSuitModBase
+  id: ModSuitModMedHud
+  name: MOD Medical Visor Module
+  description: A heads-up display installed into the visor of the suit. This module compares data from the suit's sensors with data from a state-of-the-art biological scanning suite, allowing the user to see the current health status of organic life forms. They say these also let you see behind you.
+  components:
+  - type: Sprite
+    state: medhud_visor
+  - type: ModSuitMod
+    modComplexity: 2
+    slot: head
+    components:
+    - type: ShowHealthBars
+      damageContainers:
+      - Biological
+      - HalfSpirit
+    - type: ShowHealthIcons
+      damageContainers:
+      - Biological
+      - HalfSpirit
+
+- type: entity
+  parent: ModSuitModBase
+  id: ModSuitModDiagnosticsHud
+  name: MOD Diagnostics Visor Module
+  description: A heads-up display installed into the visor of the suit. It utilizes a number of advanced sensors to access data from advanced technology, exosuits, and other devices, allowing the user to visualize the current power levels and integrity of such devices. They say these also let you see behind you.
+  components:
+  - type: Sprite
+    state: diaghud_visor
+  - type: ModSuitMod
+    modComplexity: 2
+    slot: head
+    components:
+      - type: ShowHealthBars
+        damageContainers:
+          - Inorganic
+          - Silicon
+
+- type: entity
+  parent: ModSuitModBase
+  id: ModSuitModSecHud
   name: MOD Security Visor Module
   description: A heads-up display installed into the visor of the suit. This module is a heavily-retrofitted targeting system, plugged into various criminal databases to be able to view arrest records, command simple security-oriented robots, and generally know who to shoot. They say these also let you see behind you.
   components:
   - type: Sprite
     state: sechud_visor
   - type: ModSuitMod
+    modComplexity: 2
     slot: head
     components:
     - type: ShowJobIcons
@@ -192,14 +231,29 @@
     - type: ShowCriminalRecordIcons
 
 - type: entity
-  parent: ModsuitModBase
-  id: ModsuitModStorage
-  name: MOD storage module
+  parent: ModSuitModBase
+  id: ModSuitModWeldingProtection
+  name: MOD Welding Protection Module
+  description: The module, installed in the suit's visor, projects a polarized holographic film in front of the user's eyes. It has a high enough rating to protect against such extreme impacts as heat, welding, solar eclipses, and handheld flashes.
+  components:
+  - type: Sprite
+    state: welding
+  - type: ModSuitMod
+    modComplexity: 1
+    slot: head
+    components:
+    - type: EyeProtection
+
+- type: entity
+  parent: ModSuitModBase
+  id: ModSuitModStorage
+  name: MOD Storage Module
   description: What amounts to a series of integrated storage compartments and specialized pockets installed across the surface of the suit, useful for storing various bits, and or bobs.
   components:
   - type: Sprite
     state: storage
   - type: ModSuitMod
+    modComplexity: 3
     slot: MODcore
     components:
     - type: Storage
@@ -208,21 +262,25 @@
       maxItemSize: Huge
 
 - type: entity
-  parent: ModsuitModBase
-  id: ModsuitModWelding
-  name: MOD welding module
-  description: A module installed into the visor of the suit, this projects a polarized, holographic overlay in front of the user's eyes. It's rated high enough for immunity against extremities such as spot and arc welding, solar eclipses, and handheld flashlights.
+  parent: ModSuitModBase
+  id: ModSuitModStorageLarge
+  name: MOD Large Storage Module
+  description: Reverse engineered by Nakamura Engineering from Donk Corporation designs, this system of hidden compartments is entirely within the suit, distributing items and weight evenly to ensure a comfortable experience for the user; whether smuggling, or simply hauling.
   components:
   - type: Sprite
-    state: welding
+    state: storage
   - type: ModSuitMod
-    slot: head
+    modComplexity: 3
+    slot: MODcore
     components:
-    - type: EyeProtection
+    - type: Storage
+      maxItemSize: Huge
+      grid:
+      - 0,0,7,4
 
 - type: entity
-  parent: ModsuitModBase
-  id: ModsuitModArmor
+  parent: ModSuitModBase
+  id: ModSuitModArmor
   name: MOD armor replace module
   description: Replaces armor in your MOD with a "perfect 50".
   components:
@@ -241,45 +299,17 @@
           Radiation: 0.5
 
 - type: entity
-  parent: ModsuitModBase
-  id: ModsuitModStorageLarge
-  name: MOD storage module large
-  description: Reverse engineered by Nakamura Engineering from Donk Corporation designs, this system of hidden compartments is entirely within the suit, distributing items and weight evenly to ensure a comfortable experience for the user; whether smuggling, or simply hauling.
-  components:
-  - type: Sprite
-    state: storage
-  - type: ModSuitMod
-    slot: MODcore
-    components:
-    - type: Storage
-      maxItemSize: Huge
-      grid:
-      - 0,0,7,4
-
-- type: entity
-  parent: ModsuitModBase
-  id: ModsuitModTray
-  name: MOD Tray module
+  parent: ModSuitModBase
+  id: ModSuitModTray
+  name: MOD T-Ray Scan Module
   description: A module installed into the visor of the suit, allowing the user to use a pulse of terahertz radiation to essentially echo-locate things beneath the floor, mostly cables and pipes. A staple of atmospherics work, and counter-smuggling work.
   components:
   - type: Sprite
     state: tray
   - type: ModSuitMod
+    modComplexity: 2
     slot: head
     components:
     - type: TrayScanner
       enabled: true
       range: 10
-
-- type: entity
-  parent: ModsuitModBase
-  id: ModsuitModInsulation
-  name: MOD isolated gloves module
-  description: Insulates your gloves.
-  components:
-  - type: Sprite
-    state: carry
-  - type: ModSuitMod
-    slot: gloves
-    components:
-    - type: Insulated

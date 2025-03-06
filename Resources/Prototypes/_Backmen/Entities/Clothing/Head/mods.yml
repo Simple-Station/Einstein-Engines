@@ -120,11 +120,6 @@
     coolingCoefficient: 0.005
   - type: FireProtection
     reduction: 0.8
-  - type: EyeProtection
-  - type: ShowHealthBars
-    damageContainers:
-    - Inorganic
-    - Silicon
 
 - type: entity
   parent: ClothingHeadHelmetModsuitBase
@@ -136,12 +131,6 @@
     sprite: Backmen/Clothing/Head/Modsuit/medical.rsi
   - type: Clothing
     sprite: Backmen/Clothing/Head/Modsuit/medical.rsi
-  - type: ShowHealthBars
-    damageContainers:
-    - Biological
-  - type: ShowHealthIcons
-    damageContainers:
-    - Biological
 
 - type: entity
   parent: ClothingHeadHelmetModsuitBase
@@ -166,7 +155,6 @@
     sprite: Backmen/Clothing/Head/Modsuit/security.rsi
   - type: PointLight
     color: "#ffeead"
-
 
 - type: entity
   parent: ClothingHeadHelmetModsuitBase

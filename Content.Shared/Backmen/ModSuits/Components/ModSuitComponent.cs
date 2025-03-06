@@ -1,3 +1,4 @@
+using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Inventory;
 using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
@@ -12,6 +13,7 @@ namespace Content.Shared.Backmen.ModSuits.Components;
 public sealed partial class ModSuitComponent : Component
 {
     public const string DefaultClothingContainerId = "modsuit-part";
+    public const string DefaultModuleContainerId = "modsuit-mod";
 
     /// <summary>
     ///     Action used to toggle the clothing on or off.
@@ -23,10 +25,22 @@ public sealed partial class ModSuitComponent : Component
     public EntityUid? ActionEntity;
 
     /// <summary>
-    /// How much complexity can this mod suit fit?
+    ///     The said ever-consuming container of modules
+    /// </summary>
+    public List<ItemSlot> ModuleSlots = new();
+
+    /// <summary>
+    ///     How much complexity can this mod suit fit?
     /// </summary>
     [DataField, AutoNetworkedField]
-    public int MaxComplexity = 10;
+    public int MaxComplexity = 15;
+
+    /// <summary>
+    ///     Current complexity this mod suit is holding.
+    /// </summary>
+    [ViewVariables]
+    [AutoNetworkedField]
+    public int CurrentComplexity = 0;
 
     /// <summary>
     ///     The inventory slot that the clothing is equipped to.
@@ -48,6 +62,9 @@ public sealed partial class ModSuitComponent : Component
     [DataField, AutoNetworkedField]
     public Dictionary<string, EntProtoId> ClothingPrototypes = new();
 
+    [DataField, AutoNetworkedField]
+    public List<EntProtoId> InnateModules = new();
+
     /// <summary>
     ///     Dictionary of clothing uids and slots
     /// </summary>
@@ -61,10 +78,22 @@ public sealed partial class ModSuitComponent : Component
     public Dictionary<string, EntityUid> EntitiesToDeploy = new();
 
     /// <summary>
+    ///     Is the modsuit actively deploying itself?
+    /// </summary>
+    [ViewVariables]
+    public bool BeingDeployed = false;
+
+    /// <summary>
     ///     The container that the clothing is stored in when not equipped.
     /// </summary>
     [DataField, AutoNetworkedField]
     public string ContainerId = DefaultClothingContainerId;
+
+    /// <summary>
+    ///     The container that the modules are stored in.
+    /// </summary>
+    [DataField, AutoNetworkedField, ]
+    public string ModuleContainerId = DefaultModuleContainerId;
 
     [ViewVariables]
     public Container? Container;

@@ -2,7 +2,7 @@
   parent: ClothingHandsBase
   id: ClothingHandsModsuitBase
   name: base MOD gauntlets
-  description: A pair of gauntlets for a MODsuit.
+  description: A pair of gauntlets for a MOD Suit.
   components:
   - type: Sprite
     sprite: Backmen/Clothing/Hands/Gloves/Modsuit/standart.rsi
@@ -12,6 +12,7 @@
     unequipSound: /Audio/Mecha/mechmove03.ogg
     equipDelay: 3
     unequipDelay: 3
+  - type: Insulated # for now, all mods have insulation
   - type: Fiber
     fiberMaterial: fibers-durathread
     fiberColor: fibers-regal-blue
@@ -21,7 +22,7 @@
   parent: ClothingHandsBase
   id: ClothingHandsModsuitAtmos
   name: atmos MOD gauntlets
-  description: A pair of gauntlets for a MODsuit.
+  description: A pair of gauntlets for a MOD Suit.
   components:
   - type: Sprite
     sprite: Backmen/Clothing/Hands/Gloves/Modsuit/atmospheric.rsi
@@ -31,7 +32,6 @@
     unequipSound: /Audio/Mecha/mechmove03.ogg
     equipDelay: 3
     unequipDelay: 3
-  - type: Insulated
   - type: Fiber
     fiberMaterial: fibers-durathread
     fiberColor: fibers-regal-yellow
@@ -40,7 +40,7 @@
   parent: ClothingHandsBase
   id: ClothingHandsModsuitClown
   name: clown MOD gauntlets
-  description: A pair of gauntlets for a MODsuit.
+  description: A pair of gauntlets for a MOD Suit.
   components:
   - type: Sprite
     sprite: Backmen/Clothing/Hands/Gloves/Modsuit/clown.rsi
@@ -58,7 +58,7 @@
   parent: ClothingHandsBase
   id: ClothingHandsModsuitEngineering
   name: atmos MOD gauntlets
-  description: A pair of gauntlets for a MODsuit.
+  description: A pair of gauntlets for a MOD Suit.
   components:
   - type: Sprite
     sprite: Backmen/Clothing/Hands/Gloves/Modsuit/engineering.rsi
@@ -68,7 +68,6 @@
     unequipSound: /Audio/Mecha/mechmove03.ogg
     equipDelay: 3
     unequipDelay: 3
-  - type: Insulated
   - type: Fiber
     fiberMaterial: fibers-durathread
     fiberColor: fibers-regal-yellow
@@ -77,7 +76,7 @@
   parent: ClothingHandsBase
   id: ClothingHandsModsuitMedical
   name: atmos MOD gauntlets
-  description: A pair of gauntlets for a MODsuit.
+  description: A pair of gauntlets for a MOD Suit.
   components:
   - type: Sprite
     sprite: Backmen/Clothing/Hands/Gloves/Modsuit/medical.rsi
@@ -92,7 +91,7 @@
   parent: ClothingHandsBase
   id: ClothingHandsModsuitMining
   name: mining MOD gauntlets
-  description: A pair of gauntlets for a MODsuit.
+  description: A pair of gauntlets for a MOD Suit.
   components:
   - type: Sprite
     sprite: Backmen/Clothing/Hands/Gloves/Modsuit/mining.rsi
@@ -107,7 +106,7 @@
   parent: ClothingHandsBase
   id: ClothingHandsModsuitSecurity
   name: security MOD gauntlets
-  description: A pair of gauntlets for a MODsuit.
+  description: A pair of gauntlets for a MOD Suit.
   components:
   - type: Sprite
     sprite: Backmen/Clothing/Hands/Gloves/Modsuit/security.rsi
@@ -122,7 +121,7 @@
   parent: ClothingHandsBase
   id: ClothingHandsModsuitScience
   name: Science MOD gauntlets
-  description: A pair of gauntlets for a MODsuit.
+  description: A pair of gauntlets for a MOD Suit.
   components:
   - type: Sprite
     sprite: Backmen/Clothing/Hands/Gloves/Modsuit/science.rsi

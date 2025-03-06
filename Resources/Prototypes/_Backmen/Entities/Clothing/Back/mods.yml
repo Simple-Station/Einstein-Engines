@@ -34,6 +34,12 @@
     requireOpen: false
   - type: Item
     size: Huge
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        showEnts: False
+        occludes: True
+        ents: [ ]
 
 - type: entity
   parent: ClothingModsuitBackBase
@@ -50,51 +56,15 @@
       gloves: ClothingHandsModsuitAtmos
       outerClothing: ClothingOuterModsuitBodyAtmos
       shoes: ClothingModsuitShoesAtmos
+    innateModules:
+    - ModSuitModMagBoots
+    - ModSuitModTray
   - type: ClothingSpeedModifier
     walkModifier: 0.9
     sprintModifier: 0.9
   - type: Construction
     graph: ModsuitAtmospheric
     node: sciencemodsuitatmospheric
-  - type: ItemSlots
-    slots:
-      modsuit-mod1:
-        swap: false
-        whitelist:
-          components:
-          - ModSuitMod
-      modsuit-mod2:
-        swap: false
-        whitelist:
-          components:
-          - ModSuitMod
-      modsuit-mod3:
-        swap: false
-        whitelist:
-          components:
-          - ModSuitMod
-  - type: ContainerContainer
-    containers:
-      modsuit-part: !type:Container
-        showEnts: False
-        occludes: True
-        ents: []
-      modsuit-mod1: !type:ContainerSlot
-        showEnts: False
-        occludes: True
-        ent: null
-      modsuit-mod2: !type:ContainerSlot
-        showEnts: False
-        occludes: True
-        ent: null
-      modsuit-mod3: !type:ContainerSlot
-        showEnts: False
-        occludes: True
-        ent: null
-      storagebase: !type:Container
-        showEnts: False
-        occludes: True
-        ents: []
 
 - type: entity
   parent: ClothingModsuitBackBase
@@ -130,6 +100,9 @@
       gloves: ClothingHandsModsuitEngineering
       outerClothing: ClothingOuterModsuitBodyEngineering
       shoes: ClothingModsuitShoesEngineering
+    innateModules:
+    - ModSuitModMagBoots
+    - ModSuitModTray
   - type: Construction
     graph: ModsuitEngineering
     node: sciencemodsuitengineering
@@ -149,6 +122,8 @@
       gloves: ClothingHandsModsuitMedical
       outerClothing: ClothingOuterModsuitBodyMedical
       shoes: ClothingModsuitShoesMedical
+    innateModules:
+    - ModSuitMedHud
   - type: Construction
     graph: ModsuitMedical
     node: sciencemodsuitmedical
@@ -163,6 +138,7 @@
     sprite: Backmen/Clothing/Back/Modsuit/mining.rsi
     state: icon
   - type: ModSuit
+    maxComplexity: 10
     clothingPrototypes:
       head: ClothingHeadHelmetModsuitMining
       gloves: ClothingHandsModsuitMining
@@ -185,59 +161,23 @@
     sprite: Backmen/Clothing/Back/Modsuit/security.rsi
     state: icon
   - type: ModSuit
+    maxComplexity: 10
     clothingPrototypes:
       head: ClothingHeadHelmetModsuitSecurity
       gloves: ClothingHandsModsuitSecurity
       outerClothing: ClothingOuterModsuitBodySecurity
       shoes: ClothingModsuitShoesSecurity
+    innateModules:
+    - ModSuitModSecHud
   - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
+    walkModifier: 1
+    sprintModifier: 1
   - type: Construction
     graph: ModsuitSecurity
     node: sciencemodsuitsecurity
-  - type: ItemSlots
-    slots:
-      modsuit-mod1:
-        swap: false
-        whitelist:
-          components:
-          - ModSuitMod
-      modsuit-mod2:
-        swap: false
-        whitelist:
-          components:
-          - ModSuitMod
-      modsuit-mod3:
-        swap: false
-        whitelist:
-          components:
-          - ModSuitMod
-  - type: ContainerContainer
-    containers:
-      modsuit-part: !type:Container
-        showEnts: False
-        occludes: True
-        ents: []
-      modsuit-mod1: !type:ContainerSlot
-        showEnts: False
-        occludes: True
-        ent: null
-      modsuit-mod2: !type:ContainerSlot
-        showEnts: False
-        occludes: True
-        ent: null
-      modsuit-mod3: !type:ContainerSlot
-        showEnts: False
-        occludes: True
-        ent: null
-      storagebase: !type:Container
-        showEnts: False
-        occludes: True
-        ents: []
 
 - type: entity
-  parent: Clothing
+  parent: ClothingModsuitBackBase
   id: ClothingModsuitBackScience
   name: Science MOD control unit
   description: Made by scientists for scientists. With love!
@@ -246,91 +186,13 @@
     sprite: Backmen/Clothing/Back/Modsuit/science.rsi
     state: icon
   - type: ModSuit
+    maxComplexity: 20
     clothingPrototypes:
       head: ClothingHeadHelmetModsuitScience
       gloves: ClothingHandsModsuitScience
       outerClothing: ClothingOuterModsuitBodyScience
       shoes: ClothingModsuitShoesScience
-  - type: ContainerContainer
-    containers:
-      modsuit-part: !type:Container
-        showEnts: False
-        occludes: True
-        ents: []
-      modsuit-mod1: !type:ContainerSlot
-        showEnts: False
-        occludes: True
-        ent: null
-      modsuit-mod2: !type:ContainerSlot
-        showEnts: False
-        occludes: True
-        ent: null
-      modsuit-mod3: !type:ContainerSlot
-        showEnts: False
-        occludes: True
-        ent: null
-      modsuit-mod4: !type:ContainerSlot
-        showEnts: False
-        occludes: True
-        ent: null
-      modsuit-mod5: !type:ContainerSlot
-        showEnts: False
-        occludes: True
-        ent: null
-      modsuit-mod6: !type:ContainerSlot
-        showEnts: False
-        occludes: True
-        ent: null
-      storagebase: !type:Container
-        showEnts: False
-        occludes: True
-        ents: []
-  - type: UserInterface
-    interfaces:
-      enum.ModSuitUiKey.Key:
-        type: ModSuitBoundUserInterface
-      enum.StorageUiKey.Key:
-        type: StorageBoundUserInterface
-  - type: Clothing
-    quickEquip: false
-    slots:
-    - back
   - type: ClothingSpeedModifier
   - type: Construction
     graph: ModsuitScience
-    node: modsuitcience
-  - type: ItemSlots
-    slots:
-      modsuit-mod1:
-        swap: false
-        whitelist:
-          components:
-          - ModSuitMod
-      modsuit-mod2:
-        swap: false
-        whitelist:
-          components:
-          - ModSuitMod
-      modsuit-mod3:
-        swap: false
-        whitelist:
-          components:
-          - ModSuitMod
-      modsuit-mod4:
-        swap: false
-        whitelist:
-          components:
-          - ModSuitMod
-      modsuit-mod5:
-        swap: false
-        whitelist:
-          components:
-          - ModSuitMod
-      modsuit-mod6:
-        swap: false
-        whitelist:
-          components:
-          - ModSuitMod
-  - type: WiresPanel
-  - type: ActivatableUIRequiresPanel
-    requireOpen: false
+    node: modsuitscience

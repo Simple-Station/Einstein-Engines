@@ -37,5 +37,7 @@ public sealed partial class ModSuitModComponent : Component
     [DataField, AutoNetworkedField]
     public float SpeedMod = -0.01f;
 
+    // Used in internal code. do not modify
+    public bool Innate = false;
     public bool Inserted = false;
 }
