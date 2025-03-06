@@ -31,12 +31,8 @@ public sealed class OniOnlySystem : EntitySystem
         KnockdownAndDropItem(component, args.PlayerUid);
 
         // Convert entity IDs to display names using the identity system
-        var itemName = Identity.Entity(component.Owner, EntityManager);
-        var userName = Identity.Entity(args.PlayerUid, EntityManager);
-        var selfMessage = Loc.GetString("oni-only-component-attack-fail-self", ("item", itemName));
-        var othersMessage = Loc.GetString("oni-only-component-attack-fail-other", ("user", userName), ("item", itemName));
-
-        _popupSystem.PopupPredicted(selfMessage, othersMessage, args.PlayerUid, args.PlayerUid);
+        var message = Loc.GetString("oni-only-component-attack-fail-self", ("item", uid));
+        _popupSystem.PopupClient(message, uid, args.PlayerUid);
 
         args.Cancelled = true;
     }
