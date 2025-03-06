@@ -4,6 +4,7 @@
   id: Terminus
   description: An advanced weapon crafted specifically for an oni. Capable of firing a spread of disabler shots from its tip.
   components:
+  - type: OniOnly
   - type: Sprite
     sprite: Objects/Weapons/Melee/crusher.rsi
     state: icon
@@ -16,7 +17,7 @@
     fireRate: 1
     useKey: false
   - type: RechargeBasicEntityAmmo
-    rechargeCooldown: 0.5
+    rechargeCooldown: 1
     rechargeSound:
       path: /Audio/Weapons/Guns/MagIn/kinetic_reload.ogg
   - type: BasicEntityAmmoProvider
@@ -24,7 +25,7 @@
     capacity: 1
     count: 1
   - type: MeleeWeapon
-    attackRate: 0.65
+    attackRate: 2
     range: 1.65
     wideAnimationRotation: -135
     damage:
