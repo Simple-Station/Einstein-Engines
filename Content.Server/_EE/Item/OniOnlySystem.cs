@@ -34,7 +34,7 @@ public sealed class OniOnlySystem : EntitySystem
             return;
 
         // Get the text
-        args.Message = Loc.GetString("oni-only-component-attack-fail-self", ("item", uid));
+        args.Message = Loc.GetString("wieldable-component-requires-fumble", ("item", uid));
 
         // Check if the user isn't already knocked down before playing the sound.
         var playSound = !_statusEffects.HasStatusEffect(args.PlayerUid, "KnockedDown");
