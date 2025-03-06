@@ -46,7 +46,7 @@ public sealed class OniOnlySystem : EntitySystem
             _audioSystem.PlayPredicted(new SoundPathSpecifier("/Audio/Effects/slip.ogg"), args.PlayerUid, args.PlayerUid);
 
         // Display the message to the player and cancel the melee attempt.
-        _popupSystem.PopupClient(args.Message, uid);
+        _popupSystem.PopupClient(args.Message, uid, PopupType.Large);
         args.Cancelled = true;
     }
 }
