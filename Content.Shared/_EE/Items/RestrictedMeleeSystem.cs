@@ -1,4 +1,3 @@
-using System.Resources;
 using Content.Server.Abilities.Oni;
 using Content.Shared.Ghost;
 using Content.Shared.Hands.EntitySystems;
@@ -8,7 +7,7 @@ using Content.Shared.Stunnable;
 using Content.Shared.Weapons.Melee.Events;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
-
+using System.Collections.Generic;
 
 namespace Content.Shared._EE.Item;
 
@@ -29,14 +28,15 @@ public sealed class RestrictedMeleeSystem : EntitySystem
     private bool CanUse(EntityUid uid, RestrictedMeleeComponent comp)
     {
         foreach (var (_, data) in comp.AllowedComponents)
-            if (EntityManager.HasComponent(uid, data.Component.GetType()))
+        {
+            if (EntityManager.HasComponent(uid, data.GetType()))
                 return true;
-
+        }
         return false;
     }
+
     private void OnMeleeAttempt(EntityUid uid, RestrictedMeleeComponent comp, ref AttemptMeleeEvent args)
     {
-        // Specism.
         if (CanUse(args.PlayerUid, comp))
             return;
 
@@ -53,7 +53,6 @@ public sealed class RestrictedMeleeSystem : EntitySystem
         if (playSound)
             _audioSystem.PlayPredicted(comp.FallSound, args.PlayerUid, args.PlayerUid);
 
-        // Display the message to the player and cancel the melee attempt.
         _popupSystem.PopupClient(args.Message, uid, PopupType.Large);
         args.Cancelled = true;
     }

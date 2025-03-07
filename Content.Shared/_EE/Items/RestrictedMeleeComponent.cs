@@ -10,7 +10,7 @@ using Robust.Shared.Prototypes;
 public sealed partial class RestrictedMeleeComponent : Component
 {
     [DataField, AlwaysPushInheritance]
-    public ComponentRegistry AllowedComponents { get; set; } = new();
+    public Dictionary<string, Component> AllowedComponents { get; private set; } = new();
 
     [DataField]
     public TimeSpan KnockdownDuration = TimeSpan.FromSeconds(2);
