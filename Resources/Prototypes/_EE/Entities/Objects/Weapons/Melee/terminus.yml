@@ -6,7 +6,7 @@
   components:
   - type: RestrictedMelee
     AllowedComponents:
-    - type: Oni
+    - type: OniComponent
   - type: Sprite
     sprite: Objects/Weapons/Melee/terminus.rsi
     state: icon
