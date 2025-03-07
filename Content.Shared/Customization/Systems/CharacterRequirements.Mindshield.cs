@@ -1,23 +1,22 @@
-using Content.Shared.CCVar;
+using System.Linq;
+using Content.Shared.Implants.Components;
 using Content.Shared.Mind;
+using Content.Shared.Mindshield.Components;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using JetBrains.Annotations;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
-using Robust.Shared.Utility;
-using Robust.Shared.Network;
 
 namespace Content.Shared.Customization.Systems;
 
-
 /// <summary>
-///     Requires the player to be whitelisted if whitelists are enabled
+///     Requires the player to have a mindshield
 /// </summary>
 [UsedImplicitly]
 [Serializable, NetSerializable]
-public sealed partial class CharacterWhitelistRequirement : CharacterRequirement
+public sealed partial class CharacterMindshieldRequirement : CharacterRequirement
 {
     public override bool IsValid(JobPrototype job,
         HumanoidCharacterProfile profile,
@@ -31,11 +30,11 @@ public sealed partial class CharacterWhitelistRequirement : CharacterRequirement
         int depth = 0,
         MindComponent? mind = null)
     {
-        reason = null;
-        if (!configManager.IsCVarRegistered("whitelist.enabled"))
-            return whitelisted;
+        reason = Loc.GetString("character-mindshield-requirement", ("inverted", Inverted));
 
-        reason = Loc.GetString("character-whitelist-requirement", ("inverted", Inverted));
-        return !configManager.GetCVar(CCVars.WhitelistEnabled) || whitelisted;
+        if (mind == null)
+            return false;
+
+        return entityManager.HasComponent<MindShieldComponent>(mind.CurrentEntity) != Inverted;
     }
 }
