@@ -12380,3 +12380,10 @@ Entries:
   id: 6909
   time: '2025-03-07T18:27:05.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1878
+- author: EctoplasmIsGood
+  changes:
+    - type: Remove
+      message: You heard nothing and you saw nothing, glory to Nanotrasen.
+  id: 6910
+  time: '2025-03-07T22:45:44.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1880
