@@ -91,8 +91,8 @@
   category: Weapons
   completetime: 6
   materials:
-    Steel: 1250
-    Plastic: 750
+    Steel: 1250 # Might have to change the cost later
+    Plastic: 750 # Im leaving this comment solely to run tests again.
     Gold: 500
 
 - type: latheRecipe
