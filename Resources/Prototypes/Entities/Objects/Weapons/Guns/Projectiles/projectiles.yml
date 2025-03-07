@@ -1088,18 +1088,18 @@
     forceSound: true
 
 - type: entity
-  name: wide laser barrage
+  name: laser barrage
   id: BulletLaserSpread
   parent: BulletLaser
   categories: [ HideSpawnMenu ]
   components:
   - type: ProjectileSpread
     proto: BulletLaser
-    count: 5 #50 heat damage if you hit all your shots, but wide spread
-    spread: 20
+    count: 6 #60 heat damage if you hit all your shots, but wide spread
+    spread: 15
 
 - type: entity
-  name: slug laser
+  name: laser slug
   id: BulletLaserSpreadSlug
   parent: BulletLaserHeavy
   categories: [ HideSpawnMenu ]
@@ -1133,7 +1133,7 @@
     spread: 10
 
 - type: entity
-  name: disabling laser barrage
+  name: disabler laser barrage
   id: BulletDisablerSmgSpread
   parent: BulletDisablerSmg
   categories: [ HideSpawnMenu ]
