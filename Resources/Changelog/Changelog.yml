@@ -12289,3 +12289,48 @@ Entries:
   id: 6903
   time: '2025-03-07T16:56:10.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1874
+- author: EctoplasmIsGood
+  changes:
+    - type: Remove
+      message: Commented out the vector
+    - type: Tweak
+      message: The minigun now has proper spread, wielding, and a magazine
+    - type: Tweak
+      message: .10 rifle ammo (for the minigun) from 5 piercing > 15
+    - type: Tweak
+      message: Tranquilizer shells are now twice as potent
+    - type: Tweak
+      message: C-20R now fires much faster, making it *almost* as strong as the drozd
+    - type: Tweak
+      message: >-
+        Buffed the hell out of the Hristov to make it feel like a proper heavy
+        rifle. 50 piercing > 80, 50 stamina damage > 75
+    - type: Tweak
+      message: >-
+        .20 rifle ammo from 17 piercing > 23, uranium .20 rifle ammo from 8
+        piercing > 12
+    - type: Add
+      message: >-
+        Adds new fire mode for the energy shotgun, a "slug" that has less DPS
+        then the normal variant, but no spread
+    - type: Remove
+      message: Removed energy shotgun narrow barrage
+    - type: Tweak
+      message: >-
+        E-sword slash from 8 > 12 damage, heat from 10 > 15 damage, structural
+        from 20 > 45 damage
+    - type: Tweak
+      message: E-cutlass structural from 0 > 30 damage
+    - type: Tweak
+      message: >-
+        Double-sided E-blade slash from 8 > 12 damage, heat from 13 > 15 damage,
+        structural from 15 > 30 damage
+    - type: Tweak
+      message: >-
+        Energy sword and cutlass can no longer embed into objects, preventing a
+        bug that would cause them to be permanently stuck (it also made no sense
+        that an energy weapon could get stuck in something, just turn it off
+        lol)
+  id: 6904
+  time: '2025-03-07T17:01:01.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1861
