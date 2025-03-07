@@ -1099,14 +1099,14 @@
     spread: 20
 
 - type: entity
-  name: slug laser barrage
+  name: slug laser
   id: BulletLaserSpreadSlug
   parent: BulletLaserHeavy
   categories: [ HideSpawnMenu ]
   components:
   - type: ProjectileSpread
     proto: BulletLaser
-    count: 4 #60 heat damage, and a high energy cost per shot.
+    count: 4 #60 heat damage, 20 blunt damage, and a high energy cost per shot.
     spread: 0
 
 - type: entity
