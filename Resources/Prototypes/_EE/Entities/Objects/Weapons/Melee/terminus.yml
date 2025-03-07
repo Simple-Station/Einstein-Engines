@@ -6,7 +6,7 @@
   components:
   - type: OniOnly
   - type: Sprite
-    sprite: Objects/Weapons/Melee/crusher.rsi
+    sprite: Objects/Weapons/Melee/terminus.rsi
     state: icon
   - type: AmmoCounter
   - type: UseDelayOnShoot
