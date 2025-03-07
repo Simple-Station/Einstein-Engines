@@ -212,6 +212,13 @@
   - type: StationNews
 
 - type: entity
+  id: BaseStationDeliveries
+  abstract: true
+  components:
+  - type: CargoDeliveryData
+  - type: StationLogisticStats # DeltaV - Tracks statistics related to mail and income
+
+- type: entity
   id: BaseStationAllEventsEligible
   abstract: true
   components:

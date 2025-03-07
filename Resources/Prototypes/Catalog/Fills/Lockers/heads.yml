@@ -2,7 +2,6 @@
   id: LockerFillQuarterMaster
   table: !type:AllSelector
     children:
-    - id: AstroNavCartridge
     - id: BoxEncryptionKeyCargo
     - id: BoxFolderQmClipboard
     - id: BoxPDACargo
@@ -23,6 +22,8 @@
     - id: RubberStampApproved
     - id: RubberStampDenied
     - id: RubberStampQm
+    - id: AstroNavCartridge
+    - id: MailTeleporterMachineCircuitboard
     - id: SpaceCashLuckyBill
 
 - type: entity
