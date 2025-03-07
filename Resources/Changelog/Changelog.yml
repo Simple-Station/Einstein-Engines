@@ -12334,3 +12334,10 @@ Entries:
   id: 6904
   time: '2025-03-07T17:01:01.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1861
+- author: dootythefrooty
+  changes:
+    - type: Tweak
+      message: Spray Nozzle parameters have been tweaked for MAXIMUM cleanliness.
+  id: 6905
+  time: '2025-03-07T17:08:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1883
