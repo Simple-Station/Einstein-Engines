@@ -13,9 +13,9 @@
   - type: Gun
     cameraRecoilScalar: 0 #no recoil
     fireRate: 12.5
-    ProjectileSpeed: 8
-    MinAngle: 15
-    MaxAngle: 120
+    projectileSpeed: 8
+    minAngle: 15
+    maxAngle: 120
     selectedMode: FullAuto
     availableModes:
     - FullAuto
