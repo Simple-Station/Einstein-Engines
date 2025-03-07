@@ -1,30 +1,12 @@
+# Helmets
 - type: entity
-  parent: [ClothingHeadHelmetBasic, SolAllianceInfo]
+  parent: [ClothingHeadHelmetBasic, SolAllianceInfo, BaseClothingRadio]
   id: ClothingHeadHelmetSAN
   name: SAN tactical helmet
-  description: A simple Solarian helmet design, only marginally different than the ancient sallet which inspired it. Today they're made from the same alloy as starship hulls. It incorprates a built-in shortwave radio.
+  suffix: SAN
+  description: A simple Solarian helmet design, only marginally different than the ancient sallet which inspired it. Today they're made from the same alloy as starship hulls.
   components:
     - type: Sprite
       sprite: _EE/Clothing/SolAlliance/Helmet/SAN_tactical_helmet.rsi
     - type: Clothing
       sprite: _EE/Clothing/SolAlliance/Helmet/SAN_tactical_helmet.rsi
-    - type: TelecomExempt
-    - type: RadioMicrophone
-      broadcastChannel: Handheld
-      toggleOnInteract: false
-      frequency: 2132
-    - type: RadioSpeaker
-      toggleOnInteract: false
-      channels:
-      - Handheld
-    - type: Speech
-      speechVerb: Robotic
-    - type: Tag
-      tags:
-      - Radio
-    - type: ActivatableUI
-      key: enum.HandheldRadioUiKey.Key
-    - type: UserInterface
-      interfaces:
-        enum.HandheldRadioUiKey.Key:
-          type: HandheldRadioBoundUserInterface

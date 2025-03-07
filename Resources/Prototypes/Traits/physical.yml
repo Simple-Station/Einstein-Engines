@@ -594,6 +594,10 @@
       inverted: true
       jobs:
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+    - !type:CharacterSpeciesRequirement
+        inverted: true
+        species:
+          - IPC
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -889,7 +893,7 @@
 # - type: trait
 #  id: FlareShieldingModule
 #  category: Physical
-#  points: -2
+#  points: -4
 #  requirements:
 #    - !type:CharacterJobRequirement
 #      inverted: true
@@ -898,12 +902,20 @@
 #    - !type:CharacterSpeciesRequirement
 #      species:
 #        - IPC
+#    - !type:CharacterTraitRequirement
+#      inverted: true
+#      traits:
+#       - Photophobia
+#        - Blindness
+#        - Nearsighted
 #    - !type:CharacterItemGroupRequirement
 #      group: TraitsMind
 #  functions:
-#   - !type:TraitAddComponent
-#     components:
-#       - type: EyeProtection
+#    - !type:TraitAddComponent
+#      components:
+#        - type: FlashImmunity
+#        - type: EyeProtection
+
 
 - type: trait
   id: SecurityEyesModule
@@ -924,6 +936,9 @@
       inverted: true
       traits:
         - OmniEyesModule
+        - Photophobia
+        - Blindness
+        - Nearsighted
     - !type:CharacterItemGroupRequirement
       group: TraitsMind
   functions:
@@ -950,6 +965,9 @@
       traits:
         - DiagnosticEyesModule
         - OmniEyesModule
+        - Photophobia
+        - Blindness
+        - Nearsighted
     - !type:CharacterItemGroupRequirement
       group: TraitsMind
   functions:
@@ -979,6 +997,9 @@
       traits:
         - MedicalEyesModule
         - OmniEyesModule
+        - Photophobia
+        - Blindness
+        - Nearsighted
     - !type:CharacterItemGroupRequirement
       group: TraitsMind
   functions:
@@ -1008,6 +1029,9 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
+        - Photophobia
+        - Blindness
+        - Nearsighted
         - MedicalEyesModule
         - DiagnosticEyesModule
         - SecurityEyesModule
@@ -1040,6 +1064,12 @@
     - !type:CharacterSpeciesRequirement
       species:
         - IPC
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Photophobia
+        - Blindness
+        - Nearsighted
     - !type:CharacterItemGroupRequirement
       group: TraitsMind
   functions:
@@ -1059,6 +1089,12 @@
     - !type:CharacterSpeciesRequirement
       species:
         - IPC
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Photophobia
+        - Blindness
+        - Nearsighted
     - !type:CharacterItemGroupRequirement
       group: TraitsMind
   functions:
