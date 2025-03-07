@@ -12,7 +12,10 @@
     size: Normal
   - type: Gun
     cameraRecoilScalar: 0 #no recoil
-    fireRate: 4
+    fireRate: 12.5
+    ProjectileSpeed: 8
+    MinAngle: 15
+    MaxAngle: 120
     selectedMode: FullAuto
     availableModes:
     - FullAuto
