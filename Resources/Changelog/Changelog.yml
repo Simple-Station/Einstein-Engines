@@ -12262,3 +12262,13 @@ Entries:
   id: 6901
   time: '2025-03-07T14:10:06.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1884
+- author: Diggy
+  changes:
+    - type: Tweak
+      message: >-
+        IPCs can't grab the basic cyber eyes trait (Why would u do that
+        stoopid), added most of my traits to the mind over machine stuff, IPC
+        eye traits now prevent bad eye traits.
+  id: 6902
+  time: '2025-03-07T16:45:14.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1863
