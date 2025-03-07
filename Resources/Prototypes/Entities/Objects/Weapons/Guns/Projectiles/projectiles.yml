@@ -1095,7 +1095,7 @@
   components:
   - type: ProjectileSpread
     proto: BulletLaser
-    count: 6 #60 heat damage if you hit all your shots, but wide spread
+    count: 6 # 60 heat damage if you hit all your shots, but wide spread
     spread: 25
 
 - type: entity
@@ -1129,7 +1129,7 @@
   components:
   - type: ProjectileSpread
     proto: BulletLaser
-    count: 3 #45 heat damage if you hit all your shots, but narrower spread
+    count: 3 # 45 heat damage if you hit all your shots, but narrower spread
     spread: 10
 
 - type: entity
@@ -1140,10 +1140,10 @@
   components:
   - type: ProjectileSpread
     proto: BulletDisablerSmg
-    count: 3 #bit stronger than a disabler if you hit your shots you goober, still not a 2 hit stun though
+    count: 3 # bit stronger than a disabler if you hit your shots you goober, still not a 2 hit stun though
     spread: 9
 
-- type: entity #Goobstation, put here so the X-01 stuff isnt spread everywhere.
+- type: entity # Goobstation, put here so the X-01 stuff isnt spread everywhere.
   name: magnum bolt
   id: BulletEnergyGunMagnum
   parent: BaseBullet
