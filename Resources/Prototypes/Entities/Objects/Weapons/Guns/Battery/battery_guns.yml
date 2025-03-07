@@ -921,7 +921,7 @@
     - proto: BulletLaserSpread
       fireCost: 150
     - proto: BulletLaserSpreadSlug
-      fireCost: 400
+      fireCost: 300
     - proto: BulletDisablerSmgSpread
       fireCost: 120
   - type: Item
