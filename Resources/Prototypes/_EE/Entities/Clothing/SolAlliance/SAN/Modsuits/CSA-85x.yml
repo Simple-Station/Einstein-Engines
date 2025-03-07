@@ -3,7 +3,7 @@
   parent: [ClothingModsuitStandard, SolAllianceInfo]
   id: ClothingModsuitSANMarine
   name: CSA-85x "Mazu" modsuit control
-  description: A special modular suit control containing all modular suit parts.
+  description: The main controller for a "Mazu" modsuit. A rare and incredibly valuable piece of military hardware typically reserved for Solarian special forces.
   components:
     - type: Sprite
       sprite: _EE/Clothing/SolAlliance/Modsuits/csa_85x.rsi
@@ -19,27 +19,31 @@
       slots:
         cell_slot:
           name: power-cell-slot-component-slot-name-default
-          startingItem: PowerCellAntiqueProto
+          startingItem: PowerCellHyper
           whitelist:
             components:
               - PowerCell
+    - type: Storage
+      maxItemSize: Huge
+      grid:
+        - 0,0,7,4
 
 - type: entity
   parent: [ClothingModsuitGauntletsStandard, SolAllianceInfo]
   id: ClothingModsuitGauntletsSANMarine
   name: CSA-85x "Mazu" modsuit gauntlets
-  description: A special modular suit gloves that protect wearer from electric shock.
-  categories: [ HideSpawnMenu ]
+  description: A pair of gauntlets made for crushing alien skulls. It is part of the "Mazu" modsuit.
+  categories: [HideSpawnMenu]
   components:
     - type: Sprite
       sprite: _EE/Clothing/SolAlliance/Modsuits/csa_85x.rsi
 
 - type: entity
-  parent: [ClothingModsuitHelmetStandard, SolAllianceInfo]
+  parent: [ClothingModsuitHelmetStandard, SolAllianceInfo, ShowSecurityIcons, BaseClothingRadio]
   id: ClothingModsuitHelmetSANMarine
   name: CSA-85x "Mazu" modsuit helmet
-  description: A special modular suit spaceproof helmet designed for compact folding inside modular suit control.
-  categories: [ HideSpawnMenu ]
+  description: A state-of-the-art helmet designed by CyberSun Armaments for the "Mazu" modsuit. It includes a built-in HUD.
+  categories: [HideSpawnMenu]
   components:
     - type: Sprite
       sprite: _EE/Clothing/SolAlliance/Modsuits/csa_85x.rsi
@@ -54,35 +58,20 @@
     - type: SealableClothingVisuals
       visualLayers:
         head:
-        - state: equipped-HEAD-sealed
-          shader: unshaded
-    - type: TelecomExempt
-    - type: RadioMicrophone
-      broadcastChannel: Handheld
-      toggleOnInteract: false
-      frequency: 2132
-    - type: RadioSpeaker
-      toggleOnInteract: false
-      channels:
-      - Handheld
-    - type: Speech
-      speechVerb: Robotic
-    - type: Tag
-      tags:
-      - Radio
-    - type: ActivatableUI
-      key: enum.HandheldRadioUiKey.Key
-    - type: UserInterface
-      interfaces:
-        enum.HandheldRadioUiKey.Key:
-          type: HandheldRadioBoundUserInterface
+          - state: equipped-HEAD-sealed
+            shader: unshaded
+    - type: ShowHealthBars
+      damageContainers:
+        - Biological
+    - type: PointLight
+      color: "#FF4500"
 
 - type: entity
   parent: [ClothingModsuitChestplateStandard, SolAllianceInfo]
   id: ClothingModsuitChestplateSANMarine
   name: CSA-85x "Mazu" modsuit chestplate
-  description: A special modular suit space-proof cover designed for compact folding inside modular suit control.
-  categories: [ HideSpawnMenu ]
+  description: A state of the art chestplate for the "Mazu" Modsuit. It uses the same armor plating as a "Shanlin" tacsuit, but also incorporates powered servos to reduce the equipment load.
+  categories: [HideSpawnMenu]
   components:
     - type: Sprite
       sprite: _EE/Clothing/SolAlliance/Modsuits/csa_85x.rsi
@@ -113,19 +102,63 @@
   parent: [ClothingModsuitBootsStandard, SolAllianceInfo]
   id: ClothingModsuitBootsSANMarine
   name: CSA-85x "Mazu" modsuit boots
-  description: A special modular suit boots designed for compact folding inside modular suit control.
-  categories: [ HideSpawnMenu ]
+  description: A state-of-the-art pair of magboots for the "Mazu" modsuit. So long as the suit is powered, these will not slow the wearer down.
+  categories: [HideSpawnMenu]
   components:
     - type: Appearance
     - type: Sprite
       sprite: _EE/Clothing/SolAlliance/Modsuits/csa_85x.rsi
     - type: Tag
       tags:
-      - WhitelistChameleon
+        - WhitelistChameleon
     - type: ClothingSpeedModifier
-      walkModifier: 1.05
-      sprintModifier: 1.05
-    - type: NoSlip
+      walkModifier: 1
+      sprintModifier: 1
+    - type: ToggleClothing
+      action: ActionToggleMagboots
+    - type: ComponentToggler
+      components:
+        - type: NoSlip
+    - type: Magboots
+
+# Filled Kit Variants
+- type: entity
+  parent: [ClothingModsuitSANMarine]
+  id: ClothingModsuitSANMarineFilledMarine
+  name: CSA-85x "Mazu" modsuit control
+  suffix: SAN, Marine Kit
+  components:
+    - type: StorageFill
+      contents:
+        - id: ClothingHeadHatSANMarineUtility
+        - id: DoubleEmergencyOxygenTankFilled
+        - id: ClothingUniformJumpsuitSolFatigueGreen
+        - id: ClothingBeltMercWebbing
+        - id: WeaponPistolViperWood
+        - id: MagazinePistol
+        - id: ClothingMaskGasMerc
+        - id: ClothingShoesBootsCombatFilled
+        - id: SANIdCard
+        - id: ClothingHandsMercGlovesCombat
+
+- type: entity
+  parent: [ClothingModsuitSANMarine]
+  id: ClothingModsuitSANMarineFilledOfficer
+  name: CSA-85x "Mazu" modsuit control
+  suffix: SAN, Officer Kit
+  components:
+    - type: StorageFill
+      contents:
+        - id: ClothingHeadHatSANArmyCapOfficer
+        - id: DoubleEmergencyOxygenTankFilled
+        - id: ClothingUniformJumpsuitSolArmyServiceOfficer
+        - id: ClothingBeltSheathSANMarineFilled
+        - id: WeaponPistolViperWood
+        - id: MagazinePistol
+        - id: ClothingMaskGasMerc
+        - id: ClothingShoesBootsCombatFilled
+        - id: SANIdCard
+        - id: ClothingHandsMercGlovesCombat
 
 # Containers for the CSA-85x
 # Do not add "Accomodations" for species other than human to this.
@@ -139,11 +172,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: ClothingModsuitSANMarine
-      - id: DoubleEmergencyOxygenTankFilled
-      - id: ClothingUniformJumpsuitSolFatigueGreen
-      - id: ClothingBeltMercWebbing
-      - id: ClothingHeadHatSANMarineUtility
+      - id: ClothingModsuitSANMarineFilledMarine
 
 - type: entity
   id: CrateSANModsuitGroup
@@ -153,32 +182,12 @@
   description: Contains five full Solarian marine uniforms, complete with modsuits.
   components:
   - type: StorageFill
-    contents:
-      - id: ClothingModsuitSANMarine
-      - id: DoubleEmergencyOxygenTankFilled
-      - id: ClothingUniformJumpsuitSolFatigueGreen
-      - id: ClothingBeltMercWebbing
-      - id: ClothingModsuitSANMarine
-      - id: DoubleEmergencyOxygenTankFilled
-      - id: ClothingUniformJumpsuitSolFatigueGrey
-      - id: ClothingBeltMercWebbing
-      - id: ClothingModsuitSANMarine
-      - id: DoubleEmergencyOxygenTankFilled
-      - id: ClothingUniformJumpsuitSolArmyServiceOfficer
-      - id: ClothingBeltSheathSANMarineFilled
-      - id: ClothingModsuitSANMarine
-      - id: DoubleEmergencyOxygenTankFilled
-      - id: ClothingUniformJumpsuitSolFatigueGreen
-      - id: ClothingBeltMercWebbing
-      - id: ClothingModsuitSANMarine
-      - id: DoubleEmergencyOxygenTankFilled
-      - id: ClothingUniformJumpsuitSolFatigueGreen
-      - id: ClothingBeltMercWebbing
-      - id: ClothingHeadHatSANMarineUtility
-      - id: ClothingHeadHatSANMarineUtility
-      - id: ClothingHeadHatSANMarineUtility
-      - id: ClothingHeadHatSANMarineUtility
-      - id: ClothingHeadHatSANArmyCapOfficer
+    contents: # 4 Marines, 1 Officer
+      - id: ClothingModsuitSANMarineFilledMarine
+      - id: ClothingModsuitSANMarineFilledMarine
+      - id: ClothingModsuitSANMarineFilledMarine
+      - id: ClothingModsuitSANMarineFilledMarine
+      - id: ClothingModsuitSANMarineFilledOfficer
 
 - type: entity
   id: SuitStorageSANModsuit
@@ -189,4 +198,26 @@
       contents:
           - id: OxygenTankFilled
           - id: ClothingModsuitSANMarine
+          - id: ClothingMaskBreath
+
+- type: entity
+  id: SuitStorageSANModsuitMarine
+  parent: SuitStorageBase
+  suffix: CSA-85x, Marine Kit
+  components:
+    - type: StorageFill
+      contents:
+          - id: OxygenTankFilled
+          - id: ClothingModsuitSANMarineFilledMarine
+          - id: ClothingMaskBreath
+
+- type: entity
+  id: SuitStorageSANModsuitOfficer
+  parent: SuitStorageBase
+  suffix: CSA-85x, Officer Kit
+  components:
+    - type: StorageFill
+      contents:
+          - id: OxygenTankFilled
+          - id: ClothingModsuitSANMarineFilledOfficer
           - id: ClothingMaskBreath

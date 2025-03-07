@@ -3,7 +3,7 @@
   name: Solarian marine sabre
   parent: CaptainSabre
   id: SANMarineSabre
-  description: Placeholder for SAN
+  description: A plastitanium cavalry sabre, issued to every graduate from Solarian military academies. An officer without a sword is an officer not in uniform.
   components:
     - type: Sprite
       sprite: _EE/Clothing/SolAlliance/Swords/SAN_marine_officer_sword.rsi
@@ -17,7 +17,7 @@
 - type: entity
   parent: ClothingBeltSheath
   id: ClothingBeltSheathSANMarineFilled
-  name: Solariansabre sheath
+  name: Solarian sabre sheath
   description: An ornate sheath designed to hold an officer's blade.
   components:
   - type: ContainerFill
@@ -29,7 +29,7 @@
   name: Solarian officer sabre
   parent: SANMarineSabre
   id: SANOfficerSabre
-  description: Placeholder for SAN
+  description: A plastitanium fencing sabre, issued to every graduate from Solarian military academies. An officer without a sword is an officer not in uniform.
   components:
     - type: Sprite
       sprite: _EE/Clothing/SolAlliance/Swords/SAN_officer_sword.rsi
