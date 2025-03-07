@@ -1,3 +1,4 @@
+using System.Resources;
 using Content.Server.Abilities.Oni;
 using Content.Shared.Ghost;
 using Content.Shared.Hands.EntitySystems;
@@ -11,7 +12,7 @@ using Robust.Shared.Audio.Systems;
 
 namespace Content.Shared._EE.Item;
 
-public sealed class OniOnlySystem : EntitySystem
+public sealed class RestrictedMeleeSystem : EntitySystem
 {
     [Dependency] private readonly SharedStunSystem _stun = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
@@ -22,28 +23,38 @@ public sealed class OniOnlySystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<OniOnlyComponent, AttemptMeleeEvent>(OnMeleeAttempt);
+        SubscribeLocalEvent<RestrictedMeleeComponent, AttemptMeleeEvent>(OnMeleeAttempt);
     }
 
-    private void OnMeleeAttempt(EntityUid uid, OniOnlyComponent component, ref AttemptMeleeEvent args)
+    private bool CanUse(EntityUid uid, RestrictedMeleeComponent comp)
     {
-        bool CanUse(EntityUid? uid) => HasComp<OniComponent>(uid) || HasComp<GhostComponent>(uid);
-
+        foreach (var (_, data) in comp.AllowedComponents)
+        {
+            if (EntityManager.HasComponent(uid, data.Component.GetType()))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    private void OnMeleeAttempt(EntityUid uid, RestrictedMeleeComponent comp, ref AttemptMeleeEvent args)
+    {
         // Specism.
-        if (CanUse(args.PlayerUid))
+        if (CanUse(args.PlayerUid, comp))
             return;
 
-        args.Message = Loc.GetString("oni-only-component-attack-fail-self", ("item", uid));
+        args.Message = Loc.GetString(comp.FailText, ("item", uid));
 
-        // Don't knock down if already knocking down.
         var playSound = !_statusEffects.HasStatusEffect(args.PlayerUid, "KnockedDown");
 
-        // Apply knockdown using the specified duration and force-drop any held item.
-        _stun.TryKnockdown(args.PlayerUid, component.KnockdownDuration, true);
-        _hands.TryDrop(args.PlayerUid);
+        if (comp.DoKnockdown)
+            _stun.TryKnockdown(args.PlayerUid, comp.KnockdownDuration, true);
+
+        if (comp.ForceDrop)
+            _hands.TryDrop(args.PlayerUid);
 
         if (playSound)
-            _audioSystem.PlayPredicted(component.SoundUse, args.PlayerUid, args.PlayerUid);
+            _audioSystem.PlayPredicted(comp.FallSound, args.PlayerUid, args.PlayerUid);
 
         // Display the message to the player and cancel the melee attempt.
         _popupSystem.PopupClient(args.Message, uid, PopupType.Large);
