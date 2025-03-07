@@ -24,8 +24,76 @@
   - type: Clothing
     sprite: _Goobstation/Clothing/Hands/Gloves/goldtrim.rsi
   - type: Fiber
-    fiberMaterial: fibers-classified
-    fiberColor: fibers-white
+
+- type: entity
+  parent: ClothingHandsGlovesColorYellow
+  id: ClothingHandsGlovesExplosiveShock
+  suffix: Exploding
+  components:
+  - type: ExplosiveShock
+    handsDamage:
+      types:
+        Blunt: 40
+        Heat: 40
+    armsDamage:
+      types:
+        Blunt: 10
+        Heat: 10
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 5
+    intensitySlope: 5
+    totalIntensity: 25
+    maxTileBreak: 1
+    canCreateVacuum: false
+  - type: Tag
+    tags: [] # ignore "WhitelistChameleon" tag
+
+  - type: ItemSwitch
+    showLabel: true
+    state: gauntlet
+    states:
+      gauntlet: !type:ItemSwitchState
+        verb: gauntlet
+        sprite:
+          sprite: _Goobstation/Clothing/Hands/Gloves/deathsquad.rsi
+          state: icon
+        components:
+          - type: MeleeWeapon
+            attackRate: 1.2
+            damage:
+              types:
+                Blunt: 32
+                Structural: 80
+            mustBeEquippedToUse: true
+          - type: StaminaDamageOnHit
+            damage: 45
+            overtime: 80
+        soundStateActivate:
+          collection: sparks
+          params:
+            variation: 0.125
+            volume: -5
+
+      claws: !type:ItemSwitchState
+        verb: claws
+        sprite:
+          sprite: _Goobstation/Clothing/Hands/Gloves/deathsquad.rsi
+          state: icon-on
+        components:
+          - type: MeleeWeapon
+            attackRate: 2
+            autoAttack: true
+            damage:
+              types:
+                Slash: 25
+                Structural: 50
+                Cellular: 15 # Rip and tear until it is done.
+            mustBeEquippedToUse: true
+        soundStateActivate:
+          collection: sparks
+          params:
+            variation: 0.125
 
 - type: entity
   parent: [ClothingHandsGlovesCombat]

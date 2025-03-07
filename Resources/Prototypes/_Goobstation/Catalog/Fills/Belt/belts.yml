@@ -15,6 +15,8 @@
   parent: ClothingBeltMilitaryWebbingCMO
   suffix: Filled, DO NOT MAP
   id: ClothingBeltMilitaryCMOFilled
+  name: chief medical officer's chest rig
+  description: "A medical chest rig with deep pockets, for use by paramedics and health professionals."
   components:
   - type: StorageFill
     contents:

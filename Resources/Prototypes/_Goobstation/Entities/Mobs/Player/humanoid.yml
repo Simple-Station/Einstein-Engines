@@ -47,9 +47,7 @@
   randomizeName: false
   components:
   - type: GrantImplant
-    implants: [ MindShieldImplant, FreedomImplant, BluespaceLifelineImplant ]
-  - type: GrantCqc
-    isBlocked: false
+    implants: [ FreedomImplant, BluespaceLifelineImplant, RadioImplantCentcomm ]
   - type: GhostRole
     name: ghost-role-information-navy-officer-name
     description: ghost-role-information-navy-officer-description

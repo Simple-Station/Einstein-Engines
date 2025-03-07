@@ -30,7 +30,8 @@
       types:
         Heat: 5
   - type: Stunbaton
-    energyPerUse: 120
+    energyPerUse: 100
+    lightAttackEnergyMultiplier: 2
   - type: MeleeWeapon
     angle: 0
     wideAnimationRotation: -135
@@ -38,7 +39,10 @@
       types:
         Blunt: 13 # Unlucky number
         Slash: 7 # Lucky number
+    bluntStaminaDamageFactor: 0.5
     animation: WeaponArcThrust
+    soundHit:
+      collection: MetalThud
   - type: StaminaDamageOnHit
     damage: 30
     overtime: 30
@@ -60,6 +64,11 @@
     size: Normal
   - type: DisarmMalus
     malus: 0.225
+  - type: DelayedKnockdownOnHit
+    useDelay: stunbaton
+  - type: UseDelayBlockMelee
+    delays:
+    - stunbaton
   - type: Appearance
   - type: GenericVisualizer
     visuals:

@@ -166,21 +166,21 @@
     netsync: false
   - type: LightBehaviour
     behaviours:
-      - !type:FadeBehaviour
-        id: radiating
-        interpolate: Linear
-        maxDuration: 2.0
-        startValue: 3.0
-        endValue: 2.0
-        isLooped: true
-        reverseWhenFinished: true
-      - !type:PulseBehaviour
-        id: blinking
-        interpolate: Nearest
-        maxDuration: 1.0
-        minValue: 0.1
-        maxValue: 2.0
-        isLooped: true
+    - !type:FadeBehaviour
+      id: radiating
+      interpolate: Linear
+      maxDuration: 2.0
+      startValue: 3.0
+      endValue: 2.0
+      isLooped: true
+      reverseWhenFinished: true
+    - !type:PulseBehaviour
+      id: blinking
+      interpolate: Nearest
+      maxDuration: 1.0
+      minValue: 0.1
+      maxValue: 2.0
+      isLooped: true
   - type: Battery
     maxCharge: 600
     startingCharge: 600
@@ -352,6 +352,17 @@
   - type: ExplosionResistance
     damageCoefficient: 0.65
   - type: GroupExamine
+
+- type: entity # This is from upstream, so it goes in wizden code.
+  parent: [ClothingOuterArmorCaptainCarapace, BaseCentcommContraband]
+  id: ClothingOuterArmorCentcommCarapace
+  name: centcomm carapace
+  description: 'An armored chestpiece that provides protection whilst still offering maximum mobility and flexibility. Issued only to centcomm officials and agents.'
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Armor/centcomm_carapace.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Armor/centcomm_carapace.rsi
 
 - type: entity
   parent: ClothingOuterBaseLarge

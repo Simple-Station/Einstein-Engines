@@ -39,6 +39,33 @@
     interfaces:
       enum.ChameleonUiKey.Key:
         type: ChameleonBoundUserInterface
+
+- type: entity
+  parent: [ClothingEyesBase, ShowSecurityIcons, ShowHealthRelatedIcons, ClothingEyesGlassesSunglasses]
+  id: ClothingEyesGlassesBSO
+  name: blueshield officer glasses
+  description: Sunglasses with a medical, security and diagnostic hud.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Eyes/Glasses/deathsquad.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Eyes/Glasses/deathsquad.rsi
+  - type: FlashImmunity
+  - type: EyeProtection
+    protectionTime: 5
+  - type: IdentityBlocker
+    coverage: EYES
+  - type: ThermalVision
+    isEquipment: true
+    color: "#98EEFB"
+    lightRadius: 15
+  - type: ChameleonClothing
+    slot: [ eyes ]
+    default: ClothingEyesGlassesDeathsquad
+  - type: UserInterface
+    interfaces:
+      enum.ChameleonUiKey.Key:
+        type: ChameleonBoundUserInterface
   - type: ClothingGrantComponent
     component:
     - type: KravMaga # Silly
@@ -74,4 +101,3 @@
      - Biological
      - Inorganic
      - Silicon
-    

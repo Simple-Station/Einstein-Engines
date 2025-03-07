@@ -56,6 +56,7 @@
     id: CentcomPDA
     jumpsuit: ClothingUniformJumpsuitNanotrasenRepresentative
     ears: ClothingHeadsetAltCentCom
+    gloves: ClothingHandsGlovesGoldenTrim # Psst. I might as well add this here.
     pocket1: UniqueNanorepLockerTeleporter
 
 - type: startingGear
