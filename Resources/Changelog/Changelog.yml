@@ -12341,3 +12341,13 @@ Entries:
   id: 6905
   time: '2025-03-07T17:08:51.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1883
+- author: Timfa2112
+  changes:
+    - type: Tweak
+      message: >-
+        Tweaked Extended Descriptions to be able to require
+        CharacterRequirements before being shown to the player. Currently not
+        actually implemented anywhere except for the emag and some posters.
+  id: 6906
+  time: '2025-03-07T17:09:03.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1862
