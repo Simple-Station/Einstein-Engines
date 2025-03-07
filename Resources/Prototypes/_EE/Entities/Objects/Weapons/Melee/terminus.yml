@@ -6,7 +6,7 @@
   components:
   - type: RestrictedMelee
     AllowedComponents:
-    - Oni
+    - type: Respirator
   - type: Sprite
     sprite: Objects/Weapons/Melee/terminus.rsi
     state: icon

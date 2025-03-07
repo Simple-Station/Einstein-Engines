@@ -29,12 +29,9 @@ public sealed class RestrictedMeleeSystem : EntitySystem
     private bool CanUse(EntityUid uid, RestrictedMeleeComponent comp)
     {
         foreach (var (_, data) in comp.AllowedComponents)
-        {
             if (EntityManager.HasComponent(uid, data.Component.GetType()))
-            {
                 return true;
-            }
-        }
+
         return false;
     }
     private void OnMeleeAttempt(EntityUid uid, RestrictedMeleeComponent comp, ref AttemptMeleeEvent args)
