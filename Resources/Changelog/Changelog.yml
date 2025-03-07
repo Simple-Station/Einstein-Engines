@@ -12351,3 +12351,10 @@ Entries:
   id: 6906
   time: '2025-03-07T17:09:03.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1862
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Add document printer
+  id: 6907
+  time: '2025-03-07T17:23:21.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1875
