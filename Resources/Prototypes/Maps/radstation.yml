@@ -5,7 +5,7 @@
   minPlayers: 35
   stations:
     RadStation:
-      stationProto: StandardNanotrasenStation
+      stationProto: StandardNanotrasenStationCargoOnly
       components:
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/emergency_neol.yml
