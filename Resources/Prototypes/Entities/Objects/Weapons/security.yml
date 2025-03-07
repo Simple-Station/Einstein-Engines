@@ -151,6 +151,24 @@
         visible: false
         shader: unshaded
     - type: Flash
+    - type: ExtendDescription
+      descriptionList:
+      - description: "flash-extenddescription-headrevolutionary"
+        fontSize: 12
+        color: "#880000"
+        requireDetailRange: false
+        requirements:
+        - !type:CharacterAntagonistRequirement
+          antagonists:
+            - HeadRev
+      - description: "flash-extenddescription-revolutionary"
+        fontSize: 12
+        color: "#880000"
+        requireDetailRange: false
+        requirements:
+        - !type:CharacterAntagonistRequirement
+          antagonists:
+            - Rev
     - type: LimitedCharges
       maxCharges: 5
       charges: 5

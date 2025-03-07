@@ -694,6 +694,19 @@
 
 #Misc Items
 - type: loadout
+  id: LoadoutCivilianDisabler
+  category: Items
+  cost: 5
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+      - Prisoner
+  items:
+  - WeaponCivilianDisabler
+
+- type: loadout
   id: LoadoutItemFlash
   category: Items
   cost: 1
