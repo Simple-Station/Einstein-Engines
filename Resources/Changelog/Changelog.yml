@@ -12272,3 +12272,20 @@ Entries:
   id: 6902
   time: '2025-03-07T16:45:14.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1863
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added all remaining assets for the Sol Alliance Armed Forces, for use in
+        admin-events, or to be added to the game at a later time.
+    - type: Add
+      message: 'Added a new Sol Alliance Modsuit, the CSA-85x "Mazu" Modsuit. '
+    - type: Add
+      message: >-
+        Added new Faction Kits tab for Traitor & Nuclear Operative uplinks. For
+        now, it contains kits for operatives belonging to the Sol Alliance.
+        Given that the Sol Alliance are Human supremacists, traitor kits for
+        them are restricted to Humans only.
+  id: 6903
+  time: '2025-03-07T16:56:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1874
