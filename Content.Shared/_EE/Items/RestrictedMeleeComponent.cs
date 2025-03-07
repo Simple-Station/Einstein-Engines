@@ -16,7 +16,7 @@ public sealed partial class RestrictedMeleeComponent : Component
     public TimeSpan KnockdownDuration = TimeSpan.FromSeconds(2);
 
     [DataField]
-    public string FailText { get; set; } = "oni-only-component-fail-self";
+    public string FailText { get; set; } = "restricted-melee-component-attack-fail-too-large";
 
     [DataField]
     public bool DoKnockdown = true;
