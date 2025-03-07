@@ -12367,3 +12367,16 @@ Entries:
   id: 6908
   time: '2025-03-07T17:38:51.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1882
+- author: Timfa2112
+  changes:
+    - type: Tweak
+      message: >-
+        Changed the way Revolutionaries convert people. Instead of flashes, they
+        now use the Revolutionary Manifesto to 'persuade' new conspirators. This
+        has a small delay (three seconds) and will make you speak propaganda at
+        the target. Note that the book itself is not contraband, and may also be
+        found in other places. Only a Head Revolutionary will be able to make
+        use of its persuasive power, however...
+  id: 6909
+  time: '2025-03-07T18:27:05.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1878
