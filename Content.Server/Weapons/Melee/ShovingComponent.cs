@@ -6,7 +6,7 @@ public sealed partial class ShovingComponent : Component
     /// <summary>
     ///     Default shoving stamina damage used if the shoving entity has no ShovingComponent. See <see cref="StaminaDamage"/>.
     /// </summary>
-    public const float DefaultStaminaDamage = 50f;
+    public const float DefaultStaminaDamage = 10f; // WWDP shoving
 
     /// <summary>
     ///     Amount of stamina damage dealt on successful shove if the attacker has a 100% chance to shove the target.
