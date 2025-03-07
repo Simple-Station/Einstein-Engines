@@ -41,6 +41,9 @@
       - id: BookTruth
         prob: 0.1
         orGroup: BookAuthor
+      - id: RevolutionaryManifesto
+        prob: 0.1
+        orGroup: BookAuthor
       - id: BookWorld
         prob: 0.1
         orGroup: BookAuthor
