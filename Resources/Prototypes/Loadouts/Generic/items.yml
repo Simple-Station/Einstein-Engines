@@ -536,6 +536,7 @@
     - !type:CharacterJobRequirement
        jobs:
          - Brigmedic
+         - BlueshieldOfficer
     - !type:CharacterItemGroupRequirement
       group: LoadoutBoxKits
 
