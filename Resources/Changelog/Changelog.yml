@@ -12387,3 +12387,18 @@ Entries:
   id: 6910
   time: '2025-03-07T22:45:44.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1880
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: Added 50% heat resist to BSO hardsuit (unsure why it didn't have it)
+    - type: Tweak
+      message: >-
+        Slightly changed the energy shotguns recharge properties to avoid a bug
+        and give it less downtime
+    - type: Tweak
+      message: >-
+        Buffed the fire rate/use time of the chester, to hopefully allow it to
+        keep up with other weapons again.
+  id: 6911
+  time: '2025-03-07T22:45:53.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1885
