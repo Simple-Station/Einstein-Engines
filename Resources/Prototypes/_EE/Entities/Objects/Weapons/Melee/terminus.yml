@@ -5,7 +5,8 @@
   description: An advanced weapon crafted specifically for an oni. Capable of firing a spread of disabler shots from its tip.
   components:
   - type: RestrictedMelee
-    AllowedComponents: Oni
+    AllowedComponents:
+    - type: Oni
   - type: Sprite
     sprite: Objects/Weapons/Melee/terminus.rsi
     state: icon
