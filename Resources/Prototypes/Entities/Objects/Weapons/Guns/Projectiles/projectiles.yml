@@ -1088,26 +1088,26 @@
     forceSound: true
 
 - type: entity
-  name: wide laser barrage
+  name: laser barrage
   id: BulletLaserSpread
   parent: BulletLaser
   categories: [ HideSpawnMenu ]
   components:
   - type: ProjectileSpread
     proto: BulletLaser
-    count: 5 #50 heat damage if you hit all your shots, but wide spread
-    spread: 30
+    count: 6 # 60 heat damage if you hit all your shots, but wide spread
+    spread: 25
 
 - type: entity
-  name: narrow laser barrage
-  id: BulletLaserSpreadNarrow
-  parent: BulletLaser
+  name: laser slug
+  id: BulletLaserSpreadSlug
+  parent: BulletLaserHeavy
   categories: [ HideSpawnMenu ]
   components:
   - type: ProjectileSpread
     proto: BulletLaser
-    count: 4 #52 heat damage if you hit all your shots, but narrower spread
-    spread: 10
+    count: 4 #60 heat damage, 20 blunt damage, and a high energy cost per shot.
+    spread: 0
 
 - type: entity
   name : heavy laser bolt
@@ -1119,6 +1119,7 @@
     damage:
       types:
         Heat: 15
+        Blunt: 5
 
 - type: entity
   name: narrow laser barrage
@@ -1128,21 +1129,21 @@
   components:
   - type: ProjectileSpread
     proto: BulletLaser
-    count: 3 #45 heat damage if you hit all your shots, but narrower spread
+    count: 3 # 45 heat damage if you hit all your shots, but narrower spread
     spread: 10
 
 - type: entity
-  name: disabling laser barrage
+  name: disabler laser barrage
   id: BulletDisablerSmgSpread
   parent: BulletDisablerSmg
   categories: [ HideSpawnMenu ]
   components:
   - type: ProjectileSpread
     proto: BulletDisablerSmg
-    count: 3 #bit stronger than a disabler if you hit your shots you goober, still not a 2 hit stun though
+    count: 3 # bit stronger than a disabler if you hit your shots you goober, still not a 2 hit stun though
     spread: 9
 
-- type: entity #Goobstation, put here so the X-01 stuff isnt spread everywhere.
+- type: entity # Goobstation, put here so the X-01 stuff isnt spread everywhere.
   name: magnum bolt
   id: BulletEnergyGunMagnum
   parent: BaseBullet
