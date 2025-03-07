@@ -12358,3 +12358,12 @@ Entries:
   id: 6907
   time: '2025-03-07T17:23:21.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1875
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: >-
+        Added a civilian disabler! It deals next to no heat damage, and only
+        two-third of the stamina damage of a sec disabler
+  id: 6908
+  time: '2025-03-07T17:38:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1882
