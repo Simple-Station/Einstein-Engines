@@ -43,7 +43,7 @@ public sealed class OniOnlySystem : EntitySystem
         _hands.TryDrop(args.PlayerUid);
 
         if (playSound)
-            _audioSystem.PlayPredicted(new SoundPathSpecifier("/Audio/Effects/slip.ogg"), args.PlayerUid, args.PlayerUid);
+            _audioSystem.PlayPredicted(component.SoundUse, args.PlayerUid, args.PlayerUid);
 
         // Display the message to the player and cancel the melee attempt.
         _popupSystem.PopupClient(args.Message, uid, PopupType.Large);
