@@ -99,7 +99,7 @@
     - BaseStationNanotrasen
     - BaseRandomStation
     - BaseStationMail
-  categories: [ HideSpawnMenu ]
+  categories: [HideSpawnMenu]
   components:
     - type: Transform
 
