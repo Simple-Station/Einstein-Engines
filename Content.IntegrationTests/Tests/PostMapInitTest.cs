@@ -42,6 +42,7 @@ namespace Content.IntegrationTests.Tests
             "/Maps/Shuttles/cargo.yml",
             "/Maps/Shuttles/emergency.yml",
             "/Maps/Shuttles/infiltrator.yml",
+            "/Maps/_Goobstation/Shuttles/consul.yml" // Contains HEINOUS amounts of centcomm contraband. Obviously.
         };
 
         private static readonly string[] GameMaps =

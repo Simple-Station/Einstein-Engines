@@ -68,18 +68,11 @@
     gloves: ClothingHandsGlovesCombat
     id: BlueshieldPDA
     pocket1: UniqueBlueshieldOfficerLockerTeleporter
-    pocket2: BluespaceLifelineImplanter
-
-    #outerClothing: ClothingBlueshieldArmourVest
-    #ears: ClothingHeadsetAltCommand
-    #belt: ClothingBeltSecurityFilled
-    #pocket1: WeaponPistolMk58
-    #pocket2: DeathAcidifierImplanter
-
-- type: startingGear
-  id: BlueshieldPlasmamanGear
-  parent: BasePlasmamanGear
-  equipment:
-    jumpsuit: ClothingUniformEnvirosuitBlueshield
-    head: ClothingHeadEnvirohelmBlueshield
-    gloves: ClothingHandsGlovesEnviroglovesBlack
+    pocket2: PinpointerNuclear
+    belt: BlueShieldShieldFilled # I felt like einstein after figuring this out.
+  storage:
+    back:
+    - ClothingMaskGasSecurity
+    - Flash
+    - BluespaceLifelineImplanter
+    - WeaponEnergyRevolver

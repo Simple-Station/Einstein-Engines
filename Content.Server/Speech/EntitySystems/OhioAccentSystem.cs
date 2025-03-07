@@ -24,7 +24,7 @@ public sealed class OhioAccentSystem : EntitySystem
         // Prefix
         if (_random.Prob(0.15f))
         {
-            var pick = _random.Next(1, 3);
+            var pick = _random.Next(1, 5);
 
             // Reverse sanitize capital
             message = message[0].ToString().ToLower() + message.Remove(0, 1);
@@ -37,8 +37,8 @@ public sealed class OhioAccentSystem : EntitySystem
         // Suffixes
         if (_random.Prob(0.3f))
         {
-            var pick = _random.Next(1, 8);
-            message += Loc.GetString($"accent-ohio-suffix-{pick}");
+            var pick = _random.Next(1, 6);
+            message += Loc.GetString($"accent-dementia-suffix-{pick}");
         }
 
         args.Message = message;
