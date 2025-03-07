@@ -20,8 +20,8 @@
   id: SheetGlass1
   result: SheetGlass1
   applyMaterialDiscount: false
-  miningPoints: 0.0083 # 0.25 per 30
-  completetime: 0
+  miningPoints: 1 # 0.25 per 30
+  completetime: 0.0083
   materials:
     RawQuartz: 100
 
