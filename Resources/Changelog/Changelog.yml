@@ -12249,3 +12249,16 @@ Entries:
   id: 6900
   time: '2025-03-03T19:59:51.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1871
+- author: Ichai
+  changes:
+    - type: Tweak
+      message: Gax, Rad and Saltern now have a dock for the Lavaland shuttle
+    - type: Tweak
+      message: >-
+        Saltern Logistics now has a new area for purchasing and sales using
+        pallets
+    - type: Remove
+      message: Saltern no longer has a salvage shuttle, only the shuttle to Lavaland
+  id: 6901
+  time: '2025-03-07T14:10:06.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1884
