@@ -30,4 +30,3 @@
     lifetime: 0.5
   - type: KnockdownOnHit
     duration: 0
-    knockdownOnHeavyAttack: false
