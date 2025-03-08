@@ -1,3 +1,4 @@
+using System.Resources;
 using Content.Server.Abilities.Oni;
 using Content.Shared.Ghost;
 using Content.Shared.Hands.EntitySystems;
@@ -5,9 +6,11 @@ using Content.Shared.Popups;
 using Content.Shared.StatusEffect;
 using Content.Shared.Stunnable;
 using Content.Shared.Weapons.Melee.Events;
+using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
-using System.Collections.Generic;
+using Robust.Shared.Serialization.Manager.Exceptions;
+
 
 namespace Content.Shared._EE.Item;
 
@@ -18,6 +21,7 @@ public sealed class RestrictedMeleeSystem : EntitySystem
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
     [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
+    [Dependency] private readonly EntityWhitelistSystem _entityWhitelist = default!;
 
     public override void Initialize()
     {
@@ -25,18 +29,11 @@ public sealed class RestrictedMeleeSystem : EntitySystem
         SubscribeLocalEvent<RestrictedMeleeComponent, AttemptMeleeEvent>(OnMeleeAttempt);
     }
 
-    private bool CanUse(EntityUid uid, RestrictedMeleeComponent comp)
-    {
-        foreach (var (_, data) in comp.AllowedComponents)
-        {
-            if (EntityManager.HasComponent(uid, data.GetType()))
-                return true;
-        }
-        return false;
-    }
+    private bool CanUse(EntityUid uid, RestrictedMeleeComponent comp) => _entityWhitelist.IsValid(comp.EntityWhitelist, uid);
 
     private void OnMeleeAttempt(EntityUid uid, RestrictedMeleeComponent comp, ref AttemptMeleeEvent args)
     {
+        // Specism.
         if (CanUse(args.PlayerUid, comp))
             return;
 
@@ -53,6 +50,7 @@ public sealed class RestrictedMeleeSystem : EntitySystem
         if (playSound)
             _audioSystem.PlayPredicted(comp.FallSound, args.PlayerUid, args.PlayerUid);
 
+        // Display the message to the player and cancel the melee attempt.
         _popupSystem.PopupClient(args.Message, uid, PopupType.Large);
         args.Cancelled = true;
     }

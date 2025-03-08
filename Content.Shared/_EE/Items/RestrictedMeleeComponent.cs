@@ -2,6 +2,7 @@
 //   Locks an item to only be used in melee by entities with a specific component.
 // </summary>
 
+using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 
@@ -10,7 +11,7 @@ using Robust.Shared.Prototypes;
 public sealed partial class RestrictedMeleeComponent : Component
 {
     [DataField, AlwaysPushInheritance]
-    public Dictionary<string, Component> AllowedComponents { get; private set; } = new();
+    public EntityWhitelist EntityWhitelist;
 
     [DataField]
     public TimeSpan KnockdownDuration = TimeSpan.FromSeconds(2);
