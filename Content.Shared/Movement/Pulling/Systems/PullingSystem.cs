@@ -1,4 +1,3 @@
-using Content.Shared._White.Grab; // Goobstation - Martial Arts
 using Content.Shared._Goobstation.MartialArts.Events; // Goobstation - Martial Arts
 using Content.Shared.Contests; // Goobstation - Grab Intent
 using System.Diagnostics.CodeAnalysis;
