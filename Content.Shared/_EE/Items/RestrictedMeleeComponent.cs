@@ -10,7 +10,7 @@ using Robust.Shared.Audio;
 public sealed partial class RestrictedMeleeComponent : Component
 {
     [DataField]
-    public EntityWhitelist EntityWhitelist = new EntityWhitelist();
+    public EntityWhitelist? Whitelist;
 
     [DataField]
     public TimeSpan KnockdownDuration = TimeSpan.FromSeconds(2);
