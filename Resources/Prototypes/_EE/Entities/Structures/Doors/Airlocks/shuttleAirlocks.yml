@@ -1,0 +1,49 @@
+# Unlimited, these are targets for shuttles to dock to.
+- type: entity
+  parent: AirlockGlassShuttle
+  id: AirlockExternalGlassShuttleCargoShuttle
+  suffix: External, Cargo, Glass, Docking
+  components:
+  - type: PriorityDock
+    tag: DockCargoShuttle
+
+- type: entity
+  parent: AirlockGlassShuttle
+  id: AirlockExternalGlassShuttleDart
+  suffix: External, ERT, Glass, Docking
+  components:
+  - type: PriorityDock
+    tag: DockDart
+
+- type: entity
+  parent: AirlockGlassShuttle
+  id: AirlockExternalGlassShuttlePathfinder
+  suffix: External, Salvage, Glass, Docking
+  components:
+  - type: PriorityDock
+    tag: DockPathfinder
+
+# 1 per map, these spawn a shuttle.
+- type: entity
+  parent: AirlockExternalGlassShuttleCargoShuttle
+  id: AirlockExternalGlassShuttleCargoShuttleFilled
+  suffix: Cargo Shuttle Spawner, MAX ONE PER MAP
+  components:
+  - type: GridFill
+    path: /Maps/Shuttles/cargo.yml
+
+- type: entity
+  parent: AirlockExternalGlassShuttleDart
+  id: AirlockExternalGlassShuttleDartFilled
+  suffix: ERT Ship Spawner, MAX ONE PER MAP
+  components:
+  - type: GridFill
+    path: /Maps/Shuttles/dart.yml
+
+- type: entity
+  parent: AirlockExternalGlassShuttlePathfinder
+  id: AirlockExternalGlassShuttlePathfinderFilled
+  suffix: Salvage Ship Spawner, MAX ONE PER MAP
+  components:
+  - type: GridFill
+    path: /Maps/Shuttles/pathfinder.yml
