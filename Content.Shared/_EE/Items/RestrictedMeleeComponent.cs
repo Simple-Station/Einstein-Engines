@@ -11,7 +11,7 @@ using Robust.Shared.Prototypes;
 public sealed partial class RestrictedMeleeComponent : Component
 {
     [DataField]
-    public EntityWhitelist EntityWhitelist;
+    public EntityWhitelist EntityWhitelist = new EntityWhitelist();
 
     [DataField]
     public TimeSpan KnockdownDuration = TimeSpan.FromSeconds(2);

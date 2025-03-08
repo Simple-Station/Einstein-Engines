@@ -6,7 +6,7 @@
   components:
   - type: RestrictedMelee
     whitelist:
-      tags:
+      components:
       - Oni
   - type: Sprite
     sprite: Objects/Weapons/Melee/terminus.rsi
