@@ -12431,3 +12431,14 @@ Entries:
   id: 6913
   time: '2025-03-08T20:11:39.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1890
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: >-
+        Added extra descriptions to the revolutionary manifesto and the civilian
+        disabler
+    - type: Fix
+      message: Fixed extenddescription on flash
+  id: 6914
+  time: '2025-03-08T21:08:39.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1887
