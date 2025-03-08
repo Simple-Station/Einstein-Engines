@@ -29,7 +29,7 @@ public sealed class RestrictedMeleeSystem : EntitySystem
         SubscribeLocalEvent<RestrictedMeleeComponent, AttemptMeleeEvent>(OnMeleeAttempt);
     }
 
-    private bool CanUse(EntityUid uid, RestrictedMeleeComponent comp) => _entityWhitelist.IsValid(comp.EntityWhitelist, uid);
+    private bool CanUse(EntityUid uid, RestrictedMeleeComponent comp) => comp.Whitelist != null && _entityWhitelist.IsValid(comp.Whitelist, uid);
 
     private void OnMeleeAttempt(EntityUid uid, RestrictedMeleeComponent comp, ref AttemptMeleeEvent args)
     {
