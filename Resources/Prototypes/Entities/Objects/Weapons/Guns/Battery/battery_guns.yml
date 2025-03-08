@@ -982,10 +982,10 @@
     - HighRiskItem
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Battery
-    maxCharge: 1200
-    startingCharge: 1200
+    maxCharge: 1210
+    startingCharge: 1210
   - type: BatterySelfRecharger
     autoRecharge: true
-    autoRechargeRate: 24
+    autoRechargeRate: 48
     autoRechargePause: true
-    autoRechargePauseTime: 10
+    autoRechargePauseTime: 5
