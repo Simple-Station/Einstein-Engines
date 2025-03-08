@@ -10,7 +10,7 @@ using Robust.Shared.Prototypes;
 [RegisterComponent]
 public sealed partial class RestrictedMeleeComponent : Component
 {
-    [DataField, AlwaysPushInheritance]
+    [DataField]
     public EntityWhitelist EntityWhitelist;
 
     [DataField]
