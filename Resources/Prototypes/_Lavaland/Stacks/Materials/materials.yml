@@ -1,48 +1,48 @@
 - type: stack
   id: GoldOreUnprocessed
-  name: unprocessed gold ore
+  name: native gold
   icon: { sprite: /Textures/Objects/Materials/ore.rsi, state: gold }
   spawn: GoldOre1Unprocessed
   maxCount: 30
 
 - type: stack
   id: DiamondOreUnprocessed
-  name: unprocessed diamond
+  name: native diamond
   icon: { sprite: /Textures/Objects/Materials/ore.rsi, state: diamond }
   spawn: DiamondOre1Unprocessed
   maxCount: 30
 
 - type: stack
   id: SteelOreUnprocessed
-  name: unprocessed iron ore
+  name: hematite
   icon: { sprite: /Textures/Objects/Materials/ore.rsi, state: iron }
   spawn: SteelOre1Unprocessed
   maxCount: 30
 
 - type: stack
   id: PlasmaOreUnprocessed
-  name: unprocessed plasma ore
+  name: native phoron
   icon: { sprite: /Textures/Objects/Materials/ore.rsi, state: plasma }
   spawn: PlasmaOre1Unprocessed
   maxCount: 30
 
 - type: stack
   id: SilverOreUnprocessed
-  name: unprocessed silver ore
+  name: argentite
   icon: { sprite: /Textures/Objects/Materials/ore.rsi, state: silver }
   spawn: SilverOre1Unprocessed
   maxCount: 30
 
 - type: stack
   id: SpaceQuartzUnprocessed
-  name: unprocessed space quartz
+  name: quartz
   icon: { sprite: /Textures/Objects/Materials/ore.rsi, state: spacequartz }
   spawn: SpaceQuartz1Unprocessed
   maxCount: 30
 
 - type: stack
   id: UraniumOreUnprocessed
-  name: unprocessed uranium ore
+  name: pitchblende
   icon: { sprite: /Textures/Objects/Materials/ore.rsi, state: uranium }
   spawn: UraniumOre1Unprocessed
   maxCount: 30
@@ -57,7 +57,7 @@
 
 - type: stack
   id: CoalUnprocessed
-  name: unprocessed coal
+  name: anthracite
   icon: { sprite: /Textures/Objects/Materials/ore.rsi, state: coal }
   spawn: Coal1Unprocessed
   maxCount: 30
