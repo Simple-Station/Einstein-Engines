@@ -227,7 +227,7 @@ public abstract partial class SharedMartialArtsSystem : EntitySystem
         component.MartialArtsForm = martialArtsPrototype.MartialArtsForm;
         component.RoundstartCombos = martialArtsPrototype.RoundstartCombos;
         component.MinRandomDamageModifier = martialArtsPrototype.MinRandomDamageModifier;
-        component.MinRandomDamageModifier = martialArtsPrototype.MaxRandomDamageModifier;
+        component.MaxRandomDamageModifier = martialArtsPrototype.MaxRandomDamageModifier;
         component.RandomDamageModifier = martialArtsPrototype.RandomDamageModifier;
         component.RandomSayings = martialArtsPrototype.RandomSayings;
         component.RandomSayingsDowned = martialArtsPrototype.RandomSayingsDowned;

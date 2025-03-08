@@ -50,13 +50,9 @@ public partial class SharedMartialArtsSystem
 
     private void CheckCombo(EntityUid uid, CanPerformComboComponent comp)
     {
-        var success = false;
 
         foreach (var proto in comp.AllowedCombos)
         {
-            if (success)
-                break;
-
             var sum = comp.LastAttacks.Count - proto.AttackTypes.Count;
             if (sum < 0)
                 continue;
