@@ -3,12 +3,65 @@
   id: EmagUnlimited
   suffix: Unlimited
   name: cryptographic sequencer
-  description: The all-in-one hacking solution. The thinking man's lockpick. The iconic EMAG.
+  description: A red circuit board with a charge indicator.
   components:
   - type: Emag
     blacklist: # DeltaV - Split Emag into 2 items, this one cannot emag doors
       components:
       - Airlock
+  - type: ExtendDescription
+    descriptionList:
+      - description: "emag-extenddescription-command"
+        fontSize: 12
+        color: "#1155ff"
+        requireDetailRange: true
+        requirements:
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Command
+      - description: "emag-extenddescription-engineering"
+        fontSize: 12
+        color: "#ffaf00"
+        requireDetailRange: true
+        requirements:
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Engineering
+      - description: "emag-extenddescription-security"
+        fontSize: 12
+        color: "#ff0000"
+        requireDetailRange: true
+        requirements:
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+      - description: "emag-extenddescription-epistemics"
+        fontSize: 12
+        color: "#aa00aa"
+        requireDetailRange: true
+        requirements:
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Epistemics
+      - description: "emag-extenddescription-syndicate"
+        fontSize: 12
+        color: "#880000"
+        requireDetailRange: false
+        requirements:
+        - !type:CharacterAntagonistRequirement
+          antagonists:
+            - Traitor
+            - TraitorSleeper
+            - SpaceNinja
+            - Nukeops
+            - NukeopsMedic
+            - NukeopsCommander
+      - description: "mindshield-extenddescription-emag"
+        fontSize: 12
+        color: "#11aaff"
+        requireDetailRange: true
+        requirements:
+        - !type:CharacterMindshieldRequirement
   - type: Sprite
     sprite: Objects/Tools/emag.rsi
     state: icon
