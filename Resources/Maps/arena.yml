@@ -8849,15 +8849,12 @@ entities:
             0: 65535
           -2,6:
             0: 19
-            1: 34944
           -2,8:
             0: 28799
           -1,5:
             0: 4095
-          -1,6:
-            1: 30576
           -1,7:
-            0: 13107
+            0: 8736
           -1,8:
             0: 65535
           0,5:
@@ -17560,6 +17557,11 @@ entities:
     components:
     - type: Transform
       pos: -55.5,-12.5
+      parent: 6747
+  - uid: 25859
+    components:
+    - type: Transform
+      pos: -2.5,29.5
       parent: 6747
 - proto: AtmosFixBlockerMarker
   entities:
