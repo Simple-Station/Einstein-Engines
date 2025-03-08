@@ -150,7 +150,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     /// <param name="shell"></param>
     /// <param name="player">The player doing the speaking</param>
     /// <param name="nameOverride">The name to use for the speaking entity. Usually this should just be modified via <see cref="TransformSpeakerSpeechEvent"/>. If this is set, the event will not get raised.</param>
-    public void TrySendInGameICMessage(
+    public override void TrySendInGameICMessage(
         EntityUid source,
         string message,
         InGameICChatType desiredType,

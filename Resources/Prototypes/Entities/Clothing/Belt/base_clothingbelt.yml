@@ -46,7 +46,7 @@
     grid:
     - 0,0,7,1
   - type: Item
-    size: Ginormous
+    size: Large
   - type: ContainerContainer
     containers:
       storagebase: !type:Container
@@ -64,7 +64,7 @@
   - type: BallisticAmmoProvider
     mayTransfer: true
   - type: Item
-    size: Ginormous
+    size: Large
   - type: ContainerContainer
     containers:
       ballistic-ammo: !type:Container

@@ -43,3 +43,21 @@
       id: DermalArmor
     - type: trait
       id: CyberEyes
+    - type: trait
+      id: NaniteAutoRepairBots
+    - type: trait
+      id: BionicLeg
+    - type: trait
+      id: FlareShieldingModule
+    - type: trait
+      id: SecurityEyesModule
+    - type: trait
+      id: MedicalEyesModule
+    - type: trait
+      id: DiagnosticEyesModule
+    - type: trait
+      id: OmniEyesModule
+    - type: trait
+      id: LightAmplificationModule
+    - type: trait
+      id: ThermographicVisionModule
