@@ -7,7 +7,7 @@
   fallback: true
   stations:
     Saltern:
-      stationProto: StandardNanotrasenStationNoATS
+      stationProto: StandardNanotrasenStationNoShuttles
       components:
         - type: StationNameSetup
           mapNameTemplate: '{0} Saltern {1}'
