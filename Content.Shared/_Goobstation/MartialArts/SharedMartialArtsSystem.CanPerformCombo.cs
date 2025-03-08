@@ -67,6 +67,7 @@ public partial class SharedMartialArtsSystem
             RaiseLocalEvent(uid, beingPerformedEv);
             RaiseLocalEvent(uid, ev);
             comp.LastAttacks.Clear();
+            break;
         }
     }
     private void OnComboBeingPerformed(Entity<CanPerformComboComponent> ent, ref ComboBeingPerformedEvent args)

@@ -36,7 +36,7 @@ public abstract partial class SharedMartialArtsSystem
         }
     }
 
-    private void DoKravMaga(Entity<KravMagaComponent> ent, EntityUid hitEntity, RequireProjectileTargetComponent reguireProjectileTargetComponent)
+    private void DoKravMaga(Entity<KravMagaComponent> ent, EntityUid hitEntity, RequireProjectileTargetComponent requireProjectileTargetComponent)
     {
         if (ent.Comp.SelectedMoveComp == null)
             return;
@@ -60,7 +60,7 @@ public abstract partial class SharedMartialArtsSystem
                 break;
             case null:
                 var damage = ent.Comp.BaseDamage;
-                if (reguireProjectileTargetComponent.Active)
+                if (requireProjectileTargetComponent.Active)
                     damage *= ent.Comp.DownedDamageModifier;
 
                 DoDamage(ent.Owner, hitEntity, "Blunt", damage, out _);
