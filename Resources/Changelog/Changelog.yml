@@ -12380,3 +12380,54 @@ Entries:
   id: 6909
   time: '2025-03-07T18:27:05.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1878
+- author: EctoplasmIsGood
+  changes:
+    - type: Remove
+      message: You heard nothing and you saw nothing, glory to Nanotrasen.
+  id: 6910
+  time: '2025-03-07T22:45:44.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1880
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: Added 50% heat resist to BSO hardsuit (unsure why it didn't have it)
+    - type: Tweak
+      message: >-
+        Slightly changed the energy shotguns recharge properties to avoid a bug
+        and give it less downtime
+    - type: Tweak
+      message: >-
+        Buffed the fire rate/use time of the chester, to hopefully allow it to
+        keep up with other weapons again.
+  id: 6911
+  time: '2025-03-07T22:45:53.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1885
+- author: Eagle
+  changes:
+    - type: Add
+      message: >-
+        Table slamming. Harm a table when you have someone harm choked, see what
+        happens.
+    - type: Tweak
+      message: >-
+        Grab throw damage to other entities is now based on the thrown entities
+        kinetic energy. No more mouse wrecking balls.
+    - type: Tweak
+      message: You can now escape from a soft grab by just walking away.
+    - type: Tweak
+      message: You can no longer grab someone else while your being grabbed.
+    - type: Tweak
+      message: Mass now effects grab release attempts.
+  id: 6912
+  time: '2025-03-08T19:49:02.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1889
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added a variety of "Shuttle Spawning Airlocks" for mappers to use, which
+        can make it so that shuttles like the Cargo Shuttle, Pathfinder, etc.
+        Spawn already docked to the station. 
+  id: 6913
+  time: '2025-03-08T20:11:39.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1890
