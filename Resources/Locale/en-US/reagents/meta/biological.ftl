@@ -32,4 +32,4 @@ reagent-name-grey-matter = grey matter
 reagent-desc-grey-matter = Thought juice, the stuff that leaks out of your ears.
 
 reagent-name-black-blood = black blood
-reagent-desc-black-blood = Despite the diffrences, it still seems to be based on good old iron!
+reagent-desc-black-blood = Honestly this sucks as ink.
