@@ -4,7 +4,6 @@
 
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
-using Robust.Shared.Prototypes;
 
 
 [RegisterComponent]
