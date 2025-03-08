@@ -16,7 +16,7 @@ carp-scroll-advance = You have taken one step closer to becoming a master of the
 carp-scroll-complete = You are now a master of the Way of the Sleeping Carp.
 
 carp-saying-huah = HUAH!
-carv-vaying-hya = HYA!
+carv-saying-hya = HYA!
 carp-saying-choo = CHOO!
 carp-saying-wuo = WUO!
 carp-saying-kya = KYA!
