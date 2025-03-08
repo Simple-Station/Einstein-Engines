@@ -45,7 +45,7 @@ public sealed class TableSlamSystem : EntitySystem
     public override void Initialize()
     {
         SubscribeLocalEvent<PullerComponent, MeleeHitEvent>(OnMeleeHit);
-        SubscribeLocalEvent<PullableComponent, StartCollideEvent>(OnStartCollide);
+        SubscribeLocalEvent<TableableComponent, StartCollideEvent>(OnStartCollide);
         SubscribeLocalEvent<PostTabledComponent, DisarmAttemptEvent>(OnDisarmAttemptEvent);
     }
 
@@ -104,10 +104,19 @@ public sealed class TableSlamSystem : EntitySystem
         _pullingSystem.TryStopPull(ent, ent.Comp, pullerEnt, ignoreGrab: true);
         _throwingSystem.TryThrow(ent, tableUid.ToCoordinates() , ent.Comp.BasedTabledForceSpeed, animated: false, doSpin: false);
         pullerEnt.Comp.NextStageChange = _gameTiming.CurTime.Add(TimeSpan.FromSeconds(3)); // prevent table slamming spam
-        ent.Comp.BeingTabled = true;
+
+        if (TryComp<TableableComponent>(ent, out var tableableComp)) // Checks that the entity being tabled has the TableableComponent
+        {
+            tableableComp.BeingTabled = true;
+        }
+        else
+        {
+            tableableComp = EnsureComp<TableableComponent>(ent); // Adds the Tableable Component if it doesn't exist
+            tableableComp.BeingTabled = true; // This shit is so code :skull:
+        }
     }
 
-    private void OnStartCollide(Entity<PullableComponent> ent, ref StartCollideEvent args)
+    private void OnStartCollide(Entity<TableableComponent> ent, ref StartCollideEvent args)
     {
         if(!ent.Comp.BeingTabled)
             return;
