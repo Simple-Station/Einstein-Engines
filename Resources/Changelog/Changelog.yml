@@ -12442,3 +12442,12 @@ Entries:
   id: 6914
   time: '2025-03-08T21:08:39.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1887
+- author: RadsammyT
+  changes:
+    - type: Tweak
+      message: >-
+        the Ore Processors now process Lead, Copper, and Aluminum instantly, and
+        is much faster at processing Tungsten
+  id: 6915
+  time: '2025-03-08T21:11:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1873
