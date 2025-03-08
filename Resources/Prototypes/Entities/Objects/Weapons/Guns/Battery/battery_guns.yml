@@ -520,6 +520,53 @@
   - type: Appearance
 
 - type: entity
+  name: civilian disabler
+  parent: BaseWeaponBatterySmall
+  id: WeaponCivilianDisabler
+  description: The original prototype disablers refitted for civilian self defence use and put in a shiny new shell. It has a much lower power output than the modern disabler in use by Security, and as such requires no license to carry.
+  components:
+    - type: Tag
+      tags:
+        - Taser
+        - Sidearm
+    - type: Item
+      size: Small
+      shape:
+      - 0,0,1,1
+    - type: Sprite
+      sprite: Objects/Weapons/Guns/Battery/civilian-disabler.rsi
+      layers:
+        - state: base
+          map: ["enum.GunVisualLayers.Base"]
+        - state: mag-unshaded-0
+          map: ["enum.GunVisualLayers.MagUnshaded"]
+          shader: unshaded
+    - type: Clothing
+      sprite: Objects/Weapons/Guns/Battery/civilian-disabler.rsi
+      quickEquip: false
+      slots:
+        - suitStorage
+        - Belt
+    - type: Gun
+      fireRate: 2
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Gunshots/taser2.ogg
+    - type: ProjectileBatteryAmmoProvider
+      proto: BulletCivilianDisabler
+      fireCost: 100
+    - type: MagazineVisuals
+      magState: mag
+      steps: 5
+      zeroVisible: true
+    - type: Appearance
+    - type: MeleeWeapon
+      damage:
+        types:
+          Blunt: 3.0
+      bluntStaminaDamageFactor: 2
+      wideAnimationRotation: 90
+
+- type: entity
   name: disabler
   parent: BaseWeaponBatterySmall
   id: WeaponDisabler
@@ -920,8 +967,8 @@
     fireModes:
     - proto: BulletLaserSpread
       fireCost: 150
-    - proto: BulletLaserSpreadNarrow
-      fireCost: 200
+    - proto: BulletLaserSpreadSlug
+      fireCost: 300
     - proto: BulletDisablerSmgSpread
       fireCost: 120
   - type: Item
@@ -933,14 +980,12 @@
   - type: Tag
     tags:
     - HighRiskItem
-  - type: StealTarget
-    stealGroup: HoSAntiqueWeapon
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Battery
-    maxCharge: 1200
-    startingCharge: 1200
+    maxCharge: 1210
+    startingCharge: 1210
   - type: BatterySelfRecharger
     autoRecharge: true
-    autoRechargeRate: 24
+    autoRechargeRate: 48
     autoRechargePause: true
-    autoRechargePauseTime: 10
+    autoRechargePauseTime: 5

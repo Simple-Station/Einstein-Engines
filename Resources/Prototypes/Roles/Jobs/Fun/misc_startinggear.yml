@@ -291,8 +291,7 @@
   id: HeadRevGear
   storage:
     back:
-    - Flash
-    - ClothingEyesGlassesSunglasses
+    - RevolutionaryManifesto
 
 #Thief Gear
 - type: startingGear
