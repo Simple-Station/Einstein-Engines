@@ -12,12 +12,17 @@
       maxTransferRate: 3000
 
 - type: entity
-  parent: GasFilterHighFlow
+  parent: GasFilterFlipped
   id: GasFilterFlippedHighFlow
   name: high flow gas filter
   suffix: Flipped
   placement:
     mode: SnapgridCenter
+  components:
+    - type: GasFilter
+      enabled: false
+      transferRate: 3000
+      maxTransferRate: 3000
 
 - type: entity
   parent: GasMixer
@@ -31,12 +36,15 @@
       maxTargetPressure: 13500
 
 - type: entity
-  parent: GasMixerHighFlow
+  parent: GasMixerFlipped
   id: GasMixerFlippedHighFlow
   name: high pressure gas mixer
   suffix: Flipped
   placement:
     mode: SnapgridCenter
+  components:
+    - type: GasMixer
+      maxTargetPressure: 13500
 
 - type: entity
   parent: PressureControlledValve

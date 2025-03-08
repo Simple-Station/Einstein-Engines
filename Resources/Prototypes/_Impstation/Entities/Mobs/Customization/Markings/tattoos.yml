@@ -1,0 +1,125 @@
+- type: marking
+  id: ChestCutHere
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin, IPC]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/tattoos.rsi
+    state: chest_cuthere
+
+- type: marking
+  id: ArmDollJointsTattooLeft
+  bodyPart: LArm
+  markingCategory: LeftArm
+  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin, IPC]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/tattoos.rsi
+    state: l_arm_doll
+
+- type: marking
+  id: ArmDollJointsTattooRight
+  bodyPart: RArm
+  markingCategory: RightArm
+  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin, IPC]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/tattoos.rsi
+    state: r_arm_doll
+
+- type: marking
+  id: HandDollJointsTattooLeft
+  bodyPart: LHand
+  markingCategory: LeftHand
+  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin, IPC]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/tattoos.rsi
+    state: l_hand_doll
+
+- type: marking
+  id: HandDollJointsTattooRight
+  bodyPart: RHand
+  markingCategory: RightHand
+  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin, IPC]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/tattoos.rsi
+    state: r_hand_doll
+
+- type: marking
+  id: LegDollJointsTattooLeft
+  bodyPart: LLeg
+  markingCategory: LeftLeg
+  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin, IPC]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/tattoos.rsi
+    state: l_leg_doll
+
+- type: marking
+  id: LegDollJointsTattooRight
+  bodyPart: RLeg
+  markingCategory: RightLeg
+  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin, IPC]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/tattoos.rsi
+    state: r_leg_doll
+
+- type: marking
+  id: FootDollJointsTattooLeft
+  bodyPart: LFoot
+  markingCategory: LeftFoot
+  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin, IPC]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/tattoos.rsi
+    state: l_foot_doll
+
+- type: marking
+  id: FootDollJointsTattooRight
+  bodyPart: RFoot
+  markingCategory: RightFoot
+  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin, IPC]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/tattoos.rsi
+    state: r_foot_doll

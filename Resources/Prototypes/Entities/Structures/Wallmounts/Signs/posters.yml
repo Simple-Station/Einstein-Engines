@@ -67,6 +67,14 @@
   components:
   - type: Sprite
     state: poster2_contraband
+  - type: ExtendDescription
+    descriptionList:
+      - description: "mindshield-extenddescription-poster-atmosia"
+        fontSize: 12
+        color: "#11aaff"
+        requireDetailRange: false
+        requirements:
+        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -76,6 +84,14 @@
   components:
   - type: Sprite
     state: poster3_contraband
+  - type: ExtendDescription
+    descriptionList:
+      - description: "mindshield-extenddescription-poster-funpolice"
+        fontSize: 12
+        color: "#11aaff"
+        requireDetailRange: false
+        requirements:
+        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -94,6 +110,14 @@
   components:
   - type: Sprite
     state: poster5_contraband
+  - type: ExtendDescription
+    descriptionList:
+      - description: "mindshield-extenddescription-poster-syndicaterecruitment"
+        fontSize: 12
+        color: "#11aaff"
+        requireDetailRange: false
+        requirements:
+        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -112,6 +136,14 @@
   components:
   - type: Sprite
     state: poster7_contraband
+  - type: ExtendDescription
+    descriptionList:
+      - description: "mindshield-extenddescription-poster-contrabandsmoke"
+        fontSize: 12
+        color: "#11aaff"
+        requireDetailRange: false
+        requirements:
+        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -121,6 +153,14 @@
   components:
   - type: Sprite
     state: poster8_contraband
+  - type: ExtendDescription
+    descriptionList:
+      - description: "mindshield-extenddescription-poster-greytide"
+        fontSize: 12
+        color: "#11aaff"
+        requireDetailRange: false
+        requirements:
+        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -148,6 +188,14 @@
   components:
   - type: Sprite
     state: poster11_contraband
+  - type: ExtendDescription
+    descriptionList:
+      - description: "mindshield-extenddescription-poster-ripbadger"
+        fontSize: 12
+        color: "#11aaff"
+        requireDetailRange: false
+        requirements:
+        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -193,6 +241,14 @@
   components:
   - type: Sprite
     state: poster16_contraband
+  - type: ExtendDescription
+    descriptionList:
+      - description: "mindshield-extenddescription-poster-contrabandpower"
+        fontSize: 12
+        color: "#11aaff"
+        requireDetailRange: false
+        requirements:
+        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -247,6 +303,14 @@
   components:
   - type: Sprite
     state: poster22_contraband
+  - type: ExtendDescription
+    descriptionList:
+      - description: "mindshield-extenddescription-poster-KosmicheskayaStantsiya"
+        fontSize: 12
+        color: "#11aaff"
+        requireDetailRange: false
+        requirements:
+        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -256,6 +320,14 @@
   components:
   - type: Sprite
     state: poster23_contraband
+  - type: ExtendDescription
+    descriptionList:
+      - description: "mindshield-extenddescription-poster-rebelsunite"
+        fontSize: 12
+        color: "#11aaff"
+        requireDetailRange: false
+        requirements:
+        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -355,6 +427,14 @@
   components:
   - type: Sprite
     state: poster35_contraband
+  - type: ExtendDescription
+    descriptionList:
+      - description: "mindshield-extenddescription-poster-freedrone"
+        fontSize: 12
+        color: "#11aaff"
+        requireDetailRange: false
+        requirements:
+        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -454,6 +534,14 @@
   components:
   - type: Sprite
     state: poster46_contraband
+  - type: ExtendDescription
+    descriptionList:
+      - description: "mindshield-extenddescription-poster-syndicateencryption"
+        fontSize: 12
+        color: "#11aaff"
+        requireDetailRange: false
+        requirements:
+        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -554,6 +642,14 @@
   components:
     - type: Sprite
       state: poster58_contraband
+    - type: ExtendDescription
+      descriptionList:
+        - description: "mindshield-extenddescription-poster-cybersun600"
+          fontSize: 12
+          color: "#11aaff"
+          requireDetailRange: false
+          requirements:
+          - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -590,7 +686,7 @@
   components:
     - type: Sprite
       state: poster62_contraband
-      
+
 - type: entity
   parent: PosterBase
   id: PosterContrabandMissingSpacepen
@@ -609,6 +705,14 @@
   components:
   - type: Sprite
     state: poster1_legit
+  - type: ExtendDescription
+    descriptionList:
+      - description: "mindshield-extenddescription-poster-foryoursafety"
+        fontSize: 12
+        color: "#11aaff"
+        requireDetailRange: false
+        requirements:
+        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -618,6 +722,14 @@
   components:
   - type: Sprite
     state: poster2_legit
+  - type: ExtendDescription
+    descriptionList:
+      - description: "mindshield-extenddescription-poster-nanotrasen"
+        fontSize: 12
+        color: "#11aaff"
+        requireDetailRange: false
+        requirements:
+        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -636,6 +748,14 @@
   components:
   - type: Sprite
     state: poster4_legit
+  - type: ExtendDescription
+    descriptionList:
+      - description: "mindshield-extenddescription-poster-helpothers"
+        fontSize: 12
+        color: "#11aaff"
+        requireDetailRange: false
+        requirements:
+        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -681,6 +801,14 @@
   components:
   - type: Sprite
     state: poster9_legit
+  - type: ExtendDescription
+    descriptionList:
+      - description: "mindshield-extenddescription-poster-obey"
+        fontSize: 12
+        color: "#11aaff"
+        requireDetailRange: false
+        requirements:
+        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -744,6 +872,14 @@
   components:
   - type: Sprite
     state: poster16_legit
+  - type: ExtendDescription
+    descriptionList:
+      - description: "mindshield-extenddescription-poster-donotquestion"
+        fontSize: 12
+        color: "#11aaff"
+        requireDetailRange: false
+        requirements:
+        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -789,6 +925,14 @@
   components:
   - type: Sprite
     state: poster21_legit
+  - type: ExtendDescription
+    descriptionList:
+      - description: "mindshield-extenddescription-poster-safetyreport"
+        fontSize: 12
+        color: "#11aaff"
+        requireDetailRange: false
+        requirements:
+        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -798,6 +942,14 @@
   components:
   - type: Sprite
     state: poster22_legit
+  - type: ExtendDescription
+    descriptionList:
+      - description: "mindshield-extenddescription-poster-reportcrimes"
+        fontSize: 12
+        color: "#11aaff"
+        requireDetailRange: false
+        requirements:
+        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -834,6 +986,14 @@
   components:
   - type: Sprite
     state: poster26_legit
+  - type: ExtendDescription
+    descriptionList:
+      - description: "mindshield-extenddescription-poster-vintagereprint50"
+        fontSize: 12
+        color: "#11aaff"
+        requireDetailRange: false
+        requirements:
+        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -852,6 +1012,14 @@
   components:
   - type: Sprite
     state: poster28_legit
+  - type: ExtendDescription
+    descriptionList:
+      - description: "mindshield-extenddescription-poster-pdaad"
+        fontSize: 12
+        color: "#11aaff"
+        requireDetailRange: false
+        requirements:
+        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -861,6 +1029,14 @@
   components:
   - type: Sprite
     state: poster29_legit
+  - type: ExtendDescription
+    descriptionList:
+      - description: "mindshield-extenddescription-poster-enlist"
+        fontSize: 12
+        color: "#11aaff"
+        requireDetailRange: false
+        requirements:
+        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -897,6 +1073,14 @@
   components:
   - type: Sprite
     state: poster33_legit
+  - type: ExtendDescription
+    descriptionList:
+      - description: "mindshield-extenddescription-poster-theowl"
+        fontSize: 12
+        color: "#11aaff"
+        requireDetailRange: false
+        requirements:
+        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -933,6 +1117,14 @@
   components:
   - type: Sprite
     state: poster37_legit
+  - type: ExtendDescription
+    descriptionList:
+      - description: "mindshield-extenddescription-poster-nogasgiant"
+        fontSize: 12
+        color: "#11aaff"
+        requireDetailRange: false
+        requirements:
+        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -951,6 +1143,14 @@
   components:
   - type: Sprite
     state: poster39_legit
+  - type: ExtendDescription
+    descriptionList:
+      - description: "mindshield-extenddescription-poster-watchingyou"
+        fontSize: 12
+        color: "#11aaff"
+        requireDetailRange: false
+        requirements:
+        - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -1032,6 +1232,14 @@
   components:
     - type: Sprite
       state: poster48_legit
+    - type: ExtendDescription
+      descriptionList:
+        - description: "mindshield-extenddescription-poster-vacation"
+          fontSize: 12
+          color: "#11aaff"
+          requireDetailRange: false
+          requirements:
+          - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -1059,6 +1267,14 @@
   components:
     - type: Sprite
       state: poster51_legit
+    - type: ExtendDescription
+      descriptionList:
+        - description: "mindshield-extenddescription-poster-buycards"
+          fontSize: 12
+          color: "#11aaff"
+          requireDetailRange: false
+          requirements:
+          - !type:CharacterMindshieldRequirement
 
 - type: entity
   parent: PosterBase
@@ -1077,7 +1293,6 @@
   components:
   - type: Sprite
     state: poster53_legit
-
 
 #maps
 
