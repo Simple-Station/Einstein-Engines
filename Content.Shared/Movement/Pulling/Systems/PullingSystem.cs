@@ -1,3 +1,6 @@
+using Content.Shared._White.Grab; // Goobstation - Martial Arts
+using Content.Shared._Goobstation.MartialArts.Events; // Goobstation - Martial Arts
+using Content.Shared.Contests; // Goobstation - Grab Intent
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 using Content.Shared._White.Grab; // Goobstation
@@ -129,7 +132,7 @@ public sealed class PullingSystem : EntitySystem
             && ent.Comp.Pulling != null)
         {
             if(_netManager.IsServer)
-                StopPulling((EntityUid) ent.Comp.Pulling, comp);
+                StopPulling(ent.Comp.Pulling.Value, comp);
         }
     }
     // Goobstation
@@ -281,8 +284,8 @@ public sealed class PullingSystem : EntitySystem
         component.NextPushTargetChange += args.PausedTime;
     }
 
-    // Goobstation - Grab Intent
-    private void OnVirtualItemDropAttempt(EntityUid uid, PullerComponent component, VirtualItemDropAttemptEvent args)
+    // Goobstation - Grab Intent Refactor
+    private void OnVirtualItemDeleted(Entity<PullerComponent> ent, ref VirtualItemDeletedEvent args)
     {
         if (component.Pulling == null)
             return;
@@ -419,12 +422,12 @@ public sealed class PullingSystem : EntitySystem
                     args.ModifySpeed(walkMod, sprintMod);
                     break;
                 case GrabStage.Soft:
-                    var softSpeedMod = component.SoftGrabSpeedModifier;
-                    args.ModifySpeed(walkMod * softSpeedMod, sprintMod * softSpeedMod);
+                    var softGrabSpeedMod = component.SoftGrabSpeedModifier;
+                    args.ModifySpeed(walkMod * softGrabSpeedMod, sprintMod * softGrabSpeedMod);
                     break;
                 case GrabStage.Hard:
-                    var hardSpeedMod = component.HardGrabSpeedModifier;
-                    args.ModifySpeed(walkMod * hardSpeedMod, sprintMod * hardSpeedMod);
+                    var hardGrabSpeedModifier = component.HardGrabSpeedModifier;
+                    args.ModifySpeed(walkMod * hardGrabSpeedModifier, sprintMod * hardGrabSpeedModifier);
                     break;
                 case GrabStage.Suffocate:
                     var chokeSpeedMod = component.ChokeGrabSpeedModifier;
@@ -443,12 +446,12 @@ public sealed class PullingSystem : EntitySystem
                 args.ModifySpeed(component.WalkSpeedModifier, component.SprintSpeedModifier);
                 break;
             case GrabStage.Soft:
-                var softSpeedMod = component.SoftGrabSpeedModifier;
-                args.ModifySpeed(component.WalkSpeedModifier * softSpeedMod, component.SprintSpeedModifier * softSpeedMod);
+                var softGrabSpeedMod = component.SoftGrabSpeedModifier;
+                args.ModifySpeed(component.WalkSpeedModifier * softGrabSpeedMod, component.SprintSpeedModifier * softGrabSpeedMod);
                 break;
             case GrabStage.Hard:
-                var hardSpeedMod = component.HardGrabSpeedModifier;
-                args.ModifySpeed(component.WalkSpeedModifier * hardSpeedMod, component.SprintSpeedModifier * hardSpeedMod);
+                var hardGrabSpeedModifier = component.HardGrabSpeedModifier;
+                args.ModifySpeed(component.WalkSpeedModifier * hardGrabSpeedModifier, component.SprintSpeedModifier * hardGrabSpeedModifier);
                 break;
             case GrabStage.Suffocate:
                 var chokeSpeedMod = component.ChokeGrabSpeedModifier;
@@ -940,6 +943,9 @@ public sealed class PullingSystem : EntitySystem
         };
 
         var newStage = puller.Comp.GrabStage + nextStageAddition;
+        var ev = new CheckGrabOverridesEvent(newStage); // guh
+        RaiseLocalEvent(puller, ev);
+        newStage = ev.Stage;
 
         if (!TrySetGrabStages((puller.Owner, puller.Comp), (pullable.Owner, pullable.Comp), newStage))
             return false;
@@ -987,6 +993,9 @@ public sealed class PullingSystem : EntitySystem
         _popup.PopupEntity(Loc.GetString($"popup-grab-{puller.Comp.GrabStage.ToString().ToLower()}-others", ("target", Identity.Entity(pullable, EntityManager)), ("puller", Identity.Entity(puller, EntityManager))), pullable, filter, true, popupType);
 
         _audio.PlayPvs(new SoundPathSpecifier("/Audio/Effects/thudswoosh.ogg"), pullable);
+
+        var comboEv = new ComboAttackPerformedEvent(puller.Owner, pullable.Owner, puller.Owner, ComboAttackType.Grab);
+        RaiseLocalEvent(puller.Owner, comboEv);
 
         Dirty(pullable);
         Dirty(puller);
@@ -1147,7 +1156,5 @@ public enum GrabStageDirection
     Increase,
     Decrease,
 }
-
-// Goobstation - Grab Intent
 
 // Goobstation
