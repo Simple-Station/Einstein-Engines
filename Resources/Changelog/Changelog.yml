@@ -12473,3 +12473,12 @@ Entries:
   id: 6917
   time: '2025-03-09T03:19:17.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1899
+- author: SolarisBirb
+  changes:
+    - type: Fix
+      message: SM no longer starts on round start.
+    - type: Fix
+      message: SM will no longer delam from spacing unless it's activated.
+  id: 6918
+  time: '2025-03-09T04:45:00.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1901
