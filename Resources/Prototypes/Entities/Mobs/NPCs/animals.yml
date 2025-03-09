@@ -405,6 +405,7 @@
       behaviors:
       - !type:GibBehavior
         gibContents: Skip
+        recursive: false
   - type: NonSpreaderZombie
   - type: LanguageKnowledge
     speaks: [Hissing]
