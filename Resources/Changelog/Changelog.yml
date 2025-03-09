@@ -12464,3 +12464,12 @@ Entries:
   id: 6916
   time: '2025-03-09T00:31:51.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1891
+- author: AlgumCorrupto
+  changes:
+    - type: Fix
+      message: >-
+        Fixed bug of the painted roboticist airlock displaying the windowed
+        counterpart instead of the standard one.
+  id: 6917
+  time: '2025-03-09T03:19:17.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1899
