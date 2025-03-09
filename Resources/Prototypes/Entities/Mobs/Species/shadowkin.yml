@@ -77,7 +77,6 @@
       alternateState: Standing
     - type: OfferItem
     - type: LayingDown
-    - type: Shoving
     - type: BloodstreamAffectedByMass
       power: 0.6
     - type: Hunger
