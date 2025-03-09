@@ -17,10 +17,9 @@ public sealed class FootPrintsVisualizerSystem : VisualizerSystem<FootPrintCompo
 
         SubscribeLocalEvent<FootPrintComponent, ComponentInit>(OnInitialized);
         SubscribeLocalEvent<FootPrintComponent, ComponentShutdown>(OnShutdown);
-        SubscribeLocalEvent<FootPrintComponent, ComponentHandleState>(OnHandleState); // WD EDIT
+        SubscribeLocalEvent<FootPrintComponent, ComponentHandleState>(OnHandleState);
     }
 
-    // WD EDIT START
     private void OnHandleState(Entity<FootPrintComponent> ent, ref ComponentHandleState args)
     {
         if (args.Current is not FootPrintState state || !TryGetEntity(state.PrintOwner, out var entity))
@@ -28,7 +27,6 @@ public sealed class FootPrintsVisualizerSystem : VisualizerSystem<FootPrintCompo
 
         ent.Comp.PrintOwner = entity.Value;
     }
-    // WD EDIT END
 
     private void OnInitialized(EntityUid uid, FootPrintComponent comp, ComponentInit args)
     {

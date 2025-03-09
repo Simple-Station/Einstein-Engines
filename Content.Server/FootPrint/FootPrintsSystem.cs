@@ -38,15 +38,13 @@ public sealed class FootPrintsSystem : EntitySystem
 
         SubscribeLocalEvent<FootPrintsComponent, ComponentStartup>(OnStartupComponent);
         SubscribeLocalEvent<FootPrintsComponent, MoveEvent>(OnMove);
-        SubscribeLocalEvent<FootPrintComponent, ComponentGetState>(OnGetState); // WD EDIT
+        SubscribeLocalEvent<FootPrintComponent, ComponentGetState>(OnGetState);
     }
 
-    // WD EDIT START
     private void OnGetState(Entity<FootPrintComponent> ent, ref ComponentGetState args)
     {
         args.State = new FootPrintState(TerminatingOrDeleted(ent.Comp.PrintOwner) ? NetEntity.Invalid : GetNetEntity(ent.Comp.PrintOwner));
     }
-    // WD EDIT END
 
     private void OnStartupComponent(EntityUid uid, FootPrintsComponent component, ComponentStartup args)
     {

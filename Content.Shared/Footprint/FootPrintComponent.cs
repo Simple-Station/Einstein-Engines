@@ -22,10 +22,8 @@ public sealed partial class FootPrintComponent : Component
     public Entity<SolutionComponent>? Solution;
 }
 
-// WD EDIT START
 [Serializable, NetSerializable]
 public sealed class FootPrintState(NetEntity netEntity) : ComponentState
 {
     public NetEntity PrintOwner { get; private set; } = netEntity;
 }
-// WD EDIT END

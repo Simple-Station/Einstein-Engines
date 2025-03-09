@@ -7,7 +7,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Shared.FootPrint;
 
-[RegisterComponent, NetworkedComponent] // WD EDIT
+[RegisterComponent, NetworkedComponent]
 public sealed partial class FootPrintsComponent : Component
 {
     [DataField]
