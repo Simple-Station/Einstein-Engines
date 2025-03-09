@@ -33,8 +33,8 @@
     wideAnimationRotation: -135
     damage:
       types:
-        Blunt: 20
-        Slash: 15
+        Blunt: 15
+        Slash: 5
     bluntStaminaDamageFactor: 2.0
     heavyRateModifier: 0.75
     heavyDamageBaseModifier: 1.2
@@ -42,6 +42,11 @@
     angle: 120
     soundHit:
       collection: MetalThud
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 5
+        Slash: 10
   - type: DamageOtherOnHit
     staminaCost: 16
   - type: Wieldable
