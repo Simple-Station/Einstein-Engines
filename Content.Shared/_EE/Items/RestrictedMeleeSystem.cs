@@ -1,18 +1,13 @@
-using System.Resources;
-using Content.Server.Abilities.Oni;
-using Content.Shared.Ghost;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Popups;
 using Content.Shared.StatusEffect;
 using Content.Shared.Stunnable;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Whitelist;
-using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
-using Robust.Shared.Serialization.Manager.Exceptions;
 
 
-namespace Content.Shared._EE.Item;
+namespace Content.Shared._EE.Items;
 
 public sealed class RestrictedMeleeSystem : EntitySystem
 {
