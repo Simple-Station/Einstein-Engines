@@ -559,6 +559,16 @@
       steps: 5
       zeroVisible: true
     - type: Appearance
+    - type: ExtendDescription
+      descriptionList:
+      - description: "civiliandisabler-extenddescription-security"
+        fontSize: 12
+        color: "#ff0000"
+        requireDetailRange: true
+        requirements:
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
     - type: MeleeWeapon
       damage:
         types:
