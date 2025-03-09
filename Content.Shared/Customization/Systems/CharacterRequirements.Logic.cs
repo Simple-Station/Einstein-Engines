@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Text;
+using Content.Shared.Mind;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using JetBrains.Annotations;
@@ -30,7 +31,8 @@ public sealed partial class CharacterLogicAndRequirement : CharacterRequirement
         IPrototypeManager prototypeManager,
         IConfigurationManager configManager,
         out string? reason,
-        int depth = 0)
+        int depth = 0,
+        MindComponent? mind = null)
     {
         var succeeded = entityManager.EntitySysManager.GetEntitySystem<CharacterRequirementsSystem>()
             .CheckRequirementsValid(Requirements, job, profile, playTimes, whitelisted, prototype, entityManager,
@@ -72,7 +74,8 @@ public sealed partial class CharacterLogicOrRequirement : CharacterRequirement
         IPrototypeManager prototypeManager,
         IConfigurationManager configManager,
         out string? reason,
-        int depth = 0)
+        int depth = 0,
+        MindComponent? mind = null)
     {
         var succeeded = false;
         var reasons = new List<string>();
@@ -127,7 +130,8 @@ public sealed partial class CharacterLogicXorRequirement : CharacterRequirement
         IPrototypeManager prototypeManager,
         IConfigurationManager configManager,
         out string? reason,
-        int depth = 0)
+        int depth = 0,
+        MindComponent? mind = null)
     {
         var reasons = new List<string>();
         var succeeded = false;
