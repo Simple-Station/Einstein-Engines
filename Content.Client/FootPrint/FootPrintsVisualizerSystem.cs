@@ -1,6 +1,7 @@
 ﻿using Content.Shared.FootPrint;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
+using Robust.Shared.GameStates;
 using Robust.Shared.Random;
 
 namespace Content.Client.FootPrint;
@@ -16,7 +17,18 @@ public sealed class FootPrintsVisualizerSystem : VisualizerSystem<FootPrintCompo
 
         SubscribeLocalEvent<FootPrintComponent, ComponentInit>(OnInitialized);
         SubscribeLocalEvent<FootPrintComponent, ComponentShutdown>(OnShutdown);
+        SubscribeLocalEvent<FootPrintComponent, ComponentHandleState>(OnHandleState); // WD EDIT
     }
+
+    // WD EDIT START
+    private void OnHandleState(Entity<FootPrintComponent> ent, ref ComponentHandleState args)
+    {
+        if (args.Current is not FootPrintState state || !TryGetEntity(state.PrintOwner, out var entity))
+            return;
+
+        ent.Comp.PrintOwner = entity.Value;
+    }
+    // WD EDIT END
 
     private void OnInitialized(EntityUid uid, FootPrintComponent comp, ComponentInit args)
     {

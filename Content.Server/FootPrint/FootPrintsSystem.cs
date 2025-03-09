@@ -6,6 +6,7 @@ using Content.Shared.Standing;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Forensics;
+using Robust.Shared.GameStates;
 using Robust.Shared.Map;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Prototypes;
@@ -37,7 +38,15 @@ public sealed class FootPrintsSystem : EntitySystem
 
         SubscribeLocalEvent<FootPrintsComponent, ComponentStartup>(OnStartupComponent);
         SubscribeLocalEvent<FootPrintsComponent, MoveEvent>(OnMove);
+        SubscribeLocalEvent<FootPrintComponent, ComponentGetState>(OnGetState); // WD EDIT
     }
+
+    // WD EDIT START
+    private void OnGetState(Entity<FootPrintComponent> ent, ref ComponentGetState args)
+    {
+        args.State = new FootPrintState(TerminatingOrDeleted(ent.Comp.PrintOwner) ? NetEntity.Invalid : GetNetEntity(ent.Comp.PrintOwner));
+    }
+    // WD EDIT END
 
     private void OnStartupComponent(EntityUid uid, FootPrintsComponent component, ComponentStartup args)
     {
@@ -46,7 +55,8 @@ public sealed class FootPrintsSystem : EntitySystem
 
     private void OnMove(EntityUid uid, FootPrintsComponent component, ref MoveEvent args)
     {
-        if (component.ContainedSolution.Volume <= 0
+        if (TerminatingOrDeleted(uid)
+            || component.ContainedSolution.Volume <= 0
             || TryComp<PhysicsComponent>(uid, out var physics) && physics.BodyStatus != BodyStatus.OnGround
             || args.Entity.Comp1.GridUid is not {} gridUid)
             return;
