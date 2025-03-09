@@ -375,6 +375,7 @@
   - type: PipeColorVisuals
   - type: Rotatable
   - type: GasRecycler
+  # - type: PipeRestrictOverlap # Allow pipe stacking for MRP
   - type: NodeContainer
     nodes:
       inlet:

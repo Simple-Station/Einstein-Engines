@@ -32,6 +32,7 @@
         - JawsOfLife
         - GPS
         - WeldingMask
+        - RPD
       components:
         - SprayPainter
         - NetworkConfigurator
@@ -49,6 +50,10 @@
         whitelist:
           tags:
           - Powerdrill
+      rpd:
+        whitelist:
+          tags:
+          - RPD
       cutters_red:
         whitelist:
           tags:
@@ -111,6 +116,7 @@
         - HolofanProjector
         - Multitool
         - AppraisalTool
+        - RPD
       components:
         - SprayPainter
         - NetworkConfigurator
@@ -129,6 +135,10 @@
         whitelist:
           tags:
           - Powerdrill
+      rpd:
+        whitelist:
+          tags:
+          - RPD
       cutters_red:
         whitelist:
           tags:
