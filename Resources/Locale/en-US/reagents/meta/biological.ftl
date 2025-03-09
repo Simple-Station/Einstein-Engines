@@ -32,4 +32,4 @@ reagent-name-grey-matter = grey matter
 reagent-desc-grey-matter = Thought juice, the stuff that leaks out of your ears.
 
 reagent-name-black-blood = black blood
-reagent-desc-black-blood = Ok this is definitely not ketchup.
+reagent-desc-black-blood = This is definitely not ketchup.
