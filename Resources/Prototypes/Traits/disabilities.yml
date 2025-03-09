@@ -14,6 +14,13 @@
         - Photophobia
         - Nearsighted
         - CyberEyes
+        - FlareShieldingModule
+        - SecurityEyesModule
+        - MedicalEyesModule
+        - DiagnosticEyesModule
+        - OmniEyesModule
+        - LightAmplificationModule
+        - ThermographicVisionModule
   functions:
     - !type:TraitAddComponent
       components:
@@ -34,6 +41,13 @@
       traits:
         - Blindness
         - CyberEyes
+        - FlareShieldingModule
+        - SecurityEyesModule
+        - MedicalEyesModule
+        - DiagnosticEyesModule
+        - OmniEyesModule
+        - LightAmplificationModule
+        - ThermographicVisionModule
   functions:
     - !type:TraitAddComponent
       components:
@@ -288,6 +302,13 @@
       traits:
         - Blindness
         - CyberEyes
+        - FlareShieldingModule
+        - SecurityEyesModule
+        - MedicalEyesModule
+        - DiagnosticEyesModule
+        - OmniEyesModule
+        - LightAmplificationModule
+        - ThermographicVisionModule
   functions:
     - !type:TraitReplaceComponent
       components:

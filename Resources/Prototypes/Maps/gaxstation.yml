@@ -7,7 +7,7 @@
   fallback: true
   stations:
     NCS Gax:
-      stationProto: StandardNanotrasenStation
+      stationProto: StandardNanotrasenStationCargoOnly
       components:
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/DeltaV/NTES_Delta.yml
