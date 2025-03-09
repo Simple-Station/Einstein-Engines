@@ -1,5 +1,4 @@
-using Content.Shared.Mind;
-using Content.Shared.Store.Components;
+using Content.Shared.Popups;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared.Changeling;
@@ -20,14 +19,19 @@ public sealed partial class ChangelingInfectionComponent : Component
     [DataField]
     public TimeSpan EffectsTimer = TimeSpan.Zero;
 
+    [DataField]
     public float EffectsTimerDelay = 20f;
 
-    public float FirstSymptomsDelay = 600f;
+    [DataField]
+    public TimeSpan FirstSymptomsDelay = TimeSpan.FromSeconds(600);
 
-    public float KnockedOutDelay = 1200f;
+    [DataField]
+    public TimeSpan KnockedOutDelay = TimeSpan.FromSeconds(1200);
 
-    public float FullyInfectedDelay = 1320f;
+    [DataField]
+    public TimeSpan FullyInfectedDelay = TimeSpan.FromSeconds(1320);
 
+    [DataField]
     public float ScarySymptomChance = 0.1f;
 
     public enum InfectionState
@@ -59,4 +63,55 @@ public sealed partial class ChangelingInfectionComponent : Component
 
     // Whether the component has spawned and needs timer setup done
     public bool NeedsInitialization = false;
+
+    /// <summary>
+    ///     How much time (in hours) between progression states for the Changeling Infection.
+    /// </summary>
+    [DataField]
+    public TimeSpan SymptomProgressionTime = TimeSpan.FromHours(24);
+
+    [DataField]
+    public string ConvertWarningThrowupText = "changeling-convert-warning-throwup";
+
+    [DataField]
+    public PopupType ConvertThrowupPopupType = PopupType.Medium;
+
+    [DataField]
+    public string ConvertWarningCollapseText = "changeling-convert-warning-collapse";
+
+    [DataField]
+    public PopupType ConvertCollapsePopupType = PopupType.Medium;
+
+    [DataField]
+    public float ConvertParalyzeTime = 5f;
+
+    [DataField]
+    public string ConvertWarningShakeText = "changeling-convert-warning-shake";
+
+    [DataField]
+    public PopupType ConvertShakePopupType = PopupType.Medium;
+
+    [DataField]
+    public float ConvertJitterTime = 5f;
+
+    [DataField]
+    public float ConvertJitterAmplitude = 10f;
+
+    [DataField]
+    public float ConvertJitterFrequency = 4f;
+
+    [DataField]
+    public string ConvertEepedText = "changeling-convert-eeped";
+
+    [DataField]
+    public PopupType ConvertEeepedPopupType = PopupType.LargeCaution;
+
+    [DataField]
+    public string ConvertEeepedShakeText = "changeling-convert-eeped-shake";
+
+    [DataField]
+    public PopupType ConvertEeepedShakePopupType = PopupType.Medium;
+
+    [DataField]
+    public string ConvertSkillIssue = "changeling-convert-skillissue";
 }

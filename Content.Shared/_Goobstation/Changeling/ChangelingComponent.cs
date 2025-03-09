@@ -1,4 +1,9 @@
+using Content.Shared.Chemistry.Reagent;
+using Content.Shared.Damage;
+using Content.Shared.Damage.Prototypes;
+using Content.Shared.FixedPoint;
 using Content.Shared.Humanoid;
+using Content.Shared.Popups;
 using Content.Shared.StatusIcon;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
@@ -133,6 +138,43 @@ public sealed partial class ChangelingComponent : Component
 
     [ViewVariables(VVAccess.ReadOnly)]
     public TransformData? SelectedForm;
+
+    [DataField]
+    public string AbsorbFailIncapacitated = "changeling-absorb-fail-incapacitated";
+
+    [DataField]
+    public string AbsorbFailAbsorbed = "changeling-absorb-fail-absorbed";
+
+    [DataField]
+    public string AbsorbFailUnabsorbable = "changeling-absorb-fail-unabsorbable";
+
+    [DataField]
+    public string AbsorbFailNoGrab = "changeling-absorb-fail-nograb";
+
+    [DataField]
+    public string AbsorbPopup = "changeling-absorb-start";
+
+    [DataField]
+    public PopupType AbsorbPopupType = PopupType.LargeCaution;
+
+    [DataField]
+    public TimeSpan AbsorbTime = TimeSpan.FromSeconds(15);
+
+    [ValidatePrototypeId<DamageTypePrototype>]
+    public string AbsorbedDamageType = "Cellular";
+
+    /// <summary>
+    ///     What reagent will the changeling replace their SUCC'ed victims blood with.
+    /// </summary>
+    [DataField]
+    public ProtoId<ReagentPrototype> AbsorbedBloodReagent = "FerrochromicAcid";
+
+    /// <summary>
+    ///     The total running count of however many evolution points a 'Ling has obtained throughout the round. Including spent points.
+    ///     This is used for when a changeling eats another of their kind.
+    /// </summary>
+    [DataField]
+    public int TotalEvolutionPoints;
 }
 
 [DataDefinition]

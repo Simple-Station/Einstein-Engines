@@ -31,26 +31,26 @@ public sealed class ChangelingEggSystem : EntitySystem
 
     public void Cycle(EntityUid uid, ChangelingEggComponent comp)
     {
-        if (comp.active == false)
+        if (comp.Active == false)
         {
-            comp.active = true;
+            comp.Active = true;
             return;
         }
 
-        if (TerminatingOrDeleted(comp.lingMind))
+        if (TerminatingOrDeleted(comp.LingMind))
         {
             _bodySystem.GibBody(uid);
             return;
         }
 
-        var newUid = Spawn("MobMonkey", Transform(uid).Coordinates);
+        var newUid = Spawn(comp.MobToSpawn, Transform(uid).Coordinates);
 
         EnsureComp<MindContainerComponent>(newUid);
-        _mind.TransferTo(comp.lingMind, newUid);
+        _mind.TransferTo(comp.LingMind, newUid);
 
         EnsureComp<ChangelingComponent>(newUid);
 
-        EntityManager.AddComponent(newUid, comp.lingStore);
+        EntityManager.AddComponent(newUid, comp.LingStore);
 
         if (comp.AugmentedEyesightPurchased)
             _changeling.InitializeAugmentedEyesight(newUid);

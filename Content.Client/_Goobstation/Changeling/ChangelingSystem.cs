@@ -9,6 +9,8 @@ namespace Content.Client.Changeling;
 public sealed class ChangelingSystem : SharedChangelingSystem
 {
 
+    private const int MaxChemicalsNormalizer = 18;
+    private const int MaxBiomassNormalizer = 16;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     public override void Initialize()
     {
@@ -26,11 +28,11 @@ public sealed class ChangelingSystem : SharedChangelingSystem
         switch (args.Alert.AlertKey.AlertType)
         {
             case "ChangelingChemicals":
-                stateNormalized = (int) (comp.Chemicals / comp.MaxChemicals * 18);
+                stateNormalized = (int) (comp.Chemicals / comp.MaxChemicals * MaxChemicalsNormalizer);
                 break;
 
             case "ChangelingBiomass":
-                stateNormalized = (int) (comp.Biomass / comp.MaxBiomass * 16);
+                stateNormalized = (int) (comp.Biomass / comp.MaxBiomass * MaxBiomassNormalizer);
                 break;
             default:
                 return;

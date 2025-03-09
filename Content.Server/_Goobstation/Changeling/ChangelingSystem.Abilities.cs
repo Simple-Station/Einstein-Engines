@@ -23,6 +23,8 @@ using Content.Shared._Goobstation.Weapons.AmmoSelector;
 using Content.Shared.Actions;
 using Content.Shared.Movement.Pulling.Systems;
 using Content.Shared.Overlays.Switchable;
+using Robust.Shared.Utility;
+using Robust.Shared.Physics.Components;
 
 namespace Content.Server.Changeling;
 
@@ -74,7 +76,7 @@ public sealed partial class ChangelingSystem
 
     private void OnOpenEvolutionMenu(EntityUid uid, ChangelingComponent comp, ref OpenEvolutionMenuEvent args)
     {
-        if (!TryComp<StoreComponent>(uid, out var store))
+        if (!TryComp(uid, out StoreComponent? store))
             return;
 
         _store.ToggleUi(uid, uid, store);
@@ -86,24 +88,24 @@ public sealed partial class ChangelingSystem
 
         if (!IsIncapacitated(target))
         {
-            _popup.PopupEntity(Loc.GetString("changeling-absorb-fail-incapacitated"), uid, uid);
+            _popup.PopupEntity(Loc.GetString(comp.AbsorbFailIncapacitated), uid, uid);
             return;
         }
         if (HasComp<AbsorbedComponent>(target))
         {
-            _popup.PopupEntity(Loc.GetString("changeling-absorb-fail-absorbed"), uid, uid);
+            _popup.PopupEntity(Loc.GetString(comp.AbsorbFailAbsorbed), uid, uid);
             return;
         }
         if (!HasComp<AbsorbableComponent>(target))
         {
-            _popup.PopupEntity(Loc.GetString("changeling-absorb-fail-unabsorbable"), uid, uid);
+            _popup.PopupEntity(Loc.GetString(comp.AbsorbFailUnabsorbable), uid, uid);
             return;
         }
         if (TryComp<PullableComponent>(target, out var pullable)) // Agressive grab check
         {
             if (pullable.GrabStage <= GrabStage.Soft)
             {
-                _popup.PopupEntity(Loc.GetString("changeling-absorb-fail-nograb"), uid, uid);
+                _popup.PopupEntity(Loc.GetString(comp.AbsorbFailNoGrab), uid, uid);
                 return;
             }
         }
@@ -111,10 +113,10 @@ public sealed partial class ChangelingSystem
         if (!TryUseAbility(uid, comp, args))
             return;
 
-        var popupOthers = Loc.GetString("changeling-absorb-start", ("user", Identity.Entity(uid, EntityManager)), ("target", Identity.Entity(target, EntityManager)));
-        _popup.PopupEntity(popupOthers, uid, PopupType.LargeCaution);
+        var popupOthers = Loc.GetString(comp.AbsorbPopup, ("user", Identity.Entity(uid, EntityManager)), ("target", Identity.Entity(target, EntityManager)));
+        _popup.PopupEntity(popupOthers, uid, comp.AbsorbPopupType);
         PlayMeatySound(uid, comp);
-        var dargs = new DoAfterArgs(EntityManager, uid, TimeSpan.FromSeconds(15), new AbsorbDNADoAfterEvent(), uid, target)
+        var dargs = new DoAfterArgs(EntityManager, uid, comp.AbsorbTime, new AbsorbDNADoAfterEvent(), uid, target)
         {
             DistanceThreshold = 1.5f,
             BreakOnDamage = true,
@@ -126,42 +128,66 @@ public sealed partial class ChangelingSystem
         };
         _doAfter.TryStartDoAfter(dargs);
     }
-    public ProtoId<DamageGroupPrototype> AbsorbedDamageGroup = "Genetic";
+
+    /// <summary>
+    ///     This number is based on the "Average Human" constant mass, with the desired target that succ'ing an average human
+    //      should give the same number of evolution points as before (2 points).
+    /// </summary>
+    private const float SuccMassRatio = 30f;
+
+    /// <summary>
+    ///     This number is based on the "Average Human" constant mass, with the desired target that succ'ing an average human
+    ///     should give the same number of chemicals as before (7 points).
+    /// </summary>
+    private const float SuccChemicalsRatio = 7f;
     private void OnAbsorbDoAfter(EntityUid uid, ChangelingComponent comp, ref AbsorbDNADoAfterEvent args)
     {
-        if (args.Args.Target == null)
+        if (args.Args.Target is null
+            || !_proto.TryIndex<DamageTypePrototype>(comp.AbsorbedDamageType, out var damageProto))
             return;
 
         var target = args.Args.Target.Value;
 
-        if (args.Cancelled || !IsIncapacitated(target) || HasComp<AbsorbedComponent>(target))
+        if (args.Cancelled || !IsIncapacitated(target) || HasComp<AbsorbedComponent>(target)
+            || !TryComp(target, out DamageableComponent? damageable)
+            || !TryComp(target, out PhysicsComponent? physicsComponent) || physicsComponent.Mass <= 0)
             return;
 
-        PlayMeatySound(args.User, comp);
+        if (!_mobThreshold.TryGetThresholdForState(target, MobState.Dead, out var deadThreshold) || deadThreshold is null || deadThreshold <= 0)
+        {
+            DebugTools.Assert($"entity {MetaData(target).EntityPrototype} has an Absorbable component, but does not also have a dead threshold. Double check if it's intended or not that changelings can SUCC them. Are they a robot?");
+            return;
+        }
 
-        UpdateBiomass(uid, comp, comp.MaxBiomass - comp.TotalAbsorbedEntities);
+        var dmg = new DamageSpecifier(damageProto, deadThreshold!.Value.Int());
+        var dmgTotal = _damage.TryChangeDamage(target, dmg, false, damageable: damageable, origin: uid);
+        if (dmgTotal is null || !dmgTotal.AnyPositive())
+            return;
 
-        var dmg = new DamageSpecifier(_proto.Index(AbsorbedDamageGroup), 200);
-        _damage.TryChangeDamage(target, dmg, false, false);
-        _blood.ChangeBloodReagent(target, "FerrochromicAcid");
+        _blood.ChangeBloodReagent(target, comp.AbsorbedBloodReagent);
         _blood.SpillAllSolutions(target);
+        PlayMeatySound(args.User, comp);
+        UpdateBiomass(uid, comp, comp.MaxBiomass - comp.TotalAbsorbedEntities);
 
         EnsureComp<AbsorbedComponent>(target);
 
         var popup = Loc.GetString("changeling-absorb-end-self-ling");
         var bonusChemicals = 0f;
         var bonusEvolutionPoints = 0f;
+        var massToSucc = Math.Max((int) (physicsComponent.Mass / SuccMassRatio), 1); // WOE UPON THE CREW IF A CHANGELING SUCCS A LAMIA.
         if (TryComp<ChangelingComponent>(target, out var targetComp))
         {
             bonusChemicals += targetComp.MaxChemicals / 2;
-            bonusEvolutionPoints += 10;
+            bonusEvolutionPoints += targetComp.TotalEvolutionPoints; // SURVIVAL OF THE FITTEST.
             comp.MaxBiomass += targetComp.MaxBiomass / 2;
+            comp.TotalEvolutionPoints += targetComp.TotalEvolutionPoints + massToSucc;
         }
         else
         {
             popup = Loc.GetString("changeling-absorb-end-self");
-            bonusChemicals += 10;
-            bonusEvolutionPoints += 2;
+            bonusChemicals += physicsComponent.Mass / SuccChemicalsRatio;
+            bonusEvolutionPoints += massToSucc;
+            comp.TotalEvolutionPoints += massToSucc;
         }
         TryStealDNA(uid, target, comp, true);
         comp.TotalAbsorbedEntities++;
@@ -620,6 +646,10 @@ public sealed partial class ChangelingSystem
     {
         var target = args.Target;
 
+        if (!_proto.TryIndex<DamageTypePrototype>(comp.AbsorbedDamageType, out var damageProto)
+            || !TryComp(target, out DamageableComponent? damageable))
+            return;
+
         if (!_mobState.IsDead(target))
         {
             _popup.PopupEntity(Loc.GetString("changeling-absorb-fail-incapacitated"), uid, uid);
@@ -636,25 +666,34 @@ public sealed partial class ChangelingSystem
             return;
         }
 
+        if (!_mobThreshold.TryGetThresholdForState(target, MobState.Dead, out var deadThreshold) || deadThreshold is null || deadThreshold <= 0)
+        {
+            DebugTools.Assert($"entity {MetaData(target).EntityPrototype} has an Absorbable component, but does not also have a dead threshold. Double check if it's intended or not that changelings can SUCC them. Are they a robot?");
+            return;
+        }
+
         var mind = _mind.GetMind(uid);
         if (mind == null)
             return;
         if (!TryComp<StoreComponent>(uid, out var storeComp))
             return;
 
+        var dmg = new DamageSpecifier(damageProto, deadThreshold!.Value.Int());
+        var dmgTotal = _damage.TryChangeDamage(target, dmg, false, damageable: damageable, origin: uid);
+        if (dmgTotal is null || !dmgTotal.AnyPositive())
+            return;
+
         comp.IsInLastResort = false;
         comp.IsInLesserForm = true;
 
         var eggComp = EnsureComp<ChangelingEggComponent>(target);
-        eggComp.lingComp = comp;
-        eggComp.lingMind = (EntityUid) mind;
-        eggComp.lingStore = _serialization.CreateCopy(storeComp, notNullableOverride: true);
+        eggComp.LingComp = comp;
+        eggComp.LingMind = (EntityUid) mind;
+        eggComp.LingStore = _serialization.CreateCopy(storeComp, notNullableOverride: true);
         eggComp.AugmentedEyesightPurchased = HasComp<ThermalVisionComponent>(uid);
 
         EnsureComp<AbsorbedComponent>(target);
-        var dmg = new DamageSpecifier(_proto.Index(AbsorbedDamageGroup), 200);
-        _damage.TryChangeDamage(target, dmg, false, false);
-        _blood.ChangeBloodReagent(target, "FerrochromicAcid");
+        _blood.ChangeBloodReagent(target, comp.AbsorbedBloodReagent);
         _blood.SpillAllSolutions(target);
 
         PlayMeatySound(uid, comp);

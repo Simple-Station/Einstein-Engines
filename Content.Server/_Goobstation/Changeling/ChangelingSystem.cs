@@ -64,6 +64,7 @@ using Content.Shared.Projectiles;
 // using Content.Shared._White.Overlays;
 using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Overlays.Switchable;
+using Content.Shared.Damage.Prototypes;
 
 namespace Content.Server.Changeling;
 
@@ -110,6 +111,7 @@ public sealed partial class ChangelingSystem : SharedChangelingSystem
     [Dependency] private readonly IComponentFactory _compFactory = default!;
     [Dependency] private readonly RejuvenateSystem _rejuv = default!;
     [Dependency] private readonly SelectableAmmoSystem _selectableAmmo = default!;
+    [Dependency] private readonly MobThresholdSystem _mobThreshold = default!;
 
     public EntProtoId ArmbladePrototype = "ArmBladeChangeling";
     public EntProtoId FakeArmbladePrototype = "FakeArmBladeChangeling";
@@ -248,9 +250,10 @@ public sealed partial class ChangelingSystem : SharedChangelingSystem
 
         bool doEffects = amt < 0; // no vomiting blood if you gained biomass
 
-        if (comp.Biomass <= 0 && doEffects)
+        if (comp.Biomass <= 0 && doEffects
+            && _proto.TryIndex<DamageTypePrototype>(comp.AbsorbedDamageType, out var damageProto))
             // game over, man
-            _damage.TryChangeDamage(uid, new DamageSpecifier(_proto.Index(AbsorbedDamageGroup), 50), true);
+            _damage.TryChangeDamage(uid, new DamageSpecifier(damageProto, 50), true);
 
         if (comp.Biomass <= comp.MaxBiomass / 10)
         {
