@@ -68,6 +68,26 @@
     - WeaponEnergyRevolverSecurity
 
 - type: loadout
+  id: LoadoutBSOEnergySword
+  category: JobsCommandBlueshieldOfficer
+  cost: 6
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityWeapons
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 18000 # 5 hours
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+    - !type:CharacterAgeRequirement
+      min: 21
+  items:
+    - WeaponEnergySword
+
+- type: loadout
   id: LoadoutBSORifleChester
   category: JobsCommandBlueshieldOfficer
   cost: 0
