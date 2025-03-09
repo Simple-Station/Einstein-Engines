@@ -12541,3 +12541,28 @@ Entries:
   id: 6923
   time: '2025-03-09T16:23:38.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1881
+- author: SolarisBirb
+  changes:
+    - type: Add
+      message: Added RPD, glory to atmosia!
+    - type: Tweak
+      message: RPD now spawns in Atmos and CE lockers
+    - type: Tweak
+      message: >-
+        Extra compressed matter has been added into both Atmos/CE lockers for
+        more RPD/RCD uses
+    - type: Add
+      message: You can research RPD with the reverse engineering machine.
+    - type: Add
+      message: A belt overlay sprite to the CE and utility toolbelt.
+    - type: Add
+      message: >-
+        Pipe Stacking ported over from LRP Goob station. Compress those frezon
+        factories!
+    - type: Add
+      message: Toolbelt overlay sprite for the RPD.
+    - type: Add
+      message: RPD Borg module researched in t-2 industrial advanced tools.
+  id: 6924
+  time: '2025-03-09T18:34:34.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1857
