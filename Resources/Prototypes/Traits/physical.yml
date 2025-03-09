@@ -1,7 +1,7 @@
 - type: trait
   id: WillToLive
   category: Physical
-  points: -1
+  points: -3
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -50,7 +50,7 @@
 - type: trait
   id: Tenacity
   category: Physical
-  points: -3
+  points: -4
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -239,7 +239,7 @@
 - type: trait
   id: Steadfast
   category: Physical
-  points: -4
+  points: -6
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -512,7 +512,7 @@
 - type: trait
   id: BionicArm
   category: Physical
-  points: -8
+  points: -10
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -871,7 +871,7 @@
 - type: trait
   id: BionicLeg
   category: Physical
-  points: -6
+  points: -8
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
