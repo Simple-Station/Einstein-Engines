@@ -12451,3 +12451,16 @@ Entries:
   id: 6915
   time: '2025-03-08T21:11:30.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1873
+- author: Eagle
+  changes:
+    - type: Add
+      message: >-
+        Added Corporate Judo, CQC, Sleeping Carp, and Krav Maga martial arts
+        with unique abilities.
+    - type: Add
+      message: >-
+        The Chef has been given Close Quarters Cooking in the Kitchen and Bar.
+        Tiders beware.
+  id: 6916
+  time: '2025-03-09T00:31:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1891
