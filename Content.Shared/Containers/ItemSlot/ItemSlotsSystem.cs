@@ -113,6 +113,7 @@ namespace Content.Shared.Containers.ItemSlots
             }
 
             slot.ContainerSlot = _containers.EnsureContainer<ContainerSlot>(uid, id);
+            slot.ContainerSlot.OccludesLight = slot.OccludesLight; // Lavaland Change
             itemSlots.Slots[id] = slot;
             Dirty(uid, itemSlots);
         }
@@ -343,6 +344,103 @@ namespace Content.Shared.Containers.ItemSlots
             Insert(uid, slot, held, user, excludeUserAudio: excludeUserAudio);
             return true;
         }
+
+        /// <summary>
+        ///     Tries to insert an item into any empty slot.
+        /// </summary>
+        /// <param name="ent">The entity that has the item slots.</param>
+        /// <param name="item">The item to be inserted.</param>
+        /// <param name="user">The entity performing the interaction.</param>
+        /// <param name="excludeUserAudio">
+        ///     If true, will exclude the user when playing sound. Does nothing client-side.
+        ///     Useful for predicted interactions
+        /// </param>
+        /// <returns>False if failed to insert item</returns>
+        public bool TryInsertEmpty(Entity<ItemSlotsComponent?> ent,
+            EntityUid item,
+            EntityUid? user,
+            bool excludeUserAudio = false)
+        {
+            if (!Resolve(ent, ref ent.Comp, false))
+                return false;
+
+            TryComp(user, out HandsComponent? handsComp);
+
+            if (!TryGetAvailableSlot(ent,
+                    item,
+                    user == null ? null : (user.Value, handsComp),
+                    out var itemSlot,
+                    emptyOnly: true))
+                return false;
+
+            if (user != null && !_handsSystem.TryDrop(user.Value, item, handsComp: handsComp))
+                return false;
+
+            Insert(ent, itemSlot, item, user, excludeUserAudio: excludeUserAudio);
+            return true;
+        }
+
+        /// <summary>
+        /// Tries to get any slot that the <paramref name="item"/> can be inserted into.
+        /// </summary>
+        /// <param name="ent">Entity that <paramref name="item"/> is being inserted into.</param>
+        /// <param name="item">Entity being inserted into <paramref name="ent"/>.</param>
+        /// <param name="userEnt">Entity inserting <paramref name="item"/> into <paramref name="ent"/>.</param>
+        /// <param name="itemSlot">The ItemSlot on <paramref name="ent"/> to insert <paramref name="item"/> into.</param>
+        /// <param name="emptyOnly"> True only returns slots that are empty.
+        /// False returns any slot that is able to receive <paramref name="item"/>.</param>
+        /// <returns>True when a slot is found. Otherwise, false.</returns>
+        public bool TryGetAvailableSlot(Entity<ItemSlotsComponent?> ent,
+            EntityUid item,
+            Entity<HandsComponent?>? userEnt,
+            [NotNullWhen(true)] out ItemSlot? itemSlot,
+            bool emptyOnly = false)
+        {
+            itemSlot = null;
+
+            if (userEnt is { } user
+                && Resolve(user, ref user.Comp)
+                && _handsSystem.IsHolding(user, item))
+            {
+                if (!_handsSystem.CanDrop(user, item, user.Comp))
+                    return false;
+            }
+
+            if (!Resolve(ent, ref ent.Comp, false))
+                return false;
+
+            var slots = new List<ItemSlot>();
+            foreach (var slot in ent.Comp.Slots.Values)
+            {
+                if (emptyOnly && slot.ContainerSlot?.ContainedEntity != null)
+                    continue;
+
+                if (CanInsert(ent, item, userEnt, slot))
+                    slots.Add(slot);
+            }
+
+            if (slots.Count == 0)
+                return false;
+
+            slots.Sort(SortEmpty);
+
+            itemSlot = slots[0];
+            return true;
+        }
+
+        private static int SortEmpty(ItemSlot a, ItemSlot b)
+        {
+            var aEnt = a.ContainerSlot?.ContainedEntity;
+            var bEnt = b.ContainerSlot?.ContainedEntity;
+            if (aEnt == null && bEnt == null)
+                return a.Priority.CompareTo(b.Priority);
+
+            if (aEnt == null)
+                return -1;
+
+            return 1;
+        }
+
         #endregion
 
         #region Eject

@@ -8,6 +8,16 @@
     sprite: Objects/Weapons/Guns/Basic/kinetic_accelerator.rsi
     layers:
     - state: icon
+      map: [ "enum.WeaponVisualLayers.Base" ]
+    - state: bayonet
+      map: [ "enum.WeaponVisualLayers.Bayonet" ]
+      visible: false
+    - state: flight
+      map: [ "enum.WeaponVisualLayers.FlightOff" ]
+      visible: false
+    - state: flight-on
+      map: [ "enum.WeaponVisualLayers.FlightOn" ]
+      visible: false
     - state: animation-icon
       visible: false
       map: [ "empty-icon" ]
@@ -21,8 +31,8 @@
   # todo: add clothingcomponent with clothingVisuals states using unused texture and animations assets in kinetic_accelerator.rsi
   - type: StaticPrice
     price: 270
-  - type: Construction #Frontier
-    graph: PKASawn #Frontier
-    node: start #Frontier
-    deconstructionTarget: null #Frontier
+  # - type: Construction #Frontier # Sawn PKA is temporarily disabled because its not setup for PKA customization.
+  #   graph: PKASawn #Frontier
+  #   node: start #Frontier
+  #   deconstructionTarget: null #Frontier
   - type: Wieldable # Frontier

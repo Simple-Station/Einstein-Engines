@@ -187,6 +187,8 @@
       - !type:EntSelector
         id: ToySkeleton
       - !type:EntSelector
+        id: RevolutionaryManifesto
+      - !type:EntSelector
         id: Basketball
       - !type:EntSelector
         id: Football
