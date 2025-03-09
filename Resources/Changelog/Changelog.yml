@@ -12527,3 +12527,10 @@ Entries:
   id: 6921
   time: '2025-03-09T16:19:52.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1893
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: Recipes to build Fireplaces and Bonfires
+  id: 6922
+  time: '2025-03-09T16:21:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1897
