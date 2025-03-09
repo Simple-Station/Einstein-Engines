@@ -401,7 +401,7 @@
     - trigger:
         !type:DamageTypeTrigger
         damageType: Blunt
-        damage: 100
+        damage: 10
       behaviors:
       - !type:GibBehavior
         gibContents: Skip
