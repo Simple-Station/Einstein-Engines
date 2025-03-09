@@ -12473,3 +12473,96 @@ Entries:
   id: 6917
   time: '2025-03-09T03:19:17.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1899
+- author: SolarisBirb
+  changes:
+    - type: Fix
+      message: SM no longer starts on round start.
+    - type: Fix
+      message: SM will no longer delam from spacing unless it's activated.
+  id: 6918
+  time: '2025-03-09T04:45:00.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1901
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: Narcolepsy gives 6 points instead of 2
+    - type: Tweak
+      message: Pacifist gives 8 points instead of 6
+    - type: Tweak
+      message: Muted gives 6 points instead of 4
+    - type: Tweak
+      message: Sluggish gives 5 points instead of 3
+    - type: Tweak
+      message: Snail Paced gives 8 points instead of 5
+    - type: Tweak
+      message: Blood Deficiency gives 6 points instead of 5
+    - type: Tweak
+      message: Hemophilia gives 4 points instead of 2
+    - type: Tweak
+      message: Clumsy gives 4 points instead of 1
+    - type: Tweak
+      message: Bad knees gives 5 points instead of 3
+    - type: Tweak
+      message: Will to live costs 3 points instead of 1
+    - type: Tweak
+      message: Tenacity costs 4 points instead of 3
+    - type: Tweak
+      message: Steadfast costs 6 points instead of 4
+    - type: Tweak
+      message: Bionic Arm costs 10 points instead of 8
+    - type: Tweak
+      message: 'Bionic leg costs 8 points instead of 6 '
+  id: 6919
+  time: '2025-03-09T15:16:41.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1906
+- author: AlgumCorrupto
+  changes:
+    - type: Fix
+      message: Torches, flares, glowsticks now able to emit light again
+  id: 6920
+  time: '2025-03-09T16:17:28.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1908
+- author: astriloqua
+  changes: []
+  id: 6921
+  time: '2025-03-09T16:19:52.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1893
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: Recipes to build Fireplaces and Bonfires
+  id: 6922
+  time: '2025-03-09T16:21:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1897
+- author: SolsticeOfTheWinter
+  changes:
+    - type: Add
+      message: Added a new weapon for oni security players, the terminus.
+  id: 6923
+  time: '2025-03-09T16:23:38.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1881
+- author: SolarisBirb
+  changes:
+    - type: Add
+      message: Added RPD, glory to atmosia!
+    - type: Tweak
+      message: RPD now spawns in Atmos and CE lockers
+    - type: Tweak
+      message: >-
+        Extra compressed matter has been added into both Atmos/CE lockers for
+        more RPD/RCD uses
+    - type: Add
+      message: You can research RPD with the reverse engineering machine.
+    - type: Add
+      message: A belt overlay sprite to the CE and utility toolbelt.
+    - type: Add
+      message: >-
+        Pipe Stacking ported over from LRP Goob station. Compress those frezon
+        factories!
+    - type: Add
+      message: Toolbelt overlay sprite for the RPD.
+    - type: Add
+      message: RPD Borg module researched in t-2 industrial advanced tools.
+  id: 6924
+  time: '2025-03-09T18:34:34.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1857
