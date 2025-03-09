@@ -78,6 +78,9 @@ public sealed partial class SupermatterSystem : EntitySystem
 
         foreach (var sm in EntityManager.EntityQuery<SupermatterComponent>())
         {
+            if (!sm.Activated)
+                continue;
+
             var uid = sm.Owner;
             AnnounceCoreDamage(uid, sm);
         }
