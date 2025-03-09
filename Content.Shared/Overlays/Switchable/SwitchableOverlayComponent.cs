@@ -29,6 +29,9 @@ public abstract partial class SwitchableOverlayComponent : BaseOverlayComponent
     public float PulseAccumulator;
 
     [DataField]
+    public float FlashDurationMultiplier = 1f; // ! goober
+
+    [DataField]
     public virtual SoundSpecifier? ActivateSound { get; set; } =
         new SoundPathSpecifier("/Audio/Items/Goggles/activate.ogg");
 
