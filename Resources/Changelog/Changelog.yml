@@ -12482,3 +12482,36 @@ Entries:
   id: 6918
   time: '2025-03-09T04:45:00.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1901
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: Narcolepsy gives 6 points instead of 2
+    - type: Tweak
+      message: Pacifist gives 8 points instead of 6
+    - type: Tweak
+      message: Muted gives 6 points instead of 4
+    - type: Tweak
+      message: Sluggish gives 5 points instead of 3
+    - type: Tweak
+      message: Snail Paced gives 8 points instead of 5
+    - type: Tweak
+      message: Blood Deficiency gives 6 points instead of 5
+    - type: Tweak
+      message: Hemophilia gives 4 points instead of 2
+    - type: Tweak
+      message: Clumsy gives 4 points instead of 1
+    - type: Tweak
+      message: Bad knees gives 5 points instead of 3
+    - type: Tweak
+      message: Will to live costs 3 points instead of 1
+    - type: Tweak
+      message: Tenacity costs 4 points instead of 3
+    - type: Tweak
+      message: Steadfast costs 6 points instead of 4
+    - type: Tweak
+      message: Bionic Arm costs 10 points instead of 8
+    - type: Tweak
+      message: 'Bionic leg costs 8 points instead of 6 '
+  id: 6919
+  time: '2025-03-09T15:16:41.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1906
