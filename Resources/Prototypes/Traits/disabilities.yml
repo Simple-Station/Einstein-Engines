@@ -14,7 +14,6 @@
         - Photophobia
         - Nearsighted
         - CyberEyes
-        - FlareShieldingModule
         - SecurityEyesModule
         - MedicalEyesModule
         - DiagnosticEyesModule
@@ -41,7 +40,6 @@
       traits:
         - Blindness
         - CyberEyes
-        - FlareShieldingModule
         - SecurityEyesModule
         - MedicalEyesModule
         - DiagnosticEyesModule
@@ -302,7 +300,6 @@
       traits:
         - Blindness
         - CyberEyes
-        - FlareShieldingModule
         - SecurityEyesModule
         - MedicalEyesModule
         - DiagnosticEyesModule

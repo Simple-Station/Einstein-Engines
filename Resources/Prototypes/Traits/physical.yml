@@ -617,23 +617,22 @@
         - type: Flashable # Effectively, removes any flash-vulnerability species traits.
 
 
-- type: trait
-  id: FlareShielding
-  category: Physical
-  points: -4
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-    - !type:CharacterTraitRequirement
-      traits:
-        - CyberEyes
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: FlashImmunity
-        - type: EyeProtection
+# - type: trait
+#  id: FlareShielding
+#  category: Physical
+#  points: -3
+#  requirements:
+#    - !type:CharacterJobRequirement
+#      inverted: true
+#      jobs:
+#        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+#    - !type:CharacterTraitRequirement
+#      traits:
+#        - CyberEyes
+#  functions:
+#    - !type:TraitAddComponent
+#      components:
+#        - type: EyeProtection
 
 
 - type: trait
@@ -665,7 +664,7 @@
 - type: trait
   id: CyberEyesMedical
   category: Physical
-  points: -1
+  points: -2
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -682,6 +681,7 @@
   functions:
     - !type:TraitAddComponent
       components:
+        - type: SolutionScanner
         - type: ShowHealthBars
           damageContainers:
           - Biological
@@ -692,7 +692,7 @@
 - type: trait
   id: CyberEyesDiagnostic
   category: Physical
-  points: -1
+  points: -2
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -709,6 +709,7 @@
   functions:
     - !type:TraitAddComponent
       components:
+        - type: EyeProtection
         - type: ShowHealthBars
           damageContainers:
           - Inorganic
@@ -739,6 +740,8 @@
   functions:
     - !type:TraitAddComponent
       components:
+        - type: SolutionScanner
+        - type: EyeProtection
         - type: ShowJobIcons
         - type: ShowMindShieldIcons
         - type: ShowCriminalRecordIcons
@@ -891,31 +894,32 @@
           fontSize: 12
           requireDetailRange: true
 
-- type: trait
-  id: FlareShieldingModule
-  category: Physical
-  points: -4
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-    - !type:CharacterSpeciesRequirement
-      species:
-        - IPC
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Photophobia
-        - Blindness
-        - Nearsighted
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: FlashImmunity
-        - type: EyeProtection
+# - type: trait
+#  id: FlareShieldingModule
+#  category: Physical
+#  points: -4
+#  requirements:
+#    - !type:CharacterJobRequirement
+#      inverted: true
+#      jobs:
+#        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+#    - !type:CharacterSpeciesRequirement
+#      species:
+#        - IPC
+#    - !type:CharacterTraitRequirement
+#      inverted: true
+#      traits:
+#       - Photophobia
+#        - Blindness
+#        - Nearsighted
+#    - !type:CharacterItemGroupRequirement
+#      group: TraitsMind
+#  functions:
+#    - !type:TraitAddComponent
+#      components:
+#        - type: FlashImmunity
+#        - type: EyeProtection
+
 
 - type: trait
   id: SecurityEyesModule
@@ -951,7 +955,7 @@
 - type: trait
   id: MedicalEyesModule
   category: Physical
-  points: -1
+  points: -2
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -973,6 +977,7 @@
   functions:
     - !type:TraitAddComponent
       components:
+        - type: SolutionScanner
         - type: ShowHealthBars
           damageContainers:
           - Biological
@@ -983,7 +988,7 @@
 - type: trait
   id: DiagnosticEyesModule
   category: Physical
-  points: -1
+  points: -2
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -1005,6 +1010,7 @@
   functions:
     - !type:TraitAddComponent
       components:
+        - type: EyeProtection
         - type: ShowHealthBars
           damageContainers:
           - Inorganic
@@ -1040,6 +1046,8 @@
   functions:
     - !type:TraitAddComponent
       components:
+        - type: SolutionScanner
+        - type: EyeProtection
         - type: ShowJobIcons
         - type: ShowMindShieldIcons
         - type: ShowCriminalRecordIcons
