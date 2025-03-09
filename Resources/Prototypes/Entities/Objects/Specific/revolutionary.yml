@@ -22,6 +22,38 @@
       sound: /Audio/SimpleStation14/Items/Handling/book_drop.ogg
     - type: EmitSoundOnLand
       sound: /Audio/SimpleStation14/Items/Handling/book_drop.ogg
+    - type: ExtendDescription
+      descriptionList:
+      - description: "revolutionarymanifesto-extenddescription-headrevolutionary"
+        fontSize: 12
+        color: "#880000"
+        requireDetailRange: false
+        requirements:
+        - !type:CharacterAntagonistRequirement
+          antagonists:
+            - HeadRev
+      - description: "revolutionarymanifesto-extenddescription-revolutionary"
+        fontSize: 12
+        color: "#880000"
+        requireDetailRange: false
+        requirements:
+        - !type:CharacterAntagonistRequirement
+          antagonists:
+            - Rev
+      - description: "revolutionarymanifesto-extenddescription-security"
+        fontSize: 12
+        color: "#ff0000"
+        requireDetailRange: true
+        requirements:
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+      - description: "revolutionarymanifesto-extenddescription-mindshield"
+        fontSize: 12
+        color: "#11aaff"
+        requireDetailRange: true
+        requirements:
+        - !type:CharacterMindshieldRequirement
     - type: GuideHelp
       guides:
       - Revolutionaries

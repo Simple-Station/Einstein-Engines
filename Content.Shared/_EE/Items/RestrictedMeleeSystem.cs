@@ -39,15 +39,13 @@ public sealed class RestrictedMeleeSystem : EntitySystem
 
         args.Message = Loc.GetString(comp.FailText, ("item", uid));
 
-        var playSound = !_statusEffects.HasStatusEffect(args.PlayerUid, "KnockedDown");
-
         if (comp.DoKnockdown)
             _stun.TryKnockdown(args.PlayerUid, comp.KnockdownDuration, true);
 
         if (comp.ForceDrop)
             _hands.TryDrop(args.PlayerUid);
 
-        if (playSound)
+        if (!_statusEffects.HasStatusEffect(args.PlayerUid, "KnockedDown"))
             _audioSystem.PlayPredicted(comp.FallSound, args.PlayerUid, args.PlayerUid);
 
         // Display the message to the player and cancel the melee attempt.
