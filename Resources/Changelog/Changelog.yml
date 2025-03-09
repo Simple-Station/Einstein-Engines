@@ -12515,3 +12515,10 @@ Entries:
   id: 6919
   time: '2025-03-09T15:16:41.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1906
+- author: AlgumCorrupto
+  changes:
+    - type: Fix
+      message: Torches, flares, glowsticks now able to emit light again
+  id: 6920
+  time: '2025-03-09T16:17:28.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1908
