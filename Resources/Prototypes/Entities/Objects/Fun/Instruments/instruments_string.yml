@@ -106,6 +106,7 @@
       path: /Audio/Nyanotrasen/Weapons/electricguitarhit.ogg
     range: 1.85
     attackRate: .8
+    animationRotation: -45
     wideAnimationRotation: 45
     damage:
       types:
@@ -114,8 +115,8 @@
     bluntStaminaDamageFactor: 1.5
     heavyRateModifier: 0.75
     heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 10
-    angle: 160
+    heavyStaminaCost: 15
+    angle: 90
   - type: DamageOtherOnHit
     staminaCost: 8
   - type: Wieldable
@@ -191,6 +192,7 @@
         Blunt: 20
   - type: MeleeWeapon
     range: 1.5
+    animationRotation: -45 # WWDP
     wideAnimationRotation: 45
     damage:
       types:

@@ -8,6 +8,7 @@
     sprite: Objects/Weapons/Melee/sledgehammer.rsi
     state: icon
   - type: MeleeWeapon
+    animationRotation: -45 # WWDP
     wideAnimationRotation: -135
     attackRate: 1.3333
     range: 1.75
@@ -20,7 +21,7 @@
     heavyDamageBaseModifier: 1.75
     heavyStaminaCost: 7.5
     maxTargets: 10
-    angle: 120
+    angle: 90 # WWDP
     soundHit:
       collection: MetalThud
   - type: DamageOtherOnHit

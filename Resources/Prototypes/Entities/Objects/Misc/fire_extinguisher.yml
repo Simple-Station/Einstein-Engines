@@ -37,7 +37,8 @@
   - type: FireExtinguisher
     hasSafety: true
   - type: MeleeWeapon
-    wideAnimationRotation: 180
+    animationRotation: -90 # WWDP
+    wideAnimationRotation: 0 # WWDP
     attackRate: 1.25
     bluntStaminaDamageFactor: 2.5
     range: 1.75

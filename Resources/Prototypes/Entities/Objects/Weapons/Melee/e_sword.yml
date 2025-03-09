@@ -56,6 +56,7 @@
         shader: unshaded
         map: [ "blade" ]
   - type: MeleeWeapon
+    animationRotation: -45 # WWDP
     wideAnimationRotation: -135
     attackRate: .8
     damage:
@@ -159,7 +160,8 @@
         shader: unshaded
         map: [ "blade" ]
   - type: MeleeWeapon
-    wideAnimationRotation: -135
+    animationRotation: 135 # WWDP
+    wideAnimationRotation: 135 # WWDP
     attackRate: 1
     hidden: true
     damage:
@@ -280,8 +282,8 @@
             Slash: 6
             Heat: 12
             Structural: 20 # "expertly contained to cut through nearly any material" yet it had no structural damage
-  - type: GuideHelp  
-    guides: [ SecurityWeapons ]  
+  - type: GuideHelp
+    guides: [ SecurityWeapons ]
 
 - type: entity
   name: double-bladed energy sword

@@ -32,6 +32,7 @@
     explosionType: Default
     maxIntensity: 20
   - type: MeleeWeapon
+    animationRotation: -45 # WWDP
     wideAnimationRotation: 45
     attackRate: 1.25
     range: 1.75
@@ -43,7 +44,7 @@
     heavyDamageBaseModifier: 1.5
     heavyStaminaCost: 10
     maxTargets: 3
-    angle: 100
+    angle: 60 # WWDP
     soundHit:
       path: /Audio/Weapons/smash.ogg
   - type: DamageOtherOnHit
