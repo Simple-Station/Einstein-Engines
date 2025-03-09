@@ -88,13 +88,15 @@ public sealed class LightBehaviorSystem : EntitySystem
 
         foreach (var container in entity.Comp.Animations)
         {
-            if (container.LightBehaviour.ID != id || id != string.Empty
-                || _player.HasRunningAnimation(entity, animation, LightBehaviourComponent.KeyPrefix + container.Key))
-                continue;
-                
-            CopyLightSettings(entity, container.LightBehaviour.Property);
-            container.LightBehaviour.UpdatePlaybackValues(container.Animation);
-            _player.Play(entity, container.Animation, LightBehaviourComponent.KeyPrefix + container.Key);
+            if (container.LightBehaviour.ID == id || id == string.Empty)
+            {
+                if (!_player.HasRunningAnimation(entity, animation, LightBehaviourComponent.KeyPrefix + container.Key))
+                {
+                    CopyLightSettings(entity, container.LightBehaviour.Property);
+                    container.LightBehaviour.UpdatePlaybackValues(container.Animation);
+                    _player.Play(entity, container.Animation, LightBehaviourComponent.KeyPrefix + container.Key);
+                }
+            }
         }
     }
     /// <summary>
@@ -120,7 +122,7 @@ public sealed class LightBehaviorSystem : EntitySystem
 
             if (_player.HasRunningAnimation(entity, animation, LightBehaviourComponent.KeyPrefix + container.Key))
                 _player.Stop(entity, animation, LightBehaviourComponent.KeyPrefix + container.Key);
-                    
+
             if (removeBehaviour)
                 toRemove.Add(container);
         }
