@@ -16,16 +16,27 @@ public sealed partial class ModSuitComponent : Component
     public const string DefaultModuleContainerId = "modsuit-mod";
 
     /// <summary>
-    ///     Action used to toggle the clothing on or off.
+    ///     Action used to toggle the clothing on
     /// </summary>
     [DataField, AutoNetworkedField]
-    public EntProtoId Action = "ActionToggleMODPiece";
-
-    [DataField, AutoNetworkedField]
-    public EntityUid? ActionEntity;
+    public EntProtoId DeployAction = "ActionDeployMOD";
 
     /// <summary>
-    ///     The said ever-consuming container of modules
+    ///     Action used to manage the MOD's modules and the fancy menu
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public EntProtoId ActivateAction = "ActionActivateMOD";
+
+    [DataField, AutoNetworkedField]
+    public EntityUid? DeployActionEntity;
+
+    [DataField, AutoNetworkedField]
+    public EntityUid? ActivateActionEntity;
+
+    public ItemSlot BatterySlot = new();
+
+    /// <summary>
+    ///     All the modules inside the mod suit
     /// </summary>
     public List<ItemSlot> ModuleSlots = new();
 
@@ -109,12 +120,6 @@ public sealed partial class ModSuitComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public string? VerbText;
-
-    /// <summary>
-    ///     If true it will block unequip of this entity until all attached clothing are removed
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public bool BlockUnequipWhenAttached = true;
 
     /// <summary>
     ///     If true all attached will replace already equipped clothing on equip attempt

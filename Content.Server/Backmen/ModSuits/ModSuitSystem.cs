@@ -12,6 +12,7 @@ using Content.Shared.Backmen.ModSuits;
 using Content.Shared.Backmen.ModSuits.Components;
 using Content.Shared.Clothing;
 using Content.Shared.Containers.ItemSlots;
+using Content.Shared.Interaction.Components;
 using Content.Shared.Mind;
 using Content.Shared.Whitelist;
 using Content.Shared.Wires;
@@ -39,25 +40,24 @@ public sealed class ModSuitSystem : EntitySystem
     {
         base.Initialize();
 
+        SubscribeLocalEvent<ModSuitComponent, ModSuitUiMessage>(OnToggleClothingMessage);
+
         SubscribeLocalEvent<ModSuitComponent, MapInitEvent>(OnInit);
-        SubscribeLocalEvent<ModSuitComponent, ToggleModPartEvent>(OnToggleClothingAction);
         SubscribeLocalEvent<ModSuitComponent, GetItemActionsEvent>(OnGetActions);
         SubscribeLocalEvent<ModSuitComponent, ComponentRemove>(OnRemoveModSuit);
-        SubscribeLocalEvent<ModSuitComponent, GotUnequippedEvent>(OnModSuitUnequip);
-        SubscribeLocalEvent<ModSuitComponent, ModSuitUiMessage>(OnToggleClothingMessage);
-        SubscribeLocalEvent<ModSuitComponent, BeingUnequippedAttemptEvent>(OnModSuitUnequipAttempt);
         SubscribeLocalEvent<ModSuitComponent, TogglePartDoAfterEvent>(OnDoAfterComplete);
+
+        SubscribeLocalEvent<ModSuitComponent, ToggleModEvent>(OnToggleClothingAction);
+        SubscribeLocalEvent<ModSuitComponent, ActivateModEvent>(OnActivateModAction);
 
         SubscribeLocalEvent<ModSuitComponent, EntInsertedIntoContainerMessage>(OnModInserted);
         SubscribeLocalEvent<ModSuitComponent, EntRemovedFromContainerMessage>(OnModRemoved);
 
         SubscribeLocalEvent<ModSuitComponent, ItemSlotInsertAttemptEvent>(OnModInsertAttempt);
-        SubscribeLocalEvent<ModSuitComponent, ItemSlotEjectAttemptEvent>(OnModEjectAttempt);
+        SubscribeLocalEvent<ModSuitComponent, PanelChangedEvent>(OnPanelToggled);
 
         SubscribeLocalEvent<ModAttachedClothingComponent, ComponentInit>(OnAttachedInit);
         SubscribeLocalEvent<ModAttachedClothingComponent, GotUnequippedEvent>(OnAttachedUnequip);
-        SubscribeLocalEvent<ModAttachedClothingComponent, ComponentRemove>(OnRemoveAttached);
-        SubscribeLocalEvent<ModAttachedClothingComponent, BeingUnequippedAttemptEvent>(OnAttachedUnequipAttempt);
 
         SubscribeLocalEvent<ModAttachedClothingComponent, GetVerbsEvent<EquipmentVerb>>(OnGetAttachedStripVerbsEvent);
 
@@ -77,21 +77,19 @@ public sealed class ModSuitSystem : EntitySystem
         {
             modSuit.Comp.CurrentComplexity += modComp.ModComplexity;
             AddModuleSlot(modSuit);
+
+            if (TryComp<ClothingSpeedModifierComponent>(inserted, out var modify))
+            {
+                _speedModifier.ModifySpeed(inserted, modify, modComp.SpeedMod);
+            }
         }
 
-        if (TryComp<ClothingSpeedModifierComponent>(inserted, out var modify))
-        {
-            _speedModifier.ModifySpeed(inserted, modify, modComp.SpeedMod);
-
-            modComp.Inserted = true;
-        }
+        UpdateModUi(modSuit);
 
         var attachedClothings = modSuit.Comp.ClothingUids;
         if (modComp.Slot == "MODcore")
         {
             EntityManager.AddComponents(inserted, modComp.Components);
-            modComp.Inserted = true;
-
             return;
         }
 
@@ -159,16 +157,14 @@ public sealed class ModSuitSystem : EntitySystem
         if (TryComp<ClothingSpeedModifierComponent>(removed, out var modify))
         {
             _speedModifier.ModifySpeed(removed, modify, -modComp.SpeedMod);
-
-            modComp.Inserted = false;
         }
+
+        UpdateModUi(modSuit);
 
         var attachedClothings = modSuit.Comp.ClothingUids;
         if (modComp.Slot == "MODcore")
         {
             EntityManager.RemoveComponents(removed, modComp.Components);
-            modComp.Inserted = false;
-
             return;
         }
 
@@ -186,19 +182,20 @@ public sealed class ModSuitSystem : EntitySystem
         }
     }
 
-    private void OnModEjectAttempt(Entity<ModSuitComponent> modSuit, ref ItemSlotEjectAttemptEvent args)
+    private void OnPanelToggled(Entity<ModSuitComponent> modSuit, ref PanelChangedEvent args)
     {
-        var inserted = args.Item;
-        if (!TryComp<ModSuitModComponent>(inserted, out var modComp) || modComp.Innate)
+        foreach (var slot in modSuit.Comp.ModuleSlots)
         {
-            args.Cancelled = true;
-            return;
-        }
+            if (slot.ContainerSlot!.ContainedEntity == null)
+            {
+                _itemSlotsSystem.SetLock(modSuit, slot, !args.Open);
+                continue;
+            }
 
-        if (!TryComp<WiresPanelComponent>(modSuit, out var panel) || !panel.Open)
-        {
-            _popupSystem.PopupClient(Loc.GetString("modsuit-open-panel"), args.User);
-            args.Cancelled = true;
+            if (!TryComp<ModSuitModComponent>(slot.ContainerSlot!.ContainedEntity, out var comp) || comp.Innate)
+                continue;
+
+            _itemSlotsSystem.SetLock(modSuit, slot, !args.Open);
         }
     }
 
@@ -211,7 +208,7 @@ public sealed class ModSuitSystem : EntitySystem
         var comp = modSuit.Comp;
         comp.Container = _containerSystem.EnsureContainer<Container>(modSuit, comp.ContainerId);
 
-        if (comp.ClothingUids.Count != 0 && comp.ActionEntity != null)
+        if (comp.ClothingUids.Count != 0 && comp.DeployActionEntity != null)
             return;
 
         var xform = Transform(modSuit.Owner);
@@ -247,15 +244,10 @@ public sealed class ModSuitSystem : EntitySystem
 
         // One more slot so we can insert modules into the mod suit, then it's processed by EntInsertedIntoContainerMessage
         AddModuleSlot(modSuit);
-        Dirty(modSuit, comp);
+        UpdateModUi(modSuit);
 
-        _appearance.SetData(modSuit,
-            ModSuitVisualizerKeys.ClothingPieces,
-            new ModSuitVisualizerGroupData(modSuit.Comp.ClothingUids.Keys.Select(id => GetNetEntity(id)).ToList(),
-                modSuit.Comp.Container!.ContainedEntities.Select(id => GetNetEntity(id)).ToList()));
-
-        if (_actionContainer.EnsureAction(modSuit, ref comp.ActionEntity, out var action, comp.Action))
-            _actionsSystem.SetEntityIcon(comp.ActionEntity.Value, modSuit, action);
+        _actionContainer.EnsureAction(modSuit, ref comp.ActivateActionEntity, out _, comp.ActivateAction);
+        _actionContainer.EnsureAction(modSuit, ref comp.DeployActionEntity, out _, comp.DeployAction);
     }
 
     private void OnAttachedInit(Entity<ModAttachedClothingComponent> attached, ref ComponentInit args)
@@ -276,7 +268,7 @@ public sealed class ModSuitSystem : EntitySystem
         if (!args.CanAccess || !args.CanInteract || args.Hands == null || comp.ClothingUids.Count == 0 || comp.Container == null)
             return;
 
-        var text = comp.VerbText ?? (comp.ActionEntity == null ? null : Name(comp.ActionEntity.Value));
+        var text = comp.VerbText ?? (comp.DeployActionEntity == null ? null : Name(comp.DeployActionEntity.Value));
         if (text == null)
             return;
 
@@ -343,6 +335,13 @@ public sealed class ModSuitSystem : EntitySystem
 
         if (modSuit.Comp.EntitiesToDeploy.Count == 0)
         {
+            if (GetAttachedToggleStatus(modSuit, modSuit) == ModSuitAttachedStatus.NoneToggled)
+            {
+                RemComp<UnremoveableComponent>(modSuit);
+
+                _actionsSystem.SetToggled(modSuit.Comp.DeployActionEntity, false);
+            }
+
             modSuit.Comp.BeingDeployed = false;
             return;
         }
@@ -353,90 +352,17 @@ public sealed class ModSuitSystem : EntitySystem
 
     #endregion
 
-    /// <summary>
-    /// Prevents from unequipping entity if all attached not unequipped
-    /// </summary>
-    private void OnModSuitUnequipAttempt(Entity<ModSuitComponent> modSuit, ref BeingUnequippedAttemptEvent args)
-    {
-        if (modSuit.Comp.BeingDeployed)
-        {
-            args.Cancel();
-            return;
-        }
-
-        var comp = modSuit.Comp;
-        if (!comp.BlockUnequipWhenAttached)
-            return;
-
-        if (GetAttachedToggleStatus(modSuit) == ModSuitAttachedStatus.NoneToggled)
-            return;
-
-        _popupSystem.PopupClient(Loc.GetString("modsuit-remove-all-attached-first"), args.Unequipee, args.Unequipee);
-        args.Cancel();
-    }
-
-    /// <summary>
-    ///     Called when the suit is unequipped, to ensure that the helmet also gets unequipped.
-    /// </summary>
-    private void OnModSuitUnequip(Entity<ModSuitComponent> modSuit, ref GotUnequippedEvent args)
-    {
-        var comp = modSuit.Comp;
-
-        // If it's a part of PVS departure then don't handle it.
-        if (_timing.ApplyingState)
-            return;
-
-        // Check if container exists and we have linked clothing
-        if (comp.Container == null || comp.ClothingUids.Count == 0)
-            return;
-
-        var parts = comp.ClothingUids;
-        foreach (var part in parts.Where(part => !comp.Container.Contains(part.Key)))
-        {
-            _inventorySystem.TryUnequip(args.Equipee, part.Value, force: true);
-        }
-    }
-
     private void OnRemoveModSuit(Entity<ModSuitComponent> modSuit, ref ComponentRemove args)
     {
         var comp = modSuit.Comp;
-        _actionsSystem.RemoveAction(comp.ActionEntity);
+
+        _actionsSystem.RemoveAction(comp.DeployActionEntity);
+        _actionsSystem.RemoveAction(comp.ActivateActionEntity);
 
         foreach (var clothing in comp.ClothingUids.Keys)
         {
             QueueDel(clothing);
         }
-    }
-
-    private void OnAttachedUnequipAttempt(Entity<ModAttachedClothingComponent> attached, ref BeingUnequippedAttemptEvent args)
-    {
-        args.Cancel();
-    }
-
-    private void OnRemoveAttached(Entity<ModAttachedClothingComponent> attached, ref ComponentRemove args)
-    {
-        // if the attached component is being removed (maybe entity is being deleted?) we will just remove the
-        // modsuit component. This means if you had a hard-suit helmet that took too much damage, you would
-        // still be left with a suit that was simply missing a helmet. There is currently no way to fix a partially
-        // broken suit like this.
-
-        var comp = attached.Comp;
-        if (!TryComp(comp.AttachedUid, out ModSuitComponent? modSuitComp))
-            return;
-
-        if (modSuitComp.LifeStage > ComponentLifeStage.Running)
-            return;
-
-        var clothingUids = modSuitComp.ClothingUids;
-        if (!clothingUids.Remove(attached.Owner))
-            return;
-
-        // If no attached clothing left - remove component and action
-        if (clothingUids.Count > 0)
-            return;
-
-        _actionsSystem.RemoveAction(modSuitComp.ActionEntity);
-        RemComp(comp.AttachedUid, modSuitComp);
     }
 
     /// <summary>
@@ -486,10 +412,30 @@ public sealed class ModSuitSystem : EntitySystem
         StartDoAfter(args.Actor, modSuit, attachedUid);
     }
 
+    private void UpdateModUi(Entity<ModSuitComponent> modSuit)
+    {
+        _appearance.SetData(modSuit,
+            ModSuitVisualizerKeys.ClothingPieces,
+            new ModSuitVisualizerGroupData(modSuit.Comp.ClothingUids.Keys.Select(id => GetNetEntity(id)).ToList(),
+                modSuit.Comp.Container!.ContainedEntities.Select(id => GetNetEntity(id)).ToList()));
+
+        var modules = new List<NetEntity>();
+        foreach (var moduleSlot in modSuit.Comp.ModuleSlots)
+        {
+            if (moduleSlot.ContainerSlot!.ContainedEntity != null)
+            {
+                modules.Add(GetNetEntity(moduleSlot.ContainerSlot!.ContainedEntity.Value));
+            }
+        }
+
+        var state = new ModSuitBuiState(0f, false, modules);
+        _uiSystem.SetUiState(modSuit.Owner, ModSuitUiKey.Key, state);
+    }
+
     /// <summary>
     ///     Equip or unequip the modsuit.
     /// </summary>
-    private void OnToggleClothingAction(Entity<ModSuitComponent> modSuit, ref ToggleModPartEvent args)
+    private void OnToggleClothingAction(Entity<ModSuitComponent> modSuit, ref ToggleModEvent args)
     {
         if (args.Handled || modSuit.Comp.BeingDeployed)
             return;
@@ -502,9 +448,27 @@ public sealed class ModSuitSystem : EntitySystem
         }
         else
         {
-            _uiSystem.OpenUi(modSuit.Owner, ModSuitUiKey.Key, args.Performer);
+            _uiSystem.OpenUi(modSuit.Owner, ModSuitDeployUiKey.Key, args.Performer);
         }
 
+        args.Handled = true;
+    }
+
+    /// <summary>
+    ///     open the panel lol
+    /// </summary>
+    private void OnActivateModAction(Entity<ModSuitComponent> modSuit, ref ActivateModEvent args)
+    {
+        if (args.Handled || modSuit.Comp.BeingDeployed)
+            return;
+
+        if (!TryComp<WiresPanelComponent>(modSuit, out var panel) || panel.Open)
+        {
+            _popupSystem.PopupClient(Loc.GetString("modsuit-close-wires"), args.Performer, args.Performer);
+            return;
+        }
+
+        _uiSystem.OpenUi(modSuit.Owner, ModSuitUiKey.Key, args.Performer);
         args.Handled = true;
     }
 
@@ -558,11 +522,6 @@ public sealed class ModSuitSystem : EntitySystem
                 UnequipClothing(user, modSuit, attachedUid, slot);
             }
         }
-
-        _appearance.SetData(modSuit,
-            ModSuitVisualizerKeys.ClothingPieces,
-            new ModSuitVisualizerGroupData(modSuit.Comp.ClothingUids.Keys.Select(id => GetNetEntity(id)).ToList(),
-                modSuit.Comp.Container!.ContainedEntities.Select(id => GetNetEntity(id)).ToList()));
     }
 
     private void ToggleModSuit(EntityUid user, Entity<ModSuitComponent> modSuit)
@@ -591,6 +550,8 @@ public sealed class ModSuitSystem : EntitySystem
             return;
         }
 
+        EnsureComp<UnremoveableComponent>(modSuit);
+
         var untoggledPieces =
             modSuit.Comp.ClothingUids
                 .Where(piece => modSuit.Comp.Container!.Contains(piece.Key))
@@ -608,6 +569,8 @@ public sealed class ModSuitSystem : EntitySystem
 
         modSuit.Comp.BeingDeployed = true;
         modSuit.Comp.EntitiesToDeploy = untoggledPieces;
+
+        _actionsSystem.SetToggled(modSuit.Comp.DeployActionEntity, true);
     }
 
     private void ObliterateModSuit(EntityUid user, Entity<ModSuitComponent> modSuit)
@@ -687,6 +650,7 @@ public sealed class ModSuitSystem : EntitySystem
         }
 
         _inventorySystem.TryEquip(user, parent, clothing, slot, force: true);
+        EnsureComp<UnremoveableComponent>(clothing);
 
         if (!_mindSystem.TryGetMind(user, out _, out var mind) || mind.Session == null)
             return;
@@ -701,6 +665,7 @@ public sealed class ModSuitSystem : EntitySystem
     {
         var parent = Transform(modSuit.Owner).ParentUid;
 
+        RemComp<UnremoveableComponent>(clothing);
         _inventorySystem.TryUnequip(user, parent, slot, force: true);
 
         // If attached have clothing in container - equip it
@@ -723,10 +688,15 @@ public sealed class ModSuitSystem : EntitySystem
         if (comp.ClothingUids.Count == 0 )
             return;
 
-        if (comp.ActionEntity == null)
-            return;
+        if (comp.DeployActionEntity != null)
+        {
+            args.AddAction(comp.DeployActionEntity.Value);
+        }
 
-        args.AddAction(comp.ActionEntity.Value);
+        if (comp.ActivateActionEntity != null)
+        {
+            args.AddAction(comp.ActivateActionEntity.Value);
+        }
     }
 
     public ModSuitAttachedStatus GetAttachedToggleStatus(EntityUid modSuit, ModSuitComponent? component = null)

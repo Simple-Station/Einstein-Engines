@@ -9,7 +9,7 @@
 - type: entity
   parent: ModSuitModBase
   id: ModSuitModAntigravity
-  name: MOD antigravity module
+  name: MOD Anti-Gravity Module
   description: A module that uses a gravitational core to make the user completely weightless.
   components:
   - type: Sprite
@@ -22,7 +22,7 @@
 - type: entity
   parent: ModSuitModBase
   id: ModSuitModApparatus
-  name: MOD apparatus module
+  name: MOD Eating Apparatus Module
   description: A favorite by Miners, this modification to the helmet utilizes a nanotechnology barrier in front of the mouth to allow eating and drinking while retaining protection and atmosphere. However, it will do nothing to improve the taste of a goliath steak.
   components:
   - type: Sprite
@@ -37,7 +37,7 @@
 - type: entity
   parent: ModSuitModBase
   id: ModSuitModDrill
-  name: MOD drill module
+  name: MOD Drill Module
   description: An integrated drill, typically extending over the user's hand. While useful for drilling through rock, your drill is surely the one that both pierces and creates the heavens.
   components:
   - type: Sprite
@@ -49,8 +49,6 @@
     - type: Tag
       tags:
       - Pickaxe
-    - type: StaminaDamageOnHit
-      damage: 1
     - type: MeleeWeapon
       autoAttack: true
       angle: 0
@@ -93,7 +91,7 @@
 - type: entity
   parent: ModSuitModBase
   id: ModSuitModMagBoots
-  name: MOD mag boots module
+  name: MOD Mag Boots Module
   description: These are powerful electromagnets fitted into the suit's boots, allowing users both excellent traction no matter the condition indoors, and to essentially hitch a ride on the exterior of a hull. However, these basic models do not feature computerized systems to automatically toggle them on and off, so numerous users report a certain stickiness to their steps.
   components:
   - type: Sprite
@@ -106,10 +104,28 @@
       sprintModifier: 0.8
     - type: Magboots
 
+# TODO: ADVANCED MAG BOOTS
+#- type: entity
+#  parent: ModSuitModBase
+#  id: ModSuitModMagBoots
+#  name: MOD Mag Boots Module
+#  description: These are powerful electromagnets fitted into the suit's boots, allowing users both excellent traction no matter the condition indoors, and to essentially hitch a ride on the exterior of a hull. However, these basic models do not feature computerized systems to automatically toggle them on and off, so numerous users report a certain stickiness to their steps.
+#  components:
+#  - type: Sprite
+#    state: magnet
+#  - type: ModSuitMod
+#    slot: shoes
+#    components:
+#    - type: ClothingSpeedModifier
+#      walkModifier: 0.85
+#      sprintModifier: 0.8
+#    - type: Magboots
+
+# TODO: CHECK
 - type: entity
   parent: ModSuitModBase
   id: ModSuitModNightVision
-  name: MOD night vision module
+  name: MOD Night Vision Module
   description: A heads-up display installed into the visor of the suit. Typical for both civilian and military applications, this allows the user to perceive their surroundings while in complete darkness.
   components:
   - type: Sprite
@@ -145,7 +161,7 @@
 - type: entity
   parent: ModSuitModBase
   id: ModSuitModNoSlip
-  name: MOD no slip module
+  name: MOD Anti-Slip Module
   description: These are a modified variant of standard magnetic boots, utilizing piezoelectric crystals on the soles. The two plates on the bottom of the boots automatically extend and magnetize as the user steps; a pull that's too weak to offer them the ability to affix to a hull, but just strong enough to protect against the fact that you didn't read the wet floor sign. Honk Co. has come out numerous times in protest of these modules being legal.
   components:
   - type: Sprite
@@ -154,27 +170,6 @@
     slot: shoes
     components:
     - type: NoSlip
-
-- type: entity
-  parent: ModSuitModBase
-  id: ModSuitModPowerKick
-  name: MOD power kick module
-  description: Super mega power punch! Throwing back every one punched.
-  components:
-  - type: Sprite
-    state: power_kick
-  - type: ModSuitMod
-    slot: gloves
-    components:
-    - type: MeleeThrowOnHit
-      lifetime: 1
-    - type: MeleeWeapon
-      attackRate: 1
-      damage:
-        types:
-          Blunt: 1
-      animation: WeaponArcFist
-      mustBeEquippedToUse: true
 
 - type: entity
   parent: ModSuitModBase
@@ -281,12 +276,13 @@
 - type: entity
   parent: ModSuitModBase
   id: ModSuitModArmor
-  name: MOD armor replace module
+  name: MOD Armor Replace Module
   description: Replaces armor in your MOD with a "perfect 50".
   components:
   - type: Sprite
     state: plate_compression
   - type: ModSuitMod
+    modComplexity: 2
     slot: outerClothing
     components:
     - type: Armor

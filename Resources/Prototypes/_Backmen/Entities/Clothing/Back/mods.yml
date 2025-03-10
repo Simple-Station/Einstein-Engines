@@ -17,6 +17,8 @@
       shoes: ClothingModsuitShoesBase
   - type: UserInterface
     interfaces:
+      enum.ModSuitDeployUiKey.Key:
+        type: ModSuitDeployBoundUserInterface
       enum.ModSuitUiKey.Key:
         type: ModSuitBoundUserInterface
       enum.StorageUiKey.Key:
@@ -30,15 +32,11 @@
     graph: ModsuitStandard
     node: sciencemodsuitstandard
   - type: WiresPanel
-  - type: ActivatableUIRequiresPanel
-    requireOpen: false
   - type: Item
     size: Huge
   - type: ContainerContainer
     containers:
       storagebase: !type:Container
-        showEnts: False
-        occludes: True
         ents: [ ]
 
 - type: entity

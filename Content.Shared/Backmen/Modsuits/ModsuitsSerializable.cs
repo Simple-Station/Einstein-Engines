@@ -11,6 +11,29 @@ public enum ModSuitUiKey : byte
 }
 
 [Serializable, NetSerializable]
+public enum ModSuitDeployUiKey : byte
+{
+    Key,
+}
+
+[Serializable, NetSerializable]
+public sealed class ModSuitBuiState : BoundUserInterfaceState
+{
+    public float ChargePercent;
+
+    public bool HasBattery;
+
+    public List<NetEntity> Modules;
+
+    public ModSuitBuiState(float chargePercent, bool hasBattery, List<NetEntity> modules)
+    {
+        ChargePercent = chargePercent;
+        HasBattery = hasBattery;
+        Modules = modules;
+    }
+}
+
+[Serializable, NetSerializable]
 public sealed class ModSuitUiMessage : BoundUserInterfaceMessage
 {
     public NetEntity AttachedClothingUid;
@@ -21,7 +44,11 @@ public sealed class ModSuitUiMessage : BoundUserInterfaceMessage
     }
 }
 
-public sealed partial class ToggleModPartEvent : InstantActionEvent
+public sealed partial class ToggleModEvent : InstantActionEvent
+{
+}
+
+public sealed partial class ActivateModEvent : InstantActionEvent
 {
 }
 
@@ -64,6 +91,7 @@ public sealed class UnequipModClothingAttemptEvent : CancellableEntityEventArgs
 public enum ModSuitVisualizerKeys : byte
 {
     ClothingPieces,
+    Modules,
 }
 
 

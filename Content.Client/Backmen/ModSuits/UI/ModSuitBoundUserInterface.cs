@@ -6,7 +6,7 @@ namespace Content.Client.Backmen.ModSuits.UI;
 public sealed class ModSuitBoundUserInterface : BoundUserInterface
 {
     private readonly IEntityManager _entityManager;
-    private ModSuitRadialMenu? _menu;
+    private ModSuitMenu? _menu;
 
     public ModSuitBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
     {
@@ -18,16 +18,18 @@ public sealed class ModSuitBoundUserInterface : BoundUserInterface
     {
         base.Open();
 
-        _menu = this.CreateWindow<ModSuitRadialMenu>();
+        _menu = this.CreateWindow<ModSuitMenu>();
         _menu.SetEntity(Owner);
-        _menu.SendToggleClothingMessageAction += SendModSuitMessage;
 
         _menu.OpenCentered();
     }
 
-    private void SendModSuitMessage(EntityUid uid)
+    protected override void UpdateState(BoundUserInterfaceState state)
     {
-        var message = new ModSuitUiMessage(_entityManager.GetNetEntity(uid));
-        SendPredictedMessage(message);
+        base.UpdateState(state);
+
+        if (state is not ModSuitBuiState msg)
+            return;
+        _menu?.UpdateState(msg);
     }
 }

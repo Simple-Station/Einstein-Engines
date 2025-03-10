@@ -8,7 +8,7 @@ using Content.Shared.Backmen.ModSuits;
 
 namespace Content.Client.Backmen.ModSuits.UI;
 
-public sealed partial class ModSuitRadialMenu : RadialMenu
+public sealed partial class ModSuitDeployRadialMenu : RadialMenu
 {
     [Dependency] private readonly EntityManager _entityManager = default!;
 
@@ -16,8 +16,9 @@ public sealed partial class ModSuitRadialMenu : RadialMenu
     public event Action<EntityUid>? SendToggleClothingMessageAction;
 
     public EntityUid Entity { get; set; }
+    public List<EntityUid> PreviewEntities { get; set; } = new();
 
-    public ModSuitRadialMenu()
+    public ModSuitDeployRadialMenu()
     {
         IoCManager.InjectDependencies(this);
 
@@ -63,7 +64,11 @@ public sealed partial class ModSuitRadialMenu : RadialMenu
                 Stretch = SpriteView.StretchMode.Fill,
             };
 
-            spriteView.SetEntity(attached);
+            // If the attached entity is in a container, the player can't see the icon. Very ba
+            var entView = _entityManager.Spawn(_entityManager.GetComponent<MetaDataComponent>(attached).EntityPrototype!.ID);
+            PreviewEntities.Add(entView);
+
+            spriteView.SetEntity(entView);
 
             button.AddChild(spriteView);
             main.AddChild(button);
@@ -86,6 +91,14 @@ public sealed partial class ModSuitRadialMenu : RadialMenu
             {
                 SendToggleClothingMessageAction?.Invoke(castChild.AttachedClothingId);
                 mainControl.DisposeAllChildren();
+
+                // clean up the previews
+                foreach (var ent in PreviewEntities)
+                {
+                    _entityManager.QueueDeleteEntity(ent);
+                }
+                PreviewEntities.Clear();
+
                 RefreshUI();
             };
         }

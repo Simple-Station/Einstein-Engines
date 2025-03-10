@@ -1,9 +1,28 @@
 ﻿- type: entity
-  id: ActionToggleMODPiece
-  name: Toggle Suit Piece
-  description: Remember to equip the important pieces of your suit before going into action.
+  id: ActionDeployMOD
+  name: Toggle MOD Suit
+  description: Springlocks are merciless.
   components:
   - type: InstantAction
-    itemIconStyle: BigItem
+    icon:
+      sprite: Backmen/Interface/Actions/mod_actions.rsi
+      state: deploy
+    iconOn:
+      sprite: Backmen/Interface/Actions/mod_actions.rsi
+      state: retract
+    itemIconStyle: NoItem
     useDelay: 1
-    event: !type:ToggleModPartEvent
+    event: !type:ToggleModEvent
+
+- type: entity
+  id: ActionActivateMOD
+  name: MOD Suit Controls
+  description: Open MOD Suit Control Interface.
+  components:
+  - type: InstantAction
+    icon:
+      sprite: Backmen/Interface/Actions/mod_actions.rsi
+      state: activate
+    itemIconStyle: NoItem
+    useDelay: 1
+    event: !type:ActivateModEvent
