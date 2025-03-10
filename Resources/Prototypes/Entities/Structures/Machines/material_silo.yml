@@ -30,6 +30,9 @@
   - type: MaterialStorage
     ignoreColor: true
   - type: MaterialSilo
+  - type: DeviceLinkSink
+    ports:
+      - FillbotAnyItem
 
 - type: entity
   id: BaseMaterialSiloUtilizer

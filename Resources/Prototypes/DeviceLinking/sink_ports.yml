@@ -118,3 +118,12 @@
   name: signal-port-name-material-silo-utilizer
   description: signal-port-description-material-silo-utilizer
 
+- type: sinkPort
+  id: FillbotAnyItem # used by Fillbot
+  name: signal-port-name-fill-any-item
+  description: signal-port-description-fill-any-item
+
+- type: sinkPort
+  id: FillbotTrashItem # used by Fillbot, specifically for Disposal Units to insert only trash items.
+  name: signal-port-name-fill-trash-item
+  description: signal-port-description-fill-trash-item
