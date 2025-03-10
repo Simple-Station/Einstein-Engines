@@ -12515,3 +12515,54 @@ Entries:
   id: 6919
   time: '2025-03-09T15:16:41.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1906
+- author: AlgumCorrupto
+  changes:
+    - type: Fix
+      message: Torches, flares, glowsticks now able to emit light again
+  id: 6920
+  time: '2025-03-09T16:17:28.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1908
+- author: astriloqua
+  changes: []
+  id: 6921
+  time: '2025-03-09T16:19:52.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1893
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: Recipes to build Fireplaces and Bonfires
+  id: 6922
+  time: '2025-03-09T16:21:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1897
+- author: SolsticeOfTheWinter
+  changes:
+    - type: Add
+      message: Added a new weapon for oni security players, the terminus.
+  id: 6923
+  time: '2025-03-09T16:23:38.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1881
+- author: SolarisBirb
+  changes:
+    - type: Add
+      message: Added RPD, glory to atmosia!
+    - type: Tweak
+      message: RPD now spawns in Atmos and CE lockers
+    - type: Tweak
+      message: >-
+        Extra compressed matter has been added into both Atmos/CE lockers for
+        more RPD/RCD uses
+    - type: Add
+      message: You can research RPD with the reverse engineering machine.
+    - type: Add
+      message: A belt overlay sprite to the CE and utility toolbelt.
+    - type: Add
+      message: >-
+        Pipe Stacking ported over from LRP Goob station. Compress those frezon
+        factories!
+    - type: Add
+      message: Toolbelt overlay sprite for the RPD.
+    - type: Add
+      message: RPD Borg module researched in t-2 industrial advanced tools.
+  id: 6924
+  time: '2025-03-09T18:34:34.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1857
