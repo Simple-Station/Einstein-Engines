@@ -12615,3 +12615,12 @@ Entries:
   id: 6927
   time: '2025-03-10T14:29:56.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1917
+- author: Tirochora
+  changes:
+    - type: Tweak
+      message: >-
+        you don't use the entire stack of carpet now when crafting colored
+        curtains or fancy tables.
+  id: 6928
+  time: '2025-03-10T14:44:42.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1916
