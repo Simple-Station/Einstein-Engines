@@ -1,5 +1,4 @@
 using Content.Server.Atmos.Components;
-using Content.Shared.CCVar;
 using System.Numerics;
 using Robust.Shared.Map.Components;
 
@@ -25,36 +24,10 @@ public sealed partial class AtmosphereSystem
     ///     It returns a vector representing the flow direction of air passing over a tile, as described by Laplace's Equations.
     ///     The equations here are simplified however, and are omitting the matrix subdivisions.
     /// </summary>
-    public Vector2 GetPressureVectorFromTile(TileAtmosphere tile, float deltaT)
-    {
-        if (!HasComp<MapGridComponent>(tile.GridIndex)
-            || !TryComp(tile.GridIndex, out GridAtmosphereComponent? gridAtmos)
-            || tile.Air is null || tile.PressureDirection is Shared.Atmos.AtmosDirection.Invalid)
-            return new Vector2(0, 0);
-
-        var pressureVector = new Vector2(0, 0);
-        foreach (var (x, y) in MASSearchPattern)
-        {
-            if (!gridAtmos.Tiles.TryGetValue(tile.GridIndices + (x, y), out var tileAtmosphere)
-                || tileAtmosphere.Air is null
-                || tileAtmosphere.PressureDirection is Shared.Atmos.AtmosDirection.Invalid)
-                continue;
-
-            var pressureDiff = tile.Air.Pressure - tileAtmosphere.Air.Pressure;
-            pressureVector += new Vector2(x * pressureDiff, y * pressureDiff);
-        }
-        return pressureVector * 2 * deltaT * _cfg.GetCVar(CCVars.SpaceWindStrengthMultiplier);
-    }
-
-    /// <summary>
-    ///     A helper function from MAS that allows for (partially) converting Monstermos Tiles to MAS Vectors.
-    ///     It returns a vector representing the flow direction of air passing over a tile, as described by Laplace's Equations.
-    ///     The equations here are simplified however, and are omitting the matrix subdivisions.
-    /// </summary>
     /// <remarks>
     ///     This function assumes you've already checked if tile.Air is null.
     /// </remarks>
-    public Vector2 GetPressureVectorFromTile(GridAtmosphereComponent gridAtmos, TileAtmosphere tile, float deltaT)
+    public Vector2 GetPressureVectorFromTile(GridAtmosphereComponent gridAtmos, TileAtmosphere tile)
     {
         if (!HasComp<MapGridComponent>(tile.GridIndex))
             return new Vector2(0, 0);
@@ -68,8 +41,8 @@ public sealed partial class AtmosphereSystem
                 continue;
 
             var pressureDiff = tile.Air!.Pressure - tileAtmosphere.Air.Pressure;
-            pressureVector += new Vector2(x * pressureDiff, y * pressureDiff);
+            pressureVector += new Vector2(x, y) * pressureDiff;
         }
-        return pressureVector * 2 * deltaT * _cfg.GetCVar(CCVars.SpaceWindStrengthMultiplier);
+        return pressureVector;
     }
 }
