@@ -422,6 +422,13 @@
   itemSize: 5
 
 - type: stack
+  id: FloorTileRCircuit
+  name: red-circuit floor
+  spawn: FloorTileItemRCircuit
+  maxCount: 30
+  itemSize: 5
+
+- type: stack
   id: FloorTileGrass
   name: grass floor tile
   spawn: FloorTileItemGrass
