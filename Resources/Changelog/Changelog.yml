@@ -12575,3 +12575,36 @@ Entries:
   id: 6925
   time: '2025-03-10T03:34:26.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1914
+- author: White Dream
+  changes:
+    - type: Fix
+      message: Fixed airlock opening and closing visuals
+    - type: Fix
+      message: Fixed Weather spamming infinite sounds.
+    - type: Fix
+      message: Cockroaches no longer spam organs when stepped on.
+    - type: Fix
+      message: Fixed the timer on the Return To Round button
+    - type: Fix
+      message: >-
+        Fixed Return to Round not remembering how long it's been since you died
+        if you re-enter your body.
+    - type: Fix
+      message: Fixed harpy flight visuals not showing for other people.
+    - type: Fix
+      message: >-
+        Fixed disabler bolts not going through windows like other kinds of
+        lasers.
+    - type: Fix
+      message: Fixed Vim Harness being free
+    - type: Fix
+      message: Fixed handcuffs not respecting your arm length.
+    - type: Fix
+      message: Made tending wounds not as message spammy.
+    - type: Fix
+      message: >-
+        Fixed shuttle windows not preventing you from being electrocuted by
+        grills under them.
+  id: 6926
+  time: '2025-03-10T03:43:44.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1911
