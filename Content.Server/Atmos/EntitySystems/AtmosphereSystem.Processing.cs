@@ -3,6 +3,7 @@ using Content.Server.Atmos.Piping.Components;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;
 using Content.Shared.Maps;
+using Content.Shared.Projectiles;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics.Components;
@@ -290,7 +291,7 @@ namespace Content.Server.Atmos.EntitySystems
             }
         }
 
-        private bool ProcessTileEqualize(Entity<GridAtmosphereComponent, GasTileOverlayComponent, MapGridComponent, TransformComponent> ent)
+        private bool ProcessTileEqualize(Entity<GridAtmosphereComponent, GasTileOverlayComponent, MapGridComponent, TransformComponent> ent, float frameTime)
         {
             var atmosphere = ent.Comp1;
             if (!atmosphere.ProcessingPaused)
@@ -299,7 +300,7 @@ namespace Content.Server.Atmos.EntitySystems
             var number = 0;
             while (atmosphere.CurrentRunTiles.TryDequeue(out var tile))
             {
-                EqualizePressureInZone(ent, tile, atmosphere.UpdateCounter);
+                EqualizePressureInZone(ent, tile, atmosphere.UpdateCounter, frameTime);
 
                 if (number++ < LagCheckIterations)
                     continue;
@@ -394,10 +395,11 @@ namespace Content.Server.Atmos.EntitySystems
             var xforms = EntityManager.GetEntityQuery<TransformComponent>();
             var metas = EntityManager.GetEntityQuery<MetaDataComponent>();
             var pressureQuery = EntityManager.GetEntityQuery<MovedByPressureComponent>();
+            var projectileQuery = GetEntityQuery<ProjectileComponent>();
 
             while (atmosphere.CurrentRunTiles.TryDequeue(out var tile))
             {
-                HighPressureMovements(ent, tile, bodies, xforms, pressureQuery, metas, frameTime);
+                HighPressureMovements(ent, tile, bodies, xforms, pressureQuery, metas, projectileQuery, frameTime);
                 tile.PressureDifference = 0f;
                 tile.LastPressureDirection = tile.PressureDirection;
                 tile.PressureDirection = AtmosDirection.Invalid;
@@ -616,7 +618,7 @@ namespace Content.Server.Atmos.EntitySystems
                             : AtmosphereProcessingState.ActiveTiles;
                         continue;
                     case AtmosphereProcessingState.TileEqualize:
-                        if (!ProcessTileEqualize(ent))
+                        if (!ProcessTileEqualize(ent, frameTime))
                         {
                             atmosphere.ProcessingPaused = true;
                             return;

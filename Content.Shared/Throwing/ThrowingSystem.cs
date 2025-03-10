@@ -51,6 +51,7 @@ public sealed class ThrowingSystem : EntitySystem
         Subs.CVar(_configManager, CCVars.TileFrictionModifier, value => _frictionModifier = value, true);
     }
 
+    [Obsolete("If you are foreaching every entity, go get a ProjectileQuery and use TryThrow with EntityQuery<ProjectileComponent> instead. Otherwise, put it under pragma ignore.")]
     public void TryThrow(
         EntityUid uid,
         EntityCoordinates coordinates,
@@ -83,6 +84,7 @@ public sealed class ThrowingSystem : EntitySystem
     /// <param name="friction">friction value used for the distance calculation. If set to null this defaults to the standard tile values</param>
     /// <param name="compensateFriction">True will adjust the throw so the item stops at the target coordinates. False means it will land at the target and keep sliding.</param>
     /// <param name="doSpin">Whether spin will be applied to the thrown entity.</param>
+    [Obsolete("If you are foreaching every entity, go get a ProjectileQuery and use TryThrow with EntityQuery<ProjectileComponent> instead. Otherwise, put it under pragma ignore.")]
     public void TryThrow(EntityUid uid,
         Vector2 direction,
         float baseThrowSpeed = 10.0f,
