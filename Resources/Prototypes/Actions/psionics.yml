@@ -392,7 +392,8 @@
   description: action-description-anoigo
   categories: [ HideSpawnMenu ]
   components:
-  - type: InstantAction
+  - type: EntityTargetAction
     icon: { sprite: Interface/Actions/psionics.rsi, state: anoigo }
-    useDelay: 60
+    useDelay: 40
+    itemIconStyle: BigAction
     event: !type:AnoigoPowerActionEvent

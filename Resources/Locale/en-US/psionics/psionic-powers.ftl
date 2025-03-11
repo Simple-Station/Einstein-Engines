@@ -193,8 +193,8 @@ assay-power-initialization-feedback =
 assay-power-metapsionic-feedback = {CAPITALIZE($entity)} bears a spark of the divine's judgment, they have drunk deeply of the cup of knowledge.
 
 # Anoigo Power
-action-name-anoigo
-action-description-anoigo = Open locked doors or containers.
+action-name-anoigo = Anoigo
+action-description-anoigo = Open locked and bolted doors.
 anoigo-power-initialization-feedback=
     Knowledge arrived to me in a bottle alongside the shores of Entropy.
     Gatekeepers of riches and secrets can be persuaded if you speak their tongue.
