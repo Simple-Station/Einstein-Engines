@@ -12662,3 +12662,12 @@ Entries:
   id: 6932
   time: '2025-03-11T21:29:34.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1896
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Nerfed universals and other .45 auto guns. I get the meme that .45 is
+        better than 9mm, but not "More than double" the damage of 9mm. 
+  id: 6933
+  time: '2025-03-11T21:31:34.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1895
