@@ -89,6 +89,9 @@ public sealed partial class MobStateComponent : Component
     [DataField]
     public bool AllowHandInteractWhileDead;
 
+    /// <summary>
+    ///     Whether this mob is allowed to perform hand interactions while in the Alive MobState.
+    /// </summary>
     [DataField]
     public bool AllowHandInteractWhileAlive = false;
 
