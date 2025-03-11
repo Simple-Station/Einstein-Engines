@@ -12671,3 +12671,14 @@ Entries:
   id: 6933
   time: '2025-03-11T21:31:34.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1895
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Ores mined from lavaland now have names matching their real-world
+        counterparts.
+    - type: Fix
+      message: Fixed the lavaland ore crates not having working ore magnets.
+  id: 6934
+  time: '2025-03-11T21:32:32.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1892
