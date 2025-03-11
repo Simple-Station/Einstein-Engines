@@ -12700,3 +12700,13 @@ Entries:
   id: 6936
   time: '2025-03-11T21:39:34.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1915
+- author: Spatison
+  changes:
+    - type: Fix
+      message: >-
+        Embeddeable projectiles are no longer always destroyed when the thing
+        they are embedded in gets destroyed. Energy Sword throwing enthusiasts
+        may rejoice now that their precious sword is safe.
+  id: 6937
+  time: '2025-03-11T21:46:14.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1907
