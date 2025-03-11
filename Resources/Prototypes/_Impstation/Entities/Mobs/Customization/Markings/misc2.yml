@@ -130,15 +130,6 @@
     state: badmoltrarm
 
 - type: marking
-  id: TailDropped
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Reptilian]
-  sprites:
-  - sprite: _Impstation/Mobs/Customization/markingsbundle2.rsi
-    state: tail_dropped
-
-- type: marking
   id: TailGecko
   bodyPart: Tail
   markingCategory: Tail
