@@ -238,8 +238,6 @@ public sealed class ModSuitSystem : EntitySystem
 
             _itemSlotsSystem.TryInsert(modSuit.Owner, slot, moduleEnt, modSuit);
             _itemSlotsSystem.SetLock(modSuit, slot, true); // To prevent people from taking out the fucking innate module
-
-            Dirty(moduleEnt, moduleComp);
         }
 
         // One more slot so we can insert modules into the mod suit, then it's processed by EntInsertedIntoContainerMessage
@@ -419,16 +417,18 @@ public sealed class ModSuitSystem : EntitySystem
             new ModSuitVisualizerGroupData(modSuit.Comp.ClothingUids.Keys.Select(id => GetNetEntity(id)).ToList(),
                 modSuit.Comp.Container!.ContainedEntities.Select(id => GetNetEntity(id)).ToList()));
 
-        var modules = new List<NetEntity>();
+        var modules = new List<(NetEntity, bool)>();
         foreach (var moduleSlot in modSuit.Comp.ModuleSlots)
         {
             if (moduleSlot.ContainerSlot!.ContainedEntity != null)
             {
-                modules.Add(GetNetEntity(moduleSlot.ContainerSlot!.ContainedEntity.Value));
+                modules.Add(
+                    (GetNetEntity(moduleSlot.ContainerSlot!.ContainedEntity.Value),
+                    Comp<ModSuitModComponent>(moduleSlot.ContainerSlot!.ContainedEntity.Value).Innate));
             }
         }
 
-        var state = new ModSuitBuiState(0f, false, modules);
+        var state = new ModSuitBuiState(0f, modSuit.Comp.CurrentComplexity, false, modules);
         _uiSystem.SetUiState(modSuit.Owner, ModSuitUiKey.Key, state);
     }
 

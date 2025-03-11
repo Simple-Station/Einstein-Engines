@@ -21,13 +21,16 @@ public sealed class ModSuitBuiState : BoundUserInterfaceState
 {
     public float ChargePercent;
 
+    public int CurrentComplexity;
+
     public bool HasBattery;
 
-    public List<NetEntity> Modules;
+    public List<(NetEntity, bool)> Modules;
 
-    public ModSuitBuiState(float chargePercent, bool hasBattery, List<NetEntity> modules)
+    public ModSuitBuiState(float chargePercent, int currentComplexity, bool hasBattery, List<(NetEntity, bool)> modules)
     {
         ChargePercent = chargePercent;
+        CurrentComplexity = currentComplexity;
         HasBattery = hasBattery;
         Modules = modules;
     }

@@ -3,26 +3,59 @@
                       xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
                       xmlns:customControls="clr-namespace:Content.Client.Administration.UI.CustomControls"
                       Title="{Loc 'mod-suit-ui-menu-title'}"
-                      MinSize="600 350"
-                      SetSize="650 450">
+                      MinSize="550 250"
+                      SetSize="850 550">
     <BoxContainer Orientation="Horizontal"
                   HorizontalExpand="True"
                   VerticalExpand="True">
-        <BoxContainer Orientation="Vertical" VerticalExpand="True" HorizontalExpand="True" Margin="15 10 15 15">
-            <BoxContainer Orientation="Horizontal">
-                <ProgressBar Name="ChargeBar" Access="Public" HorizontalExpand="True" MinValue="0" Value="1" MaxValue="1">
-                    <Label Name="ChargeLabel" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5 0 0 0"/>
-                </ProgressBar>
-                <Control MinWidth="5"/>
-                <Button Name="EjectBatteryButton" Text="{Loc 'mod-suit-ui-remove-battery'}" StyleClasses="OpenLeft"/>
-            </BoxContainer>
+        <BoxContainer Orientation="Vertical" VerticalExpand="True" HorizontalExpand="True" Margin="15 15 15 15">
+            <Label Text="{Loc 'mod-suit-ui-info-label'}" Margin="0 5 0 5" StyleClasses="LabelBig"/>
+            <PanelContainer>
+                <PanelContainer.PanelOverride>
+                    <gfx:StyleBoxFlat BackgroundColor="#1B1B1E"/>
+                </PanelContainer.PanelOverride>
+                <BoxContainer Orientation="Vertical" Margin="5 5 5 5">
+                    <customControls:VSeparator Margin="0 0 0 5"/>
+                    <Label Text="{Loc 'mod-suit-ui-battery-label'}" Margin="0 0 0 5" StyleClasses="StatusFieldTitle"/>
+                    <BoxContainer Orientation="Horizontal">
+                        <SpriteView Name="BatteryView" Margin="0 0 0 0"/>
+                        <ProgressBar Name="ChargeBar" Access="Public" HorizontalExpand="True" MinValue="0" Value="1" MaxValue="1">
+                            <Label Name="ChargeLabel" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5 0 0 0"/>
+                        </ProgressBar>
+                        <Control MinWidth="5"/>
+                        <Button Name="EjectBatteryButton" Text="{Loc 'mod-suit-ui-remove-battery'}" StyleClasses="OpenLeft"/>
+                    </BoxContainer>
+                </BoxContainer>
+            </PanelContainer>
             <customControls:HSeparator Margin="0 10 0 10"/>
+            <Label Text="{Loc 'mod-suit-ui-parts-label'}" Margin="0 0 0 5" StyleClasses="StatusFieldTitle"/>
             <PanelContainer VerticalExpand="True">
                 <PanelContainer.PanelOverride>
                     <gfx:StyleBoxFlat BackgroundColor="#1B1B1E"/>
                 </PanelContainer.PanelOverride>
-                <BoxContainer HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <SpriteView Name="UserViewSprite" Scale="5 5"/>
+                <ScrollContainer HScrollEnabled="False" HorizontalExpand="True" VerticalExpand="True">
+                    <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" Name="PiecesContainer" RectClipContent="True"/>
+                </ScrollContainer>
+            </PanelContainer>
+            <customControls:HSeparator Margin="0 10 0 10"/>
+            <Label Text="{Loc 'mod-suit-ui-chosen-mod'}" VerticalAlignment="Top" Margin="0 0 0 5" StyleClasses="StatusFieldTitle"/>
+            <PanelContainer VerticalExpand="True">
+                <PanelContainer.PanelOverride>
+                    <gfx:StyleBoxFlat BackgroundColor="#1B1B1E"/>
+                </PanelContainer.PanelOverride>
+                <BoxContainer Orientation="Vertical">
+                    <BoxContainer Orientation="Horizontal" HorizontalExpand="True" Margin="5 5 5 5">
+                        <SpriteView Name="CurrentModuleView" Visible="False" Margin="5 5 5 5" Scale="2 2" SetSize="48 48"/>
+                        <BoxContainer Orientation="Vertical">
+                            <Label Name="ChosenModuleName" Text="{Loc 'mod-suit-ui-no-mod-chosen'}" Margin="5 4 0 4"/>
+                            <Button Name="ToggleModButton" Visible="False" Text="{Loc 'mod-suit-ui-toggle-mod'}" Margin="0 4 0 4"/>
+                        </BoxContainer>
+                    </BoxContainer>
+                    <BoxContainer Name="ChosenModuleData" Visible="False" Orientation="Vertical" VerticalAlignment="Bottom" Margin="7 0 7 0">
+                        <customControls:HSeparator Margin="0 4 0 4"/>
+                        <Label Name="ChosenPassiveConsumption" HorizontalExpand="True" HorizontalAlignment="Left"/>
+                        <Label Name="ChosenActiveConsumption" HorizontalExpand="True" HorizontalAlignment="Left"/>
+                    </BoxContainer>
                 </BoxContainer>
             </PanelContainer>
         </BoxContainer>
@@ -40,7 +73,7 @@
                     <Label Name="ComplexityCounter"
                            HorizontalAlignment="Right"
                            VerticalAlignment="Bottom"
-                           StyleClasses="WindowFooterText"
+                           StyleClasses="StatusFieldTitle"
                            Margin="5"/>
                 </BoxContainer>
             </PanelContainer>
