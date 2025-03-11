@@ -89,6 +89,9 @@ public sealed partial class MobStateComponent : Component
     [DataField]
     public bool AllowHandInteractWhileDead;
 
+    [DataField]
+    public bool AllowHandInteractWhileAlive = false;
+
     //default mobstate is always the lowest state level
     [AutoNetworkedField, ViewVariables]
     public MobState CurrentState { get; set; } = MobState.Alive;
