@@ -13,19 +13,19 @@
     protectionTime: 5
   - type: Tag
     tags:
-    - WhitelistChameleon
-    - HudMedical
-    - HudSecurity
+     - WhitelistChameleon
+     - HudMedical
+     - HudSecurity
   - type: IdentityBlocker
     coverage: EYES
   - type: ShowHealthBars
     damageContainers:
-    - Biological
-    - Inorganic
-    - Silicon
+     - Biological
+     - Inorganic
+     - Silicon
   - type: ShowHealthIcons
     damageContainers:
-    - Biological
-    - Inorganic
-    - Silicon
+     - Biological
+     - Inorganic
+     - Silicon
     
