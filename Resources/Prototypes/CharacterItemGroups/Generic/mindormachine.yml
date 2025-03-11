@@ -44,16 +44,20 @@
     - type: trait
       id: CyberEyes
     - type: trait
-      id: FlareShielding
+      id: NaniteAutoRepairBots
     - type: trait
-      id: CyberEyesSecurity
+      id: BionicLeg
     - type: trait
-      id: CyberEyesMedical
+      id: FlareShieldingModule
     - type: trait
-      id: CyberEyesDiagnostic
+      id: SecurityEyesModule
     - type: trait
-      id: CyberEyesOmni
+      id: MedicalEyesModule
     - type: trait
-      id: LightAmplification
+      id: DiagnosticEyesModule
     - type: trait
-      id: ThermographicVision
+      id: OmniEyesModule
+    - type: trait
+      id: LightAmplificationModule
+    - type: trait
+      id: ThermographicVisionModule

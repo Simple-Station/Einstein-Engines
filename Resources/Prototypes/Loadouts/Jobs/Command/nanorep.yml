@@ -19,7 +19,19 @@
 # Ears
 
 # Equipment
-
+- type: loadout
+  id: LoadoutNanotrasenRepresentativeDisabler
+  category: JobsCommandNanorep
+  cost: 0
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNanotrasenRepresentativeWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - NanotrasenRepresentative
+  items:
+    - WeaponCCDisabler
 # Eyes
 
 # Gloves

@@ -5,6 +5,13 @@ namespace Content.Shared.CCVar;
 public sealed partial class CCVars
 {
     /// <summary>
+    ///     Whether pipes will unanchor on ANY conflicting connection. May break maps.
+    ///     If false, allows you to stack pipes as long as new directions are added (i.e. in a new pipe rotation, layer or multi-Z link), otherwise unanchoring them.
+    /// </summary>
+    public static readonly CVarDef<bool> StrictPipeStacking =
+        CVarDef.Create("atmos.strict_pipe_stacking", false, CVar.SERVERONLY);
+
+    /// <summary>
     ///     Whether gas differences will move entities.
     /// </summary>
     public static readonly CVarDef<bool> SpaceWind =

@@ -1,7 +1,7 @@
 - type: trait
   id: WillToLive
   category: Physical
-  points: -1
+  points: -3
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -50,7 +50,7 @@
 - type: trait
   id: Tenacity
   category: Physical
-  points: -3
+  points: -4
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -239,7 +239,7 @@
 - type: trait
   id: Steadfast
   category: Physical
-  points: -4
+  points: -6
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -469,37 +469,23 @@
       inverted: true
       jobs:
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-    - !type:CharacterSpeciesRequirement
-      species:
-        - Human # Entirely arbitrary, I've decided I want a trait unique to humans. Since they don't normally get anything exciting.
-                # When we get the Character Records system in, I also want to make this require certain Backgrounds.
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
         - Claws
         - Talons
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterTraitRequirement
-          traits:
-            - MartialArtist
-        - !type:CharacterJobRequirement
-          jobs:
-            - Boxer
-            - MartialArtist
-            - Gladiator
     - !type:CharacterItemGroupRequirement
       group: TraitsMind
   functions:
     - !type:TraitModifyUnarmed
       flatDamageIncrease:
         types:
-          Blunt: 1
+          Blunt: 2
 
 - type: trait
   id: Spinarette
   category: Physical
-  points: -4
+  points: -3
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -521,12 +507,12 @@
           action: ActionSericulture
           productionLength: 2
           entityProduced: MaterialWebSilk1
-          hungerCost: 4
+          hungerCost: 1 
 
 - type: trait
   id: BionicArm
   category: Physical
-  points: -8
+  points: -10
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -569,14 +555,14 @@
           allowedStates:
           - Alive
           - Critical
-          damageCap: 200
+          damageCap: 400
           damage:
             groups:
-              Brute: -0.07
-              Burn: -0.07
-              Airloss: -0.07
-              Toxin: -0.07
-              Genetic: -0.07
+              Brute: -0.35
+              Burn: -0.35
+              Airloss: -0.25
+              Toxin: -0.35
+              Genetic: -0.35
 
 - type: trait
   id: DermalArmor
@@ -608,6 +594,10 @@
       inverted: true
       jobs:
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+    - !type:CharacterSpeciesRequirement
+        inverted: true
+        species:
+          - IPC
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -639,8 +629,6 @@
     - !type:CharacterTraitRequirement
       traits:
         - CyberEyes
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -667,8 +655,6 @@
       inverted: true
       traits:
         - CyberEyesOmni
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -693,8 +679,6 @@
       traits:
         - CyberEyesDiagnostic
         - CyberEyesOmni
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -722,8 +706,6 @@
       traits:
         - CyberEyesMedical
         - CyberEyesOmni
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -744,6 +726,7 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+        - Command
     - !type:CharacterTraitRequirement
       traits:
         - CyberEyes
@@ -753,8 +736,6 @@
         - CyberEyesMedical
         - CyberEyesDiagnostic
         - CyberEyesSecurity
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -830,8 +811,6 @@
     - !type:CharacterTraitRequirement
       traits:
         - CyberEyes
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -840,7 +819,7 @@
 - type: trait
   id: ThermographicVision
   category: Physical
-  points: -8
+  points: -4
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -849,8 +828,6 @@
     - !type:CharacterTraitRequirement
       traits:
         - CyberEyes
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -885,16 +862,16 @@
           - Alive
           - Critical
           - Dead
-          damageCap: 200
+          damageCap: 250
           damage:
             groups:
-              Brute: -0.9
-              Burn: -0.9
+              Brute: -0.6
+              Burn: -0.6
 
 - type: trait
   id: BionicLeg
   category: Physical
-  points: -6
+  points: -8
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -903,11 +880,11 @@
     - !type:CharacterItemGroupRequirement
       group: TraitsMind
   functions:
-    - !type:TraitAddComponent
+    - !type:TraitReplaceComponent
       components:
-      - type: MovementBodyPart
-        walkSpeed: 3.125
-        sprintSpeed: 5.625
+      - type: TraitSpeedModifier
+        sprintModifier: 1.300
+        walkModifier: 1.125
     - !type:TraitPushDescription
       descriptionExtensions:
         - description: examine-bionic-leg-message
@@ -926,6 +903,12 @@
     - !type:CharacterSpeciesRequirement
       species:
         - IPC
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Photophobia
+        - Blindness
+        - Nearsighted
     - !type:CharacterItemGroupRequirement
       group: TraitsMind
   functions:
@@ -953,6 +936,9 @@
       inverted: true
       traits:
         - OmniEyesModule
+        - Photophobia
+        - Blindness
+        - Nearsighted
     - !type:CharacterItemGroupRequirement
       group: TraitsMind
   functions:
@@ -979,6 +965,9 @@
       traits:
         - DiagnosticEyesModule
         - OmniEyesModule
+        - Photophobia
+        - Blindness
+        - Nearsighted
     - !type:CharacterItemGroupRequirement
       group: TraitsMind
   functions:
@@ -1008,6 +997,9 @@
       traits:
         - MedicalEyesModule
         - OmniEyesModule
+        - Photophobia
+        - Blindness
+        - Nearsighted
     - !type:CharacterItemGroupRequirement
       group: TraitsMind
   functions:
@@ -1030,12 +1022,16 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+        - Command
     - !type:CharacterSpeciesRequirement
       species:
         - IPC
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
+        - Photophobia
+        - Blindness
+        - Nearsighted
         - MedicalEyesModule
         - DiagnosticEyesModule
         - SecurityEyesModule
@@ -1068,6 +1064,12 @@
     - !type:CharacterSpeciesRequirement
       species:
         - IPC
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Photophobia
+        - Blindness
+        - Nearsighted
     - !type:CharacterItemGroupRequirement
       group: TraitsMind
   functions:
@@ -1078,7 +1080,7 @@
 - type: trait
   id: ThermographicVisionModule
   category: Physical
-  points: -8
+  points: -4
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -1087,6 +1089,12 @@
     - !type:CharacterSpeciesRequirement
       species:
         - IPC
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Photophobia
+        - Blindness
+        - Nearsighted
     - !type:CharacterItemGroupRequirement
       group: TraitsMind
   functions:

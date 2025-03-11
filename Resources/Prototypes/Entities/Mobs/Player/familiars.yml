@@ -81,6 +81,8 @@
     name: ghost-role-information-remilia-name
     description: ghost-role-information-remilia-description
     rules: ghost-role-information-remilia-rules
+    mindRoles:
+    - MindRoleGhostRoleFamiliar
   - type: GhostTakeoverAvailable
   - type: Grammar
     attributes:
@@ -148,6 +150,8 @@
     name: ghost-role-information-cerberus-name
     description: ghost-role-information-cerberus-description
     rules: ghost-role-information-cerberus-rules
+    mindRoles:
+    - MindRoleGhostRoleFamiliar
     raffle:
       settings: default
   - type: GhostTakeoverAvailable

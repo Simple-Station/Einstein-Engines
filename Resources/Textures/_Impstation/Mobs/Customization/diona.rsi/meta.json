@@ -1,0 +1,219 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "flowers_body, flowers_head, leaf_cover, thorns_body, thorns_head from https://github.com/Citadel-Station-13/Citadel-Station-13-RP/commit/38051f45d3b26bd31f6e292239f43adb36ff01fe, modified by EmoGarbage and other from https://github.com/TauCetiStation/TauCetiClassic/blob/a8c097fd0e749dcd6f66f05cf5325e51f6b081dd/icons/mob/human_face.dmi, modified by Doop",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "flowers_body_primary_colorable",
+      "directions": 4
+    },
+    {
+      "name": "flowers_body_secondary_colorable",
+      "directions": 4
+    },
+    {
+      "name": "flowers_head_primary_colorable",
+      "directions": 4
+    },
+    {
+      "name": "flowers_head_secondary_colorable",
+      "directions": 4
+    },
+    {
+      "name": "leaf_cover_colorable",
+      "directions": 4
+    },
+    {
+      "name": "thorns_body_colorable",
+      "directions": 4
+    },
+    {
+      "name": "thorns_head_colorable",
+      "directions": 4
+    },
+    {
+      "name": "bloom_primary_colorable",
+      "directions": 4
+    },
+    {
+      "name": "bloom_secondary_colorable",
+      "directions": 4
+    },
+    {
+      "name": "bracket_colorable",
+      "directions": 4
+    },
+    {
+      "name": "brush_colorable",
+      "directions": 4
+    },
+    {
+      "name": "cornflower_primary_colorable",
+      "directions": 4
+    },
+    {
+      "name": "cornflower_secondary_colorable",
+      "directions": 4
+    },
+    {
+      "name": "cornflower_flowers_colorable",
+      "directions": 4
+    },
+    {
+      "name": "ficus_colorable",
+      "directions": 4
+    },
+    {
+      "name": "garland_primary_colorable",
+      "directions": 4
+    },
+    {
+      "name": "garland_secondary_colorable",
+      "directions": 4
+    },
+    {
+      "name": "garland_flowers1_colorable",
+      "directions": 4
+    },
+    {
+      "name": "garland_flowers2_colorable",
+      "directions": 4
+    },
+    {
+      "name": "garland_flowers3_colorable",
+      "directions": 4
+    },
+    {
+      "name": "king_primary_colorable",
+      "directions": 4
+    },
+    {
+      "name": "king_secondary_colorable",
+      "directions": 4
+    },
+    {
+      "name": "laurel_colorable",
+      "directions": 4
+    },
+    {
+      "name": "leafy_colorable",
+      "directions": 4
+    },
+    {
+      "name": "lotus_primary_colorable",
+      "directions": 4
+    },
+    {
+      "name": "lotus_secondary_colorable",
+      "directions": 4
+    },
+    {
+      "name": "meadow_colorable",
+      "directions": 4
+    },
+    {
+      "name": "oak_colorable",
+      "directions": 4
+    },
+    {
+      "name": "palm_colorable",
+      "directions": 4
+    },
+    {
+      "name": "root_colorable",
+      "directions": 4
+    },
+    {
+      "name": "rose_primary_colorable",
+      "directions": 4
+    },
+    {
+      "name": "rose_secondary_colorable",
+      "directions": 4
+     },
+    {
+      "name": "rosey_primary_colorable",
+      "directions": 4
+    },
+    {
+      "name": "rosey_secondary_colorable",
+      "directions": 4
+    },
+    {
+      "name": "rosey_flowers_colorable",
+      "directions": 4
+    },
+    {
+      "name": "shrub_colorable",
+      "directions": 4
+    },
+    {
+      "name": "spinner_primary_colorable",
+      "directions": 4
+    },
+    {
+      "name": "spinner_secondary_colorable",
+      "directions": 4
+    },
+    {
+      "name": "sprout_primary_colorable",
+      "directions": 4
+    },
+    {
+      "name": "sprout_secondary_colorable",
+      "directions": 4
+    },
+    {
+      "name": "vine_primary_colorable",
+      "directions": 4
+    },
+    {
+      "name": "vine_secondary_colorable",
+      "directions": 4
+    },
+    {
+      "name": "vinel_primary_colorable",
+      "directions": 4
+    },
+    {
+      "name": "vinel_secondary_colorable",
+      "directions": 4
+    },
+    {
+      "name": "vines_primary_colorable",
+      "directions": 4
+    },
+    {
+      "name": "vines_secondary_colorable",
+      "directions": 4
+    },
+    {
+      "name": "wildflower_primary_colorable",
+      "directions": 4
+    },
+    {
+      "name": "wildflower_secondary_colorable",
+      "directions": 4
+    },
+    {
+      "name": "wildflower_flowers1_colorable",
+      "directions": 4
+    },
+    {
+      "name": "wildflower_flowers2_colorable",
+      "directions": 4
+    },
+    {
+      "name": "wildflower_flowers3_colorable",
+      "directions": 4
+    },
+    {
+      "name": "wildflower_flowers4_colorable",
+      "directions": 4
+    }
+  ]
+}

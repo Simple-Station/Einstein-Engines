@@ -405,6 +405,7 @@
       behaviors:
       - !type:GibBehavior
         gibContents: Skip
+        recursive: false
   - type: NonSpreaderZombie
   - type: LanguageKnowledge
     speaks: [Hissing]
@@ -471,6 +472,9 @@
     allowMovement: true
     name: ghost-role-information-mothroach-name
     description: ghost-role-information-mothroach-description
+    rules: ghost-role-information-freeagent-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgent
   - type: Fixtures
     fixtures:
       fix1:
@@ -1157,6 +1161,8 @@
   - type: HTN
     rootTask:
       task: SimpleHostileCompound
+  - type: Fauna # Lavaland Change
+
 
 - type: entity
   name: kangaroo
@@ -1469,6 +1475,10 @@
     makeSentient: true
     name: ghost-role-information-monkey-name
     description: ghost-role-information-monkey-description
+    rules: ghost-role-information-syndicate-reinforcement-rules
+    mindRoles:
+    # This is for syndicate monkeys that randomly gain sentience, thus have no summoner to team with
+    - MindRoleGhostRoleSoloAntagonist
     raffle:
       settings: default
   - type: GhostTakeoverAvailable
@@ -1644,6 +1654,9 @@
     allowMovement: true
     name: ghost-role-information-mouse-name
     description: ghost-role-information-mouse-description
+    rules: ghost-role-information-freeagent-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgent
   - type: GhostTakeoverAvailable
   - type: Speech
     speechSounds: Squeak
@@ -2468,6 +2481,7 @@
     interfaces:
       enum.SurgeryUIKey.Key:
         type: SurgeryBui
+  - type: Fauna # Lavaland Change
 
 - type: entity
   parent: MobSpiderBase
@@ -2487,6 +2501,8 @@
     name: ghost-role-information-giant-spider-name
     description: ghost-role-information-giant-spider-description
     rules: ghost-role-information-giant-spider-rules
+    mindRoles:
+    - MindRoleGhostRoleTeamAntagonist
     raffle:
       settings: short
   - type: GhostTakeoverAvailable
@@ -3113,6 +3129,8 @@
     allowMovement: true
     description: ghost-role-information-SyndiCat-description
     rules: ghost-role-information-SyndiCat-rules
+    mindRoles:
+    - MindRoleGhostRoleTeamAntagonist
     raffle:
       settings: default
   - type: GhostTakeoverAvailable

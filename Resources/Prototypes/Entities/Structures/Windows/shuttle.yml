@@ -41,7 +41,9 @@
   - type: Appearance
   - type: Tag
     tags:
-      - WeldbotFixableStructure
+    - ForceFixRotations # WWDP fix missing tags
+    - Window # WWDP fix missing tags
+    - WeldbotFixableStructure
   - type: DamageVisuals
     thresholds: [4, 8, 12]
     damageDivisor: 28

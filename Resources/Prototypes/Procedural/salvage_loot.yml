@@ -232,3 +232,10 @@
   loots:
     - !type:BiomeMarkerLoot
       proto: OreNormality
+
+- type: salvageLoot
+  id: OreTungsten
+  guaranteed: true
+  loots:
+    - !type:BiomeMarkerLoot
+      proto: OreTungsten

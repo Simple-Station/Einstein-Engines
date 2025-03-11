@@ -359,6 +359,9 @@
   id: CartridgeHeavyRifle
 
 - type: Tag
+  id: CartridgeMinigun
+
+- type: Tag
   id: CartridgeLightRifle
 
 - type: Tag
@@ -891,6 +894,9 @@
   id: MagazineHeavyRifleBox
 
 - type: Tag
+  id: MagazineBoxRifleMinigun
+
+- type: Tag
   id: MagazineLightRifle
 
 - type: Tag
@@ -1012,6 +1018,9 @@
 
 - type: Tag
   id: Oneirophage
+
+- type: Tag
+  id: Oni
 
 - type: Tag
   id: Ore
@@ -1181,6 +1190,9 @@
 
 - type: Tag
   id: RollingPin
+
+- type: Tag
+  id: RPD
 
 - type: Tag
   id: SaltShaker

@@ -58,7 +58,7 @@ namespace Content.IntegrationTests.Tests
             "Saltern", // Maintained by the Sin Mapping Team, ODJ, and TCJ.
             "Shoukou", // Maintained by Violet
             // "Tortuga", // De-rotated, no current maintainer.
-            // "Arena", // De-rotated, no current maintainer.
+            "Arena", // Maintained by astriloqua.
             // "Asterisk", // De-rotated, no current maintainer.
             "Glacier", // Maintained by Violet
             // "TheHive", // De-rotated, no current maintainer.
@@ -66,6 +66,7 @@ namespace Content.IntegrationTests.Tests
             "Lighthouse", // Maintained by Violet
             // "Submarine", // De-rotated, no current maintainer.
             "Gax", // Maintained by Estacao Pirata
+            "Lavatest", // Lavaland Change
             "Rad", // Maintained by Estacao Pirata
             // "Europa", // De-rotated, has significant issues.
             "Meta", // Maintained by Estacao Pirata

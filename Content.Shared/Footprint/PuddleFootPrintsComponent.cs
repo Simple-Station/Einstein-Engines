@@ -10,5 +10,5 @@ public sealed partial class PuddleFootPrintsComponent : Component
     ///     Ratio between puddle volume and the amount of reagents that can be transferred from it.
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]
-    public FixedPoint2 SizeRatio = 0.15f;
+    public FixedPoint2 SizeRatio = 0.75f;
 }

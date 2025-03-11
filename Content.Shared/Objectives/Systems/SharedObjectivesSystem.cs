@@ -40,7 +40,7 @@ public abstract class SharedObjectivesSystem : EntitySystem
         if (comp.Unique)
         {
             var proto = _metaQuery.GetComponent(uid).EntityPrototype?.ID;
-            foreach (var objective in mind.AllObjectives)
+            foreach (var objective in mind.Objectives)
             {
                 if (_metaQuery.GetComponent(objective).EntityPrototype?.ID == proto)
                     return false;

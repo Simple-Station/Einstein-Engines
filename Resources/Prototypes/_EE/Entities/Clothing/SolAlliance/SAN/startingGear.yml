@@ -1,0 +1,28 @@
+- type: startingGear
+  id: SANMarineGreen
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSolFatigueGreen
+    head: ClothingHeadHelmetSAN
+    back: ClothingBackpackMerc
+    mask: ClothingMaskGasMerc
+    gloves: ClothingHandsMercGlovesCombat
+    shoes: ClothingShoesBootsCombatFilled
+    id: SANIdCard
+    pocket1: WeaponPistolViperWood
+    pocket2: MagazinePistol
+    belt: ClothingBeltMilitaryWebbing
+    outerClothing: ClothingOuterVestWebSAN
+
+- type: startingGear
+  id: SANMarineOfficer
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSolArmyServiceOfficer
+    head: ClothingHeadHatSANArmyCapOfficer
+    back: ClothingBackpackMerc
+    mask: ClothingMaskGasMerc
+    gloves: ClothingHandsMercGlovesCombat
+    shoes: ClothingShoesBootsCombatFilled
+    id: SANIdCard
+    pocket1: WeaponPistolViperWood
+    pocket2: MagazinePistolRubber
+    belt: ClothingBeltSheathSANMarineFilled
