@@ -12644,3 +12644,14 @@ Entries:
   id: 6930
   time: '2025-03-11T21:24:10.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1894
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Adjusted turrets to be a more "Fair" fight. They no longer have perfect
+        aimbot accuracy, they don't track targets instantly, and they also have
+        a "More fair" healthbar that can reasonably be shot through by someone
+        with good enough weapons and armor, 
+  id: 6931
+  time: '2025-03-11T21:26:17.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1923
