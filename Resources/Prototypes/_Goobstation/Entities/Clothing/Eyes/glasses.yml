@@ -2,7 +2,7 @@
   parent: [ClothingEyesBase, ShowSecurityIcons, ShowMedicalIcons]
   id: ClothingEyesGlassesMedSec
   name: blueshield glasses
-  description: Advanced Sunglasses with a deep blue hue and a built in HUD capable of displaying Security, Medical, and Diagnostics information.
+  description: Advanced Sunglasses with a deep blue hue and a built-in HUD capable of displaying Security, Medical, and Diagnostics information.
   components:
   - type: Sprite
     sprite: _Goobstation/Clothing/Eyes/Glasses/medglasses.rsi
