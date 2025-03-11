@@ -12624,3 +12624,14 @@ Entries:
   id: 6928
   time: '2025-03-10T14:44:42.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1916
+- author: Diggy
+  changes:
+    - type: Add
+      message: New markings for arachnids, reptilians.
+    - type: Tweak
+      message: >-
+        Allows IPCs to pick up overlay markings such as the gauze stuff, Onis
+        can now have the curved horn marking humans can have.
+  id: 6929
+  time: '2025-03-11T15:41:48.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1925
