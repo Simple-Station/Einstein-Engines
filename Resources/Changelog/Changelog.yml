@@ -12710,3 +12710,10 @@ Entries:
   id: 6937
   time: '2025-03-11T21:46:14.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1907
+- author: AlgumCorrupto
+  changes:
+    - type: Fix
+      message: Health analyzer's doll is now in the normal size.
+  id: 6938
+  time: '2025-03-11T22:58:06.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1928
