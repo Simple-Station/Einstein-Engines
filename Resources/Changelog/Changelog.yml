@@ -12655,3 +12655,10 @@ Entries:
   id: 6931
   time: '2025-03-11T21:26:17.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1923
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Power attack and light attack damages are no longer swapped.
+  id: 6932
+  time: '2025-03-11T21:29:34.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1896
