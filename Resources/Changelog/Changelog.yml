@@ -12635,3 +12635,12 @@ Entries:
   id: 6929
   time: '2025-03-11T15:41:48.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1925
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        After lengthy retraining, NanoTrasen has taught Vulpkanin that underwear
+        is meant to be worn inside pants, not outside them. 
+  id: 6930
+  time: '2025-03-11T21:24:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1894
