@@ -12691,3 +12691,12 @@ Entries:
   id: 6935
   time: '2025-03-11T21:33:28.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1869
+- author: Tirochora
+  changes:
+    - type: Tweak
+      message: >-
+        you can take the battery out of engineering holoprojectors and charge
+        them.
+  id: 6936
+  time: '2025-03-11T21:39:34.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1915
