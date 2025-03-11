@@ -12682,3 +12682,12 @@ Entries:
   id: 6934
   time: '2025-03-11T21:32:32.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1892
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Increased the accuracy-when-wielded of the BRDI-R25 rifle. As a
+        tradeoff, it has a longer cooldown between hyperbursts.
+  id: 6935
+  time: '2025-03-11T21:33:28.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1869
