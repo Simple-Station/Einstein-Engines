@@ -1,6 +1,14 @@
 
 - type: entity
-  parent: [ClothingShoesBootsMagAdv, BaseJetpack]
+  parent: ClothingShoesBootsChrono
+  id: ClothingShoesBootsChronoUnremoveable
+  suffix: Unremoveable
+  components:
+  - type: Unremoveable
+
+
+- type: entity
+  parent: [ClothingShoesBootsMagAdv, BaseJetpack, BaseCentcommContraband]
   id: ClothingShoesBootsMagDeathsquad
   name: deathsquad magboots
   description: Advanced magboots with an added jetpack functionality.
@@ -12,14 +20,15 @@
     sprite: _Goobstation/Clothing/Shoes/Boots/deathsquad.rsi
   - type: Item
     sprite: _Goobstation/Clothing/Shoes/Boots/deathsquad.rsi
-  - type: Magboots
   - type: ClothingSpeedModifier
     walkModifier: 1.10
     sprintModifier: 1.10
-  - type: NoSlip
   - type: Tag
     tags:
     - WhitelistChameleon
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepHeavySuit
   - type: GasTank
     outputPressure: 42.6
     air:

@@ -10,9 +10,13 @@ using Content.Server.Station.Components;
 using Content.Shared.CCVar;
 using Content.Shared.Roles;
 using Robust.Server.GameObjects;
+using Content.Shared.Station.Components;
 using Robust.Shared.Configuration;
 using Robust.Shared.ContentPack;
+using Robust.Shared.EntitySerialization;
+using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.GameObjects;
+using Robust.Shared.IoC;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
@@ -43,6 +47,11 @@ namespace Content.IntegrationTests.Tests
             "/Maps/Shuttles/emergency.yml",
             "/Maps/Shuttles/infiltrator.yml",
             "/Maps/_Goobstation/Shuttles/consul.yml" // Contains HEINOUS amounts of centcomm contraband. Obviously.
+            "/Maps/_Goobstation/Shuttles/retort_assault.yml", // ERT ships
+            "/Maps/_Goobstation/Shuttles/retort_medical.yml",
+            "/Maps/_Goobstation/Shuttles/retort_engineering.yml",
+            "/Maps/_Goobstation/Shuttles/retort_janitorial.yml",
+            "/Maps/_Goobstation/Shuttles/retort_cburn.yml",
         };
 
         private static readonly string[] GameMaps =
@@ -108,14 +117,58 @@ namespace Content.IntegrationTests.Tests
                     throw new Exception($"Failed to load map {mapFile}, was it saved as a map instead of a grid?", ex);
                 }
 
-                try
+                mapSystem.DeleteMap(mapId);
+            });
+            await server.WaitRunTicks(1);
+
+            await pair.CleanReturnAsync();
+        }
+
+        /// <summary>
+        /// Asserts that shuttles are loadable and have been saved as grids and not maps.
+        /// </summary>
+        [Test]
+        public async Task ShuttlesLoadableTest()
+        {
+            await using var pair = await PoolManager.GetServerClient();
+            var server = pair.Server;
+
+            var entManager = server.ResolveDependency<IEntityManager>();
+            var resMan = server.ResolveDependency<IResourceManager>();
+            var mapLoader = entManager.System<MapLoaderSystem>();
+            var mapSystem = entManager.System<SharedMapSystem>();
+            var cfg = server.ResolveDependency<IConfigurationManager>();
+            Assert.That(cfg.GetCVar(CCVars.GridFill), Is.False);
+
+            var shuttleFolder = new ResPath("/Maps/Shuttles");
+            var shuttles = resMan
+                .ContentFindFiles(shuttleFolder)
+                .Where(filePath =>
+                    filePath.Extension == "yml" && !filePath.Filename.StartsWith(".", StringComparison.Ordinal))
+                .ToArray();
+
+            await server.WaitPost(() =>
+            {
+                Assert.Multiple(() =>
                 {
-                    mapManager.DeleteMap(mapId);
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception($"Failed to delete map {mapFile}", ex);
-                }
+                    foreach (var path in shuttles)
+                    {
+                        mapSystem.CreateMap(out var mapId);
+                        try
+                        {
+                            Assert.That(mapLoader.TryLoadGrid(mapId, path, out _),
+                                $"Failed to load shuttle {path}, was it saved as a map instead of a grid?");
+                        }
+                        catch (Exception ex)
+                        {
+                            throw new Exception(
+                                $"Failed to load shuttle {path}, was it saved as a map instead of a grid?",
+                                ex);
+                        }
+
+                        mapSystem.DeleteMap(mapId);
+                    }
+                });
             });
             await server.WaitRunTicks(1);
 
@@ -132,7 +185,8 @@ namespace Content.IntegrationTests.Tests
             var mapFolder = new ResPath("/Maps");
             var maps = resourceManager
                 .ContentFindFiles(mapFolder)
-                .Where(filePath => filePath.Extension == "yml" && !filePath.Filename.StartsWith(".", StringComparison.Ordinal))
+                .Where(filePath =>
+                    filePath.Extension == "yml" && !filePath.Filename.StartsWith(".", StringComparison.Ordinal))
                 .ToArray();
 
             foreach (var map in maps)
@@ -266,16 +320,11 @@ namespace Content.IntegrationTests.Tests
 
                     jobs.ExceptWith(spawnPoints);
 
-                    foreach (var jobId in jobs)
-                    {
-                        var exists = protoManager.TryIndex<JobPrototype>(jobId, out var jobPrototype);
+                    spawnPoints = entManager.EntityQuery<ContainerSpawnPointComponent>()
+                        .Where(x => x.SpawnType is SpawnPointType.Job or SpawnPointType.Unset && x.Job != null)
+                        .Select(x => x.Job.Value);
 
-                        if (!exists)
-                            continue;
-
-                        if (jobPrototype.JobEntity != null)
-                            jobs.Remove(jobId);
-                    }
+                    jobs.ExceptWith(spawnPoints);
 
                     Assert.That(jobs, Is.Empty, $"There is no spawnpoints for {string.Join(", ", jobs)} on {mapProto}.");
                 }
@@ -295,7 +344,6 @@ namespace Content.IntegrationTests.Tests
         }
 
 
-
         private static int GetCountLateSpawn<T>(List<EntityUid> gridUids, IEntityManager entManager)
             where T : ISpawnPoint, IComponent
         {
@@ -307,8 +355,8 @@ namespace Content.IntegrationTests.Tests
                 var spawner = (ISpawnPoint) comp;
 
                 if (spawner.SpawnType is not SpawnPointType.LateJoin
-                || xform.GridUid == null
-                || !gridUids.Contains(xform.GridUid.Value))
+                    || xform.GridUid == null
+                    || !gridUids.Contains(xform.GridUid.Value))
                 {
                     continue;
                 }
@@ -358,7 +406,8 @@ namespace Content.IntegrationTests.Tests
             var mapFolder = new ResPath("/Maps");
             var maps = resourceManager
                 .ContentFindFiles(mapFolder)
-                .Where(filePath => filePath.Extension == "yml" && !filePath.Filename.StartsWith(".", StringComparison.Ordinal))
+                .Where(filePath =>
+                    filePath.Extension == "yml" && !filePath.Filename.StartsWith(".", StringComparison.Ordinal))
                 .ToArray();
 
             var mapNames = new List<string>();
