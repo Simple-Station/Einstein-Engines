@@ -78,15 +78,15 @@
       map: ["enum.GunVisualLayers.Mag"]
   - type: Wieldable
   - type: GunWieldBonus
-    minAngle: -19
-    maxAngle: -16
+    minAngle: -17
+    maxAngle: -22
   - type: Gun
     minAngle: 21
     maxAngle: 32
-    fireRate: 5 # 300rpm in Semi & Full Auto
-    burstFireRate: 20 # 1200rpm in Burst mode.
+    fireRate: 5  # 300rpm in Semi & Full Auto
+    burstFireRate: 20  # 1200rpm in Burst mode.
     shotsPerBurst: 5
-    burstCooldown: 0.8
+    burstCooldown: 1.1
     cameraRecoilScalar: 0.5
     selectedMode: Burst
     soundGunshot:
