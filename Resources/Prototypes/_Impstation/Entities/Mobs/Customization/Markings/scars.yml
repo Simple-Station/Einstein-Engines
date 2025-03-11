@@ -82,7 +82,7 @@
   id: SmileScars
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Human, Oni, SlimePerson, Tajaran, Felinid, Arachne]
+  speciesRestriction: [Human, Oni, SlimePerson, Tajaran, Felinid, Arachne, IPC]
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
@@ -92,7 +92,7 @@
   id: HeadTwisting
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Human, Oni, SlimePerson, Tajaran, Felinid, Arachne]
+  speciesRestriction: [Human, Oni, SlimePerson, Tajaran, Felinid, Arachne, IPC]
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
@@ -102,7 +102,7 @@
   id: HeadTwistingFlipped
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Human, Oni, SlimePerson, Tajaran, Felinid, Arachne]
+  speciesRestriction: [Human, Oni, SlimePerson, Tajaran, Felinid, Arachne, IPC]
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
