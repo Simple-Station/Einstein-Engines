@@ -160,26 +160,6 @@ public sealed class ModSuitSystem : EntitySystem
         }
 
         UpdateModUi(modSuit);
-
-        var attachedClothings = modSuit.Comp.ClothingUids;
-        if (modComp.Slot == "MODcore")
-        {
-            EntityManager.RemoveComponents(removed, modComp.Components);
-            return;
-        }
-
-        foreach (var attached in attachedClothings
-                     .Where(attached => modSuit.Comp.Container!.Contains(attached.Key))
-                     .Where(attached => attached.Value == modComp.Slot))
-        {
-            EntityManager.RemoveComponents(attached.Key, modComp.Components);
-            if (modComp.RemoveComponents != null)
-            {
-                EntityManager.AddComponents(attached.Key, modComp.RemoveComponents);
-            }
-
-            break;
-        }
     }
 
     private void OnPanelToggled(Entity<ModSuitComponent> modSuit, ref PanelChangedEvent args)
@@ -219,7 +199,9 @@ public sealed class ModSuitSystem : EntitySystem
             var spawned = Spawn(prototype.Value, xform.Coordinates);
             var attachedClothing = EnsureComp<ModAttachedClothingComponent>(spawned);
 
+            attachedClothing.Slot = prototype.Key;
             attachedClothing.AttachedUid = modSuit;
+
             EnsureComp<ContainerManagerComponent>(spawned);
 
             comp.ClothingUids.Add(spawned, prototype.Key);
@@ -430,6 +412,37 @@ public sealed class ModSuitSystem : EntitySystem
 
         var state = new ModSuitBuiState(0f, modSuit.Comp.CurrentComplexity, false, modules);
         _uiSystem.SetUiState(modSuit.Owner, ModSuitUiKey.Key, state);
+    }
+
+    private void ToggleModule(Entity<ModSuitComponent> modSuit, Entity<ModSuitModComponent> module)
+    {
+        module.Comp.Toggled = !module.Comp.Toggled;
+        if (module.Comp.Toggled)
+        {
+            var attachedClothings = modSuit.Comp.ClothingUids;
+            if (module.Comp.Slot == "MODcore")
+            {
+                EntityManager.RemoveComponents(modSuit, module.Comp.Components);
+                return;
+            }
+
+            foreach (var attached in attachedClothings
+                         .Where(attached => modSuit.Comp.Container!.Contains(attached.Key))
+                         .Where(attached => attached.Value == module.Comp.Slot))
+            {
+                EntityManager.RemoveComponents(attached.Key, module.Comp.Components);
+                if (module.Comp.RemoveComponents != null)
+                {
+                    EntityManager.AddComponents(attached.Key, module.Comp.RemoveComponents);
+                }
+
+                break;
+            }
+        }
+        else
+        {
+
+        }
     }
 
     /// <summary>

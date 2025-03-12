@@ -9,7 +9,7 @@ public sealed partial class ModSuitModuleControl : PanelContainer
 {
     public Action? OnModuleChosen;
 
-    public ModSuitModuleControl(EntityUid entity, IEntityManager entityManager, int complexity, bool innate)
+    public ModSuitModuleControl(EntityUid entity, IEntityManager entityManager, int complexity, bool innate, EntityUid connectedPiece)
     {
         RobustXamlLoader.Load(this);
 
@@ -17,6 +17,8 @@ public sealed partial class ModSuitModuleControl : PanelContainer
         ModuleName.Text = innate
             ? Loc.GetString("mod-suit-module-innate") + " " + entityManager.GetComponent<MetaDataComponent>(entity).EntityName
             : Loc.GetString("mod-suit-module-inserted") + " " + entityManager.GetComponent<MetaDataComponent>(entity).EntityName;
+
+        AttachedPiece.Text = Loc.GetString("mod-suit-attached-piece", ("attached", connectedPiece));
 
         ModuleData.Visible = !innate;
         ModuleComplexity.Text = Loc.GetString("mod-suit-module-complexity", ("complexity", complexity));

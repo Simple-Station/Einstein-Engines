@@ -22,6 +22,12 @@ public sealed partial class ModAttachedClothingComponent : Component
     public EntityUid AttachedUid;
 
     /// <summary>
+    ///     The slot used in the mod suit system (kinda)
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public string? Slot;
+
+    /// <summary>
     ///     Container ID for clothing that will be replaced with this one
     /// </summary>
     [DataField, AutoNetworkedField]

@@ -39,4 +39,5 @@ public sealed partial class ModSuitModComponent : Component
 
     // Used in internal code. do not modify
     public bool Innate = false;
+    public bool Toggled = false;
 }

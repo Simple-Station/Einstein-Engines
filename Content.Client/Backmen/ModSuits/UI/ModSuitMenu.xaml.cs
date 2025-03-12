@@ -81,7 +81,25 @@ public sealed partial class ModSuitMenu : FancyWindow
             var ent = _entity.GetEntity(module.Item1);
             var moduleComponent = _entity.GetComponent<ModSuitModComponent>(ent);
 
-            var control = new ModSuitModuleControl(ent, _entity, moduleComponent.ModComplexity, module.Item2);
+            var piece = Entity;
+            if (_appearanceSystem.TryGetData<ModSuitVisualizerGroupData>(Entity,
+                    ModSuitVisualizerKeys.ClothingPieces,
+                    out var attachedPieces))
+            {
+                foreach (var attachedEnt in attachedPieces.PieceList.Select(_entity.GetEntity))
+                {
+                    if (!_entity.TryGetComponent<ModAttachedClothingComponent>(attachedEnt, out var attachedComp))
+                        continue;
+
+                    if (moduleComponent.Slot != attachedComp.Slot)
+                        continue;
+
+                    piece = attachedEnt;
+                    break;
+                }
+            }
+
+            var control = new ModSuitModuleControl(ent, _entity, moduleComponent.ModComplexity, module.Item2, piece);
             if (!module.Item2)
             {
                 control.OnModuleChosen += () =>
@@ -106,8 +124,6 @@ public sealed partial class ModSuitMenu : FancyWindow
 
         CurrentModuleView.SetEntity(PreviewEntity);
         ChosenModuleName.Text = _entity.GetComponent<MetaDataComponent>(module).EntityName;
-
-        var modComp = _entity.GetComponent<ModSuitModComponent>(module);
 
         ChosenPassiveConsumption.Text = Loc.GetString("mod-suit-module-passive-consumption"/*, ("consumption", passiveConsumption)*/);
         ChosenActiveConsumption.Text = Loc.GetString("mod-suit-module-active-consumption"/*, ("consumption", activeConsumption)*/);

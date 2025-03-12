@@ -17,4 +17,6 @@ mod-suit-ui-modules-label = MOD Suit Modules
 mod-suit-module-innate = Innate Module:
 mod-suit-module-inserted = Inserted Module:
 
+mod-suit-attached-piece = Attached to: {$attached}
+
 mod-suit-complexity-counter = MOD Suit Complexity: {$actual}/{$max}
