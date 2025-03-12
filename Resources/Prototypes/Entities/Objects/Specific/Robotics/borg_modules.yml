@@ -286,6 +286,20 @@
     - SheetGlassLingering0
     - PartRodMetalLingering0
     - FloorTileItemSteelLingering0
+    # Frontier: droppable borg items
+    droppableItems:
+    - id: APCElectronics
+      whitelist:
+        components:
+        - Electronics
+        - MachineBoard
+    - id: CapacitorStockPart
+      whitelist:
+        components:
+        - StockPart
+    # End Frontier: droppable borg items
+  - type: BorgModuleIcon
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: construction-module }
 
 - type: entity
   id: BorgModuleRCD
@@ -420,10 +434,19 @@
   - type: ItemBorgModule
     items:
     - HandheldHealthAnalyzerUnpowered
-    - Beaker
-    - Beaker
-    - BorgDropper
+#    - Beaker # Frontier
+#    - Beaker # Frontier
+#    - BorgDropper # Frontier
     - BorgHypo
+    # Frontier: droppable borg items
+    droppableItems:
+    - id: Beaker
+      whitelist:
+        components:
+        - FitsInDispenser
+    # End Frontier: droppable borg items
+  - type: BorgModuleIcon
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: adv-diagnosis-module }
 
 # science modules
 # todo: if science ever gets their own custom robot, add more "sci" modules.
@@ -472,8 +495,17 @@
     - BooksBag
     - HandLabeler
     - Lighter
-    - DrinkShaker
-    - BorgDropper
+    # Frontier: droppable borg items
+    # - DrinkShaker
+    # - BorgDropper
+    droppableItems:
+    - id: DrinkShaker
+      whitelist:
+        components:
+        - FitsInDispenser
+    # End Frontier: droppable borg items
+  - type: BorgModuleIcon
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: service-module }
 
 - type: entity
   id: BorgModuleMusique
@@ -505,6 +537,15 @@
     - HydroponicsToolSpade
     - HydroponicsToolClippers
     - Bucket
+    # Frontier: droppable borg items
+    droppableItems:
+    - id: AppleSeeds
+      whitelist:
+        components:
+        - Seed
+    # End Frontier: droppable borg items
+  - type: BorgModuleIcon
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: gardening-module }
 
 - type: entity
   id: BorgModuleHarvesting
@@ -610,3 +651,64 @@
     - type: ItemBorgModule
       items:
         - SelfDestructSeq
+    - type: BorgModuleIcon
+      icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-martyr-module }
+
+# Shitmed Modules
+
+- type: entity
+  id: BorgModuleSurgery
+  parent: [ BaseBorgModuleMedical, BaseProviderBorgModule ]
+  name: surgery cyborg module
+  components:
+  - type: Sprite
+    layers:
+    - state: medical
+    - state: icon-surgery
+  - type: ItemBorgModule
+    items:
+    - Scalpel
+    - Drill
+    - Hemostat
+    - Retractor
+    - Cautery
+    - SawElectric
+    - BoneGel
+    # Frontier: droppable borg items
+    droppableItems:
+    - id: OrganHumanBrain
+      whitelist:
+        components:
+        - BodyPart
+        tags:
+        - Organ
+    # End Frontier: droppable borg items
+  - type: BorgModuleIcon
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: surgery-module }
+
+- type: entity
+  id: BorgModuleAdvancedSurgery
+  parent: [ BaseBorgModuleMedical, BaseProviderBorgModule ]
+  name: advanced surgery cyborg module
+  components:
+  - type: Sprite
+    layers:
+    - state: medical
+    - state: icon-advanced-surgery
+  - type: ItemBorgModule
+    items:
+    - EnergyScalpel
+    - EnergyCautery
+    - AdvancedRetractor
+    - BoneGel
+    # Frontier: droppable borg items
+    droppableItems:
+    - id: OrganHumanBrain
+      whitelist:
+        components:
+        - BodyPart
+        tags:
+        - Organ
+    # End Frontier: droppable borg items
+  - type: BorgModuleIcon
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: adv-surgery-module }
