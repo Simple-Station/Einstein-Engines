@@ -2418,7 +2418,7 @@
       inverted: true
       departments:
         - Command
-  
+
 - type: loadout
   id: ClothingUniformJumpsuitTacticool
   category: Uniform
@@ -2432,35 +2432,35 @@
     - !type:CharacterDepartmentRequirement
       inverted: true
       departments:
-        - Command 
+        - Command
 
 - type: loadout
   id: ClothingUniformJumpskirtTacticool
   category: Uniform
   cost: 2
   exclusive: true
-  items: ClothingUniformJumpskirtTacticool
-    - 
+  items:
+    - ClothingUniformJumpskirtTacticool
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutUniformsCivilian
     - !type:CharacterDepartmentRequirement
       inverted: true
       departments:
-        - Command 
+        - Command
 
 - type: loadout
   id: ClothingUniformJumpskirtTacticalMaid
   category: Uniform
   cost: 2
   exclusive: true
-  items: ClothingUniformJumpskirtTacticalMaid
-    - 
+  items:
+    - ClothingUniformJumpskirtTacticalMaid
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutUniformsCivilian
     - !type:CharacterDepartmentRequirement
       inverted: true
       departments:
-        - Command 
+        - Command
 
