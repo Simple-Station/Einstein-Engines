@@ -135,12 +135,10 @@
     templateId: borgShort
   - type: SiliconLawProvider # Delta-V - Adds custom lawset for Engineering Cyborg
     laws: Engineer
-  - !type:AddComponentSpecial
-      components:
-        - type: ShowHealthBars
-          damageContainers:
-          - Silicon
-          - Inorganic
+  - type: ShowHealthBars
+    damageContainers:
+    - Silicon
+    - Inorganic
 
 - type: entity
   id: BorgChassisJanitor
@@ -275,14 +273,12 @@
     interactFailureString: petting-failure-medical-cyborg
     interactSuccessSound:
       path: /Audio/Ambience/Objects/periodic_beep.ogg
-  - !type:AddComponentSpecial
-      components:
-        - type: ShowHealthBars
-          damageContainers:
-          - Biological
-        - type: ShowHealthIcons
-          damageContainers:
-          - Biological
+  - type: ShowHealthBars
+    damageContainers:
+    - Biological
+  - type: ShowHealthIcons
+    damageContainers:
+    - Biological
 
 - type: entity
   id: BorgChassisService
