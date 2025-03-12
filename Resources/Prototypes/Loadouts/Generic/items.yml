@@ -890,3 +890,29 @@
     - !type:CharacterDepartmentRequirement
        departments:
          - Command
+
+- type: loadout
+  id: PlushieSharkBlue
+  category: Items
+  Cost: 1
+  canBeHeirloom: true 
+  items: 
+    - PlushieSharkBlue
+  
+- type: loadout
+  id: PlushieSharkPink
+  category: Items
+  Cost: 1
+  canBeHeirloom: true 
+  items: 
+    - PlushieSharkPink
+
+- type: loadout
+  id: PlushieSharkGrey
+  category: Items
+  Cost: 1
+  canBeHeirloom: true 
+  items: 
+    - PlushieSharkGrey
+
+
