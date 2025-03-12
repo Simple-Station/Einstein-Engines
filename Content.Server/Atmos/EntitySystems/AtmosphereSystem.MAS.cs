@@ -12,7 +12,7 @@ public sealed partial class AtmosphereSystem
     /// <summary>
     ///     The standard issue "Search Pattern" used by the Matrix Airflow System.
     /// </summary>
-    private List<(int, int, AtmosDirection)> MASSearchPattern = new List<(int, int, AtmosDirection)>
+    private readonly List<(int, int, AtmosDirection)> MASSearchPattern = new List<(int, int, AtmosDirection)>
     {
         (-1,1, AtmosDirection.SouthEast),  (0,1, AtmosDirection.South),  (1,1, AtmosDirection.SouthWest),
         (-1,0, AtmosDirection.East),                                      (1,0, AtmosDirection.West),
