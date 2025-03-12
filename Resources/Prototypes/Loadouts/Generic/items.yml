@@ -923,7 +923,6 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutPlushie
-
 - type: loadout
   id: PlushieLizard
   category: Items
