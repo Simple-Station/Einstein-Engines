@@ -2,14 +2,16 @@
 - type: entity
   id: PlayerBorgMedical
   parent: BorgChassisMedical
-  suffix: Diagnosis, Treatment
+  suffix: Treatment, AdvancedTreatment, Defibrillator, AdvancedSurgery
   components:
   - type: ContainerFill
     containers:
       borg_brain:
       - PositronicBrain
       borg_module:
-      - BorgModuleDiagnosis
+      - BorgModuleAdvancedTreatment
+      - BorgModuleDefibrillator
+      - BorgModuleAdvancedSurgery
       - BorgModuleTreatment
   - type: ItemSlots
     slots:
