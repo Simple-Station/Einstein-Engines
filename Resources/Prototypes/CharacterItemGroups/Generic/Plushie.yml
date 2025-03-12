@@ -1,5 +1,5 @@
 - type: characterItemGroup
-  id: loadoutPlushie
+  id: LoadoutPlushie
   maxItems: 3
   items:
     - type: loadout
