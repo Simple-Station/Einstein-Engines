@@ -12717,3 +12717,12 @@ Entries:
   id: 6938
   time: '2025-03-11T22:58:06.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1928
+- author: Greenwall
+  changes:
+    - type: Add
+      message: >-
+        Magma Hand! Sprite by Greenwall, YML by Timfa. Bring a water gun filled
+        with ice, and you'll be fine!
+  id: 6939
+  time: '2025-03-12T00:17:57.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1927
