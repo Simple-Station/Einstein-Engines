@@ -7,7 +7,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 35
+        Piercing: 25
 
 - type: entity
   id: BulletMagnumPractice
@@ -43,8 +43,8 @@
     damage:
       types:
         Blunt: 3
-        Heat: 32
-        
+        Heat: 22
+
 - type: entity
   id: BulletMagnumAP
   name: bullet (.45 magnum armor-piercing)
@@ -54,7 +54,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 26 # 20% decrease
+        Piercing: 25
     ignoreResistances: true
 
 - type: entity
@@ -67,4 +67,4 @@
     damage:
       types:
         Radiation: 15
-        Piercing: 20
+        Piercing: 10

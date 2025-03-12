@@ -120,6 +120,20 @@
     spawns:
     - MobCarpDungeon
 
+- type: entity
+  id: LavalandTendrilMagmaHand
+  parent: LavalandTendrilBase
+  name: tendril
+  description: A huge structure.
+  suffix: MagmaHand
+  components:
+  - type: Tendril
+    maxSpawns: 4
+    mobsToDefeat: 8
+    spawnDelay: 6.0
+    spawns:
+    - MobMagmaHand
+
 # Tendril Random Spawners
 - type: entityTable
   id: LavalandTendrils
@@ -130,6 +144,7 @@
       children:
       - id: LavalandTendrilMagmawingWatcher
       - id: LavalandTendrilSpaceCarp
+      - id: LavalandTendrilMagmaHand
     - !type:GroupSelector
       weight: 30
       children:

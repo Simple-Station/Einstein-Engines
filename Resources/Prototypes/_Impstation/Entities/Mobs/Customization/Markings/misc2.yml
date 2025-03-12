@@ -1,0 +1,156 @@
+- type: marking
+  id: HumanoidEyebags
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran, IPC]
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/markingsbundle2.rsi
+    state: eyebags
+
+- type: marking
+  id: HumanoidAbs
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran, IPC]
+  followSkinColor: true
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/markingsbundle2.rsi
+    state: muscular
+
+- type: marking
+  id: EyebrowsBig
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran, IPC]
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/markingsbundle2.rsi
+    state: eyebrowsthick
+
+- type: marking
+  id: EyebrowsBigger
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran, IPC]
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/markingsbundle2.rsi
+    state: eyebrowsultra
+
+- type: marking
+  id: EyebrowsUnibrow
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran, IPC]
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/markingsbundle2.rsi
+    state: eyebrowsunibrow
+
+- type: marking
+  id: AbdomenBasic
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Arachnid]
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/markingsbundle2.rsi
+    state: abdomenbasic1
+  - sprite: _Impstation/Mobs/Customization/markingsbundle2.rsi
+    state: abdomenbasic2
+
+- type: marking
+  id: CreepyArms
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Arachnid]
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/markingsbundle2.rsi
+    state: creepy
+
+- type: marking
+  id: AbdomenWidow
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Arachnid]
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/markingsbundle2.rsi
+    state: widow1
+  - sprite: _Impstation/Mobs/Customization/markingsbundle2.rsi
+    state: widow2
+
+- type: marking
+  id: ScarTalons
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/markingsbundle2.rsi
+    state: lizardtalonscar
+
+- type: marking
+  id: ScarSlash
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/markingsbundle2.rsi
+    state: lizardsnoutscar
+
+- type: marking
+  id: BadMoltHead
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/markingsbundle2.rsi
+    state: badmolthead
+
+- type: marking
+  id: BadMoltChest
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/markingsbundle2.rsi
+    state: badmoltchest
+
+- type: marking
+  id: BadMoltLArm
+  bodyPart: LArm
+  markingCategory: LeftArm
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/markingsbundle2.rsi
+    state: badmoltlarm
+
+- type: marking
+  id: BadMoltRArm
+  bodyPart: RArm
+  markingCategory: RightArm
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/markingsbundle2.rsi
+    state: badmoltrarm
+
+- type: marking
+  id: TailGecko
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/markingsbundle2.rsi
+    state: tail_gecko1
+  - sprite: _Impstation/Mobs/Customization/markingsbundle2.rsi
+    state: tail_gecko2
+
+- type: marking
+  id: TailSnailLizard
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/markingsbundle2.rsi
+    state: tail_snizard1
+  - sprite: _Impstation/Mobs/Customization/markingsbundle2.rsi
+    state: tail_snizard2
+  - sprite: _Impstation/Mobs/Customization/markingsbundle2.rsi
+    state: tail_snizard3
+
+
