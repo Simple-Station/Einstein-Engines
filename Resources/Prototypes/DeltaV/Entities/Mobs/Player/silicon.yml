@@ -2,7 +2,7 @@
 - type: entity
   id: PlayerBorgMedical
   parent: BorgChassisMedical
-  suffix: Treatment, AdvancedTreatment, Defibrillator, AdvancedSurgery
+  suffix: Full Suite
   components:
   - type: ContainerFill
     containers:
