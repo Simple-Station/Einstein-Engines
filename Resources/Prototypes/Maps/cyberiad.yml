@@ -6,7 +6,7 @@
   maxPlayers: 85
   stations:
     Cyberiad:
-      stationProto: StandardNanotrasenStation
+      stationProto: StandardNanotrasenStationCargoOnly
       components:
         - type: StationNameSetup
           mapNameTemplate: 'NSS Cyberiad {1}'
