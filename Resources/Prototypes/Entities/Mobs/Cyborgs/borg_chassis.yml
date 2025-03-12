@@ -118,10 +118,6 @@
   - type: Construction
     node: engineer
   - type: IntrinsicRadioTransmitter
-  - type: ShowHealthBars
-    damageContainers:
-    - Inorganic
-    - Silicon
     channels:
     - Engineering
     - Binary
@@ -139,6 +135,12 @@
     templateId: borgShort
   - type: SiliconLawProvider # Delta-V - Adds custom lawset for Engineering Cyborg
     laws: Engineer
+  - !type:AddComponentSpecial
+      components:
+        - type: ShowHealthBars
+          damageContainers:
+          - Silicon
+          - Inorganic
 
 - type: entity
   id: BorgChassisJanitor
@@ -268,17 +270,19 @@
   - type: CPRTraining
   - type: SurgerySpeedModifier
     speedModifier: 1.75
-  - type: ShowHealthBars
-    damageContainers:
-    - Biological
-    - type: ShowHealthIcons
-    damageContainers:
-    - Biological
   - type: InteractionPopup
     interactSuccessString: petting-success-medical-cyborg
     interactFailureString: petting-failure-medical-cyborg
     interactSuccessSound:
       path: /Audio/Ambience/Objects/periodic_beep.ogg
+  - !type:AddComponentSpecial
+      components:
+        - type: ShowHealthBars
+          damageContainers:
+          - Biological
+        - type: ShowHealthIcons
+          damageContainers:
+          - Biological
 
 - type: entity
   id: BorgChassisService
