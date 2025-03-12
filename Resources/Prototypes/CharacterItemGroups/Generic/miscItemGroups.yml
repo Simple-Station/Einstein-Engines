@@ -143,3 +143,16 @@
       id: LoadoutItemBlackDeck
     - type: loadout
       id: LoadoutItemNTDeck
+
+- type: characterItemGroup
+  id: LoadoutPlushie
+  maxItems: 3
+  items:
+    - type: loadout
+      id: PlushieSharkBlue
+    - type: loadout
+      id: PlushieSharkGrey
+    - type: loadout
+      id: PlushieSharkPink
+    - type:
+      id: PlushieLizard
