@@ -266,6 +266,10 @@
   - type: Sanitized # Shitmed
   - type: SolutionScanner
   - type: CPRTraining
+  - type: MovementIgnoreGravity
+  - type: SpeedModifiedByContactModifier
+    walkModifierEffectiveness: 0
+    sprintModifierEffectiveness: 0
   - type: SurgerySpeedModifier
     speedModifier: 1.75
   - type: InteractionPopup
