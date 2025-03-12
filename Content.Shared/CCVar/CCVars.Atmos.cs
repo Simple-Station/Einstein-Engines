@@ -21,7 +21,7 @@ public sealed partial class CCVars
     ///     A direct multiplier on how violent space wind is.
     /// </summary>
     public static readonly CVarDef<float> SpaceWindStrengthMultiplier =
-        CVarDef.Create("atmos.space_wind_strength_multiplier", 3f, CVar.SERVERONLY);
+        CVarDef.Create("atmos.space_wind_strength_multiplier", 1f, CVar.SERVERONLY);
 
     /// <summary>
     ///     The maximum velocity (not force) that may be applied to an object by atmospheric pressure differences.

@@ -1,6 +1,7 @@
 using Content.Server.Atmos.Components;
 using System.Numerics;
 using Robust.Shared.Map.Components;
+using Content.Shared.Atmos;
 
 namespace Content.Server.Atmos.EntitySystems;
 
@@ -11,11 +12,11 @@ public sealed partial class AtmosphereSystem
     /// <summary>
     ///     The standard issue "Search Pattern" used by the Matrix Airflow System.
     /// </summary>
-    private List<(int, int)> MASSearchPattern = new List<(int, int)>
+    private List<(int, int, AtmosDirection)> MASSearchPattern = new List<(int, int, AtmosDirection)>
     {
-        (-1,1),  (0,1),  (1,1),
-        (-1,0),          (1,0),
-        (-1,-1), (0,-1), (1,-1)
+        (-1,1, AtmosDirection.NorthWest),  (0,1, AtmosDirection.North),  (1,1, AtmosDirection.NorthEast),
+        (-1,0, AtmosDirection.West),                                      (1,0, AtmosDirection.East),
+        (-1,-1, AtmosDirection.SouthWest), (0,-1, AtmosDirection.South), (1,-1, AtmosDirection.SouthEast)
     };
 # pragma warning restore IDE1006
 
@@ -33,11 +34,12 @@ public sealed partial class AtmosphereSystem
             return new Vector2(0, 0);
 
         var pressureVector = new Vector2(0, 0);
-        foreach (var (x, y) in MASSearchPattern)
+        foreach (var (x, y, dir) in MASSearchPattern)
         {
             if (!gridAtmos.Tiles.TryGetValue(tile.GridIndices + (x, y), out var tileAtmosphere)
                 || tileAtmosphere.Air is null
-                || tileAtmosphere.PressureDirection is Shared.Atmos.AtmosDirection.Invalid)
+                || tileAtmosphere.AirtightData.BlockedDirections is AtmosDirection.All
+                || tileAtmosphere.AirtightData.BlockedDirections.HasFlag(dir))
                 continue;
 
             var pressureDiff = tile.Air!.Pressure - tileAtmosphere.Air.Pressure;

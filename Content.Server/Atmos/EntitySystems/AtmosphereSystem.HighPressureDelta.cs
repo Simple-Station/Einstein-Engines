@@ -184,7 +184,7 @@ public sealed partial class AtmosphereSystem
 
         _sharedStunSystem.TryKnockdown(uid, TimeSpan.FromSeconds(SpaceWindKnockdownTime), false);
         _throwing.TryThrow(uid, -velocity, physics, xform, projectileQuery,
-            pressureVector.Length() * frameTime * 2, doSpin: physics.AngularVelocity < SpaceWindMaxAngularVelocity);
+            pressureVector.Length(), doSpin: physics.AngularVelocity < SpaceWindMaxAngularVelocity);
         component.LastHighPressureMovementAirCycle = cycle;
     }
 }
