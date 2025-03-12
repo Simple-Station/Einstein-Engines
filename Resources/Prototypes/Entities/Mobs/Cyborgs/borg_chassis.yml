@@ -271,7 +271,7 @@
     walkModifierEffectiveness: 0
     sprintModifierEffectiveness: 0
   - type: SurgerySpeedModifier
-    speedModifier: 1.75
+    speedModifier: 1.5
   - type: InteractionPopup
     interactSuccessString: petting-success-medical-cyborg
     interactFailureString: petting-failure-medical-cyborg
