@@ -900,7 +900,7 @@
     - PlushieSharkBlue
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: loadoutPlushie
+      group: LoadoutPlushie
 
 - type: loadout
   id: PlushieSharkPink
@@ -911,7 +911,7 @@
     - PlushieSharkPink
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: loadoutPlushie
+      group: LoadoutPlushie
 
 - type: loadout
   id: PlushieSharkGrey
@@ -922,7 +922,7 @@
     - PlushieSharkGrey
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: loadoutPlushie
+      group: LoadoutPlushie
 
 - type: loadout
   id: PlushieLizard
@@ -933,7 +933,7 @@
     - PlushieLizard
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: loadoutPlushie
+      group: LoadoutPlushie
 
 - type: loadout
   id: PlushieArachind
