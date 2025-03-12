@@ -14,9 +14,9 @@ public sealed partial class AtmosphereSystem
     /// </summary>
     private List<(int, int, AtmosDirection)> MASSearchPattern = new List<(int, int, AtmosDirection)>
     {
-        (-1,1, AtmosDirection.NorthWest),  (0,1, AtmosDirection.North),  (1,1, AtmosDirection.NorthEast),
-        (-1,0, AtmosDirection.West),                                      (1,0, AtmosDirection.East),
-        (-1,-1, AtmosDirection.SouthWest), (0,-1, AtmosDirection.South), (1,-1, AtmosDirection.SouthEast)
+        (-1,1, AtmosDirection.SouthEast),  (0,1, AtmosDirection.South),  (1,1, AtmosDirection.SouthWest),
+        (-1,0, AtmosDirection.East),                                      (1,0, AtmosDirection.West),
+        (-1,-1, AtmosDirection.NorthEast), (0,-1, AtmosDirection.North), (1,-1, AtmosDirection.NorthWest)
     };
 # pragma warning restore IDE1006
 
