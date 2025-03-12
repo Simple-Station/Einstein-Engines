@@ -118,6 +118,10 @@
   - type: Construction
     node: engineer
   - type: IntrinsicRadioTransmitter
+  - type: ShowHealthBars
+    damageContainers:
+    - Inorganic
+    - Silicon
     channels:
     - Engineering
     - Binary
@@ -261,6 +265,15 @@
   - type: SurgeryTarget # Shitmed
   - type: Sanitized # Shitmed
   - type: SolutionScanner
+  - type: CPRTraining
+  - type: SurgerySpeedModifier
+    speedModifier: 1.75
+  - type: ShowHealthBars
+    damageContainers:
+    - Biological
+    - type: ShowHealthIcons
+    damageContainers:
+    - Biological
   - type: InteractionPopup
     interactSuccessString: petting-success-medical-cyborg
     interactFailureString: petting-failure-medical-cyborg
