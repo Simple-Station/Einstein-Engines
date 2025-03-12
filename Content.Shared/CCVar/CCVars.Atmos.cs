@@ -17,6 +17,9 @@ public sealed partial class CCVars
     public static readonly CVarDef<bool> SpaceWind =
         CVarDef.Create("atmos.space_wind", true, CVar.SERVERONLY);
 
+    /// <summary>
+    ///     A direct multiplier on how violent space wind is.
+    /// </summary>
     public static readonly CVarDef<float> SpaceWindStrengthMultiplier =
         CVarDef.Create("atmos.space_wind_strength_multiplier", 3f, CVar.SERVERONLY);
 
@@ -27,6 +30,9 @@ public sealed partial class CCVars
     public static readonly CVarDef<float> SpaceWindMaxVelocity =
         CVarDef.Create("atmos.space_wind_max_velocity", 30f, CVar.SERVERONLY);
 
+    /// <summary>
+    ///     The maximum angular velocity that space wind can spin objects at while throwing them. This one is mostly for fun.
+    /// </summary>
     public static readonly CVarDef<float> SpaceWindMaxAngularVelocity =
         CVarDef.Create("atmos.space_wind_max_angular_velocity", 3f, CVar.SERVERONLY);
 
