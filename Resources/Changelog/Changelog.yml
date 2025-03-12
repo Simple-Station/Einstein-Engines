@@ -12726,3 +12726,16 @@ Entries:
   id: 6939
   time: '2025-03-12T00:17:57.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1927
+- author: EctoplasmIsGood
+  changes:
+    - type: Remove
+      message: Removes flare shielding
+    - type: Tweak
+      message: Adds eye protection to diagnostics hud
+    - type: Tweak
+      message: Adds chemical analyser to med hud
+    - type: Tweak
+      message: Increases med hud and diagnostics hud costs to 2
+  id: 6940
+  time: '2025-03-12T07:09:01.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1876
