@@ -1007,7 +1007,7 @@ entities:
           -2,-9:
             0: 8191
           -1,-7:
-            0: 62459
+            0: 64507
           -1,-6:
             0: 30219
           -1,-8:
@@ -1024,9 +1024,7 @@ entities:
             3: 128
             4: 32768
           -8,-9:
-            0: 13119
-            5: 64
-            6: 128
+            0: 13311
             3: 32768
           -9,-8:
             0: 63624
@@ -1204,36 +1202,6 @@ entities:
           - 0
           - 0
           - 0
-        - volume: 2500
-          temperature: 293.15
-          moles:
-          - 23.57087
-          - 88.67137
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-        - volume: 2500
-          temperature: 293.14975
-          moles:
-          - 20.078888
-          - 75.53487
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
         chunkSize: 4
     - type: GasTileOverlay
     - type: RadiationGridResistance
@@ -1252,6 +1220,7 @@ entities:
     - type: MovedGrids
     - type: Broadphase
     - type: OccluderTree
+    - type: LoadedMap
 - proto: ActionToggleInternals
   entities:
   - uid: 4
@@ -2382,7 +2351,7 @@ entities:
       pos: -8.5,-14.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -2560.0535
+      secondsUntilStateChange: -2645.8848
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -24024,6 +23993,13 @@ entities:
     - type: Transform
       pos: -27.5,-1.5
       parent: 2
+- proto: SpawnMobCleanBot
+  entities:
+  - uid: 4002
+    components:
+    - type: Transform
+      pos: -17.5,-7.5
+      parent: 2
 - proto: SpawnMobCorgi
   entities:
   - uid: 3320
@@ -24045,12 +24021,26 @@ entities:
     - type: Transform
       pos: -9.5,0.5
       parent: 2
+- proto: SpawnMobMedibot
+  entities:
+  - uid: 4306
+    components:
+    - type: Transform
+      pos: -25.5,-4.5
+      parent: 2
 - proto: SpawnMobMonkeyPunpun
   entities:
   - uid: 3323
     components:
     - type: Transform
       pos: -19.5,9.5
+      parent: 2
+- proto: SpawnMobPlantbot
+  entities:
+  - uid: 4308
+    components:
+    - type: Transform
+      pos: -30.5,2.5
       parent: 2
 - proto: SpawnMobPossumMorty
   entities:
