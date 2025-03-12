@@ -1,12 +1,13 @@
 using System.Numerics;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.FixedPoint;
+using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Shared.FootPrint;
 
-[RegisterComponent]
+[RegisterComponent, NetworkedComponent]
 public sealed partial class FootPrintsComponent : Component
 {
     [DataField]

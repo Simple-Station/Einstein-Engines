@@ -31,7 +31,8 @@ namespace Content.Server.Atmos.EntitySystems
         private void EqualizePressureInZone(
             Entity<GridAtmosphereComponent, GasTileOverlayComponent, MapGridComponent, TransformComponent> ent,
             TileAtmosphere tile,
-            int cycleNum)
+            int cycleNum,
+            float frameTime)
         {
             if (tile.Air == null || (tile.MonstermosInfo.LastCycle >= cycleNum))
                 return; // Already done.
@@ -95,7 +96,7 @@ namespace Content.Server.Atmos.EntitySystems
                     {
                         // Looks like someone opened an airlock to space!
 
-                        ExplosivelyDepressurize(ent, tile, cycleNum);
+                        ExplosivelyDepressurize(ent, tile, cycleNum, frameTime);
                         return;
                     }
                 }
@@ -139,7 +140,7 @@ namespace Content.Server.Atmos.EntitySystems
             var logN = MathF.Log2(tileCount);
 
             // Optimization - try to spread gases using an O(n log n) algorithm that has a chance of not working first to avoid O(n^2)
-            if (!MonstermosUseExpensiveAirflow && giverTilesLength > logN && takerTilesLength > logN)
+            if (giverTilesLength > logN && takerTilesLength > logN)
             {
                 // Even if it fails, it will speed up the next part.
                 Array.Sort(_equalizeTiles, 0, tileCount, _monstermosComparer);
@@ -375,7 +376,8 @@ namespace Content.Server.Atmos.EntitySystems
         private void ExplosivelyDepressurize(
             Entity<GridAtmosphereComponent, GasTileOverlayComponent, MapGridComponent, TransformComponent> ent,
             TileAtmosphere tile,
-            int cycleNum)
+            int cycleNum,
+            float frameTime)
         {
             // Check if explosive depressurization is enabled and if the tile is valid.
             if (!MonstermosDepressurization || tile.Air == null)
@@ -500,20 +502,19 @@ namespace Content.Server.Atmos.EntitySystems
                     continue;
                 }
                 var sum = otherTile.Air.TotalMoles;
-                if (SpacingEscapeRatio < 1f)
+
+                sum *= frameTime;
+                if (sum < SpacingMinGas)
                 {
-                    sum *= SpacingEscapeRatio;
-                    if (sum < SpacingMinGas)
-                    {
-                        // Boost the last bit of air draining from the tile.
-                        sum = Math.Min(SpacingMinGas, otherTile.Air.TotalMoles);
-                    }
-                    if (sum + otherTile.MonstermosInfo.CurrentTransferAmount > SpacingMaxWind)
-                    {
-                        // Limit the flow of air out of tiles which have air flowing into them from elsewhere.
-                        sum = Math.Max(SpacingMinGas, SpacingMaxWind - otherTile.MonstermosInfo.CurrentTransferAmount);
-                    }
+                    // Boost the last bit of air draining from the tile.
+                    sum = Math.Min(SpacingMinGas, otherTile.Air.TotalMoles);
                 }
+                if (sum + otherTile.MonstermosInfo.CurrentTransferAmount > SpacingMaxWind)
+                {
+                    // Limit the flow of air out of tiles which have air flowing into them from elsewhere.
+                    sum = Math.Max(SpacingMinGas, SpacingMaxWind - otherTile.MonstermosInfo.CurrentTransferAmount);
+                }
+
                 totalMolesRemoved += sum;
                 otherTile.MonstermosInfo.CurrentTransferAmount += sum;
                 otherTile2.MonstermosInfo.CurrentTransferAmount += otherTile.MonstermosInfo.CurrentTransferAmount;

@@ -21,7 +21,7 @@ public sealed partial class StaminaComponent : Component
     /// How much stamina reduces per second.
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite), DataField, AutoNetworkedField]
-    public float Decay = 3f;
+    public float Decay = 5f; // Stun meta
 
     /// <summary>
     /// How much time after receiving damage until stamina starts decreasing.
@@ -52,7 +52,7 @@ public sealed partial class StaminaComponent : Component
     /// How long will this mob be stunned for?
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite), DataField]
-    public TimeSpan StunTime = TimeSpan.FromSeconds(6);
+    public TimeSpan StunTime = TimeSpan.FromSeconds(5); //Stunmeta
 
     /// <summary>
     /// To avoid continuously updating our data we track the last time we updated so we can extrapolate our current stamina.
@@ -60,18 +60,6 @@ public sealed partial class StaminaComponent : Component
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoNetworkedField]
     [AutoPausedField]
     public TimeSpan NextUpdate = TimeSpan.Zero;
-
-    /// <summary>
-    /// Minimum factor of the crit threshold that the mob must receive in stamina damage in order to start slowing down.
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public float SlowdownThresholdFactor = 0.5f;
-
-    /// <summary>
-    /// Speed multiplier for entities that are slowed down due to low stamina. Multiplied by how close the mob is to stamcrit.
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public float SlowdownMultiplier = 0.75f;
 
     [DataField]
     public ProtoId<AlertPrototype> StaminaAlert = "Stamina";
