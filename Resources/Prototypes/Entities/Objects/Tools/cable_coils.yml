@@ -142,7 +142,7 @@
         - ReagentId: Copper
           Quantity: 2
   - type: Healing # MV Cables are slower to use, but provide better healing (-120 per stack as opposed to -150 for ointment or -255 for mesh.)
-    delay: 1
+    delay: 1.2
     damageContainers:
     - Silicon
     damage:
