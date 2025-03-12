@@ -913,7 +913,6 @@
     - !type:CharacterItemGroupRequirement
       group: loadoutPlushie
 
-
 - type: loadout
   id: PlushieSharkGrey
   category: Items
