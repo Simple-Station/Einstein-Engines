@@ -12753,3 +12753,12 @@ Entries:
   id: 6941
   time: '2025-03-12T07:10:58.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1765
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed Oni not being able to do a ton of things that required hardcoded
+        tags. I fucking hate the tag system.
+  id: 6942
+  time: '2025-03-12T21:35:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1935
