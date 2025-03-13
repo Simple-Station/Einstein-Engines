@@ -52,24 +52,28 @@ namespace Content.IntegrationTests.Tests
             "CentCommHarmony",
             "MeteorArena",
             "NukieOutpost",
-            "Core",
-            "Pebble", //DeltaV
-            "Edge", //DeltaV
-            "Saltern",
-            "Shoukou", //DeltaV
-            "Tortuga", //DeltaV
-            "Arena", //DeltaV
-            "Asterisk", //DeltaV
-            "Glacier", //DeltaV
-            "TheHive", //DeltaV
-            "Hammurabi", //DeltaV
-            "Lighthouse", //DeltaV
-            "Submarine", //DeltaV
-            "Gax",
-            "Rad",
-            "Europa",
-            "Meta",
-            "Box"
+            "Core", // No current maintainer. In need of a rework...
+            "Pebble", // Maintained by Plyushune
+            // "Edge", // De-rotated, no current maintainer.
+            "Saltern", // Maintained by the Sin Mapping Team, ODJ, and TCJ.
+            "Shoukou", // Maintained by Violet
+            // "Tortuga", // De-rotated, no current maintainer.
+            "Arena", // Maintained by astriloqua.
+            // "Asterisk", // De-rotated, no current maintainer.
+            "Glacier", // Maintained by Violet
+            // "TheHive", // De-rotated, no current maintainer.
+            // "Hammurabi", // De-rotated, no current maintainer.
+            "Lighthouse", // Maintained by Violet
+            // "Submarine", // De-rotated, no current maintainer.
+            "Gax", // Maintained by Estacao Pirata
+            "Lavatest", // Lavaland Change
+            "Rad", // Maintained by Estacao Pirata
+            // "Europa", // De-rotated, has significant issues.
+            "Meta", // Maintained by Estacao Pirata
+            "Box", // Maintained by Estacao Pirata
+            "Lambda", // Maintained by Estacao Pirata
+            "Bagel", // Maintained by Estacao Pirata
+            "Northway" // Maintained by Violet
         };
 
         /// <summary>

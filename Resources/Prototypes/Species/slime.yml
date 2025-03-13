@@ -17,6 +17,8 @@
     HeadSide: MobHumanoidAnyMarking
     Hair: MobSlimeMarkingFollowSkin
     FacialHair: MobSlimeMarkingFollowSkin
+    Underwear: MobHumanoidAnyMarking
+    Undershirt: MobHumanoidAnyMarking
     Chest: MobSlimeTorso
     Eyes: MobHumanoidEyes
     LArm: MobSlimeLArm
@@ -35,43 +37,49 @@
       points: 1
       required: false
     HeadSide:
-      points: 2
+      points: 6
       required: false
     FacialHair:
       points: 1
       required: false
     Chest:
+      points: 6
+      required: false
+    Underwear:
+      points: 1
+      required: false
+    Undershirt:
       points: 1
       required: false
     RightLeg:
       points: 2
       required: false
     RightFoot:
-      points: 2
+      points: 6
       required: false
     LeftLeg:
-      points: 2
+      points: 6
       required: false
     LeftFoot:
-      points: 2
+      points: 6
       required: false
     RightArm:
-      points: 2
+      points: 6
       required: false
     RightHand:
-      points: 2
+      points: 6
       required: false
     LeftArm:
-      points: 2
+      points: 6
       required: false
     LeftHand:
-      points: 2
+      points: 6
       required: false
 
 - type: humanoidBaseSprite
   id: MobSlimeMarkingFollowSkin
   markingsMatchSkin: true
-  layerAlpha: 0.5
+  layerAlpha: 0.75
 
 - type: humanoidBaseSprite
   id: MobSlimeHead

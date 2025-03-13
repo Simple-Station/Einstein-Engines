@@ -88,7 +88,6 @@
       - PosterContrabandMoth
       - PosterContrabandCybersun600
       - PosterContrabandDonk
-      - PosterContrabandEnlistGorlex
       - PosterContrabandInterdyne
       - PosterContrabandWaffleCorp
       - PosterContrabandSaucerNumberOne # Nyanotrasen Poster, see Resources/Prototypes/Nyanotrasen/Entities/Structures/Wallmount/Signs/posters.yml
@@ -139,12 +138,10 @@
       - PosterLegit50thAnniversaryVintageReprint
       - PosterLegitFruitBowl
       - PosterLegitPDAAd
-      - PosterLegitEnlist
       - PosterLegitNanomichiAd
       - PosterLegit12Gauge
       - PosterLegitHighClassMartini
       - PosterLegitTheOwl
-      - PosterLegitNoERP
       - PosterLegitCarbonDioxide
       - PosterLegitDickGumshue
       - PosterLegitThereIsNoGasGiant
@@ -169,6 +166,6 @@
       - PosterLegitShoukou # Nyanotrasen Poster, see Resources/Prototypes/Nyanotrasen/Entities/Structures/Wallmount/Signs/posters.yml
       - PosterLegitCornzza # Nyanotrasen Poster, see Resources/Prototypes/Nyanotrasen/Entities/Structures/Wallmount/Signs/posters.yml
       - PosterLegitFuckAround # DeltaV Poster, see Resources/Prototypes/DeltaV/Entities/Structures/Wallmount/Signs/posters.yml
-      - PosterLegitOppenhopper
       - PosterLegitSafetyMothSSD
+      - PosterLegitOppenhopper
     chance: 1

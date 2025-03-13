@@ -1,9 +1,11 @@
 using Content.Shared.Atmos;
+using Content.Shared.Light.Components;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Tools;
 using Robust.Shared.Audio;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
 using Robust.Shared.Utility;
@@ -94,10 +96,11 @@ namespace Content.Shared.Maps
         public float? MobFriction { get; private set; }
 
         /// <summary>
-        ///     No-input friction override for mob mover in <see cref="SharedMoverController"/>
+        ///     "Average" static coefficient of friction for assuming a steel tile. This is only used as a fallback for a fallback for a fallback,
+        ///     except in the case of Space Wind. This default value is assuming an interaction interface of "Rubber on steel tile".
         /// </summary>
-        [DataField("mobFrictionNoInput")]
-        public float? MobFrictionNoInput { get; private set; }
+        [DataField]
+        public float MobFrictionNoInput = 0.2f;
 
         /// <summary>
         ///     Accel override for mob mover in <see cref="SharedMoverController"/>
@@ -127,5 +130,12 @@ namespace Content.Shared.Maps
 
         [DataField]
         public float TileRipResistance = 125f;
+    }
+
+    [Flags]
+    public enum TileFlag : byte
+    {
+        None = 0,
+        Roof = 1 << 0,
     }
 }

@@ -352,8 +352,9 @@
       - DoorElectronicsConfigurator
   - type: PhysicalComposition
     materialComposition:
-      Steel: 100
-      Plastic: 100
+      Aluminum: 50
+      Plastic: 50
+      Circuitry: 25
   - type: StaticPrice
     price: 56
 
@@ -452,7 +453,8 @@
   - type: PhysicalComposition
     materialComposition:
       Steel: 300
-      Plastic: 100
+      Plastic: 50
+      Circuitry: 50
 #  - type: DynamicPrice
 #    price: 100
   - type: StaticPrice
@@ -525,8 +527,9 @@
     - Belt
   - type: PhysicalComposition
     materialComposition:
-      Steel: 600
-      Plastic: 150
+      Steel: 400
+      Plastic: 100
+      Circuitry: 50
   - type: StaticPrice
     price: 100
   - type: UserInterface
@@ -539,6 +542,54 @@
     difficulty: 3
     recipes:
       - RCD
+
+- type: entity
+  id: RPD
+  parent: RCD
+  name: RPD
+  description: A device used to rapidly pipe things.
+  components:
+  - type: Tag
+    tags:
+      - RPD
+  - type: RCD
+    isRpd: true
+    availablePrototypes:
+    - PipeFourway
+    - PipeStraight
+    - PipeBend
+    - PipeTJunction
+    - OutletInjector
+    - ManualValve
+    - VolumetricPump
+    - PressurePump
+    - VentScrubber
+    - PressureValve
+    - DualPortVent
+    - VentGas
+    - VentPassive
+    - MixerGas
+    - Radiator
+    - SignalValve
+    - CanisterPort
+    - FilterGas
+    - Deconstruct
+  - type: LimitedCharges
+    maxCharges: 50
+    charges: 50
+  - type: Sprite
+    sprite: Objects/Tools/rpd.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 500
+      Plastic: 150
+      Circuitry: 50
+  - type: StaticPrice
+    price: 100
+  - type: ReverseEngineering # Nyano
+    difficulty: 3
+    recipes:
+      - RPD
 
 - type: entity
   id: RCDEmpty
@@ -563,6 +614,39 @@
     - Firelock
 
 - type: entity
+  id: RPDEmpty
+  parent: RPD
+  suffix: Empty
+  components:
+  - type: LimitedCharges
+    charges: 0
+  - type: Tag
+    tags:
+      - RPD
+  - type: RCD
+    isRpd: true
+    availablePrototypes:
+    - PipeFourway
+    - PipeStraight
+    - PipeBend
+    - PipeTJunction
+    - OutletInjector
+    - ManualValve
+    - VolumetricPump
+    - PressurePump
+    - VentScrubber
+    - PressureValve
+    - DualPortVent
+    - VentGas
+    - VentPassive
+    - MixerGas
+    - Radiator
+    - SignalValve
+    - CanisterPort
+    - FilterGas
+    - Deconstruct
+
+- type: entity
   id: RCDRecharging
   parent: RCD
   name: experimental RCD
@@ -581,6 +665,29 @@
   suffix: Admeme
   name: experimental RCD
   description: A bluespace-enhanced rapid construction device that passively generates its own compressed matter.
+  components:
+  - type: AutoRecharge
+    rechargeDuration: 1
+
+- type: entity
+  id: RPDRecharging
+  parent: RPD
+  name: experimental RPD
+  description: A bluespace-enhanced rapid piping device that passively generates its own compressed matter.
+  suffix: AutoRecharge
+  components:
+  - type: LimitedCharges
+    maxCharges: 25
+    charges: 25
+  - type: AutoRecharge
+    rechargeDuration: 10
+
+- type: entity
+  id: RPDExperimental
+  parent: RPD
+  suffix: Admeme
+  name: experimental RPD
+  description: A bluespace-enhanced rapid piping device that passively generates its own compressed matter.
   components:
   - type: AutoRecharge
     rechargeDuration: 1

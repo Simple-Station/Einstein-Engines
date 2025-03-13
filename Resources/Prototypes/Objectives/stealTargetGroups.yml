@@ -1,13 +1,6 @@
 # Traitor single items
 
 - type: stealTargetGroup
-  id: SupermatterSliver
-  name: supermatter sliver
-  sprite:
-    sprite: Supermatter/supermatter_sliver.rsi
-    state: icon
-
-- type: stealTargetGroup
   id: Hypospray
   name: hypospray
   sprite:
@@ -75,6 +68,13 @@
   name: captain's weapon
   sprite:
     sprite: Objects/Weapons/Guns/Battery/antiquelasergun.rsi
+    state: base
+
+- type: stealTargetGroup
+  id: NTRepWeapon
+  name: nanotrasen representative's weapon
+  sprite:
+    sprite: Objects/Weapons/Guns/Battery/ccdisabler.rsi
     state: base
 
 - type: stealTargetGroup

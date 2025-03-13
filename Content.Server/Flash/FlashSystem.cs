@@ -138,15 +138,6 @@ namespace Content.Server.Flash
             if (attempt.Cancelled)
                 return;
 
-            if (melee)
-            {
-                var ev = new AfterFlashedEvent(target, user, used);
-                if (user != null)
-                    RaiseLocalEvent(user.Value, ref ev);
-                if (used != null)
-                    RaiseLocalEvent(used.Value, ref ev);
-            }
-
             flashDuration *= flashable.DurationMultiplier;
 
             flashable.LastFlash = _timing.CurTime;
@@ -160,7 +151,8 @@ namespace Content.Server.Flash
 
             if (stunDuration != null)
             {
-                _stun.TryParalyze(target, stunDuration.Value, true);
+                // stunmeta
+                _stun.TryKnockdown(target, stunDuration.Value, true);
             }
             else
             {
@@ -241,24 +233,4 @@ namespace Content.Server.Flash
             Used = used;
         }
     }
-    /// <summary>
-    /// Called after a flash is used via melee on another person to check for rev conversion.
-    /// Raised on the user of the flash, the target hit by the flash, and the flash used.
-    /// </summary>
-    [ByRefEvent]
-    public readonly struct AfterFlashedEvent
-    {
-        public readonly EntityUid Target;
-        public readonly EntityUid? User;
-        public readonly EntityUid? Used;
-
-        public AfterFlashedEvent(EntityUid target, EntityUid? user, EntityUid? used)
-        {
-            Target = target;
-            User = user;
-            Used = used;
-        }
-    }
-
-
 }

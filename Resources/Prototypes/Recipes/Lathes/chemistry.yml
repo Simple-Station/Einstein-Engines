@@ -45,6 +45,14 @@
     Steel: 25
 
 - type: latheRecipe
+  id: DisposableSyringe
+  result: DisposableSyringe
+  completetime: 0.1
+  materials:
+    Plastic: 10
+    Steel: 2
+
+- type: latheRecipe
   id: BluespaceBeaker
   result: BluespaceBeaker
   completetime: 2

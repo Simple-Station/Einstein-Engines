@@ -30,6 +30,7 @@
   cost: 7500
   recipeUnlocks:
   - PowerCellHigh
+  - PowerCellMicrortg
   - TurboItemRechargerCircuitboard
   - SMESAdvancedMachineCircuitboard
 
@@ -171,6 +172,7 @@
     - JawsOfLife
     - BorgModuleAdvancedTool
     - BorgModuleRCD
+    - BorgModuleRPD
 
 - type: technology
   id: MassExcavation

@@ -32,6 +32,7 @@
         - JawsOfLife
         - GPS
         - WeldingMask
+        - RPD
       components:
         - SprayPainter
         - NetworkConfigurator
@@ -49,6 +50,10 @@
         whitelist:
           tags:
           - Powerdrill
+      rpd:
+        whitelist:
+          tags:
+          - RPD
       cutters_red:
         whitelist:
           tags:
@@ -111,6 +116,7 @@
         - HolofanProjector
         - Multitool
         - AppraisalTool
+        - RPD
       components:
         - SprayPainter
         - NetworkConfigurator
@@ -129,6 +135,10 @@
         whitelist:
           tags:
           - Powerdrill
+      rpd:
+        whitelist:
+          tags:
+          - RPD
       cutters_red:
         whitelist:
           tags:
@@ -307,6 +317,21 @@
           tags:
           - Wrench
     sprite: Clothing/Belt/belt_overlay.rsi
+  # DeltaV - Add medkit slot to medical belts
+  - type: ItemSlots
+    slots:
+      medkit:
+        name: clothing-belt-medkit
+        whitelist:
+          tags:
+          - Medkit
+        insertOnInteract: false
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+      medkit: !type:ContainerSlot {}
+  # End of DeltaV - Add medkit slot to medical belts.
   - type: Appearance
 
 - type: entity
@@ -333,7 +358,7 @@
   - type: Storage
     whitelist:
       tags:
-        # - PlantAnalyzer
+        - PlantAnalyzer
         - PlantSampleTaker
         - BotanyShovel
         - BotanyHoe
@@ -353,10 +378,10 @@
         whitelist:
           tags:
           - BotanyHatchet
-      # hydro:
-      #   whitelist:
-      #     tags:
-      #     - PlantAnalyzer # Dunno what to put here, should be aight.
+      hydro:
+        whitelist:
+          tags:
+          - PlantAnalyzer
       hoe:
         whitelist:
           tags:
@@ -503,6 +528,13 @@
           - SmokeOnTrigger
     sprite: Clothing/Belt/belt_overlay.rsi
   - type: Appearance
+  - type: EmitsSoundOnMove
+    soundCollection:
+      collection: FootstepTacticalWebbing
+      params:
+        volume: -10
+    distanceWalking: 2
+    distanceSprinting: 3
 
 - type: entity
   parent: [ClothingBeltBase, ClothingSlotBase]
@@ -516,7 +548,7 @@
   - type: Clothing
     sprite: Clothing/Belt/sheath.rsi
   - type: Item
-    size: Ginormous
+    size: Large
   - type: ItemSlots
     slots:
       item:
@@ -584,6 +616,13 @@
   - type: Storage
     grid:
     - 0,0,3,1
+  - type: EmitsSoundOnMove
+    soundCollection:
+      collection: FootstepTacticalWebbing
+      params:
+        volume: -10
+    distanceWalking: 2
+    distanceSprinting: 3
 
 - type: entity
   parent: ClothingBeltStorageBase
@@ -606,6 +645,13 @@
         - Gun
         - BallisticAmmoProvider
         - CartridgeAmmo
+  - type: EmitsSoundOnMove
+    soundCollection:
+      collection: FootstepTacticalWebbing
+      params:
+        volume: -10
+    distanceWalking: 2
+    distanceSprinting: 3
 
 - type: entity
   parent: ClothingBeltSecurity
@@ -617,6 +663,13 @@
     sprite: Clothing/Belt/securitywebbing.rsi
   - type: Clothing
     sprite: Clothing/Belt/securitywebbing.rsi
+  - type: EmitsSoundOnMove
+    soundCollection:
+      collection: FootstepTacticalWebbing
+      params:
+        volume: -10
+    distanceWalking: 2
+    distanceSprinting: 3
 
 - type: entity
   parent: ClothingBeltSecurityWebbing
@@ -642,6 +695,13 @@
     sprite: Clothing/Belt/mercwebbing.rsi
   - type: Clothing
     sprite: Clothing/Belt/mercwebbing.rsi
+  - type: EmitsSoundOnMove
+    soundCollection:
+      collection: FootstepTacticalWebbing
+      params:
+        volume: -10
+    distanceWalking: 2
+    distanceSprinting: 3
 
 - type: entity
   parent: ClothingBeltStorageBase
@@ -653,6 +713,13 @@
     sprite: Clothing/Belt/salvagewebbing.rsi
   - type: Clothing
     sprite: Clothing/Belt/salvagewebbing.rsi
+  - type: EmitsSoundOnMove
+    soundCollection:
+      collection: FootstepTacticalWebbing
+      params:
+        volume: -10
+    distanceWalking: 2
+    distanceSprinting: 3
 
 - type: entity
   parent: [ClothingBeltStorageBase, ContentsExplosionResistanceBase]
@@ -666,6 +733,13 @@
     sprite: Clothing/Belt/militarywebbing.rsi
   - type: ExplosionResistance
     damageCoefficient: 0.5
+  - type: EmitsSoundOnMove
+    soundCollection:
+      collection: FootstepTacticalWebbing
+      params:
+        volume: -10
+    distanceWalking: 2
+    distanceSprinting: 3
 
 - type: entity
   parent: ClothingBeltMilitaryWebbing
@@ -681,6 +755,13 @@
     size: Huge
   - type: ExplosionResistance
     damageCoefficient: 0.1
+  - type: EmitsSoundOnMove
+    soundCollection:
+      collection: FootstepTacticalWebbing
+      params:
+        volume: -10
+    distanceWalking: 2
+    distanceSprinting: 3
 
 - type: entity
   parent: ClothingBeltBase

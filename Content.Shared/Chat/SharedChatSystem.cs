@@ -3,6 +3,8 @@ using System.Text.RegularExpressions;
 using Content.Shared.Popups;
 using Content.Shared.Radio;
 using Content.Shared.Speech;
+using Robust.Shared.Console;
+using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
@@ -87,6 +89,35 @@ public abstract class SharedChatSystem : EntitySystem
     }
 
     /// <summary>
+    /// Splits the input message into a radio prefix part and the rest to preserve it during sanitization.
+    /// </summary>
+    /// <remarks>
+    /// This is primarily for the chat emote sanitizer, which can match against ":b" as an emote, which is a valid radio keycode.
+    /// </remarks>
+    public void GetRadioKeycodePrefix(EntityUid source,
+        string input,
+        out string output,
+        out string prefix)
+    {
+        prefix = string.Empty;
+        output = input;
+
+        // If the string is less than 2, then it's probably supposed to be an emote.
+        // No one is sending empty radio messages!
+        if (input.Length <= 2)
+            return;
+
+        if (!(input.StartsWith(RadioChannelPrefix) || input.StartsWith(RadioChannelAltPrefix)))
+            return;
+
+        if (!_keyCodes.TryGetValue(input[1], out _))
+            return;
+
+        prefix = input[..2];
+        output = input[2..];
+    }
+
+    /// <summary>
     ///     Attempts to resolve radio prefixes in chat messages (e.g., remove a leading ":e" and resolve the requested
     ///     channel. Returns true if a radio message was attempted, even if the channel is invalid.
     /// </summary>
@@ -149,6 +180,19 @@ public abstract class SharedChatSystem : EntitySystem
 
         return true;
     }
+
+    public virtual void TrySendInGameICMessage(
+        EntityUid source,
+        string message,
+        InGameICChatType desiredType,
+        bool hideChat,
+        bool hideLog = false,
+        IConsoleShell? shell = null,
+        ICommonSession? player = null,
+        string? nameOverride = null,
+        bool checkRadioPrefix = true,
+        bool ignoreActionBlocker = false
+    ) { }
 
     public string SanitizeMessageCapital(string message)
     {

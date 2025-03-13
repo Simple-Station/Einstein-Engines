@@ -39,6 +39,11 @@
   - type: IconSmooth
     base: swindow
   - type: Appearance
+  - type: Tag
+    tags:
+    - ForceFixRotations # WWDP fix missing tags
+    - Window # WWDP fix missing tags
+    - WeldbotFixableStructure
   - type: DamageVisuals
     thresholds: [4, 8, 12]
     damageDivisor: 28

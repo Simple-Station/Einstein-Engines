@@ -73,6 +73,7 @@
     - operationPrefix
     - operationSuffix
   - type: NukeopsRule
+  - type: RuleGrids
   - type: AntagSelection
   - type: AntagLoadProfileRule
 
@@ -102,9 +103,8 @@
       - type: NpcFactionMember
         factions:
         - Syndicate
-      mindComponents:
-      - type: NukeopsRole
-        prototype: NukeopsCommander
+      mindRoles:
+      - MindRoleNukeopsCommander
     - prefRoles: [ NukeopsMedic ]
       fallbackRoles: [ Nukeops, NukeopsCommander ]
       max: 1
@@ -119,9 +119,8 @@
       - type: NpcFactionMember
         factions:
         - Syndicate
-      mindComponents:
-      - type: NukeopsRole
-        prototype: NukeopsMedic
+      mindRoles:
+      - MindRoleNukeopsMedic
     - prefRoles: [ Nukeops ]
       fallbackRoles: [ NukeopsCommander, NukeopsMedic ]
       min: 0
@@ -137,9 +136,8 @@
       - type: NpcFactionMember
         factions:
         - Syndicate
-      mindComponents:
-      - type: NukeopsRole
-        prototype: Nukeops
+      mindRoles:
+      - MindRoleNukeops
 
 - type: entity
   abstract: true
@@ -175,9 +173,8 @@
         components:
         - AntagImmune
       lateJoinAdditional: true
-      mindComponents:
-      - type: TraitorRole
-        prototype: Traitor
+      mindRoles:
+      - MindRoleTraitor
 
 - type: entity
   id: TraitorReinforcement
@@ -187,6 +184,11 @@
     giveUplink: false
     giveCodewords: false # It would actually give them a different set of codewords than the regular traitors, anyway
     giveBriefing: false
+  - type: AntagSelection
+    definitions:
+    - prefRoles: [ Traitor ]
+      mindRoles:
+      - MindRoleTraitorReinforcement
 
 - type: entity
   id: Revolutionary
@@ -209,9 +211,8 @@
       components:
       - type: Revolutionary
       - type: HeadRevolutionary
-      mindComponents:
-      - type: RevolutionaryRole
-        prototype: HeadRev
+      mindRoles:
+      - MindRoleHeadRevolutionary
 
 - type: entity
   id: Sandbox
@@ -255,9 +256,9 @@
       - type: PendingZombie
       - type: ZombifyOnDeath
       - type: IncurableZombie
-      mindComponents:
-      - type: InitialInfectedRole
-        prototype: InitialInfected
+      - type: InitialInfected
+      mindRoles:
+      - MindRoleInitialInfected
 
 # event schedulers
 - type: entity
@@ -319,13 +320,13 @@
   components:
   - type: RoundstartStationVariationRule
     rules:
-    - id: BasicPoweredLightVariationPass
+#    - id: BasicPoweredLightVariationPass
     - id: BasicTrashVariationPass
-    - id: SolidWallRustingVariationPass
-    - id: ReinforcedWallRustingVariationPass
+#    - id: SolidWallRustingVariationPass
+#    - id: ReinforcedWallRustingVariationPass
     - id: BasicPuddleMessVariationPass
       prob: 0.99
       orGroup: puddleMess
-    - id: BloodbathPuddleMessVariationPass
-      prob: 0.01
-      orGroup: puddleMess
+#    - id: BloodbathPuddleMessVariationPass
+#      prob: 0.01
+#      orGroup: puddleMess

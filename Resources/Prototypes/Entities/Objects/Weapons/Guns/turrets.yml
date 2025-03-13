@@ -73,51 +73,80 @@
       thresholds:
         - trigger:
             !type:DamageTrigger
-            damage: 600
+            damage: 200 # Was 600, most players were under the impression these were indestructible. It having an Inorganic damage container did not help.
           behaviors:
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
+            - !type:SpawnEntitiesBehavior
+              spawn:
+                WeaponTurretSyndicateBroken: # Make a broken turret when destroyed.
+                  min: 1
+                  max: 1
         - trigger:
             !type:DamageTrigger
-            damage: 300
+            damage: 90 # Rather than fully smash the turret at half health, make an indication that its taking damage.
           # TODO: Construction graph
           behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
             - !type:PlaySoundBehavior
               sound:
                 collection: MetalGlassBreak
-            - !type:SpawnEntitiesBehavior
-              spawn:
-                SheetSteel1:
-                  min: 3
-                  max: 5
+        - trigger:
+            !type:DamageTrigger
+            damage: 50 # Helps indicate that the turrets arent indestructible.
+          # TODO: Construction graph
+          behaviors:
+            - !type:PlaySoundBehavior
+              sound:
+                collection: MetalGlassBreak
     - type: Gun
       fireRate: 6
       selectedMode: FullAuto
       availableModes:
         - FullAuto
       soundGunshot: /Audio/Weapons/Guns/Gunshots/gun_sentry.ogg
+      currentAngle: 25 # Fires first shot at min accuracy.
+      minAngle: 25 # Not guaranteed to hit their shots anymore.
+      maxAngle: 45 # Continuous fire makes their accuracy unreliable.
     # TODO: Power ammo provider?
     - type: BallisticAmmoProvider
-      proto: CartridgeCaselessRifle
-      capacity: 500
+      proto: CartridgeLightRifle # This way it drops spent casings.
+      capacity: 200 # Not infinite ammo, it should run out of ammo in a more reasonable timeframe.
     - type: HTN
       rootTask:
         task: TurretCompound
       blackboard:
         RotateSpeed: !type:Single
-          3.141
+          1.571 # At most 1 second to react to a target directly behind it, instead of instantaneous tracking  
         SoundTargetInLOS: !type:SoundPathSpecifier
           path: /Audio/Effects/double_beep.ogg
     - type: MouseRotator
       angleTolerance: 5
-      rotationSpeed: 180
+      rotationSpeed: 90
       simple4DirMode: false
     - type: NoRotateOnInteract
     - type: NoRotateOnMove
     - type: Input
       context: "human"
+
+- type: entity
+  parent: BaseWeaponTurret
+  id: BaseWeaponTurretMinigun
+  name: minigun turret
+  abstract: true
+  components:
+    - type: Gun
+      fireRate: 15
+      selectedMode: FullAuto
+      availableModes:
+        - FullAuto
+      soundGunshot: /Audio/Weapons/Guns/Gunshots/minigun.ogg
+      currentAngle: 45 # Fires first shot at min accuracy.
+      minAngle: 45 # Always cover the screen in bullets.
+      maxAngle: 45 
+    # TODO: Power ammo provider?
+    - type: BallisticAmmoProvider
+      proto: CartridgeMinigun # BRRT FOOD
+      capacity: 1000 # Not infinite ammo, it should run out of ammo in a more reasonable timeframe.
 
 - type: entity
   parent: BaseWeaponTurret
@@ -130,6 +159,26 @@
 
 - type: entity
   parent: BaseWeaponTurret
+  id: WeaponTurretSAN
+  suffix: Sol Alliance Navy
+  description: A turret designed to provide protection for Sol Marines during combat drops. It menaces targets with a twin-linked C-20r, although its cheap fire controller lends to poor accuracy.
+  components:
+    - type: NpcFactionMember
+      factions:
+        - SAN
+    - type: Gun
+      fireRate: 10  # Guaranteed to spook the shit out of people.
+      currentAngle: 40 # Fires first shot at min accuracy.
+      minAngle: 40
+      maxAngle: 45  # Not guaranteed to do a whole lot of damage unless they stand there and let it hit them.
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Gunshots/c-20r.ogg
+    - type: BallisticAmmoProvider
+      proto: CartridgePistol
+      capacity: 200
+
+- type: entity
+  parent: BaseWeaponTurret
   name: disposable ballistic turret
   id: WeaponTurretSyndicateDisposable
   suffix: Syndicate, Disposable
@@ -137,21 +186,6 @@
     - type: NpcFactionMember
       factions:
         - Syndicate
-    - type: Destructible
-      thresholds:
-        - trigger:
-            !type:DamageTrigger
-            damage: 600
-          behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
-        - trigger:
-            !type:DamageTrigger
-            damage: 100
-          behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
-            - !type:TriggerBehavior
     - type: Gun
       fireRate: 2
       selectedMode: FullAuto

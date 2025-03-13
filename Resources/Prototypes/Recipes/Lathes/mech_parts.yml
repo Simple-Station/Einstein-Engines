@@ -175,3 +175,6 @@
   result: VimHarness
   category: MechEquipment
   completetime: 5
+  materials:
+    Steel: 400
+    Plastic: 100

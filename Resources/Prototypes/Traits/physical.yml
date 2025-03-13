@@ -1,7 +1,7 @@
 - type: trait
   id: WillToLive
   category: Physical
-  points: -1
+  points: -3
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -50,7 +50,7 @@
 - type: trait
   id: Tenacity
   category: Physical
-  points: -3
+  points: -4
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -239,7 +239,7 @@
 - type: trait
   id: Steadfast
   category: Physical
-  points: -4
+  points: -6
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -469,37 +469,23 @@
       inverted: true
       jobs:
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-    - !type:CharacterSpeciesRequirement
-      species:
-        - Human # Entirely arbitrary, I've decided I want a trait unique to humans. Since they don't normally get anything exciting.
-                # When we get the Character Records system in, I also want to make this require certain Backgrounds.
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
         - Claws
         - Talons
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterTraitRequirement
-          traits:
-            - MartialArtist
-        - !type:CharacterJobRequirement
-          jobs:
-            - Boxer
-            - MartialArtist
-            - Gladiator
     - !type:CharacterItemGroupRequirement
       group: TraitsMind
   functions:
     - !type:TraitModifyUnarmed
       flatDamageIncrease:
         types:
-          Blunt: 1
+          Blunt: 2
 
 - type: trait
   id: Spinarette
   category: Physical
-  points: -4
+  points: -3
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -521,12 +507,12 @@
           action: ActionSericulture
           productionLength: 2
           entityProduced: MaterialWebSilk1
-          hungerCost: 4
+          hungerCost: 1 
 
 - type: trait
   id: BionicArm
   category: Physical
-  points: -8
+  points: -10
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -569,14 +555,14 @@
           allowedStates:
           - Alive
           - Critical
-          damageCap: 200
+          damageCap: 400
           damage:
             groups:
-              Brute: -0.07
-              Burn: -0.07
-              Airloss: -0.07
-              Toxin: -0.07
-              Genetic: -0.07
+              Brute: -0.35
+              Burn: -0.35
+              Airloss: -0.25
+              Toxin: -0.35
+              Genetic: -0.35
 
 - type: trait
   id: DermalArmor
@@ -608,6 +594,10 @@
       inverted: true
       jobs:
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+    - !type:CharacterSpeciesRequirement
+        inverted: true
+        species:
+          - IPC
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -627,25 +617,22 @@
         - type: Flashable # Effectively, removes any flash-vulnerability species traits.
 
 
-- type: trait
-  id: FlareShielding
-  category: Physical
-  points: -4
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-    - !type:CharacterTraitRequirement
-      traits:
-        - CyberEyes
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: FlashImmunity
-        - type: EyeProtection
+# - type: trait
+#  id: FlareShielding
+#  category: Physical
+#  points: -3
+#  requirements:
+#    - !type:CharacterJobRequirement
+#      inverted: true
+#      jobs:
+#        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+#    - !type:CharacterTraitRequirement
+#      traits:
+#        - CyberEyes
+#  functions:
+#    - !type:TraitAddComponent
+#      components:
+#        - type: EyeProtection
 
 
 - type: trait
@@ -667,8 +654,6 @@
       inverted: true
       traits:
         - CyberEyesOmni
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -679,7 +664,7 @@
 - type: trait
   id: CyberEyesMedical
   category: Physical
-  points: -1
+  points: -2
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -693,11 +678,10 @@
       traits:
         - CyberEyesDiagnostic
         - CyberEyesOmni
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
+        - type: SolutionScanner
         - type: ShowHealthBars
           damageContainers:
           - Biological
@@ -708,7 +692,7 @@
 - type: trait
   id: CyberEyesDiagnostic
   category: Physical
-  points: -1
+  points: -2
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -722,11 +706,10 @@
       traits:
         - CyberEyesMedical
         - CyberEyesOmni
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
+        - type: EyeProtection
         - type: ShowHealthBars
           damageContainers:
           - Inorganic
@@ -744,6 +727,7 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+        - Command
     - !type:CharacterTraitRequirement
       traits:
         - CyberEyes
@@ -753,11 +737,11 @@
         - CyberEyesMedical
         - CyberEyesDiagnostic
         - CyberEyesSecurity
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
+        - type: SolutionScanner
+        - type: EyeProtection
         - type: ShowJobIcons
         - type: ShowMindShieldIcons
         - type: ShowCriminalRecordIcons
@@ -830,8 +814,6 @@
     - !type:CharacterTraitRequirement
       traits:
         - CyberEyes
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -840,7 +822,7 @@
 - type: trait
   id: ThermographicVision
   category: Physical
-  points: -8
+  points: -4
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -849,6 +831,278 @@
     - !type:CharacterTraitRequirement
       traits:
         - CyberEyes
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: ThermalVision
+          pulseTime: 2
+          toggleAction: PulseThermalVision
+    - !type:TraitPushDescription
+      descriptionExtensions:
+        - description: examine-thermal-vision-message
+          fontSize: 12
+          requireDetailRange: true
+
+- type: trait
+  id: NaniteAutoRepairBots
+  category: Physical
+  points: -10
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+    - !type:CharacterSpeciesRequirement
+      species:
+        - IPC
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMind
+  functions: # TODO: Code Platelet factories as an actual obtainable implant, and replace this with TraitAddImplant
+    - !type:TraitReplaceComponent
+      components:
+        - type: PassiveDamage
+          allowedStates:
+          - Alive
+          - Critical
+          - Dead
+          damageCap: 250
+          damage:
+            groups:
+              Brute: -0.6
+              Burn: -0.6
+
+- type: trait
+  id: BionicLeg
+  category: Physical
+  points: -8
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMind
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+      - type: TraitSpeedModifier
+        sprintModifier: 1.300
+        walkModifier: 1.125
+    - !type:TraitPushDescription
+      descriptionExtensions:
+        - description: examine-bionic-leg-message
+          fontSize: 12
+          requireDetailRange: true
+
+# - type: trait
+#  id: FlareShieldingModule
+#  category: Physical
+#  points: -4
+#  requirements:
+#    - !type:CharacterJobRequirement
+#      inverted: true
+#      jobs:
+#        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+#    - !type:CharacterSpeciesRequirement
+#      species:
+#        - IPC
+#    - !type:CharacterTraitRequirement
+#      inverted: true
+#      traits:
+#       - Photophobia
+#        - Blindness
+#        - Nearsighted
+#    - !type:CharacterItemGroupRequirement
+#      group: TraitsMind
+#  functions:
+#    - !type:TraitAddComponent
+#      components:
+#        - type: FlashImmunity
+#        - type: EyeProtection
+
+
+- type: trait
+  id: SecurityEyesModule
+  category: Physical
+  points: -1
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterSpeciesRequirement
+      species:
+        - IPC
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - OmniEyesModule
+        - Photophobia
+        - Blindness
+        - Nearsighted
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMind
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: ShowJobIcons
+        - type: ShowMindShieldIcons
+        - type: ShowCriminalRecordIcons
+
+- type: trait
+  id: MedicalEyesModule
+  category: Physical
+  points: -2
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+    - !type:CharacterSpeciesRequirement
+      species:
+        - IPC
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - DiagnosticEyesModule
+        - OmniEyesModule
+        - Photophobia
+        - Blindness
+        - Nearsighted
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMind
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: SolutionScanner
+        - type: ShowHealthBars
+          damageContainers:
+          - Biological
+        - type: ShowHealthIcons
+          damageContainers:
+          - Biological
+
+- type: trait
+  id: DiagnosticEyesModule
+  category: Physical
+  points: -2
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+    - !type:CharacterSpeciesRequirement
+      species:
+        - IPC
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - MedicalEyesModule
+        - OmniEyesModule
+        - Photophobia
+        - Blindness
+        - Nearsighted
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMind
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: EyeProtection
+        - type: ShowHealthBars
+          damageContainers:
+          - Inorganic
+          - Silicon
+
+- type: trait
+  id: OmniEyesModule
+  category: Physical
+  points: -3
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+        - Command
+    - !type:CharacterSpeciesRequirement
+      species:
+        - IPC
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Photophobia
+        - Blindness
+        - Nearsighted
+        - MedicalEyesModule
+        - DiagnosticEyesModule
+        - SecurityEyesModule
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMind
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: SolutionScanner
+        - type: EyeProtection
+        - type: ShowJobIcons
+        - type: ShowMindShieldIcons
+        - type: ShowCriminalRecordIcons
+        - type: ShowHealthIcons
+          damageContainers:
+          - Biological
+        - type: ShowHealthBars
+          damageContainers:
+          - Biological
+          - Inorganic
+          - Silicon
+
+- type: trait
+  id: LightAmplificationModule
+  category: Physical
+  points: -4
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+    - !type:CharacterSpeciesRequirement
+      species:
+        - IPC
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Photophobia
+        - Blindness
+        - Nearsighted
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMind
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: NightVision
+
+- type: trait
+  id: ThermographicVisionModule
+  category: Physical
+  points: -4
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+    - !type:CharacterSpeciesRequirement
+      species:
+        - IPC
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Photophobia
+        - Blindness
+        - Nearsighted
     - !type:CharacterItemGroupRequirement
       group: TraitsMind
   functions:

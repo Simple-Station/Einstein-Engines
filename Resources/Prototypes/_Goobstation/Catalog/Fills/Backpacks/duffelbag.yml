@@ -1,0 +1,13 @@
+- type: entity
+  parent: ClothingBackpackDuffelSyndicateBundle
+  id: ClothingBackpackDuffelSyndicateStealthHardsuitBundle
+  name: cybersun stealthsuit bundle
+  description: "An advanced cybersun stealth tacsuit bundle."
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingOuterHardsuitCybersunStealth
+      - id: ClothingMaskGasSyndicate
+      - id: ClothingHandsGlovesCombat
+      - id: DoubleEmergencyOxygenTankFilled
+      - id: DoubleEmergencyNitrogenTankFilled

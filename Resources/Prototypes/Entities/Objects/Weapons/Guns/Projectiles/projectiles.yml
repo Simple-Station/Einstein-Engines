@@ -246,8 +246,7 @@
           bounds: "-0.15,-0.3,0.15,0.3"
         hard: false
         mask:
-        - Impassable
-        - BulletImpassable
+        - Opaque # WWDP allow shooting through windows
       fly-by: *flybyfixture
   - type: Ammo
   - type: StaminaDamageOnCollide
@@ -257,6 +256,49 @@
     damage:
       types:
         Heat: 5
+    soundHit:
+      collection: WeakHit
+    forceSound: true
+
+- type: entity
+  name : disabler bolt
+  id: BulletCivilianDisabler
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Reflective
+    reflective:
+    - Energy
+  - type: FlyBySound
+    sound:
+      collection: EnergyMiss
+      params:
+        volume: 3
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    layers:
+    - state: omnilaser_weak
+      shader: unshaded
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.3,0.15,0.3"
+        hard: false
+        mask:
+        - Impassable
+        - BulletImpassable
+      fly-by: *flybyfixture
+  - type: Ammo
+  - type: StaminaDamageOnCollide
+    damage: 20
+  - type: Projectile
+    impactEffect: BulletImpactEffectDisabler
+    damage:
+      types:
+        Heat: 0.3
     soundHit:
       collection: WeakHit
     forceSound: true
@@ -286,8 +328,7 @@
           bounds: "-0.15,-0.3,0.15,0.3"
         hard: false
         mask:
-        - Impassable
-        - BulletImpassable
+        - Opaque # WWDP allow shooting through windows
       fly-by: *flybyfixture
   - type: Ammo
   - type: StaminaDamageOnCollide
@@ -417,11 +458,11 @@
     impactEffect: BulletImpactEffectKinetic
     damage:
       types:
-        Blunt: 25
-        Structural: 30
+        Blunt: 40 # Lavaland Change - TOTAL PKA VICTORY
+        Structural: 30 # Lavaland/Eris change: Yes easy break ins
   # Short lifespan
   - type: TimedDespawn
-    lifetime: 0.4
+    lifetime: 0.170 # Lavaland Change
 
 - type: entity
   id: BulletKineticShuttle
@@ -468,6 +509,7 @@
         shader: unshaded
   - type: GatheringProjectile
   - type: DamageMarkerOnCollide
+    onlyWorkOnFauna: true # Lavaland Change
     whitelist:
       components:
         - MobState
@@ -953,8 +995,7 @@
           bounds: "-0.15,-0.3,0.15,0.3"
         hard: false
         mask:
-        - Impassable
-        - BulletImpassable
+        - Opaque # WWDP allow shooting through windows
       fly-by: *flybyfixture
   - type: Ammo
   - type: StaminaDamageOnCollide
@@ -1046,7 +1087,7 @@
       collection: MeatLaserImpact
 
 - type: entity
-  name: laser bolt 
+  name: laser bolt
   id: BulletLaser
   parent: BaseBullet
   categories: [ HideSpawnMenu ]
@@ -1073,8 +1114,7 @@
           bounds: "-0.15,-0.3,0.15,0.3"
         hard: false
         mask:
-        - Impassable
-        - BulletImpassable
+        - Opaque # WWDP allow shooting through windows
       fly-by: *flybyfixture
   - type: Ammo
   - type: Projectile
@@ -1087,26 +1127,26 @@
     forceSound: true
 
 - type: entity
-  name: wide laser barrage
+  name: laser barrage
   id: BulletLaserSpread
   parent: BulletLaser
   categories: [ HideSpawnMenu ]
   components:
   - type: ProjectileSpread
     proto: BulletLaser
-    count: 5 #50 heat damage if you hit all your shots, but wide spread
-    spread: 30 
+    count: 6 # 60 heat damage if you hit all your shots, but wide spread
+    spread: 25
 
 - type: entity
-  name: narrow laser barrage
-  id: BulletLaserSpreadNarrow
-  parent: BulletLaser
+  name: laser slug
+  id: BulletLaserSpreadSlug
+  parent: BulletLaserHeavy
   categories: [ HideSpawnMenu ]
   components:
   - type: ProjectileSpread
     proto: BulletLaser
-    count: 4 #52 heat damage if you hit all your shots, but narrower spread
-    spread: 10
+    count: 4 #60 heat damage, 20 blunt damage, and a high energy cost per shot.
+    spread: 0
 
 - type: entity
   name : heavy laser bolt
@@ -1118,6 +1158,7 @@
     damage:
       types:
         Heat: 15
+        Blunt: 5
 
 - type: entity
   name: narrow laser barrage
@@ -1127,21 +1168,21 @@
   components:
   - type: ProjectileSpread
     proto: BulletLaser
-    count: 3 #45 heat damage if you hit all your shots, but narrower spread
+    count: 3 # 45 heat damage if you hit all your shots, but narrower spread
     spread: 10
 
 - type: entity
-  name: disabling laser barrage
+  name: disabler laser barrage
   id: BulletDisablerSmgSpread
   parent: BulletDisablerSmg
   categories: [ HideSpawnMenu ]
   components:
   - type: ProjectileSpread
     proto: BulletDisablerSmg
-    count: 3 #bit stronger than a disabler if you hit your shots you goober, still not a 2 hit stun though
-    spread: 9 
+    count: 3 # bit stronger than a disabler if you hit your shots you goober, still not a 2 hit stun though
+    spread: 9
 
-- type: entity #Goobstation, put here so the X-01 stuff isnt spread everywhere.
+- type: entity # Goobstation, put here so the X-01 stuff isnt spread everywhere.
   name: magnum bolt
   id: BulletEnergyGunMagnum
   parent: BaseBullet

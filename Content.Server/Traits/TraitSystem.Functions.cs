@@ -22,6 +22,7 @@ using Content.Shared.Damage.Components;
 using Content.Shared.NPC.Systems;
 using Content.Shared.Weapons.Melee;
 using Robust.Shared.Audio;
+using Content.Shared.Tag;
 
 namespace Content.Server.Traits;
 
@@ -675,5 +676,25 @@ public sealed partial class TraitModifyUnarmed : TraitFunction
             melee.AttackRate *= AttackRateModifier.Value;
 
         entityManager.Dirty(uid, melee);
+    }
+}
+
+
+// <summary>
+// Adds a Tag to something
+// </summary>
+[UsedImplicitly]
+public sealed partial class TraitAddTag : TraitFunction
+{
+    [DataField, AlwaysPushInheritance]
+    public List<ProtoId<TagPrototype>> Tags { get; private set; } = new();
+    
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        var tagSystem = entityManager.System<TagSystem>();
+        tagSystem.AddTags(uid, Tags);
     }
 }

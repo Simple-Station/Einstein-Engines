@@ -9,6 +9,7 @@
       - id: WeaponDisabler
         prob: 0.3
       - id: ClothingBeltSecurityFilled
+      - id: ClothingHandsGlovesKravMaga # Goobstation - Martial Arts
       - id: Flash
       - id: ClothingEyesGlassesSunglasses
       - id: ClothingHeadsetAltSecurity
@@ -39,6 +40,7 @@
       - id: WeaponDisabler
         prob: 0.3
       - id: ClothingBeltSecurityFilled
+      - id: ClothingHandsGlovesKravMaga # Goobstation - Martial Arts
       - id: Flash
       - id: ClothingEyesGlassesSunglasses
       - id: ClothingHeadsetAltSecurity
@@ -88,6 +90,7 @@
       - id: ClothingUniformJumpsuitSecFormal # DeltaV - emergency parade time, Central's coming to visit
         prob: 0.25
       - id: ClothingBeltSecurityFilled
+      - id: ClothingBeltCorporateJudo # Goobstation - Martial Arts
       - id: Flash
         prob: 0.5
       - id: ClothingEyesGlassesSunglasses
@@ -109,7 +112,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: ClothingEyesHudSecurity
+      - id: ClothingEyesGlassesCorpsman # DeltaV - Corpsman Glasses
       - id: WeaponDisabler
       - id: TrackingImplanter
         amount: 2
@@ -149,7 +152,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: ClothingEyesHudSecurity
+      - id: ClothingEyesGlassesCorpsman # DeltaV - Corpsman Glasses
       - id: WeaponDisabler
       - id: TrackingImplanter
         amount: 2
@@ -309,3 +312,16 @@
     contents:
     - id: WeaponLaserCarbine
       amount: 3
+
+- type: entity
+  id: GunSafeRifleBRDIR25
+  suffix: BRDI-R25
+  parent: GunSafe
+  name: BRDI-R25 safe
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponSubMachineGunBRDIR25
+      amount: 2
+    - id: MagazineCaselessRifle
+      amount: 4

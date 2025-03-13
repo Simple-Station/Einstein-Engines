@@ -1,0 +1,61 @@
+- type: entity
+  name: revolutionary manifesto
+  parent: BaseItem
+  id: RevolutionaryManifesto
+  description: A manifesto written by a self-proclaimed revolutionary leader. Very critical of Nanotrasen.
+  components:
+    - type: Sprite
+      sprite: Objects/Misc/books.rsi
+      layers:
+      - state: paper
+      - state: cover_base
+        color: "#ee0000"
+      - state: icon_manifesto
+      - state: detail_bookmark
+        color: "#aaaa24"
+    - type: RevolutionaryConverter
+      conversionDuration: 3
+    - type: UseDelay
+      delay: 2
+    - type: Appearance
+    - type: EmitSoundOnPickup
+      sound: /Audio/SimpleStation14/Items/Handling/book_pickup.ogg
+    - type: EmitSoundOnDrop
+      sound: /Audio/SimpleStation14/Items/Handling/book_drop.ogg
+    - type: EmitSoundOnLand
+      sound: /Audio/SimpleStation14/Items/Handling/book_drop.ogg
+    - type: ExtendDescription
+      descriptionList:
+      - description: "revolutionarymanifesto-extenddescription-headrevolutionary"
+        fontSize: 12
+        color: "#880000"
+        requireDetailRange: false
+        requirements:
+        - !type:CharacterAntagonistRequirement
+          antagonists:
+            - HeadRev
+      - description: "revolutionarymanifesto-extenddescription-revolutionary"
+        fontSize: 12
+        color: "#880000"
+        requireDetailRange: false
+        requirements:
+        - !type:CharacterAntagonistRequirement
+          antagonists:
+            - Rev
+      - description: "revolutionarymanifesto-extenddescription-security"
+        fontSize: 12
+        color: "#ff0000"
+        requireDetailRange: true
+        requirements:
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+      - description: "revolutionarymanifesto-extenddescription-mindshield"
+        fontSize: 12
+        color: "#11aaff"
+        requireDetailRange: true
+        requirements:
+        - !type:CharacterMindshieldRequirement
+    - type: GuideHelp
+      guides:
+      - Revolutionaries

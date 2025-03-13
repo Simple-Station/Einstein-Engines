@@ -39,11 +39,10 @@
 #     - shader: StencilClear
 #      sprite: Mobs/Species/Human/parts.rsi
 #      state: l_leg
-      - shader: StencilMask
-        map: [ "enum.HumanoidVisualLayers.StencilMask" ]
-        sprite: DeltaV/Mobs/Customization/Vulpkanin/masking_helpers.rsi
-        state: female_full
-        visible: false
+      - map: [ "enum.HumanoidVisualLayers.Underwear" ]
+      - map: [ "enum.HumanoidVisualLayers.Undershirt" ]
+      - map: [ "underpants" ]
+      - map: [ "undershirt" ]
       - map: [ "jumpsuit" ]
       - map: [ "enum.HumanoidVisualLayers.LHand" ]
       - map: [ "enum.HumanoidVisualLayers.RHand" ]
@@ -134,3 +133,9 @@
   components:
   - type: HumanoidAppearance
     species: Vulpkanin
+    hideLayersOnEquip:
+    - Snout
+    - HeadTop
+    - HeadSide
+  - type: Inventory
+    speciesId: vulpkanin

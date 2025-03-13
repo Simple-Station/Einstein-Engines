@@ -77,6 +77,12 @@
     sound: /Audio/SimpleStation14/Items/Handling/paper_drop.ogg
   - type: EmitSoundOnLand
     sound: /Audio/SimpleStation14/Items/Handling/paper_drop.ogg
+# Corvax-Printer-Start
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      SheetPrinter: 100
+# Corvax-Printer-End
 
 - type: entity
   name: paper scrap
