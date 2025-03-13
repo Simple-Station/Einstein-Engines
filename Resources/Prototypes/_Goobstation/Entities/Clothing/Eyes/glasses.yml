@@ -58,7 +58,7 @@
     - Biological
 
 - type: entity
-  parent: [ClothingEyesHudOmni, BaseCentcommContraband]
+  parent: ClothingEyesHudOmni
   id: ClothingEyesGlassesDeathsquad
   suffix: DO NOT MAP
   name: central commander shades
@@ -86,7 +86,7 @@
         type: ChameleonBoundUserInterface
 
 - type: entity
-  parent: [ClothingEyesHudOmni, BaseCentcommContraband]
+  parent: ClothingEyesHudOmni
   id: ClothingEyesGlassesCentComm
   suffix: DO NOT MAP
   name: central command shades

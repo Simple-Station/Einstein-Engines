@@ -30,7 +30,7 @@
 
 
 - type: entity
-  parent: [ClothingShoesBootsMagAdv, BaseJetpack, BaseCentcommContraband]
+  parent: [ClothingShoesBootsMagAdv, BaseJetpack]
   id: ClothingShoesBootsMagDeathsquad
   name: deathsquad magboots
   description: The sound of these boots are iconic; the sound of terror.

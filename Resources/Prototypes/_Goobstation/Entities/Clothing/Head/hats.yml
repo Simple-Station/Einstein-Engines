@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ClothingHeadBase, BaseCentcommContraband]
+  parent: ClothingHeadBase
   id: ClothingHeadHatBeretEliteNavyOfficer
   name: elite navy officer's beret
   description: A navy blue beret with the silver shield of the Nanotrasen security forces.
@@ -14,7 +14,7 @@
     - WhitelistChameleon # We do a little bit of trolling.
 
 - type: entity
-  parent: [ClothingHeadBase, BaseCentcommContraband]
+  parent: ClothingHeadBase
   id: ClothingHeadHatBeretNavyOfficer
   name: navy officer's beret
   description: A black beret with the silver shield of the Nanotrasen security forces.
@@ -27,9 +27,9 @@
     tags:
     - ClothMade
     - WhitelistChameleon
-    
+
 - type: entity
-  parent: [ClothingHeadBase, BaseCentcommContraband]
+  parent: ClothingHeadBase
   id: ClothingHeadHatBeretNavyCaptain
   name: navy captain's beret
   description: A starch white beret.

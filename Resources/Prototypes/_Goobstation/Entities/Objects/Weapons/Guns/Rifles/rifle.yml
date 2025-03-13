@@ -95,7 +95,7 @@
 
 - type: entity
   name: Annie
-  parent: [BaseCentcommContraband, BaseWeaponRifle]
+  parent: BaseWeaponRifle
   id: WeaponRifleAnnie
   description: A beast designed to shoulder the weight of impossible missions. Uses .30 rifle ammo.
   components:

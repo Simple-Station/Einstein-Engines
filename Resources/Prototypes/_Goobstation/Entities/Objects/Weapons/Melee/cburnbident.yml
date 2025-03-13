@@ -1,6 +1,6 @@
 - type: entity
   name: dispatch spear
-  parent: [BaseItem, BaseCentcommContraband] # Before you ask why I didn't parent the spear, it's because I don't want this to be able to have reagants applied.
+  parent: BaseItem # Before you ask why I didn't parent the spear, it's because I don't want this to be able to have reagants applied.
   id: CburnSpear
   description: A spear used by Nanotrasen's CBURN agents. Effective at incinerating organic targets.
   components:

@@ -43,7 +43,7 @@
     tags: [] # ignore "WhitelistChameleon" tag
 
 - type: entity
-  parent: [ClothingHandsGlovesCombat, BaseCentcommContraband]
+  parent: ClothingHandsGlovesCombat
   id: ClothingHandsGlovesDeathsquad
   suffix: DO NOT MAP # Just don't...
   name: deathsquad power claws

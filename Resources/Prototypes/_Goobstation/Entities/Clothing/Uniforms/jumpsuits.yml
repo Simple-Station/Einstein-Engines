@@ -103,7 +103,7 @@
     sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/hecu.rsi
 
 - type: entity
-  parent: [ClothingUniformBase, BaseCentcommContraband]
+  parent: ClothingUniformBase
   id: ClothingUniformJumpsuitNavyGold
   name: navy officer's jumpsuit
   description: A suit worn by high-ranking Central Command members. The rest is classified.
@@ -121,7 +121,7 @@
         Heat: 0.75
 
 - type: entity
-  parent: [ClothingUniformBase, BaseCentcommContraband]
+  parent: ClothingUniformBase
   id: ClothingUniformJumpsuitSpecOps
   name: special operations officer's jumpsuit
   description: A suit worn by high-ranking spec ops officers. The rest is classified.
@@ -139,7 +139,7 @@
         Heat: 0.70
 
 - type: entity
-  parent: [ClothingUniformBase, BaseCentcommContraband]
+  parent: ClothingUniformBase
   id: ClothingUniformJumpsuitDiplomat
   name: diplomat's jumpsuit
   description: A suit worn by diplomacy focused Central Command workers.

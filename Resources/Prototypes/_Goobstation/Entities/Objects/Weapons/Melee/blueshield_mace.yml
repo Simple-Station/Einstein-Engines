@@ -1,6 +1,6 @@
 - type: entity
   name: DT-3 "Atrocity"
-  parent: [BaseItem, BaseCentcommContraband]
+  parent: BaseItem
   id: BlueshieldMace
   description: Crush all those who oppose your leaders. Functions as a stun baton in its powered state.
   components:

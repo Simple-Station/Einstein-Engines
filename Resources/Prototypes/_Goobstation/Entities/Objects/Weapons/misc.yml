@@ -1,6 +1,6 @@
 - type: entity
   name: hypercharged flash
-  parent: [BaseItem, BaseCentcommContraband]
+  parent: BaseItem
   id: HyperFlash
   suffix: DO NOT MAP
   description: An ultrabright flashbulb with a trigger. This one seems to be much more potent than an ordinary one.

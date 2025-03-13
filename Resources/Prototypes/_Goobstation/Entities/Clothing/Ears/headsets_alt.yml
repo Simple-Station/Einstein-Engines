@@ -38,7 +38,7 @@
     sprite: _Goobstation/Clothing/Ears/Headsets/warden.rsi
 
 - type: entity
-  parent: [ClothingHeadsetAlt, BaseCentcommContraband]
+  parent: ClothingHeadsetAlt
   id: ClothingHeadsetDeathsquad
   name: deathsquad over-ear headset
   components:

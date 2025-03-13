@@ -101,7 +101,7 @@
 
 - type: entity
   name: contract terminator
-  parent: [BaseWeaponPistol, BaseCentcommContraband]
+  parent: BaseWeaponPistol
   id: WeaponPistolCentcommAgent
   description: A pistol specifically designed to fire neurotoxin laced bullets. It's capable concealing itself via bluespace technology.
   components:

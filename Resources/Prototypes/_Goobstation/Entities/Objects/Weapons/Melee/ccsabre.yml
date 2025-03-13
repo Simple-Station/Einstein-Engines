@@ -1,6 +1,6 @@
 - type: entity
   name: navy officer's sabre
-  parent: [ BaseSword, BaseCentcommContraband ]
+  parent: BaseSword
   id: NavyOfficerSabre
   description: A ceremonial weapon belonging to a high ranking Central Command official.
   components:

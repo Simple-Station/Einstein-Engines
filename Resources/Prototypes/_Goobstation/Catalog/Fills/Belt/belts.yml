@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ ClothingBeltMilitaryWebbingCMO, BaseMedicalContraband ]
+  parent: ClothingBeltMilitaryWebbingCMO
   suffix: Filled, DO NOT MAP
   id: ClothingBeltMilitaryWebbingCMOFilled
   name: chief medical officer's chest rig
@@ -20,7 +20,7 @@
         amount: 3
 
 - type: entity
-  parent: [ ClothingBeltDeathsquadWebbing, BaseCentcommContraband ]
+  parent: ClothingBeltDeathsquadWebbing
   suffix: Filled, DO NOT MAP
   id: ClothingBeltDeathsquadWebbingFilled
   name: deathsquad operative chestrig
@@ -55,7 +55,7 @@
 
 - type: entity
   id: ClothingBeltSecurityWebbingFilledMedical
-  parent: [ClothingBeltSecurityWebbingMedical, BaseCentcommContraband]
+  parent: ClothingBeltSecurityWebbingMedical
   suffix: Filled
   components:
   - type: StorageFill
