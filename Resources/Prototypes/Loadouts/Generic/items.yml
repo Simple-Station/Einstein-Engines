@@ -898,9 +898,6 @@
   canBeHeirloom: true
   items:
     - PlushieSharkBlue
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutPlushie
 
 - type: loadout
   id: PlushieSharkPink
@@ -909,9 +906,6 @@
   canBeHeirloom: true
   items:
     - PlushieSharkPink
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutPlushie
 
 - type: loadout
   id: PlushieSharkGrey
@@ -920,9 +914,7 @@
   canBeHeirloom: true
   items:
     - PlushieSharkGrey
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutPlushie
+
 - type: loadout
   id: PlushieLizard
   category: Items
@@ -930,9 +922,6 @@
   canBeHeirloom: true
   items:
     - PlushieLizard
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutPlushie
 
 - type: loadout
   id: PlushieArachind
