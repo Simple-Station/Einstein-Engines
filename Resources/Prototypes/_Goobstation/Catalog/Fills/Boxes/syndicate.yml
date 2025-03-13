@@ -28,7 +28,7 @@
 
 - type: entity
   name: box of lollypops
-  parent: [BoxCardboard, BaseSyndicateContraband]
+  parent: BoxCardboard
   id: SyndicateLollypopBundle
   description: A box full of Donk co. candy. What could be inside?
   components:
