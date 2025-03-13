@@ -13,7 +13,6 @@
     protectionTime: 5
   - type: Tag
     tags:
-<<<<<<< HEAD
     - WhitelistChameleon
     - HudMedical
   - type: IdentityBlocker
@@ -24,8 +23,6 @@
   - type: ShowHealthIcons
     damageContainers:
     - Biological
-
-=======
     - Trash
   - type: PhysicalComposition
     materialComposition:
