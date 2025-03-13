@@ -10,7 +10,7 @@ namespace Content.Server.Body.Components
     /// <summary>
     ///     Handles metabolizing various reagents with given effects.
     /// </summary>
-    [RegisterComponent, Access(typeof(MetabolizerSystem))]
+    [RegisterComponent, Access(typeof(MetabolizerSystem)), Access(typeof(VampirismSystem))] 
     public sealed partial class MetabolizerComponent : Component
     {
         /// <summary>
