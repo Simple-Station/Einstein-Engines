@@ -20,7 +20,7 @@
 
 - type: entity
   id: RevsFastDrawImplanter
-  parent: [ BaseFastDrawImplanter, BaseMajorContraband ]
+  parent: BaseFastDrawImplanter
   components:
     - type: Item
       sprite: _Goobstation/Objects/Specific/Medical/revs_implanter.rsi
@@ -48,7 +48,7 @@
 
 - type: entity
   id: BaseImplantOnlyImplanterCentcomm
-  parent: [ BaseImplantOnlyImplanter, BaseCentcommContraband ]
+  parent: BaseImplantOnlyImplanter
   name: centcomm implanter
   description: A compact disposable syringe exclusively designed for the injection of subdermal implants. The insertion needle is coated with an analgesic.
   abstract: true
