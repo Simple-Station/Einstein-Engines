@@ -197,29 +197,6 @@
   satchel: ClothingBackpackSatchelSecurityFilled
   duffelbag: ClothingBackpackDuffelSecurityFilled
 
-#CBURN Unit Gear - Full Kit
-- type: startingGear
-  id: CBURNGear
-  subGear:
-  - CBURNPlasmamanGear
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitColorBrown
-    back: ClothingBackpackDuffelCBURNFilled
-    mask: ClothingMaskGasERT
-    eyes: ClothingEyesGlassesSecurity
-    ears: ClothingHeadsetAltCentCom
-    gloves: ClothingHandsGlovesCombat
-    outerClothing: ClothingOuterHardsuitCBURN
-    shoes: ClothingShoesBootsCombatFilled
-    id: CBURNPDA
-    pocket1: RadioHandheld
-    pocket2: WeaponLaserGun
-    suitstorage: OxygenTankFilled
-    belt: ClothingBeltBandolier
-  innerClothingSkirt: ClothingUniformJumpsuitColorBrown
-  satchel: ClothingBackpackDuffelCBURNFilled
-  duffelbag: ClothingBackpackDuffelCBURNFilled
-
 - type: startingGear
   id: BoxingKangarooGear
   equipment:
