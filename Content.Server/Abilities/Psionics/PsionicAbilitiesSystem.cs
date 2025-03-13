@@ -15,6 +15,8 @@ using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Player;
 using Content.Shared.CCVar;
 using Content.Shared.NPC.Systems;
+using Content.Shared.Tag;
+
 
 namespace Content.Server.Abilities.Psionics;
 
@@ -33,6 +35,7 @@ public sealed class PsionicAbilitiesSystem : EntitySystem
     [Dependency] private readonly NpcFactionSystem _npcFaction = default!;
     [Dependency] private readonly GhostSystem _ghost = default!;
     [Dependency] private readonly MindSystem _mind = default!;
+    [Dependency] private readonly TagSystem _tag = default!;
 
     public override void Initialize()
     {
@@ -205,7 +208,7 @@ public sealed class PsionicAbilitiesSystem : EntitySystem
         var ev = new OnMindbreakEvent();
         RaiseLocalEvent(uid, ref ev);
 
-        if (_config.GetCVar(CCVars.ScarierMindbreaking))
+        if (_config.GetCVar(CCVars.ScarierMindbreaking) || _tag.HasTag(uid,"TraitScaryMindbreaking" ))
             ScarierMindbreak(uid, psionic);
     }
 
