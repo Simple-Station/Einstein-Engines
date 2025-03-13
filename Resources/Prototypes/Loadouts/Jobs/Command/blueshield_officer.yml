@@ -115,7 +115,7 @@
     - BlueshieldMace
     - BlueShieldShield
 
-  - type: loadout
+- type: loadout
   id: LoadoutBSOTerminus
   category: JobsCommandBlueshieldOfficer
   cost: 0
