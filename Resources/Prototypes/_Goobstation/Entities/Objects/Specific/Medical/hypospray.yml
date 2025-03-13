@@ -228,7 +228,7 @@
 
 - type: entity
   name: centcomm advanced stimulant
-  parent:[ChemicalMedipen
+  parent: ChemicalMedipen
   id: CentcommStimpack
   suffix: DO NOT MAP
   description: According to a Nanotrasen funded study, it has zero addictive properties.
