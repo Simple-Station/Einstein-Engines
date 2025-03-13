@@ -3,7 +3,7 @@ using Content.Shared.Body.Prototypes;
 using Content.Shared.Whitelist;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server.Floofstation.Traits.Components;
+namespace Content.Server.Limbus.Traits.Components;
 
 /// <summary>
 ///     Enables the mob to suck blood from other mobs to replenish its own saturation.
