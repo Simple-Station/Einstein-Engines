@@ -8,9 +8,6 @@
   icon: "JobIconNanotrasen"
   supervisors: job-supervisors-centcom # Goobstation
   canBeAntag: false
-  requirements:
-  - !type:AgeRequirement
-    requiredAge: 21
   accessGroups:
   - AllAccess
   access:

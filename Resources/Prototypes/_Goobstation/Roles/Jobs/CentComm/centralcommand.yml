@@ -53,9 +53,6 @@
   icon: "JobIconNanotrasen"
   supervisors: job-supervisors-null
   canBeAntag: false
-  requirements:
-    - !type:AgeRequirement
-      requiredAge: 21
   accessGroups:
     - AllAccess
   access:
@@ -97,9 +94,6 @@
   icon: "JobIconNanotrasen"
   supervisors: job-supervisors-commander
   canBeAntag: false
-  requirements:
-    - !type:AgeRequirement
-      requiredAge: 21
   accessGroups:
     - AllAccess
   access:
@@ -143,9 +137,6 @@
   icon: "JobIconNanotrasen"
   supervisors: job-supervisors-commander
   canBeAntag: false
-  requirements:
-    - !type:AgeRequirement
-      requiredAge: 21
   accessGroups:
     - AllAccess
   access:
@@ -190,10 +181,7 @@
   startingGear: DiplomatGear
   icon: "JobIconNanotrasen"
   supervisors: job-supervisors-commander
-  canBeAntag: false
-  requirements:
-  - !type:AgeRequirement
-    requiredAge: 21
+  canBeAntag: false  
   accessGroups:
   - AllAccess
   access:
@@ -234,9 +222,6 @@
   icon: "JobIconLambda"
   supervisors: job-supervisors-null
   canBeAntag: false
-  requirements:
-  - !type:AgeRequirement
-    requiredAge: 21
   accessGroups:
   - AllAccess
   access:
