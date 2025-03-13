@@ -898,6 +898,9 @@
   canBeHeirloom: true
   items:
     - PlushieSharkBlue
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPlushie
 
 - type: loadout
   id: PlushieSharkPink

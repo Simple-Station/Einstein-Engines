@@ -144,3 +144,10 @@
     - type: loadout
       id: LoadoutItemNTDeck
 
+- type: characterItemGroup
+  id: LoadoutPlushie
+  maxItems: 3
+  items:
+    - type: loadout
+      id: PlushieSharkBlue
+
