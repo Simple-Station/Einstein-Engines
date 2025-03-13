@@ -21,6 +21,11 @@
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
   - type: Hands
+    showInHands: false
+  - type: ComplexInteraction
+  - type: Body
+    prototype: SiliconHand
+    requiredLegs: 0
   - type: HTN
     rootTask:
       task: FillbotCompound

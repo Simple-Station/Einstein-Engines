@@ -44,5 +44,6 @@
     range: 1000
   - type: DeviceLinkSink
     ports:
+      - FillbotAnyItem
       - MaterialSiloUtilizer
   - type: MaterialSiloUtilizer
