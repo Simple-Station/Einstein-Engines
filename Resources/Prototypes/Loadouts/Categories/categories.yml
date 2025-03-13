@@ -25,6 +25,8 @@
 - type: loadoutCategory
   id: Items
   root: true
+  subCategories:
+    - Plushies
 
 - type: loadoutCategory
   id: Jobs

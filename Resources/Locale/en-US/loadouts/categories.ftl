@@ -7,6 +7,7 @@ loadout-category-Eyes = Eyes
 loadout-category-Hands = Hands
 loadout-category-Head = Head
 loadout-category-Items = Items
+load-catergory-Plushies = Plushies
 
 # Jobs
 loadout-category-Jobs = Jobs
