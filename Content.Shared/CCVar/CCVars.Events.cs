@@ -15,12 +15,12 @@ public sealed partial class CCVars
     ///     Close to how long you expect a round to last, so you'll probably have to tweak this on downstreams.
     /// </summary>
     public static readonly CVarDef<float>
-        EventsRampingAverageEndTime = CVarDef.Create("events.ramping_average_end_time", 40f, CVar.ARCHIVE | CVar.SERVERONLY);
+        EventsRampingAverageEndTime = CVarDef.Create("events.ramping_average_end_time", 180f, CVar.ARCHIVE | CVar.SERVERONLY);
 
     /// <summary>
     ///     Average ending chaos modifier for the ramping event scheduler.
     ///     Max chaos chosen for a round will deviate from this
     /// </summary>
     public static readonly CVarDef<float>
-        EventsRampingAverageChaos = CVarDef.Create("events.ramping_average_chaos", 6f, CVar.ARCHIVE | CVar.SERVERONLY);
+        EventsRampingAverageChaos = CVarDef.Create("events.ramping_average_chaos", 0.2f, CVar.ARCHIVE | CVar.SERVERONLY);
 }
