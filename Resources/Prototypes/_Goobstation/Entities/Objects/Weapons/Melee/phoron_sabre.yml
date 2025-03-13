@@ -1,6 +1,6 @@
 - type: entity # To-do - Replace all sounds with Nanotrasen energy sounds once blueshield shield PR is merged.
   name: phoron sabre
-  parent: [BaseMeleeWeaponEnergy, BaseCentcommContraband]
+  parent: EnergySword
   id: PhoronSabre
   suffix: DO NOT MAP
   description: The signature weapon of the dreaded deathsquads. It's mostly for show.
@@ -28,7 +28,6 @@
       visible: false
       shader: unshaded
       map: [ "blade" ]
-
   - type: ItemToggleMeleeWeapon
     activatedSoundOnHit:
       path: /Audio/Weapons/eblade1.ogg
@@ -49,7 +48,6 @@
         Heat: 35
         Radiation: 10
         Structural: 80
-
   - type: Item
     sprite: _Goobstation/Objects/Weapons/Melee/phoron_sabre_inhands.rsi
   - type: Reflect
