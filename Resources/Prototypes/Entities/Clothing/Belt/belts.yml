@@ -568,20 +568,6 @@
           - CaptainSabre
   - type: Appearance
 
-- type: entity
-  parent: ClothingBeltStorageBase
-  id: ClothingBeltHolster
-  name: shoulder holster
-  description: 'A holster to carry a handgun and ammo. WARNING: Badasses only.'
-  components:
-  - type: Sprite
-    sprite: Clothing/Belt/holster.rsi
-  - type: Clothing
-    sprite: Clothing/Belt/holster.rsi
-  - type: Storage
-    grid:
-    - 0,0,3,1
-
 # Belts without visualizers
 
 - type: entity
