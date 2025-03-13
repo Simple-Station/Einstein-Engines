@@ -8,12 +8,6 @@
   },
   "states": [
 	{
-      "name": "future"
-    },
-	{
-      "name": "idhelldiver"
-    },
-	{
       "name": "executive"
     },
 	{
@@ -26,9 +20,4 @@
     },
 	{
       "name": "executive-equipped-NECK"
-    },
-	{
-      "name": "idchrono"
     }
-  ]
-}
