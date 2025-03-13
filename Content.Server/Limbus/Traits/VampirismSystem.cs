@@ -1,10 +1,10 @@
 using Content.Server.Body.Components;
-using Content.Server.Floofstation.Traits.Components;
+using Content.Server.Limbus.Traits.Components;
 using Content.Server.Vampiric;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
 
-namespace Content.Server.Floofstation.Traits;
+namespace Content.Server.Limbus.Traits;
 
 public sealed class VampirismSystem : EntitySystem
 {
