@@ -12753,3 +12753,30 @@ Entries:
   id: 6941
   time: '2025-03-12T07:10:58.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1765
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed Oni not being able to do a ton of things that required hardcoded
+        tags. I fucking hate the tag system.
+  id: 6942
+  time: '2025-03-12T21:35:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1935
+- author: Timfa2112
+  changes:
+    - type: Tweak
+      message: Tweaked rev manifesto to not spam chat anymore
+  id: 6943
+  time: '2025-03-12T23:24:05.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1936
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: Disabled Monstermos Tile Ripping by default.
+    - type: Tweak
+      message: >-
+        Default settings for Ramping Event Scheduler no longer throws
+        "Ventcritters every 10 seconds, 30 minutes into the round". 
+  id: 6944
+  time: '2025-03-13T03:16:40.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1945
