@@ -996,14 +996,6 @@
     - PlushieArachne
 
 - type: loadout
-  id: PlushieDiona
-  category: Items
-  Cost: 1
-  canBeHeirloom: true
-  items: PlushieDiona
-    -
-
-- type: loadout
   id: PlushieVulp
   category: Items
   Cost: 1
