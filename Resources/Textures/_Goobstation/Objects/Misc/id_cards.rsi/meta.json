@@ -7,17 +7,19 @@
     "y": 32
   },
   "states": [
-	{
+    {
       "name": "executive"
     },
-	{
+    {
       "name": "executive-inhand-right",
-        "directions": 4
+      "directions": 4
     },
-	{
+    {
       "name": "executive-inhand-left",
-        "directions": 4
+      "directions": 4
     },
-	{
+    {
       "name": "executive-equipped-NECK"
     }
+  ]
+}
