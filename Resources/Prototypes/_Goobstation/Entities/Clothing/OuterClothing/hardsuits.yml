@@ -110,12 +110,12 @@
   - type: Clothing
     sprite: _Goobstation/Clothing/OuterClothing/Hardsuits/dreadnought.rsi
     equipDelay: 15
-    unequipDelay: 600 # if i add the unremovable comp then you couldnt even put this on
+    unequipDelay: 1200 # if i add the unremovable comp then you couldnt even put this on - Diggy here, I added 600 more seconds in case you SOMEHOW had 10 minutes to take it off, now it's 20, enjoy.
   - type: PressureProtection
     highPressureMultiplier: 0.05
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.6 # chinalake meta would go hard
+    damageCoefficient: 0.3 # chinalake meta would go hard
   - type: FireProtection
     reduction: 0.9 # atmos fire suit is 0.8, so i guess this is fine? Reduction goes the opossite way right?
   - type: Armor
@@ -139,7 +139,7 @@
     - type: DamageOverTime
       damage:
         types:
-          Slash: 0.3
+          Piercing: 0.3
       interval: 1.0
       ignoreResistances: true
   - type: StaminaDamageResistance
