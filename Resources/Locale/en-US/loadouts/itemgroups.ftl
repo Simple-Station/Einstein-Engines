@@ -19,7 +19,6 @@ character-item-group-LoadoutSmokes = Smokeables
 character-item-group-LoadoutBoxKits = Survival Kits
 character-item-group-LoadoutWritables = Writing Tools
 character-item-group-LoadoutPets = Pets
-character-item-group-LoadoutPlushie = Plushie
 character-item-group-LoadoutCards = Playing Cards
 
 # Job Specific Template
