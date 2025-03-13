@@ -78,8 +78,8 @@
       map: ["enum.GunVisualLayers.Mag"]
   - type: Wieldable
   - type: GunWieldBonus
-    minAngle: -12
-    maxAngle: -24
+    minAngle: -17
+    maxAngle: -22
   - type: Gun
     minAngle: 21
     maxAngle: 32
@@ -94,7 +94,6 @@
       params:
         volume: -3
         maxDistance: 8
-        rolloffFactor: 1
     availableModes:
     - SemiAuto
     - Burst
