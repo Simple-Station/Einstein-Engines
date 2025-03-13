@@ -58,9 +58,6 @@
   - type: Item
     heldPrefix: off
     size: Normal
-  - type: Clothing
-    sprite: Objects/Weapons/Melee/stunbaton.rsi
-    quickEquip: false
   - type: DisarmMalus
     malus: 0.225
   - type: Appearance
