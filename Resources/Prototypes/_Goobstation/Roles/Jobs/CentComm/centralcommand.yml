@@ -181,7 +181,7 @@
   startingGear: DiplomatGear
   icon: "JobIconNanotrasen"
   supervisors: job-supervisors-commander
-  canBeAntag: false  
+  canBeAntag: false
   accessGroups:
   - AllAccess
   access:
@@ -235,17 +235,3 @@
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant, VaporizeImplant ]
 
-- type: startingGear
-  id: GovernmentManGear
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitReporter
-    shoes: ClothingShoesLeather
-    eyes: ClothingEyesGlassesCentComm
-    back: ClothingBackpackSatchelHolding
-    outerClothing: ClothingOuterArmourInvisible
-    id: GmanPDA
-    ears: ClothingHeadsetChronolegioneer
-    pocket1: SonicScrewdriver
-    pocket2: AmnestizineHypospray # Todo - Make this an ability. It'd be funny.
-  inhand:
-  - BriefcaseCentcomm

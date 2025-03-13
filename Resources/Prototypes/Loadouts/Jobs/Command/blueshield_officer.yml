@@ -87,7 +87,7 @@
 - type: loadout
   id: LoadoutBSORifleBRDIR25
   category: JobsCommandBlueshieldOfficer
-  cost: 9 # Significant upgrade over a Chester, offered here for the STYLE. Intentionally priced at you not being able to buy a crew monitor with it.
+  cost: 0
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
@@ -102,7 +102,21 @@
     - WeaponSubMachineGunBRDIR25
 
 - type: loadout
-  id: LoadoutBSOEnergyShield
+  id: LoadoutBSOShield
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerPrimary
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - BlueshieldMace
+    - BlueShieldShield
+
+    - type: loadout
+  id: LoadoutBSOTerminus
   category: JobsCommandBlueshieldOfficer
   cost: 0
   canBeHeirloom: true
@@ -115,8 +129,11 @@
         - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
+    - !type:CharacterSpeciesRequirement
+      species:
+      - Oni
   items:
-    - EnergyShield
+    - Terminus
 
 - type: loadout
   id: LoadoutBSOMedkitCombatFilled

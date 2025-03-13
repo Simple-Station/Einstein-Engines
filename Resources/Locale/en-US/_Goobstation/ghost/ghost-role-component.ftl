@@ -10,10 +10,6 @@ ghost-role-information-skibidi-toilet-name = Skibidi Toilet
 ghost-role-information-skibidi-toilet-description = Unalive people with your skibidi ohio rizz.
 ghost-role-information-skibidi-toilet-rules = You are a [color=red][bold]Antagonist[/bold][/color] with the objective of unaliving as many ohioans as you can.
 
-ghost-role-information-Hecu-name = HECU Operative
-ghost-role-information-Hecu-description = Central Command needs something done.
-ghost-role-information-Hecu-rules = You are required to obey orders given by your superior, you are effectively their [color=#6495ed][bold]Familiar[/bold][/color].
-
 ghost-role-information-lootbug-name = LootBug
 ghost-role-information-lootbug-description = Try not to be butchered by tiders.
 
@@ -44,8 +40,3 @@ ghost-role-information-diplomat-description = Represent Central Command, managin
 
 ghost-role-information-sentient-shark-name = Sentient Sharkminnow
 
-# Half Life
-
-ghost-role-information-Gman-name = The G-Man
-ghost-role-information-Gman-description = The right man in the wrong place can make all the difference in the world.
-ghost-role-information-Gman-rules = You are beholden to no rules or boundaries. Death cannot hold you, and neither can Nanotrasen.

@@ -13,18 +13,11 @@ job-name-navy-officer-undercover = Undercover Navy Officer
 job-name-navycaptain = Navy Captain
 job-name-diplomat = Diplomat
 
-# Half Life
-
-job-name-hecu = HECU Operative
-job-name-gman = The G-Man
-
 # Role timers - Make these alphabetical or I cut you (dont listen to upstream, i copied and pasted this, make it very un-alphabetical :godo:)
 
 JobBlueshieldOfficer = Blueshield Officer
-JobNanotrasenRepresentative = Nanotrasen Representative
-JobHecuOperative = HECU Operative
+JobNanotrasenRepresentative = Nanotrasen Representativ
 JobNavyOfficer = Navy Officer
 JobNavyOfficerUndercover = Undercover Navy Officer
 JobNavyCaptain = Navy Captain
 JobDiplomat = Diplomat
-JobGovernmentMan = The G-Man
