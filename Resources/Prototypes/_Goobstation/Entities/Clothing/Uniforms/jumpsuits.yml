@@ -32,17 +32,15 @@
   description: The robes worn by officials.
   components:
   - type: Sprite
-    sprite: _Resources/Textures/_Goobstation/Clothing/Uniforms/Jumpsuit/magistrate.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/casualsyndicate.rsi
   - type: Clothing
-    sprite: _Resources/Textures/_Goobstation/Clothing/Uniforms/Jumpsuit/magistrate.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/casualsyndicate.rsi
 
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitCasualCentcom
   name: casual centcom jumpsuit
   description: Paperwork's tough.
-<<<<<<< HEAD
-=======
   components:
   - type: Sprite
     sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/casualcentcom.rsi
@@ -76,46 +74,22 @@
   id: ClothingUniformJumpsuitBlueshieldOfficer
   name: blueshield officer jumpsuit
   description: A short-sleeved grey and blue jumpsuit, made out of a sturdy material. Blueshield standard issue.
->>>>>>> 4826ad580f (More casual jumpsuits (#1402))
   components:
   - type: Sprite
-    sprite: _Resources/Textures/Clothing/Uniforms/Jumpsuit/centcomformal.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/blueshield_officer.rsi
   - type: Clothing
-    sprite: _Resources/Textures/Clothing/Uniforms/Jumpsuit/centcomformal.rsi # cant find a casual rsi
-
-# No replacement, cant find RSI
-# - type: entity
-#  parent: ClothingUniformBase
-# id: ClothingUniformJumpsuitCasualCommand
-#  name: casual command jumpsuit
-#  description: Wait, where's my PDA?.
-#  components:
-#  - type: Sprite
-#    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/casualcommand.rsi
-#  - type: Clothing
-#    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/casualcommand.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/blueshield_officer.rsi
 
 - type: entity
   parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitCasualEngineer
-  name: casual engineering jumpsuit
-  description: Sparks? Fiberglass? What about 'em?
+  id: ClothingUniformJumpsuitBlueshieldShirt
+  name: blueshield officer blue shirt
+  description: An official security uniform. Pretty safe and pretty busy.
   components:
   - type: Sprite
-    sprite: _Resources/Textures/Clothing/Uniforms/Jumpsuit/engineering.rsi #cant find a casual RSI
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/blueshield_shirt.rsi
   - type: Clothing
-    sprite: _Resources/Textures/Clothing/Uniforms/Jumpsuit/engineering.rsi
-
-# - type: entity
-#  parent: ClothingUniformBase
-#  id: ClothingUniformJumpsuitBlueshieldShirt
-#  name: blueshield officer blue shirt
-#  description: An official security uniform. Pretty safe and pretty busy.
-#  components:
-#  - type: Sprite
-#    sprite: _Resources/Textures/_Goobstation/Clothing/Uniforms/Jumpsuit/blueshield_officer.rsi
-#  - type: Clothing
-#    sprite: _Resources/Textures/_Goobstation/Clothing/Uniforms/Jumpsuit/blueshield_officer.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/blueshield_shirt.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -124,65 +98,17 @@
   description: Enemy of dogs everywhere.
   components:
   - type: Sprite
-    sprite: _Resources/Textures/Nyanotrasen/Clothing/Uniforms/Jumpsuit/mailman.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/mailman.rsi
   - type: Clothing
-    sprite: _Resources/Textures/Nyanotrasen/Clothing/Uniforms/Jumpsuit/mailman.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/mailman.rsi
 
 - type: entity
   parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitNavyGold
-  name: navy officer's jumpsuit
-  description: A suit worn by high-ranking Central Command members. The rest is classified.
+  id: ClothingUniformHecu
+  name: HECU uniform
+  description: Hunt down the Freeman.
   components:
   - type: Sprite
-    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/navy_gold.rsi
-  - type: Clothing
-<<<<<<< HEAD
-    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/navy_gold.rsi
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.75
-        Slash: 0.75
-        Piercing: 0.70
-        Heat: 0.75
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitSpecOps
-  name: special operations officer's jumpsuit
-  description: A suit worn by high-ranking spec ops officers. The rest is classified.
-  components:
-  - type: Sprite
-    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/specialoperations.rsi
-  - type: Clothing
-    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/specialoperations.rsi
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.70
-        Slash: 0.70
-        Piercing: 0.65
-        Heat: 0.70
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitDiplomat
-  name: diplomat's jumpsuit
-  description: A suit worn by diplomacy focused Central Command workers.
-  components:
-  - type: Sprite
-    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/diplomat.rsi
-  - type: Clothing
-    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/diplomat.rsi
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.75
-        Slash: 0.75
-        Piercing: 0.70
-        Heat: 0.75
-
-=======
     sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/hecu.rsi
->>>>>>> 4826ad580f (More casual jumpsuits (#1402))
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/hecu.rsi
