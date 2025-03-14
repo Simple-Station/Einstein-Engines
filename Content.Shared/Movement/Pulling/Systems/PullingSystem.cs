@@ -1,6 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared._Goobstation.MartialArts.Components;
 using Content.Shared._Goobstation.MartialArts.Events;
+using Content.Shared.MouseRotator;
 using Content.Shared._White.Grab;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Administration.Logs;
@@ -29,6 +30,7 @@ using Content.Shared.Movement.Events;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Pulling.Events;
 using Content.Shared.Movement.Systems;
+using Content.Shared.Movement.Components;
 using Content.Shared.Pulling.Events;
 using Content.Shared.Speech;
 using Content.Shared.Standing;
@@ -80,7 +82,8 @@ public sealed class PullingSystem : EntitySystem
     [Dependency] private readonly GrabThrownSystem _grabThrown = default!;
     [Dependency] private readonly SharedCombatModeSystem _combatMode = default!;
     [Dependency] private readonly ThrowingSystem _throwing = default!;
-    [Dependency] private readonly ContestsSystem _contests = default!;
+    [Dependency] private readonly ContestsSystem _contests = default!; // Goobstation - Grab Intent
+    [Dependency] private readonly RotateToFaceSystem _rotateTo = default!; // NETPUNK EDIT
 
     public override void Initialize()
     {
@@ -113,6 +116,7 @@ public sealed class PullingSystem : EntitySystem
 
         SubscribeLocalEvent<PullableComponent, StrappedEvent>(OnBuckled);
         SubscribeLocalEvent<PullableComponent, BuckledEvent>(OnGotBuckled);
+        SubscribeLocalEvent<PullerComponent, PullStoppedMessage>(OnPullerPullStopped);
 
         CommandBinds.Builder
             .Bind(ContentKeyFunctions.ReleasePulledObject, InputCmdHandler.FromDelegate(OnReleasePulledObject, handle: false))
@@ -208,7 +212,19 @@ public sealed class PullingSystem : EntitySystem
             }
 
             if (pullerComp.PushingTowards is null)
+            {
+                if (HasComp<MouseRotatorComponent>(puller))
+                    continue;
+                if (!_timing.ApplyingState)
+                    EnsureComp<NoRotateOnMoveComponent>(puller);
+
+                var pulledCoords = _xformSys.GetMapCoordinates(pulled).Position;
+                var pullerCoords = _xformSys.GetMapCoordinates(puller).Position;
+
+                var angle = (pulledCoords - pullerCoords).ToWorldAngle().GetCardinalDir().ToAngle();
+                _rotateTo.TryFaceAngle(puller, angle);
                 continue;
+            }
 
             // If pushing but the target position is invalid, or the push action has expired or finished, stop pushing
             if (pullerComp.NextPushStop < _timing.CurTime
@@ -612,6 +628,15 @@ public sealed class PullingSystem : EntitySystem
         }
 
         TryStopPull(pullerComp.Pulling.Value, pullableComp, user: player, true);
+    }
+
+    private void OnPullerPullStopped(Entity<PullerComponent> ent, ref PullStoppedMessage args)
+    {
+        if (args.PulledUid == ent.Owner)
+            return;
+
+        if (!_timing.ApplyingState && !HasComp<MouseRotatorComponent>(ent))
+            RemCompDeferred<NoRotateOnMoveComponent>(ent);
     }
 
     public bool CanPull(EntityUid puller, EntityUid pullableUid, PullerComponent? pullerComp = null)

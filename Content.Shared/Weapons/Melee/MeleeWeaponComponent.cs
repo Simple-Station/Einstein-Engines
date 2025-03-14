@@ -235,7 +235,7 @@ public sealed partial class MeleeWeaponComponent : Component
 
     // Goobstation
     [DataField, AutoNetworkedField]
-    public bool CanWideSwing = true;
+    public bool CanWideSwing = false; // Spacious - Become Robust
 }
 
 /// <summary>

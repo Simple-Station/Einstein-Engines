@@ -2,12 +2,15 @@ using System.Numerics;
 using System.Threading;
 using System.Threading.Tasks;
 using Content.Server.Administration.Managers;
+using Content.Server.Atmos;
 using Content.Server.DoAfter;
 using Content.Server.NPC.Components;
 using Content.Server.NPC.Events;
 using Content.Server.NPC.Pathfinding;
 using Content.Shared.CCVar;
 using Content.Shared.Climbing.Systems;
+using Content.Shared.CombatMode;
+using Content.Shared.Gravity;
 using Content.Shared.CombatMode;
 using Content.Shared.Interaction;
 using Content.Shared.Movement.Components;
@@ -29,7 +32,10 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Content.Shared.Prying.Systems;
+using Content.Shared.TileMovement;
 using Microsoft.Extensions.ObjectPool;
+using Robust.Server.GameObjects;
+
 
 namespace Content.Server.NPC.Systems;
 
@@ -63,12 +69,16 @@ public sealed partial class NPCSteeringSystem : SharedNPCSteeringSystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedCombatModeSystem _combat = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
+    [Dependency] private readonly IGameTiming Timing = default!;
+    [Dependency] private readonly SharedPhysicsSystem PhysicsSystem = default!;
+    [Dependency] private readonly SharedGravitySystem _gravity = default!;
 
     private EntityQuery<FixturesComponent> _fixturesQuery;
     private EntityQuery<MovementSpeedModifierComponent> _modifierQuery;
     private EntityQuery<NpcFactionMemberComponent> _factionQuery;
     private EntityQuery<PhysicsComponent> _physicsQuery;
     private EntityQuery<TransformComponent> _xformQuery;
+    private EntityQuery<TileMovementComponent> _tileMovementQuery;
 
     private ObjectPool<HashSet<EntityUid>> _entSetPool =
         new DefaultObjectPool<HashSet<EntityUid>>(new SetPolicy<EntityUid>());
@@ -88,6 +98,8 @@ public sealed partial class NPCSteeringSystem : SharedNPCSteeringSystem
 
     private object _obstacles = new();
 
+    private TimeSpan CurrentTime => PhysicsSystem.EffectiveCurTime ?? Timing.CurTime;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -98,6 +110,7 @@ public sealed partial class NPCSteeringSystem : SharedNPCSteeringSystem
         _factionQuery = GetEntityQuery<NpcFactionMemberComponent>();
         _physicsQuery = GetEntityQuery<PhysicsComponent>();
         _xformQuery = GetEntityQuery<TransformComponent>();
+        _tileMovementQuery = GetEntityQuery<TileMovementComponent>();
 
         for (var i = 0; i < InterestDirections; i++)
         {
@@ -399,7 +412,39 @@ public sealed partial class NPCSteeringSystem : SharedNPCSteeringSystem
 
         steering.LastSteerDirection = resultDirection;
         DebugTools.Assert(!float.IsNaN(resultDirection.X));
-        SetDirection(uid, mover, steering, resultDirection, false);
+
+        if (!_gravity.IsWeightless(uid, body, xform) &&
+            body.BodyStatus == BodyStatus.OnGround &&
+            _tileMovementQuery.TryGetComponent(uid, out var tileMovement))
+        {
+            SetTileMovementDirection(xform, tileMovement, resultDirection);
+        }
+        else
+        {
+            SetDirection(uid, mover, steering, resultDirection, false);
+        }
+    }
+
+    /// <summary>
+    /// Shitcode solution to get tile movement to work with AI pathing. Essentially converts the direction vector into a
+    /// target tile and manipulates values on the TileMovementComponent as to start a movement towards that location.
+    /// In an optimal world I would tear all of this movement code down and try something more modular.
+    /// </summary>
+    private void SetTileMovementDirection(
+        TransformComponent transform,
+        TileMovementComponent tileMovement,
+        Vector2 direction)
+    {
+        if (tileMovement.SlideActive || direction == Vector2.Zero)
+            return;
+
+        var targetLocation = transform.LocalPosition + (direction.Normalized() * 0.97f);
+
+        tileMovement.SlideActive = true;
+        tileMovement.Origin = new EntityCoordinates(transform.ParentUid, transform.LocalPosition);
+        tileMovement.Destination = SharedMoverController.SnapCoordinatesToTile(targetLocation);
+        tileMovement.MovementKeyInitialDownTime = CurrentTime;
+        tileMovement.CurrentSlideMoveButtons = MoveButtons.None;
     }
 
     private EntityCoordinates GetCoordinates(PathPoly poly)
