@@ -248,6 +248,8 @@
   storage:
     back:
     - RevolutionaryManifesto
+    - EncryptionKeySyndie # Goobstation
+    - RevsFastDrawImplanter # Goobstation
 
 #Thief Gear
 - type: startingGear
