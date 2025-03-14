@@ -109,7 +109,7 @@
         type: ChameleonBoundUserInterface
 
 - type: entity
-  parent: [ClothingOuterBaseMedium, AllowSuitStorageClothing, ClothingOuterStorageFoldableBase]
+  parent: [ClothingOuterBaseMedium, AllowSuitStorageClothing]
   id: ClothingBlueshieldArmoredCoat
   name: blueshield's armored coat
   description: A coat for cold winter seasons with sewn in plates.
@@ -129,12 +129,6 @@
         Heat: 0.70
   - type: TemperatureProtection
     coefficient: 0.1
-
-- type: entity
-  parent: [ClothingOuterStorageFoldableBaseOpened, ClothingBlueshieldArmoredCoat]
-  id: ClothingBlueshieldArmoredCoatOpen
-  name: blueshield's armored coat
-  suffix: Opened
 
 # - type: entity
 #  parent: ClothingBlueshieldArmourVest
