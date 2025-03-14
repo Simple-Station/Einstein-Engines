@@ -2,6 +2,7 @@
   id: RandomPsionicPowerPool
   weights:
     MetapsionicPower: 1
+    AnoigoPower: 1
     DispelPower: 1
     #TelegnosisPower: 1
     PsionicRegenerationPower: 1
