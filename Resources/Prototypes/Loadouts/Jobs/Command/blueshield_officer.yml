@@ -85,7 +85,7 @@
     - !type:CharacterAgeRequirement
       min: 21
   items:
-    - WeaponEnergySword
+    - EnergySword
 
 - type: loadout
   id: LoadoutBSORifleChester
