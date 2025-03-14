@@ -163,3 +163,7 @@
       id: LoadoutOuterVestColorable
     - type: loadout
       id: LoadoutOuterVestThick
+    - type: loadout
+      id: ClothingOuterSuitWitchRobes
+    - type: loadout
+      id: ClothingOuterCoatExpensive

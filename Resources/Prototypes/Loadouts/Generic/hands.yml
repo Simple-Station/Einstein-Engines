@@ -107,3 +107,14 @@
       group: LoadoutGloves
   items:
     - ClothingClothWrap
+
+- type: loadout
+  id: ClothingHandsTacticalMaidGloves
+  category: Hands
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHandsTacticalMaidGloves
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGloves
