@@ -5,6 +5,7 @@ chat-language-Nekomimetic-name = Neko
 chat-language-Draconic-name = Sinta'Unathi
 chat-language-Azaziba-name = Sinta'Azaziba
 chat-language-SolCommon-name = Sol Common
+chat-language-NovuNederic-name = Novu-Nederic
 chat-language-TauCetiBasic-name = Basic
 chat-language-Tradeband-name = Tradeband
 chat-language-Freespeak-name = Freespeak

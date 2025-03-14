@@ -95,6 +95,20 @@
         - ValyrianStandard
 
 - type: trait
+  id: NovuNederic
+  category: TraitsSpeechLanguages
+  points: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsLanguagesBasic
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - NovuNederic
+      languagesUnderstood:
+        - NovuNederic
+
+- type: trait
   id: Azaziba
   category: TraitsSpeechLanguages
   points: -1

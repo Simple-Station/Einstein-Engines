@@ -146,6 +146,23 @@
     - SolCommon
 
 - type: entity
+  id: NovuNedericTranslator
+  parent: [ TranslatorPoweredBase ]
+  name: Novu-Nederic translator
+  description: Translates speech between Novu-Nederic and Galactic Common. Like a true Earthman!
+  components:
+  - type: HandheldTranslator
+    spoken:
+    - TauCetiBasic
+    - NovuNederic
+    understood:
+    - TauCetiBasic
+    - NovuNederic
+    requires:
+    - TauCetiBasic
+    - NovuNederic
+
+- type: entity
   id: RootSpeakTranslator
   parent: [ TranslatorPoweredBase ]
   name: RootSpeak translator

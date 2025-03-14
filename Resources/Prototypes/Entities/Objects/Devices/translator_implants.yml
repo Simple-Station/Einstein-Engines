@@ -99,6 +99,21 @@
 
 - type: entity
   parent: BaseSubdermalImplant
+  id: NovuNedericTranslatorImplant
+  name: novu-nederic translator implant
+  description: An implant giving the ability to understand and speak Novu-Nederic. Hoezee!
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TranslatorImplant
+    understood:
+    - NovuNederic
+    spoken:
+    - NovuNederic
+    requires:
+    - TauCetiBasic
+
+- type: entity
+  parent: BaseSubdermalImplant
   id: RootSpeakTranslatorImplant
   name: root-speak translator implant
   description: An implant that lets you speak for the trees. Or to the trees.
