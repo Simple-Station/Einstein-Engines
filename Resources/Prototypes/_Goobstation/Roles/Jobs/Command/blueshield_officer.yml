@@ -67,6 +67,7 @@
     ears: ClothingHeadsetCentCom
     gloves: ClothingHandsGlovesCombat
     id: BlueshieldPDA
+    ears: ClothingHeadsetAltCommand
     pocket1: UniqueBlueshieldOfficerLockerTeleporter
     pocket2: PinpointerNuclear
     belt: BlueShieldShieldFilled # I felt like einstein after figuring this out.

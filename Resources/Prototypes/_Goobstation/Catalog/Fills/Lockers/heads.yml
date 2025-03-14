@@ -13,7 +13,33 @@
     - id: HandheldFaxNanorep
     - id: RubberStampNanorep
     - id: Paper
-      amount: 2
+      amount: !type:ConstantNumberSelector
+        value: 5
+
+- type: entity
+  id: LockerNanorepFilled
+  suffix: Filled
+  parent: LockerNanorep
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: LockerFillNanorep
+
+- type: entityTable
+  id: LockerFillBlueshieldOfficer
+  table: !type:AllSelector
+    children:
+    - id: ClothingHeadHelmetSwat
+    - id: Flash
+    - id: FlashlightSeclite
+    - id: ClothingBlueshieldArmourVest
+    - id: ClothingEyesGlassesMedSec
+    - id: ClothingHandsGlovesCombat
+    - id: ClothingOuterHardsuitBlueshield
+    - id: BoxZiptie
+    - id: OxygenTankFilled
+    - id: NitrogenTankFilled
 
 - type: entity
   id: LockerBlueshieldOfficerFilled
