@@ -909,6 +909,10 @@
   canBeHeirloom: true
   items:
     - PlushieSharkPink
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPlushie
+
 
 - type: loadout
   id: PlushieSharkGrey
@@ -917,6 +921,9 @@
   canBeHeirloom: true
   items:
     - PlushieSharkGrey
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPlushie
 
 - type: loadout
   id: PlushieLizard
@@ -925,6 +932,9 @@
   canBeHeirloom: true
   items:
     - PlushieLizard
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPlushie
 
 - type: loadout
   id: PlushieArachind
@@ -933,6 +943,9 @@
   canBeHeirloom: true
   items:
     - PlushieArachind
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPlushie
 
 - type: loadout
   id: PlushieMoth
@@ -941,6 +954,9 @@
   canBeHeirloom: true
   items:
     - PlushieMoth
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPlushie
 
 - type: loadout
   id: PlushieHampter
@@ -949,6 +965,9 @@
   canBeHeirloom: true
   items:
     - PlushieHampter
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPlushie
 
 - type: loadout
   id: PlushieRouny
@@ -957,6 +976,9 @@
   canBeHeirloom: true
   items:
     - PlushieRouny
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPlushie
 
 - type: loadout
   id: PlushieCarp
@@ -965,6 +987,9 @@
   canBeHeirloom: true
   items:
     - PlushieCarp
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPlushie
 
 - type: loadout
   id: PlushieSlime
@@ -973,6 +998,9 @@
   canBeHeirloom: true
   items:
     - PlushieSlime
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPlushie
 
 - type: loadout
   id: PlushieVox
@@ -981,6 +1009,9 @@
   canBeHeirloom: true
   items:
     - PlushieVox
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPlushie
 
 - type: loadout
   id: PlushieHuman
@@ -989,6 +1020,9 @@
   canBeHeirloom: true
   items:
     - PlushieHuman
+  requirements:
+     - !type:CharacterItemGroupRequirement
+       group: LoadoutPlushie
 
 - type: loadout
   id: PlushieArachne
@@ -997,6 +1031,9 @@
   canBeHeirloom: true
   items:
     - PlushieArachne
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPlushie
 
 - type: loadout
   id: PlushieVulp
@@ -1005,6 +1042,9 @@
   canBeHeirloom: true
   items:
     - PlushieVulp
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPlushie
 
 - type: loadout
   id: PlushieShadowkin
@@ -1013,3 +1053,6 @@
   canBeHeirloom: true
   items:
     - PlushieShadowkin
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPlushie
