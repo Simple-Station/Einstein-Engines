@@ -306,6 +306,10 @@
   root: true
 
 - type: loadoutCategory
+  id: Plushies
+  root: true
+
+- type: loadoutCategory
   id: Belt
   root: true
 

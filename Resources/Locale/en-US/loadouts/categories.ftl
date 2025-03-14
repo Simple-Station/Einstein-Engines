@@ -89,6 +89,7 @@ loadout-category-JobsServiceReporter = Reporter
 loadout-category-Mask = Mask
 loadout-category-Neck = Neck
 loadout-category-Outer = Outer
+loadout-category-Plushies = Plushies
 loadout-category-Belt = Belt
 loadout-category-Shoes = Shoes
 loadout-category-Species = Species
