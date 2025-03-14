@@ -74,6 +74,9 @@
   color: "#D4872A"
   metabolisms:
     Poison:
+    metabolisms:
+    Poison:
+      metabolismRate : 3.00
       effects:
       - !type:HealthChange
         damage:
@@ -83,7 +86,7 @@
       - !type:FlammableReaction
         multiplier: 0.1
       - !type:AdjustTemperature
-        amount: 6000
+        amount: 100000000
   reactiveEffects:
     Flammable:
       methods: [ Touch ]
