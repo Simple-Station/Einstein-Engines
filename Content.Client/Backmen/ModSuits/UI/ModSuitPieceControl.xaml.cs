@@ -7,11 +7,15 @@ namespace Content.Client.Backmen.ModSuits.UI;
 [GenerateTypedNameReferences]
 public sealed partial class ModSuitPieceControl : PanelContainer
 {
+    public Action? PieceButtonPressed;
+
     public ModSuitPieceControl(EntityUid entity, IEntityManager entityManager)
     {
         RobustXamlLoader.Load(this);
 
         var previewEnt = entityManager.Spawn(entityManager.GetComponent<MetaDataComponent>(entity).EntityPrototype!.ID);
+
+        PieceButton.OnPressed += _ => PieceButtonPressed?.Invoke();
 
         PieceView.SetEntity(previewEnt);
         PieceName.Text = entityManager.GetComponent<MetaDataComponent>(entity).EntityName;

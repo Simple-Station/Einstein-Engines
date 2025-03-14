@@ -16,9 +16,15 @@ public sealed partial class ModSuitMenu : FancyWindow
     [UISystemDependency] private readonly SharedAppearanceSystem _appearanceSystem;
 
     public Action? EjectBatteryButtonPressed;
+
+    public Action<EntityUid>? ToggleModuleButtonPressed;
+    public Action<EntityUid>? PartToggleModulesButtonPressed;
+
     private List<EntityUid> _modules = new();
 
     public EntityUid Entity;
+
+    public EntityUid? ChosenModule;
     public EntityUid? PreviewEntity;
 
     public ModSuitMenu()
@@ -64,6 +70,11 @@ public sealed partial class ModSuitMenu : FancyWindow
             {
                 var control = new ModSuitPieceControl(attached, _entity);
 
+                control.PieceButtonPressed += () =>
+                {
+                    PartToggleModulesButtonPressed?.Invoke(attached);
+                };
+
                 PiecesContainer.AddChild(control);
             }
         }
@@ -100,13 +111,10 @@ public sealed partial class ModSuitMenu : FancyWindow
             }
 
             var control = new ModSuitModuleControl(ent, _entity, moduleComponent.ModComplexity, module.Item2, piece);
-            if (!module.Item2)
+            control.OnModuleChosen += () =>
             {
-                control.OnModuleChosen += () =>
-                {
-                    UpdateChosenModule(ent);
-                };
-            }
+                UpdateChosenModule(ent);
+            };
 
             ModuleContainer.AddChild(control);
             _modules.Add(ent);
@@ -115,6 +123,7 @@ public sealed partial class ModSuitMenu : FancyWindow
 
     private void UpdateChosenModule(EntityUid module)
     {
+        ChosenModule = module;
         if (PreviewEntity != null)
             _entity.QueueDeleteEntity(PreviewEntity);
 
@@ -127,6 +136,11 @@ public sealed partial class ModSuitMenu : FancyWindow
 
         ChosenPassiveConsumption.Text = Loc.GetString("mod-suit-module-passive-consumption"/*, ("consumption", passiveConsumption)*/);
         ChosenActiveConsumption.Text = Loc.GetString("mod-suit-module-active-consumption"/*, ("consumption", activeConsumption)*/);
+
+        ToggleModButton.OnPressed += _ =>
+        {
+            ToggleModuleButtonPressed?.Invoke(ChosenModule!.Value);
+        };
 
         ChosenModuleData.Visible = true;
         CurrentModuleView.Visible = true;

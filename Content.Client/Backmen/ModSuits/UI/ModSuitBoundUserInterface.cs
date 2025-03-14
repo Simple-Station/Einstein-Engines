@@ -21,7 +21,22 @@ public sealed class ModSuitBoundUserInterface : BoundUserInterface
         _menu = this.CreateWindow<ModSuitMenu>();
         _menu.SetEntity(Owner);
 
+        _menu.ToggleModuleButtonPressed += SendModuleToggleMessage;
+        _menu.PartToggleModulesButtonPressed += SendPartModulesToggleMessage;
+
         _menu.OpenCentered();
+    }
+
+    private void SendPartModulesToggleMessage(EntityUid uid)
+    {
+        var message = new TogglePartModulesUiMessage(_entityManager.GetNetEntity(uid));
+        SendPredictedMessage(message);
+    }
+
+    private void SendModuleToggleMessage(EntityUid uid)
+    {
+        var message = new ToggleModuleUiMessage(_entityManager.GetNetEntity(uid));
+        SendPredictedMessage(message);
     }
 
     protected override void UpdateState(BoundUserInterfaceState state)

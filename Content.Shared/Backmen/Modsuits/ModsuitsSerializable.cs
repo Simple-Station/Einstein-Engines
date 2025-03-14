@@ -47,6 +47,28 @@ public sealed class ModSuitUiMessage : BoundUserInterfaceMessage
     }
 }
 
+[Serializable, NetSerializable]
+public sealed class TogglePartModulesUiMessage : BoundUserInterfaceMessage
+{
+    public NetEntity AttachedClothingUid;
+
+    public TogglePartModulesUiMessage(NetEntity attachedClothingUid)
+    {
+        AttachedClothingUid = attachedClothingUid;
+    }
+}
+
+[Serializable, NetSerializable]
+public sealed class ToggleModuleUiMessage : BoundUserInterfaceMessage
+{
+    public NetEntity ModuleUid;
+
+    public ToggleModuleUiMessage(NetEntity moduleUid)
+    {
+        ModuleUid = moduleUid;
+    }
+}
+
 public sealed partial class ToggleModEvent : InstantActionEvent
 {
 }
@@ -57,6 +79,16 @@ public sealed partial class ActivateModEvent : InstantActionEvent
 
 [Serializable, NetSerializable]
 public sealed partial class TogglePartDoAfterEvent : SimpleDoAfterEvent
+{
+}
+
+[Serializable, NetSerializable]
+public sealed partial class ToggleModuleDoAfterEvent : SimpleDoAfterEvent
+{
+}
+
+[Serializable, NetSerializable]
+public sealed partial class TogglePartModulesDoAfterEvent : SimpleDoAfterEvent
 {
 }
 

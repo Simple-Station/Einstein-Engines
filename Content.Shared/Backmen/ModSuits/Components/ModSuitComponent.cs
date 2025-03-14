@@ -116,7 +116,13 @@ public sealed partial class ModSuitComponent : Component
     public TimeSpan ModPartToggleDelay = TimeSpan.FromSeconds(1.7f);
 
     /// <summary>
-    ///     Text shown in the toggle-clothing verb. Defaults to using the name of the <see cref="ActionEntity"/> action.
+    ///     Time it takes for this clothing to toggle one part of a mod suit
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public TimeSpan ModuleToggleDelay = TimeSpan.FromSeconds(0.8f);
+
+    /// <summary>
+    ///     Text shown in the toggle-clothing verb. Defaults to using the name of the <see cref="DeployActionEntity"/> action.
     /// </summary>
     [DataField, AutoNetworkedField]
     public string? VerbText;
