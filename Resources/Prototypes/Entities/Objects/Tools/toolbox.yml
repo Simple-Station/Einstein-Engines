@@ -38,6 +38,7 @@
   - type: Tag
     tags:
     - Toolbox
+    - DroneUsable # Goobstation
   - type: GenericVisualizer
     visuals:
       enum.StorageVisuals.Open:

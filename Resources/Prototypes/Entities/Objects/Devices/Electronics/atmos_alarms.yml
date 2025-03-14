@@ -13,6 +13,7 @@
   - type: ReverseEngineering # Nyano
     recipes:
       - AirAlarmElectronics
+      - DroneUsable # Goobstation
   - type: StaticPrice
     price: 61
 
@@ -33,5 +34,6 @@
   - type: ReverseEngineering # Nyano
     recipes:
       - FireAlarmElectronics
+      - DroneUsable # Goobstation
   - type: StaticPrice
     price: 61

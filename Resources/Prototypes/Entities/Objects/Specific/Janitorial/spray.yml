@@ -99,6 +99,7 @@
   - type: Tag
     tags:
       - Spray
+      - DroneUsable # Goobstation
 # Vapor
 
 - type: entity

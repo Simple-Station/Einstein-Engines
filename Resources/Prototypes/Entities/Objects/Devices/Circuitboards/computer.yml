@@ -10,6 +10,9 @@
       state: cpuboard
     - type: Item
       storedRotation: -90
+    - type: Tag
+      tags:
+        - DroneUsable # Goobstation
     - type: StaticPrice
       price: 100
     - type: PhysicalComposition
@@ -184,6 +187,7 @@
     - type: Tag
       tags:
         - SurveillanceCameraMonitorCircuitboard
+        - DroneUsable # Goobstation
 
 - type: entity
   parent: BaseComputerCircuitboard
@@ -209,6 +213,7 @@
       difficulty: 2
       recipes:
         - ComputerTelevisionCircuitboard
+        - DroneUsable # Goobstation
 
 - type: entity
   parent: BaseComputerCircuitboard
@@ -279,6 +284,7 @@
     - type: Tag
       tags:
       - HighRiskItem
+      - DroneUsable # Goobstation
 
 - type: entity
   parent: BaseComputerCircuitboard

@@ -16,6 +16,7 @@
     - Sheet
     - Metal
     - NoPaint
+    - DroneUsable # Goobstation
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Metallic

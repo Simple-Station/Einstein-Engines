@@ -57,6 +57,9 @@
           mask:
             - ItemMask
     - type: Rotatable
+    - type: Tag
+      tags:
+        - DroneUsable # Goobstation
 
 - type: entity
   name: mousetrap

@@ -1015,6 +1015,7 @@
     tags:
       - WhitelistChameleon
       - HamsterWearable
+      - DroneUsable # Goobstation
 
 - type: entity
   parent: ClothingHeadHatPartyRed

@@ -13,5 +13,6 @@
     - type: ReverseEngineering # Nyano
       recipes:
         - MailingUnitElectronics
+        - DroneUsable # Goobstation
     - type: StaticPrice
       price: 55

@@ -148,6 +148,9 @@
   - type: Construction
     graph: SolarPanel
     node: solarpanel
+  - type: Tag
+    tags:
+    - DroneUsable # Goobstation
 
 - type: entity
   id: SolarPanelBroken
