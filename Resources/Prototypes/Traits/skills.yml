@@ -17,6 +17,7 @@
         - ChiefMedicalOfficer
         - Brigmedic
         - SeniorPhysician
+        - MedicalBorg
 
 - type: trait
   id: SelfAware
