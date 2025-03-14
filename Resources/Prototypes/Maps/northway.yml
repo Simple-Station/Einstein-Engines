@@ -6,7 +6,7 @@
   maxPlayers: 25
   stations:
     Northway:
-      stationProto: StandardNanotrasenStation
+      stationProto: StandardNanotrasenStationNoShuttles
       components:
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/emergency.yml
@@ -61,3 +61,5 @@
             CargoTechnician: [ 2, 2 ]
           #civilian
             Passenger: [ 1, 5 ]
+          # Silicon
+            StationAi: [ 1, 1 ]
