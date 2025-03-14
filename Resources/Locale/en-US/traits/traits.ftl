@@ -588,3 +588,8 @@ trait-name-ThermographicVisionModule = I.P.C Eye Module: Thermographic Scanner
 trait-description-ThermographicVisionModule =
     Your vision has been enhanced with a Thermographic Scanner. When enabled, it captures a snapshot of the user's surroundings, while highlighting all
     biological life forms. It can even detect individuals through the walls of a station.
+
+trait-name-ScaryMindbreak = Child of the Noosphere
+trait-description-ScaryMindbreak =
+    Your personhood is greatly intertwined with the Noosphere.
+    To be mindbroken is to cease to be.
