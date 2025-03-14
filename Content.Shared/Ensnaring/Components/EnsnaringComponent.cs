@@ -59,12 +59,6 @@ public sealed partial class EnsnaringComponent : Component
     public bool CanMoveBreakout;
 
     /// <summary>
-    /// Should the ensaring entity be deleted upon removal?
-    /// </summary>
-    [DataField]
-    public bool DestroyOnRemove = false;
-
-    /// <summary>
     /// Entites which bola will pass through.
     /// </summary>
     [DataField]
