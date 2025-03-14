@@ -1822,6 +1822,17 @@
     - id: ClothingOuterWinterCoatPlaid
       orGroup: Coat
 
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: BaseMail
+  id: MailSprayTan
+  suffix: spraytan
+  components:
+  - type: Mail
+    contents:
+    - id: ChemicalSprayTan
+
 - type: entity
   parent: BaseMail
   id: MailHydroCoPowderJuice

@@ -44,6 +44,8 @@
       id: LoadoutChemistPillCanisterDexalin
     - type: loadout
       id: LoadoutChemistPillCanisterSpaceDrugs
+    - type: loadout
+      id: LoadoutChemistPillCanisterSprayTan
 
 - type: characterItemGroup
   id: LoadoutChemistEyes
