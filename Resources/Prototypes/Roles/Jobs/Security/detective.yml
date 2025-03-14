@@ -50,16 +50,10 @@
     head: ClothingHeadHatFedoraBrown
     outerClothing: ClothingOuterVestDetective
     id: DetectivePDA
-    ears: ClothingHeadsetSecurity
+    ears: ClothingHeadsetAltSecurityRegular # Goobstation
     belt: ClothingBeltHolsterFilled
   innerClothingSkirt: ClothingUniformJumpskirtDetective
   satchel: ClothingBackpackSatchelSecurity
   duffelbag: ClothingBackpackDuffelSecurity
 
-- type: startingGear
-  id: DetectivePlasmamanGear
-  parent: BasePlasmamanSecurityGear
-  equipment:
-    jumpsuit: ClothingUniformEnvirosuitDetective
-    head: ClothingHeadEnvirohelmDetective
-    gloves: ClothingHandsGlovesEnviroglovesWhite
+

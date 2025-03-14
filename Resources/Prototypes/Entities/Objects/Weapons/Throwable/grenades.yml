@@ -80,6 +80,7 @@
   - type: GuideHelp
     guides:
     - Security
+  - type: Flashbang # Goobstation
 
 - type: entity
   id: GrenadeFlashEffect

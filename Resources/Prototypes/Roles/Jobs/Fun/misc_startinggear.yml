@@ -54,27 +54,6 @@
   inhand:
     - JetpackBlackFilled
 
-#Deathsquad Outfit
-- type: startingGear
-  id: DeathSquadGear
-  subGear:
-  - ERTPlasmamanGear # TODO: death squad envirosuit
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitDeathSquad
-    back: ClothingBackpackDeathSquadFilled
-    mask: ClothingMaskGasDeathSquad
-    eyes: ClothingEyesHudSecurity
-    ears: ClothingHeadsetAltCentCom
-    gloves: ClothingHandsGlovesCombat
-    outerClothing: ClothingOuterHardsuitDeathsquad
-    suitstorage: AirTankFilled
-    shoes: ClothingShoesBootsMagAdv
-    id: DeathsquadPDA
-    pocket1: EnergySword
-    pocket2: EnergyShield
-    belt: ClothingBeltMilitaryWebbingMedFilled
-  innerClothingSkirt: ClothingUniformJumpskirtColorBlack
-
 #Syndicate Operative Outfit - Full Kit
 - type: startingGear
   id: SyndicateOperativeGearFull
@@ -191,34 +170,11 @@
     head: ClothingHeadHelmetSwat
     mask: ClothingMaskGasSwat
     outerClothing: ClothingOuterArmorBasicSlim
-    ears: ClothingHeadsetSecurity
+    ears: ClothingHeadsetAltSecurityRegular # Goobstation
     gloves: ClothingHandsGlovesCombat
   innerClothingSkirt: ClothingUniformJumpskirtSec
   satchel: ClothingBackpackSatchelSecurityFilled
   duffelbag: ClothingBackpackDuffelSecurityFilled
-
-#CBURN Unit Gear - Full Kit
-- type: startingGear
-  id: CBURNGear
-  subGear:
-  - CBURNPlasmamanGear
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitColorBrown
-    back: ClothingBackpackDuffelCBURNFilled
-    mask: ClothingMaskGasERT
-    eyes: ClothingEyesGlassesSecurity
-    ears: ClothingHeadsetAltCentCom
-    gloves: ClothingHandsGlovesCombat
-    outerClothing: ClothingOuterHardsuitCBURN
-    shoes: ClothingShoesBootsCombatFilled
-    id: CBURNPDA
-    pocket1: RadioHandheld
-    pocket2: WeaponLaserGun
-    suitstorage: OxygenTankFilled
-    belt: ClothingBeltBandolier
-  innerClothingSkirt: ClothingUniformJumpsuitColorBrown
-  satchel: ClothingBackpackDuffelCBURNFilled
-  duffelbag: ClothingBackpackDuffelCBURNFilled
 
 - type: startingGear
   id: BoxingKangarooGear
@@ -292,6 +248,8 @@
   storage:
     back:
     - RevolutionaryManifesto
+    - EncryptionKeySyndie # Goobstation
+    - RevsFastDrawImplanter # Goobstation
 
 #Thief Gear
 - type: startingGear

@@ -23,14 +23,22 @@
     back: ClothingBackpackERTLeaderFilled
     shoes: ClothingShoesBootsCombatFilled
     head: ClothingHeadHelmetERTLeader
+    neck: ExecutiveIDCard # Goobstation - Executive Access!
     eyes: ClothingEyesGlassesSecurity
     gloves: ClothingHandsGlovesCombat
-    outerClothing: ClothingOuterArmorBasicSlim
+    outerClothing: ClothingOuterArmourDurathread # Durathread armor is cooler.
     id: ERTLeaderPDA
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltSecurityFilled
-    pocket1: WeaponPistolN1984NonLethal
+    pocket1: WeaponPulsePistol # Literally described as "Favored sidearm of NT ERT operatives". Is never used anywhere else.
     pocket2: FlashlightSeclite
+  storage:
+    back:
+    # - WeaponDisabler - Redundant. It spawns in secbelts now.
+    - MedkitCombatFilled # Goobstation - No reason not to.
+    - BoxZiptie
+    - CrowbarRed
+    # - MagazineMagnum - No need
 
 - type: startingGear
   id: ERTLeaderGearEVA
@@ -38,8 +46,9 @@
   - ERTPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTLeader
-    back: ClothingBackpackERTLeaderFilled
-    shoes: ClothingShoesBootsMagAdv
+    back: ClothingBackpackERTLeader
+    shoes: ClothingShoesBootsCombatFilled # STOP GIVING ROLES ADVANCED MAGBOOTS!! - SOL
+    neck: ExecutiveIDCard # Goobstation - Executive Access!
     mask: ClothingMaskGasERT
     eyes: ClothingEyesGlassesSecurity
     gloves: ClothingHandsGlovesCombat
@@ -48,18 +57,23 @@
     id: ERTLeaderPDA
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltSecurityFilled
-    pocket1: WeaponPistolN1984NonLethal
+    pocket1: WeaponPulsePistol # Literally described as "Favored sidearm of NT ERT operatives". Is never used anywhere else.
     pocket2: FlashlightSeclite
+  storage:
+    back:
+    # - WeaponDisabler - Redundant. It spawns in secbelts now.
+    - MedkitCombatFilled # Goobstation - No reason not to.
+    - BoxZiptie
+    - CrowbarRed
+    - MagazineMagnum
 
 - type: startingGear
-  id: ERTLeaderGearEVALecter
-  subGear:
-  - InhandTankGear
-  - ERTPlasmamanGearNoTank
+  id: ERTLeaderGearEVAAnnie # Goobstation
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTLeader
-    back: ClothingBackpackERTLeaderFilled
-    shoes: ClothingShoesBootsMagAdv
+    back: ClothingBackpackERTLeader
+    shoes: ClothingShoesBootsCombatFilled # STOP GIVING ROLES ADVANCED MAGBOOTS!! - SOL
+    neck: ExecutiveIDCard # Goobstation - Executive Access!
     mask: ClothingMaskGasERT
     eyes: ClothingEyesGlassesSecurity
     gloves: ClothingHandsGlovesCombat
@@ -68,8 +82,19 @@
     id: ERTLeaderPDA
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltSecurityFilled
-    pocket1: MagazineRifle
-    pocket2: MagazineRifle
+    pocket1: FlashlightSeclite
+    pocket2: WeaponPulsePistol # Literally described as "Favored sidearm of NT ERT operatives". Is never used anywhere else.
+  inhand:
+  - WeaponRifleAnnie # Goobstation - DEATH TO LECTER ERT!!
+  storage:
+    back:
+    # - WeaponDisabler - Redundant. It spawns in secbelts now.
+    - MedkitCombatFilled # Goobstation - No reason not to.
+    - BoxZiptie
+    - CrowbarRed
+    - MagazineLightRifle
+    - MagazineLightRifle
+    # - MagazineMagnum - Literally doesn't spawn with a gun that uses this. Seriously, who made this?
 
 # Chaplain
 - type: job
@@ -97,18 +122,33 @@
   - ERTPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTChaplain
-    back: ClothingBackpackERTChaplainFilled
-    shoes: ClothingShoesLeather
+    back: ClothingBackpackERTChaplain
+    shoes: ClothingShoesBootsCombatFilled # STOP GIVING ROLES ADVANCED MAGBOOTS!! - SOL
     head: ClothingHeadHatFez
     eyes: ClothingEyesGlasses
     neck: ClothingNeckStoleChaplain
     gloves: ClothingHandsGlovesCombat
-    outerClothing: ClothingOuterArmorBasicSlim
-    id: ERTEngineerPDA
+    outerClothing: ClothingOuterArmourDurathread # Durathread armor is cooler.
+    id: ERTChaplainPDA
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltStorageWaistbag
     pocket1: Flare
     pocket2: DrinkWaterBottleFull
+  storage:
+    back:
+    - BoxCandle
+    - BoxBodyBag
+    - DrinkWaterMelonJuiceJug
+    - Lantern
+    - Lantern
+    - Bible
+    - CrowbarRed
+    - FoodBakedBunHotX
+    - FoodBakedBunHotX
+    - FoodBakedBunHotX
+    - FoodBakedBunHotX
+    - Lighter
+    - ExecutiveIDCard # Goobstation - Executive Access!
 
 - type: startingGear
   id: ERTChaplainGearEVA
@@ -116,8 +156,8 @@
   - ERTPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTChaplain
-    back: ClothingBackpackERTChaplainFilled
-    shoes: ClothingShoesBootsMagAdv
+    back: ClothingBackpackERTChaplain
+    shoes: ClothingShoesBootsCombatFilled # STOP GIVING ROLES ADVANCED MAGBOOTS!! - SOL
     mask: ClothingMaskGasERT
     eyes: ClothingEyesGlasses
     neck: ClothingNeckStoleChaplain
@@ -129,6 +169,21 @@
     belt: ClothingBeltStorageWaistbag
     pocket1: Flare
     pocket2: DrinkWaterBottleFull
+  storage:
+    back:
+    - BoxCandle
+    - BoxBodyBag
+    - DrinkWaterMelonJuiceJug
+    - Lantern
+    - Lantern
+    - Bible
+    - CrowbarRed
+    - FoodBakedBunHotX
+    - FoodBakedBunHotX
+    - FoodBakedBunHotX
+    - FoodBakedBunHotX
+    - Lighter
+    - ExecutiveIDCard # Goobstation - Executive Access!
 
 # Engineer
 - type: job
@@ -152,12 +207,13 @@
   - ERTPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTEngineer
-    back: ClothingBackpackERTEngineerFilled
-    shoes: ClothingShoesBootsWork
+    back: ClothingBackpackERTEngineer
+    shoes: ClothingShoesBootsCombatFilled # STOP GIVING ROLES ADVANCED MAGBOOTS!! - SOL
     head: ClothingHeadHelmetERTEngineer
+    neck: ExecutiveIDCard # Goobstation - Executive Access!
     eyes: ClothingEyesGlassesMeson
     gloves: ClothingHandsGlovesCombat
-    outerClothing: ClothingOuterArmorBasicSlim
+    outerClothing: ClothingOuterArmourDurathread # Durathread armor is cooler.
     id: ERTEngineerPDA
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltChiefEngineerFilled
@@ -170,8 +226,9 @@
   - ERTPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTEngineer
-    back: ClothingBackpackERTEngineerFilled
-    shoes: ClothingShoesBootsMagAdv
+    back: ClothingBackpackERTEngineer
+    shoes: ClothingShoesBootsCombatFilled # STOP GIVING ROLES ADVANCED MAGBOOTS!! - SOL
+    neck: ExecutiveIDCard # Goobstation - Executive Access!
     mask: ClothingMaskGasERT
     eyes: ClothingEyesGlassesMeson
     gloves: ClothingHandsGlovesCombat
@@ -208,14 +265,22 @@
     back: ClothingBackpackERTSecurityFilled
     shoes: ClothingShoesBootsCombatFilled
     head: ClothingHeadHelmetERTSecurity
+    neck: ExecutiveIDCard # Goobstation - Executive Access!
     eyes: ClothingEyesGlassesSecurity
     gloves: ClothingHandsGlovesCombat
-    outerClothing: ClothingOuterArmorBasicSlim
+    outerClothing: ClothingOuterArmourDurathread # Durathread armor is cooler.
     id: ERTSecurityPDA
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltSecurityFilled
-    pocket1: WeaponPistolMk58Nonlethal
+    pocket1: WeaponPulsePistol # Death to Crew aligned Ballistics
     pocket2: FlashlightSeclite
+  storage:
+    back:
+    # - WeaponDisabler - Redundant. It spawns in secbelts now.
+    - MedkitCombatFilled # Goobstation - No reason not to.
+    - BoxZiptie
+    - CrowbarRed
+   # - MagazinePistol
 
 - type: startingGear
   id: ERTSecurityGearEVA
@@ -223,9 +288,10 @@
   - ERTPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTSecurity
-    back: ClothingBackpackERTSecurityFilled
-    shoes: ClothingShoesBootsMag
+    back: ClothingBackpackERTSecurity
+    shoes: ClothingShoesBootsCombatFilled # STOP GIVING ROLES ADVANCED MAGBOOTS!! - SOL
     mask: ClothingMaskGasERT
+    neck: ExecutiveIDCard # Goobstation - Executive Access!
     eyes: ClothingEyesGlassesSecurity
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterHardsuitERTSecurity
@@ -233,28 +299,42 @@
     id: ERTSecurityPDA
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltSecurityFilled
-    pocket1: WeaponPistolMk58Nonlethal
+    pocket1: WeaponPulsePistol # Death to Crew aligned Ballistics
     pocket2: FlashlightSeclite
+  storage:
+    back:
+    # - WeaponDisabler - Redundant. It spawns in secbelts now.
+    - MedkitCombatFilled # Goobstation - No reason not to.
+    - BoxZiptie
+    - CrowbarRed
+   # - MagazinePistol
 
-- type: startingGear
-  id: ERTSecurityGearEVALecter
-  subGear:
-  - InhandTankGear
-  - ERTPlasmamanGearNoTank
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitERTSecurity
-    back: ClothingBackpackERTSecurityFilled
-    shoes: ClothingShoesBootsMag
-    mask: ClothingMaskGasERT
-    eyes: ClothingEyesGlassesSecurity
-    gloves: ClothingHandsGlovesCombat
-    outerClothing: ClothingOuterHardsuitERTSecurity
-    suitstorage: WeaponRifleLecter
-    id: ERTSecurityPDA
-    ears: ClothingHeadsetAltCentCom
-    belt: ClothingBeltSecurityFilled
-    pocket1: MagazineRifle
-    pocket2: MagazineRifle
+# Every time an admin spawns a lecter ERT instead of an annie ert i lose a part of my soul. USE THE DAMN GUN MADE FOR THE ERTS, OR SPAWN THE OTHER PROTO. THIS IS REDUNDANT!!
+# - type: startingGear
+#   id: ERTSecurityGearEVALecter
+#  equipment:
+#    jumpsuit: ClothingUniformJumpsuitERTSecurity
+#    back: ClothingBackpackERTSecurity
+#    shoes: ClothingShoesBootsCombatFilled # STOP GIVING ROLES ADVANCED MAGBOOTS!! - SOL
+#    mask: ClothingMaskGasERT
+#    neck: ExecutiveIDCard # Goobstation - Executive Access!
+#    eyes: ClothingEyesGlassesSecurity
+#    gloves: ClothingHandsGlovesCombat
+#    outerClothing: ClothingOuterHardsuitERTSecurity
+#    id: ERTSecurityPDA
+#    ears: ClothingHeadsetAltCentCom
+#    belt: ClothingBeltSecurityFilled
+#    pocket1: MagazineRifle
+#    pocket2: MagazineRifle
+#  inhand:
+#    - WeaponRifleLecter
+#  storage:
+#    back:
+#    # - WeaponDisabler - Redundant. It spawns in secbelts now.
+#    - MedkitCombatFilled # Goobstation - No reason not to.
+#    - BoxZiptie
+#    - CrowbarRed
+#    - MagazinePistol
 
 # Medical
 - type: job
@@ -281,13 +361,22 @@
     back: ClothingBackpackERTMedicalFilled
     shoes: ClothingShoesBootsCombatFilled
     head: ClothingHeadHelmetERTMedic
-    eyes: ClothingEyesHudMedical
+    neck: ExecutiveIDCard # Goobstation - Executive Access!
+    eyes: ClothingEyesGlassesMedSec # Goobstation
     gloves: ClothingHandsGlovesNitrile
-    outerClothing: ClothingOuterArmorBasicSlim
+    outerClothing: ClothingOuterArmourDurathread # Durathread armor is cooler.
     id: ERTMedicPDA
     ears: ClothingHeadsetAltCentCom
-    belt: ClothingBeltMedicalFilled
+    belt: ClothingBeltSecurityWebbingFilledMedical # Fancier
     pocket1: Flare
+  storage:
+    back:
+    - CentCommHypo
+    - MedkitAdvancedFilled
+    - CrowbarRed
+    - OmnizineChemistryBottle
+    - EpinephrineChemistryBottle
+    - EpinephrineChemistryBottle
 
 - type: startingGear
   id: ERTMedicalGearEVA
@@ -295,17 +384,26 @@
   - ERTPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTMedic
-    back: ClothingBackpackERTMedicalFilled
-    shoes: ClothingShoesBootsMag
+    back: ClothingBackpackERTMedical
+    shoes: ClothingShoesBootsCombatFilled # STOP GIVING ROLES ADVANCED MAGBOOTS!! - SOL
     mask: ClothingMaskGasERT
-    eyes: ClothingEyesHudMedical
+    neck: ExecutiveIDCard # Goobstation - Executive Access!
+    eyes: ClothingEyesGlassesMedSec # Goobstation
     gloves: ClothingHandsGlovesNitrile
     outerClothing: ClothingOuterHardsuitERTMedical
     suitstorage: AirTankFilled
     id: ERTMedicPDA
     ears: ClothingHeadsetAltCentCom
-    belt: ClothingBeltMedicalFilled
+    belt: ClothingBeltSecurityWebbingFilledMedical # Fancier
     pocket1: Flare
+  storage:
+    back:
+    - CentCommHypo
+    - MedkitAdvancedFilled
+    - CrowbarRed
+    - OmnizineChemistryBottle
+    - EpinephrineChemistryBottle
+    - EpinephrineChemistryBottle
 
 # Janitor
 - type: job
@@ -332,8 +430,9 @@
     back: ClothingBackpackERTJanitorFilled
     shoes: ClothingShoesGaloshes
     head: ClothingHeadHelmetERTJanitor
+    neck: ExecutiveIDCard # Goobstation - Executive Access!
     gloves: ClothingHandsGlovesColorPurple
-    outerClothing: ClothingOuterArmorBasicSlim
+    outerClothing: ClothingOuterArmourDurathread # Durathread armor is cooler.
     id: ERTJanitorPDA
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltJanitorFilled
@@ -345,9 +444,10 @@
   - ERTPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTJanitor
-    back: ClothingBackpackERTJanitorFilled
-    shoes: ClothingShoesBootsMag
+    back: ClothingBackpackERTJanitor
+    shoes: ClothingShoesGaloshes # STOP GIVING ROLES ADVANCED MAGBOOTS!! - SOL
     mask: ClothingMaskGasERT
+    neck: ExecutiveIDCard # Goobstation - Executive Access!
     gloves: ClothingHandsGlovesColorPurple
     outerClothing: ClothingOuterHardsuitERTJanitor
     suitstorage: AirTankFilled

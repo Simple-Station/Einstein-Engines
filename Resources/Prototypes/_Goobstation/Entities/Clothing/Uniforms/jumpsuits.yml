@@ -32,6 +32,61 @@
   description: The robes worn by officials.
   components:
   - type: Sprite
-    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/magistrate.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/casualsyndicate.rsi
   - type: Clothing
-    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/magistrate.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/casualsyndicate.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitCasualCentcom
+  name: casual centcom jumpsuit
+  description: Paperwork's tough.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/casualcentcom.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/casualcentcom.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitCasualCommand
+  name: casual command jumpsuit
+  description: Wait, where's my PDA?.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/casualcommand.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/casualcommand.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitCasualEngineer
+  name: casual engineering jumpsuit
+  description: Sparks? Fiberglass? What about 'em?
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/casualengineer.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/casualengineer.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformMailCarrier
+  name: mail carrier's uniform
+  description: Enemy of dogs everywhere.
+  components:
+  - type: Sprite
+    sprite: Nyanotrasen/Clothing/Head/Hats/mailman.rsi
+  - type: Clothing
+    sprite: Nyanotrasen/Clothing/Head/Hats/mailman.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformHecu
+  name: HECU uniform
+  description: Hunt down the Freeman.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/hecu.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/hecu.rsi

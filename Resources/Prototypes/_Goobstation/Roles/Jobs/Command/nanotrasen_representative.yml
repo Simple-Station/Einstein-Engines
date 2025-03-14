@@ -28,6 +28,7 @@
   - Engineering
   - Medical
   - Research
+  - Research
   - Command
   - NanotrasenRepresentative
   - Lawyer
@@ -53,6 +54,7 @@
     id: CentcomPDA
     jumpsuit: ClothingUniformJumpsuitNanotrasenRepresentative
     ears: ClothingHeadsetCentCom
+    gloves: ClothingHandsGlovesGoldenTrim # Psst. I might as well add this here.
     pocket1: UniqueNanorepLockerTeleporter
 
 - type: startingGear

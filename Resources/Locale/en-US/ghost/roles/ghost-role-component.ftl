@@ -193,10 +193,11 @@ ghost-role-information-ert-medical-name = ERT Medical
 ghost-role-information-ert-medical-description = Assist with medical efforts to resolve the station's issues.
 
 ghost-role-information-cburn-agent-name = CBURN Agent
-ghost-role-information-cburn-agent-description = A highly trained CentCom agent, capable of dealing with various threats.
+ghost-role-information-cburn-agent-description = A highly trained CentComm agent, specializing in biological threats.
 
 ghost-role-information-centcom-official-name = CentComm official
-ghost-role-information-centcom-official-description = Perform CentComm related duties such as inspect the station, jotting down performance reviews for heads of staff, and managing the fax machine.
+ghost-role-information-centcom-official-description = Perform CentComm related duties such as inspecting the station, jotting down performance reviews for heads of staff, and managing the fax machine.
+
 
 ghost-role-information-nukeop-rules = You are a syndicate operative tasked with the destruction of the station. As an antagonist, do whatever is required to complete this task.
 
@@ -208,10 +209,13 @@ ghost-role-information-behonker-name = Behonker
 ghost-role-information-behonker-description = You are an antagonist, bring death and honks to those who do not follow the honkmother.
 
 ghost-role-information-hellspawn-name = Hellspawn
-ghost-role-information-hellspawn-description = You are an antagonist, bring death to those who do not follow the great god Nar'Sie.
+ghost-role-information-hellspawn-description = Bring death to those who do not follow the great god Nar'Sie.
+
+# Goob Station - Deathsquad Revamp
 
 ghost-role-information-Death-Squad-name = Death Squad Operative
-ghost-role-information-Death-Squad-description = One of Nanotrasen's top internal affairs agents. Await orders from CentComm or an official.
+ghost-role-information-Death-Squad-description = We need the Nanotrasen Representative alive to tell us what happened. The rest? Well... they're witnesses.
+ghost-role-information-Death-Squad-rules = Your objectives are simple: [color=red][bold]Terminate[/bold][/color] everyone who isn't Central Command staff. Executive orders may change this.
 
 ghost-role-information-SyndiCat-name = SyndiCat
 ghost-role-information-SyndiCat-description = You're the faithful trained pet of nuclear operatives with a microbomb. Serve your master to the death!

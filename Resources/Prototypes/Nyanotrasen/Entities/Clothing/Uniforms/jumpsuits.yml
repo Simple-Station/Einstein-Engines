@@ -1,17 +1,4 @@
 - type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformMailCarrier
-  name: mail carrier's uniform
-  description: Enemy of dogs everywhere.
-  components:
-  - type: Sprite
-    sprite: Nyanotrasen/Clothing/Uniforms/Jumpsuit/mailman.rsi
-  - type: Clothing
-    sprite: Nyanotrasen/Clothing/Uniforms/Jumpsuit/mailman.rsi
-  - type: ClothingAddFaction
-    faction: Mailman
-
-- type: entity
   parent: ClothingUniformSkirtBase
   id: ClothingUniformSkirtMailCarrier
   name: mail carrier's jumpskirt

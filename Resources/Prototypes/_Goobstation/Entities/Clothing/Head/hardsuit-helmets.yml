@@ -1,3 +1,6 @@
+
+#bso hardsuit
+
 - type: entity
   parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHelmetHardsuitBlueshield
@@ -21,6 +24,10 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+        Cold: 0.9
+        Radiation: 0.95
+        Caustic: 0.95
+  - type: FlashImmunity
 
 # cybersun stealth
 
@@ -50,3 +57,4 @@
   - type: ClothingGrantComponent
     component:
     - type: Stealth
+  - type: FlashImmunity

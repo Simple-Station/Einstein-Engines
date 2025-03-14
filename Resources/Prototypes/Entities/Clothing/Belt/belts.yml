@@ -278,6 +278,9 @@
         - PillCanister
         - Radio
         - DiscreteHealthAnalyzer
+        - SurgeryTool
+        - Dropper
+        - Tourniquet #Goobstation - ParamedHypo
       components:
         - SurgeryTool # Shitmed Change
         - Hypospray
@@ -488,6 +491,8 @@
     sprite: Clothing/Belt/security.rsi
   - type: Clothing
     sprite: Clothing/Belt/security.rsi
+  - type: ExplosionResistance # Goobstation
+    damageCoefficient: 0.5
   - type: Storage
     whitelist:
       tags:
@@ -500,6 +505,7 @@
         - MagazineMagnum
         - CombatKnife
         - Truncheon
+        - BolaEnergy # Goobstation
       components:
         - Stunbaton
         - FlashOnTrigger

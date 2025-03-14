@@ -289,6 +289,7 @@
         Slash: 0.6
         Piercing: 0.6
         Caustic: 0.7
+        Heat: 0.7 # Goobstation
   - type: ClothingSpeedModifier
     walkModifier: 0.75
     sprintModifier: 0.75
@@ -318,6 +319,7 @@
         Blunt: 0.8
         Slash: 0.8
         Piercing: 0.7
+        Heat: 0.7 # Goobstation
   - type: ClothingSpeedModifier
     walkModifier: 0.65
     sprintModifier: 0.65
@@ -350,6 +352,7 @@
         Slash: 0.6
         Piercing: 0.6
         Caustic: 0.7
+        Heat: 0.7 # Goobstation
   - type: ClothingSpeedModifier
     walkModifier: 0.7
     sprintModifier: 0.7
@@ -542,6 +545,7 @@
         Piercing: 0.5
         Radiation: 0.5
         Caustic: 0.6
+        Heat: 0.6 # Goobstation
   - type: ClothingSpeedModifier
     walkModifier: 0.8
     sprintModifier: 0.8
@@ -1048,10 +1052,20 @@
     coefficient: 0.001
   - type: ExplosionResistance
     damageCoefficient: 0.2
+  - type: FireProtection
+    reduction: 0.8
+  - type: StaminaDamageResistance # Goobstation - Deathsquad Revamp
+    coefficient: 0
+  - type: ClothingSlowOnDamageModifier # Goobstation
+    modifier: 0.1
+  - type: ClothingModifyStunTime # Goobstation
+    modifier: 0.1
+  - type: ModifyStandingUpTime # Goobstation
+    multiplier: 0.1
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.1 #best armor in the game
+        Blunt: 0.1 # Best armor in the game - Yeah no shit.
         Slash: 0.1
         Piercing: 0.1
         Heat: 0.1
@@ -1063,8 +1077,6 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitDeathsquad
-  - type: StaminaDamageResistance
-    coefficient: 0.1 # 90%
 
 #CBURN Hardsuit
 - type: entity
@@ -1088,11 +1100,11 @@
     modifiers:
       coefficients:
         Blunt: 0.7
-        Slash: 0.7
+        Slash: 0.3 # Goobstation - CBURN should protect against zombie attacks
         Piercing: 0.6
-        Heat: 0.1
-        Cold: 0.1
-        Shock: 0.1
+        Heat: 0.10
+        Cold: 0.10
+        Shock: 0.15
         Radiation: 0.1
         Caustic: 0.1
   - type: ClothingSpeedModifier

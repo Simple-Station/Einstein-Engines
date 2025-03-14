@@ -58,11 +58,6 @@
   - type: Item
     heldPrefix: off
     size: Normal
-  - type: Clothing
-    sprite: Objects/Weapons/Melee/stunbaton.rsi
-    quickEquip: false
-    slots:
-    - Belt
   - type: DisarmMalus
     malus: 0.225
   - type: Appearance
@@ -143,6 +138,7 @@
   name: flash
   parent: BaseItem
   id: Flash
+  suffix: DO NOT MAP
   description: An ultrabright flashbulb with a trigger, which causes the victim to be dazed and lose their eyesight for a moment. Useless when burnt out.
   components:
     - type: Sprite

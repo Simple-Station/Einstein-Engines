@@ -60,10 +60,3 @@
   satchel: ClothingBackpackSatchelHOSFilled
   duffelbag: ClothingBackpackDuffelHOSFilled
 
-- type: startingGear
-  id: HoSPlasmamanGear
-  parent: BasePlasmamanSecurityGear
-  equipment:
-    jumpsuit: ClothingUniformEnvirosuitHoS
-    head: ClothingHeadEnvirohelmHoS
-    gloves: ClothingHandsGlovesEnviroglovesBlack

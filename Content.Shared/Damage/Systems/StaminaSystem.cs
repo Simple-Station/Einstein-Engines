@@ -44,6 +44,7 @@ public sealed partial class StaminaSystem : EntitySystem
     [Dependency] private readonly StatusEffectsSystem _statusEffect = default!; // goob edit
     [Dependency] private readonly SharedStutteringSystem _stutter = default!; // goob edit
     [Dependency] private readonly SharedJitteringSystem _jitter = default!; // goob edit
+    [Dependency] private readonly ClothingModifyStunTimeSystem _modify = default!; // goob edit
 
     /// <summary>
     /// How much of a buffer is there between the stun duration and when stuns can be re-applied.
@@ -337,7 +338,7 @@ public sealed partial class StaminaSystem : EntitySystem
 
         SetStaminaAlert(uid, component);
 
-        if (!component.Critical && component.StaminaDamage >= component.CritThreshold && value > 0)
+        if (!component.Critical && component.StaminaDamage >= component.CritThreshold && value > 0) // goob edit
             EnterStamCrit(uid, component, immediate);
         else if (component.StaminaDamage < component.CritThreshold)
             ExitStamCrit(uid, component);
