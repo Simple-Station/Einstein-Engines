@@ -76,6 +76,8 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _EE/Objects/Weapons/Guns/SMGs/BRDI_R25.rsi
   - type: Wieldable
   - type: GunWieldBonus
     minAngle: -17
@@ -143,4 +145,6 @@
     - type: StealTarget
       stealGroup: HoSAntiqueWeapon
     - type: Sprite
-      sprite: _EE/Objects/Weapons/Guns/SMGs/BRDI_R25_antique.rsi
+      sprite: _DEN/Objects/Weapons/Guns/SMGs/BRDI_R25_decorated.rsi # The Den sprites
+    - type: Clothing
+      sprite: _DEN/Objects/Weapons/Guns/SMGs/BRDI_R25_decorated.rsi # The Den sprites

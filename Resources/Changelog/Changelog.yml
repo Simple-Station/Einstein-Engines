@@ -12726,3 +12726,99 @@ Entries:
   id: 6939
   time: '2025-03-12T00:17:57.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1927
+- author: EctoplasmIsGood
+  changes:
+    - type: Remove
+      message: Removes flare shielding
+    - type: Tweak
+      message: Adds eye protection to diagnostics hud
+    - type: Tweak
+      message: Adds chemical analyser to med hud
+    - type: Tweak
+      message: Increases med hud and diagnostics hud costs to 2
+  id: 6940
+  time: '2025-03-12T07:09:01.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1876
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added Space Wind V5. This version of space wind now accounts for the
+        coefficients of friction and gravity as a calculated way to resist space
+        wind. There is no more guesswork on if space wind should be able to
+        throw an object. Additionally, thanks to a standalone module from Matrix
+        Airflow System, space wind is capable of calculating airflow at
+        arbitrarily any point in a room, regardless of whatever garbage
+        Monstermos is saying.
+  id: 6941
+  time: '2025-03-12T07:10:58.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1765
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed Oni not being able to do a ton of things that required hardcoded
+        tags. I fucking hate the tag system.
+  id: 6942
+  time: '2025-03-12T21:35:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1935
+- author: Timfa2112
+  changes:
+    - type: Tweak
+      message: Tweaked rev manifesto to not spam chat anymore
+  id: 6943
+  time: '2025-03-12T23:24:05.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1936
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: Disabled Monstermos Tile Ripping by default.
+    - type: Tweak
+      message: >-
+        Default settings for Ramping Event Scheduler no longer throws
+        "Ventcritters every 10 seconds, 30 minutes into the round". 
+  id: 6944
+  time: '2025-03-13T03:16:40.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1945
+- author: Rosycup
+  changes:
+    - type: Tweak
+      message: Gave the BSO and HoS BRDIs a fancy paintjob.
+  id: 6945
+  time: '2025-03-14T02:52:05.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1957
+- author: Diggy
+  changes:
+    - type: Add
+      message: >-
+        Most markings from ADT, along with two new hairstyles, new markings for
+        Shadowkin (Despite all my hate for them).
+    - type: Fix
+      message: >-
+        Shadowkin ears are now colorable again, fuck around and find out if you
+        want your Shadowkin's ears to be pink with red or something.
+  id: 6946
+  time: '2025-03-14T02:53:40.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1951
+- author: Ichai
+  changes:
+    - type: Add
+      message: Cyberiad added to the rotation.
+    - type: Fix
+      message: >-
+        Gax: Fixed missing window in CE office, Fixed walls in SM to prevent
+        radiation leaks.
+    - type: Tweak
+      message: Port changes to Bagel from GoobStation
+    - type: Remove
+      message: Box is no more.
+  id: 6947
+  time: '2025-03-14T03:02:01.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1938
+- author: Rosycup
+  changes:
+    - type: Add
+      message: Added back worn sprites for the R-25 BRDI.
+  id: 6948
+  time: '2025-03-14T15:10:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1962
