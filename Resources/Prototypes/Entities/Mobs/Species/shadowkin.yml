@@ -105,6 +105,11 @@
     - type: Damageable
       damageContainer: Biological # Shadowkin
       damageModifierSet: Shadowkin
+    - type: DamageVisuals
+      damageOverlayGroups:
+        Brute:
+          sprite: Mobs/Effects/brute_damage.rsi
+          color: "#1c1624"
     - type: Barotrauma
       damage:
         types:
@@ -116,6 +121,7 @@
       bloodlossHealDamage:
         types:
           Bloodloss: -0.25
+      bloodReagent: BlackBlood
     - type: Temperature
       heatDamageThreshold: 330
       coldDamageThreshold: 195
