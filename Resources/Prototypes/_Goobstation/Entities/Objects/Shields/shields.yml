@@ -87,7 +87,6 @@
     - type: BatterySelfRecharger
       autoRecharge: true
       autoRechargeRate: 7
-    - type: RechargeableBlocking
     - type: ItemSlots
       slots:
         item:
