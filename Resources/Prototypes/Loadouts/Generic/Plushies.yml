@@ -1,0 +1,7 @@
+- type: loadout
+  id: PlushieCarp
+  category: Items
+  Cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieCarp
