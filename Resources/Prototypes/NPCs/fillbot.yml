@@ -8,31 +8,72 @@
         - !type:HTNCompoundTask
           task: IdleCompound
 
-# Picks a random puddle in range to move to and idle
+# Picks an object depending on what machine the bot is linked to, and puts it in the machine it's linked to
 - type: htnCompound
   id: FillMachineCompound
   branches:
     - tasks:
+        # If, for some reason, we're carrying something: drop it.
         - !type:HTNPrimitiveTask
-          operator: !type:UtilityOperator
-            proto: NearbyPuddles
-
+          operator: !type:DropOperator
+        # Find an item that will fit into the machine
+        - !type:HTNPrimitiveTask
+          operator: !type:PickNearbyFillableItemOperator
+            targetKey: NearbyFillableItem
+            targetMoveKey: TargetCoordinates
+        - !type:HTNPrimitiveTask
+          operator: !type:SpeakOperator
+            speech: filbot-item-located
+            hidden: true
+        - !type:HTNPrimitiveTask
+          operator: !type:SetFloatOperator
+            targetKey: IdleTime
+            amount: 1
+        # Move in range
         - !type:HTNPrimitiveTask
           operator: !type:MoveToOperator
-            pathfindInPlanning: true
-            removeKeyOnFinish: false
-            targetKey: TargetCoordinates
-            pathfindKey: TargetPathfind
-            rangeKey: MeleeRange
+            pathfindInPlanning: false
+
+        - !type:HTNPrimitiveTask
+          operator: !type:SetFloatOperator
+            targetKey: IdleTime
+            amount: 2
+        # Pick it up
         - !type:HTNPrimitiveTask
           preconditions:
             - !type:TargetInRangePrecondition
-              targetKey: Target
+              targetKey: NearbyFillableItem
               rangeKey: InteractRange
           operator: !type:InteractWithOperator
-            targetKey: Target
-          services:
-            - !type:UtilityService
-              id: PuddleService
-              proto: NearbyPuddles
-              key: Target
+            targetKey: NearbyFillableItem
+        # Find the machine the bot is linked to
+        - !type:HTNPrimitiveTask
+          operator: !type:FindLinkedMachineOperator
+            targetKey: LinkedFillableMachine
+            targetMoveKey: TargetCoordinates
+        - !type:HTNPrimitiveTask
+          operator: !type:SpeakOperator
+            speech: filbot-item-grabbed
+            hidden: true
+
+        - !type:HTNPrimitiveTask
+          operator: !type:SetFloatOperator
+            targetKey: IdleTime
+            amount: 1
+        # Move to the machine
+        - !type:HTNPrimitiveTask
+          operator: !type:MoveToOperator
+            pathfindInPlanning: false
+
+        - !type:HTNPrimitiveTask
+          operator: !type:SetFloatOperator
+            targetKey: IdleTime
+            amount: 2
+        # Insert the item
+        - !type:HTNPrimitiveTask
+          operator: !type:FillLinkedMachineOperator
+            targetKey: LinkedFillableMachine
+        - !type:HTNPrimitiveTask
+          operator: !type:SpeakOperator
+            speech: filbot-item-filled
+            hidden: true

@@ -4,6 +4,7 @@
   name: fillbot
   description: It picks up things and puts them somewhere else.
   components:
+  - type: Fillbot
   - type: Sprite
     sprite: Mobs/Silicon/Bots/fillbot.rsi
     state: fillbot

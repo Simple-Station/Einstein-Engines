@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Database;
 using Content.Shared.DeviceLinking.Events;
@@ -359,6 +360,20 @@ public abstract class SharedDeviceLinkSystem : EntitySystem
         foreach (var sourceUid in sinkComponent.LinkedSources)
         {
             RemoveSinkFromSource(sourceUid, sinkUid, null, sinkComponent);
+        }
+    }
+
+    /// <summary>
+    /// Removes every link from the given sink
+    /// </summary>
+    public void RemoveAllFromSource(EntityUid sourceUid, DeviceLinkSourceComponent? sourceComponent = null, Predicate<EntityUid>? filter = null)
+    {
+        if (!Resolve(sourceUid, ref sourceComponent))
+            return;
+
+        foreach (var sinkUid in sourceComponent.LinkedPorts.Where(sinkUid => filter == null || filter.Invoke(sinkUid.Key)))
+        {
+            RemoveSinkFromSource(sourceUid, sinkUid.Key, sourceComponent);
         }
     }
 
