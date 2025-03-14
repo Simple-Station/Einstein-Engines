@@ -29,6 +29,8 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
+using Content.Server.Chat.Systems;
+using Content.Shared.Chat;
 
 namespace Content.Server.Lathe
 {
@@ -50,6 +52,7 @@ namespace Content.Server.Lathe
         [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
         [Dependency] private readonly StackSystem _stack = default!;
         [Dependency] private readonly TransformSystem _transform = default!;
+        [Dependency] private readonly ChatSystem _chatSystem = default!; // Goobstation - New recipes message
 
         /// <summary>
         /// Per-tick cache
@@ -354,6 +357,15 @@ namespace Content.Server.Lathe
         private void OnDatabaseModified(EntityUid uid, LatheComponent component, ref TechnologyDatabaseModifiedEvent args)
         {
             UpdateUserInterfaceState(uid, component);
+
+            // Goobstation - Lathe message on recipes update - Start
+            if (args.UnlockedRecipes == null || args.UnlockedRecipes.Count == 0)
+                return;
+
+            var recipesCount = args.UnlockedRecipes.Count(recipe => component.DynamicRecipes.Contains(recipe));
+            if (recipesCount > 0)
+                _chatSystem.TrySendInGameICMessage(uid, Loc.GetString("lathe-technology-recipes-update-message", ("count", recipesCount)), InGameICChatType.Speak, hideChat: true);
+            // Goobstation - Lathe message on recipes update - End
         }
 
         private void OnResearchRegistrationChanged(EntityUid uid, LatheComponent component, ref ResearchRegistrationChangedEvent args)
