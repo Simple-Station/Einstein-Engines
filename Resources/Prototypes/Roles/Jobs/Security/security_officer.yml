@@ -50,15 +50,9 @@
     id: SecurityPDA
     ears: ClothingHeadsetAltSecurityRegular # Goobstation
     belt: ClothingBeltSecurityFilled
+    - SecHypo # Goobstation
   innerClothingSkirt: ClothingUniformJumpskirtSec
   satchel: ClothingBackpackSatchelSecurity
   duffelbag: ClothingBackpackDuffelSecurity
 
-- type: startingGear
-  id: SecurityOfficerPlasmamanGear
-  parent: BasePlasmamanSecurityGear
-  equipment:
-    jumpsuit: ClothingUniformEnvirosuitSec
-    head: ClothingHeadEnvirohelmSec
-    gloves: ClothingHandsGlovesEnviroglovesBlack
-    - SecHypo # Goobstation
+

@@ -52,15 +52,9 @@
     id: DetectivePDA
     ears: ClothingHeadsetAltSecurityRegular # Goobstation
     belt: ClothingBeltHolsterFilled
+    - SecHypo # Goobstation
   innerClothingSkirt: ClothingUniformJumpskirtDetective
   satchel: ClothingBackpackSatchelSecurity
   duffelbag: ClothingBackpackDuffelSecurity
 
-- type: startingGear
-  id: DetectivePlasmamanGear
-  parent: BasePlasmamanSecurityGear
-  equipment:
-    jumpsuit: ClothingUniformEnvirosuitDetective
-    head: ClothingHeadEnvirohelmDetective
-    gloves: ClothingHandsGlovesEnviroglovesWhite
-    - SecHypo # Goobstation
+

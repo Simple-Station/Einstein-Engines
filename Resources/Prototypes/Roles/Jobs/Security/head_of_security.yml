@@ -56,15 +56,8 @@
     gloves: ClothingHandsGlovesCombat
     ears: ClothingHeadsetAltSecurity
     belt: ClothingBeltSecurityFilled
+    - SecHypo # Goobstation
   innerClothingSkirt: ClothingUniformJumpskirtHoS
   satchel: ClothingBackpackSatchelHOSFilled
   duffelbag: ClothingBackpackDuffelHOSFilled
 
-- type: startingGear
-  id: HoSPlasmamanGear
-  parent: BasePlasmamanSecurityGear
-  equipment:
-    jumpsuit: ClothingUniformEnvirosuitHoS
-    head: ClothingHeadEnvirohelmHoS
-    gloves: ClothingHandsGlovesEnviroglovesBlack
-    - SecHypo # Goobstation
