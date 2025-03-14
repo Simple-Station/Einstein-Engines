@@ -146,7 +146,7 @@ public sealed class DockingConsoleSystem : SharedDockingConsoleSystem
         if (map == Transform(shuttle).MapID)
             return;
 
-        if (FindLargestGrid(map) is not {} grid)
+        if (GetStationUIDinMap(map) is not {} grid)
             return;
 
         Log.Debug($"{ToPrettyString(args.Actor):user} is FTL-docking {ToPrettyString(shuttle):shuttle} to {ToPrettyString(grid):grid}");
@@ -169,7 +169,7 @@ public sealed class DockingConsoleSystem : SharedDockingConsoleSystem
 
         // Find the target
         var targetMap = Transform(ent).MapID;
-        if (FindLargestGrid(targetMap) is not {} grid)
+        if (GetStationUIDinMap(targetMap) is not {} grid)
             return;
 
         // Find the mining shuttle
@@ -204,30 +204,24 @@ public sealed class DockingConsoleSystem : SharedDockingConsoleSystem
         Timer.Spawn(TimeSpan.FromSeconds(15), () => _mapMan.DeleteMap(dummyMap));
     }
 
-    private EntityUid? FindLargestGrid(MapId map)
+    /// <summary>
+    /// Find the GridUid of any grid Id with stationDatacomponent in a given mapID
+    /// </summary>
+    private EntityUid? GetStationUIDinMap(MapId map)
     {
-        EntityUid? largestGrid = null;
-        var largestSize = 0f;
-
-        var query = EntityQueryEnumerator<MapGridComponent, TransformComponent>();
-        while (query.MoveNext(out var gridUid, out var grid, out var xform))
+        var query = EntityQueryEnumerator<StationDataComponent>();
+        while (query.MoveNext(out var uid, out var data))
         {
-            if (xform.MapID != map)
-                continue;
-
-            if (HasComp<BecomesStationComponent>(gridUid) ||
-                HasComp<LavalandStationComponent>(gridUid))
-                return gridUid;
-
-            var size = grid.LocalAABB.Size.LengthSquared();
-            if (size < largestSize)
-                continue;
-
-            largestSize = size;
-            largestGrid = gridUid;
+            foreach (var gridUid in data.Grids)
+            {
+                if (Transform(gridUid).MapID == map)
+                {
+                    return gridUid;
+                }
+            }
         }
 
-        return largestGrid;
+        return null;
     }
 
     /// <summary>
