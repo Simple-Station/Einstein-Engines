@@ -62,17 +62,17 @@ namespace Content.IntegrationTests.Tests
             // "Asterisk", // De-rotated, no current maintainer.
             "Glacier", // Maintained by Violet
             // "TheHive", // De-rotated, no current maintainer.
-            // "Hammurabi", // De-rotated, no current maintainer.
+            // "Hammurabi", // De-rotated, maintained by Ichai.
             "Lighthouse", // Maintained by Violet
             // "Submarine", // De-rotated, no current maintainer.
-            "Gax", // Maintained by Estacao Pirata
+            "Gax", // Maintained by Ichaai
             "Lavatest", // Lavaland Change
-            "Rad", // Maintained by Estacao Pirata
+            "Rad", // Maintained by Ichai
             // "Europa", // De-rotated, has significant issues.
-            "Meta", // Maintained by Estacao Pirata
-            "Box", // Maintained by Estacao Pirata
-            "Lambda", // Maintained by Estacao Pirata
-            "Bagel", // Maintained by Estacao Pirata
+            "Meta", // Maintained by Ichai
+            "Cyberiad", // Maintained by Ichai
+            "Lambda", // Maintained by Ichai
+            "Bagel", // Maintained by Ichai
             "Northway" // Maintained by Violet
         };
 

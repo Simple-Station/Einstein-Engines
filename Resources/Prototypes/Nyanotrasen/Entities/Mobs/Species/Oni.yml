@@ -48,9 +48,6 @@
     - Nekomimetic
   - type: PotentiaModifier
     potentiaMultiplier: 0.5
-  - type: Tag
-    tags:
-    - Oni
 
 - type: entity
   save: false
