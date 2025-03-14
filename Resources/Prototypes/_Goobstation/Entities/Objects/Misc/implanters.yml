@@ -20,11 +20,7 @@
 
 - type: entity
   id: RevsFastDrawImplanter
-<<<<<<< HEAD
   parent: BaseFastDrawImplanter
-=======
-  parent: [ BaseFastDrawImplanter, BaseMajorContraband ]
->>>>>>> 2d18e12950 (Improve revs mindshielding (#681))
   components:
     - type: Item
       sprite: _Goobstation/Objects/Specific/Medical/revs_implanter.rsi
