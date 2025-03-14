@@ -4,7 +4,7 @@ using Content.Shared.Body.Prototypes;
 using Content.Shared.FixedPoint;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
-using Content.Server.Limbus.Traits.Components;
+using Content.Server.Limbus.Traits;
 
 namespace Content.Server.Body.Components
 {
