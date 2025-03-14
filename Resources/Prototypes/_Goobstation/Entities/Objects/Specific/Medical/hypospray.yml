@@ -348,24 +348,3 @@
     tags:
     - EmergencyMedipen
 
-- type: entity
-  name: epinephrine autoinjector cartridge
-  parent: BaseItem
-  description: Contains 10u of epinephrine, used in an epinephrine autoinjector.
-  id: CartridgeEpinephrine
-  components:
-  - type: Item
-    size: Tiny
-  - type: Sprite
-    sprite: _Goobstation/Objects/Specific/Medical/cartridge.rsi
-    state: icon
-  - type: SolutionCartridge
-    targetSolution: hypospray
-    solution:
-      maxVol: 10
-      reagents:
-      - ReagentId: Epinephrine
-        Quantity: 10
-  - type: Tag
-    tags:
-      - CartridgeEpinephrine
