@@ -25,7 +25,6 @@
     transferAmount: 10
     onlyAffectsMobs: false
     injectOnly: true
-  - type: HyposprayBlockNonMobInjection
   - type: UseDelay
     delay: 30 # up this later if its too low
   - type: SolutionCartridgeReceiver
@@ -252,7 +251,6 @@
     transferAmount: 5
     onlyAffectsMobs: false
     injectOnly: true
-  - type: HyposprayBlockNonMobInjection
   - type: UseDelay
     delay: 0.1 # UseDelays are for LOSERs
   - type: Tag
