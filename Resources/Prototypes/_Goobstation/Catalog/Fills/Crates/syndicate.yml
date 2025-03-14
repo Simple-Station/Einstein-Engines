@@ -28,3 +28,18 @@
       - id: DoubleEmergencyNitrogenTankFilled
       - id: ToolboxSyndicateFilled
       - id: PlushieNuke
+
+- type: entity
+  suffix: Filled
+  parent: CrateSyndicate
+  id: CrateSyndicateDreadnought
+  name: cybersun dreadnought bundle
+  description: "An advanced cybersun dreadnought bundle."
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingOuterHardsuitCybersunDreadnought
+      - id: ClothingMaskGasSyndicate
+      - id: ClothingHandsGlovesCombat
+      - id: DoubleEmergencyOxygenTankFilled
+      - id: DoubleEmergencyNitrogenTankFilled
