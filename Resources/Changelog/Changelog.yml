@@ -12800,3 +12800,18 @@ Entries:
   id: 6946
   time: '2025-03-14T02:53:40.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1951
+- author: Ichai
+  changes:
+    - type: Add
+      message: Cyberiad added to the rotation.
+    - type: Fix
+      message: >-
+        Gax: Fixed missing window in CE office, Fixed walls in SM to prevent
+        radiation leaks.
+    - type: Tweak
+      message: Port changes to Bagel from GoobStation
+    - type: Remove
+      message: Box is no more.
+  id: 6947
+  time: '2025-03-14T03:02:01.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1938
