@@ -23,32 +23,6 @@
     Glass: 300
 
 - type: latheRecipe
-  id: CartridgeBicaridine
-  result: CartridgeBicaridine
-  completetime: 1
-  materials:
-    Steel: 100
-    Glass: 300
-
-- type: latheRecipe
-  id: CartridgeDermaline
-  result: CartridgeDermaline
-  completetime: 1
-  materials:
-    Steel: 100
-    Glass: 300
-
-- type: latheRecipe
-  id: CartridgeEphedrine
-  result: CartridgeEphedrine
-  completetime: 1
-  materials:
-    Steel: 200
-    Glass: 500
-    Plasma: 200
-    Gold: 200
-
-- type: latheRecipe
   id: CartridgePuncturase
   result: CartridgePuncturase
   completetime: 1
