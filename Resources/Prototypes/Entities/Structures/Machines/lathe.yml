@@ -242,9 +242,9 @@
     - RiotShield
     - SpeedLoaderMagnum
     - SpeedLoaderMagnumEmpty
-      - GrenadeFlashBang # Goobstation
-      - BolaEnergy # Goobstation
-      - CartridgeEpinephrine # Goobstation
+    - GrenadeFlashBang # Goobstation
+    - BolaEnergy # Goobstation
+    - CartridgeEpinephrine # Goobstation
     # .35 Caseless Pistol
     - MagazinePistolCaselessRiflePractice # EE
     - MagazinePistolCaselessRifle # EE
@@ -990,7 +990,6 @@
       - ClothingEyesGlassesSecurity
       - TelescopicShield
       - HoloprojectorSecurity
-      - BolaEnergy
       - ClothingHeadHelmetBasic
       - MagazineShotgunBeanbag
       - ShellTranquilizer
