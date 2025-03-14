@@ -32,16 +32,6 @@
     Plasma: 500
     Gold: 200
 
-- type: latheRecipe
-  id: SecHypo
-  result: SecHypo
-  completetime: 3
-  materials:
-    Steel: 1500
-    Plastic: 800
-    Glass: 1200
-    Gold: 500
-
 # Mech Weapons
 - type: latheRecipe
   id: WeaponMechCombatImmolationGun
