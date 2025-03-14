@@ -29,17 +29,6 @@
   - type: PhysicalComposition
     materialComposition:
       Steel: 15
-  #Same as Ointment but divided by 5 and 3 because StackPrice needs to be 1 - Estacao Pirata IPCs
-  #1 Ointment = -50 damage of those types
-  #1 Cable ~= -50 (-49.8) damage of those types
-  - type: Healing
-    delay: 0.6
-    damageContainers:
-    - Silicon
-    damage:
-      types: # these are all split across multiple types
-        Heat: -1.66
-        Shock: -1.66
 
 - type: entity
   id: CableHVStack
@@ -78,6 +67,15 @@
           Quantity: 2
         - ReagentId: Carbon #steel-reinforced
           Quantity: 1
+  - type: Healing # HV Cables are drastically slower to use, but provide very good healing (-240 per stack as opposed to -150 for ointment or -255 for mesh.)
+    delay: 1.8
+    damageContainers:
+    - Silicon
+    damage:
+      types: # these are all split across multiple types. IPCs can still take cold damage, they just heavily resist it.
+        Heat: -8
+        Shock: -8
+        Cold: -2
 
 - type: entity
   parent: CableHVStack
@@ -143,6 +141,15 @@
           Quantity: 3
         - ReagentId: Copper
           Quantity: 2
+  - type: Healing # MV Cables are slower to use, but provide better healing (-120 per stack as opposed to -150 for ointment or -255 for mesh.)
+    delay: 1.2
+    damageContainers:
+    - Silicon
+    damage:
+      types: # these are all split across multiple types. IPCs can still take cold damage, they just heavily resist it.
+        Heat: -4
+        Shock: -4
+        Cold: -1
 
 - type: entity
   parent: CableMVStack
@@ -207,6 +214,15 @@
           Quantity: 3
         - ReagentId: Copper
           Quantity: 2
+  - type: Healing # LV Cables are quick to use one or two in combat, but provide mediocre healing (-60 per stack as opposed to -150 for ointment or -255 for mesh.)
+    delay: 0.6
+    damageContainers:
+    - Silicon
+    damage:
+      types: # these are all split across multiple types. IPCs can still take cold damage, they just heavily resist it.
+        Heat: -2
+        Shock: -2
+        Cold: -0.5 
 
 - type: entity
   parent: CableApcStack
