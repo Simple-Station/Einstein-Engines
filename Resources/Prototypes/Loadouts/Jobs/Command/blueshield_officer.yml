@@ -102,20 +102,6 @@
     - WeaponSubMachineGunBRDIR25
 
 - type: loadout
-  id: LoadoutBSOShield
-  category: JobsCommandBlueshieldOfficer
-  cost: 0
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBlueshieldOfficerPrimary
-    - !type:CharacterJobRequirement
-      jobs:
-        - BlueshieldOfficer
-  items:
-    - BlueshieldMace
-    - BlueShieldShield
-
-- type: loadout
   id: LoadoutBSOTerminus
   category: JobsCommandBlueshieldOfficer
   cost: 0
