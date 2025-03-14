@@ -115,9 +115,9 @@
   description: A coat for cold winter seasons with sewn in plates.
   components:
   - type: Sprite
-    sprite: _Goobstation/Clothing/OuterClothing/Armor/blueshield_coat.rsi
+    sprite: _Goobstation\Clothing\OuterClothing\Armor\blueshield_coat.rsi
   - type: Clothing
-    sprite: _Goobstation/Clothing/OuterClothing/Armor/blueshield_coat.rsi
+    sprite: _Goobstation\Clothing\OuterClothing\Armor\blueshield_coat.rsi
   - type: Item
     size: Normal
   - type: Armor
