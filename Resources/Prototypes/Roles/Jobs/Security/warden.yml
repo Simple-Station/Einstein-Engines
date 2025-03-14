@@ -10,7 +10,6 @@
     - !type:CharacterPlaytimeRequirement # DeltaV - JobDetective time requirement. Give them an understanding of basic forensics.
       tracker: JobDetective
       min: 14400 # DeltaV - 4 hours
-    - !type:CharacterWhitelistRequirement
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -56,15 +55,8 @@
     id: WardenPDA
     ears: ClothingHeadsetAltSecurityRegular # Goobstation
     belt: ClothingBeltSecurityFilled
+    - SecHypo # Goobstation
   innerClothingSkirt: ClothingUniformJumpskirtWarden
   satchel: ClothingBackpackSatchelSecurity
   duffelbag: ClothingBackpackDuffelSecurity
 
-- type: startingGear
-  id: WardenPlasmamanGear
-  parent: BasePlasmamanSecurityGear
-  equipment:
-    jumpsuit: ClothingUniformEnvirosuitWarden
-    head: ClothingHeadEnvirohelmWarden
-    gloves: ClothingHandsGlovesEnviroglovesBlack
-    - SecHypo # Goobstation
