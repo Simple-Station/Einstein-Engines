@@ -6,3 +6,5 @@
   components:
   - type: Sprite
     sprite: _DEN/Objects/Weapons/Guns/SMGs/BRDI_R25_blue.rsi # The Den sprites
+  - type: Clothing
+    sprite: _DEN/Objects/Weapons/Guns/SMGs/BRDI_R25_blue.rsi # The Den sprites

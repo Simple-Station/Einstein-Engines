@@ -12815,3 +12815,10 @@ Entries:
   id: 6947
   time: '2025-03-14T03:02:01.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1938
+- author: Rosycup
+  changes:
+    - type: Add
+      message: Added back worn sprites for the R-25 BRDI.
+  id: 6948
+  time: '2025-03-14T15:10:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1962
