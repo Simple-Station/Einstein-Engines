@@ -36,5 +36,9 @@ alert-level-delta-announcement = Station scuttling is imminent, or there is anot
 alert-level-delta-instructions = Crewmembers are advised to listen to heads of staff for more information.
 
 alert-level-epsilon = Epsilon
-alert-level-epsilon-announcement = The Epsilon alert level is now in effect. Consider all contracts terminated.
-alert-level-epsilon-instructions = Crewmembers are advised to make their way to an accessible location for efficient termination.
+alert-level-epsilon-announcement = Central Command has ordered the Epsilon security level on the station. Consider all contracts terminated.
+alert-level-epsilon-instructions = Consider all contracts terminated.
+
+alert-level-omicron = Omicron
+alert-level-omicron-announcement = Station override activated. Await further orders from Central Command staff, stay in your departments.
+alert-level-omicron-instructions = Await further orders.

@@ -2185,12 +2185,12 @@ entities:
     - type: Transform
       pos: 2.5,-13.5
       parent: 1
-  - uid: 150
+  - uid: 149
     components:
     - type: Transform
       pos: 2.5,-14.5
       parent: 1
-  - uid: 151
+  - uid: 150
     components:
     - type: Transform
       pos: 4.5,-9.5
@@ -2230,13 +2230,13 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 4.5,-11.5
       parent: 1
-  - uid: 160
+  - uid: 161
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 4.5,-12.5
       parent: 1
-  - uid: 161
+  - uid: 162
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
