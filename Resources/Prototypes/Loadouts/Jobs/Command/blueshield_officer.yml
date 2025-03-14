@@ -87,7 +87,7 @@
 - type: loadout
   id: LoadoutBSORifleBRDIR25
   category: JobsCommandBlueshieldOfficer
-    cost: 9 # Significant upgrade over a Chester, offered here for the STYLE. Intentionally priced at you not being able to buy all 3 medical items alongside it, alongside being unable to buy both it and the CQC manual.
+  cost: 9 # Significant upgrade over a Chester, offered here for the STYLE. Intentionally priced at you not being able to buy all 3 medical items alongside it, plus being unable to buy it alongside the CQC Manual.
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
