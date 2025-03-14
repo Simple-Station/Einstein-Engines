@@ -121,6 +121,8 @@
       id: LoadoutBookRandom
     - type: loadout
       id: LoadoutPen
+    - type: loadout
+      id: LuxuryPen
 
 - type: characterItemGroup
   id: LoadoutPets

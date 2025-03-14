@@ -892,6 +892,17 @@
          - Command
 
 - type: loadout
+  id: LuxuryPen
+  category: Items
+  cost: 2
+  canBeHeirloom: true
+  items:
+    - LuxuryPen
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutWritables
+
+- type: loadout
   id: PlushieSharkBlue
   category: Items
   Cost: 1
