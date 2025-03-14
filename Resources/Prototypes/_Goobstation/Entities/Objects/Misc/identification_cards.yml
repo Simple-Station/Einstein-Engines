@@ -26,20 +26,6 @@
     - NuclearOperative
     - SyndicateAgent
 
-# Helldiver
-- type: entity
-  parent: SalvageIDCard
-  id: HelldiverIDCard
-  name: salvage diver ID card
-  components:
-  - type: Sprite
-    sprite: _Goobstation/Objects/Misc/id_cards.rsi
-    layers:
-    - state: idhelldiver
-  - type: IdCard
-    jobTitle: job-name-salvagediver
-    jobIcon: JobIconShaftMiner
-
 # Blueshield
 - type: entity
   parent: IDCardStandard
