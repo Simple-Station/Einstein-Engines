@@ -178,7 +178,7 @@ public sealed class GlimmerReactiveSystem : EntitySystem
     private void OnDamageChanged(EntityUid uid, SharedGlimmerReactiveComponent component, DamageChangedEvent args)
     {
         if (args.Origin == null
-            || !_random.Prob(_glimmerSystem.GetGlimmerEquilibriumRatio() / 10))
+            || !_random.Prob((float) _glimmerSystem.GetGlimmerEquilibriumRatio() / 10))
             return;
 
         var tier = _glimmerSystem.GetGlimmerTier();
@@ -195,13 +195,14 @@ public sealed class GlimmerReactiveSystem : EntitySystem
         if (tier < GlimmerTier.High)
             return;
 
-        var totalIntensity = _glimmerSystem.GlimmerOutput * 2;
-        var slope = 11 - _glimmerSystem.GlimmerOutput / 100;
+        var glimmer = (float) _glimmerSystem.GlimmerOutput;
+        var totalIntensity = glimmer * 2;
+        var slope = 11 - glimmer / 100;
         var maxIntensity = 20;
 
-        var removed = _glimmerSystem.GlimmerOutput * _random.NextFloat(0.1f, 0.15f);
+        var removed = glimmer * _random.NextFloat(0.1f, 0.15f);
         _glimmerSystem.DeltaGlimmerInput(-removed);
-        BeamRandomNearProber(uid, (int) _glimmerSystem.GlimmerOutput / 350, _glimmerSystem.GlimmerOutput / 50);
+        BeamRandomNearProber(uid, (int) glimmer / 350, glimmer / 50);
         _explosionSystem.QueueExplosion(uid, "Default", totalIntensity, slope, maxIntensity);
     }
 
