@@ -167,9 +167,6 @@
   id: HandheldCrewMonitor
 
 - type: Tag
-  id: HarpyEmotes
-
-- type: Tag
   id: Heart
 
 - type: Tag
@@ -318,9 +315,6 @@
 
 - type: Tag
   id: VehicleKey
-
-- type: Tag
-  id: VulpEmotes
 
 - type: Tag
   id: WaterTank
