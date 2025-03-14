@@ -57,35 +57,35 @@
     - !type:RemoveAssayFeedback
       assayFeedback: mass-sleep-power-metapsionic-feedback
 
-- type: psionicPower
-  id: MindSwapPower
-  name: Mind Swap
-  powerCategories:
-    - Mentalic
-  initializeFunctions:
-    - !type:AddPsionicActions
-      actions:
-        - ActionMindSwap
-    - !type:AddPsionicPowerComponents
-      components:
-        - type: MindSwapPower
-    - !type:PsionicFeedbackPopup
-    - !type:PsionicFeedbackSelfChat
-      feedbackMessage: mind-swap-power-initialization-feedback
-    - !type:PsionicModifyGlimmer
-      glimmerModifier: 4
-    - !type:AddPsionicAssayFeedback
-      assayFeedback: mind-swap-power-metapsionic-feedback
-    - !type:AddPsionicStatSources
-      amplificationModifier: 1
-  removalFunctions:
-    - !type:RemovePsionicActions
-    - !type:RemovePsionicPowerComponents
-      components:
-        - type: MindSwapPower
-    - !type:RemovePsionicStatSources
-    - !type:RemoveAssayFeedback
-      assayFeedback: mind-swap-power-metapsionic-feedback
+# - type: psionicPower
+  # id: MindSwapPower
+  # name: Mind Swap
+  # powerCategories:
+  #  - Mentalic
+  # initializeFunctions:
+   # - !type:AddPsionicActions
+   #   actions:
+   #     - ActionMindSwap
+   # - !type:AddPsionicPowerComponents
+   #   components:
+   #     - type: MindSwapPower
+   # - !type:PsionicFeedbackPopup
+   # - !type:PsionicFeedbackSelfChat
+   #   feedbackMessage: mind-swap-power-initialization-feedback
+   # - !type:PsionicModifyGlimmer
+   #   glimmerModifier: 4
+   # - !type:AddPsionicAssayFeedback
+   #   assayFeedback: mind-swap-power-metapsionic-feedback
+   # - !type:AddPsionicStatSources
+   #   amplificationModifier: 1
+  # removalFunctions:
+  #  - !type:RemovePsionicActions
+  #  - !type:RemovePsionicPowerComponents
+  #    components:
+  #      - type: MindSwapPower
+  #  - !type:RemovePsionicStatSources
+  #  - !type:RemoveAssayFeedback
+  #    assayFeedback: mind-swap-power-metapsionic-feedback
 
 - type: psionicPower
   id: NoosphericZapPower
