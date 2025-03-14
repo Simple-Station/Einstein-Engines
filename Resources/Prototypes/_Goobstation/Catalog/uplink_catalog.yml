@@ -447,17 +447,6 @@
   - UplinkAmmo
 
 - type: listing
-  id: UplinkHighCapacityMagazinePistol
-  name: uplink-highcap-pistol-mag-name
-  description: uplink-highcap-pistol-mag-desc
-  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Pistol/pistol_high_capacity_mag.rsi, state: red }
-  productEntity: MagazinePistolHighCapacity
-  cost:
-    Telecrystal: 3
-  categories:
-  - UplinkAmmo
-
-- type: listing
   id: UplinkSyndicateSegwayCrate
   name: uplink-syndicate-segway-crate-name # Funnily enough these localizations weren't removed when wiz removed vehicles
   description: uplink-syndicate-segway-crate-desc
