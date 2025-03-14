@@ -1,7 +1,7 @@
 - type: gameMap
   id: Gax
   mapName: 'NVS Gax'
-  mapPath: /Maps/gaxstation.yml
+  mapPath: /Maps/gax.yml
   minPlayers: 10
   maxPlayers: 45
   fallback: true

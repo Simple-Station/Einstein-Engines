@@ -1,18 +1,15 @@
 - type: gameMap
-  id: Box
-  mapName: 'Box Station'
-  mapPath: /Maps/box.yml
-  minPlayers: 35
+  id: Cyberiad
+  mapName: 'Cyberiad Station'
+  mapPath: /Maps/cyberiad.yml
+  minPlayers: 30
   maxPlayers: 85
   stations:
-    Boxstation:
-      stationProto: StandardNanotrasenStation
+    Cyberiad:
+      stationProto: StandardNanotrasenStationCargoOnly
       components:
         - type: StationNameSetup
-          mapNameTemplate: '{0} Box Station {1}'
-          nameGenerator:
-            !type:NanotrasenNameGenerator
-            prefixCreator: 'TG'
+          mapNameTemplate: 'NSS Cyberiad {1}'
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/emergency_box.yml
         - type: StationJobs
@@ -30,7 +27,6 @@
             Janitor: [ 2, 2 ]
             Chaplain: [ 1, 1 ]
             Librarian: [ 1, 1 ]
-            ServiceWorker: [ 2, 3 ]
             #engineering
             ChiefEngineer: [ 1, 1 ]
             AtmosphericTechnician: [ 3, 3 ]
