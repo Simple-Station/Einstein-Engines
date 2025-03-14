@@ -136,41 +136,41 @@
   name: blueshield's armored coat
   suffix: Opened
 
-- type: entity
-  parent: ClothingBlueshieldArmourVest
-  id: ClothingBlueshieldArmoredMarine
-  name: blueshield's armored marine vest
-  description: A vest from the blueshield's time in the marines.
-  components:
-  - type: Sprite
-    sprite: _Goobstation/Clothing/OuterClothing/Armor/blueshield_marine.rsi
-  - type: Clothing
-    sprite: _Goobstation/Clothing/OuterClothing/Armor/blueshield_marine.rsi
-  - type: Item
-    size: Normal
+# - type: entity
+#  parent: ClothingBlueshieldArmourVest
+#  id: ClothingBlueshieldArmoredMarine
+#  name: blueshield's armored marine vest
+#  description: A vest from the blueshield's time in the marines.
+#  components:
+#  - type: Sprite
+#    sprite: _Goobstation/Clothing/OuterClothing/Armor/blueshield_marine.rsi
+#  - type: Clothing
+#    sprite: _Goobstation/Clothing/OuterClothing/Armor/blueshield_marine.rsi
+#  - type: Item
+#    size: Normal
 
-- type: entity
-  parent: ClothingBlueshieldArmourVest
-  id: ClothingBlueshieldArmoredVest
-  name: blueshield's armored vest
-  description: A vest with sewn-in reinforcement layers.
-  components:
-  - type: Sprite
-    sprite: _Goobstation/Clothing/OuterClothing/Armor/blueshield_vest.rsi
-  - type: Clothing
-    sprite: _Goobstation/Clothing/OuterClothing/Armor/blueshield_vest.rsi
-  - type: Item
-    size: Normal
+# - type: entity
+#  parent: ClothingBlueshieldArmourVest
+#  id: ClothingBlueshieldArmoredVest
+#  name: blueshield's armored vest
+#  description: A vest with sewn-in reinforcement layers.
+#  components:
+#  - type: Sprite
+#    sprite: _Goobstation/Clothing/OuterClothing/Armor/blueshield_vest.rsi
+#  - type: Clothing
+#    sprite: _Goobstation/Clothing/OuterClothing/Armor/blueshield_vest.rsi
+#  - type: Item
+#    size: Normal
 
-- type: entity
-  parent: ClothingBlueshieldArmourVest
-  id: ClothingBlueshieldArmoredKimono
-  name: blueshield's armored kimono
-  description: As times evolve, so must the Blueshield.
-  components:
-  - type: Sprite
-    sprite: _Goobstation/Clothing/OuterClothing/Armor/blueshield_kimono.rsi
-  - type: Clothing
-    sprite: _Goobstation/Clothing/OuterClothing/Armor/blueshield_kimono.rsi
-  - type: Item
-    size: Normal
+# - type: entity
+#  parent: ClothingBlueshieldArmourVest
+#  id: ClothingBlueshieldArmoredKimono
+#  name: blueshield's armored kimono
+#  description: As times evolve, so must the Blueshield.
+#  components:
+#  - type: Sprite
+#    sprite: _Goobstation/Clothing/OuterClothing/Armor/blueshield_kimono.rsi
+#  - type: Clothing
+#    sprite: _Goobstation/Clothing/OuterClothing/Armor/blueshield_kimono.rsi
+#  - type: Item
+#    size: Normal
