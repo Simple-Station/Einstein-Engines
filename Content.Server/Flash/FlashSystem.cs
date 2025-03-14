@@ -151,7 +151,8 @@ namespace Content.Server.Flash
 
             if (stunDuration != null)
             {
-                _stun.TryParalyze(target, stunDuration.Value, true);
+                // stunmeta
+                _stun.TryKnockdown(target, stunDuration.Value, true);
             }
             else
             {

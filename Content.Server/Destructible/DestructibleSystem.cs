@@ -1,7 +1,6 @@
 using Content.Server.Administration.Logs;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Body.Systems;
-using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Server.Construction;
 using Content.Server.Destructible.Thresholds;
 using Content.Server.Destructible.Thresholds.Behaviors;
@@ -9,17 +8,20 @@ using Content.Server.Destructible.Thresholds.Triggers;
 using Content.Server.Explosion.EntitySystems;
 using Content.Server.Fluids.EntitySystems;
 using Content.Server.Stack;
+using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Damage;
 using Content.Shared.Database;
 using Content.Shared.Destructible;
 using Content.Shared.FixedPoint;
 using JetBrains.Annotations;
 using Robust.Server.Audio;
-using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using System.Linq;
+using Content.Server.Construction.Completions;
+using Content.Shared.Projectiles;
+using Content.Shared.Throwing;
 
 namespace Content.Server.Destructible
 {
@@ -36,17 +38,21 @@ namespace Content.Server.Destructible
         [Dependency] public readonly ExplosionSystem ExplosionSystem = default!;
         [Dependency] public readonly StackSystem StackSystem = default!;
         [Dependency] public readonly TriggerSystem TriggerSystem = default!;
-        [Dependency] public readonly SolutionContainerSystem SolutionContainerSystem = default!;
+        [Dependency] public readonly SharedSolutionContainerSystem SolutionContainerSystem = default!;
         [Dependency] public readonly PuddleSystem PuddleSystem = default!;
         [Dependency] public readonly SharedContainerSystem ContainerSystem = default!;
         [Dependency] public readonly IPrototypeManager PrototypeManager = default!;
         [Dependency] public readonly IComponentFactory ComponentFactory = default!;
-        [Dependency] public readonly IAdminLogManager _adminLogger = default!;
+        [Dependency] public readonly IAdminLogManager AdminLogger = default!;
+        [Dependency] private readonly ThrowingSystem _throwing = default!;
+        [Dependency] private readonly SharedProjectileSystem _projectile = default!;
 
         public override void Initialize()
         {
             base.Initialize();
             SubscribeLocalEvent<DestructibleComponent, DamageChangedEvent>(Execute);
+            SubscribeLocalEvent<DestructibleComponent, DestructionEventArgs>(OnDestroyed);
+            SubscribeLocalEvent<DestructibleComponent, ConstructionBeforeDeleteEvent>(OnDeconstruct);
         }
 
         /// <summary>
@@ -72,12 +78,12 @@ namespace Content.Server.Destructible
 
                     if (args.Origin != null)
                     {
-                        _adminLogger.Add(LogType.Damaged, LogImpact.Medium,
+                        AdminLogger.Add(LogType.Damaged, LogImpact.Medium,
                             $"{ToPrettyString(args.Origin.Value):actor} caused {ToPrettyString(uid):subject} to trigger [{triggeredBehaviors}]");
                     }
                     else
                     {
-                        _adminLogger.Add(LogType.Damaged, LogImpact.Medium,
+                        AdminLogger.Add(LogType.Damaged, LogImpact.Medium,
                             $"Unknown damage source caused {ToPrettyString(uid):subject} to trigger [{triggeredBehaviors}]");
                     }
 
@@ -87,6 +93,23 @@ namespace Content.Server.Destructible
                 // if destruction behavior (or some other deletion effect) occurred, don't run other triggers.
                 if (EntityManager.IsQueuedForDeletion(uid) || Deleted(uid))
                     return;
+            }
+        }
+
+        public void OnDestroyed(EntityUid uid, DestructibleComponent component, DestructionEventArgs args) => RemoveEmbedChildren(uid);
+
+        public void OnDeconstruct(EntityUid uid, DestructibleComponent component, ConstructionBeforeDeleteEvent args) => RemoveEmbedChildren(uid);
+
+        public void RemoveEmbedChildren(EntityUid uid)
+        {
+            var children = Transform(uid).ChildEnumerator;
+            while (children.MoveNext(out var child))
+            {
+                if (!TryComp(child, out EmbeddableProjectileComponent? embed))
+                    continue;
+
+                _projectile.RemoveEmbed(child, embed);
+                _throwing.TryThrow(child, Random.NextVector2(), 1f, friction: 100f); // very short distance
             }
         }
 

@@ -635,7 +635,8 @@ public sealed partial class ShuttleSystem
                 if (!_statusQuery.TryGetComponent(child, out var status))
                     continue;
 
-                _stuns.TryParalyze(child, _hyperspaceKnockdownTime, true, status);
+                // Stunmeta
+                _stuns.TryKnockdown(child, _hyperspaceKnockdownTime, true, status);
 
                 // If the guy we knocked down is on a spaced tile, throw them too
                 if (grid != null)

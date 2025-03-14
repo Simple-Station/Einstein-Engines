@@ -19,7 +19,7 @@ public sealed partial class SupermatterComponent : Component
     ///     The SM will only cycle if activated.
     /// </summary>
     [DataField]
-    public bool Activated = true;
+    public bool Activated = false;
 
     /// <summary>
     ///     The current status of the singularity, used for alert sounds and the monitoring console

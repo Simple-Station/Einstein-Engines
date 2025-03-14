@@ -12,7 +12,7 @@
     - type: RCDDeconstructable
       cost: 6
       delay: 4
-      fx: EffectRCDDeconstruct4  
+      fx: EffectRCDDeconstruct4
     - type: CanBuildWindowOnTop
     - type: Sprite
       drawdepth: Walls
@@ -194,7 +194,7 @@
           mask:
           - FullTileMask
           layer:
-          - WallLayer
+          - GlassLayer # WWDP fix
     - type: Construction
       graph: GrilleDiagonal
       node: grilleDiagonal
@@ -229,8 +229,8 @@
           mask:
           - FullTileMask
           layer:
-          - WallLayer
+          - GlassLayer # WWDP fix
     - type: Construction
       graph: GrilleDiagonal
       node: clockworkGrilleDiagonal
-      
+

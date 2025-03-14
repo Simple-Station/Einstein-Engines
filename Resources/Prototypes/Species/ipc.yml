@@ -35,6 +35,7 @@
     Tail: MobHumanoidAnyMarking
     Hair: MobHumanoidMarkingMatchSkin
     FacialHair: MobHumanoidMarkingMatchSkin
+    Eyes: MobHumanoidAnyMarking
     Chest: MobIPCTorso
     Underwear: MobHumanoidAnyMarking
     Undershirt: MobHumanoidAnyMarking
@@ -52,11 +53,11 @@
   id: MobIPCMarkingLimits
   points:
     Head:
-      points: 1
+      points: 6
       required: true
       defaultMarkings: [ MobIPCHeadDefault ]
     Face:
-      points: 1
+      points: 6
       required: false
     Chest:
       points: 6

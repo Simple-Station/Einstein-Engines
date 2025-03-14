@@ -1,0 +1,81 @@
+# Unlimited, these are targets for shuttles to dock to.
+- type: entity
+  parent: AirlockGlassShuttle
+  id: AirlockExternalGlassShuttleCargoShuttle
+  suffix: External, Cargo, Glass, Docking
+  components:
+    - type: PriorityDock
+      tag: DockCargoShuttle
+
+- type: entity
+  parent: AirlockGlassShuttle
+  id: AirlockExternalGlassShuttleDart
+  suffix: External, ERT, Glass, Docking
+  components:
+    - type: PriorityDock
+      tag: DockDart
+
+- type: entity
+  parent: AirlockSyndicateGlass
+  id: AirlockSyndicateGlassShuttleInfiltrator
+  suffix: External, Infiltrator, Glass, Docking
+  components:
+    - type: PriorityDock
+      tag: DockInfiltrator
+
+- type: entity
+  parent: AirlockGlassShuttle
+  id: AirlockExternalGlassShuttlePathfinder
+  suffix: External, Salvage, Glass, Docking
+  components:
+    - type: PriorityDock
+      tag: DockPathfinder
+
+- type: entity
+  parent: AirlockSyndicateGlass
+  id: AirlockSyndicateGlassShuttleSANDropship
+  suffix: External, SAN Dropship, Glass, Docking
+  components:
+    - type: PriorityDock
+      tag: DockSANDropship
+
+# 1 per map, these spawn a shuttle.
+- type: entity
+  parent: AirlockExternalGlassShuttleCargoShuttle
+  id: AirlockExternalGlassShuttleCargoShuttleFilled
+  suffix: Cargo Shuttle Spawner, MAX ONE PER MAP
+  components:
+    - type: GridFill
+      path: /Maps/Shuttles/cargo.yml
+
+- type: entity
+  parent: AirlockExternalGlassShuttleDart
+  id: AirlockExternalGlassShuttleDartFilled
+  suffix: ERT Ship Spawner, MAX ONE PER MAP
+  components:
+    - type: GridFill
+      path: /Maps/Shuttles/dart.yml
+
+- type: entity
+  parent: AirlockSyndicateGlassShuttleInfiltrator
+  id: AirlockSyndicateGlassShuttleInfiltratorFilled
+  suffix: Infiltrator Ship Spawner, MAX ONE PER MAP
+  components:
+    - type: GridFill
+      path: /Maps/Shuttles/infiltrator.yml
+
+- type: entity
+  parent: AirlockExternalGlassShuttlePathfinder
+  id: AirlockExternalGlassShuttlePathfinderFilled
+  suffix: Salvage Ship Spawner, MAX ONE PER MAP
+  components:
+    - type: GridFill
+      path: /Maps/Shuttles/pathfinder.yml
+
+- type: entity
+  parent: AirlockSyndicateGlassShuttleSANDropship
+  id: AirlockSyndicateGlassShuttleSANDropshipFilled
+  suffix: SAN Dropship Spawner, MAX ONE PER MAP
+  components:
+    - type: GridFill
+      path: /Maps/Shuttles/ShuttleEvent/SANDropship.yml

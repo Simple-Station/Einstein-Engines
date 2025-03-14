@@ -1020,6 +1020,9 @@
   id: Oneirophage
 
 - type: Tag
+  id: Oni
+
+- type: Tag
   id: Ore
 
 - type: Tag
@@ -1187,6 +1190,9 @@
 
 - type: Tag
   id: RollingPin
+
+- type: Tag
+  id: RPD
 
 - type: Tag
   id: SaltShaker

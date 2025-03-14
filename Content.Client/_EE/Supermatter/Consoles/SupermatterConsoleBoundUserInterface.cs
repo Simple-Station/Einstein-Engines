@@ -11,6 +11,8 @@ public sealed class SupermatterConsoleBoundUserInterface : BoundUserInterface
 
     protected override void Open()
     {
+        base.Open();
+
         _menu = new SupermatterConsoleWindow(this, Owner);
         _menu.OpenCentered();
         _menu.OnClose += Close;

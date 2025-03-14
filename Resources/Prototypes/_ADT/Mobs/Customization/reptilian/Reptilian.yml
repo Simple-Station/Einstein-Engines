@@ -1,0 +1,344 @@
+- type: marking
+  id: ReptilianDrawingKhar
+  bodyPart: Chest
+  markingCategory: Overlay
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Reptilian/custom.rsi
+    state: drawing_khar
+
+- type: marking
+  id: ReptilianDrawingSkeletBody
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Reptilian/custom.rsi
+    state: drawing_skelet_body
+
+- type: marking
+  id: ReptilianDrawingSkeleton
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Reptilian/custom.rsi
+    state: drawing_skeleton
+
+- type: marking
+  id: ReptilianDrawingSun
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Reptilian/custom.rsi
+    state: drawing_sun
+
+- type: marking
+  id: ReptilianDrawingWarpaint
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Reptilian/custom.rsi
+    state: drawing_warpaint
+
+- type: marking
+  id: ReptilianLineEyes
+  bodyPart: Eyes
+  markingCategory: Head
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Reptilian/custom.rsi
+    state: lineeyes
+
+- type: marking
+  id: SnoutEasternDNW
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [Reptilian]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Reptilian/reptilian_snouts.rsi
+      state: easterndnw_primary
+    - sprite: _ADT/Mobs/Customization/Reptilian/reptilian_snouts.rsi
+      state: easterndnw_secondary
+
+- type: marking
+  id: SnoutEasternDW
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [Reptilian]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Reptilian/reptilian_snouts.rsi
+      state: easterndw_primary
+    - sprite: _ADT/Mobs/Customization/Reptilian/reptilian_snouts.rsi
+      state: easterndnw_secondary
+
+- type: marking
+  id: EarsSylveon
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Reptilian]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Reptilian/reptilian_ears.rsi
+      state: sylveon_primary
+    - sprite: _ADT/Mobs/Customization/Reptilian/reptilian_ears.rsi
+      state: sylveon_secondary
+    - sprite: _ADT/Mobs/Customization/Reptilian/reptilian_ears.rsi
+      state: sylveon_tertiary
+
+- type: marking
+  id: EarsResomi
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Reptilian]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Reptilian/reptilian_ears.rsi
+      state: avali_inner
+    - sprite: _ADT/Mobs/Customization/Reptilian/reptilian_ears.rsi
+      state: avali_outer
+
+- type: marking
+  id: EarsChemlight
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Reptilian]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Reptilian/reptilian_ears.rsi
+      state: chemlight_outer
+    - sprite: _ADT/Mobs/Customization/Reptilian/reptilian_ears.rsi
+      state: chemlight_inner
+
+- type: marking
+  id: EarsDragonLong
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Reptilian]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Reptilian/reptilian_ears.rsi
+      state: dragonlong
+
+- type: marking
+  id: EarsEasternD
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Reptilian]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Reptilian/reptilian_ears.rsi
+      state: easternd_ears
+    - sprite: _ADT/Mobs/Customization/Reptilian/reptilian_ears.rsi
+      state: easternd_horns
+
+- type: marking
+  id: EarsMagus
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Reptilian]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Reptilian/reptilian_ears.rsi
+      state: magus_ears
+    - sprite: _ADT/Mobs/Customization/Reptilian/reptilian_ears.rsi
+      state: magus_neck
+
+- type: marking
+  id: ReptilianHornsBaran
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Reptilian/custom.rsi
+    state: horns_baran
+
+- type: marking
+  id: ReptilianHornsBullhorns
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Reptilian/custom.rsi
+    state: horns_bullhorns
+
+- type: marking
+  id: ReptilianHornsCrown
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Reptilian/custom.rsi
+    state: horns_crown
+
+- type: marking
+  id: ReptilianHornsFive
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Reptilian/custom.rsi
+    state: horns_five
+
+- type: marking
+  id: ReptilianHornsHighback
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Reptilian/custom.rsi
+    state: horns_highback
+
+- type: marking
+  id: ReptilianHornsJacksonchameleon
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Reptilian/custom.rsi
+    state: horns_jacksonchameleon
+
+- type: marking
+  id: ReptilianHornsLong
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Reptilian/custom.rsi
+    state: horns_long
+
+- type: marking
+  id: ReptilianHornsStagbeetle
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Reptilian/custom.rsi
+    state: horns_stagbeetle
+
+- type: marking
+  id: ReptilianHornsSuperlong
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Reptilian/custom.rsi
+    state: horns_superlong
+
+- type: marking
+  id: ReptilianHornsTwoago
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Reptilian/custom.rsi
+    state: horns_twoago
+
+- type: marking
+  id: TailAxolotl
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Reptilian]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Reptilian/reptilian_tails.rsi
+      state: axolotl
+
+- type: marking
+  id: TailDatashark
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Reptilian]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Reptilian/reptilian_tails.rsi
+      state: datashark_ears_inner
+    - sprite: _ADT/Mobs/Customization/Reptilian/reptilian_tails.rsi
+      state: datashark_ears
+    - sprite: _ADT/Mobs/Customization/Reptilian/reptilian_tails.rsi
+      state: datashark_fin
+    - sprite: _ADT/Mobs/Customization/Reptilian/reptilian_tails.rsi
+      state: datashark_tail
+    - sprite: _ADT/Mobs/Customization/Reptilian/reptilian_tails.rsi
+      state: datashark_taildata
+
+- type: marking
+  id: TailEasternDragon
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Reptilian]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Reptilian/reptilian_tails.rsi
+      state: easternd_primary
+    - sprite: _ADT/Mobs/Customization/Reptilian/reptilian_tails.rsi
+      state: easternd_secondary
+
+- type: marking
+  id: TailFish
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Reptilian]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Reptilian/reptilian_tails.rsi
+      state: fish_primary
+    - sprite: _ADT/Mobs/Customization/Reptilian/reptilian_tails.rsi
+      state: fish_secondary
+
+- type: marking
+  id: TailMaw
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Reptilian]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Reptilian/reptilian_tails.rsi
+      state: maw
+
+- type: marking
+  id: TailShark
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Reptilian]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Reptilian/reptilian_tails.rsi
+      state: shark_fin
+    - sprite: _ADT/Mobs/Customization/Reptilian/reptilian_tails.rsi
+      state: shark_tail
+
+- type: marking
+  id: TailSnake
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Reptilian]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Reptilian/reptilian_tails.rsi
+      state: snake
+
+- type: marking
+  id: ReptilianTattoSkeletArmL
+  bodyPart: LArm
+  markingCategory: LeftArm
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Reptilian/custom.rsi
+    state: tatto_skelet_arm_l
+
+- type: marking
+  id: ReptilianTattoSkeletArmR
+  bodyPart: RArm
+  markingCategory: RightArm
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Reptilian/custom.rsi
+    state: tatto_skelet_arm_r
+
+- type: marking
+  id: ReptilianTattoSkeletLegL
+  bodyPart: LLeg
+  markingCategory: LeftLeg
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Reptilian/custom.rsi
+    state: tatto_skelet_leg_l
+
+- type: marking
+  id: ReptilianTattoSkeletLegR
+  bodyPart: RLeg
+  markingCategory: RightLeg
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Reptilian/custom.rsi
+    state: tatto_skelet_leg_r

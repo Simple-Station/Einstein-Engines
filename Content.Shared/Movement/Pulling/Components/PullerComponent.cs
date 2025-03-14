@@ -1,4 +1,5 @@
-﻿using Content.Shared.Alert;
+﻿using Content.Shared._Goobstation.TableSlam; // Goobstation - Table Slam
+using Content.Shared.Alert;
 using Content.Shared.Movement.Pulling.Systems;
 using Robust.Shared.GameStates;
 using Robust.Shared.Map;
@@ -10,8 +11,8 @@ namespace Content.Shared.Movement.Pulling.Components;
 /// <summary>
 /// Specifies an entity as being able to pull another entity with <see cref="PullableComponent"/>
 /// </summary>
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
-[Access(typeof(PullingSystem))]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true)]
+[Access(typeof(PullingSystem), typeof(TableSlamSystem))] // Goobstation - Table Slam
 public sealed partial class PullerComponent : Component
 {
     /// <summary>
@@ -106,7 +107,7 @@ public sealed partial class PullerComponent : Component
     public float SuffocateGrabStaminaDamage = 10f;
 
     [DataField]
-    public float GrabThrowDamageModifier = 1f;
+    public float GrabThrowDamageModifier = 2f;
 
     [ViewVariables]
     public List<EntityUid> GrabVirtualItems = new();

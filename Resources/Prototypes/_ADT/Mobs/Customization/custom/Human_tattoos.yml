@@ -1,0 +1,215 @@
+- type: marking
+  id: HumanTattooArmImheartmomL
+  bodyPart: LArm
+  markingCategory: LeftArm
+  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: tattoo_arm_imheartmom_l
+
+- type: marking
+  id: HumanTattooArmImheartmomR
+  bodyPart: RArm
+  markingCategory: RightArm
+  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: tattoo_arm_imheartmom_r
+
+- type: marking
+  id: HumanTattooChurchdomes
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: tattoo_churchdomes
+
+- type: marking
+  id: HumanTattooElysiumPatriotism
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: tattoo_elysium_patriotism
+
+- type: marking
+  id: HumanTattooFullskelet
+  bodyPart: LLeg
+  markingCategory: Overlay
+  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: tattoo_fullskelet
+
+- type: marking
+  id: HumanTattooKarabel
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: tattoo_karabel
+
+- type: marking
+  id: HumanTattooKrenelMercenary
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: tattoo_KrenelMercenary
+
+- type: marking
+  id: HumanTattooLineArmL
+  bodyPart: LArm
+  markingCategory: LeftArm
+  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: tattoo_line_arm_l
+
+- type: marking
+  id: HumanTattooLineArmR
+  bodyPart: RArm
+  markingCategory: RightArm
+  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: tattoo_line_arm_r
+
+- type: marking
+  id: HumanTattooRose
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: tattoo_Rose
+
+- type: marking
+  id: HumanTattooSerpentTemptation
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: tattoo_serpenttemptation
+
+- type: marking
+  id: HumanTattooSkull
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Human, Oni, SlimePerson, Arachnid, Tajaran, Felinid, Arachne]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: tattoo_skull
+
+- type: marking
+  id: HumanTattooSkeletarmL
+  bodyPart: LArm
+  markingCategory: LeftArm
+  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: tattoo_skelet_arm_l
+
+- type: marking
+  id: HumanTattooSkeletarmR
+  bodyPart: RArm
+  markingCategory: RightArm
+  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: tattoo_skelet_arm_r
+
+- type: marking
+  id: HumanTattooSkeletbody
+  bodyPart: LLeg
+  markingCategory: Overlay
+  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: tattoo_skelet_body
+
+- type: marking
+  id: HumanTattooSkeletfootL
+  bodyPart: LFoot
+  markingCategory: LeftFoot
+  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: tattoo_skelet_foot_l
+
+- type: marking
+  id: HumanTattooSkeletfootR
+  bodyPart: RFoot
+  markingCategory: RightFoot
+  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: tattoo_skelet_foot_r
+
+- type: marking
+  id: HumanTattooSkeletlegL
+  bodyPart: LLeg
+  markingCategory: LeftLeg
+  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: tattoo_skelet_leg_l
+
+- type: marking
+  id: HumanTattooSkeletlegR
+  bodyPart: RLeg
+  markingCategory: RightLeg
+  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: tattoo_skelet_leg_r
+
+- type: marking
+  id: HumanTattooSkullFace
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Human, Oni, SlimePerson, Arachnid, Tajaran, Felinid, Arachne]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: tattoo_skull_face
+
+- type: marking
+  id: HumanTattooSymbolElysium
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: tattoo_symbol_elysium
+
+- type: marking
+  id: HumanTattooNarsi
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: tattoo_narsi
+
+- type: marking
+  id: HumanTattooArmlazaL
+  bodyPart: LArm
+  markingCategory: LeftArm
+  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: tattooarm-laza_l
+
+- type: marking
+  id: HumanTattooArmlazaR
+  bodyPart: RArm
+  markingCategory: RightArm
+  speciesRestriction: [Human, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Felinid, Arachne, Shadowkin, Moth, Vulpkanin]
+  sprites:
+  - sprite: _ADT/Mobs/Customization/Human/custom.rsi
+    state: tattooarm-laza_r

@@ -300,6 +300,19 @@
     items:
     - RCDRecharging
 
+- type: entity
+  id: BorgModuleRPD
+  parent: [ BaseBorgModuleEngineering, BaseProviderBorgModule ]
+  name: RPD cyborg module
+  components:
+  - type: Sprite
+    layers:
+    - state: engineering
+    - state: icon-rpd
+  - type: ItemBorgModule
+    items:
+    - RPDRecharging
+
 # janitorial modules (this gets its own unique things because janis are epic)
 - type: entity
   id: BorgModuleLightReplacer

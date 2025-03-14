@@ -160,6 +160,17 @@
     Cellular: 0.2
 
 - type: damageModifierSet
+  id: MagmaHand
+  coefficients:
+    Blunt: 0.6
+    Slash: 1.2
+    Piercing: 1.2
+    Cold: 5.0
+    Heat: 0.1
+    Poison: 0.4
+    Cellular: 0.2
+
+- type: damageModifierSet
   id: Infernal
   coefficients:
     Blunt: 0.8

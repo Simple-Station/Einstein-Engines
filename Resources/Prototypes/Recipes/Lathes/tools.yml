@@ -129,6 +129,16 @@
     Circuitry: 100
 
 - type: latheRecipe
+  id: RPD
+  result: RPDEmpty
+  category: Tools
+  completetime: 4
+  materials:
+    Steel: 1000
+    Plastic: 400
+    Circuitry: 100
+
+- type: latheRecipe
   id: RCDAmmo
   result: RCDAmmo
   category: Tools

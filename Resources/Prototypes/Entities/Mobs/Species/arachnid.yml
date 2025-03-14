@@ -86,6 +86,9 @@
       - map: [ "enum.HumanoidVisualLayers.LArm" ]
       - map: [ "enum.HumanoidVisualLayers.RLeg" ]
       - map: [ "enum.HumanoidVisualLayers.LLeg" ]
+#     - shader: StencilClear
+#      sprite: Mobs/Species/Human/parts.rsi
+#      state: l_leg
       - map: [ "enum.HumanoidVisualLayers.Underwear" ]
       - map: [ "enum.HumanoidVisualLayers.Undershirt" ]
       - map: ["jumpsuit"]

@@ -2,7 +2,7 @@
   parent: ClothingOuterHardsuitSecurity
   id: ClothingOuterHardsuitBlueshield
   name: blueshield's hardsuit
-  description: A special hardsuit made for the Blueshield, contains extra armor.
+  description: A special security hardsuit made for the Blueshield Officer, has extra armor yet somehow feels lighter.
   components:
   - type: Sprite
     sprite: _Goobstation/Clothing/OuterClothing/Hardsuits/Combat/blueshield.rsi
@@ -20,6 +20,7 @@
         Slash: 0.5
         Piercing: 0.5
         Radiation: 0.5
+        Heat: 0.5
         Caustic: 0.6
   - type: ClothingSpeedModifier
     walkModifier: 0.85

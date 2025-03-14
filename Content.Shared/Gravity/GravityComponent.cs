@@ -29,6 +29,12 @@ namespace Content.Shared.Gravity
         public bool Enabled;
 
         /// <summary>
+        ///     Default acceleration due to gravity in meters per second squared, equivalent to Earth's gravity at sea level.
+        /// </summary>
+        [DataField]
+        public double Acceleration = 9.80665;
+
+        /// <summary>
         /// Inherent gravity ensures GravitySystem won't change Enabled according to the gravity generators attached to this entity.
         /// </summary>
         [ViewVariables(VVAccess.ReadWrite)]
