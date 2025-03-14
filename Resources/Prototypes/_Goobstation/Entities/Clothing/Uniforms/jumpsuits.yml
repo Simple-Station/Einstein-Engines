@@ -87,9 +87,9 @@
   description: Enemy of dogs everywhere.
   components:
   - type: Sprite
-    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/mailman.rsi
+    sprite: Nyanotrasen/Clothing/Head/Hats/mailman.rsi
   - type: Clothing
-    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/mailman.rsi
+    sprite: Nyanotrasen/Clothing/Head/Hats/mailman.rsi
 
 - type: entity
   parent: ClothingUniformBase
