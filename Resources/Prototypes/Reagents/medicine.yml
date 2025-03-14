@@ -79,6 +79,23 @@
     amount: 1
 
 - type: reagent
+  id: SprayTan
+  name: reagent-name-spraytan
+  group: Medicine
+  desc: reagent-desc-spraytan
+  physicalDesc: reagent-physical-desc-opaque
+  flavor: orange
+  color: "#FFC080" # rgb: 255, 196, 128 Bright Orange
+  metabolismRate: 3
+  metabolisms:
+  Medicine:
+      effects:
+      - !type:Douchebag
+        conditions:
+        - !type:ReagentThreshold
+          min: 11
+
+- type: reagent
   id: Diphenhydramine
   name: reagent-name-diphenhydramine
   group: Medicine
