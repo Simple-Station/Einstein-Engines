@@ -74,8 +74,6 @@
   color: "#D4872A"
   metabolisms:
     Poison:
-    metabolisms:
-    Poison:
       metabolismRate : 3.00
       effects:
       - !type:HealthChange
