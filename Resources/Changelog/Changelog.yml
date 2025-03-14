@@ -12780,3 +12780,10 @@ Entries:
   id: 6944
   time: '2025-03-13T03:16:40.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1945
+- author: Rosycup
+  changes:
+    - type: Tweak
+      message: Gave the BSO and HoS BRDIs a fancy paintjob.
+  id: 6945
+  time: '2025-03-14T02:52:05.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1957
