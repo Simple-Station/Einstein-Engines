@@ -182,43 +182,6 @@
   categories:
   - UplinkWearables
 
-- type: listing
-  id: UplinkHardsuitSyndieMedic
-  name: uplink-hardsuit-syndiemedic-name
-  description: uplink-hardsuit-syndiemedic-desc
-  icon: { sprite: /Textures/Clothing/OuterClothing/Hardsuits/syndiemedic.rsi, state: icon }
-  productEntity: ClothingBackpackDuffelSyndicateMedicHardsuitBundle
-  cost:
-    Telecrystal: 55 # novelty item for the larp
-  categories:
-  - UplinkWearables
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - NukeOpsMedicUplink
-  - !type:ListingLimitedStockCondition
-    stock: 1
-
-
-- type: listing
-  id: UplinkHardsuitSyndieCommander
-  name: uplink-hardsuit-syndiecommander-name
-  description: uplink-hardsuit-syndiecommander-desc
-  icon: { sprite: /Textures/Clothing/OuterClothing/Hardsuits/syndiecommander.rsi, state: icon }
-  productEntity: ClothingOuterHardsuitSyndieCommander
-  cost:
-    Telecrystal: 100 # novelty item for the larp, doesnt come with bundle though because bulky fuck
-  categories:
-  - UplinkWearables
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - NukeOpsCommanderUplink
-  - !type:ListingLimitedStockCondition
-    stock: 1
-
 # Job specific
 - type: listing
   id: UplinkPieCannon
