@@ -230,7 +230,6 @@
         Piercing: 0.9
         Heat: 0.9
   - type: FlashImmunity # Goobstation
-  - type: FlashSoundSuppression # Goobstation
 
 #Brigmedic Hardsuit
 - type: entity
@@ -259,7 +258,6 @@
     highPressureMultiplier: 0.6
     lowPressureMultiplier: 1000
   - type: FlashImmunity # Goobstation
-  - type: FlashSoundSuppression # Goobstation
 
 #Warden's Hardsuit
 - type: entity
@@ -286,7 +284,6 @@
         Piercing: 0.9
         Heat: 0.9
   - type: FlashImmunity # Goobstation
-  - type: FlashSoundSuppression # Goobstation
 
 #Captain's Hardsuit
 - type: entity
@@ -304,7 +301,6 @@
     highPressureMultiplier: 0.3
     lowPressureMultiplier: 1000
   - type: FlashImmunity # Goobstation
-  - type: FlashSoundSuppression # Goobstation
 
 #Chief Engineer's Hardsuit
 - type: entity
@@ -385,7 +381,6 @@
         Piercing: 0.9
         Heat: 0.9
   - type: FlashImmunity # Goobstation
-  - type: FlashSoundSuppression # Goobstation
 
 #Luxury Mining Hardsuit
 - type: entity
@@ -461,7 +456,6 @@
         Piercing: 0.9
         Heat: 0.9
   - type: FlashImmunity # Goobstation
-  - type: FlashSoundSuppression # Goobstation
 
 #Blood-red Medic Hardsuit
 - type: entity
@@ -488,7 +482,6 @@
         Piercing: 0.9
         Heat: 0.9
   - type: FlashImmunity # Goobstation
-  - type: FlashSoundSuppression # Goobstation
 
 #Syndicate Elite Hardsuit
 - type: entity
@@ -548,7 +541,6 @@
         Piercing: 0.9
         Heat: 0.9
   - type: FlashImmunity # Goobstation
-  - type: FlashSoundSuppression # Goobstation
 
 #Syndicate Commander Hardsuit
 - type: entity
@@ -575,7 +567,6 @@
         Piercing: 0.9
         Heat: 0.9
   - type: FlashImmunity # Goobstation
-  - type: FlashSoundSuppression # Goobstation
 
 #Cybersun Juggernaut Hardsuit
 - type: entity
@@ -600,7 +591,6 @@
         Piercing: 0.9
         Heat: 0.9
   - type: FlashImmunity # Goobstation
-  - type: FlashSoundSuppression # Goobstation
 
 #Wizard Hardsuit
 - type: entity
@@ -627,7 +617,6 @@
         Piercing: 0.9
         Heat: 0.9
   - type: FlashImmunity # Goobstation
-  - type: FlashSoundSuppression # Goobstation
 
 #Organic Space Suit
 - type: entity
@@ -679,7 +668,6 @@
     highPressureMultiplier: 0.3
     lowPressureMultiplier: 1000
   - type: FlashImmunity # Goobstation
-  - type: FlashSoundSuppression # Goobstation
 
 #CENTCOMM / ERT HARDSUITS
 #ERT Leader Hardsuit
@@ -832,7 +820,6 @@
         Piercing: 0.9
         Heat: 0.9
   - type: FlashImmunity # Goobstation
-  - type: FlashSoundSuppression # Goobstation
 
 #Deathsquad Hardsuit
 - type: entity
@@ -863,8 +850,7 @@
     color: "#98EEFB"
     lightRadius: 15
   - type: FlashImmunity # Goobstation
-  - type: FlashSoundSuppression # Goobstation
-    protectionRange: 0
+
 
 #MISC. HARDSUITS
 #Clown Hardsuit

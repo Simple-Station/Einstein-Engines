@@ -28,7 +28,6 @@
         Radiation: 0.95
         Caustic: 0.95
   - type: FlashImmunity
-  - type: FlashSoundSuppression
 
 # cybersun stealth
 
@@ -59,5 +58,3 @@
     component:
     - type: Stealth
   - type: FlashImmunity
-  - type: FlashSoundSuppression
-
