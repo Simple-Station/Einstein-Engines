@@ -493,6 +493,7 @@
        inverted: true
        jobs:
          - Clown
+         - BlueshieldOfficr
     - !type:CharacterItemGroupRequirement
       group: LoadoutBoxKits
 
@@ -536,7 +537,7 @@
     - !type:CharacterJobRequirement
        jobs:
          - Brigmedic
-         - BlueshieldOfficer
+         - BlueshieldOfficr
     - !type:CharacterItemGroupRequirement
       group: LoadoutBoxKits
 
