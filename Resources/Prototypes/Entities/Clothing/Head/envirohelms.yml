@@ -143,6 +143,10 @@
     sprite: Clothing/Head/Envirohelms/clown.rsi
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/clown.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+      - state: on-equipped-HELMET
   - type: PointLight
     color: "#a777ff"
 
@@ -298,6 +302,10 @@
     sprite: Clothing/Head/Envirohelms/mime.rsi
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/mime.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+      - state: on-equipped-HELMET
   - type: PointLight
     color: "#ffffff"
 
