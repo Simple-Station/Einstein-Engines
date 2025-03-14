@@ -143,4 +143,4 @@
     - type: StealTarget
       stealGroup: HoSAntiqueWeapon
     - type: Sprite
-      sprite: _EE/Objects/Weapons/Guns/SMGs/BRDI_R25_antique.rsi
+      sprite: _DEN/Objects/Weapons/Guns/SMGs/BRDI_R25_decorated.rsi # The Den sprites
