@@ -54,9 +54,9 @@
   abstract: true
   components:
   - type: Item
-    sprite: _Goobstation/Objects/Specific/Medical/nt_implanter.rsi
+    sprite: Objects/Specific/Medical/implanter.rsi # the NT implanter RSI doesnt exist apparently, too lazy to fix it
   - type: Sprite
-    sprite: _Goobstation/Objects/Specific/Medical/nt_implanter.rsi
+    sprite: Objects/Specific/Medical/implanter.rsi
     state: implanter1
     layers:
       - state: implanter0
@@ -124,29 +124,3 @@
   components:
   - type: Implanter
     implant: SyndicateJaunterImplant
-
-# Admeme
-
-- type: entity
-  id: VaporizeImplanter
-  suffix: vaporize, DO NOT MAP
-  parent: BaseImplantOnlyImplanterCentcomm
-  components:
-  - type: Implanter
-    implant: VaporizeImplant
-
-- type: entity
-  id: ShiftImplanter
-  suffix: shift, DO NOT MAP
-  parent: BaseImplantOnlyImplanterCentcomm
-  components:
-  - type: Implanter
-    implant: ShiftImplant
-
-- type: entity
-  id: BlinkImplanter
-  suffix: blink, DO NOT MAP
-  parent: BaseImplantOnlyImplanterCentcomm
-  components:
-  - type: Implanter
-    implant: BlinkImplant
