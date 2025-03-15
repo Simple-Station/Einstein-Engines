@@ -777,12 +777,6 @@
         BaseUnshaded: aslime-_3
       Dead:
         Base: rainbow_baby_slime_dead
-  - type: Butcherable
-    spawned:
-    - id: FoodMeatSlime
-      amount: 1
-    - id: MaterialSmileExtract
-      amount: 1
   - type: Bloodstream
     bloodReagent: Nothing
     bloodMaxVolume: 50
@@ -810,7 +804,7 @@
     speedModifierMultiplier: 0
   - type: MultiHandedItem
   - type: Item
-    size: Tiny
+    size: Ginormous
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-slime
   - type: MobPrice
