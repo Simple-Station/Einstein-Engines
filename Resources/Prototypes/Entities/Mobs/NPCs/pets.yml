@@ -801,7 +801,6 @@
   - type: MeleeChemicalInjector
     solution: melee
     transferAmount: 0.1
-    speedModifierMultiplier: 0
   - type: MultiHandedItem
   - type: Item
     size: Ginormous
