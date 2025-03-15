@@ -767,7 +767,7 @@
   - type: Tag
     tags:
     - FootstepSound
-    - Hamster
+    - DoorBumpOpener
     - CannotSuicide
     - VimPilot
   - type: DamageStateVisuals
@@ -783,8 +783,6 @@
       amount: 1
     - id: MaterialSmileExtract
       amount: 1
-  - type: Damageable
-    damageModifierSet: SlimePet
   - type: Bloodstream
     bloodReagent: SpaceDrugs
     bloodMaxVolume: 50
@@ -833,8 +831,18 @@
       - HealingWordPower
   - type: LanguageSpeaker
   - type: UniversalLanguageSpeaker
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.30
+        density: 80
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
     
-
 - type: entity
   name: Pun Pun
   parent: MobMonkey
