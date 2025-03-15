@@ -87,6 +87,3 @@ signal-port-description-material-silo-utilizer = Utilizer for station material s
 
 signal-port-name-fill-any-item = Fillbot Target
 signal-port-description-fill-any-item = Target port for Fillbot insertion.
-
-signal-port-name-fill-trash-item = Fillbot Trash
-signal-port-description-fill-trash-item = Target port for Fillbot insertion, filtered to trash only.

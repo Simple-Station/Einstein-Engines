@@ -1,5 +1,6 @@
 using Content.Server.Chat.Systems;
 using Content.Server.Disposal.Unit.Components;
+using Content.Shared.Body.Part;
 using Content.Shared.Chat;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
@@ -21,7 +22,6 @@ namespace Content.Server.NPC.HTN.PrimitiveTasks.Operators.Specific;
 public sealed partial class FillLinkedMachineOperator : HTNOperator
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     private SharedMaterialStorageSystem _sharedMaterialStorage = default!;
     private SharedDisposalUnitSystem _sharedDisposalUnitSystem = default!;
     private SharedHandsSystem _sharedHandsSystem = default!;
@@ -67,8 +67,11 @@ public sealed partial class FillLinkedMachineOperator : HTNOperator
 
         var heldItem = _sharedHandsSystem.GetActiveItem(owner);
 
-        if (heldItem == null)
+        if (heldItem == null || _entManager.HasComponent<BodyPartComponent>(heldItem))
+        {
+            _sharedHandsSystem.TryDrop(owner);
             return HTNOperatorStatus.Failed;
+        }
 
         if (isMaterialStorage && linkedStorage != null)
         {
@@ -81,6 +84,7 @@ public sealed partial class FillLinkedMachineOperator : HTNOperator
             return HTNOperatorStatus.Finished;
         }
 
+        _sharedHandsSystem.TryDrop(owner);
         return HTNOperatorStatus.Failed;
     }
 }

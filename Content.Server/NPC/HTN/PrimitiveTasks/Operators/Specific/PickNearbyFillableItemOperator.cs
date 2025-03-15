@@ -2,21 +2,30 @@ using System.Threading;
 using System.Threading.Tasks;
 using Content.Server.Disposal.Unit.Components;
 using Content.Server.NPC.Pathfinding;
+using Content.Shared.Body.Part;
 using Content.Shared.DeviceLinking;
+using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
+using Content.Shared.Item;
 using Content.Shared.Materials;
 using Content.Shared.Silicons.Bots;
 using Content.Shared.Tag;
 using Content.Shared.Whitelist;
+using Robust.Shared.Prototypes;
+
 
 namespace Content.Server.NPC.HTN.PrimitiveTasks.Operators.Specific;
 
 public sealed partial class PickNearbyFillableItemOperator : HTNOperator
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
+
+    private SharedMaterialStorageSystem _sharedMaterialStorage = default!;
     private EntityLookupSystem _lookup = default!;
     private PathfindingSystem _pathfinding = default!;
+    private SharedHandsSystem _sharedHandsSystem = default!;
     private TagSystem _tagSystem = default!;
 
     [DataField] public string RangeKey = NPCBlackboard.FillbotPickupRange;
@@ -38,6 +47,8 @@ public sealed partial class PickNearbyFillableItemOperator : HTNOperator
         base.Initialize(sysManager);
         _lookup = sysManager.GetEntitySystem<EntityLookupSystem>();
         _pathfinding = sysManager.GetEntitySystem<PathfindingSystem>();
+        _sharedMaterialStorage = sysManager.GetEntitySystem<SharedMaterialStorageSystem>();
+        _sharedHandsSystem = sysManager.GetEntitySystem<SharedHandsSystem>();
         _tagSystem = sysManager.GetEntitySystem<TagSystem>();
     }
 
@@ -62,17 +73,22 @@ public sealed partial class PickNearbyFillableItemOperator : HTNOperator
 
         foreach (var target in _lookup.GetEntitiesInRange(owner, range))
         {
-            if (linkedStorage != null && _whitelistSystem.IsWhitelistFail(linkedStorage.Whitelist, target))
+            // only things the robot can actually pick up
+            if(!_sharedHandsSystem.CanPickupAnyHand(owner, target))
                 continue;
 
-            if(disposalUnit != null && _whitelistSystem.IsWhitelistFail(disposalUnit.Whitelist, target))
+            // only things that can go inside
+            if (linkedStorage != null && !_sharedMaterialStorage.CanInsertMaterialEntity(target, linkedStorage.Owner))
                 continue;
 
-            var pathRange = SharedInteractionSystem.InteractionRange;
+            // trash only
+            if(disposalUnit != null &&
+                (_whitelistSystem.IsWhitelistFail(disposalUnit.Whitelist, target)
+                    || !_tagSystem.HasTag(target, _prototypeManager.Index<TagPrototype>("Trash"))
+                    || _entManager.HasComponent<BodyPartComponent>(target)))
+                continue;
 
-            //Needed to make sure it doesn't sometimes stop right outside its interaction range, in case of a mob.
-            pathRange -= 0.5f;
-
+            const float pathRange = SharedInteractionSystem.InteractionRange - 1;
             var path = await _pathfinding.GetPath(owner, target, pathRange, cancelToken);
 
             if (path.Result == PathResult.NoPath)

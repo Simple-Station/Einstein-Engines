@@ -4,40 +4,21 @@
     - tasks:
         - !type:HTNCompoundTask
           task: FillMachineCompound
-    - tasks:
-        - !type:HTNCompoundTask
-          task: IdleCompound
 
 # Picks an object depending on what machine the bot is linked to, and puts it in the machine it's linked to
 - type: htnCompound
   id: FillMachineCompound
   branches:
     - tasks:
-        # If, for some reason, we're carrying something: drop it.
-        - !type:HTNPrimitiveTask
-          operator: !type:DropOperator
         # Find an item that will fit into the machine
         - !type:HTNPrimitiveTask
           operator: !type:PickNearbyFillableItemOperator
             targetKey: NearbyFillableItem
             targetMoveKey: TargetCoordinates
-        - !type:HTNPrimitiveTask
-          operator: !type:SpeakOperator
-            speech: filbot-item-located
-            hidden: true
-        - !type:HTNPrimitiveTask
-          operator: !type:SetFloatOperator
-            targetKey: IdleTime
-            amount: 1
         # Move in range
         - !type:HTNPrimitiveTask
           operator: !type:MoveToOperator
             pathfindInPlanning: false
-
-        - !type:HTNPrimitiveTask
-          operator: !type:SetFloatOperator
-            targetKey: IdleTime
-            amount: 2
         # Pick it up
         - !type:HTNPrimitiveTask
           preconditions:
@@ -51,29 +32,11 @@
           operator: !type:FindLinkedMachineOperator
             targetKey: LinkedFillableMachine
             targetMoveKey: TargetCoordinates
-        - !type:HTNPrimitiveTask
-          operator: !type:SpeakOperator
-            speech: filbot-item-grabbed
-            hidden: true
-
-        - !type:HTNPrimitiveTask
-          operator: !type:SetFloatOperator
-            targetKey: IdleTime
-            amount: 1
         # Move to the machine
         - !type:HTNPrimitiveTask
           operator: !type:MoveToOperator
             pathfindInPlanning: false
-
-        - !type:HTNPrimitiveTask
-          operator: !type:SetFloatOperator
-            targetKey: IdleTime
-            amount: 2
         # Insert the item
         - !type:HTNPrimitiveTask
           operator: !type:FillLinkedMachineOperator
             targetKey: LinkedFillableMachine
-        - !type:HTNPrimitiveTask
-          operator: !type:SpeakOperator
-            speech: filbot-item-filled
-            hidden: true

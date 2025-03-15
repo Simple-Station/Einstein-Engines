@@ -269,6 +269,41 @@ public abstract class SharedMaterialStorageSystem : EntitySystem
         return TryChangeMaterialAmount(uid, materialId, delta, component, utilizer);
     }
 
+    public virtual bool CanInsertMaterialEntity(
+        EntityUid toInsert,
+        EntityUid receiver,
+        MaterialStorageComponent? storage = null,
+        MaterialSiloUtilizerComponent? utilizer = null,
+        MaterialComponent? material = null,
+        PhysicalCompositionComponent? composition = null
+    )
+    {
+        if (!Resolve(receiver, ref storage))
+            return false;
+
+        if (!Resolve(toInsert, ref material, ref composition, false))
+            return false;
+
+        if (_whitelistSystem.IsWhitelistFail(storage.Whitelist, toInsert))
+            return false;
+
+        if (HasComp<UnremoveableComponent>(toInsert))
+            return false;
+
+        // Material Whitelist checked implicitly by CanChangeMaterialAmount();
+
+        var multiplier = TryComp<StackComponent>(toInsert, out var stackComponent) ? stackComponent.Count : 1;
+        var totalVolume = 0;
+        foreach (var (mat, vol) in composition.MaterialComposition)
+        {
+            if (!CanChangeMaterialAmount(receiver, mat, vol * multiplier, storage, utilizer))
+                return false;
+            totalVolume += vol * multiplier;
+        }
+
+        return CanTakeVolume(receiver, totalVolume, storage, utilizer);
+    }
+
     /// <summary>
     /// Tries to insert an entity into the material storage.
     /// </summary>

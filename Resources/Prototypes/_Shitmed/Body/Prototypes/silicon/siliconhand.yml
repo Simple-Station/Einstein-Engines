@@ -5,8 +5,8 @@
   root: right arm
   slots:
     right arm:
-      part: RightArmMonkey
+      part: RightArmSiliconIndestructible
       connections:
       - right hand
     right hand:
-      part: RightHandMonkey
+      part: RightHandSiliconIndestructible

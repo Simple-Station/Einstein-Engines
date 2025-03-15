@@ -92,7 +92,6 @@
   - type: DeviceLinkSink
     ports:
       - FillbotAnyItem
-      - FillbotTrashItem
 
 - type: entity
   id: MailingUnit
