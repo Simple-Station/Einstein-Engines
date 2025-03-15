@@ -784,8 +784,8 @@
     - id: MaterialSmileExtract
       amount: 1
   - type: Bloodstream
-    bloodReagent: SpaceDrugs
-    bloodMaxVolume: 50
+    bloodReagent: Nothing
+    bloodMaxVolume: 1000
   - type: Temperature
     heatDamageThreshold: 100000000000
     coldDamageThreshold: -10000000000
