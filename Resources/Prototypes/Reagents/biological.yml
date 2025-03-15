@@ -33,19 +33,19 @@
         - !type:OrganType
           type: Vampiric
         reagent: Water
-        amount: 0.15
+        amount: 0.3
       - !type:AdjustReagent
         conditions:
         - !type:OrganType
           type: Vampiric
         reagent: Protein
-        amount: 0.125 # See below
+        amount: 0.25 # See below
       - !type:AdjustReagent
         conditions:
         - !type:OrganType
           type: Vampiric
         reagent: Omnizine
-        amount: 0.2
+        amount: 0.3
     Food:
       effects:
         - !type:AdjustReagent
