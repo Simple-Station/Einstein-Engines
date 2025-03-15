@@ -758,7 +758,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      200: Dead
+      100000000000000000: Dead
   - type: FootstepModifier
     footstepSoundCollection:
       path: /Audio/Effects/Footsteps/slime1.ogg
@@ -786,21 +786,19 @@
   - type: Damageable
     damageModifierSet: SlimePet
   - type: Bloodstream
-    bloodlossHealDamage:
-      types:
-        Bloodloss:
-          -0.8
+    bloodReagent: SpaceDrugs
+    bloodMaxVolume: 50
   - type: Temperature
-    heatDamageThreshold: 800
-    coldDamageThreshold: 0
+    heatDamageThreshold: 100000000000
+    coldDamageThreshold: 100000000000
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 1
-        Caustic: 1
+        Blunt: -5
+        Burn: -5
   - type: MultiHandedItem
   - type: Item
-    size: Huge
+    size: Tiny
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-slime
   - type: MobPrice
@@ -813,12 +811,14 @@
     attributes:
       proper: true
       gender: female
-  - type: LanguageKnowledge
-    speaks:
-    - Bubblish
-    understands:
-    - TauCetiBasic
-    - Bubblish
+  - type: InnatePsionicPowers
+    powersToAdd:
+      - XenoglossyPower
+      - TelepathyPower
+      - HealingWordPower
+  - type: LanguageSpeaker
+  - type: UniversalLanguageSpeaker
+    
 
 - type: entity
   name: Pun Pun
