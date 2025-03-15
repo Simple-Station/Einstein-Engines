@@ -785,7 +785,7 @@
       amount: 1
   - type: Bloodstream
     bloodReagent: Nothing
-    bloodMaxVolume: 1000
+    bloodMaxVolume: 50
   - type: Temperature
     heatDamageThreshold: 100000000000
     coldDamageThreshold: -10000000000
@@ -830,6 +830,14 @@
       - HealingWordPower
   - type: LanguageSpeaker
   - type: UniversalLanguageSpeaker
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      1000000000: 1
+  - type: ZombieImmune
+  - type: MovementIgnoreGravity
+  - type: SpeedModifiedByContactModifier
+    walkModifierEffectiveness: 0
+    sprintModifierEffectiveness: 0
   - type: Fixtures
     fixtures:
       fix1:
