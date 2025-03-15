@@ -28,7 +28,7 @@ public sealed partial class CCVars
     ///     Useful to prevent clipping through objects.
     /// </summary>
     public static readonly CVarDef<float> SpaceWindMaxVelocity =
-        CVarDef.Create("atmos.space_wind_max_velocity", 30f, CVar.SERVERONLY);
+        CVarDef.Create("atmos.space_wind_max_velocity", 20f, CVar.SERVERONLY);
 
     /// <summary>
     ///     The maximum angular velocity that space wind can spin objects at while throwing them. This one is mostly for fun.
@@ -63,7 +63,7 @@ public sealed partial class CCVars
     ///     Also looks weird on slow spacing for unrelated reasons. If you do want to enable this, you should probably turn on instaspacing.
     /// </summary>
     public static readonly CVarDef<bool> MonstermosRipTiles =
-        CVarDef.Create("atmos.monstermos_rip_tiles", true, CVar.SERVERONLY);
+        CVarDef.Create("atmos.monstermos_rip_tiles", false, CVar.SERVERONLY);
 
     /// <summary>
     ///     Taken as the cube of a tile's mass, this acts as a minimum threshold of mass for which air pressure calculates whether or not to rip a tile from the floor
