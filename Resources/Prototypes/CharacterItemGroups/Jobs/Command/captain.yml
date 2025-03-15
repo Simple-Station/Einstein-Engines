@@ -120,6 +120,8 @@
       id: LoadoutCaptainOuterCarapace
     - type: loadout
       id: LoadoutCaptainOuterTrench
+    - type: loadout
+      id: LoadoutCaptainOuterDogi
 
 - type: characterItemGroup
   id: LoadoutCaptainShoes

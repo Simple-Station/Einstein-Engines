@@ -400,6 +400,19 @@
     - ClothingOuterArmorCaptainCarapace
 
 - type: loadout
+  id: LoadoutCaptainOuterDogi
+  category: JobsCommandCaptain
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingOuterArmorCaptainDogi
+
+- type: loadout
   id: LoadoutCaptainOuterTrench
   category: JobsCommandCaptain
   cost: 0
