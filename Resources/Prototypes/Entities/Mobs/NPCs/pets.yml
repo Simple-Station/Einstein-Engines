@@ -790,12 +790,24 @@
     bloodMaxVolume: 50
   - type: Temperature
     heatDamageThreshold: 100000000000
-    coldDamageThreshold: 100000000000
+    coldDamageThreshold: -10000000000
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: -5
-        Burn: -5
+        Blunt: 0
+  - type: SolutionContainerManager
+    solutions:
+      melee:
+        maxVol: 10
+  - type: SolutionRegeneration
+    solution: melee
+    generated:
+      reagents:
+      - ReagentId: Omnizine
+        Quantity: 0.05
+  - type: MeleeChemicalInjector
+    solution: melee
+    transferAmount: 0.1
   - type: MultiHandedItem
   - type: Item
     size: Tiny
