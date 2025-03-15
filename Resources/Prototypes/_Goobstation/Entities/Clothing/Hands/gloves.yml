@@ -1,20 +1,5 @@
 
 - type: entity
-  parent: ClothingHandsGlovesColorYellow
-  id: ClothingHandsGlovesExplosiveShock
-  suffix: Exploding
-  components:
-  - type: Explosive
-    explosionType: Default
-    maxIntensity: 5
-    intensitySlope: 5
-    totalIntensity: 25
-    maxTileBreak: 1
-    canCreateVacuum: false
-  - type: Tag
-    tags: [] # ignore "WhitelistChameleon" tag
-
-- type: entity
   parent: ClothingHandsGlovesCombat
   id: ClothingHandsGlovesDeathsquad
   suffix: DO NOT MAP # Just don't...
