@@ -6,11 +6,8 @@
     edges:
     - to: bot
       steps:
-      - tag: Bucket
-        icon:
-          sprite: Objects/Tools/bucket.rsi
-          state: icon
-        name: bucket
+      - material: Plastic
+        amount: 10
       - tag: ProximitySensor
         icon:
           sprite: Objects/Misc/proximity_sensor.rsi
