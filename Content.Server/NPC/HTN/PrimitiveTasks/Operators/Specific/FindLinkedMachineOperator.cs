@@ -40,10 +40,12 @@ public sealed partial class FindLinkedMachineOperator : HTNOperator
         if (!blackboard.TryGetValue<float>(RangeKey, out var range, _entManager)
             || !_entManager.TryGetComponent<FillbotComponent>(owner, out var fillbot)
             || !_entManager.TryGetComponent<DeviceLinkSourceComponent>(owner, out var fillbotlinks)
-            || fillbotlinks.LinkedPorts.Count != 1)
+            || fillbotlinks.LinkedPorts.Count != 1
+            || fillbot.LinkedSinkEntity == null
+            || _entManager.Deleted(fillbot.LinkedSinkEntity))
             return (false, null);
 
-        var path = await _pathfinding.GetPath(owner, fillbot.LinkedSinkEntity, SharedInteractionSystem.InteractionRange - 0.5f, cancelToken);
+        var path = await _pathfinding.GetPath(owner, fillbot.LinkedSinkEntity.Value, SharedInteractionSystem.InteractionRange - 0.5f, cancelToken);
 
         if (path.Result == PathResult.NoPath)
             return (false, null);
@@ -51,7 +53,7 @@ public sealed partial class FindLinkedMachineOperator : HTNOperator
         return (true, new Dictionary<string, object>()
         {
             {TargetKey, fillbot.LinkedSinkEntity},
-            {TargetMoveKey, _entManager.GetComponent<TransformComponent>(fillbot.LinkedSinkEntity).Coordinates},
+            {TargetMoveKey, _entManager.GetComponent<TransformComponent>(fillbot.LinkedSinkEntity.Value).Coordinates},
             {NPCBlackboard.PathfindKey, path},
         });
     }

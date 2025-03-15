@@ -5,5 +5,5 @@ namespace Content.Shared.Silicons.Bots;
 public sealed partial class FillbotComponent : Component
 {
     [ViewVariables]
-    public EntityUid LinkedSinkEntity { get; set; }
+    public EntityUid? LinkedSinkEntity { get; set; }
 }

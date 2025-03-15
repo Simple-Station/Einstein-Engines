@@ -17,6 +17,9 @@
             targetMoveKey: TargetCoordinates
         # Move in range
         - !type:HTNPrimitiveTask
+          preconditions:
+            - !type:KeyExistsPrecondition
+              key: NearbyFillableItem
           operator: !type:MoveToOperator
             pathfindInPlanning: false
         # Pick it up
@@ -25,6 +28,8 @@
             - !type:TargetInRangePrecondition
               targetKey: NearbyFillableItem
               rangeKey: InteractRange
+            - !type:KeyExistsPrecondition
+              key: NearbyFillableItem
           operator: !type:InteractWithOperator
             targetKey: NearbyFillableItem
         # Find the machine the bot is linked to
@@ -34,6 +39,9 @@
             targetMoveKey: TargetCoordinates
         # Move to the machine
         - !type:HTNPrimitiveTask
+          preconditions:
+            - !type:KeyExistsPrecondition
+              key: LinkedFillableMachine
           operator: !type:MoveToOperator
             pathfindInPlanning: false
         # Insert the item

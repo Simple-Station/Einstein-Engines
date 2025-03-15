@@ -1,12 +1,12 @@
 using System.Threading;
 using System.Threading.Tasks;
 using Content.Server.Disposal.Unit.Components;
+using Content.Server.Item;
 using Content.Server.NPC.Pathfinding;
 using Content.Shared.Body.Part;
 using Content.Shared.DeviceLinking;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
-using Content.Shared.Item;
 using Content.Shared.Materials;
 using Content.Shared.Silicons.Bots;
 using Content.Shared.Tag;
@@ -27,6 +27,7 @@ public sealed partial class PickNearbyFillableItemOperator : HTNOperator
     private PathfindingSystem _pathfinding = default!;
     private SharedHandsSystem _sharedHandsSystem = default!;
     private TagSystem _tagSystem = default!;
+    private ItemSystem _itemSystem = default!;
 
     [DataField] public string RangeKey = NPCBlackboard.FillbotPickupRange;
 
@@ -50,6 +51,7 @@ public sealed partial class PickNearbyFillableItemOperator : HTNOperator
         _sharedMaterialStorage = sysManager.GetEntitySystem<SharedMaterialStorageSystem>();
         _sharedHandsSystem = sysManager.GetEntitySystem<SharedHandsSystem>();
         _tagSystem = sysManager.GetEntitySystem<TagSystem>();
+        _itemSystem = sysManager.GetEntitySystem<ItemSystem>();
     }
 
     public override async Task<(bool Valid, Dictionary<string, object>? Effects)> Plan(NPCBlackboard blackboard,
@@ -60,7 +62,8 @@ public sealed partial class PickNearbyFillableItemOperator : HTNOperator
         if (!blackboard.TryGetValue<float>(RangeKey, out var range, _entManager)
             || !_entManager.TryGetComponent<FillbotComponent>(owner, out var fillbot)
             || !_entManager.TryGetComponent<DeviceLinkSourceComponent>(owner, out var fillbotlinks)
-            || fillbotlinks.LinkedPorts.Count != 1)
+            || fillbotlinks.LinkedPorts.Count != 1
+            || fillbot.LinkedSinkEntity == null)
             return (false, null);
 
         var isMaterialStorage = _entManager.TryGetComponent<MaterialStorageComponent>(
@@ -75,6 +78,11 @@ public sealed partial class PickNearbyFillableItemOperator : HTNOperator
         {
             // only things the robot can actually pick up
             if(!_sharedHandsSystem.CanPickupAnyHand(owner, target))
+                continue;
+
+            // only things not currently contained by something else
+            if (_entManager.TryGetComponent<MetaDataComponent>(target, out var meta) &&
+                meta.Flags.HasFlag(MetaDataFlags.InContainer))
                 continue;
 
             // only things that can go inside

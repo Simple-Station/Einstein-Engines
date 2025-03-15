@@ -1,21 +1,12 @@
-using Content.Server.Chat.Systems;
 using Content.Server.Disposal.Unit.Components;
 using Content.Shared.Body.Part;
-using Content.Shared.Chat;
-using Content.Shared.Damage;
-using Content.Shared.Damage.Prototypes;
 using Content.Shared.DeviceLinking;
 using Content.Shared.Disposal;
-using Content.Shared.Emag.Components;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
-using Content.Shared.Interaction;
 using Content.Shared.Materials;
-using Content.Shared.Popups;
 using Content.Shared.Silicons.Bots;
-using Content.Shared.Tag;
-using Robust.Shared.Audio.Systems;
-using Robust.Shared.Prototypes;
+
 
 namespace Content.Server.NPC.HTN.PrimitiveTasks.Operators.Specific;
 
@@ -52,9 +43,11 @@ public sealed partial class FillLinkedMachineOperator : HTNOperator
 
         if (!blackboard.TryGetValue<EntityUid>(TargetKey, out var target, _entManager) || _entManager.Deleted(target)
             || !_entManager.TryGetComponent<FillbotComponent>(owner, out var fillbot)
-            ||   !_entManager.TryGetComponent<HandsComponent>(owner, out var fillbotHand)
+            || !_entManager.TryGetComponent<HandsComponent>(owner, out var fillbotHand)
             || !_entManager.TryGetComponent<DeviceLinkSourceComponent>(owner, out var fillbotlinks)
-            || fillbotlinks.LinkedPorts.Count != 1)
+            || fillbotlinks.LinkedPorts.Count != 1
+            || fillbot.LinkedSinkEntity == null
+            || _entManager.Deleted(fillbot.LinkedSinkEntity))
             return HTNOperatorStatus.Failed;
 
         var isMaterialStorage = _entManager.TryGetComponent<MaterialStorageComponent>(
