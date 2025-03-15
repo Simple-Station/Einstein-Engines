@@ -28,6 +28,7 @@ public sealed class DockingConsoleSystem : SharedDockingConsoleSystem
     [Dependency] private readonly IMapManager _mapMan = default!;
     [Dependency] private readonly MapSystem _mapSystem = default!;
     [Dependency] private readonly StationSystem _station = default!;
+    [DataField] private int _currentlocation = 0;
 
     public override void Initialize()
     {
@@ -38,6 +39,8 @@ public sealed class DockingConsoleSystem : SharedDockingConsoleSystem
         SubscribeLocalEvent<DockEvent>(OnDock);
         SubscribeLocalEvent<UndockEvent>(OnUndock);
         SubscribeLocalEvent<FTLCompletedEvent>(OnFTLCompleted);
+
+        SubscribeLocalEvent<OnStationGridAddedEvent>(ShuttleFilledonStation);
 
         Subs.BuiEvents<DockingConsoleComponent>(DockingConsoleUiKey.Key,
             subs =>
@@ -123,9 +126,7 @@ public sealed class DockingConsoleSystem : SharedDockingConsoleSystem
         }
 
         if (TryComp<DockingShuttleComponent>(shuttle, out var docking))
-        {
             destinations = docking.Destinations;
-        }
 
         var state = new DockingConsoleState(ftlState, ftlTime, destinations);
         _ui.SetUiState(ent.Owner, DockingConsoleUiKey.Key, state);
@@ -142,15 +143,17 @@ public sealed class DockingConsoleSystem : SharedDockingConsoleSystem
         var dest = docking.Destinations[args.Index];
         var map = dest.Map;
 
-        // can't FTL if its already there
-        if (map == Transform(shuttle).MapID)
+        var grid = docking.LocationUID[args.Index];
+
+        // can't FTL if your already at the grid
+        if (_currentlocation == grid.Id)
             return;
 
-        if (GetStationUIDinMap(map) is not {} grid)
-            return;
+        _currentlocation = grid.Id;
 
         Log.Debug($"{ToPrettyString(args.Actor):user} is FTL-docking {ToPrettyString(shuttle):shuttle} to {ToPrettyString(grid):grid}");
 
+        // Set new current location and FTL!
         _shuttle.FTLToDock(shuttle, Comp<ShuttleComponent>(shuttle), grid, priorityTag: docking.DockTag);
     }
 
@@ -169,7 +172,7 @@ public sealed class DockingConsoleSystem : SharedDockingConsoleSystem
 
         // Find the target
         var targetMap = Transform(ent).MapID;
-        if (GetStationUIDinMap(targetMap) is not {} grid)
+        if (Transform(ent).GridUid is not {} grid)
             return;
 
         // Find the mining shuttle
@@ -191,8 +194,11 @@ public sealed class DockingConsoleSystem : SharedDockingConsoleSystem
             if (targetUid == null)
                 return;
 
-            RaiseLocalEvent(shuttleUid.Value, new ShuttleAddStationEvent(targetUid.Value, targetMap), false);
+            RaiseLocalEvent(shuttleUid.Value, new ShuttleAddStationEvent(targetUid.Value, targetMap, grid), false);
         }
+
+        // Set the current location to the station grid you warped to.
+        _currentlocation = grid.Id;
 
         // Finally FTL
         _shuttle.FTLToDock(shuttle.Value, Comp<ShuttleComponent>(shuttle.Value), grid, priorityTag: docking.DockTag);
@@ -202,26 +208,6 @@ public sealed class DockingConsoleSystem : SharedDockingConsoleSystem
 
         // shitcode because funny
         Timer.Spawn(TimeSpan.FromSeconds(15), () => _mapMan.DeleteMap(dummyMap));
-    }
-
-    /// <summary>
-    /// Find the GridUid of any grid Id with stationDatacomponent in a given mapID
-    /// </summary>
-    private EntityUid? GetStationUIDinMap(MapId map)
-    {
-        var query = EntityQueryEnumerator<StationDataComponent>();
-        while (query.MoveNext(out var uid, out var data))
-        {
-            foreach (var gridUid in data.Grids)
-            {
-                if (Transform(gridUid).MapID == map)
-                {
-                    return gridUid;
-                }
-            }
-        }
-
-        return null;
     }
 
     /// <summary>
@@ -251,5 +237,22 @@ public sealed class DockingConsoleSystem : SharedDockingConsoleSystem
         }
 
         return null;
+    }
+
+
+    // If the shuttle has been added on round start set the current location to that entityUID.
+    private void ShuttleFilledonStation(OnStationGridAddedEvent args)
+    {
+        _currentlocation = args.Currentlocation;
+    }
+}
+
+public sealed class OnStationGridAddedEvent : EntityEventArgs
+{
+    public readonly int Currentlocation;
+
+    public OnStationGridAddedEvent(int stationuid)
+    {
+        Currentlocation = stationuid;
     }
 }
