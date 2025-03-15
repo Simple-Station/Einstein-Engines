@@ -66,7 +66,6 @@
     size: Normal
   - type: DisarmMalus
     malus: 0.225
-  - type: UseDelayBlockMelee
     delays:
     - stunbaton
   - type: Appearance
