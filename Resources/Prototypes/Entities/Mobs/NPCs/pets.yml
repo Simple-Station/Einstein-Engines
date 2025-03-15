@@ -803,11 +803,10 @@
       reagents:
       - ReagentId: Omnizine
         Quantity: 0.05
+  - type: NoSlip
   - type: MeleeChemicalInjector
     solution: melee
     transferAmount: 0.1
-  - !type:TraitModifySlowOnDamage
-    damageThresholdsModifier: 10
     speedModifierMultiplier: 0
   - type: MultiHandedItem
   - type: Item
