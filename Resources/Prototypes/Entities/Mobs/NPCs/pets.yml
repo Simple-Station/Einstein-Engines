@@ -767,7 +767,7 @@
   - type: Tag
     tags:
     - FootstepSound
-    - DoorBumpOpener
+    - Mouse
     - CannotSuicide
     - VimPilot
   - type: DamageStateVisuals
@@ -808,6 +808,9 @@
   - type: MeleeChemicalInjector
     solution: melee
     transferAmount: 0.1
+  - !type:TraitModifySlowOnDamage
+    damageThresholdsModifier: 10
+    speedModifierMultiplier: 0
   - type: MultiHandedItem
   - type: Item
     size: Tiny
