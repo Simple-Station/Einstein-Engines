@@ -1060,8 +1060,6 @@
     modifier: 0.1
   - type: ClothingModifyStunTime # Goobstation
     modifier: 0.1
-  - type: ModifyStandingUpTime # Goobstation
-    multiplier: 0.1
   - type: Armor
     modifiers:
       coefficients:

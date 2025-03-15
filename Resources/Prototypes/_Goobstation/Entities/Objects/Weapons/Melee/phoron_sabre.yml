@@ -58,12 +58,7 @@
   - type: Tag
     tags:
     - EnergySword
-  - type: ThrowableBlocker
-    blockSound:
-      path: /Audio/Weapons/eblade1.ogg
-      params:
-        variation: 0.250
-        volume: -2
+
 
   - type: Sharp
   - type: Execution # Off with his head!
