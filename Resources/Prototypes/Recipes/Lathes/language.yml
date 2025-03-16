@@ -49,6 +49,16 @@
     Gold: 50
 
 - type: latheRecipe
+  id: NovuNedericTranslator
+  result: NovuNedericTranslator
+  completetime: 2
+  materials:
+    Steel: 500
+    Glass: 100
+    Plastic: 50
+    Gold: 50
+
+- type: latheRecipe
   id: RootSpeakTranslator
   result: RootSpeakTranslator
   completetime: 2
