@@ -14,9 +14,6 @@
   id: MagazineHighCaliber
 
 - type: Tag
-  id: CartridgeHighCaliber
-
-- type: Tag
   id: BolaEnergy
 
 - type: Tag
@@ -198,9 +195,6 @@
 
 - type: Tag
   id: Lungs
-
-- type: Tag
-  id: MagazineHighCaliber
 
 - type: Tag
   id: MagazineMagnumLeverRifle

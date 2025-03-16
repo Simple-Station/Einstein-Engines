@@ -31,10 +31,6 @@
 
 - type: entity
   parent: BaseMagazineBoxHighCaliber
-  id: MagazineBoxHighCaliber
-
-- type: entity
-  parent: BaseMagazineBoxHighCaliber
   id: MagazineBoxHighCaliberExplosive
   name: ammunition box (.50 high-explosive)
   components:
