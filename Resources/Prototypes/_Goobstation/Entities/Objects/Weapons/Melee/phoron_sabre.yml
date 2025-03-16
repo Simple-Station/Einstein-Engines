@@ -55,11 +55,6 @@
     otherTypeReflectProb: 0.4
     reflects:
       - Energy
-  - type: Tag
-    tags:
-    - EnergySword
-
-
   - type: Sharp
   - type: Execution # Off with his head!
     doAfterDuration: 4.0
