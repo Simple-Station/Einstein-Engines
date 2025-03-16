@@ -69,6 +69,11 @@ public sealed class DockingShuttleSystem : SharedDockingShuttleSystem
         _console.UpdateConsolesUsing(ent);
     }
 
+
+    /// <summary>
+    /// When any station has been added or an item that has been added by a station it checks to see if it has the docking component.
+    /// If there is a docking component then find the station that spawned it and add it to destinations.
+    /// </summary>
     private void OnStationGridAdded(StationGridAddedEvent args)
     {
         var uid = args.GridId;
@@ -94,7 +99,9 @@ public sealed class DockingShuttleSystem : SharedDockingShuttleSystem
         RaiseLocalEvent(new OnStationGridAddedEvent(grid.Id));
     }
 
-    // This will now grab the station by the name instead of GetLargestGrid :)
+    /// <summary>
+    /// If you have the exact station name then it will return it. This can also work with the ATS.
+    /// </summary>
     private EntityUid? GetStationbyName(StationDataComponent component, string stationname)
     {
         foreach (var grid in component.Grids)
@@ -104,15 +111,19 @@ public sealed class DockingShuttleSystem : SharedDockingShuttleSystem
         return null;
     }
 
-    // When the shuttle was called it will add the station to the console
+    /// <summary>
+    /// If there is no mining shuttle on round start it will call this event and add it to destinations.
+    /// </summary>
     private void OnAddStation(EntityUid uid, DockingShuttleComponent component, ShuttleAddStationEvent args)
     {
         component.Station = args.MapUid;
         AddDestinationUID(component, args.MapId, args.GridUid, "Station");
     }
 
-    // This function will specifically for lavaland components or station components on any given map.
-    // This will allow for you to add more maps or have many stations/lavaland structures to warp too :)
+    /// <summary>
+    /// This function will specifically for lavaland components or station components on any given map.
+    /// This will allow for you to add more maps or have many stations/lavaland structures to warp too :)
+    /// </summary>
     private void AddDestinations(DockingShuttleComponent component, MapId map, EntityUid uid)
     {
         var planet = Name(uid).Split();
@@ -123,12 +134,13 @@ public sealed class DockingShuttleSystem : SharedDockingShuttleSystem
             AddLavalandStation(component, map);
     }
 
-    // Looks through all the stationdatacomponents and adds said stations.
-    // This might cause issues since ATS also has a stationdatacomponent. But on testing it seemed to be fine.
-    // Not the worst thing to have ATS as a warp point though.
+    /// <summary>
+    /// Looks through all the BecomesStationComponent and adds said stations.
+    /// If there is multiple station on the same map now it will create warp points for said stations
+    /// </summary>
     private void AddStation(DockingShuttleComponent component, MapId map)
     {
-        var query = EntityQueryEnumerator<StationDataComponent, TransformComponent>();
+        var query = EntityQueryEnumerator<BecomesStationComponent, TransformComponent>();
         while (query.MoveNext(out var gridUid, out var grid, out var xform))
         {
             if (xform.MapID != map)
@@ -142,8 +154,10 @@ public sealed class DockingShuttleSystem : SharedDockingShuttleSystem
         }
     }
 
-    // Will specifically look through lavaland stations to add all grids marked with lavalandstationcomponent
-    // This will allow people to add more warp points like a lavaland fight arena. :)
+    /// <summary>
+    /// Will specifically look through lavaland stations to add all grids marked with lavalandstationcomponent
+    /// This will allow people to add more warp points like a lavaland fight arena. :)
+    /// </summary>
     private void AddLavalandStation(DockingShuttleComponent component, MapId map)
     {
         var query = EntityQueryEnumerator<LavalandStationComponent, TransformComponent>();
@@ -157,7 +171,9 @@ public sealed class DockingShuttleSystem : SharedDockingShuttleSystem
         }
     }
 
-    // Add the destination gridUID to the destinations.
+    /// <summary>
+    /// Add the destination gridUID to the destinations.
+    /// </summary>
     private void AddDestinationUID(DockingShuttleComponent component, MapId map, EntityUid gridUid, string? prefix = null)
     {
         var warppoint = Name(gridUid);

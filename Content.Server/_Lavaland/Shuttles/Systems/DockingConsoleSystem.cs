@@ -140,9 +140,6 @@ public sealed class DockingConsoleSystem : SharedDockingConsoleSystem
         if (args.Index < 0 || args.Index > docking.Destinations.Count)
             return;
 
-        var dest = docking.Destinations[args.Index];
-        var map = dest.Map;
-
         var grid = docking.LocationUID[args.Index];
 
         // can't FTL if your already at the grid
