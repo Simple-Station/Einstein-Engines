@@ -11544,7 +11544,6 @@ entities:
         - Left: Forward
         - Right: Reverse
         - Middle: Off
-        invalid:
         - Left: Forward
         - Right: Reverse
         - Middle: Off
