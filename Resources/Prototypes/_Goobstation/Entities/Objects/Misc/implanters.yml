@@ -54,9 +54,9 @@
   abstract: true
   components:
   - type: Item
-    sprite: _Goobstation\Objects\Specific\Medical\nt_implanter.rsi
+    sprite: _Goobstation/Objects/Specific/Medical/nt_implanter.rsi
   - type: Sprite
-    sprite: _Goobstation\Objects\Specific\Medical\nt_implanter.rsi
+    sprite: _Goobstation/Objects/Specific/Medical/nt_implanter.rsi
     state: implanter1
     layers:
       - state: implanter0
