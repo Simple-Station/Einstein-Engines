@@ -975,7 +975,6 @@
 
 - type: entity
   parent: BasePDA
-  parent: BasePDA
   id: CentcomPDA
   name: CentCom PDA
   description: Light green sign of walking bureaucracy.
