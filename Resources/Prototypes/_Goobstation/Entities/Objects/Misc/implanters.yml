@@ -54,9 +54,9 @@
   abstract: true
   components:
   - type: Item
-    sprite: Objects/Specific/Medical/implanter.rsi # the NT implanter RSI doesnt exist apparently, too lazy to fix it
+    sprite: _Goobstation\Objects\Specific\Medical\nt_implanter.rsi
   - type: Sprite
-    sprite: Objects/Specific/Medical/implanter.rsi
+    sprite: _Goobstation\Objects\Specific\Medical\nt_implanter.rsi
     state: implanter1
     layers:
       - state: implanter0
