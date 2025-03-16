@@ -186,17 +186,6 @@
       "name": "pda-syndi"
     },
     {
-      "name": "pda-centcom",
-      "delays": [
-        [
-          1.2,
-          1.2,
-          1.2,
-          1.2
-        ]
-      ]
-    },
-    {
       "name": "pda-syndi-agent"
     },
     {
