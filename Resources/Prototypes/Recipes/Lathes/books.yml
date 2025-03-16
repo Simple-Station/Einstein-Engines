@@ -1,0 +1,25 @@
+- type: latheRecipe
+  abstract: true
+  id: BaseBookRecipe
+  result: BookBase
+  category: Books
+  completetime: 2
+  materials:
+    Paper: 1500
+    Cardboard: 100
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookNarsieLegend
+  result: BookNarsieLegend
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookTruth
+  result: BookTruth
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: RevolutionaryManifesto
+  result: RevolutionaryManifesto
+

@@ -221,6 +221,12 @@
   id: BoxCardboard
 
 - type: Tag
+  id: MaterialCardboard
+
+- type: Tag
+  id: MaterialPaper
+
+- type: Tag
   id: BoxHug
 
 - type: Tag

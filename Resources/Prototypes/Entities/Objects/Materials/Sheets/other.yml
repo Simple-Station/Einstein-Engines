@@ -53,6 +53,11 @@
   - type: Item
     heldPrefix: paper
   - type: Appearance
+  - type: Tag
+    tags:
+    - Sheet
+    - NoPaint
+    - MaterialPaper
   - type: Extractable
     grindableSolutionName: paper
   - type: SolutionContainerManager
