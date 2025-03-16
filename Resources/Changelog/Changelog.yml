@@ -12822,3 +12822,10 @@ Entries:
   id: 6948
   time: '2025-03-14T15:10:43.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1962
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: Added Novu-Nederic language (incl. trait)
+  id: 6949
+  time: '2025-03-16T02:42:55.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1952
