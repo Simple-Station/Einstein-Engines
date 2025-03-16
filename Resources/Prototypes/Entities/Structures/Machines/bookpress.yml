@@ -28,8 +28,6 @@
     idleState: icon
     runningState: building
     staticRecipes:
-    - BookNarsieLegend
-    - BookTruth
     - RevolutionaryManifesto
     - BookSpaceEncyclopedia
     - BookTheBookOfControl

@@ -10,16 +10,6 @@
 
 - type: latheRecipe
   parent: BaseBookRecipe
-  id: BookNarsieLegend
-  result: BookNarsieLegend
-
-- type: latheRecipe
-  parent: BaseBookRecipe
-  id: BookTruth
-  result: BookTruth
-
-- type: latheRecipe
-  parent: BaseBookRecipe
   id: RevolutionaryManifesto
   result: RevolutionaryManifesto
 
