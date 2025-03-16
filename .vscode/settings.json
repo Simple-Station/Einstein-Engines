@@ -6,8 +6,4 @@
             "fileMatch": [ "**/meta.json" ],
             "url": "https://raw.githubusercontent.com/Simple-Station/Einstein-Engines/master/.github/rsi-schema.json"
         }
-    ],
-    "yaml.schemas": {
-        "https://json.schemastore.org/yamllint.json": "file:///d%3A/HDD/Gaming%20Stuff%20HDD/SS14/Github/Ecto-EE/Resources/Prototypes/_Goobstation/Entities/Objects/Weapons/Guns/Rifles/rifle.yml"
-    }
-}
+    ] 
