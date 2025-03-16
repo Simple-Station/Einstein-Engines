@@ -33,6 +33,7 @@ public sealed class DockingShuttleSystem : SharedDockingShuttleSystem
 
         SubscribeLocalEvent<StationGridAddedEvent>(OnStationGridAdded);
         SubscribeLocalEvent<DockingShuttleComponent, ShuttleAddStationEvent>(OnAddStation);
+        SubscribeLocalEvent<DockingShuttleComponent, ShuttleLocationChangeEvent>(OnLocationChange);
     }
 
     private void OnMapInit(Entity<DockingShuttleComponent> ent, ref MapInitEvent args)
@@ -95,8 +96,8 @@ public sealed class DockingShuttleSystem : SharedDockingShuttleSystem
         comp.Station = station;
 
         // Add the warp point and set the current location to the station uid
+        comp.currentlocation = grid.Id;
         AddDestinationUID(comp, Transform(uid).MapID, grid, "Station");
-        RaiseLocalEvent(new OnStationGridAddedEvent(grid.Id));
     }
 
     /// <summary>
@@ -117,7 +118,16 @@ public sealed class DockingShuttleSystem : SharedDockingShuttleSystem
     private void OnAddStation(EntityUid uid, DockingShuttleComponent component, ShuttleAddStationEvent args)
     {
         component.Station = args.MapUid;
+        component.currentlocation = args.GridUid.Id;
         AddDestinationUID(component, args.MapId, args.GridUid, "Station");
+    }
+
+    /// <summary>
+    /// When the location changes on FTL the value of currentlocation needs to be changed to the new location.
+    /// </summary>
+    private void OnLocationChange(EntityUid uid, DockingShuttleComponent component, ShuttleLocationChangeEvent args)
+    {
+        component.currentlocation = args.currentlocation;
     }
 
     /// <summary>
@@ -199,5 +209,14 @@ public sealed class ShuttleAddStationEvent : EntityEventArgs
         MapUid = mapUid;
         MapId = mapId;
         GridUid = gridUid;
+    }
+}
+
+public sealed class ShuttleLocationChangeEvent : EntityEventArgs
+{
+    public readonly int currentlocation;
+    public ShuttleLocationChangeEvent(int location)
+    {
+        currentlocation = location;
     }
 }

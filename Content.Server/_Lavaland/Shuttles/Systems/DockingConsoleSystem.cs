@@ -28,7 +28,6 @@ public sealed class DockingConsoleSystem : SharedDockingConsoleSystem
     [Dependency] private readonly IMapManager _mapMan = default!;
     [Dependency] private readonly MapSystem _mapSystem = default!;
     [Dependency] private readonly StationSystem _station = default!;
-    [DataField] private int _currentlocation = 0;
 
     public override void Initialize()
     {
@@ -39,8 +38,6 @@ public sealed class DockingConsoleSystem : SharedDockingConsoleSystem
         SubscribeLocalEvent<DockEvent>(OnDock);
         SubscribeLocalEvent<UndockEvent>(OnUndock);
         SubscribeLocalEvent<FTLCompletedEvent>(OnFTLCompleted);
-
-        SubscribeLocalEvent<OnStationGridAddedEvent>(ShuttleFilledonStation);
 
         Subs.BuiEvents<DockingConsoleComponent>(DockingConsoleUiKey.Key,
             subs =>
@@ -143,10 +140,10 @@ public sealed class DockingConsoleSystem : SharedDockingConsoleSystem
         var grid = docking.LocationUID[args.Index];
 
         // can't FTL if your already at the grid
-        if (_currentlocation == grid.Id)
+        if (docking.currentlocation == grid.Id)
             return;
 
-        _currentlocation = grid.Id;
+        RaiseLocalEvent(shuttle, new ShuttleLocationChangeEvent(grid.Id), false);
 
         Log.Debug($"{ToPrettyString(args.Actor):user} is FTL-docking {ToPrettyString(shuttle):shuttle} to {ToPrettyString(grid):grid}");
 
@@ -194,9 +191,6 @@ public sealed class DockingConsoleSystem : SharedDockingConsoleSystem
             RaiseLocalEvent(shuttleUid.Value, new ShuttleAddStationEvent(targetUid.Value, targetMap, grid), false);
         }
 
-        // Set the current location to the station grid you warped to.
-        _currentlocation = grid.Id;
-
         // Finally FTL
         _shuttle.FTLToDock(shuttle.Value, Comp<ShuttleComponent>(shuttle.Value), grid, priorityTag: docking.DockTag);
         UpdateShuttle(ent);
@@ -234,22 +228,5 @@ public sealed class DockingConsoleSystem : SharedDockingConsoleSystem
         }
 
         return null;
-    }
-
-
-    // If the shuttle has been added on round start set the current location to that entityUID.
-    private void ShuttleFilledonStation(OnStationGridAddedEvent args)
-    {
-        _currentlocation = args.Currentlocation;
-    }
-}
-
-public sealed class OnStationGridAddedEvent : EntityEventArgs
-{
-    public readonly int Currentlocation;
-
-    public OnStationGridAddedEvent(int stationuid)
-    {
-        Currentlocation = stationuid;
     }
 }

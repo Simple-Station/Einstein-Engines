@@ -38,6 +38,8 @@ public sealed partial class DockingShuttleComponent : Component
     /// </summary>
     [DataField]
     public ProtoId<TagPrototype> DockTag = "DockMining";
+
+    public int? currentlocation;
 }
 
 /// <summary>
