@@ -1038,7 +1038,7 @@
       whitelist:
         tags:
         - Write
-  - type: PDABorderColor
+  - type: PdaBorderColor
     borderColor: "#32CD32"
   - type: Icon
     state: pda-centcom
