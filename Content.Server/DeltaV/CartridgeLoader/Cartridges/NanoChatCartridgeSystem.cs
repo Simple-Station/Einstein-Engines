@@ -52,9 +52,6 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
         {
             return;
         }
-
-        // if you switch to another program or close the pda UI, allow notifications for the selected chat
-        _nanoChat.SetClosed((card, card.Comp), loader.ActiveProgram != ent.Owner || !_ui.IsUiOpen(pda, PdaUiKey.Key));
     }
 
     public override void Update(float frameTime)

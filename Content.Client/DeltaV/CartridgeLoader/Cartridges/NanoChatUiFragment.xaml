@@ -99,7 +99,7 @@
                         ToolTip="{Loc nano-chat-list-number}"
                         ToggleMode="True">
                     <TextureRect StyleClasses="ButtonSquare"
-                                 TexturePath="/Textures/_DV/Interface/VerbIcons/hamburger_icon.svg.png"
+                                 TexturePath="/Textures/DeltaV/Interface/VerbIcons/hamburger_icon.svg.png"
                                  Stretch="KeepAspectCentered"
                                  MinSize="18 18" />
                 </Button>
