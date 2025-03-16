@@ -1135,5 +1135,6 @@
     heldPrefix: silver
   - type: PresetIdCard
     job: AdministrativeAssistant
+  - type: NanoChatCard # DeltaV
     notificationsMuted: true
     listNumber: false
