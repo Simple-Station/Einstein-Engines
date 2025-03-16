@@ -99,7 +99,7 @@
     - !type:CharacterAgeRequirement
       min: 21
   items:
-    - WeaponSubMachineGunBRDIR25
+    - WeaponSubMachineGunBRDIR25BSO # The Den sprites
 
 - type: loadout
   id: LoadoutBSOEnergyShield
