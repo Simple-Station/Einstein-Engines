@@ -13088,3 +13088,10 @@ Entries:
   id: 6974
   time: '2025-03-17T18:10:44.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1904
+- author: Erisfiregamer1
+  changes:
+    - type: Add
+      message: Changelings have been ported!
+  id: 6975
+  time: '2025-03-17T18:56:08.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1855
