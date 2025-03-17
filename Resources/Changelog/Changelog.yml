@@ -12980,3 +12980,18 @@ Entries:
   id: 6964
   time: '2025-03-17T16:05:39.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1965
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: The design on the bar sign can now be changed via a menu.
+    - type: Add
+      message: Bar signs now have a maintenance panel and AI can interact with them.
+    - type: Add
+      message: New barsign Maltroach (based on sign by MoffNyan, from tgstation)
+    - type: Tweak
+      message: Electronic bar signs can now be destroyed.
+    - type: Fix
+      message: Fix stray pixel in officer beersky barsign
+  id: 6965
+  time: '2025-03-17T16:46:04.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1971
