@@ -13102,3 +13102,12 @@ Entries:
   id: 6976
   time: '2025-03-17T18:57:22.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1986
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Tweaked default CCVars for space wind to be less aggressive, and less
+        likely to throw people through walls. 
+  id: 6977
+  time: '2025-03-17T20:21:03.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1988
