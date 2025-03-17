@@ -20,7 +20,7 @@
     onlyAffectsMobs: false
     injectOnly: true
     maxPressure: 50 
-    delay: 5
+    injectTime: 5
   - type: SolutionContainerManager
     solutions:
       pen:
