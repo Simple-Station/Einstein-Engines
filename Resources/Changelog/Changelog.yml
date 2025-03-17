@@ -12829,3 +12829,10 @@ Entries:
   id: 6949
   time: '2025-03-16T02:42:55.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1952
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: SpiderCraft Tag to Spinarette
+  id: 6950
+  time: '2025-03-17T14:09:13.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1980
