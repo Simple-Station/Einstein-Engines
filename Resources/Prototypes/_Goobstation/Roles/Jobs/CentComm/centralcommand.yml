@@ -23,7 +23,7 @@
   id: NavyOfficerGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitNavyGold
-    shoes: ClothingShoesBootsJackFilled
+    shoes: ClothingShoesBootsCombatFilled
     head: ClothingHeadHatBeretEliteNavyOfficer
     eyes: ClothingEyesGlassesCentComm
     gloves: ClothingHandsGlovesHeavyGoldenTrim
@@ -64,7 +64,7 @@
   id: NavyCaptainGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitNavyGold
-    shoes: ClothingShoesBootsJackFilled
+    shoes: ClothingShoesBootsCombatFilled
     head: ClothingHeadHatBeretNavyCaptain
     eyes: ClothingEyesGlassesDeathsquad
     gloves: ClothingHandsGlovesHeavyGoldenTrim
@@ -148,7 +148,7 @@
   id: SpecialOperationsOfficerGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitSpecOps
-    shoes: ClothingShoesBootsJackFilled
+    shoes: ClothingShoesBootsCombatFilled
     head: ClothingHeadHatBeretSecurity
     eyes: ClothingEyesGlassesDeathsquad
     gloves: ClothingHandsGlovesCombat

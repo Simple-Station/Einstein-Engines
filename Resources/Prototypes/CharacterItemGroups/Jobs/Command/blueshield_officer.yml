@@ -78,12 +78,12 @@
       id: LoadoutClothingBlueshieldArmoredCowboyJacket
     - type: loadout
       id: LoadoutClothingBlueshieldArmorVest
-    - type: loadout
-      id: LoadoutClothingBlueshieldArmoredMarine
-    - type: loadout
-      id: LoadoutClothingBlueshieldArmoredVest
-    - type: loadout
-      id: LoadoutClothingBlueshieldArmoredKimono
+#   - type: loadout
+#     id: LoadoutClothingBlueshieldArmoredMarine
+#   - type: loadout
+#     id: LoadoutClothingBlueshieldArmoredVest
+#   - type: loadout
+#     id: LoadoutClothingBlueshieldArmoredKimono
     - type: loadout
       id: LoadoutClothingBlueshieldArmoredCoat
 

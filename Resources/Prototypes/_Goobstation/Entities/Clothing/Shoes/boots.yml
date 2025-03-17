@@ -3,7 +3,7 @@
   parent: [ClothingShoesBootsMagAdv, BaseJetpack]
   id: ClothingShoesBootsMagDeathsquad
   name: deathsquad magboots
-  description: The sound of these boots are iconic; the sound of terror.
+  description: Advanced magboots with an added jetpack functionality.
   components:
   - type: Sprite
     sprite: _Goobstation/Clothing/Shoes/Boots/deathsquad.rsi
@@ -20,9 +20,6 @@
   - type: Tag
     tags:
     - WhitelistChameleon
-  - type: FootstepModifier
-    footstepSoundCollection:
-      collection: FootstepHeavySuit
   - type: GasTank
     outputPressure: 42.6
     air:
