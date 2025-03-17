@@ -12964,3 +12964,10 @@ Entries:
   id: 6962
   time: '2025-03-17T15:53:04.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1946
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: Tweaked cult doors so that they don't launch people at luminal speeds.
+  id: 6963
+  time: '2025-03-17T15:53:53.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1947
