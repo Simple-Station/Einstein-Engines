@@ -114,12 +114,4 @@ uplink-mech-teleporter-assault-desc = Contains a lightly armored Cybersun mech w
 uplink-hardsuit-cybersun-stealth-name = CSA-91x "Èguǐ" tacsuit
 uplink-hardsuit-cybersun-stealth-desc = A rare prototype tacsuit that features metamaterial plating which warps light around it to produce an "Invisibility cloak" effect.
 
-# Weapons
 
-uplink-weapon-burner-name = Burner Heavy Rifle Bundle
-uplink-weapon-burner-desc = A bundle containing a Burner Heavy Rifle and a couple of magazines, including some high-explosive rounds.
-
-# Ammo
-
-uplink-high-caliber-box-name = 30 round .50 Box
-uplink-high-caliber-box-desc = A box of 30 .50 caliber anti-materiel rounds.
