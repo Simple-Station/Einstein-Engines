@@ -6,15 +6,10 @@
   description: Personal Data Assistant.
   components:
   - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda
   - type: Sprite
     sprite: Objects/Devices/pda.rsi
     layers:
     - map: [ "enum.PdaVisualLayers.Base" ]
-      state: "pda"
     - state: "light_overlay"
       map: [ "enum.PdaVisualLayers.Flashlight" ]
       shader: "unshaded"
@@ -27,6 +22,7 @@
     sprite: Objects/Devices/pda.rsi
     state: pda
   - type: Pda
+    state: pda
     paiSlot:
       priority: -2
       whitelist:
@@ -45,7 +41,6 @@
       whitelist:
         components:
         - IdCard
-  - type: PdaVisuals
   - type: Item
     size: Small
   - type: ContainerContainer
@@ -108,8 +103,6 @@
   - type: Tag
     tags:
     - DoorBumpOpener
-    - WhitelistChameleon
-    - WhitelistChameleonPDA
   - type: Input
     context: "human"
   - type: LanguageSpeaker
@@ -152,6 +145,7 @@
   components:
   - type: Pda
     id: PassengerIDCard
+    state: pda
   - type: PdaBorderColor
     borderColor: "#717059"
 
@@ -163,11 +157,7 @@
   components:
   - type: Pda
     id: TechnicalAssistantIDCard
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-interntech
+    state: pda-interntech
   - type: PdaBorderColor
     borderColor: "#717059"
     accentVColor: "#949137"
@@ -182,11 +172,7 @@
   components:
   - type: Pda
     id: MedicalInternIDCard
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-internmed
+    state: pda-internmed
     penSlot: # Pen Lights
       startingItem: PenLightBase
       priority: -1
@@ -210,11 +196,7 @@
   components:
   - type: Pda
     id: SecurityCadetIDCard
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-interncadet
+    state: pda-interncadet
   - type: PdaBorderColor
     borderColor: "#717059"
     accentVColor: "#A32D26"
@@ -237,11 +219,7 @@
   components:
   - type: Pda
     id: ResearchAssistantIDCard
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-internsci
+    state: pda-internsci
   - type: PdaBorderColor
     borderColor: "#717059"
     accentVColor: "#8900c9"
@@ -256,11 +234,7 @@
   components:
   - type: Pda
     id: ServiceWorkerIDCard
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-internservice
+    state: pda-internservice
   - type: PdaBorderColor
     borderColor: "#717059"
     accentVColor: "#00cc35"
@@ -275,11 +249,7 @@
   components:
   - type: Pda
     id: ChefIDCard
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-cook
+    state: pda-cook
   - type: PdaBorderColor
     borderColor: "#d7d7d0"
   - type: Icon
@@ -295,11 +265,7 @@
   components:
   - type: Pda
     id: BotanistIDCard
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-hydro
+    state: pda-hydro
   - type: PdaBorderColor
     borderColor: "#44843c"
     accentVColor: "#00cc35"
@@ -314,6 +280,7 @@
   components:
   - type: Pda
     id: ClownIDCard
+    state: pda-clown
     penSlot:
       startingItem: CrayonOrange # no pink crayon?!?
       # ^ Still unacceptable.
@@ -322,11 +289,6 @@
       whitelist:
         tags:
         - Write
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-clown
   - type: PdaBorderColor
     borderColor: "#C18199"
   - type: Icon
@@ -367,16 +329,12 @@
   components:
   - type: Pda
     id: MimeIDCard
+    state: pda-mime
     idSlot: #  rewrite without sound because mime
       name: ID Card
       whitelist:
         components:
         - IdCard
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-mime
   - type: PdaBorderColor
     borderColor: "#d7d7d0"
     accentHColor: "#333333"
@@ -404,11 +362,7 @@
       visible: false
   - type: Pda
     id: ChaplainIDCard
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-chaplain
+    state: pda-chaplain
   - type: PdaBorderColor
     borderColor: "#333333"
     accentVColor: "#8900c9" # DeltaV - Give Chaplain PDA Epistemics colors
@@ -431,11 +385,21 @@
   description: PDA for the guy that directs logistics. # DeltaV - Logistics Department replacing Cargo
   components:
   - type: Pda
-    id: VisitorIDCard
-    state: pda-chaplain
-  - type: Tag #  Ignore Chameleon tags
-    tags:
-    - DoorBumpOpener
+    id: QuartermasterIDCard
+    state: pda-qm
+  - type: PdaBorderColor
+    borderColor: "#e39751"
+    accentVColor: "#a23e3e"
+  - type: Icon
+    state: pda-qm
+  - type: CartridgeLoader # Adds the MailMetrics courier tracker
+    preinstalled:
+      - CrewManifestCartridge
+      - NotekeeperCartridge
+      - NewsReaderCartridge
+      - MailMetricsCartridge
+      - NanoChatCartridge
+      - StockTradingCartridge # DeltaV - StockTrading
 
 - type: entity
   name: LO special PDA unit # DeltaV - Logistics Department replacing Cargo
@@ -445,11 +409,7 @@
   components:
   - type: Pda
     id: QuartermasterIDCard
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-qmnano
+    state: pda-qmnano
   - type: PdaBorderColor
     borderColor: "#e39751"
     accentVColor: "#a23e3e"
@@ -472,11 +432,7 @@
   components:
   - type: Pda
     id: CargoIDCard
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-cargo
+    state: pda-cargo
   - type: PdaBorderColor
     borderColor: "#e39751"
   - type: Icon
@@ -497,11 +453,7 @@
   components:
   - type: Pda
     id: SalvageIDCard
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-miner
+    state: pda-miner
   - type: PdaBorderColor
     borderColor: "#af9366"
     accentVColor: "#8900c9"
@@ -524,11 +476,7 @@
   components:
   - type: Pda
     id: BartenderIDCard
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-bartender
+    state: pda-bartender
   - type: PdaBorderColor
     borderColor: "#333333"
   - type: Icon
@@ -542,17 +490,13 @@
   components:
   - type: Pda
     id: LibrarianIDCard
+    state: pda-library
     penSlot:
       startingItem: LuxuryPen
       priority: -1
       whitelist:
         tags:
         - Write
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-library
   - type: PdaBorderColor
     borderColor: "#858585"
   - type: Icon
@@ -567,40 +511,32 @@
       - PsiWatchCartridge
 
 - type: entity
-  parent: BaseSecurityPDA
+  parent: BasePDA
   id: LawyerPDA
   name: lawyer PDA
   description: For lawyers to poach dubious clients.
   components:
   - type: Pda
     id: LawyerIDCard
+    state: pda-lawyer
     penSlot:
       startingItem: LuxuryPen
       priority: -1
       whitelist:
         tags:
         - Write
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-lawyer
   - type: PdaBorderColor
     borderColor: "#6f6192"
   - type: Icon
     state: pda-lawyer
-
-- type: entity
-  parent: LawyerPDA
-  id: VisitorLawyerPDA
-  suffix: Visitor
-  components:
-  - type: Pda
-    id: VisitorIDCard
-    state: pda-lawyer
-  - type: Tag #  Ignore Chameleon tags
-    tags:
-    - DoorBumpOpener
+  - type: CartridgeLoader # DeltaV - Crime Assist + SecWatch
+    preinstalled:
+      - CrewManifestCartridge
+      - NotekeeperCartridge
+      - NewsReaderCartridge
+      - CrimeAssistCartridge
+      - SecWatchCartridge
+      - NanoChatCartridge
 
 - type: entity
   parent: BasePDA
@@ -610,11 +546,7 @@
   components:
   - type: Pda
     id: JanitorIDCard
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-janitor
+    state: pda-janitor
   - type: PdaBorderColor
     borderColor: "#5D2D56"
   - type: Icon
@@ -628,17 +560,13 @@
   components:
   - type: Pda
     id: CaptainIDCard
+    state: pda-captain
     penSlot:
       startingItem: PenCap
       priority: -1
       whitelist:
         tags:
         - Write
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-captain
   - type: PdaBorderColor
     borderColor: "#7C5D00"
   - type: Icon
@@ -679,17 +607,13 @@
   components:
   - type: Pda
     id: HoPIDCard
+    state: pda-hop
     penSlot:
       startingItem: PenHop
       priority: -1
       whitelist:
         tags:
         - Write
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-hop
   - type: PdaBorderColor
     borderColor: "#789876"
     accentHColor: "#447987"
@@ -725,11 +649,7 @@
   components:
   - type: Pda
     id: CEIDCard
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-ce
+    state: pda-ce
   - type: PdaBorderColor
     borderColor: "#949137"
     accentHColor: "#447987"
@@ -759,11 +679,7 @@
   components:
   - type: Pda
     id: EngineeringIDCard
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-engineer
+    state: pda-engineer
   - type: PdaBorderColor
     borderColor: "#949137"
     accentVColor: "#A32D26"
@@ -778,11 +694,7 @@
   components:
   - type: Pda
     id: CMOIDCard
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-cmo
+    state: pda-cmo
     penSlot: # Fancy Pen Light
       startingItem: CMOPenLight
       priority: -1
@@ -826,11 +738,7 @@
   components:
   - type: Pda
     id: MedicalIDCard
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-medical
+    state: pda-medical
     penSlot: # Pen Lights
       startingItem: PenLightBase
       priority: -1
@@ -847,18 +755,6 @@
     - Medical Doctor
 
 - type: entity
-  parent: MedicalPDA
-  id: VisitorMedicalPDA
-  suffix: Visitor
-  components:
-  - type: Pda
-    id: VisitorIDCard
-    state: pda-medical
-  - type: Tag #  Ignore Chameleon tags
-    tags:
-    - DoorBumpOpener
-
-- type: entity
   parent: BaseMedicalPDA
   id: ParamedicPDA
   name: paramedic PDA
@@ -866,11 +762,7 @@
   components:
   - type: Pda
     id: ParamedicIDCard
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-paramedic
+    state: pda-paramedic
     penSlot: # Pen Lights
       startingItem: PenLightBase
       priority: -1
@@ -891,11 +783,7 @@
   components:
   - type: Pda
     id: ChemistIDCard
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-chemistry
+    state: pda-chemistry
     penSlot: # Pen Lights
       startingItem: PenLightBase
       priority: -1
@@ -916,11 +804,7 @@
   components:
   - type: Pda
     id: RDIDCard
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-rd
+    state: pda-rd
   - type: PdaBorderColor
     borderColor: "#d7d7d0"
     accentHColor: "#447987"
@@ -968,11 +852,7 @@
   components:
   - type: Pda
     id: ResearchIDCard
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-science
+    state: pda-science
   - type: PdaBorderColor
     borderColor: "#d7d7d0"
     accentVColor: "#8900c9"
@@ -1009,11 +889,7 @@
   components:
   - type: Pda
     id: HoSIDCard
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-hos
+    state: pda-hos
   - type: PdaBorderColor
     borderColor: "#A32D26"
     accentHColor: "#447987"
@@ -1060,11 +936,7 @@
   components:
   - type: Pda
     id: WardenIDCard
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-warden
+    state: pda-warden
   - type: PdaBorderColor
     borderColor: "#A32D26"
     accentVColor: "#949137"
@@ -1087,11 +959,7 @@
   components:
   - type: Pda
     id: SecurityIDCard
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-security
+    state: pda-security
   - type: PdaBorderColor
     borderColor: "#A32D26"
   - type: Icon
@@ -1113,16 +981,12 @@
   components:
   - type: Pda
     id: CentcomIDCard
+    state: pda-centcom
     penSlot:
       startingItem: PenCentcom
       whitelist:
         tags:
         - Write
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-centcom
   - type: PdaBorderColor
     borderColor: "#00842e"
   - type: Icon
@@ -1160,9 +1024,6 @@
       - StockTradingCartridge # Delta-V
       - NanoChatCartridge # DeltaV
       - PsiWatchCartridge
-  - type: Tag #  Ignore Chameleon tags
-    tags:
-    - DoorBumpOpener
 
 - type: entity
   parent: CentcomPDA
@@ -1181,9 +1042,6 @@
     borderColor: "#32CD32"
   - type: Icon
     state: pda-centcom
-  - type: Tag #  Ignore Chameleon tags
-    tags:
-    - DoorBumpOpener
 
 - type: entity
   parent: BasePDA
@@ -1193,11 +1051,7 @@
   components:
   - type: Pda
     id: MusicianIDCard
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-musician
+    state: pda-musician
   - type: PdaBorderColor
     borderColor: "#333333"
   - type: Icon
@@ -1216,11 +1070,7 @@
   components:
   - type: Pda
     id: AtmosIDCard
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-atmos
+    state: pda-atmos
   - type: PdaBorderColor
     borderColor: "#949137"
     accentVColor: "#447987"
@@ -1235,26 +1085,11 @@
   components:
   - type: Pda
     id: PassengerIDCard
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-clear
+    state: pda-clear
   - type: PdaBorderColor
     borderColor: "#288e4d"
   - type: Icon
     state: pda-clear
-
-- type: entity
-  parent: ClearPDA
-  id: VisitorPDA
-  components:
-  - type: Pda
-    id: VisitorIDCard
-    state: pda
-  - type: Tag #  Ignore Chameleon tags
-    tags:
-    - DoorBumpOpener
 
 - type: entity
   parent: BasePDA
@@ -1264,11 +1099,7 @@
   components:
   - type: Pda
     id: SyndicateIDCard
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-syndi
+    state: pda-syndi
   - type: PdaBorderColor
     borderColor: "#891417"
   - type: Icon
@@ -1298,11 +1129,7 @@
   components:
   - type: Pda
     id: ERTLeaderIDCard
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-ert
+    state: pda-ert
   - type: PdaBorderColor
     borderColor: "#A32D26"
     accentHColor: "#447987"
@@ -1400,11 +1227,7 @@
   components:
   - type: Pda
     id: PsychologistIDCard
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-medical
+    state: pda-medical
     penSlot: # Pen Lights
       startingItem: PenLightBase
       priority: -1
@@ -1425,17 +1248,13 @@
   components:
   - type: Pda
     id: ReporterIDCard
+    state: pda-reporter
     penSlot:
       startingItem: LuxuryPen
       priority: -1
       whitelist:
         tags:
         - Write
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-reporter
   - type: PdaBorderColor
     borderColor: "#3f3f74"
   - type: Icon
@@ -1456,11 +1275,7 @@
   components:
   - type: Pda
     id: ZookeeperIDCard
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-zookeeper
+    state: pda-zookeeper
   - type: PdaBorderColor
     borderColor: "#ffe685"
   - type: Icon
@@ -1474,11 +1289,7 @@
   components:
   - type: Pda
     id: BoxerIDCard
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-boxer
+    state: pda-boxer
   - type: PdaBorderColor
     borderColor: "#333333"
     accentVColor: "#390504"
@@ -1493,11 +1304,7 @@
   components:
   - type: Pda
     id: DetectiveIDCard
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-detective
+    state: pda-detective
   - type: PdaBorderColor
     borderColor: "#774705"
   - type: Icon
@@ -1520,11 +1327,7 @@
   components:
   - type: Pda
     id: BrigmedicIDCard
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-brigmedic
+    state: pda-brigmedic
     penSlot: # Pen Lights
       startingItem: PenLightBase
       priority: -1
@@ -1555,11 +1358,7 @@
   components:
   - type: Pda
     id: CluwneIDCard
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-cluwne
+    state: pda-cluwne
   - type: PdaBorderColor
     borderColor: "#1c8f4d"
   - type: Icon
@@ -1581,11 +1380,7 @@
   components:
   - type: Pda
     id: SeniorEngineerIDCard
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-seniorengineer
+    state: pda-seniorengineer
   - type: PdaBorderColor
     borderColor: "#949137"
     accentVColor: "#CD6900"
@@ -1600,11 +1395,7 @@
   components:
   - type: Pda
     id: SeniorResearcherIDCard
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-seniorresearcher
+    state: pda-seniorresearcher
   - type: PdaBorderColor
     borderColor: "#d7d7d0"
     accentHColor: "#8900c9"
@@ -1623,11 +1414,7 @@
   components:
   - type: Pda
     id: SeniorPhysicianIDCard
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-seniorphysician
+    state: pda-seniorphysician
     penSlot: # Pen Lights
       startingItem: PenLightBase
       priority: -1
@@ -1649,11 +1436,7 @@
   components:
   - type: Pda
     id: SeniorOfficerIDCard
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-seniorofficer
+    state: pda-seniorofficer
   - type: PdaBorderColor
     borderColor: "#A32D26"
     accentVColor: "#DFDFDF"
@@ -1676,11 +1459,7 @@
   components:
   - type: Pda
     id: PirateIDCard
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-pirate
+    state: pda-pirate
   - type: Icon
     state: pda-pirate
 
@@ -1692,11 +1471,7 @@
   components:
   - type: Pda
     id: SyndicateIDCard
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-syndi-agent
+    state: pda-syndi-agent
     penSlot: # Pen Lights
       startingItem: PenLightBase
       priority: -1
@@ -1723,34 +1498,3 @@
           - Cartridge
   - type: ClothingAddFaction
     faction: Syndicate
-
-- type: entity
-  parent: BasePDA
-  id: ChameleonPDA
-  name: passenger PDA
-  description: Why isn't it gray?
-  suffix: Chameleon
-  components:
-  - type: PdaBorderColor
-    borderColor: "#717059"
-  - type: Tag
-    tags: # ignore "WhitelistChameleon" tag
-    - DoorBumpOpener
-  - type: ChameleonClothing
-    slot: [idcard]
-    default: PassengerPDA
-    requireTag: WhitelistChameleonPDA
-  - type: UserInterface
-    interfaces:
-      enum.PdaUiKey.Key:
-        type: PdaBoundUserInterface
-      enum.StoreUiKey.Key:
-        type: StoreBoundUserInterface
-      enum.RingerUiKey.Key:
-        type: RingerBoundUserInterface
-      enum.InstrumentUiKey.Key:
-        type: InstrumentBoundUserInterface
-      enum.HealthAnalyzerUiKey.Key:
-        type: HealthAnalyzerBoundUserInterface
-      enum.ChameleonUiKey.Key:
-        type: ChameleonBoundUserInterface

@@ -22,7 +22,6 @@
     tags:
     - DoorBumpOpener
     - WhitelistChameleon
-    - WhitelistChameleonIdCard
   - type: StealTarget
     stealGroup: IDCard
   - type: NanoChatCard # DeltaV
@@ -147,7 +146,6 @@
     tags:
     - DoorBumpOpener
     - WhitelistChameleon
-    - WhitelistChameleonIdCard
     - HighRiskItem
   - type: StealTarget
     stealGroup: CaptainIDCard
@@ -414,16 +412,9 @@
   id: PunPunIDCard
   name: pun pun ID card
   components:
-    - type: Sprite
-      layers:
-        - state: default
-        - state: idbartender
-    - type: PresetIdCard
-      job: Bartender
-      name: Pun Pun
-    - type: Tag #  Ignore Chameleon tags
-      tags:
-      - DoorBumpOpener
+  - type: PresetIdCard
+    job: Bartender
+    name: Pun Pun
 
 - type: entity
   parent: IDCardStandard
@@ -843,7 +834,6 @@
   - type: ChameleonClothing
     slot: [idcard]
     default: PassengerIDCard
-    requireTag: WhitelistChameleonIdCard
   - type: UserInterface
     interfaces:
       enum.AgentIDCardUiKey.Key:
@@ -1116,18 +1106,6 @@
     - sprite: DeltaV/Objects/Misc/id_cards.rsi
       state: idadminassistant
   - type: Item
-    heldPrefix: green
-  - type: IdCard
-    jobTitle: job-title-universal
-    jobIcon: JobIconAdmin
-  - type: Access
-    groups:
-    - AllAccess
-    tags:
-    - CentralCommand
-    - NuclearOperative
-    - SyndicateAgent
-    - Wizard
-  - type: Tag #  Ignore Chameleon tags
-    tags:
-    - DoorBumpOpener
+    heldPrefix: silver
+  - type: PresetIdCard
+    job: AdministrativeAssistant

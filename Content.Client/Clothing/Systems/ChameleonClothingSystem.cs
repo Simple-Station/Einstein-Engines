@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using Content.Client.PDA;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Clothing.EntitySystems;
 using Content.Shared.Inventory;
@@ -51,15 +50,6 @@ public sealed class ChameleonClothingSystem : SharedChameleonClothingSystem
             && proto.TryGetComponent(out SpriteComponent? otherSprite, _factory))
         {
             sprite.CopyFrom(otherSprite);
-        }
-
-        // Edgecase for PDAs to include visuals when UI is open
-        if (TryComp(uid, out PdaBorderColorComponent? borderColor)
-            && proto.TryGetComponent(out PdaBorderColorComponent? otherBorderColor, _factory))
-        {
-            borderColor.BorderColor = otherBorderColor.BorderColor;
-            borderColor.AccentHColor = otherBorderColor.AccentHColor;
-            borderColor.AccentVColor = otherBorderColor.AccentVColor;
         }
     }
 
