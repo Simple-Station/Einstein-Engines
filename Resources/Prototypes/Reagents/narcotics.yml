@@ -541,7 +541,4 @@
         type: Add
         time: 2
         refresh: false
-      - !type:Jitter
-        conditions:
-        - !type:ReagentThreshold
-          min: 15
+
