@@ -509,7 +509,7 @@
           entityProduced: MaterialWebSilk1
           hungerCost: 1 
     - !type:TraitAddTag
-      Tags: 
+      tags: 
         - SpiderCraft 
       
 
