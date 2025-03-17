@@ -12894,3 +12894,18 @@ Entries:
   id: 6956
   time: '2025-03-17T14:35:43.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1961
+- author: Mike32oz
+  changes:
+    - type: Fix
+      message: Outpost the Atmos pipes place the wrong way.
+    - type: Fix
+      message: Outpost two shuttles doors not link properly.
+    - type: Fix
+      message: Outpost converter belt/recycler not linked properly.
+    - type: Fix
+      message: Shelter/Luxury Doors Not open for anyone not even the Captain.
+    - type: Remove
+      message: Outpost crew monitoring server causing issues on the grid.
+  id: 6957
+  time: '2025-03-17T14:36:55.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1964
