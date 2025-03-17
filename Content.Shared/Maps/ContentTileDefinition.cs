@@ -131,6 +131,9 @@ namespace Content.Shared.Maps
         ///     For planet maps, you can instead mark the GridAtmosphere as !Simulated. Which will make the entire atmos system not run on a given grid.
         /// </summary>
         [DataField]
+        public bool Reinforced;
+
+        [DataField]
         public bool SimulatedTurf = true;
     }
 
