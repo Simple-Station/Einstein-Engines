@@ -84,46 +84,45 @@
 
 # Undercover Officer
 
-- type: job
-  id: NavyOfficerUndercover
-  name: job-name-navy-officer-undercover
-  description: job-description-navy-officer-undercover
-  playTimeTracker: JobNavyOfficerUndercover
-  setPreference: false
-  startingGear: NavyOfficerUndercoverGear
-  icon: "JobIconNanotrasen"
-  supervisors: job-supervisors-commander
-  canBeAntag: false
-  accessGroups:
-    - AllAccess
-  access:
-    - CentralCommand
-    - NanotrasenRepresentative
-    - BlueshieldOfficer
+# - type: job
+#  id: NavyOfficerUndercover
+#  name: job-name-navy-officer-undercover
+#  description: job-description-navy-officer-undercover
+#  playTimeTracker: JobNavyOfficerUndercover
+#  setPreference: false
+#  startingGear: NavyOfficerUndercoverGear
+#  icon: "JobIconNanotrasen"
+#  supervisors: job-supervisors-commander
+#  canBeAntag: false
+#  accessGroups:
+#    - AllAccess
+#  access:
+#    - CentralCommand
+#    - NanotrasenRepresentative
+#    - BlueshieldOfficer
 
-- type: startingGear
-  id: NavyOfficerUndercoverGear
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitChameleon
-    shoes: ClothingShoesChameleon
-    head: ClothingHeadHatChameleon
-    eyes: ClothingEyesGlassesDeathsquad
-    gloves: ClothingHandsChameleon
-    mask: ClothingMaskGasVoiceChameleon
-    back: ClothingBackpackChameleon
-    outerClothing: ClothingOuterArmourInvisibleChameleon
-    neck: ClothingNeckChameleon
-    id: ChameleonPDA
-    ears: ClothingHeadsetChameleon
-    pocket1: WeaponPistolCentcommAgent
-    pocket2: AmnestizineHypospray # Really LEAN into that neutral evil nanotrasen scp shit.
-  storage:
-    back:
-      - ExecutiveIDCardChameleon
-      - WeaponPulsePistol
-      - MagazinePistolNeurotoxin
-      - MagazinePistolNeurotoxin
-      - HyperFlash
+# - type: startingGear
+#  id: NavyOfficerUndercoverGear
+#  equipment:
+#    jumpsuit: ClothingUniformJumpsuitChameleon
+#    shoes: ClothingShoesChameleon
+#    head: ClothingHeadHatChameleon
+#    eyes: ClothingEyesGlassesDeathsquad
+#    gloves: ClothingHandsChameleon
+#    mask: ClothingMaskGasVoiceChameleon
+#    back: ClothingBackpackChameleon
+#    outerClothing: ClothingOuterArmourInvisibleChameleon
+#    neck: ClothingNeckChameleon
+#    id: ChameleonPDA
+#    ears: ClothingHeadsetChameleon
+#    pocket1: WeaponPistolCentcommAgent
+#    pocket2: AmnestizineHypospray # Really LEAN into that neutral evil nanotrasen scp shit.
+#  storage:
+#    back:
+#      - ExecutiveIDCardChameleon
+#      - MagazinePistolNeurotoxin
+#      - MagazinePistolNeurotoxin
+#      - HyperFlash
 
 # Special Operations Officer
 

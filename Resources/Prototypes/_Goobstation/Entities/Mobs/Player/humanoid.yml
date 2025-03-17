@@ -152,20 +152,20 @@
 
 # Navy Undercover Officer
 
-- type: entity
-  id: RandomHumanoidSpawnerNavyOfficerUndercover
-  name: Undercover Navy Officer
-  suffix: CentComm
-  components:
-  - type: Sprite
-    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/navy_gold.rsi
-    state: icon
-  - type: RandomMetadata
-    nameSegments:
-    - NamesFirstMilitaryLeader
-    - NamesLastMilitary
-  - type: RandomHumanoidSpawner
-    settings: NavyOfficerUndercover
+# - type: entity
+#  id: RandomHumanoidSpawnerNavyOfficerUndercover
+#  name: Undercover Navy Officer
+#  suffix: CentComm
+#  components:
+#  - type: Sprite
+#    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/navy_gold.rsi
+#    state: icon
+#  - type: RandomMetadata
+#    nameSegments:
+#    - NamesFirstMilitaryLeader
+#    - NamesLastMilitary
+#  - type: RandomHumanoidSpawner
+#    settings: NavyOfficerUndercover
 
 - type: randomHumanoidSettings
   id: NavyOfficerUndercover
