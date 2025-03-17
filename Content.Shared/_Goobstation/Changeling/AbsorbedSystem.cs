@@ -15,7 +15,7 @@ public sealed partial class AbsorbedSystem : EntitySystem
 
     private void OnExamine(Entity<AbsorbedComponent> ent, ref ExaminedEvent args)
     {
-        args.PushMarkup(Loc.GetString("changeling-absorb-onexamine"));
+        args.PushMarkup(Loc.GetString(ent.Comp.ExamineText));
     }
 
     private void OnMobStateChange(Entity<AbsorbedComponent> ent, ref MobStateChangedEvent args)

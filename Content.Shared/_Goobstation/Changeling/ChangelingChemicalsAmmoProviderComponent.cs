@@ -10,6 +10,6 @@ public sealed partial class ChangelingChemicalsAmmoProviderComponent : AmmoProvi
     [DataField]
     public float FireCost = 7f;
 
-    [ViewVariables(VVAccess.ReadWrite), DataField(required: true)]
+    [DataField(required: true)]
     public EntProtoId Proto;
 }

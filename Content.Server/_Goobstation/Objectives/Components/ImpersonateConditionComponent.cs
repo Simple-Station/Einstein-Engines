@@ -16,14 +16,14 @@ public sealed partial class ImpersonateConditionComponent : Component
     /// 1. to be a tiny bit more efficient
     /// 2. to prevent the name possibly changing when borging or anything else and messing you up
     /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public string? Name;
 
     /// <summary>
     /// Mind this objective got assigned to, used to continiously checkd impersonation.
     /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public EntityUid? MindId;
 
-    public bool Completed = false;
+    public bool Completed;
 }

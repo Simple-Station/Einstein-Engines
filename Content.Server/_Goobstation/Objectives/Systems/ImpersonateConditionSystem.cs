@@ -28,28 +28,21 @@ public sealed class ImpersonateConditionSystem : EntitySystem
         base.Update(frameTime);
 
         var query = EntityQueryEnumerator<ImpersonateConditionComponent>();
-        while (query.MoveNext(out var uid, out var comp))
+        while (query.MoveNext(out var _, out var comp))
         {
-            if (comp.Name == null || comp.MindId == null)
+            if (comp.Name == null || comp.MindId == null
+                || !TryComp<MindComponent>(comp.MindId, out var mind) || mind.OwnedEntity == null
+                || !TryComp<MetaDataComponent>(mind.CurrentEntity, out var metaData))
                 continue;
 
-            if (!TryComp<MindComponent>(comp.MindId, out var mind) || mind.OwnedEntity == null)
-                continue;
-            if (!TryComp<MetaDataComponent>(mind.CurrentEntity, out var metaData))
-                continue;
-
-            if (metaData.EntityName == comp.Name)
-                comp.Completed = true;
-            else comp.Completed = false;
+            comp.Completed = metaData.EntityName == comp.Name;
         }
     }
 
     private void OnAfterAssign(EntityUid uid, ImpersonateConditionComponent comp, ref ObjectiveAfterAssignEvent args)
     {
-        if (!_target.GetTarget(uid, out var target))
-            return;
-
-        if (!TryComp<MindComponent>(target, out var targetMind) || targetMind.CharacterName == null)
+        if (!_target.GetTarget(uid, out var target)
+            || !TryComp<MindComponent>(target, out var targetMind) || targetMind.CharacterName == null)
             return;
 
         comp.Name = targetMind.CharacterName;

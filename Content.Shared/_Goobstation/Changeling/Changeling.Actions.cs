@@ -9,15 +9,15 @@ public sealed partial class ChangelingActionComponent : Component
 {
     [DataField] public bool RequireBiomass = true;
 
-    [DataField] public float ChemicalCost = 0;
+    [DataField] public float ChemicalCost;
 
-    [DataField] public float BiomassCost = 0;
+    [DataField] public float BiomassCost;
 
-    [DataField] public bool UseInLastResort = false;
+    [DataField] public bool UseInLastResort;
 
-    [DataField] public bool UseInLesserForm = false;
+    [DataField] public bool UseInLesserForm;
 
-    [DataField] public float RequireAbsorbed = 0;
+    [DataField] public float RequireAbsorbed;
 }
 
 #region Events - Basic

@@ -9,5 +9,6 @@ namespace Content.Shared.Changeling;
 [RegisterComponent, NetworkedComponent, Access(typeof(AbsorbedSystem))]
 public sealed partial class AbsorbedComponent : Component
 {
-
+    [DataField]
+    public string ExamineText = "changeling-absorb-onexamine";
 }

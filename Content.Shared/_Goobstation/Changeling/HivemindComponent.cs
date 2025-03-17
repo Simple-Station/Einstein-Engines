@@ -7,6 +7,4 @@ namespace Content.Shared.Changeling;
 ///     Indicates that a changeling has bought the hivemind access ability.
 /// </summary>
 [RegisterComponent, NetworkedComponent]
-public sealed partial class HivemindComponent : Component
-{
-}
+public sealed partial class HivemindComponent : Component { }

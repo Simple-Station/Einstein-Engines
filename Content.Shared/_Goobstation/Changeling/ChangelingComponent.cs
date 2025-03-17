@@ -28,7 +28,7 @@ public sealed partial class ChangelingComponent : Component
     [DataField("soundShriek")]
     public SoundSpecifier ShriekSound = new SoundPathSpecifier("/Audio/_Goobstation/Changeling/Effects/changeling_shriek.ogg");
 
-    [DataField("shriekPower")]
+    [DataField]
     public float ShriekPower = 2.5f;
 
     public readonly List<ProtoId<EntityPrototype>> BaseChangelingActions = new()
@@ -51,13 +51,13 @@ public sealed partial class ChangelingComponent : Component
 
     #endregion
 
-    public bool IsInStasis = false;
+    public bool IsInStasis;
 
-    public bool StrainedMusclesActive = false;
+    public bool StrainedMusclesActive;
 
-    public bool IsInLesserForm = false;
+    public bool IsInLesserForm;
 
-    public bool IsInLastResort = false;
+    public bool IsInLastResort;
 
     public List<EntityUid>? ActiveArmor = null;
 
@@ -105,7 +105,7 @@ public sealed partial class ChangelingComponent : Component
     public TimeSpan UpdateTimer = TimeSpan.Zero;
     public float UpdateCooldown = 1f;
 
-    public float BiomassUpdateTimer = 0f;
+    public float BiomassUpdateTimer;
     public float BiomassUpdateCooldown = 60f;
 
     [ViewVariables(VVAccess.ReadOnly)]
@@ -114,7 +114,7 @@ public sealed partial class ChangelingComponent : Component
     ///     Index of <see cref="AbsorbedDNA"/>. Used for switching forms.
     /// </summary>
     [ViewVariables(VVAccess.ReadOnly)]
-    public int AbsorbedDNAIndex = 0;
+    public int AbsorbedDNAIndex;
 
     /// <summary>
     ///     Maximum amount of DNA a changeling can absorb.
@@ -125,13 +125,13 @@ public sealed partial class ChangelingComponent : Component
     ///     Total absorbed DNA. Counts towards objectives.
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]
-    public int TotalAbsorbedEntities = 0;
+    public int TotalAbsorbedEntities;
 
     /// <summary>
     ///     Total stolen DNA. Counts towards objectives.
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]
-    public int TotalStolenDNA = 0;
+    public int TotalStolenDNA;
 
     [ViewVariables(VVAccess.ReadOnly)]
     public TransformData? CurrentForm;

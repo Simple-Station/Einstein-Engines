@@ -6,7 +6,4 @@ namespace Content.Shared.Changeling;
 ///     Component that indicates that a person can be absorbed by a changeling.
 /// </summary>
 [RegisterComponent, NetworkedComponent]
-public sealed partial class AbsorbableComponent : Component
-{
-
-}
+public sealed partial class AbsorbableComponent : Component { }

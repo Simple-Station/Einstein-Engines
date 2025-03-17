@@ -20,7 +20,7 @@ public sealed partial class ChangelingEggComponent : Component
 
     [DataField]
     public float UpdateCooldown = 120f;
-    public bool Active = false;
+    public bool Active;
 
     [DataField]
     public EntProtoId MobToSpawn = "MobMonkey";
