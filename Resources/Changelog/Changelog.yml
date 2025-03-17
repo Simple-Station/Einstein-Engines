@@ -12995,3 +12995,10 @@ Entries:
   id: 6965
   time: '2025-03-17T16:46:04.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1971
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: Lathes will now notify you when they have new recipes
+  id: 6966
+  time: '2025-03-17T17:19:31.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1940
