@@ -17,14 +17,6 @@ uplink-operative-radio-desc = Radio in a nuclear operative of extremely question
 uplink-signaller-name = Advanced Remote Signaller
 uplink-signaller-desc = A device that can trigger signals at any distance. You can link items with a multitool or network configurator.
 
-# bang bang pew pew eat it up i gota go
-
-uplink-miniature-energy-crossbow-name = Miniature Energy Crossbow
-uplink-miniature-energy-crossbow-desc = The syndicate's energy crossbow, small, silent and deadly.
-
-uplink-hardlight-bow-name = Hardlight Bow
-uplink-hardlight-bow-desc = A modern bow that can fabricate hardlight arrows, designed for silent takedowns of targets. Has 7 different firing modes. Can be folded.
-
 # Job-specific
 
 uplink-pie-cannon-name = Regenerating Pie Cannon

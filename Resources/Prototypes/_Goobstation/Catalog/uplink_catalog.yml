@@ -76,22 +76,6 @@
   - UplinkWeaponry
 
 - type: listing
-  id: UplinkMiniatureEnergyCrossbow
-  name: uplink-miniature-energy-crossbow-name
-  description: uplink-miniature-energy-crossbow-desc
-  icon: { sprite:  /Textures/_Goobstation/Objects/Weapons/Guns/Battery/miniature_ebow.rsi, state: icon }
-  productEntity: MiniatureEnergyCrossbow
-  cost:
-    Telecrystal: 50
-  categories:
-  - UplinkWeaponry
-  conditions:
-  - !type:StoreWhitelistCondition
-    blacklist:
-      tags:
-      - NukeOpsUplink
-
-- type: listing
   id: UplinkWSPR
   name: uplink-WSPR-name
   description: uplink-WSPR-desc
@@ -110,22 +94,6 @@
   productEntity: ClothingBackpackDuffelSyndicateBurner
   cost:
     Telecrystal: 150 # meant to be a side-grade to L6 Saw, if it ends up being better we can nerf it or up TC cost to 175-200.
-  categories:
-  - UplinkWeaponry
-  conditions:
-  - !type:StoreWhitelistCondition
-    blacklist:
-      tags:
-      - NukeOpsUplink
-
-- type: listing
-  id: UplinkBowHardlight
-  name: uplink-hardlight-bow-name
-  description: uplink-hardlight-bow-desc
-  icon: { sprite:  /Textures/_Goobstation/Objects/Weapons/Guns/Bow/hardlight_bow.rsi, state: icon }
-  productEntity: BowHardlight
-  cost:
-    Telecrystal: 75
   categories:
   - UplinkWeaponry
   conditions:
