@@ -12951,3 +12951,16 @@ Entries:
   id: 6961
   time: '2025-03-17T15:52:01.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1970
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Tweaked the R25's stats, it now has a 3 round burst instead of a 5 round
+        burst.
+    - type: Fix
+      message: >-
+        Fixed an issue where the R25 was inaudible unless you were the one
+        firing it. 
+  id: 6962
+  time: '2025-03-17T15:53:04.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1946
