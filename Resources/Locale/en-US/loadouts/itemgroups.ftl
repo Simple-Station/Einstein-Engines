@@ -20,6 +20,7 @@ character-item-group-LoadoutBoxKits = Survival Kits
 character-item-group-LoadoutWritables = Writing Tools
 character-item-group-LoadoutPets = Pets
 character-item-group-LoadoutCards = Playing Cards
+character-item-group-LoadoutPlushie = Plushies
 
 # Job Specific Template
 character-item-group-LoadoutJOBBackpacks = JOB Backpacks

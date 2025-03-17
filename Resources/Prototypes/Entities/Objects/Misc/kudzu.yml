@@ -313,3 +313,11 @@
         - ShadowBasaltRandom
     - type: TimedDespawn
       lifetime: 30
+
+- type: entity
+  name: Temporary haze
+  id: ShadowKudzuTemp
+  parent: ShadowKudzuWeak
+  components:
+    - type: TimedDespawn
+      lifetime: 30
