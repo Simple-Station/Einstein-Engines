@@ -8,7 +8,7 @@
 
 
 - type: entity
-  parent: [ClothingShoesBootsMagAdv, BaseJetpack, BaseCentcommContraband]
+  parent: [ClothingShoesBootsMagAdv, BaseJetpack]
   id: ClothingShoesBootsMagDeathsquad
   name: deathsquad magboots
   description: Advanced magboots with an added jetpack functionality.
