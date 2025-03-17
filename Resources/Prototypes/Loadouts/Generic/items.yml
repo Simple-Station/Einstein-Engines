@@ -939,7 +939,7 @@
 - type: loadout
   id: PlushieLizard
   category: Items
-  Cost: 1
+  cost: 1
   canBeHeirloom: true
   items:
     - PlushieLizard
