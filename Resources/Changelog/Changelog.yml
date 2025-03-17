@@ -12829,3 +12829,169 @@ Entries:
   id: 6949
   time: '2025-03-16T02:42:55.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1952
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: SpiderCraft Tag to Spinarette
+  id: 6950
+  time: '2025-03-17T14:09:13.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1980
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: Higher amount variants of Research Disk and Spesos
+    - type: Add
+      message: Increased the amount of Research and Spesos Salvage can randomly find
+    - type: Add
+      message: Added 20000 Disk to Oracle's Loot Table (Super Rare)
+    - type: Add
+      message: Added Radiation Medkits to Radiation Lockers
+  id: 6951
+  time: '2025-03-17T14:13:15.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1984
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: Butchering to Laser Raptors
+  id: 6952
+  time: '2025-03-17T14:15:12.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1982
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed some bugs with Space Wind related to lockers causing massive air
+        flow spikes,
+    - type: Fix
+      message: >-
+        Fixed space wind not being calculated correctly for stations which get
+        gravity from their planet, such as Glacier.
+    - type: Fix
+      message: >-
+        Fixed an issue where Space Wind wasn't respecting the cosmic speed limit
+        of 30 meters per second.
+  id: 6953
+  time: '2025-03-17T14:25:08.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1979
+- author: Plyush
+  changes:
+    - type: Tweak
+      message: Tweaked the Turtle Skirt sprite
+  id: 6954
+  time: '2025-03-17T14:28:09.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1976
+- author: Toby222 and Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Add Number lookup to NanoChat
+  id: 6955
+  time: '2025-03-17T14:29:17.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1978
+- author: RocketBoss360
+  changes:
+    - type: Tweak
+      message: Shadeskip fog now lasts 30 seconds, and has an increased area of effect.
+  id: 6956
+  time: '2025-03-17T14:35:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1961
+- author: Mike32oz
+  changes:
+    - type: Fix
+      message: Outpost the Atmos pipes place the wrong way.
+    - type: Fix
+      message: Outpost two shuttles doors not link properly.
+    - type: Fix
+      message: Outpost converter belt/recycler not linked properly.
+    - type: Fix
+      message: Shelter/Luxury Doors Not open for anyone not even the Captain.
+    - type: Remove
+      message: Outpost crew monitoring server causing issues on the grid.
+  id: 6957
+  time: '2025-03-17T14:36:55.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1964
+- author: Ichai
+  changes:
+    - type: Tweak
+      message: >-
+        Cyberiad has had its engineering and AI core completely reworked, enjoy
+        the new department
+  id: 6958
+  time: '2025-03-17T15:32:52.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1974
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Saltern now has a dock for the Pathfinder, which will now start the
+        round already docked to the station if nothing goes wrong.
+    - type: Tweak
+      message: Made Saltern's supermatter much less "Explodey"
+  id: 6959
+  time: '2025-03-17T15:42:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1937
+- author: Tonk
+  changes:
+    - type: Add
+      message: >-
+        Added tacticool outfits, expensive coat, witch hat and robe to the
+        loadout menu.
+    - type: Add
+      message: Added  plushies and luxury pen to loadout items.
+  id: 6960
+  time: '2025-03-17T15:47:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1967
+- author: hobolyra
+  changes:
+    - type: Add
+      message: >-
+        Code files for implanting, removing, and checking for components as
+        stated in YML
+    - type: Fix
+      message: Fixed naming from old server
+  id: 6961
+  time: '2025-03-17T15:52:01.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1970
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Tweaked the R25's stats, it now has a 3 round burst instead of a 5 round
+        burst.
+    - type: Fix
+      message: >-
+        Fixed an issue where the R25 was inaudible unless you were the one
+        firing it. 
+  id: 6962
+  time: '2025-03-17T15:53:04.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1946
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: Tweaked cult doors so that they don't launch people at luminal speeds.
+  id: 6963
+  time: '2025-03-17T15:53:53.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1947
+- author: GNUtopia
+  changes:
+    - type: Add
+      message: >-
+        Added bowls, a pie tin, salt and pepper packets, and plastic utensils to
+        the perma sustenance vendor.
+  id: 6964
+  time: '2025-03-17T16:05:39.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1965
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: The design on the bar sign can now be changed via a menu.
+    - type: Add
+      message: Bar signs now have a maintenance panel and AI can interact with them.
+    - type: Add
+      message: New barsign Maltroach (based on sign by MoffNyan, from tgstation)
+    - type: Tweak
+      message: Electronic bar signs can now be destroyed.
+    - type: Fix
+      message: Fix stray pixel in officer beersky barsign
+  id: 6965
+  time: '2025-03-17T16:46:04.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1971

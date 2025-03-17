@@ -125,11 +125,16 @@ namespace Content.Shared.Maps
             TileId = id;
         }
 
+        /// <summary>
+        ///     For optionally handling per-tile behavior of airflow simulation. Which is useful for ZAS-like air sim, and for MAS.
+        ///     Intentionally public because I want entities to be able to mess with this, such as ship shielding that prevents air from flowing across a shielded tile.
+        ///     For planet maps, you can instead mark the GridAtmosphere as !Simulated. Which will make the entire atmos system not run on a given grid.
+        /// </summary>
         [DataField]
-        public bool Reinforced = false;
+        public bool Reinforced;
 
         [DataField]
-        public float TileRipResistance = 125f;
+        public bool SimulatedTurf = true;
     }
 
     [Flags]

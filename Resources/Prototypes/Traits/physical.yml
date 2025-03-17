@@ -508,6 +508,10 @@
           productionLength: 2
           entityProduced: MaterialWebSilk1
           hungerCost: 1 
+    - !type:TraitAddTag
+      tags: 
+        - SpiderCraft 
+      
 
 - type: trait
   id: BionicArm
