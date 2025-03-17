@@ -13111,3 +13111,12 @@ Entries:
   id: 6977
   time: '2025-03-17T20:21:03.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1988
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        I Hate The Throwing System. Anyway Space Wind should actually be working
+        properly again.
+  id: 6978
+  time: '2025-03-17T22:37:08.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1992
