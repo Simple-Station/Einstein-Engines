@@ -12836,3 +12836,16 @@ Entries:
   id: 6950
   time: '2025-03-17T14:09:13.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1980
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: Higher amount variants of Research Disk and Spesos
+    - type: Add
+      message: Increased the amount of Research and Spesos Salvage can randomly find
+    - type: Add
+      message: Added 20000 Disk to Oracle's Loot Table (Super Rare)
+    - type: Add
+      message: Added Radiation Medkits to Radiation Lockers
+  id: 6951
+  time: '2025-03-17T14:13:15.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1984
