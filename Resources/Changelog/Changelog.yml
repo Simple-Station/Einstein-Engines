@@ -12971,3 +12971,12 @@ Entries:
   id: 6963
   time: '2025-03-17T15:53:53.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1947
+- author: GNUtopia
+  changes:
+    - type: Add
+      message: >-
+        Added bowls, a pie tin, salt and pepper packets, and plastic utensils to
+        the perma sustenance vendor.
+  id: 6964
+  time: '2025-03-17T16:05:39.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1965
