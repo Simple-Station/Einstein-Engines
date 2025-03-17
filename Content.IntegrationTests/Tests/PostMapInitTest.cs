@@ -46,7 +46,7 @@ namespace Content.IntegrationTests.Tests
             "/Maps/Shuttles/cargo.yml",
             "/Maps/Shuttles/emergency.yml",
             "/Maps/Shuttles/infiltrator.yml",
-            "/Maps/_Goobstation/Shuttles/consul.yml" // Contains HEINOUS amounts of centcomm contraband. Obviously.
+            "/Maps/_Goobstation/Shuttles/consul.yml", // Contains HEINOUS amounts of centcomm contraband. Obviously.
             "/Maps/_Goobstation/Shuttles/retort_assault.yml", // ERT ships
             "/Maps/_Goobstation/Shuttles/retort_medical.yml",
             "/Maps/_Goobstation/Shuttles/retort_engineering.yml",
