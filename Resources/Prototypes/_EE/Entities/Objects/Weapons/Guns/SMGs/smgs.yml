@@ -87,8 +87,8 @@
     maxAngle: 32
     fireRate: 5  # 300rpm in Semi & Full Auto
     burstFireRate: 20  # 1200rpm in Burst mode.
-    shotsPerBurst: 5
-    burstCooldown: 1.1
+    shotsPerBurst: 3
+    burstCooldown: 0.9
     cameraRecoilScalar: 0.5
     selectedMode: Burst
     soundGunshot:
@@ -96,7 +96,6 @@
       params:
         volume: -3
         maxDistance: 8
-        rolloffFactor: 1.2
     availableModes:
     - SemiAuto
     - Burst
