@@ -13033,3 +13033,22 @@ Entries:
   id: 6969
   time: '2025-03-17T17:41:15.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1934
+- author: SolarisBirb
+  changes:
+    - type: Add
+      message: Core, Glacier, Lambda, Lighthouse, Meta, Shoukou have mining docks now!
+    - type: Fix
+      message: >-
+        Meta, and Shoukou the pathfinder are docked to the station on round
+        start.
+    - type: Fix
+      message: Meta wiring to mantis has been fixed.
+    - type: Add
+      message: Core now has supermatter monitoring consoles.
+    - type: Add
+      message: Core now has holopads.
+    - type: Fix
+      message: Lighthouse arrivals now dock at the correct location.
+  id: 6970
+  time: '2025-03-17T17:42:23.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1953
