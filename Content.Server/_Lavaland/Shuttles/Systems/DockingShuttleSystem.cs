@@ -46,7 +46,7 @@ public sealed class DockingShuttleSystem : SharedDockingShuttleSystem
             if (!dest.Enabled || _whitelist.IsWhitelistFailOrNull(dest.Whitelist, ent))
                 continue;
 
-            AddDestinations(ent, map.MapId, mapUid);
+            AddDestinations(ent, map.MapId);
         }
 
         // Also update all consoles
@@ -97,7 +97,7 @@ public sealed class DockingShuttleSystem : SharedDockingShuttleSystem
 
         // Add the warp point and set the current location to the station uid
         comp.currentlocation = grid.Id;
-        AddDestinationUID(comp, Transform(uid).MapID, grid, "Station");
+        AddDestinationUID(comp, Transform(uid).MapID, grid);
     }
 
     /// <summary>
@@ -119,7 +119,7 @@ public sealed class DockingShuttleSystem : SharedDockingShuttleSystem
     {
         component.Station = args.MapUid;
         component.currentlocation = args.GridUid.Id;
-        AddDestinationUID(component, args.MapId, args.GridUid, "Station");
+        AddDestinationUID(component, args.MapId, args.GridUid);
     }
 
     /// <summary>
@@ -134,14 +134,12 @@ public sealed class DockingShuttleSystem : SharedDockingShuttleSystem
     /// This function will specifically for lavaland components or station components on any given map.
     /// This will allow for you to add more maps or have many stations/lavaland structures to warp too :)
     /// </summary>
-    private void AddDestinations(DockingShuttleComponent component, MapId map, EntityUid uid)
+    private void AddDestinations(DockingShuttleComponent component, MapId map)
     {
-        var planet = Name(uid).Split();
-        // TODO: Change this to a switch/case if there is more station based components
-        if (planet[0] != "Lavaland")
-            AddStation(component, map);
-        else
-            AddLavalandStation(component, map);
+        // Tries to add stations if there
+        AddStation(component, map);
+        // Then tries lavaland components.
+        AddLavalandStation(component, map);
     }
 
     /// <summary>
@@ -160,7 +158,7 @@ public sealed class DockingShuttleSystem : SharedDockingShuttleSystem
             if (component.LocationUID.Contains(gridUid))
                 continue;
 
-            AddDestinationUID(component, map, gridUid, "Station");
+            AddDestinationUID(component, map, gridUid);
         }
     }
 
@@ -177,22 +175,18 @@ public sealed class DockingShuttleSystem : SharedDockingShuttleSystem
             if (component.LocationUID.Contains(gridUid))
                 continue;
 
-            AddDestinationUID(component, map, gridUid, "Lavaland");
+            AddDestinationUID(component, map, gridUid);
         }
     }
 
     /// <summary>
     /// Add the destination gridUID to the destinations.
     /// </summary>
-    private void AddDestinationUID(DockingShuttleComponent component, MapId map, EntityUid gridUid, string? prefix = null)
+    private void AddDestinationUID(DockingShuttleComponent component, MapId map, EntityUid gridUid)
     {
-        var warppoint = Name(gridUid);
-        if (prefix != null)
-            warppoint = prefix + " - " + warppoint;
-
         component.Destinations.Add(new DockingDestination()
         {
-            Name = warppoint,
+            Name = Name(gridUid),
             Map = map
         });
         component.LocationUID.Add(gridUid);
