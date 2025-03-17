@@ -231,6 +231,12 @@ trait-description-SolCommon =
     With its roots in Mandarin Chinese - Common evolved as the official language of the Sol Alliance - with officials working to tie it together with a common tongue.
     It's spoken by state officials - taught in schools - and spoken by those who either feel a sense of national pride in the Alliance or otherwise fell sway to the culture.
 
+trait-name-NovuNederic = Novu-Nederic
+trait-description-NovuNederic =
+    Once the language of seafarers and merchants, now the voice of spacers, terraformers, and pioneers.
+    Spoken in the New-Netherlands, this direct and pragmatic trade language carries the sharp consonants and clipped vowels of its old-world roots.
+    Built on centuries of seafaring, land reclamation, and commerce, it thrives among those who shape entire worlds — just as their ancestors shaped the land from the sea.
+
 trait-name-Tradeband = Tradeband
 trait-description-Tradeband =
     Descended from latin and romance languages of old Earth - Tradeband remains the main tongue of the upper class of humanity.
