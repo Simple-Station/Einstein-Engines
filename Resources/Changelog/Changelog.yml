@@ -13072,3 +13072,10 @@ Entries:
   id: 6972
   time: '2025-03-17T17:51:52.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1913
+- author: dootythefrooty
+  changes:
+    - type: Add
+      message: Anoigo is the newest psi-power. Open doors with the power of the mind!
+  id: 6973
+  time: '2025-03-17T17:55:19.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1926
