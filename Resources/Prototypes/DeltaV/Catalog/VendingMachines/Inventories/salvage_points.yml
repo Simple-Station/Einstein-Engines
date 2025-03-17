@@ -53,6 +53,8 @@
     cost: 500
   - id: FoodBoxDonkpocketPizza
     cost: 500
+  - id: DrinkCanPack
+    cost: 600
   - id: LavalandJaunter
     cost: 750
   - id: WeaponCrusher
