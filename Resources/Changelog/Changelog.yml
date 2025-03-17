@@ -13052,3 +13052,14 @@ Entries:
   id: 6970
   time: '2025-03-17T17:42:23.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1953
+- author: BramvanZijp
+  changes:
+    - type: Tweak
+      message: >-
+        The medsecglasses have been renamed to blueshield glasses, alongside an
+        updated description
+    - type: Add
+      message: Added a diagnostic HUD to the blueshield glasses.
+  id: 6971
+  time: '2025-03-17T17:44:14.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1924
