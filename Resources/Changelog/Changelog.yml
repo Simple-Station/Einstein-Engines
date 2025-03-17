@@ -13052,3 +13052,30 @@ Entries:
   id: 6970
   time: '2025-03-17T17:42:23.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1953
+- author: BramvanZijp
+  changes:
+    - type: Tweak
+      message: >-
+        The medsecglasses have been renamed to blueshield glasses, alongside an
+        updated description
+    - type: Add
+      message: Added a diagnostic HUD to the blueshield glasses.
+  id: 6971
+  time: '2025-03-17T17:44:14.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1924
+- author: SolarisBirb
+  changes:
+    - type: Tweak
+      message: SMES/Substations/APC show battery percentage now
+    - type: Tweak
+      message: All devices show full wattage in the power monitoring console.
+  id: 6972
+  time: '2025-03-17T17:51:52.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1913
+- author: dootythefrooty
+  changes:
+    - type: Add
+      message: Anoigo is the newest psi-power. Open doors with the power of the mind!
+  id: 6973
+  time: '2025-03-17T17:55:19.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1926
