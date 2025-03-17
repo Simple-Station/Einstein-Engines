@@ -24,11 +24,11 @@ public sealed partial class CCVars
         CVarDef.Create("atmos.space_wind_strength_multiplier", 2f, CVar.SERVERONLY);
 
     /// <summary>
-    ///     The maximum velocity (not force) that may be applied to an object by atmospheric pressure differences.
+    ///     The maximum Force (in Newtons) that may be applied to an object by atmospheric pressure differences.
     ///     Useful to prevent clipping through objects.
     /// </summary>
-    public static readonly CVarDef<float> SpaceWindMaxVelocity =
-        CVarDef.Create("atmos.space_wind_max_velocity", 20f, CVar.SERVERONLY);
+    public static readonly CVarDef<float> SpaceWindMaxForce =
+        CVarDef.Create("atmos.space_wind_max_force", 200f, CVar.SERVERONLY);
 
     /// <summary>
     ///     The maximum angular velocity that space wind can spin objects at while throwing them. This one is mostly for fun.
