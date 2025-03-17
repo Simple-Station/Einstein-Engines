@@ -12909,3 +12909,12 @@ Entries:
   id: 6957
   time: '2025-03-17T14:36:55.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1964
+- author: Ichai
+  changes:
+    - type: Tweak
+      message: >-
+        Cyberiad has had its engineering and AI core completely reworked, enjoy
+        the new department
+  id: 6958
+  time: '2025-03-17T15:32:52.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1974
