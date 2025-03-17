@@ -148,7 +148,7 @@
 
 - type: characterItemGroup
   id: LoadoutPlushie
-  maxItems: 3
+  maxItems: 1
   items:
     - type: loadout
       id: PlushieSharkBlue
