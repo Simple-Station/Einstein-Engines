@@ -13095,3 +13095,10 @@ Entries:
   id: 6975
   time: '2025-03-17T18:56:08.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1855
+- author: Rosycup
+  changes:
+    - type: Add
+      message: Added new sprites for the Tritium and Ammonia canisters
+  id: 6976
+  time: '2025-03-17T18:57:22.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1986
