@@ -12918,3 +12918,14 @@ Entries:
   id: 6958
   time: '2025-03-17T15:32:52.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1974
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Saltern now has a dock for the Pathfinder, which will now start the
+        round already docked to the station if nothing goes wrong.
+    - type: Tweak
+      message: Made Saltern's supermatter much less "Explodey"
+  id: 6959
+  time: '2025-03-17T15:42:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1937
