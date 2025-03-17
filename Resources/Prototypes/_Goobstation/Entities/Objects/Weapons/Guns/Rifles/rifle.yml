@@ -155,7 +155,7 @@
   name: WSPR
   parent: BaseWeaponRifle
   id: WeaponRifleWSPR
-  description: A cutting-edge rifle from Cybersun, versatile, reliable, and Syndicate-approved. Uses .25 caseless ammo.
+  description: A cutting-edge internally silenced rifle from Cybersun, versatile, reliable, and Syndicate-approved. Uses .25 caseless ammo.
   components:
   - type: Sprite
     sprite: _Goobstation/Objects/Weapons/Guns/Rifles/wspr.rsi
@@ -176,6 +176,10 @@
     projectileSpeed: 20
     soundGunshot:
       path: /Audio/_Goobstation/Weapons/Guns/Gunshots/bwuh.ogg
+      params:
+        volume: -2
+        maxDistance: 15
+        rolloffFactor: 1.2
   - type: ItemSlots
     slots:
       gun_magazine:
