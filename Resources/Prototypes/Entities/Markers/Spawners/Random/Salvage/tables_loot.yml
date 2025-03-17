@@ -116,7 +116,7 @@
       tableId: TreasureCoinPile
       rolls: !type:RangeNumberSelector
         range: 4, 7
-    - id: SpaceCash1000
+    - id: SpaceCash5000
 
 - type: entityTable
   id: SalvageTreasureRare
@@ -139,13 +139,13 @@
         rolls: !type:RangeNumberSelector
           range: 3, 5
         children:
-        - id: SpaceCash1000
-          weight: 60
-        - id: SpaceCash2500
-          weight: 25
-        - id: SpaceCash5000
-          weight: 14
         - id: SpaceCash10000
+          weight: 60
+        - id: SpaceCash20000
+          weight: 25
+        - id: SpaceCash30000
+          weight: 14
+        - id: SpaceCash50000
           weight: 1
 
 - type: entityTable
@@ -160,6 +160,7 @@
     - id: TreasureCoinDiamond
       amount: !type:RangeNumberSelector
         range: 2, 5
+    - id: SpaceCash100000
 
 # Equipment: Tools and things used by salvagers. Quote unquote "Gamer Loot"
 
