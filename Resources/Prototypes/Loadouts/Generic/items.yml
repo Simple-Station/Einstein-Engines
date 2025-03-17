@@ -950,7 +950,7 @@
 - type: loadout
   id: PlushieArachind
   category: Items
-  Cost: 1
+  cost: 1
   canBeHeirloom: true
   items:
     - PlushieArachind
@@ -961,7 +961,7 @@
 - type: loadout
   id: PlushieMoth
   category: Items
-  Cost: 1
+  cost: 1
   canBeHeirloom: true
   items:
     - PlushieMoth
@@ -972,7 +972,7 @@
 - type: loadout
   id: PlushieHampter
   category: Items
-  Cost: 1
+  cost: 1
   canBeHeirloom: true
   items:
     - PlushieHampter
@@ -983,7 +983,7 @@
 - type: loadout
   id: PlushieRouny
   category: Items
-  Cost: 1
+  cost: 1
   canBeHeirloom: true
   items:
     - PlushieRouny
@@ -994,7 +994,7 @@
 - type: loadout
   id: PlushieCarp
   category: Items
-  Cost: 1
+  cost: 1
   canBeHeirloom: true
   items:
     - PlushieCarp
@@ -1005,7 +1005,7 @@
 - type: loadout
   id: PlushieSlime
   category: Items
-  Cost: 1
+  cost: 1
   canBeHeirloom: true
   items:
     - PlushieSlime
@@ -1016,7 +1016,7 @@
 - type: loadout
   id: PlushieVox
   category: Items
-  Cost: 1
+  cost: 1
   canBeHeirloom: true
   items:
     - PlushieVox
@@ -1027,7 +1027,7 @@
 - type: loadout
   id: PlushieHuman
   category: Items
-  Cost: 1
+  cost: 1
   canBeHeirloom: true
   items:
     - PlushieHuman
@@ -1038,7 +1038,7 @@
 - type: loadout
   id: PlushieArachne
   category: Items
-  Cost: 1
+  cost: 1
   canBeHeirloom: true
   items:
     - PlushieArachne
@@ -1049,7 +1049,7 @@
 - type: loadout
   id: PlushieVulp
   category: Items
-  Cost: 1
+  cost: 1
   canBeHeirloom: true
   items:
     - PlushieVulp
@@ -1060,7 +1060,7 @@
 - type: loadout
   id: PlushieShadowkin
   category: Items
-  Cost: 1
+  cost: 1
   canBeHeirloom: true
   items:
     - PlushieShadowkin
