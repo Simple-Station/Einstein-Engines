@@ -12849,3 +12849,10 @@ Entries:
   id: 6951
   time: '2025-03-17T14:13:15.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1984
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: Butchering to Laser Raptors
+  id: 6952
+  time: '2025-03-17T14:15:12.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1982
