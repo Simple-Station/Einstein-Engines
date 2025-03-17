@@ -13002,3 +13002,12 @@ Entries:
   id: 6966
   time: '2025-03-17T17:19:31.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1940
+- author: SolarisBirb
+  changes:
+    - type: Fix
+      message: >-
+        NT has finally patched the mining shuttle and now docks to the station
+        on returning from lavaland.
+  id: 6967
+  time: '2025-03-17T17:22:24.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1948
