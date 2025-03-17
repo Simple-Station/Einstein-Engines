@@ -223,8 +223,6 @@
     injectOnly: true
   - type: StaticPrice
     price: 500
-  - type: Tag
-    tags: []
 
 - type: entity
   name: amnestic spray
@@ -253,11 +251,6 @@
     injectOnly: true
   - type: UseDelay
     delay: 0.1 # UseDelays are for LOSERs
-      - !type:PopupMessage
-        type: Local
-        visualType: Large
-        messages: [ "amnestizine-effect-forget", "amnestizine-effect-hole", "amenstizine-effect-blank", "amnestizine-effect-distracted", "amnestizine-effect-leave", "amnestizine-effect-peaceful", "amnestizine-effect-soul", "amnestizine-effect-widen", "amnestizine-effect-listen" ]
-        probability: 0.1
 
 - type: entity
   name: biohazard medipen
