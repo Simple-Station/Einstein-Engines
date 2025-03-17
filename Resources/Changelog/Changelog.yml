@@ -13063,3 +13063,12 @@ Entries:
   id: 6971
   time: '2025-03-17T17:44:14.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1924
+- author: SolarisBirb
+  changes:
+    - type: Tweak
+      message: SMES/Substations/APC show battery percentage now
+    - type: Tweak
+      message: All devices show full wattage in the power monitoring console.
+  id: 6972
+  time: '2025-03-17T17:51:52.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1913
