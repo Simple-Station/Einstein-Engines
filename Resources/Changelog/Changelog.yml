@@ -12887,3 +12887,10 @@ Entries:
   id: 6955
   time: '2025-03-17T14:29:17.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1978
+- author: RocketBoss360
+  changes:
+    - type: Tweak
+      message: Shadeskip fog now lasts 30 seconds, and has an increased area of effect.
+  id: 6956
+  time: '2025-03-17T14:35:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1961
