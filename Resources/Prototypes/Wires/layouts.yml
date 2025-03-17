@@ -167,7 +167,7 @@
 # - !type:AiInteractWireAction
   - !type:PowerWireAction
   - !type:AccessWireAction
-    
+
 - type: wireLayout
   id: Jukebox
   dummyWires: 2
