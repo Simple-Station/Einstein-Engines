@@ -42,9 +42,9 @@ public sealed partial class FillLinkedMachineOperator : HTNOperator
         var owner = blackboard.GetValue<EntityUid>(NPCBlackboard.Owner);
 
         if (!blackboard.TryGetValue<EntityUid>(TargetKey, out var target, _entManager) || _entManager.Deleted(target)
-            || !_entManager.TryGetComponent<FillbotComponent>(owner, out var fillbot)
-            || !_entManager.TryGetComponent<HandsComponent>(owner, out var fillbotHand)
-            || !_entManager.TryGetComponent<DeviceLinkSourceComponent>(owner, out var fillbotlinks)
+            || !_entManager.TryGetComponent(owner, out FillbotComponent? fillbot)
+            || !_entManager.HasComponent<HandsComponent>(owner)
+            || !_entManager.TryGetComponent(owner, out DeviceLinkSourceComponent? fillbotlinks)
             || fillbotlinks.LinkedPorts.Count != 1
             || fillbot.LinkedSinkEntity == null
             || _entManager.Deleted(fillbot.LinkedSinkEntity))
