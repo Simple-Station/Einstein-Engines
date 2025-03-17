@@ -567,12 +567,32 @@ entities:
           decals:
             2449: -25,-27
             2450: -23,-27
+            4810: 27,-90
+            4811: 27,-89
+            4812: 27,-88
         - node:
             angle: 3.141592653589793 rad
             color: '#FFFFFFFF'
             id: Arrows
           decals:
             2748: 60,-52
+            4815: 28.970085,-84.565094
+            4816: 27.000717,-84.53738
+        - node:
+            angle: 4.71238898038469 rad
+            color: '#FFFFFFFF'
+            id: Arrows
+          decals:
+            4807: 29,-90
+            4808: 29,-89
+            4809: 29,-88
+        - node:
+            angle: 6.283185307179586 rad
+            color: '#FFFFFFFF'
+            id: Arrows
+          decals:
+            4817: 27.030746,-85.431274
+            4818: 29.008312,-85.468475
         - node:
             color: '#FFFFFFFF'
             id: Bot
@@ -2028,6 +2048,9 @@ entities:
             4586: 24,-77
             4587: 24,-78
             4619: 20,-56
+            4804: 28,-88
+            4805: 28,-89
+            4806: 28,-90
         - node:
             cleanable: True
             color: '#474F52FF'
@@ -5834,6 +5857,13 @@ entities:
             id: StandClear
           decals:
             4620: 22,-56
+            4813: 29,-85
+        - node:
+            angle: 4.71238898038469 rad
+            color: '#FFFFFFFF'
+            id: StandClear
+          decals:
+            4814: 27,-85
         - node:
             color: '#334E6D5A'
             id: ThreeQuarterTileOverlayGreyscale
@@ -6279,6 +6309,13 @@ entities:
             4771: 29,-64
             4795: -25,-86
         - node:
+            angle: 6.283185307179586 rad
+            color: '#FFFFFFFF'
+            id: WarnCornerNE
+          decals:
+            4832: 34,-88
+            4842: 25,-88
+        - node:
             color: '#FFFFFFFF'
             id: WarnCornerNW
           decals:
@@ -6295,6 +6332,13 @@ entities:
             4603: 27,-80
             4773: 27,-64
             4794: -27,-86
+        - node:
+            angle: 6.283185307179586 rad
+            color: '#FFFFFFFF'
+            id: WarnCornerNW
+          decals:
+            4829: 31,-88
+            4843: 22,-88
         - node:
             color: '#FFFFFFFF'
             id: WarnCornerSE
@@ -6313,6 +6357,13 @@ entities:
             4600: 29,-82
             4772: 29,-65
             4793: -25,-88
+        - node:
+            angle: 6.283185307179586 rad
+            color: '#FFFFFFFF'
+            id: WarnCornerSE
+          decals:
+            4836: 34,-92
+            4841: 25,-92
         - node:
             color: '#FFFFFFFF'
             id: WarnCornerSW
@@ -6333,6 +6384,13 @@ entities:
             4602: 27,-82
             4770: 27,-65
             4792: -27,-88
+        - node:
+            angle: 6.283185307179586 rad
+            color: '#FFFFFFFF'
+            id: WarnCornerSW
+          decals:
+            4839: 31,-92
+            4840: 22,-92
         - node:
             color: '#FFFFFFFF'
             id: WarnCornerSmallGreyscaleNE
@@ -6532,6 +6590,19 @@ entities:
             4610: 22,-57
             4799: -25,-87
             4800: 55,-103
+        - node:
+            angle: 6.283185307179586 rad
+            color: '#FFFFFFFF'
+            id: WarnLineE
+          decals:
+            4819: 25,-88
+            4820: 25,-89
+            4821: 25,-90
+            4822: 25,-91
+            4823: 25,-92
+            4833: 34,-89
+            4834: 34,-90
+            4835: 34,-91
         - node:
             color: '#334E6DC8'
             id: WarnLineGreyscaleE
@@ -6817,6 +6888,15 @@ entities:
             4775: 28,-65
             4798: -26,-88
         - node:
+            angle: 6.283185307179586 rad
+            color: '#FFFFFFFF'
+            id: WarnLineN
+          decals:
+            4837: 33,-92
+            4838: 32,-92
+            4847: 24,-92
+            4848: 23,-92
+        - node:
             color: '#FFFFFFFF'
             id: WarnLineS
           decals:
@@ -6917,6 +6997,19 @@ entities:
             4801: 55,-99
             4802: 55,-98
             4803: 55,-97
+        - node:
+            angle: 6.283185307179586 rad
+            color: '#FFFFFFFF'
+            id: WarnLineS
+          decals:
+            4824: 31,-92
+            4825: 31,-91
+            4826: 31,-90
+            4827: 31,-89
+            4828: 31,-88
+            4844: 22,-89
+            4845: 22,-90
+            4846: 22,-91
         - node:
             color: '#FFFFFFFF'
             id: WarnLineW
@@ -7032,6 +7125,10 @@ entities:
             2816: 0,-30
             2817: -1,-30
             2818: -2,-30
+            4830: 32,-88
+            4831: 33,-88
+            4849: 24,-88
+            4850: 23,-88
         - node:
             color: '#E1E12DFF'
             id: WoodTrimThinBox
@@ -9867,7 +9964,8 @@ entities:
           5,-25:
             1: 63054
           6,-23:
-            0: 65535
+            0: 65533
+            5: 2
           6,-22:
             0: 65311
           6,-24:
@@ -10467,6 +10565,21 @@ entities:
           moles:
           - 0
           - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+        - volume: 2500
+          temperature: 293.14975
+          moles:
+          - 20.940317
+          - 78.77548
           - 0
           - 0
           - 0
@@ -12205,9 +12318,6 @@ entities:
       - 16879
       - 16915
       - 25563
-      - 14496
-      - 16937
-      - 14486
   - uid: 28971
     components:
     - type: Transform
@@ -81945,6 +82055,37 @@ entities:
     - type: Transform
       pos: 25.5,-91.5
       parent: 2
+    - type: EntityStorage
+      air:
+        volume: 101.325
+        immutable: False
+        temperature: 293.14383
+        moles:
+        - 0.8845623
+        - 3.3276393
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+    - type: ContainerContainer
+      containers:
+        entity_storage: !type:Container
+          showEnts: False
+          occludes: True
+          ents:
+          - 14264
+          - 14486
+          - 14496
+        paper_label: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
 - proto: CrateEngineeringSolar
   entities:
   - uid: 14836
@@ -93531,12 +93672,6 @@ entities:
     - type: Transform
       pos: -34.5,-62.5
       parent: 2
-  - uid: 14264
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 28.5,-89.5
-      parent: 2
   - uid: 14550
     components:
     - type: Transform
@@ -93547,18 +93682,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -34.5,-80.5
-      parent: 2
-  - uid: 16818
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 28.5,-87.5
-      parent: 2
-  - uid: 16820
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 28.5,-88.5
       parent: 2
   - uid: 16909
     components:
@@ -93580,6 +93703,35 @@ entities:
     - type: Transform
       pos: 36.5,-87.5
       parent: 2
+- proto: EmitterFlatpack
+  entities:
+  - uid: 14264
+    components:
+    - type: Transform
+      parent: 25576
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 14486
+    components:
+    - type: Transform
+      parent: 25576
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 14496
+    components:
+    - type: Transform
+      parent: 25576
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: EngineerCircuitBoard
   entities:
   - uid: 19200
@@ -97270,7 +97422,7 @@ entities:
       pos: -34.5,-14.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -195123.69
+      secondsUntilStateChange: -195523.25
       state: Closing
   - uid: 13958
     components:
@@ -100499,6 +100651,26 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 41.5,-84.5
+      parent: 2
+- proto: GasOutletInjectorHighFlow
+  entities:
+  - uid: 16818
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 29.5,-81.5
+      parent: 2
+  - uid: 16820
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 29.5,-79.5
+      parent: 2
+  - uid: 16937
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 29.5,-80.5
       parent: 2
 - proto: GasPassiveVent
   entities:
@@ -127225,35 +127397,6 @@ entities:
       - 23019
     - type: AtmosPipeColor
       color: '#0055CCFF'
-- proto: GasVentPumpHighFlow
-  entities:
-  - uid: 14486
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 29.5,-79.5
-      parent: 2
-    - type: DeviceNetwork
-      deviceLists:
-      - 25562
-  - uid: 14496
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 29.5,-81.5
-      parent: 2
-    - type: DeviceNetwork
-      deviceLists:
-      - 25562
-  - uid: 16937
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 29.5,-80.5
-      parent: 2
-    - type: DeviceNetwork
-      deviceLists:
-      - 25562
 - proto: GasVentScrubber
   entities:
   - uid: 151
