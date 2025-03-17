@@ -166,7 +166,7 @@ public sealed partial class AtmosphereSystem
             || !Resolve(uid, ref xform)
             || physics.BodyType == BodyType.Static
             || float.IsPositiveInfinity(component.MoveResist)
-            || physics.LinearVelocity.Length() >= SpaceWindMaxVelocity)
+            || physics.LinearVelocity.Length() >= SpaceWindMaxForce)
             return;
 
         var alwaysThrow = gravity == 0 || physics.BodyStatus == BodyStatus.InAir;
@@ -181,13 +181,13 @@ public sealed partial class AtmosphereSystem
             return;
 
         // As a first concession to Box2d being terrible at high speed collisions, we make sure the vector isn't faster than some speed limit.
-        if (pVecLength >= SpaceWindMaxVelocity)
-            pressureVector = pressureVector.Normalized() * SpaceWindMaxVelocity;
+        if (pVecLength >= SpaceWindMaxForce)
+            pressureVector = pressureVector.Normalized() * SpaceWindMaxForce;
 
         // Yes this technically increases the magnitude by a small amount... I detest having to swap between "World" and "Local" vectors.
         // ThrowingSystem increments linear velocity by a given vector, but we have to do this anyways because reasons.
         var velocity = _transformSystem.GetWorldRotation(uid).ToWorldVec() + pressureVector;
-        if ((velocity + physics.LinearVelocity).Length() >= SpaceWindMaxVelocity)
+        if ((velocity + physics.LinearVelocity).Length() >= SpaceWindMaxForce)
             return; // Still too fast. We must be going in *roughly* the same direction and at some high speed.
                     // There isn't actually a good way to tell this with any amount of precision and still have
                     // arbitrary radian throws. Or at least if there is, I don't know it yet.
@@ -195,7 +195,7 @@ public sealed partial class AtmosphereSystem
 
         _sharedStunSystem.TryKnockdown(uid, TimeSpan.FromSeconds(SpaceWindKnockdownTime), false);
         _throwing.TryThrow(uid, velocity, physics, xform, projectileQuery,
-            pVecLength, doSpin: physics.AngularVelocity < SpaceWindMaxAngularVelocity);
+            1, doSpin: physics.AngularVelocity < SpaceWindMaxAngularVelocity);
         component.LastHighPressureMovementAirCycle = cycle;
     }
 }
