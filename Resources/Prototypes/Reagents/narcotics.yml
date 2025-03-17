@@ -530,10 +530,6 @@
         type: Add
         time: 4
       - !type:MovespeedModifier # You can't quite remember how to walk properly.
-        conditions:
-        - !type:OrganType
-          type: Yowie
-          shouldHave: false
         - !type:ReagentThreshold
           reagent: Amnestizine
           min: 4
