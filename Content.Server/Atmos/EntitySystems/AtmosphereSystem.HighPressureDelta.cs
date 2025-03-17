@@ -1,10 +1,13 @@
 using Content.Server.Atmos.Components;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;
-using Content.Shared.CCVar;
+using Content.Shared.Gravity;
 using Content.Shared.Humanoid;
+using Content.Shared.Maps;
 using Content.Shared.Physics;
+using Content.Shared.Projectiles;
 using Robust.Shared.Audio;
+using Robust.Shared.Map.Components;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Utility;
@@ -70,52 +73,45 @@ public sealed partial class AtmosphereSystem
         }
     }
 
-    private void HighPressureMovements(Entity<GridAtmosphereComponent> gridAtmosphere, TileAtmosphere tile, EntityQuery<PhysicsComponent> bodies, EntityQuery<TransformComponent> xforms, EntityQuery<MovedByPressureComponent> pressureQuery, EntityQuery<MetaDataComponent> metas, float frameTime)
+    private void HighPressureMovements(Entity<GridAtmosphereComponent> gridAtmosphere,
+        TileAtmosphere tile,
+        EntityQuery<PhysicsComponent> bodies,
+        EntityQuery<TransformComponent> xforms,
+        EntityQuery<MovedByPressureComponent> pressureQuery,
+        EntityQuery<MetaDataComponent> metas,
+        EntityQuery<ProjectileComponent> projectileQuery,
+        double gravity)
     {
         // No atmos yeets, return early.
         if (!SpaceWind
-            || tile.PressureDirection is AtmosDirection.Invalid)
+            || tile.PressureDirection is AtmosDirection.Invalid
+            || tile.Air is null
+            || !TryComp(gridAtmosphere.Owner, out MapGridComponent? mapGrid)
+            || !_mapSystem.TryGetTileRef(gridAtmosphere.Owner, mapGrid, tile.GridIndices, out var tileRef))
             return;
 
-        // Previously, we were comparing against the square of the target mass. Now we are comparing smaller values over a variable length of time. TLDR: Smoother space wind
-        var differentiatedPressure = 2 * tile.PressureDifference * frameTime * _cfg.GetCVar(CCVars.SpaceWindStrengthMultiplier);
-        if (differentiatedPressure < SpaceWindMinimumCalculatedMass)
+        var tileDef = (ContentTileDefinition) _tileDefinitionManager[tileRef.Tile.TypeId];
+        if (!tileDef.SimulatedTurf)
             return;
-        // TODO ATMOS finish this
 
-        // Don't play the space wind sound on tiles that are on fire...
-        if (tile.PressureDifference > 15 && !tile.Hotspot.Valid)
+        var pressureVector = GetPressureVectorFromTile(gridAtmosphere, tile);
+        if (!pressureVector.IsValid()
+            || pressureVector.Length() <= 1) // Safeguard against "Extremely small vectors"
+            return;
+
+        pressureVector *= SpaceWindStrengthMultiplier;
+
+        if (pressureVector.Length() > 15 && !tile.Hotspot.Valid)
         {
             if (_spaceWindSoundCooldown == 0 && !string.IsNullOrEmpty(SpaceWindSound))
             {
                 var coordinates = _mapSystem.ToCenterCoordinates(tile.GridIndex, tile.GridIndices);
-                _audio.PlayPvs(SpaceWindSound, coordinates, AudioParams.Default.WithVariation(0.125f).WithVolume(MathHelper.Clamp(tile.PressureDifference / 10, 10, 100)));
+                _audio.PlayPvs(SpaceWindSound, coordinates, AudioParams.Default.WithVariation(0.125f).WithVolume(MathHelper.Clamp(pressureVector.Length() / 10, 10, 100)));
             }
-        }
-
-
-        if (tile.PressureDifference > 100)
-        {
-            // TODO ATMOS Do space wind graphics here!
         }
 
         if (_spaceWindSoundCooldown++ > SpaceWindSoundCooldownCycles)
             _spaceWindSoundCooldown = 0;
-
-        // Used by ExperiencePressureDifference to correct push/throw directions from tile-relative to physics world.
-        var gridWorldRotation = _transformSystem.GetWorldRotation(gridAtmosphere);
-
-        // Atmos Directions only include NSEW cardinals, which means only 4 possible angles to throw at. If Monstermos is enabled, we'll instead do some
-        // Vector shennanigans to smooth it out so that we can throw in increments of up to pi/32.
-        var throwDirection = tile.PressureDirection.ToAngle().ToVec();
-        if (MonstermosEqualization)
-            foreach (var nextTile in tile.AdjacentTiles)
-                if (nextTile is not null && nextTile.PressureDirection is not AtmosDirection.Invalid)
-                    throwDirection += nextTile.PressureDirection.ToAngle().ToVec();
-
-        // Before you ask, yes I did actually have to convert the angles to vectors, then add them together, then convert the end result back to a normalized vector.
-        // We're normalizing this here and now so that we don't have to normalize it potentially hundreds of times during the next Foreach.
-        var throwVector = (throwDirection.ToAngle() + gridWorldRotation).ToWorldVec().Normalized();
 
         _entSet.Clear();
         _lookup.GetLocalEntitiesIntersecting(tile.GridIndex, tile.GridIndices, _entSet, 0f);
@@ -135,8 +131,10 @@ public sealed partial class AtmosphereSystem
             ExperiencePressureDifference(
                 (entity, EnsureComp<MovedByPressureComponent>(entity)),
                 gridAtmosphere.Comp.UpdateCounter,
-                differentiatedPressure,
-                throwVector,
+                pressureVector,
+                tileDef,
+                gravity,
+                projectileQuery,
                 xforms.GetComponent(entity),
                 body);
         }
@@ -154,11 +152,12 @@ public sealed partial class AtmosphereSystem
         tile.PressureDirection = differenceDirection;
     }
 
-    public void ExperiencePressureDifference(
-        Entity<MovedByPressureComponent> ent,
+    public void ExperiencePressureDifference(Entity<MovedByPressureComponent> ent,
         int cycle,
-        float pressureDifference,
-        Vector2 throwVector,
+        Vector2 pressureVector,
+        ContentTileDefinition tile,
+        double gravity,
+        EntityQuery<ProjectileComponent> projectileQuery,
         TransformComponent? xform = null,
         PhysicsComponent? physics = null)
     {
@@ -166,17 +165,37 @@ public sealed partial class AtmosphereSystem
         if (!Resolve(uid, ref physics, false)
             || !Resolve(uid, ref xform)
             || physics.BodyType == BodyType.Static
-            || float.IsPositiveInfinity(component.MoveResist))
+            || float.IsPositiveInfinity(component.MoveResist)
+            || physics.LinearVelocity.Length() >= SpaceWindMaxVelocity)
             return;
+
+        var alwaysThrow = gravity == 0 || physics.BodyStatus == BodyStatus.InAir;
+        // Coefficient of static friction in Newtons (kg * m/s^2), which might not apply under certain conditions.
+        var coefficientOfFriction = gravity * physics.Mass * tile.MobFrictionNoInput;
+        coefficientOfFriction *= _standingSystem.IsDown(uid) ? 3 : 1;
 
         if (HasComp<HumanoidAppearanceComponent>(ent))
-            pressureDifference *= HumanoidThrowMultiplier;
-        if (pressureDifference < physics.Mass)
+            pressureVector *= HumanoidThrowMultiplier;
+        var pVecLength = pressureVector.Length();
+        if (!alwaysThrow && pVecLength < coefficientOfFriction)
             return;
 
-        pressureDifference *= MathF.Max(physics.InvMass, SpaceWindMaximumCalculatedInverseMass);
+        // As a first concession to Box2d being terrible at high speed collisions, we make sure the vector isn't faster than some speed limit.
+        if (pVecLength >= SpaceWindMaxVelocity)
+            pressureVector = pressureVector.Normalized() * SpaceWindMaxVelocity;
 
-        _throwing.TryThrow(uid, throwVector * MathF.Min(pressureDifference, SpaceWindMaxVelocity), pressureDifference);
+        // Yes this technically increases the magnitude by a small amount... I detest having to swap between "World" and "Local" vectors.
+        // ThrowingSystem increments linear velocity by a given vector, but we have to do this anyways because reasons.
+        var velocity = _transformSystem.GetWorldRotation(uid).ToWorldVec() + pressureVector;
+        if ((velocity + physics.LinearVelocity).Length() >= SpaceWindMaxVelocity)
+            return; // Still too fast. We must be going in *roughly* the same direction and at some high speed.
+                    // There isn't actually a good way to tell this with any amount of precision and still have
+                    // arbitrary radian throws. Or at least if there is, I don't know it yet.
+                    // TODO: Maybe revisit this in the future --TCJ
+
+        _sharedStunSystem.TryKnockdown(uid, TimeSpan.FromSeconds(SpaceWindKnockdownTime), false);
+        _throwing.TryThrow(uid, velocity, physics, xform, projectileQuery,
+            pVecLength, doSpin: physics.AngularVelocity < SpaceWindMaxAngularVelocity);
         component.LastHighPressureMovementAirCycle = cycle;
     }
 }

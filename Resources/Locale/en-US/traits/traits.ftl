@@ -231,6 +231,12 @@ trait-description-SolCommon =
     With its roots in Mandarin Chinese - Common evolved as the official language of the Sol Alliance - with officials working to tie it together with a common tongue.
     It's spoken by state officials - taught in schools - and spoken by those who either feel a sense of national pride in the Alliance or otherwise fell sway to the culture.
 
+trait-name-NovuNederic = Novu-Nederic
+trait-description-NovuNederic =
+    Once the language of seafarers and merchants, now the voice of spacers, terraformers, and pioneers.
+    Spoken in the New-Netherlands, this direct and pragmatic trade language carries the sharp consonants and clipped vowels of its old-world roots.
+    Built on centuries of seafaring, land reclamation, and commerce, it thrives among those who shape entire worlds — just as their ancestors shaped the land from the sea.
+
 trait-name-Tradeband = Tradeband
 trait-description-Tradeband =
     Descended from latin and romance languages of old Earth - Tradeband remains the main tongue of the upper class of humanity.
@@ -465,10 +471,10 @@ trait-description-CyberEyes =
     Their most basic functionality is to provide amelioration for weaknesses of the wearer's natural eyes.
     The functionality of these implants can be extended by a variety of commercially available modules.
 
-trait-name-FlareShielding = Cyber-Eyes: Eye Damage Resistance
-trait-description-FlareShielding =
-    Your cybereyes have been fitted with a photochromic lense that automatically darkens in response to intense stimuli.
-    This provides immunity from most bright flashes of light, such as those from welding arcs.
+# trait-name-FlareShielding = Cyber-Eyes: Eye Damage Resistance
+# trait-description-FlareShielding =
+#    Your cybereyes have been fitted with a photochromic lense that automatically darkens in response to intense stimuli.
+#    This provides immunity from most bright flashes of light, such as those from welding arcs.
 
 trait-name-CyberEyesSecurity = Cyber-Eyes: SecHud Module
 trait-description-CyberEyesSecurity =
@@ -477,11 +483,11 @@ trait-description-CyberEyesSecurity =
 
 trait-name-CyberEyesMedical = Cyber-Eyes: MedHud Module
 trait-description-CyberEyesMedical =
-    Your Cyber-Eyes have been upgraded to include a built-in Medical Hud, allowing you to track the relative health condition of biological organisms.
+    Your Cyber-Eyes have been upgraded to include a built-in Medical Hud, and a Chemical Analysis Hud, allowing you to track the relative health condition of biological organisms, and discern the chemicals in any solution. 
 
 trait-name-CyberEyesDiagnostic = Cyber-Eyes: Diagnostics Module
 trait-description-CyberEyesDiagnostic =
-    Your Cyber-Eyes have been upgraded to include a built-in Diagnostic Hud, allowing you to track the condition of synthetic entities.
+    Your Cyber-Eyes have been upgraded to include a built-in Diagnostic Hud and flare shielding, allowing you to track the condition of synthetic entities, and providing eye protection against welding arcs.
 
 trait-name-CyberEyesOmni = Cyber-Eyes: Premium Suite Module
 trait-description-CyberEyesOmni =
@@ -556,11 +562,11 @@ trait-description-BionicLeg =
     One or more of your limbs have been replaced with an expensive, state of the art bionic. It could be either one made of highly realistic synthflesh,
     or a more obvious metal limb. This limb provides enhanced speed to it's user, allowing you to run away from situations faster or get to a place faster.
 
-trait-name-FlareShieldingModule = I.P.C Eye Module: Flare Shielding
-trait-description-FlareShieldingModule =
-    Your cybereyes have been fitted with a photochromic lense that automatically darkens in response to intense stimuli.
-    This provides immunity from most bright flashes of light, such as those from welding arcs, exclusive to IPCs because it only needs the module
-    skipping the eye insertion process.
+# trait-name-FlareShieldingModule = I.P.C Eye Module: Flare Shielding
+# trait-description-FlareShieldingModule =
+#    Your cybereyes have been fitted with a photochromic lense that automatically darkens in response to intense stimuli.
+#    This provides immunity from most bright flashes of light, such as those from welding arcs, exclusive to IPCs because it only needs the module
+#    skipping the eye insertion process.
 
 trait-name-SecurityEyesModule = I.P.C Eye Module: Sechud
 trait-description-SecurityEyesModule =
@@ -568,11 +574,11 @@ trait-description-SecurityEyesModule =
 
 trait-name-MedicalEyesModule = I.P.C Eye Module: Medical
 trait-description-MedicalEyesModule =
-    Your eyes have been upgraded to include a built-in Medical Hud, allowing you to track the relative health condition of biological organisms.
+    Your Cyber-Eyes have been upgraded to include a built-in Medical Hud, and a Chemical Analysis Hud, allowing you to track the relative health condition of biological organisms, and discern the chemicals in any solution. 
 
 trait-name-DiagnosticEyesModule = I.P.C Eye Module: Diagnostics
 trait-description-DiagnosticEyesModule =
-    You possess a built-in Diagnostic Hud, allowing you to track the condition of synthetic entities.
+    Your eyes have been upgraded to include a built-in Diagnostic Hud and flare shielding, allowing you to track the condition of synthetic entities, and providing eye protection against welding arcs.
 
 trait-name-OmniEyesModule = I.P.C Eye Module: Premium Model
 trait-description-OmniEyesModule =
