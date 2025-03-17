@@ -12929,3 +12929,14 @@ Entries:
   id: 6959
   time: '2025-03-17T15:42:51.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1937
+- author: Tonk
+  changes:
+    - type: Add
+      message: >-
+        Added tacticool outfits, expensive coat, witch hat and robe to the
+        loadout menu.
+    - type: Add
+      message: Added  plushies and luxury pen to loadout items.
+  id: 6960
+  time: '2025-03-17T15:47:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1967
