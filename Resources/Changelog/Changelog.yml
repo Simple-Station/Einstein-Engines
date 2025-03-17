@@ -12856,3 +12856,20 @@ Entries:
   id: 6952
   time: '2025-03-17T14:15:12.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1982
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed some bugs with Space Wind related to lockers causing massive air
+        flow spikes,
+    - type: Fix
+      message: >-
+        Fixed space wind not being calculated correctly for stations which get
+        gravity from their planet, such as Glacier.
+    - type: Fix
+      message: >-
+        Fixed an issue where Space Wind wasn't respecting the cosmic speed limit
+        of 30 meters per second.
+  id: 6953
+  time: '2025-03-17T14:25:08.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1979
