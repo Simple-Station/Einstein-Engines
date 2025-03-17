@@ -12873,3 +12873,10 @@ Entries:
   id: 6953
   time: '2025-03-17T14:25:08.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1979
+- author: Plyush
+  changes:
+    - type: Tweak
+      message: Tweaked the Turtle Skirt sprite
+  id: 6954
+  time: '2025-03-17T14:28:09.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1976
