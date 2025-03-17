@@ -12880,3 +12880,10 @@ Entries:
   id: 6954
   time: '2025-03-17T14:28:09.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1976
+- author: Toby222 and Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Add Number lookup to NanoChat
+  id: 6955
+  time: '2025-03-17T14:29:17.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1978
