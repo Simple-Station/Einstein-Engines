@@ -905,7 +905,7 @@
 - type: loadout
   id: PlushieSharkBlue
   category: Items
-  Cost: 1
+  cost: 1
   canBeHeirloom: true
   items:
     - PlushieSharkBlue
