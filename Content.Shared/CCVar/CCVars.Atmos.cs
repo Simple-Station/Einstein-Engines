@@ -28,7 +28,7 @@ public sealed partial class CCVars
     ///     Useful to prevent clipping through objects.
     /// </summary>
     public static readonly CVarDef<float> SpaceWindMaxVelocity =
-        CVarDef.Create("atmos.space_wind_max_velocity", 20f, CVar.SERVERONLY);
+        CVarDef.Create("atmos.space_wind_max_velocity", 15f, CVar.SERVERONLY);
 
     /// <summary>
     ///     The maximum angular velocity that space wind can spin objects at while throwing them. This one is mostly for fun.
@@ -155,5 +155,5 @@ public sealed partial class CCVars
     ///     This multiplier is added after all other checks are made, and applies to both throwing force, and how easy it is for an entity to be thrown.
     /// </summary>
     public static readonly CVarDef<float> AtmosHumanoidThrowMultiplier =
-        CVarDef.Create("atmos.humanoid_throw_multiplier", 5f, CVar.SERVERONLY);
+        CVarDef.Create("atmos.humanoid_throw_multiplier", 2f, CVar.SERVERONLY);
 }
