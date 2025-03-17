@@ -13024,3 +13024,12 @@ Entries:
   id: 6968
   time: '2025-03-17T17:25:14.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1932
+- author: BramvanZijp
+  changes:
+    - type: Tweak
+      message: >-
+        Cable coils are now better at healing burns for IPCs, with MV and HV
+        cables providing more healing but being slower to apply.
+  id: 6969
+  time: '2025-03-17T17:41:15.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1934
