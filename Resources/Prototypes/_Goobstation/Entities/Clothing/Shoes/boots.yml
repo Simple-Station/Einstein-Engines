@@ -1,13 +1,5 @@
 
 - type: entity
-  parent: ClothingShoesBootsChrono
-  id: ClothingShoesBootsChronoUnremoveable
-  suffix: Unremoveable
-  components:
-  - type: Unremoveable
-
-
-- type: entity
   parent: [ClothingShoesBootsMagAdv, BaseJetpack]
   id: ClothingShoesBootsMagDeathsquad
   name: deathsquad magboots
