@@ -13011,3 +13011,16 @@ Entries:
   id: 6967
   time: '2025-03-17T17:22:24.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1948
+- author: Mike32oz
+  changes:
+    - type: Add
+      message: Northway medical, cleaning, and planting bots
+    - type: Add
+      message: Northway mining console for lavaland
+    - type: Add
+      message: Northway AI station was added
+    - type: Remove
+      message: Northway logistic shuttles
+  id: 6968
+  time: '2025-03-17T17:25:14.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1932
