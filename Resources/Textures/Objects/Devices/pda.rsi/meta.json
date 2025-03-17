@@ -200,17 +200,6 @@
       "name": "pda-syndi-agent"
     },
     {
-      "name": "pda-centcom",
-      "delays": [
-        [
-          1.2,
-          1.2,
-          1.2,
-          1.2
-        ]
-      ]
-    },
-    {
       "name": "pda-virology"
     },
     {
