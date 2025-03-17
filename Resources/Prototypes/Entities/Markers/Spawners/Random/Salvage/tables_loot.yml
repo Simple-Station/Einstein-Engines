@@ -87,7 +87,7 @@
     - id: SheetPlasma1
       amount: !type:RangeNumberSelector
         range: 3, 5
-    - id: ResearchDisk
+    - id: ResearchDisk5000
     - id: DrinkGoldenCup
     - id: TreasureSampleTube
     - !type:NestedSelector
@@ -105,6 +105,7 @@
     - id: IngotGold1
       amount: !type:RangeNumberSelector
         range: 3, 5
+    - id: ResearchDisk10000
     - id: TreasureDatadiskEncrypted
     - !type:GroupSelector
       children:
@@ -125,7 +126,7 @@
     - id: TreasureCPUSupercharged
     - id: TechnologyDiskRare
       weight: 0.5
-    - id: ResearchDisk10000
+    - id: ResearchDisk20000
       weight: 0.5
     - !type:NestedSelector
       tableId: TreasureCoinPileRare
@@ -153,6 +154,7 @@
     children:
     - id: ClothingMaskGoldenCursed
     - id: ClothingHeadHatFancyCrown
+    - id: ResearchDisk50000
     - id: GoldenBikeHorn
     - id: ClothingHeadHatCatEars
     - id: TreasureCoinDiamond
