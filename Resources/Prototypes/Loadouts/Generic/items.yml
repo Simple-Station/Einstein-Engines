@@ -928,7 +928,7 @@
 - type: loadout
   id: PlushieSharkGrey
   category: Items
-  Cost: 1
+  cost: 1
   canBeHeirloom: true
   items:
     - PlushieSharkGrey
