@@ -13120,3 +13120,16 @@ Entries:
   id: 6978
   time: '2025-03-17T22:37:08.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1992
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Batteries no longer drain power 30 to 60 times faster than physics
+        states. This is particularly a large buff to IPCs and MODSuits, who both
+        no longer have to deal with batteries lasting an absurdly short amount
+        of time. 
+    - type: Tweak
+      message: Solarian Modsuit now provides protection from cold.
+  id: 6979
+  time: '2025-03-18T00:32:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1989
