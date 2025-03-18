@@ -173,13 +173,16 @@ public sealed partial class GunSystem : SharedGunSystem
 
         if (_inputSystem.CmdStates.GetState(useKey) != BoundKeyState.Down && !gun.BurstActivated)
         {
-            if (_inputSystem.CmdStates.GetState(altUseKey) != BoundKeyState.Down && gun.CanAltFire) {
+            if (_inputSystem.CmdStates.GetState(altUseKey) == BoundKeyState.Down && gun.CanAltFire) {
                 isAltFiring = true;
+            }
+
+            if (gun.ShotCounter != 0) {
+                EntityManager.RaisePredictiveEvent(new RequestStopShootEvent { Gun = GetNetEntity(gunUid) });
                 return;
             }
-            if (gun.ShotCounter != 0)
-                EntityManager.RaisePredictiveEvent(new RequestStopShootEvent { Gun = GetNetEntity(gunUid) });
-            return;
+            if (_inputSystem.CmdStates.GetState(useKey) != BoundKeyState.Down)
+                return;
         }
 
         if (gun.NextFire > Timing.CurTime)
@@ -209,6 +212,7 @@ public sealed partial class GunSystem : SharedGunSystem
             Target = target,
             Coordinates = GetNetCoordinates(coordinates),
             Gun = GetNetEntity(gunUid),
+            AltFire = isAltFiring
         });
     }
 
