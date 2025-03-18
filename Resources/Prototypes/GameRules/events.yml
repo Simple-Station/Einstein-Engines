@@ -614,3 +614,17 @@
       maxOccurrences: 1
       weight: 3
     - type: AirlockVirusRule
+
+- type: entity
+  id: BabelTower
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: StationEvent
+      minimumPlayers: 5
+      duration: 150 # duration is in seconds by the way
+      maxDuration: 300
+      weight: 0
+    - type: BabelTowerRule
+
+
