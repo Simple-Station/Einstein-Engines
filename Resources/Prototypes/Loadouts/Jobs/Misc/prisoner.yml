@@ -6,6 +6,82 @@
 # Ears
 
 # Equipment
+- type: loadout
+  id: LoadoutPrisonerCannabisSeeds
+  category: JobsMiscPrisoner
+  cost: 1
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Prisoner
+  items:
+    - CannabisSeeds
+
+- type: loadout
+  id: LoadoutPrisonerTobaccoSeeds
+  category: JobsMiscPrisoner
+  cost: 1
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Prisoner
+  items:
+    - TobaccoSeeds
+
+- type: loadout
+  id: LoadoutPrisonerMutagenBottle
+  category: JobsMiscPrisoner
+  cost: 2
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Prisoner
+  items:
+    - UnstableMutagenChemistryBottle
+
+- type: loadout
+  id: LoadoutPrisonerDropper
+  category: JobsMiscPrisoner
+  cost: 0
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Prisoner
+  items:
+    - Dropper
+
+- type: loadout
+  id: LoadoutPrisonerPlantAnalyzer
+  category: JobsMiscPrisoner
+  cost: 2
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Prisoner
+  items:
+    - PlantAnalyzer
+
+- type: loadout
+  id: LoadoutPrisonerRollingPin
+  category: JobsMiscPrisoner
+  cost: 1
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Prisoner
+  items:
+    - RollingPin
+
+- type: loadout
+  id: LoadoutPrisonerPlasmaShiv
+  category: JobsMiscPrisoner
+  cost: 5
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Prisoner
+  items:
+    - PlasmaShiv
 
 # Eyes
 
@@ -24,7 +100,6 @@
 # Shoes
 
 # Uniforms
-
 - type: loadout
   id: LoadoutPrisonerPrisonJumpsuit
   category: JobsMiscPrisoner
@@ -32,7 +107,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutPrisonerUniform
+      group: LoadoutPrisonerUniforms
     - !type:CharacterJobRequirement
       jobs:
         - Prisoner
@@ -46,7 +121,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutPrisonerUniform
+      group: LoadoutPrisonerUniforms
     - !type:CharacterJobRequirement
       jobs:
         - Prisoner

@@ -60,7 +60,11 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutJOBUniforms
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutPrisonerUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutPrisonerPrisonJumpsuit
+    - type: loadout
+      id: LoadoutPrisonerPrisonJumpskirt
