@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseWeaponTurret
+  parent: BaseWeaponBallisticTurret
   id: WeaponTurretSyndicate
   suffix: Syndicate
   components:
@@ -62,7 +62,7 @@
       canCreateVacuum: false
 
 - type: entity
-  parent: BaseWeaponTurret
+  parent: BaseWeaponBallisticTurret
   id: WeaponTurretNanoTrasen
   suffix: NanoTrasen
   components:
@@ -71,7 +71,7 @@
     - NanoTrasen
 
 - type: entity
-  parent: BaseWeaponTurret
+  parent: BaseWeaponBallisticTurret
   id: WeaponTurretHostile
   suffix: Hostile
   components:

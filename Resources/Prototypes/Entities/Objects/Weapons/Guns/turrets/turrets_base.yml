@@ -107,7 +107,7 @@
       capacity: 200
 
 - type: entity
-  parent: BaseWeaponTurret
+  parent: BaseWeaponBallisticTurret
   id: BaseWeaponTurretMinigun
   name: minigun turret
   abstract: true
