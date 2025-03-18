@@ -113,12 +113,7 @@ public sealed partial class GunSystem : SharedGunSystem
                 var uid = Spawn(gun.AltFireProjectile, fromEnt); // remind me to update this later to be more modular
 
                 // I will prolly refine this more later but this'll work for now
-                if (!TryComp<AmmoComponent>(uid, out var newAmmo))
-                {
-                    ShootOrThrow(uid, mapDirection, gunVelocity, gun, gunUid, user);
-                    continue;
-                }
-                CreateAndFireProjectiles(uid, newAmmo);
+                ShootOrThrow(uid, mapDirection, gunVelocity, gun, gunUid, user);
             }
             else
             {
