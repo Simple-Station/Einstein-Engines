@@ -15,8 +15,7 @@ public sealed class FlashbangSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<FlashbangComponent, AreaFlashEvent>(OnFlash);
-        SubscribeLocalEvent<FlashSoundSuppressionComponent, InventoryRelayedEvent<GetFlashbangedEvent>>(
-            OnInventoryFlashbanged);
+        SubscribeLocalEvent<FlashSoundSuppressionComponent, InventoryRelayedEvent<GetFlashbangedEvent>>(OnInventoryFlashbanged);
         SubscribeLocalEvent<FlashSoundSuppressionComponent, GetFlashbangedEvent>(OnFlashbanged);
         SubscribeLocalEvent<FlashSoundSuppressionComponent, ExaminedEvent>(OnExamined);
     }
