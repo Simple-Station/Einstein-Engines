@@ -69,6 +69,7 @@
       - id: Stunbaton
       - id: Handcuffs
       - id: Handcuffs
+      - id: SecHypo
 
 - type: entity
   id: ClothingBeltJanitorFilled
