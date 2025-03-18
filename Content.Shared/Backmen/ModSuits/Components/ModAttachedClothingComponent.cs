@@ -15,6 +15,15 @@ public sealed partial class ModAttachedClothingComponent : Component
 {
     public const string DefaultClothingContainerId = "replaced-clothing";
 
+    [ViewVariables, AutoNetworkedField]
+    public TimeSpan JamTimer;
+
+    [DataField("jamTimeMin")]
+    public TimeSpan JamTimeIntervalMin = TimeSpan.FromSeconds(14f);
+
+    [DataField("jamTimeMax")]
+    public TimeSpan JamTimeIntervalMax = TimeSpan.FromSeconds(32f);
+
     /// <summary>
     ///     The ID of the piece of clothing that this entity belongs to.
     /// </summary>

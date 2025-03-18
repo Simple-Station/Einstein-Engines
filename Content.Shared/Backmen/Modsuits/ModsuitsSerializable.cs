@@ -80,6 +80,12 @@ public sealed partial class ActivateModEvent : InstantActionEvent
 [Serializable, NetSerializable]
 public sealed partial class TogglePartDoAfterEvent : SimpleDoAfterEvent
 {
+    public bool Force;
+
+    public TogglePartDoAfterEvent(bool force)
+    {
+        Force = force;
+    }
 }
 
 [Serializable, NetSerializable]

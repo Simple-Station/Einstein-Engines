@@ -18,6 +18,9 @@ public sealed partial class ModSuitModComponent : Component
     [DataField, AutoNetworkedField]
     public int ModComplexity = 1;
 
+    [DataField]
+    public List<EntProtoId> IncompatibleMods = new();
+
     /// <summary>
     /// The components to add when activated.
     /// </summary>

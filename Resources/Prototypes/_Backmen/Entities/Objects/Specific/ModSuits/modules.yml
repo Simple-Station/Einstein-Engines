@@ -182,6 +182,9 @@
   - type: ModSuitMod
     modComplexity: 2
     slot: head
+    incompatibleMods:
+    - ModSuitModDiagnosticsHud
+    - ModSuitModSecHud
     components:
     - type: ShowHealthBars
       damageContainers:
@@ -203,6 +206,9 @@
   - type: ModSuitMod
     modComplexity: 2
     slot: head
+    incompatibleMods:
+    - ModSuitModMedHud
+    - ModSuitModSecHud
     components:
       - type: ShowHealthBars
         damageContainers:
@@ -220,6 +226,9 @@
   - type: ModSuitMod
     modComplexity: 2
     slot: head
+    incompatibleMods:
+    - ModSuitModDiagnosticsHud
+    - ModSuitModMedHud
     components:
     - type: ShowJobIcons
     - type: ShowMindShieldIcons

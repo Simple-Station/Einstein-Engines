@@ -33,7 +33,14 @@ public sealed partial class ModSuitComponent : Component
     [DataField, AutoNetworkedField]
     public EntityUid? ActivateActionEntity;
 
-    public ItemSlot BatterySlot = new();
+    /// <summary>
+    /// The slot the battery is in
+    /// </summary>
+    [ViewVariables]
+    public ContainerSlot BatterySlot = default!;
+
+    [ViewVariables]
+    public readonly string BatterySlotId = "mod-battery-slot";
 
     /// <summary>
     ///     All the modules inside the mod suit
@@ -107,7 +114,7 @@ public sealed partial class ModSuitComponent : Component
     public string ModuleContainerId = DefaultModuleContainerId;
 
     [ViewVariables]
-    public Container? Container;
+    public Container Container = default!;
 
     /// <summary>
     ///     Time it takes for this clothing to toggle one part of a mod suit
