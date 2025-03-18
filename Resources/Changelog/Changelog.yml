@@ -13168,3 +13168,10 @@ Entries:
   id: 6982
   time: '2025-03-18T02:34:49.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1969
+- author: AlgumCorrupto
+  changes:
+    - type: Tweak
+      message: Changelings can cut food.
+  id: 6983
+  time: '2025-03-18T02:37:01.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1998
