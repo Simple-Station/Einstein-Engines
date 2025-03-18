@@ -23,6 +23,9 @@
   - type: Tool
     qualities:
       - Prying
+  - type: Utensil
+    types:
+    - Knife
   # Shitmed Change
   - type: Prying
   - type: Scalpel
