@@ -12,7 +12,7 @@
   - type: FlashSoundSuppression # Goobstation
 
 - type: entity
-  parent: [ClothingHeadsetAlt, BaseCommandContraband] # Goobstation
+  parent: ClothingHeadsetAlt # Goobstation
   id: ClothingHeadsetAltCargo
   name: logistics officer's over-ear headset # DeltaV - Logistics Department replacing Cargo
   components:
@@ -28,7 +28,7 @@
     sprite: Clothing/Ears/Headsets/cargo.rsi
 
 - type: entity
-  parent: [ClothingHeadsetAlt, BaseCommandContraband] # Goobstation
+  parent: ClothingHeadsetAlt # Goobstation
   id: ClothingHeadsetAltCentCom
   name: CentCom over-ear headset
   components:
