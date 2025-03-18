@@ -154,24 +154,24 @@
     contents:
       - id: MagazinePistolSubMachineGunRubber
         amount: 4
-      - id: MagazineShotgunRubber
+      - id: MagazineShotgunBeanbag
         amount: 4
       - id: MagazineLightRifleBoxRubber
         amount: 2
 
 - type: entity
   parent: ClothingBackpackDuffelSyndicateAmmo
-  id: ClothingBackpackDuffelSyndicateAmmoFilledUranium
+  id: ClothingBackpackDuffelSyndicateAmmoFilledIncendiary
   name: ammo bundle
   description: "Reloading! Contains 4 magazines for the C-20r, 4 drums for the Bulldog, and 2 ammo boxes for the L6 SAW."
   components:
   - type: StorageFill
     contents:
-      - id: MagazinePistolSubMachineGunUranium
+      - id: MagazinePistolSubMachineGunIncendiary
         amount: 4
-      - id: MagazineShotgunUranium
+      - id: MagazineShotgunIncendiary
         amount: 4
-      - id: MagazineLightRifleBoxUranium
+      - id: MagazineLightRifleBoxIncendiary
         amount: 2
 
 - type: entity

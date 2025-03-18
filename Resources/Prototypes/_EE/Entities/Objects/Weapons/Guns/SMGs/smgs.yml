@@ -87,7 +87,6 @@
         whitelist:
           tags:
             - CartridgeCaselessRifle
-        requireDetailRange: false
 
 - type: entity
   name: BRDI R-25
