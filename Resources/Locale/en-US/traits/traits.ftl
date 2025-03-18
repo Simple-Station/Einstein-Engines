@@ -594,3 +594,8 @@ trait-name-ThermographicVisionModule = I.P.C Eye Module: Thermographic Scanner
 trait-description-ThermographicVisionModule =
     Your vision has been enhanced with a Thermographic Scanner. When enabled, it captures a snapshot of the user's surroundings, while highlighting all
     biological life forms. It can even detect individuals through the walls of a station.
+
+trait-name-Vampirism = Vampirism
+trait-description-Vampirism =
+    Your body has evolved to be able to suck blood from beings that contain it and metabolize it into useful compounds.
+    You cannot eat normal food, but drinking blood satiates your hunger and thirst, and also improves your health.
