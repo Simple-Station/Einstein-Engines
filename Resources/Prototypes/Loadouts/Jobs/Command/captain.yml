@@ -188,7 +188,7 @@
     - WeaponPulsePistolCaptain
 
 - type: loadout
-  id: LoadoutBSOTerminus
+  id: LoadoutCaptainTerminus
   category: JobsCommandCaptain
   cost: 0
   canBeHeirloom: true
