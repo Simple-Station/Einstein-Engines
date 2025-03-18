@@ -508,6 +508,10 @@
           productionLength: 2
           entityProduced: MaterialWebSilk1
           hungerCost: 1 
+    - !type:TraitAddTag
+      tags: 
+        - SpiderCraft 
+      
 
 - type: trait
   id: BionicArm
@@ -1116,3 +1120,28 @@
         - description: examine-thermal-vision-message
           fontSize: 12
           requireDetailRange: true
+
+- type: trait
+  id: Vampirism # You may port this to EE, you have my permission!
+  category: Physical
+  points: -3 
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
+  functions:
+  - !type:TraitAddComponent
+    components:
+      - type: Vampirism
+        succDelay: 3
+        specialDigestible: # Vampires cannot eat food chat is that real
+          tags:
+          - Pill
+          - Crayon
+          - Paper

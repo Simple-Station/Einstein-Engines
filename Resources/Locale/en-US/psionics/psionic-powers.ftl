@@ -192,6 +192,14 @@ assay-power-initialization-feedback =
     I can cast my will upon them, divining the inner nature of others.
 assay-power-metapsionic-feedback = {CAPITALIZE($entity)} bears a spark of the divine's judgment, they have drunk deeply of the cup of knowledge.
 
+# Anoigo Power
+action-name-anoigo = Anoigo
+action-description-anoigo = Open locked and bolted doors.
+anoigo-power-initialization-feedback=
+    Knowledge arrived to me in a bottle alongside the shores of Entropy.
+    Gatekeepers of riches and secrets can be persuaded if you speak their tongue.
+anoigo-power-metapsionic-feedback = {CAPITALIZE($entity)} possesses the Gatekeeper's tongue.
+
 # Entity Specific Feedback Messages
 ifrit-feedback = A spirit of Gehenna, bound by the will of a powerful psychic
 prober-feedback = A mirror into the end of time, the screaming of dead stars emanates from this machine
