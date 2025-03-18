@@ -28,7 +28,8 @@ public sealed partial class PowerCellSystem
             if (!TryGetBatteryFromSlot(uid, out var batteryEnt, out var battery, slot))
                 continue;
 
-            if (_battery.TryUseCharge(batteryEnt.Value, comp.DrawRate, battery))
+            // TCJ: "Multiplying by frameTime to make this tick-invariant. Otherwise it'll draw 30x to 60x faster than you expect."
+            if (_battery.TryUseCharge(batteryEnt.Value, comp.DrawRate * frameTime, battery))
                 continue;
 
             var ev = new PowerCellSlotEmptyEvent();
