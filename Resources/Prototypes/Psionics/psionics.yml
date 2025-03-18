@@ -453,7 +453,7 @@
       assayFeedback: power-overwhelming-power-feedback
     - !type:AddPsionicPsychognomicDescriptors
       psychognomicDescriptor: OVERWHELMING
-  powerSlotCost: 2
+  powerSlotCost: 0
 
 - type: psionicPower
   id: LowDampening
