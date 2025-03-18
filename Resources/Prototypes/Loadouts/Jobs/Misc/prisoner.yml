@@ -7,7 +7,7 @@
 
 # Equipment
 - type: loadout
-  id: LoadoutPrisonerCannabisSeeds
+  id: LoadoutPrisonerEquipmentBotanySeedsCannabis
   category: JobsZMiscPrisoner
   cost: 1
   requirements:
@@ -18,7 +18,7 @@
     - CannabisSeeds
 
 - type: loadout
-  id: LoadoutPrisonerTobaccoSeeds
+  id: LoadoutPrisonerEquipmentBotanySeedsTobacco
   category: JobsZMiscPrisoner
   cost: 1
   requirements:
@@ -29,7 +29,7 @@
     - TobaccoSeeds
 
 - type: loadout
-  id: LoadoutPrisonerMutagenBottle
+  id: LoadoutPrisonerEquipmentBotanyMutagenBottle
   category: JobsZMiscPrisoner
   cost: 2
   requirements:
@@ -40,7 +40,7 @@
     - UnstableMutagenChemistryBottle
 
 - type: loadout
-  id: LoadoutPrisonerDropper
+  id: LoadoutPrisonerEquipmentBotanyDropper
   category: JobsZMiscPrisoner
   cost: 0
   requirements:
@@ -51,7 +51,7 @@
     - Dropper
 
 - type: loadout
-  id: LoadoutPrisonerPlantAnalyzer
+  id: LoadoutPrisonerEquipmentBotanyPlantAnalyzer
   category: JobsZMiscPrisoner
   cost: 2
   requirements:
@@ -62,7 +62,7 @@
     - PlantAnalyzer
 
 - type: loadout
-  id: LoadoutPrisonerRollingPin
+  id: LoadoutPrisonerEquipmentRollingPin
   category: JobsZMiscPrisoner
   cost: 1
   requirements:
@@ -73,7 +73,7 @@
     - RollingPin
 
 - type: loadout
-  id: LoadoutPrisonerPlasmaShiv
+  id: LoadoutPrisonerEquipmentPlasmaShiv
   category: JobsZMiscPrisoner
   cost: 5
   requirements:
@@ -81,13 +81,110 @@
       jobs:
         - Prisoner
   items:
-    - PlasmaShiv
+    - PlasmaShiv # this is probably a bit strong but i want some reason to take this over smashing a random lightbulb
 
 # Eyes
 
 # Gloves
 
 # Head
+- type: loadout
+  id: LoadoutPrisonerClothingHeadPirateHat
+  category: JobsZMiscPrisoner
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPrisonerHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - Prisoner
+  items:
+    - ClothingHeadHatPirate
+
+- type: loadout
+  id: LoadoutPrisonerClothingHeadPirateTricord
+  category: JobsZMiscPrisoner
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPrisonerHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - Prisoner
+  items:
+    - ClothingHeadHatPirateTricord
+
+- type: loadout
+  id: LoadoutPrisonerClothingHeadPyjamasBlack
+  category: JobsZMiscPrisoner
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPrisonerHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - Prisoner
+  items:
+    - ClothingHeadPyjamaSyndicateBlack
+
+- type: loadout
+  id: LoadoutPrisonerClothingHeadPyjamasPink
+  category: JobsZMiscPrisoner
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPrisonerHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - Prisoner
+  items:
+    - ClothingHeadPyjamaSyndicatePink
+
+- type: loadout
+  id: LoadoutPrisonerClothingHeadPyjamasRed
+  category: JobsZMiscPrisoner
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPrisonerHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - Prisoner
+  items:
+    - ClothingHeadPyjamaSyndicateRed
+
+- type: loadout
+  id: LoadoutPrisonerClothingHeadOutlawHat
+  category: JobsZMiscPrisoner
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPrisonerHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - Prisoner
+  items:
+    - ClothingHeadHatOutlawHat
+
+- type: loadout
+  id: LoadoutPrisonerClothingHeadSyndieCap
+  category: JobsZMiscPrisoner
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPrisonerHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - Prisoner
+  items:
+    - ClothingHeadHatSyndie
 
 # Id
 
@@ -96,12 +193,53 @@
 # Mask
 
 # Outer
+- type: loadout
+  id: LoadoutPrisonerClothingOuterPirateGarb
+  category: JobsZMiscPrisoner
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPrisonerOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Prisoner
+  items:
+    - ClothingOuterCoatPirate
+
+- type: loadout
+  id: LoadoutPrisonerClothingOuterSyndieCoat
+  category: JobsZMiscPrisoner
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPrisonerOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Prisoner
+  items:
+    - ClothingOuterWinterSyndie
 
 # Shoes
+# no pirate boots, sad
+- type: loadout
+  id: LoadoutPrisonerClothingShoesSyndieBoots
+  category: JobsZMiscPrisoner
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPrisonerShoes
+    - !type:CharacterJobRequirement
+      jobs:
+        - Prisoner
+  items:
+    - ClothingShoesBootsWinterSyndicate
 
 # Uniforms
 - type: loadout
-  id: LoadoutPrisonerPrisonJumpsuit
+  id: LoadoutPrisonerClothingUniformPrisonJumpsuit
   category: JobsZMiscPrisoner
   cost: 0
   exclusive: true
@@ -115,7 +253,7 @@
     - ClothingUniformJumpsuitPrisoner
 
 - type: loadout
-  id: LoadoutPrisonerPrisonJumpskirt
+  id: LoadoutPrisonerClothingUniformPrisonJumpskirt
   category: JobsZMiscPrisoner
   cost: 0
   exclusive: true
@@ -127,3 +265,87 @@
         - Prisoner
   items:
     - ClothingUniformJumpskirtPrisoner
+
+- type: loadout
+  id: LoadoutPrisonerClothingUniformPirateSlops
+  category: JobsZMiscPrisoner
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPrisonerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Prisoner
+  items:
+    - ClothingUniformJumpsuitPirate
+
+- type: loadout
+  id: LoadoutPrisonerClothingUniformPyjamasBlack
+  category: JobsZMiscPrisoner
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPrisonerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Prisoner
+  items:
+    - ClothingUniformJumpsuitPyjamaSyndicateBlack
+
+- type: loadout
+  id: LoadoutPrisonerClothingUniformPyjamasPink
+  category: JobsZMiscPrisoner
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPrisonerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Prisoner
+  items:
+    - ClothingUniformJumpsuitPyjamaSyndicatePink
+
+- type: loadout
+  id: LoadoutPrisonerClothingUniformPyjamasRed
+  category: JobsZMiscPrisoner
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPrisonerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Prisoner
+  items:
+    - ClothingUniformJumpsuitPyjamaSyndicateRed
+
+- type: loadout
+  id: LoadoutPrisonerClothingUniformSyndieSuit
+  category: JobsZMiscPrisoner
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPrisonerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Prisoner
+  items:
+    - ClothingUniformJumpsuitSyndieFormal
+
+- type: loadout
+  id: LoadoutPrisonerClothingUniformSyndieDress
+  category: JobsZMiscPrisoner
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPrisonerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Prisoner
+  items:
+    - ClothingUniformJumpskirtSyndieFormalDress

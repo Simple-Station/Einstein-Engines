@@ -30,10 +30,24 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutJOBHead
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutJOBHead
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutPrisonerClothingHeadPirateHat
+    - type: loadout
+      id: LoadoutPrisonerClothingHeadPirateTricord
+    - type: loadout
+      id: LoadoutPrisonerClothingHeadPyjamasBlack
+    - type: loadout
+      id: LoadoutPrisonerClothingHeadPyjamasPink
+    - type: loadout
+      id: LoadoutPrisonerClothingHeadPyjamasRed
+    - type: loadout
+      id: LoadoutPrisonerClothingHeadOutlawHat
+    - type: loadout
+      id: LoadoutPrisonerClothingHeadSyndieCap
 #
 #- type: characterItemGroup
 #  id: LoadoutJOBId
@@ -50,21 +64,39 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutJOBOuter
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutPrisonerOuter
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutPrisonerClothingOuterPirateGarb
+    - type: loadout
+      id: LoadoutPrisonerClothingOuterSyndieCoat
 #
-#- type: characterItemGroup
-#  id: LoadoutJOBShoes
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutPrisonerShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutPrisonerClothingShoesSyndieBoots
 #
 - type: characterItemGroup
   id: LoadoutPrisonerUniforms
   maxItems: 1
   items:
     - type: loadout
-      id: LoadoutPrisonerPrisonJumpsuit
+      id: LoadoutPrisonerClothingUniformPrisonJumpsuit
     - type: loadout
-      id: LoadoutPrisonerPrisonJumpskirt
+      id: LoadoutPrisonerClothingUniformPrisonJumpskirt
+    - type: loadout
+      id: LoadoutPrisonerClothingUniformPirateSlops
+    - type: loadout
+      id: LoadoutPrisonerClothingUniformPyjamasBlack
+    - type: loadout
+      id: LoadoutPrisonerClothingUniformPyjamasPink
+    - type: loadout
+      id: LoadoutPrisonerClothingUniformPyjamasRed
+    - type: loadout
+      id: LoadoutPrisonerClothingUniformSyndieSuit
+    - type: loadout
+      id: LoadoutPrisonerClothingUniformSyndieDress

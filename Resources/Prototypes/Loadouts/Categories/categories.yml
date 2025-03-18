@@ -292,7 +292,7 @@
 - type: loadoutCategory
   id: JobsServiceReporter
 
-  # Service
+  # Misc
 - type: loadoutCategory
   id: JobsZMisc # this breaks convention a bit but the oddballs should be after everything else
   subCategories: # this can also be for unique/station-specific jobs like boxer/gladiator
