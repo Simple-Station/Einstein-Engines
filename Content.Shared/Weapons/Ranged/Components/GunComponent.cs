@@ -7,6 +7,7 @@ using Robust.Shared.GameStates;
 using Robust.Shared.Map;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 using Content.Shared._Goobstation.Weapons.Multishot;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Weapons.Ranged.Components;
 
@@ -139,6 +140,15 @@ public sealed partial class GunComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public bool CanAltFire = true;
+
+    /// <summary>
+    /// Projectile to spawn when alt-firing.
+    /// </summary>
+    /// <remarks>
+    /// Replace when I implement a better system for alt-firing. This will work for now...
+    /// </remarks>
+    [DataField, AutoNetworkedField]
+    public EntProtoId? AltFireProjectile = null;
 
     /// <summary>
     /// Where the gun is being requested to shoot.

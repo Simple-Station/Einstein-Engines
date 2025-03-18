@@ -64,7 +64,7 @@ public sealed partial class GunSystem : SharedGunSystem
     }
 
     public override void Shoot(EntityUid gunUid, GunComponent gun, List<(EntityUid? Entity, IShootable Shootable)> ammo,
-        EntityCoordinates fromCoordinates, EntityCoordinates toCoordinates, out bool userImpulse, EntityUid? user = null, bool throwItems = false)
+        EntityCoordinates fromCoordinates, EntityCoordinates toCoordinates, out bool userImpulse, EntityUid? user = null, bool throwItems = false, bool? altFire = false)
     {
         userImpulse = true;
 
@@ -108,156 +108,172 @@ public sealed partial class GunSystem : SharedGunSystem
                 continue;
             }
 
-            switch (shootable)
+            if (altFire == true)
             {
-                // Cartridge shoots something else
-                case CartridgeAmmoComponent cartridge:
-                    if (!cartridge.Spent)
-                    {
-                        var uid = Spawn(cartridge.Prototype, fromEnt);
-                        CreateAndFireProjectiles(uid, cartridge);
+                var uid = Spawn(gun.AltFireProjectile, fromEnt); // remind me to update this later to be more modular
 
-                        RaiseLocalEvent(ent!.Value, new AmmoShotEvent()
+                // I will prolly refine this more later but this'll work for now
+                if (!TryComp<AmmoComponent>(uid, out var newAmmo))
+                {
+                    ShootOrThrow(uid, mapDirection, gunVelocity, gun, gunUid, user);
+                    continue;
+                }
+                CreateAndFireProjectiles(uid, newAmmo);
+            }
+            else
+            {
+
+                switch (shootable)
+                {
+                    // Cartridge shoots something else
+                    case CartridgeAmmoComponent cartridge:
+                        if (!cartridge.Spent)
                         {
-                            FiredProjectiles = shotProjectiles,
-                        });
+                            var uid = Spawn(cartridge.Prototype, fromEnt);
+                            CreateAndFireProjectiles(uid, cartridge);
 
-                        SetCartridgeSpent(ent.Value, cartridge, true);
-
-                        if (cartridge.DeleteOnSpawn)
-                            Del(ent.Value);
-                    }
-                    else
-                    {
-                        userImpulse = false;
-                        Audio.PlayPredicted(gun.SoundEmpty, gunUid, user);
-                    }
-
-                    // Something like ballistic might want to leave it in the container still
-                    if (!cartridge.DeleteOnSpawn && !Containers.IsEntityInContainer(ent!.Value))
-                        EjectCartridge(ent.Value, angle, gunComp: gun);
-
-                    Dirty(ent!.Value, cartridge);
-                    break;
-                // Ammo shoots itself
-                case AmmoComponent newAmmo:
-                    if (ent == null)
-                        break;
-                    CreateAndFireProjectiles(ent.Value, newAmmo);
-
-                    break;
-                case HitscanPrototype hitscan:
-
-                    EntityUid? lastHit = null;
-
-                    var from = fromMap;
-                    // can't use map coords above because funny FireEffects
-                    var fromEffect = fromCoordinates;
-                    var dir = mapDirection.Normalized();
-
-                    //in the situation when user == null, means that the cannon fires on its own (via signals). And we need the gun to not fire by itself in this case
-                    var lastUser = user ?? gunUid;
-
-                    if (hitscan.Reflective != ReflectType.None)
-                    {
-                        for (var reflectAttempt = 0; reflectAttempt < 3; reflectAttempt++)
-                        {
-                            var ray = new CollisionRay(from.Position, dir, hitscan.CollisionMask);
-                            var rayCastResults =
-                                Physics.IntersectRay(from.MapId, ray, hitscan.MaxLength, lastUser, false).ToList();
-                            if (!rayCastResults.Any())
-                                break;
-
-                            var raycastEvent = new HitScanAfterRayCastEvent(rayCastResults);
-                            RaiseLocalEvent(lastUser, ref raycastEvent);
-
-                            if (raycastEvent.RayCastResults == null)
-                                break;
-
-                            var result = raycastEvent.RayCastResults[0];
-
-                            // Check if laser is shot from in a container
-                            if (!_container.IsEntityOrParentInContainer(lastUser))
+                            RaiseLocalEvent(ent!.Value, new AmmoShotEvent()
                             {
-                                // Checks if the laser should pass over unless targeted by its user
-                                foreach (var collide in rayCastResults)
+                                FiredProjectiles = shotProjectiles,
+                            });
+
+                            SetCartridgeSpent(ent.Value, cartridge, true);
+
+                            if (cartridge.DeleteOnSpawn)
+                                Del(ent.Value);
+                        }
+                        else
+                        {
+                            userImpulse = false;
+                            Audio.PlayPredicted(gun.SoundEmpty, gunUid, user);
+                        }
+
+                        // Something like ballistic might want to leave it in the container still
+                        if (!cartridge.DeleteOnSpawn && !Containers.IsEntityInContainer(ent!.Value))
+                            EjectCartridge(ent.Value, angle, gunComp: gun);
+
+                        Dirty(ent!.Value, cartridge);
+                        break;
+                    // Ammo shoots itself
+                    case AmmoComponent newAmmo:
+                        if (ent == null)
+                            break;
+                        CreateAndFireProjectiles(ent.Value, newAmmo);
+
+                        break;
+                    case HitscanPrototype hitscan:
+
+                        EntityUid? lastHit = null;
+
+                        var from = fromMap;
+                        // can't use map coords above because funny FireEffects
+                        var fromEffect = fromCoordinates;
+                        var dir = mapDirection.Normalized();
+
+                        //in the situation when user == null, means that the cannon fires on its own (via signals). And we need the gun to not fire by itself in this case
+                        var lastUser = user ?? gunUid;
+
+                        if (hitscan.Reflective != ReflectType.None)
+                        {
+                            for (var reflectAttempt = 0; reflectAttempt < 3; reflectAttempt++)
+                            {
+                                var ray = new CollisionRay(from.Position, dir, hitscan.CollisionMask);
+                                var rayCastResults =
+                                    Physics.IntersectRay(from.MapId, ray, hitscan.MaxLength, lastUser, false).ToList();
+                                if (!rayCastResults.Any())
+                                    break;
+
+                                var raycastEvent = new HitScanAfterRayCastEvent(rayCastResults);
+                                RaiseLocalEvent(lastUser, ref raycastEvent);
+
+                                if (raycastEvent.RayCastResults == null)
+                                    break;
+
+                                var result = raycastEvent.RayCastResults[0];
+
+                                // Check if laser is shot from in a container
+                                if (!_container.IsEntityOrParentInContainer(lastUser))
                                 {
-                                    if (collide.HitEntity != gun.Target &&
-                                        CompOrNull<RequireProjectileTargetComponent>(collide.HitEntity)?.Active == true)
+                                    // Checks if the laser should pass over unless targeted by its user
+                                    foreach (var collide in rayCastResults)
                                     {
-                                        continue;
+                                        if (collide.HitEntity != gun.Target &&
+                                            CompOrNull<RequireProjectileTargetComponent>(collide.HitEntity)?.Active == true)
+                                        {
+                                            continue;
+                                        }
+
+                                        result = collide;
+                                        break;
+                                    }
+                                }
+
+                                var hit = result.HitEntity;
+                                lastHit = hit;
+
+                                FireEffects(fromEffect, result.Distance, dir.Normalized().ToAngle(), hitscan, hit);
+
+                                var ev = new HitScanReflectAttemptEvent(user, gunUid, hitscan.Reflective, dir, false);
+                                RaiseLocalEvent(hit, ref ev);
+
+                                if (!ev.Reflected)
+                                    break;
+
+                                fromEffect = Transform(hit).Coordinates;
+                                from = fromEffect.ToMap(EntityManager, _transform);
+                                dir = ev.Direction;
+                                lastUser = hit;
+                            }
+                        }
+
+                        if (lastHit != null)
+                        {
+                            var hitEntity = lastHit.Value;
+                            if (hitscan.StaminaDamage > 0f)
+                                _stamina.TakeStaminaDamage(hitEntity, hitscan.StaminaDamage, source: user);
+
+                            var dmg = hitscan.Damage;
+
+                            var hitName = ToPrettyString(hitEntity);
+                            if (dmg != null)
+                                dmg = Damageable.TryChangeDamage(hitEntity, dmg, origin: user);
+
+                            // check null again, as TryChangeDamage returns modified damage values
+                            if (dmg != null)
+                            {
+                                if (!Deleted(hitEntity))
+                                {
+                                    if (dmg.AnyPositive())
+                                    {
+                                        _color.RaiseEffect(Color.Red, new List<EntityUid>() { hitEntity }, Filter.Pvs(hitEntity, entityManager: EntityManager));
                                     }
 
-                                    result = collide;
-                                    break;
+                                    // TODO get fallback position for playing hit sound.
+                                    PlayImpactSound(hitEntity, dmg, hitscan.Sound, hitscan.ForceSound);
                                 }
-                            }
 
-                            var hit = result.HitEntity;
-                            lastHit = hit;
-
-                            FireEffects(fromEffect, result.Distance, dir.Normalized().ToAngle(), hitscan, hit);
-
-                            var ev = new HitScanReflectAttemptEvent(user, gunUid, hitscan.Reflective, dir, false);
-                            RaiseLocalEvent(hit, ref ev);
-
-                            if (!ev.Reflected)
-                                break;
-
-                            fromEffect = Transform(hit).Coordinates;
-                            from = fromEffect.ToMap(EntityManager, _transform);
-                            dir = ev.Direction;
-                            lastUser = hit;
-                        }
-                    }
-
-                    if (lastHit != null)
-                    {
-                        var hitEntity = lastHit.Value;
-                        if (hitscan.StaminaDamage > 0f)
-                            _stamina.TakeStaminaDamage(hitEntity, hitscan.StaminaDamage, source: user);
-
-                        var dmg = hitscan.Damage;
-
-                        var hitName = ToPrettyString(hitEntity);
-                        if (dmg != null)
-                            dmg = Damageable.TryChangeDamage(hitEntity, dmg, origin: user);
-
-                        // check null again, as TryChangeDamage returns modified damage values
-                        if (dmg != null)
-                        {
-                            if (!Deleted(hitEntity))
-                            {
-                                if (dmg.AnyPositive())
+                                if (user != null)
                                 {
-                                    _color.RaiseEffect(Color.Red, new List<EntityUid>() { hitEntity }, Filter.Pvs(hitEntity, entityManager: EntityManager));
+                                    Logs.Add(LogType.HitScanHit,
+                                        $"{ToPrettyString(user.Value):user} hit {hitName:target} using hitscan and dealt {dmg.GetTotal():damage} damage");
                                 }
-
-                                // TODO get fallback position for playing hit sound.
-                                PlayImpactSound(hitEntity, dmg, hitscan.Sound, hitscan.ForceSound);
-                            }
-
-                            if (user != null)
-                            {
-                                Logs.Add(LogType.HitScanHit,
-                                    $"{ToPrettyString(user.Value):user} hit {hitName:target} using hitscan and dealt {dmg.GetTotal():damage} damage");
-                            }
-                            else
-                            {
-                                Logs.Add(LogType.HitScanHit,
-                                    $"{hitName:target} hit by hitscan dealing {dmg.GetTotal():damage} damage");
+                                else
+                                {
+                                    Logs.Add(LogType.HitScanHit,
+                                        $"{hitName:target} hit by hitscan dealing {dmg.GetTotal():damage} damage");
+                                }
                             }
                         }
-                    }
-                    else
-                    {
-                        FireEffects(fromEffect, hitscan.MaxLength, dir.ToAngle(), hitscan);
-                    }
+                        else
+                        {
+                            FireEffects(fromEffect, hitscan.MaxLength, dir.ToAngle(), hitscan);
+                        }
 
-                    Audio.PlayPredicted(gun.SoundGunshotModified, gunUid, user);
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
+                        Audio.PlayPredicted(gun.SoundGunshotModified, gunUid, user);
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
             }
         }
 
