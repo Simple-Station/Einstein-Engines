@@ -27,12 +27,13 @@ public sealed class FateDiceSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
+
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<FateDiceComponent, DiceRollEvent>(OnDiceRoll);
-        SubscribeLocalEvent<FateDiceComponent, PickupAttemptEvent>(OnPickupAttempt);
+        SubscribeLocalEvent<FateDiceComponent, GettingPickedUpAttemptEvent>(OnPickupAttempt);
     }
 
     public override void Update(float frameTime)
@@ -48,10 +49,12 @@ public sealed class FateDiceSystem : EntitySystem
                 RemoveDice(uid, dice);
         }
     }
+
     private void RemoveDice(EntityUid uid, FateDiceComponent dice)
     {
-        // TODO: Add some guards to prevent spawning of invalid items
-        var replaced = SpawnAtPosition(dice.ToReplaceWhenUsedUp, uid.ToCoordinates());
+        // TODO: Add some guards to prevent spawning of invalid items.
+
+        var replaced = SpawnAtPosition(dice.ToReplace, uid.ToCoordinates());
         _audio.PlayPvs(dice.DeletedSound, replaced);
 
         QueueDel(uid);
@@ -71,12 +74,12 @@ public sealed class FateDiceSystem : EntitySystem
             _ghost.DoGhostBooEvent(light);
         }
 
+        // do the artifact activation
         var ev = new ArtifactActivatedEvent
         {
             Activator = dice.LastUser
         };
         RaiseLocalEvent(uid, ev, true);
-
         dice.ActTime = null;
 
         RemoveEffecComponentsFromDice(uid, dice);
@@ -86,10 +89,11 @@ public sealed class FateDiceSystem : EntitySystem
     // This is unshamefully yanked from EnterNode function from ArtifactSystem
     private void AddEffectComponetsToDice(EntityUid uid, FateDiceComponent dice)
     {
-        if (dice.LastRolledNumber is null)
+        if (dice.LastRolledNumber is null
+        || dice.LastRolledNumber > dice.Effects.Count)
             return;
 
-        var effectProto = _prototype.Index<ArtifactEffectPrototype>(dice.Effects[(int)dice.LastRolledNumber - 1]);
+        var effectProto = _prototype.Index<ArtifactEffectPrototype>(dice.Effects[(int) dice.LastRolledNumber - 1]);
         foreach (var (name, entry) in effectProto.Components.Concat(effectProto.PermanentComponents))
         {
             var reg = _componentFactory.GetRegistration(name);
@@ -104,6 +108,8 @@ public sealed class FateDiceSystem : EntitySystem
             }
 
             var comp = (Component) _componentFactory.GetComponent(reg);
+
+            // TODO: Fix obsolete.
             comp.Owner = uid;
 
             var temp = (object) comp;
@@ -113,9 +119,12 @@ public sealed class FateDiceSystem : EntitySystem
         }
     }
 
+
+    // This is unshamefully yanked from ExitNode function from ArtifactSystem
     private void RemoveEffecComponentsFromDice(EntityUid uid, FateDiceComponent dice)
     {
-        if (dice.LastRolledNumber is null)
+        if (dice.LastRolledNumber is null
+        || dice.LastRolledNumber > dice.Effects.Count)
             return;
 
         var effect = _prototype.Index<ArtifactEffectPrototype>(dice.Effects[(int) dice.LastRolledNumber - 1]);
@@ -129,7 +138,10 @@ public sealed class FateDiceSystem : EntitySystem
             if (entityPrototype?.Components.TryGetComponent(name, out var entry) ?? false)
             {
                 var comp = (Component) _componentFactory.GetComponent(name);
+
+                // TODO: Fix obsolete.
                 comp.Owner = uid;
+
                 var temp = (object) comp;
                 _serialization.CopyTo(entry, ref temp);
                 EntityManager.RemoveComponent(uid, temp!.GetType());
@@ -140,7 +152,6 @@ public sealed class FateDiceSystem : EntitySystem
             EntityManager.RemoveComponentDeferred(uid, _componentFactory.GetRegistration(name).Type);
         }
     }
-
 
     // basically select all components from the effect prototype and apply them directly to the dice
     public void OnDiceRoll(EntityUid uid, FateDiceComponent fateDice, DiceRollEvent args)
@@ -157,18 +168,20 @@ public sealed class FateDiceSystem : EntitySystem
         // This is needed for some artifact effects properly work.
         RaiseLocalEvent(uid, new ArtifactNodeEnteredEvent(_random.Next()));
 
-        // TODO: Drop dice on the ground if it's in a mob's container.
+        // TODO: Drop dice on the ground if it's in someone's hand.
 
         fateDice.RemainingUses--;
         if (fateDice.RemainingUses <= 0)
             fateDice.DelTime = _timing.CurTime + TimeSpan.FromSeconds(fateDice.TimeToDelete);
     }
 
-    public void OnPickupAttempt(EntityUid uid, FateDiceComponent fateDice, PickupAttemptEvent args)
+    public void OnPickupAttempt(EntityUid uid, FateDiceComponent fateDice, GettingPickedUpAttemptEvent args)
     {
         if (fateDice.RemainingUses <= 0)
         {
+            // TODO: this doesn't seems to prevent the dice from being picked up.
             args.Cancel();
+
             return;
         }
         fateDice.LastUser = args.User;
