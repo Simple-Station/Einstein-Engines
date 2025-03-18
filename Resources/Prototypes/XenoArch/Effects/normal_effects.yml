@@ -693,3 +693,66 @@
     maxSpawns: 1
     spawns:
     - id: TeslaEnergyBall
+
+## Dice of fate update ##
+
+- type: artifactEffect
+  id: EffectGib
+  targetDepth: 69
+  effectHint: artifact-hint-gib
+  components:
+  - type: GibArtifact
+
+- type: artifactEffect
+  id: EffectDragon
+  targetDepth: 69
+  effectHint: artifact-hint-dragon
+  components:
+  - type: GameRuleArtifact
+    rules:
+    - DragonSpawn
+
+- type: artifactEffect
+  id: EffectZombie
+  targetDepth: 69
+  effectHint: artifact-hint-dragon
+  components:
+  - type: GameRuleArtifact
+    rules:
+    - ZombieOutbreak
+
+- type: artifactEffect
+  id: EffectImmovableRod
+  targetDepth: 69
+  effectHint: artifact-hint-rod
+  components:
+  - type: GameRuleArtifact
+    rules:
+    - ImmovableRodSpawn
+
+- type: artifactEffect
+  id: EffectMassHallucinations
+  targetDepth: 69
+  effectHint: artifact-hint-hallucinations
+  components:
+  - type: GameRuleArtifact
+    rules:
+    - MassHallucinations
+
+- type: artifactEffect
+  id: EffectMassMeteor
+  targetDepth: 69
+  effectHint: artifact-hint-meteor
+  components:
+  - type: GameRuleArtifact
+    rules:
+    - MeteorSwarm
+
+- type: artifactEffect
+  id: EffectBabelTower
+  targetDepth: 69
+  effectHint: artifact-hint-babel
+  components:
+  - type: GameRuleArtifact
+    rules:
+    - BabelTower
