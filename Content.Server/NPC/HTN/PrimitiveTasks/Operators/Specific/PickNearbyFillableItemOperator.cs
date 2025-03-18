@@ -27,7 +27,8 @@ public sealed partial class PickNearbyFillableItemOperator : HTNOperator
     private PathfindingSystem _pathfinding = default!;
     private SharedHandsSystem _sharedHandsSystem = default!;
     private TagSystem _tagSystem = default!;
-    private ItemSystem _itemSystem = default!;
+
+    private const string TrashTagKey = "Trash";
 
     [DataField] public string RangeKey = NPCBlackboard.FillbotPickupRange;
 
@@ -51,7 +52,6 @@ public sealed partial class PickNearbyFillableItemOperator : HTNOperator
         _sharedMaterialStorage = sysManager.GetEntitySystem<SharedMaterialStorageSystem>();
         _sharedHandsSystem = sysManager.GetEntitySystem<SharedHandsSystem>();
         _tagSystem = sysManager.GetEntitySystem<TagSystem>();
-        _itemSystem = sysManager.GetEntitySystem<ItemSystem>();
     }
 
     public override async Task<(bool Valid, Dictionary<string, object>? Effects)> Plan(NPCBlackboard blackboard,
@@ -92,8 +92,8 @@ public sealed partial class PickNearbyFillableItemOperator : HTNOperator
             // trash only
             if (disposalUnit != null &&
                 (_whitelistSystem.IsWhitelistFail(disposalUnit.Whitelist, target)
-                    || !_tagSystem.HasTag(target, _prototypeManager.Index<TagPrototype>("Trash"))
-                    || _entManager.HasComponent<BodyPartComponent>(target)))
+                    || !_tagSystem.HasTag(target, _prototypeManager.Index<TagPrototype>(TrashTagKey))
+                    || _entManager.HasComponent<BodyPartComponent>(target))) // Robot is unable to insert bodyparts into Disposals for some reason
                 continue;
 
             const float pathRange = SharedInteractionSystem.InteractionRange - 1;
@@ -102,7 +102,7 @@ public sealed partial class PickNearbyFillableItemOperator : HTNOperator
             if (path.Result == PathResult.NoPath)
                 continue;
 
-            return (true, new Dictionary<string, object>()
+            return (true, new()
             {
                 {TargetKey, target},
                 {TargetMoveKey, _entManager.GetComponent<TransformComponent>(target).Coordinates},

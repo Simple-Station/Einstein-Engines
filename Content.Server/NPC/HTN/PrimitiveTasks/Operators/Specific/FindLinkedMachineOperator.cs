@@ -37,7 +37,7 @@ public sealed partial class FindLinkedMachineOperator : HTNOperator
     {
         var owner = blackboard.GetValue<EntityUid>(NPCBlackboard.Owner);
 
-        if (!blackboard.TryGetValue<float>(RangeKey, out var range, _entManager)
+        if (!blackboard.TryGetValue<float>(RangeKey, out _, _entManager)
             || !_entManager.TryGetComponent<FillbotComponent>(owner, out var fillbot)
             || !_entManager.TryGetComponent<DeviceLinkSourceComponent>(owner, out var fillbotlinks)
             || fillbotlinks.LinkedPorts.Count != 1
@@ -50,7 +50,7 @@ public sealed partial class FindLinkedMachineOperator : HTNOperator
         if (path.Result == PathResult.NoPath)
             return (false, null);
 
-        return (true, new Dictionary<string, object>()
+        return (true, new()
         {
             {TargetKey, fillbot.LinkedSinkEntity},
             {TargetMoveKey, _entManager.GetComponent<TransformComponent>(fillbot.LinkedSinkEntity.Value).Coordinates},
