@@ -19,7 +19,6 @@ public sealed partial class BasicEntityAmmoProviderComponent : AmmoProviderCompo
     [DataField("altproto", required: true, customTypeSerializer:typeof(PrototypeIdSerializer<EntityPrototype>))]
     public string AlternateProto = default!;
 
-
     /// <summary>
     ///     Max capacity.
     /// </summary>
