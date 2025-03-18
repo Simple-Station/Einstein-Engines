@@ -13175,3 +13175,12 @@ Entries:
   id: 6983
   time: '2025-03-18T02:37:01.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1998
+- author: CyberLanos
+  changes:
+    - type: Tweak
+      message: >-
+        survival medipen works instantly only in underpressurized (under 50kpa)
+        environment
+  id: 6984
+  time: '2025-03-18T02:56:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1954
