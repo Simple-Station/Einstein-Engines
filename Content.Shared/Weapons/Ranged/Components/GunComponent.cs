@@ -277,6 +277,15 @@ public sealed partial class GunComponent : Component
     /// </summary>
     [DataField]
     public float FireOnDropChance = 0.1f;
+
+    /// <summary>
+    ///     The amount of Force (in Newtons) to eject spent cartridges with.
+    /// </summary>
+    [DataField]
+    public float EjectionForce = 0.04f;
+
+    [DataField]
+    public float EjectionSpeed = 5f;
 }
 
 [Flags]
