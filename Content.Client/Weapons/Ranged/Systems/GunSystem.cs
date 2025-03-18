@@ -175,7 +175,7 @@ public sealed partial class GunSystem : SharedGunSystem
         {
             if (_inputSystem.CmdStates.GetState(altUseKey) != BoundKeyState.Down && gun.CanAltFire) {
                 isAltFiring = true;
-                break;
+                return;
             }
             if (gun.ShotCounter != 0)
                 EntityManager.RaisePredictiveEvent(new RequestStopShootEvent { Gun = GetNetEntity(gunUid) });
