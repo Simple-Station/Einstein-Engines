@@ -13140,3 +13140,12 @@ Entries:
   id: 6980
   time: '2025-03-18T02:10:40.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1995
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Guns can now individually change how much force they eject spent casings
+        with.
+  id: 6981
+  time: '2025-03-18T02:33:52.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1991
