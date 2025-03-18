@@ -13149,3 +13149,22 @@ Entries:
   id: 6981
   time: '2025-03-18T02:33:52.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1991
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: >-
+        Smile no longer does damage, but rather injects a tiny amount of
+        omnizine on hit
+    - type: Tweak
+      message: Smile is no longer effected by most slowness sources
+    - type: Tweak
+      message: Smile has ascended to godhood
+    - type: Tweak
+      message: Smile is no longer effected by gravity
+    - type: Tweak
+      message: Smile now bleeds Nothing
+    - type: Tweak
+      message: Smile can now go under doors
+  id: 6982
+  time: '2025-03-18T02:34:49.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1969
