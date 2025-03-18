@@ -8,7 +8,7 @@ namespace Content.Server.Atmos.EntitySystems
         [Dependency] private readonly IConfigurationManager _cfg = default!;
 
         public bool SpaceWind { get; private set; }
-        public float SpaceWindMaxVelocity { get; private set; }
+        public float SpaceWindMaxForce { get; private set; }
         public float SpaceWindMaxAngularVelocity { get; private set; }
         public float SpaceWindStrengthMultiplier { get; private set; }
         public float SpaceWindKnockdownTime { get; private set; }
@@ -38,7 +38,7 @@ namespace Content.Server.Atmos.EntitySystems
         private void InitializeCVars()
         {
             Subs.CVar(_cfg, CCVars.SpaceWind, value => SpaceWind = value, true);
-            Subs.CVar(_cfg, CCVars.SpaceWindMaxVelocity, value => SpaceWindMaxVelocity = value, true);
+            Subs.CVar(_cfg, CCVars.SpaceWindMaxForce, value => SpaceWindMaxForce = value, true);
             Subs.CVar(_cfg, CCVars.SpaceWindMaxAngularVelocity, value => SpaceWindMaxAngularVelocity = value, true);
             Subs.CVar(_cfg, CCVars.SpaceWindStrengthMultiplier, value => SpaceWindStrengthMultiplier = value, true);
             Subs.CVar(_cfg, CCVars.SpaceWindKnockdownTime, value => SpaceWindKnockdownTime = value, true);
