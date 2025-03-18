@@ -47,10 +47,10 @@
       - ArrowEnergy
       - ArrowDisabler
       - ArrowFiery
-      - ArrowFreeze
+      # - ArrowFreeze
       - ArrowExplosive
       - ArrowXray
-      - ArrowBee
+      # - ArrowBee
   - type: FoldingWeapon
   - type: UserInterface
     interfaces:

@@ -25,14 +25,14 @@
   color: red
   protoId: ArrowFiery
 
-- type: selectableAmmo
-  id: ArrowFreeze
-  desc: Freezing hardlight arrow. Deals less damage. Freezes the victim.
-  icon:
-    sprite: Objects/Weapons/Guns/Projectiles/magic.rsi
-    state: ice
-  color: blue
-  protoId: ArrowFreeze
+# - type: selectableAmmo
+#   id: ArrowFreeze
+#   desc: Freezing hardlight arrow. Deals less damage. Freezes the victim.
+#   icon:
+#     sprite: Objects/Weapons/Guns/Projectiles/magic.rsi
+#     state: ice
+#   color: blue
+#   protoId: ArrowFreeze
 
 - type: selectableAmmo
   id: ArrowExplosive
@@ -52,11 +52,11 @@
   color: "#1AE51A"
   protoId: ArrowXray
 
-- type: selectableAmmo
-  id: ArrowBee
-  desc: Bee hardlight arrow. Summons angry bees on hit.
-  icon:
-    sprite: _Goobstation/Objects/Weapons/Grenades/beenades.rsi
-    state: icon
-  color: yellow
-  protoId: ArrowBee
+# - type: selectableAmmo
+#   id: ArrowBee
+#   desc: Bee hardlight arrow. Summons angry bees on hit.
+#   icon:
+#     sprite: _Goobstation/Objects/Weapons/Grenades/beenades.rsi
+#     state: icon
+#   color: yellow
+#   protoId: ArrowBee

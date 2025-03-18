@@ -102,22 +102,22 @@
   - type: IgniteOnCollide
     fireStacks: 4
 
-- type: entity
-  parent: [BaseHardlightArrow, BaseHardlightEmbeddableArrow]
-  id: ArrowFreeze
-  name: freezing arrow
-  description: An arrow made from hardlight. This one freezes the victim.
-  components:
-  - type: Sprite
-    color: blue
-  - type: PointLight
-    color: blue
-  - type: Projectile
-    damage:
-      types:
-        Cold: 10
-  - type: ChangeTemperatureOnCollide
-    heat: -300000
+# - type: entity
+#   parent: [BaseHardlightArrow, BaseHardlightEmbeddableArrow]
+#   id: ArrowFreeze
+#   name: freezing arrow
+#   description: An arrow made from hardlight. This one freezes the victim.
+#   components:
+#   - type: Sprite
+#     color: blue
+#   - type: PointLight
+#     color: blue
+#   - type: Projectile
+#     damage:
+#       types:
+#         Cold: 10
+#   - type: ChangeTemperatureOnCollide
+#     heat: -300000
 
 - type: entity
   parent: [BaseHardlightArrow, BaseHardlightEmbeddableArrow]
@@ -170,21 +170,21 @@
   - type: TimedDespawn
     lifetime: 2
 
-- type: entity
-  parent: BaseHardlightArrow
-  id: ArrowBee
-  name: bee arrow
-  description: An arrow made from hardlight. This one summons angry bees.
-  components:
-  - type: Sprite
-    color: yellow
-  - type: PointLight
-    color: yellow
-  - type: Projectile
-    deleteOnCollide: true
-    damage:
-      types:
-        Heat: 0
-  - type: SpawnEntitiesOnHit
-    proto: MobAngryBeeWeak
-    amount: 4
+# - type: entity
+#   parent: BaseHardlightArrow
+#   id: ArrowBee
+#   name: bee arrow
+#   description: An arrow made from hardlight. This one summons angry bees.
+#   components:
+#   - type: Sprite
+#     color: yellow
+#   - type: PointLight
+#     color: yellow
+#   - type: Projectile
+#     deleteOnCollide: true
+#     damage:
+#       types:
+#         Heat: 0
+#   - type: SpawnEntitiesOnHit
+#     proto: MobAngryBeeWeak
+#     amount: 4
