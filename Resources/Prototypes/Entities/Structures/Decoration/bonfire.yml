@@ -31,9 +31,9 @@
     sound:
       path: /Audio/Ambience/Objects/fireplace.ogg
   - type: AlwaysHot
-  - type: Construction # Frontier
-    graph: FiresGraph # Frontier
-    node: BonfireNode # Frontier
+  - type: Construction 
+    graph: FiresGraph 
+    node: BonfireNode 
   - type: Tag
     tags:
       - NoPaint
