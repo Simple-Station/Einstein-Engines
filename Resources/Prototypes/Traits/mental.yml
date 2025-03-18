@@ -441,3 +441,60 @@
     - !type:TraitAddPsionics
       psionicPowers:
         - PsychognomyPower
+
+// disable this trait if you also have the ccvar for scary mindbreaking on. it just become free points lol
+- type: trait
+  id: ScaryMindbreak
+  category: Mental
+  points: 6
+  requirements:
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+      - LatentPsychic
+    - !type:CharacterJobRequirement
+      jobs:
+      - Chaplain
+      - Librarian
+      - ResearchDirector
+      - ForensicMantis
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+      - IPC
+    - !type:CharacterTraitRequirement
+      traits:
+      - AnomalousPositronics
+  functions:
+  - !type:TraitAddTag
+    tags:
+    - TraitScaryMindbreaking
+// this doesn't work at all and really should be like a CharacterPsionicRequirement instead of this ungodly mess
+  descriptionExtensions:
+  - description: examine-scary-mindbreak-message
+    fontSize: 12
+    requireDetailRange: true
+    requirements:
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterTraitRequirement
+        traits:
+        - LatentPsychic
+      - !type:CharacterJobRequirement
+        jobs:
+        - Chaplain
+        - Librarian
+        - ResearchDirector
+        - ForensicMantis
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterSpeciesRequirement
+        inverted: true
+        species:
+        - IPC
+      - !type:CharacterTraitRequirement
+        traits:
+        - AnomalousPositronics

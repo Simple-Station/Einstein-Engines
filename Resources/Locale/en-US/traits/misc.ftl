@@ -3,3 +3,5 @@ examine-dermal-armor-message = {CAPITALIZE(POSS-ADJ($entity))} skin seems to be 
 examine-bionic-arm-message = {CAPITALIZE(POSS-ADJ($entity))} arms emit an ever present faint chirp of servomotors.
 examine-bionic-leg-message = {CAPITALIZE(POSS-ADJ($entity))} legs emit an ever present faint chirp of servomotors.
 examine-thermal-vision-message = {CAPITALIZE(POSS-ADJ($entity))} eyes periodically pulse with a menacing red glare.
+
+examine-scary-mindbreak-message = {CAPITALIZE(POSS-ADJ($entity))} eyes holds promise to the Omega Point.
