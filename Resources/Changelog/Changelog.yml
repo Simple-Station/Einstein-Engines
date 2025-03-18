@@ -13191,3 +13191,23 @@ Entries:
   id: 6985
   time: '2025-03-18T03:57:42.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1943
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Most shotguns now have a new "More random" spread pattern. Instead of a
+        perfect fan of projectiles, each projectile has its own random path
+        inside the arc. "Laser Shotguns" like the E-Shotgun use the classic
+        "Perfect fan" style of spread.
+    - type: Tweak
+      message: >-
+        The Kammerer now has a hunting choke, giving it a noticeably tighter
+        spread than other shotguns.
+    - type: Tweak
+      message: >-
+        The sawn-off shotgun now has a significantly wider spread(Making hitting
+        anything reliably beyond 3 tiles quite hard). As a trade-off, it's now a
+        bit like a Super Shotgun. Its projectiles deal 50% bonus damage. 
+  id: 6986
+  time: '2025-03-18T04:32:49.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1997
