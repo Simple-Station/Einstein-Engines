@@ -181,7 +181,7 @@ public sealed partial class GunSystem : SharedGunSystem
                 EntityManager.RaisePredictiveEvent(new RequestStopShootEvent { Gun = GetNetEntity(gunUid) });
                 return;
             }
-            if (_inputSystem.CmdStates.GetState(useKey) != BoundKeyState.Down)
+            if (_inputSystem.CmdStates.GetState(useKey) != BoundKeyState.Down && !isAltFiring)
                 return;
         }
 
