@@ -8,7 +8,7 @@
 # Equipment
 - type: loadout
   id: LoadoutPrisonerCannabisSeeds
-  category: JobsMiscPrisoner
+  category: JobsZMiscPrisoner
   cost: 1
   requirements:
     - !type:CharacterJobRequirement
@@ -19,7 +19,7 @@
 
 - type: loadout
   id: LoadoutPrisonerTobaccoSeeds
-  category: JobsMiscPrisoner
+  category: JobsZMiscPrisoner
   cost: 1
   requirements:
     - !type:CharacterJobRequirement
@@ -30,7 +30,7 @@
 
 - type: loadout
   id: LoadoutPrisonerMutagenBottle
-  category: JobsMiscPrisoner
+  category: JobsZMiscPrisoner
   cost: 2
   requirements:
     - !type:CharacterJobRequirement
@@ -41,7 +41,7 @@
 
 - type: loadout
   id: LoadoutPrisonerDropper
-  category: JobsMiscPrisoner
+  category: JobsZMiscPrisoner
   cost: 0
   requirements:
     - !type:CharacterJobRequirement
@@ -52,7 +52,7 @@
 
 - type: loadout
   id: LoadoutPrisonerPlantAnalyzer
-  category: JobsMiscPrisoner
+  category: JobsZMiscPrisoner
   cost: 2
   requirements:
     - !type:CharacterJobRequirement
@@ -63,7 +63,7 @@
 
 - type: loadout
   id: LoadoutPrisonerRollingPin
-  category: JobsMiscPrisoner
+  category: JobsZMiscPrisoner
   cost: 1
   requirements:
     - !type:CharacterJobRequirement
@@ -74,7 +74,7 @@
 
 - type: loadout
   id: LoadoutPrisonerPlasmaShiv
-  category: JobsMiscPrisoner
+  category: JobsZMiscPrisoner
   cost: 5
   requirements:
     - !type:CharacterJobRequirement
@@ -102,7 +102,7 @@
 # Uniforms
 - type: loadout
   id: LoadoutPrisonerPrisonJumpsuit
-  category: JobsMiscPrisoner
+  category: JobsZMiscPrisoner
   cost: 0
   exclusive: true
   requirements:
@@ -116,7 +116,7 @@
 
 - type: loadout
   id: LoadoutPrisonerPrisonJumpskirt
-  category: JobsMiscPrisoner
+  category: JobsZMiscPrisoner
   cost: 0
   exclusive: true
   requirements:
@@ -126,4 +126,4 @@
       jobs:
         - Prisoner
   items:
-    - ClothingUniformJumpskirtPrisoner
+    - ClothingUniformJumpskirtPrisoners
