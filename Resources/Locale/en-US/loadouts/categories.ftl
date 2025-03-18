@@ -87,6 +87,7 @@ loadout-category-JobsServiceMusician = Musician
 loadout-category-JobsServiceReporter = Reporter
 
 # Misc
+loadout-category-JobsZMisc = Misc
 loadout-category-JobsZMiscAUncategorized = All Misc
 loadout-category-JobsZMiscPrisoner = Prisoner
 
