@@ -101,3 +101,10 @@
         map: [ "enum.AmmoVisualLayers.Tip" ]
         color: "#65fe08"
 
+- type: entity
+  id: CartridgeMagnumShrapnel
+  name: cartridge (.45 magnum shrapnel)
+  parent: BaseCartridgeMagnum
+  components:
+  - type: CartridgeAmmo
+    proto: BulletMagnumShrapnelSpread

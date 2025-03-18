@@ -85,3 +85,11 @@
       - state: tip
         map: [ "enum.AmmoVisualLayers.Tip" ]
         color: "#65fe08"
+
+- type: entity
+  id: CartridgeLightRifleShrapnel
+  name: cartridge (.30 rifle shrapnel)
+  parent: BaseCartridgeLightRifle
+  components:
+  - type: CartridgeAmmo
+    proto: BulletLightRifleShrapnelSpread

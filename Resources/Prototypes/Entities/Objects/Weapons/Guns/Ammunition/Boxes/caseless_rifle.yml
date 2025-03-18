@@ -129,3 +129,27 @@
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
     - state: rubber
+
+- type: entity
+  parent: MagazineBoxCaselessRifle
+  id: MagazineBoxCaselessRifleIncendiary
+  name: ammunition box (.25 caseless incendiary)
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeCaselessRifleIncendiary
+
+- type: entity
+  parent: MagazineBoxCaselessRifle
+  id: MagazineBoxCaselessRifleUranium
+  name: ammunition box (.25 caseless uranium)
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeCaselessRifleUranium
+
+- type: entity
+  parent: MagazineBoxCaselessRifle
+  id: MagazineBoxCaselessRifleShrapnel
+  name: ammunition box (.25 caseless shrapnel)
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeCaselessRifleShrapnel
