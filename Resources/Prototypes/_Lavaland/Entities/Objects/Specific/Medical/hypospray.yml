@@ -19,6 +19,8 @@
     transferAmount: 40
     onlyAffectsMobs: false
     injectOnly: true
+    maxPressure: 50 
+    injectTime: 5
   - type: SolutionContainerManager
     solutions:
       pen:
