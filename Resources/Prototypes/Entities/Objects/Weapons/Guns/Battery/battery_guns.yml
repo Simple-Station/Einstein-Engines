@@ -418,6 +418,9 @@
   id: WeaponLaserCannon
   description: A heavy duty, high powered laser weapon.
   components:
+  - type: Tag
+    tags:
+    - TurretCompatibleWeapon
   - type: Sprite
     sprite: Objects/Weapons/Guns/Battery/laser_cannon.rsi
     layers:
@@ -443,6 +446,7 @@
     bluntStaminaDamageFactor: 1.3333
   - type: DamageOtherOnHit
     staminaCost: 9.5
+
 
 - type: entity
   name: portable particle decelerator
