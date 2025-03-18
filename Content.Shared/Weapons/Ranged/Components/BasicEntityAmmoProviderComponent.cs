@@ -15,6 +15,11 @@ public sealed partial class BasicEntityAmmoProviderComponent : AmmoProviderCompo
     [DataField("proto", required: true, customTypeSerializer:typeof(PrototypeIdSerializer<EntityPrototype>))]
     public string Proto = default!;
 
+    [ViewVariables(VVAccess.ReadWrite)]
+    [DataField("altproto", required: true, customTypeSerializer:typeof(PrototypeIdSerializer<EntityPrototype>))]
+    public string AlternateProto = default!;
+
+
     /// <summary>
     ///     Max capacity.
     /// </summary>

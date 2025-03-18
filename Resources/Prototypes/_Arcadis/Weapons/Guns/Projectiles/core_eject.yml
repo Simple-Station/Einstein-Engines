@@ -1,0 +1,23 @@
+- type: entity
+  id: PelletShotgunHeat
+  name: pellet (.50 heat)
+  categories: [ HideSpawnMenu ]
+  parent: BaseBullet
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    state: buckshot
+  - type: Projectile
+    damage:
+      types:
+        Heat: 10
+
+- type: entity
+  id: PelletShotgunHeatSpread
+  categories: [ HideSpawnMenu ]
+  parent: PelletShotgun
+  components:
+  - type: ProjectileSpread
+    proto: PelletShotgunHeat
+    count: 8
+    spread: 15

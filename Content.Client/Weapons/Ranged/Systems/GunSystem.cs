@@ -167,8 +167,16 @@ public sealed partial class GunSystem : SharedGunSystem
 
         var useKey = gun.UseKey ? EngineKeyFunctions.Use : EngineKeyFunctions.UseSecondary;
 
+        var altUseKey = gun.UseKey ? EngineKeyFunctions.UseSecondary : EngineKeyFunctions.Use;
+
+        var isAltFiring = false;
+
         if (_inputSystem.CmdStates.GetState(useKey) != BoundKeyState.Down && !gun.BurstActivated)
         {
+            if (_inputSystem.CmdStates.GetState(altUseKey) != BoundKeyState.Down && gun.CanAltFire) {
+                isAltFiring = true;
+                break;
+            }
             if (gun.ShotCounter != 0)
                 EntityManager.RaisePredictiveEvent(new RequestStopShootEvent { Gun = GetNetEntity(gunUid) });
             return;

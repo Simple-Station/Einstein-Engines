@@ -1,0 +1,32 @@
+- type: entity
+  name: core-eject shotgun
+  parent: BaseGunWieldable
+  id: WeaponShotgunUltrakillCoreEject
+  description: Uses heat from an internal core as projectiles. Can fire the core as an explosive, though the core takes a significant amount of time to reload.
+  components:
+  - type: Sprite
+    sprite: DeltaV/Objects/Weapons/Guns/Shotguns/db_shotgun.rsi
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,4,0
+    sprite: Objects/Weapons/Guns/Shotguns/db_shotgun_inhands_64x.rsi
+  - type: GunRequiresWield # probably remove later
+  - type: Gun
+    fireRate: 2
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/empty.ogg
+    fireOnDropChance: 0.2
+  - type: BasicEntityAmmoProvider
+    proto: PelletShotgunHeatSpread
+    capacity: 1
+    count: 1
+  - type: UseDelay
+    delay: 1
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 0.75

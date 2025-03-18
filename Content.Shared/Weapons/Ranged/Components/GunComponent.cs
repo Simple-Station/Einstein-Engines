@@ -134,6 +134,12 @@ public sealed partial class GunComponent : Component
     public bool UseKey = true;
 
     /// <summary>
+    /// Whether the gun fires a different projectile on alt-click.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool CanAltFire = true;
+
+    /// <summary>
     /// Where the gun is being requested to shoot.
     /// </summary>
     [ViewVariables]
