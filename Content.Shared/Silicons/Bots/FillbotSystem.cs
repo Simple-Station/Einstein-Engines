@@ -36,7 +36,7 @@ public sealed class FillbotSystem : EntitySystem
         _sharedHandsSystem.TryDrop(uid);
         var newSink = args.RemovedPortUid;
 
-        if(comp.LinkedSinkEntity == newSink)
+        if (comp.LinkedSinkEntity == newSink)
             comp.LinkedSinkEntity = null;
     }
 }

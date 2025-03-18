@@ -77,7 +77,7 @@ public sealed partial class PickNearbyFillableItemOperator : HTNOperator
         foreach (var target in _lookup.GetEntitiesInRange(owner, range))
         {
             // only things the robot can actually pick up
-            if(!_sharedHandsSystem.CanPickupAnyHand(owner, target))
+            if (!_sharedHandsSystem.CanPickupAnyHand(owner, target))
                 continue;
 
             // only things not currently contained by something else
@@ -90,7 +90,7 @@ public sealed partial class PickNearbyFillableItemOperator : HTNOperator
                 continue;
 
             // trash only
-            if(disposalUnit != null &&
+            if (disposalUnit != null &&
                 (_whitelistSystem.IsWhitelistFail(disposalUnit.Whitelist, target)
                     || !_tagSystem.HasTag(target, _prototypeManager.Index<TagPrototype>("Trash"))
                     || _entManager.HasComponent<BodyPartComponent>(target)))
