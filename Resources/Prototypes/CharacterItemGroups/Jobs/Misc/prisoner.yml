@@ -31,7 +31,7 @@
 #  items:
 #
 - type: characterItemGroup
-  id: LoadoutJOBHead
+  id: LoadoutPrisonerHead
   maxItems: 1
   items:
     - type: loadout
