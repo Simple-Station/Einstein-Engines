@@ -1,7 +1,7 @@
 - type: trait
   id: Swashbuckler
   category: Physical
-  points: -2
+  points: -1
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -24,7 +24,7 @@
 - type: trait
   id: Spearmaster
   category: Physical
-  points: -2
+  points: -1
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -47,7 +47,7 @@
 - type: trait
   id: WeaponsGeneralist
   category: Physical
-  points: -2
+  points: -1
   functions:
     - !type:TraitReplaceComponent
       components:
