@@ -12,16 +12,18 @@
     - GladiabotGreen
     - GladiabotBlue
     - GladiabotYellow
+    - SAN
 
 - type: npcFaction
   id: NanoTrasen
   hostile:
-  - SimpleHostile
-  - Syndicate
-  - Xeno
-  - Zombie
-  - Revolutionary
-  - Dragon
+    - SimpleHostile
+    - Syndicate
+    - Xeno
+    - Zombie
+    - Revolutionary
+    - Dragon
+    - SAN
 
 - type: npcFaction
   id: Mouse
@@ -34,28 +36,29 @@
 - type: npcFaction
   id: PetsNT
   hostile:
-  - Mouse
-  - SimpleHostile
-  - Zombie
-  - Xeno
+    - Mouse
+    - SimpleHostile
+    - Zombie
+    - Xeno
 
 - type: npcFaction
   id: SimpleHostile
   friendly:
   - AnimalFriend
   hostile:
-  - NanoTrasen
-  - Syndicate
-  - Passive
-  - PetsNT
-  - Zombie
-  - Revolutionary
-  - GeometerOfBlood
-  - GladiabotFFA
-  - GladiabotRed
-  - GladiabotGreen
-  - GladiabotBlue
-  - GladiabotYellow
+    - NanoTrasen
+    - Syndicate
+    - Passive
+    - PetsNT
+    - Zombie
+    - Revolutionary
+    - GeometerOfBlood
+    - GladiabotFFA
+    - GladiabotRed
+    - GladiabotGreen
+    - GladiabotBlue
+    - GladiabotYellow
+    - SAN
 
 - type: npcFaction
   id: SimpleNeutral
@@ -63,59 +66,63 @@
 - type: npcFaction
   id: Syndicate
   hostile:
-  - NanoTrasen
-  - SimpleHostile
-  - Xeno
-  - PetsNT
-  - Zombie
+    - NanoTrasen
+    - SimpleHostile
+    - Xeno
+    - PetsNT
+    - Zombie
+    - SAN
 
 - type: npcFaction
   id: Xeno
   hostile:
-  - NanoTrasen
-  - Syndicate
-  - Passive
-  - PetsNT
-  - Zombie
-  - Revolutionary
-  - GladiabotFFA
-  - GladiabotRed
-  - GladiabotGreen
-  - GladiabotBlue
-  - GladiabotYellow
+    - NanoTrasen
+    - Syndicate
+    - Passive
+    - PetsNT
+    - Zombie
+    - Revolutionary
+    - GladiabotFFA
+    - GladiabotRed
+    - GladiabotGreen
+    - GladiabotBlue
+    - GladiabotYellow
+    - SAN
 
 - type: npcFaction
   id: Zombie
   hostile:
-  - NanoTrasen
-  - SimpleNeutral
-  - SimpleHostile
-  - Syndicate
-  - Passive
-  - PetsNT
-  - Revolutionary
-  - GladiabotFFA
-  - GladiabotRed
-  - GladiabotGreen
-  - GladiabotBlue
-  - GladiabotYellow
+    - NanoTrasen
+    - SimpleNeutral
+    - SimpleHostile
+    - Syndicate
+    - Passive
+    - PetsNT
+    - Revolutionary
+    - GladiabotFFA
+    - GladiabotRed
+    - GladiabotGreen
+    - GladiabotBlue
+    - GladiabotYellow
+    - SAN
 
 - type: npcFaction
   id: Revolutionary
   hostile:
-  - NanoTrasen
-  - Zombie
-  - SimpleHostile
-  - Dragon
+    - NanoTrasen
+    - Zombie
+    - SimpleHostile
+    - Dragon
+    - SAN
 
 - type: npcFaction
   id: Pibble
   friendly:
   - AnimalFriend
   hostile:
-  - Cat
-  - Birb
-  - Mailman
+    - Cat
+    - Birb
+    - Mailman
 
 - type: npcFaction
   id: Mailman
@@ -123,8 +130,8 @@
 - type: npcFaction
   id: Cat
   hostile:
-  - Mouse
-  - SimpleHostile
+    - Mouse
+    - SimpleHostile
 
 - type: npcFaction
   id: Birb
@@ -191,4 +198,15 @@
     - SimpleHostile
     - Xeno
     - Zombie
+    - Dragon
+
+- type: npcFaction
+  id: SAN
+  hostile:
+    - NanoTrasen
+    - SimpleHostile
+    - Syndicate
+    - Xeno
+    - Zombie
+    - Revolutionary
     - Dragon

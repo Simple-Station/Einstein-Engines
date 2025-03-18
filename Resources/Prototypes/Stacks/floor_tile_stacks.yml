@@ -1,4 +1,4 @@
-﻿- type: stack
+- type: stack
   id: FloorTileSteel
   name: steel tile
   spawn: FloorTileItemSteel
@@ -203,70 +203,80 @@
 
 - type: stack
   id: FloorCarpetRed
-  name: red carpet tile
+  name: red carpet
+  icon: { sprite: Objects/Tiles/tile.rsi, state: carpet-red }
   spawn: FloorCarpetItemRed
   maxCount: 30
   itemSize: 5
 
 - type: stack
   id: FloorCarpetBlack
-  name: block carpet tile
+  name: black carpet
+  icon: { sprite: Objects/Tiles/tile.rsi, state: carpet-black }
   spawn: FloorCarpetItemBlack
   maxCount: 30
   itemSize: 5
 
 - type: stack
   id: FloorCarpetBlue
-  name: blue carpet tile
+  name: blue carpet
+  icon: { sprite: Objects/Tiles/tile.rsi, state: carpet-blue }
   spawn: FloorCarpetItemBlue
   maxCount: 30
   itemSize: 5
 
 - type: stack
   id: FloorCarpetGreen
-  name: green carpet tile
+  name: green carpet
+  icon: { sprite: Objects/Tiles/tile.rsi, state: carpet-green }
   spawn: FloorCarpetItemGreen
   maxCount: 30
   itemSize: 5
 
 - type: stack
   id: FloorCarpetOrange
-  name: orange carpet tile
+  name: orange carpet
+  icon: { sprite: Objects/Tiles/tile.rsi, state: carpet-orange }
   spawn: FloorCarpetItemOrange
   maxCount: 30
   itemSize: 5
 
 - type: stack
   id: FloorCarpetSkyBlue
-  name: skyblue carpet tile
+  name: skyblue carpet
+  icon: { sprite: Objects/Tiles/tile.rsi, state: carpet-skyblue }
   spawn: FloorCarpetItemSkyBlue
   maxCount: 30
   itemSize: 5
 
 - type: stack
   id: FloorCarpetPurple
-  name: purple carpet tile
+  name: purple carpet
+  icon: { sprite: Objects/Tiles/tile.rsi, state: carpet-purple }
   spawn: FloorCarpetItemPurple
   maxCount: 30
   itemSize: 5
 
 - type: stack
   id: FloorCarpetPink
-  name: pink carpet tile
+  name: pink carpet
+  icon: { sprite: Objects/Tiles/tile.rsi, state: carpet-pink }
   spawn: FloorCarpetItemPink
   maxCount: 30
   itemSize: 5
 
 - type: stack
   id: FloorCarpetCyan
-  name: cyan carpet tile
+  name: cyan carpet
+  icon: { sprite: Objects/Tiles/tile.rsi, state: carpet-cyan }
   spawn: FloorCarpetItemCyan
   maxCount: 30
   itemSize: 5
 
 - type: stack
   id: FloorCarpetWhite
-  name: white carpet tile
+  name: white carpet
+  icon: { sprite: Objects/Tiles/tile.rsi, state: carpet-white }
   spawn: FloorCarpetItemWhite
   maxCount: 30
   itemSize: 5
@@ -408,6 +418,13 @@
   id: FloorTileBCircuit
   name: bcircuit floor tile
   spawn: FloorTileItemBCircuit
+  maxCount: 30
+  itemSize: 5
+
+- type: stack
+  id: FloorTileRCircuit
+  name: red-circuit floor
+  spawn: FloorTileItemRCircuit
   maxCount: 30
   itemSize: 5
 

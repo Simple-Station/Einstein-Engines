@@ -32,6 +32,7 @@
         - JawsOfLife
         - GPS
         - WeldingMask
+        - RPD
       components:
         - SprayPainter
         - NetworkConfigurator
@@ -43,18 +44,16 @@
         - TrayScanner
         - GasAnalyzer
         - HandLabeler
-        - RemoteSignaller
-        - RemoteSignallerAdvanced
-        - AnomalyScanner
-        - AnomalyLocatorUnpowered
-        - AnomalyLocatorWideUnpowered
-        - NodeScanner
   - type: ItemMapper
     mapLayers:
       drill:
         whitelist:
           tags:
           - Powerdrill
+      rpd:
+        whitelist:
+          tags:
+          - RPD
       cutters_red:
         whitelist:
           tags:
@@ -117,6 +116,7 @@
         - HolofanProjector
         - Multitool
         - AppraisalTool
+        - RPD
       components:
         - SprayPainter
         - NetworkConfigurator
@@ -135,6 +135,10 @@
         whitelist:
           tags:
           - Powerdrill
+      rpd:
+        whitelist:
+          tags:
+          - RPD
       cutters_red:
         whitelist:
           tags:
@@ -354,7 +358,7 @@
   - type: Storage
     whitelist:
       tags:
-        # - PlantAnalyzer
+        - PlantAnalyzer
         - PlantSampleTaker
         - BotanyShovel
         - BotanyHoe
@@ -374,10 +378,10 @@
         whitelist:
           tags:
           - BotanyHatchet
-      # hydro:
-      #   whitelist:
-      #     tags:
-      #     - PlantAnalyzer # Dunno what to put here, should be aight.
+      hydro:
+        whitelist:
+          tags:
+          - PlantAnalyzer
       hoe:
         whitelist:
           tags:
@@ -544,7 +548,7 @@
   - type: Clothing
     sprite: Clothing/Belt/sheath.rsi
   - type: Item
-    size: Ginormous
+    size: Large
   - type: ItemSlots
     slots:
       item:

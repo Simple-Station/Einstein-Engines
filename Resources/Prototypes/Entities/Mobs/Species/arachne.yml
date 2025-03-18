@@ -36,9 +36,9 @@
       color: "#e8b59b"
       sprite: Mobs/Species/Human/parts.rsi
       state: l_arm
-    - shader: StencilClear
-      sprite: Mobs/Species/Human/parts.rsi
-      state: l_leg
+#     - shader: StencilClear
+#      sprite: Mobs/Species/Human/parts.rsi
+#      state: l_leg
     - shader: StencilMask
       map: [ "enum.HumanoidVisualLayers.StencilMask" ]
       sprite: Mobs/Customization/anytaur_masking_helpers.rsi
@@ -117,6 +117,7 @@
     - CanPilot
     - FootstepSound
     - DoorBumpOpener
+    - SpiderCraft
   - type: StepTriggerImmune
   - type: Bloodstream
     bloodReagent: DemonsBlood
@@ -190,9 +191,9 @@
       color: "#e8b59b"
       sprite: Mobs/Species/Human/parts.rsi
       state: l_arm
-    - shader: StencilClear
-      sprite: Mobs/Species/Human/parts.rsi
-      state: l_leg
+#     - shader: StencilClear
+#      sprite: Mobs/Species/Human/parts.rsi
+#      state: l_leg
     - shader: StencilMask
       map: [ "enum.HumanoidVisualLayers.StencilMask" ]
       sprite: Mobs/Customization/anytaur_masking_helpers.rsi

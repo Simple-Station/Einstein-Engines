@@ -81,20 +81,20 @@
         - proto: ResearchAndDevelopmentServerMachineCircuitboard
           cost: 5
           prob: 0.5
-        - proto: ResearchDisk10000
+        - proto: ResearchDisk20000
           prob: 0.5
-        - proto: ResearchDisk5000
+        - proto: ResearchDisk10000
           prob: 0.5
         - proto: RipleyHarness
           cost: 3
           prob: 0.5
         - proto: RPED
-        - proto: SpaceCash1000
-        - proto: SpaceCash10000
-          cost: 10
         - proto: SpaceCash2500
-          cost: 3
+        - proto: SpaceCash20000
+          cost: 10
         - proto: SpaceCash5000
+          cost: 3
+        - proto: SpaceCash10000
           cost: 5
         - proto: TechnologyDiskRare
           cost: 5
@@ -232,3 +232,10 @@
   loots:
     - !type:BiomeMarkerLoot
       proto: OreNormality
+
+- type: salvageLoot
+  id: OreTungsten
+  guaranteed: true
+  loots:
+    - !type:BiomeMarkerLoot
+      proto: OreTungsten

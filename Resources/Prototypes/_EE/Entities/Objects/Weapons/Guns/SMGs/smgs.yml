@@ -76,17 +76,19 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _EE/Objects/Weapons/Guns/SMGs/BRDI_R25.rsi
   - type: Wieldable
   - type: GunWieldBonus
-    minAngle: -19
-    maxAngle: -16
+    minAngle: -17
+    maxAngle: -22
   - type: Gun
     minAngle: 21
     maxAngle: 32
-    fireRate: 5 # 300rpm in Semi & Full Auto
-    burstFireRate: 20 # 1200rpm in Burst mode.
-    shotsPerBurst: 5
-    burstCooldown: 0.8
+    fireRate: 5  # 300rpm in Semi & Full Auto
+    burstFireRate: 20  # 1200rpm in Burst mode.
+    shotsPerBurst: 3
+    burstCooldown: 0.9
     cameraRecoilScalar: 0.5
     selectedMode: Burst
     soundGunshot:
@@ -94,7 +96,6 @@
       params:
         volume: -3
         maxDistance: 8
-        rolloffFactor: 1.2
     availableModes:
     - SemiAuto
     - Burst
@@ -143,4 +144,6 @@
     - type: StealTarget
       stealGroup: HoSAntiqueWeapon
     - type: Sprite
-      sprite: _EE/Objects/Weapons/Guns/SMGs/BRDI_R25_antique.rsi
+      sprite: _DEN/Objects/Weapons/Guns/SMGs/BRDI_R25_decorated.rsi # The Den sprites
+    - type: Clothing
+      sprite: _DEN/Objects/Weapons/Guns/SMGs/BRDI_R25_decorated.rsi # The Den sprites

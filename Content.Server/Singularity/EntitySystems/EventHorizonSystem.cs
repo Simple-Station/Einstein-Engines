@@ -33,11 +33,11 @@ public sealed class EventHorizonSystem : SharedEventHorizonSystem
     [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly SharedTransformSystem _xformSystem = default!;
+    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
     [Dependency] private readonly TagSystem _tagSystem = default!;
     #endregion Dependencies
 
     private EntityQuery<PhysicsComponent> _physicsQuery;
-    private const float CosmicSpeedLimit = 20f;
 
     public override void Initialize()
     {
@@ -137,18 +137,6 @@ public sealed class EventHorizonSystem : SharedEventHorizonSystem
         }
 
         EntityManager.QueueDeleteEntity(morsel);
-
-        if (eventHorizon.InheritMomentum && TryComp<PhysicsComponent>(hungry, out var thisPhysics) && TryComp<PhysicsComponent>(morsel, out var otherPhysics))
-        {
-            var impulse = (otherPhysics.LinearVelocity - thisPhysics.LinearVelocity)
-                * otherPhysics.FixturesMass
-                * thisPhysics.FixturesMass / (thisPhysics.FixturesMass + otherPhysics.FixturesMass); // Accounts for the expected mass change from consuming the object
-            if (impulse.Length() >= CosmicSpeedLimit) // Stop it from quantum tunneling through walls.
-                impulse = impulse.Normalized() * CosmicSpeedLimit;
-
-            _physics.ApplyLinearImpulse(hungry, impulse, body: thisPhysics);
-        }
-
         var evSelf = new EntityConsumedByEventHorizonEvent(morsel, hungry, eventHorizon, outerContainer);
         var evEaten = new EventHorizonConsumedEntityEvent(morsel, hungry, eventHorizon, outerContainer);
         RaiseLocalEvent(hungry, ref evSelf);
@@ -270,7 +258,7 @@ public sealed class EventHorizonSystem : SharedEventHorizonSystem
 
         var ev = new TilesConsumedByEventHorizonEvent(tiles, gridId, grid, hungry, eventHorizon);
         RaiseLocalEvent(hungry, ref ev);
-        grid.SetTiles(tiles);
+        _mapSystem.SetTiles(gridId, grid, tiles);
     }
 
     /// <summary>
@@ -323,7 +311,7 @@ public sealed class EventHorizonSystem : SharedEventHorizonSystem
         foreach (var grid in grids)
         {
             // TODO: Remover grid.Owner when this iterator returns entityuids as well.
-            AttemptConsumeTiles(uid, grid.Comp.GetTilesIntersecting(circle), grid, grid, eventHorizon);
+            AttemptConsumeTiles(uid, _mapSystem.GetTilesIntersecting(grid.Owner, grid.Comp, circle), grid, grid, eventHorizon);
         }
     }
 

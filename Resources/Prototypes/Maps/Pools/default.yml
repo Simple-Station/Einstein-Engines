@@ -1,12 +1,12 @@
 - type: gameMapPool
   id: DefaultMapPool
   maps:
- # - Arena # De-rotated, no current maintainer.
+  - Arena # Maintained by astriloqua.
  # - Asterisk # De-rotated, no current maintainer.
   - Core # No current Maintainer. In need of a rework...
  # - Edge # De-rotated, no current maintainer.
   - Glacier # Maintained by Violet, pending update.
- # - Hammurabi # De-rotated, no current maintainer.
+ # - Hammurabi # De-rotated, maintained by Ichai, pending update.
   - Lighthouse # Maintained by the SiN Mapping Team, ODJ, and TCJ.
   - Pebble # Plyushsune is the current maintainer.
   - Saltern # Maintained by the SiN Mapping Team
@@ -14,12 +14,12 @@
  # - Submarine # De-rotated, no current maintainer.
  # - Tortuga # De-rotated, no current maintainer.
  # - TheHive # De-rotated, no current maintainer.
-  - Gax # Maintained by Estacao Pirata
-  - Rad # Maintained by Estacao Pirata
-  - Meta # Maintained by Estacao Pirata
-  - Box # Maintained by Estacao Pirata
-  - Lambda # Maintained by Estacao Pirata
-  - Bagel # Maintained by Estacao Pirata
+  - Gax # Maintained by Ichai
+  - Rad # Maintained by Ichai
+  - Meta # Maintained by Ichai
+  - Cyberiad # Maintained by Ichai
+  - Lambda # Maintained by Ichai
+  - Bagel # Maintained by Ichai
   - Northway # Maintained by Violet, pending update.
 #  - Europa # De-rotated. Has significant issues.
 

@@ -12,5 +12,5 @@ public sealed partial class StationRandomTransformComponent : Component
     public float? MaxStationOffset = 100.0f;
 
     [DataField]
-    public bool EnableStationRotation = true;
+    public bool EnableStationRotation = false;
 }

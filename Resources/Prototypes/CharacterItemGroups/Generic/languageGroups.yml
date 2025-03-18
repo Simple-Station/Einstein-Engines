@@ -7,6 +7,8 @@
     - type: trait
       id: SolCommon
     - type: trait
+      id: NovuNederic
+    - type: trait
       id: Tradeband
     - type: trait
       id: Freespeak

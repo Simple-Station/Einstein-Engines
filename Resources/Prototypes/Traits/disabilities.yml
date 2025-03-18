@@ -14,6 +14,12 @@
         - Photophobia
         - Nearsighted
         - CyberEyes
+        - SecurityEyesModule
+        - MedicalEyesModule
+        - DiagnosticEyesModule
+        - OmniEyesModule
+        - LightAmplificationModule
+        - ThermographicVisionModule
   functions:
     - !type:TraitAddComponent
       components:
@@ -34,6 +40,12 @@
       traits:
         - Blindness
         - CyberEyes
+        - SecurityEyesModule
+        - MedicalEyesModule
+        - DiagnosticEyesModule
+        - OmniEyesModule
+        - LightAmplificationModule
+        - ThermographicVisionModule
   functions:
     - !type:TraitAddComponent
       components:
@@ -43,7 +55,7 @@
 - type: trait
   id: Narcolepsy
   category: Mental
-  points: 2
+  points: 6
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -64,7 +76,7 @@
 - type: trait
   id: Pacifist
   category: Mental
-  points: 6
+  points: 8
   functions:
     - !type:TraitAddComponent
       components:
@@ -87,7 +99,7 @@
 - type: trait
   id: Muted
   category: Mental
-  points: 4
+  points: 6
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -161,7 +173,7 @@
 - type: trait
   id: BadKnees
   category: Physical
-  points: 3
+  points: 5
   requirements:
     - !type:CharacterTraitRequirement
       inverted: true
@@ -185,7 +197,7 @@
 - type: trait
   id: Sluggish
   category: Physical
-  points: 3
+  points: 5
   requirements:
     - !type:CharacterTraitRequirement
       inverted: true
@@ -207,7 +219,7 @@
 - type: trait
   id: SnailPaced
   category: Physical
-  points: 5
+  points: 8
   requirements:
     - !type:CharacterTraitRequirement
       inverted: true
@@ -229,7 +241,7 @@
 - type: trait
   id: BloodDeficiency
   category: Physical
-  points: 5
+  points: 6
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -251,7 +263,7 @@
 - type: trait
   id: Hemophilia
   category: Physical
-  points: 2
+  points: 4
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -288,6 +300,12 @@
       traits:
         - Blindness
         - CyberEyes
+        - SecurityEyesModule
+        - MedicalEyesModule
+        - DiagnosticEyesModule
+        - OmniEyesModule
+        - LightAmplificationModule
+        - ThermographicVisionModule
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -299,7 +317,7 @@
 - type: trait
   id: Clumsy
   category: Physical
-  points: 1
+  points: 4
   requirements:
     - !type:CharacterJobRequirement
       inverted: true

@@ -3,7 +3,6 @@ using Content.Server.Administration.Logs;
 using Content.Server.EUI;
 using Content.Server.Ghost.Roles.Components;
 using Content.Server.Ghost.Roles.Events;
-using Content.Server.Ghost.Roles.Raffles;
 using Content.Shared.Ghost.Roles.Raffles;
 using Content.Server.Ghost.Roles.UI;
 using Content.Server.Mind.Commands;
@@ -398,8 +397,8 @@ namespace Content.Server.Ghost.Roles
             if (raffle.AllMembers.Add(player) && raffle.AllMembers.Count > 1
                 && raffle.CumulativeTime.Add(raffle.JoinExtendsDurationBy) <= raffle.MaxDuration)
             {
-                    raffle.Countdown += raffle.JoinExtendsDurationBy;
-                    raffle.CumulativeTime += raffle.JoinExtendsDurationBy;
+                raffle.Countdown += raffle.JoinExtendsDurationBy;
+                raffle.CumulativeTime += raffle.JoinExtendsDurationBy;
             }
 
             UpdateAllEui();
@@ -504,10 +503,14 @@ namespace Content.Server.Ghost.Roles
 
             var newMind = _mindSystem.CreateMind(player.UserId,
                 EntityManager.GetComponent<MetaDataComponent>(mob).EntityName);
-            _roleSystem.MindAddRole(newMind, new GhostRoleMarkerRoleComponent { Name = role.RoleName });
 
             _mindSystem.SetUserId(newMind, player.UserId);
             _mindSystem.TransferTo(newMind, mob);
+
+            _roleSystem.MindAddRoles(newMind.Owner, role.MindRoles, newMind.Comp);
+
+            if (_roleSystem.MindHasRole<GhostRoleMarkerRoleComponent>(newMind!, out var markerRole))
+                markerRole.Value.Comp2.Name = role.RoleName;
         }
 
         /// <summary>

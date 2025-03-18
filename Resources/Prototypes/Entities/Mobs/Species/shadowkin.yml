@@ -77,7 +77,6 @@
       alternateState: Standing
     - type: OfferItem
     - type: LayingDown
-    - type: Shoving
     - type: BloodstreamAffectedByMass
       power: 0.6
     - type: Hunger
@@ -106,6 +105,11 @@
     - type: Damageable
       damageContainer: Biological # Shadowkin
       damageModifierSet: Shadowkin
+    - type: DamageVisuals
+      damageOverlayGroups:
+        Brute:
+          sprite: Mobs/Effects/brute_damage.rsi
+          color: "#1c1624"
     - type: Barotrauma
       damage:
         types:
@@ -117,6 +121,7 @@
       bloodlossHealDamage:
         types:
           Bloodloss: -0.25
+      bloodReagent: BlackBlood
     - type: Temperature
       heatDamageThreshold: 330
       coldDamageThreshold: 195
@@ -155,9 +160,9 @@
         - map: ["enum.HumanoidVisualLayers.LArm"]
         - map: ["enum.HumanoidVisualLayers.RLeg"]
         - map: ["enum.HumanoidVisualLayers.LLeg"]
-        - shader: StencilClear
-          sprite: Mobs/Species/Human/parts.rsi
-          state: l_leg
+#     - shader: StencilClear
+#      sprite: Mobs/Species/Human/parts.rsi
+#      state: l_leg
         - shader: StencilMask
           map: ["enum.HumanoidVisualLayers.StencilMask"]
           sprite: Mobs/Customization/masking_helpers.rsi
@@ -267,9 +272,9 @@
         - map: ["enum.HumanoidVisualLayers.LArm"]
         - map: ["enum.HumanoidVisualLayers.RLeg"]
         - map: ["enum.HumanoidVisualLayers.LLeg"]
-        - shader: StencilClear
-          sprite: Mobs/Species/Human/parts.rsi
-          state: l_leg
+#     - shader: StencilClear
+#      sprite: Mobs/Species/Human/parts.rsi
+#      state: l_leg
         - shader: StencilMask
           map: ["enum.HumanoidVisualLayers.StencilMask"]
           sprite: Mobs/Customization/masking_helpers.rsi

@@ -1,0 +1,35 @@
+- type: entity
+  parent: GasVentPump
+  id: GasVentPumpHighFlow
+  name: high pressure air vent
+  description: A pipe with an attached high-flow pump. It can handle three times the pressure of a standard vent.
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: GasVentPump
+      maxPressure: 13500
+      PumpPower: 6
+
+- type: entity
+  parent: GasVentScrubber
+  id: GasVentScrubberHighFlow
+  name: high pressure air scrubber
+  description: A pipe with an attached air scrubber. It can handle three times the pressure of a standard scrubber.
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: GasVentScrubber
+      maxPressure: 13500
+      maxTransferRate: 600
+
+- type: entity
+  parent: GasOutletInjector
+  id: GasOutletInjectorHighFlow
+  name: high pressure air injector
+  description: An air injector designed to handle three times the pressure of a standard injector.
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: GasOutletInjector
+      maxTransferRate: 600
+      maxPressure: 13500

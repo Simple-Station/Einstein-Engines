@@ -87,7 +87,7 @@
 - type: loadout
   id: LoadoutBSORifleBRDIR25
   category: JobsCommandBlueshieldOfficer
-  cost: 9 # Significant upgrade over a Chester, offered here for the STYLE. Intentionally priced at you not being able to buy a crew monitor with it.
+  cost: 9 # Significant upgrade over a Chester, offered here for the STYLE. Intentionally priced at you not being able to buy all 3 medical items alongside it, plus being unable to buy it alongside the CQC Manual.
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
@@ -99,7 +99,7 @@
     - !type:CharacterAgeRequirement
       min: 21
   items:
-    - WeaponSubMachineGunBRDIR25
+    - WeaponSubMachineGunBRDIR25BSO # The Den sprites
 
 - type: loadout
   id: LoadoutBSOEnergyShield
@@ -143,13 +143,24 @@
 - type: loadout
   id: LoadoutBSOCrewMonitor
   category: JobsCommandBlueshieldOfficer
-  cost: 6
+  cost: 2 # BSO's main job is to keep command safe, they should be able to monitor their status & location without that costing too many points.
   requirements:
     - !type:CharacterJobRequirement
       jobs:
         - BlueshieldOfficer
   items:
     - HandheldCrewMonitor
+
+- type: loadout
+  id: LoadoutBSOCQCManual
+  category: JobsCommandBlueshieldOfficer
+  cost: 8 # You can run this alongside the 3 medical items, but then you will be restricted to free gear for everything else such as weapons or other utilities.
+  requirements: # Knowledge does not occupy a weapon slot. You are a trained bodyguard, so it makes sense to have it. Balanced out by costing over half of your loadout points.
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - BSOManual
 
 # Eyes
 

@@ -35,7 +35,10 @@
     Tail: MobHumanoidAnyMarking
     Hair: MobHumanoidMarkingMatchSkin
     FacialHair: MobHumanoidMarkingMatchSkin
+    Eyes: MobHumanoidAnyMarking
     Chest: MobIPCTorso
+    Underwear: MobHumanoidAnyMarking
+    Undershirt: MobHumanoidAnyMarking
     LArm: MobIPCLArm
     RArm: MobIPCRArm
     LHand: MobIPCLHand
@@ -50,49 +53,49 @@
   id: MobIPCMarkingLimits
   points:
     Head:
-      points: 1
+      points: 6
       required: true
       defaultMarkings: [ MobIPCHeadDefault ]
     Face:
-      points: 1
+      points: 6
       required: false
     Chest:
-      points: 1
+      points: 6
       required: true
       defaultMarkings: [ MobIPCTorsoDefault ]
     HeadSide:
-      points: 1
+      points: 6
       required: false
     RightLeg:
-      points: 1
+      points: 6
       required: false
       defaultMarkings: [ MobIPCRLegDefault ]
     RightFoot:
-      points: 1
+      points: 6
       required: false
       defaultMarkings: [ MobIPCRFootDefault ]
     LeftLeg:
-      points: 1
+      points: 6
       required: false
       defaultMarkings: [ MobIPCLLegDefault ]
     LeftFoot:
-      points: 1
+      points: 6
       required: false
       defaultMarkings: [ MobIPCLFootDefault ]
     RightArm:
-      points: 1
+      points: 6
       required: false
       defaultMarkings: [ MobIPCRArmDefault ]
     RightHand:
-      points: 1
+      points: 6
       required: false
       defaultMarkings: [ MobIPCRHandDefault ]
     LeftArm:
-      points: 1
+      points: 6
       required: false
       defaultMarkings: [ MobIPCLArmDefault ]
     LeftHand:
-      points: 1
+      points: 6
       required: false
       defaultMarkings: [ MobIPCLHandDefault ]
     Wings:

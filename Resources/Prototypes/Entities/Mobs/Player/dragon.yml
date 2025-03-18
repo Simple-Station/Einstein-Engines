@@ -16,6 +16,9 @@
     makeSentient: true
     name: ghost-role-information-space-dragon-name
     description: ghost-role-information-space-dragon-description
+    rules: ghost-role-information-space-dragon-rules
+    mindRoles:
+    - MindRoleGhostRoleTeamAntagonist
     raffle:
       settings: default
   - type: GhostTakeoverAvailable
@@ -145,13 +148,19 @@
     color: "#808080"
     activateSound: null
     deactivateSound: null
+  - type: Puller
+    needsHands: false
 
 - type: entity
   parent: BaseMobDragon
   id: MobDragon
+  suffix: No role or objectives
   components:
   - type: Dragon
     spawnRiftAction: ActionSpawnRift
+  - type: ActionGun
+    action: ActionDragonsBreath
+    gunProto: DragonsBreathGun
   - type: GuideHelp
     guides:
     - MinorAntagonists
