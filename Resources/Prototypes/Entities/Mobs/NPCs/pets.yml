@@ -758,7 +758,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      200: Dead
+      100000000000000000: Dead
   - type: FootstepModifier
     footstepSoundCollection:
       path: /Audio/Effects/Footsteps/slime1.ogg
@@ -777,30 +777,33 @@
         BaseUnshaded: aslime-_3
       Dead:
         Base: rainbow_baby_slime_dead
-  - type: Butcherable
-    spawned:
-    - id: FoodMeatSlime
-      amount: 1
-    - id: MaterialSmileExtract
-      amount: 1
-  - type: Damageable
-    damageModifierSet: SlimePet
   - type: Bloodstream
-    bloodlossHealDamage:
-      types:
-        Bloodloss:
-          -0.8
+    bloodReagent: Nothing
+    bloodMaxVolume: 50
   - type: Temperature
-    heatDamageThreshold: 800
-    coldDamageThreshold: 0
+    heatDamageThreshold: 100000000000
+    coldDamageThreshold: -10000000000
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 1
-        Caustic: 1
+        Blunt: 0
+  - type: SolutionContainerManager
+    solutions:
+      melee:
+        maxVol: 10
+  - type: SolutionRegeneration
+    solution: melee
+    generated:
+      reagents:
+      - ReagentId: Omnizine
+        Quantity: 0.05
+  - type: NoSlip
+  - type: MeleeChemicalInjector
+    solution: melee
+    transferAmount: 0.1
   - type: MultiHandedItem
   - type: Item
-    size: Huge
+    size: Ginormous
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-slime
   - type: MobPrice
@@ -813,13 +816,33 @@
     attributes:
       proper: true
       gender: female
-  - type: LanguageKnowledge
-    speaks:
-    - Bubblish
-    understands:
-    - TauCetiBasic
-    - Bubblish
-
+  - type: InnatePsionicPowers
+    powersToAdd:
+      - XenoglossyPower
+      - TelepathyPower
+      - HealingWordPower
+  - type: LanguageSpeaker
+  - type: UniversalLanguageSpeaker
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      1000000000: 1
+  - type: ZombieImmune
+  - type: MovementIgnoreGravity
+  - type: SpeedModifiedByContactModifier
+    walkModifierEffectiveness: 0
+    sprintModifierEffectiveness: 0
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.30
+        density: 80
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+    
 - type: entity
   name: Pun Pun
   parent: MobMonkey
