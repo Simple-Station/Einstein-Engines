@@ -28,8 +28,8 @@
           collection: MetalGlassBreak
           params:
             volume: -4
-      #- !type:ChangeConstructionNodeBehavior - To be added in a later PR
-      #  node: machineFrame
+      - !type:ChangeConstructionNodeBehavior
+        node: machineFrame
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
 
@@ -185,13 +185,13 @@
   - type: Electrified
     enabled: false
     usesApcPower: true
-  #- type: ContainerFill - Will be added in a later PR
-  #  containers:
-  #    board:
-  #    - WeaponEnergyTurretStationControlPanelElectronics
-  #- type: Construction - Will be added in a later PR
-  #  graph: WeaponEnergyTurretControlPanel
-  #  node: finish
+  - type: ContainerFill
+    containers:
+      board:
+      - WeaponEnergyTurretStationControlPanelElectronics
+  - type: Construction
+    graph: WeaponEnergyTurretControlPanel
+    node: finish
 
 - type: entity
   parent: WeaponEnergyTurretStationControlPanel
@@ -201,10 +201,10 @@
   components:
   - type: AccessReader
     access: [["StationAi"]]
-  #- type: ContainerFill - Will be added in a later PR
-  #  containers:
-  #    board:
-  #    - WeaponEnergyTurretAIControlPanelElectronics
+  - type: ContainerFill
+    containers:
+      board:
+      - WeaponEnergyTurretAIControlPanelElectronics
   - type: TurretTargetSettings
     exemptAccessLevels:
     - BasicSilicon
