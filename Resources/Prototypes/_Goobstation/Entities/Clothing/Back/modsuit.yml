@@ -43,7 +43,7 @@
     requiredSlot: back
     blockUnequipWhenAttached: true
     replaceCurrentClothing: true
-    clothingPrototypes: 
+    clothingPrototypes:
       head: ClothingModsuitHelmetStandard
       gloves: ClothingModsuitGauntletsStandard
       outerClothing: ClothingModsuitChestplateStandard
@@ -61,7 +61,6 @@
       cell_slot: true
   - type: PowerCellDraw
     drawRate: 1 # Sealed draw rate
-    useRate: 5 # Draw rate for sealing
   - type: PowerCellSlot
     cellSlotId: cell_slot
     fitsInCharger: false
