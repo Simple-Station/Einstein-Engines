@@ -24,3 +24,31 @@
 # Shoes
 
 # Uniforms
+
+- type: loadout
+  id: LoadoutPrisonerPrisonJumpsuit
+  category: JobsMiscPrisoner
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPrisonerUniform
+    - !type:CharacterJobRequirement
+      jobs:
+        - Prisoner
+  items:
+    - ClothingUniformJumpsuitPrisoner
+
+- type: loadout
+  id: LoadoutPrisonerPrisonJumpskirt
+  category: JobsMiscPrisoner
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPrisonerUniform
+    - !type:CharacterJobRequirement
+      jobs:
+        - Prisoner
+  items:
+    - ClothingUniformJumpskirtPrisoner
