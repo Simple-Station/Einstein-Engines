@@ -143,12 +143,12 @@
   components:
   - type: FateDice
     effects:
-    - EffectFoamGood
-    - EffectLightFlicker
-    - EffectPolyLizard
-    - EffectMaterialSpawn
-    remainingUses: 4
-    toReplaceWhenUsedUp: d4Dice
+    - EffectBabelTower
+    - EffectDragon
+    - EffectMassMeteor
+    - EffectImmovableRod
+    remainingUses: 1
+    toReplace: d4Dice
   - type: PointLight
     energy: 20
     radius: 1.2
