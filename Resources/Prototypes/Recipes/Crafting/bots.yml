@@ -103,6 +103,19 @@
     state: batonbot
 
 - type: construction
+  name: minebot
+  id: minebot
+  graph: MineBot
+  startNode: start
+  targetNode: bot
+  category: construction-category-utilities
+  objectType: Item
+  description: Helps the miners with their work.
+  icon:
+    sprite: Mobs/Silicon/Bots/minebot.rsi
+    state: minebot
+
+- type: construction
   name: disablerbot
   id: disablerbot
   graph: DisablerBot
