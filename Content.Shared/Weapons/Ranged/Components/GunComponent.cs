@@ -139,7 +139,7 @@ public sealed partial class GunComponent : Component
     /// Whether the gun fires a different projectile on alt-click.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public bool CanAltFire = true;
+    public bool CanAltFire = false;
 
     /// <summary>
     /// Projectile to spawn when alt-firing.
