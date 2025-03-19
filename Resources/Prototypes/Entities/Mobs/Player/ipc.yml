@@ -21,13 +21,17 @@
     minInterval: 15
     maxInterval: 30
     popUp: "silicon-power-low"
+  - type: WiresPanel
+    openDelay: 5
+  - type: LockedWiresPanel
   - type: Lock
     locked: true
     lockOnClick: false
     unlockOnClick: false
-    # Por algum motivo esse componente é bem bugado, então o "LockTime" é quem diz o tempo de tudo enquanto o unlock só está servindo como um bool (???)
-    lockTime: 5
-    unlockTime: 5
+    breakOnEmag: false
+  - type: AccessReader
+    breakOnEmag: true
+    ownerHasAccess: true
   - type: NpcFactionMember
     factions:
       - NanoTrasen
