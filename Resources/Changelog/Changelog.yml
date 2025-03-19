@@ -13211,3 +13211,81 @@ Entries:
   id: 6986
   time: '2025-03-18T04:32:49.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1997
+- author: Raikyr0
+  changes:
+    - type: Tweak
+      message: Tweaked values on Oni melee bonus to correctly reflect the guidebook
+    - type: Tweak
+      message: Tweaked Blademaster and Spearmaster to mirror Default
+    - type: Tweak
+      message: Buffed Oni's unique traits to be cheaper
+    - type: Tweak
+      message: Buffed Weapon Generalist to 30% so it's not just a nerf
+  id: 6987
+  time: '2025-03-18T23:12:40.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2008
+- author: CyberLanos
+  changes:
+    - type: Tweak
+      message: make miner's salve overdose less punishing
+    - type: Tweak
+      message: >-
+        change miner's salve healing rates to better suit low pressure
+        environment
+  id: 6988
+  time: '2025-03-19T01:14:14.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2010
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Ported the Hardlight Bow, a new traitor item.
+  id: 6989
+  time: '2025-03-19T01:42:04.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2000
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added "Shrapnel Ammo" to most weapon types as a new special ammunition.
+        Shrapnel ammo essentially turns any gun into a baby shotgun. This
+        includes guns like the L6 Saw.
+    - type: Add
+      message: Added Shrapnel Ammo and specialty ammo bundles to the Syndicate Uplink.
+    - type: Tweak
+      message: >-
+        To encourage people to buy different kinds of ammo, certain guns in the
+        Syndicate Uplink no longer spawn with ammo, and are in return discounted
+        by the cost of the ammo that was removed. Have fun buying C20 magazines
+        with incendiary ammo. 
+    - type: Add
+      message: >-
+        Added Shrapnel Munitions to Arsenal Research T2. Once researched,
+        shrapnel ammo can be manufactured at a security techfab.
+  id: 6990
+  time: '2025-03-19T14:39:58.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2004
+- author: GNUtopia
+  changes:
+    - type: Add
+      message: Added Misc department to Jobs loadout
+    - type: Add
+      message: Added Prisoner loadout
+    - type: Fix
+      message: Corrected spelling mistake in pirate tricorn item ID
+  id: 6991
+  time: '2025-03-19T15:13:14.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1999
+- author: BramvanZijp
+  changes:
+    - type: Add
+      message: >-
+        You can now add an access requirement to an IPC's maintenance panel
+        using an access configurator, though an IPC can always unlock their own
+        panel.
+    - type: Tweak
+      message: >-
+        After unlocking an IPC maintenance panel, which is now instant, you need
+        to use a screwdriver to actually open it.
+  id: 6992
+  time: '2025-03-19T16:27:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2014
