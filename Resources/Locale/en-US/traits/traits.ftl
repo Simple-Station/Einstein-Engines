@@ -512,6 +512,11 @@ trait-description-MetapsionicPower =
     to detect whether or not psions are nearby. This ability has a wide area of effect, and cannot precisely
     scan individual entities. Still, it is better than being blind.
 
+trait-name-HealingWordPower = Healing Word
+trait-description-HealingWordPower =
+    Your Mentalic abilities includes the power to heal the wounded.
+    This power, commonly known as "Healing Word", allows the user to heal themselves or others with their mind.
+
 trait-name-XenoglossyPower = Xenoglossy
 trait-description-XenoglossyPower =
     An advanced form of Telepathy, Xenoglossy is the ability to speak using emotional and metaphysical concepts,
