@@ -307,7 +307,7 @@ trait-description-WeaponsGeneralist =
 trait-name-Mystic = Mystic
 trait-description-Mystic =
     You are trained in Mysticism instead of melee combat, reducing your melee capabilities but drastically increasing your psionic potential.
-    Your melee damage bonus for all Brute damage types (Blunt, Slash, Piercing) becomes 10%. But your Potentia gain is drastically increased.
+    Your melee damage bonus for all Brute damage types (Blunt, Slash, Piercing) becomes 10%, but your Potentia gain is drastically increased.
 
 trait-name-Singer = Singer
 trait-description-Singer = You are naturally capable of singing simple melodies with your voice.
