@@ -200,7 +200,7 @@
   description: A wall-mounted interface that allows a local artifical intelligence to adjust the operational parameters of linked sentry turrets.
   components:
   - type: AccessReader
-    access: [["StationAi"]]
+    access: [["StationAi"], ["Captain"], ["ResearchDirector"]]
   - type: ContainerFill
     containers:
       board:
@@ -211,4 +211,6 @@
     - ResearchDirector
     - BasicSilicon
     - Borg
-
+  - type: DeviceNetwork
+    receiveFrequencyId: TurretAI
+    transmitFrequencyId: TurretControlAI
