@@ -13289,3 +13289,10 @@ Entries:
   id: 6992
   time: '2025-03-19T16:27:51.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2014
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: 'Make context menu uses spritetree '
+  id: 6993
+  time: '2025-03-19T22:02:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2021
