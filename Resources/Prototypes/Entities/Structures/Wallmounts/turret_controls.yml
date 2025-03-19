@@ -207,11 +207,8 @@
       - WeaponEnergyTurretAIControlPanelElectronics
   - type: TurretTargetSettings
     exemptAccessLevels:
+    - Captain
+    - ResearchDirector
     - BasicSilicon
     - Borg
-  - type: DeployableTurretController
-    accessGroups:
-    - Silicon
-    accessLevels:
-    - BasicSilicon
-    - Borg
+
