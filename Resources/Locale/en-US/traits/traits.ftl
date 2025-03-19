@@ -292,17 +292,17 @@ trait-description-LightStep =
 trait-name-Swashbuckler = Swashbuckler
 trait-description-Swashbuckler =
     You are an expert in swordsmanship, wielding swords, knives, and other blades with unrivaled finesse.
-    Your melee Slash bonus is increased to 35%, but your melee Blunt bonus is reduced to 20%.
+    Your melee Slash bonus is increased to 35%, but your melee Blunt bonus is reduced to 25%.
 
 trait-name-Spearmaster = Spearmaster
 trait-description-Spearmaster =
     You have an outstanding proficiency with spears, wielding them as an extension of your body.
-    Your melee Piercing bonus is increased to 35%, but your melee Blunt bonus is reduced to 20%.
+    Your melee Piercing bonus is increased to 35%, but your melee Blunt bonus is reduced to 25%.
 
 trait-name-WeaponsGeneralist = Weapons Generalist
 trait-description-WeaponsGeneralist =
     You are a jack of all trades with melee weapons, enabling you to be versatile with your weapon arsenal.
-    Your melee damage bonus for all Brute damage types (Blunt, Slash, Piercing) becomes 25%.
+    Your melee damage bonus for all Brute damage types (Blunt, Slash, Piercing) becomes 30%.
 
 trait-name-Singer = Singer
 trait-description-Singer = You are naturally capable of singing simple melodies with your voice.
@@ -594,3 +594,8 @@ trait-name-ThermographicVisionModule = I.P.C Eye Module: Thermographic Scanner
 trait-description-ThermographicVisionModule =
     Your vision has been enhanced with a Thermographic Scanner. When enabled, it captures a snapshot of the user's surroundings, while highlighting all
     biological life forms. It can even detect individuals through the walls of a station.
+
+trait-name-Vampirism = Vampirism
+trait-description-Vampirism =
+    Your body has evolved to be able to suck blood from beings that contain it and metabolize it into useful compounds.
+    You cannot eat normal food, but drinking blood satiates your hunger and thirst, and also improves your health.

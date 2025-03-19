@@ -244,6 +244,8 @@
     tags:
     - WeaponShotgunKammerer
   - type: Wieldable
+  - type: Gun
+    shotgunSpreadMultiplier: 0.5
 
 - type: entity
   name: sawn-off shotgun
@@ -261,6 +263,8 @@
   - type: Gun
     fireRate: 4
     fireOnDropChance: 0.5
+    shotgunSpreadMultiplier: 3
+    damageModifier: 1.5
   - type: BallisticAmmoProvider
     capacity: 2
   - type: Construction
