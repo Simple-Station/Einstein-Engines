@@ -18,7 +18,6 @@
     - !type:AddPsionicAssayFeedback
       assayFeedback: dispel-power-metapsionic-feedback
     - !type:AddPsionicStatSources
-      amplificationModifier: 1
       dampeningModifier: 1
   removalFunctions:
     - !type:RemovePsionicActions
