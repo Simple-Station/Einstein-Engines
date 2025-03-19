@@ -6,7 +6,7 @@
   maxPlayers: 80
   stations:
     Bagel:
-      stationProto: StandardNanotrasenStation
+      stationProto: StandardNanotrasenStationCargoOnly
       components:
         - type: StationNameSetup
           mapNameTemplate: '{0} Bagel Station {1}'
