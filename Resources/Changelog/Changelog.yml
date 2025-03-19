@@ -13235,3 +13235,10 @@ Entries:
   id: 6988
   time: '2025-03-19T01:14:14.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2010
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Ported the Hardlight Bow, a new traitor item.
+  id: 6989
+  time: '2025-03-19T01:42:04.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2000
