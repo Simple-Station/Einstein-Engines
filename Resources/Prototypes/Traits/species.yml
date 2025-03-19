@@ -84,7 +84,7 @@
             Slash: 1.1
             Piercing: 1.1
       - type: PotentiaModifier
-          potentiaMultiplier: 1.5
+        potentiaMultiplier: 1.5
   requirements:
     - !type:CharacterSpeciesRequirement
       species:
