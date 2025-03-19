@@ -83,7 +83,7 @@
 - type: trait
   id: ValyrianStandard
   category: TraitsSpeechLanguages
-  points: -1
+  points: 0
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsLanguagesBasic
@@ -111,7 +111,7 @@
 - type: trait
   id: Azaziba
   category: TraitsSpeechLanguages
-  points: -1
+  points: 0
   requirements:
     - !type:CharacterSpeciesRequirement
       species:
