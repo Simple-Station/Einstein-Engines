@@ -8,7 +8,6 @@ using Content.Shared._Goobstation.Flashbang;
 using Content.Shared.Charges.Components;
 using Content.Shared.Charges.Systems;
 using Content.Shared.Eye.Blinding.Components;
-using Content.Shared.Eye.Blinding;
 using Content.Shared.Flash;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction.Events;
