@@ -445,7 +445,7 @@
 - type: trait
   id: HealingWordPower
   category: Mental
-  points: -4
+  points: -6
   requirements:
     - !type:CharacterLogicOrRequirement
       requirements:
