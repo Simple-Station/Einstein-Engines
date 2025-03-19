@@ -395,18 +395,9 @@
   coefficients:
     Shock: 1.25 # Conductive skin.
   flatReductions:
-    Blunt: 1
-    Slash: 1
-    Piercing: 1
-
-- type: damageModifierSet
-  id: TitaniumBones
-  coefficients:
-    Blunt: 0.85
-    Piercing: 0.95
-    Cellular: 1.25 # Weakened immune system.
-    Radiation: 1.25
-    Shock: 1.25 # Conductive bones.
+    Blunt: 1.5
+    Slash: 1.5
+    Piercing: 1.5
 
 # protects against radiation
 - type: damageModifierSet
