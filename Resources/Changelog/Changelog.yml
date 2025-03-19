@@ -13296,3 +13296,10 @@ Entries:
   id: 6993
   time: '2025-03-19T22:02:45.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2021
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: 'Puddles now have a separate draw depth so they display properly '
+  id: 6994
+  time: '2025-03-19T22:07:12.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2020
