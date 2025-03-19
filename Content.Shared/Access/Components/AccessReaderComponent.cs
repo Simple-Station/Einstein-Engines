@@ -24,7 +24,7 @@ public sealed partial class AccessReaderComponent : Component
     /// Whether or not the owner of the lock (IPC/Cyborg) can always access it.
     /// </summary>
     [DataField]
-    public bool OwnerHasAccess = true;
+    public bool OwnerHasAccess = false;
 
     /// <summary>
     /// The set of tags that will automatically deny an allowed check, if any of them are present.
