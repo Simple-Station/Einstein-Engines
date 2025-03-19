@@ -28,7 +28,7 @@
     # Por algum motivo esse componente é bem bugado, então o "LockTime" é quem diz o tempo de tudo enquanto o unlock só está servindo como um bool (???)
     lockTime: 5
     unlockTime: 5
-    breakOnEmag: false # Emagging an IPC panel is irreversible without admin intervention, and I have a funny feeling making somebody permanently pretty much combat ineffective as their cell can instantly be yanked out, with no do-after bar, counterplay, or even indicator to the victim, is fair.
+    breakOnEmag: false # Emagging an IPC panel is irreversible without admin intervention, and I have a funny feeling making somebody permanently pretty much combat ineffective as their cell can instantly be yanked out, with no do-after bar, counterplay, or even indicator to the victim, is not exactly fair.
   - type: NpcFactionMember
     factions:
       - NanoTrasen
