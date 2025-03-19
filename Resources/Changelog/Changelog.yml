@@ -13224,3 +13224,14 @@ Entries:
   id: 6987
   time: '2025-03-18T23:12:40.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2008
+- author: CyberLanos
+  changes:
+    - type: Tweak
+      message: make miner's salve overdose less punishing
+    - type: Tweak
+      message: >-
+        change miner's salve healing rates to better suit low pressure
+        environment
+  id: 6988
+  time: '2025-03-19T01:14:14.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2010
