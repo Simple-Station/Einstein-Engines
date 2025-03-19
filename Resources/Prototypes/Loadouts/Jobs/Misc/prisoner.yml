@@ -72,17 +72,6 @@
   items:
     - RollingPin
 
-- type: loadout
-  id: LoadoutPrisonerEquipmentPlasmaShiv
-  category: JobsZMiscPrisoner
-  cost: 5
-  requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - Prisoner
-  items:
-    - PlasmaShiv # this is probably a bit strong but i want some reason to take this over smashing a random lightbulb
-
 # Eyes
 
 # Gloves
