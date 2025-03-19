@@ -441,3 +441,45 @@
     - !type:TraitAddPsionics
       psionicPowers:
         - PsychognomyPower
+
+- type: trait
+  id: HealingWordPower
+  category: Mental
+  points: -4
+  requirements:
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Shadowkin # Innate Psionics
+        - !type:CharacterTraitRequirement
+          traits:
+            - LatentPsychic
+        - !type:CharacterJobRequirement
+          jobs:
+            - Librarian
+            - ForensicMantis
+            - ResearchDirector
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - ShadowkinBlackeye
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Chaplain
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMachine
+  functions:
+    - !type:TraitAddPsionics
+      psionicPowers:
+        - HealingWordPower
