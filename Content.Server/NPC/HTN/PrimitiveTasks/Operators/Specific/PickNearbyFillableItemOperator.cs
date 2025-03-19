@@ -86,7 +86,7 @@ public sealed partial class PickNearbyFillableItemOperator : HTNOperator
                 continue;
 
             // only things that can go inside
-            if (linkedStorage != null && !_sharedMaterialStorage.CanInsertMaterialEntity(target, fillbot.LinkedSinkEntity))
+            if (linkedStorage != null && !_sharedMaterialStorage.CanInsertMaterialEntity(target, fillbot.LinkedSinkEntity.Value))
                 continue;
 
             // trash only

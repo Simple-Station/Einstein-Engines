@@ -68,12 +68,12 @@ public sealed partial class FillLinkedMachineOperator : HTNOperator
 
         if (isMaterialStorage && linkedStorage != null)
         {
-            if (_sharedMaterialStorage.TryInsertMaterialEntity(owner, heldItem.Value, fillbot.LinkedSinkEntity))
+            if (_sharedMaterialStorage.TryInsertMaterialEntity(owner, heldItem.Value, fillbot.LinkedSinkEntity.Value))
                 return HTNOperatorStatus.Finished;
         }
         else if (isDisposalUnit && disposalUnit != null)
         {
-            _sharedDisposalUnitSystem.DoInsertDisposalUnit(fillbot.LinkedSinkEntity, heldItem.Value, owner);
+            _sharedDisposalUnitSystem.DoInsertDisposalUnit(fillbot.LinkedSinkEntity.Value, heldItem.Value, owner);
             return HTNOperatorStatus.Finished;
         }
 
