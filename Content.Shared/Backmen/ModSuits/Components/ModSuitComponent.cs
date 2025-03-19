@@ -1,5 +1,6 @@
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Inventory;
+using Robust.Shared.Audio;
 using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -37,10 +38,16 @@ public sealed partial class ModSuitComponent : Component
     /// The slot the battery is in
     /// </summary>
     [ViewVariables]
-    public ContainerSlot BatterySlot = default!;
+    public ItemSlot BatterySlot = default!;
 
     [ViewVariables]
     public readonly string BatterySlotId = "mod-battery-slot";
+
+    [DataField, ViewVariables]
+    public SoundPathSpecifier NominalSound = new("/Audio/Backmen/Misc/suit/nominal.ogg");
+
+    [DataField, ViewVariables]
+    public SoundPathSpecifier ModPiecePutOnSound = new("/Audio/Mecha/mechmove03.ogg");
 
     /// <summary>
     ///     All the modules inside the mod suit
@@ -52,6 +59,17 @@ public sealed partial class ModSuitComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public int MaxComplexity = 15;
+
+    [DataField, AutoNetworkedField]
+    public float PassiveEnergyConsumption = 5f;
+
+    /// <summary>
+    ///     No idea why you would want to change this, but sure
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public TimeSpan BatteryUpdateTime = TimeSpan.FromSeconds(3f);
+
+    public TimeSpan NextBatteryUpdate;
 
     /// <summary>
     ///     Current complexity this mod suit is holding.

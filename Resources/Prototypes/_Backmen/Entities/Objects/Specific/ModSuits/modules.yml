@@ -8,19 +8,6 @@
 
 - type: entity
   parent: ModSuitModBase
-  id: ModSuitModAntigravity
-  name: MOD Anti-Gravity Module
-  description: A module that uses a gravitational core to make the user completely weightless.
-  components:
-  - type: Sprite
-    state: antigravity
-  - type: ModSuitMod
-    slot: shoes
-    components:
-    - type: AntiGravityClothing
-
-- type: entity
-  parent: ModSuitModBase
   id: ModSuitModApparatus
   name: MOD Eating Apparatus Module
   description: A favorite by Miners, this modification to the helmet utilizes a nanotechnology barrier in front of the mouth to allow eating and drinking while retaining protection and atmosphere. However, it will do nothing to improve the taste of a goliath steak.
@@ -44,6 +31,8 @@
     state: drill
   - type: ModSuitMod
     slot: gloves
+    activeConsumption: 2.5
+    modComplexity: 3
     components:
     - type: IngestionBlocker
     - type: Tag
@@ -66,7 +55,7 @@
   parent: ModSuitModBase
   id: ModSuitModJetpack
   name: MOD jetpack module
-  description: It's a jetpack module. It can hold 5 L of gas.
+  description: It's a jetpack module. It can hold 5 moles of various fuel.
   components:
   - type: Sprite
     state: jetpack_adv
@@ -91,12 +80,13 @@
 - type: entity
   parent: ModSuitModBase
   id: ModSuitModMagBoots
-  name: MOD Mag Boots Module
+  name: MOD Magnetic Stability Module
   description: These are powerful electromagnets fitted into the suit's boots, allowing users both excellent traction no matter the condition indoors, and to essentially hitch a ride on the exterior of a hull. However, these basic models do not feature computerized systems to automatically toggle them on and off, so numerous users report a certain stickiness to their steps.
   components:
   - type: Sprite
     state: magnet
   - type: ModSuitMod
+    activeConsumption: 2.5
     slot: shoes
     components:
     - type: ClothingSpeedModifier
@@ -132,6 +122,7 @@
     state: night_visor
   - type: ModSuitMod
     slot: head
+    activeConsumption: 1.5
     components:
     - type: NightVision
       slotFlags: HEAD
@@ -181,6 +172,7 @@
     state: medhud_visor
   - type: ModSuitMod
     modComplexity: 2
+    activeConsumption: 1.5
     slot: head
     incompatibleMods:
     - ModSuitModDiagnosticsHud
@@ -205,6 +197,7 @@
     state: diaghud_visor
   - type: ModSuitMod
     modComplexity: 2
+    activeConsumption: 1.5
     slot: head
     incompatibleMods:
     - ModSuitModMedHud
@@ -225,6 +218,7 @@
     state: sechud_visor
   - type: ModSuitMod
     modComplexity: 2
+    activeConsumption: 1.5
     slot: head
     incompatibleMods:
     - ModSuitModDiagnosticsHud
@@ -284,24 +278,58 @@
 
 - type: entity
   parent: ModSuitModBase
-  id: ModSuitModArmor
-  name: MOD Armor Replace Module
-  description: Replaces armor in your MOD with a "perfect 50".
+  id: ModSuitModStorageSyndicate
+  name: MOD Syndicate Storage Module
+  description: put some description here later
   components:
   - type: Sprite
-    state: plate_compression
+    state: storage_syndi
   - type: ModSuitMod
-    modComplexity: 2
-    slot: outerClothing
+    modComplexity: 3
+    slot: MODcore
     components:
-    - type: Armor
-      modifiers:
-        coefficients:
-          Blunt: 0.5
-          Slash: 0.5
-          Piercing: 0.5
-          Heat: 0.5
-          Radiation: 0.5
+    - type: Storage
+      maxItemSize: Huge
+      grid:
+      - 0,0,8,4
+
+- type: entity
+  parent: ModSuitModBase
+  id: ModSuitModStorageBluespace
+  name: MOD Bluespace Storage Module
+  description: put some description here later
+  components:
+  - type: Sprite
+    state: storage_bluespace
+  - type: ModSuitMod
+    modComplexity: 3
+    slot: MODcore
+    components:
+    - type: Storage
+      maxItemSize: Huge
+      grid:
+      - 0,0,12,12
+
+#- type: entity
+#  parent: ModSuitModBase
+#  id: ModSuitModArmor
+#  name: MOD Armor Replace Module
+#  description: Replaces armor in your MOD with a "perfect 50".
+#  components:
+#  - type: Sprite
+#    state: plate_compression
+#  - type: ModSuitMod
+#    modComplexity: 2
+#    slot: outerClothing
+#    components:
+#    - type: Armor
+#      modifiers:
+#        coefficients:
+#          Blunt: 0.5
+#          Slash: 0.5
+#          Piercing: 0.5
+#          Heat: 0.5
+#          Radiation: 0.5
 
 - type: entity
   parent: ModSuitModBase
@@ -312,6 +340,7 @@
   - type: Sprite
     state: tray
   - type: ModSuitMod
+    activeConsumption: 1
     modComplexity: 2
     slot: head
     components:

@@ -28,6 +28,7 @@ public sealed class SharedMagbootsSystem : EntitySystem
         SubscribeLocalEvent<MagbootsComponent, ClothingGotEquippedEvent>(OnGotEquipped);
         SubscribeLocalEvent<MagbootsComponent, ClothingGotUnequippedEvent>(OnGotUnequipped);
         SubscribeLocalEvent<MagbootsComponent, ComponentRemove>(OnBeingRemoved);
+        SubscribeLocalEvent<MagbootsComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<MagbootsComponent, IsWeightlessEvent>(OnIsWeightless);
         SubscribeLocalEvent<MagbootsComponent, InventoryRelayedEvent<IsWeightlessEvent>>(OnIsWeightless);
     }
@@ -53,6 +54,12 @@ public sealed class SharedMagbootsSystem : EntitySystem
     {
         var wearer = Transform(ent).ParentUid;
         UpdateMagbootEffects(wearer, ent, false);
+    }
+
+    private void OnStartup(Entity<MagbootsComponent> ent, ref ComponentStartup args)
+    {
+        var wearer = Transform(ent).ParentUid;
+        UpdateMagbootEffects(wearer, ent, _toggle.IsActivated(ent.Owner));
     }
 
     private void OnGotUnequipped(Entity<MagbootsComponent> ent, ref ClothingGotUnequippedEvent args)

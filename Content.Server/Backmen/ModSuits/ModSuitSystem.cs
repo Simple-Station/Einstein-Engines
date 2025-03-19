@@ -9,6 +9,7 @@ using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using System.Linq;
 using Content.Server.Power.Components;
+using Content.Server.Power.EntitySystems;
 using Content.Shared.Backmen.ModSuits;
 using Content.Shared.Backmen.ModSuits.Components;
 using Content.Shared.Clothing;
@@ -19,7 +20,6 @@ using Content.Shared.Mind;
 using Content.Shared.Tools.Systems;
 using Content.Shared.Whitelist;
 using Content.Shared.Wires;
-using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Random;
 
@@ -48,6 +48,7 @@ public sealed class ModSuitSystem : EntitySystem
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
 
     [Dependency] private readonly ClothingSpeedModifierSystem _speedModifier = default!;
+    [Dependency] private readonly BatterySystem _battery = default!;
 
     public override void Initialize()
     {
@@ -72,8 +73,8 @@ public sealed class ModSuitSystem : EntitySystem
 
         SubscribeLocalEvent<ModSuitComponent, InteractUsingEvent>(OnInteractUsing);
 
-        SubscribeLocalEvent<ModSuitComponent, EntInsertedIntoContainerMessage>(OnModInserted);
-        SubscribeLocalEvent<ModSuitComponent, EntRemovedFromContainerMessage>(OnModRemoved);
+        SubscribeLocalEvent<ModSuitComponent, EntInsertedIntoContainerMessage>(OnItemInserted);
+        SubscribeLocalEvent<ModSuitComponent, EntRemovedFromContainerMessage>(OnItemRemoved);
 
         SubscribeLocalEvent<ModSuitComponent, ItemSlotInsertAttemptEvent>(OnModInsertAttempt);
         SubscribeLocalEvent<ModSuitComponent, PanelChangedEvent>(OnPanelToggled);
@@ -87,48 +88,106 @@ public sealed class ModSuitSystem : EntitySystem
         SubscribeLocalEvent<ModSuitComponent, GetVerbsEvent<EquipmentVerb>>(OnGetVerbs);
     }
 
+    public override void Update(float frameTime)
+    {
+        var query = EntityQueryEnumerator<ModSuitComponent>();
+        while (query.MoveNext(out var uid, out var comp))
+        {
+            var batteryEnt = comp.BatterySlot.ContainerSlot!.ContainedEntity;
+            if (batteryEnt == null)
+                continue;
+
+            if (_timing.CurTime < comp.NextBatteryUpdate)
+                continue;
+            comp.NextBatteryUpdate = _timing.CurTime + comp.BatteryUpdateTime;
+
+            var modConsumptionMultiplier = 1f;
+            switch (GetAttachedToggleStatus(uid, comp))
+            {
+                case ModSuitAttachedStatus.NoneToggled:
+                    modConsumptionMultiplier = 0f;
+                    break;
+
+                case ModSuitAttachedStatus.PartlyToggled:
+                    var pieceDifference = comp.ClothingUids.Count - comp.Container.Count;
+                    modConsumptionMultiplier = 1 / (float) comp.ClothingUids.Count * pieceDifference;
+
+                    break;
+            }
+
+            var chargeToConsume = comp.PassiveEnergyConsumption * modConsumptionMultiplier;
+            foreach (var modComp in comp.ModuleSlots
+                             // John Linq!!! Hit the line!!!
+                         .Select(moduleSlot => moduleSlot.ContainerSlot!.ContainedEntity)
+                         .OfType<EntityUid>()
+                         .Select(Comp<ModSuitModComponent>))
+            {
+                if (modComp.Innate)
+                    continue;
+
+                if (modComp.Toggled)
+                {
+                    chargeToConsume += modComp.ActiveEnergyConsumption;
+                }
+                else
+                {
+                    chargeToConsume += modComp.PassiveEnergyConsumption;
+                }
+            }
+
+            _battery.UseCharge(batteryEnt.Value, chargeToConsume);
+
+            if (Comp<BatteryComponent>(batteryEnt.Value).CurrentCharge <= 0)
+            {
+                ShutdownAllModules((uid, comp));
+            }
+
+            UpdateModUi((uid, comp));
+        }
+    }
+
     #region Event Handling
 
     private void OnInteractUsing(Entity<ModSuitComponent> modSuit, ref InteractUsingEvent args)
     {
-        if (TryComp<WiresPanelComponent>(modSuit, out var panel) && !panel.Open)
+        // TODO: Make this be redirected to others too
+        if (!_tool.HasQuality(args.Used, "Prying"))
             return;
 
-        if (modSuit.Comp.BatterySlot.ContainedEntity == null && TryComp<BatteryComponent>(args.Used, out var battery))
-        {
-            InsertBattery(modSuit, (args.Used, battery));
+        var toggledPieces =
+            (from modPiece in modSuit.Comp.ClothingUids where !modSuit.Comp.Container.Contains(modPiece.Key) select modPiece.Key).ToList();
+
+        if (toggledPieces.Count <= 0)
             return;
-        }
 
-        if (_tool.HasQuality(args.Used, "Prying"))
+        var clothing = toggledPieces.FirstOrDefault();
+        modSuit.Comp.BeingDeployed = true;
+
+        if (modSuit.Comp.ClothingUids.TryGetValue(clothing, out var attachedSlot))
         {
-            var toggledPieces =
-                modSuit.Comp.ClothingUids
-                    .Where(piece => !modSuit.Comp.Container.Contains(piece.Key))
-                    .ToDictionary(piece => piece.Value, piece => piece.Key);
-
-            if (toggledPieces.Count > 0)
-            {
-                var clothing = toggledPieces.FirstOrDefault().Value;
-                modSuit.Comp.BeingDeployed = true;
-
-                var comp = modSuit.Comp;
-                _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager, args.User, comp.ModPartToggleDelay * 2.4, new TogglePartDoAfterEvent(true), modSuit.Owner, clothing, args.Used)
-                {
-                    BreakOnWeightlessMove = false,
-                });
-            }
+            modSuit.Comp.EntitiesToDeploy.TryAdd(attachedSlot, clothing);
         }
+
+        _popupSystem.PopupEntity(
+            Loc.GetString("mod-suit-prying", ("user", args.User)),
+            modSuit.Owner,
+            PopupType.MediumCaution);
+
+        var comp = modSuit.Comp;
+        _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager, args.User, comp.ModPartToggleDelay * 2.4, new TogglePartDoAfterEvent(true), modSuit.Owner, clothing, args.Used)
+        {
+            BreakOnWeightlessMove = false,
+        });
     }
 
-    private void OnModInserted(Entity<ModSuitComponent> modSuit, ref EntInsertedIntoContainerMessage args)
+    private void OnItemInserted(Entity<ModSuitComponent> modSuit, ref EntInsertedIntoContainerMessage args)
     {
         var inserted = args.Entity;
-        if (!TryComp<ModSuitModComponent>(inserted, out var modComp))
-            return;
-
-        if (!modComp.Innate)
+        if (TryComp<ModSuitModComponent>(inserted, out var modComp))
         {
+            if (modComp.Innate)
+                return;
+
             modSuit.Comp.CurrentComplexity += modComp.ModComplexity;
             AddModuleSlot(modSuit);
 
@@ -147,10 +206,9 @@ public sealed class ModSuitSystem : EntitySystem
             return;
 
         var inserted = args.Item;
-        if (!TryComp<ModSuitModComponent>(inserted, out var modComp) || modComp.Innate)
+        if (!TryComp<ModSuitModComponent>(inserted, out var modComp))
             return;
 
-        var wearer = Transform(modSuit).ParentUid;
         foreach (var slot in modSuit.Comp.ModuleSlots)
         {
             // Mod already present
@@ -162,8 +220,8 @@ public sealed class ModSuitSystem : EntitySystem
                     Loc.GetString("mod-already-present", ("mod", inserted)),
                     modSuit.Owner,
                     args.User.Value);
-                args.Cancelled = true;
 
+                args.Cancelled = true;
                 return;
             }
 
@@ -209,25 +267,32 @@ public sealed class ModSuitSystem : EntitySystem
         }
     }
 
-    private void OnModRemoved(Entity<ModSuitComponent> modSuit, ref EntRemovedFromContainerMessage args)
+    private void OnItemRemoved(Entity<ModSuitComponent> modSuit, ref EntRemovedFromContainerMessage args)
     {
         var removed = args.Entity;
-        if (!TryComp<ModSuitModComponent>(removed, out var modComp) || modComp.Innate)
-            return;
-
-        modSuit.Comp.CurrentComplexity -= modComp.ModComplexity;
-
-        _itemSlotsSystem.RemoveItemSlot(modSuit, modSuit.Comp.ModuleSlots.Last());
-        modSuit.Comp.ModuleSlots.Remove(modSuit.Comp.ModuleSlots.Last());
-
-        if (TryComp<ClothingSpeedModifierComponent>(removed, out var modify))
+        if (TryComp<ModSuitModComponent>(removed, out var modComp))
         {
-            _speedModifier.ModifySpeed(removed, modify, -modComp.SpeedMod);
+            modSuit.Comp.CurrentComplexity -= modComp.ModComplexity;
+
+            _itemSlotsSystem.RemoveItemSlot(modSuit, modSuit.Comp.ModuleSlots.Last());
+            modSuit.Comp.ModuleSlots.Remove(modSuit.Comp.ModuleSlots.Last());
+
+            if (TryComp<ClothingSpeedModifierComponent>(removed, out var modify))
+            {
+                _speedModifier.ModifySpeed(removed, modify, -modComp.SpeedMod);
+            }
+
+            // Is the module currently active?
+            if (modComp.Toggled)
+                ToggleModule(modSuit, (removed, modComp));
         }
 
-        // Is the module currently active?
-        if (modComp.Toggled)
-            ToggleModule(modSuit, (removed, modComp));
+        if (HasComp<BatteryComponent>(removed))
+        {
+            ShutdownAllModules(modSuit);
+        }
+
+        UpdateModUi(modSuit);
     }
 
     private void OnTogglePartModulesMessage(Entity<ModSuitComponent> modSuit, ref TogglePartModulesUiMessage args)
@@ -251,6 +316,8 @@ public sealed class ModSuitSystem : EntitySystem
 
     private void OnPanelToggled(Entity<ModSuitComponent> modSuit, ref PanelChangedEvent args)
     {
+        _itemSlotsSystem.SetLock(modSuit, modSuit.Comp.BatterySlot, !args.Open);
+
         foreach (var slot in modSuit.Comp.ModuleSlots)
         {
             if (slot.ContainerSlot!.ContainedEntity == null)
@@ -274,8 +341,21 @@ public sealed class ModSuitSystem : EntitySystem
     {
         var comp = modSuit.Comp;
 
+        ItemSlot batterySlot = new()
+        {
+            Whitelist = new EntityWhitelist
+            {
+                Components = new [] { "Battery" },
+            },
+            Swap = true,
+        };
+
+        _itemSlotsSystem.AddItemSlot(modSuit, comp.BatterySlotId, batterySlot);
+
+        comp.BatterySlot = batterySlot;
         comp.Container = _containerSystem.EnsureContainer<Container>(modSuit, comp.ContainerId);
-        comp.BatterySlot = _containerSystem.EnsureContainer<ContainerSlot>(modSuit, comp.BatterySlotId);
+
+        _itemSlotsSystem.SetLock(modSuit, comp.BatterySlot, true);
 
         if (comp.ClothingUids.Count != 0 && comp.DeployActionEntity != null)
             return;
@@ -587,7 +667,10 @@ public sealed class ModSuitSystem : EntitySystem
                 .Select(modPiece => Comp<ModAttachedClothingComponent>(modPiece.Key))
                 .Any(attachedComp => attachedComp.JamTimer > _timing.CurTime))
             {
-                _popupSystem.PopupClient(Loc.GetString("modsuit-jammed"), args.Actor, args.Actor);
+                _popupSystem.PopupEntity(
+                    Loc.GetString("modsuit-jammed"),
+                    args.Actor,
+                    args.Actor);
                 return;
             }
 
@@ -597,6 +680,22 @@ public sealed class ModSuitSystem : EntitySystem
 
         var attachedUid = GetEntity(args.AttachedClothingUid);
         StartDoAfter(args.Actor, modSuit, attachedUid);
+    }
+
+    private void ShutdownAllModules(Entity<ModSuitComponent> modSuit)
+    {
+        foreach (var moduleSlot in modSuit.Comp.ModuleSlots)
+        {
+            var modEnt = moduleSlot.ContainerSlot!.ContainedEntity;
+            if (modEnt == null)
+                continue;
+
+            var modComp = Comp<ModSuitModComponent>(modEnt.Value);
+            if (modComp is { Toggled: true, CanBeToggled: true })
+            {
+                ToggleModule(modSuit, (modEnt.Value, modComp));
+            }
+        }
     }
 
     private bool CanToggleModule(Entity<ModSuitComponent> modSuit, Entity<ModSuitModComponent> module, EntityUid? user)
@@ -614,15 +713,20 @@ public sealed class ModSuitSystem : EntitySystem
             return false;
 
         // The clothing piece is not deployed
-        if (modSuit.Comp.Container.Contains(attachedEnt.Value))
+        if (modSuit.Comp.Container.Contains(attachedEnt.Value) && user != null)
         {
-            _popupSystem.PopupClient(Loc.GetString("modsuit-put-on-first"), user);
+            _popupSystem.PopupEntity(
+                Loc.GetString("modsuit-put-on-first", ("clothing", attachedEnt.Value)),
+                modSuit,
+                user.Value);
             return false;
         }
 
-        // TODO: Check for battery charge
+        var batteryEnt = modSuit.Comp.BatterySlot.ContainerSlot!.ContainedEntity;
+        if (!TryComp<BatteryComponent>(batteryEnt, out var battery))
+            return false;
 
-        return true;
+        return battery.CurrentCharge > module.Comp.ActiveEnergyConsumption;
     }
 
     private void UpdateModUi(Entity<ModSuitComponent> modSuit)
@@ -643,19 +747,15 @@ public sealed class ModSuitSystem : EntitySystem
             }
         }
 
-        var state = new ModSuitBuiState(0f, modSuit.Comp.CurrentComplexity, modSuit.Comp.BatterySlot.ContainedEntity != null, modules);
+        var chargePercent = 0f;
+        if (modSuit.Comp.BatterySlot.ContainerSlot!.ContainedEntity != null
+            && TryComp<BatteryComponent>(modSuit.Comp.BatterySlot.ContainerSlot!.ContainedEntity, out var battery))
+        {
+            chargePercent = battery.CurrentCharge / battery.MaxCharge;
+        }
+
+        var state = new ModSuitBuiState(chargePercent, modSuit.Comp.CurrentComplexity, modules);
         _uiSystem.SetUiState(modSuit.Owner, ModSuitUiKey.Key, state);
-    }
-
-    private void InsertBattery(Entity<ModSuitComponent> modSuit, Entity<BatteryComponent> battery)
-    {
-        if (TryComp<WiresPanelComponent>(modSuit, out var panel) && !panel.Open)
-            return;
-
-        _containerSystem.Insert(battery.Owner, modSuit.Comp.BatterySlot);
-
-        Dirty(modSuit);
-        UpdateModUi(modSuit);
     }
 
     private void ToggleModule(Entity<ModSuitComponent> modSuit, Entity<ModSuitModComponent> module)
@@ -724,7 +824,10 @@ public sealed class ModSuitSystem : EntitySystem
                 .Select(modPiece => Comp<ModAttachedClothingComponent>(modPiece.Key))
                 .Any(attachedComp => attachedComp.JamTimer > _timing.CurTime))
             {
-                _popupSystem.PopupClient(Loc.GetString("modsuit-jammed"), args.Performer, args.Performer);
+                _popupSystem.PopupEntity(
+                    Loc.GetString("modsuit-jammed"),
+                    args.Performer,
+                    args.Performer);
                 return;
             }
 
@@ -748,7 +851,10 @@ public sealed class ModSuitSystem : EntitySystem
 
         if (!TryComp<WiresPanelComponent>(modSuit, out var panel) || panel.Open)
         {
-            _popupSystem.PopupClient(Loc.GetString("modsuit-close-wires"), args.Performer, args.Performer);
+            _popupSystem.PopupEntity(
+                Loc.GetString("modsuit-close-wires"),
+                args.Performer,
+                args.Performer);
             return;
         }
 
@@ -818,7 +924,7 @@ public sealed class ModSuitSystem : EntitySystem
             .Select(modPiece => Comp<ModAttachedClothingComponent>(modPiece.Key))
             .Any(attachedComp => attachedComp.JamTimer > _timing.CurTime))
         {
-            _popupSystem.PopupClient(Loc.GetString("modsuit-jammed"), user, user);
+            _popupSystem.PopupEntity(Loc.GetString("modsuit-jammed"), user, user);
             return;
         }
 
@@ -839,7 +945,7 @@ public sealed class ModSuitSystem : EntitySystem
 
         if (!TryComp<WiresPanelComponent>(modSuit, out var panel) || panel.Open)
         {
-            _popupSystem.PopupClient(Loc.GetString("modsuit-close-wires"), user, user);
+            _popupSystem.PopupEntity(Loc.GetString("modsuit-close-wires"), user, user);
             return;
         }
 
@@ -870,7 +976,7 @@ public sealed class ModSuitSystem : EntitySystem
     {
         if (!TryComp<WiresPanelComponent>(modSuit, out var panel) || panel.Open)
         {
-            _popupSystem.PopupClient(Loc.GetString("modsuit-close-wires"), user, user);
+            _popupSystem.PopupEntity(Loc.GetString("modsuit-close-wires"), user, user);
             return;
         }
 
@@ -892,7 +998,7 @@ public sealed class ModSuitSystem : EntitySystem
 
         if (!TryComp<WiresPanelComponent>(modSuit, out var panel) || panel.Open)
         {
-            _popupSystem.PopupClient(Loc.GetString("modsuit-close-wires"), user, user);
+            _popupSystem.PopupEntity(Loc.GetString("modsuit-close-wires"), user, user);
             return false;
         }
 
@@ -901,7 +1007,15 @@ public sealed class ModSuitSystem : EntitySystem
 
         if (attachedComp.JamTimer > _timing.CurTime)
         {
-            _popupSystem.PopupClient(Loc.GetString("modsuit-clothing-jammed", ("clothing", clothing)), user, user);
+            _popupSystem.PopupEntity(Loc.GetString("modsuit-clothing-jammed", ("clothing", clothing)), user, user);
+            return false;
+        }
+
+        if (modSuit.Comp.BatterySlot.ContainerSlot!.ContainedEntity == null
+            || !TryComp<BatteryComponent>(modSuit.Comp.BatterySlot.ContainerSlot!.ContainedEntity, out var battery)
+            || battery.CurrentCharge <= 0)
+        {
+            _popupSystem.PopupEntity(Loc.GetString("modsuit-requires-charged-battery"), user, user);
             return false;
         }
 
@@ -910,7 +1024,7 @@ public sealed class ModSuitSystem : EntitySystem
         {
             if (!modSuit.Comp.ReplaceCurrentClothing)
             {
-                _popupSystem.PopupClient(Loc.GetString("modsuit-remove-first", ("entity", currentClothing)), user, user);
+                _popupSystem.PopupEntity(Loc.GetString("modsuit-remove-first", ("entity", currentClothing)), user, user);
                 return false;
             }
 
@@ -954,10 +1068,9 @@ public sealed class ModSuitSystem : EntitySystem
         if (!_mindSystem.TryGetMind(user, out _, out var mind) || mind.Session == null)
             return;
 
-        // TODO: Unhardcode this
         _audioSystem.PlayGlobal(GetAttachedToggleStatus(modSuit, modSuit) == ModSuitAttachedStatus.AllToggled
-                ? new SoundPathSpecifier("/Audio/Backmen/Misc/suit/nominal.ogg")
-                : new SoundPathSpecifier("/Audio/Mecha/mechmove03.ogg"),
+                ? modSuit.Comp.NominalSound
+                : modSuit.Comp.ModPiecePutOnSound,
             mind.Session);
     }
 
@@ -968,7 +1081,7 @@ public sealed class ModSuitSystem : EntitySystem
         RemComp<UnremoveableComponent>(clothing);
         _inventorySystem.TryUnequip(user, parent, slot, force: true);
 
-        // If attached have clothing in container - equip it
+        // If attached mod entity has clothing in its container, we equip it back
         if (!TryComp<ModAttachedClothingComponent>(clothing, out var attachedComp) || attachedComp.ClothingContainer == null)
             return;
 
@@ -979,8 +1092,7 @@ public sealed class ModSuitSystem : EntitySystem
         if (!_mindSystem.TryGetMind(user, out _, out var mind) || mind.Session == null)
             return;
 
-        // TODO: I kinda hate this, unhardcode
-        _audioSystem.PlayGlobal(new SoundPathSpecifier("/Audio/Mecha/mechmove03.ogg"), mind.Session);
+        _audioSystem.PlayGlobal(modSuit.Comp.ModPiecePutOnSound, mind.Session);
     }
 
     private void OnGetActions(Entity<ModSuitComponent> modSuit, ref GetItemActionsEvent args)
@@ -1008,7 +1120,7 @@ public sealed class ModSuitSystem : EntitySystem
         var container = component.Container;
         var attachedClothing = component.ClothingUids;
 
-        // If entity don't have any attached clothings it means none toggled
+        // If the entity doesn't have any attached clothing it means none can be even toggled
         if (attachedClothing.Count == 0)
             return ModSuitAttachedStatus.NoneToggled;
 

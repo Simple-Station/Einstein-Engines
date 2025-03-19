@@ -12,6 +12,12 @@ public sealed partial class ModSuitModComponent : Component
     [DataField, AutoNetworkedField]
     public string Slot = "head";
 
+    [DataField("passiveConsumption")]
+    public float PassiveEnergyConsumption = 0f;
+
+    [DataField("activeConsumption")]
+    public float ActiveEnergyConsumption = 0f;
+
     /// <summary>
     /// How much complexity does this mod take up?
     /// </summary>
@@ -39,6 +45,9 @@ public sealed partial class ModSuitModComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public float SpeedMod = -0.01f;
+
+    [DataField("toggleable")]
+    public bool CanBeToggled = true;
 
     // Used in internal code. do not modify
     public bool Innate = false;

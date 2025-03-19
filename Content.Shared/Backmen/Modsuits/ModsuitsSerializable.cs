@@ -23,15 +23,12 @@ public sealed class ModSuitBuiState : BoundUserInterfaceState
 
     public int CurrentComplexity;
 
-    public bool HasBattery;
-
     public List<(NetEntity, bool)> Modules;
 
-    public ModSuitBuiState(float chargePercent, int currentComplexity, bool hasBattery, List<(NetEntity, bool)> modules)
+    public ModSuitBuiState(float chargePercent, int currentComplexity, List<(NetEntity, bool)> modules)
     {
         ChargePercent = chargePercent;
         CurrentComplexity = currentComplexity;
-        HasBattery = hasBattery;
         Modules = modules;
     }
 }
@@ -132,7 +129,6 @@ public sealed class UnequipModClothingAttemptEvent : CancellableEntityEventArgs
 public enum ModSuitVisualizerKeys : byte
 {
     ClothingPieces,
-    Modules,
 }
 
 

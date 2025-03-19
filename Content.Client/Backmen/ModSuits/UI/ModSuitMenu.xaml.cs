@@ -44,7 +44,6 @@ public sealed partial class ModSuitMenu : FancyWindow
 
     public void UpdateState(ModSuitBuiState state)
     {
-        EjectBatteryButton.Disabled = !state.HasBattery;
         ChargeBar.Value = state.ChargePercent;
         ChargeLabel.Text = Loc.GetString("mod-suit-ui-charge-label",
             ("charge", (int) MathF.Round(state.ChargePercent * 100)));

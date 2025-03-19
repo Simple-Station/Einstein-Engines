@@ -121,7 +121,7 @@
       outerClothing: ClothingOuterModsuitBodyMedical
       shoes: ClothingModsuitShoesMedical
     innateModules:
-    - ModSuitMedHud
+    - ModSuitModMedHud
   - type: Construction
     graph: ModsuitMedical
     node: sciencemodsuitmedical
