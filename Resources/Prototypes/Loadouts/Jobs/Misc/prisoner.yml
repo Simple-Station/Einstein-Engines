@@ -92,7 +92,7 @@
     - ClothingHeadHatPirate
 
 - type: loadout
-  id: LoadoutPrisonerClothingHeadPirateTricord
+  id: LoadoutPrisonerClothingHeadPirateTricorn
   category: JobsZMiscPrisoner
   cost: 0
   exclusive: true
@@ -103,7 +103,7 @@
       jobs:
         - Prisoner
   items:
-    - ClothingHeadHatPirateTricord
+    - ClothingHeadHatPirateTricorn
 
 - type: loadout
   id: LoadoutPrisonerClothingHeadPyjamasBlack
