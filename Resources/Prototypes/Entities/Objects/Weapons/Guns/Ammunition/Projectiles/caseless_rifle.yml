@@ -65,6 +65,8 @@
     damage:
       types:
         Piercing: 4.37
+  - type: Sprite
+    scale: 0.5, 0.5
 
 - type: entity
   id: BulletCaselessRifleShrapnelSpread
