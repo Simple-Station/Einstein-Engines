@@ -14,7 +14,7 @@ using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Inventory;
 using Content.Shared.Tag;
-using Content.Shared.Traits.Assorted;
+using Content.Shared.Traits.Assorted.Components;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.StatusEffect;
 using Content.Shared.Examine;
