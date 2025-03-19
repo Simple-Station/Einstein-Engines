@@ -13275,3 +13275,17 @@ Entries:
   id: 6991
   time: '2025-03-19T15:13:14.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1999
+- author: BramvanZijp
+  changes:
+    - type: Add
+      message: >-
+        You can now add an access requirement to an IPC's maintenance panel
+        using an access configurator, though an IPC can always unlock their own
+        panel.
+    - type: Tweak
+      message: >-
+        After unlocking an IPC maintenance panel, which is now instant, you need
+        to use a screwdriver to actually open it.
+  id: 6992
+  time: '2025-03-19T16:27:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2014
