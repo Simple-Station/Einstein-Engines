@@ -1,16 +1,16 @@
 - type: trait
   id: Swashbuckler
   category: Physical
-  points: -2
+  points: -1
   functions:
     - !type:TraitReplaceComponent
       components:
       - type: OniDamageModifier
         modifiers:
           coefficients:
-            Blunt: 1.2
+            Blunt: 1.25
             Slash: 1.35
-            Piercing: 1.2
+            Piercing: 1.25
   requirements:
     - !type:CharacterSpeciesRequirement
       species:
@@ -24,15 +24,15 @@
 - type: trait
   id: Spearmaster
   category: Physical
-  points: -2
+  points: -1
   functions:
     - !type:TraitReplaceComponent
       components:
       - type: OniDamageModifier
         modifiers:
           coefficients:
-            Blunt: 1.2
-            Slash: 1.2
+            Blunt: 1.25
+            Slash: 1.25
             Piercing: 1.35
   requirements:
     - !type:CharacterSpeciesRequirement
@@ -47,16 +47,16 @@
 - type: trait
   id: WeaponsGeneralist
   category: Physical
-  points: -2
+  points: -1
   functions:
     - !type:TraitReplaceComponent
       components:
       - type: OniDamageModifier
         modifiers:
           coefficients:
-            Blunt: 1.25
-            Slash: 1.25
-            Piercing: 1.25
+            Blunt: 1.30
+            Slash: 1.30
+            Piercing: 1.30
   requirements:
     - !type:CharacterSpeciesRequirement
       species:
