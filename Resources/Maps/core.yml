@@ -60425,13 +60425,6 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingHeadHatPirateTricord
-  entities:
-  - uid: 8303
-    components:
-    - type: Transform
-      pos: 55.618607,-27.245544
-      parent: 2
 - proto: ClothingHeadHatRedwizard
   entities:
   - uid: 17261
