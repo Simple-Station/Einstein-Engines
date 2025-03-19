@@ -13242,3 +13242,25 @@ Entries:
   id: 6989
   time: '2025-03-19T01:42:04.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2000
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added "Shrapnel Ammo" to most weapon types as a new special ammunition.
+        Shrapnel ammo essentially turns any gun into a baby shotgun. This
+        includes guns like the L6 Saw.
+    - type: Add
+      message: Added Shrapnel Ammo and specialty ammo bundles to the Syndicate Uplink.
+    - type: Tweak
+      message: >-
+        To encourage people to buy different kinds of ammo, certain guns in the
+        Syndicate Uplink no longer spawn with ammo, and are in return discounted
+        by the cost of the ammo that was removed. Have fun buying C20 magazines
+        with incendiary ammo. 
+    - type: Add
+      message: >-
+        Added Shrapnel Munitions to Arsenal Research T2. Once researched,
+        shrapnel ammo can be manufactured at a security techfab.
+  id: 6990
+  time: '2025-03-19T14:39:58.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2004
