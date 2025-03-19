@@ -136,7 +136,6 @@
   - ShuttleGunPerforatorCircuitboard
   - ShuttleGunFriendshipCircuitboard
   - WeaponXrayCannon
-  - WeaponLaserCannon
   - WeaponGunLaserCarbineAutomatic
   - WeaponLaserCannon
   - WeaponMechCombatSolarisLaser # Goobstation
@@ -166,6 +165,24 @@
   - ClothingOuterHardsuitJuggernautReverseEngineered
   technologyPrerequisites:
   - AdvancedTacsuits
+  softCapContribution: 1.5
+
+- type: technology
+  id: LaserTurrets
+  name: research-technology-laser-sentry-turrets
+  icon:
+    sprite: Objects/Weapons/Guns/Turrets/sentry_turret.rsi
+    state: base
+  discipline: Arsenal
+  tier: 3
+  cost: 20000
+  recipeUnlocks:
+  - WeaponEnergyTurretAIMachineCircuitboard
+  - WeaponEnergyTurretStationMachineCircuitboard
+  - WeaponEnergyTurretAIControlPanelElectronics
+  - WeaponEnergyTurretStationControlPanelElectronics
+  technologyPrerequisites:
+  - AdvancedWeapons
   softCapContribution: 1.5
 
 - type: technology
