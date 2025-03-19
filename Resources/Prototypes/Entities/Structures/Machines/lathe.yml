@@ -1126,11 +1126,15 @@
       - MagazineMagnumShrapnel
       - MagazineLightRifleShrapnel
       - MagazineCaselessRifleShrapnel
+      - MagazineCaselessRifleIncendiary
+      - MagazineCaselessRifleUranium
       - MagazineBoxPistolShrapnel
       - MagazineBoxMagnumShrapnel
       - MagazineBoxLightRifleShrapnel
       - MagazineBoxRifleShrapnel
       - MagazineBoxCaselessRifleShrapnel
+      - MagazineBoxCaselessRifleIncendiary
+      - MagazineBoxCaselessRifleUranium
   - type: MaterialStorage
     whitelist:
       tags:
