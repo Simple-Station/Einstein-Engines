@@ -100,8 +100,11 @@ public sealed class AccessReaderSystem : EntitySystem
         if (!reader.Enabled)
             return true;
 
-        if (reader.OwnerHasAccess && reader.Owner == user)
+        if (reader.OwnerHasAccess && target == user)
+        {
+            LogAccess((target, reader), user);
             return true;
+        }
 
         var accessSources = FindPotentialAccessItems(user);
         var access = FindAccessTags(user, accessSources);

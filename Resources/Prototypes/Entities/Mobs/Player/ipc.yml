@@ -22,6 +22,7 @@
     maxInterval: 30
     popUp: "silicon-power-low"
   - type: WiresPanel
+    openDelay: 5
   - type: LockedWiresPanel
   - type: Lock
     locked: true
