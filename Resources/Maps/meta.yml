@@ -76587,8 +76587,6 @@ entities:
       pos: -43.5,29.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 27811
       - 27816
@@ -76599,8 +76597,6 @@ entities:
       pos: -44.5,41.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 27811
       - 27847
@@ -76612,8 +76608,6 @@ entities:
       pos: -42.5,29.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 27811
       - 27816
