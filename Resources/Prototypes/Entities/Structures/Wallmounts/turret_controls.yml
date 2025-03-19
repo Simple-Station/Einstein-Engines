@@ -187,8 +187,7 @@
     usesApcPower: true
   - type: ContainerFill
     containers:
-      board:
-      - WeaponEnergyTurretStationControlPanelElectronics
+      board: [ WeaponEnergyTurretStationControlPanelElectronics ]
   - type: Construction
     graph: WeaponEnergyTurretControlPanel
     node: finish
@@ -203,8 +202,7 @@
     access: [["StationAi"], ["Captain"], ["ResearchDirector"]]
   - type: ContainerFill
     containers:
-      board:
-      - WeaponEnergyTurretAIControlPanelElectronics
+      board: [ WeaponEnergyTurretAIControlPanelElectronics ]
   - type: TurretTargetSettings
     exemptAccessLevels:
     - Captain
