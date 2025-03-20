@@ -13393,3 +13393,20 @@ Entries:
   id: 7003
   time: '2025-03-20T19:23:10.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1960
+- author: SolarisBirb
+  changes:
+    - type: Add
+      message: >-
+        Added recharging sentry turrets, one is AI-based or the other is Sec can
+        make.
+    - type: Add
+      message: >-
+        The sentry turrets can be made after researching in T3 arsenal.  The
+        boards are made in the sec fab.
+    - type: Add
+      message: 'New ID permissions for borgs and minibots for higher turret options. '
+    - type: Tweak
+      message: Turrets stop shooting after someone goes crit.
+  id: 7004
+  time: '2025-03-20T19:25:44.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1990
