@@ -56,8 +56,8 @@
 - type: entity
   parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHelmetHardsuitDreadnought
-  name: cybersun Dreadnought hardsuit helmet
-  description: A Cybersun Hardsuit Dreadnought helm, staring at it makes you wonder if buying it was worth it.
+  name: CSA-105UA "Xíngtiān" tacsuit
+  description: A helmet for the Xíngtiān tacsuit.
   components:
   - type: Sprite
     sprite: _Goobstation/Clothing/Head/Hardsuits/dreadnought.rsi

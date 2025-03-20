@@ -100,8 +100,8 @@
 - type: entity
   parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitCybersunDreadnought
-  name: cybersun dreadnought suit
-  description: You are wearing AND carrying Cybersun's glory on your shoulders. Do not disappoint.
+  name: CSA-105UA "Xíngtiān" tacsuit # https://en.wikipedia.org/wiki/Xingtian in case you were wondering where the name comes from.
+  description: A rare and exotic horror from the minds of Sol's finest engineers. This suit is worn as a punishment for crimes against Mother Sol.
   components:
   - type: Sprite
     sprite: _Goobstation/Clothing/OuterClothing/Hardsuits/dreadnought.rsi

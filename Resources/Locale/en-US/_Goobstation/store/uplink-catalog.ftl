@@ -10,6 +10,6 @@ uplink-hardsuit-cybersun-stealth-name = CSA-91x "Èguǐ" tacsuit
 uplink-hardsuit-cybersun-stealth-desc = A rare prototype tacsuit that features metamaterial plating which warps light around it to produce an "Invisibility cloak" effect.
 
 # Cybersun Dreadnought suit
-uplink-hardsuit-cybersun-dreadnought-name = Cybersun Dreadnought suit
-uplink-hardsuit-cybersun-dreadnought-desc = An insanely tough combat hardsuit utilizing hyper-bluespace enhanced plasteel to make an almost impenetrable wall out of the wearer. However, only the absolutely insane syndicate followers will put this on. Because of its weight, it must be tightened very hard, to the point of impaling the user and being unable to be taken off without completely ripping off their skin. The syndicate sends their regards.
+uplink-hardsuit-cybersun-dreadnought-name = CSA-105UA "Xíngtiān" tacsuit
+uplink-hardsuit-cybersun-dreadnought-desc = A prototype tacsuit that makes an almost impenetrable wall out of the wearer. Once fastened in place, it can't be removed without killing the wearer. Its use will slowly kill the wearer, making entombment inside a one-way trip to the grave. Are you sure you want to do this?
 
