@@ -13303,3 +13303,10 @@ Entries:
   id: 6994
   time: '2025-03-19T22:07:12.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2020
+- author: trashalice
+  changes:
+    - type: Add
+      message: Added the Shogun's Dogi, selectable as a Captain loadout
+  id: 6995
+  time: '2025-03-20T04:59:19.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1939
