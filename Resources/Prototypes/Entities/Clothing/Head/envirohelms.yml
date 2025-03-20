@@ -47,10 +47,6 @@
     sprite: Clothing/Head/Envirohelms/atmos.rsi
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/atmos.rsi
-    clothingVisuals:
-      head:
-      - state: equipped-HELMET
-      - state: on-equipped-HELMET
 
 - type: entity
   parent: ClothingHeadEnvirohelmBase
@@ -62,10 +58,6 @@
     sprite: Clothing/Head/Envirohelms/cargo.rsi
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/cargo.rsi
-    clothingVisuals:
-      head:
-      - state: equipped-HELMET
-      - state: on-equipped-HELMET
 
 - type: entity
   parent: ClothingHeadEnvirohelmBase
@@ -77,10 +69,6 @@
     sprite: Clothing/Head/Envirohelms/captain.rsi
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/captain.rsi
-    clothingVisuals:
-      head:
-      - state: equipped-HELMET
-      - state: on-equipped-HELMET
 
 - type: entity
   parent: ClothingHeadEnvirohelmBase
@@ -92,10 +80,6 @@
     sprite: Clothing/Head/Envirohelms/ce.rsi
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/ce.rsi
-    clothingVisuals:
-      head:
-      - state: equipped-HELMET
-      - state: on-equipped-HELMET
 
 - type: entity
   parent: ClothingHeadEnvirohelmBase
@@ -107,10 +91,6 @@
     sprite: Clothing/Head/Envirohelms/chaplain.rsi
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/chaplain.rsi
-    clothingVisuals:
-      head:
-      - state: equipped-HELMET
-      - state: on-equipped-HELMET
 
 - type: entity
   parent: ClothingHeadEnvirohelmEnviroslacksColorOrange
@@ -128,10 +108,6 @@
     sprite: Clothing/Head/Envirohelms/chemist.rsi
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/chemist.rsi
-    clothingVisuals:
-      head:
-      - state: equipped-HELMET
-      - state: on-equipped-HELMET
 
 - type: entity
   parent: ClothingHeadEnvirohelmBase
@@ -143,10 +119,6 @@
     sprite: Clothing/Head/Envirohelms/clown.rsi
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/clown.rsi
-    clothingVisuals:
-      head:
-      - state: equipped-HELMET
-      - state: on-equipped-HELMET
   - type: PointLight
     color: "#a777ff"
 
@@ -160,10 +132,6 @@
     sprite: Clothing/Head/Envirohelms/cmo.rsi
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/cmo.rsi
-    clothingVisuals:
-      head:
-      - state: equipped-HELMET
-      - state: on-equipped-HELMET
 
 - type: entity
   parent: ClothingHeadEnvirohelmBase
@@ -175,10 +143,6 @@
     sprite: Clothing/Head/Envirohelms/engineering.rsi
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/engineering.rsi
-    clothingVisuals:
-      head:
-      - state: equipped-HELMET
-      - state: on-equipped-HELMET
 
 - type: entity
   parent: ClothingHeadEnvirohelmBase
@@ -190,10 +154,6 @@
     sprite: Clothing/Head/Envirohelms/hop.rsi
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/hop.rsi
-    clothingVisuals:
-      head:
-      - state: equipped-HELMET
-      - state: on-equipped-HELMET
 
 - type: entity
   parent: ClothingHeadEnvirohelmBase
@@ -205,10 +165,6 @@
     sprite: Clothing/Head/Envirohelms/hos.rsi
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/hos.rsi
-    clothingVisuals:
-      head:
-      - state: equipped-HELMET
-      - state: on-equipped-HELMET
 
 - type: entity
   parent: ClothingHeadEnvirohelmBase
@@ -220,10 +176,6 @@
     sprite: Clothing/Head/Envirohelms/hydroponics.rsi
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/hydroponics.rsi
-    clothingVisuals:
-      head:
-      - state: equipped-HELMET
-      - state: on-equipped-HELMET
 
 - type: entity
   parent: ClothingHeadEnvirohelmBase
@@ -235,10 +187,6 @@
     sprite: Clothing/Head/Envirohelms/janitor.rsi
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/janitor.rsi
-    clothingVisuals:
-      head:
-      - state: equipped-HELMET
-      - state: on-equipped-HELMET
 
 - type: entity
   parent: ClothingHeadEnvirohelmBase
@@ -250,10 +198,6 @@
     sprite: Clothing/Head/Envirohelms/ancientvoid.rsi
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/ancientvoid.rsi
-    clothingVisuals:
-      head:
-      - state: equipped-HELMET
-      - state: visor-equipped-HELMET
   - type: ToggleableLightVisuals
     clothingVisuals:
       head:
@@ -272,10 +216,6 @@
     sprite: Clothing/Head/Envirohelms/medical.rsi
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/medical.rsi
-    clothingVisuals:
-      head:
-      - state: equipped-HELMET
-      - state: on-equipped-HELMET
 
 - type: entity
   parent: ClothingHeadEnvirohelmBase
@@ -287,10 +227,6 @@
     sprite: Clothing/Head/Envirohelms/genetics.rsi
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/genetics.rsi
-    clothingVisuals:
-      head:
-      - state: equipped-HELMET
-      - state: on-equipped-HELMET
 
 - type: entity
   parent: ClothingHeadEnvirohelmBase
@@ -302,10 +238,6 @@
     sprite: Clothing/Head/Envirohelms/mime.rsi
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/mime.rsi
-    clothingVisuals:
-      head:
-      - state: equipped-HELMET
-      - state: on-equipped-HELMET
   - type: PointLight
     color: "#ffffff"
 
@@ -319,10 +251,6 @@
     sprite: Clothing/Head/Envirohelms/paramedic.rsi
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/paramedic.rsi
-    clothingVisuals:
-      head:
-      - state: equipped-HELMET
-      - state: on-equipped-HELMET
 
 - type: entity
   parent: ClothingHeadEnvirohelmCustomBase
@@ -374,10 +302,6 @@
     sprite: Clothing/Head/Envirohelms/rd.rsi
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/rd.rsi
-    clothingVisuals:
-      head:
-      - state: equipped-HELMET
-      - state: on-equipped-HELMET
 
 - type: entity
   parent: ClothingHeadEnvirohelmBase
@@ -389,11 +313,6 @@
     sprite: Clothing/Head/Envirohelms/roboticist.rsi
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/roboticist.rsi
-    clothingVisuals:
-      head:
-      - state: equipped-HELMET
-      - state: on-equipped-HELMET
-
 - type: entity
   parent: ClothingHeadEnvirohelmBase
   id: ClothingHeadEnvirohelmSalvage
@@ -404,10 +323,6 @@
     sprite: Clothing/Head/Envirohelms/salvage.rsi
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/salvage.rsi
-    clothingVisuals:
-      head:
-      - state: equipped-HELMET
-      - state: on-equipped-HELMET
   - type: PointLight
     color: "#c77eff"
 
@@ -421,10 +336,6 @@
     sprite: Clothing/Head/Envirohelms/scientist.rsi
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/scientist.rsi
-    clothingVisuals:
-      head:
-      - state: equipped-HELMET
-      - state: on-equipped-HELMET
 
 - type: entity
   parent: ClothingHeadEnvirohelmCustomBase
@@ -556,10 +467,6 @@
     sprite: Clothing/Head/Envirohelms/virology.rsi
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/virology.rsi
-    clothingVisuals:
-      head:
-      - state: equipped-HELMET
-      - state: on-equipped-HELMET
 
 - type: entity
   parent: ClothingHeadEnvirohelmBase
@@ -571,10 +478,6 @@
     sprite: Clothing/Head/Envirohelms/warden.rsi
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/warden.rsi
-    clothingVisuals:
-      head:
-      - state: equipped-HELMET
-      - state: on-equipped-HELMET
 
 - type: entity
   parent: ClothingHeadEnvirohelmBase
@@ -586,10 +489,6 @@
     sprite: Clothing/Head/Envirohelms/tacticool.rsi
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/tacticool.rsi
-    clothingVisuals:
-      head:
-      - state: equipped-HELMET
-      - state: on-equipped-HELMET
 
 - type: entity
   parent: ClothingHeadEnvirohelmBase
@@ -601,10 +500,6 @@
     sprite: Clothing/Head/Envirohelms/tacticool.rsi
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/tacticool.rsi
-    clothingVisuals:
-      head:
-      - state: equipped-HELMET
-      - state: on-equipped-HELMET
 
 - type: entity
   parent: ClothingHeadEnvirohelmBase
@@ -616,10 +511,6 @@
     sprite: Clothing/Head/Envirohelms/centcom_agent.rsi
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/centcom_agent.rsi
-    clothingVisuals:
-      head:
-      - state: equipped-HELMET
-      - state: on-equipped-HELMET
 
 - type: entity
   parent: ClothingHeadEnvirohelmBase
@@ -631,10 +522,6 @@
     sprite: Clothing/Head/Envirohelms/centcom_official.rsi
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/centcom_official.rsi
-    clothingVisuals:
-      head:
-      - state: equipped-HELMET
-      - state: on-equipped-HELMET
 
 - type: entity
   parent: ClothingHeadEnvirohelmBase
@@ -646,10 +533,6 @@
     sprite: Clothing/Head/Envirohelms/centcom_officer.rsi
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/centcom_officer.rsi
-    clothingVisuals:
-      head:
-      - state: equipped-HELMET
-      - state: on-equipped-HELMET
 
 - type: entity
   parent: ClothingHeadEnvirohelmCustomBase
@@ -1465,10 +1348,6 @@
     sprite: Clothing/Head/Envirohelms/white.rsi
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/white.rsi
-    clothingVisuals:
-      head:
-      - state: equipped-HELMET
-      - state: on-equipped-HELMET
 
 - type: entity
   parent: ClothingHeadEnvirohelmCustomBase
