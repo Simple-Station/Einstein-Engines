@@ -42,8 +42,6 @@
   - type: StaminaDamageOnHit
     damage: 30
     overtime: 30
-    lightAttackDamageMultiplier: 2
-    lightAttackOvertimeDamageMultiplier: 0.5
     sound: /Audio/Weapons/egloves.ogg
   - type: StaminaDamageOnCollide
     damage: 30
