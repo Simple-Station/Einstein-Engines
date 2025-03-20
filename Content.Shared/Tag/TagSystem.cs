@@ -271,7 +271,7 @@ public sealed class TagSystem : EntitySystem
     /// </exception>
     public bool HasAnyTag(EntityUid entityUid, List<ProtoId<TagPrototype>> tags)
     {
-        return _entityManager.TryGetComponent<TagComponent>(entityUid, out var component) &&
+        return _entityManager.TryGetComponent(entityUid, out TagComponent? component) &&
                HasAnyTag(component, tags);
     }
 

@@ -278,16 +278,10 @@ public abstract class SharedMaterialStorageSystem : EntitySystem
         PhysicalCompositionComponent? composition = null
     )
     {
-        if (!Resolve(receiver, ref storage))
-            return false;
-
-        if (!Resolve(toInsert, ref material, ref composition, false))
-            return false;
-
-        if (_whitelistSystem.IsWhitelistFail(storage.Whitelist, toInsert))
-            return false;
-
-        if (HasComp<UnremoveableComponent>(toInsert))
+        if (!Resolve(receiver, ref storage)
+            || !Resolve(toInsert, ref material, ref composition, false)
+            || _whitelistSystem.IsWhitelistFail(storage.Whitelist, toInsert)
+            || HasComp<UnremoveableComponent>(toInsert))
             return false;
 
         // Material Whitelist checked implicitly by CanChangeMaterialAmount();

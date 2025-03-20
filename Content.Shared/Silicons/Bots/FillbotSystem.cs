@@ -1,8 +1,6 @@
 using Content.Shared.DeviceLinking;
 using Content.Shared.DeviceLinking.Events;
-using Content.Shared.Emag.Systems;
 using Content.Shared.Hands.EntitySystems;
-using Robust.Shared.Audio.Systems;
 
 namespace Content.Shared.Silicons.Bots;
 

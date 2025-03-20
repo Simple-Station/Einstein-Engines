@@ -1,7 +1,6 @@
 using System.Threading;
 using System.Threading.Tasks;
 using Content.Server.Disposal.Unit.Components;
-using Content.Server.Item;
 using Content.Server.NPC.Pathfinding;
 using Content.Shared.Body.Part;
 using Content.Shared.DeviceLinking;
@@ -19,7 +18,6 @@ namespace Content.Server.NPC.HTN.PrimitiveTasks.Operators.Specific;
 public sealed partial class PickNearbyFillableItemOperator : HTNOperator
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
 
     private SharedMaterialStorageSystem _sharedMaterialStorage = default!;
@@ -27,22 +25,24 @@ public sealed partial class PickNearbyFillableItemOperator : HTNOperator
     private PathfindingSystem _pathfinding = default!;
     private SharedHandsSystem _sharedHandsSystem = default!;
     private TagSystem _tagSystem = default!;
-
     private const string TrashTagKey = "Trash";
 
     [DataField] public string RangeKey = NPCBlackboard.FillbotPickupRange;
 
-    /// <summary>
+    ///     Target entity to pick up
     /// Target entity to pick up
     /// </summary>
     [DataField(required: true)]
     public string TargetKey = string.Empty;
 
-    /// <summary>
+    ///     Target entitycoordinates to move to.
     /// Target entitycoordinates to move to.
     /// </summary>
     [DataField(required: true)]
-    public string TargetMoveKey = string.Empty;
+
+    [DataField]
+    public ProtoId<TagPrototype> TrashProto = "Trash";
+
 
     public override void Initialize(IEntitySystemManager sysManager)
     {
@@ -51,7 +51,6 @@ public sealed partial class PickNearbyFillableItemOperator : HTNOperator
         _pathfinding = sysManager.GetEntitySystem<PathfindingSystem>();
         _sharedMaterialStorage = sysManager.GetEntitySystem<SharedMaterialStorageSystem>();
         _sharedHandsSystem = sysManager.GetEntitySystem<SharedHandsSystem>();
-        _tagSystem = sysManager.GetEntitySystem<TagSystem>();
     }
 
     public override async Task<(bool Valid, Dictionary<string, object>? Effects)> Plan(NPCBlackboard blackboard,
@@ -66,13 +65,8 @@ public sealed partial class PickNearbyFillableItemOperator : HTNOperator
             || fillbot.LinkedSinkEntity == null)
             return (false, null);
 
-        var isMaterialStorage = _entManager.TryGetComponent<MaterialStorageComponent>(
-                fillbot.LinkedSinkEntity,
-                out var linkedStorage);
-
-        var isDisposalUnit = _entManager.TryGetComponent<DisposalUnitComponent>(
-            fillbot.LinkedSinkEntity,
-            out var disposalUnit);
+        _entManager.TryGetComponent(fillbot.LinkedSinkEntity, out MaterialStorageComponent? linkedStorage);
+        _entManager.TryGetComponent(fillbot.LinkedSinkEntity, out DisposalUnitComponent? disposalUnit);
 
         foreach (var target in _lookup.GetEntitiesInRange(owner, range))
         {
@@ -86,13 +80,13 @@ public sealed partial class PickNearbyFillableItemOperator : HTNOperator
                 continue;
 
             // only things that can go inside
-            if (linkedStorage != null && !_sharedMaterialStorage.CanInsertMaterialEntity(target, fillbot.LinkedSinkEntity.Value))
+            if (linkedStorage != null && !_sharedMaterialStorage.CanInsertMaterialEntity(target, fillbot.LinkedSinkEntity!.Value))
                 continue;
 
             // trash only
             if (disposalUnit != null &&
                 (_whitelistSystem.IsWhitelistFail(disposalUnit.Whitelist, target)
-                    || !_tagSystem.HasTag(target, _prototypeManager.Index<TagPrototype>(TrashTagKey))
+                    || !_tagSystem.HasTag(target, TrashProto)
                     || _entManager.HasComponent<BodyPartComponent>(target))) // Robot is unable to insert bodyparts into Disposals for some reason
                 continue;
 

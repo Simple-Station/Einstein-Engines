@@ -50,13 +50,8 @@ public sealed partial class FillLinkedMachineOperator : HTNOperator
             || _entManager.Deleted(fillbot.LinkedSinkEntity))
             return HTNOperatorStatus.Failed;
 
-        var isMaterialStorage = _entManager.TryGetComponent<MaterialStorageComponent>(
-            fillbot.LinkedSinkEntity,
-            out var linkedStorage);
-
-        var isDisposalUnit = _entManager.TryGetComponent<DisposalUnitComponent>(
-            fillbot.LinkedSinkEntity,
-            out var disposalUnit);
+        _entManager.TryGetComponent(fillbot.LinkedSinkEntity, out MaterialStorageComponent? linkedStorage);
+        _entManager.TryGetComponent(fillbot.LinkedSinkEntity, out DisposalUnitComponent? disposalUnit);
 
         var heldItem = _sharedHandsSystem.GetActiveItem(owner);
 
@@ -66,14 +61,13 @@ public sealed partial class FillLinkedMachineOperator : HTNOperator
             return HTNOperatorStatus.Failed;
         }
 
-        if (isMaterialStorage && linkedStorage != null)
+        if (linkedStorage is not null
+            && _sharedMaterialStorage.TryInsertMaterialEntity(owner, heldItem.Value, fillbot.LinkedSinkEntity!.Value))
+            return HTNOperatorStatus.Finished;
+
+        else if (disposalUnit is not null)
         {
-            if (_sharedMaterialStorage.TryInsertMaterialEntity(owner, heldItem.Value, fillbot.LinkedSinkEntity.Value))
-                return HTNOperatorStatus.Finished;
-        }
-        else if (isDisposalUnit && disposalUnit != null)
-        {
-            _sharedDisposalUnitSystem.DoInsertDisposalUnit(fillbot.LinkedSinkEntity.Value, heldItem.Value, owner);
+            _sharedDisposalUnitSystem.DoInsertDisposalUnit(fillbot.LinkedSinkEntity!.Value, heldItem.Value, owner);
             return HTNOperatorStatus.Finished;
         }
 
