@@ -119,7 +119,7 @@ public sealed partial class PullerComponent : Component
     };
 
     [DataField]
-    public float StaminaDamageOnThrown = 120f;
+    public float StaminaDamageOnThrown = 30f;
 
     [DataField]
     public float GrabThrownSpeed = 7f;
