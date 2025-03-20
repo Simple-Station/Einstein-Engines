@@ -13377,3 +13377,12 @@ Entries:
   id: 7001
   time: '2025-03-20T19:13:40.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2029
+- author: trashalice
+  changes:
+    - type: Add
+      message: >-
+        HoS Samurai armour to go with the Antque sheath (not in loadouts, art
+        people can decide if it goes in)
+  id: 7002
+  time: '2025-03-20T19:14:58.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2015
