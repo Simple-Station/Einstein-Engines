@@ -130,9 +130,12 @@ public sealed class SmartEquipSystem : EntitySystem
             switch (handItem)
             {
                 case null when storage.Container.ContainedEntities.Count == 0:
-                    _popup.PopupClient(emptyEquipmentSlotString, uid, uid);
                     if (storage.SmartEquipSelfIfEmpty)
+                    {
                         SmartEquipItem(slotItem, uid, equipmentSlot, inventory, hands);
+                        return;
+                    }
+                    _popup.PopupClient(emptyEquipmentSlotString, uid, uid);
                     return;
                 case null:
                     var removing = storage.Container.ContainedEntities[^1];
@@ -173,9 +176,12 @@ public sealed class SmartEquipSystem : EntitySystem
 
                 if (toEjectFrom == null)
                 {
-                    _popup.PopupClient(emptyEquipmentSlotString, uid, uid);
                     if (slots.SmartEquipSelfIfEmpty)
+                    {
                         SmartEquipItem(slotItem, uid, equipmentSlot, inventory, hands);
+                        return;
+                    }
+                    _popup.PopupClient(emptyEquipmentSlotString, uid, uid);
                     return;
                 }
 
