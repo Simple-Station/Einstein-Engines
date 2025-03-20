@@ -1066,6 +1066,7 @@
         - type: ShowMindShieldIcons
         - type: ShowCriminalRecordIcons
         - type: ShowHealthIcons
+        - type: SolutionScanner
         - type: FlashImmunity
           damageContainers:
           - Biological
