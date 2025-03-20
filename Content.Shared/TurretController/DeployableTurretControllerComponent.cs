@@ -47,6 +47,17 @@ public sealed partial class DeployableTurretControllerComponent : Component
 }
 
 [Serializable, NetSerializable]
+public sealed class DeployableTurretControllerBoundInterfaceMessage : BoundUserInterfaceMessage
+{
+    public List<(string, string)> TurretStates;
+
+    public DeployableTurretControllerBoundInterfaceMessage(List<(string, string)> turretStates)
+    {
+        TurretStates = turretStates;
+    }
+}
+
+[Serializable, NetSerializable]
 public sealed class DeployableTurretControllerBoundInterfaceState : BoundUserInterfaceState
 {
     public List<(string, string)> TurretStates;

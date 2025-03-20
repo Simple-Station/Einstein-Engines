@@ -106,7 +106,7 @@
       thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 300
+          damage: 100
         behaviors:
         - !type:PlaySoundBehavior
           sound:
@@ -115,7 +115,7 @@
           acts: [ "Breakage" ]
       - trigger:
           !type:DamageTrigger
-          damage: 600
+          damage: 200
         behaviors:
         - !type:PlaySoundBehavior
           sound:

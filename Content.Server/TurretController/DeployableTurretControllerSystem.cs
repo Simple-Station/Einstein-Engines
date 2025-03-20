@@ -39,8 +39,11 @@ public sealed partial class DeployableTurretControllerSystem : SharedDeployableT
         if (!TryComp<DeviceNetworkComponent>(ent, out var deviceNetwork))
             return;
 
-        // List of new added turrets
-        var turretsToAdd = args.Devices.Except(args.OldDevices);
+        // List of turrets
+        var turretsToAdd = args.Devices;
+
+        // Refresh turrets
+        ent.Comp.LinkedTurrets.Clear();
 
         // Request data from newly added devices
         var payload = new NetworkPayload
@@ -116,6 +119,9 @@ public sealed partial class DeployableTurretControllerSystem : SharedDeployableT
 
         foreach (var (address, turret) in ent.Comp.LinkedTurrets)
             turretStates.Add((address, GetTurretStateDescription(turret)));
+
+        var message = new DeployableTurretControllerBoundInterfaceMessage(turretStates);
+        _userInterfaceSystem.ServerSendUiMessage(ent.Owner, DeployableTurretControllerUiKey.Key, message);
 
         var state = new DeployableTurretControllerBoundInterfaceState(turretStates);
         _userInterfaceSystem.SetUiState(ent.Owner, DeployableTurretControllerUiKey.Key, state);

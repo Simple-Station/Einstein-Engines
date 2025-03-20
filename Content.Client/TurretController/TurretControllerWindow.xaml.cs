@@ -145,6 +145,11 @@ public sealed partial class TurretControllerWindow : BaseWindow
         RefreshLinkedTurrets(state.TurretStates);
     }
 
+    public void UpdateMessage(DeployableTurretControllerBoundInterfaceMessage message)
+    {
+        RefreshLinkedTurrets(message.TurretStates);
+    }
+
     public void RefreshLinkedTurrets(List<(string, string)> turretStates)
     {
         var turretCount = turretStates.Count;
@@ -201,7 +206,7 @@ public sealed partial class TurretControllerWindow : BaseWindow
             groupedAccessLevels.Add(accessGroupProto, new());
         }
 
-        // Ensure that the 'general' access group is added to handle 
+        // Ensure that the 'general' access group is added to handle
         // misc. access levels that aren't associated with any group
         if (_protoManager.TryIndex<AccessGroupPrototype>("General", out var generalAccessProto))
             groupedAccessLevels.TryAdd(generalAccessProto, new());

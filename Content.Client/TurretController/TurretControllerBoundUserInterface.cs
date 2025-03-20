@@ -35,10 +35,24 @@ public sealed class TurretControllerBoundUserInterface : BoundUserInterface
         if (_window == null)
             return;
 
-        if (state is not DeployableTurretControllerBoundInterfaceState { } castState)
+        if (state is not DeployableTurretControllerBoundInterfaceState { } cast)
             return;
 
-        _window.UpdateState(castState);
+        _window.UpdateState(cast);
+    }
+
+    protected override void ReceiveMessage(BoundUserInterfaceMessage message)
+    {
+        base.ReceiveMessage(message);
+
+        if (_window == null)
+            return;
+
+        if (message is not DeployableTurretControllerBoundInterfaceMessage { } cast)
+            return;
+
+        // Update the turret states
+        _window.UpdateMessage(cast);
     }
 
     private void OnAccessLevelChanged(HashSet<ProtoId<AccessLevelPrototype>> accessLevels, bool enabled)
