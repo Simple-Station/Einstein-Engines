@@ -13242,3 +13242,113 @@ Entries:
   id: 6989
   time: '2025-03-19T01:42:04.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2000
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added "Shrapnel Ammo" to most weapon types as a new special ammunition.
+        Shrapnel ammo essentially turns any gun into a baby shotgun. This
+        includes guns like the L6 Saw.
+    - type: Add
+      message: Added Shrapnel Ammo and specialty ammo bundles to the Syndicate Uplink.
+    - type: Tweak
+      message: >-
+        To encourage people to buy different kinds of ammo, certain guns in the
+        Syndicate Uplink no longer spawn with ammo, and are in return discounted
+        by the cost of the ammo that was removed. Have fun buying C20 magazines
+        with incendiary ammo. 
+    - type: Add
+      message: >-
+        Added Shrapnel Munitions to Arsenal Research T2. Once researched,
+        shrapnel ammo can be manufactured at a security techfab.
+  id: 6990
+  time: '2025-03-19T14:39:58.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2004
+- author: GNUtopia
+  changes:
+    - type: Add
+      message: Added Misc department to Jobs loadout
+    - type: Add
+      message: Added Prisoner loadout
+    - type: Fix
+      message: Corrected spelling mistake in pirate tricorn item ID
+  id: 6991
+  time: '2025-03-19T15:13:14.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1999
+- author: BramvanZijp
+  changes:
+    - type: Add
+      message: >-
+        You can now add an access requirement to an IPC's maintenance panel
+        using an access configurator, though an IPC can always unlock their own
+        panel.
+    - type: Tweak
+      message: >-
+        After unlocking an IPC maintenance panel, which is now instant, you need
+        to use a screwdriver to actually open it.
+  id: 6992
+  time: '2025-03-19T16:27:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2014
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: 'Make context menu uses spritetree '
+  id: 6993
+  time: '2025-03-19T22:02:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2021
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: 'Puddles now have a separate draw depth so they display properly '
+  id: 6994
+  time: '2025-03-19T22:07:12.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2020
+- author: trashalice
+  changes:
+    - type: Add
+      message: Added the Shogun's Dogi, selectable as a Captain loadout
+  id: 6995
+  time: '2025-03-20T04:59:19.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1939
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Dermal armor has been reworked to provide flat reductions to physical
+        damage instead of percent reduction. This makes it significantly better
+        against "Chip damage" attacks such as unarmed fighting, wild animals,
+        and Shrapnel ammo. But it also makes it much worse against large single
+        sources of damage such as anti-material rifles, large caliber rounds,
+        shotgun slugs, etc. 
+  id: 6996
+  time: '2025-03-20T05:04:42.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2016
+- author: Diggy
+  changes:
+    - type: Add
+      message: You saw nothing and heard nothing, glory to the great maid union.
+  id: 6997
+  time: '2025-03-20T09:32:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2023
+- author: Erisfiregamer1
+  changes:
+    - type: Add
+      message: >-
+        Nerfed the time Changeling Infections take to complete (20 minutes ->
+        10)
+  id: 6998
+  time: '2025-03-20T10:09:20.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2019
+- author: BramvanZijp
+  changes:
+    - type: Add
+      message: >-
+        Initiating a grab on someone now starts a 6 second cooldown before you
+        can throw them.
+    - type: Tweak
+      message: >-
+        The stamina damage taken upon being thrown has been reduced from 120 to
+        100.
+  id: 6999
+  time: '2025-03-20T14:25:46.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2028
