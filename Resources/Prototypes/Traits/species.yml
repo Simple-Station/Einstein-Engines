@@ -21,6 +21,7 @@
         - Spearmaster
         - WeaponsGeneralist
         - Mystic
+        
 
 - type: trait
   id: Spearmaster
@@ -95,6 +96,17 @@
         - Swashbuckler
         - Spearmaster
         - WeaponsGeneralist
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterTraitRequirement
+          traits:
+            - LatentPsychic
+        - !type:CharacterJobRequirement
+          jobs:
+            - Chaplain
+            - Librarian
+            - ResearchDirector
+            - ForensicMantis
 
 - type: trait
   id: ShadowkinBlackeye
