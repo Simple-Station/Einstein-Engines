@@ -101,7 +101,7 @@ public sealed partial class PullerComponent : Component
     ///     After initiating (not upgrading) a combat grab, how long should you have to keep somebody grabbed to be able to throw them.
     /// </summary>
     [DataField]
-    public TimeSpan ThrowDelayOngrab = TimeSpan.FromSeconds(6f);
+    public TimeSpan ThrowDelayOnGrab = TimeSpan.FromSeconds(6f);
 
     [DataField]
     public Dictionary<GrabStage, float> EscapeChances = new()
