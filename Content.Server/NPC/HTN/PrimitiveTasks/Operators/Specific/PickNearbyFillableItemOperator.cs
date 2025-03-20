@@ -25,21 +25,18 @@ public sealed partial class PickNearbyFillableItemOperator : HTNOperator
     private PathfindingSystem _pathfinding = default!;
     private SharedHandsSystem _sharedHandsSystem = default!;
     private TagSystem _tagSystem = default!;
-    private const string TrashTagKey = "Trash";
 
     [DataField] public string RangeKey = NPCBlackboard.FillbotPickupRange;
 
-    ///     Target entity to pick up
     /// Target entity to pick up
-    /// </summary>
     [DataField(required: true)]
     public string TargetKey = string.Empty;
 
-    ///     Target entitycoordinates to move to.
     /// Target entitycoordinates to move to.
-    /// </summary>
     [DataField(required: true)]
+    public string TargetMoveKey = string.Empty;
 
+    /// Target tag prototype to look for when trying to find trash.
     [DataField]
     public ProtoId<TagPrototype> TrashProto = "Trash";
 
