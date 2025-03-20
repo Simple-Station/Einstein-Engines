@@ -1,0 +1,14 @@
+- type: nationality
+  id: Bieselite
+  hostile:
+  - Solarian
+  employers:
+  - NanoTrasen # Todo: do this with CharacterRequirements instead, much more flexible
+  - Einstein Engines
+
+- type: nationality
+  id: Solarian
+  hostile:
+  - Bieselite
+  employers:
+  - Hephaestus Industries # Todo: do this with CharacterRequirements instead, much more flexible

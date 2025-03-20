@@ -70,6 +70,9 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
 
     [DataField]
     public EmployerPrototype? Employer { get; set; }
+
+    [DataField]
+    public LifepathPrototype? Lifepath { get; set; }
     // EE -- Contractors Change End
 
     [DataField]
@@ -137,6 +140,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         // EE -- Contractors Change Start
         NationalityPrototype? nationality,
         EmployerPrototype? employer,
+        LifepathPrototype? lifepath,
         // EE -- Contractors Change End
         float height,
         float width,
@@ -189,6 +193,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             // EE -- Contractors Change Start
             other.Nationality,
             other.Employer,
+            other.Lifepath,
             // EE -- Contractors Change End
             other.Height,
             other.Width,
@@ -301,6 +306,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     // EE - Contractors Change Start
     public HumanoidCharacterProfile WithNationality(NationalityPrototype nationality) => new(this) { Nationality = nationality};
     public HumanoidCharacterProfile WithEmployer(EmployerPrototype employer) => new(this) { Employer = employer};
+    public HumanoidCharacterProfile WithLifepath(LifepathPrototype lifepath) => new(this) { Lifepath = lifepath};
     // EE - Contractors Change End
     public HumanoidCharacterProfile WithSex(Sex sex) => new(this) { Sex = sex };
     public HumanoidCharacterProfile WithGender(Gender gender) => new(this) { Gender = gender };
@@ -398,6 +404,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             // EE - Contractors Change Start
             && Nationality == other.Nationality
             && Employer == other.Employer
+            && Lifepath == other.Lifepath
             // EE - Contractors Change End
             && PreferenceUnavailable == other.PreferenceUnavailable
             && SpawnPriority == other.SpawnPriority
@@ -595,6 +602,9 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         hashCode.Add(Name);
         hashCode.Add(FlavorText);
         hashCode.Add(Species);
+        hashCode.Add(Employer);
+        hashCode.Add(Nationality);
+        hashCode.Add(Lifepath);
         hashCode.Add(Age);
         hashCode.Add((int) Sex);
         hashCode.Add((int) Gender);
