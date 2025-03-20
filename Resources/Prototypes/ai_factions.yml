@@ -210,3 +210,24 @@
     - Zombie
     - Revolutionary
     - Dragon
+
+- type: npcFaction
+  id: AllHostile
+  hostile:
+  - NanoTrasen
+  - Dragon
+  - Mouse
+  - Passive
+  - PetsNT
+  - SimpleHostile
+  - SimpleNeutral
+  - Syndicate
+  - Xeno
+  - Zombie
+  - Revolutionary
+# Commented out until we add theses factions into EE
+#  - Changeling # goob edit - changelings
+#  - Heretic # goob edit - heretics
+#  - Blob # Goobstation - Blob
+# - Wizard # goob edit - wizard
+#  - PirateFaction # goob - pirates
