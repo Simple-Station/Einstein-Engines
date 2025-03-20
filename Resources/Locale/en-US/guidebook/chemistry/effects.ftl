@@ -339,7 +339,7 @@ reagent-effect-guidebook-innoculate-zombie-infection =
         *[other] cure
     } an ongoing zombie infection, and provides immunity to future infections
 
-reagent-effect-guidebook-reduce-rotting = 
+reagent-effect-guidebook-reduce-rotting =
     { $chance ->
         [1] Regenerates
         *[other] regenerate
@@ -400,3 +400,9 @@ reagent-effect-guidebook-plant-seeds-remove =
         [1] Removes the
         *[other] remove the
     } seeds of the plant
+
+reagent-effect-guidebook-remove-cogchamp-accent =
+    { $chance ->
+        [1] Removes the
+        *[other] remove the
+    } cogchamp accent of the user
