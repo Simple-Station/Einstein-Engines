@@ -286,6 +286,8 @@
     enabled: false
     groups:
     - AllAccessBorg
+    tags:
+    - Borg
   - type: AccessReader
     access: [["Command"], ["Research"]]
   - type: ShowJobIcons
