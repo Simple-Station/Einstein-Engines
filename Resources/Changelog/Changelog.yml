@@ -13352,3 +13352,17 @@ Entries:
   id: 6999
   time: '2025-03-20T14:25:46.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2028
+- author: Diggy0
+  changes:
+    - type: Add
+      message: >-
+        Cybersun has gotten desperate after hearing several of their juggernaut
+        suit users got robusted, so they made whatever the fuck this is, the
+        fucking hardsuit that kills you slowly.
+    - type: Add
+      message: >-
+        Funny code that allows for damage over time to happen, isn't that so
+        cool.
+  id: 7000
+  time: '2025-03-20T17:45:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1950
