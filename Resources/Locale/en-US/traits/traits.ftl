@@ -478,7 +478,7 @@ trait-description-CyberEyes =
 
 trait-name-CyberEyesSecurity = Cyber-Eyes: SecHud Module
 trait-description-CyberEyesSecurity =
-    Your Cyber-Eyes have been upgraded to include a built-in Security Hud. Note that this augmentation is considered Contraband
+    Your Cyber-Eyes have been upgraded to include a built-in Security Hud and flash protection. Note that this augmentation is considered Contraband
     for anyone not under the employ of station Security personel, and may be disabled by your employer before dispatch to the station.
 
 trait-name-CyberEyesMedical = Cyber-Eyes: MedHud Module
