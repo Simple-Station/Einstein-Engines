@@ -393,9 +393,11 @@
 - type: damageModifierSet
   id: DermalArmor
   coefficients:
-    Blunt: 0.9
-    Slash: 0.9
-    Piercing: 0.9
+    Shock: 1.25 # Conductive skin.
+  flatReductions:
+    Blunt: 1.5
+    Slash: 1.5
+    Piercing: 1.5
 
 # protects against radiation
 - type: damageModifierSet
