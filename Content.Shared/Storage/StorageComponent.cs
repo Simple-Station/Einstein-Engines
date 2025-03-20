@@ -135,7 +135,7 @@ namespace Content.Shared.Storage
         /// If the container is empty, and you try to smart-equip from it, should you equip the container itself.
         /// </summary>
         [DataField]
-        public bool SmartEquipSelfIfEmpty = false;
+        public bool SmartEquipSelfIfEmpty;
 
         [Serializable, NetSerializable]
         public enum StorageUiKey : byte

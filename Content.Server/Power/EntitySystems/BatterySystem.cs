@@ -237,30 +237,30 @@ namespace Content.Server.Power.EntitySystems
         }
 
         // WD EDIT START
-         public bool TryGetBatteryComponent(EntityUid uid, [NotNullWhen(true)] out BatteryComponent? battery,[NotNullWhen(true)] out EntityUid? batteryUid)
-         {
-             if (TryComp(uid, out battery))
-             {
-                 batteryUid = uid;
-                 return true;
-             }
+        public bool TryGetBatteryComponent(EntityUid uid, [NotNullWhen(true)] out BatteryComponent? battery,[NotNullWhen(true)] out EntityUid? batteryUid)
+        {
+            if (TryComp(uid, out battery))
+            {
+                batteryUid = uid;
+                return true;
+            }
 
-             if (!_containers.TryGetContainer(uid, "cell_slot", out var container)
-                 || container is not ContainerSlot slot)
-             {
-                 battery = null;
-                 batteryUid = null;
-                 return false;
-             }
+            if (!_containers.TryGetContainer(uid, CellContainer, out var container)
+                || container is not ContainerSlot slot)
+            {
+                battery = null;
+                batteryUid = null;
+                return false;
+            }
 
-             batteryUid = slot.ContainedEntity;
+            batteryUid = slot.ContainedEntity;
 
-             if (batteryUid != null)
-                 return TryComp(batteryUid, out battery);
+            if (batteryUid != null)
+                return TryComp(batteryUid, out battery);
 
-             battery = null;
-             return false;
-         }
-         // WD EDIT END
+            battery = null;
+            return false;
+        }
+        // WD EDIT END
     }
 }

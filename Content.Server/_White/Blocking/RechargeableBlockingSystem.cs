@@ -1,4 +1,3 @@
-using Content.Server.Popups;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Server.PowerCell;
@@ -14,7 +13,6 @@ public sealed class RechargeableBlockingSystem : EntitySystem
 {
     [Dependency] private readonly BatterySystem _battery = default!;
     [Dependency] private readonly ItemToggleSystem _itemToggle = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly PowerCellSystem _powerCell = default!;
 
     public override void Initialize()
@@ -69,15 +67,10 @@ public sealed class RechargeableBlockingSystem : EntitySystem
             ("remainingTime", GetRemainingTime(uid)));
         args.Cancelled = true;
     }
-    private void OnChargeChanged(EntityUid uid, RechargeableBlockingComponent component, ChargeChangedEvent args)
-    {
-        CheckCharge(uid, component);
-    }
 
-    private void OnPowerCellChanged(EntityUid uid, RechargeableBlockingComponent component, PowerCellChangedEvent args)
-    {
-        CheckCharge(uid, component);
-    }
+    private void OnChargeChanged(EntityUid uid, RechargeableBlockingComponent component, ChargeChangedEvent args) => CheckCharge(uid, component);
+
+    private void OnPowerCellChanged(EntityUid uid, RechargeableBlockingComponent component, PowerCellChangedEvent args) => CheckCharge(uid, component);
 
     private void CheckCharge(EntityUid uid, RechargeableBlockingComponent component)
     {
