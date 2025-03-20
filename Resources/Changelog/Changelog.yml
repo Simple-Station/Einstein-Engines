@@ -13339,3 +13339,16 @@ Entries:
   id: 6998
   time: '2025-03-20T10:09:20.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2019
+- author: BramvanZijp
+  changes:
+    - type: Add
+      message: >-
+        Initiating a grab on someone now starts a 6 second cooldown before you
+        can throw them.
+    - type: Tweak
+      message: >-
+        The stamina damage taken upon being thrown has been reduced from 120 to
+        100.
+  id: 6999
+  time: '2025-03-20T14:25:46.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2028
