@@ -13386,3 +13386,10 @@ Entries:
   id: 7002
   time: '2025-03-20T19:14:58.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2015
+- author: Tirochora
+  changes:
+    - type: Tweak
+      message: Plasmaman envirosuits have translucent visors.
+  id: 7003
+  time: '2025-03-20T19:23:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1960
