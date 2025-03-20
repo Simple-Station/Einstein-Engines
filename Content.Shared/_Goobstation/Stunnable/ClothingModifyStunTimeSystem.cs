@@ -9,20 +9,16 @@ public sealed class ClothingModifyStunTimeSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<ClothingModifyStunTimeComponent, InventoryRelayedEvent<ModifyStunTimeEvent>>(
-            OnModifyStunTime);
+        SubscribeLocalEvent<ClothingModifyStunTimeComponent, InventoryRelayedEvent<ModifyStunTimeEvent>>(OnModifyStunTime);
         SubscribeLocalEvent<ClothingModifyStunTimeComponent, ExaminedEvent>(OnExamined);
     }
 
     private void OnExamined(Entity<ClothingModifyStunTimeComponent> ent, ref ExaminedEvent args)
     {
-        var msg = Loc.GetString("clothing-modify-stun-time-examine",
-            ("mod", MathF.Round((1f - ent.Comp.Modifier) * 100)));
-        args.PushMarkup(msg);
+        args.PushMarkup(Loc.GetString("clothing-modify-stun-time-examine", ("mod", MathF.Round((1f - ent.Comp.Modifier) * 100))));
     }
 
-    private void OnModifyStunTime(Entity<ClothingModifyStunTimeComponent> ent,
-        ref InventoryRelayedEvent<ModifyStunTimeEvent> args)
+    private void OnModifyStunTime(Entity<ClothingModifyStunTimeComponent> ent, ref InventoryRelayedEvent<ModifyStunTimeEvent> args)
     {
         args.Args.Modifier *= ent.Comp.Modifier;
     }

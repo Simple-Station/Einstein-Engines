@@ -5,6 +5,4 @@ namespace Content.Server._Goobstation.Chemistry.HyposprayBlockNonMobInjection;
 /// even if injectOnly is also true. I don't want to modify HypospraySystem, so I made this component.
 /// </summary>
 [RegisterComponent]
-public sealed partial class HyposprayBlockNonMobInjectionComponent : Component
-{
-}
+public sealed partial class HyposprayBlockNonMobInjectionComponent : Component { }

@@ -3,9 +3,9 @@ namespace Content.Server._Goobstation.Flashbang;
 [RegisterComponent]
 public sealed partial class FlashbangComponent : Component
 {
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public float StunTime = 2f;
 
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public float KnockdownTime = 10f;
 }

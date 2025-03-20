@@ -28,20 +28,19 @@ public sealed class SolutionCartridgeSystem : EntitySystem
 
         var other = args.Target;
 
-        if (!TryComp(other, out SolutionContainerManagerComponent? manager) ||
-            !_container.TryGetSolution((other.Value, manager),
-                comp.TargetSolution,
-                out var solutionEntity,
-                out var solution) || solution.Contents.Count != 0 ||
-            !TryComp(other.Value, out SolutionCartridgeReceiverComponent? receiver) || !_tag.HasTag(uid, receiver.Tag))
-            return;
-
-        if (!_container.TryAddSolution(solutionEntity.Value, comp.Solution))
+        if (!TryComp(other, out SolutionContainerManagerComponent? manager)
+            || !_container.TryGetSolution((other.Value, manager), comp.TargetSolution, out var solutionEntity, out var solution)
+            || solution.Contents.Count != 0
+            || !TryComp(other.Value, out SolutionCartridgeReceiverComponent? receiver)
+            || !_tag.HasTag(uid, receiver.Tag)
+            || !_container.TryAddSolution(solutionEntity.Value, comp.Solution))
             return;
 
         args.Handled = true;
         _audio.PlayPredicted(receiver.InsertSound, other.Value, args.User);
-        if (_net.IsServer)
-            QueueDel(uid);
+        if (!_net.IsServer)
+            return;
+
+        QueueDel(uid);
     }
 }

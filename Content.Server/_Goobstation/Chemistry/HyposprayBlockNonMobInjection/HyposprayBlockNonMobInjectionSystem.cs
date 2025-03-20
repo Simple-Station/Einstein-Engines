@@ -35,8 +35,5 @@ public sealed class HyposprayBlockNonMobInjectionSystem : EntitySystem
             args.Handled = true;
     }
 
-    private bool IsMob(EntityUid uid)
-    {
-        return HasComp<MobStateComponent>(uid);
-    }
+    private bool IsMob(EntityUid uid) => HasComp<MobStateComponent>(uid);
 }
