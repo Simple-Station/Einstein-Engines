@@ -74,6 +74,18 @@
   id: Mystic
   category: Mental
   points: -1
+  requirements:
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterTraitRequirement
+          traits:
+            - LatentPsychic
+        - !type:CharacterJobRequirement
+          jobs:
+            - Chaplain
+            - Librarian
+            - ResearchDirector
+            - ForensicMantis
   functions:
     - !type:TraitReplaceComponent
       components:
