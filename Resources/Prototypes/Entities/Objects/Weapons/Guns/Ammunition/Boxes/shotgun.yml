@@ -127,3 +127,42 @@
       layers:
         - state: boxwide
         - state: shellslug
+
+- type: entity
+  name: ".50 Birdshot Box"
+  parent: AmmoProviderShotgunShell
+  id: BoxShotgunBirdshot
+  description: A dispenser box full of .50 birdshot. Used for centuries by colonists to hunt small game on alien worlds.
+  components:
+    - type: BallisticAmmoProvider
+      proto: ShellShotgunBirdshot
+    - type: Sprite
+      layers:
+        - state: boxwide
+        - state: shelllethal
+
+- type: entity
+  name: ".50 00-Buckshot Box"
+  parent: AmmoProviderShotgunShell
+  id: BoxShotgun00Buckshot
+  description: A dispenser box full of .50 "Double-Aught" buckshot. Used for centuries by colonists to hunt mid-sized game. The knowledge of what a "Buck" means has been lost to time.
+  components:
+    - type: BallisticAmmoProvider
+      proto: ShellShotgun00Buckshot
+    - type: Sprite
+      layers:
+        - state: boxwide
+        - state: shelllethal
+
+- type: entity
+  name: ".50 0000-Buckshot Box"
+  parent: AmmoProviderShotgunShell
+  id: BoxShotgun0000Buckshot
+  description: A dispenser box full of .50 "Quad-Aught" buckshot. Used for centuries by colonists to hunt alien megafauna. It'll rip through a hardsuit just as easily as thick hides.
+  components:
+    - type: BallisticAmmoProvider
+      proto: ShellShotgun0000Buckshot
+    - type: Sprite
+      layers:
+        - state: boxwide
+        - state: shelllethal

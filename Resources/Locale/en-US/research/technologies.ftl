@@ -28,6 +28,7 @@ research-technology-draconic-munitions = Draconic Munitions
 research-technology-uranium-munitions = Uranium Munitions
 research-technology-explosive-technology = Explosive Technology
 research-technology-practice-ammunition = Practice Ammunition
+research-technology-shrapnel-munitions = Shrapnel Munitions
 research-technology-advanced-weapons = Advanced Weapons
 research-technology-prototype-weapons = Prototype Weapons
 research-technology-advanced-tacsuits = Advanced Tacsuits

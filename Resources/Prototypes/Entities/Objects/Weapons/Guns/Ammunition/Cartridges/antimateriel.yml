@@ -18,3 +18,11 @@
   - type: SpentAmmoVisuals
   - type: StaticPrice
     price: 20
+
+- type: entity
+  parent: CartridgeAntiMateriel
+  id: CartridgeAntiMaterielShrapnel
+  name: cartridge (.60 anti-personnel shrapnel)
+  components:
+  - type: CartridgeAmmo
+    proto: BulletAntiMaterielShrapnelSpread

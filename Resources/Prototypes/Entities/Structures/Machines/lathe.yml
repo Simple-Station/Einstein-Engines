@@ -1013,6 +1013,9 @@
       - MagazineBoxPistolRubber # Frontier
       - MagazineBoxRifleRubber # Frontier
       - SpeedLoaderRifleHeavyRubber
+      - BoxShotgunBirdshot
+      - BoxShotgun00Buckshot
+      - BoxShotgun0000Buckshot
     dynamicRecipes:
       - Truncheon
       - Terminus
@@ -1121,6 +1124,21 @@
       - WeaponPistolN1984
       - WeaponPistolViper
       - WeaponPistolCobra
+      - MagazineRifleShrapnel
+      - MagazinePistolShrapnel
+      - MagazinePistolSubMachineGunShrapnel
+      - MagazineMagnumShrapnel
+      - MagazineLightRifleShrapnel
+      - MagazineCaselessRifleShrapnel
+      - MagazineCaselessRifleIncendiary
+      - MagazineCaselessRifleUranium
+      - MagazineBoxPistolShrapnel
+      - MagazineBoxMagnumShrapnel
+      - MagazineBoxLightRifleShrapnel
+      - MagazineBoxRifleShrapnel
+      - MagazineBoxCaselessRifleShrapnel
+      - MagazineBoxCaselessRifleIncendiary
+      - MagazineBoxCaselessRifleUranium
   - type: MaterialStorage
     whitelist:
       tags:

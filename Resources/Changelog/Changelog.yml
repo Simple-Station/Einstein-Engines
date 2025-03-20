@@ -13095,3 +13095,211 @@ Entries:
   id: 6975
   time: '2025-03-17T18:56:08.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1855
+- author: Rosycup
+  changes:
+    - type: Add
+      message: Added new sprites for the Tritium and Ammonia canisters
+  id: 6976
+  time: '2025-03-17T18:57:22.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1986
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Tweaked default CCVars for space wind to be less aggressive, and less
+        likely to throw people through walls. 
+  id: 6977
+  time: '2025-03-17T20:21:03.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1988
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        I Hate The Throwing System. Anyway Space Wind should actually be working
+        properly again.
+  id: 6978
+  time: '2025-03-17T22:37:08.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1992
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Batteries no longer drain power 30 to 60 times faster than physics
+        states. This is particularly a large buff to IPCs and MODSuits, who both
+        no longer have to deal with batteries lasting an absurdly short amount
+        of time. 
+    - type: Tweak
+      message: Solarian Modsuit now provides protection from cold.
+  id: 6979
+  time: '2025-03-18T00:32:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1989
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: Adds pretty much every RSI from goob LRPs "_goobstation" folder
+  id: 6980
+  time: '2025-03-18T02:10:40.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1995
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Guns can now individually change how much force they eject spent casings
+        with.
+  id: 6981
+  time: '2025-03-18T02:33:52.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1991
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: >-
+        Smile no longer does damage, but rather injects a tiny amount of
+        omnizine on hit
+    - type: Tweak
+      message: Smile is no longer effected by most slowness sources
+    - type: Tweak
+      message: Smile has ascended to godhood
+    - type: Tweak
+      message: Smile is no longer effected by gravity
+    - type: Tweak
+      message: Smile now bleeds Nothing
+    - type: Tweak
+      message: Smile can now go under doors
+  id: 6982
+  time: '2025-03-18T02:34:49.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1969
+- author: AlgumCorrupto
+  changes:
+    - type: Tweak
+      message: Changelings can cut food.
+  id: 6983
+  time: '2025-03-18T02:37:01.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1998
+- author: CyberLanos
+  changes:
+    - type: Tweak
+      message: >-
+        survival medipen works instantly only in underpressurized (under 50kpa)
+        environment
+  id: 6984
+  time: '2025-03-18T02:56:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1954
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: Vampirism Trait and it's Components
+  id: 6985
+  time: '2025-03-18T03:57:42.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1943
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Most shotguns now have a new "More random" spread pattern. Instead of a
+        perfect fan of projectiles, each projectile has its own random path
+        inside the arc. "Laser Shotguns" like the E-Shotgun use the classic
+        "Perfect fan" style of spread.
+    - type: Tweak
+      message: >-
+        The Kammerer now has a hunting choke, giving it a noticeably tighter
+        spread than other shotguns.
+    - type: Tweak
+      message: >-
+        The sawn-off shotgun now has a significantly wider spread(Making hitting
+        anything reliably beyond 3 tiles quite hard). As a trade-off, it's now a
+        bit like a Super Shotgun. Its projectiles deal 50% bonus damage. 
+  id: 6986
+  time: '2025-03-18T04:32:49.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1997
+- author: Raikyr0
+  changes:
+    - type: Tweak
+      message: Tweaked values on Oni melee bonus to correctly reflect the guidebook
+    - type: Tweak
+      message: Tweaked Blademaster and Spearmaster to mirror Default
+    - type: Tweak
+      message: Buffed Oni's unique traits to be cheaper
+    - type: Tweak
+      message: Buffed Weapon Generalist to 30% so it's not just a nerf
+  id: 6987
+  time: '2025-03-18T23:12:40.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2008
+- author: CyberLanos
+  changes:
+    - type: Tweak
+      message: make miner's salve overdose less punishing
+    - type: Tweak
+      message: >-
+        change miner's salve healing rates to better suit low pressure
+        environment
+  id: 6988
+  time: '2025-03-19T01:14:14.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2010
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Ported the Hardlight Bow, a new traitor item.
+  id: 6989
+  time: '2025-03-19T01:42:04.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2000
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added "Shrapnel Ammo" to most weapon types as a new special ammunition.
+        Shrapnel ammo essentially turns any gun into a baby shotgun. This
+        includes guns like the L6 Saw.
+    - type: Add
+      message: Added Shrapnel Ammo and specialty ammo bundles to the Syndicate Uplink.
+    - type: Tweak
+      message: >-
+        To encourage people to buy different kinds of ammo, certain guns in the
+        Syndicate Uplink no longer spawn with ammo, and are in return discounted
+        by the cost of the ammo that was removed. Have fun buying C20 magazines
+        with incendiary ammo. 
+    - type: Add
+      message: >-
+        Added Shrapnel Munitions to Arsenal Research T2. Once researched,
+        shrapnel ammo can be manufactured at a security techfab.
+  id: 6990
+  time: '2025-03-19T14:39:58.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2004
+- author: GNUtopia
+  changes:
+    - type: Add
+      message: Added Misc department to Jobs loadout
+    - type: Add
+      message: Added Prisoner loadout
+    - type: Fix
+      message: Corrected spelling mistake in pirate tricorn item ID
+  id: 6991
+  time: '2025-03-19T15:13:14.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1999
+- author: BramvanZijp
+  changes:
+    - type: Add
+      message: >-
+        You can now add an access requirement to an IPC's maintenance panel
+        using an access configurator, though an IPC can always unlock their own
+        panel.
+    - type: Tweak
+      message: >-
+        After unlocking an IPC maintenance panel, which is now instant, you need
+        to use a screwdriver to actually open it.
+  id: 6992
+  time: '2025-03-19T16:27:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2014
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: 'Make context menu uses spritetree '
+  id: 6993
+  time: '2025-03-19T22:02:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2021
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: 'Puddles now have a separate draw depth so they display properly '
+  id: 6994
+  time: '2025-03-19T22:07:12.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2020
