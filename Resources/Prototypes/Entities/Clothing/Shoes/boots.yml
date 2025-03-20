@@ -33,6 +33,8 @@
     sprite: Clothing/Shoes/Boots/jackboots.rsi
   - type: ClothingSlowOnDamageModifier
     modifier: 0.8
+  - type: ClothingModifyStunTime # Goobstation
+    modifier: 0.8
 
 - type: entity
   parent: ClothingShoesMilitaryBase
