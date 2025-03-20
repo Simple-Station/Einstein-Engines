@@ -463,7 +463,7 @@ trait-description-PlateletFactories =
 trait-name-DermalArmor = Dermal Armor
 trait-description-DermalArmor =
     Your skin has been replaced with a flexible, yet sturdy, hard-polymer shell wrapped in a layer of synthetic flesh.
-    This augmentation provides an innate 10% resistance to physical damage.
+    This augmentation provides 1.5 points of flat reduction from all physical damage, while making the user take 25% more shock damage.
 
 trait-name-CyberEyes = Cyber-Eyes Basic System
 trait-description-CyberEyes =
@@ -483,7 +483,7 @@ trait-description-CyberEyesSecurity =
 
 trait-name-CyberEyesMedical = Cyber-Eyes: MedHud Module
 trait-description-CyberEyesMedical =
-    Your Cyber-Eyes have been upgraded to include a built-in Medical Hud, and a Chemical Analysis Hud, allowing you to track the relative health condition of biological organisms, and discern the chemicals in any solution. 
+    Your Cyber-Eyes have been upgraded to include a built-in Medical Hud, and a Chemical Analysis Hud, allowing you to track the relative health condition of biological organisms, and discern the chemicals in any solution.
 
 trait-name-CyberEyesDiagnostic = Cyber-Eyes: Diagnostics Module
 trait-description-CyberEyesDiagnostic =
@@ -574,7 +574,7 @@ trait-description-SecurityEyesModule =
 
 trait-name-MedicalEyesModule = I.P.C Eye Module: Medical
 trait-description-MedicalEyesModule =
-    Your Cyber-Eyes have been upgraded to include a built-in Medical Hud, and a Chemical Analysis Hud, allowing you to track the relative health condition of biological organisms, and discern the chemicals in any solution. 
+    Your Cyber-Eyes have been upgraded to include a built-in Medical Hud, and a Chemical Analysis Hud, allowing you to track the relative health condition of biological organisms, and discern the chemicals in any solution.
 
 trait-name-DiagnosticEyesModule = I.P.C Eye Module: Diagnostics
 trait-description-DiagnosticEyesModule =

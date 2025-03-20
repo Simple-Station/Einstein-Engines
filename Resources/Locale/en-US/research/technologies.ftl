@@ -33,6 +33,7 @@ research-technology-advanced-weapons = Advanced Weapons
 research-technology-prototype-weapons = Prototype Weapons
 research-technology-advanced-tacsuits = Advanced Tacsuits
 research-technology-prototype-tacsuits = Prototype Tacsuits
+research-technology-laser-sentry-turrets = Laser Sentry Turret Technology
 
 research-technology-basic-robotics = Basic Robotics
 research-technology-basic-anomalous-research = Basic Anomalous Research

@@ -320,6 +320,16 @@ public sealed class PullingSystem : EntitySystem
             || component.GrabStage <= GrabStage.Soft)
             return;
 
+        if (_timing.CurTime < component.WhenCanThrow)
+        {
+            args.Cancel();
+            _popup.PopupEntity(Loc.GetString("popup-grab-throw-fail-cooldown",("puller", Identity.Entity(uid, EntityManager)),("pulled", Identity.Entity(args.BlockingEntity, EntityManager))),
+            args.BlockingEntity,
+            uid,
+            PopupType.MediumCaution);
+            return;
+        }
+
         var distanceToCursor = args.Direction.Length();
         var direction = args.Direction.Normalized() * MathF.Min(distanceToCursor, component.ThrowingDistance);
 
@@ -919,6 +929,10 @@ public sealed class PullingSystem : EntitySystem
             _ => throw new ArgumentOutOfRangeException(),
         };
 
+        if (puller.Comp.GrabStage == GrabStage.No)
+        {
+            puller.Comp.WhenCanThrow = _timing.CurTime + puller.Comp.ThrowDelayOnGrab;
+        }
         var newStage = puller.Comp.GrabStage + nextStageAddition;
         var ev = new CheckGrabOverridesEvent(newStage); // guh
         RaiseLocalEvent(puller, ev);

@@ -1116,6 +1116,10 @@
       - EnergySword
       - EnergySwordDouble
       - EnergyCutlass
+      - WeaponEnergyTurretAIMachineCircuitboard
+      - WeaponEnergyTurretStationMachineCircuitboard
+      - WeaponEnergyTurretAIControlPanelElectronics
+      - WeaponEnergyTurretStationControlPanelElectronics
       - WeaponSubMachineGunFPA90
       - WeaponSubMachineGunBRDIR25
       - WeaponPistolMk58

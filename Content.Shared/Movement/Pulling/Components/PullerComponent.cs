@@ -94,6 +94,15 @@ public sealed partial class PullerComponent : Component
     [DataField]
     public TimeSpan StageChangeCooldown = TimeSpan.FromSeconds(1.5f);
 
+    [AutoNetworkedField]
+    public TimeSpan WhenCanThrow;
+
+    /// <summary>
+    ///     After initiating (not upgrading) a combat grab, how long should you have to keep somebody grabbed to be able to throw them.
+    /// </summary>
+    [DataField]
+    public TimeSpan ThrowDelayOnGrab = TimeSpan.FromSeconds(6f);
+
     [DataField]
     public Dictionary<GrabStage, float> EscapeChances = new()
     {
@@ -119,7 +128,7 @@ public sealed partial class PullerComponent : Component
     };
 
     [DataField]
-    public float StaminaDamageOnThrown = 120f;
+    public float StaminaDamageOnThrown = 100f;
 
     [DataField]
     public float GrabThrownSpeed = 7f;
