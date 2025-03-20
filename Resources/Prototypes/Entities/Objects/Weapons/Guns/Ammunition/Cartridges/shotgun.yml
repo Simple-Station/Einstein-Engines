@@ -138,7 +138,7 @@
     maxTransferAmount: 7
   - type: SpentAmmoVisuals
     state: "practice"
-    
+
 - type: entity
   id: ShellShotgunImprovised
   name: improvised shotgun shell
@@ -175,3 +175,39 @@
       proto: PelletShotgunUraniumSpread
     - type: SpentAmmoVisuals
       state: "depleted-uranium"
+
+- type: entity
+  id: ShellShotgunBirdshot
+  name: shell (.50 birdshot)
+  parent: BaseShellShotgun
+  components:
+  - type: Sprite
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: CartridgeAmmo
+    proto: PelletShotgunSpreadBirdshot
+
+- type: entity
+  id: ShellShotgun00Buckshot
+  name: shell (.50 00-Buckshot)
+  parent: BaseShellShotgun
+  components:
+  - type: Sprite
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: CartridgeAmmo
+    proto: PelletShotgunSpread00Buckshot
+
+- type: entity
+  id: ShellShotgun0000Buckshot
+  name: shell (.50 0000-Buckshot)
+  parent: BaseShellShotgun
+  components:
+  - type: Sprite
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: CartridgeAmmo
+    proto: PelletShotgunSpread0000Buckshot

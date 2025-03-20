@@ -397,7 +397,7 @@ entities:
     - type: Transform
       pos: 0.52966046,-0.47381306
       parent: 52
-- proto: ClothingHeadHatPirateTricord
+- proto: ClothingHeadHatPirateTricorn
   entities:
   - uid: 15
     components:

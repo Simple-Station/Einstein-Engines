@@ -20,19 +20,19 @@ public sealed partial class ChangelingInfectionComponent : Component
     public TimeSpan EffectsTimer = TimeSpan.Zero;
 
     [DataField]
-    public float EffectsTimerDelay = 20f;
+    public float EffectsTimerDelay = 10f;
 
     [DataField]
-    public TimeSpan FirstSymptomsDelay = TimeSpan.FromSeconds(600);
+    public TimeSpan FirstSymptomsDelay = TimeSpan.FromSeconds(60);
 
     [DataField]
-    public TimeSpan KnockedOutDelay = TimeSpan.FromSeconds(1200);
+    public TimeSpan KnockedOutDelay = TimeSpan.FromSeconds(540);
 
     [DataField]
-    public TimeSpan FullyInfectedDelay = TimeSpan.FromSeconds(1320);
+    public TimeSpan FullyInfectedDelay = TimeSpan.FromSeconds(600);
 
     [DataField]
-    public float ScarySymptomChance = 0.1f;
+    public float ScarySymptomChance = 0.2f;
 
     public enum InfectionState
     {

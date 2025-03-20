@@ -102,6 +102,23 @@
     - WeaponSubMachineGunBRDIR25BSO # The Den sprites
 
 - type: loadout
+  id: LoadoutBSOGreatShield
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerPrimary
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+    - !type:CharacterAgeRequirement
+      min: 21
+  items:
+    - BlueShieldShieldFilled
+
+- type: loadout
   id: LoadoutBSOTerminus
   category: JobsCommandBlueshieldOfficer
   cost: 0
