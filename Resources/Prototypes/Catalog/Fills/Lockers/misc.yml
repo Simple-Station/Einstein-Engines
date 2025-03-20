@@ -28,7 +28,7 @@
     - id: ToolboxEmergencyFilled
       prob: 0.5
     - id: MedkitOxygenFilled
-      prob: 0.2
+      prob: 0.3
     - id: WeaponFlareGun
       prob: 0.05
     - id: BoxMRE
@@ -203,3 +203,4 @@
           id: GeigerCounter
           amount: !type:ConstantNumberSelector
             value: 2
+        - id: MedkitRadiationFilled

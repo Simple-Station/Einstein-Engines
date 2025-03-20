@@ -80,15 +80,18 @@ public sealed partial class AtmosphereSystem
         EntityQuery<MovedByPressureComponent> pressureQuery,
         EntityQuery<MetaDataComponent> metas,
         EntityQuery<ProjectileComponent> projectileQuery,
-        float frameTime)
+        double gravity)
     {
         // No atmos yeets, return early.
         if (!SpaceWind
             || tile.PressureDirection is AtmosDirection.Invalid
             || tile.Air is null
             || !TryComp(gridAtmosphere.Owner, out MapGridComponent? mapGrid)
-            || !TryComp(gridAtmosphere.Owner, out GravityComponent? gravity)
             || !_mapSystem.TryGetTileRef(gridAtmosphere.Owner, mapGrid, tile.GridIndices, out var tileRef))
+            return;
+
+        var tileDef = (ContentTileDefinition) _tileDefinitionManager[tileRef.Tile.TypeId];
+        if (!tileDef.SimulatedTurf)
             return;
 
         var pressureVector = GetPressureVectorFromTile(gridAtmosphere, tile);
@@ -96,8 +99,6 @@ public sealed partial class AtmosphereSystem
             || pressureVector.Length() <= 1) // Safeguard against "Extremely small vectors"
             return;
 
-        // Doing this here because throwing system iterates the entire projectile list per throw. We iterate it FIRST before we try to throw things.
-        var tileDef = (ContentTileDefinition) _tileDefinitionManager[tileRef.Tile.TypeId];
         pressureVector *= SpaceWindStrengthMultiplier;
 
         if (pressureVector.Length() > 15 && !tile.Hotspot.Valid)
@@ -134,7 +135,6 @@ public sealed partial class AtmosphereSystem
                 tileDef,
                 gravity,
                 projectileQuery,
-                frameTime,
                 xforms.GetComponent(entity),
                 body);
         }
@@ -156,9 +156,8 @@ public sealed partial class AtmosphereSystem
         int cycle,
         Vector2 pressureVector,
         ContentTileDefinition tile,
-        GravityComponent gravity,
+        double gravity,
         EntityQuery<ProjectileComponent> projectileQuery,
-        float frameTime,
         TransformComponent? xform = null,
         PhysicsComponent? physics = null)
     {
@@ -167,24 +166,27 @@ public sealed partial class AtmosphereSystem
             || !Resolve(uid, ref xform)
             || physics.BodyType == BodyType.Static
             || float.IsPositiveInfinity(component.MoveResist)
-            || physics.LinearVelocity.Length() >= SpaceWindMaxVelocity)
+            || physics.LinearVelocity.Length() >= SpaceWindMaxForce)
             return;
 
+        var alwaysThrow = gravity == 0 || physics.BodyStatus == BodyStatus.InAir;
         // Coefficient of static friction in Newtons (kg * m/s^2), which might not apply under certain conditions.
-        var alwaysThrow = !gravity.Enabled || physics.BodyStatus == BodyStatus.InAir;
-        var coefficientOfFriction = gravity.Acceleration * physics.Mass * tile.MobFrictionNoInput;
+        var coefficientOfFriction = gravity * physics.Mass * tile.MobFrictionNoInput;
         coefficientOfFriction *= _standingSystem.IsDown(uid) ? 3 : 1;
 
         if (HasComp<HumanoidAppearanceComponent>(ent))
             pressureVector *= HumanoidThrowMultiplier;
-        if (!alwaysThrow && pressureVector.Length() < coefficientOfFriction)
+        var pVecLength = pressureVector.Length();
+        if (!alwaysThrow && pVecLength < coefficientOfFriction)
             return;
 
-        var velocity = _transformSystem.GetWorldRotation(uid).ToWorldVec() - pressureVector;
+        // Yes this technically increases the magnitude by a small amount... I detest having to swap between "World" and "Local" vectors.
+        // ThrowingSystem increments linear velocity by a given vector, but we have to do this anyways because reasons.
+        var velocity = _transformSystem.GetWorldRotation(uid).ToWorldVec() + pressureVector;
 
         _sharedStunSystem.TryKnockdown(uid, TimeSpan.FromSeconds(SpaceWindKnockdownTime), false);
-        _throwing.TryThrow(uid, -velocity, physics, xform, projectileQuery,
-            pressureVector.Length(), doSpin: physics.AngularVelocity < SpaceWindMaxAngularVelocity);
+        _throwing.TryThrow(uid, velocity, physics, xform, projectileQuery,
+            1, doSpin: physics.AngularVelocity < SpaceWindMaxAngularVelocity);
         component.LastHighPressureMovementAirCycle = cycle;
     }
 }
