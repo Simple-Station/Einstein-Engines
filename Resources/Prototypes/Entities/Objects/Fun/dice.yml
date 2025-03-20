@@ -136,24 +136,38 @@
     # I love this
 
 - type: entity
-  parent: d4Dice
-  id: d4FateDice
-  name: d4 of fate
+  parent: d20Dice
+  id: d20FateDice
+  name: d20 of fate
   description: die or not die
   components:
   - type: FateDice
     effects:
+    - EffectGib
+    - EffectTurnIntoZombie
+    - EffectZombieOutbreak
     - EffectBabelTower
+    - EffectImmovableRod
     - EffectDragon
     - EffectMassMeteor
-    - EffectImmovableRod
+    - EffectMassHallucinations
+    - EffectAngryCarpSpawn
+    - EffectEmp
+    - EffectPolyLuminous
+    - EffectJunkSpawn
+    - EffectMonkeySpawn
+    - EffectChargeBatteries
+    - EffectHealAll
+    - EffectSpawnBagOfHolding
+    - EffectSpawnDoubleEnergySword
+    - EffectTurnIntoRevLeader
+    - EffectTurnIntoThief
+    - EffectTurnIntoTraitor
     remainingUses: 1
-    toReplace: d4Dice
+    toReplace: d20Dice
   - type: PointLight
     energy: 20
     radius: 1.2
   - type: RgbLightController
     cycleRate: 0.2
   - type: ActiveReagentGrinder
-
-
