@@ -931,7 +931,7 @@ public sealed class PullingSystem : EntitySystem
 
         if (puller.Comp.GrabStage == GrabStage.No)
         {
-            puller.Comp.WhenCanThrow = _timing.CurTime + puller.Comp.ThrowDelayOngrab;
+            puller.Comp.WhenCanThrow = _timing.CurTime + puller.Comp.ThrowDelayOnGrab;
         }
         var newStage = puller.Comp.GrabStage + nextStageAddition;
         var ev = new CheckGrabOverridesEvent(newStage); // guh
