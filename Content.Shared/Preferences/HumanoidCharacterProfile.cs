@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Text.RegularExpressions;
+using Content.Shared._EE.Contractors.Prototypes;
 using Content.Shared.CCVar;
 using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Clothing.Loadouts.Systems;
@@ -63,6 +64,14 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     [DataField]
     public string Species { get; set; } = SharedHumanoidAppearanceSystem.DefaultSpecies;
 
+    // EE -- Contractors Change Start
+    [DataField]
+    public NationalityPrototype? Nationality { get; set; }
+
+    [DataField]
+    public EmployerPrototype? Employer { get; set; }
+    // EE -- Contractors Change End
+
     [DataField]
     public string Customspeciename { get; set; } = "";
 
@@ -125,6 +134,10 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         string flavortext,
         string species,
         string customspeciename,
+        // EE -- Contractors Change Start
+        NationalityPrototype? nationality,
+        EmployerPrototype? employer,
+        // EE -- Contractors Change End
         float height,
         float width,
         int age,
@@ -173,6 +186,10 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             other.FlavorText,
             other.Species,
             other.Customspeciename,
+            // EE -- Contractors Change Start
+            other.Nationality,
+            other.Employer,
+            // EE -- Contractors Change End
             other.Height,
             other.Width,
             other.Age,
@@ -281,6 +298,10 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     public HumanoidCharacterProfile WithName(string name) => new(this) { Name = name };
     public HumanoidCharacterProfile WithFlavorText(string flavorText) => new(this) { FlavorText = flavorText };
     public HumanoidCharacterProfile WithAge(int age) => new(this) { Age = age };
+    // EE - Contractors Change Start
+    public HumanoidCharacterProfile WithNationality(NationalityPrototype nationality) => new(this) { Nationality = nationality};
+    public HumanoidCharacterProfile WithEmployer(EmployerPrototype employer) => new(this) { Employer = employer};
+    // EE - Contractors Change End
     public HumanoidCharacterProfile WithSex(Sex sex) => new(this) { Sex = sex };
     public HumanoidCharacterProfile WithGender(Gender gender) => new(this) { Gender = gender };
     public HumanoidCharacterProfile WithDisplayPronouns(string? displayPronouns) => new(this) { DisplayPronouns = displayPronouns };
@@ -374,6 +395,10 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             && Sex == other.Sex
             && Gender == other.Gender
             && Species == other.Species
+            // EE - Contractors Change Start
+            && Nationality == other.Nationality
+            && Employer == other.Employer
+            // EE - Contractors Change End
             && PreferenceUnavailable == other.PreferenceUnavailable
             && SpawnPriority == other.SpawnPriority
             && _jobPriorities.SequenceEqual(other._jobPriorities)

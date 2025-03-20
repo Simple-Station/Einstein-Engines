@@ -1,0 +1,84 @@
+using System.Linq;
+using Content.Shared._EE.Contractors.Prototypes;
+using Content.Shared.Clothing.Loadouts.Prototypes;
+using Content.Shared.Humanoid;
+using Content.Shared.Humanoid.Prototypes;
+using Content.Shared.Mind;
+using Content.Shared.Preferences;
+using Content.Shared.Prototypes;
+using Content.Shared.Roles;
+using Content.Shared.Traits;
+using JetBrains.Annotations;
+using Robust.Shared.Configuration;
+using Robust.Shared.Enums;
+using Robust.Shared.Physics;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization;
+
+namespace Content.Shared.Customization.Systems;
+
+/// <summary>
+///     Requires the profile to have one of a list of nationalities
+/// </summary>
+[UsedImplicitly, Serializable, NetSerializable]
+public sealed partial class CharacterNationalityRequirement : CharacterRequirement
+{
+    [DataField(required: true)]
+    public List<NationalityPrototype> Nationalities;
+
+    public override bool IsValid(
+        JobPrototype job,
+        HumanoidCharacterProfile profile,
+        Dictionary<string, TimeSpan> playTimes,
+        bool whitelisted,
+        IPrototype prototype,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager,
+        out string? reason,
+        int depth = 0,
+        MindComponent? mind = null
+    )
+    {
+        var localeString = "character-nationality-requirement";
+
+        reason = Loc.GetString(
+            localeString,
+            ("inverted", Inverted),
+            ("nationality", Nationalities));
+        return (profile.Nationality != null && Nationalities.Any(o => o.ID == profile.Nationality.ID)) == !Inverted;
+    }
+}
+
+/// <summary>
+///     Requires the profile to have one of a list of employers
+/// </summary>
+[UsedImplicitly, Serializable, NetSerializable]
+public sealed partial class CharacterEmployerRequirement : CharacterRequirement
+{
+    [DataField(required: true)]
+    public List<EmployerPrototype> Employers;
+
+    public override bool IsValid(
+        JobPrototype job,
+        HumanoidCharacterProfile profile,
+        Dictionary<string, TimeSpan> playTimes,
+        bool whitelisted,
+        IPrototype prototype,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager,
+        out string? reason,
+        int depth = 0,
+        MindComponent? mind = null
+    )
+    {
+        var localeString = "character-nationality-requirement";
+
+        reason = Loc.GetString(
+            localeString,
+            ("inverted", Inverted),
+            ("nationality", Employers));
+        return (profile.Employer != null && Employers.Any(o => o.ID == profile.Employer.ID)) == !Inverted;
+    }
+}
