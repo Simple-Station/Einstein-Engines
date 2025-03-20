@@ -797,6 +797,21 @@ character-item-group-LoadoutReporterOuter = Reporter Outerwear
 character-item-group-LoadoutReporterShoes = Reporter Shoes
 character-item-group-LoadoutReporterUniforms = Reporter Uniforms
 
+# Misc - Prisoner
+character-item-group-LoadoutPrisonerBackpacks = Prisoner Backpacks
+character-item-group-LoadoutPrisonerBelt = Prisoner Belt
+character-item-group-LoadoutPrisonerEars = Prisoner Ears
+character-item-group-LoadoutPrisonerEquipment = Prisoner Equipment
+character-item-group-LoadoutPrisonerEyes = Prisoner Eyewear
+character-item-group-LoadoutPrisonerloves = Prisoner Gloves
+character-item-group-LoadoutPrisonerHead = Prisoner Headgear
+character-item-group-LoadoutPrisonerId = Prisoner Id
+character-item-group-LoadoutPrisonerNeck = Prisoner Neckwear
+character-item-group-LoadoutPrisonerMask = Prisoner Masks
+character-item-group-LoadoutPrisonerOuter = Prisoner Outerwear
+character-item-group-LoadoutPrisonerShoes = Prisoner Shoes
+character-item-group-LoadoutPrisonerUniforms = Prisoner Uniforms
+
 # Traits - Languages
 character-item-group-TraitsLanguagesBasic = Basic Languages
 character-item-group-TraitsAccents = Accents

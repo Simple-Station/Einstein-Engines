@@ -108,7 +108,7 @@
         - !type:EntSelector
           id: ClothingOuterCoatPirate
         - !type:EntSelector
-          id: ClothingHeadHatPirateTricord
+          id: ClothingHeadHatPirateTricorn
       - !type:EntSelector
         id: ClothingHeadHatTophat
       - !type:EntSelector

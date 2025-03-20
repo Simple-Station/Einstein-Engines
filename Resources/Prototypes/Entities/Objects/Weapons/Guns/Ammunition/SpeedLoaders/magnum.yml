@@ -139,3 +139,11 @@
     steps: 7
     zeroVisible: false
   - type: Appearance
+
+- type: entity
+  id: SpeedLoaderMagnumShrapnel
+  name: "speed loader (.45 magnum shrapnel)"
+  parent: SpeedLoaderMagnum
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeMagnumShrapnel
