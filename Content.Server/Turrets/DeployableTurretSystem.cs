@@ -105,6 +105,9 @@ public sealed partial class DeployableTurretSystem : SharedDeployableTurretSyste
             args.ModifiedRecipients = recipientDeviceNetworks;
     }
 
+    /// <summary>
+    /// Gets packet from controller asking for an update or registering device.
+    /// </summary>
     private void SendStateUpdateToDeviceNetwork(Entity<DeployableTurretComponent> ent)
     {
         if (!TryComp<DeviceNetworkComponent>(ent, out var device))
@@ -119,6 +122,9 @@ public sealed partial class DeployableTurretSystem : SharedDeployableTurretSyste
         _deviceNetwork.QueuePacket(ent, null, payload, device: device);
     }
 
+    /// <summary>
+    /// Each time the controller changes settings or registers device it will update the turret and send a packet back to the controller
+    /// </summary>
     private void OnPacketReceived(Entity<DeployableTurretComponent> ent, ref DeviceNetworkPacketEvent args)
     {
         if (!args.Data.TryGetValue(DeviceNetworkConstants.Command, out string? command))
@@ -129,13 +135,16 @@ public sealed partial class DeployableTurretSystem : SharedDeployableTurretSyste
 
         switch (command)
         {
+            // Just trying to get an update of the turret
             case DeviceNetworkConstants.CmdUpdatedState:
                 SendStateUpdateToDeviceNetwork(ent);
                 return;
+            // Set a new turret mode
             case DeployableTurretControllerSystem.CmdSetArmamemtState:
                 args.Data.TryGetValue(command, out int updatedState);
                 bool state = true;
 
+                // -1 is inactive so just set state to false
                 if (updatedState == -1)
                     state = false;
                 else
@@ -143,13 +152,17 @@ public sealed partial class DeployableTurretSystem : SharedDeployableTurretSyste
                     if (!TryComp<BatteryWeaponFireModesComponent>(ent.Owner, out var firemode))
                         return;
 
+                    // swap firemode to the new firemode
                     if (firemode.CurrentFireMode != updatedState)
                         _turretfiremode.TrySetFireMode(ent.Owner, firemode, updatedState);
                 }
 
+                // Set state and send updated packet to controller.
                 SetState(ent, state);
                 SendStateUpdateToDeviceNetwork(ent);
                 return;
+
+            // New access. Update the access.
             case DeployableTurretControllerSystem.CmdSetAccessExemptions:
                 args.Data.TryGetValue(command, out HashSet<ProtoId<AccessLevelPrototype>>? access);
 
