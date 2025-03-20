@@ -19,6 +19,8 @@ namespace Content.Server.Power.EntitySystems
         [Dependency] private readonly SharedContainerSystem _containers = default!; // WD EDIT
         [Dependency] protected readonly IGameTiming Timing = default!;
 
+        private const string CellContainer = "cell_slot";
+
         public override void Initialize()
         {
             base.Initialize();
