@@ -131,6 +131,8 @@ public sealed class SmartEquipSystem : EntitySystem
             {
                 case null when storage.Container.ContainedEntities.Count == 0:
                     _popup.PopupClient(emptyEquipmentSlotString, uid, uid);
+                    if (storage.SmartEquipSelfIfEmpty)
+                        SmartEquipItem(slotItem, uid, equipmentSlot, inventory, hands);
                     return;
                 case null:
                     var removing = storage.Container.ContainedEntities[^1];
@@ -172,6 +174,8 @@ public sealed class SmartEquipSystem : EntitySystem
                 if (toEjectFrom == null)
                 {
                     _popup.PopupClient(emptyEquipmentSlotString, uid, uid);
+                    if (slots.SmartEquipSelfIfEmpty)
+                        SmartEquipItem(slotItem, uid, equipmentSlot, inventory, hands);
                     return;
                 }
 
@@ -205,6 +209,11 @@ public sealed class SmartEquipSystem : EntitySystem
         if (handItem != null)
             return;
 
+        SmartEquipItem(slotItem, uid, equipmentSlot, inventory, hands);
+    }
+
+    private void SmartEquipItem(EntityUid slotItem, EntityUid uid, string equipmentSlot, InventoryComponent inventory, HandsComponent hands)
+    {
         if (!_inventory.CanUnequip(uid, equipmentSlot, out var inventoryReason))
         {
             _popup.PopupClient(Loc.GetString(inventoryReason), uid, uid);
@@ -214,4 +223,5 @@ public sealed class SmartEquipSystem : EntitySystem
         _inventory.TryUnequip(uid, equipmentSlot, inventory: inventory, predicted: true, checkDoafter: true);
         _hands.TryPickup(uid, slotItem, handsComp: hands);
     }
+
 }

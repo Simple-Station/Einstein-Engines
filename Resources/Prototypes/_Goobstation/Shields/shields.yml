@@ -103,4 +103,5 @@
           whitelist:
             tags:
             - Stunbaton
+      smartEquipSelfIfEmpty: true
     - type: EmpImmune # The battery aspect is, as far as I know, used as an easily healable way to monitor the shields health, but if energy shields do not get emped, these should not either.
