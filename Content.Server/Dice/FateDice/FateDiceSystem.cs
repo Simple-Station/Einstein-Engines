@@ -51,6 +51,7 @@ public sealed class FateDiceSystem : EntitySystem
         }
     }
 
+    // Removes the dice and replaces it with some other entity.
     private void RemoveDice(EntityUid uid, FateDiceComponent dice)
     {
         try
@@ -60,11 +61,13 @@ public sealed class FateDiceSystem : EntitySystem
         }
         catch
         {
-            Log.Error(string.Format("{0} is not a valid entity", dice.ToReplace));
+            Log.Error(string.Format("'{0}' is not a valid entity", dice.ToReplace));
         }
 
         QueueDel(uid);
     }
+
+    // Does the activation of the effect.
     private void ActivateEffect(EntityUid uid, FateDiceComponent dice)
     {
         // do ghost boo
@@ -160,14 +163,13 @@ public sealed class FateDiceSystem : EntitySystem
         }
     }
 
-    // basically select all components from the effect prototype and apply them directly to the dice
+    // basically select all components from the effect prototype and apply them directly to the dice.
     public void OnDiceRoll(EntityUid uid, FateDiceComponent fateDice, DiceRollEvent args)
     {
         if (fateDice.RemainingUses <= 0)
             return;
 
         fateDice.ActTime = _timing.CurTime + TimeSpan.FromSeconds(fateDice.TimeToActivate);
-
         fateDice.LastRolledNumber = args.RolledNumber;
 
         AddEffectComponentsToDice(uid, fateDice);
@@ -175,6 +177,7 @@ public sealed class FateDiceSystem : EntitySystem
         // This is needed for some artifact effects properly work.
         RaiseLocalEvent(uid, new ArtifactNodeEnteredEvent(_random.Next()));
 
+        // If the dice is still in the hand of some entity, drop it.
         if (
             EntityManager.HasComponent<HandsComponent>(fateDice.LastUser)
             && _hands.IsHolding(fateDice.LastUser, uid)
@@ -182,15 +185,19 @@ public sealed class FateDiceSystem : EntitySystem
         {
             _hands.TryDrop(fateDice.LastUser);
         }
+
         fateDice.IsOnCooldown = true;
 
         fateDice.RemainingUses--;
+
+        // Mark the dice to be deleted if it has no remaining uses
         if (fateDice.RemainingUses <= 0)
             fateDice.DelTime = _timing.CurTime + TimeSpan.FromSeconds(fateDice.TimeToDelete);
     }
 
     public void OnPickupAttempt(EntityUid uid, FateDiceComponent fateDice, GettingPickedUpAttemptEvent args)
     {
+        // Prevent entities from picking up the dice while it can't be used.
         if (fateDice.RemainingUses <= 0 || fateDice.IsOnCooldown)
         {
             args.Cancel();
