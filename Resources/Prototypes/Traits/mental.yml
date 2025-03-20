@@ -41,7 +41,7 @@
     - !type:TraitReplaceComponent
       components:
         - type: PotentiaModifier
-          potentiaMultiplier: 2
+          potentiaMultiplier: 1.5
 
 - type: trait
   id: LowPotential
