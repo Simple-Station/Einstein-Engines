@@ -13310,3 +13310,16 @@ Entries:
   id: 6995
   time: '2025-03-20T04:59:19.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1939
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Dermal armor has been reworked to provide flat reductions to physical
+        damage instead of percent reduction. This makes it significantly better
+        against "Chip damage" attacks such as unarmed fighting, wild animals,
+        and Shrapnel ammo. But it also makes it much worse against large single
+        sources of damage such as anti-material rifles, large caliber rounds,
+        shotgun slugs, etc. 
+  id: 6996
+  time: '2025-03-20T05:04:42.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2016
