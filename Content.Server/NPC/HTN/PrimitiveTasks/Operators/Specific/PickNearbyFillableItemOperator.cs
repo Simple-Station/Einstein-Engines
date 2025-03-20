@@ -48,6 +48,7 @@ public sealed partial class PickNearbyFillableItemOperator : HTNOperator
         _pathfinding = sysManager.GetEntitySystem<PathfindingSystem>();
         _sharedMaterialStorage = sysManager.GetEntitySystem<SharedMaterialStorageSystem>();
         _sharedHandsSystem = sysManager.GetEntitySystem<SharedHandsSystem>();
+        _tagSystem = sysManager.GetEntitySystem<TagSystem>();
     }
 
     public override async Task<(bool Valid, Dictionary<string, object>? Effects)> Plan(NPCBlackboard blackboard,
