@@ -666,7 +666,7 @@
         - type: ShowJobIcons
         - type: ShowMindShieldIcons
         - type: ShowCriminalRecordIcons
-        - type: EyeProtection
+        - type: FlashImmunity
 
 - type: trait
   id: CyberEyesMedical
@@ -755,7 +755,7 @@
         - type: ShowCriminalRecordIcons
         - type: ShowHealthIcons
         - type: SolutionScanner
-        - type: EyeProtection
+        - type: FlashImmunity
         - type: ShowJobIcons
         - type: ShowMindShieldIcons
         - type: ShowCriminalRecordIcons
@@ -969,7 +969,7 @@
         - type: ShowJobIcons
         - type: ShowMindShieldIcons
         - type: ShowCriminalRecordIcons
-        - type: EyeProtection
+        - type: FlashImmunity
 
 - type: trait
   id: MedicalEyesModule
@@ -1076,6 +1076,7 @@
         - type: ShowMindShieldIcons
         - type: ShowCriminalRecordIcons
         - type: ShowHealthIcons
+        - type: FlashImmunity
           damageContainers:
           - Biological
           damageContainers:
