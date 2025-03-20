@@ -21,7 +21,6 @@ namespace Content.Server.StationEvents.Events
 
         private readonly HashSet<Entity<HumanoidAppearanceComponent>> _humans = new();
 
-        // called when the gyatt is started
         protected override void Started(EntityUid uid, BabelTowerRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
         {
             base.Started(uid, component, gameRule, args);
@@ -39,16 +38,14 @@ namespace Content.Server.StationEvents.Events
                     if (!EntityManager.HasComponent<RatvarianLanguageComponent>(hUid))
                     {
                         EntityManager.AddComponent<RatvarianLanguageComponent>(hUid);
-                        Log.Debug("Hello fuck");
                     }
                 } catch { }
             }
-
         }
 
         protected override void Ended(EntityUid uid, BabelTowerRuleComponent component, GameRuleComponent gameRule, GameRuleEndedEvent args)
         {
-            // remove the Cogchamp accent to them
+            // remove the Cogchamp accent from them
             foreach (var (hUid, _) in _humans)
             {
                 try
@@ -56,7 +53,6 @@ namespace Content.Server.StationEvents.Events
                     if (EntityManager.HasComponent<RatvarianLanguageComponent>(hUid))
                     {
                         EntityManager.RemoveComponent<RatvarianLanguageComponent>(hUid);
-                        Log.Debug("Goodbye fuck");
                     }
                 } catch { }
             }
