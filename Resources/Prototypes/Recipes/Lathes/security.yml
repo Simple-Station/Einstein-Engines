@@ -320,6 +320,27 @@
   materials:
     Plastic: 350
 
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineCaselessRifleIncendiary
+  result: MagazineCaselessRifleIncendiary
+  materials:
+    Plastic: 350
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineCaselessRifleUranium
+  result: MagazineCaselessRifleUranium
+  materials:
+    Uranium: 350
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineCaselessRifleShrapnel
+  result: MagazineCaselessRifleShrapnel
+  materials:
+    Steel: 350
+
 # .25 Caseless (Box Mag) Rifle Magazines
 - type: latheRecipe
   parent: BaseAmmoRecipe
@@ -339,6 +360,27 @@
   parent: BaseAmmoRecipe
   id: MagazineBoxCaselessRifleRubber
   result: MagazineBoxCaselessRifleRubber
+  materials:
+    Steel: 720
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineBoxCaselessRifleIncendiary
+  result: MagazineBoxCaselessRifleIncendiary
+  materials:
+    Plastic: 720
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineBoxCaselessRifleUranium
+  result: MagazineBoxCaselessRifleUranium
+  materials:
+    Uranium: 720
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineBoxCaselessRifleShrapnel
+  result: MagazineBoxCaselessRifleShrapnel
   materials:
     Steel: 720
 
@@ -396,6 +438,14 @@
     Plastic: 120
 
 - type: latheRecipe
+  id: MagazinePistolShrapnel
+  result: MagazinePistolShrapnel
+  category: Ammo
+  completetime: 5
+  materials:
+    Steel: 145
+
+- type: latheRecipe
   id: MagazinePistolSubMachineGunEmpty
   result: MagazinePistolSubMachineGunEmpty
   category: Ammo
@@ -440,6 +490,14 @@
     Plastic: 400
 
 - type: latheRecipe
+  id: MagazinePistolSubMachineGunShrapnel
+  result: MagazinePistolSubMachineGunShrapnel
+  category: Ammo
+  completetime: 5
+  materials:
+    Steel: 300
+
+- type: latheRecipe
   id: MagazinePistolSubMachineGunTopMountedEmpty
   result: MagazinePistolSubMachineGunTopMountedEmpty
   category: Ammo
@@ -473,8 +531,24 @@
     Plastic: 300
 
 - type: latheRecipe
+  id: MagazineBoxPistolShrapnel
+  result: MagazineBoxPistolShrapnel
+  category: Ammo
+  completetime: 5
+  materials:
+    Steel: 600
+
+- type: latheRecipe
   id: MagazineBoxMagnum
   result: MagazineBoxMagnum
+  category: Ammo
+  completetime: 5
+  materials:
+    Steel: 240
+
+- type: latheRecipe
+  id: MagazineBoxMagnumShrapnel
+  result: MagazineBoxMagnumShrapnel
   category: Ammo
   completetime: 5
   materials:
@@ -542,6 +616,14 @@
     Plastic: 450
 
 - type: latheRecipe
+  id: MagazineRifleShrapnel
+  result: MagazineRifleShrapnel
+  category: Ammo
+  completetime: 5
+  materials:
+    Steel: 475
+
+- type: latheRecipe
   id: MagazineLightRifleEmpty
   result: MagazineLightRifleEmpty
   category: Ammo
@@ -594,6 +676,14 @@
     Plastic: 540
 
 - type: latheRecipe
+  id: MagazineLightRifleShrapnel
+  result: MagazineLightRifleShrapnel
+  category: Ammo
+  completetime: 5
+  materials:
+    Steel: 565
+
+- type: latheRecipe
   id: MagazineMagnumEmpty
   result: MagazineMagnumEmpty
   category: Ammo
@@ -638,8 +728,24 @@
     Plastic: 150
 
 - type: latheRecipe
+  id: MagazineMagnumShrapnel
+  result: MagazineMagnumShrapnel
+  category: Ammo
+  completetime: 5
+  materials:
+    Steel: 150
+
+- type: latheRecipe
   id: MagazineBoxRifle
   result: MagazineBoxRifle
+  category: Ammo
+  completetime: 5
+  materials:
+    Steel: 750
+
+- type: latheRecipe
+  id: MagazineBoxRifleShrapnel
+  result: MagazineBoxRifleShrapnel
   category: Ammo
   completetime: 5
   materials:
@@ -657,6 +763,14 @@
 - type: latheRecipe
   id: MagazineBoxLightRifle
   result: MagazineBoxLightRifle
+  category: Ammo
+  completetime: 5
+  materials:
+    Steel: 900
+
+- type: latheRecipe
+  id: MagazineBoxLightRifleShrapnel
+  result: MagazineBoxLightRifleShrapnel
   category: Ammo
   completetime: 5
   materials:
@@ -687,6 +801,30 @@
   materials:
     Steel: 240
     Plastic: 160
+
+- type: latheRecipe
+  id: BoxShotgunBirdshot
+  result: BoxShotgunBirdshot
+  category: Ammo
+  completetime: 5
+  materials:
+    Steel: 320
+
+- type: latheRecipe
+  id: BoxShotgun00Buckshot
+  result: BoxShotgun00Buckshot
+  category: Ammo
+  completetime: 5
+  materials:
+    Steel: 320
+
+- type: latheRecipe
+  id: BoxShotgun0000Buckshot
+  result: BoxShotgun0000Buckshot
+  category: Ammo
+  completetime: 5
+  materials:
+    Steel: 320
 
 - type: latheRecipe
   id: MagazineBoxLightRifleRubber

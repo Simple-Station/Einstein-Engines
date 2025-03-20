@@ -1,3 +1,4 @@
+using System.Collections;
 using Content.Shared._Lavaland.Shuttles.Systems;
 using Content.Shared.Tag;
 using Robust.Shared.GameStates;
@@ -27,10 +28,18 @@ public sealed partial class DockingShuttleComponent : Component
     public List<DockingDestination> Destinations = new();
 
     /// <summary>
+    /// Location UID list
+    /// </summary>
+    [DataField]
+    public List<EntityUid> LocationUID = new();
+
+    /// <summary>
     /// Airlock tag that it will prioritize docking to.
     /// </summary>
     [DataField]
     public ProtoId<TagPrototype> DockTag = "DockMining";
+
+    public int? currentlocation;
 }
 
 /// <summary>

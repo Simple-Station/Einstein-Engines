@@ -17,6 +17,34 @@
       - HideContextMenu
   - type: AnimationPlayer
 
+- type: entity
+  parent: MuzzleFlashEffect
+  id: MuzzleFlashEffectOmnilaser
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    drawdepth: BelowMobs
+    offset: 0.15, 0
+    layers:
+    - shader: unshaded
+      map: ["enum.EffectLayers.Unshaded"]
+      sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+      state: omnilaser_flash
+
+- type: entity
+  parent: MuzzleFlashEffect
+  id: MuzzleFlashEffectHeavyLaser
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    drawdepth: BelowMobs
+    offset: 0.15, 0
+    layers:
+    - shader: unshaded
+      map: ["enum.EffectLayers.Unshaded"]
+      sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+      state: heavylaser_flash
+
 # One bullet to bring them all into the darkness and bind them
 - type: entity
   id: BaseBullet
@@ -836,6 +864,81 @@
     energy: 0.5
 
 - type: entity
+  id: BulletGrenadeSpreadBeanbag
+  categories: [ HideSpawnMenu ]
+  parent: PelletShotgun
+  components:
+  - type: ProjectileSpread
+    proto: PelletShotgunBeanbag
+    count: 8
+    spread: 25
+
+- type: entity
+  id: BulletGrenadeSpreadBirdshot
+  categories: [ HideSpawnMenu ]
+  parent: PelletShotgun
+  components:
+  - type: ProjectileSpread
+    proto: BulletGrenadeBirdshot
+    count: 50
+    spread: 25
+
+- type: entity
+  id: BulletGrenadeBirdshot
+  categories: [ HideSpawnMenu ]
+  parent: PelletShotgun
+  components:
+  - type: Sprite
+    scale: 0.5, 0.5
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    state: buckshot
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 10
+
+- type: entity
+  id: BulletGrenadeSpread00Buckshot
+  categories: [ HideSpawnMenu ]
+  parent: PelletShotgun
+  components:
+  - type: ProjectileSpread
+    proto: PelletShotgun00Buckshot
+    count: 32
+    spread: 25
+
+- type: entity
+  id: BulletGrenadeSpread0000Buckshot
+  categories: [ HideSpawnMenu ]
+  parent: PelletShotgun
+  components:
+  - type: ProjectileSpread
+    proto: PelletShotgun0000Buckshot
+    count: 24
+    spread: 25
+
+- type: entity
+  id: BulletGrenadeSlug
+  name: baton grenade
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+      - state: grenade
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 250 # At this point you're firing a cannon shell at someone.
+        Structural: 800 # Will instantly destroy pretty much any structure it hits.
+    forceSound: true
+    soundHit:
+      path: /Audio/DeltaV/Misc/reducedtoatmos.ogg
+  - type: StaminaDamageOnCollide
+    damage: 150 # JUST IN CASE THEY SOMEHOW SURVIVE IT.
+
+- type: entity
   id: BulletCap
   name: cap bullet
   parent: BaseBullet
@@ -1005,6 +1108,81 @@
     damage:
       types:
         Heat: 2
+    soundHit:
+      collection: WeakHit
+    forceSound: true
+
+- type: entity
+  name : energy bolt
+  id: BulletEnergyTurretBase
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Reflective
+    reflective:
+    - Energy
+  - type: FlyBySound
+    sound:
+      collection: EnergyMiss
+      params:
+        volume: 5
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    layers:
+    - state: heavylaser
+      shader: unshaded
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.3,0.15,0.3"
+        hard: false
+        mask:
+        - Opaque
+      fly-by: *flybyfixture
+  - type: Ammo
+
+- type: entity
+  name : laser bolt
+  id: BulletEnergyTurretLaser
+  parent: BulletEnergyTurretBase
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Ammo
+    muzzleFlash: MuzzleFlashEffectHeavyLaser
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    layers:
+    - state: heavylaser
+      shader: unshaded
+  - type: Projectile
+    impactEffect: BulletImpactEffectOrangeDisabler
+    damage:
+      types:
+        Heat: 28
+
+- type: entity
+  name : disabler bolt
+  id: BulletEnergyTurretDisabler
+  parent: BulletEnergyTurretBase
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Ammo
+    muzzleFlash: MuzzleFlashEffectOmnilaser
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    layers:
+    - state: omnilaser
+      shader: unshaded
+  - type: StaminaDamageOnCollide
+    damage: 30
+  - type: Projectile
+    impactEffect: BulletImpactEffectDisabler
+    damage:
+      types:
+        Heat: 0
     soundHit:
       collection: WeakHit
     forceSound: true

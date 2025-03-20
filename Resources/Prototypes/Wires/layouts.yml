@@ -167,7 +167,7 @@
 # - !type:AiInteractWireAction
   - !type:PowerWireAction
   - !type:AccessWireAction
-    
+
 - type: wireLayout
   id: Jukebox
   dummyWires: 2
@@ -208,5 +208,25 @@
   dummyWires: 2
   wires:
   - !type:PowerWireAction
+  - !type:AiInteractWireAction
+  - !type:AccessWireAction
+
+- type: wireLayout
+  id: WeaponEnergyTurret
+  dummyWires: 4
+  wires:
+  - !type:PowerWireAction
+  - !type:PowerWireAction
+    pulseTimeout: 15
+  - !type:AiInteractWireAction
+  - !type:AccessWireAction
+
+- type: wireLayout
+  id: TurretControls
+  dummyWires: 2
+  wires:
+  - !type:PowerWireAction
+  - !type:PowerWireAction
+    pulseTimeout: 15
   - !type:AiInteractWireAction
   - !type:AccessWireAction

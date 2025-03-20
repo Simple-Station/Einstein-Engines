@@ -11,6 +11,9 @@ using System.Linq;
 using Content.Server.GameTicking;
 using Robust.Server.GameObjects;
 using Robust.Shared.Timing;
+using Content.Server._Lavaland.Procedural.Components;
+using Content.Server.Station.Events;
+using System.Security.Principal;
 
 namespace Content.Server._Lavaland.Shuttles.Systems;
 
@@ -30,6 +33,7 @@ public sealed class DockingShuttleSystem : SharedDockingShuttleSystem
 
         SubscribeLocalEvent<StationGridAddedEvent>(OnStationGridAdded);
         SubscribeLocalEvent<DockingShuttleComponent, ShuttleAddStationEvent>(OnAddStation);
+        SubscribeLocalEvent<DockingShuttleComponent, ShuttleLocationChangeEvent>(OnLocationChange);
     }
 
     private void OnMapInit(Entity<DockingShuttleComponent> ent, ref MapInitEvent args)
@@ -42,11 +46,7 @@ public sealed class DockingShuttleSystem : SharedDockingShuttleSystem
             if (!dest.Enabled || _whitelist.IsWhitelistFailOrNull(dest.Whitelist, ent))
                 continue;
 
-            ent.Comp.Destinations.Add(new DockingDestination()
-            {
-                Name = Name(mapUid),
-                Map = map.MapId
-            });
+            AddDestinations(ent, map.MapId);
         }
 
         // Also update all consoles
@@ -70,6 +70,11 @@ public sealed class DockingShuttleSystem : SharedDockingShuttleSystem
         _console.UpdateConsolesUsing(ent);
     }
 
+
+    /// <summary>
+    /// When any station has been added or an item that has been added by a station it checks to see if it has the docking component.
+    /// If there is a docking component then find the station that spawned it and add it to destinations.
+    /// </summary>
     private void OnStationGridAdded(StationGridAddedEvent args)
     {
         var uid = args.GridId;
@@ -83,23 +88,108 @@ public sealed class DockingShuttleSystem : SharedDockingShuttleSystem
         if (_station.GetOwningStation(uid) is not {} station || !TryComp<StationDataComponent>(station, out var data))
             return;
 
+        // if this returns null. Suffer
+        if (GetStationbyName(data, Name(station)) is not {} grid)
+            return;
+
         // add the source station as a destination
         comp.Station = station;
-        comp.Destinations.Add(new DockingDestination()
-        {
-            Name = Name(station),
-            Map = Transform(uid).MapID
-        });
+
+        // Add the warp point and set the current location to the station uid
+        comp.currentlocation = grid.Id;
+        AddDestinationUID(comp, Transform(uid).MapID, grid);
     }
 
-    private void OnAddStation(EntityUid uid, DockingShuttleComponent component,  ShuttleAddStationEvent args)
+    /// <summary>
+    /// If you have the exact station name then it will return it. This can also work with the ATS.
+    /// </summary>
+    private EntityUid? GetStationbyName(StationDataComponent component, string stationname)
+    {
+        foreach (var grid in component.Grids)
+            if (stationname == Name(grid))
+                return grid;
+
+        return null;
+    }
+
+    /// <summary>
+    /// If there is no mining shuttle on round start it will call this event and add it to destinations.
+    /// </summary>
+    private void OnAddStation(EntityUid uid, DockingShuttleComponent component, ShuttleAddStationEvent args)
     {
         component.Station = args.MapUid;
+        component.currentlocation = args.GridUid.Id;
+        AddDestinationUID(component, args.MapId, args.GridUid);
+    }
+
+    /// <summary>
+    /// When the location changes on FTL the value of currentlocation needs to be changed to the new location.
+    /// </summary>
+    private void OnLocationChange(EntityUid uid, DockingShuttleComponent component, ShuttleLocationChangeEvent args)
+    {
+        component.currentlocation = args.currentlocation;
+    }
+
+    /// <summary>
+    /// This function will specifically for lavaland components or station components on any given map.
+    /// This will allow for you to add more maps or have many stations/lavaland structures to warp too :)
+    /// </summary>
+    private void AddDestinations(DockingShuttleComponent component, MapId map)
+    {
+        // Tries to add stations if there
+        AddStation(component, map);
+        // Then tries lavaland components.
+        AddLavalandStation(component, map);
+    }
+
+    /// <summary>
+    /// Looks through all the BecomesStationComponent and adds said stations.
+    /// If there is multiple station on the same map now it will create warp points for said stations
+    /// </summary>
+    private void AddStation(DockingShuttleComponent component, MapId map)
+    {
+        var query = EntityQueryEnumerator<BecomesStationComponent, TransformComponent>();
+        while (query.MoveNext(out var gridUid, out var grid, out var xform))
+        {
+            if (xform.MapID != map)
+                continue;
+
+            // Check if this function is called again to update the shuttle console warp points.
+            if (component.LocationUID.Contains(gridUid))
+                continue;
+
+            AddDestinationUID(component, map, gridUid);
+        }
+    }
+
+    /// <summary>
+    /// Will specifically look through lavaland stations to add all grids marked with lavalandstationcomponent
+    /// This will allow people to add more warp points like a lavaland fight arena. :)
+    /// </summary>
+    private void AddLavalandStation(DockingShuttleComponent component, MapId map)
+    {
+        var query = EntityQueryEnumerator<LavalandStationComponent, TransformComponent>();
+        while (query.MoveNext(out var gridUid, out var grid, out var xform))
+        {
+            // Check if this function is called again to update the shuttle console warp points.
+            if (component.LocationUID.Contains(gridUid))
+                continue;
+
+            AddDestinationUID(component, map, gridUid);
+        }
+    }
+
+    /// <summary>
+    /// Add the destination gridUID to the destinations.
+    /// </summary>
+    private void AddDestinationUID(DockingShuttleComponent component, MapId map, EntityUid gridUid)
+    {
         component.Destinations.Add(new DockingDestination()
         {
-            Name = Name(args.MapUid),
-            Map = args.MapId
+            Name = Name(gridUid),
+            Map = map
         });
+        component.LocationUID.Add(gridUid);
     }
 }
 
@@ -107,9 +197,20 @@ public sealed class ShuttleAddStationEvent : EntityEventArgs
 {
     public readonly EntityUid MapUid;
     public readonly MapId MapId;
-    public ShuttleAddStationEvent(EntityUid mapUid, MapId mapId)
+    public readonly EntityUid GridUid;
+    public ShuttleAddStationEvent(EntityUid mapUid, MapId mapId, EntityUid gridUid)
     {
         MapUid = mapUid;
         MapId = mapId;
+        GridUid = gridUid;
+    }
+}
+
+public sealed class ShuttleLocationChangeEvent : EntityEventArgs
+{
+    public readonly int currentlocation;
+    public ShuttleLocationChangeEvent(int location)
+    {
+        currentlocation = location;
     }
 }

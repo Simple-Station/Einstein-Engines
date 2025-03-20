@@ -15,8 +15,8 @@
     modifiers:
       coefficients:
         Blunt: 1.35
-        Slash: 1.2
-        Piercing: 1.2
+        Slash: 1.25
+        Piercing: 1.25
         Asphyxiation: 1.35
   - type: Damageable
     damageModifierSet: Oni

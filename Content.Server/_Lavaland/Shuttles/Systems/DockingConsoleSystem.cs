@@ -123,9 +123,7 @@ public sealed class DockingConsoleSystem : SharedDockingConsoleSystem
         }
 
         if (TryComp<DockingShuttleComponent>(shuttle, out var docking))
-        {
             destinations = docking.Destinations;
-        }
 
         var state = new DockingConsoleState(ftlState, ftlTime, destinations);
         _ui.SetUiState(ent.Owner, DockingConsoleUiKey.Key, state);
@@ -139,18 +137,17 @@ public sealed class DockingConsoleSystem : SharedDockingConsoleSystem
         if (args.Index < 0 || args.Index > docking.Destinations.Count)
             return;
 
-        var dest = docking.Destinations[args.Index];
-        var map = dest.Map;
+        var grid = docking.LocationUID[args.Index];
 
-        // can't FTL if its already there
-        if (map == Transform(shuttle).MapID)
+        // can't FTL if your already at the grid
+        if (docking.currentlocation == grid.Id)
             return;
 
-        if (FindLargestGrid(map) is not {} grid)
-            return;
+        RaiseLocalEvent(shuttle, new ShuttleLocationChangeEvent(grid.Id), false);
 
         Log.Debug($"{ToPrettyString(args.Actor):user} is FTL-docking {ToPrettyString(shuttle):shuttle} to {ToPrettyString(grid):grid}");
 
+        // Set new current location and FTL!
         _shuttle.FTLToDock(shuttle, Comp<ShuttleComponent>(shuttle), grid, priorityTag: docking.DockTag);
     }
 
@@ -169,7 +166,7 @@ public sealed class DockingConsoleSystem : SharedDockingConsoleSystem
 
         // Find the target
         var targetMap = Transform(ent).MapID;
-        if (FindLargestGrid(targetMap) is not {} grid)
+        if (Transform(ent).GridUid is not {} grid)
             return;
 
         // Find the mining shuttle
@@ -191,7 +188,7 @@ public sealed class DockingConsoleSystem : SharedDockingConsoleSystem
             if (targetUid == null)
                 return;
 
-            RaiseLocalEvent(shuttleUid.Value, new ShuttleAddStationEvent(targetUid.Value, targetMap), false);
+            RaiseLocalEvent(shuttleUid.Value, new ShuttleAddStationEvent(targetUid.Value, targetMap, grid), false);
         }
 
         // Finally FTL
@@ -202,32 +199,6 @@ public sealed class DockingConsoleSystem : SharedDockingConsoleSystem
 
         // shitcode because funny
         Timer.Spawn(TimeSpan.FromSeconds(15), () => _mapMan.DeleteMap(dummyMap));
-    }
-
-    private EntityUid? FindLargestGrid(MapId map)
-    {
-        EntityUid? largestGrid = null;
-        var largestSize = 0f;
-
-        var query = EntityQueryEnumerator<MapGridComponent, TransformComponent>();
-        while (query.MoveNext(out var gridUid, out var grid, out var xform))
-        {
-            if (xform.MapID != map)
-                continue;
-
-            if (HasComp<BecomesStationComponent>(gridUid) ||
-                HasComp<LavalandStationComponent>(gridUid))
-                return gridUid;
-
-            var size = grid.LocalAABB.Size.LengthSquared();
-            if (size < largestSize)
-                continue;
-
-            largestSize = size;
-            largestGrid = gridUid;
-        }
-
-        return largestGrid;
     }
 
     /// <summary>
