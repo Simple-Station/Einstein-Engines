@@ -29,6 +29,8 @@
       id: LoadoutBSOEnergyShield
     - type: loadout
       id: LoadoutBSORifleBRDIR25
+    - type: loadout
+      id: LoadoutBSOTerminus
 
 #- type: characterItemGroup
 #  id: LoadoutJOBEyes
