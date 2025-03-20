@@ -13426,3 +13426,12 @@ Entries:
   id: 7006
   time: '2025-03-20T22:15:12.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2034
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: >-
+        Added minebot, which is only available as ghost role. It will not work
+        as NPC.
+  id: 7007
+  time: '2025-03-20T23:35:12.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2009
