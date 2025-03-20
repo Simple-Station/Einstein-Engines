@@ -754,7 +754,14 @@
         - type: ShowMindShieldIcons
         - type: ShowCriminalRecordIcons
         - type: ShowHealthIcons
+        - type: SolutionScanner
         - type: EyeProtection
+        - type: ShowJobIcons
+        - type: ShowMindShieldIcons
+        - type: ShowCriminalRecordIcons
+        - type: ShowHealthIcons
+          damageContainers:
+          - Biological
           damageContainers:
           - Biological
         - type: ShowHealthBars
