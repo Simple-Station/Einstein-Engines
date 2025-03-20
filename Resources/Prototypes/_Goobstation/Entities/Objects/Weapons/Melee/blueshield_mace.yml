@@ -40,14 +40,14 @@
         Slash: 7 # Lucky number
     animation: WeaponArcThrust
   - type: StaminaDamageOnHit
-    damage: 40
-    overtime: 40
+    damage: 30
+    overtime: 30
     lightAttackDamageMultiplier: 2
     lightAttackOvertimeDamageMultiplier: 0.5
     sound: /Audio/Weapons/egloves.ogg
   - type: StaminaDamageOnCollide
-    damage: 15
-    overtime: 40
+    damage: 30
+    overtime: 30
     sound: /Audio/Weapons/egloves.ogg
   - type: LandAtCursor
   - type: Battery
