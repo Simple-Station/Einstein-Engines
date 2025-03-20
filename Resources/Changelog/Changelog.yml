@@ -13410,3 +13410,12 @@ Entries:
   id: 7004
   time: '2025-03-20T19:25:44.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1990
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: >-
+        Added Fillbot. Link it to a lathe, material silo, ore processor or
+        disposal unit with a multitool and watch it gather stuff!
+  id: 7005
+  time: '2025-03-20T22:13:34.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1958
