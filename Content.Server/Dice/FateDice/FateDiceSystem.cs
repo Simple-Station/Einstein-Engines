@@ -4,6 +4,7 @@ using Content.Server.Light.Components;
 using Content.Server.Xenoarchaeology.XenoArtifacts.Events;
 using Content.Shared.Coordinates;
 using Content.Shared.Dice;
+using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Item;
 using Content.Shared.Xenoarchaeology.XenoArtifacts;
@@ -52,10 +53,15 @@ public sealed class FateDiceSystem : EntitySystem
 
     private void RemoveDice(EntityUid uid, FateDiceComponent dice)
     {
-        // TODO: Add some guards to prevent spawning of invalid items.
-
-        var replaced = SpawnAtPosition(dice.ToReplace, uid.ToCoordinates());
-        _audio.PlayPvs(dice.DeletedSound, replaced);
+        try
+        {
+            var replaced = SpawnAtPosition(dice.ToReplace, uid.ToCoordinates());
+            _audio.PlayPvs(dice.DeletedSound, replaced);
+        }
+        catch
+        {
+            Log.Error(string.Format("{0} is not a valid entity", dice.ToReplace));
+        }
 
         QueueDel(uid);
     }
@@ -82,15 +88,16 @@ public sealed class FateDiceSystem : EntitySystem
         RaiseLocalEvent(uid, ev, true);
         dice.ActTime = null;
 
-        RemoveEffecComponentsFromDice(uid, dice);
+        RemoveEffectComponentsFromDice(uid, dice);
+        dice.IsOnCooldown = false;
     }
 
 
     // This is unshamefully yanked from EnterNode function from ArtifactSystem
-    private void AddEffectComponetsToDice(EntityUid uid, FateDiceComponent dice)
+    private void AddEffectComponentsToDice(EntityUid uid, FateDiceComponent dice)
     {
         if (dice.LastRolledNumber is null
-        || dice.LastRolledNumber > dice.Effects.Count)
+            || dice.LastRolledNumber > dice.Effects.Count)
             return;
 
         var effectProto = _prototype.Index<ArtifactEffectPrototype>(dice.Effects[(int) dice.LastRolledNumber - 1]);
@@ -121,7 +128,7 @@ public sealed class FateDiceSystem : EntitySystem
 
 
     // This is unshamefully yanked from ExitNode function from ArtifactSystem
-    private void RemoveEffecComponentsFromDice(EntityUid uid, FateDiceComponent dice)
+    private void RemoveEffectComponentsFromDice(EntityUid uid, FateDiceComponent dice)
     {
         if (dice.LastRolledNumber is null
         || dice.LastRolledNumber > dice.Effects.Count)
@@ -163,12 +170,19 @@ public sealed class FateDiceSystem : EntitySystem
 
         fateDice.LastRolledNumber = args.RolledNumber;
 
-        AddEffectComponetsToDice(uid, fateDice);
+        AddEffectComponentsToDice(uid, fateDice);
 
         // This is needed for some artifact effects properly work.
         RaiseLocalEvent(uid, new ArtifactNodeEnteredEvent(_random.Next()));
 
-        // TODO: Drop dice on the ground if it's in someone's hand.
+        if (
+            EntityManager.HasComponent<HandsComponent>(fateDice.LastUser)
+            && _hands.IsHolding(fateDice.LastUser, uid)
+        )
+        {
+            _hands.TryDrop(fateDice.LastUser);
+        }
+        fateDice.IsOnCooldown = true;
 
         fateDice.RemainingUses--;
         if (fateDice.RemainingUses <= 0)
@@ -177,11 +191,9 @@ public sealed class FateDiceSystem : EntitySystem
 
     public void OnPickupAttempt(EntityUid uid, FateDiceComponent fateDice, GettingPickedUpAttemptEvent args)
     {
-        if (fateDice.RemainingUses <= 0)
+        if (fateDice.RemainingUses <= 0 || fateDice.IsOnCooldown)
         {
-            // TODO: this doesn't seems to prevent the dice from being picked up.
             args.Cancel();
-
             return;
         }
         fateDice.LastUser = args.User;

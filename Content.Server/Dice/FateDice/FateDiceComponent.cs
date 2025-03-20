@@ -57,8 +57,10 @@ public sealed partial class FateDiceComponent : Component
     [DataField]
     public string DeletedSound = "/Audio/Magic/blink.ogg";
 
+    // state variables
     public TimeSpan? DelTime = null;
     public TimeSpan? ActTime = null;
     public int? LastRolledNumber = null;
+    public bool IsOnCooldown = false;
 }
 

@@ -698,14 +698,14 @@
 
 - type: artifactEffect
   id: EffectGib
-  targetDepth: 69
+  targetDepth: -1
   effectHint: artifact-hint-gib
   components:
   - type: GibArtifact
 
 - type: artifactEffect
   id: EffectDragon
-  targetDepth: 69
+  targetDepth: -1
   effectHint: artifact-hint-dragon
   components:
   - type: GameRuleArtifact
@@ -713,8 +713,8 @@
     - DragonSpawn
 
 - type: artifactEffect
-  id: EffectZombie
-  targetDepth: 69
+  id: EffectZombieOutbreak
+  targetDepth: -1
   effectHint: artifact-hint-dragon
   components:
   - type: GameRuleArtifact
@@ -723,7 +723,7 @@
 
 - type: artifactEffect
   id: EffectImmovableRod
-  targetDepth: 69
+  targetDepth: -1
   effectHint: artifact-hint-rod
   components:
   - type: GameRuleArtifact
@@ -732,7 +732,7 @@
 
 - type: artifactEffect
   id: EffectMassHallucinations
-  targetDepth: 69
+  targetDepth: -1
   effectHint: artifact-hint-hallucinations
   components:
   - type: GameRuleArtifact
@@ -741,7 +741,7 @@
 
 - type: artifactEffect
   id: EffectMassMeteor
-  targetDepth: 69
+  targetDepth: -1
   effectHint: artifact-hint-meteor
   components:
   - type: GameRuleArtifact
@@ -750,9 +750,57 @@
 
 - type: artifactEffect
   id: EffectBabelTower
-  targetDepth: 69
+  targetDepth: -1
   effectHint: artifact-hint-babel
   components:
   - type: GameRuleArtifact
     rules:
     - BabelTower
+
+- type: artifactEffect
+  id: EffectTurnIntoTraitor
+  targetDepth: -1
+  effectHint: artifact-hint-traitor
+  components:
+  - type: TurnIntoTraitorArtifact
+
+- type: artifactEffect
+  id: EffectTurnIntoThief
+  targetDepth: -1
+  effectHint: artifact-hint-thief
+  components:
+  - type: TurnIntoThiefArtifact
+
+- type: artifactEffect
+  id: EffectTurnIntoZombie
+  targetDepth: -1
+  effectHint: artifact-hint-zombie
+  components:
+  - type: TurnIntoZombieArtifact
+
+- type: artifactEffect
+  id: EffectTurnIntoRevLeader
+  targetDepth: -1
+  effectHint: artifact-hint-revleader
+  components:
+  - type: TurnIntoRevLeaderArtifact
+
+- type: artifactEffect
+  id: EffectSpawnDoubleEnergySword
+  targetDepth: -1
+  effect: artifact-hint-double-energy-sword
+  components:
+  - type: SpawnArtifact
+    maxSpawns: 1
+    spawns:
+    - id: EnergySwordDouble
+
+- type: artifactEffect
+  id: EffectSpawnBagOfHolding
+  targetDepth: -1
+  effect: artifact-hint-bag-of-holding
+  components:
+  - type: SpawnArtifact
+    maxSpawns: 1
+    spawns:
+    - id: ClothingBackpackHolding

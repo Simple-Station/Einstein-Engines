@@ -99,7 +99,7 @@ public sealed partial class ArtifactSystem
         var allEffects = _prototype.EnumeratePrototypes<ArtifactEffectPrototype>()
             .Where(x => _whitelistSystem.IsWhitelistPassOrNull(x.Whitelist, artifact) &&
             _whitelistSystem.IsBlacklistFailOrNull(x.Blacklist, artifact)).ToList();
-        var validDepth = allEffects.Select(x => x.TargetDepth).Distinct().ToList();
+        var validDepth = allEffects.Select(x => x.TargetDepth).Where(x => x >= 0).Distinct().ToList();
 
         var weights = GetDepthWeights(validDepth, node.Depth);
         var selectedRandomTargetDepth = GetRandomTargetDepth(weights);
