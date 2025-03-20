@@ -756,12 +756,6 @@
         - type: ShowHealthIcons
         - type: SolutionScanner
         - type: FlashImmunity
-        - type: ShowJobIcons
-        - type: ShowMindShieldIcons
-        - type: ShowCriminalRecordIcons
-        - type: ShowHealthIcons
-          damageContainers:
-          - Biological
           damageContainers:
           - Biological
         - type: ShowHealthBars
@@ -1072,13 +1066,7 @@
         - type: ShowMindShieldIcons
         - type: ShowCriminalRecordIcons
         - type: ShowHealthIcons
-        - type: ShowJobIcons
-        - type: ShowMindShieldIcons
-        - type: ShowCriminalRecordIcons
-        - type: ShowHealthIcons
         - type: FlashImmunity
-          damageContainers:
-          - Biological
           damageContainers:
           - Biological
         - type: ShowHealthBars
