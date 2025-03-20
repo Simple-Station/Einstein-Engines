@@ -13366,3 +13366,14 @@ Entries:
   id: 7000
   time: '2025-03-20T17:45:51.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1950
+- author: BramvanZijp
+  changes:
+    - type: Add
+      message: >-
+        Added the BSO's Greatshield and Atrocity (Mace) as a primary weapon
+        option.
+    - type: Remove
+      message: The Energy Shield has been removed from the BSO's loadout.
+  id: 7001
+  time: '2025-03-20T19:13:40.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2029
