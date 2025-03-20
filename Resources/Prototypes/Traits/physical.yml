@@ -651,6 +651,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+        - Command
+        - Dignitary
     - !type:CharacterTraitRequirement
       traits:
         - CyberEyes
@@ -664,6 +666,7 @@
         - type: ShowJobIcons
         - type: ShowMindShieldIcons
         - type: ShowCriminalRecordIcons
+        - type: EyeProtection
 
 - type: trait
   id: CyberEyesMedical
@@ -732,6 +735,7 @@
       departments:
         - Security
         - Command
+        - Dignitary
     - !type:CharacterTraitRequirement
       traits:
         - CyberEyes
@@ -750,6 +754,7 @@
         - type: ShowMindShieldIcons
         - type: ShowCriminalRecordIcons
         - type: ShowHealthIcons
+        - type: EyeProtection
           damageContainers:
           - Biological
         - type: ShowHealthBars
@@ -937,6 +942,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+        - Command
+        - Dignitary
     - !type:CharacterSpeciesRequirement
       species:
         - IPC
@@ -955,6 +962,7 @@
         - type: ShowJobIcons
         - type: ShowMindShieldIcons
         - type: ShowCriminalRecordIcons
+        - type: EyeProtection
 
 - type: trait
   id: MedicalEyesModule
@@ -1033,6 +1041,7 @@
       departments:
         - Security
         - Command
+        - Dignitary
     - !type:CharacterSpeciesRequirement
       species:
         - IPC
@@ -1056,6 +1065,7 @@
         - type: ShowMindShieldIcons
         - type: ShowCriminalRecordIcons
         - type: ShowHealthIcons
+        - type: EyeProtection
           damageContainers:
           - Biological
         - type: ShowHealthBars
