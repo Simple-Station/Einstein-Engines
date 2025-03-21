@@ -139,10 +139,8 @@ public sealed class GibbingSystem : EntitySystem
                 foreach (var container in validContainers)
                 {
                     var enteties = container.ContainedEntities.ToList();
-                    while (enteties.Count != 0)
+                    foreach(var ent in enteties)
                     {
-                        var ent = enteties.First();
-                            enteties.RemoveAt(0);
                         DropEntity(new Entity<GibbableComponent?>(ent, null), parentXform, randomSpreadMod,
                             ref droppedEntities, launchGibs,
                             launchDirection, launchImpulse, launchImpulseVariance, launchCone);
