@@ -22,7 +22,7 @@ uplink-WSPR-name = WSPR Bundle
 uplink-WSPR-desc = PPPSSSSHhhhh.
 
 uplink-hardlight-bow-name = Hardlight Bow
-uplink-hardlight-bow-desc = A modern bow that can fabricate hardlight arrows, designed for silent takedowns of targets. Has 7 different firing modes. Can be folded.
+uplink-hardlight-bow-desc = A modern bow that can fabricate hardlight arrows, designed for silent takedowns of targets. Has 5 different firing modes. Can be folded.
 
 uplink-c20r-name = C-20r
 uplink-c20r-desc = Old faithful: The classic C-20r Submachine Gun.
@@ -34,7 +34,7 @@ uplink-l6-saw-name = L6 Saw Bundle
 uplink-l6-saw-desc = More dakka: The iconic L6 light machine gun.
 
 uplink-m90-name = M-90
-uplink-m90-desc = An M-90 combat rifle. Fires subsonic rounds, ammo sold seperately.
+uplink-m90-desc = An M-90 combat rifle.
 
 
 # Ammo
