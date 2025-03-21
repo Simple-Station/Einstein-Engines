@@ -25,9 +25,9 @@ namespace Content.Server.StationEvents.Events
         {
             base.Started(uid, component, gameRule, args);
 
-
             // get each and every speaking thing on the station's grid's map
             // we can only replace humanoids
+            _humans.Clear();
             _lookup.GetEntitiesOnMap(GameTicker.DefaultMap, _humans);
 
             // add the Cogchamp accent to them
