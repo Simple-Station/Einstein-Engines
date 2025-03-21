@@ -93,7 +93,7 @@ public sealed partial class MobStateComponent : Component
     ///     Whether this mob is allowed to perform hand interactions while in the Alive MobState.
     /// </summary>
     [DataField]
-    public bool AllowHandInteractWhileAlive = false;
+    public bool AllowHandInteractWhileAlive;
 
     //default mobstate is always the lowest state level
     [AutoNetworkedField, ViewVariables]
