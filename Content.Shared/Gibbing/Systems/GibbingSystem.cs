@@ -1,7 +1,9 @@
-﻿using System.Diagnostics.CodeAnalysis;
+using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using System.Numerics;
 using Content.Shared.Gibbing.Components;
 using Content.Shared.Gibbing.Events;
+using Content.Shared.Speech.Components;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
@@ -138,8 +140,11 @@ public sealed class GibbingSystem : EntitySystem
             {
                 foreach (var container in validContainers)
                 {
-                    foreach (var ent in container.ContainedEntities)
+                    var enteties = container.ContainedEntities.ToList();
+                    while (enteties.Count != 0)
                     {
+                        var ent = enteties.First();
+                            enteties.RemoveAt(0);
                         DropEntity(new Entity<GibbableComponent?>(ent, null), parentXform, randomSpreadMod,
                             ref droppedEntities, launchGibs,
                             launchDirection, launchImpulse, launchImpulseVariance, launchCone);
