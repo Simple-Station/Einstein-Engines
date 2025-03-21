@@ -31,6 +31,7 @@
     - WhitelistChameleon
 
 - type: entity
+  abstract: true
   parent: ClothingNeckBase
   id: ClothingNeckScarfBase
   components:
