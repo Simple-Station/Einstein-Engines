@@ -1,5 +1,5 @@
 - type: entity
-  parent: ClothingNeckBase
+  parent: ClothingNeckScarfBase
   id: ClothingNeckStoleChaplain
   name: chaplain stole
   description: An elegantly designed stole, with a vibrant gold plus on either end.
