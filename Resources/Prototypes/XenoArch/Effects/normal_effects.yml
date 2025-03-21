@@ -798,7 +798,7 @@
 - type: artifactEffect
   id: EffectSpawnBagOfHolding
   targetDepth: -1
-  effect: artifact-hint-bag-of-holding
+  effectHint: artifact-hint-bag-of-holding
   components:
   - type: SpawnArtifact
     maxSpawns: 1
