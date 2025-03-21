@@ -15,10 +15,10 @@ public sealed class TurnIntoRevLeaderArtifactSystem : EntitySystem
     /// <inheritdoc/>
     public override void Initialize()
     {
-        SubscribeLocalEvent<TurnIntoRevleaderArtifactComponent, ArtifactActivatedEvent>(OnActivate);
+        SubscribeLocalEvent<TurnIntoRevLeaderArtifactComponent, ArtifactActivatedEvent>(OnActivate);
     }
 
-    private void OnActivate(EntityUid uid, TurnIntoRevleaderArtifactComponent comp, ArtifactActivatedEvent args)
+    private void OnActivate(EntityUid uid, TurnIntoRevLeaderArtifactComponent comp, ArtifactActivatedEvent args)
     {
         if (!HasComp<MindContainerComponent>(args.Activator) || !TryComp<ActorComponent>(args.Activator, out var target))
             return;
