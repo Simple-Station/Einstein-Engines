@@ -13464,3 +13464,16 @@ Entries:
   id: 7008
   time: '2025-03-21T00:13:28.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2022
+- author: Zeta_Null
+  changes:
+    - type: Tweak
+      message: Tweaked several tiles to make variants
+    - type: Add
+      message: >-
+        Added a "Worn steel tile" variant for mappers to include, just a steel
+        tile with a missing panel
+    - type: Add
+      message: Added a couple of text decals
+  id: 7009
+  time: '2025-03-21T20:26:59.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2038
