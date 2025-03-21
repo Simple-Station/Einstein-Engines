@@ -29,15 +29,16 @@
     zeroVisible: false
   - type: Appearance
 
-- type: entity
-  parent: BaseMagazineBoxHighCaliber
-  id: MagazineBoxHighCaliber
+# not used so commenting out rather then fixing errors godo
+# - type: entity
+#  parent: BaseMagazineBoxHighCaliber
+#  id: MagazineBoxHighCaliber
 
-- type: entity
-  parent: BaseMagazineBoxHighCaliber
-  id: MagazineBoxHighCaliberExplosive
-  name: ammunition box (.50 high-explosive)
-  components:
-  - type: BallisticAmmoProvider
-    capacity: 30
-    proto: CartridgeHighCaliberExplosive
+# - type: entity
+#  parent: BaseMagazineBoxHighCaliber
+#  id: MagazineBoxHighCaliberExplosive
+#  name: ammunition box (.50 high-explosive)
+#  components:
+#  - type: BallisticAmmoProvider
+#    capacity: 30
+#    proto: CartridgeHighCaliberExplosive
