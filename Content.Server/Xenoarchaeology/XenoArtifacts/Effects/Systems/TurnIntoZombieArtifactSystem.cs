@@ -2,6 +2,7 @@ using Content.Server.Xenoarchaeology.XenoArtifacts.Effects.Components;
 using Content.Server.Xenoarchaeology.XenoArtifacts.Events;
 using Content.Server.Zombies;
 using Content.Shared.Mind.Components;
+using Content.Shared.Zombies;
 using Robust.Shared.Player;
 
 namespace Content.Server.Xenoarchaeology.XenoArtifacts.Effects.Systems;
@@ -22,6 +23,9 @@ public sealed class TurnIntoZombieArtifactSystem : EntitySystem
             return;
 
         if (!HasComp<MindContainerComponent>(args.Activator) || !TryComp<ActorComponent>(args.Activator, out var target))
+            return;
+
+        if (HasComp<ZombieComponent>(uid))
             return;
 
         _zombie.ZombifyEntity((EntityUid) args.Activator);

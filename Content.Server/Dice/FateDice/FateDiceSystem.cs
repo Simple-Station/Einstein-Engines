@@ -175,7 +175,11 @@ public sealed class FateDiceSystem : EntitySystem
         AddEffectComponentsToDice(uid, fateDice);
 
         // This is needed for some artifact effects properly work.
-        RaiseLocalEvent(uid, new ArtifactNodeEnteredEvent(_random.Next()));
+        try
+        {
+            RaiseLocalEvent(uid, new ArtifactNodeEnteredEvent(_random.Next()));
+        }
+        catch { }
 
         // If the dice is still in the hand of some entity, drop it.
         if (

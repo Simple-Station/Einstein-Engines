@@ -1,5 +1,6 @@
 using Content.Server.Antag;
 using Content.Server.GameTicking.Rules.Components;
+using Content.Server.Roles;
 using Content.Server.Xenoarchaeology.XenoArtifacts.Effects.Components;
 using Content.Server.Xenoarchaeology.XenoArtifacts.Events;
 using Content.Shared.Mind.Components;
@@ -23,7 +24,7 @@ public sealed class TurnIntoRevLeaderArtifactSystem : EntitySystem
         if (!HasComp<MindContainerComponent>(args.Activator) || !TryComp<ActorComponent>(args.Activator, out var target))
             return;
 
-        if (HasComp<RevolutionaryRuleComponent>(args.Activator))
+        if (HasComp<RevolutionaryRoleComponent>(args.Activator))
             return;
 
         var player = target.PlayerSession;
