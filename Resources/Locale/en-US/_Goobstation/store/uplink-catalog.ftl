@@ -26,9 +26,6 @@ uplink-signaller-desc = A device that can trigger signals at any distance. You c
 
 # bang bang pew pew eat it up i gota go
 
-uplink-m90-name = M-90 Bundle
-uplink-m90-desc = A bundle with a M-90 and 2 .20 rifle mags.
-
 uplink-rifle-mag-name = .20 Rifle Magazine
 uplink-rifle-mag-desc = A 25 round magazine containing .20 rifle bullets. Supports the Lecter and M-90.
 
