@@ -13435,3 +13435,32 @@ Entries:
   id: 7007
   time: '2025-03-20T23:35:12.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2009
+- author: Eagle
+  changes:
+    - type: Add
+      message: >-
+        Flashbangs now stun and knockdown people. Wear over-ear headset or
+        combat hardsuit helmet to reduce flashbang effective range.
+    - type: Add
+      message: All sec and command members received over-ear headsets.
+    - type: Add
+      message: >-
+        Wearing security, ert, syndie or deathsquad gas mask blocks smoke
+        inhalation even if internals are off.
+    - type: Tweak
+      message: Epinephrine now speeds up by 10%.
+    - type: Add
+      message: >-
+        Jackboots, combat and mercenary boots now reduce all stun and knockdown
+        times by 20%.
+    - type: Add
+      message: Combat hardsuit helmets now protect from flashes.
+    - type: Tweak
+      message: Tear gas is now stronger.
+    - type: Tweak
+      message: Stamcrit stun time is once again 6 seconds.
+    - type: Tweak
+      message: Security hardsuits now have heat resistance.
+  id: 7008
+  time: '2025-03-21T00:13:28.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2022
