@@ -236,7 +236,6 @@
   - type: ToggleClothing
     action: ActionToggleNinjaGloves
   - type: NinjaGloves
-  - type: Unremoveable
     abilities:
     - components:
       - type: BatteryDrainer
