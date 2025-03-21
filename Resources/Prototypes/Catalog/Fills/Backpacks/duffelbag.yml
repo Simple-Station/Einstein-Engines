@@ -71,9 +71,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: WeaponSubMachineGunC20r
-      - id: MagazinePistolSubMachineGun
-        amount: 2
+      - id: WeaponSubMachineGunC20rEmpty
 #     - id: SMGSuppressor
 
 - type: entity
@@ -144,6 +142,51 @@
       - id: MagazineShotgun
         amount: 4
       - id: MagazineLightRifleBox
+        amount: 2
+
+- type: entity
+  parent: ClothingBackpackDuffelSyndicateAmmo
+  id: ClothingBackpackDuffelSyndicateAmmoFilledRubber
+  name: ammo bundle
+  description: "Reloading! Contains 4 magazines for the C-20r, 4 drums for the Bulldog, and 2 ammo boxes for the L6 SAW."
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazinePistolSubMachineGunRubber
+        amount: 4
+      - id: MagazineShotgunBeanbag
+        amount: 4
+      - id: MagazineLightRifleBoxRubber
+        amount: 2
+
+- type: entity
+  parent: ClothingBackpackDuffelSyndicateAmmo
+  id: ClothingBackpackDuffelSyndicateAmmoFilledIncendiary
+  name: ammo bundle
+  description: "Reloading! Contains 4 magazines for the C-20r, 4 drums for the Bulldog, and 2 ammo boxes for the L6 SAW."
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazinePistolSubMachineGunIncendiary
+        amount: 4
+      - id: MagazineShotgunIncendiary
+        amount: 4
+      - id: MagazineLightRifleBoxIncendiary
+        amount: 2
+
+- type: entity
+  parent: ClothingBackpackDuffelSyndicateAmmo
+  id: ClothingBackpackDuffelSyndicateAmmoFilledShrapnel
+  name: ammo bundle
+  description: "Reloading! Contains 4 magazines for the C-20r, 4 drums for the Bulldog, and 2 ammo boxes for the L6 SAW."
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazinePistolSubMachineGunShrapnel
+        amount: 4
+      - id: MagazineShotgunBirdshot
+        amount: 4
+      - id: MagazineLightRifleBoxShrapnel
         amount: 2
 
 - type: entity
@@ -438,6 +481,4 @@
   components:
   - type: StorageFill
     contents:
-      - id: WeaponSubMachineGunFPA90
-      - id: MagazineCaselessRifle
-        amount: 2
+      - id: WeaponSubMachineGunFPA90Empty

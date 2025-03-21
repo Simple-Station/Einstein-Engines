@@ -108,7 +108,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      10: Dead
+      5: Dead # Goob edit
   - type: Stamina
     critThreshold: 10
   - type: DamageStateVisuals
@@ -405,6 +405,7 @@
       behaviors:
       - !type:GibBehavior
         gibContents: Skip
+        recursive: false
   - type: NonSpreaderZombie
   - type: LanguageKnowledge
     speaks: [Hissing]

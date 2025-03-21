@@ -140,6 +140,8 @@
       - id: BoxPDAEngineering # Delta-V
       - id: RCD
       - id: RCDAmmo
+      - id: RPD
+      - id: RCDAmmo # Extra Compressed matter for the RPD
       - id: CEIDCard # Delta-V
       - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
@@ -166,6 +168,8 @@
       - id: CEIDCard # Delta-V
       - id: RCD
       - id: RCDAmmo
+      - id: RPD
+      - id: RCDAmmo # Extra Compressed matter for the RPD
       - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
       - id: PrinterDocFlatpack  # Corvax-Printer

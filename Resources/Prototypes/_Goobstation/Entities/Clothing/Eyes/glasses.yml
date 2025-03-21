@@ -1,8 +1,8 @@
 - type: entity
   parent: [ClothingEyesBase, ShowSecurityIcons, ShowMedicalIcons]
   id: ClothingEyesGlassesMedSec
-  name: medsecglasses
-  description: Sunglasses with a medical and security hud
+  name: blueshield glasses
+  description: Advanced Sunglasses with a deep blue hue and a built-in HUD capable of displaying Security, Medical, and Diagnostics information.
   components:
   - type: Sprite
     sprite: _Goobstation/Clothing/Eyes/Glasses/medglasses.rsi
@@ -13,14 +13,19 @@
     protectionTime: 5
   - type: Tag
     tags:
-    - WhitelistChameleon
-    - HudMedical
+     - WhitelistChameleon
+     - HudMedical
+     - HudSecurity
   - type: IdentityBlocker
     coverage: EYES
   - type: ShowHealthBars
     damageContainers:
-    - Biological
+     - Biological
+     - Inorganic
+     - Silicon
   - type: ShowHealthIcons
     damageContainers:
-    - Biological
+     - Biological
+     - Inorganic
+     - Silicon
     
