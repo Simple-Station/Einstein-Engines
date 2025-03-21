@@ -5,7 +5,7 @@
   - type: TemperatureProtection
     coefficient: 0.8 # equivalent to winter boots
     
-    - type: entity
+- type: entity
   parent: ClothingNeckScarfBase
   id: ClothingNeckScarfStripedRed
   name: striped red scarf
