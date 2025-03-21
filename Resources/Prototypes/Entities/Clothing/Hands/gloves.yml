@@ -258,7 +258,6 @@
     - objective: MassArrestObjective
       components:
       - type: CriminalRecordsHacker
-    - type: Unremoveable
 
 - type: entity
   parent: ClothingHandsGlovesColorBlack
