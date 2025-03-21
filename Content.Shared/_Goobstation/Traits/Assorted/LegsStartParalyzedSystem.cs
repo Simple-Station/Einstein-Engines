@@ -1,7 +1,8 @@
+using Content.Shared.Traits.Assorted.Components;
 using Content.Shared._Shitmed.Body.Events;
 using Content.Shared.Body.Components;
 
-namespace Content.Shared.Traits.Assorted;
+namespace Content.Shared.Traits.Assorted.Systems;
 
 public sealed class LegsStartParalyzedSystem : EntitySystem
 {
