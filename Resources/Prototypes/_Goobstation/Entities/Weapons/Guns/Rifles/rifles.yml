@@ -104,7 +104,7 @@
 
 - type: entity
   name: WSPR
-  parent: [BaseSyndicateContraband, BaseWeaponRifle]
+  parent: BaseWeaponRifle
   id: WeaponRifleWSPR
   description: A cutting-edge rifle from Cybersun, versatile, reliable, and Syndicate-approved. Uses .30 rifle subsonic ammo.
   components:

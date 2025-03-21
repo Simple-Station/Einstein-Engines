@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ BaseCartridge, BaseMajorContraband ]
+  parent: BaseCartridge
   id: CartridgeHighCaliber
   name: cartridge (.50 anti-materiel)
   components:
@@ -20,7 +20,7 @@
     price: 20
 
 - type: entity
-  parent: [ BaseCartridge, BaseMajorContraband ]
+  parent: BaseCartridge
   id: CartridgeHighCaliberExplosive
   name: cartridge (.50 high-explosive)
   components:

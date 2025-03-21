@@ -1,6 +1,6 @@
 - type: entity
   name: Burner
-  parent: [BaseWeaponRifle, BaseSyndicateContraband]
+  parent: BaseWeaponRifle
   id: WeaponRifleBurner
   description: A high caliber syndicate gun chambered in .50 caliber, capable of firing anti-materiel and high explosive rounds.
   components:
