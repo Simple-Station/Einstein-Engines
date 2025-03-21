@@ -19,7 +19,7 @@ uplink-weapon-burner-name = Burner Heavy Rifle
 uplink-weapon-burner-desc = The Burner Heavy Rifle, an excelent breaching and suppression weapon.
 
 uplink-WSPR-name = WSPR Bundle
-uplink-WSPR-desc = PPPSSSSHhhhh.
+uplink-WSPR-desc = A sleek subsonic rifle with integrated suppression, if you can hear it, you're already dead.
 
 uplink-hardlight-bow-name = Hardlight Bow
 uplink-hardlight-bow-desc = A modern bow that can fabricate hardlight arrows, designed for silent takedowns of targets. Has 5 different firing modes. Can be folded.

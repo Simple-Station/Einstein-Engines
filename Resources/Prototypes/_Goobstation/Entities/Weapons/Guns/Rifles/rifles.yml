@@ -104,7 +104,7 @@
   name: WSPR
   parent: BaseWeaponRifle
   id: WeaponRifleWSPR
-  description: A cutting-edge rifle from Cybersun, versatile, reliable, and Syndicate-approved. Uses .30 rifle subsonic ammo.
+  description: A cutting-edge rifle from Cybersun with a powerful integrated suppresion system. Uses .30 subsonic ammunition
   components:
   - type: Sprite
     sprite: _Goobstation/Objects/Weapons/Guns/Rifles/wspr.rsi
@@ -126,6 +126,9 @@
     projectileSpeed: 15
     soundGunshot:
       path: /Audio/_Goobstation/Weapons/Guns/Gunshots/bwuh.ogg
+      params:
+        volume: -3
+        maxDistance: 6
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -149,3 +152,9 @@
     steps: 1
     zeroVisible: true
   - type: Appearance
+  - type: ExtendDescription
+    descriptionList:
+      - description: "gun-suppressed"
+        fontSize: 10
+        color: "#ff4f00"
+        requireDetailRange: false
