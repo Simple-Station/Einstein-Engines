@@ -85,3 +85,5 @@ signal-port-description-logic-input = Input to the edge detector, cannot be a pu
 signal-port-name-material-silo-utilizer = Silo utilizer
 signal-port-description-material-silo-utilizer = Utilizer for station material silo
 
+signal-port-name-fill-any-item = Fillbot Target
+signal-port-description-fill-any-item = Target port for Fillbot insertion.

@@ -1,0 +1,134 @@
+- type: entity
+  parent: BaseWeaponBallisticTurret
+  id: WeaponTurretSyndicate
+  suffix: Syndicate
+  components:
+    - type: NpcFactionMember
+      factions:
+        - Syndicate
+
+- type: entity
+  parent: BaseWeaponBallisticTurret
+  id: WeaponTurretSAN
+  suffix: Sol Alliance Navy
+  description: A turret designed to provide protection for Sol Marines during combat drops. It menaces targets with a twin-linked C-20r, although its cheap fire controller lends to poor accuracy.
+  components:
+    - type: NpcFactionMember
+      factions:
+        - SAN
+    - type: Gun
+      fireRate: 10  # Guaranteed to spook the shit out of people.
+      currentAngle: 40 # Fires first shot at min accuracy.
+      minAngle: 40
+      maxAngle: 45  # Not guaranteed to do a whole lot of damage unless they stand there and let it hit them.
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Gunshots/c-20r.ogg
+    - type: BallisticAmmoProvider
+      proto: CartridgePistol
+      capacity: 200
+
+- type: entity
+  parent: BaseWeaponBallisticTurret
+  name: disposable ballistic turret
+  id: WeaponTurretSyndicateDisposable
+  suffix: Syndicate, Disposable
+  components:
+    - type: NpcFactionMember
+      factions:
+        - Syndicate
+    - type: Gun
+      fireRate: 2
+      selectedMode: FullAuto
+      availableModes:
+        - FullAuto
+      soundGunshot: /Audio/Weapons/Guns/Gunshots/gun_sentry.ogg
+    - type: BallisticAmmoProvider
+      proto: CartridgePistol
+      capacity: 50
+    - type: Construction
+      deconstructionTarget: null
+      graph: WeaponTurretSyndicateDisposable
+      node: disposableTurret
+    - type: Repairable
+      qualityNeeded: "Anchoring"
+      doAfterDelay: 3
+    - type: TriggerWhenEmpty
+    - type: ExplodeOnTrigger
+    - type: Explosive
+      explosionType: Default
+      maxIntensity: 10
+      intensitySlope: 1.5
+      totalIntensity: 30
+      canCreateVacuum: false
+
+- type: entity
+  parent: BaseWeaponBallisticTurret
+  id: WeaponTurretNanoTrasen
+  suffix: NanoTrasen
+  components:
+  - type: NpcFactionMember
+    factions:
+    - NanoTrasen
+
+- type: entity
+  parent: BaseWeaponBallisticTurret
+  id: WeaponTurretHostile
+  suffix: Hostile
+  components:
+  - type: NpcFactionMember
+    factions:
+    - SimpleHostile
+
+- type: entity
+  name: xeno turret
+  description: Shoots 9mm acid projectiles
+  parent: BaseWeaponBallisticTurret
+  id: WeaponTurretXeno
+  suffix: Xeno
+  components:
+    - type: NpcFactionMember
+      factions:
+        - Xeno
+    - type: Sprite
+      sprite: Objects/Weapons/Guns/Turrets/xenoturret.rsi
+      noRot: true
+      layers:
+        - state: acid_turret
+    - type: BallisticAmmoProvider
+      proto: BulletAcid
+      capacity: 500
+    - type: Gun
+      fireRate: 1
+      selectedMode: FullAuto
+      soundGunshot: /Audio/Weapons/Xeno/alien_spitacid.ogg
+    - type: HTN
+      rootTask:
+        task: TurretCompound
+      blackboard:
+        SoundTargetInLOS: !type:SoundPathSpecifier
+          path: /Audio/Animals/snake_hiss.ogg
+    - type: Damageable
+      damageContainer: Biological
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 100
+          behaviors:
+            - !type:DoActsBehavior
+              acts: [ "Destruction" ]
+            - !type:PlaySoundBehavior
+              sound:
+                path: /Audio/Effects/gib1.ogg
+            - !type:SpawnEntitiesBehavior
+              spawn:
+                FoodMeatXeno:
+                  min: 3
+                  max: 5
+    - type: InteractionPopup
+      interactDelay: 1.0
+      successChance: 0.8
+      interactSuccessString: petting-success-generic
+      interactFailureString: petting-failure-generic
+      interactSuccessSound:
+        path: /Audio/Animals/snake_hiss.ogg

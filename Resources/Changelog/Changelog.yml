@@ -13352,3 +13352,115 @@ Entries:
   id: 6999
   time: '2025-03-20T14:25:46.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2028
+- author: Diggy0
+  changes:
+    - type: Add
+      message: >-
+        Cybersun has gotten desperate after hearing several of their juggernaut
+        suit users got robusted, so they made whatever the fuck this is, the
+        fucking hardsuit that kills you slowly.
+    - type: Add
+      message: >-
+        Funny code that allows for damage over time to happen, isn't that so
+        cool.
+  id: 7000
+  time: '2025-03-20T17:45:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1950
+- author: BramvanZijp
+  changes:
+    - type: Add
+      message: >-
+        Added the BSO's Greatshield and Atrocity (Mace) as a primary weapon
+        option.
+    - type: Remove
+      message: The Energy Shield has been removed from the BSO's loadout.
+  id: 7001
+  time: '2025-03-20T19:13:40.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2029
+- author: trashalice
+  changes:
+    - type: Add
+      message: >-
+        HoS Samurai armour to go with the Antque sheath (not in loadouts, art
+        people can decide if it goes in)
+  id: 7002
+  time: '2025-03-20T19:14:58.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2015
+- author: Tirochora
+  changes:
+    - type: Tweak
+      message: Plasmaman envirosuits have translucent visors.
+  id: 7003
+  time: '2025-03-20T19:23:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1960
+- author: SolarisBirb
+  changes:
+    - type: Add
+      message: >-
+        Added recharging sentry turrets, one is AI-based or the other is Sec can
+        make.
+    - type: Add
+      message: >-
+        The sentry turrets can be made after researching in T3 arsenal.  The
+        boards are made in the sec fab.
+    - type: Add
+      message: 'New ID permissions for borgs and minibots for higher turret options. '
+    - type: Tweak
+      message: Turrets stop shooting after someone goes crit.
+  id: 7004
+  time: '2025-03-20T19:25:44.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1990
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: >-
+        Added Fillbot. Link it to a lathe, material silo, ore processor or
+        disposal unit with a multitool and watch it gather stuff!
+  id: 7005
+  time: '2025-03-20T22:13:34.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1958
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: BSO/Captain Onis can now pick the terminus as their weapon
+  id: 7006
+  time: '2025-03-20T22:15:12.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2034
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: >-
+        Added minebot, which is only available as ghost role. It will not work
+        as NPC.
+  id: 7007
+  time: '2025-03-20T23:35:12.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2009
+- author: Eagle
+  changes:
+    - type: Add
+      message: >-
+        Flashbangs now stun and knockdown people. Wear over-ear headset or
+        combat hardsuit helmet to reduce flashbang effective range.
+    - type: Add
+      message: All sec and command members received over-ear headsets.
+    - type: Add
+      message: >-
+        Wearing security, ert, syndie or deathsquad gas mask blocks smoke
+        inhalation even if internals are off.
+    - type: Tweak
+      message: Epinephrine now speeds up by 10%.
+    - type: Add
+      message: >-
+        Jackboots, combat and mercenary boots now reduce all stun and knockdown
+        times by 20%.
+    - type: Add
+      message: Combat hardsuit helmets now protect from flashes.
+    - type: Tweak
+      message: Tear gas is now stronger.
+    - type: Tweak
+      message: Stamcrit stun time is once again 6 seconds.
+    - type: Tweak
+      message: Security hardsuits now have heat resistance.
+  id: 7008
+  time: '2025-03-21T00:13:28.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2022
