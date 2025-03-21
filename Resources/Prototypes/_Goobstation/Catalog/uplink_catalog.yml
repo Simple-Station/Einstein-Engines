@@ -103,7 +103,7 @@
   id: UplinkWSPR
   name: uplink-WSPR-name
   description: uplink-WSPR-desc
-  icon: { sprite: /Textures/Objects/Weapons/Guns/Rifles/ak.rsi, state: icon }
+  icon: { sprite: _Goobstation/Objects/Weapons/Guns/Rifles/wspr.rsi, state: icon }
   productEntity: ClothingBackpackDuffelSyndicateFilledWSPR
   cost:
     Telecrystal: 85
