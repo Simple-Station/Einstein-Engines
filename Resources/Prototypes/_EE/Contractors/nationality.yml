@@ -1,14 +1,11 @@
 - type: nationality
   id: Bieselite
+  descriptionKey: nationality_description_bieselite
   hostile:
   - Solarian
-  employers:
-  - NanoTrasen # Todo: do this with CharacterRequirements instead, much more flexible
-  - Einstein Engines
 
 - type: nationality
   id: Solarian
+  descriptionKey: nationality_description_solarian
   hostile:
   - Bieselite
-  employers:
-  - Hephaestus Industries # Todo: do this with CharacterRequirements instead, much more flexible

@@ -1,2 +1,11 @@
 - type: lifepath
   id: Spacer
+  descriptionKey: lifepath_description_spacer
+
+- type: lifepath
+  id: Bum
+  descriptionKey: lifepath_description_bum
+  requirements:
+    - !type:CharacterEmployerRequirement
+      employers:
+      - Unemployed

@@ -82,3 +82,36 @@ public sealed partial class CharacterEmployerRequirement : CharacterRequirement
         return (profile.Employer != null && Employers.Any(o => o.ID == profile.Employer.ID)) == !Inverted;
     }
 }
+
+/// <summary>
+///     Requires the profile to have one of a list of lifepaths
+/// </summary>
+[UsedImplicitly, Serializable, NetSerializable]
+public sealed partial class CharacterLifepathRequirement : CharacterRequirement
+{
+    [DataField(required: true)]
+    public List<LifepathPrototype> Lifepaths;
+
+    public override bool IsValid(
+        JobPrototype job,
+        HumanoidCharacterProfile profile,
+        Dictionary<string, TimeSpan> playTimes,
+        bool whitelisted,
+        IPrototype prototype,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager,
+        out string? reason,
+        int depth = 0,
+        MindComponent? mind = null
+    )
+    {
+        var localeString = "character-nationality-requirement";
+
+        reason = Loc.GetString(
+            localeString,
+            ("inverted", Inverted),
+            ("nationality", Lifepaths));
+        return (profile.Lifepath != null && Lifepaths.Any(o => o.ID == profile.Lifepath.ID)) == !Inverted;
+    }
+}
