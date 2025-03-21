@@ -146,7 +146,7 @@
         priority: 1
         whitelist:
           tags:
-            - CartridgeCaselessRifle
+            - CartridgeLightRifleSubsonic
   - type: MagazineVisuals
     magState: mag
     steps: 1
