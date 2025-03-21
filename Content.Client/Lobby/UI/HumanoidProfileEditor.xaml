@@ -63,6 +63,14 @@
                                 <Control HorizontalExpand="True"/>
                                     <LineEdit Name="CCustomSpecieNameEdit" MinSize="270 0" HorizontalAlignment="Right" />
                             </BoxContainer>
+                            <!-- Nationality -->
+                            <BoxContainer HorizontalExpand="True">
+                                <Label Text="{Loc 'humanoid-profile-editor-nationality-label'}" />
+                                <Control HorizontalExpand="True"/>
+                                <TextureButton Name="NationalityInfoButton" Scale="0.3 0.3" VerticalAlignment="Center"
+                                               ToolTip="{Loc 'humanoid-profile-editor-guidebook-button-tooltip'}"/>
+                                <OptionButton Name="NationalityButton" HorizontalAlignment="Right" />
+                            </BoxContainer>
                             <!-- Age -->
                             <BoxContainer HorizontalExpand="True">
                                 <Label Text="{Loc 'humanoid-profile-editor-age-label'}" />

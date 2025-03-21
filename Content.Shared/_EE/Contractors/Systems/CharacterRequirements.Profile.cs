@@ -24,7 +24,7 @@ namespace Content.Shared.Customization.Systems;
 public sealed partial class CharacterNationalityRequirement : CharacterRequirement
 {
     [DataField(required: true)]
-    public List<NationalityPrototype> Nationalities;
+    public HashSet<ProtoId<NationalityPrototype>> Nationalities;
 
     public override bool IsValid(
         JobPrototype job,
@@ -46,7 +46,7 @@ public sealed partial class CharacterNationalityRequirement : CharacterRequireme
             localeString,
             ("inverted", Inverted),
             ("nationality", Nationalities));
-        return (profile.Nationality != null && Nationalities.Any(o => o.ID == profile.Nationality.ID)) == !Inverted;
+        return (Nationalities.Any(o => o == profile.Nationality)) == !Inverted;
     }
 }
 
@@ -57,7 +57,7 @@ public sealed partial class CharacterNationalityRequirement : CharacterRequireme
 public sealed partial class CharacterEmployerRequirement : CharacterRequirement
 {
     [DataField(required: true)]
-    public List<EmployerPrototype> Employers;
+    public HashSet<ProtoId<EmployerPrototype>> Employers;
 
     public override bool IsValid(
         JobPrototype job,
@@ -79,7 +79,7 @@ public sealed partial class CharacterEmployerRequirement : CharacterRequirement
             localeString,
             ("inverted", Inverted),
             ("nationality", Employers));
-        return (profile.Employer != null && Employers.Any(o => o.ID == profile.Employer.ID)) == !Inverted;
+        return (Employers.Any(o => o == profile.Employer)) == !Inverted;
     }
 }
 
@@ -90,7 +90,7 @@ public sealed partial class CharacterEmployerRequirement : CharacterRequirement
 public sealed partial class CharacterLifepathRequirement : CharacterRequirement
 {
     [DataField(required: true)]
-    public List<LifepathPrototype> Lifepaths;
+    public HashSet<ProtoId<LifepathPrototype>> Lifepaths;
 
     public override bool IsValid(
         JobPrototype job,
@@ -112,6 +112,6 @@ public sealed partial class CharacterLifepathRequirement : CharacterRequirement
             localeString,
             ("inverted", Inverted),
             ("nationality", Lifepaths));
-        return (profile.Lifepath != null && Lifepaths.Any(o => o.ID == profile.Lifepath.ID)) == !Inverted;
+        return (Lifepaths.Any(o => o == profile.Lifepath)) == !Inverted;
     }
 }

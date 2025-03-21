@@ -66,13 +66,13 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
 
     // EE -- Contractors Change Start
     [DataField]
-    public NationalityPrototype? Nationality { get; set; }
+    public string Nationality { get; set; } = SharedHumanoidAppearanceSystem.DefaultNationality;
 
     [DataField]
-    public EmployerPrototype? Employer { get; set; }
+    public string Employer { get; set; } = SharedHumanoidAppearanceSystem.DefaultEmployer;
 
     [DataField]
-    public LifepathPrototype? Lifepath { get; set; }
+    public string Lifepath { get; set; } = SharedHumanoidAppearanceSystem.DefaultLifepath;
     // EE -- Contractors Change End
 
     [DataField]
@@ -138,9 +138,9 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         string species,
         string customspeciename,
         // EE -- Contractors Change Start
-        NationalityPrototype? nationality,
-        EmployerPrototype? employer,
-        LifepathPrototype? lifepath,
+        string nationality,
+        string employer,
+        string lifepath,
         // EE -- Contractors Change End
         float height,
         float width,
@@ -304,9 +304,9 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     public HumanoidCharacterProfile WithFlavorText(string flavorText) => new(this) { FlavorText = flavorText };
     public HumanoidCharacterProfile WithAge(int age) => new(this) { Age = age };
     // EE - Contractors Change Start
-    public HumanoidCharacterProfile WithNationality(NationalityPrototype nationality) => new(this) { Nationality = nationality};
-    public HumanoidCharacterProfile WithEmployer(EmployerPrototype employer) => new(this) { Employer = employer};
-    public HumanoidCharacterProfile WithLifepath(LifepathPrototype lifepath) => new(this) { Lifepath = lifepath};
+    public HumanoidCharacterProfile WithNationality(string nationality) => new(this) { Nationality = nationality};
+    public HumanoidCharacterProfile WithEmployer(string employer) => new(this) { Employer = employer};
+    public HumanoidCharacterProfile WithLifepath(string lifepath) => new(this) { Lifepath = lifepath};
     // EE - Contractors Change End
     public HumanoidCharacterProfile WithSex(Sex sex) => new(this) { Sex = sex };
     public HumanoidCharacterProfile WithGender(Gender gender) => new(this) { Gender = gender };

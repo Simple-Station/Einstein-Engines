@@ -7,20 +7,23 @@ namespace Content.Shared._EE.Contractors.Prototypes;
 /// <summary>
 /// Prototype representing a character's nationality in YAML.
 /// </summary>
-[Prototype("Nationality")]
+[Prototype("nationality")]
 public sealed partial class NationalityPrototype : IPrototype
 {
     [IdDataField, ViewVariables]
     public string ID { get; } = string.Empty;
 
     [DataField]
+    public string NameKey { get; } = string.Empty;
+
+    [DataField]
     public string DescriptionKey { get; } = string.Empty;
 
     [DataField, ViewVariables]
-    public List<NationalityPrototype> Allied { get; } = new();
+    public HashSet<ProtoId<NationalityPrototype>> Allied { get; } = new();
 
     [DataField, ViewVariables]
-    public List<NationalityPrototype> Hostile { get; } = new();
+    public HashSet<ProtoId<NationalityPrototype>> Hostile { get; } = new();
 
     [DataField]
     public List<CharacterRequirement> Requirements = new();

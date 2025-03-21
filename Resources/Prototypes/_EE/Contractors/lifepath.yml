@@ -1,9 +1,11 @@
 - type: lifepath
   id: Spacer
+  nameKey: lifepath_name_spacer
   descriptionKey: lifepath_description_spacer
 
 - type: lifepath
   id: Bum
+  nameKey: lifepath_name_bum
   descriptionKey: lifepath_description_bum
   requirements:
     - !type:CharacterEmployerRequirement
