@@ -6,16 +6,19 @@
 - type: entity
   categories: [ HideSpawnMenu ]
   parent: ClothingBackpackSatchel
-  id: ClothingBackpackSatchelTools
+  id: ClothingBackpackSatchelNinjaTools
   components:
   - type: StorageFill
     contents:
       - id: Crowbar
-      - id: Wrench
-      - id: Screwdriver
+      - id: PowerDrill
       - id: Wirecutter
-      - id: Welder
+      - id: AdvancedIndustrialWelder
       - id: Multitool
+      - id: FreedomImplanter
+      - id: Syringe
+      - id: JugWater
+      - id: JugNutriment
 
 - type: entity
   parent: ClothingBackpackSatchelClown

@@ -259,10 +259,6 @@
       components:
       - type: CriminalRecordsHacker
     - type: Unremoveable
-    - type: ClothingGrantComponent
-      component:
-      - type: SleepingCarp
-    
 
 - type: entity
   parent: ClothingHandsGlovesColorBlack
