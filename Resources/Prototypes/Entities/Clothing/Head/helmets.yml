@@ -172,6 +172,7 @@
     slots:
     - Hair
     - Snout
+  - type: Unremoveable
 
 #Templar Helmet
 - type: entity

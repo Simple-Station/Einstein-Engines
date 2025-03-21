@@ -211,6 +211,7 @@
         name: power-cell-slot-component-slot-name-default
         startingItem: PowerCellSmall
         disableEject: true
+  - type: Unremoveable
 
 - type: entity
   parent: ClothingOuterBase
