@@ -13410,3 +13410,97 @@ Entries:
   id: 7004
   time: '2025-03-20T19:25:44.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1990
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: >-
+        Added Fillbot. Link it to a lathe, material silo, ore processor or
+        disposal unit with a multitool and watch it gather stuff!
+  id: 7005
+  time: '2025-03-20T22:13:34.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1958
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: BSO/Captain Onis can now pick the terminus as their weapon
+  id: 7006
+  time: '2025-03-20T22:15:12.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2034
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: >-
+        Added minebot, which is only available as ghost role. It will not work
+        as NPC.
+  id: 7007
+  time: '2025-03-20T23:35:12.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2009
+- author: Eagle
+  changes:
+    - type: Add
+      message: >-
+        Flashbangs now stun and knockdown people. Wear over-ear headset or
+        combat hardsuit helmet to reduce flashbang effective range.
+    - type: Add
+      message: All sec and command members received over-ear headsets.
+    - type: Add
+      message: >-
+        Wearing security, ert, syndie or deathsquad gas mask blocks smoke
+        inhalation even if internals are off.
+    - type: Tweak
+      message: Epinephrine now speeds up by 10%.
+    - type: Add
+      message: >-
+        Jackboots, combat and mercenary boots now reduce all stun and knockdown
+        times by 20%.
+    - type: Add
+      message: Combat hardsuit helmets now protect from flashes.
+    - type: Tweak
+      message: Tear gas is now stronger.
+    - type: Tweak
+      message: Stamcrit stun time is once again 6 seconds.
+    - type: Tweak
+      message: Security hardsuits now have heat resistance.
+  id: 7008
+  time: '2025-03-21T00:13:28.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2022
+- author: Zeta_Null
+  changes:
+    - type: Tweak
+      message: Tweaked several tiles to make variants
+    - type: Add
+      message: >-
+        Added a "Worn steel tile" variant for mappers to include, just a steel
+        tile with a missing panel
+    - type: Add
+      message: Added a couple of text decals
+  id: 7009
+  time: '2025-03-21T20:26:59.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2038
+- author: Zeta
+  changes:
+    - type: Add
+      message: '"Engi" text decal to go with the rest of my decal text set.'
+  id: 7010
+  time: '2025-03-22T02:57:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2052
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: steadfast is now 4 points
+    - type: Tweak
+      message: Bionic leg is disabled for now
+  id: 7011
+  time: '2025-03-22T17:44:15.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2036
+- author: Ichaie
+  changes:
+    - type: Tweak
+      message: Gax, Rad, Bagel, Cyberiad, Meta and Lambda now have AI Turrets
+    - type: Fix
+      message: >-
+        Cyberiad: add missing substation to security, add missing cables to
+        bridge
+  id: 7012
+  time: '2025-03-22T17:48:52.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2043
