@@ -91,17 +91,9 @@
   functions:
     - !type:TraitAddComponent
       components:
-        - type: entity
-          id: ActionToggleFlight
-          name: Fly
+        - type: Flight
+          action: ActionToggleFlight
           description: Make use of your wings to fly. Beat the flightless moff allegations.
-          categories: [ HideSpawnMenu ]
-          components:
-          - type: InstantAction
-            checkCanInteract: false
-            icon: { sprite: Interface/Actions/flight.rsi, state: flight_off }
-            iconOn: { sprite : Interface/Actions/flight.rsi, state: flight_on }
-            event: !type:ToggleFlightEvent
   requirements:
     - !type:CharacterSpeciesRequirement
       species:
