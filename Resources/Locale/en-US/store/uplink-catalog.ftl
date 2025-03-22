@@ -91,6 +91,9 @@ uplink-pistol-magazine-rubber-desc = Pistol magazine with 10 cartridges. For whe
 uplink-pistol-magazine-incendiary-name = Pistol Magazine (.35 auto, incendiary)
 uplink-pistol-magazine-incendiary-desc = A premium magazine for putting burning holes in both your wallet, and your victims.
 
+uplink-pistol-magazine-shrapnel-name = Pistol Magazine (.35 auto, shrapnel)
+uplink-pistol-magazine-shrapnel-desc = A premium magazine for firing clouds of bullets at the crew.
+
 uplink-pistol-magazine-c20r-name = SMG magazine (.35 auto)
 uplink-pistol-magazine-c20r-desc = Rifle magazine with 30 catridges. Compatible with C-20r.
 
@@ -100,17 +103,32 @@ uplink-pistol-magazine-c20r-rubber-desc = Rifle magazine with 30 catridges. For 
 uplink-pistol-magazine-c20r-incendiary-name = SMG magazine (.35 auto, incendiary)
 uplink-pistol-magazine-c20r-incendiary-desc = WAKE THE FUCK UP SAMURAI, WE GOT A STATION TO BURN!
 
+uplink-pistol-magazine-c20r-shrapnel-name = SMG magazine (.35 auto, shrapnel)
+uplink-pistol-magazine-c20r-shrapnel-desc = A premium magazine with 30 cartridges for firing clouds of bullets at the crew.
+
 uplink-pistol-magazine-caseless-name = Pistol Magazine (.25 caseless)
 uplink-pistol-magazine-caseless-desc = Pistol magazine with 10 catridges. Compatible with the Cobra.
 
 uplink-pistol-magazine-caseless-rubber-name = Pistol Magazine (.25 caseless, rubber)
 uplink-pistol-magazine-caseless-rubber-desc = Pistol magazine with 10 catridges. For when you need to (quietly) take someone alive.
 
+uplink-pistol-magazine-caseless-incendiary-name = Pistol Magazine (.25 caseless, incendiary)
+uplink-pistol-magazine-caseless-incendiary-desc = A premium magazine with 10 catridges, for (quietly) burning holes in your wallet and your victims.
+
+uplink-pistol-magazine-caseless-shrapnel-name = Pistol Magazine (.25 caseless, shrapnel)
+uplink-pistol-magazine-caseless-shrapnel-desc = A premium magazine with 10 catridges, for (quietly) firing clouds of lead at the crew.
+
 uplink-magazine-caseless-name = SMG magazine (.25 caseless)
 uplink-magazine-caseless-desc = Rifle magazine with 30 cartridges. Compatible with the FPA-90.
 
 uplink-magazine-caseless-rubber-name = SMG magazine (.25 caseless, rubber)
 uplink-magazine-caseless-rubber-desc = Rifle magazine with 30 cartridges. For when you need to (quietly) take many hostages.
+
+uplink-magazine-caseless-incendiary-name = SMG magazine (.25 caseless, incendiary)
+uplink-magazine-caseless-incendiary-desc = A premium magazine with 30 cartridges for burning holes in both your wallet, and your victims.
+
+uplink-magazine-caseless-shrapnel-name = SMG magazine (.25 caseless, shrapnel)
+uplink-magazine-caseless-shrapnel-desc = A premium magazine with 30 cartridges for (quietly) firing clouds of lead at the crew.
 
 uplink-speedloader-magnum-name = Speedloader (.45 magnum AP)
 uplink-speedloader-magnu-desc = Revolver speedloader with 6 armor-piercing catridges, capable of ignoring armor entirely. Compatible with the Python.
@@ -120,6 +138,9 @@ uplink-mosin-ammo-desc = A box of 50 cartridges for the surplus rifle.
 
 uplink-sniper-ammo-name = Ammunition box (.60 antimateriel)
 uplink-sniper-ammo-desc = A box of 10 cartridges for the Hristov sniper rifle.
+
+uplink-sniper-ammo-shrapnel-name = Ammunition box (.60 antipersonnel shrapnel)
+uplink-sniper-ammo-shrapnel-desc = A box of 10 anti-personnel cannister shots for the Hristov sniper rifle.
 
 # Utility
 uplink-holopara-kit-name = Holoparasite Kit
@@ -241,11 +262,21 @@ uplink-meds-bundle-desc = An assortment of autoinjectors and premium medical equ
 uplink-ammo-bundle-name = Ammo Bundle
 uplink-ammo-bundle-desc = Reloading! Contains 4 magazines for the C-20r, 4 drums for the Bulldog, and 2 ammo boxes for the L6 SAW.
 
+uplink-ammo-bundle-rubber-name = Ammo Bundle (Rubber)
+uplink-ammo-bundle-rubber-desc = Reloading! Contains 4 magazines for the C-20r, 4 drums for the Bulldog, and 2 ammo boxes for the L6 SAW.
+
+uplink-ammo-bundle-incendiary-name = Ammo Bundle (Incendiary)
+uplink-ammo-bundle-incendiary-desc = WAKE THE FUCK UP SAMURAI, WE HAVE A STATION TO BURN!
+
+uplink-ammo-bundle-shrapnel-name = Ammo Bundle (Shrapnel)
+uplink-ammo-bundle-shrapnel-desc = Reloading! Contains 4 magazines for the C-20r, 4 drums for the Bulldog, and 2 ammo boxes for the L6 SAW.
+
+
 uplink-sniper-bundle-name = Sniper Bundle
 uplink-sniper-bundle-desc = An inconspicuous briefcase that contains a Hristov, 10 spare bullets and a convenient disguise.
 
 uplink-c20r-bundle-name = C-20r Bundle
-uplink-c20r-bundle-desc = Old faithful: The classic C-20r Submachine Gun, bundled with three magazines.
+uplink-c20r-bundle-desc = Old faithful: The classic C-20r Submachine Gun, ammo comes separately.
 
 uplink-buldog-bundle-name = Bulldog Bundle
 uplink-buldog-bundle-desc = Lean and mean: Contains the popular Bulldog Shotgun, a 12g beanbag drum and three 12g buckshot drums.
@@ -266,7 +297,7 @@ uplink-super-surplus-bundle-name = Super Surplus Crate
 uplink-super-surplus-bundle-desc = Contains 125 telecrystals worth of completely random Syndicate items.
 
 uplink-fpa-90-bundle-name = FPA-90 Bundle
-uplink-fpa-90-bundle-desc = A cheap integrally suppressed SMG. Comes bundled with three .25 caseless magazines.
+uplink-fpa-90-bundle-desc = A cheap integrally suppressed SMG. Ammo comes separately.
 
 # Tools
 uplink-toolbox-name = Toolbox

@@ -1,4 +1,6 @@
+using Content.Shared.DoAfter;
 using Content.Shared.Inventory;
+using Robust.Shared.Serialization;
 
 namespace Content.Shared.Chemistry.Hypospray.Events;
 
@@ -35,4 +37,10 @@ public sealed class SelfBeforeHyposprayInjectsEvent : BeforeHyposprayInjectsTarg
 public sealed class TargetBeforeHyposprayInjectsEvent  : BeforeHyposprayInjectsTargetEvent
 {
     public TargetBeforeHyposprayInjectsEvent (EntityUid user, EntityUid hypospray, EntityUid target) : base(user, hypospray, target) { }
+}
+
+
+[Serializable, NetSerializable]
+public sealed partial class HyposprayDoAfterEvent : SimpleDoAfterEvent
+{
 }

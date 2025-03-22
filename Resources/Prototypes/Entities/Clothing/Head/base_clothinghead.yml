@@ -215,6 +215,7 @@
     clothingVisuals:
       head:
       - state: equipped-HELMET
+      - state: on-equipped-HELMET
   - type: IgniteFromGasImmunity
     parts:
     - Head

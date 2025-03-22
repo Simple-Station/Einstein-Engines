@@ -688,3 +688,29 @@
     - !type:RemovePsionicStatSources
     - !type:RemoveAssayFeedback
       assayFeedback: assay-power-metapsionic-feedback
+
+- type: psionicPower
+  id: AnoigoPower
+  name: Anoigo
+  powerCategories:
+  - Kinetic
+  initializeFunctions:
+  - !type:AddPsionicActions
+    actions:
+    - ActionAnoigo
+  - !type:PsionicFeedbackPopup
+  - !type:PsionicFeedbackSelfChat
+    feedbackMessage: anoigo-power-initialization-feedback
+  - !type:AddPsionicAssayFeedback
+    assayFeedback: anoigo-power-metapsionic-feedback
+  - !type:AddPsionicStatSources
+    amplificationModifier: 0.25
+  - !type:AddPsionicPsychognomicDescriptors
+    psychognomicDescriptor: kinetic
+  removalFunctions:
+  - !type:RemovePsionicActions
+  - !type:RemovePsionicStatSources
+  - !type:RemoveAssayFeedback
+    assayFeedback: anoigo-power-metapsionic-feedback
+  - !type:RemovePsionicPsychognomicDescriptors
+    psychognomicDescriptor: kinetic

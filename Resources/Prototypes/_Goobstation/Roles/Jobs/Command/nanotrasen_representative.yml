@@ -52,7 +52,7 @@
     shoes: ClothingShoesColorBlack
     id: CentcomPDA
     jumpsuit: ClothingUniformJumpsuitNanotrasenRepresentative
-    ears: ClothingHeadsetCentCom
+    ears: ClothingHeadsetAltCentCom
     pocket1: UniqueNanorepLockerTeleporter
 
 - type: startingGear

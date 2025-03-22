@@ -471,6 +471,17 @@
     Gold: 50
 
 - type: latheRecipe
+  id: BorgModuleRPD
+  result: BorgModuleRPD
+  category: Robotics
+  completetime: 3
+  materials:
+    Steel: 550
+    Glass: 550
+    Plastic: 300
+    Gold: 50
+
+- type: latheRecipe
   id: BorgModuleLightReplacer
   result: BorgModuleLightReplacer
   category: Robotics

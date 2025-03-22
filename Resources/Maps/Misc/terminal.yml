@@ -19382,7 +19382,7 @@ entities:
     - type: Transform
       pos: -17.253208,-8.633782
       parent: 2
-- proto: ClothingHeadHatPirateTricord
+- proto: ClothingHeadHatPirateTricorn
   entities:
   - uid: 8601
     components:

@@ -418,6 +418,9 @@
   id: WeaponLaserCannon
   description: A heavy duty, high powered laser weapon.
   components:
+  - type: Tag
+    tags:
+    - TurretCompatibleWeapon
   - type: Sprite
     sprite: Objects/Weapons/Guns/Battery/laser_cannon.rsi
     layers:
@@ -443,6 +446,7 @@
     bluntStaminaDamageFactor: 1.3333
   - type: DamageOtherOnHit
     staminaCost: 9.5
+
 
 - type: entity
   name: portable particle decelerator
@@ -559,6 +563,16 @@
       steps: 5
       zeroVisible: true
     - type: Appearance
+    - type: ExtendDescription
+      descriptionList:
+      - description: "civiliandisabler-extenddescription-security"
+        fontSize: 12
+        color: "#ff0000"
+        requireDetailRange: true
+        requirements:
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
     - type: MeleeWeapon
       damage:
         types:
@@ -960,6 +974,7 @@
     fireRate: 2
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
+    uniformSpread: true
   - type: ProjectileBatteryAmmoProvider
     proto: BulletLaserSpread
     fireCost: 150
