@@ -92,7 +92,7 @@
     - !type:TraitAddComponent
       components:
         - type: entity
-          id: ActionToggleMothFlight
+          id: ActionToggleFlight
           name: Fly
           description: Make use of your wings to fly. Beat the flightless moff allegations.
           categories: [ HideSpawnMenu ]
