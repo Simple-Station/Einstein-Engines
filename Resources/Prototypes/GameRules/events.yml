@@ -614,3 +614,18 @@
       maxOccurrences: 1
       weight: 3
     - type: AirlockVirusRule
+
+# game rule that makes everyone speak with the cogchamp accent for a certain amount of time
+- type: entity
+  id: BabelTower
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: StationEvent
+      minimumPlayers: 5
+      duration: 60 # duration is in seconds by the way
+      maxDuration: 120
+      weight: 0
+    - type: BabelTowerRule
+
+
