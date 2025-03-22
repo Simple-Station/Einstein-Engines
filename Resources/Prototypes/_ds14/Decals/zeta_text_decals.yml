@@ -42,3 +42,13 @@
   sprite:
     sprite: _ds14/Decals/zetatextdecals.rsi
     state: Supply
+    
+- type: decal
+  id: EngiTextZeta
+  parent: Markings
+  tags: ["station", "markings"]
+  defaultCustomColor: true
+  sprite:
+    sprite: _ds14/Decals/zetatextdecals.rsi
+    state: Engi
+
