@@ -657,3 +657,19 @@
   - type: Paper
     content: book-text-janitor
 
+- type: entity
+  parent: BookBase
+  id: BookPLCProgramming
+  name: PLC Programming 101
+  description: A technical book describing the basics of programming a PLC, including a reference table of operations.
+  components:
+    - type: Sprite
+      sprite: Objects/Misc/books.rsi
+      layers:
+      - state: paper
+      - state: cover_base
+        color: "#35a0e4"
+      - state: detail_bookmark
+        color: "#a03014"
+    - type: Paper
+      content: book-text-plc-programming
