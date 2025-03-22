@@ -10394,7 +10394,7 @@ entities:
           -3,-21:
             0: 64527
           -2,-19:
-            0: 48908
+            0: 48924
           -2,-18:
             0: 65520
           -2,-21:
@@ -13894,7 +13894,7 @@ entities:
       parent: 2
 - proto: AirlockExternalGlassShuttleCargoShuttleFilled
   entities:
-  - uid: 234
+  - uid: 231
     components:
     - type: Transform
       rot: 3.141592653589793 rad
@@ -13902,19 +13902,19 @@ entities:
       parent: 2
 - proto: AirlockExternalGlassShuttleEscape
   entities:
-  - uid: 231
+  - uid: 232
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 6.5,12.5
       parent: 2
-  - uid: 232
+  - uid: 233
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -55.5,-8.5
       parent: 2
-  - uid: 233
+  - uid: 234
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
@@ -20651,6 +20651,13 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 24.5,-27.5
+      parent: 2
+- proto: Biofabricator
+  entities:
+  - uid: 28162
+    components:
+    - type: Transform
+      pos: -17.5,-16.5
       parent: 2
 - proto: BiomassReclaimer
   entities:
@@ -80441,6 +80448,8 @@ entities:
     - type: Transform
       pos: -7.5,-73.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#0335FCFF'
   - uid: 12211
     components:
     - type: Transform
@@ -108992,6 +109001,8 @@ entities:
       rot: 3.141592653589793 rad
       pos: -7.5,-74.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#0335FCFF'
   - uid: 15908
     components:
     - type: Transform
