@@ -599,3 +599,8 @@ trait-name-Vampirism = Vampirism
 trait-description-Vampirism =
     Your body has evolved to be able to suck blood from beings that contain it and metabolize it into useful compounds.
     You cannot eat normal food, but drinking blood satiates your hunger and thirst, and also improves your health.
+
+trait-name-MothFlight = True Flight
+trait-description-MothFlight =
+    Unlike other mothpeople, your body is light enough and your wings are strong enough to be able to fly under normal gravity.
+    Flight is strenuous, however, requiring your hands to be free and quickly draining your stamina.
