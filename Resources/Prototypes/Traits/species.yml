@@ -83,3 +83,20 @@
     - !type:CharacterSpeciesRequirement
       species:
         - Shadowkin
+
+- type: trait
+  id: MothFlight
+  category: Physical
+  points: -5
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: Flight
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Moth
+    - !type:CharacterHeightRequirement # big moffs are too heavy to fly
+      max: 160
+    - !type:CharacterWidthRequirement
+      max: 35
