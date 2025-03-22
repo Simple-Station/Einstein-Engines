@@ -29,3 +29,11 @@
     tags:
     - ClothMade
     - WhitelistChameleon
+
+- type: entity
+  abstract: true
+  parent: ClothingNeckBase
+  id: ClothingNeckScarfBase
+  components:
+  - type: TemperatureProtection
+    coefficient: 0.8 # equivalent to winter boots
