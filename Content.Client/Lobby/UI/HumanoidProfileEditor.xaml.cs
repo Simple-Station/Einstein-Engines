@@ -640,7 +640,17 @@ namespace Content.Client.Lobby.UI
             NationalityButton.Clear();
             _nationalies.Clear();
 
-            _nationalies.AddRange(_prototypeManager.EnumeratePrototypes<NationalityPrototype>());
+            _nationalies.AddRange(_prototypeManager.EnumeratePrototypes<NationalityPrototype>()
+                .Where(o => _characterRequirementsSystem.CheckRequirementsValid(o.Requirements,
+                    _controller.GetPreferredJob(Profile ?? HumanoidCharacterProfile.DefaultWithSpecies()),
+                    Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
+                    _requirements.GetRawPlayTimeTrackers(),
+                    _requirements.IsWhitelisted(),
+                    o,
+                    _entManager,
+                    _prototypeManager,
+                    _cfgManager, out _)));
+
             var nationalityIds = _nationalies.Select(o => o.ID).ToList();
 
             for (var i = 0; i < _nationalies.Count; i++)
@@ -661,7 +671,17 @@ namespace Content.Client.Lobby.UI
             EmployerButton.Clear();
             _employers.Clear();
 
-            _employers.AddRange(_prototypeManager.EnumeratePrototypes<EmployerPrototype>());
+            _employers.AddRange(_prototypeManager.EnumeratePrototypes<EmployerPrototype>()
+                .Where(o => _characterRequirementsSystem.CheckRequirementsValid(o.Requirements,
+                _controller.GetPreferredJob(Profile ?? HumanoidCharacterProfile.DefaultWithSpecies()),
+                Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
+                _requirements.GetRawPlayTimeTrackers(),
+                _requirements.IsWhitelisted(),
+                o,
+                _entManager,
+                _prototypeManager,
+                _cfgManager, out _)));
+
             var employerIds = _employers.Select(o => o.ID).ToList();
 
             for (var i = 0; i < _employers.Count; i++)
@@ -682,7 +702,17 @@ namespace Content.Client.Lobby.UI
             LifepathButton.Clear();
             _lifepaths.Clear();
 
-            _lifepaths.AddRange(_prototypeManager.EnumeratePrototypes<LifepathPrototype>());
+            _lifepaths.AddRange(_prototypeManager.EnumeratePrototypes<LifepathPrototype>()
+                .Where(o => _characterRequirementsSystem.CheckRequirementsValid(o.Requirements,
+                _controller.GetPreferredJob(Profile ?? HumanoidCharacterProfile.DefaultWithSpecies()),
+                Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
+                _requirements.GetRawPlayTimeTrackers(),
+                _requirements.IsWhitelisted(),
+                o,
+                _entManager,
+                _prototypeManager,
+                _cfgManager, out _)));
+
             var lifepathIds = _lifepaths.Select(o => o.ID).ToList();
 
             for (var i = 0; i < _lifepaths.Count; i++)

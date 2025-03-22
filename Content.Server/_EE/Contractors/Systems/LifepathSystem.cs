@@ -3,6 +3,7 @@ using Content.Server.Players.PlayTimeTracking;
 using Content.Shared._EE.Contractors.Prototypes;
 using Content.Shared.Customization.Systems;
 using Content.Shared.GameTicking;
+using Content.Shared.Humanoid;
 using Content.Shared.Players;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
@@ -46,9 +47,11 @@ public sealed class LifepathSystem : EntitySystem
 
         var jobPrototypeToUse = _prototype.Index(jobId ?? _prototype.EnumeratePrototypes<JobPrototype>().First().ID);
 
-        if(!_prototype.TryIndex<LifepathPrototype>(profile.Lifepath, out var lifepathPrototype))
+        ProtoId<LifepathPrototype> lifepath = profile.Lifepath != string.Empty? profile.Lifepath : SharedHumanoidAppearanceSystem.DefaultLifepath;
+
+        if(!_prototype.TryIndex<LifepathPrototype>(lifepath, out var lifepathPrototype))
         {
-            DebugTools.Assert($"Lifepath {profile.Lifepath} not found!");
+            DebugTools.Assert($"Lifepath '{lifepath}' not found!");
             return;
         }
 

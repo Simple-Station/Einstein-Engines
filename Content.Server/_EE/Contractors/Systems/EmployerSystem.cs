@@ -3,6 +3,7 @@ using Content.Server.Players.PlayTimeTracking;
 using Content.Shared._EE.Contractors.Prototypes;
 using Content.Shared.Customization.Systems;
 using Content.Shared.GameTicking;
+using Content.Shared.Humanoid;
 using Content.Shared.Players;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
@@ -46,9 +47,11 @@ public sealed class EmployerSystem : EntitySystem
 
         var jobPrototypeToUse = _prototype.Index(jobId ?? _prototype.EnumeratePrototypes<JobPrototype>().First().ID);
 
-        if(!_prototype.TryIndex<EmployerPrototype>(profile.Employer, out var employerPrototype))
+        ProtoId<EmployerPrototype> employer = profile.Employer != string.Empty ? profile.Employer : SharedHumanoidAppearanceSystem.DefaultEmployer;
+
+        if(!_prototype.TryIndex<EmployerPrototype>(employer, out var employerPrototype))
         {
-            DebugTools.Assert($"Employer {profile.Employer} not found!");
+            DebugTools.Assert($"Employer '{employer}' not found!");
             return;
         }
 

@@ -163,6 +163,11 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         FlavorText = flavortext;
         Species = species;
         Customspeciename = customspeciename;
+        // EE -- Contractors Change Start
+        Nationality = nationality;
+        Employer = employer;
+        Lifepath = lifepath;
+        // EE -- Contractors Change End
         Height = height;
         Width = width;
         Age = age;
@@ -309,9 +314,9 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     public HumanoidCharacterProfile WithFlavorText(string flavorText) => new(this) { FlavorText = flavorText };
     public HumanoidCharacterProfile WithAge(int age) => new(this) { Age = age };
     // EE - Contractors Change Start
-    public HumanoidCharacterProfile WithNationality(string nationality) => new(this) { Nationality = nationality};
-    public HumanoidCharacterProfile WithEmployer(string employer) => new(this) { Employer = employer};
-    public HumanoidCharacterProfile WithLifepath(string lifepath) => new(this) { Lifepath = lifepath};
+    public HumanoidCharacterProfile WithNationality(string nationality) => new(this) { Nationality = nationality };
+    public HumanoidCharacterProfile WithEmployer(string employer) => new(this) { Employer = employer };
+    public HumanoidCharacterProfile WithLifepath(string lifepath) => new(this) { Lifepath = lifepath };
     // EE - Contractors Change End
     public HumanoidCharacterProfile WithSex(Sex sex) => new(this) { Sex = sex };
     public HumanoidCharacterProfile WithGender(Gender gender) => new(this) { Gender = gender };
