@@ -13515,3 +13515,10 @@ Entries:
   id: 7013
   time: '2025-03-22T21:24:00.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2050
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: Dignitary Tag to OmniHud/SecHud
+  id: 7014
+  time: '2025-03-22T21:26:02.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2033
