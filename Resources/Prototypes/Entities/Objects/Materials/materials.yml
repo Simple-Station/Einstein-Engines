@@ -46,6 +46,10 @@
     - state: cardboard_3
       map: ["base"]
   - type: Appearance
+  - type: Tag
+    tags:
+      - RawMaterial
+      - MaterialCardboard
   - type: Extractable
     grindableSolutionName: cardboard
   - type: SolutionContainerManager

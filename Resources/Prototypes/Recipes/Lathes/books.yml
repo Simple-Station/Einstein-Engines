@@ -1,0 +1,261 @@
+- type: latheRecipe
+  abstract: true
+  id: BaseBookRecipe
+  result: BookBase
+  category: Books
+  completetime: 2
+  materials:
+    Paper: 500
+    Cardboard: 50
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: RevolutionaryManifesto
+  result: RevolutionaryManifesto
+
+# Books from books.yml
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookSpaceEncyclopedia
+  result: BookSpaceEncyclopedia
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookTheBookOfControl
+  result: BookTheBookOfControl
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookBartendersManual
+  result: BookBartendersManual
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookHowToCookForFortySpaceman
+  result: BookHowToCookForFortySpaceman
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookLeafLoversSecret
+  result: BookLeafLoversSecret
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookEngineersHandbook
+  result: BookEngineersHandbook
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookScientistsGuidebook
+  result: BookScientistsGuidebook
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookSecurity
+  result: BookSecurity
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookHowToKeepStationClean
+  result: BookHowToKeepStationClean
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookHowToRockAndStone
+  result: BookHowToRockAndStone
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookMedicalReferenceBook
+  result: BookMedicalReferenceBook
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookHowToSurvive
+  result: BookHowToSurvive
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookChemicalCompendium
+  result: BookChemicalCompendium
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookAtmosDistro
+  result: BookAtmosDistro
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookAtmosWaste
+  result: BookAtmosWaste
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookAtmosAirAlarms
+  result: BookAtmosAirAlarms
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookAtmosVentsMore
+  result: BookAtmosVentsMore
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookPsionicsGuidebook
+  result: BookPsionicsGuidebook
+
+# Books from books_author.yml
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookNarsieLegend
+  result: BookNarsieLegend
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookTruth
+  result: BookTruth
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookWorld
+  result: BookWorld
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookIanAntarctica
+  result: BookIanAntarctica
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookSlothClownSSS
+  result: BookSlothClownSSS
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookSlothClownPranks
+  result: BookSlothClownPranks
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookSlothClownMMD
+  result: BookSlothClownMMD
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookStruck
+  result: BookStruck
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookSun
+  result: BookSun
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookPossum
+  result: BookPossum
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookCafe
+  result: BookCafe
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookFeather
+  result: BookFeather
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookIanLostWolfPup
+  result: BookIanLostWolfPup
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookIanRanch
+  result: BookIanRanch
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookIanOcean
+  result: BookIanOcean
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookIanMountain
+  result: BookIanMountain
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookIanCity
+  result: BookIanCity
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookIanArctic
+  result: BookIanArctic
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookIanDesert
+  result: BookIanDesert
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookNames
+  result: BookNames
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookEarth
+  result: BookEarth
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookAurora
+  result: BookAurora
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookTemple
+  result: BookTemple
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookWatched
+  result: BookWatched
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookMedicalOfficer
+  result: BookMedicalOfficer
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookMorgue
+  result: BookMorgue
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookRufus
+  result: BookRufus
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookMap
+  result: BookMap
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookJourney
+  result: BookJourney
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookInspiration
+  result: BookInspiration
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookJanitorTale
+  result: BookJanitorTale
