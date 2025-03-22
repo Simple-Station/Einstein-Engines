@@ -531,6 +531,11 @@
       partSymmetry: Left
       protoId: JawsOfLifeLeftArm
       slotId: "left arm"
+    - !type:TraitCyberneticLimbReplacement
+      removeBodyPart: Arm
+      partSymmetry: Right
+      protoId: JawsOfLifeRightArm
+      slotId: "right arm"
     - !type:TraitPushDescription
       descriptionExtensions:
         - description: examine-bionic-arm-message
@@ -897,6 +902,12 @@
       partSymmetry: Left
       protoId: SpeedLeftLeg
       slotId: "left leg"
+    - !type:TraitCyberneticLimbReplacement
+      removeBodyPart: Leg
+      partSymmetry: Right
+      protoId: SpeedRightLeg
+      slotId: "right leg"
+
 
 # - type: trait
 #  id: FlareShieldingModule
