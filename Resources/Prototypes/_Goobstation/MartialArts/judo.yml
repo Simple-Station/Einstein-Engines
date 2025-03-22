@@ -31,7 +31,7 @@
   - Disarm
   - Grab
   event: !type:JudoArmbarPerformedEvent
-  staminaDamage: 45
+  staminaDamage: 50
   paralyzeTime: 5
 
 - type: combo
