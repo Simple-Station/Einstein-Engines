@@ -13477,3 +13477,10 @@ Entries:
   id: 7009
   time: '2025-03-21T20:26:59.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2038
+- author: Zeta
+  changes:
+    - type: Add
+      message: '"Engi" text decal to go with the rest of my decal text set.'
+  id: 7010
+  time: '2025-03-22T02:57:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2052
