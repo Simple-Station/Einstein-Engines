@@ -216,10 +216,6 @@
   - type: Vehicle
     requiredHands: 0
     engineRunning: true
-    hornSound:
-      collection: BikeHorn
-      params:
-        variation: 0.125
     renderOver: North, NorthEast, NorthWest
   - type: MovementSpeedModifier
     acceleration: 10
