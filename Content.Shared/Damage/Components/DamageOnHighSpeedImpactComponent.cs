@@ -11,30 +11,36 @@ namespace Content.Shared.Damage.Components;
 [RegisterComponent, NetworkedComponent, Access(typeof(DamageOnHighSpeedImpactSystem))]
 public sealed partial class DamageOnHighSpeedImpactComponent : Component
 {
-    [DataField("minimumSpeed"), ViewVariables(VVAccess.ReadWrite)]
-    public float MinimumSpeed = 20f;
+    [DataField]
+    public float MinimumSpeed = 10f;
 
-    [DataField("speedDamageFactor"), ViewVariables(VVAccess.ReadWrite)]
+    /// <summary>
+    ///     Damage dealt per meter/second of velocity.
+    /// </summary>
+    [DataField]
     public float SpeedDamageFactor = 0.5f;
 
-    [DataField("soundHit", required: true), ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public SoundSpecifier SoundHit = default!;
 
-    [DataField("stunChance"), ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public float StunChance = 0.25f;
 
-    [DataField("stunMinimumDamage"), ViewVariables(VVAccess.ReadWrite)]
-    public int StunMinimumDamage = 10;
+    [DataField]
+    public int StunMinimumDamage = 5;
 
-    [DataField("stunSeconds"), ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public float StunSeconds = 1f;
 
-    [DataField("damageCooldown"), ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public float DamageCooldown = 2f;
 
-    [DataField("lastHit", customTypeSerializer: typeof(TimeOffsetSerializer)), ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public TimeSpan? LastHit;
 
-    [DataField("damage", required: true), ViewVariables(VVAccess.ReadWrite)]
+    /// <summary>
+    ///     What damage types should be dealt to the entity. DO NOT SET ANY VALUES OUTSIDE OF 0 AND 1.
+    /// </summary>
+    [DataField]
     public DamageSpecifier Damage = default!;
 }
