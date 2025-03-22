@@ -137,6 +137,7 @@
         - Sluggish
         - SnailPaced
         - BadKnees
+        - WheelchairBound
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
