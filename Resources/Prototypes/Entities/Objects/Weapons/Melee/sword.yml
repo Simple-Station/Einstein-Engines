@@ -114,7 +114,8 @@
     wideAnimationRotation: -60
     damage:
       types:
-        Slash: 25
+        Slash: 20
+        Burn: 10
   - type: ThrowingAngle
     angle: 300
   - type: Item
@@ -133,7 +134,7 @@
     - Back
     - Belt
   - type: Reflect
-    reflectProb: 0.3
+    reflectProb: 0.7
     velocityBeforeNotMaxProb: 6.0 # don't punish ninjas for being ninjas
     velocityBeforeMinProb: 10.0
 

@@ -38,7 +38,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitNinja
     # belt holds katana so satchel has the tools for sabotaging things
-    back: ClothingBackpackSatchelTools
+    back: ClothingBackpackSatchelNinjaTools
     mask: ClothingMaskNinja
     head: ClothingHeadHelmetSpaceNinja
     eyes: ClothingEyesVisorNinja

@@ -125,6 +125,7 @@
     # ninja are masters of sneaking around relatively quickly, won't break cloak
     walkModifier: 1.1
     sprintModifier: 1.3
+  - type: Unremoveable
 
 - type: entity
   parent: ClothingShoesMilitaryBase
