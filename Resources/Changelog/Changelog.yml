@@ -13484,3 +13484,12 @@ Entries:
   id: 7010
   time: '2025-03-22T02:57:47.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2052
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: steadfast is now 4 points
+    - type: Tweak
+      message: Bionic leg is disabled for now
+  id: 7011
+  time: '2025-03-22T17:44:15.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2036
