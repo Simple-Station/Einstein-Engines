@@ -5,7 +5,7 @@
   description: It produces tomes of knowledge in return for a humble offer of paper and cardboard.
   components:
   - type: Sprite
-    sprite: Structures/Machines/autolathe.rsi
+    sprite: Structures/Machines/bookpress.rsi
     snapCardinals: true
     layers:
     - state: icon
