@@ -92,8 +92,6 @@
     - !type:TraitAddComponent
       components:
         - type: Flight
-          action: ActionToggleFlight
-          description: Make use of your wings to fly. Beat the flightless moff allegations.
   requirements:
     - !type:CharacterSpeciesRequirement
       species:
