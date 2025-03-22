@@ -13493,3 +13493,14 @@ Entries:
   id: 7011
   time: '2025-03-22T17:44:15.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2036
+- author: Ichaie
+  changes:
+    - type: Tweak
+      message: Gax, Rad, Bagel, Cyberiad, Meta and Lambda now have AI Turrets
+    - type: Fix
+      message: >-
+        Cyberiad: add missing substation to security, add missing cables to
+        bridge
+  id: 7012
+  time: '2025-03-22T17:48:52.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2043
