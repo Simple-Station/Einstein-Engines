@@ -13504,3 +13504,14 @@ Entries:
   id: 7012
   time: '2025-03-22T17:48:52.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2043
+- author: GNUtopia
+  changes:
+    - type: Add
+      message: Added True Flight, a moth-exclusive trait that grants temporary flight
+    - type: Tweak
+      message: Gave moths 50% temperature protection
+    - type: Tweak
+      message: Reduced severity of slowdown due to cold on moths
+  id: 7013
+  time: '2025-03-22T21:24:00.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2050
