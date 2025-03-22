@@ -100,6 +100,9 @@ ghost-role-information-taxibot-description = Drive the station crew to their des
 ghost-role-information-supplybot-name = SupplyBot
 ghost-role-information-supplybot-description = Deliver goods around the station.
 
+ghost-role-information-minebot-name = Minebot
+ghost-role-information-minebot-description = Assist the miners with their work.
+
 ghost-role-information-space-bear-name = Space bear
 ghost-role-information-space-bear-description = Your tummy rumbles, and these people look really yummy... What a feast!
 
