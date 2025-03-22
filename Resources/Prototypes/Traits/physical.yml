@@ -239,7 +239,7 @@
 - type: trait
   id: Steadfast
   category: Physical
-  points: -6
+  points: -4
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -875,28 +875,28 @@
               Brute: -0.6
               Burn: -0.6
 
-- type: trait
-  id: BionicLeg
-  category: Physical
-  points: -8
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
-  functions:
-    - !type:TraitReplaceComponent
-      components:
-      - type: TraitSpeedModifier
-        sprintModifier: 1.300
-        walkModifier: 1.125
-    - !type:TraitPushDescription
-      descriptionExtensions:
-        - description: examine-bionic-leg-message
-          fontSize: 12
-          requireDetailRange: true
+# - type: trait
+#  id: BionicLeg
+#  category: Physical
+#  points: -8
+#  requirements:
+#    - !type:CharacterJobRequirement
+#      inverted: true
+#      jobs:
+#        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+#    - !type:CharacterItemGroupRequirement
+#      group: TraitsMind
+#  functions:
+#    - !type:TraitReplaceComponent
+#      components:
+#      - type: TraitSpeedModifier
+#        sprintModifier: 1.300
+#        walkModifier: 1.125
+#    - !type:TraitPushDescription
+#      descriptionExtensions:
+#        - description: examine-bionic-leg-message
+#          fontSize: 12
+#          requireDetailRange: true
 
 # - type: trait
 #  id: FlareShieldingModule
