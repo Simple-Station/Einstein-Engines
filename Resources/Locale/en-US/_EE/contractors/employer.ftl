@@ -13,4 +13,7 @@ employer_name_einsteinengines = Einstein-Engines
 employer_description_einsteinengines = The biggest harrassment-company in the galaxy
 
 employer_name_zenghupharmaceuticals = Zeng-Hu Pharmaceuticals
-employer_description_zenghupharmaceuticals = Turn on coordiaates!
+employer_description_zenghupharmaceuticals = Turn on coordiates!
+
+employer_name_cybersun = Cybersun
+employer_description_cybersun = Friendly lil' guys

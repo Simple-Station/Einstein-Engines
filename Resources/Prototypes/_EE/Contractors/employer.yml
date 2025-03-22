@@ -28,3 +28,8 @@
   id: ZengHuPharmaceuticals
   nameKey: employer_name_zenghupharmaceuticals
   descriptionKey: employer_description_zenghupharmaceuticals
+
+- type: employer
+  id: Cybersun
+  nameKey: employer_name_cybersun
+  descriptionKey: employer_description_cybersun
