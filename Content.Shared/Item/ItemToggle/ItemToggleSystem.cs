@@ -245,6 +245,9 @@ public sealed class ItemToggleSystem : EntitySystem
     /// </summary>
     private void TurnOffOnUnwielded(Entity<ItemToggleComponent> ent, ref ItemUnwieldedEvent args)
     {
+        if (!ent.Comp.WieldToggle) // Goobstation
+            return;
+
         TryDeactivate((ent, ent.Comp), args.User);
     }
 
@@ -253,6 +256,9 @@ public sealed class ItemToggleSystem : EntitySystem
     /// </summary>
     private void TurnOnOnWielded(Entity<ItemToggleComponent> ent, ref ItemWieldedEvent args)
     {
+        if (!ent.Comp.WieldToggle) // Goobstation
+            return;
+
         // FIXME: for some reason both client and server play sound
         TryActivate((ent, ent.Comp));
     }

@@ -44,6 +44,7 @@ public sealed partial class StaminaSystem : EntitySystem
     [Dependency] private readonly StatusEffectsSystem _statusEffect = default!; // goob edit
     [Dependency] private readonly SharedStutteringSystem _stutter = default!; // goob edit
     [Dependency] private readonly SharedJitteringSystem _jitter = default!; // goob edit
+    [Dependency] private readonly ClothingModifyStunTimeSystem _modify = default!; // goob edit
 
     /// <summary>
     /// How much of a buffer is there between the stun duration and when stuns can be re-applied.
@@ -243,6 +244,7 @@ public sealed partial class StaminaSystem : EntitySystem
         damage += hitEvent.FlatModifier;
 
         TakeStaminaDamage(target, damage, source: uid, sound: component.Sound);
+        TakeOvertimeStaminaDamage(target, component.Overtime); // Goobstation
     }
 
     private void SetStaminaAlert(EntityUid uid, StaminaComponent? component = null)
@@ -457,8 +459,8 @@ public sealed partial class StaminaSystem : EntitySystem
         // you got batonned hard.
         component.Critical = true;
         _stunSystem.TryParalyze(uid, component.StunTime, true);
-        // Give them buffer before being able to be re-stunned
-        component.NextUpdate = _timing.CurTime + component.StunTime + StamCritBufferTime;
+
+        component.NextUpdate = _timing.CurTime + component.StunTime * _modify.GetModifier(uid) + StamCritBufferTime;
 
         EnsureComp<ActiveStaminaComponent>(uid);
         Dirty(uid, component);

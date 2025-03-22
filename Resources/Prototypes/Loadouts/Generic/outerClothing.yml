@@ -839,3 +839,24 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuter
+
+- type: loadout
+  id: ClothingOuterSuitWitchRobes
+  category: Outer
+  cost: 1
+  customColorTint: true
+  items:
+    - ClothingOuterSuitWitchRobes
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: ClothingOuterCoatExpensive
+  category: Outer
+  cost: 3
+  items:
+    - ClothingOuterCoatExpensive
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter

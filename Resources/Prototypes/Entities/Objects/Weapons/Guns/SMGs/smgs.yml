@@ -140,6 +140,31 @@
   - type: Appearance
 
 - type: entity
+  name: C-20r sub machine gun
+  parent: [WeaponSubMachineGunC20r]
+  id: WeaponSubMachineGunC20rEmpty
+  description: Manufactured by Cybersun-Armaments, the C-20r is one of the most popular personal small-arms in the Coalition of Colonies. Uses .35 auto ammo.
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: null
+        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazinePistolSubMachineGun
+      gun_chamber:
+        name: Chamber
+        startingItem: null
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgePistol
+
+- type: entity
   name: antique C-20r submachine gun
   parent: WeaponSubMachineGunC20r
   id: WeaponSubMachineGunC20rHoS

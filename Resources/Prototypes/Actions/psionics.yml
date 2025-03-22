@@ -243,17 +243,17 @@
               - settings:
                   spawnOnPulse: true
                   spawnOnSuperCritical: true
-                  minAmount: 5
-                  maxAmount: 8
-                  maxRange: 1.5
+                  minAmount: 18
+                  maxAmount: 28
+                  maxRange: 2.5
                 spawns:
-                - ShadowKudzuWeak
+                - ShadowKudzuTemp
               - settings:
                   spawnOnPulse: true
                   spawnOnSuperCritical: true
                   minAmount: 1
                   maxAmount: 1
-                  maxRange: 0.5
+                  maxRange: 2
                 spawns:
                 - EffectFlashShadeskip
 
@@ -385,3 +385,15 @@
           - PsionicInsulation
           - Mindbroken
       event: !type:AssayPowerActionEvent
+
+- type: entity
+  id: ActionAnoigo
+  name: action-name-anoigo
+  description: action-description-anoigo
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: EntityTargetAction
+    icon: { sprite: Interface/Actions/psionics.rsi, state: anoigo }
+    useDelay: 40
+    itemIconStyle: BigAction
+    event: !type:AnoigoPowerActionEvent

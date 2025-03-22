@@ -1050,10 +1050,16 @@
   id: PetWearable
 
 - type: Tag
+  id: HardHat
+
+- type: Tag
   id: MonkeyWearable
 
 - type: Tag
   id: Pickaxe
+
+- type: Tag
+  id: ItemPickaxe
 
 - type: Tag
   id: Pie
@@ -1367,6 +1373,12 @@
 
 - type: Tag
   id: Truncheon
+
+- type: Tag
+  id: TurretCompatibleWeapon # Used in the construction of sentry turrets
+
+- type: Tag
+  id: TurretControlElectronics # Used in the construction of sentry turret control panels
 
 - type: Tag
   id: Unimplantable

@@ -21,7 +21,8 @@
       accessLevels:
       - Armory
       - Atmospherics
-      - Bar
+      - BasicSilicon
+      - Borg
       #- Brig #Delta V: Removed Brig Access
       - Boxer #Delta V: Add Boxer Access
       - Detective
@@ -56,6 +57,7 @@
       - Salvage
       - Security
       - Service
+      - StationAi
       - Theatre
       - Zookeeper #Delta V: Add Zookeeper Access
       - ChiefJustice  #Delta V: Add Chief Justice Access

@@ -64,6 +64,31 @@
         requireDetailRange: false
 
 - type: entity
+  name: FPA-90 sub machine gun
+  parent: WeaponSubMachineGunFPA90
+  id: WeaponSubMachineGunFPA90Empty
+  description: It's a cheap piece of shit made by a company well known for cheap guns, but at least you don't need hearing protection while using it. It fires .25 caseless.
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: null
+        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineCaselessRifle
+      gun_chamber:
+        name: Chamber
+        startingItem: null
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeCaselessRifle
+
+- type: entity
   name: BRDI R-25
   parent: [BaseWeaponSubMachineGun, BaseGunWieldable]
   id: WeaponSubMachineGunBRDIR25
@@ -87,8 +112,8 @@
     maxAngle: 32
     fireRate: 5  # 300rpm in Semi & Full Auto
     burstFireRate: 20  # 1200rpm in Burst mode.
-    shotsPerBurst: 5
-    burstCooldown: 1.1
+    shotsPerBurst: 3
+    burstCooldown: 0.9
     cameraRecoilScalar: 0.5
     selectedMode: Burst
     soundGunshot:
@@ -96,7 +121,6 @@
       params:
         volume: -3
         maxDistance: 8
-        rolloffFactor: 1.2
     availableModes:
     - SemiAuto
     - Burst

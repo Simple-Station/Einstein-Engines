@@ -58,8 +58,35 @@
       tags:
       - NukeOpsUplink
 
+# - type: listing
+#   id: UplinkMiniatureEnergyCrossbow
+#   name: uplink-miniature-energy-crossbow-name
+#   description: uplink-miniature-energy-crossbow-desc
+#   icon: { sprite:  /Textures/_Goobstation/Objects/Weapons/Guns/Battery/miniature_ebow.rsi, state: icon }
+#   productEntity: MiniatureEnergyCrossbow
+#   cost:
+#     Telecrystal: 50
+#   categories:
+#   - UplinkWeaponry
 
-# Misc
+- type: listing
+  id: UplinkBowHardlight
+  name: uplink-hardlight-bow-name
+  description: uplink-hardlight-bow-desc
+  icon: { sprite:  /Textures/_Goobstation/Objects/Weapons/Guns/Bow/hardlight_bow.rsi, state: icon }
+  productEntity: BowHardlight
+  cost:
+    Telecrystal: 80
+  categories:
+  - UplinkWeaponry
+  conditions:
+  - !type:StoreWhitelistCondition
+    blacklist:
+      tags:
+      - NukeOpsUplink
+
+# Wearables
+
 - type: listing
   id: UplinkHardsuitCybersunStealth
   name: uplink-hardsuit-cybersun-stealth-name
@@ -71,5 +98,16 @@
     Telecrystal: 35
   cost:
     Telecrystal: 55
+  categories:
+  - UplinkWearables
+
+- type: listing
+  id: UplinkClothingDreadnought
+  name: uplink-hardsuit-cybersun-dreadnought-name
+  description: uplink-hardsuit-cybersun-dreadnought-desc
+  icon: { sprite: _Goobstation/Clothing/OuterClothing/Hardsuits/dreadnought.rsi, state: icon }
+  productEntity: CrateSyndicateDreadnought
+  cost:
+    Telecrystal: 100
   categories:
   - UplinkWearables

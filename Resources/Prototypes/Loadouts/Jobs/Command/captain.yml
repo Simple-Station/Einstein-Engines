@@ -187,6 +187,26 @@
   items:
     - WeaponPulsePistolCaptain
 
+- type: loadout
+  id: LoadoutCaptainTerminus
+  category: JobsCommandCaptain
+  cost: 0
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+    - !type:CharacterAgeRequirement
+      min: 21
+    - !type:CharacterSpeciesRequirement
+      species:
+      - Oni
+  items:
+    - Terminus
+
 # Eyes
 - type: loadout
   id: LoadoutCaptainEyesSunglasses
@@ -398,6 +418,19 @@
         - Captain
   items:
     - ClothingOuterArmorCaptainCarapace
+
+- type: loadout
+  id: LoadoutCaptainOuterDogi
+  category: JobsCommandCaptain
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingOuterArmorCaptainDogi
 
 - type: loadout
   id: LoadoutCaptainOuterTrench

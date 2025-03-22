@@ -53,7 +53,7 @@
     back: ClothingBackpackCMOFilled
     shoes: ClothingShoesColorBrown
     id: CMOPDA
-    ears: ClothingHeadsetCMO
+    ears: ClothingHeadsetAltMedical # Goobstation
   innerClothingSkirt: ClothingUniformJumpskirtCMO
   satchel: ClothingBackpackSatchelCMOFilled
   duffelbag: ClothingBackpackDuffelCMOFilled

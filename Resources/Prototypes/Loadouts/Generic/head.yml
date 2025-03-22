@@ -550,3 +550,25 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutHead
+
+- type: loadout
+  id: ClothingHeadHatTacticalMaidHeadband
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadHatTacticalMaidHeadband
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+
+- type: loadout
+  id: ClothingHeadHatWitch1
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadHatWitch1
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
