@@ -651,6 +651,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+        - Command
+        - Dignitary
     - !type:CharacterTraitRequirement
       traits:
         - CyberEyes
@@ -732,6 +734,7 @@
       departments:
         - Security
         - Command
+        - Dignitary
     - !type:CharacterTraitRequirement
       traits:
         - CyberEyes
@@ -937,6 +940,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+        - Command
+        - Dignitary
     - !type:CharacterSpeciesRequirement
       species:
         - IPC
@@ -1033,6 +1038,7 @@
       departments:
         - Security
         - Command
+        - Dignitary
     - !type:CharacterSpeciesRequirement
       species:
         - IPC
