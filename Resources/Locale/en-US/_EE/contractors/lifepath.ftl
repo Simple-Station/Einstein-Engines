@@ -1,3 +1,5 @@
+humanoid-profile-editor-lifepath-label = Lifepath
+
 lifepath_name_spacer = Spacer
 lifepath_description_spacer = Just cruisin'!
 

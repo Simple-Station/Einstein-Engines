@@ -1,6 +1,5 @@
 using System.Linq;
 using System.Text.RegularExpressions;
-using Content.Shared._EE.Contractors.Prototypes;
 using Content.Shared.CCVar;
 using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Clothing.Loadouts.Systems;
@@ -244,6 +243,9 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             {
                 SkinColor = skinColor,
             },
+            Nationality = SharedHumanoidAppearanceSystem.DefaultNationality,
+            Employer = SharedHumanoidAppearanceSystem.DefaultEmployer,
+            Lifepath = SharedHumanoidAppearanceSystem.DefaultLifepath,
         };
     }
 
@@ -297,6 +299,9 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             Gender = gender,
             Species = species,
             Appearance = HumanoidCharacterAppearance.Random(species, sex),
+            Nationality = SharedHumanoidAppearanceSystem.DefaultNationality,
+            Employer = SharedHumanoidAppearanceSystem.DefaultEmployer,
+            Lifepath = SharedHumanoidAppearanceSystem.DefaultLifepath,
         };
     }
 

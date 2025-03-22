@@ -1,3 +1,5 @@
+humanoid-profile-editor-employer-label = Employer
+
 employer_name_nanotrasen = NanoTrasen
 employer_description_nanotrasen = Bravely default.
 

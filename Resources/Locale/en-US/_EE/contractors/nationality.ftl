@@ -1,3 +1,5 @@
+humanoid-profile-editor-nationality-label = Nationality
+
 nationality_name_bieselite = Bieselite
 nationality_description_bieselite = The good guys!
 

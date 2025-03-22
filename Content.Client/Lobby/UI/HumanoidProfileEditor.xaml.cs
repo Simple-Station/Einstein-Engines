@@ -252,17 +252,31 @@ namespace Content.Client.Lobby.UI
 
             #endregion Species
 
-            #region Nationality
+            #region Contractors
 
             RefreshNationalities();
+            RefreshEmployers();
+            RefreshLifepaths();
 
             NationalityButton.OnItemSelected += args =>
             {
-                SpeciesButton.SelectId(args.Id);
+                NationalityButton.SelectId(args.Id);
                 SetNationality(_nationalies[args.Id].ID);
             };
 
-            #endregion
+            EmployerButton.OnItemSelected += args =>
+            {
+                EmployerButton.SelectId(args.Id);
+                SetEmployer(_employers[args.Id].ID);
+            };
+
+            LifepathButton.OnItemSelected += args =>
+            {
+                LifepathButton.SelectId(args.Id);
+                SetLifepath(_lifepaths[args.Id].ID);
+            };
+
+            #endregion Contractors
 
             #region Height and Width
 
@@ -642,6 +656,48 @@ namespace Content.Client.Lobby.UI
                 SetNationality(SharedHumanoidAppearanceSystem.DefaultNationality);
         }
 
+        public void RefreshEmployers()
+        {
+            EmployerButton.Clear();
+            _employers.Clear();
+
+            _employers.AddRange(_prototypeManager.EnumeratePrototypes<EmployerPrototype>());
+            var employerIds = _employers.Select(o => o.ID).ToList();
+
+            for (var i = 0; i < _employers.Count; i++)
+            {
+                EmployerButton.AddItem(Loc.GetString(_employers[i].NameKey), i);
+
+                if (Profile?.Employer == _employers[i].ID)
+                    EmployerButton.SelectId(i);
+            }
+
+            // If our employer isn't available, reset it to default
+            if (Profile != null && !employerIds.Contains(Profile.Employer))
+                SetEmployer(SharedHumanoidAppearanceSystem.DefaultEmployer);
+        }
+
+        public void RefreshLifepaths()
+        {
+            LifepathButton.Clear();
+            _lifepaths.Clear();
+
+            _lifepaths.AddRange(_prototypeManager.EnumeratePrototypes<LifepathPrototype>());
+            var lifepathIds = _lifepaths.Select(o => o.ID).ToList();
+
+            for (var i = 0; i < _lifepaths.Count; i++)
+            {
+                LifepathButton.AddItem(Loc.GetString(_lifepaths[i].NameKey), i);
+
+                if (Profile?.Lifepath == _lifepaths[i].ID)
+                    LifepathButton.SelectId(i);
+            }
+
+            // If our lifepath isn't available, reset it to default
+            if (Profile != null && !lifepathIds.Contains(Profile.Lifepath))
+                SetLifepath(SharedHumanoidAppearanceSystem.DefaultLifepath);
+        }
+
         public void RefreshAntags()
         {
             AntagList.DisposeAllChildren();
@@ -784,6 +840,8 @@ namespace Content.Client.Lobby.UI
             RefreshJobs();
             RefreshSpecies();
             RefreshNationalities();
+            RefreshEmployers();
+            RefreshLifepaths();
             RefreshFlavorText();
             ReloadPreview();
 
@@ -1333,6 +1391,9 @@ namespace Content.Client.Lobby.UI
             UpdateSpeciesGuidebookIcon();
             IsDirty = true;
             ReloadProfilePreview();
+            RefreshNationalities();
+            RefreshEmployers();
+            RefreshLifepaths();
             ReloadClothes(); // Species may have job-specific gear, reload the clothes
         }
 
@@ -1342,7 +1403,25 @@ namespace Content.Client.Lobby.UI
             UpdateCharacterRequired();
             IsDirty = true;
             ReloadProfilePreview();
-            ReloadClothes(); // Nationalities may have job-specific gear, reload the clothes
+            ReloadClothes(); // Nationalities may have specific gear, reload the clothes
+        }
+
+        private void SetEmployer(string newEmployer)
+        {
+            Profile = Profile?.WithEmployer(newEmployer);
+            UpdateCharacterRequired();
+            IsDirty = true;
+            ReloadProfilePreview();
+            ReloadClothes(); // Employers may have specific gear, reload the clothes
+        }
+
+        private void SetLifepath(string newLifepath)
+        {
+            Profile = Profile?.WithLifepath(newLifepath);
+            UpdateCharacterRequired();
+            IsDirty = true;
+            ReloadProfilePreview();
+            ReloadClothes(); // Lifepaths may have specific gear, reload the clothes
         }
 
         private void SetName(string newName)
