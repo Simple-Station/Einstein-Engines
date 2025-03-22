@@ -79,17 +79,6 @@
 
 - type: entity
   parent: ClothingUniformSkirtBase
-  id: ClothingUniformSkirtTurtle
-  name: decorated turtle skirt
-  description: A turtle skirt with yellow straps and soft fabric.
-  components:
-  - type: Sprite
-    sprite: Nyanotrasen/Clothing/Uniforms/Jumpskirt/Decorskirt.rsi
-  - type: Clothing
-    sprite: Nyanotrasen/Clothing/Uniforms/Jumpskirt/Decorskirt.rsi
-
-- type: entity
-  parent: ClothingUniformSkirtBase
   id: ClothingCostumeNaota
   name: turquoise hoodie and shorts
   description: A hoodie with a small kangaroo pouch.

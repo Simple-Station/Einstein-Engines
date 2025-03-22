@@ -1,0 +1,21 @@
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformSkirtTurtle
+  name: decorated turtle skirt
+  description: A turtle skirt with yellow straps and soft fabric.
+  components:
+  - type: Sprite
+    sprite: Nyanotrasen/Clothing/Uniforms/Jumpskirt/Decorskirt.rsi
+  - type: Clothing
+    sprite: Nyanotrasen/Clothing/Uniforms/Jumpskirt/Decorskirt.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: YukonTurtleSkirt
+  name: Yukon Insurgent's Uniform
+  description: A turtle sweater and skirt, for long operations under the frozen sun.
+  components:
+  - type: Sprite
+    sprite: Nyanotrasen/Clothing/Uniforms/Jumpskirt/Decorskirt.rsi
+  - type: Clothing
+    sprite: Nyanotrasen/Clothing/Uniforms/Jumpskirt/Decorskirt.rsi
