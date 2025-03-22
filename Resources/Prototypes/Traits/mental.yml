@@ -41,12 +41,12 @@
     - !type:TraitReplaceComponent
       components:
         - type: PotentiaModifier
-          potentiaMultiplier: 1.25
+          potentiaMultiplier: 1.5
 
 - type: trait
   id: LowPotential
   category: Mental
-  points: 4
+  points: 5
   requirements:
     - !type:CharacterLogicOrRequirement
       requirements:
@@ -86,7 +86,7 @@
     - !type:TraitReplaceComponent
       components:
         - type: PotentiaModifier
-          potentiaMultiplier: 0.75
+          potentiaMultiplier: 0.5
 
 - type: trait
   id: LowAmplification
@@ -278,7 +278,7 @@
 - type: trait
   id: DispelPower
   category: Mental
-  points: -6
+  points: -4
   requirements:
     - !type:CharacterLogicOrRequirement
       requirements:
@@ -320,7 +320,7 @@
 - type: trait
   id: MetapsionicPower
   category: Mental
-  points: -4
+  points: -2
   requirements:
     - !type:CharacterLogicOrRequirement
       requirements:
@@ -405,7 +405,7 @@
 - type: trait
   id: PsychognomyPower
   category: Mental
-  points: -3
+  points: -1
   requirements:
     - !type:CharacterLogicOrRequirement
       requirements:
@@ -441,3 +441,45 @@
     - !type:TraitAddPsionics
       psionicPowers:
         - PsychognomyPower
+
+- type: trait
+  id: HealingWordPower
+  category: Mental
+  points: -6
+  requirements:
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Shadowkin # Innate Psionics
+        - !type:CharacterTraitRequirement
+          traits:
+            - LatentPsychic
+        - !type:CharacterJobRequirement
+          jobs:
+            - Librarian
+            - ForensicMantis
+            - ResearchDirector
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - ShadowkinBlackeye
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Chaplain
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMachine
+  functions:
+    - !type:TraitAddPsionics
+      psionicPowers:
+        - HealingWordPower
