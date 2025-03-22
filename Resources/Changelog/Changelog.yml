@@ -13464,3 +13464,43 @@ Entries:
   id: 7008
   time: '2025-03-21T00:13:28.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2022
+- author: Zeta_Null
+  changes:
+    - type: Tweak
+      message: Tweaked several tiles to make variants
+    - type: Add
+      message: >-
+        Added a "Worn steel tile" variant for mappers to include, just a steel
+        tile with a missing panel
+    - type: Add
+      message: Added a couple of text decals
+  id: 7009
+  time: '2025-03-21T20:26:59.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2038
+- author: Zeta
+  changes:
+    - type: Add
+      message: '"Engi" text decal to go with the rest of my decal text set.'
+  id: 7010
+  time: '2025-03-22T02:57:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2052
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: steadfast is now 4 points
+    - type: Tweak
+      message: Bionic leg is disabled for now
+  id: 7011
+  time: '2025-03-22T17:44:15.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2036
+- author: Ichaie
+  changes:
+    - type: Tweak
+      message: Gax, Rad, Bagel, Cyberiad, Meta and Lambda now have AI Turrets
+    - type: Fix
+      message: >-
+        Cyberiad: add missing substation to security, add missing cables to
+        bridge
+  id: 7012
+  time: '2025-03-22T17:48:52.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2043
