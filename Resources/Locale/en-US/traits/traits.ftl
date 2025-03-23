@@ -304,6 +304,11 @@ trait-description-WeaponsGeneralist =
     You are a jack of all trades with melee weapons, enabling you to be versatile with your weapon arsenal.
     Your melee damage bonus for all Brute damage types (Blunt, Slash, Piercing) becomes 30%.
 
+trait-name-Mystic = Mystic
+trait-description-Mystic =
+    You are trained in Mysticism instead of melee combat, reducing your melee capabilities but drastically increasing your psionic potential.
+    Your melee damage bonus for all Brute damage types (Blunt, Slash, Piercing) becomes 10%, but your Potentia gain is drastically increased.
+
 trait-name-Singer = Singer
 trait-description-Singer = You are naturally capable of singing simple melodies with your voice.
 
@@ -507,6 +512,11 @@ trait-description-MetapsionicPower =
     to detect whether or not psions are nearby. This ability has a wide area of effect, and cannot precisely
     scan individual entities. Still, it is better than being blind.
 
+trait-name-HealingWordPower = Healing Word
+trait-description-HealingWordPower =
+    Your Mentalic abilities includes the power to heal the wounded.
+    This power, commonly known as "Healing Word", allows the user to heal themselves or others with their mind.
+
 trait-name-XenoglossyPower = Xenoglossy
 trait-description-XenoglossyPower =
     An advanced form of Telepathy, Xenoglossy is the ability to speak using emotional and metaphysical concepts,
@@ -599,3 +609,8 @@ trait-name-Vampirism = Vampirism
 trait-description-Vampirism =
     Your body has evolved to be able to suck blood from beings that contain it and metabolize it into useful compounds.
     You cannot eat normal food, but drinking blood satiates your hunger and thirst, and also improves your health.
+
+trait-name-MothFlight = True Flight
+trait-description-MothFlight =
+    Unlike other mothpeople, your body is light enough and your wings are strong enough to be able to fly under normal gravity.
+    Flight is strenuous, however, requiring your hands to be free and quickly draining your stamina.
