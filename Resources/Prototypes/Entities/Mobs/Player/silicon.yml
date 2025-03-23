@@ -619,7 +619,8 @@
   - type: BlockMovement
     blockInteraction: false
   - type: SiliconLawProvider
-    laws: Asimov
+    laws: NTDefault # Goobstation - AI/borg law changes - set AI to NTDefault
+  - type: IonStormTarget # Goobstation - AI/borg law changes - ion stormable AI
   - type: SiliconLawBound
   - type: ActionGrant
     actions:
