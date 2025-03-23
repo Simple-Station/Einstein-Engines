@@ -13605,3 +13605,16 @@ Entries:
   id: 7020
   time: '2025-03-23T10:24:02.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2037
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: >-
+        Borgs now have a law 0 dictating they must follow the Station AIs
+        commands
+    - type: Tweak
+      message: Station AI now spawns with NT Default rather than Asimov
+    - type: Tweak
+      message: Slightly increases the chances of ion storm
+  id: 7021
+  time: '2025-03-23T22:09:21.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2064
