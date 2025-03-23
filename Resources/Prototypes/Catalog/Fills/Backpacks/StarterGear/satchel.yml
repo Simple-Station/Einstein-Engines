@@ -18,6 +18,7 @@
       - id: SyndiHypo
       - id: JugWater
       - id: JugNutriment
+      - id: MedkitCombatFilled
 
 - type: entity
   parent: ClothingBackpackSatchelClown
