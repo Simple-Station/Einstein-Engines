@@ -1421,9 +1421,6 @@ namespace Content.Client.Lobby.UI
             UpdateSpeciesGuidebookIcon();
             IsDirty = true;
             ReloadProfilePreview();
-            RefreshNationalities();
-            RefreshEmployers();
-            RefreshLifepaths();
             ReloadClothes(); // Species may have job-specific gear, reload the clothes
         }
 
@@ -2708,6 +2705,9 @@ namespace Content.Client.Lobby.UI
 
         private void UpdateCharacterRequired()
         {
+            RefreshNationalities();
+            RefreshEmployers();
+            RefreshLifepaths();
             UpdateRoleRequirements();
             UpdateTraits(TraitsShowUnusableButton.Pressed);
             UpdateLoadouts(LoadoutsShowUnusableButton.Pressed);

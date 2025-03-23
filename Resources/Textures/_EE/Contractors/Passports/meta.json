@@ -1,0 +1,29 @@
+{
+    "version": 1,
+    "license": null,
+    "copyright": "Base open/close sprites taken from https://github.com/Aurorastation/Aurora.3/commit/c803da2644812ea9e175d2e84c5bbaf55fab6c3d, then edited by Timfa",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "passcard_sol_closed"
+        },
+        {
+            "name": "passcard_sol_open"
+        },
+        {
+            "name": "passcard_biesel_closed"
+        },
+        {
+            "name": "passcard_biesel_open"
+        },
+        {
+            "name": "passcard_species_human"
+        },
+        {
+            "name": "passcard_species_oni"
+        }
+    ]
+}
