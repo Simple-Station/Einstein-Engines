@@ -24,7 +24,6 @@
             Captain: [ 1, 1 ]
             BlueshieldOfficer: [ 1, 1]
             NanotrasenRepresentative: [ 1, 1 ]
-            AdministrativeAssistant: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 1, 2 ]
             Botanist: [ 2, 4 ]
@@ -42,12 +41,14 @@
             AtmosphericTechnician: [ 2, 3 ]
             StationEngineer: [ 5, 7 ]
             TechnicalAssistant: [ 3, 4 ]
+            SeniorEngineer: [ 1, 1 ]
             #medical
             ChiefMedicalOfficer: [ 1, 1 ]
             Chemist: [ 2, 2 ]
             MedicalDoctor: [ 4, 6 ]
             MedicalIntern: [ 3, 5 ]
             Paramedic: [ 1, 2 ]
+            SeniorPhysician: [ 1, 1 ]
             #science
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 4, 6 ]
@@ -55,6 +56,7 @@
             Chaplain: [ 1, 2 ]
             ForensicMantis: [ 1, 1 ]
             Librarian: [ 1, 1 ]
+            SeniorResearcher: [ 1, 1 ]
             #security
             HeadOfSecurity: [ 1, 1 ]
             Warden: [ 1, 1 ]
@@ -62,6 +64,7 @@
             SecurityOfficer: [ 5, 8 ]
             SecurityCadet: [ 3, 5 ]
             Prisoner: [ 2, 3 ]
+            SeniorOfficer: [ 1, 1 ]
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 2, 3 ]
