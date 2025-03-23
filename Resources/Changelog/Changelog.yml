@@ -13533,3 +13533,20 @@ Entries:
   id: 7015
   time: '2025-03-23T00:11:57.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2031
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: Noospheric Zap is back, with a shorter cooldown.
+    - type: Add
+      message: Oni only Mystic trait, trade your physical ability for Potentia gain.
+    - type: Add
+      message: Healing Word trait.
+    - type: Tweak
+      message: Tweaked Potenia gain on High/Low Potential it's much higher/lower.
+    - type: Tweak
+      message: tweaked Psionic Powers pool weights a little
+    - type: Tweak
+      message: Power Overwhelming no longer takes 2 spell slots
+  id: 7016
+  time: '2025-03-23T01:10:05.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2011
