@@ -13550,3 +13550,14 @@ Entries:
   id: 7016
   time: '2025-03-23T01:10:05.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2011
+- author: Will-Oliver-Br
+  changes:
+    - type: Tweak
+      message: All medals now have the ability to specify the reason for the reward.
+    - type: Add
+      message: >-
+        The list of awarded medals and their recipients is now displayed at the
+        end of the round.
+  id: 7017
+  time: '2025-03-23T10:17:08.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2061
