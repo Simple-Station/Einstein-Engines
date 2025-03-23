@@ -13522,3 +13522,14 @@ Entries:
   id: 7014
   time: '2025-03-22T21:26:02.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2033
+- author: SolarisBirb
+  changes:
+    - type: Add
+      message: >-
+        Added an AI sat, xenobiolab for epi, expanded supermatter maints,
+        expanded atmos, added a shuttle making dock, and a courtroom. 
+    - type: Tweak
+      message: Moved ore silo to vault. Added a spare captain ID locker in vault.
+  id: 7015
+  time: '2025-03-23T00:11:57.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2031
