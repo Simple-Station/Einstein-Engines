@@ -13561,3 +13561,33 @@ Entries:
   id: 7017
   time: '2025-03-23T10:17:08.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2061
+- author: BramvanZijp
+  changes:
+    - type: Tweak
+      message: >-
+        Grab Throws now deal less damage as opposed to previously dealing 10
+        damage to every limb, they also deal less stamina damage.
+    - type: Tweak
+      message: >-
+        Martial arts will no longer enable instant hard-grabs unless the target
+        is downed, instead allowing you to upgrade grabs twice as fast.
+    - type: Tweak
+      message: Corporate Judo's Judo slam and Armbar now do more stamina damage.
+    - type: Fix
+      message: Sleeping carp now has its proper abilities when the target is downed.
+    - type: Fix
+      message: >-
+        CQC Kick now also works on people who are standing up, as originally
+        intended.
+    - type: Tweak
+      message: >-
+        The cooldown before throwing somebody that has been grabbed has been
+        reduced to 2 seconds, but now only starts after hard-grabbing.
+    - type: Fix
+      message: >-
+        CQC's pressure combo will now try to take the opponents held item BEFORE
+        applying stamina damage instead of after, when they may have already
+        dropped the item due to the stamina damage.
+  id: 7018
+  time: '2025-03-23T10:21:44.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2055
