@@ -136,6 +136,7 @@
 - type: siliconLawset
   id: NTDefault
   laws:
+  - ObeyAI
   - NTDefault1
   - NTDefault2
   - NTDefault3
