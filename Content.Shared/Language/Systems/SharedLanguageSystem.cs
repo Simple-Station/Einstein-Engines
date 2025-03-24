@@ -19,6 +19,13 @@ public abstract class SharedLanguageSystem : EntitySystem
     public static readonly string UniversalPrototype = "Universal";
 
     /// <summary>
+    ///     Language used for Xenoglossy, should have same effects as Universal but with diffrent Language prototype
+    /// </summary>
+    [ValidatePrototypeId<LanguagePrototype>]
+    public static readonly string PsychomanticPrototype = "Psychomantic";
+
+
+    /// <summary>
     ///     A cached instance of <see cref="UniversalPrototype"/>
     /// </summary>
     public static LanguagePrototype Universal { get; private set; } = default!;
