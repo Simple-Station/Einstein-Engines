@@ -98,7 +98,6 @@ namespace Content.Client.Lobby.UI
 
         public event Action<List<ProtoId<GuideEntryPrototype>>>? OnOpenGuidebook;
 
-        private ISawmill _sawmill;
         [ValidatePrototypeId<LocalizedDatasetPrototype>]
         private const string StationAiNames = "NamesAI";
 
@@ -876,18 +875,9 @@ namespace Content.Client.Lobby.UI
 
                 foreach (var job in jobs)
                 {
-                    var jobContainer = new BoxContainer()
-                    {
-                        Orientation = LayoutOrientation.Horizontal,
-                    };
-
-                    var selector = new RequirementsSelector()
-                    {
-                        Margin = new Thickness(3f, 3f, 3f, 0f),
-                    };
-                    selector.OnOpenGuidebook += OnOpenGuidebook;
                     var jobContainer = new BoxContainer { Orientation = LayoutOrientation.Horizontal, };
                     var selector = new RequirementsSelector { Margin = new(3f, 3f, 3f, 0f) };
+                    selector.OnOpenGuidebook += OnOpenGuidebook;
 
                     var icon = new TextureRect
                     {
