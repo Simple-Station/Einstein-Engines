@@ -27,6 +27,9 @@
       traits:
         - Foreigner
         - ForeignerLight
+    - !type:CharacterEmployerRequirement
+      employers:
+      - NanoTrasen
   startingGear: AdminAssistantGear
   icon: "JobIconAdminAssitant"
   supervisors: job-supervisors-command

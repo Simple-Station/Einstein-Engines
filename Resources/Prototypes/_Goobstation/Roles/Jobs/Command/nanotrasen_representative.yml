@@ -12,6 +12,9 @@
       traits:
         - Foreigner
         - ForeignerLight
+    - !type:CharacterEmployerRequirement
+      employers:
+      - NanoTrasen
   weight: 20
   startingGear: NanotrasenRepresentativeGear
   icon: "JobIconNanotrasenRepresentative"

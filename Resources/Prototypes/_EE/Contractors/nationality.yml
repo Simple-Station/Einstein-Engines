@@ -11,3 +11,13 @@
   descriptionKey: nationality_description_solarian
   hostile:
   - Bieselite
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Human
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - SolCommon
+      languagesUnderstood:
+        - SolCommon

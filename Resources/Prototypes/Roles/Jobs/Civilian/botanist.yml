@@ -13,6 +13,11 @@
   extendedAccess:
   - Kitchen
   - Bar
+  requirements:
+    - !type:CharacterEmployerRequirement
+      inverted: true
+      employers:
+      - Unemployed
 
 - type: startingGear
   id: BotanistGear

@@ -27,6 +27,10 @@
       inverted: true
       species:
         - Human
+    - !type:CharacterNationalityRequirement
+      inverted: true
+      nationalities:
+        - Solarian
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:

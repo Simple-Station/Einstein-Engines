@@ -9,6 +9,9 @@
       traits:
         - Foreigner
         - ForeignerLight
+    - !type:CharacterEmployerRequirement
+      employers:
+      - NanoTrasen
   weight: 10
   startingGear: QuartermasterGear
   icon: "JobIconQuarterMaster"

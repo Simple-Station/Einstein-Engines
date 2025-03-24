@@ -16,6 +16,10 @@
         - Blindness
         - Pacifist
         - BrittleBoneDisease
+    - !type:CharacterEmployerRequirement
+      inverted: true
+      employers:
+      - Unemployed
   startingGear: SecurityOfficerGear
   icon: "JobIconSecurityOfficer"
   supervisors: job-supervisors-hos
