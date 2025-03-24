@@ -333,8 +333,8 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.45,-0.45,0.45,0.45"
-          density: 55
+            bounds: "-0.45,-0.45,0.45,0.45"
+        density: 55
         mask: # tables should collide with other tables
         - TableMask
         layer:
