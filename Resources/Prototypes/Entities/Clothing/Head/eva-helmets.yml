@@ -27,7 +27,6 @@
     sprite: Clothing/Head/Helmets/eva_large.rsi
   - type: Clothing
     sprite: Clothing/Head/Helmets/eva_large.rsi
-  - type: IngestionBlocker
 
 #Syndicate EVA Helmet
 - type: entity
@@ -41,7 +40,6 @@
     sprite: Clothing/Head/Helmets/eva_syndicate.rsi
   - type: Clothing
     sprite: Clothing/Head/Helmets/eva_syndicate.rsi
-  - type: IngestionBlocker
 
 #Cosmonaut Helmet
 - type: entity
@@ -55,7 +53,6 @@
     sprite: Clothing/Head/Helmets/cosmonaut.rsi
   - type: Clothing
     sprite: Clothing/Head/Helmets/cosmonaut.rsi
-  - type: IngestionBlocker
 
 #Ancient Void Helmet
 - type: entity
@@ -69,4 +66,3 @@
     sprite: Clothing/Head/Helmets/ancientvoidsuit.rsi
   - type: Clothing
     sprite: Clothing/Head/Helmets/ancientvoidsuit.rsi
-  - type: IngestionBlocker
