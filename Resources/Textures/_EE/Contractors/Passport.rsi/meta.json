@@ -8,22 +8,22 @@
     },
     "states": [
         {
-            "name": "passcard_sol_closed"
+            "name": "passport_sol_closed"
         },
         {
-            "name": "passcard_sol_open"
+            "name": "passport_sol_open"
         },
         {
-            "name": "passcard_biesel_closed"
+            "name": "passport_biesel_closed"
         },
         {
-            "name": "passcard_biesel_open"
+            "name": "passport_biesel_open"
         },
         {
-            "name": "passcard_species_human"
+            "name": "passport_species_human"
         },
         {
-            "name": "passcard_species_oni"
+            "name": "passport_species_oni"
         }
     ]
 }
