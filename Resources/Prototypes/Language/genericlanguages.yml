@@ -51,10 +51,10 @@
     color: "#C29EFF" # a nice psychic purple, a bit lighter than Ya'ssa
     fontId: Megrim # Nice and clean
     speechVerbOverrides:
-    - chat-speech-verb-Universal-1
-    - chat-speech-verb-Universal-2
-    - chat-speech-verb-Universal-3
-    - chat-speech-verb-Universal-4
+    - chat-speech-verb-Psychomantic-1
+    - chat-speech-verb-Psychomantic-2
+    - chat-speech-verb-Psychomantic-3
+    - chat-speech-verb-Psychomantic-4
   obfuscation:
     !type:ReplacementObfuscation
     replacement:

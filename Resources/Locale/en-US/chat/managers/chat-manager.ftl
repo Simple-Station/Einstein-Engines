@@ -175,7 +175,7 @@ chat-speech-verb-name-supermatter = Supermatter
 chat-speech-verb-supermatter = states
 
 
-chat-speech-verb-Universal-1 = resonates
-chat-speech-verb-Universal-2 = projects
-chat-speech-verb-Universal-3 = impresses
-chat-speech-verb-Universal-4 = radiates
+chat-speech-verb-Psychomantic-1 = resonates
+chat-speech-verb-Psychomantic-2 = projects
+chat-speech-verb-Psychomantic-3 = impresses
+chat-speech-verb-Psychomantic-4 = radiates
