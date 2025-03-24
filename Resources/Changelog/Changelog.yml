@@ -13625,3 +13625,18 @@ Entries:
   id: 7022
   time: '2025-03-24T02:46:11.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2070
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: Space Ninja gear is now unremovable
+    - type: Tweak
+      message: Space Ninja can now eat through their helmet/mask
+    - type: Tweak
+      message: Energy katana deflect chance from 30% to 50%
+    - type: Remove
+      message: >-
+        Removes the shuriken spawn ability, as it has not functioned for ages,
+        and I'm too lazy to fix it
+  id: 7023
+  time: '2025-03-24T03:10:13.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2039
