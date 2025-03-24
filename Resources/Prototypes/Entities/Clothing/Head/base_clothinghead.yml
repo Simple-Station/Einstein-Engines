@@ -129,7 +129,6 @@
   - type: IgniteFromGasImmunity
     parts:
     - Head
-  - type: IngestionBlocker
   - type: Clothing
     #Copies ClothingHeadHardsuitBase behavior
     equipSound: /Audio/Mecha/mechmove03.ogg
