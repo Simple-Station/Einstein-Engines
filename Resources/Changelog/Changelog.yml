@@ -13618,3 +13618,10 @@ Entries:
   id: 7021
   time: '2025-03-23T22:09:21.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2064
+- author: SolarisBirb
+  changes:
+    - type: Fix
+      message: Removed massive texture bloat.
+  id: 7022
+  time: '2025-03-24T02:46:11.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2070
