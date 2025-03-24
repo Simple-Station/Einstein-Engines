@@ -240,7 +240,7 @@
 - type: entity
   id: ActionToggleFlight
   name: Fly
-  description: Make use of your wings to fly. Beat the flightless bird allegations.
+  description: Make use of your wings to fly. Beat the flightlessness allegations.
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction

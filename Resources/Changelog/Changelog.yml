@@ -13504,3 +13504,146 @@ Entries:
   id: 7012
   time: '2025-03-22T17:48:52.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2043
+- author: GNUtopia
+  changes:
+    - type: Add
+      message: Added True Flight, a moth-exclusive trait that grants temporary flight
+    - type: Tweak
+      message: Gave moths 50% temperature protection
+    - type: Tweak
+      message: Reduced severity of slowdown due to cold on moths
+  id: 7013
+  time: '2025-03-22T21:24:00.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2050
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: Dignitary Tag to OmniHud/SecHud
+  id: 7014
+  time: '2025-03-22T21:26:02.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2033
+- author: SolarisBirb
+  changes:
+    - type: Add
+      message: >-
+        Added an AI sat, xenobiolab for epi, expanded supermatter maints,
+        expanded atmos, added a shuttle making dock, and a courtroom. 
+    - type: Tweak
+      message: Moved ore silo to vault. Added a spare captain ID locker in vault.
+  id: 7015
+  time: '2025-03-23T00:11:57.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2031
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: Noospheric Zap is back, with a shorter cooldown.
+    - type: Add
+      message: Oni only Mystic trait, trade your physical ability for Potentia gain.
+    - type: Add
+      message: Healing Word trait.
+    - type: Tweak
+      message: Tweaked Potenia gain on High/Low Potential it's much higher/lower.
+    - type: Tweak
+      message: tweaked Psionic Powers pool weights a little
+    - type: Tweak
+      message: Power Overwhelming no longer takes 2 spell slots
+  id: 7016
+  time: '2025-03-23T01:10:05.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2011
+- author: Will-Oliver-Br
+  changes:
+    - type: Tweak
+      message: All medals now have the ability to specify the reason for the reward.
+    - type: Add
+      message: >-
+        The list of awarded medals and their recipients is now displayed at the
+        end of the round.
+  id: 7017
+  time: '2025-03-23T10:17:08.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2061
+- author: BramvanZijp
+  changes:
+    - type: Tweak
+      message: >-
+        Grab Throws now deal less damage as opposed to previously dealing 10
+        damage to every limb, they also deal less stamina damage.
+    - type: Tweak
+      message: >-
+        Martial arts will no longer enable instant hard-grabs unless the target
+        is downed, instead allowing you to upgrade grabs twice as fast.
+    - type: Tweak
+      message: Corporate Judo's Judo slam and Armbar now do more stamina damage.
+    - type: Fix
+      message: Sleeping carp now has its proper abilities when the target is downed.
+    - type: Fix
+      message: >-
+        CQC Kick now also works on people who are standing up, as originally
+        intended.
+    - type: Tweak
+      message: >-
+        The cooldown before throwing somebody that has been grabbed has been
+        reduced to 2 seconds, but now only starts after hard-grabbing.
+    - type: Fix
+      message: >-
+        CQC's pressure combo will now try to take the opponents held item BEFORE
+        applying stamina damage instead of after, when they may have already
+        dropped the item due to the stamina damage.
+  id: 7018
+  time: '2025-03-23T10:21:44.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2055
+- author: ElusiveCoin
+  changes:
+    - type: Fix
+      message: Fixed the Chitinid diet and guidebook entry! scavenger eater time!
+  id: 7019
+  time: '2025-03-23T10:22:48.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2060
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: Added the Annie, WSPR, M90, and the Burner
+  id: 7020
+  time: '2025-03-23T10:24:02.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2037
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: >-
+        Borgs now have a law 0 dictating they must follow the Station AIs
+        commands
+    - type: Tweak
+      message: Station AI now spawns with NT Default rather than Asimov
+    - type: Tweak
+      message: Slightly increases the chances of ion storm
+  id: 7021
+  time: '2025-03-23T22:09:21.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2064
+- author: SolarisBirb
+  changes:
+    - type: Fix
+      message: Removed massive texture bloat.
+  id: 7022
+  time: '2025-03-24T02:46:11.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2070
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: Space Ninja gear is now unremovable
+    - type: Tweak
+      message: Space Ninja can now eat through their helmet/mask
+    - type: Tweak
+      message: Energy katana deflect chance from 30% to 50%
+    - type: Remove
+      message: >-
+        Removes the shuriken spawn ability, as it has not functioned for ages,
+        and I'm too lazy to fix it
+  id: 7023
+  time: '2025-03-24T03:10:13.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2039
+- author: SolarisBirb
+  changes:
+    - type: Tweak
+      message: Turrets will now shoot lings except for NT turrets.
+  id: 7024
+  time: '2025-03-24T16:02:24.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2071
