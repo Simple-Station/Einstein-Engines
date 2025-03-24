@@ -69,7 +69,6 @@ public abstract partial class SharedProjectileSystem : EntitySystem
 
     private void OnEmbedActivate(EntityUid uid, EmbeddableProjectileComponent component, ActivateInWorldEvent args)
     {
-
         // Nuh uh
         if (component.RemovalTime == null || args.Handled || !args.Complex
             || !TryComp(uid, out PhysicsComponent? physics) || physics.BodyType != BodyType.Static)
