@@ -13640,3 +13640,10 @@ Entries:
   id: 7023
   time: '2025-03-24T03:10:13.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2039
+- author: SolarisBirb
+  changes:
+    - type: Tweak
+      message: Turrets will now shoot lings except for NT turrets.
+  id: 7024
+  time: '2025-03-24T16:02:24.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2071
