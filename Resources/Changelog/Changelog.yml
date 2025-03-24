@@ -13647,3 +13647,12 @@ Entries:
   id: 7024
   time: '2025-03-24T16:02:24.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2071
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added Anchor, a new midpop map for 20 or more players created by the SiN
+        Mapping Team.
+  id: 7025
+  time: '2025-03-24T20:02:06.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2068
