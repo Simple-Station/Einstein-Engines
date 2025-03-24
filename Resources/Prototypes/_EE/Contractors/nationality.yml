@@ -21,3 +21,40 @@
         - SolCommon
       languagesUnderstood:
         - SolCommon
+
+- type: nationality
+  id: Valyrian
+  nameKey: nationality_name_valyrian
+  descriptionKey: nationality_description_valyrian
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Harpy
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - ValyrianStandard
+      languagesUnderstood:
+        - ValyrianStandard
+
+- type: nationality
+  id: Elyran
+  nameKey: nationality_name_elyran
+  descriptionKey: nationality_description_elyran
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - Elyran
+      languagesUnderstood:
+        - Elyran
+
+- type: nationality
+  id: Nederlandic
+  nameKey: nationality_name_nederlandic
+  descriptionKey: nationality_description_nederlandic
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - NovuNederic
+      languagesUnderstood:
+        - NovuNederic
