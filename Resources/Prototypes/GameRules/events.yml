@@ -181,7 +181,6 @@
       - type: AutoImplant
         implants:
         - DeathAcidifierImplant
-        - FreedomImplant
       - type: RandomMetadata
         nameSegments:
         - names_ninja_title

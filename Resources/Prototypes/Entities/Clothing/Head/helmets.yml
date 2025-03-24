@@ -166,7 +166,6 @@
   - type: Tag
     tags:
     - WhitelistChameleon
-  - type: IngestionBlocker
   - type: IdentityBlocker
   - type: HideLayerClothing
     slots:

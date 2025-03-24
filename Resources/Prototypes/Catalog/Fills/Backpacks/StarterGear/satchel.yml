@@ -11,14 +11,15 @@
   - type: StorageFill
     contents:
       - id: Crowbar
-      - id: PowerDrill
+      - id: Screwdriver
+      - id: Wrench
       - id: Wirecutter
-      - id: WelderIndustrialAdvanced
+      - id: Welder
       - id: Multitool
-      - id: SyndiHypo
-      - id: JugWater
-      - id: JugNutriment
-      - id: MedkitCombatFilled
+      - id: FoodSnackDango
+      - id: FoodSnackDango
+      - id: DrinkSakeBottleFull
+
 
 - type: entity
   parent: ClothingBackpackSatchelClown
