@@ -154,7 +154,7 @@
 
 #Space Ninja Helmet
 - type: entity
-  parent: ClothingHeadEVAHelmetBase
+  parent: ClothingHeadEVAHelmetNoIngestionBlocker
   id: ClothingHeadHelmetSpaceNinja
   name: space ninja helmet
   description: What may appear to be a simple black garment is in fact a highly sophisticated nano-weave helmet. Standard issue ninja gear.
@@ -166,12 +166,13 @@
   - type: Tag
     tags:
     - WhitelistChameleon
-  - type: IngestionBlocker
   - type: IdentityBlocker
   - type: HideLayerClothing
     slots:
     - Hair
     - Snout
+  - type: Unremoveable
+
 
 #Templar Helmet
 - type: entity

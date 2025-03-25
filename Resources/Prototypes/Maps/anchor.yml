@@ -1,0 +1,76 @@
+- type: gameMap
+  id: Anchor
+  mapName: 'Anchor'
+  mapPath: /Maps/anchor.yml
+  minPlayers: 20
+  maxPlayers: 90
+  fallback: true
+  stations:
+    Anchor:
+      stationProto: StandardNanotrasenStationNoShuttles
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Anchor {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/Shuttles/DeltaV/NTES_UCLB.yml
+        - type: StationJobs
+          overflowJobs:
+            - Passenger
+          availableJobs:
+            #service
+            Captain: [ 1, 1 ]
+            BlueshieldOfficer: [ 1, 1]
+            NanotrasenRepresentative: [ 1, 1 ]
+            HeadOfPersonnel: [ 1, 1 ]
+            Bartender: [ 1, 2 ]
+            Botanist: [ 2, 4 ]
+            Chef: [ 1, 2 ]
+            Janitor: [ 2, 3 ]
+            ServiceWorker: [ 2, 4 ]
+            Boxer: [ 2, 2 ]
+            Clown: [ 1, 1 ]
+            Lawyer: [ 2, 2 ]
+            Reporter: [ 2, 2 ]
+            Musician: [ 1, 1 ]
+            Mime: [ 1, 1 ]
+            #engineering
+            ChiefEngineer: [ 1, 1 ]
+            AtmosphericTechnician: [ 2, 3 ]
+            StationEngineer: [ 5, 7 ]
+            TechnicalAssistant: [ 3, 4 ]
+            SeniorEngineer: [ 1, 1 ]
+            #medical
+            ChiefMedicalOfficer: [ 1, 1 ]
+            Chemist: [ 2, 2 ]
+            MedicalDoctor: [ 4, 6 ]
+            MedicalIntern: [ 3, 5 ]
+            Paramedic: [ 1, 2 ]
+            SeniorPhysician: [ 1, 1 ]
+            #science
+            ResearchDirector: [ 1, 1 ]
+            Scientist: [ 4, 6 ]
+            ResearchAssistant: [ 2, 4 ]
+            Chaplain: [ 1, 2 ]
+            ForensicMantis: [ 1, 1 ]
+            Librarian: [ 1, 1 ]
+            SeniorResearcher: [ 1, 1 ]
+            #security
+            HeadOfSecurity: [ 1, 1 ]
+            Warden: [ 1, 1 ]
+            Detective: [ 1, 1 ]
+            SecurityOfficer: [ 5, 8 ]
+            SecurityCadet: [ 3, 5 ]
+            Prisoner: [ 2, 3 ]
+            SeniorOfficer: [ 1, 1 ]
+            #supply
+            Quartermaster: [ 1, 1 ]
+            SalvageSpecialist: [ 2, 3 ]
+            CargoTechnician: [ 2, 4 ]
+            #civillian
+            Passenger: [ -1, -1 ]
+            #silicon
+            Borg: [ 2, 3 ]
+            StationAi: [ 1, 1 ]

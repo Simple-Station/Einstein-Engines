@@ -51,6 +51,9 @@ public sealed partial class BlockingSystem
             !TryComp<DamageableComponent>(component.BlockingItem, out var dmgComp))
             return;
 
+        if (!_toggle.IsActivated(component.BlockingItem.Value)) // Goobstation
+            return;
+
         var ev = new BeforeBlockingEvent(uid, args.Origin);
         RaiseLocalEvent(component.BlockingItem.Value, ev);
         if (ev.Cancelled)

@@ -20,6 +20,8 @@
       traits:
         - Spearmaster
         - WeaponsGeneralist
+        - Mystic
+        
 
 - type: trait
   id: Spearmaster
@@ -43,6 +45,7 @@
       traits:
         - Swashbuckler
         - WeaponsGeneralist
+        - Mystic
 
 - type: trait
   id: WeaponsGeneralist
@@ -66,6 +69,44 @@
       traits:
         - Swashbuckler
         - Spearmaster
+        - Mystic
+
+- type: trait
+  id: Mystic
+  category: Mental
+  points: -1
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+      - type: OniDamageModifier
+        modifiers:
+          coefficients:
+            Blunt: 1.1
+            Slash: 1.1
+            Piercing: 1.1
+      - type: PotentiaModifier
+        potentiaMultiplier: 1.15
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Oni
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Swashbuckler
+        - Spearmaster
+        - WeaponsGeneralist
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterTraitRequirement
+          traits:
+            - LatentPsychic
+        - !type:CharacterJobRequirement
+          jobs:
+            - Chaplain
+            - Librarian
+            - ResearchDirector
+            - ForensicMantis
 
 - type: trait
   id: ShadowkinBlackeye
@@ -83,3 +124,20 @@
     - !type:CharacterSpeciesRequirement
       species:
         - Shadowkin
+
+- type: trait
+  id: MothFlight
+  category: Physical
+  points: -5
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: Flight
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Moth
+    - !type:CharacterHeightRequirement # big moffs are too heavy to fly
+      max: 160
+    - !type:CharacterWidthRequirement
+      max: 35
