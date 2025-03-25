@@ -855,11 +855,7 @@
     color: "#e6e227"
   - type: GuideHelp
     guides:
-    - SolarPanels
     - Power
-  - type: Tag
-    tags:
-    - DroneUsable # Goobstation
 
 - type: entity
   parent: BaseComputerAiAccess

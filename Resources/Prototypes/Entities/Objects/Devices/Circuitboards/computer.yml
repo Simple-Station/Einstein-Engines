@@ -20,8 +20,6 @@
     - type: Tag
       tags:
         - ComputerBoard
-        - DroneUsable # Goobstation
-
 
 - type: entity
   parent: BaseComputerCircuitboard

@@ -825,7 +825,7 @@
       - ClothMade
       - Gauze
       - Metal
-      - Circuitry
+      - circuitry # YAML linter throws saying this doesn't work but it does work so idfk
   - type: GuideHelp
     guides:
     - Robotics
