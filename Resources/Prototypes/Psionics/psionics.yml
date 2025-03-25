@@ -18,6 +18,7 @@
     - !type:AddPsionicAssayFeedback
       assayFeedback: dispel-power-metapsionic-feedback
     - !type:AddPsionicStatSources
+      amplificationModifier: 1
       dampeningModifier: 1
   removalFunctions:
     - !type:RemovePsionicActions
@@ -204,7 +205,7 @@
     - !type:AddPsionicAssayFeedback
       assayFeedback: psionic-regeneration-power-metapsionic-feedback
     - !type:AddPsionicStatSources
-      amplificationModifier: 0.5
+      amplificationModifier: 1
       dampeningModifier: 0.5
   removalFunctions:
     - !type:RemovePsionicActions
@@ -371,11 +372,11 @@
     - !type:AddPsionicAssayFeedback
       assayFeedback: healing-word-power-feedback
     - !type:AddPsionicStatSources
-      amplificationModifier: 0.5
+      amplificationModifier: 1
       dampeningModifier: 0.5
     - !type:PsionicAddAvailablePowers
       powerPrototype: RevivifyPower
-      weight: 0.1
+      weight: 0.3
   removalFunctions:
     - !type:RemovePsionicActions
     - !type:RemovePsionicStatSources
@@ -453,7 +454,7 @@
       assayFeedback: power-overwhelming-power-feedback
     - !type:AddPsionicPsychognomicDescriptors
       psychognomicDescriptor: OVERWHELMING
-  powerSlotCost: 2
+  powerSlotCost: 0
 
 - type: psionicPower
   id: LowDampening
