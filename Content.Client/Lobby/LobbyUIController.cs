@@ -212,6 +212,8 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
             _markings,
             _random);
 
+        _profileEditor.OnOpenGuidebook += _guide.OpenHelp;
+
         _characterSetup = new CharacterSetupGui(EntityManager, _prototypeManager, _resourceCache, _preferencesManager, _profileEditor);
 
         _characterSetup.CloseButton.OnPressed += _ =>
