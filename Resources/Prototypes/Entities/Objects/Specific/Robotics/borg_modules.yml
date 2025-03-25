@@ -240,6 +240,8 @@
   - type: ItemBorgModule
     items:
     - JetpackMicroFilled
+  - type: BorgModuleIcon
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: jetpack-module }
 
 - type: entity
   id: BorgModulePka
@@ -253,6 +255,8 @@
   - type: ItemBorgModule
     items:
     - WeaponProtoKineticAccelerator
+  - type: BorgModuleIcon
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: pka-module }
 
 - type: entity
   id: BorgModuleGrapplingGun
@@ -336,6 +340,8 @@
   - type: ItemBorgModule
     items:
     - RPDRecharging
+  - type: BorgModuleIcon
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: rpd-module }
 
 # janitorial modules (this gets its own unique things because janis are epic)
 - type: entity
@@ -420,13 +426,11 @@
     - state: icon-treatment
   - type: ItemBorgModule
     items:
-    - HandheldHealthAnalyzerUnpowered
     - Brutepack10Lingering
     - Ointment10Lingering
     - Gauze10Lingering
     - Bloodpack10Lingering
     - Syringe
-    - Dropper
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: treatment-module }
 
