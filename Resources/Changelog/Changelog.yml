@@ -13605,3 +13605,63 @@ Entries:
   id: 7020
   time: '2025-03-23T10:24:02.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2037
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: >-
+        Borgs now have a law 0 dictating they must follow the Station AIs
+        commands
+    - type: Tweak
+      message: Station AI now spawns with NT Default rather than Asimov
+    - type: Tweak
+      message: Slightly increases the chances of ion storm
+  id: 7021
+  time: '2025-03-23T22:09:21.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2064
+- author: SolarisBirb
+  changes:
+    - type: Fix
+      message: Removed massive texture bloat.
+  id: 7022
+  time: '2025-03-24T02:46:11.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2070
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: Space Ninja gear is now unremovable
+    - type: Tweak
+      message: Space Ninja can now eat through their helmet/mask
+    - type: Tweak
+      message: Energy katana deflect chance from 30% to 50%
+    - type: Remove
+      message: >-
+        Removes the shuriken spawn ability, as it has not functioned for ages,
+        and I'm too lazy to fix it
+  id: 7023
+  time: '2025-03-24T03:10:13.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2039
+- author: SolarisBirb
+  changes:
+    - type: Tweak
+      message: Turrets will now shoot lings except for NT turrets.
+  id: 7024
+  time: '2025-03-24T16:02:24.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2071
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added Anchor, a new midpop map for 20 or more players created by the SiN
+        Mapping Team.
+  id: 7025
+  time: '2025-03-24T20:02:06.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2068
+- author: SolarisBirb
+  changes:
+    - type: Fix
+      message: >-
+        Arrows now embed correctly to targets instead of flying all around the
+        room.
+  id: 7026
+  time: '2025-03-24T21:15:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2075

@@ -1,6 +1,7 @@
 - type: gameMapPool
   id: DefaultMapPool
   maps:
+  - Anchor # Maintained by the SiN Mapping Team
   - Arena # Maintained by astriloqua.
  # - Asterisk # De-rotated, no current maintainer.
   - Core # No current Maintainer. In need of a rework...
