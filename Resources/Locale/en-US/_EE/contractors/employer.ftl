@@ -17,3 +17,6 @@ employer_description_zenghupharmaceuticals = Turn on coordiates!
 
 employer_name_cybersun = Cybersun
 employer_description_cybersun = Friendly lil' guys
+
+employer_name_interdyne = Interdyne
+employer_description_interdyne = Hold still...

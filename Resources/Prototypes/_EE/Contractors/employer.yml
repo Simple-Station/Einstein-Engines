@@ -33,3 +33,8 @@
   id: Cybersun
   nameKey: employer_name_cybersun
   descriptionKey: employer_description_cybersun
+
+- type: employer
+  id: Interdyne
+  nameKey: employer_name_interdyne
+  descriptionKey: employer_description_interdyne
