@@ -22,6 +22,7 @@
   - type: Tag
     tags:
     - WeldingTool
+    - DroneUsable # Goobstation
   - type: GenericVisualizer
     visuals:
       enum.ToggleVisuals.Toggled:
@@ -134,9 +135,6 @@
       collection: Welder
     endSound:
       collection: WelderOff
-  - type: Tag
-    tags:
-    - DroneUsable # Goobstation
 
 - type: entity
   name: industrial welding tool
