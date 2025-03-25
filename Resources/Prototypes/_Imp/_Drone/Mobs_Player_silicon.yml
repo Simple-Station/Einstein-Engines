@@ -18,16 +18,6 @@
   - type: Clickable
   - type: Damageable
     damageContainer: Inorganic
-  - type: Bloodstream
-    bloodReagent: Oil
-    bloodlossDamage:
-      types:
-        Bloodloss:
-          1
-    bloodlossHealDamage:
-      types:
-        Bloodloss:
-          -1
   - type: InteractionOutline
   - type: Fixtures
     fixtures:
@@ -148,8 +138,8 @@
   - type: SiliconLawProvider
     laws: Drone
   - type: MovementSpeedModifier
-    baseWalkSpeed : 5
-    baseSprintSpeed : 5
+    baseWalkSpeed : 6
+    baseSprintSpeed : 6
   - type: MobState
     allowedStates:
     - Alive
@@ -165,10 +155,6 @@
     - Stun
     - KnockedDown
     - SlowedDown
-  - type: SlowOnDamage
-    speedModifierThresholds:
-      30: 0.7
-      50: 0.5
   - type: Temperature
     heatDamageThreshold: 5000
     currentTemperature: 310.15
