@@ -13688,3 +13688,12 @@ Entries:
   id: 7028
   time: '2025-03-25T08:38:42.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2056
+- author: Zeta_Null
+  changes:
+    - type: Add
+      message: 8 new facial hair options, 4 beards and 4 moustaches
+    - type: Add
+      message: Ported most of my hairstyles from N14
+  id: 7029
+  time: '2025-03-25T08:51:08.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2076
