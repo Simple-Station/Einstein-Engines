@@ -98,9 +98,11 @@
   result: Drone
   completetime: 6
   materials:
-    Steel: 1000
-    Glass: 500
-    Plastic: 500
+    Steel: 1500
+    Plastic: 1500
+    Glass: 1500
+    Circuitry: 500
+
 
 - type: latheRecipe
   id: SynthesizerInstrument
