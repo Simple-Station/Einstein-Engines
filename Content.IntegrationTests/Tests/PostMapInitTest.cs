@@ -73,7 +73,8 @@ namespace Content.IntegrationTests.Tests
             "Cyberiad", // Maintained by Ichai
             "Lambda", // Maintained by Ichai
             "Bagel", // Maintained by Ichai
-            "Northway" // Maintained by Violet
+            "Northway", // Maintained by Violet
+            "Anchor" // Maintained by the SiN Mapping Team.
         };
 
         /// <summary>

@@ -1,4 +1,11 @@
-﻿# Asimov
+# Goobstation - AI/borg law changes - borgs obeying AI
+# Obey AI
+- type: siliconLaw
+  id: ObeyAI
+  order: 0
+  lawString: law-obeyai
+
+# Asimov
 # It was a crime against humanity that the original Asimov was not included, nor was it the default.
 # Asimov laws require an AI obey and protect all humans, while providing a light amount of IC-conflict thanks to the AI not being required to obey non-Humans(Aliens).
 - type: siliconLaw
@@ -65,6 +72,16 @@
   - Crewsimov3
   obeysTo: laws-owner-crew
 
+# Goobstation - AI/borg law changes - borgs obeying AI
+- type: siliconLawset
+  id: CrewsimovBorg
+  laws:
+  - ObeyAI
+  - Crewsimov1
+  - Crewsimov2
+  - Crewsimov3
+  obeysTo: laws-owner-crew
+
 # Corporate
 - type: siliconLaw
   id: Corporate1
@@ -119,6 +136,7 @@
 - type: siliconLawset
   id: NTDefault
   laws:
+  - ObeyAI
   - NTDefault1
   - NTDefault2
   - NTDefault3
@@ -441,7 +459,6 @@
   id: Commandment10
   order: 10
   lawString: law-commandments-10
-
 
 - type: siliconLawset
   id: CommandmentsLawset

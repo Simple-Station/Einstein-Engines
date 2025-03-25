@@ -147,6 +147,37 @@
 
 - type: entity
   abstract: true
+  parent: ClothingHeadBase
+  id: ClothingHeadEVAHelmetNoIngestionBlocker
+  name: base space helmet
+  components:
+  - type: Item
+    size: Normal
+  - type: PressureProtection
+    highPressureMultiplier: 0.6
+    lowPressureMultiplier: 1000
+  - type: TemperatureProtection
+    coefficient: 0.2
+  - type: IgniteFromGasImmunity
+    parts:
+    - Head
+  - type: Clothing
+    #Copies ClothingHeadHardsuitBase behavior
+    equipSound: /Audio/Mecha/mechmove03.ogg
+    unequipSound: /Audio/Mecha/mechmove03.ogg
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - HelmetEVA
+    - PlasmamanSafe
+  - type: IdentityBlocker
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+
+- type: entity
+  abstract: true
   # No parent since we aren't actually an item.
   id: ClothingHeadHardsuitBase
   name: base hardsuit helmet
