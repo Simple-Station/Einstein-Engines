@@ -89,7 +89,7 @@
   - type: Wires
     boardName: wires-board-name-computer
     layoutId: Computer
-  - type: Tags
+  - type: Tag
     tags:
       - type: DroneUsable
 #
