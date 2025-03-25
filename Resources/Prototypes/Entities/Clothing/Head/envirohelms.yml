@@ -201,7 +201,7 @@
   - type: ToggleableLightVisuals
     clothingVisuals:
       head:
-      - state: visor-equipped-HELMET
+      - state: on-equipped-HELMET
         shader: unshaded
   - type: PointLight
     color: "#ffffff"
