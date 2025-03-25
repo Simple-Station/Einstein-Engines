@@ -680,7 +680,6 @@
     - BorgModuleTreatment
     - BorgModuleSurgery
     - BorgModuleCleaning
-    - Drone
     - CyborgEndoskeleton
     - LeftArmBorg
     - RightArmBorg
@@ -722,6 +721,7 @@
     - PowerCageSmall # Goobstation - Powercell to exosuit fab
     dynamicRecipes:
     - ProximitySensor
+    - Drone
     - BorgModuleLightReplacer
     - BorgModuleAdvancedCleaning
     - BorgModuleMining
@@ -825,6 +825,7 @@
       - ClothMade
       - Gauze
       - Metal
+      - Circuitry
   - type: GuideHelp
     guides:
     - Robotics
