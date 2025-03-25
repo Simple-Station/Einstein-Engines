@@ -205,11 +205,11 @@
     - type: Tag
       tags:
         - ComputerTelevisionCircuitboard
+        - DroneUsable # Goobstation
     - type: ReverseEngineering # Nyano
       difficulty: 2
       recipes:
         - ComputerTelevisionCircuitboard
-        - DroneUsable # Goobstation
 
 - type: entity
   parent: BaseComputerCircuitboard

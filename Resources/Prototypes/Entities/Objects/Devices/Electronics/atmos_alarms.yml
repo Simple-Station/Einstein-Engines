@@ -31,9 +31,9 @@
   - type: Tag
     tags:
       - FireAlarmElectronics
+      - DroneUsable # Goobstation
   - type: ReverseEngineering # Nyano
     recipes:
       - FireAlarmElectronics
-      - DroneUsable # Goobstation
   - type: StaticPrice
     price: 61
