@@ -155,12 +155,28 @@
   id: BorgModuleAdvancedTool
   result: BorgModuleAdvancedTool
 
+- type: latheRecipe
+  parent: BaseGoldBorgModuleRecipe
+  id: BorgModuleRCD
+  result: BorgModuleRCD
+
+- type: latheRecipe
+  parent: BaseGoldBorgModuleRecipe
+  id: BorgModuleRPD
+  result: BorgModuleRPD
+
 # Janitor Modules
 
 - type: latheRecipe
   parent: BaseGoldBorgModuleRecipe
   id: BorgModuleAdvancedCleaning
   result: BorgModuleAdvancedCleaning
+
+- type: latheRecipe
+  parent: BaseBorgModuleRecipe
+  id: BorgModuleLightReplacer
+  result: BorgModuleLightReplacer
+
 
 # Medical Modules
 
@@ -199,34 +215,23 @@
   result: BorgModuleHarvesting
 
 - type: latheRecipe
+  parent: BaseBorgModuleRecipe
   id: BorgModuleClowning
   result: BorgModuleClowning
-  category: Robotics
-  completetime: 3
-  materials:
-    Steel: 250
-    Glass: 250
-    Plastic: 250
 
 - type: latheRecipe
+  parent: BaseBorgModuleRecipe
+  id: BorgModuleMusique
+  result: BorgModuleMusique
+
+# Logistics/Cargo Modules
+
+- type: latheRecipe
+  parent: BaseBorgModuleRecipe
   id: BorgModulePka
   result: BorgModulePka
-  category: Robotics
-  completetime: 3
-  materials:
-    Steel: 1000
-    Glass: 500
-    Plastic: 500
-    Silver: 100
 
 - type: latheRecipe
+  parent: BaseGoldBorgModuleRecipe
   id: BorgModuleJetpack
   result: BorgModuleJetpack
-  category: Robotics
-  completetime: 3
-  materials:
-    Steel: 250
-    Glass: 250
-    Plastic: 250
-    Gold: 100
-    Plasma: 1000

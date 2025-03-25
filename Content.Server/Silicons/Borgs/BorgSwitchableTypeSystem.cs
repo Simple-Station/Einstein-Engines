@@ -1,8 +1,11 @@
 ﻿using Content.Server.Inventory;
 using Content.Server.Radio.Components;
+using Content.Server.Silicons.Laws;
 using Content.Shared.Inventory;
 using Content.Shared.Silicons.Borgs;
 using Content.Shared.Silicons.Borgs.Components;
+using Content.Shared.Silicons.Laws;
+using Content.Shared.Silicons.Laws.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
@@ -15,6 +18,7 @@ public sealed class BorgSwitchableTypeSystem : SharedBorgSwitchableTypeSystem
 {
     [Dependency] private readonly BorgSystem _borgSystem = default!;
     [Dependency] private readonly ServerInventorySystem _inventorySystem = default!;
+    [Dependency] private readonly SiliconLawSystem _siliconLawSystem = default!;
 
     protected override void SelectBorgModule(Entity<BorgSwitchableTypeComponent> ent, ProtoId<BorgTypePrototype> borgType)
     {
@@ -27,6 +31,10 @@ public sealed class BorgSwitchableTypeSystem : SharedBorgSwitchableTypeSystem
 
         if (TryComp(ent, out ActiveRadioComponent? activeRadio))
             activeRadio.Channels = [.. radioChannels];
+
+        // Assign lawsets
+        var laws = _siliconLawSystem.GetLawset(prototype.Laws).Laws;
+        _siliconLawSystem.SetLaws(laws, ent);
 
         // Borg transponder for the robotics console
         if (TryComp(ent, out BorgTransponderComponent? transponder))

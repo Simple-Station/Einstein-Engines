@@ -17,6 +17,8 @@
   radioChannels:
   - Science
 
+  laws: Augustine
+
   # Visual
   inventoryTemplateId: borgShort
   spriteBodyState: robot
@@ -53,6 +55,8 @@
   - Engineering
   - Science
 
+  laws: Engineer
+
   # Visual
   inventoryTemplateId: borgShort
   spriteBodyState: engineer
@@ -87,6 +91,8 @@
   radioChannels:
   - Supply
   - Science
+
+  laws: Augustine
 
   # Visual
   inventoryTemplateId: borgTall
@@ -123,6 +129,8 @@
   - Science
   - Service
 
+  laws: Janitor
+
   # Visual
   inventoryTemplateId: borgShort
   spriteBodyState: janitor
@@ -156,6 +164,8 @@
   radioChannels:
   - Science
   - Medical
+
+  laws: Medical
 
   addComponents:
   - type: SolutionScanner
@@ -205,6 +215,8 @@
   radioChannels:
   - Science
   - Service
+
+  laws: Augustine
 
   # Visual
   inventoryTemplateId: borgTall

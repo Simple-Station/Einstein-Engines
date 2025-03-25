@@ -2,6 +2,7 @@
 using Content.Shared.Inventory;
 using Content.Shared.Radio;
 using Content.Shared.Silicons.Borgs.Components;
+using Content.Shared.Silicons.Laws;
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
@@ -72,6 +73,12 @@ public sealed partial class BorgTypePrototype : IPrototype
     /// </remarks>
     [DataField]
     public ProtoId<RadioChannelPrototype>[] RadioChannels = [];
+
+    /// <summary>
+    /// Lawset that this borg will be binded to.
+    /// </summary>
+    [DataField(required: true)]
+    public ProtoId<SiliconLawsetPrototype> Laws = string.Empty;
 
     /// <summary>
     /// Borg module types that are always available to borgs of this type.
