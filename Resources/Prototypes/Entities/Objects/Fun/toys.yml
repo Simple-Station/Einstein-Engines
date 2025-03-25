@@ -305,6 +305,9 @@
           Quantity: 10
         - ReagentId: JuiceThatMakesYouWeh
           Quantity: 10
+  - type: Tag
+    tags:
+      - PlushieLizard
 
 - type: entity
   parent: PlushieLizard
@@ -2030,7 +2033,7 @@
       params:
         variation: 0.05
   - type: EmitSoundOnLand
-    sound: 
+    sound:
       path: /Audio/DeltaV/Voice/Harpy/caw1.ogg
       params:
         variation: 0.05
