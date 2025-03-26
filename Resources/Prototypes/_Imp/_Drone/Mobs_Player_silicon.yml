@@ -74,7 +74,7 @@
 
 - type: entity
   name: drone
-  id: Drone
+  id: MobDrone
   parent: [PlayerSiliconBase, BaseBorgTransponder]
   components:
   - type: Drone # this system has too much going on, it should really be like three different components
