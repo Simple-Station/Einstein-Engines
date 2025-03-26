@@ -220,6 +220,7 @@
     - BasicGalaticCommonTranslatorImplanter
     - MofficTranslator
     - N14MaterialCircuitry
+    
   - type: EmagLatheRecipes
     emagStaticRecipes:
     - BoxLethalshot
