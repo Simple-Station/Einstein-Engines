@@ -13750,3 +13750,10 @@ Entries:
   id: 7036
   time: '2025-03-26T10:14:08.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2085
+- author: GNUtopia
+  changes:
+    - type: Tweak
+      message: Made Healing Word no longer revive
+  id: 7037
+  time: '2025-03-26T10:14:49.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2084
