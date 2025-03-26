@@ -169,7 +169,7 @@
 
 - type: construction
   name: drone
-  id: Drone
+  id: drone
   graph: Drone
   startNode: start
   targetNode: bot

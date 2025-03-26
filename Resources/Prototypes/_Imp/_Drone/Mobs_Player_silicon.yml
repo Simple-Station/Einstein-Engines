@@ -54,7 +54,7 @@
     showInHands: false
   - type: ComplexInteraction
   - type: Body
-    prototype: Drone
+    prototype: MobDrone
   - type: IntrinsicRadioReceiver
   - type: IntrinsicRadioTransmitter
     channels:
@@ -227,3 +227,6 @@
   - type: RandomMetadata
     nameSegments:
     - names_drone # maintainer drones get named after maintainers get it? its funny
+  - type: Construction
+    graph: Drone
+    node: bot
