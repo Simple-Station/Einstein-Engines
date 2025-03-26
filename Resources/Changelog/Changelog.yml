@@ -13718,3 +13718,12 @@ Entries:
   id: 7032
   time: '2025-03-25T08:56:28.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2041
+- author: RocketBoss360
+  changes:
+    - type: Add
+      message: >-
+        Xenoglossy has been given a visual revamp, with a new font, color and
+        speaking verbs associated with it.
+  id: 7033
+  time: '2025-03-26T09:29:58.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2072
