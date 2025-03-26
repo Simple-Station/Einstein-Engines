@@ -3,7 +3,7 @@ using Content.Shared.Vehicles;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 
-namespace Content.Server.Vehicles;
+namespace Content.Client.Vehicles;
 
 public sealed class VehicleSystem : SharedVehicleSystem
 {
