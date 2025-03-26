@@ -783,11 +783,11 @@
     bloodReagent: Nothing
     bloodMaxVolume: 50
   - type: Temperature
+    heatDamageThreshold: 100000000000
+    coldDamageThreshold: -10000000000
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Smile
-    heatDamageThreshold: 100000000000
-    coldDamageThreshold: -10000000000
   - type: SupermatterImmune
   - type: Puller
     needsHands: false
