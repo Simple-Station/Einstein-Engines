@@ -30,7 +30,7 @@ public abstract class SharedClockSystem : EntitySystem
             case ClockType.TwelveHour:
                 return time.ToString(@"h\:mm");
             case ClockType.TwentyFourHour:
-                return time.ToString(@"hh\:mm");
+                return time.ToString(@"HH\:mm");
             default:
                 throw new ArgumentOutOfRangeException();
         }
