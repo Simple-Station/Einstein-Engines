@@ -183,7 +183,6 @@
     - type: Tag
       tags:
         - SurveillanceCameraMonitorCircuitboard
-        - DroneUsable # Goobstation
 
 - type: entity
   parent: BaseComputerCircuitboard
@@ -205,7 +204,6 @@
     - type: Tag
       tags:
         - ComputerTelevisionCircuitboard
-        - DroneUsable # Goobstation
     - type: ReverseEngineering # Nyano
       difficulty: 2
       recipes:
@@ -280,7 +278,6 @@
     - type: Tag
       tags:
       - HighRiskItem
-      - DroneUsable # Goobstation
 
 - type: entity
   parent: BaseComputerCircuitboard

@@ -358,7 +358,6 @@
     tags:
     - Trash
     - WhitelistChameleon
-    - DroneUsable # Goobstation
   - type: TrashOnSolutionEmpty
     solution: drink
   - type: Clothing

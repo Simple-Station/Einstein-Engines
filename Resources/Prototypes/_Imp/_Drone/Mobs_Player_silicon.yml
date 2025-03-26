@@ -106,6 +106,7 @@
     group: Drone
   - type: Inventory
     templateId: drone
+  - type: ComplexInteraction
   - type: InventorySlots
   - type: Strippable
   - type: UserInterface

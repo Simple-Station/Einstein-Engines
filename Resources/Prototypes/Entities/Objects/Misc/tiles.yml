@@ -21,7 +21,6 @@
     count: 1
   - type: Tag
     tags:
-      - DroneUsable # Goobstation
       - NoPaint
   - type: Damageable
     damageContainer: Inorganic

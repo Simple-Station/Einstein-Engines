@@ -20,9 +20,6 @@
   - type: ContainerContainer
     containers:
       light_replacer_storage: !type:Container
-  - type: Tag
-    tags:
-    - DroneUsable # Goobstation
 
 - type: entity
   parent: LightReplacer

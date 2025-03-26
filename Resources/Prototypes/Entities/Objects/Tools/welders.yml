@@ -22,7 +22,6 @@
   - type: Tag
     tags:
     - WeldingTool
-    - DroneUsable # Goobstation
   - type: GenericVisualizer
     visuals:
       enum.ToggleVisuals.Toggled:

@@ -35,7 +35,6 @@
     - type: Tag
       tags:
         - WallmountSubstationElectronics
-        - DroneUsable # Goobstation
 
 # Wallmount Generator
 - type: entity
@@ -55,7 +54,6 @@
   - type: Tag
     tags:
       - WallmountGeneratorElectronics
-      - DroneUsable # Goobstation
 
 # APU
 - type: entity
@@ -72,7 +70,6 @@
     - type: Tag
       tags:
         - WallmountGeneratorAPUElectronics
-        - DroneUsable # Goobstation
 
 # Solar Tracker Electronics
 - type: entity
@@ -89,4 +86,3 @@
     - type: Tag
       tags:
         - SolarTrackerElectronics
-        - DroneUsable # Goobstation

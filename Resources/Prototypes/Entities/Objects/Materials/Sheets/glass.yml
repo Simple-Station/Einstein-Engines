@@ -16,7 +16,6 @@
     tags:
     - Sheet
     - NoPaint
-    - DroneUsable # Goobstation
   - type: Material
   - type: Damageable
     damageContainer: Inorganic

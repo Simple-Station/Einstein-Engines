@@ -10,7 +10,6 @@
   - type: Tag
     tags:
       - AirAlarmElectronics
-      - DroneUsable # Goobstation
   - type: ReverseEngineering # Nyano
     recipes:
       - AirAlarmElectronics
@@ -31,7 +30,6 @@
   - type: Tag
     tags:
       - FireAlarmElectronics
-      - DroneUsable # Goobstation
   - type: ReverseEngineering # Nyano
     recipes:
       - FireAlarmElectronics

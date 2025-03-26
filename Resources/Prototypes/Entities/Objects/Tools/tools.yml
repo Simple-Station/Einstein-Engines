@@ -23,7 +23,6 @@
     tags:
     - PlantSampleTaker
     - Wirecutter
-    - DroneUsable # Goobstation
   - type: Sprite
     sprite: Objects/Tools/wirecutters.rsi
     layers:
@@ -105,7 +104,6 @@
   - type: Tag
     tags:
     - Screwdriver
-    - DroneUsable # Goobstation
   - type: Sprite
     sprite: Objects/Tools/screwdriver.rsi
     layers:
@@ -184,7 +182,6 @@
   - type: Tag
     tags:
     - Wrench
-    - DroneUsable # Goobstation
   - type: Sprite
     sprite: Objects/Tools/wrench.rsi
     state: icon
@@ -242,7 +239,6 @@
   - type: Tag
     tags:
     - Crowbar
-    - DroneUsable
   - type: Sprite
     sprite: Objects/Tools/crowbar.rsi
     state: icon
@@ -354,7 +350,6 @@
     tags:
       - Multitool
       - DoorElectronicsConfigurator
-      - DroneUsable # Goobstation
   - type: PhysicalComposition
     materialComposition:
       Aluminum: 50
@@ -547,9 +542,6 @@
     difficulty: 3
     recipes:
       - RCD
-  - type: Tag
-    tags:
-      - DroneUsable # Goobstation
 
 - type: entity
   id: RPD

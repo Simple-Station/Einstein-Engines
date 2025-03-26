@@ -9,7 +9,6 @@
       state: door_electronics
     - type: Tag
       tags:
-        - DroneUsable # Goobstation
         - DoorElectronics
     - type: DoorElectronics
     - type: ReverseEngineering # Nyano
