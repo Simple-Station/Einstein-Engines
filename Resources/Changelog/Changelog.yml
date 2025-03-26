@@ -13727,3 +13727,10 @@ Entries:
   id: 7033
   time: '2025-03-26T09:29:58.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2072
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: Added Book Press. Librarians rejoice!
+  id: 7034
+  time: '2025-03-26T10:03:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1977
