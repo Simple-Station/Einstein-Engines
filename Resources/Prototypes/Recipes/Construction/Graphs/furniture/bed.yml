@@ -42,7 +42,7 @@
               doAfter: 1
             - material: Plastic
               amount: 2
-              doafter: 1
+              doAfter: 1
     - node: bed
       entity: Bed
       edges:
