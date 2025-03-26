@@ -1,10 +1,14 @@
 using Content.Shared._EE.Contractors.Components;
 using Content.Shared.Interaction.Events;
+using Robust.Shared.Timing;
+
 
 namespace Content.Shared._EE.Contractors.Systems;
 
 public class SharedPassportSystem : EntitySystem
 {
+    [Dependency] private readonly IGameTiming _timing = default!;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -14,7 +18,7 @@ public class SharedPassportSystem : EntitySystem
 
     private void OnUseInHand(Entity<PassportComponent> passport, ref UseInHandEvent evt)
     {
-        if (evt.Handled)
+        if (evt.Handled || !_timing.IsFirstTimePredicted)
             return;
 
         evt.Handled = true;
