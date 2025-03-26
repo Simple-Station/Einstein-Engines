@@ -49,4 +49,4 @@
         name: wrench
         doAfter: 2
   - node: bot
-    entity: Drone
+    entity: drone
