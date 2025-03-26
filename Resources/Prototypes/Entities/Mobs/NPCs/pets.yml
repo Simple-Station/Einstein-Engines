@@ -764,10 +764,10 @@
       path: /Audio/Effects/Footsteps/slime1.ogg
       params:
         volume: -6
+  - type: CanEscapeInventory
   - type: Tag
     tags:
     - FootstepSound
-    - DoorBumpOpener
     - CannotSuicide
     - VimPilot
   - type: DamageStateVisuals
@@ -777,10 +777,15 @@
         BaseUnshaded: aslime-_3
       Dead:
         Base: rainbow_baby_slime_dead
+  - type: StaminaDamageResistance
+    coefficient: 0
   - type: Bloodstream
     bloodReagent: Nothing
     bloodMaxVolume: 50
   - type: Temperature
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Smile
     heatDamageThreshold: 100000000000
     coldDamageThreshold: -10000000000
   - type: MeleeWeapon
@@ -821,6 +826,7 @@
       - XenoglossyPower
       - TelepathyPower
       - HealingWordPower
+      - PowerOverwhelming
   - type: LanguageSpeaker
   - type: UniversalLanguageSpeaker
   - type: SlowOnDamage
