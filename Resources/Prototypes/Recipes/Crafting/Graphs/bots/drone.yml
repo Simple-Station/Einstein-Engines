@@ -36,11 +36,11 @@
           state: screwdriver-map
         name: screwdriver
         doAfter: 2
-      - tag: Wirecutters
+      - tag: Wirecutter
         icon:
           sprite: Objects/Tools/wirecutters.rsi
           state: cutters-map
-        name: wirecutters
+        name: wirecutter
         doAfter: 2
       - tag: Wrench
         icon:
