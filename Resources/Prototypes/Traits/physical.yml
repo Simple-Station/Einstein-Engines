@@ -507,11 +507,11 @@
           action: ActionSericulture
           productionLength: 2
           entityProduced: MaterialWebSilk1
-          hungerCost: 1 
+          hungerCost: 1
     - !type:TraitAddTag
-      tags: 
-        - SpiderCraft 
-      
+      tags:
+        - SpiderCraft
+
 
 - type: trait
   id: BionicArm
@@ -526,11 +526,16 @@
     - !type:CharacterItemGroupRequirement
       group: TraitsMind
   functions:
-    - !type:TraitAddComponent
-      components:
-        - type: Prying
-          speedModifier: 1
-          pryPowered: true
+    - !type:TraitCyberneticLimbReplacement
+      removeBodyPart: Arm
+      partSymmetry: Left
+      protoId: JawsOfLifeLeftArm
+      slotId: "left arm"
+    - !type:TraitCyberneticLimbReplacement
+      removeBodyPart: Arm
+      partSymmetry: Right
+      protoId: JawsOfLifeRightArm
+      slotId: "right arm"
     - !type:TraitPushDescription
       descriptionExtensions:
         - description: examine-bionic-arm-message
@@ -878,28 +883,34 @@
               Brute: -0.6
               Burn: -0.6
 
-# - type: trait
-#  id: BionicLeg
-#  category: Physical
-#  points: -8
-#  requirements:
-#    - !type:CharacterJobRequirement
-#      inverted: true
-#      jobs:
-#        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-#    - !type:CharacterItemGroupRequirement
-#      group: TraitsMind
-#  functions:
-#    - !type:TraitReplaceComponent
-#      components:
-#      - type: TraitSpeedModifier
-#        sprintModifier: 1.300
-#        walkModifier: 1.125
-#    - !type:TraitPushDescription
-#      descriptionExtensions:
-#        - description: examine-bionic-leg-message
-#          fontSize: 12
-#          requireDetailRange: true
+- type: trait
+  id: BionicLeg
+  category: Physical
+  points: -8
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMind
+  functions:
+    - !type:TraitPushDescription
+      descriptionExtensions:
+        - description: examine-bionic-leg-message
+          fontSize: 12
+          requireDetailRange: true
+    - !type:TraitCyberneticLimbReplacement
+      removeBodyPart: Leg
+      partSymmetry: Left
+      protoId: SpeedLeftLeg
+      slotId: "left leg"
+    - !type:TraitCyberneticLimbReplacement
+      removeBodyPart: Leg
+      partSymmetry: Right
+      protoId: SpeedRightLeg
+      slotId: "right leg"
+
 
 # - type: trait
 #  id: FlareShieldingModule
@@ -1130,7 +1141,7 @@
 - type: trait
   id: Vampirism # You may port this to EE, you have my permission!
   category: Physical
-  points: -3 
+  points: -3
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
