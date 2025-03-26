@@ -78,7 +78,7 @@
   - type: EmagSiliconLaw
     stunTime: 5
   - type: SiliconLawProvider
-    laws: Augustine
+    laws: Asimov
   - type: IonStormTarget
   - type: Strippable
   - type: StationAiVision
@@ -283,7 +283,7 @@
     factions:
     - NanoTrasen
   - type: SiliconLawProvider
-    laws: Augustine
+    laws: Asimov
   - type: Access
     enabled: false
     groups:
