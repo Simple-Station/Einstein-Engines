@@ -33,13 +33,13 @@
       - tag: Screwdriver
         icon:
           sprite: Objects/Tools/screwdriver.rsi
-          state: icon
+          state: screwdriver
         name: screwdriver
         doAfter: 2
       - tag: Wirecutters
         icon:
           sprite: Objects/Tools/wirecutters.rsi
-          state: icon
+          state: cutters
         name: wirecutters
         doAfter: 2
       - tag: Wrench
