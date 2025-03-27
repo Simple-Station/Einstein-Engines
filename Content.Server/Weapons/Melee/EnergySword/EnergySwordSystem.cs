@@ -55,10 +55,6 @@ public sealed class EnergySwordSystem : EntitySystem
                 comp.ColorChoice += 1;
             else if (comp.ColorChoice >= comp.ColorOptions.Count - 1)
                 comp.ColorChoice = 0;
-            comp.ActivatedColor = comp.ColorOptions[comp.ColorChoice];
-            if (!TryComp(uid, out AppearanceComponent? appearanceComponent))
-                return;
-            _appearance.SetData(uid, ToggleableLightVisuals.Color, comp.ActivatedColor, appearanceComponent);
         }
 
         if (comp.Hacked)
@@ -69,6 +65,10 @@ public sealed class EnergySwordSystem : EntitySystem
         else
         {
             RemComp<RgbLightControllerComponent>(uid);
+            comp.ActivatedColor = comp.ColorOptions[comp.ColorChoice];
+            if (!TryComp(uid, out AppearanceComponent? appearanceComponent))
+                return;
+            _appearance.SetData(uid, ToggleableLightVisuals.Color, comp.ActivatedColor, appearanceComponent);
         }
     }
 }
