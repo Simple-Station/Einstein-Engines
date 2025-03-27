@@ -63,8 +63,7 @@ namespace Content.Server._Imp.Drone
                 }
 
                 else if (_whitelist.IsWhitelistPass(component.Whitelist, args.Used)) /// tag whitelist. sends proximity warning popup if the item isn't whitelisted. Doesn't prevent actions.
-				{
-                    component.NextProximityAlert = _gameTiming.CurTime + component.ProximityDelay;
+                {
                     if (_gameTiming.CurTime >= component.NextProximityAlert)
                     {
                         _popupSystem.PopupEntity(Loc.GetString("drone-too-close", ("being", component.NearestEnt)), uid, uid);
