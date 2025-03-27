@@ -40,7 +40,7 @@ public sealed partial class FlightComponent : Component
     ///     Speed modifier while in flight
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float SpeedModifier = 2.0f;
+    public float SpeedModifier = 1.15f;
 
     /// <summary>
     ///     Path to a sound specifier or collection for the noises made during flight
