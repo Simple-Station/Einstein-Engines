@@ -23,6 +23,9 @@ using Content.Shared.NPC.Systems;
 using Content.Shared.Weapons.Melee;
 using Robust.Shared.Audio;
 using Content.Shared.Tag;
+using Content.Shared.Body.Part;
+using Content.Server.Body.Systems;
+using Content.Shared.Body.Components;
 
 namespace Content.Server.Traits;
 
@@ -688,7 +691,7 @@ public sealed partial class TraitAddTag : TraitFunction
 {
     [DataField, AlwaysPushInheritance]
     public List<ProtoId<TagPrototype>> Tags { get; private set; } = new();
-    
+
     public override void OnPlayerSpawn(EntityUid uid,
         IComponentFactory factory,
         IEntityManager entityManager,
@@ -696,5 +699,60 @@ public sealed partial class TraitAddTag : TraitFunction
     {
         var tagSystem = entityManager.System<TagSystem>();
         tagSystem.AddTags(uid, Tags);
+    }
+}
+
+// <summary>
+//      Replaces a body part with a cybernetic. This is only for limbs such as arms and legs, don't use this for organs(old or new).
+// </summary>
+[UsedImplicitly]
+public sealed partial class TraitCyberneticLimbReplacement : TraitFunction
+{
+    [DataField, AlwaysPushInheritance]
+    public BodyPartType RemoveBodyPart { get; private set; } = BodyPartType.Arm;
+
+    [DataField, AlwaysPushInheritance]
+    public BodyPartSymmetry PartSymmetry { get; private set; } = BodyPartSymmetry.Left;
+
+    [DataField, AlwaysPushInheritance]
+    public EntProtoId? ProtoId { get; private set; }
+
+    [DataField, AlwaysPushInheritance]
+    public string SlotId { get; private set; } = "right arm";
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        var bodySystem = entityManager.System<BodySystem>();
+        var transformSystem = entityManager.System<SharedTransformSystem>();
+
+        if (!entityManager.TryGetComponent(uid, out BodyComponent? body)
+            || !entityManager.TryGetComponent(uid, out TransformComponent? xform)
+            || ProtoId is null)
+            return;
+
+        var root = bodySystem.GetRootPartOrNull(uid, body);
+        if (root is null)
+            return;
+
+        var parts = bodySystem.GetBodyChildrenOfType(uid, RemoveBodyPart, body);
+        foreach (var part in parts)
+        {
+            var partComp = part.Component;
+            if (partComp.Symmetry != PartSymmetry)
+                continue;
+
+            foreach (var child in bodySystem.GetBodyPartChildren(part.Id, part.Component))
+                entityManager.QueueDeleteEntity(child.Id);
+
+            transformSystem.AttachToGridOrMap(part.Id);
+            entityManager.QueueDeleteEntity(part.Id);
+
+            var newLimb = entityManager.SpawnAtPosition(ProtoId, xform.Coordinates);
+            if (entityManager.TryGetComponent(newLimb, out BodyPartComponent? limbComp))
+                bodySystem.AttachPart(root.Value.Entity, SlotId, newLimb, root.Value.BodyPart, limbComp);
+        }
     }
 }
