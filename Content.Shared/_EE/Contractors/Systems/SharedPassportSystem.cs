@@ -4,6 +4,7 @@ using Content.Shared.Administration.Logs;
 using Content.Shared.Database;
 using Content.Shared.Examine;
 using Content.Shared.GameTicking;
+using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Inventory;
 using Content.Shared.Item;
@@ -19,7 +20,7 @@ namespace Content.Shared._EE.Contractors.Systems;
 
 public class SharedPassportSystem : EntitySystem
 {
-    public const int CurrentYear = 2465;
+    public const int CurrentYear = 2450;
     const string PIDChars = "ABCDEFGHJKLMNPQRSTUVWXYZ0123456789";
 
     [Dependency] private readonly IGameTiming _timing = default!;
@@ -28,7 +29,6 @@ public class SharedPassportSystem : EntitySystem
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly SharedStorageSystem _storage = default!;
     [Dependency] private readonly SharedTransformSystem _sharedTransformSystem = default!;
-    [Dependency] private readonly SharedAdminLogSystem _log = default!;
 
     public override void Initialize()
     {
@@ -41,15 +41,26 @@ public class SharedPassportSystem : EntitySystem
 
     private void OnExamined(EntityUid uid, PassportComponent component, ExaminedEvent args)
     {
-        if (!args.IsInDetailsRange && !component.IsClosed)
-        {
-            args.PushMarkup($"Registered to: {component.OwnerProfile.Name}");
-            args.PushMarkup($"Species: {component.OwnerProfile.Species}");
-            args.PushMarkup($"Sex: {component.OwnerProfile.Gender}");
-            args.PushMarkup($"Height: {component.OwnerProfile.Height}");
-            args.PushMarkup($"Year of Birth: {CurrentYear - component.OwnerProfile.Age}");
-            args.PushMarkup($"PID: {GenerateIdentityString(component.OwnerProfile.Name + component.OwnerProfile.Height + component.OwnerProfile.Age + component.OwnerProfile.Height + component.OwnerProfile.FlavorText)}");
-        }
+        if (!args.IsInDetailsRange
+            || component.IsClosed
+            || component.OwnerProfile == null)
+            return;
+
+        var species = _prototypeManager.Index<SpeciesPrototype>(component.OwnerProfile.Species);
+
+        args.PushMarkup($"Registered to: {component.OwnerProfile.Name}", 50);
+        args.PushMarkup($"Species: {Loc.GetString(species.Name)}", 49);
+        args.PushMarkup($"Sex: {component.OwnerProfile.Gender}", 48);
+        args.PushMarkup($"Height: {MathF.Round(component.OwnerProfile.Height * species.AverageHeight)} cm", 47);
+        args.PushMarkup($"Year of Birth: {CurrentYear - component.OwnerProfile.Age}", 46);
+
+        args.PushMarkup(
+            $"PID: {GenerateIdentityString(component.OwnerProfile.Name
+            + component.OwnerProfile.Height
+            + component.OwnerProfile.Age
+            + component.OwnerProfile.Height
+            + component.OwnerProfile.FlavorText)}",
+            45);
     }
 
     private void OnPlayerSpawnComplete(PlayerSpawnCompleteEvent ev)
@@ -62,7 +73,7 @@ public class SharedPassportSystem : EntitySystem
             out NationalityPrototype? nationalityPrototype) || !_prototypeManager.TryIndex(nationalityPrototype.PassportPrototype, out EntityPrototype? entityPrototype))
             return;
 
-        var passportEntity = _entityManager.SpawnEntity(entityPrototype.Name, _sharedTransformSystem.GetMapCoordinates(ev.Mob));
+        var passportEntity = _entityManager.SpawnEntity(entityPrototype.ID, _sharedTransformSystem.GetMapCoordinates(ev.Mob));
         var passportComponent = _entityManager.GetComponent<PassportComponent>(passportEntity);
 
         UpdatePassportProfile(new(passportEntity, passportComponent), ev.Profile);
@@ -76,7 +87,7 @@ public class SharedPassportSystem : EntitySystem
                 || !_storage.CanInsert(item.Value, passportEntity, out _, inventory, itemComp)
                 || !_storage.Insert(item.Value, passportEntity, out _, playSound: false))
             {
-                _log.Add(
+                _entityManager.System<SharedAdminLogSystem>().Add(
                     LogType.EntitySpawn,
                     LogImpact.Low,
                     $"Passport for {ev.Profile.Name} was spawned on the floor due to missing bag space");
