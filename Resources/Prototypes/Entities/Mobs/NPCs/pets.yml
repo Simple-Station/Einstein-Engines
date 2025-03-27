@@ -714,16 +714,16 @@
   - type: SolutionContainerManager
     solutions:
       melee:
-        maxVol: 10
+        maxVol: 12
   - type: SolutionRegeneration
     solution: melee
     generated:
       reagents:
       - ReagentId: Nocturine
-        Quantity: 0.1
+        Quantity: 0.2
   - type: MeleeChemicalInjector
     solution: melee
-    transferAmount: 2
+    transferAmount: 3
   - type: Access
     tags:
     - Security
