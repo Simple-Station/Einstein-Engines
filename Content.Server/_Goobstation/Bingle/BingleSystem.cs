@@ -3,7 +3,7 @@ using Content.Shared.Popups;
 using Content.Shared._Goobstation.Bingle;
 using Robust.Shared.Map;
 using System.Numerics;
-using Content.Shared._White.Overlays;
+using Content.Shared.Overlays.Switchable;
 using Content.Server.Flash.Components;
 using Content.Server.Polymorph.Components;
 using Content.Server.Polymorph.Systems;
