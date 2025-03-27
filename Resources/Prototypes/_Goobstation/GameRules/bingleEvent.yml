@@ -3,12 +3,13 @@
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
-  #  startAnnouncement: bingle-station-announcement
-  #  startAudio:
-  #   path: /Audio/Announcements/attention.ogg
+    startAnnouncement: bingle-station-announcement
+    startAudio:
+     path: /Audio/Announcements/attention.ogg
     earliestStart: 20
     weight: 6
     duration: 50
     minimumPlayers: 15
-  - type: RandomSpawnRule
-    prototype: SpawnPointGhostBinglePrime
+# Removes bingle as a random spawn, since they arent very MRP
+#  - type: RandomSpawnRule
+#    prototype: SpawnPointGhostBinglePrime
