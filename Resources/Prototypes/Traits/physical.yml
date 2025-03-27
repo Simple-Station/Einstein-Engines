@@ -1170,14 +1170,13 @@
   functions:
     - !type:TraitVVModify
       changes:
-        /entity/$ID/Fixtures/Fixtures[fix1 ]/Density: 1.5
+        /entity/$ID/Fixtures/Fixtures[fix1 ]/Density: 0.5
       multiply: true
     - !type:TraitPushDescription
       descriptionExtensions:
         - description: examine-featherweight-message
           fontSize: 12
           requireDetailRange: true
-
 - type: trait
   id: Bodybuilder
   category: Physical
