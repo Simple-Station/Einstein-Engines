@@ -21,7 +21,7 @@
         - Spearmaster
         - WeaponsGeneralist
         - Mystic
-        
+
 
 - type: trait
   id: Spearmaster
@@ -133,9 +133,10 @@
     - !type:TraitAddComponent
       components:
         - type: Flight
+          SpeedModifier: 6 #test value
   requirements:
     - !type:CharacterSpeciesRequirement
       species:
         - Moth
     - !type:CharacterWeightRequirement # big moffs are too heavy to fly
-      max: 35
+      max: 60
