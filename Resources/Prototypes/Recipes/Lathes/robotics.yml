@@ -334,11 +334,6 @@
   id: BorgModuleAdvancedCleaning
   result: BorgModuleAdvancedCleaning
 
-- type: latheRecipe
-  parent: BaseBorgModuleRecipe
-  id: BorgModuleLightReplacer
-  result: BorgModuleLightReplacer
-
 # Medical Modules
 
 - type: latheRecipe
