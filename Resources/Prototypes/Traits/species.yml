@@ -137,7 +137,5 @@
     - !type:CharacterSpeciesRequirement
       species:
         - Moth
-    - !type:CharacterHeightRequirement # big moffs are too heavy to fly
-      max: 160
-    - !type:CharacterWidthRequirement
+    - !type:CharacterWeightRequirement # big moffs are too heavy to fly
       max: 35
