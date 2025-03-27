@@ -70,12 +70,12 @@ public sealed class EnergySwordSystem : EntitySystem
         else
         {
             RemComp<RgbLightControllerComponent>(uid);
-            comp.ActivatedColor = comp.ColorOptions[comp.ColorChoice];
-            comp.ActivatedColorName = comp.ColorNames[comp.ColorChoice];
             if (!TryComp(uid, out AppearanceComponent? appearanceComponent))
                 return;
             _appearance.SetData(uid, ToggleableLightVisuals.Color, comp.ActivatedColor, appearanceComponent);
         }
+        comp.ActivatedColorName = comp.ColorNames[comp.ColorChoice];
+        comp.ActivatedColor = comp.ColorOptions[comp.ColorChoice];
     }
     //examination to determine which color the esword is on
     private void OnExamine(EntityUid uid, EnergySwordComponent comp, ExaminedEvent args)

@@ -1,1 +1,1 @@
-esword-color-setting = The energy sword's color dial is currently set to [color={$activatedColor}]{$activatedColorName}[/color]. A screwdriver could probably turn it.
+esword-color-setting = The weapon's color dial is currently set to [color={$activatedColor}]{$activatedColorName}[/color]. A screwdriver could probably turn it.
