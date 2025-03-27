@@ -304,12 +304,13 @@ public sealed partial class TraitVVEdit : TraitFunction
         IEntityManager entityManager,
         ISerializationManager serializationManager)
     {
-        var vvm = IoCManager.Resolve<IViewVariablesManager>();
-        string idPath;
+        var viewVariablesManager = IoCManager.Resolve<IViewVariablesManager>();
+        
         foreach (var (path, value) in Changes)
         {
-            idPath = path.Replace("$ID", uid.ToString());
-            vvm.WritePath(idPath, value);
+            var idPath = path.Replace("$ID", uid.ToString());
+            
+            viewVariablesManager.WritePath(idPath, value);
         }
     }
 }
@@ -329,19 +330,21 @@ public sealed partial class TraitVVModify : TraitFunction
         IEntityManager entityManager,
         ISerializationManager serializationManager)
     {
-        var vvm = IoCManager.Resolve<IViewVariablesManager>();
-        float newValue;
-        string idPath;
+        var viewVariablesManager = IoCManager.Resolve<IViewVariablesManager>();
+
         foreach (var (path, value) in Changes)
         {
-            idPath = path.Replace("$ID", uid.ToString());
-            if (!float.TryParse(vvm.ReadPathSerialized(idPath), out var currentValue))
+            var idPath = path.Replace("$ID", uid.ToString());
+            
+            if (!float.TryParse(viewVariablesManager.ReadPathSerialized(idPath), out var currentValue))
                 continue;
+
+            float newValue = currentValue + value;
+
             if (Multiply)
                 newValue = currentValue * value;
-            else
-                newValue = currentValue + value;
-            vvm.WritePath(idPath, newValue.ToString());
+
+            viewVariablesManager.WritePath(idPath, newValue.ToString());
         }
     }
 }
