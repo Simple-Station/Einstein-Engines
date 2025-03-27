@@ -4,7 +4,7 @@ using Robust.Shared.Containers;
 using Robust.Shared.Timing;
 using Robust.Server.GameObjects;
 using Content.Server.Stunnable;
-using Content.Shared.Ghost.Roles.Components;
+using Content.Server.Ghost.Roles.Components;
 using Content.Shared.StepTrigger.Systems;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Destructible;
