@@ -9,6 +9,9 @@
   - type: StepTrigger
     requiredTriggeredSpeed: 0
     intersectRatio: 0.4
+    blacklist:
+      tags:
+      - Catwalk
     triggerGroups:
       types:
       - Chasm
@@ -36,13 +39,13 @@
   - type: InteractionOutline
   - type: Clickable
   - type: Damageable
-    damageContainer: StructuralInorganic
+    damageContainer: Inorganic
     damageModifierSet: Metallic
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 600
+        damage: 256
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
@@ -54,15 +57,6 @@
     solutions:
       drainBuffer:
         maxVol: 1000
-  - type: Drain # remove liquids around pit
+  - type: Drain
     unitsPerSecond: 10
     unitsDestroyedPerSecond: 10
-  - type: PassiveDamage #passive Healing
-    damage:
-      types:
-        Heat: -1
-        Shock: -1
-        Structural: -1
-      groups:
-        Brute: -1
-  - type: AntiRottingContainer
