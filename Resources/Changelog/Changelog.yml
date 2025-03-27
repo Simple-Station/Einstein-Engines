@@ -13841,3 +13841,12 @@ Entries:
   id: 7044
   time: '2025-03-27T09:45:16.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2091
+- author: CometVoid
+  changes:
+    - type: Tweak
+      message: >-
+        operating tables can now be assembled from the G menu for the cost of 5
+        steel and 2 plastic
+  id: 7045
+  time: '2025-03-27T10:15:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2082
