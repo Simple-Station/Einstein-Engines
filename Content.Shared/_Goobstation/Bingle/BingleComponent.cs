@@ -10,6 +10,7 @@ public sealed partial class BingleComponent : Component
     public bool Upgraded = false;
     [DataField]
     public bool Prime = false;
+
     [DataField]
     public EntityUid? MyPit;
 }
