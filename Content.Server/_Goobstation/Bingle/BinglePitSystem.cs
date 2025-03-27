@@ -67,6 +67,9 @@ public sealed class BinglePitSystem : EntitySystem
             if (_timing.CurTime < falling.NextDeletionTime)
                 continue;
 
+            if (falling.Pit == null)
+                return;
+
             _containerSystem.Insert(uid, falling.Pit.Pit);
             EnsureComp<StunnedComponent>(uid); // used stunned to prevent any funny being done inside the pit
             RemCompDeferred(uid, falling);
