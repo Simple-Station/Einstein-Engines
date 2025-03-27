@@ -1,7 +1,7 @@
 humanoid-profile-editor-employer-label = Employer
 
 employer_name_nanotrasen = NanoTrasen
-employer_description_nanotrasen = The economic engine of the Republic of Biesel and the galaxy’s foremost leader in plasma research. With near-total control over Biesel’s economy and infrastructure, NanoTrasen presents itself as a champion of progress and prosperity—though critics argue it values profit above all else.
+employer_description_nanotrasen = The economic engine of the Republic of Biesel and the galaxy’s foremost leader in phoron research. With near-total control over Biesel’s economy and infrastructure, NanoTrasen presents itself as a champion of progress and prosperity—though critics argue it values profit above all else.
 
 employer_name_unemployed = Unemployed
 employer_description_unemployed = Whether down on their luck or simply unwilling to work, the unemployed survive however they can. Some live off government subsidies, others turn to freelance work—or less legal alternatives. Either way, society tends to look down on them.
