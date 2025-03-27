@@ -297,6 +297,7 @@ entities:
             104: 1.6230264,-5.843657
     - type: RadiationGridResistance
     - type: GridAtmosphere
+      simulatedTurf: false
       version: 2
       data:
         tiles:
