@@ -13861,3 +13861,16 @@ Entries:
   id: 7046
   time: '2025-03-27T11:46:02.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2095
+- author: BramvanZijp
+  changes:
+    - type: Fix
+      message: >-
+        IPCs are no longer prevented from raising their shield due to the tile
+        being blocked by their own brain.
+    - type: Fix
+      message: >-
+        If you attempt to raise your shield but get blocked by another mob, you
+        will now only get one popup indicating this.
+  id: 7047
+  time: '2025-03-27T11:47:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2094
