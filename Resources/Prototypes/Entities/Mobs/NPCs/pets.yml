@@ -698,7 +698,7 @@
     damage:
       types:
         Piercing: 8
-        Poison: 8
+        Poison: 2 # Sleep poison instead of die poison
   - type: Grammar
     attributes:
       proper: true
@@ -711,6 +711,22 @@
     - FootstepSound
   - type: StealTarget
     stealGroup: AnimalShiva
+  - type: SolutionContainerManager
+    solutions:
+      melee:
+        maxVol: 10
+  - type: SolutionRegeneration
+    solution: melee
+    generated:
+      reagents:
+      - ReagentId: Nocturine
+        Quantity: 0.1
+  - type: MeleeChemicalInjector
+    solution: melee
+    transferAmount: 2
+  - type: Access
+    tags:
+    - Security
 
 - type: entity
   name: Willow
