@@ -13881,3 +13881,14 @@ Entries:
   id: 7048
   time: '2025-03-27T14:29:31.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2077
+- author: mrs
+  changes:
+    - type: Tweak
+      message: Cyberiad waste pipes are colored dark red like god intended.
+    - type: Fix
+      message: Cyberiad Logistics Department HV grid is no longer isolated.
+    - type: Fix
+      message: Cyberiad Atmos hallway APC is now connected to MV.
+  id: 7049
+  time: '2025-03-27T18:00:03.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2080
