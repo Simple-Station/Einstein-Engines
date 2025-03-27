@@ -1,5 +1,5 @@
 using Content.Server.Administration.Logs;
-using Content.Server.Interaction.Components;
+using Content.Shared.Interaction.Components;
 using Content.Server.Popups;
 using Content.Shared.Database;
 using Content.Shared.IdentityManagement;
