@@ -54,7 +54,7 @@
     showInHands: false
   - type: ComplexInteraction
   - type: Body
-    prototype: MobDrone
+    prototype: drone
   - type: IntrinsicRadioReceiver
   - type: IntrinsicRadioTransmitter
     channels:
