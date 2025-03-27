@@ -95,6 +95,7 @@
 - type: entity
   id: MobBinglePrime
   name: binglest
+  description: The most bingle per bingle
   parent: MobBingle
   suffix: Prime
   components:
@@ -105,6 +106,7 @@
   id: MobBingleUpgraded
   parent: MobBingle
   name: bingler
+  description: More bingle per bingle
   suffix: Upgraded
   components:
   - type: Bingle
