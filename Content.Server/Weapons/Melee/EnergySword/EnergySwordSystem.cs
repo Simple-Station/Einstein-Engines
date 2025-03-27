@@ -80,7 +80,7 @@ public sealed class EnergySwordSystem : EntitySystem
     //examination to determine which color the esword is on
     private void OnExamine(EntityUid uid, EnergySwordComponent comp, ExaminedEvent args)
     {
-        if (args.IsInDetailsRange)
+        if ((args.IsInDetailsRange)&&(comp.ColorOptions.Count > 1))
         {
             var colorSetting = Loc.GetString("esword-color-setting", ("activatedColorName", comp.ActivatedColorName), ("activatedColor", comp.ActivatedColor));
             args.PushMarkup(Loc.GetString(colorSetting));
