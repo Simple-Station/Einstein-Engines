@@ -4,6 +4,7 @@ namespace Content.Server.Weapons.Melee.EnergySword;
 internal sealed partial class EnergySwordComponent : Component
 {
     [ViewVariables(VVAccess.ReadWrite), DataField("activatedColor"), AutoNetworkedField]
+    public int ColorChoice = 1;
     public Color ActivatedColor = Color.DodgerBlue;
 
     /// <summary>
