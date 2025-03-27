@@ -1,7 +1,5 @@
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
-using Content.Shared.Damage;
-using Robust.Shared.Network;
 
 namespace Content.Shared._Goobstation.Bingle;
 
