@@ -16,7 +16,6 @@
   itemDrop: FloorTileItemBingle
   friction: 0.05 #slippy
   heatCapacity: 10000
-  tileRipResistance: 80
 
 - type: entity
   id: FloorTileItemBingle
