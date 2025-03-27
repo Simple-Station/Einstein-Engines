@@ -1,6 +1,9 @@
+using Content.Server.Radio.Components;
+using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Light;
 using Content.Shared.Light.Components;
+using Content.Shared.RadioJammer;
 using Content.Shared.Toggleable;
 using Content.Shared.Tools.Systems;
 using Microsoft.EntityFrameworkCore.Query.Internal;
@@ -21,6 +24,7 @@ public sealed class EnergySwordSystem : EntitySystem
 
         SubscribeLocalEvent<EnergySwordComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<EnergySwordComponent, InteractUsingEvent>(OnInteractUsing);
+        SubscribeLocalEvent<EnergySwordComponent, ExaminedEvent>(OnExamine);
     }
     // Used to pick a random color for the blade on map init.
     private void OnMapInit(EntityUid uid, EnergySwordComponent comp, MapInitEvent args)
@@ -29,6 +33,7 @@ public sealed class EnergySwordSystem : EntitySystem
         {
             comp.ColorChoice = _random.Next(comp.ColorOptions.Count);
             comp.ActivatedColor = comp.ColorOptions[comp.ColorChoice];
+            comp.ActivatedColorName = comp.ColorNames[comp.ColorChoice];
         }
 
         if (!TryComp(uid, out AppearanceComponent? appearanceComponent))
@@ -66,9 +71,19 @@ public sealed class EnergySwordSystem : EntitySystem
         {
             RemComp<RgbLightControllerComponent>(uid);
             comp.ActivatedColor = comp.ColorOptions[comp.ColorChoice];
+            comp.ActivatedColorName = comp.ColorNames[comp.ColorChoice];
             if (!TryComp(uid, out AppearanceComponent? appearanceComponent))
                 return;
             _appearance.SetData(uid, ToggleableLightVisuals.Color, comp.ActivatedColor, appearanceComponent);
+        }
+    }
+    //examination to determine which color the esword is on
+    private void OnExamine(EntityUid uid, EnergySwordComponent comp, ExaminedEvent args)
+    {
+        if (args.IsInDetailsRange)
+        {
+            var colorSetting = Loc.GetString("esword-color-setting", ("activatedColorName", comp.ActivatedColorName), ("activatedColor", comp.ActivatedColor));
+            args.PushMarkup(Loc.GetString(colorSetting));
         }
     }
 }

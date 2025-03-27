@@ -7,6 +7,8 @@ internal sealed partial class EnergySwordComponent : Component
     [ViewVariables(VVAccess.ReadWrite), DataField("activatedColor"), AutoNetworkedField]
     public Color ActivatedColor = Color.DodgerBlue;
     public int ColorChoice = 0;
+    [ViewVariables(VVAccess.ReadWrite), DataField("activatedColorName"), AutoNetworkedField]
+    public string ActivatedColorName = "Blue";
 
     /// <summary>
     ///     A color option list for the random color picker.
@@ -19,6 +21,16 @@ internal sealed partial class EnergySwordComponent : Component
         Color.Aqua,
         Color.MediumSpringGreen,
         Color.MediumOrchid
+    };
+
+    [DataField("colorNames")]
+    public List<string> ColorNames = new()
+    {
+        "red-orange",
+        "blue",
+        "aqua",
+        "medium green",
+        "light purple",
     };
 
     public bool Hacked = false;
