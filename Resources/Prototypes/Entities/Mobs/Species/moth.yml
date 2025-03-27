@@ -53,6 +53,8 @@
       Unsexed: UnisexMoth
   - type: MovementSpeedModifier
     weightlessAcceleration: 2.5 # Move around more easily in space.
+    WeightlessModifier: 1.5
+    WeightlessFriction: 0.15 # half of magboots
   - type: Flammable
     damage:
       types:
