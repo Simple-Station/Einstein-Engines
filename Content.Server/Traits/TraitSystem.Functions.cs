@@ -305,11 +305,11 @@ public sealed partial class TraitVVEdit : TraitFunction
         ISerializationManager serializationManager)
     {
         var vvm = IoCManager.Resolve<IViewVariablesManager>();
-        string idpath;
+        string idPath;
         foreach (var (path, value) in Changes)
         {
-            idpath = path.Replace("$ID", uid.ToString());
-            vvm.WritePath(idpath, value);
+            idPath = path.Replace("$ID", uid.ToString());
+            vvm.WritePath(idPath, value);
         }
     }
 }
@@ -330,18 +330,18 @@ public sealed partial class TraitVVModify : TraitFunction
         ISerializationManager serializationManager)
     {
         var vvm = IoCManager.Resolve<IViewVariablesManager>();
-        float newval;
-        string idpath;
+        float newValue;
+        string idPath;
         foreach (var (path, value) in Changes)
         {
-            idpath = path.Replace("$ID", uid.ToString());
-            if (!float.TryParse(vvm.ReadPathSerialized(idpath), out var curval))
+            idPath = path.Replace("$ID", uid.ToString());
+            if (!float.TryParse(vvm.ReadPathSerialized(idPath), out var currentValue))
                 continue;
             if (Multiply)
-                newval = curval * value;
+                newValue = currentValue * value;
             else
-                newval = curval + value;
-            vvm.WritePath(idpath, newval.ToString());
+                newValue = currentValue + value;
+            vvm.WritePath(idPath, newValue.ToString());
         }
     }
 }
