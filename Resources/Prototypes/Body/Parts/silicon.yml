@@ -35,7 +35,7 @@
   # Shitmed Change End
 
 - type: entity
-  id: LeftArmBorg
+  id: BaseBorgLeftArm
   parent: PartSilicon
   name: cyborg left arm
   components:
@@ -58,7 +58,7 @@
     - BorgLArm
 
 - type: entity
-  id: RightArmBorg
+  id: BaseBorgRightArm
   parent: PartSilicon
   name: cyborg right arm
   components:
@@ -81,7 +81,7 @@
     - BorgRArm
 
 - type: entity
-  id: LeftLegBorg
+  id: BaseBorgLegLeft
   parent: PartSilicon
   name: cyborg left leg
   components:
@@ -105,7 +105,7 @@
   - type: MovementBodyPart
 
 - type: entity
-  id: RightLegBorg
+  id: BaseBorgLegRight
   parent: PartSilicon
   name: cyborg right leg
   components:
@@ -129,7 +129,7 @@
   - type: MovementBodyPart
 
 - type: entity
-  id: LightHeadBorg
+  id: BaseLightHeadBorg
   parent: PartSilicon
   name: cyborg head
   components:
@@ -146,7 +146,7 @@
     - BorgHead
 
 - type: entity
-  id: TorsoBorg
+  id: BaseBorgTorso
   parent: PartSilicon
   name: cyborg torso
   components:
