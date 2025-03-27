@@ -13850,3 +13850,14 @@ Entries:
   id: 7045
   time: '2025-03-27T10:15:56.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2082
+- author: BramvanZijp
+  changes:
+    - type: Tweak
+      message: >-
+        The EG-4 Energy Revolver's fire-rate, projectile speed, power use, and
+        recharge rate have been buffed, however a 5 second delay after shooting
+        the weapon has been added before the weapon actually begins to self
+        recharge.
+  id: 7046
+  time: '2025-03-27T11:46:02.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2095
