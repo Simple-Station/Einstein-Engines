@@ -33,6 +33,8 @@ public sealed partial class AtmosphereSystem
 
             _physics.SetBodyStatus(uid, physics, BodyStatus.OnGround);
             _physics.SetSleepingAllowed(uid, physics, true);
+
+            pressure.Throwing = false;
         }
     }
 
