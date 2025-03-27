@@ -37,20 +37,15 @@ public sealed partial class BinglePitComponent : Component
     [DataField]
     public float Level = 1f;
     /// <summary>
-    /// Where the entities go when it falls into the pit, empties when it is destroyed.
-    /// </summary>
-    /// <summary>
     /// Maximum size of the Bingle pit at this level
     /// </summary>
     [DataField]
     public float MaxSize = 3f;
-    
+
     /// <summary>
     /// Where the entities go when they fall into the pit, empties when the pit is destroyed
     /// </summary>
     [DataField("pit")]
-    public Container Pit = default!;
-    [DataField]
     public Container Pit = default!;
     [DataField]
     public SoundSpecifier FallingSound = new SoundPathSpecifier("/Audio/Effects/falling.ogg");
