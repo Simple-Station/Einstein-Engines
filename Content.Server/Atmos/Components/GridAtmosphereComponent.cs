@@ -96,5 +96,33 @@ namespace Content.Server.Atmos.Components
 
         [ViewVariables]
         public AtmosphereProcessingState State { get; set; } = AtmosphereProcessingState.Revalidate;
+
+        [DataField]
+        public bool SpaceWindSimulation = true;
+
+        /// <summary>
+        ///     Used to calculate the exits for Space Wind. If pressure is below this number, or is within +- this value above its default starting pressure,
+        ///     then no calculation for space wind is performed.
+        /// </summary>
+        [DataField]
+        public float PressureCutoff = 5f;
+
+        [DataField]
+        public string SpaceWindSound { get; private set; } = "/Audio/Effects/space_wind.ogg";
+
+        [DataField]
+        public int SpaceWindSoundCooldown;
+
+        [DataField]
+        public int SpaceWindSoundCooldownCycles = 75;
+
+        [DataField]
+        public float SpaceWindSoundDenominator = 0.1f;
+
+        [DataField]
+        public float SpaceWindSoundMinVolume = 10f;
+
+        [DataField]
+        public float SpaceWindSoundMaxVolume = 100f;
     }
 }

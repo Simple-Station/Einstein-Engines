@@ -132,7 +132,6 @@
       - "enum.HumanoidVisualLayers.LArm"
       - "enum.HumanoidVisualLayers.RArm"
   - type: MovedByPressure
-    pressureResistance: 4
   - type: Barotrauma
     damage:
       types:
