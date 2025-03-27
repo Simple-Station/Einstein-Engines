@@ -13821,3 +13821,14 @@ Entries:
   id: 7042
   time: '2025-03-27T03:21:38.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2089
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: Adds maintenance drones, cheap robots that are expert engineers.
+    - type: Add
+      message: >-
+        Adds new research option, "basic robotics", which allows you to make
+        drones and proximity sensors
+  id: 7043
+  time: '2025-03-27T09:11:52.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2079
