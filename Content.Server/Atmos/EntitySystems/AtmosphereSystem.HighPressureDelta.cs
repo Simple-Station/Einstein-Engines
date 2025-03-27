@@ -82,7 +82,8 @@ public sealed partial class AtmosphereSystem
         if (pVecLength > 15 && !tile.Hotspot.Valid && atmosComp.SpaceWindSoundCooldown == 0)
         {
             var coordinates = _mapSystem.ToCenterCoordinates(tile.GridIndex, tile.GridIndices);
-            _audio.PlayPvs(atmosComp.SpaceWindSound, coordinates, AudioParams.Default.WithVariation(0.125f).WithVolume(MathHelper.Clamp(pVecLength / 10, 10, 100)));
+            var volume = Math.Clamp(pVecLength / atmosComp.SpaceWindSoundDenominator, atmosComp.SpaceWindSoundMinVolume, atmosComp.SpaceWindSoundMaxVolume);
+            _audio.PlayPvs(atmosComp.SpaceWindSound, coordinates, AudioParams.Default.WithVariation(0.125f).WithVolume(volume));
         }
 
         if (atmosComp.SpaceWindSoundCooldown++ > atmosComp.SpaceWindSoundCooldownCycles)
