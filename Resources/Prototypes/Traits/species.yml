@@ -133,7 +133,7 @@
     - !type:TraitAddComponent
       components:
         - type: Flight
-          SpeedModifier: 6 #test value
+          speedModifier: 6 #test value
   requirements:
     - !type:CharacterSpeciesRequirement
       species:
