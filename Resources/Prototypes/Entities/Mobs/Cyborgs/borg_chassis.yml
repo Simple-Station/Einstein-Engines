@@ -66,6 +66,14 @@
     selectedBorgType: janitor
 
 - type: entity
+  id: BorgChassisService
+  parent: BorgChassisSelectable
+  name: service cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: service
+
+- type: entity
   id: BorgChassisMedical
   parent: BorgChassisSelectable
   name: medical cyborg

@@ -95,6 +95,11 @@
 
 - type: latheRecipe
   parent: BaseBorgLimbRecipe
+  id: RightArmBorgEngineer
+  result: RightArmBorgEngineer
+
+- type: latheRecipe
+  parent: BaseBorgLimbRecipe
   id: LeftArmBorgEngineer
   result: LeftArmBorgEngineer
 
