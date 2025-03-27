@@ -221,7 +221,7 @@
     maxIntensity: 20
     totalIntensity: 10
     intensitySlope: 5
-    can CreateVacuum: false
+    canCreateVacuum: false
 
 - type: entity
   parent: MobSiliconBase
