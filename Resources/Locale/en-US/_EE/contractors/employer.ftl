@@ -1,5 +1,10 @@
 humanoid-profile-editor-employer-label = Employer
 
+character-employer-requirement = You must{$inverted ->
+    [true]{" "}not
+    *[other]{""}
+} be employed by one of these: {$employers}
+
 employer_name_nanotrasen = NanoTrasen
 employer_description_nanotrasen = The economic engine of the Republic of Biesel and the galaxy’s foremost leader in phoron research. With near-total control over Biesel’s economy and infrastructure, NanoTrasen presents itself as a champion of progress and prosperity—though critics argue it values profit above all else.
 

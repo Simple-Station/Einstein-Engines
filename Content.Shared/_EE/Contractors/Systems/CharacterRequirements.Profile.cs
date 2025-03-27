@@ -45,7 +45,7 @@ public sealed partial class CharacterNationalityRequirement : CharacterRequireme
         reason = Loc.GetString(
             localeString,
             ("inverted", Inverted),
-            ("nationality", Nationalities));
+            ("nationalities", Nationalities));
         return (Nationalities.Any(o => o == profile.Nationality)) == !Inverted;
     }
 }
@@ -73,12 +73,12 @@ public sealed partial class CharacterEmployerRequirement : CharacterRequirement
         MindComponent? mind = null
     )
     {
-        var localeString = "character-nationality-requirement";
+        var localeString = "character-employer-requirement";
 
         reason = Loc.GetString(
             localeString,
             ("inverted", Inverted),
-            ("nationality", Employers));
+            ("employers", Employers));
         return (Employers.Any(o => o == profile.Employer)) == !Inverted;
     }
 }
@@ -106,12 +106,12 @@ public sealed partial class CharacterLifepathRequirement : CharacterRequirement
         MindComponent? mind = null
     )
     {
-        var localeString = "character-nationality-requirement";
+        var localeString = "character-lifepath-requirement";
 
         reason = Loc.GetString(
             localeString,
             ("inverted", Inverted),
-            ("nationality", Lifepaths));
+            ("lifepaths", Lifepaths));
         return (Lifepaths.Any(o => o == profile.Lifepath)) == !Inverted;
     }
 }
