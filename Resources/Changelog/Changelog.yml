@@ -13903,3 +13903,12 @@ Entries:
   id: 7050
   time: '2025-03-27T18:03:54.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2059
+- author: GNUtopia
+  changes:
+    - type: Tweak
+      message: Gave scarves a 20% temperature resistance
+    - type: Tweak
+      message: Gave the bomber jacket a 90% temperature resistance
+  id: 7051
+  time: '2025-03-27T18:43:52.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2045
