@@ -1,6 +1,6 @@
 humanoid-profile-editor-lifepath-label = Lifepath
 
-character-nationality-requirement = You must{$inverted ->
+character-lifepath-requirement = You must{$inverted ->
     [true]{" "}not
     *[other]{""}
 } have one of these lifepaths: {$lifepaths}
