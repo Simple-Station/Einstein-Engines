@@ -61,6 +61,7 @@ entities:
           decals:
             0: -5,-3
     - type: GridAtmosphere
+      simulatedTurf: false
       version: 2
       data:
         tiles:
