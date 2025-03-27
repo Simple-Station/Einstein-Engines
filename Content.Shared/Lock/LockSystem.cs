@@ -238,7 +238,12 @@ public sealed class LockSystem : EntitySystem
 
         var ev = new LockToggleAttemptEvent(user, quiet);
         RaiseLocalEvent(uid, ref ev, true);
-        return !ev.Cancelled;
+        if (ev.Cancelled)
+            return false;
+
+        var userEv = new UserLockToggleAttemptEvent(uid, quiet);
+        RaiseLocalEvent(user, ref userEv, true);
+        return !userEv.Cancelled;
     }
 
     private bool HasUserAccess(EntityUid uid, EntityUid user, AccessReaderComponent? reader = null, bool quiet = true)
@@ -382,4 +387,3 @@ public sealed class LockSystem : EntitySystem
         _activatableUI.CloseAll(uid);
     }
 }
-

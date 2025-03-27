@@ -631,6 +631,41 @@
   conditions:
     - !type:TileNotBlocked
 
+#medical
+- type: construction
+  id: MedicalBed
+  name: medical bed
+  description: A hospital bed for patients to recover in. Resting here provides fairly slow healing.
+  graph: bed
+  startNode: start
+  targetNode: medicalbed
+  category: construction-category-furniture
+  icon:
+    sprite: Structures/Furniture/furniture.rsi
+    state: bed-MED
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: OperatingTable
+  name: operating table
+  description: Used for advanced medical procedures.
+  graph: bed
+  startNode: start
+  targetNode: operatingtable
+  category: construction-category-furniture
+  icon:
+    sprite: Structures/Furniture/Tables/optable.rsi
+    state: operating_table
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
 #bedroom
 - type: construction
   id: Bed
@@ -643,23 +678,6 @@
   icon:
     sprite: Structures/Furniture/furniture.rsi
     state: bed
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
-
-- type: construction
-  id: MedicalBed
-  name: medical bed
-  description: A hospital bed for patients to recover in. Resting here provides fairly slow healing.
-  graph: bed
-  startNode: start
-  targetNode: medicalbed
-  category: construction-category-furniture
-  icon:
-    sprite: Structures/Furniture/furniture.rsi
-    state: bed-MED
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
