@@ -297,7 +297,7 @@ public sealed partial class TraitModifyFactions : TraitFunction
 public sealed partial class TraitVVEdit : TraitFunction
 {
     [DataField, AlwaysPushInheritance]
-    public Dictionary<string, string> VVEdit { get; private set; } = new();
+    public Dictionary<string, string> Changes { get; private set; } = new();
 
     public override void OnPlayerSpawn(EntityUid uid,
         IComponentFactory factory,
@@ -305,8 +305,44 @@ public sealed partial class TraitVVEdit : TraitFunction
         ISerializationManager serializationManager)
     {
         var vvm = IoCManager.Resolve<IViewVariablesManager>();
-        foreach (var (path, value) in VVEdit)
-            vvm.WritePath(path, value);
+        string idpath;
+        foreach (var (path, value) in Changes)
+        {
+            idpath = path.Replace("$ID", uid.ToString());
+            vvm.WritePath(idpath, value);
+        }
+    }
+}
+
+/// Only use this if you know what you're doing. This function directly writes to any arbitrary component, relative to the current value. Only works for floats.
+[UsedImplicitly]
+public sealed partial class TraitVVModify : TraitFunction
+{
+    [DataField, AlwaysPushInheritance]
+    public Dictionary<string, float> Changes { get; private set; } = new();
+
+    [DataField, AlwaysPushInheritance]
+    public bool Multiply { get; private set; } = false; // Should the value be multiplied compared to the current one? If not, add/subtract instead.
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        var vvm = IoCManager.Resolve<IViewVariablesManager>();
+        float newval;
+        string idpath;
+        foreach (var (path, value) in Changes)
+        {
+            idpath = path.Replace("$ID", uid.ToString());
+            if (!float.TryParse(vvm.ReadPathSerialized(idpath), out var curval))
+                continue;
+            if (Multiply)
+                newval = curval * value;
+            else
+                newval = curval + value;
+            vvm.WritePath(idpath, newval.ToString());
+        }
     }
 }
 
