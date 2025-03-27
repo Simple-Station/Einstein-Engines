@@ -13665,3 +13665,129 @@ Entries:
   id: 7026
   time: '2025-03-24T21:15:10.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2075
+- author: Tirochora
+  changes:
+    - type: Fix
+      message: Plasmaman ancient envirohelms now properly display the sprite
+    - type: Fix
+      message: Basic colored envirohelms are no longer missing pixels on the sprite
+  id: 7027
+  time: '2025-03-25T08:34:02.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2078
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added back Bionic Legs. The trait has been reworked so that it makes you
+        start with one of your legs replaced with an actual speed legs
+        cyberware. 
+    - type: Add
+      message: >-
+        Bionic Arm now gives you an actual bionic arm. Have fun mugging people
+        for their cyberware so you can have a collection of fancy bionic limbs. 
+  id: 7028
+  time: '2025-03-25T08:38:42.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2056
+- author: Zeta_Null
+  changes:
+    - type: Add
+      message: 8 new facial hair options, 4 beards and 4 moustaches
+    - type: Add
+      message: Ported most of my hairstyles from N14
+  id: 7029
+  time: '2025-03-25T08:51:08.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2076
+- author: astriloqua
+  changes:
+    - type: Tweak
+      message: Proper offsets & BB for N14 Trees. Remap if they already were mapped.
+  id: 7030
+  time: '2025-03-25T08:52:33.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2069
+- author: astriloqua
+  changes:
+    - type: Tweak
+      message: N14 Counters now should be consistent across rotation
+  id: 7031
+  time: '2025-03-25T08:54:07.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2073
+- author: ilmenwe
+  changes:
+    - type: Add
+      message: BaseContainer ToList for both Switch cases using it.
+  id: 7032
+  time: '2025-03-25T08:56:28.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2041
+- author: RocketBoss360
+  changes:
+    - type: Add
+      message: >-
+        Xenoglossy has been given a visual revamp, with a new font, color and
+        speaking verbs associated with it.
+  id: 7033
+  time: '2025-03-26T09:29:58.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2072
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: Added Book Press. Librarians rejoice!
+  id: 7034
+  time: '2025-03-26T10:03:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1977
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: You will smile.
+  id: 7035
+  time: '2025-03-26T10:12:21.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2086
+- author: ViceEmargo
+  changes:
+    - type: Tweak
+      message: >-
+        Construction of atmos pipes are no longer blocked by structures and
+        walls
+  id: 7036
+  time: '2025-03-26T10:14:08.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2085
+- author: GNUtopia
+  changes:
+    - type: Tweak
+      message: Made Healing Word no longer revive
+  id: 7037
+  time: '2025-03-26T10:14:49.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2084
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: Borgs default lawset is asimov once again
+  id: 7038
+  time: '2025-03-26T10:15:23.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2083
+- author: Mike32oz
+  changes:
+    - type: Add
+      message: Lighthouse AI turrets
+    - type: Add
+      message: 'Lighthouse Material reclaimed '
+    - type: Fix
+      message: Lighthouse Salvage shuttle docking door
+    - type: Remove
+      message: Tippy the Clown (nemesis)
+  id: 7039
+  time: '2025-03-26T11:03:07.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2066
+- author: astriloqua
+  changes:
+    - type: Add
+      message: Port point light for observers
+    - type: Add
+      message: Port in-hand & hat variants for space & regular lizard plushies
+  id: 7040
+  time: '2025-03-26T16:08:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2067
+- author: astriloqua
+  changes: []
+  id: 7041
+  time: '2025-03-26T20:34:52.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2047

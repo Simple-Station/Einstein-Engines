@@ -173,7 +173,7 @@
             Burn: -10
         rotReduction: 10
         useDelay: 1
-        doRevive: true
+        doRevive: false
         powerName: Healing Word
         popupText: healing-word-begin
         playSound: true

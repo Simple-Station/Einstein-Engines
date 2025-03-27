@@ -1,4 +1,5 @@
 chat-language-Universal-name = Universal
+chat-language-Psychomantic-name = Psychomantic
 chat-language-Bubblish-name = Bubblish
 chat-language-RootSpeak-name = Rootspeak
 chat-language-Nekomimetic-name = Neko
