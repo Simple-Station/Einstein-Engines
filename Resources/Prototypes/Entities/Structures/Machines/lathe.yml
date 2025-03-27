@@ -498,6 +498,7 @@
     staticRecipes:
     - ProtolatheMachineCircuitboard
     - AutolatheMachineCircuitboard
+    - BookPressMachineCircuitboard
     - CircuitImprinterMachineCircuitboard
     - OreProcessorMachineCircuitboard
     - MaterialReclaimerMachineCircuitboard

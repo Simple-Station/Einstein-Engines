@@ -413,10 +413,6 @@ namespace Content.Server.Atmos.EntitySystems
             while (atmosphere.CurrentRunTiles.TryDequeue(out var tile))
             {
                 HighPressureMovements(ent, tile, bodies, xforms, pressureQuery, metas, projectileQuery, sumGravity);
-                tile.PressureDifference = 0f;
-                tile.LastPressureDirection = tile.PressureDirection;
-                tile.PressureDirection = AtmosDirection.Invalid;
-                tile.PressureSpecificTarget = null;
                 atmosphere.HighPressureDelta.Remove(tile);
 
                 if (number++ < LagCheckIterations)

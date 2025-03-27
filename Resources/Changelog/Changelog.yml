@@ -13718,3 +13718,106 @@ Entries:
   id: 7032
   time: '2025-03-25T08:56:28.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2041
+- author: RocketBoss360
+  changes:
+    - type: Add
+      message: >-
+        Xenoglossy has been given a visual revamp, with a new font, color and
+        speaking verbs associated with it.
+  id: 7033
+  time: '2025-03-26T09:29:58.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2072
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: Added Book Press. Librarians rejoice!
+  id: 7034
+  time: '2025-03-26T10:03:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1977
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: You will smile.
+  id: 7035
+  time: '2025-03-26T10:12:21.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2086
+- author: ViceEmargo
+  changes:
+    - type: Tweak
+      message: >-
+        Construction of atmos pipes are no longer blocked by structures and
+        walls
+  id: 7036
+  time: '2025-03-26T10:14:08.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2085
+- author: GNUtopia
+  changes:
+    - type: Tweak
+      message: Made Healing Word no longer revive
+  id: 7037
+  time: '2025-03-26T10:14:49.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2084
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: Borgs default lawset is asimov once again
+  id: 7038
+  time: '2025-03-26T10:15:23.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2083
+- author: Mike32oz
+  changes:
+    - type: Add
+      message: Lighthouse AI turrets
+    - type: Add
+      message: 'Lighthouse Material reclaimed '
+    - type: Fix
+      message: Lighthouse Salvage shuttle docking door
+    - type: Remove
+      message: Tippy the Clown (nemesis)
+  id: 7039
+  time: '2025-03-26T11:03:07.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2066
+- author: astriloqua
+  changes:
+    - type: Add
+      message: Port point light for observers
+    - type: Add
+      message: Port in-hand & hat variants for space & regular lizard plushies
+  id: 7040
+  time: '2025-03-26T16:08:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2067
+- author: astriloqua
+  changes: []
+  id: 7041
+  time: '2025-03-26T20:34:52.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2047
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed a bug where items thrown by space wind could remain in air for as
+        long as 500 seconds. Items thrown by space wind can now remain in the
+        air for a maximum of 2 seconds past the last time they were thrown.
+    - type: Fix
+      message: DRAMATICALLY IMPROVED SPACE WIND PERFORMANCE.
+    - type: Tweak
+      message: >-
+        ShowAtmos command now shows vectors representing the exact direction
+        space wind at a given tile is trying to throw objects! The length of the
+        lines shown directly correspond to how powerful the flow of air is at
+        that tile. Shorter lines = shorter throws. Longer lines = more powerful
+        throws. These are also no longer restricted to compass directions, and
+        can point in arbitrarily any direction on a circle. 
+    - type: Tweak
+      message: >-
+        Space Wind now no longer has Monstermos as a hard requirement. It'll be
+        as weak as a toddler without it, but if you're running your server on a
+        toaster, you can turn off Monstermos and still have working space wind.
+    - type: Tweak
+      message: >-
+        Wreckages in space are now never airtight. I'm sorry, but this was
+        basically the cost I had to pay in exchange for making Atmos no longer
+        even on the top 20 systems for server tickrate cost. 
+  id: 7042
+  time: '2025-03-27T03:21:38.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2089
