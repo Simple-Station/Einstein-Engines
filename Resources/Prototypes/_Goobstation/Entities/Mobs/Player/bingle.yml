@@ -5,17 +5,13 @@
   description: bingle
   components:
   - type: Bingle
-    upgradeDamage:
-      types:
-        Blunt: 14
-        Structural: 28
   - type: GhostTakeoverAvailable
   - type: GhostRole
     name: ghost-role-information-bingle-name
     description: ghost-role-information-bingle-description
     rules: ghost-role-information-freeagent-rules
     raffle:
-      settings: short
+      settings: default
   - type: Sprite
     drawdepth: Mobs
     sprite: _Goobstation/Mobs/Bingle/bingle.rsi
@@ -31,7 +27,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      140: Dead # by request
+      100: Dead # by request
   - type: MobState
     allowedStates:
       - Alive
@@ -56,6 +52,7 @@
       types:
         Blunt: 7
         Structural: 14 # breaks down the walls and airlocks in 10 hits
+        Ion: 5
     bluntStaminaDamageFactor: 2.0
   - type: MovementSpeedModifier
     baseWalkSpeed : 2 # same as slime
@@ -86,14 +83,15 @@
     - Alive
     damage:
       types:
-        Poison: -0.1
+        Poison: -0.5
       groups:
-        Brute: -0.1
-        Burn: -0.1
+        Brute: -0.5
+        Burn: -0.5
   - type: NightVision
     color: "#008080"
     activateSound: null
     deactivateSound: null
+  - type: FlashImmunity
 
 - type: entity
   id: MobBinglePrime
@@ -102,7 +100,6 @@
   components:
   - type: Bingle
     prime: true
-<<<<<<< HEAD
 
 - type: entity
   id: MobBingleUpgraded
@@ -140,5 +137,3 @@
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: BingleUpgraded
-=======
->>>>>>> parent of bc3f9319c1 (bingle upgrade (#1830))
