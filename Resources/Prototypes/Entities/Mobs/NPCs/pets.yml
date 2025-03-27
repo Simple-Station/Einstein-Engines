@@ -720,7 +720,7 @@
     generated:
       reagents:
       - ReagentId: Nocturine
-        Quantity: 0.2
+        Quantity: 0.1
   - type: MeleeChemicalInjector
     solution: melee
     transferAmount: 3
