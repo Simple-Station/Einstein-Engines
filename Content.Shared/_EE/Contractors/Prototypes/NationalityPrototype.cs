@@ -1,3 +1,4 @@
+using Content.Shared._EE.Contractors.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
 using Content.Shared.Customization.Systems;
@@ -32,4 +33,7 @@ public sealed partial class NationalityPrototype : IPrototype
 
     [DataField(serverOnly: true)]
     public TraitFunction[] Functions { get; private set; } = Array.Empty<TraitFunction>();
+
+    [DataField]
+    public ProtoId<EntityPrototype> PassportPrototype { get; } = new();
 }

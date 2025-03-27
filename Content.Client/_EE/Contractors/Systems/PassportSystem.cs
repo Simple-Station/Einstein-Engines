@@ -1,5 +1,6 @@
 using Content.Shared._EE.Contractors.Components;
 using Content.Shared._EE.Contractors.Systems;
+using Content.Shared.Preferences;
 using Robust.Client.GameObjects;
 using Robust.Client.Timing;
 using Robust.Shared.Timing;
@@ -17,6 +18,22 @@ public sealed class PassportSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<PassportComponent, SharedPassportSystem.PassportToggleEvent>(OnPassportToggled);
+        SubscribeLocalEvent<PassportComponent, SharedPassportSystem.PassportProfileUpdatedEvent>(OnPassportProfileUpdated);
+    }
+
+    public void OnPassportProfileUpdated(Entity<PassportComponent> passport, ref SharedPassportSystem.PassportProfileUpdatedEvent evt)
+    {
+        if(!_timing.IsFirstTimePredicted || evt.Handled || !_entityManager.TryGetComponent<SpriteComponent>(passport, out var sprite))
+            return;
+
+        var profile = evt.Profile;
+
+        var currentState = sprite.LayerGetState(1);
+
+        if (currentState.Name == null)
+            return;
+
+        sprite.LayerSetState(1, currentState.Name.Replace("human", profile.Species.ToLower()));
     }
 
     private void OnPassportToggled(Entity<PassportComponent> passport, ref SharedPassportSystem.PassportToggleEvent evt)
