@@ -13791,3 +13791,33 @@ Entries:
   id: 7041
   time: '2025-03-26T20:34:52.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2047
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed a bug where items thrown by space wind could remain in air for as
+        long as 500 seconds. Items thrown by space wind can now remain in the
+        air for a maximum of 2 seconds past the last time they were thrown.
+    - type: Fix
+      message: DRAMATICALLY IMPROVED SPACE WIND PERFORMANCE.
+    - type: Tweak
+      message: >-
+        ShowAtmos command now shows vectors representing the exact direction
+        space wind at a given tile is trying to throw objects! The length of the
+        lines shown directly correspond to how powerful the flow of air is at
+        that tile. Shorter lines = shorter throws. Longer lines = more powerful
+        throws. These are also no longer restricted to compass directions, and
+        can point in arbitrarily any direction on a circle. 
+    - type: Tweak
+      message: >-
+        Space Wind now no longer has Monstermos as a hard requirement. It'll be
+        as weak as a toddler without it, but if you're running your server on a
+        toaster, you can turn off Monstermos and still have working space wind.
+    - type: Tweak
+      message: >-
+        Wreckages in space are now never airtight. I'm sorry, but this was
+        basically the cost I had to pay in exchange for making Atmos no longer
+        even on the top 20 systems for server tickrate cost. 
+  id: 7042
+  time: '2025-03-27T03:21:38.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2089
