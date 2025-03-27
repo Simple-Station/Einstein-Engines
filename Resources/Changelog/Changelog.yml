@@ -13892,3 +13892,14 @@ Entries:
   id: 7049
   time: '2025-03-27T18:00:03.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2080
+- author: Mike32oz
+  changes:
+    - type: Add
+      message: 'Saltern Material reclaimed '
+    - type: Add
+      message: Saltern AI turrets at satellite and upload.
+    - type: Fix
+      message: Saltern gridatmos
+  id: 7050
+  time: '2025-03-27T18:03:54.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2059
