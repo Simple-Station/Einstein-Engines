@@ -73,11 +73,11 @@
   - type: Targeting # Shitmed Change
 
 - type: entity
-  name: Drone
+  name: drone
   id: MobDrone
   parent: [PlayerSiliconBase, BaseBorgTransponder]
   components:
-  - type: 
+  - type: Drone # this system has too much going on, it should really be like three different components
     whitelist:
       tags:
       - DroneUsable
