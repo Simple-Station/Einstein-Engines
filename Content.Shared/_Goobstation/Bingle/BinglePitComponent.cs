@@ -8,13 +8,11 @@ namespace Content.Shared._Goobstation.Bingle;
 public sealed partial class BinglePitComponent : Component
 {
     /// <summary>
-    /// Amount of stored Bingle Points for this pit
+    /// ammount of stored
     /// </summary>
     [DataField]
     public float BinglePoints = 0f;
-    [DataField]
     public float PointsForAlive = 5f;
-    [DataField]
     public float AdditionalPointsForHuman = 5f;
     /// <summary>
     /// amount of Bingle Points needed for a new bingle
@@ -41,7 +39,7 @@ public sealed partial class BinglePitComponent : Component
     /// </summary>
     public Container Pit = default!;
     [DataField]
+    public float MaxSize = 3f;
     public SoundSpecifier FallingSound = new SoundPathSpecifier("/Audio/Effects/falling.ogg");
-    [DataField]
     public EntProtoId GhostRoleToSpawn = "SpawnPointGhostBingle";
 }

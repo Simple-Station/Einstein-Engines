@@ -36,5 +36,5 @@ public sealed partial class BinglePitFallingComponent : Component
     /// <summary>
     ///     the pit your about to fall into
     /// </summary>
-    public BinglePitComponent? Pit;
+    public BinglePitComponent Pit = new BinglePitComponent();
 }
