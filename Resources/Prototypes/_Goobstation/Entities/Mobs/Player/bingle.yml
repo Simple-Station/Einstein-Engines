@@ -67,7 +67,7 @@
     overtime: 40
     sound: /Audio/Weapons/egloves.ogg
   - type: Damageable
-    damageContainer: OrganicPart # unsure if this is the right type
+    damageContainer: Biological
     damageModifierSet: Bingle
   - type: FootstepModifier
     footstepSoundCollection:
