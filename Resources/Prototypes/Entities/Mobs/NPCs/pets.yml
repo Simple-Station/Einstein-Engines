@@ -727,6 +727,7 @@
   - type: Access
     tags:
     - Security
+    - Brig
 
 - type: entity
   name: Willow
