@@ -93,13 +93,7 @@ public abstract partial class SharedVehicleSystem : EntitySystem
 
     private void OnHorn(EntityUid uid, VehicleComponent component, InstantActionEvent args)
     {
-        if (args.Handled == true)
-            return;
-
-        if (component.Driver != args.Performer)
-            return;
-
-        if (component.HornSound == null)
+        if (args.Handled == true || component.Driver != args.Performer || component.HornSound == null)
             return;
 
         _audio.PlayPvs(component.HornSound, uid);
@@ -108,13 +102,7 @@ public abstract partial class SharedVehicleSystem : EntitySystem
 
     private void OnSiren(EntityUid uid, VehicleComponent component, InstantActionEvent args)
     {
-        if (args.Handled == true)
-            return;
-
-        if (component.Driver != args.Performer)
-            return;
-
-        if (component.SirenSound == null)
+        if (args.Handled == true || component.Driver != args.Performer || component.SirenSound == null)
             return;
 
         if (component.SirenEnabled)
@@ -161,10 +149,7 @@ public abstract partial class SharedVehicleSystem : EntitySystem
     {
         var driver = args.Buckle.Owner;
 
-        if (!TryComp(driver, out MobMoverComponent? mover))
-            return;
-
-        if (ent.Comp.Driver != null)
+        if (!TryComp(driver, out MobMoverComponent? mover) || ent.Comp.Driver != null)
             return;
 
         ent.Comp.Driver = driver;
@@ -226,10 +211,7 @@ public abstract partial class SharedVehicleSystem : EntitySystem
 
     private void Dismount(EntityUid driver, EntityUid vehicle)
     {
-        if (!TryComp<VehicleComponent>(vehicle, out var vehicleComp))
-            return;
-
-        if (vehicleComp.Driver != driver)
+        if (!TryComp<VehicleComponent>(vehicle, out var vehicleComp) || vehicleComp.Driver != driver)
             return;
 
         RemComp<RelayInputMoverComponent>(driver);

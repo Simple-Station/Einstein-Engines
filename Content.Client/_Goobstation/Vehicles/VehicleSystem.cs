@@ -20,13 +20,7 @@ public sealed class VehicleSystem : SharedVehicleSystem
 
     private void OnAppearanceChange(EntityUid uid, VehicleComponent comp, ref AppearanceChangeEvent args)
     {
-        if (args.Sprite == null)
-            return;
-
-        if (!_appearance.TryGetData<bool>(uid, VehicleState.Animated, out bool animated))
-            return;
-
-        if (!TryComp<SpriteComponent>(uid, out var spriteComp))
+        if (args.Sprite == null || !_appearance.TryGetData<bool>(uid, VehicleState.Animated, out bool animated) || !TryComp<SpriteComponent>(uid, out var spriteComp))
             return;
 
         SpritePos(uid, comp);
