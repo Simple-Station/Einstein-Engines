@@ -292,7 +292,7 @@ public sealed partial class TraitModifyFactions : TraitFunction
     }
 }
 
-/// Only use this if you know what you're doing. This function directly writes to any arbitrary component.
+/// Only use this if you know what you're doing and there is no reasonable alternative. This function directly writes to any arbitrary component.
 [UsedImplicitly]
 public sealed partial class TraitVVEdit : TraitFunction
 {
@@ -315,7 +315,7 @@ public sealed partial class TraitVVEdit : TraitFunction
     }
 }
 
-/// Only use this if you know what you're doing. This function directly writes to any arbitrary component, relative to the current value. Only works for floats.
+/// Only use this if you know what you're doing and there is no reasonable alternative. This function directly writes to any arbitrary component, relative to the current value. Only works for floats.
 [UsedImplicitly]
 public sealed partial class TraitVVModify : TraitFunction
 {
