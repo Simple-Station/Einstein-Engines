@@ -33,7 +33,6 @@
              Botanist: [ 2, 3 ]
              Chef: [ 1, 2 ]
              Clown: [ 1, 1 ]
-             Lawyer: [ 1, 1 ]
              Reporter: [ 1, 1 ]
              Musician: [ 1, 1 ]
              Janitor: [ 1, 2 ]
@@ -75,7 +74,7 @@
              CargoTechnician: [ 2, 4 ]
            #justice
              Lawyer: [ 1, 1 ]
-             Prosecutor: [ 1, 1 ] # Not sure why this isn't working. :( 
+             Prosecutor: [ 1, 1 ] # Finally figured it out. Feel so dumb. :( 
            #civilian
              Passenger: [ -1, -1 ]
            #silicons
