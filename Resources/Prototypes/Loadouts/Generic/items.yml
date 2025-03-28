@@ -720,13 +720,14 @@
        jobs:
          - Brigmedic
 
-- type: loadout
-  id: LoadoutItemPAI
-  category: Items
-  cost: 3
-  canBeHeirloom: true
-  items:
-    - PersonalAI
+ # 5 zillion ghostroles, more people will take them if theyre less common.
+ # - type: loadout
+ # id: LoadoutItemPAI
+ # category: Items
+ # cost: 3
+ # canBeHeirloom: true
+ # items:
+ #   - PersonalAI
 
 - type: loadout
   id: LoadoutItemCrayonBox
