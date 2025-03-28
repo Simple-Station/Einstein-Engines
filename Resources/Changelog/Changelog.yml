@@ -13874,3 +13874,60 @@ Entries:
   id: 7047
   time: '2025-03-27T11:47:50.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2094
+- author: dootythefrooty
+  changes:
+    - type: Add
+      message: Borg Chassis Selection has been ported. Rejoice.
+  id: 7048
+  time: '2025-03-27T14:29:31.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2077
+- author: mrs
+  changes:
+    - type: Tweak
+      message: Cyberiad waste pipes are colored dark red like god intended.
+    - type: Fix
+      message: Cyberiad Logistics Department HV grid is no longer isolated.
+    - type: Fix
+      message: Cyberiad Atmos hallway APC is now connected to MV.
+  id: 7049
+  time: '2025-03-27T18:00:03.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2080
+- author: Mike32oz
+  changes:
+    - type: Add
+      message: 'Saltern Material reclaimed '
+    - type: Add
+      message: Saltern AI turrets at satellite and upload.
+    - type: Fix
+      message: Saltern gridatmos
+  id: 7050
+  time: '2025-03-27T18:03:54.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2059
+- author: GNUtopia
+  changes:
+    - type: Tweak
+      message: Gave scarves a 20% temperature resistance
+    - type: Tweak
+      message: Gave the bomber jacket a 90% temperature resistance
+  id: 7051
+  time: '2025-03-27T18:43:52.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2045
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: >-
+        Changelings can now spawn as a game mode. don't know why they couldn't
+        before.
+    - type: Remove
+      message: Greenshift can no longer randomly happen; it has to be voted for.
+    - type: Remove
+      message: No more loadout pAIs
+    - type: Tweak
+      message: Animal spawn events are rarer
+    - type: Tweak
+      message: Random Sentience event is rarer
+    - type: Tweak
+      message: Hellshift should be more hellish
+  id: 7052
+  time: '2025-03-28T05:30:07.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2102
