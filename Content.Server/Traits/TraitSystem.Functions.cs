@@ -612,7 +612,8 @@ public sealed partial class TraitModifyDensity : TraitFunction
         ISerializationManager serializationManager)
     {
         var physicsSystem = entityManager.System<SharedPhysicsSystem>();
-        if (!entityManager.TryGetComponent<FixturesComponent>(uid, out var fixturesComponent))
+        if (!entityManager.TryGetComponent<FixturesComponent>(uid, out var fixturesComponent)
+            || fixturesComponent.Fixtures.Count is 0)
             return;
 
         var fixture = fixturesComponent.Fixtures.First();
