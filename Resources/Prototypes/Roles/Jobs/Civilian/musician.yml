@@ -14,7 +14,7 @@
   - !type:GiveItemOnHolidaySpecial
     holiday: MikuDay
     prototype: BoxPerformer
-  requiremetns:
+  requirements:
     - !type:CharacterEmployerRequirement
       inverted: true
       employers:

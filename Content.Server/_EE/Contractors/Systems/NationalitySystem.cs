@@ -41,11 +41,10 @@ public sealed class NationalitySystem : EntitySystem
     public void ApplyNationality(EntityUid uid, ProtoId<JobPrototype>? jobId, HumanoidCharacterProfile profile,
         Dictionary<string, TimeSpan> playTimes, bool whitelisted)
     {
-        if (jobId is not null && !_prototype.TryIndex(jobId, out var jobPrototype)
-            && jobPrototype is not null)
+        if (jobId == null || !_prototype.TryIndex(jobId, out _))
             return;
 
-        var jobPrototypeToUse = _prototype.Index(jobId ?? _prototype.EnumeratePrototypes<JobPrototype>().First().ID);
+        var jobPrototypeToUse = _prototype.Index(jobId.Value);
 
         ProtoId<NationalityPrototype> nationality = profile.Nationality != string.Empty? profile.Nationality : SharedHumanoidAppearanceSystem.DefaultNationality;
 

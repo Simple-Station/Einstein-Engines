@@ -1,5 +1,10 @@
 humanoid-profile-editor-lifepath-label = Lifepath
 
+character-lifepath-requirement = You must{$inverted ->
+    [true]{" "}not
+    *[other]{""}
+} have one of these lifepaths: {$lifepaths}
+
 lifepath_name_spacer = Spacer
 lifepath_description_spacer = You have been born on a space station, and have lived in space all of your life. The only time you saw a planet was through a shuttle window.
 

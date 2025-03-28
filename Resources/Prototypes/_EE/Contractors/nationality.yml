@@ -4,6 +4,7 @@
   descriptionKey: nationality_description_bieselite
   hostile:
   - Solarian
+  passportPrototype: BieselPassport
 
 - type: nationality
   id: Solarian
@@ -21,6 +22,7 @@
         - SolCommon
       languagesUnderstood:
         - SolCommon
+  passportPrototype: SolPassport
 
 - type: nationality
   id: Valyrian
@@ -36,6 +38,7 @@
         - ValyrianStandard
       languagesUnderstood:
         - ValyrianStandard
+  passportPrototype: ValyrianPassport
 
 - type: nationality
   id: Elyran
@@ -47,6 +50,7 @@
         - Elyran
       languagesUnderstood:
         - Elyran
+  passportPrototype: ElyranPassport
 
 - type: nationality
   id: Nederlandic
@@ -58,3 +62,4 @@
         - NovuNederic
       languagesUnderstood:
         - NovuNederic
+  passportPrototype: NederlandicPassport

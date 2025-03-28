@@ -73,7 +73,7 @@ public sealed partial class CharacterEmployerRequirement : CharacterRequirement
         MindComponent? mind = null
     )
     {
-        var localeString = "character-nationality-requirement";
+        var localeString = "character-employer-requirement";
 
         reason = Loc.GetString(
             localeString,
@@ -106,7 +106,7 @@ public sealed partial class CharacterLifepathRequirement : CharacterRequirement
         MindComponent? mind = null
     )
     {
-        var localeString = "character-nationality-requirement";
+        var localeString = "character-lifepath-requirement";
 
         reason = Loc.GetString(
             localeString,
