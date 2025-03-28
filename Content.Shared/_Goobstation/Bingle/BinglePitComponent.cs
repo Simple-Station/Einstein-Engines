@@ -46,7 +46,7 @@ public sealed partial class BinglePitComponent : Component
     /// Where the entities go when they fall into the pit, empties when the pit is destroyed
     /// </summary>
     [DataField("pit")]
-    public Container Pit? = default!;
+    public Container? Pit = default!;
     [DataField]
     public SoundSpecifier FallingSound = new SoundPathSpecifier("/Audio/Effects/falling.ogg");
     [DataField]
