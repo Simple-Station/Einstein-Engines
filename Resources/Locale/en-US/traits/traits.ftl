@@ -613,4 +613,4 @@ trait-description-Vampirism =
 trait-name-MothFlight = True Flight
 trait-description-MothFlight =
     Unlike other mothpeople, your body is light enough and your wings are strong enough to be able to fly under normal gravity.
-    Flight is strenuous, however, requiring your hands to be free and quickly draining your stamina.
+    Flight is faster than running; however, it is strenuous and quickly drains your stamina.
