@@ -13976,3 +13976,16 @@ Entries:
   id: 7055
   time: '2025-03-28T17:10:00.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2030
+- author: BramvanZijp
+  changes:
+    - type: Add
+      message: >-
+        Added the Bulky and Featherweight traits, which increase/decrease your
+        characters weight.
+    - type: Add
+      message: >-
+        Added the Bodybuilder and Weakling traits, which impact the movement
+        speed penalty while pulling.
+  id: 7056
+  time: '2025-03-28T19:41:17.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2096
