@@ -284,6 +284,7 @@
     damage:
       types:
         Heat: 5
+        Ion: 10 #Goobstation
     soundHit:
       collection: WeakHit
     forceSound: true
@@ -366,6 +367,7 @@
     damage:
       types:
         Heat: 1
+        Ion: 5 #Goobstation
     soundHit:
       collection: WeakHit
     forceSound: true
@@ -1396,5 +1398,44 @@
       types:
         Blunt: 3
         Heat: 15
+    soundHit:
+      collection: MeatLaserImpact
+
+- type: entity #Goobstation, put here so the X-01 stuff isnt spread everywhere.
+  name: ion bolt
+  id: BulletEnergyGunIon
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Reflective
+    reflective:
+    - Energy
+  - type: FlyBySound
+    sound:
+      collection: EnergyMiss
+      params:
+        volume: 5
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    layers:
+    - state: omnilaser_greyscale
+      shader: unshaded
+      color: blue
+  - type: Ammo
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.2,0.2,0.2"
+        hard: false
+        mask:
+        - Opaque
+  - type: Projectile
+    impactEffect: BulletImpactEffectDisabler
+    damage:
+      types:
+        Ion: 20
     soundHit:
       collection: MeatLaserImpact
