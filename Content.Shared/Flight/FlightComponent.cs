@@ -40,7 +40,7 @@ public sealed partial class FlightComponent : Component
     ///     Speed modifier while in flight
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float SpeedModifier = 1.15f;
+    public float SpeedModifier = 2.0f;
 
     /// <summary>
     ///     Does the flier need hands free?
