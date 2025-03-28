@@ -74,8 +74,8 @@
              SalvageSpecialist: [ 2, 3 ]
              CargoTechnician: [ 2, 4 ]
            #justice
-            Lawyer: [ 1, 1 ]
-            Prosecutor: [ 1, 1 ] # Not sure why this isn't working. :( 
+             Lawyer: [ 1, 1 ]
+             Prosecutor: [ 1, 1 ] # Not sure why this isn't working. :( 
            #civilian
              Passenger: [ -1, -1 ]
            #silicons
