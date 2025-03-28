@@ -1404,3 +1404,29 @@
   - !type:PlantAdjustHealth
     amount: 0.1
 
+- type: reagent
+  id: Marrodene
+  name: reagent-name-marrodene
+  group: Medicine
+  desc: reagent-desc-marrodene
+  physicalDesc: reagent-physical-desc-cloudy
+  flavor: medicine
+  color: "#94214b"
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:ModifyBleedAmount
+        amount: -1
+      - !type:ModifyBloodLevel
+        amount: 5
+      - !type:HealthChange
+        damage:
+          types:
+            Bloodloss: -5
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 11
+        damage:
+          types:
+            Slash: 3
