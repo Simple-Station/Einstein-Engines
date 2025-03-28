@@ -1148,9 +1148,8 @@
       traits:
         - Featherweight
   functions:
-    - !type:TraitVVModify
-      changes:
-        /entity/$ID/Fixtures/Fixtures[fix1 ]/Density: 55
+    - !type:TraitModifyDensity
+      densityModifier: 55
       multiply: false
     - !type:TraitPushDescription
       descriptionExtensions:
@@ -1168,16 +1167,15 @@
       traits:
         - Bulky
   functions:
-    - !type:TraitVVModify
-      changes:
-        /entity/$ID/Fixtures/Fixtures[fix1 ]/Density: 0.5
+    - !type:TraitModifyDensity
+      densityModifier: 0.5
       multiply: true
     - !type:TraitPushDescription
       descriptionExtensions:
         - description: examine-featherweight-message
           fontSize: 12
           requireDetailRange: true
-          
+
 - type: trait
   id: Bodybuilder
   category: Physical

@@ -26,6 +26,10 @@ using Content.Shared.Tag;
 using Content.Shared.Body.Part;
 using Content.Server.Body.Systems;
 using Content.Shared.Body.Components;
+using Robust.Shared.Physics;
+using Robust.Shared.Physics.Components;
+using Robust.Shared.Physics.Systems;
+using System.Linq;
 
 namespace Content.Server.Traits;
 
@@ -305,11 +309,11 @@ public sealed partial class TraitVVEdit : TraitFunction
         ISerializationManager serializationManager)
     {
         var viewVariablesManager = IoCManager.Resolve<IViewVariablesManager>();
-        
+
         foreach (var (path, value) in Changes)
         {
             var idPath = path.Replace("$ID", uid.ToString());
-            
+
             viewVariablesManager.WritePath(idPath, value);
         }
     }
@@ -335,7 +339,7 @@ public sealed partial class TraitVVModify : TraitFunction
         foreach (var (path, value) in Changes)
         {
             var idPath = path.Replace("$ID", uid.ToString());
-            
+
             if (!float.TryParse(viewVariablesManager.ReadPathSerialized(idPath), out var currentValue))
                 continue;
 
@@ -592,6 +596,34 @@ public sealed partial class TraitModifyStamina : TraitFunction
         staminaComponent.CritThreshold += StaminaModifier;
         staminaComponent.Decay += DecayModifier;
         staminaComponent.Cooldown += CooldownModifier;
+    }
+}
+
+[UsedImplicitly]
+public sealed partial class TraitModifyDensity : TraitFunction
+{
+    [DataField, AlwaysPushInheritance]
+    public float DensityModifier;
+
+    [DataField, AlwaysPushInheritance]
+    public bool Multiply = false;
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        var physicsSystem = entityManager.System<SharedPhysicsSystem>();
+
+        if (!entityManager.TryGetComponent<FixturesComponent>(uid, out var fixturesComponent))
+            return;
+
+        var newDensity = fixturesComponent.Fixtures.First().Value.Density + DensityModifier;
+
+        if (Multiply)
+            newDensity = fixturesComponent.Fixtures.First().Value.Density * DensityModifier;
+
+        physicsSystem.SetDensity(uid, fixturesComponent.Fixtures.First().Key, fixturesComponent.Fixtures.First().Value, newDensity);
     }
 }
 
