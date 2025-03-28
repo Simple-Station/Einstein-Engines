@@ -46,7 +46,7 @@ public sealed partial class CharacterNationalityRequirement : CharacterRequireme
             localeString,
             ("inverted", Inverted),
             ("nationality", Nationalities));
-        return (Nationalities.Any(o => o == profile.Nationality)) == !Inverted;
+        return Nationalities.Any(o => o == profile.Nationality);
     }
 }
 
@@ -79,7 +79,7 @@ public sealed partial class CharacterEmployerRequirement : CharacterRequirement
             localeString,
             ("inverted", Inverted),
             ("nationality", Employers));
-        return (Employers.Any(o => o == profile.Employer)) == !Inverted;
+        return Employers.Any(o => o == profile.Employer);
     }
 }
 
@@ -112,6 +112,6 @@ public sealed partial class CharacterLifepathRequirement : CharacterRequirement
             localeString,
             ("inverted", Inverted),
             ("nationality", Lifepaths));
-        return (Lifepaths.Any(o => o == profile.Lifepath)) == !Inverted;
+        return Lifepaths.Any(o => o == profile.Lifepath);
     }
 }
