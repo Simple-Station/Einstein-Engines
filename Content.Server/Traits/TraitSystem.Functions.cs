@@ -18,7 +18,6 @@ using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Mobs;
-using Content.Shared.Damage.Components;
 using Content.Shared.NPC.Systems;
 using Content.Shared.Weapons.Melee;
 using Robust.Shared.Audio;
@@ -27,7 +26,6 @@ using Content.Shared.Body.Part;
 using Content.Server.Body.Systems;
 using Content.Shared.Body.Components;
 using Robust.Shared.Physics;
-using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
 using System.Linq;
 
@@ -614,16 +612,12 @@ public sealed partial class TraitModifyDensity : TraitFunction
         ISerializationManager serializationManager)
     {
         var physicsSystem = entityManager.System<SharedPhysicsSystem>();
-
         if (!entityManager.TryGetComponent<FixturesComponent>(uid, out var fixturesComponent))
             return;
 
-        var newDensity = fixturesComponent.Fixtures.First().Value.Density + DensityModifier;
-
-        if (Multiply)
-            newDensity = fixturesComponent.Fixtures.First().Value.Density * DensityModifier;
-
-        physicsSystem.SetDensity(uid, fixturesComponent.Fixtures.First().Key, fixturesComponent.Fixtures.First().Value, newDensity);
+        var fixture = fixturesComponent.Fixtures.First();
+        var newDensity = Multiply ? fixture.Value.Density * DensityModifier : fixture.Value.Density + DensityModifier;
+        physicsSystem.SetDensity(uid, fixture.Key, fixture.Value, newDensity);
     }
 }
 
