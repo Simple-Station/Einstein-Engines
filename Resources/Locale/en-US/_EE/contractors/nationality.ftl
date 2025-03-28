@@ -3,7 +3,7 @@ humanoid-profile-editor-nationality-label = Nationality
 character-nationality-requirement = You must{$inverted ->
     [true]{" "}not
     *[other]{""}
-} have one of these nationalities: {$nationalities}
+} have one of these nationalities: {$nationality}
 
 nationality_name_bieselite = Bieselite
 nationality_description_bieselite = Citizens of the Republic of Biesel, a corporate-backed democracy at the heart of Tau Ceti. Their economy thrives on free trade, private enterprise, and the ever-present influence of NanoTrasen. While some enjoy the wealth and opportunity their home provides, others see them as little more than corporate serfs in a system built for profit.

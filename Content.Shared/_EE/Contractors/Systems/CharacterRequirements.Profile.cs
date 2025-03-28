@@ -78,7 +78,7 @@ public sealed partial class CharacterEmployerRequirement : CharacterRequirement
         reason = Loc.GetString(
             localeString,
             ("inverted", Inverted),
-            ("nationality", Employers));
+            ("employers", Employers));
         return Employers.Any(o => o == profile.Employer);
     }
 }
@@ -111,7 +111,7 @@ public sealed partial class CharacterLifepathRequirement : CharacterRequirement
         reason = Loc.GetString(
             localeString,
             ("inverted", Inverted),
-            ("nationality", Lifepaths));
+            ("lifepaths", Lifepaths));
         return Lifepaths.Any(o => o == profile.Lifepath);
     }
 }
