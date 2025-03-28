@@ -490,3 +490,21 @@
         type: Add
         time: 5
         refresh: false
+
+- type: reagent #PLEASE FINISH THIS.
+  id: Dexteritin
+  name: reagent-name-dexteritin
+  group: Narcotics
+  desc: reagent-desc-dexteritin
+  flavor: bitter
+  color: "#faf082"
+  physicalDesc: reagent-physical-desc-chalky
+
+- type: reagent
+  id: Viviance
+  name: reagent-name-viviance
+  group: Narcotics
+  desc: reagent-desc-viviance
+  flavor: bitter
+  color: "#91e352"
+  physicalDesc: reagent-physical-desc-feathery # need to add this
