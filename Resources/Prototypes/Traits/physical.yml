@@ -1150,8 +1150,8 @@
   functions:
     - !type:TraitVVModify
       changes:
-        /entity/$ID/Fixtures/Fixtures[fix1 ]/Density: 1.5
-      multiply: true
+        /entity/$ID/Fixtures/Fixtures[fix1 ]/Density: 55
+      multiply: false
     - !type:TraitPushDescription
       descriptionExtensions:
         - description: examine-bulky-message
