@@ -134,6 +134,7 @@
       components:
         - type: Flight
           speedModifier: 1
+          flapInterval: 0.75
           needsHands: false
   requirements:
     - !type:CharacterSpeciesRequirement
