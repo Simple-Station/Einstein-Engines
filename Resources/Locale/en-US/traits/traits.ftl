@@ -623,7 +623,7 @@ trait-description-Featherweight =
 trait-name-Bulky = Bulky
 trait-description-Bulky =
     Your body is unusually heavy for your species.
-    This trait increases the density of your body by 50.
+    This trait increases the density of your body by 55.
 
 trait-name-Weakling = Weakling
 trait-description-Weakling =
