@@ -666,3 +666,18 @@
       amount: 1
   products:
     Haloperidol: 5
+
+- type: reaction
+  id: Marrodene
+  minTemp: 370
+  reactants:
+    Iron:
+      amount: 1
+    Oxygen:
+      amount: 1
+    TranexamicAcid:
+      amount: 1
+    Saline:
+      amount: 2
+  products:
+    Marrodene: 5
