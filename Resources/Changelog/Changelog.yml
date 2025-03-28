@@ -13821,3 +13821,171 @@ Entries:
   id: 7042
   time: '2025-03-27T03:21:38.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2089
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: Adds maintenance drones, cheap robots that are expert engineers.
+    - type: Add
+      message: >-
+        Adds new research option, "basic robotics", which allows you to make
+        drones and proximity sensors
+  id: 7043
+  time: '2025-03-27T09:11:52.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2079
+- author: BramvanZijp
+  changes:
+    - type: Fix
+      message: >-
+        Fixed being able to remove an IPC's power cell while their panel is
+        unlocked but closed.
+  id: 7044
+  time: '2025-03-27T09:45:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2091
+- author: CometVoid
+  changes:
+    - type: Tweak
+      message: >-
+        operating tables can now be assembled from the G menu for the cost of 5
+        steel and 2 plastic
+  id: 7045
+  time: '2025-03-27T10:15:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2082
+- author: BramvanZijp
+  changes:
+    - type: Tweak
+      message: >-
+        The EG-4 Energy Revolver's fire-rate, projectile speed, power use, and
+        recharge rate have been buffed, however a 5 second delay after shooting
+        the weapon has been added before the weapon actually begins to self
+        recharge.
+  id: 7046
+  time: '2025-03-27T11:46:02.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2095
+- author: BramvanZijp
+  changes:
+    - type: Fix
+      message: >-
+        IPCs are no longer prevented from raising their shield due to the tile
+        being blocked by their own brain.
+    - type: Fix
+      message: >-
+        If you attempt to raise your shield but get blocked by another mob, you
+        will now only get one popup indicating this.
+  id: 7047
+  time: '2025-03-27T11:47:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2094
+- author: dootythefrooty
+  changes:
+    - type: Add
+      message: Borg Chassis Selection has been ported. Rejoice.
+  id: 7048
+  time: '2025-03-27T14:29:31.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2077
+- author: mrs
+  changes:
+    - type: Tweak
+      message: Cyberiad waste pipes are colored dark red like god intended.
+    - type: Fix
+      message: Cyberiad Logistics Department HV grid is no longer isolated.
+    - type: Fix
+      message: Cyberiad Atmos hallway APC is now connected to MV.
+  id: 7049
+  time: '2025-03-27T18:00:03.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2080
+- author: Mike32oz
+  changes:
+    - type: Add
+      message: 'Saltern Material reclaimed '
+    - type: Add
+      message: Saltern AI turrets at satellite and upload.
+    - type: Fix
+      message: Saltern gridatmos
+  id: 7050
+  time: '2025-03-27T18:03:54.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2059
+- author: GNUtopia
+  changes:
+    - type: Tweak
+      message: Gave scarves a 20% temperature resistance
+    - type: Tweak
+      message: Gave the bomber jacket a 90% temperature resistance
+  id: 7051
+  time: '2025-03-27T18:43:52.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2045
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: >-
+        Changelings can now spawn as a game mode. don't know why they couldn't
+        before.
+    - type: Remove
+      message: Greenshift can no longer randomly happen; it has to be voted for.
+    - type: Remove
+      message: No more loadout pAIs
+    - type: Tweak
+      message: Animal spawn events are rarer
+    - type: Tweak
+      message: Random Sentience event is rarer
+    - type: Tweak
+      message: Hellshift should be more hellish
+  id: 7052
+  time: '2025-03-28T05:30:07.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2102
+- author: GNUtopia
+  changes:
+    - type: Tweak
+      message: Buffed harpy speed while weightless
+    - type: Tweak
+      message: Buffed moth speed while weightless
+    - type: Tweak
+      message: Allowed movement during the doafter to start flying
+    - type: Tweak
+      message: Made moth flight slower but no longer require open hands
+    - type: Tweak
+      message: Changed moth True Flight requirements to be based on weight
+  id: 7053
+  time: '2025-03-28T14:08:00.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2100
+- author: CometVoid
+  changes:
+    - type: Add
+      message: >-
+        Makeshift hydroponics trays, which can be made out of 5 plastic and 6
+        rods.
+    - type: Tweak
+      message: >-
+        hydroponic tray machine board moved to the autolathe, so botanists can
+        use the service lathe to make hydroponics trays
+  id: 7054
+  time: '2025-03-28T14:58:14.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2099
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: >-
+        Contractors. Be sure to edit your character to set an employer and
+        nationality!
+    - type: Add
+      message: >-
+        Nationality, Lifepath, and Employer have been added to character
+        creation. These don't currently do much except spawn a passport
+        containing information about where your character is from and who they
+        are, but they are fully integrated with Character Requirements, and by
+        extension can be used for and alongside Traits, Loadouts, Jobs,
+        Antagonists, etc. 
+  id: 7055
+  time: '2025-03-28T17:10:00.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2030
+- author: BramvanZijp
+  changes:
+    - type: Add
+      message: >-
+        Added the Bulky and Featherweight traits, which increase/decrease your
+        characters weight.
+    - type: Add
+      message: >-
+        Added the Bodybuilder and Weakling traits, which impact the movement
+        speed penalty while pulling.
+  id: 7056
+  time: '2025-03-28T19:41:17.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2096

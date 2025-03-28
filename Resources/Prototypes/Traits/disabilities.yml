@@ -127,6 +127,10 @@
       jobs:
         - Borg
         - MedicalBorg
+    - !type:CharacterLifepathRequirement
+      inverted: true
+      lifepaths:
+      - Clone
   functions:
     - !type:TraitAddComponent
       components:

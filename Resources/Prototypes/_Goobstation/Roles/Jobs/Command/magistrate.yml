@@ -15,6 +15,10 @@
       traits:
         - Foreigner
         - ForeignerLight
+    - !type:CharacterEmployerRequirement
+      inverted: true
+      employers:
+      - Unemployed
   weight: 20
   startingGear: MagistrateGear
   icon: "JobIconMagistrate"

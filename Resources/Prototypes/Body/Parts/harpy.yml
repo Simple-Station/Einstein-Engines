@@ -164,6 +164,7 @@
     toolName: "a right arm" # Shitmed Change
     onAdd:
     - type: Flight
+      speedModifier: 1.25
       isLayerAnimated: true
       layer: "/Textures/Mobs/Customization/Harpy/harpy_wings.rsi"
       animationKey: "Flap"
