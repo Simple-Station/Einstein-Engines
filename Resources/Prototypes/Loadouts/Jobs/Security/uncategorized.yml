@@ -1322,6 +1322,20 @@
 
 # Gloves
 
+- type: loadout
+  id: LoadoutSecurityCombatGloves
+  category: JobsSecurityGloves
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityGloves
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingHandsGlovesCombat
+
 # Head
 - type: loadout
   id: LoadoutSecurityHeadHatBeret
@@ -1605,3 +1619,4 @@
   items:
     - ClothingUniformEnvirosuitSecGrey
     - ClothingHeadEnvirohelmSecGrey
+
