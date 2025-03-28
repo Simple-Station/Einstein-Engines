@@ -203,3 +203,20 @@
   - BasicStationEventScheduler
   - BasicRoundstartVariation
   - LavalandStormScheduler # Lavaland Change
+
+- type: gamePreset
+  id: Changeling
+  alias:
+  - Changeling
+  - Changelings
+  - Ling
+  - Lings
+  name: changeling-gamemode-title
+  description: changeling-gamemode-description
+  showInVote: false
+  rules:
+  - Changeling
+  - SubGamemodesRule
+  - BasicStationEventScheduler
+  - BasicRoundstartVariation
+  - LavalandStormScheduler # Lavaland Change
