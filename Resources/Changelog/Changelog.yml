@@ -13959,3 +13959,20 @@ Entries:
   id: 7054
   time: '2025-03-28T14:58:14.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2099
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: >-
+        Contractors. Be sure to edit your character to set an employer and
+        nationality!
+    - type: Add
+      message: >-
+        Nationality, Lifepath, and Employer have been added to character
+        creation. These don't currently do much except spawn a passport
+        containing information about where your character is from and who they
+        are, but they are fully integrated with Character Requirements, and by
+        extension can be used for and alongside Traits, Loadouts, Jobs,
+        Antagonists, etc. 
+  id: 7055
+  time: '2025-03-28T17:10:00.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2030
