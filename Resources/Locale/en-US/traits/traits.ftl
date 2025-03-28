@@ -613,17 +613,17 @@ trait-description-Vampirism =
 trait-name-MothFlight = True Flight
 trait-description-MothFlight =
     Unlike other mothpeople, your body is light enough and your wings are strong enough to be able to fly under normal gravity.
-    Flight is strenuous, however, requiring your hands to be free and quickly draining your stamina.
+    Flight is faster than running; however, it is strenuous and quickly drains your stamina.
 
 trait-name-Featherweight = Featherweight
 trait-description-Featherweight =
     Your body is unusually lightweight for your species.
-    This trait reduces the mass of your body by 50%.
+    This trait reduces the density of your body by 50%.
 
 trait-name-Bulky = Bulky
 trait-description-Bulky =
     Your body is unusually heavy for your species.
-    This trait increases the mass of your body by 50%.
+    This trait increases the density of your body by 50.
 
 trait-name-Weakling = Weakling
 trait-description-Weakling =
