@@ -67,7 +67,7 @@ public sealed class BinglePitSystem : EntitySystem
             if (_timing.CurTime < falling.NextDeletionTime)
                 continue;
 
-            if (falling.Pit == null)
+            if (falling.Pit == null || falling.Pit.Pit == null)
                 return;
 
             _containerSystem.Insert(uid, falling.Pit.Pit);
