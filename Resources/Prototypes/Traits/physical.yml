@@ -1139,6 +1139,92 @@
           requireDetailRange: true
 
 - type: trait
+  id: Bulky
+  category: Physical
+  points: -6
+  requirements:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Featherweight
+  functions:
+    - !type:TraitModifyDensity
+      densityModifier: 55
+      multiply: false
+    - !type:TraitPushDescription
+      descriptionExtensions:
+        - description: examine-bulky-message
+          fontSize: 12
+          requireDetailRange: true
+
+- type: trait
+  id: Featherweight
+  category: Physical
+  points: 3
+  requirements:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Bulky
+  functions:
+    - !type:TraitModifyDensity
+      densityModifier: 0.5
+      multiply: true
+    - !type:TraitPushDescription
+      descriptionExtensions:
+        - description: examine-featherweight-message
+          fontSize: 12
+          requireDetailRange: true
+
+- type: trait
+  id: Bodybuilder
+  category: Physical
+  points: -6
+  requirements:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Weakling
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: Puller
+          walkSpeedModifier: 0.975
+          sprintSpeedModifier: 0.975
+          softGrabSpeedModifier: 0.95
+          hardGrabSpeedModifier: 0.85
+          chokeGrabSpeedModifier: 0.7
+    - !type:TraitPushDescription
+      descriptionExtensions:
+        - description: examine-bodybuilder-message
+          fontSize: 12
+          requireDetailRange: true
+
+- type: trait
+  id: Weakling
+  category: Physical
+  points: 3
+  requirements:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Bodybuilder
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: Puller
+          walkSpeedModifier: 0.9
+          sprintSpeedModifier: 0.9
+          softGrabSpeedModifier: 0.8
+          hardGrabSpeedModifier: 0.4
+          chokeGrabSpeedModifier: 0.2
+    - !type:TraitPushDescription
+      descriptionExtensions:
+        - description: examine-weakling-message
+          fontSize: 12
+          requireDetailRange: true
+
+- type: trait
   id: Vampirism # You may port this to EE, you have my permission!
   category: Physical
   points: -3
