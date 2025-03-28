@@ -1433,7 +1433,7 @@
         mask:
         - Opaque
   - type: Projectile
-    impactEffect: BulletImpactEffectBlueDisabler
+    impactEffect: BulletImpactEffectDisabler
     damage:
       types:
         Ion: 20
