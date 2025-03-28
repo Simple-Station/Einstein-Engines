@@ -13912,3 +13912,22 @@ Entries:
   id: 7051
   time: '2025-03-27T18:43:52.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2045
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: >-
+        Changelings can now spawn as a game mode. don't know why they couldn't
+        before.
+    - type: Remove
+      message: Greenshift can no longer randomly happen; it has to be voted for.
+    - type: Remove
+      message: No more loadout pAIs
+    - type: Tweak
+      message: Animal spawn events are rarer
+    - type: Tweak
+      message: Random Sentience event is rarer
+    - type: Tweak
+      message: Hellshift should be more hellish
+  id: 7052
+  time: '2025-03-28T05:30:07.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2102
