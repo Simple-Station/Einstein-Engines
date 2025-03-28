@@ -88,6 +88,7 @@
     state: vehicle
     noRot: true
   - type: Vehicle
+    renderOver: North, NorthEast, NorthWest
     hornSound:
       collection: DeskBell
       params:
@@ -119,6 +120,7 @@
   - type: Sprite
     sprite: Objects/Vehicles/syndicatesegway.rsi
     state: vehicle
+    renderOver: North, NorthEast, NorthWest
     noRot: true
   - type: ItemSlots
     slots:
@@ -216,7 +218,7 @@
   - type: Vehicle
     requiredHands: 0
     engineRunning: true
-    renderOver: North, NorthEast, NorthWest
+    renderOver: South, SouthEast, SouthWest
   - type: MovementSpeedModifier
     acceleration: 10
     friction: 10
