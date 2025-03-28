@@ -27,6 +27,7 @@ reagent-physical-desc-enigmatic = enigmatic
 reagent-physical-desc-ethereal = ethereal
 reagent-physical-desc-exhilarating = exhilarating
 reagent-physical-desc-exotic-smelling = exotic smelling
+reagent-physical-desc-feathery = feathery
 reagent-physical-desc-ferrous = ferrous
 reagent-physical-desc-fibrous = fibrous
 reagent-physical-desc-fizzy = fizzy

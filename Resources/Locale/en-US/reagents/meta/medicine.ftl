@@ -147,3 +147,6 @@ reagent-desc-potassium-iodide = Will reduce the damaging effects of radiation by
 
 reagent-name-haloperidol = haloperidol
 reagent-desc-haloperidol = Removes most stimulating and hallucinogenic drugs. Reduces druggy effects and jitteriness. Causes drowsiness.
+
+reagent-name-marrodene = marrodene
+reagent-desc-marrodene = A chemical cocktail that sends blood cell production into overdrive, promoting clotting and quickly reversing the effects of blood loss. Overdosing causes severe hemorrhaging.

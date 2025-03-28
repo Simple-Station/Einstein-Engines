@@ -39,3 +39,9 @@ reagent-desc-tear-gas = A chemical that causes severe irritation and crying, com
 
 reagent-name-happiness = happiness
 reagent-desc-happiness = Fills you with ecstatic numbness and causes minor brain damage. Highly addictive. If overdosed causes sudden mood swings.
+
+reagent-name-dexteritin = dexteritin
+reagent-desc-dexteritin = A long-lasting stimulant that improves focus and fine motor control, originally developed to assist field surgeons. Overuse can cause nerve damage.
+
+reagent-name-viviance = Viviance
+reagent-desc-dexteritin = An experimental derivative of dexteritin that affords greater benefits but severely stresses the body. High doses can also cause amnesia.
