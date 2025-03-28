@@ -13989,3 +13989,10 @@ Entries:
   id: 7056
   time: '2025-03-28T19:41:17.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2096
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: Ion damage
+  id: 7057
+  time: '2025-03-28T23:44:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2103
