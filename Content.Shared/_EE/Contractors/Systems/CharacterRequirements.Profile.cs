@@ -41,11 +41,12 @@ public sealed partial class CharacterNationalityRequirement : CharacterRequireme
     )
     {
         var localeString = "character-nationality-requirement";
-
+        const string color = "green";
         reason = Loc.GetString(
             localeString,
             ("inverted", Inverted),
-            ("nationality", Nationalities));
+            ("nationality", $"[color={color}]{string.Join($"[/color], [color={color}]",
+                Nationalities.Select(s => Loc.GetString(prototypeManager.Index(s).NameKey)))}[/color]"));
         return Nationalities.Any(o => o == profile.Nationality);
     }
 }
@@ -74,11 +75,12 @@ public sealed partial class CharacterEmployerRequirement : CharacterRequirement
     )
     {
         var localeString = "character-employer-requirement";
-
+        const string color = "green";
         reason = Loc.GetString(
             localeString,
             ("inverted", Inverted),
-            ("employers", Employers));
+            ("employers", $"[color={color}]{string.Join($"[/color], [color={color}]",
+                Employers.Select(s => Loc.GetString(prototypeManager.Index(s).NameKey)))}[/color]"));
         return Employers.Any(o => o == profile.Employer);
     }
 }
@@ -107,11 +109,12 @@ public sealed partial class CharacterLifepathRequirement : CharacterRequirement
     )
     {
         var localeString = "character-lifepath-requirement";
-
+        const string color = "green";
         reason = Loc.GetString(
             localeString,
             ("inverted", Inverted),
-            ("lifepaths", Lifepaths));
+            ("lifepaths", $"[color={color}]{string.Join($"[/color], [color={color}]",
+                Lifepaths.Select(s => Loc.GetString(prototypeManager.Index(s).NameKey)))}[/color]"));
         return Lifepaths.Any(o => o == profile.Lifepath);
     }
 }
