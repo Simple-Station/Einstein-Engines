@@ -59,15 +59,16 @@
     - !type:CharacterItemGroupRequirement
       group: LoadoutSmokes
 
-- type: loadout
-  id: LoadoutItemCigsSyndicate
-  category: Items
-  cost: 2
-  items:
-    - CigPackSyndicate
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutSmokes
+# Why give an uplink item this good as a loadout option?
+# - type: loadout
+#  id: LoadoutItemCigsSyndicate
+#  category: Items
+#  cost: 2
+#  items:
+#    - CigPackSyndicate
+#  requirements:
+#    - !type:CharacterItemGroupRequirement
+#      group: LoadoutSmokes
 
 - type: loadout
   id: LoadoutItemLighter
