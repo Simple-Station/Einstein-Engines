@@ -14024,3 +14024,10 @@ Entries:
   id: 7059
   time: '2025-03-29T00:49:53.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2051
+- author: Timfa2112
+  changes:
+    - type: Fix
+      message: fix passports not spawning when your loadout replaces your bag
+  id: 7060
+  time: '2025-03-29T02:22:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2106
