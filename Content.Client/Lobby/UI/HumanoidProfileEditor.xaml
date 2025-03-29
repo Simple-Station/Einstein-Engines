@@ -167,7 +167,7 @@
                                 <OptionButton Name="NationalityButton" HorizontalAlignment="Right" />
                             </BoxContainer>
                             <BoxContainer HorizontalExpand="False">
-                                <RichTextLabel Name="NationalityDescriptionLabel" Text="" HorizontalExpand="False" MaxWidth="800"/>
+                                <RichTextLabel Name="NationalityDescriptionLabel" Text="" HorizontalExpand="False" MaxWidth="600"/>
                             </BoxContainer>
                             <!-- Employer -->
                             <BoxContainer HorizontalExpand="True">
@@ -178,7 +178,7 @@
                                 <OptionButton Name="EmployerButton" HorizontalAlignment="Right" />
                             </BoxContainer>
                             <BoxContainer HorizontalExpand="False">
-                                <RichTextLabel Name="EmployerDescriptionLabel" Text="" HorizontalExpand="False" MaxWidth="800"/>
+                                <RichTextLabel Name="EmployerDescriptionLabel" Text="" HorizontalExpand="False" MaxWidth="600"/>
                             </BoxContainer>
                             <!-- Lifepath -->
                             <BoxContainer HorizontalExpand="True">
@@ -189,7 +189,7 @@
                                 <OptionButton Name="LifepathButton" HorizontalAlignment="Right" />
                             </BoxContainer>
                             <BoxContainer HorizontalExpand="False">
-                                <RichTextLabel Name="LifepathDescriptionLabel" Text="" HorizontalExpand="False" MaxWidth="800"/>
+                                <RichTextLabel Name="LifepathDescriptionLabel" Text="" HorizontalExpand="False" MaxWidth="600"/>
                             </BoxContainer>
                     </BoxContainer>
                 </ScrollContainer>
