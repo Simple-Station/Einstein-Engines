@@ -782,10 +782,14 @@
     damageCoefficient: 0.1
   - type: Armor
     modifiers:
+      flatReductions:
+        Blunt: 3
+        Piercing: 3
+        Slash: 3
       coefficients:
-        Blunt: 0.35
-        Slash: 0.35
-        Piercing: 0.4
+        Blunt: 0.4
+        Slash: 0.4
+        Piercing: 0.3
         Heat: 0.4
         Radiation: 0.75
         Caustic: 0.6
@@ -798,7 +802,7 @@
     coefficient: 1 # Replaced with HEAVY modify stun time and slow protection
   - type: Reflect
     spread: 270
-    reflectProb: 0.25
+    reflectProb: 0.45
     innate: true
     reflects:
       - Energy
