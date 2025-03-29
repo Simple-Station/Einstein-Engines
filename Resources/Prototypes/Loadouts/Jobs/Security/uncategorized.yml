@@ -1326,7 +1326,7 @@
   id: LoadoutSecurityCombatGloves
   category: JobsSecurityAUncategorized
   cost: 0
-  exclusive: truey
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityGloves
