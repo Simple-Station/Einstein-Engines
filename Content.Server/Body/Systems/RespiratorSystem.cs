@@ -10,6 +10,7 @@ using Content.Server.Popups;
 using Content.Shared.Alert;
 using Content.Shared.Atmos;
 using Content.Shared.Body.Components;
+using Content.Shared._Shitmed.Body.Components; // Shitmed Change
 using Content.Shared._Shitmed.Body.Organ;
 using Content.Shared.Body.Prototypes;
 using Content.Shared.Chemistry.Components;
