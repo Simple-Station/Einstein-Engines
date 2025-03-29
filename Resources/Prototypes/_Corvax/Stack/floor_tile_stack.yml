@@ -1,4 +1,10 @@
 - type: stack
+  id: FloorTileItemWoodParquet
+  name: black wood floor
+  spawn: FloorTileItemWoodParquet
+  maxCount: 30
+
+- type: stack
   id: FloorTileItemWoodBlack
   name: black wood floor
   spawn: FloorTileItemWoodBlack
