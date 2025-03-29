@@ -14038,3 +14038,12 @@ Entries:
   id: 7061
   time: '2025-03-29T07:15:36.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2109
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: >-
+        Moved Nationality, Employer, and Lifepath to a new Background tab. They
+        now also show descriptions for the chosen selections.
+  id: 7062
+  time: '2025-03-29T17:49:18.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2113
