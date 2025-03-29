@@ -1410,6 +1410,13 @@
     - !type:CharacterDepartmentRequirement
       departments:
       - Security
+    - !type:CharacterJobRequirement
+      jobs:
+        - SecurityOfficer
+        - Detective
+        - Brigmedic
+        - PrisonGuard
+        - SecurityCadet
   items:
     - ClothingMaskGasSwat
 
