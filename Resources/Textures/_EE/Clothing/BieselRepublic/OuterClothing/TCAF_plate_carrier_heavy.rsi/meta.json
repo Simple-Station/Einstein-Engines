@@ -8,11 +8,15 @@
   },
   "states": [
     {
-      "name": "icon"
+        "name": "icon"
     },
     {
-      "name": "equipped-OUTERCLOTHING",
-      "directions": 4
+        "name": "equipped-OUTERCLOTHING",
+        "directions": 4
+    },
+    {
+        "name": "equipped-OUTERCLOTHING-unshaded",
+        "directions": 4
     }
   ]
 }
