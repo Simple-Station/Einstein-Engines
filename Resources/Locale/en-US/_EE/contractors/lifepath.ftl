@@ -32,9 +32,6 @@ lifepath_description_warvet = You fought in a war that left scars on your body a
 lifepath_name_clone = Clone
 lifepath_description_clone = You are not unique. Mass-produced for a purpose, you struggle to define your own identity.
 
-lifepath_name_cultist = Cultist
-lifepath_description_cultist = You were raised in a fringe cult, bound by faith to an ideology that few understand.
-
 lifepath_name_miner = Miner
 lifepath_description_miner = Your life has been spent drilling into asteroids or planets, seeking wealth in the dark.
 
@@ -83,12 +80,6 @@ lifepath_description_streetvendor = You sold whatever people needed—food, tech
 lifepath_name_entertainer = Entertainer
 lifepath_description_entertainer = Music, dance, theatre, or even just making people laugh—you knew how to hold an audience in the palm of your hand.
 
-lifepath_name_syndicateagent = Former Syndicate Agent
-lifepath_description_syndicateagent = You worked for the Syndicate, carrying out assassinations, sabotage, and worse. Now, the memories haunt you, and you're trying to make amends—or at least forget.
-
-lifepath_name_nuclearoperative = Nuclear Operative
-lifepath_description_nuclearoperative = You infiltrated a station, armed the warhead, and watched the fire consume everything. Now, the authorities and old enemies are hunting you, and there’s nowhere left to run.
-
 lifepath_name_enforcer = Enforcer
 lifepath_description_enforcer = You were the muscle for a crime syndicate, breaking bones and collecting debts. People feared you. Some still do.
 
@@ -97,6 +88,3 @@ lifepath_description_hacker = You cracked firewalls, stole secrets, and erased d
 
 lifepath_name_conartist = Con Artist
 lifepath_description_conartist = Lies were your currency. You’ve swindled people out of fortunes, identities, and even their lives. Now, you’re always watching your back.
-
-lifepath_name_hitman = Hitman
-lifepath_description_hitman = You killed for a living—clean, efficient, professional. The job paid well, but one day, the target list had your name on it.

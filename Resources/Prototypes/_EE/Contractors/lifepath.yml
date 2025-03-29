@@ -53,11 +53,6 @@
   descriptionKey: lifepath_description_clone
 
 - type: lifepath
-  id: Cultist
-  nameKey: lifepath_name_cultist
-  descriptionKey: lifepath_description_cultist
-
-- type: lifepath
   id: Miner
   nameKey: lifepath_name_miner
   descriptionKey: lifepath_description_miner
@@ -138,16 +133,6 @@
   descriptionKey: lifepath_description_entertainer
 
 - type: lifepath
-  id: SyndicateAgent
-  nameKey: lifepath_name_syndicateagent
-  descriptionKey: lifepath_description_syndicateagent
-
-- type: lifepath
-  id: NuclearOperative
-  nameKey: lifepath_name_nuclearoperative
-  descriptionKey: lifepath_description_nuclearoperative
-
-- type: lifepath
   id: Enforcer
   nameKey: lifepath_name_enforcer
   descriptionKey: lifepath_description_enforcer
@@ -161,8 +146,3 @@
   id: ConArtist
   nameKey: lifepath_name_conartist
   descriptionKey: lifepath_description_conartist
-
-- type: lifepath
-  id: Hitman
-  nameKey: lifepath_name_hitman
-  descriptionKey: lifepath_description_hitman
