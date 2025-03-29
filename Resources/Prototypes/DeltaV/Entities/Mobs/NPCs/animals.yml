@@ -183,3 +183,8 @@
     understands:
     - Dog
     - TauCetiBasic
+  - type: Access
+    tags:
+    - Security
+    - Brig
+
