@@ -341,6 +341,6 @@
     Heat: 1.25
     Shock: 1.5
     Ion: 1 # They are already the only player species to take this damage at all, so no need to compound that weakness
-    Brute: 1
+    Blunt: 1
     Slash: 0.9
     Piercing: 0.9
