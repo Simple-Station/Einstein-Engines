@@ -36,6 +36,8 @@ namespace Content.Client.Options.UI.Tabs
 
         private readonly List<Action> _deferCommands = new();
 
+        private string _searchText = "";
+
         private void HandleToggleUSQWERTYCheckbox(BaseButton.ButtonToggledEventArgs args)
         {
             _cfg.SetCVar(CVars.DisplayUSQWERTYHotkeys, args.Pressed);
@@ -135,6 +137,19 @@ namespace Content.Client.Options.UI.Tabs
                 });
             };
 
+            SearchInput.OnTextChanged += _ =>
+            {
+                _searchText = SearchInput.Text.TrimStart();
+                PopulateOptions();
+            };
+
+            PopulateOptions();
+        }
+
+        private void PopulateOptions()
+        {
+            KeybindsContainer.RemoveAllChildren();
+            _keyControls.Clear();
             var first = true;
 
             void AddHeader(string headerContents)
@@ -153,8 +168,31 @@ namespace Content.Client.Options.UI.Tabs
                 });
             }
 
+            bool ShouldDisplayButton(BoundKeyFunction function)
+            {
+                if (_searchText == string.Empty)
+                    return true;
+
+                var optionText = Loc.GetString($"ui-options-function-{CaseConversion.PascalToKebab(function.FunctionName)}");
+                return optionText.StartsWith(_searchText, StringComparison.OrdinalIgnoreCase)
+                    || _searchText.Contains(optionText, StringComparison.OrdinalIgnoreCase);
+            }
+
+            bool ShouldDisplayCheckBox(string checkBoxName)
+            {
+                if (_searchText == string.Empty)
+                    return true;
+
+                var optionText = Loc.GetString(checkBoxName);
+                return optionText.StartsWith(_searchText, StringComparison.OrdinalIgnoreCase)
+                    || _searchText.Contains(optionText, StringComparison.OrdinalIgnoreCase);
+            }
+
             void AddButton(BoundKeyFunction function)
             {
+                if (!ShouldDisplayButton(function))
+                    return;
+
                 var control = new KeyControl(this, function);
                 KeybindsContainer.AddChild(control);
                 _keyControls.Add(function, control);
@@ -162,6 +200,9 @@ namespace Content.Client.Options.UI.Tabs
 
             void AddCheckBox(string checkBoxName, bool currentState, Action<BaseButton.ButtonToggledEventArgs>? callBackOnClick)
             {
+                if (!ShouldDisplayCheckBox(checkBoxName))
+                    return;
+
                 CheckBox newCheckBox = new CheckBox() { Text = Loc.GetString(checkBoxName) };
                 newCheckBox.Pressed = currentState;
                 newCheckBox.OnToggled += callBackOnClick;
@@ -303,6 +344,7 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(EngineKeyFunctions.ShowDebugMonitors);
             AddButton(EngineKeyFunctions.HideUI);
             AddButton(ContentKeyFunctions.InspectEntity);
+
 
             foreach (var control in _keyControls.Values)
             {
