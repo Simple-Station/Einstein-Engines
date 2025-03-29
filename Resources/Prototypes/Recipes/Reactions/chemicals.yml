@@ -81,7 +81,7 @@
       amount: 1
     Sulfur:
       amount: 1
-    Oxygen: 
+    Oxygen:
       amount: 2
   products:
     SulfuricAcid: 3
@@ -501,3 +501,27 @@
       amount: 1
   products:
     Tazinide: 1
+
+- type: reaction
+  id: dexteritin
+  impact: Medium
+  reactants:
+    Ephedrine:
+      amount: 2
+    Synaptizine:
+      amount: 2
+    Sugar:
+      amount: 1
+  products:
+    Dexteritin: 5
+
+- type: reaction
+  id: viviance
+  impact: Medium
+  reactants:
+    Dexteritin:
+      amount: 2
+    Licoxide:
+      amount: 1
+  products:
+    Viviance: 3
