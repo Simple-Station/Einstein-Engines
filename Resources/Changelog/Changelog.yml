@@ -14003,3 +14003,24 @@ Entries:
   id: 7058
   time: '2025-03-29T00:16:43.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2090
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Re-added vehicles.
+    - type: Add
+      message: >-
+        Wheelchairs and the wheelchair bound trait have been re-added (and
+        re-worked to work with surgery).
+    - type: Add
+      message: Added Secways & Syndicate Segways, ATVs & Janicarts
+    - type: Add
+      message: The Syndicate Segway has been added to the Syndicate Uplink for 25tc!
+    - type: Tweak
+      message: The medivend now has 3 folded wheelchairs included in it
+    - type: Tweak
+      message: You can now print wheelchairs in the medlathe
+    - type: Tweak
+      message: Office chairs are mobile now, cubicle workers rejoice!
+  id: 7059
+  time: '2025-03-29T00:49:53.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2051
