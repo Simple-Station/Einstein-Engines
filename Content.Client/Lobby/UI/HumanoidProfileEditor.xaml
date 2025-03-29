@@ -71,13 +71,19 @@
                                                ToolTip="{Loc 'humanoid-profile-editor-guidebook-button-tooltip'}"/>
                                 <OptionButton Name="NationalityButton" HorizontalAlignment="Right" />
                             </BoxContainer>
-                            <!-- Employer -->
+                            <BoxContainer HorizontalExpand="False">
+                                <RichTextLabel Name="NationalityDescriptionLabel" Text="" HorizontalExpand="False" MaxWidth="600"/>
+                            </BoxContainer>
+                                <!-- Employer -->
                             <BoxContainer HorizontalExpand="True">
                                 <Label Text="{Loc 'humanoid-profile-editor-employer-label'}" />
                                 <Control HorizontalExpand="True"/>
                                 <TextureButton Name="EmployerInfoButton" Scale="0.3 0.3" VerticalAlignment="Center"
                                                ToolTip="{Loc 'humanoid-profile-editor-guidebook-button-tooltip'}"/>
                                 <OptionButton Name="EmployerButton" HorizontalAlignment="Right" />
+                            </BoxContainer>
+                            <BoxContainer HorizontalExpand="False">
+                                <RichTextLabel Name="EmployerDescriptionLabel" Text="" HorizontalExpand="False" MaxWidth="600"/>
                             </BoxContainer>
                             <!-- Lifepath -->
                             <BoxContainer HorizontalExpand="True">
@@ -86,6 +92,9 @@
                                 <TextureButton Name="LifepathInfoButton" Scale="0.3 0.3" VerticalAlignment="Center"
                                                ToolTip="{Loc 'humanoid-profile-editor-guidebook-button-tooltip'}"/>
                                 <OptionButton Name="LifepathButton" HorizontalAlignment="Right" />
+                            </BoxContainer>
+                            <BoxContainer HorizontalExpand="False">
+                                <RichTextLabel Name="LifepathDescriptionLabel" Text="" HorizontalExpand="False" MaxWidth="600"/>
                             </BoxContainer>
                             <!-- Age -->
                             <BoxContainer HorizontalExpand="True">
