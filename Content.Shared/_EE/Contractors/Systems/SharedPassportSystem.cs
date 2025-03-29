@@ -1,9 +1,9 @@
 using Content.Shared._EE.Contractors.Components;
 using Content.Shared._EE.Contractors.Prototypes;
 using Content.Shared.Administration.Logs;
+using Content.Shared.Clothing.Loadouts.Systems;
 using Content.Shared.Database;
 using Content.Shared.Examine;
-using Content.Shared.GameTicking;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Inventory;
@@ -11,7 +11,6 @@ using Content.Shared.Item;
 using Content.Shared.Preferences;
 using Content.Shared.Storage;
 using Content.Shared.Storage.EntitySystems;
-using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
@@ -35,7 +34,7 @@ public class SharedPassportSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<PassportComponent, UseInHandEvent>(OnUseInHand);
-        SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawnComplete);
+        SubscribeLocalEvent<PlayerLoadoutAppliedEvent>(OnPlayerLoadoutApplied);
         SubscribeLocalEvent<PassportComponent, ExaminedEvent>(OnExamined);
     }
 
@@ -63,7 +62,7 @@ public class SharedPassportSystem : EntitySystem
             45);
     }
 
-    private void OnPlayerSpawnComplete(PlayerSpawnCompleteEvent ev)
+    private void OnPlayerLoadoutApplied(PlayerLoadoutAppliedEvent ev)
     {
         if (Deleted(ev.Mob) || !Exists(ev.Mob))
             return;
