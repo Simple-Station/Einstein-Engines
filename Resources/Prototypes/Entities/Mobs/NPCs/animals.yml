@@ -2846,6 +2846,7 @@
   - type: RandomBark
     barkType: fox
     barkMultiplier: 0.5 # Talkative <3
+  - type: ScentTracker
 
 - type: entity
   name: corgi
@@ -2916,6 +2917,7 @@
     - VimPilot
   - type: RandomBark
     barkType: dog
+  - type: ScentTracker
 
 - type: entity
   name: corrupted corgi
