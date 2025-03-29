@@ -221,6 +221,7 @@
     - BasicGalaticCommonTranslatorImplanter
     - MofficTranslator
     - N14MaterialCircuitry
+    - VehicleWheelchairFolded # Goobstation
   - type: EmagLatheRecipes
     emagStaticRecipes:
     - BoxLethalshot
@@ -416,6 +417,7 @@
     - EnergyScalpel
     - EnergyCautery
     - AdvancedRetractor
+    - VehicleWheelchairFolded # Goobstation
   - type: EmagLatheRecipes
     emagDynamicRecipes:
     - BoxBeanbag
@@ -1298,6 +1300,7 @@
     - ClothingEyesGlassesChemical
     - BoneGel # Shitmed Change
     - AACTablet # DeltaV
+    - VehicleWheelchairFolded # Goobstation - Vehicles
     dynamicRecipes:
     - ChemicalPayload
     - CryostasisBeaker
