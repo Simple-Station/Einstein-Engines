@@ -14,11 +14,13 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutParamedicEquipment
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutParamedicEquipment
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutParamedicPortafib
+      
 #- type: characterItemGroup
 #  id: LoadoutParamedicEyes
 #  maxItems: 1
