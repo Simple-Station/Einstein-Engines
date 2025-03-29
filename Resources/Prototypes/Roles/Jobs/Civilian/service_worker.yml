@@ -14,6 +14,11 @@
   - Hydroponics
   - Bar # DeltaV - moved to extended access
   - Kitchen # DeltaV - moved to extended access
+  requirements:
+    - !type:CharacterEmployerRequirement
+      inverted: true
+      employers:
+      - Unemployed
 
 - type: startingGear
   id: ServiceWorkerGear

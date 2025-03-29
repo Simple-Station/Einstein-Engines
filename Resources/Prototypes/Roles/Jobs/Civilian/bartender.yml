@@ -7,6 +7,10 @@
     - !type:CharacterDepartmentTimeRequirement
       department: Civilian
       min: 3600 #DeltaV
+    - !type:CharacterEmployerRequirement
+      inverted: true
+      employers:
+      - Unemployed
   startingGear: BartenderGear
   icon: "JobIconBartender"
   supervisors: job-supervisors-hop

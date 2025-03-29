@@ -281,8 +281,8 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: RampingStationEventScheduler
-    chaosModifier: 4 # By default, one event each 30-10 seconds after two hours. Changing CVars will cause this to deviate.
-    startingChaosRatio: 0.025 # Starts as slow as survival, but quickly ramps up
+    chaosModifier: 5 # By default, one event each 30-10 seconds after two hours. Changing CVars will cause this to deviate.
+    startingChaosRatio: 0.1 
     shiftLengthModifier: 2.5
 
 - type: entity

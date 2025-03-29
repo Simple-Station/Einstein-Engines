@@ -13912,3 +13912,115 @@ Entries:
   id: 7051
   time: '2025-03-27T18:43:52.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2045
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: >-
+        Changelings can now spawn as a game mode. don't know why they couldn't
+        before.
+    - type: Remove
+      message: Greenshift can no longer randomly happen; it has to be voted for.
+    - type: Remove
+      message: No more loadout pAIs
+    - type: Tweak
+      message: Animal spawn events are rarer
+    - type: Tweak
+      message: Random Sentience event is rarer
+    - type: Tweak
+      message: Hellshift should be more hellish
+  id: 7052
+  time: '2025-03-28T05:30:07.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2102
+- author: GNUtopia
+  changes:
+    - type: Tweak
+      message: Buffed harpy speed while weightless
+    - type: Tweak
+      message: Buffed moth speed while weightless
+    - type: Tweak
+      message: Allowed movement during the doafter to start flying
+    - type: Tweak
+      message: Made moth flight slower but no longer require open hands
+    - type: Tweak
+      message: Changed moth True Flight requirements to be based on weight
+  id: 7053
+  time: '2025-03-28T14:08:00.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2100
+- author: CometVoid
+  changes:
+    - type: Add
+      message: >-
+        Makeshift hydroponics trays, which can be made out of 5 plastic and 6
+        rods.
+    - type: Tweak
+      message: >-
+        hydroponic tray machine board moved to the autolathe, so botanists can
+        use the service lathe to make hydroponics trays
+  id: 7054
+  time: '2025-03-28T14:58:14.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2099
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: >-
+        Contractors. Be sure to edit your character to set an employer and
+        nationality!
+    - type: Add
+      message: >-
+        Nationality, Lifepath, and Employer have been added to character
+        creation. These don't currently do much except spawn a passport
+        containing information about where your character is from and who they
+        are, but they are fully integrated with Character Requirements, and by
+        extension can be used for and alongside Traits, Loadouts, Jobs,
+        Antagonists, etc. 
+  id: 7055
+  time: '2025-03-28T17:10:00.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2030
+- author: BramvanZijp
+  changes:
+    - type: Add
+      message: >-
+        Added the Bulky and Featherweight traits, which increase/decrease your
+        characters weight.
+    - type: Add
+      message: >-
+        Added the Bodybuilder and Weakling traits, which impact the movement
+        speed penalty while pulling.
+  id: 7056
+  time: '2025-03-28T19:41:17.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2096
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: Ion damage
+  id: 7057
+  time: '2025-03-28T23:44:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2103
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: Bingle!
+  id: 7058
+  time: '2025-03-29T00:16:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2090
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Re-added vehicles.
+    - type: Add
+      message: >-
+        Wheelchairs and the wheelchair bound trait have been re-added (and
+        re-worked to work with surgery).
+    - type: Add
+      message: Added Secways & Syndicate Segways, ATVs & Janicarts
+    - type: Add
+      message: The Syndicate Segway has been added to the Syndicate Uplink for 25tc!
+    - type: Tweak
+      message: The medivend now has 3 folded wheelchairs included in it
+    - type: Tweak
+      message: You can now print wheelchairs in the medlathe
+    - type: Tweak
+      message: Office chairs are mobile now, cubicle workers rejoice!
+  id: 7059
+  time: '2025-03-29T00:49:53.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2051
