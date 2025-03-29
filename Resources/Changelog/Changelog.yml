@@ -14031,3 +14031,10 @@ Entries:
   id: 7060
   time: '2025-03-29T02:22:56.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2106
+- author: BramvanZijp
+  changes:
+    - type: Fix
+      message: IPCs can now heal Ion damage using cables or nano repair bots.
+  id: 7061
+  time: '2025-03-29T07:15:36.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2109
