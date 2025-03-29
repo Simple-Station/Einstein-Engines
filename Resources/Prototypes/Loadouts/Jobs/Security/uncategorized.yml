@@ -1399,6 +1399,20 @@
   items:
     - ClothingMaskGasSwat
 
+- type: loadout
+  id: LoadoutSecurityMaskGasSwatPaid
+  category: JobsSecurityAUncategorized
+  cost: 4
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityMask
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+  items:
+    - ClothingMaskGasSwat
+
 # Outer
 - type: loadout
   id: LoadoutClothingOuterWinterCoatSec
