@@ -75,6 +75,7 @@
       types: # these are all split across multiple types. IPCs can still take cold damage, they just heavily resist it.
         Heat: -8
         Shock: -8
+        ion: -6
         Cold: -2
 
 - type: entity
@@ -149,6 +150,7 @@
       types: # these are all split across multiple types. IPCs can still take cold damage, they just heavily resist it.
         Heat: -4
         Shock: -4
+        ion: -3
         Cold: -1
 
 - type: entity
@@ -222,7 +224,8 @@
       types: # these are all split across multiple types. IPCs can still take cold damage, they just heavily resist it.
         Heat: -2
         Shock: -2
-        Cold: -0.5 
+        ion: -1.5
+        Cold: -0.5
 
 - type: entity
   parent: CableApcStack
