@@ -222,6 +222,13 @@
     slots:
     - Hair
     - Snout
+  - type: Reflect
+    spread: 270
+    reflectProb: 0.01
+    innate: true
+    reflects:
+      - Energy
+      - NonEnergy
 
 - type: entity
   abstract: true
