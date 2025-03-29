@@ -1396,6 +1396,7 @@
       jobs:
         - Warden
         - HeadOfSecurity
+        - BlueshieldOfficer
   items:
     - ClothingMaskGasSwat
 
@@ -1407,9 +1408,6 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityMask
-    - !type:CharacterDepartmentRequirement
-      departments:
-      - Security
     - !type:CharacterJobRequirement
       jobs:
         - SecurityOfficer
