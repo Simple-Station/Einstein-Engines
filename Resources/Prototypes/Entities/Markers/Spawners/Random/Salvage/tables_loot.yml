@@ -117,6 +117,9 @@
       rolls: !type:RangeNumberSelector
         range: 4, 7
     - id: SpaceCash5000
+    - id: WristwatchGold
+    - !type:NestedSelector
+      tableId: RingTableCommon
 
 - type: entityTable
   id: SalvageTreasureRare
@@ -147,6 +150,8 @@
           weight: 14
         - id: SpaceCash50000
           weight: 1
+    - !type:NestedSelector
+      tableId: RingTableRare
 
 - type: entityTable
   id: SalvageTreasureLegendary
@@ -160,6 +165,10 @@
     - id: TreasureCoinDiamond
       amount: !type:RangeNumberSelector
         range: 2, 5
+    - !type:NestedSelector
+      tableId: RingTableRare
+      rolls: !type:RangeNumberSelector
+        range: 2, 3
     - id: SpaceCash100000
 
 # Equipment: Tools and things used by salvagers. Quote unquote "Gamer Loot"

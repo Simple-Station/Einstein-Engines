@@ -58,3 +58,16 @@
     parts:
     - LeftHand
     - RightHand
+
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: RingBase
+  components:
+    - type: Clothing
+      slots: [ gloves, neck ]
+    - type: Item
+      size: Tiny
+    - type: Tag
+      tags:
+      - Ring

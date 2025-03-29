@@ -2196,6 +2196,19 @@
     - Mime
 
 - type: listing
+  id: UplinkSmugglerSatchel
+  name: uplink-smuggler-satchel-name
+  description: uplink-smuggler-satchel-desc
+  productEntity: ClothingBackpackSatchelSmugglerUnanchored
+  discountCategory: usualDiscounts
+  discountDownTo:
+    Telecrystal: 15
+  cost:
+    Telecrystal: 30
+  categories:
+  - UplinkDeception
+
+- type: listing
   id: UplinkEmpFlashlight
   name: uplink-emp-flashlight-name
   description: uplink-emp-flashlight-desc
