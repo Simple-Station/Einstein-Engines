@@ -257,6 +257,9 @@ namespace Content.Client.Lobby.UI
 
             #region Contractors
 
+            Background.Orphan();
+            CTabContainer.AddTab(Background, Loc.GetString("humanoid-profile-editor-background-tab"));
+
             RefreshNationalities();
             RefreshEmployers();
             RefreshLifepaths();
@@ -743,19 +746,19 @@ namespace Content.Client.Lobby.UI
         private void UpdateNationalityDescription(string nationality)
         {
             var prototype = _prototypeManager.Index<NationalityPrototype>(nationality);
-            NationalityDescriptionLabel.Text = Loc.GetString(prototype.DescriptionKey);
+            NationalityDescriptionLabel.SetMessage(Loc.GetString(prototype.DescriptionKey));
         }
 
         private void UpdateLifepathDescription(string lifepath)
         {
             var prototype = _prototypeManager.Index<LifepathPrototype>(lifepath);
-            LifepathDescriptionLabel.Text = Loc.GetString(prototype.DescriptionKey);
+            LifepathDescriptionLabel.SetMessage(Loc.GetString(prototype.DescriptionKey));
         }
 
         private void UpdateEmployerDescription(string employer)
         {
             var prototype = _prototypeManager.Index<EmployerPrototype>(employer);
-            EmployerDescriptionLabel.Text = Loc.GetString(prototype.DescriptionKey);
+            EmployerDescriptionLabel.SetMessage(Loc.GetString(prototype.DescriptionKey));
         }
 
         public void RefreshAntags()
