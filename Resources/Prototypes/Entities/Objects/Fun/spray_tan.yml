@@ -1,0 +1,18 @@
+- type: entity
+  suffix: Spray Tan 15u
+  parent: Pill
+  id: PillSprayTan
+  components:
+  - type: Pill
+    pillType: 4
+  - type: Sprite
+    state: pill5
+  - type: Label
+    currentLabel: spray tan 15u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Bicaridine
+          Quantity: 15

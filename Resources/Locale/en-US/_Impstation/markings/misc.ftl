@@ -165,7 +165,7 @@ marking-VoxTailBalled-voxtailballed = Thrasher
 marking-VoxTailSplit = Twinned
 marking-VoxTailSplit-voxtailsplit = Twinned
 
-#chitinid
+# chitinid
 marking-ChitinidBeetleHorn1 = Beetle Horn (Pronged)
 marking-ChitinidBeetleHorn1-chitinidbeetlehorn1 = Beetle Horn (Lance)
 marking-ChitinidBeetleHorn2 = Beetle Horn (Lance)
