@@ -14047,3 +14047,12 @@ Entries:
   id: 7062
   time: '2025-03-29T17:49:18.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2113
+- author: BramvanZijp
+  changes:
+    - type: Tweak
+      message: >-
+        Tweaked IPC's damage resistances to no longer take double heat damage,
+        and slightly reduce their shock weakness.
+  id: 7063
+  time: '2025-03-30T02:22:13.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2110
