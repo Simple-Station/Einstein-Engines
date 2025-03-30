@@ -610,8 +610,6 @@
       inverted: true
       departments:
         - Security
-    - !type:CharacterAgeRequirement
-      min: 21
   items:
     - WeaponRevolverArgentiSecurity
 
@@ -634,7 +632,5 @@
       inverted: true
       departments:
         - Security
-    - !type:CharacterAgeRequirement
-      min: 21
   items:
     - WeaponEnergyRevolverSecurity
