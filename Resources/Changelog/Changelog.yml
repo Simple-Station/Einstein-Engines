@@ -14072,3 +14072,14 @@ Entries:
   id: 7065
   time: '2025-03-30T21:02:34.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2116
+- author: Tirochora
+  changes:
+    - type: Tweak
+      message: sunglasses with flash protection are more expensive in the loadouts
+    - type: Tweak
+      message: >-
+        sunglasses are either "default" or "shielded" rather than "cheap" or
+        "standard." the description has also been changed to reflect this
+  id: 7066
+  time: '2025-03-30T21:15:42.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2121
