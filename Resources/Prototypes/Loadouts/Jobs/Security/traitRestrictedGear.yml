@@ -611,7 +611,7 @@
 
 # Argenti
 - type: loadout
-  id: LoadoutSecurityArgenti
+  id: LoadoutSecurityRestrictedGearArgenti
   category: JobsSecurityAUncategorized
   cost: 0
   canBeHeirloom: true
@@ -633,7 +633,7 @@
 
 # Energy Revolver
 - type: loadout
-  id: LoadoutSecurityEnergyRevolver
+  id: LoadoutSecurityRestrictedGearEnergyRevolver
   category: JobsSecurityAUncategorized
   cost: 10
   canBeHeirloom: true

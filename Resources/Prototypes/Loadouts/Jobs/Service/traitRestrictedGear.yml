@@ -41,7 +41,7 @@
     - MagazineBoxLightRifleRubber
 
 - type: loadout
-  id: LoadoutServiceBartenderBoxMagnumRubber
+  id: LoadoutServiceRestrictedGearBartenderBoxMagnumRubber
   category: JobsServiceBartender
   cost: 4
   exclusive: true
@@ -124,7 +124,7 @@
     - WeaponSniperMosinRubber
 
 - type: loadout
-  id: LoadoutServiceBartenderRepeaterNonlethal
+  id: LoadoutServiceRestrictedGearBartenderRepeaterNonlethal
   category: JobsServiceBartender
   cost: 6
   exclusive: true
