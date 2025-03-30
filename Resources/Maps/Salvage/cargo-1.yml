@@ -173,6 +173,7 @@ entities:
             50: -8,-1
             51: -7,-1
     - type: GridAtmosphere
+      simulatedTurf: false
       version: 2
       data:
         tiles:

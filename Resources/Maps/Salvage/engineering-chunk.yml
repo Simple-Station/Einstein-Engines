@@ -584,6 +584,7 @@ entities:
           decals:
             63: 8,-18
     - type: GridAtmosphere
+      simulatedTurf: false
       version: 2
       data:
         tiles:

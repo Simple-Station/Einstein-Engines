@@ -115,6 +115,16 @@
     Gold: 100
 
 - type: latheRecipe
+  id: DroneElectronics
+  result: DroneElectronics
+  category: Circuitry
+  completetime: 2
+  materials:
+    Steel: 1000
+    Plastic: 1000
+    Gold: 500
+
+- type: latheRecipe
   id: DoorElectronics
   result: DoorElectronics
   category: Circuitry
@@ -306,6 +316,15 @@
 - type: latheRecipe
   id: AutolatheMachineCircuitboard
   result: AutolatheMachineCircuitboard
+  category: Circuitry
+  completetime: 4
+  materials:
+     Steel: 100
+     Glass: 500
+
+- type: latheRecipe
+  id: BookPressMachineCircuitboard
+  result: BookPressMachineCircuitboard
   category: Circuitry
   completetime: 4
   materials:

@@ -70,6 +70,7 @@ entities:
   - uid: 2
     components:
     - type: MetaData
+      name: Saltern
     - type: Transform
       parent: 1
     - type: MapGrid
@@ -857,12 +858,14 @@ entities:
             2: 57344
           8,5:
             0: 272
-            3: 17472
+            4: 17472
           8,6:
             0: 13105
             2: 2176
           8,7:
             0: 14131
+          7,8:
+            0: 52424
           1,9:
             2: 18
           2,8:
@@ -905,10 +908,10 @@ entities:
             0: 53759
           11,2:
             0: 4319
-            4: 49152
+            3: 49152
           11,3:
             0: 61457
-            4: 204
+            3: 204
           11,-1:
             0: 30583
           11,4:
@@ -920,9 +923,9 @@ entities:
             0: 28791
           12,2:
             0: 119
-            4: 28672
+            3: 28672
           12,3:
-            4: 119
+            3: 119
             0: 61440
           12,-1:
             0: 29311
@@ -968,7 +971,7 @@ entities:
             0: 52701
           16,0:
             0: 13116
-            5: 52416
+            7: 52416
           16,1:
             0: 65484
           16,2:
@@ -1364,13 +1367,13 @@ entities:
             2: 20047
             0: 40960
           9,5:
-            6: 4368
-            4: 17472
+            5: 4368
+            3: 17472
           9,6:
             2: 4080
           10,5:
-            4: 4368
-            7: 17472
+            3: 4368
+            6: 17472
           10,6:
             2: 8176
           10,7:
@@ -1378,7 +1381,7 @@ entities:
           10,8:
             2: 3993
           11,5:
-            4: 21840
+            3: 21840
           11,6:
             2: 65520
           11,7:
@@ -1433,7 +1436,7 @@ entities:
           17,0:
             0: 1
             2: 8
-            5: 24336
+            7: 21776
           18,-3:
             2: 4096
           18,-2:
@@ -1446,7 +1449,7 @@ entities:
           19,-2:
             2: 12288
           17,1:
-            0: 65365
+            0: 65361
           17,2:
             0: 4095
           17,3:
@@ -1607,15 +1610,18 @@ entities:
           6,10:
             2: 3919
           7,9:
-            2: 12834
-          7,8:
-            2: 58080
+            2: 4096
+            0: 52428
           7,10:
-            2: 2
+            0: 2252
           8,8:
-            2: 31856
+            0: 4368
+            2: 19520
           8,9:
+            0: 4369
             2: 12
+          8,10:
+            0: 17
           9,8:
             2: 61184
           9,9:
@@ -1670,7 +1676,37 @@ entities:
           temperature: 293.15
           moles:
           - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+        - volume: 2500
+          temperature: 293.15
+          moles:
+          - 0
           - 6666.982
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+        - volume: 2500
+          temperature: 293.15
+          moles:
+          - 6666.982
+          - 0
           - 0
           - 0
           - 0
@@ -1687,7 +1723,7 @@ entities:
           - 0
           - 0
           - 0
-          - 0
+          - 6666.982
           - 0
           - 0
           - 0
@@ -1703,36 +1739,6 @@ entities:
           - 18710.71
           - 0
           - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-        - volume: 2500
-          temperature: 293.15
-          moles:
-          - 6666.982
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-        - volume: 2500
-          temperature: 293.15
-          moles:
-          - 0
-          - 0
-          - 0
-          - 6666.982
           - 0
           - 0
           - 0
@@ -4771,7 +4777,7 @@ entities:
       pos: 3.5,22.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -44402.203
+      secondsUntilStateChange: -46170.223
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -5322,7 +5328,7 @@ entities:
       parent: 2
 - proto: AirlockExternalGlassShuttleMiningFilled
   entities:
-  - uid: 145
+  - uid: 5208
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
@@ -6737,12 +6743,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 31.5,42.5
-      parent: 2
-  - uid: 13283
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 34.5,30.5
       parent: 2
 - proto: AtmosDeviceFanTiny
   entities:
@@ -32662,14 +32662,6 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
-- proto: DecorFloorTrashbags3
-  entities:
-  - uid: 5208
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -32.5,-17.5
-      parent: 2
 - proto: DefaultStationBeacon
   entities:
   - uid: 5209
@@ -38398,7 +38390,7 @@ entities:
       pos: 8.5,-16.5
       parent: 2
     - type: AtmosPipeColor
-      color: '#730000C6'
+      color: '#8BDA8EFF'
 - proto: GasFilterFlipped
   entities:
   - uid: 6150
@@ -39285,6 +39277,8 @@ entities:
       rot: 3.141592653589793 rad
       pos: 7.5,-17.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#8BDA8EFF'
   - uid: 6267
     components:
     - type: Transform
@@ -39525,6 +39519,8 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 9.5,-17.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#8BDA8EFF'
   - uid: 6300
     components:
     - type: Transform
@@ -47965,6 +47961,8 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 8.5,-17.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#8BDA8EFF'
   - uid: 7409
     components:
     - type: Transform
@@ -50380,6 +50378,8 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 7.5,-16.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#8BDA8EFF'
   - uid: 7726
     components:
     - type: Transform
@@ -50563,6 +50563,8 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 9.5,-16.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#8BDA8EFF'
   - uid: 7750
     components:
     - type: Transform
@@ -51186,7 +51188,7 @@ entities:
       pos: 9.5,-15.5
       parent: 2
     - type: AtmosPipeColor
-      color: '#000099C6'
+      color: '#8BDA8EFF'
   - uid: 7831
     components:
     - type: MetaData
@@ -51272,6 +51274,8 @@ entities:
       rot: 3.141592653589793 rad
       pos: 7.5,-17.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#8BDA8EFF'
   - uid: 7840
     components:
     - type: Transform
@@ -58468,6 +58472,13 @@ entities:
     components:
     - type: Transform
       pos: 7.2571726,18.545927
+      parent: 2
+- proto: MaterialReclaimer
+  entities:
+  - uid: 13006
+    components:
+    - type: Transform
+      pos: -32.5,-17.5
       parent: 2
 - proto: MaterialSilo
   entities:
@@ -82231,6 +82242,11 @@ entities:
       parent: 2
 - proto: WaterTankFull
   entities:
+  - uid: 145
+    components:
+    - type: Transform
+      pos: 1.5,-40.5
+      parent: 2
   - uid: 12986
     components:
     - type: Transform
@@ -82331,6 +82347,78 @@ entities:
     - type: Transform
       pos: -14.594447,16.787762
       parent: 2
+- proto: WeaponEnergyTurretAI
+  entities:
+  - uid: 13007
+    components:
+    - type: Transform
+      pos: 52.5,-21.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 13312
+  - uid: 13008
+    components:
+    - type: Transform
+      pos: 46.5,-27.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 13312
+  - uid: 13009
+    components:
+    - type: Transform
+      pos: 52.5,-27.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 13312
+  - uid: 13010
+    components:
+    - type: Transform
+      pos: 46.5,-21.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 13312
+  - uid: 13011
+    components:
+    - type: Transform
+      pos: -7.5,33.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 13313
+  - uid: 13283
+    components:
+    - type: Transform
+      pos: -4.5,33.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 13313
+- proto: WeaponEnergyTurretAIControlPanel
+  entities:
+  - uid: 13312
+    components:
+    - type: Transform
+      pos: 47.5,-18.5
+      parent: 2
+    - type: DeviceList
+      devices:
+      - 13007
+      - 13009
+      - 13008
+      - 13010
+  - uid: 13313
+    components:
+    - type: Transform
+      pos: -1.5,30.5
+      parent: 2
+    - type: DeviceList
+      devices:
+      - 13283
+      - 13011
 - proto: WeaponShotgunKammerer
   entities:
   - uid: 13004
@@ -82342,38 +82430,6 @@ entities:
     components:
     - type: Transform
       pos: -13.420591,18.645054
-      parent: 2
-- proto: WeaponTurretSyndicateBroken
-  entities:
-  - uid: 13006
-    components:
-    - type: Transform
-      pos: 46.5,-27.5
-      parent: 2
-  - uid: 13007
-    components:
-    - type: Transform
-      pos: 52.5,-21.5
-      parent: 2
-  - uid: 13008
-    components:
-    - type: Transform
-      pos: 52.5,-27.5
-      parent: 2
-  - uid: 13009
-    components:
-    - type: Transform
-      pos: 46.5,-21.5
-      parent: 2
-  - uid: 13010
-    components:
-    - type: Transform
-      pos: -4.5,33.5
-      parent: 2
-  - uid: 13011
-    components:
-    - type: Transform
-      pos: -7.5,33.5
       parent: 2
 - proto: Welder
   entities:
@@ -83795,5 +83851,10 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 59.909473,-5.528083
+      parent: 2
+  - uid: 13314
+    components:
+    - type: Transform
+      pos: -31.508013,-15.445755
       parent: 2
 ...

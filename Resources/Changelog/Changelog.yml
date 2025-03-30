@@ -13665,3 +13665,403 @@ Entries:
   id: 7026
   time: '2025-03-24T21:15:10.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2075
+- author: Tirochora
+  changes:
+    - type: Fix
+      message: Plasmaman ancient envirohelms now properly display the sprite
+    - type: Fix
+      message: Basic colored envirohelms are no longer missing pixels on the sprite
+  id: 7027
+  time: '2025-03-25T08:34:02.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2078
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added back Bionic Legs. The trait has been reworked so that it makes you
+        start with one of your legs replaced with an actual speed legs
+        cyberware. 
+    - type: Add
+      message: >-
+        Bionic Arm now gives you an actual bionic arm. Have fun mugging people
+        for their cyberware so you can have a collection of fancy bionic limbs. 
+  id: 7028
+  time: '2025-03-25T08:38:42.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2056
+- author: Zeta_Null
+  changes:
+    - type: Add
+      message: 8 new facial hair options, 4 beards and 4 moustaches
+    - type: Add
+      message: Ported most of my hairstyles from N14
+  id: 7029
+  time: '2025-03-25T08:51:08.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2076
+- author: astriloqua
+  changes:
+    - type: Tweak
+      message: Proper offsets & BB for N14 Trees. Remap if they already were mapped.
+  id: 7030
+  time: '2025-03-25T08:52:33.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2069
+- author: astriloqua
+  changes:
+    - type: Tweak
+      message: N14 Counters now should be consistent across rotation
+  id: 7031
+  time: '2025-03-25T08:54:07.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2073
+- author: ilmenwe
+  changes:
+    - type: Add
+      message: BaseContainer ToList for both Switch cases using it.
+  id: 7032
+  time: '2025-03-25T08:56:28.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2041
+- author: RocketBoss360
+  changes:
+    - type: Add
+      message: >-
+        Xenoglossy has been given a visual revamp, with a new font, color and
+        speaking verbs associated with it.
+  id: 7033
+  time: '2025-03-26T09:29:58.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2072
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: Added Book Press. Librarians rejoice!
+  id: 7034
+  time: '2025-03-26T10:03:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1977
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: You will smile.
+  id: 7035
+  time: '2025-03-26T10:12:21.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2086
+- author: ViceEmargo
+  changes:
+    - type: Tweak
+      message: >-
+        Construction of atmos pipes are no longer blocked by structures and
+        walls
+  id: 7036
+  time: '2025-03-26T10:14:08.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2085
+- author: GNUtopia
+  changes:
+    - type: Tweak
+      message: Made Healing Word no longer revive
+  id: 7037
+  time: '2025-03-26T10:14:49.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2084
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: Borgs default lawset is asimov once again
+  id: 7038
+  time: '2025-03-26T10:15:23.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2083
+- author: Mike32oz
+  changes:
+    - type: Add
+      message: Lighthouse AI turrets
+    - type: Add
+      message: 'Lighthouse Material reclaimed '
+    - type: Fix
+      message: Lighthouse Salvage shuttle docking door
+    - type: Remove
+      message: Tippy the Clown (nemesis)
+  id: 7039
+  time: '2025-03-26T11:03:07.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2066
+- author: astriloqua
+  changes:
+    - type: Add
+      message: Port point light for observers
+    - type: Add
+      message: Port in-hand & hat variants for space & regular lizard plushies
+  id: 7040
+  time: '2025-03-26T16:08:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2067
+- author: astriloqua
+  changes: []
+  id: 7041
+  time: '2025-03-26T20:34:52.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2047
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed a bug where items thrown by space wind could remain in air for as
+        long as 500 seconds. Items thrown by space wind can now remain in the
+        air for a maximum of 2 seconds past the last time they were thrown.
+    - type: Fix
+      message: DRAMATICALLY IMPROVED SPACE WIND PERFORMANCE.
+    - type: Tweak
+      message: >-
+        ShowAtmos command now shows vectors representing the exact direction
+        space wind at a given tile is trying to throw objects! The length of the
+        lines shown directly correspond to how powerful the flow of air is at
+        that tile. Shorter lines = shorter throws. Longer lines = more powerful
+        throws. These are also no longer restricted to compass directions, and
+        can point in arbitrarily any direction on a circle. 
+    - type: Tweak
+      message: >-
+        Space Wind now no longer has Monstermos as a hard requirement. It'll be
+        as weak as a toddler without it, but if you're running your server on a
+        toaster, you can turn off Monstermos and still have working space wind.
+    - type: Tweak
+      message: >-
+        Wreckages in space are now never airtight. I'm sorry, but this was
+        basically the cost I had to pay in exchange for making Atmos no longer
+        even on the top 20 systems for server tickrate cost. 
+  id: 7042
+  time: '2025-03-27T03:21:38.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2089
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: Adds maintenance drones, cheap robots that are expert engineers.
+    - type: Add
+      message: >-
+        Adds new research option, "basic robotics", which allows you to make
+        drones and proximity sensors
+  id: 7043
+  time: '2025-03-27T09:11:52.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2079
+- author: BramvanZijp
+  changes:
+    - type: Fix
+      message: >-
+        Fixed being able to remove an IPC's power cell while their panel is
+        unlocked but closed.
+  id: 7044
+  time: '2025-03-27T09:45:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2091
+- author: CometVoid
+  changes:
+    - type: Tweak
+      message: >-
+        operating tables can now be assembled from the G menu for the cost of 5
+        steel and 2 plastic
+  id: 7045
+  time: '2025-03-27T10:15:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2082
+- author: BramvanZijp
+  changes:
+    - type: Tweak
+      message: >-
+        The EG-4 Energy Revolver's fire-rate, projectile speed, power use, and
+        recharge rate have been buffed, however a 5 second delay after shooting
+        the weapon has been added before the weapon actually begins to self
+        recharge.
+  id: 7046
+  time: '2025-03-27T11:46:02.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2095
+- author: BramvanZijp
+  changes:
+    - type: Fix
+      message: >-
+        IPCs are no longer prevented from raising their shield due to the tile
+        being blocked by their own brain.
+    - type: Fix
+      message: >-
+        If you attempt to raise your shield but get blocked by another mob, you
+        will now only get one popup indicating this.
+  id: 7047
+  time: '2025-03-27T11:47:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2094
+- author: dootythefrooty
+  changes:
+    - type: Add
+      message: Borg Chassis Selection has been ported. Rejoice.
+  id: 7048
+  time: '2025-03-27T14:29:31.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2077
+- author: mrs
+  changes:
+    - type: Tweak
+      message: Cyberiad waste pipes are colored dark red like god intended.
+    - type: Fix
+      message: Cyberiad Logistics Department HV grid is no longer isolated.
+    - type: Fix
+      message: Cyberiad Atmos hallway APC is now connected to MV.
+  id: 7049
+  time: '2025-03-27T18:00:03.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2080
+- author: Mike32oz
+  changes:
+    - type: Add
+      message: 'Saltern Material reclaimed '
+    - type: Add
+      message: Saltern AI turrets at satellite and upload.
+    - type: Fix
+      message: Saltern gridatmos
+  id: 7050
+  time: '2025-03-27T18:03:54.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2059
+- author: GNUtopia
+  changes:
+    - type: Tweak
+      message: Gave scarves a 20% temperature resistance
+    - type: Tweak
+      message: Gave the bomber jacket a 90% temperature resistance
+  id: 7051
+  time: '2025-03-27T18:43:52.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2045
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: >-
+        Changelings can now spawn as a game mode. don't know why they couldn't
+        before.
+    - type: Remove
+      message: Greenshift can no longer randomly happen; it has to be voted for.
+    - type: Remove
+      message: No more loadout pAIs
+    - type: Tweak
+      message: Animal spawn events are rarer
+    - type: Tweak
+      message: Random Sentience event is rarer
+    - type: Tweak
+      message: Hellshift should be more hellish
+  id: 7052
+  time: '2025-03-28T05:30:07.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2102
+- author: GNUtopia
+  changes:
+    - type: Tweak
+      message: Buffed harpy speed while weightless
+    - type: Tweak
+      message: Buffed moth speed while weightless
+    - type: Tweak
+      message: Allowed movement during the doafter to start flying
+    - type: Tweak
+      message: Made moth flight slower but no longer require open hands
+    - type: Tweak
+      message: Changed moth True Flight requirements to be based on weight
+  id: 7053
+  time: '2025-03-28T14:08:00.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2100
+- author: CometVoid
+  changes:
+    - type: Add
+      message: >-
+        Makeshift hydroponics trays, which can be made out of 5 plastic and 6
+        rods.
+    - type: Tweak
+      message: >-
+        hydroponic tray machine board moved to the autolathe, so botanists can
+        use the service lathe to make hydroponics trays
+  id: 7054
+  time: '2025-03-28T14:58:14.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2099
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: >-
+        Contractors. Be sure to edit your character to set an employer and
+        nationality!
+    - type: Add
+      message: >-
+        Nationality, Lifepath, and Employer have been added to character
+        creation. These don't currently do much except spawn a passport
+        containing information about where your character is from and who they
+        are, but they are fully integrated with Character Requirements, and by
+        extension can be used for and alongside Traits, Loadouts, Jobs,
+        Antagonists, etc. 
+  id: 7055
+  time: '2025-03-28T17:10:00.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2030
+- author: BramvanZijp
+  changes:
+    - type: Add
+      message: >-
+        Added the Bulky and Featherweight traits, which increase/decrease your
+        characters weight.
+    - type: Add
+      message: >-
+        Added the Bodybuilder and Weakling traits, which impact the movement
+        speed penalty while pulling.
+  id: 7056
+  time: '2025-03-28T19:41:17.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2096
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: Ion damage
+  id: 7057
+  time: '2025-03-28T23:44:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2103
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: Bingle!
+  id: 7058
+  time: '2025-03-29T00:16:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2090
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Re-added vehicles.
+    - type: Add
+      message: >-
+        Wheelchairs and the wheelchair bound trait have been re-added (and
+        re-worked to work with surgery).
+    - type: Add
+      message: Added Secways & Syndicate Segways, ATVs & Janicarts
+    - type: Add
+      message: The Syndicate Segway has been added to the Syndicate Uplink for 25tc!
+    - type: Tweak
+      message: The medivend now has 3 folded wheelchairs included in it
+    - type: Tweak
+      message: You can now print wheelchairs in the medlathe
+    - type: Tweak
+      message: Office chairs are mobile now, cubicle workers rejoice!
+  id: 7059
+  time: '2025-03-29T00:49:53.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2051
+- author: Timfa2112
+  changes:
+    - type: Fix
+      message: fix passports not spawning when your loadout replaces your bag
+  id: 7060
+  time: '2025-03-29T02:22:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2106
+- author: BramvanZijp
+  changes:
+    - type: Fix
+      message: IPCs can now heal Ion damage using cables or nano repair bots.
+  id: 7061
+  time: '2025-03-29T07:15:36.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2109
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: >-
+        Moved Nationality, Employer, and Lifepath to a new Background tab. They
+        now also show descriptions for the chosen selections.
+  id: 7062
+  time: '2025-03-29T17:49:18.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2113
+- author: BramvanZijp
+  changes:
+    - type: Tweak
+      message: >-
+        Tweaked IPC's damage resistances to no longer take double heat damage,
+        and slightly reduce their shock weakness.
+  id: 7063
+  time: '2025-03-30T02:22:13.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2110
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: >-
+        Station AI gets a variant of Asimov that doesn't state they have to obey
+        themselves
+  id: 7064
+  time: '2025-03-30T02:30:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2118

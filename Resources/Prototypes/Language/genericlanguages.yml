@@ -1,6 +1,5 @@
 # The universal language. This is technically used as a fallback for simulating the pre-languages
-# style of Chat, and is not normally accessible by players. It is however used by characters
-# with the Xenoglossy psionic power, as well as Ghosts, and AGhosts.
+# style of Chat, and is not normally accessible by players.
 - type: language
   id: Universal
   obfuscation:
@@ -44,3 +43,19 @@
     - a cryptic message
     - a signal
     - a message
+
+    #Used for Xenoglossy, and anything else with the UniversalLanguageSpeaker component
+- type: language
+  id: Psychomantic
+  speech:
+    color: "#C29EFF" # a nice psychic purple, a bit lighter than Ya'ssa
+    fontId: Megrim # Experimental and alien, but still hopefully clean enough to read
+    speechVerbOverrides:
+    - chat-speech-verb-Psychomantic-1
+    - chat-speech-verb-Psychomantic-2
+    - chat-speech-verb-Psychomantic-3
+    - chat-speech-verb-Psychomantic-4
+  obfuscation:
+    !type:ReplacementObfuscation
+    replacement:
+    - "*incomprehensible*" # Never actually used
