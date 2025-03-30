@@ -13,12 +13,15 @@
   - type: ItemToggleActiveSound
     activeSound:
       path: /Audio/Weapons/ebladehum.ogg
-  - type: ItemToggleSharp
+  - type: ComponentToggler
+    components:
+    - type: Sharp
+    - type: DisarmMalus
+      malus: 0.6
   - type: ItemToggleHot
-  - type: ItemToggleDisarmMalus
-    activatedDisarmMalus: 0.6
   - type: ItemToggleSize
     activatedSize: Huge
+  - type: ItemTogglePointLight
   - type: ItemToggleMeleeWeapon
     activatedSoundOnHit:
       path: /Audio/Weapons/eblade1.ogg
@@ -35,14 +38,11 @@
         variation: 0.125
     activatedDamage:
         types:
-            Slash: 8
-            Heat: 10
-            Structural: 20
+            Slash: 12
+            Heat: 15 # Should be significantly stronger than other variants, no clue why it's so weak rn
+            Structural: 45 # its a damn laser sword, let people star wars their way through walls
   - type: ItemToggleDamageOtherOnHit
     activatedStaminaCost: 6
-  - type: ItemToggleEmbedPassiveDamage
-  - type: ItemToggleEmbeddableProjectile
-    activatedEmbedOnThrow: true
   - type: ItemToggleThrowingAngle
     activatedAngle: 225
     deleteOnDeactivate: true
@@ -62,12 +62,9 @@
       types:
         Blunt: 4.5
   - type: DamageOtherOnHit
-  - type: EmbeddableProjectile
-    embedOnThrow: false
-  - type: EmbedPassiveDamage
   - type: Item
     size: Small
-    sprite: DeltaV/Objects/Weapons/Melee/e_sword.rsi # Delta-V
+    sprite: Objects/Weapons/Melee/e_sword-inhands.rsi
   - type: UseDelay
     delay: 1.0
   - type: PointLight
@@ -86,15 +83,7 @@
       right:
       - state: inhand-right-blade
         shader: unshaded
-  - type: DisarmMalus
-    malus: 0
   - type: Reflect
-    enabled: false
-    reflectProb: 0.5
-    minReflectProb: 0.25
-  - type: Tag
-    tags:
-      - NoPaint
   - type: IgnitionSource
     temperature: 700
   # Shitmed Change
@@ -130,7 +119,6 @@
   suffix: E-Dagger
   description: 'A dark ink pen.'
   components:
-  - type: EnergySword
   - type: ItemToggle
     soundActivate:
       path: /Audio/Weapons/ebladeon.ogg
@@ -156,14 +144,11 @@
       path: /Audio/Weapons/ebladehum.ogg
       params:
         volume: -6
-  - type: ItemToggleDisarmMalus
-    activatedDisarmMalus: 0.4
-  - type: ItemToggleEmbeddableProjectile
-    activatedOffset: 0.0,0.0
-    activatedRemovalTime: 3
-  - type: ItemToggleThrowingAngle
-    activatedAngle: 135
-    deleteOnDeactivate: false
+  - type: ComponentToggler
+    components:
+    - type: Sharp
+    - type: DisarmMalus
+      malus: 0.4
   - type: Sprite
     sprite: Objects/Weapons/Melee/e_dagger.rsi
     layers:
@@ -193,8 +178,6 @@
     damage:
       types:
         Blunt: 0
-  - type: ThrowingAngle
-    angle: 315
   - type: Item
     size: Tiny
     sprite: Objects/Weapons/Melee/e_dagger.rsi
@@ -247,15 +230,12 @@
   id: EnergyCutlass
   description: An exotic energy weapon, brutal blade crackling with crudely harnessed plasma. #DeltaV - nicer description.
   components:
-  - type: EnergySword
   - type: ItemToggleMeleeWeapon
     activatedDamage:
         types:
             Slash: 10
             Heat: 12
     deactivatedSecret: true
-  - type: ItemToggleDisarmMalus
-    activatedDisarmMalus: 0.6
   - type: Sprite
     sprite: DeltaV/Objects/Weapons/Melee/e_cutlass.rsi # DeltaV
     layers:
@@ -286,13 +266,31 @@
         shader: unshaded
 
 - type: entity
+  name: energy cutlass
+  parent: EnergyCutlass
+  id: EnergyCutlassSecurity
+  description: A sleek energy weapon, its blade hums with volatile plasma, expertly contained to cut through nearly any material. The serial number on the hilt marks this gun as belonging to an NT Security Officer. # how do I make the text blue
+  suffix: Security Loadouts
+  components:
+  - type: MeleeWeapon
+    attackRate: 0.6666
+  - type: ItemToggleMeleeWeapon
+    activatedDamage:
+        types:
+            Slash: 6
+            Heat: 12
+            Structural: 20 # "expertly contained to cut through nearly any material" yet it had no structural damage
+  - type: GuideHelp  
+    guides: [ SecurityWeapons ]  
+
+- type: entity
   name: double-bladed energy sword
   parent: EnergySword
   id: EnergySwordDouble
   description: Syndicate Command's intern thought that having only one blade on energy swords was not cool enough. This can be stored in pockets.
   components:
-  - type: EnergySword
   - type: ItemToggle
+    onUse: false # wielding events control it instead
     soundActivate:
       path: /Audio/Weapons/ebladeon.ogg
       params:
@@ -309,17 +307,21 @@
         variation: 0.250
     activatedDamage:
         types:
-            Slash: 8
-            Heat: 13
-            Structural: 15
+            Slash: 12
+            Heat: 15
+            Structural: 30
   - type: ItemToggleActiveSound
     activeSound:
       path: /Audio/Weapons/ebladehum.ogg
       params:
         volume: 3
-  - type: ItemToggleDisarmMalus
-    activatedDisarmMalus: 0.7
+  - type: ComponentToggler
+    components:
+    - type: Sharp
+    - type: DisarmMalus
+      malus: 0.7
   - type: Wieldable
+    wieldSound: null # esword light sound instead
   - type: MeleeWeapon
     wideAnimationRotation: -135
     attackRate: .6666

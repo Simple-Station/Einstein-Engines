@@ -4,6 +4,12 @@ alerts-low-oxygen-desc = There is [color=red]not enough oxygen[/color] in the ai
 alerts-low-nitrogen-name = [color=red]Low Nitrogen[/color]
 alerts-low-nitrogen-desc = There is [color=red]not enough nitrogen[/color] in the air you are breathing. Put on [color=green]internals[/color].
 
+alerts-low-plasma-name = [color=red]Low Plasma[/color]
+alerts-low-plasma-desc = There is [color=red]not enough plasma[/color] in the air you are breathing. Put on [color=green]internals[/color].
+
+alerts-high-oxygen-name = [color=red]High Oxygen[/color]
+alerts-high-oxygen-desc = There is [color=red]too much oxygen[/color] in the air you are breathing. Put on [color=green]internals[/color].
+
 alerts-high-toxin-name = [color=red]High Toxin Level[/color]
 alerts-high-toxin-desc = There are [color=red]too many toxins[/color] in the air you are breathing. Put on [color=green]internals[/color] or get away.
 
@@ -116,7 +122,3 @@ alerts-offer-desc = Someone offers you an item.
 
 alerts-deflecting-name = Deflecting
 alerts-deflecting-desc = You have a chance to deflect incoming projectiles. Standing still or moving slowly will increase this chance.
-
-alerts-mana-name = Mana Level
-alerts-mana-desc = How much mana is available to spend on your powers.
-mana-alert = [font size=12][color=purple]Mana: {$mana}/{$manaMax}[/color][/font]

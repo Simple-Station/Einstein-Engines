@@ -114,6 +114,12 @@ public sealed partial class ShuttleConsoleSystem
     /// </summary>
     private void ConsoleFTL(Entity<ShuttleConsoleComponent> ent, EntityCoordinates targetCoordinates, Angle targetAngle, MapId targetMap)
     {
+        if (ent.Comp.OneWayTrip && ent.Comp.OneWayTripTaken)
+        {
+            // TODO: Play a popup and a message in chat explaining you've already taken the one way trip.
+            return;
+        }
+
         var consoleUid = GetDroneConsole(ent.Owner);
 
         if (consoleUid == null)
@@ -122,6 +128,9 @@ public sealed partial class ShuttleConsoleSystem
         var shuttleUid = _xformQuery.GetComponent(consoleUid.Value).GridUid;
 
         if (!TryComp(shuttleUid, out ShuttleComponent? shuttleComp))
+            return;
+
+        if (shuttleComp.Enabled == false)
             return;
 
         // Check shuttle can even FTL
@@ -140,7 +149,7 @@ public sealed partial class ShuttleConsoleSystem
         List<ShuttleExclusionObject>? exclusions = null;
         GetExclusions(ref exclusions);
 
-        if (!_shuttle.FTLFree(shuttleUid.Value, targetCoordinates, targetAngle, exclusions))
+        if (!_shuttle.FTLFree(shuttleUid.Value, targetCoordinates, targetAngle, exclusions, ent.Comp.FtlToPlanets, ent.Comp.IgnoreExclusionZones, ent.Comp.FTLRange))
         {
             return;
         }
@@ -160,5 +169,7 @@ public sealed partial class ShuttleConsoleSystem
         RaiseLocalEvent(ref ev);
 
         _shuttle.FTLToCoordinates(shuttleUid.Value, shuttleComp, adjustedCoordinates, targetAngle);
+        if (ent.Comp.OneWayTrip)
+            ent.Comp.OneWayTripTaken = true;
     }
 }

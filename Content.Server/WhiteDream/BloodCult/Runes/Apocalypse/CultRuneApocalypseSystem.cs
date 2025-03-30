@@ -40,7 +40,7 @@ public sealed class CultRuneApocalypseSystem : EntitySystem
 
         var doAfter = new DoAfterArgs(EntityManager, args.User, ent.Comp.InvokeTime, new ApocalypseRuneDoAfter(), ent)
         {
-            BreakOnUserMove = true
+            BreakOnMove = true
         };
 
         _doAfter.TryStartDoAfter(doAfter);

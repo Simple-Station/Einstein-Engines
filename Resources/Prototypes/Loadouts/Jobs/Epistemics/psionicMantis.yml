@@ -36,6 +36,7 @@
   id: LoadoutPsionicMantisPillCanisterSpaceDrugs
   category: JobsEpistemicsPsionicMantis
   cost: 0
+  guideEntry: Psionics
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutPsionicMantisEquipment
@@ -49,6 +50,7 @@
   id: LoadoutPsionicMantisPillCanisterCryptobiolin
   category: JobsEpistemicsPsionicMantis
   cost: 0
+  guideEntry: PsionicInsulation
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutPsionicMantisEquipment
@@ -59,6 +61,34 @@
     - PillCanisterCryptobiolin
 
 # Eyes
+- type: loadout
+  id: LoadoutPsionicMantisEyesEpiHUD
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingEyesHudEpistemics
+
+- type: loadout
+  id: LoadoutPsionicMantisEyesEpiGlasses
+  category: JobsEpistemicsPsionicMantis
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingEyesGlassesEpistemics
+
 
 # Gloves
 

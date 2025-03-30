@@ -256,6 +256,19 @@
 
 # Outer
 - type: loadout
+  id: LoadoutChemistWinterCoat
+  category: JobsMedicalChemist
+  cost: 0
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutChemistOuter
+  - !type:CharacterJobRequirement
+    jobs:
+    - Chemist
+  items:
+  - ClothingOuterWinterChem
+
+- type: loadout
   id: LoadoutMedicalOuterLabcoatChem
   category: JobsMedicalChemist
   cost: 0

@@ -1,0 +1,85 @@
+- type: trait
+  id: SiikMaas
+  category: TraitsSpeechLanguages
+  points: -1
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsLanguagesBasic
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Tajaran
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - SiikMaas
+      languagesUnderstood:
+        - SiikMaas
+
+- type: trait
+  id: NalRasan
+  category: TraitsSpeechLanguages
+  points: -1
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsLanguagesBasic
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Tajaran
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - NalRasan
+      languagesUnderstood:
+        - NalRasan
+
+- type: trait
+  id: SiikTajr
+  category: TraitsSpeechLanguages
+  points: -2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsLanguagesBasic
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Tajaran
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - SiikTajr
+      languagesUnderstood:
+        - SiikTajr
+
+- type: trait
+  id: YaSsa
+  category: TraitsSpeechLanguages
+  points: -2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsLanguagesBasic
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Tajaran
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - YaSsa
+      languagesUnderstood:
+        - YaSsa
+
+- type: trait
+  id: Delvahii
+  category: TraitsSpeechLanguages
+  points: -2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsLanguagesBasic
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Tajaran
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - Delvahii
+      languagesUnderstood:
+        - Delvahii

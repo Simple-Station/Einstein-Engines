@@ -16,7 +16,7 @@ public sealed partial class NewsArticleCard : Control
     public string? Title
     {
         get => TitleLabel.Text;
-        set => TitleLabel.Text = value?.Length <= 30 ? value : $"{value?[..30]}...";
+        set => TitleLabel.Text = value?.Length <= 40 ? value : $"{value?[..40]}...";
     }
 
     public string? Author

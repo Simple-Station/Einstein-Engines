@@ -7,6 +7,7 @@
     HydroponicsToolScythe: 3
     HydroponicsToolHatchet: 3
     Dropper: 3
+    PlantAnalyzer: 4
     PlantBag: 3
     PlantBGoneSpray: 20
     WeedSpray: 20
@@ -18,5 +19,8 @@
     DiseaseSwab: 20
     #TO DO:
     #plant analyzer
+  contrabandInventory:
+    UnstableMutagenChemistryBottle: 1
+    Joint: 1
   emaggedInventory:
     Left4ZedChemistryBottle: 1

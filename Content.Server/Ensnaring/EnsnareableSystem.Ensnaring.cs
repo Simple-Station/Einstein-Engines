@@ -121,8 +121,7 @@ public sealed partial class EnsnareableSystem
 
         var doAfterEventArgs = new DoAfterArgs(EntityManager, user, freeTime, new EnsnareableDoAfterEvent(), target, target: target, used: ensnare)
         {
-            BreakOnUserMove = breakOnMove,
-            BreakOnTargetMove = breakOnMove,
+            BreakOnMove = breakOnMove,
             BreakOnDamage = false,
             NeedHand = true,
             BlockDuplicate = true,
@@ -150,14 +149,14 @@ public sealed partial class EnsnareableSystem
 
         var target = component.Ensnared.Value;
 
-        _container.Remove(ensnare, ensnareable.Container, force: true);
+        _container.TryRemoveFromContainer(ensnare, force: true); // Goobstation - fix on ensnare entity remove
         ensnareable.IsEnsnared = ensnareable.Container.ContainedEntities.Count > 0;
         Dirty(component.Ensnared.Value, ensnareable);
         component.Ensnared = null;
 
         UpdateAlert(target, ensnareable);
         var ev = new EnsnareRemoveEvent(component.WalkSpeed, component.SprintSpeed);
-        RaiseLocalEvent(ensnare, ev);
+        RaiseLocalEvent(target, ev);
     }
 
     /// <summary>

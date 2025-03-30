@@ -5,6 +5,8 @@ using Content.Server.NPC.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Player;
 using Robust.Server.GameObjects;
+using Content.Shared.NPC.Systems;
+
 
 namespace Content.Server.Psionics
 {

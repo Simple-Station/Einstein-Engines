@@ -43,6 +43,7 @@
         ents: []
   - type: StaticPrice
     price: 500
+  - type: Execution
   - type: MeleeWeapon
     attackRate: 1.4
     damage:
@@ -120,6 +121,7 @@
   - type: Appearance
   - type: StaticPrice
     price: 500
+  - type: Execution
   - type: MeleeWeapon
     attackRate: 1.4
     damage:
@@ -138,6 +140,24 @@
         Blunt: 2.5
   - type: DamageOtherOnHit
     staminaCost: 9.5
+
+- type: entity
+  name: Bulldog
+  parent: [WeaponShotgunBulldog]
+  id: WeaponShotgunBulldogEmpty
+  description: It's a magazine-fed shotgun designed for close quarters combat. Uses .50 shotgun shells.
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: null
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineShotgun
+        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
 
 - type: entity
   name: antique Bulldog
@@ -242,6 +262,8 @@
     tags:
     - WeaponShotgunKammerer
   - type: Wieldable
+  - type: Gun
+    shotgunSpreadMultiplier: 0.5
 
 - type: entity
   name: sawn-off shotgun
@@ -259,6 +281,8 @@
   - type: Gun
     fireRate: 4
     fireOnDropChance: 0.5
+    shotgunSpreadMultiplier: 3
+    damageModifier: 1.5
   - type: BallisticAmmoProvider
     capacity: 2
   - type: Construction

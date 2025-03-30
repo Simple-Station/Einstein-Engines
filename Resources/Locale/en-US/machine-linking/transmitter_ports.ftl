@@ -69,3 +69,9 @@ signal-port-description-power-charging = This port is invoked with HIGH when the
 
 signal-port-name-power-discharging = Discharging
 signal-port-description-power-discharging = This port is invoked with HIGH when the battery is losing charge and LOW when not.
+
+signal-port-name-material-silo = Material silo
+signal-port-description-material-silo = Bluespace storage for station materials
+
+signal-port-name-fillitems = Fillbot Items
+signal-port-description-fillitems = Items picked up by the Fillbot.

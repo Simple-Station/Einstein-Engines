@@ -25,6 +25,10 @@
             Chef: [ 1, 3 ]
             Janitor: [ 2, 4 ]
             Captain: [ 1, 1 ]
+            BlueshieldOfficer: [ 1, 1]
+            NanotrasenRepresentative: [ 1, 1 ]
+            Magistrate: [ 1, 1 ]
+            AdministrativeAssistant: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
             ServiceWorker: [ 3, 6 ]
             # Engineering
@@ -65,3 +69,5 @@
             Boxer: [ 2, 4 ]
             Reporter: [ 2, 4 ]
             Passenger: [ -1, -1 ]
+            # Silicon
+            StationAi: [ 1, 1 ]

@@ -10,6 +10,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutGloves
+    - !type:CharacterSpeciesRequirement # Use the envirogloves that use the same sprite instead.
+      inverted: true
+      species:
+        - Plasmaman
 
 - type: loadout
   id: LoadoutHandsColorYellowBudget
@@ -68,6 +72,49 @@
   customColorTint: true
   items:
     - ClothingHandsGlovesFingerlessWhite
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGloves
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Plasmaman
+
+- type: loadout
+  id: LoadoutHandsGlovesEvening
+  category: Hands
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingHandsGlovesEvening
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGloves
+    - !type:CharacterSpeciesRequirement # Use the evening envirogloves that use the same sprite instead.
+      inverted: true
+      species:
+        - Plasmaman
+
+- type: loadout
+  id: LoadoutHandsClothWrap
+  category: Hands
+  cost: 0
+  exclusive: false
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGloves
+  items:
+    - ClothingClothWrap
+
+- type: loadout
+  id: ClothingHandsTacticalMaidGlovesLoadout
+  category: Hands
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHandsTacticalMaidGlovesLoadout
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutGloves

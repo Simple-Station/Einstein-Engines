@@ -18,7 +18,7 @@
   - type: PaperLabelType
   - type: ActivatableUI
     key: enum.PaperUiKey.Key
-    requireHands: false
+    requiresComplex: false
   - type: UserInterface
     interfaces:
       enum.PaperUiKey.Key:
@@ -77,6 +77,12 @@
     sound: /Audio/SimpleStation14/Items/Handling/paper_drop.ogg
   - type: EmitSoundOnLand
     sound: /Audio/SimpleStation14/Items/Handling/paper_drop.ogg
+# Corvax-Printer-Start
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      SheetPrinter: 100
+# Corvax-Printer-End
 
 - type: entity
   name: paper scrap
@@ -355,6 +361,7 @@
   id: PenEmbeddable
   abstract: true
   components:
+  - type: LandAtCursor
   - type: DamageOtherOnHit
     damage:
       types:
@@ -394,6 +401,13 @@
         Piercing: 15
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Piercing: 15
+  - type: EmbeddableProjectile
+    removalTime: 2
+  - type: EmbedPassiveDamage
   - type: Tool
     qualities:
       - Screwing
@@ -735,6 +749,7 @@
           tags:
           - Write
   - type: CargoOrderConsole
+  - type: BankClient
   - type: ActivatableUI
     verbText: qm-clipboard-computer-verb-text
     key: enum.CargoConsoleUiKey.Orders

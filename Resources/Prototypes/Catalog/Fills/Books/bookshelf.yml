@@ -15,7 +15,7 @@
         orGroup: BookPool
       - id: BookBartendersManual
         orGroup: BookPool
-      - id: BookChefGaming
+      - id: BookHowToCookForFortySpaceman
         orGroup: BookPool
       - id: BookLeafLoversSecret
         orGroup: BookPool
@@ -39,6 +39,9 @@
         prob: 0.1
         orGroup: BookAuthor
       - id: BookTruth
+        prob: 0.1
+        orGroup: BookAuthor
+      - id: RevolutionaryManifesto
         prob: 0.1
         orGroup: BookAuthor
       - id: BookWorld

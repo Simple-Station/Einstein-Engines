@@ -65,6 +65,11 @@ public abstract partial class SharedPuddleSystem
                     injectorComp.ToggleState = InjectorToggleMode.Draw;
                     Dirty(entity, injectorComp);
                 }
+                else if (TryComp<FillableOneTimeInjectorComponent>(entity, out var fillableOneTimeInjectorComponent))
+                {
+                    fillableOneTimeInjectorComponent.ToggleState = FillableOneTimeInjectorToggleMode.Spent;
+                    Dirty(entity, fillableOneTimeInjectorComponent);
+                }
             };
         }
         else
@@ -75,7 +80,7 @@ public abstract partial class SharedPuddleSystem
                 _doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, user, entity.Comp.SpillDelay ?? 0, new SpillDoAfterEvent(), entity.Owner, target: entity.Owner)
                 {
                     BreakOnDamage = true,
-                    BreakOnUserMove = true,
+                    BreakOnMove = true,
                     NeedHand = true,
                 });
             };

@@ -1,11 +1,12 @@
 ﻿using Content.Shared.Antag;
+using Content.Shared.Language;
 using Content.Shared.StatusIcon;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared.WhiteDream.BloodCult.Constructs;
 
 [RegisterComponent]
-public sealed partial class ConstructComponent : Component, IAntagStatusIconComponent
+public sealed partial class ConstructComponent : Component
 {
     [DataField]
     public List<EntProtoId> Actions = new();
@@ -17,7 +18,13 @@ public sealed partial class ConstructComponent : Component, IAntagStatusIconComp
     public float TransformDelay = 1;
 
     [DataField]
-    public ProtoId<StatusIconPrototype> StatusIcon { get; set; } = "BloodCultMember";
+    public ProtoId<FactionIconPrototype> StatusIcon { get; set; } = "BloodCultMember";
+
+    [DataField]
+    public ProtoId<LanguagePrototype> CultLanguageId { get; set; } = "Eldritch";
+
+    [DataField]
+    public ProtoId<EntityPrototype> SpawnOnDeathPrototype { get; set; } = "Ectoplasm";
 
     [DataField]
     public bool IconVisibleToGhost { get; set; } = true;

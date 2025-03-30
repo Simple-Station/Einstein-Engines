@@ -148,7 +148,7 @@ namespace Content.Server.Forensics
                 BreakOnHandChange = true,
                 NeedHand = true,
                 BreakOnDamage = true,
-                BreakOnTargetMove = true,
+                BreakOnMove = true,
                 MovementThreshold = 0.01f,
                 DistanceThreshold = forensicsComp.CleanDistance,
             };

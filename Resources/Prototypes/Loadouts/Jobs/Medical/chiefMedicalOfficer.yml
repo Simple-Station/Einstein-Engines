@@ -53,6 +53,19 @@
   items:
     - ClothingHeadHatBeretCmo
 
+- type: loadout
+  id: LoadoutClothingHeadMirror
+  category: JobsMedicalChiefMedicalOfficer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefMedicalOfficerHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefMedicalOfficer
+  items:
+    - ClothingHeadMirror
+
 # Id
 - type: loadout
   id: LoadoutChiefMedicalOfficerNTPDA
@@ -212,3 +225,29 @@
         - ChiefMedicalOfficer
   items:
     - ClothingUniformJumpskirtCMO
+
+- type: loadout
+  id: LoadoutChiefMedicalOfficerTurtleskirt
+  category: JobsMedicalChiefMedicalOfficer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefMedicalOfficerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefMedicalOfficer
+  items:
+    - ClothingUniformJumpskirtCMOTurtle
+
+- type: loadout
+  id: LoadoutChiefMedicalOfficerTurtlesuit
+  category: JobsMedicalChiefMedicalOfficer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefMedicalOfficerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefMedicalOfficer
+  items:
+    - ClothingUniformJumpsuitCMOTurtle

@@ -9,6 +9,16 @@ character-department-requirement = You must{$inverted ->
     *[other]{""}
 } be in one of these departments: {$departments}
 
+character-antagonist-requirement = You must{$inverted ->
+    [true]{" "}not
+    *[other]{""}
+} be an antagonist
+
+character-mindshield-requirement = You must{$inverted ->
+    [true]{" "}not
+    *[other]{""}
+} be mindshielded
+
 character-timer-department-insufficient = You require [color=yellow]{TOSTRING($time, "0")}[/color] more minutes of [color={$departmentColor}]{$department}[/color] department playtime
 character-timer-department-too-high = You require [color=yellow]{TOSTRING($time, "0")}[/color] fewer minutes in [color={$departmentColor}]{$department}[/color] department
 
@@ -43,10 +53,20 @@ character-logic-xor-requirement = You must{$inverted ->
 
 
 ## Profile
-character-age-requirement = You must{$inverted ->
+character-age-requirement-range = You must{$inverted ->
     [true]{" "}not
     *[other]{""}
 } be within [color=yellow]{$min}[/color] and [color=yellow]{$max}[/color] years old
+
+character-age-requirement-minimum-only = You must{$inverted ->
+    [true]{" "}not
+    *[other]{""}
+} be at least [color=yellow]{$min}[/color] years old
+
+character-age-requirement-maximum-only = You must{$inverted ->
+    [true]{""}
+    *[other]{" "}not
+} be older than [color=yellow]{$max}[/color] years old
 
 character-backpack-type-requirement = You must {$inverted ->
     [true] not use
@@ -143,7 +163,7 @@ character-whitelist-requirement = You must{$inverted ->
 
 ## CVar
 
-character-cvar-requirement = 
+character-cvar-requirement =
     The server must{$inverted ->
     [true]{" "}not
     *[other]{""}

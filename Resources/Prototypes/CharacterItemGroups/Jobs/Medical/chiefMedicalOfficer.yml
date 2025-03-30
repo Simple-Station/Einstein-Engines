@@ -46,6 +46,8 @@
   items:
     - type: loadout
       id: LoadoutChiefMedicalOfficerNTPDA
+    - type: loadout
+      id: LoadoutClothingHeadMirror
 
 - type: characterItemGroup
   id: LoadoutChiefMedicalOfficerNeck
@@ -91,3 +93,7 @@
       id: LoadoutChiefMedicalOfficerJumpsuit
     - type: loadout
       id: LoadoutChiefMedicalOfficerJumpskirt
+    - type: loadout
+      id: LoadoutChiefMedicalOfficerTurtleskirt
+    - type: loadout
+      id: LoadoutChiefMedicalOfficerTurtlesuit

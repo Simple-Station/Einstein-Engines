@@ -39,6 +39,8 @@
         Slash: 0.95
         Piercing: 0.95
         Heat: 0.95
+  - type: IngestionBlocker # Goobstation
+    blockSmokeIngestion: true
 
 - type: entity
   parent: ClothingMaskGas
@@ -59,6 +61,8 @@
         Slash: 0.95
         Piercing: 0.95
         Heat: 0.95
+  - type: IngestionBlocker # Goobstation
+    blockSmokeIngestion: true
 
 - type: entity
   parent: ClothingMaskGas
@@ -87,6 +91,17 @@
     sprite: Clothing/Mask/gascaptain.rsi
   - type: BreathMask
   - type: IngestionBlocker
+
+- type: entity
+  parent: ClothingMaskGasExplorer
+  id: ClothingMaskGasCaptainCombat
+  name: captain's combat gas mask
+  description: A military-grade gas mask that can be connected to an air supply, painted and outfitted with an emblem befitting its wearer. Issued only to the station's finest.
+  components:
+  - type: Sprite
+    sprite: Clothing/Mask/gascaptaincombat.rsi
+  - type: Clothing
+    sprite: Clothing/Mask/gascaptaincombat.rsi
 
 - type: entity
   parent: ClothingMaskGasAtmos
@@ -391,6 +406,8 @@
     - Hair
     - Snout
     hideOnToggle: true
+  - type: IngestionBlocker # Goobstation
+    blockSmokeIngestion: true
 
 - type: entity
   parent: ClothingMaskGasERT
@@ -660,3 +677,4 @@
   - type: Tag
     tags:
     - IPCMaskWearable # Estacao Pirata - IPCs
+  - type: Unremoveable

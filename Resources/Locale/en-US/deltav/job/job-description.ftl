@@ -3,3 +3,4 @@ job-description-chief-justice = Manage the justice department, act as a judge, a
 job-description-clerk = Organize trials, notarize documents, review charges, and act as a judge if needed.
 job-description-prosecutor = Take statements from security and prepare cases against those accused of commiting crimes.
 job-description-courier = Deliver mail and other packages from and to logistics. Avoid dogs.
+job-description-admin-assistant = Assist command in their day-to-day activities, grab the captain a coffee, answer faxes in the bridge.

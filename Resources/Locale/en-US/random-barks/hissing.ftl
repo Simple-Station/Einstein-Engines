@@ -3,6 +3,7 @@ bark-hissing-1 = Hsssss
 bark-hissing-2 = Hssssssss
 bark-hissing-3 = I sssee you
 bark-hissing-4 = I will catch you
+bark-hissing-5 = Meat...
 bark-hissing-6 = I'm hhhungry!
 bark-hissing-7 = Ssseek... food...
 bark-hissing-8 = Hsss... Get there

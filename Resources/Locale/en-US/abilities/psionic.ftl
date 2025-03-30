@@ -68,3 +68,6 @@ action-description-psychokinesis = Bend the fabric of space to instantly move ac
 
 action-name-rf-sensitivity = Toggle RF Sensitivity
 action-desc-rf-sensitivity = Toggle your ability to interpret radio waves on and off.
+
+action-name-assay = Assay
+action-description-assay = Probe an entity at close range to glean metaphorical information about any powers they may have

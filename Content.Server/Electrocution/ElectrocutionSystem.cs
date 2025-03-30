@@ -123,7 +123,7 @@ public sealed class ElectrocutionSystem : SharedElectrocutionSystem
             activated.TimeLeft -= frameTime;
             if (activated.TimeLeft <= 0 || !IsPowered(uid, electrified, transform))
             {
-                _appearance.SetData(uid, ElectrifiedVisuals.IsPowered, false);
+                _appearance.SetData(uid, ElectrifiedVisuals.ShowSparks, false);
                 RemComp<ActivatedElectrifiedComponent>(uid);
             }
         }
@@ -168,7 +168,7 @@ public sealed class ElectrocutionSystem : SharedElectrocutionSystem
         if (!electrified.OnAttacked)
             return;
 
-        if (!_meleeWeapon.GetDamage(args.Used, args.User).Any())
+        if (_meleeWeapon.GetDamage(args.Used, args.User).Empty)
             return;
 
         TryDoElectrifiedAct(uid, args.User, 1, electrified);
@@ -185,7 +185,7 @@ public sealed class ElectrocutionSystem : SharedElectrocutionSystem
         if (!component.CurrentLit || args.Used != args.User)
             return;
 
-        if (!_meleeWeapon.GetDamage(args.Used, args.User).Any())
+        if (_meleeWeapon.GetDamage(args.Used, args.User).Empty)
             return;
 
         DoCommonElectrocution(args.User, uid, component.UnarmedHitShock, component.UnarmedHitStun, false);
@@ -219,7 +219,7 @@ public sealed class ElectrocutionSystem : SharedElectrocutionSystem
             return false;
 
         EnsureComp<ActivatedElectrifiedComponent>(uid);
-        _appearance.SetData(uid, ElectrifiedVisuals.IsPowered, true);
+        _appearance.SetData(uid, ElectrifiedVisuals.ShowSparks, true);
 
         siemens *= electrified.SiemensCoefficient;
         if (!DoCommonElectrocutionAttempt(targetUid, uid, ref siemens) || siemens <= 0)

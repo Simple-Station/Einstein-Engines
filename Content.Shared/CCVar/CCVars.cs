@@ -1,10 +1,16 @@
-using Content.Shared.Maps;
-using Content.Shared.Supermatter.Components;
 using Robust.Shared;
 using Robust.Shared.Configuration;
-using Robust.Shared.Physics.Components;
 
-namespace Content.Shared.CCVar
+namespace Content.Shared.CCVar;
+
+/// <summary>
+/// Contains all the CVars used by content.
+/// </summary>
+/// <remarks>
+/// NOTICE FOR FORKS: Put your own CVars in a separate file with a different [CVarDefs] attribute. RT will automatically pick up on it.
+/// </remarks>
+[CVarDefs]
+public sealed partial class CCVars : CVars
 {
     // ReSharper disable once InconsistentNaming
     [CVarDefs]
@@ -2821,18 +2827,6 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<bool> UseDynamicHostname =
             CVarDef.Create("game.use_dynamic_hostname", false, CVar.SERVERONLY);
 
-        /// <summary>
-        /// Whether the RestrictedGear trait can be used on the server.
-        /// </summary>
-        public static readonly CVarDef<bool> RestrictedGearEnabled =
-            CVarDef.Create("trait.restrictedgear_enabled", true, CVar.SERVERONLY);
-
-        /// <summary>
-        /// Whether the RestrictedGear trait can allow guns for any job.
-        /// </summary>
-        public static readonly CVarDef<bool> RestrictedGearAllowsFirearms =
-            CVarDef.Create("trait.restrictedgear_allowsfirearms", true, CVar.SERVERONLY);
-
         #region SoftCrit
 
         /// <summary>
@@ -2855,5 +2849,33 @@ namespace Content.Shared.CCVar
             CVarDef.Create("mobstate.damage_while_crit_move", false, CVar.REPLICATED);
 
         #endregion
+
+        #region RestrictedGearTrait
+        /// <summary>
+        /// Whether the RestrictedGear trait can be used on the server.
+        /// </summary>
+        public static readonly CVarDef<bool> RestrictedGearEnabled =
+            CVarDef.Create("trait.restrictedgear_enabled", true, CVar.SERVERONLY);
+
+        /// <summary>
+        /// Whether the RestrictedGear trait can allow guns for any job.
+        /// </summary>
+        public static readonly CVarDef<bool> RestrictedGearAllowsFirearms =
+            CVarDef.Create("trait.restrictedgear_allowsfirearms", true, CVar.SERVERONLY);
+        
+        #endregion
     }
+    // Only debug stuff lives here.
+
+    /// <summary>
+    /// A simple toggle to test <c>OptionsVisualizerComponent</c>.
+    /// </summary>
+    public static readonly CVarDef<bool> DebugOptionVisualizerTest =
+        CVarDef.Create("debug.option_visualizer_test", false, CVar.CLIENTONLY);
+
+    /// <summary>
+    /// Set to true to disable parallel processing in the pow3r solver.
+    /// </summary>
+    public static readonly CVarDef<bool> DebugPow3rDisableParallel =
+        CVarDef.Create("debug.pow3r_disable_parallel", true, CVar.SERVERONLY);
 }

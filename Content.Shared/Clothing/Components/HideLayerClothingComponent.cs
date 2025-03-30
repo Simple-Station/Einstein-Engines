@@ -17,8 +17,21 @@ public sealed partial class HideLayerClothingComponent : Component
     public HashSet<HumanoidVisualLayers> Slots = new();
 
     /// <summary>
+    /// The clothing layers to hide.
+    /// </summary>
+    [DataField]
+    public HashSet<string>? ClothingSlots = new();
+
+    /// <summary>
     /// If true, the layer will only hide when the item is in a toggled state (e.g. masks)
     /// </summary>
     [DataField]
     public bool HideOnToggle = false;
+
+    /// <summary>
+    /// If true, the layer will always be hidden even if the layer
+    /// is not present in the equipee's HumanoidAppearanceComponent.HideLayerOnEquip field.
+    /// </summary>
+    [DataField]
+    public bool Force = false;
 }

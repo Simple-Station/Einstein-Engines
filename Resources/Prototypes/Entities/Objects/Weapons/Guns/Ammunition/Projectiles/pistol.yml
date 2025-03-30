@@ -54,3 +54,26 @@
       types:
         Radiation: 6
         Piercing: 10
+
+- type: entity
+  id: BulletPistolShrapnel
+  name: bullet (.35 auto shrapnel)
+  categories: [ HideSpawnMenu ]
+  parent: BaseBullet
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 6.1333
+  - type: Sprite
+    scale: 0.5, 0.5
+
+- type: entity
+  id: BulletPistolShrapnelSpread
+  categories: [ HideSpawnMenu ]
+  parent: BulletPistolShrapnel
+  components:
+  - type: ProjectileSpread
+    proto: BulletPistolShrapnel
+    count: 3
+    spread: 15

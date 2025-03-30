@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using Content.Client.UserInterface.Screens;
 using Content.Shared.CCVar;
 using Content.Shared.HUD;
@@ -59,6 +59,18 @@ namespace Content.Client.Options.UI.Tabs
                 UpdateApplyButton();
             };
 
+            ChatStackOption.AddItem(Loc.GetString("ui-options-chatstack-off"), 0);
+            ChatStackOption.AddItem(Loc.GetString("ui-options-chatstack-single"), 1);
+            ChatStackOption.AddItem(Loc.GetString("ui-options-chatstack-double"), 2);
+            ChatStackOption.AddItem(Loc.GetString("ui-options-chatstack-triple"), 3);
+            ChatStackOption.TrySelectId(_cfg.GetCVar(CCVars.ChatStackLastLines));
+
+            ChatStackOption.OnItemSelected += args =>
+            {
+                ChatStackOption.SelectId(args.Id);
+                UpdateApplyButton();
+            };
+
             // Channel can be null in replays so.
             // ReSharper disable once ConditionalAccessQualifierIsNonNullableAccordingToAPIContract
             ShowOocPatronColor.Visible = _playerManager.LocalSession?.Channel?.UserData.PatronTier is { };
@@ -80,6 +92,7 @@ namespace Content.Client.Options.UI.Tabs
             ScreenShakeIntensitySlider.OnValueChanged += OnScreenShakeIntensitySliderChanged;
             // ToggleWalk.OnToggled += OnCheckBoxToggled;
             StaticStorageUI.OnToggled += OnCheckBoxToggled;
+            ModernProgressBar.OnToggled += OnCheckBoxToggled;
             DisableFiltersCheckBox.OnToggled += OnCheckBoxToggled;
 
             HudThemeOption.SelectId(_hudThemeIdToIndex.GetValueOrDefault(_cfg.GetCVar(CVars.InterfaceTheme), 0));
@@ -99,6 +112,7 @@ namespace Content.Client.Options.UI.Tabs
             ScreenShakeIntensitySlider.Value = _cfg.GetCVar(CCVars.ScreenShakeIntensity) * 100f;
             // ToggleWalk.Pressed = _cfg.GetCVar(CCVars.ToggleWalk);
             StaticStorageUI.Pressed = _cfg.GetCVar(CCVars.StaticStorageUI);
+            ModernProgressBar.Pressed = _cfg.GetCVar(CCVars.ModernProgressBar);
             DisableFiltersCheckBox.Pressed = _cfg.GetCVar(CCVars.NoVisionFilters);
 
 
@@ -156,7 +170,9 @@ namespace Content.Client.Options.UI.Tabs
             _cfg.SetCVar(CCVars.ScreenShakeIntensity, ScreenShakeIntensitySlider.Value / 100f);
             // _cfg.SetCVar(CCVars.ToggleWalk, ToggleWalk.Pressed);
             _cfg.SetCVar(CCVars.StaticStorageUI, StaticStorageUI.Pressed);
+            _cfg.SetCVar(CCVars.ModernProgressBar, ModernProgressBar.Pressed);
             _cfg.SetCVar(CCVars.NoVisionFilters, DisableFiltersCheckBox.Pressed);
+            _cfg.SetCVar(CCVars.ChatStackLastLines, ChatStackOption.SelectedId);
 
             if (HudLayoutOption.SelectedMetadata is string opt)
             {
@@ -187,7 +203,9 @@ namespace Content.Client.Options.UI.Tabs
             var isScreenShakeIntensitySame = Math.Abs(ScreenShakeIntensitySlider.Value / 100f - _cfg.GetCVar(CCVars.ScreenShakeIntensity)) < 0.01f;
             // var isToggleWalkSame = ToggleWalk.Pressed == _cfg.GetCVar(CCVars.ToggleWalk);
             var isStaticStorageUISame = StaticStorageUI.Pressed == _cfg.GetCVar(CCVars.StaticStorageUI);
+            var isModernProgressBarSame = ModernProgressBar.Pressed == _cfg.GetCVar(CCVars.ModernProgressBar);
             var isNoVisionFiltersSame = DisableFiltersCheckBox.Pressed == _cfg.GetCVar(CCVars.NoVisionFilters);
+            var isChatStackTheSame = ChatStackOption.SelectedId == _cfg.GetCVar(CCVars.ChatStackLastLines);
 
             ApplyButton.Disabled = isHudThemeSame &&
                                    isLayoutSame &&
@@ -207,7 +225,9 @@ namespace Content.Client.Options.UI.Tabs
                                    isScreenShakeIntensitySame &&
                                    // isToggleWalkSame &&
                                    isStaticStorageUISame &&
-                                   isNoVisionFiltersSame;
+                                   isModernProgressBarSame &&
+                                   isNoVisionFiltersSame &&
+                                   isChatStackTheSame;
         }
 
     }

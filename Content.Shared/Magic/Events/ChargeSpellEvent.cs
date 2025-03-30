@@ -1,6 +1,7 @@
 ﻿using Content.Shared.Actions;
 using Content.Shared.Chat;
 
+
 namespace Content.Shared.Magic.Events;
 
 /// <summary>

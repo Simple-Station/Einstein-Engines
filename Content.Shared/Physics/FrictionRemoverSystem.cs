@@ -24,8 +24,11 @@ public sealed class FrictionRemoverSystem : EntitySystem
         var angular = 0f;
         if (TryComp<PassiveDampeningComponent>(uid, out var dampening) && dampening.Enabled)
         {
-            linear = dampening.LinearDampening;
-            angular = dampening.AngularDampening;
+            // use passive, that said, if its already set, it may have been updated by shuttle console.
+            // don't overwrite shuttle console just because you start moving or stop
+            // because for some reason when you go from stopped to moving, or moving to stopped this method is called
+            linear = component.LinearDamping != 0 ? component.LinearDamping : dampening.LinearDampening;
+            angular = component.AngularDamping != 0 ? component.AngularDamping: dampening.AngularDampening;
         }
 
         _physics.SetAngularDamping(uid, component, angular, false);

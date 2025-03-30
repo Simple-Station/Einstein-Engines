@@ -13,9 +13,6 @@ public sealed partial class ProjectileSpellEvent : WorldTargetActionEvent, ISpea
     public EntProtoId Prototype;
 
     [DataField]
-    public float ProjectileSpeed = 20;
-
-    [DataField]
     public string? Speech { get; private set; }
 
     public InGameICChatType ChatType { get; } = InGameICChatType.Speak;

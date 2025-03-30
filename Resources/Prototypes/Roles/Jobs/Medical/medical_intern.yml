@@ -1,4 +1,4 @@
-﻿- type: job
+- type: job
   id: MedicalIntern
   name: job-name-intern
   description: job-description-intern
@@ -8,6 +8,10 @@
     #   department: Medical
     #   time: 54000 # 15 hrs
     #   inverted: true # stop playing intern if you're good at med!
+    - !type:CharacterEmployerRequirement
+      inverted: true
+      employers:
+      - Unemployed
   startingGear: MedicalInternGear
   icon: "JobIconMedicalIntern"
   supervisors: job-supervisors-medicine
@@ -24,6 +28,8 @@
 
 - type: startingGear
   id: MedicalInternGear
+  subGear:
+  - DoctorPlasmamanGear
   equipment:
     jumpsuit: UniformScrubsColorBlue # DeltaV - Intern starts with blue scrubs
     back: ClothingBackpackMedicalFilled

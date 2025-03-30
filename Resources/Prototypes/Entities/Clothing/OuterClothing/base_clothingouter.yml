@@ -26,6 +26,17 @@
   - type: Tag
     tags:
       - WhitelistChameleon
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 22
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
 
 - type: entity
   abstract: true
@@ -48,8 +59,8 @@
 
 - type: entity
   abstract: true
-  parent: [ClothingOuterStorageBase, BaseFoldable]
-  id: ClothingOuterStorageFoldableBase
+  parent: [ClothingOuterBase, BaseFoldable]
+  id: ClothingOuterFoldableBase
   components:
   - type: Appearance
   - type: Foldable
@@ -69,8 +80,8 @@
 
 - type: entity
   abstract: true
-  parent: ClothingOuterStorageFoldableBase
-  id: ClothingOuterStorageFoldableBaseOpened
+  parent: ClothingOuterFoldableBase
+  id: ClothingOuterFoldableBaseOpened
   suffix: opened
   components:
   - type: Foldable
@@ -90,6 +101,17 @@
 
 - type: entity
   abstract: true
+  parent: [ClothingOuterStorageBase, ClothingOuterFoldableBase]
+  id: ClothingOuterStorageFoldableBase
+
+- type: entity
+  abstract: true
+  parent: [ClothingOuterStorageFoldableBase, ClothingOuterFoldableBaseOpened]
+  id: ClothingOuterStorageFoldableBaseOpened
+  suffix: opened
+
+- type: entity
+  abstract: true
   parent: ClothingOuterStorageBase
   id: ClothingOuterStorageToggleableBase
   components:
@@ -98,7 +120,7 @@
     slot: head
   - type: ContainerContainer
     containers:
-      toggleable-clothing: !type:ContainerSlot {}
+      toggleable-clothing: !type:Container {}
       storagebase: !type:Container
         ents: []
 
@@ -115,6 +137,18 @@
     coefficient: 0.01
   - type: FireProtection
     reduction: 0.75 # almost perfectly sealed, atmos firesuit is better
+  - type: IgniteFromGasImmunity
+    parts:
+    - Torso
+    - Groin
+    - LeftArm
+    - LeftHand
+    - RightArm
+    - RightHand
+    - LeftLeg
+    - LeftFoot
+    - RightLeg
+    - RightFoot
   - type: ClothingSpeedModifier
     walkModifier: 0.4
     sprintModifier: 0.6
@@ -133,14 +167,16 @@
     slot: head
   - type: ContainerContainer
     containers:
-      toggleable-clothing: !type:ContainerSlot {}
+      toggleable-clothing: !type:Container {}
   - type: GroupExamine
   - type: Tag
     tags:
     - Hardsuit
     - WhitelistChameleon
     - HidesHarpyWings #DeltaV: Used by harpies to help render their hardsuit sprites
+    - AllowLamiaHardsuit
     - FullBodyOuter
+    - PlasmamanSafe
   - type: Clothing
     equipDelay: 2.5 # Hardsuits are heavy and take a while to put on/off.
     unequipDelay: 2.5
@@ -158,6 +194,97 @@
     staminaCost: 44
     soundHit:
       collection: MetalThud
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 400 # According to Google, a NASA Eva Suit weighs 68kg. Since Hardsuits are "Armored", I'm setting it to 100kg
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
+  - type: EmitsSoundOnMove
+    soundCollection:
+      collection: FootstepHardsuitLight
+      params:
+        volume: -5
+    requiresWorn: true
+    distanceWalking: 2
+    distanceSprinting: 3
+
+- type: entity
+  abstract: true
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitBaseMedium
+  name: base hardsuit
+  components:
+  - type: EmitsSoundOnMove
+    soundCollection:
+      collection: FootstepHardsuitMedium
+      params:
+        volume: -5
+    requiresWorn: true
+    distanceWalking: 2
+    distanceSprinting: 3
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 600
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 30
+    staminaCost: 60
+    soundHit:
+      collection: MetalThud
+  - type: Clothing
+    equipDelay: 4 # For stuff like standard Tacsuits and Heavy Hardsuits.
+    unequipDelay: 4
+
+- type: entity
+  abstract: true
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitBaseHeavy
+  name: base hardsuit
+  components:
+  - type: EmitsSoundOnMove
+    soundCollection:
+      collection: FootstepHardsuitHeavy
+      params:
+        volume: -5
+    requiresWorn: true
+    distanceWalking: 2
+    distanceSprinting: 3
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 800
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 45
+    staminaCost: 110
+    soundHit:
+      collection: MetalThud
+  - type: Clothing
+    equipDelay: 5 # For stuff like "Heavy" Tacsuits.
+    unequipDelay: 5
 
 - type: entity
   abstract: true
@@ -170,6 +297,18 @@
     lowPressureMultiplier: 1000
   - type: TemperatureProtection
     coefficient: 0.01 # Not complete protection from fire
+  - type: IgniteFromGasImmunity
+    parts:
+    - Torso
+    - Groin
+    - LeftArm
+    - LeftHand
+    - RightArm
+    - RightHand
+    - LeftLeg
+    - LeftFoot
+    - RightLeg
+    - RightFoot
   - type: ClothingSpeedModifier
     walkModifier: 0.8
     sprintModifier: 0.8
@@ -178,12 +317,25 @@
     size: Huge
   - type: Tag
     tags:
+    - AllowLamiaHardsuit #DeltaV: Used by Lamia to render snek hardsuits
     - HidesHarpyWings #DeltaV: Used by harpies to help render their hardsuit sprites
+    - PlasmamanSafe
   - type: Clothing
     equipDelay: 1.25 # Softsuits are easier to put on and off
     unequipDelay: 1
   - type: ClothingRequiredStepTriggerImmune
     slots: WITHOUT_POCKET
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 272 # According to Google, a NASA Eva Suit weighs 68kg. Thus, my reference.
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
 
 - type: entity
   parent: ClothingOuterBase
@@ -196,7 +348,7 @@
     slot: head
   - type: ContainerContainer
     containers:
-      toggleable-clothing: !type:ContainerSlot {}
+      toggleable-clothing: !type:Container {}
       storagebase: !type:Container
         ents: []
 

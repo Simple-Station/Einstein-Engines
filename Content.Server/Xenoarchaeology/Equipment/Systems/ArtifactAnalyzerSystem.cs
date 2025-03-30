@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Server.Construction;
 using Content.Server.Paper;
 using Content.Server.Power.Components;
 using Content.Server.Research.Systems;
@@ -11,6 +12,7 @@ using Content.Shared.DeviceLinking;
 using Content.Shared.DeviceLinking.Events;
 using Content.Shared.Placeable;
 using Content.Shared.Popups;
+using Content.Shared.Power;
 using Content.Shared.Research.Components;
 using Content.Shared.Xenoarchaeology.Equipment;
 using Content.Shared.Xenoarchaeology.XenoArtifacts;
@@ -55,6 +57,9 @@ public sealed class ArtifactAnalyzerSystem : EntitySystem
 
         SubscribeLocalEvent<ArtifactAnalyzerComponent, ItemPlacedEvent>(OnItemPlaced);
         SubscribeLocalEvent<ArtifactAnalyzerComponent, ItemRemovedEvent>(OnItemRemoved);
+
+        SubscribeLocalEvent<ArtifactAnalyzerComponent, RefreshPartsEvent>(OnRefreshParts);
+        SubscribeLocalEvent<ArtifactAnalyzerComponent, UpgradeExamineEvent>(OnUpgradeExamine);
 
         SubscribeLocalEvent<ArtifactAnalyzerComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<AnalysisConsoleComponent, NewLinkEvent>(OnNewLink);
@@ -160,6 +165,17 @@ public sealed class ArtifactAnalyzerSystem : EntitySystem
             analysis.AnalyzerEntity = uid;
             return;
         }
+    }
+
+    private void OnRefreshParts(EntityUid uid, ArtifactAnalyzerComponent component, RefreshPartsEvent args)
+    {
+        var rating = args.PartRatings[component.MachinePartTimeReduction];
+        component.AnalysisDuration = component.BaseAnalysisDuration - TimeSpan.FromSeconds(component.UpgradeTimeReductionMultiplier * (rating - 1));
+    }
+
+    private void OnUpgradeExamine(EntityUid uid, ArtifactAnalyzerComponent component, UpgradeExamineEvent args)
+    {
+        args.AddPercentageUpgrade("analyzer-artifact-component-upgrade-analysis", component.UpgradeTimeReductionMultiplier); // this is broken and i have no clue how to fix it
     }
 
     private void OnNewLink(EntityUid uid, AnalysisConsoleComponent component, NewLinkEvent args)
@@ -377,7 +393,7 @@ public sealed class ArtifactAnalyzerSystem : EntitySystem
         if (TryComp<ArtifactAnalyzerComponent>(component.AnalyzerEntity.Value, out var analyzer) &&
             analyzer != null)
         {
-            _glimmerSystem.Glimmer += (int) pointValue / analyzer.ExtractRatio;
+            _glimmerSystem.DeltaGlimmerInput(pointValue / analyzer.ExtractRatio);
         }
         // Nyano - End modified code block.
 

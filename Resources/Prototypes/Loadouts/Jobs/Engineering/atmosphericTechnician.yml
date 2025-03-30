@@ -296,6 +296,19 @@
 
 # Outer
 - type: loadout
+  id: LoadoutAtmosphericTechnicianWinterCoat
+  category: JobsEngineeringAtmosphericTechnician
+  cost: 0
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutAtmosphericTechnicianOuter
+  - !type:CharacterJobRequirement
+    jobs:
+    - AtmosphericTechnician
+  items:
+  - ClothingOuterWinterAtmos
+
+- type: loadout
   id: LoadoutAtmosphericTechnicianChickenSuit
   category: JobsEngineeringAtmosphericTechnician
   cost: 0

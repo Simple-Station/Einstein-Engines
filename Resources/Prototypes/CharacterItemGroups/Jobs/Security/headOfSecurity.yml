@@ -37,6 +37,8 @@
       id: LoadoutCommandHoSEnergySword
     - type: loadout
       id: LoadoutCommandHoSEnergyGun
+    - type: loadout
+      id: LoadoutCommandHoSBRDIR25
 
 #- type: characterItemGroup
 #  id: LoadoutHeadOfSecurityEyes
@@ -86,6 +88,8 @@
       id: LoadoutCommandHOSOuterWinter
     - type: loadout
       id: LoadoutCommandHOSOuterTrench
+    - type: loadout
+      id: LoadoutCommandHOSOuterWinterUnarmored
 
 - type: characterItemGroup
   id: LoadoutHeadOfSecurityShoes
@@ -118,3 +122,11 @@
       id: LoadoutCommandHOSJumpskirtParade
     - type: loadout
       id: LoadoutCommandHOSJumpskirtFormal
+
+- type: characterItemGroup
+  id: LoadoutHeadOfSecurityTrinkets
+  maxItems: 2
+  items:
+    - type: loadout
+      id: LoadoutHoSCigarCase
+    # TBD

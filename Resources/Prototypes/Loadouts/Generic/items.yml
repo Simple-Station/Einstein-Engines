@@ -311,6 +311,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutAirTank
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Plasmaman
 
 - type: loadout
   id: LoadoutItemsExtendedEmergencyOxygenTank
@@ -321,6 +325,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutAirTank
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Plasmaman
 
 - type: loadout
   id: LoadoutItemsDoubleEmergencyOxygenTank
@@ -331,6 +339,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutAirTank
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Plasmaman
 
 - type: loadout
   id: LoadoutItemClothingMaskBreath
@@ -433,6 +445,11 @@
   cost: 1
   items:
     - DrinkWaterBottleFull
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Plasmaman
 
 - type: loadout
   id: LoadoutItemLunchboxGenericFilledRandom
@@ -440,6 +457,11 @@
   cost: 3
   items:
     - LunchboxGenericFilledRandom
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Plasmaman
 
 - type: loadout
   id: LoadoutItemDrinkMREFlask
@@ -447,6 +469,11 @@
   cost: 2
   items:
     - DrinkMREFlask
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Plasmaman
 
 # Survival boxes
 - type: loadout
@@ -667,6 +694,19 @@
 
 #Misc Items
 - type: loadout
+  id: LoadoutCivilianDisabler
+  category: Items
+  cost: 5
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+      - Prisoner
+  items:
+  - WeaponCivilianDisabler
+
+- type: loadout
   id: LoadoutItemFlash
   category: Items
   cost: 1
@@ -680,25 +720,14 @@
        jobs:
          - Brigmedic
 
-- type: loadout
-  id: LoadoutItemPAI
-  category: Items
-  cost: 3
-  canBeHeirloom: true
-  items:
-    - PersonalAI
-
-- type: loadout
-  id: LoadoutItemWaistbag
-  category: Items
-  cost: 2
-  items:
-    - ClothingBeltStorageWaistbag
-  requirements:
-    - !type:CharacterJobRequirement
-       inverted: true
-       jobs:
-         - Prisoner
+ # 5 zillion ghostroles, more people will take them if theyre less common.
+ # - type: loadout
+ # id: LoadoutItemPAI
+ # category: Items
+ # cost: 3
+ # canBeHeirloom: true
+ # items:
+ #   - PersonalAI
 
 - type: loadout
   id: LoadoutItemCrayonBox
@@ -767,12 +796,27 @@
   items:
     - DrinkVacuumFlask
 
+- type: loadout
+  id: LoadoutItemAACTablet
+  category: Items
+  cost: 2
+  items:
+    - AACTablet
+
+- type: loadout
+  id: LoadoutItemCaneBlind
+  category: Items
+  cost: 0 # It shouldnt cost points to be able to function.
+  items:
+    - WhiteCane
+
 # Pets
 - type: loadout
   id: LoadoutItemPetMouse
   category: Items
   cost: 2
   canBeHeirloom: true
+  customColorTint: true # Unethical hair dyes!
   items:
     - MobMousePet
   requirements:
@@ -786,6 +830,7 @@
   category: Items
   cost: 2
   canBeHeirloom: true
+  customColorTint: true
   items:
     - MobHamsterPet
   requirements:
@@ -799,6 +844,7 @@
   category: Items
   cost: 2
   canBeHeirloom: true
+  customColorTint: true
   items:
     - MobMothroachPet
   requirements:
@@ -812,6 +858,7 @@
   category: Items
   cost: 2
   canBeHeirloom: true
+  customColorTint: true
   items:
     - MobCockroachPet
   requirements:
@@ -819,3 +866,205 @@
       group: LoadoutPets
   functions:
     - !type:LoadoutMakeFollower
+
+- type: loadout
+  id: LoadoutItemBlackDeck
+  category: Items
+  cost: 3
+  canBeHeirloom: false
+  items:
+    - CardBoxBlack
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCards
+
+- type: loadout
+  id: LoadoutItemNTDeck
+  category: Items
+  cost: 3
+  canBeHeirloom: false
+  items:
+    - CardBoxNanotrasen
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCards
+    - !type:CharacterDepartmentRequirement
+       departments:
+         - Command
+
+- type: loadout
+  id: LuxuryPen
+  category: Items
+  cost: 2
+  canBeHeirloom: true
+  items:
+    - LuxuryPen
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutWritables
+
+- type: loadout
+  id: PlushieSharkBlue
+  category: Items
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieSharkBlue
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPlushie
+
+- type: loadout
+  id: PlushieSharkPink
+  category: Items
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieSharkPink
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPlushie
+
+
+- type: loadout
+  id: PlushieSharkGrey
+  category: Items
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieSharkGrey
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPlushie
+
+- type: loadout
+  id: PlushieLizard
+  category: Items
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieLizard
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPlushie
+
+- type: loadout
+  id: PlushieArachind
+  category: Items
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieArachind
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPlushie
+
+- type: loadout
+  id: PlushieMoth
+  category: Items
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieMoth
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPlushie
+
+- type: loadout
+  id: PlushieHampter
+  category: Items
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieHampter
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPlushie
+
+- type: loadout
+  id: PlushieRouny
+  category: Items
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieRouny
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPlushie
+
+- type: loadout
+  id: PlushieCarp
+  category: Items
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieCarp
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPlushie
+
+- type: loadout
+  id: PlushieSlime
+  category: Items
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieSlime
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPlushie
+
+- type: loadout
+  id: PlushieVox
+  category: Items
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieVox
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPlushie
+
+- type: loadout
+  id: PlushieHuman
+  category: Items
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieHuman
+  requirements:
+     - !type:CharacterItemGroupRequirement
+       group: LoadoutPlushie
+
+- type: loadout
+  id: PlushieArachne
+  category: Items
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieArachne
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPlushie
+
+- type: loadout
+  id: PlushieVulp
+  category: Items
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieVulp
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPlushie
+
+- type: loadout
+  id: PlushieShadowkin
+  category: Items
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieShadowkin
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPlushie

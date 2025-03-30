@@ -6,10 +6,14 @@
   components:
   - type: Psionic
     removable: false
+    roller: false
+    assayFeedback:
+      - prober-feedback
   - type: InnatePsionicPowers
     powersToAdd:
       - TelepathyPower
   - type: GlimmerSource
+    researchPointGeneration: 20
   - type: Construction
     graph: GlimmerDevices
     node: glimmerProber
@@ -84,6 +88,8 @@
         path: /Audio/Ambience/Objects/prober_hum_dangerous.ogg
       Critical:
         path: /Audio/Ambience/Objects/prober_hum_dangerous.ogg
+  - type: GuideHelp
+    guides: [ Glimmer ]
 
 - type: entity
   parent: BaseMachinePowered
@@ -93,6 +99,9 @@
   components:
   - type: Psionic
     removable: false
+    roller: false
+    assayFeedback:
+      - drain-feedback
   - type: GlimmerSource
     addToGlimmer: false
   - type: Construction
@@ -119,6 +128,8 @@
   - type: NpcFactionMember
     factions:
     - PsionicInterloper # :^)
+  - type: GuideHelp
+    guides: [ Glimmer ]
 
 - type: entity
   id: GlimmerDeviceFrame
@@ -169,3 +180,5 @@
       - state: base
       - state: intermediate
     - type: CargoSellBlacklist
+    - type: GuideHelp
+      guides: [ Glimmer ]

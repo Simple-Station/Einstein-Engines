@@ -88,5 +88,10 @@ namespace Content.Shared.Movement.Systems
         {
             IsImmune = isImmune;
         }
+
+        public void ModifySpeed(float mod)
+        {
+            ModifySpeed(mod, mod);
+        }
     }
 }

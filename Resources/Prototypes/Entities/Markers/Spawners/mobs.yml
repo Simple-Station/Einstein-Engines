@@ -863,3 +863,16 @@
   - type: ConditionalSpawner
     prototypes:
     - MobClownSpider
+
+- type: entity
+  name: Pibble Spawner
+  id: SpawnMobPibble
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - sprite: Mobs/Pets/pitbull.rsi
+        state: pibble
+  - type: ConditionalSpawner
+    prototypes:
+      - MobPibble

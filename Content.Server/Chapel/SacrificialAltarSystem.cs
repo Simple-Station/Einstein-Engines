@@ -48,7 +48,7 @@ public sealed class SacrificialAltarSystem : SharedSacrificialAltarSystem
         _adminLogger.Add(LogType.Action, LogImpact.Extreme, $"{ToPrettyString(args.Args.User):player} sacrificed {ToPrettyString(target):target} on {ToPrettyString(ent):altar}");
 
         // lower glimmer by a random amount
-        _glimmer.Glimmer -= (int) (ent.Comp.GlimmerReduction * psionic.CurrentAmplification);
+        _glimmer.DeltaGlimmerInput(ent.Comp.GlimmerReduction * psionic.CurrentAmplification);
 
         if (ent.Comp.RewardPool is not null && _random.Prob(ent.Comp.BaseItemChance * psionic.CurrentDampening))
         {
@@ -119,8 +119,7 @@ public sealed class SacrificialAltarSystem : SharedSacrificialAltarSystem
         var args = new DoAfterArgs(EntityManager, user, ent.Comp.SacrificeTime, ev, target: target, eventTarget: ent)
         {
             BreakOnDamage = true,
-            BreakOnUserMove = true,
-            BreakOnTargetMove = true,
+            BreakOnMove = true,
             BreakOnWeightlessMove = true,
             NeedHand = true
         };

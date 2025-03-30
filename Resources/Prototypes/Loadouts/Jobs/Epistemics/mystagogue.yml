@@ -77,6 +77,7 @@
   id: LoadoutMystagoguePillCanisterSpaceDrugs
   category: JobsEpistemicsMystagogue
   cost: 0
+  guideEntry: Psionics
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMystagogueEquipment
@@ -87,6 +88,33 @@
     - PillCanisterSpaceDrugs
 
 # Eyes
+- type: loadout
+  id: LoadoutMystagogueEyesEpiHUD
+  category: JobsEpistemicsMystagogue
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMystagogueEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchDirector
+  items:
+    - ClothingEyesHudEpistemics
+
+- type: loadout
+  id: LoadoutMystagogueEyesEpiGlasses
+  category: JobsEpistemicsMystagogue
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMystagogueEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchDirector
+  items:
+    - ClothingEyesGlassesEpistemics
 
 # Gloves
 

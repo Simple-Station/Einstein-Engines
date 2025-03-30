@@ -24,6 +24,8 @@ using Content.Server.Station.Systems;
 using Content.Server.GameTicking;
 using Content.Server.Chat.Systems;
 using Content.Server.NPC.Systems;
+using Content.Shared.NPC.Systems;
+
 
 namespace Content.Server.Antag;
 

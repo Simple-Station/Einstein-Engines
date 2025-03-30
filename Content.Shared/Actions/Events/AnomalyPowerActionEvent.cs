@@ -74,9 +74,7 @@ public sealed partial class AnomalyPowerActionEvent : InstantActionEvent
 [DataRecord]
 public partial record struct AnomalyPowerSettings()
 {
-    public string PowerName;
-
-    public float ManaCost;
+    public string PowerName = string.Empty;
 
     public bool CheckInsulation;
 

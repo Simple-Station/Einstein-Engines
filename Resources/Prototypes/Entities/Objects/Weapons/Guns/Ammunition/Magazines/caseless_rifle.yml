@@ -99,7 +99,6 @@
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeCaselessRifle
-    capacity: 10
   - type: Sprite
     slayers:
     - state: red
@@ -119,7 +118,6 @@
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeCaselessRiflePractice
-    capacity: 10
   - type: Sprite
     layers:
     - state: practice
@@ -139,7 +137,6 @@
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeCaselessRifleRubber
-    capacity: 10
   - type: Sprite
     layers:
     - state: rubber
@@ -151,6 +148,30 @@
     steps: 6
     zeroVisible: false
   - type: Appearance
+
+- type: entity
+  id: MagazinePistolCaselessRifleIncendiary
+  name: "pistol magazine (.25 caseless incendiary)"
+  parent: BaseMagazinePistolCaselessRifle
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeCaselessRifleIncendiary
+
+- type: entity
+  id: MagazinePistolCaselessRifleUranium
+  name: "pistol magazine (.25 caseless uranium)"
+  parent: BaseMagazinePistolCaselessRifle
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeCaselessRifleUranium
+
+- type: entity
+  id: MagazinePistolCaselessRifleShrapnel
+  name: "pistol magazine (.25 caseless shrapnel)"
+  parent: BaseMagazinePistolCaselessRifle
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeCaselessRifleShrapnel
 
 - type: entity
   id: MagazineCaselessRifle
@@ -195,6 +216,30 @@
       map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
+  id: MagazineCaselessRifleIncendiary
+  name: "magazine (.25 caseless incendiary)"
+  parent: MagazineCaselessRifle
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeCaselessRifleIncendiary
+
+- type: entity
+  id: MagazineCaselessRifleUranium
+  name: "magazine (.25 caseless uranium)"
+  parent: MagazineCaselessRifle
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeCaselessRifleUranium
+
+- type: entity
+  id: MagazineCaselessRifleShrapnel
+  name: "magazine (.25 caseless shrapnel)"
+  parent: MagazineCaselessRifle
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeCaselessRifleShrapnel
+
+- type: entity
   id: MagazineCaselessRifleShort
   name: "short magazine (.25 caseless)"
   parent: BaseMagazineCaselessRifleShort
@@ -216,7 +261,6 @@
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeCaselessRiflePractice
-    capacity: 20
   - type: Sprite
     layers:
     - state: practice
@@ -231,10 +275,33 @@
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeCaselessRifleRubber
-    capacity: 20
   - type: Sprite
     layers:
     - state: rubber
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: MagazineCaselessRifleShortIncendiary
+  name: "short magazine (.25 caseless incendiary)"
+  parent: BaseMagazineCaselessRifleShort
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeCaselessRifleIncendiary
+
+- type: entity
+  id: MagazineCaselessRifleShortUranium
+  name: "short magazine (.25 caseless uranium)"
+  parent: BaseMagazineCaselessRifleShort
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeCaselessRifleUranium
+
+- type: entity
+  id: MagazineCaselessRifleShortShrapnel
+  name: "short magazine (.25 caseless shrapnel)"
+  parent: BaseMagazineCaselessRifleShort
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeCaselessRifleShrapnel

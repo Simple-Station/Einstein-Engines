@@ -128,7 +128,54 @@
       - BoxHug
 
 - type: entity
-  name: extended-capacity survival box
+  parent: BoxHug
+  id: BoxHugNitrogen
+  suffix: Emergency N2
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingMaskBreath
+    - id: EmergencyNitrogenTankFilled
+    - id: EmergencyMedipen
+    - id: Flare
+    - id: FoodSnackNutribrick
+    - id: DrinkWaterBottleFull
+  - type: Label
+    currentLabel: reagent-name-nitrogen
+
+- type: entity
+  parent: BoxSurvival
+  id: BoxMime
+  name: survival box
+  description: It's a box with basic internals inside.
+  suffix: Emergency
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingMaskBreath
+    - id: EmergencyOxygenTankFilled
+    - id: EmergencyMedipen
+    - id: Flare
+    - id: FoodBreadBaguette
+    - id: DrinkWaterBottleFull
+
+- type: entity
+  parent: BoxSurvival
+  id: BoxMimeNitrogen
+  suffix: Emergency N2
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingMaskBreath
+    - id: EmergencyNitrogenTankFilled
+    - id: EmergencyMedipen
+    - id: Flare
+    - id: FoodBreadBaguette
+    - id: DrinkWaterBottleFull
+  - type: Label
+    currentLabel: reagent-name-nitrogen
+
+- type: entity
   parent: BoxCardboard
   id: BoxSurvivalSyndicate
   description: It's a box with basic internals inside. This one is labelled to contain an extended-capacity tank.

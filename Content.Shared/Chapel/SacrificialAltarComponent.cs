@@ -35,7 +35,7 @@ public sealed partial class SacrificialAltarComponent : Component
     ///     Base amount to reduce glimmer by, multiplied by the victim's Amplification stat.
     /// </summary>
     [DataField]
-    public float GlimmerReduction = 25;
+    public float GlimmerReduction = -25;
 
     [DataField]
     public List<ProtoId<WeightedRandomEntityPrototype>>? RewardPool;

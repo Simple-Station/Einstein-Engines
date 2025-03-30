@@ -13,4 +13,4 @@ examine-mindbroken-shadowkin-message = {CAPITALIZE($entity)} seems to be a black
 identity-eye-shadowkin = {$color}-eye
 
 shadowkin-blackeye = I feel my power draining away...
-shadowkin-tired = Im too tired!
+shadowkin-tired = I don't have the energy for that.

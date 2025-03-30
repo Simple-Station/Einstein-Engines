@@ -1,5 +1,4 @@
-﻿using Content.Server.NPC.Components;
-using Content.Server.WhiteDream.BloodCult.RendingRunePlacement;
+﻿using Content.Shared.NPC.Prototypes;
 using Content.Shared.WhiteDream.BloodCult.BloodCultist;
 using Content.Shared.WhiteDream.BloodCult.Constructs;
 using Robust.Shared.Prototypes;

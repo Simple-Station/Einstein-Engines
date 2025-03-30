@@ -72,3 +72,54 @@
     contents:
     - id: CigarGold
       amount: 8
+
+- type: entity 
+  id: CigarRobustCase
+  parent: CigarCase
+  name: Cohiba Robusto cigar case
+  description: "A case of imported Cohiba cigars, renowned for their strong flavor."
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Smokeables/Cigars/case_robust.rsi
+    layers:
+    - state: closed
+    - state: open
+      map: ["openLayer"]
+    - state: cigar1
+      map: ["cigar1"]
+      visible: false
+    - state: cigar2
+      map: ["cigar2"]
+      visible: false
+    - state: cigar3
+      map: ["cigar3"]
+      visible: false
+    - state: cigar4
+      map: ["cigar4"]
+      visible: false
+    - state: cigar5
+      map: ["cigar5"]
+      visible: false
+  - type: Storage
+    grid:
+    - 0,1,4,1
+  - type: Item
+    sprite: Objects/Consumable/Smokeables/Cigars/case_robust.rsi
+    size: Normal
+    shape:
+    - 0,0,2,1
+    storedRotation: 90
+  - type: StorageFill
+    contents:
+    - id: CigarRobust
+      amount: 5
+  - type: ItemCounter
+    count:
+      tags: [Cigar]
+    composite: true
+    layerStates:
+    - cigar1
+    - cigar2
+    - cigar3
+    - cigar4
+    - cigar5

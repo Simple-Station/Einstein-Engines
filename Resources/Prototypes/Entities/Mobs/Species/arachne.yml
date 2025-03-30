@@ -27,6 +27,7 @@
       color: "#008800"
       sprite: Mobs/Species/eyes.rsi
       state: eyes
+    - map: [ "enum.HumanoidVisualLayers.Face" ]
     - map: [ "enum.HumanoidVisualLayers.RArm" ]
       color: "#e8b59b"
       sprite: Mobs/Species/Human/parts.rsi
@@ -35,9 +36,9 @@
       color: "#e8b59b"
       sprite: Mobs/Species/Human/parts.rsi
       state: l_arm
-    - shader: StencilClear
-      sprite: Mobs/Species/Human/parts.rsi
-      state: l_leg
+#     - shader: StencilClear
+#      sprite: Mobs/Species/Human/parts.rsi
+#      state: l_leg
     - shader: StencilMask
       map: [ "enum.HumanoidVisualLayers.StencilMask" ]
       sprite: Mobs/Customization/anytaur_masking_helpers.rsi
@@ -61,6 +62,8 @@
     - map: [ "gloves" ]
     - map: [ "shoes" ]
     - map: [ "ears" ]
+    - map: [ "innerBelt" ]
+    - map: [ "innerNeck" ]
     - map: [ "outerClothing" ]
     - map: [ "eyes" ]
     - map: [ "belt" ]
@@ -85,6 +88,11 @@
       visible: false
   - type: HumanoidAppearance
     species: Arachne
+  - type: Sericulture
+    action: ActionSericulture
+    productionLength: 2
+    entityProduced: MaterialWebSilk1
+    hungerCost: 4 # Should total to 25 total silk on full hunger
   - type: Fixtures
     fixtures: # TODO: This needs a second fixture just for mob collisions.
       fix1:
@@ -109,6 +117,7 @@
     - CanPilot
     - FootstepSound
     - DoorBumpOpener
+    - SpiderCraft
   - type: StepTriggerImmune
   - type: Bloodstream
     bloodReagent: DemonsBlood
@@ -123,7 +132,6 @@
       - "enum.HumanoidVisualLayers.LArm"
       - "enum.HumanoidVisualLayers.RArm"
   - type: MovedByPressure
-    pressureResistance: 4
   - type: Barotrauma
     damage:
       types:
@@ -142,6 +150,7 @@
   - type: FootPrints
     leftBarePrint: "footprint-left-bare-spider"
     rightBarePrint: "footprint-right-bare-spider"
+  - type: NoSlip
 
 - type: entity
   save: false
@@ -172,6 +181,7 @@
       color: "#008800"
       sprite: Mobs/Species/eyes.rsi
       state: eyes
+    - map: [ "enum.HumanoidVisualLayers.Face" ]
     - map: [ "enum.HumanoidVisualLayers.RArm" ]
       color: "#e8b59b"
       sprite: Mobs/Species/Human/parts.rsi
@@ -180,9 +190,9 @@
       color: "#e8b59b"
       sprite: Mobs/Species/Human/parts.rsi
       state: l_arm
-    - shader: StencilClear
-      sprite: Mobs/Species/Human/parts.rsi
-      state: l_leg
+#     - shader: StencilClear
+#      sprite: Mobs/Species/Human/parts.rsi
+#      state: l_leg
     - shader: StencilMask
       map: [ "enum.HumanoidVisualLayers.StencilMask" ]
       sprite: Mobs/Customization/anytaur_masking_helpers.rsi
@@ -206,6 +216,8 @@
     - map: [ "gloves" ]
     - map: [ "shoes" ]
     - map: [ "ears" ]
+    - map: [ "innerBelt" ]
+    - map: [ "innerNeck" ]
     - map: [ "outerClothing" ]
     - map: [ "eyes" ]
     - map: [ "belt" ]

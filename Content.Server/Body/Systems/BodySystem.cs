@@ -40,7 +40,7 @@ public sealed class BodySystem : SharedBodySystem
     private void OnRelayMoveInput(Entity<BodyComponent> ent, ref MoveInputEvent args)
     {
         // If they haven't actually moved then ignore it.
-        if ((args.Component.HeldMoveButtons &
+        if ((args.Entity.Comp.HeldMoveButtons &
              (MoveButtons.Down | MoveButtons.Left | MoveButtons.Up | MoveButtons.Right)) == 0x0)
         {
             return;
@@ -48,7 +48,7 @@ public sealed class BodySystem : SharedBodySystem
 
         if (_mobState.IsDead(ent) && _mindSystem.TryGetMind(ent, out var mindId, out var mind))
         {
-            mind.TimeOfDeath ??= _gameTiming.RealTime;
+            mind.TimeOfDeath ??= _gameTiming.CurTime; // WD EDIT
             _ticker.OnGhostAttempt(mindId, canReturnGlobal: true, mind: mind);
         }
     }

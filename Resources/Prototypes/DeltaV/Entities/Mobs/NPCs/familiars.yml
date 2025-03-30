@@ -92,6 +92,9 @@
     nameSegments: [names_golem]
   - type: Psionic
     removable: false
+    roller: false
+    assayFeedback:
+      - ifrit-feedback
     psychognomicDescriptors:
       - p-descriptor-bound
       - p-descriptor-cyclic
@@ -116,13 +119,16 @@
     - TauCetiBasic
   - type: GhostTakeoverAvailable
   - type: GhostRole
+    name: ghost-role-information-ifrit-name
+    description: ghost-role-information-ifrit-description
+    rules: ghost-role-information-ifrit-rules
     makeSentient: true
     allowMovement: true
     allowSpeech: true
     requirements:
-    - !type:DepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Epistemics
-      time: 14400 # 4 hours
+      min: 14400 # 4 hours
 
 - type: entity
   parent: WelderExperimental

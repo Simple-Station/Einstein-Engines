@@ -58,6 +58,7 @@ entities:
         version: 2
         nodes: []
     - type: GridAtmosphere
+      simulatedTurf: false
       version: 2
       data:
         tiles:

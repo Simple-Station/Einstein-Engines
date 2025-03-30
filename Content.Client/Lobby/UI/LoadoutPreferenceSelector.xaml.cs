@@ -9,6 +9,8 @@ using Content.Client.UserInterface.Systems.Guidebook;
 using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Clothing.Loadouts.Systems;
 using Content.Shared.Customization.Systems;
+using Content.Shared.Guidebook;
+using Content.Shared.Labels.Components;
 using Content.Shared.Paint;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
@@ -140,6 +142,15 @@ public sealed partial class LoadoutPreferenceSelector : Control
             Loc.GetString($"loadout-name-{loadout.ID}") == $"loadout-name-{loadout.ID}"
                 ? entityManager.GetComponent<MetaDataComponent>(dummyLoadoutItem).EntityName
                 : Loc.GetString($"loadout-name-{loadout.ID}");
+
+        // Display the item's label if it's present
+        if (entityManager.TryGetComponent(dummyLoadoutItem, out LabelComponent? labelComponent))
+        {
+            var itemLabel = labelComponent.CurrentLabel;
+            if (!string.IsNullOrEmpty(itemLabel))
+                loadoutName += $" ({Loc.GetString(itemLabel)})";
+        }
+
         var loadoutDesc =
             !Loc.TryGetString($"loadout-description-{loadout.ID}", out var description)
                 ? entityManager.GetComponent<MetaDataComponent>(dummyLoadoutItem).EntityDescription
@@ -159,8 +170,8 @@ public sealed partial class LoadoutPreferenceSelector : Control
 
             var guidebookController = UserInterfaceManager.GetUIController<GuidebookUIController>();
             //TODO: Don't close the guidebook if its already open, just go to the correct page
-            guidebookController.ToggleGuidebook(
-                new Dictionary<string, GuideEntry> { { loadout.GuideEntry, guideRoot } },
+            guidebookController.OpenGuidebook(
+                new Dictionary<ProtoId<GuideEntryPrototype>, GuideEntry> { { loadout.GuideEntry, guideRoot } },
                 includeChildren: true,
                 selected: loadout.GuideEntry);
         };

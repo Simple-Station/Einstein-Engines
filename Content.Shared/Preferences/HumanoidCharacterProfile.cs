@@ -23,7 +23,7 @@ namespace Content.Shared.Preferences;
 [Serializable, NetSerializable]
 public sealed partial class HumanoidCharacterProfile : ICharacterProfile
 {
-    private static readonly Regex RestrictedNameRegex = new("[^A-Z,a-z,0-9, -]");
+    private static readonly Regex RestrictedNameRegex = new(@"[^A-Za-z0-9 '\-]");
     private static readonly Regex ICNameCaseRegex = new(@"^(?<word>\w)|\b(?<word>\w)(?=\w*$)");
 
     public const int MaxNameLength = 64;
@@ -63,6 +63,17 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     [DataField]
     public string Species { get; set; } = SharedHumanoidAppearanceSystem.DefaultSpecies;
 
+    // EE -- Contractors Change Start
+    [DataField]
+    public string Nationality { get; set; } = SharedHumanoidAppearanceSystem.DefaultNationality;
+
+    [DataField]
+    public string Employer { get; set; } = SharedHumanoidAppearanceSystem.DefaultEmployer;
+
+    [DataField]
+    public string Lifepath { get; set; } = SharedHumanoidAppearanceSystem.DefaultLifepath;
+    // EE -- Contractors Change End
+
     [DataField]
     public string Customspeciename { get; set; } = "";
 
@@ -80,6 +91,15 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
 
     [DataField]
     public Gender Gender { get; private set; } = Gender.Male;
+
+    [DataField]
+    public string? DisplayPronouns { get; set; }
+
+    [DataField]
+    public string? StationAiName { get; set; }
+
+    [DataField]
+    public string? CyborgName { get; set; }
 
     /// <see cref="Appearance"/>
     public ICharacterAppearance CharacterAppearance => Appearance;
@@ -116,11 +136,19 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         string flavortext,
         string species,
         string customspeciename,
+        // EE -- Contractors Change Start
+        string nationality,
+        string employer,
+        string lifepath,
+        // EE -- Contractors Change End
         float height,
         float width,
         int age,
         Sex sex,
         Gender gender,
+        string? displayPronouns,
+        string? stationAiName,
+        string? cyborgName,
         HumanoidCharacterAppearance appearance,
         SpawnPriorityPreference spawnPriority,
         Dictionary<string, JobPriority> jobPriorities,
@@ -135,11 +163,19 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         FlavorText = flavortext;
         Species = species;
         Customspeciename = customspeciename;
+        // EE -- Contractors Change Start
+        Nationality = nationality;
+        Employer = employer;
+        Lifepath = lifepath;
+        // EE -- Contractors Change End
         Height = height;
         Width = width;
         Age = age;
         Sex = sex;
         Gender = gender;
+        DisplayPronouns = displayPronouns;
+        StationAiName = stationAiName;
+        CyborgName = cyborgName;
         Appearance = appearance;
         SpawnPriority = spawnPriority;
         _jobPriorities = jobPriorities;
@@ -158,11 +194,19 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             other.FlavorText,
             other.Species,
             other.Customspeciename,
+            // EE -- Contractors Change Start
+            other.Nationality,
+            other.Employer,
+            other.Lifepath,
+            // EE -- Contractors Change End
             other.Height,
             other.Width,
             other.Age,
             other.Sex,
             other.Gender,
+            other.DisplayPronouns,
+            other.StationAiName,
+            other.CyborgName,
             other.Appearance.Clone(),
             other.SpawnPriority,
             new Dictionary<string, JobPriority>(other.JobPriorities),
@@ -191,9 +235,22 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     /// <returns>Humanoid character profile with default settings.</returns>
     public static HumanoidCharacterProfile DefaultWithSpecies(string species = SharedHumanoidAppearanceSystem.DefaultSpecies)
     {
+        var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
+        var skinColor = SkinColor.ValidHumanSkinTone;
+
+        if (prototypeManager.TryIndex<SpeciesPrototype>(species, out var speciesPrototype))
+            skinColor = speciesPrototype.DefaultSkinTone;
+
         return new()
         {
             Species = species,
+            Appearance = new()
+            {
+                SkinColor = skinColor,
+            },
+            Nationality = SharedHumanoidAppearanceSystem.DefaultNationality,
+            Employer = SharedHumanoidAppearanceSystem.DefaultEmployer,
+            Lifepath = SharedHumanoidAppearanceSystem.DefaultLifepath,
         };
     }
 
@@ -247,14 +304,25 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             Gender = gender,
             Species = species,
             Appearance = HumanoidCharacterAppearance.Random(species, sex),
+            Nationality = SharedHumanoidAppearanceSystem.DefaultNationality,
+            Employer = SharedHumanoidAppearanceSystem.DefaultEmployer,
+            Lifepath = SharedHumanoidAppearanceSystem.DefaultLifepath,
         };
     }
 
     public HumanoidCharacterProfile WithName(string name) => new(this) { Name = name };
     public HumanoidCharacterProfile WithFlavorText(string flavorText) => new(this) { FlavorText = flavorText };
     public HumanoidCharacterProfile WithAge(int age) => new(this) { Age = age };
+    // EE - Contractors Change Start
+    public HumanoidCharacterProfile WithNationality(string nationality) => new(this) { Nationality = nationality };
+    public HumanoidCharacterProfile WithEmployer(string employer) => new(this) { Employer = employer };
+    public HumanoidCharacterProfile WithLifepath(string lifepath) => new(this) { Lifepath = lifepath };
+    // EE - Contractors Change End
     public HumanoidCharacterProfile WithSex(Sex sex) => new(this) { Sex = sex };
     public HumanoidCharacterProfile WithGender(Gender gender) => new(this) { Gender = gender };
+    public HumanoidCharacterProfile WithDisplayPronouns(string? displayPronouns) => new(this) { DisplayPronouns = displayPronouns };
+    public HumanoidCharacterProfile WithStationAiName(string? stationAiName) => new(this) { StationAiName = stationAiName };
+    public HumanoidCharacterProfile WithCyborgName(string? cyborgName) => new(this) { CyborgName = cyborgName };
     public HumanoidCharacterProfile WithSpecies(string species) => new(this) { Species = species };
     public HumanoidCharacterProfile WithCustomSpeciesName(string customspeciename) => new(this) { Customspeciename = customspeciename };
     public HumanoidCharacterProfile WithHeight(float height) => new(this) { Height = height };
@@ -343,6 +411,11 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             && Sex == other.Sex
             && Gender == other.Gender
             && Species == other.Species
+            // EE - Contractors Change Start
+            && Nationality == other.Nationality
+            && Employer == other.Employer
+            && Lifepath == other.Lifepath
+            // EE - Contractors Change End
             && PreferenceUnavailable == other.PreferenceUnavailable
             && SpawnPriority == other.SpawnPriority
             && _jobPriorities.SequenceEqual(other._jobPriorities)
@@ -468,14 +541,17 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
 
         var antags = AntagPreferences
             .Where(id => prototypeManager.TryIndex<AntagPrototype>(id, out var antag) && antag.SetPreference)
+            .Distinct()
             .ToList();
 
         var traits = TraitPreferences
             .Where(prototypeManager.HasIndex<TraitPrototype>)
+            .Distinct()
             .ToList();
 
         var loadouts = LoadoutPreferences
             .Where(l => prototypeManager.HasIndex<LoadoutPrototype>(l.LoadoutName))
+            .Distinct()
             .ToList();
 
         Name = name;
@@ -536,6 +612,9 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         hashCode.Add(Name);
         hashCode.Add(FlavorText);
         hashCode.Add(Species);
+        hashCode.Add(Employer);
+        hashCode.Add(Nationality);
+        hashCode.Add(Lifepath);
         hashCode.Add(Age);
         hashCode.Add((int) Sex);
         hashCode.Add((int) Gender);

@@ -2,7 +2,7 @@
   id: BullishHorns
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Human]
+  speciesRestriction: [Human, IPC, Oni]
   coloring:
     default:
       type:
@@ -18,7 +18,7 @@
   id: BunnyEars
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Human]
+  speciesRestriction: [Human, IPC]
   coloring:
     default:
       type:
@@ -38,10 +38,26 @@
     state: bunnyearstone2
 
 - type: marking
+  id: BunnyEarsAlt
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Human, IPC]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+        - !type:SkinColoring
+  sprites:
+  - sprite: Mobs/Customization/kemonomimi-ears.rsi
+    state: bunnyearsalt
+
+- type: marking
   id: FoxEars
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Human]
+  speciesRestriction: [Human, IPC]
   coloring:
     default:
       type:
@@ -57,7 +73,7 @@
   id: GoatHorns
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Human]
+  speciesRestriction: [Human, IPC]
   coloring:
     default:
       type:

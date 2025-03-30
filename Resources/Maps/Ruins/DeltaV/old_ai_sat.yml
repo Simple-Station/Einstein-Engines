@@ -85,6 +85,7 @@ entities:
       configurators: []
       deviceLists: []
       transmitFrequencyId: ShuttleTimer
+      deviceNetId: Wireless
     - type: DecalGrid
       chunkCollection:
         version: 2
@@ -172,6 +173,7 @@ entities:
             1: 9,17
             2: 10,16
     - type: GridAtmosphere
+      simulatedTurf: false
       version: 2
       data:
         tiles:

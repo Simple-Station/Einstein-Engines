@@ -1,4 +1,4 @@
-﻿using Content.Server.Chemistry.Containers.EntitySystems;
+using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Server.Chemistry.EntitySystems;
 using Content.Server.Construction;
 using Content.Server.Fluids.EntitySystems;
@@ -23,6 +23,10 @@ using Robust.Shared.Utility;
 using System.Linq;
 using Content.Server.Administration.Logs;
 using Content.Shared.Database;
+using Content.Shared.Destructible;
+using Content.Shared.Emag.Components;
+using Content.Shared.Power;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.Materials;
 
@@ -52,7 +56,7 @@ public sealed class MaterialReclaimerSystem : SharedMaterialReclaimerSystem
         SubscribeLocalEvent<MaterialReclaimerComponent, PowerChangedEvent>(OnPowerChanged);
         SubscribeLocalEvent<MaterialReclaimerComponent, InteractUsingEvent>(OnInteractUsing,
             before: new []{typeof(WiresSystem), typeof(SolutionTransferSystem)});
-        SubscribeLocalEvent<MaterialReclaimerComponent, SuicideEvent>(OnSuicide);
+        SubscribeLocalEvent<MaterialReclaimerComponent, SuicideByEnvironmentEvent>(OnSuicideByEnvironment);
         SubscribeLocalEvent<ActiveMaterialReclaimerComponent, PowerChangedEvent>(OnActivePowerChanged);
     }
     private void OnStartup(Entity<MaterialReclaimerComponent> entity, ref ComponentStartup args)
@@ -102,12 +106,11 @@ public sealed class MaterialReclaimerSystem : SharedMaterialReclaimerSystem
         args.Handled = TryStartProcessItem(entity.Owner, args.Used, entity.Comp, args.User);
     }
 
-    private void OnSuicide(Entity<MaterialReclaimerComponent> entity, ref SuicideEvent args)
+    private void OnSuicideByEnvironment(Entity<MaterialReclaimerComponent> entity, ref SuicideByEnvironmentEvent args)
     {
         if (args.Handled)
             return;
 
-        args.SetHandled(SuicideKind.Bloodloss);
         var victim = args.Victim;
         if (TryComp(victim, out ActorComponent? actor) &&
             _mind.TryGetMind(actor.PlayerSession, out var mindId, out var mind))
@@ -119,12 +122,15 @@ public sealed class MaterialReclaimerSystem : SharedMaterialReclaimerSystem
             }
         }
 
-        _popup.PopupEntity(Loc.GetString("recycler-component-suicide-message-others", ("victim", Identity.Entity(victim, EntityManager))),
+        _popup.PopupEntity(Loc.GetString("recycler-component-suicide-message-others",
+                ("victim", Identity.Entity(victim, EntityManager))),
             victim,
-            Filter.PvsExcept(victim, entityManager: EntityManager), true);
+            Filter.PvsExcept(victim, entityManager: EntityManager),
+            true);
 
         _body.GibBody(victim, true);
         _appearance.SetData(entity.Owner, RecyclerVisuals.Bloody, true);
+        args.Handled = true;
     }
 
     private void OnActivePowerChanged(Entity<ActiveMaterialReclaimerComponent> entity, ref PowerChangedEvent args)

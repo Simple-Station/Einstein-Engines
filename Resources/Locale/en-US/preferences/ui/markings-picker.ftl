@@ -14,6 +14,7 @@ marking-slot-remove = Remove
 # Categories
 
 markings-category-Hair = Hair
+markings-category-Face = Face
 markings-category-FacialHair = Facial Hair
 markings-category-Head = Head
 markings-category-HeadTop = Head (Top)
@@ -30,3 +31,5 @@ markings-category-LeftLeg = Left Leg
 markings-category-LeftFoot = Left Foot
 markings-category-Tail = Tail
 markings-category-Overlay = Overlay
+markings-category-Undershirt = Undershirt
+markings-category-Underwear = Underwear

@@ -14,9 +14,16 @@
   - !type:GiveItemOnHolidaySpecial
     holiday: GarbageDay
     prototype: WeaponRevolverInspector
+  requirements:
+    - !type:CharacterEmployerRequirement
+      inverted: true
+      employers:
+      - Unemployed
 
 - type: startingGear
   id: JanitorGear
+  subGear:
+  - JanitorPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitJanitor
     back: ClothingBackpackFilled
@@ -29,6 +36,14 @@
   innerClothingSkirt: ClothingUniformJumpskirtJanitor
   satchel: ClothingBackpackSatchelFilled
   duffelbag: ClothingBackpackDuffelFilled
+
+- type: startingGear
+  id: JanitorPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitJanitor
+    head: ClothingHeadEnvirohelmJanitor
+    gloves: ClothingHandsGlovesEnviroglovesJanitor
 
 - type: startingGear
   id: JanitorMaidGear

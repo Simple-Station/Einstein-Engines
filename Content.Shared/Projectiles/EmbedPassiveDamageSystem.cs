@@ -1,3 +1,4 @@
+using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Events;
@@ -24,6 +25,7 @@ public sealed class EmbedPassiveDamageSystem : EntitySystem
         SubscribeLocalEvent<EmbedPassiveDamageComponent, EmbedEvent>(OnEmbed);
         SubscribeLocalEvent<EmbedPassiveDamageComponent, RemoveEmbedEvent>(OnRemoveEmbed);
         SubscribeLocalEvent<EmbedPassiveDamageComponent, ItemToggledEvent>(OnItemToggle);
+        SubscribeLocalEvent<EmbedPassiveDamageComponent, AttemptPacifiedThrowEvent>(OnAttemptPacifiedThrow);
     }
 
     /// <summary>
@@ -90,6 +92,16 @@ public sealed class EmbedPassiveDamageSystem : EntitySystem
         }
         else if (itemTogglePassiveDamage.DeactivatedDamage is {} deactivatedDamage)
             component.Damage = deactivatedDamage;
+    }
+
+    /// <summary>
+    /// Prevent Pacified entities from throwing items that deal passive damage when embedded.
+    /// </summary>
+    private void OnAttemptPacifiedThrow(EntityUid uid, EmbedPassiveDamageComponent comp, ref AttemptPacifiedThrowEvent args)
+    {
+        // Allow healing projectiles, forbid any that do damage
+        if (comp.Damage.AnyPositive())
+            args.Cancel("pacified-cannot-throw");
     }
 
     public override void Update(float frameTime)

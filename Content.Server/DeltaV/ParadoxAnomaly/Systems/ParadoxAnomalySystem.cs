@@ -1,3 +1,4 @@
+using Content.Server.Clothing.Systems;
 using Content.Server.DeltaV.ParadoxAnomaly.Components;
 using Content.Server.DetailExaminable;
 using Content.Server.GenericAntag;
@@ -37,6 +38,7 @@ public sealed class ParadoxAnomalySystem : EntitySystem
     [Dependency] private readonly SharedRoleSystem _role = default!;
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly StationSpawningSystem _stationSpawning = default!;
+    [Dependency] private readonly LoadoutSystem _loadout = default!;
 
     public override void Initialize()
     {
@@ -75,7 +77,7 @@ public sealed class ParadoxAnomalySystem : EntitySystem
             if (!_proto.TryIndex<SpeciesPrototype>(humanoid.Species, out var species))
                 continue;
 
-            if (_mind.GetMind(uid, mindContainer) is not {} mindId || !HasComp<JobComponent>(mindId))
+            if (_mind.GetMind(uid, mindContainer) is not {} mindId || !HasComp<JobRoleComponent>(mindId))
                 continue;
 
             if (_role.MindIsAntagonist(mindId))
@@ -97,7 +99,7 @@ public sealed class ParadoxAnomalySystem : EntitySystem
             return null;
 
         var (uid, mindId, species, profile) = _random.Pick(candidates);
-        var jobId = Comp<JobComponent>(mindId).Prototype;
+        var jobId = Comp<JobRoleComponent>(mindId).Prototype;
         var job = _proto.Index<JobPrototype>(jobId!);
 
         // Find a suitable spawn point.
@@ -147,6 +149,7 @@ public sealed class ParadoxAnomalySystem : EntitySystem
                 profile.Name,
                 job,
                 station);
+            _loadout.ApplyCharacterLoadout(spawned, job, profile, [], false); // TODO: find a way to get playtimes and whitelisted
         }
 
         foreach (var special in job.Special)

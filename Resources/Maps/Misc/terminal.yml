@@ -1649,6 +1649,7 @@ entities:
             545: -13,-11
     - type: SpreaderGrid
     - type: GridAtmosphere
+      simulatedTurf: false
       version: 2
       data:
         tiles:
@@ -19382,7 +19383,7 @@ entities:
     - type: Transform
       pos: -17.253208,-8.633782
       parent: 2
-- proto: ClothingHeadHatPirateTricord
+- proto: ClothingHeadHatPirateTricorn
   entities:
   - uid: 8601
     components:
