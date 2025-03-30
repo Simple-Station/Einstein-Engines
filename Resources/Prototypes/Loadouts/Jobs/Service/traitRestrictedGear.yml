@@ -9,7 +9,7 @@
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
-    - !type:OverallPlaytimeRequirement
+    - !type:OverallTimeRequirement
       min: 72000 # 20 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutBartenderAmmo
@@ -29,7 +29,7 @@
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
-    - !type:OverallPlaytimeRequirement
+    - !type:OverallTimeRequirement
       min: 72000 # 20 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutBartenderAmmo
@@ -50,7 +50,7 @@
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
-    - !type:OverallPlaytimeRequirement
+    - !type:OverallTimeRequirement
       min: 72000 # 20 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutBartenderWeapon
@@ -71,7 +71,7 @@
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
-    - !type:OverallPlaytimeRequirement
+    - !type:OverallTimeRequirement
       min: 72000 # 20 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutBartenderWeapon
@@ -92,7 +92,7 @@
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
-    - !type:OverallPlaytimeRequirement
+    - !type:OverallTimeRequirement
       min: 72000 # 20 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutBartenderWeapon
