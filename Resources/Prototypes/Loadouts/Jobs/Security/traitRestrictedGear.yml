@@ -590,3 +590,51 @@
         - Security
   items:
     - WeaponRevolverPython
+
+# Argenti
+- type: loadout
+  id: LoadoutSecurityArgenti
+  category: JobsSecurityAUncategorized
+  cost: 0
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:OverallTimeRequirement
+      min: 72000 # 20 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityWeapons
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+    - !type:CharacterAgeRequirement
+      min: 21
+  items:
+    - WeaponRevolverArgentiSecurity
+
+# Energy Revolver
+- type: loadout
+  id: LoadoutSecurityEnergyRevolver
+  category: JobsSecurityAUncategorized
+  cost: 10
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:OverallTimeRequirement
+      min: 72000 # 20 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityWeapons
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+    - !type:CharacterAgeRequirement
+      min: 21
+  items:
+    - WeaponEnergyRevolverSecurity
