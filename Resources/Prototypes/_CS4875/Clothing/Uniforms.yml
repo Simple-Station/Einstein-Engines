@@ -24,7 +24,7 @@
   parent: ClothingUniformSkirtBase
   id: YukonMIlitaryPoliceUniform
   name: Yukon Military Police
-  description: even blackburns need to shitsec too!! #replace this
+  description: For crowd controlling some really unruly kitsunes.
   components:
   - type: Sprite
     sprite: _CS4875/MilitaryPolice.rsi
