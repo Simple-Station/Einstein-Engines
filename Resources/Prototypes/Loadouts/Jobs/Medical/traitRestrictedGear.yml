@@ -443,3 +443,20 @@
         - MedicalDoctor
   items:
     - ClothingBeltMedicalFilled
+
+
+### Paramedic
+- type: loadout
+  id: LoadoutMedicalRestrictedGearPortafib
+  category: JobsMedicalParamedic
+  cost: 3
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Paramedic
+  items:
+    - Portafib
