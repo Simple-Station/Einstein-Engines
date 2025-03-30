@@ -139,7 +139,7 @@
 - type: loadout
   id: LoadoutEngineeringRestrictedGearGlovesCombat
   category: JobsEngineeringAAUncategorized
-  cost: 3
+  cost: 4
   exclusive: true
   requirements:
     - !type:CharacterTraitRequirement
@@ -147,10 +147,7 @@
         - RestrictedGear
     - !type:CharacterItemGroupRequirement
       group: LoadoutEngineeringGloves
-    - !type:CharacterDepartmentRequirement
-      inverted: true
-      departments:
-        - Engineering
+    # not inverted for engineers because loadout may be removed in pr 2105
   items:
     - ClothingHandsGlovesCombat
 
@@ -158,7 +155,7 @@
 - type: loadout
   id: LoadoutEngineeringRestrictedGearGlovesMerc
   category: JobsEngineeringAAUncategorized
-  cost: 3
+  cost: 4
   exclusive: true
   requirements:
     - !type:CharacterTraitRequirement
@@ -166,10 +163,7 @@
         - RestrictedGear
     - !type:CharacterItemGroupRequirement
       group: LoadoutEngineeringGloves
-    - !type:CharacterDepartmentRequirement
-      inverted: true
-      departments:
-        - Engineering
+    # not inverted for engineers because loadout may be removed in pr 2105
   items:
     - ClothingHandsMercGlovesCombat
 
