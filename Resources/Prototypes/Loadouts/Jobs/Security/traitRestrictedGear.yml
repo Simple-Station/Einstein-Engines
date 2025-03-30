@@ -235,7 +235,7 @@
   items:
     - MagazineMagnumRubber
 
-## Weapon
+## Weapons
 - type: loadout
   id: LoadoutSecurityRestrictedGearEquipmentTruncheon
   category: JobsSecurityAUncategorized
@@ -254,11 +254,29 @@
       inverted: true
       departments:
         - Security
-    - !type:CharacterSpeciesRequirement
-      species:
-        - Oni
   items:
     - Truncheon
+
+- type: loadout
+  id: LoadoutSecurityRestrictedGearEquipmentEnergySword
+  category: JobsSecurityAUncategorized
+  cost: 6
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:OverallTimeRequirement
+      min: 72000 # 20 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityWeapons
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+  items:
+    - EnergyCutlass
 
 ## Guns
 # Disabler
@@ -611,7 +629,7 @@
       departments:
         - Security
   items:
-    - WeaponRevolverArgentiSecurity
+    - WeaponRevolverArgenti
 
 # Energy Revolver
 - type: loadout
@@ -633,4 +651,4 @@
       departments:
         - Security
   items:
-    - WeaponEnergyRevolverSecurity
+    - WeaponEnergyRevolver
