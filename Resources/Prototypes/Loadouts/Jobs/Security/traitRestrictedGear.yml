@@ -100,9 +100,8 @@
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
-    - !type:CharacterDepartmentTimeRequirement
-      department: Security
-      min: 3600 # 1 hours
+    - !type:OverallPlaytimeRequirement
+      min: 72000 # 20 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityEquipment
     - !type:CharacterDepartmentRequirement
@@ -124,9 +123,8 @@
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
-    - !type:CharacterDepartmentTimeRequirement
-      department: Security
-      min: 3600 # 1 hours
+    - !type:OverallPlaytimeRequirement
+      min: 72000 # 20 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityEquipment
     - !type:CharacterDepartmentRequirement
@@ -148,9 +146,8 @@
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
-    - !type:CharacterDepartmentTimeRequirement
-      department: Security
-      min: 3600 # 1 hours
+    - !type:OverallPlaytimeRequirement
+      min: 72000 # 20 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityEquipment
     - !type:CharacterDepartmentRequirement
@@ -173,9 +170,8 @@
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
-    - !type:CharacterDepartmentTimeRequirement
-      department: Security
-      min: 3600 # 1 hours
+    - !type:OverallPlaytimeRequirement
+      min: 72000 # 20 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityEquipment
     - !type:CharacterDepartmentRequirement
@@ -198,9 +194,8 @@
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
-    - !type:CharacterDepartmentTimeRequirement
-      department: Security
-      min: 3600 # 1 hours
+    - !type:OverallPlaytimeRequirement
+      min: 72000 # 20 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityEquipment
     - !type:CharacterDepartmentRequirement
@@ -223,9 +218,8 @@
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
-    - !type:CharacterDepartmentTimeRequirement
-      department: Security
-      min: 3600 # 1 hours
+    - !type:OverallPlaytimeRequirement
+      min: 72000 # 20 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityEquipment
     - !type:CharacterDepartmentRequirement
@@ -248,9 +242,8 @@
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
-    - !type:CharacterDepartmentTimeRequirement
-      department: Security
-      min: 3600 # 1 hours
+    - !type:OverallPlaytimeRequirement
+      min: 72000 # 20 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityEquipment
     - !type:CharacterDepartmentRequirement
@@ -274,9 +267,8 @@
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
-    - !type:CharacterDepartmentTimeRequirement
-      department: Security
-      min: 3600 # 1 hours
+    - !type:OverallPlaytimeRequirement
+      min: 72000 # 20 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
@@ -304,9 +296,8 @@
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
-    - !type:CharacterDepartmentTimeRequirement
-      department: Security
-      min: 3600 # 1 hours
+    - !type:OverallPlaytimeRequirement
+      min: 72000 # 20 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
@@ -330,9 +321,8 @@
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
-    - !type:CharacterDepartmentTimeRequirement
-      department: Security
-      min: 3600 # 1 hours
+    - !type:OverallPlaytimeRequirement
+      min: 72000 # 20 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
@@ -356,9 +346,8 @@
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
-    - !type:CharacterDepartmentTimeRequirement
-      department: Security
-      min: 3600 # 1 hours
+    - !type:OverallPlaytimeRequirement
+      min: 72000 # 20 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
@@ -382,9 +371,8 @@
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
-    - !type:CharacterDepartmentTimeRequirement
-      department: Security
-      min: 3600 # 1 hours
+    - !type:OverallPlaytimeRequirement
+      min: 72000 # 20 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
@@ -408,9 +396,8 @@
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
-    - !type:CharacterDepartmentTimeRequirement
-      department: Security
-      min: 3600 # 1 hours
+    - !type:OverallPlaytimeRequirement
+      min: 72000 # 20 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
@@ -434,9 +421,8 @@
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
-    - !type:CharacterDepartmentTimeRequirement
-      department: Security
-      min: 3600 # 1 hours
+    - !type:OverallPlaytimeRequirement
+      min: 72000 # 20 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
@@ -486,9 +472,8 @@
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
-    - !type:CharacterDepartmentTimeRequirement
-      department: Security
-      min: 3600 # 1 hours
+    - !type:OverallPlaytimeRequirement
+      min: 72000 # 20 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
@@ -512,9 +497,8 @@
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
-    - !type:CharacterDepartmentTimeRequirement
-      department: Security
-      min: 3600 # 1 hours
+    - !type:OverallPlaytimeRequirement
+      min: 72000 # 20 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
@@ -538,9 +522,8 @@
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
-    - !type:CharacterDepartmentTimeRequirement
-      department: Security
-      min: 3600 # 1 hours
+    - !type:OverallPlaytimeRequirement
+      min: 72000 # 20 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
@@ -564,9 +547,8 @@
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
-    - !type:CharacterDepartmentTimeRequirement
-      department: Security
-      min: 3600 # 1 hours
+    - !type:OverallPlaytimeRequirement
+      min: 72000 # 20 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
@@ -590,9 +572,8 @@
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
-    - !type:CharacterDepartmentTimeRequirement
-      department: Security
-      min: 3600 # 1 hours
+    - !type:OverallPlaytimeRequirement
+      min: 72000 # 20 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
@@ -616,9 +597,8 @@
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
-    - !type:CharacterDepartmentTimeRequirement
-      department: Security
-      min: 3600 # 1 hours
+    - !type:OverallPlaytimeRequirement
+      min: 72000 # 20 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
@@ -642,9 +622,8 @@
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
-    - !type:CharacterDepartmentTimeRequirement
-      department: Security
-      min: 3600 # 1 hours
+    - !type:OverallPlaytimeRequirement
+      min: 72000 # 20 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
@@ -668,9 +647,8 @@
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
-    - !type:CharacterDepartmentTimeRequirement
-      department: Security
-      min: 3600 # 1 hours
+    - !type:OverallPlaytimeRequirement
+      min: 72000 # 20 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
