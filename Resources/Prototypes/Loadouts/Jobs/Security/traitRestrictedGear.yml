@@ -283,7 +283,7 @@
 - type: loadout
   id: LoadoutSecurityRestrictedGearDisabler
   category: JobsSecurityAUncategorized
-  cost: 4
+  cost: 5
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
@@ -305,7 +305,7 @@
 - type: loadout
   id: LoadoutSecurityRestrictedGearMk58
   category: JobsSecurityAUncategorized
-  cost: 4
+  cost: 5
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
@@ -327,7 +327,7 @@
 - type: loadout
   id: LoadoutSecurityRestrictedGearRevolver
   category: JobsSecurityAUncategorized
-  cost: 4
+  cost: 5
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
@@ -393,7 +393,7 @@
 - type: loadout
   id: LoadoutSecurityRestrictedGearPistolViper
   category: JobsSecurityAUncategorized
-  cost: 4
+  cost: 5
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
@@ -415,7 +415,7 @@
 - type: loadout
   id: LoadoutSecurityRestrictedGearPistolViperWood
   category: JobsSecurityAUncategorized
-  cost: 4
+  cost: 5
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
@@ -459,7 +459,7 @@
 - type: loadout
   id: LoadoutSecurityRestrictedGearEnergyGunMini
   category: JobsSecurityAUncategorized
-  cost: 4
+  cost: 5
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
@@ -613,7 +613,7 @@
 - type: loadout
   id: LoadoutSecurityRestrictedGearArgenti
   category: JobsSecurityAUncategorized
-  cost: 0
+  cost: 5
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
