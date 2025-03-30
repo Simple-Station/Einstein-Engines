@@ -117,9 +117,6 @@
   category: JobsSecurityAUncategorized
   cost: 2
   requirements:
-    - !type:CVarRequirement
-      cvar: trait.restrictedgear_allowsfirearms
-      requiredValue: true
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
@@ -140,9 +137,6 @@
   category: JobsSecurityAUncategorized
   cost: 2
   requirements:
-    - !type:CVarRequirement
-      cvar: trait.restrictedgear_allowsfirearms
-      requiredValue: true
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
@@ -164,9 +158,6 @@
   cost: 4
   exclusive: true
   requirements:
-    - !type:CVarRequirement
-      cvar: trait.restrictedgear_allowsfirearms
-      requiredValue: true
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
@@ -188,9 +179,6 @@
   cost: 4
   exclusive: true
   requirements:
-    - !type:CVarRequirement
-      cvar: trait.restrictedgear_allowsfirearms
-      requiredValue: true
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
@@ -212,9 +200,6 @@
   cost: 4
   exclusive: true
   requirements:
-    - !type:CVarRequirement
-      cvar: trait.restrictedgear_allowsfirearms
-      requiredValue: true
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
@@ -236,9 +221,6 @@
   cost: 4
   exclusive: true
   requirements:
-    - !type:CVarRequirement
-      cvar: trait.restrictedgear_allowsfirearms
-      requiredValue: true
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
@@ -290,9 +272,6 @@
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
-    - !type:CVarRequirement
-      cvar: trait.restrictedgear_allowsfirearms
-      requiredValue: true
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
@@ -315,9 +294,6 @@
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
-    - !type:CVarRequirement
-      cvar: trait.restrictedgear_allowsfirearms
-      requiredValue: true
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
@@ -340,9 +316,6 @@
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
-    - !type:CVarRequirement
-      cvar: trait.restrictedgear_allowsfirearms
-      requiredValue: true
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
@@ -365,9 +338,6 @@
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
-    - !type:CVarRequirement
-      cvar: trait.restrictedgear_allowsfirearms
-      requiredValue: true
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
@@ -390,9 +360,6 @@
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
-    - !type:CVarRequirement
-      cvar: trait.restrictedgear_allowsfirearms
-      requiredValue: true
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
@@ -415,9 +382,6 @@
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
-    - !type:CVarRequirement
-      cvar: trait.restrictedgear_allowsfirearms
-      requiredValue: true
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
@@ -440,9 +404,6 @@
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
-    - !type:CVarRequirement
-      cvar: trait.restrictedgear_allowsfirearms
-      requiredValue: true
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
@@ -466,9 +427,6 @@
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
-    - !type:CVarRequirement
-      cvar: trait.restrictedgear_allowsfirearms
-      requiredValue: true
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
@@ -491,9 +449,6 @@
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
-    - !type:CVarRequirement
-      cvar: trait.restrictedgear_allowsfirearms
-      requiredValue: true
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
@@ -516,9 +471,6 @@
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
-    - !type:CVarRequirement
-      cvar: trait.restrictedgear_allowsfirearms
-      requiredValue: true
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
@@ -541,9 +493,6 @@
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
-    - !type:CVarRequirement
-      cvar: trait.restrictedgear_allowsfirearms
-      requiredValue: true
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
@@ -566,9 +515,6 @@
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
-    - !type:CVarRequirement
-      cvar: trait.restrictedgear_allowsfirearms
-      requiredValue: true
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
@@ -591,9 +537,6 @@
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
-    - !type:CVarRequirement
-      cvar: trait.restrictedgear_allowsfirearms
-      requiredValue: true
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
@@ -616,9 +559,6 @@
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
-    - !type:CVarRequirement
-      cvar: trait.restrictedgear_allowsfirearms
-      requiredValue: true
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
@@ -641,9 +581,6 @@
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
-    - !type:CVarRequirement
-      cvar: trait.restrictedgear_allowsfirearms
-      requiredValue: true
     - !type:CharacterTraitRequirement
       traits:
         - RestrictedGear
