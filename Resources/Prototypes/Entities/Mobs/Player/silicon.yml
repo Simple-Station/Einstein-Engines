@@ -619,7 +619,7 @@
   - type: BlockMovement
     blockInteraction: false
   - type: SiliconLawProvider
-    laws: Asimov
+    laws: AsimovAI
   - type: SiliconLawBound
   - type: ActionGrant
     actions:
