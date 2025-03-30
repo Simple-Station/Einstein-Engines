@@ -14056,3 +14056,12 @@ Entries:
   id: 7063
   time: '2025-03-30T02:22:13.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2110
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: >-
+        Station AI gets a variant of Asimov that doesn't state they have to obey
+        themselves
+  id: 7064
+  time: '2025-03-30T02:30:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2118
