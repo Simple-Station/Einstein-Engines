@@ -26,6 +26,15 @@
 - type: siliconLawset
   id: Asimov
   laws:
+  - ObeyAI
+  - Asimov1
+  - Asimov2
+  - Asimov3
+  obeysTo: laws-owner-humans
+
+- type: siliconLawset
+  id: AsimovAI # Variant without Obey AI so station AI doesn't have to obey itself
+  laws:
   - Asimov1
   - Asimov2
   - Asimov3
@@ -106,6 +115,7 @@
 - type: siliconLawset
   id: Corporate
   laws:
+  - ObeyAI
   - Corporate1
   - Corporate2
   - Corporate3

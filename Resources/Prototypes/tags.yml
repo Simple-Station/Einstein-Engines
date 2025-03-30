@@ -113,6 +113,24 @@
   id: BorgHead
 
 - type: Tag
+  id: BorgLArm
+
+- type: Tag
+  id: BorgLLeg
+
+- type: Tag
+  id: BorgRArm
+
+- type: Tag
+  id: BorgRLeg
+
+- type: Tag
+  id: BorgTorso
+
+- type: Tag
+  id: BorgLeg
+
+- type: Tag
   id: BorgJanitorHead
 
 - type: Tag
@@ -123,9 +141,6 @@
 
 - type: Tag
   id: BorgJanitorTorso
-
-- type: Tag
-  id: BorgLeg
 
 - type: Tag
   id: BorgMedicalHead
@@ -188,6 +203,9 @@
   id: BorgModuleSyndicateAssault
 
 - type: Tag
+  id: Bot
+
+- type: Tag
   id: BorgServiceHead
 
 - type: Tag
@@ -219,6 +237,12 @@
 
 - type: Tag
   id: BoxCardboard
+
+- type: Tag
+  id: MaterialCardboard
+
+- type: Tag
+  id: MaterialPaper
 
 - type: Tag
   id: BoxHug
@@ -828,6 +852,9 @@
 - type: Tag
   id: IntercomElectronics
 
+- type: Tag # Goobstation
+  id: JanicartKeys
+
 - type: Tag
   id: JawsOfLife
 
@@ -1391,6 +1418,9 @@
 
 - type: Tag
   id: Vegetable
+
+- type: Tag # Goobstation
+  id: VehicleKey
 
 - type: Tag
   id: VimPilot

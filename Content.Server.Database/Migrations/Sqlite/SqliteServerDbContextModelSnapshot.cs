@@ -811,6 +811,11 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("display_pronouns");
 
+                    b.Property<string>("Employer")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("employer");
+
                     b.Property<string>("EyeColor")
                         .IsRequired()
                         .HasColumnType("TEXT")
@@ -850,9 +855,19 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("REAL")
                         .HasColumnName("height");
 
+                    b.Property<string>("Lifepath")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("lifepath");
+
                     b.Property<byte[]>("Markings")
                         .HasColumnType("jsonb")
                         .HasColumnName("markings");
+
+                    b.Property<string>("Nationality")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("nationality");
 
                     b.Property<int>("PreferenceId")
                         .HasColumnType("INTEGER")

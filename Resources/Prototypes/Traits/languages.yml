@@ -27,6 +27,10 @@
       inverted: true
       species:
         - Human
+    - !type:CharacterNationalityRequirement
+      inverted: true
+      nationalities:
+        - Solarian
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
@@ -73,6 +77,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsLanguagesBasic
+    - !type:CharacterNationalityRequirement
+      inverted: true
+      nationalities:
+        - Elyran
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
@@ -87,6 +95,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsLanguagesBasic
+    - !type:CharacterNationalityRequirement
+      inverted: true
+      nationalities:
+        - Valyrian
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
@@ -101,6 +113,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsLanguagesBasic
+    - !type:CharacterNationalityRequirement
+      inverted: true
+      nationalities:
+        - Nederlandic
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:

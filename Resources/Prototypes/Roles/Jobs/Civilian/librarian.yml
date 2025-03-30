@@ -20,6 +20,10 @@
       inverted: true
       traits:
         - ShadowkinBlackeye
+    - !type:CharacterEmployerRequirement
+      inverted: true
+      employers:
+      - Unemployed
   startingGear: LibrarianGear
   icon: "JobIconLibrarian"
   supervisors: job-supervisors-rd
