@@ -83,3 +83,18 @@
       components:
         - type: ForeignerTrait
           baseTranslator: TranslatorForeigner
+
+- type: trait
+  id: MalfunctioningBionics
+  category: Physical
+  points: 6
+  requirements:
+  functions:
+    - !type:TraitAddComponent
+      component:
+    - type: DamageOverTime
+      damage:
+        types:
+          Piercing: 0.3
+      interval: 1.1
+      ignoreResistances: true

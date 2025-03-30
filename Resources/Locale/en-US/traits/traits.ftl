@@ -634,3 +634,8 @@ trait-name-Bodybuilder = Bodybuilder
 trait-description-Bodybuilder =
     Through extensive training or body modification, you have achieved the pinnacle of physique. 
     This trait halves the movement speed penalty when dragging something.
+
+trait-name-MalfunctioningBionics = Malfunctioning Replacements
+trait-description-MalfunctioningBionics =
+    Either self imposed, or the result of a botched backstreets surgery, or well, a failed assasination attempt, you can slowly feel your skin getting pierced after that incident.
+    There is no cure for this, you'll stay like this forever, most likely.
