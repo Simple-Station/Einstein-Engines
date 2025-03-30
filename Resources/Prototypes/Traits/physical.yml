@@ -772,12 +772,12 @@
   points: -10
   requirements:
   - !type:CVarRequirement
-      cvar: trait.restrictedgear_enabled
-      requiredValue: true
+    cvar: trait.restrictedgear_enabled
+    requiredValue: true
   - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Prisoner # Smuggling for prisoners = immediate jailbreak.
+    inverted: true
+    jobs:
+      - Prisoner # Smuggling for prisoners = immediate jailbreak.
   
 - type: trait
   id: Redshirt

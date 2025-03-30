@@ -67,6 +67,10 @@
         - RestrictedGear
     - !type:CharacterItemGroupRequirement
       group: LoadoutBartenderWeapon
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Bartender
   items:
     - WeaponShotgunSawn
 

@@ -424,7 +424,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
-         - Chemist
+        - Chemist
   items:
     - ClothingEyesGlassesChemical
 
