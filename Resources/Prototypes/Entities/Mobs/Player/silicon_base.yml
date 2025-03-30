@@ -338,5 +338,9 @@
   coefficients:
     Poison: 0
     Cold: 0.2
-    Heat: 2
-    Shock: 2.5
+    Heat: 1
+    Shock: 2
+    Ion: 1 # They are already the only player species to take this damage at all, so no need to compound that weakness
+    Blunt: 1
+    Slash: 1
+    Piercing: 1
