@@ -1,0 +1,8 @@
+- type: marking
+  id: XelthiaTailNormal
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Xelthia]
+  sprites:
+  - sprite: _EE/Mobs/Customization/xelthia_parts.rsi
+    state: tail_normal
