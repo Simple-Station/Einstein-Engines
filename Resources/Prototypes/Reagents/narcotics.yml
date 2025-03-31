@@ -522,6 +522,14 @@
         conditions:
         - !type:ReagentThreshold
           min: 15
+      - !type:PopupMessage
+        visualType: Medium
+        messages: ["dexteritin-effect-end"]
+        type: Local
+        probability: 1
+        conditions:
+        - !type:ReagentThreshold
+          max: 0.2
 
 - type: reagent
   id: Viviance
@@ -554,3 +562,11 @@
         conditions:
         - !type:ReagentThreshold
           min: 5.5
+      - !type:PopupMessage
+        visualType: Medium
+        messages: ["dexteritin-effect-end"]
+        type: Local
+        probability: 1
+        conditions:
+        - !type:ReagentThreshold
+          max: 0.2
