@@ -52,8 +52,6 @@
   - type: LanguageKnowledge
     speaks: [TauCetiBasic, RobotTalk]
     understands: [TauCetiBasic, RobotTalk]
-  - type: Organ
-    slotId: posibrain
 
 - type: entity
   parent: MMI
