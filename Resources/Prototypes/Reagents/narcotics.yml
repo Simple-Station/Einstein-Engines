@@ -576,8 +576,8 @@
   name: reagent-name-staminol
   group: Narcotics
   desc: reagent-desc-staminol
-  flavor: sour
-  color: "#faf082"
+  flavor: 
+  color: "#f0e551"
   physicalDesc: reagent-physical-desc-opaque
   metabolisms:
     Narcotic:
@@ -599,7 +599,7 @@
   group: sour
   desc: reagent-desc-parkuoricacid
   flavor: sour
-  color: "#faf082"
+  color: "#d9eb6a"
   physicalDesc: reagent-physical-desc-glowing
   metabolisms:
     Narcotic:
@@ -613,4 +613,5 @@
           min: 15
         damage:
           types:
-            Caustic: 4
+            Caustic: 3
+            Radiation: 1
