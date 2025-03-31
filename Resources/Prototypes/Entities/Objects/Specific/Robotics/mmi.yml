@@ -52,6 +52,8 @@
   - type: LanguageKnowledge
     speaks: [TauCetiBasic, RobotTalk]
     understands: [TauCetiBasic, RobotTalk]
+  - type: Organ # Estacao Pirata - IPCs
+    slotId: posibrain
 
 - type: entity
   parent: MMI
@@ -131,6 +133,7 @@
       guides:
       - Cyborgs
     - type: Organ # Estacao Pirata - IPCs
+      slotId: posibrain
     - type: LanguageSpeaker
     - type: LanguageKnowledge
       speaks: [RobotTalk]
