@@ -503,7 +503,7 @@
     Tazinide: 1
 
 - type: reaction
-  id: dexteritin
+  id: Dexteritin
   impact: Medium
   reactants:
     Ephedrine:
@@ -516,7 +516,7 @@
     Dexteritin: 5
 
 - type: reaction
-  id: viviance
+  id: Viviance
   impact: Medium
   reactants:
     Dexteritin:
@@ -525,3 +525,32 @@
       amount: 1
   products:
     Viviance: 3
+
+- type: reaction
+  id: Staminol
+  impact: Medium
+  minTemp: 310
+  reactants:
+    Sugar:
+      amount: 2
+    Ethanol:
+      amount: 2
+    Nutriment:
+      amount: 1
+  products:
+    Staminol: 5
+
+- type: reaction
+  id: ParkuoricAcid
+  impact: Medium
+  reactants:
+    Staminol:
+      amount: 2
+    Oxygen:
+      amount: 1
+    SulfuricAcid:
+      amount: 1
+    Uranium:
+      amount: 1
+  products:
+    ParkuoricAcid: 3
