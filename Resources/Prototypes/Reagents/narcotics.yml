@@ -503,6 +503,9 @@
     Narcotic:
       metabolismRate: 0.2
       effects:
+      - !type:GenericStatusEffect
+        key: SurgerySpeedBoost
+        component: SurgerySpeedModifier
       - !type:HealthChange
         conditions:
         - !type:ReagentThreshold
@@ -543,6 +546,12 @@
     Narcotic:
       metabolismRate: 0.2
       effects:
+      - !type:GenericStatusEffect
+        key: SurgerySpeedBoost
+        component: SurgerySpeedModifier
+      - !type:GenericStatusEffect
+        key: SurgerySpeedBoost2
+        component: SurgerySpeedModifier # this is jank
       - !type:HealthChange
         conditions:
         - !type:ReagentThreshold
