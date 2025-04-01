@@ -82,3 +82,6 @@ uplink-highcap-pistol-mag-desc = High capacity pistol magazine holds 4 extra bul
 
 uplink-syndicate-weapon-module-advanced-name = advanced weapons module
 uplink-syndicate-weapon-module-advanced-desc = Upgrades a cyborg with an energy sword and an anaconda pistol.
+
+uplink-dimension-pot-name = Dimension Pot
+uplink-dimension-pot-desc = A portal to your own pocket dimension disguised in the form of a potted plant, for when stashing one item isn't quite enough.
