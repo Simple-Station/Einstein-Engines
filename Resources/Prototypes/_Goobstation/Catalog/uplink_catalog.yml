@@ -273,3 +273,55 @@
     Telecrystal: 3
   categories:
   - UplinkAmmo
+
+
+- type: listing
+  id: UplinkSyndicateWeaponModuleAdvanced
+  name: uplink-syndicate-weapon-module-advanced-name
+  description: uplink-syndicate-weapon-module-advanced-desc
+  productEntity: BorgModuleSyndicateWeaponAdvanced
+  cost:
+    Telecrystal: 40 # goob
+  categories:
+  - UplinkDisruption
+
+# Mechs
+
+- type: listing
+  id: UplinkDarkGygax
+  name: uplink-mech-teleporter-assault-name
+  description: uplink-mech-teleporter-assault-desc
+  icon: { sprite: /Textures/Objects/Specific/Mech/mecha.rsi, state: darkgygax }
+  productEntity: CrateCybersunDarkGygaxBundle
+  cost:
+    Telecrystal: 400
+  categories:
+  - UplinkAllies
+
+- type: listing
+  id: UplinkMauler
+  name: uplink-mech-teleporter-heavy-name
+  description: uplink-mech-teleporter-heavy-desc
+  icon: { sprite: /Textures/Objects/Specific/Mech/mecha.rsi, state: mauler }
+  productEntity: CrateCybersunMaulerBundle
+  cost:
+    Telecrystal: 650
+  categories:
+  - UplinkAllies
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
+
+# Misc
+
+- type: listing
+  id: UplinkDimensionPot
+  name: uplink-dimension-pot-name
+  description: uplink-dimension-pot-desc
+  productEntity: DimensionPot
+  cost:
+    Telecrystal: 70
+  categories:
+  - UplinkDeception
