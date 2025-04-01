@@ -503,54 +503,27 @@
     Tazinide: 1
 
 - type: reaction
-  id: Dexteritin
+  id: Cryanobalamin
   impact: Medium
   reactants:
-    Ephedrine:
-      amount: 2
-    Synaptizine:
+    Saline:
       amount: 2
     Sugar:
-      amount: 1
+      amount: 3
+    Cryoxadone:
+      amount: 2
   products:
-    Dexteritin: 5
+    Cryanobalamin: 7
 
 - type: reaction
-  id: Viviance
+  id: LiftLoversSpecial
   impact: Medium
   reactants:
-    Dexteritin:
+    Cryanobalamin:
+      amount: 3
+    Kelotane:
       amount: 2
-    Licoxide:
-      amount: 1
+    Coffee:
+      amount: 2
   products:
-    Viviance: 3
-
-- type: reaction
-  id: Staminol
-  impact: Medium
-  minTemp: 310
-  reactants:
-    Sugar:
-      amount: 2
-    Ethanol:
-      amount: 2
-    Nutriment:
-      amount: 1
-  products:
-    Staminol: 5
-
-- type: reaction
-  id: ParkuoricAcid
-  impact: Medium
-  reactants:
-    Staminol:
-      amount: 2
-    Oxygen:
-      amount: 1
-    SulfuricAcid:
-      amount: 1
-    Uranium:
-      amount: 1
-  products:
-    ParkuoricAcid: 3
+    LiftLoversSpecial: 7

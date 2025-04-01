@@ -1405,13 +1405,13 @@
     amount: 0.1
 
 - type: reagent
-  id: Marrodene
-  name: reagent-name-marrodene
+  id: Artiplates
+  name: reagent-name-artiplates
   group: Medicine
-  desc: reagent-desc-marrodene
+  desc: reagent-desc-artiplates
   physicalDesc: reagent-physical-desc-cloudy
   flavor: medicine
-  color: "#94214b"
+  color: "#382766"
   metabolisms:
     Medicine:
       effects:
@@ -1435,4 +1435,4 @@
           min: 11
         damage:
           types:
-            Slash: 3
+            Slash: 3.5

@@ -94,6 +94,7 @@ reagent-physical-desc-thick = thick
 reagent-physical-desc-thick-and-grainy = thick and grainy
 reagent-physical-desc-translucent = translucent
 reagent-physical-desc-tropical = tropical
+reagent-physical-desc-unhealthy = unhealthy
 reagent-physical-desc-vibrant = vibrant
 reagent-physical-desc-viscous = viscous
 reagent-physical-desc-volatile = volatile

@@ -668,16 +668,16 @@
     Haloperidol: 5
 
 - type: reaction
-  id: Marrodene
-  minTemp: 370
+  id: Artiplates
+  minTemp: 310
   reactants:
     Iron:
       amount: 1
-    Oxygen:
+    Copper:
       amount: 1
     TranexamicAcid:
-      amount: 1
-    Saline:
       amount: 2
+    Saline:
+      amount: 3
   products:
-    Marrodene: 5
+    Artiplates: 12

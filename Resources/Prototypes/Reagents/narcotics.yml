@@ -491,108 +491,28 @@
         time: 5
         refresh: false
 
-- type: reagent #PLEASE FINISH THIS.
-  id: Dexteritin
-  name: reagent-name-dexteritin
-  group: Narcotics
-  desc: reagent-desc-dexteritin
-  flavor: bitter
-  color: "#faf082"
-  physicalDesc: reagent-physical-desc-chalky
-  metabolisms:
-    Narcotic:
-      metabolismRate: 0.2
-      effects:
-      - !type:GenericStatusEffect
-        key: SurgerySpeedBoost
-        component: SurgerySpeedModifier
-      - !type:HealthChange
-        conditions:
-        - !type:ReagentThreshold
-          min: 15
-        damage:
-          types:
-            Shock: 0.3
-      - !type:Jitter
-        conditions:
-        - !type:ReagentThreshold
-          min: 15
-      - !type:PopupMessage
-        visualType: Medium
-        messages: ["dexteritin-effect-tingle", "dexteritin-effect-eyes", "dexteritin-effect-twitch", "dexteritin-effect-brainzap"]
-        type: Local
-        probability: 0.05
-        conditions:
-        - !type:ReagentThreshold
-          min: 15
-      - !type:PopupMessage
-        visualType: Medium
-        messages: ["dexteritin-effect-end"]
-        type: Local
-        probability: 1
-        conditions:
-        - !type:ReagentThreshold
-          max: 0.2
-
-- type: reagent
-  id: Viviance
-  name: reagent-name-viviance
-  group: Narcotics
-  desc: reagent-desc-viviance
-  flavor: bitter
-  color: "#91e352"
-  physicalDesc: reagent-physical-desc-feathery
-  metabolisms:
-    Narcotic:
-      metabolismRate: 0.2
-      effects:
-      - !type:GenericStatusEffect
-        key: SurgerySpeedBoost
-        component: SurgerySpeedModifier
-      - !type:GenericStatusEffect
-        key: SurgerySpeedBoost2
-        component: SurgerySpeedModifier # this is jank
-      - !type:HealthChange
-        conditions:
-        - !type:ReagentThreshold
-          min: 5.5
-        damage:
-          types:
-            Shock: 0.8
-      - !type:Jitter
-        conditions:
-        - !type:ReagentThreshold
-          min: 5.5
-      - !type:PopupMessage
-        visualType: Medium
-        messages: ["dexteritin-effect-eyes", "dexteritin-effect-twitch", "dexteritin-effect-brainzap", "dexteritin-effect-brainfog", "dexteritin-effect-electric", "dexteritin-effect-amnesia"]
-        type: Local
-        probability: 0.07
-        conditions:
-        - !type:ReagentThreshold
-          min: 5.5
-      - !type:PopupMessage
-        visualType: Medium
-        messages: ["dexteritin-effect-end"]
-        type: Local
-        probability: 1
-        conditions:
-        - !type:ReagentThreshold
-          max: 0.2
-
 - type: reagent
   id: Cryanobalamin
   name: reagent-name-cryanobalamin
   group: Narcotics
   desc: reagent-desc-cryanobalamin
   flavor: sweet
-  color: "#f0e551"
-  physicalDesc: reagent-physical-desc-opaque
+  color: "#72a2eb"
+  physicalDesc: reagent-physical-desc-sugary
   metabolisms:
     Narcotic:
       effects:
       - !type:StaminaChange
         amount: -3
+      - !type:SatiateThirst
+        factor: -1
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 30
+        damage:
+          types:
+            Genetic: 0.2
 
 - type: reagent
   id: LiftLoversSpecial
@@ -600,18 +520,23 @@
   group: Narcotics
   desc: reagent-desc-liftloversspecial
   flavor: sweet
-  color: "#d9eb6a"
-  physicalDesc: reagent-physical-desc-glowing
+  color: "#ff3f31"
+  physicalDesc: reagent-physical-desc-unhealthy
   metabolisms:
     Narcotic:
       effects:
       - !type:StaminaChange
         amount: -6
+      - !type:SatiateThirst
+        factor: -2
+      - !type:Jitter
+        conditions:
+        - !type:ReagentThreshold
+          min: 7
       - !type:HealthChange
         conditions:
         - !type:ReagentThreshold
-          min: 15
+          min: 20
         damage:
           types:
-            Caustic: 3
-            Radiation: 1
+            Genetic: 0.3
