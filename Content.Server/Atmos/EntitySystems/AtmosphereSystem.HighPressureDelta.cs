@@ -9,31 +9,36 @@ using Robust.Shared.Audio;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
+using Robust.Shared.Utility;
 using System.Numerics;
 
 namespace Content.Server.Atmos.EntitySystems;
 
 public sealed partial class AtmosphereSystem
 {
+    private readonly HashSet<Entity<MovedByPressureComponent>> _activePressures = new();
     private void UpdateHighPressure(float frameTime)
     {
-        var pressureQuery = EntityQueryEnumerator<MovedByPressureComponent, PhysicsComponent>();
+        var toRemove = new RemQueue<Entity<MovedByPressureComponent>>();
 
-        while (pressureQuery.MoveNext(out var uid, out var pressure, out var physics))
+        foreach (var ent in _activePressures)
         {
-            if (!pressure.Throwing || _gameTiming.CurTime < pressure.ThrowingCutoffTarget)
+            if (!ent.Comp.Throwing || _gameTiming.CurTime < ent.Comp.ThrowingCutoffTarget
+                || !TryComp(ent.Owner, out PhysicsComponent? physics))
                 continue;
 
-            if (TryComp(uid, out ThrownItemComponent? thrown))
+            if (TryComp(ent.Owner, out ThrownItemComponent? thrown))
             {
-                _thrown.LandComponent(uid, thrown, physics, true);
-                _thrown.StopThrow(uid, thrown);
+                _thrown.LandComponent(ent.Owner, thrown, physics, true);
+                _thrown.StopThrow(ent.Owner, thrown);
             }
 
-            _physics.SetBodyStatus(uid, physics, BodyStatus.OnGround);
-            _physics.SetSleepingAllowed(uid, physics, true);
+            _physics.SetBodyStatus(ent.Owner, physics, BodyStatus.OnGround);
+            _physics.SetSleepingAllowed(ent.Owner, physics, true);
 
-            pressure.Throwing = false;
+            ent.Comp.Throwing = false;
+            foreach (var comp in toRemove)
+                _activePressures.Remove(comp);
         }
     }
 
@@ -160,5 +165,6 @@ public sealed partial class AtmosphereSystem
         component.LastHighPressureMovementAirCycle = cycle;
         component.Throwing = true;
         component.ThrowingCutoffTarget = _gameTiming.CurTime + component.CutoffTime;
+        _activePressures.Add(ent);
     }
 }
