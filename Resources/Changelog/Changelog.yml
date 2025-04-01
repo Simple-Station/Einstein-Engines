@@ -14162,3 +14162,12 @@ Entries:
   id: 7075
   time: '2025-04-01T08:19:43.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2111
+- author: ZetaNull
+  changes:
+    - type: Add
+      message: Added custom Parallax to Anchor
+    - type: Fix
+      message: Fixed some bugs with Anchor. Also applies some map fixes
+  id: 7076
+  time: '2025-04-01T13:53:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2131
