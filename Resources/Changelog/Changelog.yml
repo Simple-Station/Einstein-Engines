@@ -14083,3 +14083,10 @@ Entries:
   id: 7066
   time: '2025-03-30T21:15:42.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2121
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Removed an unecessary recursion from atmos system.
+  id: 7067
+  time: '2025-04-01T03:11:38.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2126
