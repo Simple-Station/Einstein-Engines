@@ -17,7 +17,6 @@ public sealed partial class AtmosphereSystem
 {
     private void UpdateHighPressure(float frameTime)
     {
-        base.Update(frameTime);
         var pressureQuery = EntityQueryEnumerator<MovedByPressureComponent, PhysicsComponent>();
 
         while (pressureQuery.MoveNext(out var uid, out var pressure, out var physics))
