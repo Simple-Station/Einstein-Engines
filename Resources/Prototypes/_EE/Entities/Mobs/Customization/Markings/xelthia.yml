@@ -1,3 +1,4 @@
+# Tails
 - type: marking
   id: XelthiaTailNormal
   bodyPart: Tail
@@ -6,3 +7,50 @@
   sprites:
   - sprite: _EE/Mobs/Customization/xelthia_parts.rsi
     state: tail_normal
+
+# Ears
+- type: marking
+  id: XelthiaEarsNormal
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [Xelthia]
+  sprites:
+  - sprite: _EE/Mobs/Customization/xelthia_parts.rsi
+    state: ears_normal
+
+- type: marking
+  id: XelthiaEarsSmall
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [Xelthia]
+  sprites:
+  - sprite: _EE/Mobs/Customization/xelthia_parts.rsi
+    state: ears_small
+
+# Tendril Hair
+- type: marking
+  id: XelthiaHairStandard
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [Xelthia]
+  sprites:
+  - sprite: _EE/Mobs/Customization/xelthia_parts.rsi
+    state: hair_standard
+
+- type: marking
+  id: XelthiaHairShort
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [Xelthia]
+  sprites:
+  - sprite: _EE/Mobs/Customization/xelthia_parts.rsi
+    state: hair_short
+
+- type: marking
+  id: XelthiaHairLongish
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [Xelthia]
+  sprites:
+  - sprite: _EE/Mobs/Customization/xelthia_parts.rsi
+    state: hair_longish

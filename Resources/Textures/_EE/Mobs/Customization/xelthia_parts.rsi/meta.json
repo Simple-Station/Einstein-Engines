@@ -14,6 +14,26 @@
 	{
       "name": "tail_normal_behind",
       "directions": 4
+    },
+	{
+      "name": "ears_normal",
+      "directions": 4
+    },
+	{
+      "name": "hair_standard",
+      "directions": 4
+    },
+	{
+      "name": "ears_small",
+      "directions": 4
+    },
+	{
+      "name": "hair_short",
+      "directions": 4
+    },
+	{
+      "name": "hair_longish",
+      "directions": 4
     }
   ]
 }

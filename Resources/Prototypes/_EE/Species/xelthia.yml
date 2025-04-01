@@ -29,6 +29,7 @@
     Chest: MobXelthiaTorso
     HeadTop: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
+    Hair: MobHumanoidAnyMarking
     Tail: MobHumanoidAnyMarking
     Eyes: MobXelthiaEyes
     LArm: MobXelthiaLArm
@@ -51,7 +52,7 @@
   onlyWhitelisted: true
   points:
     Hair:
-      points: 0
+      points: 1
       required: false
     FacialHair:
       points: 0
@@ -62,8 +63,8 @@
       defaultMarkings: [ XelthiaTailNormal ]
     Snout:
       points: 1
-      required: false
- #     defaultMarkings: [ LizardSnoutRound ]
+      required: true
+      defaultMarkings: [ XelthiaEarsNormal ]
     HeadTop:
       points: 6
       required: false
