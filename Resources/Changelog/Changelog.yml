@@ -14155,3 +14155,10 @@ Entries:
   id: 7074
   time: '2025-04-01T07:42:42.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2058
+- author: Orion-416
+  changes:
+    - type: Fix
+      message: Made RespiratorSystem check for BreathingImmunityComponent
+  id: 7075
+  time: '2025-04-01T08:19:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2111
