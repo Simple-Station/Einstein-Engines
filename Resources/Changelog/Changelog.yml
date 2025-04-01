@@ -14108,3 +14108,12 @@ Entries:
   id: 7069
   time: '2025-04-01T06:25:03.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2130
+- author: dootythefrooty
+  changes:
+    - type: Add
+      message: >-
+        A new pet has been added to loadouts. Squackroaches are gremlin-bird
+        beasts that sing and talk to harpies!
+  id: 7070
+  time: '2025-04-01T06:27:55.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2125
