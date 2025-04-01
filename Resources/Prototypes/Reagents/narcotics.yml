@@ -581,41 +581,32 @@
           max: 0.2
 
 - type: reagent
-  id: Staminol
-  name: reagent-name-staminol
+  id: Cryanobalamin
+  name: reagent-name-cryanobalamin
   group: Narcotics
-  desc: reagent-desc-staminol
-  flavor: 
+  desc: reagent-desc-cryanobalamin
+  flavor: sweet
   color: "#f0e551"
   physicalDesc: reagent-physical-desc-opaque
   metabolisms:
     Narcotic:
-      metabolismRate: 1.0
       effects:
       - !type:StaminaChange
-        amount: -2
-      - !type:HealthChange
-        conditions:
-        - !type:ReagentThreshold
-          min: 15
-        damage:
-          types:
-            Caustic: 1.5
+        amount: -3
 
 - type: reagent
-  id: ParkuoricAcid
-  name: reagent-name-parkuoricacid
-  group: sour
-  desc: reagent-desc-parkuoricacid
-  flavor: sour
+  id: LiftLoversSpecial
+  name: reagent-name-liftloversspecial
+  group: Narcotics
+  desc: reagent-desc-liftloversspecial
+  flavor: sweet
   color: "#d9eb6a"
   physicalDesc: reagent-physical-desc-glowing
   metabolisms:
     Narcotic:
-      metabolismRate: 1.0
       effects:
       - !type:StaminaChange
-        amount: -4
+        amount: -6
       - !type:HealthChange
         conditions:
         - !type:ReagentThreshold
