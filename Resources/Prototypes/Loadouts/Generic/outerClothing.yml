@@ -169,7 +169,7 @@
       group: LoadoutOuter
     - !type:CharacterEmployerRequirement
         employers:
-        - CyberSun
+        - Cybersun
 
 - type: loadout
   id: LoadoutOuterEeCorporateJacket

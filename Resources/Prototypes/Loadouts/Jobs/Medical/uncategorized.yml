@@ -336,7 +336,7 @@
         - Paramedic
     - !type:CharacterEmployerRequirement
         employers:
-        - CyberSun
+        - Cybersun
   items:
     - ClothingHeadHatSurgcapCybersun
 
@@ -418,7 +418,7 @@
         - Paramedic
     - !type:CharacterEmployerRequirement
         employers:
-        - CyberSun
+        - Cybersun
   items:
     - ClothingOuterCoatCybersunWindbreaker
 
@@ -524,7 +524,7 @@
         - Paramedic
     - !type:CharacterEmployerRequirement
         employers:
-        - CyberSun
+        - Cybersun
   items:
     - UniformScrubsColorCybersun
 
