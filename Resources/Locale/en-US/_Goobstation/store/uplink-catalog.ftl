@@ -15,6 +15,9 @@ uplink-hardsuit-cybersun-dreadnought-desc = A prototype tacsuit that makes an al
 
 # Weapons
 
+uplink-dualetta-kit-name = Dualetta kit
+uplink-dualetta-kit-desc = Two dualettas for a cheap price.
+
 uplink-weapon-burner-name = Burner Heavy Rifle
 uplink-weapon-burner-desc = The Burner Heavy Rifle, an excelent breaching and suppression weapon.
 
@@ -36,6 +39,8 @@ uplink-l6-saw-desc = More dakka: The iconic L6 light machine gun.
 uplink-m90-name = M-90
 uplink-m90-desc = An M-90 combat rifle.
 
+uplink-dualetta-bundle-name = Dualetta Bundle
+uplink-dualetta-bundle-desc = Comes with 2 Dualetta pistols, 2 machine pistol magazines, combat gloves, noir suit, detectives trenchcoat, and laceup shoes.
 
 # Ammo
 
@@ -68,6 +73,12 @@ uplink-high-caliber-explosive-magazine-desc = Rifle magazine with 15 explosive c
 
 uplink-high-caliber-box-name = .50 Ammo box
 uplink-high-caliber-box-desc = A box of 30 .50 caliber anti-materiel rounds.
+
+uplink-highcap-pistol-mag-name = High Capacity .35 Pistol Magazine
+uplink-highcap-pistol-mag-desc = High capacity pistol magazine holds 4 extra bullets for a total of 16 rounds.
+
+uplink-highcap-pistol-mag-name = High Capacity .35 Pistol Magazine
+uplink-highcap-pistol-mag-desc = High capacity pistol magazine holds 4 extra bullets for a total of 16 rounds.
 
 uplink-highcap-pistol-mag-name = High Capacity .35 Pistol Magazine
 uplink-highcap-pistol-mag-desc = High capacity pistol magazine holds 4 extra bullets for a total of 16 rounds.
