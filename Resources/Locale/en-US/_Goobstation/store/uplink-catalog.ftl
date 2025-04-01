@@ -80,3 +80,7 @@ uplink-high-caliber-box-desc = A box of 30 .50 caliber anti-materiel rounds.
 uplink-highcap-pistol-mag-name = High Capacity .35 Pistol Magazine
 uplink-highcap-pistol-mag-desc = High capacity pistol magazine holds 4 extra bullets for a total of 16 rounds.
 
+# Misc
+
+uplink-dimension-pot-name = Dimension Pot
+uplink-dimension-pot-desc = A portal to your own pocket dimension disguised in the form of a potted plant, for when stashing one item isn't quite enough.

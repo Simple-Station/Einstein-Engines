@@ -273,3 +273,15 @@
     Telecrystal: 3
   categories:
   - UplinkAmmo
+
+# Misc
+
+- type: listing
+  id: UplinkDimensionPot
+  name: uplink-dimension-pot-name
+  description: uplink-dimension-pot-desc
+  productEntity: DimensionPot
+  cost:
+    Telecrystal: 70
+  categories:
+  - UplinkDeception
