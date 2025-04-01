@@ -25,7 +25,7 @@ public sealed partial class MailMetricUiFragment : BoxContainer
         ExpiredMailSpesos.StyleClasses.Add("Danger");
         DamagedMailCount.StyleClasses.Add("Danger");
         DamagedMailSpesos.StyleClasses.Add("Danger");
-        UnopenedMailCount.StyleClasses.Add("Caution");
+        UnopenedMailCount.StyleClasses.Add("Danger");
     }
 
     public void UpdateState(MailMetricUiState state)
