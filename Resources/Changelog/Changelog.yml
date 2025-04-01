@@ -14099,3 +14099,12 @@ Entries:
   id: 7068
   time: '2025-04-01T06:21:05.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1317
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: Give changelings a secret weight, so hopefully they actually pop up now
+    - type: Tweak
+      message: Added changelings and bloodcult to all at once
+  id: 7069
+  time: '2025-04-01T06:25:03.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2130
