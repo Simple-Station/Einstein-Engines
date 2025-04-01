@@ -497,7 +497,7 @@
   group: Narcotics
   desc: reagent-desc-cryanobalamin
   flavor: sweet
-  color: "#72a2eb"
+  color: "#46a6f5"
   physicalDesc: reagent-physical-desc-sugary
   metabolisms:
     Narcotic:
@@ -512,7 +512,7 @@
           min: 30
         damage:
           types:
-            Genetic: 0.2
+            Cellular: 0.2
 
 - type: reagent
   id: LiftLoversSpecial
@@ -520,7 +520,7 @@
   group: Narcotics
   desc: reagent-desc-liftloversspecial
   flavor: sweet
-  color: "#ff3f31"
+  color: "#f73715"
   physicalDesc: reagent-physical-desc-unhealthy
   metabolisms:
     Narcotic:
@@ -539,4 +539,4 @@
           min: 20
         damage:
           types:
-            Genetic: 0.3
+            Cellular: 0.3

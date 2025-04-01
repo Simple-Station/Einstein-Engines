@@ -404,11 +404,11 @@ reagent-effect-guidebook-plant-seeds-remove =
 reagent-effect-guidebook-stamina-change =
     { $chance ->
         [1] { $deltasign ->
-                [1] Increases
-                *[-1] Decreases
+                [-1] Increases
+                *[1] Decreases
             }
         *[other] { $deltasign ->
-                    [1] increase
-                    *[-1] decrease
+                    [-1] increase
+                    *[1] decrease
                  }
     } stamina by {$amount} points
