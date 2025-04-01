@@ -14171,3 +14171,18 @@ Entries:
   id: 7076
   time: '2025-04-01T13:53:50.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2131
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added a 3% "Deflect" chance to all hardsuits. Each projectile fired at a
+        hardsuit has a small chance to be "harmlessly" deflected into something
+        else. Have fun if that something else is an unsuspecting clown.
+    - type: Tweak
+      message: >-
+        Comprehensively rebalanced the Juggernaut Suit around having a monstrous
+        45% projectile deflection chance. Go ahead. Shoot it with birdshot. You
+        won't be disappointed in the visuals. 
+  id: 7077
+  time: '2025-04-01T15:21:02.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2114
