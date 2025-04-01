@@ -720,13 +720,14 @@
        jobs:
          - Brigmedic
 
-- type: loadout
-  id: LoadoutItemPAI
-  category: Items
-  cost: 3
-  canBeHeirloom: true
-  items:
-    - PersonalAI
+ # 5 zillion ghostroles, more people will take them if theyre less common.
+ # - type: loadout
+ # id: LoadoutItemPAI
+ # category: Items
+ # cost: 3
+ # canBeHeirloom: true
+ # items:
+ #   - PersonalAI
 
 - type: loadout
   id: LoadoutItemCrayonBox
@@ -851,6 +852,20 @@
       group: LoadoutPets
   functions:
     - !type:LoadoutMakeFollower
+
+- type: loadout
+  id: LoadoutItemPetSquackroach
+  category: Items
+  cost: 2
+  canBeHeirloom: true
+  customColorTint: true
+  items:
+  - MobSquackroachPet
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPets
+  functions:
+  - !type:LoadoutMakeFollower
 
 - type: loadout
   id: LoadoutItemPetCockroach

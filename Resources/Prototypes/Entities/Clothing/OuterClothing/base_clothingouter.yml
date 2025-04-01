@@ -213,6 +213,13 @@
     requiresWorn: true
     distanceWalking: 2
     distanceSprinting: 3
+  - type: Reflect
+    spread: 270
+    reflectProb: 0.03
+    innate: true
+    reflects:
+      - Energy
+      - NonEnergy
 
 - type: entity
   abstract: true
@@ -249,6 +256,13 @@
   - type: Clothing
     equipDelay: 4 # For stuff like standard Tacsuits and Heavy Hardsuits.
     unequipDelay: 4
+  - type: Reflect
+    spread: 270
+    reflectProb: 0.04
+    innate: true
+    reflects:
+      - Energy
+      - NonEnergy
 
 - type: entity
   abstract: true
@@ -285,6 +299,13 @@
   - type: Clothing
     equipDelay: 5 # For stuff like "Heavy" Tacsuits.
     unequipDelay: 5
+  - type: Reflect
+    spread: 270
+    reflectProb: 0.05
+    innate: true
+    reflects:
+      - Energy
+      - NonEnergy
 
 - type: entity
   abstract: true

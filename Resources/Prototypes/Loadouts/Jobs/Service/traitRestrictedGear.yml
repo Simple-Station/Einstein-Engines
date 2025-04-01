@@ -1,0 +1,225 @@
+### Bartender
+## Equipment
+- type: loadout
+  id: LoadoutServiceRestrictedGearBartenderBoxBeanbags
+  category: JobsServiceBartender
+  cost: 4
+  exclusive: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:OverallTimeRequirement
+      min: 72000 # 20 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderAmmo
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Bartender
+  items:
+    - BoxBeanbag
+
+- type: loadout
+  id: LoadoutServiceRestrictedGearBoxLightRifleRubber
+  category: JobsServiceBartender
+  cost: 4
+  exclusive: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:OverallTimeRequirement
+      min: 72000 # 20 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderAmmo
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Bartender
+  items:
+    - MagazineBoxLightRifleRubber
+
+- type: loadout
+  id: LoadoutServiceRestrictedGearBartenderBoxMagnumRubber
+  category: JobsServiceBartender
+  cost: 4
+  exclusive: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:OverallTimeRequirement
+      min: 72000 # 20 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderAmmo
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Bartender
+  items:
+    - MagazineBoxMagnumRubber
+
+- type: loadout
+  id: LoadoutServiceRestrictedGearBartenderShotgunDoubleBarreledRubber
+  category: JobsServiceBartender
+  cost: 6
+  exclusive: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:OverallTimeRequirement
+      min: 72000 # 20 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderWeapon
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Bartender
+  items:
+    - WeaponShotgunDoubleBarreledRubber
+
+- type: loadout
+  id: LoadoutServiceRestrictedGearBartenderShotgunDoubleBarreledSawed
+  category: JobsServiceBartender
+  cost: 6
+  exclusive: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:OverallTimeRequirement
+      min: 72000 # 20 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderWeapon
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Bartender
+  items:
+    - WeaponShotgunSawn
+
+- type: loadout
+  id: LoadoutServiceRestrictedGearBartenderMosinRubber
+  category: JobsServiceBartender
+  cost: 6
+  exclusive: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:OverallTimeRequirement
+      min: 72000 # 20 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderWeapon
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Bartender
+  items:
+    - WeaponSniperMosinRubber
+
+- type: loadout
+  id: LoadoutServiceRestrictedGearBartenderRepeaterNonlethal
+  category: JobsServiceBartender
+  cost: 6
+  exclusive: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:OverallTimeRequirement
+      min: 72000 # 20 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderWeapon
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Bartender
+  items:
+    - WeaponSniperRepeaterNonlethal
+
+### Botanist
+## Equipment
+- type: loadout
+  id: LoadoutServiceRestrictedGearBotanistMiniHoe
+  category: JobsServiceBotanist
+  cost: 2
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Botanist
+  items:
+    - HydroponicsToolMiniHoe
+- type: loadout
+  id: LoadoutServiceRestrictedGearBotanistClippers
+  category: JobsServiceBotanist
+  cost: 2
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Botanist
+  items:
+    - HydroponicsToolClippers
+
+- type: loadout
+  id: LoadoutServiceRestrictedGearBotanistScythe
+  category: JobsServiceBotanist
+  cost: 2
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs: 
+        - Botanist
+  items:
+    - HydroponicsToolScythe
+
+- type: loadout
+  id: LoadoutServiceRestrictedGearBotanistHatchet
+  category: JobsServiceBotanist
+  cost: 2
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Botanist
+  items:
+    - HydroponicsToolHatchet
+
+- type: loadout
+  id: LoadoutServiceRestrictedGearBotanistSpade
+  category: JobsServiceBotanist
+  cost: 2
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Botanist
+  items:
+    - HydroponicsToolSpade

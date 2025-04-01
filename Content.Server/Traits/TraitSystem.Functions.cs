@@ -18,7 +18,6 @@ using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Mobs;
-using Content.Shared.Damage.Components;
 using Content.Shared.NPC.Systems;
 using Content.Shared.Weapons.Melee;
 using Robust.Shared.Audio;
@@ -26,6 +25,9 @@ using Content.Shared.Tag;
 using Content.Shared.Body.Part;
 using Content.Server.Body.Systems;
 using Content.Shared.Body.Components;
+using Robust.Shared.Physics;
+using Robust.Shared.Physics.Systems;
+using System.Linq;
 
 namespace Content.Server.Traits;
 
@@ -292,21 +294,60 @@ public sealed partial class TraitModifyFactions : TraitFunction
     }
 }
 
-/// Only use this if you know what you're doing. This function directly writes to any arbitrary component.
+/// Only use this if you know what you're doing and there is no reasonable alternative. This function directly writes to any arbitrary component.
 [UsedImplicitly]
 public sealed partial class TraitVVEdit : TraitFunction
 {
     [DataField, AlwaysPushInheritance]
-    public Dictionary<string, string> VVEdit { get; private set; } = new();
+    public Dictionary<string, string> Changes { get; private set; } = new();
 
     public override void OnPlayerSpawn(EntityUid uid,
         IComponentFactory factory,
         IEntityManager entityManager,
         ISerializationManager serializationManager)
     {
-        var vvm = IoCManager.Resolve<IViewVariablesManager>();
-        foreach (var (path, value) in VVEdit)
-            vvm.WritePath(path, value);
+        var viewVariablesManager = IoCManager.Resolve<IViewVariablesManager>();
+
+        foreach (var (path, value) in Changes)
+        {
+            var idPath = path.Replace("$ID", uid.ToString());
+
+            viewVariablesManager.WritePath(idPath, value);
+        }
+    }
+}
+
+/// Only use this if you know what you're doing and there is no reasonable alternative. This function directly writes to any arbitrary component, relative to the current value. Only works for floats.
+[UsedImplicitly]
+public sealed partial class TraitVVModify : TraitFunction
+{
+    [DataField, AlwaysPushInheritance]
+    public Dictionary<string, float> Changes { get; private set; } = new();
+
+    [DataField, AlwaysPushInheritance]
+    public bool Multiply { get; private set; } = false; // Should the value be multiplied compared to the current one? If not, add/subtract instead.
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        var viewVariablesManager = IoCManager.Resolve<IViewVariablesManager>();
+
+        foreach (var (path, value) in Changes)
+        {
+            var idPath = path.Replace("$ID", uid.ToString());
+
+            if (!float.TryParse(viewVariablesManager.ReadPathSerialized(idPath), out var currentValue))
+                continue;
+
+            float newValue = currentValue + value;
+
+            if (Multiply)
+                newValue = currentValue * value;
+
+            viewVariablesManager.WritePath(idPath, newValue.ToString());
+        }
     }
 }
 
@@ -553,6 +594,31 @@ public sealed partial class TraitModifyStamina : TraitFunction
         staminaComponent.CritThreshold += StaminaModifier;
         staminaComponent.Decay += DecayModifier;
         staminaComponent.Cooldown += CooldownModifier;
+    }
+}
+
+[UsedImplicitly]
+public sealed partial class TraitModifyDensity : TraitFunction
+{
+    [DataField, AlwaysPushInheritance]
+    public float DensityModifier;
+
+    [DataField, AlwaysPushInheritance]
+    public bool Multiply = false;
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        var physicsSystem = entityManager.System<SharedPhysicsSystem>();
+        if (!entityManager.TryGetComponent<FixturesComponent>(uid, out var fixturesComponent)
+            || fixturesComponent.Fixtures.Count is 0)
+            return;
+
+        var fixture = fixturesComponent.Fixtures.First();
+        var newDensity = Multiply ? fixture.Value.Density * DensityModifier : fixture.Value.Density + DensityModifier;
+        physicsSystem.SetDensity(uid, fixture.Key, fixture.Value, newDensity);
     }
 }
 

@@ -183,7 +183,7 @@
 - type: loadout
   id: LoadoutItemSunglasses
   category: Eyes
-  cost: 3
+  cost: 7
   exclusive: true
   items:
     - ClothingEyesGlassesSunglasses
@@ -194,7 +194,7 @@
 - type: loadout
   id: LoadoutEyesGlassesSunglassesAviator
   category: Eyes
-  cost: 3
+  cost: 7
   exclusive: true
   customColorTint: true
   items:
@@ -206,7 +206,7 @@
 - type: loadout
   id: LoadoutEyesGlassesSunglassesBig
   category: Eyes
-  cost: 3
+  cost: 7
   exclusive: true
   items:
     - ClothingEyesGlassesSunglassesBig
@@ -217,7 +217,7 @@
 - type: loadout
   id: LoadoutEyesGlassesSunglassesVisor
   category: Eyes
-  cost: 3
+  cost: 7
   exclusive: true
   items:
     - ClothingEyesGlassesSunglassesVisor

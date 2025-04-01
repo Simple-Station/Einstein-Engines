@@ -613,4 +613,30 @@ trait-description-Vampirism =
 trait-name-MothFlight = True Flight
 trait-description-MothFlight =
     Unlike other mothpeople, your body is light enough and your wings are strong enough to be able to fly under normal gravity.
-    Flight is strenuous, however, requiring your hands to be free and quickly draining your stamina.
+    Flight is faster than running; however, it is strenuous and quickly drains your stamina.
+
+trait-name-Featherweight = Featherweight
+trait-description-Featherweight =
+    Your body is unusually lightweight for your species.
+    This trait reduces the density of your body by 50%.
+
+trait-name-Bulky = Bulky
+trait-description-Bulky =
+    Your body is unusually heavy for your species.
+    This trait increases the density of your body by 55.
+
+trait-name-Weakling = Weakling
+trait-description-Weakling =
+    Due to genetics, injury, or inactivity, your body is weaker than most.
+    This trait doubles the movement speed penalty when dragging something.
+
+trait-name-Bodybuilder = Bodybuilder
+trait-description-Bodybuilder =
+    Through extensive training or body modification, you have achieved the pinnacle of physique. 
+    This trait halves the movement speed penalty when dragging something.
+
+trait-name-RestrictedGear = Restricted Gear
+trait-description-RestrictedGear = 
+    Either through personal ownership or theft, you have access to equipment that isn't particularly standard issue.
+    Note that starting with an item [color=red]doesn't certify its legality[/color]. Conceal it or justify it.
+    (You equip other jobs' items in the loadouts menu) 

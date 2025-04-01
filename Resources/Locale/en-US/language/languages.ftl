@@ -29,7 +29,7 @@ language-SolCommon-description =
 
 language-NovuNederic-name = Novu-Nederic
 language-NovuNederic-description =
-    Once the language of seafarers and merchants, now the voice of spacers, terraformers, and pioneers.
+    Once the language of seafarers and merchants, now the voice of spacers, terraformers, and pioneers - and great enjoyers of agriculture.
     Spoken in the New-Netherlands, this direct and pragmatic trade language carries the sharp consonants and clipped vowels of its old-world roots.
     Built on centuries of seafaring, land reclamation, and commerce, it thrives among those who shape entire worlds — just as their ancestors shaped the land from the sea.
 
