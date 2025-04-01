@@ -14117,3 +14117,12 @@ Entries:
   id: 7070
   time: '2025-04-01T06:27:55.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2125
+- author: GNUtopia
+  changes:
+    - type: Fix
+      message: Fixed IPCs losing control of their brain when gibbed
+    - type: Fix
+      message: Fixed IPC brains being unable to be surgically inserted/removed
+  id: 7071
+  time: '2025-04-01T06:28:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2123
