@@ -80,7 +80,46 @@ uplink-high-caliber-box-desc = A box of 30 .50 caliber anti-materiel rounds.
 uplink-highcap-pistol-mag-name = High Capacity .35 Pistol Magazine
 uplink-highcap-pistol-mag-desc = High capacity pistol magazine holds 4 extra bullets for a total of 16 rounds.
 
+# Mechs
+
+uplink-mech-teleporter-heavy-name = Heavy Mech teleporter
+uplink-mech-teleporter-heavy-desc = Contains a heavily armored Cybersun mech with an integrated chainsword, Ultra AC-2, LBX AC 10 "Scattershot", BRM-6 Missile Rack and P-X Tesla Cannon.
+
+uplink-mech-teleporter-assault-name = Assault Mech teleporter
+uplink-mech-teleporter-assault-desc = Contains a lightly armored Cybersun mech with an integrated chainsword, LBX AC 10 "Scattershot", SRM-8 Light Missile Rack and P-X Tesla Cannon.
+
+# Chemicals
+
+uplink-lollypop-bundle-name = Donk Co. Lollypop Box
+uplink-lollypop-bundle-desc = Contains 9 completely random lollypops. What could they contain?
+
+uplink-lollypop-bundle-big-name = Donk Co. Candy Bundle
+uplink-lollypop-bundle-big-desc = Contains an ungodly amount of candy. What could they contain?
+
+# Implants
+
+uplink-smoke-implant-name = Smoke Implant
+uplink-smoke-implant-desc = Releases a cloud of smoke when activated.
+
+# Wearables
+
+uplink-helmet-swat-name = Syndicate SWAT Helmet
+uplink-helmet-swat-desc = Robust helmet that offers good protection and also suppresses flashbang sounds to some extent.
+
+# Deception
+
+uplink-clothing-explosive-gloves-name = Explosive Insulated Gloves
+uplink-clothing-explosive-gloves-desc = Gloves that look just like normal insulated gloves, but explode a second after being shocked, disabling the user's hands.
+
+# Disruption
+
+uplink-syndicate-weapon-module-advanced-name = advanced weapons module
+uplink-syndicate-weapon-module-advanced-desc = Upgrades a cyborg with an energy sword and an anaconda pistol.
+
 # Misc
 
 uplink-dimension-pot-name = Dimension Pot
 uplink-dimension-pot-desc = A portal to your own pocket dimension disguised in the form of a potted plant, for when stashing one item isn't quite enough.
+
+uplink-jaunter-implanter-name = Jaunter Implanter
+uplink-jaunter-implanter-desc = Swaps position of the user and target upon activation. Recharges passively.
