@@ -14126,3 +14126,18 @@ Entries:
   id: 7071
   time: '2025-04-01T06:28:50.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2123
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: Added the dualettas, two stylish pistols that can be dual wielded
+    - type: Add
+      message: >-
+        Added the anaconda, a robust syndicate handcannon that automatically
+        generates ammo
+    - type: Add
+      message: >-
+        Added the Pocket Dimension Plant, a normal looking potted plant that
+        actually has a pocket dimension linked to it
+  id: 7072
+  time: '2025-04-01T07:24:39.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2128
