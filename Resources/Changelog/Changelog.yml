@@ -14090,3 +14090,12 @@ Entries:
   id: 7067
   time: '2025-04-01T03:11:38.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2126
+- author: WarMechanic
+  changes:
+    - type: Add
+      message: >-
+        Added a trait 'Restricted Gear' which unlocks loadout job restrictions
+        at a significant price.
+  id: 7068
+  time: '2025-04-01T06:21:05.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1317
