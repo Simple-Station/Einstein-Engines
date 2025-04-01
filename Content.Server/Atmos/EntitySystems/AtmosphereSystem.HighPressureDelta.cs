@@ -19,8 +19,6 @@ public sealed partial class AtmosphereSystem
     private readonly HashSet<Entity<MovedByPressureComponent>> _activePressures = new();
     private void UpdateHighPressure(float frameTime)
     {
-        var toRemove = new RemQueue<Entity<MovedByPressureComponent>>();
-
         foreach (var ent in _activePressures)
         {
             if (!ent.Comp.Throwing || _gameTiming.CurTime < ent.Comp.ThrowingCutoffTarget
@@ -37,8 +35,7 @@ public sealed partial class AtmosphereSystem
             _physics.SetSleepingAllowed(ent.Owner, physics, true);
 
             ent.Comp.Throwing = false;
-            foreach (var comp in toRemove)
-                _activePressures.Remove(comp);
+            _activePressures.Remove(ent);
         }
     }
 
