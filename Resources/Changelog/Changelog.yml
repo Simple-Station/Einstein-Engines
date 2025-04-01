@@ -14148,3 +14148,10 @@ Entries:
   id: 7073
   time: '2025-04-01T07:40:43.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2129
+- author: 12rabbits and Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Added a ready manifest display to the pre-round lobby.
+  id: 7074
+  time: '2025-04-01T07:42:42.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2058
