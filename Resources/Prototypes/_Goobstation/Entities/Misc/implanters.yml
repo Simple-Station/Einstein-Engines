@@ -36,3 +36,12 @@
   components:
   - type: Implanter
     implant: BluespaceLifelineImplant
+
+- type: entity
+  parent: BaseImplantOnlyImplanterSyndi
+  id: JaunterImplanter
+  suffix: jaunter
+  components:
+  - type: Implanter
+    implant: SyndicateJaunterImplant
+
