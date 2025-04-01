@@ -271,3 +271,6 @@ ghost-role-information-artifact-name = Sentient Artifact
 ghost-role-information-artifact-description =
       Enact your eldritch whims.
       Forcibly activate your nodes for good or for evil.
+
+ghost-role-information-derelict-cyborg-syndicate-name = Derelict Syndicate Cyborg
+ghost-role-information-derelict-cyborg-syndicate-description = You were lost during an assault on a station. After years of exposure to ion storms you find yourself near a space station.
