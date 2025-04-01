@@ -11,11 +11,11 @@
     - 0,0,6,3
   - type: StorageFill
     contents:
-      - id: WeaponPistolDualetta
-      - id: WeaponPistolDualetta
-      - id: MagazinePistolHighCapacity
-      - id: MagazinePistolHighCapacity
-      - id: ClothingHandsGlovesCombat
-      - id: ClothingUniformJumpsuitDetectiveGrey
-      - id: ClothingOuterCoatDetectiveLoadout
-      - id: ClothingShoesBootsLaceup
+    - id: WeaponPistolDualetta
+    - id: WeaponPistolDualetta
+    - id: MagazinePistolHighCapacity
+    - id: MagazinePistolHighCapacity
+    - id: ClothingHandsGlovesCombat
+    - id: ClothingUniformJumpsuitDetectiveGrey
+    - id: ClothingOuterCoatDetectiveLoadout
+    - id: ClothingShoesBootsLaceup
