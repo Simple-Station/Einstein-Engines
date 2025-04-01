@@ -81,7 +81,7 @@
 - type: marking
   id: ThavenLArmTattoo1
   bodyPart: LArm
-  markingCategory: Arms
+  markingCategory: LeftArm
   speciesRestriction: [Thaven]
   coloring:
     default:
@@ -95,7 +95,7 @@
 - type: marking
   id: ThavenRArmTattoo1
   bodyPart: RArm
-  markingCategory: Arms
+  markingCategory: RightArm
   speciesRestriction: [Thaven]
   coloring:
     default:

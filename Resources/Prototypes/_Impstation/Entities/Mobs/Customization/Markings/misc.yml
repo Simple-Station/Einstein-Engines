@@ -938,7 +938,7 @@
 - type: marking
   id: ThavenLArmScales
   bodyPart: LArm
-  markingCategory: Arms
+  markingCategory: LeftArm
   speciesRestriction: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
@@ -949,7 +949,7 @@
 - type: marking
   id: ThavenRArmScales
   bodyPart: RArm
-  markingCategory: Arms
+  markingCategory: RightArm
   speciesRestriction: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
@@ -960,7 +960,7 @@
 - type: marking
   id: ThavenLLegScales
   bodyPart: LLeg
-  markingCategory: Legs
+  markingCategory: LeftLeg
   speciesRestriction: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
@@ -971,7 +971,7 @@
 - type: marking
   id: ThavenRLegScales
   bodyPart: RLeg
-  markingCategory: Legs
+  markingCategory: RightLeg
   speciesRestriction: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
@@ -982,7 +982,7 @@
 #- type: marking
 #  id: ThavenLHandScales
 #  bodyPart: LHand
-#  markingCategory: Arms
+#  markingCategory: LeftArm
 #  speciesRestriction: [ Thaven ]
 #  forcedColoring: false
 #  followSkinColor: false
@@ -993,7 +993,7 @@
 #- type: marking
 #  id: ThavenRHandScales
 #  bodyPart: RHand
-#  markingCategory: Arms
+#  markingCategory: RightArm
 #  speciesRestriction: [ Thaven ]
 #  forcedColoring: false
 #  followSkinColor: false
@@ -1107,7 +1107,7 @@
 - type: marking
   id: ThavenTigerRArm
   bodyPart: RArm
-  markingCategory: Arms
+  markingCategory: RightArm
   speciesRestriction: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
@@ -1118,7 +1118,7 @@
 - type: marking
   id: ThavenTigerLArm
   bodyPart: LArm
-  markingCategory: Arms
+  markingCategory: LeftArm
   speciesRestriction: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
