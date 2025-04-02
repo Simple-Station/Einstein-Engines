@@ -14186,3 +14186,10 @@ Entries:
   id: 7077
   time: '2025-04-01T15:21:02.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2114
+- author: 3PonPon3
+  changes:
+    - type: Tweak
+      message: Increased the moth flight speed modifier from 1.09 to 1.2
+  id: 7078
+  time: '2025-04-02T18:19:25.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2140
