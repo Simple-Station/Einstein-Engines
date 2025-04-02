@@ -1,6 +1,5 @@
 - type: characterItemGroup
   id: TraitsLanguagesBasic
-  maxItems: 1
   items:
     - type: trait
       id: SignLanguage
@@ -47,3 +46,13 @@
       id: ScottishAccent
     - type: trait
       id: SkeletonAccent
+    - type: trait
+      id: GermanAccent
+    - type: trait
+      id: RussianAccent
+    - type: trait
+      id: FrenchAccent
+    - type: trait
+      id: ItalianAccent
+    - type: trait
+      id: SpanishAccent
