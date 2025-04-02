@@ -1,5 +1,6 @@
 using System.Linq;
 using Content.Shared._EE.Contractors.Prototypes;
+using Content.Shared.CCVar;
 using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
@@ -41,8 +42,8 @@ public sealed partial class CharacterNationalityRequirement : CharacterRequireme
         MindComponent? mind = null
     )
     {
-        if (!configManager.GetCVar(CVars.ContractorsEnabled) ||
-            !configManager.GetCVar(CVars.ContractorsCharacterRequirementsEnabled))
+        if (!configManager.GetCVar(CCVars.ContractorsEnabled) ||
+            !configManager.GetCVar(CCVars.ContractorsCharacterRequirementsEnabled))
         {
             reason = "";
             return true;
@@ -82,8 +83,8 @@ public sealed partial class CharacterEmployerRequirement : CharacterRequirement
         MindComponent? mind = null
     )
     {
-        if (!configManager.GetCVar(CVars.ContractorsEnabled) ||
-            !configManager.GetCVar(CVars.ContractorsCharacterRequirementsEnabled))
+        if (!configManager.GetCVar(CCVars.ContractorsEnabled) ||
+            !configManager.GetCVar(CCVars.ContractorsCharacterRequirementsEnabled))
         {
             reason = "";
             return true;
@@ -123,8 +124,8 @@ public sealed partial class CharacterLifepathRequirement : CharacterRequirement
         MindComponent? mind = null
     )
     {
-        if (!configManager.GetCVar(CVars.ContractorsEnabled) ||
-            !configManager.GetCVar(CVars.ContractorsCharacterRequirementsEnabled))
+        if (!configManager.GetCVar(CCVars.ContractorsEnabled) ||
+            !configManager.GetCVar(CCVars.ContractorsCharacterRequirementsEnabled))
         {
             reason = "";
             return true;

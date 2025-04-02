@@ -12,6 +12,8 @@ using Content.Shared.Preferences;
 using Content.Shared.Storage;
 using Content.Shared.Storage.EntitySystems;
 using Robust.Shared;
+using Content.Shared.CCVar;
+using Content.Shared.Roles;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
@@ -67,7 +69,13 @@ public class SharedPassportSystem : EntitySystem
 
     private void OnPlayerLoadoutApplied(PlayerLoadoutAppliedEvent ev)
     {
-        if (Deleted(ev.Mob) || !Exists(ev.Mob) || !_configManager.GetCVar(CVars.ContractorsEnabled) || !_configManager.GetCVar(CVars.ContractorsPassportEnabled))
+        if (ev.JobId == null || !_prototypeManager.TryIndex(
+                ev.JobId,
+                out JobPrototype? jobPrototype)
+            || !jobPrototype.CanHavePassport
+            || Deleted(ev.Mob)
+            || !Exists(ev.Mob)
+            || !ShouldSpawnPassports)
             return;
 
         if (!_prototypeManager.TryIndex(
@@ -96,6 +104,10 @@ public class SharedPassportSystem : EntitySystem
             }
         }
     }
+
+    private bool ShouldSpawnPassports =>
+        _configManager.GetCVar(CCVar.CCVars.ContractorsEnabled) &&
+        _configManager.GetCVar(CCVar.CCVars.ContractorsPassportEnabled);
 
     public void UpdatePassportProfile(Entity<PassportComponent> passport, HumanoidCharacterProfile profile)
     {

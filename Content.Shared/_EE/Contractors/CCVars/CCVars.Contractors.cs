@@ -1,6 +1,6 @@
 using Robust.Shared.Configuration;
 
-namespace Content.Shared._EE.Contractors.CCVars;
+namespace Content.Shared.CCVar;
 
 /// <summary>
 /// Contains all the CVars used by Contractors.
