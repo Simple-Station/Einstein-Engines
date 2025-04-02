@@ -1243,7 +1243,8 @@
   - !type:TraitAddComponent
     components:
       - type: Vampirism
-        succDelay: 3
+        succDelay: 2
+        unitsToSucc: 5
         specialDigestible: # Vampires cannot eat food chat is that real
           tags:
           - Pill
