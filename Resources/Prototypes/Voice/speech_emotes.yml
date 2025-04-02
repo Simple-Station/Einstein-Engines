@@ -102,6 +102,7 @@
   whitelist:
     tags:
     - HarpyEmotes
+    - ChitinidEmotes
   blacklist:
     components:
     - BorgChassis
@@ -253,6 +254,7 @@
     - Nymph
     tags:
     - HarpyEmotes
+    - ChitinidEmotes
   chatMessages: ["chat-emote-msg-chirp"]
   chatTriggers:
     - chirps
