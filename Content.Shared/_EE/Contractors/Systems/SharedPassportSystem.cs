@@ -11,6 +11,8 @@ using Content.Shared.Item;
 using Content.Shared.Preferences;
 using Content.Shared.Storage;
 using Content.Shared.Storage.EntitySystems;
+using Robust.Shared;
+using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
@@ -28,6 +30,7 @@ public class SharedPassportSystem : EntitySystem
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly SharedStorageSystem _storage = default!;
     [Dependency] private readonly SharedTransformSystem _sharedTransformSystem = default!;
+    [Dependency] private readonly IConfigurationManager _configManager = default!;
 
     public override void Initialize()
     {
@@ -64,7 +67,7 @@ public class SharedPassportSystem : EntitySystem
 
     private void OnPlayerLoadoutApplied(PlayerLoadoutAppliedEvent ev)
     {
-        if (Deleted(ev.Mob) || !Exists(ev.Mob))
+        if (Deleted(ev.Mob) || !Exists(ev.Mob) || !_configManager.GetCVar(CVars.ContractorsEnabled) || !_configManager.GetCVar(CVars.ContractorsPassportEnabled))
             return;
 
         if (!_prototypeManager.TryIndex(
