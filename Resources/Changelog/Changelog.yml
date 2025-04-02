@@ -14204,3 +14204,10 @@ Entries:
   id: 7079
   time: '2025-04-02T19:46:42.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2142
+- author: Diggy
+  changes:
+    - type: Fix
+      message: Corpsman glasses now have the medhud they should have always had.
+  id: 7080
+  time: '2025-04-02T20:10:09.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2141
