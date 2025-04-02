@@ -105,6 +105,7 @@
     baseWalkSpeed: 3
     baseSprintSpeed: 5.5
     weightlessAcceleration: 2.5
+    weightlessModifier: 1.12
   - type: Inventory
     speciesId: harpy
     templateId: digitigrade
@@ -240,7 +241,7 @@
 - type: entity
   id: ActionToggleFlight
   name: Fly
-  description: Make use of your wings to fly. Beat the flightless bird allegations.
+  description: Make use of your wings to fly. Beat the flightlessness allegations.
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction

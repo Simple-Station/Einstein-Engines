@@ -53,6 +53,8 @@
       id: LoadoutCaptainAntiqueLaserPistol
     - type: loadout
       id: LoadoutCaptainPulsePistol
+    - type: loadout
+      id: LoadoutCaptainTerminus
 
 - type: characterItemGroup
   id: LoadoutCaptainEyes
@@ -120,6 +122,8 @@
       id: LoadoutCaptainOuterCarapace
     - type: loadout
       id: LoadoutCaptainOuterTrench
+    - type: loadout
+      id: LoadoutCaptainOuterDogi
 
 - type: characterItemGroup
   id: LoadoutCaptainShoes

@@ -101,7 +101,7 @@
   # Shitmed Change
   - type: Scalpel
     speed: 0.3
-  - type: BoneSaw 
+  - type: BoneSaw
     speed: 0.5
 
 - type: entity
@@ -156,6 +156,7 @@
     angle: 225
   - type: Item
     sprite: Objects/Weapons/Melee/survival_knife.rsi
+  - type: AttachmentBayonet # Lavaland Change
 
 - type: entity
   name: kukri knife

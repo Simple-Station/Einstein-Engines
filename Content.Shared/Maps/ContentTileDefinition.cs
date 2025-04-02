@@ -96,10 +96,11 @@ namespace Content.Shared.Maps
         public float? MobFriction { get; private set; }
 
         /// <summary>
-        ///     No-input friction override for mob mover in <see cref="SharedMoverController"/>
+        ///     "Average" static coefficient of friction for assuming a steel tile. This is only used as a fallback for a fallback for a fallback,
+        ///     except in the case of Space Wind. This default value is assuming an interaction interface of "Rubber on steel tile".
         /// </summary>
-        [DataField("mobFrictionNoInput")]
-        public float? MobFrictionNoInput { get; private set; }
+        [DataField]
+        public float MobFrictionNoInput = 0.2f;
 
         /// <summary>
         ///     Accel override for mob mover in <see cref="SharedMoverController"/>
@@ -124,11 +125,16 @@ namespace Content.Shared.Maps
             TileId = id;
         }
 
+        /// <summary>
+        ///     For optionally handling per-tile behavior of airflow simulation. Which is useful for ZAS-like air sim, and for MAS.
+        ///     Intentionally public because I want entities to be able to mess with this, such as ship shielding that prevents air from flowing across a shielded tile.
+        ///     For planet maps, you can instead mark the GridAtmosphere as !Simulated. Which will make the entire atmos system not run on a given grid.
+        /// </summary>
         [DataField]
-        public bool Reinforced = false;
+        public bool Reinforced;
 
         [DataField]
-        public float TileRipResistance = 125f;
+        public bool SimulatedTurf = true;
     }
 
     [Flags]

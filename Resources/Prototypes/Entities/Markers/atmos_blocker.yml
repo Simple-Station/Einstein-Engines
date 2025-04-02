@@ -108,3 +108,25 @@
   components:
   - type: AtmosFixMarker
     mode: 7
+
+- type: entity
+  id: AtmosFixCoolant
+  suffix: Coolant
+  description: "Supermatter coolant, equivalent to a liquid nitrogen canister"
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - sprite: Markers/atmos.rsi # {
+          state: base
+          shader: unshaded
+        - sprite: Markers/atmos.rsi
+          shader: unshaded # }
+          state: nitrogen
+    - type: AtmosFixMarker
+      gasMix:
+        volume: 2500
+        moles:
+          - 0 # oxygen
+          - 18710.71051 # nitrogen
+        temperature: 72

@@ -103,6 +103,19 @@
     state: batonbot
 
 - type: construction
+  name: minebot
+  id: minebot
+  graph: MineBot
+  startNode: start
+  targetNode: bot
+  category: construction-category-utilities
+  objectType: Item
+  description: Helps the miners with their work.
+  icon:
+    sprite: Mobs/Silicon/Bots/minebot.rsi
+    state: minebot
+
+- type: construction
   name: disablerbot
   id: disablerbot
   graph: DisablerBot
@@ -140,3 +153,29 @@
   icon:
     sprite: Mobs/Silicon/Bots/plantbot.rsi
     state: plantbot
+
+- type: construction
+  name: fillbot
+  id: fillbot
+  graph: FillBot
+  startNode: start
+  targetNode: bot
+  category: construction-category-utilities
+  objectType: Item
+  description: This bot is linked to a machine that items can be inserted into using a multitool.
+  icon:
+    sprite: Mobs/Silicon/Bots/fillbot.rsi
+    state: fillbot
+
+- type: construction
+  name: drone
+  id: drone
+  graph: Drone
+  startNode: start
+  targetNode: bot
+  category: construction-category-utilities
+  objectType: Item
+  description: This bot is an extremely advanced AI controlled engineer.
+  icon:
+    sprite: _Imp/Drone/drone.rsi
+    state: shell

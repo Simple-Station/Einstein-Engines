@@ -108,7 +108,7 @@
         - !type:EntSelector
           id: ClothingOuterCoatPirate
         - !type:EntSelector
-          id: ClothingHeadHatPirateTricord
+          id: ClothingHeadHatPirateTricorn
       - !type:EntSelector
         id: ClothingHeadHatTophat
       - !type:EntSelector
@@ -186,6 +186,8 @@
           id: ClothingNeckCloakPan
       - !type:EntSelector
         id: ToySkeleton
+      - !type:EntSelector
+        id: RevolutionaryManifesto
       - !type:EntSelector
         id: Basketball
       - !type:EntSelector

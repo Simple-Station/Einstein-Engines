@@ -27,6 +27,10 @@
       inverted: true
       species:
         - Human
+    - !type:CharacterNationalityRequirement
+      inverted: true
+      nationalities:
+        - Solarian
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
@@ -73,6 +77,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsLanguagesBasic
+    - !type:CharacterNationalityRequirement
+      inverted: true
+      nationalities:
+        - Elyran
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
@@ -87,12 +95,34 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsLanguagesBasic
+    - !type:CharacterNationalityRequirement
+      inverted: true
+      nationalities:
+        - Valyrian
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
         - ValyrianStandard
       languagesUnderstood:
         - ValyrianStandard
+
+- type: trait
+  id: NovuNederic
+  category: TraitsSpeechLanguages
+  points: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsLanguagesBasic
+    - !type:CharacterNationalityRequirement
+      inverted: true
+      nationalities:
+        - Nederlandic
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - NovuNederic
+      languagesUnderstood:
+        - NovuNederic
 
 - type: trait
   id: Azaziba

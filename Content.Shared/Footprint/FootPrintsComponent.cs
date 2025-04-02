@@ -1,12 +1,13 @@
 using System.Numerics;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.FixedPoint;
+using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Shared.FootPrint;
 
-[RegisterComponent]
+[RegisterComponent, NetworkedComponent]
 public sealed partial class FootPrintsComponent : Component
 {
     [DataField]
@@ -67,11 +68,11 @@ public sealed partial class FootPrintsComponent : Component
     ///     Reagent volume used for footprints.
     /// </summary>
     [DataField]
-    public Solution ContainedSolution = new(3) { CanReact = true, MaxVolume = 5f, };
+    public Solution ContainedSolution = new(3) { CanReact = true, MaxVolume = 25f, };
 
     /// <summary>
     ///     Amount of reagents used per footprint.
     /// </summary>
     [DataField]
-    public FixedPoint2 FootprintVolume = 1f;
+    public FixedPoint2 FootprintVolume = 5f;
 }

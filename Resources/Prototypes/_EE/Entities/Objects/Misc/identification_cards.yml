@@ -1,0 +1,19 @@
+# SAN ID
+- type: entity
+  parent: [IDCardStandard, SolAllianceInfo]
+  id: SANIdCard
+  name: "Solarian Alliance Navy RFItags"
+  components:
+    - type: Icon
+      sprite: Clothing/Neck/Misc/dogtags.rsi
+      state: icon
+    - type: Sprite
+      sprite: Clothing/Neck/Misc/dogtags.rsi
+      state: icon
+    - type: Clothing
+      sprite: Clothing/Neck/Misc/dogtags.rsi
+      slots:
+        - idcard
+    - type: Access
+      tags:
+        - SAN

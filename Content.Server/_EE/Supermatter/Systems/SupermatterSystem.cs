@@ -78,6 +78,9 @@ public sealed partial class SupermatterSystem : EntitySystem
 
         foreach (var sm in EntityManager.EntityQuery<SupermatterComponent>())
         {
+            if (!sm.Activated)
+                continue;
+
             var uid = sm.Owner;
             AnnounceCoreDamage(uid, sm);
         }
@@ -99,7 +102,10 @@ public sealed partial class SupermatterSystem : EntitySystem
     public void OnSupermatterUpdated(EntityUid uid, SupermatterComponent sm, AtmosDeviceUpdateEvent args)
     {
         ProcessAtmos(uid, sm, args.dt);
-        HandleDamage(uid, sm);
+
+        // This prevents SM from delamming due to spacing without activating the SM.
+        if (sm.Activated)
+            HandleDamage(uid, sm);
 
         if (sm.Damage >= sm.DamageDelaminationPoint || sm.Delamming)
             HandleDelamination(uid, sm);
