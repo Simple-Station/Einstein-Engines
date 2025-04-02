@@ -1,7 +1,7 @@
 - type: trait
   id: SiikMaas
   category: TraitsSpeechLanguages
-  points: -1
+  points: 0
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsLanguagesBasic
@@ -36,7 +36,7 @@
 - type: trait
   id: SiikTajr
   category: TraitsSpeechLanguages
-  points: -2
+  points: -1
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsLanguagesBasic
@@ -53,7 +53,7 @@
 - type: trait
   id: YaSsa
   category: TraitsSpeechLanguages
-  points: -2
+  points: -1
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsLanguagesBasic
@@ -70,7 +70,7 @@
 - type: trait
   id: Delvahii
   category: TraitsSpeechLanguages
-  points: -2
+  points: -1
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsLanguagesBasic
