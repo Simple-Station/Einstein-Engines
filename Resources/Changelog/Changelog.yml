@@ -14186,3 +14186,28 @@ Entries:
   id: 7077
   time: '2025-04-01T15:21:02.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2114
+- author: 3PonPon3
+  changes:
+    - type: Tweak
+      message: Increased the moth flight speed modifier from 1.09 to 1.2
+  id: 7078
+  time: '2025-04-02T18:19:25.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2140
+- author: 3PonPon3
+  changes:
+    - type: Tweak
+      message: Reduced sign language cost from -2 to -1
+    - type: Tweak
+      message: Removed the limit on how many language traits you can take
+    - type: Fix
+      message: Made sure that you cannot take more than 1 accent trait
+  id: 7079
+  time: '2025-04-02T19:46:42.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2142
+- author: Diggy
+  changes:
+    - type: Fix
+      message: Corpsman glasses now have the medhud they should have always had.
+  id: 7080
+  time: '2025-04-02T20:10:09.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2141

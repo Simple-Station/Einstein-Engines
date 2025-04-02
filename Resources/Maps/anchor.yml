@@ -156789,14 +156789,7 @@ entities:
       pos: 0.5,0.5
       parent: 2
     - type: SurveillanceCamera
-      setupAvailableNetworks:
-      - SurveillanceCameraSecurity
       id: Arrivals Checkpoint
-    - type: UserInterface
-      actors:
-        enum.SurveillanceCameraSetupUiKey.Camera:
-        - invalid
-    - type: ActiveUserInterface
   - uid: 24375
     components:
     - type: Transform
