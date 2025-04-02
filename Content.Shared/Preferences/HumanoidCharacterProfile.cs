@@ -602,6 +602,34 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         return ReferenceEquals(this, obj) || obj is HumanoidCharacterProfile other && MemberwiseEquals(other);
     }
 
+    public bool IsValid(ICommonSession session, IDependencyCollection collection)
+    {
+        var configManager = collection.Resolve<IConfigurationManager>();
+        var prototypeManager = collection.Resolve<IPrototypeManager>();
+        var cfgManager = collection.Resolve<IConfigurationManager>();
+
+        var validProfile = Validated(session, collection);
+
+        if(!Equals(validProfile)
+            || _traitPreferences.Count > cfgManager.GetCVar(CCVars.GameTraitsMax))
+            return false;
+
+        var points = cfgManager.GetCVar(CCVars.GameTraitsDefaultPoints) + _traitPreferences.Select(trait => prototypeManager.Index<TraitPrototype>(trait)).Select(traitPrototype => traitPrototype.Points).Sum();
+
+        if(points < 0)
+            return false;
+
+        points = cfgManager.GetCVar(CCVars.GameLoadoutsPoints);
+        points = _loadoutPreferences.Select(loadout => prototypeManager.Index<LoadoutPrototype>(loadout.LoadoutName)).Aggregate(points, (current, lod) => current - lod.Cost);
+
+        if (points < 0)
+            return false;
+
+        // todo: check trait and loadout CharacterRequirements
+
+        return true;
+    }
+
     public override int GetHashCode()
     {
         var hashCode = new HashCode();
