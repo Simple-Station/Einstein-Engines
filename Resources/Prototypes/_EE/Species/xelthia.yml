@@ -8,9 +8,9 @@
   markingLimits: MobXelthiaMarkingLimits
   dollPrototype: MobXelthiaDummy
   skinColoration: Hues
-  maleFirstNames: names_reptilian_male
-  femaleFirstNames: names_reptilian_female
-  naming: FirstDashFirst
+  maleFirstNames: names_xelthia_first
+  femaleFirstNames: names_xelthia_first
+  lastNames: names_xelthia_last
   minHeight: 0.7
   defaultHeight: 0.95
   maxHeight: 1.25
@@ -73,7 +73,8 @@
       required: false
     Chest:
       points: 6
-      required: false
+      required: true
+      defaultMarkings: [ XelthiaBackspikes ]
     Underwear:
       points: 1
       required: false
@@ -94,13 +95,15 @@
       required: false
     RightArm:
       points: 6
-      required: false
+      required: true
+      defaultMarkings: [ XelthiaRightarmSpike ]
     RightHand:
       points: 6
       required: false
     LeftArm:
       points: 6
-      required: false
+      required: true
+      defaultMarkings: [ XelthiaLeftarmSpike ]
     LeftHand:
       points: 6
       required: false

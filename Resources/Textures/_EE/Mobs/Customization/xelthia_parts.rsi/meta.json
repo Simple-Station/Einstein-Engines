@@ -34,6 +34,26 @@
 	{
       "name": "hair_longish",
       "directions": 4
+    },
+	{
+      "name": "backspikes",
+      "directions": 4
+    },
+	{
+      "name": "l_armspike",
+      "directions": 4
+    },
+	{
+      "name": "r_armspike",
+      "directions": 4
+    },
+	{
+      "name": "stripey",
+      "directions": 4
+    },
+	{
+      "name": "underbelly",
+      "directions": 4
     }
   ]
 }

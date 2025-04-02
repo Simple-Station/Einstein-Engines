@@ -117,6 +117,15 @@
             layerKey: dummy
             parameterTexture: displacementMap
             parameterUV: displacementUV
+      back:
+        layer:
+          sprite: _EE/Mobs/Species/Xelthia/displacement.rsi
+          state: backpack
+          copyToShaderParameters:
+            # Value required, provide a dummy. Gets overridden when applied.
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
 
 - type: entity
   save: false
@@ -198,6 +207,15 @@
         layer:
           sprite: _EE/Mobs/Species/Xelthia/displacement.rsi
           state: jumpsuit
+          copyToShaderParameters:
+            # Value required, provide a dummy. Gets overridden when applied.
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
+      back:
+        layer:
+          sprite: _EE/Mobs/Species/Xelthia/displacement.rsi
+          state: backpack
           copyToShaderParameters:
             # Value required, provide a dummy. Gets overridden when applied.
             layerKey: dummy

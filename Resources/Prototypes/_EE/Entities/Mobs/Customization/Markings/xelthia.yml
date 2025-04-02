@@ -54,3 +54,69 @@
   sprites:
   - sprite: _EE/Mobs/Customization/xelthia_parts.rsi
     state: hair_longish
+
+# Chest Patterns
+
+- type: marking
+  id: XelthiaStripeyChest
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Xelthia]
+  sprites:
+  - sprite: _EE/Mobs/Customization/xelthia_parts.rsi
+    state: stripey
+
+- type: marking
+  id: XelthiaUnderbelly
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Xelthia]
+  sprites:
+  - sprite: _EE/Mobs/Customization/xelthia_parts.rsi
+    state: underbelly
+
+# Spikes
+
+#- type: marking
+#  id: XelthiaBackspikes
+#  bodyPart: Chest
+#  markingCategory: Chest
+#  speciesRestriction: [Xelthia]
+#  coloring:
+#    default:
+#      type:
+#        !type:SimpleColoring
+#          color: "#FFFFFF"
+#  sprites:
+#  - sprite: _EE/Mobs/Customization/xelthia_parts.rsi
+#    state: backspikes
+#
+# Commented because i need chest free for patterns and stuff
+
+- type: marking
+  id: XelthiaRightarmSpike
+  bodyPart: RArm
+  markingCategory: RightArm
+  speciesRestriction: [Xelthia]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _EE/Mobs/Customization/xelthia_parts.rsi
+    state: r_armspike
+    
+- type: marking
+  id: XelthiaLeftarmSpike
+  bodyPart: LArm
+  markingCategory: LeftArm
+  speciesRestriction: [Xelthia]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _EE/Mobs/Customization/xelthia_parts.rsi
+    state: l_armspike
