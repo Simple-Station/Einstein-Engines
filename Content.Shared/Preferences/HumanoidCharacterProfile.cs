@@ -604,7 +604,6 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
 
     public bool IsValid(ICommonSession session, IDependencyCollection collection)
     {
-        var configManager = collection.Resolve<IConfigurationManager>();
         var prototypeManager = collection.Resolve<IPrototypeManager>();
         var cfgManager = collection.Resolve<IConfigurationManager>();
 
