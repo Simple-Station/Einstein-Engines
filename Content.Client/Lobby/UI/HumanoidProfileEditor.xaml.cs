@@ -39,7 +39,6 @@ using Robust.Shared.Physics;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
-using Content.Shared._EE.Contractors.CCVars;
 using Direction = Robust.Shared.Maths.Direction;
 
 namespace Content.Client.Lobby.UI

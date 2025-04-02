@@ -1,6 +1,5 @@
 using System.Linq;
 using Content.Server.Players.PlayTimeTracking;
-using Content.Shared._EE.Contractors.CCVars;
 using Content.Shared._EE.Contractors.Prototypes;
 using Content.Shared.Customization.Systems;
 using Content.Shared.GameTicking;
