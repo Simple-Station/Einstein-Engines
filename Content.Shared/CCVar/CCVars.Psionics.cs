@@ -21,7 +21,7 @@ public sealed partial class CCVars
     ///     How many seconds between updates to passive glimmer decay.
     /// </summary>
     public static readonly CVarDef<float> GlimmerDecayUpdateInterval =
-        CVarDef.Create("glimmer.decay_update_interval", 6f, CVar.SERVERONLY);
+        CVarDef.Create("glimmer.decay_update_interval", 10f, CVar.SERVERONLY);
 
     /// <summary>
     ///     Whether random rolls for psionics are allowed.

@@ -115,11 +115,13 @@ public sealed class GlimmerSystem : EntitySystem
     /// <param name="delta"></param>
     public void DeltaGlimmerInput(double delta)
     {
-        if (_enabled && delta != 0)
-        {
-            GlimmerInput += delta;
-            GlimmerOutput = Math.Clamp(2000 / (1 + Math.Pow(Math.E, -.0022 * GlimmerInput)) - 1000, 0, 999.999999);
-        }
+        if (!_enabled || delta == 0)
+            return;
+
+        var x = GlimmerInput;
+
+        GlimmerInput += delta;
+        GlimmerOutput = 2000 / (1 + Math.Pow(Math.E, -0.0022 * x)) - 1000;
     }
 
     /// <summary>
@@ -129,11 +131,13 @@ public sealed class GlimmerSystem : EntitySystem
     /// <param name="delta"></param>
     public void DeltaGlimmerOutput(double delta)
     {
-        if (_enabled && delta != 0)
-        {
-            GlimmerOutput += delta;
-            GlimmerInput = Math.Max(2000 / (1 + Math.Pow(Math.E, -.0022 * GlimmerOutput)) - 1000, 0);
-        }
+        if (!_enabled || delta == 0)
+            return;
+
+        var y = GlimmerOutput;
+
+        GlimmerOutput += delta;
+        GlimmerInput = Math.Log((y + 1000) / (1000 - y)) / 0.0022;
     }
 
     /// <summary>
@@ -143,11 +147,13 @@ public sealed class GlimmerSystem : EntitySystem
     /// <param name="set"></param>
     public void SetGlimmerOutput(float set)
     {
-        if (_enabled && set != 0)
-        {
-            GlimmerOutput = Math.Clamp(set, 0, 999.999);
-            GlimmerInput = 2000 / (1 + Math.Pow(Math.E, -.0022 * GlimmerOutput)) - 1000;
-        }
+        if (!_enabled || set == 0)
+            return;
+
+        var y = GlimmerOutput;
+
+        GlimmerOutput = Math.Clamp(set, 0, 999.999);
+        GlimmerInput = Math.Log((y + 1000) / (1000 - y)) / 0.0022;
     }
 
     /// <summary>
@@ -157,11 +163,12 @@ public sealed class GlimmerSystem : EntitySystem
     /// <param name="set"></param>
     public void SetGlimmerInput(float set)
     {
-        if (_enabled && set >= 0)
-        {
-            GlimmerInput = set;
-            GlimmerOutput = 2000 / (1 + Math.Pow(Math.E, -.0022 * set)) - 1000;
-        }
+        if (!_enabled || set < 0)
+            return;
+
+
+        GlimmerInput = set;
+        GlimmerOutput = 2000 / (1 + Math.Pow(Math.E, -.0022 * set)) - 1000;
     }
 
     /// <summary>
