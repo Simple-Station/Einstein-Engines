@@ -1,8 +1,7 @@
 - type: entity
   id: RightArmSiliconIndestructible
   name: "right silicon arm"
-  abstract: true
-  parent: [BaseItem, BaseRightArm]
+  parent: [BaseItem, RightArmCybernetic]
   components:
     - type: Damageable
     - type: BodyPart
@@ -14,8 +13,7 @@
 - type: entity
   id: RightHandSiliconIndestructible
   name: "right silicon hand"
-  abstract: true
-  parent: [BaseItem, BaseRightArm]
+  parent: [BaseItem, RightArmCybernetic]
   components:
     - type: Damageable
     - type: BodyPart
