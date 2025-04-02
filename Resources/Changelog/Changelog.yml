@@ -14193,3 +14193,14 @@ Entries:
   id: 7078
   time: '2025-04-02T18:19:25.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2140
+- author: 3PonPon3
+  changes:
+    - type: Tweak
+      message: Reduced sign language cost from -2 to -1
+    - type: Tweak
+      message: Removed the limit on how many language traits you can take
+    - type: Fix
+      message: Made sure that you cannot take more than 1 accent trait
+  id: 7079
+  time: '2025-04-02T19:46:42.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2142
