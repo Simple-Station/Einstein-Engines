@@ -14234,3 +14234,12 @@ Entries:
   id: 7081
   time: '2025-04-03T07:30:33.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2145
+- author: bruhmogus
+  changes:
+    - type: Add
+      message: Ported Smuggler Satchels from Wizden
+    - type: Add
+      message: Ported watches (both normal and gold) from Wizden
+  id: 7082
+  time: '2025-04-03T10:38:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2088
