@@ -102,9 +102,8 @@ namespace Content.Shared.Construction
             foreach (var (stackId, amount) in comp.MaterialIdRequirements)
             {
                 var stackProto = _prototype.Index<StackPrototype>(stackId);
-                var defaultProto = _prototype.Index(stackProto.Spawn);
-
-                if (defaultProto.TryGetComponent<PhysicalCompositionComponent>(out var physComp))
+                if (_prototype.TryIndex(stackProto.Spawn, out var defaultProto) && 
+                    defaultProto.TryGetComponent<PhysicalCompositionComponent>(out var physComp))
                 {
                     foreach (var (mat, matAmount) in physComp.MaterialComposition)
                     {
