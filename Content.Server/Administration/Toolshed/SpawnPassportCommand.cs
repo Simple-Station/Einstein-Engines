@@ -31,7 +31,7 @@ public sealed class SpawnPassportCommand : ToolshedCommand
     }
 
     [CommandImplementation]
-    public void Rejuvenate(IInvocationContext ctx)
+    public void SpawnPassport(IInvocationContext ctx)
     {
         _passportSystem ??= GetSys<SharedPassportSystem>();
         _ticker ??= GetSys<GameTicker>();
