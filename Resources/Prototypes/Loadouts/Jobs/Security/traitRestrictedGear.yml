@@ -251,6 +251,9 @@
       group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
       inverted: true
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Oni
       departments:
         - Security
   items:
@@ -614,22 +617,22 @@
     - WeaponRevolverArgenti
 
 # Energy Revolver
-- type: loadout
-  id: LoadoutSecurityRestrictedGearEnergyRevolver
-  category: JobsSecurityAUncategorized
-  cost: 14
-  canBeHeirloom: true
-  requirements:
-    - !type:CharacterTraitRequirement
-      traits:
-        - RestrictedGear
-    - !type:OverallTimeRequirement
-      min: 72000 # 20 hours
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityWeapons
-    - !type:CharacterDepartmentRequirement
-      inverted: true
-      departments:
-        - Security
-  items:
-    - WeaponEnergyRevolver
+#- type: loadout
+#  id: LoadoutSecurityRestrictedGearEnergyRevolver
+#  category: JobsSecurityAUncategorized
+#  cost: 14
+#  canBeHeirloom: true
+#  requirements:
+#    - !type:CharacterTraitRequirement
+#     traits:
+#        - RestrictedGear
+#    - !type:OverallTimeRequirement
+#      min: 72000 # 20 hours
+#    - !type:CharacterItemGroupRequirement
+#      group: LoadoutSecurityWeapons
+#    - !type:CharacterDepartmentRequirement
+#      inverted: true
+#      departments:
+#        - Security
+#  items:
+#    - WeaponEnergyRevolver
