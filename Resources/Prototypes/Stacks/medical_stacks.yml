@@ -4,7 +4,6 @@
   icon: { sprite: "/Textures/Objects/Specific/Medical/medical.rsi", state: ointment }
   spawn: Ointment
   maxCount: 10
-  itemSize: 1
 
 - type: stack
   id: AloeCream
