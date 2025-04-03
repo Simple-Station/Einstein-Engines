@@ -14211,3 +14211,26 @@ Entries:
   id: 7080
   time: '2025-04-02T20:10:09.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2141
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: Engi borgs can now carry electronics, and medical borgs can carry organs
+    - type: Add
+      message: Salvage borgs now get a PKA module
+    - type: Tweak
+      message: >-
+        All mining drills have had their damage turned to piercing and have
+        received a moderate damage buff
+    - type: Tweak
+      message: >-
+        Exosuit drills now swing at the same speed as normal drills (why were
+        they worse???)
+    - type: Tweak
+      message: The RPD and RCD modules for borg have been merged into one
+    - type: Tweak
+      message: Salvage can now purchase drills from their vendor
+    - type: Tweak
+      message: Salvage borgs mining module no longer contains a shovel
+  id: 7081
+  time: '2025-04-03T07:30:33.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2145
