@@ -720,10 +720,11 @@
     - BoneGel
     # Frontier: droppable borg items
     droppableItems:
-    - id: OrganHumanBrain
+    - id: OrganHumanHeart
       whitelist:
         components:
         - BodyPart
+        - Organ
         tags:
         - Organ
     # End Frontier: droppable borg items
@@ -747,10 +748,11 @@
     - BoneGel
     # Frontier: droppable borg items
     droppableItems:
-    - id: OrganHumanBrain
+    - id: OrganHumanHeart
       whitelist:
         components:
         - BodyPart
+        - Organ
         tags:
         - Organ
     # End Frontier: droppable borg items
