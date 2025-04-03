@@ -1,4 +1,4 @@
-namespace Content.Shared._NF.Interaction.Components;
+namespace Content.Client._NF.Interaction.Components;
 
 [RegisterComponent]
 // Client-side component of the HandPlaceholder. Creates and tracks a client-side entity for hand blocking visuals

@@ -5,7 +5,6 @@ using Content.Shared.Silicons.Borgs.Components;
 using Content.Shared.Whitelist;
 using Content.Server.Silicons.Borgs.Components;
 using Robust.Shared.Containers;
-using Content.Shared._NF.Interaction.Components; // Frontier
 
 namespace Content.Server.Silicons.Borgs;
 

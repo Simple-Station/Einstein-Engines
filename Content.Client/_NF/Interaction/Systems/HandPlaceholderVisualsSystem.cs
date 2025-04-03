@@ -1,7 +1,7 @@
 using Content.Client._NF.Hands.UI;
 using Content.Client.Items;
 using Content.Client.Items.Systems;
-using Content.Shared._NF.Interaction.Components;
+using Content.Client._NF.Interaction.Components;
 using JetBrains.Annotations;
 using Robust.Client.GameObjects;
 
