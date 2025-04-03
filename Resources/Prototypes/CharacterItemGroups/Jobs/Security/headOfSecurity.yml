@@ -39,6 +39,8 @@
       id: LoadoutCommandHoSEnergyGun
     - type: loadout
       id: LoadoutCommandHoSBRDIR25
+    - type: loadout
+      id: LoadoutCommandHoSTerminus
 
 #- type: characterItemGroup
 #  id: LoadoutHeadOfSecurityEyes

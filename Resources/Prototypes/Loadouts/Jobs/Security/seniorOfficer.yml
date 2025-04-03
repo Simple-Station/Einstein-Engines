@@ -14,7 +14,7 @@
   guideEntry: SecurityWeapons
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutSecuritySeniorOfficerWeapons
+      group: LoadoutSeniorOfficerWeapons
     - !type:CharacterJobRequirement
       jobs:
         - SeniorOfficer

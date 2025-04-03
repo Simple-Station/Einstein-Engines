@@ -7,14 +7,14 @@
 
 # Equipment
 - type: loadout
-  id: LoadoutGearWardenTerminus
+  id: LoadoutWardenTerminus
   category: JobsSecurityWarden
   cost: 0
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutWardenWeapon
+      group: LoadoutWardenWeapons
     - !type:CharacterJobRequirement
       jobs:
         - Warden

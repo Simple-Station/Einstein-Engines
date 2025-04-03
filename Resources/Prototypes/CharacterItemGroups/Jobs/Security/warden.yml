@@ -18,6 +18,13 @@
 #  id: LoadoutWardenEquipment
 #  maxItems: 1
 #  items:
+
+- type: characterItemGroup
+  id: LoadoutWardenWeapons
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutWardenTerminus
 #
 #- type: characterItemGroup
 #  id: LoadoutWardenEyes
