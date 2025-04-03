@@ -6,6 +6,25 @@
 # Ears
 
 # Equipment
+- type: loadout
+  id: LoadoutGearWardenTerminus
+  category: JobsSecurityWarden
+  cost: 0
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutWardenWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - Warden
+    - !type:CharacterAgeRequirement
+      min: 21
+    - !type:CharacterSpeciesRequirement
+      species:
+      - Oni
+  items:
+    - Terminus
 
 # Eyes
 

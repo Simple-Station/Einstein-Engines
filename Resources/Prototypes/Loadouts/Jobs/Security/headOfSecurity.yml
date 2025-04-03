@@ -27,6 +27,26 @@
     - WeaponPulsePistolHoS
 
 - type: loadout
+  id: LoadoutCommandHoSTerminus
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+    - !type:CharacterAgeRequirement
+      min: 21
+    - !type:CharacterSpeciesRequirement
+      species:
+      - Oni
+  items:
+    - Terminus
+
+- type: loadout
   id: LoadoutCommandHoSWt550
   category: JobsSecurityHeadOfSecurity
   cost: 0
