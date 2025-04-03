@@ -239,7 +239,7 @@
 - type: loadout
   id: LoadoutSecurityRestrictedGearEquipmentTruncheon
   category: JobsSecurityAUncategorized
-  cost: 10
+  cost: 8
   canBeHeirloom: true
   requirements:
     - !type:CharacterTraitRequirement
