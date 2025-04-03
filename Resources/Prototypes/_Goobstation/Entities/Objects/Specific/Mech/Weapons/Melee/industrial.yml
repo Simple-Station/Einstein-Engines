@@ -18,7 +18,7 @@
     wideAnimationRotation: -90
     soundHit:
       path: "/Audio/Items/drill_hit.ogg"
-    attackRate: 3.5
+    attackRate: 0.25 # Should be better then a normal drill not worse
     damage:
       groups:
         Brute: 12 # Giant fucking mech drill
@@ -45,7 +45,7 @@
     wideAnimationRotation: -90
     soundHit:
       path: "/Audio/Items/drill_hit.ogg"
-    attackRate: 4
+    attackRate: 0.25 # Should be better then a normal drill not worse
     damage:
       groups:
         Brute: 24
