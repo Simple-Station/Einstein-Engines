@@ -1,3 +1,4 @@
+using Content.Shared._NF.Interaction.Components;
 using Content.Shared.Hands;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
