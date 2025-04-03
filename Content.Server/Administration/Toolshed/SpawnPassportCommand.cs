@@ -14,7 +14,7 @@ public sealed class SpawnPassportCommand : ToolshedCommand
     private GameTicker? _ticker;
 
     [CommandImplementation]
-    public IEnumerable<EntityUid> Rejuvenate([PipedArgument] IEnumerable<EntityUid> input)
+    public IEnumerable<EntityUid> SpawnPassport([PipedArgument] IEnumerable<EntityUid> input)
     {
         _passportSystem ??= GetSys<SharedPassportSystem>();
         _ticker ??= GetSys<GameTicker>();
