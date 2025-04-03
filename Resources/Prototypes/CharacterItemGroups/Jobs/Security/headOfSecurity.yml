@@ -21,7 +21,7 @@
 
 - type: characterItemGroup
   maxItems: 1
-  id: LoadoutHeadOfSecurityWeapon
+  id: LoadoutHeadOfSecurityWeapons
   items:
     - type: loadout
       id: LoadoutCommandHoSPulsePistol
