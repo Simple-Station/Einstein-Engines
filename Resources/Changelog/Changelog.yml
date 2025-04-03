@@ -14243,3 +14243,16 @@ Entries:
   id: 7082
   time: '2025-04-03T10:38:56.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2088
+- author: mrs
+  changes:
+    - type: Tweak
+      message: >-
+        Cyberiad: PA and SM SMES charge from the main grid instead of their
+        respective power sources directly.
+    - type: Tweak
+      message: 'Cyberiad: HV grid reinforced.'
+    - type: Fix
+      message: 'Cyberiad: Security substation finally connected to HV grid.'
+  id: 7083
+  time: '2025-04-03T18:04:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2146
