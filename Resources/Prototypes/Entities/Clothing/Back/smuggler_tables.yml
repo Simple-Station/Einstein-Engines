@@ -154,7 +154,6 @@
       weight: 0.5
     - id: CigCartonGreen
     - id: CigCartonRed
-    - id: CigCartonGreen
     - id: CigCartonBlack
     - id: CigarCase
       amount: !type:RangeNumberSelector
