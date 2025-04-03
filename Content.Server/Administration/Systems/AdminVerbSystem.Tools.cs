@@ -13,6 +13,7 @@ using Content.Server.Stack;
 using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
 using Content.Server.Weapons.Ranged.Systems;
+using Content.Shared._EE.Contractors.Systems;
 using Content.Shared.Access;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
@@ -55,6 +56,7 @@ public sealed partial class AdminVerbSystem
     [Dependency] private readonly SharedTransformSystem _xformSystem = default!;
     [Dependency] private readonly MetaDataSystem _metaSystem = default!;
     [Dependency] private readonly GunSystem _gun = default!;
+    [Dependency] private readonly SharedPassportSystem _passportSystem = default!;
 
     private void AddTricksVerbs(GetVerbsEvent<Verb> args)
     {
@@ -126,6 +128,25 @@ public sealed partial class AdminVerbSystem
                     Priority = (int) TricksVerbPriorities.Rejuvenate,
                 };
                 args.Verbs.Add(rejuvenate);
+            }
+
+            if (TryComp<ActorComponent>(args.Target, out var targetActor))
+            {
+                Verb spawnPassport = new()
+                {
+                    Text = "Spawn Passport",
+                    Category = VerbCategory.Tricks,
+                    Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/AdminActions/spawnpassport.png")),
+                    Act = () =>
+                    {
+                        var profile = _ticker.GetPlayerProfile(targetActor.PlayerSession);
+                        _passportSystem.SpawnPassportForPlayer(args.Target, profile);
+                    },
+                    Impact = LogImpact.Medium,
+                    Message = Loc.GetString("command-description-spawnpassport"),
+                    Priority = (int) TricksVerbPriorities.SpawnPassport,
+                };
+                args.Verbs.Add(spawnPassport);
             }
 
             if (!HasComp<GodmodeComponent>(args.Target))
@@ -889,5 +910,6 @@ public sealed partial class AdminVerbSystem
         SnapJoints = -27,
         MakeMinigun = -28,
         SetBulletAmount = -29,
+        SpawnPassport = -30,
     }
 }
