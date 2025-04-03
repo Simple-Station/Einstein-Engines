@@ -14306,3 +14306,14 @@ Entries:
   id: 7086
   time: '2025-04-03T18:18:11.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2143
+- author: rbertoche
+  changes:
+    - type: Tweak
+      message: >-
+        Enhances roundstart antagonist selection making sure all slots are
+        allocated
+    - type: Fix
+      message: Prevents Thief or others antags from causing the round to fail to start
+  id: 7087
+  time: '2025-04-03T19:18:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1339
