@@ -1,6 +1,6 @@
 - type: entity
   id: BorgModuleSyndicateWeaponAdvanced
-  parent: [ BaseBorgModule, BaseProviderBorgModule, BaseSyndicateContraband ]
+  parent: [ BaseBorgModule, BaseProviderBorgModule ]
   name: advanced weapon cyborg module
   components:
   - type: Sprite
@@ -16,7 +16,7 @@
 
 - type: entity
   id: BorgModuleOperativeUniversal
-  parent: [ BaseBorgModuleSyndicate, BaseProviderBorgModule, BaseSyndicateContraband ]
+  parent: [ BaseBorgModuleSyndicate, BaseProviderBorgModule ]
   name: operative cyborg module
   description: A module that comes with a crowbar, an Emag, an Access Breaker and a syndicate pinpointer.
   suffix: Universal Pinpointer
