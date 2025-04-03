@@ -33,7 +33,7 @@ public sealed class AntagSelectionPlayerPool (List<List<ICommonSession>> ordered
         DebugTools.Assert(count > 0, $"The count {nameof(count)} of requested sessions must be greater than zero!");
 
         sessions = null;
-        List<ICommonSession> session_list = [];
+        var session_list = new List<ICommonSession>();
 
         foreach (var pool in orderedPools)
         {

@@ -240,7 +240,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
 
             const int maxRetries = 4;
             var retry = 0;
-            List<ICommonSession> failed = [];
+            var failed = new List<ICommonSession>();
 
             while (ent.Comp.SelectedSessions.Count < count && retry < maxRetries)
             {
