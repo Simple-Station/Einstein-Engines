@@ -23,10 +23,16 @@ public sealed class SpawnArtifactSystem : EntitySystem
 
     private void OnActivate(EntityUid uid, SpawnArtifactComponent component, ArtifactActivatedEvent args)
     {
-        if (!_artifact.TryGetNodeData(uid, NodeDataSpawnAmount, out int amount))
-            amount = 0;
+        // if it is a artifact or not
+        var isArtifact = EntityManager.HasComponent<ArtifactComponent>(uid);
 
-        if (amount >= component.MaxSpawns)
+        int? amount = null;
+
+        if (isArtifact)
+            if (!_artifact.TryGetNodeData(uid, NodeDataSpawnAmount, out amount))
+                amount = 0;
+
+        if (!(amount is null) && amount >= component.MaxSpawns)
             return;
 
         if (component.Spawns is not {} spawns)
@@ -41,6 +47,9 @@ public sealed class SpawnArtifactSystem : EntitySystem
             var ent = Spawn(spawn, spawnCord);
             _transform.AttachToGridOrMap(ent);
         }
-        _artifact.SetNodeData(uid, NodeDataSpawnAmount, amount + 1);
+
+        if (amount is not null)
+            if (EntityManager.HasComponent<ArtifactComponent>(uid))
+                _artifact.SetNodeData(uid, NodeDataSpawnAmount, amount + 1);
     }
 }
