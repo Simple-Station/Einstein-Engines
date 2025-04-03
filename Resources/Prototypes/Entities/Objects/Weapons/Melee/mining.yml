@@ -69,17 +69,15 @@
     range: 1.5
     heavyStaminaCost: 0.7
     damage:
-      groups:
-        Piercing: 6
       types:
         Structural: 15
+        Piercing: 6
   - type: DamageOtherOnHit
     staminaCost: 9
     damage:
-      groups:
-        Piercing: 9
       types:
         Structural: 25
+        Piercing: 9
   - type: ThrowingAngle
     angle: 270
 
@@ -100,16 +98,14 @@
       path: "/Audio/Items/drill_hit.ogg"
     heavyStaminaCost: 0.55 # More efficient so less stamina needed to use
     damage:
-      groups:
-        Piercing: 12
       types:
+        Piercing: 12
         Structural: 50
   - type: DamageOtherOnHit
     damage:
-      groups:
-        Piercing: 18
       types:
         Structural: 40
+        Piercing: 18
 
 - type: entity
   abstract: true
