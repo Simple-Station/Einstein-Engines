@@ -14256,3 +14256,14 @@ Entries:
   id: 7083
   time: '2025-04-03T18:04:35.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2146
+- author: GNUtopia
+  changes:
+    - type: Add
+      message: Added advanced bloodloss chem Artiplates
+    - type: Add
+      message: Added stamina-restoring chem Cryanobalamin
+    - type: Add
+      message: Added stamina-restoring chem Lift Lovers Special
+  id: 7084
+  time: '2025-04-03T18:09:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2124
