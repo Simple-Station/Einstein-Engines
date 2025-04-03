@@ -11,7 +11,7 @@
         - Tajaran
     - !type:CharacterNationalityRequirement
       inverted: true
-      species:
+      nationalities:
         - Adhomai
   functions:
     - !type:TraitModifyLanguages
