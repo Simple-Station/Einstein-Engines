@@ -25,3 +25,6 @@ employer_description_cybersun = The public face of the Solarian military-industr
 
 employer_name_interdyne = Interdyne
 employer_description_interdyne = A leading name in Solarian biomedical research, cybernetics, and pharmaceutical development. Unlike its competitor Zeng-Hu, Interdyne takes a more pragmatic approach, prioritising efficiency and durability over elegance. Its advanced medical implants and combat-grade augmentations are standard issue in the Solarian military, making it the go-to choice for those who expect to take a beating—and keep fighting.
+
+employer_name_idrisincorporated = Idris Incorporated
+employer_description_idrisincorporated = Idris Incorporated is an interstellar corporate bank headquartered in the Sol Alliance. The bank has begun offering hiring bonuses to those who work for other major interstellar corporations to draw people away from their competitors. However, they are still in a struggle with NanoTrasen due to its large employee base mainly using the company's bank as their method of storing funds, preventing Idris from having a large number of members.

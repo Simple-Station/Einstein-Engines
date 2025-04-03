@@ -87,3 +87,13 @@
       languagesUnderstood:
         - SiikMaas
   passportPrototype: AdhomaiPassport
+
+- type: nationality
+  id: GoldenDeep
+  nameKey: nationality_name_goldendeep
+  descriptionKey: nationality_description_goldendeep
+  passportPrototype: GoldenDeepPassport
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - IPC
