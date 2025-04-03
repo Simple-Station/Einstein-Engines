@@ -22,7 +22,7 @@
   - type: EyeProtection
 
 - type: entity
-  parent: [ClothingEyesBase, ShowSecurityIcons, ShowMedicalIcons]
+  parent: [ClothingEyesBase, ShowSecurityIcons, ShowMedicalIcons, ClothingEyesHudMedical]
   id: ClothingEyesGlassesCorpsman
   name: corpsman glasses
   description: Security glasses designed for the Corpsman for medical and security needs. Now with a cool blue hue!

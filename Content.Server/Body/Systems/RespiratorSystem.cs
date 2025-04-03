@@ -5,10 +5,12 @@ using Content.Server.Chat.Systems;
 using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Server.EntityEffects.EffectConditions;
 using Content.Server.EntityEffects.Effects;
+using Content.Shared._Goobstation.MartialArts.Components; // Goobstation - Martial Arts
 using Content.Server.Popups;
 using Content.Shared.Alert;
 using Content.Shared.Atmos;
 using Content.Shared.Body.Components;
+using Content.Shared._Shitmed.Body.Components; // Shitmed Change
 using Content.Shared._Shitmed.Body.Organ;
 using Content.Shared.Body.Prototypes;
 using Content.Shared.Chemistry.Components;
@@ -61,7 +63,11 @@ public sealed class RespiratorSystem : EntitySystem
     {
         if(respirator.Saturation < respirator.SuffocationThreshold)
             return false;
-        return !TryComp<PullableComponent>(uid, out var pullable) || pullable.GrabStage != GrabStage.Suffocate;
+        if (TryComp<PullableComponent>(uid, out var pullable)
+            && pullable.GrabStage == GrabStage.Suffocate)
+            return false;
+        
+        return !HasComp<KravMagaBlockedBreathingComponent>(uid);
     }
     // Goobstation end
     private void OnMapInit(Entity<RespiratorComponent> ent, ref MapInitEvent args)
@@ -86,7 +92,7 @@ public sealed class RespiratorSystem : EntitySystem
 
             respirator.NextUpdate += respirator.UpdateInterval;
 
-            if (_mobState.IsDead(uid))
+            if (_mobState.IsDead(uid) || HasComp<BreathingImmunityComponent>(uid)) // Shitmed: BreathingImmunity
                 continue;
 
             if (HasComp<RespiratorImmuneComponent>(uid))

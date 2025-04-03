@@ -1,0 +1,22 @@
+- type: trait
+  id: WheelchairBound
+  category: Physical
+  points: 10
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - ParkourTraining
+        - Sluggish
+        - SnailPaced
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: BuckleOnMapInit
+          prototype: VehicleWheelchair
+        - type: LegsStartParalyzed

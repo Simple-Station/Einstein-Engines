@@ -10,6 +10,12 @@
     cost: 150
   - id: Soap
     cost: 200
+  - id: BoxMRE
+    cost: 500
+  - id: CardBoxBlack
+    cost: 200
+  - id: DrinkBeerBottleFull
+    cost: 100
   - id: PKAUpgradeLight
     cost: 500
   - id: SeismicCharge
@@ -29,14 +35,34 @@
     cost: 500
   - id: ClothingShoesBootsJack
     cost: 550
+  - id: MedkitFilled
+    cost: 400
   - id: MedkitBruteFilled
     cost: 600
   - id: MedkitBurnFilled
+    cost: 600
+  - id: MedkitAdvancedFilled
+    cost: 1500
+  - id: FoodBoxPizzaFilled
+    cost: 300
+  - id: MicrowaveMachineCircuitboard
+    cost: 500
+  - id: FoodBoxDonkpocketBerry
+    cost: 500
+  - id: FoodBoxDonkpocketHonk
+    cost: 500
+  - id: FoodBoxDonkpocketPizza
+    cost: 500
+  - id: DrinkCanPack
     cost: 600
   - id: LavalandJaunter
     cost: 750
   - id: WeaponCrusher
     cost: 750
+  - id: MiningDrill
+    cost: 750
+  - id: WeaponCrusherGlaive
+    cost: 2400
   - id: WeaponProtoKineticAccelerator
     cost: 750
   - id: SurvivalMedipen
@@ -78,10 +104,12 @@
     cost: 6400
   - id: WeaponRifleSVTEmpty
     cost: 6400
+  - id: OreBagOfHolding
+    cost: 6600
  # - id: WeaponPlasmaCutter -- TODO: Port from goob
  #   cost: 1700
   - id: SpaceCash1000
-    cost: 2000
+    cost: 1000
   - id: ShelterCapsule
     cost: 2000
   # TODO: super resonator for 2500

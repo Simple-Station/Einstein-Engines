@@ -38,6 +38,7 @@
     - JobsMedical
     - JobsSecurity
     - JobsService
+    - JobsZMisc
 
 - type: loadoutCategory
   id: JobsAUncategorized
@@ -290,6 +291,19 @@
 
 - type: loadoutCategory
   id: JobsServiceReporter
+
+  # Misc
+- type: loadoutCategory
+  id: JobsZMisc # this breaks convention a bit but the oddballs should be after everything else
+  subCategories: # this can also be for unique/station-specific jobs like boxer/gladiator
+    - JobsZMiscAUncategorized
+    - JobsZMiscPrisoner
+
+- type: loadoutCategory
+  id: JobsZMiscAUncategorized
+
+- type: loadoutCategory
+  id: JobsZMiscPrisoner
 
 # Now Leaving: Jobs Category
 

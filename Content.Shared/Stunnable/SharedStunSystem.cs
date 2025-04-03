@@ -12,6 +12,8 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Movement.Events;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Standing;
+using Content.Shared.Jittering;
+using Content.Shared.Speech.EntitySystems;
 using Content.Shared.StatusEffect;
 using Content.Shared.Throwing;
 using Content.Shared.Whitelist;
@@ -37,6 +39,9 @@ public abstract class SharedStunSystem : EntitySystem
     [Dependency] private readonly StatusEffectsSystem _statusEffect = default!;
     [Dependency] private readonly SharedLayingDownSystem _layingDown = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
+    [Dependency] private readonly SharedStutteringSystem _stutter = default!; // Stun meta
+    [Dependency] private readonly SharedJitteringSystem _jitter = default!; // Stun meta
+    [Dependency] private readonly ClothingModifyStunTimeSystem _modify = default!; // goob edit
 
     /// <summary>
     /// Friction modifier for knocked down players.
@@ -188,10 +193,17 @@ public abstract class SharedStunSystem : EntitySystem
     public bool TryStun(EntityUid uid, TimeSpan time, bool refresh,
         StatusEffectsComponent? status = null)
     {
+        time *= _modify.GetModifier(uid); // Goobstation
+
         if (time <= TimeSpan.Zero
             || !Resolve(uid, ref status, false)
             || !_statusEffect.TryAddStatusEffect<StunnedComponent>(uid, "Stun", time, refresh))
             return false;
+
+        // goob edit
+        _jitter.DoJitter(uid, time, refresh);
+        _stutter.DoStutter(uid, time, refresh);
+        // goob edit end
 
         var ev = new StunnedEvent();
         RaiseLocalEvent(uid, ref ev);
@@ -206,6 +218,8 @@ public abstract class SharedStunSystem : EntitySystem
     public bool TryKnockdown(EntityUid uid, TimeSpan time, bool refresh, DropHeldItemsBehavior behavior,
         StatusEffectsComponent? status = null)
     {
+        time *= _modify.GetModifier(uid); // Goobstation
+
         if (time <= TimeSpan.Zero || !Resolve(uid, ref status, false))
             return false;
 

@@ -22,6 +22,9 @@
       traits:
         - Foreigner
         - ForeignerLight
+    - !type:CharacterEmployerRequirement
+      employers:
+      - NanoTrasen
   weight: 10
   startingGear: ResearchDirectorGear
   icon: "JobIconResearchDirector"
@@ -68,7 +71,7 @@
     back: ClothingBackpackResearchDirectorFilled
     shoes: ClothingShoesColorBrown
     id: RnDPDA
-    ears: ClothingHeadsetRD
+    ears: ClothingHeadsetAltScience # Goobstation
     pocket1: BookPsionicsGuidebook
     pocket2: BibleMystagogue
   innerClothingSkirt: ClothingUniformJumpskirtResearchDirector

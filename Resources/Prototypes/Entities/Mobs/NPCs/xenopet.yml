@@ -506,8 +506,6 @@
     duration: 60
   - type: VentCrittersRule
     entries:
-    - id: MobLivingLight
-      prob: 0.01
     - id: MobLuminousPerson
       prob: 0.01
     - id: MobLuminousObject

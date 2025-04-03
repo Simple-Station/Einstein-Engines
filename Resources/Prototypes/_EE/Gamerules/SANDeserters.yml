@@ -85,7 +85,7 @@
     head: ClothingHeadHelmetSAN
     back: ClothingBackpackMerc
     mask: ClothingMaskGasMerc
-    gloves: ClothingHandsGlovesCombat
+    gloves: ClothingHandsMercGlovesCombat
     shoes: ClothingShoesBootsCombatFilled
     id: SANIdCard
     pocket1: WeaponPistolViperWood

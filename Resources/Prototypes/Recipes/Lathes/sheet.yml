@@ -3,7 +3,7 @@
   result: SheetSteel1
   applyMaterialDiscount: false
   miningPoints: 1
-  completetime: 0
+  completetime: 0.0083 # 0.25 per 30
   materials:
     RawIron: 100
     Coal: 30
@@ -20,8 +20,8 @@
   id: SheetGlass1
   result: SheetGlass1
   applyMaterialDiscount: false
-  miningPoints: 1
-  completetime: 0
+  miningPoints: 1 # 0.25 per 30
+  completetime: 0.0083
   materials:
     RawQuartz: 100
 
@@ -37,7 +37,7 @@
   result: SheetRGlass1
   applyMaterialDiscount: false
   miningPoints: 1
-  completetime: 0
+  completetime: 0.025 # 0.75 per 30
   materials:
     Glass: 100
     Steel: 50
@@ -55,7 +55,7 @@
 - type: latheRecipe
   id: SheetPGlass1
   result: SheetPGlass1
-  completetime: 0
+  completetime: 0.0083 # 0.75 per 30
   miningPoints: 16
   materials:
     RawQuartz: 100
@@ -72,7 +72,7 @@
 - type: latheRecipe
   id: SheetRPGlass1
   result: SheetRPGlass1
-  completetime: 0
+  completetime: 0.025 # 0.75 per 30
   miningPoints: 16
   materials:
     RawQuartz: 100
@@ -93,7 +93,7 @@
 - type: latheRecipe
   id: SheetPlasma1
   result: SheetPlasma1
-  completetime: 0
+  completetime: 0.0116 # 0.35 per 30
   miningPoints: 15
   materials:
     RawPlasma: 100
@@ -108,7 +108,7 @@
 - type: latheRecipe
   id: SheetPlasteel1
   result: SheetPlasteel1
-  completetime: 0
+  completetime: 0.025 # 0.75 per 30
   miningPoints: 17
   materials:
     RawPlasma: 100
@@ -134,7 +134,7 @@
 - type: latheRecipe
   id: SheetUGlass1
   result: SheetUGlass1
-  completetime: 0
+  completetime: 0.0083 # 0.25 per 30
   miningPoints: 31
   materials:
     RawUranium: 100
@@ -151,7 +151,7 @@
 - type: latheRecipe
   id: SheetRUGlass1
   result: SheetRUGlass1
-  completetime: 0
+  completetime: 0.025 # 0.75 per 30
   miningPoints: 31
   materials:
     RawUranium: 100
@@ -193,7 +193,7 @@
 - type: latheRecipe
   id: MaterialDiamond
   result: MaterialDiamond1
-  completetime: 0
+  completetime: 0.026 # 0.8 over 30
   miningPoints: 50
   materials:
     RawDiamond: 100
@@ -201,7 +201,7 @@
 - type: latheRecipe
   id: SheetUranium1
   result: SheetUranium1
-  completetime: 0
+  completetime: 0.02 # 0.6 seconds for 30
   miningPoints: 30
   materials:
     RawUranium: 100
@@ -209,7 +209,7 @@
 - type: latheRecipe
   id: IngotGold1
   result: IngotGold1
-  completetime: 0
+  completetime: 0.016 # 0.5 over 30
   miningPoints: 18
   materials:
     RawGold: 100
@@ -217,7 +217,7 @@
 - type: latheRecipe
   id: IngotSilver1
   result: IngotSilver1
-  completetime: 0
+  completetime: 0.013 # 0.4 over 30
   miningPoints: 16
   materials:
     RawSilver: 100
@@ -233,7 +233,7 @@
 - type: latheRecipe
   id: MaterialBananium1
   result: MaterialBananium1
-  completetime: 0
+  completetime: 0.1 # 1 over 10
   miningPoints: 60
   materials:
     RawBananium: 100
@@ -291,7 +291,7 @@
   result: IngotTungsten1
   applyMaterialDiscount: false
   miningPoints: 5
-  completetime: 4
+  completetime: 0.13 # Or, 4 seconds over 30 ingots.
   materials:
     RawTungsten: 100
     RawIron: 100

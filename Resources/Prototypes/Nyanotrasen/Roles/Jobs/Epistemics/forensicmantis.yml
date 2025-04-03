@@ -26,6 +26,10 @@
           inverted: true
           traits:
             - ShadowkinBlackeye
+    - !type:CharacterEmployerRequirement
+      inverted: true
+      employers:
+      - Unemployed
   startingGear: ForensicMantisGear
   icon: "JobIconForensicMantis"
   supervisors: job-supervisors-rd
