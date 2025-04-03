@@ -24,10 +24,10 @@
   - type: LanguageKnowledge
     speaks:
     - TauCetiBasic
-    - SolCommon
+    - Qiilour
     understands:
     - TauCetiBasic
-    - SolCommon
+    - Qiilour
   - type: Speech
     speechSounds: Xelthia
     speechVerb: Xelthia
