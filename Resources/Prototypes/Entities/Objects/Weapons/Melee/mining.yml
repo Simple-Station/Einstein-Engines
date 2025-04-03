@@ -70,16 +70,16 @@
     heavyStaminaCost: 0.7
     damage:
       groups:
-        Brute: 3
+        Piercing: 6
       types:
         Structural: 15
   - type: DamageOtherOnHit
     staminaCost: 9
     damage:
       groups:
-        Brute: 9
+        Piercing: 9
       types:
-        Structural: 15
+        Structural: 25
   - type: ThrowingAngle
     angle: 270
 
@@ -101,15 +101,15 @@
     heavyStaminaCost: 0.55 # More efficient so less stamina needed to use
     damage:
       groups:
-        Brute: 6
+        Piercing: 12
       types:
-        Structural: 30
+        Structural: 50
   - type: DamageOtherOnHit
     damage:
       groups:
-        Brute: 18
+        Piercing: 18
       types:
-        Structural: 30
+        Structural: 40
 
 - type: entity
   abstract: true

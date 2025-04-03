@@ -12,7 +12,7 @@
     - Pickaxe
     - IndustrialMech
   - type: MeleeWeapon
-    canWideSwing: false
+    canWideSwing: true
     autoAttack: true
     angle: 0
     wideAnimationRotation: -90
@@ -21,9 +21,9 @@
     attackRate: 3.5
     damage:
       groups:
-        Brute: 9
+        Brute: 12 # Giant fucking mech drill
       types:
-        Structural: 40 # ~10 seconds for solid wall / ~21 secods for reinforced wall
+        Structural: 50 # Giant fucking mech drill
 
 - type: entity
   id: WeaponMechMeleeDrillDiamond
@@ -39,7 +39,7 @@
     - Pickaxe
     - IndustrialMech
   - type: MeleeWeapon
-    canWideSwing: false
+    canWideSwing: true
     autoAttack: true
     angle: 0
     wideAnimationRotation: -90
@@ -48,6 +48,6 @@
     attackRate: 4
     damage:
       groups:
-        Brute: 18
+        Brute: 24
       types:
-        Structural: 60 # ~3 seconds for solid wall / 9 seconds for reinforced wall
+        Structural: 100 # Giant fucking mech drill
