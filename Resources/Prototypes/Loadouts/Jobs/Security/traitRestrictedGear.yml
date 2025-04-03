@@ -251,9 +251,6 @@
       group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
       inverted: true
-    - !type:CharacterSpeciesRequirement
-      species:
-        - Oni
       departments:
         - Security
   items:
