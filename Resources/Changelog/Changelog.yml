@@ -14267,3 +14267,27 @@ Entries:
   id: 7084
   time: '2025-04-03T18:09:56.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2124
+- author: mrs
+  changes:
+    - type: Add
+      message: Asterisk to map rotation.
+    - type: Add
+      message: >-
+        Asterisk: AI sat, holopads, AI turrets in the vault and satellite,
+        senior roles, and prosecutor office.
+    - type: Tweak
+      message: >-
+        Asterisk: Atmostech roles from 1 > 2. Prisoner roles from 2 > 3. Prison
+        guard role 0 > 2.
+    - type: Tweak
+      message: >-
+        Asterisk: Atmos filtering goes to ports instead of chambers. Burn mix
+        injector now has a mixer instead of a single port. Burn chamber
+        atmosphere is now a vacuum.
+    - type: Tweak
+      message: 'Asterisk: Replaced evil psionic pod with a regular cloning pod.'
+    - type: Remove
+      message: 'Asterisk: Privacy. The AI is always watching...'
+  id: 7085
+  time: '2025-04-03T18:12:11.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2104
