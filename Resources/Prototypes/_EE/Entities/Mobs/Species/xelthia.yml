@@ -9,6 +9,8 @@
   - type: Icon # It will not have an icon in the adminspawn menu without this. Body parts seem fine for whatever reason.
     sprite: Mobs/Species/Xelthia/parts.rsi
     state: full
+  - type: Body
+    prototype: Xelthia
   - type: Thirst
   - type: Carriable # Carrying system from nyanotrasen.
   - type: Butcherable

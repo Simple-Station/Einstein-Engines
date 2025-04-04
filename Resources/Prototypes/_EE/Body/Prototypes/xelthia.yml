@@ -15,7 +15,7 @@
       organs:
         heart: OrganAnimalHeart
         lungs: OrganHumanLungs
-        stomach: OrganReptilianStomach # figure out how to restrict them to just eating meat (particularly bugs) or whatever later.
+        stomach: OrganXelthiaStomach # figure out how to restrict them to just eating meat (particularly bugs) or whatever later.
         liver: OrganAnimalLiver
         kidneys: OrganHumanKidneys
       connections:
