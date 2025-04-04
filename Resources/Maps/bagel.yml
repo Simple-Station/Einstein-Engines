@@ -17216,15 +17216,6 @@ entities:
     - type: Transform
       pos: 38.117302,-32.42313
       parent: 2
-- proto: BoxShotgunFlare
-  entities:
-  - uid: 1050
-    components:
-    - type: Transform
-      pos: 11.479033,-35.3425
-      parent: 2
-    - type: BallisticAmmoProvider
-      unspawnedCount: 12
 - proto: BoxSterileMask
   entities:
   - uid: 1051
