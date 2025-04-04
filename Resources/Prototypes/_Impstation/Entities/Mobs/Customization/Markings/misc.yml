@@ -979,40 +979,16 @@
   - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
     state: thavenrightlegscales
 
-#- type: marking
-#  id: ThavenLHandScales
-#  bodyPart: LHand
-#  markingCategory: LeftArm
-#  speciesRestriction: [ Thaven ]
-#  forcedColoring: false
-#  followSkinColor: false
-#  sprites:
-#  - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
-#    state: thavenlefthandscales
-
-#- type: marking
-#  id: ThavenRHandScales
-#  bodyPart: RHand
-#  markingCategory: RightArm
-#  speciesRestriction: [ Thaven ]
-#  forcedColoring: false
-#  followSkinColor: false
-#  sprites:
-#  - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
-#    state: thavenrighthandscales
-
-#- type: marking
-#  id: Thiddies
-#  bodyPart: Chest
-#  markingCategory: Chest
-#  speciesRestriction: [ Thaven ]
-#  forcedColoring: true
-#  followSkinColor: true
-#  sprites:
-#  - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
-#    state: thavenbignaturals
-#commented out until i find a way to hide them under clothes
-
+- type: marking
+  id: Thiddies
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Thaven ]
+  forcedColoring: true
+  followSkinColor: true
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
+    state: thavenbignaturals
 
 - type: marking
   id: ThavenTopSurgery
