@@ -18,6 +18,6 @@
 
 - type: typingIndicator
   id: Thaven
-  spritePath: /Textures/_DV/Effects/speech.rsi
+  spritePath: /Textures/_EE/Effects/speech.rsi
   typingState: thaven0
   offset: -0.2, 0.1 # 0625

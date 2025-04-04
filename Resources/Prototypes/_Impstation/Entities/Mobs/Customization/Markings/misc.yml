@@ -980,28 +980,6 @@
     state: thavenrightlegscales
 
 - type: marking
-  id: Thiddies
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [ Thaven ]
-  forcedColoring: true
-  followSkinColor: true
-  sprites:
-  - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
-    state: thavenbignaturals
-
-- type: marking
-  id: ThavenTopSurgery
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [ Thaven ]
-  forcedColoring: true
-  followSkinColor: true
-  sprites:
-  - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
-    state: thavennonaturals
-
-- type: marking
   id: ThavenFishEars
   bodyPart: HeadSide
   markingCategory: Headside

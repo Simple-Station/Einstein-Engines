@@ -114,13 +114,13 @@
   id: MobThavenTorsoMale
   baseSprite:
     sprite: _Impstation/Mobs/Species/Thaven/parts.rsi
-    state: torso
+    state: torso_m
 
 - type: humanoidBaseSprite
   id: MobThavenTorsoFemale
   baseSprite:
     sprite: _Impstation/Mobs/Species/Thaven/parts.rsi
-    state: torso
+    state: torso_f
 
 
 - type: humanoidBaseSprite

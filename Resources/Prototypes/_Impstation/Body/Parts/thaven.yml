@@ -15,7 +15,7 @@
   parent: [PartThaven, BaseTorso]
   components:
   - type: Sprite
-    state: "torso"
+    state: "torso_m"
 
 - type: entity
   id: HeadThaven
