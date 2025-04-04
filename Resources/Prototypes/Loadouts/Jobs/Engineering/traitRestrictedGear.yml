@@ -120,7 +120,7 @@
 - type: loadout
   id: LoadoutEngineeringRestrictedGearGlovesInsulated
   category: JobsEngineeringAAUncategorized
-  cost: 3
+  cost: 5
   exclusive: true
   requirements:
     - !type:CharacterTraitRequirement
@@ -139,7 +139,7 @@
 - type: loadout
   id: LoadoutEngineeringRestrictedGearGlovesCombat
   category: JobsEngineeringAAUncategorized
-  cost: 4
+  cost: 5
   exclusive: true
   requirements:
     - !type:CharacterTraitRequirement
@@ -155,7 +155,7 @@
 - type: loadout
   id: LoadoutEngineeringRestrictedGearGlovesMerc
   category: JobsEngineeringAAUncategorized
-  cost: 4
+  cost: 5
   exclusive: true
   requirements:
     - !type:CharacterTraitRequirement
@@ -189,7 +189,7 @@
 - type: loadout
   id: LoadoutEngineeringRestrictedGearEquipmentHolofanProjector
   category: JobsEngineeringAtmosphericTechnician
-  cost: 2
+  cost: 1
   requirements:
     - !type:CharacterTraitRequirement
       traits:

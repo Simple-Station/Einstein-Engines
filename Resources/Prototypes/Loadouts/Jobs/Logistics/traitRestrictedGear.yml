@@ -83,7 +83,7 @@
 - type: loadout
   id: LoadoutCargoRestrictedGearWeaponsCombatKnife
   category: JobsLogisticsSalvageSpecialist
-  cost: 4
+  cost: 5
   canBeHeirloom: true
   customColorTint: true # Go read Neuromancer
   requirements:
@@ -104,7 +104,7 @@
 - type: loadout
   id: LoadoutCargoRestrictedGearWeaponsKitchenKnife
   category: JobsLogisticsSalvageSpecialist
-  cost: 4
+  cost: 5
   canBeHeirloom: true
   customColorTint: true # Go read Neuromancer
   requirements:
@@ -146,7 +146,7 @@
 - type: loadout
   id: LoadoutCargoRestrictedGearWeaponsKukriKnife
   category: JobsLogisticsSalvageSpecialist
-  cost: 4
+  cost: 5
   canBeHeirloom: true
   customColorTint: true # Go read Neuromancer
   requirements:
@@ -188,7 +188,7 @@
 - type: loadout
   id: LoadoutCargoRestrictedGearWeaponsThrowingKnife
   category: JobsLogisticsSalvageSpecialist
-  cost: 3
+  cost: 5
   canBeHeirloom: true
   customColorTint: true # Go read Neuromancer
   requirements:
@@ -211,7 +211,7 @@
 - type: loadout
   id: LoadoutCargoRestrictedGearWeaponsMachete
   category: JobsLogisticsSalvageSpecialist
-  cost: 4
+  cost: 6
   canBeHeirloom: true
   customColorTint: true # Go read Neuromancer
   requirements:
@@ -232,7 +232,7 @@
 - type: loadout
   id: LoadoutCargoRestrictedGearWeaponsCutlass
   category: JobsLogisticsSalvageSpecialist
-  cost: 5
+  cost: 6
   canBeHeirloom: true
   customColorTint: true # Go read Neuromancer
   requirements:
@@ -253,7 +253,7 @@
 - type: loadout
   id: LoadoutCargoRestrictedGearWeaponsKatana
   category: JobsLogisticsSalvageSpecialist
-  cost: 5
+  cost: 6
   canBeHeirloom: true
   customColorTint: true # Go read Neuromancer
   requirements:
@@ -274,7 +274,7 @@
 - type: loadout
   id: LoadoutCargoRestrictedGearWeaponsWakizashi
   category: JobsLogisticsSalvageSpecialist
-  cost: 4
+  cost: 5
   canBeHeirloom: true
   customColorTint: true # Go read Neuromancer
   requirements:

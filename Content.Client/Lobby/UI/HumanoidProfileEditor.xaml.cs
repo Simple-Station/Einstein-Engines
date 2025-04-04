@@ -31,6 +31,7 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Client.Utility;
 using Robust.Client.Player;
+using Robust.Shared;
 using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
 using Robust.Shared.Map;
@@ -257,30 +258,37 @@ namespace Content.Client.Lobby.UI
 
             #region Contractors
 
-            Background.Orphan();
-            CTabContainer.AddTab(Background, Loc.GetString("humanoid-profile-editor-background-tab"));
-
-            RefreshNationalities();
-            RefreshEmployers();
-            RefreshLifepaths();
-
-            NationalityButton.OnItemSelected += args =>
+            if(_cfgManager.GetCVar(CCVars.ContractorsEnabled))
             {
-                NationalityButton.SelectId(args.Id);
-                SetNationality(_nationalies[args.Id].ID);
-            };
+                Background.Orphan();
+                CTabContainer.AddTab(Background, Loc.GetString("humanoid-profile-editor-background-tab"));
 
-            EmployerButton.OnItemSelected += args =>
-            {
-                EmployerButton.SelectId(args.Id);
-                SetEmployer(_employers[args.Id].ID);
-            };
+                RefreshNationalities();
+                RefreshEmployers();
+                RefreshLifepaths();
 
-            LifepathButton.OnItemSelected += args =>
+                NationalityButton.OnItemSelected += args =>
+                {
+                    NationalityButton.SelectId(args.Id);
+                    SetNationality(_nationalies[args.Id].ID);
+                };
+
+                EmployerButton.OnItemSelected += args =>
+                {
+                    EmployerButton.SelectId(args.Id);
+                    SetEmployer(_employers[args.Id].ID);
+                };
+
+                LifepathButton.OnItemSelected += args =>
+                {
+                    LifepathButton.SelectId(args.Id);
+                    SetLifepath(_lifepaths[args.Id].ID);
+                };
+            }
+            else
             {
-                LifepathButton.SelectId(args.Id);
-                SetLifepath(_lifepaths[args.Id].ID);
-            };
+                Background.Visible = false;
+            }
 
             #endregion Contractors
 
