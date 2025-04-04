@@ -155,9 +155,11 @@
   - type: InjectableSolution
     solution: ammo
 
-#- type: entity
+
+- type: entity
   id: PelletShotgunLumen
   name: pellet (.50 lumenblast)
+  parent: BaseBullet
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
@@ -176,6 +178,10 @@
     energy: 1
   - type: StaminaDamageOnCollide
     damage: 60 # two shot stamcrit
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 5
 
 
 - type: entity

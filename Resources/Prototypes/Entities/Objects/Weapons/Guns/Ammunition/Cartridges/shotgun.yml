@@ -67,7 +67,7 @@
       - state: flare
         map: [ "enum.AmmoVisualLayers.Base" ]
   - type: CartridgeAmmo
-    proto: PelletShotgunFlare
+    proto: PelletShotgunLumen
   - type: SpentAmmoVisuals
     state: "flare"
 
