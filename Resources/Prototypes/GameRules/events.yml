@@ -635,3 +635,16 @@
       prob: 0.02
     - id: MobCarp
       prob: 0.005
+
+- type: entity
+  parent: BaseGameRule
+  id: SmugglerStashVariationPass
+  components:
+  - type: StationEvent
+    earliestStart: 0
+    duration: 1
+    minimumPlayers: 1
+    maxOccurrences: 2
+    weight: 10
+  - type: RandomSpawnRule
+    prototype: RandomSatchelSpawner

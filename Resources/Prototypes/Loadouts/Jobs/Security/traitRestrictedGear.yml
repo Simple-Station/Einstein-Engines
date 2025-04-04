@@ -239,7 +239,7 @@
 - type: loadout
   id: LoadoutSecurityRestrictedGearEquipmentTruncheon
   category: JobsSecurityAUncategorized
-  cost: 4
+  cost: 8
   canBeHeirloom: true
   requirements:
     - !type:CharacterTraitRequirement
@@ -259,7 +259,7 @@
 - type: loadout
   id: LoadoutSecurityRestrictedGearEquipmentEnergySword
   category: JobsSecurityAUncategorized
-  cost: 6
+  cost: 12
   canBeHeirloom: true
   requirements:
     - !type:CharacterTraitRequirement
@@ -281,7 +281,7 @@
 - type: loadout
   id: LoadoutSecurityRestrictedGearDisabler
   category: JobsSecurityAUncategorized
-  cost: 5
+  cost: 7
   canBeHeirloom: true
   requirements:
     - !type:CharacterTraitRequirement
@@ -302,7 +302,7 @@
 - type: loadout
   id: LoadoutSecurityRestrictedGearMk58
   category: JobsSecurityAUncategorized
-  cost: 5
+  cost: 8
   canBeHeirloom: true
   requirements:
     - !type:CharacterTraitRequirement
@@ -323,7 +323,7 @@
 - type: loadout
   id: LoadoutSecurityRestrictedGearRevolver
   category: JobsSecurityAUncategorized
-  cost: 5
+  cost: 8
   canBeHeirloom: true
   requirements:
     - !type:CharacterTraitRequirement
@@ -344,7 +344,7 @@
 - type: loadout
   id: LoadoutSecurityRestrictedGearRevolverDeckard
   category: JobsSecurityAUncategorized
-  cost: 5
+  cost: 8
   canBeHeirloom: true
   requirements:
     - !type:CharacterTraitRequirement
@@ -365,7 +365,7 @@
 - type: loadout
   id: LoadoutSecurityRestrictedGearPistolN1984
   category: JobsSecurityAUncategorized
-  cost: 6
+  cost: 9
   canBeHeirloom: true
   requirements:
     - !type:CharacterTraitRequirement
@@ -386,7 +386,7 @@
 - type: loadout
   id: LoadoutSecurityRestrictedGearPistolViper
   category: JobsSecurityAUncategorized
-  cost: 5
+  cost: 8
   canBeHeirloom: true
   requirements:
     - !type:CharacterTraitRequirement
@@ -407,7 +407,7 @@
 - type: loadout
   id: LoadoutSecurityRestrictedGearPistolViperWood
   category: JobsSecurityAUncategorized
-  cost: 5
+  cost: 8
   canBeHeirloom: true
   requirements:
     - !type:CharacterTraitRequirement
@@ -449,7 +449,7 @@
 - type: loadout
   id: LoadoutSecurityRestrictedGearEnergyGunMini
   category: JobsSecurityAUncategorized
-  cost: 5
+  cost: 7
   canBeHeirloom: true
   requirements:
     - !type:CharacterTraitRequirement
@@ -470,7 +470,7 @@
 - type: loadout
   id: LoadoutSecurityRestrictedGearEnergyGunPistol
   category: JobsSecurityAUncategorized
-  cost: 5
+  cost: 8
   canBeHeirloom: true
   requirements:
     - !type:CharacterTraitRequirement
@@ -491,7 +491,7 @@
 - type: loadout
   id: LoadoutSecurityRestrictedGearPistolPollock
   category: JobsSecurityAUncategorized
-  cost: 5
+  cost: 8
   canBeHeirloom: true
   requirements:
     - !type:CharacterTraitRequirement
@@ -512,7 +512,7 @@
 - type: loadout
   id: LoadoutSecurityRestrictedGearRevolverSnub
   category: JobsSecurityAUncategorized
-  cost: 6
+  cost: 9
   canBeHeirloom: true
   requirements:
     - !type:CharacterTraitRequirement
@@ -533,7 +533,7 @@
 - type: loadout
   id: LoadoutSecurityRestrictedGearRevolverK38Master
   category: JobsSecurityAUncategorized
-  cost: 5
+  cost: 8
   canBeHeirloom: true
   requirements:
     - !type:CharacterTraitRequirement
@@ -554,7 +554,7 @@
 - type: loadout
   id: LoadoutSecurityRestrictedGearRevolverFitz
   category: JobsSecurityAUncategorized
-  cost: 7
+  cost: 10
   canBeHeirloom: true
   requirements:
     - !type:CharacterTraitRequirement
@@ -575,7 +575,7 @@
 - type: loadout
   id: LoadoutSecurityRestrictedGearRevolverPython
   category: JobsSecurityAUncategorized
-  cost: 9
+  cost: 12
   canBeHeirloom: true
   requirements:
     - !type:CharacterTraitRequirement
@@ -596,7 +596,7 @@
 - type: loadout
   id: LoadoutSecurityRestrictedGearArgenti
   category: JobsSecurityAUncategorized
-  cost: 5
+  cost: 8
   canBeHeirloom: true
   requirements:
     - !type:CharacterTraitRequirement
@@ -614,22 +614,22 @@
     - WeaponRevolverArgenti
 
 # Energy Revolver
-- type: loadout
-  id: LoadoutSecurityRestrictedGearEnergyRevolver
-  category: JobsSecurityAUncategorized
-  cost: 10
-  canBeHeirloom: true
-  requirements:
-    - !type:CharacterTraitRequirement
-      traits:
-        - RestrictedGear
-    - !type:OverallTimeRequirement
-      min: 72000 # 20 hours
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityWeapons
-    - !type:CharacterDepartmentRequirement
-      inverted: true
-      departments:
-        - Security
-  items:
-    - WeaponEnergyRevolver
+#- type: loadout
+#  id: LoadoutSecurityRestrictedGearEnergyRevolver
+#  category: JobsSecurityAUncategorized
+#  cost: 14
+#  canBeHeirloom: true
+#  requirements:
+#    - !type:CharacterTraitRequirement
+#     traits:
+#        - RestrictedGear
+#    - !type:OverallTimeRequirement
+#      min: 72000 # 20 hours
+#    - !type:CharacterItemGroupRequirement
+#      group: LoadoutSecurityWeapons
+#    - !type:CharacterDepartmentRequirement
+#      inverted: true
+#      departments:
+#        - Security
+#  items:
+#    - WeaponEnergyRevolver
