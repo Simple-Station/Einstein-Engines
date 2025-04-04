@@ -74,6 +74,22 @@
     - The Arcade
     - The Stage
     # End DeltaV Additions
+    # Begin EE Additions
+    - The Supermatter Crystal
+    - The Singularity Generator
+    - The Bridge
+    - The Automated Trading Station
+    - The Logistics Shuttle
+    - The Perma Brig
+    - The Burn Chamber
+    - Hydroponics
+    - The Kitchen
+    - Epistemics
+    - Medical
+    - Security
+    - Lavaland
+    - The Tesla Generator
+    # End EE Additions
 
 - type: dataset
   id: FoodRestrictions
