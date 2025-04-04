@@ -14,7 +14,7 @@
     rules:
     - id: Thief
       prob: 0.5
-
+      
 - type: entity
   id: DeathMatch31
   parent: BaseGameRule
@@ -330,3 +330,6 @@
 #    - id: BloodbathPuddleMessVariationPass
 #      prob: 0.01
 #      orGroup: puddleMess
+    - id: SmugglerStashVariationPass
+      prob: 0.90
+      

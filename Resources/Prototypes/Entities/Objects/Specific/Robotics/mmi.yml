@@ -96,6 +96,7 @@
       stopSearchVerbPopup: positronic-brain-stopped-searching
     - type: BlockMovement
     - type: Examiner
+    - type: Brain # hopefully this doesn't break everything
     - type: BorgBrain
     - type: IntrinsicRadioReceiver
     - type: IntrinsicRadioTransmitter
@@ -131,6 +132,7 @@
       guides:
       - Cyborgs
     - type: Organ # Estacao Pirata - IPCs
+      slotId: posibrain
     - type: LanguageSpeaker
     - type: LanguageKnowledge
       speaks: [RobotTalk]

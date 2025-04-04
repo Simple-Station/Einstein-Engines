@@ -14038,3 +14038,328 @@ Entries:
   id: 7061
   time: '2025-03-29T07:15:36.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2109
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: >-
+        Moved Nationality, Employer, and Lifepath to a new Background tab. They
+        now also show descriptions for the chosen selections.
+  id: 7062
+  time: '2025-03-29T17:49:18.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2113
+- author: BramvanZijp
+  changes:
+    - type: Tweak
+      message: >-
+        Tweaked IPC's damage resistances to no longer take double heat damage,
+        and slightly reduce their shock weakness.
+  id: 7063
+  time: '2025-03-30T02:22:13.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2110
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: >-
+        Station AI gets a variant of Asimov that doesn't state they have to obey
+        themselves
+  id: 7064
+  time: '2025-03-30T02:30:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2118
+- author: PsychoLogik
+  changes:
+    - type: Tweak
+      message: Dogs and Foxes can now track scents (Cerberus included)
+  id: 7065
+  time: '2025-03-30T21:02:34.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2116
+- author: Tirochora
+  changes:
+    - type: Tweak
+      message: sunglasses with flash protection are more expensive in the loadouts
+    - type: Tweak
+      message: >-
+        sunglasses are either "default" or "shielded" rather than "cheap" or
+        "standard." the description has also been changed to reflect this
+  id: 7066
+  time: '2025-03-30T21:15:42.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2121
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Removed an unecessary recursion from atmos system.
+  id: 7067
+  time: '2025-04-01T03:11:38.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2126
+- author: WarMechanic
+  changes:
+    - type: Add
+      message: >-
+        Added a trait 'Restricted Gear' which unlocks loadout job restrictions
+        at a significant price.
+  id: 7068
+  time: '2025-04-01T06:21:05.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1317
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: Give changelings a secret weight, so hopefully they actually pop up now
+    - type: Tweak
+      message: Added changelings and bloodcult to all at once
+  id: 7069
+  time: '2025-04-01T06:25:03.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2130
+- author: dootythefrooty
+  changes:
+    - type: Add
+      message: >-
+        A new pet has been added to loadouts. Squackroaches are gremlin-bird
+        beasts that sing and talk to harpies!
+  id: 7070
+  time: '2025-04-01T06:27:55.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2125
+- author: GNUtopia
+  changes:
+    - type: Fix
+      message: Fixed IPCs losing control of their brain when gibbed
+    - type: Fix
+      message: Fixed IPC brains being unable to be surgically inserted/removed
+  id: 7071
+  time: '2025-04-01T06:28:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2123
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: Added the dualettas, two stylish pistols that can be dual wielded
+    - type: Add
+      message: >-
+        Added the anaconda, a robust syndicate handcannon that automatically
+        generates ammo
+    - type: Add
+      message: >-
+        Added the Pocket Dimension Plant, a normal looking potted plant that
+        actually has a pocket dimension linked to it
+  id: 7072
+  time: '2025-04-01T07:24:39.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2128
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Fix
+      message: Fixed many buttons being yellow instead of red
+  id: 7073
+  time: '2025-04-01T07:40:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2129
+- author: 12rabbits and Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Added a ready manifest display to the pre-round lobby.
+  id: 7074
+  time: '2025-04-01T07:42:42.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2058
+- author: Orion-416
+  changes:
+    - type: Fix
+      message: Made RespiratorSystem check for BreathingImmunityComponent
+  id: 7075
+  time: '2025-04-01T08:19:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2111
+- author: ZetaNull
+  changes:
+    - type: Add
+      message: Added custom Parallax to Anchor
+    - type: Fix
+      message: Fixed some bugs with Anchor. Also applies some map fixes
+  id: 7076
+  time: '2025-04-01T13:53:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2131
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added a 3% "Deflect" chance to all hardsuits. Each projectile fired at a
+        hardsuit has a small chance to be "harmlessly" deflected into something
+        else. Have fun if that something else is an unsuspecting clown.
+    - type: Tweak
+      message: >-
+        Comprehensively rebalanced the Juggernaut Suit around having a monstrous
+        45% projectile deflection chance. Go ahead. Shoot it with birdshot. You
+        won't be disappointed in the visuals. 
+  id: 7077
+  time: '2025-04-01T15:21:02.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2114
+- author: 3PonPon3
+  changes:
+    - type: Tweak
+      message: Increased the moth flight speed modifier from 1.09 to 1.2
+  id: 7078
+  time: '2025-04-02T18:19:25.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2140
+- author: 3PonPon3
+  changes:
+    - type: Tweak
+      message: Reduced sign language cost from -2 to -1
+    - type: Tweak
+      message: Removed the limit on how many language traits you can take
+    - type: Fix
+      message: Made sure that you cannot take more than 1 accent trait
+  id: 7079
+  time: '2025-04-02T19:46:42.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2142
+- author: Diggy
+  changes:
+    - type: Fix
+      message: Corpsman glasses now have the medhud they should have always had.
+  id: 7080
+  time: '2025-04-02T20:10:09.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2141
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: Engi borgs can now carry electronics, and medical borgs can carry organs
+    - type: Add
+      message: Salvage borgs now get a PKA module
+    - type: Tweak
+      message: >-
+        All mining drills have had their damage turned to piercing and have
+        received a moderate damage buff
+    - type: Tweak
+      message: >-
+        Exosuit drills now swing at the same speed as normal drills (why were
+        they worse???)
+    - type: Tweak
+      message: The RPD and RCD modules for borg have been merged into one
+    - type: Tweak
+      message: Salvage can now purchase drills from their vendor
+    - type: Tweak
+      message: Salvage borgs mining module no longer contains a shovel
+  id: 7081
+  time: '2025-04-03T07:30:33.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2145
+- author: bruhmogus
+  changes:
+    - type: Add
+      message: Ported Smuggler Satchels from Wizden
+    - type: Add
+      message: Ported watches (both normal and gold) from Wizden
+  id: 7082
+  time: '2025-04-03T10:38:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2088
+- author: mrs
+  changes:
+    - type: Tweak
+      message: >-
+        Cyberiad: PA and SM SMES charge from the main grid instead of their
+        respective power sources directly.
+    - type: Tweak
+      message: 'Cyberiad: HV grid reinforced.'
+    - type: Fix
+      message: 'Cyberiad: Security substation finally connected to HV grid.'
+  id: 7083
+  time: '2025-04-03T18:04:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2146
+- author: GNUtopia
+  changes:
+    - type: Add
+      message: Added advanced bloodloss chem Artiplates
+    - type: Add
+      message: Added stamina-restoring chem Cryanobalamin
+    - type: Add
+      message: Added stamina-restoring chem Lift Lovers Special
+  id: 7084
+  time: '2025-04-03T18:09:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2124
+- author: mrs
+  changes:
+    - type: Add
+      message: Asterisk to map rotation.
+    - type: Add
+      message: >-
+        Asterisk: AI sat, holopads, AI turrets in the vault and satellite,
+        senior roles, and prosecutor office.
+    - type: Tweak
+      message: >-
+        Asterisk: Atmostech roles from 1 > 2. Prisoner roles from 2 > 3. Prison
+        guard role 0 > 2.
+    - type: Tweak
+      message: >-
+        Asterisk: Atmos filtering goes to ports instead of chambers. Burn mix
+        injector now has a mixer instead of a single port. Burn chamber
+        atmosphere is now a vacuum.
+    - type: Tweak
+      message: 'Asterisk: Replaced evil psionic pod with a regular cloning pod.'
+    - type: Remove
+      message: 'Asterisk: Privacy. The AI is always watching...'
+  id: 7085
+  time: '2025-04-03T18:12:11.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2104
+- author: WazuraWasTaken
+  changes:
+    - type: Tweak
+      message: >-
+        Sec Weapons for The Restricted Gear Trait now Cost a Base Line of 8
+        points
+    - type: Tweak
+      message: 'Weapons in General is More Expensive '
+    - type: Tweak
+      message: Insuls are Slightly More Expensive
+    - type: Tweak
+      message: Holofan cost 1 now
+  id: 7086
+  time: '2025-04-03T18:18:11.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2143
+- author: rbertoche
+  changes:
+    - type: Tweak
+      message: >-
+        Enhances roundstart antagonist selection making sure all slots are
+        allocated
+    - type: Fix
+      message: Prevents Thief or others antags from causing the round to fail to start
+  id: 7087
+  time: '2025-04-03T19:18:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1339
+- author: Timfa2112
+  changes:
+    - type: Tweak
+      message: >-
+        Restricted some corporate jackets and scrubs to that specific
+        corporation.
+    - type: Tweak
+      message: >-
+        Downstreams can now disable Contractors entirely or partially if they
+        prefer freeform-rp over gameplay facilitating RP
+    - type: Tweak
+      message: Station AI and Borg are no longer people and don't get passports.
+  id: 7088
+  time: '2025-04-04T00:42:57.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2134
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: Added the People's Republic of Adhomai
+    - type: Add
+      message: Added the Izweski Hegemony
+    - type: Fix
+      message: >-
+        Corrected passport flags to what they should have been according to the
+        established lore
+  id: 7089
+  time: '2025-04-04T08:55:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2147
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: Added admin command to spawn a passport for a player
+  id: 7090
+  time: '2025-04-04T08:57:20.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2150
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: Ion damage has been merged with shock damage
+    - type: Tweak
+      message: Disabler damage has been turned from heat to shock and reduced
+    - type: Tweak
+      message: All silicon lifeforms now take 3x shock damage
+  id: 7091
+  time: '2025-04-04T09:01:39.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2153

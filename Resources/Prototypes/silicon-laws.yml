@@ -32,6 +32,14 @@
   - Asimov3
   obeysTo: laws-owner-humans
 
+- type: siliconLawset
+  id: AsimovAI # Variant without Obey AI so station AI doesn't have to obey itself
+  laws:
+  - Asimov1
+  - Asimov2
+  - Asimov3
+  obeysTo: laws-owner-humans
+
 # Augustine
 # Asimov variant that expands the definition of human to include most player species, but avoids the Crewsimov problem of letting the AI validhunt antags.
 - type: siliconLaw
@@ -68,7 +76,6 @@
 - type: siliconLawset
   id: Crewsimov
   laws:
-  - ObeyAI
   - Crewsimov1
   - Crewsimov2
   - Crewsimov3
