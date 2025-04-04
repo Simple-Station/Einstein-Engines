@@ -68,6 +68,13 @@ namespace Content.Shared.Roles
         public bool CanBeAntag { get; private set; } = true;
 
         /// <summary>
+        /// Used by Contractors to determine if a given job should have a passport
+        /// This should be disabled for Borgs and Station AI, for example.
+        /// </summary>
+        [DataField("canHavePassport")]
+        public bool CanHavePassport { get; private set; } = true;
+
+        /// <summary>
         /// Nyano/DV: For e.g. prisoners, they'll never use their latejoin spawner.
         /// </summary>
         [DataField("alwaysUseSpawner")]

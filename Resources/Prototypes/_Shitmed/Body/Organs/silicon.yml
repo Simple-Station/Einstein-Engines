@@ -9,6 +9,9 @@
       symmetry: Right
       toolName: "a right arm" # Shitmed Change
       canSever: false
+    - type: Sprite
+      sprite: Mobs/Customization/cyberlimbs/bishop/bishop_main.rsi
+      state: "l_arm-combined"
 
 - type: entity
   id: RightHandSiliconIndestructible
@@ -21,3 +24,6 @@
       symmetry: Right
       toolName: "a right hand" # Shitmed Change
       canSever: false
+    - type: Sprite
+      sprite: Mobs/Customization/cyberlimbs/bishop/bishop_main.rsi
+      state: "r_hand"
