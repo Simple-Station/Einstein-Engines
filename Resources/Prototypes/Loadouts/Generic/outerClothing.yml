@@ -884,7 +884,7 @@
   canBeHeirloom: true
   guideEntry: TCFLInfo
   items:
-    - ClothingOuterCsCorporateJacket
+    - ClothingOuterJacketTCAF
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuter
