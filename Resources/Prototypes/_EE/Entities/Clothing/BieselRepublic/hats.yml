@@ -8,6 +8,7 @@
   components:
     - type: Sprite
       sprite: _EE/Clothing/BieselRepublic/Helmet/TCFL_tacsuit_helmet.rsi
+    - type: Clothing
       layers:
       - state: icon
       - state: icon-unshaded
