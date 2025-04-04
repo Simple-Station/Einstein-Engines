@@ -10,11 +10,11 @@
   - type: ItemSlots
     slots:
       cell_slot:
-        locked: true
         name: power-cell-slot-component-slot-name-default
         startingItem: PowerCellMedium
-  - type: BatterySlotRequiresLock
-    itemSlot: cell_slot
+  - type: ItemSlotsRequirePanel
+    slots:
+      cell_slot: true
   - type: EncryptionHolderRequiresLock
   - type: SiliconEmitSoundOnDrained
     sound: "/Audio/Weapons/Guns/EmptyAlarm/smg_empty_alarm.ogg"

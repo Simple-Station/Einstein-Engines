@@ -10,3 +10,15 @@
   - type: Item
     size: Small
     storedRotation: -90
+
+- type: entity
+  abstract: true
+  id: BallisticGlasses
+  components:
+  - type: Reflect # Ballistic glasses are any glasses that have a small chance to deflect projectiles
+    spread: 270
+    reflectProb: 0.01
+    innate: true
+    reflects:
+      - Energy
+      - NonEnergy

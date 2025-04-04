@@ -304,6 +304,11 @@ trait-description-WeaponsGeneralist =
     You are a jack of all trades with melee weapons, enabling you to be versatile with your weapon arsenal.
     Your melee damage bonus for all Brute damage types (Blunt, Slash, Piercing) becomes 30%.
 
+trait-name-Mystic = Mystic
+trait-description-Mystic =
+    You are trained in Mysticism instead of melee combat, reducing your melee capabilities but drastically increasing your psionic potential.
+    Your melee damage bonus for all Brute damage types (Blunt, Slash, Piercing) becomes 10%, but your Potentia gain is drastically increased.
+
 trait-name-Singer = Singer
 trait-description-Singer = You are naturally capable of singing simple melodies with your voice.
 
@@ -463,7 +468,7 @@ trait-description-PlateletFactories =
 trait-name-DermalArmor = Dermal Armor
 trait-description-DermalArmor =
     Your skin has been replaced with a flexible, yet sturdy, hard-polymer shell wrapped in a layer of synthetic flesh.
-    This augmentation provides an innate 10% resistance to physical damage.
+    This augmentation provides 1.5 points of flat reduction from all physical damage, while making the user take 25% more shock damage.
 
 trait-name-CyberEyes = Cyber-Eyes Basic System
 trait-description-CyberEyes =
@@ -483,7 +488,7 @@ trait-description-CyberEyesSecurity =
 
 trait-name-CyberEyesMedical = Cyber-Eyes: MedHud Module
 trait-description-CyberEyesMedical =
-    Your Cyber-Eyes have been upgraded to include a built-in Medical Hud, and a Chemical Analysis Hud, allowing you to track the relative health condition of biological organisms, and discern the chemicals in any solution. 
+    Your Cyber-Eyes have been upgraded to include a built-in Medical Hud, and a Chemical Analysis Hud, allowing you to track the relative health condition of biological organisms, and discern the chemicals in any solution.
 
 trait-name-CyberEyesDiagnostic = Cyber-Eyes: Diagnostics Module
 trait-description-CyberEyesDiagnostic =
@@ -506,6 +511,11 @@ trait-description-MetapsionicPower =
     You are able to intuitively sense the activation of psionic abilities, as well as send out a 'scanning' pulse
     to detect whether or not psions are nearby. This ability has a wide area of effect, and cannot precisely
     scan individual entities. Still, it is better than being blind.
+
+trait-name-HealingWordPower = Healing Word
+trait-description-HealingWordPower =
+    Your Mentalic abilities includes the power to heal the wounded.
+    This power, commonly known as "Healing Word", allows the user to heal themselves or others with their mind.
 
 trait-name-XenoglossyPower = Xenoglossy
 trait-description-XenoglossyPower =
@@ -574,7 +584,7 @@ trait-description-SecurityEyesModule =
 
 trait-name-MedicalEyesModule = I.P.C Eye Module: Medical
 trait-description-MedicalEyesModule =
-    Your Cyber-Eyes have been upgraded to include a built-in Medical Hud, and a Chemical Analysis Hud, allowing you to track the relative health condition of biological organisms, and discern the chemicals in any solution. 
+    Your Cyber-Eyes have been upgraded to include a built-in Medical Hud, and a Chemical Analysis Hud, allowing you to track the relative health condition of biological organisms, and discern the chemicals in any solution.
 
 trait-name-DiagnosticEyesModule = I.P.C Eye Module: Diagnostics
 trait-description-DiagnosticEyesModule =
@@ -599,3 +609,34 @@ trait-name-Vampirism = Vampirism
 trait-description-Vampirism =
     Your body has evolved to be able to suck blood from beings that contain it and metabolize it into useful compounds.
     You cannot eat normal food, but drinking blood satiates your hunger and thirst, and also improves your health.
+
+trait-name-MothFlight = True Flight
+trait-description-MothFlight =
+    Unlike other mothpeople, your body is light enough and your wings are strong enough to be able to fly under normal gravity.
+    Flight is faster than running; however, it is strenuous and quickly drains your stamina.
+
+trait-name-Featherweight = Featherweight
+trait-description-Featherweight =
+    Your body is unusually lightweight for your species.
+    This trait reduces the density of your body by 50%.
+
+trait-name-Bulky = Bulky
+trait-description-Bulky =
+    Your body is unusually heavy for your species.
+    This trait increases the density of your body by 55.
+
+trait-name-Weakling = Weakling
+trait-description-Weakling =
+    Due to genetics, injury, or inactivity, your body is weaker than most.
+    This trait doubles the movement speed penalty when dragging something.
+
+trait-name-Bodybuilder = Bodybuilder
+trait-description-Bodybuilder =
+    Through extensive training or body modification, you have achieved the pinnacle of physique. 
+    This trait halves the movement speed penalty when dragging something.
+
+trait-name-RestrictedGear = Restricted Gear
+trait-description-RestrictedGear = 
+    Either through personal ownership or theft, you have access to equipment that isn't particularly standard issue.
+    Note that starting with an item [color=red]doesn't certify its legality[/color]. Conceal it or justify it.
+    (You equip other jobs' items in the loadouts menu) 

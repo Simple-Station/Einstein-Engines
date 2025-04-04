@@ -4,6 +4,7 @@
   antagonist: true
   setPreference: true
   objective: roles-antag-nuclear-operative-objective
+  guides: [ NuclearOperatives ]
 
 - type: antag
   id: NukeopsMedic
@@ -11,13 +12,14 @@
   antagonist: true
   setPreference: true
   objective: roles-antag-nuclear-operative-agent-objective
-
+  guides: [ NuclearOperatives ]
 - type: antag
   id: NukeopsCommander
   name: roles-antag-nuclear-operative-commander-name
   antagonist: true
   setPreference: true
   objective: roles-antag-nuclear-operative-commander-objective
+  guides: [ NuclearOperatives ]
 
 #Lone Operative Gear
 - type: startingGear

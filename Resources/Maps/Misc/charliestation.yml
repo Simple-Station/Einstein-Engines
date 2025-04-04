@@ -2823,6 +2823,7 @@ entities:
             1836: 34.510494,26.941757
             1837: 34.178402,25.926132
     - type: GridAtmosphere
+      simulatedTurf: false
       version: 2
       data:
         tiles:

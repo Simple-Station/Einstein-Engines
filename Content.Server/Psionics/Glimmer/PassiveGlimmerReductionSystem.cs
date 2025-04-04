@@ -16,11 +16,10 @@ public sealed class PassiveGlimmerReductionSystem : EntitySystem
 
     /// List of glimmer values spaced by minute.
     public List<int> GlimmerValues = new();
-
-    public TimeSpan TargetUpdatePeriod = TimeSpan.FromSeconds(6);
     public TimeSpan NextUpdateTime = default!;
     public TimeSpan LastUpdateTime = default!;
 
+    private TimeSpan _targetUpdatePeriod;
     private float _glimmerLinearDecay;
     private bool _enabled;
 
@@ -28,8 +27,9 @@ public sealed class PassiveGlimmerReductionSystem : EntitySystem
     {
         base.Initialize();
         _enabled = _cfg.GetCVar(CCVars.GlimmerEnabled);
-        _cfg.OnValueChanged(CCVars.GlimmerLinearDecayPerMinute, UpdatePassiveGlimmer, true);
+        _cfg.OnValueChanged(CCVars.GlimmerLinearDecayPerSecond, UpdatePassiveGlimmer, true);
         _cfg.OnValueChanged(CCVars.GlimmerEnabled, value => _enabled = value, true);
+        _cfg.OnValueChanged(CCVars.GlimmerDecayUpdateInterval, value => _targetUpdatePeriod = TimeSpan.FromSeconds(value), true);
     }
 
     public override void Update(float frameTime)
@@ -41,10 +41,12 @@ public sealed class PassiveGlimmerReductionSystem : EntitySystem
         var curTime = _timing.CurTime;
         if (NextUpdateTime > curTime)
             return;
-        NextUpdateTime = curTime + TargetUpdatePeriod;
+
+        NextUpdateTime = curTime + _targetUpdatePeriod;
         LastUpdateTime = curTime;
 
-        var glimmerDecay = _glimmerLinearDecay / (60 / TargetUpdatePeriod.Seconds);
+        var glimmerDecay = _glimmerLinearDecay * _targetUpdatePeriod.Seconds * frameTime;
+
         _glimmerSystem.DeltaGlimmerOutput(-glimmerDecay);
         GlimmerValues.Add((int) Math.Round(_glimmerSystem.GlimmerOutput));
     }

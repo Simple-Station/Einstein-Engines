@@ -118,7 +118,7 @@ public sealed partial class TelepathicChatSystem
 
     private void DescribeGlimmerSource(EntityUid uid, GlimmerSourceComponent component, GetPsychognomicDescriptorEvent ev)
     {
-        if (component.AddToGlimmer)
+        if (component.GlimmerPerSecond >= 0)
             ev.Descriptors.Add(Loc.GetString("p-descriptor-emanative"));
         else
         {

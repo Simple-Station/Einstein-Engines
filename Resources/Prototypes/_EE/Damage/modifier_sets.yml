@@ -1,4 +1,4 @@
-- type: damageModifierSet 
+- type: damageModifierSet
   id: Tajaran
   coefficients:
     Blunt: 1.15
@@ -6,3 +6,18 @@
     Piercing: 1.15
     Heat: 1.35
     Cold: 0.65
+
+- type: damageModifierSet
+  id: Smile
+  coefficients:
+    Blunt: 0
+    Slash: 0
+    Piercing: 0
+    Heat: 0
+    Shock: 0
+    Cold: 0
+    Bloodloss: 0
+    Poison: 0
+    Radiation: 0
+    Cellular: 0
+

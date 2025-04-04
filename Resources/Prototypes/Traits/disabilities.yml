@@ -127,6 +127,10 @@
       jobs:
         - Borg
         - MedicalBorg
+    - !type:CharacterLifepathRequirement
+      inverted: true
+      lifepaths:
+      - Clone
   functions:
     - !type:TraitAddComponent
       components:
@@ -204,6 +208,7 @@
       traits:
         - ParkourTraining
         - SnailPaced
+        - WheelchairBound
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -226,6 +231,7 @@
       traits:
         - ParkourTraining
         - Sluggish
+        - WheelchairBound
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:

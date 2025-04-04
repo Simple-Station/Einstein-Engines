@@ -386,7 +386,7 @@ namespace Content.Server.Atmos.EntitySystems
             const int limit = Atmospherics.MonstermosHardTileLimit;
 
             var totalMolesRemoved = 0f;
-            var (owner, gridAtmosphere, visuals, mapGrid, _) = ent;
+            var (owner, gridAtmosphere, _, _, _) = ent;
             var queueCycle = ++gridAtmosphere.EqualizationQueueCycleControl;
 
             var tileCount = 0;
@@ -432,7 +432,6 @@ namespace Content.Server.Atmos.EntitySystems
                 else
                 {
                     _depressurizeSpaceTiles[spaceTileCount++] = otherTile;
-                    otherTile.PressureSpecificTarget = otherTile;
                 }
 
                 if (tileCount < limit && spaceTileCount < limit)
@@ -479,7 +478,6 @@ namespace Content.Server.Atmos.EntitySystems
 
                     tile2.MonstermosInfo.CurrentTransferDirection = j.ToOppositeDir();
                     tile2.MonstermosInfo.CurrentTransferAmount = 0.0f;
-                    tile2.PressureSpecificTarget = otherTile.PressureSpecificTarget;
                     tile2.MonstermosInfo.LastSlowQueueCycle = queueCycleSlow;
                     _depressurizeProgressionOrder[progressionCount++] = tile2;
                 }
@@ -518,14 +516,6 @@ namespace Content.Server.Atmos.EntitySystems
                 totalMolesRemoved += sum;
                 otherTile.MonstermosInfo.CurrentTransferAmount += sum;
                 otherTile2.MonstermosInfo.CurrentTransferAmount += otherTile.MonstermosInfo.CurrentTransferAmount;
-                otherTile.PressureDifference = otherTile.MonstermosInfo.CurrentTransferAmount;
-                otherTile.PressureDirection = otherTile.MonstermosInfo.CurrentTransferDirection;
-
-                if (otherTile2.MonstermosInfo.CurrentTransferDirection == AtmosDirection.Invalid)
-                {
-                    otherTile2.PressureDifference = otherTile2.MonstermosInfo.CurrentTransferAmount;
-                    otherTile2.PressureDirection = otherTile.MonstermosInfo.CurrentTransferDirection;
-                }
 
                 if (otherTile.Air != null && otherTile.Air.Pressure - sum > SpacingMinGas * 0.1f)
                 {
@@ -551,10 +541,6 @@ namespace Content.Server.Atmos.EntitySystems
                     // therefore there is no more gas in the tile, therefore the tile should be as cold as space!
                     otherTile.Air.Temperature = Atmospherics.TCMB;
                 }
-
-                InvalidateVisuals(ent, otherTile);
-                if (MonstermosRipTiles && otherTile.PressureDifference > MonstermosRipTilesMinimumPressure)
-                    HandleDecompressionFloorRip(mapGrid, otherTile, otherTile.PressureDifference);
             }
 
             if (GridImpulse && tileCount > 0)
@@ -641,7 +627,7 @@ namespace Content.Server.Atmos.EntitySystems
                 Merge(otherTile.Air, tile.Air.Remove(amount));
                 InvalidateVisuals(ent, tile);
                 InvalidateVisuals(ent, otherTile);
-                ConsiderPressureDifference(ent, tile, direction, amount);
+                ConsiderPressureDifference(ent, tile);
             }
         }
 

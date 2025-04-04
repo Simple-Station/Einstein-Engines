@@ -764,10 +764,10 @@
       path: /Audio/Effects/Footsteps/slime1.ogg
       params:
         volume: -6
+  - type: CanEscapeInventory
   - type: Tag
     tags:
     - FootstepSound
-    - DoorBumpOpener
     - CannotSuicide
     - VimPilot
   - type: DamageStateVisuals
@@ -777,12 +777,20 @@
         BaseUnshaded: aslime-_3
       Dead:
         Base: rainbow_baby_slime_dead
+  - type: StaminaDamageResistance
+    coefficient: 0
   - type: Bloodstream
     bloodReagent: Nothing
     bloodMaxVolume: 50
   - type: Temperature
     heatDamageThreshold: 100000000000
     coldDamageThreshold: -10000000000
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Smile
+  - type: SupermatterImmune
+  - type: Puller
+    needsHands: false
   - type: MeleeWeapon
     damage:
       types:
@@ -821,6 +829,7 @@
       - XenoglossyPower
       - TelepathyPower
       - HealingWordPower
+      - PowerOverwhelming
   - type: LanguageSpeaker
   - type: UniversalLanguageSpeaker
   - type: SlowOnDamage
@@ -842,6 +851,23 @@
         - SmallMobMask
         layer:
         - SmallMobLayer
+  - type: Storage
+    clickInsert: false
+    grid:
+    - 0,0,1,2
+    maxItemSize: Large
+    storageInsertSound:
+      path: /Audio/Voice/Slime/slime_squish.ogg
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
     
 - type: entity
   name: Pun Pun

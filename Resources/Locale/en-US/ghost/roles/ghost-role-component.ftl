@@ -10,6 +10,9 @@ ghost-role-information-mouse-description = A hungry and mischievous mouse.
 ghost-role-information-mothroach-name = Mothroach
 ghost-role-information-mothroach-description = A cute but mischievous mothroach.
 
+ghost-role-information-squackroach-name = Squackroach
+ghost-role-information-squackroach-description = A diabolical but nearly harmless squackroach.
+
 ghost-role-information-snail-name = Snail
 ghost-role-information-snail-description = A little snail who doesn't mind a bit of space. Just stay on grid!
 
@@ -99,6 +102,9 @@ ghost-role-information-taxibot-description = Drive the station crew to their des
 
 ghost-role-information-supplybot-name = SupplyBot
 ghost-role-information-supplybot-description = Deliver goods around the station.
+
+ghost-role-information-minebot-name = Minebot
+ghost-role-information-minebot-description = Assist the miners with their work.
 
 ghost-role-information-space-bear-name = Space bear
 ghost-role-information-space-bear-description = Your tummy rumbles, and these people look really yummy... What a feast!

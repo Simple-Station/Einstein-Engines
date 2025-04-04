@@ -282,7 +282,7 @@ public sealed class LavalandPlanetSystem : EntitySystem
 
         // Align outpost to planet
         _transform.SetCoordinates(outpost, new EntityCoordinates(lavaland, 0, 0));
-        
+
         // Name it
         _metaData.SetEntityName(outpost, Loc.GetString("lavaland-planet-outpost"));
         var member = EnsureComp<LavalandMemberComponent>(outpost);

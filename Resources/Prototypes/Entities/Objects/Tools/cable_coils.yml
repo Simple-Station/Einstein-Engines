@@ -222,7 +222,7 @@
       types: # these are all split across multiple types. IPCs can still take cold damage, they just heavily resist it.
         Heat: -2
         Shock: -2
-        Cold: -0.5 
+        Cold: -0.5
 
 - type: entity
   parent: CableApcStack
