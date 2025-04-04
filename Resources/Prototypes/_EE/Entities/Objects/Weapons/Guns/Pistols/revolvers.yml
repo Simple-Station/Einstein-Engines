@@ -5,10 +5,10 @@
   description: An incredibly rare, elegant, and powerful revolver of which only twenty were ever made. It features three chambers, which load 12-gauge shells.
   components:
   - type: Sprite
-    sprite: _EE/Objects/Weapons/Guns/Pistols/captain_pistol.rsi
+    sprite: _EE/Objects/Weapons/Guns/Pistols/Captain_pistol.rsi
     state: base
   - type: Clothing
-    sprite: _EE/Objects/Weapons/Guns/Pistols/captain_pistol.rsi
+    sprite: _EE/Objects/Weapons/Guns/Pistols/Captain_pistol.rsi
   - type: AmmoCounter
   - type: Gun
     selectedMode: SemiAuto
