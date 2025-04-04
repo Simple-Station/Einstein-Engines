@@ -159,7 +159,7 @@
 - type: entity
   id: PelletShotgunLumen
   name: pellet (.50 lumenblast)
-  parent: BaseBullet
+  parent: BaseBulletTrigger
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
