@@ -39,4 +39,10 @@ public sealed class ThavenMoodsEui : BaseEui
         _target = s.Target;
         _thavenMoodUi.SetMoods(s.Moods);
     }
+
+    public override void Closed()
+    {
+        base.Closed();
+        _thavenMoodUi.Close();
+    }
 }
