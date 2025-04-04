@@ -298,38 +298,14 @@
     staminaCost: 6
 
 - type: entity
-  name: sawn-off shotgun
-  parent: BaseWeaponShotgun
+  parent: WeaponShotgunSawn
   id: WeaponShotgunSawnLumen
-  description: Groovy! Uses .50 shotgun shells.
   suffix: Lumenblast
+  description: Groovy! Uses .50 shotgun shells.
   components:
-  - type: Sprite
-    sprite: DeltaV/Objects/Weapons/Guns/Shotguns/sawn.rsi # Delta-V
-  - type: Clothing
-    sprite: DeltaV/Objects/Weapons/Guns/Shotguns/sawn.rsi # Delta-V
-  - type: Item
-    size: Small
-    sprite: Objects/Weapons/Guns/Shotguns/sawn_inhands_64x.rsi
-  - type: Gun
-    fireRate: 4
-    fireOnDropChance: 0.5
-    shotgunSpreadMultiplier: 3
-    damageModifier: 1.5
   - type: BallisticAmmoProvider
     capacity: 2
     proto: ShellShotgunLumen
-  - type: Construction
-    graph: ShotgunSawn
-    node: shotgunsawn
-    deconstructionTarget: null
-  - type: MeleeWeapon
-    attackRate: 1.2
-    damage:
-      types:
-        Blunt: 7.5
-  - type: DamageOtherOnHit
-    staminaCost: 6
 
 - type: entity
   name: sawn-off shogun

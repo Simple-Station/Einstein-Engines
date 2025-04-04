@@ -1225,6 +1225,8 @@
       min: 21
   items:
     - WeaponShotgunSawnLumen
+    - ShellShotgunLumen
+    - ShellShotgunLumen
 
 # Eyes
 - type: loadout
