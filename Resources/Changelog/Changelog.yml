@@ -14345,3 +14345,10 @@ Entries:
   id: 7089
   time: '2025-04-04T08:55:10.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2147
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: Added admin command to spawn a passport for a player
+  id: 7090
+  time: '2025-04-04T08:57:20.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2150
