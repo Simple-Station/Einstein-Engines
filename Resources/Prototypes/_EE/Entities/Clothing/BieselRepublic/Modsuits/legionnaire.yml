@@ -66,6 +66,13 @@
         - state: equipped-HEAD-sealed
         - state: equipped-HEAD-sealed-unshaded
           shader: unshaded
+    - type: Reflect
+      reflectProb: 0.03
+      spread: 270
+      innate: true
+      reflects:
+        - Energy
+        - NonEnergy
 
 - type: entity
   parent: [ClothingModsuitChestplateStandard, TCFLInfo]
@@ -106,6 +113,13 @@
         - state: equipped-OUTERCLOTHING-sealed
         - state: equipped-OUTERCLOTHING-sealed-unshaded
           shader: unshaded
+    - type: Reflect
+      reflectProb: 0.05
+      spread: 270
+      innate: true
+      reflects:
+        - Energy
+        - NonEnergy
 
 - type: entity
   parent: [ClothingModsuitBootsStandard, TCFLInfo]

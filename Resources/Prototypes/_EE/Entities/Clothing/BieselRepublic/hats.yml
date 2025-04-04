@@ -30,3 +30,101 @@
           Piercing: 0.9
           Heat: 0.9
     - type: BreathMask
+
+- type: entity
+  parent: [ClothingHeadHelmetBasic, TCFLInfo, BaseClothingRadio]
+  id: ClothingHeadHelmetTCFLHeavy
+  name: TCFL heavy tactical helmet
+  suffix: TCFL
+  description: Much of the equipment used by the TCFL is repurposed from older Solarian wargear. This advanced helmet includes a ballistic polymer face shield.
+  components:
+    - type: Sprite
+      sprite: _EE/Clothing/BieselRepublic/Helmet/TCAF_tactical_helmet_full.rsi
+    - type: Clothing
+      sprite: _EE/Clothing/BieselRepublic/Helmet/TCAF_tactical_helmet_full.rsi
+    - type: Armor
+      modifiers:
+        coefficients:
+          Blunt: 0.875
+          Slash: 0.875
+          Piercing: 0.875
+          Heat: 0.875
+    - type: Reflect
+      reflectProb: 0.03
+      spread: 270
+      innate: true
+      reflects:
+        - Energy
+        - NonEnergy
+
+- type: entity
+  parent: [ClothingHeadBaseButcherable, TCFLInfo]
+  id: ClothingHeadHatTCAFBeretDress
+  name: TCAF dress beret
+  suffix: TCFL
+  description: A formal beret worn by current and former members of the Tau-Ceti Armed Forces.
+  components:
+    - type: Sprite
+      sprite: _EE/Clothing/BieselRepublic/Helmet/TCAF_beret_dress.rsi
+    - type: Clothing
+      sprite: _EE/Clothing/BieselRepublic/Helmet/TCAF_beret_dress.rsi
+
+- type: entity
+  parent: [ClothingHeadBaseButcherable, TCFLInfo]
+  id: ClothingHeadHatTCAFBeretField
+  name: TCAF field beret
+  suffix: TCFL
+  description: A field beret worn by current and former members of the Tau-Ceti Armed Forces.
+  components:
+    - type: Sprite
+      sprite: _EE/Clothing/BieselRepublic/Helmet/TCAF_beret_field.rsi
+    - type: Clothing
+      sprite: _EE/Clothing/BieselRepublic/Helmet/TCAF_beret_field.rsi
+
+- type: entity
+  parent: [ClothingHeadBaseButcherable, TCFLInfo]
+  id: ClothingHeadHatTCFLBeretDress
+  name: TCFL dress beret
+  suffix: TCFL
+  description: A dress beret worn by current and former members of the Tau-Ceti Foreign Legion. This beret is a common sight in bars all across the Orion Spur.
+  components:
+    - type: Sprite
+      sprite: _EE/Clothing/BieselRepublic/Helmet/TCFL_beret_dress.rsi
+    - type: Clothing
+      sprite: _EE/Clothing/BieselRepublic/Helmet/TCFL_beret_dress.rsi
+
+- type: entity
+  parent: [ClothingHeadBaseButcherable, TCFLInfo]
+  id: ClothingHeadHatTCFLBeretField
+  name: TCFL field beret
+  suffix: TCFL
+  description: A field beret worn by current and former members of the Tau-Ceti Foreign Legion. This beret is a common sight in bars all across the Orion Spur.
+  components:
+    - type: Sprite
+      sprite: _EE/Clothing/BieselRepublic/Helmet/TCFL_beret_field.rsi
+    - type: Clothing
+      sprite: _EE/Clothing/BieselRepublic/Helmet/TCFL_beret_field.rsi
+
+- type: entity
+  parent: [ClothingHeadBaseButcherable, TCFLInfo]
+  id: ClothingHeadHatTCFLBeretSentinel
+  name: TCFL sentinel beret
+  suffix: TCFL
+  description: A dress beret worn by the elite members of the Tau-Ceti Foreign Legion.
+  components:
+    - type: Sprite
+      sprite: _EE/Clothing/BieselRepublic/Helmet/TCFL_beret_sentinel.rsi
+    - type: Clothing
+      sprite: _EE/Clothing/BieselRepublic/Helmet/TCFL_beret_sentinel.rsi
+
+- type: entity
+  parent: [ClothingHeadHeadHatBaseFlippable, TCFLInfo]
+  id: ClothingHeadHatTCFLSoftCap
+  name: TCFL soft cap
+  suffix: TCFL
+  description: A soft wool hat worn by current and former members of the Tau-Ceti Foreign Legion.
+  components:
+    - type: Sprite
+      sprite: _EE/Clothing/BieselRepublic/Helmet/TCFL_softcap.rsi
+    - type: Clothing
+      sprite: _EE/Clothing/BieselRepublic/Helmet/TCFL_softcap.rsi
