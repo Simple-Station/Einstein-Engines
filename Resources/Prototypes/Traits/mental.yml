@@ -8,6 +8,9 @@
         - !type:CharacterTraitRequirement
           traits:
             - LatentPsychic
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Xelthia # Innate Psionics
         - !type:CharacterJobRequirement
           jobs:
             - Chaplain
@@ -53,6 +56,9 @@
         - !type:CharacterTraitRequirement
           traits:
             - LatentPsychic
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Xelthia # Innate Psionics
         - !type:CharacterJobRequirement
           jobs:
             - Chaplain
@@ -98,6 +104,9 @@
         - !type:CharacterTraitRequirement
           traits:
             - LatentPsychic
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Xelthia # Innate Psionics
         - !type:CharacterJobRequirement
           jobs:
             - Chaplain
@@ -139,6 +148,9 @@
         - !type:CharacterTraitRequirement
           traits:
             - LatentPsychic
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Xelthia # Innate Psionics
         - !type:CharacterJobRequirement
           jobs:
             - Chaplain
@@ -176,6 +188,9 @@
         - !type:CharacterTraitRequirement
           traits:
             - LatentPsychic
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Xelthia # Innate Psionics
         - !type:CharacterJobRequirement
           jobs:
             - Chaplain
@@ -213,6 +228,9 @@
         - !type:CharacterTraitRequirement
           traits:
             - LatentPsychic
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Xelthia # Innate Psionics
         - !type:CharacterJobRequirement
           jobs:
             - Chaplain
@@ -249,6 +267,9 @@
         - !type:CharacterTraitRequirement
           traits:
             - LatentPsychic
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Xelthia # Innate Psionics
         - !type:CharacterJobRequirement
           jobs:
             - Chaplain
@@ -285,6 +306,9 @@
         - !type:CharacterSpeciesRequirement
           species:
             - Shadowkin # Innate Psionics
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Xelthia # Innate Psionics
         - !type:CharacterTraitRequirement
           traits:
             - LatentPsychic
@@ -327,6 +351,9 @@
         - !type:CharacterSpeciesRequirement
           species:
             - Shadowkin # Innate Psionics
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Xelthia # Innate Psionics
         - !type:CharacterTraitRequirement
           traits:
             - LatentPsychic
@@ -369,6 +396,9 @@
         - !type:CharacterSpeciesRequirement
           species:
             - Shadowkin # Innate Psionics
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Xelthia # Innate Psionics
         - !type:CharacterTraitRequirement
           traits:
             - LatentPsychic
@@ -412,6 +442,9 @@
         - !type:CharacterSpeciesRequirement
           species:
             - Shadowkin # Innate Psionics
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Xelthia # Innate Psionics
         - !type:CharacterTraitRequirement
           traits:
             - LatentPsychic
@@ -452,6 +485,9 @@
         - !type:CharacterSpeciesRequirement
           species:
             - Shadowkin # Innate Psionics
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Xelthia # Innate Psionics
         - !type:CharacterTraitRequirement
           traits:
             - LatentPsychic

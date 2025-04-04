@@ -31,6 +31,10 @@
   - type: Speech
     speechSounds: Xelthia
     speechVerb: Xelthia
+  - type: InnatePsionicPowers
+    powersToAdd:
+      - TelepathyPower
+  - type: Psionic
 #  - type: TypingIndicator
 #    proto: lizard
   - type: Vocal
@@ -43,6 +47,7 @@
     damageContainer: Biological
     damageModifierSet: Xelthia
   - type: Inventory
+    templateId: xelthia
     speciesId: xelthia
     displacements:
       jumpsuit:
@@ -138,6 +143,7 @@
   - type: HumanoidAppearance
     species: Xelthia
   - type: Inventory
+    templateId: xelthia
     speciesId: xelthia
     displacements:
       jumpsuit:

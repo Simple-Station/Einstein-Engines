@@ -240,6 +240,12 @@
           inverted: true
           species:
             - Shadowkin
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - Xelthia
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -285,6 +291,12 @@
           inverted: true
           species:
             - Shadowkin
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - Xelthia
 
 - type: trait
   id: NaturalTelepath
