@@ -14352,3 +14352,14 @@ Entries:
   id: 7090
   time: '2025-04-04T08:57:20.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2150
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: Ion damage has been merged with shock damage
+    - type: Tweak
+      message: Disabler damage has been turned from heat to shock and reduced
+    - type: Tweak
+      message: All silicon lifeforms now take 3x shock damage
+  id: 7091
+  time: '2025-04-04T09:01:39.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2153
