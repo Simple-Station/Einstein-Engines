@@ -1,6 +1,6 @@
 - type: entity
   name: space carp
-  id: BaseMobCarp
+  id: BaseBaseMobCarp #this is so jank i'm sorry
   parent: [ SimpleSpaceMobBase, FlyingMobBase, MobCombat ]
   description: It's a space carp.
   abstract: true
@@ -76,12 +76,6 @@
       accent: genericAggressive
     - type: Speech
       speechVerb: LargeMob
-    - type: InteractionPopup
-      successChance: 0.25 # not very nice
-      interactSuccessString: petting-success-carp
-      interactFailureString: petting-failure-carp
-      interactFailureSound:
-        path: /Audio/Effects/bite.ogg
     - type: Body # Shitmed - Adds carp organs.
       prototype: Carp
     - type: SurgeryTarget
@@ -96,6 +90,18 @@
       activateSound: null
       deactivateSound: null
     - type: Fauna # Lavaland Change
+
+- type: entity
+  parent: BaseBaseMobCarp
+  id: BaseMobCarp
+  abstract: true
+  components:
+    - type: InteractionPopup
+      successChance: 0.25 # not very nice
+      interactSuccessString: petting-success-carp
+      interactFailureString: petting-failure-carp
+      interactFailureSound:
+        path: /Audio/Effects/bite.ogg
 
 - type: entity
   parent: BaseMobCarp
@@ -273,7 +279,7 @@
 
 - type: entity
   name: space goldfish
-  parent: MobCarp
+  parent: BaseBaseMobCarp
   id: MobCarpGoldfish
   description: A domesticated variety of space carp, much smaller but no less aggressive.
   components:
@@ -307,6 +313,15 @@
         Dead:
           Base: dead
           BaseUnshaded: dead_mouth
+    - type: RandomSprite
+      available:
+      - enum.DamageStateVisualLayers.Base:
+          alive: Rainbow
+        enum.DamageStateVisualLayers.BaseUnshaded:
+          mouth: ""
+    - type: FireVisuals
+      sprite: Mobs/Effects/onfire.rsi
+      normalState: Mouse_burning
     - type: Fixtures
       fixtures:
         fix1:
@@ -320,6 +335,7 @@
             - FlyingMobLayer
     - type: Item
       size: Tiny
+    - type: CanEscapeInventory
     - type: MobThresholds
       thresholds:
         0: Alive
