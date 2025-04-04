@@ -38,14 +38,7 @@ public sealed class PassiveGlimmerReductionSystem : EntitySystem
         if (!_enabled)
             return;
 
-        var curTime = _timing.CurTime;
-        if (NextUpdateTime > curTime)
-            return;
-
-        NextUpdateTime = curTime + _targetUpdatePeriod;
-        LastUpdateTime = curTime;
-
-        var glimmerDecay = _glimmerLinearDecay * _targetUpdatePeriod.Seconds * frameTime;
+        var glimmerDecay = _glimmerLinearDecay * frameTime;
 
         _glimmerSystem.DeltaGlimmerOutput(-glimmerDecay);
         GlimmerValues.Add((int) Math.Round(_glimmerSystem.GlimmerOutput));
