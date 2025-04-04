@@ -14385,3 +14385,16 @@ Entries:
   id: 7092
   time: '2025-04-04T15:41:43.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1848
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed an issue that prevented players from saving item customizations if
+        they didn't have enough loadout points to buy the item a second time. 
+    - type: Add
+      message: 'Traits can now define the order in which they are applied. '
+    - type: Fix
+      message: Fixed RGBee pushie not working.
+  id: 7093
+  time: '2025-04-04T15:50:31.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2154
