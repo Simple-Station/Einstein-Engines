@@ -14407,3 +14407,16 @@ Entries:
   id: 7094
   time: '2025-04-04T18:35:45.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2151
+- author: GNUtopia
+  changes:
+    - type: Add
+      message: Added space goldfish pet
+    - type: Add
+      message: Added hostile space goldfish spawn event
+    - type: Tweak
+      message: Added squackroaches to roach spawn event
+    - type: Fix
+      message: Corrected some locale errors
+  id: 7095
+  time: '2025-04-04T18:37:34.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2152
