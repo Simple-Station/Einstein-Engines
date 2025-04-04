@@ -875,3 +875,22 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuter
+
+# Biesel Republic Jackets
+- type: loadout
+  id: LoadoutOuterJacketTCAF
+  category: Outer
+  cost: 0
+  canBeHeirloom: true
+  guideEntry: TCFLInfo
+  items:
+    - ClothingOuterCsCorporateJacket
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+    - !type:CharacterNationalityRequirement
+      nationalities:
+        - Bieselite
+    - !type:CharacterLifepathRequirement
+      lifepaths:
+        - WarVet

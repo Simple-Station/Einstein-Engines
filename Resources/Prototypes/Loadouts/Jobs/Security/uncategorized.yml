@@ -1365,6 +1365,27 @@
   items:
     - ClothingHeadHelmetInsulated
 
+- type: loadout
+  id: ClothingHeadHelmetTCFLHeavy
+  category: JobsSecurityAUncategorized
+  cost: 3 # This is a notable upgrade over a standard security helmet.
+  exclusive: true
+  guideEntry: TCFLInfo
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityHead
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterNationalityRequirement
+      nationalities:
+        - Bieselite
+    - !type:CharacterLifepathRequirement
+      lifepaths:
+        - WarVet
+  items:
+    - ClothingHeadHelmetTCFLHeavy
+
 # Id
 
 # Neck
@@ -1455,6 +1476,27 @@
         - Security
   items:
     - ClothingOuterArmorBasicSlim
+
+- type: loadout
+  id: ClothingOuterArmorTCFLHeavy
+  category: JobsSecurityAUncategorized
+  cost: 3 # Notable upgrade
+  exclusive: true
+  guideEntry: TCFLInfo
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterNationalityRequirement
+      nationalities:
+        - Bieselite
+    - !type:CharacterLifepathRequirement
+      lifepaths:
+        - WarVet
+  items:
+    - ClothingOuterArmorTCFLHeavy
 
 # Shoes
 - type: loadout
