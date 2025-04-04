@@ -40,10 +40,6 @@
   components:
     - type: Sprite
       sprite: _EE/Clothing/BieselRepublic/Helmet/TCAF_tactical_helmet_full.rsi
-      layers:
-      - state: icon
-      - state: icon-unshaded
-        shader: unshaded
     - type: Clothing
       sprite: _EE/Clothing/BieselRepublic/Helmet/TCAF_tactical_helmet_full.rsi
       clothingVisuals:
