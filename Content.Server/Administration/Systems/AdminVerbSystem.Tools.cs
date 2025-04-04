@@ -7,6 +7,7 @@ using Content.Server.Atmos.Components;
 using Content.Server.Cargo.Components;
 using Content.Server.Doors.Systems;
 using Content.Server.Hands.Systems;
+using Content.Server.Mind;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Stack;
@@ -26,7 +27,9 @@ using Content.Shared.Database;
 using Content.Shared.Doors.Components;
 using Content.Shared.Hands.Components;
 using Content.Shared.Inventory;
+using Content.Shared.Mind;
 using Content.Shared.PDA;
+using Content.Shared.Roles.Jobs;
 using Content.Shared.Stacks;
 using Content.Shared.Verbs;
 using Content.Shared.Weapons.Ranged.Components;
@@ -57,6 +60,7 @@ public sealed partial class AdminVerbSystem
     [Dependency] private readonly MetaDataSystem _metaSystem = default!;
     [Dependency] private readonly GunSystem _gun = default!;
     [Dependency] private readonly SharedPassportSystem _passportSystem = default!;
+    [Dependency] private readonly SharedJobSystem _jobSystem = default!;
 
     private void AddTricksVerbs(GetVerbsEvent<Verb> args)
     {
@@ -130,7 +134,7 @@ public sealed partial class AdminVerbSystem
                 args.Verbs.Add(rejuvenate);
             }
 
-            if (TryComp<ActorComponent>(args.Target, out var targetActor))
+            if (TryComp<ActorComponent>(args.Target, out var targetActor) && _mindSystem.TryGetMind(args.Target, out var mindId, out _) && _jobSystem.MindTryGetJob(mindId, out var job))
             {
                 Verb spawnPassport = new()
                 {
@@ -140,7 +144,8 @@ public sealed partial class AdminVerbSystem
                     Act = () =>
                     {
                         var profile = _ticker.GetPlayerProfile(targetActor.PlayerSession);
-                        _passportSystem.SpawnPassportForPlayer(args.Target, profile);
+
+                        _passportSystem.SpawnPassportForPlayer(args.Target, profile, job.ID);
                     },
                     Impact = LogImpact.Medium,
                     Message = Loc.GetString("command-description-spawnpassport"),

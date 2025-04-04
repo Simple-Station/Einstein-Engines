@@ -11,6 +11,10 @@ using Content.Shared.Item;
 using Content.Shared.Preferences;
 using Content.Shared.Storage;
 using Content.Shared.Storage.EntitySystems;
+using Robust.Shared;
+using Content.Shared.CCVar;
+using Content.Shared.Roles;
+using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
@@ -28,6 +32,8 @@ public class SharedPassportSystem : EntitySystem
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly SharedStorageSystem _storage = default!;
     [Dependency] private readonly SharedTransformSystem _sharedTransformSystem = default!;
+    [Dependency] private readonly IConfigurationManager _configManager = default!;
+    [Dependency] private readonly ISharedAdminLogManager _adminLogManager = default!;
 
     public override void Initialize()
     {
@@ -62,11 +68,18 @@ public class SharedPassportSystem : EntitySystem
             45);
     }
 
-    private void OnPlayerLoadoutApplied(PlayerLoadoutAppliedEvent ev) => SpawnPassportForPlayer(ev.Mob, ev.Profile);
+    private void OnPlayerLoadoutApplied(PlayerLoadoutAppliedEvent ev) =>
+        SpawnPassportForPlayer(ev.Mob, ev.Profile, ev.JobId);
 
-    public void SpawnPassportForPlayer(EntityUid mob, HumanoidCharacterProfile profile)
+    public void SpawnPassportForPlayer(EntityUid mob, HumanoidCharacterProfile profile, string? jobId)
     {
-        if (Deleted(mob) || !Exists(mob))
+        if (jobId == null || !_prototypeManager.TryIndex(
+                jobId,
+                out JobPrototype? jobPrototype)
+            || !jobPrototype.CanHavePassport
+            || Deleted(mob)
+            || !Exists(mob)
+            || !ShouldSpawnPassports)
             return;
 
         if (!_prototypeManager.TryIndex(
@@ -88,13 +101,17 @@ public class SharedPassportSystem : EntitySystem
                 || !_storage.CanInsert(item.Value, passportEntity, out _, inventory, itemComp)
                 || !_storage.Insert(item.Value, passportEntity, out _, playSound: false))
             {
-                /*_entityManager.System<ISharedAdminLogSystem>().Add(
+                _adminLogManager.Add(
                     LogType.EntitySpawn,
                     LogImpact.Low,
-                    $"Passport for {profile.Name} was spawned on the floor due to missing bag space");*/
+                    $"Passport for {profile.Name} was spawned on the floor due to missing bag space");
             }
         }
     }
+
+    private bool ShouldSpawnPassports =>
+        _configManager.GetCVar(CCVar.CCVars.ContractorsEnabled) &&
+        _configManager.GetCVar(CCVar.CCVars.ContractorsPassportEnabled);
 
     public void UpdatePassportProfile(Entity<PassportComponent> passport, HumanoidCharacterProfile profile)
     {

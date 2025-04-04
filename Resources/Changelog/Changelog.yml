@@ -14317,3 +14317,18 @@ Entries:
   id: 7087
   time: '2025-04-03T19:18:30.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1339
+- author: Timfa2112
+  changes:
+    - type: Tweak
+      message: >-
+        Restricted some corporate jackets and scrubs to that specific
+        corporation.
+    - type: Tweak
+      message: >-
+        Downstreams can now disable Contractors entirely or partially if they
+        prefer freeform-rp over gameplay facilitating RP
+    - type: Tweak
+      message: Station AI and Borg are no longer people and don't get passports.
+  id: 7088
+  time: '2025-04-04T00:42:57.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2134
