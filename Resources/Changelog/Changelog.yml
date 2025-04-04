@@ -14398,3 +14398,12 @@ Entries:
   id: 7093
   time: '2025-04-04T15:50:31.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2154
+- author: dootythefrooty
+  changes:
+    - type: Add
+      message: Squackroaches can now be worn on the head or the shoulder.
+    - type: Fix
+      message: Squackroaches can now be seen being held.
+  id: 7094
+  time: '2025-04-04T18:35:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2151
