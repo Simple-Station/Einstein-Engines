@@ -41,14 +41,23 @@
     - type: Sprite
       sprite: _EE/Clothing/BieselRepublic/Helmet/TCAF_tactical_helmet_full.rsi
     - type: Clothing
+      layers:
+      - state: icon
+      - state: icon-unshaded
+        shader: unshaded
       sprite: _EE/Clothing/BieselRepublic/Helmet/TCAF_tactical_helmet_full.rsi
+      clothingVisuals:
+        head:
+        - state: equipped-HELMET
+        - state: equipped-HELMET-unshaded
+          shader: unshaded
     - type: Armor
       modifiers:
         coefficients:
-          Blunt: 0.875
-          Slash: 0.875
-          Piercing: 0.875
-          Heat: 0.875
+          Blunt: 0.9
+          Slash: 0.9
+          Piercing: 0.9
+          Heat: 0.9
     - type: Reflect
       reflectProb: 0.03
       spread: 270
