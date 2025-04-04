@@ -166,8 +166,8 @@
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
     state: buckshot-flare
   - type: FlashOnTrigger
-    range: 5
-    duration: 4
+    range: 3
+    duration: 2
   - type: SpawnOnTrigger
     proto: GrenadeFlashEffect
   - type: Ammo
@@ -177,11 +177,11 @@
     color: yellow
     energy: 1
   - type: StaminaDamageOnCollide
-    damage: 60 # two shot stamcrit
+    damage: 40 # three shot stamcrit
   - type: Projectile
     damage:
       types:
-        Blunt: 5
+        Blunt: 3
 
 
 - type: entity
