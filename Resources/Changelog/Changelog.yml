@@ -14363,3 +14363,25 @@ Entries:
   id: 7091
   time: '2025-04-04T09:01:39.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2153
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Fixed various bugs with psionics.
+    - type: Fix
+      message: >-
+        Fixed a bug where if you generated enough Potentia during a drug induced
+        psionics roll to gain two powers, you would only gain one power instead,
+        while permanently losing the ability to gain new powers.
+    - type: Fix
+      message: >-
+        Fixed glimmer being permanently stuck between 500 and 600 by revisiting
+        the math and discovering an algebra error I made a year ago.
+    - type: Tweak
+      message: >-
+        Glimmer now operates on double precision. Have fun with that breaking
+        change if you made any psionic code downstream. Hint, you can cast
+        doubles into a (float) if you don't wish to convert your system to
+        double. 
+  id: 7092
+  time: '2025-04-04T15:41:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1848
