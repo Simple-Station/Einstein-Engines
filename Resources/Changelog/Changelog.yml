@@ -14332,3 +14332,16 @@ Entries:
   id: 7088
   time: '2025-04-04T00:42:57.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2134
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: Added the People's Republic of Adhomai
+    - type: Add
+      message: Added the Izweski Hegemony
+    - type: Fix
+      message: >-
+        Corrected passport flags to what they should have been according to the
+        established lore
+  id: 7089
+  time: '2025-04-04T08:55:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2147
