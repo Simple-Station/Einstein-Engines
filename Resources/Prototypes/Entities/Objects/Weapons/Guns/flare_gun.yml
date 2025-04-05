@@ -16,7 +16,7 @@
     slots:
       gun_chamber:
         name: Chamber
-        startingItem: ShellShotgunFlare
+        startingItem: ShellShotgunLumen
         priority: 1
         whitelist:
           tags: ## TODO: Add a risk of the gun blowing up if using non-light shotgun shells, and then re-enable them.

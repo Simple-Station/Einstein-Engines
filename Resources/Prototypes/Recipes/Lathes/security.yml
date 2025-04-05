@@ -963,13 +963,14 @@
     Plastic: 750
 
 - type: latheRecipe
-  id: BoxShotgunFlare
-  result: BoxShotgunFlare
+  id: BoxShotgunLumen
+  result: BoxShotgunLumen
   category: Ammo
   completetime: 5
   materials:
     Steel: 80
     Plastic: 80
+    Plasma: 80
 
 - type: latheRecipe
   id: BoxShotgunIncendiary
@@ -1176,13 +1177,14 @@
     Steel: 25
 
 - type: latheRecipe
-  id: ShellShotgunFlare
-  result: ShellShotgunFlare
+  id: ShellShotgunLumen
+  result: ShellShotgunLumen
   category: Ammo
   completetime: 2
   materials:
     Plastic: 20
     Steel: 5
+    Plasma: 5
 
 - type: latheRecipe
   id: CartridgeLightRifleIncendiary

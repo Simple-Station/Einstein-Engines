@@ -225,7 +225,7 @@
   - type: EmagLatheRecipes
     emagStaticRecipes:
     - BoxLethalshot
-    - BoxShotgunFlare
+    - BoxShotgunLumen
     - BoxShotgunSlug
     - MagazineBoxLightRifle
     - MagazineBoxMagnum
@@ -909,7 +909,7 @@
     runningState: icon
     staticRecipes:
       - BoxLethalshot
-      - BoxShotgunFlare
+      - BoxShotgunLumen
       - BoxShotgunPractice
       - BoxShotgunSlug
       - ClothingEyesHudSecurity
@@ -919,7 +919,7 @@
       - Handcuffs
       - ShellShotgun
       - ShellShotgunSlug
-      - ShellShotgunFlare
+      - ShellShotgunLumen
       - ShellTranquilizer
       - MagazineBoxLightRifle
       - MagazineBoxLightRiflePractice
@@ -1185,7 +1185,7 @@
       runningState: icon
       staticRecipes:
         - BoxLethalshot
-        - BoxShotgunFlare
+        - BoxShotgunLumen
         - BoxShotgunSlug
         - MagazineBoxLightRifle
         - MagazineBoxMagnum
