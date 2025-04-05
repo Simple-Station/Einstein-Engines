@@ -415,7 +415,7 @@ public sealed partial class CharacterItemGroupRequirement : CharacterRequirement
             if (prototypeManager.TryIndex<LoadoutPrototype>(prototype.ID, out var loadoutPrototype))
                 count -= loadoutPrototype.Slots;
             else if (prototypeManager.TryIndex<TraitPrototype>(prototype.ID, out var traitPrototype))
-                count -= traitPrototype.Slots;
+                count -= traitPrototype.ItemGroupSlots;
             else count--;
         }
 

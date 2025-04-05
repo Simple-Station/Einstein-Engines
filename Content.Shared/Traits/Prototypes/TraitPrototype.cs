@@ -33,6 +33,13 @@ public sealed partial class TraitPrototype : IPrototype, IComparable
     [DataField]
     public int Slots = 1;
 
+    /// <summary>
+    ///     Traits share their item group implementation with Loadouts, but have a separate use for their normal Slots.
+    ///     Thus, they can optionally be split, otherwise the behavior defaults to their standard slots.
+    /// </summary>
+    [DataField]
+    public int ItemGroupSlots => Slots;
+
 
     [DataField]
     public List<CharacterRequirement> Requirements = new();
