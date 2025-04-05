@@ -550,3 +550,133 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutHead
+
+- type: loadout
+  id: ClothingHeadHatTacticalMaidHeadband
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadHatTacticalMaidHeadband
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+
+- type: loadout
+  id: ClothingHeadHatWitch1
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadHatWitch1
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+
+- type: loadout
+  id: ClothingHeadHatTCAFBeretDress
+  category: Head
+  cost: 0
+  canBeHeirloom: true
+  guideEntry: TCFLInfo
+  items:
+    - ClothingHeadHatTCAFBeretDress
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+    - !type:CharacterNationalityRequirement
+      nationalities:
+        - Bieselite
+    - !type:CharacterLifepathRequirement
+      lifepaths:
+        - WarVet
+
+- type: loadout
+  id: ClothingHeadHatTCAFBeretField
+  category: Head
+  cost: 0
+  canBeHeirloom: true
+  guideEntry: TCFLInfo
+  items:
+    - ClothingHeadHatTCAFBeretField
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+    - !type:CharacterNationalityRequirement
+      nationalities:
+        - Bieselite
+    - !type:CharacterLifepathRequirement
+      lifepaths:
+        - WarVet
+
+- type: loadout
+  id: ClothingHeadHatTCFLBeretDress
+  category: Head
+  cost: 0
+  canBeHeirloom: true
+  guideEntry: TCFLInfo
+  items:
+    - ClothingHeadHatTCFLBeretDress
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+    - !type:CharacterNationalityRequirement
+      nationalities:
+        - Bieselite
+    - !type:CharacterLifepathRequirement
+      lifepaths:
+        - WarVet
+
+- type: loadout
+  id: ClothingHeadHatTCFLBeretField
+  category: Head
+  cost: 0
+  canBeHeirloom: true
+  guideEntry: TCFLInfo
+  items:
+    - ClothingHeadHatTCFLBeretField
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+    - !type:CharacterNationalityRequirement
+      nationalities:
+        - Bieselite
+    - !type:CharacterLifepathRequirement
+      lifepaths:
+        - WarVet
+
+- type: loadout
+  id: ClothingHeadHatTCFLBeretSentinel
+  category: Head
+  cost: 0
+  canBeHeirloom: true
+  guideEntry: TCFLInfo
+  items:
+    - ClothingHeadHatTCFLBeretSentinel
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+    - !type:CharacterNationalityRequirement
+      nationalities:
+        - Bieselite
+    - !type:CharacterLifepathRequirement
+      lifepaths:
+        - WarVet
+
+- type: loadout
+  id: ClothingHeadHatTCFLSoftCap
+  category: Head
+  cost: 0
+  canBeHeirloom: true
+  guideEntry: TCFLInfo
+  items:
+    - ClothingHeadHatTCFLSoftCap
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+    - !type:CharacterNationalityRequirement
+      nationalities:
+        - Bieselite
+    - !type:CharacterLifepathRequirement
+      lifepaths:
+        - WarVet

@@ -120,9 +120,12 @@
     earliestStart: 40
     reoccurrenceDelay: 20
     minimumPlayers: 20
-  - type: AntagRandomSpawn
+    duration: null
+  - type: SpaceSpawnRule
+    spawnDistance: 0
   - type: AntagSpawner
     prototype: MobDragon
+  - type: DragonRule
   - type: AntagObjectives
     objectives:
     - CarpRiftsObjective
@@ -134,11 +137,8 @@
       min: 1
       max: 1
       pickPlayer: false
-      mindComponents:
-      - type: DragonRole
-        prototype: Dragon
-      - type: RoleBriefing
-        briefing: dragon-role-briefing
+      mindRoles:
+      - MindRoleDragon
 
 - type: entity
   parent: BaseGameRule
@@ -185,9 +185,8 @@
         nameSegments:
         - names_ninja_title
         - names_ninja
-      mindComponents:
-      - type: NinjaRole
-        prototype: SpaceNinja
+      mindRoles:
+      - MindRoleNinja
 
 - type: entity
   parent: BaseGameRule
@@ -245,7 +244,7 @@
   components:
   - type: StationEvent
     earliestStart: 30
-    weight: 7.5
+    weight: 5
     minimumPlayers: 10 #Enough to hopefully have at least one engineering guy
     startAnnouncement: true
     endAnnouncement: true
@@ -262,7 +261,7 @@
     startAnnouncement: true
     startDelay: 10
     earliestStart: 15
-    weight: 6
+    weight: 3
     duration: 50
   - type: VentCrittersRule
     entries:
@@ -286,7 +285,7 @@
   - type: StationEvent
     startAnnouncement: true
     startDelay: 10
-    weight: 6
+    weight: 3
     duration: 50
   - type: VentCrittersRule
     entries:
@@ -294,6 +293,8 @@
       prob: 0.03
     - id: MobMothroach
       prob: 0.008
+    - id: MobSquackroach
+      prob: 0.001
 
 - type: entity
   id: SnailMigrationLowPop
@@ -302,7 +303,7 @@
   - type: StationEvent
     startAnnouncement: true
     startDelay: 10
-    weight: 6
+    weight: 3
     duration: 50
   - type: VentCrittersRule
     entries:
@@ -320,7 +321,7 @@
   - type: StationEvent
     startAnnouncement: true
     earliestStart: 15
-    weight: 6
+    weight: 3
     duration: 50
     minimumPlayers: 30
   - type: VentCrittersRule
@@ -413,7 +414,7 @@
     startDelay: 10
     earliestStart: 20
     minimumPlayers: 15
-    weight: 5
+    weight: 3
     duration: 60
   - type: VentCrittersRule
     entries:
@@ -434,7 +435,7 @@
     startDelay: 10
     earliestStart: 20
     minimumPlayers: 15
-    weight: 5
+    weight: 3
     duration: 60
   - type: VentCrittersRule
     entries:
@@ -464,9 +465,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
-    earliestStart: 50
-    minimumPlayers: 30
-    weight: 2
+    earliestStart: 90
+    minimumPlayers: 40
+    weight: 1 # Zombies was happening basically every single survival round, so now it's super rare
     duration: 1
   - type: ZombieRule
   - type: AntagSelection
@@ -488,9 +489,9 @@
         maxInitialInfectedGrace: 450
       - type: ZombifyOnDeath
       - type: IncurableZombie
-      mindComponents:
-      - type: InitialInfectedRole
-        prototype: InitialInfected
+      - type: InitialInfected
+      mindRoles:
+      - MindRoleInitialInfected
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -523,9 +524,8 @@
       - type: NpcFactionMember
         factions:
         - Syndicate
-      mindComponents:
-      - type: NukeopsRole
-        prototype: Nukeops
+      mindRoles:
+      - MindRoleNukeops
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -550,9 +550,8 @@
         components:
         - MindShield # DeltaV - Mind Shielded people are immune to becoming syndicate
         - AntagImmune
-      mindComponents:
-      - type: TraitorRole
-        prototype: TraitorSleeper
+      mindRoles:
+      - MindRoleTraitorSleeper
 
 - type: entity
   id: MassHallucinations
@@ -590,7 +589,7 @@
   id: IonStorm
   components:
   - type: StationEvent
-    weight: 8
+    weight: 10
     reoccurrenceDelay: 20
     duration: 1
   - type: IonStormRule
@@ -618,3 +617,35 @@
       maxOccurrences: 1
       weight: 3
     - type: AirlockVirusRule
+
+- type: entity
+  id: CarpSpawn
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    startAnnouncement: true
+    startDelay: 10
+    earliestStart: 20
+    minimumPlayers: 15
+    weight: 3
+    duration: 60
+  - type: VentCrittersRule
+    entries:
+    - id: MobCarpGoldfish
+      prob: 0.02
+    - id: MobCarp
+      prob: 0.005
+
+- type: entity
+  parent: BaseGameRule
+  id: SmugglerStashVariationPass
+  components:
+  - type: StationEvent
+    earliestStart: 0
+    duration: 1
+    minimumPlayers: 1
+    maxOccurrences: 2
+    weight: 10
+  - type: RandomSpawnRule
+    prototype: RandomSatchelSpawner

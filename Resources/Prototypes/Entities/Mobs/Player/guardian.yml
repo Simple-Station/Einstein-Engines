@@ -13,6 +13,9 @@
       makeSentient: true
       name: ghost-role-information-guardian-name
       description: ghost-role-information-guardian-description
+      rules: ghost-role-information-familiar-rules
+      mindRoles:
+      - MindRoleGhostRoleFamiliar
       raffle:
         settings: default
     - type: GhostTakeoverAvailable
@@ -134,6 +137,18 @@
           map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
           color: "#40a7d7"
           shader: unshaded
+    - type: MeleeWeapon
+      hidden: false
+      altDisarm: false
+      animation: WeaponArcFist
+      attackRate: 0.3
+      autoAttack: true
+      soundHit:
+        collection: Punch
+      damage:
+        types:
+          Blunt: 10
+          Structural: 10
     - type: HTN
       rootTask:
         task: SimpleHumanoidHostileCompound

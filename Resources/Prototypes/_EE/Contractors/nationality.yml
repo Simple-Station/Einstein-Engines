@@ -1,0 +1,99 @@
+- type: nationality
+  id: Bieselite
+  nameKey: nationality_name_bieselite
+  descriptionKey: nationality_description_bieselite
+  hostile:
+  - Solarian
+  passportPrototype: BieselPassport
+
+- type: nationality
+  id: Solarian
+  nameKey: nationality_name_solarian
+  descriptionKey: nationality_description_solarian
+  hostile:
+  - Bieselite
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Human
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - SolCommon
+      languagesUnderstood:
+        - SolCommon
+  passportPrototype: SolPassport
+
+- type: nationality
+  id: Valyrian
+  nameKey: nationality_name_valyrian
+  descriptionKey: nationality_description_valyrian
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Harpy
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - ValyrianStandard
+      languagesUnderstood:
+        - ValyrianStandard
+  passportPrototype: ValyrianPassport
+
+- type: nationality
+  id: Elyran
+  nameKey: nationality_name_elyran
+  descriptionKey: nationality_description_elyran
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - Elyran
+      languagesUnderstood:
+        - Elyran
+  passportPrototype: ElyranPassport
+
+- type: nationality
+  id: Nederlandic
+  nameKey: nationality_name_nederlandic
+  descriptionKey: nationality_description_nederlandic
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - NovuNederic
+      languagesUnderstood:
+        - NovuNederic
+  passportPrototype: NederlandicPassport
+
+- type: nationality
+  id: Izweski
+  nameKey: nationality_name_izweski
+  descriptionKey: nationality_description_izweski
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - Draconic
+      languagesUnderstood:
+        - Draconic
+  passportPrototype: IzweskiPassport
+
+- type: nationality
+  id: Adhomai
+  nameKey: nationality_name_adhomai
+  descriptionKey: nationality_description_adhomai
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - SiikMaas
+      languagesUnderstood:
+        - SiikMaas
+  passportPrototype: AdhomaiPassport
+
+- type: nationality
+  id: GoldenDeep
+  nameKey: nationality_name_goldendeep
+  descriptionKey: nationality_description_goldendeep
+  passportPrototype: GoldenDeepPassport
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - IPC

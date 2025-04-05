@@ -8,6 +8,7 @@ using Content.Client.Message;
 using Content.Client.Players.PlayTimeTracking;
 using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.Guidebook;
+using Content.Shared._EE.Contractors.Prototypes;
 using Content.Shared.CCVar;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Clothing.Loadouts.Prototypes;
@@ -15,6 +16,7 @@ using Content.Shared.Clothing.Loadouts.Systems;
 using Content.Shared.Customization.Systems;
 using Content.Shared.Dataset;
 using Content.Shared.GameTicking;
+using Content.Shared.Guidebook;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
@@ -29,6 +31,7 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Client.Utility;
 using Robust.Client.Player;
+using Robust.Shared;
 using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
 using Robust.Shared.Map;
@@ -75,6 +78,11 @@ namespace Content.Client.Lobby.UI
         public JobPrototype? JobOverride;
 
         private List<SpeciesPrototype> _species = new();
+        // EE - Contractor System Changes Start
+        private List<NationalityPrototype> _nationalies = new();
+        private List<EmployerPrototype> _employers = new();
+        private List<LifepathPrototype> _lifepaths = new();
+        // EE - Contractor System Changes End
         private List<(string, RequirementsSelector)> _jobPriorities = new();
         private readonly Dictionary<string, BoxContainer> _jobCategories;
 
@@ -94,6 +102,8 @@ namespace Content.Client.Lobby.UI
 
         [ValidatePrototypeId<GuideEntryPrototype>]
         private const string DefaultSpeciesGuidebook = "Species";
+
+        public event Action<List<ProtoId<GuideEntryPrototype>>>? OnOpenGuidebook;
 
         [ValidatePrototypeId<LocalizedDatasetPrototype>]
         private const string StationAiNames = "NamesAI";
@@ -245,6 +255,42 @@ namespace Content.Client.Lobby.UI
             };
 
             #endregion Species
+
+            #region Contractors
+
+            if(_cfgManager.GetCVar(CCVars.ContractorsEnabled))
+            {
+                Background.Orphan();
+                CTabContainer.AddTab(Background, Loc.GetString("humanoid-profile-editor-background-tab"));
+
+                RefreshNationalities();
+                RefreshEmployers();
+                RefreshLifepaths();
+
+                NationalityButton.OnItemSelected += args =>
+                {
+                    NationalityButton.SelectId(args.Id);
+                    SetNationality(_nationalies[args.Id].ID);
+                };
+
+                EmployerButton.OnItemSelected += args =>
+                {
+                    EmployerButton.SelectId(args.Id);
+                    SetEmployer(_employers[args.Id].ID);
+                };
+
+                LifepathButton.OnItemSelected += args =>
+                {
+                    LifepathButton.SelectId(args.Id);
+                    SetLifepath(_lifepaths[args.Id].ID);
+                };
+            }
+            else
+            {
+                Background.Visible = false;
+            }
+
+            #endregion Contractors
 
             #region Height and Width
 
@@ -603,6 +649,126 @@ namespace Content.Client.Lobby.UI
                 SetSpecies(SharedHumanoidAppearanceSystem.DefaultSpecies);
         }
 
+        public void RefreshNationalities()
+        {
+            NationalityButton.Clear();
+            _nationalies.Clear();
+
+            _nationalies.AddRange(_prototypeManager.EnumeratePrototypes<NationalityPrototype>()
+                .Where(o => _characterRequirementsSystem.CheckRequirementsValid(o.Requirements,
+                    _controller.GetPreferredJob(Profile ?? HumanoidCharacterProfile.DefaultWithSpecies()),
+                    Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
+                    _requirements.GetRawPlayTimeTrackers(),
+                    _requirements.IsWhitelisted(),
+                    o,
+                    _entManager,
+                    _prototypeManager,
+                    _cfgManager, out _)));
+
+            var nationalityIds = _nationalies.Select(o => o.ID).ToList();
+
+            for (var i = 0; i < _nationalies.Count; i++)
+            {
+                NationalityButton.AddItem(Loc.GetString(_nationalies[i].NameKey), i);
+
+                if (Profile?.Nationality == _nationalies[i].ID)
+                    NationalityButton.SelectId(i);
+            }
+
+            // If our nationality isn't available, reset it to default
+            if (Profile != null && !nationalityIds.Contains(Profile.Nationality))
+                SetNationality(SharedHumanoidAppearanceSystem.DefaultNationality);
+
+            if(Profile != null)
+                UpdateNationalityDescription(Profile.Nationality);
+        }
+
+        public void RefreshEmployers()
+        {
+            EmployerButton.Clear();
+            _employers.Clear();
+
+            _employers.AddRange(_prototypeManager.EnumeratePrototypes<EmployerPrototype>()
+                .Where(o => _characterRequirementsSystem.CheckRequirementsValid(o.Requirements,
+                _controller.GetPreferredJob(Profile ?? HumanoidCharacterProfile.DefaultWithSpecies()),
+                Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
+                _requirements.GetRawPlayTimeTrackers(),
+                _requirements.IsWhitelisted(),
+                o,
+                _entManager,
+                _prototypeManager,
+                _cfgManager, out _)));
+
+            var employerIds = _employers.Select(o => o.ID).ToList();
+
+            for (var i = 0; i < _employers.Count; i++)
+            {
+                EmployerButton.AddItem(Loc.GetString(_employers[i].NameKey), i);
+
+                if (Profile?.Employer == _employers[i].ID)
+                    EmployerButton.SelectId(i);
+            }
+
+            // If our employer isn't available, reset it to default
+            if (Profile != null && !employerIds.Contains(Profile.Employer))
+                SetEmployer(SharedHumanoidAppearanceSystem.DefaultEmployer);
+
+            if(Profile != null)
+                UpdateEmployerDescription(Profile.Employer);
+        }
+
+        public void RefreshLifepaths()
+        {
+            LifepathButton.Clear();
+            _lifepaths.Clear();
+
+            _lifepaths.AddRange(_prototypeManager.EnumeratePrototypes<LifepathPrototype>()
+                .Where(o => _characterRequirementsSystem.CheckRequirementsValid(o.Requirements,
+                _controller.GetPreferredJob(Profile ?? HumanoidCharacterProfile.DefaultWithSpecies()),
+                Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
+                _requirements.GetRawPlayTimeTrackers(),
+                _requirements.IsWhitelisted(),
+                o,
+                _entManager,
+                _prototypeManager,
+                _cfgManager, out _)));
+
+            var lifepathIds = _lifepaths.Select(o => o.ID).ToList();
+
+            for (var i = 0; i < _lifepaths.Count; i++)
+            {
+                LifepathButton.AddItem(Loc.GetString(_lifepaths[i].NameKey), i);
+
+                if (Profile?.Lifepath == _lifepaths[i].ID)
+                    LifepathButton.SelectId(i);
+            }
+
+            // If our lifepath isn't available, reset it to default
+            if (Profile != null && !lifepathIds.Contains(Profile.Lifepath))
+                SetLifepath(SharedHumanoidAppearanceSystem.DefaultLifepath);
+
+            if(Profile != null)
+                UpdateLifepathDescription(Profile.Lifepath);
+        }
+
+        private void UpdateNationalityDescription(string nationality)
+        {
+            var prototype = _prototypeManager.Index<NationalityPrototype>(nationality);
+            NationalityDescriptionLabel.SetMessage(Loc.GetString(prototype.DescriptionKey));
+        }
+
+        private void UpdateLifepathDescription(string lifepath)
+        {
+            var prototype = _prototypeManager.Index<LifepathPrototype>(lifepath);
+            LifepathDescriptionLabel.SetMessage(Loc.GetString(prototype.DescriptionKey));
+        }
+
+        private void UpdateEmployerDescription(string employer)
+        {
+            var prototype = _prototypeManager.Index<EmployerPrototype>(employer);
+            EmployerDescriptionLabel.SetMessage(Loc.GetString(prototype.DescriptionKey));
+        }
+
         public void RefreshAntags()
         {
             AntagList.DisposeAllChildren();
@@ -626,10 +792,11 @@ namespace Content.Client.Lobby.UI
                 {
                     Margin = new Thickness(3f, 3f, 3f, 0f),
                 };
+                selector.OnOpenGuidebook += OnOpenGuidebook;
 
                 var title = Loc.GetString(antag.Name);
                 var description = Loc.GetString(antag.Objective);
-                selector.Setup(items, title, 250, description);
+                selector.Setup(items, title, 250, description, guides: antag.Guides);
                 selector.Select(Profile?.AntagPreferences.Contains(antag.ID) == true ? 0 : 1);
 
                 if (!_characterRequirementsSystem.CheckRequirementsValid(
@@ -744,6 +911,9 @@ namespace Content.Client.Lobby.UI
             RefreshAntags();
             RefreshJobs();
             RefreshSpecies();
+            RefreshNationalities();
+            RefreshEmployers();
+            RefreshLifepaths();
             RefreshFlavorText();
             ReloadPreview();
 
@@ -779,6 +949,10 @@ namespace Content.Client.Lobby.UI
 
         private void OnSpeciesInfoButtonPressed(BaseButton.ButtonEventArgs args)
         {
+            // TODO GUIDEBOOK
+            // make the species guide book a field on the species prototype.
+            // I.e., do what jobs/antags do.
+
             var guidebookController = UserInterfaceManager.GetUIController<GuidebookUIController>();
             var species = Profile?.Species ?? SharedHumanoidAppearanceSystem.DefaultSpecies;
             var page = DefaultSpeciesGuidebook;
@@ -787,9 +961,10 @@ namespace Content.Client.Lobby.UI
 
             if (_prototypeManager.TryIndex<GuideEntryPrototype>(DefaultSpeciesGuidebook, out var guideRoot))
             {
-                var dict = new Dictionary<string, GuideEntry> { { DefaultSpeciesGuidebook, guideRoot } };
+                var dict = new Dictionary<ProtoId<GuideEntryPrototype>, GuideEntry>();
+                dict.Add(DefaultSpeciesGuidebook, guideRoot);
                 //TODO: Don't close the guidebook if its already open, just go to the correct page
-                guidebookController.ToggleGuidebook(dict, includeChildren:true, selected: page);
+                guidebookController.OpenGuidebook(dict, includeChildren:true, selected: page);
             }
         }
 
@@ -868,6 +1043,7 @@ namespace Content.Client.Lobby.UI
                 {
                     var jobContainer = new BoxContainer { Orientation = LayoutOrientation.Horizontal, };
                     var selector = new RequirementsSelector { Margin = new(3f, 3f, 3f, 0f) };
+                    selector.OnOpenGuidebook += OnOpenGuidebook;
 
                     var icon = new TextureRect
                     {
@@ -876,7 +1052,7 @@ namespace Content.Client.Lobby.UI
                     };
                     var jobIcon = _prototypeManager.Index<JobIconPrototype>(job.Icon);
                     icon.Texture = jobIcon.Icon.Frame0();
-                    selector.Setup(items, job.LocalizedName, 200, job.LocalizedDescription, icon);
+                    selector.Setup(items, job.LocalizedName, 200, job.LocalizedDescription, icon, job.Guides);
 
                     if (!_requirements.CheckJobWhitelist(job, out var reason))
                         selector.LockRequirements(reason);
@@ -1294,6 +1470,36 @@ namespace Content.Client.Lobby.UI
             IsDirty = true;
             ReloadProfilePreview();
             ReloadClothes(); // Species may have job-specific gear, reload the clothes
+        }
+
+        private void SetNationality(string newNationality)
+        {
+            Profile = Profile?.WithNationality(newNationality);
+            UpdateCharacterRequired();
+            IsDirty = true;
+            ReloadProfilePreview();
+            ReloadClothes(); // Nationalities may have specific gear, reload the clothes
+            UpdateNationalityDescription(newNationality);
+        }
+
+        private void SetEmployer(string newEmployer)
+        {
+            Profile = Profile?.WithEmployer(newEmployer);
+            UpdateCharacterRequired();
+            IsDirty = true;
+            ReloadProfilePreview();
+            ReloadClothes(); // Employers may have specific gear, reload the clothes
+            UpdateEmployerDescription(newEmployer);
+        }
+
+        private void SetLifepath(string newLifepath)
+        {
+            Profile = Profile?.WithLifepath(newLifepath);
+            UpdateCharacterRequired();
+            IsDirty = true;
+            ReloadProfilePreview();
+            ReloadClothes(); // Lifepaths may have specific gear, reload the clothes
+            UpdateLifepathDescription(newLifepath);
         }
 
         private void SetName(string newName)
@@ -2437,9 +2643,10 @@ namespace Content.Client.Lobby.UI
                 selector.PreferenceChanged += preference =>
                 {
                     // Make sure they have enough loadout points
-                    var selected = preference.Selected
-                        ? CheckPoints(-selector.Loadout.Cost, preference.Selected)
-                        : CheckPoints(selector.Loadout.Cost, preference.Selected);
+                    var wasSelected = Profile?.LoadoutPreferences
+                        .FirstOrDefault(it => it.LoadoutName == selector.Loadout.ID)
+                        ?.Selected ?? false;
+                    var selected = preference.Selected && (wasSelected || CheckPoints(-selector.Loadout.Cost, true));
 
                     // Update Preferences
                     Profile = Profile?.WithLoadoutPreference(
@@ -2458,7 +2665,7 @@ namespace Content.Client.Lobby.UI
             bool CheckPoints(int points, bool preference)
             {
                 var temp = LoadoutPointsBar.Value + points;
-                return preference ? !(temp < 0) : temp < 0;
+                return preference ? temp >= 0 : temp < 0;
             }
         }
 
@@ -2550,6 +2757,9 @@ namespace Content.Client.Lobby.UI
 
         private void UpdateCharacterRequired()
         {
+            RefreshNationalities();
+            RefreshEmployers();
+            RefreshLifepaths();
             UpdateRoleRequirements();
             UpdateTraits(TraitsShowUnusableButton.Pressed);
             UpdateLoadouts(LoadoutsShowUnusableButton.Pressed);

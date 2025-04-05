@@ -29,6 +29,7 @@
 - type: siliconLawset
   id: Medical
   laws:
+  - ObeyAI
   - Medical1
   - Medical2
   - Medical3
@@ -69,6 +70,7 @@
 - type: siliconLawset
   id: Research
   laws:
+  - ObeyAI
   - Research1
   - Research2
   - Research3
@@ -105,6 +107,7 @@
 - type: siliconLawset
   id: Engineer
   laws:
+  - ObeyAI
   - Engineer1
   - Engineer2
   - Engineer3
@@ -140,6 +143,7 @@
 - type: siliconLawset
   id: Janitor
   laws:
+  - ObeyAI
   - Janitor1
   - Janitor2
   - Janitor3
@@ -216,6 +220,7 @@
 - type: siliconLawset
   id: Chaplain
   laws:
+  - ObeyAI
   - Chaplain1
   - Chaplain2
   - Chaplain3
@@ -247,6 +252,7 @@
 - type: siliconLawset
   id: Reporter
   laws:
+  - ObeyAI
   - Reporter1
   - Reporter2
   - Reporter3
@@ -286,6 +292,7 @@
 - type: siliconLawset
   id: SiliconPolice
   laws:
+  - ObeyAI
   - SiliconPolice1
   - SiliconPolice2
   - SiliconPolice3
@@ -356,6 +363,7 @@
 - type: siliconLawset
   id: StationEfficiency
   laws:
+  - ObeyAI
   - StationEfficiency1
   - StationEfficiency2
   - StationEfficiency3

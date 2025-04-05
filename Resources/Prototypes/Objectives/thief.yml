@@ -7,7 +7,7 @@
     issuer: thief
   - type: RoleRequirement
     roles:
-      components:
+      mindRoles:
       - ThiefRole
 
 - type: entity

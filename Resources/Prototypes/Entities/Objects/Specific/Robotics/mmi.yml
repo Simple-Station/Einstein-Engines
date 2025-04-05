@@ -87,12 +87,16 @@
       beginSearchingText: positronic-brain-searching
       roleName: positronic-brain-role-name
       roleDescription: positronic-brain-role-description
+      roleRules: ghost-role-information-silicon-rules
+      mindRoles:
+      - MindRoleGhostRoleSilicon
       wipeVerbText: positronic-brain-wipe-device-verb-text
       wipeVerbPopup: positronic-brain-wiped-device
       stopSearchVerbText: positronic-brain-stop-searching-verb-text
       stopSearchVerbPopup: positronic-brain-stopped-searching
     - type: BlockMovement
     - type: Examiner
+    - type: Brain # hopefully this doesn't break everything
     - type: BorgBrain
     - type: IntrinsicRadioReceiver
     - type: IntrinsicRadioTransmitter
@@ -128,6 +132,7 @@
       guides:
       - Cyborgs
     - type: Organ # Estacao Pirata - IPCs
+      slotId: posibrain
     - type: LanguageSpeaker
     - type: LanguageKnowledge
       speaks: [RobotTalk]

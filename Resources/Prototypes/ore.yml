@@ -4,32 +4,32 @@
 # High yields
 - type: ore
   id: OreSteel
-  oreEntity: SteelOre1
+  oreEntity: SteelOre1Unprocessed
   minOreYield: 1
   maxOreYield: 5
 
 - type: ore
   id: OreSpaceQuartz
-  oreEntity: SpaceQuartz1
+  oreEntity: SpaceQuartz1Unprocessed
   minOreYield: 1
   maxOreYield: 5
 
 - type: ore
   id: OreCoal
-  oreEntity: Coal1
+  oreEntity: Coal1Unprocessed
   minOreYield: 1
   maxOreYield: 5
 
 # Medium yields
 - type: ore
   id: OreGold
-  oreEntity: GoldOre1
+  oreEntity: GoldOre1Unprocessed
   minOreYield: 1
   maxOreYield: 3
 
 - type: ore
   id: OreSilver
-  oreEntity: SilverOre1
+  oreEntity: SilverOre1Unprocessed
   minOreYield: 1
   maxOreYield: 3
 
@@ -42,25 +42,25 @@
 # Low yields
 - type: ore
   id: OrePlasma
-  oreEntity: PlasmaOre1
+  oreEntity: PlasmaOre1Unprocessed
   minOreYield: 1
   maxOreYield: 2
 
 - type: ore
   id: OreUranium
-  oreEntity: UraniumOre1
+  oreEntity: UraniumOre1Unprocessed
   minOreYield: 1
   maxOreYield: 2
 
 - type: ore
   id: OreBananium
-  oreEntity: BananiumOre1
+  oreEntity: BananiumOre1Unprocessed
   minOreYield: 1
   maxOreYield: 3
 
 - type: ore
   id: OreDiamond
-  oreEntity: DiamondOre1
+  oreEntity: DiamondOre1Unprocessed
   minOreYield: 1
   maxOreYield: 2
 
@@ -126,19 +126,19 @@
   id: RandomOreDistributionBasalt
   weights:
     OreSteel: 20
-    OreCoal: 0.1
-    OreSpaceQuartz: 0.1
+    OreCoal: 1.6
+    OreSpaceQuartz: 0.8
     OreGold: 10
-    OrePlasma: 0.4
-    OreSilver: 0.1
-    OreUranium: 0.1
-    OreBananium: 0.1
-    OreArtifactFragment: 0.1
+    OrePlasma: 0.32
+    OreSilver: 0.8
+    OreUranium: 0.8
+    OreBananium: 0.8
+    OreArtifactFragment: 0.8
     OreBluespace: 0.5
     OreNormality: 0.3
     OreAluminium: 8
-    OreLead: 0.2
-    OreCopper: 0.2
+    OreLead: 1.6
+    OreCopper: 1.6
     OreTungsten: 5
 
 - type: weightedRandomOre

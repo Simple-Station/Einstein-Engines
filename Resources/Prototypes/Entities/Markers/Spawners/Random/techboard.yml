@@ -33,6 +33,7 @@
     #- ShuttleConsoleCircuitboard # Delta V - Remove shuttle boards
     - ComputerMassMediaCircuitboard
     - AutolatheMachineCircuitboard
+    - BookPressMachineCircuitboard
     - ProtolatheMachineCircuitboard
     - SalvageMagnetMachineCircuitboard
     - PortableGeneratorSuperPacmanMachineCircuitboard # Delta V - Add additional boards

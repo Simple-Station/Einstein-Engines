@@ -3,11 +3,14 @@
   name: job-name-engineer
   description: job-description-engineer
   playTimeTracker: JobStationEngineer
-  antagAdvantage: 3 # DeltaV - Reduced TC: External Access + Engineering
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Engineering
       min: 14400 #4 hrs
+    - !type:CharacterEmployerRequirement
+      inverted: true
+      employers:
+      - Unemployed
   startingGear: StationEngineerGear
   icon: "JobIconStationEngineer"
   supervisors: job-supervisors-ce

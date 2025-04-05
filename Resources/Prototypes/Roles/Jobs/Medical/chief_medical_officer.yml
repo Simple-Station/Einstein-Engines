@@ -5,13 +5,15 @@
   name: job-name-cmo
   description: job-description-cmo
   playTimeTracker: JobChiefMedicalOfficer
-  antagAdvantage: 6 # DeltaV - Reduced TC: Head of Staff
   requirements:
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
         - Foreigner
         - ForeignerLight
+    - !type:CharacterEmployerRequirement
+      employers:
+      - NanoTrasen
   weight: 10
   startingGear: CMOGear
   icon: "JobIconChiefMedicalOfficer"
@@ -54,7 +56,7 @@
     back: ClothingBackpackCMOFilled
     shoes: ClothingShoesColorBrown
     id: CMOPDA
-    ears: ClothingHeadsetCMO
+    ears: ClothingHeadsetAltMedical # Goobstation
   innerClothingSkirt: ClothingUniformJumpskirtCMO
   satchel: ClothingBackpackSatchelCMOFilled
   duffelbag: ClothingBackpackDuffelCMOFilled

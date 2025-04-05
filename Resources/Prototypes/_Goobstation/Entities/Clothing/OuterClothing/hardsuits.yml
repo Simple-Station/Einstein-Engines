@@ -2,7 +2,7 @@
   parent: ClothingOuterHardsuitSecurity
   id: ClothingOuterHardsuitBlueshield
   name: blueshield's hardsuit
-  description: A special hardsuit made for the Blueshield, contains extra armor.
+  description: A special security hardsuit made for the Blueshield Officer, has extra armor yet somehow feels lighter.
   components:
   - type: Sprite
     sprite: _Goobstation/Clothing/OuterClothing/Hardsuits/Combat/blueshield.rsi
@@ -20,6 +20,7 @@
         Slash: 0.5
         Piercing: 0.5
         Radiation: 0.5
+        Heat: 0.5
         Caustic: 0.6
   - type: ClothingSpeedModifier
     walkModifier: 0.85
@@ -29,3 +30,117 @@
     clothingPrototype: ClothingHeadHelmetHardsuitBlueshield
   - type: StaminaDamageResistance
     coefficient: 0.5 # 50%
+
+
+# cybersun stealth
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitCybersunStealth
+  suffix: stealth
+  name: cybersun stealth hardsuit
+  description: A hardsuit with stealth plating for operations, the shielding doesn't work while you're moving though! Needs the helmet on to finish the stealth field.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/OuterClothing/Hardsuits/cybersunstealth.rsi
+  - type: Item
+    size: Huge
+  - type: Clothing
+    sprite: _Goobstation/Clothing/OuterClothing/Hardsuits/cybersunstealth.rsi
+    onEquipFunctions:
+      - !type:TraitAddComponent
+        components:
+          - type: BreakStealthOnAttack
+    onUnequipFunctions:
+      - !type:TraitRemoveComponent
+        components:
+          - type: BreakStealthOnAttack
+  - type: PressureProtection
+    highPressureMultiplier: 0.05
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.75
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.85 # Metamaterials are quite brittle
+        Slash: 0.75
+        Piercing: 0.70 # But at least it can have steel plates underneath.
+        Heat: 0.75
+        Radiation: 0.85
+        Caustic: 0.85
+  - type: ClothingSpeedModifier
+    walkModifier: 0.8
+    sprintModifier: 0.85
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitCybersunStealth
+  - type: Tag
+    tags:
+    - Hardsuit
+    - WhitelistChameleon
+  - type: ClothingGrantComponent
+    component:
+    - type: StealthOnMove
+      passiveVisibilityRate: -0.65
+      movementVisibilityRate: 0.575
+  - type: EmitsSoundOnMove
+    soundCollection:
+      collection: FootstepHardsuitLight
+      params:
+        volume: -12
+        maxDistance: 5
+        rolloffFactor: 1.2
+        # SIGNIFICANTLY Quieter than a normal hardsuit, but not perfectly stealthy. If you move while people are close enough, they can still hear it.
+  - type: StaminaDamageResistance
+    coefficient: 0.85 # 15%. Substantially lower than a normal hardsuit.
+
+# cybersun dreadnought
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitCybersunDreadnought
+  name: CSA-105UA "Xíngtiān" tacsuit # https://en.wikipedia.org/wiki/Xingtian in case you were wondering where the name comes from.
+  description: A rare and exotic horror from the minds of Sol's finest engineers. This suit is worn as a punishment for crimes against Mother Sol.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/OuterClothing/Hardsuits/dreadnought.rsi
+  - type: Item
+    size: Ginormous #damn its hard to spell
+  - type: Clothing
+    sprite: _Goobstation/Clothing/OuterClothing/Hardsuits/dreadnought.rsi
+    equipDelay: 15
+    unequipDelay: 1200 # if i add the unremovable comp then you couldnt even put this on - Diggy here, I added 600 more seconds in case you SOMEHOW had 10 minutes to take it off, now it's 20, enjoy.
+  - type: PressureProtection
+    highPressureMultiplier: 0.05
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.3 # chinalake meta would go hard
+  - type: FireProtection
+    reduction: 0.9 # atmos fire suit is 0.8, so i guess this is fine? Reduction goes the opossite way right?
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.1
+        Slash: 0.1 # holy shit bruv
+        Piercing: 0.1
+        Heat: 0.1
+        Radiation: 0.25 # do people even know rad ammo exists? anyway making rad its weakness is kinda fair
+        Caustic: 0.4
+  - type: ClothingSpeedModifier
+    walkModifier: 0.7
+    sprintModifier: 0.5
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototypes:
+      head: ClothingHeadHelmetHardsuitDreadnought
+  - type: ClothingGrantComponent
+    component:
+    - type: DamageOverTime
+      damage:
+        types:
+          Piercing: 0.3
+      interval: 1.0
+      ignoreResistances: true
+  - type: StaminaDamageResistance
+    coefficient: 0.10 # 90% stamdgm resist

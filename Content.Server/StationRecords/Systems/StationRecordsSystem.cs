@@ -1,6 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using Content.Server.Forensics;
-using Content.Server.GameTicking;
+using Content.Shared.GameTicking;
 using Content.Shared.Inventory;
 using Content.Shared.PDA;
 using Content.Shared.Preferences;

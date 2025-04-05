@@ -101,7 +101,7 @@
       layers:
         - sprite: Fluids/wet_floor_sparkles.rsi
           state: sparkles
-      drawdepth: FloorObjects
+      drawdepth: Puddles
       color: "#FFFFFF80"
 
 - type: entity
@@ -121,17 +121,12 @@
     layers:
     - sprite: Fluids/puddle.rsi
       state: splat0
-    drawdepth: FloorObjects
+    drawdepth: Puddles
     color: "#FFFFFF80"
   - type: Physics
     bodyType: Static
   - type: Fixtures
     fixtures:
-      # Context / examine fixture
-      fix1:
-        shape:
-          !type:PhysShapeCircle
-          radius: 0.25
       slipFixture:
         shape:
           !type:PhysShapeAabb
@@ -174,10 +169,10 @@
   - type: PuddleFootPrints
 
 - type: entity
-  name: Footstep
+  name: footstep
   id: Footstep
   save: false
-  description: Trace of liquid
+  description: Trace of liquid.
   components:
     - type: Clickable
     - type: FootstepModifier
@@ -222,6 +217,12 @@
       examinable: false
     - type: ExaminableSolution
       solution: step
+    - type: MixableSolution
+      solution: step
     - type: DrawableSolution
       solution: step
     - type: BadDrink
+    - type: IgnoresFingerprints
+    - type: Tag
+      tags:
+      - DNASolutionScannable

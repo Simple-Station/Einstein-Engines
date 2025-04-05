@@ -11,7 +11,6 @@
   icon: { sprite: "/Textures/_Nuclear14/Objects/Misc/materials.rsi", state: lead }
   spawn: N14AluminiumOre1
   maxCount: 10
-  itemSize: 1
 
 - type: stack
   id: N14LeadOre
@@ -19,15 +18,13 @@
   icon: { sprite: "/Textures/_Nuclear14/Objects/Misc/materials.rsi", state: lead }
   spawn: N14LeadOre1
   maxCount: 10
-  itemSize: 1
 
 - type: stack
-  id: N14CopperOre
+  id: CopperOre
   name: copper ore
   icon: { sprite: "/Textures/_Nuclear14/Objects/Misc/materials.rsi", state: copper }
-  spawn: N14CopperOre1
+  spawn: CopperOre1
   maxCount: 30
-  itemSize: 1
 
 - type: stack
   id: SulfurOre
@@ -35,7 +32,6 @@
   icon: { sprite: "/Textures/_Nuclear14/Objects/Misc/materials.rsi", state: sulfur }
   spawn: SulfurOre1
   maxCount: 10
-  itemSize: 1
 
 # Metals
 - type: stack
@@ -44,7 +40,6 @@
   icon: { sprite: "/Textures/_Nuclear14/Objects/Misc/materials.rsi", state: ingot_lead }
   spawn: N14IngotLead1
   maxCount: 30
-  itemSize: 1
 
 - type: stack
   id: Aluminium
@@ -52,12 +47,10 @@
   icon: { sprite: "/Textures/_Nuclear14/Objects/Misc/materials.rsi", state: ingot_aluminum }
   spawn: N14IngotAluminium1
   maxCount: 30
-  itemSize: 1
 
 - type: stack
-  id: N14Copper
+  id: Copper
   name: copper
   icon: { sprite: "/Textures/_Nuclear14/Objects/Misc/materials.rsi", state: ingot_copper }
-  spawn: N14IngotCopper1
+  spawn: IngotCopper1
   maxCount: 30
-  itemSize: 1

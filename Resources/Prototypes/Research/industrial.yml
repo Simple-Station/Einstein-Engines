@@ -17,7 +17,6 @@
   - MechEquipmentDrill # Goobstation
   - OreProcessorIndustrialMachineCircuitboard
   - ClothingMaskWeldingGas
-  - SalvageExpeditionsComputerCircuitboard
 
 - type: technology
   id: AdvancedPowercells
@@ -30,6 +29,7 @@
   cost: 7500
   recipeUnlocks:
   - PowerCellHigh
+  - PowerCellMicrortg
   - TurboItemRechargerCircuitboard
   - SMESAdvancedMachineCircuitboard
 

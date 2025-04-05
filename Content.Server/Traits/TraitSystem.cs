@@ -2,7 +2,7 @@ using System.Linq;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Systems;
 using Content.Server.Chat.Managers;
-using Content.Server.GameTicking;
+using Content.Shared.GameTicking;
 using Content.Server.Players.PlayTimeTracking;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
@@ -63,15 +63,25 @@ public sealed class TraitSystem : EntitySystem
             return;
 
         var jobPrototypeToUse = _prototype.Index(jobId ?? _prototype.EnumeratePrototypes<JobPrototype>().First().ID);
+        var sortedTraits = new List<TraitPrototype>();
 
         foreach (var traitId in profile.TraitPreferences)
         {
-            if (!_prototype.TryIndex<TraitPrototype>(traitId, out var traitPrototype))
+            if (_prototype.TryIndex<TraitPrototype>(traitId, out var traitPrototype))
+            {
+                sortedTraits.Add(traitPrototype);
+            }
+            else
             {
                 DebugTools.Assert($"No trait found with ID {traitId}!");
                 return;
             }
+        }
 
+        sortedTraits.Sort();
+
+        foreach (var traitPrototype in sortedTraits)
+        {
             if (!_characterRequirements.CheckRequirementsValid(
                 traitPrototype.Requirements,
                 jobPrototypeToUse,

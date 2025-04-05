@@ -59,12 +59,12 @@
 
 - type: entity
   parent: OreBase
-  id: N14CopperOre
+  id: CopperOre
   name: tetrahedrite
   suffix: Full
   components:
   - type: Stack
-    stackType: N14CopperOre
+    stackType: CopperOre
     count: 30
   - type: Sprite
     sprite: /Textures/_Nuclear14/Objects/Misc/materials.rsi
@@ -72,7 +72,7 @@
   - type: Material
   - type: PhysicalComposition
     materialComposition:
-      N14RawCopper: 500
+      RawCopper: 500
   - type: Extractable
     grindableSolutionName: copperore
   - type: SolutionContainerManager
@@ -83,8 +83,8 @@
           Quantity: 10
 
 - type: entity
-  id: N14CopperOre1
-  parent: N14CopperOre
+  id: CopperOre1
+  parent: CopperOre
   suffix: Single
   components:
     - type: Stack

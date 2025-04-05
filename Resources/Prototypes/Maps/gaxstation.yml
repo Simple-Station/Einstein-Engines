@@ -1,13 +1,13 @@
 - type: gameMap
   id: Gax
   mapName: 'NVS Gax'
-  mapPath: /Maps/gaxstation.yml
+  mapPath: /Maps/gax.yml
   minPlayers: 10
   maxPlayers: 45
   fallback: true
   stations:
     NCS Gax:
-      stationProto: StandardNanotrasenStation
+      stationProto: StandardNanotrasenStationCargoOnly
       components:
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/DeltaV/NTES_Delta.yml

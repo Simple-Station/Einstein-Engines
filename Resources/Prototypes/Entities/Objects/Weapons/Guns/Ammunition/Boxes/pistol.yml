@@ -98,3 +98,17 @@
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
     - state: uranium
+
+- type: entity
+  parent: BaseMagazineBoxPistol
+  id: MagazineBoxPistolShrapnel
+  name: ammunition box (.35 auto shrapnel)
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgePistolShrapnel
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]

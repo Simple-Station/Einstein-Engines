@@ -1,16 +1,16 @@
 - type: trait
   id: Swashbuckler
   category: Physical
-  points: -2
+  points: -1
   functions:
     - !type:TraitReplaceComponent
       components:
       - type: OniDamageModifier
         modifiers:
           coefficients:
-            Blunt: 1.2
+            Blunt: 1.25
             Slash: 1.35
-            Piercing: 1.2
+            Piercing: 1.25
   requirements:
     - !type:CharacterSpeciesRequirement
       species:
@@ -20,19 +20,21 @@
       traits:
         - Spearmaster
         - WeaponsGeneralist
+        - Mystic
+
 
 - type: trait
   id: Spearmaster
   category: Physical
-  points: -2
+  points: -1
   functions:
     - !type:TraitReplaceComponent
       components:
       - type: OniDamageModifier
         modifiers:
           coefficients:
-            Blunt: 1.2
-            Slash: 1.2
+            Blunt: 1.25
+            Slash: 1.25
             Piercing: 1.35
   requirements:
     - !type:CharacterSpeciesRequirement
@@ -43,20 +45,21 @@
       traits:
         - Swashbuckler
         - WeaponsGeneralist
+        - Mystic
 
 - type: trait
   id: WeaponsGeneralist
   category: Physical
-  points: -2
+  points: -1
   functions:
     - !type:TraitReplaceComponent
       components:
       - type: OniDamageModifier
         modifiers:
           coefficients:
-            Blunt: 1.25
-            Slash: 1.25
-            Piercing: 1.25
+            Blunt: 1.30
+            Slash: 1.30
+            Piercing: 1.30
   requirements:
     - !type:CharacterSpeciesRequirement
       species:
@@ -66,6 +69,44 @@
       traits:
         - Swashbuckler
         - Spearmaster
+        - Mystic
+
+- type: trait
+  id: Mystic
+  category: Mental
+  points: -1
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+      - type: OniDamageModifier
+        modifiers:
+          coefficients:
+            Blunt: 1.1
+            Slash: 1.1
+            Piercing: 1.1
+      - type: PotentiaModifier
+        potentiaMultiplier: 1.15
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Oni
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Swashbuckler
+        - Spearmaster
+        - WeaponsGeneralist
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterTraitRequirement
+          traits:
+            - LatentPsychic
+        - !type:CharacterJobRequirement
+          jobs:
+            - Chaplain
+            - Librarian
+            - ResearchDirector
+            - ForensicMantis
 
 - type: trait
   id: ShadowkinBlackeye
@@ -83,3 +124,21 @@
     - !type:CharacterSpeciesRequirement
       species:
         - Shadowkin
+
+- type: trait
+  id: MothFlight
+  category: Physical
+  points: -5
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: Flight
+          speedModifier: 1.2 # gives an effective 32% increase over walking with base moth weightless modifier
+          flapInterval: 0.75
+          needsHands: false
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Moth
+    - !type:CharacterWeightRequirement # big moffs are too heavy to fly
+      max: 60

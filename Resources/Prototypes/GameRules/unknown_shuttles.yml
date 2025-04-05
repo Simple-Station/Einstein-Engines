@@ -24,11 +24,6 @@
   id: UnknownShuttleTravelingCuisine
   categories: [ HideSpawnMenu ]
   components:
-  - type: StationEvent
-    startAnnouncement: false
-    weight: 5
-    reoccurrenceDelay: 30
-    duration: 1
   - type: LoadMapRule
     preloadedGrid: TravelingCuisine
 
@@ -37,11 +32,6 @@
   id: UnknownShuttleDisasterEvacPod
   categories: [ HideSpawnMenu ]
   components:
-  - type: StationEvent
-    startAnnouncement: false
-    weight: 5
-    reoccurrenceDelay: 30
-    duration: 1
   - type: LoadMapRule
     preloadedGrid: DisasterEvacPod
 
@@ -51,7 +41,6 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
-    startAnnouncement: false
     weight: 2
   - type: LoadMapRule
     preloadedGrid: Honki
@@ -62,7 +51,6 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
-    startAnnouncement: false
     weight: 2
   - type: LoadMapRule
     preloadedGrid: SyndieEvacPod

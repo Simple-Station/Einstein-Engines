@@ -125,6 +125,32 @@
 - type: entity
   name: viper
   parent: WeaponPistolViper
+  id: WeaponPistolViperEmpty
+  suffix: Empty
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: null
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazinePistol
+            - MagazinePistolHighCapacity
+      gun_chamber:
+        name: Chamber
+        startingItem: null
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgePistol
+
+- type: entity
+  name: viper
+  parent: WeaponPistolViper
   id: WeaponPistolViperSecurity
   description: A small, easily concealable, but somewhat underpowered gun, produced by a bulk arms manufacturer now defunct for over a century.
                Uses .35 auto ammo. The serial number on the handguard marks this gun as belonging to an NT Security Officer.
@@ -220,6 +246,31 @@
       gun_chamber: !type:ContainerSlot
 
 - type: entity
+  name: cobra
+  parent: WeaponPistolCobra
+  id: WeaponPistolCobraEmpty
+  suffix: Empty
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: null
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazinePistolCaselessRifle
+      gun_chamber:
+        name: Chamber
+        startingItem: null
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeCaselessRifle
+
+- type: entity
   name: mk 58
   parent: BaseWeaponPistol
   id: WeaponPistolMk58
@@ -241,6 +292,31 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
     fireOnDropChance: 0.5
+
+- type: entity
+  name: mk58
+  parent: WeaponPistolMk58
+  id: WeaponPistolMk58Empty
+  suffix: Empty
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: null
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazinePistol
+      gun_chamber:
+        name: Chamber
+        startingItem: null
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgePistol
 
 - type: entity
   name: mk 58
@@ -329,6 +405,31 @@
       gun_chamber:
         name: Chamber
         startingItem: CartridgeMagnum
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeMagnum
+
+- type: entity
+  name: N1984
+  parent: WeaponPistolN1984
+  id: WeaponPistolN1984Empty
+  suffix: Empty
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: null
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineMagnum
+      gun_chamber:
+        name: Chamber
+        startingItem: null
         priority: 1
         whitelist:
           tags:

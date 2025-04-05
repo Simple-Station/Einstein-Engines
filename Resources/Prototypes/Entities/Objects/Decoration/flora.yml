@@ -167,6 +167,21 @@
     state: rocksolid03
 
 - type: entity
+  parent: BaseRock
+  id: FloraRockSolid
+  components:
+  - type: Sprite
+    layers:
+    - state: rocksolid01
+      map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        rocksolid01: ""
+        rocksolid02: ""
+        rocksolid03: ""
+
+- type: entity
   name: stalagmite
   description: Natural stone spikes.
   parent: BaseRock

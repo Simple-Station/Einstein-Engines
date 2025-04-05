@@ -160,6 +160,17 @@
     Cellular: 0.2
 
 - type: damageModifierSet
+  id: MagmaHand
+  coefficients:
+    Blunt: 0.6
+    Slash: 1.2
+    Piercing: 1.2
+    Cold: 5.0
+    Heat: 0.1
+    Poison: 0.4
+    Cellular: 0.2
+
+- type: damageModifierSet
   id: Infernal
   coefficients:
     Blunt: 0.8
@@ -371,8 +382,8 @@
   id: Plasmaman
   coefficients:
     Blunt: 1.5
-    Slash: 0.85
-    Piercing: 0.75
+    Slash: 0.8
+    Piercing: 0.6
     Cold: 0
     Heat: 1.5
     Poison: 0.8
@@ -382,9 +393,11 @@
 - type: damageModifierSet
   id: DermalArmor
   coefficients:
-    Blunt: 0.9
-    Slash: 0.9
-    Piercing: 0.9
+    Shock: 1.25 # Conductive skin.
+  flatReductions:
+    Blunt: 1.5
+    Slash: 1.5
+    Piercing: 1.5
 
 # protects against radiation
 - type: damageModifierSet

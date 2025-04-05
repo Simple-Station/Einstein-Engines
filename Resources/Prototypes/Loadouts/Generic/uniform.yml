@@ -2418,3 +2418,144 @@
       inverted: true
       departments:
         - Command
+
+- type: loadout
+  id: ClothingUniformJumpsuitTacticool
+  category: Uniform
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitTacticool
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+
+- type: loadout
+  id: ClothingUniformJumpskirtTacticool
+  category: Uniform
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingUniformJumpskirtTacticool
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+
+- type: loadout
+  id: ClothingUniformJumpskirtTacticalMaid
+  category: Uniform
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingUniformJumpskirtTacticalMaid
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+
+# Biesel Republic Jackets
+- type: loadout
+  id: ClothingUniformTCAFArmsman
+  category: Uniform
+  cost: 0
+  canBeHeirloom: true
+  exclusive: true
+  guideEntry: TCFLInfo
+  items:
+    - ClothingUniformJumpsuitTCAFArmsman
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterNationalityRequirement
+      nationalities:
+        - Bieselite
+    - !type:CharacterLifepathRequirement
+      lifepaths:
+        - WarVet
+
+- type: loadout
+  id: ClothingUniformTCFLLegate
+  category: Uniform
+  cost: 0
+  canBeHeirloom: true
+  exclusive: true
+  guideEntry: TCFLInfo
+  items:
+    - ClothingUniformJumpsuitTCFLLegate
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterNationalityRequirement
+      nationalities:
+        - Bieselite
+    - !type:CharacterLifepathRequirement
+      lifepaths:
+        - WarVet
+
+- type: loadout
+  id: ClothingUniformTCFLPilot
+  category: Uniform
+  cost: 0
+  canBeHeirloom: true
+  exclusive: true
+  guideEntry: TCFLInfo
+  items:
+    - ClothingUniformJumpsuitTCFLPilot
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterNationalityRequirement
+      nationalities:
+        - Bieselite
+    - !type:CharacterLifepathRequirement
+      lifepaths:
+        - WarVet
+
+- type: loadout
+  id: ClothingUniformTCFLSentinel
+  category: Uniform
+  cost: 0
+  canBeHeirloom: true
+  exclusive: true
+  guideEntry: TCFLInfo
+  items:
+    - ClothingUniformJumpsuitTCFLSentinel
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterNationalityRequirement
+      nationalities:
+        - Bieselite
+    - !type:CharacterLifepathRequirement
+      lifepaths:
+        - WarVet
+
+- type: loadout
+  id: ClothingUniformTCFLVolunteer
+  category: Uniform
+  cost: 0
+  canBeHeirloom: true
+  exclusive: true
+  guideEntry: TCFLInfo
+  items:
+    - ClothingUniformJumpsuitTCFLVolunteer
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterNationalityRequirement
+      nationalities:
+        - Bieselite
+    - !type:CharacterLifepathRequirement
+      lifepaths:
+        - WarVet

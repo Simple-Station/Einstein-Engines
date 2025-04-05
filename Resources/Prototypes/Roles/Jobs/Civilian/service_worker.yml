@@ -7,7 +7,6 @@
   icon: "JobIconServiceWorker"
   supervisors: job-supervisors-service
   canBeAntag: true # DeltaV - Can be antagonist
-  antagAdvantage: 1 # DeltaV - Reduced TC: Accesses
   access:
   - Service
   - Maintenance
@@ -15,6 +14,11 @@
   - Hydroponics
   - Bar # DeltaV - moved to extended access
   - Kitchen # DeltaV - moved to extended access
+  requirements:
+    - !type:CharacterEmployerRequirement
+      inverted: true
+      employers:
+      - Unemployed
 
 - type: startingGear
   id: ServiceWorkerGear

@@ -6,6 +6,7 @@
   name: personal ai device
   description: Your electronic pal who's fun to be with!
   components:
+  - type: Renamable
   - type: Instrument
     allowPercussion: false
     handheld: false
@@ -19,6 +20,8 @@
       enum.StationMapUiKey.Key:
         type: StationMapBoundUserInterface
         requireInputValidation: false
+      enum.SharedRenamableInterfaceKey.Key:
+        type: RenamableBoundUserInterface
   - type: Sprite
     sprite: Objects/Fun/pai.rsi
     layers:
@@ -37,6 +40,9 @@
     beginSearchingText: pai-system-searching
     roleName: pai-system-role-name
     roleDescription: pai-system-role-description
+    roleRules: ghost-role-information-familiar-rules
+    mindRoles:
+    - MindRoleGhostRoleFamiliar
     wipeVerbText: pai-system-wipe-device-verb-text
     wipeVerbPopup: pai-system-wiped-device
     stopSearchVerbText: pai-system-stop-searching-verb-text
@@ -76,6 +82,7 @@
     speaks:
     - TauCetiBasic
     - SolCommon
+    - NovuNederic
     - Tradeband
     - Freespeak
     - Elyran
@@ -83,6 +90,7 @@
     understands:
     - TauCetiBasic
     - SolCommon
+    - NovuNederic
     - Tradeband
     - Freespeak
     - Elyran
@@ -109,6 +117,9 @@
   - type: ToggleableGhostRole
     roleName: pai-system-role-name-syndicate
     roleDescription: pai-system-role-description-syndicate
+    roleRules: ghost-role-information-familiar-rules
+    mindRoles:
+    - MindRoleGhostRoleFamiliar
   - type: IntrinsicRadioTransmitter
     channels:
     - Syndicate
@@ -140,6 +151,9 @@
   - type: ToggleableGhostRole
     roleName: pai-system-role-name-potato
     roleDescription: pai-system-role-description-potato
+    roleRules: ghost-role-information-familiar-rules
+    mindRoles:
+    - MindRoleGhostRoleFamiliar
   - type: Appearance
   - type: GenericVisualizer
     visuals:

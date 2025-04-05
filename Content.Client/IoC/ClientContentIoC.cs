@@ -22,13 +22,10 @@ using Content.Client.Voting;
 using Content.Shared.Administration.Logs;
 using Content.Client.Lobby;
 using Content.Client.Players.RateLimiting;
-using Content.Client.Replay;
 using Content.Shared.Administration.Managers;
 using Content.Shared.Chat;
 using Content.Shared.Players.PlayTimeTracking;
 using Content.Shared.Players.RateLimiting;
-using Robust.Client.GameObjects;
-
 namespace Content.Client.IoC
 {
     internal static class ClientContentIoC

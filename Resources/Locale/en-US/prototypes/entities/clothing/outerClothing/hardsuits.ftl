@@ -102,6 +102,9 @@ ent-ClothingOuterHardsuitJuggernaut = CSA-80UA - "Guan Yu" tacsuit
 ent-ClothingOuterHardsuitJuggernautReverseEngineered = CSA-80UA - "Guan Yu" tacsuit
     .desc = The pride and joy of the Cybersun-Armaments Corporation, named after an ancient Sol' War God. Commonly known throughout the galaxy as a "Juggernaut".
         Matching its bulky appearance, it protects against all forms of damage. It feels VERY heavy.
+ent-ClothingOuterHardsuitCybersunStealth = CSA-91x "Èguǐ" tacsuit
+    .desc = A rare prototype tacsuit that features metamaterial plating which warps light around it to produce an "Invisibility cloak" effect.
+    Unfortunately, it accomplishes this by trading a lot of protections that one would normally expect from a typical tacsuit.
 ent-ClothingOuterHardsuitWizard = WZD-84 - "Mana" tacsuit
     .desc = A bizarre gem-encrusted hardsuit. Famously used by members of the Wizard Federation in their operations.
     Contrary to it's appearance, it can protect its wearer from space and considerable amounts of physical trauma, it feels somewhat light.

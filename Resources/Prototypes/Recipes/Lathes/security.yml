@@ -86,6 +86,16 @@
     Gold: 500
 
 - type: latheRecipe
+  id: Terminus
+  result: Terminus
+  category: Weapons
+  completetime: 6
+  materials:
+    Steel: 1250 # Might have to change the cost later
+    Plastic: 750 # Im leaving this comment solely to run tests again.
+    Gold: 500
+
+- type: latheRecipe
   id: WeaponLaserSvalinn
   result: WeaponLaserSvalinn
   category: Weapons
@@ -93,6 +103,16 @@
   materials:
     Steel: 2000
     Gold: 500
+
+- type: latheRecipe
+  id: WeaponCivilianDisabler
+  result: WeaponCivilianDisabler
+  category: Weapons
+  completetime: 6
+  materials:
+    Aluminum: 200
+    Glass: 200
+    Plastic: 300
 
 - type: latheRecipe
   id: WeaponXrayCannon
@@ -234,6 +254,14 @@
   materials:
     Steel: 500
 
+# .25 Caseless Pistol Magazines
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazinePistolCaselessRiflePractice
+  result: MagazinePistolCaselessRiflePractice
+  materials:
+    Steel: 85
+
 - type: latheRecipe
   parent: BaseAmmoRecipe
   id: MagazinePistolCaselessRifle
@@ -243,11 +271,120 @@
 
 - type: latheRecipe
   parent: BaseAmmoRecipe
+  id: MagazinePistolCaselessRifleRubber
+  result: MagazinePistolCaselessRifleRubber
+  materials:
+    Plastic: 145
+
+# .25 Caseless (Civilian) Rifle Magazines
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineCaselessRifleShortPractice
+  result: MagazineCaselessRifleShortPractice
+  materials:
+    Steel: 150
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineCaselessRifleShort
+  result: MagazineCaselessRifleShort
+  materials:
+    Steel: 250
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineCaselessRifleShortRubber
+  result: MagazineCaselessRifleShortRubber
+  materials:
+    Plastic: 250
+
+# .25 Caseless (Military) Rifle Magazines
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineCaselessRiflePractice
+  result: MagazineCaselessRiflePractice
+  materials:
+    Steel: 250
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineCaselessRifle
+  result: MagazineCaselessRifle
+  materials:
+    Steel: 350
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineCaselessRifleRubber
+  result: MagazineCaselessRifleRubber
+  materials:
+    Plastic: 350
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineCaselessRifleIncendiary
+  result: MagazineCaselessRifleIncendiary
+  materials:
+    Plastic: 350
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineCaselessRifleUranium
+  result: MagazineCaselessRifleUranium
+  materials:
+    Uranium: 350
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineCaselessRifleShrapnel
+  result: MagazineCaselessRifleShrapnel
+  materials:
+    Steel: 350
+
+# .25 Caseless (Box Mag) Rifle Magazines
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineBoxCaselessRiflePractice
+  result: MagazineBoxCaselessRiflePractice
+  materials:
+    Steel: 500
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
   id: MagazineBoxCaselessRifle
   result: MagazineBoxCaselessRifle
   materials:
     Steel: 720
 
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineBoxCaselessRifleRubber
+  result: MagazineBoxCaselessRifleRubber
+  materials:
+    Steel: 720
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineBoxCaselessRifleIncendiary
+  result: MagazineBoxCaselessRifleIncendiary
+  materials:
+    Plastic: 720
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineBoxCaselessRifleUranium
+  result: MagazineBoxCaselessRifleUranium
+  materials:
+    Uranium: 720
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineBoxCaselessRifleShrapnel
+  result: MagazineBoxCaselessRifleShrapnel
+  materials:
+    Steel: 720
+
+# .35 Pistol Magazines
 - type: latheRecipe
   id: MagazinePistolEmpty
   result: MagazinePistolEmpty
@@ -301,6 +438,14 @@
     Plastic: 120
 
 - type: latheRecipe
+  id: MagazinePistolShrapnel
+  result: MagazinePistolShrapnel
+  category: Ammo
+  completetime: 5
+  materials:
+    Steel: 145
+
+- type: latheRecipe
   id: MagazinePistolSubMachineGunEmpty
   result: MagazinePistolSubMachineGunEmpty
   category: Ammo
@@ -345,6 +490,14 @@
     Plastic: 400
 
 - type: latheRecipe
+  id: MagazinePistolSubMachineGunShrapnel
+  result: MagazinePistolSubMachineGunShrapnel
+  category: Ammo
+  completetime: 5
+  materials:
+    Steel: 300
+
+- type: latheRecipe
   id: MagazinePistolSubMachineGunTopMountedEmpty
   result: MagazinePistolSubMachineGunTopMountedEmpty
   category: Ammo
@@ -378,8 +531,24 @@
     Plastic: 300
 
 - type: latheRecipe
+  id: MagazineBoxPistolShrapnel
+  result: MagazineBoxPistolShrapnel
+  category: Ammo
+  completetime: 5
+  materials:
+    Steel: 600
+
+- type: latheRecipe
   id: MagazineBoxMagnum
   result: MagazineBoxMagnum
+  category: Ammo
+  completetime: 5
+  materials:
+    Steel: 240
+
+- type: latheRecipe
+  id: MagazineBoxMagnumShrapnel
+  result: MagazineBoxMagnumShrapnel
   category: Ammo
   completetime: 5
   materials:
@@ -447,6 +616,14 @@
     Plastic: 450
 
 - type: latheRecipe
+  id: MagazineRifleShrapnel
+  result: MagazineRifleShrapnel
+  category: Ammo
+  completetime: 5
+  materials:
+    Steel: 475
+
+- type: latheRecipe
   id: MagazineLightRifleEmpty
   result: MagazineLightRifleEmpty
   category: Ammo
@@ -499,6 +676,14 @@
     Plastic: 540
 
 - type: latheRecipe
+  id: MagazineLightRifleShrapnel
+  result: MagazineLightRifleShrapnel
+  category: Ammo
+  completetime: 5
+  materials:
+    Steel: 565
+
+- type: latheRecipe
   id: MagazineMagnumEmpty
   result: MagazineMagnumEmpty
   category: Ammo
@@ -543,8 +728,24 @@
     Plastic: 150
 
 - type: latheRecipe
+  id: MagazineMagnumShrapnel
+  result: MagazineMagnumShrapnel
+  category: Ammo
+  completetime: 5
+  materials:
+    Steel: 150
+
+- type: latheRecipe
   id: MagazineBoxRifle
   result: MagazineBoxRifle
+  category: Ammo
+  completetime: 5
+  materials:
+    Steel: 750
+
+- type: latheRecipe
+  id: MagazineBoxRifleShrapnel
+  result: MagazineBoxRifleShrapnel
   category: Ammo
   completetime: 5
   materials:
@@ -562,6 +763,14 @@
 - type: latheRecipe
   id: MagazineBoxLightRifle
   result: MagazineBoxLightRifle
+  category: Ammo
+  completetime: 5
+  materials:
+    Steel: 900
+
+- type: latheRecipe
+  id: MagazineBoxLightRifleShrapnel
+  result: MagazineBoxLightRifleShrapnel
   category: Ammo
   completetime: 5
   materials:
@@ -592,6 +801,30 @@
   materials:
     Steel: 240
     Plastic: 160
+
+- type: latheRecipe
+  id: BoxShotgunBirdshot
+  result: BoxShotgunBirdshot
+  category: Ammo
+  completetime: 5
+  materials:
+    Steel: 320
+
+- type: latheRecipe
+  id: BoxShotgun00Buckshot
+  result: BoxShotgun00Buckshot
+  category: Ammo
+  completetime: 5
+  materials:
+    Steel: 320
+
+- type: latheRecipe
+  id: BoxShotgun0000Buckshot
+  result: BoxShotgun0000Buckshot
+  category: Ammo
+  completetime: 5
+  materials:
+    Steel: 320
 
 - type: latheRecipe
   id: MagazineBoxLightRifleRubber
@@ -1061,3 +1294,71 @@
     Bluespace: 600
     Plasma: 600
     Diamond: 200
+
+- type: latheRecipe
+  id: WeaponSubMachineGunFPA90
+  result: WeaponSubMachineGunFPA90
+  category: Weapons
+  completetime: 6
+  materials:
+    Aluminum: 2000
+    Steel: 500
+    Plastic: 750
+
+- type: latheRecipe
+  id: WeaponSubMachineGunBRDIR25
+  result: WeaponSubMachineGunBRDIR25
+  category: Weapons
+  completetime: 6
+  materials:
+    Aluminum: 2500
+    Plastic: 2000
+    Plasteel: 1500
+    Steel: 500
+    Circuitry: 500
+    Tungsten: 200
+
+- type: latheRecipe
+  id: WeaponPistolMk58
+  result: WeaponPistolMk58Empty
+  category: Weapons
+  completetime: 6
+  materials:
+    Aluminum: 800
+    Steel: 100
+    Plastic: 150
+
+- type: latheRecipe
+  id: WeaponPistolN1984
+  result: WeaponPistolN1984Empty
+  category: Weapons
+  completetime: 6
+  materials:
+    Steel: 800 #Yes, Steel and not Aluminum, the original M1911 handguns that this is in reference to are steel frame.
+               #For balancing reasons(Steel is way easier to get), it includes other rarer materials.
+    Plasteel: 100
+    Plastic: 250
+    Gold: 200
+    Silver: 100
+
+- type: latheRecipe
+  id: WeaponPistolViper
+  result: WeaponPistolViperEmpty
+  category: Weapons
+  completetime: 6
+  materials:
+    Aluminum: 900
+    Plasteel: 100
+    Plastic: 150
+    Silver: 100
+
+- type: latheRecipe
+  id: WeaponPistolCobra
+  result: WeaponPistolCobraEmpty
+  category: Weapons
+  completetime: 6
+  materials:
+    Aluminum: 600
+    Plasteel: 100
+    Plastic: 450
+    Silver: 100

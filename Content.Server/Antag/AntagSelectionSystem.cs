@@ -10,14 +10,16 @@ using Content.Server.Objectives;
 using Content.Server.Preferences.Managers;
 using Content.Server.Roles;
 using Content.Server.Roles.Jobs;
-using Content.Server.Shuttles.Components;
 using Content.Server.Station.Systems;
+using Content.Server.Shuttles.Components;
 using Content.Shared.Antag;
 using Content.Shared.GameTicking;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Ghost;
 using Content.Shared.Humanoid;
+using Content.Shared.Mind;
 using Content.Shared.Players;
+using Content.Shared.Roles;
 using Content.Shared.Whitelist;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
@@ -32,13 +34,13 @@ namespace Content.Server.Antag;
 
 public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelectionComponent>
 {
-    [Dependency] private readonly IChatManager _chat = default!;
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
-    [Dependency] private readonly IServerPreferencesManager _pref = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
+    [Dependency] private readonly IChatManager _chat = default!;
     [Dependency] private readonly GhostRoleSystem _ghostRole = default!;
     [Dependency] private readonly JobSystem _jobs = default!;
     [Dependency] private readonly MindSystem _mind = default!;
+    [Dependency] private readonly IPlayerManager _playerManager = default!;
+    [Dependency] private readonly IServerPreferencesManager _pref = default!;
     [Dependency] private readonly RoleSystem _role = default!;
     [Dependency] private readonly StationSpawningSystem _stationSpawning = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
@@ -188,7 +190,10 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
     /// <summary>
     /// Chooses antagonists from the given selection of players
     /// </summary>
-    public void ChooseAntags(Entity<AntagSelectionComponent> ent, IList<ICommonSession> pool)
+    /// <param name="ent">The antagonist rule entity</param>
+    /// <param name="pool">The players to choose from</param>
+    /// <param name="midround">Disable picking players for pre-spawn antags in the middle of a round</param>
+    public void ChooseAntags(Entity<AntagSelectionComponent> ent, IList<ICommonSession> pool, bool midround = false)
     {
         if (ent.Comp.SelectionsComplete)
             return;
@@ -204,25 +209,80 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
     /// <summary>
     /// Chooses antagonists from the given selection of players for the given antag definition.
     /// </summary>
-    public void ChooseAntags(Entity<AntagSelectionComponent> ent, IList<ICommonSession> pool, AntagSelectionDefinition def)
+    /// <param name="ent">The antagonist rule entity</param>
+    /// <param name="pool">The players to choose from</param>
+    /// <param name="def">The antagonist selection parameters and criteria</param>
+    /// <param name="midround">Disable picking players for pre-spawn antags in the middle of a round</param>
+    public void ChooseAntags(Entity<AntagSelectionComponent> ent,
+        IList<ICommonSession> pool,
+        AntagSelectionDefinition def,
+        bool midround = false)
     {
         var playerPool = GetPlayerPool(ent, pool, def);
         var count = GetTargetAntagCount(ent, GetTotalPlayerCount(pool), def);
 
-        for (var i = 0; i < count; i++)
+        ///// Einstein Engines changes /////
+        //
+        // Fixes issues caused by failures in making someone antag while
+        // not breaking any API on this system.
+        //
+        // This will either allocate `count` slots from the player pool,
+        // or will call MakeAntag with null sessions to fill up the slots.
+        //
+        if (def.PickPlayer)
         {
-            var session = (ICommonSession?) null;
-            if (def.PickPlayer)
+            // Tries multiple times to assign antags.
+            // When any number of assignments fail, next iteration
+            // gets new items to replace those.
+            // Already selected or failed sessions are avoided.
+            // It retries until it ends with no failures or up
+            // to maxRetries attempts.
+
+            const int maxRetries = 4;
+            var retry = 0;
+            var failed = new List<ICommonSession>();
+
+            while (ent.Comp.SelectedSessions.Count < count && retry < maxRetries)
             {
-                if (!playerPool.TryPickAndTake(RobustRandom, out session))
+                var sessions = (ICommonSession[]?) null;
+                if (!playerPool.TryGetItems(RobustRandom,
+                                            out sessions,
+                                            count - ent.Comp.SelectedSessions.Count,
+                                            false))
+                    break; // Ends early if there are no eligible sessions
+
+                foreach (var session in sessions)
+                {
+                    MakeAntag(ent, session, def);
+                    if (!ent.Comp.SelectedSessions.Contains(session))
+                    {
+                        failed.Add(session);
+                    }
+                }
+                // In case we're done
+                if (ent.Comp.SelectedSessions.Count >= count)
                     break;
 
-                if (ent.Comp.SelectedSessions.Contains(session))
-                    continue;
+                playerPool = playerPool.Where((session_) =>
+                {
+                    return !ent.Comp.SelectedSessions.Contains(session_) &&
+                        !failed.Contains(session_);
+                });
+                retry++;
             }
-
-            MakeAntag(ent, session, def);
         }
+
+        // This preserves previous behavior for when def.PickPlayer
+        // was not satisfied. This behavior is not that obvious to
+        // read from the previous code.
+        // It may otherwise process leftover slots if maxRetries have
+        // been reached.
+
+        for (var i = ent.Comp.SelectedSessions.Count; i < count; i++)
+        {
+            MakeAntag(ent, null, def);
+        }
+        ///// End of Einstein Engines changes /////
     }
 
     /// <summary>
@@ -286,6 +346,8 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
             _transform.SetMapCoordinates((player, playerXform), pos);
         }
 
+        // If we want to just do a ghost role spawner, set up data here and then return early.
+        // This could probably be an event in the future if we want to be more refined about it.
         if (isSpawner)
         {
             if (!TryComp<GhostRoleAntagSpawnerComponent>(player, out var spawnerComp))
@@ -307,14 +369,17 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         if (session != null)
         {
             var curMind = session.GetMind();
-            if (curMind == null)
+
+            if (curMind == null ||
+                !TryComp<MindComponent>(curMind.Value, out var mindComp) ||
+                mindComp.OwnedEntity != antagEnt)
             {
                 curMind = _mind.CreateMind(session.UserId, Name(antagEnt.Value));
                 _mind.SetUserId(curMind.Value, session.UserId);
             }
 
             _mind.TransferTo(curMind.Value, antagEnt, ghostCheckOverride: true);
-            _role.MindAddRoles(curMind.Value, def.MindComponents);
+            _role.MindAddRoles(curMind.Value, def.MindRoles, null, true);
             ent.Comp.SelectedMinds.Add((curMind.Value, Name(player)));
             SendBriefing(session, def.Briefing);
         }

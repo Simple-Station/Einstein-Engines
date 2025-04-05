@@ -3,11 +3,14 @@
   name: job-name-atmostech
   description: job-description-atmostech
   playTimeTracker: JobAtmosphericTechnician
-  antagAdvantage: 10 # DeltaV - Reduced TC: External Access + Fireaxe + Free Hardsuit
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Engineering
       min: 36000 # DeltaV - 10 hours
+    - !type:CharacterEmployerRequirement
+      inverted: true
+      employers:
+      - Unemployed
   startingGear: AtmosphericTechnicianGear
   icon: "JobIconAtmosphericTechnician"
   supervisors: job-supervisors-ce
@@ -20,7 +23,8 @@
 - type: startingGear
   id: AtmosphericTechnicianGear
   subGear:
-  - AtmosphericTechnicianPlasmamanGear
+  - AtmosphericTechnicianPlasmamanGear
+
   equipment:
     jumpsuit: ClothingUniformJumpsuitAtmos
     back: ClothingBackpackAtmospherics

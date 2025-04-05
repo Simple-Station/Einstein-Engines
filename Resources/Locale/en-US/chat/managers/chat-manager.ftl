@@ -170,3 +170,12 @@ chat-speech-verb-electricity-2 = buzzes
 chat-speech-verb-electricity-3 = screeches
 
 chat-speech-verb-marish = Mars
+
+chat-speech-verb-name-supermatter = Supermatter
+chat-speech-verb-supermatter = states
+
+
+chat-speech-verb-Psychomantic-1 = resonates
+chat-speech-verb-Psychomantic-2 = projects
+chat-speech-verb-Psychomantic-3 = impresses
+chat-speech-verb-Psychomantic-4 = radiates

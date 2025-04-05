@@ -3,7 +3,6 @@
   name: job-name-cargotech
   description: job-description-cargotech
   playTimeTracker: JobCargoTechnician
-  antagAdvantage: 2 # DeltaV - Reduced TC: External Access
   startingGear: CargoTechGear
   icon: "JobIconCargoTechnician"
   supervisors: job-supervisors-qm
@@ -13,6 +12,11 @@
   extendedAccess:
   - Salvage
   - Orders # DeltaV - Orders, see Resources/Prototypes/DeltaV/Access/cargo.yml
+  requirements:
+    - !type:CharacterEmployerRequirement
+      inverted: true
+      employers:
+      - Unemployed
 
 - type: startingGear
   id: CargoTechGear

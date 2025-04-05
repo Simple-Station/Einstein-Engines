@@ -97,8 +97,11 @@
       - id: DoorRemoteFirefight
       - id: RCD
       - id: RCDAmmo
+      - id: RPD
+      - id: RCDAmmo # Extra Compressed matter for the RPD
       - id: LunchboxEngineeringFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
+      - id: AccessConfigurator
 
 - type: entity
   id: LockerAtmosphericsFilled
@@ -116,8 +119,11 @@
       - id: DoorRemoteFirefight
       - id: RCD
       - id: RCDAmmo
+      - id: RPD
+      - id: RCDAmmo # Extra Compressed matter for the RPD
       - id: LunchboxEngineeringFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
+      - id: AccessConfigurator
 
 - type: entity
   id: LockerEngineerFilledHardsuit
@@ -134,6 +140,7 @@
       - id: RCDAmmo
       - id: LunchboxEngineeringFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
+      - id: AccessConfigurator
 
 - type: entity
   id: LockerEngineerFilled
@@ -149,6 +156,7 @@
       - id: RCDAmmo
       - id: LunchboxEngineeringFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
+      - id: AccessConfigurator
 
 - type: entity
   id: ClosetRadiationSuitFilled

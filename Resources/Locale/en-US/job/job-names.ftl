@@ -24,6 +24,7 @@ job-name-engineer = Station Engineer
 job-name-atmostech = Atmospheric Technician
 job-name-hop = Head of Personnel
 job-name-captain = Captain
+job-name-ntrep = Nanotrasen Representative
 job-name-serviceworker = Service Worker
 job-name-centcomoff = CentCom Official
 job-name-reporter = Reporter

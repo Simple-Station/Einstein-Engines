@@ -3,7 +3,6 @@
   name: job-name-rd
   description: job-description-rd
   playTimeTracker: JobResearchDirector
-  antagAdvantage: 6 # DeltaV - Reduced TC: Head of Staff
   requirements:
     - !type:CharacterLogicOrRequirement
       requirements:
@@ -23,6 +22,9 @@
       traits:
         - Foreigner
         - ForeignerLight
+    - !type:CharacterEmployerRequirement
+      employers:
+      - NanoTrasen
   weight: 10
   startingGear: ResearchDirectorGear
   icon: "JobIconResearchDirector"
@@ -69,7 +71,7 @@
     back: ClothingBackpackResearchDirectorFilled
     shoes: ClothingShoesColorBrown
     id: RnDPDA
-    ears: ClothingHeadsetRD
+    ears: ClothingHeadsetAltScience # Goobstation
     pocket1: BookPsionicsGuidebook
     pocket2: BibleMystagogue
   innerClothingSkirt: ClothingUniformJumpskirtResearchDirector
