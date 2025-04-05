@@ -97,6 +97,8 @@
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
     fireOnDropChance: 0.3
+    shotgunSpreadMultiplier: 1.5
+    shotgunProjectileCountModifier: 1.33
   - type: Wieldable
   - type: ItemSlots
     slots:
