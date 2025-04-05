@@ -1,0 +1,15 @@
+- type: entity
+  id: ClothingBeltMilitaryWebbingCMOFilled
+  parent: ClothingBeltMilitaryWebbingCMO
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: MedicatedSuture
+        amount: 2
+      - id: RegenerativeMesh
+        amount: 2
+      - id: Bloodpack
+        amount: 2
+      - id: MedipenCigPack
+      - id: OmnizineChemistryBottle
