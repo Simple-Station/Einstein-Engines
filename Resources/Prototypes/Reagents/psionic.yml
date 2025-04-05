@@ -100,6 +100,28 @@
           min: 5
 
 - type: reagent
+  id: Oblivion
+  name: reagent-name-oblivion
+  group: Narcotics
+  desc: reagent-desc-oblivion
+  flavor: intoxicating
+  color: "#FFBF00"
+  physicalDesc: reagent-physical-desc-overpowering
+  metabolisms:
+    Narcotic:
+      metabolismRate: 5
+      effects:
+      - !type:ChemRestorePsionicReroll
+        conditions:
+        - !type:ReagentThreshold
+          reagent: Oblivion
+          min: 5
+      - !type:HealthChange
+        damage:
+          groups:
+            Toxin: 10 #strong stuff
+
+- type: reagent
   id: Ectoplasm
   name: reagent-name-ectoplasm
   group: Toxins

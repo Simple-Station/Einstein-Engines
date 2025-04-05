@@ -304,7 +304,16 @@ public sealed class PsionicsSystem : EntitySystem
         psionic.CanReroll = false;
         RollPsionics(uid, psionic, true, bonusMuliplier);
     }
-
+    /// <summary>
+    ///     This function attempts to restore someone's Reroll
+    /// </summary>
+    public void RestorePsionicReroll(EntityUid uid, PsionicComponent? psionic = null)
+    {
+        if (!Resolve(uid, ref psionic, false)
+            || !psionic.Removable)
+            return;
+        psionic.CanReroll = true;
+    }
     private void OnMobstateChanged(EntityUid uid, PsionicComponent component, MobStateChangedEvent args)
     {
         if (component.Familiars.Count <= 0
