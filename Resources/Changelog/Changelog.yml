@@ -14469,3 +14469,12 @@ Entries:
   id: 7101
   time: '2025-04-05T18:14:45.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2132
+- author: Diggy
+  changes:
+    - type: Add
+      message: >-
+        Changelings can now "Co-Exist" with the crew by eating animals /
+        unwanted pests like xenos.
+  id: 7102
+  time: '2025-04-05T21:33:04.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2167
