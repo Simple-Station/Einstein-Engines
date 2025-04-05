@@ -25,6 +25,10 @@
           inverted: true
           traits:
             - ShadowkinBlackeye
+    - !type:CharacterEmployerRequirement
+      inverted: true
+      employers:
+      - Unemployed
   startingGear: ChaplainGear
   icon: "JobIconChaplain"
   supervisors: job-supervisors-rd

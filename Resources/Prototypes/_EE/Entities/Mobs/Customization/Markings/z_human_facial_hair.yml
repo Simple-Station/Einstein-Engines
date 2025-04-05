@@ -1,0 +1,56 @@
+- type: marking
+  id: ZetaEMWhiskers
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+  - sprite: _EE/Mobs/Customization/z_human_facial_hair.rsi
+    state: emwhiskers
+- type: marking
+  id: ZetaSpiderWhiskers
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+  - sprite: _EE/Mobs/Customization/z_human_facial_hair.rsi
+    state: spiderwhiskers
+- type: marking
+  id: ZetaTwirlable
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+  - sprite: _EE/Mobs/Customization/z_human_facial_hair.rsi
+    state: twirlable
+- type: marking
+  id: ZetaVoluminous
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+  - sprite: _EE/Mobs/Customization/z_human_facial_hair.rsi
+    state: voluminous
+- type: marking
+  id: ZetaWalrus
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+  - sprite: _EE/Mobs/Customization/z_human_facial_hair.rsi
+    state: walrus
+- type: marking
+  id: ZetaWizardous
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+  - sprite: _EE/Mobs/Customization/z_human_facial_hair.rsi
+    state: wizardous
+- type: marking
+  id: ZetaWorkinMan
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+  - sprite: _EE/Mobs/Customization/z_human_facial_hair.rsi
+    state: workinman
+- type: marking
+  id: ZetaOnTheChin
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+  - sprite: _EE/Mobs/Customization/z_human_facial_hair.rsi
+    state: onthechin

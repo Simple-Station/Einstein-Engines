@@ -21,7 +21,6 @@
       tags:
         - ComputerBoard
 
-
 - type: entity
   parent: BaseComputerCircuitboard
   id: AlertsComputerCircuitboard

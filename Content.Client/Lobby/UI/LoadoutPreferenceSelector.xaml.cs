@@ -9,6 +9,7 @@ using Content.Client.UserInterface.Systems.Guidebook;
 using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Clothing.Loadouts.Systems;
 using Content.Shared.Customization.Systems;
+using Content.Shared.Guidebook;
 using Content.Shared.Labels.Components;
 using Content.Shared.Paint;
 using Content.Shared.Preferences;
@@ -169,8 +170,8 @@ public sealed partial class LoadoutPreferenceSelector : Control
 
             var guidebookController = UserInterfaceManager.GetUIController<GuidebookUIController>();
             //TODO: Don't close the guidebook if its already open, just go to the correct page
-            guidebookController.ToggleGuidebook(
-                new Dictionary<string, GuideEntry> { { loadout.GuideEntry, guideRoot } },
+            guidebookController.OpenGuidebook(
+                new Dictionary<ProtoId<GuideEntryPrototype>, GuideEntry> { { loadout.GuideEntry, guideRoot } },
                 includeChildren: true,
                 selected: loadout.GuideEntry);
         };
@@ -206,11 +207,17 @@ public sealed partial class LoadoutPreferenceSelector : Control
         });
         PreferenceButton.OnToggled += args =>
         {
+            if (args.Pressed == _preference.Selected)
+                return;
+
             _preference.Selected = args.Pressed;
             PreferenceChanged?.Invoke(Preference);
         };
         HeirloomButton.OnToggled += args =>
         {
+            if (args.Pressed == _preference.Selected)
+                return;
+
             _preference.CustomHeirloom = args.Pressed ? true : null;
             PreferenceChanged?.Invoke(Preference);
         };

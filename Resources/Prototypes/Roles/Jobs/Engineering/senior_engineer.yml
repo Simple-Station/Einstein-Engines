@@ -13,6 +13,10 @@
     - !type:CharacterDepartmentTimeRequirement
       department: Engineering
       min: 216000 # 60 hrs
+    - !type:CharacterEmployerRequirement
+      inverted: true
+      employers:
+      - Unemployed
   startingGear: SeniorEngineerGear
   icon: "JobIconSeniorEngineer"
   supervisors: job-supervisors-ce
