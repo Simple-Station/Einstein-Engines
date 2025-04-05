@@ -1,6 +1,6 @@
 - type: entity
   name: space carp
-  id: BaseMobCarp
+  id: BaseBaseMobCarp # made to allow space goldfish to be picked up on click (interactionpopup overrides that)
   parent: [ SimpleSpaceMobBase, FlyingMobBase, MobCombat ]
   description: It's a space carp.
   abstract: true
@@ -76,11 +76,6 @@
       accent: genericAggressive
     - type: Speech
       speechVerb: LargeMob
-    - type: InteractionPopup
-      interactSuccessString: petting-success-carp
-      interactFailureString: petting-failure-carp
-      interactFailureSound:
-        path: /Audio/Effects/bite.ogg
     - type: Body # Shitmed - Adds carp organs.
       prototype: Carp
     - type: SurgeryTarget
@@ -95,6 +90,18 @@
       activateSound: null
       deactivateSound: null
     - type: Fauna # Lavaland Change
+
+- type: entity
+  parent: BaseBaseMobCarp
+  id: BaseMobCarp
+  abstract: true
+  components:
+    - type: InteractionPopup
+      successChance: 0.25 # not very nice
+      interactSuccessString: petting-success-carp
+      interactFailureString: petting-failure-carp
+      interactFailureSound:
+        path: /Audio/Effects/bite.ogg
 
 - type: entity
   parent: BaseMobCarp

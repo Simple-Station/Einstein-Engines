@@ -669,6 +669,13 @@
         state: squackroach
   - type: Item
     size: Normal
+  - type: Clothing
+    quickEquip: false
+    sprite: Mobs/Animals/squackroach.rsi
+    equippedPrefix: sq
+    slots:
+    - HEAD
+    - NECK
   - type: Appearance
   - type: DamageStateVisuals
     states:

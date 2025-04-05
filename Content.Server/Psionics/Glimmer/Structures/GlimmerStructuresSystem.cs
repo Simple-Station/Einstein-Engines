@@ -75,61 +75,27 @@ public sealed class GlimmerStructuresSystem : EntitySystem
 
     public override void Update(float frameTime)
     {
+        if (!_glimmerSystem.GetGlimmerEnabled())
+            return;
+
         base.Update(frameTime);
-        var glimmerSources = Count<GlimmerSourceComponent>();
-        foreach (var source in EntityQuery<GlimmerSourceComponent>())
+
+        var totalSources = Count<GlimmerSourceComponent>();
+        var glimmerSources = EntityQueryEnumerator<GlimmerSourceComponent>();
+        while (glimmerSources.MoveNext(out var uid, out var component))
         {
-            if (!_powerReceiverSystem.IsPowered(source.Owner)
-                && source.RequiresPower)
-            {
-                glimmerSources--;
+            if (!component.Active
+                || component.RequiresPower && !_powerReceiverSystem.IsPowered(uid))
                 continue;
-            }
 
-            if (!source.Active)
-            {
-                glimmerSources--;
-                continue;
-            }
+            if (component.ResearchPointGeneration != null
+            && TryComp(uid, out ResearchPointSourceComponent? research))
+                research.PointsPerSecond = (int) Math.Round(
+                    component.ResearchPointGeneration.Value
+                    / (MathF.Log(totalSources, 4) + 1)
+                    * _glimmerSystem.GetGlimmerEquilibriumRatio());
 
-            source.Accumulator += frameTime;
-
-            if (source.Accumulator > source.SecondsPerGlimmer)
-            {
-                source.Accumulator -= source.SecondsPerGlimmer;
-
-                // https://www.desmos.com/calculator/zjzefpue03
-                // In Short: 1 prober makes 20 research points. 4 probers makes twice as many points as 1 prober. 9 probers makes 69 points in total between all 9.
-                // This is then modified by afterwards by GlimmerEquilibrium, to help smooth out the curves. But also, now if you have more drainers than probers, the probers won't generate research!
-                // Also, this counts things like Anomalies & Glimmer Mites! Which means scientists should be more encouraged to actively hunt mites.
-                // As a fun novelty, this means that a highly psionic Epistemics department can essentially "Study" their powers for actual research points!
-                if (source.ResearchPointGeneration != null
-                && TryComp<ResearchPointSourceComponent>(source.Owner, out var research))
-                    research.PointsPerSecond = (int) MathF.Round(
-                        source.ResearchPointGeneration.Value
-                        / (MathF.Log(glimmerSources, 4) + 1)
-                        * _glimmerSystem.GetGlimmerEquilibriumRatio());
-
-                // Shorthand explanation:
-                // This makes glimmer far more "Swingy", by making both positive and negative glimmer sources scale quite dramatically with glimmer
-                if (!_glimmerSystem.GetGlimmerEnabled())
-                    return;
-
-                var glimmerEquilibrium = GlimmerSystem.GlimmerEquilibrium;
-
-                if (source.AddToGlimmer)
-                {
-                    _glimmerSystem.DeltaGlimmerInput((_glimmerSystem.GlimmerOutput > glimmerEquilibrium
-                    ? MathF.Pow(_glimmerSystem.GetGlimmerOutputInteger() - source.GlimmerExponentOffset + glimmerSources, 2) : 1f)
-                    * (_glimmerSystem.GlimmerOutput < glimmerEquilibrium ? _glimmerSystem.GetGlimmerEquilibriumRatio() : 1f));
-                }
-                else
-                {
-                    _glimmerSystem.DeltaGlimmerInput(-(_glimmerSystem.GlimmerOutput > glimmerEquilibrium
-                    ? MathF.Pow(_glimmerSystem.GetGlimmerOutputInteger() - source.GlimmerExponentOffset + glimmerSources, 2) : 1f)
-                    * (_glimmerSystem.GlimmerOutput > glimmerEquilibrium ? _glimmerSystem.GetGlimmerEquilibriumRatio() : 1f));
-                }
-            }
+            _glimmerSystem.DeltaGlimmerInput(component.GlimmerPerSecond * frameTime);
         }
     }
 }

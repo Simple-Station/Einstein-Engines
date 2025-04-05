@@ -14363,3 +14363,109 @@ Entries:
   id: 7091
   time: '2025-04-04T09:01:39.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2153
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Fixed various bugs with psionics.
+    - type: Fix
+      message: >-
+        Fixed a bug where if you generated enough Potentia during a drug induced
+        psionics roll to gain two powers, you would only gain one power instead,
+        while permanently losing the ability to gain new powers.
+    - type: Fix
+      message: >-
+        Fixed glimmer being permanently stuck between 500 and 600 by revisiting
+        the math and discovering an algebra error I made a year ago.
+    - type: Tweak
+      message: >-
+        Glimmer now operates on double precision. Have fun with that breaking
+        change if you made any psionic code downstream. Hint, you can cast
+        doubles into a (float) if you don't wish to convert your system to
+        double. 
+  id: 7092
+  time: '2025-04-04T15:41:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1848
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed an issue that prevented players from saving item customizations if
+        they didn't have enough loadout points to buy the item a second time. 
+    - type: Add
+      message: 'Traits can now define the order in which they are applied. '
+    - type: Fix
+      message: Fixed RGBee pushie not working.
+  id: 7093
+  time: '2025-04-04T15:50:31.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2154
+- author: dootythefrooty
+  changes:
+    - type: Add
+      message: Squackroaches can now be worn on the head or the shoulder.
+    - type: Fix
+      message: Squackroaches can now be seen being held.
+  id: 7094
+  time: '2025-04-04T18:35:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2151
+- author: GNUtopia
+  changes:
+    - type: Add
+      message: Added space goldfish pet
+    - type: Add
+      message: Added hostile space goldfish spawn event
+    - type: Tweak
+      message: Added squackroaches to roach spawn event
+    - type: Fix
+      message: Corrected some locale errors
+  id: 7095
+  time: '2025-04-04T18:37:34.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2152
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added loadout drip related to the Tau Ceti Foreign Legion. These are
+        available to any character that is a Biesel Citizen, and also has the
+        War Veteran lifepath.
+    - type: Add
+      message: Added a fancy shotgun revolver to the Captain's weapon selection.
+  id: 7096
+  time: '2025-04-04T19:09:06.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2156
+- author: ilmenwe
+  changes:
+    - type: Remove
+      message: double references in code
+    - type: Remove
+      message: unused references in code that had double references.
+  id: 7097
+  time: '2025-04-05T13:17:37.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2163
+- author: GNUtopia
+  changes:
+    - type: Fix
+      message: Added missing announcement text to space goldfish spawn event
+  id: 7098
+  time: '2025-04-05T14:56:57.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2160
+- author: SleepyScarecrow
+  changes:
+    - type: Fix
+      message: Fixed penlights.
+  id: 7099
+  time: '2025-04-05T15:00:11.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2139
+- author: dootythefrooty
+  changes:
+    - type: Add
+      message: Added The Hive back to rotation.
+  id: 7100
+  time: '2025-04-05T15:06:59.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2108
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: Port Thaven from DeltaV, who ported it from Impstation
+  id: 7101
+  time: '2025-04-05T18:14:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2132
