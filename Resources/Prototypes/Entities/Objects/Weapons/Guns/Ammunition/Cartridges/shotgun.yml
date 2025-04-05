@@ -18,6 +18,16 @@
         map: [ "enum.AmmoVisualLayers.Base" ]
   - type: Appearance
   - type: SpentAmmoVisuals
+  - type: EmitSoundOnLand
+    sound:
+      collection: ShellLand
+      params:
+        volume: -5
+  - type: EmitSoundOnCollide
+    sound:
+      collection: ShellLand
+      params:
+        volume: -5
 
 - type: entity
   id: ShellShotgunBeanbag
