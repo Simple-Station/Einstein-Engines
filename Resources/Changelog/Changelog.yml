@@ -14478,3 +14478,10 @@ Entries:
   id: 7102
   time: '2025-04-05T21:33:04.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2167
+- author: Yarinoi
+  changes:
+    - type: Remove
+      message: All guns from the Restricted Trait are GONE because I HATE YOU.
+  id: 7103
+  time: '2025-04-05T21:36:36.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2166
