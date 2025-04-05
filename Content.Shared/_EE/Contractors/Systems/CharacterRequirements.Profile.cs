@@ -1,5 +1,6 @@
 using System.Linq;
 using Content.Shared._EE.Contractors.Prototypes;
+using Content.Shared.CCVar;
 using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
@@ -9,6 +10,7 @@ using Content.Shared.Prototypes;
 using Content.Shared.Roles;
 using Content.Shared.Traits;
 using JetBrains.Annotations;
+using Robust.Shared;
 using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
 using Robust.Shared.Physics;
@@ -40,6 +42,13 @@ public sealed partial class CharacterNationalityRequirement : CharacterRequireme
         MindComponent? mind = null
     )
     {
+        if (!configManager.GetCVar(CCVars.ContractorsEnabled) ||
+            !configManager.GetCVar(CCVars.ContractorsCharacterRequirementsEnabled))
+        {
+            reason = "";
+            return true;
+        }
+
         var localeString = "character-nationality-requirement";
         const string color = "green";
         reason = Loc.GetString(
@@ -74,6 +83,13 @@ public sealed partial class CharacterEmployerRequirement : CharacterRequirement
         MindComponent? mind = null
     )
     {
+        if (!configManager.GetCVar(CCVars.ContractorsEnabled) ||
+            !configManager.GetCVar(CCVars.ContractorsCharacterRequirementsEnabled))
+        {
+            reason = "";
+            return true;
+        }
+
         var localeString = "character-employer-requirement";
         const string color = "green";
         reason = Loc.GetString(
@@ -108,6 +124,13 @@ public sealed partial class CharacterLifepathRequirement : CharacterRequirement
         MindComponent? mind = null
     )
     {
+        if (!configManager.GetCVar(CCVars.ContractorsEnabled) ||
+            !configManager.GetCVar(CCVars.ContractorsCharacterRequirementsEnabled))
+        {
+            reason = "";
+            return true;
+        }
+
         var localeString = "character-lifepath-requirement";
         const string color = "green";
         reason = Loc.GetString(

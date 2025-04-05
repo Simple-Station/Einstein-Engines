@@ -49,4 +49,6 @@ loadout-name-LoadoutItemShadowkinPlush = shadowkin plushie
 loadout-name-LoadoutItemPetMouse = pet mouse (colorable)
 loadout-name-LoadoutItemPetHamster = pet hamster (colorable)
 loadout-name-LoadoutItemPetMothroach = pet mothroach (colorable)
+loadout-name-LoadoutItemPetSquackroach = pet squackroach (colorable)
 loadout-name-LoadoutItemPetCockroach = pet cockroach (colorable)
+loadout-name-LoadoutItemPetGoldfish = pet space goldfish (colorable)

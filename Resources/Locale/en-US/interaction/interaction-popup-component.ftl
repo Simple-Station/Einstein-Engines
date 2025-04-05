@@ -36,7 +36,7 @@ petting-success-nymph = You pet {THE($target)} on {POSS-ADJ($target)} wooden lit
 petting-failure-generic = You reach out to pet {THE($target)}, but {SUBJECT($target)} {CONJUGATE-BE($target)} aloof towards you.
 
 petting-failure-bat = You reach out to pet {THE($target)}, but {SUBJECT($target)} {CONJUGATE-BE($target)} too hard to catch!
-petting-failure-carp = You reach out to pet {THE($target)}, but {POSS_ADJ($target)} sharp teeth make you think twice.
+petting-failure-carp = You reach out to pet {THE($target)}, but {POSS-ADJ($target)} sharp teeth make you think twice.
 petting-failure-corrupted-corgi = You reach out to pet {THE($target)}, but think better of it.
 petting-failure-crab = You reach out to pet {THE($target)}, but {SUBJECT($target)} snaps {POSS-ADJ($target)} claws in your general direction!
 petting-failure-dehydrated-carp = You pet {THE($target)} on {POSS-ADJ($target)} dry little head.

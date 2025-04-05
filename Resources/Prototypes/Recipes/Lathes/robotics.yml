@@ -317,11 +317,6 @@
   id: BorgModuleRCD
   result: BorgModuleRCD
 
-- type: latheRecipe
-  parent: BaseGoldBorgModuleRecipe
-  id: BorgModuleRPD
-  result: BorgModuleRPD
-
 # Janitor Modules
 
 - type: latheRecipe

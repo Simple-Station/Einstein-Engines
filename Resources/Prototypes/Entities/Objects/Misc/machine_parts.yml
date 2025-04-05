@@ -10,18 +10,13 @@
       scale: 0.8, 0.8
     - type: Item
       size: Tiny
-    - type: EmitSoundOnPickup
-      sound: /Audio/SimpleStation14/Items/Handling/component_pickup.ogg
-    - type: EmitSoundOnDrop
-      sound: /Audio/SimpleStation14/Items/Handling/component_drop.ogg
-    - type: EmitSoundOnLand
-      sound: /Audio/SimpleStation14/Items/Handling/component_drop.ogg
-# Rating 1
-    - type: GuideHelp
-      guides:
-      - MachineUpgrading
-
-# Rating 1
+    - type: Stack
+      count: 1
+    - type: PhysicalComposition #Goobstation - Recycle update
+      materialComposition:
+        Steel: 12
+        Plastic: 12
+    - type: StockPart # Goobstation
 
 - type: entity
   id: CapacitorStockPart
@@ -41,6 +36,8 @@
     - type: Tag
       tags:
         - CapacitorStockPart
+    - type: Stack
+      stackType: Capacitor
 
 - type: entity
   id: MicroManipulatorStockPart
@@ -54,6 +51,8 @@
     - type: MachinePart
       part: Manipulator
       rating: 1
+    - type: Stack
+      stackType: MicroManipulator
     - type: ReverseEngineering # Nyano
       recipes:
         - MicroManipulatorStockPart
@@ -70,6 +69,8 @@
     - type: MachinePart
       part: MatterBin
       rating: 1
+    - type: Stack
+      stackType: MatterBin
     - type: ReverseEngineering # Nyano
       recipes:
         - MatterBinStockPart
