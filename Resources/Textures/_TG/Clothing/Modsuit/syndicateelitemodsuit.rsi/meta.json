@@ -34,6 +34,10 @@
             "name": "equipped-BACKPACK-sealed",
             "directions": 4
         },
+		{
+            "name": "equipped-BACKPACK-sealed_glow",
+            "directions": 4
+        },
         {
             "name": "equipped-FEET",
             "directions": 4
@@ -56,6 +60,10 @@
         },
         {
             "name": "equipped-HEAD-sealed",
+            "directions": 4
+        },
+		{
+            "name": "equipped-HEAD-sealed_glow",
             "directions": 4
         },
         {
