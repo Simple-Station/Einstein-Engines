@@ -17,7 +17,7 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: BlackburnKitsuneMaskCivilian
+  parent: YukonBlackburnKitsuneMaskCivilian
   id: BlackburnKitsuneMask
   name: YukonBlackburnian Commander's kitsune mask
   description: A Blackburnian mask for ceremonial use.
