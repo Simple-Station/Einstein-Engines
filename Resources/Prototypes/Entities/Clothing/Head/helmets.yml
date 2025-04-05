@@ -3,7 +3,7 @@
 
 #Basic Helmet (Security Helmet)
 - type: entity
-  parent: ClothingHeadBase
+  parent: [ClothingHeadBase, BallisticGlasses]
   id: ClothingHeadHelmetBasic
   name: helmet
   description: Standard security gear. Protects the head from impacts.
@@ -38,7 +38,7 @@
 
 #SWAT Helmet
 - type: entity
-  parent: [ClothingHeadBase, ClothingHeadEVAHelmetBase]
+  parent: [ClothingHeadBase, ClothingHeadEVAHelmetBase, BallisticGlasses]
   id: ClothingHeadHelmetSwat
   name: SWAT helmet
   description: An extremely robust helmet, commonly used by paramilitary forces. This one has the Nanotrasen logo emblazoned on the top.

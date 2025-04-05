@@ -334,6 +334,9 @@
         - MedicalDoctor
         - Chemist
         - Paramedic
+    - !type:CharacterEmployerRequirement
+        employers:
+        - Cybersun
   items:
     - ClothingHeadHatSurgcapCybersun
 
@@ -413,6 +416,9 @@
         - MedicalDoctor
         - Chemist
         - Paramedic
+    - !type:CharacterEmployerRequirement
+        employers:
+        - Cybersun
   items:
     - ClothingOuterCoatCybersunWindbreaker
 
@@ -516,6 +522,9 @@
         - MedicalDoctor
         - Chemist
         - Paramedic
+    - !type:CharacterEmployerRequirement
+        employers:
+        - Cybersun
   items:
     - UniformScrubsColorCybersun
 

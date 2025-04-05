@@ -182,8 +182,8 @@
 - type: entity
   parent: ClothingEyesBase
   id: ClothingEyesGlassesCheapSunglasses
-  name: cheap sunglasses
-  description: A pair of black sunglasses. Doesn't block light well, more of an accessory than something useful.
+  name: sunglasses
+  description: A pair of black sunglasses.
   components:
   - type: Sprite
     sprite: Clothing/Eyes/Glasses/sunglasses.rsi
@@ -200,15 +200,15 @@
 - type: entity
   parent: ClothingEyesGlassesCheapSunglasses
   id: ClothingEyesGlassesSunglasses
-  name: sun glasses
-  description: A pair of black sunglasses.
+  name: shielded sunglasses
+  description: A pair of black sunglasses. These ones are specially made to protect the eye from blinding flashes of light.
   components:
   - type: FlashImmunity
   - type: EyeProtection
     protectionTime: 5
 
 - type: entity
-  parent: [ClothingEyesBase, ShowSecurityIcons]
+  parent: [ClothingEyesBase, ShowSecurityIcons, BallisticGlasses]
   id: ClothingEyesGlassesSecurity
   name: security glasses
   description: Upgraded sunglasses that provide flash immunity and a security HUD.
@@ -253,8 +253,8 @@
 - type: entity
   parent: ClothingEyesGlassesCheapSunglasses
   id: ClothingEyesGlassesCheapSunglassesAviator
-  name: cheap aviators
-  description: A pair of replica sunglasses. Doesn't block light well, more of an accessory than something useful.
+  name: aviators
+  description: A pair of designer sunglasses.
   components:
   - type: Sprite
     sprite: Clothing/Eyes/Glasses/aviators.rsi
@@ -267,8 +267,8 @@
 - type: entity
   parent: ClothingEyesGlassesSunglasses
   id: ClothingEyesGlassesSunglassesAviator
-  name: aviators
-  description: A pair of designer sunglasses.
+  name: shielded aviators
+  description: A pair of designer sunglasses. These ones are specially made to protect the eye from blinding flashes of light.
   components:
   - type: Sprite
     sprite: Clothing/Eyes/Glasses/aviators.rsi
@@ -295,8 +295,8 @@
 - type: entity
   parent: ClothingEyesGlassesCheapSunglasses
   id: ClothingEyesGlassesCheapSunglassesBig
-  name: cheap big sunglasses
-  description: A pair of black sunglasses with big lenses. Doesn't block light well, more of an accessory than something useful.
+  name: big sunglasses
+  description: A pair of black sunglasses with big lenses.
   components:
   - type: Sprite
     sprite: Clothing/Eyes/Glasses/sunglasses_big.rsi
@@ -309,8 +309,8 @@
 - type: entity
   parent: ClothingEyesGlassesSunglasses
   id: ClothingEyesGlassesSunglassesBig
-  name: big sunglasses
-  description: A pair of black sunglasses with big lenses.
+  name: big shielded sunglasses
+  description: A pair of black sunglasses with big lenses. These ones are specially made to protect the eye from blinding flashes of light.
   components:
   - type: Sprite
     sprite: Clothing/Eyes/Glasses/sunglasses_big.rsi
@@ -337,8 +337,8 @@
 - type: entity
   parent: ClothingEyesGlassesCheapSunglasses
   id: ClothingEyesGlassesCheapSunglassesVisor
-  name: cheap visor sunglasses
-  description: A pair of replica visor sunglasses. Doesn't block light well, more of an accessory than something useful.
+  name: visor sunglasses
+  description: A pair of visor sunglasses.
   components:
   - type: Sprite
     sprite: Clothing/Eyes/Glasses/sunglasses_visor.rsi
@@ -351,8 +351,8 @@
 - type: entity
   parent: ClothingEyesGlassesSunglasses
   id: ClothingEyesGlassesSunglassesVisor
-  name: visor sunglasses
-  description: A pair of visor sunglasses.
+  name: shielded visor sunglasses
+  description: A pair of visor sunglasses. These ones are specially made to protect the eye from blinding flashes of light.
   components:
   - type: Sprite
     sprite: Clothing/Eyes/Glasses/sunglasses_visor.rsi
@@ -377,7 +377,7 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: ClothingEyesBase
+  parent: [ClothingEyesBase, BallisticGlasses]
   id: ClothingEyesGlassesMercenary
   name: mercenary glasses
   description: Glasses made for combat, to protect the eyes from bright blinding flashes.

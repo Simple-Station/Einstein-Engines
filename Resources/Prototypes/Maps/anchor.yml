@@ -2,8 +2,8 @@
   id: Anchor
   mapName: 'Anchor'
   mapPath: /Maps/anchor.yml
-  minPlayers: 20
-  maxPlayers: 90
+  minPlayers: 35
+  maxPlayers: 120
   fallback: true
   stations:
     Anchor:
@@ -36,6 +36,7 @@
             Reporter: [ 2, 2 ]
             Musician: [ 1, 1 ]
             Mime: [ 1, 1 ]
+            Zookeeper: [ 1, 2 ]
             #engineering
             ChiefEngineer: [ 1, 1 ]
             AtmosphericTechnician: [ 2, 3 ]

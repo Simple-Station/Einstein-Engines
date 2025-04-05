@@ -38,3 +38,9 @@
   id: Interdyne
   nameKey: employer_name_interdyne
   descriptionKey: employer_description_interdyne
+
+- type: employer
+  id: IdrisIncorporated
+  nameKey: employer_name_idrisincorporated
+  descriptionKey: employer_description_idrisincorporated
+
