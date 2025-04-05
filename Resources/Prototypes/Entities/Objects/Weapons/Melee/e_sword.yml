@@ -106,6 +106,8 @@
   description: An elegant weapon fit for a prince, this otherwise plain silver hilt is engraved with, "My Love".
   components:
     - type: EnergySword
+      colorNames:
+       - "sky cyan"
       activatedColor: "#00CCFF"
       colorOptions:
        - "#00CCFF"
