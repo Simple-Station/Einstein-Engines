@@ -7,6 +7,19 @@
 
 # Equipment
 
+- type: loadout
+  id: LoadoutParamedicPortafib
+  category: JobsMedicalParamedic
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutParamedicEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Paramedic
+  items:
+    - Portafib
+
 # Eyes
 
 # Gloves

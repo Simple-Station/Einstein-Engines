@@ -140,6 +140,9 @@
     endSound:
       path: /Audio/_Shitmed/Medical/Surgery/scalpel2.ogg
   - type: Scalpel
+  - type: Tag
+    tags:
+    - Knife
 
 - type: entity
   name: shiv
@@ -172,6 +175,9 @@
         Slash: 8
   - type: Scalpel # Shitmed
     speed: 1.25
+  - type: Tag
+    tags:
+    - Knife
 
 - type: entity
   name: laser scalpel
@@ -195,6 +201,9 @@
     speed: 1.25 # These shouldnt be obtainable but yknow they are better.
   - type: Cautery
     speed: 1.25
+  - type: Tag
+    tags:
+    - Knife
 
 # Retractor
 

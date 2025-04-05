@@ -275,6 +275,12 @@
   - type: Insulated
   - type: Fiber
     fiberMaterial: fibers-insulative
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Piercing: 0.95
 
 # can't parent combat gloves since they are butcherable
 - type: entity
@@ -287,11 +293,17 @@
     sprite: Clothing/Hands/Gloves/tacticalmaidgloves.rsi
   - type: Clothing
     sprite: Clothing/Hands/Gloves/tacticalmaidgloves.rsi
+  - type: Fiber
+    fiberColor: fibers-black
   - type: GloveHeatResistance
     heatResistance: 1400
   - type: Insulated
-  - type: Fiber
-    fiberColor: fibers-black
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Piercing: 0.95
 
 - type: entity
   parent: ClothingHandsGlovesCombat
@@ -310,6 +322,12 @@
   - type: Fiber
     fiberMaterial: fibers-insulative
     fiberColor: fibers-olive
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Piercing: 0.95
 
 - type: entity
   parent: ClothingHandsButcherable
