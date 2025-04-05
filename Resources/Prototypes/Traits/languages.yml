@@ -3,8 +3,8 @@
   category: TraitsSpeechLanguages
   points: -1
   requirements:
-    - !type:CharacterItemGroupRequirement
-      group: TraitsLanguagesBasic
+    # - !type:CharacterItemGroupRequirement
+    #   group: TraitsLanguagesBasic
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -21,8 +21,8 @@
   category: TraitsSpeechLanguages
   points: 0
   requirements:
-    - !type:CharacterItemGroupRequirement
-      group: TraitsLanguagesBasic
+    # - !type:CharacterItemGroupRequirement
+    #   group: TraitsLanguagesBasic
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -43,8 +43,8 @@
   category: TraitsSpeechLanguages
   points: 0
   requirements:
-    - !type:CharacterItemGroupRequirement
-      group: TraitsLanguagesBasic
+    # - !type:CharacterItemGroupRequirement
+    #   group: TraitsLanguagesBasic
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -61,8 +61,8 @@
   category: TraitsSpeechLanguages
   points: 0
   requirements:
-    - !type:CharacterItemGroupRequirement
-      group: TraitsLanguagesBasic
+    # - !type:CharacterItemGroupRequirement
+    #   group: TraitsLanguagesBasic
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
@@ -75,8 +75,8 @@
   category: TraitsSpeechLanguages
   points: 0
   requirements:
-    - !type:CharacterItemGroupRequirement
-      group: TraitsLanguagesBasic
+    # - !type:CharacterItemGroupRequirement
+    #   group: TraitsLanguagesBasic
     - !type:CharacterNationalityRequirement
       inverted: true
       nationalities:
@@ -93,8 +93,8 @@
   category: TraitsSpeechLanguages
   points: -1
   requirements:
-    - !type:CharacterItemGroupRequirement
-      group: TraitsLanguagesBasic
+    # - !type:CharacterItemGroupRequirement
+    #   group: TraitsLanguagesBasic
     - !type:CharacterNationalityRequirement
       inverted: true
       nationalities:
@@ -111,8 +111,8 @@
   category: TraitsSpeechLanguages
   points: 0
   requirements:
-    - !type:CharacterItemGroupRequirement
-      group: TraitsLanguagesBasic
+    # - !type:CharacterItemGroupRequirement
+    #   group: TraitsLanguagesBasic
     - !type:CharacterNationalityRequirement
       inverted: true
       nationalities:
@@ -132,8 +132,8 @@
     - !type:CharacterSpeciesRequirement
       species:
         - Reptilian
-    - !type:CharacterItemGroupRequirement
-      group: TraitsLanguagesBasic
+    # - !type:CharacterItemGroupRequirement
+    #   group: TraitsLanguagesBasic
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
