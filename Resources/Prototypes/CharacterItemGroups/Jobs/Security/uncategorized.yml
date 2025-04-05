@@ -176,6 +176,8 @@
       id: LoadoutSecurityHeadHelmetInsulated
     - type: loadout
       id: LoadoutSecurityHeadHatSeniorTrooper
+    - type: loadout
+      id: ClothingHeadHelmetTCFLHeavy
 
 #- type: characterItemGroup
 #  id: LoadoutSecurityId
@@ -208,6 +210,8 @@
       id: LoadoutClothingOuterArmorBasic
     - type: loadout
       id: LoadoutClothingOuterArmorSlim
+    - type: loadout
+      id: ClothingOuterArmorTCFLHeavy
 
 - type: characterItemGroup
   id: LoadoutSecurityShoes

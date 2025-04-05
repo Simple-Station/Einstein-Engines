@@ -52,7 +52,7 @@
       types:
         Blunt: 7
         Structural: 14 # breaks down the walls and airlocks in 10 hits
-        Ion: 5
+        Shock: 5
     bluntStaminaDamageFactor: 2.0
   - type: MovementSpeedModifier
     baseWalkSpeed : 2 # same as slime
@@ -138,7 +138,7 @@
       types:
         Blunt: 14
         Structural: 28
-        Ion: 7
+        Shock: 7
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: BingleUpgraded

@@ -113,6 +113,12 @@
             "name": "rpd-module"
         },
         {
+            "name":"surgery-module"
+        },
+        {
+            "name":"adv-surgery-module"
+        },
+        {
             "name": "pka-module"
         }
     ]

@@ -1,12 +1,14 @@
 using System.Linq;
 using Content.Server.Players.PlayTimeTracking;
 using Content.Shared._EE.Contractors.Prototypes;
+using Content.Shared.CCVar;
 using Content.Shared.Customization.Systems;
 using Content.Shared.GameTicking;
 using Content.Shared.Humanoid;
 using Content.Shared.Players;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
+using Robust.Shared;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
@@ -70,6 +72,12 @@ public sealed class EmployerSystem : EntitySystem
     /// </summary>
     public void AddEmployer(EntityUid uid, EmployerPrototype employerPrototype)
     {
+        if (!_configuration.GetCVar(CCVars.ContractorsEnabled) ||
+            !_configuration.GetCVar(CCVars.ContractorsTraitFunctionsEnabled))
+        {
+            return;
+        }
+
         foreach (var function in employerPrototype.Functions)
             function.OnPlayerSpawn(uid, _componentFactory, EntityManager, _serialization);
     }

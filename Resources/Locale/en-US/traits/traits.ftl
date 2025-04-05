@@ -634,3 +634,9 @@ trait-name-Bodybuilder = Bodybuilder
 trait-description-Bodybuilder =
     Through extensive training or body modification, you have achieved the pinnacle of physique. 
     This trait halves the movement speed penalty when dragging something.
+
+trait-name-RestrictedGear = Restricted Gear
+trait-description-RestrictedGear = 
+    Either through personal ownership or theft, you have access to equipment that isn't particularly standard issue.
+    Note that starting with an item [color=red]doesn't certify its legality[/color]. Conceal it or justify it.
+    (You equip other jobs' items in the loadouts menu) 

@@ -339,7 +339,7 @@ reagent-effect-guidebook-innoculate-zombie-infection =
         *[other] cure
     } an ongoing zombie infection, and provides immunity to future infections
 
-reagent-effect-guidebook-reduce-rotting = 
+reagent-effect-guidebook-reduce-rotting =
     { $chance ->
         [1] Regenerates
         *[other] regenerate
@@ -400,3 +400,15 @@ reagent-effect-guidebook-plant-seeds-remove =
         [1] Removes the
         *[other] remove the
     } seeds of the plant
+
+reagent-effect-guidebook-stamina-change =
+    { $chance ->
+        [1] { $deltasign ->
+                [-1] Increases
+                *[1] Decreases
+            }
+        *[other] { $deltasign ->
+                    [-1] increase
+                    *[1] decrease
+                 }
+    } stamina by {$amount} points
