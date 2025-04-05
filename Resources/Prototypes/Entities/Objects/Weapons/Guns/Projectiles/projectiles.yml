@@ -238,7 +238,7 @@
   - type: Projectile
     damage:
       types:
-        Heat: 5
+        Shock: 5
     soundHit:
       path: "/Audio/Weapons/Guns/Hits/taser_hit.ogg"
     forceSound: true
@@ -283,8 +283,7 @@
     impactEffect: BulletImpactEffectDisabler
     damage:
       types:
-        Heat: 5
-        Ion: 10 #Goobstation
+        Shock: 2
     soundHit:
       collection: WeakHit
     forceSound: true
@@ -327,7 +326,7 @@
     impactEffect: BulletImpactEffectDisabler
     damage:
       types:
-        Heat: 0.3
+        Shock: 0.3
     soundHit:
       collection: WeakHit
     forceSound: true
@@ -366,8 +365,7 @@
     impactEffect: BulletImpactEffectDisabler
     damage:
       types:
-        Heat: 1
-        Ion: 5 #Goobstation
+        Shock: 1
     soundHit:
       collection: WeakHit
     forceSound: true
@@ -400,7 +398,7 @@
 #   soundHit:  Waiting on serv3
     damage:
       types:
-        Heat: 14
+        Shock: 14
   # mining laser real
   - type: GatheringProjectile
   - type: Tag
@@ -1109,7 +1107,7 @@
     impactEffect: BulletImpactEffectDisabler
     damage:
       types:
-        Heat: 2
+        Shock: 2
     soundHit:
       collection: WeakHit
     forceSound: true
@@ -1184,7 +1182,7 @@
     impactEffect: BulletImpactEffectDisabler
     damage:
       types:
-        Heat: 0
+        Shock: 0
     soundHit:
       collection: WeakHit
     forceSound: true
@@ -1436,6 +1434,6 @@
     impactEffect: BulletImpactEffectDisabler
     damage:
       types:
-        Ion: 20
+        Shock: 20
     soundHit:
       collection: MeatLaserImpact
