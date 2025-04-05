@@ -408,9 +408,16 @@ public sealed partial class CharacterItemGroupRequirement : CharacterRequirement
             .ToList();
         var count = items.Count;
 
-        // If prototype is selected, remove one from the count
+        // If prototype is selected, decrease the count. Or increase it via negative number. Not my monkey, not my circus.
         if (items.ToList().Contains(prototype.ID))
-            count--;
+        {
+            // This disgusting ELIF nest requires an engine PR to make less terrible.
+            if (prototypeManager.TryIndex<LoadoutPrototype>(prototype.ID, out var loadoutPrototype))
+                count -= loadoutPrototype.Slots;
+            else if (prototypeManager.TryIndex<TraitPrototype>(prototype.ID, out var traitPrototype))
+                count -= traitPrototype.ItemGroupSlots;
+            else count--;
+        }
 
         reason = Loc.GetString(
             "character-item-group-requirement",
