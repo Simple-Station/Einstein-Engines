@@ -110,16 +110,3 @@
       - id: StimpackMini
         amount: 6
 
-- type: entity
-  id: FieldSurgeryKit
-  name: Field Surgery Kit
-  parent: MedkitCombat
-  components:
-  - type: StorageFill
-    contents:
-      - id: EnergyCautery
-      - id: EnergyScalpel
-      - id: AdvancedRetractor
-      - id: BoneGel
-      - id: PillCanisterChloralHydrate
-      - id: EmergencyMedipen
