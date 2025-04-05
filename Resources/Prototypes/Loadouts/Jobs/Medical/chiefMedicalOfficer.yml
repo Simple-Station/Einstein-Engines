@@ -30,6 +30,20 @@
   items:
     - ClothingBeltMedicalAdvancedFilled
 
+- type: loadout
+  id: LoadoutChiefMedicalOfficerBeltMilitaryWebbingCMOFilled
+  category: JobsMedicalChiefMedicalOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefMedicalOfficerBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefMedicalOfficer
+  items:
+    - ClothingBeltMilitaryWebbingCMOFilled
+
 # Ears
 
 # Equipment
