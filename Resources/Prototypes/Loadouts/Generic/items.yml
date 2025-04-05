@@ -882,6 +882,20 @@
     - !type:LoadoutMakeFollower
 
 - type: loadout
+  id: LoadoutItemPetGoldfish
+  category: Items
+  cost: 2
+  canBeHeirloom: true
+  customColorTint: true
+  items:
+    - MobCarpGoldfishPet
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPets
+  functions:
+    - !type:LoadoutMakeFollower
+
+- type: loadout
   id: LoadoutItemBlackDeck
   category: Items
   cost: 3
