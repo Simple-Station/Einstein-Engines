@@ -229,8 +229,8 @@
     - type: Armor
       modifiers:
         flatReductions:
-          Piercing: 3
-          Heat: 4
+          Piercing: 2
+          Heat: 2
         coefficients:
           Blunt: 0.70
           Slash: 0.70
