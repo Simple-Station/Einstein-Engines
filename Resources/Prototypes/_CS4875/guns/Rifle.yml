@@ -1,0 +1,80 @@
+- type: entity
+  name: SK-45
+  parent: BaseWeaponRifle
+  id: YukonWeaponRifleSK45
+  description: A mass produced infantry rifle built and mass produced throughout the Blackburnian reconstruction period and used early in the Nanotrasen-Blackburna war. Uses .45 magnum.
+  components:
+  - type: Sprite
+    sprite: _CS4875/SK45.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _CS4875/SK45.rsi
+  - type: Gun
+    minAngle: 10
+    maxAngle: 15
+    fireRate: 20
+    burstFireRate: 20
+    shotsPerBurst: 2 #for some reason, it wants to shoot in 3 not in 2
+    burstCooldown: 0.8
+    selectedMode: Burst
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/rifle2.ogg
+    availableModes:
+      - Burst
+    fireOnDropChance: 1
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineUniversalMagnum
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineUniversalMagnum
+            - MagazineMagnumSubMachineGun
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeMagnum
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeMagnum
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: MeleeWeapon
+    range: 1.50
+    damage:
+      types:
+        Piercing: 5
+        Slash: 3.5
+    wideAnimationRotation: -240
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Piercing: 5
+        Slash: 2.5
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Piercing: 8
+        Slash: 3
+  - type: EmbeddableProjectile
+    removalTime: 3.5
+  - type: EmbedPassiveDamage
+  - type: ThrowingAngle
+    angle: 225
