@@ -138,6 +138,7 @@
 
 - type: trait
   id: FrontalLisp
+  slots: 0
   category: TraitsSpeechAccents
   requirements:
     - !type:CharacterJobRequirement
