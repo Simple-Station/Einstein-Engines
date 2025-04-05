@@ -18,6 +18,14 @@
 #  id: LoadoutSeniorOfficerEquipment
 #  maxItems: 1
 #  items:
+
+- type: characterItemGroup
+  id: LoadoutSeniorOfficerWeapons
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutSeniorOfficerTerminus
+
 #
 #- type: characterItemGroup
 #  id: LoadoutSeniorOfficerEyes

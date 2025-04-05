@@ -17,7 +17,7 @@
   canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadOfSecurityWeapon
+      group: LoadoutHeadOfSecurityWeapons
     - !type:CharacterJobRequirement
       jobs:
         - HeadOfSecurity
@@ -27,13 +27,33 @@
     - WeaponPulsePistolHoS
 
 - type: loadout
+  id: LoadoutCommandHoSTerminus
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityWeapons
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+    - !type:CharacterAgeRequirement
+      min: 21
+    - !type:CharacterSpeciesRequirement
+      species:
+      - Oni
+  items:
+    - Terminus
+
+- type: loadout
   id: LoadoutCommandHoSWt550
   category: JobsSecurityHeadOfSecurity
   cost: 0
   canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadOfSecurityWeapon
+      group: LoadoutHeadOfSecurityWeapons
     - !type:CharacterJobRequirement
       jobs:
         - HeadOfSecurity
@@ -49,7 +69,7 @@
   canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadOfSecurityWeapon
+      group: LoadoutHeadOfSecurityWeapons
     - !type:CharacterJobRequirement
       jobs:
         - HeadOfSecurity
@@ -63,7 +83,7 @@
   canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadOfSecurityWeapon
+      group: LoadoutHeadOfSecurityWeapons
     - !type:CharacterJobRequirement
       jobs:
         - HeadOfSecurity
@@ -79,7 +99,7 @@
   canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadOfSecurityWeapon
+      group: LoadoutHeadOfSecurityWeapons
     - !type:CharacterJobRequirement
       jobs:
         - HeadOfSecurity
@@ -95,7 +115,7 @@
   canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadOfSecurityWeapon
+      group: LoadoutHeadOfSecurityWeapons
     - !type:CharacterJobRequirement
       jobs:
         - HeadOfSecurity
@@ -109,7 +129,7 @@
   canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadOfSecurityWeapon
+      group: LoadoutHeadOfSecurityWeapons
     - !type:CharacterJobRequirement
       jobs:
         - HeadOfSecurity
@@ -125,7 +145,7 @@
   canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadOfSecurityWeapon
+      group: LoadoutHeadOfSecurityWeapons
     - !type:CharacterJobRequirement
       jobs:
         - HeadOfSecurity
