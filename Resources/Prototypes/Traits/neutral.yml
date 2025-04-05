@@ -1,6 +1,7 @@
 - type: trait
   id: PirateAccent
   slots: 0
+  itemGroupSlots: 0
   category: TraitsSpeechAccents
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -14,6 +15,7 @@
   id: Accentless
   category: TraitsSpeechAccents
   slots: 0
+  itemGroupSlots: 0
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -35,6 +37,7 @@
 - type: trait
   id: Southern
   slots: 0
+  itemGroupSlots: 0
   category: TraitsSpeechAccents
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -47,6 +50,7 @@
 - type: trait
   id: GermanAccent
   slots: 0
+  itemGroupSlots: 0
   category: TraitsSpeechAccents
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -59,6 +63,7 @@
 - type: trait
   id: RussianAccent
   slots: 0
+  itemGroupSlots: 0
   category: TraitsSpeechAccents
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -71,6 +76,7 @@
 - type: trait
   id: FrenchAccent
   slots: 0
+  itemGroupSlots: 0
   category: TraitsSpeechAccents
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -83,6 +89,7 @@
 - type: trait
   id: ItalianAccent
   slots: 0
+  itemGroupSlots: 0
   category: TraitsSpeechAccents
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -95,6 +102,7 @@
 - type: trait
   id: SpanishAccent
   slots: 0
+  itemGroupSlots: 0
   category: TraitsSpeechAccents
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -107,6 +115,7 @@
 - type: trait
   id: SkeletonAccent
   slots: 0
+  itemGroupSlots: 0
   category: TraitsSpeechAccents
   requirements:
     - !type:CharacterItemGroupRequirement

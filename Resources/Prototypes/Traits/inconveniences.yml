@@ -26,6 +26,7 @@
 - type: trait
   id: Stutter
   slots: 0
+  itemGroupSlots: 0
   category: TraitsSpeechAccents
   requirements:
     - !type:CharacterJobRequirement

@@ -38,7 +38,7 @@ public sealed partial class TraitPrototype : IPrototype, IComparable
     ///     Thus, they can optionally be split, otherwise the behavior defaults to their standard slots.
     /// </summary>
     [DataField]
-    public int ItemGroupSlots => Slots;
+    public int ItemGroupSlots = 1;
 
 
     [DataField]
