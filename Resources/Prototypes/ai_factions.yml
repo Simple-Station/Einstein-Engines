@@ -218,6 +218,14 @@
     - Changeling
 
 - type: npcFaction
+  id: Shadowling
+  hostile:
+    - NanoTrasen
+    - Syndicate
+    - Zombie
+    - Revolutionary
+
+- type: npcFaction
   id: AllHostile
   hostile:
   - NanoTrasen
@@ -232,6 +240,7 @@
   - Zombie
   - Revolutionary
   - Changeling # goob edit - changelings
+  - Shadowling
 # Commented out until we add theses factions into EE
 #  - Heretic # goob edit - heretics
 #  - Blob # Goobstation - Blob

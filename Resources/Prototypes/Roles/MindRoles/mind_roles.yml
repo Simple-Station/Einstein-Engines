@@ -274,3 +274,14 @@
     antagPrototype: Changeling
     exclusiveAntag: true
   - type: ChangelingRole
+
+# shadowling
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleShadowling
+  name: Shadowling Role
+  components:
+    - type: MindRole
+      antagPrototype: Shadowling
+      exclusiveAntag: true
+    - type: ShadowlingRole
