@@ -14455,3 +14455,10 @@ Entries:
   id: 7099
   time: '2025-04-05T15:00:11.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2139
+- author: dootythefrooty
+  changes:
+    - type: Add
+      message: Added The Hive back to rotation.
+  id: 7100
+  time: '2025-04-05T15:06:59.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2108
