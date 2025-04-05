@@ -246,17 +246,10 @@ public abstract partial class SharedGunSystem
                 args.Ammo.Add((entity, EnsureShootable(entity)));
 
                 // Put it back in if it doesn't auto-cycle
-                if (HasComp<CartridgeAmmoComponent>(entity) && !component.AutoCycle)
+                if (Timing.IsFirstTimePredicted && HasComp<CartridgeAmmoComponent>(entity) && !component.AutoCycle)
                 {
-                    if (!_netManager.IsClient)
-                    {
-                        component.Entities.Add(entity);
-                        Containers.Insert(entity, component.Container);
-                    }
-                    else
-                    {
-                        component.UnspawnedCount++;
-                    }
+                    component.Entities.Add(entity);
+                    Containers.Insert(entity, component.Container);
                 }
             }
 
