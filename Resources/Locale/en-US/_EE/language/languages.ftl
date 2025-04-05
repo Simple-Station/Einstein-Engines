@@ -17,3 +17,7 @@ language-YaSsa-description =
 language-Delvahii-name = Delvahii
 language-Delvahii-description =
     A Zhan-Khazan language tied to Ma'take worship, still used in religious rites and favored by farmers resisting government control.
+
+language-Qiilour-name = Qiilour
+language-Qiilour-description =
+    The native primary language of the Xelthia, just about all of them speak it in some capacity. It's a blend of several older languages that have since been lost to time.

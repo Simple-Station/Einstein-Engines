@@ -1,0 +1,10 @@
+marking-XelthiaStripeyChest = Chest Stripes
+marking-XelthiaUnderbelly = Colored Underbelly
+marking-XelthiaEarsNormal = Normal Ears
+marking-XelthiaEarsSmall = Short Ears
+marking-XelthiaRightarmSpike = Backspikes (Right)
+marking-XelthiaLeftarmSpike = Backspikes (Left)
+marking-XelthiaTailNormal = Normal Xelthia Tail
+marking-XelthiaHairLongish = Long Hair Tendrils
+marking-XelthiaHairShort = Short Hair Tendrils
+marking-XelthiaHairStandard = Normal Hair Tendrils
