@@ -1,6 +1,6 @@
 - type: entity
   name: space carp
-  id: BaseBaseMobCarp #made to allow space goldfish to be picked up on click (interactionpopup overides that)
+  id: BaseBaseMobCarp # made to allow space goldfish to be picked up on click (interactionpopup overrides that)
   parent: [ SimpleSpaceMobBase, FlyingMobBase, MobCombat ]
   description: It's a space carp.
   abstract: true
