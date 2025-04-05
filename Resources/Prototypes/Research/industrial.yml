@@ -17,7 +17,6 @@
   - MechEquipmentDrill # Goobstation
   - OreProcessorIndustrialMachineCircuitboard
   - ClothingMaskWeldingGas
-  - SalvageExpeditionsComputerCircuitboard
 
 - type: technology
   id: AdvancedPowercells
@@ -172,7 +171,6 @@
     - JawsOfLife
     - BorgModuleAdvancedTool
     - BorgModuleRCD
-    - BorgModuleRPD
 
 - type: technology
   id: MassExcavation

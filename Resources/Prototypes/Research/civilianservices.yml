@@ -28,6 +28,7 @@
   - ExosuitFabricatorMachineCircuitboard
   - BorgModuleArtifact
   - BorgModuleAnomaly
+  - DroneElectronics
 
 - type: technology
   id: BasicElectronics

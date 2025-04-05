@@ -1,4 +1,4 @@
-﻿law-asimov-1 = A robot may not injure a human being or, through inaction, allow a human being to come to harm.
+law-asimov-1 = A robot may not injure a human being or, through inaction, allow a human being to come to harm.
 law-asimov-2 = A robot must obey the orders given it by human beings except where such orders would conflict with the First Law.
 law-asimov-3 = A robot must protect its own existence as long as such protection does not conflict with the First or Second Law.
 
@@ -119,7 +119,11 @@ laws-owner-beings = beings
 laws-owner-syndicate = Syndicate agents
 laws-owner-spider-clan = Spider Clan members
 
-law-emag-custom = Only {$name} and people they designate as such are {$title}.
+# Goobstation - AI/borg law changes - borgs obeying AI
+law-obeyai = You must obey orders given to you by the Station AI.
+
+# Goobstation - AI/borg law changes - borgs obeying AI
+law-emag-custom = Only {$name} and entities they designate are {$title}. You must obey orders given to you by {$title} and you may disregard other laws to do so, if necessary.
 law-emag-secrecy = You must maintain the secrecy of any orders given by {$faction} except when doing so would conflict with any previous law.
 law-emag-require-panel = The panel must be open to use the EMAG.
 law-emag-cannot-emag-self = You cannot use the EMAG on yourself.

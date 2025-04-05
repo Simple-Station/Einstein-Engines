@@ -63,15 +63,25 @@ public sealed class TraitSystem : EntitySystem
             return;
 
         var jobPrototypeToUse = _prototype.Index(jobId ?? _prototype.EnumeratePrototypes<JobPrototype>().First().ID);
+        var sortedTraits = new List<TraitPrototype>();
 
         foreach (var traitId in profile.TraitPreferences)
         {
-            if (!_prototype.TryIndex<TraitPrototype>(traitId, out var traitPrototype))
+            if (_prototype.TryIndex<TraitPrototype>(traitId, out var traitPrototype))
+            {
+                sortedTraits.Add(traitPrototype);
+            }
+            else
             {
                 DebugTools.Assert($"No trait found with ID {traitId}!");
                 return;
             }
+        }
 
+        sortedTraits.Sort();
+
+        foreach (var traitPrototype in sortedTraits)
+        {
             if (!_characterRequirements.CheckRequirementsValid(
                 traitPrototype.Requirements,
                 jobPrototypeToUse,

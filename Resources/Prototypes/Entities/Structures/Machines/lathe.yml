@@ -202,6 +202,7 @@
     - CellRechargerCircuitboard
     - BorgChargerCircuitboard
     - WeaponCapacitorRechargerCircuitboard
+    - HydroponicsTrayMachineCircuitboard
     - HandheldStationMap
     - ClothingHeadHatWelding
     - ProgramDiskUnburnt # Arcadis - Modular Computer System
@@ -220,6 +221,7 @@
     - BasicGalaticCommonTranslatorImplanter
     - MofficTranslator
     - N14MaterialCircuitry
+    - VehicleWheelchairFolded # Goobstation
   - type: EmagLatheRecipes
     emagStaticRecipes:
     - BoxLethalshot
@@ -415,6 +417,7 @@
     - EnergyScalpel
     - EnergyCautery
     - AdvancedRetractor
+    - VehicleWheelchairFolded # Goobstation
   - type: EmagLatheRecipes
     emagDynamicRecipes:
     - BoxBeanbag
@@ -498,6 +501,7 @@
     staticRecipes:
     - ProtolatheMachineCircuitboard
     - AutolatheMachineCircuitboard
+    - BookPressMachineCircuitboard
     - CircuitImprinterMachineCircuitboard
     - OreProcessorMachineCircuitboard
     - MaterialReclaimerMachineCircuitboard
@@ -520,13 +524,13 @@
     - SpaceHeaterMachineCircuitBoard
     - StationAnchorCircuitboard
     - SeedExtractorMachineCircuitboard
-    - HydroponicsTrayMachineCircuitboard
     - ReagentGrinderIndustrialMachineCircuitboard
     - StasisBedMachineCircuitboard
     - CryoPodMachineCircuitboard
     - N14MaterialCircuitry
     dynamicRecipes:
     - ThermomachineFreezerMachineCircuitBoard
+    - DroneElectronics
     - HellfireFreezerMachineCircuitBoard
     - PortableScrubberMachineCircuitBoard
     - CloningPodMachineCircuitboard
@@ -604,7 +608,7 @@
     - SalvageExpeditionsComputerCircuitboard
     - JukeboxCircuitBoard
     - AutodocCircuitboard # Shitmed Change
-    - OperatingTableCircuitboard # Shitmed Change
+#    - OperatingTableCircuitboard # Shitmed Change
     - MaterialSiloCircuitboard
     - GygaxCentralElectronics
     - GygaxPeripheralsElectronics
@@ -728,7 +732,6 @@
     - BorgModuleAdvancedTool
     - BorgModuleGPS
     - BorgModuleRCD
-    - BorgModuleRPD
     - BorgModuleJetpack
     - BorgModulePka
     - BorgModuleArtifact
@@ -840,16 +843,20 @@
     layers:
     - state: icon
       map: ["enum.LatheVisualLayers.IsRunning"]
+      color: "#ffaa99"
     - state: unlit
       shader: unshaded
       map: ["enum.PowerDeviceVisualLayers.Powered"]
+      color: "#ffaaaa"
     - state: inserting
       map: ["enum.MaterialStorageVisualLayers.Inserting"]
+      color: "#ffaaaa"
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: Machine
     board: BiofabricatorMachineCircuitboard
   - type: MaterialStorage
+    ignoreColor: true
     whitelist:
       tags:
       - Sheet
@@ -1292,6 +1299,7 @@
     - ClothingEyesGlassesChemical
     - BoneGel # Shitmed Change
     - AACTablet # DeltaV
+    - VehicleWheelchairFolded # Goobstation - Vehicles
     dynamicRecipes:
     - ChemicalPayload
     - CryostasisBeaker

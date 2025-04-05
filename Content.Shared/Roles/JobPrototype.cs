@@ -1,4 +1,5 @@
 using Content.Shared.Access;
+using Content.Shared.Guidebook;
 using Content.Shared.Customization.Systems;
 using Content.Shared.Dataset;
 using Content.Shared.Players.PlayTimeTracking;
@@ -65,6 +66,13 @@ namespace Content.Shared.Roles
 
         [DataField("canBeAntag")]
         public bool CanBeAntag { get; private set; } = true;
+
+        /// <summary>
+        /// Used by Contractors to determine if a given job should have a passport
+        /// This should be disabled for Borgs and Station AI, for example.
+        /// </summary>
+        [DataField("canHavePassport")]
+        public bool CanHavePassport { get; private set; } = true;
 
         /// <summary>
         /// Nyano/DV: For e.g. prisoners, they'll never use their latejoin spawner.
@@ -149,6 +157,14 @@ namespace Content.Shared.Roles
 
         [DataField]
         public bool ApplyTraits = true;
+
+        /// <summary>
+        /// Optional list of guides associated with this role. If the guides are opened, the first entry in this list
+        /// will be used to select the currently selected guidebook.
+        /// </summary>
+        [DataField]
+        public List<ProtoId<GuideEntryPrototype>>? Guides;
+
     }
 
     /// <summary>
@@ -168,6 +184,7 @@ namespace Content.Shared.Roles
         /// </summary>
         [DataField(required: true)]
         public ProtoId<StartingGearPrototype> Id { get; private set; }
+
     }
 
     /// <summary>

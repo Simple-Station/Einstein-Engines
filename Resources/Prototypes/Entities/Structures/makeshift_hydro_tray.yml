@@ -1,0 +1,34 @@
+- type: entity
+  name: makeshift hydroponics tray
+  parent: [ hydroponicsSoil]
+  id: hydroponicsMakeshiftTray
+  description: A cheap hydroponics tray without any fancy technology. Keep a close eye on the spaceweeds, as these trays don't have warning lights!
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.1"
+        density: 190
+        hard: true
+        mask:
+        - MachineMask
+        layer:
+        - BulletImpassable
+  - type: Anchorable
+  - type: Pullable
+  - type: Sprite
+    sprite: Structures/Hydroponics/containers.rsi
+    state: hydrotray2
+    noRot: true
+  - type: PlantHolder
+    waterLevel: 0
+    nutritionLevel: 0
+    drawWarnings: false
+  - type: Construction
+    graph: MakeshiftHydroTrayGraph
+    node: makeshiftHydroTray
+  - type: GuideHelp
+    guides:
+    - Botany

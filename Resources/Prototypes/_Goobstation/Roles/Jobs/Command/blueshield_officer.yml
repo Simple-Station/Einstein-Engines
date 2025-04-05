@@ -22,6 +22,10 @@
         - Blindness
         - Pacifist
         - BrittleBoneDisease
+    - !type:CharacterEmployerRequirement
+      inverted: true
+      employers:
+      - Unemployed
   weight: 20
   startingGear: BlueshieldOfficerGear
   icon: "JobIconBlueshield"

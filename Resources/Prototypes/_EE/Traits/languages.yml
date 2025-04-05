@@ -9,6 +9,10 @@
       inverted: true
       species:
         - Tajaran
+    - !type:CharacterNationalityRequirement
+      inverted: true
+      nationalities:
+        - Adhomai
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:

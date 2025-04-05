@@ -83,7 +83,7 @@
     sprite: Clothing/Eyes/Hud/epi.rsi
 
 - type: entity
-  parent: ClothingEyesBase
+  parent: [ClothingEyesBase, BallisticGlasses] # ODJ requested this for reasons he did not clarify.
   id: ClothingEyesHudBeer
   name: beer goggles
   description: A pair of sunHud outfitted with apparatus to scan reagents, as well as providing an innate understanding of liquid viscosity while in motion.
@@ -235,7 +235,7 @@
   - type: ShowSyndicateIcons
 
 - type: entity
-  parent: [ClothingEyesBase, ShowSecurityIcons]
+  parent: [ClothingEyesBase, ShowSecurityIcons, BallisticGlasses]
   id: ClothingEyesHudSyndicate
   name: syndicate visor
   description: The syndicate's professional head-up display, designed for better detection of humanoids and their subsequent elimination.
@@ -247,7 +247,7 @@
   - type: ShowSyndicateIcons
 
 - type: entity
-  parent: [ClothingEyesBase, ShowSecurityIcons]
+  parent: [ClothingEyesBase, ShowSecurityIcons, BallisticGlasses]
   id: ClothingEyesHudSyndicateAgent
   name: syndicate agent visor
   description: The Syndicate Agent's professional heads-up display, designed for quick diagnosis of their team's status.

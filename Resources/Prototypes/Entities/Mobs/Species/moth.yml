@@ -53,6 +53,8 @@
       Unsexed: UnisexMoth
   - type: MovementSpeedModifier
     weightlessAcceleration: 2.5 # Move around more easily in space.
+    weightlessModifier: 1.1
+    weightlessFriction: 2 # makes you turn more sharply while weightless
   - type: Flammable
     damage:
       types:
@@ -70,9 +72,11 @@
         Heat : 3 #per second, scales with temperature & other constants
   - type: TemperatureSpeed
     thresholds:
-      289: 0.8
-      275: 0.6
-      250: 0.4
+      289: 0.85
+      275: 0.7
+      250: 0.55
+  - type: TemperatureProtection # moff fluff acts as insulation
+    coefficient: 0.5 # less than vulp fur but still significant
   - type: Sprite # sprite again because we want different layer ordering
     noRot: true
     drawdepth: Mobs

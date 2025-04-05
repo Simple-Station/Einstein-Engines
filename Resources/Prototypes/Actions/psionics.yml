@@ -69,7 +69,7 @@
   components:
     - type: EntityTargetAction
       icon: Interface/VerbIcons/noospheric_zap.png
-      useDelay: 100
+      useDelay: 50
       range: 5
       itemIconStyle: BigAction
       blacklist:
@@ -173,7 +173,7 @@
             Burn: -10
         rotReduction: 10
         useDelay: 1
-        doRevive: true
+        doRevive: false
         powerName: Healing Word
         popupText: healing-word-begin
         playSound: true
