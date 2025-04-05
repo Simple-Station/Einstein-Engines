@@ -14441,3 +14441,10 @@ Entries:
   id: 7097
   time: '2025-04-05T13:17:37.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2163
+- author: GNUtopia
+  changes:
+    - type: Fix
+      message: Added missing announcement text to space goldfish spawn event
+  id: 7098
+  time: '2025-04-05T14:56:57.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2160
