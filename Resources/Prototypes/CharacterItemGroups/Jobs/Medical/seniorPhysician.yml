@@ -13,6 +13,14 @@
     - type: loadout
       id: LoadoutSeniorPhysicianBeltMedicalAdvancedFilled
 
+- type: characterItemGroup
+  id: LoadoutSeniorPhysicianToolsExtra
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutSeniorPhysicianBluespaceBeaker
+    - type: loadout
+      id: LoadoutSeniorPhysicianSurgeryKit
 #- type: characterItemGroup
 #  id: LoadoutSeniorPhysicianEars
 #  maxItems: 1
