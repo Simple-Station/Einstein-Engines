@@ -17,9 +17,6 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using TimedDespawnComponent = Robust.Shared.Spawners.TimedDespawnComponent;
-using Content.Server.Atmos.Components;
-using Content.Server.Atmos.EntitySystems;
-
 namespace Content.Server.Explosion.EntitySystems;
 
 public sealed partial class ExplosionSystem
