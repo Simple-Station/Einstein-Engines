@@ -207,6 +207,23 @@
   items:
     - Terminus
 
+- type: loadout
+  id: LoadoutCaptainRevolverShotgun
+  category: JobsCommandCaptain
+  cost: 0
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+    - !type:CharacterAgeRequirement
+      min: 21
+  items:
+    - WeaponCaptainRevolverShotgun
+
+
 # Eyes
 - type: loadout
   id: LoadoutCaptainEyesSunglasses

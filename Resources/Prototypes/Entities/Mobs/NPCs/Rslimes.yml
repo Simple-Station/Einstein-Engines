@@ -7,6 +7,7 @@
     bloodReagent: Ichor
   - type: PointLight
     color: "#f4692e"
+  - type: Absorbable
   - type: Sprite
     drawdepth: Mobs
     sprite: Mobs/Aliens/elemental.rsi
@@ -22,6 +23,7 @@
   components:
   - type: Bloodstream
     bloodReagent: Bleach
+  - type: Absorbable
   - type: PointLight
     color: "#a1000b"
   - type: Sprite
@@ -39,6 +41,7 @@
   components:
   - type: Bloodstream
     bloodReagent: SoapReagent
+  - type: Absorbable
   - type: PointLight
     color: "#c8dfc9"
   - type: Sprite
@@ -56,6 +59,7 @@
   components:
   - type: Bloodstream
     bloodReagent: SpaceLube
+  - type: Absorbable
   - type: PointLight
     color: "#77b58e"
   - type: Sprite
@@ -73,6 +77,7 @@
   components:
   - type: Bloodstream
     bloodReagent: BuzzochloricBees
+  - type: Absorbable
   - type: PointLight
     color: "#FFD35D"
   - type: Sprite
@@ -90,6 +95,7 @@
   components:
   - type: Bloodstream
     bloodReagent: JuiceThatMakesYouWeh
+  - type: Absorbable
   - type: PointLight
     color: "#59b23a"
   - type: Sprite
@@ -107,6 +113,7 @@
   components:
   - type: Bloodstream
     bloodReagent: Cognizine
+  - type: Absorbable
   - type: PointLight
     color: "#b50ee8"
   - type: Sprite
@@ -124,6 +131,7 @@
   components:
   - type: Bloodstream
     bloodReagent: Necrosol
+  - type: Absorbable
   - type: PointLight
     color: "#86a5bd"
   - type: Sprite
@@ -141,6 +149,7 @@
   components:
   - type: Bloodstream
     bloodReagent: SpaceDrugs
+  - type: Absorbable
   - type: PointLight
     color: "#63806e"
   - type: Sprite
@@ -158,6 +167,7 @@
   components:
   - type: Bloodstream
     bloodReagent: UnstableMutagen
+  - type: Absorbable
   - type: PointLight
     color: "#00ff5f"
   - type: Sprite
@@ -175,6 +185,7 @@
   components:
   - type: Bloodstream
     bloodReagent: Lead
+  - type: Absorbable
   - type: PointLight
     color: "#5C6274"
   - type: Sprite
@@ -192,6 +203,7 @@
   components:
   - type: Bloodstream
     bloodReagent: ChlorineTrifluoride
+  - type: Absorbable
   - type: PointLight
     color: "#FFC8C8"
   - type: Sprite
@@ -209,6 +221,7 @@
   components:
   - type: Bloodstream
     bloodReagent: Potassium
+  - type: Absorbable
   - type: PointLight
     color: "#c6c8cc"
   - type: Sprite

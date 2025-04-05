@@ -122,6 +122,8 @@
       id: LoadoutItemPetSquackroach
     - type: loadout
       id: LoadoutItemPetCockroach
+    - type: loadout
+      id: LoadoutItemPetGoldfish
 
 - type: characterItemGroup
   id: LoadoutCards

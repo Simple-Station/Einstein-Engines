@@ -379,3 +379,13 @@
       id: ClothingUniformJumpskirtTacticalMaid
     - type: loadout
       id: ClothingUniformJumpsuitTacticool
+    - type: loadout
+      id: ClothingUniformTCAFArmsman
+    - type: loadout
+      id: ClothingUniformTCFLLegate
+    - type: loadout
+      id: ClothingUniformTCFLPilot
+    - type: loadout
+      id: ClothingUniformTCFLSentinel
+    - type: loadout
+      id: ClothingUniformTCFLVolunteer

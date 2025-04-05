@@ -769,7 +769,7 @@
 - type: trait
   id: RestrictedGear
   category: Physical
-  points: -10
+  points: -6
   requirements:
   - !type:CVarRequirement
     cvar: trait.restrictedgear_enabled
