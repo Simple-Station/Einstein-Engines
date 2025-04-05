@@ -48,6 +48,21 @@
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Xelthia
+  - type: Temperature
+    heatDamageThreshold: 360
+    coldDamageThreshold: 280
+    currentTemperature: 310.15
+    specificHeat: 42
+    coldDamage:
+      types:
+        Cold: 1.2 #per second, scales with temperature & other constants
+    heatDamage:
+      types:
+        Heat: 1.2 #per second, scales with temperature & other constants
+  - type: Barotrauma
+    damage:
+      types:
+        Blunt: 0.14 #per second, scales with pressure and other constants.
   - type: Inventory
     templateId: xelthia
     speciesId: xelthia
