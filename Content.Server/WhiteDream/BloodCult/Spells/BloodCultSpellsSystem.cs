@@ -179,8 +179,7 @@ public sealed class BloodCultSpellsSystem : EntitySystem
         if (ev.Handled)
             return;
 
-        if (ev.Speech is not null)
-            _magicSystem.Speak(ev.Performer, ev.Speech, ev.InvokeChatType);
+
 
         foreach (var (slot, protoId) in ev.Prototypes)
         {
@@ -193,11 +192,13 @@ public sealed class BloodCultSpellsSystem : EntitySystem
                 return;
             }
 
-            if (!TryComp(entity, out ClothingComponent? _))
+            if (!TryComp(entity, out ClothingComponent? clothing)
+                || !_inventory.TryUnequip(ev.Performer, slot, clothing: clothing)
+                || !_inventory.TryEquip(ev.Performer, entity, slot, clothing: clothing, force: true))
                 continue;
 
-            _inventory.TryUnequip(ev.Performer, slot);
-            _inventory.TryEquip(ev.Performer, entity, slot, force: true);
+            if (ev.Speech is not null)
+                _magicSystem.Speak(ev.Performer, ev.Speech, ev.InvokeChatType);
         }
 
         ev.Handled = true;
