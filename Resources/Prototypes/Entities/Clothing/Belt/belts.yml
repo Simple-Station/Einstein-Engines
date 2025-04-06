@@ -278,8 +278,6 @@
         - PillCanister
         - Radio
         - DiscreteHealthAnalyzer
-        - Dropper
-        - Tourniquet #Goobstation
         - MedicalPatch # Goobstation
       components:
         - SurgeryTool # Shitmed Change
