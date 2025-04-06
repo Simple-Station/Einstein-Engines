@@ -5,7 +5,7 @@
     "y": 32
   },
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from https://github.com/discordia-space/CEV-Eris/blob/2b969adc2dfd3e9621bf3597c5cbffeb3ac8c9f0/icons/obj/chemical.dmi",
+  "copyright": "Taken from https://github.com/tgstation/tgstation/blob/master/icons/obj/medical/chemical.dmi",
   "states": [
     {
       "name": "mixer_empty",
@@ -35,14 +35,21 @@
       "name": "mixer_screens",
       "delays": [
         [
-          0.1,
-          0.2,
-          0.1,
-          0.1,
-          0.2,
-          0.1,
-          0.2,
-          0.1
+          0.05,
+          0.05,
+          0.05,
+          0.05,
+          0.05,
+          0.05,
+          0.05,
+          0.05,
+          0.05,
+          0.05,
+          0.05,
+          0.05,
+          0.05,
+          0.05,
+          0.05
         ]
       ]
     },
