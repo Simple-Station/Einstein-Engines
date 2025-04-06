@@ -421,7 +421,7 @@
       group: LoadoutSeniorEngineerEquipmentExtra
     - !type:CharacterJobRequirement
       jobs:
-        - SeniorEgnineer
+        - SeniorEngineer
   items: 
     - WelderExperimental
 # Eyes
