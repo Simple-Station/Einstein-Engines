@@ -108,7 +108,7 @@
       amount: 2
     Sigynate: # check 2
       amount: 2
-    Silicon: 
+    Silicon:
       amount: 1
     Aluite:
       amount: 5
@@ -201,7 +201,7 @@
     Antihol: 3
 
 - type: reaction # This will do until we get molecular chemistry in
-  id: Ibuprofen 
+  id: Ibuprofen
   reactants:
     Charcoal:
       amount: 1
@@ -258,24 +258,6 @@
   effects:
     - !type:CreateEntityReactionEffect
       entity: ShardCrystalStyptic
-
-- type: reaction
-  id: MeatSynth
-  quantized: true
-  reactants:
-    SodiumPolyacrylate:
-      amount: 10
-    Phenol:
-      amount: 10
-    Blood:
-      amount: 10
-    Carbon:
-      amount: 10
-  products:
-    Hydroxide: 5 # frankly it's there so that this recipe appears in the guidebook at all
-  effects:
-    - !type:CreateEntityReactionEffect
-      entity: FoodMeatSynth
 
 - type: reaction
   id: Synthcells
@@ -370,7 +352,7 @@
     PotassiumIodide:
       amount: 1
   products:
-    Hercuri: 5  
+    Hercuri: 5
 
 - type: reaction
   id: Herignis
@@ -382,4 +364,4 @@
     Phlogiston:
       amount: 2
   products:
-    Herignis: 5  
+    Herignis: 5
