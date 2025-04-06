@@ -1,6 +1,6 @@
 - type: trait
   id: HighPotential
-  category: Mental
+  category: TraitsPsionicsFeats
   points: -5
   requirements:
     - !type:CharacterTraitRequirement
