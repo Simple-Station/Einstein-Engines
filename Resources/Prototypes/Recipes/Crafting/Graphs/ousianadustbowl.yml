@@ -13,7 +13,7 @@
       - tag: FoodBowlBig
         icon:
           sprite: Objects/Consumable/Food/bowl.rsi
-          state: icon
+          state: bowl
         name: bowl
         doAfter: 2
   - node: ousianadustbowl

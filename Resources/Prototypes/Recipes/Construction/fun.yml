@@ -12,7 +12,7 @@
 - type: construction
   name: ousiana dust bowl
   id:  FoodOusianaDustBowl
-  graph: OusianaBowlDust
+  graph: OusianaDustBowl
   startNode: start
   targetNode: ousianadustbowl
   category: construction-category-misc
