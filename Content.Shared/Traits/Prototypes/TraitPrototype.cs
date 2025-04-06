@@ -25,7 +25,20 @@ public sealed partial class TraitPrototype : IPrototype, IComparable
     ///     How many points this will give the character
     /// </summary>
     [DataField]
-    public int Points = 0;
+    public int Points;
+
+    /// <summary>
+    ///     How many trait selections this uses. Defaulted to 1:1, but can be any number.
+    /// </summary>
+    [DataField]
+    public int Slots = 1;
+
+    /// <summary>
+    ///     Traits share their item group implementation with Loadouts, but have a separate use for their normal Slots.
+    ///     Thus, they can optionally be split, otherwise the behavior defaults to their standard slots.
+    /// </summary>
+    [DataField]
+    public int ItemGroupSlots = 1;
 
 
     [DataField]

@@ -1,0 +1,234 @@
+- type: trait
+  id: HighPotential
+  category: TraitsPsionicsFeats
+  points: -5
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - LatentPsychic
+        - PsychoHistorian
+        - Elementalist
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Oni
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Shadowkin
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - LowPotential
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMachine
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: PotentiaModifier
+          potentiaMultiplier: 1.5
+
+- type: trait
+  id: LowPotential
+  category: TraitsPsionicsFeats
+  points: 5
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - LatentPsychic
+        - PsychoHistorian
+        - Elementalist
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Oni
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Shadowkin
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - HighPotential
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMachine
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: PotentiaModifier
+          potentiaMultiplier: 0.5
+
+- type: trait
+  id: LowAmplification
+  category: TraitsPsionicsFeats
+  points: 3
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - LatentPsychic
+        - PsychoHistorian
+        - Elementalist
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Shadowkin
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - HighAmplification
+        - PowerOverwhelming
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMachine
+  functions:
+    - !type:TraitAddPsionics
+      psionicPowers:
+        - LowAmplification
+
+- type: trait
+  id: HighAmplification
+  category: TraitsPsionicsFeats
+  points: -3
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - LatentPsychic
+        - PsychoHistorian
+        - Elementalist
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - LowAmplification
+        - PowerOverwhelming
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMachine
+  functions:
+    - !type:TraitAddPsionics
+      psionicPowers:
+        - HighAmplification
+
+- type: trait
+  id: PowerOverwhelming
+  category: TraitsPsionicsFeats
+  points: -10
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - LatentPsychic
+        - PsychoHistorian
+        - Elementalist
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - LowAmplification
+        - HighAmplification
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMachine
+  functions:
+    - !type:TraitAddPsionics
+      psionicPowers:
+        - PowerOverwhelming
+
+- type: trait
+  id: LowDampening
+  category: TraitsPsionicsFeats
+  points: 3
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - LatentPsychic
+        - PsychoHistorian
+        - Elementalist
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - HighDampening
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMachine
+  functions:
+    - !type:TraitAddPsionics
+      psionicPowers:
+        - LowDampening
+
+- type: trait
+  id: HighDampening
+  category: TraitsPsionicsFeats
+  points: -3
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - LatentPsychic
+        - PsychoHistorian
+        - Elementalist
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - LowDampening
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMachine
+  functions:
+    - !type:TraitAddPsionics
+      psionicPowers:
+        - HighDampening

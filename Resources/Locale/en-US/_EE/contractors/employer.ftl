@@ -28,3 +28,6 @@ employer_description_interdyne = A leading name in Solarian biomedical research,
 
 employer_name_idrisincorporated = Idris Incorporated
 employer_description_idrisincorporated = Idris Incorporated is an interstellar corporate bank headquartered in the Sol Alliance. The bank has begun offering hiring bonuses to those who work for other major interstellar corporations to draw people away from their competitors. However, they are still in a struggle with NanoTrasen due to its large employee base mainly using the company's bank as their method of storing funds, preventing Idris from having a large number of members.
+
+employer_name_orionexpress = Orion Express
+employer_description_orionexpress = Orion Express is a manufactured megacorporation designed to handle logistics in the wake of the phoron scarcity, and the sudden entangling of supply lines that left the galaxy struggling for more resources. Its main branch is dedicated to cargo services and transport, but also features a fledgling robotics division mainly focused on industrial synthetics to aid in its logistics missions.

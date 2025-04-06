@@ -182,6 +182,7 @@
   id: MobChicken
   description: Comes before an egg, and IS a dinosaur!
   components:
+  - type: Absorbable
   - type: Sprite
     drawdepth: Mobs
     layers:
@@ -266,6 +267,7 @@
   parent: MobChicken
   id: MobChicken1
   components:
+  - type: Absorbable
   - type: Sprite
     layers:
     - map: ["enum.DamageStateVisualLayers.Base", "movement"]
@@ -291,6 +293,7 @@
   parent: MobChicken
   id: MobChicken2
   components:
+  - type: Absorbable
   - type: Sprite
     layers:
     - map: ["enum.DamageStateVisualLayers.Base", "movement"]
@@ -974,6 +977,7 @@
   id: MobCow
   description: Moo.
   components:
+  - type: Absorbable
   - type: Sprite
     drawdepth: Mobs
     layers:
@@ -1059,6 +1063,7 @@
   id: MobCrab
   description: A folk legend goes around that his claw snaps spacemen out of existence over distasteful remarks. Be polite and tolerant for your own safety.
   components:
+  - type: Absorbable
   - type: Sprite
     drawdepth: Mobs
     layers:
@@ -1137,6 +1142,7 @@
   id: MobGoat
   description: Her spine consists of long sharp segments, no wonder she is so grumpy.
   components:
+  - type: Absorbable
   - type: Sprite
     drawdepth: Mobs
     layers:
@@ -1281,6 +1287,7 @@
   id: MobGorilla
   description: Smashes, roars, looks cool. Don't stand near one.
   components:
+  - type: Absorbable
   - type: Sprite
     drawdepth: Mobs
     layers:
@@ -1338,6 +1345,7 @@
   id: MobKangaroo
   description: A large marsupial herbivore. It has powerful hind legs, with nails that resemble long claws.
   components:
+  - type: Absorbable
   - type: MovementSpeedModifier
     baseWalkSpeed: 3.5
     baseSprintSpeed: 4.5
@@ -1442,6 +1450,7 @@
   description: The genetic bipedal ancestor of... Uh... Something. Yeah, there's definitely something on the station that descended from whatever this is.
   abstract: true
   components:
+  - type: Absorbable
   - type: CombatMode
   # Shitmed Change Start
   - type: SurgeryTarget
@@ -1584,6 +1593,7 @@
   parent: MobBaseAncestor
   description: New church of neo-darwinists actually believe that EVERY animal evolved from a monkey. Tastes like pork, and killing them is both fun and relaxing.
   components:
+  - type: Absorbable
   - type: NameIdentifier
     group: Monkey
   - type: Speech
@@ -1621,6 +1631,7 @@
   description: New church of neo-darwinists actually believe that EVERY animal evolved from a monkey. Tastes like pork, and killing them is both fun and relaxing.
   suffix: syndicate base
   components:
+  - type: Absorbable
   - type: NameIdentifier
     group: Monkey
   - type: SentienceTarget
@@ -1659,6 +1670,7 @@
   suffix: syndicate agent
   components:
     # make the player a traitor once its taken
+  - type: Absorbable
   - type: AutoTraitor
     profile: TraitorReinforcement
 
@@ -1667,6 +1679,7 @@
   parent: MobBaseSyndicateMonkey
   suffix: NukeOps
   components:
+  - type: Absorbable
   - type: NukeOperative
 
 - type: entity
@@ -1676,6 +1689,7 @@
   description: Cousins to the sentient race of lizard people, kobolds blend in with their natural habitat and are as nasty as monkeys; ready to pull out your hair and stab you to death.
   abstract: true
   components:
+  - type: Absorbable
   - type: NameIdentifier
     group: Kobold
   - type: LizardAccent
@@ -1757,6 +1771,7 @@
   parent: MobBaseKobold
   description: Cousins to the sentient race of lizard people, kobolds blend in with their natural habitat and are as nasty as monkeys; ready to pull out your hair and stab you to death.
   components:
+  - type: Absorbable
   - type: Clumsy
     gunShootFailDamage:
       types:
@@ -1772,6 +1787,7 @@
   parent: MobBaseKobold
   suffix: syndicate base
   components:
+  - type: Absorbable
   - type: MobThresholds
     thresholds:
       0: Alive
@@ -1788,6 +1804,7 @@
   parent: MobBaseSyndicateKobold
   suffix: syndicate agent
   components:
+  - type: Absorbable
     # make the player a traitor once its taken
   - type: AutoTraitor
     profile: TraitorReinforcement
@@ -1797,6 +1814,7 @@
   parent: MobBaseSyndicateKobold
   suffix: NukeOps
   components:
+  - type: Absorbable
   - type: NukeOperative
 
 - type: entity
@@ -2354,6 +2372,7 @@
   id: MobPenguin
   description: Their lives are constant pain due to their inner-body knees.
   components:
+  - type: Absorbable
   - type: Sprite
     drawdepth: Mobs
     layers:
@@ -2421,6 +2440,7 @@
   id: MobGrenadePenguin
   description: A small penguin with a grenade strapped around its neck. Harvested by the Syndicate from icy shit-hole planets.
   components:
+  - type: Absorbable
   - type: MovementSpeedModifier
     baseWalkSpeed: 3.5
     baseSprintSpeed: 5
@@ -2545,6 +2565,7 @@
   id: MobSpiderBase
   abstract: true
   components:
+  - type: Absorbable
   - type: Carriable
   - type: Physics
   - type: Fixtures
@@ -2656,6 +2677,7 @@
   id: MobSpiderAngryBase
   abstract: true
   components:
+  - type: Absorbable
   - type: NpcFactionMember
     factions:
       - Xeno
@@ -2681,6 +2703,7 @@
   id: MobGiantSpider
   description: Widely recognized to be the literal worst thing in existence.
   components:
+  - type: Absorbable
   - type: Sprite
     drawdepth: Mobs
     layers:
@@ -2724,6 +2747,7 @@
   id: MobClownSpider
   description: Combines the two most terrifying things in existence, spiders and clowns.
   components:
+    - type: Absorbable
     - type: Sprite
       drawdepth: Mobs
       layers:
@@ -2782,6 +2806,7 @@
   id: MobPossum
   description: '"O Possum! My Possum!" -- Walt Whitman, 1865'
   components:
+  - type: Absorbable
   - type: Sprite
     drawdepth: Mobs
     sprite: Mobs/Animals/possum.rsi
@@ -2865,6 +2890,7 @@
   id: MobRaccoon
   description: Trash panda!
   components:
+  - type: Absorbable
   - type: Sprite
     drawdepth: Mobs
     sprite: Mobs/Animals/raccoon.rsi
@@ -2930,6 +2956,7 @@
   id: MobFox
   description: They're a fox.
   components:
+  - type: Absorbable
   - type: Sprite
     drawdepth: Mobs
     sprite: Mobs/Animals/fox.rsi
@@ -3022,6 +3049,7 @@
   id: MobCorgi
   description: Finally, a space corgi!
   components:
+  - type: Absorbable
   - type: Sprite
     drawdepth: Mobs
     sprite: Mobs/Pets/corgi.rsi
@@ -3093,6 +3121,7 @@
   id: MobCorgiNarsi
   description: Ian! No!
   components:
+  - type: Absorbable
   - type: Sprite
     drawdepth: Mobs
     sprite: Mobs/Pets/corgi.rsi
@@ -3181,6 +3210,7 @@
   id: MobCat
   description: Feline pet, very funny.
   components:
+  - type: Absorbable
   - type: Sprite
     drawdepth: Mobs
     sprite: Mobs/Pets/cat.rsi
@@ -3283,6 +3313,7 @@
   parent: MobCatSpace
   description: Explosive kitten.
   components:
+  - type: Absorbable
   - type: Sprite
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
@@ -3336,6 +3367,7 @@
   parent: MobCat
   description: Feline pet, prepared for the worst.
   components:
+  - type: Absorbable
   - type: Sprite
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
@@ -3401,6 +3433,7 @@
   id: MobCatKitten
   description: Small and fluffy.
   components:
+  - type: Absorbable
   - type: Sprite
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
@@ -3447,6 +3480,7 @@
   id: MobSloth
   description: Very slow animal. For people with low energy.
   components:
+  - type: Absorbable
   - type: MovementSpeedModifier
     baseWalkSpeed : 1
     baseSprintSpeed : 1
@@ -3743,6 +3777,7 @@
   id: MobPig
   description: Oink.
   components:
+  - type: Absorbable
   - type: Sprite
     drawdepth: Mobs
     layers:

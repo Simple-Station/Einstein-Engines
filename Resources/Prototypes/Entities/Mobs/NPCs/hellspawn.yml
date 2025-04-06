@@ -46,6 +46,7 @@
         Base: alive
       Dead:
         Base: dead
+  - type: Absorbable
   - type: Firestarter
   - type: NameIdentifier
     group: GenericNumber
