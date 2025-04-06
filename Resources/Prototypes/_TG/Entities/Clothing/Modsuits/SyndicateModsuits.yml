@@ -229,7 +229,7 @@
   parent: [ClothingModsuitChestplateStandard]
   id: ClothingModsuitChestplateEliteSyndicateModsuit
   name: EE-122MS "Jaeger" Modsuit Chestplate
-  description: A mass production modular take on the Shiwei tacsuit. It trades a lot of the Shiwei's enhanced protection for modular equipment gear. Compared with the Jaeger modsuit, it offers unparalleled protection from energy weapons, but its ballistic protection leaves much to be desired.
+  description: A mass production modular take on the Shiwei tacsuit. It trades a lot of the Shiwei's enhanced protection for modular equipment gear. Compared with the Raider modsuit, it offers unparalleled protection from energy weapons, but its ballistic protection leaves much to be desired.
   categories: [HideSpawnMenu]
   components:
     - type: Sprite
@@ -264,7 +264,6 @@
       visualLayers:
         outerClothing:
         - state: equipped-OUTERCLOTHING-sealed
-
 - type: entity
   parent: [ClothingModsuitBootsStandard]
   id: ClothingModsuitBootsEliteSyndicateModsuit
