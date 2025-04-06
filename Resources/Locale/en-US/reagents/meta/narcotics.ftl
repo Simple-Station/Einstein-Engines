@@ -46,5 +46,3 @@ reagent-desc-cryanobalamin = A formerly popular additive to energy drinks to res
 reagent-name-liftloversspecial = lift lovers special
 reagent-desc-liftloversspecial = A chemical cocktail that quickly restores stamina. Despite being officially banned, it remains a popular black-market drink among fitness junkies. Carcinogenic in high doses.
 
-reagent-name-oblivion = Oblivion
-reagent-desc-oblivion = Placeholder

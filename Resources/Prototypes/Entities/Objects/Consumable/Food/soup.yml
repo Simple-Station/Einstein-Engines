@@ -8,7 +8,7 @@
   - type: Item
     storedRotation: -90
   - type: Food
-    trash: 
+    trash:
     - FoodBowlBig
     utensil: Spoon
   - type: SolutionContainerManager
@@ -971,7 +971,7 @@
     flavors:
       - miso
   - type: Food
-    trash: 
+    trash:
     - FoodBowlFancy
   - type: Sprite
     layers:
@@ -1256,4 +1256,32 @@
   - type: Tag
     tags:
     - Meat
+    - Soup
+
+
+- type: entity
+  name: ousiana dust bowl
+  parent: FoodBowlBase
+  id: FoodOusianaDustBowl
+  description: A combination of diametrically opposed forces,
+  components:
+  - type: Food
+    # useSound: "/Audio/Effects/Fluids/splat.ogg" [Placeholder sound, replace with a snorting sound if a way to get the reagent into the bloodstream directally is implemnted, ideally with a diffrent verb "EG "Smells like XYZ" instead of "Tastes like XYZ"]
+  - type: FlavorProfile
+    flavors:
+      - supernova
+  - type: Sprite
+    layers:
+    - state: bowl
+    - state: ousiana
+    injectOnly:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+          - ReagentId: OusianaDust
+            Quantity: 5
+  - type: Tag
+    tags:
     - Soup
