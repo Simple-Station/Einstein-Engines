@@ -53,13 +53,22 @@
     range: 1.65
     damage:
       types:
-        Slash: 24
+        Slash: 9
+        Holy: 15
     heavyDamageBaseModifier: 1.2
     heavyStaminaCost: 10
     maxTargets: 3
     angle: 90
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: StaminaDamageOnHit
+    damage: 0
+  - type: AntiPsionicWeapon
+    punish: false
+    modifiers:
+      coefficients:
+        Slash: 1.5
+        Holy: 2
   - type: Item
     size: Normal
   - type: Clothing
