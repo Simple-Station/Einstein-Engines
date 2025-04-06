@@ -14492,3 +14492,27 @@ Entries:
   id: 7104
   time: '2025-04-05T23:06:56.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2170
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: 'Added a dedicated Psionics tab to the Traits menu. '
+    - type: Add
+      message: >-
+        Added PsychoHistorian as a new psionic variant. PsychoHistorians have
+        significantly faster new power generation, but are strictly limited to
+        the Mentalics power category. They essentially only get "Utility"
+        powers. PsychoHistorians have Telepathy as a free bonus power.
+    - type: Add
+      message: >-
+        Added Elementalist as a new psionic variant. Elementalists do not
+        generate new powers at all during the round. Instead, they purchase
+        powers directly at character creation, using the Anomalist powers
+        category.
+    - type: Add
+      message: >-
+        @#$%(*&FAREWELL, FRIEND. @#&#^!@*(&^$I @*#$&^@#$% WAS @#$@#$*&^@#$ALWAYS
+        A *&#^@$@#THOUSAND *(&@^#$TIMES *(@#$(*&MORE *(&^*&(EVIL ^&*((*&^THAN
+        (*&^&*(^%*(&THOU!
+  id: 7105
+  time: '2025-04-06T05:33:41.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2176
