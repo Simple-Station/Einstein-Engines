@@ -14571,3 +14571,12 @@ Entries:
   id: 7109
   time: '2025-04-06T20:07:43.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2155
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Fixed a bug where Probers were locking glimmer at a set number.
+    - type: Fix
+      message: 'Fixed a bug where Elementalists could still roll for new powers. '
+  id: 7110
+  time: '2025-04-06T21:04:32.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2190
