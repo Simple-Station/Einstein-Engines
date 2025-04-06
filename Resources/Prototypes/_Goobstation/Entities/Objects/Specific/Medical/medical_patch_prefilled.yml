@@ -6,7 +6,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Goobstation/Objects/Medical/medical_patch.rsi
+    sprite: _Goobstation/Objects/Medical/medical_patch.rsi
     layers:
       - state: GenericPatchSmall
       - state: GenericPatchSmall-1
