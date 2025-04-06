@@ -14523,3 +14523,12 @@ Entries:
   id: 7106
   time: '2025-04-06T15:30:33.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2182
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Taught the Psionic Mantis how to summon his blade quietly, and not do so
+        via screaming like a lunatic. 
+  id: 7107
+  time: '2025-04-06T19:44:17.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2186
