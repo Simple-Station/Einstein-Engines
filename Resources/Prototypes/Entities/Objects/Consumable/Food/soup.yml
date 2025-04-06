@@ -1261,12 +1261,12 @@
 
 - type: entity
   name: ousiana dust bowl
-  parent: FoodBowlBase
+  parent: FoodBowlBase # really dry soup i guess
   id: FoodOusianaDustBowl
   description: A combination of diametrically opposed forces,
   components:
   - type: Food
-    # useSound: "/Audio/Effects/Fluids/splat.ogg" [Placeholder sound, replace with a snorting sound if a way to get the reagent into the bloodstream directally is implemnted, ideally with a diffrent verb "EG "Smells like XYZ" instead of "Tastes like XYZ"]
+    useSound: "/Audio/Effects/Footsteps/snowstep4.ogg"
   - type: FlavorProfile
     flavors:
       - supernova
@@ -1285,3 +1285,12 @@
   - type: Tag
     tags:
     - Soup
+  - type: Construction
+    graph: OusianaDustBowl
+    node: ousianadustbowl
+  - type: MeleeWeapon
+    soundNoDamage:
+      path: "/Audio/Effects/Footsteps/snowstep4.ogg"
+    damage:
+      types:
+        Blunt: 0
