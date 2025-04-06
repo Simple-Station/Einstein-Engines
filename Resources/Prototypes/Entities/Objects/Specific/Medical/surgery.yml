@@ -620,3 +620,34 @@
   - type: Item
     size: Small
     heldPrefix: evil
+
+- type: entity
+  name: CMO's Proto Multitool
+  id: OmnimedToolLite
+  parent: OmnimedTool
+  components:
+    - type: Sprite
+      state: cmotool
+    - type: Item
+      helfPrefix: cmotool
+    - type: SurgeryTool
+    - type: Hemostat
+      speed: 1.25
+    - type: Scalpel
+      speed: 1.25
+    - type: Drill
+      speed: 1.25
+    - type: BoneSetter
+      speed: 1.25
+    - type: Retractor
+      speed: 1.25
+    - type: Cautery
+      speed: 1.25
+    - type: BoneGel
+      speed: 1.25
+    - type: BoneSaw
+      speed: 1.25
+    - type: Tweezers
+      speed: 1.25
+    - type: Tending
+      speed: 1.25

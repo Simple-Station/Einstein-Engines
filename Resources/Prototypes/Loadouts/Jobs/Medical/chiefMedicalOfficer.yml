@@ -47,7 +47,19 @@
 # Ears
 
 # Equipment
-
+- type: loadout
+  id: LoadoutChiefMedicalOfficerEquipmentOmnimedToolLite
+  category: JobsMedicalChiefMedicalOfficer
+  cost: 0
+  exclusive: true
+  requirements: 
+  - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefMedicalOfficerEquipment
+  - !type:CharacterJobRequirement
+    jobs: 
+      - ChiefMedicalOfficer
+  items:
+    - OmnimedToolLite
 # Eyes
 
 # Gloves
