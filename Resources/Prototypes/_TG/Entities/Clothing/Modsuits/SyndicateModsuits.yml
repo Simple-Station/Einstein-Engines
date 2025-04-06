@@ -2,8 +2,8 @@
 - type: entity
   parent: [ClothingModsuitStandard]
   id: BloodredModsuitBackpack
-  name: CSA-99MS "Raider" Modsuit Control
-  description: Someone please remake this description with your writer energy
+  name: EE-99MS "Raider" Modsuit Control
+  description: A control module for the "Raider" modsuit.
   components:
     - type: Sprite
       sprite: _TG/Clothing/Modsuit/bloodredmodsuit.rsi
@@ -37,8 +37,8 @@
 - type: entity
   parent: [ClothingModsuitGauntletsStandard]
   id: ClothingModsuitGauntletsBloodredModsuit
-  name: CSA-99MS "Raider" Modsuit Gauntlets
-  description: Someone please remake this description with your writer energy
+  name: EE-99MS "Raider" Modsuit Gauntlets
+  description: A set of armored gauntlets for the "Raider" modsuit.
   categories: [HideSpawnMenu]
   components:
     - type: Sprite
@@ -51,8 +51,8 @@
 - type: entity
   parent: [ClothingModsuitHelmetStandard, ShowSecurityIcons]
   id: ClothingModsuitHelmetBloodredModsuit
-  name: CSA-99MS "Raider" Modsuit Helm
-  description: Someone please remake this description with your writer energy
+  name: EE-99MS "Raider" Modsuit Helm
+  description: A helmet made for the "Raider" modsuit.
   categories: [HideSpawnMenu]
   components:
     - type: Sprite
@@ -79,8 +79,8 @@
 - type: entity
   parent: [ClothingModsuitChestplateStandard]
   id: ClothingModsuitChestplateBloodredModsuit
-  name: CSA-99MS "Raider" Modsuit Chestplate
-  description: Someone please remake this description with your writer energy
+  name: EE-99MS "Raider" Modsuit Chestplate
+  description: A mass production model of a modular-tacsuit that once made headlines for its showings in Solarian media. After being rejected in favor of the Shanlin tacsuit, these suits have mysteriously become commonplace among frontier pirate crews.
   categories: [HideSpawnMenu]
   components:
     - type: Sprite
@@ -121,8 +121,8 @@
 - type: entity
   parent: [ClothingModsuitBootsStandard]
   id: ClothingModsuitBootsBloodredModsuit
-  name: CSA-99MS "Raider" Modsuit Boots
-  description: Someone please remake this description with your writer energy
+  name: EE-99MS "Raider" Modsuit Boots
+  description: A set of greaves made for the "Raider" modsuit.
   categories: [HideSpawnMenu]
   components:
     - type: Appearance
@@ -149,8 +149,8 @@
 - type: entity
   parent: [ClothingModsuitStandard]
   id: EliteModsuitBackpack
-  name: CSA-122MS "Jaeger" Modsuit Control
-  description: Someone please remake this description with your writer energy
+  name: EE-122MS "Jaeger" Modsuit Control
+  description: A controller for the "Jaeger" modsuit.
   components:
     - type: Sprite
       sprite: _TG/Clothing/Modsuit/syndicateelitemodsuit.rsi
@@ -184,8 +184,8 @@
 - type: entity
   parent: [ClothingModsuitGauntletsStandard]
   id: ClothingModsuitGauntletsEliteSyndicateModsuit
-  name: CSA-122MS "Jaeger" Modsuit Gauntlets
-  description: Someone please remake this description with your writer energy
+  name: EE-122MS "Jaeger" Modsuit Gauntlets
+  description: A pair of gauntlets made for the "Jaeger" modsuit.
   categories: [HideSpawnMenu]
   components:
     - type: Sprite
@@ -199,8 +199,8 @@
 - type: entity
   parent: [ClothingModsuitHelmetStandard, ShowSecurityIcons]
   id: ClothingModsuitHelmetEliteSyndicateModsuit
-  name: CSA-122MS "Jaeger" Modsuit Helm
-  description: Someone please remake this description with your writer energy
+  name: EE-122MS "Jaeger" Modsuit Helm
+  description: A helmet made for the "Jaeger" modsuit.
   categories: [HideSpawnMenu]
   components:
     - type: Sprite
@@ -228,8 +228,8 @@
 - type: entity
   parent: [ClothingModsuitChestplateStandard]
   id: ClothingModsuitChestplateEliteSyndicateModsuit
-  name: CSA-122MS "Jaeger" Modsuit Chestplate
-  description: Someone please remake this description with your writer energy
+  name: EE-122MS "Jaeger" Modsuit Chestplate
+  description: A mass production modular take on the Shiwei tacsuit. It trades a lot of the Shiwei's enhanced protection for modular equipment gear. Compared with the Jaeger modsuit, it offers unparalleled protection from energy weapons, but its ballistic protection leaves much to be desired.
   categories: [HideSpawnMenu]
   components:
     - type: Sprite
@@ -268,8 +268,8 @@
 - type: entity
   parent: [ClothingModsuitBootsStandard]
   id: ClothingModsuitBootsEliteSyndicateModsuit
-  name: CSA-122MS "Jaeger" Modsuit Boots
-  description: Someone please remake this description with your writer energy
+  name: EE-122MS "Jaeger" Modsuit Boots
+  description: A pair of greaves made for the "Jaeger" modsuit.
   categories: [HideSpawnMenu]
   components:
     - type: Appearance
