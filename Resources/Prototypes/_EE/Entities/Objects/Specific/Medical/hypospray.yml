@@ -1,0 +1,29 @@
+- type: entity
+  name: cryptobiolin injector
+  parent: ChemicalMedipen
+  id: CryptobiolinAutoInjector
+  description: Designed to rapidly administer a psionically-insulative chemical into the bloodstream, with effects lasting approximately 15 minutes. Don't go losing your head, now. Side effects include headaches, slurred speech, and blurry vision. Results may vary.
+  components:
+  - type: Sprite
+    sprite: _EE/Objects/Specific/Medical/medipen.rsi
+    layers:
+    - state: cryptopen
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: false
+    emptySpriteName: cryptopen_empty
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 15
+    onlyAffectsMobs: false
+    injectOnly: true
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 15
+        reagents:
+        - ReagentId: Cryptobiolin
+          Quantity: 15
+  - type: Tag
+    tags: []

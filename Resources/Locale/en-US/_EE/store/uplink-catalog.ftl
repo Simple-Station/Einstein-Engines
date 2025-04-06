@@ -9,3 +9,6 @@ uplink-faction-san-asset-group-name = Sol Alliance Asset Bundle (Team)
 uplink-faction-san-asset-group-desc =
     Contains five uniforms for a team of operatives working for the Solarian Alliance, includes five CSA-85x Modsuits
     ((For use in re-flavoring your antag activity as having a different employer than the Syndicate))
+
+uplink-cryptoinjector-name = Cryptobiolin Injector
+uplink-cryptoinjector-desc = An auto-injector that gives you immunity to psionic effects for 15 minutes, with some negative side-effects.

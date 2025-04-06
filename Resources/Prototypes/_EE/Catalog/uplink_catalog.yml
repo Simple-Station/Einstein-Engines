@@ -38,3 +38,14 @@
   conditions:
   - !type:BuyerSpeciesCondition
     whitelist: [ Human ]
+
+- type: listing
+  id: UplinkCryptoInjector
+  name: uplink-cryptoinjector-name
+  description: uplink-cryptoinjector-desc
+  icon: { sprite: _EE/Objects/Specific/Medical/medipen.rsi, state: cryptopen }
+  productEntity: CryptobiolinAutoInjector
+  cost:
+    Telecrystal: 20
+  categories:
+  - UplinkChemicals
