@@ -3,9 +3,14 @@
   category: TraitsPsionicsPowers
   points: -4
   requirements:
-    - !type:CharacterTraitRequirement
-      traits:
-        - LatentPsychic
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterTraitRequirement
+          traits:
+            - LatentPsychic
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Xelthia # Innate Psionics
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
@@ -31,9 +36,14 @@
   category: TraitsPsionicsPowers
   points: -2
   requirements:
-    - !type:CharacterTraitRequirement
-      traits:
-        - LatentPsychic
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterTraitRequirement
+          traits:
+            - LatentPsychic
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Xelthia # Innate Psionics
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
@@ -71,6 +81,9 @@
             - Chaplain
             - ResearchDirector
             - ForensicMantis
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Xelthia # Innate Psionics
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
@@ -108,6 +121,9 @@
             - ResearchDirector
             - ForensicMantis
             - Librarian
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Xelthia # Innate Psionics
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
@@ -139,6 +155,9 @@
             - Librarian
             - ForensicMantis
             - ResearchDirector
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Xelthia # Innate Psionics
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement

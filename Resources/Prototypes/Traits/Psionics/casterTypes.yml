@@ -24,6 +24,7 @@
           inverted: true
           species:
             - IPC
+            - Xelthia
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
@@ -94,6 +95,7 @@
           inverted: true
           species:
             - IPC
+            - Xelthia
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
@@ -127,6 +129,7 @@
           inverted: true
           species:
             - IPC
+            - Xelthia
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
