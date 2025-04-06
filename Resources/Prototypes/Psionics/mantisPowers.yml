@@ -61,8 +61,6 @@
     angle: 90
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
-  - type: StaminaDamageOnHit
-    damage: 0
   - type: AntiPsionicWeapon
     punish: false
     modifiers:
