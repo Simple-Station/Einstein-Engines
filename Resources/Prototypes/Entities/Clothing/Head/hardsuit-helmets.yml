@@ -549,6 +549,7 @@
         Heat: 0.9
   - type: FlashImmunity # Goobstation
   - type: FlashSoundSuppression # Goobstation
+  - type: TinfoilHat
 
 #Syndicate Commander Hardsuit
 - type: entity
@@ -601,6 +602,7 @@
         Heat: 0.9
   - type: FlashImmunity # Goobstation
   - type: FlashSoundSuppression # Goobstation
+  - type: TinfoilHat
 
 #Wizard Hardsuit
 - type: entity
