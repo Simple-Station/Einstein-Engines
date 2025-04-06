@@ -1274,7 +1274,6 @@
     layers:
     - state: bowl
     - state: ousiana
-    injectOnly:
   - type: SolutionContainerManager
     solutions:
       food:
