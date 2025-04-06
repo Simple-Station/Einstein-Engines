@@ -44,3 +44,7 @@
   nameKey: employer_name_idrisincorporated
   descriptionKey: employer_description_idrisincorporated
 
+- type: employer
+  id: OrionExpress
+  nameKey: employer_name_orionexpress
+  descriptionKey: employer_description_orionexpress
