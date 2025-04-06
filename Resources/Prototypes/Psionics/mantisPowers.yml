@@ -31,7 +31,7 @@
       sprite: WhiteDream/BloodCult/Entities/Items/Weapons/cult_blade.rsi
       state: icon
     event: !type:SummonEquipmentEvent
-      speech: "I CALL ON THE HEART OF QLIPPOTH, OF WOE AND THE END OF ALL THINGS, TO THIS DOOMED PLANE OF MORTAL MEN, I SHALL BRING A SEA OF BLOOD, TO MY HAND, BLACK BLADE"
+      speech: "I CALL ON THE HEART OF QLIPPOTH, OF WOE AND THE END OF ALL THINGS. TO THIS DOOMED PLANE OF MORTAL MEN, I SHALL BRING A SEA OF BLOOD. TO MY HAND, BLACK BLADE"
       invokeChatType: Speak
       prototypes:
         hand1: MantisBlackBlade
