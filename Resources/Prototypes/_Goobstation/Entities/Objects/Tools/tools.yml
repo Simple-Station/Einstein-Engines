@@ -2,7 +2,7 @@
   name: handheld fax
   parent: BaseItem
   id: HandheldFax
-  description: A hand-held fac machine provided to corporate liaisons.
+  description: A hand-held fax machine provided to corporate liaisons.
   components:
   - type: Item
     size: Huge
