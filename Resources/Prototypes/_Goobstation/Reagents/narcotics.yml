@@ -11,9 +11,6 @@
       metabolismRate: 0.05
       effects:
       - !type:HealthChange
-        conditions:
-        - !type:OrganType
-          type: Yowie
         damage:
           groups:
             Brute: -1
@@ -23,18 +20,11 @@
             Cold: -0.5
             Radiation: -0.5
       - !type:HealthChange
-        conditions:
-        - !type:OrganType
-          type: Yowie
-          shouldHave: false
         damage:
           types:
             Poison: 0.25
       - !type:HealthChange # When overdosing
         conditions:
-        - !type:OrganType
-          type: Yowie
-          shouldHave: false
         - !type:ReagentThreshold
           min: 5
         damage:
@@ -43,9 +33,6 @@
             Asphyxiation: 0.75 # more damage, but easier to treat, will rapidly kill in crit probably?
       - !type:HealthChange # More overdose damage
         conditions:
-        - !type:OrganType
-          type: Yowie
-          shouldHave: false
         - !type:ReagentThreshold
           min: 5
         probability: 0.05
@@ -69,10 +56,6 @@
         messages: ["fentanyl-effect-skinworms","fentanyl-effect-breathingrazors","fentanyl-effect-lungstight","fentanyl-effect-observed"]
         probability: 0.05
       - !type:MovespeedModifier # you didn't think this would improve your abilities right?
-        conditions:
-        - !type:OrganType
-          type: Yowie
-          shouldHave: false
         walkSpeedModifier: 0.8
         sprintSpeedModifier: 0.8
       - !type:GenericStatusEffect
@@ -80,17 +63,10 @@
         component: StutteringAccent
       - !type:Jitter
       - !type:Paralyze # loss of muscle control
-        conditions:
-        - !type:OrganType
-          type: Yowie
-          shouldHave: false
         probability: 0.05
         paralyzeTime: 2
       - !type:Paralyze # more severe effects when you are overdosing
         conditions:
-        - !type:OrganType
-          type: Yowie
-          shouldHave: false
         - !type:ReagentThreshold
           min: 5
         probability: 0.05
@@ -120,10 +96,6 @@
     Narcotic:
       effects:
       - !type:TakeStaminaDamage
-        conditions:
-        - !type:OrganType # Goobstation - Yowie
-          type: Yowie
-          shouldHave: false
         amount: 15
         immediate: false
 
@@ -140,10 +112,6 @@
     Narcotic:
       effects:
       - !type:GenericStatusEffect
-        conditions:
-        - !type:OrganType # Goobstation - Yowie
-          type: Yowie
-          shouldHave: false
         key: TemporaryBlindness
         component: TemporaryBlindness
         type: Add
@@ -184,10 +152,6 @@
           types:
             Poison: 0.25
             Asphyxiation: 0.25
-        conditions:
-        - !type:OrganType
-          type: Yowie
-          shouldHave: false
       - !type:HealthChange # intentionally no yowie conditions
         damage:
           groups:
@@ -200,6 +164,3 @@
       - !type:Emote
         emote: Gasp
         probability: 0.1
-        conditions:
-        - !type:OrganType
-          type: Yowie
