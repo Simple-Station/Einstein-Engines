@@ -550,6 +550,8 @@
   - type: FlashImmunity # Goobstation
   - type: FlashSoundSuppression # Goobstation
   - type: TinfoilHat
+    passthrough: false
+    destroyOnFry: false
 
 #Syndicate Commander Hardsuit
 - type: entity
@@ -603,6 +605,8 @@
   - type: FlashImmunity # Goobstation
   - type: FlashSoundSuppression # Goobstation
   - type: TinfoilHat
+    passthrough: false
+    destroyOnFry: false
 
 #Wizard Hardsuit
 - type: entity
