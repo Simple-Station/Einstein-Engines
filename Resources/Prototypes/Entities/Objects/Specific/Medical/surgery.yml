@@ -629,7 +629,7 @@
     - type: Sprite
       state: cmotool
     - type: Item
-      helfPrefix: cmotool
+      heldPrefix: cmotool
     - type: SurgeryTool
     - type: Hemostat
       speed: 1.25

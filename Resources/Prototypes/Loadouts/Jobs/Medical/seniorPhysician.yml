@@ -39,14 +39,14 @@
   category: JobsMedicalSeniorPhysician
   cost: 0
   exclusive: true
-  requirements: 
+  requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSeniorPhysicianToolsExtra
     - !type:CharacterJobRequirement
       jobs:
         - SeniorPhysician
   items:
-    - BluespaceBeaker 
+    - BluespaceBeaker
 
 - type: loadout
   id: LoadoutSeniorPhysicianSurgeryKit
