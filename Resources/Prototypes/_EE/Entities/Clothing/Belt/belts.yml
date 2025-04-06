@@ -1,6 +1,8 @@
 - type: entity
-  id: ClothingBeltMilitaryWebbingCMOFilled
   parent: ClothingBeltMilitaryWebbingCMO
+  id: ClothingBeltMilitaryWebbingCMOFilled
+  name: "chief medical officer's chest rig"
+  description: "A medical chest rig with deep pockets, for use by paramedics and health professionals."
   suffix: Filled
   components:
   - type: StorageFill
