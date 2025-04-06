@@ -805,7 +805,7 @@
     - BuzzochloricBees
     - RobustHarvest
     # Goobstation - Start
-    - Triclor 
+    - Triclor
     - Cyanide
     - Genecide
     usefulChemicals:
@@ -845,8 +845,6 @@
     - Honk
     - Carpetium
     - JuiceThatMakesYouWeh
-    # Goobstation - Start
-    - CatDrugs
   - type: Drink
     solution: anomaly
   - type: DrainableSolution

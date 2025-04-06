@@ -216,8 +216,6 @@
     - VentCrud
     - WeldingFuel
     - JuiceThatMakesYouWeh
-    # Goobstation - Start
-    - CatDrugs
 
 - type: artifactEffect
   id: EffectInstrumentSpawn
