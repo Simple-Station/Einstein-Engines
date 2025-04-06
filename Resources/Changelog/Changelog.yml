@@ -14516,3 +14516,10 @@ Entries:
   id: 7105
   time: '2025-04-06T05:33:41.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2176
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: Added Orion Express as an employer
+  id: 7106
+  time: '2025-04-06T15:30:33.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2182
