@@ -14532,3 +14532,13 @@ Entries:
   id: 7107
   time: '2025-04-06T19:44:17.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2186
+- author: 3PonPon3
+  changes:
+    - type: Tweak
+      message: >-
+        Made every single language trait take up no slots in their defined max
+        items limit, effectively letting you take unlimited languages,  so you
+        can become the man himself, John Language. (FOR REAL THIS TIME.)
+  id: 7108
+  time: '2025-04-06T19:59:44.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2173
