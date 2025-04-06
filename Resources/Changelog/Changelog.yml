@@ -14542,3 +14542,32 @@ Entries:
   id: 7108
   time: '2025-04-06T19:59:44.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2173
+- author: 3PonPon3
+  changes:
+    - type: Add
+      message: >-
+        Added a worse version of the medical multitool that the CMO starts with
+        (taken in loadouts)
+    - type: Add
+      message: >-
+        Description for the (normal) medical multitool (as I was adding one for
+        the proto one CMO gets so might as well)
+    - type: Add
+      message: >-
+        Added the a filled version of the CMO's armor rig, available in their
+        loadout (The goodies inside are: 2x of each adv topical, 2x blood bags,
+        1x omnizine bootle, 1x medipen box, which is a blue cig box with 2x rad,
+        poison and space pens, as well as a brute, burn and emergency pen)
+    - type: Add
+      message: >-
+        Added the: Experimental welder, for senior engineer (egnineer), and the
+        bluespace beaker OR field surgical kit (combat medkit but with adv
+        surgical tools + bone gel, chloral hydrate pills and an emergency
+        medipen) in their respective loadouts
+    - type: Tweak
+      message: >-
+        Seperated the loadout medkits and survival boxes so that you can take
+        both
+  id: 7109
+  time: '2025-04-06T20:07:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2155
