@@ -1,0 +1,20 @@
+# All Abilities
+
+# Pre-Hatch
+
+- type: entity
+  id: ActionHatch
+  name: Hatch
+  description: Engages the hatching progress.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: NoItem
+    icon:
+      sprite: _EE/Shadowling/shadowling_abilities.rsi
+      state: hatch
+    event: !type:HatchEvent {}
+  - type: ConfirmableAction
+    popup: sling-hatch-engage-popup
+
+

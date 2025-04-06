@@ -1,16 +1,11 @@
 using Content.Server.Antag;
 using Content.Server.GameTicking.Rules.Components;
-using Content.Server.GameTicking.Rules;
 using Content.Server.Mind;
-using Content.Server.Objectives;
 using Content.Server.Roles;
 using Content.Shared._EE.Shadowling;
-using Content.Shared.NPC.Prototypes;
-using Content.Shared.NPC.Systems;
 using Content.Shared.Roles;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
-using Content.Shared.Silicon.Components;
 
 namespace Content.Server.GameTicking.Rules;
 
@@ -21,6 +16,8 @@ public sealed class ShadowlingRuleSystem : GameRuleSystem<ShadowlingRuleComponen
     [Dependency] private readonly MindSystem _mind = default!;
 
     public readonly SoundSpecifier BriefingSound = new SoundPathSpecifier("/Audio/_Goobstation/Ambience/Antag/changeling_start.ogg"); // todo: change later
+
+    [ValidatePrototypeId<EntityPrototype>] EntProtoId _mindRole = "MindRoleShadowling";
 
     public override void Initialize()
     {
@@ -39,6 +36,8 @@ public sealed class ShadowlingRuleSystem : GameRuleSystem<ShadowlingRuleComponen
         if (!_mind.TryGetMind(target, out var mindId, out var mind))
             return false;
 
+        _role.MindAddRole(mindId, _mindRole.Id, mind, true);
+
         TryComp<MetaDataComponent>(target, out var metaData);
         if (metaData == null)
             return false;
@@ -51,7 +50,7 @@ public sealed class ShadowlingRuleSystem : GameRuleSystem<ShadowlingRuleComponen
         if (_role.MindHasRole<ShadowlingComponent>(mindId, out var mr))
             AddComp(mr.Value, new RoleBriefingComponent { Briefing = briefingShort }, overwrite: true);
 
-        _role.MindAddRole(mindId, new EntProtoId("Shadowling"), mind, true);
+        EnsureComp<ShadowlingComponent>(target);
         return true;
     }
 }
