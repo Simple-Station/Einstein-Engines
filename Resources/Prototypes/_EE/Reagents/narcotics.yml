@@ -1,0 +1,29 @@
+- type: reagent
+  id: Morphine
+  name: reagent-name-morphine
+  group: Narcotics
+  desc: reagent-desc-morphine
+  flavor: bitter
+  color: "#fff8e8"
+  physicalDesc: reagent-physical-desc-translucent
+  metabolisms:
+    Narcotic:
+      effects:
+      - !type:Emote # it makes you a little tired but not enough to fall asleep
+        emote: Yawn
+        showInChat: true
+        probability: 0.05
+      - !type:GenericStatusEffect
+        key: NoScream
+        component: NoScream
+      - !type:GenericStatusEffect
+        key: Adrenaline
+        component: IgnoreSlowOnDamage
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          reagent: Morphine
+          min: 20
+        damage:
+          types:
+            Asphyxiation: 2
