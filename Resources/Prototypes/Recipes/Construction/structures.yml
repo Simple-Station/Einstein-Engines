@@ -477,7 +477,7 @@
   targetNode: reinforcedPlasmaWindow
   category: construction-category-structures
   canBuildInImpassable: true
-  description: Very explosion resistant and even tougher, with a purple tint..
+  description: Very explosion resistant and even tougher, with a purple tint.
   conditions:
     - !type:EmptyOrWindowValidInTile
     - !type:NoWindowsInTile
