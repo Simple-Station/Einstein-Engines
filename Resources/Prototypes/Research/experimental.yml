@@ -1,5 +1,18 @@
 # Tier 1
 
+- type: technology
+  id: BasicRobotics
+  name: research-technology-basic-robotics
+  icon:
+    sprite: Structures/Machines/exosuit_fabricator.rsi
+    state: fab-idle
+  discipline: Experimental
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - ProximitySensor
+  - Drone # Goobstation
+  position: -1,0
 
 - type: technology
   id: BasicAnomalousResearch
@@ -14,8 +27,14 @@
   - AnomalyScanner
   - AnomalyLocator
   - AnomalyLocatorWide
+  - BorgModuleAnomaly
   - APECircuitboard
   - AnomalyVesselCircuitboard
+  # Goobstation R&D Console rework start
+  position: -2,0
+  technologyPrerequisites:
+  - BasicRobotics
+  # Goobstation R&D Console rework end
 
 - type: technology
   id: BasicXenoArcheology
@@ -28,10 +47,49 @@
   cost: 5000
   recipeUnlocks:
   - NodeScanner
+  - BorgModuleArtifact
   - AnalysisComputerCircuitboard
   - ArtifactAnalyzerMachineCircuitboard
+  # Goobstation R&D Console rework start
+  position: -2,2
+  technologyPrerequisites:
+  - BasicRobotics
+  # Goobstation R&D Console rework end
+
+- type: technology
+  id: AlternativeResearch
+  name: research-technology-alternative-research
+  icon:
+    sprite: Structures/Machines/tech_disk_printer.rsi
+    state: display
+  discipline: Experimental
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
   - TechDiskComputerCircuitboard
-  - ReverseEngineeringMachineCircuitboard
+  # Goobstation R&D Console rework start
+  technologyPrerequisites:
+  - BasicRobotics
+  position: -2,-1
+  # Goobstation R&D Console rework end
+
+- type: technology
+  id: MagnetsTech
+  name: research-technology-magnets-tech
+  icon:
+    sprite: Clothing/Shoes/Boots/magboots-science.rsi
+    state: icon
+  discipline: Experimental
+  tier: 1
+  cost: 7500
+  recipeUnlocks:
+  - ClothingShoesBootsMagSci
+  - ClothingShoesBootsMoon
+  # Goobstation R&D Console rework start
+  position: -3,-1
+  technologyPrerequisites:
+  - AlternativeResearch
+  # Goobstation R&D Console rework end
 
 - type: technology
   id: AnomalyCoreHarnessing
@@ -44,23 +102,30 @@
   cost: 10000
   recipeUnlocks:
   - WeaponGauntletGorilla
+  # Goobstation R&D Console rework start
+  position: -3,1
+  technologyPrerequisites:
+  - BasicAnomalousResearch
+  # Goobstation R&D Console rework end
 
 # Tier 2
 
 - type: technology
-  id: AdvancedParts
-  name: research-technology-advanced-parts
+  id: AbnormalArtifactManipulation
+  name: research-technology-abnormal-artifact-manipulation
   icon:
-    sprite: Objects/Misc/stock_parts.rsi
-    state: advanced_matter_bin
+    sprite: Structures/Machines/artifact_crusher.rsi
+    state: icon
   discipline: Experimental
   tier: 2
-  cost: 10000
+  cost: 5000
   recipeUnlocks:
-  - AdvancedCapacitorStockPart
-  - AdvancedMatterBinStockPart
-  - NanoManipulatorStockPart
-  - RPED
+  - ArtifactCrusherMachineCircuitboard
+  # Goobstation R&D Console rework start
+  position: -3,2
+  technologyPrerequisites:
+  - BasicXenoArcheology
+  # Goobstation R&D Console rework end
 
 - type: technology
   id: AdvancedAnomalyResearch
@@ -78,6 +143,7 @@
   - ArtifactCrusherMachineCircuitboard
   technologyPrerequisites:
   - BasicAnomalousResearch
+  position: -3,0
 
 - type: technology
   id: DeterrenceTechnologies
@@ -91,6 +157,11 @@
   recipeUnlocks:
   - WeaponParticleDecelerator
   - HoloprojectorField
+  # Goobstation R&D Console rework start
+  position: -3,-2
+  technologyPrerequisites:
+  - AlternativeResearch
+  # Goobstation R&D Console rework end
 
 - type: technology
   id: NightVisionTech
@@ -122,33 +193,23 @@
 # Tier 3
 
 - type: technology
-  id: SuperParts
-  name: research-technology-super-parts
+  id: GravityManipulation
+  name: research-technology-gravity-manipulation
   icon:
-    sprite: Objects/Misc/stock_parts.rsi
-    state: super_matter_bin
+    sprite: Objects/Weapons/Guns/Launchers/tether_gun.rsi
+    state: base
   discipline: Experimental
   tier: 3
-  cost: 15000
+  cost: 15000 # Goobstation 10000 -> 15000
   recipeUnlocks:
-  - SuperCapacitorStockPart
-  - SuperMatterBinStockPart
-  - PicoManipulatorStockPart
-  softCapContribution: 1.2
-
-# - type: technology
-#   id: GravityManipulation
-#   name: research-technology-gravity-manipulation
-#   icon:
-#     sprite: Objects/Weapons/Guns/Launchers/tether_gun.rsi
-#     state: base
-#   discipline: Experimental
-#   tier: 3
-#   cost: 10000
-#   recipeUnlocks:
-#     - WeaponForceGun
-#     - WeaponTetherGun
-#   softCapContribution: 1.5
+    - WeaponForceGun
+    - WeaponTetherGun
+  # Goobstation R&D Console rework start
+  position: -4,2
+  technologyPrerequisites:
+  - AbnormalArtifactManipulation
+  - AnomalyCoreHarnessing
+  # Goobstation R&D Console rework end
 
 - type: technology
   id: QuantumLeaping
@@ -158,7 +219,11 @@
     state: icon
   discipline: Experimental
   tier: 3
-  cost: 10000
+  cost: 15000 # Goobstation 10000 -> 15000
   recipeUnlocks:
   - DeviceQuantumSpinInverter
-  softCapContribution: 1.5
+  # Goobstation R&D Console rework start
+  position: -5,2
+  technologyPrerequisites:
+  - GravityManipulation
+  # Goobstation R&D Console rework end
