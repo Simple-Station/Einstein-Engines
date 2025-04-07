@@ -60,7 +60,6 @@
         walkSpeedModifier: 1.25
         sprintSpeedModifier: 1.25
       - !type:TakeStaminaDamage
-        conditions:
         amount: -20
       - !type:HealthChange
         damage:
