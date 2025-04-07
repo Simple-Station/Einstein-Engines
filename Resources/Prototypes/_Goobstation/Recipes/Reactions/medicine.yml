@@ -260,18 +260,6 @@
       entity: ShardCrystalStyptic
 
 - type: reaction
-  id: Synthcells
-  requiredMixerCategories:
-  - Centrifuge
-  reactants:
-    Synthflesh:
-      amount: 6
-  products:
-    Synthcells: 4
-    Sodium: 1
-    Carbon: 1
-
-- type: reaction
   id: SalicylicAcid
   minTemp: 370
   reactants:

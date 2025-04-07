@@ -793,49 +793,6 @@
           types:
             Poison: 2
 
-- type: reagent
-  id: Synthcells
-  name: reagent-name-synthcells
-  group: Medicine
-  desc: reagent-desc-synthcells
-  physicalDesc: reagent-physical-desc-bubbly
-  flavor: strange
-  color: "#ffbebe"
-  plantMetabolism:
-    - !type:PlantAdjustWeeds
-      amount: 8
-    - !type:PlantAdjustHealth
-      amount: 8
-  worksOnTheDead: true
-  reactiveEffects:
-    Acidic:
-      methods: [ Touch ]
-      effects:
-      - !type:HealthChange
-        scaleByQuantity: true
-        ignoreResistances: false # theoretically allows for degenerate behaviour, in practice should be unlikely; also low healing amount
-        damage:
-          types:
-            Blunt: 1
-            Poison: -2
-            Radiation: -1
-        conditions:
-        - !type:HasComponentOnEquipmentCondition
-          components:
-          - type: PressureProtection # can't get through this to reach the bodyparts!
-          invert: true
-  metabolisms:
-    Medicine:
-      effects:
-      - !type:HealthChange
-        damage:
-          groups:
-            Toxin: -2
-      - !type:HealthChange
-        damage:
-          types:
-            Blunt: 2
-
 # Strong general meds
 
 - type: reagent
