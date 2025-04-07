@@ -1,0 +1,12 @@
+- type: entity
+  id: XelthiaRegenerateAction
+  name: Regrow Limbs
+  description: Regrow your lost limbs.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    icon:
+      sprite: Mobs/Species/Xelthia/parts.rsi
+      state: full
+    event: !type:ReformEvent {}
+    useDelay: 300 # Once every 5 minutes or so?

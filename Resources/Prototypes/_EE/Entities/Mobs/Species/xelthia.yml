@@ -45,6 +45,7 @@
       Female: UnisexXelthia
       Unsexed: UnisexXelthia
   - type: FootPrints
+  - type: Xelthia
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Xelthia
