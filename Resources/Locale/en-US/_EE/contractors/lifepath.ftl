@@ -88,8 +88,3 @@ lifepath_description_hacker = You cracked firewalls, stole secrets, and erased d
 
 lifepath_name_conartist = Con Artist
 lifepath_description_conartist = Lies were your currency. You’ve swindled people out of fortunes, identities, and even their lives. Now, you’re always watching your back.
-
-lifepath_name_syndicateagent = Former Syndicate Agent
-lifepath_description_syndicateagent = You worked for the Syndicate, carrying out assassinations, sabotage, and worse. Now, the memories haunt you, and you're trying to make amends—or at least forget.
-lifepath_name_nuclearoperative = Nuclear Operative
-lifepath_description_nuclearoperative = You infiltrated a station, armed the warhead, and watched the fire consume everything. Now, the authorities and old enemies are hunting you, and there’s nowhere left to run
