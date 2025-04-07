@@ -411,13 +411,13 @@
   parent: SmokeGrenade
   id: CleanerGrenadeNuke
   name: cleanade
-  description: A special grenade made by a specially angry janitor
+  description: A special grenade made by a specially angry janitor, be aware it will flood the room, and maybe more, with it's cleaning foam.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Grenades/janitor.rsi
+    sprite: Objects/Weapons/Grenades/janitornuke.rsi
   - type: SmokeOnTrigger
     duration: 15
-    spreadAmount: 100
+    spreadAmount: 170
     smokePrototype: Foam
     solution:
       reagents:
