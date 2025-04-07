@@ -1,0 +1,66 @@
+- type: entity
+  id: SyringeCase
+  parent: [ BaseStorageItem, BaseBagOpenClose ]
+  name: syringe case
+  description: A robust carrying case that helps keep travel supplies of medicine organized.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Chemistry/syringecase.rsi
+    layers:
+    - state: closed
+    - state: open
+      map: ["openLayer"]
+      visible: false
+    - state: syr1
+      map: ["syr1"]
+      visible: false
+    - state: syr2
+      map: ["syr2"]
+      visible: false
+    - state: bot1
+      map: ["bot1"]
+      visible: false
+    - state: bot2
+      map: ["bot2"]
+      visible: false
+    - state: pen1
+      map: ["pen1"]
+      visible: false
+    - state: pen2
+      map: ["pen2"]
+      visible: false
+  - type: Tag
+    tags:
+    - CigPack # so it can be placed in things that whitelist cigarette packs
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 100
+  - type: Item
+    size: Tiny
+    shape:
+    - 0,0,0,1
+  - type: Storage
+    grid:
+    - 0,0,4,1
+  - type: ItemCounter
+    count:
+      tags: [Syringe]
+    composite: true
+    layerStates:
+    - syr1
+    - syr2
+  - type: ItemCounter
+    count:
+      tags: [Bottle]
+    composite: true
+    layerStates:
+    - bot1
+    - bot2
+  - type: ItemCounter
+    count:
+      tags: [Medipen]
+    composite: true
+    layerStates:
+    - pen1
+    - pen2
+  - type: Appearance
