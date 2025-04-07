@@ -22,6 +22,7 @@
   - type: MedicalPatch
     singleUse: true
     transferAmount: 0.25
+
 - type: entity
   parent: MedicalPatchPrefilledBase
   id: MedicalPatchPrefilledBicaridine
