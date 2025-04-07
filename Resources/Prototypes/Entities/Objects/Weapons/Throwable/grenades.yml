@@ -409,6 +409,23 @@
 
 - type: entity
   parent: SmokeGrenade
+  id: CleanerGrenadeNuke
+  name: cleanade
+  description: A special grenade made by a specially angry janitor
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Grenades/janitor.rsi
+  - type: SmokeOnTrigger
+    duration: 15
+    spreadAmount: 100
+    smokePrototype: Foam
+    solution:
+      reagents:
+      - ReagentId: SpaceCleaner
+        Quantity: 30
+
+- type: entity
+  parent: SmokeGrenade
   id: TearGasGrenade
   name: tear gas grenade
   description: A riot control tear gas grenade. Causes irritation, pain and makes you cry your eyes out.
