@@ -1,4 +1,5 @@
 using System.Timers;
+using Content.Shared.StatusIcon;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
@@ -16,6 +17,10 @@ public sealed partial class ShadowlingComponent : Component
     {
         "ActionHatch",
     };
+
+    // The status icon for Shadowlings
+    [DataField, ViewVariables(VVAccess.ReadOnly)]
+    public ProtoId<FactionIconPrototype> StatusIcon { get; set; } = "ShadowlingFaction";
 
     // Phase Indicator
     [DataField, AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]

@@ -12,7 +12,7 @@
     itemIconStyle: NoItem
     icon:
       sprite: _EE/Shadowling/shadowling_abilities.rsi
-      state: hatch
+      state: engage_hatch
     event: !type:HatchEvent {}
   - type: ConfirmableAction
     popup: sling-hatch-engage-popup

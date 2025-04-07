@@ -182,8 +182,8 @@ public sealed partial class AdminVerbSystem
             Text = Loc.GetString("admin-verb-text-make-shadowling"),
             Category = VerbCategory.Antag,
             Icon = new SpriteSpecifier.Rsi(
-                new("/Textures/_Goobstation/Changeling/changeling_abilities.rsi"),
-                "transform"), // todo: make new
+                new("/Textures/_EE/Shadowling/shadowling_abilities.rsi"),
+                "engage_hatch"),
             Act = () =>
             {
                 _antag.ForceMakeAntag<ShadowlingRuleComponent>(targetPlayer, DefaultShadowlingRule);

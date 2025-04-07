@@ -1,0 +1,11 @@
+- type: factionIcon
+  id: ShadowlingFaction
+  priority: 11
+  showTo:
+    components:
+    - ShowAntagIcons
+    - Shadowling
+    # - Thrall (once added)
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: Shadowling

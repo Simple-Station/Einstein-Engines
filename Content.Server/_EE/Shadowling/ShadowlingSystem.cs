@@ -4,6 +4,7 @@ using Content.Server.Database.Migrations.Postgres;
 using Content.Server.Destructible;
 using Content.Server.Humanoid;
 using Content.Server.Popups;
+using Content.Server.Stealth;
 using Content.Shared._EE.Shadowling.Systems;
 using Content.Shared._EE.Shadowling;
 using Content.Shared.Armor;
@@ -27,7 +28,7 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
     [Dependency] private readonly HumanoidAppearanceSystem _humanoid = default!;
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _movementSpeed = default!;
-    [Dependency] private readonly MarkingManager _markingManager = default!;
+    [Dependency] private readonly StealthSystem _stealth = default!;
 
     public override void Initialize()
     {

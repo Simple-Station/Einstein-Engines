@@ -5,6 +5,7 @@ using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Popups;
 using Content.Shared.Singularity;
+using Microsoft.CodeAnalysis.Operations;
 
 
 namespace Content.Server._EE.Shadowling;
@@ -36,12 +37,11 @@ public sealed partial class ShadowlingSystem
         comp.IsHatching = true;
 
         // Hide Player Entity (idk if there's a better way), and Change Skin Color
-        _humanoid.SetScale(uid, Vector2.Zero);
-        _humanoid.SetSkinColor(uid, Color.Black);
 
         if (TryComp<HumanoidAppearanceComponent>(uid, out var appearance))
         {
             appearance.EyeColor = comp.EyeColor;
+            appearance.SkinColor = Color.Black;
             Dirty(uid, appearance);
         }
 
@@ -50,13 +50,13 @@ public sealed partial class ShadowlingSystem
 
         // Spawn Egg Entity
 
-        // Start Timer
-
+        // Add Hatching Component and Start Timer
 
         // Reset Values
         // _humanoid.SetScale(uid, Vector2.One);
         // comp.IsHatching = false;
         // _movementSpeed.RefreshMovementSpeedModifiers(uid);
+        // _stealth.SetVisibility(uid, 1);
 
         // Shadowling shouldn't be able to take damage during this process.
     }
