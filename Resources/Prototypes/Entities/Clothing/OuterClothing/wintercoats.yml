@@ -697,7 +697,8 @@
 - type: entity
   parent: ClothingOuterWinterCoat
   id: ClothingOuterOeCorporateJacket
-  name: Orion Express
+  name: Orion Express Corporate Jacket
+
   description: A cozy jacket with the Orion Express logo printed on the back. Merchandise rewarded to stations with a safety factor of uhh... seven.
   components:
   - type: Sprite
