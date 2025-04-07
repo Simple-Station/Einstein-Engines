@@ -33,6 +33,7 @@
     whitelist:
       tags:
       - ShellShotgun
+      - Flare
     capacity: 7
     proto: ShellShotgun
     soundInsert:
