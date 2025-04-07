@@ -146,3 +146,13 @@
   id: ConArtist
   nameKey: lifepath_name_conartist
   descriptionKey: lifepath_description_conartist
+
+- type: lifepath
+  id: SyndicateAgent
+  nameKey: lifepath_name_syndicateagent
+  descriptionKey: lifepath_description_syndicateagent
+
+- type: lifepath
+  id: NuclearOperative
+  nameKey: lifepath_name_nuclearoperative
+  descriptionKey: lifepath_description_nuclearoperative

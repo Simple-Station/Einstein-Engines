@@ -22,19 +22,11 @@
       "directions": 4
     },
     {
-      "name": "on-equipped-HELMET",
-      "directions": 4
-    },
-    {
       "name": "off-equipped-HELMET-vox",
       "directions": 4
     },
 	{
-      "name": "off-equipped-HELMET-vox-glow",
-      "directions": 4
-    },
-    {
-      "name": "on-equipped-HELMET-vox",
+      "name": "off-equipped-HELMET-glow-vox",
       "directions": 4
     }
   ]

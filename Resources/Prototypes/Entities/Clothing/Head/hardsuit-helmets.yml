@@ -451,7 +451,7 @@
     clothingVisuals:
       head:
       - state: off-equipped-head
-      - state: equipped-head-light
+      - state: off-equipped-HELMET-glow
         shader: unshaded
   - type: PointLight
     color: green
@@ -461,6 +461,7 @@
   - type: HideLayerClothing
     slots:
     - Snout
+    - Hair
   - type: Armor
     modifiers:
       coefficients:
@@ -496,6 +497,7 @@
   - type: HideLayerClothing
     slots:
     - Snout
+    - Hair
   - type: Armor
     modifiers:
       coefficients:
@@ -557,13 +559,14 @@
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
+  - type: HideLayerClothing
+    slots:
+    - Snout
+    - Hair
   - type: TemperatureProtection
     coefficient: 0.005
   - type: FireProtection
     reduction: 0.2
-  - type: HideLayerClothing
-    slots:
-    - Snout
   - type: Armor
     modifiers:
       coefficients:
@@ -599,6 +602,7 @@
   - type: HideLayerClothing
     slots:
     - Snout
+    - Hair
   - type: Armor
     modifiers:
       coefficients:
@@ -632,6 +636,7 @@
   - type: HideLayerClothing
     slots:
     - Snout
+    - Hair
   - type: Armor
     modifiers:
       coefficients:

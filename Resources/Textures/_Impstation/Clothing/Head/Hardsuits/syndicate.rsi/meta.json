@@ -14,19 +14,11 @@
           "name": "icon-flash"
       },
 	  {
-          "name": "equipped-head-light",
+          "name": "off-equipped-HELMET-glow",
           "directions": 4
       },
 	  {
-          "name": "equipped-head-light-vox",
-          "directions": 4
-      },
-	  {
-          "name": "equipped-head-unshaded",
-          "directions": 4
-      },
-	  {
-          "name": "equipped-head-unshaded-vox",
+          "name": "off-equipped-HELMET-glow-vox",
           "directions": 4
       },
       {
@@ -35,14 +27,6 @@
       },
       {
           "name": "off-equipped-head-vox",
-          "directions": 4
-      },
-      {
-          "name": "on-equipped-head",
-          "directions": 4
-      },
-      {
-          "name": "on-equipped-head-vox",
           "directions": 4
       }
   ]

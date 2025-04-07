@@ -620,6 +620,11 @@
     size: Huge
   - type: Clothing
     sprite: _Impstation/Clothing/OuterClothing/Hardsuits/syndicate.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: equipped-OUTERCLOTHING-glow
+        shader: unshaded
   - type: PressureProtection
     highPressureMultiplier: 0.05
     lowPressureMultiplier: 1000
@@ -660,6 +665,11 @@
     sprite: _Impstation/Clothing/OuterClothing/Hardsuits/syndicate_agent.rsi
   - type: Clothing
     sprite: _Impstation/Clothing/OuterClothing/Hardsuits/syndicate_agent.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: equipped-OUTERCLOTHING-glow
+        shader: unshaded
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSyndieMedic
   - type: Tag
@@ -699,6 +709,11 @@
     sprite: _Impstation/Clothing/OuterClothing/Hardsuits/syndicate_elite.rsi
   - type: Clothing
     sprite: _Impstation/Clothing/OuterClothing/Hardsuits/syndicate_elite.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: equipped-OUTERCLOTHING-glow
+        shader: unshaded
   - type: PressureProtection
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
