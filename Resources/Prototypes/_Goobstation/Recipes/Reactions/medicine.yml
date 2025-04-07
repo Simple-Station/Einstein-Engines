@@ -209,7 +209,6 @@
       amount: 1
     Fluorine:
       amount: 1
-      # catalyst: true # Technically could be catalyst, but fluorine catalyst feels weird
   products:
     Ibuprofen: 3
 
