@@ -8,11 +8,11 @@
   },
   "states": [
     {
-      "name": "equipped-feet",
+      "name": "equipped-FEET",
       "directions": 4
     },
     {
-      "name": "on-equipped-feet",
+      "name": "on-equipped-FEET",
       "directions": 4
     },
     {

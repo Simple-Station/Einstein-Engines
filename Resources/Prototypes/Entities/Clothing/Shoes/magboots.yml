@@ -152,10 +152,10 @@
     staminaCost: 15
 
 - type: entity
-  parent: ClothingShoesBootsMagBase
+  parent: ClothingShoesBootsMag
   id: ClothingShoesBootsMagSec
   name: combat magboots
-  description: Heavy magboots with added protection and a sidearm strap.
+  description: Heavy-duty magboots with added protection and a convenient sidearm strap.
   components:
   - type: Sprite
     sprite: Clothing/Shoes/Boots/magboots-combat.rsi
@@ -163,8 +163,8 @@
   - type: Clothing
     sprite: Clothing/Shoes/Boots/magboots-combat.rsi
   - type: ClothingSpeedModifier
-    walkModifier: 0.83 # Slightly slower then normal magboots
-    sprintModifier: 0.78 # Slightly slower then normal magboots|
+    walkModifier: 0.82 # Slightly slower then normal magboots
+    sprintModifier: 0.77 # Slightly slower then normal magboots|
   - type: Tag
     tags:
     - WhitelistChameleon
