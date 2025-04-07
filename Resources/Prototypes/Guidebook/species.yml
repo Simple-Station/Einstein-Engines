@@ -15,7 +15,8 @@
     - Shadowkin
     - Plasmaman
     - Chitinid
-    - Tajaran 
+    - Tajaran
+    - Vulpkanin
     # ImpStation additions
     - Thaven
 
@@ -78,3 +79,8 @@
   id: Plasmaman
   name: species-name-plasmaman
   text: "/ServerInfo/Guidebook/Mobs/Plasmaman.xml"
+
+- type: guideEntry
+  id: Vulpkanin
+  name: species-name-vulpkanin
+  text: "/ServerInfo/Guidebook/Mobs/DeltaV/Vulpkanin.xml"

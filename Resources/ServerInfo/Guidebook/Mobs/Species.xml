@@ -7,15 +7,16 @@
   <GuideEntityEmbed Entity="MobArachnid" Caption="Arachnid"/>
   <GuideEntityEmbed Entity="MobDiona" Caption="Diona"/>
   <GuideEntityEmbed Entity="MobHuman" Caption="Human"/>
+  <GuideEntityEmbed Entity="MobMoth" Caption="Moth Person"/>
   </Box>
   <Box>
-  <GuideEntityEmbed Entity="MobMoth" Caption="Moth Person"/>
   <GuideEntityEmbed Entity="MobOni" Caption="Oni"/>
   <GuideEntityEmbed Entity="MobReptilian" Caption="Reptilian"/>
   <GuideEntityEmbed Entity="MobSlimePerson" Caption="Slime Person"/>
   <GuideEntityEmbed Entity="MobShadowkinDummy" Caption="Shadowkin"/>
   <GuideEntityEmbed Entity="MobChitinid" Caption="Chitinid"/>
   <GuideEntityEmbed Entity="MobThaven" Caption="Thaven"/>
+  <GuideEntityEmbed Entity="MobVulpkanin" Caption="Vulpkanin"/>
   </Box>
 
   # Parkstation specific species
