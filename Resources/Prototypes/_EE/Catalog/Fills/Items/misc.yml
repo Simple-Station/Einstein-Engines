@@ -8,7 +8,7 @@
     - id: SyringeInaprovaline
     - id: Syringe
     - id: ChemistryEmptyBottle01
-    - id: EpinephrineChemistryBottle
+    - id: EpinephrineChemistryBottle # these are mostly to show off the sprite
     - id: EmergencyMedipen
     - id: PainMedipen
       amount: 2

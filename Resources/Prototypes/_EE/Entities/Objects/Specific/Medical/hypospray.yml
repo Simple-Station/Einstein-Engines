@@ -2,7 +2,7 @@
   name: analgesic medipen
   parent: ChemicalMedipen
   id: PainMedipen
-  description: A rapid dose of morphine and epinephrine to prepare patients for field surgery.
+  description: A rapid dose of morphine and epinephrine to prepare patients for field surgery. One medipen gives 75 seconds of pain relief.
   components:
   - type: Sprite
     sprite: Objects/Specific/Medical/medipen.rsi
