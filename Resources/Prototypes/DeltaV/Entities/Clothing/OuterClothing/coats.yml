@@ -122,6 +122,7 @@
   components:
   - type: Sprite
     sprite: _EE/Clothing/idris_windbreaker.rsi
+    layers:
     - state: icon
     - state: icon-unshaded
       shader: unshaded
