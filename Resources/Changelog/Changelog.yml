@@ -14587,3 +14587,10 @@ Entries:
   id: 7111
   time: '2025-04-08T06:27:42.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2189
+- author: kosticia and Will-Oliver-Br
+  changes:
+    - type: Tweak
+      message: Hi-viz now glows in the dark
+  id: 7112
+  time: '2025-04-08T06:29:12.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2183
