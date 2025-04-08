@@ -225,6 +225,7 @@
   - type: EmagLatheRecipes
     emagStaticRecipes:
     - BoxLethalshot
+    - BoxShotgunLumen
     - BoxShotgunFlare
     - BoxShotgunSlug
     - MagazineBoxLightRifle
@@ -909,6 +910,7 @@
     runningState: icon
     staticRecipes:
       - BoxLethalshot
+      - BoxShotgunLumen
       - BoxShotgunFlare
       - BoxShotgunPractice
       - BoxShotgunSlug
@@ -919,6 +921,7 @@
       - Handcuffs
       - ShellShotgun
       - ShellShotgunSlug
+      - ShellShotgunLumen
       - ShellShotgunFlare
       - ShellTranquilizer
       - MagazineBoxLightRifle
@@ -1185,6 +1188,7 @@
       runningState: icon
       staticRecipes:
         - BoxLethalshot
+        - BoxShotgunLumen
         - BoxShotgunFlare
         - BoxShotgunSlug
         - MagazineBoxLightRifle
@@ -1304,6 +1308,7 @@
     - MedicalPatchRapid #Goobstation - MedicalPatch
     - MedicalPatchLarge #Goobstation - MedicalPatch
     - MedicalPatchTherapeutic #Goobstation - MedicalPatch
+    - SyringeCase # Morphine
     dynamicRecipes:
     - ChemicalPayload
     - CryostasisBeaker
