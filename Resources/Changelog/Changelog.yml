@@ -14603,3 +14603,18 @@ Entries:
   id: 7113
   time: '2025-04-08T06:30:48.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2178
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: >-
+        Lumenblast shells, more powerful beanbag rounds with a flash effect on
+        impact
+    - type: Add
+      message: >-
+        Security can now take a sawn off shotgun as a duty weapon; it comes with
+        4 lumenblast shells, two already loaded
+    - type: Tweak
+      message: Flares can be loaded into the flare gun
+  id: 7114
+  time: '2025-04-08T20:14:20.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2157
