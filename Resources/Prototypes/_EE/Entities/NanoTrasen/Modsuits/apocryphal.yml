@@ -7,8 +7,6 @@
   components:
     - type: Sprite
       sprite: _EE/Clothing/NanoTrasen/Modsuits/apocryphal.rsi
-    - type: ExplosionResistance
-      damageCoefficient: 0.5
     - type: ToggleableClothing
       clothingPrototypes:
         head: ClothingModsuitHelmetApocryphal
@@ -134,6 +132,8 @@
       coefficient: 0.001
     - type: ExplosionResistance
       damageCoefficient: 0.2
+    - type: FireProtection
+      reduction: 1
 
 - type: entity
   parent: ClothingModsuitBootsStandard

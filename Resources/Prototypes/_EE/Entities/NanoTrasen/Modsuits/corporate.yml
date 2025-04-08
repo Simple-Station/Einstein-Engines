@@ -7,8 +7,6 @@
   components:
     - type: Sprite
       sprite: _EE/Clothing/NanoTrasen/Modsuits/corporate.rsi
-    - type: ExplosionResistance
-      damageCoefficient: 0.5
     - type: ToggleableClothing
       clothingPrototypes:
         head: ClothingModsuitHelmetCorporate
