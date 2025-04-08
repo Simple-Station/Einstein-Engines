@@ -155,52 +155,34 @@
   - type: InjectableSolution
     solution: ammo
 
+
 - type: entity
-  id: PelletShotgunFlare
-  name: pellet (.50 flare)
+  id: PelletShotgunLumen
+  name: pellet (.50 lumenblast)
+  parent: BaseBulletTrigger
   categories: [ HideSpawnMenu ]
   components:
-  - type: Physics
-    bodyType: Dynamic
-    fixedRotation: false
-  - type: EmbeddableProjectile
-    deleteOnRemove: true
-  - type: Fixtures
-    fixtures:
-      projectile:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.1,-0.1,0.1,0.1"
-        mask:
-          - BulletImpassable
   - type: Sprite
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
     state: buckshot-flare
-  - type: IgnitionSource
-    ignited: true
-    temperature: 1000
-  - type: TimedDespawn
-    lifetime: 240
-  - type: AmbientSound
-    enabled: true
-    volume: 0
-    range: 7
-    sound:
-      path: /Audio/Items/Flare/flare_burn.ogg
-      params:
-        loop: true
-  - type: IgniteOnCollide
-    fireStacks: 1
+  - type: FlashOnTrigger
+    range: 3
+    duration: 2
+  - type: SpawnOnTrigger
+    proto: GrenadeFlashEffect
+  - type: Ammo
+    muzzleFlash: null
   - type: PointLight
-    enabled: true
-    color: "#FF8080"
-    radius: 15.0
-    energy: 9.0
+    radius: 1.5
+    color: yellow
+    energy: 1
+  - type: StaminaDamageOnCollide
+    damage: 40 # three shot stamcrit
   - type: Projectile
-    deleteOnCollide: false
     damage:
       types:
-        Heat: 5
+        Blunt: 3
+
 
 - type: entity
   id: PelletShotgunUranium
@@ -359,3 +341,50 @@
     proto: PelletShotgun0000Buckshot
     count: 3
     spread: 15
+
+- type: entity
+  id: PelletShotgunFlare
+  name: pellet (.50 flare)
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Physics
+    bodyType: Dynamic
+    fixedRotation: false
+  - type: EmbeddableProjectile
+    deleteOnRemove: true
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.1,-0.1,0.1,0.1"
+        mask:
+          - BulletImpassable
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    state: buckshot-flare
+  - type: IgnitionSource
+    ignited: true
+    temperature: 1000
+  - type: TimedDespawn
+    lifetime: 240
+  - type: AmbientSound
+    enabled: true
+    volume: 0
+    range: 7
+    sound:
+      path: /Audio/Items/Flare/flare_burn.ogg
+      params:
+        loop: true
+  - type: IgniteOnCollide
+    fireStacks: 1
+  - type: PointLight
+    enabled: true
+    color: "#FF8080"
+    radius: 15.0
+    energy: 9.0
+  - type: Projectile
+    deleteOnCollide: false
+    damage:
+      types:
+        Heat: 5

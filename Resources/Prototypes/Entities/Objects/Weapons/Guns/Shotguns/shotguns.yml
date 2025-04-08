@@ -33,6 +33,7 @@
     whitelist:
       tags:
       - ShellShotgun
+      - Flare
     capacity: 7
     proto: ShellShotgun
     soundInsert:
@@ -296,6 +297,16 @@
         Blunt: 7.5
   - type: DamageOtherOnHit
     staminaCost: 6
+
+- type: entity
+  parent: WeaponShotgunSawn
+  id: WeaponShotgunSawnLumen
+  suffix: Lumenblast
+  description: Groovy! Uses .50 shotgun shells.
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 2
+    proto: ShellShotgunLumen
 
 - type: entity
   name: sawn-off shogun
