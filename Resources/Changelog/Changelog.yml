@@ -14594,3 +14594,12 @@ Entries:
   id: 7112
   time: '2025-04-08T06:29:12.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2183
+- author: ilmenwe
+  changes:
+    - type: Add
+      message: cache for parallax shader isntance.
+    - type: Remove
+      message: 500 calls/sec from parallax overlay to shader*.Instance();
+  id: 7113
+  time: '2025-04-08T06:30:48.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2178
