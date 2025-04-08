@@ -99,6 +99,7 @@
       - id: BruteAutoInjector
       - id: BurnAutoInjector
       - id: EmergencyMedipen
+      - id: PainMedipen # Morphine
 
 - type: entity
   id: StimkitFilled
