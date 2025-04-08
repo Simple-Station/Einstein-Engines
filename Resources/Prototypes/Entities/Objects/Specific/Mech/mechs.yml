@@ -16,9 +16,6 @@
     - Ammonia
     - NitrousOxide
     - Frezon
-    - BZ
-    - Healium
-    - Nitrium
     #- Helium3 TODO: fusion
     # remove everything except oxygen to maintain oxygen ratio
     overflowGases:
@@ -30,9 +27,6 @@
     - Ammonia
     - NitrousOxide
     - Frezon
-    - BZ
-    - Healium
-    - Nitrium
     #- Helium3 TODO: fusion
   - type: AirIntake
   # for intake and filter to work
