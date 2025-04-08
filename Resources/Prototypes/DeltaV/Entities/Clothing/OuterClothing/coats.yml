@@ -122,8 +122,16 @@
   components:
   - type: Sprite
     sprite: _EE/Clothing/idris_windbreaker.rsi
+    - state: icon
+    - state: icon-unshaded
+      shader: unshaded
   - type: Clothing
     sprite: _EE/Clothing/idris_windbreaker.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: equipped-OUTERCLOTHING-unshaded
+        shader: unshaded
   - type: TemperatureProtection
     coefficient: 0.1
   - type: Armor
