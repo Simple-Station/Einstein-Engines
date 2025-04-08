@@ -8,5 +8,5 @@
 
 - type: moodEffect
   id: MorphineWithdrawal
-  moodChange: -10 # no timeout
+  moodChange: -25 # no timeout
   category: "MorphineAddiction"

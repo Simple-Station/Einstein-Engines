@@ -72,7 +72,7 @@ mood-effect-NicotineWithdrawal =
     I could really go for a smoke right now.
 
 mood-effect-MorphineBenefit =
-    I feel so calm...
+    The morphine helps me forget my worries.
 mood-effect-MorphineWithdrawal =
     Everything is too loud, too bright. I need something to take the edge off...
 
