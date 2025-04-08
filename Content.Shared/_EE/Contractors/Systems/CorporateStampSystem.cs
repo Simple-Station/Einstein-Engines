@@ -24,12 +24,14 @@ public class CorporateStampSystem : EntitySystem
     private void OnSpawnedViaLoadout(Entity<CorporateStampComponent> ent, ref SpawnedViaLoadoutEvent args) =>
         UpdateCorporateStamp(ent, args.Profile);
 
-    public void UpdateCorporateStamp(EntityUid ent, HumanoidCharacterProfile profile)
+    public void UpdateCorporateStamp(EntityUid ent, HumanoidCharacterProfile profile) => UpdateCorporateStamp(ent, profile.Employer);
+
+    public void UpdateCorporateStamp(EntityUid ent, ProtoId<EmployerPrototype> employerId, bool command = false)
     {
-        if (!_entityManager.TryGetComponent<StampComponent>(ent, out var stampComponent) || !_prototypeManager.TryIndex<EmployerPrototype>(profile.Employer, out var employer))
+        if (!_entityManager.TryGetComponent<StampComponent>(ent, out var stampComponent) || !_prototypeManager.TryIndex<EmployerPrototype>(employerId, out var employer))
             return;
 
-        stampComponent.StampedName = employer.NameKey;
+        stampComponent.StampedName = command? $"{employer.NameKey}_command" : employer.NameKey;
         stampComponent.StampedColor = employer.PrimaryColour;
         stampComponent.StampState = $"{StampStateBase}-{employer.ID.ToLower()}";
     }
