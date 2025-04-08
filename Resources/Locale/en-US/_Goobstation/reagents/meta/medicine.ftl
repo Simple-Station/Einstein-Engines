@@ -33,9 +33,6 @@ reagent-desc-multiver = Drug purpose-built to cleanse dangerous chemical mixes. 
 reagent-name-monover = monover
 reagent-desc-monover = Relatively low complexity anti-poison drug that stops working in impure environments. Its side effects can be potentially used to quickly verify whether bloodstream is clean of chemicals.
 
-reagent-name-synthcells = synthcells
-reagent-desc-synthcells = Artificially produced "cells" that quickly destroy and replace any dysfunctional cells. Works both through external and internal application. Works on dead.
-
 reagent-name-salicylic-acid = salicylic acid
 reagent-desc-salicylic-acid = Powerful healing agent, excelling at restoring most mangled of corpses. Difficult to overdose.
 

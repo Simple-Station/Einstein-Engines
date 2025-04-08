@@ -75,6 +75,3 @@
             Shock: -0.5
             Cold: -0.5
             Radiation: -0.5
-      - !type:Emote
-        emote: Gasp
-        probability: 0.1
