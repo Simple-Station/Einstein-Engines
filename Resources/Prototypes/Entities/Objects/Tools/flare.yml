@@ -29,7 +29,7 @@
         volume: -10
         maxDistance: 5
   - type: CartridgeAmmo
-    proto: ShotgunFlare
+    proto: PelletShotgunFlare
     deleteOnSpawn: true
 
 

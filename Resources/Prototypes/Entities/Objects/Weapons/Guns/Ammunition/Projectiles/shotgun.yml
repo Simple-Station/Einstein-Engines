@@ -343,8 +343,8 @@
     spread: 15
 
 - type: entity
-  id: ShotgunFlare
-  name: Flare
+  id: PelletShotgunFlare
+  name: pellet (.50 flare)
   categories: [ HideSpawnMenu ]
   components:
   - type: Physics
@@ -388,20 +388,3 @@
     damage:
       types:
         Heat: 5
-
-- type: entity
-  id: PelletShotgunIncendiary
-  name: pellet (.50 incendiary)
-  categories: [ HideSpawnMenu ]
-  parent: BaseBulletIncendiary
-  components:
-  - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
-    state: buckshot-flare
-  - type: Projectile
-    damage:
-      types:
-        Blunt: 3
-        Heat: 7
-  - type: IgnitionSource
-    ignited: true
