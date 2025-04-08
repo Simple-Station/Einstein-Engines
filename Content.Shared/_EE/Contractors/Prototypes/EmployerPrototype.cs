@@ -20,6 +20,12 @@ public sealed partial class EmployerPrototype : IPrototype
     [DataField]
     public string DescriptionKey { get; } = string.Empty;
 
+    [DataField]
+    public Color PrimaryColour { get; } = Color.FromHex("#23BB32");
+
+    [DataField]
+    public Color SecondaryColour { get; } = Color.FromHex("#AABB32");
+
     [DataField, ViewVariables]
     public HashSet<ProtoId<EmployerPrototype>> Rivals { get; } = new();
 

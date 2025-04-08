@@ -1,0 +1,104 @@
+- type: trait
+  id: PsychoHistorianMetapsionicPower
+  category: TraitsPsionicsPowers
+  points: -2
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - PsychoHistorian
+  functions:
+    - !type:TraitAddPsionics
+      psionicPowers:
+        - MetapsionicPower
+
+- type: trait
+  id: PsychoHistorianDispelPower
+  category: TraitsPsionicsPowers
+  points: -2
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - PsychoHistorian
+  functions:
+    - !type:TraitAddPsionics
+      psionicPowers:
+        - DispelPower
+
+- type: trait
+  id: PsychoHistorianTelegnosisPower
+  category: TraitsPsionicsPowers
+  points: -5
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - PsychoHistorian
+  functions:
+    - !type:TraitAddPsionics
+      psionicPowers:
+        - TelegnosisPower
+
+# Seriously broken power, should probably bring this back as a single target ability.
+# - type: trait
+#   id: PsychoHistorianMassSleepPower
+#   category: TraitsPsionicsPowers
+#   points: -10
+#   requirements:
+#     - !type:CharacterTraitRequirement
+#       traits:
+#         - PsychoHistorian
+#   functions:
+#     - !type:TraitAddPsionics
+#       psionicPowers:
+#         - MassSleepPower
+
+- type: trait
+  id: PsychoHistorianPsionicInvisibilityPower
+  category: TraitsPsionicsPowers
+  points: -8
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - PsychoHistorian
+  functions:
+    - !type:TraitAddPsionics
+      psionicPowers:
+        - PsionicInvisibilityPower
+
+- type: trait
+  id: PsychoHistorianXenoglossyPower
+  category: TraitsPsionicsPowers
+  points: -2
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - PsychoHistorian
+  functions:
+    - !type:TraitAddPsionics
+      psionicPowers:
+        - XenoglossyPower
+
+- type: trait
+  id: PsychoHistorianPsychognomyPower
+  category: TraitsPsionicsPowers
+  points: -2
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - PsychoHistorian
+  functions:
+    - !type:TraitAddPsionics
+      psionicPowers:
+        - PsychognomyPower
+
+- type: trait
+  id: PsychoHistorianAssayPower
+  category: TraitsPsionicsPowers
+  points: -2
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - PsychoHistorianMetapsionicPower
+  functions:
+    - !type:TraitAddPsionics
+      psionicPowers:
+        - AssayPower

@@ -425,6 +425,6 @@ public sealed partial class CharacterItemGroupRequirement : CharacterRequirement
             ("group", Loc.GetString($"character-item-group-{Group}")),
             ("max", group.MaxItems));
 
-        return count < group.MaxItems;
+        return !Inverted ? count < group.MaxItems : count >= group.MaxItems - 1;
     }
 }

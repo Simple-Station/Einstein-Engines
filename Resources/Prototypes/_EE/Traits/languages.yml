@@ -2,6 +2,8 @@
   id: SiikMaas
   category: TraitsSpeechLanguages
   points: -1
+  slots: 1
+  itemGroupSlots: 0
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsLanguagesBasic
@@ -24,6 +26,8 @@
   id: NalRasan
   category: TraitsSpeechLanguages
   points: -1
+  slots: 1
+  itemGroupSlots: 0
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsLanguagesBasic
@@ -41,6 +45,8 @@
   id: SiikTajr
   category: TraitsSpeechLanguages
   points: -2
+  slots: 1
+  itemGroupSlots: 0
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsLanguagesBasic
@@ -58,6 +64,8 @@
   id: YaSsa
   category: TraitsSpeechLanguages
   points: -2
+  slots: 1
+  itemGroupSlots: 0
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsLanguagesBasic
@@ -75,6 +83,8 @@
   id: Delvahii
   category: TraitsSpeechLanguages
   points: -2
+  slots: 1
+  itemGroupSlots: 0
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsLanguagesBasic

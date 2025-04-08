@@ -46,5 +46,6 @@ reagent-desc-cryanobalamin = A formerly popular additive to energy drinks to res
 reagent-name-liftloversspecial = lift lovers special
 reagent-desc-liftloversspecial = A chemical cocktail that quickly restores stamina. Despite being officially banned, it remains a popular black-market drink among fitness junkies. Carcinogenic in high doses.
 
-reagent-name-nitrosyl-plasmide = nitrosyl plasmide
-reagent-desc-nitrosyl-plasmide = A powerful stimulant that can prevent drowsiness, stuns and knock downs.
+reagent-name-morphine = morphine
+reagent-desc-morphine = A potent analgesic that allows a patient to painlessly undergo surgery even while awake. Highly addictive if overused. Overdose can cause difficulty breathing.
+
