@@ -14580,3 +14580,10 @@ Entries:
   id: 7110
   time: '2025-04-06T21:04:32.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2190
+- author: Will-Oliver-Br
+  changes:
+    - type: Fix
+      message: Fix the office chair sprite overlapping the character when facing south
+  id: 7111
+  time: '2025-04-08T06:27:42.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2189
