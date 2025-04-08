@@ -307,6 +307,13 @@ entities:
     - type: Transform
       pos: 3.5,1.5
       parent: 222
+- proto: BoxShotgunFlare
+  entities:
+  - uid: 25
+    components:
+    - type: Transform
+      pos: 0.5821538,-2.3847435
+      parent: 222
 - proto: CableApcExtension
   entities:
   - uid: 109

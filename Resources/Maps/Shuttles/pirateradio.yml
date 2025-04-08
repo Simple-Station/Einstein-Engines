@@ -2395,6 +2395,15 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
+- proto: BoxShotgunFlare
+  entities:
+  - uid: 367
+    components:
+    - type: Transform
+      parent: 363
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: BriefcaseBrownFilled
   entities:
   - uid: 403

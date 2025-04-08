@@ -8082,6 +8082,13 @@ entities:
     - type: Transform
       pos: 28.560026,15.665409
       parent: 2
+- proto: BoxShotgunFlare
+  entities:
+  - uid: 576
+    components:
+    - type: Transform
+      pos: -11.775782,-6.360051
+      parent: 2
 - proto: BoxSterileMask
   entities:
   - uid: 577
