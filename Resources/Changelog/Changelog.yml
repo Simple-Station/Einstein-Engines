@@ -14618,3 +14618,20 @@ Entries:
   id: 7114
   time: '2025-04-08T20:14:20.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2157
+- author: GNUtopia
+  changes:
+    - type: Add
+      message: Added morphine
+    - type: Add
+      message: Added syringe case
+    - type: Add
+      message: Added analgesic medipen
+    - type: Add
+      message: Added emergency nitrous oxide tank
+    - type: Tweak
+      message: Added pain pens to advanced medipen kits
+    - type: Tweak
+      message: (Re?)enabled surgery pain moodlet
+  id: 7115
+  time: '2025-04-08T21:03:21.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2198
