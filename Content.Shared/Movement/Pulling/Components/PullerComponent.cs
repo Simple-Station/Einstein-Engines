@@ -1,4 +1,4 @@
-﻿using Content.Shared._Goobstation.MartialArts;
+using Content.Shared._Goobstation.MartialArts;
 using Content.Shared._Goobstation.TableSlam; // Goobstation - Table Slam
 using Content.Shared.Alert;
 using Content.Shared.Movement.Pulling.Systems;
@@ -93,7 +93,7 @@ public sealed partial class PullerComponent : Component
     public TimeSpan NextStageChange;
 
     [DataField]
-    public TimeSpan StageChangeCooldown = TimeSpan.FromSeconds(1.5f);
+    public float StageChangeCooldown = 1.5f;
 
     [AutoNetworkedField]
     public TimeSpan WhenCanThrow;
