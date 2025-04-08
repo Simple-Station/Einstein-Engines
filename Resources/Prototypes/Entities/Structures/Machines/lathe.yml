@@ -226,6 +226,7 @@
     emagStaticRecipes:
     - BoxLethalshot
     - BoxShotgunLumen
+    - BoxShotgunFlare
     - BoxShotgunSlug
     - MagazineBoxLightRifle
     - MagazineBoxMagnum
@@ -910,6 +911,7 @@
     staticRecipes:
       - BoxLethalshot
       - BoxShotgunLumen
+      - BoxShotgunFlare
       - BoxShotgunPractice
       - BoxShotgunSlug
       - ClothingEyesHudSecurity
@@ -920,6 +922,7 @@
       - ShellShotgun
       - ShellShotgunSlug
       - ShellShotgunLumen
+      - ShellShotgunFlare
       - ShellTranquilizer
       - MagazineBoxLightRifle
       - MagazineBoxLightRiflePractice
@@ -1186,6 +1189,7 @@
       staticRecipes:
         - BoxLethalshot
         - BoxShotgunLumen
+        - BoxShotgunFlare
         - BoxShotgunSlug
         - MagazineBoxLightRifle
         - MagazineBoxMagnum
