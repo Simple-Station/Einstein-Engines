@@ -1,5 +1,6 @@
 - type: characterItemGroup
   id: TraitsLanguagesBasic
+  maxItems: 1
   items:
     - type: trait
       id: SignLanguage

@@ -263,7 +263,7 @@ public sealed class PsionicsSystem : EntitySystem
     public void RollPsionics(EntityUid uid, PsionicComponent component, bool applyGlimmer = true, float rollEventMultiplier = 1f)
     {
         if (!_cfg.GetCVar(CCVars.PsionicRollsEnabled)
-            || !component.Removable)
+            || !component.Roller)
             return;
 
         // Calculate the initial odds based on the innate potential
