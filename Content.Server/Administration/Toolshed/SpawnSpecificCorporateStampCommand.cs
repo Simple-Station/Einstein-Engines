@@ -4,7 +4,6 @@ using Content.Shared.Administration;
 using Robust.Shared.Player;
 using Robust.Shared.Toolshed;
 using Robust.Shared.Toolshed.Errors;
-using Content.Shared._EE.Contractors.Components;
 using Content.Shared._EE.Contractors.Prototypes;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Database;
@@ -43,10 +42,9 @@ public sealed class SpawnSpecificCorporateStampCommand : ToolshedCommand
         }
         else
         {
-            if (!TryComp(ent, out ActorComponent? targetActor))
+            if (!HasComp<ActorComponent>(ent))
                 return;
 
-            var profile = _ticker.GetPlayerProfile(targetActor.PlayerSession);
             SpawnStampForPlayer(ent, input, command);
         }
     }
@@ -65,24 +63,21 @@ public sealed class SpawnSpecificCorporateStampCommand : ToolshedCommand
             return;
 
         var stampEntity = _entityManager.SpawnEntity(entityPrototype.ID, _sharedTransformSystem.GetMapCoordinates(mob));
-        var corporateStampComponent = _entityManager.GetComponent<CorporateStampComponent>(stampEntity);
 
         _corporateStampSystem.UpdateCorporateStamp(stampEntity, employer, command);
 
         // Try to find back-mounted storage apparatus
-        if (_inventory.TryGetSlotEntity(mob, "back", out var item) &&
-                EntityManager.TryGetComponent<StorageComponent>(item, out var inventory))
+        if (!_inventory.TryGetSlotEntity(mob, "back", out var item)
+            || !EntityManager.TryGetComponent<StorageComponent>(item, out var inventory)
+            || !EntityManager.TryGetComponent<ItemComponent>(stampEntity, out var itemComp)
             // Try inserting the entity into the storage, if it can't, it leaves the loadout item on the ground
-        {
-            if (!EntityManager.TryGetComponent<ItemComponent>(stampEntity, out var itemComp)
-                || !_storage.CanInsert(item.Value, stampEntity, out _, inventory, itemComp)
-                || !_storage.Insert(item.Value, stampEntity, out _, playSound: false))
-            {
-                _adminLogManager.Add(
-                    LogType.EntitySpawn,
-                    LogImpact.Low,
-                    $"Stamp for {employer} was spawned on the floor due to missing bag space");
-            }
-        }
+            || _storage.CanInsert(item.Value, stampEntity, out _, inventory, itemComp)
+            && _storage.Insert(item.Value, stampEntity, out _, playSound: false))
+            return;
+
+        _adminLogManager.Add(
+            LogType.EntitySpawn,
+            LogImpact.Low,
+            $"Stamp for {employer} was spawned on the floor due to missing bag space");
     }
 }
