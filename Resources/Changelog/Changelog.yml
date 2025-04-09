@@ -14750,3 +14750,29 @@ Entries:
   id: 7125
   time: '2025-04-09T18:21:57.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2179
+- author: Timfa2112
+  changes:
+    - type: Tweak
+      message: >-
+        Rethemed the NanoTrasen Representative into the Corporate Liaison! You
+        do pretty much the same thing, except with your chosen Employer's
+        interests in mind! This makes use of the Contractor System, so you can
+        represent any company you like. Don't forget to pick the stamp in your
+        loadout!!
+    - type: Add
+      message: >-
+        Added a new stamp for the Corporate Liaison which automatically
+        transforms into your employer's stamp on spawn. Do not forget to pick it
+        in your loadout!!!!
+    - type: Add
+      message: >-
+        admin console command to spawn the stamp for the people that forgot to
+        pick the stamp in loadouts despite my warnings.
+    - type: Add
+      message: >-
+        admin console command to spawn a specific corporation's stamp your own
+        inventory, which can optionally be a Command version for admin faxing
+        purposes.
+  id: 7126
+  time: '2025-04-09T22:05:49.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2191
