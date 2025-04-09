@@ -4,7 +4,6 @@ using Content.Shared.Access.Components;
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
 using Robust.Shared.Enums;
-using Robust.Shared.Physics;
 
 namespace Content.Client.Access;
 
