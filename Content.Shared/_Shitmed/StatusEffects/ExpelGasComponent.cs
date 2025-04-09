@@ -18,8 +18,8 @@ public sealed partial class ExpelGasComponent : Component
         Gas.Ammonia,
         Gas.NitrousOxide,
         Gas.Frezon,
-        Gas.BZ, ///tg/ gases
-        Gas.Healium, ///tg/ gases
-        Gas.Nitrium, ///tg/ gases
+        // Gas.BZ, ///tg/ gases
+        // Gas.Healium, ///tg/ gases
+        // Gas.Nitrium, ///tg/ gases
     };
 }
