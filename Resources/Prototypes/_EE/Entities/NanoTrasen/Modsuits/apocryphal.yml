@@ -37,6 +37,12 @@
   components:
     - type: Sprite
       sprite: _EE/Clothing/NanoTrasen/Modsuits/apocryphal.rsi
+    - type: SealableClothingVisuals
+      visualLayers:
+        gloves:
+        - state: equipped-HAND-sealed
+        - state: equipped-HAND-sealed-unshaded
+          shader: unshaded
 
 - type: entity
   parent: [ClothingModsuitHelmetStandard, ShowSecurityIcons, BaseClothingRadio]
@@ -75,6 +81,8 @@
       visualLayers:
         head:
         - state: equipped-HEAD-sealed
+        - state: equipped-HEAD-sealed-unshaded
+          shader: unshaded
     - type: Reflect
       reflectProb: 0.03
       spread: 270
