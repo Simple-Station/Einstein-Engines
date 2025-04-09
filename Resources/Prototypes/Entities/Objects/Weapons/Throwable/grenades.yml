@@ -411,7 +411,7 @@
   parent: SmokeGrenade
   id: CleanerGrenadeNuke
   name: the clean solution
-  description: A special grenade made by a specially angry janitor, be aware it will flood the room, and maybe more, with it's cleaning foam.
+  description: A special cleanade designed by an especially tenacious janitor. Its foam can spread over an entire room, leaving it squeaky clean and smelling slightly of lemons.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Grenades/janitornuke.rsi
