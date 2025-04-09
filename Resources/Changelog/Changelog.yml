@@ -14642,3 +14642,12 @@ Entries:
   id: 7116
   time: '2025-04-08T21:05:04.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2177
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: Plasma windows now take 50% less explosion damage
+    - type: Tweak
+      message: Reinforced plasma windows now take 80% less explosion damage
+  id: 7117
+  time: '2025-04-09T03:48:54.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2195
