@@ -87,4 +87,4 @@ lifepath_name_hacker = Hacker
 lifepath_description_hacker = You cracked firewalls, stole secrets, and erased digital footprints. Whether for profit, revenge, or the thrill, you were one of the best.
 
 lifepath_name_conartist = Con Artist
-lifepath_description_conartist = Lies were your currency. You’ve swindled people out of fortunes, identities, and even their lives. Now, you’re always watching your 
+lifepath_description_conartist = Lies were your currency. You’ve swindled people out of fortunes, identities, and even their lives. Now, you’re always watching your back.
