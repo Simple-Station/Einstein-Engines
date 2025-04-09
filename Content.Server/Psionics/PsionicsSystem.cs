@@ -310,7 +310,7 @@ public sealed class PsionicsSystem : EntitySystem
     public void RestorePsionicReroll(EntityUid uid, PsionicComponent? psionic = null)
     {
         if (!Resolve(uid, ref psionic, false)
-            || !psionic.Removable)
+            || !psionic.Roller)
             return;
         psionic.CanReroll = true;
     }
