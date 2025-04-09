@@ -14730,3 +14730,12 @@ Entries:
   id: 7123
   time: '2025-04-09T09:28:31.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2105
+- author: Diggy
+  changes:
+    - type: Tweak
+      message: >-
+        Nuclear Operative armors have been updated with Impstation sprites,
+        along with being able to see them in the dark.
+  id: 7124
+  time: '2025-04-09T10:59:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2180
