@@ -4,6 +4,4 @@ examine-bionic-arm-message = {CAPITALIZE(POSS-ADJ($entity))} arms emit an ever p
 examine-bionic-leg-message = {CAPITALIZE(POSS-ADJ($entity))} legs emit an ever present faint chirp of servomotors.
 examine-thermal-vision-message = {CAPITALIZE(POSS-ADJ($entity))} eyes periodically pulse with a menacing red glare.
 examine-featherweight-message = {CAPITALIZE(THE($entity))} appears noticably thin for a member of their species.
-examine-bulky-message = {CAPITALIZE(THE($entity))} appears unusually large for a member of their species.
-examine-weakling-message = {CAPITALIZE(POSS-ADJ($entity))} body is noticeably willowy
 examine-bodybuilder-message = An impressive amount of muscle is visible on {POSS-ADJ($entity)} frame.
