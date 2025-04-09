@@ -1,5 +1,3 @@
-using Content.Shared.Chemistry.Reagent;
-using Content.Server.Psionics;
 using Content.Shared.EntityEffects;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
