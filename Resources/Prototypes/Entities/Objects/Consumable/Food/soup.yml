@@ -1283,7 +1283,7 @@
             Quantity: 5
   - type: Tag
     tags:
-    - Soup
+      - Soup
   - type: Construction
     graph: OusianaDustBowl
     node: ousianadustbowl
