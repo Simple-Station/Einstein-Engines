@@ -14677,3 +14677,12 @@ Entries:
   id: 7119
   time: '2025-04-09T07:40:03.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2197
+- author: EctoplasmIsGood
+  changes:
+    - type: Remove
+      message: >-
+        Removed old bodybuilder and weakling traits since they didn't work, and
+        gave bulky the name bodybuilder instead
+  id: 7120
+  time: '2025-04-09T07:42:37.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2196
