@@ -14739,3 +14739,14 @@ Entries:
   id: 7124
   time: '2025-04-09T10:59:43.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2180
+- author: RocketBoss360
+  changes:
+    - type: Add
+      message: >-
+        Ousiana Dust, Allows one to gain benefit from mind opening drugs like a
+        Noosphere Zap, crafted with 1 bluespace crystal and 1 normalcy crystal
+        crushed into a bowl. Probably has no long term psychological side
+        effects.
+  id: 7125
+  time: '2025-04-09T18:21:57.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2179
