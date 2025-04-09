@@ -14651,3 +14651,14 @@ Entries:
   id: 7117
   time: '2025-04-09T03:48:54.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2195
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: Shiva now injects a small amount of noc on hit
+    - type: Tweak
+      message: Sec dogs and shiva have both received sec access and the ability to pull
+    - type: Tweak
+      message: Sec dogs can now use the vulpakin sniff ability
+  id: 7118
+  time: '2025-04-09T07:39:11.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2093
