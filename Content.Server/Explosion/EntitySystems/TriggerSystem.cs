@@ -30,8 +30,6 @@ using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
-using Robust.Shared.Player;
-using Content.Shared.Coordinates;
 using Robust.Shared.Utility;
 
 namespace Content.Server.Explosion.EntitySystems
@@ -166,8 +164,7 @@ namespace Content.Server.Explosion.EntitySystems
 
         private void HandleGibTrigger(EntityUid uid, GibOnTriggerComponent component, TriggerEvent args)
         {
-            if (!TryComp<TransformComponent>(uid, out var xform))
-                return;
+            var xform = Transform(uid);
             if (component.DeleteItems)
             {
                 var items = _inventory.GetHandOrInventoryEntities(xform.ParentUid);

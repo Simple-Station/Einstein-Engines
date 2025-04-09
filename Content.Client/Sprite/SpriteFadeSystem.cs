@@ -3,7 +3,6 @@ using Content.Shared.Sprite;
 using Robust.Client.GameObjects;
 using Robust.Client.Player;
 using Robust.Client.State;
-using Robust.Shared.Physics;
 
 namespace Content.Client.Sprite;
 
@@ -42,11 +41,14 @@ public sealed class SpriteFadeSystem : EntitySystem
         base.FrameUpdate(frameTime);
 
         var player = _playerManager.LocalEntity;
+        if (player is null)
+            return;
+
         var spriteQuery = GetEntityQuery<SpriteComponent>();
         var change = ChangeRate * frameTime;
+        var playerXform = Transform(player.Value);
 
-        if (TryComp<TransformComponent>(player, out var playerXform) &&
-            _stateManager.CurrentState is GameplayState state &&
+        if (_stateManager.CurrentState is GameplayState state &&
             spriteQuery.TryGetComponent(player, out var playerSprite))
         {
             var fadeQuery = GetEntityQuery<SpriteFadeComponent>();

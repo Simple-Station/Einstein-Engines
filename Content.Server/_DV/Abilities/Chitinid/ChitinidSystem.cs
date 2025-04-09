@@ -33,15 +33,16 @@ public sealed partial class ChitinidSystem : EntitySystem
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
-        var query = EntityQueryEnumerator<ChitinidComponent, DamageableComponent>();
-        while (query.MoveNext(out var uid, out var chitinid, out var damageable))
+        var query = EntityQueryEnumerator<ChitinidComponent>();
+        while (query.MoveNext(out var uid, out var chitinid))
         {
             if (_timing.CurTime < chitinid.NextUpdate)
                 continue;
 
             chitinid.NextUpdate += chitinid.UpdateInterval;
 
-            if (chitinid.AmountAbsorbed >= chitinid.MaximumAbsorbed || _mobState.IsDead(uid))
+            if (chitinid.AmountAbsorbed >= chitinid.MaximumAbsorbed || _mobState.IsDead(uid)
+                || !TryComp(uid, out DamageableComponent? damageable))
                 continue;
 
             if (_damageable.TryChangeDamage(uid, chitinid.Healing, damageable: damageable) is {} delta)
@@ -55,10 +56,11 @@ public sealed partial class ChitinidSystem : EntitySystem
             }
         }
 
-        var entQuery = EntityQueryEnumerator<CoughingUpChitziteComponent, ChitinidComponent>();
-        while (entQuery.MoveNext(out var ent, out var chitzite, out var chitinid))
+        var entQuery = EntityQueryEnumerator<CoughingUpChitziteComponent>();
+        while (entQuery.MoveNext(out var ent, out var chitzite))
         {
-            if (_timing.CurTime < chitzite.NextCough)
+            if (_timing.CurTime < chitzite.NextCough
+                || !TryComp(ent, out ChitinidComponent? chitinid))
                 continue;
 
             Spawn(chitinid.ChitzitePrototype, Transform(ent).Coordinates);

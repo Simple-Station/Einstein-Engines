@@ -1,4 +1,3 @@
-using Content.Server.Construction.Completions;
 using Content.Server.Explosion.Components;
 using Content.Server.Explosion.EntitySystems;
 
@@ -20,9 +19,7 @@ public sealed partial class GoobTriggerSystem : EntitySystem
     {
 
         var uid = entity.Owner;
-
-        if (!TryComp<TransformComponent>(uid, out var userXform))
-            return;
+        var userXform = Transform(uid);
 
         if (userXform.ParentUid == userXform.GridUid || userXform.ParentUid == userXform.MapUid)
             return;

@@ -271,7 +271,10 @@ namespace Content.Server.Physics.Controllers
                     consoleEnt = cargoConsole.Entity;
                 }
 
-                if (!TryComp<TransformComponent>(consoleEnt, out var xform)) continue;
+                if (consoleEnt is null)
+                    return;
+
+                var xform = Transform(consoleEnt.Value);
 
                 var gridId = xform.GridUid;
                 // This tries to see if the grid is a shuttle and if the console should work.

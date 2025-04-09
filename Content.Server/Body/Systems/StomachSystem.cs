@@ -34,13 +34,17 @@ namespace Content.Server.Body.Systems
 
         public override void Update(float frameTime)
         {
-            var query = EntityQueryEnumerator<StomachComponent, OrganComponent, SolutionContainerManagerComponent>();
-            while (query.MoveNext(out var uid, out var stomach, out var organ, out var sol))
+            var query = EntityQueryEnumerator<StomachComponent>();
+            while (query.MoveNext(out var uid, out var stomach))
             {
                 if (_gameTiming.CurTime < stomach.NextUpdate)
                     continue;
 
                 stomach.NextUpdate += stomach.UpdateInterval;
+
+                if (!TryComp(uid, out OrganComponent? organ)
+                    || !TryComp(uid, out SolutionContainerManagerComponent? sol))
+                    continue;
 
                 // Get our solutions
                 if (!_solutionContainerSystem.ResolveSolution((uid, sol), DefaultSolutionName, ref stomach.Solution, out var stomachSolution))

@@ -263,12 +263,8 @@ public sealed class NPCUtilitySystem : EntitySystem
             case TargetDistanceCon:
             {
                 var radius = blackboard.GetValueOrDefault<float>(blackboard.GetVisionRadiusKey(EntityManager), EntityManager);
-
-                if (!TryComp<TransformComponent>(targetUid, out var targetXform) ||
-                    !TryComp<TransformComponent>(owner, out var xform))
-                {
-                    return 0f;
-                }
+                var targetXform = Transform(targetUid);
+                var xform = Transform(owner);
 
                 if (!targetXform.Coordinates.TryDistance(EntityManager, _transform, xform.Coordinates,
                         out var distance))
@@ -309,11 +305,11 @@ public sealed class NPCUtilitySystem : EntitySystem
             {
                 var radius = blackboard.GetValueOrDefault<float>(blackboard.GetVisionRadiusKey(EntityManager), EntityManager);
                 const float bufferRange = 0.5f;
+                var xform = Transform(owner);
+                var targetXform = Transform(targetUid);
 
                 if (blackboard.TryGetValue<EntityUid>("Target", out var currentTarget, EntityManager) &&
                     currentTarget == targetUid &&
-                    TryComp<TransformComponent>(owner, out var xform) &&
-                    TryComp<TransformComponent>(targetUid, out var targetXform) &&
                     xform.Coordinates.TryDistance(EntityManager, _transform, targetXform.Coordinates, out var distance) &&
                     distance <= radius + bufferRange)
                 {

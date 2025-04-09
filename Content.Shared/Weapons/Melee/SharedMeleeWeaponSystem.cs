@@ -21,9 +21,6 @@ using Content.Shared.Physics;
 using Content.Shared.Popups;
 using Content.Shared.Weapons.Melee.Components;
 using Content.Shared.Weapons.Melee.Events;
-using Content.Shared.Weapons.Ranged.Components;
-using Content.Shared.Weapons.Ranged.Events;
-using Content.Shared.Weapons.Ranged.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
@@ -436,11 +433,11 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
     protected bool CanDoLightAttack(EntityUid user, [NotNullWhen(true)] EntityUid? target, MeleeWeaponComponent component, [NotNullWhen(true)] out TransformComponent? targetXform, ICommonSession? session = null)
     {
         targetXform = null;
-        return !Deleted(target) &&
-            HasComp<DamageableComponent>(target) &&
-            TryComp<TransformComponent>(target, out targetXform) &&
-            // Not in LOS.
-            InRange(user, target.Value, component.Range, session);
+        if (target is null || Deleted(target))
+            return false;
+        targetXform = Transform(target.Value);
+        return HasComp<DamageableComponent>(target)
+            && InRange(user, target.Value, component.Range, session);
     }
 
     protected virtual void DoLightAttack(EntityUid user, LightAttackEvent ev, EntityUid meleeUid, MeleeWeaponComponent component, ICommonSession? session)
