@@ -77,34 +77,6 @@
   items:
     - ClothingHandsGlovesColorYellow
 
-- type: loadout
-  id: LoadoutEngineeringGlovesCombat
-  category: JobsEngineeringAAUncategorized
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutEngineeringGloves
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Engineering
-  items:
-    - ClothingHandsGlovesCombat
-
-- type: loadout
-  id: LoadoutEngineeringGlovesMerc
-  category: JobsEngineeringAAUncategorized
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutEngineeringGloves
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Engineering
-  items:
-    - ClothingHandsMercGlovesCombat
-
 # Head
 - type: loadout
   id: LoadoutEngineeringHeadBeret
