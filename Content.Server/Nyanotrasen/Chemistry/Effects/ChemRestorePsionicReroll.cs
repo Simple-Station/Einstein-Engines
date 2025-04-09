@@ -3,7 +3,10 @@ using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 using Content.Shared.Abilities.Psionics;
 
-namespace Content.Server.Chemistry.ReagentEffects
+namespace Content.Server.Chemistry.ReagentEffects;
+
+[UsedImplicitly]
+public sealed partial class ChemRestorePsionicReroll : EntityEffect
 {
 
     [UsedImplicitly]
