@@ -1272,8 +1272,8 @@
       - supernova
   - type: Sprite
     layers:
-    - state: bowl
-    - state: ousiana
+      - state: bowl
+      - state: ousiana
   - type: SolutionContainerManager
     solutions:
       food:
