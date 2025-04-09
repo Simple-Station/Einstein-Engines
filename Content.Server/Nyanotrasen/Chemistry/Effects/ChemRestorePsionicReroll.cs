@@ -21,8 +21,6 @@ public sealed partial class ChemRestorePsionicReroll : EntityEffect
             || !psionicComp.Roller && !BypassRoller)
             return;
 
-            var psySys = args.EntityManager.EntitySysManager.GetEntitySystem<PsionicsSystem>();
-            psySys.RestorePsionicReroll(args.TargetEntity);
-        }
+        psionicComp.CanReroll = true;
     }
 }
