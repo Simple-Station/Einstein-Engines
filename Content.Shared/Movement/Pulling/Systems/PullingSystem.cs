@@ -900,7 +900,7 @@ public sealed class PullingSystem : EntitySystem
             return false;
 
         // makes it so that you can't grab somebody if you can't attack. without this you can perform some combos near-instantly
-        puller.Comp1.NextStageChange = puller.Comp2.NextAttack;
+        if (puller.Comp2.NextAttack > _timing.CurTime) puller.Comp1.NextStageChange = puller.Comp2.NextAttack;
 
         if (HasComp<PacifiedComponent>(puller))
             return false;
@@ -943,6 +943,9 @@ public sealed class PullingSystem : EntitySystem
             GrabStageDirection.Decrease => -1,
             _ => throw new ArgumentOutOfRangeException(),
         };
+
+        // giving the cooldown before punching/pushing
+        puller.Comp2.NextAttack = _timing.CurTime + TimeSpan.FromSeconds(puller.Comp2.AttackRate);
 
         if (puller.Comp1.GrabStage <= GrabStage.Soft) // Set the cooldown unless it is currently hard or above.
         {
