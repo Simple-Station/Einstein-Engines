@@ -92,9 +92,8 @@ public sealed partial class PullerComponent : Component
     [AutoNetworkedField]
     public TimeSpan NextStageChange;
 
-    // remember to convert this into timespan when applying it
     [DataField]
-    public float StageChangeCooldown = 1.5f;
+    public TimeSpan StageChangeCooldown = TimeSpan.FromSeconds(1.5f);
 
     [AutoNetworkedField]
     public TimeSpan WhenCanThrow;

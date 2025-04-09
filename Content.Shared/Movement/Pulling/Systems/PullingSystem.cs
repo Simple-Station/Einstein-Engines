@@ -917,7 +917,7 @@ public sealed class PullingSystem : EntitySystem
             return false;
 
         // Delay to avoid spamming
-        puller.Comp1.NextStageChange = _timing.CurTime + TimeSpan.FromSeconds(puller.Comp1.StageChangeCooldown);
+        puller.Comp1.NextStageChange = _timing.CurTime + puller.Comp1.StageChangeCooldown;
         Dirty(puller, puller.Comp1);
 
         // Don't grab without grab intent
