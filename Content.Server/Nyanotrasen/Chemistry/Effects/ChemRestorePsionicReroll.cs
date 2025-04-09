@@ -10,8 +10,6 @@ public sealed partial class ChemRestorePsionicReroll : EntityEffect
 {
     [DataField]
     public bool BypassRoller;
-    [DataField]
-    public bool BypassRoller;
 
     protected override string? ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
         => Loc.GetString("reagent-effect-guidebook-chem-restorereroll-psionic");
