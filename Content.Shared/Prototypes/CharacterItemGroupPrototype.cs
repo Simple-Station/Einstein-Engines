@@ -1,7 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Clothing.Loadouts.Systems;
-using Content.Shared.Customization.Systems;
 using Content.Shared.Preferences;
 using Content.Shared.Traits;
 using Robust.Shared.Prototypes;

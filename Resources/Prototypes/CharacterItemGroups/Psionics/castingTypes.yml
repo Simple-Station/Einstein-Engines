@@ -1,0 +1,12 @@
+- type: characterItemGroup
+  id: TraitsCasterType
+  maxItems: 1
+  items:
+    - type: trait
+      id: LatentPsychic
+    - type: trait # Here for simplifying Yml requirements
+      id: PsionicInsulation
+    - type: trait
+      id: PsychoHistorian
+    - type: trait
+      id: Elementalist

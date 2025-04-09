@@ -71,6 +71,11 @@ mood-effect-NicotineBenefit =
 mood-effect-NicotineWithdrawal =
     I could really go for a smoke right now.
 
+mood-effect-MorphineBenefit =
+    The morphine helps me forget my worries.
+mood-effect-MorphineWithdrawal =
+    Everything is too loud, too bright. I need something to take the edge off...
+
 # Surgery
 mood-effect-SurgeryPain = The surgery hurts.
 # Drugs
