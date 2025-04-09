@@ -14686,3 +14686,13 @@ Entries:
   id: 7120
   time: '2025-04-09T07:42:37.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2196
+- author: Diggy
+  changes:
+    - type: Add
+      message: >-
+        Cleanadenuke grenade has been added, made with 100 units of bleach, one
+        soap and a cleanade, put it in the microwave for 10 seconds and there
+        you have it, enjoy flooding a room with space cleaner foam.
+  id: 7121
+  time: '2025-04-09T08:14:59.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2194
