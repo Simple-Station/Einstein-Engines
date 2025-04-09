@@ -14696,3 +14696,14 @@ Entries:
   id: 7121
   time: '2025-04-09T08:14:59.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2194
+- author: Diggy
+  changes:
+    - type: Add
+      message: >-
+        "Raider" modsuit is 25 TC, while the "Jaeger" modsuit is 70 TC, both in
+        your Uplink, BUY NOW
+    - type: Add
+      message: loss
+  id: 7122
+  time: '2025-04-09T09:26:33.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2162
