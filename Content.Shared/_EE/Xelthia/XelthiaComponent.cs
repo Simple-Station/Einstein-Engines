@@ -19,4 +19,7 @@ public sealed partial class XelthiaComponent : Component
 
     [DataField]
     public Color LArmBackspikesColor = Color.White;
+
+    [DataField]
+    public EntityUid? XelthiaRegenerateAction;
 }
