@@ -259,10 +259,13 @@ namespace Content.Server.Physics.Controllers
             var newPilots = new Dictionary<EntityUid, (ShuttleComponent Shuttle, List<(EntityUid PilotUid, PilotComponent Pilot, InputMoverComponent Mover, TransformComponent ConsoleXform)>)>();
 
             // We just mark off their movement and the shuttle itself does its own movement
-            var activePilotQuery = EntityQueryEnumerator<PilotComponent, InputMoverComponent>();
+            var activePilotQuery = EntityQueryEnumerator<PilotComponent>();
             var shuttleQuery = GetEntityQuery<ShuttleComponent>();
-            while (activePilotQuery.MoveNext(out var uid, out var pilot, out var mover))
+            while (activePilotQuery.MoveNext(out var uid, out var pilot))
             {
+                if (!TryComp(uid, out InputMoverComponent? mover))
+                    continue;
+
                 var consoleEnt = pilot.Console;
 
                 // TODO: This is terrible. Just make a new mover and also make it remote piloting + device networks
@@ -272,13 +275,13 @@ namespace Content.Server.Physics.Controllers
                 }
 
                 if (consoleEnt is null)
-                    return;
+                    continue;
 
                 var xform = Transform(consoleEnt.Value);
 
                 var gridId = xform.GridUid;
                 // This tries to see if the grid is a shuttle and if the console should work.
-                if (!TryComp<MapGridComponent>(gridId, out var _) ||
+                if (!HasComp<MapGridComponent>(gridId) ||
                     !shuttleQuery.TryGetComponent(gridId, out var shuttleComponent) ||
                     !shuttleComponent.Enabled)
                     continue;
