@@ -1,0 +1,43 @@
+- type: entity
+  id: SlingEgg
+  name: Shadowling Egg
+  description: yes # todo
+  components:
+  - type: Transform
+    noRot: true
+  - type: Sprite
+    noRot: true
+    sprite: _EE/Shadowling/egg.rsi
+    layers:
+    - state: base
+      map: [ "enum.StorageVisualLayers.Base" ]
+    - state: closed
+      map: [ "enum.StorageVisualLayers.Door" ]
+  - type: InteractionOutline
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.4,-0.4,0.4,0.29"
+          density: 50
+          mask:
+          - CrateMask
+          layer:
+          - MachineLayer
+  - type: EntityStorage
+    capacity: 1
+    openOnMove: false
+  - type: PlaceableSurface
+    isPlaceable: false # defaults to closed.
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateDoorOpen: open
+    stateDoorClosed: closed
+  - type: ContainerContainer
+    containers:
+      entity_storage: !type:Container
+      paper_label: !type:ContainerSlot
+  - type: RequireProjectileTarget
+  - type: HatchingEgg

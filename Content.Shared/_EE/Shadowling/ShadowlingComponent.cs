@@ -34,6 +34,12 @@ public sealed partial class ShadowlingComponent : Component
 
     [DataField]
     public Color EyeColor = Color.FromHex("#f80000");
+
+    [DataField]
+    public Color SkinColor = Color.FromHex("#000000");
+
+    [DataField]
+    public string Egg = "SlingEgg";
 }
 
 [NetSerializable, Serializable]

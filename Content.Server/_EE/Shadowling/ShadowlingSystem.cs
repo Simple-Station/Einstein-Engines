@@ -5,6 +5,8 @@ using Content.Server.Destructible;
 using Content.Server.Humanoid;
 using Content.Server.Popups;
 using Content.Server.Stealth;
+using Content.Server.Storage.EntitySystems;
+using Content.Server.Strip;
 using Content.Shared._EE.Shadowling.Systems;
 using Content.Shared._EE.Shadowling;
 using Content.Shared.Armor;
@@ -29,6 +31,8 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _movementSpeed = default!;
     [Dependency] private readonly StealthSystem _stealth = default!;
+    [Dependency] private readonly EntityStorageSystem _entityStorage = default!;
+    [Dependency] private readonly StrippableSystem _strippable = default!;
 
     public override void Initialize()
     {

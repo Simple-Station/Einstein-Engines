@@ -1,11 +1,14 @@
 using System.Numerics;
 using Content.Server.EntityEffects.Effects;
+using Content.Server.Storage.Components;
 using Content.Shared._EE.Shadowling;
+using Content.Shared.Clothing.Components;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Popups;
 using Content.Shared.Singularity;
 using Microsoft.CodeAnalysis.Operations;
+using Robust.Shared.Prototypes;
 
 
 namespace Content.Server._EE.Shadowling;
@@ -36,27 +39,22 @@ public sealed partial class ShadowlingSystem
     {
         comp.IsHatching = true;
 
-        // Hide Player Entity (idk if there's a better way), and Change Skin Color
-
+        // Shadowlings change skin colour once hatched
         if (TryComp<HumanoidAppearanceComponent>(uid, out var appearance))
         {
             appearance.EyeColor = comp.EyeColor;
-            appearance.SkinColor = Color.Black;
+            appearance.SkinColor = comp.SkinColor;
             Dirty(uid, appearance);
         }
 
-        // No Movement
-        _movementSpeed.ChangeBaseSpeed(uid, 0, 0, 0);
-
-        // Spawn Egg Entity
-
-        // Add Hatching Component and Start Timer
-
-        // Reset Values
-        // _humanoid.SetScale(uid, Vector2.One);
-        // comp.IsHatching = false;
-        // _movementSpeed.RefreshMovementSpeedModifiers(uid);
-        // _stealth.SetVisibility(uid, 1);
+        var egg = SpawnAtPosition(comp.Egg, Transform(uid).Coordinates);
+        if (TryComp<HatchingEggComponent>(egg, out var eggComp) &&
+            TryComp<EntityStorageComponent>(egg, out var eggStorage))
+        {
+            eggComp.ShadowlingInside = uid;
+            // Put shadowling inside
+            _entityStorage.Insert(uid, egg, eggStorage);
+        }
 
         // Shadowling shouldn't be able to take damage during this process.
     }
