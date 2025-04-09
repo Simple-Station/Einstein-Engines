@@ -1,6 +1,7 @@
 using Content.Shared.EntityEffects;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
+using Content.Shared.Abilities.Psionics;
 
 namespace Content.Server.Chemistry.ReagentEffects
 {
