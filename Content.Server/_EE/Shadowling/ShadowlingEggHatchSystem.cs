@@ -26,8 +26,6 @@ public sealed class ShadowlingEggHatchSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        var msgIndex = 0;
-
         if (!_timing.IsFirstTimePredicted)
             return;
 
