@@ -14662,3 +14662,18 @@ Entries:
   id: 7118
   time: '2025-04-09T07:39:11.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2093
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: >-
+        Adds Combat Magboots, offering all the benefits of combat boots and
+        magboots at the cost of a speed penalty
+    - type: Add
+      message: >-
+        Added engineering magboots, which are magboots with decreased speed
+        penalties
+    - type: Tweak
+      message: Epi magboots have been merged with normal magboots
+  id: 7119
+  time: '2025-04-09T07:40:03.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2197
