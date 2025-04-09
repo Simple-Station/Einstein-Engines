@@ -14707,3 +14707,26 @@ Entries:
   id: 7122
   time: '2025-04-09T09:26:33.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2162
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: 'Golemancers can now take utility belts '
+    - type: Add
+      message: Paramedics can now take a portafib, and get advanced meds in belt
+    - type: Add
+      message: >-
+        Sec can now take a sec gasmask for 4 points, besides Ward/HoS/BSO who
+        get them for free
+    - type: Tweak
+      message: >-
+        All military gloves have been given slight resistances, and as such have
+        been removed from engis loadouts
+    - type: Tweak
+      message: Scalpels can now be put into boots with knife slots
+    - type: Tweak
+      message: >-
+        Interdyne Herbals are now exclusive to interdyne employees (until we
+        have a discount system)
+  id: 7123
+  time: '2025-04-09T09:28:31.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2105
