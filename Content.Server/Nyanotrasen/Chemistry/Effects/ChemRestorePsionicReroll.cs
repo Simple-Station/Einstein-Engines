@@ -8,6 +8,8 @@ namespace Content.Server.Chemistry.ReagentEffects;
 [UsedImplicitly]
 public sealed partial class ChemRestorePsionicReroll : EntityEffect
 {
+    [DataField]
+    public bool BypassRoller;
 
     [UsedImplicitly]
     public sealed partial class ChemRestorePsionicReroll : EntityEffect
