@@ -26,6 +26,8 @@ public sealed class ShadowlingEggHatchSystem : EntitySystem
     {
         base.Update(frameTime);
 
+        var msgIndex = 0;
+
         if (!_timing.IsFirstTimePredicted)
             return;
 
@@ -33,6 +35,28 @@ public sealed class ShadowlingEggHatchSystem : EntitySystem
         while (query.MoveNext(out var uid, out var comp))
         {
             var sUid = comp.ShadowlingInside;
+
+            # region Message Popups
+
+            if (comp.CooldownTimer <= 12 && !comp.HasFirstMessageAppeared)
+            {
+                _popupSystem.PopupEntity(Loc.GetString("sling-hatch-first"), uid);
+                comp.HasFirstMessageAppeared = true;
+            }
+
+            if (comp.CooldownTimer <= 7 && !comp.HasSecondMessageAppeared)
+            {
+                _popupSystem.PopupEntity(Loc.GetString("sling-hatch-second"), uid);
+                comp.HasSecondMessageAppeared = true;
+            }
+
+            if (comp.CooldownTimer <= 3 && !comp.HasThirdMessageAppeared)
+            {
+                _popupSystem.PopupEntity(Loc.GetString("sling-hatch-third"), uid);
+                comp.HasThirdMessageAppeared = true;
+            }
+
+            #endregion
 
             comp.CooldownTimer -= frameTime;
             if (comp.CooldownTimer <= 0)
