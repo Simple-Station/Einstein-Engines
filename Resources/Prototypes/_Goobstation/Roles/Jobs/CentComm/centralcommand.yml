@@ -103,7 +103,7 @@
     back: ClothingBackpackChameleonFilledUndercover
     outerClothing: ClothingOuterArmourInvisibleChameleon
     neck: ClothingNeckChameleon
-    id: ChameleonPDA
+    id: AgentIDCard
     ears: ClothingHeadsetChameleon
     pocket1: WeaponPistolCentcommAgent
     pocket2: AmnestizineHypospray # Really LEAN into that neutral evil nanotrasen scp shit.

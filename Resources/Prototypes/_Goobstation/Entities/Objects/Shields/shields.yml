@@ -1,11 +1,7 @@
 
 - type: entity
   name: greatshield
-<<<<<<<< HEAD:Resources/Prototypes/_Goobstation/Shields/shields.yml
   parent: [BaseItem, ClothingSlotBase]
-========
-  parent: [BaseItem, ClothingSlotBase, BaseCentcommContraband]
->>>>>>>> bd8f286177e (CentComm Role Revamp (#1619)):Resources/Prototypes/_Goobstation/Entities/Objects/Shields/shields.yml
   id: BlueShieldShield
   description: The iconic namesake of these soldiers, the Blueshield. Known to take shots meant for high-ranking officials.
   components:
@@ -88,7 +84,6 @@
     - type: StaticPrice
       price: 350
     - type: Battery
-<<<<<<<< HEAD:Resources/Prototypes/_Goobstation/Shields/shields.yml
       maxCharge: 180
       startingCharge: 180
     - type: RechargeableBlocking
@@ -97,14 +92,6 @@
     - type: BatterySelfRecharger
       autoRechargeRate: 10
       autoRecharge: true
-========
-      maxCharge: 100
-      startingCharge: 100
-    - type: BatterySelfRecharger
-      autoRecharge: true
-      autoRechargeRate: 7
-    - type: RechargeableBlocking
->>>>>>>> bd8f286177e (CentComm Role Revamp (#1619)):Resources/Prototypes/_Goobstation/Entities/Objects/Shields/shields.yml
     - type: ItemSlots
       slots:
         item:
@@ -116,10 +103,8 @@
           whitelist:
             tags:
             - Stunbaton
-<<<<<<<< HEAD:Resources/Prototypes/_Goobstation/Shields/shields.yml
       smartEquipSelfIfEmpty: true
     - type: EmpImmune # The battery aspect is, as far as I know, used as an easily healable way to monitor the shields health, but if energy shields do not get emped, these should not either.
-========
 
 
 - type: entity
@@ -137,4 +122,3 @@
     autoRechargeRate: 100
   - type: Item
     size: Normal
->>>>>>>> bd8f286177e (CentComm Role Revamp (#1619)):Resources/Prototypes/_Goobstation/Entities/Objects/Shields/shields.yml

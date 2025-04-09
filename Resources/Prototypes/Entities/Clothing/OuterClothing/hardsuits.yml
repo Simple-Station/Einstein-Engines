@@ -1074,8 +1074,8 @@
     modifier: 0.1
   - type: ClothingModifyStunTime # Goobstation
     modifier: 0.1
-  - type: ModifyStandingUpTime # Goobstation
-    multiplier: 0.1
+#  - type: ModifyStandingUpTime # Goobstation
+#    multiplier: 0.1
   - type: Armor
     modifiers:
       coefficients:
@@ -1091,8 +1091,6 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitDeathsquad
-  - type: StaminaDamageResistance
-    coefficient: 0.1 # 90%
 
 #CBURN Hardsuit
 - type: entity

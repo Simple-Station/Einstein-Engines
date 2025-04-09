@@ -85,8 +85,8 @@
     radius: 2
     color: blue
     energy: 1
-  - type: ChangeTemperatureOnCollide
-    heat: -35000
+#  - type: ChangeTemperatureOnCollide
+#    heat: -35000
   - type: Sprite
     sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
     layers:
@@ -108,5 +108,5 @@
     radius: 2
     color: red
     energy: 1
-  - type: ChangeTemperatureOnCollide # This will probably be tweaked.
-    heat: 35000
+#  - type: ChangeTemperatureOnCollide # This will probably be tweaked.
+#    heat: 35000

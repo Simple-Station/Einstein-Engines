@@ -46,8 +46,9 @@
   parent: EventHumanoidMindShielded
   randomizeName: false
   components:
+  - type: MindShield
   - type: GrantImplant
-    implants: [ FreedomImplant, BluespaceLifelineImplant, RadioImplantCentcomm ]
+    implants: [ FreedomImplant, BluespaceLifelineImplant ]
   - type: GhostRole
     name: ghost-role-information-navy-officer-name
     description: ghost-role-information-navy-officer-description
