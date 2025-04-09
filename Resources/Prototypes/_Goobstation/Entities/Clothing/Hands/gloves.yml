@@ -1,0 +1,57 @@
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsGlovesHeavyGoldenTrim
+  name: heavy gold-trimmed gloves
+  description: A pair of gold-trimmed gloves made for Central Command staff. These ones are insulated.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Hands/Gloves/goldtrim.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Hands/Gloves/goldtrim.rsi
+  - type: Insulated
+  - type: Fiber
+    fiberMaterial: fibers-classified
+    fiberColor: fibers-white
+
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsGlovesGoldenTrim
+  name: gold-trimmed gloves
+  description: A pair of gold-trimmed gloves made for Central Command staff. Not insulated.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Hands/Gloves/goldtrim.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Hands/Gloves/goldtrim.rsi
+  - type: Fiber
+    fiberMaterial: fibers-classified
+    fiberColor: fibers-white
+
+- type: entity
+  parent: [ClothingHandsGlovesCombat]
+  id: ClothingHandsGlovesDeathsquad
+  suffix: DO NOT MAP # Just don't...
+  name: deathsquad power claws
+  description: A pair of highly-advanced gauntlets capable of ripping open doors. Its retractable claws are laced with a potent neurotoxin.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Hands/Gloves/deathsquad.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Hands/Gloves/deathsquad.rsi
+  - type: Fiber
+    fiberMaterial: fibers-classified
+    fiberColor: fibers-pitch-black
+  - type: ClothingGrantComponent
+    component:
+    - type: Prying
+      pryPowered: true
+      force: true
+      speedModifier: 4.5
+  - type: MeleeWeapon
+    attackRate: 2
+    autoAttack: true
+    damage:
+      types:
+        Slash: 25
+        Structural: 60
+    mustBeEquippedToUse: true

@@ -18,3 +18,18 @@
     state: icon_alt
   - type: Clothing
     sprite: DeltaV/Clothing/Ears/Headsets/justice.rsi
+
+- type: entity
+  parent: [ClothingHeadsetAlt]
+  id: ClothingHeadsetDeathsquad
+  name: deathsquad over-ear headset
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyCentCom
+      - EncryptionKeyStationMaster
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Ears/Headsets/deathsquad.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Ears/Headsets/deathsquad.rsi

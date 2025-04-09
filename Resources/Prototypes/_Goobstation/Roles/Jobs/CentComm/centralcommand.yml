@@ -23,7 +23,7 @@
   id: NavyOfficerGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitNavyGold
-    shoes: ClothingShoesBootsJackFilled
+    shoes: ClothingShoesBootsCombatFilled
     head: ClothingHeadHatBeretEliteNavyOfficer
     eyes: ClothingEyesGlassesCentComm
     gloves: ClothingHandsGlovesHeavyGoldenTrim
@@ -48,9 +48,6 @@
   icon: "JobIconNanotrasen"
   supervisors: job-supervisors-null
   canBeAntag: false
-  requirements:
-    - !type:AgeRequirement
-      requiredAge: 21
   accessGroups:
     - AllAccess
   access:
@@ -62,7 +59,7 @@
   id: NavyCaptainGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitNavyGold
-    shoes: ClothingShoesBootsJackFilled
+    shoes: ClothingShoesBootsCombatFilled
     head: ClothingHeadHatBeretNavyCaptain
     eyes: ClothingEyesGlassesDeathsquad
     gloves: ClothingHandsGlovesHeavyGoldenTrim
@@ -87,9 +84,6 @@
   icon: "JobIconNanotrasen"
   supervisors: job-supervisors-commander
   canBeAntag: false
-  requirements:
-    - !type:AgeRequirement
-      requiredAge: 21
   accessGroups:
     - AllAccess
   access:
@@ -127,9 +121,6 @@
   icon: "JobIconNanotrasen"
   supervisors: job-supervisors-commander
   canBeAntag: false
-  requirements:
-    - !type:AgeRequirement
-      requiredAge: 21
   accessGroups:
     - AllAccess
   access:
@@ -141,7 +132,7 @@
   id: SpecialOperationsOfficerGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitSpecOps
-    shoes: ClothingShoesBootsJackFilled
+    shoes: ClothingShoesBootsCombatFilled
     head: ClothingHeadHatBeretSecurity
     eyes: ClothingEyesGlassesDeathsquad
     gloves: ClothingHandsGlovesCombat
@@ -168,9 +159,6 @@
   icon: "JobIconNanotrasen"
   supervisors: job-supervisors-commander
   canBeAntag: false
-  requirements:
-  - !type:AgeRequirement
-    requiredAge: 21
   accessGroups:
   - AllAccess
   access:
@@ -206,9 +194,6 @@
   icon: "JobIconLambda"
   supervisors: job-supervisors-null
   canBeAntag: false
-  requirements:
-  - !type:AgeRequirement
-    requiredAge: 21
   accessGroups:
   - AllAccess
   access:

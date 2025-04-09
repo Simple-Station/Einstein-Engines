@@ -2354,35 +2354,6 @@ entities:
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-- proto: BlueShieldShieldEvil
-  entities:
-  - uid: 284
-    components:
-    - type: Transform
-      parent: 280
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 285
-    components:
-    - type: Transform
-      parent: 280
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 286
-    components:
-    - type: Transform
-      parent: 280
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: BoneGel
   entities:
   - uid: 213
@@ -6543,13 +6514,6 @@ entities:
       parent: 1
     - type: Fixtures
       fixtures: {}
-- proto: FloraTree
-  entities:
-  - uid: 718
-    components:
-    - type: Transform
-      pos: 6.4922495,5.9792376
-      parent: 1
 - proto: FoodBoxDonkpocketCarp
   entities:
   - uid: 72
@@ -8499,9 +8463,6 @@ entities:
           - 283
           - 282
           - 281
-          - 284
-          - 285
-          - 286
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True
@@ -10177,13 +10138,6 @@ entities:
     - type: Transform
       pos: 9.5,12.5
       parent: 1
-- proto: PosterLegitGoobNTRAdvert
-  entities:
-  - uid: 1226
-    components:
-    - type: Transform
-      pos: 8.5,2.5
-      parent: 1
 - proto: PosterLegitHereForYourSafety
   entities:
   - uid: 910
@@ -11288,13 +11242,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 4.5,-1.5
-      parent: 1
-- proto: SignDirectionalAtmos
-  entities:
-  - uid: 973
-    components:
-    - type: Transform
-      pos: 7.543195,2.3987424
       parent: 1
 - proto: SignDirectionalBridge
   entities:
