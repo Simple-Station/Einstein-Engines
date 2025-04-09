@@ -605,22 +605,12 @@ trait-description-MothFlight =
 trait-name-Featherweight = Featherweight
 trait-description-Featherweight =
     Your body is unusually lightweight for your species.
-    This trait reduces the density of your body by 50%.
-
-trait-name-Bulky = Bulky
-trait-description-Bulky =
-    Your body is unusually heavy for your species.
-    This trait increases the density of your body by 55.
-
-trait-name-Weakling = Weakling
-trait-description-Weakling =
-    Due to genetics, injury, or inactivity, your body is weaker than most.
-    This trait doubles the movement speed penalty when dragging something.
+    This trait reduces the density of your body by 50%, making dragging / picking things up harder.
 
 trait-name-Bodybuilder = Bodybuilder
 trait-description-Bodybuilder =
     Through extensive training or body modification, you have achieved the pinnacle of physique.
-    This trait halves the movement speed penalty when dragging something.
+    This trait increases the density of your body by 55, making dragging / picking things up easier.
 
 trait-name-RestrictedGear = Restricted Gear
 trait-description-RestrictedGear =

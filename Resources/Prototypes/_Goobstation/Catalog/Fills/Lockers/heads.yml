@@ -24,9 +24,9 @@
     contents:
     - id: Flash
     - id: PinpointerNuclear
-    - id: BlueshieldAmmunitionBoxFilled
     - id: ClothingOuterHardsuitBlueshield
     - id: ClothingBlueshieldArmoredCoat
+    - id: ClothingShoesBootsMagSec
 
 - type: entity
   id: LockerMagistrateFilled

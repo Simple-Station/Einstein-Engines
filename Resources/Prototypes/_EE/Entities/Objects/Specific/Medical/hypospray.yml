@@ -1,0 +1,31 @@
+- type: entity
+  name: analgesic medipen
+  parent: ChemicalMedipen
+  id: PainMedipen
+  description: A rapid dose of morphine and epinephrine to prepare patients for field surgery. One medipen gives 75 seconds of pain relief.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Medical/medipen.rsi
+    layers:
+    - state: painpen
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: false
+    emptySpriteName: painpen_empty
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 20
+    onlyAffectsMobs: false
+    injectOnly: true
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 20
+        reagents:
+        - ReagentId: Morphine
+          Quantity: 15
+        - ReagentId: Epinephrine
+          Quantity: 5
+  - type: Tag
+    tags: []
