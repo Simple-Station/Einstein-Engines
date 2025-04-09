@@ -732,8 +732,7 @@ public abstract partial class SharedSurgerySystem
             }
         }
 
-        if (TryComp(body, out TransformComponent? xform))
-            _rotateToFace.TryFaceCoordinates(user, _transform.GetMapCoordinates(body, xform).Position);
+        _rotateToFace.TryFaceCoordinates(user, _transform.GetMapCoordinates(body, Transform(body)).Position);
 
         var ev = new SurgeryDoAfterEvent(surgeryId, stepId);
         var duration = GetSurgeryDuration(step, user, body, speed);

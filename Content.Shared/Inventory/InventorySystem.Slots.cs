@@ -328,9 +328,9 @@ public partial class InventorySystem : EntitySystem
             if (!TryGetSlotContainer(uid, slotName, out var container, out _, inventory))
                 break;
 
-            if (container.ContainedEntity is { } entityUid && TryComp(entityUid, out TransformComponent? transform) && _gameTiming.IsFirstTimePredicted)
+            if (container.ContainedEntity is { } entityUid && _gameTiming.IsFirstTimePredicted)
             {
-                _transform.AttachToGridOrMap(entityUid, transform);
+                _transform.AttachToGridOrMap(entityUid, Transform(entityUid));
                 _randomHelper.RandomOffset(entityUid, 0.5f);
             }
 

@@ -350,9 +350,7 @@ public sealed class ArrivalsSystem : EntitySystem
             return;
 
         TryGetArrivals(out var arrivals);
-
-        if (!TryComp(arrivals, out TransformComponent? arrivalsXform))
-            return;
+        var arrivalsXform = Transform(arrivals);
 
         var mapId = arrivalsXform.MapID;
 
@@ -466,43 +464,43 @@ public sealed class ArrivalsSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        var query = EntityQueryEnumerator<ArrivalsShuttleComponent, ShuttleComponent, TransformComponent>();
+        var query = EntityQueryEnumerator<ArrivalsShuttleComponent>();
         var curTime = _timing.CurTime;
         TryGetArrivals(out var arrivals);
+        var arrivalsXform = Transform(arrivals);
 
-        if (TryComp(arrivals, out TransformComponent? arrivalsXform))
+        while (query.MoveNext(out var uid, out var comp))
         {
-            while (query.MoveNext(out var uid, out var comp, out var shuttle, out var xform))
+            if (!TryComp(uid, out ShuttleComponent? shuttle)
+                || comp.NextTransfer > curTime || !TryComp(comp.Station, out StationDataComponent? data))
+                continue;
+
+            var xform = Transform(uid);
+            var tripTime = _shuttles.DefaultTravelTime + _shuttles.DefaultStartupTime;
+
+            // Go back to arrivals source
+            if (xform.MapUid != arrivalsXform.MapUid)
             {
-                if (comp.NextTransfer > curTime || !TryComp<StationDataComponent>(comp.Station, out var data))
-                    continue;
+                if (arrivals.IsValid())
+                    _shuttles.FTLToDock(uid, shuttle, arrivals);
 
-                var tripTime = _shuttles.DefaultTravelTime + _shuttles.DefaultStartupTime;
-
-                // Go back to arrivals source
-                if (xform.MapUid != arrivalsXform.MapUid)
-                {
-                    if (arrivals.IsValid())
-                        _shuttles.FTLToDock(uid, shuttle, arrivals);
-
-                    comp.NextArrivalsTime = _timing.CurTime + TimeSpan.FromSeconds(tripTime);
-                }
-                // Go to station
-                else
-                {
-                    var targetGrid = _station.GetLargestGrid(data);
-
-                    if (targetGrid != null)
-                        _shuttles.FTLToDock(uid, shuttle, targetGrid.Value);
-
-                    // The ArrivalsCooldown includes the trip there, so we only need to add the time taken for
-                    // the trip back.
-                    comp.NextArrivalsTime = _timing.CurTime + TimeSpan.FromSeconds(
-                        _cfgManager.GetCVar(CCVars.ArrivalsCooldown) + tripTime);
-                }
-
-                comp.NextTransfer += TimeSpan.FromSeconds(_cfgManager.GetCVar(CCVars.ArrivalsCooldown));
+                comp.NextArrivalsTime = _timing.CurTime + TimeSpan.FromSeconds(tripTime);
             }
+            // Go to station
+            else
+            {
+                var targetGrid = _station.GetLargestGrid(data);
+
+                if (targetGrid != null)
+                    _shuttles.FTLToDock(uid, shuttle, targetGrid.Value);
+
+                // The ArrivalsCooldown includes the trip there, so we only need to add the time taken for
+                // the trip back.
+                comp.NextArrivalsTime = _timing.CurTime + TimeSpan.FromSeconds(
+                    _cfgManager.GetCVar(CCVars.ArrivalsCooldown) + tripTime);
+            }
+
+            comp.NextTransfer += TimeSpan.FromSeconds(_cfgManager.GetCVar(CCVars.ArrivalsCooldown));
         }
     }
 

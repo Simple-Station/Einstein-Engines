@@ -40,14 +40,13 @@ public sealed class IdCardSystem : SharedIdCardSystem
             // if really unlucky, burn card
             if (randomPick <= 0.15f)
             {
-                TryComp(uid, out TransformComponent? transformComponent);
-                if (transformComponent != null)
-                {
-                    _popupSystem.PopupCoordinates(Loc.GetString("id-card-component-microwave-burnt", ("id", uid)),
-                     transformComponent.Coordinates, PopupType.Medium);
-                    EntityManager.SpawnEntity("FoodBadRecipe",
-                        transformComponent.Coordinates);
-                }
+                var transformComponent = Transform(uid);
+
+                _popupSystem.PopupCoordinates(Loc.GetString("id-card-component-microwave-burnt", ("id", uid)),
+                    transformComponent.Coordinates, PopupType.Medium);
+                EntityManager.SpawnEntity("FoodBadRecipe",
+                    transformComponent.Coordinates);
+
                 _adminLogger.Add(LogType.Action, LogImpact.Medium,
                     $"{ToPrettyString(args.Microwave)} burnt {ToPrettyString(uid):entity}");
                 EntityManager.QueueDeleteEntity(uid);

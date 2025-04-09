@@ -11,6 +11,7 @@ namespace Content.Server.Explosion.EntitySystems;
 public sealed partial class ExplosionSystem : EntitySystem
 {
     [Dependency] private readonly DestructibleSystem _destructibleSystem = default!;
+    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
 
     private readonly Dictionary<string, int> _explosionTypes = new();
 
@@ -68,7 +69,7 @@ public sealed partial class ExplosionSystem : EntitySystem
         query ??= EntityManager.GetEntityQuery<AirtightComponent>();
         var damageQuery = EntityManager.GetEntityQuery<DamageableComponent>();
         var destructibleQuery = EntityManager.GetEntityQuery<DestructibleComponent>();
-        var anchoredEnumerator = grid.GetAnchoredEntitiesEnumerator(tile);
+        var anchoredEnumerator = _mapSystem.GetAnchoredEntitiesEnumerator(gridId, grid, tile);
 
         while (anchoredEnumerator.MoveNext(out var uid))
         {
@@ -98,13 +99,11 @@ public sealed partial class ExplosionSystem : EntitySystem
         if (!airtight.AirBlocked)
             return;
 
-        if (!EntityManager.TryGetComponent(uid, out TransformComponent? transform) || !transform.Anchored)
+        var transform = Transform(uid);
+        if (!transform.Anchored || !TryComp(transform.GridUid, out MapGridComponent? grid))
             return;
 
-        if (!TryComp<MapGridComponent>(transform.GridUid, out var grid))
-            return;
-
-        UpdateAirtightMap(transform.GridUid.Value, grid, grid.CoordinatesToTile(transform.Coordinates));
+        UpdateAirtightMap(transform.GridUid.Value, grid, _mapSystem.CoordinatesToTile(uid, grid, transform.Coordinates));
     }
 
     /// <summary>

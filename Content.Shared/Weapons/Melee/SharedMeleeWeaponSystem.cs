@@ -291,17 +291,13 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
 
     public bool AttemptLightAttack(EntityUid user, EntityUid weaponUid, MeleeWeaponComponent weapon, EntityUid target)
     {
-        if (!TryComp(target, out TransformComponent? targetXform))
-            return false;
-
+        var targetXform = Transform(target);
         return AttemptAttack(user, weaponUid, weapon, new LightAttackEvent(GetNetEntity(target), GetNetEntity(weaponUid), GetNetCoordinates(targetXform.Coordinates)), null);
     }
 
     public bool AttemptDisarmAttack(EntityUid user, EntityUid weaponUid, MeleeWeaponComponent weapon, EntityUid target)
     {
-        if (!TryComp(target, out TransformComponent? targetXform))
-            return false;
-
+        var targetXform = Transform(target);
         return AttemptAttack(user, weaponUid, weapon, new DisarmAttackEvent(GetNetEntity(target), GetNetCoordinates(targetXform.Coordinates)), null);
     }
 
@@ -430,12 +426,10 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
 
     protected abstract bool InRange(EntityUid user, EntityUid target, float range, ICommonSession? session);
 
-    protected bool CanDoLightAttack(EntityUid user, [NotNullWhen(true)] EntityUid? target, MeleeWeaponComponent component, [NotNullWhen(true)] out TransformComponent? targetXform, ICommonSession? session = null)
+    protected bool CanDoLightAttack(EntityUid user, [NotNullWhen(true)] EntityUid? target, MeleeWeaponComponent component, ICommonSession? session = null)
     {
-        targetXform = null;
         if (target is null || Deleted(target))
             return false;
-        targetXform = Transform(target.Value);
         return HasComp<DamageableComponent>(target)
             && InRange(user, target.Value, component.Range, session);
     }
@@ -447,7 +441,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         var resistanceBypass = GetResistanceBypass(meleeUid, user, component);
 
         // For consistency with wide attacks stuff needs damageable.
-        if (!CanDoLightAttack(user, target, component, out var targetXform, session))
+        if (!CanDoLightAttack(user, target, component, session))
         {
             // Leave IsHit set to true, because the only time it's set to false
             // is when a melee weapon is examined. Misses are inferred from an
@@ -470,6 +464,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
             _meleeSound.PlaySwingSound(user, meleeUid, component);
             return;
         }
+        var targetXform = Transform(target.Value);
 
         // Sawmill.Debug($"Melee damage is {damage.Total} out of {component.Damage.Total}");
 
@@ -538,10 +533,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
 
     private bool DoHeavyAttack(EntityUid user, HeavyAttackEvent ev, EntityUid meleeUid, MeleeWeaponComponent component, ICommonSession? session)
     {
-        // TODO: This is copy-paste as fuck with DoPreciseAttack
-        if (!TryComp(user, out TransformComponent? userXform))
-            return false;
-
+        var userXform = Transform(user);
         var targetMap = TransformSystem.ToMapCoordinates(GetCoordinates(ev.Coordinates));
 
         if (targetMap.MapId != userXform.MapID)
@@ -800,10 +792,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
 
     private void DoLungeAnimation(EntityUid user, EntityUid weapon, Angle angle, MapCoordinates coordinates, float length, string? animation)
     {
-        // TODO: Assert that offset eyes are still okay.
-        if (!TryComp(user, out TransformComponent? userXform))
-            return;
-
+        var userXform = Transform(user);
         var invMatrix = TransformSystem.GetInvWorldMatrix(userXform);
         var localPos = Vector2.Transform(coordinates.Position, invMatrix);
 

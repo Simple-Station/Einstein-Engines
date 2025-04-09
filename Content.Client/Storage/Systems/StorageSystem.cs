@@ -141,7 +141,7 @@ public sealed class StorageSystem : SharedStorageSystem
     /// <param name="msg"></param>
     public void HandleAnimatingInsertingEntities(AnimateInsertingEntitiesEvent msg)
     {
-        TryComp(GetEntity(msg.Storage), out TransformComponent? transformComp);
+        var transformComp = Transform(GetEntity(msg.Storage));
 
         for (var i = 0; msg.StoredEntities.Count > i; i++)
         {
