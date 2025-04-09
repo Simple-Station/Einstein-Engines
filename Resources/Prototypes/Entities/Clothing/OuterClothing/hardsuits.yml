@@ -1094,20 +1094,23 @@
 
 #CBURN Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitBaseMedium
+  parent: [ ClothingOuterHardsuitBase ]
   id: ClothingOuterHardsuitCBURN
   name: CBURN exosuit
   description: A lightweight yet strong exosuit used for special cleanup operations.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/cburn.rsi
+    state: icon
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/cburn.rsi
+    state: equipped-OUTERCLOTHING
   - type: PressureProtection
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
   - type: TemperatureProtection
-    coefficient: 0.001
+    heatingCoefficient: 0.001
+    coolingCoefficient: 0.001
   - type: ExplosionResistance
     damageCoefficient: 0.7
   - type: Armor
@@ -1125,8 +1128,13 @@
     walkModifier: 1.0
     sprintModifier: 1.0
   - type: HeldSpeedModifier
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHelmetCBURN
+  - type: ToggleableClothing # Goobstation - Modsuits change
+    clothingPrototypes:
+      head: ClothingHeadHelmetCBURN
+#  - type: ModifyDelayedKnockdown # Goobstation
+#    delayDelta: 2
+#    knockdownTimeDelta: -2
+
 
 #MISC. HARDSUITS
 #Clown Hardsuit

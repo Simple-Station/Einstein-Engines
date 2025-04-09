@@ -369,9 +369,6 @@
           Quantity: 10
         - ReagentId: Ultravasculine
           Quantity: 5
-  - type: Tag
-    tags:
-    - EmergencyMedipen
 
 - type: entity
   name: advanced biohazard medipen
@@ -398,9 +395,6 @@
           Quantity: 5
         - ReagentId: Diphenhydramine
           Quantity: 15
-  - type: Tag
-    tags:
-    - EmergencyMedipen
 
 # Actual hyposprays
 
