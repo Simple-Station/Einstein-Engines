@@ -42,7 +42,7 @@
   parent: ClothingModsuitHelmetStandard
   id: ClothingModsuitHelmetPraetorian
   name: Praetorian modsuit helmet
-  description: A state-of-the-art helmet designed by NanoTrasen for the Praetorian modsuit. 
+  description: A state-of-the-art helmet designed by NanoTrasen for the Praetorian modsuit.
   categories: [HideSpawnMenu]
   components:
     - type: Sprite
@@ -158,6 +158,6 @@
   components:
     - type: StorageFill
       contents:
-          - id: OxygenTankFilled
-          - id: ClothingModsuitPraetorian
-          - id: ClothingMaskBreath
+        - id: OxygenTankFilled
+        - id: ClothingModsuitPraetorian
+        - id: ClothingMaskBreath
