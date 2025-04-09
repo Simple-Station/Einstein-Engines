@@ -14,10 +14,12 @@ public sealed partial class ChemRestorePsionicReroll : EntityEffect
     protected override string? ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
         => Loc.GetString("reagent-effect-guidebook-chem-restorereroll-psionic");
 
-        public override void Effect(EntityEffectBaseArgs args)
-        {
-            if (args is not EntityEffectReagentArgs _)
-                return;
+    public override void Effect(EntityEffectBaseArgs args)
+    {
+        if (args is not EntityEffectReagentArgs _
+            || !args.EntityManager.TryGetComponent(args.TargetEntity, out PsionicComponent? psionicComp)
+            || !psionicComp.Roller && !BypassRoller)
+            return;
 
             var psySys = args.EntityManager.EntitySysManager.GetEntitySystem<PsionicsSystem>();
             psySys.RestorePsionicReroll(args.TargetEntity);
