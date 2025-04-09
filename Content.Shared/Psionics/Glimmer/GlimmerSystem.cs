@@ -118,10 +118,8 @@ public sealed class GlimmerSystem : EntitySystem
         if (!_enabled || delta == 0)
             return;
 
-        var x = GlimmerInput;
-
         GlimmerInput += delta;
-        GlimmerOutput = 2000 / (1 + Math.Pow(Math.E, -0.0022 * x)) - 1000;
+        GlimmerOutput = 2000 / (1 + Math.Pow(Math.E, -0.0022 * GlimmerInput)) - 1000;
     }
 
     /// <summary>
@@ -134,10 +132,8 @@ public sealed class GlimmerSystem : EntitySystem
         if (!_enabled || delta == 0)
             return;
 
-        var y = GlimmerOutput;
-
         GlimmerOutput += delta;
-        GlimmerInput = Math.Log((y + 1000) / (1000 - y)) / 0.0022;
+        GlimmerInput = Math.Log((GlimmerOutput + 1000) / (1000 - GlimmerOutput)) / 0.0022;
     }
 
     /// <summary>
@@ -150,10 +146,8 @@ public sealed class GlimmerSystem : EntitySystem
         if (!_enabled || set == 0)
             return;
 
-        var y = GlimmerOutput;
-
         GlimmerOutput = Math.Clamp(set, 0, 999.999);
-        GlimmerInput = Math.Log((y + 1000) / (1000 - y)) / 0.0022;
+        GlimmerInput = Math.Log((GlimmerOutput + 1000) / (1000 - GlimmerOutput)) / 0.0022;
     }
 
     /// <summary>
@@ -165,7 +159,6 @@ public sealed class GlimmerSystem : EntitySystem
     {
         if (!_enabled || set < 0)
             return;
-
 
         GlimmerInput = set;
         GlimmerOutput = 2000 / (1 + Math.Pow(Math.E, -.0022 * set)) - 1000;
