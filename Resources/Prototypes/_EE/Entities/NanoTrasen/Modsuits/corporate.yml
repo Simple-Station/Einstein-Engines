@@ -1,4 +1,4 @@
-# The Modsuit Itself, This is just a Deathsquad modsuit, but reskined for CC Officals
+# The Modsuit Itself, This is just a Deathsquad modsuit, but reskined for CC Officials
 - type: entity
   parent: ClothingModsuitStandard
   id: ClothingModsuitCorporate
@@ -32,7 +32,7 @@
   parent: ClothingModsuitGauntletsStandard
   id: ClothingModsuitGauntletsCorporate
   name: Corporate modsuit gauntlets
-  description: A pair of gauntlets made for for the Corporate modsuit.
+  description: A pair of gauntlets made for the Corporate modsuit.
   categories: [HideSpawnMenu]
   components:
     - type: Sprite
@@ -98,7 +98,7 @@
     - type: Armor
       modifiers:
         coefficients:
-          Blunt: 0.1 #Death Squad Modsuit, but reskined for CC Officals
+          Blunt: 0.1 #Death Squad Modsuit, but reskined for CC Officials
           Slash: 0.1
           Piercing: 0.1
           Heat: 0.1

@@ -32,7 +32,7 @@
   parent: ClothingModsuitGauntletsStandard
   id: ClothingModsuitGauntletsResponsory
   name: Responsory modsuit gauntlets
-  description: A pair of gauntlets made for for the Responsory modsuit.
+  description: A pair of gauntlets made for the Responsory modsuit.
   categories: [HideSpawnMenu]
   components:
     - type: Sprite
@@ -68,7 +68,7 @@
     - type: SealableClothingVisuals
       visualLayers:
         head:
-        - state: equipped-HEAD-sealed
+          - state: equipped-HEAD-sealed
     - type: Reflect
       reflectProb: 0.03
       spread: 270
@@ -149,7 +149,7 @@
     - type: SealableClothingVisuals
       visualLayers:
         shoes:
-        - state: equipped-FEET-sealed
+          - state: equipped-FEET-sealed
 
 - type: entity
   id: SuitStorageResponsory

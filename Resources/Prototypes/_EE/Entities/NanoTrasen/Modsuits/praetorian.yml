@@ -32,7 +32,7 @@
   parent: ClothingModsuitGauntletsStandard
   id: ClothingModsuitGauntletsPraetorian
   name: Praetorian modsuit gauntlets
-  description: A pair of gauntlets made for for the Praetorian modsuit.
+  description: A pair of gauntlets made for the Praetorian modsuit.
   categories: [HideSpawnMenu]
   components:
     - type: Sprite
@@ -108,7 +108,7 @@
     - type: SealableClothingVisuals
       visualLayers:
         outerClothing:
-        - state: equipped-OUTERCLOTHING-sealed
+          - state: equipped-OUTERCLOTHING-sealed
     - type: Reflect
       reflectProb: 0.05
       spread: 270
@@ -149,7 +149,7 @@
     - type: SealableClothingVisuals
       visualLayers:
         shoes:
-        - state: equipped-FEET-sealed
+          - state: equipped-FEET-sealed
 
 - type: entity
   id: SuitStoragePraetorian

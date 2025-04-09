@@ -32,7 +32,7 @@
   parent: ClothingModsuitGauntletsStandard
   id: ClothingModsuitGauntletsApocryphal
   name: Apocryphal modsuit gauntlets
-  description: A pair of gauntlets made for for the Apocryphal modsuit.
+  description: A pair of gauntlets made for the Apocryphal modsuit.
   categories: [HideSpawnMenu]
   components:
     - type: Sprite
