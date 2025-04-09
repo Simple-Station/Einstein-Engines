@@ -49,6 +49,14 @@
   - type: SurgeryTarget
   - type: Bloodstream
     bloodReagent: AlienBlood
+  #EE changes
+  - type: LanguageSpeaker
+    currentLanguage: Xeeplian
+  - type: LanguageKnowledge
+    speaks:
+    - Xeeplian
+    - understands:
+    - TauCetiBasic
 
 - type: entity
   parent: BaseSpeciesDummy

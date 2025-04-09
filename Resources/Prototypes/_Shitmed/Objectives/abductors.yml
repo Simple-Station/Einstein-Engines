@@ -467,15 +467,16 @@
       sprite: Objects/Specific/Medical/defib.rsi
       state: icon
 
-- type: entity
-  parent: BaseAbductorVictimObjective
-  id: AbductorVictimHeretic
-  name: THE GATES HAVE OPENED MY MIND IS OPEN MY MIND IS OPEN MY MIND IS OPEN
-  description: You see you see what they cannot you see the open door you seeE you SEeEe you SEe yOU seEee SHOW THEM ALL.
-  components:
-  - type: ForceHereticObjective
-  - type: Objective
-    icon:
-      sprite: _Goobstation/Heretic/mansus_grasp.rsi
-      state: icon
+# no heretics... yet
+# - type: entity
+#  parent: BaseAbductorVictimObjective
+#  id: AbductorVictimHeretic
+#  name: THE GATES HAVE OPENED MY MIND IS OPEN MY MIND IS OPEN MY MIND IS OPEN
+#  description: You see you see what they cannot you see the open door you seeE you SEeEe you SEe yOU seEee SHOW THEM ALL.
+#  components:
+#  - type: ForceHereticObjective
+#  - type: Objective
+#    icon:
+#      sprite: _Goobstation/Heretic/mansus_grasp.rsi
+#      state: icon
 

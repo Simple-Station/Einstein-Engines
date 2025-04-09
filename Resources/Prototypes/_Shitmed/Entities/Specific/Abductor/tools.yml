@@ -185,7 +185,7 @@
 
 - type: entity
   name: high-tech multitool
-  parent: [BaseItem, BaseRestrictedContraband]
+  parent: BaseItem
   id: MultitoolAbductor
   description: A highly advanced hacking tool capable of viewing wire functionality. Can be used as Cryptographic sequencer in its alternate mode.
   components:

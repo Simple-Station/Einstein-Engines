@@ -54,4 +54,5 @@
     AbductorVictimStealWeapons: 1
     AbductorVictimDismantleComputers: 1
     AbductorVictimFinality: 1
-    AbductorVictimHeretic: 0.01
+    # no heretics... yet
+    # AbductorVictimHeretic: 0.01
