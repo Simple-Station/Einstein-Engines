@@ -22,6 +22,8 @@
       id: LoadoutClothingBeltHolster
     - type: loadout
       id: LoadoutClothingBeltJudo
+    - type: loadout
+      id: LoadoutClothingBeltJudoHoS
 
 #- type: characterItemGroup
 #  id: LoadoutSecurityEars
