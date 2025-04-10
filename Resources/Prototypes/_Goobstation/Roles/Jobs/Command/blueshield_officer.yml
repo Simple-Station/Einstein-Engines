@@ -23,9 +23,9 @@
         - Pacifist
         - BrittleBoneDisease
     - !type:CharacterEmployerRequirement
-      inverted: true
       employers:
-      - Unemployed
+      - Cybersun
+      - PMCG
   weight: 20
   startingGear: BlueshieldOfficerGear
   icon: "JobIconBlueshield"

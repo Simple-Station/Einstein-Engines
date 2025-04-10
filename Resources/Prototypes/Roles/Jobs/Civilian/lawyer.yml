@@ -13,9 +13,9 @@
   - Maintenance
   requirements:
     - !type:CharacterEmployerRequirement
-      inverted: true
       employers:
-      - Unemployed
+      - IdrisIncorporated
+      - NanoTrasen
 
 - type: startingGear
   id: LawyerGear

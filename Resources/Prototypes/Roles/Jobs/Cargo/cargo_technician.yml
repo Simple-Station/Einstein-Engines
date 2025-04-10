@@ -14,9 +14,8 @@
   - Orders # DeltaV - Orders, see Resources/Prototypes/DeltaV/Access/cargo.yml
   requirements:
     - !type:CharacterEmployerRequirement
-      inverted: true
       employers:
-      - Unemployed
+      - OrionExpress
 
 - type: startingGear
   id: CargoTechGear

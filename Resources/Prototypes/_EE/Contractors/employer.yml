@@ -66,3 +66,10 @@
   descriptionKey: employer_description_orionexpress
   primaryColour: "#414446"
   secondaryColour: "#7a6347"
+
+- type: employer
+  id: PMCG
+  nameKey: employer_name_pmcg
+  descriptionKey: employer_description_pmcg
+  primaryColour: "#3355ff"
+  secondaryColour: "#c4a56e"
