@@ -39,12 +39,12 @@
         raffle:
           settings: default
         requirements:
-        - !type:OverallPlaytimeRequirement
+        - !type:CharacterOverallPlaytimeRequirement
           time: 18000 #5 hours
-        - !type:DepartmentTimeRequirement
+        - !type:CharacterDepartmentTimeRequirement
           department: Medical
           time: 7200 #2 hours
-        - !type:DepartmentTimeRequirement
+        - !type:CharacterDepartmentTimeRequirement
           department: Security
           time: 7200 #2 hours
       - type: GhostTakeoverAvailable
@@ -120,7 +120,6 @@
         sound: /Audio/_Shitmed/Misc/abductor.ogg
       components:
       - type: Abductor
-      - type: GlorpAccent # GoobStation - Glorpshit
       - type: Telepathy # Ayy lmao
       - type: AbductorScientist
       - type: SurgeryIgnoreClothing
@@ -137,9 +136,9 @@
         raffle:
           settings: default
         requirements:
-        - !type:OverallPlaytimeRequirement
+        - !type:CharacterOverallPlaytimeRequirement
           time: 18000 #5 hours
-        - !type:DepartmentTimeRequirement
+        - !type:CharacterDepartmentTimeRequirement
           department: Medical
           time: 10800 #3 hours
       - type: GhostTakeoverAvailable
@@ -185,9 +184,9 @@
         raffle:
           settings: default
         requirements:
-        - !type:OverallPlaytimeRequirement
+        - !type:CharacterOverallPlaytimeRequirement
           time: 18000 #5 hours
-        - !type:DepartmentTimeRequirement
+        - !type:CharacterDepartmentTimeRequirement
           department: Security
           time: 10800 #3 hours
       - type: GhostTakeoverAvailable
