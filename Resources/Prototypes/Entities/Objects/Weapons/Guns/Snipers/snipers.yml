@@ -69,6 +69,7 @@
     sprite: Objects/Weapons/Guns/Snipers/bolt_gun_wood.rsi
   - type: Gun
     fireRate: 0.75
+    damageModifier: 2.625 # OORAH. You have to manually cycle each shot. So each shot deals 42 damage. For the Red Orchestra enthusiasts.
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
@@ -99,6 +100,13 @@
   - type: EmbedPassiveDamage
   - type: ThrowingAngle
     angle: 225
+  - type: BallisticAmmoProvider
+    capacity: 5
+    autoCycle: false
+    proto: CartridgeLightRifle
+    whitelist:
+      tags:
+      - CartridgeLightRifle
 
 - type: entity
   name: Kardashev-Mosin
