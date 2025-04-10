@@ -370,7 +370,7 @@ reagent-effect-guidebook-chem-reroll-psionic =
     } a chance to get a different psionic power
 
 reagent-effect-guidebook-add-moodlet =
-    modifies mood by {$amount}
+    Modifies mood by {$amount}
     { $timeout ->
         [0] indefinitely
         *[other] for {$timeout} seconds
@@ -412,3 +412,9 @@ reagent-effect-guidebook-stamina-change =
                     *[1] decrease
                  }
     } stamina by {$amount} points
+
+reagent-effect-guidebook-chem-restorereroll-psionic =
+    { $chance ->
+        [1] Restores
+        *[other] restore
+    } one's ability to gain benefit from mind opening reagents

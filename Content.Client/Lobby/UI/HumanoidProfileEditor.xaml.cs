@@ -2061,7 +2061,7 @@ namespace Content.Client.Lobby.UI
                     continue;
 
                 points += preferenceSelector.Trait.Points;
-                _traitCount += 1;
+                _traitCount += preferenceSelector.Trait.Slots;
             }
 
             TraitPointsBar.Value = points;
@@ -2283,8 +2283,9 @@ namespace Content.Client.Lobby.UI
                 {
                     // Make sure they have enough trait points
                     preference = CheckPoints(preference ? selector.Trait.Points : -selector.Trait.Points, preference);
+
                     // Make sure they have enough trait slots
-                    preference = preference ? _traitCount < _cfgManager.GetCVar(CCVars.GameTraitsMax) : preference;
+                    preference = CheckSlots(preference ? selector.Trait.Slots : -selector.Trait.Slots, preference);
 
                     // Update Preferences
                     Profile = Profile?.WithTraitPreference(selector.Trait.ID, preference);
@@ -2298,6 +2299,13 @@ namespace Content.Client.Lobby.UI
             {
                 var temp = TraitPointsBar.Value + points;
                 return preference ? !(temp < 0) : temp < 0;
+            }
+
+            bool CheckSlots(int slots, bool preference)
+            {
+                var temp = _traitCount + slots;
+                var max = _cfgManager.GetCVar(CCVars.GameTraitsMax);
+                return preference ? !(temp > max) : temp > max;
             }
         }
 
