@@ -87,9 +87,9 @@
     name: abductor-agent-ghost-role-name
     description: abductor-agent-ghost-role-desc
     requirements:
-    - !type:OverallPlaytimeRequirement
+    - !type:CharacterOverallTimeRequirement
       time: 18000 #5 hours
-    - !type:DepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Security
       time: 10800 #3 hours
   - type: RandomMetadata
@@ -177,12 +177,12 @@
     raffle:
       settings: default
     requirements:
-    - !type:OverallPlaytimeRequirement
+    - !type:CharacterOverallTimeRequirement
       time: 18000 #5 hours
-    - !type:DepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Medical
       time: 7200 #2 hours
-    - !type:DepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Security
       time: 7200 #2 hours
   - type: Sprite
@@ -217,9 +217,9 @@
     raffle:
       settings: default
     requirements:
-    - !type:OverallPlaytimeRequirement
+    - !type:CharacterOverallTimeRequirement
       time: 18000 #5 hours
-    - !type:DepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Security
       time: 10800 #3 hours
   - type: Sprite
@@ -254,9 +254,9 @@
     raffle:
       settings: default
     requirements:
-    - !type:OverallPlaytimeRequirement
+    - !type:CharacterOverallTimeRequirement
       time: 18000 #5 hours
-    - !type:DepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Medical
       time: 10800 #3 hours
   - type: Sprite

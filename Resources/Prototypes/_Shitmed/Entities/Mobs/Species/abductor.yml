@@ -9,7 +9,7 @@
   components:
   - type: Absorbable # BLOOD FOR THE BLOOD GOD
   - type: Telepathy # Ayy lmao
-  # - type: GlorpAccent # GoobStation - Glorpshit
+    # no glorp accent for you.
   - type: HumanoidAppearance
     species: Abductor
   - type: Icon
