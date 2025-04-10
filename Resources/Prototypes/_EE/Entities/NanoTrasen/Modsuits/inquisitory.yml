@@ -27,6 +27,10 @@
         - 0,0,10,3
     - type: ExplosionResistance #Dont want chain explosions in the modsuits storage
       damageCoefficient: 0.1
+    - type: SealableClothingVisuals
+      visualLayers:
+        back:
+        - state: equipped-BACKPACK-sealed
 
 - type: entity
   parent: ClothingModsuitGauntletsStandard
