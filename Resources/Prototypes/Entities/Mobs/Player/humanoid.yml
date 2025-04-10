@@ -21,15 +21,15 @@
     - type: AntagImmune
 
 # Goobstation start
-- type: randomHumanoidSettings
-  id: EventHuman
-  parent: EventHumanoid
-  speciesWhitelist: Human
+#- type: randomHumanoidSettings
+#  id: EventHuman
+#  parent: EventHumanoid
+#  speciesWhitelist: Human
 
-- type: randomHumanoidSettings
-  id: EventHumanMindShielded
-  parent: EventHumanoidMindShielded
-  speciesWhitelist: Human
+#- type: randomHumanoidSettings
+#  id: EventHumanMindShielded
+#  parent: EventHumanoidMindShielded
+#  speciesWhitelist: Human
 # Goobstation end
 
 ## Death Squad
@@ -264,7 +264,6 @@
       - NamesLastMilitary
     - type: Loadout
       prototypes: [ ERTJanitorGear ]
-      roleLoadout: [ RoleSurvivalExtended ]
 
 - type: entity
   id: RandomHumanoidSpawnerERTJanitorEVA

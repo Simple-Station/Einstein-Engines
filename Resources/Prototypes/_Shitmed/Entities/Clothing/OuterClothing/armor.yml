@@ -9,7 +9,7 @@
 # DON'T FEEL LIKE DOIN THIS RIGHT NOW SORRY!!
 #  - type: ModifyDelayedKnockdown # Goobstation
 #    delayDelta: 2
-    knockdownTimeDelta: -2
+#    knockdownTimeDelta: -2
   - type: ItemSwitch
     state: stealth
     states:
