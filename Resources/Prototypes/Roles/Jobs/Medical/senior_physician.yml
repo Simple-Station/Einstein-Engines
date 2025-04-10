@@ -14,9 +14,9 @@
       department: Medical
       min: 216000 # 60 hrs
     - !type:CharacterEmployerRequirement
-      inverted: true
       employers:
-      - Unemployed
+      - ZengHuPharmaceuticals
+      - Interdyne
   startingGear: SeniorPhysicianGear
   icon: "JobIconSeniorPhysician"
   supervisors: job-supervisors-cmo

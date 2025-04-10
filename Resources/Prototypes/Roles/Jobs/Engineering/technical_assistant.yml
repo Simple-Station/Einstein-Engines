@@ -13,9 +13,10 @@
   - External
   requirements:
     - !type:CharacterEmployerRequirement
-      inverted: true
       employers:
-      - Unemployed
+      - HephaestusIndustries
+      - Cybersun
+      - EinsteinEngines
 
 - type: startingGear
   id: TechnicalAssistantGear

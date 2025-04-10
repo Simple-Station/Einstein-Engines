@@ -15,7 +15,8 @@
         - BrittleBoneDisease
     - !type:CharacterEmployerRequirement
       employers:
-      - NanoTrasen
+      - Cybersun
+      - PMCG
   weight: 10
   startingGear: HoSGear
   icon: "JobIconHeadOfSecurity"

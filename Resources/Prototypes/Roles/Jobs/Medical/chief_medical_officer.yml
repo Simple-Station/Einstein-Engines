@@ -13,7 +13,8 @@
         - ForeignerLight
     - !type:CharacterEmployerRequirement
       employers:
-      - NanoTrasen
+      - ZengHuPharmaceuticals
+      - Interdyne
   weight: 10
   startingGear: CMOGear
   icon: "JobIconChiefMedicalOfficer"

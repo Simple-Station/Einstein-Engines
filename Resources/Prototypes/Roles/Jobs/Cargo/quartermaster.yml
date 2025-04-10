@@ -11,7 +11,8 @@
         - ForeignerLight
     - !type:CharacterEmployerRequirement
       employers:
-      - NanoTrasen
+      - OrionExpress
+      - IdrisIncorporated
   weight: 10
   startingGear: QuartermasterGear
   icon: "JobIconQuarterMaster"
