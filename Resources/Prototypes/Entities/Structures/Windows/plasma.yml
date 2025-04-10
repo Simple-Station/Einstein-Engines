@@ -52,6 +52,8 @@
     price: 60
   - type: RadiationBlocker
     resistance: 4
+  - type: ExplosionResistance
+    damageCoefficient: 0.5
 
 - type: entity
   id: PlasmaWindowDirectional

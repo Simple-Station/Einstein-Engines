@@ -59,9 +59,9 @@ namespace Content.IntegrationTests.Tests
             "Shoukou", // Maintained by Violet
             // "Tortuga", // De-rotated, no current maintainer.
             "Arena", // Maintained by astriloqua.
-            // "Asterisk", // De-rotated, no current maintainer.
+            "Asterisk", // Maintained by mrs.
             "Glacier", // Maintained by Violet
-            // "TheHive", // De-rotated, no current maintainer.
+            "TheHive", // Maintained by dootythefrooty
             // "Hammurabi", // De-rotated, maintained by Ichai.
             "Lighthouse", // Maintained by Violet
             // "Submarine", // De-rotated, no current maintainer.

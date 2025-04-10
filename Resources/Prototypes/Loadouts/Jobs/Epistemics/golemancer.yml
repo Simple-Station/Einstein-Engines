@@ -44,6 +44,19 @@
 
 
 # Belt
+- type: loadout
+  id: LoadoutGolemancerBeltUtility
+  category: JobsEpistemicsGolemancer
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGolemancerBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - Roboticist
+  items:
+    - ClothingBeltUtilityFilled
 
 # Ears
 

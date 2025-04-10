@@ -2,6 +2,8 @@
   id: SignLanguage
   category: TraitsSpeechLanguages
   points: -1
+  slots: 1
+  itemGroupSlots: 0
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsLanguagesBasic
@@ -20,6 +22,8 @@
   id: SolCommon
   category: TraitsSpeechLanguages
   points: 0
+  slots: 1
+  itemGroupSlots: 0
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsLanguagesBasic
@@ -42,6 +46,8 @@
   id: Tradeband
   category: TraitsSpeechLanguages
   points: 0
+  slots: 1
+  itemGroupSlots: 0
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsLanguagesBasic
@@ -60,6 +66,8 @@
   id: Freespeak
   category: TraitsSpeechLanguages
   points: 0
+  slots: 1
+  itemGroupSlots: 0
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsLanguagesBasic
@@ -74,6 +82,8 @@
   id: Elyran
   category: TraitsSpeechLanguages
   points: 0
+  slots: 1
+  itemGroupSlots: 0
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsLanguagesBasic
@@ -92,6 +102,8 @@
   id: ValyrianStandard
   category: TraitsSpeechLanguages
   points: -1
+  slots: 1
+  itemGroupSlots: 0
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsLanguagesBasic
@@ -110,6 +122,8 @@
   id: NovuNederic
   category: TraitsSpeechLanguages
   points: 0
+  slots: 1
+  itemGroupSlots: 0
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsLanguagesBasic
@@ -128,6 +142,8 @@
   id: Azaziba
   category: TraitsSpeechLanguages
   points: -1
+  slots: 1
+  itemGroupSlots: 0
   requirements:
     - !type:CharacterSpeciesRequirement
       species:
