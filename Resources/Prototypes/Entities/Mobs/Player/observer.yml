@@ -33,7 +33,7 @@
   - Incorporeal
   - BaseMob
   id: MobObserver
-  name: observer
+  name: obserx  er
   description: Boo!
   categories: [ HideSpawnMenu ]
   components:
@@ -134,3 +134,39 @@
       state: icon
     iconOn: Interface/Actions/ghostHearingToggled.png
     event: !type:ToggleGhostHearingActionEvent
+
+- type: entity
+  parent:
+  - Incorporeal
+  - BaseMob
+  id: MobTelegnosisObserver
+  name: psionic projection
+  description: Dancing across bridges prismatic hypereality
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Ghosts/ghost_human.rsi
+    color: "#32a89b"
+    layers:
+    - state: animated
+      shader: unshaded
+  - type: ContentEye
+  - type: Eye
+    drawFov: false
+    visMask:
+      - TelegnosticProjection
+      - PsionicInvisibility
+      - Ghost
+      - Normal
+      - Ethereal
+  - type: Input
+    context: "ghost"
+  - type: Examiner
+  - type: TelegnosticProjection
+  - type: MovementSpeedModifier
+    baseSprintSpeed: 8
+    baseWalkSpeed: 5
+  - type: Psionic
+    removable: false
+    roller: false
+  - type: Ghost
