@@ -1,8 +1,8 @@
 - type: entity
-  name: Polka 35
+  name: APMC Polka 35
   parent: BaseWeaponPistol
   id: WeaponPistolPolka35
-  description: A Blackburnian export used for espionage, comes with a attachment point for suppressors. Uses .35 auto ammo.
+  description: A large but quite lightweight pistol, comes with a attachment point for suppressors and a infrared trigger guard for EVA gloves. Uses .35 auto.
   components:
   - type: Sprite
     sprite: _CS4875/Polka.rsi
