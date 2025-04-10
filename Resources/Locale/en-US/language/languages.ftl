@@ -143,4 +143,4 @@ language-Penguin-name = Penguin
 language-Penguin-description = Bwaap!
 
 language-DroneTalk-name = Drone
-language-DroneTalk-description = Incomprehensable to most non-drones!
+language-DroneTalk-description = Incomprehensible to most non-drones!
