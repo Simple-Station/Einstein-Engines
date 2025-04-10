@@ -164,11 +164,6 @@
           - CanPilot
           - FootstepSound
           - DoorBumpOpener
-      - type: AbductorScientist
-      - type: SurgeryIgnoreClothing
-      - type: Sanitized
-      - type: SurgerySpeedModifier
-        speedModifier: 1.5
       mindRoles:
       - MindRoleLoneAbductor
     - spawnerPrototype: AbductorAgentSpawner
