@@ -10,6 +10,7 @@
     - !type:CharacterEmployerRequirement
       employers:
       - OrionExpress
+      - PMCG
   #  - !type:OverallPlaytimeRequirement #DeltaV
   #    time: 36000 #10 hrs
   icon: "JobIconShaftMiner"
