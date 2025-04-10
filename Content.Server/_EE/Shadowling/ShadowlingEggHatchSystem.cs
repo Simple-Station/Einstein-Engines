@@ -15,7 +15,6 @@ namespace Content.Server._EE.Shadowling;
 /// This handles the hatching process
 /// </summary>
 ///
-/// TODO: Add action bar for this event
 public sealed class ShadowlingEggHatchSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
@@ -38,19 +37,19 @@ public sealed class ShadowlingEggHatchSystem : EntitySystem
 
             if (comp.CooldownTimer <= 12 && !comp.HasFirstMessageAppeared)
             {
-                _popupSystem.PopupEntity(Loc.GetString("sling-hatch-first"), uid);
+                _popupSystem.PopupEntity(Loc.GetString("sling-hatch-first"), uid, comp.ShadowlingInside);
                 comp.HasFirstMessageAppeared = true;
             }
 
             if (comp.CooldownTimer <= 7 && !comp.HasSecondMessageAppeared)
             {
-                _popupSystem.PopupEntity(Loc.GetString("sling-hatch-second"), uid);
+                _popupSystem.PopupEntity(Loc.GetString("sling-hatch-second"), uid, comp.ShadowlingInside);
                 comp.HasSecondMessageAppeared = true;
             }
 
             if (comp.CooldownTimer <= 3 && !comp.HasThirdMessageAppeared)
             {
-                _popupSystem.PopupEntity(Loc.GetString("sling-hatch-third"), uid);
+                _popupSystem.PopupEntity(Loc.GetString("sling-hatch-third"), uid, comp.ShadowlingInside);
                 comp.HasThirdMessageAppeared = true;
             }
 

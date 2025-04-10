@@ -17,4 +17,22 @@
   - type: ConfirmableAction
     popup: sling-hatch-engage-popup
 
+# Post-Hatch
+- type: entity
+  id: ActionEnthrall
+  name: Enthrall
+  description: Shatters their will, forging a thrall.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: EntityTargetAction
+    canTargetSelf: false
+    interactOnMiss: false
+    itemIconStyle: NoItem
+    range: 0.5
+    icon:
+      sprite: _EE/Shadowling/shadowling_abilities.rsi
+      state: enthrall
+    event: !type:EnthrallEvent { }
+
+
 

@@ -45,7 +45,7 @@ public sealed class ShadowlingRuleSystem : GameRuleSystem<ShadowlingRuleComponen
         var briefing = Loc.GetString("shadowling-role-greeting");
         var briefingShort = Loc.GetString("shadowling-role-greeting-short", ("name", metaData.EntityName ?? "Unknown"));
 
-        _antag.SendBriefing(target, briefing, Color.Yellow, BriefingSound);
+        _antag.SendBriefing(target, briefing, Color.MediumPurple, BriefingSound);
 
         if (_role.MindHasRole<ShadowlingComponent>(mindId, out var mr))
             AddComp(mr.Value, new RoleBriefingComponent { Briefing = briefingShort }, overwrite: true);

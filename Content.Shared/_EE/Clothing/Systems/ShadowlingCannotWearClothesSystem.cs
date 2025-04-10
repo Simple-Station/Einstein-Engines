@@ -20,6 +20,10 @@ public sealed class ShadowlingCannotWearClothesSystem : EntitySystem
 
     private void OnTryEquip(EntityUid uid, ShadowlingCannotWearClothesComponent comp, IsEquippingAttemptEvent args)
     {
+        // They can equip stuff on other targets
+        if (args.EquipTarget != args.Equipee)
+            return;
+
         if (HasComp<ClothingComponent>(args.Equipment)
             && !HasComp<StorageComponent>(args.Equipment)
             && !HasComp<HeadsetComponent>(args.Equipment))

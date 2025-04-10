@@ -5,7 +5,19 @@
     components:
     - ShowAntagIcons
     - Shadowling
-    # - Thrall (once added)
+    - Thrall
   icon:
     sprite: /Textures/Interface/Misc/job_icons.rsi
     state: Shadowling
+
+- type: factionIcon
+  id: ThrallFaction
+  priority: 11
+  showTo:
+    components:
+    - ShowAntagIcons
+    - Shadowling
+    - Thrall
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: Thrall

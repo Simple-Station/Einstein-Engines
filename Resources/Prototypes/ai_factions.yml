@@ -218,14 +218,6 @@
     - Changeling
 
 - type: npcFaction
-  id: Shadowling
-  hostile:
-    - NanoTrasen
-    - Syndicate
-    - Zombie
-    - Revolutionary
-
-- type: npcFaction
   id: AllHostile
   hostile:
   - NanoTrasen

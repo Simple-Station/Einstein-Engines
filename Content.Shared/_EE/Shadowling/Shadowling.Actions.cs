@@ -17,3 +17,9 @@ public sealed partial class ShadowlingActionComponent : Component
 public sealed partial class HatchEvent : InstantActionEvent { }
 
 #endregion
+
+#region Events - Second Phase
+
+public sealed partial class EnthrallEvent : EntityTargetActionEvent { }
+
+#endregion

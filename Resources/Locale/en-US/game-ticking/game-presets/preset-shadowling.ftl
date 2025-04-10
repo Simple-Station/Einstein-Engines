@@ -7,3 +7,7 @@ shadowling-role-greeting =
 
 shadowling-role-greeting-short =
     You are a shadowling who has awakened in the body of {$name}.
+
+thrall-role-greeting =
+    You are a thrall.
+    Help your Shadowling ascend by any means necessary.

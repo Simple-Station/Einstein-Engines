@@ -7,7 +7,7 @@ namespace Content.Client._EE.Shadowling;
 
 
 /// <summary>
-/// This handles...
+/// This handles status icons for slings and thralls
 /// </summary>
 public sealed class ShadowlingSystem : SharedShadowlingSystem
 {
@@ -16,7 +16,17 @@ public sealed class ShadowlingSystem : SharedShadowlingSystem
     {
         base.Initialize();
 
+        SubscribeLocalEvent<ThrallComponent, GetStatusIconsEvent>(GetThrallIcon);
         SubscribeLocalEvent<ShadowlingComponent, GetStatusIconsEvent>(GetShadowlingIcon);
+    }
+
+    private void GetThrallIcon(Entity<ThrallComponent> ent, ref GetStatusIconsEvent args)
+    {
+        if (HasComp<ShadowlingComponent>(ent))
+            return;
+
+        if (_prototype.TryIndex(ent.Comp.StatusIcon, out var iconPrototype))
+            args.StatusIcons.Add(iconPrototype);
     }
 
     private void GetShadowlingIcon(Entity<ShadowlingComponent> ent, ref GetStatusIconsEvent args)
