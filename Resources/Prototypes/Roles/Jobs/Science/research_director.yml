@@ -15,15 +15,10 @@
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
-        - !type:CharacterTraitRequirement
-          inverted: true
-          traits:
-            - Foreigner
-            - ForeignerLight
-            - Muted
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
+        - Muted
         - Foreigner
         - ForeignerLight
     - !type:CharacterEmployerRequirement
