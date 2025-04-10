@@ -36,7 +36,7 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
             return;
 
         if (mindId == default
-            || !_role.MindHasRole<AbductorVictimRoleComponent>(mindId, out _, out var role))
+            || !_role.MindHasRole<AbductorVictimRoleComponent>(mindId, out var role))
         {
             _role.MindAddRole(mindId, "MindRoleAbductorVictim");
             victimComp.Implanted = true;

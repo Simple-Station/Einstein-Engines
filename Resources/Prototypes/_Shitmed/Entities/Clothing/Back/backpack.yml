@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ ClothingBackpack, BaseMajorContraband ]
+  parent: ClothingBackpack
   id: ClothingBackpackAbductor
   name: alien backpack
   description: An ordinary backpack woven from a durable fiber.

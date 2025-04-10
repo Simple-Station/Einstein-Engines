@@ -15,7 +15,7 @@ public sealed class ActivateArtifactEffectSystem : EntitySystem
         if (!TryComp<ArtifactComponent>(uid, out var artifact))
             return;
 
-        _artifact.TryActivateArtifact(uid, logMissing: false);
+        _artifact.TryActivateArtifact(uid);
     }
 
 
