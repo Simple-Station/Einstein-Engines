@@ -7,7 +7,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 19
+        Piercing: 15
 
 - type: entity
   id: BulletCaselessRiflePractice
@@ -41,7 +41,7 @@
     damage:
       types:
         Blunt: 3
-        Heat: 16
+        Heat: 12
 
 - type: entity
   id: BulletCaselessRifleUranium
@@ -52,8 +52,8 @@
   - type: Projectile
     damage:
       types:
-        Radiation: 9
-        Piercing: 10
+        Radiation: 7
+        Piercing: 8
 
 - type: entity
   id: BulletCaselessRifleShrapnel
@@ -64,7 +64,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 4.37
+        Piercing: 3.75
   - type: Sprite
     scale: 0.5, 0.5
 

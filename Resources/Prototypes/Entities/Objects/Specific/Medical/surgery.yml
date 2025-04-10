@@ -140,6 +140,9 @@
     endSound:
       path: /Audio/_Shitmed/Medical/Surgery/scalpel2.ogg
   - type: Scalpel
+  - type: Tag
+    tags:
+    - Knife
 
 - type: entity
   name: shiv
@@ -172,6 +175,9 @@
         Slash: 8
   - type: Scalpel # Shitmed
     speed: 1.25
+  - type: Tag
+    tags:
+    - Knife
 
 - type: entity
   name: laser scalpel
@@ -195,6 +201,9 @@
     speed: 1.25 # These shouldnt be obtainable but yknow they are better.
   - type: Cautery
     speed: 1.25
+  - type: Tag
+    tags:
+    - Knife
 
 # Retractor
 
@@ -579,6 +588,7 @@
 
 - type: entity
   name: medical multitool
+  description: "A complex, refined medical multitool, designed by Nanotrasen to speed up operation times, as well as conserve space."
   id: OmnimedTool
   parent: BaseToolSurgery
   components:
@@ -620,3 +630,35 @@
   - type: Item
     size: Small
     heldPrefix: evil
+
+- type: entity
+  name: CMO's Proto Multitool
+  description: "A prototypical medical multitool designed by Nanotrasen to save valuable space in the backpacks of high ranking medical officers."
+  id: OmnimedToolLite
+  parent: OmnimedTool
+  components:
+    - type: Sprite
+      state: cmotool
+    - type: Item
+      heldPrefix: cmotool
+    - type: SurgeryTool
+    - type: Hemostat
+      speed: 1.25
+    - type: Scalpel
+      speed: 1.25
+    - type: Drill
+      speed: 1.25
+    - type: BoneSetter
+      speed: 1.25
+    - type: Retractor
+      speed: 1.25
+    - type: Cautery
+      speed: 1.25
+    - type: BoneGel
+      speed: 1.25
+    - type: BoneSaw
+      speed: 1.25
+    - type: Tweezers
+      speed: 1.25
+    - type: Tending
+      speed: 1.25

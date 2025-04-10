@@ -276,3 +276,4 @@ flavor-complex-sax = like jazz
 flavor-complex-bottledlightning = like lightning in a bottle
 flavor-complex-punishment = like punishment
 flavor-weh = like weh
+flavor-complex-supernova = like a supernova frozen at its apex

@@ -64,17 +64,17 @@
         - state: shellslug
 
 - type: entity
-  name: shotgun flare cartridges dispenser
+  name: shotgun lumenblast cartridges dispenser
   parent: AmmoProviderShotgunShell
-  id: BoxShotgunFlare
-  description: A dispenser box full of flare cartridges, designed for riot shotguns.
+  id: BoxShotgunLumen
+  description: A dispenser box full of lumen cartridges, designed for riot shotguns.
   components:
     - type: BallisticAmmoProvider
-      proto: ShellShotgunFlare
+      proto: ShellShotgunLumen
     - type: Sprite
       layers:
         - state: boxwide
-        - state: shellflare
+        - state: shelllumen
 
 - type: entity
   name: shotgun incendiary cartridges dispenser
@@ -166,3 +166,16 @@
       layers:
         - state: boxwide
         - state: shelllethal
+
+- type: entity
+  name: shotgun flare cartridges dispenser
+  parent: AmmoProviderShotgunShell
+  id: BoxShotgunFlare
+  description: A dispenser box full of flare cartridges, designed for riot shotguns.
+  components:
+    - type: BallisticAmmoProvider
+      proto: ShellShotgunFlare
+    - type: Sprite
+      layers:
+        - state: boxwide
+        - state: shellflare

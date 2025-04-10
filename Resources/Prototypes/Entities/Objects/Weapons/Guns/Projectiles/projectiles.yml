@@ -238,7 +238,7 @@
   - type: Projectile
     damage:
       types:
-        Heat: 5
+        Shock: 5
     soundHit:
       path: "/Audio/Weapons/Guns/Hits/taser_hit.ogg"
     forceSound: true
@@ -283,7 +283,7 @@
     impactEffect: BulletImpactEffectDisabler
     damage:
       types:
-        Heat: 5
+        Shock: 2
     soundHit:
       collection: WeakHit
     forceSound: true
@@ -326,7 +326,7 @@
     impactEffect: BulletImpactEffectDisabler
     damage:
       types:
-        Heat: 0.3
+        Shock: 0.3
     soundHit:
       collection: WeakHit
     forceSound: true
@@ -365,7 +365,7 @@
     impactEffect: BulletImpactEffectDisabler
     damage:
       types:
-        Heat: 1
+        Shock: 1
     soundHit:
       collection: WeakHit
     forceSound: true
@@ -398,7 +398,7 @@
 #   soundHit:  Waiting on serv3
     damage:
       types:
-        Heat: 14
+        Shock: 14
   # mining laser real
   - type: GatheringProjectile
   - type: Tag
@@ -1107,7 +1107,7 @@
     impactEffect: BulletImpactEffectDisabler
     damage:
       types:
-        Heat: 2
+        Shock: 2
     soundHit:
       collection: WeakHit
     forceSound: true
@@ -1182,7 +1182,7 @@
     impactEffect: BulletImpactEffectDisabler
     damage:
       types:
-        Heat: 0
+        Shock: 0
     soundHit:
       collection: WeakHit
     forceSound: true
@@ -1396,5 +1396,44 @@
       types:
         Blunt: 3
         Heat: 15
+    soundHit:
+      collection: MeatLaserImpact
+
+- type: entity #Goobstation, put here so the X-01 stuff isnt spread everywhere.
+  name: ion bolt
+  id: BulletEnergyGunIon
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Reflective
+    reflective:
+    - Energy
+  - type: FlyBySound
+    sound:
+      collection: EnergyMiss
+      params:
+        volume: 5
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    layers:
+    - state: omnilaser_greyscale
+      shader: unshaded
+      color: blue
+  - type: Ammo
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.2,0.2,0.2"
+        hard: false
+        mask:
+        - Opaque
+  - type: Projectile
+    impactEffect: BulletImpactEffectDisabler
+    damage:
+      types:
+        Shock: 20
     soundHit:
       collection: MeatLaserImpact

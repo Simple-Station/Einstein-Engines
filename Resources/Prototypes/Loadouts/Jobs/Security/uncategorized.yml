@@ -1204,6 +1204,30 @@
   items:
     - WeaponEnergyRevolverSecurity
 
+- type: loadout
+  id: LoadoutSecurityShotgunSawnLumen
+  category: JobsSecurityAUncategorized
+  cost: 0
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityWeapons
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
+    - !type:CharacterAgeRequirement
+      min: 21
+  items:
+    - WeaponShotgunSawnLumen
+    - ShellShotgunLumen
+    - ShellShotgunLumen
+
 # Eyes
 - type: loadout
   id: LoadoutSecurityEyesHudSecurity
@@ -1322,6 +1346,20 @@
 
 # Gloves
 
+- type: loadout
+  id: LoadoutSecurityCombatGloves
+  category: JobsSecurityAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityGloves
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingHandsGlovesCombat
+
 # Head
 - type: loadout
   id: LoadoutSecurityHeadHatBeret
@@ -1365,6 +1403,27 @@
   items:
     - ClothingHeadHelmetInsulated
 
+- type: loadout
+  id: ClothingHeadHelmetTCFLHeavy
+  category: JobsSecurityAUncategorized
+  cost: 3 # This is a notable upgrade over a standard security helmet.
+  exclusive: true
+  guideEntry: TCFLInfo
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityHead
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterNationalityRequirement
+      nationalities:
+        - Bieselite
+    - !type:CharacterLifepathRequirement
+      lifepaths:
+        - WarVet
+  items:
+    - ClothingHeadHelmetTCFLHeavy
+
 # Id
 
 # Neck
@@ -1382,6 +1441,25 @@
       jobs:
         - Warden
         - HeadOfSecurity
+        - BlueshieldOfficer
+  items:
+    - ClothingMaskGasSwat
+
+- type: loadout
+  id: LoadoutSecurityMaskGasSwatPaid
+  category: JobsSecurityAUncategorized
+  cost: 4
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityMask
+    - !type:CharacterJobRequirement
+      jobs:
+        - SecurityOfficer
+        - Detective
+        - Brigmedic
+        - PrisonGuard
+        - SecurityCadet
   items:
     - ClothingMaskGasSwat
 
@@ -1455,6 +1533,27 @@
         - Security
   items:
     - ClothingOuterArmorBasicSlim
+
+- type: loadout
+  id: ClothingOuterArmorTCFLHeavy
+  category: JobsSecurityAUncategorized
+  cost: 3 # Notable upgrade
+  exclusive: true
+  guideEntry: TCFLInfo
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterNationalityRequirement
+      nationalities:
+        - Bieselite
+    - !type:CharacterLifepathRequirement
+      lifepaths:
+        - WarVet
+  items:
+    - ClothingOuterArmorTCFLHeavy
 
 # Shoes
 - type: loadout
@@ -1605,3 +1704,4 @@
   items:
     - ClothingUniformEnvirosuitSecGrey
     - ClothingHeadEnvirohelmSecGrey
+

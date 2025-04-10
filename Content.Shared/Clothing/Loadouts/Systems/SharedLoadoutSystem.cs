@@ -8,7 +8,9 @@ using Content.Shared.Paint;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Content.Shared.Station;
+using JetBrains.Annotations;
 using Robust.Shared.Configuration;
+using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization;
@@ -159,6 +161,8 @@ public sealed class SharedLoadoutSystem : EntitySystem
                 if (!_inventory.TryEquip(uid, item, slot, true, !string.IsNullOrEmpty(slot), true))
                     failedLoadouts.Add(item);
 
+                RaiseLocalEvent(item, new SpawnedViaLoadoutEvent(uid, job.ID, profile));
+
                 i++;
             }
         }
@@ -206,4 +210,62 @@ public sealed partial class LoadoutPreference : Loadout
         string? customColorTint = null,
         bool? customHeirloom = null
     ) : base(loadoutName, customName, customDescription, customColorTint, customHeirloom) { }
+}
+
+/// <summary>
+///     Event raised both directed and broadcast when a player has been spawned and then given a Loadout.
+///     Most useful to delay actions that should happen on spawn for when the loadouts have been handled.
+/// </summary>
+[PublicAPI]
+public sealed class PlayerLoadoutAppliedEvent : EntityEventArgs
+{
+    public EntityUid Mob { get; }
+    public ICommonSession Player { get; }
+    public string? JobId { get; }
+    public bool LateJoin { get; }
+    public bool Silent { get; }
+    public EntityUid Station { get; }
+    public HumanoidCharacterProfile Profile { get; }
+
+    // Ex. If this is the 27th person to join, this will be 27.
+    public int JoinOrder { get; }
+
+    public PlayerLoadoutAppliedEvent(EntityUid mob,
+        ICommonSession player,
+        string? jobId,
+        bool lateJoin,
+        bool silent,
+        int joinOrder,
+        EntityUid station,
+        HumanoidCharacterProfile profile)
+    {
+        Mob = mob;
+        Player = player;
+        JobId = jobId;
+        LateJoin = lateJoin;
+        Silent = silent;
+        Station = station;
+        Profile = profile;
+        JoinOrder = joinOrder;
+    }
+}
+
+/// <summary>
+///     Event raised when a player's loadout item is spawned on said item.
+/// </summary>
+[PublicAPI]
+public sealed class SpawnedViaLoadoutEvent : EntityEventArgs
+{
+    public EntityUid Mob { get; }
+    public string? JobId { get; }
+    public HumanoidCharacterProfile Profile { get; }
+
+    public SpawnedViaLoadoutEvent(EntityUid mob,
+        string? jobId,
+        HumanoidCharacterProfile profile)
+    {
+        Mob = mob;
+        JobId = jobId;
+        Profile = profile;
+    }
 }

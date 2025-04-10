@@ -767,6 +767,19 @@
           - Silicon
 
 - type: trait
+  id: RestrictedGear
+  category: Physical
+  points: -6
+  requirements:
+  - !type:CVarRequirement
+    cvar: trait.restrictedgear_enabled
+    requiredValue: true
+  - !type:CharacterJobRequirement
+    inverted: true
+    jobs:
+      - Prisoner # Smuggling for prisoners = immediate jailbreak.
+
+- type: trait
   id: Redshirt
   category: Physical
   points: 8
@@ -1135,6 +1148,44 @@
     - !type:TraitPushDescription
       descriptionExtensions:
         - description: examine-thermal-vision-message
+          fontSize: 12
+          requireDetailRange: true
+
+- type: trait
+  id: Bodybuilder
+  category: Physical
+  points: -6
+  requirements:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Featherweight
+  functions:
+    - !type:TraitModifyDensity
+      densityModifier: 55
+      multiply: false
+    - !type:TraitPushDescription
+      descriptionExtensions:
+        - description: examine-bodybuilder-message
+          fontSize: 12
+          requireDetailRange: true
+
+- type: trait
+  id: Featherweight
+  category: Physical
+  points: 3
+  requirements:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Bodybuilder
+  functions:
+    - !type:TraitModifyDensity
+      densityModifier: 0.5
+      multiply: true
+    - !type:TraitPushDescription
+      descriptionExtensions:
+        - description: examine-featherweight-message
           fontSize: 12
           requireDetailRange: true
 

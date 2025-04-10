@@ -412,6 +412,18 @@
   items:
     - SheetPlastic10
 
+- type: loadout
+  id: LoadoutSeniorEngineerEquipmentExperimentalWeldingTool
+  category: JobsEngineeringSeniorEngineer
+  cost: 0
+  requirements: 
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerEquipmentExtra
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items: 
+    - WelderExperimental
 # Eyes
 
 # Gloves

@@ -16,10 +16,12 @@
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
-    - !type:CharacterTraitRequirement
+    - !type:CharacterEmployerRequirement
       inverted: true
-      traits:
-        - ShadowkinBlackeye
+      employers:
+      - Unemployed
+    - !type:CharacterItemGroupRequirement
+      group: TraitsCasterType
   startingGear: LibrarianGear
   icon: "JobIconLibrarian"
   supervisors: job-supervisors-rd
@@ -31,10 +33,15 @@
   - !type:AddComponentSpecial
     components:
     - type: Psionic
+      baselinePowerCost: 75
+      nextPowerCost: 75
+      removable: false
+      powerPool: PsychoHistorianPowerPool
     - type: InnatePsionicPowers
       powersToAdd:
         - XenoglossyPower
         - TelepathyPower
+        - AssayPower
 
 
 - type: startingGear

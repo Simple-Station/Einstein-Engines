@@ -1,0 +1,18 @@
+- type: entity
+  id: MedipenCigPack
+  parent: CigPackBlue
+  name: medipen box
+  description: An AcmeCo cigarette box repurposed as medipen storage.
+  components:
+  - type: StorageFill
+    contents:
+      - id: RadAutoInjector
+        amount: 2
+      - id: AntiPoisonMedipen
+        amount: 2
+      - id: SpaceMedipen
+        amount: 2
+      - id: EmergencyMedipen
+      - id: BruteAutoInjector
+      - id: BurnAutoInjector
+      - id: PainMedipen

@@ -105,6 +105,7 @@
     baseWalkSpeed: 3
     baseSprintSpeed: 5.5
     weightlessAcceleration: 2.5
+    weightlessModifier: 1.12
   - type: Inventory
     speciesId: harpy
     templateId: digitigrade
