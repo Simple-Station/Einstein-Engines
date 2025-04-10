@@ -51,10 +51,10 @@
     - !type:CharacterItemGroupRequirement
       group: LoadoutBlueshieldOfficerBackpacks
     - !type:CharacterJobRequirement
-      jobs: 
+      jobs:
         - BlueshieldOfficer
-  items:    
-    - ClothingModsuitPraetorian
+  items:
+    - ClothingModsuitPraetorian #Blueshield modsuit
 
 
 # Belt
