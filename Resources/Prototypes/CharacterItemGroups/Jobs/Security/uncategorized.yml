@@ -20,6 +20,8 @@
       id: LoadoutClothingBeltSecurity
     - type: loadout
       id: LoadoutClothingBeltHolster
+    - type: loadout
+      id: LoadoutClothingBeltJudo
 
 #- type: characterItemGroup
 #  id: LoadoutSecurityEars
@@ -137,6 +139,8 @@
       id: LoadoutBSORifleChester
     - type: loadout
       id: LoadoutSecurityShotgunSawnLumen
+    - type: loadout
+      id: LoadoutSecurityDisablerSMG
 
 - type: characterItemGroup
   id: LoadoutSecurityEyes
@@ -178,8 +182,6 @@
       id: LoadoutClothingHeadHelmetBasic
     - type: loadout
       id: LoadoutSecurityHeadHelmetInsulated
-    - type: loadout
-      id: LoadoutSecurityHeadHatSeniorTrooper
     - type: loadout
       id: ClothingHeadHelmetTCFLHeavy
 
@@ -241,11 +243,7 @@
     - type: loadout
       id: LoadoutSecurityUniformJumpskirtBlue
     - type: loadout
-      id: LoadoutUniformJumpsuitSecFormal
-    - type: loadout
       id: LoadoutUniformJumpsuitSecSummer
-    - type: loadout
-      id: LoadoutSecurityUniformJumpsuitSeniorTrooper
     - type: loadout
       id: LoadoutSecurityUniformEnvirosuitBlue
     - type: loadout

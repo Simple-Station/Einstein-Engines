@@ -31,3 +31,16 @@
       - DoorRemote
       - Whistle
       - BalloonPopper
+
+- type: entity
+  parent: ClothingBeltCorporateJudo
+  id: ClothingBeltCorporateJudoFilled
+  name: Corporate Judo Belt
+  description: Teaches the wearer NT Corporate Judo.
+  components:
+  - type: StorageFill
+    contents:
+    - id: GrenadeFlashBang
+    - id: TearGasGrenade
+    - id: Handcuffs
+    - id: Handcuffs
