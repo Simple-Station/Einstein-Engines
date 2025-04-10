@@ -445,14 +445,23 @@
   components:
   - type: BreathMask
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/syndicate.rsi
+    sprite: _Impstation/Clothing/Head/Hardsuits/syndicate.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hardsuits/syndicate.rsi
+    sprite: _Impstation/Clothing/Head/Hardsuits/syndicate.rsi
+    clothingVisuals:
+      head:
+      - state: off-equipped-head
+      - state: off-equipped-HELMET-glow
+        shader: unshaded
   - type: PointLight
     color: green
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
+  - type: HideLayerClothing
+    slots:
+    - Snout
+    - Hair
   - type: Armor
     modifiers:
       coefficients:
@@ -472,14 +481,23 @@
   components:
   - type: BreathMask
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/syndiemedic.rsi
+    sprite: _Impstation/Clothing/Head/Hardsuits/syndicate_agent.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hardsuits/syndiemedic.rsi
+    sprite: _Impstation/Clothing/Head/Hardsuits/syndicate_agent.rsi
+    clothingVisuals:
+      head:
+      - state: off-equipped-HELMET
+      - state: off-equipped-HELMET-glow
+        shader: unshaded
   - type: PointLight
     color: green
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
+  - type: HideLayerClothing
+    slots:
+    - Snout
+    - Hair
   - type: Armor
     modifiers:
       coefficients:
@@ -528,14 +546,23 @@
   components:
   - type: BreathMask
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/syndieelite.rsi
+    sprite: _Impstation/Clothing/Head/Hardsuits/syndicate_elite.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hardsuits/syndieelite.rsi
+    sprite: _Impstation/Clothing/Head/Hardsuits/syndicate_elite.rsi
+    clothingVisuals:
+      head:
+      - state: off-equipped-HELMET
+      - state: off-equipped-HELMET-glow
+        shader: unshaded
   - type: PointLight
     color: red
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
+  - type: HideLayerClothing
+    slots:
+    - Snout
+    - Hair
   - type: TemperatureProtection
     coefficient: 0.005
   - type: FireProtection
@@ -559,14 +586,23 @@
   components:
   - type: BreathMask
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/syndiecommander.rsi
+    sprite: _Impstation/Clothing/Head/Hardsuits/syndicate_commander.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hardsuits/syndiecommander.rsi
+    sprite: _Impstation/Clothing/Head/Hardsuits/syndicate_commander.rsi
+    clothingVisuals:
+      head:
+      - state: off-equipped-HELMET
+      - state: off-equipped-HELMET-glow
+        shader: unshaded
   - type: PointLight
     color: green
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
+  - type: HideLayerClothing
+    slots:
+    - Snout
+    - Hair
   - type: Armor
     modifiers:
       coefficients:
@@ -586,12 +622,21 @@
   components:
   - type: BreathMask
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/cybersun.rsi
+    sprite: _Impstation/Clothing/Head/Hardsuits/syndicate_juggernaut.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hardsuits/cybersun.rsi
+    sprite: _Impstation/Clothing/Head/Hardsuits/syndicate_juggernaut.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+      - state: equipped-HELMET-glow
+        shader: unshaded
   - type: PressureProtection
     highPressureMultiplier: 0.3
     lowPressureMultiplier: 1000
+  - type: HideLayerClothing
+    slots:
+    - Snout
+    - Hair
   - type: Armor
     modifiers:
       coefficients:

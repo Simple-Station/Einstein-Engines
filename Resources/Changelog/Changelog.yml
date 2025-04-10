@@ -14642,3 +14642,137 @@ Entries:
   id: 7116
   time: '2025-04-08T21:05:04.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2177
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: Plasma windows now take 50% less explosion damage
+    - type: Tweak
+      message: Reinforced plasma windows now take 80% less explosion damage
+  id: 7117
+  time: '2025-04-09T03:48:54.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2195
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: Shiva now injects a small amount of noc on hit
+    - type: Tweak
+      message: Sec dogs and shiva have both received sec access and the ability to pull
+    - type: Tweak
+      message: Sec dogs can now use the vulpakin sniff ability
+  id: 7118
+  time: '2025-04-09T07:39:11.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2093
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: >-
+        Adds Combat Magboots, offering all the benefits of combat boots and
+        magboots at the cost of a speed penalty
+    - type: Add
+      message: >-
+        Added engineering magboots, which are magboots with decreased speed
+        penalties
+    - type: Tweak
+      message: Epi magboots have been merged with normal magboots
+  id: 7119
+  time: '2025-04-09T07:40:03.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2197
+- author: EctoplasmIsGood
+  changes:
+    - type: Remove
+      message: >-
+        Removed old bodybuilder and weakling traits since they didn't work, and
+        gave bulky the name bodybuilder instead
+  id: 7120
+  time: '2025-04-09T07:42:37.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2196
+- author: Diggy
+  changes:
+    - type: Add
+      message: >-
+        Cleanadenuke grenade has been added, made with 100 units of bleach, one
+        soap and a cleanade, put it in the microwave for 10 seconds and there
+        you have it, enjoy flooding a room with space cleaner foam.
+  id: 7121
+  time: '2025-04-09T08:14:59.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2194
+- author: Diggy
+  changes:
+    - type: Add
+      message: >-
+        "Raider" modsuit is 25 TC, while the "Jaeger" modsuit is 70 TC, both in
+        your Uplink, BUY NOW
+    - type: Add
+      message: loss
+  id: 7122
+  time: '2025-04-09T09:26:33.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2162
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: 'Golemancers can now take utility belts '
+    - type: Add
+      message: Paramedics can now take a portafib, and get advanced meds in belt
+    - type: Add
+      message: >-
+        Sec can now take a sec gasmask for 4 points, besides Ward/HoS/BSO who
+        get them for free
+    - type: Tweak
+      message: >-
+        All military gloves have been given slight resistances, and as such have
+        been removed from engis loadouts
+    - type: Tweak
+      message: Scalpels can now be put into boots with knife slots
+    - type: Tweak
+      message: >-
+        Interdyne Herbals are now exclusive to interdyne employees (until we
+        have a discount system)
+  id: 7123
+  time: '2025-04-09T09:28:31.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2105
+- author: Diggy
+  changes:
+    - type: Tweak
+      message: >-
+        Nuclear Operative armors have been updated with Impstation sprites,
+        along with being able to see them in the dark.
+  id: 7124
+  time: '2025-04-09T10:59:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2180
+- author: RocketBoss360
+  changes:
+    - type: Add
+      message: >-
+        Ousiana Dust, Allows one to gain benefit from mind opening drugs like a
+        Noosphere Zap, crafted with 1 bluespace crystal and 1 normalcy crystal
+        crushed into a bowl. Probably has no long term psychological side
+        effects.
+  id: 7125
+  time: '2025-04-09T18:21:57.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2179
+- author: Timfa2112
+  changes:
+    - type: Tweak
+      message: >-
+        Rethemed the NanoTrasen Representative into the Corporate Liaison! You
+        do pretty much the same thing, except with your chosen Employer's
+        interests in mind! This makes use of the Contractor System, so you can
+        represent any company you like. Don't forget to pick the stamp in your
+        loadout!!
+    - type: Add
+      message: >-
+        Added a new stamp for the Corporate Liaison which automatically
+        transforms into your employer's stamp on spawn. Do not forget to pick it
+        in your loadout!!!!
+    - type: Add
+      message: >-
+        admin console command to spawn the stamp for the people that forgot to
+        pick the stamp in loadouts despite my warnings.
+    - type: Add
+      message: >-
+        admin console command to spawn a specific corporation's stamp your own
+        inventory, which can optionally be a Command version for admin faxing
+        purposes.
+  id: 7126
+  time: '2025-04-09T22:05:49.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2191

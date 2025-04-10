@@ -1346,6 +1346,20 @@
 
 # Gloves
 
+- type: loadout
+  id: LoadoutSecurityCombatGloves
+  category: JobsSecurityAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityGloves
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingHandsGlovesCombat
+
 # Head
 - type: loadout
   id: LoadoutSecurityHeadHatBeret
@@ -1427,6 +1441,25 @@
       jobs:
         - Warden
         - HeadOfSecurity
+        - BlueshieldOfficer
+  items:
+    - ClothingMaskGasSwat
+
+- type: loadout
+  id: LoadoutSecurityMaskGasSwatPaid
+  category: JobsSecurityAUncategorized
+  cost: 4
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityMask
+    - !type:CharacterJobRequirement
+      jobs:
+        - SecurityOfficer
+        - Detective
+        - Brigmedic
+        - PrisonGuard
+        - SecurityCadet
   items:
     - ClothingMaskGasSwat
 
@@ -1671,3 +1704,4 @@
   items:
     - ClothingUniformEnvirosuitSecGrey
     - ClothingHeadEnvirohelmSecGrey
+
