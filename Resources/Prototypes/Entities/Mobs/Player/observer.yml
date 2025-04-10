@@ -33,7 +33,7 @@
   - Incorporeal
   - BaseMob
   id: MobObserver
-  name: obserx  er
+  name: observer
   description: Boo!
   categories: [ HideSpawnMenu ]
   components:
