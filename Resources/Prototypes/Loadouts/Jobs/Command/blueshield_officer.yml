@@ -42,6 +42,19 @@
   items:
     - ClothingBackpackDuffelBlueshield
 
+- type: loadout
+  id: LoadoutClothingModsuitBlueshield
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - ClothingModsuitPraetorian
+
+
 # Belt
 
 # Ears
