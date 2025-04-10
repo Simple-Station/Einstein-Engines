@@ -14776,3 +14776,10 @@ Entries:
   id: 7126
   time: '2025-04-09T22:05:49.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2191
+- author: RocketBoss360
+  changes:
+    - type: Add
+      message: Maint drones can now speak to other maint drones via the Drone language!
+  id: 7127
+  time: '2025-04-10T07:20:24.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2208
