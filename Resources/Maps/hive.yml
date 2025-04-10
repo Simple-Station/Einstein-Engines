@@ -179025,8 +179025,6 @@ entities:
       pos: 126.5,-6.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 21069
   - uid: 9728
@@ -179036,8 +179034,6 @@ entities:
       pos: 130.5,-6.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 21069
   - uid: 12070

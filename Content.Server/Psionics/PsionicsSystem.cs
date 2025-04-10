@@ -304,7 +304,6 @@ public sealed class PsionicsSystem : EntitySystem
         psionic.CanReroll = false;
         RollPsionics(uid, psionic, true, bonusMuliplier);
     }
-
     private void OnMobstateChanged(EntityUid uid, PsionicComponent component, MobStateChangedEvent args)
     {
         if (component.Familiars.Count <= 0

@@ -412,3 +412,9 @@ reagent-effect-guidebook-stamina-change =
                     *[1] decrease
                  }
     } stamina by {$amount} points
+
+reagent-effect-guidebook-chem-restorereroll-psionic =
+    { $chance ->
+        [1] Restores
+        *[other] restore
+    } one's ability to gain benefit from mind opening reagents
