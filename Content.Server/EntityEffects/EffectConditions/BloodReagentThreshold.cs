@@ -31,7 +31,7 @@ public sealed partial class BloodReagentThreshold : EntityEffectCondition
                     return quant > Min && quant < Max;
                 }
             }
-            return true;
+            return Min <= 0; // if the reagent is not found at all, return false unless the minimum value required is zero or lower.
         }
 
         throw new NotImplementedException();
