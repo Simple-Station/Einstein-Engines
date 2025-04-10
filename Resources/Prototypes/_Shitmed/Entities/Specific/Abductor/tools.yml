@@ -1,6 +1,6 @@
 # Abductor's Crowbar
 - type: entity
-  parent: BaseCrowbar
+  parent: Crowbar
   id: CrowbarAbductor
   name: high-tech crowbar
   description: Made out of metal more durable than anything Nanotrasen could dream of.
