@@ -14836,3 +14836,10 @@ Entries:
   id: 7130
   time: '2025-04-10T15:11:18.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2054
+- author: 3PonPon3
+  changes:
+    - type: Fix
+      message: Languages and accents now work. JOHN LANGUAGE IS FINALLY REAL!
+  id: 7131
+  time: '2025-04-10T21:43:38.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2212
