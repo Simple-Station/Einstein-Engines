@@ -116,6 +116,33 @@
 
 - type: entity
   parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatIdrisIncorporatedWindbreaker
+  name: idris incorporated windbreaker
+  description: A windbreaker, sporting the official heraldry of the Idris Incorporated Corporate Finances division. Its made of sturdy futuristic fiber.
+  components:
+  - type: Sprite
+    sprite: _EE/Clothing/idris_windbreaker.rsi
+    layers:
+    - state: icon
+    - state: icon-unshaded
+      shader: unshaded
+  - type: Clothing
+    sprite: _EE/Clothing/idris_windbreaker.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: equipped-OUTERCLOTHING-unshaded
+        shader: unshaded
+  - type: TemperatureProtection
+    coefficient: 0.1
+  - type: Armor
+    modifiers:
+      coefficients:
+        Slash: 0.9
+        Heat: 0.75
+
+- type: entity
+  parent: ClothingOuterStorageBase
   id: ClothingOuterCoatHoPFormal
   name: head of personnel's formal jacket
   description: A showy and over-the-top jacket with gold buttons and red trim. More tacky than classy.

@@ -6,12 +6,12 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Clothing/Shoes/Boots/magboots.rsi
+    sprite: Clothing/Shoes/Boots/magboots-science.rsi
     layers:
     - state: icon
       map: [ "enum.ToggleVisuals.Layer" ]
   - type: Clothing
-    sprite: Clothing/Shoes/Boots/magboots.rsi
+    sprite: Clothing/Shoes/Boots/magboots-science.rsi
   - type: ToggleClothing
     action: ActionToggleMagboots
   - type: ComponentToggler
@@ -65,15 +65,6 @@
       types:
         Blunt: 13
     staminaCost: 15
-
-- type: entity
-  parent: ClothingShoesBootsMag
-  id: ClothingShoesBootsMagSci
-  components:
-  - type: Sprite
-    sprite: Clothing/Shoes/Boots/magboots-science.rsi
-  - type: Clothing
-    sprite: Clothing/Shoes/Boots/magboots-science.rsi
 
 - type: entity
   parent: ClothingShoesBootsMag
@@ -134,6 +125,76 @@
   - type: Item
     sprite: null
     size: Normal
+
+- type: entity
+  parent: ClothingShoesBootsMag
+  id: ClothingShoesBootsMagEng
+  name: engineering magboots
+  description: Expensive magboots made with lighter materials for quick engineering responses.
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Boots/magboots.rsi
+    state: icon
+  - type: Clothing
+    sprite: Clothing/Shoes/Boots/magboots.rsi
+  - type: ClothingSpeedModifier
+    walkModifier: 0.95
+    sprintModifier: 0.9
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+  - type: StaticPrice
+    price: 500
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 13
+    staminaCost: 15
+
+- type: entity
+  parent: ClothingShoesBootsMag
+  id: ClothingShoesBootsMagSec
+  name: combat magboots
+  description: Heavy-duty magboots with added protection and a convenient sidearm strap.
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Boots/magboots-combat.rsi
+    state: icon
+  - type: Clothing
+    sprite: Clothing/Shoes/Boots/magboots-combat.rsi
+  - type: ClothingSpeedModifier
+    walkModifier: 0.82 # Slightly slower then normal magboots
+    sprintModifier: 0.77 # Slightly slower then normal magboots|
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+  - type: StaticPrice
+    price: 500
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 13
+    staminaCost: 15
+  - type: ClothingSlowOnDamageModifier
+    modifier: 0.8
+  - type: ClothingModifyStunTime # Goobstation
+    modifier: 0.8
+  - type: Matchbox
+  - type: ItemSlots
+    slots:
+      item:
+        name: clothing-boots-sidearm
+        whitelist:
+          tags:
+          - Knife
+          - Sidearm
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Piercing: 0.95
+        Heat: 0.95
 
 - type: entity
   id: ActionToggleMagboots

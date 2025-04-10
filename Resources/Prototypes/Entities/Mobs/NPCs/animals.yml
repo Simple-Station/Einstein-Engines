@@ -2734,6 +2734,8 @@
     damage:
       types:
         Piercing: 6
+  - type: Puller
+    needsHands: false
 
 - type: entity
   parent:
