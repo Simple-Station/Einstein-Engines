@@ -145,7 +145,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Mobs/Ghosts/ghost_human.rsi
+    sprite: Mobs/Ghosts/ghost_human.rsi #THIS IS A PLACEHOLDER, GET THIS A DISTINCT SPRITE ASAP
     color: "#32a89b"
     layers:
     - state: animated
@@ -169,4 +169,5 @@
   - type: Psionic
     removable: false
     roller: false
-  - type: Ghost
+  - type: Stealth
+    lastVisibility: 0.66
