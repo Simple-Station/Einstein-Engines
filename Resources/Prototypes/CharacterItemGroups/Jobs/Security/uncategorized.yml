@@ -68,6 +68,14 @@
       id: LoadoutSpeedLoaderRifleHeavyRubber
     - type: loadout
       id: LoadoutSpeedLoaderRifleHeavyRubberSpare
+    - type: loadout
+      id: LoadoutMagazineUniversalMagnum
+    - type: loadout
+      id: LoadoutMagazineUniversalMagnumSpare
+    - type: loadout
+      id: LoadoutMagazineUniversalMagnumRubber
+    - type: loadout
+      id: LoadoutMagazineUniversalMagnumRubberSpare
 
 - type: characterItemGroup
   maxItems: 1
@@ -141,6 +149,10 @@
       id: LoadoutSecurityShotgunSawnLumen
     - type: loadout
       id: LoadoutSecurityDisablerSMG
+    - type: loadout
+      id: LoadoutSecurityPistolUniversal
+    - type: loadout
+      id: LoadoutSecurityPistolUniversalNonLethal
 
 - type: characterItemGroup
   id: LoadoutSecurityEyes
