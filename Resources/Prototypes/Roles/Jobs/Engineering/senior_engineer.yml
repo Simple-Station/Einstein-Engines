@@ -18,6 +18,7 @@
       - HephaestusIndustries
       - Cybersun
       - EinsteinEngines
+      - NanoTrasen
   startingGear: SeniorEngineerGear
   icon: "JobIconSeniorEngineer"
   supervisors: job-supervisors-ce
