@@ -14859,3 +14859,10 @@ Entries:
   id: 7133
   time: '2025-04-11T05:55:20.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2209
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: Nanotrasen employees can take every job again
+  id: 7134
+  time: '2025-04-11T06:23:14.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2220
