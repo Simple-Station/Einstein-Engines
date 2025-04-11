@@ -15,6 +15,7 @@
       traits:
         - Foreigner
         - ForeignerLight
+        - Muted
     - !type:CharacterEmployerRequirement
       employers:
       - IdrisIncorporated
