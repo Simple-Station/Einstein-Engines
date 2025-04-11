@@ -68,8 +68,8 @@
   - type: Sprite
     sprite: Objects/Weapons/Guns/Snipers/bolt_gun_wood.rsi
   - type: Gun
-    fireRate: 0.75
-    damageModifier: 2.625 # OORAH. You have to manually cycle each shot. So each shot deals 42 damage. For the Red Orchestra enthusiasts.
+    fireRate: 0.75 
+    damageModifier: 1.5 
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
@@ -80,7 +80,7 @@
     range: 1.75
     damage:
       types:
-        Piercing: 5
+        Piercing: 7
         Slash: 3.5
     wideAnimationRotation: -135
     soundHit:
