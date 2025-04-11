@@ -12,6 +12,7 @@
       - HephaestusIndustries
       - Cybersun
       - EinsteinEngines
+      - NanoTrasen
   startingGear: StationEngineerGear
   icon: "JobIconStationEngineer"
   supervisors: job-supervisors-ce

@@ -11,6 +11,7 @@
       employers:
       - HephaestusIndustries
       - EinsteinEngines
+      - NanoTrasen
   startingGear: AtmosphericTechnicianGear
   icon: "JobIconAtmosphericTechnician"
   supervisors: job-supervisors-ce

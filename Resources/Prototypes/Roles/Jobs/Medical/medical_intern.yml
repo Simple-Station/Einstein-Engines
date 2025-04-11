@@ -12,6 +12,7 @@
       employers:
       - ZengHuPharmaceuticals
       - Interdyne
+      - NanoTrasen
   startingGear: MedicalInternGear
   icon: "JobIconMedicalIntern"
   supervisors: job-supervisors-medicine

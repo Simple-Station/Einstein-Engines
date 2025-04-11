@@ -10,6 +10,7 @@
   - !type:CharacterEmployerRequirement
       employers:
       - Cybersun
+      - NanoTrasen
   startingGear: RoboticistGear
   icon: "JobIconRoboticist"
   supervisors: job-supervisors-rd
