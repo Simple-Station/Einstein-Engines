@@ -8,6 +8,8 @@
       id: LoadoutClothingSatchelBlueshield
     - type: loadout
       id: LoadoutClothingDuffelBlueshield
+    - type: loadout
+      id: LoadoutClothingModsuitBlueshield
 
 #- type: characterItemGroup
 #  id: LoadoutJOBBelt
