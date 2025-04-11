@@ -145,8 +145,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Mobs/Ghosts/ghost_human.rsi #THIS IS A PLACEHOLDER, GET THIS A DISTINCT SPRITE ASAP
-    color: "#32a89b"
+    sprite: Mobs/Ghosts/telegnostic_observer.rsi #Feel free to improve this!
     layers:
     - state: animated
       shader: unshaded
