@@ -2,3 +2,8 @@
   id: Chitinid
   name: species-name-chitinid
   text: "/ServerInfo/Guidebook/Mobs/DeltaV/Chitinid.xml"
+
+- type: guideEntry
+  id: Vulpkanin
+  name: species-name-vulpkanin
+  text: "/ServerInfo/Guidebook/Mobs/DeltaV/Vulpkanin.xml"
