@@ -173,7 +173,11 @@ public sealed class ArrivalsSystem : EntitySystem
                 var query = AllEntityQuery<PendingClockInComponent, TransformComponent>();
                 var spawnPoints = EntityQuery<SpawnPointComponent, TransformComponent>().ToList();
 
-                TryGetArrivals(out var arrivalsUid);
+                if (!TryGetArrivals(out var arrivalsUid))
+                {
+                    shell.WriteLine("arrivals doesn't exist");
+                    return;
+                }
 
                 while (query.MoveNext(out var uid, out _, out var pendingXform))
                 {
@@ -333,32 +337,25 @@ public sealed class ArrivalsSystem : EntitySystem
 
     public void HandlePlayerSpawning(PlayerSpawningEvent ev)
     {
-        if (ev.SpawnResult != null)
+        if (ev.SpawnResult != null || !Enabled || _ticker.RunLevel != GameRunLevel.InRound
+            || ev.Job is not null && _protoManager.Index<JobPrototype>(ev.Job).AlwaysUseSpawner
+            || !HasComp<StationArrivalsComponent>(ev.Station)
+            || !TryGetArrivals(out var arrivals))
             return;
 
-        // We use arrivals as the default spawn so don't check for job prio.
-
-        // Only works on latejoin even if enabled.
-        if (!Enabled || _ticker.RunLevel != GameRunLevel.InRound)
-            return;
-
-        if (ev.Job is not null
-            && _protoManager.Index<JobPrototype>(ev.Job).AlwaysUseSpawner)
-            return;
-
-        if (!HasComp<StationArrivalsComponent>(ev.Station))
-            return;
-
-        TryGetArrivals(out var arrivals);
         var arrivalsXform = Transform(arrivals);
 
         var mapId = arrivalsXform.MapID;
 
-        var points = EntityQueryEnumerator<SpawnPointComponent, TransformComponent>();
+        var points = EntityQueryEnumerator<SpawnPointComponent>();
         var possiblePositions = new List<EntityCoordinates>();
-        while (points.MoveNext(out var uid, out var spawnPoint, out var xform))
+        while (points.MoveNext(out var uid, out var spawnPoint))
         {
-            if (spawnPoint.SpawnType != SpawnPointType.LateJoin || xform.MapID != mapId)
+            if (spawnPoint.SpawnType != SpawnPointType.LateJoin)
+                continue;
+
+            var xform = Transform(uid);
+            if (xform.MapID != mapId)
                 continue;
 
             possiblePositions.Add(xform.Coordinates);
