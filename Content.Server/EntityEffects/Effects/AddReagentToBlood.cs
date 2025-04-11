@@ -1,3 +1,6 @@
+using System;
+using Robust.Shared.IoC;
+using Robust.Shared.Log;
 using Content.Server.Body.Components;
 using Content.Shared.Chemistry.Reagent;
 using Content.Server.Body.Systems;
@@ -28,19 +31,20 @@ public sealed partial class AddReagentToBlood : EntityEffect
 
     public override void Effect(EntityEffectBaseArgs args)
     {
-        if (args.EntityManager.TryGetComponent<BloodstreamComponent>(args.TargetEntity, out var blood))
-        {
-            var sys = args.EntityManager.System<BloodstreamSystem>();
-            if (args is EntityEffectReagentArgs reagentArgs)
-            {
-                if (Reagent is null) return;
-                var amt = Amount;
-                var solution = new Solution();
-                solution.AddReagent(Reagent, amt);
-                sys.TryAddToChemicals(args.TargetEntity, solution, blood);
-            }
+        if (!args.EntityManager.TryGetComponent<BloodstreamComponent>(args.TargetEntity, out var blood))
             return;
-        }
+
+        if (args is not EntityEffectReagentArgs reagentArgs)
+            return;
+
+        if (Reagent is null)
+            return;
+
+        var sys = args.EntityManager.System<BloodstreamSystem>();
+        var amt = Amount;
+        var solution = new Solution();
+        solution.AddReagent(Reagent, amt);
+        sys.TryAddToChemicals(args.TargetEntity, solution, blood);
     }
 
     protected override string? ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)

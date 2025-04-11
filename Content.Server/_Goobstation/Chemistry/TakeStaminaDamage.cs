@@ -29,15 +29,14 @@ public sealed partial class TakeStaminaDamage : EntityEffect
 
     public override void Effect(EntityEffectBaseArgs args)
     {
+        int scaledAmount = Amount;
+
         if (args is EntityEffectReagentArgs reagentArgs)
         {
-            if (reagentArgs.Scale != 1f)
-            {
-                Amount = (int) (Amount * reagentArgs.Scale);
-            }
+            scaledAmount = (int)(Amount * reagentArgs.Scale);
         }
 
         args.EntityManager.System<StaminaSystem>()
-            .TakeStaminaDamage(args.TargetEntity, Amount, visual: false, immediate: Immediate);
+            .TakeStaminaDamage(args.TargetEntity, scaledAmount, visual: false, immediate: Immediate);
     }
 }
