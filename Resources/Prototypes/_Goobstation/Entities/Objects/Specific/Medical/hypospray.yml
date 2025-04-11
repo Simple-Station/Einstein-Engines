@@ -50,9 +50,9 @@
     slots:
       item:
         name: Cartridge
-        whitelist:
-          tags:
-          - AutoinjectorCartridge
+#        whitelist:  # I gave up trying to fix bugs with this, it's not working
+#          tags:
+#          - AutoinjectorCartridge
 
 - type: entity
   name: security cartridge autoinjector
@@ -81,6 +81,7 @@
         visible: false
 
 # Autoinjector Cartridges
+# the cartridges are not working properly yet and I have no idea how to fix it
 
 - type: entity
   name: autoinjector cartridge
@@ -101,9 +102,9 @@
     targetSolution: hypospray
     solution:
       maxVol: 10
-  - type: Tag
-    tags:
-      - AutoinjectorCartridge
+#  - type: Tag  # I gave up trying to fix bugs with this, it's not working
+#    tags:
+#      - AutoinjectorCartridge
 
 - type: entity
   name: adrenaline autoinjector cartridge
