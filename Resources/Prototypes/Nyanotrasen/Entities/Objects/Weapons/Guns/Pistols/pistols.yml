@@ -14,7 +14,11 @@
   - type: Clothing
     sprite: Nyanotrasen/Objects/Weapons/Guns/Pistols/universal.rsi
   - type: Gun
-    fireRate: 3
+    minAngle: 1
+    maxAngle: 14
+    angleIncrease: 6
+    angleDecay: 6
+    fireRate: 2.5
     availableModes:
     - SemiAuto
     soundGunshot:

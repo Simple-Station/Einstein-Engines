@@ -38,7 +38,7 @@
 - type: loadout
   id: LoadoutSecurityPistolUniversal
   category: JobsSecuritySeniorOfficer
-  cost: 5
+  cost: 6
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
@@ -57,7 +57,7 @@
 - type: loadout
   id: LoadoutSecurityPistolUniversalNonLethal
   category: JobsSecuritySeniorOfficer
-  cost: 5
+  cost: 6
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
