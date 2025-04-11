@@ -11,22 +11,6 @@
 # Or are weapons that fit a similar theme of "Rare weapons not normally seen by Security"
 
 - type: loadout
-  id: LoadoutCommandHoSPulsePistol
-  category: JobsSecurityHeadOfSecurity
-  cost: 0
-  canBeHeirloom: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadOfSecurityWeapon
-    - !type:CharacterJobRequirement
-      jobs:
-        - HeadOfSecurity
-    - !type:CharacterAgeRequirement
-      min: 21
-  items:
-    - WeaponPulsePistolHoS
-
-- type: loadout
   id: LoadoutCommandHoSWt550
   category: JobsSecurityHeadOfSecurity
   cost: 0

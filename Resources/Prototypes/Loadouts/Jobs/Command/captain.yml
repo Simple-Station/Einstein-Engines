@@ -172,22 +172,6 @@
     - WeaponAntiqueLaser
 
 - type: loadout
-  id: LoadoutCaptainPulsePistol
-  category: JobsCommandCaptain
-  cost: 0
-  canBeHeirloom: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainWeapon
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-    - !type:CharacterAgeRequirement
-      min: 21
-  items:
-    - WeaponPulsePistolCaptain
-
-- type: loadout
   id: LoadoutCaptainTerminus
   category: JobsCommandCaptain
   cost: 0
