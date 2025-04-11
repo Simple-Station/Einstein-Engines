@@ -14875,3 +14875,14 @@ Entries:
   id: 7135
   time: '2025-04-11T20:03:32.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2211
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: >-
+        Mosin damage buff nerfed to 1.5x, and melee damage buffed slightly too
+        (it has a bayonet)
+    - type: Tweak
+      message: 'Chester now does 1.65x damage '
+  id: 7136
+  time: '2025-04-11T20:53:08.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2218
