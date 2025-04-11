@@ -20,10 +20,9 @@
         - Pacifist
         - BrittleBoneDisease
     - !type:CharacterEmployerRequirement
+      inverted: true
       employers:
-      - Cybersun
-      - Interdyne
-      - PMCG
+      - Unemployed
   startingGear: CorpsmanGear
   icon: "JobIconBrigmedic"
   supervisors: job-supervisors-hos

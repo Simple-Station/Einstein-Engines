@@ -27,9 +27,9 @@
         - Pacifist
         - BrittleBoneDisease
     - !type:CharacterEmployerRequirement
+      inverted: true
       employers:
-      - Cybersun
-      - PMCG
+      - Unemployed
   startingGear: SeniorOfficerGear
   icon: "JobIconSeniorOfficer"
   supervisors: job-supervisors-hos

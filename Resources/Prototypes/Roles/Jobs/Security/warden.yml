@@ -21,9 +21,9 @@
         - Pacifist
         - BrittleBoneDisease
     - !type:CharacterEmployerRequirement
+      inverted: true
       employers:
-      - Cybersun
-      - PMCG
+      - Unemployed
   startingGear: WardenGear
   icon: "JobIconWarden"
   supervisors: job-supervisors-hos

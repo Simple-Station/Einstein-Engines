@@ -12,8 +12,9 @@
   - Mail
   requirements:
     - !type:CharacterEmployerRequirement
+      inverted: true
       employers:
-      - OrionExpress
+      - Unemployed
 
 - type: startingGear
   id: MailCarrierGear

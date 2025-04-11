@@ -14,8 +14,9 @@
   - Chemistry
   requirements:
     - !type:CharacterEmployerRequirement
+      inverted: true
       employers:
-      - Interdyne
+      - Unemployed
 
 - type: startingGear
   id: PsychologistGear

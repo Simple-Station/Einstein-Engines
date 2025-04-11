@@ -39,7 +39,3 @@ employer_description_idrisincorporated = Idris Incorporated is an interstellar c
 employer_name_orionexpress = Orion Express
 employer_name_orionexpress_command = Orion Express Command
 employer_description_orionexpress = Orion Express is a manufactured megacorporation designed to handle logistics in the wake of the phoron scarcity, and the sudden entangling of supply lines that left the galaxy struggling for more resources. Its main branch is dedicated to cargo services and transport, but also features a fledgling robotics division mainly focused on industrial synthetics to aid in its logistics missions.
-
-employer_name_pmcg = PMCG
-employer_name_pmcg_command = PMCG Command
-employer_description_pmcg = A coalition of security contractors in service of the Stellar Corporate Conglomerate, the Private Military Contracting Group is one of the elements born from the necessity of protecting an ever-growing corporate empire. Gathering mercenaries from all across the galaxy, the Private Military Contracting Group deploys a diverse force to anywhere they are needed.

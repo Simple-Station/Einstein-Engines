@@ -16,9 +16,9 @@
         - Foreigner
         - ForeignerLight
     - !type:CharacterEmployerRequirement
+      inverted: true
       employers:
-      - IdrisIncorporated
-      - NanoTrasen
+      - Unemployed
   weight: 20
   startingGear: MagistrateGear
   icon: "JobIconMagistrate"
