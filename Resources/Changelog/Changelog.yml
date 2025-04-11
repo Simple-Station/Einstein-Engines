@@ -14852,3 +14852,10 @@ Entries:
   id: 7132
   time: '2025-04-10T22:24:23.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2213
+- author: RocketBoss360
+  changes:
+    - type: Fix
+      message: telegnosis lets you return to your body now
+  id: 7133
+  time: '2025-04-11T05:55:20.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2209
