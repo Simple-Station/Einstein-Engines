@@ -1,0 +1,16 @@
+- type: entity
+  parent: BaseGameRule
+  id: Shadowling
+  components:
+  - type: ShadowlingRule
+  - type: GameRule
+    minPlayers: 15
+  - type: AntagSelection
+    selectionTime: PrePlayerSpawn
+    definitions:
+      - prefRoles: [ Shadowling ]
+        max: 4
+        playerRatio: 12
+        lateJoinAdditional: true
+        mindRoles:
+          - MindRoleShadowling
