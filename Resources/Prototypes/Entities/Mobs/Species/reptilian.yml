@@ -71,6 +71,9 @@
     understands:
     - TauCetiBasic
     - Draconic
+  - type: ConsumeDelayModifier
+    foodDelayMultiplier: 0.5
+    drinkDelayMultiplier: 0.5
   - type: FootPrints
     leftBarePrint: "footprint-left-bare-lizard"
     rightBarePrint: "footprint-right-bare-lizard"
