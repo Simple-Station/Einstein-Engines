@@ -12,7 +12,13 @@ namespace Content.Server.EntityEffects.Effects;
 
 public sealed partial class AddReagentToBlood : EntityEffect
 {
+
     private readonly SharedSolutionContainerSystem _solutionContainers;
+
+    public AddReagentToBlood(SharedSolutionContainerSystem solutionContainers)
+    {
+        _solutionContainers = solutionContainers;
+    }
 
     [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<ReagentPrototype>))]
     public string? Reagent = null;
@@ -48,6 +54,8 @@ public sealed partial class AddReagentToBlood : EntityEffect
                 ("amount", MathF.Abs(Amount.Float())));
         }
 
-        throw new NotImplementedException();
+        var logger = IoCManager.Resolve<ILogManager>().GetSawmill("effects");
+        logger.Error($"Failed to find reagent prototype {Reagent} for AddReagentToBlood effect guidebook text");
+        return null; // Return null instead of throwing exception
     }
 }

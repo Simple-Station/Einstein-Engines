@@ -18,23 +18,45 @@ public sealed partial class BloodReagentThreshold : EntityEffectCondition
 
     [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<ReagentPrototype>))]
     public string? Reagent = null;
+
     public override bool Condition(EntityEffectBaseArgs args)
     {
-        if (Reagent is null) return true;
-        if (args.EntityManager.TryGetComponent<BloodstreamComponent>(args.TargetEntity, out var blood))
+        if (args == null || args.EntityManager == null)
         {
-            if (args.EntityManager.System<SharedSolutionContainerSystem>().ResolveSolution(args.TargetEntity, blood.ChemicalSolutionName, ref blood.ChemicalSolution, out var chemSolution))
-            {
-                var reagentID = new ReagentId(Reagent, null);
-                if (chemSolution.TryGetReagentQuantity(reagentID, out var quant))
-                {
-                    return quant > Min && quant < Max;
-                }
-            }
+            return false;
+        }
+
+        if (Reagent is null)
+        {
             return true;
         }
 
-        throw new NotImplementedException();
+        if (args.EntityManager.TryGetComponent<BloodstreamComponent>(args.TargetEntity, out var blood))
+        {
+            // Try to resolve the chemical solution
+            if (!args.EntityManager.System<SharedSolutionContainerSystem>().ResolveSolution(
+                    args.TargetEntity,
+                    blood.ChemicalSolutionName,
+                    ref blood.ChemicalSolution,
+                    out var chemSolution))
+            {
+                // Failed to resolve solution, apply same logic as when reagent isn't found
+                return Min <= 0;
+            }
+
+            // Solution resolved, check reagent quantity
+            var reagentID = new ReagentId(Reagent, null);
+            if (!chemSolution.TryGetReagentQuantity(reagentID, out var quant))
+            {
+                // Reagent not found in solution
+                return Min <= 0;
+            }
+
+            // Reagent found, check if within thresholds
+            return quant > Min && quant < Max;
+        }
+
+        return false;
     }
 
     public override string GuidebookExplanation(IPrototypeManager prototype)

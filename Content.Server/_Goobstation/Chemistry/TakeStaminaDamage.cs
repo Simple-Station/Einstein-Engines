@@ -15,7 +15,7 @@ public sealed partial class TakeStaminaDamage : EntityEffect
     public int Amount = 10;
 
     /// <summary>
-    /// Whether stamina damage should be applied immediately
+    /// Whether stamina damage should be applied immediately.
     /// </summary>
     [DataField]
     public bool Immediate;
@@ -32,7 +32,9 @@ public sealed partial class TakeStaminaDamage : EntityEffect
         if (args is EntityEffectReagentArgs reagentArgs)
         {
             if (reagentArgs.Scale != 1f)
-                return;
+            {
+                Amount = (int) (Amount * reagentArgs.Scale);
+            }
         }
 
         args.EntityManager.System<StaminaSystem>()
