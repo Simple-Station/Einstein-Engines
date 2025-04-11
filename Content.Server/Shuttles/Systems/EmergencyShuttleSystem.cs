@@ -261,11 +261,12 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
     /// </summary>
     public void CallEmergencyShuttle(EntityUid stationUid, StationEmergencyShuttleComponent? stationShuttle = null)
     {
-        if (!Resolve(stationUid, ref stationShuttle))
+        if (!Resolve(stationUid, ref stationShuttle) || stationShuttle.EmergencyShuttle is null)
             return;
 
-        if (!TryComp<TransformComponent>(stationShuttle.EmergencyShuttle, out var xform) ||
-            !TryComp<ShuttleComponent>(stationShuttle.EmergencyShuttle, out var shuttle))
+        var xform = Transform(stationShuttle.EmergencyShuttle.Value);
+
+        if (!TryComp<ShuttleComponent>(stationShuttle.EmergencyShuttle, out var shuttle))
         {
             Log.Error($"Attempted to call an emergency shuttle for an uninitialized station? Station: {ToPrettyString(stationUid)}. Shuttle: {ToPrettyString(stationShuttle.EmergencyShuttle)}");
             return;
@@ -286,17 +287,15 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
 
         if (_shuttle.TryFTLDock(stationShuttle.EmergencyShuttle.Value, shuttle, targetGrid.Value, DockTag))
         {
-            if (TryComp<TransformComponent>(targetGrid.Value, out var targetXform))
-            {
-                var angle = _dock.GetAngle(stationShuttle.EmergencyShuttle.Value, xform, targetGrid.Value, targetXform, xformQuery);
-                _announcer.SendAnnouncementMessage(
-                    _announcer.GetAnnouncementId("ShuttleDock"),
-                    "emergency-shuttle-docked",
-                    null, null, null, null,
-                    ("time", $"{_consoleAccumulator:0}"),
-                        ("direction", angle.GetDir())
-                );
-            }
+            var targetXform = Transform(targetGrid.Value);
+            var angle = _dock.GetAngle(stationShuttle.EmergencyShuttle.Value, xform, targetGrid.Value, targetXform, xformQuery);
+            _announcer.SendAnnouncementMessage(
+                _announcer.GetAnnouncementId("ShuttleDock"),
+                "emergency-shuttle-docked",
+                null, null, null, null,
+                ("time", $"{_consoleAccumulator:0}"),
+                    ("direction", angle.GetDir())
+            );
 
             // shuttle timers
             var time = TimeSpan.FromSeconds(_consoleAccumulator);
@@ -337,17 +336,12 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
     {
         // This is handled on map-init, so that centcomm has finished initializing by the time the StationPostInitEvent
         // gets raised
-        if (!_emergencyShuttleEnabled)
+        if (!_emergencyShuttleEnabled || component.Entity is null)
             return;
 
-        // Post mapinit? fancy
-        if (TryComp<TransformComponent>(component.Entity, out var xform))
-        {
-            component.MapEntity = xform.MapUid;
-            return;
-        }
+        var xform = Transform(component.Entity.Value);
+        component.MapEntity = xform.MapUid;
 
-        AddCentcomm(uid, component);
     }
 
     private void OnStationStartup(Entity<StationEmergencyShuttleComponent> ent, ref StationPostInitEvent args)

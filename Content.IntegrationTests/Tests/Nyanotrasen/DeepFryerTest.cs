@@ -1,10 +1,8 @@
 #nullable enable annotations
 using Content.Server.Kitchen.Components;
-using Content.Server.Kitchen.EntitySystems;
 using Content.Server.Nyanotrasen.Kitchen.Components;
 using Content.Server.Nyanotrasen.Kitchen.EntitySystems;
 using Robust.Shared.GameObjects;
-using Robust.Shared.Reflection;
 
 namespace Content.IntegrationTests.Tests.DeepFryer
 {
@@ -44,8 +42,6 @@ namespace Content.IntegrationTests.Tests.DeepFryer
             var server = pair.Server;
 
             var testMap = await pair.CreateTestMap();
-
-            EntityUid unitUid = default;
 
             var entityManager = server.ResolveDependency<IEntityManager>();
             var xformSystem = entityManager.System<SharedTransformSystem>();

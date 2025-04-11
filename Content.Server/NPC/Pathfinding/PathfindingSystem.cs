@@ -188,8 +188,8 @@ namespace Content.Server.NPC.Pathfinding
         /// </summary>
         public bool TryCreatePortal(EntityCoordinates coordsA, EntityCoordinates coordsB, out int handle)
         {
-            var mapUidA = coordsA.GetMapUid(EntityManager);
-            var mapUidB = coordsB.GetMapUid(EntityManager);
+            var mapUidA = _transform.GetMap(coordsA);
+            var mapUidB = _transform.GetMap(coordsB);
             handle = -1;
 
             if (mapUidA != mapUidB || mapUidA == null)
@@ -197,8 +197,8 @@ namespace Content.Server.NPC.Pathfinding
                 return false;
             }
 
-            var gridUidA = coordsA.GetGridUid(EntityManager);
-            var gridUidB = coordsB.GetGridUid(EntityManager);
+            var gridUidA = _transform.GetGrid(coordsA);
+            var gridUidB = _transform.GetGrid(coordsB);
 
             if (!TryComp<GridPathfindingComponent>(gridUidA, out var gridA) ||
                 !TryComp<GridPathfindingComponent>(gridUidB, out var gridB))
@@ -236,8 +236,8 @@ namespace Content.Server.NPC.Pathfinding
 
             _portals.Remove(handle);
 
-            var gridUidA = portal.CoordinatesA.GetGridUid(EntityManager);
-            var gridUidB = portal.CoordinatesB.GetGridUid(EntityManager);
+            var gridUidA = _transform.GetGrid(portal.CoordinatesA);
+            var gridUidB = _transform.GetGrid(portal.CoordinatesB);
 
             if (!TryComp<GridPathfindingComponent>(gridUidA, out var gridA) ||
                 !TryComp<GridPathfindingComponent>(gridUidB, out var gridB))
@@ -264,9 +264,6 @@ namespace Content.Server.NPC.Pathfinding
             int limit = 40,
             PathFlags flags = PathFlags.None)
         {
-            if (!TryComp<TransformComponent>(entity, out var start))
-                return new PathResultEvent(PathResult.NoPath, new List<PathPoly>());
-
             var layer = 0;
             var mask = 0;
 
@@ -275,7 +272,7 @@ namespace Content.Server.NPC.Pathfinding
                 (layer, mask) = _physics.GetHardCollision(entity, fixtures);
             }
 
-            var request = new BFSPathRequest(maxRange, limit, start.Coordinates, flags, layer, mask, cancelToken);
+            var request = new BFSPathRequest(maxRange, limit, Transform(entity).Coordinates, flags, layer, mask, cancelToken);
             var path = await GetPath(request);
 
             if (path.Result != PathResult.Path)
@@ -294,10 +291,7 @@ namespace Content.Server.NPC.Pathfinding
             CancellationToken cancelToken,
             PathFlags flags = PathFlags.None)
         {
-            if (!TryComp<TransformComponent>(entity, out var start))
-                return null;
-
-            var request = GetRequest(entity, start.Coordinates, end, range, cancelToken, flags);
+            var request = GetRequest(entity, Transform(entity).Coordinates, end, range, cancelToken, flags);
             var path = await GetPath(request);
 
             if (path.Result != PathResult.Path)
@@ -325,11 +319,7 @@ namespace Content.Server.NPC.Pathfinding
             CancellationToken cancelToken,
             PathFlags flags = PathFlags.None)
         {
-            if (!TryComp<TransformComponent>(entity, out var xform) ||
-                !TryComp<TransformComponent>(target, out var targetXform))
-                return new PathResultEvent(PathResult.NoPath, new List<PathPoly>());
-
-            var request = GetRequest(entity, xform.Coordinates, targetXform.Coordinates, range, cancelToken, flags);
+            var request = GetRequest(entity, Transform(entity).Coordinates, Transform(target).Coordinates, range, cancelToken, flags);
             return await GetPath(request);
         }
 
@@ -397,15 +387,15 @@ namespace Content.Server.NPC.Pathfinding
         /// </summary>
         public PathPoly? GetPoly(EntityCoordinates coordinates)
         {
-            var gridUid = coordinates.GetGridUid(EntityManager);
-
-            if (!TryComp<GridPathfindingComponent>(gridUid, out var comp) ||
-                !TryComp<TransformComponent>(gridUid, out var xform))
-            {
+            var gridUid = _transform.GetGrid(coordinates);
+            if (gridUid is null)
                 return null;
-            }
+            var xform = Transform(gridUid.Value);
 
-            var localPos = Vector2.Transform(coordinates.ToMapPos(EntityManager, _transform), xform.InvWorldMatrix);
+            if (!TryComp<GridPathfindingComponent>(gridUid, out var comp))
+                return null;
+
+            var localPos = Vector2.Transform(_transform.ToMapCoordinates(coordinates).Position, _transform.GetInvWorldMatrix(xform));
             var origin = GetOrigin(localPos);
 
             if (!TryGetChunk(origin, comp, out var chunk))

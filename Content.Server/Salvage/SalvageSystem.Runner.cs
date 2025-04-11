@@ -32,18 +32,18 @@ public sealed partial class SalvageSystem
 
     private void OnConsoleFTLAttempt(ref ConsoleFTLAttemptEvent ev)
     {
-        if (!TryComp<TransformComponent>(ev.Uid, out var xform) ||
-            !TryComp<SalvageExpeditionComponent>(xform.MapUid, out var salvage))
-        {
+        var xform = Transform(ev.Uid);
+        if (!HasComp<SalvageExpeditionComponent>(xform.MapUid))
             return;
-        }
 
         // TODO: This is terrible but need bluespace harnesses or something.
-        var query = EntityQueryEnumerator<HumanoidAppearanceComponent, MobStateComponent, TransformComponent>();
+        var query = EntityQueryEnumerator<HumanoidAppearanceComponent>();
 
-        while (query.MoveNext(out var uid, out _, out var mobState, out var mobXform))
+        while (query.MoveNext(out var uid, out _))
         {
-            if (mobXform.MapUid != xform.MapUid)
+            var mobXform = Transform(uid);
+            if (mobXform.MapUid != xform.MapUid
+                || !TryComp(uid, out MobStateComponent? mobState))
                 continue;
 
             // Don't count unidentified humans (loot) or anyone you murdered so you can still maroon them once dead.

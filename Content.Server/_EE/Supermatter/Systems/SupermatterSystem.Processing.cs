@@ -1,6 +1,5 @@
 using System.Linq;
 using System.Text;
-using Content.Server.Chat.Systems;
 using Content.Server.Explosion.EntitySystems;
 using Content.Server.Sound.Components;
 using Content.Shared._EE.CCVars;
@@ -8,13 +7,11 @@ using Content.Shared._EE.Supermatter.Components;
 using Content.Shared._EE.Supermatter.Monitor;
 using Content.Shared.Atmos;
 using Content.Shared.Audio;
-using Content.Shared.CCVar;
 using Content.Shared.Chat;
 using Content.Shared.Popups;
 using Content.Shared.Radiation.Components;
 using Content.Shared.Speech;
 using Robust.Shared.Audio;
-using Robust.Shared.Configuration;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -483,10 +480,12 @@ public sealed partial class SupermatterSystem
         foreach (var pSession in Filter.GetAllPlayers())
         {
             var pEntity = pSession.AttachedEntity;
+            if (pEntity is null)
+                continue;
 
-            if (pEntity != null
-                && TryComp<TransformComponent>(pEntity, out var pTransform)
-                && pTransform.MapID == smTransform.MapID)
+            var pTransform = Transform(pEntity.Value);
+
+            if (pTransform.MapID == smTransform.MapID)
                 _popup.PopupEntity(Loc.GetString("supermatter-delam-player"), pEntity.Value, pEntity.Value, PopupType.MediumCaution);
         }
 

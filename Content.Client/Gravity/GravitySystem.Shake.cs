@@ -24,17 +24,15 @@ public sealed partial class GravitySystem
     private void OnShakeInit(EntityUid uid, GravityShakeComponent component, ComponentInit args)
     {
         var localPlayer = _playerManager.LocalEntity;
-
-        if (!TryComp<TransformComponent>(localPlayer, out var xform) ||
-            xform.GridUid != uid && xform.MapUid != uid)
-        {
+        if (localPlayer is null)
             return;
-        }
+
+        var xform = Transform(localPlayer.Value);
+        if (xform.GridUid != uid && xform.MapUid != uid)
+            return;
 
         if (Timing.IsFirstTimePredicted && TryComp<GravityComponent>(uid, out var gravity))
-        {
             _audio.PlayGlobal(gravity.GravityShakeSound, Filter.Local(), true, AudioParams.Default.WithVolume(-2f));
-        }
     }
 
     protected override void ShakeGrid(EntityUid uid, GravityComponent? gravity = null)
@@ -45,15 +43,12 @@ public sealed partial class GravitySystem
             return;
 
         var localPlayer = _playerManager.LocalEntity;
-
-        if (!TryComp<TransformComponent>(localPlayer, out var xform))
+        if (localPlayer is null)
             return;
 
-        if (xform.GridUid != uid ||
-            xform.GridUid == null && xform.MapUid != uid)
-        {
+        var xform = Transform(localPlayer.Value);
+        if (xform.GridUid != uid || xform.GridUid == null && xform.MapUid != uid)
             return;
-        }
 
         var kick = new Vector2(_random.NextFloat(), _random.NextFloat()) * GravityKick;
         _sharedCameraRecoil.KickCamera(localPlayer.Value, kick);

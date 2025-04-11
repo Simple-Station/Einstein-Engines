@@ -1,10 +1,8 @@
 using Content.Server.Shuttles.Components;
 using Content.Server.Station.Components;
 using Content.Server.Station.Events;
-using Content.Shared.Cargo.Components;
 using Content.Shared.CCVar;
 using Content.Shared.Shuttles.Components;
-using Robust.Shared.Random;
 using Robust.Shared.Utility;
 
 namespace Content.Server.Shuttles.Systems;
@@ -183,21 +181,19 @@ public sealed partial class ShuttleSystem
         if (!_cfg.GetCVar(CCVars.GridFill))
             return;
 
-        if (!TryComp<DockingComponent>(uid, out var dock) ||
-            !TryComp<TransformComponent>(uid, out var xform) ||
-            xform.GridUid == null)
-        {
+        var xform = Transform(uid);
+
+        if (!TryComp<DockingComponent>(uid, out var dock) || xform.GridUid is null)
             return;
-        }
 
         // Spawn on a dummy map and try to dock if possible, otherwise dump it.
-        var mapId = _mapManager.CreateMap();
+        var map = _mapSystem.CreateMap();
+        var mapId = Transform(map).MapID;
         var valid = false;
 
-        if (_loader.TryLoad(mapId, component.Path.ToString(), out var ent) &&
-            ent.Count == 1 &&
-            TryComp<TransformComponent>(ent[0], out var shuttleXform))
+        if (_loader.TryLoad(mapId, component.Path.ToString(), out var ent) && ent.Count == 1)
         {
+            var shuttleXform = Transform(ent[0]);
             var escape = GetSingleDock(ent[0]);
 
             if (escape != null)

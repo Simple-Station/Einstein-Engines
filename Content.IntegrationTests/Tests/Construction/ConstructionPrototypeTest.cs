@@ -3,7 +3,6 @@ using Content.Server.Construction.Components;
 using Content.Shared.Construction.Prototypes;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
-using Robust.Shared.Maths;
 using Robust.Shared.Prototypes;
 
 namespace Content.IntegrationTests.Tests.Construction
@@ -44,7 +43,7 @@ namespace Content.IntegrationTests.Tests.Construction
                     }
                     catch (Exception e)
                     {
-                        Assert.Fail(proto.ID);
+                        Assert.Fail(proto.ID + e);
                         return;
                     }
 

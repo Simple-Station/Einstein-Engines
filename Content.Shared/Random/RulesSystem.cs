@@ -19,6 +19,7 @@ public sealed class RulesSystem : EntitySystem
     public bool IsTrue(EntityUid uid, RulesPrototype rules)
     {
         var inRange = new HashSet<Entity<IComponent>>();
+        var xform = Transform(uid);
         foreach (var rule in rules.Rules)
         {
             switch (rule)
@@ -27,11 +28,6 @@ public sealed class RulesSystem : EntitySystem
                     break;
                 case GridInRangeRule griddy:
                 {
-                    if (!TryComp<TransformComponent>(uid, out var xform))
-                    {
-                        return false;
-                    }
-
                     if (xform.GridUid != null)
                     {
                         return !griddy.Inverted;
@@ -51,8 +47,7 @@ public sealed class RulesSystem : EntitySystem
                 }
                 case InSpaceRule:
                 {
-                    if (!TryComp<TransformComponent>(uid, out var xform) ||
-                        xform.GridUid != null)
+                    if (xform.GridUid != null)
                     {
                         return false;
                     }
@@ -63,8 +58,7 @@ public sealed class RulesSystem : EntitySystem
                 {
                     var xformQuery = GetEntityQuery<TransformComponent>();
 
-                    if (!xformQuery.TryGetComponent(uid, out var xform) ||
-                        xform.MapUid == null)
+                    if (xform.MapUid == null)
                     {
                         return false;
                     }
@@ -104,8 +98,7 @@ public sealed class RulesSystem : EntitySystem
                 {
                     var xformQuery = GetEntityQuery<TransformComponent>();
 
-                    if (!xformQuery.TryGetComponent(uid, out var xform) ||
-                        xform.MapUid == null)
+                    if (xform.MapUid == null)
                     {
                         return false;
                     }
@@ -147,8 +140,7 @@ public sealed class RulesSystem : EntitySystem
                 }
                 case NearbyEntitiesRule entity:
                 {
-                    if (!TryComp<TransformComponent>(uid, out var xform) ||
-                        xform.MapUid == null)
+                    if (xform.MapUid == null)
                     {
                         return false;
                     }
@@ -178,8 +170,7 @@ public sealed class RulesSystem : EntitySystem
                 }
                 case NearbyTilesPercentRule tiles:
                 {
-                    if (!TryComp<TransformComponent>(uid, out var xform) ||
-                        !TryComp<MapGridComponent>(xform.GridUid, out var grid))
+                    if (!TryComp<MapGridComponent>(xform.GridUid, out var grid))
                     {
                         return false;
                     }
@@ -228,8 +219,7 @@ public sealed class RulesSystem : EntitySystem
                 }
                 case OnMapGridRule:
                 {
-                    if (!TryComp<TransformComponent>(uid, out var xform) ||
-                        xform.GridUid != xform.MapUid ||
+                    if (xform.GridUid != xform.MapUid ||
                         xform.MapUid == null)
                     {
                         return false;

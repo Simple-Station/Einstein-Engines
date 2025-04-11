@@ -1,4 +1,3 @@
-using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Events;
@@ -247,8 +246,10 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
 
         RaiseLocalEvent(entity.Value, ref getShuttleEv);
         entity = getShuttleEv.Console;
+        if (entity is null)
+            return;
 
-        TryComp<TransformComponent>(entity, out var consoleXform);
+        var consoleXform = Transform(entity.Value);
         var shuttleGridUid = consoleXform?.GridUid;
 
         NavInterfaceState navState;

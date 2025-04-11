@@ -22,15 +22,16 @@ public sealed partial class UniqueEntitySystem : EntitySystem
         if (string.IsNullOrEmpty(comp.MarkerName))
             return;
 
-        var query = EntityQueryEnumerator<UniqueEntityMarkerComponent, TransformComponent>();
+        var query = EntityQueryEnumerator<UniqueEntityMarkerComponent>();
 
-        while (query.MoveNext(out var uid, out var marker, out var xform))
+        while (query.MoveNext(out var uid, out var marker))
         {
             if (string.IsNullOrEmpty(marker.MarkerName)
                 || marker.MarkerName != comp.MarkerName
                 || uid == checker.Owner)
                 continue;
 
+            var xform = Transform(uid);
             // Check if marker on station
             if (marker.StationOnly && _station.GetOwningStation(uid, xform) is null)
                 continue;

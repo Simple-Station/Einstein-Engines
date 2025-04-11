@@ -4,12 +4,12 @@ using Content.Server.Botany;
 using Content.Server.Chat;
 using Content.Server.Chat.Managers;
 using Content.Server.Chat.Systems;
-using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Server.Fluids.EntitySystems;
 using Content.Server.Research.Systems;
 using Content.Shared.Abilities.Psionics;
 using Content.Shared.Chat;
 using Content.Shared.Chemistry.Components;
+using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Interaction;
 using Content.Shared.Mobs.Components;
@@ -38,7 +38,7 @@ public sealed class OracleSystem : EntitySystem
     [Dependency] private readonly PuddleSystem _puddles = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly ResearchSystem _research = default!;
-    [Dependency] private readonly SolutionContainerSystem _solutions = default!;
+    [Dependency] private readonly SharedSolutionContainerSystem _solutions = default!;
     [Dependency] private readonly ThrowingSystem _throwing = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
 
@@ -93,7 +93,11 @@ public sealed class OracleSystem : EntitySystem
         if (args.Handled)
             return;
 
-        if (HasComp<MobStateComponent>(args.Used) || !TryComp<MetaDataComponent>(args.Used, out var meta) || meta.EntityPrototype == null)
+        if (HasComp<MobStateComponent>(args.Used))
+            return;
+
+        var meta = MetaData(args.Used);
+        if (meta.EntityPrototype is null)
             return;
 
         var requestValid = IsCorrectItem(meta.EntityPrototype, oracle.Comp.DesiredPrototype);

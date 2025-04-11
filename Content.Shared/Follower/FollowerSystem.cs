@@ -216,16 +216,17 @@ public sealed class FollowerSystem : EntitySystem
         RaiseLocalEvent(uid, uidEv);
         RaiseLocalEvent(target, targetEv);
 
-        if (!deparent || !TryComp(uid, out TransformComponent? xform))
+        if (!deparent)
             return;
 
+        var xform = Transform(uid);
         _transform.AttachToGridOrMap(uid, xform);
         if (xform.MapUid != null)
             return;
 
         if (_netMan.IsClient)
         {
-            _transform.DetachParentToNull(uid, xform);
+            _transform.DetachEntity(uid, xform);
             return;
         }
 
@@ -237,7 +238,7 @@ public sealed class FollowerSystem : EntitySystem
     ///     Forces all of an entity's followers to stop following it.
     /// </summary>
     public void StopAllFollowers(EntityUid uid,
-        FollowedComponent? followed=null)
+        FollowedComponent? followed = null)
     {
         if (!Resolve(uid, ref followed))
             return;

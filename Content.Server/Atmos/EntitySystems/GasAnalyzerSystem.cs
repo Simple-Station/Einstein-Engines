@@ -149,19 +149,14 @@ namespace Content.Server.Atmos.EntitySystems
         {
             if (!Resolve(uid, ref component))
                 return false;
-
-            if (!TryComp(component.User, out TransformComponent? xform))
-            {
-                DisableAnalyzer(uid, component);
-                return false;
-            }
+            var xform = Transform(component.User);
 
             // check if the user has walked away from what they scanned
             var userPos = xform.Coordinates;
             if (component.LastPosition.HasValue)
             {
                 // Check if position is out of range => don't update and disable
-                if (!component.LastPosition.Value.InRange(EntityManager, _transform, userPos, SharedInteractionSystem.InteractionRange))
+                if (!_transform.InRange(component.LastPosition.Value, userPos, SharedInteractionSystem.InteractionRange))
                 {
                     if (component.User is { } userId && component.Enabled)
                         _popup.PopupEntity(Loc.GetString("gas-analyzer-shutoff"), userId, userId);

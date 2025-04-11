@@ -2,7 +2,6 @@ using Content.Shared.Audio;
 using Content.Shared.Hands;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
-using Content.Shared.Maps;
 using Content.Shared.Mobs;
 using Content.Shared.Popups;
 using Content.Shared.Sound.Components;
@@ -13,7 +12,6 @@ using JetBrains.Annotations;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
-using Robust.Shared.Map.Components;
 using Robust.Shared.Network;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
@@ -30,7 +28,6 @@ public abstract class SharedEmitSoundSystem : EntitySystem
 {
     [Dependency] protected readonly IGameTiming Timing = default!;
     [Dependency] private readonly INetManager _netMan = default!;
-    [Dependency] private readonly ITileDefinitionManager _tileDefMan = default!;
     [Dependency] protected readonly IRobustRandom Random = default!;
     [Dependency] private   readonly SharedAmbientSoundSystem _ambient = default!;
     [Dependency] private   readonly SharedAudioSystem _audioSystem = default!;
@@ -82,17 +79,8 @@ public abstract class SharedEmitSoundSystem : EntitySystem
 
     private void OnEmitSoundOnLand(EntityUid uid, BaseEmitSoundComponent component, ref LandEvent args)
     {
-        if (!args.PlaySound ||
-            !TryComp<TransformComponent>(uid, out var xform) ||
-            !TryComp<MapGridComponent>(xform.GridUid, out var grid))
-        {
-            return;
-        }
-
-        var tile = grid.GetTileRef(xform.Coordinates);
-
-        // Handle maps being grids (we'll still emit the sound).
-        if (xform.GridUid != xform.MapUid && tile.IsSpace(_tileDefMan))
+        var xform = Transform(uid);
+        if (!args.PlaySound || xform.GridUid is null)
             return;
 
         // hand throwing not predicted sadly

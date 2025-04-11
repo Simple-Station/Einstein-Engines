@@ -40,12 +40,13 @@ internal sealed class RandomWalkController : VirtualController
     {
         base.UpdateBeforeSolve(prediction, frameTime);
 
-        var query = EntityQueryEnumerator<RandomWalkComponent, PhysicsComponent>();
-        while (query.MoveNext(out var uid, out var randomWalk, out var physics))
+        var query = EntityQueryEnumerator<RandomWalkComponent>();
+        while (query.MoveNext(out var uid, out var randomWalk))
         {
-            if (EntityManager.HasComponent<ActorComponent>(uid)
-            ||  EntityManager.HasComponent<ThrownItemComponent>(uid)
-            ||  EntityManager.HasComponent<FollowerComponent>(uid))
+            if (!TryComp(uid, out PhysicsComponent? physics)
+                || EntityManager.HasComponent<ActorComponent>(uid)
+                || EntityManager.HasComponent<ThrownItemComponent>(uid)
+                || EntityManager.HasComponent<FollowerComponent>(uid))
                 continue;
 
             var curTime = _timing.CurTime;
@@ -62,12 +63,12 @@ internal sealed class RandomWalkController : VirtualController
     /// <param name="physics">The physics body associated with the random walker.</param>
     public void Update(EntityUid uid, RandomWalkComponent? randomWalk = null, PhysicsComponent? physics = null)
     {
-        if(!Resolve(uid, ref randomWalk))
+        if (!Resolve(uid, ref randomWalk))
             return;
 
         var curTime = _timing.CurTime;
         randomWalk.NextStepTime = curTime + TimeSpan.FromSeconds(_random.NextDouble(randomWalk.MinStepCooldown.TotalSeconds, randomWalk.MaxStepCooldown.TotalSeconds));
-        if(!Resolve(uid, ref physics))
+        if (!Resolve(uid, ref physics))
             return;
 
         var pushVec = _random.NextAngle().ToVec();

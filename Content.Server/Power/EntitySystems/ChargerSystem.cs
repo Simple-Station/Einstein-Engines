@@ -12,7 +12,6 @@ using Content.Shared.Storage.Components;
 using Robust.Server.Containers;
 using Content.Shared.Whitelist;
 using Content.Shared.Inventory;
-using Content.Shared._Goobstation.Clothing.Systems;
 
 namespace Content.Server.Power.EntitySystems;
 
@@ -205,11 +204,9 @@ internal sealed class ChargerSystem : EntitySystem
 
     private CellChargerStatus GetStatus(EntityUid uid, ChargerComponent component)
     {
-        if (!component.Portable)
-        {
-            if (!TryComp(uid, out TransformComponent? transformComponent) || !transformComponent.Anchored)
-                return CellChargerStatus.Off;
-        }
+        var transformComponent = Transform(uid);
+        if (!component.Portable && !transformComponent.Anchored)
+            return CellChargerStatus.Off;
 
         if (!TryComp(uid, out ApcPowerReceiverComponent? apcPowerReceiverComponent))
             return CellChargerStatus.Off;

@@ -168,7 +168,7 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
             if (Interaction.CombatModeCanHandInteract(entity, target))
                 return;
 
-            if (weapon.HeavyOnLightMiss && !CanDoLightAttack(entity, target, weapon, out _))
+            if (weapon.HeavyOnLightMiss && !CanDoLightAttack(entity, target, weapon))
             {
                 ClientHeavyAttack(entity, coordinates, weaponUid, weapon);
                 return;

@@ -170,10 +170,7 @@ namespace Content.Server.Bible
             {
                 Act = () =>
                 {
-                    if (!TryComp<TransformComponent>(args.User, out var userXform))
-                        return;
-
-                    AttemptSummon((uid, component), args.User, userXform);
+                    AttemptSummon((uid, component), args.User, Transform(args.User));
                 },
                 Text = Loc.GetString("bible-summon-verb"),
                 Priority = 2

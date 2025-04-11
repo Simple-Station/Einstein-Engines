@@ -14,8 +14,7 @@ public sealed class SpawnOnDespawnSystem : EntitySystem
 
     private void OnDespawn(EntityUid uid, SpawnOnDespawnComponent comp, ref TimedDespawnEvent args)
     {
-        if (!TryComp(uid, out TransformComponent? xform))
-            return;
+        var xform = Transform(uid);
 
         // Lavaland Change start
         if (comp.Prototype != null)

@@ -13,9 +13,10 @@ public sealed class TetherGunSystem : SharedTetherGunSystem
     [Dependency] private readonly IEyeManager _eyeManager = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IInputManager _input = default!;
-    [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly IOverlayManager _overlay = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
+    [Dependency] private readonly SharedTransformSystem _xform = default!;
+    private const float BufferDistance = 0.1f;
 
     public override void Initialize()
     {
@@ -56,12 +57,9 @@ public sealed class TetherGunSystem : SharedTetherGunSystem
 
         var player = _player.LocalEntity;
 
-        if (player == null ||
-            !TryGetTetherGun(player.Value, out var gunUid, out var gun) ||
-            gun.TetherEntity == null)
-        {
+        if (player == null || !TryGetTetherGun(player.Value, out var _, out var gun)
+            || gun.TetherEntity == null)
             return;
-        }
 
         var mousePos = _input.MouseScreenPosition;
         var mouseWorldPos = _eyeManager.PixelToMap(mousePos);
@@ -71,23 +69,12 @@ public sealed class TetherGunSystem : SharedTetherGunSystem
 
         EntityCoordinates coords;
 
-        if (_mapManager.TryFindGridAt(mouseWorldPos, out var gridUid, out _))
-        {
-            coords = EntityCoordinates.FromMap(gridUid, mouseWorldPos, TransformSystem);
-        }
-        else
-        {
-            coords = EntityCoordinates.FromMap(_mapManager.GetMapEntityId(mouseWorldPos.MapId), mouseWorldPos, TransformSystem);
-        }
+        coords = _xform.ToCoordinates(mouseWorldPos);
+        var tetherXform = Transform(gun.TetherEntity.Value);
 
-        const float BufferDistance = 0.1f;
-
-        if (TryComp<TransformComponent>(gun.TetherEntity, out var tetherXform) &&
-            tetherXform.Coordinates.TryDistance(EntityManager, TransformSystem, coords, out var distance) &&
-            distance < BufferDistance)
-        {
+        if (tetherXform.Coordinates.TryDistance(EntityManager, TransformSystem, coords, out var distance)
+            && distance < BufferDistance)
             return;
-        }
 
         RaisePredictiveEvent(new RequestTetherMoveEvent()
         {

@@ -59,9 +59,12 @@ public sealed class LavalandWeatherSystem : EntitySystem
         base.Update(frameTime);
         _lavalandWeatherJobQueue.Process();
 
-        var maps = EntityQueryEnumerator<LavalandMapComponent, LavalandStormedMapComponent>();
-        while(maps.MoveNext(out var map, out var lavaland, out var comp))
+        var maps = EntityQueryEnumerator<LavalandMapComponent>();
+        while (maps.MoveNext(out var map, out var lavaland))
         {
+            if (!TryComp(map, out LavalandStormedMapComponent? comp))
+                continue;
+
             UpdateWeatherDuration(frameTime, (map, lavaland), comp);
             UpdateWeatherDamage(frameTime, (map, comp));
         }

@@ -62,7 +62,7 @@ public sealed partial class DeepFryerSystem
             // This line here is mainly for mice, because they have a food
             // component that mirrors how much blood they have, which is
             // used for the reagent grinder.
-            if (alreadyHadFood)
+            if (alreadyHadFood is not null)
                 _solutionContainerSystem.RemoveAllSolution(mobFoodSolution.Value);
 
             if (TryComp<BloodstreamComponent>(mob, out var bloodstreamComponent) && bloodstreamComponent.ChemicalSolution != null)
@@ -159,15 +159,11 @@ public sealed partial class DeepFryerSystem
                 }
             }
         }
-        else
-        {
-            flavorProfileComponent = EnsureComp<FlavorProfileComponent>(item);
-            // TODO: Default flavor?
-        }
+        else EnsureComp<FlavorProfileComponent>(item);
 
         // Make sure there's enough room for the fryer solution.
-        var foodSolution = _solutionContainerSystem.EnsureSolution(item, foodComponent.Solution);
-        if (!_solutionContainerSystem.TryGetSolution(item, foodSolution.Name, out var foodContainer))
+        if (!_solutionContainerSystem.EnsureSolution(item, foodComponent.Solution, out var foodSolution)
+            || !_solutionContainerSystem.TryGetSolution(item, foodSolution.Name, out var foodContainer))
             return;
 
         // The solution quantity is used to give the fried food an extra

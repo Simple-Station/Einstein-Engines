@@ -37,9 +37,12 @@ public sealed class SalvageSystem : SharedSalvageSystem
             return;
 
         var player = _playerManager.LocalEntity;
+        if (player is null)
+            return;
 
-        if (!TryComp<TransformComponent>(player, out var xform) ||
-            !TryComp<SalvageExpeditionComponent>(xform.MapUid, out var expedition) ||
+        var xform = Transform(player.Value);
+
+        if (!TryComp<SalvageExpeditionComponent>(xform.MapUid, out var expedition) ||
             expedition.Stage < ExpeditionStage.MusicCountdown)
         {
             return;

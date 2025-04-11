@@ -275,9 +275,9 @@ namespace Content.Shared.Interaction
         private void HandleInteractInventorySlotEvent(InteractInventorySlotEvent msg, EntitySessionEventArgs args)
         {
             var item = GetEntity(msg.ItemUid);
-
+            var itemXform = Transform(item);
             // client sanitization
-            if (!TryComp(item, out TransformComponent? itemXform) || !ValidateClientInput(args.SenderSession, itemXform.Coordinates, item, out var user))
+            if (!ValidateClientInput(args.SenderSession, itemXform.Coordinates, item, out var user))
             {
                 Log.Info($"Inventory interaction validation failed.  Session={args.SenderSession}");
                 return;
@@ -1168,7 +1168,7 @@ namespace Content.Shared.Interaction
                 return false;
 
             // Goobstation [
-            var useAttemptEv = new UseInHandAttemptEvent(user); 
+            var useAttemptEv = new UseInHandAttemptEvent(user);
             RaiseLocalEvent(used, useAttemptEv);
 
             if (useAttemptEv.Cancelled)

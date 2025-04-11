@@ -1,7 +1,6 @@
 using System.Numerics;
 using Content.Server.Audio;
 using Content.Server.Construction;
-using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Shuttles.Components;
 using Content.Shared.Damage;
@@ -19,7 +18,6 @@ using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
-using Content.Shared.Localizations;
 using Content.Shared.Power;
 
 namespace Content.Server.Shuttles.Systems;
@@ -68,23 +66,22 @@ public sealed class ThrusterSystem : EntitySystem
         using (args.PushGroup(nameof(ThrusterComponent)))
         {
             args.PushMarkup(enabled);
+            var xform = Transform(uid);
 
-            if (component.Type == ThrusterType.Linear &&
-                EntityManager.TryGetComponent(uid, out TransformComponent? xform) &&
-                xform.Anchored)
-            {
-                var nozzleDir = Loc.GetString("thruster-comp-nozzle-direction",
-                    ("direction", xform.LocalRotation.Opposite().ToWorldVec().GetDir().ToString().ToLowerInvariant()));
+            if (component.Type != ThrusterType.Linear || !xform.Anchored)
+                return;
 
-                args.PushMarkup(nozzleDir);
+            var nozzleDir = Loc.GetString("thruster-comp-nozzle-direction",
+                ("direction", xform.LocalRotation.Opposite().ToWorldVec().GetDir().ToString().ToLowerInvariant()));
 
-                var exposed = NozzleExposed(xform);
+            args.PushMarkup(nozzleDir);
 
-                var nozzleText =
-                    Loc.GetString(exposed ? "thruster-comp-nozzle-exposed" : "thruster-comp-nozzle-not-exposed");
+            var exposed = NozzleExposed(xform);
 
-                args.PushMarkup(nozzleText);
-            }
+            var nozzleText =
+                Loc.GetString(exposed ? "thruster-comp-nozzle-exposed" : "thruster-comp-nozzle-not-exposed");
+
+            args.PushMarkup(nozzleText);
         }
     }
 
@@ -158,13 +155,10 @@ public sealed class ThrusterSystem : EntitySystem
     {
         // TODO: Disable visualizer for old direction
         // TODO: Don't make them rotatable and make it require anchoring.
+        var xform = Transform(uid);
 
-        if (!component.Enabled ||
-            !EntityManager.TryGetComponent(uid, out TransformComponent? xform) ||
-            !EntityManager.TryGetComponent(xform.GridUid, out ShuttleComponent? shuttleComponent))
-        {
+        if (!component.Enabled || !EntityManager.TryGetComponent(xform.GridUid, out ShuttleComponent? shuttleComponent))
             return;
-        }
 
         var canEnable = CanEnable(uid, component);
 

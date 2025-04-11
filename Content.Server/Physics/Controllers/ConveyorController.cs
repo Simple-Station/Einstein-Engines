@@ -1,7 +1,6 @@
 using Content.Server.DeviceLinking.Events;
 using Content.Server.DeviceLinking.Systems;
 using Content.Server.Materials;
-using Content.Server.Power.Components;
 using Content.Shared.Conveyor;
 using Content.Shared.Maps;
 using Content.Shared.Physics;
@@ -39,16 +38,16 @@ public sealed class ConveyorController : SharedConveyorController
     {
         _signalSystem.EnsureSinkPorts(uid, component.ReversePort, component.ForwardPort, component.OffPort);
 
-        if (TryComp<PhysicsComponent>(uid, out var physics))
-        {
-            var shape = new PolygonShape();
-            shape.SetAsBox(0.55f, 0.55f);
+        if (!TryComp(uid, out PhysicsComponent? physics))
+            return;
 
-            _fixtures.TryCreateFixture(uid, shape, ConveyorFixture,
-                collisionLayer: (int) (CollisionGroup.LowImpassable | CollisionGroup.MidImpassable |
-                                       CollisionGroup.Impassable), hard: false, body: physics);
+        var shape = new PolygonShape();
+        shape.SetAsBox(0.55f, 0.55f);
 
-        }
+        _fixtures.TryCreateFixture(uid, shape, ConveyorFixture,
+            collisionLayer: (int) (CollisionGroup.LowImpassable | CollisionGroup.MidImpassable |
+                                    CollisionGroup.Impassable), hard: false, body: physics);
+
     }
 
     private void OnConveyorShutdown(EntityUid uid, ConveyorComponent component, ComponentShutdown args)
@@ -102,7 +101,7 @@ public sealed class ConveyorController : SharedConveyorController
         component.State = state;
 
         if (TryComp<PhysicsComponent>(uid, out var physics))
-            _broadphase.RegenerateContacts(uid, physics);
+            _broadphase.RegenerateContacts((uid, physics));
 
         _materialReclaimer.SetReclaimerEnabled(uid, component.State != ConveyorState.Off);
 

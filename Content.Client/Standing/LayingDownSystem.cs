@@ -3,7 +3,6 @@ using Content.Shared.Rotation;
 using Content.Shared.Standing;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
-using Robust.Shared.Configuration;
 using Robust.Shared.Timing;
 
 namespace Content.Client.Standing;
@@ -15,6 +14,7 @@ public sealed class LayingDownSystem : SharedLayingDownSystem
     [Dependency] private readonly StandingStateSystem _standing = default!;
     [Dependency] private readonly AnimationPlayerSystem _animation = default!;
     [Dependency] private readonly SharedBuckleSystem _buckle = default!;
+    [Dependency] private readonly SharedTransformSystem _xform = default!;
 
     public override void Initialize()
     {
@@ -48,12 +48,12 @@ public sealed class LayingDownSystem : SharedLayingDownSystem
             || !_standing.IsDown(uid)
             || _buckle.IsBuckled(uid)
             || _animation.HasRunningAnimation(uid, "rotate")
-            || !TryComp<TransformComponent>(uid, out var transform)
             || !TryComp<SpriteComponent>(uid, out var sprite)
             || !TryComp<RotationVisualsComponent>(uid, out var rotationVisuals))
             return;
 
-        var rotation = transform.LocalRotation + (_eyeManager.CurrentEye.Rotation - (transform.LocalRotation - transform.WorldRotation));
+        var transform = Transform(uid);
+        var rotation = transform.LocalRotation + (_eyeManager.CurrentEye.Rotation - (transform.LocalRotation - _xform.GetWorldRotation(transform)));
 
         if (rotation.GetDir() is Direction.SouthEast or Direction.East or Direction.NorthEast or Direction.North)
         {
@@ -72,11 +72,12 @@ public sealed class LayingDownSystem : SharedLayingDownSystem
             return;
 
         var uid = GetEntity(ev.User);
+        var transform = Transform(uid);
 
-        if (!TryComp<TransformComponent>(uid, out var transform) || !TryComp<RotationVisualsComponent>(uid, out var rotationVisuals))
+        if (!TryComp<RotationVisualsComponent>(uid, out var rotationVisuals))
             return;
 
-        var rotation = transform.LocalRotation + (_eyeManager.CurrentEye.Rotation - (transform.LocalRotation - transform.WorldRotation));
+        var rotation = transform.LocalRotation + (_eyeManager.CurrentEye.Rotation - (transform.LocalRotation - _xform.GetWorldRotation(transform)));
 
         if (rotation.GetDir() is Direction.SouthEast or Direction.East or Direction.NorthEast or Direction.North)
         {

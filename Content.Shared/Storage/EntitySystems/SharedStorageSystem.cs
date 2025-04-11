@@ -525,24 +525,24 @@ public abstract class SharedStorageSystem : EntitySystem
                 return;
             }
 
-            if (TryComp(uid, out TransformComponent? transformOwner) && TryComp(target, out TransformComponent? transformEnt))
+            var transformOwner = Transform(uid);
+            var transformEnt = Transform(target);
+
+            var parent = transformOwner.ParentUid;
+
+            var position = EntityCoordinates.FromMap(
+                parent.IsValid() ? parent : uid,
+                TransformSystem.GetMapCoordinates(transformEnt),
+                TransformSystem
+            );
+
+            args.Handled = true;
+            if (PlayerInsertEntityInWorld((uid, storageComp), args.User, target))
             {
-                var parent = transformOwner.ParentUid;
-
-                var position = EntityCoordinates.FromMap(
-                    parent.IsValid() ? parent : uid,
-                    TransformSystem.GetMapCoordinates(transformEnt),
-                    TransformSystem
-                );
-
-                args.Handled = true;
-                if (PlayerInsertEntityInWorld((uid, storageComp), args.User, target))
-                {
-                    EntityManager.RaiseSharedEvent(new AnimateInsertingEntitiesEvent(GetNetEntity(uid),
-                        new List<NetEntity> { GetNetEntity(target) },
-                        new List<NetCoordinates> { GetNetCoordinates(position) },
-                        new List<Angle> { transformOwner.LocalRotation }), args.User);
-                }
+                EntityManager.RaiseSharedEvent(new AnimateInsertingEntitiesEvent(GetNetEntity(uid),
+                    new List<NetEntity> { GetNetEntity(target) },
+                    new List<NetCoordinates> { GetNetCoordinates(position) },
+                    new List<Angle> { transformOwner.LocalRotation }), args.User);
             }
         }
     }

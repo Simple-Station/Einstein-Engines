@@ -16,11 +16,9 @@ public sealed partial class ShuttleSystem
 
     private void OnIFFShow(EntityUid uid, IFFConsoleComponent component, IFFShowIFFMessage args)
     {
-        if (!TryComp<TransformComponent>(uid, out var xform) || xform.GridUid == null ||
-            (component.AllowedFlags & IFFFlags.HideLabel) == 0x0)
-        {
+        var xform = Transform(uid);
+        if (xform.GridUid == null || (component.AllowedFlags & IFFFlags.HideLabel) == 0x0)
             return;
-        }
 
         if (!args.Show)
         {
@@ -34,11 +32,9 @@ public sealed partial class ShuttleSystem
 
     private void OnIFFShowVessel(EntityUid uid, IFFConsoleComponent component, IFFShowVesselMessage args)
     {
-        if (!TryComp<TransformComponent>(uid, out var xform) || xform.GridUid == null ||
-            (component.AllowedFlags & IFFFlags.Hide) == 0x0)
-        {
+        var xform = Transform(uid);
+        if (xform.GridUid == null || (component.AllowedFlags & IFFFlags.Hide) == 0x0)
             return;
-        }
 
         if (!args.Show)
         {
@@ -52,10 +48,9 @@ public sealed partial class ShuttleSystem
 
     private void OnIFFConsoleAnchor(EntityUid uid, IFFConsoleComponent component, ref AnchorStateChangedEvent args)
     {
+        var xform = Transform(uid);
         // If we anchor / re-anchor then make sure flags up to date.
-        if (!args.Anchored ||
-            !TryComp<TransformComponent>(uid, out var xform) ||
-            !TryComp<IFFComponent>(xform.GridUid, out var iff))
+        if (!args.Anchored || !TryComp<IFFComponent>(xform.GridUid, out var iff))
         {
             _uiSystem.SetUiState(uid, IFFConsoleUiKey.Key, new IFFConsoleBoundUserInterfaceState()
             {

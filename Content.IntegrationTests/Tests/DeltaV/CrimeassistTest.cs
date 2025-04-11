@@ -1,8 +1,6 @@
 ﻿using System.Linq;
 using Content.Shared.DeltaV.CartridgeLoader.Cartridges;
-using Robust.Shared.GameObjects;
 using Robust.Shared.Localization;
-using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 
 namespace Content.IntegrationTests.Tests.DeltaV;
@@ -19,6 +17,7 @@ public sealed class CrimeAssistTest
 
         var prototypeManager = server.ResolveDependency<IPrototypeManager>();
         var allProtos = prototypeManager.EnumeratePrototypes<CrimeAssistPage>().ToArray();
+        var localizationManager = server.ResolveDependency<ILocalizationManager>();
 
         await server.WaitAssertion(() =>
         {
@@ -26,31 +25,31 @@ public sealed class CrimeAssistTest
             {
                 if (proto.LocKey != null)
                 {
-                    Assert.That(Loc.TryGetString(proto.LocKey, out var _),
+                    Assert.That(localizationManager.TryGetString(proto.LocKey, out var _),
                         $"CrimeAssistPage {proto.ID} has invalid LocKey {proto.LocKey}!");
                 }
 
                 if (proto.LocKeyTitle != null)
                 {
-                    Assert.That(Loc.TryGetString(proto.LocKeyTitle, out var _),
+                    Assert.That(localizationManager.TryGetString(proto.LocKeyTitle, out var _),
                         $"CrimeAssistPage {proto.ID} has invalid LocKeyTitle {proto.LocKeyTitle}!");
                 }
 
                 if (proto.LocKeyDescription != null)
                 {
-                    Assert.That(Loc.TryGetString(proto.LocKeyDescription, out var _),
+                    Assert.That(localizationManager.TryGetString(proto.LocKeyDescription, out var _),
                         $"CrimeAssistPage {proto.ID} has invalid LocKeyDescription {proto.LocKeyDescription}!");
                 }
 
                 if (proto.LocKeySeverity != null)
                 {
-                    Assert.That(Loc.TryGetString(proto.LocKeySeverity, out var _),
+                    Assert.That(localizationManager.TryGetString(proto.LocKeySeverity, out var _),
                         $"CrimeAssistPage {proto.ID} has invalid LocKeySeverity {proto.LocKeySeverity}!");
                 }
 
                 if (proto.LocKeyPunishment != null)
                 {
-                    Assert.That(Loc.TryGetString(proto.LocKeyPunishment, out var _),
+                    Assert.That(localizationManager.TryGetString(proto.LocKeyPunishment, out var _),
                         $"CrimeAssistPage {proto.ID} has invalid LocKeyPunishment {proto.LocKeyPunishment}!");
                 }
 
