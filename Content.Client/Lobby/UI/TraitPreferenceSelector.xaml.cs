@@ -86,15 +86,19 @@ public sealed partial class TraitPreferenceSelector : Control
         var desc = Loc.GetString($"trait-description-{trait.ID}");
         if (!string.IsNullOrEmpty(desc) && desc != $"trait-description-{trait.ID}")
             tooltip.SetMessage(FormattedMessage.FromMarkupPermissive(desc));
-        toolBox.AddChild(new Label
+        if (trait.Requirements.Any())
         {
-            Text = Loc.GetString("character-requirement-desc"),
-            StyleClasses = { StyleBase.StyleClassLabelHeading, },
-            Margin = new(0, 8, 0, 4),
-        });
+            toolBox.AddChild(
+                new Label
+                {
+                    Text = Loc.GetString("character-requirement-desc"),
+                    StyleClasses = { StyleBase.StyleClassLabelHeading, },
+                    Margin = new(0, 8, 0, 4),
+                });
 
-        MakeTooltipTree(toolBox, trait.Requirements);
-        toolBox.AddChild(new() { Margin = new(0, 2), });
+            MakeTooltipTree(toolBox, trait.Requirements);
+            toolBox.AddChild(new() { Margin = new(0, 2), });
+        }
 
         return;
 

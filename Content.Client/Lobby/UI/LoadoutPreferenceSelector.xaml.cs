@@ -252,15 +252,19 @@ public sealed partial class LoadoutPreferenceSelector : Control
 
         if (!string.IsNullOrEmpty(desc))
             tooltip.SetMessage(FormattedMessage.FromMarkupPermissive(desc));
-        toolBox.AddChild(new Label
+        if (loadout.Requirements.Any())
         {
-            Text = Loc.GetString("character-requirement-desc"),
-            StyleClasses = { StyleBase.StyleClassLabelHeading, },
-            Margin = new(0, 8, 0, 4),
-        });
+            toolBox.AddChild(
+                new Label
+                {
+                    Text = Loc.GetString("character-requirement-desc"),
+                    StyleClasses = { StyleBase.StyleClassLabelHeading, },
+                    Margin = new(0, 8, 0, 4),
+                });
 
-        MakeTooltipTree(toolBox, loadout.Requirements);
-        toolBox.AddChild(new() { Margin = new(0, 2), });
+            MakeTooltipTree(toolBox, loadout.Requirements);
+            toolBox.AddChild(new() { Margin = new(0, 2), });
+        }
 
         return;
 
