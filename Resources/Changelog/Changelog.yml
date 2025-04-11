@@ -14886,3 +14886,12 @@ Entries:
   id: 7136
   time: '2025-04-11T20:53:08.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2218
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Reworked and fixed Psionic Invisibility. It now has actual psychic
+        casting stat scaling.
+  id: 7137
+  time: '2025-04-11T23:15:15.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2223
