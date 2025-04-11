@@ -19,7 +19,7 @@ public sealed partial class ArtifactGasTriggerComponent : Component
         Gas.Nitrogen,
         Gas.CarbonDioxide,
         Gas.Ammonia,
-        Gas.NitrousOxide
+        Gas.NitrousOxide,
     };
 
     /// <summary>
