@@ -39,7 +39,6 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IResourceCache _resourceCache = default!;
     [Dependency] private readonly IStateManager _stateManager = default!;
-    [Dependency] private readonly JobRequirementsManager _requirements = default!;
     [Dependency] private readonly MarkingManager _markings = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly JobRequirementsManager _jobRequirements = default!;
@@ -66,7 +65,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
 
         _prototypeManager.PrototypesReloaded += OnPrototypesReloaded;
         _preferencesManager.OnServerDataLoaded += PreferencesDataLoaded;
-        _requirements.Updated += OnRequirementsUpdated;
+        _jobRequirements.Updated += OnRequirementsUpdated;
 
         _configurationManager.OnValueChanged(CCVars.FlavorText, _ => _profileEditor?.RefreshFlavorText());
         _configurationManager.OnValueChanged(CCVars.GameRoleTimers, _ => RefreshProfileEditor());
@@ -207,7 +206,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
             _dialogManager,
             _playerManager,
             _prototypeManager,
-            _requirements,
+            _jobRequirements,
             _markings,
             _random);
 
