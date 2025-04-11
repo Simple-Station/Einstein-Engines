@@ -37,8 +37,10 @@ public sealed class XelthiaSystem : EntitySystem
     {
         _actionsSystem.AddAction(uid, ref component.XelthiaRegenerateAction, XelthiaRegenerateActionId, uid);
 
-        //component.LArmBackspikesColor = (something something the color in the actual original markings. I dunno how this would work.)
-        //component.RArmBackspikesColor = (do the same thing as the left arm)
-        // would these go here actually? I'm assuming they would because this is the initialization thing
+//        if (TryComp<HumanoidAppearanceComponent>(uid, out var humanoid))
+//        {
+//            component.LArmBackspikesColor = humanoid.EyeColor; //Yeah I'm stumped. Eye color is just used to check if I
+//           component.RArmBackspikesColor = humanoid.EyeColor; //can figure out how to set these to SOME color thing here
+//        } // This spat out #000000 instead of the actual eye color?? So this doesn't go here with init stuff.
     }
 }
