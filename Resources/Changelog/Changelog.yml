@@ -14866,3 +14866,12 @@ Entries:
   id: 7134
   time: '2025-04-11T06:23:14.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2220
+- author: ilmenwe
+  changes:
+    - type: Add
+      message: removed references where a reference already existed
+    - type: Tweak
+      message: Tweaked the names of old refences to match the existing reference.
+  id: 7135
+  time: '2025-04-11T20:03:32.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2211
