@@ -1,0 +1,36 @@
+# species
+- type: emoteSounds
+  id: UnisexXelthia
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      path: /Audio/_EE/Voice/Xelthia/scream.ogg
+    Laugh:
+      path: /Audio/_EE/Voice/Xelthia/laugh.ogg
+    Sneeze:
+      path: /Audio/_EE/Voice/Xelthia/sneeze.ogg
+    Cough:
+      path: /Audio/_EE/Voice/Xelthia/cough.ogg
+    CatMeow:
+      collection: CatMeows
+    CatHisses:
+      collection: CatHisses
+    MonkeyScreeches:
+      collection: MonkeyScreeches
+    RobotBeep:
+      collection: RobotBeeps
+    Yawn:
+      collection: MaleYawn
+    Snore:
+      collection: Snores
+    Honk:
+      collection: BikeHorn
+    Sigh:
+      collection: MaleSigh
+    Crying:
+      path: /Audio/_EE/Voice/Xelthia/cry.ogg
+    Whistle:
+      collection: Whistles
+    Weh:
+      collection: Weh

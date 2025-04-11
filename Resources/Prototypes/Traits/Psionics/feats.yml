@@ -3,11 +3,16 @@
   category: TraitsPsionicsFeats
   points: -5
   requirements:
-    - !type:CharacterTraitRequirement
-      traits:
-        - LatentPsychic
-        - PsychoHistorian
-        - Elementalist
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterTraitRequirement
+          traits:
+            - LatentPsychic
+            - PsychoHistorian
+            - Elementalist
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Xelthia # Innate Psionics
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
@@ -42,11 +47,16 @@
   category: TraitsPsionicsFeats
   points: 5
   requirements:
-    - !type:CharacterTraitRequirement
-      traits:
-        - LatentPsychic
-        - PsychoHistorian
-        - Elementalist
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterTraitRequirement
+          traits:
+            - LatentPsychic
+            - PsychoHistorian
+            - Elementalist
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Xelthia # Innate Psionics
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
@@ -81,11 +91,16 @@
   category: TraitsPsionicsFeats
   points: 3
   requirements:
-    - !type:CharacterTraitRequirement
-      traits:
-        - LatentPsychic
-        - PsychoHistorian
-        - Elementalist
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterTraitRequirement
+          traits:
+            - LatentPsychic
+            - PsychoHistorian
+            - Elementalist
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Xelthia # Innate Psionics
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
@@ -116,11 +131,16 @@
   category: TraitsPsionicsFeats
   points: -3
   requirements:
-    - !type:CharacterTraitRequirement
-      traits:
-        - LatentPsychic
-        - PsychoHistorian
-        - Elementalist
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterTraitRequirement
+          traits:
+            - LatentPsychic
+            - PsychoHistorian
+            - Elementalist
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Xelthia # Innate Psionics
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
@@ -147,11 +167,16 @@
   category: TraitsPsionicsFeats
   points: -10
   requirements:
-    - !type:CharacterTraitRequirement
-      traits:
-        - LatentPsychic
-        - PsychoHistorian
-        - Elementalist
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterTraitRequirement
+          traits:
+            - LatentPsychic
+            - PsychoHistorian
+            - Elementalist
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Xelthia # Innate Psionics
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
@@ -178,11 +203,16 @@
   category: TraitsPsionicsFeats
   points: 3
   requirements:
-    - !type:CharacterTraitRequirement
-      traits:
-        - LatentPsychic
-        - PsychoHistorian
-        - Elementalist
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterTraitRequirement
+          traits:
+            - LatentPsychic
+            - PsychoHistorian
+            - Elementalist
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Xelthia # Innate Psionics
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
@@ -208,11 +238,16 @@
   category: TraitsPsionicsFeats
   points: -3
   requirements:
-    - !type:CharacterTraitRequirement
-      traits:
-        - LatentPsychic
-        - PsychoHistorian
-        - Elementalist
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterTraitRequirement
+          traits:
+            - LatentPsychic
+            - PsychoHistorian
+            - Elementalist
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Xelthia # Innate Psionics
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
