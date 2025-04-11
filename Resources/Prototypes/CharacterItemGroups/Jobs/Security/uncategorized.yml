@@ -20,6 +20,10 @@
       id: LoadoutClothingBeltSecurity
     - type: loadout
       id: LoadoutClothingBeltHolster
+    - type: loadout
+      id: LoadoutClothingBeltJudo
+    - type: loadout
+      id: LoadoutClothingBeltJudoHoS
 
 #- type: characterItemGroup
 #  id: LoadoutSecurityEars
@@ -66,6 +70,14 @@
       id: LoadoutSpeedLoaderRifleHeavyRubber
     - type: loadout
       id: LoadoutSpeedLoaderRifleHeavyRubberSpare
+    - type: loadout
+      id: LoadoutMagazineUniversalMagnum
+    - type: loadout
+      id: LoadoutMagazineUniversalMagnumSpare
+    - type: loadout
+      id: LoadoutMagazineUniversalMagnumRubber
+    - type: loadout
+      id: LoadoutMagazineUniversalMagnumRubberSpare
 
 - type: characterItemGroup
   maxItems: 1
@@ -137,6 +149,12 @@
       id: LoadoutBSORifleChester
     - type: loadout
       id: LoadoutSecurityShotgunSawnLumen
+    - type: loadout
+      id: LoadoutSecurityDisablerSMG
+    - type: loadout
+      id: LoadoutSecurityPistolUniversal
+    - type: loadout
+      id: LoadoutSecurityPistolUniversalNonLethal
 
 - type: characterItemGroup
   id: LoadoutSecurityEyes
@@ -178,8 +196,6 @@
       id: LoadoutClothingHeadHelmetBasic
     - type: loadout
       id: LoadoutSecurityHeadHelmetInsulated
-    - type: loadout
-      id: LoadoutSecurityHeadHatSeniorTrooper
     - type: loadout
       id: ClothingHeadHelmetTCFLHeavy
 
@@ -241,11 +257,7 @@
     - type: loadout
       id: LoadoutSecurityUniformJumpskirtBlue
     - type: loadout
-      id: LoadoutUniformJumpsuitSecFormal
-    - type: loadout
       id: LoadoutUniformJumpsuitSecSummer
-    - type: loadout
-      id: LoadoutSecurityUniformJumpsuitSeniorTrooper
     - type: loadout
       id: LoadoutSecurityUniformEnvirosuitBlue
     - type: loadout

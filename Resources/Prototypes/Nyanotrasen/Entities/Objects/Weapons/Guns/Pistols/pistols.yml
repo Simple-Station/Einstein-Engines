@@ -14,7 +14,11 @@
   - type: Clothing
     sprite: Nyanotrasen/Objects/Weapons/Guns/Pistols/universal.rsi
   - type: Gun
-    fireRate: 3
+    minAngle: 1
+    maxAngle: 14
+    angleIncrease: 6
+    angleDecay: 6
+    fireRate: 2.5
     availableModes:
     - SemiAuto
     soundGunshot:
@@ -41,3 +45,77 @@
     containers:
       gun_magazine: !type:ContainerSlot
       gun_chamber: !type:ContainerSlot
+
+- type: entity
+  name: mk 32 "Universal"
+  parent: WeaponPistolUniversal
+  id: WeaponPistolUniversalEmpty
+  suffix: Empty
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: null
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineUniversalMagnum
+      gun_chamber:
+        name: Chamber
+        startingItem: null
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgeMagnum
+
+- type: entity
+  name: mk 32 "Universal"
+  parent: WeaponPistolUniversal
+  id: WeaponPistolUniversalSecurity
+  description: An expensive and robust pistol with decent offensive capabilities. Uses .45 magnum ammo.
+    The serial number on the handguard marks this gun as belonging to an NT Security Officer.
+  suffix: Security Loadouts
+  components:
+  - type: GuideHelp
+    guides: [ SecurityWeapons ]
+
+- type: entity
+  name: mk 32 "Universal"
+  parent: WeaponPistolUniversal
+  id: WeaponPistolUniversalNonLethal
+  suffix: Non-lethal
+  components:
+  - type: Sprite
+    sprite: Nyanotrasen/Objects/Weapons/Guns/Pistols/universalnl.rsi
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineUniversalMagnumRubber
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineUniversalMagnum
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeMagnumRubber
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgeMagnum
+
+- type: entity
+  name: mk 32 "Universal"
+  parent: WeaponPistolUniversalNonLethal
+  id: WeaponPistolUniversalSecurityNonLethal
+  description: An expensive and robust pistol with decent offensive capabilities. Uses .45 magnum ammo.
+    The serial number on the handguard marks this gun as belonging to an NT Security Officer.
+  suffix: Non-lethal, Security Loadouts
+  components:
+  - type: GuideHelp
+    guides: [ SecurityWeapons ]
