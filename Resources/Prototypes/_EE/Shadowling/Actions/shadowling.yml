@@ -34,5 +34,22 @@
       state: enthrall
     event: !type:EnthrallEvent { }
 
+- type: entity
+  id: ActionGlare
+  name: Glare
+  description: A dark glare that stuns, silences, and slows your target.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: EntityTargetAction
+    canTargetSelf: false
+    interactOnMiss: false
+    itemIconStyle: NoItem
+    useDelay: 30
+    range: 10
+    icon:
+      sprite: _EE/Shadowling/shadowling_abilities.rsi
+      state: glare
+    event: !type:GlareEvent { }
+
 
 

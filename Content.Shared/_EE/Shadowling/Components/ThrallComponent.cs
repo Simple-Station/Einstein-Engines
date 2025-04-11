@@ -17,6 +17,14 @@ public sealed partial class ThrallComponent : Component
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public ProtoId<FactionIconPrototype> StatusIcon { get; set; } = "ThrallFaction";
 
+    public readonly List<ProtoId<EntityPrototype>> BaseThrallActions = new()
+    {
+        "ActionThrallDarksight"
+    };
+
+    [DataField]
+    public bool NightVisionMode;
+
     /// <summary>
     /// Sound that plays when you are chosen as Thrall. (Need to find it)
     /// </summary>

@@ -12,6 +12,7 @@ using Content.Server.Roles;
 using Content.Server.Stealth;
 using Content.Server.Storage.EntitySystems;
 using Content.Server.Strip;
+using Content.Server.Stunnable;
 using Content.Server.Traits;
 using Content.Shared._EE.Clothing.Components;
 using Content.Shared._EE.Shadowling.Systems;
@@ -21,14 +22,21 @@ using Content.Shared.Armor;
 using Content.Shared.Clothing.EntitySystems;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Damage;
+using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
+using Content.Shared.Mindshield.Components;
+using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
+using Content.Shared.StatusEffect;
 using Content.Shared.Strip;
+using Content.Shared.Timing;
 using MathNet.Numerics.Distributions;
+using Microsoft.CodeAnalysis.Elfie.Serialization;
+using Robust.Server.GameObjects;
 using Robust.Shared.Timing;
 
 
@@ -52,6 +60,11 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
     [Dependency] private readonly DoAfterSystem _doAfter = default!;
     [Dependency] private readonly AntagSelectionSystem _antag = default!;
     [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
+    [Dependency] private readonly EntityLookupSystem _entityLookup = default!;
+    [Dependency] private readonly TransformSystem _transform = default!;
+    [Dependency] private readonly StunSystem _stun = default!;
+    [Dependency] private readonly UseDelaySystem _delay = default!;
+    [Dependency] private readonly StatusEffectsSystem _effects = default!;
 
     public override void Initialize()
     {
@@ -86,5 +99,56 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
     {
         foreach (var action in comp.PostHatchShadowlingActions)
             _actions.AddAction(uid, action);
+    }
+
+    private bool CanEnthrall(EntityUid uid, EntityUid target)
+    {
+        if (HasComp<ShadowlingComponent>(target))
+        {
+            _popup.PopupEntity(Loc.GetString("shadowling-enthrall-shadowling"), uid, uid, PopupType.SmallCaution);
+            return false;
+        }
+
+        if (HasComp<ThrallComponent>(target))
+        {
+            _popup.PopupEntity(Loc.GetString("shadowling-enthrall-already-thrall"), uid, uid, PopupType.SmallCaution);
+            return false;
+        }
+
+        if (!HasComp<HumanoidAppearanceComponent>(target))
+        {
+            _popup.PopupEntity(Loc.GetString("shadowling-enthrall-non-humanoid"), uid, uid, PopupType.SmallCaution);
+            return false;
+        }
+
+        // Psionic interaction
+        if (HasComp<PsionicInsulationComponent>(target))
+        {
+            _popup.PopupEntity(Loc.GetString("shadowling-enthrall-psionic-insulated"), uid, uid, PopupType.SmallCaution);
+            return false;
+        }
+
+        // Target needs to be alive
+        if (TryComp<MobStateComponent>(target, out var mobState))
+        {
+            if (_mobStateSystem.IsCritical(target, mobState) || _mobStateSystem.IsCritical(target, mobState))
+            {
+                _popup.PopupEntity(Loc.GetString("shadowling-enthrall-dead"), uid, uid, PopupType.SmallCaution);
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    private bool CanGlare(EntityUid target)
+    {
+        if (HasComp<ShadowlingComponent>(target))
+            return false;
+
+        if (HasComp<ThrallComponent>(target))
+            return false;
+
+        return true;
     }
 }

@@ -21,5 +21,6 @@ public sealed partial class HatchEvent : InstantActionEvent { }
 #region Events - Second Phase
 
 public sealed partial class EnthrallEvent : EntityTargetActionEvent { }
+public sealed partial class GlareEvent : EntityTargetActionEvent { }
 
 #endregion

@@ -18,8 +18,10 @@ using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Popups;
 using Content.Shared.Singularity;
+using Content.Shared.StatusEffect;
 using Content.Shared.Strip.Components;
 using Microsoft.CodeAnalysis.Operations;
+using Microsoft.EntityFrameworkCore.Update;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 
@@ -38,6 +40,8 @@ public sealed partial class ShadowlingSystem
 
         SubscribeLocalEvent<ShadowlingComponent, EnthrallEvent>(OnEnthrall);
         SubscribeLocalEvent<ShadowlingComponent, EnthrallDoAfterEvent>(OnEnthrallDoAfter);
+
+        SubscribeLocalEvent<ShadowlingComponent, GlareEvent>(OnGlare);
     }
 
     # region Hatch
@@ -111,45 +115,14 @@ public sealed partial class ShadowlingSystem
 
         #region Popups
 
-        if (HasComp<ShadowlingComponent>(target))
-        {
-            _popup.PopupEntity(Loc.GetString("shadowling-enthrall-shadowling"), uid, uid, PopupType.SmallCaution);
+        if (!CanEnthrall(uid, target))
             return;
-        }
 
-        if (HasComp<ThrallComponent>(target))
-        {
-            _popup.PopupEntity(Loc.GetString("shadowling-enthrall-already-thrall"), uid, uid, PopupType.SmallCaution);
-            return;
-        }
-
+        // Basic Enthrall -> Can't melt Mindshields
         if (HasComp<MindShieldComponent>(target))
         {
             _popup.PopupEntity(Loc.GetString("shadowling-enthrall-mindshield"), uid, uid, PopupType.SmallCaution);
             return;
-        }
-
-        if (!HasComp<HumanoidAppearanceComponent>(target))
-        {
-            _popup.PopupEntity(Loc.GetString("shadowling-enthrall-non-humanoid"), uid, uid, PopupType.SmallCaution);
-            return;
-        }
-
-        // Psionic interaction
-        if (HasComp<PsionicInsulationComponent>(target))
-        {
-            _popup.PopupEntity(Loc.GetString("shadowling-enthrall-psionic-insulated"), uid, uid, PopupType.SmallCaution);
-            return;
-        }
-
-        // Target needs to be alive
-        if (TryComp<MobStateComponent>(target, out var mobState))
-        {
-            if (_mobStateSystem.IsCritical(target, mobState) || _mobStateSystem.IsCritical(target, mobState))
-            {
-                _popup.PopupEntity(Loc.GetString("shadowling-enthrall-dead"), uid, uid, PopupType.SmallCaution);
-                return;
-            }
         }
 
         _popup.PopupEntity(Loc.GetString("shadowling-target-being-thralled"), uid, target, PopupType.SmallCaution);
@@ -170,6 +143,49 @@ public sealed partial class ShadowlingSystem
 
         EnsureComp<ThrallComponent>(target);
         comp.Thralls.Add(target);
+        // todo:  raise local event in the future here
+    }
+
+    #endregion
+
+    #region Glare
+
+    private void OnGlare(EntityUid uid, ShadowlingComponent comp, GlareEvent args)
+    {
+        var target = args.Target;
+        var user = args.Performer;
+
+        if (!CanGlare(target))
+            return;
+
+        var targetCoords = _transform.GetWorldPosition(target);
+        var distance = (_transform.GetWorldPosition(user) - targetCoords).Length();
+        comp.GlareDistance = distance;
+        comp.GlareTarget = target;
+
+        // Glare mutes and slows down the target no matter what.
+        if (TryComp<StatusEffectsComponent>(target, out var statComp))
+        {
+            _effects.TryAddStatusEffect(target, "Muted", TimeSpan.FromSeconds(comp.MuteTime), false, statComp);
+            _stun.TrySlowdown(target, TimeSpan.FromSeconds(comp.SlowTime), false, 0.5f, 0.5f, statComp);
+        }
+
+
+        if (distance <= comp.MinGlareDistance)
+        {
+            comp.GlareStunTime = comp.MaxGlareStunTime;
+            _stun.TryStun(target, TimeSpan.FromSeconds(comp.GlareStunTime), true);
+        }
+        else
+        {
+            // Do I know what is going on here? No. But it works so... Thanks for listening!
+            comp.GlareStunTime = comp.MaxGlareStunTime * (1 - Math.Clamp(distance / comp.MaxGlareDistance, 0, 1));
+            comp.GlareTimeBeforeEffect = comp.MinGlareDelay + (comp.MaxGlareDelay - comp.MinGlareDelay) * Math.Clamp(distance / comp.MaxGlareDistance, 0, 1);
+
+            comp.ActivateGlareTimer = true;
+        }
+
+        _actions.StartUseDelay(args.Action);
     }
 
     #endregion

@@ -8,13 +8,7 @@
     },
     "states": [
         {
-            "name": "engage_hatch"
-        },
-        {
-            "name": "enthrall"
-        },
-        {
-            "name": "glare"
+            "name": "thrall_darksight"
         }
     ]
 }
