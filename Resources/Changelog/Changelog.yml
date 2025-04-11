@@ -14739,3 +14739,130 @@ Entries:
   id: 7124
   time: '2025-04-09T10:59:43.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2180
+- author: RocketBoss360
+  changes:
+    - type: Add
+      message: >-
+        Ousiana Dust, Allows one to gain benefit from mind opening drugs like a
+        Noosphere Zap, crafted with 1 bluespace crystal and 1 normalcy crystal
+        crushed into a bowl. Probably has no long term psychological side
+        effects.
+  id: 7125
+  time: '2025-04-09T18:21:57.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2179
+- author: Timfa2112
+  changes:
+    - type: Tweak
+      message: >-
+        Rethemed the NanoTrasen Representative into the Corporate Liaison! You
+        do pretty much the same thing, except with your chosen Employer's
+        interests in mind! This makes use of the Contractor System, so you can
+        represent any company you like. Don't forget to pick the stamp in your
+        loadout!!
+    - type: Add
+      message: >-
+        Added a new stamp for the Corporate Liaison which automatically
+        transforms into your employer's stamp on spawn. Do not forget to pick it
+        in your loadout!!!!
+    - type: Add
+      message: >-
+        admin console command to spawn the stamp for the people that forgot to
+        pick the stamp in loadouts despite my warnings.
+    - type: Add
+      message: >-
+        admin console command to spawn a specific corporation's stamp your own
+        inventory, which can optionally be a Command version for admin faxing
+        purposes.
+  id: 7126
+  time: '2025-04-09T22:05:49.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2191
+- author: RocketBoss360
+  changes:
+    - type: Add
+      message: Maint drones can now speak to other maint drones via the Drone language!
+  id: 7127
+  time: '2025-04-10T07:20:24.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2208
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: 'Added "Bolt Action" or "Pump Action" gun options. '
+    - type: Add
+      message: >-
+        Added new sound fx for shotshells when landing on the ground or
+        colliding with objects after being thrown.
+    - type: Tweak
+      message: >-
+        Kammerer and Enforcer are now pump action shotguns, featuring a choke
+        that gives them 50% tighter spreads in return for needing to be pumped
+        (press Z) after each shot.
+    - type: Tweak
+      message: >-
+        Mosin Nagant is now a proper bolt action rifle. The bolt must be worked
+        manually (press Z) after each shot. The fun tradeoff is that it now hits
+        like a truck with 42 damage a shot. 
+    - type: Tweak
+      message: >-
+        Bulldog shotgun now has a wide choke, it fires 33% more projectiles per
+        shotshell, while also having a 50% wider spread. Cover the station
+        hallways in lead. Pairs nicely with birdshot if you really want to sweep
+        rooms.
+    - type: Tweak
+      message: R25 and FPA-90 both now deal 15 damage per shot, instead of 19.
+    - type: Fix
+      message: >-
+        Fixed guns not correctly ejecting cartridges(they were instead dropping
+        them at your feet).
+    - type: Fix
+      message: Fixed guns not updating the ammo counter UI when loaded manually.
+  id: 7128
+  time: '2025-04-10T15:00:21.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2165
+- author: xTheLifex
+  changes:
+    - type: Add
+      message: Added a search bar to the keybinds menu
+  id: 7129
+  time: '2025-04-10T15:02:42.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1005
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Added dark, red, black and light wooden tiles of different types.
+    - type: Add
+      message: Added wooden parquet and checkerboard floor.
+    - type: Tweak
+      message: Repaint old wooden tiles.
+  id: 7130
+  time: '2025-04-10T15:11:18.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2054
+- author: 3PonPon3
+  changes:
+    - type: Fix
+      message: Languages and accents now work. JOHN LANGUAGE IS FINALLY REAL!
+  id: 7131
+  time: '2025-04-10T21:43:38.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2212
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: >-
+        Added employer requirements to most roles. CHECK YOUR CHARACTER'S JOB
+        PREFERENCES AND EMPLOYER!
+  id: 7132
+  time: '2025-04-10T22:24:23.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2213
+- author: RocketBoss360
+  changes:
+    - type: Fix
+      message: telegnosis lets you return to your body now
+  id: 7133
+  time: '2025-04-11T05:55:20.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2209
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: Nanotrasen employees can take every job again
+  id: 7134
+  time: '2025-04-11T06:23:14.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2220

@@ -39,3 +39,4 @@ chat-language-Penguin-name = Penguin
 chat-language-Pig-name = Pig
 chat-language-Sheep-name = Sheep
 chat-language-Xeno-name = Xeno
+chat-language-DroneTalk-name = Drone

@@ -24,9 +24,10 @@
     powerCell: PowerCellHigh
   requirements:
     - !type:CharacterEmployerRequirement
-      inverted: true
       employers:
-      - Unemployed
+      - Cybersun
+      - PMCG
+      - NanoTrasen
 
 - type: startingGear
   id: PrisonGuardGear
