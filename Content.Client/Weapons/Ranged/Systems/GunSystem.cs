@@ -167,11 +167,23 @@ public sealed partial class GunSystem : SharedGunSystem
 
         var useKey = gun.UseKey ? EngineKeyFunctions.Use : EngineKeyFunctions.UseSecondary;
 
+        var altUseKey = gun.UseKey ? EngineKeyFunctions.UseSecondary : EngineKeyFunctions.Use;
+
+        var isAltFiring = false;
+
         if (_inputSystem.CmdStates.GetState(useKey) != BoundKeyState.Down && !gun.BurstActivated)
         {
+            if (_inputSystem.CmdStates.GetState(altUseKey) == BoundKeyState.Down && gun.CanAltFire) {
+                isAltFiring = true;
+            }
+
             if (gun.ShotCounter != 0)
+            {
                 EntityManager.RaisePredictiveEvent(new RequestStopShootEvent { Gun = GetNetEntity(gunUid) });
-            return;
+                return;
+            }
+            if (_inputSystem.CmdStates.GetState(useKey) != BoundKeyState.Down && !isAltFiring)
+                return;
         }
 
         if (gun.NextFire > Timing.CurTime)
@@ -201,11 +213,12 @@ public sealed partial class GunSystem : SharedGunSystem
             Target = target,
             Coordinates = GetNetCoordinates(coordinates),
             Gun = GetNetEntity(gunUid),
+            AltFire = isAltFiring
         });
     }
 
     public override void Shoot(EntityUid gunUid, GunComponent gun, List<(EntityUid? Entity, IShootable Shootable)> ammo,
-        EntityCoordinates fromCoordinates, EntityCoordinates toCoordinates, out bool userImpulse, EntityUid? user = null, bool throwItems = false)
+        EntityCoordinates fromCoordinates, EntityCoordinates toCoordinates, out bool userImpulse, EntityUid? user = null, bool throwItems = false, bool? altFire = false)
     {
         userImpulse = true;
 
