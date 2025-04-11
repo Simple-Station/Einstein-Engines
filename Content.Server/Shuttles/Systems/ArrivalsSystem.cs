@@ -466,7 +466,9 @@ public sealed class ArrivalsSystem : EntitySystem
 
         var query = EntityQueryEnumerator<ArrivalsShuttleComponent>();
         var curTime = _timing.CurTime;
-        TryGetArrivals(out var arrivals);
+        if (!TryGetArrivals(out var arrivals))
+            return;
+
         var arrivalsXform = Transform(arrivals);
 
         while (query.MoveNext(out var uid, out var comp))
