@@ -68,7 +68,7 @@
   - type: Sprite
     sprite: Objects/Weapons/Guns/Snipers/bolt_gun_wood.rsi
   - type: Gun
-    fireRate: 0.75
+    fireRate: 0.2 # If this thing is do 50 damage a shot im gutting its fire rate so its only scary when used by a group of people
     damageModifier: 2.625 # OORAH. You have to manually cycle each shot. So each shot deals 42 damage. For the Red Orchestra enthusiasts.
     selectedMode: SemiAuto
     availableModes:
