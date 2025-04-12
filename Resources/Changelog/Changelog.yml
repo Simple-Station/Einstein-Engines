@@ -14914,3 +14914,10 @@ Entries:
   id: 7139
   time: '2025-04-12T00:46:10.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2222
+- author: Will-Oliver-Br
+  changes:
+    - type: Tweak
+      message: New sprite from chemmaster
+  id: 7140
+  time: '2025-04-12T00:48:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2174
