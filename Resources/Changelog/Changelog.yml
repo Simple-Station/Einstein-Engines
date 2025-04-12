@@ -14895,3 +14895,12 @@ Entries:
   id: 7137
   time: '2025-04-11T23:15:15.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2223
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Tweak
+      message: >-
+        Loadouts' and traits' tooltips are much easier to read and look better
+        (and cooler of course)
+  id: 7138
+  time: '2025-04-12T00:43:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2221
