@@ -8,9 +8,9 @@
     department: Epistemics
     min: 14400 # 4 hours - same as scientist
   - !type:CharacterEmployerRequirement
-    inverted: true
-    employers:
-    - Unemployed
+      employers:
+      - Cybersun
+      - NanoTrasen
   startingGear: RoboticistGear
   icon: "JobIconRoboticist"
   supervisors: job-supervisors-rd

@@ -14836,3 +14836,62 @@ Entries:
   id: 7130
   time: '2025-04-10T15:11:18.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2054
+- author: 3PonPon3
+  changes:
+    - type: Fix
+      message: Languages and accents now work. JOHN LANGUAGE IS FINALLY REAL!
+  id: 7131
+  time: '2025-04-10T21:43:38.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2212
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: >-
+        Added employer requirements to most roles. CHECK YOUR CHARACTER'S JOB
+        PREFERENCES AND EMPLOYER!
+  id: 7132
+  time: '2025-04-10T22:24:23.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2213
+- author: RocketBoss360
+  changes:
+    - type: Fix
+      message: telegnosis lets you return to your body now
+  id: 7133
+  time: '2025-04-11T05:55:20.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2209
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: Nanotrasen employees can take every job again
+  id: 7134
+  time: '2025-04-11T06:23:14.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2220
+- author: ilmenwe
+  changes:
+    - type: Add
+      message: removed references where a reference already existed
+    - type: Tweak
+      message: Tweaked the names of old refences to match the existing reference.
+  id: 7135
+  time: '2025-04-11T20:03:32.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2211
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: >-
+        Mosin damage buff nerfed to 1.5x, and melee damage buffed slightly too
+        (it has a bayonet)
+    - type: Tweak
+      message: 'Chester now does 1.65x damage '
+  id: 7136
+  time: '2025-04-11T20:53:08.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2218
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Reworked and fixed Psionic Invisibility. It now has actual psychic
+        casting stat scaling.
+  id: 7137
+  time: '2025-04-11T23:15:15.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2223
