@@ -1,4 +1,3 @@
-using System.Timers;
 using Content.Shared.StatusIcon;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -24,51 +23,6 @@ public sealed partial class ShadowlingComponent : Component
         "ActionGlare",
     };
 
-    // Cooldown Timers
-    [DataField]
-    public TimeSpan EnthrallTime = TimeSpan.FromSeconds(1.3); // this needs actual playtesting
-
-    #region Glare
-    // <summary>
-    // Variable stun time. On distance 1 or lower, it is maximized to 4 seconds of stun (enough to Enthrall),
-    // otherwise it gets reduced based on distance.
-    // </summary>
-    [DataField]
-    public float GlareStunTime;
-
-    // <summary>
-    // Variable activation time. On distance 1 or lower, it is immediate,
-    // otherwise it gets increased based on distance.
-    // Max time before stun is 2 seconds
-    // </summary>
-    [DataField]
-    public float GlareTimeBeforeEffect;
-
-    [DataField]
-    public float MaxGlareDistance = 10f;
-
-    [DataField]
-    public float MinGlareDistance = 1f;
-
-    [DataField]
-    public float MaxGlareStunTime = 4f;
-
-    [DataField]
-    public float MaxGlareDelay = 2f;
-
-    [DataField]
-    public float MinGlareDelay = 0.1f;
-
-    [DataField]
-    public float MuteTime = 2f;
-
-    [DataField]
-    public float SlowTime = 2f;
-
-    [DataField]
-    public EntityUid GlareTarget;
-    #endregion
-
     // The status icon for Shadowlings
     [DataField, ViewVariables(VVAccess.ReadOnly)]
     public ProtoId<FactionIconPrototype> StatusIcon { get; set; } = "ShadowlingFaction";
@@ -92,12 +46,6 @@ public sealed partial class ShadowlingComponent : Component
     // Thrall Indicator
     [DataField]
     public List<EntityUid> Thralls = new();
-
-    // Action Related
-    [DataField]
-    public float GlareDistance;
-
-    public bool ActivateGlareTimer;
 }
 
 [NetSerializable, Serializable]

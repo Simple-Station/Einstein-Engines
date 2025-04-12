@@ -1,7 +1,6 @@
 using Content.Server.Actions;
 using Content.Server.Antag;
 using Content.Shared._EE.Shadowling;
-using Content.Shared._EE.Shadowling.Thrall;
 using Content.Shared.Overlays.Switchable;
 
 
@@ -15,7 +14,6 @@ public sealed class ShadowlingThrallSystem : EntitySystem
 {
     [Dependency] private readonly AntagSelectionSystem _antag = default!;
     [Dependency] private readonly ActionsSystem _actions = default!;
-    [Dependency] private readonly IComponentFactory _componentFactory = default!;
     public override void Initialize()
     {
         base.Initialize();

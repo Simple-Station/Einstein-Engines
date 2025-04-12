@@ -6,7 +6,7 @@ namespace Content.Shared._EE.Shadowling;
 
 
 /// <summary>
-/// This is used for...
+/// This is used for Action Events for the Sling
 /// </summary>
 [RegisterComponent, NetworkedComponent]
 public sealed partial class ShadowlingActionComponent : Component
