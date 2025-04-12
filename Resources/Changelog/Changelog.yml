@@ -14904,3 +14904,13 @@ Entries:
   id: 7138
   time: '2025-04-12T00:43:35.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2221
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Humans now have +2 bonus trait points. It's also possible now for
+        "overpowered" species to have fewer trait points, although this is not
+        currently used.
+  id: 7139
+  time: '2025-04-12T00:46:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2222
