@@ -26,13 +26,13 @@ public sealed partial class MindTests
         var conHost = pair.Server.ResolveDependency<IConsoleHost>();
         await pair.Server.WaitPost(() => conHost.ExecuteCommand("entities delete"));
 
-        int resonableTicksForRelease = 5;
+        int reasonableTicksForRelease = 5;
 #if DEBUG
-        int resonableFactorForDebug = 30;
-        resonableTicksForRelease *= resonableFactorForDebug;
+        int reasonableFactorForDebug = 30;
+        reasonableTicksForRelease *= reasonableFactorForDebug;
 #endif
 
-        await pair.RunTicksSync(resonableTicksForRelease);
+        await pair.RunTicksSync(reasonableTicksForRelease);
 
         Assert.That(pair.Server.EntMan.EntityCount, Is.EqualTo(0));
 
