@@ -10,10 +10,11 @@ namespace Content.Server.Destructible.Thresholds.Behaviors
     {
         public void Execute(EntityUid owner, DestructibleSystem system, EntityUid? cause = null)
         {
+            var containerSys = system.EntityManager.EntitySysManager.GetEntitySystem<ContainerSystem>();
             if (!system.EntityManager.TryGetComponent<ContainerManagerComponent>(owner, out var containerManager))
                 return;
 
-            foreach (var container in containerManager.GetAllContainers())
+            foreach (var container in containerSys.GetAllContainers(owner))
             {
                 system.ContainerSystem.EmptyContainer(container, true, system.EntityManager.GetComponent<TransformComponent>(owner).Coordinates);
             }

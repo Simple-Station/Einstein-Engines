@@ -38,7 +38,7 @@ namespace Content.Server.Construction.Completions
             HandsComponent? hands = null;
             var pickup = Pickup && entityManager.TryGetComponent(userUid, out hands);
 
-            foreach (var container in containerManager.GetAllContainers())
+            foreach (var container in containerSys.GetAllContainers(uid, containerManager))
             {
                 foreach (var ent in containerSys.EmptyContainer(container, true, reparent: !pickup))
                 {
