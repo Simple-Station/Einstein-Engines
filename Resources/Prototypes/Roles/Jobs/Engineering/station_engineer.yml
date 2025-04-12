@@ -10,7 +10,7 @@
     - !type:CharacterEmployerRequirement
       employers:
       - HephaestusIndustries
-      - Cybersun
+      - ZavodskoiInterstellar
       - EinsteinEngines
       - NanoTrasen
   startingGear: StationEngineerGear
