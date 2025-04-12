@@ -59,6 +59,7 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
     {
         AddComp<ShadowlingGlareComponent>(uid);
         AddComp<ShadowlingEnthrallComponent>(uid);
+        AddComp<ShadowlingVeilComponent>(uid);
 
         foreach (var action in comp.PostHatchShadowlingActions)
             _actions.AddAction(uid, action);

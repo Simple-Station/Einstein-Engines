@@ -51,5 +51,19 @@
       state: glare
     event: !type:GlareEvent { }
 
+- type: entity
+  id: ActionVeil
+  name: Veil
+  description: A pulse of darkness silences every light.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: NoItem
+    useDelay: 15
+    icon:
+      sprite: _EE/Shadowling/shadowling_abilities.rsi
+      state: veil
+    event: !type:VeilEvent { }
+
 
 

@@ -21,6 +21,7 @@ public sealed partial class ShadowlingComponent : Component
     {
         "ActionEnthrall",
         "ActionGlare",
+        "ActionVeil",
     };
 
     // The status icon for Shadowlings
