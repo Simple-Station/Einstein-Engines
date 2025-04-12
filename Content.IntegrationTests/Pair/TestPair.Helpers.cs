@@ -25,7 +25,6 @@ public sealed partial class TestPair
         TestMap = mapData;
         await Server.WaitIdleAsync();
         var tileDefinitionManager = Server.ResolveDependency<ITileDefinitionManager>();
-        var mapSystem = Server.ResolveDependency<SharedMapSystem>();
 
         TestMap = mapData;
         await Server.WaitPost(() =>
@@ -35,9 +34,9 @@ public sealed partial class TestPair
             mapData.GridCoords = new EntityCoordinates(mapData.Grid, 0, 0);
             var plating = tileDefinitionManager[tile];
             var platingTile = new Tile(plating.TileId);
-            mapSystem.SetTile((mapData.MapUid, mapData.Grid.Comp), mapData.GridCoords, platingTile);
+            mapData.Grid.Comp.SetTile(mapData.GridCoords, platingTile);
             mapData.MapCoords = new MapCoordinates(0, 0, mapData.MapId);
-            mapData.Tile = mapSystem.GetAllTiles(mapData.MapUid, mapData.Grid.Comp).First();
+            mapData.Tile = mapData.Grid.Comp.GetAllTiles().First();
         });
 
         TestMap = mapData;
