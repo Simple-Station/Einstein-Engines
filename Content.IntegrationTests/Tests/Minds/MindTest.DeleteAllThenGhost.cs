@@ -1,4 +1,4 @@
-﻿#nullable enable
+#nullable enable
 using Robust.Shared.Console;
 using Robust.Shared.Map;
 
@@ -25,7 +25,14 @@ public sealed partial class MindTests
         // Delete **everything**
         var conHost = pair.Server.ResolveDependency<IConsoleHost>();
         await pair.Server.WaitPost(() => conHost.ExecuteCommand("entities delete"));
-        await pair.RunTicksSync(5);
+
+        int resonableTicksForRelease = 5;
+#if DEBUG
+        int resonableFactorForDebug = 30;
+        resonableTicksForRelease *= resonableFactorForDebug;
+#endif
+
+        await pair.RunTicksSync(resonableTicksForRelease);
 
         Assert.That(pair.Server.EntMan.EntityCount, Is.EqualTo(0));
 
