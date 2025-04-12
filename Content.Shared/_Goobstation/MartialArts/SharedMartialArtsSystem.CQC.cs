@@ -76,9 +76,8 @@ public partial class SharedMartialArtsSystem
         if (knowledgeComponent.MartialArtsForm != MartialArtsForms.CloseQuartersCombat)
             return;
 
-        if(knowledgeComponent.Blocked)
+        if (knowledgeComponent.Blocked)
             return;
-
         switch (args.Type)
         {
             case ComboAttackType.Disarm:

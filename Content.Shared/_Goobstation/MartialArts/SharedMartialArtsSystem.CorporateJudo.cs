@@ -44,8 +44,7 @@ public partial class SharedMartialArtsSystem
         if (martialArtsKnowledge.MartialArtsForm != MartialArtsForms.CorporateJudo)
             return;
 
-        RemComp<MartialArtsKnowledgeComponent>(user);
-        RemComp<CanPerformComboComponent>(user);
+        TryRemove(ent.Comp, user);
     }
 
     #endregion

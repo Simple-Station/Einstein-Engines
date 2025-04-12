@@ -218,6 +218,27 @@ public abstract partial class SharedMartialArtsSystem : EntitySystem
         return false;
     }
 
+    private bool TryRemove(GrantMartialArtKnowledgeComponent comp, EntityUid user)
+    {
+        if (!_netManager.IsServer || MetaData(user).EntityLifeStage >= EntityLifeStage.Terminating)
+            return false;
+        if (HasComp<CanPerformComboComponent>(user))
+        {
+            if (!_proto.TryIndex<MartialArtPrototype>(comp.MartialArtsForm.ToString(), out var martialArtsPrototype))
+                return false;
+            if (TryComp<MeleeWeaponComponent>(user, out var meleeWeaponComponent))
+            {
+                var newDamage = new DamageSpecifier();
+                newDamage.DamageDict.Add("Blunt", martialArtsPrototype.BaseDamageModifier);
+                meleeWeaponComponent.Damage -= newDamage;
+            }
+            RemComp<MartialArtsKnowledgeComponent>(user);
+            RemComp<CanPerformComboComponent>(user);
+        }
+        return true;
+
+    }
+
     private void LoadCombos(ProtoId<ComboListPrototype> list, CanPerformComboComponent combo)
     {
         combo.AllowedCombos.Clear();
