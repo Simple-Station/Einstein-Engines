@@ -14921,3 +14921,14 @@ Entries:
   id: 7140
   time: '2025-04-12T00:48:16.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2174
+- author: Timfa2112
+  changes:
+    - type: Remove
+      message: Removed Cybersun
+    - type: Add
+      message: >-
+        Added Zavodskoi Interstellar to replace Cybersun (Cybersun was a
+        stand-in for Zavodskoi, but no longer)
+  id: 7141
+  time: '2025-04-12T02:17:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2228
