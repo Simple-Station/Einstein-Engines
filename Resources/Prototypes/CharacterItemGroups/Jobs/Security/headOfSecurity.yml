@@ -24,8 +24,6 @@
   id: LoadoutHeadOfSecurityWeapon
   items:
     - type: loadout
-      id: LoadoutCommandHoSPulsePistol
-    - type: loadout
       id: LoadoutCommandHoSWt550
     - type: loadout
       id: LoadoutCommandHoSKatanaSheath
