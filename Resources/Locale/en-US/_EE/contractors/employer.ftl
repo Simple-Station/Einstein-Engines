@@ -24,9 +24,9 @@ employer_name_zenghupharmaceuticals = Zeng-Hu Pharmaceuticals
 employer_name_zenghupharmaceuticals_command = Zeng-Hu Pharmaceuticals Command
 employer_description_zenghupharmaceuticals = The leading name in biotechnology, cybernetics, and pharmaceuticals. Their cutting-edge medical treatments and cybernetic implants have saved countless lives, but their ethics are often called into question—especially by those who can't afford their exorbitant prices.
 
-employer_name_cybersun = Cybersun
-employer_name_cybersun_command = Cybersun Command
-employer_description_cybersun = The public face of the Solarian military-industrial complex and one of the most influential defence contractors in known space. From cutting-edge weapons to next-generation warships, Cybersun supplies the Alliance with the tools of war, securing its dominance in the stars. To Solarians, they are patriots and protectors—outsiders, however, may see something far more sinister.
+employer_name_zavodskoiinterstellar = Zavodskoi Interstellar
+employer_name_zavodskoiinterstellar_command = Zavodskoi Interstellar Command
+employer_description_zavodskoiinterstellar = Zavodskoi Interstellar, formerly Necropolis Industries, is a weapons and aerospace manufacturing and development conglomerate. Zavodskoi distributes everything from light to heavy arms, space vessel weapons, ship-building, aircraft, ground vehicles, combat spacesuits, and military software. They also produce the Z.I. line of positronics, used for private security and military contracting.
 
 employer_name_interdyne = Interdyne
 employer_name_interdyne_command = Interdyne Command
