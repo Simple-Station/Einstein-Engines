@@ -1,8 +1,10 @@
-using System.Diagnostics.CodeAnalysis;
+    using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server.Administration.Logs;
 using Content.Server.Audio;
 using Content.Server.Cargo.Systems;
+using Content.Server.Chemistry.Containers.EntitySystems;
+using Content.Server.Chemistry.EntitySystems;
 using Content.Server.Construction;
 using Content.Server.DoAfter;
 using Content.Server.Fluids.EntitySystems;
@@ -11,6 +13,7 @@ using Content.Server.Nutrition;
 using Content.Server.Nutrition.Components;
 using Content.Server.Nyanotrasen.Kitchen.Components;
 using Content.Server.Popups;
+using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Temperature.Components;
 using Content.Server.Temperature.Systems;
@@ -36,6 +39,7 @@ using Content.Shared.Item;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Events;
+using Content.Shared.Nutrition;
 using Content.Shared.Nyanotrasen.Kitchen;
 using Content.Shared.Nyanotrasen.Kitchen.Components;
 using Content.Shared.Nyanotrasen.Kitchen.UI;
@@ -71,7 +75,7 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
     [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
     [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
     [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
-    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
+    [Dependency] private readonly SolutionContainerSystem _solutionContainerSystem = default!;
     [Dependency] private readonly SolutionTransferSystem _solutionTransferSystem = default!;
     [Dependency] private readonly PuddleSystem _puddleSystem = default!;
     [Dependency] private readonly TemperatureSystem _temperature = default!;
@@ -220,10 +224,8 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
         {
             foreach (var (_, solution) in solutions.Solutions)
             {
-                if (!_solutionContainerSystem.TryGetSolution(item, solution.Name, out var solutionRef))
-                    continue;
-
-                _solutionContainerSystem.SetTemperature(solutionRef!.Value, component.PoweredTemperature);
+                if(_solutionContainerSystem.TryGetSolution(item, solution.Name, out var solutionRef))
+                    _solutionContainerSystem.SetTemperature(solutionRef!.Value, component.PoweredTemperature);
             }
         }
 
@@ -347,8 +349,7 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
 
         var oilToUse = 0;
 
-        if (HasComp<ItemComponent>(item))
-        {
+        if (HasComp<ItemComponent>(item)) {
             var itemComponent = Comp<ItemComponent>(item);
 
             oilToUse = (int) (itemComponent.Size.Id switch
@@ -361,9 +362,7 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
                 "Ginormous" => 50,
                 _ => 10
             } * component.SolutionSizeCoefficient);
-        }
-        else
-        {
+        } else {
             oilToUse = (int) (TryComp<PhysicsComponent>(item, out var physicsComponent) ? physicsComponent.Mass : 10);
         }
 
@@ -391,8 +390,12 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
             _sawmill.Warning(
                 $"{ToPrettyString(uid)} did not have a {component.StorageName} container. It has been created.");
 
-        _solutionContainerSystem.EnsureSolution(uid, component.SolutionName, out var _);
+        component.Solution =
+            _solutionContainerSystem.EnsureSolution(uid, component.SolutionName, out var solutionExisted);
 
+        if (!solutionExisted)
+            _sawmill.Warning(
+                $"{ToPrettyString(uid)} did not have a {component.SolutionName} solution container. It has been created.");
         foreach (var reagent in component.Solution.Contents.ToArray())
         {
             //JJ Comment - not sure this works. Need to check if Reagent.ToString is correct.
@@ -554,7 +557,7 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
 
             _audioSystem.PlayPvs(component.SoundRemoveItem, uid, AudioParamsInsertRemove);
 
-            UpdateUserInterface(uid, component);
+            UpdateUserInterface(component.Owner, component);
         }
     }
 
@@ -604,7 +607,7 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
                 out var transferAmount))
             return;
 
-        if (!_solutionContainerSystem.TryGetSolution(uid, component.Solution.Name, out var solution))
+        if (!_solutionContainerSystem.TryGetSolution(component.Owner, component.Solution.Name, out var solution))
             return;
 
         _solutionTransferSystem.Transfer(user,
@@ -666,7 +669,7 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
 
         _audioSystem.PlayPvs(component.SoundRemoveItem, uid, AudioParamsInsertRemove);
 
-        UpdateUserInterface(uid, component);
+        UpdateUserInterface(component.Owner, component);
     }
 
     private void OnClearSlag(EntityUid uid, DeepFryerComponent component, ClearSlagDoAfterEvent args)
