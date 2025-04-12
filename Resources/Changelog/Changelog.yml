@@ -14932,3 +14932,12 @@ Entries:
   id: 7141
   time: '2025-04-12T02:17:10.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2228
+- author: Diggy
+  changes:
+    - type: Add
+      message: >-
+        People were using IPC markings to become invisible, now they can only
+        take doll joints markings in the overlay section.
+  id: 7142
+  time: '2025-04-12T22:41:40.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2233
