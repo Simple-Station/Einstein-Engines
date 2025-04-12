@@ -76,9 +76,12 @@
     - type: FlashImmunity # Goobstation
     - type: FlashSoundSuppression # Goobstation
       protectionRange: 0
+    - type: EyeProtection
     - type: ShowHealthBars
       damageContainers:
         - Biological
+        - Inorganic
+        - Silicon
     - type: PointLight
       color: "#FFDF00"
     - type: SealableClothingVisuals
