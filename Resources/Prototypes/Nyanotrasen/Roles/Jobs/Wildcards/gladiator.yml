@@ -14,10 +14,6 @@
     - !type:CharacterDepartmentTimeRequirement
       department: Security
       min: 21600
-    - !type:CharacterEmployerRequirement
-      inverted: true
-      employers:
-      - Unemployed
   special:
   - !type:AddTraitSpecial
     traits:

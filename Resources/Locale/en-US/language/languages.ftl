@@ -146,3 +146,6 @@ language-Eldritch-description =
 
 language-Penguin-name = Penguin
 language-Penguin-description = Bwaap!
+
+language-DroneTalk-name = Drone
+language-DroneTalk-description = Incomprehensible to most non-drones!
