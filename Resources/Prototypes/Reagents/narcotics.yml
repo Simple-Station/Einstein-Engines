@@ -490,3 +490,54 @@
         type: Add
         time: 5
         refresh: false
+
+- type: reagent
+  id: Cryanobalamin
+  name: reagent-name-cryanobalamin
+  group: Narcotics
+  desc: reagent-desc-cryanobalamin
+  flavor: sweet
+  color: "#46a6f5"
+  physicalDesc: reagent-physical-desc-sugary
+  metabolisms:
+    Narcotic:
+      effects:
+      - !type:StaminaChange
+        amount: -3
+      - !type:SatiateThirst
+        factor: -1
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 30
+        damage:
+          types:
+            Cellular: 0.2
+
+- type: reagent
+  id: LiftLoversSpecial
+  name: reagent-name-liftloversspecial
+  group: Narcotics
+  desc: reagent-desc-liftloversspecial
+  flavor: sweet
+  color: "#f73715"
+  physicalDesc: reagent-physical-desc-unhealthy
+  metabolisms:
+    Narcotic:
+      effects:
+      - !type:StaminaChange
+        amount: -6
+      - !type:SatiateThirst
+        factor: -2
+      - !type:Jitter
+        conditions:
+        - !type:ReagentThreshold
+          min: 7
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 20
+        damage:
+          types:
+            Cellular: 0.3
+

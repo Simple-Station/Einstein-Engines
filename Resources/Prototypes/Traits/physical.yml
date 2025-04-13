@@ -767,6 +767,19 @@
           - Silicon
 
 - type: trait
+  id: RestrictedGear
+  category: Physical
+  points: -6
+  requirements:
+  - !type:CVarRequirement
+    cvar: trait.restrictedgear_enabled
+    requiredValue: true
+  - !type:CharacterJobRequirement
+    inverted: true
+    jobs:
+      - Prisoner # Smuggling for prisoners = immediate jailbreak.
+
+- type: trait
   id: Redshirt
   category: Physical
   points: 8
@@ -882,7 +895,6 @@
             groups:
               Brute: -0.6
               Burn: -0.6
-              Electronic : -0.6
 
 - type: trait
   id: BionicLeg
@@ -1140,7 +1152,7 @@
           requireDetailRange: true
 
 - type: trait
-  id: Bulky
+  id: Bodybuilder
   category: Physical
   points: -6
   requirements:
@@ -1154,7 +1166,7 @@
       multiply: false
     - !type:TraitPushDescription
       descriptionExtensions:
-        - description: examine-bulky-message
+        - description: examine-bodybuilder-message
           fontSize: 12
           requireDetailRange: true
 
@@ -1166,7 +1178,7 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Bulky
+        - Bodybuilder
   functions:
     - !type:TraitModifyDensity
       densityModifier: 0.5
@@ -1174,54 +1186,6 @@
     - !type:TraitPushDescription
       descriptionExtensions:
         - description: examine-featherweight-message
-          fontSize: 12
-          requireDetailRange: true
-
-- type: trait
-  id: Bodybuilder
-  category: Physical
-  points: -6
-  requirements:
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Weakling
-  functions:
-    - !type:TraitReplaceComponent
-      components:
-        - type: Puller
-          walkSpeedModifier: 0.975
-          sprintSpeedModifier: 0.975
-          softGrabSpeedModifier: 0.95
-          hardGrabSpeedModifier: 0.85
-          chokeGrabSpeedModifier: 0.7
-    - !type:TraitPushDescription
-      descriptionExtensions:
-        - description: examine-bodybuilder-message
-          fontSize: 12
-          requireDetailRange: true
-
-- type: trait
-  id: Weakling
-  category: Physical
-  points: 3
-  requirements:
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Bodybuilder
-  functions:
-    - !type:TraitReplaceComponent
-      components:
-        - type: Puller
-          walkSpeedModifier: 0.9
-          sprintSpeedModifier: 0.9
-          softGrabSpeedModifier: 0.8
-          hardGrabSpeedModifier: 0.4
-          chokeGrabSpeedModifier: 0.2
-    - !type:TraitPushDescription
-      descriptionExtensions:
-        - description: examine-weakling-message
           fontSize: 12
           requireDetailRange: true
 

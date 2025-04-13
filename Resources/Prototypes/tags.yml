@@ -1053,6 +1053,9 @@
   id: Ore
 
 - type: Tag
+  id: Organ
+
+- type: Tag
   id: Packet
 
 - type: Tag
@@ -1196,6 +1199,9 @@
 
 - type: Tag
   id: RifleStock
+
+- type: Tag
+  id: Ring
 
 - type: Tag
   id: RipleyCentralControlModule
@@ -1502,6 +1508,9 @@
 
 - type: Tag
   id: WriteIgnoreStamps
+
+- type: Tag
+  id: FoodBowlBig
 
 # ALPHABETICAL
 

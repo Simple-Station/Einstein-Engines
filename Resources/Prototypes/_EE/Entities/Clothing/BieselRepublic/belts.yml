@@ -1,0 +1,18 @@
+- type: entity
+  parent: [ClothingBeltStorageBase, TCFLInfo]
+  id: ClothingBeltTCAFWebbing
+  name: TCAF webbing
+  suffix: TCFL
+  description: Ideal for storing everything from ammo to weapons and combat essentials.
+  components:
+  - type: Sprite
+    sprite: _EE/Clothing/BieselRepublic/Belt/TCAF_webbing.rsi
+  - type: Clothing
+    sprite: _EE/Clothing/BieselRepublic/Belt/TCAF_webbing.rsi
+  - type: EmitsSoundOnMove
+    soundCollection:
+      collection: FootstepTacticalWebbing
+      params:
+        volume: -10
+    distanceWalking: 2
+    distanceSprinting: 3

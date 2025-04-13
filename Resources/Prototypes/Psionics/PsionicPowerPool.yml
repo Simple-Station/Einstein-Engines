@@ -4,12 +4,33 @@
     MetapsionicPower: 1
     AnoigoPower: 1
     DispelPower: 1
-    #TelegnosisPower: 1
+    TelegnosisPower: 0.75
     PsionicRegenerationPower: 1
     MassSleepPower: 0.3
     #PsionicInvisibilityPower: 0.15
     MindSwapPower: 0.1
     TelepathyPower: 1
+    HealingWordPower: 0.9
+    ShadeskipPower: 0.1
+    TelekineticPulsePower: 0.15
+    PyrokineticFlare: 0.5
+    NoosphericZapPower: 0.5
+
+- type: weightedRandom
+  id: PsychoHistorianPowerPool # Significantly trimmed down pool, MUCH faster power generation. Free Telepathy.
+  weights:
+    MetapsionicPower: 1
+    DispelPower: 1
+    TelegnosisPower: 1
+    PsionicRegenerationPower: 1
+    MassSleepPower: 0.3
+    PsionicInvisibilityPower: 0.15
+    MindSwapPower: 0.1
+
+- type: weightedRandom
+  id: ElementalistPowerPool # Significantly slower power generation. No Telepathy.
+  weights:
+    AnoigoPower: 1
     HealingWordPower: 0.9
     ShadeskipPower: 0.1
     TelekineticPulsePower: 0.15

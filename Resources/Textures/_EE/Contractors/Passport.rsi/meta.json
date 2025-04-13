@@ -38,6 +38,24 @@
             "name": "passport_nederlandic_open"
         },
         {
+            "name": "passport_izweski_closed"
+        },
+        {
+            "name": "passport_izweski_open"
+        },
+        {
+            "name": "passport_adhomai_closed"
+        },
+        {
+            "name": "passport_adhomai_open"
+        },
+        {
+            "name": "passport_goldendeep_closed"
+        },
+        {
+            "name": "passport_goldendeep_open"
+        },
+        {
             "name": "passport_species_human"
         },
         {
@@ -90,6 +108,9 @@
         },
         {
             "name": "passport_species_vulpkanin"
+        },
+        {
+            "name": "passport_species_thaven"
         }
     ]
 }

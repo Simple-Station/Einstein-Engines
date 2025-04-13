@@ -14,13 +14,12 @@ using Content.Shared.Roles;
 using Content.Shared.Traits;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
-using Content.Shared.Whitelist;
-using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Utility;
 using Timer = Robust.Shared.Timing.Timer;
+using Content.Shared.Humanoid.Prototypes;
 
 namespace Content.Server.Traits;
 
@@ -62,16 +61,29 @@ public sealed class TraitSystem : EntitySystem
             && jobPrototype is not null && !jobPrototype.ApplyTraits)
             return;
 
+        if (_prototype.TryIndex<SpeciesPrototype>(profile.Species, out var speciesProto))
+            pointsTotal += speciesProto.BonusTraitPoints;
+
         var jobPrototypeToUse = _prototype.Index(jobId ?? _prototype.EnumeratePrototypes<JobPrototype>().First().ID);
+        var sortedTraits = new List<TraitPrototype>();
 
         foreach (var traitId in profile.TraitPreferences)
         {
-            if (!_prototype.TryIndex<TraitPrototype>(traitId, out var traitPrototype))
+            if (_prototype.TryIndex<TraitPrototype>(traitId, out var traitPrototype))
+            {
+                sortedTraits.Add(traitPrototype);
+            }
+            else
             {
                 DebugTools.Assert($"No trait found with ID {traitId}!");
                 return;
             }
+        }
 
+        sortedTraits.Sort();
+
+        foreach (var traitPrototype in sortedTraits)
+        {
             if (!_characterRequirements.CheckRequirementsValid(
                 traitPrototype.Requirements,
                 jobPrototypeToUse,

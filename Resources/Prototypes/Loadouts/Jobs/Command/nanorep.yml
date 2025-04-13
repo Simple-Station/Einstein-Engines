@@ -32,12 +32,37 @@
         - NanotrasenRepresentative
   items:
     - WeaponCCDisabler
+
+- type: loadout
+  id: LoadoutCorporateLiaisonStamp
+  category: JobsCommandNanorep
+  cost: 0
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - NanotrasenRepresentative
+  items:
+    - RubberStampCorporateLiaison
 # Eyes
 
 # Gloves
 
 # Head
-
+- type: loadout
+  id: LoadoutHeadBeretWhiteCorporateLiaison
+  category: JobsCommandNanorep
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingHeadHatBeretWhite
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - NanotrasenRepresentative
 # Id
 
 # Neck
@@ -45,6 +70,141 @@
 # Mask
 
 # Outer
+- type: loadout
+  id: LoadoutClothingOuterCorporateJacketNanoTrasenCorporateLiaison
+  category: JobsCommandNanorep
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNanorepUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - NanotrasenRepresentative
+    - !type:CharacterEmployerRequirement
+      employers:
+      - NanoTrasen
+  items:
+    - ClothingOuterCorporateJacket
+
+- type: loadout
+  id: LoadoutClothingOuterCorporateJacketZavodskoiInterstellarCorporateLiaison
+  category: JobsCommandNanorep
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNanorepUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - NanotrasenRepresentative
+    - !type:CharacterEmployerRequirement
+      employers:
+      - ZavodskoiInterstellar
+  items:
+    - ClothingOuterZiCorporateJacket
+
+- type: loadout
+  id: LoadoutClothingOuterCorporateJacketEinsteinEnginesCorporateLiaison
+  category: JobsCommandNanorep
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNanorepUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - NanotrasenRepresentative
+    - !type:CharacterEmployerRequirement
+      employers:
+      - EinsteinEngines
+  items:
+    - ClothingOuterEeCorporateJacket
+
+- type: loadout
+  id: LoadoutClothingOuterCorporateJacketHephaestusIndustriesCorporateLiaison
+  category: JobsCommandNanorep
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNanorepUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - NanotrasenRepresentative
+    - !type:CharacterEmployerRequirement
+      employers:
+      - HephaestusIndustries
+  items:
+    - ClothingOuterHiCorporateJacket
+
+- type: loadout
+  id: LoadoutClothingOuterCorporateJacketInterdyneCorporateLiaison
+  category: JobsCommandNanorep
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNanorepUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - NanotrasenRepresentative
+    - !type:CharacterEmployerRequirement
+      employers:
+      - Interdyne
+  items:
+    - ClothingOuterIdCorporateJacket
+
+- type: loadout
+  id: LoadoutClothingOuterCorporateJacketZengHuPharmaceuticalsCorporateLiaison
+  category: JobsCommandNanorep
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNanorepUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - NanotrasenRepresentative
+    - !type:CharacterEmployerRequirement
+      employers:
+      - ZengHuPharmaceuticals
+  items:
+    - ClothingOuterZhCorporateJacket
+
+- type: loadout
+  id: LoadoutClothingOuterCorporateJacketIdrisIncorporatedCorporateLiaison
+  category: JobsCommandNanorep
+  cost: 0
+  guideEntry: IdrisIncorporated
+  items:
+    - ClothingOuterIiCorporateJacket
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNanorepUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - NanotrasenRepresentative
+    - !type:CharacterEmployerRequirement
+        employers:
+        - IdrisIncorporated
+
+- type: loadout
+  id: LoadoutClothingOuterCorporateJacketOrionExpressCorporateLiaison
+  category: JobsCommandNanorep
+  cost: 0
+  guideEntry: OrionExpress
+  items:
+    - ClothingOuterOeCorporateJacket
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNanorepUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - NanotrasenRepresentative
+    - !type:CharacterEmployerRequirement
+        employers:
+        - OrionExpress
 
 # Shoes
 

@@ -55,6 +55,8 @@
       sprite: Structures/Windows/cracks.rsi
   - type: StaticPrice
     price: 132
+  - type: ExplosionResistance
+    damageCoefficient: 0.2
 
 - type: entity
   id: PlasmaReinforcedWindowDirectional

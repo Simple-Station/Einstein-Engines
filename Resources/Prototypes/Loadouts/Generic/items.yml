@@ -68,6 +68,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSmokes
+    - !type:CharacterEmployerRequirement
+      employers:
+      - Interdyne
 
 - type: loadout
   id: LoadoutItemLighter
@@ -574,7 +577,7 @@
     - MedkitFilled
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBoxKits
+      group: LoadoutMedkits
 
 - type: loadout
   id: LoadoutMedkitBruteFilled
@@ -591,7 +594,7 @@
         - MedicalIntern
         - Brigmedic
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBoxKits
+      group: LoadoutMedkits
 
 - type: loadout
   id: LoadoutMedkitBurnFilled
@@ -608,7 +611,7 @@
         - MedicalIntern
         - Brigmedic
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBoxKits
+      group: LoadoutMedkits
 
 - type: loadout
   id: LoadoutMedkitToxinFilled
@@ -625,7 +628,7 @@
         - MedicalIntern
         - Brigmedic
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBoxKits
+      group: LoadoutMedkits
 
 - type: loadout
   id: LoadoutMedkitOxygenFilled
@@ -642,7 +645,7 @@
         - MedicalIntern
         - Brigmedic
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBoxKits
+      group: LoadoutMedkits
 
 - type: loadout
   id: LoadoutMedkitRadiationFilled
@@ -659,7 +662,7 @@
         - MedicalIntern
         - Brigmedic
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBoxKits
+      group: LoadoutMedkits
 
 - type: loadout
   id: LoadoutMedkitAdvancedFilled
@@ -676,7 +679,7 @@
         - MedicalIntern
         - Brigmedic
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBoxKits
+      group: LoadoutMedkits
 
 - type: loadout
   id: LoadoutMedkitCombatFilled
@@ -690,7 +693,7 @@
          - ChiefMedicalOfficer
          - Brigmedic
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBoxKits
+      group: LoadoutMedkits
 
 #Misc Items
 - type: loadout
@@ -854,6 +857,20 @@
     - !type:LoadoutMakeFollower
 
 - type: loadout
+  id: LoadoutItemPetSquackroach
+  category: Items
+  cost: 2
+  canBeHeirloom: true
+  customColorTint: true
+  items:
+  - MobSquackroachPet
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPets
+  functions:
+  - !type:LoadoutMakeFollower
+
+- type: loadout
   id: LoadoutItemPetCockroach
   category: Items
   cost: 2
@@ -861,6 +878,20 @@
   customColorTint: true
   items:
     - MobCockroachPet
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPets
+  functions:
+    - !type:LoadoutMakeFollower
+
+- type: loadout
+  id: LoadoutItemPetGoldfish
+  category: Items
+  cost: 2
+  canBeHeirloom: true
+  customColorTint: true
+  items:
+    - MobCarpGoldfishPet
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutPets

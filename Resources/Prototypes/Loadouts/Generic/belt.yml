@@ -81,3 +81,26 @@
        inverted: true
        jobs:
          - Prisoner
+
+- type: loadout
+  id: ClothingBeltTCAFWebbing
+  category: Belt
+  cost: 0
+  canBeHeirloom: true
+  guideEntry: TCFLInfo
+  items:
+    - ClothingBeltTCAFWebbing
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBelt
+    - !type:CharacterJobRequirement
+       inverted: true
+       jobs:
+         - Prisoner
+    - !type:CharacterNationalityRequirement
+      nationalities:
+        - Bieselite
+    - !type:CharacterLifepathRequirement
+      lifepaths:
+        - WarVet
+

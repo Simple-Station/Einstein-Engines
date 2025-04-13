@@ -312,19 +312,6 @@ trait-description-Mystic =
 trait-name-Singer = Singer
 trait-description-Singer = You are naturally capable of singing simple melodies with your voice.
 
-trait-name-LatentPsychic = Latent Psychic
-trait-description-LatentPsychic =
-    Your mind and soul are open to the noosphere, allowing for use of Telepathy.
-    Thus, you are eligible for potentially receiving psychic powers.
-    It is possible that you may be hunted by otherworldly forces, so consider keeping your powers a secret.
-
-trait-name-PsionicInsulation = χ Waveform Misalignment
-trait-description-PsionicInsulation =
-    You are a flesh automaton animated by neurotransmitters. Within your skull lies a
-    1.5kg sack of meat pretending at sentience. By modern epistemiological theory, you aren't even a sophont.
-    The good news is that you are immune to most positive and negative effects of psychic powers.
-    There may be other consequences to this malady.
-
 trait-name-NaturalTelepath = Natural Telepath
 trait-description-NaturalTelepath =
     As a naturally occuring Telepath, you are capable of fluent telepathic communication, regardless of
@@ -618,19 +605,15 @@ trait-description-MothFlight =
 trait-name-Featherweight = Featherweight
 trait-description-Featherweight =
     Your body is unusually lightweight for your species.
-    This trait reduces the density of your body by 50%.
-
-trait-name-Bulky = Bulky
-trait-description-Bulky =
-    Your body is unusually heavy for your species.
-    This trait increases the density of your body by 55.
-
-trait-name-Weakling = Weakling
-trait-description-Weakling =
-    Due to genetics, injury, or inactivity, your body is weaker than most.
-    This trait doubles the movement speed penalty when dragging something.
+    This trait reduces the density of your body by 50%, making dragging / picking things up harder.
 
 trait-name-Bodybuilder = Bodybuilder
 trait-description-Bodybuilder =
-    Through extensive training or body modification, you have achieved the pinnacle of physique. 
-    This trait halves the movement speed penalty when dragging something.
+    Through extensive training or body modification, you have achieved the pinnacle of physique.
+    This trait increases the density of your body by 55, making dragging / picking things up easier.
+
+trait-name-RestrictedGear = Restricted Gear
+trait-description-RestrictedGear =
+    Either through personal ownership or theft, you have access to equipment that isn't particularly standard issue.
+    Note that starting with an item [color=red]doesn't certify its legality[/color]. Conceal it or justify it.
+    (You equip other jobs' items in the loadouts menu)

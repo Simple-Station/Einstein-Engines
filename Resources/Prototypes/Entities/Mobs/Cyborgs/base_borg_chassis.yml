@@ -344,7 +344,7 @@
       Unsexed: UnisexSiliconSyndicate
   - type: PointLight
     color: "#dd200b"
-  - type: Damageable #Goobstation - Ion Damage
+  - type: Damageable 
     damageContainer: Silicon
     damageModifierSet: SiliconProtected 
   - type: ExplosionResistance

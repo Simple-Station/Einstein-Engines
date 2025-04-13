@@ -1,4 +1,4 @@
-﻿-create-3rd-person =
+-create-3rd-person =
     { $chance ->
         [1] Creates
         *[other] create
@@ -120,7 +120,10 @@ reagent-effect-guidebook-adjust-solution-temperature-effect =
                 [1] add
                 *[-1] remove
             }
-    } heat from the solution until it reaches { $deltasign ->
+    } heat { $deltasign ->
+                [1] to
+                *[-1] from
+           } the solution until it reaches { $deltasign ->
                 [1] at most {NATURALFIXED($maxtemp, 2)}k
                 *[-1] at least {NATURALFIXED($mintemp, 2)}k
             }
@@ -339,7 +342,7 @@ reagent-effect-guidebook-innoculate-zombie-infection =
         *[other] cure
     } an ongoing zombie infection, and provides immunity to future infections
 
-reagent-effect-guidebook-reduce-rotting = 
+reagent-effect-guidebook-reduce-rotting =
     { $chance ->
         [1] Regenerates
         *[other] regenerate
@@ -370,7 +373,7 @@ reagent-effect-guidebook-chem-reroll-psionic =
     } a chance to get a different psionic power
 
 reagent-effect-guidebook-add-moodlet =
-    modifies mood by {$amount}
+    Modifies mood by {$amount}
     { $timeout ->
         [0] indefinitely
         *[other] for {$timeout} seconds
@@ -400,3 +403,38 @@ reagent-effect-guidebook-plant-seeds-remove =
         [1] Removes the
         *[other] remove the
     } seeds of the plant
+
+reagent-effect-guidebook-stamina-change =
+    { $chance ->
+        [1] { $deltasign ->
+                [-1] Increases
+                *[1] Decreases
+            }
+        *[other] { $deltasign ->
+                    [-1] increase
+                    *[1] decrease
+                 }
+    } stamina by {$amount} points
+
+reagent-effect-guidebook-add-to-chemicals =
+    { $chance ->
+        [1] { $deltasign ->
+                [1] Adds
+                *[-1] Removes
+            }
+        *[other]
+            { $deltasign ->
+                [1] add
+                *[-1] remove
+            }
+    } {NATURALFIXED($amount, 2)}u of {$reagent} { $deltasign ->
+        [1] to
+        *[-1] from
+    } the solution
+
+reagent-effect-guidebook-chem-restorereroll-psionic =
+    { $chance ->
+        [1] Restores
+        *[other] restore
+    } one's ability to gain benefit from mind opening reagents
+

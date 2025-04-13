@@ -11,9 +11,10 @@
       department: Medical
       min: 28800 # DeltaV - 8 hours
     - !type:CharacterEmployerRequirement
-      inverted: true
       employers:
-      - Unemployed
+      - Interdyne
+      - NanoTrasen
+      - ZengHuPharmaceuticals
     # - !type:OverallPlaytimeRequirement # DeltaV - No playtime requirement
     #   time: 54000 # 15 hrs
   startingGear: ParamedicGear

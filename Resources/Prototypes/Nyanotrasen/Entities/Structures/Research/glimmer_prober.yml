@@ -103,7 +103,7 @@
     assayFeedback:
       - drain-feedback
   - type: GlimmerSource
-    addToGlimmer: false
+    glimmerPerSecond: -1.0
   - type: Construction
     graph: GlimmerDevices
     node: glimmerDrain

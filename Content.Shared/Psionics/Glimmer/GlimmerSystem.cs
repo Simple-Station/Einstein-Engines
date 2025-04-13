@@ -13,7 +13,7 @@ public sealed class GlimmerSystem : EntitySystem
 {
     [Dependency] private readonly IConfigurationManager _cfg = default!;
 
-    private float _glimmerInput = 0;
+    private double _glimmerInput = 0;
 
     /// <summary>
     ///     GlimmerInput represents the system-facing value of the station's glimmer, and is given by f(y) for this graph: https://www.desmos.com/calculator/posutiq38e
@@ -22,7 +22,7 @@ public sealed class GlimmerSystem : EntitySystem
     /// <remarks>
     ///     This is private set for a good reason, if you're looking to change it, do so via DeltaGlimmerInput or SetGlimmerInput
     /// </remarks>
-    public float GlimmerInput
+    public double GlimmerInput
     {
         get { return _glimmerInput; }
         private set { _glimmerInput = _enabled ? Math.Max(value, 0) : 0; }
@@ -34,12 +34,12 @@ public sealed class GlimmerSystem : EntitySystem
     /// </summary>
     public string GlimmerInputString => _glimmerInput.ToString("#.##");
 
-    private float _glimmerOutput = 0;
+    private double _glimmerOutput = 0;
 
     /// <summary>
     ///     This constant is equal to the intersection of the Glimmer Equation(https://www.desmos.com/calculator/posutiq38e) and the line Y = X.
     /// </summary>
-    public const float GlimmerEquilibrium = 502.941f;
+    public const double GlimmerEquilibrium = 502.941;
 
 
     /// <summary>
@@ -49,10 +49,10 @@ public sealed class GlimmerSystem : EntitySystem
     /// <remarks>
     ///     This is private set for a good reason, if you're looking to change it, do so via DeltaGlimmerOutput or SetGlimmerOutput
     /// </remarks>
-    public float GlimmerOutput
+    public double GlimmerOutput
     {
         get { return _glimmerOutput; }
-        private set { _glimmerOutput = _enabled ? Math.Clamp(value, 0, 999.999f) : 0; }
+        private set { _glimmerOutput = _enabled ? Math.Clamp(value, 0, 999.999) : 0; }
     }
 
     /// <summary>
@@ -81,7 +81,7 @@ public sealed class GlimmerSystem : EntitySystem
     ///     and is the lowest form of abstracted glimmer. It's meant more for sprite states than math.
     /// </summary>
     /// <param name="glimmer">What glimmer count to check. Uses the current glimmer by default.</param>
-    public GlimmerTier GetGlimmerTier(float? glimmer = null)
+    public GlimmerTier GetGlimmerTier(double? glimmer = null)
     {
         if (glimmer == null)
             glimmer = GlimmerOutput;
@@ -105,7 +105,7 @@ public sealed class GlimmerSystem : EntitySystem
     {
         if (!_enabled)
             return 1;
-        else return (int) MathF.Round(GlimmerOutput / 1000);
+        else return (int) Math.Round(GlimmerOutput / 1000);
     }
 
     /// <summary>
@@ -113,13 +113,13 @@ public sealed class GlimmerSystem : EntitySystem
     ///     Go through this if you want glimmer to be modified faster if its below 502.941f, and slower if above said equilibrium
     /// </summary>
     /// <param name="delta"></param>
-    public void DeltaGlimmerInput(float delta)
+    public void DeltaGlimmerInput(double delta)
     {
-        if (_enabled && delta != 0)
-        {
-            GlimmerInput += delta;
-            GlimmerOutput = Math.Clamp(2000 / (1 + MathF.Pow(MathF.E, -.0022f * GlimmerInput)) - 1000, 0, 999.999999f);
-        }
+        if (!_enabled || delta == 0)
+            return;
+
+        GlimmerInput += delta;
+        GlimmerOutput = 2000 / (1 + Math.Pow(Math.E, -0.0022 * GlimmerInput)) - 1000;
     }
 
     /// <summary>
@@ -127,13 +127,13 @@ public sealed class GlimmerSystem : EntitySystem
     ///     This is primarily intended for load bearing systems such as Probers and Drainers, and should not be called by most things by design.
     /// </summary>
     /// <param name="delta"></param>
-    public void DeltaGlimmerOutput(float delta)
+    public void DeltaGlimmerOutput(double delta)
     {
-        if (_enabled && delta != 0)
-        {
-            GlimmerOutput += delta;
-            GlimmerInput = Math.Max(2000 / (1 + MathF.Pow(MathF.E, -.0022f * GlimmerOutput)) - 1000, 0);
-        }
+        if (!_enabled || delta == 0)
+            return;
+
+        GlimmerOutput += delta;
+        GlimmerInput = Math.Log((GlimmerOutput + 1000) / (1000 - GlimmerOutput)) / 0.0022;
     }
 
     /// <summary>
@@ -143,11 +143,11 @@ public sealed class GlimmerSystem : EntitySystem
     /// <param name="set"></param>
     public void SetGlimmerOutput(float set)
     {
-        if (_enabled && set != 0)
-        {
-            GlimmerOutput = Math.Clamp(set, 0, 999.999f);
-            GlimmerInput = 2000 / (1 + MathF.Pow(MathF.E, -.0022f * GlimmerOutput)) - 1000;
-        }
+        if (!_enabled || set == 0)
+            return;
+
+        GlimmerOutput = Math.Clamp(set, 0, 999.999);
+        GlimmerInput = Math.Log((GlimmerOutput + 1000) / (1000 - GlimmerOutput)) / 0.0022;
     }
 
     /// <summary>
@@ -157,23 +157,23 @@ public sealed class GlimmerSystem : EntitySystem
     /// <param name="set"></param>
     public void SetGlimmerInput(float set)
     {
-        if (_enabled && set >= 0)
-        {
-            GlimmerInput = set;
-            GlimmerOutput = 2000 / (1 + MathF.Pow(MathF.E, -.0022f * GlimmerOutput)) - 1000;
-        }
+        if (!_enabled || set < 0)
+            return;
+
+        GlimmerInput = set;
+        GlimmerOutput = 2000 / (1 + Math.Pow(Math.E, -.0022 * set)) - 1000;
     }
 
     /// <summary>
     ///     Outputs the ratio between actual glimmer and glimmer equilibrium(The intersection of the Glimmer Equation and the line y = x).
-    ///     This will return 0.01f if glimmer is 0, and 1 if glimmer is disabled.
+    ///     This will return 0.01 if glimmer is 0, and 1 if glimmer is disabled.
     /// </summary>
-    public float GetGlimmerEquilibriumRatio()
+    public double GetGlimmerEquilibriumRatio()
     {
         if (!_enabled)
             return 1;
         else if (GlimmerOutput == 0)
-            return 0.01f;
+            return 0.01;
         else return GlimmerOutput / GlimmerEquilibrium;
     }
 
