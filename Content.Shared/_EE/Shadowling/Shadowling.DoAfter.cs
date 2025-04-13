@@ -10,3 +10,5 @@ namespace Content.Shared._EE.Shadowling;
 /// </summary>
 [Serializable, NetSerializable]
 public sealed partial class EnthrallDoAfterEvent : SimpleDoAfterEvent { }
+[Serializable, NetSerializable]
+public sealed partial class RapidRehatchDoAfterEvent : SimpleDoAfterEvent { }

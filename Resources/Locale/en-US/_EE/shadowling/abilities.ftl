@@ -7,3 +7,7 @@ shadowling-enthrall-dead = I need them alive
 
 shadowling-target-being-thralled = A dark presence grips your mind
 
+shadowling-glare-target = Your body seizes as an otherworldly glare bears down on you.
+
+shadowling-rapid-rehatch-complete = The husk shudders, and from it, I am reborn—unscathed.
+

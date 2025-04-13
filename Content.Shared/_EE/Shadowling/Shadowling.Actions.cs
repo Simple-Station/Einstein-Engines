@@ -23,4 +23,5 @@ public sealed partial class HatchEvent : InstantActionEvent { }
 public sealed partial class EnthrallEvent : EntityTargetActionEvent { }
 public sealed partial class GlareEvent : EntityTargetActionEvent { }
 public sealed partial class VeilEvent : InstantActionEvent { }
+public sealed partial class RapidRehatchEvent : InstantActionEvent { }
 #endregion

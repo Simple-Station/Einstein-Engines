@@ -1,6 +1,8 @@
 using Content.Server.Actions;
+using Content.Server.Popups;
 using Content.Server.Stunnable;
 using Content.Shared._EE.Shadowling;
+using Content.Shared.Popups;
 using Content.Shared.StatusEffect;
 using Robust.Server.GameObjects;
 using Robust.Shared.Timing;
@@ -19,6 +21,7 @@ public sealed class ShadowlingGlareSystem : EntitySystem
     [Dependency] private readonly ShadowlingSystem _shadowling = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly StatusEffectsSystem _effects = default!;
+    [Dependency] private readonly PopupSystem _popup = default!;
 
     public override void Initialize()
     {
@@ -89,6 +92,7 @@ public sealed class ShadowlingGlareSystem : EntitySystem
             comp.ActivateGlareTimer = true;
         }
 
+        _popup.PopupEntity(Loc.GetString("shadowling-glare-target"), uid, target, PopupType.MediumCaution);
         _actions.StartUseDelay(args.Action);
     }
 }

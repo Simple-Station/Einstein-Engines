@@ -54,16 +54,31 @@
 - type: entity
   id: ActionVeil
   name: Veil
-  description: A pulse of darkness silences every light.
+  description: A pulse of darkness that silences every light.
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     itemIconStyle: NoItem
-    useDelay: 15
+    useDelay: 20
     icon:
       sprite: _EE/Shadowling/shadowling_abilities.rsi
       state: veil
     event: !type:VeilEvent { }
+
+- type: entity
+  id: ActionRapidRehatch
+  name: Rapid Re-Hatch
+  description: Shed your broken flesh, and rise whole once more.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: NoItem
+    useDelay: 60
+    icon:
+      sprite: _EE/Shadowling/shadowling_abilities.rsi
+      state: rehatch
+    event: !type:RapidRehatchEvent { }
+
 
 
 
