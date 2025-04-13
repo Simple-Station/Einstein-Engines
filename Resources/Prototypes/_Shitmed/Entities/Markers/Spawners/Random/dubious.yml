@@ -17,7 +17,7 @@
       weight: 35
       children:
       - id: OrganDubiousShock
-      - id: OrganDubiousGoliath
+      # - id: OrganDubiousGoliath
       - id: OrganDubiousEMP
       - id: OrganDubiousGravityWell
       - id: OrganDubiousFlash
