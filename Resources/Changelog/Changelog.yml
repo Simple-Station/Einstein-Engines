@@ -14950,3 +14950,12 @@ Entries:
   id: 7143
   time: '2025-04-13T00:31:33.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2184
+- author: Tirochora
+  changes:
+    - type: Add
+      message: fire has been re-added to the game for more than about a half a second
+    - type: Tweak
+      message: fire shouldn't ash people at tiny amounts
+  id: 7144
+  time: '2025-04-13T03:26:05.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2217
