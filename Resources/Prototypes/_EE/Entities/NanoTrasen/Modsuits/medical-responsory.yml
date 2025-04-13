@@ -1,18 +1,18 @@
 # The Modsuit Itself, This is just a ERT modsuit
 - type: entity
   parent: ClothingModsuitStandard
-  id: ClothingModsuitInquisitory
-  name: Inquisitory modsuit control
-  description: The main controller for a Inquisitory modsuit.
+  id: ClothingModsuitResponsoryMedical
+  name: Medical Responsory modsuit control
+  description: The main controller for a Medical Responsory modsuit.
   components:
     - type: Sprite
-      sprite: _EE/Clothing/NanoTrasen/Modsuits/inquisitory.rsi
+      sprite: _EE/Clothing/NanoTrasen/Modsuits/medical-responsory.rsi
     - type: ToggleableClothing
       clothingPrototypes:
-        head: ClothingModsuitHelmetInquisitory
-        gloves: ClothingModsuitGauntletsInquisitory
-        outerClothing: ClothingModsuitChestplateInquisitory
-        shoes: ClothingModsuitBootsInquisitory
+        head: ClothingModsuitHelmetResponsoryMedical
+        gloves: ClothingModsuitGauntletsResponsoryMedical
+        outerClothing: ClothingModsuitChestplateResponsoryMedical
+        shoes: ClothingModsuitBootsResponsoryMedical
     - type: ItemSlots
       slots:
         cell_slot:
@@ -34,27 +34,29 @@
 
 - type: entity
   parent: ClothingModsuitGauntletsStandard
-  id: ClothingModsuitGauntletsInquisitory
-  name: Inquisitory modsuit gauntlets
-  description: A pair of gauntlets made for the Inquisitory modsuit.
+  id: ClothingModsuitGauntletsResponsoryMedical
+  name: Medical Responsory modsuit gauntlets
+  description: A pair of gauntlets made for the Medical Responsory modsuit.
   categories: [HideSpawnMenu]
   components:
     - type: Sprite
-      sprite: _EE/Clothing/NanoTrasen/Modsuits/inquisitory.rsi
+      sprite: _EE/Clothing/NanoTrasen/Modsuits/medical-responsory.rsi
     - type: SealableClothingVisuals
       visualLayers:
         gloves:
         - state: equipped-HAND-sealed
+        - state: equipped-HAND-sealed-unshaded
+          shader: unshaded
 
 - type: entity
   parent: [ClothingModsuitHelmetStandard, ShowSecurityIcons, BaseClothingRadio]
-  id: ClothingModsuitHelmetInquisitory
-  name: Inquisitory modsuit helmet
-  description: A state-of-the-art helmet designed by NanoTrasen for the Inquisitory modsuit. It includes a built-in HUD.
+  id: ClothingModsuitHelmetResponsoryMedical
+  name: Medical Responsory modsuit helmet
+  description: A state-of-the-art helmet designed by NanoTrasen for the Medical Responsory modsuit. It includes a built-in HUD.
   categories: [HideSpawnMenu]
   components:
     - type: Sprite
-      sprite: _EE/Clothing/NanoTrasen/Modsuits/inquisitory.rsi
+      sprite: _EE/Clothing/NanoTrasen/Modsuits/medical-responsory.rsi
     - type: PressureProtection
       highPressureMultiplier: 0.08
       lowPressureMultiplier: 1000
@@ -92,13 +94,13 @@
 
 - type: entity
   parent: ClothingModsuitChestplateStandard
-  id: ClothingModsuitChestplateInquisitory
-  name: Inquisitory modsuit chestplate
-  description: A state of the art chestplate designed by NanoTrasen for the Inquisitory Modsuit. It incorporates powered servos to reduce the equipment load.
+  id: ClothingModsuitChestplateResponsoryMedical
+  name: Medical Responsory modsuit chestplate
+  description: A state of the art chestplate designed by NanoTrasen for the Medical Responsory Modsuit. It incorporates powered servos to reduce the equipment load.
   categories: [HideSpawnMenu]
   components:
     - type: Sprite
-      sprite: _EE/Clothing/NanoTrasen/Modsuits/inquisitory.rsi
+      sprite: _EE/Clothing/NanoTrasen/Modsuits/medical-responsory.rsi
     - type: ClothingSpeedModifier
       walkModifier: 1
       sprintModifier: 1
@@ -122,7 +124,7 @@
     - type: SealableClothingVisuals
       visualLayers:
         outerClothing:
-          - state: equipped-OUTERCLOTHING-sealed
+        - state: equipped-OUTERCLOTHING-sealed
     - type: Reflect
       reflectProb: 0.05
       spread: 270
@@ -135,16 +137,17 @@
     - type: TemperatureProtection
       coefficient: 0.001
 
+
 - type: entity
   parent: ClothingModsuitBootsStandard
-  id: ClothingModsuitBootsInquisitory
-  name: Inquisitory modsuit boots
-  description: A state-of-the-art pair of magboots for the Inquisitory modsuit. So long as the suit is powered, these will not slow the wearer down.
+  id: ClothingModsuitBootsResponsoryMedical
+  name: Medical Responsory modsuit boots
+  description: A state-of-the-art pair of magboots for the Medical Responsory modsuit. So long as the suit is powered, these will not slow the wearer down.
   categories: [HideSpawnMenu]
   components:
     - type: Appearance
     - type: Sprite
-      sprite: _EE/Clothing/NanoTrasen/Modsuits/inquisitory.rsi
+      sprite: _EE/Clothing/NanoTrasen/Modsuits/medical-responsory.rsi
     - type: Tag
       tags:
         - WhitelistChameleon
@@ -163,12 +166,12 @@
           - state: equipped-FEET-sealed
 
 - type: entity
-  id: SuitStorageInquisitory
+  id: SuitStorageResponsoryMedical
   parent: SuitStorageBase
-  suffix: Inquisitory Modsuit
+  suffix: Medical Responsory Modsuit
   components:
     - type: StorageFill
       contents:
         - id: OxygenTankFilled
-        - id: ClothingModsuitInquisitory
+        - id: ClothingModsuitResponsoryMedical
         - id: ClothingMaskBreath
