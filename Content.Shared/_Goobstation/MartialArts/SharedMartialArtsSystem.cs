@@ -224,8 +224,10 @@ public abstract partial class SharedMartialArtsSystem : EntitySystem
             return false;
         if (HasComp<CanPerformComboComponent>(user))
         {
+            var pullerComponent = EnsureComp<PullerComponent>(user);
             if (!_proto.TryIndex<MartialArtPrototype>(comp.MartialArtsForm.ToString(), out var martialArtsPrototype))
                 return false;
+            pullerComponent.StageChangeCooldown *= 2;
             if (TryComp<MeleeWeaponComponent>(user, out var meleeWeaponComponent))
             {
                 var newDamage = new DamageSpecifier();
