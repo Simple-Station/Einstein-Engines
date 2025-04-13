@@ -375,8 +375,11 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     /// <param name="uid">The mob's entity UID.</param>
     /// <param name="profile">The character profile to load.</param>
     /// <param name="humanoid">Humanoid component of the entity</param>
-    public virtual void LoadProfile(EntityUid uid, HumanoidCharacterProfile profile, HumanoidAppearanceComponent? humanoid = null)
+    public virtual void LoadProfile(EntityUid uid, HumanoidCharacterProfile? profile, HumanoidAppearanceComponent? humanoid = null)
     {
+        if (profile == null)
+            return;
+
         if (!Resolve(uid, ref humanoid))
             return;
 
@@ -443,21 +446,8 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         humanoid.CyborgName = profile.CyborgName;
         humanoid.Age = profile.Age;
 
-        humanoid.CustomSpecieName = profile.Customspeciename;
-
-        var species = _proto.Index(humanoid.Species);
-
-        if (profile.Height <= 0 || profile.Width <= 0)
-            SetScale(uid, new Vector2(species.DefaultWidth, species.DefaultHeight), true, humanoid);
-        else
-            SetScale(uid, new Vector2(profile.Width, profile.Height), true, humanoid);
-
-        _heightAdjust.SetScale(uid, new Vector2(humanoid.Width, humanoid.Height));
-
-        humanoid.LastProfileLoaded = profile; // DeltaV - let paradox anomaly be cloned
-
+        RaiseLocalEvent(uid, new ProfileLoadFinishedEvent()); // Shitmed Change
         Dirty(uid, humanoid);
-        RaiseLocalEvent(uid, new ProfileLoadFinishedEvent());
     }
 
     /// <summary>
