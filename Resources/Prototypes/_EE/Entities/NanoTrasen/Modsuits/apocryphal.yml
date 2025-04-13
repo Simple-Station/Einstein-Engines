@@ -149,6 +149,9 @@
       damageCoefficient: 0.2
     - type: FireProtection
       reduction: 1
+    - type: ClothingGrantComponent
+      component:
+      - type: SupermatterImmune
 
 - type: entity
   parent: ClothingModsuitBootsStandard

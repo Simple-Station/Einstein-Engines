@@ -145,6 +145,9 @@
       coefficient: 0.001
     - type: ExplosionResistance
       damageCoefficient: 0.2
+    - type: ClothingGrantComponent
+      component:
+      - type: SupermatterImmune
 
 - type: entity
   parent: ClothingModsuitBootsStandard
