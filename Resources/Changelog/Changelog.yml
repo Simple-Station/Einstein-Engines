@@ -14966,3 +14966,13 @@ Entries:
   id: 7145
   time: '2025-04-14T02:52:10.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2210
+- author: Zeta_Null
+  changes:
+    - type: Tweak
+      message: >-
+        Made the N14 wood types look less horrifically jpeg compressed and like
+        they were taken from a screenshot of a screenshot of some wood tiles.
+        holy fuck they were bad.
+  id: 7146
+  time: '2025-04-14T02:52:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2227
