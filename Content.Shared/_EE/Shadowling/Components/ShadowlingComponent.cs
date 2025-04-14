@@ -23,7 +23,8 @@ public sealed partial class ShadowlingComponent : Component
         "ActionGlare",
         "ActionVeil",
         "ActionRapidRehatch",
-        "ActionShadowWalk"
+        "ActionShadowWalk",
+        "ActionIcyVeins"
     };
 
     // The status icon for Shadowlings

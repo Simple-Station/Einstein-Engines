@@ -11,5 +11,7 @@ shadowling-glare-target = Your body seizes as an otherworldly glare bears down o
 
 shadowling-shadow-walk-activate = I vanish between the breaths of light.
 
+shadowling-icy-veins-activated = An unnatural chill grips your limbs.
+
 shadowling-rapid-rehatch-complete = The husk shudders, and from it, I am reborn—unscathed.
 

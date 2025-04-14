@@ -25,4 +25,5 @@ public sealed partial class GlareEvent : EntityTargetActionEvent { }
 public sealed partial class VeilEvent : InstantActionEvent { }
 public sealed partial class RapidRehatchEvent : InstantActionEvent { }
 public sealed partial class ShadowWalkEvent : InstantActionEvent { }
+public sealed partial class IcyVeinsEvent : InstantActionEvent { }
 #endregion

@@ -8,7 +8,7 @@ namespace Content.Shared._EE.Shadowling;
 [RegisterComponent, NetworkedComponent]
 public sealed partial class ShadowlingEnthrallComponent : Component
 {
-    public string? GlareAction { get; set; } = "ActionEnthrall";
+    public string? GlareAction = "ActionEnthrall";
 
     [DataField]
     public TimeSpan EnthrallTime = TimeSpan.FromSeconds(1.5); // this needs actual playtesting but should be fine for now

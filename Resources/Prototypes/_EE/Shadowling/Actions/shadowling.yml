@@ -96,6 +96,21 @@
     event: !type:ShadowWalkEvent { }
     # add speech
 
+- type: entity
+  id: ActionIcyVeins
+  name: Icy Veins
+  description: Send frost through their veins.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: NoItem
+    useDelay: 50
+    icon:
+      sprite: _EE/Shadowling/shadowling_abilities.rsi
+      state: icy_veins
+    event: !type:IcyVeinsEvent { }
+    # add speech
+
 
 
 
