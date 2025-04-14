@@ -50,6 +50,7 @@
       sprite: _EE/Shadowling/shadowling_abilities.rsi
       state: glare
     event: !type:GlareEvent { }
+    # add speech
 
 - type: entity
   id: ActionVeil
@@ -64,6 +65,7 @@
       sprite: _EE/Shadowling/shadowling_abilities.rsi
       state: veil
     event: !type:VeilEvent { }
+    # add speech
 
 - type: entity
   id: ActionRapidRehatch
@@ -78,6 +80,21 @@
       sprite: _EE/Shadowling/shadowling_abilities.rsi
       state: rehatch
     event: !type:RapidRehatchEvent { }
+
+- type: entity
+  id: ActionShadowWalk
+  name: Shadow Walk
+  description: Step into the void, moving unseen and unhindered.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: NoItem
+    useDelay: 45
+    icon:
+      sprite: _EE/Shadowling/shadowling_abilities.rsi
+      state: shadow_walk
+    event: !type:ShadowWalkEvent { }
+    # add speech
 
 
 

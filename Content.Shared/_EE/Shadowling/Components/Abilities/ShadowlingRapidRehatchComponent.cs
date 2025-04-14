@@ -10,7 +10,7 @@ namespace Content.Shared._EE.Shadowling;
 [RegisterComponent, NetworkedComponent]
 public sealed partial class ShadowlingRapidRehatchComponent : Component
 {
-    public string ActionRapidRehatch { get; set; } = "ActionRapidRehatch";
+    public string? ActionRapidRehatch = "ActionRapidRehatch";
 
     public EntityUid? ActionRapidRehatchEntity { get; set; }
 

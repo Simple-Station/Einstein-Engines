@@ -61,6 +61,7 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
         AddComp<ShadowlingEnthrallComponent>(uid);
         AddComp<ShadowlingVeilComponent>(uid);
         AddComp<ShadowlingRapidRehatchComponent>(uid);
+        AddComp<ShadowlingShadowWalkComponent>(uid);
 
         foreach (var action in comp.PostHatchShadowlingActions)
             _actions.AddAction(uid, action);
@@ -108,6 +109,9 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
 
     public bool CanGlare(EntityUid target)
     {
+        if (!HasComp<MobStateComponent>(target))
+            return false;
+
         if (HasComp<ShadowlingComponent>(target))
             return false;
 
