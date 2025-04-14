@@ -3,11 +3,12 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTSecurity
     back: ClothingBackpackERTSecurity
-    shoes: ClothingShoesBootsCombatFilled # STOP GIVING ROLES ADVANCED MAGBOOTS!! - SOL
+    shoes: ClothingShoesBootsMagEmergencyResponseTeam # STOP GIVING ROLES ADVANCED MAGBOOTS!! - SOL
     mask: ClothingMaskGasERT
     eyes: ClothingEyesGlassesSecurity
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterHardsuitERTSecurity
+    neck: ExecutiveIDCard
     id: ERTSecurityPDA
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltSecurityFilled
