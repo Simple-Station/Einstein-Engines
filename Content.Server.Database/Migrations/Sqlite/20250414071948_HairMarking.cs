@@ -19,6 +19,16 @@ namespace Content.Server.Database.Migrations.Sqlite
                         hair_name || '@' || hair_color)
                 WHERE markings IS NOT NULL OR markings != ''
             ");
+
+            migrationBuilder.Sql(@"
+                UPDATE profile
+                SET markings =
+                    json_insert(
+                        IFNULL(markings, '[]'),
+                        '$[#]',
+                        facial_hair_name || '@' || facial_hair_color)
+                WHERE markings IS NOT NULL OR markings != ''
+            ");
         }
 
         /// <inheritdoc />
