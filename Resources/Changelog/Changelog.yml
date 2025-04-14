@@ -14993,3 +14993,12 @@ Entries:
   id: 7147
   time: '2025-04-14T03:12:37.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2239
+- author: Orion-416
+  changes:
+    - type: Add
+      message: >-
+        Ported over Responsory, Inquisitory, Apocryphal, Corporate, Praetorian
+        modsuits from TG station
+  id: 7148
+  time: '2025-04-14T10:32:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2200
