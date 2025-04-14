@@ -11,11 +11,13 @@ namespace Content.Server.Database.Migrations.Sqlite
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.Sql(@"
-                UPDATE your_table_name
-                SET markings = json_insert(
-                    COALESCE(markings, '{}'),
-                    '$.hairStyles',
-                    hair_name || '@' || hair_colour)
+                UPDATE profile
+                SET markings =
+                    json_insert(
+                        IFNULL(markings, '[]'),
+                        '$[#]',
+                        hair_name || '@' || hair_color)
+                WHERE markings IS NOT NULL OR markings != ''
             ");
         }
 
