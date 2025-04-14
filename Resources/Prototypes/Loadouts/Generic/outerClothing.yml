@@ -167,9 +167,6 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuter
-    - !type:CharacterEmployerRequirement
-        employers:
-        - Cybersun
 
 - type: loadout
   id: LoadoutOuterEeCorporateJacket

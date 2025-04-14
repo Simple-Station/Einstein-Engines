@@ -180,6 +180,13 @@ public sealed partial class SpeciesPrototype : IPrototype
     /// </summary>
     [DataField]
     public float AverageWidth = 40f;
+
+    /// <summary>
+    ///     How many bonus trait points this species has. Our default is that only human "should" use this. But I'm not your mother,
+    ///     so do whatever you want with this. This can even be a negative number, meaning that your species can have less trait points.
+    /// </summary>
+    [DataField]
+    public int BonusTraitPoints;
 }
 
 public enum SpeciesNaming : byte
