@@ -11,13 +11,13 @@ namespace Content.Server.Database.Migrations.Postgres
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.Sql(@"
-                UPDATE your_table_name
+                UPDATE profile
                 SET markings = jsonb_set(
-                    COALESCE(markings, '{}'::jsonb),
-                    '{hair_attributes}',
-                    COALESCE(markings->'hair_attributes', '[]'::jsonb) ||
-                    to_jsonb(hair_name || '@' || hair_colour)
+                    markings,
+                    '{0}',
+                    COALESCE(markings->'0', '[]'::jsonb) || to_jsonb(hair_name || '@' || hair_color)
                 )
+                WHERE hair_name IS NOT NULL AND hair_color IS NOT NULL;
             ");
         }
 
