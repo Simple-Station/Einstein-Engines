@@ -1,9 +1,13 @@
 using Content.Shared._Goobstation.MartialArts.Components;
 using Content.Shared._Goobstation.MartialArts.Events;
+using Content.Shared.Contests;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Mobs.Components;
+using Content.Shared.Weapons.Melee;
 using Content.Shared.Weapons.Melee.Events;
+//using Content.Shared.Contests;
+using Robust.Shared.Physics.Dynamics;
 
 namespace Content.Shared._Goobstation.MartialArts;
 
@@ -18,6 +22,7 @@ public abstract partial class SharedMartialArtsSystem
         SubscribeLocalEvent<KravMagaComponent, KravMagaActionEvent>(OnKravMagaAction);
         SubscribeLocalEvent<KravMagaComponent, MeleeHitEvent>(OnMeleeHitEvent);
         SubscribeLocalEvent<KravMagaComponent, ComponentShutdown>(OnKravMagaShutdown);
+        SubscribeLocalEvent<KravMagaComponent, ComboAttackPerformedEvent>(OnKravMagaAttackPerformed);
     }
 
     private void OnMeleeHitEvent(Entity<KravMagaComponent> ent, ref MeleeHitEvent args)
@@ -33,6 +38,32 @@ public abstract partial class SharedMartialArtsSystem
                 continue;
 
             DoKravMaga(ent, hitEntity, isDowned);
+        }
+    }
+    private void OnKravMagaAttackPerformed(Entity<KravMagaComponent> ent, ref ComboAttackPerformedEvent args)
+    {
+        if (!TryComp<KravMagaComponent>(ent, out var knowledgeComponent))
+            return;
+
+        switch (args.Type)
+        {
+            // todo: add chances
+            /*  case ComboAttackType.Disarm:
+                var target = args.Target;
+                if (_hands.TryGetActiveItem(target, out var activeItem)
+                && _hands.TryGetEmptyHand(target, out var emptyHand)
+                && _hands.TryDrop(target, activeItem.Value)
+                && _hands.TryPickupAnyHand(ent, activeItem.Value)
+                && _hands.TryGetEmptyHand(ent, out var userEmptyHand))
+                    _hands.SetActiveHand(ent, userEmptyHand);
+                break; */
+            case ComboAttackType.Harm:
+                DoDamage(ent, args.Target, "Blunt", ent.Comp.BaseDamage, out _);
+                if (!TryComp<RequireProjectileTargetComponent>(args.Target, out var standing)
+    || !standing.Active)
+                    return;
+                DoDamage(ent, args.Target, "Blunt", ent.Comp.DownedDamageModifier, out _);
+                break;
         }
     }
 

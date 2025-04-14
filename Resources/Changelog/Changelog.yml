@@ -14750,3 +14750,246 @@ Entries:
   id: 7125
   time: '2025-04-09T18:21:57.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2179
+- author: Timfa2112
+  changes:
+    - type: Tweak
+      message: >-
+        Rethemed the NanoTrasen Representative into the Corporate Liaison! You
+        do pretty much the same thing, except with your chosen Employer's
+        interests in mind! This makes use of the Contractor System, so you can
+        represent any company you like. Don't forget to pick the stamp in your
+        loadout!!
+    - type: Add
+      message: >-
+        Added a new stamp for the Corporate Liaison which automatically
+        transforms into your employer's stamp on spawn. Do not forget to pick it
+        in your loadout!!!!
+    - type: Add
+      message: >-
+        admin console command to spawn the stamp for the people that forgot to
+        pick the stamp in loadouts despite my warnings.
+    - type: Add
+      message: >-
+        admin console command to spawn a specific corporation's stamp your own
+        inventory, which can optionally be a Command version for admin faxing
+        purposes.
+  id: 7126
+  time: '2025-04-09T22:05:49.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2191
+- author: RocketBoss360
+  changes:
+    - type: Add
+      message: Maint drones can now speak to other maint drones via the Drone language!
+  id: 7127
+  time: '2025-04-10T07:20:24.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2208
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: 'Added "Bolt Action" or "Pump Action" gun options. '
+    - type: Add
+      message: >-
+        Added new sound fx for shotshells when landing on the ground or
+        colliding with objects after being thrown.
+    - type: Tweak
+      message: >-
+        Kammerer and Enforcer are now pump action shotguns, featuring a choke
+        that gives them 50% tighter spreads in return for needing to be pumped
+        (press Z) after each shot.
+    - type: Tweak
+      message: >-
+        Mosin Nagant is now a proper bolt action rifle. The bolt must be worked
+        manually (press Z) after each shot. The fun tradeoff is that it now hits
+        like a truck with 42 damage a shot. 
+    - type: Tweak
+      message: >-
+        Bulldog shotgun now has a wide choke, it fires 33% more projectiles per
+        shotshell, while also having a 50% wider spread. Cover the station
+        hallways in lead. Pairs nicely with birdshot if you really want to sweep
+        rooms.
+    - type: Tweak
+      message: R25 and FPA-90 both now deal 15 damage per shot, instead of 19.
+    - type: Fix
+      message: >-
+        Fixed guns not correctly ejecting cartridges(they were instead dropping
+        them at your feet).
+    - type: Fix
+      message: Fixed guns not updating the ammo counter UI when loaded manually.
+  id: 7128
+  time: '2025-04-10T15:00:21.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2165
+- author: xTheLifex
+  changes:
+    - type: Add
+      message: Added a search bar to the keybinds menu
+  id: 7129
+  time: '2025-04-10T15:02:42.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1005
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Added dark, red, black and light wooden tiles of different types.
+    - type: Add
+      message: Added wooden parquet and checkerboard floor.
+    - type: Tweak
+      message: Repaint old wooden tiles.
+  id: 7130
+  time: '2025-04-10T15:11:18.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2054
+- author: 3PonPon3
+  changes:
+    - type: Fix
+      message: Languages and accents now work. JOHN LANGUAGE IS FINALLY REAL!
+  id: 7131
+  time: '2025-04-10T21:43:38.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2212
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: >-
+        Added employer requirements to most roles. CHECK YOUR CHARACTER'S JOB
+        PREFERENCES AND EMPLOYER!
+  id: 7132
+  time: '2025-04-10T22:24:23.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2213
+- author: RocketBoss360
+  changes:
+    - type: Fix
+      message: telegnosis lets you return to your body now
+  id: 7133
+  time: '2025-04-11T05:55:20.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2209
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: Nanotrasen employees can take every job again
+  id: 7134
+  time: '2025-04-11T06:23:14.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2220
+- author: ilmenwe
+  changes:
+    - type: Add
+      message: removed references where a reference already existed
+    - type: Tweak
+      message: Tweaked the names of old refences to match the existing reference.
+  id: 7135
+  time: '2025-04-11T20:03:32.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2211
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: >-
+        Mosin damage buff nerfed to 1.5x, and melee damage buffed slightly too
+        (it has a bayonet)
+    - type: Tweak
+      message: 'Chester now does 1.65x damage '
+  id: 7136
+  time: '2025-04-11T20:53:08.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2218
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Reworked and fixed Psionic Invisibility. It now has actual psychic
+        casting stat scaling.
+  id: 7137
+  time: '2025-04-11T23:15:15.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2223
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Tweak
+      message: >-
+        Loadouts' and traits' tooltips are much easier to read and look better
+        (and cooler of course)
+  id: 7138
+  time: '2025-04-12T00:43:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2221
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Humans now have +2 bonus trait points. It's also possible now for
+        "overpowered" species to have fewer trait points, although this is not
+        currently used.
+  id: 7139
+  time: '2025-04-12T00:46:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2222
+- author: Will-Oliver-Br
+  changes:
+    - type: Tweak
+      message: New sprite from chemmaster
+  id: 7140
+  time: '2025-04-12T00:48:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2174
+- author: Timfa2112
+  changes:
+    - type: Remove
+      message: Removed Cybersun
+    - type: Add
+      message: >-
+        Added Zavodskoi Interstellar to replace Cybersun (Cybersun was a
+        stand-in for Zavodskoi, but no longer)
+  id: 7141
+  time: '2025-04-12T02:17:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2228
+- author: Diggy
+  changes:
+    - type: Add
+      message: >-
+        People were using IPC markings to become invisible, now they can only
+        take doll joints markings in the overlay section.
+  id: 7142
+  time: '2025-04-12T22:41:40.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2233
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: >-
+        Ported almost all of Goob LRPs chems, have fun playing with them
+        chemistry mains
+  id: 7143
+  time: '2025-04-13T00:31:33.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2184
+- author: Tirochora
+  changes:
+    - type: Add
+      message: fire has been re-added to the game for more than about a half a second
+    - type: Tweak
+      message: fire shouldn't ash people at tiny amounts
+  id: 7144
+  time: '2025-04-13T03:26:05.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2217
+- author: Timfa2112
+  changes:
+    - type: Remove
+      message: Command members can no longer take the Muted trait
+  id: 7145
+  time: '2025-04-14T02:52:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2210
+- author: Zeta_Null
+  changes:
+    - type: Tweak
+      message: >-
+        Made the N14 wood types look less horrifically jpeg compressed and like
+        they were taken from a screenshot of a screenshot of some wood tiles.
+        holy fuck they were bad.
+  id: 7146
+  time: '2025-04-14T02:52:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2227
+- author: Tirochora
+  changes:
+    - type: Fix
+      message: Lots of martial arts bugfixes
+    - type: Tweak
+      message: >-
+        Martial arts combos that require a grab require the target to remain
+        grabbed. Have fun landing judo throw.
+    - type: Tweak
+      message: >-
+        Adjusted the stamina damage of CQC's disarm and the effects of CQC's
+        kick combo.
+    - type: Fix
+      message: Krav Maga properly gives you more unarmed damage.
+  id: 7147
+  time: '2025-04-14T03:12:37.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2239
