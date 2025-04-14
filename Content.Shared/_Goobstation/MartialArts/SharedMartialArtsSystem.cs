@@ -128,6 +128,25 @@ public abstract partial class SharedMartialArtsSystem : EntitySystem
             args.Stage = component.StartingStage;
     }
 
+    //currently a bool that returns whether or not the target is being grabbed by the user. Would like to make it an int that returns the grabstage
+    private int IsBeingGrabbed(EntityUid uid, EntityUid? target)
+    {
+        if (!TryComp<PullerComponent>(uid, out var comp) || !HasComp<PullableComponent>(target) || !_pulling.TryGetPulledEntity(uid, out target))
+            return 0;
+        switch (comp.GrabStage)
+        {
+            case GrabStage.No:
+                return 0;
+            case GrabStage.Soft:
+                return 1;
+            case GrabStage.Hard:
+                return 2;
+            case GrabStage.Suffocate:
+                return 3;
+        }
+        return 0;
+    }
+
     private void OnSilencedSpeakAttempt(Entity<KravMagaSilencedComponent> ent, ref SpeakAttemptEvent args)
     {
         _popupSystem.PopupEntity(Loc.GetString("popup-grabbed-cant-speak"),

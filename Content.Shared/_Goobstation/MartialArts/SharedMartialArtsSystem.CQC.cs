@@ -103,7 +103,7 @@ public partial class SharedMartialArtsSystem
     {
         if (!_proto.TryIndex(ent.Comp.BeingPerformed, out var proto)
             || !TryUseMartialArt(ent, proto.MartialArtsForm, out var target, out var downed)
-            || downed)
+            || downed || IsBeingGrabbed(ent, target) < 1)
             return;
 
         DoDamage(ent, target, proto.DamageType, proto.ExtraDamage, out _);
@@ -146,7 +146,7 @@ public partial class SharedMartialArtsSystem
     private void OnCQCRestrain(Entity<CanPerformComboComponent> ent, ref CqcRestrainPerformedEvent args)
     {
         if (!_proto.TryIndex(ent.Comp.BeingPerformed, out var proto)
-            || !TryUseMartialArt(ent, proto.MartialArtsForm, out var target, out _))
+            || !TryUseMartialArt(ent, proto.MartialArtsForm, out var target, out _) || IsBeingGrabbed(ent, target) < 2)
             return;
 
         _stun.TryKnockdown(target, TimeSpan.FromSeconds(proto.ParalyzeTime), true);

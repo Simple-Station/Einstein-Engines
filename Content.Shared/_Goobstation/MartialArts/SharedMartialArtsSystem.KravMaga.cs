@@ -1,10 +1,13 @@
 using Content.Shared._Goobstation.MartialArts.Components;
 using Content.Shared._Goobstation.MartialArts.Events;
+using Content.Shared.Contests;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Weapons.Melee;
 using Content.Shared.Weapons.Melee.Events;
+//using Content.Shared.Contests;
+using Robust.Shared.Physics.Dynamics;
 
 namespace Content.Shared._Goobstation.MartialArts;
 
@@ -37,7 +40,6 @@ public abstract partial class SharedMartialArtsSystem
             DoKravMaga(ent, hitEntity, isDowned);
         }
     }
-
     private void OnKravMagaAttackPerformed(Entity<KravMagaComponent> ent, ref ComboAttackPerformedEvent args)
     {
         if (!TryComp<KravMagaComponent>(ent, out var knowledgeComponent))
@@ -45,7 +47,8 @@ public abstract partial class SharedMartialArtsSystem
 
         switch (args.Type)
         {
-            case ComboAttackType.Disarm:
+            // todo: add chances
+            /*  case ComboAttackType.Disarm:
                 var target = args.Target;
                 if (_hands.TryGetActiveItem(target, out var activeItem)
                 && _hands.TryGetEmptyHand(target, out var emptyHand)
@@ -53,7 +56,7 @@ public abstract partial class SharedMartialArtsSystem
                 && _hands.TryPickupAnyHand(ent, activeItem.Value)
                 && _hands.TryGetEmptyHand(ent, out var userEmptyHand))
                     _hands.SetActiveHand(ent, userEmptyHand);
-                break;
+                break; */
             case ComboAttackType.Harm:
                 DoDamage(ent, args.Target, "Blunt", ent.Comp.BaseDamage, out _);
                 if (!TryComp<RequireProjectileTargetComponent>(args.Target, out var standing)

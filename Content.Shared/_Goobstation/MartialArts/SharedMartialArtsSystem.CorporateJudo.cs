@@ -5,6 +5,7 @@ using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Movement.Pulling.Components;
+using Content.Shared.Movement.Pulling.Systems;
 using Content.Shared.StatusEffect;
 using Robust.Shared.Audio;
 
@@ -56,9 +57,8 @@ public partial class SharedMartialArtsSystem
     {
         if (!_proto.TryIndex(ent.Comp.BeingPerformed, out var proto)
             || !TryUseMartialArt(ent, proto.MartialArtsForm, out var target, out var downed)
-            || downed)
+            || downed || IsBeingGrabbed(ent, target) < 1)
             return;
-
         _stun.TryKnockdown(target, TimeSpan.FromSeconds(proto.ParalyzeTime), false);
         _stamina.TakeStaminaDamage(target, proto.StaminaDamage);
         if (TryComp<PullableComponent>(target, out var pullable))
