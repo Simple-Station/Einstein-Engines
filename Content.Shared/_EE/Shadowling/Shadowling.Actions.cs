@@ -26,4 +26,5 @@ public sealed partial class VeilEvent : InstantActionEvent { }
 public sealed partial class RapidRehatchEvent : InstantActionEvent { }
 public sealed partial class ShadowWalkEvent : InstantActionEvent { }
 public sealed partial class IcyVeinsEvent : InstantActionEvent { }
+public sealed partial class DestroyEnginesEvent : InstantActionEvent { }
 #endregion

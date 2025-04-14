@@ -15,3 +15,6 @@ shadowling-icy-veins-activated = An unnatural chill grips your limbs.
 
 shadowling-rapid-rehatch-complete = The husk shudders, and from it, I am reborn—unscathed.
 
+shadowling-destroy-engines-used = The shuttle has already been delayed by someone else.
+shadowling-destroy-engines-arrived = Your powers make you unable to destroy the engines!
+shadowling-destroy-engines-not-called = The shuttle has not been called yet.

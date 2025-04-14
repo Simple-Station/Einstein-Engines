@@ -1,5 +1,6 @@
 using Content.Server.Actions;
 using Content.Server.Popups;
+using Content.Server.Shuttles.Events;
 using Content.Server.Storage.EntitySystems;
 using Content.Shared._EE.Shadowling.Systems;
 using Content.Shared._EE.Shadowling;
@@ -63,6 +64,7 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
         AddComp<ShadowlingRapidRehatchComponent>(uid);
         AddComp<ShadowlingShadowWalkComponent>(uid);
         AddComp<ShadowlingIcyVeinsComponent>(uid);
+        AddComp<ShadowlingDestroyEnginesComponent>(uid);
 
         foreach (var action in comp.PostHatchShadowlingActions)
             _actions.AddAction(uid, action);

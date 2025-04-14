@@ -1,10 +1,13 @@
+using Robust.Shared.GameStates;
+
+
 namespace Content.Shared._EE.Shadowling.Components;
 
 
 /// <summary>
-/// Marks target as affected by Icy Veins
+/// Marks target as affected by Icy Veins and applies its effects
 /// </summary>
-[RegisterComponent]
+[RegisterComponent, NetworkedComponent]
 public sealed partial class IcyVeinsTargetComponent : Component
 {
     [DataField]

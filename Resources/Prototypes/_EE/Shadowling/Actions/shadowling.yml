@@ -111,6 +111,20 @@
     event: !type:IcyVeinsEvent { }
     # add speech
 
+- type: entity
+  id: ActionDestroyEngines
+  name: Destroy Engines
+  description: Destroy the engines of the evacuation shuttle.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: NoItem
+    icon:
+      sprite: _EE/Shadowling/shadowling_abilities.rsi
+      state: destroy_engines
+    event: !type:DestroyEnginesEvent { }
+    # add speech
+
 
 
 
