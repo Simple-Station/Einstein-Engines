@@ -14959,3 +14959,10 @@ Entries:
   id: 7144
   time: '2025-04-13T03:26:05.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2217
+- author: Timfa2112
+  changes:
+    - type: Remove
+      message: Command members can no longer take the Muted trait
+  id: 7145
+  time: '2025-04-14T02:52:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2210
