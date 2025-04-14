@@ -14976,3 +14976,20 @@ Entries:
   id: 7146
   time: '2025-04-14T02:52:45.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2227
+- author: Tirochora
+  changes:
+    - type: Fix
+      message: Lots of martial arts bugfixes
+    - type: Tweak
+      message: >-
+        Martial arts combos that require a grab require the target to remain
+        grabbed. Have fun landing judo throw.
+    - type: Tweak
+      message: >-
+        Adjusted the stamina damage of CQC's disarm and the effects of CQC's
+        kick combo.
+    - type: Fix
+      message: Krav Maga properly gives you more unarmed damage.
+  id: 7147
+  time: '2025-04-14T03:12:37.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2239
