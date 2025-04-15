@@ -10,6 +10,26 @@ namespace Content.Server.Database.Migrations.Sqlite
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.Sql(@"
+                UPDATE profile
+                SET markings =
+                    json_insert(
+                        IFNULL(markings, '[]'),
+                        '$[#]',
+                        hair_name || '@' || hair_color)
+                WHERE markings IS NOT NULL OR markings != ''
+            ");
+
+            migrationBuilder.Sql(@"
+                UPDATE profile
+                SET markings =
+                    json_insert(
+                        IFNULL(markings, '[]'),
+                        '$[#]',
+                        facial_hair_name || '@' || facial_hair_color)
+                WHERE markings IS NOT NULL OR markings != ''
+            ");
+
             migrationBuilder.DropColumn(
                 name: "facial_hair_color",
                 table: "profile");
@@ -30,6 +50,11 @@ namespace Content.Server.Database.Migrations.Sqlite
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            /*
+                You have been warned!
+                This rollback incurs dataloss because markings neither store in a deterministic order nor do they key which slot they go in
+                It is impossible to determine which marking is a hair
+            */
             migrationBuilder.AddColumn<string>(
                 name: "facial_hair_color",
                 table: "profile",
