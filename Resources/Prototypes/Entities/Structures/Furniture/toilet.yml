@@ -63,6 +63,18 @@
         - MachineMask
         layer:
         - None
+      # Goobstation - fishing
+      fishing:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.4
+        layer:
+        - ItemMask
+        mask:
+        - HighImpassable
+        density: 1000
+        hard: false
+      # Goobstation - fishing
   - type: PlungerUse
   - type: Appearance
   - type: SecretStash
@@ -86,12 +98,19 @@
         maxVol: 100
       tank:
         maxVol: 500
-  - type: SolutionRegeneration
-    solution: tank
-    generated:
-      reagents:
-      - ReagentId: Water
-        Quantity: 1
+  #- type: SolutionRegeneration - Goobstation - laggy, also who uses toilets?
+  #  solution: tank
+  #  generated:
+  #    reagents:
+  #    - ReagentId: Water
+  #      Quantity: 1
+  # Goobstation - fishing in toilet is fun
+  - type: FishingSpot
+    fishList: !type:NestedSelector
+      tableId: ToiletFishingLootTable
+    fishDefaultTimer: 45.0
+    fishTimerVariety: 15.0
+  # Goobstation - fishing
   - type: DrainableSolution
     solution: tank
   - type: ReagentTank
