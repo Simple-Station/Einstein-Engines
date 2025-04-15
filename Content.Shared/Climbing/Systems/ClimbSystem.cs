@@ -192,7 +192,8 @@ public sealed partial class ClimbSystem : VirtualController
         EntityUid climbable,
         out DoAfterId? id,
         ClimbableComponent? comp = null,
-        ClimbingComponent? climbing = null)
+        ClimbingComponent? climbing = null,
+        bool skipDoAfter = false)
     {
         id = null;
 
@@ -219,6 +220,8 @@ public sealed partial class ClimbSystem : VirtualController
             return false;
 
         var climbDelay = comp.ClimbDelay;
+        if (skipDoAfter)
+            climbDelay = 0f;
         if (user == entityToMove && TryComp<ClimbDelayModifierComponent>(user, out var delayModifier))
             climbDelay *= delayModifier.ClimbDelayMultiplier;
 

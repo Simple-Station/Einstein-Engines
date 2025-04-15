@@ -870,6 +870,8 @@ public sealed class PullingSystem : EntitySystem
         }
         // Goobstation
         StopPulling(pullableUid, pullable);
+        if (user != null)
+            _virtualSystem.DeleteInHandsMatching(user.Value, pullableUid);
         return true;
     }
 
