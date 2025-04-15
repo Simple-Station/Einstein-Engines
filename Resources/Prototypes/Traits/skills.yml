@@ -1,7 +1,7 @@
 - type: trait
   id: CPRTraining
   category: Mental
-  points: -4
+  points: -3
   functions:
     - !type:TraitAddComponent
       components:
@@ -17,6 +17,7 @@
         - ChiefMedicalOfficer
         - Brigmedic
         - SeniorPhysician
+        - BlueshieldOfficer
 
 - type: trait
   id: SelfAware
@@ -283,3 +284,43 @@
     - !type:TraitModifyFactions
       addFactions:
         - AnimalFriend
+
+- type: trait
+  id: SurgeryTraining
+  category: Mental
+  points: -3
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: SurgerySpeedModifier
+          speedModifier: 1.6
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - MedicalDoctor
+        - Chemist
+        - MedicalIntern
+        - Paramedic
+        - ChiefMedicalOfficer
+        - Brigmedic
+        - SeniorPhysician
+
+- type: trait
+  id: ExperiencedSurgeon
+  category: Mental
+  points: -3
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+      - type: SurgerySpeedModifier
+        speedModifier: 2.5
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+      - MedicalDoctor
+      - Chemist
+      - Paramedic
+      - Brigmedic
+      - SeniorPhysician
+
