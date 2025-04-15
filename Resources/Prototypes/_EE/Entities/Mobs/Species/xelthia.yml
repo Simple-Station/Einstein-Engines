@@ -33,10 +33,6 @@
   - type: Speech
     speechSounds: Xelthia
     speechVerb: Xelthia
-  - type: InnatePsionicPowers
-    powersToAdd:
-      - TelepathyPower
-  - type: Psionic
   - type: TypingIndicator
     proto: xelthia
   - type: Vocal
@@ -64,6 +60,8 @@
     damage:
       types:
         Blunt: 0.14 #per second, scales with pressure and other constants.
+  - type: Bloodstream
+    bloodReagent: AcidBlood
 #  - type: Hands # This doesnt seem to work. I can't tell why. Is this implemented here and i'm doing this wrong, or is it just on goob? Fix later.
 #    handDisplacement:
 #      sprite: _EE/Mobs/Species/Xelthia/displacement.rsi
