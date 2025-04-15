@@ -321,9 +321,9 @@ public abstract class SharedStunSystem : EntitySystem
     // On the slate for a rework once I make combos eat inputs, but that's not my goal right now.
     private void KnockdownStun(Entity<KnockedDownComponent> ent, ref DisarmAttemptEvent args)
     {
-        if (ent.Comp.FollowUp || !TryComp<ClimbingComponent>(ent, out var component) || !component.IsClimbing )
+        if (ent.Comp.FollowUp || !TryComp<ClimbingComponent>(ent, out var component) || !component.IsClimbing)
             return;
-        TryParalyze(ent, TimeSpan.FromSeconds(3), false);
+        TryParalyze(ent, TimeSpan.FromSeconds(1.5f), false);
         ent.Comp.FollowUp = true;
     }
 
