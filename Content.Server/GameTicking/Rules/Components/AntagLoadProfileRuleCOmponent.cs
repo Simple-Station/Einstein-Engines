@@ -14,14 +14,6 @@ public sealed partial class AntagLoadProfileRuleComponent : Component
     /// </summary>
     [DataField]
     public ProtoId<SpeciesPrototype>? SpeciesOverride;
-}
-public sealed partial class AntagLoadProfileRuleComponent : Component
-{
-    /// <summary>
-    /// If specified, the profile loaded will be made into this species if the chosen species matches the blacklist.
-    /// </summary>
-    [DataField]
-    public ProtoId<SpeciesPrototype>? SpeciesOverride;
 
     /// <summary>
     /// List of species that trigger the override

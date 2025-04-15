@@ -42,6 +42,9 @@ public sealed class AntagLoadProfileRuleSystem : GameRuleSystem<AntagLoadProfile
         }
 
         args.Entity = Spawn(species.Prototype);
-        _humanoid.LoadProfile(args.Entity.Value, profile?.WithSpecies(species.ID));
+        if (profile != null)
+        {
+            _humanoid.LoadProfile(args.Entity.Value, profile.WithSpecies(species.ID));
+        }
     }
 }

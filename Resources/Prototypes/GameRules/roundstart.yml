@@ -81,11 +81,11 @@
     #Species that do not work with nukies should be included in this list.
     #Once the issues are fixed the species should be removed from this list to be enabled.
     #Balance concerns are not a valid reason to disable a species, except for high-impact Nukie-specific exploits.
-    - Vox
-    - IPC
-    - Arachne
-    - Diona
-    - Harpy
+    - Vox # Obvious reasons
+    - IPC # Means the nukie team cant use EMPs, theres no good source of batteries, and theyre annoying for agent
+    - Arachne # Cant wear suits
+    - Diona # Cant wear shoes, burn stupid fast, and move insanely slow
+    - Harpy # Cant wear shoes, have low base HP, and overall suck in combat
 
 - type: entity
   categories: [ HideSpawnMenu ]
