@@ -155,7 +155,6 @@
   - type: AntagLoadProfileRule
     speciesOverride: Human
     speciesOverrideBlacklist:
-    - Vox # Obvious reasons
     - IPC # Their EMP will hit themselves lol
     - Arachne # Cant wear suits
     - Diona # Cant wear shoes, burn stupid fast, and move insanely slow
