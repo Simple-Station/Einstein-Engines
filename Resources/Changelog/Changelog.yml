@@ -14959,3 +14959,69 @@ Entries:
   id: 7144
   time: '2025-04-13T03:26:05.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2217
+- author: Timfa2112
+  changes:
+    - type: Remove
+      message: Command members can no longer take the Muted trait
+  id: 7145
+  time: '2025-04-14T02:52:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2210
+- author: Zeta_Null
+  changes:
+    - type: Tweak
+      message: >-
+        Made the N14 wood types look less horrifically jpeg compressed and like
+        they were taken from a screenshot of a screenshot of some wood tiles.
+        holy fuck they were bad.
+  id: 7146
+  time: '2025-04-14T02:52:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2227
+- author: Tirochora
+  changes:
+    - type: Fix
+      message: Lots of martial arts bugfixes
+    - type: Tweak
+      message: >-
+        Martial arts combos that require a grab require the target to remain
+        grabbed. Have fun landing judo throw.
+    - type: Tweak
+      message: >-
+        Adjusted the stamina damage of CQC's disarm and the effects of CQC's
+        kick combo.
+    - type: Fix
+      message: Krav Maga properly gives you more unarmed damage.
+  id: 7147
+  time: '2025-04-14T03:12:37.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2239
+- author: Orion-416
+  changes:
+    - type: Add
+      message: >-
+        Ported over Responsory, Inquisitory, Apocryphal, Corporate, Praetorian
+        modsuits from TG station
+  id: 7148
+  time: '2025-04-14T10:32:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2200
+- author: Mike32oz
+  changes:
+    - type: Fix
+      message: 'asterisk spawn-point '
+  id: 7149
+  time: '2025-04-15T04:30:34.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2240
+- author: ilmenwe
+  changes:
+    - type: Add
+      message: >-
+        spawncorporatestamp, spawnspecificcorporatestamp and
+        marking-ThavenChestScales
+  id: 7150
+  time: '2025-04-15T04:30:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2236
+- author: ilmenwe
+  changes:
+    - type: Tweak
+      message: resource composition
+  id: 7151
+  time: '2025-04-15T04:32:01.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2237
