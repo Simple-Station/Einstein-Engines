@@ -1,0 +1,51 @@
+<controls:FancyWindow xmlns="https://spacestation14.io"
+                    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+                    xmlns:ui="clr-namespace:Content.Client.Shuttles.UI"
+                    Title="targeting console"
+                    SetSize="1000 800"
+                    MinSize="1000 800">
+    <GridContainer Columns="2"
+                HorizontalAlignment="Stretch"
+                Margin="5 5 5 5">
+        <!-- Left side of the console -->
+        <BoxContainer HorizontalAlignment="Left"
+                    MinWidth="300"
+                    MaxWidth="300"
+                    Margin="5 5 5 5"
+                    Orientation="Vertical">
+            
+            <!-- Ammo status -->
+            <BoxContainer HorizontalAlignment="Left"
+                        MinWidth="295"
+                        MaxWidth="295"
+                        MinHeight="395"
+                        MaxHeight="395"
+                        Orientation="Vertical">
+                <controls:StripeBack>
+                    <Label Text="Ammo status" HorizontalAlignment="Center" />
+                </controls:StripeBack>
+                <BoxContainer Name="AmmoStatusBox" Orientation="Vertical"></BoxContainer>
+            </BoxContainer>
+
+            <!-- Cannon groups -->
+            <BoxContainer HorizontalAlignment="Left"
+                        MinWidth="295"
+                        MaxWidth="295"
+                        MinHeight="395"
+                        MaxHeight="395"
+                        Orientation="Vertical">
+                <controls:StripeBack>
+                    <Label Text="Cannon groups" HorizontalAlignment="Center" />
+                </controls:StripeBack>
+                <BoxContainer Name="CannonGroupSelectorBox" Orientation="Vertical"></BoxContainer>
+            </BoxContainer>
+        </BoxContainer>
+
+        <!-- Right side (radar) -->
+        <ui:ShuttleNavControl
+            Name="NavRadar"
+            Margin="4"
+            HorizontalExpand="True"
+            VerticalExpand="True" />
+    </GridContainer>
+</controls:FancyWindow>

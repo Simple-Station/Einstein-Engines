@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using Content.Server._Crescent.Respawn.Components;
+using Content.Server.GameTicking;
 using Content.Shared.Mobs;
 using Content.Shared.Crescent.Ghost;
 using Content.Shared.GameTicking;
