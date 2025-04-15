@@ -15009,3 +15009,12 @@ Entries:
   id: 7149
   time: '2025-04-15T04:30:34.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2240
+- author: ilmenwe
+  changes:
+    - type: Add
+      message: >-
+        spawncorporatestamp, spawnspecificcorporatestamp and
+        marking-ThavenChestScales
+  id: 7150
+  time: '2025-04-15T04:30:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2236
