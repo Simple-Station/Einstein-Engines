@@ -78,13 +78,9 @@
   - type: AntagLoadProfileRule
     speciesOverride: Human
     speciesOverrideBlacklist:
-    #Species that do not work with nukies should be included in this list.
-    #Once the issues are fixed the species should be removed from this list to be enabled.
-    #Balance concerns are not a valid reason to disable a species, except for high-impact Nukie-specific exploits.
-    - IPC # Means the nukie team cant use EMPs, theres no good source of batteries, and theyre annoying for agent
+    - IPC # Their EMP will hit themselves lol
     - Arachne # Cant wear suits
-    - Diona # Cant wear shoes, burn stupid fast, and move insanely slow
-    - Harpy # Cant wear shoes, have low base HP, and overall suck in combat
+    - Lamia # SNAKE WOMEN ARE NOT MADE FOR WAR
 
 - type: entity
   categories: [ HideSpawnMenu ]

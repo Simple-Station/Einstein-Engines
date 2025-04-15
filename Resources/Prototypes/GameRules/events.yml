@@ -157,8 +157,7 @@
     speciesOverrideBlacklist:
     - IPC # Their EMP will hit themselves lol
     - Arachne # Cant wear suits
-    - Diona # Cant wear shoes, burn stupid fast, and move insanely slow
-    - Harpy # Cant wear shoes, have low base HP, and overall suck in combat
+    - Lamia # SNAKE WOMEN ARE NOT MADE FOR WAR
   - type: AntagObjectives
     objectives:
     - StealResearchObjective
