@@ -1,5 +1,4 @@
 using Content.Client._Crescent.Broadcaster;
-using Content.Client.Bank.UI;
 using Content.Shared._Crescent.Broadcaster;
 using Content.Shared.Bank.BUI;
 using Content.Shared.Bank.Events;

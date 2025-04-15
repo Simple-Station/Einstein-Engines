@@ -46,10 +46,10 @@ public sealed class PassiveRegenerationSystem : EntitySystem
                     continue;
                 if(!TryComp<ThirstComponent>(uid, out var thirst) || !TryComp<HungerComponent>(uid, out var hunger))
                     continue;
-                if(_hunger.IsHungerBelowState(uid, HungerThreshold.Okay, null, hunger) || _thirst.IsThirstBelowState(uid, ThirstThreshold.Parched, null, thirst))
+                if(_hunger.IsHungerBelowState(uid, HungerThreshold.Okay, null, hunger))
                     continue;
-                if (!_thirst.ModifyThirst(uid, thirst, -regenComp.thirstDrain) || !_hunger.ModifyHunger(uid, -regenComp.hungerDrain, hunger))
-                    continue;
+                _thirst.ModifyThirst(uid, thirst, -regenComp.thirstDrain);
+                _hunger.ModifyHunger(uid, -regenComp.hungerDrain, hunger);
                 _damageable.TryChangeDamage(uid, regenComp.HealPerTick, true);
 
             }

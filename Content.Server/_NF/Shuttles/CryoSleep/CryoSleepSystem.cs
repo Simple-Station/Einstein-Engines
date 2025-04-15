@@ -5,7 +5,7 @@ using Content.Server.GameTicking;
 using Content.Server.Interaction;
 using Content.Server.Mind;
 using Content.Server.Popups;
-using Content.Server.Shipyard.Systems;
+using Content.Server.Shipyard;
 using Content.Server.Traits.Assorted;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Climbing.Systems;

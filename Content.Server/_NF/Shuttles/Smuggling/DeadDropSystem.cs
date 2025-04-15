@@ -3,7 +3,7 @@ using Content.Server._NF.Smuggling.Components;
 using Content.Server.Administration.Logs;
 using Content.Server.Paper;
 using Content.Server.Radio.EntitySystems;
-using Content.Server.Shipyard.Systems;
+using Content.Server.Shipyard;
 using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Systems;
 using Content.Shared.Coordinates;

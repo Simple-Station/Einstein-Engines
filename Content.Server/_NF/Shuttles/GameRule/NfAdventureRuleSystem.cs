@@ -20,10 +20,12 @@ using Robust.Shared.Map.Components;
 using Content.Shared.Shuttles.Components;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Cargo.Components;
-using Content.Server.GameTicking.Components;
+using Content.Server.GameTicking
 using Content.Server.Maps;
 using Content.Server.Station.Systems;
 using Content.Shared.CCVar;
+using Content.Shared.GameTicking;
+using Content.Shared.GameTicking.Components;
 using Robust.Shared.Configuration;
 
 namespace Content.Server.GameTicking.Rules;
@@ -190,11 +192,10 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
             {
                 _station.InitializeNewStation(stationProto.Stations["Precinct9"], nfsdUids);
             }
-         
+
             var meta = EnsureComp<MetaDataComponent>(nfsdUids[0]);
             _meta.SetEntityName(nfsdUids[0], "TSP Proctor Annalise", meta);
             _shuttle.SetIFFColor(nfsdUids[0], civilianColor);
-            _shuttle.SetIFFFaction(nfsdUids[0], "TSP");
         }
 
      //   if (_map.TryLoad(mapId, borealis, out var borealisUids, new MapLoadOptions
@@ -244,7 +245,7 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
              {
                  _station.InitializeNewStation(stationProto.Stations["Aasim"], famUids);
             }
-        
+
              var meta = EnsureComp<MetaDataComponent>(famUids[0]);
             _meta.SetEntityName(famUids[0], "TAP Qiwa Aasim", meta);
             _shuttle.SetIFFColor(famUids[0], civilianColor);
@@ -305,7 +306,7 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
                _meta.SetEntityName(depotUid5s[0], "The Graveyard", meta);
                _shuttle.SetIFFColor(depotUid5s[0], lpbravoColor);
            }
-        
+
            if (_map.TryLoad(mapId, stranded, out var depotUid20s, new MapLoadOptions
              {
                  Offset = new Vector2(7250f, 5320f)
@@ -349,7 +350,7 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
           _shuttle.SetIFFColor(depotUid22s[0], lpbravoColor);
           _shuttle.AddIFFFlag(depotUid22s[0], IFFFlags.HideLabel);
           }
-        
+
          if (_map.TryLoad(mapId, solarruined, out var depotUid23s, new MapLoadOptions
         {
              Offset = new Vector2(7750f, 5170f)
@@ -442,9 +443,8 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
 
             var meta = EnsureComp<MetaDataComponent>(depotUid9s[0]);
           _meta.SetEntityName(depotUid9s[0], "The Freeport", meta);
-           _shuttle.SetIFFColor(depotUid9s[0], lpbravoColor);
-             _shuttle.SetIFFFaction(depotUid9s[0], "NCSP");
-        }
+          _shuttle.SetIFFColor(depotUid9s[0], lpbravoColor);
+          }
 
          if (_map.TryLoad(mapId, gliesssanto, out var depotUid92s, new MapLoadOptions
           {
@@ -458,9 +458,8 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
 
              var meta = EnsureComp<MetaDataComponent>(depotUid92s[0]);
           _meta.SetEntityName(depotUid92s[0], "Gliess Santo", meta);
-           _shuttle.SetIFFColor(depotUid92s[0], lpbravoColor);
-           _shuttle.SetIFFFaction(depotUid92s[0], "NCSP");
-           }
+          _shuttle.SetIFFColor(depotUid92s[0], lpbravoColor);
+          }
 
         //   if (_map.TryLoad(mapId, tatsumoto, out var depotUid10s, new MapLoadOptions
         //  {
@@ -600,7 +599,6 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
               var meta = EnsureComp<MetaDataComponent>(depotUid8s[0]);
              _meta.SetEntityName(depotUid8s[0], "Kal Surezai", meta);
              _shuttle.SetIFFColor(depotUid8s[0], factionColor);
-             _shuttle.SetIFFFaction(depotUid8s[0], "DSM");
           }
 
         //  if (_map.TryLoad(mapId, lab, out var labUids, new MapLoadOptions
@@ -654,84 +652,6 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
         //   }
     }
 
-    private async Task ReportRound(String message,  int color = 0x77DDE7)
-    {
-        Logger.InfoS("discord", message);
-        String _webhookUrl = _configurationManager.GetCVar(CCVars.DiscordLeaderboardWebhook);
-        if (_webhookUrl == string.Empty)
-            return;
 
-        var payload = new WebhookPayload
-        {
-            Embeds = new List<Embed>
-            {
-                new()
-                {
-                    Title = Loc.GetString("adventure-list-start"),
-                    Description = message,
-                    Color = color,
-                },
-            },
-        };
 
-        var ser_payload = JsonSerializer.Serialize(payload);
-        var content = new StringContent(ser_payload, Encoding.UTF8, "application/json");
-        var request = await _httpClient.PostAsync($"{_webhookUrl}?wait=true", content);
-        var reply = await request.Content.ReadAsStringAsync();
-        if (!request.IsSuccessStatusCode)
-        {
-            Logger.ErrorS("mining", $"Discord returned bad status code when posting message: {request.StatusCode}\nResponse: {reply}");
-        }
-    }
-
-// https://discord.com/developers/docs/resources/channel#message-object-message-structure
-    private struct WebhookPayload
-    {
-        [JsonPropertyName("username")] public string? Username { get; set; } = null;
-
-        [JsonPropertyName("avatar_url")] public string? AvatarUrl { get; set; } = null;
-
-        [JsonPropertyName("content")] public string Message { get; set; } = "";
-
-        [JsonPropertyName("embeds")] public List<Embed>? Embeds { get; set; } = null;
-
-        [JsonPropertyName("allowed_mentions")]
-        public Dictionary<string, string[]> AllowedMentions { get; set; } =
-            new()
-            {
-                { "parse", Array.Empty<string>() },
-            };
-
-        public WebhookPayload()
-        {
-        }
-    }
-
-// https://discord.com/developers/docs/resources/channel#embed-object-embed-structure
-    private struct Embed
-    {
-        [JsonPropertyName("title")] public string Title { get; set; } = "";
-
-        [JsonPropertyName("description")] public string Description { get; set; } = "";
-
-        [JsonPropertyName("color")] public int Color { get; set; } = 0;
-
-        [JsonPropertyName("footer")] public EmbedFooter? Footer { get; set; } = null;
-
-        public Embed()
-        {
-        }
-    }
-
-// https://discord.com/developers/docs/resources/channel#embed-object-embed-footer-structure
-    private struct EmbedFooter
-    {
-        [JsonPropertyName("text")] public string Text { get; set; } = "";
-
-        [JsonPropertyName("icon_url")] public string? IconUrl { get; set; }
-
-        public EmbedFooter()
-        {
-        }
-    }
 }

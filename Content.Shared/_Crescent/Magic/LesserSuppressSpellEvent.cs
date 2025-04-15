@@ -1,4 +1,5 @@
 using Content.Shared.Actions;
+using Content.Shared.Chat;
 using Robust.Shared.Audio;
 using Content.Shared.Magic;
 using Content.Shared.FixedPoint;
@@ -26,4 +27,7 @@ public sealed partial class LesserSuppressSpellEvent : WorldTargetActionEvent, I
 
     [DataField("speech")]
     public string? Speech { get; private set; }
+
+    [DataField]
+    public InGameICChatType ChatType { get; private set; }
 }

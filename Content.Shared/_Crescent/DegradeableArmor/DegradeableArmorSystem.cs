@@ -39,7 +39,7 @@ public enum ArmorRepairMaterial
 [Serializable, NetSerializable]
 public partial class ArmorRepairDoAfterEvent : SimpleDoAfterEvent
 {
-    
+
 }
 /// <summary>
 /// This handles...
@@ -176,7 +176,7 @@ public sealed class DegradeableArmorSystem : EntitySystem
         {
             if (!component.initialModifiers.FlatReduction.ContainsKey(type))
                 continue;
-            
+
             var trueReduction = component.initialModifiers.FlatReduction[type];
             if (trueReduction == 0)
                 continue;
@@ -186,7 +186,7 @@ public sealed class DegradeableArmorSystem : EntitySystem
                 {
                     trueReduction *= component.armorHealth / component.armorMaxHealth;
                     trueReduction *= component.armorHealth / component.armorMaxHealth;
-                    
+
                     break;
                 }
                 case ArmorDegradation.Metallic:
@@ -203,7 +203,7 @@ public sealed class DegradeableArmorSystem : EntitySystem
 
             trueReduction = Math.Clamp(trueReduction, 0f, component.maxBlockCoefficients[type] * (float) value);
             _stamina.TakeStaminaDamage(component.wearer, trueReduction * component.staminaConversions[type]);
-            armorDamage += (float) value * args.Args.armorDamageMultiplier * component.armorDamageCoefficients[type]; 
+            armorDamage += (float) value * component.armorDamageCoefficients[type];
             //Logger.Error($"Damage adjusted for type {type}, old {value}, new {Math.Max(0f, (float) value - trueReduction)}  Armor damage {armorDamage}. Armor Health {component.armorHealth}. Stamina damage {trueReduction * component.staminaConversions[type]}");
             damageDictionary[type] = Math.Max(0f, (float) value - trueReduction);
         }

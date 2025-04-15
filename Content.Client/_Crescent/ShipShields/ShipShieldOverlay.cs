@@ -4,7 +4,6 @@ using Robust.Client.Graphics;
 using Robust.Shared.Enums;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Physics;
-using Content.Shared.Books;
 using Robust.Shared.Physics.Collision.Shapes;
 using System.Numerics;
 using Content.Client.Resources;

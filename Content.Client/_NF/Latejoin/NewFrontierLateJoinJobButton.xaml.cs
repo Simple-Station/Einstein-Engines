@@ -45,12 +45,9 @@ public sealed partial class NewFrontierLateJoinJobButton : Button
         }
 
         var prototype = _prototypeManager.Index<JobPrototype>(_jobId);
+        var jobIcon = _prototypeManager.Index<StatusIconPrototype>(prototype.Icon);
+        JobIcon.Texture = jobIcon.Icon.Frame0();
 
-        if (prototype.Icon != null)
-        {
-            var jobIcon = _prototypeManager.Index<StatusIconPrototype>(prototype.Icon);
-            JobIcon.Texture = jobIcon.Icon.Frame0();
-        }
 
         JobText.Text = $"{prototype.LocalizedName} ({obj[_station][_jobId]?.ToString() ?? "Unlimited"})";
 

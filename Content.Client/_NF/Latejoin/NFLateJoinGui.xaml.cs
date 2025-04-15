@@ -93,7 +93,7 @@ public sealed partial class NFLateJoinGui : FancyWindow
                 Close();
             };
 
-            if (!_playManager.IsAllowed(job, out var denyReason))
+            if (!_playManager.CheckJobWhitelist(job, out var denyReason))
             {
                 newButton.Disabled = true;
                 newButton.ToolTip = denyReason.ToString();

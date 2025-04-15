@@ -1,4 +1,5 @@
 ﻿using Content.Client.UserInterface.Controls;
+using Content.Server.Cargo.Components;
 using Content.Shared._NF.Market;
 using Content.Shared._NF.Market.BUI;
 using Content.Shared.Cargo.Components;
