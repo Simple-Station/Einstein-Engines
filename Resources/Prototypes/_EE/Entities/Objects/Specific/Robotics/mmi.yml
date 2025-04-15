@@ -26,6 +26,22 @@
       - Posibrain
 
 - type: entity
+  name: carved positronic brain
+  parent: BaseItem
+  id: CarvedPositronicBrain
+  description: The hollowed-out remains of a positronic brain.
+  components:
+    - type: Sprite
+      sprite: _EE/Objects/Specific/Robotics/paiadapter.rsi
+      state: empty
+    - type: Construction
+      graph: WoodenBat
+      node: incompleteBat
+    - type: Tag
+      tags:
+      - EmptyPosibrain
+
+- type: entity
   parent: MMI
   id: ReverseMMI
   name: machine-man interface

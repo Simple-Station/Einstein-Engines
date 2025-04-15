@@ -1,0 +1,22 @@
+- type: constructionGraph
+  id: AiAdapter
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: paiadapter
+      steps:
+        - tag: EmptyPosibrain
+          name: carved positronic brain
+          icon:
+            sprite: _EE/Objects/Specific/Robotics/paiadapter.rsi
+            state: empty
+          doAfter: 2
+        - material: Glass
+          amount: 1
+          doAfter: 2
+        - material: Cable
+          amount: 5
+          doAfter: 2
+  - node: paiadapter
+    entity: AiAdapter
