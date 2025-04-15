@@ -32,6 +32,7 @@ using Content.Shared.Examine;
 using Content.Shared.Factory.Components;
 using Content.Shared.Verbs;
 using Content.Shared.Popups;
+using Content.Shared.Power;
 using Robust.Shared.Utility;
 
 namespace Content.Server.Factory.EntitySystems
@@ -160,7 +161,7 @@ namespace Content.Server.Factory.EntitySystems
 
                 args.PushMessage(FormattedMessage.FromMarkup($"IN: {prototypeId.Value} of {itemProt.Name}"), 5);
             }
-            // This doesn't work because ??? SPCR 2025 
+            // This doesn't work because ??? SPCR 2025
             //args.PushMessage(FormattedMessage.FromUnformatted("Outputs the following items:"));
             foreach (var prototypeId in recipe.Outputs)
             {
@@ -206,7 +207,7 @@ namespace Content.Server.Factory.EntitySystems
                 EnsureComp<ActiveFactoryComponent>(uid);
 
         }
-        
+
         private void OnRemoval(EntityUid uid, FactoryTrackingComponent component, ref EndCollideEvent args)
         {
             if (TerminatingOrDeleted(component.FactoryID))
@@ -264,7 +265,7 @@ namespace Content.Server.Factory.EntitySystems
                         continue;
                     if (comp.Active == false)
                         continue;
-                    /// SETUP                   
+                    /// SETUP
                     TransformComponent? factoryTransform;
                     if (!TryComp(uid, out factoryTransform))
                         continue;
@@ -346,7 +347,7 @@ namespace Content.Server.Factory.EntitySystems
 
                         if (chosenRecipe == null)
                             break;
-                    
+
                             /// RECIPE INPUT
                         comp.Produced++;
                         foreach (var recipePair in chosenRecipe.Inputs)

@@ -1,6 +1,8 @@
 using Content.Server.Power.Components;
 using Content.Server.Shuttles.Components;
 using Content.Server.Station.Systems;
+using Content.Shared.Power;
+
 
 namespace Content.Server._Crescent.Station;
 

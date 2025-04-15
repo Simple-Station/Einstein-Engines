@@ -154,7 +154,7 @@ public sealed partial class CryoSleepSystem : SharedCryoSleepSystem
 
         QueueDel(args.Victim);
         _audio.PlayPvs(component.LeaveSound, uid);
-        args.SetHandled(SuicideKind.Special);
+        args.Handled = true;
     }
 
     private void OnExamine(EntityUid uid, CryoSleepComponent component, ExaminedEvent args)

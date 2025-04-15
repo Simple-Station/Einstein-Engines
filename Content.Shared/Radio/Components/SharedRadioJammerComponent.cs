@@ -13,6 +13,7 @@ public sealed partial class RadioJammerComponent : Component
     [DataDefinition]
     public partial struct RadioJamSetting
     {
+        public RadioJamSetting() { }
         /// <summary>
         /// Power usage per second when enabled.
         /// </summary>
@@ -26,7 +27,7 @@ public sealed partial class RadioJammerComponent : Component
         public float Range;
 
         /// <summary>
-        /// The message that is displayed when switched 
+        /// The message that is displayed when switched
         /// to this setting.
         /// </summary>
         [DataField(required: true)]

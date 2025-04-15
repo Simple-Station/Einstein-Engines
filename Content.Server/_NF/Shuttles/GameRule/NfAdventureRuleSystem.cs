@@ -20,7 +20,7 @@ using Robust.Shared.Map.Components;
 using Content.Shared.Shuttles.Components;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Cargo.Components;
-using Content.Server.GameTicking
+using Content.Server.GameTicking;
 using Content.Server.Maps;
 using Content.Server.Station.Systems;
 using Content.Shared.CCVar;

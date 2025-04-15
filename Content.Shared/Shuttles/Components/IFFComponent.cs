@@ -1,3 +1,4 @@
+using Content.Shared._Crescent.Diplomacy;
 using Content.Shared.Shuttles.Systems;
 using Robust.Shared.GameStates;
 
@@ -25,6 +26,20 @@ public sealed partial class IFFComponent : Component
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite), DataField, AutoNetworkedField]
     public Color Color = IFFColor;
+
+     // hullrot variables - SPCR
+    // <summary>
+    /// Which faction this ship is advertising as.
+    /// Use the IDs of Diplomacy prototypes to have it work properly, otherwise it'll show up as neutral.
+    /// </summary>
+    [ViewVariables(VVAccess.ReadOnly), DataField, AutoNetworkedField]
+    public string Faction = "Neutral";
+
+    /// <summary>
+    /// Cache faction relations.
+    /// </summary>
+    [ViewVariables(VVAccess.ReadOnly), DataField, AutoNetworkedField]
+    public Dictionary<string, Relations> Relations = new();
 }
 
 [Flags]

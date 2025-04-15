@@ -15,6 +15,7 @@ using Content.Server.DeviceLinking.Systems;
 using Content.Server.Weapons.Ranged.Systems;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
+using Content.Shared.Power;
 using Robust.Shared.Map;
 using Robust.Shared.Containers;
 using Robust.Shared.Timing;
@@ -48,7 +49,8 @@ public sealed partial class SpaceArtillerySystem : EntitySystem
         base.Initialize();
         _sawmill = Logger.GetSawmill("SpaceArtillery");
         SubscribeLocalEvent<SpaceArtilleryComponent, SignalReceivedEvent>(OnSignalReceived);
-        SubscribeLocalEvent<SpaceArtilleryComponent, BuckleChangeEvent>(OnBuckleChange);
+        SubscribeLocalEvent<SpaceArtilleryComponent, BuckledEvent>(OnBuckle);
+        SubscribeLocalEvent<SpaceArtilleryComponent, UnbuckledEvent>(onUnbuckle);
         SubscribeLocalEvent<SpaceArtilleryComponent, FireActionEvent>(OnFireAction);
         SubscribeLocalEvent<SpaceArtilleryComponent, AmmoShotEvent>(OnShotEvent);
         SubscribeLocalEvent<SpaceArtilleryComponent, OnEmptyGunShotEvent>(OnEmptyShotEvent);
@@ -167,22 +169,25 @@ public sealed partial class SpaceArtillerySystem : EntitySystem
             OnMalfunction(uid, component);
     }
 
-    private void OnBuckleChange(EntityUid uid, SpaceArtilleryComponent component, ref BuckleChangeEvent args)
+    private void OnBuckle(EntityUid uid, SpaceArtilleryComponent component, ref BuckledEvent args)
     {
-        // Once Gunner buckles
-        if (args.Buckling)
-        {
-            // Update actions
-            if (TryComp<ActionsComponent>(args.BuckledEntity, out var actions))
-            {
-                _actionsSystem.AddAction(args.BuckledEntity, ref component.FireActionEntity, component.FireAction, uid, actions);
-            }
-            return;
-        }
 
-        // Once gunner unbuckles
-        // Clean up actions
-        _actionsSystem.RemoveProvidedActions(args.BuckledEntity, uid);
+        // Update actions
+        if (TryComp<ActionsComponent>(args.Buckle.Owner, out var actions))
+        {
+            _actionsSystem.AddAction(
+                args.Buckle.Owner,
+                ref component.FireActionEntity,
+                component.FireAction,
+                uid,
+                actions);
+            }
+    }
+
+    private void onUnbuckle(EntityUid uid, SpaceArtilleryComponent component, ref UnbuckledEvent args)
+    {
+
+        _actionsSystem.RemoveProvidedActions(args.Buckle.Owner, uid);
 
     }
 
@@ -385,7 +390,7 @@ public sealed partial class SpaceArtillerySystem : EntitySystem
 
     private void OnProjectileHit(EntityUid uid, ShipWeaponProjectileComponent component, ProjectileHitEvent hitEvent)
     {
-        
+
         var grid = Transform(hitEvent.Target).GridUid;
         if (grid == null)
             return;
@@ -402,6 +407,6 @@ public sealed partial class SpaceArtillerySystem : EntitySystem
 
             _recoilSystem.KickCamera(playerEnt, vector.Normalized() * (float) hitEvent.Damage.GetTotal() / BIG_DAMAGE * BIG_DAMGE_KICK);
         }
-        
+
     }
 }
