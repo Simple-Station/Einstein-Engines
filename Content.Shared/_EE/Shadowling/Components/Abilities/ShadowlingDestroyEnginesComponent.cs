@@ -10,6 +10,8 @@ namespace Content.Shared._EE.Shadowling;
 [RegisterComponent, NetworkedComponent]
 public sealed partial class ShadowlingDestroyEnginesComponent : Component
 {
+    public string? ActionDestroyEngines = "ActionDestroyEngines";
+
     [DataField]
     public TimeSpan DelayTime = TimeSpan.FromMinutes(10);
 

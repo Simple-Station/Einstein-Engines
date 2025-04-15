@@ -18,3 +18,7 @@ shadowling-rapid-rehatch-complete = The husk shudders, and from it, I am rebornâ
 shadowling-destroy-engines-used = The shuttle has already been delayed by someone else.
 shadowling-destroy-engines-arrived = Your powers make you unable to destroy the engines!
 shadowling-destroy-engines-not-called = The shuttle has not been called yet.
+
+shadowling-collective-mind-success = I feel stronger than before! I need {$thralls} Thralls to achieve my true form!
+shadowling-collective-mind-failure = I don't feel anything. I need {$thralls} Thralls to achieve my true form.
+shadowling-collective-mind-ascend = I have gained all the powers... Now, to ascend!

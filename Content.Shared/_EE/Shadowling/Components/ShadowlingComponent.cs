@@ -6,7 +6,9 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared._EE.Shadowling;
 
-
+// <summary>
+// Handles the main actions of a Shadowling
+// </summary>
 [RegisterComponent, NetworkedComponent]
 [AutoGenerateComponentState]
 public sealed partial class ShadowlingComponent : Component
@@ -25,7 +27,8 @@ public sealed partial class ShadowlingComponent : Component
         "ActionRapidRehatch",
         "ActionShadowWalk",
         "ActionIcyVeins",
-        "ActionDestroyEngines"
+        "ActionDestroyEngines",
+        "ActionCollectiveMind"
     };
 
     // The status icon for Shadowlings

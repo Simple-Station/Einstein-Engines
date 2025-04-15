@@ -125,6 +125,35 @@
     event: !type:DestroyEnginesEvent { }
     # add speech
 
+- type: entity
+  id: ActionCollectiveMind
+  name: Collective Mind
+  description: Harvest the minds of your Thralls, and gain various abilities.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: NoItem
+    # useDelay: 30
+    icon:
+      sprite: _EE/Shadowling/shadowling_abilities.rsi
+      state: collective_mind
+    event: !type:CollectiveMindEvent { }
+    # add speech
 
+# Thrall Required Actions
 
+- type: entity
+  id: ActionBlindnessSmoke
+  name: Blindness Smoke
+  description: Heal your kind, and blind anyone who dares enter your mist.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: NoItem
+    # useDelay: 60
+    icon:
+      sprite: _EE/Shadowling/shadowling_abilities.rsi
+      state: blindness_smoke
+    event: !type:BlindnessSmokeEvent { }
+    # add speech
 

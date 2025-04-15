@@ -58,6 +58,7 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
 
     private void AddPostHatchActions(EntityUid uid, ShadowlingComponent comp)
     {
+        // Le Comps
         AddComp<ShadowlingGlareComponent>(uid);
         AddComp<ShadowlingEnthrallComponent>(uid);
         AddComp<ShadowlingVeilComponent>(uid);
@@ -65,7 +66,7 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
         AddComp<ShadowlingShadowWalkComponent>(uid);
         AddComp<ShadowlingIcyVeinsComponent>(uid);
         AddComp<ShadowlingDestroyEnginesComponent>(uid);
-
+        AddComp<ShadowlingCollectiveMindComponent>(uid);
         foreach (var action in comp.PostHatchShadowlingActions)
             _actions.AddAction(uid, action);
     }
