@@ -870,11 +870,6 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("text")
                         .HasColumnName("employer");
 
-                    b.Property<string>("EyeColor")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("eye_color");
-
                     b.Property<string>("FlavorText")
                         .IsRequired()
                         .HasColumnType("text")

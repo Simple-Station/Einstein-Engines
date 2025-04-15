@@ -819,11 +819,6 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("employer");
 
-                    b.Property<string>("EyeColor")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasColumnName("eye_color");
-
                     b.Property<string>("FlavorText")
                         .IsRequired()
                         .HasColumnType("TEXT")

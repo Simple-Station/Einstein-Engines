@@ -46,7 +46,6 @@ namespace Content.IntegrationTests.Tests.Preferences
                 Customspeciename = "",
                 Age = 21,
                 Appearance = new(
-                    Color.Azure,
                     Color.Beige,
                     new List<Marking>()),
             };

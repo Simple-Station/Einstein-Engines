@@ -334,21 +334,6 @@ namespace Content.Client.Lobby.UI
 
             #endregion SpawnPriority
 
-            #region Eyes
-
-            EyeColorPicker.OnEyeColorPicked += newColor =>
-            {
-                if (Profile is null)
-                    return;
-                Profile = Profile.WithCharacterAppearance(
-                    Profile.Appearance.WithEyeColor(newColor));
-                Markings.CurrentEyeColor = Profile.Appearance.EyeColor;
-                IsDirty = true;
-                ReloadProfilePreview();
-            };
-
-            #endregion Eyes
-
             #endregion Appearance
 
             #region Jobs
@@ -782,7 +767,6 @@ namespace Content.Client.Lobby.UI
             UpdateFlavorTextEdit();
             UpdateCustomSpecieNameEdit();
             UpdateAgeEdit();
-            UpdateEyePickers();
             UpdateSaveButton();
             UpdateMarkings();
             UpdateHeightWidthSliders();
@@ -1732,15 +1716,6 @@ namespace Content.Client.Lobby.UI
                 WeightLabel.Text = Loc.GetString("humanoid-profile-editor-weight-label", ("weight", (int) 71));
 
             SpriteView.InvalidateMeasure();
-        }
-
-        private void UpdateEyePickers()
-        {
-            if (Profile == null)
-                return;
-
-            Markings.CurrentEyeColor = Profile.Appearance.EyeColor;
-            EyeColorPicker.SetData(Profile.Appearance.EyeColor);
         }
 
         private void UpdateSaveButton()

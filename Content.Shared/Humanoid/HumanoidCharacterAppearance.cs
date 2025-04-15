@@ -21,36 +21,29 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
     public List<Marking> Markings { get; private set; } = new();
 
     public HumanoidCharacterAppearance(
-        Color eyeColor,
         Color skinColor,
         List<Marking> markings)
     {
-        EyeColor = ClampColor(eyeColor);
         SkinColor = ClampColor(skinColor);
         Markings = markings;
     }
 
     public HumanoidCharacterAppearance(HumanoidCharacterAppearance other)
         : this(
-            other.EyeColor,
             other.SkinColor,
             new(other.Markings))
     {
 
     }
-    public HumanoidCharacterAppearance WithEyeColor(Color newColor)
-    {
-        return new(newColor, SkinColor, Markings);
-    }
 
     public HumanoidCharacterAppearance WithSkinColor(Color newColor)
     {
-        return new(EyeColor, newColor, Markings);
+        return new(newColor, Markings);
     }
 
     public HumanoidCharacterAppearance WithMarkings(List<Marking> newMarkings)
     {
-        return new(EyeColor, SkinColor, newMarkings);
+        return new(SkinColor, newMarkings);
     }
 
     public static HumanoidCharacterAppearance DefaultWithSpecies(string species)
@@ -68,7 +61,6 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
         };
 
         return new(
-            Color.Black,
             skinColor,
             new ()
         );
@@ -106,8 +98,6 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
 
         // TODO: Add random markings
 
-        var newEyeColor = random.Pick(RealisticEyeColors);
-
         var skinType = IoCManager.Resolve<IPrototypeManager>().Index<SpeciesPrototype>(species).SkinColoration;
             var skinTone = IoCManager.Resolve<IPrototypeManager>().Index<SpeciesPrototype>(species).DefaultSkinTone; // DeltaV, required for tone blending
 
@@ -134,7 +124,7 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
                 break;
         }
 
-        return new HumanoidCharacterAppearance(newEyeColor, newSkinColor, new ());
+        return new HumanoidCharacterAppearance(newSkinColor, new ());
 
         float RandomizeColor(float channel)
         {
@@ -171,7 +161,6 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
         }
 
         return new HumanoidCharacterAppearance(
-            eyeColor,
             skinColor,
             markingSet.GetForwardEnumerator().ToList());
     }

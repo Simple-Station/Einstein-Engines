@@ -140,11 +140,6 @@
                             <Slider HorizontalExpand="True" Name="Skin" MinValue="0" MaxValue="100" Value="20" />
                             <BoxContainer Name="RgbSkinColorContainer" Visible="False" Orientation="Vertical" HorizontalExpand="True"></BoxContainer>
                         </BoxContainer>
-                        <!-- Eyes -->
-                        <BoxContainer Margin="10" Orientation="Vertical">
-                            <Label Text="{Loc 'humanoid-profile-editor-eyes-label'}" />
-                            <humanoid:EyeColorPicker Name="EyeColorPicker" />
-                        </BoxContainer>
                     </BoxContainer>
                 </ScrollContainer>
             </BoxContainer>

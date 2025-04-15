@@ -404,7 +404,6 @@ namespace Content.Server.Database
         public float Height { get; set; } = 1f;
         public float Width { get; set; } = 1f;
         [Column(TypeName = "jsonb")] public JsonDocument? Markings { get; set; } = null!;
-        public string EyeColor { get; set; } = null!;
         public string SkinColor { get; set; } = null!;
         public string Clothing { get; set; } = null!;
         public string Backpack { get; set; } = null!;

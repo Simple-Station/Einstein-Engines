@@ -45,6 +45,10 @@ namespace Content.Server.Database.Migrations.Sqlite
             migrationBuilder.DropColumn(
                 name: "hair_name",
                 table: "profile");
+
+            migrationBuilder.DropColumn(
+                name: "eye_color",
+                table: "profile");
         }
 
         /// <inheritdoc />
@@ -78,6 +82,13 @@ namespace Content.Server.Database.Migrations.Sqlite
 
             migrationBuilder.AddColumn<string>(
                 name: "hair_name",
+                table: "profile",
+                type: "TEXT",
+                nullable: false,
+                defaultValue: "");
+
+            migrationBuilder.AddColumn<string>(
+                name: "eye_color",
                 table: "profile",
                 type: "TEXT",
                 nullable: false,
