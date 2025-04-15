@@ -784,6 +784,12 @@ entities:
             765: 36,14
             769: 28,2
             770: 28,1
+            1299: 23,29
+            1300: 24,29
+            1301: 25,29
+            1302: 27,29
+            1303: 28,29
+            1304: 29,29
         - node:
             cleanable: True
             color: '#FFFFFFFF'
@@ -1718,6 +1724,11 @@ entities:
             id: LoadingArea
           decals:
             978: 11,29
+        - node:
+            color: '#FFFFFFFF'
+            id: LoadingArea
+          decals:
+            1305: 26,29
         - node:
             cleanable: True
             color: '#FFFFFFFF'
@@ -4467,7 +4478,7 @@ entities:
       pos: 11.5,20.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -16029.01
+      secondsUntilStateChange: -16208.775
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -4478,7 +4489,7 @@ entities:
       pos: 11.5,19.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -16028.743
+      secondsUntilStateChange: -16208.509
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -4765,7 +4776,7 @@ entities:
       pos: 16.5,27.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -16039.477
+      secondsUntilStateChange: -16219.242
       state: Opening
     - type: DeviceLinkSink
       invokeCounter: 4
@@ -4808,7 +4819,7 @@ entities:
       pos: 16.5,28.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -16038.61
+      secondsUntilStateChange: -16218.376
       state: Opening
     - type: DeviceLinkSink
       invokeCounter: 4
@@ -5549,7 +5560,7 @@ entities:
       pos: -41.5,-0.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -7145.9854
+      secondsUntilStateChange: -7325.751
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -5637,7 +5648,7 @@ entities:
       pos: -15.5,-24.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -9528.683
+      secondsUntilStateChange: -9708.448
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -6080,7 +6091,7 @@ entities:
       pos: 15.5,22.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -16043.51
+      secondsUntilStateChange: -16223.275
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -56348,6 +56359,18 @@ entities:
       rot: 3.141592653589793 rad
       pos: 7.5,24.5
       parent: 2
+  - uid: 11809
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 20.5,29.5
+      parent: 2
+  - uid: 11810
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 21.5,29.5
+      parent: 2
 - proto: RailingCorner
   entities:
   - uid: 8656
@@ -56379,6 +56402,13 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 6.5,24.5
+      parent: 2
+- proto: RailingCornerSmall
+  entities:
+  - uid: 11811
+    components:
+    - type: Transform
+      pos: 22.5,29.5
       parent: 2
 - proto: RandomArtifactSpawner
   entities:
