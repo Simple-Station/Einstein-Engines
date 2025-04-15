@@ -85,7 +85,7 @@
     - DoorBumpOpener
     - FootstepSound
     - RipleyMkII
-    
+
 - type: entity
   id: MechRipley2Battery
   parent: MechRipley2
@@ -204,7 +204,7 @@
         Blunt: 25
         Structural: 180
   - type: CanMoveInAir
-  - type: MovementAlwaysTouching        
+  - type: MovementAlwaysTouching
   - type: MovementSpeedModifier
     baseWalkSpeed: 2
     baseSprintSpeed: 2.6
@@ -352,7 +352,7 @@
   - type: ContainerFill
     containers:
       mech-battery-slot:
-      - PowerCellHyper
+      - PowerCageMedium
 
 - type: entity
   id: MechMarauderFilled
@@ -501,7 +501,7 @@
   - type: ContainerFill
     containers:
       mech-battery-slot:
-      - PowerCellHyper
+      - PowerCageMedium
 
 - type: entity
   id: MechGygaxSyndieFilled
@@ -541,7 +541,7 @@
     brokenState: mauler-broken
     mechToPilotDamageMultiplier: 0.1
     airtight: true
-    maxIntegrity: 500
+    maxIntegrity: 1000
     maxEquipmentAmount: 5
     pilotWhitelist:
       components:
@@ -562,7 +562,7 @@
   - type: MovementAlwaysTouching
   - type: Repairable
     fuelCost: 50
-    doAfterDelay: 25
+    doAfterDelay: 30
   - type: StaticPrice
     price: 30000 # Some respect if you steal one of these.
 
@@ -574,7 +574,7 @@
   - type: ContainerFill
     containers:
       mech-battery-slot:
-      - PowerCellHyper
+      - PowerCageHigh
 
 - type: entity
   id: MechMaulerSyndieFilled
