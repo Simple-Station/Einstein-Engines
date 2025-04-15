@@ -229,7 +229,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     }
 
     /// <summary>
-    ///     Return a default character profile, based on species.
+    ///     Return a default character profile, based on species.i
     /// </summary>
     /// <param name="species">The species to use in this default profile. The default species is <see cref="SharedHumanoidAppearanceSystem.DefaultSpecies"/>.</param>
     /// <returns>Humanoid character profile with default settings.</returns>

@@ -4,12 +4,14 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared.Shipyard;
 
+/* HULLROT - EDITED OUT
 [Serializable, NetSerializable]
 public enum ShipyardConsoleUiKey : byte
 {
     Key
 }
 
+*/
 [Serializable, NetSerializable]
 public sealed class ShipyardConsoleState : BoundUserInterfaceState
 {

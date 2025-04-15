@@ -3,6 +3,7 @@ using Content.Server.Shuttles.Systems;
 using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
 using Content.Shared.DeltaV.CCVars;
+using Content.Shared.Shipyard;
 using Content.Shared.Tag;
 using Robust.Server.GameObjects;
 using Robust.Shared.Configuration;
@@ -12,7 +13,9 @@ namespace Content.Server.Shipyard;
 /// <summary>
 /// Handles spawning and ftling ships.
 /// </summary>
-public sealed class ShipyardSystem : EntitySystem
+///
+///  HULLROT EDIT - TURNED TO PARTIAL
+public sealed partial class ShipyardSystem : SharedShipyardSystem
 {
     [Dependency] private readonly IConfigurationManager _config = default!;
     [Dependency] private readonly MapDeleterShuttleSystem _mapDeleterShuttle = default!;
@@ -29,7 +32,7 @@ public sealed class ShipyardSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-
+        HullrotInitialize(); // hullrot edit
         Subs.CVar(_config, DCCVars.Shipyard, value => Enabled = value, true);
     }
 

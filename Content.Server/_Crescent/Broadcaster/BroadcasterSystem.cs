@@ -13,6 +13,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using static Content.Shared.Access.Components.IdCardConsoleComponent;
 using Content.Shared.Access.Components;
+using Content.Shared.Chat;
 using Robust.Server.GameObjects;
 using Robust.Server.Player;
 

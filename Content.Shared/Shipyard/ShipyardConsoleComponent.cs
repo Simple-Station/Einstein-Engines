@@ -1,3 +1,4 @@
+using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Radio;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
@@ -28,4 +29,20 @@ public sealed partial class ShipyardConsoleComponent : Component
     /// </summary>
     [DataField]
     public ProtoId<RadioChannelPrototype> Channel = "Command";
+
+    /// Hullrot edit
+    public static string TargetIdCardSlotId = "ShipyardConsole-targetId";
+
+    [DataField("targetIdSlot")]
+    public ItemSlot TargetIdSlot = new();
+
+
+    [DataField("shipyardChannel")]
+    public string ShipyardChannel = "CentCom";
+
+    [DataField("securityShipyardChannel")]
+    public string SecurityShipyardChannel = "CentCom";
+
+    /// Hulllrot edit end
+
 }

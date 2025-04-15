@@ -64,6 +64,11 @@ public sealed partial class BankSystem : EntitySystem
             profile.PreferenceUnavailable,
             profile.AntagPreferences,
             profile.TraitPreferences,
+            profile.CyborgName,
+            profile.Appearance,
+            profile.SpawnPriority,
+            profile.JobPriorities,
+            
             new Dictionary<string, RoleLoadout>(profile.Loadouts));
 
         args.State = new BankAccountComponentState

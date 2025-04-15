@@ -145,15 +145,7 @@ public sealed partial class BankSystem
 
         if (BankATMMenuUiKey.BlackMarket == (BankATMMenuUiKey) args.UiKey)
         {
-            var tax = (int) (deposit * 0.30f);
-            var query = EntityQueryEnumerator<StationBankAccountComponent>();
-
-            while (query.MoveNext(out _, out var comp))
-            {
-                _cargo.DeductFunds(comp, -tax);
-            }
-
-            deposit -= tax;
+            deposit -= (int) (deposit * 0.30f);
         }
 
         // try to deposit the inserted cash into a player's bank acount. Validation happens on the banking system but we still indicate error.

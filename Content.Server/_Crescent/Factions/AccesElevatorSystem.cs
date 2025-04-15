@@ -30,6 +30,8 @@ using System.Collections.Generic;
 using Content.Server.Access.Systems;
 using Content.Server.Chat.Systems;
 using Content.Server.Verbs;
+using Content.Shared.Access.Components;
+using Content.Shared.Chat;
 using Content.Shared.Examine;
 using Content.Shared.Factory.Components;
 using Content.Shared.Verbs;
@@ -60,10 +62,13 @@ public sealed partial class AccesElevatorSystem : EntitySystem
     {
         if (args.Target is null)
             return;
-        if(_acces.AddExtraTags(args.Target.Value, comp.giveAcces, null))
-            _chat.TrySendInGameICMessage(owner, "Acces codes succesfully transmitted!", InGameICChatType.Speak, ChatTransmitRange.Normal);
-        else
+        if (!TryComp<AccessComponent>(args.Target.Value, out var accesComp))
+        {
             _chat.TrySendInGameICMessage(owner, "Error 404: Unable to locate RFID Receiver", InGameICChatType.Speak, ChatTransmitRange.Normal);
+            return;
+        }
+        _chat.TrySendInGameICMessage(owner, "Acces codes succesfully transmitted!", InGameICChatType.Speak, ChatTransmitRange.Normal);
+        accesComp.Tags.UnionWith(comp.giveAcces);
 
 
     }

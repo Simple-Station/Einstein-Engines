@@ -3,6 +3,7 @@ using Content.Server.Administration.Logs;
 using Content.Server.GameTicking;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.Database;
+using Content.Shared.GameTicking;
 using Content.Shared.Ghost;
 using Content.Shared.Mind;
 using Content.Shared.NF14.CCVar;
@@ -70,7 +71,7 @@ public sealed partial class CryoSleepSystem
         _mind.ControlMob(id.Value, body);
         // Force the mob to sleep
         var sleep = EnsureComp<SleepingComponent>(body);
-        sleep.CoolDownEnd = TimeSpan.FromSeconds(5);
+        sleep.CooldownEnd = TimeSpan.FromSeconds(5);
 
         _popup.PopupEntity(Loc.GetString("cryopod-wake-up", ("entity", body)), body);
 

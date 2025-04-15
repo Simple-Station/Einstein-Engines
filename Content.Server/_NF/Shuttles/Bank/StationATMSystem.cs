@@ -79,8 +79,7 @@ public sealed partial class BankSystem
                 new StationBankATMMenuInterfaceState(stationBank.Balance, _access.IsAllowed(player, uid), deposit));
             return;
         }
-
-        _cargo.DeductFunds(stationBank, args.Amount);
+        _cargo.UpdateBankAccount(station.Value, stationBank, -args.Amount);
         ConsolePopup(args.Actor, Loc.GetString("bank-atm-menu-withdraw-successful"));
         PlayConfirmSound(uid, component);
         _log.Info($"{args.Actor} withdrew {args.Amount}, '{args.Reason}': {args.Description}");
@@ -186,8 +185,7 @@ public sealed partial class BankSystem
             PlayDenySound(uid, component);
             return;
         }
-
-        _cargo.DeductFunds(stationBank, -args.Amount);
+        _cargo.UpdateBankAccount(station.Value, stationBank, args.Amount);
         ConsolePopup(args.Actor, Loc.GetString("bank-atm-menu-deposit-successful"));
         PlayConfirmSound(uid, component);
         _log.Info($"{args.Actor} deposited {args.Amount}, '{args.Reason}': {args.Description}");

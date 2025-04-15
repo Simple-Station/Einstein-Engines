@@ -1,4 +1,6 @@
 using System.Numerics;
+using Content.Shared.Containers.ItemSlots;
+using Content.Shared.Shuttles.BUIStates;
 using Content.Shared.Shuttles.Components;
 
 namespace Content.Server.Shuttles.Components
@@ -50,5 +52,18 @@ namespace Content.Server.Shuttles.Components
         ///     Tracks whether or not the above "One way trip" has been taken.
         /// </summary>
         public bool OneWayTripTaken;
+
+        /// Hullrot additions
+        [DataField("targetIdSlot")]
+        public ItemSlot targetIdSlot = default!;
+
+        [DataField, ViewVariables(VVAccess.ReadWrite)]
+        public ShuttleConsoleAccesState accesState = ShuttleConsoleAccesState.NotDynamic;
+
+        // For dynamic ID indexing and shit.
+        public string? captainIdentifier;
+        public string? pilotIdentifier;
+
+        /// End hullrot additions
     }
 }

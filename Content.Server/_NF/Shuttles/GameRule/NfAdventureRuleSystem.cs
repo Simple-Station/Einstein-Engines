@@ -98,7 +98,6 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
             relayText += '\n';
             highScore.Remove(highScore.First());
         }
-        ReportRound(relayText);
     }
 
     private void OnPlayerSpawningEvent(PlayerSpawnCompleteEvent ev)

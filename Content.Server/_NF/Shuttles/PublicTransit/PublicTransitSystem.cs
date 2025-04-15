@@ -4,6 +4,7 @@ using Content.Server.GameTicking;
 using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Events;
 using Content.Server.Shuttles.Systems;
+using Content.Shared.Chat;
 using Content.Shared.GameTicking;
 using Content.Shared.NF14.CCVar;
 using Content.Shared.Shuttles.Components;

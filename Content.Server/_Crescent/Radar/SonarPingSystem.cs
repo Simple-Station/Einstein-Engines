@@ -4,6 +4,7 @@ using System.Numerics;
 using Content.Server.Chat.Systems;
 using Content.Server.Power.Components;
 using Content.Server.Radio.EntitySystems;
+using Content.Shared.Chat;
 using Content.Shared.Crescent.Radar;
 using Content.Shared.Shuttles.BUIStates;
 using Content.Shared.Shuttles.Components;
@@ -36,7 +37,7 @@ public sealed class SonarPingSystem : EntitySystem
 
     public void RequestVerbs(EntityUid owner, RadarDetectorComponent comp, ref GetVerbsEvent<ActivationVerb> args)
     {
-        
+
         ActivationVerb verb = new()
         {
             Text = $"Toggle Alert Pinging",
@@ -46,7 +47,7 @@ public sealed class SonarPingSystem : EntitySystem
             }
         };
         args.Verbs.Add(verb);
-        
+
     }
     public override void Update(float frameTime)
     {
@@ -56,7 +57,7 @@ public sealed class SonarPingSystem : EntitySystem
         var query = EntityQueryEnumerator<RadarConsoleComponent, RadarDetectorComponent, TransformComponent>();
         var checking = EntityManager.GetAllComponents(typeof(RadarPingerComponent), false).ToDictionary();
         while (query.MoveNext(out var uid, out var radar, out var pinger, out var transform))
-        { 
+        {
             var ourRange = radar.MaxRange * 0.8;
             var ourPos = _transform.GetWorldPosition(transform);
             if (!receptionList.ContainsKey(uid))
@@ -81,7 +82,7 @@ public sealed class SonarPingSystem : EntitySystem
         if (curTime > pingCheckInterval)
         {
             curTime = 0f;
-            
+
             var worldTime = _timer.CurTime;
             foreach(var (key, set) in receptionList)
             {

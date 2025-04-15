@@ -112,4 +112,9 @@ public enum LogType
     /// Storage & entity-storage related interactions
     /// </summary>
     Storage = 93,
+
+
+    /// Hullrot logs
+    ATMUsage = 777,
+    ShipYardUsage  = 778
 }

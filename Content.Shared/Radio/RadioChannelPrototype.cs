@@ -43,4 +43,8 @@ public sealed partial class RadioChannelPrototype : IPrototype
     [DataField, ViewVariables]
     public bool ShowFrequency = false;
     // End Frontier
+
+    // Hullrot : range limited channel. Leave 0 for it to not be localizedqsa
+    [DataField, ViewVariables]
+    public float LocalizedRange = 0;
 }

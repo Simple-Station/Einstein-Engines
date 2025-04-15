@@ -44,7 +44,7 @@ namespace Content.Server.LocalizedRadio.EntitySystems
 
             foreach (var localized in _prototypeManager.EnumeratePrototypes<RadioChannelPrototype>().ToArray())
             {
-                if (!localized.Localize)
+                if (localized.LocalizedRange == 0)
                     continue;
                 ForceLocalize.Add(localized.ID, localized.LocalizedRange);
             }
