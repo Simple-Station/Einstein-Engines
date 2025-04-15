@@ -46,10 +46,6 @@ namespace Content.IntegrationTests.Tests.Preferences
                 Customspeciename = "",
                 Age = 21,
                 Appearance = new(
-                    "Afro",
-                    Color.Aqua,
-                    "Shaved",
-                    Color.Aquamarine,
                     Color.Azure,
                     Color.Beige,
                     new List<Marking>()),

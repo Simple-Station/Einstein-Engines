@@ -236,10 +236,6 @@ namespace Content.Server.Database
                 profile.StationAiName,
                 profile.CyborgName,
                 new HumanoidCharacterAppearance(
-                    profile.HairName,
-                    Color.FromHex(profile.HairColor),
-                    profile.FacialHairName,
-                    Color.FromHex(profile.FacialHairColor),
                     Color.FromHex(profile.EyeColor),
                     Color.FromHex(profile.SkinColor),
                     markings
@@ -285,10 +281,6 @@ namespace Content.Server.Database
             profile.CyborgName = humanoid.CyborgName;
             profile.Height = humanoid.Height;
             profile.Width = humanoid.Width;
-            profile.HairName = appearance.HairStyleId;
-            profile.HairColor = appearance.HairColor.ToHex();
-            profile.FacialHairName = appearance.FacialHairStyleId;
-            profile.FacialHairColor = appearance.FacialHairColor.ToHex();
             profile.EyeColor = appearance.EyeColor.ToHex();
             profile.SkinColor = appearance.SkinColor.ToHex();
             profile.Clothing = humanoid.Clothing.ToString();
