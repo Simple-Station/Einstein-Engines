@@ -1,0 +1,43 @@
+using Robust.Shared.Audio;
+
+namespace Content.Shared._Crescent.ShipShields;
+
+[RegisterComponent]
+public sealed partial class ShipShieldEmitterComponent : Component
+{
+    public EntityUid? Shield;
+    public EntityUid? Shielded;
+
+    [DataField]
+    public float Accumulator;
+
+    [DataField]
+    public float Damage = 0f;
+
+    [DataField]
+    public float DamageExp = 1.1f;
+
+    [DataField]
+    public float HealPerSecond = 250f;
+
+    [DataField]
+    public float UnpoweredBonus = 6f;
+
+    [DataField]
+    public float MaxDraw = 150000f;
+
+    [DataField]
+    public float BaseDraw = 50000f;
+
+    [DataField]
+    public bool Recharging = false;
+
+    /// <summary>
+    /// On power up, players for all on vessel, pitched down.
+    /// </summary>
+    [DataField]
+    public SoundSpecifier PowerUpSound = new SoundPathSpecifier("/Audio/Effects/teleport_arrival.ogg");
+
+    [DataField]
+    public SoundSpecifier PowerDownSound = new SoundPathSpecifier("/Audio/Effects/teleport_departure.ogg");
+}
