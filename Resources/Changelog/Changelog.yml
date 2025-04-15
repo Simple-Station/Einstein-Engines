@@ -15025,3 +15025,17 @@ Entries:
   id: 7151
   time: '2025-04-15T04:32:01.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2237
+- author: 3PonPon3
+  changes:
+    - type: Add
+      message: >-
+        Traits that increase your surgery speed, Surgery Training (1.6, between
+        intern and standard doc) for non-medical, and Experienced Surgeon (2.5,
+        same as CMO) for medical w/o intern and with corpsman
+    - type: Tweak
+      message: CPR Training cost 4 -> 3
+    - type: Fix
+      message: BSO can no longer take the CPR trait as they already have it innately
+  id: 7152
+  time: '2025-04-15T20:14:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2238
