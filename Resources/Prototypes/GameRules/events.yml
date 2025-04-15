@@ -153,6 +153,13 @@
     minimumPlayers: 30
   - type: SpaceSpawnRule
   - type: AntagLoadProfileRule
+    speciesOverride: Human
+    speciesOverrideBlacklist:
+    - Vox
+    - IPC
+    - Arachne
+    - Diona
+    - Harpy
   - type: AntagObjectives
     objectives:
     - StealResearchObjective
