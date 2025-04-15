@@ -101,6 +101,7 @@
     - type: BlockMovement
     - type: Examiner
     - type: Brain # hopefully this doesn't break everything
+      active: false
     - type: BorgBrain
     - type: IntrinsicRadioReceiver
     - type: IntrinsicRadioTransmitter
