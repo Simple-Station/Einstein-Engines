@@ -58,3 +58,5 @@ research-technology-basic-electronics = Basic Electronics
 research-technology-basic-life-improvements = Basic Life Improvements
 research-technology-honk-mech = H.O.N.K. Mech
 research-technology-advanced-life-improvements = Advanced Life Improvements
+
+research-technology-positronic-interfacing = Positronic Interfacing

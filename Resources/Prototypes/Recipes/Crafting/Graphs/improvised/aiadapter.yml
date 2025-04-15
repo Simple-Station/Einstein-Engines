@@ -6,11 +6,11 @@
     edges:
     - to: paiadapter
       steps:
-        - tag: EmptyPosibrain
-          name: carved positronic brain
-          icon:
-            sprite: _EE/Objects/Specific/Robotics/paiadapter.rsi
-            state: empty
+        - material: Steel
+          amount: 5
+          doAfter: 2
+        - material: Gold
+          amount: 1
           doAfter: 2
         - material: Glass
           amount: 1

@@ -143,7 +143,3 @@
     - type: LanguageKnowledge
       speaks: [RobotTalk]
       understands: [RobotTalk]
-    - type: Butcherable # IPCMMI - carved posibrain for pAI adapter
-      butcheringType: Knife
-      spawned:
-      - id: CarvedPositronicBrain
