@@ -3298,8 +3298,8 @@ entities:
           13,2:
             1: 15
           13,-1:
-            0: 32717
-            1: 32768
+            0: 32517
+            1: 32968
           13,3:
             0: 61440
           13,4:
@@ -3329,22 +3329,24 @@ entities:
             1: 36608
             0: 28672
           13,-3:
-            0: 53111
-            1: 136
+            0: 3959
+            1: 49288
           13,-2:
-            0: 56797
+            0: 21845
+            1: 34952
           14,-3:
             0: 65280
           14,-2:
-            0: 65535
+            0: 3855
+            1: 61680
           14,-1:
             0: 4095
           15,-3:
             0: 12288
             1: 51200
           15,-2:
-            0: 30583
-            1: 8
+            0: 18247
+            1: 12344
           15,-1:
             0: 55
             1: 2248
@@ -4452,7 +4454,7 @@ entities:
       pos: 11.5,20.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -13800.757
+      secondsUntilStateChange: -14314.572
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -4463,7 +4465,7 @@ entities:
       pos: 11.5,19.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -13800.49
+      secondsUntilStateChange: -14314.306
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -4750,7 +4752,7 @@ entities:
       pos: 16.5,27.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -13811.224
+      secondsUntilStateChange: -14325.039
       state: Opening
     - type: DeviceLinkSink
       invokeCounter: 4
@@ -4793,7 +4795,7 @@ entities:
       pos: 16.5,28.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -13810.357
+      secondsUntilStateChange: -14324.173
       state: Opening
     - type: DeviceLinkSink
       invokeCounter: 4
@@ -5522,7 +5524,7 @@ entities:
       pos: -41.5,-0.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -4917.732
+      secondsUntilStateChange: -5431.5474
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -5610,7 +5612,7 @@ entities:
       pos: -15.5,-24.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -7300.4297
+      secondsUntilStateChange: -7814.245
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -6053,7 +6055,7 @@ entities:
       pos: 15.5,22.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -13815.257
+      secondsUntilStateChange: -14329.072
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -25648,7 +25650,7 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 47.5,-12.5
-      parent: 2
+      parent: 2      
 - proto: ChairWood
   entities:
   - uid: 4111
@@ -31729,7 +31731,7 @@ entities:
       pos: 4.5,18.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -13789.558
+      secondsUntilStateChange: -14303.373
       state: Closing
   - uid: 5079
     components:
@@ -31737,7 +31739,7 @@ entities:
       pos: 5.5,18.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -13789.957
+      secondsUntilStateChange: -14303.772
       state: Closing
   - uid: 5080
     components:
@@ -32909,7 +32911,7 @@ entities:
       pos: 19.5,-25.5
       parent: 2
     - type: AtmosPipeColor
-      color: '#990000FF'
+      color: '#03FCD3FF'
   - uid: 5280
     components:
     - type: Transform
@@ -32917,7 +32919,7 @@ entities:
       pos: 18.5,-24.5
       parent: 2
     - type: AtmosPipeColor
-      color: '#990000FF'
+      color: '#03FCD3FF'
 - proto: GasMinerNitrogenStation
   entities:
   - uid: 5281
@@ -33231,11 +33233,15 @@ entities:
       rot: 3.141592653589793 rad
       pos: 18.5,-25.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#03FCD3FF'
   - uid: 5321
     components:
     - type: Transform
       pos: 20.5,-23.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#03FCD3FF'
   - uid: 5322
     components:
     - type: Transform
@@ -34469,6 +34475,8 @@ entities:
       rot: 3.141592653589793 rad
       pos: 20.5,-24.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#03FCD3FF'
   - uid: 5485
     components:
     - type: Transform
@@ -44334,18 +44342,24 @@ entities:
       rot: 3.141592653589793 rad
       pos: 19.5,-23.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#03FCD3FF'
   - uid: 6772
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 18.5,-23.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#03FCD3FF'
   - uid: 6773
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 20.5,-25.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#03FCD3FF'
   - uid: 6774
     components:
     - type: Transform
@@ -46301,7 +46315,7 @@ entities:
       pos: 21.5,-25.5
       parent: 2
     - type: AtmosPipeColor
-      color: '#0055CCFF'
+      color: '#03FCD3FF'
   - uid: 7026
     components:
     - type: Transform
@@ -46354,6 +46368,8 @@ entities:
       parent: 2
     - type: GasThermoMachine
       targetTemperature: 150
+    - type: AtmosPipeColor
+      color: '#03FCD3FF'
   - uid: 7032
     components:
     - type: Transform
@@ -61302,6 +61318,18 @@ entities:
     - type: Transform
       pos: -34.5,16.5
       parent: 2
+- proto: SpawnPointPrisonGuard
+  entities:
+  - uid: 45660
+    components:
+    - type: Transform
+      pos: -21.5,8.5
+      parent: 2
+  - uid: 45670
+    components:
+    - type: Transform
+      pos: -22.5,7.5
+      parent: 2
 - proto: SpawnPointProsecutor
   entities:
   - uid: 9515
@@ -61444,13 +61472,15 @@ entities:
     - type: Transform
       pos: -30.5,8.5
       parent: 2
-- proto: SpawnPointSeniorResearcher
+- proto: SpawnPointSeniorPhysician
   entities:
-  - uid: 9539
+  - uid: 45650
     components:
     - type: Transform
       pos: 29.5,-19.5
       parent: 2
+- proto: SpawnPointSeniorResearcher
+  entities:
   - uid: 9540
     components:
     - type: Transform
