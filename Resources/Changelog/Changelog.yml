@@ -15125,3 +15125,10 @@ Entries:
   id: 7160
   time: '2025-04-16T18:43:47.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2065
+- author: dootythefrooty
+  changes:
+    - type: Tweak
+      message: Nukie plushies are now visibly seen in your hands.
+  id: 7161
+  time: '2025-04-16T18:55:46.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2232
