@@ -15118,3 +15118,10 @@ Entries:
   id: 7159
   time: '2025-04-16T18:36:09.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2248
+- author: SolsticeOfTheWinter
+  changes:
+    - type: Add
+      message: Added the ability to wear the terminus on your back.
+  id: 7160
+  time: '2025-04-16T18:43:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2065
