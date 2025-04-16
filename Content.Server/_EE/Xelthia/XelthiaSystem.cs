@@ -1,3 +1,4 @@
+using Content.Server.Body.Systems;
 using Content.Shared._EE.Xelthia;
 using Content.Shared.Abilities.Psionics;
 using Content.Shared.Humanoid;
@@ -14,7 +15,10 @@ using Content.Shared.Actions;
 using Robust.Shared.Prototypes;
 using Content.Shared.Examine;
 using Content.Shared.Actions.Events;
+using Content.Shared.Body.Components;
+using Content.Shared.Body.Part;
 using Robust.Shared.Placement;
+using Robust.Shared.Serialization.Manager;
 
 
 namespace Content.Server._EE.Xelthia;
@@ -57,6 +61,7 @@ public sealed class XelthiaSystem : EntitySystem
             component.RArmBackspikesColor = humanoid.EyeColor;
             // Placeholder for an actual action just so I can make sure the button. Actually does anything? Works.
         }
+
         // BEHOLD, COPY-PASTED AND TWEAKED CODE FROM THE SPAWN THINGS COMMAND. I HAVE NO IDEA WHAT IM DOING AND THIS IS PROBABLY ASS.
         // This currently just spawns more hands and arms without attaching them. Also they need decals. This is fucking scuffed.
         PlacementEntityEvent? placementEv = null;
@@ -65,9 +70,53 @@ public sealed class XelthiaSystem : EntitySystem
         placementEv = new PlacementEntityEvent(createdEntity, entityCoordinates, PlacementEventAction.Create, null);
         createdEntity = _entityManager.SpawnEntity("LeftHandXelthia", entityCoordinates);
         placementEv = new PlacementEntityEvent(createdEntity, entityCoordinates, PlacementEventAction.Create, null);
-        createdEntity = _entityManager.SpawnEntity("RightArmXelthia", entityCoordinates);
-        placementEv = new PlacementEntityEvent(createdEntity, entityCoordinates, PlacementEventAction.Create, null);
-        createdEntity = _entityManager.SpawnEntity("RightHandXelthia", entityCoordinates);
-        placementEv = new PlacementEntityEvent(createdEntity, entityCoordinates, PlacementEventAction.Create, null);
+
+        //IEntityManager entityManager = uid;
+        IEntityManager entityManager = base.EntityManager; // There's no way this is good code. I don't know what im doing though, so. I dunno.
+        var bodySystem = entityManager.System<BodySystem>();
+        var transformSystem = entityManager.System<SharedTransformSystem>();
+
+        if (!entityManager.TryGetComponent(uid, out BodyComponent? body)
+            || !entityManager.TryGetComponent(uid, out TransformComponent? xform))
+            return;
+
+        var root = bodySystem.GetRootPartOrNull(uid, body);
+        if (root is null)
+            return;
+
+        var parts = bodySystem.GetBodyChildrenOfType(uid, BodyPartType.Arm, body);
+        foreach (var part in parts)
+        {
+            var partComp = part.Component;
+            if (partComp.Symmetry != BodyPartSymmetry.Right)
+                continue;
+
+            foreach (var child in bodySystem.GetBodyPartChildren(part.Id, part.Component))
+                entityManager.QueueDeleteEntity(child.Id);
+
+            transformSystem.AttachToGridOrMap(part.Id);
+            entityManager.QueueDeleteEntity(part.Id);
+
+            var newLimb = entityManager.SpawnAtPosition("RightArmXelthia", xform.Coordinates);
+            if (entityManager.TryGetComponent(newLimb, out BodyPartComponent? limbComp))
+                bodySystem.AttachPart(root.Value.Entity, "right arm", newLimb, root.Value.BodyPart, limbComp);
+        }
+//        parts = bodySystem.GetBodyChildrenOfType(uid, BodyPartType.Hand, body);
+//        foreach (var part in parts)
+//        {
+//            var partComp = part.Component;
+//            if (partComp.Symmetry != BodyPartSymmetry.Right)
+//                continue;
+//
+//            foreach (var child in bodySystem.GetBodyPartChildren(part.Id, part.Component))
+//                entityManager.QueueDeleteEntity(child.Id);
+//
+//            transformSystem.AttachToGridOrMap(part.Id);
+//            entityManager.QueueDeleteEntity(part.Id);
+//
+//            var newLimb = entityManager.SpawnAtPosition("RightHandXelthia", xform.Coordinates);
+//            if (entityManager.TryGetComponent(newLimb, out BodyPartComponent? limbComp))
+//                bodySystem.AttachPart(root.Value.Entity, "right hand", newLimb, root.Value.BodyPart, limbComp);
+//        }
     }
 }
