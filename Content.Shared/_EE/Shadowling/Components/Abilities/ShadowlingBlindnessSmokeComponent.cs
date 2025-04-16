@@ -1,4 +1,7 @@
+using Content.Shared.FixedPoint;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
+
 
 namespace Content.Shared._EE.Shadowling;
 
@@ -10,4 +13,16 @@ namespace Content.Shared._EE.Shadowling;
 public sealed partial class ShadowlingBlindnessSmokeComponent : Component
 {
     public string? ActionBlindnessSmoke = "ActionBlindnessSmoke";
+
+    [DataField]
+    public string Reagent = "ShadowlingToxin"; // innovative name
+
+    [DataField]
+    public float Duration = 5f;
+
+    [DataField]
+    public int SpreadAmount = 18;
+
+    [DataField]
+    public FixedPoint2 ReagentQuantity = 10f;
 }

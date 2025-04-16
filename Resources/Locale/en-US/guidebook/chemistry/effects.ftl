@@ -412,3 +412,17 @@ reagent-effect-guidebook-stamina-change =
                     *[1] decrease
                  }
     } stamina by {$amount} points
+
+# Shadowling
+
+reagent-effect-guidebook-blind-non-sling =
+    { $chance ->
+        [1] Blinds any
+        *[other] blind any
+    } non-shadowling
+
+reagent-effect-guidebook-heal-sling =
+    { $chance ->
+        [1] Heals any
+        *[other] heal any
+    } shadowling and thrall

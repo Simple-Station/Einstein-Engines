@@ -90,6 +90,7 @@ public sealed class ShadowlingCollectiveMindSystem : EntitySystem
             _stun.TryParalyze(thrall, TimeSpan.FromSeconds(comp.BaseStunTime * abiltiesAddedCount + 1), false);
         }
 
+        _actions.StartUseDelay(args.Action);
         // Shitcode end. If you ripped your eyes out, I can't blame you
     }
 }

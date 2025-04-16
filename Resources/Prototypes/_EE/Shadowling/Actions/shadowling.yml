@@ -133,7 +133,7 @@
   components:
   - type: InstantAction
     itemIconStyle: NoItem
-    # useDelay: 30
+    useDelay: 30
     icon:
       sprite: _EE/Shadowling/shadowling_abilities.rsi
       state: collective_mind
@@ -150,7 +150,7 @@
   components:
   - type: InstantAction
     itemIconStyle: NoItem
-    # useDelay: 60
+    useDelay: 60
     icon:
       sprite: _EE/Shadowling/shadowling_abilities.rsi
       state: blindness_smoke
