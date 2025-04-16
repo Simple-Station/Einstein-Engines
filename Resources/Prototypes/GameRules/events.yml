@@ -153,6 +153,11 @@
     minimumPlayers: 30
   - type: SpaceSpawnRule
   - type: AntagLoadProfileRule
+    speciesOverride: Human
+    speciesOverrideBlacklist:
+    - IPC # Their EMP will hit themselves lol
+    - Arachne # Cant wear suits
+    - Lamia # SNAKE WOMEN ARE NOT MADE FOR WAR
   - type: AntagObjectives
     objectives:
     - StealResearchObjective

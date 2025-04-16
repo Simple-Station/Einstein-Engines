@@ -30,10 +30,34 @@ public sealed class AntagLoadProfileRuleSystem : GameRuleSystem<AntagLoadProfile
         var profile = args.Session != null
             ? _prefs.GetPreferences(args.Session.UserId).SelectedCharacter as HumanoidCharacterProfile
             : HumanoidCharacterProfile.RandomWithSpecies();
-        if (profile?.Species is not {} speciesId || !_proto.TryIndex<SpeciesPrototype>(speciesId, out var species))
+
+        SpeciesPrototype? species;
+        if (ent.Comp.SpeciesOverride != null)
+        {
+            // Only override if species is in blacklist
+            var useOverride = false;
+            if (ent.Comp.SpeciesOverrideBlacklist != null && 
+                profile?.Species is { } speciesId &&
+                ent.Comp.SpeciesOverrideBlacklist.Contains(speciesId))
+            {
+                useOverride = true;
+            }
+            
+            species = useOverride 
+                ? _proto.Index(ent.Comp.SpeciesOverride.Value)
+                : (profile?.Species is { } id && _proto.TryIndex(id, out SpeciesPrototype? profileSpecies))
+                    ? profileSpecies
+                    : _proto.Index<SpeciesPrototype>(SharedHumanoidAppearanceSystem.DefaultSpecies);
+        }
+        else if (profile?.Species is not { } speciesId || !_proto.TryIndex(speciesId, out species))
+        {
             species = _proto.Index<SpeciesPrototype>(SharedHumanoidAppearanceSystem.DefaultSpecies);
+        }
 
         args.Entity = Spawn(species.Prototype);
-        _humanoid.LoadProfile(args.Entity.Value, profile!);
+        if (profile != null)
+        {
+            _humanoid.LoadProfile(args.Entity.Value, profile.WithSpecies(species.ID));
+        }
     }
 }

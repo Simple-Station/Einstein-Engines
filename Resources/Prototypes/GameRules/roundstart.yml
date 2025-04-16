@@ -14,7 +14,7 @@
     rules:
     - id: Thief
       prob: 0.5
-      
+
 - type: entity
   id: DeathMatch31
   parent: BaseGameRule
@@ -76,6 +76,11 @@
   - type: RuleGrids
   - type: AntagSelection
   - type: AntagLoadProfileRule
+    speciesOverride: Human
+    speciesOverrideBlacklist:
+    - IPC # Their EMP will hit themselves lol
+    - Arachne # Cant wear suits
+    - Lamia # SNAKE WOMEN ARE NOT MADE FOR WAR
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -282,7 +287,7 @@
   components:
   - type: RampingStationEventScheduler
     chaosModifier: 5 # By default, one event each 30-10 seconds after two hours. Changing CVars will cause this to deviate.
-    startingChaosRatio: 0.1 
+    startingChaosRatio: 0.1
     shiftLengthModifier: 2.5
 
 - type: entity
@@ -332,4 +337,4 @@
 #      orGroup: puddleMess
     - id: SmugglerStashVariationPass
       prob: 0.90
-      
+
