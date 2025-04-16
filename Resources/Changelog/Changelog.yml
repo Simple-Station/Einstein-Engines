@@ -15091,3 +15091,14 @@ Entries:
   id: 7156
   time: '2025-04-16T18:28:24.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2169
+- author: ilmenwe
+  changes:
+    - type: Remove
+      message: ContainerManager references
+    - type: Add
+      message: ContainerSystem references
+    - type: Tweak
+      message: some variable naming
+  id: 7157
+  time: '2025-04-16T18:32:06.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2231
