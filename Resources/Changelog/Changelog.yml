@@ -15075,3 +15075,12 @@ Entries:
   id: 7154
   time: '2025-04-16T16:44:11.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2255
+- author: Timfa2112
+  changes:
+    - type: Fix
+      message: >-
+        Fixed passport sometimes being closed while appearing open, and
+        vice-versa
+  id: 7155
+  time: '2025-04-16T18:26:18.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2243
