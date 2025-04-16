@@ -2,11 +2,11 @@
   id: SiikMaas
   category: TraitsSpeechLanguages
   points: -1
-  slots: 1
-  itemGroupSlots: 0
+  # slots: 1
+  # itemGroupSlots: 0
   requirements:
-    - !type:CharacterItemGroupRequirement
-      group: TraitsLanguagesBasic
+    # - !type:CharacterItemGroupRequirement
+    #   group: TraitsLanguagesBasic
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -26,11 +26,11 @@
   id: NalRasan
   category: TraitsSpeechLanguages
   points: -1
-  slots: 1
-  itemGroupSlots: 0
+  # slots: 1
+  # itemGroupSlots: 0
   requirements:
-    - !type:CharacterItemGroupRequirement
-      group: TraitsLanguagesBasic
+    # - !type:CharacterItemGroupRequirement
+    #   group: TraitsLanguagesBasic
     - !type:CharacterSpeciesRequirement
       species:
         - Tajaran
@@ -45,11 +45,11 @@
   id: SiikTajr
   category: TraitsSpeechLanguages
   points: -2
-  slots: 1
-  itemGroupSlots: 0
+  # slots: 1
+  # itemGroupSlots: 0
   requirements:
-    - !type:CharacterItemGroupRequirement
-      group: TraitsLanguagesBasic
+    # - !type:CharacterItemGroupRequirement
+    #   group: TraitsLanguagesBasic
     - !type:CharacterSpeciesRequirement
       species:
         - Tajaran
@@ -64,11 +64,11 @@
   id: YaSsa
   category: TraitsSpeechLanguages
   points: -2
-  slots: 1
-  itemGroupSlots: 0
+  # slots: 1
+  # itemGroupSlots: 0
   requirements:
-    - !type:CharacterItemGroupRequirement
-      group: TraitsLanguagesBasic
+    # - !type:CharacterItemGroupRequirement
+    #   group: TraitsLanguagesBasic
     - !type:CharacterSpeciesRequirement
       species:
         - Tajaran
@@ -83,11 +83,11 @@
   id: Delvahii
   category: TraitsSpeechLanguages
   points: -2
-  slots: 1
-  itemGroupSlots: 0
+  # slots: 1
+  # itemGroupSlots: 0
   requirements:
-    - !type:CharacterItemGroupRequirement
-      group: TraitsLanguagesBasic
+    # - !type:CharacterItemGroupRequirement
+    #   group: TraitsLanguagesBasic
     - !type:CharacterSpeciesRequirement
       species:
         - Tajaran

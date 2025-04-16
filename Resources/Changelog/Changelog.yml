@@ -14836,3 +14836,206 @@ Entries:
   id: 7130
   time: '2025-04-10T15:11:18.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2054
+- author: 3PonPon3
+  changes:
+    - type: Fix
+      message: Languages and accents now work. JOHN LANGUAGE IS FINALLY REAL!
+  id: 7131
+  time: '2025-04-10T21:43:38.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2212
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: >-
+        Added employer requirements to most roles. CHECK YOUR CHARACTER'S JOB
+        PREFERENCES AND EMPLOYER!
+  id: 7132
+  time: '2025-04-10T22:24:23.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2213
+- author: RocketBoss360
+  changes:
+    - type: Fix
+      message: telegnosis lets you return to your body now
+  id: 7133
+  time: '2025-04-11T05:55:20.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2209
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: Nanotrasen employees can take every job again
+  id: 7134
+  time: '2025-04-11T06:23:14.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2220
+- author: ilmenwe
+  changes:
+    - type: Add
+      message: removed references where a reference already existed
+    - type: Tweak
+      message: Tweaked the names of old refences to match the existing reference.
+  id: 7135
+  time: '2025-04-11T20:03:32.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2211
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: >-
+        Mosin damage buff nerfed to 1.5x, and melee damage buffed slightly too
+        (it has a bayonet)
+    - type: Tweak
+      message: 'Chester now does 1.65x damage '
+  id: 7136
+  time: '2025-04-11T20:53:08.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2218
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Reworked and fixed Psionic Invisibility. It now has actual psychic
+        casting stat scaling.
+  id: 7137
+  time: '2025-04-11T23:15:15.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2223
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Tweak
+      message: >-
+        Loadouts' and traits' tooltips are much easier to read and look better
+        (and cooler of course)
+  id: 7138
+  time: '2025-04-12T00:43:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2221
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Humans now have +2 bonus trait points. It's also possible now for
+        "overpowered" species to have fewer trait points, although this is not
+        currently used.
+  id: 7139
+  time: '2025-04-12T00:46:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2222
+- author: Will-Oliver-Br
+  changes:
+    - type: Tweak
+      message: New sprite from chemmaster
+  id: 7140
+  time: '2025-04-12T00:48:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2174
+- author: Timfa2112
+  changes:
+    - type: Remove
+      message: Removed Cybersun
+    - type: Add
+      message: >-
+        Added Zavodskoi Interstellar to replace Cybersun (Cybersun was a
+        stand-in for Zavodskoi, but no longer)
+  id: 7141
+  time: '2025-04-12T02:17:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2228
+- author: Diggy
+  changes:
+    - type: Add
+      message: >-
+        People were using IPC markings to become invisible, now they can only
+        take doll joints markings in the overlay section.
+  id: 7142
+  time: '2025-04-12T22:41:40.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2233
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: >-
+        Ported almost all of Goob LRPs chems, have fun playing with them
+        chemistry mains
+  id: 7143
+  time: '2025-04-13T00:31:33.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2184
+- author: Tirochora
+  changes:
+    - type: Add
+      message: fire has been re-added to the game for more than about a half a second
+    - type: Tweak
+      message: fire shouldn't ash people at tiny amounts
+  id: 7144
+  time: '2025-04-13T03:26:05.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2217
+- author: Timfa2112
+  changes:
+    - type: Remove
+      message: Command members can no longer take the Muted trait
+  id: 7145
+  time: '2025-04-14T02:52:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2210
+- author: Zeta_Null
+  changes:
+    - type: Tweak
+      message: >-
+        Made the N14 wood types look less horrifically jpeg compressed and like
+        they were taken from a screenshot of a screenshot of some wood tiles.
+        holy fuck they were bad.
+  id: 7146
+  time: '2025-04-14T02:52:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2227
+- author: Tirochora
+  changes:
+    - type: Fix
+      message: Lots of martial arts bugfixes
+    - type: Tweak
+      message: >-
+        Martial arts combos that require a grab require the target to remain
+        grabbed. Have fun landing judo throw.
+    - type: Tweak
+      message: >-
+        Adjusted the stamina damage of CQC's disarm and the effects of CQC's
+        kick combo.
+    - type: Fix
+      message: Krav Maga properly gives you more unarmed damage.
+  id: 7147
+  time: '2025-04-14T03:12:37.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2239
+- author: Orion-416
+  changes:
+    - type: Add
+      message: >-
+        Ported over Responsory, Inquisitory, Apocryphal, Corporate, Praetorian
+        modsuits from TG station
+  id: 7148
+  time: '2025-04-14T10:32:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2200
+- author: Mike32oz
+  changes:
+    - type: Fix
+      message: 'asterisk spawn-point '
+  id: 7149
+  time: '2025-04-15T04:30:34.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2240
+- author: ilmenwe
+  changes:
+    - type: Add
+      message: >-
+        spawncorporatestamp, spawnspecificcorporatestamp and
+        marking-ThavenChestScales
+  id: 7150
+  time: '2025-04-15T04:30:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2236
+- author: ilmenwe
+  changes:
+    - type: Tweak
+      message: resource composition
+  id: 7151
+  time: '2025-04-15T04:32:01.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2237
+- author: 3PonPon3
+  changes:
+    - type: Add
+      message: >-
+        Traits that increase your surgery speed, Surgery Training (1.6, between
+        intern and standard doc) for non-medical, and Experienced Surgeon (2.5,
+        same as CMO) for medical w/o intern and with corpsman
+    - type: Tweak
+      message: CPR Training cost 4 -> 3
+    - type: Fix
+      message: BSO can no longer take the CPR trait as they already have it innately
+  id: 7152
+  time: '2025-04-15T20:14:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2238
