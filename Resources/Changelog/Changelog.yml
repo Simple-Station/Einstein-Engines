@@ -15132,3 +15132,50 @@ Entries:
   id: 7161
   time: '2025-04-16T18:55:46.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2232
+- author: Kirisune
+  changes:
+    - type: Add
+      message: >-
+        mk 32 "Universal" non-lethal and security versions together with special
+        incendiary, uranium and shrapnel mags.
+    - type: Add
+      message: >-
+        mk 32 "Universal" integrated in to research and unlocking at "Advanced
+        Weapons" at tier 2 armory. Special mags are locked behind relevant ammo
+        researches.
+    - type: Add
+      message: >-
+        mk 32 "Universal" integrated in to security techfab. The pistol and its
+        mags cost slightly more to make then N1984. Standard empty, lethal and
+        non-lethal mags can be made round start.
+    - type: Add
+      message: >-
+        mk 32 "Universal" as a loadout option for senior officer costing
+        <s>5</s> 6 points to pick, mags costing 4 points each.
+    - type: Add
+      message: >-
+        Filled corporate judo belt as a loadout option for senior officer
+        costing 2 points. Belt is filled with standard security belt items
+        excluding stun baton.
+    - type: Add
+      message: Disabler SMG as a loadout option for senior officer costing 2 points.
+    - type: Add
+      message: >-
+        Filled corporate judo belt as a loadout option for Head of Security with
+        a unique sprite and costing 2 points.
+    - type: Tweak
+      message: >-
+        Disabler SMG stamina damage increase from 15 to <s>25</s> 20. Still
+        lower then a standard disabler but now its more reasonable to carry it
+        as a duty weapon despite how bulky it is compared to other options.
+    - type: Tweak
+      message: >-
+        Security formal suit, senior trooper uniform and senior trooper hat are
+        now senior officers exclusives.
+    - type: Tweak
+      message: >-
+        mk 32 "Universal" added missing accuracy components making it not be
+        laser accurate.
+  id: 7162
+  time: '2025-04-16T18:56:42.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2215
