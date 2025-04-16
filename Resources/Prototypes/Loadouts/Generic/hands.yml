@@ -107,3 +107,32 @@
       group: LoadoutGloves
   items:
     - ClothingClothWrap
+
+- type: loadout
+  id: ClothingHandsTacticalMaidGlovesLoadout
+  category: Hands
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHandsTacticalMaidGlovesLoadout
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGloves
+
+- type: loadout
+  id: ClothingHandsGlovesCombatTCAF
+  category: Hands
+  cost: 3
+  canBeHeirloom: true
+  guideEntry: TCFLInfo
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGloves
+    - !type:CharacterNationalityRequirement
+      nationalities:
+        - Bieselite
+    - !type:CharacterLifepathRequirement
+      lifepaths:
+        - WarVet
+  items:
+    - ClothingHandsGlovesCombatTCAF

@@ -1,0 +1,13 @@
+- type: entity
+  id: FieldSurgeryKit
+  name: field surgery kit
+  description: "A combat medical kit repurposed for storing advanced surgical tools for surgery on the go."
+  parent: MedkitCombat
+  components:
+  - type: StorageFill
+    contents:
+      - id: EnergyCautery
+      - id: EnergyScalpel
+      - id: AdvancedRetractor
+      - id: BoneGel
+      - id: SyringeCaseFilled

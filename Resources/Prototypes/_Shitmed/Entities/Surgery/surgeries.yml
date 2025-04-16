@@ -389,6 +389,17 @@
     part: Torso
 
 - type: entity
+  parent: SurgeryRemoveBrainTorso
+  id: SurgeryRemovePosibrain
+  name: Remove Brain
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SurgeryOrganCondition
+    organ:
+    - type: BorgBrain
+    slotId: posibrain
+
+- type: entity
   parent: SurgeryBase
   id: SurgeryInsertBrain
   name: Insert Brain
@@ -417,6 +428,26 @@
   components:
   - type: SurgeryPartCondition
     part: Torso
+
+- type: entity
+  parent: SurgeryInsertBrainTorso
+  id: SurgeryInsertPosibrain
+  name: Insert Brain
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SurgeryOrganCondition
+    organ:
+    - type: BorgBrain
+    slotId: posibrain
+
+- type: entity
+  parent: SurgeryInsertBrainTorso
+  id: SurgeryInsertSlimeCore
+  name: Insert Brain
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SurgeryOrganCondition
+    slotId: core
 
 - type: entity
   parent: SurgeryBase

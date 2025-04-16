@@ -325,3 +325,16 @@
    - type: Tag
      tags:
        - MindShield
+
+# Example component adding implant
+- type: entity
+  parent: BaseSubdermalImplant
+  id: ComponentImplant
+  name: Add A component DEBUG
+  description: Example component adding implant
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubdermalImplant
+  - type: AddComponentsImplant
+    componentsToAdd:
+    - type: Dispellable

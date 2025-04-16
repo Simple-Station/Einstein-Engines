@@ -9,6 +9,11 @@
       traits:
         - Foreigner
         - ForeignerLight
+    - !type:CharacterEmployerRequirement
+      employers:
+      - NanoTrasen
+      - ZavodskoiInterstellar
+      - HephaestusIndustries
   weight: 10
   startingGear: ChiefEngineerGear
   icon: "JobIconChiefEngineer"
@@ -44,7 +49,7 @@
     back: ClothingBackpackChiefEngineerFilled
     shoes: ClothingShoesColorBrown
     id: CEPDA
-    ears: ClothingHeadsetCE
+    ears: ClothingHeadsetAltEngineering # Goobstation
   innerClothingSkirt: ClothingUniformJumpskirtChiefEngineer
   satchel: ClothingBackpackSatchelChiefEngineerFilled
   duffelbag: ClothingBackpackDuffelChiefEngineerFilled

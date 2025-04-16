@@ -14,6 +14,10 @@
       - state: inhand-right
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/plain.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+      - state: on-equipped-HELMET
   - type: ToggleableLightVisuals
     inhandVisuals:
       left:
@@ -194,14 +198,10 @@
     sprite: Clothing/Head/Envirohelms/ancientvoid.rsi
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/ancientvoid.rsi
-    clothingVisuals:
-      head:
-      - state: equipped-HELMET
-      - state: visor-equipped-HELMET
   - type: ToggleableLightVisuals
     clothingVisuals:
       head:
-      - state: visor-equipped-HELMET
+      - state: on-equipped-HELMET
         shader: unshaded
   - type: PointLight
     color: "#ffffff"
@@ -313,7 +313,6 @@
     sprite: Clothing/Head/Envirohelms/roboticist.rsi
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/roboticist.rsi
-
 - type: entity
   parent: ClothingHeadEnvirohelmBase
   id: ClothingHeadEnvirohelmSalvage
@@ -1253,8 +1252,8 @@
 - type: entity
   parent: ClothingHeadEnvirohelmCustomBase
   id: ClothingHeadEnvirohelmNanotrasenRepresentative
-  name: nanotrasen representative envirosuit helmet
-  description: A black envirosuit helmet worn by the NanoTrasen Representative, with black and gold accents.
+  name: corporate liaison envirosuit helmet
+  description: A black envirosuit helmet worn by the Corporate Liaison, with black and gold accents.
   components:
   - type: Sprite
     layers:

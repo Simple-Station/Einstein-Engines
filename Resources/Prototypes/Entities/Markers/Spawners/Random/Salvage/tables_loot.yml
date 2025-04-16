@@ -87,7 +87,7 @@
     - id: SheetPlasma1
       amount: !type:RangeNumberSelector
         range: 3, 5
-    - id: ResearchDisk
+    - id: ResearchDisk5000
     - id: DrinkGoldenCup
     - id: TreasureSampleTube
     - !type:NestedSelector
@@ -105,6 +105,7 @@
     - id: IngotGold1
       amount: !type:RangeNumberSelector
         range: 3, 5
+    - id: ResearchDisk10000
     - id: TreasureDatadiskEncrypted
     - !type:GroupSelector
       children:
@@ -115,7 +116,10 @@
       tableId: TreasureCoinPile
       rolls: !type:RangeNumberSelector
         range: 4, 7
-    - id: SpaceCash1000
+    - id: SpaceCash5000
+    - id: WristwatchGold
+    - !type:NestedSelector
+      tableId: RingTableCommon
 
 - type: entityTable
   id: SalvageTreasureRare
@@ -125,7 +129,7 @@
     - id: TreasureCPUSupercharged
     - id: TechnologyDiskRare
       weight: 0.5
-    - id: ResearchDisk10000
+    - id: ResearchDisk20000
       weight: 0.5
     - !type:NestedSelector
       tableId: TreasureCoinPileRare
@@ -138,14 +142,16 @@
         rolls: !type:RangeNumberSelector
           range: 3, 5
         children:
-        - id: SpaceCash1000
-          weight: 60
-        - id: SpaceCash2500
-          weight: 25
-        - id: SpaceCash5000
-          weight: 14
         - id: SpaceCash10000
+          weight: 60
+        - id: SpaceCash20000
+          weight: 25
+        - id: SpaceCash30000
+          weight: 14
+        - id: SpaceCash50000
           weight: 1
+    - !type:NestedSelector
+      tableId: RingTableRare
 
 - type: entityTable
   id: SalvageTreasureLegendary
@@ -153,11 +159,17 @@
     children:
     - id: ClothingMaskGoldenCursed
     - id: ClothingHeadHatFancyCrown
+    - id: ResearchDisk50000
     - id: GoldenBikeHorn
     - id: ClothingHeadHatCatEars
     - id: TreasureCoinDiamond
       amount: !type:RangeNumberSelector
         range: 2, 5
+    - !type:NestedSelector
+      tableId: RingTableRare
+      rolls: !type:RangeNumberSelector
+        range: 2, 3
+    - id: SpaceCash100000
 
 # Equipment: Tools and things used by salvagers. Quote unquote "Gamer Loot"
 

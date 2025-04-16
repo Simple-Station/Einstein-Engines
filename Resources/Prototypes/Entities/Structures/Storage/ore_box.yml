@@ -55,6 +55,8 @@
     maxItemSize: Normal
     storageOpenSound: /Audio/Effects/closetopen.ogg
     storageCloseSound: /Audio/Effects/closetclose.ogg
+    quickInsert: true
+    areaInsert: true
     whitelist:
       tags:
       - ArtifactFragment # Lavaland Change

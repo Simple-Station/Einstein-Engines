@@ -229,6 +229,8 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: FlashImmunity # Goobstation
+  - type: FlashSoundSuppression # Goobstation
 
 #Brigmedic Hardsuit
 - type: entity
@@ -256,6 +258,8 @@
   - type: PressureProtection
     highPressureMultiplier: 0.6
     lowPressureMultiplier: 1000
+  - type: FlashImmunity # Goobstation
+  - type: FlashSoundSuppression # Goobstation
 
 #Warden's Hardsuit
 - type: entity
@@ -281,6 +285,8 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: FlashImmunity # Goobstation
+  - type: FlashSoundSuppression # Goobstation
 
 #Captain's Hardsuit
 - type: entity
@@ -297,6 +303,8 @@
   - type: PressureProtection
     highPressureMultiplier: 0.3
     lowPressureMultiplier: 1000
+  - type: FlashImmunity # Goobstation
+  - type: FlashSoundSuppression # Goobstation
 
 #Chief Engineer's Hardsuit
 - type: entity
@@ -376,6 +384,8 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: FlashImmunity # Goobstation
+  - type: FlashSoundSuppression # Goobstation
 
 #Luxury Mining Hardsuit
 - type: entity
@@ -435,14 +445,23 @@
   components:
   - type: BreathMask
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/syndicate.rsi
+    sprite: _Impstation/Clothing/Head/Hardsuits/syndicate.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hardsuits/syndicate.rsi
+    sprite: _Impstation/Clothing/Head/Hardsuits/syndicate.rsi
+    clothingVisuals:
+      head:
+      - state: off-equipped-head
+      - state: off-equipped-HELMET-glow
+        shader: unshaded
   - type: PointLight
     color: green
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
+  - type: HideLayerClothing
+    slots:
+    - Snout
+    - Hair
   - type: Armor
     modifiers:
       coefficients:
@@ -450,6 +469,8 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: FlashImmunity # Goobstation
+  - type: FlashSoundSuppression # Goobstation
 
 #Blood-red Medic Hardsuit
 - type: entity
@@ -460,14 +481,23 @@
   components:
   - type: BreathMask
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/syndiemedic.rsi
+    sprite: _Impstation/Clothing/Head/Hardsuits/syndicate_agent.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hardsuits/syndiemedic.rsi
+    sprite: _Impstation/Clothing/Head/Hardsuits/syndicate_agent.rsi
+    clothingVisuals:
+      head:
+      - state: off-equipped-HELMET
+      - state: off-equipped-HELMET-glow
+        shader: unshaded
   - type: PointLight
     color: green
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
+  - type: HideLayerClothing
+    slots:
+    - Snout
+    - Hair
   - type: Armor
     modifiers:
       coefficients:
@@ -475,6 +505,8 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: FlashImmunity # Goobstation
+  - type: FlashSoundSuppression # Goobstation
 
 #Syndicate Elite Hardsuit
 - type: entity
@@ -514,14 +546,23 @@
   components:
   - type: BreathMask
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/syndieelite.rsi
+    sprite: _Impstation/Clothing/Head/Hardsuits/syndicate_elite.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hardsuits/syndieelite.rsi
+    sprite: _Impstation/Clothing/Head/Hardsuits/syndicate_elite.rsi
+    clothingVisuals:
+      head:
+      - state: off-equipped-HELMET
+      - state: off-equipped-HELMET-glow
+        shader: unshaded
   - type: PointLight
     color: red
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
+  - type: HideLayerClothing
+    slots:
+    - Snout
+    - Hair
   - type: TemperatureProtection
     coefficient: 0.005
   - type: FireProtection
@@ -533,6 +574,8 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: FlashImmunity # Goobstation
+  - type: FlashSoundSuppression # Goobstation
 
 #Syndicate Commander Hardsuit
 - type: entity
@@ -543,14 +586,23 @@
   components:
   - type: BreathMask
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/syndiecommander.rsi
+    sprite: _Impstation/Clothing/Head/Hardsuits/syndicate_commander.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hardsuits/syndiecommander.rsi
+    sprite: _Impstation/Clothing/Head/Hardsuits/syndicate_commander.rsi
+    clothingVisuals:
+      head:
+      - state: off-equipped-HELMET
+      - state: off-equipped-HELMET-glow
+        shader: unshaded
   - type: PointLight
     color: green
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
+  - type: HideLayerClothing
+    slots:
+    - Snout
+    - Hair
   - type: Armor
     modifiers:
       coefficients:
@@ -558,6 +610,8 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: FlashImmunity # Goobstation
+  - type: FlashSoundSuppression # Goobstation
 
 #Cybersun Juggernaut Hardsuit
 - type: entity
@@ -568,12 +622,21 @@
   components:
   - type: BreathMask
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/cybersun.rsi
+    sprite: _Impstation/Clothing/Head/Hardsuits/syndicate_juggernaut.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hardsuits/cybersun.rsi
+    sprite: _Impstation/Clothing/Head/Hardsuits/syndicate_juggernaut.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+      - state: equipped-HELMET-glow
+        shader: unshaded
   - type: PressureProtection
     highPressureMultiplier: 0.3
     lowPressureMultiplier: 1000
+  - type: HideLayerClothing
+    slots:
+    - Snout
+    - Hair
   - type: Armor
     modifiers:
       coefficients:
@@ -581,6 +644,8 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: FlashImmunity # Goobstation
+  - type: FlashSoundSuppression # Goobstation
 
 #Wizard Hardsuit
 - type: entity
@@ -606,6 +671,8 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: FlashImmunity # Goobstation
+  - type: FlashSoundSuppression # Goobstation
 
 #Organic Space Suit
 - type: entity
@@ -656,6 +723,8 @@
   - type: PressureProtection
     highPressureMultiplier: 0.3
     lowPressureMultiplier: 1000
+  - type: FlashImmunity # Goobstation
+  - type: FlashSoundSuppression # Goobstation
 
 #CENTCOMM / ERT HARDSUITS
 #ERT Leader Hardsuit
@@ -807,6 +876,8 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: FlashImmunity # Goobstation
+  - type: FlashSoundSuppression # Goobstation
 
 #Deathsquad Hardsuit
 - type: entity
@@ -836,6 +907,9 @@
     isEquipment: true
     color: "#98EEFB"
     lightRadius: 15
+  - type: FlashImmunity # Goobstation
+  - type: FlashSoundSuppression # Goobstation
+    protectionRange: 0
 
 #MISC. HARDSUITS
 #Clown Hardsuit

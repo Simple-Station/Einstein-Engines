@@ -12,6 +12,11 @@
   - Psychologist # DeltaV - Add Psychologist access
   extendedAccess:
   - Chemistry
+  requirements:
+    - !type:CharacterEmployerRequirement
+      employers:
+      - Interdyne
+      - NanoTrasen
 
 - type: startingGear
   id: PsychologistGear

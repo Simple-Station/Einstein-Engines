@@ -34,7 +34,7 @@ namespace Content.Server.Objectives.Systems
         private float GetProgress(float target)
         {
             var progress = Math.Min(_glimmer.GlimmerOutput / target, 1f);
-            return progress;
+            return (float) progress;
         }
     }
 }

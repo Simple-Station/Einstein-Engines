@@ -10,6 +10,10 @@
         - Foreigner
         - ForeignerLight
         - Pacifist
+        - Muted
+    - !type:CharacterEmployerRequirement
+      employers:
+      - NanoTrasen
   weight: 20
   startingGear: CaptainGear
   icon: "JobIconCaptain"

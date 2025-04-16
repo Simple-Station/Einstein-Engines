@@ -183,10 +183,7 @@ namespace Content.Server.Carrying
             // Check if the victim is in any way incapacitated, and if not make an escape attempt.
             // Escape time scales with the inverse of a mass contest. Being lighter makes escape harder.
             if (_actionBlockerSystem.CanInteract(uid, component.Carrier))
-            {
-                var disadvantage = _contests.MassContest(component.Carrier, uid, false, 2f);
-                _escapeInventorySystem.AttemptEscape(uid, component.Carrier, escape, disadvantage);
-            }
+                _escapeInventorySystem.AttemptEscape(uid, component.Carrier, escape, _contests.MassContest(uid, component.Carrier, false, 2f));
         }
 
         private void OnMoveAttempt(EntityUid uid, BeingCarriedComponent component, UpdateCanMoveEvent args)

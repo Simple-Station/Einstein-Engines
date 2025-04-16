@@ -7,6 +7,11 @@
     - !type:CharacterDepartmentTimeRequirement
       department: Medical
       min: 28800 # DeltaV - 8 hours
+    - !type:CharacterEmployerRequirement
+      employers:
+      - ZengHuPharmaceuticals
+      - Interdyne
+      - NanoTrasen
   startingGear: ChemistGear
   icon: "JobIconChemist"
   supervisors: job-supervisors-cmo

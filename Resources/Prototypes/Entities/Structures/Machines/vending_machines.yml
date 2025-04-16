@@ -892,7 +892,7 @@
   parent: VendingMachine
   id: VendingMachineMedical
   name: NanoMed Plus
-  description: It's a medical drug dispenser. Natural chemicals only!
+  description: It's a medical drug dispenser. Natural chemicals only! (And wheelchairs, why not) # Goobstation
   components:
   - type: VendingMachine
     pack: NanoMedPlusInventory
@@ -1559,6 +1559,8 @@
         type: ShopVendorBoundUserInterface
       enum.WiresUiKey.Key:
         type: WiresBoundUserInterface
+      enum.MiningVoucherUiKey.Key:
+        type: MiningVoucherBoundUserInterface
   - type: Wires # DeltaV: Use shop vendor wires layout
     layoutId: ShopVendor
   - type: AccessReader

@@ -133,7 +133,7 @@
     - Back
     - Belt
   - type: Reflect
-    reflectProb: 0.3
+    reflectProb: 0.5
     velocityBeforeNotMaxProb: 6.0 # don't punish ninjas for being ninjas
     velocityBeforeMinProb: 10.0
 

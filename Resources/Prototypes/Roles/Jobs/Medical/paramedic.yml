@@ -10,6 +10,11 @@
     - !type:CharacterDepartmentTimeRequirement # DeltaV - Medical dept time requirement
       department: Medical
       min: 28800 # DeltaV - 8 hours
+    - !type:CharacterEmployerRequirement
+      employers:
+      - Interdyne
+      - NanoTrasen
+      - ZengHuPharmaceuticals
     # - !type:OverallPlaytimeRequirement # DeltaV - No playtime requirement
     #   time: 54000 # 15 hrs
   startingGear: ParamedicGear

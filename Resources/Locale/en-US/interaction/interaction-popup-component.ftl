@@ -36,7 +36,7 @@ petting-success-nymph = You pet {THE($target)} on {POSS-ADJ($target)} wooden lit
 petting-failure-generic = You reach out to pet {THE($target)}, but {SUBJECT($target)} {CONJUGATE-BE($target)} aloof towards you.
 
 petting-failure-bat = You reach out to pet {THE($target)}, but {SUBJECT($target)} {CONJUGATE-BE($target)} too hard to catch!
-petting-failure-carp = You reach out to pet {THE($target)}, but {POSS_ADJ($target)} sharp teeth make you think twice.
+petting-failure-carp = You reach out to pet {THE($target)}, but {POSS-ADJ($target)} sharp teeth make you think twice.
 petting-failure-corrupted-corgi = You reach out to pet {THE($target)}, but think better of it.
 petting-failure-crab = You reach out to pet {THE($target)}, but {SUBJECT($target)} snaps {POSS-ADJ($target)} claws in your general direction!
 petting-failure-dehydrated-carp = You pet {THE($target)} on {POSS-ADJ($target)} dry little head.
@@ -77,6 +77,8 @@ petting-success-station-ai = You pet {THE($target)} on {POSS-ADJ($target)} cold,
 petting-success-gladiabot = You pet {THE($target)} on {POSS-ADJ($target)} vicious cardboard head.
 petting-success-batonbot = You pet {THE($target)} on {POSS-ADJ($target)} protective metal head.
 petting-success-disablerbot = You pet {THE($target)} on {POSS-ADJ($target)} protective metal head.
+petting-success-minebot = You pet {THE($target)} on {POSS-ADJ($target)} hardened metal head.
+petting-success-fillbot = You pet {THE($target)} on {POSS-ADJ($target)} diligent metal head.
 
 petting-failure-honkbot = You reach out to pet {THE($target)}, but {SUBJECT($target)} honks in refusal!
 petting-failure-cleanbot = You reach out to pet {THE($target)}, but {SUBJECT($target)} {CONJUGATE-BE($target)} busy mopping!
@@ -97,6 +99,8 @@ petting-failure-station-ai = You reach out to pet {THE($target)}, but {SUBJECT($
 petting-failure-gladiabot = You reach out to pet {THE($target)}, but {SUBJECT($target)} {CONJUGATE-BE($target)} only wants to fight!
 petting-failure-batonbot = You reach out to pet {THE($target)}, but {SUBJECT($target)} nearly prods you with its baton!
 petting-failure-disablerbot = You reach out to pet {THE($target)}, but {SUBJECT($target)} angrily waves its weapon at you!
+petting-failure-minebot = You reach out to pet {THE($target)}, but {SUBJECT($target)} nearly swings its pickaxe at you!
+petting-failure-fillbot = You reach out to pet {THE($target)}, but {SUBJECT($target)} pushes your hand away!
 
 petting-success-station-ai-others = { CAPITALIZE(THE($user)) } pets {THE($target)} on {POSS-ADJ($target)} cold, square screen.
 
@@ -115,3 +119,8 @@ hugging-success-generic-target = { CAPITALIZE(THE($user)) } hugs you.
 petting-success-tesla = You pet {THE($target)}, violating the laws of nature and physics.
 
 petting-failure-tesla = You reach out towards {THE($target)}, but it zaps your hand away.
+
+## Lavaland
+
+petting-success-magmahand = Somehow, miraculously, you pet {THE($target)} on {POSS-ADJ($target)} red-hot surface.
+petting-failure-magmahand = You reach out to pet {THE($target)}, but {POSS-ADJ($target)} blistering hot surface makes you reconsider.

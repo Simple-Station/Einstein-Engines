@@ -75,6 +75,7 @@ entities:
             5: -2,-1
             6: -2,0
     - type: GridAtmosphere
+      simulatedTurf: false
       version: 2
       data:
         tiles:
@@ -374,7 +375,7 @@ entities:
     - type: Transform
       pos: 0.52966046,-0.47381306
       parent: 52
-- proto: ClothingHeadHatPirateTricord
+- proto: ClothingHeadHatPirateTricorn
   entities:
   - uid: 15
     components:

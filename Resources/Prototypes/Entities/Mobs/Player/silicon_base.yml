@@ -110,9 +110,9 @@
         - map: ["enum.HumanoidVisualLayers.LArm"]
         - map: ["enum.HumanoidVisualLayers.RLeg"]
         - map: ["enum.HumanoidVisualLayers.LLeg"]
-        - shader: StencilClear
-          sprite: Mobs/Species/Human/parts.rsi
-          state: l_leg
+#     - shader: StencilClear
+#      sprite: Mobs/Species/Human/parts.rsi
+#      state: l_leg
         - shader: StencilMask
           map: ["enum.HumanoidVisualLayers.StencilMask"]
           sprite: Mobs/Customization/masking_helpers.rsi
@@ -338,5 +338,8 @@
   coefficients:
     Poison: 0
     Cold: 0.2
-    Heat: 2
-    Shock: 2.5
+    Heat: 1
+    Shock: 3 # Ion merged with shock, they lost their heat damage weakness, they should be extremely weak to this rare damage type considering its shocking electronics
+    Blunt: 1
+    Slash: 1
+    Piercing: 1

@@ -1,0 +1,8 @@
+marking-ZetaEMWhiskers = Moustache (E.M. Whiskers)
+marking-ZetaSpiderWhiskers = Moustache (Spider Whiskers)
+marking-ZetaTwirlable = Moustache (Twirlable)
+marking-ZetaVoluminous = Beard (Voluminous)
+marking-ZetaWalrus = Moustache (Walrus, Zeta)
+marking-ZetaWizardous = Beard (Wizardous)
+marking-ZetaWorkinMan = Beard (Workin' Man)
+marking-ZetaOnTheChin = Beard (On the Chin)

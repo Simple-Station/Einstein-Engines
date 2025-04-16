@@ -82,7 +82,9 @@ telegnosis-power-initialization-feedback =
 telegnosis-power-metapsionic-feedback = {CAPITALIZE($entity)}'s soul travels across bridges composed of dreamlight
 
 # Psionic Invisibility
-psionic-invisibility-power-description = Render yourself invisible to any entity that could potentially be psychic. Borgs, animals, and so on are not affected.
+psionic-invisibility-power-description =
+    Render yourself invisible to any entity that could potentially be psychic. Borgs, animals, and so on are not affected.
+    This doesn't last forever, and its duration scales with your psychic amplification factor.
 psionic-invisibility-power-initialization-feedback =
     I suddenly find myself plunged into a world utterly without light, yet I can feel the rays of warmth cast upon me.
     Pondering this, I arrive at a realization that sight itself is an illusion. I reject it, I deny that light itself is real.
@@ -191,6 +193,14 @@ assay-power-initialization-feedback =
     I descend into the dreamlight once more, there I drink more fully of the cup of knowledge. The touch of the noosphere upon others becomes known to me,
     I can cast my will upon them, divining the inner nature of others.
 assay-power-metapsionic-feedback = {CAPITALIZE($entity)} bears a spark of the divine's judgment, they have drunk deeply of the cup of knowledge.
+
+# Anoigo Power
+action-name-anoigo = Anoigo
+action-description-anoigo = Open locked and bolted doors.
+anoigo-power-initialization-feedback=
+    Knowledge arrived to me in a bottle alongside the shores of Entropy.
+    Gatekeepers of riches and secrets can be persuaded if you speak their tongue.
+anoigo-power-metapsionic-feedback = {CAPITALIZE($entity)} possesses the Gatekeeper's tongue.
 
 # Entity Specific Feedback Messages
 ifrit-feedback = A spirit of Gehenna, bound by the will of a powerful psychic

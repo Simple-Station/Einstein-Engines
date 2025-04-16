@@ -1,0 +1,144 @@
+- type: entity
+  name: passport
+  parent: BaseItem
+  id: BasePassport
+  abstract: true
+  description: A passport denoting an individual's nationality and identity.
+  components:
+    - type: Passport
+    - type: Sprite
+      sprite: _EE/Contractors/Passport.rsi
+      layers:
+      - state: passport_biesel_open
+      - state: passport_species_human
+    - type: Appearance
+    - type: EmitSoundOnPickup
+      sound: /Audio/SimpleStation14/Items/Handling/book_pickup.ogg
+    - type: EmitSoundOnDrop
+      sound: /Audio/SimpleStation14/Items/Handling/book_drop.ogg
+    - type: EmitSoundOnLand
+      sound: /Audio/SimpleStation14/Items/Handling/book_drop.ogg
+
+- type: entity
+  name: Biesel Republic passport
+  parent: BasePassport
+  id: BieselPassport
+  components:
+    - type: Sprite
+      sprite: _EE/Contractors/Passport.rsi
+      layers:
+      - state: passport_biesel_open
+      - state: passport_species_human
+    - type: ExtendDescription
+      descriptionList:
+      - description: "bieselite_view_biesel_passport"
+        fontSize: 12
+        color: "#77ff77"
+        requireDetailRange: true
+        requirements:
+        - !type:CharacterNationalityRequirement
+          nationalities:
+          - Bieselite
+      - description: "solarian_view_biesel_passport"
+        fontSize: 12
+        color: "#ff7777"
+        requireDetailRange: true
+        requirements:
+        - !type:CharacterNationalityRequirement
+          nationalities:
+          - Solarian
+
+- type: entity
+  name: Solarian Alliance passport
+  parent: BasePassport
+  id: SolPassport
+  components:
+    - type: Sprite
+      sprite: _EE/Contractors/Passport.rsi
+      layers:
+      - state: passport_sol_open
+      - state: passport_species_human
+    - type: ExtendDescription
+      descriptionList:
+      - description: "bieselite_view_sol_passport"
+        fontSize: 12
+        color: "#ff7777"
+        requireDetailRange: true
+        requirements:
+        - !type:CharacterNationalityRequirement
+          nationalities:
+          - Bieselite
+      - description: "solarian_view_sol_passport"
+        fontSize: 12
+        color: "#77ff77"
+        requireDetailRange: true
+        requirements:
+        - !type:CharacterNationalityRequirement
+          nationalities:
+          - Solarian
+
+- type: entity
+  name: Republic of Elyra passport
+  parent: BasePassport
+  id: ElyranPassport
+  components:
+    - type: Sprite
+      sprite: _EE/Contractors/Passport.rsi
+      layers:
+      - state: passport_elyran_open
+      - state: passport_species_human
+
+- type: entity
+  name: Valyrian 4b passport
+  parent: BasePassport
+  id: ValyrianPassport
+  components:
+    - type: Sprite
+      sprite: _EE/Contractors/Passport.rsi
+      layers:
+      - state: passport_valyrian_open
+      - state: passport_species_human
+
+- type: entity
+  name: New-Netherlands passport
+  parent: BasePassport
+  id: NederlandicPassport
+  components:
+    - type: Sprite
+      sprite: _EE/Contractors/Passport.rsi
+      layers:
+      - state: passport_nederlandic_open
+      - state: passport_species_human
+
+- type: entity
+  name: Izweski Hegemony passport
+  parent: BasePassport
+  id: IzweskiPassport
+  components:
+    - type: Sprite
+      sprite: _EE/Contractors/Passport.rsi
+      layers:
+      - state: passport_izweski_open
+      - state: passport_species_human
+
+- type: entity
+  name: People's Republic of Adhomai passport
+  parent: BasePassport
+  id: AdhomaiPassport
+  components:
+    - type: Sprite
+      sprite: _EE/Contractors/Passport.rsi
+      layers:
+      - state: passport_adhomai_open
+      - state: passport_species_human
+
+- type: entity
+  name: Golden Deep passport
+  parent: BasePassport
+  id: GoldenDeepPassport
+  components:
+    - type: Sprite
+      sprite: _EE/Contractors/Passport.rsi
+      layers:
+      - state: passport_goldendeep_open
+      - state: passport_species_ipc

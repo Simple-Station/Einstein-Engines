@@ -11,6 +11,7 @@
   nameDataset: NamesAI
   spawnLoadout: false
   applyTraits: false
+  canHavePassport: false
 
 - type: job
   id: Borg
@@ -20,4 +21,5 @@
   canBeAntag: false
   icon: JobIconBorg
   supervisors: job-supervisors-rd
-  jobEntity: PlayerBorgGeneric
+  jobEntity: PlayerBorgBattery
+  canHavePassport: false

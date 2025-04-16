@@ -178,6 +178,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuter
+    - !type:CharacterEmployerRequirement
+        employers:
+        - EinsteinEngines
 
 - type: loadout
   id: LoadoutOuterHiCorporateJacket
@@ -189,6 +192,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuter
+    - !type:CharacterEmployerRequirement
+        employers:
+        - HephaestusIndustries
 
 - type: loadout
   id: LoadoutOuterHmCorporateJacket
@@ -209,6 +215,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuter
+    - !type:CharacterEmployerRequirement
+        employers:
+        - Interdyne
 
 - type: loadout
   id: LoadoutOuterBcCorporateJacket
@@ -260,6 +269,51 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuter
+    - !type:CharacterEmployerRequirement
+        employers:
+        - ZengHuPharmaceuticals
+
+- type: loadout
+  id: LoadoutOuterIiCorporateJacket
+  category: Outer
+  cost: 0
+  guideEntry: IdrisIncorporated
+  items:
+    - ClothingOuterIiCorporateJacket
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+    - !type:CharacterEmployerRequirement
+        employers:
+        - IdrisIncorporated
+
+- type: loadout
+  id: LoadoutOuterOeCorporateJacket
+  category: Outer
+  cost: 0
+  guideEntry: OrionExpress
+  items:
+    - ClothingOuterOeCorporateJacket
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+    - !type:CharacterEmployerRequirement
+        employers:
+        - OrionExpress
+
+- type: loadout
+  id: LoadoutOuterIdrisIncorporatedWindbreaker
+  category: Outer
+  cost: 3
+  guideEntry: IdrisIncorporated
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+    - !type:CharacterEmployerRequirement
+        employers:
+        - IdrisIncorporated
+  items:
+    - ClothingOuterCoatIdrisIncorporatedWindbreaker
 
 - type: loadout
   id: LoadoutOuterDenimJacket
@@ -839,3 +893,43 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuter
+
+- type: loadout
+  id: ClothingOuterSuitWitchRobes
+  category: Outer
+  cost: 1
+  customColorTint: true
+  items:
+    - ClothingOuterSuitWitchRobes
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: ClothingOuterCoatExpensive
+  category: Outer
+  cost: 3
+  items:
+    - ClothingOuterCoatExpensive
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+# Biesel Republic Jackets
+- type: loadout
+  id: LoadoutOuterJacketTCAF
+  category: Outer
+  cost: 0
+  canBeHeirloom: true
+  guideEntry: TCFLInfo
+  items:
+    - ClothingOuterJacketTCAF
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+    - !type:CharacterNationalityRequirement
+      nationalities:
+        - Bieselite
+    - !type:CharacterLifepathRequirement
+      lifepaths:
+        - WarVet
