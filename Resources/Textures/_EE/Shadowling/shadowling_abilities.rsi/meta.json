@@ -1,0 +1,41 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "TODO",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "engage_hatch"
+        },
+        {
+            "name": "enthrall"
+        },
+        {
+            "name": "glare"
+        },
+        {
+            "name": "veil"
+        },
+        {
+            "name": "rehatch"
+        },
+        {
+            "name": "shadow_walk"
+        },
+        {
+            "name": "icy_veins"
+        },
+        {
+            "name": "destroy_engines"
+        },
+        {
+            "name": "collective_mind"
+        },
+        {
+            "name": "blindness_smoke"
+        }
+    ]
+}

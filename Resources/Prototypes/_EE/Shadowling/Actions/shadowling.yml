@@ -1,0 +1,159 @@
+# All Abilities
+
+# Pre-Hatch
+
+- type: entity
+  id: ActionHatch
+  name: Hatch
+  description: Engages the hatching progress.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: NoItem
+    icon:
+      sprite: _EE/Shadowling/shadowling_abilities.rsi
+      state: engage_hatch
+    event: !type:HatchEvent {}
+  - type: ConfirmableAction
+    popup: sling-hatch-engage-popup
+
+# Post-Hatch
+- type: entity
+  id: ActionEnthrall
+  name: Enthrall
+  description: Shatters their will, forging a thrall.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: EntityTargetAction
+    canTargetSelf: false
+    interactOnMiss: false
+    itemIconStyle: NoItem
+    range: 0.5
+    icon:
+      sprite: _EE/Shadowling/shadowling_abilities.rsi
+      state: enthrall
+    event: !type:EnthrallEvent { }
+
+- type: entity
+  id: ActionGlare
+  name: Glare
+  description: A dark glare that stuns, silences, and slows your target.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: EntityTargetAction
+    canTargetSelf: false
+    interactOnMiss: false
+    itemIconStyle: NoItem
+    useDelay: 30
+    range: 10
+    icon:
+      sprite: _EE/Shadowling/shadowling_abilities.rsi
+      state: glare
+    event: !type:GlareEvent { }
+    # add speech
+
+- type: entity
+  id: ActionVeil
+  name: Veil
+  description: A pulse of darkness that silences every light.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: NoItem
+    useDelay: 20
+    icon:
+      sprite: _EE/Shadowling/shadowling_abilities.rsi
+      state: veil
+    event: !type:VeilEvent { }
+    # add speech
+
+- type: entity
+  id: ActionRapidRehatch
+  name: Rapid Re-Hatch
+  description: Shed your broken flesh, and rise whole once more.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: NoItem
+    useDelay: 60
+    icon:
+      sprite: _EE/Shadowling/shadowling_abilities.rsi
+      state: rehatch
+    event: !type:RapidRehatchEvent { }
+
+- type: entity
+  id: ActionShadowWalk
+  name: Shadow Walk
+  description: Step into the void, moving unseen and unhindered.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: NoItem
+    useDelay: 45
+    icon:
+      sprite: _EE/Shadowling/shadowling_abilities.rsi
+      state: shadow_walk
+    event: !type:ShadowWalkEvent { }
+    # add speech
+
+- type: entity
+  id: ActionIcyVeins
+  name: Icy Veins
+  description: Send frost through their veins.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: NoItem
+    useDelay: 50
+    icon:
+      sprite: _EE/Shadowling/shadowling_abilities.rsi
+      state: icy_veins
+    event: !type:IcyVeinsEvent { }
+    # add speech
+
+- type: entity
+  id: ActionDestroyEngines
+  name: Destroy Engines
+  description: Destroy the engines of the evacuation shuttle.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: NoItem
+    icon:
+      sprite: _EE/Shadowling/shadowling_abilities.rsi
+      state: destroy_engines
+    event: !type:DestroyEnginesEvent { }
+    # add speech
+
+- type: entity
+  id: ActionCollectiveMind
+  name: Collective Mind
+  description: Harvest the minds of your Thralls, and gain various abilities.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: NoItem
+    # useDelay: 30
+    icon:
+      sprite: _EE/Shadowling/shadowling_abilities.rsi
+      state: collective_mind
+    event: !type:CollectiveMindEvent { }
+    # add speech
+
+# Thrall Required Actions
+
+- type: entity
+  id: ActionBlindnessSmoke
+  name: Blindness Smoke
+  description: Heal your kind, and blind anyone who dares enter your mist.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: NoItem
+    # useDelay: 60
+    icon:
+      sprite: _EE/Shadowling/shadowling_abilities.rsi
+      state: blindness_smoke
+    event: !type:BlindnessSmokeEvent { }
+    # add speech
+

@@ -1,0 +1,13 @@
+# Basic
+
+- type: entity
+  parent: ToggleNightVision
+  id: ActionThrallDarksight
+  name: Thrall Darksight
+  description: See through the darkness.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    icon:
+      sprite: _EE/Shadowling/thrall_abilities.rsi
+      state: thrall_darksight
