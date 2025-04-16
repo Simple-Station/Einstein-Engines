@@ -15025,3 +15025,37 @@ Entries:
   id: 7151
   time: '2025-04-15T04:32:01.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2237
+- author: 3PonPon3
+  changes:
+    - type: Add
+      message: >-
+        Traits that increase your surgery speed, Surgery Training (1.6, between
+        intern and standard doc) for non-medical, and Experienced Surgeon (2.5,
+        same as CMO) for medical w/o intern and with corpsman
+    - type: Tweak
+      message: CPR Training cost 4 -> 3
+    - type: Fix
+      message: BSO can no longer take the CPR trait as they already have it innately
+  id: 7152
+  time: '2025-04-15T20:14:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2238
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added "Integrated Thrusters" and "Integrated Magboots" as features that
+        hardsuits and tacsuits can sometimes have. Hardsuits rarely have both,
+        and sometimes have neither, while the more "Advanced" Tacsuits such as
+        the CSA series of suits will always have both. 
+    - type: Tweak
+      message: >-
+        Reduced the maximum amount of time player characters can remain in the
+        air without being touched by space wind again to 1 second, down from 2.
+        This does nothing if you're actively being thrown. 
+    - type: Fix
+      message: >-
+        Fixed a bug where the hardsuit action to toggle your helmet wasn't
+        displaying the helmet icon.
+  id: 7153
+  time: '2025-04-16T08:03:29.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2245
