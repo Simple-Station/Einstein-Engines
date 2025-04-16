@@ -68,7 +68,7 @@ public sealed partial class BankSystem : EntitySystem
             profile.Appearance,
             profile.SpawnPriority,
             profile.JobPriorities,
-            
+
             new Dictionary<string, RoleLoadout>(profile.Loadouts));
 
         args.State = new BankAccountComponentState
@@ -155,6 +155,6 @@ public sealed partial class BankSystem : EntitySystem
     private void OnPlayerLobbyJoin(PlayerJoinedLobbyEvent args)
     {
         var cts = new CancellationToken();
-        _prefsManager.RefreshPreferencesAsync(args.PlayerSession, cts);
+        _prefsManager.LoadData(args.PlayerSession, CancellationToken.None);
     }
 }

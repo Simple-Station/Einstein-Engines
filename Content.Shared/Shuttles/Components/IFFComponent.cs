@@ -58,5 +58,11 @@ public enum IFFFlags : byte
     /// </summary>
     Hide,
 
+    // Hullrot additions
+    /// <summary>
+    /// Is this a player shuttle
+    /// </summary>
+    IsPlayerShuttle,
+    // hullrot additions end
     // TODO: Need one that hides its outline, just replace it with a bunch of triangles or lines or something.
 }

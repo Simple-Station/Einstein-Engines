@@ -53,16 +53,57 @@ using Content.Shared.Database;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Radio;
+using Content.Shared.Shipyard.Components;
 using Content.Shared.Shipyard.Prototypes;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.UserInterface;
+using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
-
+using Robust.Shared.Serialization;
 
 namespace Content.Server.Shipyard;
+[NetSerializable, Serializable]
+public sealed class ShipyardConsoleInterfaceState : BoundUserInterfaceState
+{
+    public int Balance;
+    public readonly bool AccessGranted;
+    public readonly string? ShipDeedTitle;
+    public int ShipSellValue;
+    public readonly bool IsTargetIdPresent;
+    public readonly byte UiKey;
+
+    public readonly List<string> ShipyardPrototypes;
+    public readonly string ShipyardName;
+
+    public ShipyardConsoleInterfaceState(
+        int balance,
+        bool accessGranted,
+        string? shipDeedTitle,
+        int shipSellValue,
+        bool isTargetIdPresent,
+        byte uiKey,
+        List<string> shipyardPrototypes,
+        string shipyardName)
+    {
+        Balance = balance;
+        AccessGranted = accessGranted;
+        ShipDeedTitle = shipDeedTitle;
+        ShipSellValue = shipSellValue;
+        IsTargetIdPresent = isTargetIdPresent;
+        UiKey = uiKey;
+        ShipyardPrototypes = shipyardPrototypes;
+        ShipyardName = shipyardName;
+    }
+}
+
+[Serializable, NetSerializable]
+public sealed class ShipyardConsoleSellMessage : BoundUserInterfaceMessage{}
+
+[RegisterComponent]
+public sealed partial class StationDeedSpawnerComponent : Component {}
 
 public sealed partial class ShipyardSystem : SharedShipyardSystem
 {
@@ -93,12 +134,15 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
     [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
     [Dependency] private readonly CrescentHelperSystem _crescent = default!;
     [Dependency] private readonly DynamicCodeSystem _codes = default!;
+    [Dependency] private readonly EntityWhitelistSystem _whitelists = default!;
 
     public MapId? ShipyardMap { get; private set; }
     private float _shuttleIndex;
     private const float ShuttleSpawnBuffer = 1f;
     private ISawmill _sawmill = default!;
     private bool _enabled;
+
+
 
     public void HullrotInitialize()
     {
@@ -115,15 +159,10 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
         SubscribeLocalEvent<ShipyardConsoleComponent, InteractUsingEvent>(OnInteractUsing);
     }
 
-    public override void Shutdown()
-    {
-        _configManager.UnsubValueChanged(CCVars.Shipyard, SetShipyardEnabled);
-    }
     private void OnShipyardStartup(EntityUid uid, ShipyardConsoleComponent component, ComponentStartup args)
     {
         if (!_enabled)
             return;
-        InitializeConsole();
         SetupShipyard();
     }
 
@@ -175,7 +214,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
 
         _sawmill.Info($"Shuttle {shuttlePath} was purchased at {ToPrettyString((EntityUid) stationUid)} for {price:f2}");
         //can do TryFTLDock later instead if we need to keep the shipyard map paused
-        _shuttle.TryFTLDock(shuttleGrid.Value, targetGrid.Value, out config);
+        _shuttle.TryFTLDock( shuttleGrid.Value, shuttle, targetGrid.Value);
 
         return true;
     }
@@ -194,8 +233,9 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
         var loadOptions = new MapLoadOptions()
         {
             Offset = new Vector2(500f + _shuttleIndex, 1f)
+
         };
-        if (!_map.TryLoad(ShipyardMap.Value, shuttlePath, out var gridList, loadOptions))
+        if (!_mapLoader.TryLoad(ShipyardMap.Value, shuttlePath, out var gridList, loadOptions))
         {
             _sawmill.Error($"Unable to spawn shuttle {shuttlePath}");
             return false;
@@ -422,7 +462,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
             return;
         }
 
-        if (!TryPurchaseShuttle((EntityUid) station, vessel.ShuttlePath.ToString(), out var shuttle, out var config))
+        if (!TryPurchaseShuttle((EntityUid) station, vessel.Path.ToString(), out var shuttle, out var config))
         {
             PlayDenySound(uid, component);
             return;
@@ -503,7 +543,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
         // This may cause problems but ONLY when renaming a ship. It will still display properly regardless of this.
         var nameParts = name.Split(' ');
 
-        var hasSuffix = nameParts.Length > 1 && nameParts.Last().Length < MaxSuffixLength && nameParts.Last().Contains('-');
+        var hasSuffix = nameParts.Length > 1 && nameParts.Last().Length < 6 && nameParts.Last().Contains('-');
         deed.ShuttleNameSuffix = hasSuffix ? nameParts.Last() : null;
         deed.ShuttleName = System.String.Join(" ", nameParts.SkipLast(hasSuffix ? 1 : 0));
     }
@@ -693,7 +733,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
 
     private void PlayDenySound(EntityUid uid, ShipyardConsoleComponent component)
     {
-        _audio.PlayPvs(_audio.GetSound(component.ErrorSound), uid, AudioParams.Default.WithMaxDistance(0.01f));
+        _audio.PlayPvs(_audio.GetSound(component.DenySound), uid, AudioParams.Default.WithMaxDistance(0.01f));
     }
 
     private void PlayConfirmSound(EntityUid uid, ShipyardConsoleComponent component)
@@ -796,7 +836,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
             var protos = _prototypeManager.EnumeratePrototypes<VesselPrototype>();
             foreach (var proto in protos)
             {
-                if (proto.Group == group)
+                if(proto.Whitelist is not null && _whitelists.IsValid(proto.Whitelist, uid))
                     availableShuttles.Add(proto.ID);
             }
         }
@@ -927,7 +967,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
             return false;
         }
 
-        if (!TryPurchaseShuttle((EntityUid) station, vessel.ShuttlePath.ToString(), out var shuttle, out var config))
+        if (!TryPurchaseShuttle((EntityUid) station, vessel.Path.ToString(), out var shuttle, out var config))
         {
             PlayDenySound(uid, component);
             return false;
