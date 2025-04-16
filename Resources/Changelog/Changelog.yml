@@ -15102,3 +15102,10 @@ Entries:
   id: 7157
   time: '2025-04-16T18:32:06.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2231
+- author: Emilly
+  changes:
+    - type: Fix
+      message: 'Gax: minor fixes'
+  id: 7158
+  time: '2025-04-16T18:35:54.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2249
