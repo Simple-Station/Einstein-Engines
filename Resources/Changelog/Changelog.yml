@@ -15179,3 +15179,14 @@ Entries:
   id: 7162
   time: '2025-04-16T18:56:42.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2215
+- author: GNUtopia
+  changes:
+    - type: Add
+      message: Added machine-man interface
+    - type: Add
+      message: Added pAI adapter
+    - type: Tweak
+      message: Allowed MMIs to function as IPC brains
+  id: 7163
+  time: '2025-04-16T21:56:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2251
