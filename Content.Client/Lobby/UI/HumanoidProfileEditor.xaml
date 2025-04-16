@@ -48,7 +48,7 @@
                 <!-- appearanceList -->
                 <ScrollContainer HorizontalExpand="True" HScrollEnabled="True" VerticalExpand="True" VScrollEnabled="True">
                     <BoxContainer HorizontalExpand="True" Orientation="Vertical">
-                        <BoxContainer Margin="10" Orientation="Vertical" HorizontalExpand="True">
+                        <ui:AlternatingBGContainer Orientation="Vertical" HorizontalExpand="True">
                             <!-- Species -->
                             <BoxContainer HorizontalExpand="True">
                                 <Label Text="{Loc 'humanoid-profile-editor-species-label'}" />
@@ -133,20 +133,20 @@
                             <BoxContainer HorizontalExpand="True">
                                 <Label Name="WeightLabel" />
                             </BoxContainer>
-                        </BoxContainer>
+                        </ui:AlternatingBGContainer>
                         <!-- Skin -->
-                        <BoxContainer Margin="10" HorizontalExpand="True" Orientation="Vertical">
+                        <BoxContainer Margin="0 4 0 4" HorizontalExpand="True" Orientation="Vertical">
                             <Label Text="{Loc 'humanoid-profile-editor-skin-color-label'}" />
                             <Slider HorizontalExpand="True" Name="Skin" MinValue="0" MaxValue="100" Value="20" />
                             <BoxContainer Name="RgbSkinColorContainer" Visible="False" Orientation="Vertical" HorizontalExpand="True"></BoxContainer>
                         </BoxContainer>
                         <!-- Hair -->
-                        <BoxContainer Margin="10" Orientation="Horizontal">
+                        <BoxContainer Margin="0 4 0 4" Orientation="Horizontal">
                             <humanoid:SingleMarkingPicker Name="HairStylePicker" Category="Hair" />
                             <humanoid:SingleMarkingPicker Name="FacialHairPicker" Category="FacialHair" />
                         </BoxContainer>
                         <!-- Eyes -->
-                        <BoxContainer Margin="10" Orientation="Vertical">
+                        <BoxContainer Margin="0 4 0 4" Orientation="Vertical">
                             <Label Text="{Loc 'humanoid-profile-editor-eyes-label'}" />
                             <humanoid:EyeColorPicker Name="EyeColorPicker" />
                         </BoxContainer>
@@ -154,45 +154,42 @@
                 </ScrollContainer>
             </BoxContainer>
             <BoxContainer Name="Background" HorizontalExpand="True" Orientation="Vertical">
-                <!-- Contractors -->
-                <ScrollContainer HorizontalExpand="True" HScrollEnabled="True" VerticalExpand="True" VScrollEnabled="True">
-                    <BoxContainer HorizontalExpand="True" Orientation="Vertical">
-                        <BoxContainer Margin="10" Orientation="Vertical" HorizontalExpand="True"></BoxContainer>
-                            <!-- Nationality -->
-                            <BoxContainer HorizontalExpand="True">
-                                <Label Text="{Loc 'humanoid-profile-editor-nationality-label'}" />
-                                <Control HorizontalExpand="True"/>
-                                <TextureButton Name="NationalityInfoButton" Scale="0.3 0.3" VerticalAlignment="Center"
-                                               ToolTip="{Loc 'humanoid-profile-editor-guidebook-button-tooltip'}"/>
-                                <OptionButton Name="NationalityButton" HorizontalAlignment="Right" />
-                            </BoxContainer>
-                            <BoxContainer HorizontalExpand="False">
-                                <RichTextLabel Name="NationalityDescriptionLabel" Text="" HorizontalExpand="False" MaxWidth="600"/>
-                            </BoxContainer>
-                            <!-- Employer -->
-                            <BoxContainer HorizontalExpand="True">
-                                <Label Text="{Loc 'humanoid-profile-editor-employer-label'}" />
-                                <Control HorizontalExpand="True"/>
-                                <TextureButton Name="EmployerInfoButton" Scale="0.3 0.3" VerticalAlignment="Center"
-                                               ToolTip="{Loc 'humanoid-profile-editor-guidebook-button-tooltip'}"/>
-                                <OptionButton Name="EmployerButton" HorizontalAlignment="Right" />
-                            </BoxContainer>
-                            <BoxContainer HorizontalExpand="False">
-                                <RichTextLabel Name="EmployerDescriptionLabel" Text="" HorizontalExpand="False" MaxWidth="600"/>
-                            </BoxContainer>
-                            <!-- Lifepath -->
-                            <BoxContainer HorizontalExpand="True">
-                                <Label Text="{Loc 'humanoid-profile-editor-lifepath-label'}" />
-                                <Control HorizontalExpand="True"/>
-                                <TextureButton Name="LifepathInfoButton" Scale="0.3 0.3" VerticalAlignment="Center"
-                                               ToolTip="{Loc 'humanoid-profile-editor-guidebook-button-tooltip'}"/>
-                                <OptionButton Name="LifepathButton" HorizontalAlignment="Right" />
-                            </BoxContainer>
-                            <BoxContainer HorizontalExpand="False">
-                                <RichTextLabel Name="LifepathDescriptionLabel" Text="" HorizontalExpand="False" MaxWidth="600"/>
-                            </BoxContainer>
+                <!-- Background -->
+                <ui:AlternatingBGContainer Orientation="Vertical" VerticalExpand="False">
+                    <!-- Nationality -->
+                    <BoxContainer HorizontalExpand="True">
+                        <Label Text="{Loc 'humanoid-profile-editor-nationality-label'}" />
+                        <Control HorizontalExpand="True"/>
+                        <TextureButton Name="NationalityInfoButton" Scale="0.3 0.3" VerticalAlignment="Center"
+                                       ToolTip="{Loc 'humanoid-profile-editor-guidebook-button-tooltip'}"/>
+                        <OptionButton Name="NationalityButton" HorizontalAlignment="Right" />
                     </BoxContainer>
-                </ScrollContainer>
+                    <BoxContainer HorizontalExpand="False">
+                        <RichTextLabel Name="NationalityDescriptionLabel" Text="" HorizontalExpand="False" MaxWidth="600"/>
+                    </BoxContainer>
+                    <!-- Employer -->
+                    <BoxContainer HorizontalExpand="True">
+                        <Label Text="{Loc 'humanoid-profile-editor-employer-label'}" />
+                        <Control HorizontalExpand="True"/>
+                        <TextureButton Name="EmployerInfoButton" Scale="0.3 0.3" VerticalAlignment="Center"
+                                       ToolTip="{Loc 'humanoid-profile-editor-guidebook-button-tooltip'}"/>
+                        <OptionButton Name="EmployerButton" HorizontalAlignment="Right" />
+                    </BoxContainer>
+                    <BoxContainer HorizontalExpand="False">
+                        <RichTextLabel Name="EmployerDescriptionLabel" Text="" HorizontalExpand="False" MaxWidth="600"/>
+                    </BoxContainer>
+                    <!-- Lifepath -->
+                    <BoxContainer HorizontalExpand="True">
+                        <Label Text="{Loc 'humanoid-profile-editor-lifepath-label'}" />
+                        <Control HorizontalExpand="True"/>
+                        <TextureButton Name="LifepathInfoButton" Scale="0.3 0.3" VerticalAlignment="Center"
+                                       ToolTip="{Loc 'humanoid-profile-editor-guidebook-button-tooltip'}"/>
+                        <OptionButton Name="LifepathButton" HorizontalAlignment="Right" />
+                    </BoxContainer>
+                    <BoxContainer HorizontalExpand="False">
+                        <RichTextLabel Name="LifepathDescriptionLabel" Text="" HorizontalExpand="False" MaxWidth="600"/>
+                    </BoxContainer>
+                </ui:AlternatingBGContainer>
             </BoxContainer>
             <BoxContainer Name="Jobs" HorizontalExpand="True">
                 <!-- Jobs -->
