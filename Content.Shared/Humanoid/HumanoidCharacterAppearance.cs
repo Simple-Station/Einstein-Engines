@@ -1,6 +1,7 @@
 using System.Linq;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
+using Content.Shared.Store;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization;
@@ -96,6 +97,9 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
             .WithGreen(RandomizeColor(newHairColor.G))
             .WithBlue(RandomizeColor(newHairColor.B));
 
+        var newHairMarking = new Marking(newHairStyle, new List<Color> { newHairColor });
+        var newFacialHairMarking = new Marking(newFacialHairStyle, new List<Color> { newHairColor });
+
         // TODO: Add random markings
 
         var skinType = IoCManager.Resolve<IPrototypeManager>().Index<SpeciesPrototype>(species).SkinColoration;
@@ -124,7 +128,7 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
                 break;
         }
 
-        return new HumanoidCharacterAppearance(newSkinColor, new ());
+        return new HumanoidCharacterAppearance(newSkinColor, new List<Marking> { newHairMarking, newFacialHairMarking });
 
         float RandomizeColor(float channel)
         {
