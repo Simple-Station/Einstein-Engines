@@ -8,9 +8,9 @@
       department: Civilian
       min: 3600 #DeltaV
     - !type:CharacterEmployerRequirement
-      inverted: true
       employers:
-      - Unemployed
+      - IdrisIncorporated
+      - NanoTrasen
   startingGear: BartenderGear
   icon: "JobIconBartender"
   supervisors: job-supervisors-hop

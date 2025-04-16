@@ -31,12 +31,12 @@ public sealed class AnoigoPowerSystem : EntitySystem
             return;
 
         var ev = new AnoigoEvent();
-       RaiseLocalEvent(args.Target, ev);
+        RaiseLocalEvent(args.Target, ev);
 
-       if (!ev.Handled)
-           return;
-       args.Handled = true;
-       _psionics.LogPowerUsed(args.Performer, "anoigo");
+        if (!ev.Handled)
+            return;
+        args.Handled = true;
+        _psionics.LogPowerUsed(args.Performer, "anoigo");
     }
 
     private void OnAnoigo(EntityUid target, DoorComponent component, AnoigoEvent args)

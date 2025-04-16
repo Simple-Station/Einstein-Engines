@@ -8,6 +8,8 @@
     tags:
     - Flare
     - Trash
+    - Cartridge
+    - ShellShotgunLight
   - type: SpaceGarbage
   - type: ExpendableLight
     spentName: expendable-light-spent-flare-name
@@ -26,6 +28,10 @@
         loop: true
         volume: -10
         maxDistance: 5
+  - type: CartridgeAmmo
+    proto: PelletShotgunFlare
+    deleteOnSpawn: true
+
 
   - type: Sprite
     sprite: Objects/Misc/flare.rsi
