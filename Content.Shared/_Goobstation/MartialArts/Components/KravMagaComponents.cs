@@ -43,10 +43,10 @@ public sealed partial class KravMagaComponent : GrabStagesOverrideComponent
     };
 
     [DataField]
-    public int BaseDamage = 5;
+    public int BaseDamage = 10;
 
     [DataField]
-    public int DownedDamageModifier = 2;
+    public int DownedDamageModifier = 5;
 }
 /// <summary>
 /// Tracks when an entity is silenced through Krav Maga techniques.

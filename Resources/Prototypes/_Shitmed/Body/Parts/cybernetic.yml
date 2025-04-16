@@ -181,3 +181,25 @@
         - Shard
         - Mousetrap
         - SlipEntity
+
+- type: entity
+  parent: LeftArmCybernetic
+  id: CrowbarLeftArm
+  name: DX-1 left Pryarm
+  description: A cybernetic left arm that can easily pry open unpowered doors.
+  components:
+  - type: BodyPart
+    onAdd:
+    - type: Prying
+      speedModifier: 2
+
+- type: entity
+  parent: RightArmCybernetic
+  id: CrowbarRightArm
+  name: DX-1 right Pryarm
+  description: A cybernetic right arm that can easily pry open unpowered doors.
+  components:
+  - type: BodyPart
+    onAdd:
+    - type: Prying
+      speedModifier: 2
