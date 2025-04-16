@@ -15084,3 +15084,10 @@ Entries:
   id: 7155
   time: '2025-04-16T18:26:18.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2243
+- author: Will-Oliver-Br
+  changes:
+    - type: Tweak
+      message: Make survival box smaller
+  id: 7156
+  time: '2025-04-16T18:28:24.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2169
