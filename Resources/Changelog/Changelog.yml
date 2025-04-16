@@ -15059,3 +15059,19 @@ Entries:
   id: 7153
   time: '2025-04-16T08:03:29.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2245
+- author: 3PonPon3
+  changes:
+    - type: Add
+      message: >-
+        Added the Pryarm Prosthetics trait, that replaces your arms with the
+        DX-1 Pryarms, which let you pry open unpowered doors just as you would
+        with a crowbar.
+    - type: Tweak
+      message: >-
+        Made bionic arm cost 8 points again and be restricted to command,
+        security, dignitaries and paramedics only.
+    - type: Remove
+      message: Speed legs trait go bye bye for now.
+  id: 7154
+  time: '2025-04-16T16:44:11.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2255
