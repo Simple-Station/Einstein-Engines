@@ -27,6 +27,7 @@
     - id: BlueshieldAmmunitionBoxFilled
     - id: ClothingOuterHardsuitBlueshield
     - id: ClothingBlueshieldArmoredCoat
+    - id: BookCorporateCQCGuidebook
 
 - type: entity
   id: LockerMagistrateFilled

@@ -91,6 +91,7 @@
         prob: 0.25
       - id: ClothingBeltSecurityFilled
       - id: ClothingBeltCorporateJudo # Goobstation - Martial Arts
+      - id: BookCorporateJudoGuidebook
       - id: Flash
         prob: 0.5
       - id: ClothingEyesGlassesSunglasses
