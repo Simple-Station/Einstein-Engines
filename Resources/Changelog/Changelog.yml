@@ -15109,3 +15109,12 @@ Entries:
   id: 7158
   time: '2025-04-16T18:35:54.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2249
+- author: mrs
+  changes:
+    - type: Add
+      message: 'Asterisk: Lavaland shuttle dock.'
+    - type: Fix
+      message: 'Asterisk: Logistics firelocks.'
+  id: 7159
+  time: '2025-04-16T18:36:09.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2248
