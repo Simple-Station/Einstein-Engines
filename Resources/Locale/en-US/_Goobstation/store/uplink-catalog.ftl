@@ -45,6 +45,9 @@ uplink-dualetta-bundle-desc = Comes with 2 Dualetta pistols, 2 machine pistol ma
 uplink-anaconda-name = Anaconda
 uplink-anaconda-desc = The pride of the Cybersun arms concern, this heavy pistol is designed to feed itself with the built-in fabricator.
 
+uplink-contractor-baton-name = Contractor Baton
+uplink-contractor-baton-desc = A compact, specialised baton assigned to Syndicate contractors. Applies light electrical shocks to targets. These shocks are capable of affecting the inner circuitry of most robots as well, applying a short stun.
+
 # Ammo
 
 uplink-blast-grenade-name = Blast Grenade

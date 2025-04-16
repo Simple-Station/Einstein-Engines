@@ -1,0 +1,40 @@
+- type: entity
+  id: ContractorBaton
+  parent: [TelescopicBaton]
+  name: contractor baton
+  description: A compact, specialised baton assigned to Syndicate contractors. Applies light electrical shocks to targets.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Weapons/Melee/contractor_baton.rsi
+    layers:
+    - state: icon
+      map: [ "enum.TelescopicBatonVisuals.Layer" ]
+  - type: Item
+    sprite: _Goobstation/Objects/Weapons/Melee/contractor_baton.rsi
+  - type: Clothing
+    slots:
+    - Belt
+    sprite: _Goobstation/Objects/Weapons/Melee/contractor_baton.rsi
+  - type: KnockdownOnHit
+    duration: 40
+    alwaysDropItems: true
+  - type: UseDelay
+    delay: 4
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    animation: WeaponArcSlash
+  - type: ItemToggle
+    soundActivate:
+      path: /Audio/_Goobstation/Weapons/Baton/contractorbatonextend.ogg
+    soundDeactivate:
+      path: /Audio/_Goobstation/Weapons/Baton/contractorbatonextend.ogg
+  - type: ItemToggleMeleeWeapon
+    activatedSoundOnHit:
+      path: /Audio/_Goobstation/Weapons/Baton/contractorbatonhit.ogg
+      params:
+        variation: 0.250
+    activatedDamage:
+      types:
+        Shock: 15
+  - type: StaminaDamageOnHit
+    damage: 80
