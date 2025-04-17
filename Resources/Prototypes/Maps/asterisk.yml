@@ -3,7 +3,7 @@
   mapName: 'Asterisk'
   mapPath: /Maps/asterisk.yml
   minPlayers: 0
-  maxPlayers: 60
+  maxPlayers: 35 # This station is small for 60 maxPlayers.
   stations:
     Asterisk:
       stationProto: StandardNanotrasenStation
@@ -24,7 +24,7 @@
           availableJobs:
           #service
             Captain: [ 1, 1 ]
-            BlueshieldOfficer: [ 1, 1]
+            BlueshieldOfficer: [ 1, 1 ]
             NanotrasenRepresentative: [ 1, 1 ]
             Magistrate: [ 1, 1 ]
             AdministrativeAssistant: [ 1, 1 ]
