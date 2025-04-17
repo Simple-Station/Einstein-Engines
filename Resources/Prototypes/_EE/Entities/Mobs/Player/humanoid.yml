@@ -10,6 +10,8 @@
   id: ERTSecurityEVALaser
   parent: ERTSecurityEVA
   components:
+    - type: GrantImplant
+      implants: [ MindShieldImplant ]
     - type: GhostRole
       name: ghost-role-information-ert-security-name
       description: ghost-role-information-ert-security-description
