@@ -103,7 +103,7 @@ namespace Content.Server.Power.EntitySystems
                         continue;
                 }
 
-                SetCharge(uid, batt.CurrentCharge + comp.AutoRechargeRate * frameTime, batt);
+                TrySetCharge(uid, batt.CurrentCharge + comp.AutoRechargeRate * frameTime, batt);
             }
         }
 
