@@ -9,7 +9,8 @@
     min: 14400 # 4 hours - same as scientist
   - !type:CharacterEmployerRequirement
       employers:
-      - Cybersun
+      - ZavodskoiInterstellar
+      - HephaestusIndustries
       - NanoTrasen
   startingGear: RoboticistGear
   icon: "JobIconRoboticist"

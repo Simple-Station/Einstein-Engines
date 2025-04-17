@@ -12,6 +12,7 @@
       traits:
         - Foreigner
         - ForeignerLight
+        - Muted
     - !type:CharacterEmployerRequirement
       inverted: true
       employers:
