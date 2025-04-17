@@ -40,7 +40,7 @@
       powerPool: ElementalistPowerPool
     - type: InnatePsionicPowers
       powersToAdd:
-        - HealingWordPower
+        - DispelPower
         - SummonRemiliaPower
 
 - type: startingGear

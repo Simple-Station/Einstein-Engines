@@ -154,7 +154,7 @@
   components:
     - type: EntityTargetAction
       icon: { sprite: Interface/Actions/psionics.rsi, state: healing_word }
-      useDelay: 10
+      useDelay: 20
       checkCanAccess: false
       range: 6
       itemIconStyle: BigAction

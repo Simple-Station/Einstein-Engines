@@ -123,3 +123,17 @@
     - !type:TraitAddPsionics
       psionicPowers:
         - PsychognomyPower
+
+- type: trait
+  id: HealingWordPower
+  category: TraitsPsionicsPowers
+  points: -3
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - LatentPsychic
+        - NaturalTelepath
+  functions:
+    - !type:TraitAddPsionics
+      psionicPowers:
+        - HealingWordPower

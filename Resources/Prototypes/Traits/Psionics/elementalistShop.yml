@@ -54,18 +54,19 @@
       psionicPowers:
         - ShadeskipPower
 
-- type: trait
-  id: ElementalistDarkSwapPower
-  category: TraitsPsionicsPowers
-  points: -10
-  requirements:
-    - !type:CharacterTraitRequirement
-      traits:
-        - ElementalistShadeskipPower
-  functions:
-    - !type:TraitAddPsionics
-      psionicPowers:
-        - DarkSwapPower
+# No more of this roundstart darkswap bullshit til its fixed
+# - type: trait
+#  id: ElementalistDarkSwapPower
+#  category: TraitsPsionicsPowers
+#  points: -10
+#  requirements:
+#    - !type:CharacterTraitRequirement
+#      traits:
+#        - ElementalistShadeskipPower
+#  functions:
+#    - !type:TraitAddPsionics
+#      psionicPowers:
+#        - DarkSwapPower
 
 - type: trait
   id: ElementalistTelekineticPulsePower

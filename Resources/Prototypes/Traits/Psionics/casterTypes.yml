@@ -117,8 +117,6 @@
       jobs:
         - Borg
         - MedicalBorg
-        - ResearchDirector
-        - ForensicMantis
         - Chaplain
         - Librarian
     - !type:CharacterLogicOrRequirement
