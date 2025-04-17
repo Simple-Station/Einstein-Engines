@@ -202,11 +202,13 @@ public sealed class PsionicAbilitiesSystem : EntitySystem
         RemComp<PsionicComponent>(uid);
         RemComp<InnatePsionicPowersComponent>(uid);
 
-        var ev = new OnMindbreakEvent();
-        RaiseLocalEvent(uid, ref ev);
+        // var ev = new OnMindbreakEvent();
+        // RaiseLocalEvent(uid, ref ev);
 
+        /*
         if (_config.GetCVar(CCVars.ScarierMindbreaking))
             ScarierMindbreak(uid, psionic);
+        */
     }
 
     /// <summary>
@@ -215,6 +217,7 @@ public sealed class PsionicAbilitiesSystem : EntitySystem
     /// </summary>
     public void ScarierMindbreak(EntityUid uid, PsionicComponent component)
     {
+        /*
         if (!_playerManager.TryGetSessionByEntity(uid, out var session) || session is null)
             return;
 
@@ -235,6 +238,7 @@ public sealed class PsionicAbilitiesSystem : EntitySystem
         _npcFaction.AddFaction(uid, "SimpleNeutral");
         var htn = EnsureComp<HTNComponent>(uid);
         htn.RootTask = new HTNCompoundTask() { Task = "IdleCompound" };
+        */
     }
 
     /// <summary>
