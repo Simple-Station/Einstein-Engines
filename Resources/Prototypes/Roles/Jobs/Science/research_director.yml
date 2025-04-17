@@ -4,6 +4,8 @@
   description: job-description-rd
   playTimeTracker: JobResearchDirector
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsCasterType
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
