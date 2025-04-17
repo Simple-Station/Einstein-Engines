@@ -1,7 +1,6 @@
 ﻿using Content.Server.StationEvents.Events;
 using Content.Server.AlertLevel;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Server.StationEvents.Components;
 
