@@ -69,7 +69,7 @@
     id: NavyCaptainPDA
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltSheathFilledNavyOfficer
-    pocket1: NukeOverride
+    pocket1: BoxFolderNuclearCodes
     pocket2: AmnestizineHypospray # Really LEAN into that neutral evil nanotrasen scp shit.
 
 # Undercover Officer
@@ -198,7 +198,6 @@
   - CentralCommand
   - NanotrasenRepresentative
   - BlueshieldOfficer
-  - Wizard
   - NuclearOperative
   - SyndicateAgent
   special:

@@ -47,7 +47,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTLeader
     back: ClothingBackpackERTLeader
-    shoes: ClothingShoesBootsCombatFilled # STOP GIVING ROLES ADVANCED MAGBOOTS!! - SOL
+    shoes: ClothingShoesBootsMagEmergencyResponseTeam # STOP GIVING ROLES ADVANCED MAGBOOTS!! - SOL
     neck: ExecutiveIDCard # Goobstation - Executive Access!
     mask: ClothingMaskGasERT
     eyes: ClothingEyesGlassesSecurity
@@ -72,7 +72,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTLeader
     back: ClothingBackpackERTLeader
-    shoes: ClothingShoesBootsCombatFilled # STOP GIVING ROLES ADVANCED MAGBOOTS!! - SOL
+    shoes: ClothingShoesBootsMagEmergencyResponseTeam # STOP GIVING ROLES ADVANCED MAGBOOTS!! - SOL
     neck: ExecutiveIDCard # Goobstation - Executive Access!
     mask: ClothingMaskGasERT
     eyes: ClothingEyesGlassesSecurity
@@ -157,7 +157,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTChaplain
     back: ClothingBackpackERTChaplain
-    shoes: ClothingShoesBootsCombatFilled # STOP GIVING ROLES ADVANCED MAGBOOTS!! - SOL
+    shoes: ClothingShoesBootsMagEmergencyResponseTeam # STOP GIVING ROLES ADVANCED MAGBOOTS!! - SOL
     mask: ClothingMaskGasERT
     eyes: ClothingEyesGlasses
     neck: ClothingNeckStoleChaplain
@@ -227,7 +227,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTEngineer
     back: ClothingBackpackERTEngineer
-    shoes: ClothingShoesBootsCombatFilled # STOP GIVING ROLES ADVANCED MAGBOOTS!! - SOL
+    shoes: ClothingShoesBootsMagEmergencyResponseTeam # STOP GIVING ROLES ADVANCED MAGBOOTS!! - SOL
     neck: ExecutiveIDCard # Goobstation - Executive Access!
     mask: ClothingMaskGasERT
     eyes: ClothingEyesGlassesMeson
@@ -289,7 +289,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTSecurity
     back: ClothingBackpackERTSecurity
-    shoes: ClothingShoesBootsCombatFilled # STOP GIVING ROLES ADVANCED MAGBOOTS!! - SOL
+    shoes: ClothingShoesBootsMagEmergencyResponseTeam # STOP GIVING ROLES ADVANCED MAGBOOTS!! - SOL
     mask: ClothingMaskGasERT
     neck: ExecutiveIDCard # Goobstation - Executive Access!
     eyes: ClothingEyesGlassesSecurity
@@ -315,7 +315,7 @@
 #  equipment:
 #    jumpsuit: ClothingUniformJumpsuitERTSecurity
 #    back: ClothingBackpackERTSecurity
-#    shoes: ClothingShoesBootsCombatFilled # STOP GIVING ROLES ADVANCED MAGBOOTS!! - SOL
+#    shoes: ClothingShoesBootsMagEmergencyResponseTeam # STOP GIVING ROLES ADVANCED MAGBOOTS!! - SOL
 #    mask: ClothingMaskGasERT
 #    neck: ExecutiveIDCard # Goobstation - Executive Access!
 #    eyes: ClothingEyesGlassesSecurity
@@ -385,7 +385,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTMedic
     back: ClothingBackpackERTMedical
-    shoes: ClothingShoesBootsCombatFilled # STOP GIVING ROLES ADVANCED MAGBOOTS!! - SOL
+    shoes: ClothingShoesBootsMagEmergencyResponseTeam # STOP GIVING ROLES ADVANCED MAGBOOTS!! - SOL
     mask: ClothingMaskGasERT
     neck: ExecutiveIDCard # Goobstation - Executive Access!
     eyes: ClothingEyesGlassesMedSec # Goobstation
@@ -445,7 +445,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTJanitor
     back: ClothingBackpackERTJanitor
-    shoes: ClothingShoesGaloshes # STOP GIVING ROLES ADVANCED MAGBOOTS!! - SOL
+    shoes: ClothingShoesBootsMagEmergencyResponseTeam # STOP GIVING ROLES ADVANCED MAGBOOTS!! - SOL
     mask: ClothingMaskGasERT
     neck: ExecutiveIDCard # Goobstation - Executive Access!
     gloves: ClothingHandsGlovesColorPurple
