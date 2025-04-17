@@ -53,8 +53,8 @@
     range: 1.65
     damage:
       types:
-        Slash: 10
-        Holy: 15
+        Slash: 15 # Giant evil sword, I want to throw the mantis a bone here
+        Holy: 20
     heavyDamageBaseModifier: 1.2
     heavyStaminaCost: 10
     maxTargets: 3
