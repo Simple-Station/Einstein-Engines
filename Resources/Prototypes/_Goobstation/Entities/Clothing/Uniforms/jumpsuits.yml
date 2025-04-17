@@ -17,7 +17,7 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitNanotrasenRepresentative
-  name: nanotrasen representative suit
+  name: corporate liaison suit
   description: A black suit worn by officials.
   components:
   - type: Sprite

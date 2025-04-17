@@ -516,15 +516,24 @@
 - type: trait
   id: BionicArm
   category: Physical
-  points: -10
+  points: -8
   requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-        - Gladiator
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterJobRequirement
+        jobs:
+         - Paramedic
+      - !type:CharacterDepartmentRequirement
+          departments:
+          - Security
+          - Command
+          - Dignitary
     - !type:CharacterItemGroupRequirement
       group: TraitsMind
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - BionicPryArm
   functions:
     - !type:TraitCyberneticLimbReplacement
       removeBodyPart: Arm
@@ -896,33 +905,33 @@
               Brute: -0.6
               Burn: -0.6
 
-- type: trait
-  id: BionicLeg
-  category: Physical
-  points: -8
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
-  functions:
-    - !type:TraitPushDescription
-      descriptionExtensions:
-        - description: examine-bionic-leg-message
-          fontSize: 12
-          requireDetailRange: true
-    - !type:TraitCyberneticLimbReplacement
-      removeBodyPart: Leg
-      partSymmetry: Left
-      protoId: SpeedLeftLeg
-      slotId: "left leg"
-    - !type:TraitCyberneticLimbReplacement
-      removeBodyPart: Leg
-      partSymmetry: Right
-      protoId: SpeedRightLeg
-      slotId: "right leg"
+# - type: trait
+#   id: BionicLeg
+#   category: Physical
+#   points: -8
+#   requirements:
+#     - !type:CharacterJobRequirement
+#       inverted: true
+#       jobs:
+#         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+#     - !type:CharacterItemGroupRequirement
+#       group: TraitsMind
+#   functions:
+#     - !type:TraitPushDescription
+#       descriptionExtensions:
+#         - description: examine-bionic-leg-message
+#           fontSize: 12
+#           requireDetailRange: true
+#     - !type:TraitCyberneticLimbReplacement
+#       removeBodyPart: Leg
+#       partSymmetry: Left
+#       protoId: SpeedLeftLeg
+#       slotId: "left leg"
+#     - !type:TraitCyberneticLimbReplacement
+#       removeBodyPart: Leg
+#       partSymmetry: Right
+#       protoId: SpeedRightLeg
+#       slotId: "right leg"
 
 
 # - type: trait
@@ -1152,7 +1161,7 @@
           requireDetailRange: true
 
 - type: trait
-  id: Bulky
+  id: Bodybuilder
   category: Physical
   points: -6
   requirements:
@@ -1166,7 +1175,7 @@
       multiply: false
     - !type:TraitPushDescription
       descriptionExtensions:
-        - description: examine-bulky-message
+        - description: examine-bodybuilder-message
           fontSize: 12
           requireDetailRange: true
 
@@ -1178,7 +1187,7 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Bulky
+        - Bodybuilder
   functions:
     - !type:TraitModifyDensity
       densityModifier: 0.5
@@ -1186,54 +1195,6 @@
     - !type:TraitPushDescription
       descriptionExtensions:
         - description: examine-featherweight-message
-          fontSize: 12
-          requireDetailRange: true
-
-- type: trait
-  id: Bodybuilder
-  category: Physical
-  points: -6
-  requirements:
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Weakling
-  functions:
-    - !type:TraitReplaceComponent
-      components:
-        - type: Puller
-          walkSpeedModifier: 0.975
-          sprintSpeedModifier: 0.975
-          softGrabSpeedModifier: 0.95
-          hardGrabSpeedModifier: 0.85
-          chokeGrabSpeedModifier: 0.7
-    - !type:TraitPushDescription
-      descriptionExtensions:
-        - description: examine-bodybuilder-message
-          fontSize: 12
-          requireDetailRange: true
-
-- type: trait
-  id: Weakling
-  category: Physical
-  points: 3
-  requirements:
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Bodybuilder
-  functions:
-    - !type:TraitReplaceComponent
-      components:
-        - type: Puller
-          walkSpeedModifier: 0.9
-          sprintSpeedModifier: 0.9
-          softGrabSpeedModifier: 0.8
-          hardGrabSpeedModifier: 0.4
-          chokeGrabSpeedModifier: 0.2
-    - !type:TraitPushDescription
-      descriptionExtensions:
-        - description: examine-weakling-message
           fontSize: 12
           requireDetailRange: true
 
@@ -1261,3 +1222,35 @@
           - Pill
           - Crayon
           - Paper
+
+- type: trait
+  id: BionicPryArm
+  category: Physical
+  points: -3
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMind
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - BionicArm
+  functions:
+    - !type:TraitCyberneticLimbReplacement
+      removeBodyPart: Arm
+      partSymmetry: Left
+      protoId: CrowbarLeftArm
+      slotId: "left arm"
+    - !type:TraitCyberneticLimbReplacement
+      removeBodyPart: Arm
+      partSymmetry: Right
+      protoId: CrowbarRightArm
+      slotId: "right arm"
+    - !type:TraitPushDescription
+      descriptionExtensions:
+        - description: examine-bionic-pryarm-message
+          fontSize: 12
+          requireDetailRange: true

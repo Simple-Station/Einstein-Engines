@@ -11,8 +11,11 @@
       traits:
         - Foreigner
         - ForeignerLight
+        - Muted
     - !type:CharacterEmployerRequirement
       employers:
+      - ZengHuPharmaceuticals
+      - Interdyne
       - NanoTrasen
   weight: 10
   startingGear: CMOGear

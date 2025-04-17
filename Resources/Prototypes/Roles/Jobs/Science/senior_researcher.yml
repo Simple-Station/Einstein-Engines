@@ -8,9 +8,9 @@
       department: Epistemics # DeltaV - Epistemics Department replacing Science
       min: 216000 #60 hrs
     - !type:CharacterEmployerRequirement
-      inverted: true
       employers:
-      - Unemployed
+      - NanoTrasen
+      - ZengHuPharmaceuticals
   startingGear: SeniorResearcherGear
   icon: "JobIconSeniorResearcher"
   supervisors: job-supervisors-rd

@@ -72,7 +72,7 @@
 
 - type: stealTargetGroup
   id: NTRepWeapon
-  name: nanotrasen representative's weapon
+  name: corporate liaison's weapon
   sprite:
     sprite: Objects/Weapons/Guns/Battery/ccdisabler.rsi
     state: base

@@ -134,3 +134,39 @@
       state: icon
     iconOn: Interface/Actions/ghostHearingToggled.png
     event: !type:ToggleGhostHearingActionEvent
+
+- type: entity
+  parent:
+  - Incorporeal
+  - BaseMob
+  id: MobTelegnosisObserver
+  name: psionic projection
+  description: Dancing across bridges prismatic hypereality
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Ghosts/telegnostic_observer.rsi #Feel free to improve this!
+    layers:
+    - state: animated
+      shader: unshaded
+  - type: ContentEye
+  - type: Eye
+    drawFov: false
+    visMask:
+      - TelegnosticProjection
+      - PsionicInvisibility
+      - Ghost
+      - Normal
+      - Ethereal
+  - type: Input
+    context: "ghost"
+  - type: Examiner
+  - type: TelegnosticProjection
+  - type: MovementSpeedModifier
+    baseSprintSpeed: 8
+    baseWalkSpeed: 5
+  - type: Psionic
+    removable: false
+    roller: false
+  - type: Stealth
+    lastVisibility: 0.66

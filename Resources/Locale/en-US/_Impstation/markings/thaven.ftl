@@ -29,6 +29,7 @@ marking-Gills = Gills
 marking-SharkminnowEyeliner = Sharkminnow Eyeliner
 marking-ThavenBiteMark = Bite Mark
 marking-ThavenBodyStripes = Body Stripes
+marking-ThavenChestScales = Chest Scales
 marking-ThavenEarsBigFins = Big Fins
 marking-ThavenFishEars = Fish Ears
 marking-ThavenHeadCap = Head Cap

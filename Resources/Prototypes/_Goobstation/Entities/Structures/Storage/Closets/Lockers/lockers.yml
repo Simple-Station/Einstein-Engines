@@ -15,8 +15,9 @@
 
 - type: entity
   id: LockerNanorep
-  name: nanotrasen representative locker
+  name: corporate liaison locker
   parent: LockerBaseSecure
+  description: A locker filled with equipment for corporate liaisons, courtesy of NanoTrasen Central Command.
   components:
   - type: Appearance
   - type: Sprite

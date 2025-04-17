@@ -736,6 +736,58 @@
     Steel: 150
 
 - type: latheRecipe
+  id: MagazineUniversalMagnumEmpty
+  result: MagazineUniversalMagnumEmpty
+  category: Ammo
+  completetime: 5
+  materials:
+    Steel: 40
+
+- type: latheRecipe
+  id: MagazineUniversalMagnum
+  result: MagazineUniversalMagnum
+  category: Ammo
+  completetime: 5
+  materials:
+    Steel: 200
+
+- type: latheRecipe
+  id: MagazineUniversalMagnumRubber
+  result: MagazineUniversalMagnumRubber
+  category: Ammo
+  completetime: 5
+  materials:
+    Steel: 70
+    Plastic: 170
+
+- type: latheRecipe
+  id: MagazineUniversalMagnumUranium
+  result: MagazineUniversalMagnumUranium
+  category: Ammo
+  completetime: 5
+  materials:
+    Steel: 40
+    Plastic: 75
+    Uranium: 200
+
+- type: latheRecipe
+  id: MagazineUniversalMagnumIncendiary
+  result: MagazineUniversalMagnumIncendiary
+  category: Ammo
+  completetime: 5
+  materials:
+    Steel: 40
+    Plastic: 200
+
+- type: latheRecipe
+  id: MagazineUniversalMagnumShrapnel
+  result: MagazineUniversalMagnumShrapnel
+  category: Ammo
+  completetime: 5
+  materials:
+    Steel: 200
+
+- type: latheRecipe
   id: MagazineBoxRifle
   result: MagazineBoxRifle
   category: Ammo
@@ -963,6 +1015,16 @@
     Plastic: 750
 
 - type: latheRecipe
+  id: BoxShotgunLumen
+  result: BoxShotgunLumen
+  category: Ammo
+  completetime: 5
+  materials:
+    Steel: 80
+    Plastic: 80
+    Plasma: 80
+
+- type: latheRecipe
   id: BoxShotgunFlare
   result: BoxShotgunFlare
   category: Ammo
@@ -1176,6 +1238,16 @@
     Steel: 25
 
 - type: latheRecipe
+  id: ShellShotgunLumen
+  result: ShellShotgunLumen
+  category: Ammo
+  completetime: 2
+  materials:
+    Plastic: 20
+    Steel: 5
+    Plasma: 5
+
+- type: latheRecipe
   id: ShellShotgunFlare
   result: ShellShotgunFlare
   category: Ammo
@@ -1338,6 +1410,18 @@
                #For balancing reasons(Steel is way easier to get), it includes other rarer materials.
     Plasteel: 100
     Plastic: 250
+    Gold: 200
+    Silver: 100
+
+- type: latheRecipe
+  id: WeaponPistolUniversal
+  result: WeaponPistolUniversalEmpty
+  category: Weapons
+  completetime: 7
+  materials: #mk 32 is a straight upgrade to N1984 so simply bumping up the material price.
+    Steel: 1000
+    Plasteel: 150
+    Plastic: 300
     Gold: 200
     Silver: 100
 
