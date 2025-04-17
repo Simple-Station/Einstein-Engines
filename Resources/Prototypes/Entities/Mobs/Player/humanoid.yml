@@ -2,6 +2,12 @@
 
 - type: randomHumanoidSettings
   id: EventHumanoid
+  # Shitmed Change Start
+  speciesBlacklist:
+  - Monkey
+  - Kobold
+  - Abductor
+  # Shitmed Change End
   components:
     - type: RandomHumanoidAppearance
       randomizeName: false
@@ -14,6 +20,18 @@
     - type: MindShield
     - type: AntagImmune
 
+# Goobstation start
+#- type: randomHumanoidSettings
+#  id: EventHuman
+#  parent: EventHumanoid
+#  speciesWhitelist: Human
+
+#- type: randomHumanoidSettings
+#  id: EventHumanMindShielded
+#  parent: EventHumanoidMindShielded
+#  speciesWhitelist: Human
+# Goobstation end
+
 ## Death Squad
 
 - type: entity
@@ -21,6 +39,7 @@
   name: Death Squad Agent
   suffix: ERTRole, Death Squad
   components:
+    - type: MindShield
     - type: Sprite
       sprite: Clothing/OuterClothing/Hardsuits/deathsquad.rsi
       state: icon
@@ -32,7 +51,6 @@
       settings: DeathSquad
 
 - type: randomHumanoidSettings
-  parent: EventHumanoidMindShielded
   id: DeathSquad
   randomizeName: false
   speciesBlacklist:
@@ -40,9 +58,11 @@
     - Monkey # Shitmed Change
     - Kobold # Shitmed Change
   components:
+    - type: MindShield
     - type: GhostRole
       name: ghost-role-information-Death-Squad-name
       description: ghost-role-information-Death-Squad-description
+      rules: ghost-role-information-Death-Squad-rules
       raffle:
         settings: short
       mindRoles:
@@ -80,9 +100,11 @@
     - Monkey # Shitmed Change
     - Kobold # Shitmed Change
   components:
+    - type: MindShield
     - type: GhostRole
       name: ghost-role-information-ert-leader-name
       description: ghost-role-information-ert-leader-description
+      rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
     - type: GhostTakeoverAvailable
@@ -113,6 +135,7 @@
     - type: GhostRole
       name: ghost-role-information-ert-leader-name
       description: ghost-role-information-ert-leader-description
+      rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
     - type: GhostTakeoverAvailable
@@ -135,6 +158,7 @@
     - type: GhostRole
       name: ghost-role-information-ert-leader-name
       description: ghost-role-information-ert-leader-description
+      rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
     - type: GhostTakeoverAvailable
@@ -167,6 +191,7 @@
     - type: GhostRole
       name: ghost-role-information-ert-chaplain-name
       description: ghost-role-information-ert-chaplain-description
+      rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
     - type: GhostTakeoverAvailable
@@ -229,6 +254,7 @@
     - type: GhostRole
       name: ghost-role-information-ert-janitor-name
       description: ghost-role-information-ert-janitor-description
+      rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
     - type: GhostTakeoverAvailable
@@ -259,6 +285,7 @@
     - type: GhostRole
       name: ghost-role-information-ert-janitor-name
       description: ghost-role-information-ert-janitor-description
+      rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
     - type: GhostTakeoverAvailable
@@ -291,6 +318,7 @@
     - type: GhostRole
       name: ghost-role-information-ert-engineer-name
       description: ghost-role-information-ert-engineer-description
+      rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
     - type: GhostTakeoverAvailable
@@ -321,6 +349,7 @@
     - type: GhostRole
       name: ghost-role-information-ert-engineer-name
       description: ghost-role-information-ert-engineer-description
+      rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
     - type: GhostTakeoverAvailable
@@ -383,6 +412,7 @@
     - type: GhostRole
       name: ghost-role-information-ert-security-name
       description: ghost-role-information-ert-security-description
+      rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
     - type: GhostTakeoverAvailable
@@ -437,6 +467,7 @@
     - type: GhostRole
       name: ghost-role-information-ert-medical-name
       description: ghost-role-information-ert-medical-description
+      rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
     - type: GhostTakeoverAvailable
@@ -467,6 +498,7 @@
     - type: GhostRole
       name: ghost-role-information-ert-medical-name
       description: ghost-role-information-ert-medical-description
+      rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
     - type: GhostTakeoverAvailable
@@ -499,6 +531,7 @@
     - type: GhostRole
       name: ghost-role-information-cburn-agent-name
       description: ghost-role-information-cburn-agent-description
+      rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
     - type: GhostTakeoverAvailable
@@ -506,6 +539,7 @@
       nameSegments:
       - NamesFirstMilitary
       - NamesLastMilitary
+
 ## Central Command
 
 - type: entity
@@ -529,6 +563,7 @@
     - type: GhostRole
       name: ghost-role-information-centcom-official-name
       description: ghost-role-information-centcom-official-description
+      rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: default
     - type: GhostTakeoverAvailable
@@ -556,6 +591,8 @@
     - Monkey # Shitmed Change
     - Kobold # Shitmed Change
   components:
+    - type: RandomHumanoidAppearance
+      randomizeName: false
     - type: Loadout
       prototypes: [SyndicateOperativeGearExtremelyBasic]
 
@@ -576,6 +613,8 @@
     - Monkey # Shitmed Change
     - Kobold # Shitmed Change
   components:
+    - type: RandomHumanoidAppearance
+      randomizeName: false
     - type: NukeOperative
     - type: Psionic
       powerRollMultiplier: 7
