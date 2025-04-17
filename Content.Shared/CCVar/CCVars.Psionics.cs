@@ -35,8 +35,10 @@ public sealed partial class CCVars
     ///     Congratulations, now they *actually* aren't a person anymore.
     ///     For people who complained that it wasn't obvious enough from the text that Mindbreaking is a form of Murder.
     /// </summary>
-    public static readonly CVarDef<bool> ScarierMindbreaking =
-        CVarDef.Create("psionics.scarier_mindbreaking", false, CVar.SERVERONLY);
+
+    /// This shit is evil and cannot be given to Durk
+    /// public static readonly CVarDef<bool> ScarierMindbreaking =
+    ///    CVarDef.Create("psionics.scarier_mindbreaking", false, CVar.SERVERONLY);
 
     /// <summary>
     /// Allow Ethereal Ent to PassThrough Walls/Objects while in Ethereal.
