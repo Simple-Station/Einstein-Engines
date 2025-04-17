@@ -165,9 +165,6 @@
           - Mindbroken
       event: !type:PsionicHealOtherPowerActionEvent
         healingAmount:
-          allowedStates:
-          - Alive
-          - Critical
           groups: # These all get divided by the number of damage types in the group. So they're all -2.5.
             Toxin: -3
             Airloss: -3
