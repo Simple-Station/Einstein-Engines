@@ -35,5 +35,5 @@ public sealed partial class CollectiveMindEvent : InstantActionEvent { }
 #region Events - Thrall Required
 
 public sealed partial class BlindnessSmokeEvent : InstantActionEvent { }
-
+public sealed partial class NullChargeEvent : InstantActionEvent { }
 #endregion

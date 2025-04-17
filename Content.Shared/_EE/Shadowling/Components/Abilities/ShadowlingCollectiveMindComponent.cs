@@ -23,12 +23,14 @@ public sealed partial class ShadowlingCollectiveMindComponent : Component
     public Dictionary<int, ProtoId<EntityPrototype>> LockedActions = new()
     {
         { 5, "ActionBlindnessSmoke"},
+        { 7, "ActionNullCharge"},
     };
 
     [DataField]
     public Dictionary<int, string> ActionComponentNames = new()
     {
         { 5, "ShadowlingBlindnessSmoke" },
+        { 7, "ShadowlingNullCharge"},
     }; // Le shitcode
 
     [DataField]

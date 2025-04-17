@@ -2,6 +2,7 @@ using Content.Server.Popups;
 using Content.Server.Storage.Components;
 using Content.Server.Storage.EntitySystems;
 using Content.Shared._EE.Shadowling;
+using Content.Shared.Popups;
 using Robust.Shared.Timing;
 
 
@@ -34,19 +35,19 @@ public sealed class ShadowlingEggHatchSystem : EntitySystem
 
             if (comp.CooldownTimer <= 12 && !comp.HasFirstMessageAppeared)
             {
-                _popupSystem.PopupEntity(Loc.GetString("sling-hatch-first"), uid, comp.ShadowlingInside);
+                _popupSystem.PopupEntity(Loc.GetString("sling-hatch-first"), uid, sUid, PopupType.Medium);
                 comp.HasFirstMessageAppeared = true;
             }
 
             if (comp.CooldownTimer <= 7 && !comp.HasSecondMessageAppeared)
             {
-                _popupSystem.PopupEntity(Loc.GetString("sling-hatch-second"), uid, comp.ShadowlingInside);
+                _popupSystem.PopupEntity(Loc.GetString("sling-hatch-second"), uid, sUid, PopupType.Medium);
                 comp.HasSecondMessageAppeared = true;
             }
 
             if (comp.CooldownTimer <= 3 && !comp.HasThirdMessageAppeared)
             {
-                _popupSystem.PopupEntity(Loc.GetString("sling-hatch-third"), uid, comp.ShadowlingInside);
+                _popupSystem.PopupEntity(Loc.GetString("sling-hatch-third"), uid, sUid, PopupType.Medium);
                 comp.HasThirdMessageAppeared = true;
             }
 

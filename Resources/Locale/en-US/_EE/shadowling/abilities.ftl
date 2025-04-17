@@ -22,3 +22,6 @@ shadowling-destroy-engines-not-called = The shuttle has not been called yet.
 shadowling-collective-mind-success = I feel stronger than before! I need {$thralls} Thralls to achieve my true form!
 shadowling-collective-mind-failure = I don't feel anything. I need {$thralls} Thralls to achieve my true form.
 shadowling-collective-mind-ascend = I have gained all the powers... Now, to ascend!
+
+shadowling-null-charge-success = Your impact echoes through the wires as power yields to void.
+shadowling-null-charge-start = I begin to charge my fist with a nullifying force.

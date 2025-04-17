@@ -157,3 +157,17 @@
     event: !type:BlindnessSmokeEvent { }
     # add speech
 
+- type: entity
+  id: ActionNullCharge
+  name: Null Charge
+  description: Stand near an APC and overload it with a surge of nullifying force.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: NoItem
+    useDelay: 60
+    icon:
+      sprite: _EE/Shadowling/shadowling_abilities.rsi
+      state: null_charge
+    event: !type:NullChargeEvent
+    # add speech
