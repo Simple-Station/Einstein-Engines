@@ -1015,6 +1015,7 @@
       - CartridgeBicaridine # Goobstation
       - CartridgeDermaline # Goobstation
       - CartridgeAtropine # Goobstation
+      - CartridgeSaline # Goobstation
       - SecHypo # Goobstation
       - BoxBeanbag
       - CartridgePistolRubber
@@ -1325,10 +1326,11 @@
     - AACTablet # DeltaV
     - VehicleWheelchairFolded # Goobstation - Vehicles
     - SyringeCase # Morphine
+    - CartridgeAtropine # Goobstation - ParamedHypo
     - CartridgeEpinephrine # Goobstation - ParamedHypo
     - CartridgeBicaridine # Goobstation - ParamedHypo
     - CartridgeDermaline # Goobstation - ParamedHypo
-    - CartridgeAtropine # Goobstation
+    - CartridgeSaline # Goobstation - ParamedHypo
     - ParamedHypo # Goobstation - ParamedHypo
     dynamicRecipes:
     - ChemicalPayload
@@ -1346,6 +1348,11 @@
     - AdvancedRetractor
     - OmnimedTool
     - MedicalCyberneticEyes
+  - type: EmagLatheRecipes
+    emagStaticRecipes:
+    - CartridgeEphedrine
+    - CartridgePuncturase
+    - CartridgeTirizene
   - type: Machine
     board: MedicalTechFabCircuitboard
   - type: StealTarget
