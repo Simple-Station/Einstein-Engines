@@ -119,6 +119,8 @@
         - MedicalBorg
         - Chaplain
         - Librarian
+        - ResearchDirector
+        - ForensicMantis
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
