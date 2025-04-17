@@ -87,6 +87,11 @@ language-Chittin-description =
     A language consisting of clicks, buzzes, and some variety of harsh insect sounds.
     Most of what makes up their speech comes from their antennae, making it a near-impossible language for those without to learn.
 
+language-Xeeplian-name = Xeeplian
+language-Xeeplian-description =
+    Our language is highly advanced, efficient and to the point.
+    We have taken a liking to mimic some of the inferior lifeforms' babbling in the further pursuit of Our goals.
+
 # Animal Languages
 
 language-Cat-name = Cat
