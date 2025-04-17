@@ -4496,7 +4496,7 @@ entities:
       pos: 11.5,20.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -17643.04
+      secondsUntilStateChange: -17984.879
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -4507,7 +4507,7 @@ entities:
       pos: 11.5,19.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -17642.773
+      secondsUntilStateChange: -17984.613
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -4838,7 +4838,7 @@ entities:
       pos: 16.5,27.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -17653.506
+      secondsUntilStateChange: -17995.346
       state: Opening
     - type: DeviceLinkSink
       invokeCounter: 4
@@ -4881,7 +4881,7 @@ entities:
       pos: 16.5,28.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -17652.64
+      secondsUntilStateChange: -17994.48
       state: Opening
     - type: DeviceLinkSink
       invokeCounter: 4
@@ -5634,7 +5634,7 @@ entities:
       pos: -41.5,-0.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -8760.015
+      secondsUntilStateChange: -9101.855
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -5722,7 +5722,7 @@ entities:
       pos: -15.5,-24.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -11142.712
+      secondsUntilStateChange: -11484.553
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -6165,7 +6165,7 @@ entities:
       pos: 15.5,22.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -17657.54
+      secondsUntilStateChange: -17999.379
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -8261,8 +8261,11 @@ entities:
   - uid: 647
     components:
     - type: Transform
-      pos: -3.1218042,4.6195602
+      pos: -3.5317361,4.3557734
       parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
   - uid: 648
     components:
     - type: Transform
@@ -25447,6 +25450,16 @@ entities:
       rot: 3.141592653589793 rad
       pos: -45.5,-2.5
       parent: 2
+  - uid: 11832
+    components:
+    - type: Transform
+      pos: -40.5,-0.5
+      parent: 2
+  - uid: 11833
+    components:
+    - type: Transform
+      pos: -45.5,-0.5
+      parent: 2
 - proto: ChairFolding
   entities:
   - uid: 4025
@@ -31594,8 +31607,6 @@ entities:
     - type: Transform
       pos: 48.292194,-6.485454
       parent: 2
-    - type: Physics
-      sleepTime: 0.01666665
 - proto: filingCabinetTallRandom
   entities:
   - uid: 5047
