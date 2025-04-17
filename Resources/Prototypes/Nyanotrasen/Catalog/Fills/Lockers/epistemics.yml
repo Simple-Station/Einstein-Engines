@@ -9,7 +9,8 @@
       - id: FlashlightLantern # DeltaV - To replace their lost flashlight
       - id: BoxZiptie # DeltaV - Give the mantis some zipties
       - id: WeaponPistolPsiBreaker # DeltaV - Mantis mindbreaker pistol, see Resources/Prototypes/DeltaV/Entities?Objects/Weapons/Guns/Pistols/pistols.yml
-      - id: MagazineBoxSpecialMindbreaker # Ammo for the gun, each mag is very small
+      - id: MagazinePistolSpecialMindbreaker
+      - id: PillMindbreakerToxin
       # Spare change of clothes
       - id: ClothingHeadHatFezMantis
       - id: ClothingOuterWinterCoatMantis
