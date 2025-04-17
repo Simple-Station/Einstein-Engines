@@ -1,9 +1,8 @@
 using Content.Shared.Chemistry.Components;
-using Robust.Shared.GameStates;
 
-namespace Content.Shared._Goobstation.Chemistry.SolutionCartridge;
+namespace Content.Shared._Goobstation.Chemistry.Hypospray;
 
-[RegisterComponent, NetworkedComponent]
+[RegisterComponent]
 public sealed partial class SolutionCartridgeComponent : Component
 {
     [DataField]

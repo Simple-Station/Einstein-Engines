@@ -21,6 +21,7 @@ using Content.Shared.Chemistry.Reagent;
 using Robust.Server.Audio;
 using Content.Server.Atmos.EntitySystems;
 using Content.Shared.DoAfter;
+using Content.Shared._Goobstation.Chemistry.Hypospray; // Goobstation
 
 namespace Content.Server.Chemistry.EntitySystems;
 
