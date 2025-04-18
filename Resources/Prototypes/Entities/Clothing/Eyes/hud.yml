@@ -289,6 +289,20 @@
     sprite: Clothing/Eyes/Hud/secpatch.rsi 
 
 - type: entity
+  parent: [ClothingEyesHudSecurity, FlippableEyesBase]
+  id: ClothingEyesEyepatchHudTintedSecurity
+  name: tinted security eyepatch
+  description: The cooler looking cousin of HUD sunglasses.
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Hud/secpatchtint.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Hud/secpatchtint.rsi
+  - type: FlashImmunity
+  - type: EyeProtection
+    protectionTime: 5
+
+- type: entity
   parent: [ClothingEyesHudBeer, FlippableEyesBase]
   id: ClothingEyesEyepatchHudBeer
   name: beer hud eyepatch
