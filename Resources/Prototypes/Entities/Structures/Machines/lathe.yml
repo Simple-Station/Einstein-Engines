@@ -807,6 +807,7 @@
     - ModsuitShell
     - ModsuitPlatingExternal
     - PowerCageHigh # Goobstation - Powercell to exosuit fab
+    - ReverseMMI # IPCMMI
   - type: EmagLatheRecipes
     emagDynamicRecipes:
     - WeaponMechCombatImmolationGun
@@ -1028,6 +1029,9 @@
       - BoxShotgunBirdshot
       - BoxShotgun00Buckshot
       - BoxShotgun0000Buckshot
+      - MagazineUniversalMagnumEmpty
+      - MagazineUniversalMagnum
+      - MagazineUniversalMagnumRubber
     dynamicRecipes:
       - Truncheon
       - Terminus
@@ -1151,6 +1155,10 @@
       - MagazineBoxCaselessRifleShrapnel
       - MagazineBoxCaselessRifleIncendiary
       - MagazineBoxCaselessRifleUranium
+      - MagazineUniversalMagnumUranium
+      - MagazineUniversalMagnumIncendiary
+      - MagazineUniversalMagnumShrapnel
+      - WeaponPistolUniversal
   - type: MaterialStorage
     whitelist:
       tags:

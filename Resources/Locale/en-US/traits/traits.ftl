@@ -629,3 +629,9 @@ trait-description-ExperiencedSurgeon =
     Surgery is your specialty. You are faster than most at your craft.
     This trait boosts your surgery speed to 2.5, which is the same as the innate boost CMO gets.
     (This is either a boost from 1.75 or 2 depending on your job)
+
+trait-name-BionicPryArm = Prybar Prosthetics
+trait-description-BionicPryArm =
+    Your arms have been reinforced with steel and hydraulics. You can force your way out of some unpleasant situations.
+    This trait gives you cybernetic DX-1 Pryarms, which let you pry open unpowered doors easily.
+    (They essentially function like a crowbar)
