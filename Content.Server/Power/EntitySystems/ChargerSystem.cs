@@ -12,7 +12,7 @@ using Content.Shared.Storage.Components;
 using Robust.Server.Containers;
 using Content.Shared.Whitelist;
 using Content.Shared.Inventory;
-using Content.Shared._Goobstation.Clothing.Systems;
+using System.Linq;
 
 namespace Content.Server.Power.EntitySystems;
 
@@ -24,8 +24,6 @@ internal sealed class ChargerSystem : EntitySystem
     [Dependency] private readonly BatterySystem _battery = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
-    [Dependency] private readonly InventorySystem _inventorySystem = default!;
-
     public override void Initialize()
     {
         SubscribeLocalEvent<ChargerComponent, ComponentStartup>(OnStartup);
@@ -131,9 +129,10 @@ internal sealed class ChargerSystem : EntitySystem
             if (!TryComp<BatteryComponent>(uid, out var battery))
                 continue;
 
-            if (Math.Abs(battery.MaxCharge - battery.CurrentCharge) < 0.01)
-                StopChargingBattery(charging.ChargerUid, charging.ChargerComponent, uid);
             TransferPower(charging.ChargerUid, uid, charging.ChargerComponent, frameTime);
+
+            if (battery.CurrentCharge == battery.MaxCharge)
+                StopChargingBattery(charging.ChargerUid, charging.ChargerComponent, uid);
         }
     }
 
@@ -150,7 +149,13 @@ internal sealed class ChargerSystem : EntitySystem
         if (args.Container.ID != component.SlotId)
             return;
 
-        StartChargingBattery(uid, component, args.Entity);
+        if (!TryGetBatteries(uid, component, out var batteries))
+            return;
+
+        foreach (var battery in batteries)
+        {
+            StartChargingBattery(uid, component, battery);
+        }
     }
 
     private void OnRemoved(EntityUid uid, ChargerComponent component, EntRemovedFromContainerMessage args)
@@ -241,15 +246,12 @@ internal sealed class ChargerSystem : EntitySystem
 
         // if the recharger is hit by an emp pulse,
         // stop recharging contained batteries to save resources
-        if (!_container.TryGetContainer(uid, component.SlotId, out var container))
+        if (!TryGetBatteries(uid, component, out var batteries))
             return;
 
-        foreach (var containedEntity in container.ContainedEntities)
+        foreach (var battery in batteries)
         {
-            if (!SearchForBattery(containedEntity, out _, out _))
-                continue;
-
-            StopChargingBattery(uid, component, containedEntity);
+            StopChargingBattery(uid, component, battery);
         }
     }
 
@@ -257,15 +259,12 @@ internal sealed class ChargerSystem : EntitySystem
     {
         // if an emp disable subsides,
         // attempt to start charging all batteries
-        if (!_container.TryGetContainer(uid, component.SlotId, out var container))
+        if (!TryGetBatteries(uid, component, out var batteries))
             return;
 
-        foreach (var containedEntity in container.ContainedEntities)
+        foreach (var battery in batteries)
         {
-            if (!SearchForBattery(containedEntity, out _, out _))
-                continue;
-
-            StartChargingBattery(uid, component, containedEntity);
+            StartChargingBattery(uid, component, battery);
         }
     }
 
@@ -294,18 +293,18 @@ internal sealed class ChargerSystem : EntitySystem
 
         var statusOut = CellChargerStatus.Off;
 
-        foreach (var containedEntity in container.ContainedEntities)
-        {
-            // if none of the slotted items are actually batteries, represent the charger as off
-            if (!SearchForBattery(containedEntity, out _, out _))
-                continue;
+        if (!TryGetBatteries(uid, component, out var batteries))
+            return CellChargerStatus.Off;
 
+        foreach (var battery in batteries)
+        {
             // if all batteries are either EMP'd or fully charged, represent the charger as fully charged
             statusOut = CellChargerStatus.Charged;
-            if (HasComp<EmpDisabledComponent>(containedEntity))
+
+            if (HasComp<EmpDisabledComponent>(battery))
                 continue;
 
-            if (!HasComp<ChargingComponent>(containedEntity))
+            if (!HasComp<ChargingComponent>(battery))
                 continue;
 
             // if we have atleast one battery being charged, represent the charger as charging;
@@ -323,50 +322,99 @@ internal sealed class ChargerSystem : EntitySystem
         if (!receiverComponent.Powered)
             return;
 
+        // todo: make whitelist for breadth first search
+        /*
         if (_whitelistSystem.IsWhitelistFail(component.Whitelist, targetEntity))
             return;
+        */
 
-        if (!SearchForBattery(targetEntity, out var batteryUid, out var heldBattery))
+        if (!TryComp<BatteryComponent>(targetEntity, out var heldBattery))
             return;
 
-        _battery.TrySetCharge(batteryUid.Value, heldBattery.CurrentCharge + component.ChargeRate * frameTime, heldBattery);
-        // Just so the sprite won't be set to 99.99999% visibility
-        if (heldBattery.MaxCharge - heldBattery.CurrentCharge < 0.01)
-        {
-            _battery.TrySetCharge(batteryUid.Value, heldBattery.MaxCharge, heldBattery);
-        }
+        _battery.TrySetCharge(targetEntity, Math.Min(heldBattery.CurrentCharge + component.ChargeRate * frameTime, heldBattery.MaxCharge), heldBattery);
 
         UpdateStatus(uid, component);
     }
 
-    // Goobstation - Modsuits - Changed charger logic to work with suits in cyborg charger
-    private bool SearchForBattery(EntityUid uid, [NotNullWhen(true)] out EntityUid? batteryUid, [NotNullWhen(true)] out BatteryComponent? component)
+    /*
+        breadth first search to prioritise recharging batteries over containers with batteries
+        - WarMechanic
+    */
+    private bool TryGetBatteries(EntityUid uid, ChargerComponent component, [NotNullWhen(true)] out List<EntityUid> batteries)
+    {
+        batteries = new List<EntityUid>();
+
+        // if we don't have a container to charge batteries, no
+        if (!_container.TryGetContainer(uid, component.SlotId, out var container))
+        {
+            Log.Warning($"Charger at {uid} does not have a corresponding container!");
+            return false;
+        }
+
+        if (container.ContainedEntities.Count == 0)
+        {
+            Log.Warning($"Charger at {uid} does not contain entities!");
+            return false;
+        }
+
+        var searchPq = new PriorityQueue<EntityUid, int>();
+
+        // add all contained entities to search
+        container.ContainedEntities.All(x => { searchPq.Enqueue(x, 0); return true; });
+
+        int steps = 0;
+        while (searchPq.Count > 0)
+        {
+            steps++;
+            if (SearchStep(uid, component, ref searchPq, out var batteryUid, out var batteryComponent))
+            {
+                batteries.Add(batteryUid.Value);
+            }
+        }
+
+        if (batteries.Count > 0)
+            return true;
+
+        Log.Warning($"Charger at {uid} does not contain batteries!");
+        return false;
+    }
+
+    private bool TryGetBattery(EntityUid uid, ChargerComponent component, [NotNullWhen(true)] out EntityUid? battery)
+    {
+        battery = null;
+        if (!TryGetBatteries(uid, component, out var batteries))
+            return false;
+
+        battery = batteries[0];
+        return true;
+    }
+
+    private bool SearchStep(EntityUid uid, ChargerComponent component, ref PriorityQueue<EntityUid, int> pq, [NotNullWhen(true)] out EntityUid? batteryUid, [NotNullWhen(true)] out BatteryComponent? batteryComponent)
     {
         batteryUid = null;
-        component = null;
+        batteryComponent = null;
+
+        if (!pq.TryDequeue(out var searchUid, out int depth))
+            return false;
 
         // try get a battery directly on the inserted entity
-        if (TryComp(uid, out component))
+        if (TryComp(searchUid, out batteryComponent))
         {
-            batteryUid = uid;
+            batteryUid = searchUid;
             return true;
         }
 
-        // Try to get the battery by checking for a power cell slot on the inserted entity
-        if (_powerCell.TryGetBatteryFromSlot(uid, out batteryUid, out component))
-            return true;
+        // recursively test for containers instead
+        if (!HasComp<ContainerManagerComponent>(searchUid))
+            return false;
 
-        if (TryComp<InventoryComponent>(uid, out var inventory))
+        var containers = _container.GetAllContainers(searchUid);
+        if (containers.Count() == 0)
+            return false;
+
+        foreach (var container in containers)
         {
-            var relayEv = new FindInventoryBatteryEvent();
-            _inventorySystem.RelayEvent((uid, inventory), ref relayEv);
-
-            if (relayEv.FoundBattery != null)
-            {
-                batteryUid = relayEv.FoundBattery.Value.Owner;
-                component = relayEv.FoundBattery.Value.Comp;
-                return true;
-            }
+            foreach (EntityUid containedEntity in container.ContainedEntities) { pq.Enqueue(containedEntity, depth + 1); }
         }
 
         return false;
