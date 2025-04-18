@@ -15,7 +15,7 @@ public sealed class ParallaxSystem : SharedParallaxSystem
     [Dependency] private readonly IParallaxManager _parallax = default!;
 
     [ValidatePrototypeId<ParallaxPrototype>]
-    private const string Fallback = "Default";
+    public const string Fallback = "Default";
 
     public const int ParallaxZIndex = 0;
 
@@ -56,19 +56,9 @@ public sealed class ParallaxSystem : SharedParallaxSystem
         }
     }
 
-    public ParallaxLayerPrepared[] GetParallaxLayers(MapId mapId)
+    public ParallaxLayerPrepared[] GetParallaxLayers(string name)
     {
-        return _parallax.GetParallaxLayers(GetParallax(_map.GetMapEntityId(mapId)));
-    }
-
-    public string GetParallax(MapId mapId)
-    {
-        return GetParallax(_map.GetMapEntityId(mapId));
-    }
-
-    public string GetParallax(EntityUid mapUid)
-    {
-        return TryComp<ParallaxComponent>(mapUid, out var parallax) ? parallax.Parallax : Fallback;
+        return _parallax.GetParallaxLayers(name);
     }
 
     /// <summary>
@@ -123,3 +113,5 @@ public sealed class ParallaxSystem : SharedParallaxSystem
         }
     }
 }
+
+
