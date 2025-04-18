@@ -15288,3 +15288,10 @@ Entries:
   id: 7171
   time: '2025-04-18T23:34:33.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2278
+- author: dootythefrooty
+  changes:
+    - type: Fix
+      message: Intercomms are functional for every channel again.
+  id: 7172
+  time: '2025-04-18T23:45:54.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2269
