@@ -35,6 +35,7 @@
       invokeChatType: Emote
       prototypes:
         hand1: MantisBlackBlade
+      force: false
   - type: BaseCultSpell
 
 - type: entity

@@ -12,8 +12,8 @@ public sealed partial class PsionicInvisibilityUsedComponent : Component
     public float DamageToStun = 5f;
 
     [DataField]
-    public SoundSpecifier StartSound = new SoundPathSpecifier("/Audio/psionics/wavy.ogg");
+    public SoundSpecifier StartSound = new SoundPathSpecifier("/Audio/Psionics/wavy.ogg");
 
     [DataField]
-    public SoundSpecifier EndSound = new SoundPathSpecifier("/Audio/psionics/wavy.ogg");
+    public SoundSpecifier EndSound = new SoundPathSpecifier("/Audio/Psionics/wavy.ogg");
 }

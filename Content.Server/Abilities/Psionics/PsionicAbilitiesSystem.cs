@@ -166,6 +166,7 @@ public sealed class PsionicAbilitiesSystem : EntitySystem
 
         comp.CurrentAmplification = ampModifier;
         comp.CurrentDampening = dampModifier;
+        Dirty(uid, comp);
     }
 
     /// <summary>
