@@ -80,30 +80,15 @@ internal sealed class ChargerSystem : EntitySystem
         }
     }
 
-    private void StartChargingBattery(EntityUid uid, ChargerComponent component, EntityUid target)
-    {
-        bool charge = true;
+private void StopChargingBattery(EntityUid uid, ChargerComponent component, EntityUid target)
+{
+    if (HasComp<ChargingComponent>(target))
+        RemComp<ChargingComponent>(target);
 
-        if (HasComp<EmpDisabledComponent>(uid))
-            charge = false;
-        else
-        if (!TryComp<BatteryComponent>(target, out var battery))
-            charge = false;
-        else
-        if (Math.Abs(battery.MaxCharge - battery.CurrentCharge) < 0.01)
-            charge = false;
-
-        // wrap functionality in an if statement instead of returning...
-        if (charge)
-        {
-            var charging = EnsureComp<ChargingComponent>(target);
-            charging.ChargerUid = uid;
-            charging.ChargerComponent = component;
-        }
-
-        // ...so the status always updates (for insertin a power cell)
-        UpdateStatus(uid, component);
-    }
+    // Remove the target from ExpectedBatteries to avoid stale references
+    component.ExpectedBatteries.Remove(target);
+    UpdateStatus(uid, component);
+}
 
     private void StopChargingBattery(EntityUid uid, ChargerComponent component, EntityUid target)
     {
