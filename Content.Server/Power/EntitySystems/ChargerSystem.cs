@@ -314,6 +314,7 @@ internal sealed class ChargerSystem : EntitySystem
         return statusOut;
     }
 
+    // todo: transferring power responsibility is moved to the charging component and baked rather than iterated
     private void TransferPower(EntityUid uid, EntityUid targetEntity, ChargerComponent component, float frameTime)
     {
         if (!TryComp(uid, out ApcPowerReceiverComponent? receiverComponent))
@@ -321,12 +322,6 @@ internal sealed class ChargerSystem : EntitySystem
 
         if (!receiverComponent.Powered)
             return;
-
-        // todo: make whitelist for breadth first search
-        /*
-        if (_whitelistSystem.IsWhitelistFail(component.Whitelist, targetEntity))
-            return;
-        */
 
         if (!TryComp<BatteryComponent>(targetEntity, out var heldBattery))
             return;
@@ -370,6 +365,9 @@ internal sealed class ChargerSystem : EntitySystem
             {
                 batteries.Add(batteryUid.Value);
             }
+
+            if (batteries.Count >= component.MaxBatteries)
+                break;
         }
 
         if (batteries.Count > 0)
@@ -397,17 +395,19 @@ internal sealed class ChargerSystem : EntitySystem
         if (!pq.TryDequeue(out var searchUid, out int depth))
             return false;
 
-        // try get a battery directly on the inserted entity
-        if (TryComp(searchUid, out batteryComponent))
+        // try get a battery directly on the inserted entity as long as its permitted in the whitelist
+        if (_whitelistSystem.IsWhitelistPassOrNull(component.ChargeWhitelist, searchUid) && TryComp(searchUid, out batteryComponent))
         {
             batteryUid = searchUid;
             return true;
         }
 
-        // recursively test for containers instead
-        if (!HasComp<ContainerManagerComponent>(searchUid))
+        // if we're not allowed to search this object, cancel
+        if (_whitelistSystem.IsWhitelistFail(component.SearchWhitelist, searchUid)
+            || !HasComp<ContainerManagerComponent>(searchUid))
             return false;
 
+        // recursively test for containers instead
         var containers = _container.GetAllContainers(searchUid);
         if (containers.Count() == 0)
             return false;
