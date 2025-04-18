@@ -2,7 +2,7 @@
   id: RandomPsionicPowerPool
   weights:
     MetapsionicPower: 1
-   # AnoigoPower: 1
+    AnoigoPower: 1
     DispelPower: 1
     TelegnosisPower: 0.75
     PsionicRegenerationPower: 1
@@ -30,7 +30,7 @@
 - type: weightedRandom
   id: ElementalistPowerPool # Significantly slower power generation. No Telepathy.
   weights:
-   # AnoigoPower: 1
+    AnoigoPower: 1
     HealingWordPower: 0.9
     ShadeskipPower: 0.1
     TelekineticPulsePower: 0.15

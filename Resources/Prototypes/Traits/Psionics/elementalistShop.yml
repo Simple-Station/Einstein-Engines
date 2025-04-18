@@ -1,19 +1,19 @@
-# - type: trait
-#  id: ElementalistAnoigoPower
-#  category: TraitsPsionicsPowers
-#  points: -5
-#  requirements:
-#    - !type:CharacterJobRequirement
-#      inverted: true
-#      jobs:
-#        - Prisoner # Obvious reason
-#   - !type:CharacterTraitRequirement
-#     traits:
-#        - Elementalist
-#  functions:
-#    - !type:TraitAddPsionics
-#      psionicPowers:
-#        - AnoigoPower
+- type: trait
+  id: ElementalistAnoigoPower
+  category: TraitsPsionicsPowers
+  points: -5
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Obvious reason
+    - !type:CharacterTraitRequirement
+      traits:
+        - Elementalist
+  functions:
+    - !type:TraitAddPsionics
+      psionicPowers:
+        - AnoigoPower
 
 - type: trait
   id: ElementalistHealingWordPower
