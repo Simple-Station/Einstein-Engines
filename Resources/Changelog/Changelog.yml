@@ -15238,3 +15238,10 @@ Entries:
   id: 7166
   time: '2025-04-18T21:32:42.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2273
+- author: 3PonPon3
+  changes:
+    - type: Fix
+      message: Fixed the scottish, stutter and frontal lisp accents not working.
+  id: 7167
+  time: '2025-04-18T21:34:03.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2266
