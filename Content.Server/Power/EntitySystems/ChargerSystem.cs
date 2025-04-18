@@ -109,6 +109,9 @@ internal sealed class ChargerSystem : EntitySystem
     {
         if (HasComp<ChargingComponent>(target))
             RemComp<ChargingComponent>(target);
+        
+        // Remove the target from ExpectedBatteries to avoid stale references
+        component.ExpectedBatteries.Remove(target);
         UpdateStatus(uid, component);
     }
 
