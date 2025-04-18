@@ -13,9 +13,6 @@ namespace Content.Shared.Humanoid;
 public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, IEquatable<HumanoidCharacterAppearance>
 {
     [DataField]
-    public Color EyeColor { get; private set; }
-
-    [DataField]
     public Color SkinColor { get;  set; }
 
     [DataField]
@@ -67,6 +64,7 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
         );
     }
 
+    // todo: default eye markings maybe?
     private static IReadOnlyList<Color> RealisticEyeColors = new List<Color>
     {
         Color.Brown,
@@ -143,8 +141,6 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
 
     public static HumanoidCharacterAppearance EnsureValid(HumanoidCharacterAppearance appearance, string species, Sex sex)
     {
-        var eyeColor = ClampColor(appearance.EyeColor);
-
         var proto = IoCManager.Resolve<IPrototypeManager>();
         var markingManager = IoCManager.Resolve<MarkingManager>();
 
@@ -173,7 +169,6 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
     {
         return
             maybeOther is HumanoidCharacterAppearance other
-            && EyeColor.Equals(other.EyeColor)
             && SkinColor.Equals(other.SkinColor)
             && Markings.SequenceEqual(other.Markings);
     }
@@ -184,8 +179,7 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
             return false;
         if (ReferenceEquals(this, other))
             return true;
-        return EyeColor.Equals(other.EyeColor)
-            && SkinColor.Equals(other.SkinColor)
+        return SkinColor.Equals(other.SkinColor)
             && Markings.SequenceEqual(other.Markings);
     }
 
@@ -199,7 +193,6 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
     public override int GetHashCode()
     {
         return HashCode.Combine(
-            EyeColor,
             SkinColor,
             Markings);
     }
