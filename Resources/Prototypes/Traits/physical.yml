@@ -516,15 +516,24 @@
 - type: trait
   id: BionicArm
   category: Physical
-  points: -10
+  points: -8
   requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-        - Gladiator
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterJobRequirement
+        jobs:
+         - Paramedic
+      - !type:CharacterDepartmentRequirement
+          departments:
+          - Security
+          - Command
+          - Dignitary
     - !type:CharacterItemGroupRequirement
       group: TraitsMind
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - BionicPryArm
   functions:
     - !type:TraitCyberneticLimbReplacement
       removeBodyPart: Arm
@@ -896,33 +905,33 @@
               Brute: -0.6
               Burn: -0.6
 
-- type: trait
-  id: BionicLeg
-  category: Physical
-  points: -8
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
-  functions:
-    - !type:TraitPushDescription
-      descriptionExtensions:
-        - description: examine-bionic-leg-message
-          fontSize: 12
-          requireDetailRange: true
-    - !type:TraitCyberneticLimbReplacement
-      removeBodyPart: Leg
-      partSymmetry: Left
-      protoId: SpeedLeftLeg
-      slotId: "left leg"
-    - !type:TraitCyberneticLimbReplacement
-      removeBodyPart: Leg
-      partSymmetry: Right
-      protoId: SpeedRightLeg
-      slotId: "right leg"
+# - type: trait
+#   id: BionicLeg
+#   category: Physical
+#   points: -8
+#   requirements:
+#     - !type:CharacterJobRequirement
+#       inverted: true
+#       jobs:
+#         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+#     - !type:CharacterItemGroupRequirement
+#       group: TraitsMind
+#   functions:
+#     - !type:TraitPushDescription
+#       descriptionExtensions:
+#         - description: examine-bionic-leg-message
+#           fontSize: 12
+#           requireDetailRange: true
+#     - !type:TraitCyberneticLimbReplacement
+#       removeBodyPart: Leg
+#       partSymmetry: Left
+#       protoId: SpeedLeftLeg
+#       slotId: "left leg"
+#     - !type:TraitCyberneticLimbReplacement
+#       removeBodyPart: Leg
+#       partSymmetry: Right
+#       protoId: SpeedRightLeg
+#       slotId: "right leg"
 
 
 # - type: trait
@@ -1213,3 +1222,35 @@
           - Pill
           - Crayon
           - Paper
+
+- type: trait
+  id: BionicPryArm
+  category: Physical
+  points: -3
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMind
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - BionicArm
+  functions:
+    - !type:TraitCyberneticLimbReplacement
+      removeBodyPart: Arm
+      partSymmetry: Left
+      protoId: CrowbarLeftArm
+      slotId: "left arm"
+    - !type:TraitCyberneticLimbReplacement
+      removeBodyPart: Arm
+      partSymmetry: Right
+      protoId: CrowbarRightArm
+      slotId: "right arm"
+    - !type:TraitPushDescription
+      descriptionExtensions:
+        - description: examine-bionic-pryarm-message
+          fontSize: 12
+          requireDetailRange: true

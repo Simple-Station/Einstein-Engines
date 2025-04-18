@@ -22,7 +22,7 @@ namespace Content.Server.Abilities.Psionics
 
         private void OnPowerUsed(NoosphericZapPowerActionEvent args)
         {
-            if (!_psionics.OnAttemptPowerUse(args.Performer, "noospheric zap"))
+            if (!_psionics.OnAttemptPowerUse(args.Performer, args.Target, "noospheric zap", true))
                 return;
 
             _beam.TryCreateBeam(args.Performer, args.Target, "LightningNoospheric");
