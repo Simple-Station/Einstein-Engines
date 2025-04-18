@@ -1,8 +1,8 @@
 - type: entity
-  id: MedipenCigPack
-  parent: CigPackBlue
-  name: medipen box
-  description: An AcmeCo cigarette box repurposed as medipen storage.
+  id: MedipenCase
+  parent: SyringeCase
+  name: medipen case
+  description: A syringe case stocked with an organized supply of medipens.
   components:
   - type: StorageFill
     contents:

@@ -128,6 +128,25 @@ public abstract partial class SharedMartialArtsSystem : EntitySystem
             args.Stage = component.StartingStage;
     }
 
+    //currently a bool that returns whether or not the target is being grabbed by the user. Would like to make it an int that returns the grabstage
+    private int IsBeingGrabbed(EntityUid uid, EntityUid? target)
+    {
+        if (!TryComp<PullerComponent>(uid, out var comp) || !HasComp<PullableComponent>(target) || !_pulling.TryGetPulledEntity(uid, out target))
+            return 0;
+        switch (comp.GrabStage)
+        {
+            case GrabStage.No:
+                return 0;
+            case GrabStage.Soft:
+                return 1;
+            case GrabStage.Hard:
+                return 2;
+            case GrabStage.Suffocate:
+                return 3;
+        }
+        return 0;
+    }
+
     private void OnSilencedSpeakAttempt(Entity<KravMagaSilencedComponent> ent, ref SpeakAttemptEvent args)
     {
         _popupSystem.PopupEntity(Loc.GetString("popup-grabbed-cant-speak"),
@@ -216,6 +235,29 @@ public abstract partial class SharedMartialArtsSystem : EntitySystem
 
         _popupSystem.PopupEntity(Loc.GetString("cqc-fail-already"), user, user);
         return false;
+    }
+
+    private bool TryRemove(GrantMartialArtKnowledgeComponent comp, EntityUid user)
+    {
+        if (!_netManager.IsServer || MetaData(user).EntityLifeStage >= EntityLifeStage.Terminating)
+            return false;
+        if (HasComp<CanPerformComboComponent>(user))
+        {
+            var pullerComponent = EnsureComp<PullerComponent>(user);
+            if (!_proto.TryIndex<MartialArtPrototype>(comp.MartialArtsForm.ToString(), out var martialArtsPrototype))
+                return false;
+            pullerComponent.StageChangeCooldown *= 2;
+            if (TryComp<MeleeWeaponComponent>(user, out var meleeWeaponComponent))
+            {
+                var newDamage = new DamageSpecifier();
+                newDamage.DamageDict.Add("Blunt", martialArtsPrototype.BaseDamageModifier);
+                meleeWeaponComponent.Damage -= newDamage;
+            }
+            RemComp<MartialArtsKnowledgeComponent>(user);
+            RemComp<CanPerformComboComponent>(user);
+        }
+        return true;
+
     }
 
     private void LoadCombos(ProtoId<ComboListPrototype> list, CanPerformComboComponent combo)
