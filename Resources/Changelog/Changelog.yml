@@ -15245,3 +15245,12 @@ Entries:
   id: 7167
   time: '2025-04-18T21:34:03.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2266
+- author: Timfa2112
+  changes:
+    - type: Fix
+      message: >-
+        Fixed admin commands for spawning stamps, passports, and their related
+        localization missing
+  id: 7168
+  time: '2025-04-18T21:43:13.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2265
