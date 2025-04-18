@@ -15254,3 +15254,21 @@ Entries:
   id: 7168
   time: '2025-04-18T21:43:13.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2265
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added a "Flash" weakness to DarkSwap. Being hit by any flash, even if
+        you have flash protection, causes you to instantly drop out of the dark
+        realm and take a massive amount of stamina damage.
+    - type: Add
+      message: >-
+        DarkSwap users now take continuous stamina damage while in the dark
+        realm.
+    - type: Remove
+      message: >-
+        DarkSwap no longer makes its user immune to Space, Gravity, and
+        Vacuums. 
+  id: 7169
+  time: '2025-04-18T22:09:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2274
