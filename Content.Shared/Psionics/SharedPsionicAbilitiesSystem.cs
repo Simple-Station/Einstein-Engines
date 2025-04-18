@@ -27,7 +27,7 @@ namespace Content.Shared.Abilities.Psionics
             if (!TryComp<PsionicComponent>(uid, out var component)
                 || HasComp<MindbrokenComponent>(uid)
                 || checkInsulation
-                && HasComp<PsionicInsulationComponent>(uid))
+                && TryComp(uid, out PsionicInsulationComponent? insul) && !insul.Passthrough)
                 return false;
 
             var tev = new OnAttemptPowerUseEvent(uid, power);
@@ -50,7 +50,7 @@ namespace Content.Shared.Abilities.Psionics
             if (!TryComp<PsionicComponent>(uid, out var component)
                 || HasComp<MindbrokenComponent>(uid) || HasComp<MindbrokenComponent>(target)
                 || checkInsulation
-                && (HasComp<PsionicInsulationComponent>(uid) || HasComp<PsionicInsulationComponent>(target)))
+                && (TryComp(uid, out PsionicInsulationComponent? insul) && !insul.Passthrough || HasComp<PsionicInsulationComponent>(target)))
                 return false;
 
             var tev = new OnAttemptPowerUseEvent(uid, power);
