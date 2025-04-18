@@ -65,7 +65,7 @@
     - type: NoSlip
   - type: Magboots
     activeWalkModifier: 0.85
-    activeSprinModifier: 0.8
+    activeSprintModifier: 0.8
     changeClothingVisuals: true
   - type: Appearance
   - type: GenericVisualizer
