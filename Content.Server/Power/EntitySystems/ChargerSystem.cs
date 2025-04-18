@@ -346,13 +346,13 @@ internal sealed class ChargerSystem : EntitySystem
         // if we don't have a container to charge batteries, no
         if (!_container.TryGetContainer(uid, component.SlotId, out var container))
         {
-            Log.Warning($"Charger at {uid} does not have a corresponding container!");
+            Log.Debug($"Charger at {uid} does not have a corresponding container!");
             return false;
         }
 
         if (container.ContainedEntities.Count == 0)
         {
-            Log.Warning($"Charger at {uid} does not contain entities!");
+            Log.Debug($"Charger at {uid} does not contain entities!");
             return false;
         }
 
@@ -367,6 +367,12 @@ internal sealed class ChargerSystem : EntitySystem
         while (searchPq.Count > 0)
         {
             steps++;
+            if (steps > component.MaxSteps)
+            {
+                Log.Warning($"Battery search at {uid} exceeded 100 steps, aborting for performance reasons");
+                break;
+            }
+
             if (SearchStep(uid, component, ref searchPq, out var batteryUid, out var batteryComponent))
             {
                 batteries.Add(batteryUid.Value);
@@ -382,7 +388,7 @@ internal sealed class ChargerSystem : EntitySystem
             return true;
         }
 
-        Log.Warning($"Charger at {uid} does not contain batteries!");
+        Log.Debug($"Charger at {uid} does not contain batteries!");
         return false;
     }
     private bool SearchStep(EntityUid uid, ChargerComponent component, ref PriorityQueue<EntityUid, int> pq, [NotNullWhen(true)] out EntityUid? batteryUid, [NotNullWhen(true)] out BatteryComponent? batteryComponent)
@@ -400,7 +406,11 @@ internal sealed class ChargerSystem : EntitySystem
             return true;
         }
 
-        // if we're not allowed to search this object, cancel
+        // if we're at or above max depth, cancel search
+        if (depth >= component.MaxDepth)
+            return false;
+
+        // if we're not allowed to search this object, cancel search
         if (_whitelistSystem.IsWhitelistFail(component.SearchWhitelist, searchUid)
             || !HasComp<ContainerManagerComponent>(searchUid))
             return false;

@@ -56,5 +56,15 @@ namespace Content.Server.Power.Components
         /// </summary>
         [DataField]
         public List<EntityUid> ExpectedBatteries = new();
+
+        /// <summary>
+        /// Maximum number of search steps. In case of extremely complex nested inventories. While it should never occur, prevents recursion too.
+        /// </summary>
+        public int MaxSteps = 256;
+
+        /// <summary>
+        /// Maximum inventory depth. In case of extremely complex nested inventories. While it should never occur, prevents recursion too.
+        /// </summary>
+        public int MaxDepth = 10;
     }
 }
