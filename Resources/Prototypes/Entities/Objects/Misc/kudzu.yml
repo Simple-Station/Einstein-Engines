@@ -312,7 +312,7 @@
       prototypes:
         - ShadowBasaltRandom
     - type: TimedDespawn
-      lifetime: 30
+      lifetime: 10
 
 - type: entity
   name: Temporary haze
@@ -320,4 +320,4 @@
   parent: ShadowKudzuWeak
   components:
     - type: TimedDespawn
-      lifetime: 30
+      lifetime: 20
