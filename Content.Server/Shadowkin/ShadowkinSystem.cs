@@ -30,7 +30,7 @@ public sealed class ShadowkinSystem : EntitySystem
         SubscribeLocalEvent<ShadowkinComponent, ComponentStartup>(OnInit);
         SubscribeLocalEvent<ShadowkinComponent, OnMindbreakEvent>(OnMindbreak);
         SubscribeLocalEvent<ShadowkinComponent, RejuvenateEvent>(OnRejuvenate);
-        SubscribeLocalEvent<ShadowkinComponent, EyeColorInitEvent>(OnEyeColorChange);
+        //SubscribeLocalEvent<ShadowkinComponent, EyeColorInitEvent>(OnEyeColorChange);
     }
 
     private void OnInit(EntityUid uid, ShadowkinComponent component, ComponentStartup args)
@@ -38,6 +38,8 @@ public sealed class ShadowkinSystem : EntitySystem
         _actionsSystem.AddAction(uid, ref component.ShadowkinSleepAction, ShadowkinSleepActionId, uid);
     }
 
+    // idk what shadowkin do but whatever this has to do with eye colours... needs to be changed due to markings
+    /*
     private void OnEyeColorChange(EntityUid uid, ShadowkinComponent component, EyeColorInitEvent args)
     {
         if (!TryComp<HumanoidAppearanceComponent>(uid, out var humanoid)
@@ -47,6 +49,7 @@ public sealed class ShadowkinSystem : EntitySystem
         component.OldEyeColor = humanoid.EyeColor;
         Dirty(uid, humanoid);
     }
+    */
 
     private void OnMindbreak(EntityUid uid, ShadowkinComponent component, ref OnMindbreakEvent args)
     {

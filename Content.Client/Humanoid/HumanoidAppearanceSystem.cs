@@ -162,7 +162,6 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
             var markingColors = MarkingColoring.GetMarkingLayerColors(
                 prototype,
                 profile.Appearance.SkinColor,
-                profile.Appearance.EyeColor,
                 markings
             );
             markings.AddBack(prototype.MarkingCategory, new Marking(marking.MarkingId, markingColors));
@@ -172,7 +171,6 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         markings.EnsureSexes(profile.Sex, _markingManager);
         markings.EnsureDefault(
             profile.Appearance.SkinColor,
-            profile.Appearance.EyeColor,
             _markingManager);
 
         DebugTools.Assert(IsClientSide(uid));
@@ -189,7 +187,6 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         humanoid.Age = profile.Age;
         humanoid.Species = profile.Species;
         humanoid.SkinColor = profile.Appearance.SkinColor;
-        humanoid.EyeColor = profile.Appearance.EyeColor;
         humanoid.Height = profile.Height;
         humanoid.Width = profile.Width;
 

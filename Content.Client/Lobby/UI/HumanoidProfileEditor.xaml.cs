@@ -1563,8 +1563,7 @@ namespace Content.Client.Lobby.UI
             if (Profile == null)
                 return;
 
-            Markings.SetData(Profile.Appearance.Markings, Profile.Species, Profile.Sex, Profile.Appearance.SkinColor,
-                Profile.Appearance.EyeColor);
+            Markings.SetData(Profile.Appearance.Markings, Profile.Species, Profile.Sex, Profile.Appearance.SkinColor);
         }
 
         private void UpdateGenderControls()
