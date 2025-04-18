@@ -36,4 +36,5 @@ public sealed partial class CollectiveMindEvent : InstantActionEvent { }
 
 public sealed partial class BlindnessSmokeEvent : InstantActionEvent { }
 public sealed partial class NullChargeEvent : InstantActionEvent { }
+public sealed partial class SonicScreechEvent : InstantActionEvent { }
 #endregion

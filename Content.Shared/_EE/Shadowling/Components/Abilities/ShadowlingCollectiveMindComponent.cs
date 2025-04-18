@@ -22,6 +22,7 @@ public sealed partial class ShadowlingCollectiveMindComponent : Component
     [DataField]
     public Dictionary<int, ProtoId<EntityPrototype>> LockedActions = new()
     {
+        { 3, "ActionSonicScreech" },
         { 5, "ActionBlindnessSmoke"},
         { 7, "ActionNullCharge"},
     };
@@ -29,9 +30,10 @@ public sealed partial class ShadowlingCollectiveMindComponent : Component
     [DataField]
     public Dictionary<int, string> ActionComponentNames = new()
     {
+        { 3, "ShadowlingSonicScreech" },
         { 5, "ShadowlingBlindnessSmoke" },
         { 7, "ShadowlingNullCharge"},
-    }; // Le shitcode
+    };
 
     [DataField]
     public int AmountOfThralls;

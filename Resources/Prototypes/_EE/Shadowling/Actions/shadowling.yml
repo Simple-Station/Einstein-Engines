@@ -171,3 +171,18 @@
       state: null_charge
     event: !type:NullChargeEvent
     # add speech
+
+- type: entity
+  id: ActionSonicScreech
+  name: Sonic Screech
+  description: Release a violent scream that disorients all who hear it.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: NoItem
+    useDelay: 60
+    icon:
+      sprite: _EE/Shadowling/shadowling_abilities.rsi
+      state: sonic_screech
+    event: !type:SonicScreechEvent
+    # add speech

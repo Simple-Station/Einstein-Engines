@@ -1,12 +1,10 @@
 using Content.Server.Actions;
-using Content.Server.Body.Systems;
 using Content.Server.Popups;
-using Content.Server.Shuttles.Events;
 using Content.Server.Storage.EntitySystems;
 using Content.Shared._EE.Shadowling.Systems;
 using Content.Shared._EE.Shadowling;
+using Content.Shared._EE.Shadowling.Components;
 using Content.Shared.Abilities.Psionics;
-using Content.Shared.Body.Organ;
 using Content.Shared.Damage;
 using Content.Shared.Humanoid;
 using Content.Shared.Inventory;
@@ -28,7 +26,6 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
     [Dependency] private readonly EntityStorageSystem _entityStorage = default!;
     [Dependency] private readonly InventorySystem _inventorySystem = default!;
     [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
-    [Dependency] private readonly BodySystem _bodysystem = default!;
 
     public override void Initialize()
     {
@@ -70,6 +67,7 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
         AddComp<ShadowlingIcyVeinsComponent>(uid);
         AddComp<ShadowlingDestroyEnginesComponent>(uid);
         AddComp<ShadowlingCollectiveMindComponent>(uid);
+
         foreach (var action in comp.PostHatchShadowlingActions)
             _actions.AddAction(uid, action);
     }
