@@ -15197,3 +15197,31 @@ Entries:
   id: 7164
   time: '2025-04-17T00:17:27.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2234
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        NT has had its station's "High Security" doors such as Command,
+        Security, and Vault doors shielded with psifoil around their components.
+        They can no longer be forced open by the Anoigo power. 
+    - type: Tweak
+      message: >-
+        Anoigo, Dispel, Mindswap, Healing Word, Breath Of Life, Pyrokinesis, and
+        Noospheric Zap now all don't work if the target has psionic insulation.
+    - type: Fix
+      message: 'Psionic Invisibility now actually works as advertised. '
+    - type: Fix
+      message: >-
+        Psionic Invisibility and Anoigo now actually produce a sound, as well as
+        properly enforce their cooldowns.
+    - type: Tweak
+      message: >-
+        Anoigo reclassified as a "Dangerous" power, it now also costs 10 points
+        for Elementalists.
+    - type: Remove
+      message: Prisoners can no longer be Psionic.
+    - type: Fix
+      message: Mantis can no longer summon his black blade if his hands are full.
+  id: 7165
+  time: '2025-04-18T18:53:36.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2272
