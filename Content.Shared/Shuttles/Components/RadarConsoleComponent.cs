@@ -25,4 +25,8 @@ public sealed partial class RadarConsoleComponent : Component
     /// </summary>
     [DataField]
     public bool FollowEntity = false;
+
+    // hullrot edit
+    public NavBoundUserInterfaceState? LastUpdatedState = null;
+    // end
 }

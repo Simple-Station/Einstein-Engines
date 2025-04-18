@@ -1,11 +1,17 @@
+using Content.Server._Crescent.DynamicAcces;
+using Content.Server.Access.Systems;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Events;
 using Content.Server.Station.Systems;
-using Content.Shared._NF.Shuttles.Events; // Frontier
+using Content.Shared._Crescent;
+using Content.Shared._Crescent.Helpers;
+using Content.Shared._NF.Shuttles.Events;
+using Content.Shared.Access.Components; // Frontier
 using Content.Shared.ActionBlocker;
 using Content.Shared.Alert;
+using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Content.Shared.Shuttles.BUIStates;
 using Content.Shared.Shuttles.Components;
@@ -13,6 +19,7 @@ using Content.Shared.Shuttles.Events;
 using Content.Shared.Shuttles.Systems;
 using Content.Shared.Tag;
 using Content.Shared.Movement.Systems;
+using Content.Shared.NamedModules.Components;
 using Content.Shared.Power;
 using Content.Shared.Shuttles.UI.MapObjects;
 using Content.Shared.Timing;
@@ -22,6 +29,10 @@ using Robust.Shared.GameStates;
 using Robust.Shared.Map;
 using Robust.Shared.Utility;
 using Content.Shared.UserInterface;
+using Robust.Server.Audio;
+using Robust.Shared.Audio;
+using Robust.Shared.Containers;
+
 
 namespace Content.Server.Shuttles.Systems;
 
@@ -38,6 +49,11 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
     [Dependency] private readonly TagSystem _tags = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
     [Dependency] private readonly SharedContentEyeSystem _eyeSystem = default!;
+    [Dependency] private readonly DynamicCodeSystem _codes = default!;
+    [Dependency] private readonly CrescentHelperSystem _crescent = default!;
+    [Dependency] private readonly AccessSystem _acces = default!;
+    [Dependency] private readonly AudioSystem _audio = default!;
+
 
     [Dependency] private readonly _Lavaland.Shuttles.Systems.DockingConsoleSystem _dockingConsole = default!; // Lavaland Change: FTL
 
@@ -57,6 +73,11 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
         SubscribeLocalEvent<ShuttleConsoleComponent, PowerChangedEvent>(OnConsolePowerChange);
         SubscribeLocalEvent<ShuttleConsoleComponent, AnchorStateChangedEvent>(OnConsoleAnchorChange);
         SubscribeLocalEvent<ShuttleConsoleComponent, ActivatableUIOpenAttemptEvent>(OnConsoleUIOpenAttempt);
+        SubscribeLocalEvent<ShuttleConsoleComponent, AfterInteractUsingEvent>(OnAfterInteractUsing);
+        SubscribeLocalEvent<ShuttleConsoleComponent, BoundUserInterfaceMessageAttempt>(BUIValidation);
+        SubscribeLocalEvent<ShuttleConsoleComponent, EntInsertedIntoContainerMessage>(UpdateUI);
+        SubscribeLocalEvent<ShuttleConsoleComponent, EntRemovedFromContainerMessage>(UpdateUI);
+        SubscribeLocalEvent<ShuttleConsoleComponent, TryMakeEmployeeMessage>(OnToggleEmployee);
         Subs.BuiEvents<ShuttleConsoleComponent>(ShuttleConsoleUiKey.Key, subs =>
         {
             subs.Event<ShuttleConsoleFTLBeaconMessage>(OnBeaconFTLMessage);
@@ -121,6 +142,105 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
         _dockingConsole.UpdateConsolesUsing(gridUid); // Lavaland Change: FTL
     }
 
+    private void OnAfterInteractUsing(
+        EntityUid uid,
+        ShuttleConsoleComponent component,
+        AfterInteractUsingEvent args
+    )
+    {
+        if (component.accesState == ShuttleConsoleAccesState.NotDynamic)
+            return;
+        if (component.accesState != ShuttleConsoleAccesState.NoAcces)
+        {
+            component.accesState = ShuttleConsoleAccesState.NoAcces;
+            _popup.PopupEntity("Console locked", uid, args.User, PopupType.Small);
+            return;
+        }
+
+        if (!_crescent.getGridOfEntity(uid, out var gridId))
+            return;
+        if (!TryComp<DynamicCodeHolderComponent>(gridId, out var dynamicAccesComponent))
+            return;
+        if (!TryComp<IdCardComponent>(args.Used, out var _))
+            return;
+        var dynIdComp = EnsureComp<DynamicCodeHolderComponent>(args.Used);
+        if (component.captainIdentifier is null || component.pilotIdentifier is null)
+            return;
+
+        if (_codes.hasKey(dynamicAccesComponent.mappedCodes[component.captainIdentifier], dynIdComp))
+        {
+            component.accesState = ShuttleConsoleAccesState.CaptainAcces;
+            _audio.PlayPvs("/Audio/Machines/high_tech_confirm.ogg", uid, AudioParams.Default);
+            _popup.PopupEntity("Console unlocked. Welcome onboard, captain.", uid, args.User);
+            UpdateState(uid, component);
+            return;
+        }
+
+        if (_codes.hasKey(dynamicAccesComponent.mappedCodes[component.pilotIdentifier], dynIdComp))
+        {
+            component.accesState = ShuttleConsoleAccesState.PilotAcces;
+            _audio.PlayPvs("/Audio/Machines/high_tech_confirm.ogg", uid, AudioParams.Default);
+            _popup.PopupEntity("Authorized to console as pilot.", uid, args.User);
+            UpdateState(uid, component);
+        }
+    }
+
+    private void OnComponentInit(EntityUid uid, ShuttleConsoleComponent component, ComponentInit args)
+    {
+        _itemSlotsSystem.AddItemSlot(uid, SharedShuttleConsoleComponent.IdSlotName, component.targetIdSlot);
+        _itemSlotsSystem.SetLock(uid, SharedShuttleConsoleComponent.IdSlotName,true);
+    }
+
+    private void OnSetTargetPos(EntityUid console, ShuttleConsoleComponent component, ref SetTargetPositionFace args)
+    {
+        foreach (var actor in _ui.GetActors(console, ShuttleConsoleUiKey.Key))
+        {
+            if (!TryComp<PilotComponent>(actor, out var comp))
+                continue;
+            comp.FaceAngle = args.TargetAngle;
+        }
+
+    }
+    private void OnComponentRemove(EntityUid uid, ShuttleConsoleComponent component, ComponentRemove args)
+    {
+        _itemSlotsSystem.RemoveItemSlot(uid, component.targetIdSlot);
+
+    }
+
+    private void OnCrewSwitch(EntityUid uid, ShuttleConsoleComponent comp, SwitchedToCrewHudMessage args)
+    {
+        if (!args.Visible)
+            _itemSlotsSystem.TryEject(uid, comp.targetIdSlot, null, out var item);
+        _itemSlotsSystem.SetLock(uid, SharedShuttleConsoleComponent.IdSlotName, !args.Visible);
+        UpdateState(uid, comp);
+
+    }
+    private void OnNameChange(EntityUid consoleUid, NamedModulesComponent comp, ModuleNamingChangeEvent args)
+    {
+        comp.ButtonNames = args.NewNames;
+        Dirty(consoleUid, comp);
+    }
+
+    private void UpdateUI(EntityUid console, ShuttleConsoleComponent comp, object args)
+    {
+        UpdateState(console, comp);
+    }
+
+    private void OnConsoleReAnchor(EntityUid uid, ShuttleConsoleComponent comp, ReAnchorEvent args)
+    {
+        if (TryComp<DynamicCodeHolderComponent>(args.Grid, out var accesComp))
+        {
+            comp.accesState = ShuttleConsoleAccesState.NoAcces;
+        }
+        else
+        {
+            comp.accesState = ShuttleConsoleAccesState.NotDynamic;
+        }
+
+
+    }
+
+
     /// <summary>
     /// Refreshes all of the data for shuttle consoles.
     /// </summary>
@@ -160,6 +280,21 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
     private void OnConsoleAnchorChange(EntityUid uid, ShuttleConsoleComponent component,
         ref AnchorStateChangedEvent args)
     {
+        if (args.Anchored)
+        {
+
+
+            if (HasComp<DynamicCodeHolderComponent>(args.Transform.GridUid))
+            {
+                component.accesState = ShuttleConsoleAccesState.NoAcces;
+            }
+            else
+            {
+                component.accesState = ShuttleConsoleAccesState.NotDynamic;
+            }
+
+        }
+
         DockingInterfaceState? dockState = null;
         UpdateState(uid, ref dockState);
     }
