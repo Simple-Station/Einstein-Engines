@@ -21,6 +21,29 @@ public sealed partial class AlternatingBGContainer : BoxContainer
     /// If the <see cref="ContentContainer"/>'s vertical scroll is enabled
     public bool VScrollEnabled => ContentScrollContainer.VScrollEnabled;
 
+    public new bool HorizontalExpand
+    {
+        get => base.HorizontalExpand;
+        set
+        {
+            base.HorizontalExpand = value;
+            Container.HorizontalExpand = value;
+            ContentScrollContainer.HorizontalExpand = value;
+            ContentContainer.HorizontalExpand = value;
+        }
+    }
+    public new bool VerticalExpand
+    {
+        get => base.VerticalExpand;
+        set
+        {
+            base.VerticalExpand = value;
+            Container.VerticalExpand = value;
+            ContentScrollContainer.VerticalExpand = value;
+            ContentContainer.VerticalExpand = value;
+        }
+    }
+
     public Thickness ItemMargins = new(4);
 
     /// The list of colors to alternate between
