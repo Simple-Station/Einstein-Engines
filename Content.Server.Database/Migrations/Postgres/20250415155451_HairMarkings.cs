@@ -12,22 +12,30 @@ namespace Content.Server.Database.Migrations.Postgres
         {
             migrationBuilder.Sql(@"
                 UPDATE profile
-                SET markings = jsonb_set(
-                    markings,
-                    '{0}',
-                    COALESCE(markings->'0', '[]'::jsonb) || to_jsonb(hair_name || '@' || hair_color)
-                )
-                WHERE hair_name IS NOT NULL AND hair_color IS NOT NULL;
+                SET markings = 
+                    CASE 
+                        -- When markings is NULL, create a new array with just the hair marking
+                        WHEN markings IS NULL THEN 
+                            jsonb_build_array(hair_name || '@' || hair_color)
+                        -- When markings exists, append the hair marking to it
+                        ELSE 
+                            markings || jsonb_build_array(hair_name || '@' || hair_color)
+                    END
+                WHERE hair_name IS NOT NULL AND hair_name != '' AND hair_color IS NOT NULL AND hair_color != '';
             ");
 
             migrationBuilder.Sql(@"
                 UPDATE profile
-                SET markings = jsonb_set(
-                    markings,
-                    '{0}',
-                    COALESCE(markings->'0', '[]'::jsonb) || to_jsonb(facial_hair_name || '@' || facial_hair_color)
-                )
-                WHERE facial_hair_name IS NOT NULL AND facial_hair_color IS NOT NULL;
+                SET markings = 
+                    CASE 
+                        -- When markings is NULL, create a new array with just the facial hair marking
+                        WHEN markings IS NULL THEN 
+                            jsonb_build_array(hair_name || '@' || hair_color)
+                        -- When markings exists, append the facial hair marking to it
+                        ELSE 
+                            markings || jsonb_build_array(facial_hair_name || '@' || facial_hair_color)
+                    END
+                WHERE facial_hair_name IS NOT NULL AND facial_hair_name != '' AND facial_hair_color IS NOT NULL AND facial_hair_color != '';
             ");
 
             migrationBuilder.DropColumn(
