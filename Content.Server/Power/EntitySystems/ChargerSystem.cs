@@ -293,10 +293,10 @@ internal sealed class ChargerSystem : EntitySystem
 
         var statusOut = CellChargerStatus.Off;
 
-        if (!TryGetBatteries(uid, component, out var batteries))
+        if (component.ExpectedBatteries.Count == 0 && !TryGetBatteries(uid, component, out _))
             return CellChargerStatus.Off;
 
-        foreach (var battery in batteries)
+        foreach (var battery in component.ExpectedBatteries)
         {
             // if all batteries are either EMP'd or fully charged, represent the charger as fully charged
             statusOut = CellChargerStatus.Charged;
@@ -333,6 +333,7 @@ internal sealed class ChargerSystem : EntitySystem
 
     /*
         breadth first search to prioritise recharging batteries over containers with batteries
+        can potentially recharge a battery anywhere in your inventory if you were to stand in an unrestricted recharging station
         - WarMechanic
     */
     private bool TryGetBatteries(EntityUid uid, ChargerComponent component, [NotNullWhen(true)] out List<EntityUid> batteries)
@@ -351,6 +352,8 @@ internal sealed class ChargerSystem : EntitySystem
             Log.Warning($"Charger at {uid} does not contain entities!");
             return false;
         }
+
+        Log.Debug($"Attempting breadth-first search. If this is written all over the console, it should be investigated.");
 
         var searchPq = new PriorityQueue<EntityUid, int>();
 
@@ -371,22 +374,14 @@ internal sealed class ChargerSystem : EntitySystem
         }
 
         if (batteries.Count > 0)
+        {
+            component.ExpectedBatteries = batteries;
             return true;
+        }
 
         Log.Warning($"Charger at {uid} does not contain batteries!");
         return false;
     }
-
-    private bool TryGetBattery(EntityUid uid, ChargerComponent component, [NotNullWhen(true)] out EntityUid? battery)
-    {
-        battery = null;
-        if (!TryGetBatteries(uid, component, out var batteries))
-            return false;
-
-        battery = batteries[0];
-        return true;
-    }
-
     private bool SearchStep(EntityUid uid, ChargerComponent component, ref PriorityQueue<EntityUid, int> pq, [NotNullWhen(true)] out EntityUid? batteryUid, [NotNullWhen(true)] out BatteryComponent? batteryComponent)
     {
         batteryUid = null;

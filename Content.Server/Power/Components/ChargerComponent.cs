@@ -50,5 +50,11 @@ namespace Content.Server.Power.Components
         /// </summary>
         [DataField]
         public bool Portable = false;
+
+        /// <summary>
+        /// debug
+        /// </summary>
+        [DataField]
+        public List<EntityUid> ExpectedBatteries = new();
     }
 }
