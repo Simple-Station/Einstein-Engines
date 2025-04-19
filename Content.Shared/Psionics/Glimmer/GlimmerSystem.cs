@@ -132,7 +132,7 @@ public sealed class GlimmerSystem : EntitySystem
         if (!_enabled || delta == 0)
             return;
 
-        GlimmerOutput += Math.Clamp(GlimmerOutput + delta, 0, 999.999);
+        GlimmerOutput = Math.Clamp(GlimmerOutput + delta, 0, 999.999);
         GlimmerInput = Math.Max(Math.Log((GlimmerOutput + 1000) / (1000 - GlimmerOutput)) / 0.0022, 0);
     }
 
