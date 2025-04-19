@@ -33,6 +33,7 @@
         - GPS
         - WeldingMask
         - RPD
+        - LightReplacer
       components:
         - SprayPainter
         - NetworkConfigurator
@@ -117,6 +118,7 @@
         - Multitool
         - AppraisalTool
         - RPD
+        - LightReplacer
       components:
         - SprayPainter
         - NetworkConfigurator

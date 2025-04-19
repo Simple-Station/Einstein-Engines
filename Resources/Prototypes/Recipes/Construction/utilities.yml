@@ -349,7 +349,6 @@
   canRotate: true
   canBuildInImpassable: true
   conditions:
-  - !type:WallmountCondition {}
 
 - type: construction
   name: fire alarm
@@ -367,7 +366,6 @@
   canRotate: true
   canBuildInImpassable: true
   conditions:
-  - !type:WallmountCondition {}
 
 - type: construction
   name: air sensor
@@ -836,8 +834,6 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
-  conditions:
-  - !type:WallmountCondition
 
 - type: construction
   name: screen timer

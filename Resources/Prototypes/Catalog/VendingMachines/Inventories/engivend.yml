@@ -1,6 +1,9 @@
 - type: vendingMachineInventory
   id: EngiVendInventory
   startingInventory:
+    CableApcStack: 2
+    CableMVStack: 2
+    CableHVStack: 2
     ClothingEyesGlassesMeson: 4
     ClothingHeadHatWelding: 6
     Multitool: 4

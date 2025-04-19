@@ -510,6 +510,7 @@
     - MVCable
     - HVCable
     - CableTerminal
+    - BaseAPC
     - Deconstruct
   - type: LimitedCharges
     maxCharges: 30
@@ -566,6 +567,7 @@
     - VentScrubber
     - PressureValve
     - DualPortVent
+    - AirAlarm
     - VentGas
     - VentPassive
     - MixerGas
