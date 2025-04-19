@@ -1,0 +1,55 @@
+- type: startingGear
+  id: ERTLeaderGearEVALaser
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitERTLeader
+    back: ClothingBackpackERTLeader
+    shoes: ClothingShoesBootsMagEmergencyResponseTeam # STOP GIVING ROLES ADVANCED MAGBOOTS!! - SOL
+    neck: ExecutiveIDCard # Goobstation - Executive Access!
+    mask: ClothingMaskGasERT
+    eyes: ClothingEyesGlassesSecurity
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterHardsuitERTLeader
+    suitstorage: WeaponRifleLecter
+    id: ERTLeaderPDA
+    ears: ClothingHeadsetAltCentCom
+    belt: ClothingBeltSecurityFilled
+    pocket1: FlashlightSeclite
+    pocket2: WeaponPulsePistol # Literally described as "Favored sidearm of NT ERT operatives". Is never used anywhere else.
+  inhand:
+  - WeaponGunLaserCarbineAutomatic # Goobstation - DEATH TO LECTER ERT!!
+  storage:
+    back:
+    # - WeaponDisabler - Redundant. It spawns in secbelts now.
+    - MedkitCombatFilled # Goobstation - No reason not to.
+    - BoxZiptie
+    - CrowbarRed
+    - WeaponEnergyGunPistol
+    # - MagazineMagnum - Literally doesn't spawn with a gun that uses this. Seriously, who made this?
+
+- type: startingGear
+  id: ERTSecurityGearEVALaser
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitERTSecurity
+    back: ClothingBackpackERTSecurity
+    shoes: ClothingShoesBootsMagEmergencyResponseTeam # STOP GIVING ROLES ADVANCED MAGBOOTS!! - SOL
+    mask: ClothingMaskGasERT
+    eyes: ClothingEyesGlassesSecurity
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterHardsuitERTSecurity
+    neck: ExecutiveIDCard
+    id: ERTSecurityPDA
+    ears: ClothingHeadsetAltCentCom
+    belt: ClothingBeltSecurityFilled
+    pocket1: WeaponPulsePistol # Death to Crew aligned Ballistics
+    pocket2: FlashlightSeclite
+  inhand:
+    - WeaponGunLaserCarbineAutomatic
+  storage:
+    back:
+    # - WeaponDisabler - Redundant. It spawns in secbelts now.
+    - MedkitCombatFilled # Goobstation - No reason not to.
+    - BoxZiptie
+    - CrowbarRed
+    - BoxSurvivalSecurity
+    - BolaEnergy
+    - BoxFlashbang

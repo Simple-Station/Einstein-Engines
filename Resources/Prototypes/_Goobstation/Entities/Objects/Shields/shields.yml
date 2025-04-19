@@ -105,3 +105,20 @@
             - Stunbaton
       smartEquipSelfIfEmpty: true
     - type: EmpImmune # The battery aspect is, as far as I know, used as an easily healable way to monitor the shields health, but if energy shields do not get emped, these should not either.
+
+
+- type: entity
+  name: greatshield
+  parent: BlueShieldShield
+  id: BlueShieldShieldEvil
+  suffix: Deathsquad
+  description: The identification number on this shield has been scratched off. Something feels wrong.
+  components:
+  - type: Battery
+    maxCharge: 600
+    startingCharge: 600
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 100
+  - type: Item
+    size: Normal

@@ -57,4 +57,4 @@
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
     - state: incendiary
-      color: "#fff94d"
+      color: "#00FF00"

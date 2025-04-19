@@ -56,7 +56,7 @@
 
 #Deathsquad Outfit
 - type: startingGear
-  id: DeathSquadGear
+  id: DeathSquadAgentGear
   subGear:
   - ERTPlasmamanGear # TODO: death squad envirosuit
   equipment:
@@ -199,7 +199,7 @@
 
 #CBURN Unit Gear - Full Kit
 - type: startingGear
-  id: CBURNGear
+  id: CBURNAgentGear
   subGear:
   - CBURNPlasmamanGear
   equipment:

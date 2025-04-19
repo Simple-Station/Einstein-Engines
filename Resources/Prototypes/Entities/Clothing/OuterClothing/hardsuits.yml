@@ -1091,10 +1091,20 @@
     coefficient: 0.001
   - type: ExplosionResistance
     damageCoefficient: 0.2
+  - type: FireProtection
+    reduction: 0.8
+  - type: StaminaDamageResistance # Goobstation - Deathsquad Revamp
+    coefficient: 0
+  - type: ClothingSlowOnDamageModifier # Goobstation
+    modifier: 0.1
+  - type: ClothingModifyStunTime # Goobstation
+    modifier: 0.1
+#  - type: ModifyStandingUpTime # Goobstation
+#    multiplier: 0.1
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.1 #best armor in the game
+        Blunt: 0.1 # Best armor in the game - Yeah no shit.
         Slash: 0.1
         Piercing: 0.1
         Heat: 0.1
@@ -1106,44 +1116,50 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitDeathsquad
-  - type: StaminaDamageResistance
-    coefficient: 0.1 # 90%
 
 #CBURN Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitBaseMedium
+  parent: [ ClothingOuterHardsuitBase ]
   id: ClothingOuterHardsuitCBURN
   name: CBURN exosuit
   description: A lightweight yet strong exosuit used for special cleanup operations.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/cburn.rsi
+    state: icon
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/cburn.rsi
+    state: equipped-OUTERCLOTHING
   - type: PressureProtection
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
   - type: TemperatureProtection
-    coefficient: 0.001
+    heatingCoefficient: 0.001
+    coolingCoefficient: 0.001
   - type: ExplosionResistance
     damageCoefficient: 0.7
   - type: Armor
     modifiers:
       coefficients:
         Blunt: 0.7
-        Slash: 0.7
+        Slash: 0.3 # Goobstation - CBURN should protect against zombie attacks
         Piercing: 0.6
-        Heat: 0.1
-        Cold: 0.1
-        Shock: 0.1
+        Heat: 0.10
+        Cold: 0.10
+        Shock: 0.15
         Radiation: 0.1
         Caustic: 0.1
   - type: ClothingSpeedModifier
     walkModifier: 1.0
     sprintModifier: 1.0
   - type: HeldSpeedModifier
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHelmetCBURN
+  - type: ToggleableClothing # Goobstation - Modsuits change
+    clothingPrototypes:
+      head: ClothingHeadHelmetCBURN
+#  - type: ModifyDelayedKnockdown # Goobstation
+#    delayDelta: 2
+#    knockdownTimeDelta: -2
+
 
 #MISC. HARDSUITS
 #Clown Hardsuit
