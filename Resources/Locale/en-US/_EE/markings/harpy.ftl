@@ -1,0 +1,12 @@
+marking-HarpyAsymagicalZetawing = Asymagical Wings
+marking-HarpyColorableAsymagicalZetawing = Asymagical Wings (Colorable)
+marking-HarpyDragobatZetawing = Dragobat Wings
+marking-HarpyColorableDragobatZetawing = Dragobat Wings (Colorable)
+marking-HarpyLimeZetawing = Lime Zetawings
+marking-HarpyColorlessZetawing = Colorable Zetawings
+marking-HarpyMacawZetawing = Macaw Wings
+marking-HarpyMonocolorParrotZetawing = Parrot Wings (Monocolor)
+marking-HarpyTricolorParrotZetawing = Parrot Wings (Tricolor)
+marking-HarpyQuintetZetawing = Quintet Wings
+marking-HarpySmallZetawing = Small Wings
+marking-HarpyDownwardZetawing = Downward Wings
