@@ -1,5 +1,4 @@
 using Content.Shared.Actions;
-using Content.Shared.Abilities.Psionics;
 using Content.Shared.Damage;
 using Content.Shared.Stunnable;
 using Content.Shared.Stealth;
@@ -13,7 +12,7 @@ using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Throwing;
 using Robust.Shared.Timing;
 
-namespace Content.Server.Abilities.Psionics;
+namespace Content.Shared.Abilities.Psionics;
 
 public sealed class PsionicInvisibilityPowerSystem : EntitySystem
 {
@@ -41,7 +40,7 @@ public sealed class PsionicInvisibilityPowerSystem : EntitySystem
     // But all I'm here for is to fix a bug, so bite me - TCJ.
     private void OnPowerUsed(EntityUid uid, PsionicComponent component, PsionicInvisibilityPowerActionEvent args)
     {
-        if (!_psionics.OnAttemptPowerUse(args.Performer, "psionic invisibility")
+        if (!_psionics.OnAttemptPowerUse(args.Performer, "psionic invisibility", true)
             || HasComp<PsionicInvisibilityUsedComponent>(uid))
             return;
 
