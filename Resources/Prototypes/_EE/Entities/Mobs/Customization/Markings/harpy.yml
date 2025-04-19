@@ -126,3 +126,54 @@
   sprites:
     - sprite: _EE/Mobs/Customization/Harpy/harpy_wings.rsi
       state: asymagical_zetawing
+      
+- type: marking
+  id: HarpySmallZetawing
+  bodyPart: RArm
+  markingCategory: RightArm
+  speciesRestriction: [Harpy]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+        - !type:SimpleColoring
+          color: "#964b00"
+  sprites:
+    - sprite: _EE/Mobs/Customization/Harpy/harpy_wings.rsi
+      state: small_zetawing
+      
+- type: marking
+  id: HarpyQuintetZetawing
+  bodyPart: RArm
+  markingCategory: RightArm
+  speciesRestriction: [Harpy]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+        - !type:SimpleColoring
+          color: "#964b00"
+  sprites:
+    - sprite: _EE/Mobs/Customization/Harpy/harpy_wings.rsi
+      state: quintet_zetawing
+      
+- type: marking
+  id: HarpyDownwardZetawing
+  bodyPart: RArm
+  markingCategory: RightArm
+  speciesRestriction: [Harpy]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+        - !type:SimpleColoring
+          color: "#964b00"
+  sprites:
+    - sprite: _EE/Mobs/Customization/Harpy/harpy_wings.rsi
+      state: downward_zetawing

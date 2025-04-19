@@ -58,6 +58,18 @@
         {
             "name": "asymagical_c_zetawing_layer2",
             "directions": 4
+        },
+        {
+            "name": "small_zetawing",
+            "directions": 4
+        },
+        {
+            "name": "quintet_zetawing",
+            "directions": 4
+        },
+        {
+            "name": "downward_zetawing",
+            "directions": 4
         }
     ]
 }
