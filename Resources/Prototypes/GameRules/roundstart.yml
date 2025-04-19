@@ -10,6 +10,8 @@
   parent: BaseGameRule
   id: SubGamemodesRule
   components:
+  - type: GameRule
+    minPlayers: 5
   - type: SubGamemodes
     rules:
     - id: Thief
