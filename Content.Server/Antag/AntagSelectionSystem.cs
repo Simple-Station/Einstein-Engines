@@ -321,6 +321,11 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
             antagEnt = Spawn(def.SpawnerPrototype);
             isSpawner = true;
         }
+        else
+        {
+            Log.Warning($"Attempted to create an antag for gamerule {ToPrettyString(ent)}, but a valid session was not found, and either no prototype could be spawned for it or spawners were disabled. Skipping.");
+            return;
+        }
 
         if (!antagEnt.HasValue)
         {
