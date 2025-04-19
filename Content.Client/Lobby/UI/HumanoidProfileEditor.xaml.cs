@@ -90,7 +90,6 @@ namespace Content.Client.Lobby.UI
         private int _traitCount;
         private HashSet<LoadoutPreferenceSelector> _loadoutPreferences = new();
 
-        private Direction _previewRotation = Direction.North;
         private ColorSelectorSliders _rgbSkinColorSelector;
 
         private bool _customizePronouns;
@@ -153,7 +152,6 @@ namespace Content.Client.Lobby.UI
             NameEdit.OnTextChanged += args => { SetName(args.Text); };
             NameRandomize.OnPressed += _ => RandomizeName();
             RandomizeEverything.OnPressed += _ => { RandomizeProfile(); };
-            WarningLabel.SetMarkup($"[color=red]{Loc.GetString("humanoid-profile-editor-naming-rules-warning")}[/color]");
 
             #endregion Name
 
@@ -554,21 +552,6 @@ namespace Content.Client.Lobby.UI
 
             RefreshFlavorText();
 
-            #region Dummy
-
-            SpriteRotateLeft.OnPressed += _ =>
-            {
-                _previewRotation = _previewRotation.TurnCw();
-                SetPreviewRotation(_previewRotation);
-            };
-            SpriteRotateRight.OnPressed += _ =>
-            {
-                _previewRotation = _previewRotation.TurnCcw();
-                SetPreviewRotation(_previewRotation);
-            };
-
-            #endregion Dummy
-
             #endregion Left
 
             ShowClothes.OnToggled += _ => { SetProfile(Profile, CharacterSlot); };
@@ -858,7 +841,10 @@ namespace Content.Client.Lobby.UI
                 return;
 
             PreviewDummy = _controller.LoadProfileEntity(Profile, ShowClothes.Pressed, ShowLoadouts.Pressed);
-            SpriteView.SetEntity(PreviewDummy);
+            SpriteViewS.SetEntity(PreviewDummy);
+            SpriteViewN.SetEntity(PreviewDummy);
+            SpriteViewE.SetEntity(PreviewDummy);
+            SpriteViewW.SetEntity(PreviewDummy);
         }
 
         /// Reloads the dummy entity's clothes for preview
@@ -940,7 +926,6 @@ namespace Content.Client.Lobby.UI
                 appearanceSystem.SetLayersVisibility(PreviewDummy, hiddenLayers, false, humanoid: humanoid);
             }
 
-            SetPreviewRotation(_previewRotation);
             TraitsTabs.UpdateTabMerging();
             LoadoutsTabs.UpdateTabMerging();
         }
@@ -1847,7 +1832,10 @@ namespace Content.Client.Lobby.UI
             else // Whelp, the fixture doesn't exist, guesstimate it instead
                 WeightLabel.Text = Loc.GetString("humanoid-profile-editor-weight-label", ("weight", (int) 71));
 
-            SpriteView.InvalidateMeasure();
+            SpriteViewS.InvalidateMeasure();
+            SpriteViewN.InvalidateMeasure();
+            SpriteViewE.InvalidateMeasure();
+            SpriteViewW.InvalidateMeasure();
         }
 
         private void UpdateHairPickers()
@@ -1945,11 +1933,6 @@ namespace Content.Client.Lobby.UI
             Profile = HumanoidCharacterProfile.Random();
             SetProfile(Profile, CharacterSlot);
             SetDirty();
-        }
-
-        private void SetPreviewRotation(Direction direction)
-        {
-            SpriteView.OverrideDirection = (Direction) ((int) direction % 4 * 2);
         }
 
         private void RandomizeName()
