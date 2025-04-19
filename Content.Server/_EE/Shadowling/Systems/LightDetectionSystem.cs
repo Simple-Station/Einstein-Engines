@@ -19,7 +19,7 @@ public sealed class LightDetectionSystem : EntitySystem
     public override void Update(float frameTime)
     {
 
-        // todo: make it check every 0.25s-1s
+        // todo: make it check every 0.25s-1s and optimize the shit out of it
         var query = EntityQueryEnumerator<LightDetectionComponent>();
         while (query.MoveNext(out var uid, out var comp))
         {

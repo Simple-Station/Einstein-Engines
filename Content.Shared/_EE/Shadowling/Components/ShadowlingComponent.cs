@@ -28,7 +28,7 @@ public sealed partial class ShadowlingComponent : Component
         "ActionShadowWalk",
         "ActionIcyVeins",
         "ActionDestroyEngines",
-        "ActionCollectiveMind"
+        "ActionCollectiveMind",
     };
 
     // The status icon for Shadowlings

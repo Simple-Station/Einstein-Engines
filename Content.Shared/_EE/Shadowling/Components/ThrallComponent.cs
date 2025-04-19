@@ -19,8 +19,15 @@ public sealed partial class ThrallComponent : Component
 
     public readonly List<ProtoId<EntityPrototype>> BaseThrallActions = new()
     {
-        "ActionThrallDarksight"
+        "ActionThrallDarksight",
+        "ActionGuise"
     };
+
+    public string? ActionThrallDarksight = "ActionThrallDarksight";
+    public string? ActionGuise = "ActionGuise";
+
+    public EntityUid? ActionThrallDarksightEntity;
+    public EntityUid? ActionGuiseEntity;
 
     [DataField]
     public bool NightVisionMode;

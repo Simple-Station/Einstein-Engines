@@ -11,3 +11,17 @@
     icon:
       sprite: _EE/Shadowling/thrall_abilities.rsi
       state: thrall_darksight
+
+- type: entity
+  id: ActionGuise
+  name: Guise
+  description: Become one with the shadows.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: NoItem
+    # useDelay: 120
+    icon:
+      sprite: _EE/Shadowling/shadowling_abilities.rsi
+      state: shadow_walk # todo: would be cool to add new ability icon
+    event: !type:GuiseEvent { }

@@ -1,5 +1,6 @@
 using System.Numerics;
 using Content.Shared.Damage;
+using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 
 
@@ -34,5 +35,8 @@ public sealed partial class ShadowlingSonicScreechComponent : Component
     public float ScreechKick = 80f;
 
     [DataField]
-    public string ProtoFlash = "EffectPyrokineticFlare"; // todo: change this to custom flash
+    public string ProtoFlash = "EffectScreech";
+
+    [DataField]
+    public SoundSpecifier? ScreechSound = new SoundPathSpecifier("/Audio/_EE/Shadowling/screech.ogg");
 }

@@ -25,14 +25,16 @@ public sealed partial class ShadowlingCollectiveMindComponent : Component
         { 3, "ActionSonicScreech" },
         { 5, "ActionBlindnessSmoke"},
         { 7, "ActionNullCharge"},
+        { 9, "ActionBlackRecuperation"}
     };
 
     [DataField]
     public Dictionary<int, string> ActionComponentNames = new()
     {
         { 3, "ShadowlingSonicScreech" },
-        { 5, "ShadowlingBlindnessSmoke" },
+        { 5, "ShadowlingBlindnessSmoke"},
         { 7, "ShadowlingNullCharge"},
+        { 9, "ShadowlingBlackRecuperation"}
     };
 
     [DataField]

@@ -14,3 +14,6 @@ public sealed partial class EnthrallDoAfterEvent : SimpleDoAfterEvent { }
 public sealed partial class RapidRehatchDoAfterEvent : SimpleDoAfterEvent { }
 [Serializable, NetSerializable]
 public sealed partial class NullChargeDoAfterEvent : SimpleDoAfterEvent { }
+[Serializable, NetSerializable]
+public sealed partial class BlackRecuperationDoAfterEvent : SimpleDoAfterEvent { }
+

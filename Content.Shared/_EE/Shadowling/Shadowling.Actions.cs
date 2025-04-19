@@ -37,4 +37,9 @@ public sealed partial class CollectiveMindEvent : InstantActionEvent { }
 public sealed partial class BlindnessSmokeEvent : InstantActionEvent { }
 public sealed partial class NullChargeEvent : InstantActionEvent { }
 public sealed partial class SonicScreechEvent : InstantActionEvent { }
+public sealed partial class BlackRecuperationEvent : EntityTargetActionEvent { }
+#endregion
+
+#region Events - Thrall Events
+public sealed partial class GuiseEvent : InstantActionEvent { }
 #endregion

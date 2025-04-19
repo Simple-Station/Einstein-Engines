@@ -23,5 +23,15 @@ shadowling-collective-mind-success = I feel stronger than before! I need {$thral
 shadowling-collective-mind-failure = I don't feel anything. I need {$thralls} Thralls to achieve my true form.
 shadowling-collective-mind-ascend = I have gained all the powers... Now, to ascend!
 
+shadowling-sonic-screech-complete = The air splits with your cry.
+
 shadowling-null-charge-success = Your impact echoes through the wires as power yields to void.
 shadowling-null-charge-start = I begin to charge my fist with a nullifying force.
+
+shadowling-black-rec-lesser-already = The target is already a Lesser Shadowling.
+shadowling-black-rec-revive-done = Darkness pulls you back from the brink.
+shadowling-black-rec-lesser-done = You feel like even stronger than before.
+
+# Thrall
+
+thrall-guise-fail = You were not in the shadows.

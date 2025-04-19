@@ -1,14 +1,19 @@
 using System.Numerics;
 using Content.Server.Actions;
+using Content.Server.Audio;
 using Content.Server.Camera;
+using Content.Server.Popups;
 using Content.Server.Stunnable;
 using Content.Shared._EE.Shadowling;
 using Content.Shared.Camera;
 using Content.Shared.Damage;
 using Content.Shared.Humanoid;
+using Content.Shared.Mobs.Components;
+using Content.Shared.Popups;
 using Content.Shared.Silicon.Components;
 using Content.Shared.Silicons.Borgs.Components;
 using Content.Shared.Tag;
+using Robust.Server.Audio;
 using Robust.Shared.Random;
 
 
@@ -26,9 +31,10 @@ public sealed class ShadowlingSonicScreechSystem : EntitySystem
     [Dependency] private readonly StunSystem _stun = default!;
     [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
-    [Dependency] private readonly CameraRecoilSystem _cameraRecoil = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly ActionsSystem _actions = default!;
+    [Dependency] private readonly PopupSystem _popups = default!;
+    [Dependency] private readonly AudioSystem _audio = default!;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -38,56 +44,34 @@ public sealed class ShadowlingSonicScreechSystem : EntitySystem
 
     private void OnSonicScreech(EntityUid uid, ShadowlingSonicScreechComponent component, SonicScreechEvent args)
     {
+        _actions.StartUseDelay(args.Action);
+        _popups.PopupEntity(Loc.GetString("shadowling-sonic-screech-complete"), uid, uid, PopupType.Medium);
+        _audio.PlayPvs(component.ScreechSound, uid);
+
         foreach (var entity in _lookup.GetEntitiesInRange(uid, component.Range))
         {
-            if (HasComp<ThrallComponent>(entity) || HasComp<ShadowlingComponent>(entity))
+            if (_tag.HasTag(entity, component.WindowTag) &&
+                TryComp<DamageableComponent>(entity, out var damageableComponent))
+            {
+                _damageable.TryChangeDamage(entity, component.WindowDamage, true, damageable: damageableComponent);
+                continue;
+            }
+
+            if (!HasComp<MobStateComponent>(entity))
                 continue;
 
-            TryStunSilicons(entity, component);
-            TryDamageWindows(entity, component);
-            TryConfusePlayer(entity, uid, component);
+            if (HasComp<ThrallComponent>(entity) ||
+                HasComp<ShadowlingComponent>(entity))
+                continue;
+
+            if (HasComp<SiliconComponent>(entity))
+            {
+                _stun.TryParalyze(entity, component.SiliconStunTime, false);
+                continue;
+            }
+
+            if (HasComp<HumanoidAppearanceComponent>(entity))
+                EntityManager.SpawnAtPosition(component.ProtoFlash, Transform(entity).Coordinates);
         }
-
-        _actions.StartUseDelay(args.Action);
-    }
-
-    private void TryStunSilicons(EntityUid target, ShadowlingSonicScreechComponent component)
-    {
-        if (!HasComp<SiliconComponent>(target) || !HasComp<BorgChassisComponent>(target))
-            return;
-
-        _stun.TryParalyze(target, component.SiliconStunTime, false);
-    }
-
-    private void TryDamageWindows(EntityUid target, ShadowlingSonicScreechComponent component)
-    {
-        if (_tag.HasTag(target, component.WindowTag))
-        {
-            if (!TryComp<DamageableComponent>(target, out var damageableComponent))
-                return;
-
-            _damageable.TryChangeDamage(
-                target,
-                component.WindowDamage,
-                true,
-                damageable: damageableComponent
-            );
-        }
-    }
-
-    private void TryConfusePlayer(EntityUid target, EntityUid user, ShadowlingSonicScreechComponent component)
-    {
-        if (!HasComp<HumanoidAppearanceComponent>(target))
-            return;
-
-        if (!TryComp<CameraRecoilComponent>(target, out var recoil))
-            return;
-
-        // I'm not gonna implement deafening for now (at least until ear component gets its deafen logic by someone),
-        // so it will just play a tinnitus sound and spawn a short flash effect on players.
-        var kick = new Vector2(_random.NextFloat(), _random.NextFloat()) * component.ScreechKick;
-        _cameraRecoil.KickCamera(target, kick, recoil);
-
-        EntityManager.SpawnAtPosition(component.ProtoFlash, Transform(target).Coordinates); // todo: change this to custom flash
     }
 }

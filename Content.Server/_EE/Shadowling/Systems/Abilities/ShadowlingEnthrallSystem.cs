@@ -62,7 +62,7 @@ public sealed class ShadowlingEnthrallSystem : EntitySystem
 
         if (TryComp<ShadowlingComponent>(uid, out var sling))
         {
-            sling.Thralls.Add(target);
+           sling.Thralls.Add(target);
             // todo:  raise local event in the future here
         }
     }

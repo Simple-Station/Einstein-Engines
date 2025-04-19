@@ -40,10 +40,10 @@ public sealed class ShadowlingCollectiveMindSystem : EntitySystem
             return;
         }
 
-        comp.AmountOfThralls     = sling.Thralls.Count;
-
-        var thrallsRemaining  = comp.ThrallsRequiredForAscension - comp.AmountOfThralls; // aka Thralls required for ascension
-        var abiltiesAddedCount   = 0;
+        comp.AmountOfThralls = sling.Thralls.Count;
+        var thrallsRemaining = comp.ThrallsRequiredForAscension - comp.AmountOfThralls; // aka Thralls required for ascension
+        _popups.PopupEntity(Loc.GetString("shadowling-collective-mind-ascend"), uid, uid, PopupType.Medium);
+        var abiltiesAddedCount = 0;
 
         // Can we gain this power?
         foreach (var (thrallReq, action) in comp.LockedActions)
@@ -56,6 +56,7 @@ public sealed class ShadowlingCollectiveMindSystem : EntitySystem
                 var componentToAdd = _compFactory.GetComponent(compName);
                 EntityManager.AddComponent(uid, componentToAdd);
 
+
                 _actions.AddAction(args.Performer, action);
                 abiltiesAddedCount++;
                 comp.LockedActions.Remove(thrallReq);
@@ -63,7 +64,7 @@ public sealed class ShadowlingCollectiveMindSystem : EntitySystem
             }
         }
 
-        if (abiltiesAddedCount > 0)
+         if (abiltiesAddedCount > 0)
         {
             _popups.PopupEntity(Loc.GetString("shadowling-collective-mind-success", ("thralls", thrallsRemaining)),
                 uid,
@@ -90,7 +91,6 @@ public sealed class ShadowlingCollectiveMindSystem : EntitySystem
             _stun.TryParalyze(thrall, TimeSpan.FromSeconds(comp.BaseStunTime * abiltiesAddedCount + 1), false);
         }
 
-        _actions.StartUseDelay(args.Action);
         // Shitcode end. If you ripped your eyes out, I can't blame you
     }
 }

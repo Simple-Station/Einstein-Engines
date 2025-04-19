@@ -133,7 +133,6 @@
   components:
   - type: InstantAction
     itemIconStyle: NoItem
-    useDelay: 30
     icon:
       sprite: _EE/Shadowling/shadowling_abilities.rsi
       state: collective_mind
@@ -180,9 +179,27 @@
   components:
   - type: InstantAction
     itemIconStyle: NoItem
-    useDelay: 60
+    useDelay: 30
     icon:
       sprite: _EE/Shadowling/shadowling_abilities.rsi
       state: sonic_screech
     event: !type:SonicScreechEvent
+    # add speech
+
+- type: entity
+  id: ActionBlackRecuperation
+  name: Black Recuperation
+  description: Bring back a dead Thrall to life, or empower a living one.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: EntityTargetAction
+    canTargetSelf: false
+    interactOnMiss: false
+    itemIconStyle: NoItem
+    # useDelay: 90
+    range: 1
+    icon:
+      sprite: _EE/Shadowling/shadowling_abilities.rsi
+      state: black_recuperation
+    event: !type:BlackRecuperationEvent
     # add speech
