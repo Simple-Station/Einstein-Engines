@@ -8,6 +8,15 @@
     Cold: 0.65
 
 - type: damageModifierSet
+  id: Blackburn
+  coefficients:
+    Blunt: 1.15
+    Slash: 1.15
+    Piercing: 1.15
+    Heat: 1.35
+    Cold: 0.65
+    
+- type: damageModifierSet
   id: Smile
   coefficients:
     Blunt: 0
@@ -20,4 +29,3 @@
     Poison: 0
     Radiation: 0
     Cellular: 0
-

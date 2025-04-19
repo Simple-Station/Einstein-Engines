@@ -1,0 +1,15 @@
+{
+    "version": 1,
+    "copyright": "Plyush",
+    "license": "CC-BY-SA-3.0",
+    "size": {
+        "x": 40,
+        "y": 40
+    },
+    "states": [
+        {
+            "name": "ears",
+            "directions": 4
+        }
+    ]
+}
