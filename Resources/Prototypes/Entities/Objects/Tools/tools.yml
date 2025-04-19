@@ -510,6 +510,7 @@
     - MVCable
     - HVCable
     - CableTerminal
+    - BaseAPC
     - Deconstruct
   - type: LimitedCharges
     maxCharges: 30

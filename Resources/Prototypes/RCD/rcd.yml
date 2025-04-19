@@ -278,3 +278,15 @@
   - MustBuildOnSubfloor
   rotation: User
   fx: EffectRCDConstruct0
+
+- type: rcd
+  id: BaseAPC
+  category: Electrical
+  sprite: /Textures/Structures/Power/apc.rsi/static.png
+  mode: ConstructObject
+  prototype: BaseAPC
+  cost: 4
+  delay: 3
+  collisionMask: InteractImpassable
+  rotation: User
+  fx: EffectRCDConstruct3
