@@ -59,8 +59,7 @@ public abstract partial class SharedMartialArtsSystem
                 break; */
             case ComboAttackType.Harm:
                 if (!_hands.TryGetActiveHand(ent.Owner, out var hand)
-                    || !_hands.TryGetEmptyHand(ent.Owner, out var emptyhand)
-                    || hand != emptyhand)
+                    || !hand.IsEmpty)
                     return;
                 DoDamage(ent, args.Target, "Blunt", ent.Comp.BaseDamage, out _);
                 if (!TryComp<RequireProjectileTargetComponent>(args.Target, out var standing)
