@@ -63085,11 +63085,6 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraSupply
       id: Cargo Lobby
-    - type: UserInterface
-      actors:
-        enum.SurveillanceCameraSetupUiKey.Camera:
-        - invalid
-    - type: ActiveUserInterface
   - uid: 11761
     components:
     - type: Transform
