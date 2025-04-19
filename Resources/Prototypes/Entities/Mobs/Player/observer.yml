@@ -170,3 +170,4 @@
     roller: false
   - type: Stealth
     lastVisibility: 0.66
+  - type: Dispellable # Im sure this won't have any unintended side effects godo

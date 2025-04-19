@@ -120,6 +120,16 @@
     Bluespace: 75
 
 - type: latheRecipe
+  id: MagazinePistolSpecialMindbreaker
+  result: MagazinePistolSpecialMindbreaker
+  category: Ammo
+  completetime: 5
+  materials:
+    Plastic: 90
+    Steel: 30
+    Bluespace: 30
+
+- type: latheRecipe
   id: ClothingOuterArmorPlateCarrier
   result: ClothingOuterArmorPlateCarrier
   completetime: 10

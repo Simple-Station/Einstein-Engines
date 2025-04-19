@@ -127,33 +127,12 @@
 - type: trait
   id: HealingWordPower
   category: TraitsPsionicsPowers
-  points: -6
+  points: -5
   requirements:
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterTraitRequirement
-          traits:
-            - LatentPsychic
-        - !type:CharacterJobRequirement
-          jobs:
-            - Librarian
-            - ForensicMantis
-            - ResearchDirector
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterSpeciesRequirement
-          inverted: true
-          species:
-            - IPC
-        - !type:CharacterTraitRequirement
-          traits:
-            - AnomalousPositronics
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Chaplain
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMachine
+    - !type:CharacterTraitRequirement
+      traits:
+        - LatentPsychic
+        - NaturalTelepath
   functions:
     - !type:TraitAddPsionics
       psionicPowers:

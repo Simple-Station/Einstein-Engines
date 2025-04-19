@@ -342,6 +342,7 @@
     - DisposableSyringe
     - Implanter
     - PillCanister
+    - ClothingEyesGlassesEthereal
     - ChemistryEmptyBottle01
     - AdvancedCapacitorStockPart
     - AdvancedMatterBinStockPart
@@ -1060,6 +1061,8 @@
       - MagazineBoxRifleIncendiary
       - MagazineBoxRifleUranium
       - ShellSoulbreaker
+      - MagazinePistolSpecialMindbreaker
+      - MagazineBoxSpecialMindbreaker
       - MagazineGrenadeEmpty
       - MagazineLightRifleIncendiary
       - MagazineLightRifleUranium
@@ -1096,6 +1099,7 @@
       - ClothingEyesNightVisionSecurityGoggles
       - ClothingHeadHelmetInsulated # Nyanotrasen - Insulative headgear
       - ClothingHeadCage # Nyanotrasen - Insulative headgear
+      - ClothingEyesGlassesEthereal
       - ShockCollar # Nyanotrasen - Shock Collar
       - WeaponXrayCannon
       - WeaponEnergyGun

@@ -52,6 +52,7 @@
       powersToAdd:
         - MetapsionicPower
         - TelepathyPower
+        - AssayPower # They need this to do their job why didn't they have it?
         - MantisSummonBlackBlade # Dear Maintainer, say NOTHING about this.
 
 - type: startingGear

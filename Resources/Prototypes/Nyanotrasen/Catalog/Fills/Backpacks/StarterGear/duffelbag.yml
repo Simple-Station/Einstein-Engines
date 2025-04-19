@@ -5,8 +5,5 @@
   components:
     - type: StorageFill
       contents:
-      # - id: BoxForensicPad # DeltaV - Mantis is no longer a Detective
-      - id: HandLabeler
       - id: PillMindbreakerToxin
-      - id: BoxFolderGrey
       - id: RubberStampMantis
