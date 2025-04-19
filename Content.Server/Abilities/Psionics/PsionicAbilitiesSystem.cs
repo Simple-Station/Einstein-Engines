@@ -203,8 +203,8 @@ public sealed class PsionicAbilitiesSystem : EntitySystem
         RemComp<PsionicComponent>(uid);
         RemComp<InnatePsionicPowersComponent>(uid);
 
-        // var ev = new OnMindbreakEvent();
-        // RaiseLocalEvent(uid, ref ev);
+        var ev = new OnMindbreakEvent();
+        RaiseLocalEvent(uid, ref ev);
 
         if (_config.GetCVar(CCVars.ScarierMindbreaking))
             ScarierMindbreak(uid, psionic);
