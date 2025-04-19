@@ -63,7 +63,7 @@
       traits:
         - ElementalistShadeskipPower
   functions:
-   - !type:TraitAddPsionics
+    - !type:TraitAddPsionics
       psionicPowers:
         - DarkSwapPower
 
