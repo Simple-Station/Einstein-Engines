@@ -78,7 +78,7 @@ public sealed partial class MarkingPicker : Control
         }
     }
 
-    public void SetData(List<Marking> newMarkings, string species, Sex sex, Color skinColor, Color eyeColor)
+    public void SetData(List<Marking> newMarkings, string species, Sex sex, Color skinColor)
     {
         var pointsProto = _prototypeManager
             .Index<SpeciesPrototype>(species).MarkingPoints;
@@ -92,7 +92,6 @@ public sealed partial class MarkingPicker : Control
         _currentSpecies = species;
         _currentSex = sex;
         CurrentSkinColor = skinColor;
-        CurrentEyeColor = eyeColor;
 
         Populate(CMarkingSearch.Text);
         PopulateUsed();
@@ -485,7 +484,6 @@ public sealed partial class MarkingPicker : Control
             var colors = MarkingColoring.GetMarkingLayerColors(
                 marking,
                 CurrentSkinColor,
-                CurrentEyeColor,
                 markingSet
             );
             for (var i = 0; i < colors.Count; i++)

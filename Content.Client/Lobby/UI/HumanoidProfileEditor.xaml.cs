@@ -246,7 +246,6 @@ namespace Content.Client.Lobby.UI
             {
                 SpeciesButton.SelectId(args.Id);
                 SetSpecies(_species[args.Id].ID);
-                UpdateHairPickers();
                 OnSkinColorOnValueChanged();
                 UpdateCustomSpecieNameEdit();
                 UpdateHeightWidthSliders();
@@ -322,119 +321,6 @@ namespace Content.Client.Lobby.UI
 
             #endregion
 
-            #region Hair
-
-            HairStylePicker.OnMarkingSelect += newStyle =>
-            {
-                if (Profile is null)
-                    return;
-                Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithHairStyleName(newStyle.id));
-                IsDirty = true;
-                ReloadProfilePreview();
-            };
-
-            HairStylePicker.OnColorChanged += newColor =>
-            {
-                if (Profile is null)
-                    return;
-                Profile = Profile.WithCharacterAppearance(
-                    Profile.Appearance.WithHairColor(newColor.marking.MarkingColors[0]));
-                UpdateCMarkingsHair();
-                IsDirty = true;
-                ReloadProfilePreview();
-            };
-
-            FacialHairPicker.OnMarkingSelect += newStyle =>
-            {
-                if (Profile is null)
-                    return;
-                Profile = Profile.WithCharacterAppearance(
-                    Profile.Appearance.WithFacialHairStyleName(newStyle.id));
-                IsDirty = true;
-                ReloadProfilePreview();
-            };
-
-            FacialHairPicker.OnColorChanged += newColor =>
-            {
-                if (Profile is null)
-                    return;
-                Profile = Profile.WithCharacterAppearance(
-                    Profile.Appearance.WithFacialHairColor(newColor.marking.MarkingColors[0]));
-                UpdateCMarkingsFacialHair();
-                IsDirty = true;
-                ReloadProfilePreview();
-            };
-
-            HairStylePicker.OnSlotRemove += _ =>
-            {
-                if (Profile is null)
-                    return;
-                Profile = Profile.WithCharacterAppearance(
-                    Profile.Appearance.WithHairStyleName(HairStyles.DefaultHairStyle)
-                );
-                UpdateHairPickers();
-                UpdateCMarkingsHair();
-                IsDirty = true;
-                ReloadProfilePreview();
-            };
-
-            FacialHairPicker.OnSlotRemove += _ =>
-            {
-                if (Profile is null)
-                    return;
-                Profile = Profile.WithCharacterAppearance(
-                    Profile.Appearance.WithFacialHairStyleName(HairStyles.DefaultFacialHairStyle)
-                );
-                UpdateHairPickers();
-                UpdateCMarkingsFacialHair();
-                IsDirty = true;
-                ReloadProfilePreview();
-            };
-
-            HairStylePicker.OnSlotAdd += delegate()
-            {
-                if (Profile is null)
-                    return;
-
-                var hair = _markingManager.MarkingsByCategoryAndSpecies(MarkingCategories.Hair, Profile.Species).Keys
-                    .FirstOrDefault();
-
-                if (string.IsNullOrEmpty(hair))
-                    return;
-
-                Profile = Profile.WithCharacterAppearance(
-                    Profile.Appearance.WithHairStyleName(hair)
-                );
-
-                UpdateHairPickers();
-                UpdateCMarkingsHair();
-                IsDirty = true;
-                ReloadProfilePreview();
-            };
-
-            FacialHairPicker.OnSlotAdd += delegate()
-            {
-                if (Profile is null)
-                    return;
-
-                var hair = _markingManager.MarkingsByCategoryAndSpecies(MarkingCategories.FacialHair, Profile.Species).Keys
-                    .FirstOrDefault();
-
-                if (string.IsNullOrEmpty(hair))
-                    return;
-
-                Profile = Profile.WithCharacterAppearance(
-                    Profile.Appearance.WithFacialHairStyleName(hair)
-                );
-
-                UpdateHairPickers();
-                UpdateCMarkingsFacialHair();
-                IsDirty = true;
-                ReloadProfilePreview();
-            };
-
-            #endregion Hair
-
             #region SpawnPriority
 
             foreach (var value in Enum.GetValues<SpawnPriorityPreference>())
@@ -447,21 +333,6 @@ namespace Content.Client.Lobby.UI
             };
 
             #endregion SpawnPriority
-
-            #region Eyes
-
-            EyeColorPicker.OnEyeColorPicked += newColor =>
-            {
-                if (Profile is null)
-                    return;
-                Profile = Profile.WithCharacterAppearance(
-                    Profile.Appearance.WithEyeColor(newColor));
-                Markings.CurrentEyeColor = Profile.Appearance.EyeColor;
-                IsDirty = true;
-                ReloadProfilePreview();
-            };
-
-            #endregion Eyes
 
             #endregion Appearance
 
@@ -896,12 +767,8 @@ namespace Content.Client.Lobby.UI
             UpdateFlavorTextEdit();
             UpdateCustomSpecieNameEdit();
             UpdateAgeEdit();
-            UpdateEyePickers();
             UpdateSaveButton();
             UpdateMarkings();
-            UpdateHairPickers();
-            UpdateCMarkingsHair();
-            UpdateCMarkingsFacialHair();
             UpdateHeightWidthSliders();
             UpdateWeight();
             UpdateCharacterRequired();
@@ -1696,8 +1563,7 @@ namespace Content.Client.Lobby.UI
             if (Profile == null)
                 return;
 
-            Markings.SetData(Profile.Appearance.Markings, Profile.Species, Profile.Sex, Profile.Appearance.SkinColor,
-                Profile.Appearance.EyeColor);
+            Markings.SetData(Profile.Appearance.Markings, Profile.Species, Profile.Sex, Profile.Appearance.SkinColor);
         }
 
         private void UpdateGenderControls()
@@ -1849,90 +1715,6 @@ namespace Content.Client.Lobby.UI
                 WeightLabel.Text = Loc.GetString("humanoid-profile-editor-weight-label", ("weight", (int) 71));
 
             SpriteView.InvalidateMeasure();
-        }
-
-        private void UpdateHairPickers()
-        {
-            if (Profile == null)
-                return;
-
-            var hairMarking = Profile.Appearance.HairStyleId switch
-            {
-                HairStyles.DefaultHairStyle => new List<Marking>(),
-                _ => new() { new(Profile.Appearance.HairStyleId, new List<Color>() { Profile.Appearance.HairColor }) },
-            };
-
-            var facialHairMarking = Profile.Appearance.FacialHairStyleId switch
-            {
-                HairStyles.DefaultFacialHairStyle => new List<Marking>(),
-                _ => new() { new(Profile.Appearance.FacialHairStyleId, new List<Color>() { Profile.Appearance.FacialHairColor }) },
-            };
-
-            HairStylePicker.UpdateData(
-                hairMarking,
-                Profile.Species,
-                1);
-            FacialHairPicker.UpdateData(
-                facialHairMarking,
-                Profile.Species,
-                1);
-        }
-
-        private void UpdateCMarkingsHair()
-        {
-            if (Profile == null)
-                return;
-
-            // hair color
-            Color? hairColor = null;
-            if ( Profile.Appearance.HairStyleId != HairStyles.DefaultHairStyle &&
-                _markingManager.Markings.TryGetValue(Profile.Appearance.HairStyleId, out var hairProto))
-            {
-                if (_markingManager.CanBeApplied(Profile.Species, Profile.Sex, hairProto, _prototypeManager))
-                {
-                    hairColor = _markingManager.MustMatchSkin(Profile.Species, HumanoidVisualLayers.Hair, out _, _prototypeManager)
-                        ? Profile.Appearance.SkinColor
-                        : Profile.Appearance.HairColor;
-                }
-            }
-
-            if (hairColor != null)
-                Markings.HairMarking = new(Profile.Appearance.HairStyleId, new List<Color> { hairColor.Value });
-            else
-                Markings.HairMarking = null;
-        }
-
-        private void UpdateCMarkingsFacialHair()
-        {
-            if (Profile == null)
-                return;
-
-            // Facial hair color
-            Color? facialHairColor = null;
-            if ( Profile.Appearance.FacialHairStyleId != HairStyles.DefaultFacialHairStyle &&
-                _markingManager.Markings.TryGetValue(Profile.Appearance.FacialHairStyleId, out var facialHairProto))
-            {
-                if (_markingManager.CanBeApplied(Profile.Species, Profile.Sex, facialHairProto, _prototypeManager))
-                {
-                    facialHairColor = _markingManager.MustMatchSkin(Profile.Species, HumanoidVisualLayers.Hair, out _, _prototypeManager)
-                        ? Profile.Appearance.SkinColor
-                        : Profile.Appearance.FacialHairColor;
-                }
-            }
-
-            if (facialHairColor != null)
-                Markings.FacialHairMarking = new(Profile.Appearance.FacialHairStyleId, new List<Color> { facialHairColor.Value });
-            else
-                Markings.FacialHairMarking = null;
-        }
-
-        private void UpdateEyePickers()
-        {
-            if (Profile == null)
-                return;
-
-            Markings.CurrentEyeColor = Profile.Appearance.EyeColor;
-            EyeColorPicker.SetData(Profile.Appearance.EyeColor);
         }
 
         private void UpdateSaveButton()

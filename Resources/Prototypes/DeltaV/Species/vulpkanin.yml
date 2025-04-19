@@ -40,10 +40,10 @@
   id: MobVulpkaninMarkingLimits
   points:
     Hair:
-      points: 1
+      points: 3
       required: false
     FacialHair:
-      points: 1
+      points: 3
       required: false
     Tail:
       points: 1

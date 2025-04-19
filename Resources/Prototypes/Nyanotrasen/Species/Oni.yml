@@ -23,10 +23,10 @@
   id: MobOniMarkingLimits
   points:
     Hair:
-      points: 1
+      points: 3
       required: false
     FacialHair:
-      points: 1
+      points: 3
       required: false
     HeadTop:
       points: 6

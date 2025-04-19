@@ -44,10 +44,10 @@
   id: MobHumanMarkingLimits
   points:
     Hair:
-      points: 1
+      points: 3
       required: false
     FacialHair:
-      points: 1
+      points: 3
       required: false
     Snout:
       points: 1

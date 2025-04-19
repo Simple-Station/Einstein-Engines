@@ -17,10 +17,10 @@
   id: MobArachneMarkingLimits
   points:
     Hair:
-      points: 1
+      points: 3
       required: false
     FacialHair:
-      points: 1
+      points: 3
       required: false
     HeadSide:
       points: 3
