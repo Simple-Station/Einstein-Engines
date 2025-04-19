@@ -95,19 +95,20 @@
       required: false
     RightArm:
       points: 6
-      required: true
-      defaultMarkings: [ XelthiaRightarmSpike ]
+      required: false
     RightHand:
       points: 6
       required: false
     LeftArm:
       points: 6
-      required: true
-      defaultMarkings: [ XelthiaLeftarmSpike ]
+      required: false
     LeftHand:
       points: 6
       required: false
-
+    Overlay:
+      points: 1
+      required: true
+      defaultMarkings: [ XelthiaBackspikes ]
 - type: humanoidBaseSprite
   id: MobXelthiaHead
   baseSprite:

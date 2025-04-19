@@ -19,6 +19,7 @@ using Content.Shared.Body.Components;
 using Content.Shared.Body.Part;
 using Robust.Shared.Placement;
 using Robust.Shared.Serialization.Manager;
+using Robust.Shared.Timing;
 
 
 namespace Content.Server._EE.Xelthia;
@@ -33,6 +34,7 @@ public sealed class XelthiaSystem : EntitySystem
 
     [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
     [Dependency] private readonly IEntityManager _entityManager = default!;
+    [Dependency] private readonly IGameTiming _gameTiming = default!;
 
     public const string XelthiaRegenerateActionId = "XelthiaRegenerateAction";
     public override void Initialize()
@@ -62,14 +64,6 @@ public sealed class XelthiaSystem : EntitySystem
             // Placeholder for an actual action just so I can make sure the button. Actually does anything? Works.
         }
 
-        // BEHOLD, COPY-PASTED AND TWEAKED CODE FROM THE SPAWN THINGS COMMAND. I HAVE NO IDEA WHAT IM DOING AND THIS IS PROBABLY ASS.
-        // This currently just spawns more hands and arms without attaching them. Also they need decals. This is fucking scuffed.
-        PlacementEntityEvent? placementEv = null;
-        var entityCoordinates = _entityManager.GetComponent<TransformComponent>(uid).Coordinates;
-        var createdEntity = _entityManager.SpawnEntity("LeftArmXelthia", entityCoordinates);
-        placementEv = new PlacementEntityEvent(createdEntity, entityCoordinates, PlacementEventAction.Create, null);
-        createdEntity = _entityManager.SpawnEntity("LeftHandXelthia", entityCoordinates);
-        placementEv = new PlacementEntityEvent(createdEntity, entityCoordinates, PlacementEventAction.Create, null);
 
         //IEntityManager entityManager = uid;
         IEntityManager entityManager = base.EntityManager; // There's no way this is good code. I don't know what im doing though, so. I dunno.
@@ -84,39 +78,37 @@ public sealed class XelthiaSystem : EntitySystem
         if (root is null)
             return;
 
-        var parts = bodySystem.GetBodyChildrenOfType(uid, BodyPartType.Arm, body);
+        var parts = bodySystem.GetBodyChildrenOfType(uid, BodyPartType.Arm, body); // Deletes Arms and hands
         foreach (var part in parts)
         {
-            var partComp = part.Component;
-            if (partComp.Symmetry != BodyPartSymmetry.Right)
-                continue;
 
             foreach (var child in bodySystem.GetBodyPartChildren(part.Id, part.Component))
                 entityManager.QueueDeleteEntity(child.Id);
 
             transformSystem.AttachToGridOrMap(part.Id);
             entityManager.QueueDeleteEntity(part.Id);
-
-            var newLimb = entityManager.SpawnAtPosition("RightArmXelthia", xform.Coordinates);
-            if (entityManager.TryGetComponent(newLimb, out BodyPartComponent? limbComp))
-                bodySystem.AttachPart(root.Value.Entity, "right arm", newLimb, root.Value.BodyPart, limbComp);
+            entityManager.SpawnAtPosition("RightArmXelthia", xform.Coordinates); //Should drop arms equal to the number attached
         }
-//        parts = bodySystem.GetBodyChildrenOfType(uid, BodyPartType.Hand, body);
-//        foreach (var part in parts)
-//        {
-//            var partComp = part.Component;
-//            if (partComp.Symmetry != BodyPartSymmetry.Right)
-//                continue;
-//
-//            foreach (var child in bodySystem.GetBodyPartChildren(part.Id, part.Component))
-//                entityManager.QueueDeleteEntity(child.Id);
-//
-//            transformSystem.AttachToGridOrMap(part.Id);
-//            entityManager.QueueDeleteEntity(part.Id);
-//
-//            var newLimb = entityManager.SpawnAtPosition("RightHandXelthia", xform.Coordinates);
-//            if (entityManager.TryGetComponent(newLimb, out BodyPartComponent? limbComp))
-//                bodySystem.AttachPart(root.Value.Entity, "right hand", newLimb, root.Value.BodyPart, limbComp);
-//        }
+        // Right Side
+        var newLimb = entityManager.SpawnAtPosition("RightArmXelthia", xform.Coordinates); // Copy-Pasted Code for arm spawning
+        if (entityManager.TryGetComponent(newLimb, out BodyPartComponent? limbComp))
+            bodySystem.AttachPart(root.Value.Entity, "right arm", newLimb, root.Value.BodyPart, limbComp);
+
+        var newerLimb = entityManager.SpawnAtPosition("RightHandXelthia", xform.Coordinates); // Spawns the hand
+        Enum.TryParse<BodyPartType>("Hand", out var partType);
+        bodySystem.TryCreatePartSlotAndAttach(newLimb, "right hand", newerLimb, partType);
+
+        // Left Side
+        newLimb = entityManager.SpawnAtPosition("LeftArmXelthia", xform.Coordinates); // Copy-Pasted Code for arm spawning
+        if (entityManager.TryGetComponent(newLimb, out BodyPartComponent? limbComp2))
+            bodySystem.AttachPart(root.Value.Entity, "left arm", newLimb, root.Value.BodyPart, limbComp2);
+
+        newerLimb = entityManager.SpawnAtPosition("LeftHandXelthia", xform.Coordinates); // Spawns the hand
+        bodySystem.TryCreatePartSlotAndAttach(newLimb, "left hand", newerLimb, partType);
+
+        var cooldown = new TimeSpan(300); // 5 minute cooldown?
+
+        _actionsSystem.SetCooldown(component.XelthiaRegenerateAction!.Value, cooldown);
+
     }
 }

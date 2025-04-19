@@ -77,26 +77,10 @@
 
 # Spikes
 
-#- type: marking
-#  id: XelthiaBackspikes
-#  bodyPart: Chest
-#  markingCategory: Chest
-#  speciesRestriction: [Xelthia]
-#  coloring:
-#    default:
-#      type:
-#        !type:SimpleColoring
-#          color: "#FFFFFF"
-#  sprites:
-#  - sprite: _EE/Mobs/Customization/xelthia_parts.rsi
-#    state: backspikes
-#
-# Commented because i need chest free for patterns and stuff
-
 - type: marking
-  id: XelthiaRightarmSpike
-  bodyPart: RArm
-  markingCategory: RightArm
+  id: XelthiaBackspikes
+  bodyPart: Chest, RArm, LArm, Head
+  markingCategory: Overlay
   speciesRestriction: [Xelthia]
   coloring:
     default:
@@ -105,18 +89,4 @@
           color: "#FFFFFF"
   sprites:
   - sprite: _EE/Mobs/Customization/xelthia_parts.rsi
-    state: r_armspike
-    
-- type: marking
-  id: XelthiaLeftarmSpike
-  bodyPart: LArm
-  markingCategory: LeftArm
-  speciesRestriction: [Xelthia]
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-          color: "#FFFFFF"
-  sprites:
-  - sprite: _EE/Mobs/Customization/xelthia_parts.rsi
-    state: l_armspike
+    state: backspikes
