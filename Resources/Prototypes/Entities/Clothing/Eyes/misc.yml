@@ -1,5 +1,5 @@
 - type: entity
-  parent: ClothingEyesBase
+  parent: [ClothingEyesBase, FlippableEyesBase]
   id: ClothingEyesEyepatch
   name: eyepatch
   description: Yarr.
@@ -12,7 +12,7 @@
     protectionTime: 5
 
 - type: entity
-  parent: [ClothingEyesEyepatch, BaseFoldable]
+  parent: [ClothingEyesEyepatch, FlippableEyesBase]
   id: ClothingEyesEyepatchColor
   name: eyepatch
   description: Yarr.
@@ -23,12 +23,6 @@
     sprite: Clothing/Eyes/Misc/eyepatch_color.rsi
   - type: EyeProtection
     protectionTime: 5
-  - type: Foldable
-    canFoldInsideContainer: true
-    unfoldVerbText: fold-flip-verb
-    foldVerbText: fold-flip-verb
-  - type: FoldableClothing
-    foldedEquippedPrefix: flipped
 
 - type: entity
   parent: ClothingEyesEyepatchColor
