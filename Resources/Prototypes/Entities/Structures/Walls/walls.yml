@@ -876,7 +876,6 @@
   parent: BaseWall
   id: WallShuttle
   name: shuttle wall
-  suffix: Reinforced, Exterior
   components:
   - type: Damageable
     damageContainer: StructuralInorganic
