@@ -6,9 +6,6 @@
   components:
     - type: ToggleClothing
       action: ActionToggleMagboots
-    - type: ComponentToggler
-      components:
-        - type: NoSlip
     - type: Magboots
       slot: outerClothing
     - type: ItemToggle
@@ -67,9 +64,9 @@
     components:
     - type: NoSlip
   - type: Magboots
-  - type: ClothingSpeedModifier
-    walkModifier: 0.85
-    sprintModifier: 0.8
+    activeWalkModifier: 0.85
+    activeSprintModifier: 0.8
+    changeClothingVisuals: true
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -98,9 +95,9 @@
     state: icon
   - type: Clothing
     sprite: Clothing/Shoes/Boots/magboots-advanced.rsi
-  - type: ClothingSpeedModifier
-    walkModifier: 1
-    sprintModifier: 1
+  - type: Magboots
+    activeWalkModifier: 1
+    activeSprintModifier: 1
   - type: Tag
     tags:
     - WhitelistChameleon
@@ -121,9 +118,9 @@
   name: magboots of blinding speed
   description: These would look fetching on a fetcher like you.
   components:
-  - type: ClothingSpeedModifier
-    walkModifier: 1.10 #PVS isn't too much of an issue when you are blind...
-    sprintModifier: 1.10
+  - type: Magboots
+    activeWalkModifier: 1.10
+    activeSprintModifier: 1.10
   - type: StaticPrice
     price: 3000
 
@@ -138,9 +135,9 @@
     state: icon
   - type: Clothing
     sprite: Clothing/Shoes/Boots/magboots-syndicate.rsi
-  - type: ClothingSpeedModifier
-    walkModifier: 0.95
-    sprintModifier: 0.9
+  - type: Magboots
+    activeWalkModifier: 0.95
+    activeSprintModifier: 0.9
   - type: GasTank
     outputPressure: 42.6
     air:
@@ -186,9 +183,9 @@
     state: icon
   - type: Clothing
     sprite: Clothing/Shoes/Boots/magboots.rsi
-  - type: ClothingSpeedModifier
-    walkModifier: 0.95
-    sprintModifier: 0.9
+  - type: Magboots
+    activeWalkModifier: 0.95
+    activeSprintModifier: 0.9
   - type: Tag
     tags:
     - WhitelistChameleon
@@ -211,9 +208,9 @@
     state: icon
   - type: Clothing
     sprite: Clothing/Shoes/Boots/magboots-combat.rsi
-  - type: ClothingSpeedModifier
-    walkModifier: 0.82 # Slightly slower then normal magboots
-    sprintModifier: 0.77 # Slightly slower then normal magboots|
+  - type: Magboots
+    activeWalkModifier: 0.82
+    activeSprintModifier: 0.77
   - type: Tag
     tags:
     - WhitelistChameleon
