@@ -46,8 +46,8 @@
         - Energy
         - NonEnergy
     - type: ClothingSpeedModifier
-      walkModifier: 0.85
-      sprintModifier: 0.85
+      walkModifier: 0.7
+      sprintModifier: 0.7
 
 - type: entity
   parent: [ClothingOuterStorageBase, AllowSuitStorageClothing, TCFLInfo]

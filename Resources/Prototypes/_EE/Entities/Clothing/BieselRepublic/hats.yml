@@ -46,10 +46,11 @@
     - type: Armor
       modifiers:
         coefficients:
-          Blunt: 0.9
-          Slash: 0.9
-          Piercing: 0.9
-          Heat: 0.9
+          Blunt: 0.875
+          Slash: 0.875
+          Piercing: 0.875
+          Heat: 0.875
+          Caustic: 0.875
     - type: Reflect
       reflectProb: 0.03
       spread: 270
@@ -57,6 +58,9 @@
       reflects:
         - Energy
         - NonEnergy
+    - type: ClothingSpeedModifier
+      walkModifier: 0.95
+      sprintModifier: 0.95
 
 - type: entity
   parent: [ClothingHeadBaseButcherable, TCFLInfo]

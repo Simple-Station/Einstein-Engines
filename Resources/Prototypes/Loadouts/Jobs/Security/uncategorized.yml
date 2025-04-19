@@ -265,6 +265,62 @@
     - ClothingHeadHelmetInsulated
 
 - type: loadout
+  id: LoadoutClothingHeadHelmetHeavyAblative
+  category: JobsSecurityAUncategorized
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityHead
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingHeadHelmetHeavyAblative
+
+- type: loadout
+  id: LoadoutClothingHeadHelmetHeavyRiot
+  category: JobsSecurityAUncategorized
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityHead
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingHeadHelmetHeavyRiot
+
+- type: loadout
+  id: LoadoutClothingHeadHelmetHeavyBallistic
+  category: JobsSecurityAUncategorized
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityHead
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingHeadHelmetHeavyBallistic
+
+- type: loadout
+  id: LoadoutClothingHeadHelmetHeavyStandard
+  category: JobsSecurityAUncategorized
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityHead
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingHeadHelmetHeavyStandard
+
+- type: loadout
   id: ClothingHeadHelmetTCFLHeavy
   category: JobsSecurityAUncategorized
   cost: 3 # This is a notable upgrade over a standard security helmet.
@@ -416,6 +472,98 @@
   items:
     - ClothingOuterArmorTCFLHeavy
 
+- type: loadout
+  id: LoadoutClothingOuterArmorAblativeHeavy
+  category: JobsSecurityAUncategorized
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingOuterArmorAblativeHeavy
+
+- type: loadout
+  id: LoadoutClothingOuterArmorBallisticHeavy
+  category: JobsSecurityAUncategorized
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingOuterArmorBallisticHeavy
+
+- type: loadout
+  id: LoadoutClothingOuterArmorStandardHeavy
+  category: JobsSecurityAUncategorized
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingOuterArmorStandardHeavy
+
+- type: loadout
+  id: LoadoutClothingOuterArmorRiotHeavy
+  category: JobsSecurityAUncategorized
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingOuterArmorRiotHeavy
+
+- type: loadout
+  id: LoadoutClothingOuterJacketZavSecurity
+  category: JobsSecurityAUncategorized
+  cost: 0
+  exclusive: true
+  guideEntry: ZavodskoiInterstellar
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterEmployerRequirement
+      employers:
+        - ZavodskoiInterstellar
+  items:
+  - ClothingOuterJacketZavSecurity
+
+- type: loadout
+  id: LoadoutClothingOuterJacketZavSecurityAlt
+  category: JobsSecurityAUncategorized
+  cost: 0
+  exclusive: true
+  guideEntry: ZavodskoiInterstellar
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterEmployerRequirement
+      employers:
+        - ZavodskoiInterstellar
+  items:
+  - ClothingOuterJacketZavSecurityAlt
+
 # Shoes
 - type: loadout
   id: LoadoutSecurityShoesJackboots
@@ -552,3 +700,74 @@
     - ClothingUniformEnvirosuitSecGrey
     - ClothingHeadEnvirohelmSecGrey
 
+- type: loadout
+  id: LoadoutSecurityUniformZavodSecurityOfficer
+  category: JobsSecurityAUncategorized
+  cost: 0
+  exclusive: true
+  guideEntry: ZavodskoiInterstellar
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityUniforms
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterEmployerRequirement
+      employers:
+        - ZavodskoiInterstellar
+  items:
+    - ClothingUniformJumpsuitZavodSecurityOfficer
+
+- type: loadout
+  id: LoadoutSecurityUniformZavodSecurityOfficerAlt1
+  category: JobsSecurityAUncategorized
+  cost: 0
+  exclusive: true
+  guideEntry: ZavodskoiInterstellar
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityUniforms
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterEmployerRequirement
+      employers:
+        - ZavodskoiInterstellar
+  items:
+    - ClothingUniformJumpsuitZavodSecurityOfficerAlt1
+
+- type: loadout
+  id: LoadoutSecurityUniformZavodSecurityOfficerAlt2
+  category: JobsSecurityAUncategorized
+  cost: 0
+  exclusive: true
+  guideEntry: ZavodskoiInterstellar
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityUniforms
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterEmployerRequirement
+      employers:
+        - ZavodskoiInterstellar
+  items:
+    - ClothingUniformJumpsuitZavodSecurityOfficerAlt2
+
+- type: loadout
+  id: LoadoutSecurityUniformZavodCadet
+  category: JobsSecurityAUncategorized
+  cost: 0
+  exclusive: true
+  guideEntry: ZavodskoiInterstellar
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutDetectiveUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Detective
+    - !type:CharacterEmployerRequirement
+      employers:
+        - ZavodskoiInterstellar
+  items:
+    - ClothingUniformJumpsuitZavodCadet
