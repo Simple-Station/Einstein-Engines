@@ -33,6 +33,7 @@
         - GPS
         - WeldingMask
         - RPD
+        - LightReplacer
       components:
         - SprayPainter
         - NetworkConfigurator
