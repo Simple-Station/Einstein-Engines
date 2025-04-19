@@ -1,0 +1,16 @@
+- type: gameMap
+  id: Frontier
+  mapName: Frontier
+  mapPath: /Maps/frontier.yml
+  minPlayers: 0
+  stations:
+    Frontier:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: NT14 "Frontier"
+        - type: StationJobs
+          overflowJobs:
+          - Captain
+          availableJobs:
+            Captain: [ -1, -1 ]
