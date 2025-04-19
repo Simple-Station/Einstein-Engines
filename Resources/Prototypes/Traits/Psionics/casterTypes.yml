@@ -18,6 +18,7 @@
         - ForensicMantis
         - Chaplain
         - Librarian
+        - Prisoner
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
@@ -88,6 +89,7 @@
         - ForensicMantis
         - Chaplain
         - Librarian
+        - Prisoner
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
@@ -121,6 +123,7 @@
         - ForensicMantis
         - Chaplain
         - Librarian
+        - Prisoner
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement

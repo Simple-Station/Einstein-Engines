@@ -15197,3 +15197,124 @@ Entries:
   id: 7164
   time: '2025-04-17T00:17:27.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2234
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        NT has had its station's "High Security" doors such as Command,
+        Security, and Vault doors shielded with psifoil around their components.
+        They can no longer be forced open by the Anoigo power. 
+    - type: Tweak
+      message: >-
+        Anoigo, Dispel, Mindswap, Healing Word, Breath Of Life, Pyrokinesis, and
+        Noospheric Zap now all don't work if the target has psionic insulation.
+    - type: Fix
+      message: 'Psionic Invisibility now actually works as advertised. '
+    - type: Fix
+      message: >-
+        Psionic Invisibility and Anoigo now actually produce a sound, as well as
+        properly enforce their cooldowns.
+    - type: Tweak
+      message: >-
+        Anoigo reclassified as a "Dangerous" power, it now also costs 10 points
+        for Elementalists.
+    - type: Remove
+      message: Prisoners can no longer be Psionic.
+    - type: Fix
+      message: Mantis can no longer summon his black blade if his hands are full.
+  id: 7165
+  time: '2025-04-18T18:53:36.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2272
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed various bugs related to Magboots and Integrated Magboots on
+        hardsuits.
+    - type: Tweak
+      message: >-
+        All Modsuits as well as tacsuits contributed by Goobstation now also
+        include Integrated Magsuits.
+  id: 7166
+  time: '2025-04-18T21:32:42.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2273
+- author: 3PonPon3
+  changes:
+    - type: Fix
+      message: Fixed the scottish, stutter and frontal lisp accents not working.
+  id: 7167
+  time: '2025-04-18T21:34:03.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2266
+- author: Timfa2112
+  changes:
+    - type: Fix
+      message: >-
+        Fixed admin commands for spawning stamps, passports, and their related
+        localization missing
+  id: 7168
+  time: '2025-04-18T21:43:13.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2265
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added a "Flash" weakness to DarkSwap. Being hit by any flash, even if
+        you have flash protection, causes you to instantly drop out of the dark
+        realm and take a massive amount of stamina damage.
+    - type: Add
+      message: >-
+        DarkSwap users now take continuous stamina damage while in the dark
+        realm.
+    - type: Remove
+      message: >-
+        DarkSwap no longer makes its user immune to Space, Gravity, and
+        Vacuums. 
+  id: 7169
+  time: '2025-04-18T22:09:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2274
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Space wind no longer causes its victims to accumulate infinite stun
+        time.
+  id: 7170
+  time: '2025-04-18T22:32:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2276
+- author: LaryNevesPR
+  changes:
+    - type: Fix
+      message: Fixes character height.
+  id: 7171
+  time: '2025-04-18T23:34:33.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2278
+- author: dootythefrooty
+  changes:
+    - type: Fix
+      message: Intercomms are functional for every channel again.
+  id: 7172
+  time: '2025-04-18T23:45:54.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2269
+- author: ODJ
+  changes:
+    - type: Fix
+      message: >-
+        Updated Anchor, large number of bugs and missing content should be
+        fixed.
+  id: 7173
+  time: '2025-04-19T00:33:28.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2262
+- author: ODJ
+  changes:
+    - type: Tweak
+      message: Pebble updated to version 3.0, please enjoy.
+  id: 7174
+  time: '2025-04-19T00:33:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2261
+- author: ODJ
+  changes:
+    - type: Tweak
+      message: Salvage shuttle is no longer a dorito.
+  id: 7175
+  time: '2025-04-19T01:21:53.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2263
