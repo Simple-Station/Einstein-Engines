@@ -1,6 +1,6 @@
 
 - type: entity
-  parent: [ BaseComputerCircuitboard, BaseGrandTheftContraband ]
+  parent: [ BaseComputerCircuitboard ]
   id: ScienceCommsComputerCircuitboard
   name: science communications computer board
   description: A computer printed circuit board for the science communications console.
@@ -11,7 +11,7 @@
       prototype: ScienceComputerComms
 
 - type: entity
-  parent: [ BaseComputerCircuitboard, BaseGrandTheftContraband ]
+  parent: [ BaseComputerCircuitboard ]
   id: SecurityCommsComputerCircuitboard
   name: security communications computer board
   description: A computer printed circuit board for the security communications console.
@@ -22,7 +22,7 @@
       prototype: SecurityComputerComms
 
 - type: entity
-  parent: [ BaseComputerCircuitboard, BaseGrandTheftContraband ]
+  parent: [ BaseComputerCircuitboard ]
   id: ServiceCommsComputerCircuitboard
   name: service communications computer board
   description: A computer printed circuit board for the service communications console.
@@ -33,7 +33,7 @@
       prototype: ServiceComputerComms
 
 - type: entity
-  parent: [ BaseComputerCircuitboard, BaseGrandTheftContraband ]
+  parent: [ BaseComputerCircuitboard ]
   id: CargoCommsComputerCircuitboard
   name: cargo communications computer board
   description: A computer printed circuit board for the cargo communications console.
@@ -44,7 +44,7 @@
       prototype: CargoComputerComms
 
 - type: entity
-  parent: [ BaseComputerCircuitboard, BaseGrandTheftContraband ]
+  parent: [ BaseComputerCircuitboard ]
   id: EngiCommsComputerCircuitboard
   name: engineering communications computer board
   description: A computer printed circuit board for the engineering communications console.
@@ -55,7 +55,7 @@
       prototype: EngiComputerComms
 
 - type: entity
-  parent: [ BaseComputerCircuitboard, BaseGrandTheftContraband ]
+  parent: [ BaseComputerCircuitboard ]
   id: MedicalCommsComputerCircuitboard
   name: medical communications computer board
   description: A computer printed circuit board for the medical communications console.
