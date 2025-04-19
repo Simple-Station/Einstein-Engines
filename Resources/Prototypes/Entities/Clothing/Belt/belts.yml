@@ -118,6 +118,7 @@
         - Multitool
         - AppraisalTool
         - RPD
+        - LightReplacer
       components:
         - SprayPainter
         - NetworkConfigurator
