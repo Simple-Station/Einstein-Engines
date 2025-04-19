@@ -151,6 +151,9 @@
     understands:
     - TauCetiBasic
     - Chittin
+  - type: Tag
+    tags:
+    - ChitinidEmotes
 
 - type: entity
   parent: BaseSpeciesDummy
