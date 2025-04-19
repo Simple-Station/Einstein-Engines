@@ -155,7 +155,7 @@ public sealed partial class AtmosphereSystem
         // ThrowingSystem increments linear velocity by a given vector, but we have to do this anyways because reasons.
         var velocity = _transformSystem.GetWorldRotation(uid).ToWorldVec() + pressureVector;
 
-        _sharedStunSystem.TryKnockdown(uid, TimeSpan.FromSeconds(SpaceWindKnockdownTime), false);
+        _sharedStunSystem.TryKnockdown(uid, TimeSpan.FromSeconds(SpaceWindKnockdownTime), true);
         _throwing.TryThrow(uid, velocity, physics, xform, projectileQuery,
             1, doSpin: physics.AngularVelocity < SpaceWindMaxAngularVelocity);
 

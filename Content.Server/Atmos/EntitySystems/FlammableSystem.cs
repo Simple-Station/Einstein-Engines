@@ -282,10 +282,13 @@ namespace Content.Server.Atmos.EntitySystems
             flammable.FireStacks = MathF.Min(MathF.Max(flammable.MinimumFireStacks, stacks), flammable.MaximumFireStacks);
 
             if (flammable.FireStacks <= 0)
+            {
                 Extinguish(uid, flammable);
+                ignite = false;
+            }
             else
             {
-                flammable.OnFire = ignite;
+                ignite = true;
                 UpdateAppearance(uid, flammable);
             }
         }
