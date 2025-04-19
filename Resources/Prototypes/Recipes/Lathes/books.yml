@@ -104,6 +104,16 @@
   id: BookPsionicsGuidebook
   result: BookPsionicsGuidebook
 
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookCorporateCQCGuidebook
+  result: BookCorporateCQCGuidebook
+
+- type: latheRecipe
+  parent: BaseBookRecipe
+  id: BookCorporateJudoGuidebook
+  result: BookCorporateJudoGuidebook
+
 # Books from books_author.yml
 - type: latheRecipe
   parent: BaseBookRecipe
