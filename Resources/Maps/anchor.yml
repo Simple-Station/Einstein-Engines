@@ -157166,11 +157166,6 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
       id: Arrivals Checkpoint
-    - type: UserInterface
-      actors:
-        enum.SurveillanceCameraSetupUiKey.Camera:
-        - invalid
-    - type: ActiveUserInterface
   - uid: 24329
     components:
     - type: Transform
