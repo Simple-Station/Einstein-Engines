@@ -49,27 +49,9 @@ public sealed partial class BankSystem : EntitySystem
             return;
         }
 
-        var newProfile = new HumanoidCharacterProfile(
-            profile.Name,
-            profile.FlavorText,
-            profile.Species,
-            profile.Age,
-            profile.Sex,
-            profile.Gender,
-            bank.Balance,
-            profile.Faction,
-            profile.Appearance,
-            profile.SpawnPriority,
-            profile.JobPriorities,
-            profile.PreferenceUnavailable,
-            profile.AntagPreferences,
-            profile.TraitPreferences,
-            profile.CyborgName,
-            profile.Appearance,
-            profile.SpawnPriority,
-            profile.JobPriorities,
+        var balanceDiff = bank.Balance - profile.BankBalance;
 
-            new Dictionary<string, RoleLoadout>(profile.Loadouts));
+        var newProfile = profile.WithBank(bank.Balance);
 
         args.State = new BankAccountComponentState
         {
@@ -78,6 +60,10 @@ public sealed partial class BankSystem : EntitySystem
 
         _dbManager.SaveCharacterSlotAsync((NetUserId) user, newProfile, index);
         _log.Info($"Character {profile.Name} saved");
+        if (balanceDiff > 250000)
+        {
+            _log.Info($"Character {profile.Name} had a major balance change of {balanceDiff} credits!");
+        }
     }
 
     /// <summary>

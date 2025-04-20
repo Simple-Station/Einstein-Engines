@@ -1,4 +1,5 @@
 using Content.Shared.ActionBlocker;
+using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Movement.Events;
 using Content.Shared.Shuttles.BUIStates;
 using Content.Shared.Shuttles.Components;
@@ -9,6 +10,7 @@ namespace Content.Shared.Shuttles.Systems
     public abstract class SharedShuttleConsoleSystem : EntitySystem
     {
         [Dependency] protected readonly ActionBlockerSystem ActionBlockerSystem = default!;
+        [Dependency] protected readonly ItemSlotsSystem _itemSlotsSystem = default!;
 
         public override void Initialize()
         {

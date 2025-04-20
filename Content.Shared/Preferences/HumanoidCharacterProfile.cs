@@ -18,6 +18,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Shared.Preferences;
 
+
 /// Character profile. Looks immutable, but uses non-immutable semantics internally for serialization/code sanity purposes
 [DataDefinition]
 [Serializable, NetSerializable]
@@ -110,6 +111,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
 
     [DataField]
     public ClothingPreference Clothing { get; set; }
+
     [DataField]
     public BackpackPreference Backpack { get; set; }
 
@@ -130,6 +132,14 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     [DataField]
     public PreferenceUnavailableMode PreferenceUnavailable { get; private set; } =
         PreferenceUnavailableMode.SpawnAsOverflow;
+
+    // hullrot added
+    [DataField("bankBalance")]
+    public int BankBalance { get; private set; }
+
+    [DataField("faction")]
+    public string? Faction { get; private set; }
+
 
     public HumanoidCharacterProfile(
         string name,
@@ -157,7 +167,10 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         PreferenceUnavailableMode preferenceUnavailable,
         HashSet<string> antagPreferences,
         HashSet<string> traitPreferences,
-        HashSet<LoadoutPreference> loadoutPreferences)
+        HashSet<LoadoutPreference> loadoutPreferences,
+        int bankWealth,
+        string? proFaction
+    )
     {
         Name = name;
         FlavorText = flavortext;
@@ -185,6 +198,9 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         _antagPreferences = antagPreferences;
         _traitPreferences = traitPreferences;
         _loadoutPreferences = loadoutPreferences;
+        BankBalance = bankWealth;
+        Faction = proFaction;
+
     }
 
     /// <summary>Copy constructor</summary>
@@ -215,25 +231,25 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             other.PreferenceUnavailable,
             new HashSet<string>(other.AntagPreferences),
             new HashSet<string>(other.TraitPreferences),
-            new HashSet<LoadoutPreference>(other.LoadoutPreferences))
-    {
-    }
+            new HashSet<LoadoutPreference>(other.LoadoutPreferences),
+            other.BankBalance,
+            other?.Faction) { }
 
     /// <summary>
     ///     Get the default humanoid character profile, using internal constant values.
     ///     Defaults to <see cref="SharedHumanoidAppearanceSystem.DefaultSpecies"/> for the species.
     /// </summary>
     /// <returns></returns>
-    public HumanoidCharacterProfile()
-    {
-    }
+    public HumanoidCharacterProfile() { }
 
     /// <summary>
     ///     Return a default character profile, based on species.i
     /// </summary>
     /// <param name="species">The species to use in this default profile. The default species is <see cref="SharedHumanoidAppearanceSystem.DefaultSpecies"/>.</param>
     /// <returns>Humanoid character profile with default settings.</returns>
-    public static HumanoidCharacterProfile DefaultWithSpecies(string species = SharedHumanoidAppearanceSystem.DefaultSpecies)
+    public static HumanoidCharacterProfile DefaultWithSpecies(
+        string species = SharedHumanoidAppearanceSystem.DefaultSpecies
+    )
     {
         var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
         var skinColor = SkinColor.ValidHumanSkinTone;
@@ -260,16 +276,20 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
         var random = IoCManager.Resolve<IRobustRandom>();
 
-        var species = random.Pick(prototypeManager
-            .EnumeratePrototypes<SpeciesPrototype>()
-            .Where(x => ignoredSpecies == null ? x.RoundStart : x.RoundStart && !ignoredSpecies.Contains(x.ID))
-            .ToArray()
-        ).ID;
+        var species = random.Pick(
+                prototypeManager
+                    .EnumeratePrototypes<SpeciesPrototype>()
+                    .Where(x => ignoredSpecies == null ? x.RoundStart : x.RoundStart && !ignoredSpecies.Contains(x.ID))
+                    .ToArray()
+            )
+            .ID;
 
         return RandomWithSpecies(species);
     }
 
-    public static HumanoidCharacterProfile RandomWithSpecies(string species = SharedHumanoidAppearanceSystem.DefaultSpecies)
+    public static HumanoidCharacterProfile RandomWithSpecies(
+        string species = SharedHumanoidAppearanceSystem.DefaultSpecies
+    )
     {
         var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
         var random = IoCManager.Resolve<IRobustRandom>();
@@ -279,7 +299,10 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         if (prototypeManager.TryIndex<SpeciesPrototype>(species, out var speciesPrototype))
         {
             sex = random.Pick(speciesPrototype.Sexes);
-            age = random.Next(speciesPrototype.MinAge, speciesPrototype.OldAge); // people don't look and keep making 119 year old characters with zero rp, cap it at middle aged
+            age = random.Next(
+                speciesPrototype.MinAge,
+                speciesPrototype
+                    .OldAge); // people don't look and keep making 119 year old characters with zero rp, cap it at middle aged
         }
 
         var gender = Gender.Epicene;
@@ -312,30 +335,46 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
 
     public HumanoidCharacterProfile WithName(string name) => new(this) { Name = name };
     public HumanoidCharacterProfile WithFlavorText(string flavorText) => new(this) { FlavorText = flavorText };
+
     public HumanoidCharacterProfile WithAge(int age) => new(this) { Age = age };
+
     // EE - Contractors Change Start
     public HumanoidCharacterProfile WithNationality(string nationality) => new(this) { Nationality = nationality };
     public HumanoidCharacterProfile WithEmployer(string employer) => new(this) { Employer = employer };
+
     public HumanoidCharacterProfile WithLifepath(string lifepath) => new(this) { Lifepath = lifepath };
+
     // EE - Contractors Change End
     public HumanoidCharacterProfile WithSex(Sex sex) => new(this) { Sex = sex };
     public HumanoidCharacterProfile WithGender(Gender gender) => new(this) { Gender = gender };
-    public HumanoidCharacterProfile WithDisplayPronouns(string? displayPronouns) => new(this) { DisplayPronouns = displayPronouns };
-    public HumanoidCharacterProfile WithStationAiName(string? stationAiName) => new(this) { StationAiName = stationAiName };
+
+    public HumanoidCharacterProfile WithDisplayPronouns(string? displayPronouns) =>
+        new(this) { DisplayPronouns = displayPronouns };
+
+    public HumanoidCharacterProfile WithStationAiName(string? stationAiName) =>
+        new(this) { StationAiName = stationAiName };
+
     public HumanoidCharacterProfile WithCyborgName(string? cyborgName) => new(this) { CyborgName = cyborgName };
     public HumanoidCharacterProfile WithSpecies(string species) => new(this) { Species = species };
-    public HumanoidCharacterProfile WithCustomSpeciesName(string customspeciename) => new(this) { Customspeciename = customspeciename };
+
+    public HumanoidCharacterProfile WithCustomSpeciesName(string customspeciename) =>
+        new(this) { Customspeciename = customspeciename };
+
     public HumanoidCharacterProfile WithHeight(float height) => new(this) { Height = height };
     public HumanoidCharacterProfile WithWidth(float width) => new(this) { Width = width };
 
     public HumanoidCharacterProfile WithCharacterAppearance(HumanoidCharacterAppearance appearance) =>
         new(this) { Appearance = appearance };
+
     public HumanoidCharacterProfile WithClothingPreference(ClothingPreference clothing) =>
         new(this) { Clothing = clothing };
+
     public HumanoidCharacterProfile WithBackpackPreference(BackpackPreference backpack) =>
         new(this) { Backpack = backpack };
+
     public HumanoidCharacterProfile WithSpawnPriorityPreference(SpawnPriorityPreference spawnPriority) =>
         new(this) { SpawnPriority = spawnPriority };
+
     public HumanoidCharacterProfile WithJobPriorities(IEnumerable<KeyValuePair<string, JobPriority>> jobPriorities) =>
         new(this) { _jobPriorities = new Dictionary<string, JobPriority>(jobPriorities) };
 
@@ -352,6 +391,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
 
     public HumanoidCharacterProfile WithPreferenceUnavailable(PreferenceUnavailableMode mode) =>
         new(this) { PreferenceUnavailable = mode };
+
     public HumanoidCharacterProfile WithAntagPreferences(IEnumerable<string> antagPreferences) =>
         new(this) { _antagPreferences = new HashSet<string>(antagPreferences) };
 
@@ -384,7 +424,8 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         string? customName = null,
         string? customDescription = null,
         string? customColor = null,
-        bool? customHeirloom = null)
+        bool? customHeirloom = null
+    )
     {
         var list = new HashSet<LoadoutPreference>(_loadoutPreferences);
 
@@ -395,7 +436,11 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         return new HumanoidCharacterProfile(this) { _loadoutPreferences = list };
     }
 
-    public string Summary =>
+    public HumanoidCharacterProfile WithFaction(string newFaction) => new(this) { Faction = newFaction };
+    public HumanoidCharacterProfile WithBank(int amount) => new(this) { BankBalance = amount };
+
+
+public string Summary =>
         Loc.GetString(
             "humanoid-character-profile-summary",
             ("name", Name),

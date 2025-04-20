@@ -10,6 +10,8 @@ namespace Content.Shared.Shuttles.Components
     public abstract partial class SharedShuttleConsoleComponent : Component
     {
         public static string DiskSlotName = "disk_slot";
+
+        public static string IdSlotName = "id_slot";
     }
 
     [Serializable, NetSerializable]

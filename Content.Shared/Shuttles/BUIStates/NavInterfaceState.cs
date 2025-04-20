@@ -46,3 +46,9 @@ public enum RadarConsoleUiKey : byte
 {
     Key
 }
+ // hullrot added
+[Serializable, NetSerializable]
+public sealed class NavConsoleGroupPressedMessage(int payload) : BoundUserInterfaceMessage
+{
+    public int Payload = payload;
+}

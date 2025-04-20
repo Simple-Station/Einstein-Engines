@@ -255,7 +255,8 @@ namespace Content.Server.Database
                 {
                     CustomName = l.CustomName, CustomDescription = l.CustomDescription,
                     CustomColorTint = l.CustomColorTint, CustomHeirloom = l.CustomHeirloom, Selected = true,
-                }).ToHashSet()
+                }).ToHashSet(),
+
             );
         }
 

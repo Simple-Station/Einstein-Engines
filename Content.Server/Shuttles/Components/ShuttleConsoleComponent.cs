@@ -63,6 +63,7 @@ namespace Content.Server.Shuttles.Components
         // For dynamic ID indexing and shit.
         public string? captainIdentifier;
         public string? pilotIdentifier;
+        public ShuttleBoundUserInterfaceState? LastUpdatedState = null;
 
         /// End hullrot additions
     }
