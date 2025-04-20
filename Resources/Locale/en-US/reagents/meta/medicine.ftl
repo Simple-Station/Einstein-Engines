@@ -150,3 +150,6 @@ reagent-desc-haloperidol = Removes most stimulating and hallucinogenic drugs. Re
 
 reagent-name-artiplates = artiplates
 reagent-desc-artiplates = A highly advanced form of artificial blood that expands rapidly when introduced to the bloodstream. Due to its expansive properties, it can cause severe internal hemorrhaging in large doses.
+
+reagent-name-enunciase = enunciase
+reagent-desc-enunciase = An enzyme that helps stimulate the language centers of the brain, relieving stuttering due to other drugs and temporarily forcing 'perfect' speech. Causes nausea in high doses.
