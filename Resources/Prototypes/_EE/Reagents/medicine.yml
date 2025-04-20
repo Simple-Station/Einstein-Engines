@@ -1,0 +1,15 @@
+- type: reagent
+  id: Enunciase
+  name: reagent-name-enunciase
+  group: Medicine
+  desc: reagent-desc-enunciase
+  physicalDesc: reagent-physical-desc-thick
+  flavor: terrible
+  color: "#6c337a"
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:GenericStatusEffect
+        key: Stutter
+        type: Remove
+        time: 300 # 15u counters 1u of cryptobiolin
