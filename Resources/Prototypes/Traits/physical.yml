@@ -26,7 +26,7 @@
 - type: trait
   id: WillToDie
   category: Physical
-  points: 2
+  points: 1
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -75,7 +75,7 @@
 - type: trait
   id: GlassJaw
   category: Physical
-  points: 2
+  points: 1
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -174,7 +174,7 @@
 - type: trait
   id: AdrenalDysfunction
   category: Physical
-  points: 3
+  points: 1
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -219,7 +219,7 @@
 - type: trait
   id: LowPainTolerance
   category: Physical
-  points: 3
+  points: 1
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -263,7 +263,7 @@
 - type: trait
   id: Feeble
   category: Physical
-  points: 3
+  points: 1
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -474,8 +474,6 @@
       traits:
         - Claws
         - Talons
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitModifyUnarmed
       flatDamageIncrease:
@@ -498,8 +496,6 @@
         - Arachne
         - Shadowkin
         - IPC
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -511,7 +507,6 @@
     - !type:TraitAddTag
       tags:
         - SpiderCraft
-
 
 - type: trait
   id: BionicArm
@@ -528,8 +523,6 @@
           - Security
           - Command
           - Dignitary
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -564,8 +557,6 @@
       inverted: true
       species:
         - IPC
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions: # TODO: Code Platelet factories as an actual obtainable implant, and replace this with TraitAddImplant
     - !type:TraitReplaceComponent
       components:
@@ -591,8 +582,6 @@
       inverted: true
       jobs:
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddArmor
       damageModifierSets:
@@ -622,8 +611,6 @@
         - Photophobia
         - Blindness
         - Nearsighted
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitPushDescription
       descriptionExtensions:
@@ -791,7 +778,7 @@
 - type: trait
   id: Redshirt
   category: Physical
-  points: 8
+  points: 6
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -810,12 +797,12 @@
     - !type:TraitReplaceComponent
       components:
         - type: DeadModifier
-          deadThresholdModifier: -100
+          deadThresholdModifier: -99
 
 - type: trait
   id: BrittleBoneDisease
   category: Physical
-  points: 10
+  points: 8
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -889,8 +876,6 @@
     - !type:CharacterSpeciesRequirement
       species:
         - IPC
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions: # TODO: Code Platelet factories as an actual obtainable implant, and replace this with TraitAddImplant
     - !type:TraitReplaceComponent
       components:
@@ -914,8 +899,6 @@
 #       inverted: true
 #       jobs:
 #         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-#     - !type:CharacterItemGroupRequirement
-#       group: TraitsMind
 #   functions:
 #     - !type:TraitPushDescription
 #       descriptionExtensions:
@@ -952,8 +935,6 @@
 #       - Photophobia
 #        - Blindness
 #        - Nearsighted
-#    - !type:CharacterItemGroupRequirement
-#      group: TraitsMind
 #  functions:
 #    - !type:TraitAddComponent
 #      components:
@@ -985,8 +966,6 @@
         - Photophobia
         - Blindness
         - Nearsighted
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -1014,8 +993,6 @@
         - Photophobia
         - Blindness
         - Nearsighted
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -1047,8 +1024,6 @@
         - Photophobia
         - Blindness
         - Nearsighted
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -1084,8 +1059,6 @@
         - MedicalEyesModule
         - DiagnosticEyesModule
         - SecurityEyesModule
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -1121,8 +1094,6 @@
         - Photophobia
         - Blindness
         - Nearsighted
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -1146,8 +1117,6 @@
         - Photophobia
         - Blindness
         - Nearsighted
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -1232,8 +1201,6 @@
       inverted: true
       jobs:
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
     - !type:CharacterTraitRequirement
       inverted: true
       traits:

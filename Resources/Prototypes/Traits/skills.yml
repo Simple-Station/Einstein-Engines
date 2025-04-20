@@ -22,7 +22,7 @@
 - type: trait
   id: SelfAware
   category: Mental
-  points: -4
+  points: -3
   functions:
     - !type:TraitAddComponent
       components:
@@ -193,7 +193,7 @@
 - type: trait
   id: LyreBird
   category: Auditory
-  points: -10
+  points: -6
   requirements:
     - !type:CharacterSpeciesRequirement
       species:
@@ -207,39 +207,6 @@
       components:
         - type: Singer
           proto: HarpySingerAll
-
-- type: trait
-  id: NaturalTelepath
-  category: Mental
-  points: -2
-  functions:
-    - !type:TraitAddPsionics
-      psionicPowers:
-        - TelepathyPower
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - ResearchDirector
-        - ForensicMantis
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterTraitRequirement
-          traits:
-            - LatentPsychic
-        - !type:CharacterJobRequirement
-          jobs:
-            - Chaplain
-            - Librarian
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterSpeciesRequirement
-          inverted: true
-          species:
-            - IPC
-        - !type:CharacterTraitRequirement
-          traits:
-            - AnomalousPositronics
 
 - type: trait
   id: TrapAvoider
@@ -265,8 +232,8 @@
 
 - type: trait
   id: AnomalousPositronics
-  category: Mental
-  points: -4
+  category: Psionics
+  points: -6
   functions:
     - !type:TraitRemoveComponent
       components:
@@ -276,19 +243,19 @@
       species:
         - IPC
 
-- type: trait
-  id: AnimalFriend
-  category: Mental
-  points: -4
-  functions:
-    - !type:TraitModifyFactions
-      addFactions:
-        - AnimalFriend
+# - type: trait
+#   id: AnimalFriend
+#   category: Mental
+#   points: -4
+#   functions:
+#     - !type:TraitModifyFactions
+#       addFactions:
+#         - AnimalFriend
 
 - type: trait
   id: SurgeryTraining
   category: Mental
-  points: -3
+  points: -6
   functions:
     - !type:TraitAddComponent
       components:
@@ -309,7 +276,7 @@
 - type: trait
   id: ExperiencedSurgeon
   category: Mental
-  points: -3
+  points: -6
   functions:
     - !type:TraitReplaceComponent
       components:
