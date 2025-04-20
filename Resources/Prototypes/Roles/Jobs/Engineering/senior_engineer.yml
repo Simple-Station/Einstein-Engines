@@ -16,8 +16,9 @@
     - !type:CharacterEmployerRequirement
       employers:
       - HephaestusIndustries
-      - Cybersun
+      - ZavodskoiInterstellar
       - EinsteinEngines
+      - NanoTrasen
   startingGear: SeniorEngineerGear
   icon: "JobIconSeniorEngineer"
   supervisors: job-supervisors-ce

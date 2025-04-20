@@ -15,8 +15,9 @@
         - BrittleBoneDisease
     - !type:CharacterEmployerRequirement
       employers:
-      - Cybersun
+      - ZavodskoiInterstellar
       - PMCG
+      - NanoTrasen
   startingGear: SecurityCadetGear
   icon: "JobIconSecurityCadet"
   supervisors: job-supervisors-security

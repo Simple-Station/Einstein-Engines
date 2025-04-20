@@ -16,7 +16,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server.Administration.Toolshed;
 
-[ToolshedCommand, AdminCommand(AdminFlags.Debug)]
+[ToolshedCommand, AdminCommand(AdminFlags.Spawn)]
 public sealed class SpawnCorporateStampCommand : ToolshedCommand
 {
     [Dependency] private readonly ISharedAdminLogManager _adminLogManager = default!;

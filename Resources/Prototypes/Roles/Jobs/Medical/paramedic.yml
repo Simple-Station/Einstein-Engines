@@ -13,6 +13,8 @@
     - !type:CharacterEmployerRequirement
       employers:
       - Interdyne
+      - NanoTrasen
+      - ZengHuPharmaceuticals
     # - !type:OverallPlaytimeRequirement # DeltaV - No playtime requirement
     #   time: 54000 # 15 hrs
   startingGear: ParamedicGear

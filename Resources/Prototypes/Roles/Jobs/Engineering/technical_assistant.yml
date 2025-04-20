@@ -15,8 +15,9 @@
     - !type:CharacterEmployerRequirement
       employers:
       - HephaestusIndustries
-      - Cybersun
+      - ZavodskoiInterstellar
       - EinsteinEngines
+      - NanoTrasen
 
 - type: startingGear
   id: TechnicalAssistantGear

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "edited from posibrain sprite at at https://github.com/tgstation/tgstation/commit/cf45322c7ee16f9d7e43d5260daf24ceb77c1b25",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "empty"
+    },
+    {
+      "name": "mmi_off"
+    },
+    {
+      "name": "mmi_alive"
+    },
+    {
+      "name": "mmi_dead"
+    },
+    {
+      "name": "mmi_brain"
+    }
+  ]
+}

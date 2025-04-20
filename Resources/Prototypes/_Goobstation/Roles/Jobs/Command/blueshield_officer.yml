@@ -24,8 +24,7 @@
         - BrittleBoneDisease
     - !type:CharacterEmployerRequirement
       employers:
-      - Cybersun
-      - PMCG
+      - NanoTrasen # BSO works directly for centcomm, they are not a contractor.
   weight: 20
   startingGear: BlueshieldOfficerGear
   icon: "JobIconBlueshield"

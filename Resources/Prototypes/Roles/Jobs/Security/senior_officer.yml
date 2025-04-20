@@ -28,8 +28,9 @@
         - BrittleBoneDisease
     - !type:CharacterEmployerRequirement
       employers:
-      - Cybersun
+      - ZavodskoiInterstellar
       - PMCG
+      - NanoTrasen
   startingGear: SeniorOfficerGear
   icon: "JobIconSeniorOfficer"
   supervisors: job-supervisors-hos

@@ -10,6 +10,8 @@
     - !type:CharacterEmployerRequirement
       employers:
       - ZengHuPharmaceuticals
+      - Interdyne
+      - NanoTrasen
   startingGear: ChemistGear
   icon: "JobIconChemist"
   supervisors: job-supervisors-cmo
