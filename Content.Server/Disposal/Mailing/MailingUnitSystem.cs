@@ -90,13 +90,17 @@ public sealed class MailingUnitSystem : EntitySystem
         if (string.IsNullOrEmpty(component.Target))
         {
             args.Cancel();
-            return;
         }
+        else
+        {
+            args.Tags.Add(MailTag);
+            args.Tags.Add(component.Target);
 
-        args.Tags.Add(MailTag);
-        args.Tags.Add(component.Target);
+            BroadcastSentMessage(uid, component);
 
-        BroadcastSentMessage(uid, component);
+            component.Target = null;
+        }
+        UpdateUserInterface(uid, component);
     }
 
     /// <summary>
@@ -186,7 +190,9 @@ public sealed class MailingUnitSystem : EntitySystem
 
     private void OnTargetSelected(EntityUid uid, MailingUnitComponent component, TargetSelectedMessage args)
     {
-        component.Target = args.Target;
+        // Clear the Target if we select the same one
+        component.Target =
+            args.Target != component.Target ? args.Target : null;
         UpdateUserInterface(uid, component);
     }
 
