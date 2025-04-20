@@ -33,7 +33,6 @@
         - GPS
         - WeldingMask
         - RPD
-        - LightReplacer
       components:
         - SprayPainter
         - NetworkConfigurator
@@ -45,6 +44,7 @@
         - TrayScanner
         - GasAnalyzer
         - HandLabeler
+        - LightReplacer
   - type: ItemMapper
     mapLayers:
       drill:
@@ -118,7 +118,6 @@
         - Multitool
         - AppraisalTool
         - RPD
-        - LightReplacer
       components:
         - SprayPainter
         - NetworkConfigurator
@@ -131,6 +130,7 @@
         - Geiger
         - TrayScanner
         - GasAnalyzer
+        - LightReplacer
   - type: ItemMapper
     mapLayers:
       drill:
