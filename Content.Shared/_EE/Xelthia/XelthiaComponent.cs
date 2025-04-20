@@ -15,10 +15,7 @@ public sealed partial class XelthiaComponent : Component
     /// but I imagine I'll need to have this for the color to persist.
     /// </summary>
     [DataField]
-    public Color RArmBackspikesColor = Color.White;
-
-    [DataField]
-    public Color LArmBackspikesColor = Color.White;
+    public TimeSpan UseDelay { get; set; } = TimeSpan.FromMinutes(5);
 
     [DataField]
     public EntityUid? XelthiaRegenerateAction;

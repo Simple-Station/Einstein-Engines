@@ -36,7 +36,7 @@ public sealed class XelthiaSystem : EntitySystem
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
 
-    public const string XelthiaRegenerateActionId = "XelthiaRegenerateAction";
+    //public const string XelthiaRegenerateActionId = "XelthiaRegenerateAction";
     public override void Initialize()
     {
         base.Initialize();
@@ -46,25 +46,18 @@ public sealed class XelthiaSystem : EntitySystem
 
     private void OnInit(EntityUid uid, XelthiaComponent component, ComponentStartup args)
     {
-        _actionsSystem.AddAction(uid, ref component.XelthiaRegenerateAction, XelthiaRegenerateActionId, uid);
-
-//        if (TryComp<HumanoidAppearanceComponent>(uid, out var humanoid))
-//        {
-//            component.LArmBackspikesColor = humanoid.EyeColor; //Yeah I'm stumped. Eye color is just used to check if I
-//           component.RArmBackspikesColor = humanoid.EyeColor; //can figure out how to set these to SOME color thing here
-//        } // This spat out #000000 instead of the actual eye color?? So this doesn't go here with init stuff.
+        _actionsSystem.AddAction(uid, ref component.XelthiaRegenerateAction, out var regenerateAction, "XelthiaRegenerateAction");
+        if (regenerateAction?.UseDelay != null)
+            component.UseDelay = regenerateAction.UseDelay.Value;
+        //        if (TryComp<HumanoidAppearanceComponent>(uid, out var humanoid))
+        //        {
+        //            component.LArmBackspikesColor = humanoid.EyeColor; //Yeah I'm stumped. Eye color is just used to check if I
+        //           component.RArmBackspikesColor = humanoid.EyeColor; //can figure out how to set these to SOME color thing here
+        //        } // This spat out #000000 instead of the actual eye color?? So this doesn't go here with init stuff.
     }
 
     private void OnRegrowthAction(EntityUid uid, XelthiaComponent component, ArmRegrowthEvent args)
     {
-        if (TryComp<HumanoidAppearanceComponent>(uid, out var humanoid))
-        {
-            component.LArmBackspikesColor = humanoid.EyeColor;
-            component.RArmBackspikesColor = humanoid.EyeColor;
-            // Placeholder for an actual action just so I can make sure the button. Actually does anything? Works.
-        }
-
-
         //IEntityManager entityManager = uid;
         IEntityManager entityManager = base.EntityManager; // There's no way this is good code. I don't know what im doing though, so. I dunno.
         var bodySystem = entityManager.System<BodySystem>();
@@ -106,9 +99,9 @@ public sealed class XelthiaSystem : EntitySystem
         newerLimb = entityManager.SpawnAtPosition("LeftHandXelthia", xform.Coordinates); // Spawns the hand
         bodySystem.TryCreatePartSlotAndAttach(newLimb, "left hand", newerLimb, partType);
 
-        var cooldown = new TimeSpan(300); // 5 minute cooldown?
-
-        _actionsSystem.SetCooldown(component.XelthiaRegenerateAction!.Value, cooldown);
+        var start = _gameTiming.CurTime;
+        var end = _gameTiming.CurTime + component.UseDelay;
+        _actionsSystem.SetCooldown(component.XelthiaRegenerateAction!.Value, start, end);
 
     }
 }

@@ -8,5 +8,5 @@
     icon:
       sprite: _EE/Mobs/Species/Xelthia/parts.rsi
       state: full
-    event: !type:ArmRegrowthEvent {}
-    useDelay: 300 # Once every 5 minutes or so? Also why doesnt this seem to do anything right now lol
+    event: !type:ArmRegrowthEvent
+    useDelay: 300 # Once every 5 minutes or so?
