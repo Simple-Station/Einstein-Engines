@@ -12,7 +12,7 @@
       - !type:GenericStatusEffect
         key: Stutter
         type: Remove
-        time: 300 # 15u counters 1u of cryptobiolin
+        time: 30 # 15u counters a dose of cryptobiolin
       - !type:GenericStatusEffect
         key: DisableAccent
         component: DisableAccent
