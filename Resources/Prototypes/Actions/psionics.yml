@@ -154,7 +154,7 @@
   components:
     - type: EntityTargetAction
       icon: { sprite: Interface/Actions/psionics.rsi, state: healing_word }
-      useDelay: 20
+      useDelay: 10
       checkCanAccess: false
       range: 6
       itemIconStyle: BigAction
@@ -166,10 +166,12 @@
       event: !type:PsionicHealOtherPowerActionEvent
         healingAmount:
           groups: # These all get divided by the number of damage types in the group. So they're all -2.5.
-            Toxin: -3
-            Airloss: -3
-            Brute: -5
-            Burn: -5
+            Genetic: -2.5
+            Toxin: -5
+            Airloss: -5
+            Brute: -7.5
+            Burn: -10
+        rotReduction: 10
         useDelay: 1
         doRevive: false
         powerName: Healing Word
