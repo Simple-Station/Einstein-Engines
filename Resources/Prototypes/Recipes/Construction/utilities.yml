@@ -348,7 +348,6 @@
   objectType: Structure
   canRotate: true
   canBuildInImpassable: true
-  conditions:
 
 - type: construction
   name: fire alarm
@@ -365,7 +364,6 @@
   objectType: Structure
   canRotate: true
   canBuildInImpassable: true
-  conditions:
 
 - type: construction
   name: air sensor
