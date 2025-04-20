@@ -1,5 +1,8 @@
 using System.Numerics;
-using Content.Client.Station; // Frontier
+using Content.Client.Crescent.Radar;
+using Content.Client.Station;
+using Content.Shared._Crescent.ShipShields;
+using Content.Shared.Crescent.Radar; // Frontier
 using Content.Shared.Shuttles.BUIStates;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Shuttles.Systems;
@@ -12,7 +15,10 @@ using Robust.Shared.Input;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics;
+using Robust.Shared.Physics.Collision.Shapes;
 using Robust.Shared.Physics.Components;
+using Robust.Shared.Physics.Systems;
+
 
 namespace Content.Client.Shuttles.UI;
 
@@ -24,6 +30,8 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
     private readonly StationSystem _station; // Frontier
     private readonly SharedShuttleSystem _shuttles;
     private readonly SharedTransformSystem _transform;
+    private readonly ProjectileIFFSystem _projectileIFF;
+    private readonly FixtureSystem _fixtures;
 
     /// <summary>
     /// Used to transform all of the radar objects. Typically is a shuttle console parented to a grid.
@@ -33,6 +41,10 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
     private Angle? _rotation;
 
     private Dictionary<NetEntity, List<DockingPortState>> _docks = new();
+    private List<ProjectileState> _projectiles = new();
+    private Dictionary<NetEntity, List<TurretState>> _turrets = new();
+
+
 
     public bool ShowIFF { get; set; } = true;
     public bool ShowDocks { get; set; } = true;
@@ -41,6 +53,9 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
     /// Raised if the user left-clicks on the radar control with the relevant entitycoordinates.
     /// </summary>
     public Action<EntityCoordinates>? OnRadarClick;
+    public Action? OnRadarRelease;
+    public Action<EntityCoordinates>? OnRadarMouseMove;
+    public Action<Angle>? OnRadarMouseMoveRelative;
 
     private List<Entity<MapGridComponent>> _grids = new();
 
@@ -50,6 +65,8 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
         _shuttles = EntManager.System<SharedShuttleSystem>();
         _transform = EntManager.System<SharedTransformSystem>();
         _station = EntManager.System<StationSystem>(); // Frontier
+        _projectileIFF = EntManager.System<ProjectileIFFSystem>();
+        _fixtures = EntManager.System<FixtureSystem>();
     }
 
     public void SetMatrix(EntityCoordinates? coordinates, Angle? angle)
@@ -73,6 +90,63 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
         relativeWorldPos = _rotation.Value.RotateVec(relativeWorldPos);
         var coords = _coordinates.Value.Offset(relativeWorldPos);
         OnRadarClick?.Invoke(coords);
+        OnRadarRelease?.Invoke();
+    }
+
+    protected override void KeyBindDown(GUIBoundKeyEventArgs args)
+    {
+        base.KeyBindDown(args);
+
+        if (_coordinates == null || _rotation == null || args.Function != EngineKeyFunctions.UIClick)
+            return;
+
+        OnRadarClick?.Invoke(PureRelativePosition(args.RelativePosition));
+    }
+
+    protected override void MouseMove(GUIMouseMoveEventArgs args)
+    {
+        base.MouseMove(args);
+
+        if (_coordinates == null || _rotation == null)
+            return;
+
+        OnRadarMouseMove?.Invoke(PureRelativePosition(args.RelativePosition));
+        OnRadarMouseMoveRelative?.Invoke(RelativeAngleFromFace(PureRelativePosition(args.RelativePosition)));
+    }
+
+    private EntityCoordinates RelativePositionToEntityCoords(Vector2 pos)
+    {
+        if (_coordinates == null || _rotation == null)
+            return EntityCoordinates.Invalid;
+
+        var a = InverseScalePosition(pos);
+        var relativeWorldPos = a with { Y = -a.Y };
+        relativeWorldPos = _rotation.Value.RotateVec(relativeWorldPos);
+        return _coordinates.Value.Offset(relativeWorldPos);
+
+    }
+    // SPCR 2024 - This is only used for shooting ship weapons. The function above is ... not accurate
+    // for objects with a width and height of 0 (aka bullets)
+    public EntityCoordinates PureRelativePosition(Vector2 pos)
+    {
+        if (_coordinates == null || _rotation == null)
+            return EntityCoordinates.Invalid;
+        var trueSize = Size;
+        var a = ((pos - (trueSize/2))*2)/Size * ActualRadarRange;
+        var relativePos = a with { Y = -a.Y };
+        //var logger = _logs.GetSawmill("ui");
+        //logger.Debug($"Pos: {pos.X}, {pos.Y}   , relativePos: {relativePos.X}, {relativePos.Y}");
+        relativePos = _rotation.Value.RotateVec(relativePos);
+        return _coordinates.Value.Offset(relativePos);
+    }
+
+    // COnverts relative entity coordinates to relative angle. - on the left side , + on the right side.
+    public Angle RelativeAngleFromFace(EntityCoordinates relPos)
+    {
+        var args = Angle.FromWorldVec(relPos.Position);
+        return args < Angle.FromDegrees(0)
+            ? new Angle(-(Math.PI + args.Theta))
+            : (args > Angle.FromDegrees(270) ? args : (Math.PI - args));
     }
 
     /// <summary>
@@ -93,6 +167,12 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
         relativeWorldPos = _rotation.Value.RotateVec(relativeWorldPos);
         var coords = _coordinates.Value.Offset(relativeWorldPos);
         return coords;
+    }
+
+    public void UpdateState(IFFInterfaceState state)
+    {
+        _projectiles = state.Projectiles;
+        _turrets = state.Turrets;
     }
 
     public void UpdateState(NavInterfaceState state)
@@ -157,7 +237,12 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
 
             DrawGrid(handle, matrix, (ourGridId.Value, ourGrid), color);
             DrawDocks(handle, ourGridId.Value, matrix);
+            DrawTurrets(handle, ourGridId.Value, matrix, true);
         }
+
+        DrawProjectiles(handle, ourWorldMatrixInvert);
+        DrawShields(handle, xform, ourWorldMatrixInvert);
+
 
         var invertedPosition = _coordinates.Value.Position - offset;
         invertedPosition.Y = -invertedPosition.Y;
@@ -243,6 +328,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
 
             DrawGrid(handle, matty, grid, color);
             DrawDocks(handle, gUid, matty);
+            DrawTurrets(handle, gUid, matty, false);
         }
     }
 
@@ -286,6 +372,115 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
             }
         }
     }
+    private void DrawProjectiles(DrawingHandleScreen handle, Matrix3x2 matrix)
+    {
+        foreach (var projectile in _projectiles)
+        {
+            var visual = _projectileIFF.GetVisual(projectile.VisualTypeIndex);
+            var verts = visual.GetVertice(projectile.Coordinates.Position, matrix);
+            for (var i = 0; i < verts.Length; i++)
+            {
+                var vert = verts[i];
+                vert.Y = -vert.Y;
+                verts[i] = ScalePosition(vert);
+            }
+
+            var color = _projectileIFF.GetColor(projectile.ColorIndex);
+            handle.DrawPrimitives(visual.Topology, verts, color);
+        }
+    }
+
+    private void DrawTurrets(DrawingHandleScreen handle, EntityUid uid, Matrix3x2 matrix, bool isSelf)
+    {
+        const float scale = 0.8f;
+
+        var netEntity = EntManager.GetNetEntity(uid);
+        if (_turrets.TryGetValue(netEntity, out var turrets))
+        {
+            foreach (var turret in turrets)
+            {
+                var position = turret.Coordinates.Position;
+                var uiPosition = Vector2.Transform(position, matrix);
+
+                if (uiPosition.Length() > (WorldRange * 2f) - scale)
+                {
+                    continue;
+                }
+
+                var verts = new[]
+                {
+                    position + new Vector2(-scale, -scale),
+                    position + new Vector2(scale, -scale),
+                    position + new Vector2(scale, scale),
+                    position + new Vector2(-scale, scale),
+                };
+
+                for (var i = 0; i < verts.Length; i++)
+                {
+                    var vert = Vector2.Transform(verts[i], matrix);
+                    vert.Y = -vert.Y;
+                    verts[i] = ScalePosition(vert);
+                }
+
+                Color color;
+                if (!isSelf)
+                {
+                    color = TurretIFFComponent.DefaultColor;
+                }
+                else if (turret.IsControlled)
+                {
+                    color = TurretIFFComponent.DefaultControlledColor;
+                }
+                else
+                {
+                    color = TurretIFFComponent.DefaultSelfColor;
+                }
+
+                handle.DrawPrimitives(DrawPrimitiveTopology.TriangleFan, verts, color);
+            }
+        }
+    }
+
+    private void DrawShields(DrawingHandleScreen handle, TransformComponent consoleXform, Matrix3x2 matrix)
+    {
+        var shields = EntManager.AllEntityQueryEnumerator<ShipShieldVisualsComponent, FixturesComponent, TransformComponent>();
+        while (shields.MoveNext(out var uid, out var _, out var fixtures, out var xform))
+        {
+            if (!EntManager.TryGetComponent<TransformComponent>(xform.GridUid, out var parentXform))
+                continue;
+
+            if (xform.MapID != consoleXform.MapID)
+                continue;
+
+            var shieldFixture = _fixtures.GetFixtureOrNull(uid, "shield", fixtures);
+
+            if (shieldFixture == null || shieldFixture.Shape is not ChainShape)
+                continue;
+
+            ChainShape chain = (ChainShape) shieldFixture.Shape;
+
+            var count = chain.Count;
+            var verticies = chain.Vertices;
+
+            var center = xform.LocalPosition;
+
+            for (int i = 1; i < count; i++)
+            {
+                var v1 = Vector2.Add(center, verticies[i - 1]);
+                v1 = Vector2.Transform(v1, parentXform.WorldMatrix); // transform to world matrix
+                v1 = Vector2.Transform(v1, matrix); // get back to local matrix for drawing
+                v1.Y = -v1.Y;
+                v1 = ScalePosition(v1);
+                var v2 = Vector2.Add(center, verticies[i]);
+                v2 = Vector2.Transform(v2, parentXform.WorldMatrix);
+                v2 = Vector2.Transform(v2, matrix);
+                v2.Y = -v2.Y;
+                v2 = ScalePosition(v2);
+                handle.DrawLine(v1, v2, Color.Purple);
+            }
+        }
+    }
+
 
     private Vector2 InverseScalePosition(Vector2 value)
     {
