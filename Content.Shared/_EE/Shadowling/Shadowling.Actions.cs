@@ -40,6 +40,12 @@ public sealed partial class SonicScreechEvent : InstantActionEvent { }
 public sealed partial class BlackRecuperationEvent : EntityTargetActionEvent { }
 #endregion
 
+#region Events - Ascension
+public sealed partial class AscendanceEvent : InstantActionEvent { } // for debug
+public sealed partial class AnnihilateEvent : EntityTargetActionEvent { }
+public sealed partial class HypnosisEvent : EntityTargetActionEvent { }
+#endregion
+
 #region Events - Thrall Events
 public sealed partial class GuiseEvent : InstantActionEvent { }
 #endregion

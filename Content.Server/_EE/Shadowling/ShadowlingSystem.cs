@@ -5,6 +5,7 @@ using Content.Shared._EE.Shadowling.Systems;
 using Content.Shared._EE.Shadowling;
 using Content.Shared._EE.Shadowling.Components;
 using Content.Shared.Abilities.Psionics;
+using Content.Shared.Actions;
 using Content.Shared.Damage;
 using Content.Shared.Humanoid;
 using Content.Shared.Inventory;
@@ -34,16 +35,19 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
         SubscribeLocalEvent<ShadowlingComponent, ComponentInit>(OnInit);
 
         SubscribeLocalEvent<ShadowlingComponent, BeforeDamageChangedEvent>(BeforeDamageChanged);
+        SubscribeLocalEvent<ShadowlingComponent, PhaseChangedEvent>(OnPhaseChanged);
 
         SubscribeAbilities();
     }
 
     #region Event Handlers
 
-    private void OnInit(EntityUid uid, ShadowlingComponent comp, ref ComponentInit args)
+    private void OnInit(EntityUid uid, ShadowlingComponent component, ref ComponentInit args)
     {
-        foreach (var actionId in comp.BaseShadowlingActions)
-            _actions.AddAction(uid, actionId);
+        if (!TryComp(uid, out ActionsComponent? actions))
+            return;
+
+        _actions.AddAction(uid, ref component.ActionHatchEntity, component.ActionHatch, component: actions);
     }
 
     private void BeforeDamageChanged(EntityUid uid, ShadowlingComponent comp, BeforeDamageChangedEvent args)
@@ -54,10 +58,41 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
         // Can't take damage during hatching
     }
 
+    private void OnPhaseChanged(EntityUid uid, ShadowlingComponent component, PhaseChangedEvent args)
+    {
+        if (!TryComp<ActionsComponent>(uid, out var actions))
+            return;
+
+        if (args.Phase == ShadowlingPhases.PostHatch)
+        {
+            // _actions.RemoveAction();
+            AddPostHatchActions(uid, component);
+        }
+        else if (args.Phase == ShadowlingPhases.Ascension)
+        {
+            // Remove all previous actions
+            foreach (var action in actions.Actions)
+            {
+                if (!HasComp<ShadowlingActionComponent>(action))
+                    continue;
+
+                _actions.RemoveAction(uid, action);
+            }
+
+            // Add Ascension Actions and Components
+            AddComp<ShadowlingAnnihilateComponent>(uid);
+            AddComp<ShadowlingHypnosisComponent>(uid);
+            _actions.AddAction(uid, ref component.ActionAnnihilateEntity, component.ActionAnnihilate, component: actions);
+            _actions.AddAction(uid, ref component.ActionHypnosisEntity, component.ActionHypnosis, component: actions);
+        }
+    }
+
     #endregion
 
-    private void AddPostHatchActions(EntityUid uid, ShadowlingComponent comp)
+    private void AddPostHatchActions(EntityUid uid, ShadowlingComponent component)
     {
+        if (!TryComp(uid, out ActionsComponent? actions))
+            return;
         // Le Comps
         AddComp<ShadowlingGlareComponent>(uid);
         AddComp<ShadowlingEnthrallComponent>(uid);
@@ -68,8 +103,17 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
         AddComp<ShadowlingDestroyEnginesComponent>(uid);
         AddComp<ShadowlingCollectiveMindComponent>(uid);
 
-        foreach (var action in comp.PostHatchShadowlingActions)
-            _actions.AddAction(uid, action);
+        AddComp<ShadowlingAscendanceComponent>(uid); // remove this once debugged
+
+        _actions.AddAction(uid, ref component.ActionGlareEntity, component.ActionGlare, component: actions);
+        _actions.AddAction(uid, ref component.ActionEnthrallEntity, component.ActionEnthrall, component: actions);
+        _actions.AddAction(uid, ref component.ActionVeilEntity, component.ActionVeil, component: actions);
+        _actions.AddAction(uid, ref component.ActionRapidRehatchEntity, component.ActionRapidRehatch, component: actions);
+        _actions.AddAction(uid, ref component.ActionShadowWalkEntity, component.ActionShadowWalk, component: actions);
+        _actions.AddAction(uid, ref component.ActionIcyVeinsEntity, component.ActionIcyVeins, component: actions);
+        _actions.AddAction(uid, ref component.ActionDestroyEnginesEntity, component.ActionDestroyEngines, component: actions);
+        _actions.AddAction(uid, ref component.ActionCollectiveMindEntity, component.ActionCollectiveMind, component: actions);
+        _actions.AddAction(uid, ref component.ActionAscendanceEntity, component.ActionAscendance, component: actions);
     }
 
     public bool CanEnthrall(EntityUid uid, EntityUid target)

@@ -2,6 +2,7 @@ using Content.Server.Actions;
 using Content.Server.Popups;
 using Content.Server.Stunnable;
 using Content.Shared._EE.Shadowling;
+using Content.Shared.Actions;
 using Content.Shared.Popups;
 using Content.Shared.StatusEffect;
 
@@ -30,11 +31,15 @@ public sealed class ShadowlingCollectiveMindSystem : EntitySystem
 
     private void OnCollectiveMind(EntityUid uid, ShadowlingCollectiveMindComponent comp, CollectiveMindEvent args)
     {
+
+        if (!TryComp<ActionsComponent>(uid, out var actions))
+            return;
+
         // Shitcode start
         if (!TryComp<ShadowlingComponent>(uid, out var sling))
             return;
 
-        if (comp.LockedActions.Count <= 0)
+        if (comp.AbilitiesAdded >= 3)
         {
             _popups.PopupEntity(Loc.GetString("shadowling-collective-mind-ascend"), uid, uid, PopupType.Medium);
             return;
@@ -42,25 +47,25 @@ public sealed class ShadowlingCollectiveMindSystem : EntitySystem
 
         comp.AmountOfThralls = sling.Thralls.Count;
         var thrallsRemaining = comp.ThrallsRequiredForAscension - comp.AmountOfThralls; // aka Thralls required for ascension
-        _popups.PopupEntity(Loc.GetString("shadowling-collective-mind-ascend"), uid, uid, PopupType.Medium);
         var abiltiesAddedCount = 0;
 
         // Can we gain this power?
-        foreach (var (thrallReq, action) in comp.LockedActions)
+        foreach (var actionData in comp.Locked)
         {
-            if (comp.AmountOfThralls >= thrallReq)
+            if (comp.AmountOfThralls >= actionData.UnlockAtThralls)
             {
-                // Get Component and add it to the sling
-                // The component name dictionary is parallel to the LockedActions dictionary
-                var compName = comp.ActionComponentNames[thrallReq];
-                var componentToAdd = _compFactory.GetComponent(compName);
-                EntityManager.AddComponent(uid, componentToAdd);
+                // Has action been added?
+                if (actionData.Added)
+                    continue;
 
+                _actions.AddAction(args.Performer, actionData.ActionPrototype, component: actions);
 
-                _actions.AddAction(args.Performer, action);
-                abiltiesAddedCount++;
-                comp.LockedActions.Remove(thrallReq);
-                comp.ActionComponentNames.Remove(thrallReq);
+                var componentToAdd = _compFactory.GetComponent(actionData.ActionComponentName);
+                EntityManager.AddComponent(args.Performer, componentToAdd);
+
+                ++abiltiesAddedCount;
+                ++comp.AbilitiesAdded;
+                actionData.Added = true;
             }
         }
 

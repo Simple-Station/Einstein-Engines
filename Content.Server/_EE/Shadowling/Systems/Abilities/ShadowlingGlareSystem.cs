@@ -30,7 +30,6 @@ public sealed class ShadowlingGlareSystem : EntitySystem
         SubscribeLocalEvent<ShadowlingGlareComponent, GlareEvent>(OnGlare);
     }
 
-
     public override void Update(float frameTime)
     {
         base.Update(frameTime);

@@ -23,12 +23,7 @@ public sealed partial class ShadowlingSystem
     private void OnHatch(EntityUid uid, ShadowlingComponent comp, HatchEvent args)
     {
         _actions.RemoveAction(uid, args.Action);
-
         StartHatchingProgress(uid, comp);
-
-        comp.CurrentPhase = ShadowlingPhases.PostHatch;
-
-        AddPostHatchActions(uid, comp);
     }
 
     private void StartHatchingProgress(EntityUid uid, ShadowlingComponent comp)

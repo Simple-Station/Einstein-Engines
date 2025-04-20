@@ -74,6 +74,7 @@ public sealed class ShadowlingEggHatchSystem : EntitySystem
             _entityStorage.OpenStorage(egg, storage);
         }
 
+        RaiseLocalEvent(sling, new PhaseChangedEvent(ShadowlingPhases.PostHatch));
         comp.HasBeenHatched = true;
     }
 }

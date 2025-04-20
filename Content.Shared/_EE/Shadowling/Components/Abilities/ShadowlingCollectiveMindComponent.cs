@@ -1,9 +1,17 @@
+using Content.Shared._EE.Shadowling.Systems;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization;
 
 
 namespace Content.Shared._EE.Shadowling;
-
+public sealed partial class ShadowlingActionData
+{
+    [DataField] public int UnlockAtThralls;
+    [DataField] public string ActionPrototype = string.Empty;
+    [DataField] public string ActionComponentName = string.Empty;
+    public bool Added = false;
+}
 
 /// <summary>
 /// This is used for the Collective Mind ability.
@@ -13,29 +21,37 @@ public sealed partial class ShadowlingCollectiveMindComponent : Component
 {
     public string? ActionCollectiveMind = "ActionCollectiveMind";
 
-    // <summary>
-    // Contains all actions that are locked behind Thrall requirements.
-    // Removes actions from here once they are gained
-    // int: Required Thralls
-    // ProtoId: Action
-    // </summary>
     [DataField]
-    public Dictionary<int, ProtoId<EntityPrototype>> LockedActions = new()
+    public List<ShadowlingActionData> Locked = new()
     {
-        { 3, "ActionSonicScreech" },
-        { 5, "ActionBlindnessSmoke"},
-        { 7, "ActionNullCharge"},
-        { 9, "ActionBlackRecuperation"}
+        new ShadowlingActionData
+        {
+            UnlockAtThralls = 3,
+            ActionPrototype = "ActionSonicScreech",
+            ActionComponentName = "ShadowlingSonicScreech"
+        },
+        new ShadowlingActionData
+        {
+            UnlockAtThralls = 5,
+            ActionPrototype = "ActionBlindnessSmoke",
+            ActionComponentName = "ShadowlingBlindnessSmoke"
+        },
+        new ShadowlingActionData
+        {
+            UnlockAtThralls = 7,
+            ActionPrototype = "ActionNullCharge",
+            ActionComponentName = "ShadowlingNullCharge"
+        },
+        new ShadowlingActionData
+        {
+            UnlockAtThralls = 9,
+            ActionPrototype = "ActionBlackRecuperation",
+            ActionComponentName = "ShadowlingBlackRecuperation"
+        },
     };
 
     [DataField]
-    public Dictionary<int, string> ActionComponentNames = new()
-    {
-        { 3, "ShadowlingSonicScreech" },
-        { 5, "ShadowlingBlindnessSmoke"},
-        { 7, "ShadowlingNullCharge"},
-        { 9, "ShadowlingBlackRecuperation"}
-    };
+    public int AbilitiesAdded = 0;
 
     [DataField]
     public int AmountOfThralls;

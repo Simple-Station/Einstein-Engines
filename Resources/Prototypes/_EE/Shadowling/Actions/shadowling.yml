@@ -16,6 +16,7 @@
     event: !type:HatchEvent {}
   - type: ConfirmableAction
     popup: sling-hatch-engage-popup
+  - type: ShadowlingAction
 
 # Post-Hatch
 - type: entity
@@ -33,6 +34,7 @@
       sprite: _EE/Shadowling/shadowling_abilities.rsi
       state: enthrall
     event: !type:EnthrallEvent { }
+  - type: ShadowlingAction
 
 - type: entity
   id: ActionGlare
@@ -51,6 +53,7 @@
       state: glare
     event: !type:GlareEvent { }
     # add speech
+  - type: ShadowlingAction
 
 - type: entity
   id: ActionVeil
@@ -66,6 +69,7 @@
       state: veil
     event: !type:VeilEvent { }
     # add speech
+  - type: ShadowlingAction
 
 - type: entity
   id: ActionRapidRehatch
@@ -80,6 +84,7 @@
       sprite: _EE/Shadowling/shadowling_abilities.rsi
       state: rehatch
     event: !type:RapidRehatchEvent { }
+  - type: ShadowlingAction
 
 - type: entity
   id: ActionShadowWalk
@@ -95,6 +100,7 @@
       state: shadow_walk
     event: !type:ShadowWalkEvent { }
     # add speech
+  - type: ShadowlingAction
 
 - type: entity
   id: ActionIcyVeins
@@ -110,6 +116,7 @@
       state: icy_veins
     event: !type:IcyVeinsEvent { }
     # add speech
+  - type: ShadowlingAction
 
 - type: entity
   id: ActionDestroyEngines
@@ -124,6 +131,7 @@
       state: destroy_engines
     event: !type:DestroyEnginesEvent { }
     # add speech
+  - type: ShadowlingAction
 
 - type: entity
   id: ActionCollectiveMind
@@ -138,6 +146,7 @@
       state: collective_mind
     event: !type:CollectiveMindEvent { }
     # add speech
+  - type: ShadowlingAction
 
 # Thrall Required Actions
 
@@ -155,6 +164,7 @@
       state: blindness_smoke
     event: !type:BlindnessSmokeEvent { }
     # add speech
+  - type: ShadowlingAction
 
 - type: entity
   id: ActionNullCharge
@@ -170,6 +180,7 @@
       state: null_charge
     event: !type:NullChargeEvent
     # add speech
+  - type: ShadowlingAction
 
 - type: entity
   id: ActionSonicScreech
@@ -185,6 +196,7 @@
       state: sonic_screech
     event: !type:SonicScreechEvent
     # add speech
+  - type: ShadowlingAction
 
 - type: entity
   id: ActionBlackRecuperation
@@ -203,3 +215,61 @@
       state: black_recuperation
     event: !type:BlackRecuperationEvent
     # add speech
+  - type: ShadowlingAction
+
+# Ascension Abilities
+
+# debug
+- type: entity
+  id: ActionAscendance
+  name: Ascendance
+  description: Ascend into your true form.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: NoItem
+    # useDelay: 90
+    icon:
+      sprite: _EE/Shadowling/shadowling_abilities.rsi
+      state: ascendance
+    event: !type:AscendanceEvent
+      # add speech
+  - type: ShadowlingAction
+
+- type: entity
+  id: ActionAnnihilate
+  name: Annihilate
+  description: Blow them to bits of flesh.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: EntityTargetAction
+    canTargetSelf: false
+    interactOnMiss: false
+    itemIconStyle: NoItem
+    useDelay: 45
+    range: 12
+    icon:
+      sprite: _EE/Shadowling/shadowling_abilities.rsi
+      state: annihilate
+    event: !type:AnnihilateEvent
+    # add speech
+  - type: ShadowlingAction
+
+- type: entity
+  id: ActionHypnosis
+  name: Hypnosis
+  description: Make anyone a Thrall, at a moment's notice.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: EntityTargetAction
+    canTargetSelf: false
+    interactOnMiss: false
+    itemIconStyle: NoItem
+    useDelay: 30
+    range: 12
+    icon:
+      sprite: _EE/Shadowling/shadowling_abilities.rsi
+      state: enthrall
+    event: !type:HypnosisEvent
+    # add speech
+  - type: ShadowlingAction

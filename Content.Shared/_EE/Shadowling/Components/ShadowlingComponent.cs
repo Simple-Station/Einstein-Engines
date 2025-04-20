@@ -14,22 +14,38 @@ namespace Content.Shared._EE.Shadowling;
 public sealed partial class ShadowlingComponent : Component
 {
     // The round-start Shadowling Actions
-    public readonly List<ProtoId<EntityPrototype>> BaseShadowlingActions = new()
-    {
-        "ActionHatch",
-    };
+    public string ActionHatch = "ActionHatch";
+    public EntityUid? ActionHatchEntity;
 
-    public readonly List<ProtoId<EntityPrototype>> PostHatchShadowlingActions = new()
-    {
-        "ActionEnthrall",
-        "ActionGlare",
-        "ActionVeil",
-        "ActionRapidRehatch",
-        "ActionShadowWalk",
-        "ActionIcyVeins",
-        "ActionDestroyEngines",
-        "ActionCollectiveMind",
-    };
+    #region PostHatch Actions
+    public string ActionEnthrall       = "ActionEnthrall";
+    public string ActionGlare          = "ActionGlare";
+    public string ActionVeil           = "ActionVeil";
+    public string ActionRapidRehatch   = "ActionRapidRehatch";
+    public string ActionShadowWalk     = "ActionShadowWalk";
+    public string ActionIcyVeins       = "ActionIcyVeins";
+    public string ActionDestroyEngines = "ActionDestroyEngines";
+    public string ActionCollectiveMind = "ActionCollectiveMind";
+    public string ActionAscendance     = "ActionAscendance"; // remove once debugged
+
+    public EntityUid? ActionEnthrallEntity;
+    public EntityUid? ActionGlareEntity;
+    public EntityUid? ActionVeilEntity;
+    public EntityUid? ActionRapidRehatchEntity;
+    public EntityUid? ActionShadowWalkEntity;
+    public EntityUid? ActionIcyVeinsEntity;
+    public EntityUid? ActionDestroyEnginesEntity;
+    public EntityUid? ActionCollectiveMindEntity;
+    public EntityUid? ActionAscendanceEntity; // remove once debugged
+    #endregion
+
+    #region Ascension Actions
+    public string ActionAnnihilate      = "ActionAnnihilate";
+    public string ActionHypnosis        = "ActionHypnosis";
+
+    public EntityUid? ActionAnnihilateEntity;
+    public EntityUid? ActionHypnosisEntity;
+    #endregion
 
     // The status icon for Shadowlings
     [DataField, ViewVariables(VVAccess.ReadOnly)]
