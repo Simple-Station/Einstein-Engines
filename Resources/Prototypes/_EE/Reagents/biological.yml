@@ -49,3 +49,19 @@
 #      - !type:OrganType
 #        type: Xelthia
 #        shouldHave: false
+
+- type: reagent
+  id: XelthiaArmJuice
+  name: reagent-name-armjuice
+  group: Biological
+  desc: reagent-desc-armjuice
+  flavor: acid
+  color: "#00FF69"
+  physicalDesc: reagent-physical-desc-viscous
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:SatiateThirst
+        factor: -4
+      - !type:SatiateHunger
+        factor: -4

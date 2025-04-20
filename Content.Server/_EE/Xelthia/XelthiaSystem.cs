@@ -1,3 +1,4 @@
+using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
 using Content.Shared._EE.Xelthia;
 using Content.Shared.Abilities.Psionics;
@@ -17,9 +18,13 @@ using Content.Shared.Examine;
 using Content.Shared.Actions.Events;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Part;
+using Robust.Shared.Audio;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Placement;
+using Robust.Shared.Random;
 using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Timing;
+using Content.Shared.Chemistry.Components;
 
 
 namespace Content.Server._EE.Xelthia;
@@ -35,6 +40,7 @@ public sealed class XelthiaSystem : EntitySystem
     [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
+    [Dependency] private readonly BloodstreamSystem _bloodstreamSystem = default!;
 
     //public const string XelthiaRegenerateActionId = "XelthiaRegenerateAction";
     public override void Initialize()
@@ -49,15 +55,14 @@ public sealed class XelthiaSystem : EntitySystem
         _actionsSystem.AddAction(uid, ref component.XelthiaRegenerateAction, out var regenerateAction, "XelthiaRegenerateAction");
         if (regenerateAction?.UseDelay != null)
             component.UseDelay = regenerateAction.UseDelay.Value;
-        //        if (TryComp<HumanoidAppearanceComponent>(uid, out var humanoid))
-        //        {
-        //            component.LArmBackspikesColor = humanoid.EyeColor; //Yeah I'm stumped. Eye color is just used to check if I
-        //           component.RArmBackspikesColor = humanoid.EyeColor; //can figure out how to set these to SOME color thing here
-        //        } // This spat out #000000 instead of the actual eye color?? So this doesn't go here with init stuff.
     }
 
     private void OnRegrowthAction(EntityUid uid, XelthiaComponent component, ArmRegrowthEvent args)
     {
+        var start = _gameTiming.CurTime;
+        var end = _gameTiming.CurTime + component.UseDelay;
+        _actionsSystem.SetCooldown(component.XelthiaRegenerateAction!.Value, start, end); // Cooldown
+
         //IEntityManager entityManager = uid;
         IEntityManager entityManager = base.EntityManager; // There's no way this is good code. I don't know what im doing though, so. I dunno.
         var bodySystem = entityManager.System<BodySystem>();
@@ -80,7 +85,7 @@ public sealed class XelthiaSystem : EntitySystem
 
             transformSystem.AttachToGridOrMap(part.Id);
             entityManager.QueueDeleteEntity(part.Id);
-            entityManager.SpawnAtPosition("RightArmXelthia", xform.Coordinates); //Should drop arms equal to the number attached
+            entityManager.SpawnAtPosition("FoodMeatXelthiaTentacle", xform.Coordinates); // Should drop arms equal to the number attached
         }
         // Right Side
         var newLimb = entityManager.SpawnAtPosition("RightArmXelthia", xform.Coordinates); // Copy-Pasted Code for arm spawning
@@ -99,9 +104,13 @@ public sealed class XelthiaSystem : EntitySystem
         newerLimb = entityManager.SpawnAtPosition("LeftHandXelthia", xform.Coordinates); // Spawns the hand
         bodySystem.TryCreatePartSlotAndAttach(newLimb, "left hand", newerLimb, partType);
 
-        var start = _gameTiming.CurTime;
-        var end = _gameTiming.CurTime + component.UseDelay;
-        _actionsSystem.SetCooldown(component.XelthiaRegenerateAction!.Value, start, end);
+        entityManager.EntitySysManager.GetEntitySystem<SharedAudioSystem>()
+            .PlayPvs("/Audio/_EE/Voice/Xelthia/regrow.ogg", uid, null);
 
+        var solution = new Solution();
+
+        TryComp<BloodstreamComponent>(uid, out var stream);
+        solution.AddReagent("XelthiaArmJuice", 3.5);
+        _bloodstreamSystem.TryAddToChemicals(uid, solution, stream);
     }
 }

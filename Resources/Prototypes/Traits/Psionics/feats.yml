@@ -10,9 +10,6 @@
             - LatentPsychic
             - PsychoHistorian
             - Elementalist
-        - !type:CharacterSpeciesRequirement
-          species:
-            - Xelthia # Innate Psionics
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
@@ -54,9 +51,6 @@
             - LatentPsychic
             - PsychoHistorian
             - Elementalist
-        - !type:CharacterSpeciesRequirement
-          species:
-            - Xelthia # Innate Psionics
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
@@ -98,9 +92,6 @@
             - LatentPsychic
             - PsychoHistorian
             - Elementalist
-        - !type:CharacterSpeciesRequirement
-          species:
-            - Xelthia # Innate Psionics
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
@@ -138,9 +129,6 @@
             - LatentPsychic
             - PsychoHistorian
             - Elementalist
-        - !type:CharacterSpeciesRequirement
-          species:
-            - Xelthia # Innate Psionics
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
@@ -174,9 +162,6 @@
             - LatentPsychic
             - PsychoHistorian
             - Elementalist
-        - !type:CharacterSpeciesRequirement
-          species:
-            - Xelthia # Innate Psionics
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
@@ -210,9 +195,6 @@
             - LatentPsychic
             - PsychoHistorian
             - Elementalist
-        - !type:CharacterSpeciesRequirement
-          species:
-            - Xelthia # Innate Psionics
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
@@ -245,9 +227,6 @@
             - LatentPsychic
             - PsychoHistorian
             - Elementalist
-        - !type:CharacterSpeciesRequirement
-          species:
-            - Xelthia # Innate Psionics
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
