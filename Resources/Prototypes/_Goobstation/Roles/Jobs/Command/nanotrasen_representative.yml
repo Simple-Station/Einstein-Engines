@@ -12,6 +12,7 @@
       traits:
         - Foreigner
         - ForeignerLight
+        - Muted
     - !type:CharacterEmployerRequirement
       inverted: true
       employers:
@@ -22,7 +23,7 @@
   requireAdminNotify: true
   joinNotifyCrew: true
   supervisors: job-supervisors-centcom
-  canBeAntag: false
+  canBeAntag: true
   access:
   - CentralCommand
   - Brig

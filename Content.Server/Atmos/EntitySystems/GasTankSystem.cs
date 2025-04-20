@@ -182,6 +182,9 @@ namespace Content.Server.Atmos.EntitySystems
 
         private void ToggleInternals(Entity<GasTankComponent> ent)
         {
+            if (!ent.Comp.IsInternals)
+                return;
+
             if (ent.Comp.IsConnected)
             {
                 DisconnectFromInternals(ent);
@@ -220,7 +223,7 @@ namespace Content.Server.Atmos.EntitySystems
         public bool CanConnectToInternals(GasTankComponent component)
         {
             var internals = GetInternalsComponent(component, component.User);
-            return internals != null && internals.BreathTools.Count != 0 && !component.IsValveOpen;
+            return component.IsInternals && internals != null && internals.BreathTools.Count != 0 && !component.IsValveOpen;
         }
 
         public void ConnectToInternals(Entity<GasTankComponent> ent)
@@ -251,7 +254,7 @@ namespace Content.Server.Atmos.EntitySystems
         public void DisconnectFromInternals(Entity<GasTankComponent> ent)
         {
             var (owner, component) = ent;
-            if (component.User == null)
+            if (component.User == null || !ent.Comp.IsInternals)
                 return;
 
             var internals = GetInternalsComponent(component);
