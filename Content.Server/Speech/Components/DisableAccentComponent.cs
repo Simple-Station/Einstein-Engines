@@ -4,4 +4,6 @@ namespace Content.Server.Speech.Components;
 /// Meant for use as a status. Temporarily disables all other accents.
 /// </summary>
 [RegisterComponent]
-public sealed partial class DisableAccentComponent : Component;
+public sealed partial class DisableAccentComponent : Component
+{
+}
