@@ -49,7 +49,8 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
     private readonly HttpClient _httpClient = new();
 
     [ViewVariables]
-    private List<(EntityUid, int)> _players = new();
+    // this is used for money but its very poorly named - SPCR 2025
+    private List<(EntityUid, ulong)> _players = new();
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -71,9 +72,9 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
             if (!TryComp<BankAccountComponent>(player.Item1, out var bank) || !TryComp<MetaDataComponent>(player.Item1, out var meta))
                 continue;
 
-            var profit = bank.Balance - player.Item2;
+            var profit = (ulong)bank.Balance - player.Item2;
             ev.AddLine($"- {meta.EntityName} {profitText} {profit} Credits");
-            allScore.Add(new Tuple<string, int>(meta.EntityName, profit));
+            allScore.Add(new Tuple<string, int>(meta.EntityName, (int)profit));
         }
 
         if (!(allScore.Count >= 1))

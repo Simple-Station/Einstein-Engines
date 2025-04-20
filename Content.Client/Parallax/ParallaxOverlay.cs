@@ -51,7 +51,7 @@ public sealed class ParallaxOverlay : Overlay
         var position = args.Viewport.Eye?.Position.Position ?? Vector2.Zero;
         var worldHandle = args.WorldHandle;
 
-        var layers = _parallax.GetParallaxLayers(args.MapId);
+        var layers = _parallax.GetParallaxLayers();
         var realTime = (float) _timing.RealTime.TotalSeconds;
 
         foreach (var layer in layers)

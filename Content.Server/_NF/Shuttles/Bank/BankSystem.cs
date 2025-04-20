@@ -49,9 +49,9 @@ public sealed partial class BankSystem : EntitySystem
             return;
         }
 
-        var balanceDiff = bank.Balance - profile.BankBalance;
+        var balanceDiff = (ulong)bank.Balance - profile.BankBalance;
 
-        var newProfile = profile.WithBank(bank.Balance);
+        var newProfile = profile.WithBank((ulong)bank.Balance);
 
         args.State = new BankAccountComponentState
         {

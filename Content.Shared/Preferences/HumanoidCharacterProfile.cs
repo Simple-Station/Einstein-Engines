@@ -135,7 +135,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
 
     // hullrot added
     [DataField("bankBalance")]
-    public int BankBalance { get; private set; }
+    public ulong BankBalance { get; private set; }
 
     [DataField("faction")]
     public string? Faction { get; private set; }
@@ -168,7 +168,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         HashSet<string> antagPreferences,
         HashSet<string> traitPreferences,
         HashSet<LoadoutPreference> loadoutPreferences,
-        int bankWealth,
+        ulong bankWealth,
         string? proFaction
     )
     {
@@ -437,7 +437,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     }
 
     public HumanoidCharacterProfile WithFaction(string newFaction) => new(this) { Faction = newFaction };
-    public HumanoidCharacterProfile WithBank(int amount) => new(this) { BankBalance = amount };
+    public HumanoidCharacterProfile WithBank(ulong amount) => new(this) { BankBalance = amount };
 
 
 public string Summary =>
