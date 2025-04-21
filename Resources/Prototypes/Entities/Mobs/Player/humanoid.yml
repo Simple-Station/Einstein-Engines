@@ -24,12 +24,10 @@
 - type: randomHumanoidSettings
   id: EventHuman
   parent: EventHumanoid
-  speciesWhitelist: Human
 
 - type: randomHumanoidSettings
   id: EventHumanMindShielded
   parent: EventHumanoidMindShielded
-  speciesWhitelist: Human
 # Goobstation end
 
 ## Death Squad
@@ -166,7 +164,6 @@
     - type: GhostTakeoverAvailable
     - type: Loadout
       prototypes: [ ERTLeaderGearEVAAnnie ]
-      roleLoadout: [ RoleSurvivalEVA ]
 
 ## ERT Chaplain
 
@@ -444,7 +441,6 @@
 #      job: ERTSecurity
 #    - type: Loadout
 #      prototypes: [ ERTSecurityGearEVALecter ]
-#      roleLoadout: [ RoleSurvivalEVA ]
 
 ## ERT Medic
 

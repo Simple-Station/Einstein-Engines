@@ -43,7 +43,6 @@
       job: ERTSecurity
     - type: Loadout
       prototypes: [ ERTSecurityGearEVAAnnie ]
-      roleLoadout: [ RoleSurvivalEVA ]
 
 # Central Command!
 
@@ -84,7 +83,6 @@
       settings: short
   - type: Loadout
     prototypes: [ NavyOfficerGear ]
-    roleLoadout: [ RoleSurvivalEVA ]
   - type: RandomMetadata
     nameSegments:
     - NamesFirstMilitaryLeader
@@ -128,7 +126,6 @@
       settings: short
   - type: Loadout
     prototypes: [ NavyCaptainGear ]
-    roleLoadout: [ RoleSurvivalEVA ]
   - type: RandomMetadata
     nameSegments:
     - NamesFirstMilitaryHighRank
@@ -172,7 +169,6 @@
       settings: short
   - type: Loadout
     prototypes: [  NavyOfficerUndercoverGear ]
-    roleLoadout: [ RoleSurvivalEVA ]
   - type: RandomMetadata
     nameSegments:
     - NamesFirstMilitaryLeader
@@ -216,7 +212,6 @@
       settings: short
   - type: Loadout
     prototypes: [ SpecialOperationsOfficerGear ]
-    roleLoadout: [ RoleSurvivalEVA ]
   - type: RandomMetadata
     nameSegments:
     - NamesFirstMilitaryHighRank

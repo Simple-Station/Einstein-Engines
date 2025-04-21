@@ -9,7 +9,6 @@
   - type: Clothing
     sprite: _Goobstation/Clothing/Eyes/Glasses/medglasses.rsi
   - type: Construction
-    graph: GlassesMedHUD
     node: glassesMed
 
 - type: entity
