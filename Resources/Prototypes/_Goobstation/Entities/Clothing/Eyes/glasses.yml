@@ -8,8 +8,6 @@
     sprite: _Goobstation/Clothing/Eyes/Glasses/medglasses.rsi
   - type: Clothing
     sprite: _Goobstation/Clothing/Eyes/Glasses/medglasses.rsi
-  - type: Construction
-    node: glassesMed
 
 - type: entity
   parent: [ClothingEyesHudOmni]
