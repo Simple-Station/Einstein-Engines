@@ -21,4 +21,3 @@
       job: ERTSecurity
     - type: Loadout
       prototypes: [ ERTSecurityGearEVALaser ]
-      roleLoadout: [ RoleSurvivalEVA ]
