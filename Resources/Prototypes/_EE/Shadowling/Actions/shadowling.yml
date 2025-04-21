@@ -273,3 +273,19 @@
     event: !type:HypnosisEvent
     # add speech
   - type: ShadowlingAction
+
+- type: entity
+  id: ActionPlaneShift
+  name: Plane Shift
+  description: Phase through anything, whenever you desire.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: NoItem
+    useDelay: 2
+    icon:
+      sprite: _EE/Shadowling/shadowling_abilities.rsi
+      state: shadow_walk
+    event: !type:TogglePlaneShiftEvent
+    # add speech
+  - type: ShadowlingAction

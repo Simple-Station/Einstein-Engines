@@ -27,6 +27,9 @@ public sealed class ShadowlingAnnihilateSystem : EntitySystem
     {
         // The gibbening
         var target = args.Target;
+        if (HasComp<ShadowlingComponent>(target))
+            return;
+        
         _body.GibBody(target, contents: GibContentsOption.Gib);
 
         _actions.StartUseDelay(args.Action);

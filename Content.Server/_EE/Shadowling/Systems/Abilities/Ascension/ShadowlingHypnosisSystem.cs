@@ -24,14 +24,13 @@ public sealed class ShadowlingHypnosisSystem : EntitySystem
     private void OnHypnosis(EntityUid uid, ShadowlingHypnosisComponent component, HypnosisEvent args)
     {
         var target = args.Target;
-        if (HasComp<ThrallComponent>(target))
+        if (HasComp<ThrallComponent>(target) || HasComp<ShadowlingComponent>(target))
             return;
 
         if (!HasComp<HumanoidAppearanceComponent>(target))
             return;
 
         EnsureComp<ThrallComponent>(target);
-        // we dont need to raise any events here, the shadowling has already ascended so there's nothing to do
         _actions.StartUseDelay(args.Action);
     }
 }

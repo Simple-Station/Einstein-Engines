@@ -44,6 +44,7 @@ public sealed partial class BlackRecuperationEvent : EntityTargetActionEvent { }
 public sealed partial class AscendanceEvent : InstantActionEvent { } // for debug
 public sealed partial class AnnihilateEvent : EntityTargetActionEvent { }
 public sealed partial class HypnosisEvent : EntityTargetActionEvent { }
+public sealed partial class TogglePlaneShiftEvent : InstantActionEvent { }
 #endregion
 
 #region Events - Thrall Events

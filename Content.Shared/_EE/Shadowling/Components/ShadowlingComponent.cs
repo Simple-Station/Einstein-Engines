@@ -42,9 +42,11 @@ public sealed partial class ShadowlingComponent : Component
     #region Ascension Actions
     public string ActionAnnihilate      = "ActionAnnihilate";
     public string ActionHypnosis        = "ActionHypnosis";
+    public string ActionPlaneShift      = "ActionPlaneShift";
 
     public EntityUid? ActionAnnihilateEntity;
     public EntityUid? ActionHypnosisEntity;
+    public EntityUid? ActionPlaneShiftEntity;
     #endregion
 
     // The status icon for Shadowlings
