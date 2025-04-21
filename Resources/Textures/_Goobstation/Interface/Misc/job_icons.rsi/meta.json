@@ -7,17 +7,6 @@
         "y": 8
     },
     "states": [
-	{
-	  "name": "Future",
-	  "delays": [
-	  [
-		  0.2,
-		  0.2,
-		  0.2,
-		  0.2
-	  ]
-	  ]
-	},
     {
       "name": "nanotrasenrepresentative"
     },
