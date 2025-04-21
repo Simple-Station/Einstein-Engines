@@ -50,7 +50,7 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
 
     [ViewVariables]
     // this is used for money but its very poorly named - SPCR 2025
-    private List<(EntityUid, ulong)> _players = new();
+    private List<(EntityUid, long)> _players = new();
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -72,7 +72,7 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
             if (!TryComp<BankAccountComponent>(player.Item1, out var bank) || !TryComp<MetaDataComponent>(player.Item1, out var meta))
                 continue;
 
-            var profit = (ulong)bank.Balance - player.Item2;
+            var profit = (long)bank.Balance - player.Item2;
             ev.AddLine($"- {meta.EntityName} {profitText} {profit} Credits");
             allScore.Add(new Tuple<string, int>(meta.EntityName, (int)profit));
         }

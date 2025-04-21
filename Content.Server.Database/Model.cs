@@ -403,8 +403,8 @@ namespace Content.Server.Database
         public string Species { get; set; } = null!;
         public float Height { get; set; } = 1f;
         public float Width { get; set; } = 1f;
-        public string Faction = null!;
-        public ulong BankBalance = default!;
+        public string Faction { get; set; } = null!;
+        public long BankBalance { get; set; } = 0;
         [Column(TypeName = "jsonb")] public JsonDocument? Markings { get; set; } = null!;
         public string HairName { get; set; } = null!;
         public string HairColor { get; set; } = null!;
