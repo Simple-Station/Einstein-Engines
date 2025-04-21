@@ -18,6 +18,8 @@
 
 - type: startingGear # Goobstation - Start - Sol
   id: CBURNGear
+  subGear:
+  - ERTPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorBrown
     back: ClothingBackpackDuffelCBURN

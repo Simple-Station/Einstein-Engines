@@ -20,6 +20,8 @@
 
 - type: startingGear
   id: DeathSquadGear
+  subGear:
+  - ERTPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitDeathSquad
     back: ClothingBackpackDeathSquad
