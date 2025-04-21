@@ -17,13 +17,13 @@
     borderColor: "#3c94c5"
 
 - type: entity
-  parent: CentcomPDA
+  parent: NavyCaptainPDA
   id: DeathsquadPDA
   name: Deathsquad PDA
   description: Rip and tear until it is done.
   components:
   - type: Pda
-    id: CentcomIDCardNavyCaptain
+    id: CentcomIDCardDeathSquad
   - type: Icon
     sprite: _Goobstation/Objects/Devices/pda.rsi
     state: pda-deathsquad

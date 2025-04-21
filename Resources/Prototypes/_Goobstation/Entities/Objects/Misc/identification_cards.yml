@@ -131,6 +131,27 @@
      enum.ChameleonUiKey.Key:
         type: ChameleonBoundUserInterface
 
+# Deathsquad
+
+- type: entity
+  parent: IDCardStandard
+  id: CentcomIDCardDeathSquad
+  name: Death Squad ID card
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Misc/id_cards.rsi
+    layers:
+    - state: idhelldiver
+  - type: IdCard
+    jobTitle: job-name-deathsquad
+    jobIcon: JobIconNanotrasen
+  - type: Access
+    groups:
+    - AllAccess
+    tags:
+    - CentralCommand
+    - NanotrasenRepresentative
+    - BlueshieldOfficer
 
 # Navy Captain
 
