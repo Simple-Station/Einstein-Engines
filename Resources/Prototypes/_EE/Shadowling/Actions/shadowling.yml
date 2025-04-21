@@ -305,3 +305,18 @@
     event: !type:LightningStormEvent
     # add speech
   - type: ShadowlingAction
+
+- type: entity
+  id: ActionAscendantBroadcast
+  name: Ascendant Broadcast
+  description: Send a very hard to miss message to everyone.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: NoItem
+    icon:
+      sprite: _EE/Shadowling/shadowling_abilities.rsi
+      state: broadcast
+    event: !type:AscendantBroadcastEvent
+    # add speech
+  - type: ShadowlingAction

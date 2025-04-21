@@ -32,6 +32,7 @@ shadowling-black-rec-lesser-already = The target is already a Lesser Shadowling.
 shadowling-black-rec-revive-done = Darkness pulls you back from the brink.
 shadowling-black-rec-lesser-done = You feel like even stronger than before.
 
+shadowling-ascendant-broadcast-dialog = Your message has been sent to everyone.
 # Thrall
 
 thrall-guise-fail = You were not in the shadows.
