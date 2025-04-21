@@ -1,4 +1,5 @@
 using Content.Client.Computer;
+using Content.Client.PointCannons;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Shuttles.BUIStates;
 using Content.Shared.PointCannons;
@@ -8,7 +9,7 @@ using Content.Client.Shuttles.UI;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface;
 
-namespace Content.Client.PointCannons;
+namespace Content.Client._Crescent.PointCannons;
 
 [GenerateTypedNameReferences]
 public sealed partial class TargetingConsoleWindow : FancyWindow, IComputerWindow<ShuttleBoundUserInterfaceState>
@@ -52,7 +53,7 @@ public sealed partial class TargetingConsoleWindow : FancyWindow, IComputerWindo
         AmmoStatusBox.DisposeAllChildren();
         foreach ((int value, int max) in values)
         {
-            //funny, but it's important that max value is set before value 
+            //funny, but it's important that max value is set before value
             //or it will get clamped to the default max of 100
             AmmoStatusBox.AddChild(new AmmoBar() { MaxValue = max, Value = value });
         }

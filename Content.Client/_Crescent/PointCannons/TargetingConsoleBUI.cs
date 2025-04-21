@@ -3,12 +3,13 @@ using Content.Shared.PointCannons;
 using Timer = Robust.Shared.Timing.Timer;
 using JetBrains.Annotations;
 using System.Numerics;
+using Content.Client._Crescent.PointCannons;
 using Robust.Client.GameObjects;
 using Content.Shared.Weapons.Ranged.Events;
 using OpenToolkit.GraphicsLibraryFramework;
 using Content.Client.Weapons.Ranged.Systems;
 
-namespace Content.Client.PointCannons;
+namespace Content.Client._Crescent.PointCannons;
 
 [UsedImplicitly]
 public sealed class TargetingConsoleBoundUserInterface : BoundUserInterface
