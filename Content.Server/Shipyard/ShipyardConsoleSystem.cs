@@ -23,11 +23,12 @@ public sealed class ShipyardConsoleSystem : SharedShipyardConsoleSystem
     public override void Initialize()
     {
         base.Initialize();
-
+        /* Hullrot edit
         Subs.BuiEvents<ShipyardConsoleComponent>(ShipyardConsoleUiKey.Key, subs =>
         {
             subs.Event<BoundUIOpenedEvent>(OnOpened);
         });
+        */
     }
 
     protected override void TryPurchase(Entity<ShipyardConsoleComponent> ent, EntityUid user, VesselPrototype vessel)
