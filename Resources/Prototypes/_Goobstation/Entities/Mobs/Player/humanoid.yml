@@ -253,7 +253,6 @@
       settings: short
   - type: Loadout
     prototypes: [ DiplomatGear ]
-    roleLoadout: [ RoleSurvivalEVA ]
   - type: RandomMetadata
     nameSegments:
     - NamesFirstMilitaryPolitical
