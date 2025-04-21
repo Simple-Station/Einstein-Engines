@@ -45,6 +45,7 @@ public sealed partial class AscendanceEvent : InstantActionEvent { } // for debu
 public sealed partial class AnnihilateEvent : EntityTargetActionEvent { }
 public sealed partial class HypnosisEvent : EntityTargetActionEvent { }
 public sealed partial class TogglePlaneShiftEvent : InstantActionEvent { }
+public sealed partial class LightningStormEvent : InstantActionEvent { }
 #endregion
 
 #region Events - Thrall Events

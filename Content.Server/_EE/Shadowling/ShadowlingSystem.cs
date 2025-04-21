@@ -82,9 +82,11 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
             AddComp<ShadowlingAnnihilateComponent>(uid);
             AddComp<ShadowlingHypnosisComponent>(uid);
             AddComp<ShadowlingPlaneShiftComponent>(uid);
+            AddComp<ShadowlingLightningStormComponent>(uid);
             _actions.AddAction(uid, ref component.ActionAnnihilateEntity, component.ActionAnnihilate, component: actions);
             _actions.AddAction(uid, ref component.ActionHypnosisEntity, component.ActionHypnosis, component: actions);
             _actions.AddAction(uid, ref component.ActionPlaneShiftEntity, component.ActionPlaneShift, component: actions);
+            _actions.AddAction(uid, ref component.ActionLightningStormEntity, component.ActionLightningStorm, component: actions);
         }
     }
 

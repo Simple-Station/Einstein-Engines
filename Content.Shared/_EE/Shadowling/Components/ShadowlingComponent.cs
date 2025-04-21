@@ -43,10 +43,12 @@ public sealed partial class ShadowlingComponent : Component
     public string ActionAnnihilate      = "ActionAnnihilate";
     public string ActionHypnosis        = "ActionHypnosis";
     public string ActionPlaneShift      = "ActionPlaneShift";
+    public string ActionLightningStorm  = "ActionLightningStorm";
 
     public EntityUid? ActionAnnihilateEntity;
     public EntityUid? ActionHypnosisEntity;
     public EntityUid? ActionPlaneShiftEntity;
+    public EntityUid? ActionLightningStormEntity;
     #endregion
 
     // The status icon for Shadowlings

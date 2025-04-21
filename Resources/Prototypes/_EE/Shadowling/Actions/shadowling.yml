@@ -289,3 +289,19 @@
     event: !type:TogglePlaneShiftEvent
     # add speech
   - type: ShadowlingAction
+
+- type: entity
+  id: ActionLightningStorm
+  name: Lightning Storm
+  description: Spawn a ball of wrath, electrocuting everyone near you.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: NoItem
+    useDelay: 30
+    icon:
+      sprite: _EE/Shadowling/shadowling_abilities.rsi
+      state: lightning_storm
+    event: !type:LightningStormEvent
+    # add speech
+  - type: ShadowlingAction
