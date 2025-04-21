@@ -15295,3 +15295,26 @@ Entries:
   id: 7172
   time: '2025-04-18T23:45:54.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2269
+- author: ODJ
+  changes:
+    - type: Fix
+      message: >-
+        Updated Anchor, large number of bugs and missing content should be
+        fixed.
+  id: 7173
+  time: '2025-04-19T00:33:28.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2262
+- author: ODJ
+  changes:
+    - type: Tweak
+      message: Pebble updated to version 3.0, please enjoy.
+  id: 7174
+  time: '2025-04-19T00:33:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2261
+- author: ODJ
+  changes:
+    - type: Tweak
+      message: Salvage shuttle is no longer a dorito.
+  id: 7175
+  time: '2025-04-19T01:21:53.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2263
