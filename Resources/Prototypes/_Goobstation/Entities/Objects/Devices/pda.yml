@@ -24,8 +24,6 @@
   components:
   - type: Pda
     id: CentcomIDCardNavyCaptain
-  - type: Pda
-    id: CentcomIDCardDeathsquad
   - type: Icon
     sprite: _Goobstation/Objects/Devices/pda.rsi
     state: pda-deathsquad
